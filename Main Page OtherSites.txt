@@ -1,0 +1,8 @@
+{{Main page box|Other Nintendo Homebrew Sites|:OtherSites}}
+<div style="margin: -.3em -1em -1em -1em;">
+{| width="100%" bgcolor="#fff" border="0" cellpadding="2px" cellspacing="2px" style="margin:auto;"
+|- valign="top" align="left" style="background: #F5FAFF;"
+| [http://dsibrew.org DSiBrew] [http://wiibrew.org WiiBrew] [http://wiiubrew.org WiiUBrew]
+|}
+</div>
+{{box-footer-empty}}
