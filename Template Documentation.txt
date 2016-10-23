@@ -1,0 +1,45 @@
+<div class="template-documentation"><!--
+
+These are the literal class definitions in common.css:
+ 
+/* For template documentation */
+.template-documentation {
+    clear: both;
+    margin: 1em 0 0 0;
+    border: 1px solid #aaa; 
+    background-color: #ecfcf4; 
+    padding: 5px;
+}
+
+
+ -->{{#ifeq:{{{heading|μ}}}|<!--**DEFINED BUT EMPTY**-->
+  |<!--**NOTHING**-->
+  |<div style="padding-bottom:3px; border-bottom: 1px solid #aaa; margin-bottom:1ex">{{#ifeq:{{{content|μ}}}|μ
+   |<span class="editsection plainlinks" id="doc_editlinks">{{#ifexist: {{{1|{{Documentation/docname}}}}}
+    |<!--**    /doc EXISTS**   -->[[{{fullurl:{{{1|{{Documentation/docname}}}}}|action=edit}} edit]]
+    |<!--**/doc DOESN'T EXIST**-->[[{{fullurl:{{{1|{{Documentation/docname }}}}}|action=edit&preload=Template:Documentation/preload}} create]]
+   }}</span>
+  }} <span style="{{#if:{{{heading-style|}}}|{{{heading-style}}}|{{#ifeq:{{NAMESPACE}}|{{ns:template}}|font-weight: bold; font-size: 125%|font-size: 150%}}}}">{{#if:{{{heading|}}}|{{{heading}}}|{{#ifeq:{{NAMESPACE}}|{{ns:template}}|[[Image:Template-info.svg|50px]] Template documentation|Documentation}}}}</span></div>
+ }}<!--
+
+ --><div id="template_doc_page_transcluded" class="dablink plainlinks"><!--
+  -->{{#ifexist: {{{1|{{Documentation/docname}}}}}
+  |<!--**/doc EXISTS**-->This documentation is transcluded from [[{{{1|{{Documentation/docname}}}}}]]. <small style="font-style: normal">([{{fullurl:{{{1|{{Documentation/docname}}}}}|action=edit}} edit] &#124; [{{fullurl:{{{1|{{Documentation/docname}}}}}|action=history}} history])</small><br />
+ }}<!--
+
+ -->{{#switch: {{SUBPAGENAME}}
+   |sandbox|testcases=<!--**DO NOT SHOW THESE LINKS ON THE SANDBOX/TESTCASES PAGES**-->
+   |#default=
+    {{#switch: {{SUBJECTSPACE}}
+     |{{ns:template}}
+     |{{ns:user}}=
+      {{#ifexist: {{FULLPAGENAME}}/sandbox
+       |This template has a [[/sandbox|sandbox]] <small style="font-style: normal">([{{fullurl:{{ #rel2abs: /sandbox }}|action=edit}} edit])</small> <!--
+        -->{{#ifexist: {{FULLPAGENAME}}/testcases
+         |and [[/testcases|testcases]] <small style="font-style: normal">([{{fullurl:{{ #rel2abs: /testcases }}|action=edit}} edit])</small>}} for editors to experiment.
+       |{{#ifexist: {{FULLPAGENAME}}/testcases
+        |This template has [[/testcases|testcases]] <small style="font-style: normal">([{{fullurl:{{ #rel2abs: /testcases }}|action=edit}} edit])</small> for editors to experiment.}}
+ }}}}}}
+ </div>
+{{#if:{{{content|}}}|{{{content}}}|{{#ifexist:{{{1|{{Documentation/docname}}}}} | {{ {{{1|{{Documentation/docname}}}}} }} }}}}
+</div>
