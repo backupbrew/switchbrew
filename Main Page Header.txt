@@ -2,4 +2,5 @@
 <div style="font-size: 162%; border: none; margin: 0; padding:.1em;">Welcome to [[NSBrew:About|NSBrew]],</div>
 <div style="font-size: 95%">a wiki dedicated to homebrew on the [[Nintendo Switch]].</div>
 <div style="font-size:85%;">We have [[Special:Statistics|{{NUMBEROFARTICLES}}]] articles. We don't we have EFnet IRC channel yet. We will one day :) </div>
+<div style="font-size:85%;">Please keep in mind that this site is still under construction. Feel free to contribute :)</div>
 </div>

@@ -20,4 +20,11 @@ EFnet IRC channel yet. We will one day :)
 
 </div>
 
+<div style="font-size:85%;">
+
+Please keep in mind that this site is still under construction. Feel
+free to contribute :)
+
+</div>
+
 </div>
