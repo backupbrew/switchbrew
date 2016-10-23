@@ -1,0 +1,37 @@
+<div style="clear: both; <!--
+         -->position: relative; <!--
+         -->border: {{{border-type|solid}}} {{{titleborder|{{{border|#ababab}}}}}}; <!--
+         -->border-width: {{{border-top|{{{border-width|1}}}}}}px {{{border-width|1}}}px 0; <!--
+         -->background: {{{titlebackground|#bcbcbc}}};<!--
+         --> color: {{{titleforeground|#000}}}; <!--
+         -->padding: .1em;<!--
+         -->text-align: {{{title-align|center}}};<!--
+         -->margin-bottom: 0px;<!--
+         -->">{{#if: {{{EDITLINK|}}} ||
+<span class="plainlinks" <!--
+ -->style="position: absolute;<!--
+             -->top: 1px;<!--
+             -->right: 1px;<!--
+             -->margin-bottom:.1em;<!--
+             -->font-size:{{{font-size|80%}}};<!--
+
+             --> color: {{{titleforeground|#000}}}">{{
+#if: {{{noedit|}}} || [{{fullurl:{{{editpage|/}}}|action=edit{{#if: {{{section|}}} |&section={{{section}}}}}}} <span style="color: {{{titleforeground|#000}}}">edit</span>]&nbsp;}}{{#if: {{{viewpage|}}} |'''·'''&nbsp;[[:{{{viewpage}}}|<font color="{{{titleforeground|black}}}">view</font>]]&nbsp;}}{{{top|}}}&nbsp;
+</span>}}<!-- endif EDITLINK
+-->{{#if: {{{SPAN|}}} |<span style="font-size:{{{title-font-size|100%}}}; font-weight:bold; margin: 0; padding:0; padding-bottom:.1em; color:{{{titleforeground|#000}}};{{{extra|}}}">{{{title}}}</span>|<h2 style="font-size:{{{title-font-size|100%}}}; font-weight:bold; border: none; margin: 0; padding:0; padding-bottom:.1em; color:{{{titleforeground|#000}}};{{{extra|}}}">{{{title}}}</h2>}}
+</div>
+<div style="display:block; border: {{{border-width|1}}}px solid {{{border|#ababab}}}; <!--
+         -->border-top-width: {{{border-top|1}}}px; <!--
+         -->vertical-align: top;<!--
+         -->background: {{{background|#fefeef}}};<!--
+         -->opacity: {{{background-opacity|1}}};<!--
+         --> color: {{{foreground|#000}}}; <!--
+         -->text-align: {{{text-align|left}}};<!--
+         --> margin: 0 0 10px; <!--
+         -->padding: {{{padding|1em}}};<!--
+         -->padding-top: {{{padding-top|.3em;}}}"><!--
+--><!--{{#if: {{{TOC|}}} | |__NOTOC__}}{{#if: {{{EDIT|}}} | |__NOEDITSECTION__}}--><noinclude>
+{{box-footer}}
+
+{{Documentation}}
+</noinclude>
