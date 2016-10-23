@@ -8,7 +8,7 @@ Welcome to [NSBrew](NSBrew:About "wikilink"),
 
 <div style="font-size: 95%">
 
-a wiki dedicated to homebrew on the Nintendo 3DS.
+a wiki dedicated to homebrew on the Nintendo Switch.
 
 </div>
 
