@@ -9,7 +9,7 @@ Welcome to [NSBrew](NSBrew:About "wikilink"),
 <div style="font-size: 95%">
 
 a wiki dedicated to homebrew on the [Nintendo
-Switch](Nintendo%20Switch.md "wikilink").
+Switch](https://en.wikipedia.org/wiki/Nintendo_Switch).
 
 </div>
 
