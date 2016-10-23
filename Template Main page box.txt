@@ -1,0 +1,8 @@
+{{Box-header{{{watch|}}} | title={{{1}}} 
+|editpage={{{2}}} 
+|border=#A3B1BF           <!-- H210 S15 V75 the color of the borders around Box Sections -->
+|titleforeground=black    <!-- This is the color of the Box Section Title Bar text -->
+|titlebackground=#CEE0F2  <!-- H210 S15 V95 the color of the Box Section Title Bar -->
+|background=#F5FAFF       <!-- H210 S4 V100 the color of the Box Section background -->
+|foreground=black}}       <!-- This is the color of the Box Section text -->
+<noinclude>{{Box-footer}}</noinclude>
