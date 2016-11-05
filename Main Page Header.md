@@ -15,8 +15,8 @@ Switch](https://en.wikipedia.org/wiki/Nintendo_Switch).
 
 <div style="font-size:85%;">
 
-We have [](Special:Statistics "wikilink") articles. We don't we have
-EFnet IRC channel yet. We will one day :)
+We have [](Special:Statistics "wikilink") articles. oin our development
+conversations on the EFnet IRC channel \#switchdev.
 
 </div>
 
