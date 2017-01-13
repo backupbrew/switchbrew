@@ -1,0 +1,9 @@
+<b>Internet Browser</b> is a web browser preloaded on the Nintendo Switch. It is presumably based on Webkit.
+
+== Known User Agent Strings ==
+{| class='wikitable'
+! Region
+! [[System Software]]
+! Release Date
+! UA String
+|}
