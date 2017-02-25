@@ -3,5 +3,5 @@ Exploits are used to execute unofficial code (homebrew) on the NS
 
 ## List of NS Exploits
 
-There are currently no known NS exploits. (But smea, yellows8 and others
-are impatient to discover them\!)
+There are currently no known NS exploits. (That being a Nintendo console
+wouldn't be delayed...)
