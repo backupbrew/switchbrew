@@ -1,6 +1,8 @@
 <b>Internet Browser</b> is a web browser preloaded on the Nintendo
-Switch. It is presumably based on
-Webkit.
+Switch. It is presumably based on Webkit. (Its unknown if the ns
+next-to-1.0 have a "web browser", but is know that the ns have a browser
+applet to hotspots that need a
+authentication)
 
 ## Known User Agent Strings
 
