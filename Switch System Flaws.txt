@@ -1,7 +1,7 @@
 
-Exploits are used to execute unofficial code (homebrew) on the NS (Nintendo Switch). This page is a list of known NS exploits.
+System Flaws are used to execute unofficial code (homebrew) on the Nintendo Switch (NS). This page is a list of known and public NS System Flaws.
 
-== List of NS Exploits ==
+=List of NS System Flaws=
 
 There are currently no known NS exploits. (That being a Nintendo console wouldn't be delayed...)
 
