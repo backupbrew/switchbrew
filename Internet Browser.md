@@ -2,8 +2,9 @@
 the Nintendo Switch. It is presumably based on Webkit.  
 (Its unknown if the ns next-to-1.0 have a "web browser", but is
 *confirmed?* that the ns (next-to-1.0) have a browser applet to hotspots
-that need
-authentication)
+that need authentication)  
+(So much "unknowns", just wait for the
+release)
 
 ## Known User Agent Strings
 
