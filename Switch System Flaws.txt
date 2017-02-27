@@ -4,3 +4,20 @@ Exploits are used to execute unofficial code (homebrew) on the NS (Nintendo Swit
 == List of NS Exploits ==
 
 There are currently no known NS exploits. (That being a Nintendo console wouldn't be delayed...)
+
+== Hardware (Test) == 
+{| class="wikitable" border="1"
+!  Summary
+!  Description
+!  Fixed with hardware model/revision
+!  Newest hardware model/revision this flaw was checked for
+!  Timeframe this was discovered
+!  Discovered by
+|-
+| (Title)
+| (Descripcion)
+| (Has fixed?)
+| (Newest model checked for)
+| (Discovered in)
+| (Discovered by)
+|-

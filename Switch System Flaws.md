@@ -1,7 +1,0 @@
-Exploits are used to execute unofficial code (homebrew) on the NS
-(Nintendo Switch). This page is a list of known NS exploits.
-
-## List of NS Exploits
-
-There are currently no known NS exploits. (That being a Nintendo console
-wouldn't be delayed...)
