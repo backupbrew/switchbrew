@@ -1,7 +1,8 @@
-<b>Internet Browser</b> is a web browser preloaded on the Nintendo
-Switch. It is presumably based on Webkit.  
-(Its unknown if the ns next-to-1.0 have a "web browser", but is known
-that the ns (next-to-1.0) have a browser applet to hotspots that need
+<b>Internet Browser</b> *(unconfirmed)* is a web browser preloaded on
+the Nintendo Switch. It is presumably based on Webkit.  
+(Its unknown if the ns next-to-1.0 have a "web browser", but is
+*confirmed?* that the ns (next-to-1.0) have a browser applet to hotspots
+that need
 authentication)
 
 ## Known User Agent Strings
