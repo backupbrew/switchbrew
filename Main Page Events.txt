@@ -1,0 +1,9 @@
+{{Main page box|Latest news|:News}}
+<div style="margin: -.3em -1em -1em -1em;">
+{| width="100%" bgcolor="#fff" border="0" cellpadding="2px" cellspacing="2px" style="margin:auto;"
+|- valign="top" align="left" style="background: #F5FAFF;"
+| {{:News}} 
+|- class="plainlinks" style="background: #e7eef6; text-align: center;"
+|}
+</div>
+{{box-footer-empty}}
