@@ -1,0 +1,4 @@
+<noinclude>
+=== News ===
+<!-- Add news below --></noinclude>
+*'''Date of new''' New text.
