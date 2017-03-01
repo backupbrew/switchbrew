@@ -4,4 +4,4 @@
 
 </noinclude>
 
-  - **-** No news ^-^.
+  - **Every day** You are beautiful ^-^.
