@@ -1,0 +1,5 @@
+Looking to document as much as I can about the Nintendo Switch, hoping
+to get a release console on March 3rd.
+
+Currently all sources are coming from users from the [Nintendo Switch
+subreddit](https://www.reddit.com/r/NintendoSwitch/).
