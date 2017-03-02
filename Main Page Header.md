@@ -2,7 +2,7 @@
 
 <div style="font-size: 162%; border: none; margin: 0; padding:.1em;">
 
-Welcome to [Switchbrew](NSBrew:About "wikilink"),
+Welcome to [SwitchBrew](NSBrew:About "wikilink"),
 
 </div>
 
