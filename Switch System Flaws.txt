@@ -23,7 +23,7 @@ There are currently no known NS exploits. (That being a Nintendo console wouldn'
 |-
 |}
 ==ARM TrustZone software==
-===ARM TrustZone Kernel?===
+===ARM TrustZone===
 {| class="wikitable" border="1"
 |-
 !  Summary
