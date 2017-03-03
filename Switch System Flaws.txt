@@ -45,8 +45,8 @@ There are currently no known NS exploits. (That being a Nintendo console wouldn'
 |
 |-
 |}
-=='Kernel' software==
-==='Kernel'===
+== ''Kernel'' software==
+===''Kernel''===
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -58,7 +58,7 @@ There are currently no known NS exploits. (That being a Nintendo console wouldn'
 !  Public disclosure timeframe
 !  Discovered by
 |-
-|  No public 'Kernel' exploits 
+|  No public ''Kernel'' exploits 
 |
 |
 |

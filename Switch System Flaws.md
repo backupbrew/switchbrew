@@ -24,11 +24,11 @@ delayed...)
 | No public ARM TrustZone exploits |             |                                |                         |                                               |                               |                             |               |
 |                                  |             |                                |                         |                                               |                               |                             |               |
 
-## 'Kernel' software
+## *Kernel* software
 
-### 'Kernel'
+### *Kernel*
 
 | Summary                     | Description | Successful exploitation result | Fixed in system version | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by |
 | --------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
-| No public 'Kernel' exploits |             |                                |                         |                                               |                               |                             |               |
+| No public *Kernel* exploits |             |                                |                         |                                               |                               |                             |               |
 |                             |             |                                |                         |                                               |                               |                             |               |
