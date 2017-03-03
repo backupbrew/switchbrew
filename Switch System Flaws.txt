@@ -14,7 +14,7 @@ There are currently no known NS exploits. (That being a Nintendo console wouldn'
 !  Timeframe this was discovered
 !  Discovered by
 |-
-| No hardware exploits discovered
+| No public hardware exploits 
 |
 |
 |
@@ -35,7 +35,7 @@ There are currently no known NS exploits. (That being a Nintendo console wouldn'
 !  Public disclosure timeframe
 !  Discovered by
 |-
-|  No ARM TrustZone exploits discovered
+|  No public ARM TrustZone exploits 
 |
 |
 |
