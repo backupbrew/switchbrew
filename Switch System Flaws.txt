@@ -15,6 +15,11 @@ There are currently no known NS exploits. (That being a Nintendo console wouldn'
 !  Discovered by
 |-
 | No hardware exploits discovered
+|
+|
+|
+|
+|
 |-
 |}
 ==ARM TrustZone software==
@@ -31,5 +36,12 @@ There are currently no known NS exploits. (That being a Nintendo console wouldn'
 !  Discovered by
 |-
 |  No ARM TrustZone exploits discovered
+|
+|
+|
+|
+|
+|
+|
 |-
 |}
