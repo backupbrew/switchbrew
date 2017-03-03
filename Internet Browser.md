@@ -7,9 +7,6 @@ When linking the Nintendo Account with Facebook, the Facebook Auth
 website will open, offering a search box that can be used to browse the
 internet.
 
-(content below is
-unconfirmed)
-
 ## Known User Agent Strings
 
 | [System Software](System%20Software.md "wikilink") | Release Date | [UA String](https://www.wiiubru.com/forum/index.php?threads/possible-user-agent.101/)                                    |
