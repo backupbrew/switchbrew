@@ -1,7 +1,14 @@
 <b>Internet Browser</b> *(unconfirmed)* is a web browser preloaded on
 the Nintendo Switch. It is presumably based on Webkit.  
-Fill this when ns have released
-^-^
+The browser functionality is not accessible to the user, since there is
+no app for it. However, it can be accessed via an
+[exploit](https://www.reddit.com/r/NintendoSwitch/comments/5x9g68/browser_and_video_player_are_fully_functional/).
+When linking the Nintendo Account with Facebook, the Facebook Auth
+website will open, offering a search box that can be used to browse the
+internet.
+
+(content below is
+unconfirmed)
 
 ## Known User Agent Strings
 
