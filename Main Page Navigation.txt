@@ -1,4 +1,4 @@
-{{Main page box|Navigation|Main Page/Navigation}}
+{{Main page box|Navigation|:Navigation}}
 <div style="margin: -.3em -1em -1em -1em;">
 {| width="100%" bgcolor="#fff" border="0" cellpadding="2px" cellspacing="2px" style="margin:auto;"
 |- align="center" bgcolor="#e7eef6"
