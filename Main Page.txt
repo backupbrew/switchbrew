@@ -1,3 +1,4 @@
 {{:Main Page/Header}}
 {{:Main Page/Events}}
+{{:Main Page/Navigation}}
 {{:Main Page/OtherSites}}
