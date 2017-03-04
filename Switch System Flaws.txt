@@ -1,7 +1,7 @@
 
-System Flaws are used to execute unofficial code (homebrew) on the Nintendo Switch (NS). This page is a list of known and public NS System Flaws.
+System Flaws are used to execute unofficial code (homebrew) on the Nintendo Switch. This page is a list of known and public Switch System Flaws.
 
-=List of NS System Flaws=
+=List of Switch System Flaws=
 
 There are currently no known NS exploits. (That being a Nintendo console wouldn't be delayed...)
 
@@ -45,8 +45,8 @@ There are currently no known NS exploits. (That being a Nintendo console wouldn'
 |
 |-
 |}
-== ''Kernel'' software==
-===''Kernel''===
+== Kernel? software==
+===Kernel?===
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -58,7 +58,7 @@ There are currently no known NS exploits. (That being a Nintendo console wouldn'
 !  Public disclosure timeframe
 !  Discovered by
 |-
-|  No public ''Kernel'' exploits 
+|  No public Kernel? exploits 
 |
 |
 |

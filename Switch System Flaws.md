@@ -1,8 +1,8 @@
 System Flaws are used to execute unofficial code (homebrew) on the
-Nintendo Switch (NS). This page is a list of known and public NS System
+Nintendo Switch. This page is a list of known and public Switch System
 Flaws.
 
-# List of NS System Flaws
+# List of Switch System Flaws
 
 There are currently no known NS exploits. (That being a Nintendo console
 wouldn't be
@@ -24,11 +24,11 @@ delayed...)
 | No public ARM TrustZone exploits |             |                                |                         |                                               |                               |                             |               |
 |                                  |             |                                |                         |                                               |                               |                             |               |
 
-## *Kernel* software
+## Kernel? software
 
-### *Kernel*
+### Kernel?
 
-| Summary                     | Description | Successful exploitation result | Fixed in system version | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by |
-| --------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
-| No public *Kernel* exploits |             |                                |                         |                                               |                               |                             |               |
-|                             |             |                                |                         |                                               |                               |                             |               |
+| Summary                    | Description | Successful exploitation result | Fixed in system version | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by |
+| -------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
+| No public Kernel? exploits |             |                                |                         |                                               |                               |                             |               |
+|                            |             |                                |                         |                                               |                               |                             |               |
