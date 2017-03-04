@@ -1,0 +1,28 @@
+{{Main page box|Navigation|Main Page/Navigation}}
+<div style="margin: -.3em -1em -1em -1em;">
+{| width="100%" bgcolor="#fff" border="0" cellpadding="2px" cellspacing="2px" style="margin:auto;"
+|- align="center" bgcolor="#e7eef6"
+! width="33%" | '''General''' <!-- Stuff not directly related to reverse-engineering, system documentation, and homebrew -->
+! width="33%" | '''Homebrew''' <!-- Homebrew and exploitation -->
+! width="33%" | '''Switch hardware''' <!-- 3DS Hardware and its interfaces -->
+|- valign="top" style="background: #F5FAFF;"
+| 
+|
+|
+*[[Hardware|Overview]]
+|}
+</div>
+
+<div style="margin: -.3em -1em -1em -1em; margin-top: +1em">
+{| width="100%" bgcolor="#fff" border="0" cellpadding="2px" cellspacing="2px" style="margin:auto;"
+|- align="center" bgcolor="#e7eef6"
+! width="33%" | '''Switch Operating System''' 
+! width="33%" | '''Switch Software Stack'''
+! width="33%" | '''Switch Content'''
+|- valign="top" style="background: #F5FAFF;"
+| 
+|
+|
+|}
+</div>
+{{box-footer-empty}}
