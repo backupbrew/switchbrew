@@ -12,7 +12,7 @@
 |-
 | PMU || MAX77620A
 |-
-| Audio Codec || Realtek ALC5639
+| Audio || Realtek ALC5639
 |-
 |}
 
