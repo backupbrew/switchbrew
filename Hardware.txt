@@ -10,7 +10,7 @@
 |-
 | Wifi/BT || Broadcom BCM4356XKUBG
 |-
-| PMU || MAX77620A
+| PMIC || Maxim Integrated MAX77620AEWJ+T 
 |-
 | Audio || Realtek ALC5639
 |-

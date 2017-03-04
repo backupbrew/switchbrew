@@ -27,8 +27,8 @@ Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 <td><p>Broadcom BCM4356XKUBG</p></td>
 </tr>
 <tr class="odd">
-<td><p>PMU</p></td>
-<td><p>MAX77620A</p></td>
+<td><p>PMIC</p></td>
+<td><p>Maxim Integrated MAX77620AEWJ+T</p></td>
 </tr>
 <tr class="even">
 <td><p>Audio</p></td>
