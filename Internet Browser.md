@@ -7,7 +7,10 @@ no app for it. However, it can be accessed via an
 [exploit](https://www.reddit.com/r/NintendoSwitch/comments/5x9g68/browser_and_video_player_are_fully_functional/).
 When linking the Nintendo Account with Facebook, the Facebook Auth
 website will open, offering a search box that can be used to browse the
-internet.
+internet. Alternatively, it can be accessed with [custom DNS
+settings](https://gbatemp.net/threads/web-browser-kind-of-on-the-switch.463094/)
+which simulate a Wi-Fi login
+page.
 
 ## Known User Agent Strings
 
