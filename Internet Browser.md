@@ -1,5 +1,7 @@
 <b>Internet Browser</b> *(unconfirmed)* is a web browser preloaded on
-the Nintendo Switch. It is presumably based on Webkit.  
+the Nintendo Switch. It is the [NetFront
+NX](https://web.archive.org/web/20170304075230/https://gl.access-company.com/news_event/archives/2017/170303/)
+browser, which is based on Webkit.  
 The browser functionality is not accessible to the user, since there is
 no app for it. However, it can be accessed via an
 [exploit](https://www.reddit.com/r/NintendoSwitch/comments/5x9g68/browser_and_video_player_are_fully_functional/).
