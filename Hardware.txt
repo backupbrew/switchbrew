@@ -2,12 +2,14 @@
 {| class="wikitable"
 ! Type !! 
 |-
-| SoC     || NVidia (ODNX02-A2)??
+| SoC     || NVidia ODNX02-A2
 |-
 | Screen  || [http://www.nintendo.com/switch/features/tech-specs/#switch-section 6.2-inch, multi-touch capacitive LCD screen]
 |-
 | Storage || Samsung KLMBG2JENB-B041 32GB 
 |-
-| Wifi    || ??
+| Wifi/BT || Broadcom BCM4356XKUBG
 |-
 |}
+
+https://www.sosav.fr/guides/consoles/nintendo/nintendo-salon/nintendo-switch/demontage-complet/
