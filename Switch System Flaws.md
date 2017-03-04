@@ -4,9 +4,8 @@ Flaws.
 
 # List of Switch System Flaws
 
-There are currently no known NS exploits. (That being a Nintendo console
-wouldn't be
-delayed...)
+There are currently no public/known Switch System
+Flaws.
 
 ## Hardware
 
