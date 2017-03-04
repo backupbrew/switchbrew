@@ -10,6 +10,10 @@
 |-
 | Wifi/BT || Broadcom BCM4356XKUBG
 |-
+| PMU || MAX77620A
+|-
+| Audio Codec || Realtek ALC5639
+|-
 |}
 
 https://www.sosav.fr/guides/consoles/nintendo/nintendo-salon/nintendo-switch/demontage-complet/
