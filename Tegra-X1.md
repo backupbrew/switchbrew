@@ -44,9 +44,8 @@ Display
 
 Storage
 
-  - Storage interface e-MMC 5.1 (HS533), CMD
-    Queuing
+  - Storage interface e-MMC 5.1 (HS533), CMD Queuing
 
-Links
+Tegra X1 TRM datasheet
 
-  - <http://international.download.nvidia.com/pdf/tegra/Tegra-X1-whitepaper-v1.0.pdf>
+  - <https://drive.google.com/file/d/0B5cebp2-yLm5YURqeFROb2hwOUk/view>
