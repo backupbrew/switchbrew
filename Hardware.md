@@ -1,11 +1,36 @@
 ## Specifications
 
-| Type    |                                                                                                                   |
-| ------- | ----------------------------------------------------------------------------------------------------------------- |
-| SoC     | NVidia ODNX02-A2                                                                                                  |
-| Screen  | [6.2-inch, multi-touch capacitive LCD screen](http://www.nintendo.com/switch/features/tech-specs/#switch-section) |
-| Storage | Samsung KLMBG2JENB-B041 32GB                                                                                      |
-| Wifi/BT | Broadcom BCM4356XKUBG                                                                                             |
-|         |                                                                                                                   |
+<table>
+<thead>
+<tr class="header">
+<th><p>Type</p></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>SoC</p></td>
+<td><p>NVidia ODNX02-A2</p></td>
+</tr>
+<tr class="even">
+<td><p>Screen</p></td>
+<td><p><a href="http://www.nintendo.com/switch/features/tech-specs/#switch-section">6.2-inch, multi-touch capacitive LCD screen</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>Storage</p></td>
+<td><p>Samsung KLMBG2JENB-B041 32 GB eMMC<br />
+or<br />
+Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
+</tr>
+<tr class="even">
+<td><p>Wifi/BT</p></td>
+<td><p>Broadcom BCM4356XKUBG</p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 <https://www.sosav.fr/guides/consoles/nintendo/nintendo-salon/nintendo-switch/demontage-complet/>
