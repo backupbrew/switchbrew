@@ -1,3 +1,25 @@
 The 2.0 release added the eShop functionality, the ability to add friends via Friend Codes, and to post screenshots to Facebook and Twitter.
 
-There is no official changelog from Nintendo regarding this update.
+This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 official changelog] from Nintendo regarding this update:
+
+'''Improvements Included in Version 2.0.0'''
+
+'''The following network features are now available'''
+ * Nintendo Account required. Some features may not be available in all countries/regions.
+* Playing online
+**Online multiplayer available for free until the paid online service launches in fall 2017. Not available in all countries.
+*Adding friends
+**Friends can be added from My Page, head to the HOME Menu and select your icon on the upper left.
+*Sharing Album screenshots to Facebook and Twitter
+*Browsing and purchasing content on Nintendo eShop
+*Receiving News relating to games, Nintendo eShop discounts, and promotions
+*Earning My Nintendo points for game card (retail version)
+
+'''Added the following system functionality'''
+*Update game software
+*Turn on the TV automatically when placing the Nintendo Switch console in the Nintendo Switch dock.
+**HDMI settings must also be enabled on your TV. Some TV models may be unable to use this feature. To turn on this feature for the Nintendo Switch console, head to System Settings > TV Settings > Match TV Power State
+*Display the battery percentage on the HOME Menu
+**To turn this ON/OFF, head to System Settings > System > Console Battery (%)
+*Format the microSD card
+**To format, head to System Settings > System > Initialize > Format microSD Card
