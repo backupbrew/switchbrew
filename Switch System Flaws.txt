@@ -45,7 +45,7 @@ There are currently no public/known Switch System Flaws.
 |
 |-
 |}
-== Kernel? software==
+== Kernel software==
 ===Kernel===
 {| class="wikitable" border="1"
 |-

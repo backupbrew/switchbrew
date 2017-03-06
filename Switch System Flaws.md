@@ -23,7 +23,7 @@ Flaws.
 | No public ARM TrustZone exploits |             |                                |                         |                                               |                               |                             |               |
 |                                  |             |                                |                         |                                               |                               |                             |               |
 
-## Kernel? software
+## Kernel software
 
 ### Kernel
 
