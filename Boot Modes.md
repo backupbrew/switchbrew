@@ -1,11 +1,17 @@
-The recovery mode (also known as Safe Mode Boot) can be accessed when
-turning on the Nintendo Switch while holding + & - (volume buttons).
-This menu is made to update your Nintendo Switch through internet, if an
-update previously failed.
+The recovery mode (also known as Maintenance Mode on version 1.0.0) can
+be accessed when turning on the Nintendo Switch while holding + & -
+(volume buttons). This menu is made to update your Nintendo Switch
+through internet, if an update previously failed. It also includes the
+ability to format/initialize the console with or without keeping user
+info, screenshots, and saves
 
 However it is possible to use this menu to delete the nagging update
 message if your console downloaded an update. It is believed that this
 menu simply erases all update data, as it should normally be accessed
 when the update files are corrupted.
 
-This is called maintenance mode on 1.0, and recovery mode on 2.0
+**Other Notes:**
+
+Maintenance Mode (the 1.0.0 menu) does not have the system update
+option. However, downloaded update data is still deleted when this menu
+is accessed.
