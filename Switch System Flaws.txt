@@ -3,7 +3,7 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 
 =List of Switch System Flaws=
 
-There are currently no public/known Switch System Flaws.
+There are currently no public Switch System Flaws.
 
 == Hardware == 
 {| class="wikitable" border="1"

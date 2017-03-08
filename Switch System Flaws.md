@@ -4,7 +4,7 @@ Flaws.
 
 # List of Switch System Flaws
 
-There are currently no public/known Switch System
+There are currently no public Switch System
 Flaws.
 
 ## Hardware
