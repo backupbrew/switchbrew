@@ -23,3 +23,5 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 **To turn this ON/OFF, head to System Settings > System > Console Battery (%)
 *Format the microSD card
 **To format, head to System Settings > System > Initialize > Format microSD Card
+== Important Information for Switch Hackers ==
+The Nintendo Switch '''does not''' lock regions of games. As such, there is no reason to target this area when examing firmware.
