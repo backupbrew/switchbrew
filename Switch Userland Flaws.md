@@ -1,0 +1,13 @@
+# Switch Userland Flaws
+
+(fill
+this)
+
+## Browser userspace
+
+### WebKit
+
+| Summary       | Description                                                                                                                            | Fixed with software update | Newest software update this flaw was checked for | Timeframe this was discovered | Discovered by |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | ------------------------------------------------ | ----------------------------- | ------------- |
+| CVE-2016-4657 | A Proof-of-concept webkit exploit using switch web browser : <https://github.com/LiveOverflow/lo_nintendoswitch/blob/master/poc1.html> | None                       | 2.0.0                                            | 12/03/17                      | ???           |
+|               |                                                                                                                                        |                            |                                                  |                               |               |
