@@ -15,7 +15,7 @@
 | A Proof-of-concept webkit exploit using switch web browser : https://github.com/LiveOverflow/lo_nintendoswitch/blob/master/poc1.html
 | None
 | 2.0.0
-| 12/03/17
+| 10/03/17
 | ???
 |-
 |}
