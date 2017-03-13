@@ -9,6 +9,7 @@
 | 
 |
 *[[Switch System Flaws]]
+*[[Switch Userland Flaws]]
 |
 *[[Hardware|Overview]]
 *[[Joy-Con]]
