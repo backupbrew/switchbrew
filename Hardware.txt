@@ -16,7 +16,7 @@
 |-
 |}
 
-[[eMMC pinout]]
+{{:EMMC_pinout}}
 
 https://www.sosav.fr/guides/consoles/nintendo/nintendo-salon/nintendo-switch/demontage-complet/
 
