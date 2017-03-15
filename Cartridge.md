@@ -16,7 +16,29 @@ Credit images: smiba
 
 ![CartridgeBack.jpeg](CartridgeBack.jpeg "CartridgeBack.jpeg")
 
+# Zelda: Breath of the wild
+
+Credit images: Retr0id
+([link](http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/))
+
+### Overview
+
+![CartridgeZelda.jpeg](CartridgeZelda.jpeg "CartridgeZelda.jpeg")
+
+### Frontside
+
+![CartridgeZeldaFront.jpeg](CartridgeZeldaFront.jpeg
+"CartridgeZeldaFront.jpeg")
+
+### Backside
+
+![CartridgeZeldaBack.jpeg](CartridgeZeldaBack.jpeg
+"CartridgeZeldaBack.jpeg")
+
 # Schematic
+
+Credit images: smiba
+([link](http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/))
 
 ### Connector Pinout Schematic
 

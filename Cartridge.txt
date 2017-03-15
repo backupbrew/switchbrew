@@ -11,7 +11,20 @@ Credit images: smiba ([http://gbatemp.net/threads/switch-cartridge-reverse-engin
 === Backside ===
 [[File:CartridgeBack.jpeg|600px]]
 
+= Zelda: Breath of the wild =
+Credit images: Retr0id ([http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/ link])
+
+=== Overview === 
+[[File:CartridgeZelda.jpeg|600px]]
+
+=== Frontside ===
+[[File:CartridgeZeldaFront.jpeg|600px]]
+
+=== Backside ===
+[[File:CartridgeZeldaBack.jpeg|600px]]
+
 = Schematic =
+Credit images: smiba ([http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/ link])
 
 === Connector Pinout Schematic ===
 [[File:CatridgePinout.png|600px]]
