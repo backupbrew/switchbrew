@@ -13,6 +13,7 @@
 |
 *[[Hardware|Overview]]
 *[[Joy-Con]]
+*[[Cartridge]]
 |}
 </div>
 
