@@ -1,0 +1,20 @@
+= 1,2 Switch =
+
+Credit images: smiba ([http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/ link])
+
+=== Frontside ===
+[[File:CartridgeFront.jpeg|600px]]
+
+=== Frontside (bare) ===
+[[File:CartridgeFrontBare.jpeg|600px]]
+
+=== Backside ===
+[[File:CartridgeBack.jpeg|600px]]
+
+= Schematic =
+
+=== Connector Pinout Schematic ===
+[[File:CatridgePinout.png|600px]]
+
+=== Chip Pinout Schematic ===
+[[File:CartridgePinoutTsop.png|600px]]
