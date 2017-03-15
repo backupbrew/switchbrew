@@ -12,10 +12,11 @@
 !  Discovered by
 |-
 | CVE-2016-4657 
-| A Proof-of-concept webkit exploit using switch web browser : https://github.com/LiveOverflow/lo_nintendoswitch/blob/master/poc1.html
+| WebKit exploit discovered around August 2016. Most notably used in the iOS 9.3.X exploit. A simple PoC can be seen [https://github.com/LiveOverflow/lo_nintendoswitch/blob/master/poc1.html here]. First known use on the Switch includes [https://twitter.com/qwertyoruiopz Qwertyoruiop] using a version of his iOS 9.3 hack without iOS specific instructions
 | None
 | 2.0.0
-| March 4th 2017
+| Original: August 2016
+Switch: March 4th 2017
 | ???
 |-
 |}
