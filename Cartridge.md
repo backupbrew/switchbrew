@@ -3,6 +3,10 @@
 Credit images: smiba
 ([link](http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/))
 
+### Description
+
+Package: TSOP-48 Manufacturer: Unknown
+
 ### Frontside
 
 ![CartridgeFront.jpeg](CartridgeFront.jpeg "CartridgeFront.jpeg")
@@ -20,6 +24,10 @@ Credit images: smiba
 
 Credit images: Retr0id
 ([link](http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/))
+
+### Description
+
+Package: Custom Manufacturer: Macronix (MX)
 
 ### Overview
 

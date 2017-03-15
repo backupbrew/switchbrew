@@ -2,6 +2,10 @@
 
 Credit images: smiba ([http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/ link])
 
+=== Description ===
+Package: TSOP-48
+Manufacturer: Unknown
+
 === Frontside ===
 [[File:CartridgeFront.jpeg|600px]]
 
@@ -13,6 +17,10 @@ Credit images: smiba ([http://gbatemp.net/threads/switch-cartridge-reverse-engin
 
 = Zelda: Breath of the wild =
 Credit images: Retr0id ([http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/ link])
+
+=== Description ===
+Package: Custom
+Manufacturer: Macronix (MX)
 
 === Overview === 
 [[File:CartridgeZelda.jpeg|600px]]
