@@ -5,7 +5,8 @@ Credit images: smiba
 
 ### Description
 
-Package: TSOP-48 Manufacturer: Unknown
+  - Package: TSOP-48
+  - Manufacturer: Unknown
 
 ### Frontside
 
@@ -27,7 +28,8 @@ Credit images: Retr0id
 
 ### Description
 
-Package: Custom Manufacturer: Macronix (MX)
+  - Package: Custom
+  - Manufacturer: Macronix (MX)
 
 ### Overview
 
