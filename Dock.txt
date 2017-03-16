@@ -2,11 +2,11 @@
 {| class="wikitable"
 ! Type !! 
 |-
-| Video Encoder || MegaChips STDP2550 
+| Video Converter || MegaChips STDP2550 
 |-
 | USB Hub || VIA Labs VL210 USB 3.0 Hub Controller
 |-
-| Flash || Macronix MX25L512E 512 Kb CMOS <br>and<br> MX25V2006E 2 Mb CMOS
+| Flash || Macronix MX25L512E 512 Kb CMOS <br>and<br> Macronix MX25V2006E 2 Mb CMOS
 |-
 |}
 

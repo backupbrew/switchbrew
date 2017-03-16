@@ -9,7 +9,7 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Video Encoder</p></td>
+<td><p>Video Converter</p></td>
 <td><p>MegaChips STDP2550</p></td>
 </tr>
 <tr class="even">
@@ -20,7 +20,7 @@
 <td><p>Flash</p></td>
 <td><p>Macronix MX25L512E 512 Kb CMOS<br />
 and<br />
-MX25V2006E 2 Mb CMOS</p></td>
+Macronix MX25V2006E 2 Mb CMOS</p></td>
 </tr>
 <tr class="even">
 <td></td>
