@@ -45,4 +45,5 @@ Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 
 1\.
 <https://www.sosav.fr/guides/consoles/nintendo/nintendo-salon/nintendo-switch/demontage-complet/>
-2. <https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263>
+
+2\. <https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263>
