@@ -1,14 +1,15 @@
-== Specifications ==
+The Joy-Cons use bluetooth or a wired connection to communicate with the console, depending if they are physically connected to it or not.<br>
+dekuNukem has started RE on the protocols used [https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering].
+
+==Firmware==
+The firmware of the Joy-Cons seems to be generic across all instances. Details such as the handedness of the controller and the color is just indicated in a configuration part of the flash. Judging by quick glance at the firmware, it's probably identical to that used on the Pro Controller as well.
 {| class="wikitable"
-! Type !! 
+! Controller || 1.0.0
 |-
-| Technology     || Bluetooth
+| Joy-Con Left (Blue) || [[:File:pad.L.bin|flash dump]]
 |-
-| Interface     || HID
-|-
-
+| Joy-Con Right (Red) || [[:File:pad.R.bin|flash dump]]
 |}
-
 
 == Left & Right Separate Joy-con ==
 
