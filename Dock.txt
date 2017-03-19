@@ -1,14 +1,25 @@
-== Specifications ==
+== Components ==
 {| class="wikitable"
-! Type !! 
+! Function || Component || Notes
 |-
-| Video Converter || MegaChips STDP2550 
+| DP->HDMI Converter || MegaChips STDP2550 "Mystique" || 2Mb flash contains firmware
 |-
-| USB Hub || VIA Labs VL210 USB 3.0 Hub Controller
+| USB Hub || VIA Labs VL210 USB 3.0 Hub Controller || 512Kb flash is configuration storage
 |-
-| Flash || Macronix MX25L512E 512 Kb CMOS <br>and<br> Macronix MX25V2006E 2 Mb CMOS
+| USB Device || Cortex-M0 based (STM32F0-ish)<br>"32P048"
+| SWD clearly labelled and enabled<br>Provides control of the Mystique<br>Dumps (fw-1.0.0):<br>[[:File:Dock.stm.08000000-08008000.bin|flash]]<br>[[:File:Dock.stm.1fffc400-1ffffc00.bin|sysmem]]<br>[[:File:Dock.stm.20000000-20001800.bin|SRAM]]
 |-
+| rowspan="2" | Flash 
+| Macronix MX25L512E 512Kb CMOS || [[:File:Dock.512K.bin|dump (fw-1.0.0)]]
+|-
+| Macronix MX25V2006E 2Mb CMOS || [[:File:Dock.2M.bin|dump (fw-1.0.0)]]
+|-
+| rowspan="2" | Unknown
+| M92T17 623382 || rowspan="2" | Similar part on the console mainboard
+|-
+| M92T55 633416
 |}
 
-==Notes==
-1. https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263
+==External Resources==
+# https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263
+# https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering
