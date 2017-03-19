@@ -28,7 +28,8 @@ Provides control of the Mystique<br />
 Dumps (fw-1.0.0):<br />
 <a href=":File:Dock.stm.08000000-08008000.bin.md" title="wikilink">flash</a><br />
 <a href=":File:Dock.stm.1fffc400-1ffffc00.bin.md" title="wikilink">sysmem</a><br />
-<a href=":File:Dock.stm.20000000-20001800.bin.md" title="wikilink">SRAM</a></p></td>
+<a href=":File:Dock.stm.20000000-20001800.bin.md" title="wikilink">SRAM</a><br />
+<a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/c2/f8/8a/f2/18/e6/43/96/DM00031936.pdf/files/DM00031936.pdf/jcr:content/translations/en.DM00031936.pdf">Relevant manual</a></p></td>
 </tr>
 <tr class="even">
 <td><p>Flash</p></td>
@@ -53,7 +54,9 @@ Dumps (fw-1.0.0):<br />
 </tbody>
 </table>
 
-## External Resources
+## Other Resources
 
-1.  <https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263>
-2.  <https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering>
+1.  [ifixit
+    teardown](https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263)
+2.  [dekuNukem's
+    RE](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering)

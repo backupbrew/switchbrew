@@ -7,7 +7,7 @@
 | USB Hub || VIA Labs VL210 USB 3.0 Hub Controller || 512Kb flash is configuration storage
 |-
 | USB Device || Cortex-M0 based (STM32F0-ish)<br>"32P048"
-| SWD clearly labelled and enabled<br>Provides control of the Mystique<br>Dumps (fw-1.0.0):<br>[[:File:Dock.stm.08000000-08008000.bin|flash]]<br>[[:File:Dock.stm.1fffc400-1ffffc00.bin|sysmem]]<br>[[:File:Dock.stm.20000000-20001800.bin|SRAM]]
+| SWD clearly labelled and enabled<br>Provides control of the Mystique<br>Dumps (fw-1.0.0):<br>[[:File:Dock.stm.08000000-08008000.bin|flash]]<br>[[:File:Dock.stm.1fffc400-1ffffc00.bin|sysmem]]<br>[[:File:Dock.stm.20000000-20001800.bin|SRAM]]<br>[http://www.st.com/content/ccc/resource/technical/document/reference_manual/c2/f8/8a/f2/18/e6/43/96/DM00031936.pdf/files/DM00031936.pdf/jcr:content/translations/en.DM00031936.pdf Relevant manual]
 |-
 | rowspan="2" | Flash 
 | Macronix MX25L512E 512Kb CMOS || [[:File:Dock.512K.bin|dump (fw-1.0.0)]]
@@ -20,6 +20,6 @@
 | M92T55 633416
 |}
 
-==External Resources==
-# https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263
-# https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering
+==Other Resources==
+# [https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263 ifixit teardown]
+# [https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering dekuNukem's RE]
