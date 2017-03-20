@@ -5,3 +5,8 @@
 [[File:HAC-EMMC-Side-A.png|600px]]
 
 Supply power via the VCC 3.3V and 1.8V pins, and solder the CLK, CMD, and DAT0 pins to an SD Card reader in order to extract the data off the eMMC chip.
+
+=== eMMC Connector ===
+[[File:HAC-EMMC-Connector-Plug.jpg|600px]]
+
+The eMMC connector plug on the board mates with the receptacle on the Switch motherboard. The receptacle is a [http://www.molex.com/molex/products/datasheet.jsp?part=active/5009130302_PCB_RECEPTACLES.xml&channel=Products&Lang=en-US Molex 5009130302], and is available from retailers such as [https://www.digikey.com/product-detail/en/molex-llc/5009130302/WM6833CT-ND/3045233 Digi-Key].
