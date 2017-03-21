@@ -2,7 +2,7 @@
 {| class="wikitable"
 ! Function || Component || Notes
 |-
-| DP->HDMI Converter || MegaChips STDP2550 "Mystique" || 2Mb flash contains firmware <br> Based on STMicroelectronics's Mystique family of video converters.
+| MyDP -> HDMI Converter || MegaChips STDP2550 "Mystique" || 2Mb flash contains firmware <br> Based on STMicroelectronics Mystique family of DP converters.
 |-
 | USB Hub || VIA Labs VL210 USB 3.0 Hub Controller || 512Kb flash is configuration storage
 |-

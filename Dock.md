@@ -10,10 +10,10 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>DP-&gt;HDMI Converter</p></td>
+<td><p>MyDP -&gt; HDMI Converter</p></td>
 <td><p>MegaChips STDP2550 &quot;Mystique&quot;</p></td>
 <td><p>2Mb flash contains firmware<br />
-Based on STMicroelectronics's Mystique family of video converters.</p></td>
+Based on STMicroelectronics Mystique family of DP converters.</p></td>
 </tr>
 <tr class="even">
 <td><p>USB Hub</p></td>
