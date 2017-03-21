@@ -12,7 +12,8 @@
 <tr class="odd">
 <td><p>DP-&gt;HDMI Converter</p></td>
 <td><p>MegaChips STDP2550 &quot;Mystique&quot;</p></td>
-<td><p>2Mb flash contains firmware</p></td>
+<td><p>2Mb flash contains firmware<br />
+Based on STMicroelectronics's Mystique family of video converters.</p></td>
 </tr>
 <tr class="even">
 <td><p>USB Hub</p></td>
@@ -56,7 +57,7 @@ Dumps (fw-1.0.0):<br />
 
 ## Other Resources
 
-1.  [ifixit
+1.  [iFixit's Nintendo Switch
     teardown](https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263)
-2.  [dekuNukem's
-    RE](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering)
+2.  [dekuNukem's Reverse
+    Engineering](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering)

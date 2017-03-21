@@ -2,7 +2,7 @@
 {| class="wikitable"
 ! Function || Component || Notes
 |-
-| DP->HDMI Converter || MegaChips STDP2550 "Mystique" || 2Mb flash contains firmware
+| DP->HDMI Converter || MegaChips STDP2550 "Mystique" || 2Mb flash contains firmware <br> Based on STMicroelectronics's Mystique family of video converters.
 |-
 | USB Hub || VIA Labs VL210 USB 3.0 Hub Controller || 512Kb flash is configuration storage
 |-
@@ -21,5 +21,5 @@
 |}
 
 ==Other Resources==
-# [https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263 ifixit teardown]
-# [https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering dekuNukem's RE]
+# [https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263 iFixit's Nintendo Switch teardown]
+# [https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering dekuNukem's Reverse Engineering]
