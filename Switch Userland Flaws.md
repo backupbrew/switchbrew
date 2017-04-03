@@ -2,8 +2,6 @@ This page lists vulnerabilities / exploits for Nintendo Switch
 applications and
 applets
 
-# List of Switch Userland Flaws
-
 ## Browser userspace
 
 ### WebKit
