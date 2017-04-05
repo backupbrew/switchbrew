@@ -60,6 +60,8 @@
 |-
 | 0x1D || svcArbitrateAddress? || X0=ptr, W1=value || W0=result
 |-
+| .... || ? || ? || ?
+|-
 | 0x1F || svcConnectToPort || X1=port_name_str || W0=result, W1=handle
 |-
 | .... || ? || ? || ?

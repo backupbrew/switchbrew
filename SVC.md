@@ -31,6 +31,7 @@
 | 0x1B | svcUnlockMutex                                                   | X0=ptr                                                            | ?                         |
 | 0x1C | ?                                                                | X0=ptr0, X1=ptr, W2=tag, X3=timeout                               | W0=result                 |
 | 0x1D | svcArbitrateAddress?                                             | X0=ptr, W1=value                                                  | W0=result                 |
+| .... | ?                                                                | ?                                                                 | ?                         |
 | 0x1F | svcConnectToPort                                                 | X1=port\_name\_str                                                | W0=result, W1=handle      |
 | .... | ?                                                                | ?                                                                 | ?                         |
 | 0x21 | svcSendSyncRequest                                               | X0=handle                                                         | W0=result                 |
