@@ -1,0 +1,104 @@
+= System calls =
+{| class=wikitable
+! Id || Name || In || Out
+|-
+|  0x1 || svcSetupHeap || X1=size || W0=result, X1=outaddr
+|-
+|  0x2 || svcProtectMemory || X0=addr, X1=size, W2=prot || W0=result
+|-
+|  0x3 || svcSetMemoryState || X0=addr, X1=size, W2=state0, W3=state1 || W0=result
+|-
+|  0x4 || svcMirrorStack || X0=dstaddr, X1=srcaddr, X2=size || W0=result
+|-
+|  0x5 || svcUnmirrorStack || X0=dstaddr, X1=srcaddr, X2=size || W0=result
+|-
+|  0x6 || svcQueryMemory || X0=meminfo_ptr, X2=addr || W0=result, W1=pageinfo                                                         
+|-
+|  0x7 || svcExitProcess || None ||
+|-
+|  0x8 || svcCreateThread || ||
+|-
+|  0x9 || svcStartThread || W0=thread_handle ||
+|-
+|  0xA || svcExitThread || None ||                                                         
+|-
+|  0xB || svcSleepThread || X0=nano ||
+|-
+|  0xC || svcGetThreadPriority || W1=thread_handle || W0=result, W1=prio
+|-
+|  0xD || svcSetThreadPriority || W0=thread_handle, W1=prio || W0=result
+|-
+|  0xE || svcGetThreadAffinityMask || W2=thread_handle || W0=result, W1=out, X2=out
+|-
+|  0xF || svcSetThreadAffinityMask || W0=thread_handle, W1=in, X2=in2 || W0=result
+|-
+| 0x10 || svcGetCurrentProcessorNumber || None || W0/X0=cpuid
+|-
+| 0x11 || svcGetMemoryBlockSomethingA? || W0=handle || ?
+|-
+| 0x12 || svcGetMemoryBlockSomethingB? || W0=handle || ?
+|-
+| 0x13 || svcMapMemoryBlock || W0=memblk_handle, X1=addr, X2=size, W3=perm || W0=result
+|-
+| 0x14 || svcUnmapMemoryBlock || W0=memblk_handle, X1=addr, X2=size || W0=result                                                 
+|-
+| 0x15 || svcCreateMemoryMirror || X1=addr, X2=size, W3=perm || W0=result, W1=handle
+|-
+| 0x16 || svcCloseHandle || W0=handle || W0=result
+|-
+| 0x17 || ? || ? || ?
+|-
+| 0x18 || svcWaitSynchronizationN || X1=handles_ptr, X2=num_handles. X3=timeout || W1=out
+|-
+| 0x19 || ? || W0=handle? || ?
+|-
+| 0x1A || svcLockMutex || W0=old_val, X1=ptr, W2=new_val || ?                                         
+|-
+| 0x1B || svcUnlockMutex || X0=ptr || ?
+|-
+| 0x1C || ? || X0=ptr0, X1=ptr, W2=tag, X3=timeout || W0=result
+|-
+| 0x1D || svcArbitrateAddress? || X0=ptr, W1=value || W0=result
+|-
+| 0x1F || svcConnectToPort || X1=port_name_str || W0=result, W1=handle
+|-
+| .... || ? || ? || ?
+|-
+| 0x21 || svcSendSyncRequest || X0=handle || W0=result
+|-
+| 0x22 || svcSendSyncRequestByBuf || X0=cmdbufptr, X1=size, X2=handle || W0=result
+|-
+| .... || ? || ? || ?
+|-
+| 0x25 || svcGetThreadId || W0=thread_handle || W0=result, X1=out
+|-
+| 0x26 || ??? || ? || ?
+|-
+| 0x27 || svcOutputDebugString || ||
+|-
+| 0x28 || svcPanic || X0=error? ||
+|-
+| 0x29 || svcGetHandleInfo || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
+|-
+| .... || ? || ? || ?
+|-
+| 0x40 || ??? || W2=?, X3=? || W0=result, W1=?, W2=?
+|-
+| 0x41 || ??? || X1=u32? || W0=result, W1=?
+|-
+| .... || ? || ? || ?
+|-
+| 0x43 || svcReplyAndReceive || X1=ptr_handles, W2=num_handles, X3=?, X4=timeout || W0=result, W1=handle_idx
+|-
+| 0x44 || svcReplyAndReceiveByBuf || X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=?, X6=timeout || W0=result, W1=handle_idx
+|-
+| 0x45 || ??? || None || W0=result, W1=?, W2=?
+|-
+| .... || ? || ? || ?
+|-
+| 0x50 || svcCreateMemoryBlock || W1=size?, W2=perm0, W3=perm1 || W0=result, W1=handle
+|-
+| 0x51 || svcMapMemoryMirror || X0=mirror_handle, X1=addr, X2=size, W3=perm || W0=result
+|-
+| 0x52 || svcUnmapMemoryMirror || W0=mirror_handle, X1=addr, X2=size || W0=result
+|}
