@@ -1,5 +1,3 @@
-# System calls
-
 ## System Data
 
 | Title-id         | Description                                            |
