@@ -1,0 +1,535 @@
+HID shared memory is a 0x40000 byte read-only segment of memory shared between applications for input. The segment contains structures for most if not all input methods available to applications.
+
+====== Memory Map ======
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x400
+| 0x3000
+| Capacitive Touchscreen
+|-
+| 0x3400
+| 0x400
+| Mouse
+|-
+| 0x3800
+| 0x400
+| Unknown, header and 17 entries
+|-
+| 0x3C00
+| 0x400
+| Unknown, header and 17 entries
+|-
+| 0x4000
+| 0x400
+| Unknown, header and 17 entries
+|-
+| 0x4400
+| 0x400
+| Unknown, header and 17 entries
+|-
+| 0x4800
+| 0x400
+| Unknown, header and 17 entries
+|-
+| 0x4C00
+| 0x200
+| Unknown
+|-
+| 0x4E00
+| 0x200
+| Unknown
+|-
+| 0x5000
+| 0x200
+| Unknown
+|-
+| 0x5A00
+| 0x4000
+| Controller Serials?
+|-
+| 0x9A00
+| 0x32000
+| Controllers
+|-
+| 0x3BA00
+| 0x4600
+| Unknown
+|-
+|}
+
+===== Capacitive Touchscreen =====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x28	
+| Touch Header	
+|-
+| 0x28	
+| 0x290 * 17	
+| Touch Entries	
+|-
+|}
+
+==== Touch Header ====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x4	
+| Unk	
+|-
+| 0x4	
+| 0x4	
+| Unk	
+|-
+| 0x8	
+| 0x4	
+| Unk	
+|-
+| 0xC	
+| 0x4	
+| Unk	
+|-
+| 0x10	
+| 0x8	
+| Unk	
+|-
+| 0x18	
+| 0x8	
+| Unk	
+|-
+| 0x20	
+| 0x8	
+| Timestamp	
+|-
+|}
+
+==== Touch Entry ====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x10	
+| Touch Entry Header	
+|-
+| 0x10	
+| 0x28 * 16	
+| Touch Data	
+|-
+|}
+
+=== Touch Structure Header ===
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x8	
+| Timestamp	
+|-
+| 0x8	
+| 0x8	
+| Number of Touches	
+|-
+|}
+
+=== Touch Data Entry ===
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x8	
+| Timestamp	
+|-
+| 0x8	
+| 0x8	
+| Unknown	
+|-
+| 0x10	
+| 0x4	
+| Touch X	
+|-
+| 0x14	
+| 0x4	
+| Touch Y	
+|-
+| 0x18	
+| 0x4	
+| Touch Diameter X	
+|-
+| 0x1C	
+| 0x4	
+| Touch Diameter Y	
+|-
+| 0x20	
+| 0x4	
+| Angle	
+|-
+| 0x24	
+| 0x4	
+| Unknown	
+|-
+|}
+
+===== Mouse =====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x20	
+| Mouse Header	
+|-
+| 0x20	
+| 0x30 * 17	
+| Mouse Entries	
+|-
+|}
+
+==== Mouse Header ====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x4	
+| Timestamp?	
+|-
+| 0x4	
+| 0x4	
+| Unknown	
+|-
+| 0x8	
+| 0x4	
+| Unknown	
+|-
+| 0xC	
+| 0x4	
+| Unknown	
+|-
+| 0x10	
+| 0x8	
+| 6 when connected, 1 disconnected	
+|-
+| 0x18	
+| 0x8	
+| Unknown	
+|-
+|}
+
+==== Mouse Entry ====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x8	
+| Timestamp	
+|-
+| 0x8	
+| 0x8	
+| Timestamp Again?	
+|-
+| 0x10	
+| 0x4	
+| Mouse X	
+|-
+| 0x14	
+| 0x4	
+| Mouse Y	
+|-
+| 0x18	
+| 0x4	
+| Mouse X Change	
+|-
+| 0x1C	
+| 0x4	
+| Mouse Y Change	
+|-
+| 0x20	
+| 0x4	
+| Scroll Change Y	
+|-
+| 0x24	
+| 0x4	
+| Scroll Change X?	
+|-
+| 0x28	
+| 0x8	
+| Mouse Buttons	
+|-
+|}
+
+===== Controller Serials? =====
+
+This section contains a series of 16 structures 0x400 bytes large.
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x30	
+| 0xE	
+| Controller Serial	
+|-
+| 0x60	
+| 0xE	
+| Controller Serial	
+|-
+|}
+
+===== Controllers =====
+
+This section contains a series of 10 0x5000 byte structures describing each available controller.
+{| class="wikitable" border="1"
+|-
+!   Controller Index
+!   Description
+|-
+| 0 to 7	
+| Players 1 to 8	
+|-
+| 8	
+| Handheld Mode	
+|-
+| 9	
+| Unknown	
+|-
+|}
+
+==== Controller ====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x28	
+| Controller Header	
+|-
+| 0x3A0	
+| 0x28 * 17	
+| Controller Joined States	
+|-
+| 0x10E0	
+| 0x28 * 17	
+| Controller Left States	
+|-
+| 0x1430	
+| 0x28 * 17	
+| Controller Right States	
+|-
+| 0x41D0	
+| 0x10	
+| Controller MAC	
+|-
+| 0x41F0	
+| 0x10	
+| Controller MAC	
+|-
+|}
+
+=== Controller Header ===
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x4
+| Status, bit3 pair, bit4 left, bit5 right
+|-
+| 0x4
+| 0x4
+| Is Joy-Con Half
+|-
+| 0x8
+| 0x4
+| Unknown, 2 for Joy-Con pair
+|-
+| 0xC
+| 0x4
+| RGBA Body Color (single Joy-Con)
+|-
+| 0x10
+| 0x4
+| RGBA Button Color (single Joy-Con)
+|-
+| 0x14
+| 0x4
+| Unknown
+|-
+| 0x18
+| 0x4
+| RGBA Body Color (right Joy-Con)
+|-
+| 0x1C
+| 0x4
+| RGBA Button Color (right Joy-Con)
+|-
+| 0x20
+| 0x4
+| RGBA Body Color (left Joy-Con)
+|-
+| 0x24
+| 0x4
+| RGBA Button Color (left Joy-Con)
+|-
+|}
+
+=== Controller State ===
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0
+| 0x8
+| Timestamp
+|-
+| 0x8
+| 0x8
+| Button State
+|-
+| 0xC
+| 0x4
+| Left Joystick X
+|-
+| 0x10
+| 0x4
+| Left Joystick Y
+|-
+| 0x14
+| 0x4
+| Right Joystick X
+|-
+| 0x18
+| 0x4
+| Right Joystick Y
+|-
+| 0x20
+| 0x8
+| Controller State (bit0 connected, bit1 wired)
+|-
+|}
+
+== Button State ==
+
+{| class="wikitable" border="1"
+|-
+!   Bit
+!   Button
+|-
+| 0
+| A
+|-
+| 1
+| B
+|-
+| 2
+| X
+|-
+| 3
+| Y
+|-
+| 4
+| Left Stick Pressed
+|-
+| 5
+| Right Stick Pressed
+|-
+| 6
+| L
+|-
+| 7
+| R
+|-
+| 8
+| ZL
+|-
+| 9
+| ZR
+|-
+| 10
+| Plus
+|-
+| 11
+| Minus
+|-
+| 12
+| Left
+|-
+| 13
+| Up
+|-
+| 14
+| Right
+|-
+| 15
+| Down
+|-
+| 16
+| Left Stick Left
+|-
+| 17
+| Left Stick Up
+|-
+| 18
+| Left Stick Right
+|-
+| 19
+| Left Stick Down
+|-
+| 20
+| Right Stick Left
+|-
+| 21
+| Right Stick Up
+|-
+| 22
+| Right Stick Right
+|-
+| 23
+| Right Stick Down
+|-
+|}
