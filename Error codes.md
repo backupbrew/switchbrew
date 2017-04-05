@@ -19,7 +19,7 @@
 | 0xCA01  | 101         | Invalid size (not page-aligned).                           |
 | 0xCC01  | 102         | Invalid address (not page-aligned).                        |
 | 0xD201  | 105         | Handle-table full.                                         |
-| 0xD401  | 106         | Invalid memory state (not page-aligned).                   |
+| 0xD401  | 106         | Invalid memory state.                                      |
 | 0xD801  | 108         | When trying to set executable permission on memory.        |
 | 0xE401  | 114         | Invalid handle.                                            |
 | 0xE601  | 115         | Syscall copy from user failed.                             |

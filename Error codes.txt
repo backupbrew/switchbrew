@@ -26,7 +26,7 @@
 |-
 | 0xD201 || 105 || Handle-table full.
 |-
-| 0xD401 || 106 || Invalid memory state (not page-aligned).
+| 0xD401 || 106 || Invalid memory state.
 |-
 | 0xD801 || 108 || When trying to set executable permission on memory.
 |-
