@@ -1,6 +1,6 @@
 = System calls =
 {| class=wikitable
-! Id || Name || In || Out
+! Id || scope="col" style="background-color: white;" | Name || In || Out
 |-
 |  0x1 || svcSetupHeap || X1=size || W0=result, X1=outaddr
 |-
