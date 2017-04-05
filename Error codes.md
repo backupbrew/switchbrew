@@ -10,6 +10,7 @@
 | Value | Name   |
 | ----- | ------ |
 | 1     | Kernel |
+| 2     | FS     |
 
 # Error codes
 
