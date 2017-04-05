@@ -40,7 +40,7 @@
 | 0x26 | ???                                                              | ?                                                                 | ?                         |
 | 0x27 | svcOutputDebugString                                             |                                                                   |                           |
 | 0x28 | svcPanic                                                         | X0=error?                                                         |                           |
-| 0x29 | svcGetHandleInfo                                                 | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out         |
+| 0x29 | [\#svcGetHandleInfo](#svcGetHandleInfo "wikilink")               | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out         |
 | .... | ?                                                                | ?                                                                 | ?                         |
 | 0x40 | ???                                                              | W2=?, X3=?                                                        | W0=result, W1=?, W2=?     |
 | 0x41 | ???                                                              | X1=u32?                                                           | W0=result, W1=?           |
@@ -98,7 +98,29 @@ Closing the returned handle automatically causes the bit32 in
 
 Works with num\_handles \<= 0x40, error on num\_handles == 0.
 
-Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
+Does not accept 0xFFFF8001 or 0xFFFF8000 as
+handles.
+
+## svcGetHandleInfo
+
+| Handle type | Id0 | Id1    | Description                                                    |
+| ----------- | --- | ------ | -------------------------------------------------------------- |
+| Process     | 0   | 0      | Code available mask. Always 0xF meaning all 4 cores available. |
+| Process     | 1   | 0      | Always 0xfffffffff0000000.                                     |
+| Process     | 2   | 0      | Randomized unknown base-address.                               |
+| Process     | 3   | 0      | Always 0x1000000000.                                           |
+| Process     | 4   | 0      | Randomized heap base-address.                                  |
+| Process     | 5   | 0      | Always 0x180000000.                                            |
+| Process     | 6   | 0      | Total memory usage?                                            |
+| Process     | 7   | 0      | Process heap size.                                             |
+| Zero        | 8   | 0      | Always 0.                                                      |
+| Zero        | 9   | 0      | This creates and returns an unknown handle.                    |
+| Zero        | 10  | \-1, 0 | ?                                                              |
+| Zero        | 11  | 0-3    | Returns random from TRNG. Used to seed usermode PRNGs.         |
+| Process     | 12  | 0      | Always 0x8000000.                                              |
+| Process     | 13  | 0      | Always 0x7ff8000000.                                           |
+| Process     | 14  | 0      | Start of stack mirror region.                                  |
+| Process     | 15  | 0      | Size of stack mirror region.                                   |
 
 ## svcMapMemoryMirror
 
