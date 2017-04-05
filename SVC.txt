@@ -4,11 +4,11 @@
 |-
 |  0x1 || svcSetupHeap || X1=size || W0=result, X1=outaddr
 |-
-|  0x2 || svcProtectMemory || X0=addr, X1=size, W2=prot || W0=result
+|  0x2 || [[#svcProtectMemory]] || X0=addr, X1=size, W2=prot || W0=result
 |-
-|  0x3 || svcSetMemoryState || X0=addr, X1=size, W2=state0, W3=state1 || W0=result
+|  0x3 || [[#svcSetMemoryState]] || X0=addr, X1=size, W2=state0, W3=state1 || W0=result
 |-
-|  0x4 || svcMirrorStack || X0=dstaddr, X1=srcaddr, X2=size || W0=result
+|  0x4 || [[#svcMirrorStack]] || X0=dstaddr, X1=srcaddr, X2=size || W0=result
 |-
 |  0x5 || svcUnmirrorStack || X0=dstaddr, X1=srcaddr, X2=size || W0=result
 |-
@@ -22,7 +22,7 @@
 |-
 |  0xA || svcExitThread || None ||                                                         
 |-
-|  0xB || svcSleepThread || X0=nano ||
+|  0xB || [[#svcSleepThread]] || X0=nano ||
 |-
 |  0xC || svcGetThreadPriority || W1=thread_handle || W0=result, W1=prio
 |-
@@ -42,13 +42,13 @@
 |-
 | 0x14 || svcUnmapMemoryBlock || W0=memblk_handle, X1=addr, X2=size || W0=result                                                 
 |-
-| 0x15 || svcCreateMemoryMirror || X1=addr, X2=size, W3=perm || W0=result, W1=handle
+| 0x15 || [[#svcCreateMemoryMirror]] || X1=addr, X2=size, W3=perm || W0=result, W1=handle
 |-
 | 0x16 || svcCloseHandle || W0=handle || W0=result
 |-
 | 0x17 || ? || ? || ?
 |-
-| 0x18 || svcWaitSynchronizationN || X1=handles_ptr, X2=num_handles. X3=timeout || W1=out
+| 0x18 || [[#svcWaitSynchronizationN]] || X1=handles_ptr, X2=num_handles. X3=timeout || W1=out
 |-
 | 0x19 || ? || W0=handle? || ?
 |-
@@ -98,7 +98,84 @@
 |-
 | 0x50 || svcCreateMemoryBlock || W1=size?, W2=perm0, W3=perm1 || W0=result, W1=handle
 |-
-| 0x51 || svcMapMemoryMirror || X0=mirror_handle, X1=addr, X2=size, W3=perm || W0=result
+| 0x51 || [[#svcMapMemoryMirror]] || X0=mirror_handle, X1=addr, X2=size, W3=perm || W0=result
 |-
-| 0x52 || svcUnmapMemoryMirror || W0=mirror_handle, X1=addr, X2=size || W0=result
+| 0x52 || [[#svcUnmapMemoryMirror]] || W0=mirror_handle, X1=addr, X2=size || W0=result
 |}
+
+== svcProtectMemory ==
+Bit2 of permission (exec) is not allowed.
+
+Setting write-only is not allowed either (bit1).
+
+== svcSetMemoryState ==
+{| class=wikitable
+! State0 || State1 || Action
+|-
+| 0 || 0 || Clear bit35 in [[#MemoryState]].
+|-
+| 8 || 0 || Clear bit35 in [[#MemoryState]].
+|-
+| 8 || 8 || Set bit35 in [[#MemoryState]].
+|}
+
+This might used for switching between cached and non-cached mappings.
+
+== svcMirrorStack ==
+Memory is only allowed to be mapped into a special region.
+
+Code can get the range of this region from [[#svcGetHandleInfo]].
+
+The source region gets reprotected to ---, and sets bit32 is set in [[#MemoryState]].
+
+== svcSleepThread ==
+Setting nano=0 means "yield thread".
+
+== svcCreateMemoryMirror ==
+This one reprotects the src block with perms you give it. It also sets bit32 into [[#MemoryState]].
+
+Executable bit perm not allowed.
+
+Closing the returned handle automatically causes the bit32 in [[#MemoryState]] to clear.
+
+== svcWaitSynchronizationN ==
+Works with num_handles <= 0x40, error on num_handles == 0.
+
+Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
+
+== svcMapMemoryMirror ==
+The newly mapped pages will have [[#MemoryState]] type 0xE.
+
+You must pass same size and permissions as given in svcCreateMemoryMirror, otherwise error.
+
+== svcUnmapMemoryMirror ==
+Size must match size given in map syscall, otherwise there's an invalid-size error.
+
+== MemoryState ==
+{| class=wikitable
+! Lower 8 bits || Type                 || Meaning
+|-
+| 0x3          || Code static          || .text and .rodata
+|-
+| 0x4          || Code                 || .data
+|-
+| 0x5          || Heap                 ||
+|-
+| 0x6          || Shared memory block  ||
+|-
+| 0x8          || Module code static   || .text and .rodata
+|-
+| 0x9          || Module code          || .data
+|-
+| 0xB          || Stack mirror         ||
+|-
+| 0xC          || Thread local storage ||
+|-
+| 0xE          || Memory mirror        ||
+|-
+| 0x10         || Reserved             ||
+|}
+
+Bit32: is_mirrored
+
+Bit35: is_uncached?
