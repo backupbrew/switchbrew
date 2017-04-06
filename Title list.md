@@ -42,6 +42,7 @@
 | Title-id         | Description                                            |
 | ---------------- | ------------------------------------------------------ |
 | 0100000000000800 | SSL trusted certificates                               |
+| 0100000000000801 | ?????                                                  |
 | 0100000000000802 | Random textures?                                       |
 | 0100000000000803 | Browser emojis                                         |
 | 0100000000000804 | HTML resources: Open-source licenses, seizure warnings |
@@ -55,17 +56,23 @@
 | 010000000000080C | EULA                                                   |
 | 010000000000080D | Blacklist URL                                          |
 | 010000000000080E | Geo Zoneinfo                                           |
+| 010000000000080F | ?????                                                  |
 | 0100000000000810 | Extended font                                          |
 | 0100000000000811 | Standard font                                          |
 | 0100000000000812 | Korean font                                            |
 | 0100000000000813 | Taiwanese font                                         |
 | 0100000000000814 | Chinese font                                           |
+| 0100000000000815 | ?????                                                  |
+| 0100000000000816 | ?????                                                  |
+| 0100000000000817 | ?????                                                  |
 | 0100000000000818 | System config                                          |
 | 0100000000000819 | Firmware package A                                     |
 | 010000000000081A | Firmware package B                                     |
+| 010000000000081B | ?????                                                  |
+| 010000000000081C | ?????                                                  |
 | 010000000000081D | Errdisp strings                                        |
 | 010000000000081E | Dummy file                                             |
 | 010000000000081F | Icosa system config                                    |
 | 0100000000000820 | Copper system config                                   |
 | 0100000000000821 | Hoag system config                                     |
-| 0100000000001011 | Browser applet                                         |
+| 0100000000001011 | Browser applet?                                        |
