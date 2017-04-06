@@ -68,3 +68,4 @@
 | 010000000000081F | Icosa system config                                    |
 | 0100000000000820 | Copper system config                                   |
 | 0100000000000821 | Hoag system config                                     |
+| 0100000000001011 | Browser applet                                         |
