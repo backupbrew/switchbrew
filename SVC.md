@@ -38,7 +38,7 @@
 | 0x22 | svcSendSyncRequestByBuf                                      | X0=cmdbufptr, X1=size, X2=handle                                  | W0=result                     |
 | .... | ?                                                            | ?                                                                 | ?                             |
 | 0x25 | svcGetThreadId                                               | W0=thread\_handle                                                 | W0=result, X1=out             |
-| 0x26 | ???                                                          | ?                                                                 | ?                             |
+| 0x26 | svcBreak                                                     | X0,X1,X2=info                                                     | ?                             |
 | 0x27 | svcOutputDebugString                                         |                                                                   |                               |
 | 0x28 | svcPanic                                                     | X0=error?                                                         |                               |
 | 0x29 | [\#svcGetHandleInfo](#svcGetHandleInfo "wikilink")           | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out             |
