@@ -25,7 +25,7 @@
 | 0x15 | [\#svcCreateMemoryMirror](#svcCreateMemoryMirror "wikilink") | X1=addr, X2=size, W3=perm                                         | W0=result, W1=handle          |
 | 0x16 | svcCloseHandle                                               | W0=handle                                                         | W0=result                     |
 | 0x17 | svcClearEvent                                                | W0=handle                                                         | W0=result                     |
-| 0x18 | [\#svcWaitEvents](#svcWaitEvents "wikilink")                 | X1=handles\_ptr, X2=num\_handles. X3=timeout                      | W1=out                        |
+| 0x18 | [\#svcWaitEvents](#svcWaitEvents "wikilink")                 | X1=handles\_ptr, X2=num\_handles. X3=timeout                      | W0=result, W1=handle\_idx     |
 | 0x19 | svcSignalEvent                                               | W0=handle                                                         | W0=result                     |
 | 0x1A | svcLockMutex                                                 | W0=old\_val, X1=ptr, W2=new\_val                                  | ?                             |
 | 0x1B | svcUnlockMutex                                               | X0=ptr                                                            | ?                             |

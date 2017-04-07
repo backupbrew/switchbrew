@@ -48,7 +48,7 @@
 |-
 | 0x17 || svcClearEvent || W0=handle || W0=result
 |-
-| 0x18 || [[#svcWaitEvents]] || X1=handles_ptr, X2=num_handles. X3=timeout || W1=out
+| 0x18 || [[#svcWaitEvents]] || X1=handles_ptr, X2=num_handles. X3=timeout || W0=result, W1=handle_idx
 |-
 | 0x19 || svcSignalEvent || W0=handle || W0=result
 |-
