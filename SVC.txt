@@ -46,11 +46,11 @@
 |-
 | 0x16 || svcCloseHandle || W0=handle || W0=result
 |-
-| 0x17 || ? || ? || ?
+| 0x17 || svcClearEvent || W0=handle || W0=result
 |-
-| 0x18 || [[#svcWaitSynchronizationN]] || X1=handles_ptr, X2=num_handles. X3=timeout || W1=out
+| 0x18 || [[#svcWaitEvents]] || X1=handles_ptr, X2=num_handles. X3=timeout || W1=out
 |-
-| 0x19 || ? || W0=handle? || ?
+| 0x19 || svcSignalEvent || W0=handle || W0=result
 |-
 | 0x1A || svcLockMutex || W0=old_val, X1=ptr, W2=new_val || ?                                         
 |-
@@ -86,7 +86,7 @@
 |-
 | 0x40 || ??? || W2=?, X3=? || W0=result, W1=?, W2=?
 |-
-| 0x41 || ??? || X1=u32? || W0=result, W1=?
+| 0x41 || svcAcceptSession || W1=port_handle || W0=result, W1=session_handle
 |-
 | .... || ? || ? || ?
 |-
@@ -94,7 +94,7 @@
 |-
 | 0x44 || svcReplyAndReceiveByBuf || X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=?, X6=timeout || W0=result, W1=handle_idx
 |-
-| 0x45 || ??? || None || W0=result, W1=?, W2=?
+| 0x45 || svcCreateEvent? || None || W0=result, W1=?, W2=?
 |-
 | .... || ? || ? || ?
 |-
