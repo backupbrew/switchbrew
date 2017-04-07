@@ -11,6 +11,7 @@
 | ----- | ------ |
 | 1     | Kernel |
 | 2     | FS     |
+| 21    | SM     |
 
 # Error codes
 
@@ -26,4 +27,7 @@
 | 0xEA01  | 117         | When you give 0 handles to svcWaitSynchronizationN.        |
 | 0xEE01  | 119         | When you give too many handles to svcWaitSynchronizationN. |
 | 0xFA01  | 125         | Wrong memory permission?                                   |
+| 0x10601 | 131         | Port max sessions exceeded                                 |
 | 0x7D402 | 1002        | Title-id not found                                         |
+| 0x0C15  | 6           | Invalid name (all zeroes)                                  |
+| 0x1015  | 8           | Permission denied                                          |
