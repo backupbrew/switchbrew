@@ -27,10 +27,10 @@
 | 0x17 | svcClearEvent                                                | W0=handle                                                         | W0=result                     |
 | 0x18 | [\#svcWaitEvents](#svcWaitEvents "wikilink")                 | X1=handles\_ptr, X2=num\_handles. X3=timeout                      | W0=result, W1=handle\_idx     |
 | 0x19 | svcSignalEvent                                               | W0=handle                                                         | W0=result                     |
-| 0x1A | svcLockMutex                                                 | W0=old\_val, X1=ptr, W2=new\_val                                  | ?                             |
-| 0x1B | svcUnlockMutex                                               | X0=ptr                                                            | ?                             |
-| 0x1C | ?                                                            | X0=ptr0, X1=ptr, W2=tag, X3=timeout                               | W0=result                     |
-| 0x1D | svcArbitrateAddress?                                         | X0=ptr, W1=value                                                  | W0=result                     |
+| 0x1A | svcLockMutex                                                 | W0=cur\_thread\_handle, X1=ptr, W2=req\_thread\_handle            |                               |
+| 0x1B | svcUnlockMutex                                               | X0=ptr                                                            |                               |
+| 0x1C | svcCondWait                                                  | X0=ptr0, X1=ptr, W2=thread\_handle, X3=timeout                    | W0=result                     |
+| 0x1D | svcCondBroadcast                                             | X0=ptr, W1=value                                                  | W0=result                     |
 | .... | ?                                                            | ?                                                                 | ?                             |
 | 0x1F | svcConnectToPort                                             | X1=port\_name\_str                                                | W0=result, W1=handle          |
 | .... | ?                                                            | ?                                                                 | ?                             |
@@ -39,7 +39,7 @@
 | .... | ?                                                            | ?                                                                 | ?                             |
 | 0x25 | svcGetThreadId                                               | W0=thread\_handle                                                 | W0=result, X1=out             |
 | 0x26 | svcBreak                                                     | X0,X1,X2=info                                                     | ?                             |
-| 0x27 | svcOutputDebugString                                         |                                                                   |                               |
+| 0x27 | svcOutputDebugString                                         | X0=str, X1=size                                                   |                               |
 | 0x28 | svcPanic                                                     | X0=error?                                                         |                               |
 | 0x29 | [\#svcGetHandleInfo](#svcGetHandleInfo "wikilink")           | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out             |
 | .... | ?                                                            | ?                                                                 | ?                             |

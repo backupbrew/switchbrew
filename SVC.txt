@@ -52,13 +52,13 @@
 |-
 | 0x19 || svcSignalEvent || W0=handle || W0=result
 |-
-| 0x1A || svcLockMutex || W0=old_val, X1=ptr, W2=new_val || ?                                         
+| 0x1A || svcLockMutex || W0=cur_thread_handle, X1=ptr, W2=req_thread_handle ||                                         
 |-
-| 0x1B || svcUnlockMutex || X0=ptr || ?
+| 0x1B || svcUnlockMutex || X0=ptr ||
 |-
-| 0x1C || ? || X0=ptr0, X1=ptr, W2=tag, X3=timeout || W0=result
+| 0x1C || svcCondWait || X0=ptr0, X1=ptr, W2=thread_handle, X3=timeout || W0=result
 |-
-| 0x1D || svcArbitrateAddress? || X0=ptr, W1=value || W0=result
+| 0x1D || svcCondBroadcast || X0=ptr, W1=value || W0=result
 |-
 | .... || ? || ? || ?
 |-
@@ -76,7 +76,7 @@
 |-
 | 0x26 || svcBreak || X0,X1,X2=info || ?
 |-
-| 0x27 || svcOutputDebugString || ||
+| 0x27 || svcOutputDebugString || X0=str, X1=size ||
 |-
 | 0x28 || svcPanic || X0=error? ||
 |-
