@@ -1,16 +1,15 @@
-<b>Internet Browser</b> is a web browser preloaded on the Nintendo
-Switch. It is the [NetFront
+Nintendo Switch does not have a normal Internet Browser for user usage.
+However, there is multiple browser applets. It is the [NetFront
 NX](https://web.archive.org/web/20170304075230/https://gl.access-company.com/news_event/archives/2017/170303/)
-browser, which is based on Webkit.  
-The browser functionality is not accessible to the user, since there is
-no app for it. However, it can be accessed via an
-[exploit](https://www.reddit.com/r/NintendoSwitch/comments/5x9g68/browser_and_video_player_are_fully_functional/).
+browser, which is based on Webkit.
+
 When linking the Nintendo Account with Facebook, the Facebook Auth
 website will open, offering a search box that can be used to browse the
-internet. Alternatively, it can be accessed with [custom DNS
+Internet ("LoginApplet"). Alternatively, it can be accessed with [custom
+DNS
 settings](https://gbatemp.net/threads/web-browser-kind-of-on-the-switch.463094/)
-which simulate a Wi-Fi login
-page.
+which simulate a Wi-Fi login page ("WifiWebAuthApplet" for
+captive-portal).
 
 ## Known User Agent Strings
 
