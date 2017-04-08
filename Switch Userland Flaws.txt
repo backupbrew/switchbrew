@@ -11,15 +11,15 @@ This page lists vulnerabilities / exploits for Nintendo Switch applications and 
 |-
 | CVE-2016-4657
 | WebKit vuln discovered around August 2016. Most notably used in the iOS 9.3.X exploit. A simple PoC can be found [https://github.com/LiveOverflow/lo_nintendoswitch/blob/master/poc1.html here]. This was later exploited by [https://twitter.com/qwertyoruiopz Qwertyoruiop] using an adjusted version of his iOS 9.3 webkit exploit (others exploited this prior to then).
-| [[2.1|2.1.0]]
-| [[2.0|2.0.0]]
+| [[2.1.0]]
+| [[2.0.0]]
 | Original: August 2016
 Switch: March 3rd-4th 2017
 | ???
 |-
 | [https://github.com/yellows8/browserhax_fright browserhax_fright_tx3g]
 | 
-| 2.1.0
+| [[2.1.0]]
 | 
 | 
 | 
