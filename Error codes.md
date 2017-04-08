@@ -7,12 +7,13 @@
 
 # Modules
 
-| Value | Name   |
-| ----- | ------ |
-| 1     | Kernel |
-| 2     | FS     |
-| 21    | SM     |
-| 203   | HID    |
+| Value | Name    |
+| ----- | ------- |
+| 1     | Kernel  |
+| 2     | FS      |
+| 21    | SM      |
+| 124   | Account |
+| 203   | HID     |
 
 # Error codes
 
