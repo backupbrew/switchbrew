@@ -1,4 +1,4 @@
-The 2.0 release added the eShop functionality, the ability to add friends via Friend Codes, and to post screenshots to Facebook and Twitter.
+The 2.0.0 release added the eShop functionality, the ability to add friends via Friend Codes, and to post screenshots to Facebook and Twitter.
 
 This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 official changelog] from Nintendo regarding this update:
 
