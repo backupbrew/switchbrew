@@ -2,8 +2,6 @@
 
 The browser functionality is not accessible to the user, since there is no app for it. However, it can be accessed via an [https://www.reddit.com/r/NintendoSwitch/comments/5x9g68/browser_and_video_player_are_fully_functional/ exploit]. When linking the Nintendo Account with Facebook, the Facebook Auth website will open, offering a search box that can be used to browse the internet. Alternatively, it can be accessed with [https://gbatemp.net/threads/web-browser-kind-of-on-the-switch.463094/ custom DNS settings] which simulate a Wi-Fi login page.
 
-Some old exploits like browserhax_fright_tx3g crash the browser but are probably not usable
-
 == Known User Agent Strings ==
 {| class='wikitable'
 ! [[System Software]]

@@ -9,11 +9,8 @@ When linking the Nintendo Account with Facebook, the Facebook Auth
 website will open, offering a search box that can be used to browse the
 internet. Alternatively, it can be accessed with [custom DNS
 settings](https://gbatemp.net/threads/web-browser-kind-of-on-the-switch.463094/)
-which simulate a Wi-Fi login page.
-
-Some old exploits like browserhax\_fright\_tx3g crash the browser but
-are probably not
-usable
+which simulate a Wi-Fi login
+page.
 
 ## Known User Agent Strings
 
