@@ -102,7 +102,7 @@ List of services (non-exhaustive):
 |
 |-
 | nvdrv:a
-| NVIDIA Graphics Driver services
+| [[NV services]]
 |
 |-
 | ovln:rcv, ovln:snd

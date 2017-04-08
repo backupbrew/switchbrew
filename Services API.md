@@ -37,7 +37,7 @@ List of services
 | ns:am, ns:su, ns:dev               | NS service                                                 | am: Applet Manager?           |
 | nsd:u, nsd:a                       | NSD services                                               |                               |
 | nvmemp                             | NVIDIA Memory Profiling services                           |                               |
-| nvdrv:a                            | NVIDIA Graphics Driver services                            |                               |
+| nvdrv:a                            | [NV services](NV%20services.md "wikilink")                 |                               |
 | ovln:rcv, ovln:snd                 | Overlay Notification services                              |                               |
 | pdm:ntfy, pdm:qry                  | Play Log services                                          |                               |
 | pl:u                               | Shared Font services                                       |                               |
