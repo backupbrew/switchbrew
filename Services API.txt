@@ -42,7 +42,7 @@ List of services (non-exhaustive):
 |
 |-
 | fsp-srv
-| File System Proxy services
+| [[Filesystem services]]
 |
 |-
 | hid, hid:dbg, hid:sys
