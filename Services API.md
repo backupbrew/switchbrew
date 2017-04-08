@@ -14,7 +14,7 @@ List of services
 
 | Service names                      | Description                      | Notes                         |
 | ---------------------------------- | -------------------------------- | ----------------------------- |
-| acc:u1                             | Account System services          | u1: for user 1?               |
+| acc:u1                             | \[Account services\]             | u1: for user 1?               |
 | appletAE                           | Applet Accessor services         |                               |
 | aoc:u                              | AddOn Content services           |                               |
 | audren:u                           | Audio Renderer services          |                               |
