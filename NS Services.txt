@@ -1,0 +1,21 @@
+This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services this].
+
+=NS Services=
+
+==NS Service "ns:am"==
+
+==NS Service "ns:su"==
+
+==NS Service "ns:dev"==
+
+=AppIDs=
+{| class="wikitable" border="1"
+|-
+!  ID
+!  Description
+|-
+| 0x19
+| [[Internet_browser|WifiWebAuth]] (From browser string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletWifiWebAuth")
+|}
+
+This seems to be the equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs this] ("AppIDs" is an unofficial name).
