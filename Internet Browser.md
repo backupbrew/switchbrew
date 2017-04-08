@@ -13,6 +13,13 @@ captive-portal).
 
 ## Known User Agent Strings
 
-| [System Software](System%20Software.md "wikilink") | Release Date | [UA String](https://www.wiiubru.com/forum/index.php?threads/possible-user-agent.101/)                                    |
-| -------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| Unknown                                            | Unknown      | Mozilla/5.0 (Nintendo Switch; WebApplet) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.4.19 NintendoBrowser/5.1.0.11386 |
+| System Version | UA String                                                                                                                   |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 2.0.0          | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.9 NintendoBrowser/5.1.0.13341  |
+| 2.1.0          | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.10 NintendoBrowser/5.1.0.13343 |
+
+The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>)
+AppleWebKit/<webkitver> (KHTML, like Gecko)
+NF/<nfver0>.<nfver1>.<nfver2>
+NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>". See above for the
+appletname.
