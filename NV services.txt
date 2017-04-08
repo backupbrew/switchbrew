@@ -1,24 +1,24 @@
 The Switch makes use of a customized NVIDIA driver that is exposed through multiple services.
 Communication with these services goes through IPC, as usual.
 
-== nvdrv:a ==
+= nvdrv:a =
 {| class="wikitable" border="1"
 |-
-! CMD || Name || Format || Notes
+! Cmd || Name || Format
 |-
-| ??? || NvOsDrvOpen || ||
+| ??? || NvOsDrvOpen ||
 |-
-| ??? || NvOsDrvClose || ||
+| ??? || NvOsDrvClose ||
 |-
-| ??? || NvOsDrvIoctl || || See below
+| ??? || [[#NvOsDrvIoctl]] ||
 |-
-| ??? || NvOsDrvMapSharedMem || || 
+| ??? || NvOsDrvMapSharedMem || 
 |-
-| ??? || NvOsDrvQueryEvent || ||
+| ??? || NvOsDrvQueryEvent ||
 |-
 |}
 
-=== IOCtl commands ===
+== NvOsDrvIoctl ==
 Just like any standard build of the NVIDIA graphics' drivers, the nvdrv:a service operates mainly by processing requests and sending them to the kernel (not verified) through IOCtl commands.
 Note that these commands are generated with the following primitive (see Linux kernel):
  #define _IOC(inout, group, num, len) (inout | ((len & IOCPARM_MASK) << 16) | ((group) << 8) | (num))

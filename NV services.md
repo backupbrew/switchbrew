@@ -2,18 +2,18 @@ The Switch makes use of a customized NVIDIA driver that is exposed
 through multiple services. Communication with these services goes
 through IPC, as usual.
 
-## nvdrv:a
+# nvdrv:a
 
-| CMD | Name                | Format | Notes     |
-| --- | ------------------- | ------ | --------- |
-| ??? | NvOsDrvOpen         |        |           |
-| ??? | NvOsDrvClose        |        |           |
-| ??? | NvOsDrvIoctl        |        | See below |
-| ??? | NvOsDrvMapSharedMem |        |           |
-| ??? | NvOsDrvQueryEvent   |        |           |
-|     |                     |        |           |
+| Cmd | Name                                       | Format |
+| --- | ------------------------------------------ | ------ |
+| ??? | NvOsDrvOpen                                |        |
+| ??? | NvOsDrvClose                               |        |
+| ??? | [\#NvOsDrvIoctl](#NvOsDrvIoctl "wikilink") |        |
+| ??? | NvOsDrvMapSharedMem                        |        |
+| ??? | NvOsDrvQueryEvent                          |        |
+|     |                                            |        |
 
-### IOCtl commands
+## NvOsDrvIoctl
 
 Just like any standard build of the NVIDIA graphics' drivers, the
 nvdrv:a service operates mainly by processing requests and sending them
