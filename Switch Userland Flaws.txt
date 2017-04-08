@@ -1,6 +1,5 @@
 This page lists vulnerabilities / exploits for Nintendo Switch applications and applets
 == Browser userspace == 
-===WebKit===
 {| class="wikitable" border="1"
 !  Summary
 !  Description
@@ -17,4 +16,10 @@ This page lists vulnerabilities / exploits for Nintendo Switch applications and 
 Switch: March 4th 2017
 | ???
 |-
+| [https://github.com/yellows8/browserhax_fright browserhax_fright_tx3g]
+| 
+| 2.1.0
+| 
+| 
+| 
 |}
