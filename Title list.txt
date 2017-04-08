@@ -68,9 +68,22 @@
 |-
 | 0100000000000036 ||
 |-
-| 0100000000001011 || Browser applet
-|-
 | 0100000000002071 ||
+|}
+
+== Applets ==
+{| class=wikitable
+! Title-id || Description
+|-
+| 0100000000001000 || System applet
+|-
+| 010000000000100B || NShop applet
+|-
+| 010000000000100C || Overlay applet
+|-
+| 0100000000001010 || ?
+|-
+| 0100000000001011 || WifiWebAuth applet
 |}
 
 == System Data ==
