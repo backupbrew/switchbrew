@@ -13,7 +13,7 @@ This is the Switch equivalent of
 
 | ID   | Description                                                                                                                                 |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x19 | [WifiWebAuth](Internet%20browser.md "wikilink") (From browser string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletWifiWebAuth") |
+| 0x19 | [WifiWebAuth](Internet%20Browser.md "wikilink") (From browser string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletWifiWebAuth") |
 
 This seems to be the equivalent of
 [this](https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs) ("AppIDs" is
