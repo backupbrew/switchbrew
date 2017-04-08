@@ -16,19 +16,19 @@
 
 # Error codes
 
-| Value   | Description | Description                                                |
-| ------- | ----------- | ---------------------------------------------------------- |
-| 0xCA01  | 101         | Invalid size (not page-aligned).                           |
-| 0xCC01  | 102         | Invalid address (not page-aligned).                        |
-| 0xD201  | 105         | Handle-table full.                                         |
-| 0xD401  | 106         | Invalid memory state.                                      |
-| 0xD801  | 108         | When trying to set executable permission on memory.        |
-| 0xE401  | 114         | Invalid handle.                                            |
-| 0xE601  | 115         | Syscall copy from user failed.                             |
-| 0xEA01  | 117         | When you give 0 handles to svcWaitSynchronizationN.        |
-| 0xEE01  | 119         | When you give too many handles to svcWaitSynchronizationN. |
-| 0xFA01  | 125         | Wrong memory permission?                                   |
-| 0x10601 | 131         | Port max sessions exceeded                                 |
-| 0x7D402 | 1002        | Title-id not found                                         |
-| 0x0C15  | 6           | Invalid name (all zeroes)                                  |
-| 0x1015  | 8           | Permission denied                                          |
+| Value   | Description | Description                                                   |
+| ------- | ----------- | ------------------------------------------------------------- |
+| 0xCA01  | 101         | Invalid size (not page-aligned).                              |
+| 0xCC01  | 102         | Invalid address (not page-aligned).                           |
+| 0xD201  | 105         | Handle-table full.                                            |
+| 0xD401  | 106         | Invalid memory state.                                         |
+| 0xD801  | 108         | When trying to set executable permission on memory.           |
+| 0xE401  | 114         | Invalid handle.                                               |
+| 0xE601  | 115         | Syscall copy from user failed.                                |
+| 0xEA01  | 117         | Time out? When you give 0 handles to svcWaitSynchronizationN. |
+| 0xEE01  | 119         | When you give too many handles to svcWaitSynchronizationN.    |
+| 0xFA01  | 125         | Wrong memory permission?                                      |
+| 0x10601 | 131         | Port max sessions exceeded                                    |
+| 0x7D402 | 1002        | Title-id not found                                            |
+| 0x0C15  | 6           | Invalid name (all zeroes)                                     |
+| 0x1015  | 8           | Permission denied                                             |
