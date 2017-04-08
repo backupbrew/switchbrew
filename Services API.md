@@ -34,7 +34,7 @@ List of services
 | mm:u                               | NvMM services                                              |                               |
 | nifm:u, nifm:a, nifm:s             | Network Interface services                                 | u: User, a: Applet, s: System |
 | nim:shp                            | NIM services                                               | shp: eShop                    |
-| ns:am, ns:su, ns:dev               | NS service                                                 | am: Applet Manager?           |
+| ns:am, ns:su, ns:dev               | [NS Services](NS%20Services.md "wikilink")                 | am: Applet Manager?           |
 | nsd:u, nsd:a                       | NSD services                                               |                               |
 | nvmemp                             | NVIDIA Memory Profiling services                           |                               |
 | nvdrv:a                            | [NV services](NV%20services.md "wikilink")                 |                               |

@@ -90,7 +90,7 @@ List of services (non-exhaustive):
 | shp: eShop
 |-
 | ns:am, ns:su, ns:dev
-| NS service
+| [[NS Services]]
 | am: Applet Manager?
 |-
 | nsd:u, nsd:a
