@@ -4,16 +4,20 @@ through IPC, as usual.
 
 # nvdrv:a
 
-| Cmd | Name                                       | Format |
-| --- | ------------------------------------------ | ------ |
-| ??? | NvOsDrvOpen                                |        |
-| ??? | NvOsDrvClose                               |        |
-| ??? | [\#NvOsDrvIoctl](#NvOsDrvIoctl "wikilink") |        |
-| ??? | NvOsDrvMapSharedMem                        |        |
-| ??? | NvOsDrvQueryEvent                          |        |
-|     |                                            |        |
+| Cmd | Name                         | Format |
+| --- | ---------------------------- | ------ |
+| 0   | Open                         |        |
+| 1   | [\#Ioctl](#Ioctl "wikilink") |        |
+| 2   | Close                        |        |
+| 3   | Initialize                   |        |
+| 4   | QueryEvent                   |        |
+| 5   | MapSharedMem                 |        |
+| 6   | ?                            |        |
+| 7   | ?                            |        |
+| 8   | Audio render related init?   |        |
+| 9   | ?                            |        |
 
-## NvOsDrvIoctl
+## Ioctl
 
 Just like any standard build of the NVIDIA graphics' drivers, the
 nvdrv:a service operates mainly by processing requests and sending them

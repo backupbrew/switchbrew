@@ -6,19 +6,29 @@ Communication with these services goes through IPC, as usual.
 |-
 ! Cmd || Name || Format
 |-
-| ??? || NvOsDrvOpen ||
+| 0 || Open ||
 |-
-| ??? || NvOsDrvClose ||
+| 1 || [[#Ioctl]] ||
 |-
-| ??? || [[#NvOsDrvIoctl]] ||
+| 2 || Close ||
 |-
-| ??? || NvOsDrvMapSharedMem || 
+| 3 || Initialize ||
 |-
-| ??? || NvOsDrvQueryEvent ||
+| 4 || QueryEvent ||
 |-
+| 5 || MapSharedMem || 
+|-
+| 6 || ? ||
+|-
+| 7 || ? ||
+|-
+| 8 || Audio render related init? ||
+|-
+| 9 || ? ||
+
 |}
 
-== NvOsDrvIoctl ==
+== Ioctl ==
 Just like any standard build of the NVIDIA graphics' drivers, the nvdrv:a service operates mainly by processing requests and sending them to the kernel (not verified) through IOCtl commands.
 Note that these commands are generated with the following primitive (see Linux kernel):
  #define _IOC(inout, group, num, len) (inout | ((len & IOCPARM_MASK) << 16) | ((group) << 8) | (num))
