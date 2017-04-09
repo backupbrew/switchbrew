@@ -78,7 +78,7 @@
 |-
 | 0x27 || svcOutputDebugString || X0=str, X1=size ||
 |-
-| 0x28 || svcPanic || X0=error? ||
+| 0x28 || svcReturnFromException || X0=result ||
 |-
 | 0x29 || [[#svcGetInfo]] || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
 |-

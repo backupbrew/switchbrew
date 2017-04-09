@@ -40,7 +40,7 @@
 | 0x25 | svcGetThreadId                                               | W0=thread\_handle                                                 | W0=result, X1=out             |
 | 0x26 | svcBreak                                                     | X0,X1,X2=info                                                     | ?                             |
 | 0x27 | svcOutputDebugString                                         | X0=str, X1=size                                                   |                               |
-| 0x28 | svcPanic                                                     | X0=error?                                                         |                               |
+| 0x28 | svcReturnFromException                                       | X0=result                                                         |                               |
 | 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                       | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out             |
 | .... | ?                                                            | ?                                                                 | ?                             |
 | 0x40 | ???                                                          | W2=?, X3=?                                                        | W0=result, W1=?, W2=?         |
