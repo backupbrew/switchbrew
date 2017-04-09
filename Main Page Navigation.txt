@@ -26,9 +26,10 @@
 ! width="33%" | '''Switch Content'''
 |- valign="top" style="background: #F5FAFF;"
 |
-*[[SVC|System Service Calls]] 
+*[[SVC|System calls]]
+*[[Services API]]
 |
-*[[Titles]] ([[Title List|List]])
+*[[Title list]]
 |
 |}
 </div>
