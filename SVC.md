@@ -41,7 +41,7 @@
 | 0x26 | svcBreak                                                     | X0,X1,X2=info                                                     | ?                             |
 | 0x27 | svcOutputDebugString                                         | X0=str, X1=size                                                   |                               |
 | 0x28 | svcPanic                                                     | X0=error?                                                         |                               |
-| 0x29 | [\#svcGetHandleInfo](#svcGetHandleInfo "wikilink")           | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out             |
+| 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                       | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out             |
 | .... | ?                                                            | ?                                                                 | ?                             |
 | 0x40 | ???                                                          | W2=?, X3=?                                                        | W0=result, W1=?, W2=?         |
 | 0x41 | svcAcceptSession                                             | W1=port\_handle                                                   | W0=result, W1=session\_handle |
@@ -76,7 +76,7 @@ This might used for switching between cached and non-cached mappings.
 Memory is only allowed to be mapped into a special region.
 
 Code can get the range of this region from
-[\#svcGetHandleInfo](#svcGetHandleInfo "wikilink").
+[\#svcGetInfo](#svcGetInfo "wikilink").
 
 The source region gets reprotected to ---, and sets bit32 is set in
 [\#MemoryState](#MemoryState "wikilink").
@@ -102,7 +102,7 @@ Works with num\_handles \<= 0x40, error on num\_handles == 0.
 Does not accept 0xFFFF8001 or 0xFFFF8000 as
 handles.
 
-## svcGetHandleInfo
+## svcGetInfo
 
 | Handle type | Id0 | Id1    | Description                                                    |
 | ----------- | --- | ------ | -------------------------------------------------------------- |
