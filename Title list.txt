@@ -71,7 +71,7 @@
 | 0100000000002071 ||
 |}
 
-== Applets ==
+== System Applets ==
 {| class=wikitable
 ! Title-id || Description
 |-
@@ -86,7 +86,7 @@
 | 0100000000001011 || WifiWebAuth applet
 |}
 
-== System Data ==
+== System Data Archives ==
 {| class=wikitable
 ! Title-id || Description
 |-
