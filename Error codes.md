@@ -34,5 +34,7 @@
 | 0x10601 | 131         | Port max sessions exceeded                                    |
 | 0x7D402 | 1002        | Title-id not found                                            |
 | 0x1A80A | 212         | Bad magic (expected 'SFCO')                                   |
+| 0x20B   | 1           | Size too big to fit to marshal.                               |
+| 0x11A0B | 141         | Went past maximum during marshalling.                         |
 | 0x0C15  | 6           | Invalid name (all zeroes)                                     |
 | 0x1015  | 8           | Permission denied                                             |
