@@ -1,14 +1,14 @@
 This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services this].
 
-=NS Services=
+= NS Services=
 
-==NS Service "ns:am"==
+== NS Service "ns:am" ==
 
-==NS Service "ns:su"==
+== NS Service "ns:su" ==
 
-==NS Service "ns:dev"==
+== NS Service "ns:dev" ==
 
-=AppIDs=
+= AppIDs =
 {| class="wikitable" border="1"
 |-
 !  ID
