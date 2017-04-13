@@ -31,18 +31,18 @@ the second word.
 | 1    |      | A-words, purpose unknown.                           |
 | 1+x  |      | B-words, purpose unknown.                           |
 
-### Inbuf/outbuf Descriptor
+### Inbuf/outbuf descriptor
 
 They fucked up this one, big time.
 
-| Word | Bits  | Description               |
-| ---- | ----- | ------------------------- |
-| 0    |       | Lower 32-bits of size.    |
-| 1    |       | Lower 32-bits of address. |
-| 2    | 1-0   | Unknown flag.             |
-| 2    | 4-2   | Bit 38-36 of address.     |
-| 2    | 27-24 | Bit 35-32 of size.        |
-| 2    | 31-28 | Bit 35-32 of address.     |
+| Word | Bits  | Description                     |
+| ---- | ----- | ------------------------------- |
+| 0    |       | Lower 32-bits of size.          |
+| 1    |       | Lower 32-bits of address.       |
+| 2    | 0     | Always set to 1 or 3. RW flags? |
+| 2    | 4-2   | Bit 38-36 of address.           |
+| 2    | 27-24 | Bit 35-32 of size.              |
+| 2    | 31-28 | Bit 35-32 of address.           |
 
 ### Descriptor type B
 

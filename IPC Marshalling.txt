@@ -48,7 +48,7 @@ There can only be one of this descriptor type. It is enabled by bit31 of the sec
 | 1+x || || B-words, purpose unknown.
 |}
 
-=== Inbuf/outbuf Descriptor ===
+=== Inbuf/outbuf descriptor ===
 They fucked up this one, big time.
 
 {| class="wikitable" border="1"
@@ -58,7 +58,7 @@ They fucked up this one, big time.
 |-
 | 1 || || Lower 32-bits of address.
 |-
-| 2 || 1-0 || Unknown flag.
+| 2 || 0 || Always set to 1 or 3. RW flags?
 |-
 | 2 || 4-2 || Bit 38-36 of address.
 |-
