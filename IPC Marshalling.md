@@ -33,7 +33,7 @@ This is an array of u32's.
 ## Data Portion
 
 This is an array of u64's placed after the marshall header. But it's
-always aligned to 8 so sometimes there is a padding word inserted
+always aligned to 16 so sometimes there is padding words inserted
 inbetween.
 
 | Word | Description                        |
@@ -41,3 +41,13 @@ inbetween.
 | 0    | Magic ("SFCI")                     |
 | 1    | Cmd id                             |
 | ...  | Non-marshalled data is placed here |
+
+## Cmd header
+
+| Cmd header 1 | Cmd header 2 | Description                                    |
+| ------------ | ------------ | ---------------------------------------------- |
+| 4            | 9            | Data portion size 20.                          |
+| 4            | 10           | Data portion size 24.                          |
+| 4            | 12           | Data portion size 32.                          |
+| 4            | 14           | Data portion size 40.                          |
+| 4            | 0x8000000C   | Marshall words: (u32) 1. Data portion size 32. |
