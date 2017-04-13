@@ -4,7 +4,7 @@ This is an array of u32's.
 {| class="wikitable" border="1"
 ! Word || Bits || Description
 |-
-| 0 || 19-16 || Number of marshalls type X (each: 2 words).
+| 0 || 19-16 || Number of marshalls type X (each: 2 words). Type mask: 9
 |-
 | 0 || 23-20 || Number of inbufs (each: 3 words). Type mask: 5
 |-
