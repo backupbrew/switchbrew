@@ -77,6 +77,7 @@
 | Title-id         | Description                                            |
 | ---------------- | ------------------------------------------------------ |
 | 0100000000000800 | SSL trusted certificates                               |
+| 0100000000000801 | ?                                                      |
 | 0100000000000802 | Random textures?                                       |
 | 0100000000000803 | Browser emojis                                         |
 | 0100000000000804 | HTML resources: Open-source licenses, seizure warnings |
