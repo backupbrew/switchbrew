@@ -2,13 +2,36 @@
 
 This is an array of u32's.
 
-| Word | Description          |
-| ---- | -------------------- |
-| 0    | Cmd header part 1    |
-| 1    | Cmd header part 2    |
-| ...  | Marshall descriptors |
+| Word | Bits  | Description                                 |
+| ---- | ----- | ------------------------------------------- |
+| 0    | 19-16 | Number of marshalls type X (each: 2 words). |
+| 0    | 23-20 | Number of marshalls type Y (each: 3 words). |
+| 0    | 27-24 | Number of marshalls type Z (each: 3 words). |
+| 0    | 31-28 | Number of marshalls type W (each: 3 words)  |
+| 1    | 9-0   | Size of data portion in u32's.              |
+| 1    | 13-10 | Marshalls type T something.                 |
+| 1    | 17-14 | Marshalls type T something.                 |
+| 1    | 31    | Enable special descriptor.                  |
+| ...  |       | Special descriptor, if enabled.             |
+| ...  |       | Type X descriptors, each one 2 words.       |
+| ...  |       | Type Y descriptors, each one 3 words.       |
+| ...  |       | Type Z descriptors, each one 3 words.       |
+| ...  |       | Type W descriptors, each one 3 words.       |
 
-### Marshall type A
+### Special descriptor
+
+There can only be one of this descriptor type. It is enabled by bit31 of
+the second word.
+
+| Word | Bits | Description                                         |
+| ---- | ---- | --------------------------------------------------- |
+| 0    | 0    | ?                                                   |
+| 0    | 4-1  | Number of A-words for this special descriptor (=x). |
+| 0    | 8-5  | Number of B-words for this special descriptor (=y). |
+| 1    |      | A-words, purpose unknown.                           |
+| x    |      | B-words, purpose unknown.                           |
+
+### Descriptor type A
 
 | Word | Description            |
 | ---- | ---------------------- |
@@ -16,14 +39,14 @@ This is an array of u32's.
 | 1    | Word0 is written here. |
 | 2    | Weird mix.             |
 
-### Marshall type B
+### Descriptor type B
 
 | Word | Description                                     |
 | ---- | ----------------------------------------------- |
 | 0    | Lower 32-bits of addr?                          |
 | 1    | Upper 16bits: Size, Lower 16bits: Rest of addr? |
 
-### Marshall type C
+### Descriptor type C
 
 | Word | Description                     |
 | ---- | ------------------------------- |
