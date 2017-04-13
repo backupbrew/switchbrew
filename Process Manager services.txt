@@ -8,9 +8,9 @@
 |-
 | 1 || TerminateProcess ||
 |-
-| 2 || ||
+| 2 || GetControlEventHandle ||
 |-
-| 3 || ||
+| 3 || GetControlEvent ||
 |-
 | 4 || ||
 |-
