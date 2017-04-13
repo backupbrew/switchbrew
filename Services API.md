@@ -26,7 +26,7 @@ List of services
 | hid, hid:dbg, hid:sys              | HID services                                               |                                            |
 | ldn:m                              | Local Network Monitor services                             |                                            |
 | ldr:ro                             | RO services                                                |                                            |
-| ldr:shel                           | Loader services                                            |                                            |
+| ldr:shel                           | [Loader services](Loader%20services.md "wikilink")         |                                            |
 | lm                                 | Log services                                               |                                            |
 | lr                                 | ?                                                          |                                            |
 | erpt:c                             | ERPT(?) services                                           |                                            |
