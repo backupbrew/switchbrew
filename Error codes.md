@@ -33,5 +33,6 @@
 | 0xFA01  | 125         | Wrong memory permission?                                      |
 | 0x10601 | 131         | Port max sessions exceeded                                    |
 | 0x7D402 | 1002        | Title-id not found                                            |
+| 0x1A80A | 212         | Bad magic (expected 'SFCO')                                   |
 | 0x0C15  | 6           | Invalid name (all zeroes)                                     |
 | 0x1015  | 8           | Permission denied                                             |
