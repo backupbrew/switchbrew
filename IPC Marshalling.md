@@ -5,7 +5,7 @@ u32's.
 
 | Word | Bits  | Description                                              |
 | ---- | ----- | -------------------------------------------------------- |
-| 0    | 19-16 | Number of marshalls type X (each: 2 words). Type mask: 9 |
+| 0    | 19-16 | Number of marshalls type X (each: 2 words). Type mask: 8 |
 | 0    | 23-20 | Number of inbufs (each: 3 words). Type mask: 5           |
 | 0    | 27-24 | Number of outbufs (each: 3 words). Type mask: 6          |
 | 0    | 31-28 | Number of marshalls type W (each: 3 words)               |
