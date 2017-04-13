@@ -21,7 +21,8 @@ This is an array of u32's.
 |-
 | 1 || Word0 is written here.
 |-
-| 2 || Weird mix.|}
+| 2 || Weird mix.
+|}
 
 === Marshall type B ===
 {| class="wikitable" border="1"
