@@ -14,8 +14,8 @@ This is an array of u32's.
 | 1    | 31    | Enable special descriptor.                      |
 | ...  |       | Special descriptor, if enabled.                 |
 | ...  |       | Type X descriptors, each one 2 words.           |
-| ...  |       | Type Y descriptors, each one 3 words.           |
-| ...  |       | Type Z descriptors, each one 3 words.           |
+| ...  |       | Inbuf descriptors, each one 3 words.            |
+| ...  |       | Outbuf descriptors, each one 3 words.           |
 | ...  |       | Type W descriptors, each one 3 words.           |
 
 ### Special descriptor

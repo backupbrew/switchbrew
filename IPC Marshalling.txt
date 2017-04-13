@@ -24,9 +24,9 @@ This is an array of u32's.
 |-
 | ... || || Type X descriptors, each one 2 words.
 |-
-| ... || || Type Y descriptors, each one 3 words.
+| ... || || Inbuf descriptors, each one 3 words.
 |-
-| ... || || Type Z descriptors, each one 3 words.
+| ... || || Outbuf descriptors, each one 3 words.
 |-
 | ... || || Type W descriptors, each one 3 words.
 |}
