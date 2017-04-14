@@ -79,12 +79,15 @@ inbetween.
 | 1    | Cmd id                             |
 | ...  | Non-marshalled data is placed here |
 
-## Cmd header
+## Official marshalling code
 
-| Cmd header 1 | Cmd header 2 | Description                                    |
-| ------------ | ------------ | ---------------------------------------------- |
-| 4            | 9            | Data portion size 20.                          |
-| 4            | 10           | Data portion size 24.                          |
-| 4            | 12           | Data portion size 32.                          |
-| 4            | 14           | Data portion size 40.                          |
-| 4            | 0x8000000C   | Marshall words: (u32) 1. Data portion size 32. |
+The official marshalling function takes an array of (buf\_ptr, size)
+pairs and a type-field for each such pair.
+
+| Type Mask | Description                        |
+| --------- | ---------------------------------- |
+| 4 + 1     | Creates an A descriptor            |
+| 4 + 2     | Creates a B descriptor             |
+| 8 + 1     | Creates an X descriptor            |
+| 8 + 2     | Creates a C descriptor             |
+| 0x20 + 1  | Creates both an A and X descriptor |

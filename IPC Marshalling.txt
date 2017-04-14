@@ -109,17 +109,19 @@ This is an array of u64's placed after the marshall header. But it's always alig
 | ... || Non-marshalled data is placed here
 |}
 
-== Cmd header ==
+== Official marshalling code ==
+The official marshalling function takes an array of (buf_ptr, size) pairs and a type-field for each such pair.
+
 {| class="wikitable" border="1"
-! Cmd header 1 || Cmd header 2 || Description
+! Type Mask || Description
 |-
-| 4 || 9 || Data portion size 20.
+| 4 + 1 || Creates an A descriptor
 |-
-| 4 || 10 || Data portion size 24.
+| 4 + 2 || Creates a B descriptor
 |-
-| 4 || 12 || Data portion size 32.
+| 8 + 1 || Creates an X descriptor
 |-
-| 4 || 14 || Data portion size 40.
+| 8 + 2 || Creates a C descriptor
 |-
-| 4 || 0x8000000C || Marshall words: (u32) 1. Data portion size 32.
+| 0x20 + 1 || Creates both an A and X descriptor
 |}
