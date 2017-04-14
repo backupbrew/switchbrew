@@ -1,4 +1,4 @@
-## Marshall Portion
+## IPC Command Structure
 
 This is an array of
 u32's.
@@ -18,6 +18,9 @@ u32's.
 | ...  |       | Buf A descriptors, each one 3 words.                         |
 | ...  |       | Buf B descriptors, each one 3 words.                         |
 | ...  |       | Type W descriptors, each one 3 words.                        |
+| ...  |       | Padding                                                      |
+| ...  |       | Raw data                                                     |
+| ...  |       | Buf C descriptors, each one 2 words.                         |
 
 ### Special descriptor
 
@@ -67,17 +70,16 @@ address *on top* of the counter field.
 | 0    | 31-16 | Size                      |
 | 1    |       | Lower 32-bits of address. |
 
-## Data Portion
+## Raw data porton
 
-This is an array of u64's placed after the marshall header. But it's
-always aligned to 16 so sometimes there is padding words inserted
-inbetween.
+This is an array of u64's. It's always aligned to 16 so sometimes there
+is padding words before it.
 
-| Word | Description                        |
-| ---- | ---------------------------------- |
-| 0    | Magic ("SFCI")                     |
-| 1    | Cmd id                             |
-| ...  | Non-marshalled data is placed here |
+| Word | Description                                       |
+| ---- | ------------------------------------------------- |
+| 0    | Magic ("SFCI" for requests, "SCFO" for responses) |
+| 1    | Cmd id                                            |
+| ...  | Non-marshalled data is placed here                |
 
 ## Official marshalling code
 
