@@ -3,21 +3,21 @@
 This is an array of
 u32's.
 
-| Word | Bits  | Description                                                 |
-| ---- | ----- | ----------------------------------------------------------- |
-| 0    | 15-0  | IPC version? Always 4.                                      |
-| 0    | 19-16 | Number of buf X descriptors (each: 2 words). Type mask: 9   |
-| 0    | 23-20 | Number of buf A descriptors (each: 3 words). Type mask: 5   |
-| 0    | 27-24 | Number of buf B descriptors (each: 3 words). Type mask: 6   |
-| 0    | 31-28 | Number of marshalls type W (each: 3 words), never observed. |
-| 1    | 9-0   | Size of data portion in u32's.                              |
-| 1    | 13-10 | If set to 2, enable buf C descriptor. Type mask: 0xA.       |
-| 1    | 31    | Enable special descriptor.                                  |
-| ...  |       | Special descriptor, if enabled.                             |
-| ...  |       | Type X descriptors, each one 2 words.                       |
-| ...  |       | Buf A descriptors, each one 3 words.                        |
-| ...  |       | Buf B descriptors, each one 3 words.                        |
-| ...  |       | Type W descriptors, each one 3 words.                       |
+| Word | Bits  | Description                                                  |
+| ---- | ----- | ------------------------------------------------------------ |
+| 0    | 15-0  | IPC version? Always 4.                                       |
+| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                 |
+| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                 |
+| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                 |
+| 0    | 31-28 | Number of type W desciptors (each: 3 words), never observed. |
+| 1    | 9-0   | Size of data portion in u32's.                               |
+| 1    | 13-10 | If set to 2, enable buf C descriptor.                        |
+| 1    | 31    | Enable special descriptor.                                   |
+| ...  |       | Special descriptor, if enabled.                              |
+| ...  |       | Buf X descriptors, each one 2 words.                         |
+| ...  |       | Buf A descriptors, each one 3 words.                         |
+| ...  |       | Buf B descriptors, each one 3 words.                         |
+| ...  |       | Type W descriptors, each one 3 words.                        |
 
 ### Special descriptor
 
