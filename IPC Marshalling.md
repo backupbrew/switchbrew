@@ -11,8 +11,7 @@ u32's.
 | 0    | 27-24 | Number of buf2 descriptors (each: 3 words). Type mask: 6 |
 | 0    | 31-28 | Number of marshalls type W (each: 3 words)               |
 | 1    | 9-0   | Size of data portion in u32's.                           |
-| 1    | 13-10 | Marshal type T something.                                |
-| 1    | 17-14 | Marshal type T something.                                |
+| 1    | 13-10 | ?                                                        |
 | 1    | 31    | Enable special descriptor.                               |
 | ...  |       | Special descriptor, if enabled.                          |
 | ...  |       | Type X descriptors, each one 2 words.                    |
