@@ -5,6 +5,7 @@ u32's.
 
 | Word | Bits  | Description                                              |
 | ---- | ----- | -------------------------------------------------------- |
+| 0    | 15-0  | IPC version? Always 4.                                   |
 | 0    | 19-16 | Number of marshalls type X (each: 2 words). Type mask: 8 |
 | 0    | 23-20 | Number of buf descriptors (each: 3 words). Type mask: 5  |
 | 0    | 27-24 | Number of buf2 descriptors (each: 3 words). Type mask: 6 |
