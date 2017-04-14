@@ -6,9 +6,9 @@ This is an array of u32's.
 |-
 | 0 || 19-16 || Number of marshalls type X (each: 2 words). Type mask: 8
 |-
-| 0 || 23-20 || Number of inbufs (each: 3 words). Type mask: 5
+| 0 || 23-20 || Number of buf descriptors (each: 3 words). Type mask: 5
 |-
-| 0 || 27-24 || Number of outbufs (each: 3 words). Type mask: 6
+| 0 || 27-24 || Number of buf2 descriptors (each: 3 words). Type mask: 6
 |-
 | 0 || 31-28 || Number of marshalls type W (each: 3 words)
 |-
@@ -24,9 +24,9 @@ This is an array of u32's.
 |-
 | ... || || Type X descriptors, each one 2 words.
 |-
-| ... || || Inbuf descriptors, each one 3 words.
+| ... || || Buf descriptors, each one 3 words.
 |-
-| ... || || Outbuf descriptors, each one 3 words.
+| ... || || Buf2 descriptors, each one 3 words.
 |-
 | ... || || Type W descriptors, each one 3 words.
 |}
@@ -48,7 +48,7 @@ There can only be one of this descriptor type. It is enabled by bit31 of the sec
 | 1+x || || B-words, purpose unknown.
 |}
 
-=== Inbuf/outbuf descriptor ===
+=== Buf descriptor ===
 They fucked up this one, big time.
 
 {| class="wikitable" border="1"
@@ -58,7 +58,7 @@ They fucked up this one, big time.
 |-
 | 1 || || Lower 32-bits of address.
 |-
-| 2 || 0 || Always set to 1 or 3. RW flags?
+| 2 || 0 || Always set to 1 or 3. R/RW.
 |-
 | 2 || 4-2 || Bit 38-36 of address.
 |-

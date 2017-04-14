@@ -6,8 +6,8 @@ u32's.
 | Word | Bits  | Description                                              |
 | ---- | ----- | -------------------------------------------------------- |
 | 0    | 19-16 | Number of marshalls type X (each: 2 words). Type mask: 8 |
-| 0    | 23-20 | Number of inbufs (each: 3 words). Type mask: 5           |
-| 0    | 27-24 | Number of outbufs (each: 3 words). Type mask: 6          |
+| 0    | 23-20 | Number of buf descriptors (each: 3 words). Type mask: 5  |
+| 0    | 27-24 | Number of buf2 descriptors (each: 3 words). Type mask: 6 |
 | 0    | 31-28 | Number of marshalls type W (each: 3 words)               |
 | 1    | 9-0   | Size of data portion in u32's.                           |
 | 1    | 13-10 | Marshal type T something.                                |
@@ -15,8 +15,8 @@ u32's.
 | 1    | 31    | Enable special descriptor.                               |
 | ...  |       | Special descriptor, if enabled.                          |
 | ...  |       | Type X descriptors, each one 2 words.                    |
-| ...  |       | Inbuf descriptors, each one 3 words.                     |
-| ...  |       | Outbuf descriptors, each one 3 words.                    |
+| ...  |       | Buf descriptors, each one 3 words.                       |
+| ...  |       | Buf2 descriptors, each one 3 words.                      |
 | ...  |       | Type W descriptors, each one 3 words.                    |
 
 ### Special descriptor
@@ -32,18 +32,18 @@ the second word.
 | 1    |      | A-words, purpose unknown.                           |
 | 1+x  |      | B-words, purpose unknown.                           |
 
-### Inbuf/outbuf descriptor
+### Buf descriptor
 
 They fucked up this one, big time.
 
-| Word | Bits  | Description                     |
-| ---- | ----- | ------------------------------- |
-| 0    |       | Lower 32-bits of size.          |
-| 1    |       | Lower 32-bits of address.       |
-| 2    | 0     | Always set to 1 or 3. RW flags? |
-| 2    | 4-2   | Bit 38-36 of address.           |
-| 2    | 27-24 | Bit 35-32 of size.              |
-| 2    | 31-28 | Bit 35-32 of address.           |
+| Word | Bits  | Description                 |
+| ---- | ----- | --------------------------- |
+| 0    |       | Lower 32-bits of size.      |
+| 1    |       | Lower 32-bits of address.   |
+| 2    | 0     | Always set to 1 or 3. R/RW. |
+| 2    | 4-2   | Bit 38-36 of address.       |
+| 2    | 27-24 | Bit 35-32 of size.          |
+| 2    | 31-28 | Bit 35-32 of address.       |
 
 ### Descriptor type B
 
