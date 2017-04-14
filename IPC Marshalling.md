@@ -3,21 +3,21 @@
 This is an array of
 u32's.
 
-| Word | Bits  | Description                                              |
-| ---- | ----- | -------------------------------------------------------- |
-| 0    | 15-0  | IPC version? Always 4.                                   |
-| 0    | 19-16 | Number of marshalls type X (each: 2 words). Type mask: 8 |
-| 0    | 23-20 | Number of buf descriptors (each: 3 words). Type mask: 5  |
-| 0    | 27-24 | Number of buf2 descriptors (each: 3 words). Type mask: 6 |
-| 0    | 31-28 | Number of marshalls type W (each: 3 words)               |
-| 1    | 9-0   | Size of data portion in u32's.                           |
-| 1    | 13-10 | ?                                                        |
-| 1    | 31    | Enable special descriptor.                               |
-| ...  |       | Special descriptor, if enabled.                          |
-| ...  |       | Type X descriptors, each one 2 words.                    |
-| ...  |       | Buf descriptors, each one 3 words.                       |
-| ...  |       | Buf2 descriptors, each one 3 words.                      |
-| ...  |       | Type W descriptors, each one 3 words.                    |
+| Word | Bits  | Description                                               |
+| ---- | ----- | --------------------------------------------------------- |
+| 0    | 15-0  | IPC version? Always 4.                                    |
+| 0    | 19-16 | Number of buf X descriptors (each: 2 words). Type mask: 9 |
+| 0    | 23-20 | Number of buf A descriptors (each: 3 words). Type mask: 5 |
+| 0    | 27-24 | Number of buf B descriptors (each: 3 words). Type mask: 6 |
+| 0    | 31-28 | Number of marshalls type W (each: 3 words)                |
+| 1    | 9-0   | Size of data portion in u32's.                            |
+| 1    | 13-10 | If set to 2, enable buf C descriptor. Type mask: 0xA.     |
+| 1    | 31    | Enable special descriptor.                                |
+| ...  |       | Special descriptor, if enabled.                           |
+| ...  |       | Type X descriptors, each one 2 words.                     |
+| ...  |       | Buf A descriptors, each one 3 words.                      |
+| ...  |       | Buf B descriptors, each one 3 words.                      |
+| ...  |       | Type W descriptors, each one 3 words.                     |
 
 ### Special descriptor
 
@@ -32,9 +32,9 @@ the second word.
 | ...  |      | A-words, purpose unknown.                      |
 | ...  |      | B-words, purpose unknown.                      |
 
-### Buf descriptor
+### Buffer descriptor A/B
 
-They fucked up this one, big time.
+This packing is so unnecessarily complex.
 
 | Word | Bits  | Description                 |
 | ---- | ----- | --------------------------- |
@@ -45,19 +45,27 @@ They fucked up this one, big time.
 | 2    | 27-24 | Bit 35-32 of size.          |
 | 2    | 31-28 | Bit 35-32 of address.       |
 
-### Descriptor type B
+### Buffer descriptor C
 
-| Word | Description                                     |
-| ---- | ----------------------------------------------- |
-| 0    | Lower 32-bits of addr?                          |
-| 1    | Upper 16bits: Size, Lower 16bits: Rest of addr? |
+| Word | Bits  | Description               |
+| ---- | ----- | ------------------------- |
+| 0    |       | Lower 32-bits of address. |
+| 1    | 15-0  | Rest of address.          |
+| 1    | 31-16 | Size                      |
 
-### Descriptor type C
+### Buffer descriptor X
 
-| Word | Description                     |
-| ---- | ------------------------------- |
-| 0    | Upper 16bits: Size, Lower 16: ? |
-| 1    | ?                               |
+This one is packed even worse than A, they inserted the bit38-36 of the
+address *on top* of the counter field.
+
+| Word | Bits  | Description               |
+| ---- | ----- | ------------------------- |
+| 0    | 5-0   | Bits 5-0 of counter.      |
+| 0    | 8-6   | Bit 38-36 of address.     |
+| 0    | 11-9  | Bits 11-9 of counter.     |
+| 0    | 15-12 | Bit 35-32 of address.     |
+| 0    | 31-16 | Size                      |
+| 1    |       | Lower 32-bits of address. |
 
 ## Data Portion
 
