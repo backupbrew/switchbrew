@@ -77,7 +77,7 @@ is padding words before it.
 
 | Word | Description                                       |
 | ---- | ------------------------------------------------- |
-| 0    | Magic ("SFCI" for requests, "SCFO" for responses) |
+| 0    | Magic ("SFCI" for requests, "SFCO" for responses) |
 | 1    | Cmd id                                            |
 | ...  | Non-marshalled data is placed here                |
 
