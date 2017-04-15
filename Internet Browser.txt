@@ -33,3 +33,6 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 | Manual
 | With invalid TLS certs this displays an error dialog without an option to ignore it.
 |}
+
+== Video Playback ==
+WifiWebAuthApplet does not fully support playing videos. It will crash with normal videos. However, in some cases with certain MP4s using vulns it will display an error dialog instead.

@@ -30,3 +30,9 @@ NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>".
 | WifiWebAuthApplet    | Captive-portal           |                                                                                      |
 | LoginApplet          | Nintendo Account linking | With invalid TLS certs this just displays an error-code.                             |
 | ?                    | Manual                   | With invalid TLS certs this displays an error dialog without an option to ignore it. |
+
+## Video Playback
+
+WifiWebAuthApplet does not fully support playing videos. It will crash
+with normal videos. However, in some cases with certain MP4s using vulns
+it will display an error dialog instead.
