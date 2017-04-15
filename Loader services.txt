@@ -3,9 +3,25 @@
 == ldr:shel ==
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Format
+! Cmd || Name
 |-
-| 0 || ||
+| 0 ||
 |-
-| 1 || ||
+| 1 ||
+|}
+
+== ldr:ro ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || LoadNro
+|-
+| 1 || LoadNrr 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 || Initialize
 |}
