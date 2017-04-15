@@ -16,11 +16,4 @@ This page lists vulnerabilities / exploits for Nintendo Switch applications and 
 | Original: August 2016
 Switch: March 3rd-4th 2017
 | ???
-|-
-| [https://github.com/yellows8/browserhax_fright browserhax_fright_tx3g]
-| 
-| [[2.1.0]]
-| 
-| 
-| 
 |}
