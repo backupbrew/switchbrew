@@ -7,15 +7,17 @@
 
 # Modules
 
-| Value | Name    |
-| ----- | ------- |
-| 1     | Kernel  |
-| 2     | FS      |
-| 10    | IPC     |
-| 11    | IPC     |
-| 21    | SM      |
-| 124   | Account |
-| 203   | HID     |
+| Value | Name       |
+| ----- | ---------- |
+| 1     | Kernel     |
+| 2     | FS         |
+| 9     | RO service |
+| 10    | IPC        |
+| 11    | IPC        |
+| 21    | SM         |
+| 22    | RO user    |
+| 124   | Account    |
+| 203   | HID        |
 
 # Error codes
 
@@ -38,3 +40,5 @@
 | 0x11A0B | 141         | Went past maximum during marshalling.                         |
 | 0x0C15  | 6           | Invalid name (all zeroes)                                     |
 | 0x1015  | 8           | Permission denied                                             |
+| 0x816   | 4           | Bad NRO magic.                                                |
+| 0xC16   | 6           | Bad NRR magic.                                                |
