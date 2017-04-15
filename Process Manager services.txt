@@ -2,23 +2,23 @@
 = pm:shell =
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Format
+! Cmd || Name
 |-
-| 0 || LaunchProcess ||
+| 0 || LaunchProcess
 |-
-| 1 || TerminateProcess ||
+| 1 || TerminateProcess
 |-
-| 2 || GetControlEventHandle ||
+| 2 || GetControlEventHandle
 |-
-| 3 || GetControlEvent ||
+| 3 || GetControlEvent
 |-
-| 4 || ||
+| 4 ||
 |-
-| 5 || ||
+| 5 ||
 |-
-| 6 || ||
+| 6 ||
 |-
-| 7 || ||
+| 7 ||
 |-
-| 8 || ||
+| 8 ||
 |}
