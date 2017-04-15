@@ -36,3 +36,8 @@ NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>".
 WifiWebAuthApplet does not fully support playing videos. It will crash
 with normal videos. However, in some cases with certain MP4s using vulns
 it will display an error dialog instead.
+
+## Trusted RootCAs
+
+While the rootCA(s) for Let's Encrypt isn't included, Let's Encrypt is
+indirectly trusted via "Digital Signature Trust Co.".
