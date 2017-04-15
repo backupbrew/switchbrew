@@ -12,8 +12,8 @@ u32's.
 | 0    | 31-28 | Number of type W desciptors (each: 3 words), never observed. |
 | 1    | 9-0   | Size of data portion in u32's.                               |
 | 1    | 13-10 | If set to 2, enable buf C descriptor.                        |
-| 1    | 31    | Enable special descriptor.                                   |
-| ...  |       | Special descriptor, if enabled.                              |
+| 1    | 31    | Enable handle descriptor.                                    |
+| ...  |       | Handle descriptor, if enabled.                               |
 | ...  |       | Buf X descriptors, each one 2 words.                         |
 | ...  |       | Buf A descriptors, each one 3 words.                         |
 | ...  |       | Buf B descriptors, each one 3 words.                         |
@@ -22,7 +22,7 @@ u32's.
 | ...  |       | Raw data                                                     |
 | ...  |       | Buf C descriptors, each one 2 words.                         |
 
-### Special descriptor
+### Handle descriptor
 
 There can only be one of this descriptor type. It is enabled by bit31 of
 the second word.
@@ -30,9 +30,9 @@ the second word.
 | Word | Bits | Description                                    |
 | ---- | ---- | ---------------------------------------------- |
 | 0    | 0    | ?                                              |
-| 0    | 4-1  | Number of A-words for this special descriptor. |
+| 0    | 4-1  | Number of handles.                             |
 | 0    | 8-5  | Number of B-words for this special descriptor. |
-| ...  |      | A-words, purpose unknown.                      |
+| ...  |      | Handles                                        |
 | ...  |      | B-words, purpose unknown.                      |
 
 ### Buffer descriptor A/B
@@ -85,6 +85,9 @@ is padding words before it.
 
 The official marshalling function takes an array of (buf\_ptr, size)
 pairs and a type-field for each such pair.
+
+Bitmask 0x10 seems to indicate null-terminated strings, but that flag is
+ignored by the marshalling code.
 
 | Type Mask | Description                        |
 | --------- | ---------------------------------- |

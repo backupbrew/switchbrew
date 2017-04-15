@@ -18,9 +18,9 @@ This is an array of u32's.
 |-
 | 1 || 13-10 || If set to 2, enable buf C descriptor.
 |-
-| 1 || 31 || Enable special descriptor.
+| 1 || 31 || Enable handle descriptor.
 |-
-| ... || || Special descriptor, if enabled.
+| ... || || Handle descriptor, if enabled.
 |-
 | ... || || Buf X descriptors, each one 2 words.
 |-
@@ -37,7 +37,7 @@ This is an array of u32's.
 | ... || || Buf C descriptors, each one 2 words.
 |}
 
-=== Special descriptor ===
+=== Handle descriptor ===
 There can only be one of this descriptor type. It is enabled by bit31 of the second word.
 
 {| class="wikitable" border="1"
@@ -45,11 +45,11 @@ There can only be one of this descriptor type. It is enabled by bit31 of the sec
 |-
 | 0 || 0 || ?
 |-
-| 0 || 4-1 || Number of A-words for this special descriptor.
+| 0 || 4-1 || Number of handles.
 |-
 | 0 || 8-5 || Number of B-words for this special descriptor.
 |-
-| ... || || A-words, purpose unknown.
+| ... || || Handles
 |-
 | ... || || B-words, purpose unknown.
 |}
@@ -118,6 +118,8 @@ This is an array of u64's. It's always aligned to 16 so sometimes there is paddi
 
 == Official marshalling code ==
 The official marshalling function takes an array of (buf_ptr, size) pairs and a type-field for each such pair.
+
+Bitmask 0x10 seems to indicate null-terminated strings, but that flag is ignored by the marshalling code.
 
 {| class="wikitable" border="1"
 ! Type Mask || Description
