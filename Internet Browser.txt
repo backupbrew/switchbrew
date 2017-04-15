@@ -15,4 +15,21 @@ When linking the Nintendo Account with Facebook, the Facebook Auth website will 
 |}
 
 The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/<webkitver> (KHTML, like Gecko) NF/<nfver0>.<nfver1>.<nfver2> NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>".
-See above for the appletname.
+
+== Browser Applets ==
+{| class='wikitable'
+! appletname (From UA)
+! Usage
+! Notes
+|-
+| WifiWebAuthApplet
+| Captive-portal
+|-
+| LoginApplet
+| Nintendo Account linking
+| With invalid TLS certs this just displays an error-code.
+|-
+| ?
+| Manual
+| With invalid TLS certs this displays an error dialog without an option to ignore it.
+|}
