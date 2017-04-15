@@ -4,28 +4,28 @@ through IPC, as usual.
 
 # nvdrv:a
 
-| Cmd | Name                         | Format |
-| --- | ---------------------------- | ------ |
-| 0   | Open                         |        |
-| 1   | [\#Ioctl](#Ioctl "wikilink") |        |
-| 2   | Close                        |        |
-| 3   | Initialize                   |        |
-| 4   | QueryEvent                   |        |
-| 5   | MapSharedMem                 |        |
-| 6   | ?                            |        |
-| 7   | ?                            |        |
-| 8   | Audio render related init?   |        |
-| 9   | ?                            |        |
+| Cmd | Name                         |
+| --- | ---------------------------- |
+| 0   | Open                         |
+| 1   | [\#Ioctl](#Ioctl "wikilink") |
+| 2   | Close                        |
+| 3   | Initialize                   |
+| 4   | QueryEvent                   |
+| 5   | MapSharedMem                 |
+| 6   |                              |
+| 7   |                              |
+| 8   | Audio render related init?   |
+| 9   | ?                            |
 
 ## Ioctl
 
 Just like any standard build of the NVIDIA graphics' drivers, the
 nvdrv:a service operates mainly by processing requests and sending them
 to the kernel (not verified) through IOCtl commands. Note that these
-commands are generated with the following primitive (see Linux
-kernel):
+commands are generated with the following primitive (see Linux kernel):
 
-`#define _IOC(inout, group, num, len) (inout | ((len & IOCPARM_MASK) << 16) | ((group) << 8) | (num))`
+`#define _IOC(inout, group, num, len) \`  
+`   (inout | ((len & IOCPARM_MASK) << 16) | ((group) << 8) | (num))`
 
 The following table contains valid commands for group 0x00. This group
 consists in commands for the "/dev/nvhost-ctrl" interface and a few
