@@ -25,11 +25,11 @@ NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>".
 
 ## Browser Applets
 
-| appletname (From UA) | Usage                    | Notes                                                                                |
-| -------------------- | ------------------------ | ------------------------------------------------------------------------------------ |
-| WifiWebAuthApplet    | Captive-portal           |                                                                                      |
-| LoginApplet          | Nintendo Account linking | With invalid TLS certs this just displays an error-code.                             |
-| ?                    | Manual                   | With invalid TLS certs this displays an error dialog without an option to ignore it. |
+| appletname (From UA) | Usage                    | Invalid TLS cert handling                                | Notes |
+| -------------------- | ------------------------ | -------------------------------------------------------- | ----- |
+| WifiWebAuthApplet    | Captive-portal           | Displays an error dialog with an option to ignore it.    |       |
+| LoginApplet          | Nintendo Account linking | Just displays an error-code.                             |       |
+| ?                    | Manual                   | Displays an error dialog without an option to ignore it. |       |
 
 ## Video Playback
 
