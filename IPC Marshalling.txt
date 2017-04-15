@@ -103,7 +103,7 @@ This one is packed even worse than A, they inserted the bit38-36 of the address 
 | 1 || || Lower 32-bits of address.
 |}
 
-== Raw data porton ==
+== Raw data portion ==
 This is an array of u64's. It's always aligned to 16 so sometimes there is padding words before it.
 
 {| class="wikitable" border="1"

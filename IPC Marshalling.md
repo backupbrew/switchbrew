@@ -70,7 +70,7 @@ address *on top* of the counter field.
 | 0    | 31-16 | Size                      |
 | 1    |       | Lower 32-bits of address. |
 
-## Raw data porton
+## Raw data portion
 
 This is an array of u64's. It's always aligned to 16 so sometimes there
 is padding words before it.
