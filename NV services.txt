@@ -1,5 +1,4 @@
-The Switch makes use of a customized NVIDIA driver that is exposed through multiple services.
-Communication with these services goes through IPC, as usual.
+The Switch makes use of a customized NVIDIA driver.
 
 = nvdrv:a =
 {| class="wikitable" border="1"
