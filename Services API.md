@@ -60,6 +60,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | aoc:u                              | AddOn Content services                                                 |                                            |
 | audren:u                           | Audio Renderer services                                                |                                            |
 | audout:u                           | Audio Out services                                                     |                                            |
+| bgtc:t, bgtc:sc                    | Task services                                                          |                                            |
 | bsd:u, bsd:s                       | Sockets services                                                       |                                            |
 | caps:a, caps:c, caps:ss            | Capture services                                                       | a: Album, ss: Screenshot                   |
 | fatal:u                            | Fatal Error services                                                   |                                            |

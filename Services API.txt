@@ -99,6 +99,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Audio Out services
 |
 |-
+| bgtc:t, bgtc:sc
+| Task services
+|
+|-
 | bsd:u, bsd:s
 | Sockets services
 |
