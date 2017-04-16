@@ -42,5 +42,10 @@
 | 0x11A0B | 141         | Went past maximum during marshalling.                         |
 | 0x0C15  | 6           | Invalid name (all zeroes)                                     |
 | 0x1015  | 8           | Permission denied                                             |
-| 0x816   | 4           | Bad NRO magic.                                                |
-| 0xC16   | 6           | Bad NRR magic.                                                |
+| 0x816   | 4           | Bad Nro magic                                                 |
+| 0xC16   | 6           | Bad Nrr magic                                                 |
+| 0x6609  | 51          | Invalid memory state/permission                               |
+| 0x6A09  | 53          | Invalid Nrr                                                   |
+| 0xA209  | 81          | Unaligned Nrr address                                         |
+| 0xA409  | 82          | Bad Nrr size                                                  |
+| 0xAA09  | 85          | Bad Nrr address                                               |
