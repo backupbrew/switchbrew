@@ -97,7 +97,7 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 59 ||
 |-
-| 60 ||
+| 60 || GetLanguageIdFromString
 |-
 | 61 ||
 |-
