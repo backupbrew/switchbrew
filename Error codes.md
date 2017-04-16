@@ -3,7 +3,7 @@
 | Bits | Field       |
 | ---- | ----------- |
 | 8-0  | Module      |
-| 31-9 | Description |
+| 18-9 | Description |
 
 # Modules
 
