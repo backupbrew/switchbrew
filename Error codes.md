@@ -1,5 +1,9 @@
 # Structure
 
+These have been redesigned from the 3DS so that they fit within a
+Aarch64 MOV instruction immediate most of the time (without requiring
+the additional MOVK).
+
 | Bits | Field       |
 | ---- | ----------- |
 | 8-0  | Module      |
