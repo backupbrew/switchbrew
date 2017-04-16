@@ -33,6 +33,11 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 | Just displays an error-code.
 | 
 |-
+| ShopN
+| Actual eShop client
+| ?
+| 
+|-
 | ?
 | Manual
 | Displays an error dialog without an option to ignore it.
