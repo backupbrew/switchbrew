@@ -1,6 +1,4 @@
-= Account Services =
-
-== acc:u1 ==
+= acc:u1 =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
