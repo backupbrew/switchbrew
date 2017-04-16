@@ -35,11 +35,11 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 |-
 | ShopN
 | Actual eShop client
-| ?
+| Just displays an error-code.
 | 
 |-
 | ?
-| Manual
+| General web-applet for use by applications(online manuals, ...).
 | Displays an error dialog without an option to ignore it.
 | 
 |-
