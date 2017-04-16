@@ -108,6 +108,7 @@ This is an array of u64's. It's always aligned to 16 so sometimes there is paddi
 
 {| class="wikitable" border="1"
 ! Word || Description
+|-
 | ... || Two words are reserved here to receive PID if enabled.
 |-
 | 0 || Magic ("SFCI" for requests, "SFCO" for responses)
