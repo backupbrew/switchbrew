@@ -68,8 +68,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | fsp-srv                                          | [Filesystem services](Filesystem%20services.md "wikilink")             |                                            |
 | hid, hid:dbg, hid:sys                            | HID services                                                           |                                            |
 | ldn:m                                            | Local Network Monitor services                                         |                                            |
-| ldr:ro                                           | RO services                                                            |                                            |
-| ldr:shel                                         | [Loader services](Loader%20services.md "wikilink")                     |                                            |
+| ldr:ro, ldr:shel                                 | [Loader services](Loader%20services.md "wikilink")                     |                                            |
 | lm                                               | Log services                                                           |                                            |
 | lr                                               | ?                                                                      |                                            |
 | erpt:c                                           | ERPT(?) services                                                       |                                            |
@@ -79,8 +78,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | nim:shp                                          | NIM services                                                           | shp: eShop                                 |
 | ns:am, ns:su, ns:dev                             | [NS Services](NS%20Services.md "wikilink")                             | am: Application Manager, su: System Update |
 | nsd:u, nsd:a                                     | NSD services                                                           |                                            |
-| nvmemp                                           | NVIDIA Memory Profiling services                                       |                                            |
-| nvdrv:a                                          | [NV services](NV%20services.md "wikilink")                             |                                            |
+| nvdrv:a, nvmemp                                  | [NV services](NV%20services.md "wikilink")                             |                                            |
 | ovln:rcv, ovln:snd                               | Overlay Notification services                                          |                                            |
 | pctl, pctl:a, pctl:s, pctl:r                     | Parental Control services                                              |                                            |
 | pdm:ntfy, pdm:qry                                | Play Log services                                                      |                                            |

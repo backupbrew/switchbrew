@@ -131,11 +131,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Local Network Monitor services
 |
 |-
-| ldr:ro
-| RO services
-|
-|-
-| ldr:shel
+| ldr:ro, ldr:shel
 | [[Loader services]]
 |
 |-
@@ -175,11 +171,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | NSD services
 |
 |-
-| nvmemp
-| NVIDIA Memory Profiling services
-|
-|-
-| nvdrv:a
+| nvdrv:a, nvmemp
 | [[NV services]]
 |
 |-
