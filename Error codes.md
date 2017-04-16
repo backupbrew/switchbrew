@@ -14,6 +14,7 @@
 | 9     | RO service |
 | 10    | IPC        |
 | 11    | IPC        |
+| 16    | NS         |
 | 21    | SM         |
 | 22    | RO user    |
 | 124   | Account    |
