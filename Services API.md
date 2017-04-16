@@ -1,16 +1,57 @@
-Just like the 3DS/N3DS, the Switch exposes an API which communicates
-with certain services. Services are system processes running in the
-background which wait for incoming requests. When a process wants to
-communicate with a service, it first needs to get a handle to the named
-service, and then it can communicate with the service via inter-process
-communication (each service has a name up to 8 characters).
+Services are system processes running in the background which wait for
+incoming requests. When a process wants to communicate with a service,
+it first needs to get a handle to the named service, and then it can
+communicate with the service via inter-process communication (each
+service has a name up to 8 characters).
 
 Handles for services are retrieved from the service manager port, "sm:".
 Services are an abstraction of ports, they operate the same way except
 regular ports can have their handles retrieved directly from a SVC.
 
-List of services
-(non-exhaustive):
+# sm:
+
+| Cmd | Name                                             |
+| --- | ------------------------------------------------ |
+| 0   | [\#Initialize](#Initialize "wikilink")           |
+| 1   | [\#GetService](#GetService "wikilink")           |
+| 2   | [\#RegisterService](#RegisterService "wikilink") |
+| 3   |                                                  |
+
+## Initialize
+
+| Word | Value      |
+| ---- | ---------- |
+| 0    | 0x00000004 |
+| 1    | 0x8000000A |
+| 2    | 0x00000001 |
+| 0-1  | Pid        |
+| 0    | "SCFI"     |
+| 1    | 0x00000000 |
+| 2    | Always 0.  |
+
+## GetService
+
+| Word | Value                                        |
+| ---- | -------------------------------------------- |
+| 0    | 0x00000004                                   |
+| 1    | 0x0000000A                                   |
+| 0    | "SCFI"                                       |
+| 1    | 0x00000001                                   |
+| 2    | Service name, zero padded and casted to u64. |
+
+## RegisterService
+
+| Word | Value                                        |
+| ---- | -------------------------------------------- |
+| 0    | 0x00000004                                   |
+| 1    | 0x0000000C                                   |
+| 0    | "SCFI"                                       |
+| 1    | 0x00000002                                   |
+| 2    | Service name, zero padded and casted to u64. |
+| 3    | Max sessions? 32-bit integer.                |
+| 4    | Unknown bool                                 |
+
+# List
 
 | Service names                      | Description                                                            | Notes                                      |
 | ---------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------ |

@@ -1,8 +1,78 @@
-Just like the 3DS/N3DS, the Switch exposes an API which communicates with certain services. Services are system processes running in the background which wait for incoming requests. When a process wants to communicate with a service, it first needs to get a handle to the named service, and then it can communicate with the service via inter-process communication (each service has a name up to 8 characters).
+Services are system processes running in the background which wait for incoming requests. When a process wants to communicate with a service, it first needs to get a handle to the named service, and then it can communicate with the service via inter-process communication (each service has a name up to 8 characters).
 
 Handles for services are retrieved from the service manager port, "sm:". Services are an abstraction of ports, they operate the same way except regular ports can have their handles retrieved directly from a SVC.
 
-List of services (non-exhaustive):
+= sm: =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#Initialize]]
+|-
+| 1 || [[#GetService]]
+|-
+| 2 || [[#RegisterService]]
+|-
+| 3 ||
+|}
+
+== Initialize ==
+{| class="wikitable" border="1"
+|-
+! Word || Value
+|-
+| 0 || 0x00000004
+|-
+| 1 || 0x8000000A
+|-
+| 2 || 0x00000001
+|- style="border-top: double"
+| 0-1 || Pid
+|- style="border-top: double"
+| 0 || "SCFI"
+|-
+| 1 || 0x00000000
+|-
+| 2 || Always 0.
+|}
+
+== GetService ==
+{| class="wikitable" border="1"
+|-
+! Word || Value
+|-
+| 0 || 0x00000004
+|-
+| 1 || 0x0000000A
+|- style="border-top: double"
+| 0 || "SCFI"
+|-
+| 1 || 0x00000001
+|-
+| 2 || Service name, zero padded and casted to u64.
+|}
+
+== RegisterService ==
+{| class="wikitable" border="1"
+|-
+! Word || Value
+|-
+| 0 || 0x00000004
+|-
+| 1 || 0x0000000C
+|- style="border-top: double"
+| 0 || "SCFI"
+|-
+| 1 || 0x00000002
+|-
+| 2 || Service name, zero padded and casted to u64.
+|-
+| 3 || Max sessions? 32-bit integer.
+|-
+| 4 || Unknown bool
+|}
+
+= List =
 {| class="wikitable" border="1"
 |-
 ! Service names
