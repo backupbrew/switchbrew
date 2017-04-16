@@ -1,5 +1,3 @@
-# Process Manager services
-
 # pm:shell
 
 | Cmd | Name                  |

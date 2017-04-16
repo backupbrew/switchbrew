@@ -1,4 +1,3 @@
-= Process Manager services =
 = pm:shell =
 {| class="wikitable" border="1"
 |-
