@@ -7,7 +7,7 @@ the additional MOVK).
 | Bits | Field       |
 | ---- | ----------- |
 | 8-0  | Module      |
-| 18-9 | Description |
+| 21-9 | Description |
 
 # Modules
 
