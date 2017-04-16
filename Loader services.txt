@@ -1,6 +1,4 @@
-= Loader services =
-
-== ldr:shel ==
+= ldr:shel =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -10,7 +8,7 @@
 | 1 ||
 |}
 
-== ldr:ro ==
+= ldr:ro =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -26,7 +24,7 @@
 | 4 || [[#Initialize]]
 |}
 
-=== LoadNro ===
+== LoadNro ==
 {| class="wikitable" border="1"
 |-
 ! Word || Value
@@ -54,7 +52,7 @@
 | 6 || Bss size
 |}
 
-=== LoadNrr ===
+== LoadNrr ==
 {| class="wikitable" border="1"
 |-
 ! Word || Value
@@ -77,7 +75,7 @@
 | 3 || Nrr size
 |}
 
-=== Initialize ===
+== Initialize ==
 {| class="wikitable" border="1"
 |-
 ! Word || Value

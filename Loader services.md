@@ -1,13 +1,11 @@
-# Loader services
-
-## ldr:shel
+# ldr:shel
 
 | Cmd | Name |
 | --- | ---- |
 | 0   |      |
 | 1   |      |
 
-## ldr:ro
+# ldr:ro
 
 | Cmd | Name                                   |
 | --- | -------------------------------------- |
@@ -17,7 +15,7 @@
 | 3   |                                        |
 | 4   | [\#Initialize](#Initialize "wikilink") |
 
-### LoadNro
+## LoadNro
 
 | Word | Value       |
 | ---- | ----------- |
@@ -33,7 +31,7 @@
 | 5    |             |
 | 6    | Bss size    |
 
-### LoadNrr
+## LoadNrr
 
 | Word | Value       |
 | ---- | ----------- |
@@ -47,7 +45,7 @@
 | 2    | Nrr address |
 | 3    | Nrr size    |
 
-### Initialize
+## Initialize
 
 | Word | Value                       |
 | ---- | --------------------------- |
