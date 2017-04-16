@@ -65,7 +65,7 @@
 | 0100000000001009 |                                                        |
 | 010000000000100A |                                                        |
 | 010000000000100B |                                                        |
-| 010000000000100B | [NShop](Internet%20Browser.md "wikilink") applet       |
+| 010000000000100B | [ShopN](Internet%20Browser.md "wikilink") applet       |
 | 010000000000100C | Overlay applet                                         |
 | 010000000000100D |                                                        |
 | 010000000000100F |                                                        |

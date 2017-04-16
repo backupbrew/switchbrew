@@ -118,7 +118,7 @@
 |-
 | 010000000000100B ||
 |-
-| 010000000000100B || [[Internet_Browser|NShop]] applet
+| 010000000000100B || [[Internet_Browser|ShopN]] applet
 |-
 | 010000000000100C || Overlay applet
 |-
