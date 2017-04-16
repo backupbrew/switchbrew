@@ -115,6 +115,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Fatal Error services
 |
 |-
+| friend:u, friend:v, friend:m, friend:s, friend:a
+| Friend services
+|
+|-
 | fsp-srv
 | [[Filesystem services]]
 |
