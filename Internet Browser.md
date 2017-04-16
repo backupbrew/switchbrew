@@ -25,13 +25,20 @@ NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>".
 
 ## Browser Applets
 
-| appletname (From UA) | Usage                                                            | Invalid TLS cert handling                                                                                                    | Notes |
-| -------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----- |
-| WifiWebAuthApplet    | Captive-portal                                                   | Displays an error dialog with an option to ignore it.                                                                        |       |
-| LoginApplet          | Nintendo Account linking                                         | Just displays an error-code.                                                                                                 |       |
-| ShopN                | Actual eShop client                                              | Just displays an error-code.                                                                                                 |       |
-| ?                    | General web-applet for use by applications(online manuals, ...). | Displays an error dialog without an option to ignore it.                                                                     |       |
-| ?                    | News                                                             | With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit. |       |
+| appletname (From UA) | Usage                                                            | Invalid TLS cert handling                                                                                                    | Uses whitelist | Notes |
+| -------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------- | ----- |
+| WifiWebAuthApplet    | Captive-portal                                                   | Displays an error dialog with an option to ignore it.                                                                        | No             |       |
+| LoginApplet          | Nintendo Account linking                                         | Just displays an error-code.                                                                                                 | Yes            |       |
+| ShopN                | Actual eShop client                                              | Just displays an error-code.                                                                                                 |                |       |
+| ?                    | General web-applet for use by applications(online manuals, ...). | Displays an error dialog without an option to ignore it.                                                                     |                |       |
+| ?                    | News                                                             | With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit. |                |       |
+
+When whitelisting is enabled, you can only load page domains included in
+the whitelist, otherwise an error is displayed. Videos via the
+
+<video>
+
+tag are not affected.
 
 ## Video Playback
 
