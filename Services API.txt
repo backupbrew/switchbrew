@@ -72,7 +72,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | 4 || Unknown bool
 |}
 
-= List =
+= Service List =
 {| class="wikitable" border="1"
 |-
 ! Service names

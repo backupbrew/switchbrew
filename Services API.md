@@ -51,7 +51,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | 3    | Max sessions? 32-bit integer.                |
 | 4    | Unknown bool                                 |
 
-# List
+# Service List
 
 | Service names                      | Description                                                            | Notes                                      |
 | ---------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------ |
