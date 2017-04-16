@@ -81,6 +81,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | nvmemp                             | NVIDIA Memory Profiling services                                       |                                            |
 | nvdrv:a                            | [NV services](NV%20services.md "wikilink")                             |                                            |
 | ovln:rcv, ovln:snd                 | Overlay Notification services                                          |                                            |
+| pctl, pctl:a, pctl:s, pctl:r       | Parental Control services                                              |                                            |
 | pdm:ntfy, pdm:qry                  | Play Log services                                                      |                                            |
 | pl:u                               | Shared Font services                                                   |                                            |
 | pm:bm, pm:shell                    | [Process Manager services](Process%20Manager%20services.md "wikilink") |                                            |

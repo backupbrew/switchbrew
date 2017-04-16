@@ -183,6 +183,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Overlay Notification services
 |
 |-
+| pctl, pctl:a, pctl:s, pctl:r
+| Parental Control services
+|
+|-
 | pdm:ntfy, pdm:qry
 | Play Log services
 |
