@@ -75,12 +75,12 @@ address *on top* of the counter field.
 This is an array of u64's. It's always aligned to 16 so sometimes there
 is padding words before it.
 
-| Word | Description                                            |
-| ---- | ------------------------------------------------------ |
-| ...  | Two words are reserved here to receive PID if enabled. |
-| 0    | Magic ("SFCI" for requests, "SFCO" for responses)      |
-| 1    | Cmd id                                                 |
-| ...  | Non-marshalled data is placed here                     |
+| Word | Description                                       |
+| ---- | ------------------------------------------------- |
+| ...  | Pid is written here if enabled.                   |
+| \+0  | Magic ("SFCI" for requests, "SFCO" for responses) |
+| \+1  | Cmd id                                            |
+| ...  | Rest of raw data.                                 |
 
 ## Official marshalling code
 
