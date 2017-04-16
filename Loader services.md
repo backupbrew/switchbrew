@@ -36,14 +36,15 @@
 | Word | Value       |
 | ---- | ----------- |
 | 0    | 0x00000004  |
-| 1    | 0x8000000C  |
+| 1    | 0x8000000E  |
 | 2    | 0x00000001  |
 |      |             |
 | 0-1  | Pid         |
 | 0    | "SFCI"      |
 | 1    | 0x00000002  |
-| 2    | Nrr address |
-| 3    | Nrr size    |
+| 2    | Always 0.   |
+| 3    | Nrr address |
+| 4    | Nrr size    |
 
 ## Initialize
 
