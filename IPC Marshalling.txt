@@ -52,8 +52,6 @@ There can only be one of this descriptor type. It is enabled by bit31 of the sec
 | ... || || Handles
 |-
 | ... || || B-words, purpose unknown.
-|-
-| ... || || Two words are reserved here to receive PID if bit0 is set.
 |}
 
 === Buffer descriptor A/B ===
