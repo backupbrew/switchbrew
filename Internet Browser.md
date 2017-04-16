@@ -50,3 +50,15 @@ it will display an error dialog instead.
 
 While the rootCA(s) for Let's Encrypt isn't included, Let's Encrypt is
 indirectly trusted via "Digital Signature Trust Co.".
+
+## WifiWebAuthApplet
+
+When doing a connection-test in system-settings, it will detect that the
+captive-portal is required and display an error for it when the response
+for "<http://conntest.nintendowifi.net/>" doesn't include the
+"X-Organization: Nintendo" HTTP header. The web-applet will not load
+until something else attempts a conntest, for example when launching
+eShop and prior to LoginApplet launching. The initial page loaded by
+this applet is the above conntest URL.
+
+This is only available starting with [2.0.0](2.0.0.md "wikilink").
