@@ -37,6 +37,11 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 | Manual
 | Displays an error dialog without an option to ignore it.
 | 
+|-
+| ?
+| News
+| With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit.
+| 
 |}
 
 == Video Playback ==
