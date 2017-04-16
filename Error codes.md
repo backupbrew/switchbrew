@@ -18,6 +18,7 @@
 | 21    | SM         |
 | 22    | RO user    |
 | 124   | Account    |
+| 126   | Mii        |
 | 203   | HID        |
 
 # Error codes
