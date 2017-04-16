@@ -1,13 +1,11 @@
 This is the Switch equivalent of
 [this](https://3dbrew.org/wiki/NS_and_APT_Services).
 
-# NS Services
+# ns:am
 
-## NS Service "ns:am"
+# ns:su
 
-## NS Service "ns:su"
-
-## NS Service "ns:dev"
+# ns:dev
 
 # AppIDs
 
