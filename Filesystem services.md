@@ -1,6 +1,4 @@
-# Filesystem services
-
-## fsp-srv
+# fsp-srv
 
 | Cmd  | Name                            |
 | ---- | ------------------------------- |

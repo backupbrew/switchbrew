@@ -1,6 +1,4 @@
-= Filesystem services =
-
-== fsp-srv ==
+= fsp-srv =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
