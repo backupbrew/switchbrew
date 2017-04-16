@@ -10,8 +10,8 @@
 | Cmd | Name                                   |
 | --- | -------------------------------------- |
 | 0   | [\#LoadNro](#LoadNro "wikilink")       |
-| 1   | [\#LoadNrr](#LoadNrr "wikilink")       |
-| 2   |                                        |
+| 1   |                                        |
+| 2   | [\#LoadNrr](#LoadNrr "wikilink")       |
 | 3   |                                        |
 | 4   | [\#Initialize](#Initialize "wikilink") |
 
@@ -41,7 +41,7 @@
 |      |             |
 | 0-1  | Pid         |
 | 0    | "SFCI"      |
-| 1    | 0x00000001  |
+| 1    | 0x00000002  |
 | 2    | Nrr address |
 | 3    | Nrr size    |
 
