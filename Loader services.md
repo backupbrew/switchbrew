@@ -10,9 +10,9 @@
 | Cmd | Name                                   |
 | --- | -------------------------------------- |
 | 0   | [\#LoadNro](#LoadNro "wikilink")       |
-| 1   |                                        |
+| 1   | UnloadNro                              |
 | 2   | [\#LoadNrr](#LoadNrr "wikilink")       |
-| 3   |                                        |
+| 3   | UnloadNrr                              |
 | 4   | [\#Initialize](#Initialize "wikilink") |
 
 ## LoadNro

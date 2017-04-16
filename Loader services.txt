@@ -15,11 +15,11 @@
 |-
 | 0 || [[#LoadNro]]
 |-
-| 1 || 
+| 1 || UnloadNro
 |-
 | 2 || [[#LoadNrr]] 
 |-
-| 3 || 
+| 3 || UnloadNrr
 |-
 | 4 || [[#Initialize]]
 |}
