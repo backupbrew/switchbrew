@@ -68,6 +68,8 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 |-
 | 0x10601 || 131 || Port max sessions exceeded
 |-
+| 0x10801 || 132 || Out of memory
+|-
 | 0x7D402 || 1002 || Title-id not found
 |-
 | 0x6609 || 51 || Invalid memory state/permission

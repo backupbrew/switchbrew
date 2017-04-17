@@ -43,6 +43,7 @@ the additional MOVK).
 | 0xEE01  | 119         | When you give too many handles to svcWaitSynchronizationN.    |
 | 0xFA01  | 125         | Wrong memory permission?                                      |
 | 0x10601 | 131         | Port max sessions exceeded                                    |
+| 0x10801 | 132         | Out of memory                                                 |
 | 0x7D402 | 1002        | Title-id not found                                            |
 | 0x6609  | 51          | Invalid memory state/permission                               |
 | 0x6A09  | 53          | Invalid Nrr                                                   |
