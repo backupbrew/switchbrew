@@ -34,6 +34,7 @@ the additional MOVK).
 | 0xD201  | 105         | Handle-table full.                                            |
 | 0xD401  | 106         | Invalid memory state.                                         |
 | 0xD801  | 108         | When trying to set executable permission on memory.           |
+| 0xE201  | 113         | Invalid processor id.                                         |
 | 0xE401  | 114         | Invalid handle.                                               |
 | 0xE601  | 115         | Syscall copy from user failed.                                |
 | 0xEA01  | 117         | Time out? When you give 0 handles to svcWaitSynchronizationN. |
