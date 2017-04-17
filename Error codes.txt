@@ -50,6 +50,8 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 |-
 | 0xD801 || 108 || When trying to set executable permission on memory.
 |-
+| 0xE001 || 112 || Invalid thread priority.
+|-
 | 0xE201 || 113 || Invalid processor id.
 |-
 | 0xE401 || 114 || Invalid handle.
