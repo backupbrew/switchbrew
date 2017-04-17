@@ -40,7 +40,7 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 {| class=wikitable
 ! Value || Description || Description
 |-
-| 0xCA01 || 101 || Invalid size (not page-aligned).
+| 0xCA01 || 101 || Unaligned size
 |-
 | 0xCC01 || 102 || Invalid address (not page-aligned).
 |-

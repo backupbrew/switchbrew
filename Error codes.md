@@ -29,7 +29,7 @@ the additional MOVK).
 
 | Value   | Description | Description                                                   |
 | ------- | ----------- | ------------------------------------------------------------- |
-| 0xCA01  | 101         | Invalid size (not page-aligned).                              |
+| 0xCA01  | 101         | Unaligned size                                                |
 | 0xCC01  | 102         | Invalid address (not page-aligned).                           |
 | 0xD201  | 105         | Handle-table full.                                            |
 | 0xD401  | 106         | Invalid memory state.                                         |
