@@ -9,7 +9,7 @@
 | 0x5  | svcUnmirrorStack                                             | X0=dstaddr, X1=srcaddr, X2=size                                   | W0=result                     |
 | 0x6  | svcQueryMemory                                               | X0=meminfo\_ptr, X2=addr                                          | W0=result, W1=pageinfo        |
 | 0x7  | svcExitProcess                                               | None                                                              |                               |
-| 0x8  | svcCreateThread                                              |                                                                   |                               |
+| 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")             | X1=entry, X2=arg, X3=stacktop, W4=prio, W5=processor\_id          |                               |
 | 0x9  | svcStartThread                                               | W0=thread\_handle                                                 |                               |
 | 0xA  | svcExitThread                                                | None                                                              |                               |
 | 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")               | X0=nano                                                           |                               |
@@ -80,6 +80,10 @@ Code can get the range of this region from
 
 The source region gets reprotected to ---, and sets bit32 is set in
 [\#MemoryState](#MemoryState "wikilink").
+
+## svcCreateThread
+
+Processor\_id must be 0,1,2,3 or -2.
 
 ## svcSleepThread
 
