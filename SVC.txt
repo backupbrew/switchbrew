@@ -2,7 +2,7 @@
 {| class=wikitable
 ! Id || Name || In || Out
 |-
-|  0x1 || svcSetupHeap || X1=size || W0=result, X1=outaddr
+|  0x1 || [[#svcSetHeapSize]] || X1=size || W0=result, X1=outaddr
 |-
 |  0x2 || [[#svcProtectMemory]] || X0=addr, X1=size, W2=prot || W0=result
 |-
@@ -104,6 +104,9 @@
 |-
 | 0x52 || [[#svcUnmapMemoryMirror]] || W0=mirror_handle, X1=addr, X2=size || W0=result
 |}
+
+== svcSetHeapSize ==
+Size must be a multiple of 0x2000000.
 
 == svcProtectMemory ==
 Bit2 of permission (exec) is not allowed.

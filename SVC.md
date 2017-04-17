@@ -2,7 +2,7 @@
 
 | Id   | Name                                                         | In                                                                | Out                           |
 | ---- | ------------------------------------------------------------ | ----------------------------------------------------------------- | ----------------------------- |
-| 0x1  | svcSetupHeap                                                 | X1=size                                                           | W0=result, X1=outaddr         |
+| 0x1  | [\#svcSetHeapSize](#svcSetHeapSize "wikilink")               | X1=size                                                           | W0=result, X1=outaddr         |
 | 0x2  | [\#svcProtectMemory](#svcProtectMemory "wikilink")           | X0=addr, X1=size, W2=prot                                         | W0=result                     |
 | 0x3  | [\#svcSetMemoryState](#svcSetMemoryState "wikilink")         | X0=addr, X1=size, W2=state0, W3=state1                            | W0=result                     |
 | 0x4  | [\#svcMirrorStack](#svcMirrorStack "wikilink")               | X0=dstaddr, X1=srcaddr, X2=size                                   | W0=result                     |
@@ -53,6 +53,10 @@
 | 0x50 | svcCreateMemoryBlock                                         | W1=size?, W2=perm0, W3=perm1                                      | W0=result, W1=handle          |
 | 0x51 | [\#svcMapMemoryMirror](#svcMapMemoryMirror "wikilink")       | X0=mirror\_handle, X1=addr, X2=size, W3=perm                      | W0=result                     |
 | 0x52 | [\#svcUnmapMemoryMirror](#svcUnmapMemoryMirror "wikilink")   | W0=mirror\_handle, X1=addr, X2=size                               | W0=result                     |
+
+## svcSetHeapSize
+
+Size must be a multiple of 0x2000000.
 
 ## svcProtectMemory
 
