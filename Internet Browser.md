@@ -29,7 +29,7 @@ NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>".
 | -------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------- | ----- |
 | WifiWebAuthApplet    | Captive-portal                                                   | Displays an error dialog with an option to ignore it.                                                                        | No             |       |
 | LoginApplet          | Nintendo Account linking                                         | Just displays an error-code.                                                                                                 | Yes            |       |
-| ShopN                | Actual eShop client                                              | Just displays an error-code.                                                                                                 |                |       |
+| ShopN                | Actual eShop client                                              | Just displays an error-code.                                                                                                 | Yes            |       |
 | ?                    | General web-applet for use by applications(online manuals, ...). | Displays an error dialog without an option to ignore it.                                                                     |                |       |
 | ?                    | News                                                             | With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit. |                |       |
 
