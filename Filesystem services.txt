@@ -5,13 +5,13 @@
 |-
 | 1 ||
 |-
-| 2 || MountSomething
+| 2 || Returns an [[#IFileSystem]].
 |-
-| 7 || MountSomething
+| 7 || Returns an [[#IFileSystem]].
 |-
 | 8 || MountContent
 |-
-| 11 ||
+| 11 || Returns an [[#IFileSystem]].
 |-
 | 12 || OpenBisPartition
 |-
@@ -41,31 +41,31 @@
 |-
 | 31 || MountGameCardPartition
 |-
-| 51 ||
+| 51 || Returns an [[#IFileSystem]].
 |-
 | 52 || MountSystemSaveData
 |-
-| 53 ||
+| 53 || Returns an [[#IFileSystem]].
 |-
 | 58 || ReadSaveDataFileSystemExtraData
 |-
-| 59 ||
+| 59 || 
 |-
-| 60 || 
+| 60 || Returns an [[#ISaveDataInfoReader]].
 |-
 | 61 || OpenSaveDataIterator
 |-
-| 80 ||
+| 80 || Returns an [[#IFile]].
 |-
 | 100 || MountImageDirectory
 |-
-| 110 ||
+| 110 || Returns an [[#IFileSystem]].
 |-
-| 200 ||
+| 200 || Returns an [[#IStorage]].
 |-
 | 202 || OpenDataStorageByDataId
 |-
-| 203 ||
+| 203 || Returns an [[#IStorage]].
 |-
 | 400 || [[#OpenDeviceOperator]]
 |-

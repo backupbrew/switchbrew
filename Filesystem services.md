@@ -3,10 +3,10 @@
 | Cmd  | Name                                                                                   |
 | ---- | -------------------------------------------------------------------------------------- |
 | 1    |                                                                                        |
-| 2    | MountSomething                                                                         |
-| 7    | MountSomething                                                                         |
+| 2    | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
+| 7    | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 8    | MountContent                                                                           |
-| 11   |                                                                                        |
+| 11   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 12   | OpenBisPartition                                                                       |
 | 13   |                                                                                        |
 | 17   | OpenHostFileSystemImpl                                                                 |
@@ -21,19 +21,19 @@
 | 27   |                                                                                        |
 | 30   |                                                                                        |
 | 31   | MountGameCardPartition                                                                 |
-| 51   |                                                                                        |
+| 51   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 52   | MountSystemSaveData                                                                    |
-| 53   |                                                                                        |
+| 53   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 58   | ReadSaveDataFileSystemExtraData                                                        |
 | 59   |                                                                                        |
-| 60   |                                                                                        |
+| 60   | Returns an [\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink").                   |
 | 61   | OpenSaveDataIterator                                                                   |
-| 80   |                                                                                        |
+| 80   | Returns an [\#IFile](#IFile "wikilink").                                               |
 | 100  | MountImageDirectory                                                                    |
-| 110  |                                                                                        |
-| 200  |                                                                                        |
+| 110  | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
+| 200  | Returns an [\#IStorage](#IStorage "wikilink").                                         |
 | 202  | OpenDataStorageByDataId                                                                |
-| 203  |                                                                                        |
+| 203  | Returns an [\#IStorage](#IStorage "wikilink").                                         |
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")     |
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink") |
