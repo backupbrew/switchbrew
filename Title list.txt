@@ -126,7 +126,7 @@
 |-
 | 010000000000100F ||
 |-
-| 0100000000001010 ||
+| 0100000000001010 || [[Internet_Browser|Whitelisted]] applet (LoginApplet+ShareApplet+LobbyApplet)
 |-
 | 0100000000001011 || [[Internet_Browser|WifiWebAuth]] applet
 |-
