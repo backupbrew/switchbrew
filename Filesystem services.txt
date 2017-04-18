@@ -67,11 +67,11 @@
 |-
 | 203 ||
 |-
-| 400 || [[#ConnectToCardService]]
+| 400 || [[#OpenCardService]]
 |-
-| 500 || IsInserted?
+| 500 || [[#OpenSdCardDetectionEventNotifier]]
 |-
-| 501 || OpenDetectionEventNotifier?
+| 501 || [[#OpenGameCardDetectionEventNotifier]]
 |-
 | 600 ||
 |-
@@ -112,18 +112,18 @@
 | 1006 || OutputAccessLogToSdCard
 |}
 
-== ConnectToCardService ==
+== OpenCardService ==
 Sessions to this port are returned by cmd 400.
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || IsSdCardInserted
 |-
 | 1 ||
 |-
-| 2 ||
+| 2 || GetSdCardCid
 |-
 | 3 ||
 |-
@@ -182,4 +182,24 @@ Sessions to this port are returned by cmd 400.
 | 300 ||
 |-
 | 301 ||
+|}
+
+== OpenSdCardDetectionEventNotifier ==
+Sessions to this port are returned by cmd 500.
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetEvent
+|}
+
+== OpenGameCardDetectionEventNotifier ==
+Sessions to this port are returned by cmd 501.
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetEvent
 |}
