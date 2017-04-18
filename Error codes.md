@@ -46,9 +46,9 @@ the additional MOVK).
 | 0x10601  | 131         | Port max sessions exceeded                                    |
 | 0x10801  | 132         | Out of memory                                                 |
 | 0x7D402  | 1002        | Title-id not found                                            |
-| 0x1A4A02 | 3365        | Out of memory                                                 |
 | 0x13B002 | 2520        | Gamecard not inserted                                         |
 | 0x171402 | 2954        | Invalid gamecard handle.                                      |
+| 0x1A4A02 | 3365        | Out of memory                                                 |
 | 0x2EE202 | 6001        | Unknown media-id                                              |
 | 0x2EE602 | 6003        | Path too long                                                 |
 | 0x320002 | 6400        | Permission denied                                             |
