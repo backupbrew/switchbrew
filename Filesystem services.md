@@ -121,6 +121,17 @@ This command returns a session to a port implementing the
 
 # IEventNotifier
 
-| Cmd | Name     |
-| --- | -------- |
-| 0   | GetEvent |
+| Cmd | Name      |
+| --- | --------- |
+| 0   | BindEvent |
+
+# StorageId
+
+| Value | Name       |
+| ----- | ---------- |
+| 0     | None       |
+| 1     | Host       |
+| 2     | Card       |
+| 3     | NandSystem |
+| 4     | NandUser   |
+| 5     | SdCard     |
