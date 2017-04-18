@@ -149,7 +149,7 @@ Sessions to this port are returned by cmd 400.
 |-
 | 201 ||
 |-
-| 202 ||
+| 202 || GetGameCardHandle
 |-
 | 203 ||
 |-
