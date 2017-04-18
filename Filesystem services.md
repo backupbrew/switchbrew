@@ -76,7 +76,7 @@ Sessions to this port are returned by cmd 400.
 | 112 |                                |
 | 113 |                                |
 | 114 |                                |
-| 200 |                                |
+| 200 | IsGameCardInserted             |
 | 201 |                                |
 | 202 | GetGameCardHandle              |
 | 203 | GetGameCardUpdatePartitionInfo |

@@ -145,7 +145,7 @@ Sessions to this port are returned by cmd 400.
 |-
 | 114 ||
 |-
-| 200 ||
+| 200 || IsGameCardInserted
 |-
 | 201 ||
 |-
