@@ -151,13 +151,13 @@ Sessions to this port are returned by cmd 400.
 |-
 | 202 || GetGameCardHandle
 |-
-| 203 ||
+| 203 || GetGameCardUpdatePartitionInfo
 |-
 | 204 ||
 |-
-| 205 ||
+| 205 || GetGameCardAttribute
 |-
-| 206 ||
+| 206 || GetGameCardDeviceCertificate
 |-
 | 207 ||
 |-
