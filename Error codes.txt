@@ -74,6 +74,8 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 |-
 | 0x13B002 || 2520 || Gamecard not inserted
 |-
+| 0x171402 || 2954 || Invalid gamecard handle.
+|-
 | 0x2EE202 || 6001 || Unknown media-id
 |-
 | 0x2EE602 || 6003 || Path too long
