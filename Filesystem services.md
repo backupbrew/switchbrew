@@ -2,7 +2,7 @@
 
 | Cmd  | Name                                                                                   |
 | ---- | -------------------------------------------------------------------------------------- |
-| 1    | Initialize                                                                             |
+| 1    | [\#Initialize](#Initialize "wikilink")                                                 |
 | 2    | MountCurrentProcessArchive                                                             |
 | 7    | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 8    | MountContent                                                                           |
@@ -56,6 +56,20 @@
 | 1004 |                                                                                        |
 | 1005 | GetGlobalAccessLogMode                                                                 |
 | 1006 | OutputAccessLogToSdCard                                                                |
+
+## Initialize
+
+| Word | Value              |
+| ---- | ------------------ |
+| 0    | 0x00000004         |
+| 1    | 0x8000000E         |
+| 2    | 0x00000001         |
+| 0-1  | Pid                |
+| 0    | Always. 0x18000001 |
+| 1    | Always. 0          |
+| 2    | "SCFI"             |
+| 3    | 0x00000001         |
+| 4    | Always 0.          |
 
 ## OpenDeviceOperator
 

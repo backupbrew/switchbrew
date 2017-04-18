@@ -3,7 +3,7 @@
 |-
 ! Cmd || Name
 |-
-| 1 || Initialize
+| 1 || [[#Initialize]]
 |-
 | 2 || MountCurrentProcessArchive
 |-
@@ -110,6 +110,30 @@
 | 1005 || GetGlobalAccessLogMode
 |-
 | 1006 || OutputAccessLogToSdCard
+|}
+
+== Initialize ==
+{| class="wikitable" border="1"
+|-
+! Word || Value
+|-
+| 0 || 0x00000004
+|-
+| 1 || 0x8000000E
+|-
+| 2 || 0x00000001
+|- style="border-top: double"
+| 0-1 || Pid
+|- style="border-top: double"
+| 0 || Always. 0x18000001
+|-
+| 1 || Always. 0
+|-
+| 2 || "SCFI"
+|-
+| 3 || 0x00000001
+|-
+| 4 || Always 0.
 |}
 
 == OpenDeviceOperator ==
