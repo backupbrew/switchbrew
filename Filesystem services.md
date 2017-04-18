@@ -3,8 +3,8 @@
 | Cmd  | Name                                                                                   |
 | ---- | -------------------------------------------------------------------------------------- |
 | 1    |                                                                                        |
-| 2    |                                                                                        |
-| 7    |                                                                                        |
+| 2    | MountSomething                                                                         |
+| 7    | MountSomething                                                                         |
 | 8    | MountContent                                                                           |
 | 11   |                                                                                        |
 | 12   | OpenBisPartition                                                                       |
@@ -72,9 +72,9 @@ This command returns a session to a port implementing the
 This command returns a session to a port implementing the
 [\#IEventNotifier](#IEventNotifier "wikilink") interface.
 
-## IFileSystem
-
 ## IStorage
+
+## IFileSystem
 
 ## IDirectory
 
