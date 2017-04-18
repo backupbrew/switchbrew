@@ -34,7 +34,7 @@
 | 200  |                                                                                        |
 | 202  | OpenDataStorageByDataId                                                                |
 | 203  |                                                                                        |
-| 400  | [\#OpenCardService](#OpenCardService "wikilink")                                       |
+| 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")     |
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink") |
 | 600  |                                                                                        |
@@ -57,9 +57,32 @@
 | 1005 | GetGlobalAccessLogMode                                                                 |
 | 1006 | OutputAccessLogToSdCard                                                                |
 
-## OpenCardService
+## OpenDeviceOperator
 
-Sessions to this port are returned by cmd 400.
+This command returns a session to a port implementing the
+[\#IDeviceOperator](#IDeviceOperator "wikilink") interface.
+
+## OpenSdCardDetectionEventNotifier
+
+This command returns a session to a port implementing the
+[\#IEventNotifier](#IEventNotifier "wikilink") interface.
+
+## OpenGameCardDetectionEventNotifier
+
+This command returns a session to a port implementing the
+[\#IEventNotifier](#IEventNotifier "wikilink") interface.
+
+## IFileSystem
+
+## IStorage
+
+## IDirectory
+
+## IFile
+
+## ISaveDataInfoReader
+
+## IDeviceOperator
 
 | Cmd | Name                           |
 | --- | ------------------------------ |
@@ -96,17 +119,7 @@ Sessions to this port are returned by cmd 400.
 | 300 |                                |
 | 301 |                                |
 
-## OpenSdCardDetectionEventNotifier
-
-Sessions to this port are returned by cmd 500.
-
-| Cmd | Name     |
-| --- | -------- |
-| 0   | GetEvent |
-
-## OpenGameCardDetectionEventNotifier
-
-Sessions to this port are returned by cmd 501.
+## IEventNotifier
 
 | Cmd | Name     |
 | --- | -------- |
