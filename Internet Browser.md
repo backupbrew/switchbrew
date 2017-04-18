@@ -13,25 +13,27 @@ captive-portal).
 
 ## Known User Agent Strings
 
-| System Version               | UA String                                                                                                                   |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| [2.0.0](2.0.0.md "wikilink") | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.9 NintendoBrowser/5.1.0.13341  |
-| [2.1.0](2.1.0.md "wikilink") | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.10 NintendoBrowser/5.1.0.13343 |
+| System Version                                            | UA String                                                                                                                   |
+| --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| [2.0.0](2.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.9 NintendoBrowser/5.1.0.13341  |
+| [2.1.0](2.1.0.md "wikilink")-[2.2.0](2.2.0.md "wikilink") | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.10 NintendoBrowser/5.1.0.13343 |
 
 The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>)
 AppleWebKit/<webkitver> (KHTML, like Gecko)
 NF/<nfver0>.<nfver1>.<nfver2>
-NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>".
+NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>"
 
 ## Browser Applets
 
-| appletname (From UA) | Usage                                                            | Invalid TLS cert handling                                                                                                    | Uses whitelist | Notes |
-| -------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------- | ----- |
-| WifiWebAuthApplet    | Captive-portal                                                   | Displays an error dialog with an option to ignore it.                                                                        | No             |       |
-| LoginApplet          | Nintendo Account linking                                         | Just displays an error-code.                                                                                                 | Yes            |       |
-| ShopN                | Actual eShop client                                              | Just displays an error-code.                                                                                                 | Yes            |       |
-| ?                    | General web-applet for use by applications(online manuals, ...). | Displays an error dialog without an option to ignore it.                                                                     |                |       |
-| ?                    | News                                                             | With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit. |                |       |
+| appletname (From UA) | Usage                                                            | Invalid TLS cert handling                                                                                                    | Uses whitelist | Title ID         | Notes |
+| -------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------- | ---------------- | ----- |
+| WifiWebAuthApplet    | Captive-portal                                                   | Displays an error dialog with an option to ignore it.                                                                        | No             | 0100000000001011 |       |
+| LoginApplet          | Nintendo Account linking                                         | Just displays an error-code.                                                                                                 | Yes            | 0100000000001010 |       |
+| ShareApplet          | Posting screenshots to social media                              | Just displays an error-code.                                                                                                 | Yes            | 0100000000001010 |       |
+| LobbyApplet          | ?                                                                | Just displays an error-code.                                                                                                 | Yes            | 0100000000001010 |       |
+| ShopN                | Actual eShop client                                              | Just displays an error-code.                                                                                                 | Yes            | 010000000000100B |       |
+| ?                    | General web-applet for use by applications(online manuals, ...). | Displays an error dialog without an option to ignore it.                                                                     |                | ?                |       |
+| ?                    | News                                                             | With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit. |                | ?                |       |
 
 When whitelisting is enabled, you can only load page domains included in
 the whitelist, otherwise an error is displayed. Videos via the
