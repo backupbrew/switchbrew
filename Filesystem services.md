@@ -3,7 +3,7 @@
 | Cmd  | Name                                                                                   |
 | ---- | -------------------------------------------------------------------------------------- |
 | 1    |                                                                                        |
-| 2    | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
+| 2    | MountRomFs                                                                             |
 | 7    | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 8    | MountContent                                                                           |
 | 11   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
