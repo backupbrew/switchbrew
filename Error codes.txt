@@ -64,6 +64,8 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 |-
 | 0xEE01 || 119 || When you give too many handles to svcWaitSynchronizationN.
 |-
+| 0xF201 || 121 || No such port
+|-
 | 0xFA01 || 125 || Wrong memory permission?
 |-
 | 0x10601 || 131 || Port max sessions exceeded

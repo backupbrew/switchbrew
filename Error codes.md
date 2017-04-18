@@ -41,6 +41,7 @@ the additional MOVK).
 | 0xE601   | 115         | Syscall copy from user failed.                                |
 | 0xEA01   | 117         | Time out? When you give 0 handles to svcWaitSynchronizationN. |
 | 0xEE01   | 119         | When you give too many handles to svcWaitSynchronizationN.    |
+| 0xF201   | 121         | No such port                                                  |
 | 0xFA01   | 125         | Wrong memory permission?                                      |
 | 0x10601  | 131         | Port max sessions exceeded                                    |
 | 0x10801  | 132         | Out of memory                                                 |
