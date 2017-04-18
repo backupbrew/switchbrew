@@ -17,6 +17,8 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 |-
 | 2 || FS
 |-
+| 5 || GameCard
+|-
 | 9 || RO service
 |-
 | 10 || IPC
@@ -85,6 +87,8 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 | 0x2EE602 || 6003 || Path too long
 |-
 | 0x320002 || 6400 || Permission denied
+|-
+| 0xDC05 || 110 || Gamecard not inserted
 |-
 | 0x6609 || 51 || Invalid memory state/permission
 |-

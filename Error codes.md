@@ -15,6 +15,7 @@ the additional MOVK).
 | ----- | ---------- |
 | 1     | Kernel     |
 | 2     | FS         |
+| 5     | GameCard   |
 | 9     | RO service |
 | 10    | IPC        |
 | 11    | IPC        |
@@ -52,6 +53,7 @@ the additional MOVK).
 | 0x2EE202 | 6001        | Unknown media-id                                              |
 | 0x2EE602 | 6003        | Path too long                                                 |
 | 0x320002 | 6400        | Permission denied                                             |
+| 0xDC05   | 110         | Gamecard not inserted                                         |
 | 0x6609   | 51          | Invalid memory state/permission                               |
 | 0x6A09   | 53          | Invalid Nrr                                                   |
 | 0xA209   | 81          | Unaligned Nrr address                                         |
