@@ -45,7 +45,9 @@ the additional MOVK).
 | 0x10601  | 131         | Port max sessions exceeded                                    |
 | 0x10801  | 132         | Out of memory                                                 |
 | 0x7D402  | 1002        | Title-id not found                                            |
+| 0x2EE202 | 6001        | Unknown media-id                                              |
 | 0x2EE602 | 6003        | Path too long                                                 |
+| 0x320002 | 6400        | Permission denied                                             |
 | 0x6609   | 51          | Invalid memory state/permission                               |
 | 0x6A09   | 53          | Invalid Nrr                                                   |
 | 0xA209   | 81          | Unaligned Nrr address                                         |
