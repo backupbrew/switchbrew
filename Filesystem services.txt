@@ -3,9 +3,9 @@
 |-
 ! Cmd || Name
 |-
-| 1 ||
+| 1 || Initialize
 |-
-| 2 || MountRomFs
+| 2 || MountCurrentProcessArchive
 |-
 | 7 || Returns an [[#IFileSystem]].
 |-
@@ -121,17 +121,17 @@ This command returns a session to a port implementing the [[#IEventNotifier]] in
 == OpenGameCardDetectionEventNotifier ==
 This command returns a session to a port implementing the [[#IEventNotifier]] interface.
 
-== IStorage ==
+= IStorage =
 
-== IFileSystem ==
+= IFileSystem =
 
-== IDirectory ==
+= IDirectory =
 
-== IFile ==
+= IFile =
 
-== ISaveDataInfoReader ==
+= ISaveDataInfoReader =
 
-== IDeviceOperator ==
+= IDeviceOperator =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -201,7 +201,7 @@ This command returns a session to a port implementing the [[#IEventNotifier]] in
 | 301 ||
 |}
 
-== IEventNotifier ==
+= IEventNotifier =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
