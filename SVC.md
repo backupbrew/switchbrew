@@ -107,8 +107,14 @@ Closing the returned handle automatically causes the bit32 in
 
 Works with num\_handles \<= 0x40, error on num\_handles == 0.
 
-Does not accept 0xFFFF8001 or 0xFFFF8000 as
-handles.
+Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
+
+## svcBreak
+
+On retail when called with all 3 input params set to value 0, the
+process will terminate. The system handles the process terminating this
+way the same as when the process
+crashes.
 
 ## svcGetInfo
 
