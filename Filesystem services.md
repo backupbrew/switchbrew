@@ -145,7 +145,7 @@ This command returns a session to a port implementing the
 | ----- | ---------- |
 | 0     | None       |
 | 1     | Host       |
-| 2     | Card       |
+| 2     | GameCard   |
 | 3     | NandSystem |
 | 4     | NandUser   |
 | 5     | SdCard     |
