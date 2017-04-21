@@ -9,6 +9,14 @@ the additional MOVK).
 | 8-0  | Module      |
 | 21-9 | Description |
 
+When a fatal-error is received the error code is outputted using the
+following formatter:
+
+` %04d-%04x`
+
+.. where the first code is `2000 + Module`, and the other being
+`Description`.
+
 # Modules
 
 | Value | Name       |

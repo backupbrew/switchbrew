@@ -9,6 +9,11 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 | 21-9  || Description
 |}
 
+When a fatal-error is received the error code is outputted using the following formatter:
+  %04d-%04x
+
+.. where the first code is <code>2000 + Module</code>, and the other being <code>Description</code>.
+
 = Modules =
 {| class=wikitable
 ! Value || Name
