@@ -88,6 +88,14 @@ This command returns a session to a port implementing the
 
 # IStorage
 
+| Cmd | Name         |
+| --- | ------------ |
+| 0   | ReadSector?  |
+| 1   | WriteSector? |
+| 2   |              |
+| 3   | SeekSector?  |
+| 4   | TellSector?  |
+
 # IFileSystem
 
 # IDirectory
