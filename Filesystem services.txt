@@ -146,13 +146,15 @@ This command returns a session to a port implementing the [[#IEventNotifier]] in
 This command returns a session to a port implementing the [[#IEventNotifier]] interface.
 
 = IStorage =
+This is the interface for a raw device, usually a block device.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
 | 0 || Read
 |-
-| 1 ||
+| 1 || Write?
 |-
 | 2 ||
 |-
