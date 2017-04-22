@@ -226,7 +226,6 @@ There are two main implementations of this interface:
 | 4 ||
 |}
 
-
 = ISaveDataInfoReader =
 
 = IDeviceOperator =
