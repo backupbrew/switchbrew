@@ -126,7 +126,7 @@ There are two main implementations of this interface:
 
 | Cmd | Name               |
 | --- | ------------------ |
-| 0   | ReadDirectory      |
+| 0   | ReadEntries        |
 | 1   | GetNumberOfEntries |
 
 # IFile
