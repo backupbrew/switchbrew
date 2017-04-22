@@ -199,6 +199,14 @@ There are two main implementations of this interface:
 |}
 
 = IDirectory =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || ReadDirectory
+|-
+| 1 || GetNumberOfEntries
+|}
 
 = IFile =
 

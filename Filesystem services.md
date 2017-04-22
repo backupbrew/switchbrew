@@ -124,6 +124,11 @@ There are two main implementations of this interface:
 
 # IDirectory
 
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   | ReadDirectory      |
+| 1   | GetNumberOfEntries |
+
 # IFile
 
 # ISaveDataInfoReader
