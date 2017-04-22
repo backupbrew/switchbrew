@@ -98,6 +98,22 @@ This command returns a session to a port implementing the
 
 # IFileSystem
 
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | CreateFile                 |
+| 1   | DeleteFile                 |
+| 2   | CreateDirectory            |
+| 3   | DeleteDirectory?           |
+| 4   | DeleteDirectoryRecursively |
+| 5   | RenameFile                 |
+| 6   |                            |
+| 7   | GetEntryType               |
+| 8   | OpenFile                   |
+| 9   | OpenDirectory              |
+| 10  | CommitSaveData             |
+| 11  |                            |
+| 12  |                            |
+
 # IDirectory
 
 # IFile
