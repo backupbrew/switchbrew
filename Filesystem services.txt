@@ -150,15 +150,15 @@ This command returns a session to a port implementing the [[#IEventNotifier]] in
 |-
 ! Cmd || Name
 |-
-| 0 || ReadSector?
+| 0 || Read
 |-
-| 1 || WriteSector?
+| 1 ||
 |-
 | 2 ||
 |-
-| 3 || SeekSector?
+| 3 ||
 |-
-| 4 || TellSector?
+| 4 ||
 |}
 
 = IFileSystem =
