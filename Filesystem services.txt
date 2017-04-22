@@ -37,7 +37,7 @@
 |-
 | 27 ||
 |-
-| 30 || 
+| 30 || OpenGameCardStorage?
 |-
 | 31 || MountGameCardPartition
 |-
@@ -55,7 +55,7 @@
 |-
 | 61 || OpenSaveDataIterator
 |-
-| 80 || Returns an [[#IFile]].
+| 80 || OpenFileDirectly?
 |-
 | 100 || MountImageDirectory
 |-
@@ -185,7 +185,7 @@ There are two main implementations of this interface:
 |-
 | 5 || RenameFile
 |-
-| 6 ||
+| 6 || MoveDirectory?
 |-
 | 7 || GetEntryType
 |-

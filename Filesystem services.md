@@ -19,7 +19,7 @@
 | 25   |                                                                                        |
 | 26   | FormatSdCardDryRun                                                                     |
 | 27   |                                                                                        |
-| 30   |                                                                                        |
+| 30   | OpenGameCardStorage?                                                                   |
 | 31   | MountGameCardPartition                                                                 |
 | 51   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 52   | MountSystemSaveData                                                                    |
@@ -28,7 +28,7 @@
 | 59   |                                                                                        |
 | 60   | Returns an [\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink").                   |
 | 61   | OpenSaveDataIterator                                                                   |
-| 80   | Returns an [\#IFile](#IFile "wikilink").                                               |
+| 80   | OpenFileDirectly?                                                                      |
 | 100  | MountImageDirectory                                                                    |
 | 110  | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 200  | OpenRomFsStorage                                                                       |
@@ -116,7 +116,7 @@ There are two main implementations of this interface:
 | 3   | DeleteDirectory?           |
 | 4   | DeleteDirectoryRecursively |
 | 5   | RenameFile                 |
-| 6   |                            |
+| 6   | MoveDirectory?             |
 | 7   | GetEntryType               |
 | 8   | OpenFile                   |
 | 9   | OpenDirectory              |
