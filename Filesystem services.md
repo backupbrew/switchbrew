@@ -98,6 +98,14 @@ This command returns a session to a port implementing the
 
 # IFileSystem
 
+There are two main implementations of this interface:
+
+  - **RomFS**: Filesystem implementation statically linked in the
+    binary. Uses an [\#IStorage](#IStorage "wikilink") interface as
+    underlying raw device.
+  - **IPC proxy**: Used for all non-RomFS filesystems. In this case,
+    actual filesystem implementation is in the FS process.
+
 | Cmd | Name                       |
 | --- | -------------------------- |
 | 0   | CreateFile                 |
