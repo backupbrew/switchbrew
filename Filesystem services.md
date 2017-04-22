@@ -133,6 +133,14 @@ There are two main implementations of this interface:
 
 # IFile
 
+| Cmd | Name  |
+| --- | ----- |
+| 0   | Read  |
+| 1   | Write |
+| 2   | Flush |
+| 3   |       |
+| 4   |       |
+
 # ISaveDataInfoReader
 
 # IDeviceOperator
