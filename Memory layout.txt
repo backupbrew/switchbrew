@@ -1,0 +1,12 @@
+= Userspace =
+The userspace virtual address space has 38 bits. It seems that when the IPC protocol was designed, it was only 36 bits leading to a weird encoding format.
+
+There are several regions maintained by the kernel, each one starting at the upper bits bit37-21 randomized:
+* Main binary region.
+* Heap region.
+* Stack mapping region, available from [[SVC#svcGetInfo]].
+
+For the stack mapping region, the userland randomizes a page-offset where to start inside the region.
+This adds some additional entropy.
+
+Binaries mapped by RO seems to be mapped randomly everywhere in the entire address space.
