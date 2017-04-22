@@ -81,7 +81,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x10801 || 132 || Out of memory
 |-
-| 0x7D402 || 1002 || Title-id not found
+| 0x7D402 || 1002 || Permission denied, or title-id not found
 |-
 | 0x13B002 || 2520 || Gamecard not inserted
 |-
