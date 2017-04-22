@@ -5,7 +5,7 @@
 |-
 | 1 || [[#Initialize]]
 |-
-| 2 || MountCurrentProcessArchive
+| 2 || MountRomFs
 |-
 | 7 || Returns an [[#IFileSystem]].
 |-
@@ -61,7 +61,7 @@
 |-
 | 110 || Returns an [[#IFileSystem]].
 |-
-| 200 || Returns an [[#IStorage]].
+| 200 || OpenRomFsStorage
 |-
 | 202 || OpenDataStorageByDataId
 |-

@@ -3,7 +3,7 @@
 | Cmd  | Name                                                                                   |
 | ---- | -------------------------------------------------------------------------------------- |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |
-| 2    | MountCurrentProcessArchive                                                             |
+| 2    | MountRomFs                                                                             |
 | 7    | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 8    | MountContent                                                                           |
 | 11   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
@@ -31,7 +31,7 @@
 | 80   | Returns an [\#IFile](#IFile "wikilink").                                               |
 | 100  | MountImageDirectory                                                                    |
 | 110  | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
-| 200  | Returns an [\#IStorage](#IStorage "wikilink").                                         |
+| 200  | OpenRomFsStorage                                                                       |
 | 202  | OpenDataStorageByDataId                                                                |
 | 203  | Returns an [\#IStorage](#IStorage "wikilink").                                         |
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |
