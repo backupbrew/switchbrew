@@ -28,6 +28,8 @@
 |
 *[[SVC|System calls]]
 *[[Services API]]
+*[[IPC Marshalling]]
+*[[Memory layout]]
 |
 *[[Title list]]
 | [[Online Multiplayer]]
