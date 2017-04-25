@@ -174,7 +174,7 @@ On retail when called with all 3 input params set to value 0, the process will t
 |-
 | Process || 7 || 0 || Process heap size.
 |-
-| Zero    || 8 || 0 || Always 0.
+| Zero    || 8 || 0 || Always 0. Used during exception handling.
 |-
 | Zero    || 9 || 0 || This creates and returns an unknown handle.
 |-

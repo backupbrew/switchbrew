@@ -128,7 +128,7 @@ crashes.
 | Process     | 5   | 0      | Always 0x180000000.                                            |
 | Process     | 6   | 0      | Total memory usage?                                            |
 | Process     | 7   | 0      | Process heap size.                                             |
-| Zero        | 8   | 0      | Always 0.                                                      |
+| Zero        | 8   | 0      | Always 0. Used during exception handling.                      |
 | Zero        | 9   | 0      | This creates and returns an unknown handle.                    |
 | Zero        | 10  | \-1, 0 | ?                                                              |
 | Zero        | 11  | 0-3    | Returns random from TRNG. Used to seed usermode PRNGs.         |
