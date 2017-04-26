@@ -66,7 +66,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | fatal:u                                          | Fatal Error services                                                   |                                            |
 | friend:u, friend:v, friend:m, friend:s, friend:a | Friend services                                                        |                                            |
 | fsp-srv                                          | [Filesystem services](Filesystem%20services.md "wikilink")             |                                            |
-| hid, hid:dbg, hid:sys                            | HID services                                                           |                                            |
+| hid, hid:dbg, hid:sys                            | [HID services](HID%20services.md "wikilink")                           |                                            |
 | ldn:m                                            | Local Network Monitor services                                         |                                            |
 | ldr:ro, ldr:shel                                 | [Loader services](Loader%20services.md "wikilink")                     |                                            |
 | lm                                               | Log services                                                           |                                            |
