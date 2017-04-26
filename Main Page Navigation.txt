@@ -33,6 +33,7 @@
 |
 *[[Title list]]
 *[[Nintendo Software]]
+*[[Recovery Mode]]
 | [[Online Multiplayer]]
 |}
 </div>
