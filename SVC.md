@@ -168,3 +168,8 @@ invalid-size error.
 Bit32: is\_mirrored
 
 Bit35: is\_uncached?
+
+# Exception Handling
+
+There appears to be userland code for handling exceptions, however this
+doesn't seem to be executed on retail.
