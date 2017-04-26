@@ -2,7 +2,7 @@
 {| class="wikitable"
 ! Type !! 
 |-
-| SoC     || NVidia ODNX02-A2
+| SoC     || NVidia ODNX02-A2 (See also [[Tegra-X1|here]])
 |-
 | Screen  || [http://www.nintendo.com/switch/features/tech-specs/#switch-section 6.2-inch, multi-touch capacitive LCD screen]
 |-

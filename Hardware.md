@@ -10,7 +10,7 @@
 <tbody>
 <tr class="odd">
 <td><p>SoC</p></td>
-<td><p>NVidia ODNX02-A2</p></td>
+<td><p>NVidia ODNX02-A2 (See also <a href="Tegra-X1.md" title="wikilink">here</a>)</p></td>
 </tr>
 <tr class="even">
 <td><p>Screen</p></td>
