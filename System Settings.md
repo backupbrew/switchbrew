@@ -1,0 +1,10 @@
+# UI menu options
+
+## System
+
+  - "Auto-update Software": This was added with
+    [2.0.0](2.0.0.md "wikilink"). When set to "OFF" this disables the
+    automatic tagaya domain network requests for checking whether any
+    regular-application updates are available. This does not affect the
+    automatic sysupdate network requests, which were already done with
+    [1.0.0](1.0.0.md "wikilink").
