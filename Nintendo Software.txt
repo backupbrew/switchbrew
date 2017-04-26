@@ -1,0 +1,8 @@
+=System Titles=
+
+==System Applets==
+* [[Internet_Browser|Nintendo eShop]]
+* [[System Settings]]
+
+==Library Applets==
+* [[Internet_Browser|Browser]]
