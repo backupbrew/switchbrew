@@ -231,5 +231,5 @@ Bit35: is_uncached?
 =Exception Handling=
 There appears to be userland code for handling exceptions, however this doesn't seem to be executed on retail.
 
-On usermode exception, it jumps to main code binary entrypoint (main_binary_address+0) with X0=exception_info_ptr.
+On usermode exception, it jumps to main code binary entrypoint (main_binary_address+0) with X0=exception_info_ptr and X1=exception_info2_ptr.
 On boot, X0 is set to 0 triggering normal crt0 setup.
