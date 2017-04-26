@@ -30,6 +30,7 @@
 *[[Services API]]
 *[[IPC Marshalling]]
 *[[Memory layout]]
+*[[Error codes]]
 |
 *[[Title list]]
 *[[Nintendo Software]]
