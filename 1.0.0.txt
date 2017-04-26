@@ -1,1 +1,1 @@
-Initial version, without most of the online features. Only for preorders (?)
+Launch-day version, without most of the online features.
