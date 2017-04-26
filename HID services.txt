@@ -1,0 +1,7 @@
+See [[HID_Shared_Memory|here]] for the HID shared-memory.
+
+= hid =
+
+= hid:dbg =
+
+= hid:sys =
