@@ -40,6 +40,7 @@ following formatter:
 | -------- | ----------- | ------------------------------------------------------------- |
 | 0xCA01   | 101         | Unaligned size                                                |
 | 0xCC01   | 102         | Invalid address (not page-aligned).                           |
+| 0xCE01   | 103         | Address is NULL                                               |
 | 0xD201   | 105         | Handle-table full.                                            |
 | 0xD401   | 106         | Invalid memory state.                                         |
 | 0xD801   | 108         | When trying to set executable permission on memory.           |
