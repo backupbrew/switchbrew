@@ -97,3 +97,7 @@ ignored by the marshalling code.
 | 8 + 1     | Creates an X descriptor            |
 | 8 + 2     | Creates a C descriptor             |
 | 0x20 + 1  | Creates both an A and X descriptor |
+
+| Type | Description       |
+| ---- | ----------------- |
+| 0x1A | Output-buf, copy? |
