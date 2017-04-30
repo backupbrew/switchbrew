@@ -42,6 +42,12 @@ the whitelist, otherwise an error is displayed. Videos via the
 
 tag are not affected.
 
+## OSS
+
+The NROs for the OSS are stored under a separate
+[title](Title%20list.md "wikilink"). All of the web-applets use the same
+OSS NROs via this title.
+
 ## Video Playback
 
 WifiWebAuthApplet does not fully support playing videos. It will crash
