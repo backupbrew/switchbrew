@@ -149,7 +149,7 @@
 |-
 | 0100000000000802 || Random textures?
 |-
-| 0100000000000803 || Browser emojis
+| 0100000000000803 || Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...
 |-
 | 0100000000000804 || HTML resources: Open-source licenses, seizure warnings
 |-
