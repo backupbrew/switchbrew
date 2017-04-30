@@ -151,10 +151,6 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Mii services
 |
 |-
-| mm:u
-| NvMM services
-|
-|-
 | nifm:u, nifm:a, nifm:s
 | Network Interface services
 | u: User, a: Applet, s: System
@@ -171,7 +167,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | NSD services
 |
 |-
-| nvdrv:a, nvmemp
+| nvdrv:a, nvmemp, mm:u
 | [[NV services]]
 |
 |-

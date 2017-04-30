@@ -73,12 +73,11 @@ regular ports can have their handles retrieved directly from a SVC.
 | lr                                               | ?                                                                      |                                            |
 | erpt:c                                           | ERPT(?) services                                                       |                                            |
 | mii:u, mii:e                                     | Mii services                                                           |                                            |
-| mm:u                                             | NvMM services                                                          |                                            |
 | nifm:u, nifm:a, nifm:s                           | Network Interface services                                             | u: User, a: Applet, s: System              |
 | nim:shp                                          | NIM services                                                           | shp: eShop                                 |
 | ns:am, ns:su, ns:dev                             | [NS Services](NS%20Services.md "wikilink")                             | am: Application Manager, su: System Update |
 | nsd:u, nsd:a                                     | NSD services                                                           |                                            |
-| nvdrv:a, nvmemp                                  | [NV services](NV%20services.md "wikilink")                             |                                            |
+| nvdrv:a, nvmemp, mm:u                            | [NV services](NV%20services.md "wikilink")                             |                                            |
 | ovln:rcv, ovln:snd                               | Overlay Notification services                                          |                                            |
 | pctl, pctl:a, pctl:s, pctl:r                     | Parental Control services                                              |                                            |
 | pdm:ntfy, pdm:qry                                | Play Log services                                                      |                                            |
