@@ -15,3 +15,7 @@ when the update files are corrupted.
 Maintenance Mode (the 1.0.0 menu) does not have the system update
 option. However, downloaded update data is still deleted when this menu
 is accessed.
+
+### Maintenance Mode Menu
+
+![MaintenanceMode.jpg](MaintenanceMode.jpg "MaintenanceMode.jpg")
