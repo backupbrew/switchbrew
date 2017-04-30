@@ -9,4 +9,7 @@ However it is possible to use this menu to delete the nagging update message if 
 Maintenance Mode (the 1.0.0 menu) does not have the system update option. However, downloaded update data is still deleted when this menu is accessed.
 
 === Maintenance Mode Menu ===
-[[File:MaintenanceMode.jpg|600px]]
+
+Picture by Trey Carter
+
+[[File:MaintenanceMode.jpg|600px|down|Test]]
