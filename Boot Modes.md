@@ -20,4 +20,4 @@ is accessed.
 
 Picture by Trey Carter
 
-![down|Test](MaintenanceMode.jpg "down|Test")
+![MaintenanceMode.jpg](MaintenanceMode.jpg "MaintenanceMode.jpg")

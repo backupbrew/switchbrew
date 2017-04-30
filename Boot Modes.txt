@@ -12,4 +12,4 @@ Maintenance Mode (the 1.0.0 menu) does not have the system update option. Howeve
 
 Picture by Trey Carter
 
-[[File:MaintenanceMode.jpg|600px|down|Test]]
+[[File:MaintenanceMode.jpg|600px]]
