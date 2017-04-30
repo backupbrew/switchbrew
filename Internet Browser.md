@@ -51,7 +51,9 @@ it will display an error dialog instead.
 ## Trusted RootCAs
 
 While the rootCA(s) for Let's Encrypt isn't included, Let's Encrypt is
-indirectly trusted via "Digital Signature Trust Co.".
+indirectly trusted via "Digital Signature Trust Co.". This seems to be
+only(?) the case for WifiWebAuthApplet, hence non-WifiWebAuthApplet
+seems to have a different set of trusted rootCAs.
 
 ## WifiWebAuthApplet
 
