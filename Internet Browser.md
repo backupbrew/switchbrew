@@ -36,11 +36,12 @@ NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>"
 | ?                    | News                                                             | With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit. |                | ?                |       |
 
 When whitelisting is enabled, you can only load page domains included in
-the whitelist, otherwise an error is displayed. Videos via the
+the whitelist, otherwise an error is displayed. This only applies to
+page navigation. Videos via the
 
 <video>
 
-tag are not affected.
+tag are not affected, likewise with network requests with JS.
 
 ## OSS
 
