@@ -40,6 +40,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 126 || Mii
 |-
+| 129 || Play Report
+|-
 | 203 || HID
 |}
 

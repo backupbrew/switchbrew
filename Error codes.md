@@ -19,20 +19,21 @@ following formatter:
 
 # Modules
 
-| Value | Name       |
-| ----- | ---------- |
-| 1     | Kernel     |
-| 2     | FS         |
-| 5     | GameCard   |
-| 9     | RO service |
-| 10    | IPC        |
-| 11    | IPC        |
-| 16    | NS         |
-| 21    | SM         |
-| 22    | RO user    |
-| 124   | Account    |
-| 126   | Mii        |
-| 203   | HID        |
+| Value | Name        |
+| ----- | ----------- |
+| 1     | Kernel      |
+| 2     | FS          |
+| 5     | GameCard    |
+| 9     | RO service  |
+| 10    | IPC         |
+| 11    | IPC         |
+| 16    | NS          |
+| 21    | SM          |
+| 22    | RO user     |
+| 124   | Account     |
+| 126   | Mii         |
+| 129   | Play Report |
+| 203   | HID         |
 
 # Error codes
 
