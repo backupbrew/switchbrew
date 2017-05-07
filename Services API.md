@@ -53,39 +53,39 @@ regular ports can have their handles retrieved directly from a SVC.
 
 # Service List
 
-| Service names                                    | Description                                                            | Notes                                      |
-| ------------------------------------------------ | ---------------------------------------------------------------------- | ------------------------------------------ |
-| acc:u1, acc:su                                   | [Account services](Account%20services.md "wikilink")                   | u1: for user 1?                            |
-| appletAE                                         | Applet Accessor services                                               |                                            |
-| aoc:u                                            | AddOn Content services                                                 |                                            |
-| audren:u                                         | Audio Renderer services                                                |                                            |
-| audout:u                                         | Audio Out services                                                     |                                            |
-| bgtc:t, bgtc:sc                                  | Task services                                                          |                                            |
-| bsd:u, bsd:s                                     | Sockets services                                                       |                                            |
-| caps:a, caps:c, caps:ss                          | Capture services                                                       | a: Album, ss: Screenshot                   |
-| fatal:u                                          | Fatal Error services                                                   |                                            |
-| friend:u, friend:v, friend:m, friend:s, friend:a | Friend services                                                        |                                            |
-| fsp-srv                                          | [Filesystem services](Filesystem%20services.md "wikilink")             |                                            |
-| hid, hid:dbg, hid:sys                            | [HID services](HID%20services.md "wikilink")                           |                                            |
-| ldn:m                                            | Local Network Monitor services                                         |                                            |
-| ldr:ro, ldr:shel                                 | [Loader services](Loader%20services.md "wikilink")                     |                                            |
-| lm                                               | Log services                                                           |                                            |
-| lr                                               | ?                                                                      |                                            |
-| erpt:c                                           | ERPT(?) services                                                       |                                            |
-| mii:u, mii:e                                     | Mii services                                                           |                                            |
-| nifm:u, nifm:a, nifm:s                           | Network Interface services                                             | u: User, a: Applet, s: System              |
-| nim:shp                                          | NIM services                                                           | shp: eShop                                 |
-| ns:am, ns:su, ns:dev                             | [NS Services](NS%20Services.md "wikilink")                             | am: Application Manager, su: System Update |
-| nsd:u, nsd:a                                     | NSD services                                                           |                                            |
-| nvdrv:a, nvmemp, mm:u                            | [NV services](NV%20services.md "wikilink")                             |                                            |
-| ovln:rcv, ovln:snd                               | Overlay Notification services                                          |                                            |
-| pctl, pctl:a, pctl:s, pctl:r                     | Parental Control services                                              |                                            |
-| pdm:ntfy, pdm:qry                                | Play Log services                                                      |                                            |
-| pl:u                                             | Shared Font services                                                   |                                            |
-| pm:bm, pm:shell                                  | [Process Manager services](Process%20Manager%20services.md "wikilink") |                                            |
-| prepo:u, prepo:s, prepo:m, prepo:a               | [Play Report services](Play%20Report%20services.md "wikilink")         |                                            |
-| set, set:sys                                     | Settings services                                                      | sys: System settings                       |
-| sfdnsres                                         | DNS resolver services                                                  |                                            |
-| ssl                                              | SSL services                                                           |                                            |
-| time:u, time:a, time:s                           | Time services                                                          |                                            |
-| vi:m, vi:s, vi:u                                 | VI (Camera?) services                                                  |                                            |
+| Service names                                    | Description                                                                          | Notes                                      |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------ |
+| acc:u1, acc:su                                   | [Account services](Account%20services.md "wikilink")                                 | u1: for user 1?                            |
+| appletAE                                         | Applet Accessor services                                                             |                                            |
+| aoc:u                                            | AddOn Content services                                                               |                                            |
+| audren:u                                         | Audio Renderer services                                                              |                                            |
+| audout:u                                         | Audio Out services                                                                   |                                            |
+| bgtc:t, bgtc:sc                                  | Task services                                                                        |                                            |
+| bsd:u, bsd:s                                     | Sockets services                                                                     |                                            |
+| caps:a, caps:c, caps:ss                          | Capture services                                                                     | a: Album, ss: Screenshot                   |
+| fatal:u                                          | Fatal Error services                                                                 |                                            |
+| friend:u, friend:v, friend:m, friend:s, friend:a | Friend services                                                                      |                                            |
+| fsp-srv                                          | [Filesystem services](Filesystem%20services.md "wikilink")                           |                                            |
+| hid, hid:dbg, hid:sys                            | [HID services](HID%20services.md "wikilink")                                         |                                            |
+| ldn:m                                            | [Local Network Monitor services](Local%20Network%20Monitor%20services.md "wikilink") |                                            |
+| ldr:ro, ldr:shel                                 | [Loader services](Loader%20services.md "wikilink")                                   |                                            |
+| lm                                               | Log services                                                                         |                                            |
+| lr                                               | ?                                                                                    |                                            |
+| erpt:c                                           | ERPT(?) services                                                                     |                                            |
+| mii:u, mii:e                                     | Mii services                                                                         |                                            |
+| nifm:u, nifm:a, nifm:s                           | Network Interface services                                                           | u: User, a: Applet, s: System              |
+| nim:shp                                          | NIM services                                                                         | shp: eShop                                 |
+| ns:am, ns:su, ns:dev                             | [NS Services](NS%20Services.md "wikilink")                                           | am: Application Manager, su: System Update |
+| nsd:u, nsd:a                                     | NSD services                                                                         |                                            |
+| nvdrv:a, nvmemp, mm:u                            | [NV services](NV%20services.md "wikilink")                                           |                                            |
+| ovln:rcv, ovln:snd                               | Overlay Notification services                                                        |                                            |
+| pctl, pctl:a, pctl:s, pctl:r                     | Parental Control services                                                            |                                            |
+| pdm:ntfy, pdm:qry                                | Play Log services                                                                    |                                            |
+| pl:u                                             | Shared Font services                                                                 |                                            |
+| pm:bm, pm:shell                                  | [Process Manager services](Process%20Manager%20services.md "wikilink")               |                                            |
+| prepo:u, prepo:s, prepo:m, prepo:a               | [Play Report services](Play%20Report%20services.md "wikilink")                       |                                            |
+| set, set:sys                                     | Settings services                                                                    | sys: System settings                       |
+| sfdnsres                                         | DNS resolver services                                                                |                                            |
+| ssl                                              | SSL services                                                                         |                                            |
+| time:u, time:a, time:s                           | Time services                                                                        |                                            |
+| vi:m, vi:s, vi:u                                 | VI (Camera?) services                                                                |                                            |

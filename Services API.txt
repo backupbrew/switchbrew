@@ -128,7 +128,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |
 |-
 | ldn:m
-| Local Network Monitor services
+| [[Local Network Monitor services]]
 |
 |-
 | ldr:ro, ldr:shel
