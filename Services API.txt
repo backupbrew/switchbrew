@@ -164,7 +164,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | am: Application Manager, su: System Update
 |-
 | nsd:u, nsd:a
-| NSD services
+| [[NSD services]]
 |
 |-
 | nvdrv:a, nvmemp, mm:u
