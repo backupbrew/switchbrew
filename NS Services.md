@@ -128,6 +128,10 @@ This is the Switch equivalent of
 
 | ID   | Description                                                                                                                                 |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0E | ErrorApplet                                                                                                                                 |
+| 0x10 | PlayerSelect                                                                                                                                |
+| 0x11 | Swkbd (on-screen keyboard)                                                                                                                  |
+| 0x14 | Ec (eshop related)                                                                                                                          |
 | 0x19 | [WifiWebAuth](Internet%20Browser.md "wikilink") (From browser string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletWifiWebAuth") |
 
 This seems to be the equivalent of

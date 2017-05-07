@@ -244,6 +244,18 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 !  ID
 !  Description
 |-
+| 0x0E
+| ErrorApplet
+|-
+| 0x10
+| PlayerSelect
+|-
+| 0x11
+| Swkbd (on-screen keyboard)
+|-
+| 0x14
+| Ec (eshop related)
+|-
 | 0x19
 | [[Internet_Browser|WifiWebAuth]] (From browser string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletWifiWebAuth")
 |}
