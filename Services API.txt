@@ -196,7 +196,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |
 |-
 | set, set:sys
-| Settings services
+| [[Settings services]]
 | sys: System settings
 |-
 | sfdnsres

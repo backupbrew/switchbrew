@@ -84,7 +84,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | pl:u                                             | Shared Font services                                                                 |                                            |
 | pm:bm, pm:shell                                  | [Process Manager services](Process%20Manager%20services.md "wikilink")               |                                            |
 | prepo:u, prepo:s, prepo:m, prepo:a               | [Play Report services](Play%20Report%20services.md "wikilink")                       |                                            |
-| set, set:sys                                     | Settings services                                                                    | sys: System settings                       |
+| set, set:sys                                     | [Settings services](Settings%20services.md "wikilink")                               | sys: System settings                       |
 | sfdnsres                                         | DNS resolver services                                                                |                                            |
 | ssl                                              | SSL services                                                                         |                                            |
 | time:u, time:a, time:s                           | Time services                                                                        |                                            |
