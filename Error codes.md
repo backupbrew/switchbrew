@@ -80,3 +80,7 @@ following formatter:
 | 0x1015   | 8           | Permission denied                                             |
 | 0x816    | 4           | Bad Nro magic                                                 |
 | 0xC16    | 6           | Bad Nrr magic                                                 |
+| 0x287C   | 20          | Argument is NULL                                              |
+| 0x2C7C   | 22          | Argument is invalid                                           |
+| 0x3C7C   | 30          | Bad input buffer size                                         |
+| 0x407C   | 32          | Invalid input buffer                                          |
