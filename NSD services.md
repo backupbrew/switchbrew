@@ -1,0 +1,21 @@
+# nsd:u
+
+| Cmd | Name                 |
+| --- | -------------------- |
+| 10  |                      |
+| 11  |                      |
+| 12  |                      |
+| 13  |                      |
+| 14  |                      |
+| 20  | Resolve              |
+| 21  | ResolveEx            |
+| 30  | GetToken             |
+| 31  | GetTokenEx           |
+| 40  | GetAccountsLink      |
+| 41  | GetAccountsLinkEx    |
+| 42  | GetApiAccountsLink   |
+| 43  | GetApiAccountsLinkEx |
+| 50  |                      |
+| 60  |                      |
+| 61  |                      |
+| 62  |                      |
