@@ -83,7 +83,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | pdm:ntfy, pdm:qry                                | Play Log services                                                      |                                            |
 | pl:u                                             | Shared Font services                                                   |                                            |
 | pm:bm, pm:shell                                  | [Process Manager services](Process%20Manager%20services.md "wikilink") |                                            |
-| prepo:u, prepo:s, prepo:m, prepo:a               | Prepo(?) services                                                      |                                            |
+| prepo:u, prepo:s, prepo:m, prepo:a               | [Play Report services](Play%20Report%20services.md "wikilink")         |                                            |
 | set, set:sys                                     | Settings services                                                      | sys: System settings                       |
 | sfdnsres                                         | DNS resolver services                                                  |                                            |
 | ssl                                              | SSL services                                                           |                                            |
