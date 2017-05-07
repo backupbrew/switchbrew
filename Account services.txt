@@ -3,41 +3,37 @@
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetNumActiveUsers
 |-
 | 1 || DoesUserExist
 |-
-| 2 ||
+| 2 || GetOpenUserIDs
 |-
-| 3 ||
+| 3 || get_unk_key
 |-
 | 4 || GetActiveUser
 |-
-| 5 ||
+| 5 || install_profile_interface
 |-
-| 50 ||
+| 50 || GetSelectedPlayer?
 |-
-| 51 ||
+| 51 || GetSelectedPlayer2?
 |-
-| 100 ||
+| 100 || install_notifier_interface
 |-
-| 101 ||
+| 101 || install_notifier_interface
 |-
-| 102 ||
+| 102 || install_baas_interface
 |-
-| 103 ||
+| 103 || install_notifier_interface
 |-
-| 104 ||
+| 104 || install_notifier_interface
 |-
 | 110 ||
 |-
 | 111 ||
 |-
 | 112 ||
-|-
-| 103 ||
-|-
-| 104 ||
 |-
 | 190 ||
 |-
