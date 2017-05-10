@@ -14,7 +14,7 @@ This is an array of u32's.
 |-
 | 0 || 31-28 || Number of type W desciptors (each: 3 words), never observed.
 |-
-| 1 || 9-0 || Size of data portion in u32's.
+| 1 || 9-0 || Total word count (in u32's).
 |-
 | 1 || 13-10 || If set to 2, enable buf C descriptor.
 |-

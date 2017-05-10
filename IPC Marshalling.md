@@ -10,7 +10,7 @@ u32's.
 | 0    | 23-20 | Number of buf A descriptors (each: 3 words).                 |
 | 0    | 27-24 | Number of buf B descriptors (each: 3 words).                 |
 | 0    | 31-28 | Number of type W desciptors (each: 3 words), never observed. |
-| 1    | 9-0   | Size of data portion in u32's.                               |
+| 1    | 9-0   | Total word count (in u32's).                                 |
 | 1    | 13-10 | If set to 2, enable buf C descriptor.                        |
 | 1    | 31    | Enable handle descriptor.                                    |
 | ...  |       | Handle descriptor, if enabled.                               |
