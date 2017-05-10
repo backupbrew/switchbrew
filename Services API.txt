@@ -29,7 +29,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |- style="border-top: double"
 | 0-1 || Pid
 |- style="border-top: double"
-| 0 || "SCFI"
+| 0 || "SFCI"
 |-
 | 1 || 0x00000000
 |-
@@ -45,7 +45,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | 1 || 0x0000000A
 |- style="border-top: double"
-| 0 || "SCFI"
+| 0 || "SFCI"
 |-
 | 1 || 0x00000001
 |-
@@ -61,7 +61,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | 1 || 0x0000000C
 |- style="border-top: double"
-| 0 || "SCFI"
+| 0 || "SFCI"
 |-
 | 1 || 0x00000002
 |-

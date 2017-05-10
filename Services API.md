@@ -25,7 +25,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | 1    | 0x8000000A |
 | 2    | 0x00000001 |
 | 0-1  | Pid        |
-| 0    | "SCFI"     |
+| 0    | "SFCI"     |
 | 1    | 0x00000000 |
 | 2    | Always 0.  |
 
@@ -35,7 +35,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | ---- | -------------------------------------------- |
 | 0    | 0x00000004                                   |
 | 1    | 0x0000000A                                   |
-| 0    | "SCFI"                                       |
+| 0    | "SFCI"                                       |
 | 1    | 0x00000001                                   |
 | 2    | Service name, zero padded and casted to u64. |
 
@@ -45,7 +45,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | ---- | -------------------------------------------- |
 | 0    | 0x00000004                                   |
 | 1    | 0x0000000C                                   |
-| 0    | "SCFI"                                       |
+| 0    | "SFCI"                                       |
 | 1    | 0x00000002                                   |
 | 2    | Service name, zero padded and casted to u64. |
 | 3    | Max sessions? 32-bit integer.                |
