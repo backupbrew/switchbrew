@@ -152,8 +152,8 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |
 |-
 | nifm:u, nifm:a, nifm:s
-| Network Interface services
-| u: User, a: Applet, s: System
+| [[Network Interface services]]
+| 
 |-
 | nim:shp
 | NIM services
@@ -212,6 +212,6 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |
 |-
 | vi:m, vi:s, vi:u
-| VI (Camera?) services
+| [[Display services]]
 |
 |}

@@ -73,7 +73,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | lr                                               | ?                                                                                    |                                            |
 | erpt:c                                           | ERPT(?) services                                                                     |                                            |
 | mii:u, mii:e                                     | Mii services                                                                         |                                            |
-| nifm:u, nifm:a, nifm:s                           | Network Interface services                                                           | u: User, a: Applet, s: System              |
+| nifm:u, nifm:a, nifm:s                           | [Network Interface services](Network%20Interface%20services.md "wikilink")           |                                            |
 | nim:shp                                          | NIM services                                                                         | shp: eShop                                 |
 | ns:am, ns:su, ns:dev                             | [NS Services](NS%20Services.md "wikilink")                                           | am: Application Manager, su: System Update |
 | nsd:u, nsd:a                                     | [NSD services](NSD%20services.md "wikilink")                                         |                                            |
@@ -88,4 +88,4 @@ regular ports can have their handles retrieved directly from a SVC.
 | sfdnsres                                         | DNS resolver services                                                                |                                            |
 | ssl                                              | SSL services                                                                         |                                            |
 | time:u, time:a, time:s                           | Time services                                                                        |                                            |
-| vi:m, vi:s, vi:u                                 | VI (Camera?) services                                                                |                                            |
+| vi:m, vi:s, vi:u                                 | [Display services](Display%20services.md "wikilink")                                 |                                            |
