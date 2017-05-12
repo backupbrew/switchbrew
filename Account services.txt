@@ -13,21 +13,21 @@
 |-
 | 4 || GetActiveUser
 |-
-| 5 || install_profile_interface
+| 5 || RegisterInterface_Profile
 |-
 | 50 || GetSelectedPlayer?
 |-
 | 51 || GetSelectedPlayer2?
 |-
-| 100 || install_notifier_interface
+| 100 || RegisterInterface_Notifier
 |-
-| 101 || install_notifier_interface
+| 101 || RegisterInterface2_Notifier
 |-
-| 102 || install_baas_interface
+| 102 || RegisterInterface_Baas
 |-
-| 103 || install_notifier_interface
+| 103 || RegisterInterface3_Notifier
 |-
-| 104 || install_notifier_interface
+| 104 || RegisterInterface4_Notifier
 |-
 | 110 ||
 |-

@@ -7,14 +7,14 @@
 | 2   | GetOpenUserIDs               |
 | 3   | get\_unk\_key                |
 | 4   | GetActiveUser                |
-| 5   | install\_profile\_interface  |
+| 5   | RegisterInterface\_Profile   |
 | 50  | GetSelectedPlayer?           |
 | 51  | GetSelectedPlayer2?          |
-| 100 | install\_notifier\_interface |
-| 101 | install\_notifier\_interface |
-| 102 | install\_baas\_interface     |
-| 103 | install\_notifier\_interface |
-| 104 | install\_notifier\_interface |
+| 100 | RegisterInterface\_Notifier  |
+| 101 | RegisterInterface2\_Notifier |
+| 102 | RegisterInterface\_Baas      |
+| 103 | RegisterInterface3\_Notifier |
+| 104 | RegisterInterface4\_Notifier |
 | 110 |                              |
 | 111 |                              |
 | 112 |                              |
