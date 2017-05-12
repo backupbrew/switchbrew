@@ -1,0 +1,93 @@
+= vi:u =
+== ApplicationRootService ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RegisterInterface_ApplicationDisplayService
+|-
+|}
+
+= vi:m =
+== ManagerRootService ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 2 || RegisterInterface_ApplicationDisplayService
+|-
+| 3 || RegisterInterface2_ApplicationDisplayService
+|-
+|}
+
+= vi:s =
+== SystemRootService ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 1 || RegisterInterface_ApplicationDisplayService
+|-
+| 3 || RegisterInterface2_ApplicationDisplayService
+|-
+|}
+
+== ApplicationDisplayService ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 100 || RegisterInterface_HOSBinderDriver
+|-
+| 101 || RegisterInterface_SystemDisplayService
+|-
+| 102 || RegisterInterface_ManagerDisplayService
+|-
+| 103 || RegisterInterface2_HOSBinderDriver
+|-
+| 1000 || GetDisplayProfiles
+|-
+| 1010 || 
+|-
+| 1011 || 
+|-
+| 1020 || 
+|-
+| 1101 || 
+|-
+| 1102 || GetDisplaySize
+|-
+| 2020 || 
+|-
+| 2021 || 
+|-
+| 2030 || 
+|-
+| 2031 || 
+|-
+| 2101 || 
+|-
+| 2450 || 
+|-
+| 2451 || 
+|-
+| 2460 || 
+|-
+| 5202 || 
+|-
+| 5203 || 
+|-
+|}
+
+=== HOSBinderDriver ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+|}
