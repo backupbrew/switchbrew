@@ -23,7 +23,7 @@ Main NVIDIA driver service.
 |-
 | 7 || ?
 |-
-| 8 || Audio render related init?
+| 8 || BindDisplayService
 |-
 | 9 || ?
 |}
@@ -176,6 +176,8 @@ The following table contains known ioctls.
 | /dev/nvhost-ctrl-gpu || 0x80084714 || ||
 |-
 | /dev/nvhost-ctrl-gpu || 0x80044715 || ||
+|-
+| /dev/nvhost-ctrl-gpu || 0x8018471A || ||
 |-
 | /dev/nvhost-ctrl-gpu || 0xC008471B || ||
 |-

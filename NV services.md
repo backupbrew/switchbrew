@@ -4,18 +4,18 @@ The Switch makes use of a customized NVIDIA driver.
 
 Main NVIDIA driver service.
 
-| Cmd | Name                       |
-| --- | -------------------------- |
-| 0   | Open                       |
-| 1   | Ioctl                      |
-| 2   | Close                      |
-| 3   | Initialize                 |
-| 4   | QueryEvent                 |
-| 5   | MapSharedMem               |
-| 6   | ?                          |
-| 7   | ?                          |
-| 8   | Audio render related init? |
-| 9   | ?                          |
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   | Open               |
+| 1   | Ioctl              |
+| 2   | Close              |
+| 3   | Initialize         |
+| 4   | QueryEvent         |
+| 5   | MapSharedMem       |
+| 6   | ?                  |
+| 7   | ?                  |
+| 8   | BindDisplayService |
+| 9   | ?                  |
 
 ## Ioctls
 
@@ -99,6 +99,7 @@ ioctls.
 | /dev/nvhost-ctrl-gpu | 0xC0044713 |                                               |                                                |
 | /dev/nvhost-ctrl-gpu | 0x80084714 |                                               |                                                |
 | /dev/nvhost-ctrl-gpu | 0x80044715 |                                               |                                                |
+| /dev/nvhost-ctrl-gpu | 0x8018471A |                                               |                                                |
 | /dev/nvhost-ctrl-gpu | 0xC008471B |                                               |                                                |
 | /dev/nvhost-ctrl-gpu | 0xC010471C |                                               |                                                |
 | /dev/nvhost-\*       | 0x40044801 | NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD         |                                                |
