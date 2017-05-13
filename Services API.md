@@ -58,6 +58,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | acc:u1, acc:su                                   | [Account services](Account%20services.md "wikilink")                                 | u1: for user 1?                            |
 | appletAE                                         | Applet Accessor services                                                             |                                            |
 | aoc:u                                            | AddOn Content services                                                               |                                            |
+| arp:w                                            | ?                                                                                    |                                            |
 | audren:u                                         | Audio Renderer services                                                              |                                            |
 | audout:u                                         | Audio Out services                                                                   |                                            |
 | bgtc:t, bgtc:sc                                  | Task services                                                                        |                                            |
