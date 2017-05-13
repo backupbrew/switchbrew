@@ -63,6 +63,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | bgtc:t, bgtc:sc                                  | Task services                                                                        |                                            |
 | bsd:u, bsd:s                                     | Sockets services                                                                     |                                            |
 | caps:a, caps:c, caps:ss                          | Capture services                                                                     | a: Album, ss: Screenshot                   |
+| es                                               | ETicket services?                                                                    |                                            |
 | fatal:u                                          | Fatal Error services                                                                 |                                            |
 | friend:u, friend:v, friend:m, friend:s, friend:a | Friend services                                                                      |                                            |
 | fsp-srv                                          | [Filesystem services](Filesystem%20services.md "wikilink")                           |                                            |

@@ -111,6 +111,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Capture services
 | a: Album, ss: Screenshot
 |-
+| es
+| ETicket services?
+|
+|-
 | fatal:u
 | Fatal Error services
 |
