@@ -16,4 +16,5 @@ For the stack mapping region, the userland randomizes a page-offset
 where to start inside the region. This adds some additional entropy.
 
 Binaries mapped by RO seems to be mapped randomly everywhere in the
-entire address space.
+entire address space. The random base address for each NRO has bits
+37-12 randomized, unlike the main binary region.
