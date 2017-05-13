@@ -163,6 +163,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | NIM services
 | shp: eShop
 |-
+| npns:u, npns:s
+| ?
+|
+|-
 | ns:am, ns:su, ns:dev
 | [[NS Services]]
 | am: Application Manager, su: System Update
