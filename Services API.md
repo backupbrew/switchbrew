@@ -74,7 +74,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | erpt:c                                           | ERPT(?) services                                                                     |                                            |
 | mii:u, mii:e                                     | Mii services                                                                         |                                            |
 | nifm:u, nifm:a, nifm:s                           | [Network Interface services](Network%20Interface%20services.md "wikilink")           |                                            |
-| nim:shp                                          | NIM services                                                                         | shp: eShop                                 |
+| nim, nim:shp                                     | NIM services                                                                         | shp: eShop                                 |
 | ns:am, ns:su, ns:dev                             | [NS Services](NS%20Services.md "wikilink")                                           | am: Application Manager, su: System Update |
 | nsd:u, nsd:a                                     | [NSD services](NSD%20services.md "wikilink")                                         |                                            |
 | nvdrv:a, nvmemp, mm:u                            | [NV services](NV%20services.md "wikilink")                                           |                                            |
