@@ -20,10 +20,10 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **15 May 17** Nintendo released system update
+    [2.3.0](2.3.0.md "wikilink").
   - **17 April 17** Nintendo released system update
     [2.2.0](2.2.0.md "wikilink").
   - **27 March 17** Nintendo released system update
     [2.1.0](2.1.0.md "wikilink").
   - **3 March 17** Nintendo Switch global release.
-  - **2 March 17** Nintendo released system update
-    [2.0.0](2.0.0.md "wikilink").
