@@ -5,7 +5,7 @@ Security flaws fixed: unknown.
 ==Change-log==
 This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 official changelog] from Nintendo regarding this update:
 
-'''Improvements Included in Version 2.2.0'''
+'''Improvements Included in Version 2.3.0'''
 *General system stability improvements to enhance the user's experience
 
 ==System Titles==
