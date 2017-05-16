@@ -39,7 +39,7 @@ The following table contains known ioctls.
 {| class="wikitable" border="1"
 ! Device || Value || Description || Notes
 |-
-| /dev/nvhost-* || 0xC0??0001 || NVHOST32_IOCTL_CHANNEL_SUBMIT || ?? == size is variable
+| /dev/nvhost-* || 0xC0??0001 || NVHOST_IOCTL_CHANNEL_SUBMIT || ?? == size is variable
 |-
 | /dev/nvhost-* || 0xC0080002 || NVHOST_IOCTL_CHANNEL_GET_SYNCPOINT ||
 |-
@@ -47,9 +47,13 @@ The following table contains known ioctls.
 |-
 | /dev/nvhost-* || 0xC0080004 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX ||
 |-
+| /dev/nvhost-* || 0x40040007 || ||
+|-
 | /dev/nvhost-* || 0xC0??0009 || NVHOST_IOCTL_CHANNEL_MAP_BUFFER || ?? == size is variable
 |-
 | /dev/nvhost-* || 0xC0??000A || NVHOST_IOCTL_CHANNEL_UNMAP_BUFFER || ?? == size is variable
+|-
+| /dev/nvhost-* || 0x00000013 || ||
 |-
 | /dev/nvhost-ctrl || 0xC0080014 || NVHOST_IOCTL_CTRL_SYNCPT_READ ||
 |-
@@ -187,7 +191,7 @@ The following table contains known ioctls.
 |-
 | /dev/nvhost-* || 0x40044803 || NVGPU_IOCTL_CHANNEL_SET_PRIORITY ||
 |-
-| /dev/nvhost-* || 0x40084805 || NVGPU_IOCTL_CHANNEL_SET_TIMEOUT_EX? ||
+| /dev/nvhost-* || 0x40084805 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO ||
 |-
 | /dev/nvhost-* || 0xC0044807 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS ||
 |-
@@ -215,15 +219,19 @@ The following table contains known ioctls.
 |-
 | /dev/nvhost-* || 0xC0104813 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS_SNAPSHOT ||
 |-
+| /dev/nvhost-* || 0x40084714 || set_user_address || Group ID is wrong (0x47 should be 0x48)
+|-
+| /dev/nvhost-* || 0x80084715 || get_user_address || Group ID is wrong (0x47 should be 0x48)
+|-
 | /dev/nvhost-* || 0x80804816 || ||
 |-
 | /dev/nvhost-* || 0xC0104817 || ||
 |-
-| /dev/nvhost-* || 0x40204818 || alloc_gpfifo? ||
+| /dev/nvhost-* || 0x40204818 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX ||
 |-
 | /dev/nvhost-* || 0xC0484819 || ||
 |-
-| /dev/nvhost-* || 0xC020481A || alloc_gpfifo_ex? ||
+| /dev/nvhost-* || 0xC020481A || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 ||
 |}
 
 = nvmemp =

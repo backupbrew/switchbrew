@@ -30,12 +30,14 @@ ioctls.
 
 | Device               | Value      | Description                                   | Notes                                          |
 | -------------------- | ---------- | --------------------------------------------- | ---------------------------------------------- |
-| /dev/nvhost-\*       | 0xC0??0001 | NVHOST32\_IOCTL\_CHANNEL\_SUBMIT              | ?? == size is variable                         |
+| /dev/nvhost-\*       | 0xC0??0001 | NVHOST\_IOCTL\_CHANNEL\_SUBMIT                | ?? == size is variable                         |
 | /dev/nvhost-\*       | 0xC0080002 | NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT        |                                                |
 | /dev/nvhost-\*       | 0xC0080003 | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE         |                                                |
 | /dev/nvhost-\*       | 0xC0080004 | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX      |                                                |
+| /dev/nvhost-\*       | 0x40040007 |                                               |                                                |
 | /dev/nvhost-\*       | 0xC0??0009 | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER           | ?? == size is variable                         |
 | /dev/nvhost-\*       | 0xC0??000A | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER         | ?? == size is variable                         |
+| /dev/nvhost-\*       | 0x00000013 |                                               |                                                |
 | /dev/nvhost-ctrl     | 0xC0080014 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ             |                                                |
 | /dev/nvhost-ctrl     | 0x40040015 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR             |                                                |
 | /dev/nvhost-ctrl     | 0xC00C0016 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT             |                                                |
@@ -104,7 +106,7 @@ ioctls.
 | /dev/nvhost-ctrl-gpu | 0xC010471C |                                               |                                                |
 | /dev/nvhost-\*       | 0x40044801 | NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD         |                                                |
 | /dev/nvhost-\*       | 0x40044803 | NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY          |                                                |
-| /dev/nvhost-\*       | 0x40084805 | NVGPU\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX?      |                                                |
+| /dev/nvhost-\*       | 0x40084805 | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO          |                                                |
 | /dev/nvhost-\*       | 0xC0044807 | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS           |                                                |
 | /dev/nvhost-\*       | 0xC0184808 | NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO         |                                                |
 | /dev/nvhost-\*       | 0xC0104809 | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX        |                                                |
@@ -118,11 +120,13 @@ ioctls.
 | /dev/nvhost-\*       | 0x00004811 | NVGPU\_IOCTL\_CHANNEL\_FORCE\_RESET           |                                                |
 | /dev/nvhost-\*       | 0x40084812 | NVGPU\_IOCTL\_CHANNEL\_EVENTS\_CTRL           |                                                |
 | /dev/nvhost-\*       | 0xC0104813 | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS\_SNAPSHOT |                                                |
+| /dev/nvhost-\*       | 0x40084714 | set\_user\_address                            | Group ID is wrong (0x47 should be 0x48)        |
+| /dev/nvhost-\*       | 0x80084715 | get\_user\_address                            | Group ID is wrong (0x47 should be 0x48)        |
 | /dev/nvhost-\*       | 0x80804816 |                                               |                                                |
 | /dev/nvhost-\*       | 0xC0104817 |                                               |                                                |
-| /dev/nvhost-\*       | 0x40204818 | alloc\_gpfifo?                                |                                                |
+| /dev/nvhost-\*       | 0x40204818 | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX      |                                                |
 | /dev/nvhost-\*       | 0xC0484819 |                                               |                                                |
-| /dev/nvhost-\*       | 0xC020481A | alloc\_gpfifo\_ex?                            |                                                |
+| /dev/nvhost-\*       | 0xC020481A | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2     |                                                |
 
 # nvmemp
 
