@@ -12,6 +12,7 @@
 |- valign="top" align="left" style="background: #F5FAFF;"
 | {{:News}} 
 |- class="plainlinks" style="background: #e7eef6; text-align: center;"
+| [http://switchbrew.org/index.php?title=News&feed=atom&action=history RSS Feed] · [[:News/Archive|Archive]]
 |}
 </div>
 {{box-footer-empty}}
