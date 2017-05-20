@@ -62,6 +62,8 @@ Main NVIDIA driver service.
 | 2-3  | Cmd id (3)                              |
 | 4    | Shared memory size                      |
 
+Webkit applet creates the shared memory with perm = 0 and size 0x300000.
+
 ## Ioctls
 
 The ioctl number is generated with the following primitive (see Linux
