@@ -11,7 +11,7 @@ Main NVIDIA driver service.
 |-
 | 1 || [[#Ioctl]]
 |-
-| 2 || Close
+| 2 || [[#Close]]
 |-
 | 3 || Initialize
 |-
@@ -41,7 +41,7 @@ Main NVIDIA driver service.
 |- style="border-top: double"
 | 0-1 || "SFCI"
 |-
-| 2-3 || 0x00000000
+| 2-3 || Cmd id (0)
 |}
 
 == Ioctl ==
@@ -56,16 +56,32 @@ Main NVIDIA driver service.
 | ? || Type 0x21 descriptor: Input buffer
 |-
 | ? || Type 0x22 descriptor: Output buffer
-|-
 |- style="border-top: double"
 | 0-1 || "SFCI"
 |-
-| 2-3 || 0x00000001
+| 2-3 || Cmd id (1)
 |-
 | 4 || Device fd
 |-
 | 5 || Ioctl Cmd
 |}
+
+== Close ==
+{| class="wikitable" border="1"
+|-
+! Word || Value
+|-
+| 0 || 0x00000004
+|-
+| 1 || 0x00000009
+|- style="border-top: double"
+| 0-1 || "SFCI"
+|-
+| 2-3 || Cmd id (2)
+|-
+| 4 || Device fd
+|}
+
 
 == Ioctls ==
 The ioctl number is generated with the following primitive (see Linux kernel):

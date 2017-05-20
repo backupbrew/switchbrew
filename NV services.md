@@ -8,7 +8,7 @@ Main NVIDIA driver service.
 | --- | ---------------------------- |
 | 0   | [\#Open](#Open "wikilink")   |
 | 1   | [\#Ioctl](#Ioctl "wikilink") |
-| 2   | Close                        |
+| 2   | [\#Close](#Close "wikilink") |
 | 3   | Initialize                   |
 | 4   | QueryEvent                   |
 | 5   | MapSharedMem                 |
@@ -25,7 +25,7 @@ Main NVIDIA driver service.
 | 1    | 0x00000008                     |
 | 2-4  | Type 5 descriptor: Device path |
 | 0-1  | "SFCI"                         |
-| 2-3  | 0x00000000                     |
+| 2-3  | Cmd id (0)                     |
 
 ## Ioctl
 
@@ -35,11 +35,20 @@ Main NVIDIA driver service.
 | 1    | 0x00000C0B                          |
 | ?    | Type 0x21 descriptor: Input buffer  |
 | ?    | Type 0x22 descriptor: Output buffer |
-|      |                                     |
 | 0-1  | "SFCI"                              |
-| 2-3  | 0x00000001                          |
+| 2-3  | Cmd id (1)                          |
 | 4    | Device fd                           |
 | 5    | Ioctl Cmd                           |
+
+## Close
+
+| Word | Value      |
+| ---- | ---------- |
+| 0    | 0x00000004 |
+| 1    | 0x00000009 |
+| 0-1  | "SFCI"     |
+| 2-3  | Cmd id (2) |
+| 4    | Device fd  |
 
 ## Ioctls
 
