@@ -22,6 +22,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 2 || FS
 |-
+| 3 || NVIDIA
+|-
 | 5 || GameCard
 |-
 | 9 || RO service
@@ -110,6 +112,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 0x313802 || 6300 || Operation not supported
 |-
 | 0x320002 || 6400 || Permission denied
+|-
+| 0x3EE03 || 503 || Invalid memory mirror
 |-
 | 0xDC05 || 110 || Gamecard not inserted
 |-

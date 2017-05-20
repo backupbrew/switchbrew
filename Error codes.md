@@ -23,6 +23,7 @@ following formatter:
 | ----- | ---------------------------- |
 | 1     | Kernel                       |
 | 2     | FS                           |
+| 3     | NVIDIA                       |
 | 5     | GameCard                     |
 | 9     | RO service                   |
 | 10    | CMIF (IPC command interface) |
@@ -70,6 +71,7 @@ following formatter:
 | 0x2F5A02 | 6061        | Offset outside storage                                        |
 | 0x313802 | 6300        | Operation not supported                                       |
 | 0x320002 | 6400        | Permission denied                                             |
+| 0x3EE03  | 503         | Invalid memory mirror                                         |
 | 0xDC05   | 110         | Gamecard not inserted                                         |
 | 0x6609   | 51          | Invalid memory state/permission                               |
 | 0x6A09   | 53          | Invalid Nrr                                                   |
