@@ -9,7 +9,7 @@ Main NVIDIA driver service.
 |-
 | 0 || [[#Open]]
 |-
-| 1 || Ioctl
+| 1 || [[#Ioctl]]
 |-
 | 2 || Close
 |-
@@ -37,15 +37,36 @@ Main NVIDIA driver service.
 |-
 | 1 || 0x00000008
 |-
-| 2-4 || A-descriptor buffer: Device path
+| 2-4 || Type 5 descriptor: Device path
 |- style="border-top: double"
 | 0 || "SFCI"
 |-
-| 1 || Always 0.
+| 1 || 0x00000000
+|}
+
+== Ioctl ==
+{| class="wikitable" border="1"
+|-
+! Word || Value
+|-
+| 0 || 0x11100004
+|-
+| 1 || 0x00000C0B
+|-
+| 2-5 || Type 0x21 descriptor: Input buffer
+|-
+| 9-6 || Type 0x22 descriptor: Output buffer
+|-
+|- style="border-top: double"
+| 0 || "SFCI"
+|-
+| 1 || 0x00000001
 |-
 | 2 || Always 0.
 |-
-| 3 || Always 0.
+| 3 || Device fd
+|-
+| 4 || Ioctl Cmd
 |}
 
 == Ioctls ==
