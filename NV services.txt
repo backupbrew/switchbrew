@@ -7,7 +7,7 @@ Main NVIDIA driver service.
 |-
 ! Cmd || Name
 |-
-| 0 || Open
+| 0 || [[#Open]]
 |-
 | 1 || Ioctl
 |-
@@ -26,6 +26,26 @@ Main NVIDIA driver service.
 | 8 || BindDisplayService
 |-
 | 9 || ?
+|}
+
+== Open ==
+{| class="wikitable" border="1"
+|-
+! Word || Value
+|-
+| 0 || 0x00100004
+|-
+| 1 || 0x00000008
+|-
+| 2-4 || A-descriptor buffer: Device path
+|- style="border-top: double"
+| 0 || "SFCI"
+|-
+| 1 || Always 0.
+|-
+| 2 || Always 0.
+|-
+| 3 || Always 0.
 |}
 
 == Ioctls ==

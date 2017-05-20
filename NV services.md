@@ -4,18 +4,30 @@ The Switch makes use of a customized NVIDIA driver.
 
 Main NVIDIA driver service.
 
-| Cmd | Name               |
-| --- | ------------------ |
-| 0   | Open               |
-| 1   | Ioctl              |
-| 2   | Close              |
-| 3   | Initialize         |
-| 4   | QueryEvent         |
-| 5   | MapSharedMem       |
-| 6   | ?                  |
-| 7   | ?                  |
-| 8   | BindDisplayService |
-| 9   | ?                  |
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | [\#Open](#Open "wikilink") |
+| 1   | Ioctl                      |
+| 2   | Close                      |
+| 3   | Initialize                 |
+| 4   | QueryEvent                 |
+| 5   | MapSharedMem               |
+| 6   | ?                          |
+| 7   | ?                          |
+| 8   | BindDisplayService         |
+| 9   | ?                          |
+
+## Open
+
+| Word | Value                            |
+| ---- | -------------------------------- |
+| 0    | 0x00100004                       |
+| 1    | 0x00000008                       |
+| 2-4  | A-descriptor buffer: Device path |
+| 0    | "SFCI"                           |
+| 1    | Always 0.                        |
+| 2    | Always 0.                        |
+| 3    | Always 0.                        |
 
 ## Ioctls
 
