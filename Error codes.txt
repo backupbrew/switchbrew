@@ -32,6 +32,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 11 || HIPC (IPC)
 |-
+| 15 || PS
+|-
 | 16 || NS
 |-
 | 21 || SM
