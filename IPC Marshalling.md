@@ -27,13 +27,13 @@ u32's.
 There can only be one of this descriptor type. It is enabled by bit31 of
 the second word.
 
-| Word | Bits | Description                                    |
-| ---- | ---- | ---------------------------------------------- |
-| 0    | 0    | Send current PID.                              |
-| 0    | 4-1  | Number of handles.                             |
-| 0    | 8-5  | Number of B-words for this special descriptor. |
-| ...  |      | Handles                                        |
-| ...  |      | B-words, purpose unknown.                      |
+| Word | Bits | Description                |
+| ---- | ---- | -------------------------- |
+| 0    | 0    | Send current PID.          |
+| 0    | 4-1  | Number of handles to move? |
+| 0    | 8-5  | Number of handles to copy? |
+| ...  |      | Handles to move?           |
+| ...  |      | Handles to copy?           |
 
 ### Buffer descriptor A/B
 
