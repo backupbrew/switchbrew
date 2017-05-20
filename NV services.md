@@ -4,18 +4,18 @@ The Switch makes use of a customized NVIDIA driver.
 
 Main NVIDIA driver service.
 
-| Cmd | Name                         |
-| --- | ---------------------------- |
-| 0   | [\#Open](#Open "wikilink")   |
-| 1   | [\#Ioctl](#Ioctl "wikilink") |
-| 2   | [\#Close](#Close "wikilink") |
-| 3   | Initialize                   |
-| 4   | QueryEvent                   |
-| 5   | MapSharedMem                 |
-| 6   | ?                            |
-| 7   | ?                            |
-| 8   | BindDisplayService           |
-| 9   | ?                            |
+| Cmd | Name                                   |
+| --- | -------------------------------------- |
+| 0   | [\#Open](#Open "wikilink")             |
+| 1   | [\#Ioctl](#Ioctl "wikilink")           |
+| 2   | [\#Close](#Close "wikilink")           |
+| 3   | [\#Initialize](#Initialize "wikilink") |
+| 4   | QueryEvent                             |
+| 5   | MapSharedMem                           |
+| 6   | ?                                      |
+| 7   | ?                                      |
+| 8   | BindDisplayService                     |
+| 9   | ?                                      |
 
 ## Open
 
@@ -49,6 +49,18 @@ Main NVIDIA driver service.
 | 0-1  | "SFCI"     |
 | 2-3  | Cmd id (2) |
 | 4    | Device fd  |
+
+## Initialize
+
+| Word | Value                                   |
+| ---- | --------------------------------------- |
+| 0    | 0x00000004                              |
+| 1    | 0x80000009                              |
+| ?    | Handle descriptor: Current process      |
+| ?    | Handle descriptor: Shared memory mirror |
+| 0-1  | "SFCI"                                  |
+| 2-3  | Cmd id (3)                              |
+| 4    | Shared memory size                      |
 
 ## Ioctls
 

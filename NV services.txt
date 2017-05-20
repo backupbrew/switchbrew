@@ -13,7 +13,7 @@ Main NVIDIA driver service.
 |-
 | 2 || [[#Close]]
 |-
-| 3 || Initialize
+| 3 || [[#Initialize]]
 |-
 | 4 || QueryEvent
 |-
@@ -82,6 +82,25 @@ Main NVIDIA driver service.
 | 4 || Device fd
 |}
 
+== Initialize ==
+{| class="wikitable" border="1"
+|-
+! Word || Value
+|-
+| 0 || 0x00000004
+|-
+| 1 || 0x80000009
+|-
+| ? || Handle descriptor: Current process
+|-
+| ? || Handle descriptor: Shared memory mirror
+|- style="border-top: double"
+| 0-1 || "SFCI"
+|-
+| 2-3 || Cmd id (3)
+|-
+| 4 || Shared memory size
+|}
 
 == Ioctls ==
 The ioctl number is generated with the following primitive (see Linux kernel):
