@@ -24,8 +24,8 @@ Main NVIDIA driver service.
 | 0    | 0x00100004                     |
 | 1    | 0x00000008                     |
 | 2-4  | Type 5 descriptor: Device path |
-| 0    | "SFCI"                         |
-| 1    | 0x00000000                     |
+| 0-1  | "SFCI"                         |
+| 2-3  | 0x00000000                     |
 
 ## Ioctl
 
@@ -33,14 +33,13 @@ Main NVIDIA driver service.
 | ---- | ----------------------------------- |
 | 0    | 0x11100004                          |
 | 1    | 0x00000C0B                          |
-| 2-5  | Type 0x21 descriptor: Input buffer  |
-| 9-6  | Type 0x22 descriptor: Output buffer |
+| ?    | Type 0x21 descriptor: Input buffer  |
+| ?    | Type 0x22 descriptor: Output buffer |
 |      |                                     |
-| 0    | "SFCI"                              |
-| 1    | 0x00000001                          |
-| 2    | Always 0.                           |
-| 3    | Device fd                           |
-| 4    | Ioctl Cmd                           |
+| 0-1  | "SFCI"                              |
+| 2-3  | 0x00000001                          |
+| 4    | Device fd                           |
+| 5    | Ioctl Cmd                           |
 
 ## Ioctls
 
