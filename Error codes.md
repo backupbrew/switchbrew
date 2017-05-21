@@ -28,7 +28,7 @@ following formatter:
 | 9     | RO service                   |
 | 10    | CMIF (IPC command interface) |
 | 11    | HIPC (IPC)                   |
-| 15    | PS                           |
+| 15    | PM                           |
 | 16    | NS                           |
 | 21    | SM                           |
 | 22    | RO user                      |
