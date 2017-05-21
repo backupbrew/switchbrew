@@ -94,6 +94,8 @@ following formatter:
 
 # Fatal Errors
 
-| Error     | Description             |
-| --------- | ----------------------- |
-| 2168-0002 | Userland ARM data abort |
+| Error     | Description                                |
+| --------- | ------------------------------------------ |
+| 2168-0001 | Userland PC set to non-executable region   |
+| 2168-0002 | Userland ARM data abort                    |
+| 2168-0002 | Userland PC address not aligned to 4 bytes |
