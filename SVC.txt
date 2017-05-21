@@ -144,7 +144,7 @@ This one reprotects the src block with perms you give it. It also sets bit32 int
 
 Executable bit perm not allowed.
 
-Closing the returned handle automatically causes the bit32 in [[#MemoryState]] to clear.
+Closing all handles automatically causes the bit32 in [[#MemoryState]] to clear, and the permission to reset.
 
 == svcWaitSynchronizationN ==
 Works with num_handles <= 0x40, error on num_handles == 0.

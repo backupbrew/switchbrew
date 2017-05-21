@@ -100,8 +100,9 @@ bit32 into [\#MemoryState](#MemoryState "wikilink").
 
 Executable bit perm not allowed.
 
-Closing the returned handle automatically causes the bit32 in
-[\#MemoryState](#MemoryState "wikilink") to clear.
+Closing all handles automatically causes the bit32 in
+[\#MemoryState](#MemoryState "wikilink") to clear, and the permission to
+reset.
 
 ## svcWaitSynchronizationN
 
