@@ -91,3 +91,9 @@ following formatter:
 | 0x2C7C   | 22          | Argument is invalid                                           |
 | 0x3C7C   | 30          | Bad input buffer size                                         |
 | 0x407C   | 32          | Invalid input buffer                                          |
+
+# Fatal Errors
+
+| Error     | Description             |
+| --------- | ----------------------- |
+| 2168-0002 | Userland ARM data abort |
