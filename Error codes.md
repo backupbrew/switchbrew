@@ -98,4 +98,4 @@ following formatter:
 | --------- | ------------------------------------------ |
 | 2168-0001 | Userland PC set to non-executable region   |
 | 2168-0002 | Userland ARM data abort                    |
-| 2168-0002 | Userland PC address not aligned to 4 bytes |
+| 2168-0003 | Userland PC address not aligned to 4 bytes |
