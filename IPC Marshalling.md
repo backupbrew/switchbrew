@@ -5,7 +5,7 @@ u32's.
 
 | Word | Bits  | Description                                                  |
 | ---- | ----- | ------------------------------------------------------------ |
-| 0    | 15-0  | Type. 4=IpcRequest, 5=QueryPointerBufferSize                 |
+| 0    | 15-0  | Type. 4=Request, 5=Query                                     |
 | 0    | 19-16 | Number of buf X descriptors (each: 2 words).                 |
 | 0    | 23-20 | Number of buf A descriptors (each: 3 words).                 |
 | 0    | 27-24 | Number of buf B descriptors (each: 3 words).                 |
