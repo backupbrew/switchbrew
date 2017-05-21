@@ -82,6 +82,8 @@ following formatter:
 | 0x1A80A  | 212         | Bad magic (expected 'SFCO')                                   |
 | 0x20B    | 1           | Size too big to fit to marshal.                               |
 | 0x11A0B  | 141         | Went past maximum during marshalling.                         |
+| 0x1900B  | 200         | IPC Query 0 failed.                                           |
+| 0x3D60B  | 491         | IPC Query 1 failed.                                           |
 | 0x20F    | 1           | Pid not found                                                 |
 | 0x0C15   | 6           | Invalid name (all zeroes)                                     |
 | 0x1015   | 8           | Permission denied                                             |
