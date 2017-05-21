@@ -193,3 +193,14 @@ NVIDIA multimedia (NvMM) platform service.
 | 5   | module\_deinit\_clk    |
 | 6   | module\_set\_clk\_rate |
 | 7   | module\_get\_clk\_rate |
+
+# Errors
+
+Most nvidia driver commands return an error code apart from the normal
+return code.
+
+| Cmd | Name            |
+| --- | --------------- |
+| 0   | Success         |
+| 2   | Cmd disabled?   |
+| 3   | Not initialized |

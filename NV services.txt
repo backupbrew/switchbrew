@@ -336,3 +336,17 @@ NVIDIA multimedia (NvMM) platform service.
 |-
 | 7 || module_get_clk_rate
 |}
+
+= Errors =
+Most nvidia driver commands return an error code apart from the normal return code.
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Success
+|-
+| 2 || Cmd disabled?
+|-
+| 3 || Not initialized
+|}
