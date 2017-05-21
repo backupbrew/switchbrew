@@ -199,8 +199,9 @@ NVIDIA multimedia (NvMM) platform service.
 Most nvidia driver commands return an error code apart from the normal
 return code.
 
-| Cmd | Name            |
-| --- | --------------- |
-| 0   | Success         |
-| 2   | Cmd disabled?   |
-| 3   | Not initialized |
+| Cmd    | Name                    |
+| ------ | ----------------------- |
+| 0      | Success                 |
+| 2      | Cmd disabled?           |
+| 3      | Not initialized         |
+| 0x1000 | Shared memory too small |
