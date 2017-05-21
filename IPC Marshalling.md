@@ -30,10 +30,10 @@ the second word.
 | Word | Bits | Description                |
 | ---- | ---- | -------------------------- |
 | 0    | 0    | Send current PID.          |
-| 0    | 4-1  | Number of handles to move? |
-| 0    | 8-5  | Number of handles to copy? |
+| 0    | 4-1  | Number of handles to copy  |
+| 0    | 8-5  | Number of handles to move? |
+| ...  |      | Handles to copy            |
 | ...  |      | Handles to move?           |
-| ...  |      | Handles to copy?           |
 
 ### Buffer descriptor A/B
 
