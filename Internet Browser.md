@@ -73,3 +73,13 @@ eShop and prior to LoginApplet launching. The initial page loaded by
 this applet is the above conntest URL.
 
 This is only available starting with [2.0.0](2.0.0.md "wikilink").
+
+## Versions
+
+### 2.1.0
+
+See [here](Switch%20Userland%20Flaws.md "wikilink") for vuln-related
+changes.
+
+For the WebKit NRO, the page-aligned size for the R-X, R--, and RW-
+pages are the same as v2.0.
