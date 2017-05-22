@@ -96,4 +96,4 @@ This is only available starting with [[2.0.0]].
 === 2.1.0 ===
 See [[Switch_Userland_Flaws|here]] for vuln-related changes.
 
-For the WebKit NRO, the page-aligned size for the R-X, R--, and RW- pages are the same as v2.0.
+The WebKit NRO was updated. For the WebKit NRO, the page-aligned size for the R-X, R--, and RW- pages are the same as v2.0.
