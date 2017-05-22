@@ -12,4 +12,4 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 It's unknown exactly what titles were updated.
 
 ===[[Internet_Browser|Browser]]===
-Multiple browser vulns were [[Switch_Userland_Flaws|fixed]].
+Multiple browser vulns were [[Switch_Userland_Flaws|fixed]], see also [[Internet_Browser|here]] for v2.1 browser details.
