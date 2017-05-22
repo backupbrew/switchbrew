@@ -162,6 +162,9 @@ When a fatal-error is received the error code is outputted using the following f
 {| class=wikitable
 ! Error || Description
 |-
+| 2168-0000
+| Userland ARM undefined instruction exception
+|-
 | 2168-0001
 | Userland ARM prefetch-abort due to PC set to non-executable region
 |-
