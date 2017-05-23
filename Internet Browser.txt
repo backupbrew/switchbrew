@@ -80,6 +80,8 @@ When whitelisting is enabled, you can only load page domains included in the whi
 == OSS ==
 The NROs for the OSS are stored under a separate [[Title_list|title]]. All of the web-applets use the same OSS NROs via this title.
 
+String from v2.0 in oss_wkc.nro: "libcurl/7.50.1".
+
 == Video Playback ==
 WifiWebAuthApplet does not fully support playing videos. It will crash with normal videos. However, in some cases with certain MP4s using vulns it will display an error dialog instead.
 

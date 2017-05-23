@@ -49,6 +49,8 @@ The NROs for the OSS are stored under a separate
 [title](Title%20list.md "wikilink"). All of the web-applets use the same
 OSS NROs via this title.
 
+String from v2.0 in oss\_wkc.nro: "libcurl/7.50.1".
+
 ## Video Playback
 
 WifiWebAuthApplet does not fully support playing videos. It will crash
