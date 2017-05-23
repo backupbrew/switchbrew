@@ -99,3 +99,6 @@ This is only available starting with [[2.0.0]].
 See [[Switch_Userland_Flaws|here]] for vuln-related changes.
 
 The WebKit NRO was updated. For the WebKit NRO, the page-aligned size for the R-X, R--, and RW- pages are the same as v2.0.
+* The actual code in the NRO starts differing starting at offset 0xE780. In v2.0 the offset following the last code instruction is text_lastpage+0x3F8(text_end-0xC08), while for v2.1 it's text_lastpage+0xE60(text_end-0x1A0). Compared to the previous version, there's a val0 u32(padding) inserted where the code for the import stubs begin, near the end of .text. Relative to that end offset going backwards, .text differs starting at v2.0 textbase+0xD56530 / v2.1 textbase+0xD56F94.
+* The R-- section was updated. Besides the large table(?) which was updated(nothing was added/removed there), the strings containing "D:/for_cruiser/release_182/nx/webkit/" were updated: "182" was changed to "189". 0x10-bytes at offset 0x57292C were removed. 0x8-bytes were inserted at offset 0x14B2B5C in the v2.1 section. 0x8-bytes were inserted at offset 0x14B5C10 in the v2.1 section. ...
+* The RW- section was updated, mainly for different addrs. Nothing was added/removed. Most(?)/all(?) main-codebin func import-addrs relative to main-codebin-base are the same as v2.0.
