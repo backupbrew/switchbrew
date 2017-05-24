@@ -346,9 +346,35 @@ Most nvidia driver commands return an error code apart from the normal return co
 |-
 | 0 || Success
 |-
-| 2 || Cmd disabled?
+| 1 || NotImplemented
 |-
-| 3 || Not initialized
+| 2 || NotSupported
+|-
+| 3 || NotInitialized
+|-
+| 4 || BadParameter
+|-
+| 5 || Timeout
+|-
+| 6 || InsufficientMemory
+|-
+| 7 || ReadOnlyAttribute
+|-
+| 8 || InvalidState
+|-
+| 9 || InvalidAddress
+|-
+| 0xA || InvalidSize
+|-
+| 0xB || BadValue
+|-
+| 0xD || AlreadyAllocated
+|-
+| 0xE || Busy
+|-
+| 0xF || ResourceError
+|-
+| 0x10 || CountMismatch
 |-
 | 0x1000 || Shared memory too small
 |}
