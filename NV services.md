@@ -64,7 +64,7 @@ Main NVIDIA driver service.
 
 Webkit applet creates the shared memory with perm = 0 and size 0x300000.
 
-## Ioctls
+# Ioctls
 
 The ioctl number is generated with the following primitive (see Linux
 kernel):
@@ -74,6 +74,48 @@ kernel):
 
 The following table contains known
 ioctls.
+
+## /dev/nvhost-ctrl
+
+| Value      | Description                            | Notes                              |
+| ---------- | -------------------------------------- | ---------------------------------- |
+| 0xC0080014 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ      |                                    |
+| 0x40040015 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR      |                                    |
+| 0xC00C0016 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT      |                                    |
+| 0x40080017 | NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX     |                                    |
+| 0xC0180018 | NVHOST32\_IOCTL\_CTRL\_MODULE\_REGRDWR |                                    |
+| 0xC0100019 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX    |                                    |
+| 0xC008001A | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX |                                    |
+| 0xC004001C |                                        |                                    |
+| 0xC010001D |                                        | NvRmSyncWaitEvent (wait on event?) |
+| 0xC010001E |                                        | NvRmSyncWaitEvent (wait on event?) |
+| 0xC004001F |                                        | NvRmSyncWaitEvent (signal event?)  |
+| 0xC0040020 |                                        | NvRmSyncWaitEvent (signal event?)  |
+| 0x40080021 | cancel\_wait\_event                    | Cancels all events                 |
+
+## /dev/nvmap
+
+| Value      | Description             | Notes                |
+| ---------- | ----------------------- | -------------------- |
+| 0xC0080101 | NVMAP\_IOC\_CREATE      |                      |
+| 0x00000102 | NVMAP\_IOC\_CLAIM       | Returns NotSupported |
+| 0xC0080103 | NVMAP\_IOC\_FROM\_ID    |                      |
+| 0xC0200104 | NVMAP\_IOC\_ALLOC       |                      |
+| 0xC0180105 | NVMAP\_IOC\_FREE        |                      |
+| 0xC0280106 | NVMAP\_IOC\_MMAP        | Returns NotSupported |
+| 0xC0280107 | NVMAP\_IOC\_WRITE       | Returns NotSupported |
+| 0xC0280108 | NVMAP\_IOC\_READ        | Returns NotSupported |
+| 0xC00C0109 | NVMAP\_IOC\_PARAM       |                      |
+| 0xC010010A | NVMAP\_IOC\_PIN\_MULT   | Returns NotSupported |
+| 0xC010010B | NVMAP\_IOC\_UNPIN\_MULT | Returns NotSupported |
+| 0xC008010C | NVMAP\_IOC\_CACHE       | Returns NotSupported |
+| 0xC004010D |                         | Returns NotSupported |
+| 0xC008010E | NVMAP\_IOC\_GET\_ID     |                      |
+| 0xC004010F |                         | Returns NotSupported |
+| 0x40040110 |                         | Returns NotSupported |
+| 0x00000111 |                         | Returns NotSupported |
+
+## Rest
 
 | Device               | Value      | Description                                   | Notes                                          |
 | -------------------- | ---------- | --------------------------------------------- | ---------------------------------------------- |
@@ -85,36 +127,6 @@ ioctls.
 | /dev/nvhost-\*       | 0xC0??0009 | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER           | ?? == size is variable                         |
 | /dev/nvhost-\*       | 0xC0??000A | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER         | ?? == size is variable                         |
 | /dev/nvhost-\*       | 0x00000013 |                                               |                                                |
-| /dev/nvhost-ctrl     | 0xC0080014 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ             |                                                |
-| /dev/nvhost-ctrl     | 0x40040015 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR             |                                                |
-| /dev/nvhost-ctrl     | 0xC00C0016 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT             |                                                |
-| /dev/nvhost-ctrl     | 0x40080017 | NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX            |                                                |
-| /dev/nvhost-ctrl     | 0xC0180018 | NVHOST32\_IOCTL\_CTRL\_MODULE\_REGRDWR        |                                                |
-| /dev/nvhost-ctrl     | 0xC0100019 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX           |                                                |
-| /dev/nvhost-ctrl     | 0xC008001A | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX        |                                                |
-| /dev/nvhost-ctrl     | 0xC004001C |                                               |                                                |
-| /dev/nvhost-ctrl     | 0xC010001D |                                               | NvRmSyncWaitEvent (wait on event?)             |
-| /dev/nvhost-ctrl     | 0xC010001E |                                               | NvRmSyncWaitEvent (wait on event?)             |
-| /dev/nvhost-ctrl     | 0xC004001F |                                               | NvRmSyncWaitEvent (signal event?)              |
-| /dev/nvhost-ctrl     | 0xC0040020 |                                               | NvRmSyncWaitEvent (signal event?)              |
-| /dev/nvhost-ctrl     | 0x40080021 | cancel\_wait\_event                           | Cancels all events                             |
-| /dev/nvmap           | 0xC0080101 | NVMAP\_IOC\_CREATE                            |                                                |
-| /dev/nvmap           | 0x00000102 |                                               | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0xC0080103 | NVMAP\_IOC\_FROM\_ID                          |                                                |
-| /dev/nvmap           | 0xC0200104 | NVMAP\_IOC\_ALLOC                             |                                                |
-| /dev/nvmap           | 0xC0180105 | NVMAP\_IOC\_FREE                              |                                                |
-| /dev/nvmap           | 0xC0280106 | NVMAP\_IOC\_MMAP?                             | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0xC0280107 | NVMAP\_IOC\_WRITE?                            | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0xC0280108 | NVMAP\_IOC\_READ?                             | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0xC00C0109 | NVMAP\_IOC\_PARAM                             |                                                |
-| /dev/nvmap           | 0xC010010A | NVMAP\_IOC\_PIN\_MULT?                        | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0xC010010B | NVMAP\_IOC\_UNPIN\_MULT?                      | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0xC008010C | NVMAP\_IOC\_CACHE?                            | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0xC004010D |                                               | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0xC008010E | NVMAP\_IOC\_GET\_ID                           |                                                |
-| /dev/nvmap           | 0xC004010F |                                               | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0x40040110 |                                               | Returns NVERROR 0x02 (not supported)           |
-| /dev/nvmap           | 0x00000111 |                                               | Returns NVERROR 0x02 (not supported)           |
 | /dev/nvhost-as-gpu   | 0x40044101 | NVGPU\_AS\_IOCTL\_BIND\_CHANNEL               |                                                |
 | /dev/nvhost-as-gpu   | 0xC0184102 | NVGPU\_AS\_IOCTL\_ALLOC\_SPACE                |                                                |
 | /dev/nvhost-as-gpu   | 0xC0104103 | NVGPU\_AS\_IOCTL\_FREE\_SPACE                 |                                                |

@@ -104,7 +104,7 @@ Main NVIDIA driver service.
 
 Webkit applet creates the shared memory with perm = 0 and size 0x300000.
 
-== Ioctls ==
+= Ioctls =
 The ioctl number is generated with the following primitive (see Linux kernel):
 
  #define _IOC(inout, group, num, len) \
@@ -112,6 +112,77 @@ The ioctl number is generated with the following primitive (see Linux kernel):
 
 The following table contains known ioctls.
 
+== /dev/nvhost-ctrl ==
+{| class="wikitable" border="1"
+! Value || Description || Notes
+|-
+| 0xC0080014 || NVHOST_IOCTL_CTRL_SYNCPT_READ ||
+|-
+| 0x40040015 || NVHOST_IOCTL_CTRL_SYNCPT_INCR ||
+|-
+| 0xC00C0016 || NVHOST_IOCTL_CTRL_SYNCPT_WAIT ||
+|-
+| 0x40080017 || NVHOST_IOCTL_CTRL_MODULE_MUTEX ||
+|-
+| 0xC0180018 || NVHOST32_IOCTL_CTRL_MODULE_REGRDWR ||
+|-
+| 0xC0100019 || NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ||
+|-
+| 0xC008001A || NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX ||
+|-
+| 0xC004001C || ||
+|-
+| 0xC010001D || || NvRmSyncWaitEvent (wait on event?)
+|-
+| 0xC010001E || || NvRmSyncWaitEvent (wait on event?)
+|-
+| 0xC004001F || || NvRmSyncWaitEvent (signal event?)
+|-
+| 0xC0040020 || || NvRmSyncWaitEvent (signal event?)
+|-
+| 0x40080021 || cancel_wait_event || Cancels all events
+|}
+
+== /dev/nvmap ==
+{| class="wikitable" border="1"
+! Value || Description || Notes
+|-
+| 0xC0080101 || NVMAP_IOC_CREATE ||
+|-
+| 0x00000102 || NVMAP_IOC_CLAIM || Returns NotSupported
+|-
+| 0xC0080103 || NVMAP_IOC_FROM_ID ||
+|-
+| 0xC0200104 || NVMAP_IOC_ALLOC ||
+|-
+| 0xC0180105 || NVMAP_IOC_FREE ||
+|-
+| 0xC0280106 || NVMAP_IOC_MMAP || Returns NotSupported
+|-
+| 0xC0280107 || NVMAP_IOC_WRITE || Returns NotSupported
+|-
+| 0xC0280108 || NVMAP_IOC_READ || Returns NotSupported
+|-
+| 0xC00C0109 || NVMAP_IOC_PARAM ||
+|-
+| 0xC010010A || NVMAP_IOC_PIN_MULT || Returns NotSupported
+|-
+| 0xC010010B || NVMAP_IOC_UNPIN_MULT || Returns NotSupported
+|-
+| 0xC008010C || NVMAP_IOC_CACHE || Returns NotSupported
+|-
+| 0xC004010D || || Returns NotSupported
+|-
+| 0xC008010E || NVMAP_IOC_GET_ID ||
+|-
+| 0xC004010F || || Returns NotSupported
+|-
+| 0x40040110 || || Returns NotSupported
+|-
+| 0x00000111 || || Returns NotSupported
+|}
+
+== Rest ==
 {| class="wikitable" border="1"
 ! Device || Value || Description || Notes
 |-
@@ -130,66 +201,6 @@ The following table contains known ioctls.
 | /dev/nvhost-* || 0xC0??000A || NVHOST_IOCTL_CHANNEL_UNMAP_BUFFER || ?? == size is variable
 |-
 | /dev/nvhost-* || 0x00000013 || ||
-|-
-| /dev/nvhost-ctrl || 0xC0080014 || NVHOST_IOCTL_CTRL_SYNCPT_READ ||
-|-
-| /dev/nvhost-ctrl || 0x40040015 || NVHOST_IOCTL_CTRL_SYNCPT_INCR ||
-|-
-| /dev/nvhost-ctrl || 0xC00C0016 || NVHOST_IOCTL_CTRL_SYNCPT_WAIT ||
-|-
-| /dev/nvhost-ctrl || 0x40080017 || NVHOST_IOCTL_CTRL_MODULE_MUTEX ||
-|-
-| /dev/nvhost-ctrl || 0xC0180018 || NVHOST32_IOCTL_CTRL_MODULE_REGRDWR ||
-|-
-| /dev/nvhost-ctrl || 0xC0100019 || NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ||
-|-
-| /dev/nvhost-ctrl || 0xC008001A || NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX ||
-|-
-| /dev/nvhost-ctrl || 0xC004001C || ||
-|-
-| /dev/nvhost-ctrl || 0xC010001D || || NvRmSyncWaitEvent (wait on event?)
-|-
-| /dev/nvhost-ctrl || 0xC010001E || || NvRmSyncWaitEvent (wait on event?)
-|-
-| /dev/nvhost-ctrl || 0xC004001F || || NvRmSyncWaitEvent (signal event?)
-|-
-| /dev/nvhost-ctrl || 0xC0040020 || || NvRmSyncWaitEvent (signal event?)
-|-
-| /dev/nvhost-ctrl || 0x40080021 || cancel_wait_event || Cancels all events
-|-
-| /dev/nvmap || 0xC0080101 || NVMAP_IOC_CREATE ||
-|-
-| /dev/nvmap || 0x00000102 || || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0xC0080103 || NVMAP_IOC_FROM_ID ||
-|-
-| /dev/nvmap || 0xC0200104 || NVMAP_IOC_ALLOC ||
-|-
-| /dev/nvmap || 0xC0180105 || NVMAP_IOC_FREE ||
-|-
-| /dev/nvmap || 0xC0280106 || NVMAP_IOC_MMAP? || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0xC0280107 || NVMAP_IOC_WRITE? || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0xC0280108 || NVMAP_IOC_READ? || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0xC00C0109 || NVMAP_IOC_PARAM ||
-|-
-| /dev/nvmap || 0xC010010A || NVMAP_IOC_PIN_MULT? || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0xC010010B || NVMAP_IOC_UNPIN_MULT? || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0xC008010C || NVMAP_IOC_CACHE? || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0xC004010D || || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0xC008010E || NVMAP_IOC_GET_ID ||
-|-
-| /dev/nvmap || 0xC004010F || || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0x40040110 || || Returns NVERROR 0x02 (not supported)
-|-
-| /dev/nvmap || 0x00000111 || || Returns NVERROR 0x02 (not supported)
 |-
 | /dev/nvhost-as-gpu || 0x40044101 || NVGPU_AS_IOCTL_BIND_CHANNEL ||
 |-
