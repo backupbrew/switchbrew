@@ -109,11 +109,11 @@ ioctls.
 | 0xC010010A | Inout     | 16   | NVMAP\_IOC\_PIN\_MULT   | Returns NotSupported |
 | 0xC010010B | Inout     | 16   | NVMAP\_IOC\_UNPIN\_MULT | Returns NotSupported |
 | 0xC008010C | Inout     | 8    | NVMAP\_IOC\_CACHE       | Returns NotSupported |
-| 0xC004010D | Inout     | 4    | Returns NotSupported    |                      |
+| 0xC004010D | Inout     | 4    |                         | Returns NotSupported |
 | 0xC008010E | Inout     | 8    | NVMAP\_IOC\_GET\_ID     |                      |
-| 0xC004010F | Inout     | 4    | Returns NotSupported    |                      |
-| 0x40040110 | In        | 4    | Returns NotSupported    |                      |
-| 0x00000111 | \-        | 0    | Returns NotSupported    |                      |
+| 0xC004010F | Inout     | 4    |                         | Returns NotSupported |
+| 0x40040110 | In        | 4    |                         | Returns NotSupported |
+| 0x00000111 | \-        | 0    |                         | Returns NotSupported |
 
 ## Channels
 
