@@ -130,40 +130,40 @@ interface.
 
 ## Channel Ioctls
 
-| Value      | Size     | Description                                   | Notes                       |
-| ---------- | -------- | --------------------------------------------- | --------------------------- |
-| 0xC0??0001 | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT                |                             |
-| 0xC0080002 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT        |                             |
-| 0xC0080003 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE         |                             |
-| 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX      |                             |
-| 0x40040007 | 4        |                                               |                             |
-| 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER           |                             |
-| 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER         |                             |
-| 0x00000013 | 0        |                                               |                             |
-| 0x40044801 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD         |                             |
-| 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY          |                             |
-| 0x40084805 | 8        | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO          |                             |
-| 0xC0044807 | 4        | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS           |                             |
-| 0xC0184808 | 24       | NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO         |                             |
-| 0xC0104809 | 16       | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX        |                             |
-| 0x4008480A | 8        | NVGPU\_IOCTL\_CHANNEL\_FREE\_OBJ\_CTX         |                             |
-| 0xC010480B | 16       | NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND            |                             |
-| 0xC018480C | 24       | NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER   |                             |
-| 0x4004480D | 4        | NVGPU\_IOCTL\_CHANNEL\_OPEN                   |                             |
-| 0x0000480E | 0        | NVGPU\_IOCTL\_CHANNEL\_ENABLE                 |                             |
-| 0x0000480F | 0        | NVGPU\_IOCTL\_CHANNEL\_DISABLE                |                             |
-| 0x00004810 | 0        | NVGPU\_IOCTL\_CHANNEL\_PREEMPT                |                             |
-| 0x00004811 | 0        | NVGPU\_IOCTL\_CHANNEL\_FORCE\_RESET           |                             |
-| 0x40084812 | 8        | NVGPU\_IOCTL\_CHANNEL\_EVENTS\_CTRL           |                             |
-| 0xC0104813 | 16       | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS\_SNAPSHOT |                             |
-| 0x80804816 | 128      |                                               |                             |
-| 0xC0104817 | 16       |                                               |                             |
-| 0x40204818 | 32       | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX      |                             |
-| 0xC0484819 | 72       |                                               |                             |
-| 0xC020481A | 32       | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2     |                             |
-|            |          |                                               |                             |
-| 0x40084714 | 8        | set\_user\_address                            | Group ID is 'H' for Horizon |
-| 0x80084715 | 8        | get\_user\_address                            | Group ID is 'H' for Horizon |
+| Value      | Size     | Description                                   | Notes |
+| ---------- | -------- | --------------------------------------------- | ----- |
+| 0xC0??0001 | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT                |       |
+| 0xC0080002 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT        |       |
+| 0xC0080003 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE         |       |
+| 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX      |       |
+| 0x40040007 | 4        |                                               |       |
+| 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER           |       |
+| 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER         |       |
+| 0x00000013 | 0        |                                               |       |
+| 0x40044801 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD         |       |
+| 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY          |       |
+| 0x40084805 | 8        | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO          |       |
+| 0xC0044807 | 4        | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS           |       |
+| 0xC0184808 | 24       | NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO         |       |
+| 0xC0104809 | 16       | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX        |       |
+| 0x4008480A | 8        | NVGPU\_IOCTL\_CHANNEL\_FREE\_OBJ\_CTX         |       |
+| 0xC010480B | 16       | NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND            |       |
+| 0xC018480C | 24       | NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER   |       |
+| 0x4004480D | 4        | NVGPU\_IOCTL\_CHANNEL\_OPEN                   |       |
+| 0x0000480E | 0        | NVGPU\_IOCTL\_CHANNEL\_ENABLE                 |       |
+| 0x0000480F | 0        | NVGPU\_IOCTL\_CHANNEL\_DISABLE                |       |
+| 0x00004810 | 0        | NVGPU\_IOCTL\_CHANNEL\_PREEMPT                |       |
+| 0x00004811 | 0        | NVGPU\_IOCTL\_CHANNEL\_FORCE\_RESET           |       |
+| 0x40084812 | 8        | NVGPU\_IOCTL\_CHANNEL\_EVENTS\_CTRL           |       |
+| 0xC0104813 | 16       | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS\_SNAPSHOT |       |
+| 0x80804816 | 128      |                                               |       |
+| 0xC0104817 | 16       |                                               |       |
+| 0x40204818 | 32       | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX      |       |
+| 0xC0484819 | 72       |                                               |       |
+| 0xC020481A | 32       | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2     |       |
+|            |          |                                               |       |
+| 0x40084714 | 8        | set\_user\_address                            |       |
+| 0x80084715 | 8        | get\_user\_address                            |       |
 
 ## Remaining Ioctls
 

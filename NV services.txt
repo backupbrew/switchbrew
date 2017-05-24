@@ -262,9 +262,9 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 | 0xC020481A || 32 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 ||
 |-
 |- style="border-top: double"
-| 0x40084714 || 8 || set_user_address || Group ID is 'H' for Horizon
+| 0x40084714 || 8 || set_user_address ||
 |-
-| 0x80084715 || 8 || get_user_address || Group ID is 'H' for Horizon
+| 0x80084715 || 8 || get_user_address ||
 |}
 
 == Remaining Ioctls ==
