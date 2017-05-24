@@ -114,93 +114,162 @@ The following table contains known ioctls.
 
 == /dev/nvhost-ctrl ==
 {| class="wikitable" border="1"
-! Value || Size || Description || Notes
+! Value || Direction || Size || Description || Notes
 |-
-| 0xC0080014 || 8 || NVHOST_IOCTL_CTRL_SYNCPT_READ ||
+| 0xC0080014 || Inout || 8 || NVHOST_IOCTL_CTRL_SYNCPT_READ ||
 |-
-| 0x40040015 || 4 || NVHOST_IOCTL_CTRL_SYNCPT_INCR ||
+| 0x40040015 || In || 4 || NVHOST_IOCTL_CTRL_SYNCPT_INCR ||
 |-
-| 0xC00C0016 || 12 || NVHOST_IOCTL_CTRL_SYNCPT_WAIT ||
+| 0xC00C0016 || Inout || 12 || NVHOST_IOCTL_CTRL_SYNCPT_WAIT ||
 |-
-| 0x40080017 || 8 || NVHOST_IOCTL_CTRL_MODULE_MUTEX ||
+| 0x40080017 || In || 8 || NVHOST_IOCTL_CTRL_MODULE_MUTEX ||
 |-
-| 0xC0180018 || 24 || NVHOST32_IOCTL_CTRL_MODULE_REGRDWR ||
+| 0xC0180018 || Inout || 24 || NVHOST32_IOCTL_CTRL_MODULE_REGRDWR ||
 |-
-| 0xC0100019 || 16 || NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ||
+| 0xC0100019 || Inout || 16 || NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ||
 |-
-| 0xC008001A || 8 || NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX ||
+| 0xC008001A || Inout || 8 || NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX ||
 |-
-| 0xC004001C || 4 || ||
+| 0xC004001C || Inout || 4 || ||
 |-
-| 0xC010001D || 16 || || NvRmSyncWaitEvent (wait on event?)
+| 0xC010001D || Inout || 16 || || NvRmSyncWaitEvent (wait on event?)
 |-
-| 0xC010001E || 16 || || NvRmSyncWaitEvent (wait on event?)
+| 0xC010001E || Inout || 16 || || NvRmSyncWaitEvent (wait on event?)
 |-
-| 0xC004001F || 4 || || NvRmSyncWaitEvent (signal event?)
+| 0xC004001F || Inout || 4 || || NvRmSyncWaitEvent (signal event?)
 |-
-| 0xC0040020 || 4 || || NvRmSyncWaitEvent (signal event?)
+| 0xC0040020 || Inout || 4 || || NvRmSyncWaitEvent (signal event?)
 |-
-| 0x40080021 || 8 || cancel_wait_event || Cancels all events
+| 0x40080021 || In || 8 || cancel_wait_event || Cancels all events
 |}
 
 == /dev/nvmap ==
 {| class="wikitable" border="1"
-! Value || Description || Notes
+! Value || Direction || Size || Description || Notes
 |-
-| 0xC0080101 || NVMAP_IOC_CREATE ||
+| 0xC0080101 || Inout || 8 || NVMAP_IOC_CREATE ||
 |-
-| 0x00000102 || NVMAP_IOC_CLAIM || Returns NotSupported
+| 0x00000102 || - || 0 || NVMAP_IOC_CLAIM || Returns NotSupported
 |-
-| 0xC0080103 || NVMAP_IOC_FROM_ID ||
+| 0xC0080103 || Inout || 8 || NVMAP_IOC_FROM_ID ||
 |-
-| 0xC0200104 || NVMAP_IOC_ALLOC ||
+| 0xC0200104 || Inout || 32 || NVMAP_IOC_ALLOC ||
 |-
-| 0xC0180105 || NVMAP_IOC_FREE ||
+| 0xC0180105 || Inout || 24 || NVMAP_IOC_FREE ||
 |-
-| 0xC0280106 || NVMAP_IOC_MMAP || Returns NotSupported
+| 0xC0280106 || Inout || 40 || NVMAP_IOC_MMAP || Returns NotSupported
 |-
-| 0xC0280107 || NVMAP_IOC_WRITE || Returns NotSupported
+| 0xC0280107 || Inout || 40 || NVMAP_IOC_WRITE || Returns NotSupported
 |-
-| 0xC0280108 || NVMAP_IOC_READ || Returns NotSupported
+| 0xC0280108 || Inout || 40 || NVMAP_IOC_READ || Returns NotSupported
 |-
-| 0xC00C0109 || NVMAP_IOC_PARAM ||
+| 0xC00C0109 || Inout || 12 || NVMAP_IOC_PARAM ||
 |-
-| 0xC010010A || NVMAP_IOC_PIN_MULT || Returns NotSupported
+| 0xC010010A || Inout || 16 || NVMAP_IOC_PIN_MULT || Returns NotSupported
 |-
-| 0xC010010B || NVMAP_IOC_UNPIN_MULT || Returns NotSupported
+| 0xC010010B || Inout || 16 || NVMAP_IOC_UNPIN_MULT || Returns NotSupported
 |-
-| 0xC008010C || NVMAP_IOC_CACHE || Returns NotSupported
+| 0xC008010C || Inout || 8 || NVMAP_IOC_CACHE || Returns NotSupported
 |-
-| 0xC004010D || || Returns NotSupported
+| 0xC004010D || Inout || 4 || Returns NotSupported
 |-
-| 0xC008010E || NVMAP_IOC_GET_ID ||
+| 0xC008010E || Inout || 8 || NVMAP_IOC_GET_ID ||
 |-
-| 0xC004010F || || Returns NotSupported
+| 0xC004010F || Inout || 4 || Returns NotSupported
 |-
-| 0x40040110 || || Returns NotSupported
+| 0x40040110 || In || 4 || Returns NotSupported
 |-
-| 0x00000111 || || Returns NotSupported
+| 0x00000111 || - || 0 || Returns NotSupported
 |}
 
-== Rest ==
+== Channels ==
+Channels are a concept for  NVIDIA hardware blocks that share a common interface.
+
+{| class="wikitable" border="1"
+! Path || Name
+|-
+| /dev/nvhost-tsec ||
+|-
+| /dev/nvhost-gpu ||
+|-
+| /dev/nvhost-vic ||
+|-
+| /dev/nvhost-nvdec ||
+|-
+| /dev/nvhost-nvjpg ||
+|}
+
+== Channel Ioctls ==
+{| class="wikitable" border="1"
+! Value || Size || Description || Notes
+|-
+| 0xC0??0001 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT ||
+|-
+| 0xC0080002 || 8 || NVHOST_IOCTL_CHANNEL_GET_SYNCPOINT ||
+|-
+| 0xC0080003 || 8 || NVHOST_IOCTL_CHANNEL_GET_WAITBASE ||
+|-
+| 0xC0080004 || 8 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX ||
+|-
+| 0x40040007 || 4 || ||
+|-
+| 0xC0??0009 || Variable || NVHOST_IOCTL_CHANNEL_MAP_BUFFER ||
+|-
+| 0xC0??000A || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_BUFFER ||
+|-
+| 0x00000013 || 0 || ||
+|- style="border-top: double"
+| 0x40044801 || 4 || NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD ||
+|-
+| 0x40044803 || 4 || NVGPU_IOCTL_CHANNEL_SET_PRIORITY ||
+|-
+| 0x40084805 || 8 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO ||
+|-
+| 0xC0044807 || 4 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS ||
+|-
+| 0xC0184808 || 24 || NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO ||
+|-
+| 0xC0104809 || 16 || NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX ||
+|-
+| 0x4008480A || 8 || NVGPU_IOCTL_CHANNEL_FREE_OBJ_CTX ||
+|-
+| 0xC010480B || 16 || NVGPU_IOCTL_CHANNEL_ZCULL_BIND ||
+|-
+| 0xC018480C || 24 || NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER ||
+|-
+| 0x4004480D || 4 || NVGPU_IOCTL_CHANNEL_OPEN ||
+|-
+| 0x0000480E || 0 || NVGPU_IOCTL_CHANNEL_ENABLE ||
+|-
+| 0x0000480F || 0 || NVGPU_IOCTL_CHANNEL_DISABLE ||
+|-
+| 0x00004810 || 0 || NVGPU_IOCTL_CHANNEL_PREEMPT ||
+|-
+| 0x00004811 || 0 || NVGPU_IOCTL_CHANNEL_FORCE_RESET ||
+|-
+| 0x40084812 || 8 || NVGPU_IOCTL_CHANNEL_EVENTS_CTRL ||
+|-
+| 0xC0104813 || 16 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS_SNAPSHOT ||
+|-
+| 0x80804816 || 128 ||
+|-
+| 0xC0104817 || 16 || ||
+|-
+| 0x40204818 || 32 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX ||
+|-
+| 0xC0484819 || 72 ||
+|-
+| 0xC020481A || 32 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 ||
+|-
+|- style="border-top: double"
+| 0x40084714 || 8 || set_user_address || Group ID is 'H' for Horizon
+|-
+| 0x80084715 || 8 || get_user_address || Group ID is 'H' for Horizon
+|}
+
+== Remaining Ioctls ==
 {| class="wikitable" border="1"
 ! Device || Value || Description || Notes
-|-
-| /dev/nvhost-* || 0xC0??0001 || NVHOST_IOCTL_CHANNEL_SUBMIT || ?? == size is variable
-|-
-| /dev/nvhost-* || 0xC0080002 || NVHOST_IOCTL_CHANNEL_GET_SYNCPOINT ||
-|-
-| /dev/nvhost-* || 0xC0080003 || NVHOST_IOCTL_CHANNEL_GET_WAITBASE ||
-|-
-| /dev/nvhost-* || 0xC0080004 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX ||
-|-
-| /dev/nvhost-* || 0x40040007 || ||
-|-
-| /dev/nvhost-* || 0xC0??0009 || NVHOST_IOCTL_CHANNEL_MAP_BUFFER || ?? == size is variable
-|-
-| /dev/nvhost-* || 0xC0??000A || NVHOST_IOCTL_CHANNEL_UNMAP_BUFFER || ?? == size is variable
-|-
-| /dev/nvhost-* || 0x00000013 || ||
 |-
 | /dev/nvhost-as-gpu || 0x40044101 || NVGPU_AS_IOCTL_BIND_CHANNEL ||
 |-
@@ -274,51 +343,6 @@ The following table contains known ioctls.
 |-
 | /dev/nvhost-ctrl-gpu || 0xC010471C || ||
 |-
-| /dev/nvhost-* || 0x40044801 || NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD ||
-|-
-| /dev/nvhost-* || 0x40044803 || NVGPU_IOCTL_CHANNEL_SET_PRIORITY ||
-|-
-| /dev/nvhost-* || 0x40084805 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO ||
-|-
-| /dev/nvhost-* || 0xC0044807 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS ||
-|-
-| /dev/nvhost-* || 0xC0184808 || NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO ||
-|-
-| /dev/nvhost-* || 0xC0104809 || NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX ||
-|-
-| /dev/nvhost-* || 0x4008480A || NVGPU_IOCTL_CHANNEL_FREE_OBJ_CTX ||
-|-
-| /dev/nvhost-* || 0xC010480B || NVGPU_IOCTL_CHANNEL_ZCULL_BIND ||
-|-
-| /dev/nvhost-* || 0xC018480C || NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER ||
-|-
-| /dev/nvhost-* || 0x4004480D || NVGPU_IOCTL_CHANNEL_OPEN ||
-|-
-| /dev/nvhost-* || 0x0000480E || NVGPU_IOCTL_CHANNEL_ENABLE ||
-|-
-| /dev/nvhost-* || 0x0000480F || NVGPU_IOCTL_CHANNEL_DISABLE ||
-|-
-| /dev/nvhost-* || 0x00004810 || NVGPU_IOCTL_CHANNEL_PREEMPT ||
-|-
-| /dev/nvhost-* || 0x00004811 || NVGPU_IOCTL_CHANNEL_FORCE_RESET ||
-|-
-| /dev/nvhost-* || 0x40084812 || NVGPU_IOCTL_CHANNEL_EVENTS_CTRL ||
-|-
-| /dev/nvhost-* || 0xC0104813 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS_SNAPSHOT ||
-|-
-| /dev/nvhost-* || 0x40084714 || set_user_address || Group ID is wrong (0x47 should be 0x48)
-|-
-| /dev/nvhost-* || 0x80084715 || get_user_address || Group ID is wrong (0x47 should be 0x48)
-|-
-| /dev/nvhost-* || 0x80804816 || ||
-|-
-| /dev/nvhost-* || 0xC0104817 || ||
-|-
-| /dev/nvhost-* || 0x40204818 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX ||
-|-
-| /dev/nvhost-* || 0xC0484819 || ||
-|-
-| /dev/nvhost-* || 0xC020481A || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 ||
 |}
 
 = nvmemp =
