@@ -77,21 +77,21 @@ ioctls.
 
 ## /dev/nvhost-ctrl
 
-| Value      | Description                            | Notes                              |
-| ---------- | -------------------------------------- | ---------------------------------- |
-| 0xC0080014 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ      |                                    |
-| 0x40040015 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR      |                                    |
-| 0xC00C0016 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT      |                                    |
-| 0x40080017 | NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX     |                                    |
-| 0xC0180018 | NVHOST32\_IOCTL\_CTRL\_MODULE\_REGRDWR |                                    |
-| 0xC0100019 | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX    |                                    |
-| 0xC008001A | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX |                                    |
-| 0xC004001C |                                        |                                    |
-| 0xC010001D |                                        | NvRmSyncWaitEvent (wait on event?) |
-| 0xC010001E |                                        | NvRmSyncWaitEvent (wait on event?) |
-| 0xC004001F |                                        | NvRmSyncWaitEvent (signal event?)  |
-| 0xC0040020 |                                        | NvRmSyncWaitEvent (signal event?)  |
-| 0x40080021 | cancel\_wait\_event                    | Cancels all events                 |
+| Value      | Size | Description                            | Notes                              |
+| ---------- | ---- | -------------------------------------- | ---------------------------------- |
+| 0xC0080014 | 8    | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ      |                                    |
+| 0x40040015 | 4    | NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR      |                                    |
+| 0xC00C0016 | 12   | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT      |                                    |
+| 0x40080017 | 8    | NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX     |                                    |
+| 0xC0180018 | 24   | NVHOST32\_IOCTL\_CTRL\_MODULE\_REGRDWR |                                    |
+| 0xC0100019 | 16   | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX    |                                    |
+| 0xC008001A | 8    | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX |                                    |
+| 0xC004001C | 4    |                                        |                                    |
+| 0xC010001D | 16   |                                        | NvRmSyncWaitEvent (wait on event?) |
+| 0xC010001E | 16   |                                        | NvRmSyncWaitEvent (wait on event?) |
+| 0xC004001F | 4    |                                        | NvRmSyncWaitEvent (signal event?)  |
+| 0xC0040020 | 4    |                                        | NvRmSyncWaitEvent (signal event?)  |
+| 0x40080021 | 8    | cancel\_wait\_event                    | Cancels all events                 |
 
 ## /dev/nvmap
 

@@ -114,33 +114,33 @@ The following table contains known ioctls.
 
 == /dev/nvhost-ctrl ==
 {| class="wikitable" border="1"
-! Value || Description || Notes
+! Value || Size || Description || Notes
 |-
-| 0xC0080014 || NVHOST_IOCTL_CTRL_SYNCPT_READ ||
+| 0xC0080014 || 8 || NVHOST_IOCTL_CTRL_SYNCPT_READ ||
 |-
-| 0x40040015 || NVHOST_IOCTL_CTRL_SYNCPT_INCR ||
+| 0x40040015 || 4 || NVHOST_IOCTL_CTRL_SYNCPT_INCR ||
 |-
-| 0xC00C0016 || NVHOST_IOCTL_CTRL_SYNCPT_WAIT ||
+| 0xC00C0016 || 12 || NVHOST_IOCTL_CTRL_SYNCPT_WAIT ||
 |-
-| 0x40080017 || NVHOST_IOCTL_CTRL_MODULE_MUTEX ||
+| 0x40080017 || 8 || NVHOST_IOCTL_CTRL_MODULE_MUTEX ||
 |-
-| 0xC0180018 || NVHOST32_IOCTL_CTRL_MODULE_REGRDWR ||
+| 0xC0180018 || 24 || NVHOST32_IOCTL_CTRL_MODULE_REGRDWR ||
 |-
-| 0xC0100019 || NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ||
+| 0xC0100019 || 16 || NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ||
 |-
-| 0xC008001A || NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX ||
+| 0xC008001A || 8 || NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX ||
 |-
-| 0xC004001C || ||
+| 0xC004001C || 4 || ||
 |-
-| 0xC010001D || || NvRmSyncWaitEvent (wait on event?)
+| 0xC010001D || 16 || || NvRmSyncWaitEvent (wait on event?)
 |-
-| 0xC010001E || || NvRmSyncWaitEvent (wait on event?)
+| 0xC010001E || 16 || || NvRmSyncWaitEvent (wait on event?)
 |-
-| 0xC004001F || || NvRmSyncWaitEvent (signal event?)
+| 0xC004001F || 4 || || NvRmSyncWaitEvent (signal event?)
 |-
-| 0xC0040020 || || NvRmSyncWaitEvent (signal event?)
+| 0xC0040020 || 4 || || NvRmSyncWaitEvent (signal event?)
 |-
-| 0x40080021 || cancel_wait_event || Cancels all events
+| 0x40080021 || 8 || cancel_wait_event || Cancels all events
 |}
 
 == /dev/nvmap ==
