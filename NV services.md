@@ -95,25 +95,32 @@ ioctls.
 
 ## /dev/nvmap
 
-| Value      | Direction | Size | Description             | Notes                |
-| ---------- | --------- | ---- | ----------------------- | -------------------- |
-| 0xC0080101 | Inout     | 8    | NVMAP\_IOC\_CREATE      |                      |
-| 0x00000102 | \-        | 0    | NVMAP\_IOC\_CLAIM       | Returns NotSupported |
-| 0xC0080103 | Inout     | 8    | NVMAP\_IOC\_FROM\_ID    |                      |
-| 0xC0200104 | Inout     | 32   | NVMAP\_IOC\_ALLOC       |                      |
-| 0xC0180105 | Inout     | 24   | NVMAP\_IOC\_FREE        |                      |
-| 0xC0280106 | Inout     | 40   | NVMAP\_IOC\_MMAP        | Returns NotSupported |
-| 0xC0280107 | Inout     | 40   | NVMAP\_IOC\_WRITE       | Returns NotSupported |
-| 0xC0280108 | Inout     | 40   | NVMAP\_IOC\_READ        | Returns NotSupported |
-| 0xC00C0109 | Inout     | 12   | NVMAP\_IOC\_PARAM       |                      |
-| 0xC010010A | Inout     | 16   | NVMAP\_IOC\_PIN\_MULT   | Returns NotSupported |
-| 0xC010010B | Inout     | 16   | NVMAP\_IOC\_UNPIN\_MULT | Returns NotSupported |
-| 0xC008010C | Inout     | 8    | NVMAP\_IOC\_CACHE       | Returns NotSupported |
-| 0xC004010D | Inout     | 4    |                         | Returns NotSupported |
-| 0xC008010E | Inout     | 8    | NVMAP\_IOC\_GET\_ID     |                      |
-| 0xC004010F | Inout     | 4    |                         | Returns NotSupported |
-| 0x40040110 | In        | 4    |                         | Returns NotSupported |
-| 0x00000111 | \-        | 0    |                         | Returns NotSupported |
+| Value      | Direction | Size | Description                                          | Notes                |
+| ---------- | --------- | ---- | ---------------------------------------------------- | -------------------- |
+| 0xC0080101 | Inout     | 8    | [\#NVMAP\_IOC\_CREATE](#NVMAP_IOC_CREATE "wikilink") |                      |
+| 0x00000102 | \-        | 0    | NVMAP\_IOC\_CLAIM                                    | Returns NotSupported |
+| 0xC0080103 | Inout     | 8    | NVMAP\_IOC\_FROM\_ID                                 |                      |
+| 0xC0200104 | Inout     | 32   | NVMAP\_IOC\_ALLOC                                    |                      |
+| 0xC0180105 | Inout     | 24   | NVMAP\_IOC\_FREE                                     |                      |
+| 0xC0280106 | Inout     | 40   | NVMAP\_IOC\_MMAP                                     | Returns NotSupported |
+| 0xC0280107 | Inout     | 40   | NVMAP\_IOC\_WRITE                                    | Returns NotSupported |
+| 0xC0280108 | Inout     | 40   | NVMAP\_IOC\_READ                                     | Returns NotSupported |
+| 0xC00C0109 | Inout     | 12   | NVMAP\_IOC\_PARAM                                    |                      |
+| 0xC010010A | Inout     | 16   | NVMAP\_IOC\_PIN\_MULT                                | Returns NotSupported |
+| 0xC010010B | Inout     | 16   | NVMAP\_IOC\_UNPIN\_MULT                              | Returns NotSupported |
+| 0xC008010C | Inout     | 8    | NVMAP\_IOC\_CACHE                                    | Returns NotSupported |
+| 0xC004010D | Inout     | 4    |                                                      | Returns NotSupported |
+| 0xC008010E | Inout     | 8    | NVMAP\_IOC\_GET\_ID                                  |                      |
+| 0xC004010F | Inout     | 4    |                                                      | Returns NotSupported |
+| 0x40040110 | In        | 4    |                                                      | Returns NotSupported |
+| 0x00000111 | \-        | 0    |                                                      | Returns NotSupported |
+
+### NVMAP\_IOC\_CREATE
+
+` struct {`  
+`   u32 __size;   // in`  
+`   u32 __handle; // out`  
+` };`
 
 ## Channels
 

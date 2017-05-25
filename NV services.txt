@@ -147,7 +147,7 @@ The following table contains known ioctls.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0xC0080101 || Inout || 8 || NVMAP_IOC_CREATE ||
+| 0xC0080101 || Inout || 8 || [[#NVMAP_IOC_CREATE]] ||
 |-
 | 0x00000102 || - || 0 || NVMAP_IOC_CLAIM || Returns NotSupported
 |-
@@ -181,6 +181,12 @@ The following table contains known ioctls.
 |-
 | 0x00000111 || - || 0 || || Returns NotSupported
 |}
+
+=== NVMAP_IOC_CREATE ===
+  struct {
+    u32 __size;   // in
+    u32 __handle; // out
+  };
 
 == Channels ==
 Channels are a concept for  NVIDIA hardware blocks that share a common interface.
