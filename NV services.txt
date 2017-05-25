@@ -212,6 +212,18 @@ Allocate memory for the nvmap object. Nintendo extended this one with 4 new u32'
     u32 __?;        // in
   };
 
+=== NVMAP_IOC_FREE ===
+This one is completely custom. Partly because the Linux driver passed the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
+
+  struct {
+    u32 __?;        // in
+    u32 __?;        // in
+    u32 __?;        // in
+    u32 __?;        // in
+    u32 __?;        // in
+    u32 __?;        // in
+  };
+
 === NVMAP_IOC_GET_ID ===
 Returns an id for a nvmap object.
 

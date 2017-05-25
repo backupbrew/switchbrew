@@ -149,6 +149,20 @@ new u32's, and changed it from in to inout.
 `   u32 __?;        // in`  
 ` };`
 
+### NVMAP\_IOC\_FREE
+
+This one is completely custom. Partly because the Linux driver passed
+the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
+
+` struct {`  
+`   u32 __?;        // in`  
+`   u32 __?;        // in`  
+`   u32 __?;        // in`  
+`   u32 __?;        // in`  
+`   u32 __?;        // in`  
+`   u32 __?;        // in`  
+` };`
+
 ### NVMAP\_IOC\_GET\_ID
 
 Returns an id for a nvmap object.
