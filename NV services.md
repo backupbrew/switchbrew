@@ -135,18 +135,17 @@ Get handle to an existing nvmap object. Identical to Linux driver.
 
 ### NVMAP\_IOC\_ALLOC
 
-Allocate memory for the nvmap object. Nintendo extended this one with 4
-new u32's, and changed it from in to inout.
+Allocate memory for the nvmap object. Nintendo extended this one with 16
+bytes, and changed it from in to inout.
 
 ` struct {`  
 `   u32 __handle;   // in`  
 `   u32 __heapmask; // in`  
-`   u32 __flags;    // in`  
+`   u32 __flags;    // in (0=read-only, 1=read-write)`  
 `   u32 __align;    // in`  
-`   u32 __unk0;     // in (actually a u8?)`  
-`   u32 __unk1;     // in`  
-`   u32 __unk2;     // in`  
-`   u32 __unk3      // in`  
+`   u8  __unk0;     // in`  
+`   u8  __pad[7];`  
+`   u64 __addr;     // in`  
 ` };`
 
 ### NVMAP\_IOC\_FREE
