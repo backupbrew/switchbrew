@@ -154,12 +154,11 @@ This one is completely custom. Partly because the Linux driver passed
 the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
 
 ` struct {`  
-`   u32 __?;`  
-`   u32 __?;`  
-`   u32 __?;`  
-`   u32 __?;`  
-`   u32 __?;`  
-`   u32 __?;`  
+`   u32 __handle;   // in`  
+`   u32 __pad;`  
+`   u64 __refcount; // out`  
+`   u32 __size;     // out`  
+`   u32 __flags;    // out`  
 ` };`
 
 ### NVMAP\_IOC\_PARAM
