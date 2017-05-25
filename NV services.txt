@@ -155,7 +155,7 @@ The following table contains known ioctls.
 |-
 | 0xC0200104 || Inout || 32 || [[#NVMAP_IOC_ALLOC]] ||
 |-
-| 0xC0180105 || Inout || 24 || NVMAP_IOC_FREE ||
+| 0xC0180105 || Inout || 24 || [[#NVMAP_IOC_FREE]] ||
 |-
 | 0xC0280106 || Inout || 40 || NVMAP_IOC_MMAP || Returns NotSupported
 |-

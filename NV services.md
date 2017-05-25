@@ -101,7 +101,7 @@ ioctls.
 | 0x00000102 | \-        | 0    | NVMAP\_IOC\_CLAIM                                       | Returns NotSupported |
 | 0xC0080103 | Inout     | 8    | [\#NVMAP\_IOC\_FROM\_ID](#NVMAP_IOC_FROM_ID "wikilink") |                      |
 | 0xC0200104 | Inout     | 32   | [\#NVMAP\_IOC\_ALLOC](#NVMAP_IOC_ALLOC "wikilink")      |                      |
-| 0xC0180105 | Inout     | 24   | NVMAP\_IOC\_FREE                                        |                      |
+| 0xC0180105 | Inout     | 24   | [\#NVMAP\_IOC\_FREE](#NVMAP_IOC_FREE "wikilink")        |                      |
 | 0xC0280106 | Inout     | 40   | NVMAP\_IOC\_MMAP                                        | Returns NotSupported |
 | 0xC0280107 | Inout     | 40   | NVMAP\_IOC\_WRITE                                       | Returns NotSupported |
 | 0xC0280108 | Inout     | 40   | NVMAP\_IOC\_READ                                        | Returns NotSupported |
