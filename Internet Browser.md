@@ -78,6 +78,17 @@ This is only available starting with [2.0.0](2.0.0.md "wikilink").
 
 ## Versions
 
+### 2.0.0
+
+"shareddata:/buildinfo/buildinfo.dat" content:
+
+` r:13341`  
+` p:NX64`  
+` v:Release`  
+` d:2017-02-13 22:57`  
+` n:0.5.9`  
+` `
+
 ### 2.1.0
 
 See [here](Switch%20Userland%20Flaws.md "wikilink") for vuln-related
@@ -103,3 +114,11 @@ for the R-X, R--, and RW- pages are the same as v2.0.
   - The RW- section was updated, mainly for different addrs. Nothing was
     added/removed. Most(?)/all(?) main-codebin func import-addrs
     relative to main-codebin-base are the same as v2.0.
+
+"shareddata:/buildinfo/buildinfo.dat" content:
+
+` r:13343`  
+` p::NX64`  
+` v:Release`  
+` d:2017-03-14 21:08`  
+` n:0.5.10`
