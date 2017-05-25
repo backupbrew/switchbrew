@@ -153,7 +153,7 @@ The following table contains known ioctls.
 |-
 | 0xC0080103 || Inout || 8 || [[#NVMAP_IOC_FROM_ID]] ||
 |-
-| 0xC0200104 || Inout || 32 || NVMAP_IOC_ALLOC ||
+| 0xC0200104 || Inout || 32 || [[#NVMAP_IOC_ALLOC]] ||
 |-
 | 0xC0180105 || Inout || 24 || NVMAP_IOC_FREE ||
 |-
@@ -183,18 +183,38 @@ The following table contains known ioctls.
 |}
 
 === NVMAP_IOC_CREATE ===
+Creates an nvmap object. Identical to Linux driver.
+
   struct {
     u32 __size;   // in
     u32 __handle; // out
   };
 
 === NVMAP_IOC_FROM_ID ===
+Get handle to an existing nvmap object. Identical to Linux driver.
+
   struct {
     u32 __id;     // in
     u32 __handle; // out
   };
 
+=== NVMAP_IOC_ALLOC ===
+Allocate memory for the nvmap object. Nintendo extended this one with 4 new u32's, and changed it from in to inout.
+
+  struct {
+    u32 __handle;   // in
+    u32 __heapmask; // in
+    u32 __flags;    // in
+    u32 __align;    // in
+    u32 __?;        // in
+    u32 __?;        // in
+    u32 __?;        // in
+    u32 __?;        // in
+  };
+
 === NVMAP_IOC_GET_ID ===
+Returns an id for a nvmap object.
+
   struct {
     u32 __id;     // out
     u32 __handle; // in
