@@ -163,7 +163,7 @@ The following table contains known ioctls.
 |-
 | 0xC0280108 || Inout || 40 || NVMAP_IOC_READ || Returns NotSupported
 |-
-| 0xC00C0109 || Inout || 12 || NVMAP_IOC_PARAM ||
+| 0xC00C0109 || Inout || 12 || [[#NVMAP_IOC_PARAM]] ||
 |-
 | 0xC010010A || Inout || 16 || NVMAP_IOC_PIN_MULT || Returns NotSupported
 |-
@@ -206,26 +206,35 @@ Allocate memory for the nvmap object. Nintendo extended this one with 4 new u32'
     u32 __heapmask; // in
     u32 __flags;    // in
     u32 __align;    // in
-    u32 __?;        // in
-    u32 __?;        // in
-    u32 __?;        // in
-    u32 __?;        // in
+    u32 __unk0;     // in (actually a u8?)
+    u32 __unk1;     // in
+    u32 __unk2;     // in
+    u32 __unk3      // in
   };
 
 === NVMAP_IOC_FREE ===
 This one is completely custom. Partly because the Linux driver passed the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
 
   struct {
-    u32 __?;        // in
-    u32 __?;        // in
-    u32 __?;        // in
-    u32 __?;        // in
-    u32 __?;        // in
-    u32 __?;        // in
+    u32 __?;
+    u32 __?;
+    u32 __?;
+    u32 __?;
+    u32 __?;
+    u32 __?;
+  };
+
+=== NVMAP_IOC_PARAM ===
+Returns info about a nvmap object. Identical to Linux driver, but extended with further params.
+
+  struct {
+    u32 __handle; // in
+    u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=?, 4=?, 5=UNK0, 6=?
+    u32 __result; // out
   };
 
 === NVMAP_IOC_GET_ID ===
-Returns an id for a nvmap object.
+Returns an id for a nvmap object. Identical to Linux driver.
 
   struct {
     u32 __id;     // out

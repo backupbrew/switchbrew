@@ -105,7 +105,7 @@ ioctls.
 | 0xC0280106 | Inout     | 40   | NVMAP\_IOC\_MMAP                                        | Returns NotSupported |
 | 0xC0280107 | Inout     | 40   | NVMAP\_IOC\_WRITE                                       | Returns NotSupported |
 | 0xC0280108 | Inout     | 40   | NVMAP\_IOC\_READ                                        | Returns NotSupported |
-| 0xC00C0109 | Inout     | 12   | NVMAP\_IOC\_PARAM                                       |                      |
+| 0xC00C0109 | Inout     | 12   | [\#NVMAP\_IOC\_PARAM](#NVMAP_IOC_PARAM "wikilink")      |                      |
 | 0xC010010A | Inout     | 16   | NVMAP\_IOC\_PIN\_MULT                                   | Returns NotSupported |
 | 0xC010010B | Inout     | 16   | NVMAP\_IOC\_UNPIN\_MULT                                 | Returns NotSupported |
 | 0xC008010C | Inout     | 8    | NVMAP\_IOC\_CACHE                                       | Returns NotSupported |
@@ -143,10 +143,10 @@ new u32's, and changed it from in to inout.
 `   u32 __heapmask; // in`  
 `   u32 __flags;    // in`  
 `   u32 __align;    // in`  
-`   u32 __?;        // in`  
-`   u32 __?;        // in`  
-`   u32 __?;        // in`  
-`   u32 __?;        // in`  
+`   u32 __unk0;     // in (actually a u8?)`  
+`   u32 __unk1;     // in`  
+`   u32 __unk2;     // in`  
+`   u32 __unk3      // in`  
 ` };`
 
 ### NVMAP\_IOC\_FREE
@@ -155,17 +155,28 @@ This one is completely custom. Partly because the Linux driver passed
 the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
 
 ` struct {`  
-`   u32 __?;        // in`  
-`   u32 __?;        // in`  
-`   u32 __?;        // in`  
-`   u32 __?;        // in`  
-`   u32 __?;        // in`  
-`   u32 __?;        // in`  
+`   u32 __?;`  
+`   u32 __?;`  
+`   u32 __?;`  
+`   u32 __?;`  
+`   u32 __?;`  
+`   u32 __?;`  
+` };`
+
+### NVMAP\_IOC\_PARAM
+
+Returns info about a nvmap object. Identical to Linux driver, but
+extended with further params.
+
+` struct {`  
+`   u32 __handle; // in`  
+`   u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=?, 4=?, 5=UNK0, 6=?`  
+`   u32 __result; // out`  
 ` };`
 
 ### NVMAP\_IOC\_GET\_ID
 
-Returns an id for a nvmap object.
+Returns an id for a nvmap object. Identical to Linux driver.
 
 ` struct {`  
 `   u32 __id;     // out`  
