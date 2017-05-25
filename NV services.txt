@@ -151,7 +151,7 @@ The following table contains known ioctls.
 |-
 | 0x00000102 || - || 0 || NVMAP_IOC_CLAIM || Returns NotSupported
 |-
-| 0xC0080103 || Inout || 8 || NVMAP_IOC_FROM_ID ||
+| 0xC0080103 || Inout || 8 || [[#NVMAP_IOC_FROM_ID]] ||
 |-
 | 0xC0200104 || Inout || 32 || NVMAP_IOC_ALLOC ||
 |-
@@ -173,7 +173,7 @@ The following table contains known ioctls.
 |-
 | 0xC004010D || Inout || 4 || || Returns NotSupported
 |-
-| 0xC008010E || Inout || 8 || NVMAP_IOC_GET_ID ||
+| 0xC008010E || Inout || 8 || [[#NVMAP_IOC_GET_ID]] ||
 |-
 | 0xC004010F || Inout || 4 || || Returns NotSupported
 |-
@@ -186,6 +186,18 @@ The following table contains known ioctls.
   struct {
     u32 __size;   // in
     u32 __handle; // out
+  };
+
+=== NVMAP_IOC_FROM_ID ==
+  struct {
+    u32 __id;     // in
+    u32 __handle; // out
+  };
+
+=== NVMAP_IOC_GET_ID ===
+  struct {
+    u32 __id;     // out
+    u32 __handle; // in
   };
 
 == Channels ==
