@@ -122,7 +122,7 @@ ioctls.
 `   u32 __handle; // out`  
 ` };`
 
-\=== NVMAP\_IOC\_FROM\_ID ==
+### NVMAP\_IOC\_FROM\_ID
 
 ` struct {`  
 `   u32 __id;     // in`  

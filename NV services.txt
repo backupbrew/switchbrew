@@ -188,7 +188,7 @@ The following table contains known ioctls.
     u32 __handle; // out
   };
 
-=== NVMAP_IOC_FROM_ID ==
+=== NVMAP_IOC_FROM_ID ===
   struct {
     u32 __id;     // in
     u32 __handle; // out
