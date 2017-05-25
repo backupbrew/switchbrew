@@ -78,7 +78,7 @@ This is only available starting with [2.0.0](2.0.0.md "wikilink").
 
 ## Versions
 
-### 2.0.0
+### [2.0.0](2.0.0.md "wikilink")
 
 "shareddata:/buildinfo/buildinfo.dat" content:
 
@@ -89,7 +89,7 @@ This is only available starting with [2.0.0](2.0.0.md "wikilink").
 ` n:0.5.9`  
 ` `
 
-### 2.1.0
+### [2.1.0](2.1.0.md "wikilink")
 
 See [here](Switch%20Userland%20Flaws.md "wikilink") for vuln-related
 changes.

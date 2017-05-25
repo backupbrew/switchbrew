@@ -95,7 +95,7 @@ This is only available starting with [[2.0.0]].
 
 == Versions ==
 
-=== 2.0.0 ===
+=== [[2.0.0]] ===
 
 "shareddata:/buildinfo/buildinfo.dat" content:
   r:13341
@@ -105,7 +105,7 @@ This is only available starting with [[2.0.0]].
   n:0.5.9
   
 
-=== 2.1.0 ===
+=== [[2.1.0]] ===
 See [[Switch_Userland_Flaws|here]] for vuln-related changes.
 
 The WebKit NRO was updated. For the WebKit NRO, the page-aligned size for the R-X, R--, and RW- pages are the same as v2.0.
