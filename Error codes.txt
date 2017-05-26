@@ -137,6 +137,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1900B || 200 || IPC Query 0 failed.
 |-
+| 0x25A0B || 301 || Remote process is dead
+|-
 | 0x3D60B || 491 || IPC Query 1 failed.
 |-
 | 0x20F || 1 || Pid not found
