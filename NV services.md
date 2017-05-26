@@ -119,6 +119,18 @@ channel.
 `   u32 __zeroes[3]; // in`  
 ` };`
 
+## NVGPU\_AS\_IOCTL\_INITIALIZE\_EX
+
+` struct {`  
+`   u32 __unk0;      // in`  
+`   u32 __pad0;`  
+`   u32 __unk1;`  
+`   u32 __pad1;`  
+`   u64 __unk2;`  
+`   u64 __unk3;`  
+`   u64 __unk4;`  
+` };`
+
 ## /dev/nvmap
 
 | Value      | Direction | Size | Description                                             | Notes                |
