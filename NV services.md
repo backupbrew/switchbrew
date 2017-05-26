@@ -120,6 +120,16 @@ Identical to Linux driver.
 `   u32 __fd; // in`  
 ` };`
 
+### NVGPU\_AS\_IOCTL\_ALLOC\_SPACE
+
+` struct {`  
+`   u32 __pages;           // in`  
+`   u32 __page_size;       // in`  
+`   u32 __flags;           // in`  
+`   u32 __pad;`  
+`   u64 __offset_or_align; // inout`  
+` };`
+
 ### NVGPU\_AS\_IOCTL\_INITIALIZE
 
 Nintendo

@@ -177,6 +177,15 @@ Identical to Linux driver.
     u32 __fd; // in
   };
 
+=== NVGPU_AS_IOCTL_ALLOC_SPACE ===
+  struct {
+    u32 __pages;           // in
+    u32 __page_size;       // in
+    u32 __flags;           // in
+    u32 __pad;
+    u64 __offset_or_align; // inout
+  };
+
 === NVGPU_AS_IOCTL_INITIALIZE ===
 Nintendo custom.
 
