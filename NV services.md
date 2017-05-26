@@ -130,7 +130,7 @@ custom.
 `   u32 __zeroes[3]; // in`  
 ` };`
 
-## NVGPU\_AS\_IOCTL\_INITIALIZE\_EX
+### NVGPU\_AS\_IOCTL\_INITIALIZE\_EX
 
 ` struct {`  
 `   u32 __unk0; // in`  

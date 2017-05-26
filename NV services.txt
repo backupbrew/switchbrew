@@ -185,7 +185,7 @@ Nintendo custom.
     u32 __zeroes[3]; // in
   };
 
-== NVGPU_AS_IOCTL_INITIALIZE_EX ==
+=== NVGPU_AS_IOCTL_INITIALIZE_EX ===
   struct {
     u32 __unk0; // in
     u32 __pad0;
