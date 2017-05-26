@@ -165,7 +165,7 @@ Each fd opened to this device creates an address space. An address space is then
 |-
 | /dev/nvhost-as-gpu || Inout || 64 || 0xC0404108 || NVGPU_AS_IOCTL_GET_VA_REGIONS? ||
 |-
-| /dev/nvhost-as-gpu || In || 40 || 0x40284109 || NVGPU_AS_IOCTL_INITIALIZE_EX ||
+| /dev/nvhost-as-gpu || In || 40 || 0x40284109 || [[#NVGPU_AS_IOCTL_INITIALIZE_EX]] ||
 |-
 | /dev/nvhost-as-gpu || Inout || 20 || 0xC0144114 || ||
 |}

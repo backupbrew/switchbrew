@@ -99,18 +99,18 @@ Each fd opened to this device creates an address space. An address space
 is then later bound with a
 channel.
 
-| Device             | Direction | Size | Value      | Description                                                             | Notes |
-| ------------------ | --------- | ---- | ---------- | ----------------------------------------------------------------------- | ----- |
-| /dev/nvhost-as-gpu | In        | 4    | 0x40044101 | NVGPU\_AS\_IOCTL\_BIND\_CHANNEL                                         |       |
-| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | NVGPU\_AS\_IOCTL\_ALLOC\_SPACE                                          |       |
-| /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | NVGPU\_AS\_IOCTL\_FREE\_SPACE                                           |       |
-| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER                                           |       |
-| /dev/nvhost-as-gpu | Inout     | 8    | 0xC0084105 | NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER                                         |       |
-| /dev/nvhost-as-gpu | Inout     | 40   | 0xC0284106 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                       |       |
-| /dev/nvhost-as-gpu | In        | 16   | 0x40104107 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink") |       |
-| /dev/nvhost-as-gpu | Inout     | 64   | 0xC0404108 | NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS?                                     |       |
-| /dev/nvhost-as-gpu | In        | 40   | 0x40284109 | NVGPU\_AS\_IOCTL\_INITIALIZE\_EX                                        |       |
-| /dev/nvhost-as-gpu | Inout     | 20   | 0xC0144114 |                                                                         |       |
+| Device             | Direction | Size | Value      | Description                                                                    | Notes |
+| ------------------ | --------- | ---- | ---------- | ------------------------------------------------------------------------------ | ----- |
+| /dev/nvhost-as-gpu | In        | 4    | 0x40044101 | NVGPU\_AS\_IOCTL\_BIND\_CHANNEL                                                |       |
+| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | NVGPU\_AS\_IOCTL\_ALLOC\_SPACE                                                 |       |
+| /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | NVGPU\_AS\_IOCTL\_FREE\_SPACE                                                  |       |
+| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER                                                  |       |
+| /dev/nvhost-as-gpu | Inout     | 8    | 0xC0084105 | NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER                                                |       |
+| /dev/nvhost-as-gpu | Inout     | 40   | 0xC0284106 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                              |       |
+| /dev/nvhost-as-gpu | In        | 16   | 0x40104107 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")        |       |
+| /dev/nvhost-as-gpu | Inout     | 64   | 0xC0404108 | NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS?                                            |       |
+| /dev/nvhost-as-gpu | In        | 40   | 0x40284109 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink") |       |
+| /dev/nvhost-as-gpu | Inout     | 20   | 0xC0144114 |                                                                                |       |
 
 ### NVGPU\_AS\_IOCTL\_INITIALIZE
 
