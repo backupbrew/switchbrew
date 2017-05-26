@@ -149,7 +149,7 @@ Each fd opened to this device creates an address space. An address space is then
 {| class="wikitable" border="1"
 ! Device || Direction || Size || Value || Description || Notes
 |-
-| /dev/nvhost-as-gpu || In || 4 || 0x40044101 || NVGPU_AS_IOCTL_BIND_CHANNEL ||
+| /dev/nvhost-as-gpu || In || 4 || 0x40044101 || [[#NVGPU_AS_IOCTL_BIND_CHANNEL]] ||
 |-
 | /dev/nvhost-as-gpu || Inout || 24 || 0xC0184102 || NVGPU_AS_IOCTL_ALLOC_SPACE ||
 |-
@@ -170,7 +170,16 @@ Each fd opened to this device creates an address space. An address space is then
 | /dev/nvhost-as-gpu || Inout || 20 || 0xC0144114 || ||
 |}
 
+=== NVGPU_AS_IOCTL_BIND_CHANNEL ===
+Identical to Linux driver.
+
+  struct {
+    u32 __fd; // in
+  };
+
 === NVGPU_AS_IOCTL_INITIALIZE ===
+Nintendo custom.
+
   struct {
     u32 __unk;       // in
     u32 __zeroes[3]; // in

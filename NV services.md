@@ -101,7 +101,7 @@ channel.
 
 | Device             | Direction | Size | Value      | Description                                                                    | Notes |
 | ------------------ | --------- | ---- | ---------- | ------------------------------------------------------------------------------ | ----- |
-| /dev/nvhost-as-gpu | In        | 4    | 0x40044101 | NVGPU\_AS\_IOCTL\_BIND\_CHANNEL                                                |       |
+| /dev/nvhost-as-gpu | In        | 4    | 0x40044101 | [\#NVGPU\_AS\_IOCTL\_BIND\_CHANNEL](#NVGPU_AS_IOCTL_BIND_CHANNEL "wikilink")   |       |
 | /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | NVGPU\_AS\_IOCTL\_ALLOC\_SPACE                                                 |       |
 | /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | NVGPU\_AS\_IOCTL\_FREE\_SPACE                                                  |       |
 | /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER                                                  |       |
@@ -112,7 +112,18 @@ channel.
 | /dev/nvhost-as-gpu | In        | 40   | 0x40284109 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink") |       |
 | /dev/nvhost-as-gpu | Inout     | 20   | 0xC0144114 |                                                                                |       |
 
+### NVGPU\_AS\_IOCTL\_BIND\_CHANNEL
+
+Identical to Linux driver.
+
+` struct {`  
+`   u32 __fd; // in`  
+` };`
+
 ### NVGPU\_AS\_IOCTL\_INITIALIZE
+
+Nintendo
+custom.
 
 ` struct {`  
 `   u32 __unk;       // in`  
