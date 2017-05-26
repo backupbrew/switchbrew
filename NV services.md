@@ -102,8 +102,8 @@ channel.
 | Device             | Direction | Size | Value      | Description                                                                    | Notes |
 | ------------------ | --------- | ---- | ---------- | ------------------------------------------------------------------------------ | ----- |
 | /dev/nvhost-as-gpu | In        | 4    | 0x40044101 | [\#NVGPU\_AS\_IOCTL\_BIND\_CHANNEL](#NVGPU_AS_IOCTL_BIND_CHANNEL "wikilink")   |       |
-| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | NVGPU\_AS\_IOCTL\_ALLOC\_SPACE                                                 |       |
-| /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | NVGPU\_AS\_IOCTL\_FREE\_SPACE                                                  |       |
+| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | [\#NVGPU\_AS\_IOCTL\_ALLOC\_SPACE](#NVGPU_AS_IOCTL_ALLOC_SPACE "wikilink")     |       |
+| /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | [\#NVGPU\_AS\_IOCTL\_FREE\_SPACE](#NVGPU_AS_IOCTL_FREE_SPACE "wikilink")       |       |
 | /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER                                                  |       |
 | /dev/nvhost-as-gpu | Inout     | 8    | 0xC0084105 | NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER                                                |       |
 | /dev/nvhost-as-gpu | Inout     | 40   | 0xC0284106 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                              |       |
@@ -128,6 +128,14 @@ Identical to Linux driver.
 `   u32 __flags;           // in`  
 `   u32 __pad;`  
 `   u64 __offset_or_align; // inout`  
+` };`
+
+### NVGPU\_AS\_IOCTL\_FREE\_SPACE
+
+` struct {`  
+`   u64 __offset;    // in`  
+`   u32 __pages;     // in`  
+`   u32 __page_size; // in`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_INITIALIZE

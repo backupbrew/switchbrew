@@ -151,9 +151,9 @@ Each fd opened to this device creates an address space. An address space is then
 |-
 | /dev/nvhost-as-gpu || In || 4 || 0x40044101 || [[#NVGPU_AS_IOCTL_BIND_CHANNEL]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 24 || 0xC0184102 || NVGPU_AS_IOCTL_ALLOC_SPACE ||
+| /dev/nvhost-as-gpu || Inout || 24 || 0xC0184102 || [[#NVGPU_AS_IOCTL_ALLOC_SPACE]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 16 || 0xC0104103 || NVGPU_AS_IOCTL_FREE_SPACE ||
+| /dev/nvhost-as-gpu || Inout || 16 || 0xC0104103 || [[#NVGPU_AS_IOCTL_FREE_SPACE]] ||
 |-
 | /dev/nvhost-as-gpu || Inout || 24 || 0xC0184104 || NVGPU_AS_IOCTL_MAP_BUFFER ||
 |-
@@ -184,6 +184,13 @@ Identical to Linux driver.
     u32 __flags;           // in
     u32 __pad;
     u64 __offset_or_align; // inout
+  };
+
+=== NVGPU_AS_IOCTL_FREE_SPACE ===
+  struct {
+    u64 __offset;    // in
+    u32 __pages;     // in
+    u32 __page_size; // in
   };
 
 === NVGPU_AS_IOCTL_INITIALIZE ===
