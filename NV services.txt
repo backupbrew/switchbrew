@@ -143,6 +143,33 @@ The following table contains known ioctls.
 | 0x40080021 || In || 8 || cancel_wait_event || Cancels all events
 |}
 
+== /dev/nvhost-as-gpu ==
+Each fd opened to this device creates an address space. An address space is then later bound with a channel.
+
+{| class="wikitable" border="1"
+! Device || Direction || Size || Value || Description || Notes
+|-
+| /dev/nvhost-as-gpu || In || 4 || 0x40044101 || NVGPU_AS_IOCTL_BIND_CHANNEL ||
+|-
+| /dev/nvhost-as-gpu || Inout || 24 || 0xC0184102 || NVGPU_AS_IOCTL_ALLOC_SPACE ||
+|-
+| /dev/nvhost-as-gpu || Inout || 16 || 0xC0104103 || NVGPU_AS_IOCTL_FREE_SPACE ||
+|-
+| /dev/nvhost-as-gpu || Inout || 24 || 0xC0184104 || NVGPU_AS_IOCTL_MAP_BUFFER ||
+|-
+| /dev/nvhost-as-gpu || Inout || 8 || 0xC0084105 || NVGPU_AS_IOCTL_UNMAP_BUFFER ||
+|-
+| /dev/nvhost-as-gpu || Inout || 40 || 0xC0284106 || NVGPU_AS_IOCTL_MAP_BUFFER_EX ||
+|-
+| /dev/nvhost-as-gpu || In || 16 || 0x40104107 || NVGPU_AS_IOCTL_INITIALIZE ||
+|-
+| /dev/nvhost-as-gpu || Inout || 64 || 0xC0404108 || NVGPU_AS_IOCTL_GET_VA_REGIONS? ||
+|-
+| /dev/nvhost-as-gpu || In || 40 || 0x40284109 || NVGPU_AS_IOCTL_INITIALIZE_EX ||
+|-
+| /dev/nvhost-as-gpu || Inout || 20 || 0xC0144114 || ||
+|}
+
 == /dev/nvmap ==
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
@@ -324,27 +351,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 
 == Remaining Ioctls ==
 {| class="wikitable" border="1"
-! Device || Value || Description || Notes
-|-
-| /dev/nvhost-as-gpu || 0x40044101 || NVGPU_AS_IOCTL_BIND_CHANNEL ||
-|-
-| /dev/nvhost-as-gpu || 0xC0184102 || NVGPU_AS_IOCTL_ALLOC_SPACE ||
-|-
-| /dev/nvhost-as-gpu || 0xC0104103 || NVGPU_AS_IOCTL_FREE_SPACE ||
-|-
-| /dev/nvhost-as-gpu || 0xC0184104 || NVGPU_AS_IOCTL_MAP_BUFFER ||
-|-
-| /dev/nvhost-as-gpu || 0xC0084105 || NVGPU_AS_IOCTL_UNMAP_BUFFER ||
-|-
-| /dev/nvhost-as-gpu || 0xC0284106 || NVGPU_AS_IOCTL_MAP_BUFFER_EX ||
-|-
-| /dev/nvhost-as-gpu || 0x40104107 || init_as_gpu || Initializes the as-gpu node
-|-
-| /dev/nvhost-as-gpu || 0xC0404108 || NVGPU_AS_IOCTL_GET_VA_REGIONS? ||
-|-
-| /dev/nvhost-as-gpu || 0x40284109 || init_as_gpu_ex || Initializes the as-gpu node (with more params)
-|-
-| /dev/nvhost-as-gpu || 0xC0144114 || ||
+! Value || Size || Description || Notes
 |-
 | /dev/nvhost-dbg-gpu || 0x40084401 || NVGPU_DBG_GPU_IOCTL_BIND_CHANNEL ||
 |-
