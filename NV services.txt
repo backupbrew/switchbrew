@@ -245,8 +245,6 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 {| class="wikitable" border="1"
 ! Path || Name
 |-
-| /dev/nvhost-tsec ||
-|-
 | /dev/nvhost-gpu ||
 |-
 | /dev/nvhost-vic ||

@@ -188,7 +188,6 @@ interface.
 
 | Path              | Name |
 | ----------------- | ---- |
-| /dev/nvhost-tsec  |      |
 | /dev/nvhost-gpu   |      |
 | /dev/nvhost-vic   |      |
 | /dev/nvhost-nvdec |      |
