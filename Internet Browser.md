@@ -115,6 +115,23 @@ for the R-X, R--, and RW- pages are the same as v2.0.
     added/removed. Most(?)/all(?) main-codebin func import-addrs
     relative to main-codebin-base are the same as v2.0.
 
+Main-codebin region(titleID 010000000000100B):
+
+  - rtld is same as before basically, minus addrs. Likewise for the
+    "nnSdkEmpty" binary following the main-codebin.
+  - Various byte values were changed in the main .text.
+  - In the main R-- section:
+      - The length of a string used with the user-agent changed, due to
+        being changed from "{...}.9" to "{...}.10".
+      - The version in the following string was changed from "1.2.2" to
+        "1.2.3": "FS\_ACCESS: { sdk\_versio n: 1.2.3, spec: NX }"
+      - The datetime strings following "b/23876444" was changed from
+        "Feb 10 2017" "02:24:47" to "Mar 9 201 7" "21:41:27".
+      - A 0x10-byte block prior to SDK library tag strings was updated.
+        The version in those strings was changed from "1\_2\_2" to
+        "1\_2\_3".
+  - The main RW- section appears to be basically the same minus addrs.
+
 "shareddata:/buildinfo/buildinfo.dat" content:
 
 ` r:13343`  
