@@ -96,8 +96,12 @@ ioctls.
 ## /dev/nvhost-as-gpu
 
 Each fd opened to this device creates an address space. An address space
-is then later bound with a
-channel.
+is then later bound with a channel.
+
+Once a nvgpu channel has been bound to an address space it cannot be
+unbound. There is no support for allowing an nvgpu channel to change
+from one address space to another (or from one to
+none).
 
 | Device             | Direction | Size | Value      | Description                                                                    | Notes |
 | ------------------ | --------- | ---- | ---------- | ------------------------------------------------------------------------------ | ----- |
