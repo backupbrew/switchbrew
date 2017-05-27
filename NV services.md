@@ -253,26 +253,26 @@ Returns an id for a nvmap object. Identical to Linux driver.
 This device is for global (context independent) operations on the
 gpu.
 
-| Value      | Direction | Size       | Description                              | Notes |
-| ---------- | --------- | ---------- | ---------------------------------------- | ----- |
-| Out        | 4         | 0x80044701 | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE |       |
-| Out        | 40        | 0x80284702 | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO      |       |
-| In         | 44        | 0x402C4703 | NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE       |       |
-| Inout      | 52        | 0xC0344704 | NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE     |       |
-| Inout      | 176       | 0xC0B04705 | NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS  |       |
-| Inout      | 24        | 0xC0184706 | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS       |       |
-| In         | 8         | 0x40084707 | NVGPU\_GPU\_IOCTL\_OPEN\_CHANNEL         |       |
-| In         | 8         | 0x4008470E |                                          |       |
-| In         | 16        | 0x4010470F |                                          |       |
-| Inout      | 8         | 0xC0084710 |                                          |       |
-| Out        | 8         | 0x80084711 |                                          |       |
-| Out        | 8         | 0x80084712 |                                          |       |
-| Inout      | 4         | 0xC0044713 |                                          |       |
-| Out        | 8         | 0x80084714 |                                          |       |
-| Out        | 4         | 0x80044715 |                                          |       |
-| Out        | 24        | 0x8018471A |                                          |       |
-| Inout      | 8         | 0xC008471B |                                          |       |
-| 0xC010471C | Inout     | 16         |                                          |       |
+| Value      | Direction | Size | Description                              | Notes |
+| ---------- | --------- | ---- | ---------------------------------------- | ----- |
+| 0x80044701 | Out       | 4    | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE |       |
+| 0x80284702 | Out       | 40   | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO      |       |
+| 0x402C4703 | In        | 44   | NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE       |       |
+| 0xC0344704 | Inout     | 52   | NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE     |       |
+| 0xC0B04705 | Inout     | 176  | NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS  |       |
+| 0xC0184706 | Inout     | 24   | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS       |       |
+| 0x40084707 | In        | 8    | NVGPU\_GPU\_IOCTL\_OPEN\_CHANNEL         |       |
+| 0x4008470E | In        | 8    |                                          |       |
+| 0x4010470F | In        | 16   |                                          |       |
+| 0xC0084710 | Inout     | 8    |                                          |       |
+| 0x80084711 | Out       | 8    |                                          |       |
+| 0x80084712 | Out       | 8    |                                          |       |
+| 0xC0044713 | Inout     | 4    |                                          |       |
+| 0x80084714 | Out       | 8    |                                          |       |
+| 0x80044715 | Out       | 4    |                                          |       |
+| 0x8018471A | Out       | 24   |                                          |       |
+| 0xC008471B | Inout     | 8    |                                          |       |
+| 0xC010471C | Inout     | 16   |                                          |       |
 
 ## Channels
 

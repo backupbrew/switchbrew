@@ -314,39 +314,39 @@ This device is for global (context independent) operations on the gpu.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| Out || 4 || 0x80044701 || NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE ||
+| 0x80044701 || Out || 4 || NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE ||
 |-
-| Out || 40 || 0x80284702 || NVGPU_GPU_IOCTL_ZCULL_GET_INFO ||
+| 0x80284702 || Out || 40 || NVGPU_GPU_IOCTL_ZCULL_GET_INFO ||
 |-
-| In || 44 || 0x402C4703 || NVGPU_GPU_IOCTL_ZBC_SET_TABLE ||
+| 0x402C4703 || In || 44 || NVGPU_GPU_IOCTL_ZBC_SET_TABLE ||
 |-
-| Inout || 52 || 0xC0344704 || NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE ||
+| 0xC0344704 || Inout || 52 || NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE ||
 |-
-| Inout || 176 || 0xC0B04705 || NVGPU_GPU_IOCTL_GET_CHARACTERISTICS ||
+| 0xC0B04705 || Inout || 176 || NVGPU_GPU_IOCTL_GET_CHARACTERISTICS ||
 |-
-| Inout || 24 || 0xC0184706 || NVGPU_GPU_IOCTL_GET_TPC_MASKS ||
+| 0xC0184706 || Inout || 24 || NVGPU_GPU_IOCTL_GET_TPC_MASKS ||
 |-
-| In || 8 || 0x40084707 || NVGPU_GPU_IOCTL_OPEN_CHANNEL ||
+| 0x40084707 || In || 8 || NVGPU_GPU_IOCTL_OPEN_CHANNEL ||
 |-
-| In || 8 || 0x4008470E || ||
+| 0x4008470E || In || 8 || ||
 |-
-| In || 16 || 0x4010470F || ||
+| 0x4010470F || In || 16 || ||
 |-
-| Inout || 8 || 0xC0084710 || ||
+| 0xC0084710 || Inout || 8 || ||
 |-
-| Out || 8 || 0x80084711 || ||
+| 0x80084711 || Out || 8 || ||
 |-
-| Out || 8 || 0x80084712 || ||
+| 0x80084712 || Out || 8 || ||
 |-
-| Inout || 4 || 0xC0044713 || ||
+| 0xC0044713 || Inout || 4 || ||
 |-
-| Out || 8 || 0x80084714 || ||
+| 0x80084714 || Out || 8 || ||
 |-
-| Out || 4 || 0x80044715 || ||
+| 0x80044715 || Out || 4 || ||
 |-
-| Out || 24 || 0x8018471A || ||
+| 0x8018471A || Out || 24 || ||
 |-
-| Inout || 8 || 0xC008471B || ||
+| 0xC008471B || Inout || 8 || ||
 |-
 | 0xC010471C || Inout || 16 || ||
 |}
