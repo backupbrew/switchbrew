@@ -248,6 +248,32 @@ Returns an id for a nvmap object. Identical to Linux driver.
 `   u32 __handle; // in`  
 ` };`
 
+## /dev/nvhost-ctrl-gpu
+
+This device is for global (context independent) operations on the
+gpu.
+
+| Value      | Direction | Size       | Description                              | Notes |
+| ---------- | --------- | ---------- | ---------------------------------------- | ----- |
+| Out        | 4         | 0x80044701 | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE |       |
+| Out        | 40        | 0x80284702 | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO      |       |
+| In         | 44        | 0x402C4703 | NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE       |       |
+| Inout      | 52        | 0xC0344704 | NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE     |       |
+| Inout      | 176       | 0xC0B04705 | NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS  |       |
+| Inout      | 24        | 0xC0184706 | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS       |       |
+| In         | 8         | 0x40084707 | NVGPU\_GPU\_IOCTL\_OPEN\_CHANNEL         |       |
+| In         | 8         | 0x4008470E |                                          |       |
+| In         | 16        | 0x4010470F |                                          |       |
+| Inout      | 8         | 0xC0084710 |                                          |       |
+| Out        | 8         | 0x80084711 |                                          |       |
+| Out        | 8         | 0x80084712 |                                          |       |
+| Inout      | 4         | 0xC0044713 |                                          |       |
+| Out        | 8         | 0x80084714 |                                          |       |
+| Out        | 4         | 0x80044715 |                                          |       |
+| Out        | 24        | 0x8018471A |                                          |       |
+| Inout      | 8         | 0xC008471B |                                          |       |
+| 0xC010471C | Inout     | 16         |                                          |       |
+
 ## Channels
 
 Channels are a concept for NVIDIA hardware blocks that share a common
@@ -299,35 +325,17 @@ interface.
 
 ## Remaining Ioctls
 
-| Value                | Size       | Description                               | Notes                 |
-| -------------------- | ---------- | ----------------------------------------- | --------------------- |
-| /dev/nvhost-dbg-gpu  | 0x40084401 | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL     |                       |
-| /dev/nvhost-dbg-gpu  | 0xC0??4402 | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS          | ?? == size is unknown |
-| /dev/nvhost-dbg-gpu  | 0x40084403 | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL      |                       |
-| /dev/nvhost-dbg-gpu  | 0x40044404 | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE         |                       |
-| /dev/nvhost-dbg-gpu  | 0x40044405 | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE |                       |
-| /dev/nvhost-dbg-gpu  | 0xC0184407 | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP      |                       |
-| /dev/nvhost-dbg-gpu  | 0x40084408 | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP    |                       |
-| /dev/nvhost-dbg-gpu  | 0x40084409 | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING      |                       |
-| /dev/nvhost-ctrl-gpu | 0x80044701 | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE  |                       |
-| /dev/nvhost-ctrl-gpu | 0x80284702 | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO       |                       |
-| /dev/nvhost-ctrl-gpu | 0x402C4703 | NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE        |                       |
-| /dev/nvhost-ctrl-gpu | 0xC0344704 | NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE      |                       |
-| /dev/nvhost-ctrl-gpu | 0xC0B04705 | NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS   |                       |
-| /dev/nvhost-ctrl-gpu | 0xC0184706 | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS        |                       |
-| /dev/nvhost-ctrl-gpu | 0x40084707 | NVGPU\_GPU\_IOCTL\_OPEN\_CHANNEL          |                       |
-| /dev/nvhost-ctrl-gpu | 0x4008470E |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0x4010470F |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0xC0084710 |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0x80084711 |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0x80084712 |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0xC0044713 |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0x80084714 |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0x80044715 |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0x8018471A |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0xC008471B |                                           |                       |
-| /dev/nvhost-ctrl-gpu | 0xC010471C |                                           |                       |
-|                      |            |                                           |                       |
+| Value               | Size       | Description                               | Notes                 |
+| ------------------- | ---------- | ----------------------------------------- | --------------------- |
+| /dev/nvhost-dbg-gpu | 0x40084401 | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL     |                       |
+| /dev/nvhost-dbg-gpu | 0xC0??4402 | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS          | ?? == size is unknown |
+| /dev/nvhost-dbg-gpu | 0x40084403 | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL      |                       |
+| /dev/nvhost-dbg-gpu | 0x40044404 | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE         |                       |
+| /dev/nvhost-dbg-gpu | 0x40044405 | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE |                       |
+| /dev/nvhost-dbg-gpu | 0xC0184407 | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP      |                       |
+| /dev/nvhost-dbg-gpu | 0x40084408 | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP    |                       |
+| /dev/nvhost-dbg-gpu | 0x40084409 | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING      |                       |
+|                     |            |                                           |                       |
 
 # nvmemp
 
