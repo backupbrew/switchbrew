@@ -126,12 +126,17 @@ Identical to Linux driver.
 
 ### NVGPU\_AS\_IOCTL\_ALLOC\_SPACE
 
+This one reserves pages in the device address space.
+
 ` struct {`  
-`   u32 __pages;           // in`  
-`   u32 __page_size;       // in`  
-`   u32 __flags;           // in`  
+`   u32 __pages;     // in`  
+`   u32 __page_size; // in`  
+`   u32 __flags;     // in`  
 `   u32 __pad;`  
-`   u64 __offset_or_align; // inout`  
+`   union {`  
+`     u64 __offset;  // out`  
+`     u64 __align;   // in`  
+`   };`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_FREE\_SPACE
