@@ -365,22 +365,23 @@ NVIDIA multimedia (NvMM) platform service.
 Most nvidia driver commands return an error code apart from the normal
 return code.
 
-| Cmd    | Name                    |
-| ------ | ----------------------- |
-| 0      | Success                 |
-| 1      | NotImplemented          |
-| 2      | NotSupported            |
-| 3      | NotInitialized          |
-| 4      | BadParameter            |
-| 5      | Timeout                 |
-| 6      | InsufficientMemory      |
-| 7      | ReadOnlyAttribute       |
-| 8      | InvalidState            |
-| 9      | InvalidAddress          |
-| 0xA    | InvalidSize             |
-| 0xB    | BadValue                |
-| 0xD    | AlreadyAllocated        |
-| 0xE    | Busy                    |
-| 0xF    | ResourceError           |
-| 0x10   | CountMismatch           |
-| 0x1000 | Shared memory too small |
+| Cmd     | Name                 |
+| ------- | -------------------- |
+| 0       | Success              |
+| 1       | NotImplemented       |
+| 2       | NotSupported         |
+| 3       | NotInitialized       |
+| 4       | BadParameter         |
+| 5       | Timeout              |
+| 6       | InsufficientMemory   |
+| 7       | ReadOnlyAttribute    |
+| 8       | InvalidState         |
+| 9       | InvalidAddress       |
+| 0xA     | InvalidSize          |
+| 0xB     | BadValue             |
+| 0xD     | AlreadyAllocated     |
+| 0xE     | Busy                 |
+| 0xF     | ResourceError        |
+| 0x10    | CountMismatch        |
+| 0x1000  | SharedMemoryTooSmall |
+| 0x3000F | IoctlFailed          |

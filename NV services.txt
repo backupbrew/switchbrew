@@ -524,5 +524,7 @@ Most nvidia driver commands return an error code apart from the normal return co
 |-
 | 0x10 || CountMismatch
 |-
-| 0x1000 || Shared memory too small
+| 0x1000 || SharedMemoryTooSmall
+|-
+| 0x3000F || IoctlFailed                        
 |}
