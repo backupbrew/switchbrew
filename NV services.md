@@ -103,18 +103,18 @@ unbound. There is no support for allowing an nvgpu channel to change
 from one address space to another (or from one to
 none).
 
-| Device             | Direction | Size | Value      | Description                                                                    | Notes |
-| ------------------ | --------- | ---- | ---------- | ------------------------------------------------------------------------------ | ----- |
-| /dev/nvhost-as-gpu | In        | 4    | 0x40044101 | [\#NVGPU\_AS\_IOCTL\_BIND\_CHANNEL](#NVGPU_AS_IOCTL_BIND_CHANNEL "wikilink")   |       |
-| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | [\#NVGPU\_AS\_IOCTL\_ALLOC\_SPACE](#NVGPU_AS_IOCTL_ALLOC_SPACE "wikilink")     |       |
-| /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | [\#NVGPU\_AS\_IOCTL\_FREE\_SPACE](#NVGPU_AS_IOCTL_FREE_SPACE "wikilink")       |       |
-| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER](#NVGPU_AS_IOCTL_MAP_BUFFER "wikilink")       |       |
-| /dev/nvhost-as-gpu | Inout     | 8    | 0xC0084105 | NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER                                                |       |
-| /dev/nvhost-as-gpu | Inout     | 40   | 0xC0284106 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                              |       |
-| /dev/nvhost-as-gpu | In        | 16   | 0x40104107 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")        |       |
-| /dev/nvhost-as-gpu | Inout     | 64   | 0xC0404108 | NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS?                                            |       |
-| /dev/nvhost-as-gpu | In        | 40   | 0x40284109 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink") |       |
-| /dev/nvhost-as-gpu | Inout     | 20   | 0xC0144114 |                                                                                |       |
+| Device             | Direction | Size | Value      | Description                                                                       | Notes |
+| ------------------ | --------- | ---- | ---------- | --------------------------------------------------------------------------------- | ----- |
+| /dev/nvhost-as-gpu | In        | 4    | 0x40044101 | [\#NVGPU\_AS\_IOCTL\_BIND\_CHANNEL](#NVGPU_AS_IOCTL_BIND_CHANNEL "wikilink")      |       |
+| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | [\#NVGPU\_AS\_IOCTL\_ALLOC\_SPACE](#NVGPU_AS_IOCTL_ALLOC_SPACE "wikilink")        |       |
+| /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | [\#NVGPU\_AS\_IOCTL\_FREE\_SPACE](#NVGPU_AS_IOCTL_FREE_SPACE "wikilink")          |       |
+| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER](#NVGPU_AS_IOCTL_MAP_BUFFER "wikilink")          |       |
+| /dev/nvhost-as-gpu | Inout     | 8    | 0xC0084105 | NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER                                                   |       |
+| /dev/nvhost-as-gpu | Inout     | 40   | 0xC0284106 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                                 |       |
+| /dev/nvhost-as-gpu | In        | 16   | 0x40104107 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")           |       |
+| /dev/nvhost-as-gpu | Inout     | 64   | 0xC0404108 | [\#NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS](#NVGPU_AS_IOCTL_GET_VA_REGIONS "wikilink") |       |
+| /dev/nvhost-as-gpu | In        | 40   | 0x40284109 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink")    |       |
+| /dev/nvhost-as-gpu | Inout     | 20   | 0xC0144114 |                                                                                   |       |
 
 ### NVGPU\_AS\_IOCTL\_BIND\_CHANNEL
 
@@ -169,15 +169,36 @@ set.
 
 ### NVGPU\_AS\_IOCTL\_INITIALIZE
 
-Nintendo
-custom.
+Nintendo custom.
 
 ` struct {`  
 `   u32 __unk;       // in, 0 works`  
 `   u32 __zeroes[3]; // in`  
 ` };`
 
+### NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS
+
+Nintendo modified
+heavily.
+
+` struct va_region {`  
+`   u64 __offset;`  
+`   u32 __page_size;`  
+`   u32 __reserved;`  
+`   u64 __pages;`  
+` };`  
+` `  
+` struct {`  
+`   u64              __not_used;`  
+`   u32              __bufsize;    // inout, forced to 2*sizeof(struct va_region)`  
+`   u32              __reserved;`  
+`   struct va_region __regions[2]; // out`  
+` };`
+
 ### NVGPU\_AS\_IOCTL\_INITIALIZE\_EX
+
+Nintendo
+custom.
 
 ` struct {`  
 `   u32 __unk0; // in`  
