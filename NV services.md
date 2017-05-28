@@ -149,12 +149,22 @@ This one reserves pages in the device address space.
 
 ### NVGPU\_AS\_IOCTL\_MAP\_BUFFER
 
+Map a memory region in the device address space. Identical to Linux
+driver pretty much.
+
+On success, the mapped memory region is locked by having
+[SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
+set.
+
 ` struct {`  
-`   u32 __flags;           // in, 1 works`  
+`   u32 __flags;        // in, 1 works`  
 `   u32 __reserved;`  
-`   u32 __nvmap_handle;    // in`  
-`   u32 __page_size;       // inout, 0 means don't care`  
-`   u64 __offset_or_align; // inout`  
+`   u32 __nvmap_handle; // in`  
+`   u32 __page_size;    // inout, 0 means don't care`  
+`   union {`  
+`     u64 __offset;     // out`  
+`     u64 __align;      // in`  
+`   };`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_INITIALIZE
