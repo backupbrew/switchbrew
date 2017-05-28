@@ -108,7 +108,7 @@ none).
 | /dev/nvhost-as-gpu | In        | 4    | 0x40044101 | [\#NVGPU\_AS\_IOCTL\_BIND\_CHANNEL](#NVGPU_AS_IOCTL_BIND_CHANNEL "wikilink")   |       |
 | /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | [\#NVGPU\_AS\_IOCTL\_ALLOC\_SPACE](#NVGPU_AS_IOCTL_ALLOC_SPACE "wikilink")     |       |
 | /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | [\#NVGPU\_AS\_IOCTL\_FREE\_SPACE](#NVGPU_AS_IOCTL_FREE_SPACE "wikilink")       |       |
-| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER                                                  |       |
+| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER](#NVGPU_AS_IOCTL_MAP_BUFFER "wikilink")       |       |
 | /dev/nvhost-as-gpu | Inout     | 8    | 0xC0084105 | NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER                                                |       |
 | /dev/nvhost-as-gpu | Inout     | 40   | 0xC0284106 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                              |       |
 | /dev/nvhost-as-gpu | In        | 16   | 0x40104107 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")        |       |
@@ -142,13 +142,23 @@ Identical to Linux driver.
 `   u32 __page_size; // in`  
 ` };`
 
+### NVGPU\_AS\_IOCTL\_MAP\_BUFFER
+
+` struct {`  
+`   u32 __flags;           // in, 1 works`  
+`   u32 __reserved;`  
+`   u32 __nvmap_handle;    // in`  
+`   u32 __page_size;       // inout, 0 means don't care`  
+`   u64 __offset_or_align; // inout`  
+` };`
+
 ### NVGPU\_AS\_IOCTL\_INITIALIZE
 
 Nintendo
 custom.
 
 ` struct {`  
-`   u32 __unk;       // in, zero works`  
+`   u32 __unk;       // in, 0 works`  
 `   u32 __zeroes[3]; // in`  
 ` };`
 

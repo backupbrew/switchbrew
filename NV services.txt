@@ -157,7 +157,7 @@ Once a nvgpu channel has been bound to an address space it cannot be unbound. Th
 |-
 | /dev/nvhost-as-gpu || Inout || 16 || 0xC0104103 || [[#NVGPU_AS_IOCTL_FREE_SPACE]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 24 || 0xC0184104 || NVGPU_AS_IOCTL_MAP_BUFFER ||
+| /dev/nvhost-as-gpu || Inout || 24 || 0xC0184104 || [[#NVGPU_AS_IOCTL_MAP_BUFFER]] ||
 |-
 | /dev/nvhost-as-gpu || Inout || 8 || 0xC0084105 || NVGPU_AS_IOCTL_UNMAP_BUFFER ||
 |-
@@ -195,11 +195,20 @@ Identical to Linux driver.
     u32 __page_size; // in
   };
 
+=== NVGPU_AS_IOCTL_MAP_BUFFER ===
+  struct {
+    u32 __flags;           // in, 1 works
+    u32 __reserved;
+    u32 __nvmap_handle;    // in
+    u32 __page_size;       // inout, 0 means don't care
+    u64 __offset_or_align; // inout
+  };
+
 === NVGPU_AS_IOCTL_INITIALIZE ===
 Nintendo custom.
 
   struct {
-    u32 __unk;       // in, zero works
+    u32 __unk;       // in, 0 works
     u32 __zeroes[3]; // in
   };
 
