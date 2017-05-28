@@ -148,7 +148,7 @@ Nintendo
 custom.
 
 ` struct {`  
-`   u32 __unk;       // in`  
+`   u32 __unk;       // in, zero works`  
 `   u32 __zeroes[3]; // in`  
 ` };`
 
