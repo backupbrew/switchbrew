@@ -109,7 +109,7 @@ none).
 | /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | [\#NVGPU\_AS\_IOCTL\_ALLOC\_SPACE](#NVGPU_AS_IOCTL_ALLOC_SPACE "wikilink")        |       |
 | /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | [\#NVGPU\_AS\_IOCTL\_FREE\_SPACE](#NVGPU_AS_IOCTL_FREE_SPACE "wikilink")          |       |
 | /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER](#NVGPU_AS_IOCTL_MAP_BUFFER "wikilink")          |       |
-| /dev/nvhost-as-gpu | Inout     | 8    | 0xC0084105 | NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER                                                   |       |
+| /dev/nvhost-as-gpu | Inout     | 8    | 0xC0084105 | [\#NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER](#NVGPU_AS_IOCTL_UNMAP_BUFFER "wikilink")      |       |
 | /dev/nvhost-as-gpu | Inout     | 40   | 0xC0284106 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                                 |       |
 | /dev/nvhost-as-gpu | In        | 16   | 0x40104107 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")           |       |
 | /dev/nvhost-as-gpu | Inout     | 64   | 0xC0404108 | [\#NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS](#NVGPU_AS_IOCTL_GET_VA_REGIONS "wikilink") |       |
@@ -166,6 +166,10 @@ set.
 `     u64 __align;      // in`  
 `   };`  
 ` };`
+
+### NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER
+
+Doesn't do shit.
 
 ### NVGPU\_AS\_IOCTL\_INITIALIZE
 

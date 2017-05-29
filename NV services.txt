@@ -159,7 +159,7 @@ Once a nvgpu channel has been bound to an address space it cannot be unbound. Th
 |-
 | /dev/nvhost-as-gpu || Inout || 24 || 0xC0184104 || [[#NVGPU_AS_IOCTL_MAP_BUFFER]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 8 || 0xC0084105 || NVGPU_AS_IOCTL_UNMAP_BUFFER ||
+| /dev/nvhost-as-gpu || Inout || 8 || 0xC0084105 || [[#NVGPU_AS_IOCTL_UNMAP_BUFFER]] ||
 |-
 | /dev/nvhost-as-gpu || Inout || 40 || 0xC0284106 || NVGPU_AS_IOCTL_MAP_BUFFER_EX ||
 |-
@@ -215,6 +215,9 @@ On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit
       u64 __align;      // in
     };
   };
+
+=== NVGPU_AS_IOCTL_UNMAP_BUFFER ===
+Doesn't do shit.
 
 === NVGPU_AS_IOCTL_INITIALIZE ===
 Nintendo custom.
