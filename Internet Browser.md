@@ -76,6 +76,14 @@ this applet is the above conntest URL.
 
 This is only available starting with [2.0.0](2.0.0.md "wikilink").
 
+## ShopN
+
+The file at "<data:/whitelist/WhitelistEc.txt>", which doesn't exist in
+WifiWebAuthApplet, contains the following:
+
+` ^https://([0-9A-Za-z\-]+\.)*eshop\.nintendo\.net($|/)`  
+` ^https?://([0-9A-Za-z\-]+\.)*nintendo\.(co\.jp|com|de)($|/)`
+
 ## Versions
 
 ### [2.0.0](2.0.0.md "wikilink")

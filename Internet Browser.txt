@@ -93,6 +93,12 @@ When doing a connection-test in system-settings, it will detect that the captive
 
 This is only available starting with [[2.0.0]].
 
+== ShopN ==
+The file at "data:/whitelist/WhitelistEc.txt", which doesn't exist in WifiWebAuthApplet, contains the following:
+
+  <nowiki>^https://([0-9A-Za-z\-]+\.)*eshop\.nintendo\.net($|/)
+ ^https?://([0-9A-Za-z\-]+\.)*nintendo\.(co\.jp|com|de)($|/)</nowiki>
+
 == Versions ==
 
 === [[2.0.0]] ===
