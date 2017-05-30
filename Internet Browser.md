@@ -155,16 +155,15 @@ Main-codebin region(titleID 010000000000100B):
         "1\_2\_3".
   - The main RW- section appears to be basically the same minus addrs.
 
-wkc\_peer.nro from memory:
+All of the other NROs were updated in FS with only the following
+changes:
 
   - The R-X section is identical to the previous version except for the
     0x10-byte block in the NRO header.
   - The R-- section only had version values in "/release\_{ver}/"
     strings updated, see the for\_cruiser path mentioned for WebKit NRO
-    above. The only other change was that a 0x10-byte block was updated.
-  - The first 0x46000-bytes in the RW- section are the same as before
-    besides addrs. This is the region prior to the memory-mirror block
-    in this section, which has permissions=none.
+    above. The only other change was that a 0x10-byte block following a
+    "GNU" string was updated.
 
 #### FS
 
