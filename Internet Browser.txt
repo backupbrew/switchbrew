@@ -128,6 +128,21 @@ wkc_peer.nro from memory:
 * The R-- section only had version values in "/release_{ver}/" strings updated, see the for_cruiser path mentioned for WebKit NRO above. The only other change was that a 0x10-byte block was updated.
 * The first 0x46000-bytes in the RW- section are the same as before besides addrs. This is the region prior to the memory-mirror block in this section, which has permissions=none.
 
+==== FS ====
+The content of "blacklist:/" and "oceanShared:/" haven't changed.
+
+===== "shareddata:/" =====
+The following files were updated here(nothing added/removed):
+
+* /buildinfo/buildinfo.dat
+* /dll/cairo_wkc.nro
+* /dll/libfont.nro
+* /dll/oss_wkc.nro
+* /dll/peer_wkc.nro
+* /dll/webkit_wkc.nro
+
+That is, every .nro under the above directory was updated.
+
 "shareddata:/buildinfo/buildinfo.dat" content:
   r:13343
   p::NX64

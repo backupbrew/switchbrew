@@ -143,6 +143,23 @@ wkc\_peer.nro from memory:
     besides addrs. This is the region prior to the memory-mirror block
     in this section, which has permissions=none.
 
+#### FS
+
+The content of "blacklist:/" and "oceanShared:/" haven't changed.
+
+##### "shareddata:/"
+
+The following files were updated here(nothing added/removed):
+
+  - /buildinfo/buildinfo.dat
+  - /dll/cairo\_wkc.nro
+  - /dll/libfont.nro
+  - /dll/oss\_wkc.nro
+  - /dll/peer\_wkc.nro
+  - /dll/webkit\_wkc.nro
+
+That is, every .nro under the above directory was updated.
+
 "shareddata:/buildinfo/buildinfo.dat" content:
 
 ` r:13343`  
