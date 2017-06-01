@@ -91,7 +91,7 @@
 | 0100000000000808 | European, English and Japanese dictionaries                                                                |
 | 0100000000000809 | Firmware Version                                                                                           |
 | 010000000000080A | Chara?                                                                                                     |
-| 010000000000080B | Tutorial images and strings                                                                                |
+| 010000000000080B | Tutorial images and strings. Used for the offline news by the News applet.                                 |
 | 010000000000080C | EULA                                                                                                       |
 | 010000000000080D | Blacklist URL                                                                                              |
 | 010000000000080E | Geo Zoneinfo                                                                                               |

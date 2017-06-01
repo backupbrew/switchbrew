@@ -165,7 +165,7 @@
 |-
 | 010000000000080A || Chara?
 |-
-| 010000000000080B || Tutorial images and strings
+| 010000000000080B || Tutorial images and strings. Used for the offline news by the News applet.
 |-
 | 010000000000080C || EULA
 |-
