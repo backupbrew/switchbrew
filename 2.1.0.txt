@@ -13,3 +13,6 @@ It's unknown exactly what titles were updated.
 
 ===[[Internet_Browser|Browser]]===
 A browser vuln was [[Switch_Userland_Flaws|fixed]], see also [[Internet_Browser|here]] for v2.1 browser details.
+
+===[[Title_list|FIRM]] Packages===
+Title 0100000000000819 wasn't updated. The only change in title 010000000000081A was that "/nx/package2" in the FS was updated.
