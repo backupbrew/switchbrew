@@ -77,6 +77,8 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 
 When whitelisting is enabled, you can only load page domains included in the whitelist, otherwise an error is displayed. This only applies to page navigation. Videos via the <video> tag are not affected, likewise with network requests with JS.
 
+No known applets can access the SD card. This includes ShareApplet (which posts screenshots from SD to social media).
+
 == OSS ==
 The NROs for the OSS are stored under a separate [[Title_list|title]]. All of the web-applets use the same OSS NROs via this title.
 

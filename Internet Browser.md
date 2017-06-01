@@ -43,6 +43,9 @@ page navigation. Videos via the
 
 tag are not affected, likewise with network requests with JS.
 
+No known applets can access the SD card. This includes ShareApplet
+(which posts screenshots from SD to social media).
+
 ## OSS
 
 The NROs for the OSS are stored under a separate
