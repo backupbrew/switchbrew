@@ -145,7 +145,7 @@
 |-
 | 0100000000000800 || SSL trusted certificates
 |-
-| 0100000000000801 || ?
+| 0100000000000801 || Stores the message strings for Support Error Codes. There's "/DatabaseInfo" at FS root, then the rest is stored at "/{first 4 error digits}/{last 4 error digits}/".
 |-
 | 0100000000000802 || Random textures?
 |-

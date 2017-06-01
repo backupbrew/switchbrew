@@ -78,33 +78,33 @@
 
 ## System Data Archives
 
-| Title-id         | Description                                                                                                |
-| ---------------- | ---------------------------------------------------------------------------------------------------------- |
-| 0100000000000800 | SSL trusted certificates                                                                                   |
-| 0100000000000801 | ?                                                                                                          |
-| 0100000000000802 | Random textures?                                                                                           |
-| 0100000000000803 | Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ... |
-| 0100000000000804 | HTML resources: Open-source licenses, seizure warnings                                                     |
-| 0100000000000805 | Chinese and Korean dictionaries                                                                            |
-| 0100000000000806 | Bad words                                                                                                  |
-| 0100000000000807 | Contains wifi ssids with passwords                                                                         |
-| 0100000000000808 | European, English and Japanese dictionaries                                                                |
-| 0100000000000809 | [System Version Title](System%20Version%20Title.md "wikilink")                                             |
-| 010000000000080A | Chara?                                                                                                     |
-| 010000000000080B | Tutorial images and strings. Used for the offline news by the News applet.                                 |
-| 010000000000080C | EULA                                                                                                       |
-| 010000000000080D | Blacklist URL                                                                                              |
-| 010000000000080E | Geo Zoneinfo                                                                                               |
-| 0100000000000810 | Extended font                                                                                              |
-| 0100000000000811 | Standard font                                                                                              |
-| 0100000000000812 | Korean font                                                                                                |
-| 0100000000000813 | Taiwanese font                                                                                             |
-| 0100000000000814 | Chinese font                                                                                               |
-| 0100000000000818 | System config                                                                                              |
-| 0100000000000819 | Firmware package A                                                                                         |
-| 010000000000081A | Firmware package B                                                                                         |
-| 010000000000081D | Errdisp strings                                                                                            |
-| 010000000000081E | Dummy file                                                                                                 |
-| 010000000000081F | Icosa system config                                                                                        |
-| 0100000000000820 | Copper system config                                                                                       |
-| 0100000000000821 | Hoag system config                                                                                         |
+| Title-id         | Description                                                                                                                                                          |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0100000000000800 | SSL trusted certificates                                                                                                                                             |
+| 0100000000000801 | Stores the message strings for Support Error Codes. There's "/DatabaseInfo" at FS root, then the rest is stored at "/{first 4 error digits}/{last 4 error digits}/". |
+| 0100000000000802 | Random textures?                                                                                                                                                     |
+| 0100000000000803 | Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...                                                           |
+| 0100000000000804 | HTML resources: Open-source licenses, seizure warnings                                                                                                               |
+| 0100000000000805 | Chinese and Korean dictionaries                                                                                                                                      |
+| 0100000000000806 | Bad words                                                                                                                                                            |
+| 0100000000000807 | Contains wifi ssids with passwords                                                                                                                                   |
+| 0100000000000808 | European, English and Japanese dictionaries                                                                                                                          |
+| 0100000000000809 | [System Version Title](System%20Version%20Title.md "wikilink")                                                                                                       |
+| 010000000000080A | Chara?                                                                                                                                                               |
+| 010000000000080B | Tutorial images and strings. Used for the offline news by the News applet.                                                                                           |
+| 010000000000080C | EULA                                                                                                                                                                 |
+| 010000000000080D | Blacklist URL                                                                                                                                                        |
+| 010000000000080E | Geo Zoneinfo                                                                                                                                                         |
+| 0100000000000810 | Extended font                                                                                                                                                        |
+| 0100000000000811 | Standard font                                                                                                                                                        |
+| 0100000000000812 | Korean font                                                                                                                                                          |
+| 0100000000000813 | Taiwanese font                                                                                                                                                       |
+| 0100000000000814 | Chinese font                                                                                                                                                         |
+| 0100000000000818 | System config                                                                                                                                                        |
+| 0100000000000819 | Firmware package A                                                                                                                                                   |
+| 010000000000081A | Firmware package B                                                                                                                                                   |
+| 010000000000081D | Errdisp strings                                                                                                                                                      |
+| 010000000000081E | Dummy file                                                                                                                                                           |
+| 010000000000081F | Icosa system config                                                                                                                                                  |
+| 0100000000000820 | Copper system config                                                                                                                                                 |
+| 0100000000000821 | Hoag system config                                                                                                                                                   |
