@@ -1,0 +1,13 @@
+The FS for the system-version title(TID 0100000000000809) contains
+"/file":
+
+| Offset | Size | Description                                                                                      |
+| ------ | ---- | ------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x1  | Major                                                                                            |
+| 0x1    | 0x1  | Minor                                                                                            |
+| 0x2    | 0x1  | Build?                                                                                           |
+| 0x3    | 0x5  | Normally all-zero / padding                                                                      |
+| 0x8    | 0x20 | Platform string ("NX" with zeros afterwards)                                                     |
+| 0x28   | 0x40 | Hex ASCII string. 0x28-bytes(not including NUL-terminator) normally with zeros afterwards.       |
+| 0x68   | 0x18 | System-version in string form with zeros afterwards. For example: "2.1.0"                        |
+| 0x80   | 0x80 | ASCII string with zeros / padding afterwards. For example: "NintendoSDK Firmware for NX 2.1.0-0" |
