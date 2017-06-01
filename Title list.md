@@ -89,7 +89,7 @@
 | 0100000000000806 | Bad words                                                                                                  |
 | 0100000000000807 | Contains wifi ssids with passwords                                                                         |
 | 0100000000000808 | European, English and Japanese dictionaries                                                                |
-| 0100000000000809 | Firmware Version                                                                                           |
+| 0100000000000809 | [System Version Title](System%20Version%20Title.md "wikilink")                                             |
 | 010000000000080A | Chara?                                                                                                     |
 | 010000000000080B | Tutorial images and strings. Used for the offline news by the News applet.                                 |
 | 010000000000080C | EULA                                                                                                       |
