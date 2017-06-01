@@ -16,3 +16,6 @@ A browser vuln was [[Switch_Userland_Flaws|fixed]], see also [[Internet_Browser|
 
 ===[[Title_list|FIRM]] Packages===
 Title 0100000000000819 wasn't updated. The only change in title 010000000000081A was that "/nx/package2" in the FS was updated.
+
+===[[NS_Services|NS]]-sysmodule===
+The NS-sysmodule was updated.
