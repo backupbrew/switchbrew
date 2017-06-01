@@ -43,8 +43,8 @@ page navigation. Videos via the
 
 tag are not affected, likewise with network requests with JS.
 
-No known applets can access the SD card. This includes ShareApplet
-(which posts screenshots from SD to social media).
+No known applets can directly access the SD card via mounting it. This
+includes ShareApplet (which posts screenshots from SD to social media).
 
 ## OSS
 
@@ -170,7 +170,8 @@ changes:
 
 #### FS
 
-The content of "blacklist:/" and "oceanShared:/" haven't changed.
+The content of "blacklist:/" and "oceanShared:/" haven't changed. Only
+the content of "shareddata:/" and "<data:/>" changed.
 
 ##### "shareddata:/"
 
@@ -192,3 +193,10 @@ That is, every .nro under the above directory was updated.
 ` v:Release`  
 ` d:2017-03-14 21:08`  
 ` n:0.5.10`
+
+##### "<data:/>"
+
+The following files were updated here(nothing added/removed):
+
+  - /.nrr/netfront.nrr
+  - /buildinfo/buildinfo.dat
