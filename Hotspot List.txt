@@ -1,0 +1,6 @@
+This is the Switch version of the 3DS hotspot.conf [https://3dbrew.org/wiki/Nintendo_Zone#Hotspot.conf_format file].
+
+This 0100000000000807 title contains "/ssid_list.csv" in the FS.
+
+The first line in the file is the decimal version. This is the same one accessible from Error History in System Settings.
+The rest of the file is the actual info for each hotspot, with all config needed to connect to them, including network crypto if needed.
