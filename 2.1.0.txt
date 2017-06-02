@@ -9,7 +9,7 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 *General system stability improvements to enhance the user's experience
 
 ==System Titles==
-It's unknown exactly what titles were updated.
+It's unknown exactly what titles were updated. The [[Hotspot List]] was not updated.
 
 ===[[Internet_Browser|Browser]]===
 A browser vuln was [[Switch_Userland_Flaws|fixed]], see also [[Internet_Browser|here]] for v2.1 browser details.
