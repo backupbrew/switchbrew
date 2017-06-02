@@ -112,10 +112,9 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 ## svcBreak
 
-On retail when called with all 3 input params set to value 0, the
-process will terminate. The system handles the process terminating this
-way the same as when the process
-crashes.
+On retail when called with all 3 input params set to value 0, the system
+will throw a
+[fatal-error](Error%20codes.md "wikilink").
 
 ## svcGetInfo
 
