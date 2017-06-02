@@ -97,9 +97,10 @@ following formatter:
 
 # Fatal Errors
 
-| Error     | Description                                                                                                                                                                                                                          |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 2168-0000 | Userland ARM undefined instruction exception                                                                                                                                                                                         |
-| 2168-0001 | Userland ARM prefetch-abort due to PC set to non-executable region                                                                                                                                                                   |
-| 2168-0002 | Userland ARM data abort. Also caused by abnormal process termination via [svcExitProcess](SVC.md "wikilink") and [svcBreak](SVC.md "wikilink"). Note: directly jumping to nnMain()-retaddr from non-main-thread has the same result. |
-| 2168-0003 | Userland PC address not aligned to 4 bytes                                                                                                                                                                                           |
+| Error     | Description                                                                                                                                                                                        |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2162-0002 | Triggered by running [svcBreak](SVC.md "wikilink").                                                                                                                                                |
+| 2168-0000 | Userland ARM undefined instruction exception                                                                                                                                                       |
+| 2168-0001 | Userland ARM prefetch-abort due to PC set to non-executable region                                                                                                                                 |
+| 2168-0002 | Userland ARM data abort. Also caused by abnormal process termination via [svcExitProcess](SVC.md "wikilink"). Note: directly jumping to nnMain()-retaddr from non-main-thread has the same result. |
+| 2168-0003 | Userland PC address not aligned to 4 bytes                                                                                                                                                         |
