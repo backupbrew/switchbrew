@@ -112,8 +112,10 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 ## svcBreak
 
-When used on retail the system will throw a
-[fatal-error](Error%20codes.md "wikilink").
+When used on retail where inx0 bit31 is clear, the system will throw a
+[fatal-error](Error%20codes.md "wikilink"). Otherwise when bit31 is set,
+it will return
+0.
 
 ## svcGetInfo
 
