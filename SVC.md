@@ -112,8 +112,7 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 ## svcBreak
 
-On retail when called with all 3 input params set to value 0, the system
-will throw a
+When used on retail the system will throw a
 [fatal-error](Error%20codes.md "wikilink").
 
 ## svcGetInfo
