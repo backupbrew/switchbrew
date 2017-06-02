@@ -87,7 +87,7 @@
 | 0100000000000804 | HTML resources: Open-source licenses, seizure warnings                                                                                                               |
 | 0100000000000805 | Chinese and Korean dictionaries                                                                                                                                      |
 | 0100000000000806 | Bad words                                                                                                                                                            |
-| 0100000000000807 | Contains wifi ssids with passwords                                                                                                                                   |
+| 0100000000000807 | [Hotspot List](Hotspot%20List.md "wikilink")                                                                                                                         |
 | 0100000000000808 | European, English and Japanese dictionaries                                                                                                                          |
 | 0100000000000809 | [System Version Title](System%20Version%20Title.md "wikilink")                                                                                                       |
 | 010000000000080A | Chara?                                                                                                                                                               |
