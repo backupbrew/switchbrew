@@ -165,7 +165,7 @@ When a fatal-error is received the error code is outputted using the following f
 ! Error || Description
 |-
 | 2162-0002
-| Triggered by running [[SVC|svcBreak]].
+| Can be triggered by running [[SVC|svcBreak]]. The svcBreak params have no affect on the value of the thrown error-code.
 |-
 | 2168-0000
 | Userland ARM undefined instruction exception
