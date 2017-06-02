@@ -7,3 +7,13 @@ The first line in the file is the decimal version. This is the same one
 accessible from Error History in System Settings. The rest of the file
 is the actual info for each hotspot, with all config needed to connect
 to them, including network crypto if needed.
+
+# System Usage
+
+The system will not automatically connect to these hotspots. The user
+must select the hotspot from System Settings -\> Internet Settings, the
+AP is listed with a special icon. Once selected the system will handle
+any required configuration, including network passphrase.
+
+There's nothing special noticeable with these hotspots compared to
+normal APs for system handling, once connected.
