@@ -279,7 +279,7 @@ the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
 `   u32 __pad;`  
 `   u64 __refcount; // out`  
 `   u32 __size;     // out`  
-`   u32 __flags;    // out`  
+`   u32 __flags;    // out, 1=NOT_FREED_YET`  
 ` };`
 
 ### NVMAP\_IOC\_PARAM

@@ -333,7 +333,7 @@ This one is completely custom. Partly because the Linux driver passed the handle
     u32 __pad;
     u64 __refcount; // out
     u32 __size;     // out
-    u32 __flags;    // out
+    u32 __flags;    // out, 1=NOT_FREED_YET
   };
 
 === NVMAP_IOC_PARAM ===
