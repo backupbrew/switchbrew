@@ -518,8 +518,7 @@ Switch.
 ### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2
 
 Allocates gpfifo entries with additional parameters and returns a fence.
-Exclusive to the
-Switch.
+Exclusive to the Switch.
 
 ` struct {`  
 `   u32 __num_entries;         // in`  
@@ -532,6 +531,9 @@ Switch.
 ` };`
 
 ## Remaining Ioctls
+
+Not accessible, but there is code to invoke
+them.
 
 | Value               | Size       | Description                               | Notes                 |
 | ------------------- | ---------- | ----------------------------------------- | --------------------- |

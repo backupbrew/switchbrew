@@ -608,6 +608,8 @@ Allocates gpfifo entries with additional parameters and returns a fence. Exclusi
   };
 
 == Remaining Ioctls ==
+Not accessible, but there is code to invoke them.
+
 {| class="wikitable" border="1"
 ! Value || Size || Description || Notes
 |-
