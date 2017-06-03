@@ -341,7 +341,7 @@ Returns info about a nvmap object. Identical to Linux driver, but extended with 
 
   struct {
     u32 __handle; // in
-    u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=?, 4=?, 5=UNK0, 6=?
+    u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=BASE (returns error), 4=HEAP (always 0x40000000), 5=KIND, 6=COMPR (unused)
     u32 __result; // out
   };
 
@@ -431,53 +431,188 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0x00000013 || 0 || ||
 |- style="border-top: double"
-| 0x40044801 || 4 || NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD ||
+| 0x40044801 || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD]] ||
 |-
 | 0x40044803 || 4 || NVGPU_IOCTL_CHANNEL_SET_PRIORITY ||
 |-
-| 0x40084805 || 8 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO ||
+| 0x40084805 || 8 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO]] ||
 |-
 | 0xC0044807 || 4 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS ||
 |-
-| 0xC0184808 || 24 || NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO ||
+| 0xC0??4808 || Variable || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO]] ||
 |-
-| 0xC0104809 || 16 || NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX ||
-|-
-| 0x4008480A || 8 || NVGPU_IOCTL_CHANNEL_FREE_OBJ_CTX ||
+| 0xC0104809 || 16 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX]] ||
 |-
 | 0xC010480B || 16 || NVGPU_IOCTL_CHANNEL_ZCULL_BIND ||
 |-
-| 0xC018480C || 24 || NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER ||
+| 0xC018480C || 24 || [[#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER]] ||
 |-
-| 0x4004480D || 4 || NVGPU_IOCTL_CHANNEL_OPEN ||
+| 0x4004480D || 4 || [[#NVGPU_IOCTL_CHANNEL_OPEN]] ||
 |-
-| 0x0000480E || 0 || NVGPU_IOCTL_CHANNEL_ENABLE ||
+| 0x0000480E || 0 || [[#NVGPU_IOCTL_CHANNEL_ENABLE]] ||
 |-
-| 0x0000480F || 0 || NVGPU_IOCTL_CHANNEL_DISABLE ||
+| 0x0000480F || 0 || [[#NVGPU_IOCTL_CHANNEL_DISABLE]] ||
 |-
-| 0x00004810 || 0 || NVGPU_IOCTL_CHANNEL_PREEMPT ||
+| 0x00004810 || 0 || [[#NVGPU_IOCTL_CHANNEL_PREEMPT]] ||
 |-
-| 0x00004811 || 0 || NVGPU_IOCTL_CHANNEL_FORCE_RESET ||
+| 0x00004811 || 0 || [[#NVGPU_IOCTL_CHANNEL_FORCE_RESET]] ||
 |-
-| 0x40084812 || 8 || NVGPU_IOCTL_CHANNEL_EVENTS_CTRL ||
+| 0x40084812 || 8 || [[#NVGPU_IOCTL_CHANNEL_EVENTS_CTRL]] ||
 |-
 | 0xC0104813 || 16 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS_SNAPSHOT ||
 |-
-| 0x80804816 || 128 ||
+| 0x80804816 || 128 || || Only works when the channel is busy
 |-
-| 0xC0104817 || 16 || ||
+| 0xC0104817 || 16 || [[#NVGPU_IOCTL_CHANNEL_GET_ERROR]] ||
 |-
-| 0x40204818 || 32 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX ||
+| 0x40204818 || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX]] ||
 |-
-| 0xC0484819 || 72 ||
+| 0xC0??4819 || Variable || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX]] ||
 |-
-| 0xC020481A || 32 || NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 ||
+| 0xC020481A || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2]] ||
 |-
 |- style="border-top: double"
-| 0x40084714 || 8 || set_user_address ||
+| 0x40084714 || 8 || set_user_address || Sets an unknown user context address
 |-
-| 0x80084715 || 8 || get_user_address ||
+| 0x80084715 || 8 || get_user_address || Gets an unknown user context address
 |}
+
+=== NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD ===
+Binds a nvmap object to this channel. Identical to Linux driver.
+
+  struct {
+    u32 __nvmap_fd;     // in
+  };
+
+=== NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO ===
+Allocates gpfifo entries. Identical to Linux driver.
+
+  struct {
+    u32 __num_entries;     // in
+    u32 __flags;           // in
+  };
+
+=== NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO ===
+Submits a gpfifo object. Modified to take inline fence objects instead of a pointer.
+
+  struct fence {
+    u32 __id;
+    u32 __value;
+  };
+ 
+  struct {
+    u64 __gpfifo;              // in (pointer to gpfifo fence structs; ignored)
+    u32 __num_entries;         // in (number of fence objects being submitted)
+    u32 __flags;               // in
+    struct fence __fence_out;  // out (returned new fence object for others to wait on)
+    struct fence __fence;      // in (fence objects; depends on __num_entries)
+    ...
+  };
+
+=== NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX ===
+Allocates a graphics context object. Modified to ignore object's ID.
+
+  struct {
+    u32 __class_num;    // in (0xB197=2d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo)
+    u32 __flags;        // in
+    u64 __obj_id;       // out (ignored; used for FREE_OBJ_CTX ioctl, which is not supported)
+  };
+
+=== NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER ===
+Initializes the error notifier for this channel. Identical to Linux driver.
+
+  struct {
+    u64 __offset;    // in
+    u64 __size;      // in
+    u32 __mem;       // in (nvmap object handle)
+    u32 __padding;   // in
+  };
+
+=== NVGPU_IOCTL_CHANNEL_OPEN ===
+Opens the current channel. Unused and takes an unknown argument.
+
+  struct {
+    u32 __unk;    // in (only accepts 0x32, 0x64 or 0x96)
+  };
+
+=== NVGPU_IOCTL_CHANNEL_ENABLE ===
+Enables the current channel. Identical to Linux driver.
+
+=== NVGPU_IOCTL_CHANNEL_DISABLE ===
+Disables the current channel. Identical to Linux driver.
+
+=== NVGPU_IOCTL_CHANNEL_PREEMPT ===
+Clears the FIFO pipe for this channel. Identical to Linux driver.
+
+=== NVGPU_IOCTL_CHANNEL_FORCE_RESET ===
+Forces the channel to reset. Identical to Linux driver.
+
+=== NVGPU_IOCTL_CHANNEL_EVENTS_CTRL ===
+Controls event notifications. Modified to take an additional argument.
+
+  struct {
+    u32 __cmd;    // in (0=disable, 1=enable, 2=clear)
+    u32 __unk;    // in (accepts 1 or 2)
+  };
+
+=== NVGPU_IOCTL_CHANNEL_GET_ERROR ===
+Returns the current error notification caught by the error notifier. Exclusive to the Switch.
+
+  struct {
+    u64 __timestamp;    // out (nanoseconds since Jan. 1, 1970)
+    u32 __info32;       // out (error code)
+    u16 __info16;       // out (additional error info)
+    u16 __status;       // out (always 0xFFFF)
+  };
+
+=== NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX ===
+Allocates gpfifo entries with additional parameters. Exclusive to the Switch.
+
+  struct {
+    u32 __num_entries;     // in
+    u32 __flags;           // in
+    u32 __unk0;            // in (1 works)
+    u32 __unk1;            // in
+    u32 __unk2;            // in
+    u32 __unk3;            // in
+    u32 __unk4;            // in
+    u32 __unk5;            // in
+  };
+
+=== NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX ===
+Submits a gpfifo object (async version). Exclusive to the Switch.
+
+  struct fence {
+    u32 __id;
+    u32 __value;
+  };
+ 
+  struct {
+    u64 __gpfifo;              // in (pointer to gpfifo fence structs; ignored)
+    u32 __num_entries;         // in (number of fence objects being submitted)
+    u32 __flags;               // in
+    struct fence __fence_out;  // out (returned new fence object for others to wait on)
+    struct fence __fence;      // in (fence objects; depends on __num_entries)
+    ...
+  };
+
+=== NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 ===
+Allocates gpfifo entries with additional parameters and returns a fence. Exclusive to the Switch.
+
+  struct fence {
+    u32 __id;
+    u32 __value;
+  };
+ 
+  struct {
+    u32 __num_entries;         // in
+    u32 __flags;               // in
+    u32 __unk0;                // in (1 works)
+    struct fence __fence_out;  // out
+    u32 __unk1;                // in
+    u32 __unk2;                // in
+    u32 __unk3;                // in
+  };
 
 == Remaining Ioctls ==
 {| class="wikitable" border="1"
@@ -568,6 +703,8 @@ Most nvidia driver commands return an error code apart from the normal return co
 | 0x10 || CountMismatch
 |-
 | 0x1000 || SharedMemoryTooSmall
+|-
+| 0x30003 || FileOperationFailed
 |-
 | 0x3000F || IoctlFailed                        
 |}

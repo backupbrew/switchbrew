@@ -285,11 +285,12 @@ the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
 ### NVMAP\_IOC\_PARAM
 
 Returns info about a nvmap object. Identical to Linux driver, but
-extended with further params.
+extended with further
+params.
 
 ` struct {`  
 `   u32 __handle; // in`  
-`   u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=?, 4=?, 5=UNK0, 6=?`  
+`   u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=BASE (returns error), 4=HEAP (always 0x40000000), 5=KIND, 6=COMPR (unused)`  
 `   u32 __result; // out`  
 ` };`
 
@@ -342,40 +343,200 @@ interface.
 
 ## Channel Ioctls
 
-| Value      | Size     | Description                                   | Notes |
-| ---------- | -------- | --------------------------------------------- | ----- |
-| 0xC0??0001 | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT                |       |
-| 0xC0080002 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT        |       |
-| 0xC0080003 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE         |       |
-| 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX      |       |
-| 0x40040007 | 4        |                                               |       |
-| 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER           |       |
-| 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER         |       |
-| 0x00000013 | 0        |                                               |       |
-| 0x40044801 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD         |       |
-| 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY          |       |
-| 0x40084805 | 8        | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO          |       |
-| 0xC0044807 | 4        | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS           |       |
-| 0xC0184808 | 24       | NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO         |       |
-| 0xC0104809 | 16       | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX        |       |
-| 0x4008480A | 8        | NVGPU\_IOCTL\_CHANNEL\_FREE\_OBJ\_CTX         |       |
-| 0xC010480B | 16       | NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND            |       |
-| 0xC018480C | 24       | NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER   |       |
-| 0x4004480D | 4        | NVGPU\_IOCTL\_CHANNEL\_OPEN                   |       |
-| 0x0000480E | 0        | NVGPU\_IOCTL\_CHANNEL\_ENABLE                 |       |
-| 0x0000480F | 0        | NVGPU\_IOCTL\_CHANNEL\_DISABLE                |       |
-| 0x00004810 | 0        | NVGPU\_IOCTL\_CHANNEL\_PREEMPT                |       |
-| 0x00004811 | 0        | NVGPU\_IOCTL\_CHANNEL\_FORCE\_RESET           |       |
-| 0x40084812 | 8        | NVGPU\_IOCTL\_CHANNEL\_EVENTS\_CTRL           |       |
-| 0xC0104813 | 16       | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS\_SNAPSHOT |       |
-| 0x80804816 | 128      |                                               |       |
-| 0xC0104817 | 16       |                                               |       |
-| 0x40204818 | 32       | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX      |       |
-| 0xC0484819 | 72       |                                               |       |
-| 0xC020481A | 32       | NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2     |       |
-|            |          |                                               |       |
-| 0x40084714 | 8        | set\_user\_address                            |       |
-| 0x80084715 | 8        | get\_user\_address                            |       |
+| Value      | Size     | Description                                                                                         | Notes                                |
+| ---------- | -------- | --------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| 0xC0??0001 | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT                                                                      |                                      |
+| 0xC0080002 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT                                                              |                                      |
+| 0xC0080003 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE                                                               |                                      |
+| 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                            |                                      |
+| 0x40040007 | 4        |                                                                                                     |                                      |
+| 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER                                                                 |                                      |
+| 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER                                                               |                                      |
+| 0x00000013 | 0        |                                                                                                     |                                      |
+| 0x40044801 | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD](#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD "wikilink")             |                                      |
+| 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY                                                                |                                      |
+| 0x40084805 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO "wikilink")              |                                      |
+| 0xC0044807 | 4        | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS                                                                 |                                      |
+| 0xC0??4808 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO "wikilink")            |                                      |
+| 0xC0104809 | 16       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX](#NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX "wikilink")           |                                      |
+| 0xC010480B | 16       | NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND                                                                  |                                      |
+| 0xC018480C | 24       | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER](#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER "wikilink") |                                      |
+| 0x4004480D | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_OPEN](#NVGPU_IOCTL_CHANNEL_OPEN "wikilink")                               |                                      |
+| 0x0000480E | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_ENABLE](#NVGPU_IOCTL_CHANNEL_ENABLE "wikilink")                           |                                      |
+| 0x0000480F | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_DISABLE](#NVGPU_IOCTL_CHANNEL_DISABLE "wikilink")                         |                                      |
+| 0x00004810 | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_PREEMPT](#NVGPU_IOCTL_CHANNEL_PREEMPT "wikilink")                         |                                      |
+| 0x00004811 | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_FORCE\_RESET](#NVGPU_IOCTL_CHANNEL_FORCE_RESET "wikilink")                |                                      |
+| 0x40084812 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_EVENTS\_CTRL](#NVGPU_IOCTL_CHANNEL_EVENTS_CTRL "wikilink")                |                                      |
+| 0xC0104813 | 16       | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS\_SNAPSHOT                                                       |                                      |
+| 0x80804816 | 128      |                                                                                                     | Only works when the channel is busy  |
+| 0xC0104817 | 16       | [\#NVGPU\_IOCTL\_CHANNEL\_GET\_ERROR](#NVGPU_IOCTL_CHANNEL_GET_ERROR "wikilink")                    |                                      |
+| 0x40204818 | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX "wikilink")       |                                      |
+| 0xC0??4819 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_EX](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX "wikilink")     |                                      |
+| 0xC020481A | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 "wikilink")     |                                      |
+|            |          |                                                                                                     |                                      |
+| 0x40084714 | 8        | set\_user\_address                                                                                  | Sets an unknown user context address |
+| 0x80084715 | 8        | get\_user\_address                                                                                  | Gets an unknown user context address |
+
+### NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD
+
+Binds a nvmap object to this channel. Identical to Linux driver.
+
+` struct {`  
+`   u32 __nvmap_fd;     // in`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO
+
+Allocates gpfifo entries. Identical to Linux driver.
+
+` struct {`  
+`   u32 __num_entries;     // in`  
+`   u32 __flags;           // in`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO
+
+Submits a gpfifo object. Modified to take inline fence objects instead
+of a
+pointer.
+
+` struct fence {`  
+`   u32 __id;`  
+`   u32 __value;`  
+` };`  
+  
+` struct {`  
+`   u64 __gpfifo;              // in (pointer to gpfifo fence structs; ignored)`  
+`   u32 __num_entries;         // in (number of fence objects being submitted)`  
+`   u32 __flags;               // in`  
+`   struct fence __fence_out;  // out (returned new fence object for others to wait on)`  
+`   struct fence __fence;      // in (fence objects; depends on __num_entries)`  
+`   ...`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX
+
+Allocates a graphics context object. Modified to ignore object's
+ID.
+
+` struct {`  
+`   u32 __class_num;    // in (0xB197=2d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo)`  
+`   u32 __flags;        // in`  
+`   u64 __obj_id;       // out (ignored; used for FREE_OBJ_CTX ioctl, which is not supported)`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER
+
+Initializes the error notifier for this channel. Identical to Linux
+driver.
+
+` struct {`  
+`   u64 __offset;    // in`  
+`   u64 __size;      // in`  
+`   u32 __mem;       // in (nvmap object handle)`  
+`   u32 __padding;   // in`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_OPEN
+
+Opens the current channel. Unused and takes an unknown argument.
+
+` struct {`  
+`   u32 __unk;    // in (only accepts 0x32, 0x64 or 0x96)`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_ENABLE
+
+Enables the current channel. Identical to Linux driver.
+
+### NVGPU\_IOCTL\_CHANNEL\_DISABLE
+
+Disables the current channel. Identical to Linux driver.
+
+### NVGPU\_IOCTL\_CHANNEL\_PREEMPT
+
+Clears the FIFO pipe for this channel. Identical to Linux driver.
+
+### NVGPU\_IOCTL\_CHANNEL\_FORCE\_RESET
+
+Forces the channel to reset. Identical to Linux driver.
+
+### NVGPU\_IOCTL\_CHANNEL\_EVENTS\_CTRL
+
+Controls event notifications. Modified to take an additional argument.
+
+` struct {`  
+`   u32 __cmd;    // in (0=disable, 1=enable, 2=clear)`  
+`   u32 __unk;    // in (accepts 1 or 2)`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_GET\_ERROR
+
+Returns the current error notification caught by the error notifier.
+Exclusive to the Switch.
+
+` struct {`  
+`   u64 __timestamp;    // out (nanoseconds since Jan. 1, 1970)`  
+`   u32 __info32;       // out (error code)`  
+`   u16 __info16;       // out (additional error info)`  
+`   u16 __status;       // out (always 0xFFFF)`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX
+
+Allocates gpfifo entries with additional parameters. Exclusive to the
+Switch.
+
+` struct {`  
+`   u32 __num_entries;     // in`  
+`   u32 __flags;           // in`  
+`   u32 __unk0;            // in (1 works)`  
+`   u32 __unk1;            // in`  
+`   u32 __unk2;            // in`  
+`   u32 __unk3;            // in`  
+`   u32 __unk4;            // in`  
+`   u32 __unk5;            // in`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_EX
+
+Submits a gpfifo object (async version). Exclusive to the
+Switch.
+
+` struct fence {`  
+`   u32 __id;`  
+`   u32 __value;`  
+` };`  
+  
+` struct {`  
+`   u64 __gpfifo;              // in (pointer to gpfifo fence structs; ignored)`  
+`   u32 __num_entries;         // in (number of fence objects being submitted)`  
+`   u32 __flags;               // in`  
+`   struct fence __fence_out;  // out (returned new fence object for others to wait on)`  
+`   struct fence __fence;      // in (fence objects; depends on __num_entries)`  
+`   ...`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2
+
+Allocates gpfifo entries with additional parameters and returns a fence.
+Exclusive to the
+Switch.
+
+` struct fence {`  
+`   u32 __id;`  
+`   u32 __value;`  
+` };`  
+  
+` struct {`  
+`   u32 __num_entries;         // in`  
+`   u32 __flags;               // in`  
+`   u32 __unk0;                // in (1 works)`  
+`   struct fence __fence_out;  // out`  
+`   u32 __unk1;                // in`  
+`   u32 __unk2;                // in`  
+`   u32 __unk3;                // in`  
+` };`
 
 ## Remaining Ioctls
 
@@ -434,4 +595,5 @@ return code.
 | 0xF     | ResourceError        |
 | 0x10    | CountMismatch        |
 | 0x1000  | SharedMemoryTooSmall |
+| 0x30003 | FileOperationFailed  |
 | 0x3000F | IoctlFailed          |
