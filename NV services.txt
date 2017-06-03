@@ -499,13 +499,18 @@ Submits a gpfifo object. Modified to take inline fence objects instead of a poin
     u32 __id;
     u32 __value;
   };
- 
+  
+  struct gpfifo_entry {
+    u32 __entry0;
+    u32 __entry1;
+  };
+  
   struct {
-    u64 __gpfifo;              // in (pointer to gpfifo fence structs; ignored)
-    u32 __num_entries;         // in (number of fence objects being submitted)
-    u32 __flags;               // in
-    struct fence __fence_out;  // out (returned new fence object for others to wait on)
-    struct fence __fence[];    // in (fence objects; depends on __num_entries)
+    u64 __gpfifo;                     // in (pointer to gpfifo fence structs; ignored)
+    u32 __num_entries;                // in (number of fence objects being submitted)
+    u32 __flags;                      // in
+    struct fence        __fence_out;  // out (returned new fence object for others to wait on)
+    struct gpfifo_entry __entries[];  // in (depends on __num_entries)
   };
 
 === NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX ===
