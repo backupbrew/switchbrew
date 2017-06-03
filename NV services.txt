@@ -505,8 +505,7 @@ Submits a gpfifo object. Modified to take inline fence objects instead of a poin
     u32 __num_entries;         // in (number of fence objects being submitted)
     u32 __flags;               // in
     struct fence __fence_out;  // out (returned new fence object for others to wait on)
-    struct fence __fence;      // in (fence objects; depends on __num_entries)
-    ...
+    struct fence __fence[];    // in (fence objects; depends on __num_entries)
   };
 
 === NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX ===

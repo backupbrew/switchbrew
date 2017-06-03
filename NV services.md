@@ -410,8 +410,7 @@ pointer.
 `   u32 __num_entries;         // in (number of fence objects being submitted)`  
 `   u32 __flags;               // in`  
 `   struct fence __fence_out;  // out (returned new fence object for others to wait on)`  
-`   struct fence __fence;      // in (fence objects; depends on __num_entries)`  
-`   ...`  
+`   struct fence __fence[];    // in (fence objects; depends on __num_entries)`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX
