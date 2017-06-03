@@ -77,10 +77,10 @@ following formatter:
 | 0x3EE03  | 503         | Invalid memory mirror                                         |
 | 0xDC05   | 110         | Gamecard not inserted                                         |
 | 0x6609   | 51          | Invalid memory state/permission                               |
-| 0x6A09   | 53          | Invalid Nrr                                                   |
-| 0xA209   | 81          | Unaligned Nrr address                                         |
-| 0xA409   | 82          | Bad Nrr size                                                  |
-| 0xAA09   | 85          | Bad Nrr address                                               |
+| 0x6A09   | 53          | Invalid NRR                                                   |
+| 0xA209   | 81          | Unaligned NRR address                                         |
+| 0xA409   | 82          | Bad NRR size                                                  |
+| 0xAA09   | 85          | Bad NRR address                                               |
 | 0x1A80A  | 212         | Bad magic (expected 'SFCO')                                   |
 | 0x20B    | 1           | Size too big to fit to marshal.                               |
 | 0x11A0B  | 141         | Went past maximum during marshalling.                         |
@@ -90,8 +90,8 @@ following formatter:
 | 0x20F    | 1           | Pid not found                                                 |
 | 0x0C15   | 6           | Invalid name (all zeroes)                                     |
 | 0x1015   | 8           | Permission denied                                             |
-| 0x816    | 4           | Bad Nro magic                                                 |
-| 0xC16    | 6           | Bad Nrr magic                                                 |
+| 0x816    | 4           | Bad NRO magic                                                 |
+| 0xC16    | 6           | Bad NRR magic                                                 |
 | 0x287C   | 20          | Argument is NULL                                              |
 | 0x2C7C   | 22          | Argument is invalid                                           |
 | 0x3C7C   | 30          | Bad input buffer size                                         |

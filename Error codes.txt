@@ -125,13 +125,13 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x6609 || 51 || Invalid memory state/permission
 |-
-| 0x6A09 || 53 || Invalid Nrr
+| 0x6A09 || 53 || Invalid NRR
 |-
-| 0xA209 || 81 || Unaligned Nrr address
+| 0xA209 || 81 || Unaligned NRR address
 |-
-| 0xA409 || 82 || Bad Nrr size
+| 0xA409 || 82 || Bad NRR size
 |-
-| 0xAA09 || 85 || Bad Nrr address
+| 0xAA09 || 85 || Bad NRR address
 |-
 | 0x1A80A || 212 || Bad magic (expected 'SFCO')
 |-
@@ -151,9 +151,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1015 || 8 || Permission denied
 |-
-| 0x816 || 4 || Bad Nro magic
+| 0x816 || 4 || Bad NRO magic
 |-
-| 0xC16 || 6 || Bad Nrr magic
+| 0xC16 || 6 || Bad NRR magic
 |-
 | 0x287C || 20 || Argument is NULL
 |-
