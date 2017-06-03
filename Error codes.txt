@@ -38,7 +38,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 21 || SM
 |-
-| 22 || RO user
+| 22 || RO userland
 |-
 | 110 || NIFM
 |-
@@ -49,6 +49,10 @@ When a fatal-error is received the error code is outputted using the following f
 | 126 || Mii
 |-
 | 129 || Play Report
+|-
+| 162 || Userland assert
+|-
+| 168 || Userland crash
 |-
 | 203 || HID
 |}

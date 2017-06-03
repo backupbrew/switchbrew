@@ -31,12 +31,14 @@ following formatter:
 | 15    | PM                           |
 | 16    | NS                           |
 | 21    | SM                           |
-| 22    | RO user                      |
+| 22    | RO userland                  |
 | 110   | NIFM                         |
 | 110   | Display                      |
 | 124   | Account                      |
 | 126   | Mii                          |
 | 129   | Play Report                  |
+| 162   | Userland assert              |
+| 168   | Userland crash               |
 | 203   | HID                          |
 
 # Error codes
