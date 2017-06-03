@@ -176,8 +176,8 @@ Doesn't do shit.
 Nintendo custom.
 
 ` struct {`  
-`   u32 __unk;       // in, 0 works`  
-`   u32 __zeroes[3]; // in`  
+`   u32 __size;       // in (must be aligned to 0x10000; 0=default)`  
+`   u32 __zeroes[3];  // in`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS
@@ -205,13 +205,13 @@ Nintendo
 custom.
 
 ` struct {`  
-`   u32 __unk0; // in`  
+`   u32 __size; // in (must be aligned to 0x10000; 0=default)`  
 `   u32 __pad0;`  
-`   u32 __unk1; // in`  
+`   u32 __unk0; // in`  
 `   u32 __pad1;`  
+`   u64 __unk1; // in`  
 `   u64 __unk2; // in`  
 `   u64 __unk3; // in`  
-`   u64 __unk4; // in`  
 ` };`
 
 ## /dev/nvmap
