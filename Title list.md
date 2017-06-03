@@ -111,33 +111,4 @@
 
 ## Games
 
-| Title-id          | Description                                                   |
-| ----------------- | ------------------------------------------------------------- |
-| 01000320-000CC000 | 1-2 Switch (Region Free)(Game)                                |
-| 0100EE60-02B48000 | ACA Neo Geo Fatal Fury (Region Free) (Game VC)                |
-| 0100CB20-01DB8000 | ACA Neo Geo Garou: Mark of the Wolves (Region Free) (Game VC) |
-| 0100BA80-01DC6000 | ACA Neo Geo Metal Slug 3 (Region Free) (Game VC)              |
-| 01003A50-01DBA000 | ACA Neo Geo Over Top (Region Free) (Game VC)                  |
-| 0100EB20-01DCC000 | ACA Neo Geo The King of Fighters '94 (Region Free) (Game VC)  |
-| 0100B420-01DB4000 | ACA Neo Geo The King of Fighters '98 (Region Free) (Game VC)  |
-| 01002E70-032E8000 | ACA Neo Geo Turf Masters (Region Free) (Game VC)              |
-| 0100CEF0-01DC0000 | ACA Neo Geo Waku Waku 7 (Region Free) (Game VC)               |
-| 01009D40-01DC4000 | ACA Neo Geo World Heroes Perfect (Region Free) (Game VC)      |
-| 0100C5E0-03B40000 | ARMS Global Testpunch (Region Free)(Timed Demo)               |
-| 010025B0-02E92000 | Blaster Master Zero (Region Free)(Demo)                       |
-| 01002250-00FEE000 | Blaster Master Zero (Region Free)(Demo)                       |
-| 01001FA0-034E2000 | Dark Witch Music Episode: Rudymical (Region Free)             |
-| 0100E670-03A86000 | Disgaea 5 Complete (Region Free)                              |
-| 01009300-02EAA000 | Dragon Quest Heroes 1 & 2 (USA)                               |
-| 0100F120-02FC8000 | Everyone Party\! Spelunker (JAP)                              |
-| 01009510-001CA000 | FAST RMX (JAP)                                                |
-| 01006740-034F6000 | Just Dance 2017 (USA)                                         |
-| 01008530-0314E000 | Kamiko (USA)                                                  |
-| 01001520-00022000 | Mario Kart 8 Deluxe                                           |
-| 01006BD0-01E06000 | Minecraft: Nintendo Switch Edition                            |
-| 010031F0-02B66000 | Mr. Shifty                                                    |
-| 01000290-0294A000 | NBA Playgrounds                                               |
-| 01004C20-0100E000 | New Frontier Days: Founding Pioneers                          |
-| 01009020-01014000 | Othello                                                       |
-| 01000DC0-03740000 | Puyo Puyo Tetris                                              |
-| 01004B10-031BE000 | Puyo Puyo Tetris                                              |
+See [here](Title%20list%20Games.md "wikilink").
