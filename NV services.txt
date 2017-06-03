@@ -404,11 +404,11 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | /dev/nvhost-gpu ||
 |-
-| /dev/nvhost-vic ||
+| /dev/nvhost-vic || Video Image Compositor
 |-
-| /dev/nvhost-nvdec ||
+| /dev/nvhost-nvdec || Video Decoder
 |-
-| /dev/nvhost-nvjpg ||
+| /dev/nvhost-nvjpg || JPEG Decoder
 |}
 
 == Channel Ioctls ==
