@@ -396,7 +396,7 @@ Allocates gpfifo entries. Identical to Linux driver.
 
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO
 
-Submits a gpfifo object. Modified to take inline fence objects instead
+Submits a gpfifo object. Modified to take inline entry objects instead
 of a
 pointer.
 
@@ -507,18 +507,12 @@ Switch.
 Submits a gpfifo object (async version). Exclusive to the
 Switch.
 
-` struct fence {`  
-`   u32 __id;`  
-`   u32 __value;`  
-` };`  
-  
 ` struct {`  
-`   u64 __gpfifo;              // in (pointer to gpfifo fence structs; ignored)`  
-`   u32 __num_entries;         // in (number of fence objects being submitted)`  
-`   u32 __flags;               // in`  
-`   struct fence __fence_out;  // out (returned new fence object for others to wait on)`  
-`   struct fence __fence;      // in (fence objects; depends on __num_entries)`  
-`   ...`  
+`   u64 __gpfifo;                     // in (pointer to gpfifo fence structs; ignored)`  
+`   u32 __num_entries;                // in (number of fence objects being submitted)`  
+`   u32 __flags;                      // in`  
+`   struct fence        __fence_out;  // out (returned new fence object for others to wait on)`  
+`   struct gpfifo_entry __entries[];  // in (depends on __num_entries)`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2
@@ -527,11 +521,6 @@ Allocates gpfifo entries with additional parameters and returns a fence.
 Exclusive to the
 Switch.
 
-` struct fence {`  
-`   u32 __id;`  
-`   u32 __value;`  
-` };`  
-  
 ` struct {`  
 `   u32 __num_entries;         // in`  
 `   u32 __flags;               // in`  
