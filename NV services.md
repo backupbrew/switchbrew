@@ -182,8 +182,8 @@ Nintendo custom.
 
 ### NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS
 
-Nintendo modified
-heavily.
+Nintendo modified to get rid of pointer in
+struct.
 
 ` struct va_region {`  
 `   u64 __offset;`  
@@ -193,7 +193,7 @@ heavily.
 ` };`  
 ` `  
 ` struct {`  
-`   u64              __not_used;`  
+`   u64              __not_used;   // (contained output user ptr on linux, ignored)`  
 `   u32              __bufsize;    // inout, forced to 2*sizeof(struct va_region)`  
 `   u32              __reserved;`  
 `   struct va_region __regions[2]; // out`  
