@@ -33,7 +33,7 @@ following formatter:
 | 21    | SM                           |
 | 22    | RO userland                  |
 | 110   | NIFM                         |
-| 110   | Display                      |
+| 114   | Display                      |
 | 124   | Account                      |
 | 126   | Mii                          |
 | 129   | Play Report                  |

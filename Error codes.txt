@@ -42,7 +42,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 110 || NIFM
 |-
-| 110 || Display
+| 114 || Display
 |-
 | 124 || Account
 |-
