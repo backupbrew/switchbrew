@@ -104,7 +104,7 @@
 |-
 | 0100000000000803 || Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...
 |-
-| 0100000000000804 || HTML resources: Open-source licenses, seizure warnings
+| 0100000000000804 || HTML resources: Open-source licenses("Intellectual Property Notices") and seizure warnings("Health & Safety Information"). The former is stored at FS "/legallines.htdocs/", while the latter is at "/safe.htdocs/".
 |-
 | 0100000000000805 || Chinese and Korean dictionaries
 |-
