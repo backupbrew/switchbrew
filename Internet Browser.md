@@ -96,6 +96,9 @@ following:
 
 ## ShopN
 
+The initial page loaded by ShopN seems to be the following:
+"https://bugyo.hac.lp1.eshop.nintendo.net/ashigaru/".
+
 The file at "<data:/whitelist/WhitelistEc.txt>", which doesn't exist in
 WifiWebAuthApplet, contains the following:
 

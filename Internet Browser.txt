@@ -107,6 +107,8 @@ The file at "data:/whitelist/WhitelistLns.txt" for LoginApplet/ShareApplet/Lobby
  ^https://([0-9A-Za-z\-]+\.)*twitter\.com(/|$)</nowiki>
 
 == ShopN ==
+The initial page loaded by ShopN seems to be the following: <nowiki>"https://bugyo.hac.lp1.eshop.nintendo.net/ashigaru/"</nowiki>.
+
 The file at "data:/whitelist/WhitelistEc.txt", which doesn't exist in WifiWebAuthApplet, contains the following:
 
   <nowiki>^https://([0-9A-Za-z\-]+\.)*eshop\.nintendo\.net($|/)
