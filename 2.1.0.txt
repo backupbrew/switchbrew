@@ -9,7 +9,9 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 *General system stability improvements to enhance the user's experience
 
 ==System Titles==
-It's unknown exactly what titles were updated. The [[Hotspot List]] was not updated.
+It's unknown exactly what titles were updated.
+
+Besides [[Internet_Browser|shareddata]] and FIRM-packageB(see below), the only 01000000000008XX [[Title_list|titles]] accessible from web-applet which were updated, is the system-version title.
 
 ===[[Internet_Browser|Browser]]===
 A browser vuln was [[Switch_Userland_Flaws|fixed]], see also [[Internet_Browser|here]] for v2.1 browser details.
