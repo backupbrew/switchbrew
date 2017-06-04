@@ -19,3 +19,113 @@ Title 0100000000000819 wasn't updated. The only change in title 010000000000081A
 
 ===[[NS_Services|NS]]-sysmodule===
 The NS-sysmodule was updated. 4 new funcs were added and 29 funcs were updated.
+
+The ASLR'd codebin base(rtld+0) for the below addrs is 0x6f0c00000. For "prev ver" it's 0x5381800000.
+
+  L_6f0c26f84
+  new func.
+  called via vtable funcptr.
+  return L_6f0c2814c(inx0+8, inx1, w2=0xd9) & 0xffffffff;
+  
+  L_6f0c2814c
+  inx0=_this inx1=0x40-byte outbuf copied from cmdreply inw2=cmdid
+  new func.
+  Sends an ipc cmd, service unknown.
+  only called by L_6f0c26f84.
+  
+  L_6f0c373f4
+  updated, prev ver @ L_5381837284.
+  For the func call executed from the first branch(L_6f0c377e8()), x1 and x2 are now set: x1 = *(0x6f0d9d000+0xfc0)+0x90, x2 = 0x6f0d44000+0xb36("ncm")
+  
+  L_6f0c377e8
+  updated, prev ver @ L_5381837640.
+  Basically, instead of hard-coded inputs for various stuff, code now loads those using the additional input params.
+  
+  L_6f0c378b4
+  updated, prev ver @ L_538183771c.
+  ipc related func.
+  After the first func call, instead of "if(inx0==0 || ret^1)return;" this now just does "if(ret==0)return;" and "objptr = *(inx0+32);" afterwards.
+  The code at the end was replaced with code for calling a vtable funcptr from the objptr.
+  
+  L_6f0c379fc
+  updated, prev ver @ L_5381837874.
+  Instead of writing 0 to sp8, this now writes *(inx0+32) there.
+  
+  L_6f0c37a94
+  updated, prev ver @ L_5381837904.
+  Same change as L_6f0c379fc.
+  
+  L_6f0c37bf8
+  updated, prev ver @ L_5381837a60.
+  Loads stuff from input instead of hard-coding basically.
+  
+  {3 funcs with same changes as elsewhere}
+  
+  L_6f0c3a5f8
+  updated, prev ver @ L_538183a480.
+  Calls a different func and calls another func.
+  
+  L_6f0c3b644
+  updated, prev ver @ L_538183b494.
+  Error-related(?) code changed.
+  
+  L_6f0c400dc
+  updated, prev ver @ L_538183ff24.
+  A bunch of func calls were added after the bne.
+  
+  L_6f0c47590
+  updated, prev ver @ L_5381847394.
+  An additional check was added at 6f0c47748.
+  Some code at the end of the func was adjusted.
+  
+  L_6f0c49848
+  updated, prev ver @ L_5381849650.
+  Some sort of error(?) parsing func.
+  
+  L_6f0c51f44
+  updated, prev ver @ L_5381851d2c.
+  w7 passed to L_6f0c3a83c() with both calls is now value 7 instead of 0.
+  This also now calls L_6f0c3af70() when the retval from the previous func-call is zero.
+  
+  {3 error(?) parsing funcs which were updated}
+  
+  L_6f0c593ac
+  updated, prev ver @ L_5381859114.
+  Code was added inbetween the last func-call and the memwrite after that.
+  
+  L_6f0c5a528
+  updated, prev ver @ L_538185a254
+  Code was added at 0x6f0c5a6d4(prev 0x538185a400): L_6f0c67938(inx0+0xf0, 0, 0); u8 *(inx0+0x110) = 0;
+  
+  L_6f0c60d60
+  updated, prev ver @ L_5381860a78.
+  Code was updated starting at 0x6f0c61190(prev 0x5381860ea8). An additional param is passed to the snprintf call as well.
+  Some code was added at the end before the last branch.
+  
+  L_6f0c61ebc
+  updated, prev ver @ L_5381861b5c.
+  Code was added at 0x6f0c61f24(prev 0x5381861bc4).
+  
+  L_6f0cf7914
+  new func.
+  called via vtable funcptr.
+  
+  L_6f0cf7948
+  new func.
+  called via vtable funcptr.
+  
+  L_6f0cf7d24
+  updated, prev ver @ L_53818f7940.
+  Code was added at 0x6f0cf7ec4(prev 0x53818f7b00). "L_6f0c6798c(x21); w28 = u8 *(x19+0xf0); L_6f0c67a78(x21); <branch if w28!=0> if(u16 *(x26+16) <= x22)<branch to assert>"
+  The code at 0x6f0cf7fac(prev 0x53818f7bc8) now sets w8 to 0x15 instead of 0x13(likewise for the same instruction after the branch).
+  ...
+  
+  L_6f0cf8190
+  updated, prev ver @ L_53818f7d2c.
+  Some flag is determined differently now.
+  
+  L_6f0cf92d8
+  updated, prev ver @ L_53818f8e7c.
+  Added a call to L_6f0c67984 after the memwrite.
+  
+  {3 funcs with the same changes as L_6f0cf92d8}
