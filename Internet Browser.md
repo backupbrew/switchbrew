@@ -81,6 +81,9 @@ This is only available starting with [2.0.0](2.0.0.md "wikilink").
 
 ## Whitelisted Applets
 
+The v2.1 main-codebin page-aligned .text size is 0x1000-bytes larger
+than ShopN.
+
 The file at "<data:/whitelist/WhitelistLns.txt>" for
 LoginApplet/ShareApplet/LobbyApplet, which doesn't exist in
 WifiWebAuthApplet, contains the
