@@ -131,7 +131,7 @@ This is the Switch equivalent of
 | 0x0E | ErrorApplet                                                                                                                                 |
 | 0x10 | PlayerSelect                                                                                                                                |
 | 0x11 | Swkbd (on-screen keyboard)                                                                                                                  |
-| 0x14 | Ec (eshop related)                                                                                                                          |
+| 0x14 | Ec ([ShopN](Internet%20Browser.md "wikilink")) From ShopN string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletShop".            |
 | 0x19 | [WifiWebAuth](Internet%20Browser.md "wikilink") (From browser string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletWifiWebAuth") |
 
 This seems to be the equivalent of

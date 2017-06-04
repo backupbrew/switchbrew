@@ -254,7 +254,7 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 | Swkbd (on-screen keyboard)
 |-
 | 0x14
-| Ec (eshop related)
+| Ec ([[Internet_Browser|ShopN]]) From ShopN string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletShop".
 |-
 | 0x19
 | [[Internet_Browser|WifiWebAuth]] (From browser string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletWifiWebAuth")
