@@ -141,15 +141,15 @@ an unofficial name).
 
 # args.shimKind
 
-This is from strings and code in whitelisted web-applet.
+This is from strings and code in
+[whitelisted](Internet%20Browser.md "wikilink") web-applet.
 
 "args.shimKind() == ::nn::web::common::ShimKind::Lobby ||
 args.shimKind() == ::nn::web::common::ShimKind::Login || args.shimKind()
-==
-::nn::web::common::ShimKind::Share"
+== ::nn::web::common::ShimKind::Share"
 
-| shimKind value | Description                                                                     |
-| -------------- | ------------------------------------------------------------------------------- |
-| 2              | One of the types from the above "args.shimKind() ==" string, unknown which one. |
-| 4              | One of the types from the above "args.shimKind() ==" string, unknown which one. |
-| 7              | One of the types from the above "args.shimKind() ==" string, unknown which one. |
+| shimKind value | Description                    |
+| -------------- | ------------------------------ |
+| 2              | LoginApplet (See above string) |
+| 4              | ShareApplet (See above string) |
+| 7              | LobbyApplet (See above string) |
