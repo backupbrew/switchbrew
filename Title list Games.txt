@@ -41,7 +41,7 @@
 |-
 | 010085300314E000 || Kamiko || USA || Game
 |-
-| 0100152000022000 || Mario Kart 8 Deluxe || ? || Game
+| 0100152000022000 || Mario Kart 8 Deluxe || JPN or ALL? || Game
 |-
 | 01006BD001E06000 || Minecraft: Nintendo Switch Edition || ? || Game
 |-
