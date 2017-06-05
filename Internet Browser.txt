@@ -47,7 +47,7 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 | 
 |-
 | LobbyApplet
-| ?
+| Related to online-multiplayer lobbies
 | Just displays an error-code.
 | Yes
 | 0100000000001010
