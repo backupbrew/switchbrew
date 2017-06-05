@@ -41,11 +41,11 @@
 |-
 | 010085300314E000 || Kamiko || USA || Game
 |-
-| 0100152000022000 || Mario Kart 8 Deluxe || JPN or ALL? || Game
+| 0100152000022000 || Mario Kart 8 Deluxe || ALL? || Game
 |-
-| 01006BD001E06000 || Minecraft: Nintendo Switch Edition || ? || Game
+| 01006BD001E06000 || Minecraft: Nintendo Switch Edition || ALL? || Game
 |-
-| 010031F002B66000 || Mr. Shifty || ? || Game
+| 010031F002B66000 || Mr. Shifty || USA, EUR? || Game
 |-
 | 010002900294A000 || NBA Playgrounds || ? || Game
 |-
