@@ -15,4 +15,4 @@ It's unknown exactly what titles were updated.
 The browser was not updated.
 
 ===[[Title_list|FIRM]] Packages===
-"/nx/package2" in the FS was updated for both titles 0100000000000819 and 010000000000081A since 2.1.0. Unknown whether these have changed since 2.2.0.
+"/nx/package2" in the FS was updated for both titles 0100000000000819 and 010000000000081A since 2.1.0. Unknown whether these have changed since 2.2.0. These (and the System Version Info title 0100000000000809) are the only packages known to be updated.
