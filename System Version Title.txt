@@ -15,11 +15,19 @@ The FS for the system-version title(TID 0100000000000809) contains "/file":
 |-
 | 0x2
 | 0x1
-| Build?
+| Micro
 |-
 | 0x3
+| 0x1
+| Unknown/Build?
+|-
+| 0x4
+| 0x1
+| Revision Number
+|-
 | 0x5
-| Normally all-zero / padding
+| 0x3
+| Normally all-zero. Padding?
 |-
 | 0x8
 | 0x20
@@ -35,5 +43,5 @@ The FS for the system-version title(TID 0100000000000809) contains "/file":
 |-
 | 0x80
 | 0x80
-| ASCII string with zeros / padding afterwards. For example: "NintendoSDK Firmware for NX 2.1.0-0"
+| ASCII string with zeros / padding afterwards. For example: "NintendoSDK Firmware for NX 2.0.0-15", "NintendoSDK Firmware for NX 2.1.0-0", "NintendoSDK Firmware for NX 2.3.0-0"
 |}
