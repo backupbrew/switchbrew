@@ -106,6 +106,21 @@ The initial page loaded by this applet depends on a flag. non-val1:
 The server will return a HTTP 302 redirect to "https://nintendo.com/"
 when the specified User-Agent isn't the one for ShareApplet.
 
+### LobbyApplet
+
+The initial page loaded by this applet is:
+"https://web-lp1.znc.srv.nintendo.net/lobby/".
+
+The content of the above URL refers to "rooms",
+"NxView\_Img\_Google\_Play\_Icon", etc.
+
+And also:
+
+` Your room has been created.`  
+` `  
+` You can invite friends to the room via`  
+` the Nintendo Switch Online Lounge app.`
+
 ## ShopN
 
 The initial page loaded by ShopN seems to be the following:
