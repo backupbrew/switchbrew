@@ -85,6 +85,9 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | appletAE
 | Applet Accessor services
+|-
+| apm
+| ?
 |
 |-
 | aoc:u
@@ -107,9 +110,17 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Task services
 |
 |-
+| bpc
+| ?
+| 
+|-
 | bsd:u, bsd:s
 | Sockets services
 |
+|-
+| btm
+| ?
+| 
 |-
 | caps:a, caps:c, caps:ss
 | Capture services
@@ -119,9 +130,17 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | ETicket services?
 |
 |-
+| fan
+| ?
+| 
+|-
 | fatal:u
 | Fatal Error services
 |
+|-
+| fgm
+| ?
+| 
 |-
 | friend:u, friend:v, friend:m, friend:s, friend:a
 | Friend services
@@ -131,9 +150,17 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | [[Filesystem services]]
 |
 |-
+| irs
+| ?
+| 
+|-
 | hid, hid:dbg, hid:sys
 | [[HID services]]
 |
+|-
+| lbl
+| ?
+| 
 |-
 | ldn:m
 | [[Local Network Monitor services]]
@@ -159,6 +186,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Mii services
 |
 |-
+| ncm
+| ?
+| 
+|-
 | nifm:u, nifm:a, nifm:s
 | [[Network Interface services]]
 | 
@@ -179,9 +210,17 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | [[NSD services]]
 |
 |-
+| ntc
+| ?
+| 
+|-
 | nvdrv:a, nvmemp, mm:u
 | [[NV services]]
 |
+|-
+| omm
+| ?
+| 
 |-
 | ovln:rcv, ovln:snd
 | Overlay Notification services
@@ -190,6 +229,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | pctl, pctl:a, pctl:s, pctl:r
 | Parental Control services
 |
+|-
+| pcv
+| ?
+| 
 |-
 | pdm:ntfy, pdm:qry
 | Play Log services
@@ -219,9 +262,17 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | SSL services
 |
 |-
+| tc
+| ?
+| 
+|-
 | time:u, time:a, time:s
 | Time services
 |
+|-
+| ts
+| ?
+| 
 |-
 | vi:m, vi:s, vi:u
 | [[Display services]]

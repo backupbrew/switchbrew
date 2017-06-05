@@ -57,32 +57,43 @@ regular ports can have their handles retrieved directly from a SVC.
 | ------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------ |
 | acc:u1, acc:su                                   | [Account services](Account%20services.md "wikilink")                                 | u1: for user 1?                            |
 | appletAE                                         | Applet Accessor services                                                             |                                            |
+| apm                                              | ?                                                                                    |                                            |
 | aoc:u                                            | AddOn Content services                                                               |                                            |
 | arp:w                                            | ?                                                                                    |                                            |
 | audren:u                                         | Audio Renderer services                                                              |                                            |
 | audout:u                                         | Audio Out services                                                                   |                                            |
 | bgtc:t, bgtc:sc                                  | Task services                                                                        |                                            |
+| bpc                                              | ?                                                                                    |                                            |
 | bsd:u, bsd:s                                     | Sockets services                                                                     |                                            |
+| btm                                              | ?                                                                                    |                                            |
 | caps:a, caps:c, caps:ss                          | Capture services                                                                     | a: Album, ss: Screenshot                   |
 | es                                               | ETicket services?                                                                    |                                            |
+| fan                                              | ?                                                                                    |                                            |
 | fatal:u                                          | Fatal Error services                                                                 |                                            |
+| fgm                                              | ?                                                                                    |                                            |
 | friend:u, friend:v, friend:m, friend:s, friend:a | Friend services                                                                      |                                            |
 | fsp-srv                                          | [Filesystem services](Filesystem%20services.md "wikilink")                           |                                            |
+| irs                                              | ?                                                                                    |                                            |
 | hid, hid:dbg, hid:sys                            | [HID services](HID%20services.md "wikilink")                                         |                                            |
+| lbl                                              | ?                                                                                    |                                            |
 | ldn:m                                            | [Local Network Monitor services](Local%20Network%20Monitor%20services.md "wikilink") |                                            |
 | ldr:ro, ldr:shel                                 | [Loader services](Loader%20services.md "wikilink")                                   |                                            |
 | lm                                               | Log services                                                                         |                                            |
 | lr                                               | ?                                                                                    |                                            |
 | erpt:c                                           | ERPT(?) services                                                                     |                                            |
 | mii:u, mii:e                                     | Mii services                                                                         |                                            |
+| ncm                                              | ?                                                                                    |                                            |
 | nifm:u, nifm:a, nifm:s                           | [Network Interface services](Network%20Interface%20services.md "wikilink")           |                                            |
 | nim, nim:shp                                     | NIM services                                                                         | shp: eShop                                 |
 | npns:u, npns:s                                   | ?                                                                                    |                                            |
 | ns:am, ns:su, ns:dev                             | [NS Services](NS%20Services.md "wikilink")                                           | am: Application Manager, su: System Update |
 | nsd:u, nsd:a                                     | [NSD services](NSD%20services.md "wikilink")                                         |                                            |
+| ntc                                              | ?                                                                                    |                                            |
 | nvdrv:a, nvmemp, mm:u                            | [NV services](NV%20services.md "wikilink")                                           |                                            |
+| omm                                              | ?                                                                                    |                                            |
 | ovln:rcv, ovln:snd                               | Overlay Notification services                                                        |                                            |
 | pctl, pctl:a, pctl:s, pctl:r                     | Parental Control services                                                            |                                            |
+| pcv                                              | ?                                                                                    |                                            |
 | pdm:ntfy, pdm:qry                                | Play Log services                                                                    |                                            |
 | pl:u                                             | Shared Font services                                                                 |                                            |
 | pm:bm, pm:shell                                  | [Process Manager services](Process%20Manager%20services.md "wikilink")               |                                            |
@@ -90,5 +101,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | set, set:sys                                     | [Settings services](Settings%20services.md "wikilink")                               | sys: System settings                       |
 | sfdnsres                                         | DNS resolver services                                                                |                                            |
 | ssl                                              | SSL services                                                                         |                                            |
+| tc                                               | ?                                                                                    |                                            |
 | time:u, time:a, time:s                           | Time services                                                                        |                                            |
+| ts                                               | ?                                                                                    |                                            |
 | vi:m, vi:s, vi:u                                 | [Display services](Display%20services.md "wikilink")                                 |                                            |
