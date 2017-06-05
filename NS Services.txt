@@ -256,6 +256,9 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 | 0x14
 | Ec ([[Internet_Browser|ShopN]]) From ShopN string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletShop".
 |-
+| 0x18
+| [[Internet_Browser|Whitelisted]] web-applet (From whitelisted web-applet string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletLoginShare")
+|-
 | 0x19
 | [[Internet_Browser|WifiWebAuth]] (From browser string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletWifiWebAuth")
 |}

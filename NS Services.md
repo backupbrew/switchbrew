@@ -126,13 +126,14 @@ This is the Switch equivalent of
 
 # AppIDs
 
-| ID   | Description                                                                                                                                 |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0E | ErrorApplet                                                                                                                                 |
-| 0x10 | PlayerSelect                                                                                                                                |
-| 0x11 | Swkbd (on-screen keyboard)                                                                                                                  |
-| 0x14 | Ec ([ShopN](Internet%20Browser.md "wikilink")) From ShopN string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletShop".            |
-| 0x19 | [WifiWebAuth](Internet%20Browser.md "wikilink") (From browser string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletWifiWebAuth") |
+| ID   | Description                                                                                                                                                          |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0E | ErrorApplet                                                                                                                                                          |
+| 0x10 | PlayerSelect                                                                                                                                                         |
+| 0x11 | Swkbd (on-screen keyboard)                                                                                                                                           |
+| 0x14 | Ec ([ShopN](Internet%20Browser.md "wikilink")) From ShopN string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletShop".                                     |
+| 0x18 | [Whitelisted](Internet%20Browser.md "wikilink") web-applet (From whitelisted web-applet string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletLoginShare") |
+| 0x19 | [WifiWebAuth](Internet%20Browser.md "wikilink") (From browser string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletWifiWebAuth")                          |
 
 This seems to be the equivalent of
 [this](https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs) ("AppIDs" is
