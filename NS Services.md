@@ -138,3 +138,18 @@ This is the Switch equivalent of
 This seems to be the equivalent of
 [this](https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs) ("AppIDs" is
 an unofficial name).
+
+# args.shimKind
+
+This is from strings and code in whitelisted web-applet.
+
+"args.shimKind() == ::nn::web::common::ShimKind::Lobby ||
+args.shimKind() == ::nn::web::common::ShimKind::Login || args.shimKind()
+==
+::nn::web::common::ShimKind::Share"
+
+| shimKind value | Description                                                                     |
+| -------------- | ------------------------------------------------------------------------------- |
+| 2              | One of the types from the above "args.shimKind() ==" string, unknown which one. |
+| 4              | One of the types from the above "args.shimKind() ==" string, unknown which one. |
+| 7              | One of the types from the above "args.shimKind() ==" string, unknown which one. |
