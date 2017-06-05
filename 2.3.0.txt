@@ -9,4 +9,10 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 *General system stability improvements to enhance the user's experience
 
 ==System Titles==
-It's unknown exactly what titles were updated, however the browser was not updated going by the [[Internet_Browser|WifiWebAuthApplet]] user-agent.
+It's unknown exactly what titles were updated.
+
+===[[Internet_Browser|Browser]]===
+The browser was not updated.
+
+===[[Title_list|FIRM]] Packages===
+"/nx/package2" in the FS was updated for both titles 0100000000000819 and 010000000000081A since 2.1.0. Unknown whether these have changed since 2.2.0.
