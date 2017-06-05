@@ -40,7 +40,7 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 | 
 |-
 | ShareApplet
-| Posting screenshots to social media
+| Posting screenshots to social media, and (optionally) linking social media accounts
 | Just displays an error-code.
 | Yes
 | 0100000000001010
