@@ -11,8 +11,7 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 ==System Titles==
 It's unknown exactly what titles were updated.
 
+The System Version Info title 0100000000000809 is the only title updated which is [[Internet_Browser|browser-accessible]].
+
 ===[[Internet_Browser|Browser]]===
 The browser was not updated.
-
-===[[Title_list|FIRM]] Packages===
-"/nx/package2" in the FS was updated for title 0100000000000819 since 2.1.0. Unknown whether these have changed since 2.2.0. This title (and the System Version Info title 0100000000000809) are the only titles updated which are [[Internet_Browser|browser-accessible]].
