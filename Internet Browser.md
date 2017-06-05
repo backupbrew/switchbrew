@@ -108,6 +108,17 @@ WifiWebAuthApplet, contains the following:
 ` ^https://([0-9A-Za-z\-]+\.)*eshop\.nintendo\.net($|/)`  
 ` ^https?://([0-9A-Za-z\-]+\.)*nintendo\.(co\.jp|com|de)($|/)`
 
+## Service Access
+
+All browser applets have access to the following services: acc:u1,
+appletAE, audin:u, audren:u, audout:u, bsd:u, fatal:u, fsp-srv, hid,
+hid:sys, ldn:m, ldr:ro, lm, erpt:c, nifm:s, ns:am, nsd:u, nvdrv:a, mm:u,
+pl:u, prepo:s, set, set:sys, sfdnsres, ssl, time:u, vi:s
+
+LoginApplet/ShareApplet/LobbyApplet have access to the above + caps:a.
+
+ShopN has access to the above + nim:shp.
+
 ## Versions
 
 ### [2.0.0](2.0.0.md "wikilink")
