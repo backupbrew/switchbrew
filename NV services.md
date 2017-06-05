@@ -533,7 +533,7 @@ Exclusive to the Switch.
 `   u64 __timestamp;    // out (nanoseconds since Jan. 1, 1970)`  
 `   u32 __info32;       // out (error code)`  
 `   u16 __info16;       // out (additional error info)`  
-`   u16 __status;       // out (always 0xFFFF)`  
+`   u16 __status;       // inout (always 0xFFFF)`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX

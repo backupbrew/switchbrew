@@ -613,7 +613,7 @@ Returns the current error notification caught by the error notifier. Exclusive t
     u64 __timestamp;    // out (nanoseconds since Jan. 1, 1970)
     u32 __info32;       // out (error code)
     u16 __info16;       // out (additional error info)
-    u16 __status;       // out (always 0xFFFF)
+    u16 __status;       // inout (always 0xFFFF)
   };
 
 === NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX ===
