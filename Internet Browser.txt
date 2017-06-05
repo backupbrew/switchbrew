@@ -108,6 +108,11 @@ The file at "data:/whitelist/WhitelistLns.txt" for LoginApplet/ShareApplet/Lobby
  ^https://([0-9A-Za-z\-]+\.)*facebook\.com(/|$)
  ^https://([0-9A-Za-z\-]+\.)*twitter\.com(/|$)</nowiki>
 
+===ShareApplet===
+The initial page loaded by this applet depends on a flag. <nowiki>non-val1: "https://web-lp1.share.srv.nintendo.net/" val1: "https://web-lp1.share.srv.nintendo.net/settings/"</nowiki>
+
+The server will return a HTTP 302 redirect to <nowiki>"https://nintendo.com/"</nowiki> when the specified User-Agent isn't the one for ShareApplet.
+
 == ShopN ==
 The initial page loaded by ShopN seems to be the following: <nowiki>"https://bugyo.hac.lp1.eshop.nintendo.net/ashigaru/"</nowiki>.
 

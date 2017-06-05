@@ -97,6 +97,15 @@ following:
 ` ^https://([0-9A-Za-z\-]+\.)*facebook\.com(/|$)`  
 ` ^https://([0-9A-Za-z\-]+\.)*twitter\.com(/|$)`
 
+### ShareApplet
+
+The initial page loaded by this applet depends on a flag. non-val1:
+"https://web-lp1.share.srv.nintendo.net/" val1:
+"https://web-lp1.share.srv.nintendo.net/settings/"
+
+The server will return a HTTP 302 redirect to "https://nintendo.com/"
+when the specified User-Agent isn't the one for ShareApplet.
+
 ## ShopN
 
 The initial page loaded by ShopN seems to be the following:
