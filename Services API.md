@@ -71,8 +71,10 @@ regular ports can have their handles retrieved directly from a SVC.
 | fatal:u                                          | Fatal Error services                                                                 |                                            |
 | fgm                                              | ?                                                                                    |                                            |
 | friend:u, friend:v, friend:m, friend:s, friend:a | Friend services                                                                      |                                            |
-| fsp-srv                                          | [Filesystem services](Filesystem%20services.md "wikilink")                           |                                            |
-| irs                                              | ?                                                                                    |                                            |
+| fsp-srv, fsp-ldr, fsp-pr                         | [Filesystem services](Filesystem%20services.md "wikilink")                           |                                            |
+| gpio                                             | GPIO services                                                                        |                                            |
+| i2c                                              | I2C services                                                                         |                                            |
+| irs                                              | IR Sensor services?                                                                  |                                            |
 | hid, hid:dbg, hid:sys                            | [HID services](HID%20services.md "wikilink")                                         |                                            |
 | lbl                                              | ?                                                                                    |                                            |
 | ldn:m                                            | [Local Network Monitor services](Local%20Network%20Monitor%20services.md "wikilink") |                                            |
@@ -91,16 +93,21 @@ regular ports can have their handles retrieved directly from a SVC.
 | nvdrv:a, nvmemp, mm:u                            | [NV services](NV%20services.md "wikilink")                                           |                                            |
 | omm                                              | ?                                                                                    |                                            |
 | ovln:rcv, ovln:snd                               | Overlay Notification services                                                        |                                            |
+| pcie                                             | PCIe services                                                                        |                                            |
 | pctl, pctl:a, pctl:s, pctl:r                     | Parental Control services                                                            |                                            |
 | pcv                                              | ?                                                                                    |                                            |
 | pdm:ntfy, pdm:qry                                | Play Log services                                                                    |                                            |
 | pl:u                                             | Shared Font services                                                                 |                                            |
 | pm:bm, pm:shell                                  | [Process Manager services](Process%20Manager%20services.md "wikilink")               |                                            |
 | prepo:u, prepo:s, prepo:m, prepo:a               | [Play Report services](Play%20Report%20services.md "wikilink")                       |                                            |
+| psm                                              | ?                                                                                    |                                            |
+| pwm                                              | ?                                                                                    |                                            |
 | set, set:sys                                     | [Settings services](Settings%20services.md "wikilink")                               | sys: System Settings                       |
 | sfdnsres                                         | DNS resolver services                                                                |                                            |
+| spsm                                             | ?                                                                                    |                                            |
 | ssl                                              | SSL services                                                                         |                                            |
 | tc                                               | ?                                                                                    |                                            |
 | time:u, time:a, time:s                           | Time services                                                                        |                                            |
 | ts                                               | ?                                                                                    |                                            |
+| uart                                             | UART services                                                                        |                                            |
 | vi:m, vi:s, vi:u                                 | [Display services](Display%20services.md "wikilink")                                 |                                            |

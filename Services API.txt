@@ -142,12 +142,20 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Friend services
 |
 |-
-| fsp-srv
+| fsp-srv, fsp-ldr, fsp-pr
 | [[Filesystem services]]
 |
 |-
+| gpio
+| GPIO services
+| 
+|-
+| i2c
+| I2C services
+| 
+|-
 | irs
-| ?
+| IR Sensor services?
 | 
 |-
 | hid, hid:dbg, hid:sys
@@ -222,6 +230,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Overlay Notification services
 |
 |-
+| pcie
+| PCIe services
+| 
+|-
 | pctl, pctl:a, pctl:s, pctl:r
 | Parental Control services
 |
@@ -246,6 +258,14 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | [[Play Report services]]
 |
 |-
+| psm
+| ?
+| 
+|-
+| pwm
+| ?
+| 
+|-
 | set, set:sys
 | [[Settings services]]
 | sys: System Settings
@@ -253,6 +273,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | sfdnsres
 | DNS resolver services
 |
+|-
+| spsm
+| ?
+| 
 |-
 | ssl
 | SSL services
@@ -268,6 +292,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | ts
 | ?
+| 
+|-
+| uart
+| UART services
 | 
 |-
 | vi:m, vi:s, vi:u
