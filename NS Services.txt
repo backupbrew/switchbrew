@@ -247,6 +247,9 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 | 0x0E
 | ErrorApplet
 |-
+| 0x0F
+| NetworkSelect
+|-
 | 0x10
 | PlayerSelect
 |-
@@ -255,6 +258,9 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 0x14
 | Ec ([[Internet_Browser|ShopN]]) From ShopN string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletShop".
+|-
+| 0x15
+| Album
 |-
 | 0x18
 | [[Internet_Browser|Whitelisted]] web-applet (From whitelisted web-applet string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletLoginShare")
