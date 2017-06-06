@@ -143,6 +143,12 @@ LoginApplet/ShareApplet/LobbyApplet have access to the above + caps:a.
 
 ShopN has access to the above + nim:shp.
 
+## Heap
+
+The size used for [svcSetHeapSize](SVC.md "wikilink") by the web-applets
+is 0x15600000. Under ShopN, the largest size that can be passed to this
+without an error being returned, is 0x1B400000.
+
 ## Versions
 
 ### [2.0.0](2.0.0.md "wikilink")
