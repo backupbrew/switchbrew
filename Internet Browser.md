@@ -136,8 +136,8 @@ WifiWebAuthApplet, contains the following:
 
 All browser applets have access to the following services: acc:u1,
 appletAE, audin:u, audren:u, audout:u, bsd:u, fatal:u, fsp-srv, hid,
-hid:sys, ldn:m, ldr:ro, lm, erpt:c, nifm:s, ns:am, nsd:u, nvdrv:a, mm:u,
-pl:u, prepo:s, set, set:sys, sfdnsres, ssl, time:u, vi:s
+hid:sys, irs, ldn:m, ldr:ro, lm, erpt:c, nifm:s, ns:am, nsd:u, nvdrv:a,
+mm:u, pl:u, prepo:s, set, set:sys, sfdnsres, ssl, time:u, vi:s
 
 LoginApplet/ShareApplet/LobbyApplet have access to the above + caps:a.
 
