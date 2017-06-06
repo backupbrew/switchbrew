@@ -128,6 +128,11 @@ This is the Switch equivalent of
 
 | ID   | Description                                                                                                                                                          |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x02 | Unknown (throws fatal error 2128-0203)                                                                                                                               |
+| 0x03 | Unknown (throws fatal error 2128-0203)                                                                                                                               |
+| 0x04 | Unknown (throws fatal error 2128-0203)                                                                                                                               |
+| 0x0C | Unknown (blinks the screen)                                                                                                                                          |
+| 0x0D | Unknown (displays "Checking for free space...")                                                                                                                      |
 | 0x0E | ErrorApplet                                                                                                                                                          |
 | 0x0F | NetworkSelect                                                                                                                                                        |
 | 0x10 | PlayerSelect                                                                                                                                                         |
@@ -154,4 +159,5 @@ args.shimKind() == ::nn::web::common::ShimKind::Login || args.shimKind()
 | -------------- | ------------------------------ |
 | 2              | LoginApplet (See above string) |
 | 4              | ShareApplet (See above string) |
+| 6              | Wifi                           |
 | 7              | LobbyApplet (See above string) |

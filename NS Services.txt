@@ -244,6 +244,21 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 !  ID
 !  Description
 |-
+| 0x02
+| Unknown (throws fatal error 2128-0203)
+|-
+| 0x03
+| Unknown (throws fatal error 2128-0203)
+|-
+| 0x04
+| Unknown (throws fatal error 2128-0203)
+|-
+| 0x0C
+| Unknown (blinks the screen)
+|-
+| 0x0D
+| Unknown (displays "Checking for free space...")
+|-
 | 0x0E
 | ErrorApplet
 |-
@@ -286,6 +301,9 @@ This is from strings and code in [[Internet_Browser|whitelisted]] web-applet.
 |-
 | 4
 | ShareApplet (See above string)
+|-
+| 6
+| Wifi
 |-
 | 7
 | LobbyApplet (See above string)
