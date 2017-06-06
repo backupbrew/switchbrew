@@ -15,7 +15,8 @@ following formatter:
 ` %04d-%04x`
 
 .. where the first code is `2000 + Module`, and the other being
-`Description`.
+`Description`. Bits \>=22 from the error-code are unused when displaying
+fatal-errors, since the Description ends with bit21.
 
 # Modules
 
