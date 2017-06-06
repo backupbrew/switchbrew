@@ -56,7 +56,8 @@
 
 ## svcSetHeapSize
 
-Size must be a multiple of 0x2000000.
+Size must be a multiple of 0x2000000. The heap base-address is written
+to out.
 
 ## svcProtectMemory
 
