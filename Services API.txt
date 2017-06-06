@@ -81,10 +81,10 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | acc:u1, acc:su
 | [[Account services]]
-| u1: for user 1?
+| u1: User, su: Admin
 |-
 | appletAE
-| Applet Accessor services
+| Applet services
 |-
 | apm
 | ?
@@ -94,16 +94,12 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | AddOn Content services 
 |
 |-
-| arp:w
-| ? 
-|
+| arp:r, arp:w
+| Activity Report services? 
+| r: Reader, w: Writer
 |-
-| audren:u
-| Audio Renderer services
-|
-|-
-| audout:u
-| Audio Out services
+| audin:u, audout:u, audren:u
+| Audio services
 |
 |-
 | bgtc:t, bgtc:sc
@@ -179,7 +175,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |
 |-
 | erpt:c
-| ERPT(?) services
+| Error Report services
 |
 |-
 | mii:u, mii:e
@@ -187,7 +183,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |
 |-
 | ncm
-| ?
+| Content Manager services
 | 
 |-
 | nifm:u, nifm:a, nifm:s
@@ -252,7 +248,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | set, set:sys
 | [[Settings services]]
-| sys: System settings
+| sys: System Settings
 |-
 | sfdnsres
 | DNS resolver services

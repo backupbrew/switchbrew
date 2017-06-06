@@ -55,13 +55,12 @@ regular ports can have their handles retrieved directly from a SVC.
 
 | Service names                                    | Description                                                                          | Notes                                      |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------ |
-| acc:u1, acc:su                                   | [Account services](Account%20services.md "wikilink")                                 | u1: for user 1?                            |
-| appletAE                                         | Applet Accessor services                                                             |                                            |
+| acc:u1, acc:su                                   | [Account services](Account%20services.md "wikilink")                                 | u1: User, su: Admin                        |
+| appletAE                                         | Applet services                                                                      |                                            |
 | apm                                              | ?                                                                                    |                                            |
 | aoc:u                                            | AddOn Content services                                                               |                                            |
-| arp:w                                            | ?                                                                                    |                                            |
-| audren:u                                         | Audio Renderer services                                                              |                                            |
-| audout:u                                         | Audio Out services                                                                   |                                            |
+| arp:r, arp:w                                     | Activity Report services?                                                            | r: Reader, w: Writer                       |
+| audin:u, audout:u, audren:u                      | Audio services                                                                       |                                            |
 | bgtc:t, bgtc:sc                                  | Task services                                                                        |                                            |
 | bpc                                              | ?                                                                                    |                                            |
 | bsd:u, bsd:s                                     | Sockets services                                                                     |                                            |
@@ -80,9 +79,9 @@ regular ports can have their handles retrieved directly from a SVC.
 | ldr:ro, ldr:shel                                 | [Loader services](Loader%20services.md "wikilink")                                   |                                            |
 | lm                                               | Log services                                                                         |                                            |
 | lr                                               | ?                                                                                    |                                            |
-| erpt:c                                           | ERPT(?) services                                                                     |                                            |
+| erpt:c                                           | Error Report services                                                                |                                            |
 | mii:u, mii:e                                     | Mii services                                                                         |                                            |
-| ncm                                              | ?                                                                                    |                                            |
+| ncm                                              | Content Manager services                                                             |                                            |
 | nifm:u, nifm:a, nifm:s                           | [Network Interface services](Network%20Interface%20services.md "wikilink")           |                                            |
 | nim, nim:shp                                     | NIM services                                                                         | shp: eShop                                 |
 | npns:u, npns:s                                   | ?                                                                                    |                                            |
@@ -98,7 +97,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | pl:u                                             | Shared Font services                                                                 |                                            |
 | pm:bm, pm:shell                                  | [Process Manager services](Process%20Manager%20services.md "wikilink")               |                                            |
 | prepo:u, prepo:s, prepo:m, prepo:a               | [Play Report services](Play%20Report%20services.md "wikilink")                       |                                            |
-| set, set:sys                                     | [Settings services](Settings%20services.md "wikilink")                               | sys: System settings                       |
+| set, set:sys                                     | [Settings services](Settings%20services.md "wikilink")                               | sys: System Settings                       |
 | sfdnsres                                         | DNS resolver services                                                                |                                            |
 | ssl                                              | SSL services                                                                         |                                            |
 | tc                                               | ?                                                                                    |                                            |
