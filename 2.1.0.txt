@@ -17,7 +17,7 @@ Besides [[Internet_Browser|shareddata]] and FIRM-packageB(see below), the only 0
 A browser vuln was [[Switch_Userland_Flaws|fixed]], see also [[Internet_Browser|here]] for v2.1 browser details.
 
 ===[[Title_list|FIRM]] Packages===
-Title 0100000000000819 wasn't updated. The only change in title 010000000000081A was that "/nx/package2" in the FS was updated.
+The only changes in titles 0100000000000819 and 010000000000081A was that "/nx/package2" in the FS were updated.
 
 ===[[NS_Services|NS]]-sysmodule===
 The NS-sysmodule was updated. 4 new funcs were added and 29 funcs were updated.
