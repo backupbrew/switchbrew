@@ -41,21 +41,21 @@
 |-
 | 010085300314E000 || Kamiko || USA || Game
 |-
-| 0100152000022000 || Mario Kart 8 Deluxe || ALL? || Game
+| 0100152000022000 || Mario Kart 8 Deluxe || ALL || Game
 |-
-| 01006BD001E06000 || Minecraft: Nintendo Switch Edition || ALL? || Game
+| 01006BD001E06000 || Minecraft: Nintendo Switch Edition || ALL || Game
 |-
-| 010031F002B66000 || Mr. Shifty || USA, EUR? || Game
+| 010031F002B66000 || Mr. Shifty || USA, EUR || Game
 |-
-| 010002900294A000 || NBA Playgrounds || ? || Game
+| 010002900294A000 || NBA Playgrounds || JPN, USA || Game
 |-
-| 01004C200100E000 || New Frontier Days: Founding Pioneers || ? || Game
+| 01004C200100E000 || New Frontier Days: Founding Pioneers || ALL || Game
 |-
-| 0100902001014000 || Othello || ? || Game
+| 0100902001014000 || Othello || JPN || Game
 |-
-| 01000DC003740000 || Puyo Puyo Tetris || ? || Game
+| 01000DC003740000 || Puyo Puyo Tetris || USA || Game
 |-
-| 01004B10031BE000 || Puyo Puyo Tetris || ? || Game
+| 01004B10031BE000 || Puyo Puyo Tetris || EUR || Game
 |-
 | 010000A00218E000 || Splatoon 2 Global Testfire || ALL || Timed Demo
 |}
