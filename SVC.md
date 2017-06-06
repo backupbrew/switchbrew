@@ -131,7 +131,7 @@ it will return
 | Process     | 7   | 0      | Process heap size.                                                                                |
 | Zero        | 8   | 0      | Always 0. Used during exception handling.                                                         |
 | Zero        | 9   | 0      | This creates and returns an unknown handle.                                                       |
-| Zero        | 10  | \-1, 0 | Unknown. Output data changes each time this SVC is used.                                          |
+| Zero        | 10  | \-1, 2 | Unknown. Output data changes each time this SVC is used.                                          |
 | Zero        | 11  | 0-3    | Returns random from TRNG. Used to seed usermode PRNGs. Output changes each time this SVC is used. |
 | Process     | 12  | 0      | Always 0x8000000.                                                                                 |
 | Process     | 13  | 0      | Always 0x7ff8000000.                                                                              |
