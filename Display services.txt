@@ -32,7 +32,7 @@
 |-
 |}
 
-== ApplicationDisplayService ==
+== IApplicationDisplayService ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

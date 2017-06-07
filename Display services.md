@@ -27,7 +27,7 @@
 | 3   | RegisterInterface2\_ApplicationDisplayService |
 |     |                                               |
 
-## ApplicationDisplayService
+## IApplicationDisplayService
 
 | Cmd  | Name                                     |
 | ---- | ---------------------------------------- |
