@@ -79,26 +79,27 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 ! scope="col" width="200" | Description
 ! scope="col" width="200" | Notes
 |-
-| acc:u1, acc:su
+| acc:u1, acc:aa, acc:su
 | [[Account services]]
 | u1: User, su: Admin
 |-
-| appletAE
-| Applet services
-|-
-| apm
-| ?
-|
-|-
 | aoc:u
 | AddOn Content services 
+|
+|-
+| appletAE, appletOE
+| Applet services
+|
+|-
+| apm, apm:p, apm:sys
+| ?
 |
 |-
 | arp:r, arp:w
 | Activity Report services? 
 | r: Reader, w: Writer
 |-
-| audin:u, audout:u, audren:u
+| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u
 | Audio services
 |
 |-
@@ -106,7 +107,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Task services
 |
 |-
-| bpc
+| bpc, bpc:r
 | ?
 | 
 |-
@@ -114,13 +115,17 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Sockets services
 |
 |-
-| btm
-| ?
+| btm, btm:dbg, btm:sys
+| Bluetooth services?
 | 
 |-
-| caps:a, caps:c, caps:ss
+| caps:a, caps:c, caps:sc, caps:ss
 | Capture services
 | a: Album, ss: Screenshot
+|-
+| erpt:c, erpt:r
+| Error Report services
+|
 |-
 | es
 | ETicket services?
@@ -130,9 +135,9 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | ?
 | 
 |-
-| fatal:u
+| fatal:u, fatal:p
 | Fatal Error services
-|
+| u: User, p: Privileged?
 |-
 | fgm
 | ?
@@ -144,33 +149,33 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | fsp-srv, fsp-ldr, fsp-pr
 | [[Filesystem services]]
-|
+| srv: Main, ldr: Loader, pr: Program Registry
 |-
 | gpio
 | GPIO services
-| 
-|-
-| i2c
-| I2C services
-| 
-|-
-| irs
-| IR Sensor services?
 | 
 |-
 | hid, hid:dbg, hid:sys
 | [[HID services]]
 |
 |-
+| i2c, i2c:pcv
+| I2C services
+| 
+|-
+| irs, irs:sys
+| IR Sensor services?
+| 
+|-
 | lbl
 | ?
 | 
 |-
-| ldn:m
+| ldn:m, ldn:s, ldn:u
 | [[Local Network Monitor services]]
 |
 |-
-| ldr:ro, ldr:shel
+| ldr:pm, ldr:ro, ldr:shel
 | [[Loader services]]
 |
 |-
@@ -180,10 +185,6 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | lr
 | ?
-|
-|-
-| erpt:c
-| Error Report services
 |
 |-
 | mii:u, mii:e
@@ -218,7 +219,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | ?
 | 
 |-
-| nvdrv:a, nvmemp, mm:u
+| nvdrv:a, nvdrv:s, nvdrv:t, nvmemp, mm:u
 | [[NV services]]
 |
 |-
@@ -228,7 +229,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | ovln:rcv, ovln:snd
 | Overlay Notification services
-|
+| rcv: Receiver, snd: Sender
 |-
 | pcie
 | PCIe services
@@ -238,7 +239,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | Parental Control services
 |
 |-
-| pcv
+| pcv, pcv:imm
 | ?
 | 
 |-
@@ -266,9 +267,9 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | ?
 | 
 |-
-| set, set:sys
+| set, set:fd, set:cal, set:sys
 | [[Settings services]]
-| sys: System Settings
+| cal: Calendar?, sys: System Settings
 |-
 | sfdnsres
 | DNS resolver services
