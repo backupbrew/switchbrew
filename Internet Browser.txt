@@ -85,7 +85,7 @@ The NROs for the OSS are stored under a separate [[Title_list|title]]. All of th
 String from v2.0 in oss_wkc.nro: "libcurl/7.50.1".
 
 == Video Playback ==
-WifiWebAuthApplet does not fully support playing videos. It will crash with normal videos. However, in some cases with certain MP4s using vulns it will display an error dialog instead.
+WifiWebAuthApplet does not fully support playing videos. It will [[Error_codes|assert]] with normal videos. However, in some cases with certain MP4s using vulns it will display an error dialog instead.
 
 == Trusted RootCAs ==
 While the rootCA(s) for Let's Encrypt isn't included, Let's Encrypt is indirectly trusted via "Digital Signature Trust Co.". This seems to be only(?) the case for WifiWebAuthApplet, hence non-WifiWebAuthApplet seems to have a different set of trusted rootCAs.

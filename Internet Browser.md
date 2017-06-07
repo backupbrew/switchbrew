@@ -56,9 +56,10 @@ String from v2.0 in oss\_wkc.nro: "libcurl/7.50.1".
 
 ## Video Playback
 
-WifiWebAuthApplet does not fully support playing videos. It will crash
-with normal videos. However, in some cases with certain MP4s using vulns
-it will display an error dialog instead.
+WifiWebAuthApplet does not fully support playing videos. It will
+[assert](Error%20codes.md "wikilink") with normal videos. However, in
+some cases with certain MP4s using vulns it will display an error dialog
+instead.
 
 ## Trusted RootCAs
 
