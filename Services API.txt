@@ -13,7 +13,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | 2 || [[#RegisterService]]
 |-
-| 3 ||
+| 3 || [[#UnregisterService]]
 |}
 
 == Initialize ==
@@ -70,6 +70,22 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | 3 || Max sessions? 32-bit integer.
 |-
 | 4 || Unknown bool
+|}
+
+== UnregisterService ==
+{| class="wikitable" border="1"
+|-
+! Word || Value
+|-
+| 0 || 0x00000004
+|-
+| 1 || 0x0000000A
+|- style="border-top: double"
+| 0 || "SFCI"
+|-
+| 1 || 0x00000003
+|-
+| 2 || Service name, zero padded and casted to u64.
 |}
 
 = Service List =

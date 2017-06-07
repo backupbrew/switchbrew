@@ -10,12 +10,12 @@ regular ports can have their handles retrieved directly from a SVC.
 
 # sm:
 
-| Cmd | Name                                             |
-| --- | ------------------------------------------------ |
-| 0   | [\#Initialize](#Initialize "wikilink")           |
-| 1   | [\#GetService](#GetService "wikilink")           |
-| 2   | [\#RegisterService](#RegisterService "wikilink") |
-| 3   |                                                  |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | [\#Initialize](#Initialize "wikilink")               |
+| 1   | [\#GetService](#GetService "wikilink")               |
+| 2   | [\#RegisterService](#RegisterService "wikilink")     |
+| 3   | [\#UnregisterService](#UnregisterService "wikilink") |
 
 ## Initialize
 
@@ -50,6 +50,16 @@ regular ports can have their handles retrieved directly from a SVC.
 | 2    | Service name, zero padded and casted to u64. |
 | 3    | Max sessions? 32-bit integer.                |
 | 4    | Unknown bool                                 |
+
+## UnregisterService
+
+| Word | Value                                        |
+| ---- | -------------------------------------------- |
+| 0    | 0x00000004                                   |
+| 1    | 0x0000000A                                   |
+| 0    | "SFCI"                                       |
+| 1    | 0x00000003                                   |
+| 2    | Service name, zero padded and casted to u64. |
 
 # Service List
 
