@@ -642,3 +642,5 @@ return code.
 | 0x1000  | SharedMemoryTooSmall |
 | 0x30003 | FileOperationFailed  |
 | 0x3000F | IoctlFailed          |
+
+[Category:Services](Category:Services "wikilink")
