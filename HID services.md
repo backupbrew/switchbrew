@@ -6,3 +6,5 @@ shared-memory.
 # hid:dbg
 
 # hid:sys
+
+[Category:Services](Category:Services "wikilink")

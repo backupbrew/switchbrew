@@ -5,3 +5,5 @@ See [[HID_Shared_Memory|here]] for the HID shared-memory.
 = hid:dbg =
 
 = hid:sys =
+
+[[Category:Services]]
