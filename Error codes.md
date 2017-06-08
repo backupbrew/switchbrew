@@ -66,7 +66,7 @@ fatal-errors, since the Description ends with bit21.
 | 0xFA01   | 125         | Wrong memory permission?                                      |
 | 0x10601  | 131         | Port max sessions exceeded                                    |
 | 0x10801  | 132         | Out of memory                                                 |
-| 0x7D402  | 1002        | Permission denied, or title-id not found                      |
+| 0x7D402  | 1002        | Title-id not found                                            |
 | 0x13B002 | 2520        | Gamecard not inserted                                         |
 | 0x171402 | 2954        | Invalid gamecard handle.                                      |
 | 0x1A4A02 | 3365        | Out of memory                                                 |
@@ -91,6 +91,7 @@ fatal-errors, since the Description ends with bit21.
 | 0x25A0B  | 301         | Remote process is dead                                        |
 | 0x3D60B  | 491         | IPC Query 1 failed.                                           |
 | 0x20F    | 1           | Pid not found                                                 |
+| 0xA05    | 5           | Permission denied?                                            |
 | 0x0C15   | 6           | Invalid name (all zeroes)                                     |
 | 0x1015   | 8           | Permission denied                                             |
 | 0x816    | 4           | Bad NRO magic                                                 |
