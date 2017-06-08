@@ -10,3 +10,5 @@
 | 5   |                |
 | 100 | start\_monitor |
 | 101 | stop\_monitor  |
+
+[Category:Services](Category:Services "wikilink")
