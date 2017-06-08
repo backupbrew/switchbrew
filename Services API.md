@@ -121,3 +121,5 @@ regular ports can have their handles retrieved directly from a SVC.
 | ts                                                                                    | ?                                                                                    |                                              |
 | uart                                                                                  | UART services                                                                        |                                              |
 | vi:m, vi:s, vi:u                                                                      | [Display services](Display%20services.md "wikilink")                                 |                                              |
+
+[Category:Services](Category:Services "wikilink")
