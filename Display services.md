@@ -1,15 +1,11 @@
-# vi:u
-
-## ApplicationRootService
+# vi:u "ApplicationRootService"
 
 | Cmd | Name                                         |
 | --- | -------------------------------------------- |
 | 0   | RegisterInterface\_ApplicationDisplayService |
 |     |                                              |
 
-# vi:m
-
-## ManagerRootService
+# vi:m "ManagerRootService"
 
 | Cmd | Name                                          |
 | --- | --------------------------------------------- |
@@ -17,9 +13,7 @@
 | 3   | RegisterInterface2\_ApplicationDisplayService |
 |     |                                               |
 
-# vi:s
-
-## SystemRootService
+# vi:s "SystemRootService"
 
 | Cmd | Name                                          |
 | --- | --------------------------------------------- |
@@ -27,7 +21,7 @@
 | 3   | RegisterInterface2\_ApplicationDisplayService |
 |     |                                               |
 
-## IApplicationDisplayService
+# IApplicationDisplayService
 
 | Cmd  | Name                                     |
 | ---- | ---------------------------------------- |
@@ -53,7 +47,7 @@
 | 5203 |                                          |
 |      |                                          |
 
-### HOSBinderDriver
+# IHOSBinderDriver
 
 | Cmd | Name |
 | --- | ---- |
@@ -61,5 +55,69 @@
 | 1   |      |
 | 2   |      |
 |     |      |
+
+# ISystemDisplayService
+
+| Cmd  | Name |
+| ---- | ---- |
+| 1200 |      |
+| 1202 |      |
+| 1203 |      |
+| 2201 |      |
+| 2203 |      |
+| 2204 |      |
+| 2205 |      |
+| 2207 |      |
+| 2209 |      |
+| 2312 |      |
+| 2400 |      |
+| 2401 |      |
+| 2402 |      |
+| 3000 |      |
+| 3001 |      |
+| 3002 |      |
+| 3200 |      |
+| 3201 |      |
+| 3202 |      |
+| 3203 |      |
+| 3204 |      |
+| 3205 |      |
+| 3206 |      |
+| 3207 |      |
+| 3208 |      |
+| 3209 |      |
+| 3210 |      |
+| 3211 |      |
+| 3214 |      |
+| 3215 |      |
+| 3216 |      |
+| 3217 |      |
+|      |      |
+
+# IManagerDisplayService
+
+| Cmd  | Name |
+| ---- | ---- |
+| 2010 |      |
+| 2011 |      |
+| 2050 |      |
+| 2051 |      |
+| 2052 |      |
+| 2053 |      |
+| 2054 |      |
+| 2055 |      |
+| 2300 |      |
+| 2301 |      |
+| 2302 |      |
+| 2402 |      |
+| 4201 |      |
+| 4203 |      |
+| 4205 |      |
+| 6000 |      |
+| 6001 |      |
+| 6002 |      |
+| 7000 |      |
+| 8000 |      |
+| 8100 |      |
 
 [Category:Services](Category:Services "wikilink")
