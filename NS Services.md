@@ -161,3 +161,5 @@ args.shimKind() == ::nn::web::common::ShimKind::Login || args.shimKind()
 | 4              | ShareApplet (See above string) |
 | 6              | Wifi                           |
 | 7              | LobbyApplet (See above string) |
+
+[Category:Services](Category:Services "wikilink")

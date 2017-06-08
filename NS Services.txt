@@ -308,3 +308,5 @@ This is from strings and code in [[Internet_Browser|whitelisted]] web-applet.
 | 7
 | LobbyApplet (See above string)
 |}
+
+[[Category:Services]]
