@@ -44,7 +44,8 @@
 | 0100000000000034 |             |
 | 0100000000000036 |             |
 
-Presumably system-modules going by total titles here etc?
+Presumably system-modules going by total titles here, first 5 are
+probably bundled with the kernel in package2.
 
 ## System Debug Applets
 
