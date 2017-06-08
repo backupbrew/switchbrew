@@ -323,3 +323,5 @@ There are two main implementations of this interface:
 |-
 | 5 || SdCard
 |}
+
+[[Category:Services]]
