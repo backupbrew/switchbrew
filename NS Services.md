@@ -81,7 +81,7 @@ This is the Switch equivalent of
 | 503  |                         |
 | 504  |                         |
 | 600  |                         |
-| 601  |                         |
+| 601  | GetTitleInfo1           |
 | 602  |                         |
 | 603  |                         |
 | 604  |                         |
@@ -119,6 +119,22 @@ This is the Switch equivalent of
 | 1800 |                         |
 | 1801 |                         |
 | 1802 |                         |
+
+## GetTitleInfo1
+
+Returns 0x10-byte entries using the specified titleID. Usually only
+returns 1 entry. Not usable with system-titles it seems.
+
+Entry
+structure:
+
+| Offset | Size | Description                                                                                          |
+| ------ | ---- | ---------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | u8 "type" (String is from web-applet)                                                                |
+| 0x1    | 0x1  | u8 "installedStorage" / [StorageId](Filesystem%20services.md "wikilink") (String is from web-applet) |
+| 0x2    | 0x2  | Padding                                                                                              |
+| 0x4    | 0x4  | u32 Title-version                                                                                    |
+| 0x8    | 0x8  | u64 titleID                                                                                          |
 
 # ns:su
 
