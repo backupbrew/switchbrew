@@ -5,7 +5,7 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetTitlesInfo
 |-
 | 1 ||
 |-
@@ -233,6 +233,11 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 1802 ||
 |}
+
+== GetTitlesInfo ==
+Returns an array of title-info entries using the specified offset and size. No input titleID is passed to this.
+
+Not tested on hw.
 
 == GetTitleInfo1 ==
 Returns 0x10-byte entries using the specified titleID. Usually only returns 1 entry. Not usable with system-titles it seems.

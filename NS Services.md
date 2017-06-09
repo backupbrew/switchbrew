@@ -5,7 +5,7 @@ This is the Switch equivalent of
 
 | Cmd  | Name                    |
 | ---- | ----------------------- |
-| 0    |                         |
+| 0    | GetTitlesInfo           |
 | 1    |                         |
 | 2    |                         |
 | 3    |                         |
@@ -119,6 +119,13 @@ This is the Switch equivalent of
 | 1800 |                         |
 | 1801 |                         |
 | 1802 |                         |
+
+## GetTitlesInfo
+
+Returns an array of title-info entries using the specified offset and
+size. No input titleID is passed to this.
+
+Not tested on hw.
 
 ## GetTitleInfo1
 
