@@ -1,6 +1,6 @@
 | Title-id         | Versions        | Description                           | Region   | Type       |
 | ---------------- | --------------- | ------------------------------------- | -------- | ---------- |
-| 01000320000CC000 |                 | 1-2 Switch                            | ALL      | Game       |
+| 01000320000CC000 | v0(gamecard)    | 1-2 Switch                            | ALL      | Game       |
 | 0100EE6002B48000 |                 | ACA Neo Geo Fatal Fury                | ALL      | VC         |
 | 0100CB2001DB8000 |                 | ACA Neo Geo Garou: Mark of the Wolves | ALL      | VC         |
 | 0100BA8001DC6000 |                 | ACA Neo Geo Metal Slug 3              | ALL      | VC         |
