@@ -151,6 +151,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x20F || 1 || Pid not found
 |-
+| 0x410 || 2 || Can be returned by NS when the input u64 wasn't found in a table.
+|-
 | 0xA05 || 5 || Returned when attempting to mount titles which exist that aren't *8XX titles, the same way *8XX titles are mounted.
 |-
 | 0x0C15 || 6 || Invalid name (all zeroes)
