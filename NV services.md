@@ -77,21 +77,123 @@ ioctls.
 
 ## /dev/nvhost-ctrl
 
-| Value      | Direction | Size | Description                            | Notes                              |
-| ---------- | --------- | ---- | -------------------------------------- | ---------------------------------- |
-| 0xC0080014 | Inout     | 8    | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ      |                                    |
-| 0x40040015 | In        | 4    | NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR      |                                    |
-| 0xC00C0016 | Inout     | 12   | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT      |                                    |
-| 0x40080017 | In        | 8    | NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX     |                                    |
-| 0xC0180018 | Inout     | 24   | NVHOST32\_IOCTL\_CTRL\_MODULE\_REGRDWR |                                    |
-| 0xC0100019 | Inout     | 16   | NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX    |                                    |
-| 0xC008001A | Inout     | 8    | NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX |                                    |
-| 0xC004001C | Inout     | 4    |                                        |                                    |
-| 0xC010001D | Inout     | 16   |                                        | NvRmSyncWaitEvent (wait on event?) |
-| 0xC010001E | Inout     | 16   |                                        | NvRmSyncWaitEvent (wait on event?) |
-| 0xC004001F | Inout     | 4    |                                        | NvRmSyncWaitEvent (signal event?)  |
-| 0xC0040020 | Inout     | 4    |                                        | NvRmSyncWaitEvent (signal event?)  |
-| 0x40080021 | In        | 8    | cancel\_wait\_event                    | Cancels all events                 |
+| Value      | Direction | Size | Description                                                                                 | Notes |
+| ---------- | --------- | ---- | ------------------------------------------------------------------------------------------- | ----- |
+| 0xC0080014 | Inout     | 8    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ](#NVHOST_IOCTL_CTRL_SYNCPT_READ "wikilink")            |       |
+| 0x40040015 | In        | 4    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR](#NVHOST_IOCTL_CTRL_SYNCPT_INCR "wikilink")            |       |
+| 0xC00C0016 | Inout     | 12   | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT](#NVHOST_IOCTL_CTRL_SYNCPT_WAIT "wikilink")            |       |
+| 0x40080017 | In        | 8    | NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX                                                          |       |
+| 0xC0180018 | Inout     | 24   | NVHOST32\_IOCTL\_CTRL\_MODULE\_REGRDWR                                                      |       |
+| 0xC0100019 | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX](#NVHOST_IOCTL_CTRL_SYNCPT_WAITEX "wikilink")        |       |
+| 0xC008001A | Inout     | 8    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX](#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX "wikilink")   |       |
+| 0xC004001C | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_SIGNAL](#NVHOST_IOCTL_CTRL_EVENT_SIGNAL "wikilink")          |       |
+| 0xC010001D | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT](#NVHOST_IOCTL_CTRL_EVENT_WAIT "wikilink")              |       |
+| 0xC010001E | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT\_ASYNC](#NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC "wikilink") |       |
+| 0xC004001F | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_REGISTER](#NVHOST_IOCTL_CTRL_EVENT_REGISTER "wikilink")      |       |
+| 0xC0040020 | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_UNREGISTER](#NVHOST_IOCTL_CTRL_EVENT_UNREGISTER "wikilink")  |       |
+| 0x40080021 | In        | 8    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_KILL](#NVHOST_IOCTL_CTRL_EVENT_KILL "wikilink")              |       |
+
+### NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ
+
+Identical to Linux driver.
+
+` struct {`  
+`   u32 __id;      // in`  
+`   u32 __value;   // out`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR
+
+Identical to Linux driver.
+
+` struct {`  
+`   u32 __id;      // in`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT
+
+Identical to Linux driver.
+
+` struct {`  
+`   u32 __id;          // in`  
+`   u32 __thresh;      // in`  
+`   s32 __timeout;     // in`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX
+
+Identical to Linux driver.
+
+` struct {`  
+`   u32 __id;          // in`  
+`   u32 __thresh;      // in`  
+`   s32 __timeout;     // in`  
+`   u32 __value;       // out`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX
+
+Identical to Linux driver.
+
+` struct {`  
+`   u32 __id;      // in`  
+`   u32 __value;   // out`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_EVENT\_SIGNAL
+
+Signals an event. Exclusive to the Switch.
+
+` struct {`  
+`   u32 __event_id;      // in (ranges from 0x01 to 0x3F)`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT
+
+Waits on an event. Exclusive to the Switch.
+
+` struct {`  
+`   u32 __unk0;         // in`  
+`   u32 __unk1;         // in`  
+`   s32 __timeout;      // in`  
+`   u32 __event;        // inout (in=event_id; out=result)`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT\_ASYNC
+
+Waits on an event (async version). Exclusive to the Switch.
+
+` struct {`  
+`   u32 __unk0;         // in`  
+`   u32 __unk1;         // in`  
+`   s32 __timeout;      // in`  
+`   u32 __event;        // inout (in=event_id; out=result)`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_EVENT\_REGISTER
+
+Registers an event. Exclusive to the Switch.
+
+` struct {`  
+`   u32 __event_id;      // in (ranges from 0x01 to 0x3F)`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_EVENT\_UNREGISTER
+
+Unregisters an event. Exclusive to the Switch.
+
+` struct {`  
+`   u32 __event_id;      // in (ranges from 0x01 to 0x3F)`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_EVENT\_KILL
+
+Kills events. Exclusive to the
+Switch.
+
+` struct {`  
+`   u64 __events;      // in (64-bit flag where each bit represents one event)`  
+` };`
 
 ## /dev/nvhost-as-gpu
 
@@ -103,18 +205,18 @@ unbound. There is no support for allowing an nvgpu channel to change
 from one address space to another (or from one to
 none).
 
-| Device             | Direction | Size | Value      | Description                                                                       | Notes |
-| ------------------ | --------- | ---- | ---------- | --------------------------------------------------------------------------------- | ----- |
-| /dev/nvhost-as-gpu | In        | 4    | 0x40044101 | [\#NVGPU\_AS\_IOCTL\_BIND\_CHANNEL](#NVGPU_AS_IOCTL_BIND_CHANNEL "wikilink")      |       |
-| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184102 | [\#NVGPU\_AS\_IOCTL\_ALLOC\_SPACE](#NVGPU_AS_IOCTL_ALLOC_SPACE "wikilink")        |       |
-| /dev/nvhost-as-gpu | Inout     | 16   | 0xC0104103 | [\#NVGPU\_AS\_IOCTL\_FREE\_SPACE](#NVGPU_AS_IOCTL_FREE_SPACE "wikilink")          |       |
-| /dev/nvhost-as-gpu | Inout     | 24   | 0xC0184104 | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER](#NVGPU_AS_IOCTL_MAP_BUFFER "wikilink")          |       |
-| /dev/nvhost-as-gpu | Inout     | 8    | 0xC0084105 | [\#NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER](#NVGPU_AS_IOCTL_UNMAP_BUFFER "wikilink")      |       |
-| /dev/nvhost-as-gpu | Inout     | 40   | 0xC0284106 | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                                 |       |
-| /dev/nvhost-as-gpu | In        | 16   | 0x40104107 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")           |       |
-| /dev/nvhost-as-gpu | Inout     | 64   | 0xC0404108 | [\#NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS](#NVGPU_AS_IOCTL_GET_VA_REGIONS "wikilink") |       |
-| /dev/nvhost-as-gpu | In        | 40   | 0x40284109 | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink")    |       |
-| /dev/nvhost-as-gpu | Inout     | 20   | 0xC0144114 |                                                                                   |       |
+| Value      | Direction | Size | Description                                                                       | Notes |
+| ---------- | --------- | ---- | --------------------------------------------------------------------------------- | ----- |
+| 0x40044101 | In        | 4    | [\#NVGPU\_AS\_IOCTL\_BIND\_CHANNEL](#NVGPU_AS_IOCTL_BIND_CHANNEL "wikilink")      |       |
+| 0xC0184102 | Inout     | 24   | [\#NVGPU\_AS\_IOCTL\_ALLOC\_SPACE](#NVGPU_AS_IOCTL_ALLOC_SPACE "wikilink")        |       |
+| 0xC0104103 | Inout     | 16   | [\#NVGPU\_AS\_IOCTL\_FREE\_SPACE](#NVGPU_AS_IOCTL_FREE_SPACE "wikilink")          |       |
+| 0xC0184104 | Inout     | 24   | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER](#NVGPU_AS_IOCTL_MAP_BUFFER "wikilink")          |       |
+| 0xC0084105 | Inout     | 8    | [\#NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER](#NVGPU_AS_IOCTL_UNMAP_BUFFER "wikilink")      |       |
+| 0xC0284106 | Inout     | 40   | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                                 |       |
+| 0x40104107 | In        | 16   | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")           |       |
+| 0xC0404108 | Inout     | 64   | [\#NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS](#NVGPU_AS_IOCTL_GET_VA_REGIONS "wikilink") |       |
+| 0x40284109 | In        | 40   | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink")    |       |
+| 0xC0144114 | Inout     | 20   |                                                                                   |       |
 
 ### NVGPU\_AS\_IOCTL\_BIND\_CHANNEL
 
@@ -173,11 +275,14 @@ Doesn't do shit.
 
 ### NVGPU\_AS\_IOCTL\_INITIALIZE
 
-Nintendo custom.
+Nintendo's custom implementation of NVGPU\_GPU\_IOCTL\_ALLOC\_AS
+(unavailable).
 
 ` struct {`  
-`   u32 __size;       // in (must be aligned to 0x10000; 0=default)`  
-`   u32 __zeroes[3];  // in`  
+`   u32 __big_page_size;   // in (depends on GPU's available_big_page_sizes; 0=default)`  
+`   s32 __as_fd;           // in (ignored; passes 0)`  
+`   u32 __flags;           // in (ignored; passes 0)`  
+`   u32 __reserved;        // in (ignored; passes 0)`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS
@@ -316,14 +421,14 @@ gpu.
 | 0xC0344704 | Inout     | 52   | NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE                                                         |       |
 | 0xC0B04705 | Inout     | 176  | [\#NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS](#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS "wikilink") |       |
 | 0xC0184706 | Inout     | 24   | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS                                                           |       |
-| 0x40084707 | In        | 8    | NVGPU\_GPU\_IOCTL\_OPEN\_CHANNEL                                                             |       |
+| 0x40084707 | In        | 8    | [\#NVGPU\_GPU\_IOCTL\_FLUSH\_L2](#NVGPU_GPU_IOCTL_FLUSH_L2 "wikilink")                       |       |
 | 0x4008470E | In        | 8    |                                                                                              |       |
 | 0x4010470F | In        | 16   |                                                                                              |       |
 | 0xC0084710 | Inout     | 8    |                                                                                              |       |
 | 0x80084711 | Out       | 8    |                                                                                              |       |
 | 0x80084712 | Out       | 8    |                                                                                              |       |
 | 0xC0044713 | Inout     | 4    |                                                                                              |       |
-| 0x80084714 | Out       | 8    |                                                                                              |       |
+| 0x80084714 | Out       | 8    | [\#NVGPU\_GPU\_IOCTL\_GET\_L2\_STATE](#NVGPU_GPU_IOCTL_GET_L2_STATE "wikilink")              |       |
 | 0x80044715 | Out       | 4    |                                                                                              |       |
 | 0x8018471A | Out       | 24   |                                                                                              |       |
 | 0xC008471B | Inout     | 8    |                                                                                              |       |
@@ -377,6 +482,25 @@ pointer.
 `   u64 __gpu_characteristics_buf_size;   // in/out (must not be NULL, but gets overwritten with 0xA0=max_size)`  
 `   u64 __gpu_characteristics_buf_addr;   // in (ignored, but must not be NULL)`  
 `   struct __gpu_characteristics gc;      // out`  
+` };`
+
+### NVGPU\_GPU\_IOCTL\_FLUSH\_L2
+
+Flushes the GPU L2
+cache.
+
+` struct {`  
+`   u32 __flush;          // in (l2_flush | l2_invalidate << 1 | fb_flush << 2)`  
+`   u32 __reserved;       // in`  
+` };`
+
+### NVGPU\_GPU\_IOCTL\_GET\_L2\_STATE
+
+Returns the GPU L2 cache state.
+
+` struct {`  
+`   u32 __mask;        // out (always 0x07)`  
+`   u32 __flush;       // out (active flush bit field)`  
 ` };`
 
 ## Channels

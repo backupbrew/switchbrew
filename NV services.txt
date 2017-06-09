@@ -116,32 +116,122 @@ The following table contains known ioctls.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0xC0080014 || Inout || 8 || NVHOST_IOCTL_CTRL_SYNCPT_READ ||
+| 0xC0080014 || Inout || 8 || [[#NVHOST_IOCTL_CTRL_SYNCPT_READ]] ||
 |-
-| 0x40040015 || In || 4 || NVHOST_IOCTL_CTRL_SYNCPT_INCR ||
+| 0x40040015 || In || 4 || [[#NVHOST_IOCTL_CTRL_SYNCPT_INCR]] ||
 |-
-| 0xC00C0016 || Inout || 12 || NVHOST_IOCTL_CTRL_SYNCPT_WAIT ||
+| 0xC00C0016 || Inout || 12 || [[#NVHOST_IOCTL_CTRL_SYNCPT_WAIT]] ||
 |-
 | 0x40080017 || In || 8 || NVHOST_IOCTL_CTRL_MODULE_MUTEX ||
 |-
 | 0xC0180018 || Inout || 24 || NVHOST32_IOCTL_CTRL_MODULE_REGRDWR ||
 |-
-| 0xC0100019 || Inout || 16 || NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ||
+| 0xC0100019 || Inout || 16 || [[#NVHOST_IOCTL_CTRL_SYNCPT_WAITEX]] ||
 |-
-| 0xC008001A || Inout || 8 || NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX ||
+| 0xC008001A || Inout || 8 || [[#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX]] ||
 |-
-| 0xC004001C || Inout || 4 || ||
+| 0xC004001C || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_SIGNAL]] ||
 |-
-| 0xC010001D || Inout || 16 || || NvRmSyncWaitEvent (wait on event?)
+| 0xC010001D || Inout || 16 || [[#NVHOST_IOCTL_CTRL_EVENT_WAIT]] ||
 |-
-| 0xC010001E || Inout || 16 || || NvRmSyncWaitEvent (wait on event?)
+| 0xC010001E || Inout || 16 || [[#NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC]] ||
 |-
-| 0xC004001F || Inout || 4 || || NvRmSyncWaitEvent (signal event?)
+| 0xC004001F || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_REGISTER]] ||
 |-
-| 0xC0040020 || Inout || 4 || || NvRmSyncWaitEvent (signal event?)
+| 0xC0040020 || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_UNREGISTER]] ||
 |-
-| 0x40080021 || In || 8 || cancel_wait_event || Cancels all events
+| 0x40080021 || In || 8 || [[#NVHOST_IOCTL_CTRL_EVENT_KILL]] ||
 |}
+
+=== NVHOST_IOCTL_CTRL_SYNCPT_READ ===
+Identical to Linux driver.
+
+  struct {
+    u32 __id;      // in
+    u32 __value;   // out
+  };
+
+=== NVHOST_IOCTL_CTRL_SYNCPT_INCR ===
+Identical to Linux driver.
+
+  struct {
+    u32 __id;      // in
+  };
+
+=== NVHOST_IOCTL_CTRL_SYNCPT_WAIT ===
+Identical to Linux driver.
+
+  struct {
+    u32 __id;          // in
+    u32 __thresh;      // in
+    s32 __timeout;     // in
+  };
+
+=== NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ===
+Identical to Linux driver.
+
+  struct {
+    u32 __id;          // in
+    u32 __thresh;      // in
+    s32 __timeout;     // in
+    u32 __value;       // out
+  };
+
+=== NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX ===
+Identical to Linux driver.
+
+  struct {
+    u32 __id;      // in
+    u32 __value;   // out
+  };
+
+=== NVHOST_IOCTL_CTRL_EVENT_SIGNAL ===
+Signals an event. Exclusive to the Switch. 
+
+  struct {
+    u32 __event_id;      // in (ranges from 0x01 to 0x3F)
+  };
+
+=== NVHOST_IOCTL_CTRL_EVENT_WAIT ===
+Waits on an event. Exclusive to the Switch. 
+
+  struct {
+    u32 __unk0;         // in
+    u32 __unk1;         // in
+    s32 __timeout;      // in
+    u32 __event;        // inout (in=event_id; out=result)
+  };
+
+=== NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC ===
+Waits on an event (async version). Exclusive to the Switch. 
+
+  struct {
+    u32 __unk0;         // in
+    u32 __unk1;         // in
+    s32 __timeout;      // in
+    u32 __event;        // inout (in=event_id; out=result)
+  };
+
+=== NVHOST_IOCTL_CTRL_EVENT_REGISTER ===
+Registers an event. Exclusive to the Switch. 
+
+  struct {
+    u32 __event_id;      // in (ranges from 0x01 to 0x3F)
+  };
+
+=== NVHOST_IOCTL_CTRL_EVENT_UNREGISTER ===
+Unregisters an event. Exclusive to the Switch. 
+
+  struct {
+    u32 __event_id;      // in (ranges from 0x01 to 0x3F)
+  };
+
+=== NVHOST_IOCTL_CTRL_EVENT_KILL ===
+Kills events. Exclusive to the Switch. 
+
+  struct {
+    u64 __events;      // in (64-bit flag where each bit represents one event)
+  };
 
 == /dev/nvhost-as-gpu ==
 Each fd opened to this device creates an address space. An address space is then later bound with a channel.
@@ -149,27 +239,27 @@ Each fd opened to this device creates an address space. An address space is then
 Once a nvgpu channel has been bound to an address space it cannot be unbound. There is no support for allowing an nvgpu channel to change from one address space to another (or from one to none).
                                                                                                                               
 {| class="wikitable" border="1"
-! Device || Direction || Size || Value || Description || Notes
+! Value || Direction || Size || Description || Notes
 |-
-| /dev/nvhost-as-gpu || In || 4 || 0x40044101 || [[#NVGPU_AS_IOCTL_BIND_CHANNEL]] ||
+| 0x40044101 || In || 4 || [[#NVGPU_AS_IOCTL_BIND_CHANNEL]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 24 || 0xC0184102 || [[#NVGPU_AS_IOCTL_ALLOC_SPACE]] ||
+| 0xC0184102 || Inout || 24 || [[#NVGPU_AS_IOCTL_ALLOC_SPACE]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 16 || 0xC0104103 || [[#NVGPU_AS_IOCTL_FREE_SPACE]] ||
+| 0xC0104103 || Inout || 16 || [[#NVGPU_AS_IOCTL_FREE_SPACE]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 24 || 0xC0184104 || [[#NVGPU_AS_IOCTL_MAP_BUFFER]] ||
+| 0xC0184104 || Inout || 24 || [[#NVGPU_AS_IOCTL_MAP_BUFFER]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 8 || 0xC0084105 || [[#NVGPU_AS_IOCTL_UNMAP_BUFFER]] ||
+| 0xC0084105 || Inout || 8 || [[#NVGPU_AS_IOCTL_UNMAP_BUFFER]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 40 || 0xC0284106 || NVGPU_AS_IOCTL_MAP_BUFFER_EX ||
+| 0xC0284106 || Inout || 40 || NVGPU_AS_IOCTL_MAP_BUFFER_EX ||
 |-
-| /dev/nvhost-as-gpu || In || 16 || 0x40104107 || [[#NVGPU_AS_IOCTL_INITIALIZE]] ||
+| 0x40104107 || In || 16 || [[#NVGPU_AS_IOCTL_INITIALIZE]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 64 || 0xC0404108 || [[#NVGPU_AS_IOCTL_GET_VA_REGIONS]] ||
+| 0xC0404108 || Inout || 64 || [[#NVGPU_AS_IOCTL_GET_VA_REGIONS]] ||
 |-
-| /dev/nvhost-as-gpu || In || 40 || 0x40284109 || [[#NVGPU_AS_IOCTL_INITIALIZE_EX]] ||
+| 0x40284109 || In || 40 || [[#NVGPU_AS_IOCTL_INITIALIZE_EX]] ||
 |-
-| /dev/nvhost-as-gpu || Inout || 20 || 0xC0144114 || ||
+| 0xC0144114 || Inout || 20 || ||
 |}
 
 === NVGPU_AS_IOCTL_BIND_CHANNEL ===
@@ -220,11 +310,13 @@ On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit
 Doesn't do shit.
 
 === NVGPU_AS_IOCTL_INITIALIZE ===
-Nintendo custom.
+Nintendo's custom implementation of NVGPU_GPU_IOCTL_ALLOC_AS (unavailable).
 
   struct {
-    u32 __size;       // in (must be aligned to 0x10000; 0=default)
-    u32 __zeroes[3];  // in
+    u32 __big_page_size;   // in (depends on GPU's available_big_page_sizes; 0=default)
+    s32 __as_fd;           // in (ignored; passes 0)
+    u32 __flags;           // in (ignored; passes 0)
+    u32 __reserved;        // in (ignored; passes 0)
   };
 
 === NVGPU_AS_IOCTL_GET_VA_REGIONS ===
@@ -371,7 +463,7 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0xC0184706 || Inout || 24 || NVGPU_GPU_IOCTL_GET_TPC_MASKS ||
 |-
-| 0x40084707 || In || 8 || NVGPU_GPU_IOCTL_OPEN_CHANNEL ||
+| 0x40084707 || In || 8 || [[#NVGPU_GPU_IOCTL_FLUSH_L2]] ||
 |-
 | 0x4008470E || In || 8 || ||
 |-
@@ -385,7 +477,7 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0xC0044713 || Inout || 4 || ||
 |-
-| 0x80084714 || Out || 8 || ||
+| 0x80084714 || Out || 8 || [[#NVGPU_GPU_IOCTL_GET_L2_STATE]] ||
 |-
 | 0x80044715 || Out || 4 || ||
 |-
@@ -441,6 +533,22 @@ Returns the GPU characteristics. Modified to return inline data instead of using
     u64 __gpu_characteristics_buf_size;   // in/out (must not be NULL, but gets overwritten with 0xA0=max_size)
     u64 __gpu_characteristics_buf_addr;   // in (ignored, but must not be NULL)
     struct __gpu_characteristics gc;      // out
+  };
+
+=== NVGPU_GPU_IOCTL_FLUSH_L2 ===
+Flushes the GPU L2 cache.
+
+  struct {
+    u32 __flush;          // in (l2_flush | l2_invalidate << 1 | fb_flush << 2)
+    u32 __reserved;       // in
+  };
+
+=== NVGPU_GPU_IOCTL_GET_L2_STATE ===
+Returns the GPU L2 cache state.
+
+  struct {
+    u32 __mask;        // out (always 0x07)
+    u32 __flush;       // out (active flush bit field)
   };
 
 == Channels ==
