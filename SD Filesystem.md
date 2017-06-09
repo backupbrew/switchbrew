@@ -27,7 +27,10 @@ throwing the <this microSD is for another system> error.
 the temp data during eShop title download, while the latter is for the
 final title data. The contents of the former for a
 title("placehld/<hex>/") are moved into the latter when title download
-finishes. When a title is launched(?), the already empty
-"placehld/<hex>" directories are deleted.
+finishes.
+
+Some of the "placehld/<hex>" directories are temp-only and don't get
+moved into "registered". These are deleted when the title is
+launched(?), at that point the directories are already empty.
 
 No titleIDs are stored in any directories/filenames here.
