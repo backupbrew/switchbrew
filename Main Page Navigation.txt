@@ -36,7 +36,9 @@
 *[[Nintendo Software]]
 *[[Recovery Mode]]
 *[[System Versions]]
-| [[Online Multiplayer]]
+| 
+*[[Online Multiplayer]]
+*[[SD Filesystem]]
 |}
 </div>
 {{box-footer-empty}}
