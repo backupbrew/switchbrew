@@ -306,17 +306,18 @@ struct.
 
 ### NVGPU\_AS\_IOCTL\_INITIALIZE\_EX
 
-Nintendo
-custom.
+Nintendo's custom implementation of NVGPU\_GPU\_IOCTL\_ALLOC\_AS
+(unavailable) with extra
+params.
 
 ` struct {`  
-`   u32 __size; // in (must be aligned to 0x10000; 0=default)`  
-`   u32 __pad0;`  
-`   u32 __unk0; // in`  
-`   u32 __pad1;`  
-`   u64 __unk1; // in`  
-`   u64 __unk2; // in`  
-`   u64 __unk3; // in`  
+`   u32 __big_page_size;   // in (depends on GPU's available_big_page_sizes; 0=default)`  
+`   s32 __as_fd;           // in (ignored; passes 0)`  
+`   u32 __flags;           // in (ignored; passes 0)`  
+`   u32 __reserved;        // in (ignored; passes 0)`  
+`   u64 __unk0;            // in`  
+`   u64 __unk1;            // in`  
+`   u64 __unk2;            // in`  
 ` };`
 
 ## /dev/nvmap
@@ -369,7 +370,7 @@ bytes, and changed it from in to inout.
 `   u32 __heapmask; // in`  
 `   u32 __flags;    // in (0=read-only, 1=read-write)`  
 `   u32 __align;    // in`  
-`   u8  __unk0;     // in`  
+`   u8  __kind;     // in`  
 `   u8  __pad[7];`  
 `   u64 __addr;     // in`  
 ` };`
