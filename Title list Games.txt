@@ -21,7 +21,7 @@
 |-
 | 01009D4001DC4000 || || ACA Neo Geo World Heroes Perfect || ALL || VC
 |-
-| 0100C5E003B40000 || || ARMS Global Testpunch || ALL || Timed Demo
+| 0100C5E003B40000 || v65536(0x10000) || ARMS Global Testpunch || ALL || Timed Demo
 |-
 | 010025B002E92000 || || Blaster Master Zero || ALL || Demo
 |-
