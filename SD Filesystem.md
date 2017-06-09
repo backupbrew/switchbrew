@@ -1,0 +1,33 @@
+## Overview
+
+`sd`  
+`└── Nintendo`  
+`    ├── `[`Album`](#Album "wikilink")  
+`    ├── Contents`  
+`    └── save`
+
+## Album
+
+Contains the screenshots: "YYYY/MM/DD/<hex>.jpg". These contain some
+sort of MAC, the system will display an error for screenshots with
+invalid MACs.
+
+## save
+
+Contains system-only savedata "8000000000000000" and "8000000000000124".
+
+## Contents
+
+Contains directories "placehld" and "registered".
+
+Also contains file "private". Modifying this file results in the system
+throwing the <this microSD is for another system> error.
+
+"placehld" and "registered" are the same, except that the former stores
+the temp data during eShop title download, while the latter is for the
+final title data. The contents of the former for a
+title("placehld/<hex>/") are moved into the latter when title download
+finishes. When a title is launched(?), the already empty
+"placehld/<hex>" directories are deleted.
+
+No titleIDs are stored in any directories/filenames here.
