@@ -120,24 +120,24 @@ it will return
 
 ## svcGetInfo
 
-| Handle type | Id0 | Id1    | Description                                                                                                                                                        |
-| ----------- | --- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Process     | 0   | 0      | Core available mask. Always 0xF meaning all 4 cores available.                                                                                                     |
-| Process     | 1   | 0      | Always 0xfffffffff0000000.                                                                                                                                         |
-| Process     | 2   | 0      | Randomized unknown base-address.                                                                                                                                   |
-| Process     | 3   | 0      | Always 0x1000000000.                                                                                                                                               |
-| Process     | 4   | 0      | Randomized heap base-address.                                                                                                                                      |
-| Process     | 5   | 0      | Always 0x180000000.                                                                                                                                                |
-| Process     | 6   | 0      | Total memory usage?                                                                                                                                                |
-| Process     | 7   | 0      | Process heap size.                                                                                                                                                 |
-| Zero        | 8   | 0      | Always 0. Used during exception handling.                                                                                                                          |
-| Zero        | 9   | 0      | This creates and returns an unknown handle.                                                                                                                        |
-| Zero        | 10  | \-1, 2 | Unknown. Output data changes each time this SVC is used. Time/ticks related?                                                                                       |
-| Zero        | 11  | 0-3    | Returns random from TRNG. Used to seed usermode PRNGs. Unknown what exactly causes this output to change, however it does change when exiting+launching a process. |
-| Process     | 12  | 0      | Always 0x8000000.                                                                                                                                                  |
-| Process     | 13  | 0      | Always 0x7ff8000000.                                                                                                                                               |
-| Process     | 14  | 0      | Start of stack mirror region.                                                                                                                                      |
-| Process     | 15  | 0      | Size of stack mirror region.                                                                                                                                       |
+| Handle type | Id0 | Id1                   | Description                                                                                                                                                        |
+| ----------- | --- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Process     | 0   | 0                     | Core available mask. Always 0xF meaning all 4 cores available.                                                                                                     |
+| Process     | 1   | 0                     | Always 0xfffffffff0000000.                                                                                                                                         |
+| Process     | 2   | 0                     | Randomized unknown base-address.                                                                                                                                   |
+| Process     | 3   | 0                     | Always 0x1000000000.                                                                                                                                               |
+| Process     | 4   | 0                     | Randomized heap base-address.                                                                                                                                      |
+| Process     | 5   | 0                     | Always 0x180000000.                                                                                                                                                |
+| Process     | 6   | 0                     | Total memory usage?                                                                                                                                                |
+| Process     | 7   | 0                     | Process heap size.                                                                                                                                                 |
+| Zero        | 8   | 0                     | Always 0. Used during exception handling.                                                                                                                          |
+| Zero        | 9   | 0                     | This creates and returns an unknown handle.                                                                                                                        |
+| Zero        | 10  | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?                                                                      |
+| Zero        | 11  | 0-3                   | Returns random from TRNG. Used to seed usermode PRNGs. Unknown what exactly causes this output to change, however it does change when exiting+launching a process. |
+| Process     | 12  | 0                     | Always 0x8000000.                                                                                                                                                  |
+| Process     | 13  | 0                     | Always 0x7ff8000000.                                                                                                                                               |
+| Process     | 14  | 0                     | Start of stack mirror region.                                                                                                                                      |
+| Process     | 15  | 0                     | Size of stack mirror region.                                                                                                                                       |
 
 ## svcMapMemoryMirror
 
