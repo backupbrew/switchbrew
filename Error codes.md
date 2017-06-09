@@ -91,7 +91,7 @@ fatal-errors, since the Description ends with bit21.
 | 0x25A0B  | 301         | Remote process is dead                                                                                                |
 | 0x3D60B  | 491         | IPC Query 1 failed.                                                                                                   |
 | 0x20F    | 1           | Pid not found                                                                                                         |
-| 0x410    | 2           | Can be returned by NS when the input u64 wasn't found in a table.                                                     |
+| 0x410    | 2           | Can be returned by NS when the input titleID wasn't found in a table.                                                 |
 | 0xA05    | 5           | Returned when attempting to mount titles which exist that aren't \*8XX titles, the same way \*8XX titles are mounted. |
 | 0x0C15   | 6           | Invalid name (all zeroes)                                                                                             |
 | 0x1015   | 8           | Permission denied                                                                                                     |
