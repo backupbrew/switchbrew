@@ -31,7 +31,7 @@
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || Returns a 0x10-sized entry.
+| 0 || [[#GetRootEntry]] ||
 |-
 | 1 || || Takes two 0x10-sized entries, and a u64.
 |-
@@ -55,9 +55,9 @@
 |-
 | 11 || || Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32.
 |-
-| 12 || || Returns a u32.
+| 12 || [[#GetNumberOfEntries]] ||
 |-
-| 13 || || Takes a type-6 buffer, each entry 0x10 bytes, and a u32, and returns a u32.
+| 13 || [[#ReadEntries]] ||
 |-
 | 14 || || Takes a 0x10-sized entry, and returns a u64.
 |-
@@ -79,6 +79,16 @@
 |-
 | 23 || GetTotalSpace ||
 |}
+
+== GetRootEntry ==
+Returns an entry of 16 completely random-looking bytes.
+Changes on reboot?
+
+== ReadEntries ==
+Takes a u32 offset and reads all entries starting at that offset.
+Returns number of entries read.
+
+Each entry is 16 completely random-looking bytes.
 
 == IContentMetaDatabase ==
 {| class="wikitable" border="1"
