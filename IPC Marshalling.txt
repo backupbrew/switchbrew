@@ -124,21 +124,15 @@ The official marshalling function takes an array of (buf_ptr, size) pairs and a 
 Bitmask 0x10 seems to indicate null-terminated strings, but that flag is ignored by the marshalling code.
 
 {| class="wikitable" border="1"
-! Type Mask || Description
+! Type Mask || Description || Direction
 |-
-| 4 + 1 || Creates an A descriptor
+| 4 + 1 || Creates an A descriptor || In
 |-
-| 4 + 2 || Creates a B descriptor
+| 4 + 2 || Creates a B descriptor || Out
 |-
-| 8 + 1 || Creates an X descriptor
+| 8 + 1 || Creates an X descriptor ||
 |-
-| 8 + 2 || Creates a C descriptor
+| 8 + 2 || Creates a C descriptor || Out
 |-
-| 0x20 + 1 || Creates both an A and X descriptor
-|}
-
-{| class="wikitable" border="1"
-! Type || Description
-|-
-| 0x1A || Output-buf, copy?
+| 0x20 + 1 || Creates both an A and X descriptor ||
 |}

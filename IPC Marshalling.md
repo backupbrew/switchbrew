@@ -90,14 +90,10 @@ pairs and a type-field for each such pair.
 Bitmask 0x10 seems to indicate null-terminated strings, but that flag is
 ignored by the marshalling code.
 
-| Type Mask | Description                        |
-| --------- | ---------------------------------- |
-| 4 + 1     | Creates an A descriptor            |
-| 4 + 2     | Creates a B descriptor             |
-| 8 + 1     | Creates an X descriptor            |
-| 8 + 2     | Creates a C descriptor             |
-| 0x20 + 1  | Creates both an A and X descriptor |
-
-| Type | Description       |
-| ---- | ----------------- |
-| 0x1A | Output-buf, copy? |
+| Type Mask | Description                        | Direction |
+| --------- | ---------------------------------- | --------- |
+| 4 + 1     | Creates an A descriptor            | In        |
+| 4 + 2     | Creates a B descriptor             | Out       |
+| 8 + 1     | Creates an X descriptor            |           |
+| 8 + 2     | Creates a C descriptor             | Out       |
+| 0x20 + 1  | Creates both an A and X descriptor |           |
