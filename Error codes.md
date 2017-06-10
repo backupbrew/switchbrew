@@ -94,7 +94,8 @@ fatal-errors, since the Description ends with bit21.
 | 0x410    | 2           | Can be returned by NS when the input titleID wasn't found in a table.                                                 |
 | 0x1F610  | 251         | Unexpected StorageId                                                                                                  |
 | 0xA05    | 5           | Returned when attempting to mount titles which exist that aren't \*8XX titles, the same way \*8XX titles are mounted. |
-| 0x0C15   | 6           | Invalid name (all zeroes)                                                                                             |
+| 0x615    | 3           | Max sessions                                                                                                          |
+| 0xC15    | 6           | Invalid name (all zeroes)                                                                                             |
 | 0x1015   | 8           | Permission denied                                                                                                     |
 | 0x816    | 4           | Bad NRO magic                                                                                                         |
 | 0xC16    | 6           | Bad NRR magic                                                                                                         |
