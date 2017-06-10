@@ -287,9 +287,9 @@ Entry structure:
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || LaunchTitle
 |-
-| 1 ||
+| 1 || TerminateTitle
 |-
 | 2 ||
 |-
