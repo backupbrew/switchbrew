@@ -280,7 +280,36 @@ Entry structure:
 | u64 titleID
 |}
 
-== Title Types ==
+= ns:su =
+
+= ns:dev =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 ||
+|-
+| 3 ||
+|-
+| 4 ||
+|-
+| 5 ||
+|-
+| 6 ||
+|-
+| 7 ||
+|-
+| 8 ||
+|-
+| 9 ||
+|}
+
+= Enums =
+=== Title Types ===
 
 {| class="wikitable" border="1"
 |-
@@ -294,11 +323,7 @@ Entry structure:
 | eShop title / demo?
 |}
 
-= ns:su =
-
-= ns:dev =
-
-= Applet IDs =
+=== AppletId ===
 {| class="wikitable" border="1"
 |-
 !  ID
@@ -346,10 +371,8 @@ Entry structure:
 
 This seems to be the equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs this].
 
-= args.shimKind =
+=== ShimKind ===
 This is from strings and code in [[Internet_Browser|whitelisted]] web-applet.
-
- "args.shimKind() == ::nn::web::common::ShimKind::Lobby || args.shimKind() == ::nn::web::common::ShimKind::Login || args.shimKind() == ::nn::web::common::ShimKind::Share"
 
 {| class="wikitable" border="1"
 |-

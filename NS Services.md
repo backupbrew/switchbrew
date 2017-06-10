@@ -159,18 +159,33 @@ structure:
 | 0x4    | 0x4  | u32 Title-version                                                                                    |
 | 0x8    | 0x8  | u64 titleID                                                                                          |
 
-## Title Types
+# ns:su
+
+# ns:dev
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
+| 6   |      |
+| 7   |      |
+| 8   |      |
+| 9   |      |
+
+# Enums
+
+### Title Types
 
 | Value | Description                           |
 | ----- | ------------------------------------- |
 | 0x80  | Gamecard title / regular application? |
 | 0x81  | eShop title / demo?                   |
 
-# ns:su
-
-# ns:dev
-
-# Applet IDs
+### AppletId
 
 | ID   | Description                                                                                                                                                          |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -191,13 +206,10 @@ structure:
 This seems to be the equivalent of
 [this](https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs).
 
-# args.shimKind
+### ShimKind
 
 This is from strings and code in
-[whitelisted](Internet%20Browser.md "wikilink")
-web-applet.
-
-`"args.shimKind() == ::nn::web::common::ShimKind::Lobby || args.shimKind() == ::nn::web::common::ShimKind::Login || args.shimKind() == ::nn::web::common::ShimKind::Share"`
+[whitelisted](Internet%20Browser.md "wikilink") web-applet.
 
 | shimKind value | Description                    |
 | -------------- | ------------------------------ |
