@@ -52,7 +52,7 @@ fatal-errors, since the Description ends with bit21.
 | 0xCC01   | 102         | Invalid address (not page-aligned).                                                                                   |
 | 0xCE01   | 103         | Address is NULL                                                                                                       |
 | 0xD201   | 105         | Handle-table full.                                                                                                    |
-| 0xD401   | 106         | Invalid memory state.                                                                                                 |
+| 0xD401   | 106         | Invalid memory state / invalid memory permissions.                                                                    |
 | 0xD801   | 108         | When trying to set executable permission on memory.                                                                   |
 | 0xDC01   | 110         | Stack address outside allowed range                                                                                   |
 | 0xE001   | 112         | Invalid thread priority.                                                                                              |
