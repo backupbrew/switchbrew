@@ -68,7 +68,7 @@
 |-
 | 0x21 || svcSendSyncRequest || X0=handle || W0=result
 |-
-| 0x22 || svcSendSyncRequestByBuf || X0=cmdbufptr, X1=size, X2=handle || W0=result
+| 0x22 || [[#svcSendSyncRequestByBuf]] || X0=cmdbufptr, X1=size, X2=handle || W0=result
 |-
 | .... || ? || ? || ?
 |-
@@ -150,6 +150,9 @@ Closing all handles automatically causes the bit32 in [[#MemoryState]] to clear,
 Works with num_handles <= 0x40, error on num_handles == 0.
 
 Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
+
+== svcSendSyncRequestByBuf  =
+Size must be 0x1000-aligned.
 
 == svcBreak ==
 When used on retail where inx0 bit31 is clear, the system will throw a [[Error_codes|fatal-error]]. Otherwise when bit31 is set, it will return 0.
