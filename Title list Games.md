@@ -10,7 +10,8 @@
 | 01002E70032E8000 |                 | ACA Neo Geo Turf Masters              | ALL      | VC         |
 | 0100CEF001DC0000 |                 | ACA Neo Geo Waku Waku 7               | ALL      | VC         |
 | 01009D4001DC4000 |                 | ACA Neo Geo World Heroes Perfect      | ALL      | VC         |
-| 0100C5E003B40000 | v65536(0x10000) | ARMS Global Testpunch                 | ALL      | Timed Demo |
+| 0100C5E003B40000 | v0              | ARMS Global Testpunch                 | ALL      | Timed Demo |
+| 0100C5E003B40800 | v65536(0x10000) | ARMS Global Testpunch                 | ALL      | Update     |
 | 010025B002E92000 |                 | Blaster Master Zero                   | ALL      | Demo       |
 | 0100225000FEE000 |                 | Blaster Master Zero                   | ALL      | Demo       |
 | 01001FA0034E2000 |                 | Dark Witch Music Episode: Rudymical   | ALL      | Game       |
@@ -29,3 +30,11 @@
 | 01000DC003740000 |                 | Puyo Puyo Tetris                      | USA      | Game       |
 | 01004B10031BE000 |                 | Puyo Puyo Tetris                      | EUR      | Game       |
 | 010000A00218E000 |                 | Splatoon 2 Global Testfire            | ALL      | Timed Demo |
+
+The following data was found in
+[NS](NS%20Services.md "wikilink")(NUL-terminators
+removed):
+
+`{tasks":[{id":xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",titles":[{id":0100c5e003b40000",version":0,type":Application"},{id":0100c5e003b40800",version":65536,type":Patch"}],owner_application":0100c5e003b40000"}],format_version":1,last_modified":1497023220,required_system_version":0"}.`
+
+"xxx..." Is where lowercase hex is in the original data.
