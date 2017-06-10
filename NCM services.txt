@@ -24,7 +24,7 @@
 | 11 || InitializeDatabaseForMediaId ||
 |-
 | 12 || UninitializeDatabaseForMediaId ||
-}
+|}
 
 == IContentStorage ==
 {| class="wikitable" border="1"
