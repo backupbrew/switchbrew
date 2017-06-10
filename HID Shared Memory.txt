@@ -18,7 +18,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x3800
 | 0x400
-| Unknown, header and 17 entries
+| Keyboard
 |-
 | 0x3C00
 | 0x400
@@ -291,6 +291,86 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 | Mouse Buttons	
 |-
 |}
+
+
+===== Keyboard =====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x20	
+| Keyboard Header	
+|-
+| 0x20	
+| 0x30 * 17	
+| Keyboard Entries	
+|-
+|}
+
+==== Keyboard Header ====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x4	
+| Timestamp?	
+|-
+| 0x4	
+| 0x4	
+| Unknown	
+|-
+| 0x8	
+| 0x4	
+| Unknown	
+|-
+| 0xC	
+| 0x4	
+| Unknown	
+|-
+| 0x10	
+| 0x8	
+| 6 when connected	
+|-
+| 0x18	
+| 0x8	
+| Unknown	
+|-
+|}
+
+==== Keyboard Entry ====
+
+{| class="wikitable" border="1"
+|-
+!   Offset
+!   Size in bytes
+!   Description
+|-
+| 0x0	
+| 0x8	
+| Timestamp	
+|-
+| 0x8	
+| 0x8	
+| Timestamp Again?	
+|-
+| 0x10	
+| 0x4	
+| Modifier Mask	
+|-
+| 0x18	
+| 0x20	
+| Keys Down, each key gets one bit based on the HID keyboard scan code (F1 is 0x3A, bit 0x3A is set)	
+|-
+|}
+
 
 ===== Controller Serials? =====
 

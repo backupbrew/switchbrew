@@ -8,7 +8,7 @@ if not all input methods available to applications.
 | ------- | ------------- | ------------------------------ |
 | 0x400   | 0x3000        | Capacitive Touchscreen         |
 | 0x3400  | 0x400         | Mouse                          |
-| 0x3800  | 0x400         | Unknown, header and 17 entries |
+| 0x3800  | 0x400         | Keyboard                       |
 | 0x3C00  | 0x400         | Unknown, header and 17 entries |
 | 0x4000  | 0x400         | Unknown, header and 17 entries |
 | 0x4400  | 0x400         | Unknown, header and 17 entries |
@@ -106,6 +106,36 @@ if not all input methods available to applications.
 | 0x24   | 0x4           | Scroll Change X? |
 | 0x28   | 0x8           | Mouse Buttons    |
 |        |               |                  |
+
+##### Keyboard
+
+| Offset | Size in bytes | Description      |
+| ------ | ------------- | ---------------- |
+| 0x0    | 0x20          | Keyboard Header  |
+| 0x20   | 0x30 \* 17    | Keyboard Entries |
+|        |               |                  |
+
+#### Keyboard Header
+
+| Offset | Size in bytes | Description      |
+| ------ | ------------- | ---------------- |
+| 0x0    | 0x4           | Timestamp?       |
+| 0x4    | 0x4           | Unknown          |
+| 0x8    | 0x4           | Unknown          |
+| 0xC    | 0x4           | Unknown          |
+| 0x10   | 0x8           | 6 when connected |
+| 0x18   | 0x8           | Unknown          |
+|        |               |                  |
+
+#### Keyboard Entry
+
+| Offset | Size in bytes | Description                                                                                        |
+| ------ | ------------- | -------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8           | Timestamp                                                                                          |
+| 0x8    | 0x8           | Timestamp Again?                                                                                   |
+| 0x10   | 0x4           | Modifier Mask                                                                                      |
+| 0x18   | 0x20          | Keys Down, each key gets one bit based on the HID keyboard scan code (F1 is 0x3A, bit 0x3A is set) |
+|        |               |                                                                                                    |
 
 ##### Controller Serials?
 
