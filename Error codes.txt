@@ -50,11 +50,15 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 129 || Play Report
 |-
+| 137 || NIM
+|-
 | 162 || Userland assert
 |-
 | 168 || Userland crash
 |-
 | 203 || HID
+|-
+| 206 || Capture
 |}
 
 = Error codes =

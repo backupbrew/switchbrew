@@ -38,9 +38,11 @@ fatal-errors, since the Description ends with bit21.
 | 124   | Account                      |
 | 126   | Mii                          |
 | 129   | Play Report                  |
+| 137   | NIM                          |
 | 162   | Userland assert              |
 | 168   | Userland crash               |
 | 203   | HID                          |
+| 206   | Capture                      |
 
 # Error codes
 
