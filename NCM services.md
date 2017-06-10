@@ -91,7 +91,7 @@ data.
 
 ### GetTitleIdInfo
 
-Takes a u64 title-id as input, returns same title-id together with 16
+Takes a u64 title-id as input, returns same title-id together with 8
 unknown bytes.
 
 For BotW cartridge they are "00 00 00 00 80 00 00 00".
