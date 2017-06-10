@@ -1,6 +1,6 @@
 HID shared memory is a 0x40000 byte read-only segment of memory shared between applications for input. The segment contains structures for most if not all input methods available to applications.
 
-====== Memory Map ======
+= Memory Map =
 
 {| class="wikitable" border="1"
 |-
@@ -62,7 +62,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-===== Capacitive Touchscreen =====
+== Capacitive Touchscreen ==
 
 {| class="wikitable" border="1"
 |-
@@ -80,7 +80,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-==== Touch Header ====
+=== Touch Header ===
 
 {| class="wikitable" border="1"
 |-
@@ -118,7 +118,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-==== Touch Entry ====
+=== Touch Entry ===
 
 {| class="wikitable" border="1"
 |-
@@ -136,7 +136,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-=== Touch Structure Header ===
+==== Touch Structure Header ====
 {| class="wikitable" border="1"
 |-
 !   Offset
@@ -153,7 +153,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-=== Touch Data Entry ===
+==== Touch Data Entry ====
 {| class="wikitable" border="1"
 |-
 !   Offset
@@ -194,7 +194,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-===== Mouse =====
+== Mouse ==
 
 {| class="wikitable" border="1"
 |-
@@ -212,7 +212,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-==== Mouse Header ====
+=== Mouse Header ===
 
 {| class="wikitable" border="1"
 |-
@@ -246,7 +246,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-==== Mouse Entry ====
+=== Mouse Entry ===
 
 {| class="wikitable" border="1"
 |-
@@ -293,7 +293,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |}
 
 
-===== Keyboard =====
+== Keyboard ==
 
 {| class="wikitable" border="1"
 |-
@@ -311,7 +311,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-==== Keyboard Header ====
+=== Keyboard Header ===
 
 {| class="wikitable" border="1"
 |-
@@ -345,7 +345,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 |}
 
-==== Keyboard Entry ====
+=== Keyboard Entry ===
 
 {| class="wikitable" border="1"
 |-
@@ -372,7 +372,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |}
 
 
-===== Controller Serials? =====
+== Controller Serials? ==
 
 This section contains a series of 16 structures 0x400 bytes large.
 
@@ -392,7 +392,7 @@ This section contains a series of 16 structures 0x400 bytes large.
 |-
 |}
 
-===== Controllers =====
+== Controllers ==
 
 This section contains a series of 10 0x5000 byte structures describing each available controller.
 {| class="wikitable" border="1"
@@ -411,7 +411,7 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 |}
 
-==== Controller ====
+=== Controller ===
 
 {| class="wikitable" border="1"
 |-
@@ -445,7 +445,7 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 |}
 
-=== Controller Header ===
+==== Controller Header ====
 
 {| class="wikitable" border="1"
 |-
@@ -495,7 +495,7 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 |}
 
-=== Controller State ===
+==== Controller State ====
 
 {| class="wikitable" border="1"
 |-
@@ -533,7 +533,7 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 |}
 
-== Button State ==
+===== Button State =====
 
 {| class="wikitable" border="1"
 |-

@@ -2,7 +2,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared
 between applications for input. The segment contains structures for most
 if not all input methods available to applications.
 
-###### Memory Map
+# Memory Map
 
 | Offset  | Size in bytes | Description                    |
 | ------- | ------------- | ------------------------------ |
@@ -21,7 +21,7 @@ if not all input methods available to applications.
 | 0x3BA00 | 0x4600        | Unknown                        |
 |         |               |                                |
 
-##### Capacitive Touchscreen
+## Capacitive Touchscreen
 
 | Offset | Size in bytes | Description   |
 | ------ | ------------- | ------------- |
@@ -29,7 +29,7 @@ if not all input methods available to applications.
 | 0x28   | 0x290 \* 17   | Touch Entries |
 |        |               |               |
 
-#### Touch Header
+### Touch Header
 
 | Offset | Size in bytes | Description |
 | ------ | ------------- | ----------- |
@@ -42,7 +42,7 @@ if not all input methods available to applications.
 | 0x20   | 0x8           | Timestamp   |
 |        |               |             |
 
-#### Touch Entry
+### Touch Entry
 
 | Offset | Size in bytes | Description        |
 | ------ | ------------- | ------------------ |
@@ -50,7 +50,7 @@ if not all input methods available to applications.
 | 0x10   | 0x28 \* 16    | Touch Data         |
 |        |               |                    |
 
-### Touch Structure Header
+#### Touch Structure Header
 
 | Offset | Size in bytes | Description       |
 | ------ | ------------- | ----------------- |
@@ -58,7 +58,7 @@ if not all input methods available to applications.
 | 0x8    | 0x8           | Number of Touches |
 |        |               |                   |
 
-### Touch Data Entry
+#### Touch Data Entry
 
 | Offset | Size in bytes | Description      |
 | ------ | ------------- | ---------------- |
@@ -72,7 +72,7 @@ if not all input methods available to applications.
 | 0x24   | 0x4           | Unknown          |
 |        |               |                  |
 
-##### Mouse
+## Mouse
 
 | Offset | Size in bytes | Description   |
 | ------ | ------------- | ------------- |
@@ -80,7 +80,7 @@ if not all input methods available to applications.
 | 0x20   | 0x30 \* 17    | Mouse Entries |
 |        |               |               |
 
-#### Mouse Header
+### Mouse Header
 
 | Offset | Size in bytes | Description                      |
 | ------ | ------------- | -------------------------------- |
@@ -92,7 +92,7 @@ if not all input methods available to applications.
 | 0x18   | 0x8           | Unknown                          |
 |        |               |                                  |
 
-#### Mouse Entry
+### Mouse Entry
 
 | Offset | Size in bytes | Description      |
 | ------ | ------------- | ---------------- |
@@ -107,7 +107,7 @@ if not all input methods available to applications.
 | 0x28   | 0x8           | Mouse Buttons    |
 |        |               |                  |
 
-##### Keyboard
+## Keyboard
 
 | Offset | Size in bytes | Description      |
 | ------ | ------------- | ---------------- |
@@ -115,7 +115,7 @@ if not all input methods available to applications.
 | 0x20   | 0x30 \* 17    | Keyboard Entries |
 |        |               |                  |
 
-#### Keyboard Header
+### Keyboard Header
 
 | Offset | Size in bytes | Description      |
 | ------ | ------------- | ---------------- |
@@ -127,7 +127,7 @@ if not all input methods available to applications.
 | 0x18   | 0x8           | Unknown          |
 |        |               |                  |
 
-#### Keyboard Entry
+### Keyboard Entry
 
 | Offset | Size in bytes | Description                                                                                        |
 | ------ | ------------- | -------------------------------------------------------------------------------------------------- |
@@ -137,7 +137,7 @@ if not all input methods available to applications.
 | 0x18   | 0x20          | Keys Down, each key gets one bit based on the HID keyboard scan code (F1 is 0x3A, bit 0x3A is set) |
 |        |               |                                                                                                    |
 
-##### Controller Serials?
+## Controller Serials?
 
 This section contains a series of 16 structures 0x400 bytes large.
 
@@ -147,7 +147,7 @@ This section contains a series of 16 structures 0x400 bytes large.
 | 0x60   | 0xE           | Controller Serial |
 |        |               |                   |
 
-##### Controllers
+## Controllers
 
 This section contains a series of 10 0x5000 byte structures describing
 each available controller.
@@ -159,7 +159,7 @@ each available controller.
 | 9                | Unknown        |
 |                  |                |
 
-#### Controller
+### Controller
 
 | Offset | Size in bytes | Description              |
 | ------ | ------------- | ------------------------ |
@@ -171,7 +171,7 @@ each available controller.
 | 0x41F0 | 0x10          | Controller MAC           |
 |        |               |                          |
 
-### Controller Header
+#### Controller Header
 
 | Offset | Size in bytes | Description                              |
 | ------ | ------------- | ---------------------------------------- |
@@ -187,7 +187,7 @@ each available controller.
 | 0x24   | 0x4           | RGBA Button Color (left Joy-Con)         |
 |        |               |                                          |
 
-### Controller State
+#### Controller State
 
 | Offset | Size in bytes | Description                                   |
 | ------ | ------------- | --------------------------------------------- |
@@ -200,7 +200,7 @@ each available controller.
 | 0x20   | 0x8           | Controller State (bit0 connected, bit1 wired) |
 |        |               |                                               |
 
-## Button State
+##### Button State
 
 | Bit | Button              |
 | --- | ------------------- |
