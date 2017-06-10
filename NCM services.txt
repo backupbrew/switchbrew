@@ -17,14 +17,14 @@
 |-
 | 8 || || Takes a u8 as input.
 |-
-| 9 || || Takes a u8 as input.
+| 9 || InitializeStorageForMediaId ||
 |-
-| 10 || || Takes a u8 as input.
+| 10 || UninitializeStorageForMediaId ||
 |-
-| 11 || || Takes a u8 as input.
+| 11 || InitializeDatabaseForMediaId ||
 |-
-| 12 || || Takes a u8 as input.
-|}
+| 12 || UninitializeDatabaseForMediaId ||
+}
 
 == IContentStorage ==
 {| class="wikitable" border="1"
