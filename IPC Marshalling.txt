@@ -154,8 +154,7 @@ Bitmask 0x10 seems to indicate null-terminated strings, but that flag is ignored
 | 0x20 + 2 || Creates both an B and C descriptor ||
 |}
 
-For types 0x21, 0x22 if size doesn't fit in u16, it's added to a list.
-
+For types 0x21, 0x22 if size doesn't fit in u16, it's added to a list. Some magic shit happens to that list.
 
 == Official IPC Cmd Structure ==
 Official struct that is stored for each IPC command. It contains precalculated offsets for different portions of the command structure.

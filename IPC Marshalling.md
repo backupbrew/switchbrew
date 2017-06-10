@@ -114,6 +114,7 @@ code.
 | 0x20 + 2     | Creates both an B and C descriptor                                          |           |
 
 For types 0x21, 0x22 if size doesn't fit in u16, it's added to a list.
+Some magic shit happens to that list.
 
 ## Official IPC Cmd Structure
 
