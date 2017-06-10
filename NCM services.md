@@ -36,7 +36,7 @@
 | 15  |                                                        | Void.                                                            |
 | 16  |                                                        | Takes three 0x10-sized entries.                                  |
 | 17  |                                                        | Takes a 0x10-sized entry and a u64.                              |
-| 18  |                                                        | Takes a type-6 array, a 0x10-sized entry, and a u64.             |
+| 18  | [\#ReadEntryRaw](#ReadEntryRaw "wikilink")             |                                                                  |
 | 19  |                                                        | Takes a 0x10-sized entry and returns another 0x10-sized entry.   |
 | 20  |                                                        | Takes a 0x10-sized entry and returns another 0x10-sized entry.   |
 | 21  |                                                        | Takes a 0x10-sized entry, a u64, and a type5 buffer.             |
@@ -53,8 +53,14 @@ reboot?
 Takes a u32 offset and gets all entries starting at that offset. Returns
 number of entries read.
 
-Each entry is 16 completely random-looking
-bytes.
+Each entry is 16 completely random-looking bytes.
+
+## ReadEntryRaw
+
+Takes an 16-byte entry as input, and a u64 file offset.
+
+Returns encrypted looking
+data.
 
 ## IContentMetaDatabase
 
