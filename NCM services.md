@@ -50,8 +50,8 @@ reboot?
 
 ## GetEntries
 
-Takes a u32 offset and gets all entries starting at that offset. Returns
-number of entries read.
+Takes an output buffer, u32 offset and gets all entries starting at that
+offset. Returns number of entries read.
 
 Each entry is 16 completely random-looking bytes.
 
