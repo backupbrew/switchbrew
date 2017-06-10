@@ -2,7 +2,7 @@
 {| class=wikitable
 ! Id || Name || In || Out
 |-
-|  0x1 || [[#svcSetHeapSize]] || X1=size || W0=result, X1=outaddr
+|  0x1 || [[#svcSetHeapSize]] || W1=size || W0=result, X1=outaddr
 |-
 |  0x2 || [[#svcProtectMemory]] || X0=addr, X1=size, W2=prot || W0=result
 |-
@@ -48,7 +48,7 @@
 |-
 | 0x17 || svcClearEvent || W0=handle || W0=result
 |-
-| 0x18 || [[#svcWaitEvents]] || X1=handles_ptr, X2=num_handles. X3=timeout || W0=result, W1=handle_idx
+| 0x18 || [[#svcWaitEvents]] || X1=handles_ptr, W2=num_handles. X3=timeout || W0=result, W1=handle_idx
 |-
 | 0x19 || svcSignalEvent || W0=handle || W0=result
 |-
