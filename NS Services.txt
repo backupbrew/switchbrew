@@ -75,9 +75,9 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 46 ||
 |-
-| 47 || [[#Cmd47]]
+| 47 || [[#GetFreeSpace]]
 |-
-| 48 || [[#Cmd48]]
+| 48 || [[#GetTotalSpace]]
 |-
 | 49 ||
 |-
@@ -234,12 +234,12 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 | 1802 ||
 |}
 
-== Cmd47 ==
+== GetFreeSpace ==
 Takes an input media-id that must be 5.
 
 Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd22.
 
-== Cmd48 ==
+== GetTotalSpace ==
 Takes an input media-id that must be 5.
 
 Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd23.

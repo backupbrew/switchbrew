@@ -40,8 +40,8 @@ This is the Switch equivalent of
 | 44   |                                              |
 | 45   |                                              |
 | 46   |                                              |
-| 47   | [\#Cmd47](#Cmd47 "wikilink")                 |
-| 48   | [\#Cmd48](#Cmd48 "wikilink")                 |
+| 47   | [\#GetFreeSpace](#GetFreeSpace "wikilink")   |
+| 48   | [\#GetTotalSpace](#GetTotalSpace "wikilink") |
 | 49   |                                              |
 | 52   |                                              |
 | 53   |                                              |
@@ -120,7 +120,7 @@ This is the Switch equivalent of
 | 1801 |                                              |
 | 1802 |                                              |
 
-## Cmd47
+## GetFreeSpace
 
 Takes an input media-id that must be 5.
 
@@ -128,7 +128,7 @@ Returns the u64 from
 [Content\_Manager\_services\#IContentStorage](Content%20Manager%20services#IContentStorage.md##IContentStorage "wikilink")
 cmd22.
 
-## Cmd48
+## GetTotalSpace
 
 Takes an input media-id that must be 5.
 
