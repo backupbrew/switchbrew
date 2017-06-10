@@ -45,25 +45,25 @@
 
 ## IContentMetaDatabase
 
-| Cmd | Name                | Notes |
-| --- | ------------------- | ----- |
-| 0   | InsertContentEntry? |       |
-| 1   |                     |       |
-| 2   |                     |       |
-| 3   |                     |       |
-| 4   |                     |       |
-| 5   | Iterate             |       |
-| 6   |                     |       |
-| 7   |                     |       |
-| 8   |                     |       |
-| 9   |                     |       |
-| 10  |                     |       |
-| 11  |                     |       |
-| 12  |                     |       |
-| 13  |                     |       |
-| 14  |                     |       |
-| 15  | EndIteration        |       |
-| 16  |                     |       |
-| 17  |                     |       |
-| 18  |                     |       |
-| 19  |                     |       |
+| Cmd | Name                | Notes                                                                                           |
+| --- | ------------------- | ----------------------------------------------------------------------------------------------- |
+| 0   | InsertContentEntry? | Takes a 0x10-sized entry, a type-5 buffer and a u64.                                            |
+| 1   |                     | Takes a 0x10-sized entry, a type-6 buffer and a u64. Returns a u64.                             |
+| 2   |                     | Takes a 0x10-sized entry.                                                                       |
+| 3   |                     | Takes a 0x10-sized entry and a bool/u8. Returns an 0x10-sized entry.                            |
+| 4   |                     | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.    |
+| 5   | Iterate             | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32. |
+| 6   |                     | Takes a u64. Returns a 0x10-sized entry.                                                        |
+| 7   |                     |                                                                                                 |
+| 8   |                     |                                                                                                 |
+| 9   |                     |                                                                                                 |
+| 10  |                     |                                                                                                 |
+| 11  |                     |                                                                                                 |
+| 12  |                     |                                                                                                 |
+| 13  |                     |                                                                                                 |
+| 14  |                     |                                                                                                 |
+| 15  | EndIteration        |                                                                                                 |
+| 16  |                     |                                                                                                 |
+| 17  |                     |                                                                                                 |
+| 18  |                     |                                                                                                 |
+| 19  |                     |                                                                                                 |
