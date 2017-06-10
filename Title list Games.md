@@ -23,15 +23,16 @@
 | 01009510001CA000 |                 |                                                       | FAST RMX                              | JPN      | Game       |
 | 01006740034F6000 |                 |                                                       | Just Dance 2017                       | USA      | Game       |
 | 010085300314E000 |                 |                                                       | Kamiko                                | USA      | Game       |
-| 0100152000022000 |                 |                                                       | Mario Kart 8 Deluxe                   | ALL      | Game       |
+| 0100152000022000 |                 | Gamecard Front: LA-H-AABPA-{region} Back: AABPA22A000 | Mario Kart 8 Deluxe                   | ALL      | Game       |
 | 01006BD001E06000 |                 |                                                       | Minecraft: Nintendo Switch Edition    | ALL      | Game       |
 | 010031F002B66000 |                 |                                                       | Mr. Shifty                            | USA, EUR | Game       |
 | 010002900294A000 |                 |                                                       | NBA Playgrounds                       | JPN, USA | Game       |
 | 01004C200100E000 |                 |                                                       | New Frontier Days: Founding Pioneers  | ALL      | Game       |
 | 0100902001014000 |                 |                                                       | Othello                               | JPN      | Game       |
-| 01000DC003740000 |                 |                                                       | Puyo Puyo Tetris                      | USA      | Game       |
+| 01000DC003740000 |                 | Gamecard Front: LA-H-BAACB-USA Back: BAACB41Y000      | Puyo Puyo Tetris                      | USA      | Game       |
 | 01004B10031BE000 |                 |                                                       | Puyo Puyo Tetris                      | EUR      | Game       |
 | 010000A00218E000 |                 |                                                       | Splatoon 2 Global Testfire            | ALL      | Timed Demo |
+| XXXXXXXXXXXXXXXX |                 | Gamecard Front: LA-H-BAAZA-USA Back: BAAZA20Y000      | The Binding of Isaac: Afterbirth+     | USA      | Game       |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
