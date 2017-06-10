@@ -3,24 +3,24 @@
 This is an array of
 u32's.
 
-| Word | Bits  | Description                                                  |
-| ---- | ----- | ------------------------------------------------------------ |
-| 0    | 15-0  | Type. 4=Request, 5=Control                                   |
-| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                 |
-| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                 |
-| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                 |
-| 0    | 31-28 | Number of type W desciptors (each: 3 words), never observed. |
-| 1    | 9-0   | Total word count (in u32's).                                 |
-| 1    | 13-10 | If set to 2, enable buf C descriptor.                        |
-| 1    | 31    | Enable handle descriptor.                                    |
-| ...  |       | Handle descriptor, if enabled.                               |
-| ...  |       | Buf X descriptors, each one 2 words.                         |
-| ...  |       | Buf A descriptors, each one 3 words.                         |
-| ...  |       | Buf B descriptors, each one 3 words.                         |
-| ...  |       | Type W descriptors, each one 3 words.                        |
-| ...  |       | Padding                                                      |
-| ...  |       | Raw data                                                     |
-| ...  |       | Buf C descriptors, each one 2 words.                         |
+| Word | Bits  | Description                                                 |
+| ---- | ----- | ----------------------------------------------------------- |
+| 0    | 15-0  | Type. 4=Request, 5=Control                                  |
+| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                |
+| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                |
+| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                |
+| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed. |
+| 1    | 9-0   | Total word count (in u32's).                                |
+| 1    | 13-10 | If set to 2, enable buf C descriptor.                       |
+| 1    | 31    | Enable handle descriptor.                                   |
+| ...  |       | Handle descriptor, if enabled.                              |
+| ...  |       | Buf X descriptors, each one 2 words.                        |
+| ...  |       | Buf A descriptors, each one 3 words.                        |
+| ...  |       | Buf B descriptors, each one 3 words.                        |
+| ...  |       | Type W descriptors, each one 3 words.                       |
+| ...  |       | Padding                                                     |
+| ...  |       | Raw data                                                    |
+| ...  |       | Buf C descriptors, each one 2 words.                        |
 
 ### Handle descriptor
 
@@ -90,13 +90,30 @@ pairs and a type-field for each such pair.
 Bitmask 0x10 seems to indicate null-terminated strings, but that flag is
 ignored by the marshalling code.
 
-| Type Mask | Description                        | Direction |
-| --------- | ---------------------------------- | --------- |
-| 4 + 1     | Creates an A descriptor            | In        |
-| 4 + 2     | Creates a B descriptor             | Out       |
-| 8 + 1     | Creates an X descriptor            |           |
-| 8 + 2     | Creates a C descriptor             | Out       |
-| 0x20 + 1  | Creates both an A and X descriptor |           |
+## Official marshalling code
+
+The official marshalling function takes an array of (buf\_ptr, size)
+pairs and a type-field for each such pair.
+
+Bitmask 0x10 seems to indicate null-terminated strings, but that flag is
+ignored by the marshalling
+code.
+
+| Type Mask    | Description                                                                 | Direction |
+| ------------ | --------------------------------------------------------------------------- | --------- |
+| 4 + 1        | Creates a A descriptor with flags=0.                                        | In        |
+| 0x40 + 4 + 1 | Creates a A descriptor with flags=1.                                        | In        |
+| 0x80 + 4 + 1 | Creates a A descriptor with flags=3.                                        | In?       |
+| 4 + 2        | Creates a B descriptor with flags=0.                                        | Out       |
+| 0x40 + 4 + 2 | Creates a B descriptor with flags=1.                                        | Out       |
+| 0x80 + 4 + 2 | Creates a B descriptor with flags=3.                                        | Out?      |
+| 8 + 1        | Creates an X descriptor                                                     |           |
+| 8 + 2        | Creates a C descriptor                                                      | Out       |
+| 0x10 + 8 + 2 | Creates a C descriptor, and writes the u16 size to an offset into raw data. | Out       |
+| 0x20 + 1     | Creates both an A and X descriptor                                          |           |
+| 0x20 + 2     | Creates both an B and C descriptor                                          |           |
+
+For types 0x21, 0x22 if size doesn't fit in u16, it's added to a list.
 
 ## Official IPC Cmd Structure
 
@@ -118,9 +135,9 @@ All offsets are given is in number of u32 words.
 `  u32 offset_x_descriptors;`  
 `  u32 offset_a_descriptors;`  
 `  u32 offset_b_descriptors;`  
-`  u32 offset_c_descriptors;`  
+`  u32 offset_w_descriptors; /* this is a guess */`  
 `  u32 offset_raw_data;`  
-`  u32 unk1;`  
+`  u32 offset_c_descriptors;`  
 `  u32 unk2;`  
 `  u32 unk3;`  
 `}`

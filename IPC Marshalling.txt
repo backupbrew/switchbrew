@@ -12,7 +12,7 @@ This is an array of u32's.
 |-
 | 0 || 27-24 || Number of buf B descriptors (each: 3 words).
 |-
-| 0 || 31-28 || Number of type W desciptors (each: 3 words), never observed.
+| 0 || 31-28 || Number of buf W desciptors (each: 3 words), never observed.
 |-
 | 1 || 9-0 || Total word count (in u32's).
 |-
@@ -123,19 +123,39 @@ The official marshalling function takes an array of (buf_ptr, size) pairs and a 
 
 Bitmask 0x10 seems to indicate null-terminated strings, but that flag is ignored by the marshalling code.
 
+== Official marshalling code ==
+The official marshalling function takes an array of (buf_ptr, size) pairs and a type-field for each such pair.
+
+Bitmask 0x10 seems to indicate null-terminated strings, but that flag is ignored by the marshalling code.
+
 {| class="wikitable" border="1"
 ! Type Mask || Description || Direction
 |-
-| 4 + 1 || Creates an A descriptor || In
+| 4 + 1 || Creates a A descriptor with flags=0. || In
 |-
-| 4 + 2 || Creates a B descriptor || Out
+| 0x40 + 4 + 1 || Creates a A descriptor with flags=1. || In
+|-
+| 0x80 + 4 + 1 || Creates a A descriptor with flags=3. || In?
+|-
+| 4 + 2 || Creates a B descriptor with flags=0. || Out
+|-
+| 0x40 + 4 + 2 || Creates a B descriptor with flags=1. || Out
+|-
+| 0x80 + 4 + 2 || Creates a B descriptor with flags=3. || Out?
 |-
 | 8 + 1 || Creates an X descriptor ||
 |-
 | 8 + 2 || Creates a C descriptor || Out
 |-
+| 0x10 + 8 + 2 || Creates a C descriptor, and writes the u16 size to an offset into raw data. || Out
+|-
 | 0x20 + 1 || Creates both an A and X descriptor ||
+|-
+| 0x20 + 2 || Creates both an B and C descriptor ||
 |}
+
+For types 0x21, 0x22 if size doesn't fit in u16, it's added to a list.
+
 
 == Official IPC Cmd Structure ==
 Official struct that is stored for each IPC command. It contains precalculated offsets for different portions of the command structure.
@@ -155,9 +175,9 @@ All offsets are given is in number of u32 words.
    u32 offset_x_descriptors;
    u32 offset_a_descriptors;
    u32 offset_b_descriptors;
-   u32 offset_c_descriptors;
+   u32 offset_w_descriptors; /* this is a guess */
    u32 offset_raw_data;
-   u32 unk1;
+   u32 offset_c_descriptors;
    u32 unk2;
    u32 unk3;
  }
