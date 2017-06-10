@@ -61,7 +61,7 @@ When a fatal-error is received the error code is outputted using the following f
 {| class=wikitable
 ! Value || Description || Description
 |-
-| 0xCA01 || 101 || Unaligned size
+| 0xCA01 || 101 || Invalid size
 |-
 | 0xCC01 || 102 || Invalid address (not page-aligned).
 |-

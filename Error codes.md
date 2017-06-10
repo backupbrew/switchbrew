@@ -46,7 +46,7 @@ fatal-errors, since the Description ends with bit21.
 
 | Value    | Description | Description                                                                                                           |
 | -------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
-| 0xCA01   | 101         | Unaligned size                                                                                                        |
+| 0xCA01   | 101         | Invalid size                                                                                                          |
 | 0xCC01   | 102         | Invalid address (not page-aligned).                                                                                   |
 | 0xCE01   | 103         | Address is NULL                                                                                                       |
 | 0xD201   | 105         | Handle-table full.                                                                                                    |
