@@ -77,7 +77,7 @@
 |-
 | 22 || || Returns a u64.
 |-
-| 23 || || Returns a u64.
+| 23 || GetTotalSpace ||
 |}
 
 == IContentMetaDatabase ==
