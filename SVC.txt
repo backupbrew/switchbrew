@@ -94,7 +94,7 @@
 |-
 | 0x44 || svcReplyAndReceiveByBuf || X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=?, X6=timeout || W0=result, W1=handle_idx
 |-
-| 0x45 || svcCreateEvent? || None || W0=result, W1=?, W2=?
+| 0x45 || svcCreateSession || None || W0=result, W1=client_handle, W2=server_handle
 |-
 | .... || ? || ? || ?
 |-

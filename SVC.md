@@ -1,58 +1,58 @@
 # System calls
 
-| Id   | Name                                                         | In                                                                | Out                           |
-| ---- | ------------------------------------------------------------ | ----------------------------------------------------------------- | ----------------------------- |
-| 0x1  | [\#svcSetHeapSize](#svcSetHeapSize "wikilink")               | W1=size                                                           | W0=result, X1=outaddr         |
-| 0x2  | [\#svcProtectMemory](#svcProtectMemory "wikilink")           | X0=addr, X1=size, W2=prot                                         | W0=result                     |
-| 0x3  | [\#svcSetMemoryState](#svcSetMemoryState "wikilink")         | X0=addr, X1=size, W2=state0, W3=state1                            | W0=result                     |
-| 0x4  | [\#svcMirrorStack](#svcMirrorStack "wikilink")               | X0=dstaddr, X1=srcaddr, X2=size                                   | W0=result                     |
-| 0x5  | svcUnmirrorStack                                             | X0=dstaddr, X1=srcaddr, X2=size                                   | W0=result                     |
-| 0x6  | svcQueryMemory                                               | X0=meminfo\_ptr, X2=addr                                          | W0=result, W1=pageinfo        |
-| 0x7  | svcExitProcess                                               | None                                                              |                               |
-| 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")             | X1=entry, X2=arg, X3=stacktop, W4=prio, W5=processor\_id          | W0=result, W1=handle          |
-| 0x9  | svcStartThread                                               | W0=thread\_handle                                                 |                               |
-| 0xA  | svcExitThread                                                | None                                                              |                               |
-| 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")               | X0=nano                                                           |                               |
-| 0xC  | svcGetThreadPriority                                         | W1=thread\_handle                                                 | W0=result, W1=prio            |
-| 0xD  | svcSetThreadPriority                                         | W0=thread\_handle, W1=prio                                        | W0=result                     |
-| 0xE  | svcGetThreadAffinityMask                                     | W2=thread\_handle                                                 | W0=result, W1=out, X2=out     |
-| 0xF  | svcSetThreadAffinityMask                                     | W0=thread\_handle, W1=in, X2=in2                                  | W0=result                     |
-| 0x10 | svcGetCurrentProcessorNumber                                 | None                                                              | W0/X0=cpuid                   |
-| 0x11 | svcGetMemoryBlockSomethingA?                                 | W0=handle                                                         | ?                             |
-| 0x12 | svcGetMemoryBlockSomethingB?                                 | W0=handle                                                         | ?                             |
-| 0x13 | svcMapMemoryBlock                                            | W0=memblk\_handle, X1=addr, X2=size, W3=perm                      | W0=result                     |
-| 0x14 | svcUnmapMemoryBlock                                          | W0=memblk\_handle, X1=addr, X2=size                               | W0=result                     |
-| 0x15 | [\#svcCreateMemoryMirror](#svcCreateMemoryMirror "wikilink") | X1=addr, X2=size, W3=perm                                         | W0=result, W1=handle          |
-| 0x16 | svcCloseHandle                                               | W0=handle                                                         | W0=result                     |
-| 0x17 | svcClearEvent                                                | W0=handle                                                         | W0=result                     |
-| 0x18 | [\#svcWaitEvents](#svcWaitEvents "wikilink")                 | X1=handles\_ptr, W2=num\_handles. X3=timeout                      | W0=result, W1=handle\_idx     |
-| 0x19 | svcSignalEvent                                               | W0=handle                                                         | W0=result                     |
-| 0x1A | svcLockMutex                                                 | W0=cur\_thread\_handle, X1=ptr, W2=req\_thread\_handle            |                               |
-| 0x1B | svcUnlockMutex                                               | X0=ptr                                                            |                               |
-| 0x1C | svcCondWait                                                  | X0=ptr0, X1=ptr, W2=thread\_handle, X3=timeout                    | W0=result                     |
-| 0x1D | svcCondBroadcast                                             | X0=ptr, W1=value                                                  | W0=result                     |
-| .... | ?                                                            | ?                                                                 | ?                             |
-| 0x1F | svcConnectToPort                                             | X1=port\_name\_str                                                | W0=result, W1=handle          |
-| .... | ?                                                            | ?                                                                 | ?                             |
-| 0x21 | svcSendSyncRequest                                           | X0=handle                                                         | W0=result                     |
-| 0x22 | svcSendSyncRequestByBuf                                      | X0=cmdbufptr, X1=size, X2=handle                                  | W0=result                     |
-| .... | ?                                                            | ?                                                                 | ?                             |
-| 0x25 | svcGetThreadId                                               | W0=thread\_handle                                                 | W0=result, X1=out             |
-| 0x26 | svcBreak                                                     | X0,X1,X2=info                                                     | ?                             |
-| 0x27 | svcOutputDebugString                                         | X0=str, X1=size                                                   |                               |
-| 0x28 | svcReturnFromException                                       | X0=result                                                         |                               |
-| 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                       | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out             |
-| .... | ?                                                            | ?                                                                 | ?                             |
-| 0x40 | ???                                                          | W2=?, X3=?                                                        | W0=result, W1=?, W2=?         |
-| 0x41 | svcAcceptSession                                             | W1=port\_handle                                                   | W0=result, W1=session\_handle |
-| .... | ?                                                            | ?                                                                 | ?                             |
-| 0x43 | svcReplyAndReceive                                           | X1=ptr\_handles, W2=num\_handles, X3=?, X4=timeout                | W0=result, W1=handle\_idx     |
-| 0x44 | svcReplyAndReceiveByBuf                                      | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=?, X6=timeout | W0=result, W1=handle\_idx     |
-| 0x45 | svcCreateEvent?                                              | None                                                              | W0=result, W1=?, W2=?         |
-| .... | ?                                                            | ?                                                                 | ?                             |
-| 0x50 | svcCreateMemoryBlock                                         | W1=size?, W2=perm0, W3=perm1                                      | W0=result, W1=handle          |
-| 0x51 | [\#svcMapMemoryMirror](#svcMapMemoryMirror "wikilink")       | X0=mirror\_handle, X1=addr, X2=size, W3=perm                      | W0=result                     |
-| 0x52 | [\#svcUnmapMemoryMirror](#svcUnmapMemoryMirror "wikilink")   | W0=mirror\_handle, X1=addr, X2=size                               | W0=result                     |
+| Id   | Name                                                         | In                                                                | Out                                             |
+| ---- | ------------------------------------------------------------ | ----------------------------------------------------------------- | ----------------------------------------------- |
+| 0x1  | [\#svcSetHeapSize](#svcSetHeapSize "wikilink")               | W1=size                                                           | W0=result, X1=outaddr                           |
+| 0x2  | [\#svcProtectMemory](#svcProtectMemory "wikilink")           | X0=addr, X1=size, W2=prot                                         | W0=result                                       |
+| 0x3  | [\#svcSetMemoryState](#svcSetMemoryState "wikilink")         | X0=addr, X1=size, W2=state0, W3=state1                            | W0=result                                       |
+| 0x4  | [\#svcMirrorStack](#svcMirrorStack "wikilink")               | X0=dstaddr, X1=srcaddr, X2=size                                   | W0=result                                       |
+| 0x5  | svcUnmirrorStack                                             | X0=dstaddr, X1=srcaddr, X2=size                                   | W0=result                                       |
+| 0x6  | svcQueryMemory                                               | X0=meminfo\_ptr, X2=addr                                          | W0=result, W1=pageinfo                          |
+| 0x7  | svcExitProcess                                               | None                                                              |                                                 |
+| 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")             | X1=entry, X2=arg, X3=stacktop, W4=prio, W5=processor\_id          | W0=result, W1=handle                            |
+| 0x9  | svcStartThread                                               | W0=thread\_handle                                                 |                                                 |
+| 0xA  | svcExitThread                                                | None                                                              |                                                 |
+| 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")               | X0=nano                                                           |                                                 |
+| 0xC  | svcGetThreadPriority                                         | W1=thread\_handle                                                 | W0=result, W1=prio                              |
+| 0xD  | svcSetThreadPriority                                         | W0=thread\_handle, W1=prio                                        | W0=result                                       |
+| 0xE  | svcGetThreadAffinityMask                                     | W2=thread\_handle                                                 | W0=result, W1=out, X2=out                       |
+| 0xF  | svcSetThreadAffinityMask                                     | W0=thread\_handle, W1=in, X2=in2                                  | W0=result                                       |
+| 0x10 | svcGetCurrentProcessorNumber                                 | None                                                              | W0/X0=cpuid                                     |
+| 0x11 | svcGetMemoryBlockSomethingA?                                 | W0=handle                                                         | ?                                               |
+| 0x12 | svcGetMemoryBlockSomethingB?                                 | W0=handle                                                         | ?                                               |
+| 0x13 | svcMapMemoryBlock                                            | W0=memblk\_handle, X1=addr, X2=size, W3=perm                      | W0=result                                       |
+| 0x14 | svcUnmapMemoryBlock                                          | W0=memblk\_handle, X1=addr, X2=size                               | W0=result                                       |
+| 0x15 | [\#svcCreateMemoryMirror](#svcCreateMemoryMirror "wikilink") | X1=addr, X2=size, W3=perm                                         | W0=result, W1=handle                            |
+| 0x16 | svcCloseHandle                                               | W0=handle                                                         | W0=result                                       |
+| 0x17 | svcClearEvent                                                | W0=handle                                                         | W0=result                                       |
+| 0x18 | [\#svcWaitEvents](#svcWaitEvents "wikilink")                 | X1=handles\_ptr, W2=num\_handles. X3=timeout                      | W0=result, W1=handle\_idx                       |
+| 0x19 | svcSignalEvent                                               | W0=handle                                                         | W0=result                                       |
+| 0x1A | svcLockMutex                                                 | W0=cur\_thread\_handle, X1=ptr, W2=req\_thread\_handle            |                                                 |
+| 0x1B | svcUnlockMutex                                               | X0=ptr                                                            |                                                 |
+| 0x1C | svcCondWait                                                  | X0=ptr0, X1=ptr, W2=thread\_handle, X3=timeout                    | W0=result                                       |
+| 0x1D | svcCondBroadcast                                             | X0=ptr, W1=value                                                  | W0=result                                       |
+| .... | ?                                                            | ?                                                                 | ?                                               |
+| 0x1F | svcConnectToPort                                             | X1=port\_name\_str                                                | W0=result, W1=handle                            |
+| .... | ?                                                            | ?                                                                 | ?                                               |
+| 0x21 | svcSendSyncRequest                                           | X0=handle                                                         | W0=result                                       |
+| 0x22 | svcSendSyncRequestByBuf                                      | X0=cmdbufptr, X1=size, X2=handle                                  | W0=result                                       |
+| .... | ?                                                            | ?                                                                 | ?                                               |
+| 0x25 | svcGetThreadId                                               | W0=thread\_handle                                                 | W0=result, X1=out                               |
+| 0x26 | svcBreak                                                     | X0,X1,X2=info                                                     | ?                                               |
+| 0x27 | svcOutputDebugString                                         | X0=str, X1=size                                                   |                                                 |
+| 0x28 | svcReturnFromException                                       | X0=result                                                         |                                                 |
+| 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                       | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out                               |
+| .... | ?                                                            | ?                                                                 | ?                                               |
+| 0x40 | ???                                                          | W2=?, X3=?                                                        | W0=result, W1=?, W2=?                           |
+| 0x41 | svcAcceptSession                                             | W1=port\_handle                                                   | W0=result, W1=session\_handle                   |
+| .... | ?                                                            | ?                                                                 | ?                                               |
+| 0x43 | svcReplyAndReceive                                           | X1=ptr\_handles, W2=num\_handles, X3=?, X4=timeout                | W0=result, W1=handle\_idx                       |
+| 0x44 | svcReplyAndReceiveByBuf                                      | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=?, X6=timeout | W0=result, W1=handle\_idx                       |
+| 0x45 | svcCreateSession                                             | None                                                              | W0=result, W1=client\_handle, W2=server\_handle |
+| .... | ?                                                            | ?                                                                 | ?                                               |
+| 0x50 | svcCreateMemoryBlock                                         | W1=size?, W2=perm0, W3=perm1                                      | W0=result, W1=handle                            |
+| 0x51 | [\#svcMapMemoryMirror](#svcMapMemoryMirror "wikilink")       | X0=mirror\_handle, X1=addr, X2=size, W3=perm                      | W0=result                                       |
+| 0x52 | [\#svcUnmapMemoryMirror](#svcUnmapMemoryMirror "wikilink")   | W0=mirror\_handle, X1=addr, X2=size                               | W0=result                                       |
 
 ## svcSetHeapSize
 
