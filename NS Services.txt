@@ -278,10 +278,10 @@ Entry structure:
 ! Description
 |-
 | 0x80
-| Gamecard title?
+| Gamecard title / regular application?
 |-
 | 0x81
-| eShop title?
+| eShop title / demo?
 |}
 
 = ns:su =

@@ -145,10 +145,10 @@ structure:
 
 ## Title Types
 
-| Value | Description     |
-| ----- | --------------- |
-| 0x80  | Gamecard title? |
-| 0x81  | eShop title?    |
+| Value | Description                           |
+| ----- | ------------------------------------- |
+| 0x80  | Gamecard title / regular application? |
+| 0x81  | eShop title / demo?                   |
 
 # ns:su
 
