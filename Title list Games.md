@@ -31,6 +31,9 @@
 | 01004B10031BE000 |                 | Puyo Puyo Tetris                      | EUR      | Game       |
 | 010000A00218E000 |                 | Splatoon 2 Global Testfire            | ALL      | Timed Demo |
 
+Game updates have the same titleID as the main application, except with
+bitmask 0x800 set.
+
 The following data was found in
 [NS](NS%20Services.md "wikilink")(NUL-terminators
 removed):

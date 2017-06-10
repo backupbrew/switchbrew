@@ -62,6 +62,8 @@
 | 010000A00218E000 || || Splatoon 2 Global Testfire || ALL || Timed Demo
 |}
 
+Game updates have the same titleID as the main application, except with bitmask 0x800 set.
+
 The following data was found in [[NS_Services|NS]](NUL-terminators removed):
  {tasks":[{id":xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",titles":[{id":0100c5e003b40000",version":0,type":Application"},{id":0100c5e003b40800",version":65536,type":Patch"}],owner_application":0100c5e003b40000"}],format_version":1,last_modified":1497023220,required_system_version":0"}.
 
