@@ -119,7 +119,7 @@ regular ports can have their handles retrieved directly from a SVC.
 | tc                                                                                    | ?                                                                                    |                                              |
 | time:u, time:a, time:s                                                                | Time services                                                                        |                                              |
 | ts                                                                                    | ?                                                                                    |                                              |
-| uart                                                                                  | UART services                                                                        |                                              |
+| uart                                                                                  | [UART services](UART%20services.md "wikilink")                                       |                                              |
 | vi:m, vi:s, vi:u                                                                      | [Display services](Display%20services.md "wikilink")                                 |                                              |
 
 [Category:Services](Category:Services "wikilink")

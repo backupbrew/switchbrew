@@ -312,7 +312,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 | 
 |-
 | uart
-| UART services
+| [[UART services]]
 | 
 |-
 | vi:m, vi:s, vi:u
