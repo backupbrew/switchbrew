@@ -5,7 +5,7 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 ! Cmd || Name
 |-
-| 0 || GetTitlesInfo
+| 0 || [[#GetTitlesInfo]]
 |-
 | 1 ||
 |-
@@ -157,7 +157,7 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 600 ||
 |-
-| 601 || GetTitleInfo1
+| 601 || [[#GetTitleInfo1]]
 |-
 | 602 ||
 |-
@@ -288,7 +288,7 @@ Entry structure:
 
 = ns:dev =
 
-= AppIDs =
+= Applet IDs =
 {| class="wikitable" border="1"
 |-
 !  ID
@@ -334,12 +334,12 @@ Entry structure:
 | [[Internet_Browser|WifiWebAuth]] (From browser string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletWifiWebAuth")
 |}
 
-This seems to be the equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs this] ("AppIDs" is an unofficial name).
+This seems to be the equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs this].
 
-=args.shimKind=
+= args.shimKind =
 This is from strings and code in [[Internet_Browser|whitelisted]] web-applet.
 
-"args.shimKind() == ::nn::web::common::ShimKind::Lobby || args.shimKind() == ::nn::web::common::ShimKind::Login || args.shimKind() == ::nn::web::common::ShimKind::Share"
+ "args.shimKind() == ::nn::web::common::ShimKind::Lobby || args.shimKind() == ::nn::web::common::ShimKind::Login || args.shimKind() == ::nn::web::common::ShimKind::Share"
 
 {| class="wikitable" border="1"
 |-
