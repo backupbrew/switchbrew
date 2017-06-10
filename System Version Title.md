@@ -12,4 +12,14 @@ The FS for the system-version title(TID 0100000000000809) contains
 | 0x8    | 0x20 | Platform string ("NX" with zeros afterwards)                                                                                                                                                    |
 | 0x28   | 0x40 | Hex ASCII string. 0x28-bytes(not including NUL-terminator) normally with zeros afterwards. The value of this string differs from [2.0.0](2.0.0.md "wikilink") and [2.1.0](2.1.0.md "wikilink"). |
 | 0x68   | 0x18 | System-version in string form with zeros afterwards. For example: "2.1.0"                                                                                                                       |
-| 0x80   | 0x80 | ASCII string with zeros / padding afterwards. For example: "NintendoSDK Firmware for NX 2.0.0-15", "NintendoSDK Firmware for NX 2.1.0-0", "NintendoSDK Firmware for NX 2.3.0-0"                 |
+| 0x80   | 0x80 | ASCII string with zeros / padding afterwards. For example: "NintendoSDK Firmware for NX 2.0.0-15"                                                                                               |
+
+## Known Versions
+
+| Firmware | Version String                       | Hex ASCII String                         |
+| -------- | ------------------------------------ | ---------------------------------------- |
+| 1.0.0    | ?                                    | ?                                        |
+| 2.0.0    | NintendoSDK Firmware for NX 2.0.0-15 | 25233e518f580062b41f45fae7ce56bff261094a |
+| 2.1.0    | NintendoSDK Firmware for NX 2.1.0-0  | ?                                        |
+| 2.2.0    | NintendoSDK Firmware for NX 2.2.0-1  | c83b637205048e61e73c870f21271cc3c6364396 |
+| 2.3.0    | NintendoSDK Firmware for NX 2.3.0-0  | 3ed3bbc8885b6362f4f244dcecd2b430fa27310e |
