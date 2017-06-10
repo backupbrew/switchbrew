@@ -135,6 +135,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xDC05 || 110 || Gamecard not inserted
 |-
+| 0x17C05 || 190 || Host not connected
+|-
 | 0x6609 || 51 || Invalid memory state/permission
 |-
 | 0x6A09 || 53 || Invalid NRR

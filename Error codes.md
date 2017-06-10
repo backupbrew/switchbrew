@@ -83,6 +83,7 @@ fatal-errors, since the Description ends with bit21.
 | 0x3EE03  | 503         | Invalid memory mirror                                                                                                 |
 | 0x1805   | 12          | Invalid StorageId                                                                                                     |
 | 0xDC05   | 110         | Gamecard not inserted                                                                                                 |
+| 0x17C05  | 190         | Host not connected                                                                                                    |
 | 0x6609   | 51          | Invalid memory state/permission                                                                                       |
 | 0x6A09   | 53          | Invalid NRR                                                                                                           |
 | 0xA209   | 81          | Unaligned NRR address                                                                                                 |
