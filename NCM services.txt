@@ -81,7 +81,8 @@
 |}
 
 == GetRootEntry ==
-Returns an entry of 16 completely random-looking bytes.
+Returns an entry of 16 completely random-looking bytes. It is not possible to read this entry.
+
 Changes on reboot?
 
 == GetEntries ==
