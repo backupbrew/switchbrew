@@ -75,9 +75,9 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 46 ||
 |-
-| 47 ||
+| 47 || [[#Cmd47]]
 |-
-| 48 ||
+| 48 || [[#Cmd48]]
 |-
 | 49 ||
 |-
@@ -233,6 +233,16 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 1802 ||
 |}
+
+== Cmd47 ==
+Takes an input media-id that must be 5.
+
+Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd22.
+
+== Cmd48 ==
+Takes an input media-id that must be 5.
+
+Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd23.
 
 == GetTitlesInfo ==
 Returns an array of title-info entries using the specified offset and size. No input titleID is passed to this.
