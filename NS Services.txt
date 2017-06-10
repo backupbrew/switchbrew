@@ -270,6 +270,20 @@ Entry structure:
 | u64 titleID
 |}
 
+== Title Types ==
+
+{| class="wikitable" border="1"
+|-
+! Value
+! Description
+|-
+| 0x80
+| Gamecard title?
+|-
+| 0x81
+| eShop title?
+|}
+
 = ns:su =
 
 = ns:dev =

@@ -143,6 +143,13 @@ structure:
 | 0x4    | 0x4  | u32 Title-version                                                                                    |
 | 0x8    | 0x8  | u64 titleID                                                                                          |
 
+## Title Types
+
+| Value | Description     |
+| ----- | --------------- |
+| 0x80  | Gamecard title? |
+| 0x81  | eShop title?    |
+
 # ns:su
 
 # ns:dev
