@@ -62,6 +62,7 @@ fatal-errors, since the Description ends with bit21.
 | 0xEE01   | 119         | When you give too many handles to svcWaitSynchronizationN.                                                            |
 | 0xF001   | 120         | ID0 outside valid range in svcGetInfo.                                                                                |
 | 0xF201   | 121         | No such port                                                                                                          |
+| 0xF601   | 123         | Port remote dead                                                                                                      |
 | 0xF801   | 124         | Unhandled usermode exception                                                                                          |
 | 0xFA01   | 125         | Wrong memory permission?                                                                                              |
 | 0x10601  | 131         | Port max sessions exceeded                                                                                            |

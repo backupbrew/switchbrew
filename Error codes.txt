@@ -93,6 +93,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xF201 || 121 || No such port
 |-
+| 0xF601 || 123 || Port remote dead
+|-
 | 0xF801 || 124 || Unhandled usermode exception
 |-
 | 0xFA01 || 125 || Wrong memory permission?
