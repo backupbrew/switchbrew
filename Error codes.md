@@ -25,7 +25,7 @@ fatal-errors, since the Description ends with bit21.
 | 1     | Kernel                       |
 | 2     | FS                           |
 | 3     | NVIDIA                       |
-| 5     | GameCard                     |
+| 5     | NCM                          |
 | 9     | RO service                   |
 | 10    | CMIF (IPC command interface) |
 | 11    | HIPC (IPC)                   |

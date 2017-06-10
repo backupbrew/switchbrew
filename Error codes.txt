@@ -24,7 +24,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 3 || NVIDIA
 |-
-| 5 || GameCard
+| 5 || NCM
 |-
 | 9 || RO service
 |-
