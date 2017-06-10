@@ -81,6 +81,7 @@ fatal-errors, since the Description ends with bit21.
 | 0x313802 | 6300        | Operation not supported                                                                                               |
 | 0x320002 | 6400        | Permission denied                                                                                                     |
 | 0x3EE03  | 503         | Invalid memory mirror                                                                                                 |
+| 0xE05    | 7           | TitleId not found                                                                                                     |
 | 0x1805   | 12          | Invalid StorageId                                                                                                     |
 | 0xDC05   | 110         | Gamecard not inserted                                                                                                 |
 | 0x17C05  | 190         | Gamecard not initialized                                                                                              |

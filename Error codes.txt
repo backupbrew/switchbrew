@@ -131,6 +131,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x3EE03 || 503 || Invalid memory mirror
 |-
+| 0xE05 || 7 || TitleId not found
+|-
 | 0x1805 || 12 || Invalid StorageId
 |-
 | 0xDC05 || 110 || Gamecard not inserted
