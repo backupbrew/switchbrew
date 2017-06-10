@@ -105,7 +105,7 @@ Closing all handles automatically causes the bit32 in
 [\#MemoryState](#MemoryState "wikilink") to clear, and the permission to
 reset.
 
-## svcWaitSynchronizationN
+## svcWaitEvents
 
 Works with num\_handles \<= 0x40, error on num\_handles == 0.
 

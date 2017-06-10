@@ -146,7 +146,7 @@ Executable bit perm not allowed.
 
 Closing all handles automatically causes the bit32 in [[#MemoryState]] to clear, and the permission to reset.
 
-== svcWaitSynchronizationN ==
+== svcWaitEvents ==
 Works with num_handles <= 0x40, error on num_handles == 0.
 
 Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
