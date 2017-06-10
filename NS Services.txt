@@ -240,7 +240,7 @@ Returns an array of title-info entries using the specified offset and size. No i
 Not tested on hw.
 
 == GetTitleInfo1 ==
-Returns 0x10-byte entries using the specified titleID. Usually only returns 1 entry. Not usable with system-titles it seems.
+Returns 0x10-byte entries using the specified titleID. Usually only returns 1 entry. Can only return game titles.
 
 Entry structure:
 {| class="wikitable" border="1"

@@ -130,7 +130,7 @@ Not tested on hw.
 ## GetTitleInfo1
 
 Returns 0x10-byte entries using the specified titleID. Usually only
-returns 1 entry. Not usable with system-titles it seems.
+returns 1 entry. Can only return game titles.
 
 Entry
 structure:
