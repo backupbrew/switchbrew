@@ -16,32 +16,32 @@
 
 ## IContentStorage
 
-| Cmd | Name | Notes                                                                       |
-| --- | ---- | --------------------------------------------------------------------------- |
-| 0   |      | Returns a 0x10-sized entry.                                                 |
-| 1   |      | Takes two 0x10-sized entries, and a u64.                                    |
-| 2   |      | Takes a 0x10-sized entry.                                                   |
-| 3   |      | Takes a 0x10-sized entry, returns a bool/u8.                                |
-| 4   |      | Takes a 0x10-sized entry, a u64, and type-5 array.                          |
-| 5   |      | Takes two 0x10-sized entries.                                               |
-| 6   |      | Takes a 0x10-sized entry.                                                   |
-| 7   |      | Takes a 0x10-sized entry, returns a bool/u8.                                |
-| 8   |      | Takes a type-0x1A string and a 0x10-sized entry.                            |
-| 9   |      | Takes a type-0x1A string and a 0x10-sized entry.                            |
-| 10  |      | Void.                                                                       |
-| 11  |      | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32.            |
-| 12  |      | Returns a u32.                                                              |
-| 13  |      | Takes a type-6 buffer, each entry 0x10 bytes, and a u32, and returns a u32. |
-| 14  |      | Takes a 0x10-sized entry, and returns a u64.                                |
-| 15  |      | Void.                                                                       |
-| 16  |      | Takes three 0x10-sized entries.                                             |
-| 17  |      | Takes a 0x10-sized entry and a u64.                                         |
-| 18  |      | Takes a type-6 array, a 0x10-sized entry, and a u64.                        |
-| 19  |      | Takes a 0x10-sized entry and returns another 0x10-sized entry.              |
-| 20  |      | Takes a 0x10-sized entry and returns another 0x10-sized entry.              |
-| 21  |      | Takes a 0x10-sized entry, a u64, and a type5 buffer.                        |
-| 22  |      | Returns a u64.                                                              |
-| 23  |      | Returns a u64.                                                              |
+| Cmd | Name           | Notes                                                                       |
+| --- | -------------- | --------------------------------------------------------------------------- |
+| 0   |                | Returns a 0x10-sized entry.                                                 |
+| 1   |                | Takes two 0x10-sized entries, and a u64.                                    |
+| 2   |                | Takes a 0x10-sized entry.                                                   |
+| 3   |                | Takes a 0x10-sized entry, returns a bool/u8.                                |
+| 4   |                | Takes a 0x10-sized entry, a u64, and type-5 array.                          |
+| 5   |                | Takes two 0x10-sized entries.                                               |
+| 6   | DeleteContent? | Takes a 0x10-sized entry.                                                   |
+| 7   |                | Takes a 0x10-sized entry, returns a bool/u8.                                |
+| 8   |                | Takes a type-0x1A string and a 0x10-sized entry.                            |
+| 9   |                | Takes a type-0x1A string and a 0x10-sized entry.                            |
+| 10  |                | Void.                                                                       |
+| 11  |                | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32.            |
+| 12  |                | Returns a u32.                                                              |
+| 13  |                | Takes a type-6 buffer, each entry 0x10 bytes, and a u32, and returns a u32. |
+| 14  |                | Takes a 0x10-sized entry, and returns a u64.                                |
+| 15  |                | Void.                                                                       |
+| 16  |                | Takes three 0x10-sized entries.                                             |
+| 17  |                | Takes a 0x10-sized entry and a u64.                                         |
+| 18  |                | Takes a type-6 array, a 0x10-sized entry, and a u64.                        |
+| 19  |                | Takes a 0x10-sized entry and returns another 0x10-sized entry.              |
+| 20  |                | Takes a 0x10-sized entry and returns another 0x10-sized entry.              |
+| 21  |                | Takes a 0x10-sized entry, a u64, and a type5 buffer.                        |
+| 22  |                | Returns a u64.                                                              |
+| 23  |                | Returns a u64.                                                              |
 
 ## IContentMetaDatabase
 
