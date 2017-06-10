@@ -1,7 +1,7 @@
 | Title-id         | Versions        | Serial\#                                              | Description                           | Region   | Type       |
 | ---------------- | --------------- | ----------------------------------------------------- | ------------------------------------- | -------- | ---------- |
 | 01000320000CC000 | v0(gamecard)    | Gamecard Front: LA-H-AACCA-{region} Back: AACCA22Y000 | 1-2 Switch                            | ALL      | Game       |
-| 01007EF00011E000 | v0              |                                                       | Zelda BotW                            | ALL      | Game       |
+| 01007EF00011E000 | v0              | Gamecard Front: LA-H-AAAAA-{region} Back: AAAAA13A000 | Zelda BotW                            | ALL      | Game       |
 | 01007EF00011E800 | v262144         |                                                       | Zelda BotW                            | ALL      | Update     |
 | 0100EE6002B48000 |                 |                                                       | ACA Neo Geo Fatal Fury                | ALL      | VC         |
 | 0100CB2001DB8000 |                 |                                                       | ACA Neo Geo Garou: Mark of the Wolves | ALL      | VC         |
@@ -17,7 +17,7 @@
 | 010025B002E92000 |                 |                                                       | Blaster Master Zero                   | ALL      | Demo       |
 | 0100225000FEE000 |                 |                                                       | Blaster Master Zero                   | ALL      | Demo       |
 | 01001FA0034E2000 |                 |                                                       | Dark Witch Music Episode: Rudymical   | ALL      | Game       |
-| 0100E67003A86000 |                 |                                                       | Disgaea 5 Complete                    | ALL      | Game       |
+| 0100E67003A86000 |                 | Gamecard Front: LA-H-AACAC-{region} Back: AACAC41A000 | Disgaea 5 Complete                    | ALL      | Game       |
 | 0100930002EAA000 |                 |                                                       | Dragon Quest Heroes 1 & 2             | USA      | Game       |
 | 0100F12002FC8000 |                 |                                                       | Everyone Party\! Spelunker            | JPN      | Game       |
 | 01009510001CA000 |                 |                                                       | FAST RMX                              | JPN      | Game       |
