@@ -75,16 +75,16 @@ data.
 | 4   |                                                | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.    |
 | 5   | Iterate                                        | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32. |
 | 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink") |                                                                                                 |
-| 7   |                                                |                                                                                                 |
-| 8   |                                                |                                                                                                 |
-| 9   |                                                |                                                                                                 |
-| 10  |                                                |                                                                                                 |
-| 11  |                                                |                                                                                                 |
-| 12  |                                                |                                                                                                 |
-| 13  |                                                |                                                                                                 |
-| 14  |                                                |                                                                                                 |
-| 15  | EndIteration                                   |                                                                                                 |
-| 16  |                                                |                                                                                                 |
+| 7   |                                                | Takes a 0x10-sized entry, returns u8/bool.                                                      |
+| 8   |                                                | Takes a type-0x1A string and a 0x10-sized entry.                                                |
+| 9   |                                                | Takes a type-0x1A string and a 0x10-sized entry.                                                |
+| 10  |                                                | Void.                                                                                           |
+| 11  |                                                | Takes a type-6 buffer, each entry being 16 bytes. Returns a u32.                                |
+| 12  |                                                | Returns a u32.                                                                                  |
+| 13  |                                                | Takes a type-6 buffer, each entry being 16 bytes, and a u32. Returns a u32.                     |
+| 14  |                                                | Takes a 0x10-sized entry, and returns a u64.                                                    |
+| 15  | EndIteration                                   | Void.                                                                                           |
+| 16  |                                                | Takes three 0x10-sized entries.                                                                 |
 | 17  |                                                |                                                                                                 |
 | 18  |                                                |                                                                                                 |
 | 19  |                                                |                                                                                                 |
