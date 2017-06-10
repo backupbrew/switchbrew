@@ -208,7 +208,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |
 |-
 | ncm
-| Content Manager services
+| [[Content Manager services]]
 | 
 |-
 | nifm:u, nifm:a, nifm:s
