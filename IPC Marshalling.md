@@ -97,3 +97,30 @@ ignored by the marshalling code.
 | 8 + 1     | Creates an X descriptor            |           |
 | 8 + 2     | Creates a C descriptor             | Out       |
 | 0x20 + 1  | Creates both an A and X descriptor |           |
+
+## Official IPC Cmd Structure
+
+Official struct that is stored for each IPC command. It contains
+precalculated offsets for different portions of the command structure.
+
+All offsets are given is in number of u32 words.
+
+`struct IpcCmdStruct {`  
+`  u8  unk0;`  
+`  u8  has_handle_descriptor;`  
+`  u8  pad0[2];`  
+`  u32 cmd0;`  
+`  u32 cmd1;`  
+`  u32 offset_handle_descriptor;`  
+`  u32 pad1;`  
+`  u32 offset_handles;          `  
+`  u32 pad2;`  
+`  u32 offset_x_descriptors;`  
+`  u32 offset_a_descriptors;`  
+`  u32 offset_b_descriptors;`  
+`  u32 offset_c_descriptors;`  
+`  u32 offset_raw_data;`  
+`  u32 unk1;`  
+`  u32 unk2;`  
+`  u32 unk3;`  
+`}`
