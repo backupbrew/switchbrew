@@ -57,7 +57,7 @@ Each entry is 16 completely random-looking bytes.
 
 ## ReadEntryRaw
 
-Takes an 16-byte entry as input, and a u64 file offset.
+Takes an output buffer, a 16-byte entry as input, and a u64 file offset.
 
 Returns encrypted looking
 data.
