@@ -57,7 +57,7 @@
 |-
 | 12 || [[#GetNumberOfEntries]] ||
 |-
-| 13 || [[#ReadEntries]] ||
+| 13 || [[#GetEntries]] ||
 |-
 | 14 || GetEntrySize ||
 |-
@@ -84,8 +84,8 @@
 Returns an entry of 16 completely random-looking bytes.
 Changes on reboot?
 
-== ReadEntries ==
-Takes a u32 offset and reads all entries starting at that offset.
+== GetEntries ==
+Takes a u32 offset and gets all entries starting at that offset.
 Returns number of entries read.
 
 Each entry is 16 completely random-looking bytes.

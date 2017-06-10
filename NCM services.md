@@ -31,7 +31,7 @@
 | 10  |                                                        | Void.                                                            |
 | 11  |                                                        | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32. |
 | 12  | [\#GetNumberOfEntries](#GetNumberOfEntries "wikilink") |                                                                  |
-| 13  | [\#ReadEntries](#ReadEntries "wikilink")               |                                                                  |
+| 13  | [\#GetEntries](#GetEntries "wikilink")                 |                                                                  |
 | 14  | GetEntrySize                                           |                                                                  |
 | 15  |                                                        | Void.                                                            |
 | 16  |                                                        | Takes three 0x10-sized entries.                                  |
@@ -48,10 +48,10 @@
 Returns an entry of 16 completely random-looking bytes. Changes on
 reboot?
 
-## ReadEntries
+## GetEntries
 
-Takes a u32 offset and reads all entries starting at that offset.
-Returns number of entries read.
+Takes a u32 offset and gets all entries starting at that offset. Returns
+number of entries read.
 
 Each entry is 16 completely random-looking
 bytes.
