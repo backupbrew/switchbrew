@@ -113,7 +113,7 @@ Returns encrypted looking data.
 |-
 | 5 || Iterate || Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.
 |-
-| 6 || || Takes a u64. Returns a 0x10-sized entry.
+| 6 || [[#GetTitleIdInfo]] ||
 |-
 | 7 || ||
 |-
@@ -141,3 +141,8 @@ Returns encrypted looking data.
 |-
 | 19 || ||
 |}
+
+=== GetTitleIdInfo ===
+Takes a u64 title-id as input, returns same title-id together with 16 unknown bytes.
+
+For BotW cartridge they are "00 00 00 00 80 00 00 00".
