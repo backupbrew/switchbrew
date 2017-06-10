@@ -1,65 +1,69 @@
 {| class=wikitable
-! Title-id || Versions || Description || Region || Type
+! Title-id || Versions || Serial# || Description || Region || Type
 |-
-| 01000320000CC000 || v0(gamecard) || 1-2 Switch || ALL || Game
+| 01000320000CC000 || v0(gamecard) || Gamecard Front: LA-H-AACCA-{region} Back: AACCA22Y000 || 1-2 Switch || ALL || Game
 |-
-| 0100EE6002B48000 || || ACA Neo Geo Fatal Fury || ALL || VC
+| 01007EF00011E000 || v0 || || Zelda BotW || ALL || Game
 |-
-| 0100CB2001DB8000 || || ACA Neo Geo Garou: Mark of the Wolves || ALL || VC
+| 01007EF00011E800 || v262144 || || Zelda BotW || ALL || Update 
 |-
-| 0100BA8001DC6000 || || ACA Neo Geo Metal Slug 3 || ALL || VC
+| 0100EE6002B48000 || || || ACA Neo Geo Fatal Fury || ALL || VC
 |-
-| 01003A5001DBA000 || || ACA Neo Geo Over Top || ALL || VC
+| 0100CB2001DB8000 || || || ACA Neo Geo Garou: Mark of the Wolves || ALL || VC
 |-
-| 0100EB2001DCC000 || || ACA Neo Geo The King of Fighters '94  || ALL || VC
+| 0100BA8001DC6000 || || || ACA Neo Geo Metal Slug 3 || ALL || VC
 |-
-| 0100B42001DB4000 || || ACA Neo Geo The King of Fighters '98 || ALL || VC
+| 01003A5001DBA000 || || || ACA Neo Geo Over Top || ALL || VC
 |-
-| 01002E70032E8000 || || ACA Neo Geo Turf Masters || ALL || VC
+| 0100EB2001DCC000 || || || ACA Neo Geo The King of Fighters '94  || ALL || VC
 |-
-| 0100CEF001DC0000 || || ACA Neo Geo Waku Waku 7 || ALL || VC
+| 0100B42001DB4000 || || || ACA Neo Geo The King of Fighters '98 || ALL || VC
 |-
-| 01009D4001DC4000 || || ACA Neo Geo World Heroes Perfect || ALL || VC
+| 01002E70032E8000 || || || ACA Neo Geo Turf Masters || ALL || VC
 |-
-| 0100C5E003B40000 || v0 || ARMS Global Testpunch || ALL || Timed Demo
+| 0100CEF001DC0000 || || || ACA Neo Geo Waku Waku 7 || ALL || VC
 |-
-| 0100C5E003B40800 || v65536(0x10000) || ARMS Global Testpunch || ALL || Update
+| 01009D4001DC4000 || || || ACA Neo Geo World Heroes Perfect || ALL || VC
 |-
-| 010025B002E92000 || || Blaster Master Zero || ALL || Demo
+| 0100C5E003B40000 || v0 || || ARMS Global Testpunch || ALL || Timed Demo
 |-
-| 0100225000FEE000 || || Blaster Master Zero || ALL || Demo
+| 0100C5E003B40800 || v65536(0x10000) || || ARMS Global Testpunch || ALL || Update
 |-
-| 01001FA0034E2000 || || Dark Witch Music Episode: Rudymical || ALL || Game
+| 010025B002E92000 || || || Blaster Master Zero || ALL || Demo
 |-
-| 0100E67003A86000 || || Disgaea 5 Complete || ALL || Game
+| 0100225000FEE000 || || || Blaster Master Zero || ALL || Demo
 |-
-| 0100930002EAA000 || || Dragon Quest Heroes 1 & 2 || USA || Game
+| 01001FA0034E2000 || || || Dark Witch Music Episode: Rudymical || ALL || Game
 |-
-| 0100F12002FC8000 || || Everyone Party! Spelunker || JPN || Game
+| 0100E67003A86000 || || || Disgaea 5 Complete || ALL || Game
 |-
-| 01009510001CA000 || || FAST RMX || JPN || Game
+| 0100930002EAA000 || || || Dragon Quest Heroes 1 & 2 || USA || Game
 |-
-| 01006740034F6000 || || Just Dance 2017 || USA || Game
+| 0100F12002FC8000 || || || Everyone Party! Spelunker || JPN || Game
 |-
-| 010085300314E000 || || Kamiko || USA || Game
+| 01009510001CA000 || || || FAST RMX || JPN || Game
 |-
-| 0100152000022000 || || Mario Kart 8 Deluxe || ALL || Game
+| 01006740034F6000 || || || Just Dance 2017 || USA || Game
 |-
-| 01006BD001E06000 || || Minecraft: Nintendo Switch Edition || ALL || Game
+| 010085300314E000 || || || Kamiko || USA || Game
 |-
-| 010031F002B66000 || || Mr. Shifty || USA, EUR || Game
+| 0100152000022000 || || || Mario Kart 8 Deluxe || ALL || Game
 |-
-| 010002900294A000 || || NBA Playgrounds || JPN, USA || Game
+| 01006BD001E06000 || || || Minecraft: Nintendo Switch Edition || ALL || Game
 |-
-| 01004C200100E000 || || New Frontier Days: Founding Pioneers || ALL || Game
+| 010031F002B66000 || || || Mr. Shifty || USA, EUR || Game
 |-
-| 0100902001014000 || || Othello || JPN || Game
+| 010002900294A000 || || || NBA Playgrounds || JPN, USA || Game
 |-
-| 01000DC003740000 || || Puyo Puyo Tetris || USA || Game
+| 01004C200100E000 || || || New Frontier Days: Founding Pioneers || ALL || Game
 |-
-| 01004B10031BE000 || || Puyo Puyo Tetris || EUR || Game
+| 0100902001014000 || || || Othello || JPN || Game
 |-
-| 010000A00218E000 || || Splatoon 2 Global Testfire || ALL || Timed Demo
+| 01000DC003740000 || || || Puyo Puyo Tetris || USA || Game
+|-
+| 01004B10031BE000 || || || Puyo Puyo Tetris || EUR || Game
+|-
+| 010000A00218E000 || || || Splatoon 2 Global Testfire || ALL || Timed Demo
 |}
 
 Game updates have the same titleID as the main application, except with bitmask 0x800 set.
@@ -68,3 +72,149 @@ The following data was found in [[NS_Services|NS]](NUL-terminators removed):
  {tasks":[{id":xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",titles":[{id":0100c5e003b40000",version":0,type":Application"},{id":0100c5e003b40800",version":65536,type":Patch"}],owner_application":0100c5e003b40000"}],format_version":1,last_modified":1497023220,required_system_version":0"}.
 
 "xxx..." Is where lowercase hex is in the original data.
+
+
+=VersionList=
+The following was parsed from data dumped on June 10, 2017. This is located after strings "nsaccache:/cache/lru_list.dat", "nsaccache", and "ns_appman" in memory. Format is similar to 3DS eShop VersionList: header is 0x20-bytes instead of 0x10(due to word size presumably). The structure of the title entries are still 0x10-bytes, with the unk field being used now. The order of the below titles is the same as what was in memory.
+
+ u64 titleID             version unk
+ 01000320000CC000 	0 	0
+ 0100704000B3A000 	0 	0
+ 01007EF00011E000 	0 	0
+ 01007EF00011E800 	262144 	262144
+ 0100D87002EE0000 	0 	0
+ 0100CD3000BDC000 	0 	0
+ 010053D0001BE000 	0 	0
+ 0100BCE000598800 	65536 	65536
+ 0100930002EAA000 	0 	0
+ 010053D0001BE800 	65536 	65536
+ 0100BCE000598000 	0 	0
+ 0100CD3000BDC800 	196608 	196608
+ 010021B002EEA000 	0 	0
+ 01007AD00013E800 	262144 	262144
+ 01001180021FA000 	0 	0
+ 0100225000FEE000 	0 	0
+ 01003D60012BE000 	0 	0
+ 010048D000BFC800 	131072 	131072
+ 01004C200100E000 	0 	0
+ 01004E90028A2000 	0 	0
+ 010057D0021E8000 	0 	0
+ 010065A00213C000 	0 	0
+ 01007AD00013E000 	0 	0
+ 0100849000BDA000 	0 	0
+ 01008A9001DC2000 	0 	0
+ 0100902001014000 	0 	0
+ 01009510001CA000 	0 	0
+ 01009510001CA800 	131072 	131072
+ 01009D4001DC4000 	0 	0
+ 0100A7F002830000 	0 	0
+ 0100B42001DB4000 	0 	0
+ 0100BA8001DC6000 	0 	0
+ 0100CCC0002E6800 	131072 	131072
+ 0100CEF001DC0000 	0 	0
+ 0100E5F0000C0000 	0 	0
+ 0100A8C001DCE000 	0 	0
+ 010021C000B6A000 	0 	0
+ 0100E29001298000 	0 	0
+ 010073C001D5E000 	0 	0
+ 010009E001D90000 	0 	0
+ 0100701001D92000 	0 	0
+ 0100B18001D8E000 	0 	0
+ 010000A00218E000 	0 	0
+ 01008A9001DC2800 	65536 	65536
+ 01009D4001DC4800 	65536 	65536
+ 0100A8C001DCE800 	65536 	65536
+ 0100B42001DB4800 	65536 	65536
+ 0100BA8001DC6800 	65536 	65536
+ 0100CEF001DC0800 	65536 	65536
+ 0100225000FEE800 	131072 	131072
+ 0100EB2001DCC000 	0 	0
+ 01003A30012C0000 	0 	0
+ 010021C000B6A800 	65536 	65536
+ 0100C0F0020E8000 	1 	0
+ 01002E70032E8000 	0 	0
+ 010085500130A000 	0 	0
+ 0100701001D92800 	131072 	65536
+ 0100B18001D8E800 	131072 	131072
+ 01004D10020F2000 	0 	0
+ 0100882001380800 	131072 	131072
+ 0100E29001298800 	131072 	131072
+ 0100EBE002B3E000 	0 	0
+ 0100882001380000 	0 	0
+ 01001180021FA800 	131072 	0
+ 010057D0021E8800 	131072 	131072
+ 0100C0F0020E8800 	65536 	65536
+ 01004D10020F2800 	131072 	131072
+ 01006740034F6000 	0 	0
+ 0100A76002B46000 	0 	0
+ 010085500130A800 	131072 	131072
+ 01003A30012C0800 	131072 	131072
+ 01004E90028A2800 	65536 	65536
+ 0100E5F0000C0800 	131072 	131072
+ 0100F12002FC8000 	0 	0
+ 010031F002B66000 	0 	0
+ 0100CC80013D6000 	0 	0
+ 0100F3D001DEE000 	0 	0
+ 01002E70032E8800 	65536 	65536
+ 0100D87002EE0800 	65536 	0
+ 01000DC003740000 	0 	0
+ 0100849000BDA800 	65536 	65536
+ 010047F001DBC000 	0 	0
+ 01004B10031BE000 	0 	0
+ 01006A5003698000 	0 	0
+ 010085300314E000 	0 	0
+ 0100A6300150C000 	0 	0
+ 0100152000022000 	0 	0
+ 0100EE6002B48000 	0 	0
+ 010065A00213C800 	65536 	65536
+ 0100C3F000BD8000 	0 	0
+ 01004B1001D22000 	0 	0
+ 01007330027EE000 	0 	0
+ 01003A5001DBA000 	0 	0
+ 0100404002F52000 	0 	0
+ 01003D60012BE800 	65536 	65536
+ 0100DFC003398000 	0 	0
+ 01005700031AE000 	0 	0
+ 01004B1001D22800 	65536 	65536
+ 010002900294A000 	0 	0
+ 010025B002E92000 	0 	0
+ 0100BBF0027EC000 	0 	0
+ 010009E001D90800 	65536 	0
+ 01006BD001E06000 	0 	0
+ 0100CB2001DB8000 	0 	0
+ 01001FA0034E2000 	0 	0
+ 01006BD001E06800 	196608 	196608
+ 01006F6002840000 	0 	0
+ 0100E67003A86000 	0 	0
+ 0100125002060000 	0 	0
+ 01002580038DE000 	0 	0
+ 01004F7003726000 	0 	0
+ 0100C5E003B40000 	0 	0
+ 0100152000022800 	65536 	65536
+ 0100B7D0022EE000 	0 	0
+ 0100583001DCA000 	0 	0
+ 0100F0400351C000 	0 	0
+ 01009B500007C000 	0 	0
+ 01005700031AE800 	65536 	65536
+ 01004B3004062000 	0 	0
+ 0100C220040C0000 	0 	0
+ 0100BBF0027EC800 	65536 	65536
+ 0100C86000B58000 	0 	0
+ 0100C86000B58800 	65536 	65536
+ 01007330027EE800 	65536 	0
+ 01008D1001512000 	0 	0
+ 0100F0400351C800 	65536 	65536
+ 01000D10038E6000 	0 	0
+ 0100AE0003424000 	0 	0
+ 010043F004126000 	0 	0
+ 01009400030D6000 	0 	0
+ 0100A7F002830800 	65536 	65536
+ 0100C5E003B40800 	65536 	65536
+ 0100744001588800 	65536 	65536
+ 010035B00412A000 	0 	0
+ 01004DE001DC8000 	0 	0
+ 0100AED003A60000 	0 	0
+ 0100D170038EA000 	0 	0
+ 01008D1001512800 	65536 	0
+ 010031F002B66800 	65536 	0
+ 01000E2003FA0000 	0 	0
