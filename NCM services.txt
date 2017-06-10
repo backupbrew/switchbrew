@@ -1,81 +1,81 @@
 = ncm =
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || Takes a u8 as input.
+| 0 || || Takes a u8 as input.
 |-
-| 1 || Takes a u8 as input.
+| 1 || || Takes a u8 as input.
 |-
-| 2 || Takes a u8 as input.
+| 2 || || Takes a u8 as input.
 |-
-| 3 || Takes a u8 as input.
+| 3 || || Takes a u8 as input.
 |-
-| 4 || GetContentStorage
+| 4 || GetContentStorage ||
 |-
-| 5 || GetContentMetaDatabase
+| 5 || GetContentMetaDatabase ||
 |-
-| 8 || Takes a u8 as input.
+| 8 || || Takes a u8 as input.
 |-
-| 9 || Takes a u8 as input.
+| 9 || || Takes a u8 as input.
 |-
-| 10 || Takes a u8 as input.
+| 10 || || Takes a u8 as input.
 |-
-| 11 || Takes a u8 as input.
+| 11 || || Takes a u8 as input.
 |-
-| 12 || Takes a u8 as input.
+| 12 || || Takes a u8 as input.
 |}
 
 == IContentStorage ==
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || Returns 0x10 bytes.
+| 0 || || Returns a 0x10-sized entry.
 |-
-| 1 ||
+| 1 || || Takes two 0x10-sized entries, and a u64.
 |-
-| 2 ||
+| 2 || || Takes a 0x10-sized entry.
 |-
-| 3 ||
+| 3 || || Takes a 0x10-sized entry, returns a bool/u8.
 |-
-| 4 ||
+| 4 || || Takes a 0x10-sized entry, a u64, and type-5 array.
 |-
-| 5 ||
+| 5 || || Takes two 0x10-sized entries.
 |-
-| 6 ||
+| 6 || || Takes a 0x10-sized entry.
 |-
-| 7 ||
+| 7 || || Takes a 0x10-sized entry, returns a bool/u8.
 |-
-| 8 ||
+| 8 || || Takes a type-0x1A string and a 0x10-sized entry.
 |-
-| 9 ||
+| 9 || || Takes a type-0x1A string and a 0x10-sized entry.
 |-
-| 10 ||
+| 10 || || Void.
 |-
-| 11 ||
+| 11 || || Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32.
 |-
-| 12 ||
+| 12 || || Returns a u32.
 |-
-| 13 ||
+| 13 || || Takes a type-6 buffer, each entry 0x10 bytes, and a u32, and returns a u32.
 |-
-| 14 ||
+| 14 || || Takes a 0x10-sized entry, and returns a u64.
 |-
-| 15 ||
+| 15 || || Void.
 |-
-| 16 ||
+| 16 || || Takes three 0x10-sized entries.
 |-
-| 17 ||
+| 17 || || Takes a 0x10-sized entry and a u64.
 |-
-| 18 ||
+| 18 || || Takes a type-6 array, a 0x10-sized entry, and a u64.
 |-
-| 19 ||
+| 19 || || Takes a 0x10-sized entry and returns another 0x10-sized entry.
 |-
-| 20 ||
+| 20 || || Takes a 0x10-sized entry and returns another 0x10-sized entry.
 |-
-| 21 ||
+| 21 || || Takes a 0x10-sized entry, a u64, and a type5 buffer.
 |-
-| 22 ||
+| 22 || || Returns a u64.
 |-
-| 23 ||
+| 23 || || Returns a u64.
 |}
