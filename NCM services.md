@@ -32,7 +32,7 @@
 | 11  |                                                        | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32. |
 | 12  | [\#GetNumberOfEntries](#GetNumberOfEntries "wikilink") |                                                                  |
 | 13  | [\#ReadEntries](#ReadEntries "wikilink")               |                                                                  |
-| 14  |                                                        | Takes a 0x10-sized entry, and returns a u64.                     |
+| 14  | GetEntrySize                                           |                                                                  |
 | 15  |                                                        | Void.                                                            |
 | 16  |                                                        | Takes three 0x10-sized entries.                                  |
 | 17  |                                                        | Takes a 0x10-sized entry and a u64.                              |
