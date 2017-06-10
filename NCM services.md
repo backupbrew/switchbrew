@@ -40,7 +40,7 @@
 | 19  |                | Takes a 0x10-sized entry and returns another 0x10-sized entry.              |
 | 20  |                | Takes a 0x10-sized entry and returns another 0x10-sized entry.              |
 | 21  |                | Takes a 0x10-sized entry, a u64, and a type5 buffer.                        |
-| 22  |                | Returns a u64.                                                              |
+| 22  | GetFreeSpace   |                                                                             |
 | 23  | GetTotalSpace  |                                                                             |
 
 ## IContentMetaDatabase
