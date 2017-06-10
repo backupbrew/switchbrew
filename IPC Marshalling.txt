@@ -64,7 +64,7 @@ This packing is so unnecessarily complex.
 |-
 | 1 || || Lower 32-bits of address.
 |-
-| 2 || 1-0 || Always set to 1 or 3. R/RW.
+| 2 || 1-0 || Flags. Always set to 1 or 3.
 |-
 | 2 || 4-2 || Bit 38-36 of address.
 |-
