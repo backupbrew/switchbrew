@@ -63,6 +63,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 206 || Capture
 |-
 | 651 || TC
+|-
+| 669 || ARP
 |}
 
 = Error codes =

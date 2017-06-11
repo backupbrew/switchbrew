@@ -45,6 +45,7 @@ fatal-errors, since the Description ends with bit21.
 | 203   | HID                          |
 | 206   | Capture                      |
 | 651   | TC                           |
+| 669   | ARP                          |
 
 # Error codes
 
