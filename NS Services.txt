@@ -268,7 +268,11 @@ Entry structure:
 | u8 "installedStorage" / [[Filesystem_services|StorageId]] (String is from web-applet)
 |-
 | 0x2
-| 0x2
+| 0x1
+| ?
+|-
+| 0x3
+| 0x1
 | Padding
 |-
 | 0x4
