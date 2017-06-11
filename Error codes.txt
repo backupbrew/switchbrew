@@ -61,6 +61,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 203 || HID
 |-
 | 206 || Capture
+|-
+| 651 || TC
 |}
 
 = Error codes =

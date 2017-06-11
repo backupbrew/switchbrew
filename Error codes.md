@@ -44,6 +44,7 @@ fatal-errors, since the Description ends with bit21.
 | 168   | Userland crash               |
 | 203   | HID                          |
 | 206   | Capture                      |
+| 651   | TC                           |
 
 # Error codes
 
