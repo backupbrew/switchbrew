@@ -124,8 +124,8 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |
 |-
 | bpc, bpc:r
-| ?
-| 
+| [[BPC services]]
+|
 |-
 | bsd:u, bsd:s
 | Sockets services
