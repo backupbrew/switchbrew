@@ -19,3 +19,8 @@ secondary ID is what has my interest. -[Ehm](User:Ehm "wikilink")
     may be a different scenario with the Switch.
     --[Hiccup](User:Hiccup "wikilink")
     ([talk](User%20talk:Hiccup.md "wikilink")) 02:50, 11 June 2017 (CDT)
+      -   
+        Cool. Looking into it more, some games don't even have a
+        secondary ID. -[Ehm](User:Ehm "wikilink")
+        ([talk](User%20talk:Ehm.md "wikilink")) 14:10, 11 June 2017
+        (CDT)
