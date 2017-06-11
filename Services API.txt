@@ -128,7 +128,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |
 |-
 | bsd:u, bsd:s
-| Sockets services
+| [[Sockets services]]
 |
 |-
 | btm, btm:dbg, btm:sys
