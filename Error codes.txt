@@ -44,6 +44,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 114 || Display
 |-
+| 117 || FGM
+|-
 | 124 || Account
 |-
 | 126 || Mii

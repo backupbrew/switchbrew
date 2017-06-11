@@ -35,6 +35,7 @@ fatal-errors, since the Description ends with bit21.
 | 22    | RO userland                  |
 | 110   | NIFM                         |
 | 114   | Display                      |
+| 117   | FGM                          |
 | 124   | Account                      |
 | 126   | Mii                          |
 | 129   | Play Report                  |
