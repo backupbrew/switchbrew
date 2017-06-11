@@ -5,3 +5,4 @@ Zelda BotW - HAC P AAAAA CAN | 105212A
 Disgaea 5  - HAC P AACAC     | DISS-SWI-US-VG
 </pre>
 "CAN" is obviously Canada, but that might just be an ID to signify the packaging and have nothing to do with the cartridge/contents. The secondary ID is what has my interest. -[[User:Ehm|Ehm]] ([[User talk:Ehm|talk]]) 18:30, 10 June 2017 (CDT)
+:With previous Nintendo consoles, these don't directly represent the ROM and neither does the stuff on the front of the cart. For the actual info regarding the ROM, you needed to look at the back of the disc/cart. Not that the box stuff isn't worth noting though - and it may be a different scenario with the Switch. --[[User:Hiccup|Hiccup]] ([[User talk:Hiccup|talk]]) 02:50, 11 June 2017 (CDT)
