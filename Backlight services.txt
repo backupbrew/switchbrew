@@ -35,5 +35,5 @@
 |-
 | 15 ||
 |-
-| 16 ||
+| 16 || ReadRawLightSensor
 |}
