@@ -5,8 +5,9 @@ communicate with the service via inter-process communication (each
 service has a name up to 8 characters).
 
 Handles for services are retrieved from the service manager port, "sm:".
-Services are an abstraction of ports, they operate the same way except
-regular ports can have their handles retrieved directly from a SVC.
+Manager service "sm:m" also exists. Services are an abstraction of
+ports, they operate the same way except regular ports can have their
+handles retrieved directly from a SVC.
 
 # sm:
 
@@ -60,6 +61,11 @@ regular ports can have their handles retrieved directly from a SVC.
 | 0    | "SFCI"                                       |
 | 1    | 0x00000003                                   |
 | 2    | Service name, zero padded and casted to u64. |
+
+# sm:m
+
+This service is presumably equivalent to 3DS
+"srv:pm".
 
 # Service List
 
