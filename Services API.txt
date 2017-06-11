@@ -113,7 +113,7 @@ Handles for services are retrieved from the service manager port, "sm:". Service
 |-
 | arp:r, arp:w
 | Activity Report services? 
-| r: Reader, w: Writer
+| r: Registrar, w: Writer
 |-
 | audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u
 | Audio services
