@@ -75,19 +75,19 @@ data.
 | 4   |                                                | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.    |
 | 5   | Iterate                                        | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32. |
 | 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink") |                                                                                                 |
-| 7   |                                                | Takes a 0x10-sized entry, returns u8/bool.                                                      |
-| 8   |                                                | Takes a type-0x1A string and a 0x10-sized entry.                                                |
-| 9   |                                                | Takes a type-0x1A string and a 0x10-sized entry.                                                |
-| 10  |                                                | Void.                                                                                           |
-| 11  |                                                | Takes a type-6 buffer, each entry being 16 bytes. Returns a u32.                                |
-| 12  |                                                | Returns a u32.                                                                                  |
-| 13  |                                                | Takes a type-6 buffer, each entry being 16 bytes, and a u32. Returns a u32.                     |
-| 14  |                                                | Takes a 0x10-sized entry, and returns a u64.                                                    |
+| 7   |                                                | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.             |
+| 8   |                                                | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
+| 9   |                                                | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                            |
+| 10  |                                                | Takes a 0x10-sized entry. Returns a u64.                                                        |
+| 11  |                                                | Takes a 0x10-sized entry. Returns a u32.                                                        |
+| 12  |                                                | Takes a 0x10-sized entry. Returns a u64.                                                        |
+| 13  |                                                | Void.                                                                                           |
+| 14  |                                                | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                 |
 | 15  | EndIteration                                   | Void.                                                                                           |
-| 16  |                                                | Takes three 0x10-sized entries.                                                                 |
-| 17  |                                                |                                                                                                 |
-| 18  |                                                |                                                                                                 |
-| 19  |                                                |                                                                                                 |
+| 16  |                                                | Takes two 0x10-sized entries. Returns a bool/u8.                                                |
+| 17  |                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry and a u32. Returns a u32.  |
+| 18  |                                                | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
+| 19  |                                                | Takes a 0x10-sized entry. Returns a u32.                                                        |
 
 ### GetTitleIdInfo
 
