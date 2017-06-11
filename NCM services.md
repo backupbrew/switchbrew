@@ -75,7 +75,7 @@ data.
 | 4   |                                                | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.    |
 | 5   | Iterate                                        | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32. |
 | 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink") |                                                                                                 |
-| 7   |                                                | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.             |
+| 7   | [\#GetTitleList](#GetTitleList "wikilink")     | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.             |
 | 8   |                                                | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
 | 9   |                                                | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                            |
 | 10  |                                                | Takes a 0x10-sized entry. Returns a u64.                                                        |
@@ -95,3 +95,13 @@ Takes a u64 title-id as input, returns same title-id together with 8
 unknown bytes.
 
 For BotW cartridge they are "00 00 00 00 80 00 00 00".
+
+### GetTitleList
+
+Each 24-byte entries is as follows:
+
+` u64 title_id;`  
+` u32 title_version;`  
+` u8  title_type; // 0x80, 0x81`  
+` u8  pad[3];`  
+` u64 title_id_update;`

@@ -115,7 +115,7 @@ Returns encrypted looking data.
 |-
 | 6 || [[#GetTitleIdInfo]] ||
 |-
-| 7 || || Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's. 
+| 7 || [[#GetTitleList]] || Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's. 
 |-
 | 8 || || Takes a 0x10-sized entry. Returns a bool/u8.
 |-
@@ -146,3 +146,12 @@ Returns encrypted looking data.
 Takes a u64 title-id as input, returns same title-id together with 8 unknown bytes.
 
 For BotW cartridge they are "00 00 00 00 80 00 00 00".
+
+=== GetTitleList ===
+Each 24-byte entries is as follows:
+
+  u64 title_id;
+  u32 title_version;
+  u8  title_type; // 0x80, 0x81
+  u8  pad[3];
+  u64 title_id_update;
