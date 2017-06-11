@@ -1,0 +1,17 @@
+# bpc
+
+| Cmd | Name                     |
+| --- | ------------------------ |
+| 0   | ShutdownConsole          |
+| 1   | RebootConsole            |
+| 2   |                          |
+| 3   |                          |
+| 4   |                          |
+| 5   | Returns an event handle. |
+| 6   |                          |
+| 7   | Returns an event handle. |
+| 8   |                          |
+| 9   |                          |
+| 10  |                          |
+
+# bpc:r
