@@ -1,38 +1,39 @@
-| Title-id         | Versions        | Serial\#                                              | Description                           | Region   | Type       |
-| ---------------- | --------------- | ----------------------------------------------------- | ------------------------------------- | -------- | ---------- |
-| 01000320000CC000 | v0(gamecard)    | Gamecard Front: LA-H-AACCA-{region} Back: AACCA22Y000 | 1-2 Switch                            | ALL      | Game       |
-| 01007EF00011E000 | v0              | Gamecard Front: LA-H-AAAAA-{region} Back: AAAAA13A000 | Zelda BotW                            | ALL      | Game       |
-| 01007EF00011E800 | v262144         |                                                       | Zelda BotW                            | ALL      | Update     |
-| 0100EE6002B48000 |                 |                                                       | ACA Neo Geo Fatal Fury                | ALL      | VC         |
-| 0100CB2001DB8000 |                 |                                                       | ACA Neo Geo Garou: Mark of the Wolves | ALL      | VC         |
-| 0100BA8001DC6000 |                 |                                                       | ACA Neo Geo Metal Slug 3              | ALL      | VC         |
-| 01003A5001DBA000 |                 |                                                       | ACA Neo Geo Over Top                  | ALL      | VC         |
-| 0100EB2001DCC000 |                 |                                                       | ACA Neo Geo The King of Fighters '94  | ALL      | VC         |
-| 0100B42001DB4000 |                 |                                                       | ACA Neo Geo The King of Fighters '98  | ALL      | VC         |
-| 01002E70032E8000 |                 |                                                       | ACA Neo Geo Turf Masters              | ALL      | VC         |
-| 0100CEF001DC0000 |                 |                                                       | ACA Neo Geo Waku Waku 7               | ALL      | VC         |
-| 01009D4001DC4000 |                 |                                                       | ACA Neo Geo World Heroes Perfect      | ALL      | VC         |
-| 0100C5E003B40000 | v0              |                                                       | ARMS Global Testpunch                 | ALL      | Timed Demo |
-| 0100C5E003B40800 | v65536(0x10000) |                                                       | ARMS Global Testpunch                 | ALL      | Update     |
-| 010025B002E92000 |                 |                                                       | Blaster Master Zero                   | ALL      | Demo       |
-| 0100225000FEE000 |                 |                                                       | Blaster Master Zero                   | ALL      | Demo       |
-| 01001FA0034E2000 |                 |                                                       | Dark Witch Music Episode: Rudymical   | ALL      | Game       |
-| 0100E67003A86000 |                 | Gamecard Front: LA-H-AACAC-{region} Back: AACAC41A000 | Disgaea 5 Complete                    | ALL      | Game       |
-| 0100930002EAA000 |                 |                                                       | Dragon Quest Heroes 1 & 2             | USA      | Game       |
-| 0100F12002FC8000 |                 |                                                       | Everyone Party\! Spelunker            | JPN      | Game       |
-| 01009510001CA000 |                 |                                                       | FAST RMX                              | JPN      | Game       |
-| 01006740034F6000 |                 |                                                       | Just Dance 2017                       | USA      | Game       |
-| 010085300314E000 |                 |                                                       | Kamiko                                | USA      | Game       |
-| 0100152000022000 |                 | Gamecard Front: LA-H-AABPA-{region} Back: AABPA22A000 | Mario Kart 8 Deluxe                   | ALL      | Game       |
-| 01006BD001E06000 |                 |                                                       | Minecraft: Nintendo Switch Edition    | ALL      | Game       |
-| 010031F002B66000 |                 |                                                       | Mr. Shifty                            | USA, EUR | Game       |
-| 010002900294A000 |                 |                                                       | NBA Playgrounds                       | JPN, USA | Game       |
-| 01004C200100E000 |                 |                                                       | New Frontier Days: Founding Pioneers  | ALL      | Game       |
-| 0100902001014000 |                 |                                                       | Othello                               | JPN      | Game       |
-| 01000DC003740000 |                 | Gamecard Front: LA-H-BAACB-USA Back: BAACB41Y000      | Puyo Puyo Tetris                      | USA      | Game       |
-| 01004B10031BE000 |                 |                                                       | Puyo Puyo Tetris                      | EUR      | Game       |
-| 010000A00218E000 |                 |                                                       | Splatoon 2 Global Testfire            | ALL      | Timed Demo |
-| XXXXXXXXXXXXXXXX |                 | Gamecard Front: LA-H-BAAZA-USA Back: BAAZA20Y000      | The Binding of Isaac: Afterbirth+     | USA      | Game       |
+| Title-id         | Versions        | Serial\#                                              | Description                             | Region   | Type       |
+| ---------------- | --------------- | ----------------------------------------------------- | --------------------------------------- | -------- | ---------- |
+| 01000320000CC000 | v0(gamecard)    | Gamecard Front: LA-H-AACCA-{region} Back: AACCA22Y000 | 1-2 Switch                              | ALL      | Game       |
+| 0100EE6002B48000 |                 |                                                       | ACA Neo Geo Fatal Fury                  | ALL      | VC         |
+| 0100CB2001DB8000 |                 |                                                       | ACA Neo Geo Garou: Mark of the Wolves   | ALL      | VC         |
+| 0100BA8001DC6000 |                 |                                                       | ACA Neo Geo Metal Slug 3                | ALL      | VC         |
+| 01003A5001DBA000 |                 |                                                       | ACA Neo Geo Over Top                    | ALL      | VC         |
+| 0100EB2001DCC000 |                 |                                                       | ACA Neo Geo The King of Fighters '94    | ALL      | VC         |
+| 0100B42001DB4000 |                 |                                                       | ACA Neo Geo The King of Fighters '98    | ALL      | VC         |
+| 01002E70032E8000 |                 |                                                       | ACA Neo Geo Turf Masters                | ALL      | VC         |
+| 0100CEF001DC0000 |                 |                                                       | ACA Neo Geo Waku Waku 7                 | ALL      | VC         |
+| 01009D4001DC4000 |                 |                                                       | ACA Neo Geo World Heroes Perfect        | ALL      | VC         |
+| 0100C5E003B40000 | v0              |                                                       | ARMS Global Testpunch                   | ALL      | Timed Demo |
+| 0100C5E003B40800 | v65536(0x10000) |                                                       | ARMS Global Testpunch                   | ALL      | Update     |
+| XXXXXXXXXXXXXXXX |                 | Gamecard Front: LA-H-BAAZA-USA Back: BAAZA20Y000      | The Binding of Isaac: Afterbirth+       | USA      | Game       |
+| 010025B002E92000 |                 |                                                       | Blaster Master Zero                     | ALL      | Demo       |
+| 0100225000FEE000 |                 |                                                       | Blaster Master Zero                     | ALL      | Demo       |
+| 01001FA0034E2000 |                 |                                                       | Dark Witch Music Episode: Rudymical     | ALL      | Game       |
+| 0100E67003A86000 |                 | Gamecard Front: LA-H-AACAC-{region} Back: AACAC41A000 | Disgaea 5 Complete                      | ALL      | Game       |
+| 0100930002EAA000 |                 |                                                       | Dragon Quest Heroes 1 & 2               | USA      | Game       |
+| 0100F12002FC8000 |                 |                                                       | Everyone Party\! Spelunker              | JPN      | Game       |
+| 01009510001CA000 |                 |                                                       | FAST RMX                                | JPN      | Game       |
+| XXXXXXXXXXXXXXXX |                 | Gamecard Front: LA-H-ABMKA-EUR Back: ABMKA09Y000      | Has-Been Heroes                         | EUR      | Game       |
+| 01006740034F6000 |                 |                                                       | Just Dance 2017                         | USA      | Game       |
+| 010085300314E000 |                 |                                                       | Kamiko                                  | USA      | Game       |
+| 01007EF00011E000 | v0              | Gamecard Front: LA-H-AAAAA-{region} Back: AAAAA13A000 | The Legend of Zelda: Breath of the Wild | ALL      | Game       |
+| 01007EF00011E800 | v262144         |                                                       | The Legend of Zelda: Breath of the Wild | ALL      | Update     |
+| 0100152000022000 |                 | Gamecard Front: LA-H-AABPA-{region} Back: AABPA22A000 | Mario Kart 8 Deluxe                     | ALL      | Game       |
+| 01006BD001E06000 |                 |                                                       | Minecraft: Nintendo Switch Edition      | ALL      | Game       |
+| 010031F002B66000 |                 |                                                       | Mr. Shifty                              | USA, EUR | Game       |
+| 010002900294A000 |                 |                                                       | NBA Playgrounds                         | JPN, USA | Game       |
+| 01004C200100E000 |                 |                                                       | New Frontier Days: Founding Pioneers    | ALL      | Game       |
+| 0100902001014000 |                 |                                                       | Othello                                 | JPN      | Game       |
+| 01000DC003740000 |                 | Gamecard Front: LA-H-BAACB-USA Back: BAACB41Y000      | Puyo Puyo Tetris                        | USA      | Game       |
+| 01004B10031BE000 |                 |                                                       | Puyo Puyo Tetris                        | EUR      | Game       |
+| 010000A00218E000 |                 |                                                       | Splatoon 2 Global Testfire              | ALL      | Timed Demo |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
