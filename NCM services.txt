@@ -150,8 +150,6 @@ For BotW cartridge they are "00 00 00 00 80 00 00 00".
 === GetTitleList ===
 Each 24-byte entries is as follows:
 
-  u64 title_id;
-  u32 title_version;
-  u8  title_type; // 0x80, 0x81
-  u8  pad[3];
-  u64 title_id_update;
+  u64    title_id_update;
+  struct title_info info;
+  u64    title_id;
