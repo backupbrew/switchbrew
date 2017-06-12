@@ -183,10 +183,10 @@ structure:
 
 ### Title Types
 
-| Value | Description                           |
-| ----- | ------------------------------------- |
-| 0x80  | Gamecard title / regular application? |
-| 0x81  | eShop title / demo?                   |
+| Value | Description         |
+| ----- | ------------------- |
+| 0x80  | Regular application |
+| 0x81  | Update title        |
 
 ### AppletId
 

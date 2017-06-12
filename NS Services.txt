@@ -321,10 +321,10 @@ Entry structure:
 ! Description
 |-
 | 0x80
-| Gamecard title / regular application?
+| Regular application
 |-
 | 0x81
-| eShop title / demo?
+| Update title
 |}
 
 === AppletId ===
