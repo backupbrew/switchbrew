@@ -85,7 +85,7 @@ This is the Switch equivalent of
 | 602  |                                                                    |
 | 603  |                                                                    |
 | 604  |                                                                    |
-| 605  |                                                                    |
+| 605  | Used same way as [\#GetTitleInfo1](#GetTitleInfo1 "wikilink").     |
 | 700  |                                                                    |
 | 701  |                                                                    |
 | 702  |                                                                    |
@@ -157,7 +157,7 @@ structure:
 | ------ | ---- | ---------------------------------------------------------------------------------------------------- |
 | 0x0    | 0x1  | u8 "type" (String is from web-applet)                                                                |
 | 0x1    | 0x1  | u8 "installedStorage" / [StorageId](Filesystem%20services.md "wikilink") (String is from web-applet) |
-| 0x2    | 0x1  | ?                                                                                                    |
+| 0x2    | 0x1  | Unknown. Non-zero with output from cmd 605, differs for app/update titles.                           |
 | 0x3    | 0x1  | Padding                                                                                              |
 | 0x4    | 0x4  | u32 Title-version                                                                                    |
 | 0x8    | 0x8  | u64 titleID                                                                                          |

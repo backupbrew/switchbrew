@@ -165,7 +165,7 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 604 ||
 |-
-| 605 ||
+| 605 || Used same way as [[#GetTitleInfo1]].
 |-
 | 700 ||
 |-
@@ -269,7 +269,7 @@ Entry structure:
 |-
 | 0x2
 | 0x1
-| ?
+| Unknown. Non-zero with output from cmd 605, differs for app/update titles.
 |-
 | 0x3
 | 0x1
