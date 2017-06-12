@@ -1,0 +1,10 @@
+= csrng =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#GetRandomBytes]]
+|}
+
+== GetRandomBytes ==
+Takes a type-6 buffer and fills it with random-looking data.
