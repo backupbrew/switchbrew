@@ -57,7 +57,7 @@ This is the Switch equivalent of
 | 63   |                                              |
 | 64   |                                              |
 | 65   |                                              |
-| 100  |                                              |
+| 100  | InitializeNXFileSystem?                      |
 | 101  |                                              |
 | 102  |                                              |
 | 200  |                                              |
