@@ -55,7 +55,9 @@ Changes on reboot?
 Takes an output buffer, u32 offset and gets all entries starting at that
 offset. Returns number of entries read.
 
-Each entry is 16 completely random-looking bytes.
+Each entry is 16-bytes from the hex portion of "<hex>.nca"
+directory-names from this storage FS(like
+[SD](SD%20Filesystem.md "wikilink")).
 
 ## ReadEntryRaw
 
