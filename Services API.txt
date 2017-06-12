@@ -122,6 +122,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 | Audio services
 |
 |-
+| bcat:u, bcat:m, bcat:s
+| ?
+|
+|-
 | bgtc:t, bgtc:sc
 | Task services
 |
@@ -220,6 +224,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 |-
 | ncm
 | [[Content Manager services]]
+| 
+|-
+| news:a, news:c, news:m, news:p, news:v
+| News Services
 | 
 |-
 | nifm:u, nifm:a, nifm:s
