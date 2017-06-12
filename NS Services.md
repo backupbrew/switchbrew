@@ -145,8 +145,10 @@ Not tested on hw.
 
 ## GetTitleInfo1
 
-Returns 0x10-byte entries using the specified titleID. Usually only
-returns 1 entry. Can only return game titles.
+Returns 0x10-byte entries using the specified titleID starting at the
+specified u32 entryindex. Can only return game titles. The second entry
+if any is the update-title usually. When the input entryindex is \>=
+totalentries, this will return 0 with out\_entrycount=0.
 
 Entry
 structure:
@@ -158,7 +160,7 @@ structure:
 | 0x2    | 0x1  | ?                                                                                                    |
 | 0x3    | 0x1  | Padding                                                                                              |
 | 0x4    | 0x4  | u32 Title-version                                                                                    |
-| 0x8    | 0x8  | u64 titleID for the update-title                                                                     |
+| 0x8    | 0x8  | u64 titleID                                                                                          |
 
 # ns:su
 
