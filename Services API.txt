@@ -151,7 +151,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | a: Album, ss: Screenshot
 |-
 | csrng
-| Cryptographically Secure Random Number Generator Services?
+| [[Secure RNG services]]
 | 
 |-
 | erpt:c, erpt:r
