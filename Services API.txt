@@ -118,7 +118,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | Activity Report services? 
 | r: Reader, w: Writer
 |-
-| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u
+| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audctl
 | Audio services
 |
 |-
@@ -134,7 +134,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | [[BPC services]]
 |
 |-
-| bsd:u, bsd:s
+| bsd:u, bsd:s, bsdcfg
 | [[Sockets services]]
 |
 |-
