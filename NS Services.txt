@@ -281,7 +281,7 @@ Entry structure:
 |-
 | 0x8
 | 0x8
-| u64 titleID
+| u64 titleID for the update-title
 |}
 
 = ns:su =

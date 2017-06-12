@@ -158,7 +158,7 @@ structure:
 | 0x2    | 0x1  | ?                                                                                                    |
 | 0x3    | 0x1  | Padding                                                                                              |
 | 0x4    | 0x4  | u32 Title-version                                                                                    |
-| 0x8    | 0x8  | u64 titleID                                                                                          |
+| 0x8    | 0x8  | u64 titleID for the update-title                                                                     |
 
 # ns:su
 
