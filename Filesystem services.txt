@@ -150,17 +150,17 @@ This is the interface for a raw device, usually a block device.
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Arguments
 |-
-| 0 || Read
+| 0 || Read || (Offset, Length) + B Descriptor output buffer with flags=1
 |-
-| 1 || Write?
+| 1 || Write? || ?
 |-
-| 2 ||
+| 2 || || ?
 |-
-| 3 ||
+| 3 || || ?
 |-
-| 4 ||
+| 4 || GetStorageSize || None
 |}
 
 = IFileSystem =

@@ -88,15 +88,16 @@ This command returns a session to a port implementing the
 
 # IStorage
 
-This is the interface for a raw device, usually a block device.
+This is the interface for a raw device, usually a block
+device.
 
-| Cmd | Name   |
-| --- | ------ |
-| 0   | Read   |
-| 1   | Write? |
-| 2   |        |
-| 3   |        |
-| 4   |        |
+| Cmd | Name           | Arguments                                                  |
+| --- | -------------- | ---------------------------------------------------------- |
+| 0   | Read           | (Offset, Length) + B Descriptor output buffer with flags=1 |
+| 1   | Write?         | ?                                                          |
+| 2   |                | ?                                                          |
+| 3   |                | ?                                                          |
+| 4   | GetStorageSize | None                                                       |
 
 # IFileSystem
 
