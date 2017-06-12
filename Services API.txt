@@ -286,6 +286,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 | [[Play Report services]]
 |
 |-
+| psc:c, psc:m
+| ?
+| 
+|-
 | psm
 | ?
 | 
