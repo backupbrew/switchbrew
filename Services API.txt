@@ -226,7 +226,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | [[Content Manager services]]
 | 
 |-
-| news:a, news:c, news:m, news:p, news:v
+| <nowiki>news:a, news:c, news:m, news:p, news:v</nowiki>
 | News Services
 | 
 |-
@@ -254,7 +254,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | ?
 | 
 |-
-| nvdrv:a, nvdrv:s, nvdrv:t, nvmemp, mm:u
+| nvdrv:a, nvdrv:s, nvdrv:t, nvdrv, nvmemp, mm:u
 | [[NV services]]
 |
 |-
@@ -321,6 +321,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 | ssl
 | SSL services
 |
+|-
+| spl:
+| ?
+| 
 |-
 | tc
 | ?
