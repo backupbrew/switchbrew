@@ -63,8 +63,12 @@ Takes an output buffer, a [\#ncaID](#ncaID "wikilink") as input, and a
 u64 file offset.
 
 Returns encrypted looking data. Doesn't match the encrypted raw data in
-the "<ncaID>.nca/00"
-file.
+the "<ncaID>.nca/00" file.
+
+The end-offset for readable data is the same as the size field from
+offset 0x28 in the NAX0 header in the "<ncaID>.nca/00" file. This
+matches
+<filesize of that file>-0x4000.
 
 ## IContentMetaDatabase
 
