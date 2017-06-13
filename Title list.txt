@@ -197,7 +197,7 @@ Presumably system-modules going by total titles here, first 5 are probably bundl
 |-
 | 0100000000001013 ||
 |-
-| 0100000000001015 ||
+| 0100000000001015 || Fall-back TID used by [[NS_Services|NS]] when a state flag is non-val1 indicating the "System applet" TID shouldn't be loaded from config.
 |}
 
 == Games ==
