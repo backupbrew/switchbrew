@@ -55,16 +55,16 @@ Changes on reboot?
 Takes an output buffer, u32 offset and gets all entries starting at that
 offset. Returns number of entries read.
 
-Each entry is 16-bytes from the hex portion of "<hex>.nca"
-directory-names from this storage FS(like
-[SD](SD%20Filesystem.md "wikilink")).
+Each entry is a [\#ncaID](#ncaID "wikilink").
 
 ## ReadEntryRaw
 
-Takes an output buffer, a 16-byte entry as input, and a u64 file offset.
+Takes an output buffer, a [\#ncaID](#ncaID "wikilink") as input, and a
+u64 file offset.
 
-Returns encrypted looking
-data.
+Returns encrypted looking data. Doesn't match the encrypted raw data in
+the "<ncaID>.nca/00"
+file.
 
 ## IContentMetaDatabase
 
@@ -109,3 +109,9 @@ Each 24-byte entries is as follows:
 ` u64    title_id_update;`  
 ` struct title_info info;`  
 ` u64    title_id;`
+
+## ncaID
+
+This is a 0x10-byte entry. This is originally from the hex portion of
+"<hex>.nca" directory-names from this storage FS(like
+[SD](SD%20Filesystem.md "wikilink")).
