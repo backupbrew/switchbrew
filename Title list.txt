@@ -122,7 +122,7 @@ Presumably system-modules going by total titles here, first 5 are probably bundl
 |-
 | 010000000000080B || Tutorial images and strings. Used for the offline news by the News applet.
 |-
-| 010000000000080C || EULA
+| 010000000000080C || EULA. Also accessed by [[NS_Services|NS]].
 |-
 | 010000000000080D || Blacklist URL
 |-
