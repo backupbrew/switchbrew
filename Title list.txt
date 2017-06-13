@@ -82,7 +82,7 @@
 |-
 | 0100000000000034 ||
 |-
-| 0100000000000036 ||
+| 0100000000000036 || This TID is used by [[NS_Services|NS]], in the same func as TID 0100000000002071.
 |}
 
 Presumably system-modules going by total titles here, first 5 are probably bundled with the kernel in package2.
@@ -91,7 +91,7 @@ Presumably system-modules going by total titles here, first 5 are probably bundl
 {| class=wikitable
 ! Title-id || Description
 |-
-| 0100000000002071 || Snapshot Dumper? Not on retail consoles.
+| 0100000000002071 || Snapshot Dumper? Used by [[NS_Services|NS]]. Not on retail consoles.
 |}
 
 == System Data Archives ==
