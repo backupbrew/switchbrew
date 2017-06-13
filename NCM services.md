@@ -60,7 +60,7 @@ cmdreply <SFCO_offset>+0x10.
 Takes an output buffer, u32 offset and gets all entries starting at that
 offset. Returns number of entries read.
 
-Each entry is a [\#ncaID](#ncaID "wikilink").
+Each entry is a [\#NcaID](#NcaID "wikilink").
 
 The total read entries is exactly the same as the number of "<hex>.nca"
 directories in the storage FS(or at least under the "registered"
@@ -68,26 +68,26 @@ directory?).
 
 ## GetEntrySize
 
-Takes a [\#ncaID](#ncaID "wikilink") as input.
+Takes a [\#NcaID](#NcaID "wikilink") as input.
 
 Returns the total size readable by ReadEntryRaw. This is the same as the
-size field from offset 0x28 in the NAX0 header in the "<ncaID>.nca/00"
+size field from offset 0x28 in the NAX0 header in the "<NcaID>.nca/00"
 file. This matches <filesize of that file>-0x4000.
 
 ## ReadEntryRaw
 
-Takes an output buffer, a [\#ncaID](#ncaID "wikilink") as input, and a
+Takes an output buffer, a [\#NcaID](#NcaID "wikilink") as input, and a
 u64 file offset.
 
 Returns encrypted looking data. Doesn't match the encrypted raw data in
-the "<ncaID>.nca/00" file.
+the "<NcaID>.nca/00" file.
 
 See GetEntrySize for the total size readable with this.
 
 ## GetNcaTitleInfo
 
-Takes a [\#ncaID](#ncaID "wikilink") and returns the following
-0x10-sized entry. With some ncaIDs this may return 0 with an all-zero
+Takes a [\#NcaID](#NcaID "wikilink") and returns the following
+0x10-sized entry. With some NcaIDs this may return 0 with an all-zero
 output entry.
 
 | Offset | Size | Description            |
@@ -139,7 +139,7 @@ Each 24-byte entries is as follows:
 ` struct title_info info;`  
 ` u64    title_id;`
 
-## ncaID
+## NcaID
 
 This is a 0x10-byte entry. This is originally from the hex portion of
 "<hex>.nca" directory-names from this storage FS(like
