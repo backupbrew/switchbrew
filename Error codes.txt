@@ -173,7 +173,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1F610 || 251 || Unexpected StorageId
 |-
-| 0xA05 || 5 || Returned when attempting to mount titles which exist that aren't *8XX titles, the same way *8XX titles are mounted.
+| 0xA05 || 5 || [[Content_Manager_services|ncaID]] not found. Returned when attempting to mount titles which exist that aren't *8XX titles, the same way *8XX titles are mounted.
 |-
 | 0x615 || 3 || Max sessions
 |-
