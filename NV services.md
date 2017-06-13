@@ -741,6 +741,26 @@ NVIDIA multimedia (NvMM) platform service.
 | 6   | module\_set\_clk\_rate |
 | 7   | module\_get\_clk\_rate |
 
+# nvdrvdbg
+
+| Cmd | Name                               |
+| --- | ---------------------------------- |
+| 0   | [\#OpenLog](#OpenLog "wikilink")   |
+| 1   | [\#CloseLog](#CloseLog "wikilink") |
+| 2   | [\#ReadLog](#ReadLog "wikilink")   |
+
+## OpenLog
+
+Takes process handle. Returns an fd.
+
+## CloseLog
+
+Takes fd and closes it.
+
+## ReadLog
+
+Takes fd and reads log into a type-6 buffer.
+
 # Errors
 
 Most nvidia driver commands return an error code apart from the normal
