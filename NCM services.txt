@@ -59,7 +59,7 @@
 |-
 | 13 || [[#GetEntries]] ||
 |-
-| 14 || GetEntrySize ||
+| 14 || [[#GetEntrySize]] ||
 |-
 | 15 || || Void.
 |-
@@ -96,12 +96,17 @@ Each entry is a [[#ncaID]].
 
 The total read entries is exactly the same as the number of "<hex>.nca" directories in the storage FS(or at least under the "registered" directory?).
 
+== GetEntrySize ==
+Takes a [[#ncaID]] as input.
+
+Returns the total size readable by ReadEntryRaw. This is the same as the size field from offset 0x28 in the NAX0 header in the "<ncaID>.nca/00" file. This matches <filesize of that file>-0x4000.
+
 == ReadEntryRaw ==
 Takes an output buffer, a [[#ncaID]] as input, and a u64 file offset.
 
 Returns encrypted looking data. Doesn't match the encrypted raw data in the "<ncaID>.nca/00" file.
 
-The end-offset for readable data is the same as the size field from offset 0x28 in the NAX0 header in the "<ncaID>.nca/00" file. This matches <filesize of that file>-0x4000.
+See GetEntrySize for the total size readable with this.
 
 == GetNcaTitleInfo ==
 Takes a [[#ncaID]] and returns the following 0x10-sized entry. With some ncaIDs this may return 0 with an all-zero output entry.

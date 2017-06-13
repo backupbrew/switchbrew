@@ -32,7 +32,7 @@
 | 11  |                                                        | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32. |
 | 12  | [\#GetNumberOfEntries](#GetNumberOfEntries "wikilink") |                                                                  |
 | 13  | [\#GetEntries](#GetEntries "wikilink")                 |                                                                  |
-| 14  | GetEntrySize                                           |                                                                  |
+| 14  | [\#GetEntrySize](#GetEntrySize "wikilink")             |                                                                  |
 | 15  |                                                        | Void.                                                            |
 | 16  |                                                        | Takes three 0x10-sized entries.                                  |
 | 17  |                                                        | Takes a 0x10-sized entry and a u64.                              |
@@ -66,6 +66,14 @@ The total read entries is exactly the same as the number of "<hex>.nca"
 directories in the storage FS(or at least under the "registered"
 directory?).
 
+## GetEntrySize
+
+Takes a [\#ncaID](#ncaID "wikilink") as input.
+
+Returns the total size readable by ReadEntryRaw. This is the same as the
+size field from offset 0x28 in the NAX0 header in the "<ncaID>.nca/00"
+file. This matches <filesize of that file>-0x4000.
+
 ## ReadEntryRaw
 
 Takes an output buffer, a [\#ncaID](#ncaID "wikilink") as input, and a
@@ -74,9 +82,7 @@ u64 file offset.
 Returns encrypted looking data. Doesn't match the encrypted raw data in
 the "<ncaID>.nca/00" file.
 
-The end-offset for readable data is the same as the size field from
-offset 0x28 in the NAX0 header in the "<ncaID>.nca/00" file. This
-matches <filesize of that file>-0x4000.
+See GetEntrySize for the total size readable with this.
 
 ## GetNcaTitleInfo
 
