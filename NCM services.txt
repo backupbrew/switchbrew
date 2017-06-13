@@ -71,7 +71,7 @@
 |-
 | 19 || || Takes a 0x10-sized entry and returns another 0x10-sized entry.
 |-
-| 20 || || Takes a 0x10-sized entry and returns another 0x10-sized entry.
+| 20 || [[#GetNcaTitleInfo]] || 
 |-
 | 21 || || Takes a 0x10-sized entry, a u64, and a type5 buffer.
 |-
@@ -102,6 +102,24 @@ Takes an output buffer, a [[#ncaID]] as input, and a u64 file offset.
 Returns encrypted looking data. Doesn't match the encrypted raw data in the "<ncaID>.nca/00" file.
 
 The end-offset for readable data is the same as the size field from offset 0x28 in the NAX0 header in the "<ncaID>.nca/00" file. This matches <filesize of that file>-0x4000.
+
+== GetNcaTitleInfo ==
+Takes a [[#ncaID]] and returns the following 0x10-sized entry:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x8
+| Big-endian titleID
+|-
+| 0x8
+| 0x8
+| Unknown. Usually zero?
+|}
 
 == IContentMetaDatabase ==
 {| class="wikitable" border="1"

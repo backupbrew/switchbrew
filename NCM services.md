@@ -38,7 +38,7 @@
 | 17  |                                                        | Takes a 0x10-sized entry and a u64.                              |
 | 18  | [\#ReadEntryRaw](#ReadEntryRaw "wikilink")             |                                                                  |
 | 19  |                                                        | Takes a 0x10-sized entry and returns another 0x10-sized entry.   |
-| 20  |                                                        | Takes a 0x10-sized entry and returns another 0x10-sized entry.   |
+| 20  | [\#GetNcaTitleInfo](#GetNcaTitleInfo "wikilink")       |                                                                  |
 | 21  |                                                        | Takes a 0x10-sized entry, a u64, and a type5 buffer.             |
 | 22  | GetFreeSpace                                           |                                                                  |
 | 23  | GetTotalSpace                                          |                                                                  |
@@ -76,8 +76,17 @@ the "<ncaID>.nca/00" file.
 
 The end-offset for readable data is the same as the size field from
 offset 0x28 in the NAX0 header in the "<ncaID>.nca/00" file. This
-matches
-<filesize of that file>-0x4000.
+matches <filesize of that file>-0x4000.
+
+## GetNcaTitleInfo
+
+Takes a [\#ncaID](#ncaID "wikilink") and returns the following
+0x10-sized entry:
+
+| Offset | Size | Description            |
+| ------ | ---- | ---------------------- |
+| 0x0    | 0x8  | Big-endian titleID     |
+| 0x8    | 0x8  | Unknown. Usually zero? |
 
 ## IContentMetaDatabase
 
