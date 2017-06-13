@@ -57,6 +57,10 @@ offset. Returns number of entries read.
 
 Each entry is a [\#ncaID](#ncaID "wikilink").
 
+The total read entries is exactly the same as the number of "<hex>.nca"
+directories in the storage FS(or at least under the "registered"
+directory?).
+
 ## ReadEntryRaw
 
 Takes an output buffer, a [\#ncaID](#ncaID "wikilink") as input, and a

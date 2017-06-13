@@ -91,6 +91,8 @@ Returns number of entries read.
 
 Each entry is a [[#ncaID]].
 
+The total read entries is exactly the same as the number of "<hex>.nca" directories in the storage FS(or at least under the "registered" directory?).
+
 == ReadEntryRaw ==
 Takes an output buffer, a [[#ncaID]] as input, and a u64 file offset.
 
