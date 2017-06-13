@@ -323,7 +323,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 |
 |-
 | spl:
-| ?
+| [[SPL services]]
 | 
 |-
 | tc
