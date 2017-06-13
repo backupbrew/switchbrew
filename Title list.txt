@@ -199,7 +199,7 @@ Presumably system-modules going by total titles here, first 5 are probably bundl
 |-
 | 0100000000001015 || Fall-back TID used by [[NS_Services|NS]] when a state flag is val1 indicating the "System applet" TID shouldn't be loaded from config.
 |-
-| 0100000000001016 || TID used by [[NS_Services|NS]] when a certain flag is non-zero, around code using string "application_install". This title doesn't seem to exist for retail.
+| 0100000000001016 || TID used by [[NS_Services|NS]] when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.
 |}
 
 == Games ==
