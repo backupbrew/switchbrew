@@ -33,9 +33,11 @@ fatal-errors, since the Description ends with bit21.
 | 16    | NS                           |
 | 21    | SM                           |
 | 22    | RO userland                  |
+| 26    | SPL                          |
 | 110   | NIFM                         |
 | 114   | Display                      |
 | 117   | FGM                          |
+| 120   | PCIE                         |
 | 124   | Account                      |
 | 126   | Mii                          |
 | 129   | Play Report                  |

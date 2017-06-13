@@ -40,11 +40,15 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 22 || RO userland
 |-
+| 26 || SPL
+|-
 | 110 || NIFM
 |-
 | 114 || Display
 |-
 | 117 || FGM
+|-
+| 120 || PCIE
 |-
 | 124 || Account
 |-
