@@ -87,8 +87,10 @@ See GetEntrySize for the total size readable with this.
 ## GetNcaTitleInfo
 
 Takes a [\#NcaID](#NcaID "wikilink") and returns the following
-0x10-sized entry. With some NcaIDs this may return 0 with an all-zero
-output entry.
+0x10-sized entry.
+
+With some NcaIDs this may return 0 with an all-zero output entry. This
+seems to be the case for most/all (?) NandSystem NcaIds?
 
 | Offset | Size | Description            |
 | ------ | ---- | ---------------------- |
