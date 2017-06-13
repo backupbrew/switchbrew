@@ -25,6 +25,8 @@
 | 010085300314E000 |                 |                                                       | Kamiko                                  | USA      | Game       |
 | 01007EF00011E000 | v0              | Gamecard Front: LA-H-AAAAA-{region} Back: AAAAA13A000 | The Legend of Zelda: Breath of the Wild | ALL      | Game       |
 | 01007EF00011E800 | v262144         |                                                       | The Legend of Zelda: Breath of the Wild | ALL      | Update     |
+| 01007AD00013E000 |                 |                                                       | Super Bomberman R                       | ALL      | Game       |
+| 01007AD00013E800 |                 |                                                       | Super Bomberman R                       | ALL      | Update     |
 | 0100152000022000 |                 | Gamecard Front: LA-H-AABPA-{region} Back: AABPA22A000 | Mario Kart 8 Deluxe                     | ALL      | Game       |
 | 01006BD001E06000 |                 |                                                       | Minecraft: Nintendo Switch Edition      | ALL      | Game       |
 | 010031F002B66000 |                 |                                                       | Mr. Shifty                              | USA, EUR | Game       |
