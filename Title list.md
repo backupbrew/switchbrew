@@ -88,28 +88,28 @@ probably bundled with the kernel in package2.
 
 ## System Applets
 
-| Title-id         | Description                                                                                                                                               |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0100000000001000 | System applet                                                                                                                                             |
-| 0100000000001001 |                                                                                                                                                           |
-| 0100000000001002 |                                                                                                                                                           |
-| 0100000000001003 |                                                                                                                                                           |
-| 0100000000001004 |                                                                                                                                                           |
-| 0100000000001005 |                                                                                                                                                           |
-| 0100000000001006 |                                                                                                                                                           |
-| 0100000000001007 |                                                                                                                                                           |
-| 0100000000001008 |                                                                                                                                                           |
-| 0100000000001009 |                                                                                                                                                           |
-| 010000000000100A |                                                                                                                                                           |
-| 010000000000100B | [ShopN](Internet%20Browser.md "wikilink") applet                                                                                                          |
-| 010000000000100C | Overlay applet                                                                                                                                            |
-| 010000000000100D |                                                                                                                                                           |
-| 010000000000100F |                                                                                                                                                           |
-| 0100000000001010 | [Whitelisted](Internet%20Browser.md "wikilink") applet (LoginApplet+ShareApplet+LobbyApplet)                                                              |
-| 0100000000001011 | [WifiWebAuth](Internet%20Browser.md "wikilink") applet                                                                                                    |
-| 0100000000001012 |                                                                                                                                                           |
-| 0100000000001013 |                                                                                                                                                           |
-| 0100000000001015 | Fall-back TID used by [NS](NS%20Services.md "wikilink") when a state flag is non-val1 indicating the "System applet" TID shouldn't be loaded from config. |
+| Title-id         | Description                                                                                                                                           |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0100000000001000 | System applet                                                                                                                                         |
+| 0100000000001001 |                                                                                                                                                       |
+| 0100000000001002 |                                                                                                                                                       |
+| 0100000000001003 |                                                                                                                                                       |
+| 0100000000001004 |                                                                                                                                                       |
+| 0100000000001005 |                                                                                                                                                       |
+| 0100000000001006 |                                                                                                                                                       |
+| 0100000000001007 |                                                                                                                                                       |
+| 0100000000001008 |                                                                                                                                                       |
+| 0100000000001009 |                                                                                                                                                       |
+| 010000000000100A |                                                                                                                                                       |
+| 010000000000100B | [ShopN](Internet%20Browser.md "wikilink") applet                                                                                                      |
+| 010000000000100C | Overlay applet                                                                                                                                        |
+| 010000000000100D |                                                                                                                                                       |
+| 010000000000100F |                                                                                                                                                       |
+| 0100000000001010 | [Whitelisted](Internet%20Browser.md "wikilink") applet (LoginApplet+ShareApplet+LobbyApplet)                                                          |
+| 0100000000001011 | [WifiWebAuth](Internet%20Browser.md "wikilink") applet                                                                                                |
+| 0100000000001012 |                                                                                                                                                       |
+| 0100000000001013 |                                                                                                                                                       |
+| 0100000000001015 | Fall-back TID used by [NS](NS%20Services.md "wikilink") when a state flag is val1 indicating the "System applet" TID shouldn't be loaded from config. |
 
 ## Games
 
