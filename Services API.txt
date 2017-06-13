@@ -315,7 +315,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 |
 |-
 | spsm
-| ?
+| Screen power-supply services?
 | 
 |-
 | ssl
