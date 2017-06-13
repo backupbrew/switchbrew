@@ -104,7 +104,7 @@ Returns encrypted looking data. Doesn't match the encrypted raw data in the "<nc
 The end-offset for readable data is the same as the size field from offset 0x28 in the NAX0 header in the "<ncaID>.nca/00" file. This matches <filesize of that file>-0x4000.
 
 == GetNcaTitleInfo ==
-Takes a [[#ncaID]] and returns the following 0x10-sized entry:
+Takes a [[#ncaID]] and returns the following 0x10-sized entry. With some ncaIDs this may return 0 with an all-zero output entry.
 
 {| class="wikitable" border="1"
 |-

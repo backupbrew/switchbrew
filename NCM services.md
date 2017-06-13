@@ -81,7 +81,8 @@ matches <filesize of that file>-0x4000.
 ## GetNcaTitleInfo
 
 Takes a [\#ncaID](#ncaID "wikilink") and returns the following
-0x10-sized entry:
+0x10-sized entry. With some ncaIDs this may return 0 with an all-zero
+output entry.
 
 | Offset | Size | Description            |
 | ------ | ---- | ---------------------- |
