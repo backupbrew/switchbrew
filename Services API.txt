@@ -267,7 +267,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | rcv: Receiver, snd: Sender
 |-
 | pcie
-| PCIe services
+| [[PCIe services]]
 | 
 |-
 | pctl, pctl:a, pctl:s, pctl:r
