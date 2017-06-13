@@ -50,6 +50,11 @@ possible to read this entry.
 
 Changes on reboot?
 
+## GetNumberOfEntries
+
+Writes the total number of entries which can be read by GetEntries, to
+cmdreply <SFCO_offset>+0x10.
+
 ## GetEntries
 
 Takes an output buffer, u32 offset and gets all entries starting at that
