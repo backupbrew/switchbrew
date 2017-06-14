@@ -149,3 +149,12 @@ Each 24-byte entries is as follows:
 This is a 0x10-byte entry. This is originally from the hex portion of
 "<hex>.nca" directory-names from this storage FS(like
 [SD](SD%20Filesystem.md "wikilink")).
+
+## Enums
+
+### Title Types
+
+| Value | Description         |
+| ----- | ------------------- |
+| 0x80  | Regular application |
+| 0x81  | Update title        |
