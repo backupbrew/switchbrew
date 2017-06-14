@@ -26,6 +26,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 5 || NCM
 |-
+| 8 || LR
+|-
 | 9 || RO service
 |-
 | 10 || CMIF (IPC command interface)
@@ -46,6 +48,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 114 || Display
 |-
+| 116 || NTC
+|-
 | 117 || FGM
 |-
 | 120 || PCIE
@@ -56,7 +60,19 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 129 || Play Report
 |-
+| 133 || PCV
+|-
+| 134 || OMM
+|-
 | 137 || NIM
+|-
+| 138 || PSC
+|-
+| 143 || BTM
+|-
+| 148 || APM
+|-
+| 154 || NPNS
 |-
 | 162 || Userland assert
 |-

@@ -26,6 +26,7 @@ fatal-errors, since the Description ends with bit21.
 | 2     | FS                           |
 | 3     | NVIDIA                       |
 | 5     | NCM                          |
+| 8     | LR                           |
 | 9     | RO service                   |
 | 10    | CMIF (IPC command interface) |
 | 11    | HIPC (IPC)                   |
@@ -36,12 +37,19 @@ fatal-errors, since the Description ends with bit21.
 | 26    | SPL                          |
 | 110   | NIFM                         |
 | 114   | Display                      |
+| 116   | NTC                          |
 | 117   | FGM                          |
 | 120   | PCIE                         |
 | 124   | Account                      |
 | 126   | Mii                          |
 | 129   | Play Report                  |
+| 133   | PCV                          |
+| 134   | OMM                          |
 | 137   | NIM                          |
+| 138   | PSC                          |
+| 143   | BTM                          |
+| 148   | APM                          |
+| 154   | NPNS                         |
 | 162   | Userland assert              |
 | 168   | Userland crash               |
 | 203   | HID                          |
