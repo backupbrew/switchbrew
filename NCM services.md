@@ -1,18 +1,21 @@
 # ncm
 
-| Cmd | Name                           | Notes                |
-| --- | ------------------------------ | -------------------- |
-| 0   |                                | Takes a u8 as input. |
-| 1   |                                | Takes a u8 as input. |
-| 2   |                                | Takes a u8 as input. |
-| 3   |                                | Takes a u8 as input. |
-| 4   | GetContentStorage              |                      |
-| 5   | GetContentMetaDatabase         |                      |
-| 8   |                                | Takes a u8 as input. |
-| 9   | InitializeStorageForMediaId    |                      |
-| 10  | UninitializeStorageForMediaId  |                      |
-| 11  | InitializeDatabaseForMediaId   |                      |
-| 12  | UninitializeDatabaseForMediaId |                      |
+| Cmd | Name                           | Notes |
+| --- | ------------------------------ | ----- |
+| 0   |                                |       |
+| 1   |                                |       |
+| 2   |                                |       |
+| 3   |                                |       |
+| 4   | GetContentStorage              |       |
+| 5   | GetContentMetaDatabase         |       |
+| 8   |                                |       |
+| 9   | InitializeStorageForMediaId    |       |
+| 10  | UninitializeStorageForMediaId  |       |
+| 11  | InitializeDatabaseForMediaId   |       |
+| 12  | UninitializeDatabaseForMediaId |       |
+
+All of the above cmds takes a u8 as
+input.
 
 ## IContentStorage
 
