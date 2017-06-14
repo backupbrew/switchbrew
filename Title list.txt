@@ -98,61 +98,61 @@ Presumably system-modules going by total titles here, first 5 are probably bundl
 {| class=wikitable
 ! Title-id || Versions || Description
 |-
-| 0100000000000800 ||  || SSL trusted certificates
+| 0100000000000800 || [[2.0.0|0.0.1.4]] || SSL trusted certificates
 |-
-| 0100000000000801 ||  || Stores the message strings for Support Error Codes. There's "/DatabaseInfo" at FS root, then the rest is stored at "/{first 4 error digits}/{last 4 error digits}/".
+| 0100000000000801 || [[2.0.0|0.1.1.4]] || Stores the message strings for Support Error Codes. There's "/DatabaseInfo" at FS root, then the rest is stored at "/{first 4 error digits}/{last 4 error digits}/".
 |-
-| 0100000000000802 ||  || Random textures?
+| 0100000000000802 || [[2.0.0|0.1.1.4]] || Random textures?
 |-
-| 0100000000000803 ||  || Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...
+| 0100000000000803 || [[2.0.0|0.1.1.4]] || Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...
 |-
-| 0100000000000804 ||  || HTML resources: Open-source licenses("Intellectual Property Notices") and seizure warnings("Health & Safety Information"). The former is stored at FS "/legallines.htdocs/", while the latter is at "/safe.htdocs/".
+| 0100000000000804 || [[2.0.0|0.1.1.4]] || HTML resources: Open-source licenses("Intellectual Property Notices") and seizure warnings("Health & Safety Information"). The former is stored at FS "/legallines.htdocs/", while the latter is at "/safe.htdocs/".
 |-
-| 0100000000000805 ||  || Chinese and Korean dictionaries
+| 0100000000000805 || [[2.0.0|0.0.1.194]] || Chinese and Korean dictionaries
 |-
-| 0100000000000806 ||  || Bad words
+| 0100000000000806 || [[2.0.0|0.1.1.4]] || Bad words
 |-
-| 0100000000000807 ||  || [[Hotspot List]]
+| 0100000000000807 || [[2.0.0|0.0.1.4]] || [[Hotspot List]]
 |-
-| 0100000000000808 ||  || European, English and Japanese dictionaries
+| 0100000000000808 || [[2.0.0|0.0.1.194]] || European, English and Japanese dictionaries
 |-
-| 0100000000000809 ||  || [[System Version Title]]
+| 0100000000000809 || [[2.0.0|0.1.1.4]] || [[System Version Title]]
 |-
-| 010000000000080A ||  || Chara?
+| 010000000000080A || [[2.0.0|0.0.1.194]] || Chara?
 |-
-| 010000000000080B ||  || Tutorial images and strings. Used for the offline news by the News applet.
+| 010000000000080B || [[2.0.0|0.1.1.4]] || Tutorial images and strings. Used for the offline news by the News applet.
 |-
-| 010000000000080C ||  || EULA. Also accessed by [[NS_Services|NS]].
+| 010000000000080C || [[2.0.0|0.0.1.194]] || EULA. Also accessed by [[NS_Services|NS]].
 |-
-| 010000000000080D ||  || Blacklist URL
+| 010000000000080D || [[2.0.0|0.1.1.4]] || Blacklist URL
 |-
-| 010000000000080E ||  || Geo Zoneinfo
+| 010000000000080E || [[2.0.0|0.1.1.4]] || Geo Zoneinfo
 |-
-| 0100000000000810 ||  || Extended font
+| 0100000000000810 || [[2.0.0|0.1.1.4]] || Extended font
 |-
-| 0100000000000811 ||  || Standard font
+| 0100000000000811 || [[2.0.0|0.1.1.4]] || Standard font
 |-
-| 0100000000000812 ||  || Korean font
+| 0100000000000812 || [[2.0.0|0.1.1.4]] || Korean font
 |-
-| 0100000000000813 ||  || Taiwanese font
+| 0100000000000813 || [[2.0.0|0.1.1.4]] || Taiwanese font
 |-
-| 0100000000000814 ||  || Chinese font
+| 0100000000000814 || [[2.0.0|0.1.1.4]] || Chinese font
 |-
-| 0100000000000818 ||  || System config
+| 0100000000000818 || [[2.0.0|0.1.1.4]] || System config
 |-
-| 0100000000000819 ||  || Firmware package A
+| 0100000000000819 || [[2.0.0|0.1.1.4]] || Firmware package A
 |-
-| 010000000000081A ||  || Firmware package B
+| 010000000000081A || [[2.0.0|0.1.1.4]] || Firmware package B
 |-
-| 010000000000081D || || Errdisp strings
+| 010000000000081D || [[2.0.0|0.1.1.4]] || Errdisp strings
 |-
-| 010000000000081E || || Dummy file
+| 010000000000081E || [[2.0.0|0.0.1.4]]|| Dummy file
 |-
-| 010000000000081F || || Icosa system config
+| 010000000000081F || [[2.0.0|0.0.1.4]] || Icosa system config
 |-
-| 0100000000000820 || || Copper system config
+| 0100000000000820 || [[2.0.0|0.0.1.4]] || Copper system config
 |-
-| 0100000000000821 || || Hoag system config
+| 0100000000000821 || [[2.0.0|0.0.1.4]] || Hoag system config
 |}
 
 == System Applets ==
