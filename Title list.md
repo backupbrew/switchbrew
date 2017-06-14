@@ -1,48 +1,48 @@
 ## Unknown (System titles?)
 
-| Title-id         | Description                                                                                      |
-| ---------------- | ------------------------------------------------------------------------------------------------ |
-| 0100000000000006 |                                                                                                  |
-| 0100000000000007 |                                                                                                  |
-| 0100000000000008 |                                                                                                  |
-| 0100000000000009 |                                                                                                  |
-| 010000000000000A |                                                                                                  |
-| 010000000000000B |                                                                                                  |
-| 010000000000000C |                                                                                                  |
-| 010000000000000E |                                                                                                  |
-| 010000000000000F |                                                                                                  |
-| 0100000000000010 |                                                                                                  |
-| 0100000000000012 |                                                                                                  |
-| 0100000000000013 |                                                                                                  |
-| 0100000000000014 |                                                                                                  |
-| 0100000000000015 |                                                                                                  |
-| 0100000000000016 |                                                                                                  |
-| 0100000000000018 |                                                                                                  |
-| 0100000000000019 |                                                                                                  |
-| 010000000000001A |                                                                                                  |
-| 010000000000001B |                                                                                                  |
-| 010000000000001C |                                                                                                  |
-| 010000000000001D |                                                                                                  |
-| 010000000000001E |                                                                                                  |
-| 010000000000001F | This TID is used by [NS](NS%20Services.md "wikilink").                                           |
-| 0100000000000020 |                                                                                                  |
-| 0100000000000021 |                                                                                                  |
-| 0100000000000022 |                                                                                                  |
-| 0100000000000023 |                                                                                                  |
-| 0100000000000024 |                                                                                                  |
-| 0100000000000025 |                                                                                                  |
-| 0100000000000029 |                                                                                                  |
-| 010000000000002A |                                                                                                  |
-| 010000000000002B |                                                                                                  |
-| 010000000000002D |                                                                                                  |
-| 010000000000002E |                                                                                                  |
-| 010000000000002F |                                                                                                  |
-| 0100000000000030 |                                                                                                  |
-| 0100000000000031 |                                                                                                  |
-| 0100000000000032 |                                                                                                  |
-| 0100000000000033 |                                                                                                  |
-| 0100000000000034 |                                                                                                  |
-| 0100000000000036 | This TID is used by [NS](NS%20Services.md "wikilink"), in the same func as TID 0100000000002071. |
+| Title-id         | Versions | Description                                                                                      |
+| ---------------- | -------- | ------------------------------------------------------------------------------------------------ |
+| 0100000000000006 |          |                                                                                                  |
+| 0100000000000007 |          |                                                                                                  |
+| 0100000000000008 |          |                                                                                                  |
+| 0100000000000009 |          |                                                                                                  |
+| 010000000000000A |          |                                                                                                  |
+| 010000000000000B |          |                                                                                                  |
+| 010000000000000C |          |                                                                                                  |
+| 010000000000000E |          |                                                                                                  |
+| 010000000000000F |          |                                                                                                  |
+| 0100000000000010 |          |                                                                                                  |
+| 0100000000000012 |          |                                                                                                  |
+| 0100000000000013 |          |                                                                                                  |
+| 0100000000000014 |          |                                                                                                  |
+| 0100000000000015 |          |                                                                                                  |
+| 0100000000000016 |          |                                                                                                  |
+| 0100000000000018 |          |                                                                                                  |
+| 0100000000000019 |          |                                                                                                  |
+| 010000000000001A |          |                                                                                                  |
+| 010000000000001B |          |                                                                                                  |
+| 010000000000001C |          |                                                                                                  |
+| 010000000000001D |          |                                                                                                  |
+| 010000000000001E |          |                                                                                                  |
+| 010000000000001F |          | This TID is used by [NS](NS%20Services.md "wikilink").                                           |
+| 0100000000000020 |          |                                                                                                  |
+| 0100000000000021 |          |                                                                                                  |
+| 0100000000000022 |          |                                                                                                  |
+| 0100000000000023 |          |                                                                                                  |
+| 0100000000000024 |          |                                                                                                  |
+| 0100000000000025 |          |                                                                                                  |
+| 0100000000000029 |          |                                                                                                  |
+| 010000000000002A |          |                                                                                                  |
+| 010000000000002B |          |                                                                                                  |
+| 010000000000002D |          |                                                                                                  |
+| 010000000000002E |          |                                                                                                  |
+| 010000000000002F |          |                                                                                                  |
+| 0100000000000030 |          |                                                                                                  |
+| 0100000000000031 |          |                                                                                                  |
+| 0100000000000032 |          |                                                                                                  |
+| 0100000000000033 |          |                                                                                                  |
+| 0100000000000034 |          |                                                                                                  |
+| 0100000000000036 |          | This TID is used by [NS](NS%20Services.md "wikilink"), in the same func as TID 0100000000002071. |
 
 Presumably system-modules going by total titles here, first 5 are
 probably bundled with the kernel in
@@ -50,68 +50,68 @@ package2.
 
 ## System Debug Applets
 
-| Title-id         | Description                                                                         |
-| ---------------- | ----------------------------------------------------------------------------------- |
-| 0100000000002071 | Snapshot Dumper? Used by [NS](NS%20Services.md "wikilink"). Not on retail consoles. |
+| Title-id         | Versions | Description                                                                         |
+| ---------------- | -------- | ----------------------------------------------------------------------------------- |
+| 0100000000002071 |          | Snapshot Dumper? Used by [NS](NS%20Services.md "wikilink"). Not on retail consoles. |
 
 ## System Data Archives
 
-| Title-id         | Description                                                                                                                                                                                                          |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0100000000000800 | SSL trusted certificates                                                                                                                                                                                             |
-| 0100000000000801 | Stores the message strings for Support Error Codes. There's "/DatabaseInfo" at FS root, then the rest is stored at "/{first 4 error digits}/{last 4 error digits}/".                                                 |
-| 0100000000000802 | Random textures?                                                                                                                                                                                                     |
-| 0100000000000803 | Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...                                                                                                           |
-| 0100000000000804 | HTML resources: Open-source licenses("Intellectual Property Notices") and seizure warnings("Health & Safety Information"). The former is stored at FS "/legallines.htdocs/", while the latter is at "/safe.htdocs/". |
-| 0100000000000805 | Chinese and Korean dictionaries                                                                                                                                                                                      |
-| 0100000000000806 | Bad words                                                                                                                                                                                                            |
-| 0100000000000807 | [Hotspot List](Hotspot%20List.md "wikilink")                                                                                                                                                                         |
-| 0100000000000808 | European, English and Japanese dictionaries                                                                                                                                                                          |
-| 0100000000000809 | [System Version Title](System%20Version%20Title.md "wikilink")                                                                                                                                                       |
-| 010000000000080A | Chara?                                                                                                                                                                                                               |
-| 010000000000080B | Tutorial images and strings. Used for the offline news by the News applet.                                                                                                                                           |
-| 010000000000080C | EULA. Also accessed by [NS](NS%20Services.md "wikilink").                                                                                                                                                            |
-| 010000000000080D | Blacklist URL                                                                                                                                                                                                        |
-| 010000000000080E | Geo Zoneinfo                                                                                                                                                                                                         |
-| 0100000000000810 | Extended font                                                                                                                                                                                                        |
-| 0100000000000811 | Standard font                                                                                                                                                                                                        |
-| 0100000000000812 | Korean font                                                                                                                                                                                                          |
-| 0100000000000813 | Taiwanese font                                                                                                                                                                                                       |
-| 0100000000000814 | Chinese font                                                                                                                                                                                                         |
-| 0100000000000818 | System config                                                                                                                                                                                                        |
-| 0100000000000819 | Firmware package A                                                                                                                                                                                                   |
-| 010000000000081A | Firmware package B                                                                                                                                                                                                   |
-| 010000000000081D | Errdisp strings                                                                                                                                                                                                      |
-| 010000000000081E | Dummy file                                                                                                                                                                                                           |
-| 010000000000081F | Icosa system config                                                                                                                                                                                                  |
-| 0100000000000820 | Copper system config                                                                                                                                                                                                 |
-| 0100000000000821 | Hoag system config                                                                                                                                                                                                   |
+| Title-id         | Versions | Description                                                                                                                                                                                                          |
+| ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0100000000000800 |          | SSL trusted certificates                                                                                                                                                                                             |
+| 0100000000000801 |          | Stores the message strings for Support Error Codes. There's "/DatabaseInfo" at FS root, then the rest is stored at "/{first 4 error digits}/{last 4 error digits}/".                                                 |
+| 0100000000000802 |          | Random textures?                                                                                                                                                                                                     |
+| 0100000000000803 |          | Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...                                                                                                           |
+| 0100000000000804 |          | HTML resources: Open-source licenses("Intellectual Property Notices") and seizure warnings("Health & Safety Information"). The former is stored at FS "/legallines.htdocs/", while the latter is at "/safe.htdocs/". |
+| 0100000000000805 |          | Chinese and Korean dictionaries                                                                                                                                                                                      |
+| 0100000000000806 |          | Bad words                                                                                                                                                                                                            |
+| 0100000000000807 |          | [Hotspot List](Hotspot%20List.md "wikilink")                                                                                                                                                                         |
+| 0100000000000808 |          | European, English and Japanese dictionaries                                                                                                                                                                          |
+| 0100000000000809 |          | [System Version Title](System%20Version%20Title.md "wikilink")                                                                                                                                                       |
+| 010000000000080A |          | Chara?                                                                                                                                                                                                               |
+| 010000000000080B |          | Tutorial images and strings. Used for the offline news by the News applet.                                                                                                                                           |
+| 010000000000080C |          | EULA. Also accessed by [NS](NS%20Services.md "wikilink").                                                                                                                                                            |
+| 010000000000080D |          | Blacklist URL                                                                                                                                                                                                        |
+| 010000000000080E |          | Geo Zoneinfo                                                                                                                                                                                                         |
+| 0100000000000810 |          | Extended font                                                                                                                                                                                                        |
+| 0100000000000811 |          | Standard font                                                                                                                                                                                                        |
+| 0100000000000812 |          | Korean font                                                                                                                                                                                                          |
+| 0100000000000813 |          | Taiwanese font                                                                                                                                                                                                       |
+| 0100000000000814 |          | Chinese font                                                                                                                                                                                                         |
+| 0100000000000818 |          | System config                                                                                                                                                                                                        |
+| 0100000000000819 |          | Firmware package A                                                                                                                                                                                                   |
+| 010000000000081A |          | Firmware package B                                                                                                                                                                                                   |
+| 010000000000081D |          | Errdisp strings                                                                                                                                                                                                      |
+| 010000000000081E |          | Dummy file                                                                                                                                                                                                           |
+| 010000000000081F |          | Icosa system config                                                                                                                                                                                                  |
+| 0100000000000820 |          | Copper system config                                                                                                                                                                                                 |
+| 0100000000000821 |          | Hoag system config                                                                                                                                                                                                   |
 
 ## System Applets
 
-| Title-id         | Description                                                                                                                                                                                               |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0100000000001000 | System applet                                                                                                                                                                                             |
-| 0100000000001001 |                                                                                                                                                                                                           |
-| 0100000000001002 |                                                                                                                                                                                                           |
-| 0100000000001003 |                                                                                                                                                                                                           |
-| 0100000000001004 |                                                                                                                                                                                                           |
-| 0100000000001005 |                                                                                                                                                                                                           |
-| 0100000000001006 |                                                                                                                                                                                                           |
-| 0100000000001007 |                                                                                                                                                                                                           |
-| 0100000000001008 |                                                                                                                                                                                                           |
-| 0100000000001009 |                                                                                                                                                                                                           |
-| 010000000000100A |                                                                                                                                                                                                           |
-| 010000000000100B | [ShopN](Internet%20Browser.md "wikilink") applet                                                                                                                                                          |
-| 010000000000100C | Overlay applet                                                                                                                                                                                            |
-| 010000000000100D |                                                                                                                                                                                                           |
-| 010000000000100F |                                                                                                                                                                                                           |
-| 0100000000001010 | [Whitelisted](Internet%20Browser.md "wikilink") applet (LoginApplet+ShareApplet+LobbyApplet)                                                                                                              |
-| 0100000000001011 | [WifiWebAuth](Internet%20Browser.md "wikilink") applet                                                                                                                                                    |
-| 0100000000001012 |                                                                                                                                                                                                           |
-| 0100000000001013 |                                                                                                                                                                                                           |
-| 0100000000001015 | Fall-back TID used by [NS](NS%20Services.md "wikilink") when a state flag is val1 indicating the "System applet" TID shouldn't be loaded from config.                                                     |
-| 0100000000001016 | TID used by [NS](NS%20Services.md "wikilink") when a certain flag is non-zero, in multiple places including around code using string "application\_install". This title doesn't seem to exist for retail. |
+| Title-id         | Versions | Description                                                                                                                                                                                               |
+| ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0100000000001000 |          | System applet                                                                                                                                                                                             |
+| 0100000000001001 |          |                                                                                                                                                                                                           |
+| 0100000000001002 |          |                                                                                                                                                                                                           |
+| 0100000000001003 |          |                                                                                                                                                                                                           |
+| 0100000000001004 |          |                                                                                                                                                                                                           |
+| 0100000000001005 |          |                                                                                                                                                                                                           |
+| 0100000000001006 |          |                                                                                                                                                                                                           |
+| 0100000000001007 |          |                                                                                                                                                                                                           |
+| 0100000000001008 |          |                                                                                                                                                                                                           |
+| 0100000000001009 |          |                                                                                                                                                                                                           |
+| 010000000000100A |          |                                                                                                                                                                                                           |
+| 010000000000100B |          | [ShopN](Internet%20Browser.md "wikilink") applet                                                                                                                                                          |
+| 010000000000100C |          | Overlay applet                                                                                                                                                                                            |
+| 010000000000100D |          |                                                                                                                                                                                                           |
+| 010000000000100F |          |                                                                                                                                                                                                           |
+| 0100000000001010 |          | [Whitelisted](Internet%20Browser.md "wikilink") applet (LoginApplet+ShareApplet+LobbyApplet)                                                                                                              |
+| 0100000000001011 |          | [WifiWebAuth](Internet%20Browser.md "wikilink") applet                                                                                                                                                    |
+| 0100000000001012 |          |                                                                                                                                                                                                           |
+| 0100000000001013 |          |                                                                                                                                                                                                           |
+| 0100000000001015 |          | Fall-back TID used by [NS](NS%20Services.md "wikilink") when a state flag is val1 indicating the "System applet" TID shouldn't be loaded from config.                                                     |
+| 0100000000001016 |          | TID used by [NS](NS%20Services.md "wikilink") when a certain flag is non-zero, in multiple places including around code using string "application\_install". This title doesn't seem to exist for retail. |
 
 ## Games
 
