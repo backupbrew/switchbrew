@@ -42,7 +42,7 @@
 | 0100000000000032 | [0.1.4.4](2.0.0.md "wikilink"), [v65796](2.1.0.md "wikilink")  |                                                                                                  |
 | 0100000000000033 | [0.1.4.4](2.0.0.md "wikilink"), [v65796](2.1.0.md "wikilink")  |                                                                                                  |
 | 0100000000000034 | [0.1.4.4](2.0.0.md "wikilink"), [v131132](2.1.0.md "wikilink") |                                                                                                  |
-| 0100000000000036 | [v65596](2.1.0.md "wikilink")                                  | This TID is used by [NS](NS%20Services.md "wikilink"), in the same func as TID 0100000000002071. |
+| 0100000000000036 | [v260](2.0.0.md "wikilink"), [v65596](2.1.0.md "wikilink")     | This TID is used by [NS](NS%20Services.md "wikilink"), in the same func as TID 0100000000002071. |
 
 Presumably system-modules going by total titles here, first 5 are
 probably bundled with the kernel in
