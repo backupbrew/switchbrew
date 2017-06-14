@@ -50,9 +50,12 @@ package2.
 
 ## System Debug Applets
 
-| Title-id         | Versions | Description                                                                         |
-| ---------------- | -------- | ----------------------------------------------------------------------------------- |
-| 0100000000002071 |          | Snapshot Dumper? Used by [NS](NS%20Services.md "wikilink"). Not on retail consoles. |
+| Title-id         | Versions | Description                                                 |
+| ---------------- | -------- | ----------------------------------------------------------- |
+| 0100000000002071 |          | Snapshot Dumper? Used by [NS](NS%20Services.md "wikilink"). |
+
+No 01000000000020XX titles exist on retail
+systems.
 
 ## System Data Archives
 

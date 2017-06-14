@@ -91,8 +91,10 @@ Presumably system-modules going by total titles here, first 5 are probably bundl
 {| class=wikitable
 ! Title-id || Versions || Description
 |-
-| 0100000000002071 ||  || Snapshot Dumper? Used by [[NS_Services|NS]]. Not on retail consoles.
+| 0100000000002071 ||  || Snapshot Dumper? Used by [[NS_Services|NS]].
 |}
+
+No 01000000000020XX titles exist on retail systems.
 
 == System Data Archives ==
 {| class=wikitable
