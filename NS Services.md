@@ -155,7 +155,7 @@ structure:
 
 | Offset | Size | Description                                                                                          |
 | ------ | ---- | ---------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x1  | u8 "type" (String is from web-applet)                                                                |
+| 0x0    | 0x1  | u8 "type". [Title type](Content%20Manager%20services.md "wikilink") (String is from web-applet)      |
 | 0x1    | 0x1  | u8 "installedStorage" / [StorageId](Filesystem%20services.md "wikilink") (String is from web-applet) |
 | 0x2    | 0x1  | Unknown. Non-zero with output from cmd 605, differs for app/update titles.                           |
 | 0x3    | 0x1  | Padding                                                                                              |
@@ -180,13 +180,6 @@ structure:
 | 9   |                |
 
 # Enums
-
-### Title Types
-
-| Value | Description         |
-| ----- | ------------------- |
-| 0x80  | Regular application |
-| 0x81  | Update title        |
 
 ### AppletId
 

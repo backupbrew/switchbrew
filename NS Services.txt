@@ -261,7 +261,7 @@ Entry structure:
 |-
 | 0x0
 | 0x1
-| u8 "type" (String is from web-applet)
+| u8 "type". [[Content_Manager_services|Title type]] (String is from web-applet)
 |-
 | 0x1
 | 0x1
@@ -313,20 +313,6 @@ Entry structure:
 |}
 
 = Enums =
-=== Title Types ===
-
-{| class="wikitable" border="1"
-|-
-! Value
-! Description
-|-
-| 0x80
-| Regular application
-|-
-| 0x81
-| Update title
-|}
-
 === AppletId ===
 {| class="wikitable" border="1"
 |-
