@@ -159,45 +159,45 @@ Presumably system-modules going by total titles here, first 5 are probably bundl
 {| class=wikitable
 ! Title-id || Versions || Description
 |-
-| 0100000000001000 || || System applet
+| 0100000000001000 || [[2.0.0|0.1.1.4]] || System applet
 |-
-| 0100000000001001 || ||
+| 0100000000001001 || [[2.0.0|0.1.1.4]] ||
 |-
-| 0100000000001002 || || 
+| 0100000000001002 || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001003 || || 
+| 0100000000001003 || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001004 || || 
+| 0100000000001004 || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001005 || || 
+| 0100000000001005 || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001006 || || 
+| 0100000000001006 || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001007 || || 
+| 0100000000001007 || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001008 || || 
+| 0100000000001008 || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001009 || || 
+| 0100000000001009 || [[2.0.0|0.1.1.4]] || 
 |-
-| 010000000000100A || || 
+| 010000000000100A || [[2.0.0|0.1.1.4]] || 
 |-
-| 010000000000100B || || [[Internet_Browser|ShopN]] applet
+| 010000000000100B || [[2.0.0|0.1.1.4]] || [[Internet_Browser|ShopN]] applet
 |-
-| 010000000000100C || || Overlay applet
+| 010000000000100C || [[2.0.0|0.1.1.4]] || Overlay applet
 |-
-| 010000000000100D || || 
+| 010000000000100D || [[2.0.0|0.1.1.4]] || 
 |-
-| 010000000000100F || || 
+| 010000000000100F || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001010 || || [[Internet_Browser|Whitelisted]] applet (LoginApplet+ShareApplet+LobbyApplet)
+| 0100000000001010 || [[2.0.0|0.1.1.4]] || [[Internet_Browser|Whitelisted]] applet (LoginApplet+ShareApplet+LobbyApplet)
 |-
-| 0100000000001011 || || [[Internet_Browser|WifiWebAuth]] applet
+| 0100000000001011 || [[2.0.0|0.1.1.4]] || [[Internet_Browser|WifiWebAuth]] applet
 |-
-| 0100000000001012 || || 
+| 0100000000001012 || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001013 || || 
+| 0100000000001013 || [[2.0.0|0.1.1.4]] || 
 |-
-| 0100000000001015 || || Fall-back TID used by [[NS_Services|NS]] when a state flag is val1 indicating the "System applet" TID shouldn't be loaded from config.
+| 0100000000001015 || [[2.0.0|0.1.1.4]] || Fall-back TID used by [[NS_Services|NS]] when a state flag is val1 indicating the "System applet" TID shouldn't be loaded from config.
 |-
 | 0100000000001016 || || TID used by [[NS_Services|NS]] when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.
 |}
