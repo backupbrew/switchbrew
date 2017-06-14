@@ -98,7 +98,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 ! scope="col" width="200" | Description
 ! scope="col" width="200" | Notes
 |-
-| acc:u1, acc:aa, acc:su
+| acc:u0, acc:u1, acc:aa, acc:su
 | [[Account services]]
 | u1: User, su: Admin
 |-
@@ -118,11 +118,11 @@ This service is presumably equivalent to 3DS "srv:pm".
 | Activity Report services? 
 | r: Reader, w: Writer
 |-
-| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audctl
+| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl
 | Audio services
 |
 |-
-| bcat:u, bcat:m, bcat:s
+| bcat:a, bcat:u, bcat:m, bcat:s
 | ?
 |
 |-
@@ -162,6 +162,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 | ETicket services?
 |
 |-
+| ethc:c, ethc:i
+| ?
+|
+|-
 | fan
 | ?
 | 
@@ -170,7 +174,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | Fatal Error services
 | u: User, p: Privileged?
 |-
-| fgm
+| fgm, fgm:0, fgm:9
 | ?
 | 
 |-
@@ -206,7 +210,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | [[Local Network Monitor services]]
 |
 |-
-| ldr:pm, ldr:ro, ldr:shel
+| ldr:pm, ldr:ro, ldr:shel, ldr:dmnt
 | [[Loader services]]
 |
 |-
@@ -228,6 +232,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 |-
 | <nowiki>news:a, news:c, news:m, news:p, news:v</nowiki>
 | News Services
+| 
+|-
+| nfc:am, nfc:mf:u, nfc:user, nfc:sys
+| NFC services
 | 
 |-
 | nifm:u, nifm:a, nifm:s
@@ -280,6 +288,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 |-
 | pdm:ntfy, pdm:qry
 | Play Log services
+|
+|-
+| pinmux
+| ?
 |
 |-
 | pl:u
@@ -340,6 +352,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 |-
 | uart
 | [[UART services]]
+| 
+|-
+| usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pm
+| USB services
 | 
 |-
 | vi:m, vi:s, vi:u
