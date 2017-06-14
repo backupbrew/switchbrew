@@ -204,7 +204,19 @@ This is a 0x10-byte entry. This is originally from the hex portion of "<hex>.nca
 ! Description
 |-
 | 0x01
-| System sysmodule(?) (Titles with TID 01000000000000XX)
+| System executable titles? (Titles with TID 01000000000000XX or 01000000000010XX)
+|-
+| 0x02
+| [[Title_list|System Data Archives]]
+|-
+| 0x03
+| Unknown. Only used for [[Title_list|title]] 0100000000000816?
+|-
+| 0x04
+| [[Title_list|Firmware package A]]
+|-
+| 0x05
+| [[Title_list|Firmware package B]]
 |-
 | 0x80
 | Regular application

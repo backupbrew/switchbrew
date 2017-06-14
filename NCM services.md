@@ -154,8 +154,12 @@ This is a 0x10-byte entry. This is originally from the hex portion of
 
 ### Title Types
 
-| Value | Description                                            |
-| ----- | ------------------------------------------------------ |
-| 0x01  | System sysmodule(?) (Titles with TID 01000000000000XX) |
-| 0x80  | Regular application                                    |
-| 0x81  | Update title                                           |
+| Value | Description                                                                      |
+| ----- | -------------------------------------------------------------------------------- |
+| 0x01  | System executable titles? (Titles with TID 01000000000000XX or 01000000000010XX) |
+| 0x02  | [System Data Archives](Title%20list.md "wikilink")                               |
+| 0x03  | Unknown. Only used for [title](Title%20list.md "wikilink") 0100000000000816?     |
+| 0x04  | [Firmware package A](Title%20list.md "wikilink")                                 |
+| 0x05  | [Firmware package B](Title%20list.md "wikilink")                                 |
+| 0x80  | Regular application                                                              |
+| 0x81  | Update title                                                                     |
