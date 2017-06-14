@@ -154,7 +154,8 @@ This is a 0x10-byte entry. This is originally from the hex portion of
 
 ### Title Types
 
-| Value | Description         |
-| ----- | ------------------- |
-| 0x80  | Regular application |
-| 0x81  | Update title        |
+| Value | Description                                            |
+| ----- | ------------------------------------------------------ |
+| 0x01  | System sysmodule(?) (Titles with TID 01000000000000XX) |
+| 0x80  | Regular application                                    |
+| 0x81  | Update title                                           |
