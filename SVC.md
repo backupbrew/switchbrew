@@ -111,7 +111,9 @@ Works with num\_handles \<= 0x40, error on num\_handles == 0.
 
 Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
-\== svcSendSyncRequestByBuf = Size must be 0x1000-aligned.
+## svcSendSyncRequestByBuf
+
+Size must be 0x1000-aligned.
 
 ## svcBreak
 
