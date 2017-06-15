@@ -82,8 +82,8 @@ ioctls.
 | 0xC0080014 | Inout     | 8    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ](#NVHOST_IOCTL_CTRL_SYNCPT_READ "wikilink")            |       |
 | 0x40040015 | In        | 4    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR](#NVHOST_IOCTL_CTRL_SYNCPT_INCR "wikilink")            |       |
 | 0xC00C0016 | Inout     | 12   | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT](#NVHOST_IOCTL_CTRL_SYNCPT_WAIT "wikilink")            |       |
-| 0x40080017 | In        | 8    | NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX                                                          |       |
-| 0xC0180018 | Inout     | 24   | NVHOST32\_IOCTL\_CTRL\_MODULE\_REGRDWR                                                      |       |
+| 0x40080017 | In        | 8    | [\#NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX](#NVHOST_IOCTL_CTRL_MODULE_MUTEX "wikilink")          |       |
+| 0xC0180018 | Inout     | 24   | [\#NVHOST\_IOCTL\_CTRL\_MODULE\_REGRDWR](#NVHOST_IOCTL_CTRL_MODULE_REGRDWR "wikilink")      |       |
 | 0xC0100019 | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX](#NVHOST_IOCTL_CTRL_SYNCPT_WAITEX "wikilink")        |       |
 | 0xC008001A | Inout     | 8    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX](#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX "wikilink")   |       |
 | 0xC004001C | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_SIGNAL](#NVHOST_IOCTL_CTRL_EVENT_SIGNAL "wikilink")          |       |
@@ -118,6 +118,28 @@ Identical to Linux driver.
 `   u32 __id;          // in`  
 `   u32 __thresh;      // in`  
 `   s32 __timeout;     // in`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX
+
+Identical to Linux driver.
+
+` struct {`  
+`   u32 __id;          // in`  
+`   u32 __lock;        // in (0==unlock; 1==lock)`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_MODULE\_REGRDWR
+
+Identical to Linux driver. Uses 32-bit version and doesn't work.
+
+` struct {`  
+`   u32 __id;           // in`  
+`   u32 __num_offsets;  // in`  
+`   u32 __block_size;   // in`  
+`   u32 __offsets;      // in`  
+`   u32 __values;       // in`  
+`   u32 __write;        // in`  
 ` };`
 
 ### NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX

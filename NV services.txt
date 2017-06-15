@@ -122,9 +122,9 @@ The following table contains known ioctls.
 |-
 | 0xC00C0016 || Inout || 12 || [[#NVHOST_IOCTL_CTRL_SYNCPT_WAIT]] ||
 |-
-| 0x40080017 || In || 8 || NVHOST_IOCTL_CTRL_MODULE_MUTEX ||
+| 0x40080017 || In || 8 || [[#NVHOST_IOCTL_CTRL_MODULE_MUTEX]] ||
 |-
-| 0xC0180018 || Inout || 24 || NVHOST32_IOCTL_CTRL_MODULE_REGRDWR ||
+| 0xC0180018 || Inout || 24 || [[#NVHOST_IOCTL_CTRL_MODULE_REGRDWR]] ||
 |-
 | 0xC0100019 || Inout || 16 || [[#NVHOST_IOCTL_CTRL_SYNCPT_WAITEX]] ||
 |-
@@ -165,6 +165,26 @@ Identical to Linux driver.
     u32 __id;          // in
     u32 __thresh;      // in
     s32 __timeout;     // in
+  };
+
+=== NVHOST_IOCTL_CTRL_MODULE_MUTEX ===
+Identical to Linux driver.
+
+  struct {
+    u32 __id;          // in
+    u32 __lock;        // in (0==unlock; 1==lock)
+  };
+
+=== NVHOST_IOCTL_CTRL_MODULE_REGRDWR ===
+Identical to Linux driver. Uses 32-bit version and doesn't work.
+
+  struct {
+    u32 __id;           // in
+    u32 __num_offsets;  // in
+    u32 __block_size;   // in
+    u32 __offsets;      // in
+    u32 __values;       // in
+    u32 __write;        // in
   };
 
 === NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ===
