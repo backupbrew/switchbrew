@@ -9,9 +9,24 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 *General system stability improvements to enhance the user's experience
 
 ==System Titles==
-It's unknown exactly what titles were updated.
-
-Besides [[Internet_Browser|shareddata]] and FIRM-packageB(see below), the only 01000000000008XX [[Title_list|titles]] accessible from web-applet which were updated, is the system-version title.
+Exactly the following [[Title_list|titles]] were updated:
+* The only updated 01000000000000XX titles are:
+** 010000000000000F
+** 0100000000000010
+** 0100000000000013
+** 0100000000000016
+** 0100000000000019
+** 010000000000001C
+** 010000000000001F
+** 0100000000000023
+** 0100000000000025
+** 010000000000002B
+** 010000000000002E
+** 0100000000000030
+** 0100000000000034
+** 0100000000000036
+* The only updated 01000000000008XX titles are [[Internet_Browser|shareddata]], FIRM-packages(see below), and [[System_Version_Title]]. Note: the [[2.0.0]] title-version for 0100000000000816 needs checked.
+* The only updated 01000000000010XX titles are: "System applet", 0100000000001008, 010000000000100A, [[Internet_Browser|ShopN]], 010000000000100F, [[Internet_Browser|Whitelisted-applet]], and [[Internet_Browser|WifiWebAuthApplet]].
 
 ===[[Internet_Browser|Browser]]===
 A browser vuln was [[Switch_Userland_Flaws|fixed]], see also [[Internet_Browser|here]] for v2.1 browser details.
