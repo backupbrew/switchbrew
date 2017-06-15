@@ -140,7 +140,7 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000000814 || [[2.0.0|0.1.1.4]] || Chinese font
 |-
-| 0100000000000816 || [[2.1.0|v131162]], [[2.3.0|v262164]] || Unknown. Title-type is 0x03, unlike the rest of these.
+| 0100000000000816 || [[2.0.0|v65796]], [[2.1.0|v131162]], [[2.3.0|v262164]] || Unknown. Title-type is 0x03, unlike the rest of these.
 |-
 | 0100000000000818 || [[2.0.0|0.1.1.4]], [[2.3.0|v131082]] || System config
 |-
