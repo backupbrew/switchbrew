@@ -9,9 +9,13 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 *General system stability improvements to enhance the user's experience
 
 ==System Titles==
-It's unknown exactly what titles were updated.
-
-The System Version Info title 0100000000000809 is the only title updated which is [[Internet_Browser|browser-accessible]].
+Exactly the following [[Title_list|titles]] were updated in the below ranges:
+* The only updated 01000000000000XX titles are:
+** 0100000000000012
+** 0100000000000019
+** 0100000000000036
+* The only updated 01000000000008XX titles are: 0100000000000816, and [[System_Version_Title]].
+* There are no updated 01000000000010XX titles.
 
 ===[[Internet_Browser|Browser]]===
 The browser was not updated.
