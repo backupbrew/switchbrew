@@ -1,0 +1,16 @@
+# omm
+
+| Cmd | Name           |
+| --- | -------------- |
+| 0   |                |
+| 1   |                |
+| 2   |                |
+| 3   | DisableScreen? |
+| 4   |                |
+| 5   |                |
+| 6   | TurnOnScreen   |
+| 7   | TurnOffScreen  |
+| 8   |                |
+| 9   |                |
+
+[Category:Services](Category:Services "wikilink")
