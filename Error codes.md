@@ -93,6 +93,7 @@ fatal-errors, since the Description ends with bit21.
 | 0x2F5A02 | 6061        | Offset outside storage                                                                                                                                                               |
 | 0x313802 | 6300        | Operation not supported                                                                                                                                                              |
 | 0x320002 | 6400        | Permission denied                                                                                                                                                                    |
+| 0x3EA03  | 501         | Invalid handle                                                                                                                                                                       |
 | 0x3EE03  | 503         | Invalid memory mirror                                                                                                                                                                |
 | 0xE05    | 7           | TitleId not found                                                                                                                                                                    |
 | 0x1805   | 12          | Invalid StorageId                                                                                                                                                                    |
