@@ -18,4 +18,7 @@ Exactly the following [[Title_list|titles]] were updated in the below ranges:
 * There are no updated 01000000000010XX titles.
 
 ===[[Internet_Browser|Browser]]===
-The browser was not updated.
+The Internet Browser was not updated for any applets.
+
+===[[NS_Services|NS]]-sysmodule===
+The NS-sysmodule was not updated.
