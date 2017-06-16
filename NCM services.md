@@ -74,8 +74,7 @@ directory?).
 Takes a [\#NcaID](#NcaID "wikilink") as input.
 
 Returns the total size readable by ReadEntryRaw. This is the same as the
-size field from offset 0x28 in the NAX0 header in the "<NcaID>.nca/00"
-file. This matches <filesize of that file>-0x4000.
+size-field in the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
 
 ## ReadEntryRaw
 

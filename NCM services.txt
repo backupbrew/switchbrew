@@ -101,7 +101,7 @@ The total read entries is exactly the same as the number of "<hex>.nca" director
 == GetEntrySize ==
 Takes a [[#NcaID]] as input.
 
-Returns the total size readable by ReadEntryRaw. This is the same as the size field from offset 0x28 in the NAX0 header in the "<NcaID>.nca/00" file. This matches <filesize of that file>-0x4000.
+Returns the total size readable by ReadEntryRaw. This is the same as the size-field in the [[NAX0]] "<NcaID>.nca/00" file.
 
 == ReadEntryRaw ==
 Takes an output buffer, a [[#NcaID]] as input, and a u64 file offset.
