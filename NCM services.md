@@ -91,9 +91,11 @@ Manually modifying the content in the NAX0(starting at offset 0x4000)
 results in different output data being returned by this cmd. Changing
 any data within the first 0x10-bytes results in the entire 0x10-byte
 block changing. Likewise for offset 0x4010 size 0x1, entire 0x10-byte
-block at 0x4010 changes. This implies that that an AES mode is being
-used which isn't CTR, where changing data in one block doesn't affect
-other blocks.
+block at 0x4010 changes. Changing the first 0x20-bytes at 0x4000 has the
+same combined changed output, as when offset 0x4000 size 0x10 and offset
+0x4010 size 0x10 were changed to zeros separately. This implies that
+that an AES mode is being used which isn't CTR, where changing data in
+one block doesn't affect other blocks.
 
 See GetEntrySize for the total size readable with this.
 
