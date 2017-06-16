@@ -87,6 +87,9 @@ Returns encrypted looking data from the content in the
 one crypto layer below the initial NAX0 layer, since the data doesn't
 change after NAX0 recreation.
 
+Manually modifying the content in the NAX0(starting at offset 0x4000)
+results in different output data being returned by this cmd.
+
 See GetEntrySize for the total size readable with this.
 
 ## GetNcaTitleInfo
