@@ -38,8 +38,11 @@ Some of the "placehld/<hex>" directories are temp-only and don't get
 moved into "registered". These are deleted when the title is
 launched(?), at that point the directories are already empty.
 
-No titleIDs are stored in any directories/filenames
-here.
+No titleIDs are stored in any directories/filenames here.
+
+All hex IDs(below XXXXXXXX and NcaId) used here are unique per
+title/content, these are the same for different systems for the same
+title(s).
 
 <sub-directory under Contents>  
 `└── `<directories with upper-case hex: XXXXXXXX>  

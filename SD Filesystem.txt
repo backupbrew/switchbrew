@@ -25,6 +25,8 @@ Some of the "placehld/<hex>" directories are temp-only and don't get moved into 
 
 No titleIDs are stored in any directories/filenames here.
 
+All hex IDs(below XXXXXXXX and NcaId) used here are unique per title/content, these are the same for different systems for the same title(s).
+
  <sub-directory under Contents>
  └── <directories with upper-case hex: XXXXXXXX>
      └── <lowercase hex [[Content_Manager_services|NcaId]]>.nca
