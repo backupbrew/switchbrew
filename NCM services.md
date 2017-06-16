@@ -81,8 +81,11 @@ size-field in the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
 Takes an output buffer, a [\#NcaID](#NcaID "wikilink") as input, and a
 u64 file offset.
 
-Returns encrypted looking data. Doesn't match the encrypted raw data in
-the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
+Returns encrypted looking data from the content in the
+[NAX0](NAX0.md "wikilink"). Doesn't match the encrypted raw data in the
+[NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file. Seems to be at least
+one crypto layer below the initial NAX0 layer, since the data doesn't
+change after NAX0 recreation.
 
 See GetEntrySize for the total size readable with this.
 
