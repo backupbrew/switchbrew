@@ -1,4 +1,4 @@
-{| class=wikitable
+{| class="wikitable sortable"
 ! Title-id || Versions || Required/included system-version || Serial# || Description || Region || Type
 |-
 | 01000320000CC000 || v0(gamecard) || None || Gamecard Front: LA-H-AACCA-{region} Back: AACCA22Y000 || 1-2 Switch || ALL || Game
@@ -25,7 +25,7 @@
 |-
 | 0100C5E003B40800 || v65536(0x10000) || None || || ARMS Global Testpunch || ALL || Update
 |-
-| XXXXXXXXXXXXXXXX || || Gamecard: [[2.1.0]] || || ARMS || || Game
+| 01009B500007C000 || || Gamecard: [[2.1.0]] || || ARMS || || Game
 |-
 | XXXXXXXXXXXXXXXX || || || Gamecard Front: LA-H-BAAZA-USA Back: BAAZA20Y000 || The Binding of Isaac: Afterbirth+ || USA || Game
 |-
@@ -36,6 +36,8 @@
 | 01001FA0034E2000 || || || || Dark Witch Music Episode: Rudymical || ALL || Game
 |-
 | 0100E67003A86000 || || || Gamecard Front: LA-H-AACAC-{region} Back: AACAC41A000 || Disgaea 5 Complete || ALL || Game
+|-
+| 01005700031AE000 || || || || Disgaea 5 Complete || EUR || Game
 |-
 | 0100930002EAA000 || || || || Dragon Quest Heroes 1 & 2 || USA || Game
 |-
@@ -69,11 +71,61 @@
 |-
 | 0100902001014000 || || || || Othello || JPN || Game
 |-
+| 010053D0001BE000 || || || || Puyo Puyo Tetris  || JPN || Game
+|-
 | 01000DC003740000 || || || Gamecard Front: LA-H-BAACB-USA Back: BAACB41Y000 || Puyo Puyo Tetris || USA || Game
 |-
 | 01004B10031BE000 || || || || Puyo Puyo Tetris || EUR || Game
 |-
 | 010000A00218E000 || || || || Splatoon 2 Global Testfire || ALL || Timed Demo
+|-
+| 0100A6300150C000 || || || || Wonder Boy: The Dragon's Trap || EUR || Game
+|-
+| 01003A30012C0000 || || || || || || Game
+|-
+| 01004B1001D22000 || || || || TumbleSeed || EUR || Game
+|-
+| 01006A5003698000 || || || || Maison De MAOU || JPN || Game
+|-
+| 01008A9001DC2000 || || || || ACA NEOGEO SHOCK TROOPERS || EUR || VC
+|-
+| 010009E001D90000 || || || || World of Goo || EUR || Game
+|-
+| 010021C000B6A000 || || || || || || Game
+|-
+| 010035B00412A000 || || || || Human Resource Machine || JPN || Game
+|-
+| 0100701001D92000  || || || || Human Resource Machine  || EUR || Game
+|-
+| 010043F004126000 || || || || Little Inferno || JPN || Game
+|-
+| 010047F001DBC000 || || || || ACA NEOGEO SAMURAI SHODOWN IV || ALL || VC
+|-
+| 010057D0021E8000 || || || || Shovel Knight: Treasure Trove || ALL || Game
+|-
+| 010065A00213C000 || || || || Sora Damu Flowering Declaration || JPN || Game
+|-
+| 010073C001D5E000 || || || || || || Game
+|-
+| 0100404002F52000 || || || || Silver Star Shogi Ten Tenshi Battle Raijin || JPN || Game
+|-
+| 0100583001DCA000 || || || || ACA NEOGEO THE KING OF FIGHTERS '99 || ALL || VC
+|-
+| 0100704000B3A000 || || || || Snipperclips || ALL || Game
+|-
+| 0100849000BDA000 || || || || I Am Setsuna || ALL || Game
+|-
+| 01001180021FA000  || || || || Shovel Knight: Specter of Torment || EUR || Game
+|-
+| 01002580038DE000 || || || || ACA NEOGEO GALAXY FIGHT: UNIVERSAL WARRIORS || ALL || VC
+|-
+| 01007330027EE000 || || || || || || Game
+|-
+| 01009400030D6000 || || || || Seiken Legend Collection || JPN || Game
+|-
+| 0100125002060000 || || || || Battle Sports Meguru || JPN || Game
+|-
+| 0100882001380000 || || || || Romance of the Three Kingdoms XIII || JPN || Game
 |}
 
 Game updates have the same titleID as the main application, except with bitmask 0x800 set.
