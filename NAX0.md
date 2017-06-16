@@ -5,8 +5,10 @@ The data between this header and offset 0x4000 is unused/uninitialized
 it appears. The actual content which is encrypted, starts at offset
 0x4000 with the size from the header.
 
-When a title is redownloaded/reinstalled, the header and raw content in
-NAX0 are completely different except for the magicnum and size-field.
+When a NAX0 file is recreated, the header and raw content in NAX0 are
+completely different except for the magicnum and size-field. This is the
+case when a title is redownloaded/reinstalled, and when "save/" files
+are recreated after manual deletion.
 
 | Offset | Size | Description                                 |
 | ------ | ---- | ------------------------------------------- |
