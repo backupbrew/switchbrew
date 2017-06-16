@@ -6,6 +6,9 @@
 `    ├── Contents`  
 `    └── save`
 
+All files stored under the Contents sub-directories and save/ use the
+[NAX0](NAX0.md "wikilink") format.
+
 ## Album
 
 Contains the screenshots: "YYYY/MM/DD/<hex>.jpg". These contain some
@@ -23,6 +26,8 @@ Contains directories "placehld" and "registered".
 Also contains file "private". Modifying this file results in the system
 throwing the <this microSD is for another system> error.
 
+### placehld and registered
+
 "placehld" and "registered" are the same, except that the former stores
 the temp data during eShop title download, while the latter is for the
 final title data. The contents of the former for a
@@ -33,4 +38,10 @@ Some of the "placehld/<hex>" directories are temp-only and don't get
 moved into "registered". These are deleted when the title is
 launched(?), at that point the directories are already empty.
 
-No titleIDs are stored in any directories/filenames here.
+No titleIDs are stored in any directories/filenames
+here.
+
+<sub-directory under Contents>  
+`└── `<directories with upper-case hex: XXXXXXXX>  
+`    └── <lowercase hex `[`NcaId`](Content%20Manager%20services.md "wikilink")`>.nca`  
+`        └── 00 (Actual file for data storage)`
