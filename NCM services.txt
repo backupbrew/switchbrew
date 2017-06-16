@@ -106,7 +106,7 @@ Returns the total size readable by ReadEntryRaw. This is the same as the size-fi
 == ReadEntryRaw ==
 Takes an output buffer, a [[#NcaID]] as input, and a u64 file offset.
 
-Returns encrypted looking data. Doesn't match the encrypted raw data in the "<NcaID>.nca/00" file.
+Returns encrypted looking data. Doesn't match the encrypted raw data in the [[NAX0]] "<NcaID>.nca/00" file.
 
 See GetEntrySize for the total size readable with this.
 

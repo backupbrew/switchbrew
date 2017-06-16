@@ -82,7 +82,7 @@ Takes an output buffer, a [\#NcaID](#NcaID "wikilink") as input, and a
 u64 file offset.
 
 Returns encrypted looking data. Doesn't match the encrypted raw data in
-the "<NcaID>.nca/00" file.
+the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
 
 See GetEntrySize for the total size readable with this.
 
