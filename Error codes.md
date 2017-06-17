@@ -88,6 +88,7 @@ fatal-errors, since the Description ends with bit21.
 | 0x1A4A02 | 3365        | Out of memory                                                                                                                                                                        |
 | 0x196002 | 3248        | Out of memory                                                                                                                                                                        |
 | 0x196202 | 3249        | Out of memory                                                                                                                                                                        |
+| 0x250E02 | 4743        | Corrupted NAX0 header. Returned by NCM when attempting to access a NcaId where the [NAX0](NAX0.md "wikilink") header was manually modified(offset 0x0 size 0x1).                     |
 | 0x2EE202 | 6001        | Unknown media-id                                                                                                                                                                     |
 | 0x2EE602 | 6003        | Path too long                                                                                                                                                                        |
 | 0x2F5A02 | 6061        | Offset outside storage                                                                                                                                                               |
@@ -95,6 +96,7 @@ fatal-errors, since the Description ends with bit21.
 | 0x320002 | 6400        | Permission denied                                                                                                                                                                    |
 | 0x3EA03  | 501         | Invalid handle                                                                                                                                                                       |
 | 0x3EE03  | 503         | Invalid memory mirror                                                                                                                                                                |
+| 0xA05    | 5           | [NcaID](Content%20Manager%20services.md "wikilink") not found. Returned when attempting to mount titles which exist that aren't \*8XX titles, the same way \*8XX titles are mounted. |
 | 0xE05    | 7           | TitleId not found                                                                                                                                                                    |
 | 0x1805   | 12          | Invalid StorageId                                                                                                                                                                    |
 | 0xDC05   | 110         | Gamecard not inserted                                                                                                                                                                |
@@ -110,12 +112,10 @@ fatal-errors, since the Description ends with bit21.
 | 0x11A0B  | 141         | Went past maximum during marshalling.                                                                                                                                                |
 | 0x1900B  | 200         | IPC Query 0 failed.                                                                                                                                                                  |
 | 0x25A0B  | 301         | Remote process is dead                                                                                                                                                               |
-| 0x250E02 | 4743        | Corrupted NAX0 header. Returned by NCM when attempting to access a NcaId where the [NAX0](NAX0.md "wikilink") header was manually modified(offset 0x0 size 0x1).                     |
 | 0x3D60B  | 491         | IPC Query 1 failed.                                                                                                                                                                  |
 | 0x20F    | 1           | Pid not found                                                                                                                                                                        |
 | 0x410    | 2           | Can be returned by NS when the input titleID wasn't found in a table.                                                                                                                |
 | 0x1F610  | 251         | Unexpected StorageId                                                                                                                                                                 |
-| 0xA05    | 5           | [ncaID](Content%20Manager%20services.md "wikilink") not found. Returned when attempting to mount titles which exist that aren't \*8XX titles, the same way \*8XX titles are mounted. |
 | 0x615    | 3           | Max sessions                                                                                                                                                                         |
 | 0xC15    | 6           | Invalid name (all zeroes)                                                                                                                                                            |
 | 0x1015   | 8           | Permission denied                                                                                                                                                                    |
