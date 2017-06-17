@@ -189,7 +189,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x25A0B || 301 || Remote process is dead
 |-
-| 0x250E02 || 4743 || Returned by NCM when attempting to access a NcaId where the [[NAX0]] header was manually modified(offset 0x0 size 0x1).
+| 0x250E02 || 4743 || Corrupted NAX0 header. Returned by NCM when attempting to access a NcaId where the [[NAX0]] header was manually modified(offset 0x0 size 0x1).
 |-
 | 0x3D60B || 491 || IPC Query 1 failed.
 |-
