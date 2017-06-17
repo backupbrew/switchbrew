@@ -147,6 +147,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x250E02 || 4743 || [[NAX0|Corrupted]] NAX0 header.
 |-
+| 0x251002 || 4744 || Invalid [[NAX0]] magicnum.
+|-
 | 0x2EE202 || 6001 || Unknown media-id
 |-
 | 0x2EE602 || 6003 || Path too long

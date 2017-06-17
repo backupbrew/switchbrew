@@ -89,6 +89,7 @@ fatal-errors, since the Description ends with bit21.
 | 0x196202 | 3249        | Out of memory                                                                                                                                                                        |
 | 0x1A4A02 | 3365        | Out of memory                                                                                                                                                                        |
 | 0x250E02 | 4743        | [Corrupted](NAX0.md "wikilink") NAX0 header.                                                                                                                                         |
+| 0x251002 | 4744        | Invalid [NAX0](NAX0.md "wikilink") magicnum.                                                                                                                                         |
 | 0x2EE202 | 6001        | Unknown media-id                                                                                                                                                                     |
 | 0x2EE602 | 6003        | Path too long                                                                                                                                                                        |
 | 0x2F5A02 | 6061        | Offset outside storage                                                                                                                                                               |
