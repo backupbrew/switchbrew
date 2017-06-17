@@ -1,15 +1,15 @@
 | Title-id         | Versions        | Required/included system-version       | Serial\#                                              | Description                                 | Region   | Type       |
 | ---------------- | --------------- | -------------------------------------- | ----------------------------------------------------- | ------------------------------------------- | -------- | ---------- |
 | 01000320000CC000 | v0(gamecard)    | None                                   | Gamecard Front: LA-H-AACCA-{region} Back: AACCA22Y000 | 1-2 Switch                                  | ALL      | Game       |
-| 0100EE6002B48000 |                 |                                        |                                                       | ACA Neo Geo Fatal Fury                      | ALL      | VC         |
-| 0100CB2001DB8000 |                 |                                        |                                                       | ACA Neo Geo Garou: Mark of the Wolves       | ALL      | VC         |
-| 0100BA8001DC6000 |                 |                                        |                                                       | ACA Neo Geo Metal Slug 3                    | ALL      | VC         |
-| 01003A5001DBA000 |                 |                                        |                                                       | ACA Neo Geo Over Top                        | ALL      | VC         |
-| 0100EB2001DCC000 |                 |                                        |                                                       | ACA Neo Geo The King of Fighters '94        | ALL      | VC         |
-| 0100B42001DB4000 |                 |                                        |                                                       | ACA Neo Geo The King of Fighters '98        | ALL      | VC         |
-| 01002E70032E8000 |                 |                                        |                                                       | ACA Neo Geo Turf Masters                    | ALL      | VC         |
-| 0100CEF001DC0000 |                 |                                        |                                                       | ACA Neo Geo Waku Waku 7                     | ALL      | VC         |
-| 01009D4001DC4000 |                 |                                        |                                                       | ACA Neo Geo World Heroes Perfect            | ALL      | VC         |
+| 0100EE6002B48000 |                 |                                        |                                                       | ACA NeoGeo Fatal Fury                       | ALL      | VC         |
+| 0100CB2001DB8000 |                 |                                        |                                                       | ACA NeoGeo Garou: Mark of the Wolves        | ALL      | VC         |
+| 0100BA8001DC6000 |                 |                                        |                                                       | ACA NeoGeo Metal Slug 3                     | ALL      | VC         |
+| 01003A5001DBA000 |                 |                                        |                                                       | ACA NeoGeo Over Top                         | ALL      | VC         |
+| 0100EB2001DCC000 |                 |                                        |                                                       | ACA NeoGeo The King of Fighters '94         | ALL      | VC         |
+| 0100B42001DB4000 |                 |                                        |                                                       | ACA NeoGeo The King of Fighters '98         | ALL      | VC         |
+| 01002E70032E8000 |                 |                                        |                                                       | ACA NeoGeo Turf Masters                     | ALL      | VC         |
+| 0100CEF001DC0000 |                 |                                        |                                                       | ACA NeoGeo Waku Waku 7                      | ALL      | VC         |
+| 01009D4001DC4000 |                 |                                        |                                                       | ACA NeoGeo World Heroes Perfect             | ALL      | VC         |
 | 0100C5E003B40000 | v0              | None                                   |                                                       | ARMS Global Testpunch                       | ALL      | Timed Demo |
 | 0100C5E003B40800 | v65536(0x10000) | None                                   |                                                       | ARMS Global Testpunch                       | ALL      | Update     |
 | 01009B500007C000 |                 | Gamecard: [2.1.0](2.1.0.md "wikilink") |                                                       | ARMS                                        |          | Game       |
@@ -43,22 +43,22 @@
 | 01003A30012C0000 |                 |                                        |                                                       |                                             |          | Game       |
 | 01004B1001D22000 |                 |                                        |                                                       | TumbleSeed                                  | EUR      | Game       |
 | 01006A5003698000 |                 |                                        |                                                       | Maison De MAOU                              | JPN      | Game       |
-| 01008A9001DC2000 |                 |                                        |                                                       | ACA NEOGEO SHOCK TROOPERS                   | EUR      | VC         |
+| 01008A9001DC2000 |                 |                                        |                                                       | ACA NeoGeo Shock Troopers                   | EUR      | VC         |
 | 010009E001D90000 |                 |                                        |                                                       | World of Goo                                | EUR      | Game       |
 | 010021C000B6A000 |                 |                                        |                                                       |                                             |          | Game       |
 | 010035B00412A000 |                 |                                        |                                                       | Human Resource Machine                      | JPN      | Game       |
 | 0100701001D92000 |                 |                                        |                                                       | Human Resource Machine                      | EUR      | Game       |
 | 010043F004126000 |                 |                                        |                                                       | Little Inferno                              | JPN      | Game       |
-| 010047F001DBC000 |                 |                                        |                                                       | ACA NEOGEO SAMURAI SHODOWN IV               | ALL      | VC         |
+| 010047F001DBC000 |                 |                                        |                                                       | ACA NeoGeo Samurai Shodown IV               | ALL      | VC         |
 | 010057D0021E8000 |                 |                                        |                                                       | Shovel Knight: Treasure Trove               | ALL      | Game       |
 | 010065A00213C000 |                 |                                        |                                                       | Sora Damu Flowering Declaration             | JPN      | Game       |
 | 010073C001D5E000 |                 |                                        |                                                       |                                             |          | Game       |
 | 0100404002F52000 |                 |                                        |                                                       | Silver Star Shogi Ten Tenshi Battle Raijin  | JPN      | Game       |
-| 0100583001DCA000 |                 |                                        |                                                       | ACA NEOGEO THE KING OF FIGHTERS '99         | ALL      | VC         |
+| 0100583001DCA000 |                 |                                        |                                                       | ACA NeoGeo The King Of Fighters '99         | ALL      | VC         |
 | 0100704000B3A000 |                 |                                        |                                                       | Snipperclips                                | ALL      | Game       |
 | 0100849000BDA000 |                 |                                        |                                                       | I Am Setsuna                                | ALL      | Game       |
-| 01001180021FA000 |                 |                                        |                                                       | Shovel Knight: Specter of Torment           | EUR      | Game       |
-| 01002580038DE000 |                 |                                        |                                                       | ACA NEOGEO GALAXY FIGHT: UNIVERSAL WARRIORS | ALL      | VC         |
+| 01001180021FA000 |                 |                                        |                                                       | Shovel Knight: Specter of Torment           | ALL      | Game       |
+| 01002580038DE000 |                 |                                        |                                                       | ACA NeoGeo Galaxy Fight: Universal Warriors | ALL      | VC         |
 | 01007330027EE000 |                 |                                        |                                                       |                                             |          | Game       |
 | 01009400030D6000 |                 |                                        |                                                       | Seiken Legend Collection                    | JPN      | Game       |
 | 0100125002060000 |                 |                                        |                                                       | Battle Sports Meguru                        | JPN      | Game       |
