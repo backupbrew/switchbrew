@@ -63,6 +63,7 @@
 | 01009400030D6000 |                 |                                        |                                                       | Seiken Legend Collection                    | JPN      | Game       |
 | 0100125002060000 |                 |                                        |                                                       | Battle Sports Meguru                        | JPN      | Game       |
 | 0100882001380000 |                 |                                        |                                                       | Romance of the Three Kingdoms XIII          | JPN      | Game       |
+| 01006F6002840000 |                 |                                        |                                                       | Thumper for Nintendo Switch                 | ALL      | Game       |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
