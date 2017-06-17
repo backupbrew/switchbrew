@@ -85,9 +85,9 @@ fatal-errors, since the Description ends with bit21.
 | 0x7D402  | 1002        | Title-id not found                                                                                                                                                                   |
 | 0x13B002 | 2520        | Gamecard not inserted                                                                                                                                                                |
 | 0x171402 | 2954        | Invalid gamecard handle.                                                                                                                                                             |
-| 0x1A4A02 | 3365        | Out of memory                                                                                                                                                                        |
 | 0x196002 | 3248        | Out of memory                                                                                                                                                                        |
 | 0x196202 | 3249        | Out of memory                                                                                                                                                                        |
+| 0x1A4A02 | 3365        | Out of memory                                                                                                                                                                        |
 | 0x250E02 | 4743        | Corrupted NAX0 header. Returned by NCM when attempting to access a NcaId where the [NAX0](NAX0.md "wikilink") header was manually modified(offset 0x0 size 0x1).                     |
 | 0x2EE202 | 6001        | Unknown media-id                                                                                                                                                                     |
 | 0x2EE602 | 6003        | Path too long                                                                                                                                                                        |
