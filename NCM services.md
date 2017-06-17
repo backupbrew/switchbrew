@@ -172,6 +172,10 @@ This is a 0x10-byte entry. This is originally from the hex portion of
 "<hex>.nca" directory-names from this storage FS(like
 [SD](SD%20Filesystem.md "wikilink")).
 
+The NcaID is the same as the first 0x10-bytes from the calculated SHA256
+hash, from hashing the entire output from
+ReadEntryRaw.
+
 ## Enums
 
 ### Title Types
