@@ -4,6 +4,8 @@ The data between this header and offset 0x4000 is unused/uninitialized it appear
 
 When a NAX0 file is recreated, the header and raw content in NAX0 are completely different except for the magicnum and size-field. This is the case when a title is redownloaded/reinstalled, and when "save/" files are recreated after manual deletion.
 
+[[Error_codes|Error]] 0x250E02 is returned by NCM when attempting to access a NcaId where the NAX0 header was manually modified, for example: offset 0x0, 0x10, 0x28, 0x38, each with size 0x1.
+
 {| class="wikitable" border="1"
 |-
 ! Offset

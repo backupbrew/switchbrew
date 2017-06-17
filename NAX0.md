@@ -10,6 +10,10 @@ completely different except for the magicnum and size-field. This is the
 case when a title is redownloaded/reinstalled, and when "save/" files
 are recreated after manual deletion.
 
+[Error](Error%20codes.md "wikilink") 0x250E02 is returned by NCM when
+attempting to access a NcaId where the NAX0 header was manually
+modified, for example: offset 0x0, 0x10, 0x28, 0x38, each with size 0x1.
+
 | Offset | Size | Description                                 |
 | ------ | ---- | ------------------------------------------- |
 | 0x0    | 0x20 | Data appears to be random.                  |
