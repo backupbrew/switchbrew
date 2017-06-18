@@ -212,10 +212,10 @@ The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, f
 ! Description
 |-
 | 0x01
-| System executable titles? (Titles with TID 01000000000000XX or 01000000000010XX)
+| System Programs ([[Title_list#System_Modules|System Modules]] or [[Title_list#System_Applets|System Applets]])
 |-
 | 0x02
-| [[Title_list|System Data Archives]]
+| [[Title_list#System_Data_Archives|System Data Archives]]
 |-
 | 0x03
 | Unknown. Only used for [[Title_list|title]] 0100000000000816?
@@ -231,4 +231,7 @@ The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, f
 |-
 | 0x81
 | Update title
+|-
+| 0x82
+| Add-on content
 |}
