@@ -8,7 +8,7 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 '''Improvements Included in Version 2.0.0'''
 
 '''The following network features are now available'''
- * Nintendo Account required. Some features may not be available in all countries/regions.
+* Nintendo Account required. Some features may not be available in all countries/regions.
 * Playing online
 **Online multiplayer available for free until the paid online service launches in fall 2017. Not available in all countries.
 *Adding friends
