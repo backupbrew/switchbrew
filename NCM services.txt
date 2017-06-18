@@ -41,7 +41,7 @@ All of the above cmds takes a u8 as input.
 |-
 | 3 || || Takes a 0x10-sized entry, returns a bool/u8.
 |-
-| 4 || || Takes a 0x10-sized entry, a u64, and type-5 array.
+| 4 || || Takes a 0x10-sized entry, a u64-offset, and type-5 array.
 |-
 | 5 || || Takes two 0x10-sized entries.
 |-

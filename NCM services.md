@@ -25,7 +25,7 @@ input.
 | 1   |                                                        | Takes two 0x10-sized entries, and a u64.                         |
 | 2   |                                                        | Takes a 0x10-sized entry.                                        |
 | 3   |                                                        | Takes a 0x10-sized entry, returns a bool/u8.                     |
-| 4   |                                                        | Takes a 0x10-sized entry, a u64, and type-5 array.               |
+| 4   |                                                        | Takes a 0x10-sized entry, a u64-offset, and type-5 array.        |
 | 5   |                                                        | Takes two 0x10-sized entries.                                    |
 | 6   | DeleteContent?                                         | Takes a 0x10-sized entry.                                        |
 | 7   |                                                        | Takes a 0x10-sized entry, returns a bool/u8.                     |
