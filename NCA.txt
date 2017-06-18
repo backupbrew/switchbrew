@@ -18,7 +18,7 @@ It starts with an header:
 |-
 | 0xC
 | 1
-| Type
+| Type (see [[Content_Manager_services#Title_Types|Title Types]])
 |-
 | 0xD
 | 1
