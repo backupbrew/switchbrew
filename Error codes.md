@@ -34,6 +34,7 @@ fatal-errors, since the Description ends with bit21.
 | 16    | NS                           |
 | 21    | SM                           |
 | 22    | RO userland                  |
+| 24    | SDMMC                        |
 | 26    | SPL                          |
 | 100   | ETHC                         |
 | 110   | NIFM                         |

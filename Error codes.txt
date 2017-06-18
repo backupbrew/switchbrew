@@ -42,6 +42,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 22 || RO userland
 |-
+| 24 || SDMMC
+|-
 | 26 || SPL
 |-
 | 100 || ETHC
