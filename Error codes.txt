@@ -44,6 +44,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 26 || SPL
 |-
+| 100 || ETHC
+|-
 | 110 || NIFM
 |-
 | 114 || Display
@@ -68,11 +70,17 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 138 || PSC
 |-
+| 140 || USB
+|-
 | 143 || BTM
+|-
+| 147 || ERPT
 |-
 | 148 || APM
 |-
 | 154 || NPNS
+|-
+| 161 || NFC
 |-
 | 162 || Userland assert
 |-

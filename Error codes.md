@@ -35,6 +35,7 @@ fatal-errors, since the Description ends with bit21.
 | 21    | SM                           |
 | 22    | RO userland                  |
 | 26    | SPL                          |
+| 100   | ETHC                         |
 | 110   | NIFM                         |
 | 114   | Display                      |
 | 116   | NTC                          |
@@ -47,9 +48,12 @@ fatal-errors, since the Description ends with bit21.
 | 134   | OMM                          |
 | 137   | NIM                          |
 | 138   | PSC                          |
+| 140   | USB                          |
 | 143   | BTM                          |
+| 147   | ERPT                         |
 | 148   | APM                          |
 | 154   | NPNS                         |
+| 161   | NFC                          |
 | 162   | Userland assert              |
 | 168   | Userland crash               |
 | 203   | HID                          |
