@@ -166,6 +166,10 @@
 | 0100B7D0022EE000 || v0 || || || Cave Story+ for Nintendo Switch || USA || Game
 |-
 | 0100CC80013D6000 || v0 || || || The JackBox Party Pack 3 || ALL || Game
+|-
+| 0100D87002EE0000 || v0 || || || Snipperclips - Cut it out, together! || ALL || Game
+|-
+| 0100D87002EE0800 || v0, v65536 (0.1.0.0) || || || Snipperclips - Cut it out, together! || ALL || Update
 |}
 
 Game updates have the same titleID as the main application, except with bitmask 0x800 set.
