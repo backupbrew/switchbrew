@@ -2,6 +2,8 @@
 | ------------------ | -------------------- | -------------------------------------- | ----------------------------------------------------- | ----------------------------------------------- | -------- | ---------- |
 | 01000320000CC000   | v0                   | None                                   | Gamecard Front: LA-H-AACCA-{region} Back: AACCA22Y000 | 1-2 Switch                                      | ALL      | Game       |
 | 0100EE6002B48000   | v0                   |                                        |                                                       | ACA NeoGeo Fatal Fury                           | ALL      | VC         |
+| 0100D170038EA000   | v0                   |                                        |                                                       | ACA NeoGeo Sengoku                              | ALL      | VC         |
+| 0100DFC003398000   | v0                   |                                        |                                                       | ACA NeoGeo Blazing Star                         | ALL      | VC         |
 | 0100CB2001DB8000   | v0                   |                                        |                                                       | ACA NeoGeo Garou: Mark of the Wolves            | ALL      | VC         |
 | 0100BA8001DC6000   | v0                   |                                        |                                                       | ACA NeoGeo Metal Slug 3                         | ALL      | VC         |
 | 01003A5001DBA000   | v0                   |                                        |                                                       | ACA NeoGeo Over Top                             | ALL      | VC         |
