@@ -1,5 +1,5 @@
 {| class="wikitable sortable"
-! Title-id || Versions || Required/included system-version || Serial# || Description || Region || Type
+! Title-id || Versions || Required/included system-version || Media/Serial# || Description || Region || Type
 |-
 | 01000320000CC000 || v0 || None || Gamecard Front: LA-H-AACCA-{region} Back: AACCA22Y000 || 1-2 Switch || ALL || Game
 |-
@@ -27,17 +27,19 @@
 |-
 | 01009B500007C000 || v0 || Gamecard: [[2.1.0]] || || ARMS || ALL || Game
 |-
-| || || || Gamecard Front: LA-H-BAAZA-USA Back: BAAZA20Y000 || The Binding of Isaac: Afterbirth+ || USA || Game
+|010021C000B6A000 || v0 || || Gamecard Front: LA-H-BAAZA-USA Back: BAAZA20Y000 || The Binding of Isaac: Afterbirth+ || USA || Game
 |-
 | 010025B002E92000 || v0 || || || Blaster Master Zero || ALL || Demo
 |-
-| 0100225000FEE000 || v0 || || || Blaster Master Zero || ALL || Demo
+| 0100225000FEE000 || v0 || || || Blaster Master Zero || JPN || Demo
 |-
 | 01001FA0034E2000 || v0 || || || Dark Witch Music Episode: Rudymical || ALL || Game
 |-
-| 0100E67003A86000 || v0 || || Gamecard Front: LA-H-AACAC-{region} Back: AACAC41A000 || Disgaea 5 Complete || ALL || Game
+| 0100E67003A86000 || v0 || || Gamecard Front: LA-H-AACAC-{region} Back: AACAC41A000 || Disgaea 5 Complete || USA || Game
 |-
 | 01005700031AE000 || v0 || || || Disgaea 5 Complete || EUR || Game
+|-
+| 01004F7003726000 || v0 || || || Disgaea 5 Complete || JPN || Game
 |-
 | 0100930002EAA000 || v0 || || || Dragon Quest Heroes 1 & 2 || USA || Game
 |-
@@ -45,7 +47,7 @@
 |-
 | 01009510001CA000 || v0 || || || FAST RMX || JPN || Game
 |-
-| 0100E29001298000 || || || Gamecard Front: LA-H-ABMKA-{region} Back: ABMKA09Y000 || Has-Been Heroes || ALL || Game
+| 0100E29001298000 || v0 || || Gamecard Front: LA-H-ABMKA-{region} Back: ABMKA09Y000 || Has-Been Heroes || ALL || Game
 |-
 | 01006740034F6000 || v0 || || || Just Dance 2017 || USA || Game
 |-
@@ -77,7 +79,11 @@
 |-
 | 010053D0001BE000 || v0 || || || Puyo Puyo Tetris  || JPN || Game
 |-
+| 010021B002EEA000 || v0 || || (Digital Download) || Puyo Puyo Tetris  || JPN || Game
+|-
 | 01000DC003740000 || v0 || || Gamecard Front: LA-H-BAACB-USA Back: BAACB41Y000 || Puyo Puyo Tetris || USA || Game
+|-
+| | 010073C001D5E000 || v0 || || (Digital Download) || Puyo Puyo Tetris || USA || Game
 |-
 | 01004B10031BE000 || v0 || || || Puyo Puyo Tetris || EUR || Game
 |-
@@ -85,9 +91,11 @@
 |-
 | 0100A6300150C000 || v0 || || || Wonder Boy: The Dragon's Trap || EUR || Game
 |-
-| 01003A30012C0000 || v0 || || || || || Game
+| 01003A30012C0000 || v0 || || || LEGO® CITY Undercover || USA || Game
 |-
-| 01004B1001D22000 || v0 || || || TumbleSeed || EUR || Game
+| 01004B1001D22000 || v0 || || || TumbleSeed || ALL || Game
+|-
+| 01004B1001D22800 || v65536 (0.1.0.0) || || || TumbleSeed || ALL || Update
 |-
 | 01006A5003698000 || v0 || || || Maison De MAOU || JPN || Game
 |-
@@ -95,7 +103,9 @@
 |-
 | 010009E001D90000 || v0 || || || World of Goo || EUR || Game
 |-
-| 010021C000B6A000 || v0 || || || || || Game
+| 010009E001D90800 || v65536 (0.1.0.0) || || || World of Goo || EUR || Update
+|-
+| 01004B3004062000 || v0 || || || World of Goo || JPN || Game
 |-
 | 010035B00412A000 || v0 || || || Human Resource Machine || JPN || Game
 |-
@@ -108,8 +118,6 @@
 | 010057D0021E8000 || v0 || || || Shovel Knight: Treasure Trove || ALL || Game
 |-
 | 010065A00213C000 || v0 || || || Sora Damu Flowering Declaration || JPN || Game
-|-
-| 010073C001D5E000 || v0 || || || || || Game
 |-
 | 0100404002F52000 || v0 || || || Silver Star Shogi Ten Tenshi Battle Raijin || JPN || Game
 |-
@@ -146,6 +154,14 @@
 | 01007330027EE000 ||  v0 || || || ULTRA STREET FIGHTER II: The Final Challengers || USA || Game
 |-
 | 01007330027EE800 || v65536 (0.1.0.0) || || || ULTRA STREET FIGHTER II: The Final Challengers || USA || Update
+|-
+| 01004D10020F2000 || v0 || || || Graceful Explosion Machine || EUR || Game
+|-
+| 01004E90028A2000 || v0 || || || Vroom in the night sky || ALL || Game
+|-
+| 01003D60012BE000 || v0 || || || Nobunaga 's Nozomi · Creating with Power Up Kit || JPN || Game
+|-
+| 01003D60012BE800 || v65536 (0.1.0.0)  || || || Nobunaga's Nozomi - Creating with Power Up Kit || JPN || Update
 |}
 
 Game updates have the same titleID as the main application, except with bitmask 0x800 set.
