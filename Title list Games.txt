@@ -45,7 +45,7 @@
 |-
 | 01009510001CA000 || v0 || || || FAST RMX || JPN || Game
 |-
-| || || || Gamecard Front: LA-H-ABMKA-EUR Back: ABMKA09Y000 || Has-Been Heroes || EUR || Game
+| 0100E29001298000 || || || Gamecard Front: LA-H-ABMKA-{region} Back: ABMKA09Y000 || Has-Been Heroes || ALL || Game
 |-
 | 01006740034F6000 || v0 || || || Just Dance 2017 || USA || Game
 |-

@@ -22,7 +22,7 @@
 | 0100930002EAA000 | v0                |                                        |                                                       | Dragon Quest Heroes 1 & 2                   | USA      | Game       |
 | 0100F12002FC8000 | v0                |                                        |                                                       | Everyone Party\! Spelunker                  | JPN      | Game       |
 | 01009510001CA000 | v0                |                                        |                                                       | FAST RMX                                    | JPN      | Game       |
-|                  |                   |                                        | Gamecard Front: LA-H-ABMKA-EUR Back: ABMKA09Y000      | Has-Been Heroes                             | EUR      | Game       |
+| 0100E29001298000 |                   |                                        | Gamecard Front: LA-H-ABMKA-{region} Back: ABMKA09Y000 | Has-Been Heroes                             | ALL      | Game       |
 | 01006740034F6000 | v0                |                                        |                                                       | Just Dance 2017                             | USA      | Game       |
 | 010085300314E000 | v0                |                                        |                                                       | Kamiko                                      | USA      | Game       |
 | 01007EF00011E000 | v0                | None                                   | Gamecard Front: LA-H-AAAAA-{region} Back: AAAAA13A000 | The Legend of Zelda: Breath of the Wild     | ALL      | Game       |
