@@ -73,7 +73,6 @@
 | 01006F6002840000   | v0                   |                                        |                                                       | Thumper for Nintendo Switch                     | ALL      | Game       |
 | 0100F0400351C000   | v0                   |                                        |                                                       | Astro-Duel-Deluxe                               | USA, EUR | Game       |
 | 0100F0400351C800   | v65536 (0.1.0.0)     |                                        |                                                       | Astro-Duel-Deluxe                               | USA, EUR | Update     |
-| 0100F0400351C000   | v0                   |                                        |                                                       | ULTRA STREET FIGHTER II: The Final Challengers  | EUR      | Game       |
 | 0100C86000B58000   | v0                   |                                        |                                                       | ULTRA STREET FIGHTER II: The Final Challengers  | JPN      | Game       |
 | 0100C86000B58800   | v65536 (0.1.0.0)     |                                        |                                                       | ULTRA STREET FIGHTER II: The Final Challengers  | JPN      | Update     |
 | 01007330027EE000   | v0                   |                                        |                                                       | ULTRA STREET FIGHTER II: The Final Challengers  | USA      | Game       |
