@@ -181,6 +181,15 @@ There are two main implementations of this interface:
 | 300 |                                |
 | 301 |                                |
 
+## GetGameCardUpdatePartitionInfo
+
+Returns a titleID and the title-version for it.
+
+  - Output u32 with ARMS-gamecard: title-version v131162. This is the
+    title-version for [2.1.0](2.1.0.md "wikilink"), which is the
+    sysupdate included with this gamecard.
+  - Output u64 with ARMS-gamecard: titleID 0100000000000816.
+
 # IEventNotifier
 
 | Cmd | Name      |
