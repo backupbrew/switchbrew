@@ -37,11 +37,14 @@ fatal-errors, since the Description ends with bit21.
 | 24    | SDMMC                        |
 | 26    | SPL                          |
 | 100   | ETHC                         |
+| 105   | Settings                     |
 | 110   | NIFM                         |
 | 114   | Display                      |
 | 116   | NTC                          |
 | 117   | FGM                          |
 | 120   | PCIE                         |
+| 121   | Friends                      |
+| 123   | SSL                          |
 | 124   | Account                      |
 | 126   | Mii                          |
 | 129   | Play Report                  |

@@ -48,6 +48,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 100 || ETHC
 |-
+| 105 || Settings
+|-
 | 110 || NIFM
 |-
 | 114 || Display
@@ -57,6 +59,10 @@ When a fatal-error is received the error code is outputted using the following f
 | 117 || FGM
 |-
 | 120 || PCIE
+|-
+| 121 || Friends
+|-
+| 123 || SSL
 |-
 | 124 || Account
 |-
