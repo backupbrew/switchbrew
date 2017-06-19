@@ -143,7 +143,7 @@
 |-
 | 0100C86000B58800 || v65536 (0.1.0.0) || || || ULTRA STREET FIGHTER II: The Final Challengers || JPN || Update
 |-
-| 01007330027EE000 v0 || || || ULTRA STREET FIGHTER II: The Final Challengers || USA || Game
+| 01007330027EE000 ||  v0 || || || ULTRA STREET FIGHTER II: The Final Challengers || USA || Game
 |-
 | 01007330027EE800 || v65536 (0.1.0.0) || || || ULTRA STREET FIGHTER II: The Final Challengers || USA || Update
 |}
