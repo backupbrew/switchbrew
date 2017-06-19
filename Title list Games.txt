@@ -67,7 +67,9 @@
 |-
 | 010031F002B66000 || v0  || || || Mr. Shifty || USA, EUR || Game
 |-
-| 010002900294A000 || v0 || || || NBA Playgrounds || JPN, USA || Game
+| 0100C220040C0000 || v0  || || || Mr. Shifty || JPN || Game
+|-
+| 010002900294A000 || v0 || || || NBA Playgrounds || ALL || Game
 |-
 | 01004C200100E000 || v0 || || || New Frontier Days: Founding Pioneers || ALL || Game
 |-
@@ -121,8 +123,6 @@
 |-
 | 01002580038DE000 || v0 || || || ACA NeoGeo Galaxy Fight: Universal Warriors || ALL || VC
 |-
-| 01007330027EE000 || v0 || || || || || Game
-|-
 | 01009400030D6000 || v0 || || || Seiken Legend Collection || JPN || Game
 |-
 | 0100125002060000 || v0 || || || Battle Sports Meguru || JPN || Game
@@ -130,6 +130,22 @@
 | 0100882001380000 || v0 || || || Romance of the Three Kingdoms XIII || JPN || Game
 |-
 | 01006F6002840000 || v0 || || || Thumper for Nintendo Switch || ALL || Game
+|-
+| 0100F0400351C000 || v0 || || || Astro-Duel-Deluxe || USA, EUR || Game
+|-
+| 0100F0400351C800 || v65536 (0.1.0.0) || || || Astro-Duel-Deluxe || USA, EUR || Update
+|-
+| 0100F0400351C000 || v0 || || || ULTRA STREET FIGHTER II: The Final Challengers || EUR || Game
+|-
+| 0100F0400351C800 || v65536 (0.1.0.0) || || || ULTRA STREET FIGHTER II: The Final Challengers || EUR || Update
+|-
+| 0100C86000B58000 || v0 || || || ULTRA STREET FIGHTER II: The Final Challengers || JPN || Game
+|-
+| 0100C86000B58800 || v65536 (0.1.0.0) || || || ULTRA STREET FIGHTER II: The Final Challengers || JPN || Update
+|-
+| 01007330027EE000 v0 || || || ULTRA STREET FIGHTER II: The Final Challengers || USA || Game
+|-
+| 01007330027EE800 || v65536 (0.1.0.0) || || || ULTRA STREET FIGHTER II: The Final Challengers || USA || Update
 |}
 
 Game updates have the same titleID as the main application, except with bitmask 0x800 set.
