@@ -184,7 +184,7 @@ ReadEntryRaw.
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x01  | System Programs ([System Modules](Title%20list#System%20Modules.md##System_Modules "wikilink") or [System Applets](Title%20list#System%20Applets.md##System_Applets "wikilink")) |
 | 0x02  | [System Data Archives](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink")                                                                                |
-| 0x03  | Unknown. Only used for [title](Title%20list.md "wikilink") 0100000000000816?                                                                                                     |
+| 0x03  | System Update                                                                                                                                                                    |
 | 0x04  | [Firmware package A](Title%20list.md "wikilink")                                                                                                                                 |
 | 0x05  | [Firmware package B](Title%20list.md "wikilink")                                                                                                                                 |
 | 0x80  | Regular application                                                                                                                                                              |
