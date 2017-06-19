@@ -82,6 +82,7 @@
 | 01003D60012BE000   | v0                |                                        |                                                       | Nobunaga 's Nozomi · Creating with Power Up Kit | JPN      | Game       |
 | 01003D60012BE800   | v65536 (0.1.0.0)  |                                        |                                                       | Nobunaga's Nozomi - Creating with Power Up Kit  | JPN      | Update     |
 | 0100B7D0022EE000   | v0                |                                        |                                                       | Cave Story+ for Nintendo Switch                 | USA      | Game       |
+| 0100CC80013D6000   | v0                |                                        |                                                       | The JackBox Party Pack 3                        | ALL      | Game       |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
