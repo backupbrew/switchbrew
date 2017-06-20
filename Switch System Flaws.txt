@@ -20,31 +20,9 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 |
 |-
 |}
-==ARM TrustZone software==
-===ARM TrustZone===
-{| class="wikitable" border="1"
-|-
-!  Summary
-!  Description
-!  Successful exploitation result
-!  Fixed in system version
-!  Last system version this flaw was checked for
-!  Timeframe this was discovered
-!  Public disclosure timeframe
-!  Discovered by
-|-
-|  No public ARM TrustZone exploits 
-|
-|
-|
-|
-|
-|
-|
-|-
-|}
-== System software==
-===Kernel===
+
+== System software ==
+=== Kernel ===
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -67,7 +45,30 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 |-
 |}
 
-===System Modules===
+=== TrustZone ===
+{| class="wikitable" border="1"
+|-
+!  Summary
+!  Description
+!  Successful exploitation result
+!  Fixed in system version
+!  Last system version this flaw was checked for
+!  Timeframe this was discovered
+!  Public disclosure timeframe
+!  Discovered by
+|-
+|  No public ARM TrustZone exploits 
+|
+|
+|
+|
+|
+|
+|
+|-
+|}
+
+=== System Modules ===
 {| class="wikitable" border="1"
 |-
 !  Summary

@@ -11,15 +11,6 @@ Flaws.
 | No public hardware exploits |             |                                    |                                                          |                               |               |
 |                             |             |                                    |                                                          |                               |               |
 
-## ARM TrustZone software
-
-### ARM TrustZone
-
-| Summary                          | Description | Successful exploitation result | Fixed in system version | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by |
-| -------------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
-| No public ARM TrustZone exploits |             |                                |                         |                                               |                               |                             |               |
-|                                  |             |                                |                         |                                               |                               |                             |               |
-
 ## System software
 
 ### Kernel
@@ -28,6 +19,13 @@ Flaws.
 | ------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
 | No public Kernel exploits |             |                                |                         |                                               |                               |                             |               |
 |                           |             |                                |                         |                                               |                               |                             |               |
+
+### TrustZone
+
+| Summary                          | Description | Successful exploitation result | Fixed in system version | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by |
+| -------------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
+| No public ARM TrustZone exploits |             |                                |                         |                                               |                               |                             |               |
+|                                  |             |                                |                         |                                               |                               |                             |               |
 
 ### System Modules
 
