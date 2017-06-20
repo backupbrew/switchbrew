@@ -11,11 +11,11 @@
 |-
 | 8 || MountContent
 |-
-| 11 || Returns an [[#IFileSystem]].
+| 11 || OpenBisFileSystem
 |-
 | 12 || OpenBisPartition
 |-
-| 13 ||
+| 13 || InvalidateBisCache
 |-
 | 17 || OpenHostFileSystemImpl
 |-
@@ -105,7 +105,7 @@
 |-
 | 1003 || DisableAutoSaveDataCreation
 |-
-| 1004 ||
+| 1004 || SetGlobalAccessLogMode
 |-
 | 1005 || GetGlobalAccessLogMode
 |-

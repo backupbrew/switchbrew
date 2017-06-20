@@ -6,9 +6,9 @@
 | 2    | MountRomFs                                                                             |
 | 7    | MountContent7                                                                          |
 | 8    | MountContent                                                                           |
-| 11   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
+| 11   | OpenBisFileSystem                                                                      |
 | 12   | OpenBisPartition                                                                       |
-| 13   |                                                                                        |
+| 13   | InvalidateBisCache                                                                     |
 | 17   | OpenHostFileSystemImpl                                                                 |
 | 18   | MountSdCard                                                                            |
 | 19   | FormatSdCard                                                                           |
@@ -53,7 +53,7 @@
 | 1001 |                                                                                        |
 | 1002 |                                                                                        |
 | 1003 | DisableAutoSaveDataCreation                                                            |
-| 1004 |                                                                                        |
+| 1004 | SetGlobalAccessLogMode                                                                 |
 | 1005 | GetGlobalAccessLogMode                                                                 |
 | 1006 | OutputAccessLogToSdCard                                                                |
 
