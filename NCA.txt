@@ -43,7 +43,7 @@ Each entry is 0x38 bytes:
 |-
 | 0x0
 | 32
-|
+| Hash
 |-
 | 0x20
 | 16
@@ -51,7 +51,7 @@ Each entry is 0x38 bytes:
 |-
 | 0x30
 | 6
-|
+| Size
 |-
 | 0x36
 | 1
