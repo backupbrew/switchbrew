@@ -20,7 +20,7 @@ This is the Switch equivalent of
 | 16   |                                                                    |
 | 17   |                                                                    |
 | 19   |                                                                    |
-| 21   |                                                                    |
+| 21   | [\#GetContentNcaPath](#GetContentNcaPath "wikilink")               |
 | 22   |                                                                    |
 | 23   |                                                                    |
 | 25   |                                                                    |
@@ -119,6 +119,23 @@ This is the Switch equivalent of
 | 1800 |                                                                    |
 | 1801 |                                                                    |
 | 1802 |                                                                    |
+
+## GetContentNcaPath
+
+Takes a 0x16-type output buffer, an u8 type, and an u64 titleID.
+
+The input titleID is used with the application-title table like various
+other cmds, anything not in that table can't be used with this.
+
+Returns a string path for the specified type of content with this
+titleID. Returns an error when the specified type of content doesn't
+exist for this title. For example: "@SdCardContent:/\<subdirectory under
+{[Contents](SD%20Filesystem.md "wikilink")}\>/{path to .nca directory}".
+The string ends with ".nca". Hence, the path is the same as what's on SD
+under the Contents directory.
+
+The output string is then used by the user-process with
+[FS](Filesystem%20services.md "wikilink") to mount the content.
 
 ## GetFreeSpace
 
