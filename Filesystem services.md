@@ -82,7 +82,7 @@ Note: web-applet strings refer to both this cmd and the below
 
 ## MountContent
 
-Takes a type-0x16 input buffer, an input u32(same as MountContent7), and
+Takes a type-0x19 input buffer, an input u32(same as MountContent7), and
 an input u64 titleID.
 
 The input buffer is the output string path from nsam
