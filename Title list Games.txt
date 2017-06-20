@@ -83,7 +83,7 @@
 |-
 | 010053D0001BE000 || v0 || || || Puyo Puyo Tetris  || JPN || Game
 |-
-| 010021B002EEA000 || v0 || || (Digital Download) || Puyo Puyo Tetris  || JPN || Game
+| 010021B002EEA000 || v0 || || || Puyo Puyo Tetris  || JPN || Demo
 |-
 | 01000DC003740000 || v0 || || Gamecard Front: LA-H-BAACB-USA Back: BAACB41Y000 || Puyo Puyo Tetris || USA || Game
 |-

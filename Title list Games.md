@@ -41,7 +41,7 @@
 | 01004C200100E000   | v0                   |                                        |                                                       | New Frontier Days: Founding Pioneers            | ALL      | Game       |
 | 0100902001014000   | v0                   |                                        |                                                       | Othello                                         | JPN      | Game       |
 | 010053D0001BE000   | v0                   |                                        |                                                       | Puyo Puyo Tetris                                | JPN      | Game       |
-| 010021B002EEA000   | v0                   |                                        | (Digital Download)                                    | Puyo Puyo Tetris                                | JPN      | Game       |
+| 010021B002EEA000   | v0                   |                                        |                                                       | Puyo Puyo Tetris                                | JPN      | Demo       |
 | 01000DC003740000   | v0                   |                                        | Gamecard Front: LA-H-BAACB-USA Back: BAACB41Y000      | Puyo Puyo Tetris                                | USA      | Game       |
 | | 010073C001D5E000 | v0                   |                                        | (Digital Download)                                    | Puyo Puyo Tetris                                | USA      | Game       |
 | 01004B10031BE000   | v0                   |                                        |                                                       | Puyo Puyo Tetris                                | EUR      | Game       |
