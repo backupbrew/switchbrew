@@ -122,7 +122,8 @@ This is the Switch equivalent of
 
 ## GetContentNcaPath
 
-Takes a 0x16-type output buffer, an u8 type, and an u64 titleID.
+Takes a 0x16-type output buffer, an u8 [type](NCA.md "wikilink"), and an
+u64 titleID.
 
 The input titleID is used with the application-title table like various
 other cmds, anything not in that table can't be used with this.

@@ -235,7 +235,7 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |}
 
 == GetContentNcaPath ==
-Takes a 0x16-type output buffer, an u8 type, and an u64 titleID.
+Takes a 0x16-type output buffer, an u8 [[NCA|type]], and an u64 titleID.
 
 The input titleID is used with the application-title table like various other cmds, anything not in that table can't be used with this.
 
