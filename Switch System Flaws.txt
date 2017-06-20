@@ -43,7 +43,7 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 |
 |-
 |}
-== Kernel software==
+== System software==
 ===Kernel===
 {| class="wikitable" border="1"
 |-
