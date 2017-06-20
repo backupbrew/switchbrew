@@ -73,8 +73,8 @@
 
 ## MountContent7
 
-Takes an input u32 and an u64 titleID. It's unknown what the u32
-is(user-process loads it from u32\_table\[inparam\]).
+Takes an input u32([NCA](NCA.md "wikilink")-type) and an u64 titleID.
+Web-applet loads the u32 from u32\_table\[inparam\].
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
