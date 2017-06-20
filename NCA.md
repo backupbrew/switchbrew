@@ -14,12 +14,13 @@ header:
 | 0xE    | 2    | Offset to table                                                                                 |
 | 0x10   | 2    | Number of entries                                                                               |
 
-Each entry is 0x38 bytes:
+Each entry is 0x38
+bytes:
 
-| Offset | Size | Description                                  |
-| ------ | ---- | -------------------------------------------- |
-| 0x0    | 32   |                                              |
-| 0x20   | 16   | NcaId                                        |
-| 0x30   | 6    |                                              |
-| 0x36   | 1    | Type (1=program, 3=control, 4=html, 5=legal) |
-| 0x37   | 1    |                                              |
+| Offset | Size | Description                                                  |
+| ------ | ---- | ------------------------------------------------------------ |
+| 0x0    | 32   |                                                              |
+| 0x20   | 16   | NcaId                                                        |
+| 0x30   | 6    |                                                              |
+| 0x36   | 1    | Type (0=meta, 1=program, 2=data, 3=control, 4=html, 5=legal) |
+| 0x37   | 1    |                                                              |
