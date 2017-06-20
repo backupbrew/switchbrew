@@ -10,3 +10,6 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 
 ==System Titles==
 It's unknown exactly what titles were updated.
+
+==OSS==
+The updated [https://www.nintendo.co.jp/support/oss/index.html OSS] includes a number of WebKit changes.
