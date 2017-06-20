@@ -245,9 +245,9 @@ Takes an input media-id that must be 5.
 Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd23.
 
 == GetTitlesInfo ==
-Returns an array of title-info entries using the specified offset and size. No input titleID is passed to this.
+Takes a type-6 output buffer and an u64.
 
-Not tested on hw.
+Returns an array of title-info entries using the specified offset and size. No input titleID is passed to this.
 
 == GetTitleInfo1 ==
 Returns 0x10-byte entries using the specified titleID starting at the specified u32 entryindex. Can only return game titles. The second entry if any is the update-title usually. When the input entryindex is >= totalentries, this will return 0 with out_entrycount=0.

@@ -138,10 +138,10 @@ cmd23.
 
 ## GetTitlesInfo
 
+Takes a type-6 output buffer and an u64.
+
 Returns an array of title-info entries using the specified offset and
 size. No input titleID is passed to this.
-
-Not tested on hw.
 
 ## GetTitleInfo1
 
