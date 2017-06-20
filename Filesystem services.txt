@@ -7,7 +7,7 @@
 |-
 | 2 || MountRomFs
 |-
-| 7 || Returns an [[#IFileSystem]].
+| 7 || MountContent7
 |-
 | 8 || MountContent
 |-
@@ -135,6 +135,20 @@
 |-
 | 4 || Always 0.
 |}
+
+== MountContent7 ==
+Takes an input u32 and an u64 titleID. It's unknown what the u32 is.
+
+Returns an [[#IFileSystem]].
+
+Note: web-applet strings refer to both this cmd and the below "MountContent" as "MountContent".
+
+== MountContent ==
+Takes a type-0x16 input buffer, an input u32(same as MountContent7), and an input u64 titleID.
+
+The input buffer is the output string path from nsam [[NS_Services#GetContentNcaPath|GetContentNcaPath]].
+
+Returns an [[#IFileSystem]].
 
 == OpenDeviceOperator ==
 This command returns a session to a port implementing the [[#IDeviceOperator]] interface.

@@ -4,7 +4,7 @@
 | ---- | -------------------------------------------------------------------------------------- |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |
 | 2    | MountRomFs                                                                             |
-| 7    | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
+| 7    | MountContent7                                                                          |
 | 8    | MountContent                                                                           |
 | 11   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 12   | OpenBisPartition                                                                       |
@@ -70,6 +70,25 @@
 | 2    | "SCFI"             |
 | 3    | 0x00000001         |
 | 4    | Always 0.          |
+
+## MountContent7
+
+Takes an input u32 and an u64 titleID. It's unknown what the u32 is.
+
+Returns an [\#IFileSystem](#IFileSystem "wikilink").
+
+Note: web-applet strings refer to both this cmd and the below
+"MountContent" as "MountContent".
+
+## MountContent
+
+Takes a type-0x16 input buffer, an input u32(same as MountContent7), and
+an input u64 titleID.
+
+The input buffer is the output string path from nsam
+[GetContentNcaPath](NS%20Services#GetContentNcaPath.md##GetContentNcaPath "wikilink").
+
+Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 ## OpenDeviceOperator
 
