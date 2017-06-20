@@ -1,6 +1,6 @@
 The 3.0.0 system update was released on June 19, 2017. This update was released for all regions.
 
-Security flaws fixed: unknown.
+Security flaws fixed: yes.
 
 ==Change-log==
 This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 official changelog] from Nintendo regarding this update:
