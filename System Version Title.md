@@ -16,10 +16,11 @@ The FS for the system-version title(TID 0100000000000809) contains
 
 ## Known Versions
 
-| Firmware | Version String                       | Hex ASCII String                         |
-| -------- | ------------------------------------ | ---------------------------------------- |
-| 1.0.0    | ?                                    | ?                                        |
-| 2.0.0    | NintendoSDK Firmware for NX 2.0.0-15 | 25233e518f580062b41f45fae7ce56bff261094a |
-| 2.1.0    | NintendoSDK Firmware for NX 2.1.0-0  | e548f82b0aaff5fd18cfd80e7b9bd9808eeb7c99 |
-| 2.2.0    | NintendoSDK Firmware for NX 2.2.0-1  | c83b637205048e61e73c870f21271cc3c6364396 |
-| 2.3.0    | NintendoSDK Firmware for NX 2.3.0-0  | 3ed3bbc8885b6362f4f244dcecd2b430fa27310e |
+| Firmware | Version String                         | Hex ASCII String                         |
+| -------- | -------------------------------------- | ---------------------------------------- |
+| 1.0.0    | ?                                      | ?                                        |
+| 2.0.0    | NintendoSDK Firmware for NX 2.0.0-15   | 25233e518f580062b41f45fae7ce56bff261094a |
+| 2.1.0    | NintendoSDK Firmware for NX 2.1.0-0    | e548f82b0aaff5fd18cfd80e7b9bd9808eeb7c99 |
+| 2.2.0    | NintendoSDK Firmware for NX 2.2.0-1    | c83b637205048e61e73c870f21271cc3c6364396 |
+| 2.3.0    | NintendoSDK Firmware for NX 2.3.0-0    | 3ed3bbc8885b6362f4f244dcecd2b430fa27310e |
+| 3.0.0    | NintendoSDK Firmware for NX 3.0.0-10.0 | 7fbde2b0bba4d14107bf836e4643043d9f6c8e47 |
