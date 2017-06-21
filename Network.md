@@ -9,11 +9,12 @@ used for. Only HTTPS is used with these domains unless noted otherwise.
     going by 3DS.
   - "dauth-lp1.ndas.srv.nintendo.net": Seems to break Nintendo-account
     related comms when blocked. This dauth domain seems to be the cause
-    of the sysupdate-required 2124-3000 error?
+    of the sysupdate-required 2124-3000
+    [error](Error%20codes.md "wikilink")?
   - "beach.hac.lp1.eshop.nintendo.net": Same result as dauth when
     blocked.
   - "consumer.lp1.npns.srv.nintendo.net": Same result as dauth when
     blocked.
 
 Note: "break Nintendo-acount..." is for "posting to social-media" in
-user-profile, results may vary with eShop.
+user-profile, results may vary with eShop(for non-dauth).
