@@ -3,6 +3,8 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 
 =List of Switch System Flaws=
 
+These are currently public Switch System Flaws.
+
 == Hardware == 
 {| class="wikitable" border="1"
 !  Summary
@@ -20,32 +22,8 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 |
 |-
 |}
-
-== System software ==
-=== Kernel ===
-{| class="wikitable" border="1"
-|-
-!  Summary
-!  Description
-!  Successful exploitation result
-!  Fixed in system version
-!  Last system version this flaw was checked for
-!  Timeframe this was discovered
-!  Public disclosure timeframe
-!  Discovered by
-|-
-|  No public Kernel exploits 
-|
-|
-|
-|
-|
-|
-|
-|-
-|}
-
-=== TrustZone ===
+==ARM TrustZone software==
+===ARM TrustZone===
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -67,8 +45,8 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 |
 |-
 |}
-
-=== System Modules ===
+== Kernel software==
+===Kernel===
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -80,13 +58,13 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 !  Public disclosure timeframe
 !  Discovered by
 |-
-|  OOB Read in NS system module (pl:utoohax, pl:utonium, maybe other names)
-|  Prior to [[3.0.0]], pl:u (Shared Font services implemented in the NS sysmodule) service commands 1,2,3 took in a signed 32-bit index and returned that index of an array but did not check that index at all. This allowed for an arbitrary read within a 34-bit range (33-bit signed) from NS .bss. In [[3.0.0]], sending out of range indexes causes error code 0x60A to be returned.
-|  Dumping full NS .text, .rodata and .data, infoleak, etc
-|  [[3.0.0]]
-|  [[3.0.0]]
-|  April 2017
-|  On exploit's fix in [[3.0.0]]
-|  qlutoo, Reswitched team (independently)
+|  No public Kernel exploits 
+|
+|
+|
+|
+|
+|
+|
 |-
 |}
