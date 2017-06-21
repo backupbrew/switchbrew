@@ -6,3 +6,5 @@ This page documents the DNS domains used by Switch, and what they're used for. O
 * "dauth-lp1.ndas.srv.nintendo.net": Seems to break Nintendo-account related comms when blocked.
 * "beach.hac.lp1.eshop.nintendo.net": Same result as dauth when blocked.
 * "consumer.lp1.npns.srv.nintendo.net": Same result as dauth when blocked.
+
+Note: "break Nintendo-acount..." is for "posting to social-media" in user-profile, results may vary with eShop.

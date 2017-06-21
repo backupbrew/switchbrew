@@ -13,3 +13,6 @@ used for. Only HTTPS is used with these domains unless noted otherwise.
     blocked.
   - "consumer.lp1.npns.srv.nintendo.net": Same result as dauth when
     blocked.
+
+Note: "break Nintendo-acount..." is for "posting to social-media" in
+user-profile, results may vary with eShop.
