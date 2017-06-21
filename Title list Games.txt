@@ -167,9 +167,9 @@
 |-
 | 0100882001380800 || v131072 (0.2.0.0) || || || Romance of the Three Kingdoms XIII || JPN || Update
 |-
-| 01008A9001DC2000 || v0 || || || ACA NeoGeo Shock Troopers || EUR || VC
+| 01008A9001DC2000 || v0 || || || ACA NeoGeo Shock Troopers || ALL || VC
 |-
-| 01008A9001DC2800 || v65536 (0.1.0.0) || || || ACA NeoGeo Shock Troopers || EUR || Update
+| 01008A9001DC2800 || v65536 (0.1.0.0) || || || ACA NeoGeo Shock Troopers || ALL || Update
 |-
 | 01008D1001512000 || v0 || || || Cars 3: Driven to Win || USA || Game
 |-
