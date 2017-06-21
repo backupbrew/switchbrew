@@ -103,7 +103,11 @@ Normal error-codes displayed by the system also seem to use the same above forma
 | 651 || TC
 |-
 | 669 || ARP
+|-
+| 811 || [[Internet_Browser|ShopN]]
 |}
+
+8XX is for/includes system applets.
 
 = Error codes =
 {| class=wikitable
