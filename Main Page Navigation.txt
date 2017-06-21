@@ -39,6 +39,7 @@
 | 
 *[[Online Multiplayer]]
 *[[SD Filesystem]]
+*[[Domains]]
 |}
 </div>
 {{box-footer-empty}}
