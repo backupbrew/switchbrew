@@ -7,3 +7,5 @@ used for. Only HTTPS is used with these domains unless noted otherwise.
   - "atumn.hac.lp1.d4c.nintendo.net": CDN for system-titles.
   - "tagaya.hac.lp1.eshop.nintendo.net": VersionList for eShop titles
     going by 3DS.
+  - "dauth-lp1.ndas.srv.nintendo.net": Seems to break Nintendo-account
+    related comms when blocked.
