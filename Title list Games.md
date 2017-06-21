@@ -146,6 +146,8 @@
 | 0100F3D001DEE000 | v0                                                                        |                                        |                                                       | Puyo Puyo Tetris                               | EUR      | Game       |
 |                  |                                                                           |                                        |                                                       | LEGO® CITY Undercover                          | JPN      | Game       |
 |                  |                                                                           |                                        |                                                       | LEGO® CITY Undercover                          | JPN      | Update     |
+| 0100AE9003FAC000 |                                                                           |                                        |                                                       | Touch Battle Tank SP                           | JPN      | Game       |
+| 0100AE9003FAC800 |                                                                           |                                        |                                                       | Touch Battle Tank SP                           | JPN      | Update     |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
