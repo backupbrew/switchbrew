@@ -14,6 +14,8 @@ When a fatal-error is received the error code is outputted using the following f
 
 .. where the first code is <code>2000 + Module</code>, and the other being <code>Description</code>. Bits >=22 from the error-code are unused when displaying fatal-errors, since the Description ends with bit21.
 
+Normal error-codes displayed by the system also seem to use the same above format.
+
 = Modules =
 {| class=wikitable
 ! Value || Name

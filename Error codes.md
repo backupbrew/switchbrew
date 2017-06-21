@@ -18,6 +18,9 @@ following formatter:
 `Description`. Bits \>=22 from the error-code are unused when displaying
 fatal-errors, since the Description ends with bit21.
 
+Normal error-codes displayed by the system also seem to use the same
+above format.
+
 # Modules
 
 | Value | Name                         |
