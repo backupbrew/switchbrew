@@ -11,3 +11,5 @@ used for. Only HTTPS is used with these domains unless noted otherwise.
     related comms when blocked.
   - "beach.hac.lp1.eshop.nintendo.net": Same result as dauth when
     blocked.
+  - "consumer.lp1.npns.srv.nintendo.net": Same result as dauth when
+    blocked.
