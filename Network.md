@@ -8,7 +8,8 @@ used for. Only HTTPS is used with these domains unless noted otherwise.
   - "tagaya.hac.lp1.eshop.nintendo.net": VersionList for eShop titles
     going by 3DS.
   - "dauth-lp1.ndas.srv.nintendo.net": Seems to break Nintendo-account
-    related comms when blocked.
+    related comms when blocked. This dauth domain seems to be the cause
+    of the sysupdate-required 2124-3000 error?
   - "beach.hac.lp1.eshop.nintendo.net": Same result as dauth when
     blocked.
   - "consumer.lp1.npns.srv.nintendo.net": Same result as dauth when
