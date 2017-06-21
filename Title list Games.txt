@@ -291,7 +291,8 @@
 |-
 | || || || || LEGO® CITY Undercover || JPN || Game
 |-
-| || || || || LEGO® CITY Undercover || JPN || Update|}
+| || || || || LEGO® CITY Undercover || JPN || Update
+|}
 Game updates have the same titleID as the main application, except with bitmask 0x800 set.
 
 The following data was found in [[NS_Services|NS]](NUL-terminators removed):
