@@ -1,0 +1,9 @@
+This page documents the DNS domains used by Switch, and what they're
+used for. Only HTTPS is used with these domains unless noted otherwise.
+
+  - "sun.hac.lp1.d4c.nintendo.net": Used for checking whether a
+    sysupdate is available, equivalent to NetUpdateSOAP from past
+    systems.
+  - "atumn.hac.lp1.d4c.nintendo.net": CDN for system-titles.
+  - "tagaya.hac.lp1.eshop.nintendo.net": VersionList for eShop titles
+    going by 3DS.
