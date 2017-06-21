@@ -9,3 +9,5 @@ used for. Only HTTPS is used with these domains unless noted otherwise.
     going by 3DS.
   - "dauth-lp1.ndas.srv.nintendo.net": Seems to break Nintendo-account
     related comms when blocked.
+  - "beach.hac.lp1.eshop.nintendo.net": Same result as dauth when
+    blocked.
