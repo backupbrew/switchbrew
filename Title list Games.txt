@@ -35,9 +35,9 @@
 |-
 | 010021C000B6A800 || v65536 (0.1.0.0) || || || The Binding of Isaac: Afterbirth+ || USA || Update
 |-
-| 0100225000FEE000 || v0 || || || Blaster Master Zero || JPN || Demo
+| 0100225000FEE000 || v0 || || || Blaster Master Zero || ALL || Demo
 |-
-| 0100225000FEE800 || v65536 (0.1.0.0), v131072 (0.2.0.0) || || || Blaster Master Zero || JPN || Update
+| 0100225000FEE800 || v65536 (0.1.0.0), v131072 (0.2.0.0) || || || Blaster Master Zero || ALL || Update
 |-
 | 01002580038DE000 || v0 || || || ACA NeoGeo Galaxy Fight: Universal Warriors || ALL || VC
 |-
