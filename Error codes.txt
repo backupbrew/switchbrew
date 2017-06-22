@@ -103,7 +103,8 @@ Normal error-codes displayed by the system also seem to use the same above forma
 | 651 || TC
 |-
 | 669 || ARP
-
+|-
+| 800 || [[Internet_Browser|General web-applet]]
 |-
 | 810 || [[Internet_Browser|Whitelisted-applet]]
 |-

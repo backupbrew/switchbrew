@@ -67,6 +67,7 @@ above format.
 | 206   | Capture                                                |
 | 651   | TC                                                     |
 | 669   | ARP                                                    |
+| 800   | [General web-applet](Internet%20Browser.md "wikilink") |
 | 810   | [Whitelisted-applet](Internet%20Browser.md "wikilink") |
 | 811   | [ShopN](Internet%20Browser.md "wikilink")              |
 
