@@ -106,6 +106,8 @@ Normal error-codes displayed by the system also seem to use the same above forma
 |-
 | 800 || [[Internet_Browser|General web-applet]]
 |-
+| 809 || [[Internet_Browser|WifiWebAuthApplet]]
+|-
 | 810 || [[Internet_Browser|Whitelisted-applet]]
 |-
 | 811 || [[Internet_Browser|ShopN]]

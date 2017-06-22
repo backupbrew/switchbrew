@@ -68,6 +68,7 @@ above format.
 | 651   | TC                                                     |
 | 669   | ARP                                                    |
 | 800   | [General web-applet](Internet%20Browser.md "wikilink") |
+| 809   | [WifiWebAuthApplet](Internet%20Browser.md "wikilink")  |
 | 810   | [Whitelisted-applet](Internet%20Browser.md "wikilink") |
 | 811   | [ShopN](Internet%20Browser.md "wikilink")              |
 
