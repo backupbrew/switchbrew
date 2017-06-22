@@ -13,7 +13,7 @@
 | 18   | MountSdCard                                                                            |
 | 19   | FormatSdCard                                                                           |
 | 21   | DeleteSaveData                                                                         |
-| 22   |                                                                                        |
+| 22   | CreateSaveData                                                                         |
 | 23   | CreateSystemSaveData                                                                   |
 | 24   | RegisterSaveDataAtomicDeletion                                                         |
 | 25   |                                                                                        |
@@ -21,16 +21,16 @@
 | 27   |                                                                                        |
 | 30   | OpenGameCardStorage?                                                                   |
 | 31   | MountGameCardPartition                                                                 |
-| 51   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
+| 51   | MountSaveData                                                                          |
 | 52   | MountSystemSaveData                                                                    |
 | 53   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 58   | ReadSaveDataFileSystemExtraData                                                        |
 | 59   |                                                                                        |
-| 60   | Returns an [\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink").                   |
+| 60   | OpenSaveDataInfoReader                                                                 |
 | 61   | OpenSaveDataIterator                                                                   |
 | 80   | OpenFileDirectly?                                                                      |
 | 100  | MountImageDirectory                                                                    |
-| 110  | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
+| 110  | MountContentStorage                                                                    |
 | 200  | OpenRomFsStorage                                                                       |
 | 202  | OpenDataStorageByDataId                                                                |
 | 203  | Returns an [\#IStorage](#IStorage "wikilink").                                         |

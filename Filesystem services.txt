@@ -25,7 +25,7 @@
 |-
 | 21 || DeleteSaveData
 |-
-| 22 ||
+| 22 || CreateSaveData
 |-
 | 23 || CreateSystemSaveData
 |-
@@ -41,7 +41,7 @@
 |-
 | 31 || MountGameCardPartition
 |-
-| 51 || Returns an [[#IFileSystem]].
+| 51 || MountSaveData
 |-
 | 52 || MountSystemSaveData
 |-
@@ -51,7 +51,7 @@
 |-
 | 59 || 
 |-
-| 60 || Returns an [[#ISaveDataInfoReader]].
+| 60 || OpenSaveDataInfoReader
 |-
 | 61 || OpenSaveDataIterator
 |-
@@ -59,7 +59,7 @@
 |-
 | 100 || MountImageDirectory
 |-
-| 110 || Returns an [[#IFileSystem]].
+| 110 || MountContentStorage
 |-
 | 200 || OpenRomFsStorage
 |-
