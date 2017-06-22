@@ -85,6 +85,8 @@
 | 0100000000000036 || [[2.0.0|v131132]] (0.2.0.60), [[2.1.0|v65596]] (0.1.0.60), [[2.3.0|v131092]] (0.2.0.20) || This TID is used by [[NS_Services|NS]], in the same function as TID 0100000000002071.
 |}
 
+The 5 built-in system modules are FS, LOADER, LR, PM, SM, and CRYPTO.
+
 == System Debug Applets ==
 {| class=wikitable
 ! Title-id || Versions || Description

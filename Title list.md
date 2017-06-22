@@ -44,6 +44,9 @@
 | 0100000000000034 | [v66564](2.0.0.md "wikilink") (0.1.4.4), [v131132](2.1.0.md "wikilink") (0.2.0.60)                                             |                                                                                                      |
 | 0100000000000036 | [v131132](2.0.0.md "wikilink") (0.2.0.60), [v65596](2.1.0.md "wikilink") (0.1.0.60), [v131092](2.3.0.md "wikilink") (0.2.0.20) | This TID is used by [NS](NS%20Services.md "wikilink"), in the same function as TID 0100000000002071. |
 
+The 5 built-in system modules are FS, LOADER, LR, PM, SM, and
+CRYPTO.
+
 ## System Debug Applets
 
 | Title-id         | Versions | Description                                                 |
