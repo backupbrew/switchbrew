@@ -65,6 +65,12 @@ video from a video-tag will assert even though it doesn't send any
 network request for it) However, in some cases with certain MP4s using
 vulns it will display an error dialog instead.
 
+With v3.0 WifiWebAuthApplet video-playback was disabled, it now throws
+the following error when attempting to play a video: "Support Code:
+2809-1212" "This feature is not available." On past system-versions it
+would just trigger a fatal-error(see above). Video-playback which
+already worked fine under whitelisted-applet, still works fine on v3.0.
+
 ## Trusted RootCAs
 
 While the rootCA(s) for Let's Encrypt isn't included, Let's Encrypt is

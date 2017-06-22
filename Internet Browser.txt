@@ -97,6 +97,8 @@ String from v2.0 in oss_wkc.nro: "libcurl/7.50.1".
 == Video Playback ==
 WifiWebAuthApplet does not fully support playing videos. It will [[Error_codes|assert]] with normal videos. The assert triggers before it even starts MP4 parsing?(For example, selecting a video from a video-tag will assert even though it doesn't send any network request for it) However, in some cases with certain MP4s using vulns it will display an error dialog instead.
 
+With v3.0 WifiWebAuthApplet video-playback was disabled, it now throws the following error when attempting to play a video: "Support Code: 2809-1212" "This feature is not available." On past system-versions it would just trigger a fatal-error(see above). Video-playback which already worked fine under whitelisted-applet, still works fine on v3.0.
+
 == Trusted RootCAs ==
 While the rootCA(s) for Let's Encrypt isn't included, Let's Encrypt is indirectly trusted via "Digital Signature Trust Co.". This seems to be only(?) the case for WifiWebAuthApplet, hence non-WifiWebAuthApplet seems to have a different set of trusted rootCAs.
 
