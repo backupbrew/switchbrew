@@ -35,7 +35,7 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 19 ||
 |-
-| 21 || [[#GetContentNcaPath]]
+| 21 || [[#GetTitlePatchContentNcaPath]]
 |-
 | 22 ||
 |-
@@ -234,12 +234,12 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 | 1802 ||
 |}
 
-== GetContentNcaPath ==
+== GetTitlePatchContentNcaPath ==
 Takes a 0x16-type output buffer, an u8 [[NCA|type]], and an u64 titleID.
 
 The input titleID is used with the application-title table like various other cmds, anything not in that table can't be used with this.
 
-Returns a string path for the specified type of content with this titleID. Returns an error when the specified type of content doesn't exist for this title. For example: "@SdCardContent:/<subdirectory under {[[SD_Filesystem|Contents]]}>/{path to .nca directory}". The string ends with ".nca". Hence, the path is the same as what's on SD under the Contents directory.
+Returns a string path for the specified type of patch content with this titleID. Returns an error when the specified type of content doesn't exist for this title. Starts with "@{SdCardContent,UserContent}://" and ends in ".nca".
 
 The output string is then used by the user-process with [[Filesystem_services|FS]] to mount the content.
 
