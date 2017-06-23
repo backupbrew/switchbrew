@@ -10,7 +10,7 @@ It starts with an header:
 |-
 | 0x0
 | 8
-| Title id?
+| Patch title id
 |-
 | 0x8
 | 4
@@ -31,6 +31,14 @@ It starts with an header:
 | 0x10
 | 2
 | Number of entries
+|-
+| 0x12
+| 14
+|
+|-
+| 0x20
+| 16
+| Original title-id
 |}
 
 Each entry is 0x38 bytes:
@@ -47,7 +55,7 @@ Each entry is 0x38 bytes:
 |-
 | 0x20
 | 16
-| NcaId
+| NcaId [same as first 16-bytes of hash]
 |-
 | 0x30
 | 6
