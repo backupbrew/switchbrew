@@ -374,7 +374,9 @@ Entry structure:
 This seems to be the equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs this].
 
 === ShimKind ===
-This is from strings and code in [[Internet_Browser|whitelisted]] web-applet.
+This is from strings and code in the [[Internet_Browser| web-applets]].
+
+This indicates the type of web-applet.
 
 {| class="wikitable" border="1"
 |-
@@ -382,16 +384,19 @@ This is from strings and code in [[Internet_Browser|whitelisted]] web-applet.
 !  Description
 |-
 | 2
-| LoginApplet (See above string)
+| LoginApplet
 |-
 | 4
-| ShareApplet (See above string)
+| ShareApplet
+|-
+| 5
+| WebApplet
 |-
 | 6
-| Wifi
+| WifiWebAuthApplet
 |-
 | 7
-| LobbyApplet (See above string)
+| LobbyApplet
 |}
 
 [[Category:Services]]

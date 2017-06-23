@@ -223,14 +223,17 @@ This seems to be the equivalent of
 
 ### ShimKind
 
-This is from strings and code in
-[whitelisted](Internet%20Browser.md "wikilink") web-applet.
+This is from strings and code in the [
+web-applets](Internet%20Browser.md "wikilink").
 
-| shimKind value | Description                    |
-| -------------- | ------------------------------ |
-| 2              | LoginApplet (See above string) |
-| 4              | ShareApplet (See above string) |
-| 6              | Wifi                           |
-| 7              | LobbyApplet (See above string) |
+This indicates the type of web-applet.
+
+| shimKind value | Description       |
+| -------------- | ----------------- |
+| 2              | LoginApplet       |
+| 4              | ShareApplet       |
+| 5              | WebApplet         |
+| 6              | WifiWebAuthApplet |
+| 7              | LobbyApplet       |
 
 [Category:Services](Category:Services "wikilink")
