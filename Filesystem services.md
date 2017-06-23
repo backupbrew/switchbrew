@@ -180,40 +180,40 @@ There are two main implementations of this interface:
 
 # IDeviceOperator
 
-| Cmd | Name                           |
-| --- | ------------------------------ |
-| 0   | IsSdCardInserted               |
-| 1   |                                |
-| 2   | GetSdCardCid                   |
-| 3   |                                |
-| 4   |                                |
-| 5   |                                |
-| 6   |                                |
-| 101 |                                |
-| 110 |                                |
-| 111 |                                |
-| 112 |                                |
-| 113 |                                |
-| 114 |                                |
-| 200 | IsGameCardInserted             |
-| 201 |                                |
-| 202 | GetGameCardHandle              |
-| 203 | GetGameCardUpdatePartitionInfo |
-| 204 |                                |
-| 205 | GetGameCardAttribute           |
-| 206 | GetGameCardDeviceCertificate   |
-| 207 |                                |
-| 208 |                                |
-| 209 |                                |
-| 210 |                                |
-| 211 |                                |
-| 212 |                                |
-| 213 |                                |
-| 214 |                                |
-| 215 |                                |
-| 216 |                                |
-| 300 |                                |
-| 301 |                                |
+| Cmd | Name                                                                           |
+| --- | ------------------------------------------------------------------------------ |
+| 0   | IsSdCardInserted                                                               |
+| 1   |                                                                                |
+| 2   | GetSdCardCid                                                                   |
+| 3   |                                                                                |
+| 4   |                                                                                |
+| 5   |                                                                                |
+| 6   |                                                                                |
+| 101 |                                                                                |
+| 110 |                                                                                |
+| 111 |                                                                                |
+| 112 |                                                                                |
+| 113 |                                                                                |
+| 114 |                                                                                |
+| 200 | IsGameCardInserted                                                             |
+| 201 |                                                                                |
+| 202 | GetGameCardHandle                                                              |
+| 203 | [\#GetGameCardUpdatePartitionInfo](#GetGameCardUpdatePartitionInfo "wikilink") |
+| 204 |                                                                                |
+| 205 | GetGameCardAttribute                                                           |
+| 206 | GetGameCardDeviceCertificate                                                   |
+| 207 |                                                                                |
+| 208 |                                                                                |
+| 209 |                                                                                |
+| 210 |                                                                                |
+| 211 |                                                                                |
+| 212 |                                                                                |
+| 213 |                                                                                |
+| 214 |                                                                                |
+| 215 |                                                                                |
+| 216 |                                                                                |
+| 300 |                                                                                |
+| 301 |                                                                                |
 
 ## GetGameCardUpdatePartitionInfo
 
