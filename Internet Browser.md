@@ -148,6 +148,14 @@ WifiWebAuthApplet, contains the following:
 The initial page loaded by this applet is specified by the title which
 launched this applet. Plain HTTP is allowed.
 
+The only difference between the content under "<data:/>"
+
+The files under "<data:/>" are identical to WifiWebAuthApplet except
+that the content of each file differs.
+
+This applet uses a whitelist, but it doesn't come from "<data:/>" like
+whitelisted-applet.
+
 ## Service Access
 
 All browser applets have access to the following services: acc:u1,
