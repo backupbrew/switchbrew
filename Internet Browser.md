@@ -143,6 +143,11 @@ WifiWebAuthApplet, contains the following:
 ` ^https://([0-9A-Za-z\-]+\.)*eshop\.nintendo\.net($|/)`  
 ` ^https?://([0-9A-Za-z\-]+\.)*nintendo\.(co\.jp|com|de)($|/)`
 
+## WebApplet
+
+The initial page loaded by this applet is specified by the title which
+launched this applet. Plain HTTP is allowed.
+
 ## Service Access
 
 All browser applets have access to the following services: acc:u1,
