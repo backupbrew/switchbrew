@@ -30,7 +30,7 @@
 | 61   | OpenSaveDataIterator                                                                   |
 | 80   | OpenFileDirectly?                                                                      |
 | 100  | MountImageDirectory                                                                    |
-| 110  | MountContentStorage                                                                    |
+| 110  | [\#MountContentStorage](#MountContentStorage "wikilink")                               |
 | 200  | OpenRomFsStorage                                                                       |
 | 202  | OpenDataStorageByDataId                                                                |
 | 203  | Returns an [\#IStorage](#IStorage "wikilink").                                         |
@@ -97,6 +97,13 @@ Takes an unknown u32 that must be 0 otherwise 0x2EE202.
 
 Returns an [\#IStorage](#IStorage "wikilink") that gives raw access to
 nand sectors containing the BCT.
+
+## MountContentStorage
+
+Takes an unknown u32 that can be 0 or 1. If it's 2 then 0xfF202,
+otherwise 0x2EE202.
+
+Returns an [\#IFileSystem](#IFileSystem "wikilink") with NCA files.
 
 ## OpenDeviceOperator
 

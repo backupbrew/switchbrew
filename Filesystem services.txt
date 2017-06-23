@@ -59,7 +59,7 @@
 |-
 | 100 || MountImageDirectory
 |-
-| 110 || MountContentStorage
+| 110 || [[#MountContentStorage]]
 |-
 | 200 || OpenRomFsStorage
 |-
@@ -154,6 +154,11 @@ Returns an [[#IFileSystem]].
 Takes an unknown u32 that must be 0 otherwise 0x2EE202.
 
 Returns an [[#IStorage]] that gives raw access to nand sectors containing the BCT.
+
+== MountContentStorage ==
+Takes an unknown u32 that can be 0 or 1. If it's 2 then 0xfF202, otherwise 0x2EE202.
+
+Returns an [[#IFileSystem]] with NCA files.
 
 == OpenDeviceOperator ==
 This command returns a session to a port implementing the [[#IDeviceOperator]] interface.
