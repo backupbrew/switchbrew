@@ -18,9 +18,6 @@ following formatter:
 `Description`. Bits \>=22 from the error-code are unused when displaying
 fatal-errors, since the Description ends with bit21.
 
-Normal error-codes displayed by the system also seem to use the same
-above format.
-
 # Modules
 
 | Value | Name                                                   |
@@ -154,3 +151,12 @@ applets.
 | 2168-0001 | Userland ARM prefetch-abort due to PC set to non-executable region                                                                                                                                 |
 | 2168-0002 | Userland ARM data abort. Also caused by abnormal process termination via [svcExitProcess](SVC.md "wikilink"). Note: directly jumping to nnMain()-retaddr from non-main-thread has the same result. |
 | 2168-0003 | Userland PC address not aligned to 4 bytes                                                                                                                                                         |
+
+# Support Errors
+
+| Error | Module                     | Description | Notes               |
+| ----- | -------------------------- | ----------- | ------------------- |
+|       | {web-applets listed above} | 2750        | MP4 parsing failed. |
+
+Normal error-codes displayed by the system also use the same format as
+fatal-errors.

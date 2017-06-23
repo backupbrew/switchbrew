@@ -14,8 +14,6 @@ When a fatal-error is received the error code is outputted using the following f
 
 .. where the first code is <code>2000 + Module</code>, and the other being <code>Description</code>. Bits >=22 from the error-code are unused when displaying fatal-errors, since the Description ends with bit21.
 
-Normal error-codes displayed by the system also seem to use the same above format.
-
 = Modules =
 {| class=wikitable
 ! Value || Name
@@ -269,3 +267,14 @@ Normal error-codes displayed by the system also seem to use the same above forma
 | 2168-0003
 | Userland PC address not aligned to 4 bytes
 |}
+
+= Support Errors =
+{| class=wikitable
+! Error !! Module || Description || Notes
+|-
+| 
+| {web-applets listed above}
+| 2750
+| MP4 parsing failed.
+|}
+Normal error-codes displayed by the system also use the same format as fatal-errors.
