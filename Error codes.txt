@@ -225,7 +225,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x20F || 1 || Pid not found
 |-
-| 0x410 || 2 || Can be returned by NS when the input titleID wasn't found in a table.
+| 0x410 || 2 || Title-id not found
 |-
 | 0x1F610 || 251 || Unexpected StorageId
 |-

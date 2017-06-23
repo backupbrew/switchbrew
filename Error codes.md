@@ -130,7 +130,7 @@ applets.
 | 0x25A0B  | 301         | Remote process is dead                                                                                                                                                               |
 | 0x3D60B  | 491         | IPC Query 1 failed.                                                                                                                                                                  |
 | 0x20F    | 1           | Pid not found                                                                                                                                                                        |
-| 0x410    | 2           | Can be returned by NS when the input titleID wasn't found in a table.                                                                                                                |
+| 0x410    | 2           | Title-id not found                                                                                                                                                                   |
 | 0x1F610  | 251         | Unexpected StorageId                                                                                                                                                                 |
 | 0x615    | 3           | Max sessions                                                                                                                                                                         |
 | 0xC15    | 6           | Invalid name (all zeroes)                                                                                                                                                            |
