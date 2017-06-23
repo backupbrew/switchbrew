@@ -355,6 +355,9 @@ Entry structure:
 | 0x11
 | Swkbd (on-screen keyboard)
 |-
+| 0x13
+| [[Internet_Browser|WebApplet]] From WebApplet string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletWeb".
+|-
 | 0x14
 | Ec ([[Internet_Browser|ShopN]]) From ShopN string: "aInfo.appletId == ::nn::applet::AppletId_LibraryAppletShop".
 |-

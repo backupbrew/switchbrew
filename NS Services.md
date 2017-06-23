@@ -212,6 +212,7 @@ structure:
 | 0x0F | NetworkSelect                                                                                                                                                        |
 | 0x10 | PlayerSelect                                                                                                                                                         |
 | 0x11 | Swkbd (on-screen keyboard)                                                                                                                                           |
+| 0x13 | [WebApplet](Internet%20Browser.md "wikilink") From WebApplet string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletWeb".                                   |
 | 0x14 | Ec ([ShopN](Internet%20Browser.md "wikilink")) From ShopN string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletShop".                                     |
 | 0x15 | Album                                                                                                                                                                |
 | 0x18 | [Whitelisted](Internet%20Browser.md "wikilink") web-applet (From whitelisted web-applet string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletLoginShare") |
