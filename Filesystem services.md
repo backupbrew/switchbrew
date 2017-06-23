@@ -4,8 +4,8 @@
 | ---- | -------------------------------------------------------------------------------------- |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |
 | 2    | MountRomFs                                                                             |
-| 7    | MountContent7                                                                          |
-| 8    | MountContent                                                                           |
+| 7    | [\#MountContent7](#MountContent7 "wikilink")                                           |
+| 8    | [\#MountContent](#MountContent "wikilink")                                             |
 | 11   | OpenBisFileSystem                                                                      |
 | 12   | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                     |
 | 13   | InvalidateBisCache                                                                     |
@@ -73,7 +73,7 @@
 
 ## MountContent7
 
-Takes an input u32([NCA](NCA.md "wikilink")-type) and an u64 titleID.
+Takes an input u32 ([NCA](NCA.md "wikilink")-type) and an u64 title-id.
 Web-applet loads the u32 from u32\_table\[inparam\].
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
@@ -83,8 +83,9 @@ Note: web-applet strings refer to both this cmd and the below
 
 ## MountContent
 
-Takes a type-0x19 input buffer, an input u32(same as MountContent7), and
-an input u64 titleID.
+Takes a type-0x19 input buffer, an in32, and an input title-id.
+
+The in32 must be 5 if the NCA type is 0 (control).
 
 The input buffer is the output string path from nsam
 [GetContentNcaPath](NS%20Services#GetContentNcaPath.md##GetContentNcaPath "wikilink").
