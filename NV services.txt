@@ -809,30 +809,6 @@ Not accessible, but there is code to invoke them.
 = nvmemp =
 NVIDIA memory profiler (this service is not available on retail units).
 
-= mm:u =
-NVIDIA multimedia (NvMM) platform service.
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || ?
-|-
-| 1 || ?
-|-
-| 2 || ?
-|-
-| 3 || ?
-|-
-| 4 || module_init_clk
-|-
-| 5 || module_deinit_clk
-|-
-| 6 || module_set_clk_rate
-|-
-| 7 || module_get_clk_rate
-|}
-
 = nvdrvdbg =
 {| class="wikitable" border="1"
 |-
