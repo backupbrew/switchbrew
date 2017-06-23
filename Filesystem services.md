@@ -100,8 +100,8 @@ nand sectors containing the BCT.
 
 ## MountContentStorage
 
-Takes an unknown u32 that can be 0 or 1. If it's 2 then 0xFF202,
-otherwise 0x2EE202.
+Takes a [\#ContentStorageId](#ContentStorageId "wikilink"). Invalid
+values return 0x2EE202.
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink") with NCA files.
 
@@ -241,5 +241,13 @@ Returns a titleID and the title-version for it.
 | 3     | NandSystem |
 | 4     | NandUser   |
 | 5     | SdCard     |
+
+# ContentStorageId
+
+| Value | Name       |
+| ----- | ---------- |
+| 0     | NandSystem |
+| 1     | NandUser   |
+| 2     | SdCard     |
 
 [Category:Services](Category:Services "wikilink")
