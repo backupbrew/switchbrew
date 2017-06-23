@@ -169,6 +169,16 @@ This command returns a session to a port implementing the [[#IEventNotifier]] in
 == OpenGameCardDetectionEventNotifier ==
 This command returns a session to a port implementing the [[#IEventNotifier]] interface.
 
+= fsp-ldr =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || MountCode
+|-
+| 1 ||
+|}
+
 = IStorage =
 This is the interface for a raw device, usually a block device.
 

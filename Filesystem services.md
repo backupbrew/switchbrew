@@ -120,6 +120,13 @@ This command returns a session to a port implementing the
 This command returns a session to a port implementing the
 [\#IEventNotifier](#IEventNotifier "wikilink") interface.
 
+# fsp-ldr
+
+| Cmd | Name      |
+| --- | --------- |
+| 0   | MountCode |
+| 1   |           |
+
 # IStorage
 
 This is the interface for a raw device, usually a block
