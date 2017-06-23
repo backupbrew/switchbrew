@@ -7,7 +7,7 @@
 | 7    | MountContent7                                                                          |
 | 8    | MountContent                                                                           |
 | 11   | OpenBisFileSystem                                                                      |
-| 12   | OpenBisPartition                                                                       |
+| 12   | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                     |
 | 13   | InvalidateBisCache                                                                     |
 | 17   | OpenHostFileSystemImpl                                                                 |
 | 18   | MountSdCard                                                                            |
@@ -90,6 +90,13 @@ The input buffer is the output string path from nsam
 [GetContentNcaPath](NS%20Services#GetContentNcaPath.md##GetContentNcaPath "wikilink").
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
+
+## OpenBisPartition
+
+Takes an unknown u32 that must be 0 otherwise 0x2EE202.
+
+Returns an [\#IStorage](#IStorage "wikilink") that gives raw access to
+nand sectors containing the BCT.
 
 ## OpenDeviceOperator
 

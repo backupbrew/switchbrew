@@ -13,7 +13,7 @@
 |-
 | 11 || OpenBisFileSystem
 |-
-| 12 || OpenBisPartition
+| 12 || [[#OpenBisPartition]]
 |-
 | 13 || InvalidateBisCache
 |-
@@ -149,6 +149,11 @@ Takes a type-0x19 input buffer, an input u32(same as MountContent7), and an inpu
 The input buffer is the output string path from nsam [[NS_Services#GetContentNcaPath|GetContentNcaPath]].
 
 Returns an [[#IFileSystem]].
+
+== OpenBisPartition ==
+Takes an unknown u32 that must be 0 otherwise 0x2EE202.
+
+Returns an [[#IStorage]] that gives raw access to nand sectors containing the BCT.
 
 == OpenDeviceOperator ==
 This command returns a session to a port implementing the [[#IDeviceOperator]] interface.
