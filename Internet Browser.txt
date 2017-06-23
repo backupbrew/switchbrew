@@ -74,7 +74,7 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 | General web-applet for use by applications(online manuals, ...).
 | Displays an error dialog without an option to ignore it.
 | Yes
-| ?
+| 010000000000100A
 | 
 |-
 | ?
