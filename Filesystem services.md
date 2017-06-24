@@ -94,10 +94,9 @@ The input buffer is the output string path from nsam
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 May return errors when attempting to access NCA-paths for an
-update-title with a gamecard, when the gamecard isn't inserted. Returns
-error 0x7D402 with in32=2 when used with an update-title NCA with
-NCA-type1. Other in32 values with this NCA-type are unusable, even for
-normal titles.
+update-title with a gamecard, when the gamecard isn't inserted. May
+return error 0x7D402 in some cases with update-titles. Non-val2 in32
+values with NCA-type1 are unusable, even for normal titles.
 
 ## OpenBisPartition
 
