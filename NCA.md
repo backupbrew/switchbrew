@@ -1,3 +1,7 @@
+For the content of the NCA FS which can be
+[mounted](Filesystem%20services.md "wikilink"), see
+[here](NCA%20Content%20FS.md "wikilink").
+
 # Metadata file
 
 This is the file that ends in `".cnmt{.nca}"` or `"meta0.ncd"`.
