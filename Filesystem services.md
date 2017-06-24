@@ -198,7 +198,7 @@ There are two main implementations of this interface:
 | 5   |                                                                                |
 | 6   |                                                                                |
 | 101 |                                                                                |
-| 110 |                                                                                |
+| 110 | EraseMmc                                                                       |
 | 111 |                                                                                |
 | 112 |                                                                                |
 | 113 |                                                                                |
