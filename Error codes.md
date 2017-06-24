@@ -105,6 +105,7 @@ applets.
 | 0x196002 | 3248        | Out of memory                                                                                                                                                                        |
 | 0x196202 | 3249        | Out of memory                                                                                                                                                                        |
 | 0x1A4A02 | 3365        | Out of memory                                                                                                                                                                        |
+| 0x235E02 | 4527        | NCA-path used with the wrong titleID.                                                                                                                                                |
 | 0x250E02 | 4743        | [Corrupted](NAX0.md "wikilink") NAX0 header.                                                                                                                                         |
 | 0x251002 | 4744        | Invalid [NAX0](NAX0.md "wikilink") magicnum.                                                                                                                                         |
 | 0x2EE202 | 6001        | Unknown media-id                                                                                                                                                                     |
