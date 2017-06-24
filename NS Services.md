@@ -134,7 +134,7 @@ not installed. Returns an error when the specified type of content
 doesn't exist for this title. Starts with
 "@{SdCardContent,UserContent}://" and ends in ".nca".
 
-For gamecard content, the output path is: "@GcS00000002:/<NcaId>.nca".
+For gamecard content, the output path is: "@GcSXXXXXXXX:/<NcaId>.nca".
 NCA-type0 with gamecard returns 0 with an empty output string.
 
 The output string is then used by the user-process with
