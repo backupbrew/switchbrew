@@ -1,7 +1,7 @@
 = Metadata file =
 This is the file that ends in <code>".cnmt.nca"</code> or <code>"meta0.ncd"</code>.
 
-It starts with an header:
+It starts with a header:
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -10,7 +10,7 @@ It starts with an header:
 |-
 | 0x0
 | 8
-| Patch title id
+| Title ID
 |-
 | 0x8
 | 4
@@ -35,11 +35,59 @@ It starts with an header:
 | 0x12
 | 14
 |
+|}
+
+An optional header can follow, depending on the title type.
+
+== Application header ==
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
 |-
 | 0x20
-| 16
-| Original title-id
+| 8
+| Patch title ID
+|-
+| 0x28
+| 8
+|
 |}
+
+== Patch header ==
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x20
+| 8
+| Original title ID
+|-
+| 0x28
+| 8
+|
+|}
+
+== Add-on content header ==
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x20
+| 8
+| Application title ID
+|-
+| 0x28
+| 8
+|
+|}
+
+== Content records ==
 
 Each entry is 0x38 bytes:
 
