@@ -129,9 +129,13 @@ The input titleID is used with the application-title table like various
 other cmds, anything not in that table can't be used with this.
 
 Returns a string path for the specified type of patch content with this
-titleID. Returns an error when the specified type of content doesn't
-exist for this title. Starts with "@{SdCardContent,UserContent}://" and
-ends in ".nca".
+titleID, otherwise returns regular-application paths when update-title
+not installed. Returns an error when the specified type of content
+doesn't exist for this title. Starts with
+"@{SdCardContent,UserContent}://" and ends in ".nca".
+
+For gamecard content, the output path is: "@GcS00000002:/<NcaId>.nca".
+NCA-type0 with gamecard returns 0 with an empty output string.
 
 The output string is then used by the user-process with
 [FS](Filesystem%20services.md "wikilink") to mount the content.
