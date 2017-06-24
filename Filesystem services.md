@@ -75,6 +75,8 @@
 
 Takes an input u32 ([NCA](NCA.md "wikilink")-type) and an u64 title-id.
 Web-applet loads the u32 from u32\_table\[inparam\].
+[WebApplet](Internet%20Browser.md "wikilink") is only allowed to use
+NCA-type4 with this?
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 

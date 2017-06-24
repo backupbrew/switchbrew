@@ -137,7 +137,7 @@
 |}
 
 == MountContent7 ==
-Takes an input u32 ([[NCA]]-type) and an u64 title-id. Web-applet loads the u32 from u32_table[inparam].
+Takes an input u32 ([[NCA]]-type) and an u64 title-id. Web-applet loads the u32 from u32_table[inparam]. [[Internet_Browser|WebApplet]] is only allowed to use NCA-type4 with this?
 
 Returns an [[#IFileSystem]].
 
