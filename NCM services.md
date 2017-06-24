@@ -115,7 +115,8 @@ Takes a [\#NcaID](#NcaID "wikilink") and returns the following
 0x10-sized entry.
 
 With some NcaIDs this may return 0 with an all-zero output entry. This
-seems to be the case for most/all (?) NandSystem NcaIds?
+seems to be the case for most/all (?) NandSystem NcaIds? This seems to
+be only usable with NcaIds which have [type](NCA.md "wikilink") 1 or 4.
 
 | Offset | Size | Description            |
 | ------ | ---- | ---------------------- |

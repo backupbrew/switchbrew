@@ -119,7 +119,7 @@ See GetEntrySize for the total size readable with this.
 === GetNcaTitleInfo ===
 Takes a [[#NcaID]] and returns the following 0x10-sized entry.
 
-With some NcaIDs this may return 0 with an all-zero output entry. This seems to be the case for most/all (?) NandSystem NcaIds?
+With some NcaIDs this may return 0 with an all-zero output entry. This seems to be the case for most/all (?) NandSystem NcaIds? This seems to be only usable with NcaIds which have [[NCA|type]] 1 or 4.
 
 {| class="wikitable" border="1"
 |-
