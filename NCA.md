@@ -20,6 +20,9 @@ An optional header can follow, depending on the title type.
 At the end of the file following the entries is a 0x20-byte block,
 presumably a hash.
 
+With update-format, there's additional data after the end of the entries
+specified in the header and before the ending hash.
+
 ## Application header
 
 | Offset | Size | Description    |
