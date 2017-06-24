@@ -156,7 +156,7 @@ that the content of each file differs.
 This applet uses a whitelist, but it doesn't come from "<data:/>" like
 whitelisted-applet.
 
-## Service Access
+## Service/FS Access
 
 All browser applets have access to the following services: acc:u1,
 appletAE, audin:u, audren:u, audout:u, bsd:u, fatal:u, fsp-srv, hid,
@@ -166,6 +166,13 @@ mm:u, pl:u, prepo:s, set, set:sys, sfdnsres, ssl, time:u, vi:s
 LoginApplet/ShareApplet/LobbyApplet have access to the above + caps:a.
 
 ShopN has access to the above + nim:shp.
+
+Unlike the applets listed above, WebApplet has access to the
+[FS](Filesystem%20services.md "wikilink") MountContent\* commands. This
+is so that it can load the whitelist from
+"/accessible-urls/accessible-urls.txt" in the mounted FS, from
+[NCA](NCA.md "wikilink")-type4 where titleID={application which launched
+this applet}.
 
 ## Heap
 
