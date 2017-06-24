@@ -107,7 +107,7 @@ Each entry is 0x38 bytes:
 |-
 | 0x30
 | 6
-| Size
+| Size, same as the output from [[Content_Manager_services#GetEntrySize]].
 |-
 | 0x36
 | 1
