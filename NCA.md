@@ -1,6 +1,6 @@
 # Metadata file
 
-This is the file that ends in `".cnmt.nca"` or `"meta0.ncd"`.
+This is the file that ends in `".cnmt{.nca}"` or `"meta0.ncd"`.
 
 It starts with a
 header:
@@ -11,7 +11,7 @@ header:
 | 0x8    | 4    |                                                                                                 |
 | 0xC    | 1    | Type (see [Title Types](Content%20Manager%20services#Title%20Types.md##Title_Types "wikilink")) |
 | 0xD    | 1    |                                                                                                 |
-| 0xE    | 2    | Offset to table                                                                                 |
+| 0xE    | 2    | Offset to table relative to the end of this 0x20-byte header.                                   |
 | 0x10   | 2    | Number of entries                                                                               |
 | 0x12   | 14   |                                                                                                 |
 

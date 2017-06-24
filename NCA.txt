@@ -1,5 +1,5 @@
 = Metadata file =
-This is the file that ends in <code>".cnmt.nca"</code> or <code>"meta0.ncd"</code>.
+This is the file that ends in <code>".cnmt{.nca}"</code> or <code>"meta0.ncd"</code>.
 
 It starts with a header:
 {| class="wikitable" border="1"
@@ -26,7 +26,7 @@ It starts with a header:
 |-
 | 0xE
 | 2
-| Offset to table
+| Offset to table relative to the end of this 0x20-byte header.
 |-
 | 0x10
 | 2
