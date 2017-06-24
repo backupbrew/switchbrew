@@ -74,9 +74,8 @@
 ## MountContent7
 
 Takes an input u32 ([NCA](NCA.md "wikilink")-type) and an u64 title-id.
-Web-applet loads the u32 from u32\_table\[inparam\].
-[WebApplet](Internet%20Browser.md "wikilink") is only allowed to use
-NCA-type4 with this?
+Web-applet loads the u32 from u32\_table\[inparam\]. Only type4 is
+usable with this?
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
