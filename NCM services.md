@@ -46,19 +46,19 @@ input.
 | 22  | GetFreeSpace                                           |                                                                  |
 | 23  | GetTotalSpace                                          |                                                                  |
 
-## GetRootEntry
+### GetRootEntry
 
 Returns an entry of 16 completely random-looking bytes. It is not
 possible to read this entry.
 
 Changes on reboot?
 
-## GetNumberOfEntries
+### GetNumberOfEntries
 
 Writes the total number of entries which can be read by GetEntries, to
 cmdreply <SFCO_offset>+0x10.
 
-## GetEntries
+### GetEntries
 
 Takes an output buffer, u32 offset and gets all entries starting at that
 offset. Returns number of entries read.
@@ -69,14 +69,14 @@ The total read entries is exactly the same as the number of "<hex>.nca"
 directories in the storage FS(or at least under the "registered"
 directory?).
 
-## GetEntrySize
+### GetEntrySize
 
 Takes a [\#NcaID](#NcaID "wikilink") as input.
 
 Returns the total size readable by ReadEntryRaw. This is the same as the
 size-field in the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
 
-## ReadEntryRaw
+### ReadEntryRaw
 
 Takes an output buffer, a [\#NcaID](#NcaID "wikilink") as input, and a
 u64 file offset.
@@ -109,7 +109,7 @@ changing data in one block doesn't affect other blocks.
 
 See GetEntrySize for the total size readable with this.
 
-## GetNcaTitleInfo
+### GetNcaTitleInfo
 
 Takes a [\#NcaID](#NcaID "wikilink") and returns the following
 0x10-sized entry.

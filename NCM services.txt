@@ -82,15 +82,15 @@ All of the above cmds takes a u8 as input.
 | 23 || GetTotalSpace ||
 |}
 
-== GetRootEntry ==
+=== GetRootEntry ===
 Returns an entry of 16 completely random-looking bytes. It is not possible to read this entry.
 
 Changes on reboot?
 
-== GetNumberOfEntries ==
+=== GetNumberOfEntries ===
 Writes the total number of entries which can be read by GetEntries, to cmdreply <SFCO_offset>+0x10.
 
-== GetEntries ==
+=== GetEntries ===
 Takes an output buffer, u32 offset and gets all entries starting at that offset.
 Returns number of entries read.
 
@@ -98,12 +98,12 @@ Each entry is a [[#NcaID]].
 
 The total read entries is exactly the same as the number of "<hex>.nca" directories in the storage FS(or at least under the "registered" directory?).
 
-== GetEntrySize ==
+=== GetEntrySize ===
 Takes a [[#NcaID]] as input.
 
 Returns the total size readable by ReadEntryRaw. This is the same as the size-field in the [[NAX0]] "<NcaID>.nca/00" file.
 
-== ReadEntryRaw ==
+=== ReadEntryRaw ===
 Takes an output buffer, a [[#NcaID]] as input, and a u64 file offset.
 
 Returns encrypted looking data from the content in the [[NAX0]]. Doesn't match the encrypted raw data in the [[NAX0]] "<NcaID>.nca/00" file. Seems to be at least one crypto layer below the initial NAX0 layer, since the data doesn't change after NAX0 recreation.
@@ -116,7 +116,7 @@ This implies that that an AES mode is being used which isn't CTR, where changing
 
 See GetEntrySize for the total size readable with this.
 
-== GetNcaTitleInfo ==
+=== GetNcaTitleInfo ===
 Takes a [[#NcaID]] and returns the following 0x10-sized entry.
 
 With some NcaIDs this may return 0 with an all-zero output entry. This seems to be the case for most/all (?) NandSystem NcaIds?
