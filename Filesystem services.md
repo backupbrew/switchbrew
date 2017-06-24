@@ -93,6 +93,9 @@ The input buffer is the output string path from nsam
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
+May return errors when attempting to access NCA-paths for an
+update-title with a gamecard, when the gamecard isn't inserted.
+
 ## OpenBisPartition
 
 Takes an unknown u32 that must be 0 otherwise 0x2EE202.
