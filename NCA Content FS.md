@@ -14,6 +14,14 @@ Only contains the [.cnmt](NCA.md "wikilink") file.
 
 ## FS-type2
 
+Contains the logo gfx displayed when an application is booted. Doesn't
+include the "Licensed" gfx.
+
+  - "/NintendoLogo.png" Nintendo logo displayed in the top-left of the
+    screen.
+  - "/StartupMovie.gif" Nintendo Switch animation displayed in the
+    bottom-right of the screen.
+
 # NCA-type2
 
 Unknown. Presumably what the nandsys 8XX titles use.
