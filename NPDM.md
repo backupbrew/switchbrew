@@ -49,9 +49,13 @@ Switch version of 3DS ACI(Access Control Info)?
 # Service Access Control
 
 This is a list of [service](Services%20API.md "wikilink")-name strings
-which the title has access to, with the following structure: +0
-control\_byte, +1 = {service-name without nul-terminator}. Bitmask 0xF
-in control\_byte is the length of the service-name. Bitmask 0x80 is set
-for services which the title can register, while it's clear for services
-used with
-[Services\_API\#GetService](Services%20API#GetService.md##GetService "wikilink").
+which the title has access to, with the following structure:
+
+` +0: control_byte`  
+` +1: {service-name without nul-terminator}`
+
+Bitmask 0x0F in control\_byte is the length of the service-name.
+
+Bitmask 0x80 in control\_byte means service is allowed to be registered.
+
+The service string can contain a wildcard `*` character.

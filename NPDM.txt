@@ -119,4 +119,12 @@ Switch version of AccessDesc?
 Switch version of 3DS ACI(Access Control Info)?
 
 =Service Access Control=
-This is a list of [[Services_API|service]]-name strings which the title has access to, with the following structure: +0 control_byte, +1 = {service-name without nul-terminator}. Bitmask 0xF in control_byte is the length of the service-name. Bitmask 0x80 is set for services which the title can register, while it's clear for services used with [[Services_API#GetService]].
+This is a list of [[Services_API|service]]-name strings which the title has access to, with the following structure:
+  +0: control_byte
+  +1: {service-name without nul-terminator}
+
+Bitmask 0x0F in control_byte is the length of the service-name.
+
+Bitmask 0x80 in control_byte means service is allowed to be registered.
+
+The service string can contain a wildcard <code>*</code> character.
