@@ -4,5 +4,5 @@ This FS contains the following:
 * "/[[NPDM|main.npdm]]"
 
 Some titles may also contain:
-* "/rtld"
-* "/sdk"
+* "/[[NSO|rtld]]"
+* "/[[NSO|sdk]]"

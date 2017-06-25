@@ -5,5 +5,5 @@ This FS contains the following:
 
 Some titles may also contain:
 
-  - "/rtld"
-  - "/sdk"
+  - "/[rtld](NSO.md "wikilink")"
+  - "/[sdk](NSO.md "wikilink")"
