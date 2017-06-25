@@ -1,24 +1,24 @@
-This is the Switch equivalent of 3DS exheader. This is the 0x408-byte
-file with extension ".npdm" in {Switch
-ExeFS}.
+This is the Switch equivalent of 3DS exheader. This is the file with
+extension ".npdm" in {Switch ExeFS}. The size of this file
+varies.
 
-| Offset | Size  | Description                                                                                    |
-| ------ | ----- | ---------------------------------------------------------------------------------------------- |
-| 0x0    | 0x80  | META                                                                                           |
-| 0x80   | 0x200 | RSA-2048 signature, followed a RSA-2048 modulus for {Switch version of NCCH header}?(Like 3DS) |
-| 0x280  | 0xD0  | ACID                                                                                           |
-| 0x350  | 0xB8  | ACI0                                                                                           |
+| Offset     | Size       | Description                                                                                    |
+| ---------- | ---------- | ---------------------------------------------------------------------------------------------- |
+| 0x0        | 0x80       | META                                                                                           |
+| 0x80       | 0x200      | RSA-2048 signature, followed a RSA-2048 modulus for {Switch version of NCCH header}?(Like 3DS) |
+| 0x280      | <Varies>   | ACID                                                                                           |
+| <See META> | <See META> | ACI0                                                                                           |
 
 # META
 
-| Offset | Size | Description                                      |
-| ------ | ---- | ------------------------------------------------ |
-| 0x0    | 0x4  | Magicnum "META".                                 |
-| 0x20   | ?    | Name string                                      |
-| 0x70   | 0x4  | Absolute offset for ACI0.                        |
-| 0x74   | 0x4  | Size of ACI0.                                    |
-| 0x78   | 0x4  | Absolute offset of the RSA signature?            |
-| 0x7C   | 0x4  | Size used with the above offset?(0x2C8 normally) |
+| Offset | Size | Description                                                             |
+| ------ | ---- | ----------------------------------------------------------------------- |
+| 0x0    | 0x4  | Magicnum "META".                                                        |
+| 0x20   | ?    | Name string                                                             |
+| 0x70   | 0x4  | Absolute offset for ACI0.                                               |
+| 0x74   | 0x4  | Size of ACI0.                                                           |
+| 0x78   | 0x4  | Absolute offset of the RSA signature.                                   |
+| 0x7C   | 0x4  | Size used with the above offset. Offset+size is normally ACI0\_start-8. |
 
 Switch version of 3DS "System Control Info"?
 
@@ -29,7 +29,7 @@ Switch version of 3DS "System Control Info"?
 | 0x0    | 0x4  | Magicnum "ACID". |
 | 0x4    | 0xCC | ?                |
 
-Switch version of 3DS ACI(Access Control Info)?
+Switch version of AccessDesc?
 
 # ACI0
 
@@ -38,4 +38,4 @@ Switch version of 3DS ACI(Access Control Info)?
 | 0x0    | 0x4  | Magicnum "ACI0". |
 | 0x4    | 0xB4 | ?                |
 
-Switch version of AccessDesc?
+Switch version of 3DS ACI(Access Control Info)?
