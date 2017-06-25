@@ -11,10 +11,14 @@ ExeFS}.
 
 # META
 
-| Offset | Size | Description      |
-| ------ | ---- | ---------------- |
-| 0x0    | 0x4  | Magicnum "META". |
-| 0x4    | 0x7C | ?                |
+| Offset | Size | Description                                      |
+| ------ | ---- | ------------------------------------------------ |
+| 0x0    | 0x4  | Magicnum "META".                                 |
+| 0x20   | ?    | Name string                                      |
+| 0x70   | 0x4  | Absolute offset for ACI0.                        |
+| 0x74   | 0x4  | Size of ACI0.                                    |
+| 0x78   | 0x4  | Absolute offset of the RSA signature?            |
+| 0x7C   | 0x4  | Size used with the above offset?(0x2C8 normally) |
 
 Switch version of 3DS "System Control Info"?
 
