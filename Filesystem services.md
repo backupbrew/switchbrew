@@ -100,7 +100,9 @@ values with NCA-type1 are unusable, even for normal titles.
 
 ## OpenBisPartition
 
-Takes an unknown u32 that must be 0 otherwise 0x2EE202.
+Takes a u32 partition ID, returns 0x2EE202 for partitions which do not
+exist, 0x320002 for partitions which cannot be opened and a valid
+[\#IStorage](#IStorage "wikilink") handle otherwise.
 
 Returns an [\#IStorage](#IStorage "wikilink") that gives raw access to
 nand sectors containing the BCT.
