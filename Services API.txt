@@ -106,7 +106,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | [[HID services]]
 |
 |-
-| appletAE, appletOE, omm, spsm
+| appletAE, appletOE, idle:sys, omm, spsm
 | Applet services, [[OMM services]]
 |
 |-
