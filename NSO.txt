@@ -25,7 +25,7 @@ It starts with a header:
 |-
 | 0x10
 | 4
-| 
+| .text compression start offset? (0x101)
 |-
 | 0x14
 | 4
@@ -41,7 +41,7 @@ It starts with a header:
 |-
 | 0x20
 | 4
-| .text compressed size?
+| .rodata compression start offset?
 |-
 | 0x24
 | 4
@@ -57,7 +57,7 @@ It starts with a header:
 |-
 | 0x30
 | 4
-| .rodata compressed size?
+| .data compression start offset?
 |-
 | 0x34
 | 4
@@ -71,9 +71,21 @@ It starts with a header:
 | 4
 | .bss size
 |-
-| 0xA0
+| 0x40
+| 0x14
+| SHA1?
+|-
+| 0x54
+| 0xC
+| Padding
+|-
 | 0x60
-| 3 Hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data.
+| 4
+| Unknown compression offset?
+|-
+| 0xA0
+| 0x20
+| SHA256 over the decompressed sections using the above byte-sizes: .text, .rodata, and .data.
 |-
 | 0x100
 |

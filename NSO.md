@@ -3,23 +3,26 @@ NSO is the main executable format.
 It starts with a
 header:
 
-| Offset | Size | Description                                                                                    |
-| ------ | ---- | ---------------------------------------------------------------------------------------------- |
-| 0x0    | 4    | Magic "NSO0"                                                                                   |
-| 0x4    | 4    |                                                                                                |
-| 0x8    | 4    |                                                                                                |
-| 0xC    | 4    |                                                                                                |
-| 0x10   | 4    |                                                                                                |
-| 0x14   | 4    | .text offset? (0)                                                                              |
-| 0x18   | 4    | .text size                                                                                     |
-| 0x1C   | 4    | .text required align? (0x1000)                                                                 |
-| 0x20   | 4    | .text compressed size?                                                                         |
-| 0x24   | 4    | .rodata offset                                                                                 |
-| 0x28   | 4    | .rodata size                                                                                   |
-| 0x2C   | 4    | .rodata required align? (1)                                                                    |
-| 0x30   | 4    | .rodata compressed size?                                                                       |
-| 0x34   | 4    | .data offset                                                                                   |
-| 0x38   | 4    | .data size                                                                                     |
-| 0x3C   | 4    | .bss size                                                                                      |
-| 0xA0   | 0x60 | 3 Hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
-| 0x100  |      | Compressed sections                                                                            |
+| Offset | Size | Description                                                                                  |
+| ------ | ---- | -------------------------------------------------------------------------------------------- |
+| 0x0    | 4    | Magic "NSO0"                                                                                 |
+| 0x4    | 4    |                                                                                              |
+| 0x8    | 4    |                                                                                              |
+| 0xC    | 4    |                                                                                              |
+| 0x10   | 4    | .text compression start offset? (0x101)                                                      |
+| 0x14   | 4    | .text offset? (0)                                                                            |
+| 0x18   | 4    | .text size                                                                                   |
+| 0x1C   | 4    | .text required align? (0x1000)                                                               |
+| 0x20   | 4    | .rodata compression start offset?                                                            |
+| 0x24   | 4    | .rodata offset                                                                               |
+| 0x28   | 4    | .rodata size                                                                                 |
+| 0x2C   | 4    | .rodata required align? (1)                                                                  |
+| 0x30   | 4    | .data compression start offset?                                                              |
+| 0x34   | 4    | .data offset                                                                                 |
+| 0x38   | 4    | .data size                                                                                   |
+| 0x3C   | 4    | .bss size                                                                                    |
+| 0x40   | 0x14 | SHA1?                                                                                        |
+| 0x54   | 0xC  | Padding                                                                                      |
+| 0x60   | 4    | Unknown compression offset?                                                                  |
+| 0xA0   | 0x20 | SHA256 over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
+| 0x100  |      | Compressed sections                                                                          |
