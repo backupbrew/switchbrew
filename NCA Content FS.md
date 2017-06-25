@@ -7,6 +7,8 @@ the in32 for "MountContent".
 
 ## FS-type5
 
+Only contains the [.cnmt](NCA.md "wikilink") file.
+
 # NCA-type1
 
 ## FS-type2

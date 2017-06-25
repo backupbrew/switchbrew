@@ -3,6 +3,8 @@ This page is for the FS which can be mounted for [[NCA|NCAs]] with [[Filesystem_
 =NCA-type0=
 ==FS-type5==
 
+Only contains the [[NCA|.cnmt]] file.
+
 =NCA-type1=
 ==FS-type2==
 
