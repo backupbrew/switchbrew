@@ -123,7 +123,7 @@ This is a list of [[Services_API|service]]-name strings which the title has acce
   +0: control_byte
   +1: {service-name without nul-terminator}
 
-Bitmask 0x0F in control_byte is the length of the service-name.
+Bitmask 0x0F in control_byte is the {length of the service-name without nul-terminator} - 1.
 
 Bitmask 0x80 in control_byte means service is allowed to be registered.
 
