@@ -85,7 +85,7 @@ It starts with a header:
 |-
 | 0xA0
 | 0x60
-| SHA256 over the decompressed sections using the above byte-sizes: .text, .rodata, and .data.
+| SHA256 hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data.
 |-
 | 0x100
 |
