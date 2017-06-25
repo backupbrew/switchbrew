@@ -69,7 +69,7 @@ It starts with a header:
 |-
 | 0xA0
 | 0x60
-| Hashes over the decompressed sections. First hash is for .text using the above byte-size.
+| 3 Hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data.
 |-
 | 0x100
 |

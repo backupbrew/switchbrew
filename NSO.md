@@ -3,22 +3,22 @@ NSO is the main executable format.
 It starts with a
 header:
 
-| Offset | Size | Description                                                                               |
-| ------ | ---- | ----------------------------------------------------------------------------------------- |
-| 0x0    | 4    | Magic "NSO0"                                                                              |
-| 0x4    | 4    |                                                                                           |
-| 0x8    | 4    |                                                                                           |
-| 0xC    | 4    |                                                                                           |
-| 0x10   | 4    |                                                                                           |
-| 0x14   | 4    |                                                                                           |
-| 0x18   | 4    | .text size                                                                                |
-| 0x1C   | 4    | 0x1000                                                                                    |
-| 0x20   | 4    |                                                                                           |
-| 0x24   | 4    | .rodata offset                                                                            |
-| 0x28   | 4    | .rodata size                                                                              |
-| 0x2C   | 4    | 1                                                                                         |
-| 0x30   | 4    |                                                                                           |
-| 0x34   | 4    | .data offset                                                                              |
-| 0x38   | 4    |                                                                                           |
-| 0xA0   | 0x60 | Hashes over the decompressed sections. First hash is for .text using the above byte-size. |
-| 0x100  |      | Compressed sections                                                                       |
+| Offset | Size | Description                                                                                    |
+| ------ | ---- | ---------------------------------------------------------------------------------------------- |
+| 0x0    | 4    | Magic "NSO0"                                                                                   |
+| 0x4    | 4    |                                                                                                |
+| 0x8    | 4    |                                                                                                |
+| 0xC    | 4    |                                                                                                |
+| 0x10   | 4    |                                                                                                |
+| 0x14   | 4    |                                                                                                |
+| 0x18   | 4    | .text size                                                                                     |
+| 0x1C   | 4    | 0x1000                                                                                         |
+| 0x20   | 4    |                                                                                                |
+| 0x24   | 4    | .rodata offset                                                                                 |
+| 0x28   | 4    | .rodata size                                                                                   |
+| 0x2C   | 4    | 1                                                                                              |
+| 0x30   | 4    |                                                                                                |
+| 0x34   | 4    | .data offset                                                                                   |
+| 0x38   | 4    |                                                                                                |
+| 0xA0   | 0x60 | 3 Hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
+| 0x100  |      | Compressed sections                                                                            |
