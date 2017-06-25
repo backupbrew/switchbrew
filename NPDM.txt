@@ -24,10 +24,55 @@ This is the Switch equivalent of 3DS exheader. This is the 0x408-byte file with 
 |}
 
 =META=
-Starts with magicnum "META". Switch version of 3DS "System Control Info"?
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x4
+| Magicnum "META".
+|-
+| 0x4
+| 0x7C
+| ?
+|}
+
+Switch version of 3DS "System Control Info"?
 
 =ACID=
-Starts with magicnum "ACID". Switch version of 3DS ACI(Access Control Info)?
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x4
+| Magicnum "ACID".
+|-
+| 0x4
+| 0xCC
+| ?
+|}
+
+Switch version of 3DS ACI(Access Control Info)?
 
 =ACI0=
-Starts with magicnum "ACI0". Switch version of AccessDesc?
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x4
+| Magicnum "ACI0".
+|-
+| 0x4
+| 0xB4
+| ?
+|}
+
+Switch version of AccessDesc?

@@ -11,14 +11,27 @@ ExeFS}.
 
 # META
 
-Starts with magicnum "META". Switch version of 3DS "System Control
-Info"?
+| Offset | Size | Description      |
+| ------ | ---- | ---------------- |
+| 0x0    | 0x4  | Magicnum "META". |
+| 0x4    | 0x7C | ?                |
+
+Switch version of 3DS "System Control Info"?
 
 # ACID
 
-Starts with magicnum "ACID". Switch version of 3DS ACI(Access Control
-Info)?
+| Offset | Size | Description      |
+| ------ | ---- | ---------------- |
+| 0x0    | 0x4  | Magicnum "ACID". |
+| 0x4    | 0xCC | ?                |
+
+Switch version of 3DS ACI(Access Control Info)?
 
 # ACI0
 
-Starts with magicnum "ACI0". Switch version of AccessDesc?
+| Offset | Size | Description      |
+| ------ | ---- | ---------------- |
+| 0x0    | 0x4  | Magicnum "ACI0". |
+| 0x4    | 0xB4 | ?                |
+
+Switch version of AccessDesc?
