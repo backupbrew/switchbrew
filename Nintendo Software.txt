@@ -1,6 +1,7 @@
 =System Titles=
 
 ==System Applets==
+* [[News_Applet]]
 * [[Internet_Browser|Nintendo eShop]]
 * [[System Settings]]
 
