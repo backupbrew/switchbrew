@@ -1,7 +1,8 @@
 This page is for the FS which can be mounted for
 [NCAs](NCA.md "wikilink") with
 [MountContent\*](Filesystem%20services.md "wikilink"). FS-type below is
-the in32 for "MountContent".
+the in32 for "MountContent". MountContent throws errors when trying to
+access a NCA-type with a FS-type not listed below.
 
 # NCA-type0
 
