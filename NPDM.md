@@ -24,21 +24,25 @@ Switch version of 3DS "System Control Info"?
 
 # ACID
 
-| Offset | Size     | Description            |
-| ------ | -------- | ---------------------- |
-| 0x0    | 0x4      | Magicnum "ACID".       |
-| 0x4    | 0xEC     | ?                      |
-| 0xF0   | <Varies> | Service Access Control |
+| Offset | Size        | Description                         |
+| ------ | ----------- | ----------------------------------- |
+| 0x0    | 0x4         | Magicnum "ACID".                    |
+| 0x4    | 0x28        | ?                                   |
+| 0x2C   | 0x4         | Size of the Service Access Control. |
+| 0x30   | 0xC0        | ?                                   |
+| 0xF0   | <See above> | Service Access Control              |
 
 Switch version of AccessDesc?
 
 # ACI0
 
-| Offset | Size     | Description            |
-| ------ | -------- | ---------------------- |
-| 0x0    | 0x4      | Magicnum "ACI0".       |
-| 0x4    | 0xB4     | ?                      |
-| 0x60   | <Varies> | Service Access Control |
+| Offset | Size        | Description                         |
+| ------ | ----------- | ----------------------------------- |
+| 0x0    | 0x4         | Magicnum "ACI0".                    |
+| 0x4    | 0x28        | ?                                   |
+| 0x2C   | 0x4         | Size of the Service Access Control. |
+| 0x30   | 0x34        | ?                                   |
+| 0x60   | <See above> | Service Access Control              |
 
 Switch version of 3DS ACI(Access Control Info)?
 

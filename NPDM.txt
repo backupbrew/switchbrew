@@ -69,11 +69,19 @@ Switch version of 3DS "System Control Info"?
 | Magicnum "ACID".
 |-
 | 0x4
-| 0xEC
+| 0x28
+| ?
+|-
+| 0x2C
+| 0x4
+| Size of the Service Access Control.
+|-
+| 0x30
+| 0xC0
 | ?
 |-
 | 0xF0
-| <Varies>
+| <See above>
 | Service Access Control
 |}
 
@@ -91,11 +99,19 @@ Switch version of AccessDesc?
 | Magicnum "ACI0".
 |-
 | 0x4
-| 0xB4
+| 0x28
+| ?
+|-
+| 0x2C
+| 0x4
+| Size of the Service Access Control.
+|-
+| 0x30
+| 0x34
 | ?
 |-
 | 0x60
-| <Varies>
+| <See above>
 | Service Access Control
 |}
 
