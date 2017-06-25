@@ -76,13 +76,6 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 | No
 | 0100000000001011
 | 
-|-
-| 
-| News
-| With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit.
-| 
-| 
-| Unknown if this is really a web-applet.
 |}
 
 When whitelisting is enabled, you can only load page domains included in the whitelist, otherwise an error is displayed. This only applies to page navigation. Videos via the <video> tag are not affected, likewise with network requests with JS.
