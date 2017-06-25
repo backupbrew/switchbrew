@@ -29,7 +29,8 @@ Switch version of 3DS "System Control Info"?
 | 0x0    | 0x4         | Magicnum "ACID".                    |
 | 0x4    | 0x28        | ?                                   |
 | 0x2C   | 0x4         | Size of the Service Access Control. |
-| 0x30   | 0xC0        | ?                                   |
+| 0x30   | 0x14        | ?                                   |
+| 0x44   | ?           | FS Permissions                      |
 | 0xF0   | <See above> | Service Access Control              |
 
 Switch version of AccessDesc?
@@ -41,7 +42,8 @@ Switch version of AccessDesc?
 | 0x0    | 0x4         | Magicnum "ACI0".                    |
 | 0x4    | 0x28        | ?                                   |
 | 0x2C   | 0x4         | Size of the Service Access Control. |
-| 0x30   | 0x34        | ?                                   |
+| 0x30   | 0x14        | ?                                   |
+| 0x44   | ?           | FS Permissions                      |
 | 0x60   | <See above> | Service Access Control              |
 
 Switch version of 3DS ACI(Access Control Info)?
@@ -60,3 +62,10 @@ nul-terminator} - 1.
 Bitmask 0x80 in control\_byte means service is allowed to be registered.
 
 The service string can contain a wildcard `*` character.
+
+# FS Permissions
+
+| Bit | Description                                            |
+| --- | ------------------------------------------------------ |
+| 0   | MountContent\* is accessible when set.                 |
+| 3   | This is only bit set for ShopN in the permissions-u32. |
