@@ -193,7 +193,7 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 010000000000100D || [[2.0.0|v65796]] (0.1.1.4) || "photoViewer"
 |-
-| 010000000000100F || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || "LibAppletOff"
+| 010000000000100F || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || "LibAppletOff" [[Internet_Browser|Offline]] web-applet
 |-
 | 0100000000001010 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || "LibAppletLns" [[Internet_Browser|Whitelisted]] applet (LoginApplet+ShareApplet+LobbyApplet)
 |-
