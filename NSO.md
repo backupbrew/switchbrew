@@ -12,11 +12,11 @@ header:
 | 0x10   | 4    |                                                                                           |
 | 0x14   | 4    |                                                                                           |
 | 0x18   | 4    | .text size                                                                                |
-| 0x1C   | 4    |                                                                                           |
+| 0x1C   | 4    | 0x1000                                                                                    |
 | 0x20   | 4    |                                                                                           |
 | 0x24   | 4    | .rodata offset                                                                            |
-| 0x28   | 4    |                                                                                           |
-| 0x2C   | 4    | .rodata size                                                                              |
+| 0x28   | 4    | .rodata size                                                                              |
+| 0x2C   | 4    | 1                                                                                         |
 | 0x30   | 4    |                                                                                           |
 | 0x34   | 4    | .data offset                                                                              |
 | 0x38   | 4    |                                                                                           |

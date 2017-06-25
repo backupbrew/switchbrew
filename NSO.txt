@@ -37,7 +37,7 @@ It starts with a header:
 |-
 | 0x1C
 | 4
-|
+| 0x1000
 |-
 | 0x20
 | 4
@@ -49,11 +49,11 @@ It starts with a header:
 |-
 | 0x28
 | 4
-| 
+| .rodata size
 |-
 | 0x2C
 | 4
-| .rodata size
+| 1
 |-
 | 0x30
 | 4
