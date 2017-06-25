@@ -158,6 +158,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 | [[Secure RNG services]]
 | 
 |-
+| dispdrv
+|
+|
+|-
 | erpt:c, erpt:r
 | Error Report services
 |
