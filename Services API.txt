@@ -222,7 +222,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | ?
 |
 |-
-| nvdrv:a, nvdrv:s, nvdrv:t, nvdrv, nvdrvdbg, nvmemp
+| nvdrv:a, nvdrv:s, nvdrv:t, nvdrv, nvdrvdbg, nvgem:c, nvgem:cd, nvmemp
 | [[NV services]]
 |
 |-
