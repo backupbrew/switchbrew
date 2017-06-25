@@ -102,7 +102,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | [[Account services]]
 | u1: User, su: Admin
 |-
-| ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, irs, irs:sys, xcd:sys
+| ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, (htc?), irs, irs:sys, xcd:sys
 | [[HID services]]
 |
 |-
