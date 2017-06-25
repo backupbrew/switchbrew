@@ -165,45 +165,45 @@ No 01000000000020XX titles exist on retail systems.
 {| class=wikitable
 ! Title-id || Versions || Description
 |-
-| 0100000000001000 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || System applet (TID is loaded by NS from system-config-title)
+| 0100000000001000 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || "qlaunch" System applet (TID is loaded by NS from system-config-title)
 |-
-| 0100000000001001 || [[2.0.0|v65796]] (0.1.1.4) ||
+| 0100000000001001 || [[2.0.0|v65796]] (0.1.1.4) || "auth"
 |-
-| 0100000000001002 || [[2.0.0|v65796]] (0.1.1.4) || 
+| 0100000000001002 || [[2.0.0|v65796]] (0.1.1.4) || "cabinet"
 |-
-| 0100000000001003 || [[2.0.0|v65796]] (0.1.1.4) || 
+| 0100000000001003 || [[2.0.0|v65796]] (0.1.1.4) || "controller"
 |-
-| 0100000000001004 || [[2.0.0|v65796]] (0.1.1.4) || 
+| 0100000000001004 || [[2.0.0|v65796]] (0.1.1.4) || "dataErase"
 |-
-| 0100000000001005 || [[2.0.0|v65796]] (0.1.1.4) || 
+| 0100000000001005 || [[2.0.0|v65796]] (0.1.1.4) || "error"
 |-
-| 0100000000001006 || [[2.0.0|v65796]] (0.1.1.4) || 
+| 0100000000001006 || [[2.0.0|v65796]] (0.1.1.4) || "netConnect"
 |-
-| 0100000000001007 || [[2.0.0|v65796]] (0.1.1.4) || 
+| 0100000000001007 || [[2.0.0|v65796]] (0.1.1.4) || "playerSelect"
 |-
-| 0100000000001008 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131132]] (0.2.0.60) || 
+| 0100000000001008 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131132]] (0.2.0.60) || "swkbd"
 |-
-| 0100000000001009 || [[2.0.0|v65796]] (0.1.1.4) || 
+| 0100000000001009 || [[2.0.0|v65796]] (0.1.1.4) || "miiEdit"
 |-
-| 010000000000100A || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || [[Internet_Browser|WebApplet]]
+| 010000000000100A || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || "LibAppletWeb" [[Internet_Browser|WebApplet]]
 |-
-| 010000000000100B || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || [[Internet_Browser|ShopN]] applet
+| 010000000000100B || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || "LibAppletShop" [[Internet_Browser|ShopN]] applet
 |-
-| 010000000000100C || [[2.0.0|v65796]] (0.1.1.4) || Overlay applet (TID is loaded by NS from system-config-title)
+| 010000000000100C || [[2.0.0|v65796]] (0.1.1.4) || "overlayDisp" Overlay applet (TID is loaded by NS from system-config-title)
 |-
-| 010000000000100D || [[2.0.0|v65796]] (0.1.1.4) || 
+| 010000000000100D || [[2.0.0|v65796]] (0.1.1.4) || "photoViewer"
 |-
-| 010000000000100F || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || 
+| 010000000000100F || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || "LibAppletOff"
 |-
-| 0100000000001010 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || [[Internet_Browser|Whitelisted]] applet (LoginApplet+ShareApplet+LobbyApplet)
+| 0100000000001010 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || "LibAppletLns" [[Internet_Browser|Whitelisted]] applet (LoginApplet+ShareApplet+LobbyApplet)
 |-
-| 0100000000001011 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || [[Internet_Browser|WifiWebAuth]] applet
+| 0100000000001011 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90) || "LibAppletAuth" [[Internet_Browser|WifiWebAuth]] applet
 |-
-| 0100000000001012 || [[2.0.0|v65796]] (0.1.1.4) || 
+| 0100000000001012 || [[2.0.0|v65796]] (0.1.1.4) || "starter"
 |-
-| 0100000000001013 || [[2.0.0|v65796]] (0.1.1.4) || 
+| 0100000000001013 || [[2.0.0|v65796]] (0.1.1.4) || "myPage"
 |-
-| 0100000000001015 || [[2.0.0|v65796]] (0.1.1.4) || Fall-back TID used by [[NS_Services|NS]] when a state flag is val1 indicating the "System applet" TID shouldn't be loaded from system-config-title.
+| 0100000000001015 || [[2.0.0|v65796]] (0.1.1.4) || "maintenance" Fall-back TID used by [[NS_Services|NS]] when a state flag is val1 indicating the "System applet" TID shouldn't be loaded from system-config-title.
 |-
 | 0100000000001016 || || TID used by [[NS_Services|NS]] when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.
 |}
