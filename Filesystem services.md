@@ -112,7 +112,9 @@ nand sectors containing the BCT.
 Takes a [\#ContentStorageId](#ContentStorageId "wikilink"). Invalid
 values return 0x2EE202.
 
-Returns an [\#IFileSystem](#IFileSystem "wikilink") with NCA files.
+Returns an [\#IFileSystem](#IFileSystem "wikilink") with NCA files. The
+read data from these files is identical to the data read by
+[Content\_Manager\_services\#ReadEntryRaw](Content%20Manager%20services#ReadEntryRaw.md##ReadEntryRaw "wikilink").
 
 ## OpenDeviceOperator
 

@@ -162,7 +162,7 @@ Returns an [[#IStorage]] that gives raw access to nand sectors containing the BC
 == MountContentStorage ==
 Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.
 
-Returns an [[#IFileSystem]] with NCA files.
+Returns an [[#IFileSystem]] with NCA files. The read data from these files is identical to the data read by [[Content_Manager_services#ReadEntryRaw]].
 
 == OpenDeviceOperator ==
 This command returns a session to a port implementing the [[#IDeviceOperator]] interface.
