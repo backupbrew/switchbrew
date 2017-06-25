@@ -206,7 +206,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | Log services
 |
 |-
-| lr, ncm
+| lr, ncm, ncm:v
 | [[Content Manager services]]
 |
 |-
