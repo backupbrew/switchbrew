@@ -12,7 +12,7 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |-
 | 0x80
 | 0x200
-| RSA-2048 signature, followed a RSA-2048 modulus for {Switch version of NCCH header}?(Like 3DS)
+| RSA-2048 signature, followed a RSA-2048 modulus for [[NCA]] header (like 3DS)
 |-
 | 0x280
 | <Varies>

@@ -5,7 +5,7 @@ varies.
 | Offset     | Size       | Description                                                                                    |
 | ---------- | ---------- | ---------------------------------------------------------------------------------------------- |
 | 0x0        | 0x80       | META                                                                                           |
-| 0x80       | 0x200      | RSA-2048 signature, followed a RSA-2048 modulus for {Switch version of NCCH header}?(Like 3DS) |
+| 0x80       | 0x200      | RSA-2048 signature, followed a RSA-2048 modulus for [NCA](NCA.md "wikilink") header (like 3DS) |
 | 0x280      | <Varies>   | ACID                                                                                           |
 | <See META> | <See META> | ACI0                                                                                           |
 
