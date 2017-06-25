@@ -154,6 +154,10 @@ This service is presumably equivalent to 3DS "srv:pm".
 | [[Display services]]
 |
 |-
+| cec-mgr
+|
+|
+|-
 | csrng
 | [[Secure RNG services]]
 | 
@@ -238,7 +242,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | Parental Control services
 |
 |-
-| pm:bm, pm:shell
+| pm:bm, pm:info, pm:shell
 | [[Process Manager services]]
 |
 |-
