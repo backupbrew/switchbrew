@@ -81,7 +81,7 @@ It starts with a header:
 |-
 | 0x60
 | 4
-| Unknown compression offset?
+| .rel.dyn compression offset?
 |-
 | 0xA0
 | 0x60
