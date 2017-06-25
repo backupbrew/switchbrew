@@ -69,7 +69,7 @@ It starts with a header:
 |-
 | 0xA0
 | 0x60
-| Hashes?
+| Hashes over the decompressed sections. First hash is for .text using the above byte-size.
 |-
 | 0x100
 |
