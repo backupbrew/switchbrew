@@ -65,7 +65,7 @@ It starts with a header:
 |-
 | 0x38
 | 4
-|
+| .data size
 |-
 | 0x3C
 | 4
