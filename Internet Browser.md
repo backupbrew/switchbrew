@@ -26,16 +26,16 @@ NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>"
 
 ## Browser Applets
 
-| appletname (From UA) | Usage                                                                               | Invalid TLS cert handling                                                                                                    | Uses whitelist | Title ID         | Notes |
-| -------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------- | ---------------- | ----- |
-| WifiWebAuthApplet    | Captive-portal                                                                      | Displays an error dialog with an option to ignore it.                                                                        | No             | 0100000000001011 |       |
-| LoginApplet          | Nintendo Account linking                                                            | Just displays an error-code.                                                                                                 | Yes            | 0100000000001010 |       |
-| ShareApplet          | Posting screenshots to social media, and (optionally) linking social media accounts | Just displays an error-code.                                                                                                 | Yes            | 0100000000001010 |       |
-| LobbyApplet          | Related to online-multiplayer lobbies                                               | Just displays an error-code.                                                                                                 | Yes            | 0100000000001010 |       |
-| ShopN                | Actual eShop client                                                                 | Just displays an error-code.                                                                                                 | Yes            | 010000000000100B |       |
-|                      | Offline HTML display                                                                |                                                                                                                              |                | ?                |       |
-| WebApplet            | General web-applet for use by applications(online manuals, ...).                    | Displays an error dialog without an option to ignore it.                                                                     | Yes            | 010000000000100A |       |
-| ?                    | News                                                                                | With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit. |                | ?                |       |
+| appletname (From UA) | Usage                                                                               | Invalid TLS cert handling                                                                                                    | Uses whitelist | Title ID         | Notes                                   |
+| -------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------- | ---------------- | --------------------------------------- |
+| WifiWebAuthApplet    | Captive-portal                                                                      | Displays an error dialog with an option to ignore it.                                                                        | No             | 0100000000001011 |                                         |
+| LoginApplet          | Nintendo Account linking                                                            | Just displays an error-code.                                                                                                 | Yes            | 0100000000001010 |                                         |
+| ShareApplet          | Posting screenshots to social media, and (optionally) linking social media accounts | Just displays an error-code.                                                                                                 | Yes            | 0100000000001010 |                                         |
+| LobbyApplet          | Related to online-multiplayer lobbies                                               | Just displays an error-code.                                                                                                 | Yes            | 0100000000001010 |                                         |
+| ShopN                | Actual eShop client                                                                 | Just displays an error-code.                                                                                                 | Yes            | 010000000000100B |                                         |
+| WebApplet            | Offline HTML display                                                                |                                                                                                                              |                | 010000000000100F |                                         |
+| WebApplet            | General web-applet for use by applications(online manuals, ...).                    | Displays an error dialog without an option to ignore it.                                                                     | Yes            | 010000000000100A |                                         |
+|                      | News                                                                                | With videos it doesn't accept the cert. It hangs during video loading without displaying any error, have to press B to exit. |                |                  | Unknown if this is really a web-applet. |
 
 When whitelisting is enabled, you can only load page domains included in
 the whitelist, otherwise an error is displayed. This only applies to
@@ -145,8 +145,9 @@ WifiWebAuthApplet, contains the following:
 
 ## WebApplet
 
-The initial page loaded by this applet is specified by the title which
-launched this applet. Plain HTTP is allowed.
+The initial page loaded by this applet(TID 010000000000100A) is
+specified by the title which launched this applet. Plain HTTP is
+allowed.
 
 The only difference between the content under "<data:/>"
 
@@ -167,9 +168,9 @@ LoginApplet/ShareApplet/LobbyApplet have access to the above + caps:a.
 
 ShopN has access to the above + nim:shp.
 
-Unlike the applets listed above, WebApplet has access to the
-[FS](Filesystem%20services.md "wikilink") MountContent\* commands. This
-is so that it can load the whitelist from
+Unlike the applets listed above, WebApplet TID 010000000000100A has
+access to the [FS](Filesystem%20services.md "wikilink") MountContent\*
+commands. This is so that it can load the whitelist from
 "/accessible-urls/accessible-urls.txt" in the mounted FS, from
 [NCA](NCA.md "wikilink")-type4 where titleID={application which launched
 this applet}.
