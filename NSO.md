@@ -10,14 +10,14 @@ header:
 | 0x8    | 4    |                                                                                                |
 | 0xC    | 4    |                                                                                                |
 | 0x10   | 4    |                                                                                                |
-| 0x14   | 4    |                                                                                                |
+| 0x14   | 4    | .text offset? (0)                                                                              |
 | 0x18   | 4    | .text size                                                                                     |
-| 0x1C   | 4    | 0x1000                                                                                         |
-| 0x20   | 4    |                                                                                                |
+| 0x1C   | 4    | .text required align? (0x1000)                                                                 |
+| 0x20   | 4    | .text compressed size?                                                                         |
 | 0x24   | 4    | .rodata offset                                                                                 |
 | 0x28   | 4    | .rodata size                                                                                   |
-| 0x2C   | 4    | 1                                                                                              |
-| 0x30   | 4    |                                                                                                |
+| 0x2C   | 4    | .rodata required align? (1)                                                                    |
+| 0x30   | 4    | .rodata compressed size?                                                                       |
 | 0x34   | 4    | .data offset                                                                                   |
 | 0x38   | 4    |                                                                                                |
 | 0xA0   | 0x60 | 3 Hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
