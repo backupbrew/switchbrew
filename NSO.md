@@ -20,5 +20,6 @@ header:
 | 0x30   | 4    | .rodata compressed size?                                                                       |
 | 0x34   | 4    | .data offset                                                                                   |
 | 0x38   | 4    |                                                                                                |
+| 0x3C   | 4    | .bss size                                                                                      |
 | 0xA0   | 0x60 | 3 Hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
 | 0x100  |      | Compressed sections                                                                            |
