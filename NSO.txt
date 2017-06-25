@@ -84,7 +84,7 @@ It starts with a header:
 | Unknown compression offset?
 |-
 | 0xA0
-| 0x20
+| 0x60
 | SHA256 over the decompressed sections using the above byte-sizes: .text, .rodata, and .data.
 |-
 | 0x100

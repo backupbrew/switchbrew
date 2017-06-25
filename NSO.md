@@ -24,5 +24,5 @@ header:
 | 0x40   | 0x14 | SHA1?                                                                                        |
 | 0x54   | 0xC  | Padding                                                                                      |
 | 0x60   | 4    | Unknown compression offset?                                                                  |
-| 0xA0   | 0x20 | SHA256 over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
+| 0xA0   | 0x60 | SHA256 over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
 | 0x100  |      | Compressed sections                                                                          |
