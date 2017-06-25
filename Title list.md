@@ -44,8 +44,12 @@
 | 0100000000000034 | [v66564](2.0.0.md "wikilink") (0.1.4.4), [v131132](2.1.0.md "wikilink") (0.2.0.60)                                             | fatal           |
 | 0100000000000036 | [v131132](2.0.0.md "wikilink") (0.2.0.60), [v65596](2.1.0.md "wikilink") (0.1.0.60), [v131092](2.3.0.md "wikilink") (0.2.0.20) | creport         |
 
-The built-in system modules are FS, LOADER, LR, PM, SM, and
-CRYPTO.
+The built-in system modules are FS, LOADER, LR, PM, SM, and CRYPTO.
+
+The boot2.ProdBoot sysmodule is probably for booting into
+[Recovery\_Mode](Recovery%20Mode.md "wikilink"), going by strings?(This
+process doesn't have any register-allowed-services in the
+[NPDM](NPDM.md "wikilink"))
 
 ## System Debug Applets
 
