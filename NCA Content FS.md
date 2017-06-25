@@ -22,6 +22,15 @@ Unknown. Presumably what the nandsys 8XX titles use.
 
 ## FS-type3
 
+  - "/control.nacp". Roughly equivalent to non-gfx areas of 3DS SMDH.
+    Also includes a string for the display-version of this title.
+    Contains UTF-8 title name/etc strings, unlike SMDH which uses
+    UTF-16.
+  - "/icon\_{Language}.dat", for every icon with an included language.
+    Just a 256x256 JPEG, no MAC which [Album](Album.md "wikilink")
+    screenshots use. EXIF info: "Camera Brand" = "Nintendo co., ltd",
+    "Software" = "Nintendo AuthoringTool".
+
 # NCA-type4
 
 ## FS-type4
