@@ -10,7 +10,7 @@
 |-
 |  0x4 || [[#svcMapMemory]] || X0=dstaddr, X1=srcaddr, X2=size || W0=result
 |-
-|  0x5 || svcunmapMemory || X0=dstaddr, X1=srcaddr, X2=size || W0=result
+|  0x5 || svcUnmapMemory || X0=dstaddr, X1=srcaddr, X2=size || W0=result
 |-
 |  0x6 || svcQueryMemory || X0=meminfo_ptr, X2=addr || W0=result, W1=pageinfo                                                         
 |-

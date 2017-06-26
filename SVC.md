@@ -6,7 +6,7 @@
 | 0x2  | [\#svcSetMemoryPermission](#svcSetMemoryPermission "wikilink")                     | X0=addr, X1=size, W2=prot                                         | W0=result                                           |
 | 0x3  | [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink")                       | X0=addr, X1=size, W2=state0, W3=state1                            | W0=result                                           |
 | 0x4  | [\#svcMapMemory](#svcMapMemory "wikilink")                                         | X0=dstaddr, X1=srcaddr, X2=size                                   | W0=result                                           |
-| 0x5  | svcunmapMemory                                                                     | X0=dstaddr, X1=srcaddr, X2=size                                   | W0=result                                           |
+| 0x5  | svcUnmapMemory                                                                     | X0=dstaddr, X1=srcaddr, X2=size                                   | W0=result                                           |
 | 0x6  | svcQueryMemory                                                                     | X0=meminfo\_ptr, X2=addr                                          | W0=result, W1=pageinfo                              |
 | 0x7  | svcExitProcess                                                                     | None                                                              |                                                     |
 | 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")                                   | X1=entry, X2=arg, X3=stacktop, W4=prio, W5=processor\_id          | W0=result, W1=handle                                |
