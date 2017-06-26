@@ -252,7 +252,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 |-
 | set, set:fd, set:cal, set:sys
 | [[Settings services]]
-| cal: Calendar?, sys: System Settings
+| cal: calibration, sys: System Settings
 |-
 | ssl
 | SSL services
