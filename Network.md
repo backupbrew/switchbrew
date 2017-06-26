@@ -1,18 +1,19 @@
 This page documents the DNS domains used by Switch, and what they're
 used for. Only HTTPS is used with these domains unless noted otherwise.
 
-  - "sun.hac.lp1.d4c.nintendo.net": Used for checking whether a
-    sysupdate is available, equivalent to NetUpdateSOAP from past
-    systems.
-  - "atumn.hac.lp1.d4c.nintendo.net": CDN for system-titles.
+  - "[sun.hac.lp1.d4c.nintendo.net](NIM%20Services.md "wikilink")": Used
+    for checking whether a sysupdate is available, equivalent to
+    NetUpdateSOAP from past systems.
+  - "[atumn.hac.lp1.d4c.nintendo.net](NIM%20Services.md "wikilink")":
+    CDN for system-titles.
   - "tagaya.hac.lp1.eshop.nintendo.net": VersionList for eShop titles
     going by 3DS.
   - "dauth-lp1.ndas.srv.nintendo.net": Seems to break Nintendo-account
     related comms when blocked. This dauth domain seems to be the cause
     of the sysupdate-required 2124-3000
     [error](Error%20codes.md "wikilink")?
-  - "beach.hac.lp1.eshop.nintendo.net": Same result as dauth when
-    blocked.
+  - "[beach.hac.lp1.eshop.nintendo.net](NIM%20Services.md "wikilink")":
+    Same result as dauth when blocked.
   - "consumer.lp1.npns.srv.nintendo.net": Same result as dauth when
     blocked.
 
