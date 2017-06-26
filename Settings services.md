@@ -33,4 +33,8 @@ the u32 size of the actual cert, +4 is the actual start of the cert.
 
 # set:sys
 
+| Cmd | Name                                                        |
+| --- | ----------------------------------------------------------- |
+| ?   | GetSerialNumber (Returns the 0x18-byte SerialNumber string) |
+
 [Category:Services](Category:Services "wikilink")

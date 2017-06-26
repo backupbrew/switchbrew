@@ -17,7 +17,6 @@
 
 
 = set:cal =
-
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -40,7 +39,11 @@ Used for accessing data calibrated at the factory.
 Returns the plaintext TLS client-cert, outbuf_size = 0x804. Buf+0 is the u32 size of the actual cert, +4 is the actual start of the cert.
 
 = set:sys =
-
-
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| ? || GetSerialNumber (Returns the 0x18-byte SerialNumber string)
+|}
 
 [[Category:Services]]
