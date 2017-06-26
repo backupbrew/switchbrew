@@ -58,7 +58,7 @@
 | 0x41 | svcAcceptSession                                                                   | W1=port\_handle                                                   | W0=result, W1=session\_handle                       |
 | 0x42 | svcReplyAndReceiveLight                                                            |                                                                   |                                                     |
 | 0x43 | svcReplyAndReceive                                                                 | X1=ptr\_handles, W2=num\_handles, X3=?, X4=timeout                | W0=result, W1=handle\_idx                           |
-| 0x44 | ReplyAndReceiveWithUserBuffer                                                      | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=?, X6=timeout | W0=result, W1=handle\_idx                           |
+| 0x44 | svcReplyAndReceiveWithUserBuffer                                                   | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=?, X6=timeout | W0=result, W1=handle\_idx                           |
 | 0x45 | svcCreateEvent                                                                     | None                                                              | W0=result, W1=client\_handle ?, W2=server\_handle ? |
 | .... | ?                                                                                  | ?                                                                 | ?                                                   |
 | 0x4D | svcSleepSystem                                                                     |                                                                   |                                                     |

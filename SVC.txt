@@ -114,7 +114,7 @@
 |-
 | 0x43 || svcReplyAndReceive || X1=ptr_handles, W2=num_handles, X3=?, X4=timeout || W0=result, W1=handle_idx
 |-
-| 0x44 || ReplyAndReceiveWithUserBuffer|| X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=?, X6=timeout || W0=result, W1=handle_idx
+| 0x44 || svcReplyAndReceiveWithUserBuffer|| X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=?, X6=timeout || W0=result, W1=handle_idx
 |-
 | 0x45 || svcCreateEvent || None || W0=result, W1=client_handle ?, W2=server_handle ?
 |-
