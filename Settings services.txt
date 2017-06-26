@@ -18,6 +18,15 @@
 
 = set:cal =
 
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| ? || GetDeviceId (Returns the 64bit DeviceId)
+|-
+| GetDeviceId_cmd+1 presumably? || GetDeviceCert (Returns the 0x240-byte DeviceCert)
+|}
+
 Used for accessing data calibrated at the factory.
 
 = set:sys =
