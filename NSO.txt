@@ -25,7 +25,7 @@ It starts with a header:
 |-
 | 0x10
 | 4
-| .text compression start offset? (0x101)
+| .text LZ4-compressed data start offset (0x101)
 |-
 | 0x14
 | 4
@@ -41,7 +41,7 @@ It starts with a header:
 |-
 | 0x20
 | 4
-| .rodata compression start offset?
+| .rodata LZ4-compressed data start offset
 |-
 | 0x24
 | 4
@@ -57,7 +57,7 @@ It starts with a header:
 |-
 | 0x30
 | 4
-| .data compression start offset?
+| .data LZ4-compressed data start offset
 |-
 | 0x34
 | 4

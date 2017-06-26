@@ -9,15 +9,15 @@ header:
 | 0x4    | 4    |                                                                                                     |
 | 0x8    | 4    |                                                                                                     |
 | 0xC    | 4    |                                                                                                     |
-| 0x10   | 4    | .text compression start offset? (0x101)                                                             |
+| 0x10   | 4    | .text LZ4-compressed data start offset (0x101)                                                      |
 | 0x14   | 4    | .text offset? (0)                                                                                   |
 | 0x18   | 4    | .text size                                                                                          |
 | 0x1C   | 4    | .text required align? (0x1000)                                                                      |
-| 0x20   | 4    | .rodata compression start offset?                                                                   |
+| 0x20   | 4    | .rodata LZ4-compressed data start offset                                                            |
 | 0x24   | 4    | .rodata offset                                                                                      |
 | 0x28   | 4    | .rodata size                                                                                        |
 | 0x2C   | 4    | .rodata required align? (1)                                                                         |
-| 0x30   | 4    | .data compression start offset?                                                                     |
+| 0x30   | 4    | .data LZ4-compressed data start offset                                                              |
 | 0x34   | 4    | .data offset                                                                                        |
 | 0x38   | 4    | .data size                                                                                          |
 | 0x3C   | 4    | .bss size                                                                                           |
