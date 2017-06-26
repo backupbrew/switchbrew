@@ -144,17 +144,22 @@ WifiWebAuthApplet, contains the following:
 
 ## WebApplet
 
-The initial page loaded by this applet(TID 010000000000100A) is
-specified by the title which launched this applet. Plain HTTP is
-allowed.
+### 010000000000100A
 
-The only difference between the content under "<data:/>"
+The initial page loaded by this applet is specified by the title which
+launched this applet. Plain HTTP is allowed.
 
 The files under "<data:/>" are identical to WifiWebAuthApplet except
 that the content of each file differs.
 
 This applet uses a whitelist, but it doesn't come from "<data:/>" like
 whitelisted-applet.
+
+### Offline Applet
+
+Minus TIDs, the [NPDM](NPDM.md "wikilink") is the same as
+010000000000100A except 010000000000100A has access to more/other
+services.
 
 ## Service/FS Access
 

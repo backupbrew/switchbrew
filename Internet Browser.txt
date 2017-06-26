@@ -138,13 +138,15 @@ The file at "data:/whitelist/WhitelistEc.txt", which doesn't exist in WifiWebAut
  ^https?://([0-9A-Za-z\-]+\.)*nintendo\.(co\.jp|com|de)($|/)</nowiki>
 
 == WebApplet ==
-The initial page loaded by this applet(TID 010000000000100A) is specified by the title which launched this applet. Plain HTTP is allowed.
-
-The only difference between the content under "data:/"
+===010000000000100A===
+The initial page loaded by this applet is specified by the title which launched this applet. Plain HTTP is allowed.
 
 The files under "data:/" are identical to WifiWebAuthApplet except that the content of each file differs.
 
 This applet uses a whitelist, but it doesn't come from "data:/" like whitelisted-applet.
+
+=== Offline Applet ===
+Minus TIDs, the [[NPDM]] is the same as 010000000000100A except 010000000000100A has access to more/other services.
 
 == Service/FS Access ==
 All browser applets have access to the following services: acc:u1, appletAE, audin:u, audren:u, audout:u, bsd:u, fatal:u, fsp-srv, hid, hid:sys, irs, ldn:m, ldr:ro, lm, erpt:c, nifm:s, ns:am, nsd:u, nvdrv:a, mm:u, pl:u, prepo:s, set, set:sys, sfdnsres, ssl, time:u, vi:s
