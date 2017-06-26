@@ -11,6 +11,8 @@
 
 # set:cal
 
+Used for accessing data calibrated at the factory.
+
 # set:sys
 
 [Category:Services](Category:Services "wikilink")
