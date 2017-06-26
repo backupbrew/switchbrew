@@ -124,17 +124,17 @@ Bit2 of permission (exec) is not allowed.
 Setting write-only is not allowed either
 (bit1).
 
-## svcSetMemoryState
+## svcSetMemoryAttribute
 
-| State0 | State1 | Action                                                   |
-| ------ | ------ | -------------------------------------------------------- |
-| 0      | 0      | Clear bit35 in [\#MemoryState](#MemoryState "wikilink"). |
-| 8      | 0      | Clear bit35 in [\#MemoryState](#MemoryState "wikilink"). |
-| 8      | 8      | Set bit35 in [\#MemoryState](#MemoryState "wikilink").   |
+| State0 | State1 | Action                                                           |
+| ------ | ------ | ---------------------------------------------------------------- |
+| 0      | 0      | Clear bit35 in [\#MemoryAttribute](#MemoryAttribute "wikilink"). |
+| 8      | 0      | Clear bit35 in [\#MemoryAttribute](#MemoryAttribute "wikilink"). |
+| 8      | 8      | Set bit35 in [\#MemoryAttribute](#MemoryAttribute "wikilink").   |
 
 This might used for switching between cached and non-cached mappings.
 
-## svcMirrorStack
+## svcMapMemory
 
 Memory is only allowed to be mapped into a special region.
 
@@ -142,7 +142,7 @@ Code can get the range of this region from
 [\#svcGetInfo](#svcGetInfo "wikilink").
 
 The source region gets reprotected to ---, and sets bit32 is set in
-[\#MemoryState](#MemoryState "wikilink").
+[\#MemoryAttribute](#MemoryAttribute "wikilink").
 
 ## svcCreateThread
 
@@ -152,24 +152,24 @@ Processor\_id must be 0,1,2,3 or -2.
 
 Setting nano=0 means "yield thread".
 
-## svcCreateMemoryMirror
+## svcCreateTransferMemory
 
 This one reprotects the src block with perms you give it. It also sets
-bit32 into [\#MemoryState](#MemoryState "wikilink").
+bit32 into [\#MemoryAttribute](#MemoryAttribute "wikilink").
 
 Executable bit perm not allowed.
 
 Closing all handles automatically causes the bit32 in
-[\#MemoryState](#MemoryState "wikilink") to clear, and the permission to
-reset.
+[\#MemoryAttribute](#MemoryAttribute "wikilink") to clear, and the
+permission to reset.
 
-## svcWaitEvents
+## svcWaitSynchronization
 
 Works with num\_handles \<= 0x40, error on num\_handles == 0.
 
 Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
-## svcSendSyncRequestByBuf
+## svcSendSyncRequestWithUserBuffer
 
 Size must be 0x1000-aligned.
 
@@ -201,20 +201,20 @@ it will return
 | Process     | 14  | 0                     | Start of stack mirror region.                                                                                                                                      |
 | Process     | 15  | 0                     | Size of stack mirror region.                                                                                                                                       |
 
-## svcMapMemoryMirror
+## svcMapTransferMemory
 
 The newly mapped pages will have
-[\#MemoryState](#MemoryState "wikilink") type 0xE.
+[\#MemoryAttribute](#MemoryAttribute "wikilink") type 0xE.
 
 You must pass same size and permissions as given in
 svcCreateMemoryMirror, otherwise error.
 
-## svcUnmapMemoryMirror
+## svcUnmapTransferMemory
 
 Size must match size given in map syscall, otherwise there's an
 invalid-size error.
 
-## MemoryState
+## MemoryAttribute
 
 | Lower 8 bits | Type                 | Meaning           |
 | ------------ | -------------------- | ----------------- |

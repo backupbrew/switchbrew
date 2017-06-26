@@ -229,25 +229,25 @@ Bit2 of permission (exec) is not allowed.
 
 Setting write-only is not allowed either (bit1).
 
-== svcSetMemoryState ==
+== svcSetMemoryAttribute ==
 {| class=wikitable
 ! State0 || State1 || Action
 |-
-| 0 || 0 || Clear bit35 in [[#MemoryState]].
+| 0 || 0 || Clear bit35 in [[#MemoryAttribute]].
 |-
-| 8 || 0 || Clear bit35 in [[#MemoryState]].
+| 8 || 0 || Clear bit35 in [[#MemoryAttribute]].
 |-
-| 8 || 8 || Set bit35 in [[#MemoryState]].
+| 8 || 8 || Set bit35 in [[#MemoryAttribute]].
 |}
 
 This might used for switching between cached and non-cached mappings.
 
-== svcMirrorStack ==
+== svcMapMemory ==
 Memory is only allowed to be mapped into a special region.
 
 Code can get the range of this region from [[#svcGetInfo]].
 
-The source region gets reprotected to ---, and sets bit32 is set in [[#MemoryState]].
+The source region gets reprotected to ---, and sets bit32 is set in [[#MemoryAttribute]].
 
 == svcCreateThread ==
 Processor_id must be 0,1,2,3 or -2.
@@ -255,19 +255,19 @@ Processor_id must be 0,1,2,3 or -2.
 == svcSleepThread ==
 Setting nano=0 means "yield thread".
 
-== svcCreateMemoryMirror ==
-This one reprotects the src block with perms you give it. It also sets bit32 into [[#MemoryState]].
+== svcCreateTransferMemory ==
+This one reprotects the src block with perms you give it. It also sets bit32 into [[#MemoryAttribute]].
 
 Executable bit perm not allowed.
 
-Closing all handles automatically causes the bit32 in [[#MemoryState]] to clear, and the permission to reset.
+Closing all handles automatically causes the bit32 in [[#MemoryAttribute]] to clear, and the permission to reset.
 
-== svcWaitEvents ==
+== svcWaitSynchronization ==
 Works with num_handles <= 0x40, error on num_handles == 0.
 
 Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
-== svcSendSyncRequestByBuf ==
+== svcSendSyncRequestWithUserBuffer ==
 Size must be 0x1000-aligned.
 
 == svcBreak ==
@@ -310,15 +310,15 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 | Process || 15 || 0 || Size of stack mirror region.
 |}
 
-== svcMapMemoryMirror ==
-The newly mapped pages will have [[#MemoryState]] type 0xE.
+== svcMapTransferMemory ==
+The newly mapped pages will have [[#MemoryAttribute]] type 0xE.
 
 You must pass same size and permissions as given in svcCreateMemoryMirror, otherwise error.
 
-== svcUnmapMemoryMirror ==
+== svcUnmapTransferMemory ==
 Size must match size given in map syscall, otherwise there's an invalid-size error.
 
-== MemoryState ==
+== MemoryAttribute ==
 {| class=wikitable
 ! Lower 8 bits || Type                 || Meaning
 |-
