@@ -43,7 +43,12 @@ Returns the plaintext TLS client-cert, outbuf_size = 0x804. Buf+0 is the u32 siz
 |-
 ! Cmd || Name
 |-
+| ? || GetSystemVersion
+|-
 | ? || GetSerialNumber (Returns the 0x18-byte SerialNumber string)
 |}
+
+== GetSystemVersion ==
+Returns the content of the [[System_Version_Title]] "/file".
 
 [[Category:Services]]

@@ -35,6 +35,13 @@ the u32 size of the actual cert, +4 is the actual start of the cert.
 
 | Cmd | Name                                                        |
 | --- | ----------------------------------------------------------- |
+| ?   | GetSystemVersion                                            |
 | ?   | GetSerialNumber (Returns the 0x18-byte SerialNumber string) |
+
+## GetSystemVersion
+
+Returns the content of the
+[System\_Version\_Title](System%20Version%20Title.md "wikilink")
+"/file".
 
 [Category:Services](Category:Services "wikilink")
