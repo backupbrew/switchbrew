@@ -1,0 +1,16 @@
+=nim=
+
+=nim:shp=
+
+=ntc=
+
+=Network=
+* <nowiki>https://sun.hac.%%.d4c.nintendo.net/v1/system_update_meta?device_id=%016llx</nowiki>
+* ...
+* <nowiki>https://aqua.hac.%%.d4c.nintendo.net/required_system_update_meta?device_id=%016llx</nowiki>
+* <nowiki>https://%s.hac.%%.d4c.nintendo.net/t/%c/%016llx/%u?device_id=%016llx</nowiki>
+* <nowiki>https://%s.hac.%%.d4c.nintendo.net/c/%c/%s</nowiki>
+* <nowiki>https://aauth-%.ndas.srv.nintendo.net/v1/time</nowiki>
+* ...
+
+These are not accessible without the required TLS client cert+privk, minus the time URL which can be accessed without any client cert+privk at all.
