@@ -4,6 +4,9 @@
 
 # ntc
 
+Presumably Network Time
+    Sync?
+
 # Network
 
   - https://sun.hac.%%.d4c.nintendo.net/v1/system\_update\_meta?device\_id=%016llx
