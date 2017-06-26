@@ -14,5 +14,6 @@ Presumably Network Time Sync?
 * <nowiki>https://%s.hac.%%.d4c.nintendo.net/c/%c/%s</nowiki>
 * <nowiki>https://aauth-%.ndas.srv.nintendo.net/v1/time</nowiki>
 * ...
+* <nowiki>"https://dauth-%.ndas.srv.nintendo.net/v1/device_auth_token"</nowiki> CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "system_version=%08x&client_id=%s", <output parsed from a func>, "<hard-coded hex string>");
 
 These are not accessible without the required TLS client cert+privk, minus the time URL which can be accessed without any client cert+privk at all.

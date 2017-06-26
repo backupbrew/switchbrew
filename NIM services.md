@@ -16,6 +16,11 @@ Presumably Network Time
   - https://%s.hac.%%.d4c.nintendo.net/c/%c/%s
   - https://aauth-%.ndas.srv.nintendo.net/v1/time
   - ...
+  - "https://dauth-%.ndas.srv.nintendo.net/v1/device\_auth\_token"
+    CURLOPT\_POSTFIELDS is set to the output from: snprintf(...,
+    "system\_version=%08x\&client\_id=%s",
+    <output parsed from a func>
+    , "<hard-coded hex string>");
 
 These are not accessible without the required TLS client cert+privk,
 minus the time URL which can be accessed without any client cert+privk
