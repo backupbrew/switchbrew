@@ -12,3 +12,4 @@ Some game titles may also contain:
 * "/[[NSO|subsdk1]]"
 * "/[[NSO|subsdk2]]"
 * "/[[NSO|subsdk3]]"
+* "/[[NSO|subsdk4]]"

@@ -14,3 +14,4 @@ Some game titles may also contain:
   - "/[subsdk1](NSO.md "wikilink")"
   - "/[subsdk2](NSO.md "wikilink")"
   - "/[subsdk3](NSO.md "wikilink")"
+  - "/[subsdk4](NSO.md "wikilink")"
