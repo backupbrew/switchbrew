@@ -14,6 +14,8 @@
 | 4 || [[#ScrambleKeyB]] ||
 |-
 | 5 || || Always returns 0x41A?
+|-
+| 11 || [[#GetDevunitFlag]] || 
 |}
 
 == ScrambleKeyA ==
@@ -25,3 +27,8 @@ Same input gives same output. Console unique.
 Behaves similar to [[#ScrambleKeyA]], but with different output.
 
 Also console unique. This is not the inverse operation of [[#ScrambleKeyA]].
+
+== GetDevunitFlag ==
+No input params.
+
+Returns an u8 flag for whether the system is devunit it seems.
