@@ -166,10 +166,10 @@ There are two main implementations of this interface:
 | 0   | CreateFile                 |
 | 1   | DeleteFile                 |
 | 2   | CreateDirectory            |
-| 3   | DeleteDirectory?           |
+| 3   | DeleteDirectory            |
 | 4   | DeleteDirectoryRecursively |
 | 5   | RenameFile                 |
-| 6   | MoveDirectory?             |
+| 6   | RenameDirectory            |
 | 7   | GetEntryType               |
 | 8   | OpenFile                   |
 | 9   | OpenDirectory              |
