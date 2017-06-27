@@ -196,15 +196,15 @@
 |-
 | 0x73 || svcSetProcessMemoryPermission || || 
 |-
-| 0x74 || svcMapProcessMemory || || 
+| 0x74 || svcMapProcessMemory || X0=srcaddr, W1=process_handle, X2=dstaddr, X3=size || W0=result
 |-
-| 0x75 || svcUnmapProcessMemory || || 
+| 0x75 || svcUnmapProcessMemory || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
 |-
 | 0x76 || svcQueryProcessMemory || || 
 |-
-| 0x77 || svcMapProcessCodeMemory || || 
+| 0x77 || svcMapProcessCodeMemory || W0=process_handle, X21dstaddr, X2=srcaddr, X3=size || W0=result
 |-
-| 0x78 || svcUnmapProcessCodeMemory || || 
+| 0x78 || svcUnmapProcessCodeMemory || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
 |-
 | 0x79 || svcCreateProcess || || 
 |-
