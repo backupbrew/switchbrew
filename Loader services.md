@@ -17,19 +17,19 @@
 
 ## LoadNro
 
-| Word | Value       |
-| ---- | ----------- |
-| 0    | 0x00000004  |
-| 1    | 0x80000012  |
-| 2    | 0x00000001  |
-| 0-1  | Pid         |
-| 0    | "SCFI"      |
-| 1    | 0x00000000  |
-| 2    | Always 0.   |
-| 3    | Nro address |
-| 4    | Nro size    |
-| 5    |             |
-| 6    | Bss size    |
+| Word | Value                    |
+| ---- | ------------------------ |
+| 0    | 0x00000004               |
+| 1    | 0x80000012               |
+| 2    | 0x00000001               |
+| 0-1  | Pid                      |
+| 0    | "SCFI"                   |
+| 1    | 0x00000000               |
+| 2    | Always 0.                |
+| 3    | Nro heap address         |
+| 4    | Nro size                 |
+| 5    | Bss backing heap address |
+| 6    | Bss size                 |
 
 ## LoadNrr
 

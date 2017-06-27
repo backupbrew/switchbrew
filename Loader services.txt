@@ -43,11 +43,11 @@
 |-
 | 2 || Always 0.
 |-
-| 3 || Nro address
+| 3 || Nro heap address
 |-
 | 4 || Nro size
 |-
-| 5 ||
+| 5 || Bss backing heap address
 |-
 | 6 || Bss size
 |}
