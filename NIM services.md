@@ -34,10 +34,10 @@ strings:
 ` snprintf(..., "User-Agent: NintendoSDK Firmware/%s-%u (platform:%s; did:%016llx; eid:%s)", <string at `[`sysver`](System%20Version%20Title.md "wikilink")`+0x68>, {u32 from `[`sysver`](System%20Version%20Title.md "wikilink")`+4}, "NX", DeviceId, {`[`NSD`](NSD%20services.md "wikilink")` cmd11 output});`  
 ` snprintf(..., "User-Agent: NintendoSDK Firmware/%s-%u (platform:%s; eid:%s)", <string at `[`sysver`](System%20Version%20Title.md "wikilink")`+0x68>, {u32 from `[`sysver`](System%20Version%20Title.md "wikilink")`+4}, "NX", DeviceId, {`[`NSD`](NSD%20services.md "wikilink")` cmd11 output});`
 
-Where the 64bit DeviceId is extracted from the 0x10-bytes at outbuf+0xC6
+Where the 64bit DeviceId is parsed from the 0x10-bytes at outbuf+0xC6
 from [set:cal](Settings%20services.md "wikilink")
 GetDeviceCert(DeviceCert\_certname+2, aka where the hex string for the
-DeviceId is).
+DeviceId is) This hex string is parsed as little-endian.
 
 ## sun
 
