@@ -194,13 +194,13 @@ This is the interface for a raw device, usually a block device.
 |-
 | 0 || Read || Takes a type-0x46 buffer, an offset and length 
 |-
-| 1 || Write? || ?
+| 1 || Write ||
 |-
-| 2 || || ?
+| 2 || Flush ||
 |-
-| 3 || || ?
+| 3 || SetSize ||
 |-
-| 4 || GetStorageSize || None
+| 4 || GetSize || None
 |}
 
 = IFileSystem =
