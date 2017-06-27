@@ -11,14 +11,27 @@
 
 # set:cal
 
-| Cmd                            | Name                                              |
-| ------------------------------ | ------------------------------------------------- |
-| ?                              | GetDeviceId (Returns the 64bit DeviceId)          |
-| GetDeviceId\_cmd+1 presumably? | GetDeviceCert (Returns the 0x240-byte DeviceCert) |
-| 16                             | GetTLSClientPrivk                                 |
-| 17                             | GetTLSClientCert                                  |
+| Cmd | Name              |
+| --- | ----------------- |
+| 14  | GetDeviceCert     |
+| 15  | GetDeviceCert2    |
+| 16  | GetTLSClientPrivk |
+| 17  | GetTLSClientCert  |
 
 Used for accessing data calibrated at the factory.
+
+## GetDeviceCert
+
+Takes a type-0x16 output buffer with fixed size 0x180.
+
+Returns the DeviceCert.
+
+## GetDeviceCert2
+
+Takes a type-0x16 output buffer with fixed size 0x240.
+
+Same as GetDeviceCert, except this returns more data and the data starts
+differing at offset 0x108 compared to GetDeviceCert.
 
 ## GetTLSClientPrivk
 
