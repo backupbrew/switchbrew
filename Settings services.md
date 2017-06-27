@@ -11,25 +11,28 @@
 
 # set:cal
 
-| Cmd                                  | Name                                              |
-| ------------------------------------ | ------------------------------------------------- |
-| ?                                    | GetDeviceId (Returns the 64bit DeviceId)          |
-| GetDeviceId\_cmd+1 presumably?       | GetDeviceCert (Returns the 0x240-byte DeviceCert) |
-| ?                                    | GetTLSClientPrivk                                 |
-| GetTLSClientPrivk\_cmd+1 presumably? | GetTLSClientCert                                  |
+| Cmd                            | Name                                              |
+| ------------------------------ | ------------------------------------------------- |
+| ?                              | GetDeviceId (Returns the 64bit DeviceId)          |
+| GetDeviceId\_cmd+1 presumably? | GetDeviceCert (Returns the 0x240-byte DeviceCert) |
+| 16                             | GetTLSClientPrivk                                 |
+| 17                             | GetTLSClientCert                                  |
 
 Used for accessing data calibrated at the factory.
 
 ## GetTLSClientPrivk
 
-.Returns the encrypted TLS client-privk, outbuf\_size = 0x134. Buf+0 is
-u32 size of the encrypted/plaintext data, +4 is the actual start of the
-encrypted data.
+Takes a type-0x16 output buffer with fixed size 0x134.
+
+Returns the encrypted TLS client-privk. Buf+0 is u32 size of the
+encrypted/plaintext data, +4 is the actual start of the encrypted data.
 
 ## GetTLSClientCert
 
-Returns the plaintext TLS client-cert, outbuf\_size = 0x804. Buf+0 is
-the u32 size of the actual cert, +4 is the actual start of the cert.
+Takes a type-0x16 output buffer with fixed size 0x804.
+
+Returns the plaintext TLS client-cert Buf+0 is the u32 size of the
+actual cert, +4 is the actual start of the cert.
 
 # set:sys
 
