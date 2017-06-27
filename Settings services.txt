@@ -37,6 +37,8 @@ Takes a type-0x16 output buffer with fixed size 0x134.
 
 Returns the encrypted TLS client-privk. Buf+0 is u32 size of the encrypted/plaintext data, +4 is the actual start of the encrypted data.
 
+Used by SSL-sysmodule, see [[SSL_services|here]].
+
 == GetTLSClientCert ==
 Takes a type-0x16 output buffer with fixed size 0x804.
 
