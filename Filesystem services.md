@@ -1,12 +1,20 @@
+# fsp-ldr
+
+| Cmd | Name      |
+| --- | --------- |
+| 0   | MountCode |
+| 1   |           |
+
 # fsp-srv
 
 | Cmd  | Name                                                                                   |
 | ---- | -------------------------------------------------------------------------------------- |
+| 0    | MountContent                                                                           |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |
 | 2    | MountRomFs                                                                             |
 | 7    | [\#MountContent7](#MountContent7 "wikilink")                                           |
 | 8    | [\#MountContent](#MountContent "wikilink")                                             |
-| 11   | OpenBisFileSystem                                                                      |
+| 11   | MountBis                                                                               |
 | 12   | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                     |
 | 13   | InvalidateBisCache                                                                     |
 | 17   | OpenHostFileSystemImpl                                                                 |
@@ -19,7 +27,7 @@
 | 25   |                                                                                        |
 | 26   | FormatSdCardDryRun                                                                     |
 | 27   |                                                                                        |
-| 30   | OpenGameCardStorage?                                                                   |
+| 30   | OpenGameCardPartition                                                                  |
 | 31   | MountGameCardPartition                                                                 |
 | 51   | MountSaveData                                                                          |
 | 52   | MountSystemSaveData                                                                    |
@@ -28,30 +36,30 @@
 | 59   |                                                                                        |
 | 60   | OpenSaveDataInfoReader                                                                 |
 | 61   | OpenSaveDataIterator                                                                   |
-| 80   | OpenFileDirectly?                                                                      |
+| 80   | OpenSaveDataThumbnailFile                                                              |
 | 100  | MountImageDirectory                                                                    |
 | 110  | [\#MountContentStorage](#MountContentStorage "wikilink")                               |
-| 200  | OpenRomFsStorage                                                                       |
+| 200  | OpenHost                                                                               |
 | 202  | OpenDataStorageByDataId                                                                |
 | 203  | Returns an [\#IStorage](#IStorage "wikilink").                                         |
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")     |
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink") |
-| 600  |                                                                                        |
-| 601  |                                                                                        |
-| 602  |                                                                                        |
-| 603  |                                                                                        |
-| 604  |                                                                                        |
-| 605  |                                                                                        |
+| 600  | SetCurrentPosixTime                                                                    |
+| 601  | QuerySaveDataTotalSize                                                                 |
+| 602  | VerifySaveData                                                                         |
+| 603  | CorruptSaveDataForDebug                                                                |
+| 604  | CreatePaddingFile                                                                      |
+| 605  | DeleteAllPaddingFiles                                                                  |
 | 606  |                                                                                        |
 | 607  | RegisterExternalKey                                                                    |
 | 608  | UnregisterExternalKey                                                                  |
 | 609  |                                                                                        |
 | 620  |                                                                                        |
 | 800  |                                                                                        |
-| 1000 |                                                                                        |
+| 1000 | SetBisRootForHost                                                                      |
 | 1001 |                                                                                        |
-| 1002 |                                                                                        |
+| 1002 | SetSaveDataRootPath                                                                    |
 | 1003 | DisableAutoSaveDataCreation                                                            |
 | 1004 | SetGlobalAccessLogMode                                                                 |
 | 1005 | GetGlobalAccessLogMode                                                                 |
@@ -131,13 +139,6 @@ This command returns a session to a port implementing the
 This command returns a session to a port implementing the
 [\#IEventNotifier](#IEventNotifier "wikilink") interface.
 
-# fsp-ldr
-
-| Cmd | Name      |
-| --- | --------- |
-| 0   | MountCode |
-| 1   |           |
-
 # IStorage
 
 This is the interface for a raw device, usually a block
@@ -201,37 +202,38 @@ There are two main implementations of this interface:
 | Cmd | Name                                                                           |
 | --- | ------------------------------------------------------------------------------ |
 | 0   | IsSdCardInserted                                                               |
-| 1   |                                                                                |
+| 1   | GetSdCardSpeedMode                                                             |
 | 2   | GetSdCardCid                                                                   |
 | 3   |                                                                                |
 | 4   |                                                                                |
 | 5   |                                                                                |
 | 6   |                                                                                |
-| 101 |                                                                                |
+| 100 | GetMmcCid                                                                      |
+| 101 | GetMmcSpeedMode                                                                |
 | 110 | EraseMmc                                                                       |
-| 111 |                                                                                |
+| 111 | GetMmcPartitionSize                                                            |
 | 112 |                                                                                |
 | 113 |                                                                                |
 | 114 |                                                                                |
 | 200 | IsGameCardInserted                                                             |
-| 201 |                                                                                |
+| 201 | EraseGameCard                                                                  |
 | 202 | GetGameCardHandle                                                              |
 | 203 | [\#GetGameCardUpdatePartitionInfo](#GetGameCardUpdatePartitionInfo "wikilink") |
-| 204 |                                                                                |
+| 204 | FinalizeGameCardDriver                                                         |
 | 205 | GetGameCardAttribute                                                           |
 | 206 | GetGameCardDeviceCertificate                                                   |
-| 207 |                                                                                |
-| 208 |                                                                                |
-| 209 |                                                                                |
-| 210 |                                                                                |
-| 211 |                                                                                |
+| 207 | GetGameCardAsicInfo                                                            |
+| 208 | GetGameCardIdSet                                                               |
+| 209 | WriteToGameCard                                                                |
+| 210 | SetVerifyWriteEnalbleFlag                                                      |
+| 211 | GetGameCardImageHash                                                           |
 | 212 |                                                                                |
 | 213 |                                                                                |
 | 214 |                                                                                |
 | 215 |                                                                                |
 | 216 |                                                                                |
-| 300 |                                                                                |
-| 301 |                                                                                |
+| 300 | SetSpeedEmulationMode                                                          |
+| 301 | GetSpeedEmulationMode                                                          |
 
 ## GetGameCardUpdatePartitionInfo
 
