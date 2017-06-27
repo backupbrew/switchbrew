@@ -10,6 +10,7 @@ It connects to "pm:shell" service and launches the following titles in this orde
 * 010000000000001A (pcv)
 
 Then it connects to "set:sys" and reads a bool from "boot" section called "force_maintenance" with default value true.
+This probably corresponds to both volume up and down keys held down at the same time?
 
 If the value reads successfully as false, it initializes "gpio" and opens sessions for GPIOs 26 and 25.
 If both GPIOs read as zero, then maintenance mode is forced.

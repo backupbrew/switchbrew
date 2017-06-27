@@ -13,7 +13,8 @@ this order:
   - 010000000000001A (pcv)
 
 Then it connects to "set:sys" and reads a bool from "boot" section
-called "force\_maintenance" with default value true.
+called "force\_maintenance" with default value true. This probably
+corresponds to both volume up and down keys held down at the same time?
 
 If the value reads successfully as false, it initializes "gpio" and
 opens sessions for GPIOs 26 and 25. If both GPIOs read as zero, then
