@@ -24,7 +24,8 @@ Used for accessing data calibrated at the factory.
 
 Takes a type-0x16 output buffer with fixed size 0x180.
 
-Returns the DeviceCert.
+Returns the DeviceCert. This is identical to 3DS DeviceCert/CTCert
+besides the strings. NIM loads the DeviceId from this.
 
 ## GetDeviceCert2
 
