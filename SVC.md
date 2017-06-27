@@ -30,7 +30,7 @@
 | 0x1A | svcArbitrateLock                                                                   | W0=cur\_thread\_handle, X1=ptr, W2=req\_thread\_handle            |                                                     |
 | 0x1B | svcArbitrateUnlock                                                                 | X0=ptr                                                            |                                                     |
 | 0x1C | svcWaitProcessWideKeyAtomic                                                        | X0=ptr0, X1=ptr, W2=thread\_handle, X3=timeout                    | W0=result                                           |
-| 0x1D | svc:SignalProcessWideKey                                                           | X0=ptr, W1=value                                                  | W0=result                                           |
+| 0x1D | svcSignalProcessWideKey                                                            | X0=ptr, W1=value                                                  | W0=result                                           |
 | 0x1E | svcGetSystemTick                                                                   |                                                                   |                                                     |
 | 0x1F | svcConnectToPort                                                                   | X1=port\_name\_str                                                | W0=result, W1=handle                                |
 | 0x20 | svcSendSyncRequestLight                                                            |                                                                   |                                                     |
@@ -45,6 +45,8 @@
 | 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                                             | X1=info\_id, X2=handle, X3=info\_sub\_id                          | W0=result, X1=out                                   |
 | 0x2A | svcFlushEntireDataCache                                                            |                                                                   |                                                     |
 | 0x2B | svcFlushDataCache                                                                  |                                                                   |                                                     |
+| 0x2C | svcInvalidateEntireDataCache?                                                      |                                                                   |                                                     |
+| 0x2D | svcInvalidateDataCache?                                                            |                                                                   |                                                     |
 | .... | ?                                                                                  | ?                                                                 | ?                                                   |
 | 0x2F | svcGetLastThreadInfo                                                               |                                                                   |                                                     |
 | 0x30 | svcGetResourceLimitLimitValue                                                      |                                                                   |                                                     |

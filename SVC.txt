@@ -58,7 +58,7 @@
 |-
 | 0x1C || svcWaitProcessWideKeyAtomic || X0=ptr0, X1=ptr, W2=thread_handle, X3=timeout || W0=result
 |-
-| 0x1D || svc:SignalProcessWideKey || X0=ptr, W1=value || W0=result
+| 0x1D || svcSignalProcessWideKey || X0=ptr, W1=value || W0=result
 |-
 | 0x1E || svcGetSystemTick ||  || 
 |-
@@ -87,6 +87,10 @@
 | 0x2A || svcFlushEntireDataCache ||  || 
 |-
 | 0x2B || svcFlushDataCache ||  || 
+|-
+| 0x2C || svcInvalidateEntireDataCache?  ||  ||
+|-
+| 0x2D || svcInvalidateDataCache? ||  || 
 |-
 | .... || ? || ? || ?
 |-
