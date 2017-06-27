@@ -88,9 +88,9 @@
 |-
 | 0x2B || svcFlushDataCache ||  || 
 |-
-| 0x2C || svcInvalidateEntireDataCache?  ||  ||
+| 0x2C || svcFlushEntireInsnCache?  ||  ||
 |-
-| 0x2D || svcInvalidateDataCache? ||  || 
+| 0x2D || svcFlushInsnCache? ||  || 
 |-
 | .... || ? || ? || ?
 |-
