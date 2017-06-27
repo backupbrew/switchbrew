@@ -255,7 +255,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | cal: calibration, sys: System Settings
 |-
 | ssl
-| SSL services
+| [[SSL services]]
 |
 |-
 | spl:
