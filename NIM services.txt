@@ -26,3 +26,6 @@ NIM generates two User-Agent strings:
 Where the 64bit DeviceId is extracted from the 0x10-bytes at outbuf+0xC6 from [[Settings_services|set:cal]] cmd14.
 
 == sun ==
+NIM sends a HTTP GET with the sun URL listed above to get the title-listing of the latest system-titles, as .json. The deviceid in the URL is the same one in the above User-Agent section. HTTP header "Accept:application/json" is sent in the request.
+
+The response is json with a "system_update_metas" block, containing "title_id" and "title_version" entries.

@@ -38,3 +38,11 @@ Where the 64bit DeviceId is extracted from the 0x10-bytes at outbuf+0xC6
 from [set:cal](Settings%20services.md "wikilink") cmd14.
 
 ## sun
+
+NIM sends a HTTP GET with the sun URL listed above to get the
+title-listing of the latest system-titles, as .json. The deviceid in the
+URL is the same one in the above User-Agent section. HTTP header
+"Accept:application/json" is sent in the request.
+
+The response is json with a "system\_update\_metas" block, containing
+"title\_id" and "title\_version" entries.
