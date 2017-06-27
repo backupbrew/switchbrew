@@ -227,9 +227,9 @@ invalid-size error.
 | 0x6          | Shared memory block  |                   |
 | 0x8          | Module code static   | .text and .rodata |
 | 0x9          | Module code          | .data             |
-| 0xB          | Stack mirror         |                   |
+| 0xB          | Mapped memory        |                   |
 | 0xC          | Thread local storage |                   |
-| 0xE          | Memory mirror        |                   |
+| 0xE          | Transfer memory      |                   |
 | 0x10         | Reserved             |                   |
 
 Bit32: is\_mirrored Bit34: is\_nv\_locked Bit35: is\_uncached?

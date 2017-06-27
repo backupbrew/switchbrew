@@ -340,11 +340,11 @@ Size must match size given in map syscall, otherwise there's an invalid-size err
 |-
 | 0x9          || Module code          || .data
 |-
-| 0xB          || Stack mirror         ||
+| 0xB          || Mapped memory        ||
 |-
 | 0xC          || Thread local storage ||
 |-
-| 0xE          || Memory mirror        ||
+| 0xE          || Transfer memory      ||
 |-
 | 0x10         || Reserved             ||
 |}
