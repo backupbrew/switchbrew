@@ -19,4 +19,6 @@ When actual\_size is:
     the flag passed to SPL later is set to 0.
   - 0x100+0x30: Size must match this if it's not the above, otherwise
     error 0xC81A is returned. The flag passed to SPL later is set to 1
-    in this case.
+    in this case. Runs the devunit-flag-block: uses
+    [SPL\_services\#SPL\#GetDevunitFlag](SPL%20services#SPL#GetDevunitFlag.md##SPL#GetDevunitFlag "wikilink").
+    key = key1 when out\_flag\!=0, key2 otherwise.
