@@ -1,9 +1,9 @@
 # fsp-ldr
 
-| Cmd | Name      |
-| --- | --------- |
-| 0   | MountCode |
-| 1   |           |
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | MountCode         |
+| 1   | IsArchivedProgram |
 
 # fsp-srv
 
