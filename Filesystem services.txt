@@ -245,9 +245,9 @@ There are two main implementations of this interface:
 |-
 ! Cmd || Name
 |-
-| 0 || ReadEntries
+| 0 || Read
 |-
-| 1 || GetNumberOfEntries
+| 1 || GetEntryCount
 |}
 
 = IFile =

@@ -180,10 +180,10 @@ There are two main implementations of this interface:
 
 # IDirectory
 
-| Cmd | Name               |
-| --- | ------------------ |
-| 0   | ReadEntries        |
-| 1   | GetNumberOfEntries |
+| Cmd | Name          |
+| --- | ------------- |
+| 0   | Read          |
+| 1   | GetEntryCount |
 
 # IFile
 
