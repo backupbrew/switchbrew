@@ -13,12 +13,12 @@ this order:
   - 010000000000001A (pcv)
 
 Then it connects to "set:sys" and reads a bool from "boot" section
-called "force\_maintenance" with default value true. This probably
-corresponds to both volume up and down keys held down at the same time?
+called "force\_maintenance" with default value true.
 
 If the value reads successfully as false, it initializes "gpio" and
 opens sessions for GPIOs 26 and 25. If both GPIOs read as zero, then
-maintenance mode is forced.
+maintenance mode is forced. This probably checks if both volume up and
+down keys are held down at the same time?
 
 Then depending on maintenance mode or not it launches the following
 titles in this order:
