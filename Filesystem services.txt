@@ -261,9 +261,9 @@ There are two main implementations of this interface:
 |-
 | 2 || Flush
 |-
-| 3 ||
+| 3 || SetSize
 |-
-| 4 ||
+| 4 || GetSize
 |}
 
 = ISaveDataInfoReader =
