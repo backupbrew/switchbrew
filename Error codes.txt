@@ -253,11 +253,15 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1216 || 9 || Unable to verify NRO hash or NRR signature
 |-
-| 0x80216 || 1025 || NRO address not page-aligned
+| 0x80216 || 1025 || Address not page-aligned
 |-
 | 0x80416 || 1026 || Incorrect NRO size
 |-
 | 0x80816 || 1028 || NRO not loaded
+|-
+| 0x80A16 || 1029 || NRR not loaded
+|-
+| 0x80C16 || 1030 || Already initialized
 |-
 | 0x80E16 || 1031 || Not initialized
 |-
