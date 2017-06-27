@@ -173,9 +173,9 @@ There are two main implementations of this interface:
 | 7   | GetEntryType               |
 | 8   | OpenFile                   |
 | 9   | OpenDirectory              |
-| 10  | CommitSaveData             |
-| 11  |                            |
-| 12  |                            |
+| 10  | Commit                     |
+| 11  | GetFreeSpaceSize           |
+| 12  | GetTotalSpaceSize          |
 
 # IDirectory
 

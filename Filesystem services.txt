@@ -233,11 +233,11 @@ There are two main implementations of this interface:
 |-
 | 9 || OpenDirectory
 |-
-| 10 || CommitSaveData
+| 10 || Commit
 |-
-| 11 ||
+| 11 || GetFreeSpaceSize
 |-
-| 12 ||
+| 12 || GetTotalSpaceSize
 |}
 
 = IDirectory =
