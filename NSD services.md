@@ -20,4 +20,11 @@
 | 61  |                      |
 | 62  |                      |
 
+## Cmd11
+
+Takes a type-0x16 buffer with size 8. Returns a string.
+
+The output string is used by [NIM](NIM%20services.md "wikilink") for the
+"eid:%s" in the User-Agent strings.
+
 [Category:Services](Category:Services "wikilink")

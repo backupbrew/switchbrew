@@ -38,4 +38,9 @@
 | 62 ||
 |}
 
+== Cmd11 ==
+Takes a type-0x16 buffer with size 8. Returns a string.
+
+The output string is used by [[NIM_services|NIM]] for the "eid:%s" in the User-Agent strings.
+
 [[Category:Services]]
