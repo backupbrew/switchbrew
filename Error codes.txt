@@ -241,9 +241,25 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1015 || 8 || Permission denied
 |-
-| 0x816 || 4 || Bad NRO magic
+| 0x416 || 2 || Address space is full
+|-
+| 0x616 || 3 || NRO already loaded
+|-
+| 0x816 || 4 || Invalid NRO header values
 |-
 | 0xC16 || 6 || Bad NRR magic
+|-
+| 0x1016 || 8 || Reached max NRR count
+|-
+| 0x1216 || 9 || Unable to verify NRO hash or NRR signature
+|-
+| 0x80216 || 1025 || NRO address not page-aligned
+|-
+| 0x80416 || 1026 || Incorrect NRO size
+|-
+| 0x80816 || 1028 || NRO not loaded
+|-
+| 0x80E16 || 1031 || Not initialized
 |-
 | 0x287C || 20 || Argument is NULL
 |-
