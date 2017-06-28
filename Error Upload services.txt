@@ -1,0 +1,5 @@
+This service reads crash dumps and other error reports from <code>erpt:r</code>.
+
+Then it periodically uploads them to the following URL:
+
+https://receive-%.er.srv.nintendo.net/post
