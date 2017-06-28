@@ -1,7 +1,14 @@
-Creport takes a string containing a pid (?) formatted in base10. This is
-launched by [NS](NS%20Services.md "wikilink").
+This process is launched by [NS](NS%20Services.md "wikilink") when
+[PM](Process%20Manager%20services.md "wikilink") signals that there is a
+crashing process.
 
-Then it uses the [svcDebugActiveProcess](SVC.md "wikilink") to start a
+Creport takes a string containing a pid formatted in base10 as input,
+and generates an error report. This error report can later be sent to
+the cloud server by [Eupld services](Eupld%20services.md "wikilink").
+
+## Crash dumping
+
+It uses the [svcDebugActiveProcess](SVC.md "wikilink") to start a
 debug-session for the pid. It loops
 [svcGetDebugEvent](SVC.md "wikilink") to fetch all debug events.
 

@@ -1,6 +1,9 @@
-Creport takes a string containing a pid (?) formatted in base10. This is launched by [[NS Services|NS]].
+This process is launched by [[NS Services|NS]] when [[Process Manager services|PM]] signals that there is a crashing process.
 
-Then it uses the [[SVC|svcDebugActiveProcess]] to start a debug-session for the pid. It loops [[SVC|svcGetDebugEvent]] to fetch all debug events.
+Creport takes a string containing a pid formatted in base10 as input, and generates an error report. This error report can later be sent to the cloud server by [[Eupld services]].
+
+== Crash dumping ==
+It uses the [[SVC|svcDebugActiveProcess]] to start a debug-session for the pid. It loops [[SVC|svcGetDebugEvent]] to fetch all debug events.
 
 It has a event buffer of 128 u64's that starts with "CREP\x01\x00\x00\x00".
 
