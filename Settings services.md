@@ -18,7 +18,8 @@
 | 16  | GetTLSClientPrivk |
 | 17  | GetTLSClientCert  |
 
-Used for accessing data calibrated at the factory.
+Used for accessing data calibrated at the factory. Probably only for
+console-unique data?(Everything read so far has been console-unique)
 
 ## GetDeviceCert
 

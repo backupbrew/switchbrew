@@ -30,7 +30,7 @@
 | 17 || GetTLSClientCert
 |}
 
-Used for accessing data calibrated at the factory.
+Used for accessing data calibrated at the factory. Probably only for console-unique data?(Everything read so far has been console-unique)
 
 == GetDeviceCert ==
 Takes a type-0x16 output buffer with fixed size 0x180.
