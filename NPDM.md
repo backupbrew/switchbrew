@@ -30,12 +30,12 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 | 0x210  | 0x8   | Title id                                                              |
 | 0x218  | 0x8   | Title id again                                                        |
 | 0x220  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") offset           |
-| 0x24   | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") size             |
-| 0x28   | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") offset |
-| 0x2C   | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") size   |
-| 0x30   | 4     | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset   |
-| 0x34   | 4     | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size     |
-| 0x38   | 0x8   | Padding                                                               |
+| 0x224  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") size             |
+| 0x228  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") offset |
+| 0x22C  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") size   |
+| 0x230  | 4     | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset   |
+| 0x234  | 4     | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size     |
+| 0x238  | 0x8   | Padding                                                               |
 
 # ACI0
 

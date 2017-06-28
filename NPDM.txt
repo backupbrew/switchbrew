@@ -90,27 +90,27 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 | 0x4
 | [[#FS Access Control]] offset
 |-
-| 0x24
+| 0x224
 | 0x4
 | [[#FS Access Control]] size
 |-
-| 0x28
+| 0x228
 | 0x4
 | [[#Service Access Control]] offset
 |-
-| 0x2C
+| 0x22C
 | 0x4
 | [[#Service Access Control]] size
 |-
-| 0x30
+| 0x230
 | 4
 | [[#Kernel Access Control]] offset
 |-
-| 0x34
+| 0x234
 | 4
 | [[#Kernel Access Control]] size
 |-
-| 0x38
+| 0x238
 | 0x8
 | Padding
 |}
