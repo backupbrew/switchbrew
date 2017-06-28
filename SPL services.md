@@ -45,8 +45,8 @@ Also console unique. This is not the inverse operation of
 
 No input params.
 
-Returns an u8 flag for whether the system is devunit it seems. Output
-flag is 0 on retail.
+Returns an u8 flag for whether the system is devunit. Output flag is 0
+on retail.
 
 ## Cmd13
 
