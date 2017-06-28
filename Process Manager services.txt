@@ -1,3 +1,13 @@
+= pm:bm =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetMaintenanceMode?
+|-
+| 1 || EnableMaintenanceMode
+|}
+
 = pm:shell =
 {| class="wikitable" border="1"
 |-

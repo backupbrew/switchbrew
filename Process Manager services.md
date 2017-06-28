@@ -1,3 +1,10 @@
+# pm:bm
+
+| Cmd | Name                  |
+| --- | --------------------- |
+| 0   | GetMaintenanceMode?   |
+| 1   | EnableMaintenanceMode |
+
 # pm:shell
 
 | Cmd | Name             |
