@@ -64,7 +64,7 @@
 | 0x45 | svcCreateEvent                                                                     | None                                                              | W0=result, W1=client\_handle ?, W2=server\_handle ? |
 | .... | ?                                                                                  | ?                                                                 | ?                                                   |
 | 0x4D | svcSleepSystem                                                                     |                                                                   |                                                     |
-| 0x4E | svcReadWriteRegister                                                               |                                                                   |                                                     |
+| 0x4E | [\#svcReadWriteRegister](#svcReadWriteRegister "wikilink")                         | X1=reg\_addr, W2=rw\_mask, W3=in\_val                             | W0=result, W1=out\_val                              |
 | 0x4F | svcSetProcessActivity                                                              |                                                                   |                                                     |
 | 0x50 | svcCreateSharedMemory                                                              | W1=size?, W2=perm0, W3=perm1                                      | W0=result, W1=handle                                |
 | 0x51 | [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink")                         | X0=mirror\_handle, X1=addr, X2=size, W3=perm                      | W0=result                                           |
@@ -203,6 +203,41 @@ it will return
 | Process     | 14  | 0                     | Map region base. Randomized.                                                                                                                                       |
 | Process     | 15  | 0                     | Map region size.                                                                                                                                                   |
 | Process     | 18  | 0                     | Title-id, introduced with [3.0.0](3.0.0.md "wikilink")                                                                                                             |
+
+## svcReadWriteRegister
+
+Read/write Tegra hardware registers. rw\_mask is 0 for reading and -1
+for writing.
+
+### Registers
+
+| Address    | Description |
+| ---------- | ----------- |
+| 0x700192E8 |             |
+| 0x700192EC |             |
+| 0x700192F0 |             |
+| 0x700192F4 |             |
+| 0x700192F8 |             |
+| 0x7001941C |             |
+| 0x70019420 |             |
+| 0x70019424 |             |
+| 0x70019428 |             |
+| 0x7001942C |             |
+| 0x70019430 |             |
+| 0x7001944C |             |
+| 0x7001947C |             |
+| 0x70019480 |             |
+| 0x70019484 |             |
+| 0x7001950C |             |
+| 0x70019670 |             |
+| 0x70019674 |             |
+| 0x70019690 |             |
+| 0x70019694 |             |
+| 0x70019698 |             |
+| 0x7001969C |             |
+| 0x700196A0 |             |
+| 0x700196A4 |             |
+| 0x70019C5C |             |
 
 ## svcMapTransferMemory
 
