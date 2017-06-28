@@ -140,7 +140,7 @@
 |-
 | 0x54 || svcQueryPhysicalAddress ||  || 
 |-
-| 0x55 || svcQueryIoMapping || || 
+| 0x55 || svcQueryIoMapping || X0=physaddr, X1=size || X0=virtaddr
 |-
 | 0x56 || svcCreateDeviceAddressSpace || || 
 |-
