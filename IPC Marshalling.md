@@ -57,6 +57,7 @@ This packing is so unnecessarily complex.
 | 1    | 31-16 | Size                      |
 
 Ignored by kernel unless the cmdreply has bufX-descriptor enabled?
+Probably copies the data from the cmdreply bufX to this bufC?
 
 ### Buffer descriptor X
 
