@@ -29,3 +29,15 @@ Where the 64bit DeviceId is parsed from the 0x10-bytes at outbuf+0xC6 from [[Set
 NIM sends a HTTP GET with the sun URL listed above to get the title-listing of the latest system-titles, as .json. The deviceid in the URL is the same one in the above User-Agent section. HTTP header "Accept:application/json" is sent in the request.
 
 The response is json with a "system_update_metas" block, containing "title_id" and "title_version" entries.
+
+Example, from 2.0 system:
+
+<code>{"timestamp":REDACTED-TIMESTSAMP,"system_update_metas":[{"title_id":"0100000000000816","title_version":201327002}]}</code>
+
+== aqua ==
+The following response is json from accessing the above aqua URL:
+
+<code>{
+"contents_delivery_required_title_id": "0100000000000816",
+"contents_delivery_required_title_version": 0
+}</code>

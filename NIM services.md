@@ -48,3 +48,15 @@ URL is the same one in the above User-Agent section. HTTP header
 
 The response is json with a "system\_update\_metas" block, containing
 "title\_id" and "title\_version" entries.
+
+Example, from 2.0
+system:
+
+`{"timestamp":REDACTED-TIMESTSAMP,"system_update_metas":[{"title_id":"0100000000000816","title_version":201327002}]}`
+
+## aqua
+
+The following response is json from accessing the above aqua URL:
+
+`{` `"contents_delivery_required_title_id": "0100000000000816",`
+`"contents_delivery_required_title_version": 0` `}`
