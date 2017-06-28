@@ -137,6 +137,45 @@ Bitmask 0x80 in control_byte means service is allowed to be registered.
 
 The service string can contain a wildcard <code>*</code> character.
 
+=Access Descriptors=
+Like the 3DS, the switch has a number of kernel capability descriptors. Unlike 3ds, where descriptors were identified by pattern 11..10 in high bits, on switch descriptors are identified by pattern 01..11 in low bits.
+
+{| class="wikitable" border="1"
+|-
+! Pattern of bits 20-31
+! Type
+! Fields
+|-
+| <code>0bxxxxxxxx0111?</code>
+| Interrupt info?
+| ?
+|-
+| <code>0bxxxxxxx01111</code>
+| System call mask
+| Bits 29-31: System call mask table index; Bits 5-28: mask
+|-
+| <code>0bxxxxx0111111?</code>
+| Kernel release version?
+| ?
+|-
+| <code>0bxxxx01111111?</code>
+| Handle table size?
+| ?
+|-
+| <code>0bxxx011111111?</code>
+| Kernel flags?
+| ?
+|-
+| <code>0bx0111111111?</code>
+| Map address range?
+| ?
+|-
+| <code>0b011111111111?</code>
+| Map memory page?
+| ?
+|}
+
+
 =FS Permissions=
 {| class="wikitable" border="1"
 |-
