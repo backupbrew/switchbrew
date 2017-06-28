@@ -271,7 +271,7 @@ Once a nvgpu channel has been bound to an address space it cannot be unbound. Th
 |-
 | 0xC0084105 || Inout || 8 || [[#NVGPU_AS_IOCTL_UNMAP_BUFFER]] ||
 |-
-| 0xC0284106 || Inout || 40 || NVGPU_AS_IOCTL_MAP_BUFFER_EX ||
+| 0xC0284106 || Inout || 40 || [[#NVGPU_AS_IOCTL_MAP_BUFFER_EX]] ||
 |-
 | 0x40104107 || In || 16 || [[#NVGPU_AS_IOCTL_INITIALIZE]] ||
 |-
@@ -324,6 +324,21 @@ On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit
       u64 __offset;     // out
       u64 __align;      // in
     };
+  };
+
+=== NVGPU_AS_IOCTL_MAP_BUFFER_EX ===
+Map a memory region in the device address space. Identical to Linux driver pretty much.
+
+On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit34 set.
+
+  struct {
+    u32 __flags;          // in, 4 works
+    u32 __kind;           // in, -1 is default
+    u32 __nvmap_handle;   // in
+    u32 __page_size;      // inout, 0 means don't care
+    u64 __buffer_offset;  // in
+    u64 __mapping_size;   // in
+    u64 __offset;         // out
   };
 
 === NVGPU_AS_IOCTL_UNMAP_BUFFER ===
@@ -608,7 +623,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |- style="border-top: double"
 | 0x40044801 || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD]] ||
 |-
-| 0x40044803 || 4 || NVGPU_IOCTL_CHANNEL_SET_PRIORITY ||
+| 0x40044803 || 4 || NVGPU_IOCTL_CHANNEL_SET_TIMEOUT ||
 |-
 | 0x40084805 || 8 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO]] ||
 |-
@@ -622,7 +637,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC018480C || 24 || [[#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER]] ||
 |-
-| 0x4004480D || 4 || [[#NVGPU_IOCTL_CHANNEL_OPEN]] ||
+| 0x4004480D || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_PRIORITY]] ||
 |-
 | 0x0000480E || 0 || [[#NVGPU_IOCTL_CHANNEL_ENABLE]] ||
 |-
@@ -707,11 +722,11 @@ Initializes the error notifier for this channel. Identical to Linux driver.
     u32 __padding;   // in
   };
 
-=== NVGPU_IOCTL_CHANNEL_OPEN ===
-Opens the current channel. Unused and takes an unknown argument.
+=== NVGPU_IOCTL_CHANNEL_SET_PRIORITY ===
+Change channel's priority. Identical to Linux driver.
 
   struct {
-    u32 __unk;    // in (only accepts 0x32, 0x64 or 0x96)
+    u32 __priority;    // in (0x32 is low, 0x64 is medium and 0x96 is high)
   };
 
 === NVGPU_IOCTL_CHANNEL_ENABLE ===

@@ -234,7 +234,7 @@ none).
 | 0xC0104103 | Inout     | 16   | [\#NVGPU\_AS\_IOCTL\_FREE\_SPACE](#NVGPU_AS_IOCTL_FREE_SPACE "wikilink")          |       |
 | 0xC0184104 | Inout     | 24   | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER](#NVGPU_AS_IOCTL_MAP_BUFFER "wikilink")          |       |
 | 0xC0084105 | Inout     | 8    | [\#NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER](#NVGPU_AS_IOCTL_UNMAP_BUFFER "wikilink")      |       |
-| 0xC0284106 | Inout     | 40   | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                                 |       |
+| 0xC0284106 | Inout     | 40   | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX](#NVGPU_AS_IOCTL_MAP_BUFFER_EX "wikilink")   |       |
 | 0x40104107 | In        | 16   | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")           |       |
 | 0xC0404108 | Inout     | 64   | [\#NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS](#NVGPU_AS_IOCTL_GET_VA_REGIONS "wikilink") |       |
 | 0x40284109 | In        | 40   | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink")    |       |
@@ -289,6 +289,25 @@ set.
 `     u64 __offset;     // out`  
 `     u64 __align;      // in`  
 `   };`  
+` };`
+
+### NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX
+
+Map a memory region in the device address space. Identical to Linux
+driver pretty much.
+
+On success, the mapped memory region is locked by having
+[SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
+set.
+
+` struct {`  
+`   u32 __flags;          // in, 4 works`  
+`   u32 __kind;           // in, -1 is default`  
+`   u32 __nvmap_handle;   // in`  
+`   u32 __page_size;      // inout, 0 means don't care`  
+`   u64 __buffer_offset;  // in`  
+`   u64 __mapping_size;   // in`  
+`   u64 __offset;         // out`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER
@@ -551,14 +570,14 @@ interface.
 | 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER                                                               |                                      |
 | 0x00000013 | 0        |                                                                                                     |                                      |
 | 0x40044801 | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD](#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD "wikilink")             |                                      |
-| 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY                                                                |                                      |
+| 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_TIMEOUT                                                                 |                                      |
 | 0x40084805 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO "wikilink")              |                                      |
 | 0xC0044807 | 4        | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS                                                                 |                                      |
 | 0xC0??4808 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO "wikilink")            |                                      |
 | 0xC0104809 | 16       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX](#NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX "wikilink")           |                                      |
 | 0xC010480B | 16       | NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND                                                                  |                                      |
 | 0xC018480C | 24       | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER](#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER "wikilink") |                                      |
-| 0x4004480D | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_OPEN](#NVGPU_IOCTL_CHANNEL_OPEN "wikilink")                               |                                      |
+| 0x4004480D | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY](#NVGPU_IOCTL_CHANNEL_SET_PRIORITY "wikilink")              |                                      |
 | 0x0000480E | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_ENABLE](#NVGPU_IOCTL_CHANNEL_ENABLE "wikilink")                           |                                      |
 | 0x0000480F | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_DISABLE](#NVGPU_IOCTL_CHANNEL_DISABLE "wikilink")                         |                                      |
 | 0x00004810 | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_PREEMPT](#NVGPU_IOCTL_CHANNEL_PREEMPT "wikilink")                         |                                      |
@@ -638,12 +657,13 @@ driver.
 `   u32 __padding;   // in`  
 ` };`
 
-### NVGPU\_IOCTL\_CHANNEL\_OPEN
+### NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY
 
-Opens the current channel. Unused and takes an unknown argument.
+Change channel's priority. Identical to Linux
+driver.
 
 ` struct {`  
-`   u32 __unk;    // in (only accepts 0x32, 0x64 or 0x96)`  
+`   u32 __priority;    // in (0x32 is low, 0x64 is medium and 0x96 is high)`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_ENABLE
