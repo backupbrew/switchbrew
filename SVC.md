@@ -71,7 +71,7 @@
 | 0x52 | [\#svcUnmapTransferMemory](#svcUnmapTransferMemory "wikilink")                     | W0=mirror\_handle, X1=addr, X2=size                               | W0=result                                           |
 | 0x53 | svcCreateInterruptEvent                                                            |                                                                   |                                                     |
 | 0x54 | svcQueryPhysicalAddress                                                            |                                                                   |                                                     |
-| 0x55 | svcQueryToMapping                                                                  |                                                                   |                                                     |
+| 0x55 | svcQueryIoMapping                                                                  |                                                                   |                                                     |
 | 0x56 | svcCreateDeviceAddressSpace                                                        |                                                                   |                                                     |
 | 0x57 | svcAttachDeviceAddressSpace                                                        |                                                                   |                                                     |
 | 0x58 | svcDetachDeviceAddressSpace                                                        |                                                                   |                                                     |

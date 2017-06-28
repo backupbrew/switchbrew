@@ -140,7 +140,7 @@
 |-
 | 0x54 || svcQueryPhysicalAddress ||  || 
 |-
-| 0x55 || svcQueryToMapping || || 
+| 0x55 || svcQueryIoMapping || || 
 |-
 | 0x56 || svcCreateDeviceAddressSpace || || 
 |-
