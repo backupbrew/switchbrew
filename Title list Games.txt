@@ -13,7 +13,7 @@
 |-
 | 01000D10038E6000 || v0 || || || ACA NeoGeo Last Resort || ALL || VC
 |-
-| 01000DC003740000 || v0 || || Gamecard Front: LA-H-BAACB-USA Back: BAACB41Y000 || Puyo Puyo Tetris || USA || Game
+| 01000DC003740000 || v0 || || Gamecard Front: LA-H-BAACB-USA Back: LG || Puyo Puyo Tetris || USA || Game
 |-
 | 01000E2003FA0000 || v0 || || || Mighty Gun Volt Burst || JPN || Game
 |-
@@ -289,9 +289,9 @@
 |-
 | 0100F3D001DEE000 || v0 || || || Puyo Puyo Tetris || EUR || Game
 |-
-| || || || || LEGO® CITY Undercover || JPN || Game
+| 01002B6001364000 || || || || LEGO® CITY Undercover || JPN || Game
 |-
-| || || || || LEGO® CITY Undercover || JPN || Update
+| 01002B6001364800 || || || || LEGO® CITY Undercover || JPN || Update
 |-
 | 0100AE9003FAC000 || || || || Touch Battle Tank SP || JPN || Game
 |-
