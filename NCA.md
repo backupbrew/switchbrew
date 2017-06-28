@@ -4,7 +4,8 @@ For the content of the NCA FS which can be
 
 # Metadata file
 
-This is the file that ends in `".cnmt{.nca}"` or `"meta0.ncd"`.
+This is the file that ends in `".cnmt{.nca}"` or `"meta0.ncd"`. This
+seems to replace the TMD format.
 
 It starts with a
 header:
