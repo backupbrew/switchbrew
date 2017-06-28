@@ -148,8 +148,8 @@
 |                  |                                                                           |                                        |                                                       | LEGO® CITY Undercover                          | JPN      | Update     |
 | 0100AE9003FAC000 |                                                                           |                                        |                                                       | Touch Battle Tank SP                           | JPN      | Game       |
 | 0100AE9003FAC800 |                                                                           |                                        |                                                       | Touch Battle Tank SP                           | JPN      | Update     |
-|                  |                                                                           |                                        |                                                       | PHOTON³ (Photon Cube)                          | JPN      | Game       |
-| |                |                                                                           |                                        |                                                       | PHOTON³ (Photon Cube)                          | JPN      | Update     |
+| 010024D0032F2000 |                                                                           |                                        |                                                       | PHOTON³ (Photon Cube)                          | JPN      | Game       |
+| 010024D0032F2800 |                                                                           |                                        |                                                       | PHOTON³ (Photon Cube)                          | JPN      | Update     |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
