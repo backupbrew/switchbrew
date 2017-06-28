@@ -56,6 +56,8 @@ This packing is so unnecessarily complex.
 | 1    | 15-0  | Rest of address.          |
 | 1    | 31-16 | Size                      |
 
+Ignored by kernel unless the cmdreply has bufX-descriptor enabled?
+
 ### Buffer descriptor X
 
 This one is packed even worse than A, they inserted the bit38-36 of the

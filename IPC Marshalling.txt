@@ -84,6 +84,8 @@ This packing is so unnecessarily complex.
 | 1 || 31-16 || Size
 |}
 
+Ignored by kernel unless the cmdreply has bufX-descriptor enabled?
+
 === Buffer descriptor X ===
 This one is packed even worse than A, they inserted the bit38-36 of the address ''on top'' of the counter field.
 
