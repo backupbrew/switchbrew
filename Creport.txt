@@ -1,0 +1,62 @@
+Creport takes a string containing a pid (?) formatted in base10. This is launched by [[NS Services|NS]].
+
+Then it uses the [[SVC|svcDebugActiveProcess]] to start a debug-session for the pid. It loops [[SVC|svcGetDebugEvent]] to fetch all debug events.
+
+It has a event buffer of 128 u64's that starts with "CREP\x01\x00\x00\x00".
+
+It only cares about type <code>EXCEPTION</code> and <code>ATTACH_PROCESS</code> events.
+
+For <code>ATTACH_PROCESS</code> events it saves the title-id of the crashed process (this is the first u64 of the type-specific data), and a flag whether to dump stack.
+
+For <code>EXCEPTION</code> events, it adds records to the buffer.
+
+Each exception record starts with 2x u64's: exception type, and exception address.
+
+Then depending on exception type it stores:
+
+<code>UNDEFINED_INSTRUCTION (0)</code>: Always (u64) 0.
+<code>PREFETCH_ABORT (1)</code>: Always (u64) 0.
+<code>DATA_ABORT (2)</code>: (u64) Fault register.
+<code>UNALIGNED_ACCESS (3)</code>: (u64) Fault register.
+<code>UNDEFINED_SYSCALL (8)</code>: (u64) Syscall id.
+<code>? (9)</code>: Always (u64) 0.
+
+For all exceptions, it then adds more data from svcGetDebugThreadParam/svcGetDebugThreadContext. This reads the flag from <code>ATTACH_PROCESS</code> to determine whether to read 0x10 bytes using svcReadDebugProcessMemory.
+
+All other events (<code>USER_BREAK</code>, etc) don't store any extra data except type and address.
+
+After it has fetched all events.
+
+If it didn't encounter <code>USER_BREAK</code> it constructs an error report:
+* Field10: (String) Error-code string formatted with [[Error codes|"%04d-%04d"]].
+* Field115: (String) Title-id snprintf'ed as "%08llx".
+* Field116: (Bool) 0.
+
+It does *not* add the event buffer to the report if title-id is any of the following:
+* 0100000000001008
+* 010000000000100A
+* 010000000000100B
+* 0100000000001010
+* 0100000000001011
+
+For all other title-ids, it generates a random AES-128 key and iv using <code>csrng</code>.
+
+It encrypts the entire event buffer with this AES key and iv.
+Then it encrypts the key-iv-pair using RSA-PSS with a hardcoded pubkey and exponent <code>0x10001</code>.
+
+These are added to the error report:
+* Field206: (Raw) RSA-encrypted AES-key.
+* Field116: (Raw) Encrypted crash-info.
+
+Thus you need the private key to decrypt the crash dump.
+
+Finally, the error report is sent to "erpt:c" cmd1.
+
+It uses "ns:dev" to terminate the pid, and then it throws the following fatal-err depending on exception type
+* 0 -> 0xA8
+* 1 -> 0x2A8
+* 2 -> 0x4A8,
+* 3 -> 0x6A8, 
+* 6 -> No fatal-err
+* 8 -> 0x10A8, this also stores the syscall-id as an u64, and the entire thread state in the event buffer.
+* Default: 0x4A2
