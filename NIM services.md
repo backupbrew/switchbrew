@@ -57,7 +57,8 @@ URL is the same one in the above User-Agent section. HTTP header
 "Accept:application/json" is sent in the request.
 
 The response is json with a "system\_update\_metas" block, containing
-"title\_id" and "title\_version" entries.
+"title\_id" and "title\_version" entries. The actual server response
+only contains 1 title.
 
 Example, from 2.0
 system:

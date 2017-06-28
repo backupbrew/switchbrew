@@ -28,7 +28,7 @@ Where the 64bit DeviceId is parsed from the 0x10-bytes at outbuf+0xC6 from [[Set
 == sun ==
 NIM sends a HTTP GET with the sun URL listed above to get the title-listing of the latest system-titles, as .json. The deviceid in the URL is the same one in the above User-Agent section. HTTP header "Accept:application/json" is sent in the request.
 
-The response is json with a "system_update_metas" block, containing "title_id" and "title_version" entries.
+The response is json with a "system_update_metas" block, containing "title_id" and "title_version" entries. The actual server response only contains 1 title.
 
 Example, from 2.0 system:
 
