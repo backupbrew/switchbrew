@@ -36,19 +36,19 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |-
 | 0x70
 | 0x4
-| Absolute offset for ACI0.
+| [[#ACI0]] offset
 |-
 | 0x74
 | 0x4
-| Size of ACI0.
+| [[#ACI0]] size
 |-
 | 0x78
 | 0x4
-| Absolute offset of the RSA signature.
+| [[#ACID]] offset
 |-
 | 0x7C
 | 0x4
-| Size used with the above offset. Offset+size is normally ACI0_start-8.
+| [[#ACID]] size
 |}
 
 Switch version of 3DS "System Control Info"?
@@ -90,27 +90,27 @@ Switch version of 3DS "System Control Info"?
 |-
 | 0x220
 | 0x4
-| FS Access Control offset
+| [[#FS Access Control]] offset
 |-
 | 0x24
 | 0x4
-| FS Access Control size
+| [[#FS Access Control]] size
 |-
 | 0x28
 | 0x4
-| Service Access Control offset
+| [[#Service Access Control]] offset
 |-
 | 0x2C
 | 0x4
-| Service Access Control size
+| [[#Service Access Control]] size
 |-
 | 0x30
 | 4
-| Kernel Access Control offset
+| [[#Kernel Access Control]] offset
 |-
 | 0x34
 | 4
-| Kernel Access Control size
+| [[#Kernel Access Control]] size
 |-
 | 0x38
 | 0x8
@@ -119,6 +119,19 @@ Switch version of 3DS "System Control Info"?
 
 = ACI0 =
 Looks like an old crappy version of ACID. It has the guessed version field 0 instead of 1.
+
+= FS Access Control =
+{| class="wikitable" border="1"
+|-
+! Bit
+! Description
+|-
+| 0
+| MountContent* is accessible when set.
+|-
+| 3
+| This is only bit set for ShopN in the permissions-u32.
+|}
 
 = Service Access Control =
 This is a list of [[Services_API|service]]-name strings which the title has access to, with the following structure:
@@ -131,7 +144,7 @@ Bitmask 0x80 in control_byte means service is allowed to be registered.
 
 The service string can contain a wildcard <code>*</code> character.
 
-= Access Descriptors =
+= Kernel Access Control =
 Like the 3DS, the switch has a number of kernel capability descriptors. Unlike 3ds, where descriptors were identified by pattern 11..10 in high bits, on switch descriptors are identified by pattern 01..11 in low bits.
 
 {| class="wikitable" border="1"
@@ -167,18 +180,4 @@ Like the 3DS, the switch has a number of kernel capability descriptors. Unlike 3
 | <code>0b011111111111?</code>
 | Map memory page?
 | ?
-|}
-
-
-=FS Permissions=
-{| class="wikitable" border="1"
-|-
-! Bit
-! Description
-|-
-| 0
-| MountContent* is accessible when set.
-|-
-| 3
-| This is only bit set for ShopN in the permissions-u32.
 |}

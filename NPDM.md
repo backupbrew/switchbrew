@@ -9,40 +9,48 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 
 # META
 
-| Offset | Size | Description                                                             |
-| ------ | ---- | ----------------------------------------------------------------------- |
-| 0x0    | 0x4  | Magic "META".                                                           |
-| 0x20   | ?    | Title name                                                              |
-| 0x70   | 0x4  | Absolute offset for ACI0.                                               |
-| 0x74   | 0x4  | Size of ACI0.                                                           |
-| 0x78   | 0x4  | Absolute offset of the RSA signature.                                   |
-| 0x7C   | 0x4  | Size used with the above offset. Offset+size is normally ACI0\_start-8. |
+| Offset | Size | Description                       |
+| ------ | ---- | --------------------------------- |
+| 0x0    | 0x4  | Magic "META".                     |
+| 0x20   | ?    | Title name                        |
+| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset |
+| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size   |
+| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset |
+| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size   |
 
-Switch version of 3DS "System Control Info"?
+Switch version of 3DS "System Control
+Info"?
 
 # ACID
 
-| Offset | Size  | Description                   |
-| ------ | ----- | ----------------------------- |
-| 0      | 0x100 | RSA-2048 signature            |
-| 0x100  | 0x100 | RSA-2048 public key           |
-| 0x200  | 0x4   | Magic "ACID".                 |
-| 0x204  | 0x8   | Zeroes                        |
-| 0x20C  | 0x4   | Format version? (1)           |
-| 0x210  | 0x8   | Title id                      |
-| 0x218  | 0x8   | Title id again                |
-| 0x220  | 0x4   | FS Access Control offset      |
-| 0x24   | 0x4   | FS Access Control size        |
-| 0x28   | 0x4   | Service Access Control offset |
-| 0x2C   | 0x4   | Service Access Control size   |
-| 0x30   | 4     | Kernel Access Control offset  |
-| 0x34   | 4     | Kernel Access Control size    |
-| 0x38   | 0x8   | Padding                       |
+| Offset | Size  | Description                                                           |
+| ------ | ----- | --------------------------------------------------------------------- |
+| 0      | 0x100 | RSA-2048 signature                                                    |
+| 0x100  | 0x100 | RSA-2048 public key                                                   |
+| 0x200  | 0x4   | Magic "ACID".                                                         |
+| 0x204  | 0x8   | Zeroes                                                                |
+| 0x20C  | 0x4   | Format version? (1)                                                   |
+| 0x210  | 0x8   | Title id                                                              |
+| 0x218  | 0x8   | Title id again                                                        |
+| 0x220  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") offset           |
+| 0x24   | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") size             |
+| 0x28   | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") offset |
+| 0x2C   | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") size   |
+| 0x30   | 4     | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset   |
+| 0x34   | 4     | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size     |
+| 0x38   | 0x8   | Padding                                                               |
 
 # ACI0
 
 Looks like an old crappy version of ACID. It has the guessed version
 field 0 instead of 1.
+
+# FS Access Control
+
+| Bit | Description                                            |
+| --- | ------------------------------------------------------ |
+| 0   | MountContent\* is accessible when set.                 |
+| 3   | This is only bit set for ShopN in the permissions-u32. |
 
 # Service Access Control
 
@@ -59,7 +67,7 @@ Bitmask 0x80 in control\_byte means service is allowed to be registered.
 
 The service string can contain a wildcard `*` character.
 
-# Access Descriptors
+# Kernel Access Control
 
 Like the 3DS, the switch has a number of kernel capability descriptors.
 Unlike 3ds, where descriptors were identified by pattern 11..10 in high
@@ -75,10 +83,3 @@ bits.
 | `0bxxx011111111?`     | Kernel flags?           | ?                                                         |
 | `0bx0111111111?`      | Map address range?      | ?                                                         |
 | `0b011111111111?`     | Map memory page?        | ?                                                         |
-
-# FS Permissions
-
-| Bit | Description                                            |
-| --- | ------------------------------------------------------ |
-| 0   | MountContent\* is accessible when set.                 |
-| 3   | This is only bit set for ShopN in the permissions-u32. |
