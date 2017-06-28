@@ -1,4 +1,4 @@
-This service reads and uploads error reports from <code>erpt:r</code> to a cloud server.
+The "Error upload" service reads and uploads error reports from <code>erpt:r</code> to a cloud server.
 
 This includes crash dumps with full exception info created by [[creport]].
 
