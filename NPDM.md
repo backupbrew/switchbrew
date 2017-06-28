@@ -1,20 +1,18 @@
 This is the Switch equivalent of 3DS exheader. This is the file with
-extension ".npdm" in {Switch ExeFS}. The size of this file
-varies.
+extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 
-| Offset     | Size       | Description                                                                                    |
-| ---------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| 0x0        | 0x80       | META                                                                                           |
-| 0x80       | 0x200      | RSA-2048 signature, followed a RSA-2048 modulus for [NCA](NCA.md "wikilink") header (like 3DS) |
-| 0x280      | <Varies>   | ACID                                                                                           |
-| <See META> | <See META> | ACI0                                                                                           |
+| Offset     | Size       | Description |
+| ---------- | ---------- | ----------- |
+| 0x0        | 0x80       | META        |
+| 0x80       | <Varies>   | ACID        |
+| <See META> | <See META> | ACI0        |
 
 # META
 
 | Offset | Size | Description                                                             |
 | ------ | ---- | ----------------------------------------------------------------------- |
-| 0x0    | 0x4  | Magicnum "META".                                                        |
-| 0x20   | ?    | Name string                                                             |
+| 0x0    | 0x4  | Magic "META".                                                           |
+| 0x20   | ?    | Title name                                                              |
 | 0x70   | 0x4  | Absolute offset for ACI0.                                               |
 | 0x74   | 0x4  | Size of ACI0.                                                           |
 | 0x78   | 0x4  | Absolute offset of the RSA signature.                                   |
@@ -24,29 +22,27 @@ Switch version of 3DS "System Control Info"?
 
 # ACID
 
-| Offset | Size        | Description                         |
-| ------ | ----------- | ----------------------------------- |
-| 0x0    | 0x4         | Magicnum "ACID".                    |
-| 0x4    | 0x28        | ?                                   |
-| 0x2C   | 0x4         | Size of the Service Access Control. |
-| 0x30   | 0x14        | ?                                   |
-| 0x44   | ?           | FS Permissions                      |
-| 0xF0   | <See above> | Service Access Control              |
-
-Switch version of AccessDesc?
+| Offset | Size  | Description                   |
+| ------ | ----- | ----------------------------- |
+| 0      | 0x100 | RSA-2048 signature            |
+| 0x100  | 0x100 | RSA-2048 public key           |
+| 0x200  | 0x4   | Magic "ACID".                 |
+| 0x204  | 0x8   | Zeroes                        |
+| 0x20C  | 0x4   | Format version? (1)           |
+| 0x210  | 0x8   | Title id                      |
+| 0x218  | 0x8   | Title id again                |
+| 0x220  | 0x4   | FS Access Control offset      |
+| 0x24   | 0x4   | FS Access Control size        |
+| 0x28   | 0x4   | Service Access Control offset |
+| 0x2C   | 0x4   | Service Access Control size   |
+| 0x30   | 4     | Kernel Access Control offset  |
+| 0x34   | 4     | Kernel Access Control size    |
+| 0x38   | 0x8   | Padding                       |
 
 # ACI0
 
-| Offset | Size        | Description                         |
-| ------ | ----------- | ----------------------------------- |
-| 0x0    | 0x4         | Magicnum "ACI0".                    |
-| 0x4    | 0x28        | ?                                   |
-| 0x2C   | 0x4         | Size of the Service Access Control. |
-| 0x30   | 0x14        | ?                                   |
-| 0x44   | ?           | FS Permissions                      |
-| 0x60   | <See above> | Service Access Control              |
-
-Switch version of 3DS ACI(Access Control Info)?
+Looks like an old crappy version of ACID. It has the guessed version
+field 0 instead of 1.
 
 # Service Access Control
 

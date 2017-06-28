@@ -11,10 +11,6 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 | META
 |-
 | 0x80
-| 0x200
-| RSA-2048 signature, followed a RSA-2048 modulus for [[NCA]] header (like 3DS)
-|-
-| 0x280
 | <Varies>
 | ACID
 |-
@@ -23,7 +19,7 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 | ACI0
 |}
 
-=META=
+= META =
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -32,11 +28,11 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |-
 | 0x0
 | 0x4
-| Magicnum "META".
+| Magic "META".
 |-
 | 0x20
 | ?
-| Name string
+| Title name
 |-
 | 0x70
 | 0x4
@@ -57,76 +53,74 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 
 Switch version of 3DS "System Control Info"?
 
-=ACID=
+= ACID =
 {| class="wikitable" border="1"
 |-
 ! Offset
 ! Size
 ! Description
 |-
-| 0x0
-| 0x4
-| Magicnum "ACID".
+| 0
+| 0x100
+| RSA-2048 signature
 |-
+| 0x100
+| 0x100
+| RSA-2048 public key
+|-
+| 0x200
 | 0x4
+| Magic "ACID".
+|-
+| 0x204
+| 0x8
+| Zeroes
+|-
+| 0x20C
+| 0x4
+| Format version? (1)
+|-
+| 0x210
+| 0x8
+| Title id
+|-
+| 0x218
+| 0x8
+| Title id again
+|-
+| 0x220
+| 0x4
+| FS Access Control offset
+|-
+| 0x24
+| 0x4
+| FS Access Control size
+|-
 | 0x28
-| ?
+| 0x4
+| Service Access Control offset
 |-
 | 0x2C
 | 0x4
-| Size of the Service Access Control.
+| Service Access Control size
 |-
 | 0x30
-| 0x14
-| ?
+| 4
+| Kernel Access Control offset
 |-
-| 0x44
-| ?
-| FS Permissions
+| 0x34
+| 4
+| Kernel Access Control size
 |-
-| 0xF0
-| <See above>
-| Service Access Control
+| 0x38
+| 0x8
+| Padding
 |}
 
-Switch version of AccessDesc?
+= ACI0 =
+Looks like an old crappy version of ACID. It has the guessed version field 0 instead of 1.
 
-=ACI0=
-{| class="wikitable" border="1"
-|-
-! Offset
-! Size
-! Description
-|-
-| 0x0
-| 0x4
-| Magicnum "ACI0".
-|-
-| 0x4
-| 0x28
-| ?
-|-
-| 0x2C
-| 0x4
-| Size of the Service Access Control.
-|-
-| 0x30
-| 0x14
-| ?
-|-
-| 0x44
-| ?
-| FS Permissions
-|-
-| 0x60
-| <See above>
-| Service Access Control
-|}
-
-
-Switch version of 3DS ACI(Access Control Info)?
-
-=Service Access Control=
+= Service Access Control =
 This is a list of [[Services_API|service]]-name strings which the title has access to, with the following structure:
   +0: control_byte
   +1: {service-name without nul-terminator}
@@ -137,7 +131,7 @@ Bitmask 0x80 in control_byte means service is allowed to be registered.
 
 The service string can contain a wildcard <code>*</code> character.
 
-=Access Descriptors=
+= Access Descriptors =
 Like the 3DS, the switch has a number of kernel capability descriptors. Unlike 3ds, where descriptors were identified by pattern 11..10 in high bits, on switch descriptors are identified by pattern 01..11 in low bits.
 
 {| class="wikitable" border="1"
