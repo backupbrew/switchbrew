@@ -1,5 +1,7 @@
-This service reads crash dumps and other error reports from <code>erpt:r</code>.
+This service reads and uploads error reports from <code>erpt:r</code> to a cloud server.
 
-Then it periodically uploads them to the following URL:
+This includes crash dumps with full exception info created by [[creport]].
+
+It periodically uploads them to the following URL:
 
 https://receive-%.er.srv.nintendo.net/post
