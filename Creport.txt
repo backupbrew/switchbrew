@@ -37,6 +37,8 @@ It does *not* add the event buffer to the report if title-id is any of the follo
 * 0100000000001010
 * 0100000000001011
 
+This is probably because of privacy concerns (software keyboard + browser could contain passwords and personal info).
+
 For all other title-ids, it generates a random AES-128 key and iv using <code>csrng</code>.
 
 It encrypts the entire event buffer with this AES key and iv.

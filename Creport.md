@@ -54,6 +54,9 @@ the following(swkbd and all
   - 0100000000001010
   - 0100000000001011
 
+This is probably because of privacy concerns (software keyboard +
+browser could contain passwords and personal info).
+
 For all other title-ids, it generates a random AES-128 key and iv using
 `csrng`.
 
