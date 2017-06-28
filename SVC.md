@@ -206,8 +206,9 @@ it will return
 
 ## svcReadWriteRegister
 
-Read/write Tegra hardware registers. rw\_mask is 0 for reading and -1
-for writing.
+Read/write Tegra hardware registers, input address is physical-address.
+
+rw\_mask is 0 for reading and -1 for writing.
 
 ### Registers
 
