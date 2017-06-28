@@ -40,6 +40,12 @@ While atumn seems to be for system-titles, and atum for eShop titles,
 the latter titles are accessible fine with atumn(with "/t/" for
 NCA-type0 at least).
 
+'a' is used when an input u8 is not 0x3, otherwise 's' is used. This is
+[title-type](Content%20Manager%20services#Title%20Types.md##Title_Types "wikilink")?
+A seperate function using the ".../c/" URL is hard-coded to use 'c'.
+This appears to match 's' usage attempts: the only URL that returned
+actual data with 's' was with titleID 0100000000000816.
+
 ## User-Agent
 
 NIM generates two User-Agent
