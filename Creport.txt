@@ -30,7 +30,7 @@ After it has fetched all events, if it didn't encounter <code>USER_BREAK</code> 
 * Field115: (String) Title-id snprintf'ed as "%08llx".
 * Field116: (Bool) 0.
 
-It does *not* add the event buffer to the report if title-id is any of the following:
+It does *not* add the event buffer to the report if title-id is any of the following(swkbd and all [[Internet_Browser|web-applets]] except offline-applet):
 * 0100000000001008
 * 010000000000100A
 * 010000000000100B

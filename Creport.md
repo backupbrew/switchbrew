@@ -45,7 +45,8 @@ constructs an error report:
   - Field116: (Bool) 0.
 
 It does \*not\* add the event buffer to the report if title-id is any of
-the following:
+the following(swkbd and all
+[web-applets](Internet%20Browser.md "wikilink") except offline-applet):
 
   - 0100000000001008
   - 010000000000100A
