@@ -17,12 +17,9 @@ called "force\_maintenance" with default value true.
 
 If the value reads successfully as false, it initializes "gpio" and
 opens sessions for GPIOs 26 and 25. If both GPIOs read as zero, then
-[maintenance mode](Recovery%20Mode.md "wikilink") is booted. This
-probably checks if both volume up and down keys are held down at the
-same time?
-
-If it's in maintenance mode then it opens a session to "pm:bm" and calls
-cmd1.
+[maintenance mode](Recovery%20Mode.md "wikilink") is forced despite the
+setting being false. This probably checks if both volume up and down
+keys are held down at the same time?
 
 Then depending on maintenance mode or not it launches the following
 titles in this order:
