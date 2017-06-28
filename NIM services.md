@@ -13,7 +13,7 @@ Presumably Network Time
   - ...
   - https://aqua.hac.%%.d4c.nintendo.net/required\_system\_update\_meta?device\_id=%016llx
   - https://%s.hac.%%.d4c.nintendo.net/t/%c/%016llx/%u?device\_id=%016llx
-    Returns content like the below URL. Presumably the content for
+    Returns content like the below URL. This is the content for
     [NCA](NCA.md "wikilink")-type0. See below for %c. %016llx is
     titleID, %u is title-version.
   - https://%s.hac.%%.d4c.nintendo.net/c/%c/%s Used for downloading
@@ -35,6 +35,10 @@ Presumably Network Time
 These are not accessible without the required TLS client cert+privk,
 minus the time URL which can be accessed without any client cert+privk
 at all.
+
+While atumn seems to be for system-titles, and atum for eShop titles,
+the latter titles are accessible fine with atumn(with "/t/" for
+NCA-type0 at least).
 
 ## User-Agent
 
