@@ -13,7 +13,12 @@ Presumably Network Time
   - ...
   - https://aqua.hac.%%.d4c.nintendo.net/required\_system\_update\_meta?device\_id=%016llx
   - https://%s.hac.%%.d4c.nintendo.net/t/%c/%016llx/%u?device\_id=%016llx
-  - https://%s.hac.%%.d4c.nintendo.net/c/%c/%s
+  - https://%s.hac.%%.d4c.nintendo.net/c/%c/%s Used for downloading
+    content. First %s is atumn or atum. %c is one of: 'c', 'a', or 's'(s
+    for system). %s is just the hex-string NcaId. The returned data is
+    the same size readable from
+    [NCM](Content%20Manager%20services.md "wikilink"), with another
+    crypto layer.
   - https://aauth-%.ndas.srv.nintendo.net/v1/time
   - ...
   - "https://dauth-%.ndas.srv.nintendo.net/v1/device\_auth\_token"
