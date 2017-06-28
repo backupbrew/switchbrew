@@ -3,7 +3,7 @@
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || 
+| 0 || [[#ReadConsoleConfig]] || 
 |-
 | 1 || || Unknown marshalling.
 |-
@@ -20,10 +20,20 @@
 | 13 || || 
 |}
 
-== Cmd0 ==
+== ReadConsoleConfig ==
 Takes input word, and returns u64.
+{| class="wikitable" border="1"
+|-
+! Id || Name
+|-
+| 8 || 64bit DeviceId with byte7 clear.
+|-
+| 11 || Allow skipping RSA signatures on NRR.
+|}
 
-* Input val8: 64bit DeviceId with byte7 clear. Output from this when used by [[NIM_servers|NIM]] must match the [[Settings_services|set:cal]] DeviceId with byte7 cleared, otherwise NIM will panic.
+Output from this when used by [[NIM_services|NIM]] must match the [[Settings_services|set:cal]] DeviceId with byte7 cleared, otherwise NIM will panic.
+
+[[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
 
 == ScrambleKeyA ==
 Takes 16-bytes as input and two u32s. Outputs random-looking 16-bytes.
