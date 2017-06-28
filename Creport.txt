@@ -14,12 +14,12 @@ Each exception record starts with 2x u64's: exception type, and exception addres
 
 Then depending on exception type it stores:
 
-<code>UNDEFINED_INSTRUCTION (0)</code>: Always (u64) 0.
-<code>PREFETCH_ABORT (1)</code>: Always (u64) 0.
-<code>DATA_ABORT (2)</code>: (u64) Fault register.
-<code>UNALIGNED_ACCESS (3)</code>: (u64) Fault register.
-<code>UNDEFINED_SYSCALL (8)</code>: (u64) Syscall id.
-<code>? (9)</code>: Always (u64) 0.
+* <code>UNDEFINED_INSTRUCTION (0)</code>: Always (u64) 0.
+* <code>PREFETCH_ABORT (1)</code>: Always (u64) 0.
+* <code>DATA_ABORT (2)</code>: (u64) Fault register.
+* <code>UNALIGNED_ACCESS (3)</code>: (u64) Fault register.
+* <code>UNDEFINED_SYSCALL (8)</code>: (u64) Syscall id.
+* <code>? (9)</code>: Always (u64) 0.
 
 For all exceptions, it then adds more data from svcGetDebugThreadParam/svcGetDebugThreadContext. This reads the flag from <code>ATTACH_PROCESS</code> to determine whether to read 0x10 bytes using svcReadDebugProcessMemory.
 

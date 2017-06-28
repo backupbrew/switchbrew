@@ -21,10 +21,12 @@ exception address.
 
 Then depending on exception type it stores:
 
-`UNDEFINED_INSTRUCTION (0)`: Always (u64) 0. `PREFETCH_ABORT (1)`:
-Always (u64) 0. `DATA_ABORT (2)`: (u64) Fault register.
-`UNALIGNED_ACCESS (3)`: (u64) Fault register. `UNDEFINED_SYSCALL (8)`:
-(u64) Syscall id. `? (9)`: Always (u64) 0.
+  - `UNDEFINED_INSTRUCTION (0)`: Always (u64) 0.
+  - `PREFETCH_ABORT (1)`: Always (u64) 0.
+  - `DATA_ABORT (2)`: (u64) Fault register.
+  - `UNALIGNED_ACCESS (3)`: (u64) Fault register.
+  - `UNDEFINED_SYSCALL (8)`: (u64) Syscall id.
+  - `? (9)`: Always (u64) 0.
 
 For all exceptions, it then adds more data from
 svcGetDebugThreadParam/svcGetDebugThreadContext. This reads the flag
