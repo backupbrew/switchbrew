@@ -150,6 +150,8 @@
 | 0100AE9003FAC800 |                                                                           |                                        |                                                       | Touch Battle Tank SP                           | JPN      | Update     |
 | 010024D0032F2000 |                                                                           |                                        |                                                       | PHOTON³ (Photon Cube)                          | JPN      | Game       |
 | 010024D0032F2800 |                                                                           |                                        |                                                       | PHOTON³ (Photon Cube)                          | JPN      | Update     |
+| 01007C2002B3C000 |                                                                           |                                        |                                                       | GoNNER                                         | JPN, USA | Game       |
+| 01007C2002B3C800 |                                                                           |                                        |                                                       | GoNNER                                         | JPN, USA | Update     |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
