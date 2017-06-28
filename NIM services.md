@@ -18,7 +18,10 @@ Presumably Network Time
     for system). %s is just the hex-string NcaId. The returned data is
     the same size readable from
     [NCM](Content%20Manager%20services.md "wikilink"), with another
-    crypto layer.
+    crypto layer. The server also returns two HTTP headers:
+    "X-Nintendo-Content-Hash: {entire lowercase hex-string of the
+    content SHA256 hash}" and "X-Nintendo-Content-ID: {lowercase
+    hex-string for NcaId}"
   - https://aauth-%.ndas.srv.nintendo.net/v1/time
   - ...
   - "https://dauth-%.ndas.srv.nintendo.net/v1/device\_auth\_token"
