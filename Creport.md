@@ -64,7 +64,7 @@ exponent `0x10001`.
 These are added to the error report:
 
   - Field206: (Raw) RSA-encrypted AES-key.
-  - Field116: (Raw) Encrypted crash-info.
+  - Field207: (Raw) Encrypted crash-info.
 
 Thus you need the private key to decrypt the crash dump.
 
