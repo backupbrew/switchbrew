@@ -47,7 +47,7 @@ NRR rsa signatures is allowed.
 
 Takes 16-bytes as input and two u32s. Outputs random-looking 16-bytes.
 
-Same input gives same output. Console unique.
+Same input gives same output. Output changes when system is rebooted.
 
 ## ScrambleKeyB
 
