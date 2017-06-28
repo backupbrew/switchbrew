@@ -7,16 +7,16 @@
 
 # pm:shell
 
-| Cmd | Name             |
-| --- | ---------------- |
-| 0   | LaunchProcess    |
-| 1   | TerminateProcess |
-| 2   |                  |
-| 3   |                  |
-| 4   |                  |
-| 5   |                  |
-| 6   |                  |
-| 7   |                  |
-| 8   |                  |
+| Cmd | Name                                                |
+| --- | --------------------------------------------------- |
+| 0   | LaunchProcess                                       |
+| 1   | TerminatePid                                        |
+| 2   |                                                     |
+| 3   | GetProcessEventWaiter                               |
+| 4   | GetProcessEventType (0=CONTINUE, 1=CRASHING, 2,3,5) |
+| 5   | FinalizeEventType2                                  |
+| 6   | FinalizeCrashingProcess                             |
+| 7   |                                                     |
+| 8   | GetCrashingProcessPid                               |
 
 [Category:Services](Category:Services "wikilink")
