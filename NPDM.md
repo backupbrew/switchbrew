@@ -18,9 +18,6 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 | 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset |
 | 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size   |
 
-Switch version of 3DS "System Control
-Info"?
-
 # ACID
 
 | Offset | Size  | Description                                                           |
