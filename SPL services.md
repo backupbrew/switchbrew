@@ -1,24 +1,40 @@
 # spl:
 
-| Cmd | Name                                                 | Notes                  |
-| --- | ---------------------------------------------------- | ---------------------- |
-| 0   | [\#ReadConsoleConfig](#ReadConsoleConfig "wikilink") |                        |
-| 1   |                                                      | Unknown marshalling.   |
-| 2   | [\#ScrambleKeyA](#ScrambleKeyA "wikilink")           |                        |
-| 3   |                                                      | Always returns 0x2D1A? |
-| 4   | [\#ScrambleKeyB](#ScrambleKeyB "wikilink")           |                        |
-| 5   |                                                      | Always returns 0x41A?  |
-| 11  | [\#GetDevunitFlag](#GetDevunitFlag "wikilink")       |                        |
-| 13  |                                                      |                        |
+| Cmd | Name                                           | Notes                  |
+| --- | ---------------------------------------------- | ---------------------- |
+| 0   | [\#GetConfig](#GetConfig "wikilink")           |                        |
+| 1   |                                                | Unknown marshalling.   |
+| 2   | [\#ScrambleKeyA](#ScrambleKeyA "wikilink")     |                        |
+| 3   |                                                | Always returns 0x2D1A? |
+| 4   | [\#ScrambleKeyB](#ScrambleKeyB "wikilink")     |                        |
+| 5   |                                                | Always returns 0x41A?  |
+| 7   |                                                |                        |
+| 9   |                                                |                        |
+| 10  |                                                |                        |
+| 11  | [\#GetDevunitFlag](#GetDevunitFlag "wikilink") |                        |
+| 12  |                                                |                        |
+| 13  |                                                |                        |
+| 14  |                                                |                        |
+| 15  |                                                |                        |
+| 16  |                                                |                        |
+| 17  |                                                |                        |
+| 18  |                                                |                        |
+| 19  |                                                |                        |
+| 20  |                                                |                        |
+| 21  |                                                |                        |
+| 22  |                                                |                        |
+| 23  |                                                |                        |
 
-## ReadConsoleConfig
+## GetConfig
 
-Takes input word, and returns u64.
+Takes an input word (ConfigItem), and returns a u64 with the config
+params.
 
-| Id | Name                                  |
-| -- | ------------------------------------- |
-| 8  | 64bit DeviceId with byte7 clear.      |
-| 11 | Allow skipping RSA signatures on NRR. |
+| ConfigItem | Name                                  |
+| ---------- | ------------------------------------- |
+| 5          | HardwareType                          |
+| 8          | 64bit DeviceId with byte7 clear.      |
+| 11         | Allow skipping RSA signatures on NRR. |
 
 Output from this when used by [NIM](NIM%20services.md "wikilink") must
 match the [set:cal](Settings%20services.md "wikilink") DeviceId with

@@ -3,7 +3,7 @@
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || [[#ReadConsoleConfig]] || 
+| 0 || [[#GetConfig]] || 
 |-
 | 1 || || Unknown marshalling.
 |-
@@ -15,16 +15,47 @@
 |-
 | 5 || || Always returns 0x41A?
 |-
+| 7 || || 
+|-
+| 9 || || 
+|-
+| 10 || || 
+|-
 | 11 || [[#GetDevunitFlag]] || 
 |-
+| 12 || || 
+|-
 | 13 || || 
+|-
+| 14 || || 
+|-
+| 15 || || 
+|-
+| 16 || || 
+|-
+| 17 || || 
+|-
+| 18 || || 
+|-
+| 19 || || 
+|-
+| 20 || || 
+|-
+| 21 || || 
+|-
+| 22 || || 
+|-
+| 23 || || 
 |}
 
-== ReadConsoleConfig ==
-Takes input word, and returns u64.
+== GetConfig ==
+Takes an input word (ConfigItem), and returns a u64 with the config params.
+
 {| class="wikitable" border="1"
 |-
-! Id || Name
+! ConfigItem || Name
+|-
+| 5 || HardwareType
 |-
 | 8 || 64bit DeviceId with byte7 clear.
 |-
