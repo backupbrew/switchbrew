@@ -36,9 +36,8 @@ svcReadDebugProcessMemory.
 All other events (`USER_BREAK`, etc) don't store any extra data except
 type and address.
 
-After it has fetched all events.
-
-If it didn't encounter `USER_BREAK` it constructs an error report:
+After it has fetched all events, if it didn't encounter `USER_BREAK` it
+constructs an error report:
 
   - Field10: (String) Error-code string formatted with
     ["%04d-%04d"](Error%20codes.md "wikilink").
@@ -78,6 +77,5 @@ fatal-err depending on exception type
   - 2 -\> 0x4A8,
   - 3 -\> 0x6A8,
   - 6 -\> No fatal-err
-  - 8 -\> 0x10A8, this also stores the syscall-id as an u64, and the
-    entire thread state in the event buffer.
+  - 8 -\> 0x10A8
   - Default: 0x4A2
