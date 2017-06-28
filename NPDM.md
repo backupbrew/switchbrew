@@ -44,10 +44,11 @@ field 0 instead of 1.
 
 # FS Access Control
 
-| Bit | Description                                            |
-| --- | ------------------------------------------------------ |
-| 0   | MountContent\* is accessible when set.                 |
-| 3   | This is only bit set for ShopN in the permissions-u32. |
+| Word | Bit | Description                                            |
+| ---- | --- | ------------------------------------------------------ |
+| 0    |     | Version? Always 1.                                     |
+| 1    | 0   | MountContent\* is accessible when set.                 |
+| 0    | 3   | This is only bit set for ShopN in the permissions-u32. |
 
 # Service Access Control
 

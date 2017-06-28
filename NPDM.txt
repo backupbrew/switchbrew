@@ -119,14 +119,22 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 Looks like an old crappy version of ACID. It has the guessed version field 0 instead of 1.
 
 = FS Access Control =
+
 {| class="wikitable" border="1"
 |-
+! Word
 ! Bit
 ! Description
 |-
 | 0
+|
+| Version? Always 1.
+|-
+| 1
+| 0
 | MountContent* is accessible when set.
 |-
+| 0
 | 3
 | This is only bit set for ShopN in the permissions-u32.
 |}
