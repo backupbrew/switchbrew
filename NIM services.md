@@ -16,11 +16,10 @@ Presumably Network Time
     Returns content like the below URL. See below for %c. %016llx is
     titleID, %u is title-version.
   - https://%s.hac.%%.d4c.nintendo.net/c/%c/%s Used for downloading
-    content. First %s is atumn or atum. %c is one of: 'c', 'a', or 's'(s
-    for system). %s is just the hex-string NcaId. The returned data is
-    the same size readable from
-    [NCM](Content%20Manager%20services.md "wikilink"), with another
-    crypto layer. The server also returns two HTTP headers:
+    content. First %s is atumn or atum. %c is one of: 'c', 'a', or 's'.
+    %s is just the hex-string NcaId. The returned data is the same size
+    readable from [NCM](Content%20Manager%20services.md "wikilink"),
+    with another crypto layer. The server also returns two HTTP headers:
     "X-Nintendo-Content-Hash: {entire lowercase hex-string of the
     content SHA256 hash}" and "X-Nintendo-Content-ID: {lowercase
     hex-string for NcaId}"
