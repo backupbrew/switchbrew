@@ -29,9 +29,9 @@ For all exceptions, it then adds more data from svcGetDebugThreadParam/svcGetDeb
 All other events (<code>USER_BREAK</code>, etc) don't store any extra data except type and address.
 
 After it has fetched all events, if it didn't encounter <code>USER_BREAK</code> it constructs an error report:
-* Field10: (String) Error-code string formatted with [[Error codes|"%04d-%04d"]].
-* Field115: (String) Title-id snprintf'ed as "%08llx".
-* Field116: (Bool) 0.
+* Field10 "ErrorCode": (String) Error-code string formatted with [[Error codes|"%04d-%04d"]].
+* Field115 "ProgramId": (String) Title-id snprintf'ed as "%08llx".
+* Field116 "AbortFlag": (Bool) 0.
 
 It does *not* add the event buffer to the report if title-id is any of the following(swkbd and all [[Internet_Browser|web-applets]] except offline-applet):
 * 0100000000001008
@@ -48,8 +48,8 @@ It encrypts the entire event buffer with this AES key and iv.
 Then it encrypts the key-iv-pair using RSA-PSS with a hardcoded pubkey and exponent <code>0x10001</code>.
 
 These are added to the error report:
-* Field206: (Raw) RSA-encrypted AES-key.
-* Field207: (Raw) Encrypted crash-info.
+* Field206 "EncryptionKey": (Raw) RSA-encrypted AES-key.
+* Field207 "EncryptedExceptionInfo": (Raw) Encrypted crash-info.
 
 Thus you need the private key to decrypt the crash dump.
 

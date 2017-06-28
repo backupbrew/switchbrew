@@ -46,10 +46,10 @@ type and address.
 After it has fetched all events, if it didn't encounter `USER_BREAK` it
 constructs an error report:
 
-  - Field10: (String) Error-code string formatted with
+  - Field10 "ErrorCode": (String) Error-code string formatted with
     ["%04d-%04d"](Error%20codes.md "wikilink").
-  - Field115: (String) Title-id snprintf'ed as "%08llx".
-  - Field116: (Bool) 0.
+  - Field115 "ProgramId": (String) Title-id snprintf'ed as "%08llx".
+  - Field116 "AbortFlag": (Bool) 0.
 
 It does \*not\* add the event buffer to the report if title-id is any of
 the following(swkbd and all
@@ -73,8 +73,8 @@ exponent `0x10001`.
 
 These are added to the error report:
 
-  - Field206: (Raw) RSA-encrypted AES-key.
-  - Field207: (Raw) Encrypted crash-info.
+  - Field206 "EncryptionKey": (Raw) RSA-encrypted AES-key.
+  - Field207 "EncryptedExceptionInfo": (Raw) Encrypted crash-info.
 
 Thus you need the private key to decrypt the crash dump.
 
