@@ -47,7 +47,7 @@ strings:
 Where the 64bit DeviceId is parsed from the 0x10-bytes at outbuf+0xC6
 from [set:cal](Settings%20services.md "wikilink")
 GetDeviceCert(DeviceCert\_certname+2, aka where the hex string for the
-DeviceId is) This hex string is parsed as little-endian.
+DeviceId is).
 
 ## sun
 
