@@ -38,8 +38,9 @@ differing at offset 0x108 compared to GetDeviceCert.
 
 Takes a type-0x16 output buffer with fixed size 0x134.
 
-Returns the encrypted TLS client-privk. Buf+0 is u32 size of the
-encrypted/plaintext data, +4 is the actual start of the encrypted data.
+Returns a container-structure for the encrypted TLS client-privk.
+Decrypting this fails unless an unknown size \>0x134 is passed to this
+setcal cmd?
 
 Used by SSL-sysmodule, see [here](SSL%20services.md "wikilink").
 
@@ -47,8 +48,17 @@ Used by SSL-sysmodule, see [here](SSL%20services.md "wikilink").
 
 Takes a type-0x16 output buffer with fixed size 0x804.
 
-Returns the plaintext TLS client-cert Buf+0 is the u32 size of the
-actual cert, +4 is the actual start of the cert.
+Returns a container-structure for the plaintext TLS client-cert.
+
+Used by SSL-sysmodule, see
+[here](SSL%20services.md "wikilink").
+
+### setcal Container Structure
+
+| Offset | Size         | Name                                           |
+| ------ | ------------ | ---------------------------------------------- |
+| 0x0    | 0x4          | Size (same size used for decryption if needed) |
+| 0x4    | {above size} | Actual data starts here.                       |
 
 # set:sys
 
