@@ -9,6 +9,7 @@
 | 4   | [\#ScrambleKeyB](#ScrambleKeyB "wikilink")     |                        |
 | 5   |                                                | Always returns 0x41A?  |
 | 11  | [\#GetDevunitFlag](#GetDevunitFlag "wikilink") |                        |
+| 13  |                                                |                        |
 
 ## Cmd0
 
@@ -39,3 +40,11 @@ No input params.
 
 Returns an u8 flag for whether the system is devunit it seems. Output
 flag is 0 on retail.
+
+## Cmd13
+
+This command hasn't been used successfully so far, throws the same SPL
+error all the time(besides IPC fail that's not SPL specific).
+
+Last SPL cmd used by [SSL](SSL%20services.md "wikilink")-sysmodule for
+TLS client-privk.
