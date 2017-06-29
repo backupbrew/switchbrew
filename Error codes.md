@@ -134,6 +134,7 @@ applets.
 | 0x3D60B           | 491         | IPC Query 1 failed.                                                                                                                                                                  |
 | 0x20F             | 1           | Pid not found                                                                                                                                                                        |
 | 0x410             | 2           | Title-id not found                                                                                                                                                                   |
+| 0xF010            | 120         | Gamecard sysupdate not required                                                                                                                                                      |
 | 0x1F610           | 251         | Unexpected StorageId                                                                                                                                                                 |
 | 0x615             | 3           | Max sessions                                                                                                                                                                         |
 | 0xC15             | 6           | Invalid name (all zeroes)                                                                                                                                                            |
