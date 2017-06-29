@@ -44,11 +44,11 @@ And the contents of the following file:
 `is_user_agreement_check_enabled.bin`
 
 All the information is periodically uploaded to the following URL:  
-https: //receive-%.dg.srv.nintendo.net/post
+<https://receive-%.dg.srv.nintendo.net/post>
 
 It also checks the validity of the device's authentication token using
 the following URL:  
-https: //dauth-%.ndas.srv.nintendo.net/v1/device\_auth\_token
+<https://dauth-%.ndas.srv.nintendo.net/v1/device_auth_token>
 
 ## prepo:u
 
