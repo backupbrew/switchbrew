@@ -144,7 +144,7 @@ be only usable with NcaIds which have [type](NCA.md "wikilink") 1 or 4.
 | 14  |                                                | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                 |
 | 15  | EndIteration                                   | Void.                                                                                           |
 | 16  |                                                | Takes two 0x10-sized entries. Returns a bool/u8.                                                |
-| 17  |                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry and a u32. Returns a u32.  |
+| 17  |                                                | Takes a type-6 buffer, each entry being 16 bytes, a u32 and a 0x10-sized entry. Returns a u32.  |
 | 18  |                                                | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
 | 19  |                                                | Takes a 0x10-sized entry. Returns a u32.                                                        |
 
