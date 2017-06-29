@@ -17,11 +17,9 @@ Presumably Network Time
     titleID, %u is title-version.
   - https://%s.hac.%%.d4c.nintendo.net/c/%c/%s Used for downloading
     content. First %s is atumn or atum. %c is one of: 'c', 'a', or 's'.
-    %s is just the hex-string NcaId. The returned data is the same size
-    readable from [NCM](Content%20Manager%20services.md "wikilink"),
-    with another crypto layer. The server also returns two HTTP headers:
-    "X-Nintendo-Content-Hash: {entire lowercase hex-string of the
-    content SHA256 hash}" and "X-Nintendo-Content-ID: {lowercase
+    %s is just the hex-string NcaId. The server also returns two HTTP
+    headers: "X-Nintendo-Content-Hash: {entire lowercase hex-string of
+    the content SHA256 hash}" and "X-Nintendo-Content-ID: {lowercase
     hex-string for NcaId}"
   - https://superfly.hac.%%.d4c.nintendo.net/v1/t/%016llx/dv %016llx is
     titleID, only for eShop titles it appears. Returns .json title-info.
@@ -39,6 +37,10 @@ Presumably Network Time
 These are not accessible without the required TLS client cert+privk,
 minus the time URL which can be accessed without any client cert+privk
 at all.
+
+The returned content data from CDN, for both system-titles and
+eShop-titles, is identical to the data readable by
+[Content\_Manager\_services\#ReadEntryRaw](Content%20Manager%20services#ReadEntryRaw.md##ReadEntryRaw "wikilink").
 
 While atumn seems to be for system-titles, and atum for eShop titles,
 the latter titles are accessible fine with atumn(with "/t/" for
