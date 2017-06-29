@@ -125,28 +125,28 @@ be only usable with NcaIds which have [type](NCA.md "wikilink") 1 or 4.
 
 ## IContentMetaDatabase
 
-| Cmd | Name                                           | Notes                                                                                           |
-| --- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| 0   | InsertContentEntry?                            | Takes a 0x10-sized entry, a type-5 buffer and a u64.                                            |
-| 1   |                                                | Takes a 0x10-sized entry, a type-6 buffer and a u64. Returns a u64.                             |
-| 2   |                                                | Takes a 0x10-sized entry.                                                                       |
-| 3   |                                                | Takes a 0x10-sized entry and a bool/u8. Returns an 0x10-sized entry.                            |
-| 4   |                                                | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.    |
-| 5   | Iterate                                        | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32. |
-| 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink") |                                                                                                 |
-| 7   | [\#GetTitleList](#GetTitleList "wikilink")     | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.             |
-| 8   |                                                | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
-| 9   |                                                | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                            |
-| 10  |                                                | Takes a 0x10-sized entry. Returns a u64.                                                        |
-| 11  |                                                | Takes a 0x10-sized entry. Returns a u32.                                                        |
-| 12  |                                                | Takes a 0x10-sized entry. Returns a u64.                                                        |
-| 13  |                                                | Void.                                                                                           |
-| 14  |                                                | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                 |
-| 15  | EndIteration                                   | Void.                                                                                           |
-| 16  |                                                | Takes two 0x10-sized entries. Returns a bool/u8.                                                |
-| 17  |                                                | Takes a type-6 buffer, each entry being 16 bytes, a u32 and a 0x10-sized entry. Returns a u32.  |
-| 18  |                                                | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
-| 19  |                                                | Takes a 0x10-sized entry. Returns a u32.                                                        |
+| Cmd | Name                                                   | Notes                                                                                           |
+| --- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| 0   | InsertContentEntry?                                    | Takes a 0x10-sized entry, a type-5 buffer and a u64.                                            |
+| 1   |                                                        | Takes a 0x10-sized entry, a type-6 buffer and a u64. Returns a u64.                             |
+| 2   |                                                        | Takes a 0x10-sized entry.                                                                       |
+| 3   |                                                        | Takes a 0x10-sized entry and a bool/u8. Returns an 0x10-sized entry.                            |
+| 4   |                                                        | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.    |
+| 5   | Iterate                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32. |
+| 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink")         |                                                                                                 |
+| 7   | [\#GetTitleList](#GetTitleList "wikilink")             | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.             |
+| 8   |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
+| 9   |                                                        | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                            |
+| 10  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                        |
+| 11  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                        |
+| 12  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                        |
+| 13  |                                                        | Void.                                                                                           |
+| 14  |                                                        | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                 |
+| 15  | EndIteration                                           | Void.                                                                                           |
+| 16  |                                                        | Takes two 0x10-sized entries. Returns a bool/u8.                                                |
+| 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink") |                                                                                                 |
+| 18  |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
+| 19  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                        |
 
 ### GetTitleIdInfo
 
@@ -166,6 +166,24 @@ Each 24-byte entries is as follows:
 ` u64    title_id_update;`  
 ` struct title_info info;`  
 ` u64    title_id;`
+
+### GetUpdateTitleList
+
+Takes a type-6 output buffer, each entry being 0x10-byte bytes, a u32
+entryoffset and a 0x10-sized entry. Returns a u32 for
+total\_read\_entries.
+
+The input entry is the output entry from
+[\#GetTitleIdInfo](#GetTitleIdInfo "wikilink") starting at the TID. The
+output 0x10-bytes entries are the same as the output from
+[\#GetTitleIdInfo](#GetTitleIdInfo "wikilink") starting at the TID.
+However, "pad\[0\]" is used for something else it seems?(0 for
+everything except for TID
+[010000000000081B](Title%20list.md "wikilink"), where it's 1)
+
+This reads the titlelist stored in the specified title, normally a title
+with title-type 3, which is sysupdate-title 0100000000000816. Returns 0
+with total\_read\_entries=0 when used with other title(s).
 
 ## NcaID
 

@@ -175,7 +175,7 @@ With some NcaIDs this may return 0 with an all-zero output entry. This seems to 
 |-
 | 16 || || Takes two 0x10-sized entries. Returns a bool/u8.
 |-
-| 17 || || Takes a type-6 buffer, each entry being 16 bytes, a u32 and a 0x10-sized entry. Returns a u32.
+| 17 || [[#GetUpdateTitleList]] || 
 |-
 | 18 || || Takes a 0x10-sized entry. Returns a bool/u8.
 |-
@@ -197,6 +197,14 @@ Each 24-byte entries is as follows:
   u64    title_id_update;
   struct title_info info;
   u64    title_id;
+
+
+=== GetUpdateTitleList ===
+Takes a type-6 output buffer, each entry being 0x10-byte bytes, a u32 entryoffset and a 0x10-sized entry. Returns a u32 for total_read_entries.
+
+The input entry is the output entry from [[#GetTitleIdInfo]] starting at the TID. The output 0x10-bytes entries are the same as the output from [[#GetTitleIdInfo]] starting at the TID. However, "pad[0]" is used for something else it seems?(0 for everything except for TID [[Title_list|010000000000081B]], where it's 1)
+
+This reads the titlelist stored in the specified title, normally a title with title-type 3, which is sysupdate-title 0100000000000816. Returns 0 with total_read_entries=0 when used with other title(s).
 
 == NcaID ==
 This is a 0x10-byte entry. This is originally from the hex portion of "<hex>.nca" directory-names from this storage FS(like [[SD_Filesystem|SD]]).
