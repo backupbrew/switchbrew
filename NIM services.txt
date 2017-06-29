@@ -8,10 +8,11 @@ Presumably Network Time Sync?
 
 =Network=
 * <nowiki>https://sun.hac.%%.d4c.nintendo.net/v1/system_update_meta?device_id=%016llx</nowiki>
-* ...
 * <nowiki>https://aqua.hac.%%.d4c.nintendo.net/required_system_update_meta?device_id=%016llx</nowiki>
 * <nowiki>https://%s.hac.%%.d4c.nintendo.net/t/%c/%016llx/%u?device_id=%016llx</nowiki> Returns content like the below URL. This is the content for [[NCA]]-type0. See below for %c. %016llx is titleID, %u is title-version.
 * <nowiki>https://%s.hac.%%.d4c.nintendo.net/c/%c/%s</nowiki> Used for downloading content. First %s is atumn or atum. %c is one of: 'c', 'a', or 's'. %s is just the hex-string NcaId. The returned data is the same size readable from [[Content_Manager_services|NCM]], with another crypto layer. The server also returns two HTTP headers: "X-Nintendo-Content-Hash: {entire lowercase hex-string of the content SHA256 hash}" and "X-Nintendo-Content-ID: {lowercase hex-string for NcaId}"
+* <nowiki>https://superfly.hac.%%.d4c.nintendo.net/v1/t/%016llx/dv</nowiki> %016llx is titleID, only for eShop titles it appears. Returns .json title-info.
+* <nowiki>https://superfly.hac.%%.d4c.nintendo.net/v1/a/%016llx/dv</nowiki> %016llx is titleID, only for eShop titles it appears. Output is similar to above URL.
 * <nowiki>https://aauth-%.ndas.srv.nintendo.net/v1/time</nowiki>
 * ...
 * <nowiki>"https://dauth-%.ndas.srv.nintendo.net/v1/device_auth_token"</nowiki> CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "system_version=%08x&client_id=%s", <output parsed from a func>, "<hard-coded hex string>");

@@ -10,7 +10,6 @@ Presumably Network Time
 # Network
 
   - https://sun.hac.%%.d4c.nintendo.net/v1/system\_update\_meta?device\_id=%016llx
-  - ...
   - https://aqua.hac.%%.d4c.nintendo.net/required\_system\_update\_meta?device\_id=%016llx
   - https://%s.hac.%%.d4c.nintendo.net/t/%c/%016llx/%u?device\_id=%016llx
     Returns content like the below URL. This is the content for
@@ -24,6 +23,11 @@ Presumably Network Time
     "X-Nintendo-Content-Hash: {entire lowercase hex-string of the
     content SHA256 hash}" and "X-Nintendo-Content-ID: {lowercase
     hex-string for NcaId}"
+  - https://superfly.hac.%%.d4c.nintendo.net/v1/t/%016llx/dv %016llx is
+    titleID, only for eShop titles it appears. Returns .json title-info.
+  - https://superfly.hac.%%.d4c.nintendo.net/v1/a/%016llx/dv %016llx is
+    titleID, only for eShop titles it appears. Output is similar to
+    above URL.
   - https://aauth-%.ndas.srv.nintendo.net/v1/time
   - ...
   - "https://dauth-%.ndas.srv.nintendo.net/v1/device\_auth\_token"
