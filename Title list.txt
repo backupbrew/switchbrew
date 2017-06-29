@@ -156,6 +156,8 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 010000000000081A || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || Firmware package B
 |-
+| 010000000000081B || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || Firmware package C
+|-
 | 010000000000081D || [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || Errdisp strings
 |-
 | 010000000000081E || [[2.0.0|v260]] (0.0.1.4), [[3.0.0|v201327002]] (12.0.1.154) || Dummy file
@@ -212,6 +214,13 @@ No 01000000000020XX titles exist on retail systems.
 | 0100000000001015 || [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || "maintenance" Initial applet displayed when booting into [[Recovery_Mode]]. TID launched by [[NS_Services|NS]] when a state flag is val1 indicating that this TID should be launched instead of the above "System applet" TID.
 |-
 | 0100000000001016 || || TID used by [[NS_Services|NS]] when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.
+|}
+
+== System Applications ==
+{| class=wikitable
+! Title-id || Versions || Description
+|-
+| 01008BB00013C000 || [[2.0.0|v450]] (0.0.1.194) || "flog" NES emulator
 |}
 
 == Games ==
