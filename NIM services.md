@@ -52,6 +52,10 @@ A seperate function using the ".../c/" URL is hard-coded to use 'c'.
 This appears to match 's' usage attempts: the only URL that returned
 actual data with 's' was with titleID 0100000000000816.
 
+As of June 28, 2017, accessing old content via "/c/" URL works fine,
+however with some titles "/t/" URL returns HTTP 404 for old
+title-versions.
+
 Going by strings in NIM, it appears SOAP isn't used anymore. ecs appears
 to use REST API?
 
