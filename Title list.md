@@ -43,8 +43,8 @@
 | 0100000000000033 | [v66564](2.0.0.md "wikilink") (0.1.4.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154)                                                                                        | es                                      |
 | 0100000000000034 | [v66564](2.0.0.md "wikilink") (0.1.4.4), [v131132](2.1.0.md "wikilink") (0.2.0.60), [v201327002](3.0.0.md "wikilink") (12.0.1.154)                                             | fatal                                   |
 | 0100000000000036 | [v131132](2.0.0.md "wikilink") (0.2.0.60), [v65596](2.1.0.md "wikilink") (0.1.0.60), [v131092](2.3.0.md "wikilink") (0.2.0.20), [v201327002](3.0.0.md "wikilink") (12.0.1.154) | [creport](Creport.md "wikilink")        |
-| 0100000000000037 | [v?](3.0.0.md "wikilink")                                                                                                                                                      | ro                                      |
-| 0100000000000039 | [v?](3.0.0.md "wikilink")                                                                                                                                                      | sdb                                     |
+| 0100000000000037 | [v201327002](3.0.0.md "wikilink")                                                                                                                                              | ro                                      |
+| 0100000000000039 | [v201327002](3.0.0.md "wikilink")                                                                                                                                              | sdb                                     |
 
 The built-in system modules are FS, LOADER, LR, PM, SM, and CRYPTO.
 
