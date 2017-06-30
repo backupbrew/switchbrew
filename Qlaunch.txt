@@ -1,0 +1,6 @@
+This is the title with process-name "qlaunch" launched by [[NS_Services|NS]] with TID loaded from system-config.
+
+This is multiple "applets" under one title, with at minimum the following:
+* Home Menu
+* [[System Settings]]
+* [[News]]
