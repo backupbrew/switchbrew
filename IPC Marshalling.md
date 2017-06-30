@@ -111,8 +111,8 @@ code.
 | 0x40 + 4 + 2 | Creates a B descriptor with flags=1.                                        | Out       |
 | 0x80 + 4 + 2 | Creates a B descriptor with flags=3.                                        | Out       |
 | 8 + 1        | Creates an X descriptor                                                     | In        |
-| 8 + 2        | Creates a C descriptor                                                      | Out       |
-| 0x10 + 8 + 2 | Creates a C descriptor, and writes the u16 size to an offset into raw data. | Out       |
+| 8 + 2        | Creates a C descriptor, and writes the u16 size to an offset into raw data. | Out       |
+| 0x10 + 8 + 2 | Creates a C descriptor                                                      | Out       |
 | 0x20 + 1     | Creates both an A and X descriptor                                          | In        |
 | 0x20 + 2     | Creates both an B and C descriptor                                          | Out       |
 
