@@ -173,7 +173,7 @@ No 01000000000020XX titles exist on retail systems.
 {| class=wikitable
 ! Title-id || Versions || Description
 |-
-| 0100000000001000 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90), [[3.0.0|v201327002]] (12.0.1.154) || "qlaunch" System applet (Launched by NS with TID loaded from system-config-title)
+| 0100000000001000 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90), [[3.0.0|v201327002]] (12.0.1.154) || "[[qlaunch]]" System applet (Launched by NS with TID loaded from system-config-title)
 |-
 | 0100000000001001 || [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || "auth"
 |-
