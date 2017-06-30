@@ -121,7 +121,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xCC01 || 102 || Invalid address (not page-aligned).
 |-
-| 0xCE01 || 103 || Address is NULL
+| 0xCE01 || 103 || Address is NULL / buffer size is too small.
 |-
 | 0xD201 || 105 || Handle-table full.
 |-

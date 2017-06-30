@@ -78,7 +78,7 @@ applets.
 | ----------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 0xCA01            | 101         | Invalid size                                                                                                                                                                         |
 | 0xCC01            | 102         | Invalid address (not page-aligned).                                                                                                                                                  |
-| 0xCE01            | 103         | Address is NULL                                                                                                                                                                      |
+| 0xCE01            | 103         | Address is NULL / buffer size is too small.                                                                                                                                          |
 | 0xD201            | 105         | Handle-table full.                                                                                                                                                                   |
 | 0xD401            | 106         | Invalid memory state / invalid memory permissions.                                                                                                                                   |
 | 0xD801            | 108         | When trying to set executable permission on memory.                                                                                                                                  |
