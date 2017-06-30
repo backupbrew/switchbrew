@@ -244,6 +244,12 @@ Returns a titleID and the title-version for it.
     title-version v450.
   - Output u64 with ARMS-gamecard: titleID 0100000000000816.
 
+[NS](NS%20Services.md "wikilink") appears to only use this with
+[Content\_Manager\_services\#GetTitleIdInfo](Content%20Manager%20services#GetTitleIdInfo.md##GetTitleIdInfo "wikilink")
+and
+[Content\_Manager\_services\#GetUpdateTitleList](Content%20Manager%20services#GetUpdateTitleList.md##GetUpdateTitleList "wikilink")
+with storageid=nandsys, for checking whether a sysupdate is required.
+
 # IEventNotifier
 
 | Cmd | Name      |
