@@ -1,28 +1,39 @@
 NSO is the main executable format.
 
-It starts with a
-header:
+It starts with the "NSO" header and mainly describes .text, .rodata, and
+.data segments (like a short-form of ELF program
+headers):
 
-| Offset | Size | Description                                                                                         |
-| ------ | ---- | --------------------------------------------------------------------------------------------------- |
-| 0x0    | 4    | Magic "NSO0"                                                                                        |
-| 0x4    | 4    |                                                                                                     |
-| 0x8    | 4    |                                                                                                     |
-| 0xC    | 4    |                                                                                                     |
-| 0x10   | 4    | .text LZ4-compressed data start offset (0x101)                                                      |
-| 0x14   | 4    | .text offset? (0)                                                                                   |
-| 0x18   | 4    | .text size                                                                                          |
-| 0x1C   | 4    | .text required align? (0x1000)                                                                      |
-| 0x20   | 4    | .rodata LZ4-compressed data start offset                                                            |
-| 0x24   | 4    | .rodata offset                                                                                      |
-| 0x28   | 4    | .rodata size                                                                                        |
-| 0x2C   | 4    | .rodata required align? (1)                                                                         |
-| 0x30   | 4    | .data LZ4-compressed data start offset                                                              |
-| 0x34   | 4    | .data offset                                                                                        |
-| 0x38   | 4    | .data size                                                                                          |
-| 0x3C   | 4    | .bss size                                                                                           |
-| 0x40   | 0x14 | SHA1?                                                                                               |
-| 0x54   | 0xC  | Padding                                                                                             |
-| 0x60   | 4    | .rel.dyn compression offset?                                                                        |
-| 0xA0   | 0x60 | SHA256 hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
-| 0x100  |      | Compressed sections                                                                                 |
+### SegmentHeader
+
+| Offset | Size | Description                                                               |
+| ------ | ---- | ------------------------------------------------------------------------- |
+| 0x0    | 4    | file offset of data                                                       |
+| 0x4    | 4    | memory offset loaded to                                                   |
+| 0x8    | 4    | size of data copied to memory offset (i.e. size after decompression)      |
+| 0xC    | 4    | alignment used on memory size / size of .bss in the case of .data segment |
+
+### .rodata-relative extent
+
+| Offset | Size | Description                  |
+| ------ | ---- | ---------------------------- |
+| 0x0    | 4    | offset (relative to .rodata) |
+| 0x4    | 4    | size of region               |
+
+### NSO Header
+
+| Offset | Size      | Description                                                                                         |
+| ------ | --------- | --------------------------------------------------------------------------------------------------- |
+| 0x0    | 4         | Magic "NSO0"                                                                                        |
+| 0x4    | 4         |                                                                                                     |
+| 0x8    | 4         |                                                                                                     |
+| 0xC    | 4         |                                                                                                     |
+| 0x10   | 0x10 \* 3 | SegmentHeader for each segment                                                                      |
+| 0x40   | 0x14      | Value of "build id" from ELF's GNU .note section                                                    |
+| 0x54   | 0xC       | Padding                                                                                             |
+| 0x60   | 0x4 \* 3  | file size of each segment (i.e. LZ4-compressed size)                                                |
+| 0x6c   | 0x24      | Padding                                                                                             |
+| 0x90   | 8         | .rodata-relative extents of .dynstr                                                                 |
+| 0x98   | 8         | .rodata-relative extents of .dynsym                                                                 |
+| 0xA0   | 0x20 \* 3 | SHA256 hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
+| 0x100  |           | Compressed sections                                                                                 |
