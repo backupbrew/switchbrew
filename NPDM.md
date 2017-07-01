@@ -76,4 +76,4 @@ bits.
 | `0bxxxxxxxxxxx01111` | Syscall mask   | Bits 29-31: Syscall mask table index; Bits 5-28: mask  |
 | `0bxxxxxxxxx0111111` | Map IO page    | Bits 7-31: page                                        |
 | `0bxxxxxxxx01111111` | Map IO range   | Bits 7-31: page then size alternating                  |
-| `0bxxxxx11111111111` | Interrupt pair | Bits 12-21: irq0, bits 20-31: irq1, 0x3FF means empty. |
+| `0bxxxx011111111111` | Interrupt pair | Bits 12-21: irq0, bits 20-31: irq1, 0x3FF means empty. |

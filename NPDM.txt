@@ -175,7 +175,7 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 | Map IO range
 | Bits 7-31: page then size alternating
 |-
-| <code>0bxxxxx11111111111</code>
+| <code>0bxxxx011111111111</code>
 | Interrupt pair
 | Bits 12-21: irq0, bits 20-31: irq1, 0x3FF means empty.  
 |}
