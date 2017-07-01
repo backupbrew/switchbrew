@@ -3,24 +3,24 @@
 This is an array of
 u32's.
 
-| Word | Bits  | Description                                                 |
-| ---- | ----- | ----------------------------------------------------------- |
-| 0    | 15-0  | Type. 4=Request, 5=Control                                  |
-| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                |
-| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                |
-| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                |
-| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed. |
-| 1    | 9-0   | Total word count (in u32's).                                |
-| 1    | 13-10 | If set to 2, enable buf C descriptor.                       |
-| 1    | 31    | Enable handle descriptor.                                   |
-| ...  |       | Handle descriptor, if enabled.                              |
-| ...  |       | Buf X descriptors, each one 2 words.                        |
-| ...  |       | Buf A descriptors, each one 3 words.                        |
-| ...  |       | Buf B descriptors, each one 3 words.                        |
-| ...  |       | Type W descriptors, each one 3 words.                       |
-| ...  |       | Padding                                                     |
-| ...  |       | Raw data                                                    |
-| ...  |       | Buf C descriptors, each one 2 words.                        |
+| Word | Bits  | Description                                                                                                                          |
+| ---- | ----- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 0    | 15-0  | Type. 4=Request, 5=Control                                                                                                           |
+| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                                                                                         |
+| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                                         |
+| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                                         |
+| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed.                                                                          |
+| 1    | 9-0   | Total word count (in u32's).                                                                                                         |
+| 1    | 13-10 | Flags for buf C descriptor. Value 1 = write output data into cmdreply(separate from raw-data). If set to 2, enable buf C descriptor. |
+| 1    | 31    | Enable handle descriptor.                                                                                                            |
+| ...  |       | Handle descriptor, if enabled.                                                                                                       |
+| ...  |       | Buf X descriptors, each one 2 words.                                                                                                 |
+| ...  |       | Buf A descriptors, each one 3 words.                                                                                                 |
+| ...  |       | Buf B descriptors, each one 3 words.                                                                                                 |
+| ...  |       | Type W descriptors, each one 3 words.                                                                                                |
+| ...  |       | Padding                                                                                                                              |
+| ...  |       | Raw data                                                                                                                             |
+| ...  |       | Buf C descriptors, each one 2 words.                                                                                                 |
 
 ### Handle descriptor
 
