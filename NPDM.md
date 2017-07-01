@@ -67,17 +67,13 @@ The service string can contain a wildcard `*` character.
 
 # Kernel Access Control
 
-Like the 3DS, the switch has a number of kernel capability descriptors.
-Unlike 3ds, where descriptors were identified by pattern 11..10 in high
-bits, on switch descriptors are identified by pattern 01..11 in low
+On Switch, descriptors are identified by pattern 01..11 in low
 bits.
 
-| Pattern of bits 20-31 | Type                    | Fields                                                    |
-| --------------------- | ----------------------- | --------------------------------------------------------- |
-| `0bxxxxxxxx0111?`     | Interrupt info?         | ?                                                         |
-| `0bxxxxxxx01111`      | System call mask        | Bits 29-31: System call mask table index; Bits 5-28: mask |
-| `0bxxxxx0111111?`     | Kernel release version? | ?                                                         |
-| `0bxxxx01111111?`     | Handle table size?      | ?                                                         |
-| `0bxxx011111111?`     | Kernel flags?           | ?                                                         |
-| `0bx0111111111?`      | Map address range?      | ?                                                         |
-| `0b011111111111?`     | Map memory page?        | ?                                                         |
+| Pattern of bits 15-0 | Type           | Fields                                                 |
+| -------------------- | -------------- | ------------------------------------------------------ |
+| `0bxxxxxxxxxxxx0111` | Kernel flags   | ?                                                      |
+| `0bxxxxxxxxxxx01111` | Syscall mask   | Bits 29-31: Syscall mask table index; Bits 5-28: mask  |
+| `0bxxxxxxxxx0111111` | Map IO page    | Bits 7-31: page                                        |
+| `0bxxxxxxxx01111111` | Map IO range   | Bits 7-31: page then size alternating                  |
+| `0bxxxxx11111111111` | Interrupt pair | Bits 12-21: irq0, bits 20-31: irq1, 0x3FF means empty. |
