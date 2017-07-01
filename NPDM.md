@@ -72,7 +72,7 @@ bits.
 
 | Pattern of bits 15-0 | Type           | Fields                                                 |
 | -------------------- | -------------- | ------------------------------------------------------ |
-| `0bxxxxxxxxxxxx0111` | Kernel flags   | ?                                                      |
+| `0bxxxxxxxxxxxx0111` | Kernel flags   | 5-0: Main thread priority?                             |
 | `0bxxxxxxxxxxx01111` | Syscall mask   | Bits 29-31: Syscall mask table index; Bits 5-28: mask  |
 | `0bxxxxxxxxx0111111` | Map IO page    | Bits 7-31: page                                        |
 | `0bxxxxxxxx01111111` | Map IO range   | Bits 7-31: page then size alternating                  |

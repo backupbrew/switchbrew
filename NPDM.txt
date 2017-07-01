@@ -161,7 +161,7 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 |-
 | <code>0bxxxxxxxxxxxx0111</code>
 | Kernel flags
-| ?
+| 5-0: Main thread priority?
 |-
 | <code>0bxxxxxxxxxxx01111</code>
 | Syscall mask
