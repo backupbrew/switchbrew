@@ -181,6 +181,9 @@ However, "pad\[0\]" is used for something else it seems?(0 for
 everything except for TID
 [010000000000081B](Title%20list.md "wikilink"), where it's 1)
 
+See
+[NCA\#Meta\_records](NCA#Meta%20records.md##Meta_records "wikilink").
+
 This reads the titlelist stored in the specified title, normally a title
 with title-type 3, which is sysupdate-title 0100000000000816. Returns 0
 with total\_read\_entries=0 when used with other title(s).

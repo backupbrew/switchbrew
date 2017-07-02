@@ -204,6 +204,8 @@ Takes a type-6 output buffer, each entry being 0x10-byte bytes, a u32 entryoffse
 
 The input entry is the output entry from [[#GetTitleIdInfo]] starting at the TID. The output 0x10-bytes entries are the same as the output from [[#GetTitleIdInfo]] starting at the TID. However, "pad[0]" is used for something else it seems?(0 for everything except for TID [[Title_list|010000000000081B]], where it's 1)
 
+See [[NCA#Meta_records]].
+
 This reads the titlelist stored in the specified title, normally a title with title-type 3, which is sysupdate-title 0100000000000816. Returns 0 with total_read_entries=0 when used with other title(s).
 
 == NcaID ==
