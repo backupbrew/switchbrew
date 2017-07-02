@@ -2,7 +2,7 @@
 
 | Cmd | Name                                                   |
 | --- | ------------------------------------------------------ |
-| 0   | OpenSessionForDev                                      |
+| 0   | [\#OpenSessionForDev](#OpenSessionForDev "wikilink")   |
 | 1   | [\#OpenSession](#OpenSession "wikilink")               |
 | 2   | [\#OpenSessionForTest](#OpenSessionForTest "wikilink") |
 | 3   | IsWakeEventActive                                      |
@@ -10,10 +10,16 @@
 | 5   | SetWakeEventActiveFlagSetForDebug                      |
 | 6   |                                                        |
 
+## OpenSessionForDev
+
+Takes a raw GpioPadDescriptor and returns a
+[\#IPadSession](#IPadSession "wikilink") session for it.
+
 ## OpenSession
 
-Same thing as OpenSessionForDev except the descriptor is looked up in a
-table:
+Same thing as OpenSessionForDev except the descriptor is looked up in
+the table below. Returns an [\#IPadSession](#IPadSession "wikilink")
+session.
 
 | GpioPadName | GpioPadDescriptor |
 | ----------- | ----------------- |
@@ -29,6 +35,27 @@ table:
 ## OpenSessionForTest
 
 Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
+
+## IPadSession
+
+| Cmd | Name                 |
+| --- | -------------------- |
+| 0   | SetDirection         |
+| 1   | GetDirection         |
+| 2   | SetInterruptMode     |
+| 3   | GetInterruptMode     |
+| 4   | SetInterruptEnable   |
+| 5   | GetInterruptEnable   |
+| 6   | GetInterruptStatus   |
+| 7   | ClearInterruptStatus |
+| 8   | SetValue             |
+| 9   | GetValue             |
+| 10  | BindInterrupt        |
+| 11  | UnbindInterrupt      |
+| 12  | SetDebounceEnabled   |
+| 13  | GetDebounceEnabled   |
+| 14  | SetDebounceTime      |
+| 15  | GetDebounceTime      |
 
 ## GpioPadDescriptor
 
