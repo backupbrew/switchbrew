@@ -44,11 +44,13 @@ It starts with a header:
 |
 |}
 
+With SystemUpdate, the 4-bytes at offset 0xE are zero, with the entry-count field located at offset 0x12 instead(header size is the same).
+
 An optional header can follow, depending on the title type.
 
 At the end of the file following the entries is a 0x20-byte block, presumably a hash.
 
-With update-format, there's additional data after the end of the entries specified in the header and before the ending hash.
+With Patch-format, there's additional data after the end of the entries specified in the header and before the ending hash.
 
 == Application header ==
 {| class="wikitable" border="1"
