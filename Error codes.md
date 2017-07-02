@@ -26,6 +26,7 @@ fatal-errors, since the Description ends with bit21.
 | 2     | FS                                                     |
 | 3     | NVIDIA                                                 |
 | 5     | NCM                                                    |
+| 6     | DEVICE                                                 |
 | 8     | LR                                                     |
 | 9     | RO service                                             |
 | 10    | CMIF (IPC command interface)                           |

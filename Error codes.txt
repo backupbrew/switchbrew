@@ -26,6 +26,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 5 || NCM
 |-
+| 6 || DEVICE
+|-
 | 8 || LR
 |-
 | 9 || RO service
