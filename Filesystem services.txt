@@ -169,8 +169,6 @@ May return errors when attempting to access NCA-paths for an update-title with a
 == OpenBisPartition ==
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not exist, 0x320002 for partitions which cannot be opened and a valid [[#IStorage]] handle otherwise.
 
-Returns an [[#IStorage]] that gives raw access to nand sectors containing the BCT.
-
 == MountContentStorage ==
 Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.
 
@@ -387,5 +385,9 @@ Returns a titleID and the title-version for it.
 | 2 || SdCard
 |}
 
+=BisPartitionID=
+* 0: This gives raw access to nand sectors containing the BCT.
+* 10: Same as above except this starts with the raw nand sectors for the bootloader in the boot-partition.
+* Rest: see [[Flash_Filesystem|here]].
 
 [[Category:Services]]

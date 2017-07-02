@@ -112,9 +112,6 @@ Takes a u32 partition ID, returns 0x2EE202 for partitions which do not
 exist, 0x320002 for partitions which cannot be opened and a valid
 [\#IStorage](#IStorage "wikilink") handle otherwise.
 
-Returns an [\#IStorage](#IStorage "wikilink") that gives raw access to
-nand sectors containing the BCT.
-
 ## MountContentStorage
 
 Takes a [\#ContentStorageId](#ContentStorageId "wikilink"). Invalid
@@ -274,5 +271,12 @@ with storageid=nandsys, for checking whether a sysupdate is required.
 | 0     | NandSystem |
 | 1     | NandUser   |
 | 2     | SdCard     |
+
+# BisPartitionID
+
+  - 0: This gives raw access to nand sectors containing the BCT.
+  - 10: Same as above except this starts with the raw nand sectors for
+    the bootloader in the boot-partition.
+  - Rest: see [here](Flash%20Filesystem.md "wikilink").
 
 [Category:Services](Category:Services "wikilink")
