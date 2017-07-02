@@ -39,6 +39,7 @@
 | 
 *[[Online Multiplayer]]
 *[[SD Filesystem]]
+*[[Flash Filesystem]]
 *[[Domains]]
 |}
 </div>
