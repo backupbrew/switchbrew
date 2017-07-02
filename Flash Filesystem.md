@@ -1,5 +1,29 @@
 ### NAND structure
 
+## Boot Partitions
+
+**Boot Partition 0 (0 of 1)**
+
+| Offset   | Size | Description                                |
+| -------- | ---- | ------------------------------------------ |
+| 0x000000 |      | title 0100000000000819 BCT                 |
+| 0x004000 |      | title 010000000000081A BCT                 |
+| 0x008000 |      | title 0100000000000819 BCT                 |
+| 0x00C000 |      | title 010000000000081A BCT                 |
+| 0x100000 |      | title 0100000000000819 "package1"          |
+| 0x140000 |      | title 0100000000000819 "package1" (Backup) |
+| 0x180000 |      | Keyblob area                               |
+| 0x184000 |      | Unknown, 0x20-bytes hash + one u32?        |
+
+**Boot Partition 1 (1 of 1)**
+
+| Offset   | Size | Description                                |
+| -------- | ---- | ------------------------------------------ |
+| 0x000000 |      | title 010000000000081A "package1"          |
+| 0x040000 |      | title 010000000000081A "package1" (Backup) |
+
+## User Partitions
+
 | Partition name         | Offset     | Size        | [Bis](Filesystem%20services.md "wikilink") Partition ID | Description                                                                                                                                                                                 |
 | ---------------------- | ---------- | ----------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | N/A                    | 0x0        | ?           | 20                                                      | GPT header, partition ID also provides raw access to all partitions                                                                                                                         |
