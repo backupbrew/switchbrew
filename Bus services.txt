@@ -41,7 +41,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 7 || 0x25 || || || 
 |-
-| 8 || 0x90 || || || 
+| 8 || 0x90 || || In || [[HID services]]
 |-
 | 9 || 0x91 || || || 
 |-
@@ -67,9 +67,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x15 || 0xAE || || || 
 |-
-| 0x17 || 0xB9 || || || 
+| 0x17 || 0xB9 || || In || [[HID services]]
 |-
-| 0x18 || 0xBD || || || 
+| 0x18 || 0xBD || || Out || [[HID services]]
 |-
 | 0x19 || 0xBE || Volume key || In || [[Boot2]]
 |-
