@@ -29,7 +29,7 @@
 |  0x00800000
 |  0x00800000
 |  21
-|  For all these packages, data starts at offset 0x4000. This is installed from "package2" in firmware package C, 010000000000081B.
+|  For all these packages, data starts at offset 0x4000. This is installed from "package2": on retail it's from FIRM-A 0100000000000819, on devunit(?) it's from FIRM-C, 010000000000081B.
 |-
 |  BCPKG2-2-Normal-Sub
 |  0x01000000
