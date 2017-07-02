@@ -33,6 +33,7 @@ fatal-errors, since the Description ends with bit21.
 | 11    | HIPC (IPC)                                             |
 | 15    | PM                                                     |
 | 16    | NS                                                     |
+| 18    | HTC                                                    |
 | 21    | SM                                                     |
 | 22    | RO userland                                            |
 | 24    | SDMMC                                                  |

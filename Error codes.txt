@@ -40,6 +40,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 16 || NS
 |-
+| 18 || HTC
+|-
 | 21 || SM
 |-
 | 22 || RO userland
