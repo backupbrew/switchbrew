@@ -174,7 +174,7 @@
  │   │   └── ... [[NCA]]
  │   └── placehld
  │       └── ... [[NCA]]
- ├── save
+ ├── [[Savegames|save]]
  │   └── ...
  └── saveMeta
      └── ... (empty?)
@@ -187,6 +187,6 @@
  │   │   └── ... [[NCA]] (nothing installed?)
  │   └── placehld
  │       └── ... [[NCA]]
- └── save
+ └── [[Savegames|save]]
      ├── 8000000000000000
      └── 8000000000000120

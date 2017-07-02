@@ -75,7 +75,7 @@
 `│   │   └── ... `[`NCA`](NCA.md "wikilink")  
 `│   └── placehld`  
 `│       └── ... `[`NCA`](NCA.md "wikilink")  
-`├── save`  
+`├── `[`save`](Savegames.md "wikilink")  
 `│   └── ...`  
 `└── saveMeta`  
 `    └── ... (empty?)`
@@ -89,6 +89,6 @@
 `│   │   └── ... `[`NCA`](NCA.md "wikilink")` (nothing installed?)`  
 `│   └── placehld`  
 `│       └── ... `[`NCA`](NCA.md "wikilink")  
-`└── save`  
+`└── `[`save`](Savegames.md "wikilink")  
 `    ├── 8000000000000000`  
 `    └── 8000000000000120`
