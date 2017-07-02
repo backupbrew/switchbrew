@@ -388,6 +388,8 @@ Size must match size given in map syscall, otherwise there's an invalid-size err
 {| class=wikitable
 ! Lower 8 bits || Type                 || Meaning
 |-
+| 0x1          || IO                   ||
+|-
 | 0x3          || Code static          || .text and .rodata
 |-
 | 0x4          || Code                 || .data
