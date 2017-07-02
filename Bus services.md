@@ -21,16 +21,47 @@ Same thing as OpenSessionForDev except the descriptor is looked up in
 the table below. Returns an [\#IPadSession](#IPadSession "wikilink")
 session.
 
-| GpioPadName | GpioPadDescriptor |
-| ----------- | ----------------- |
-| 2           | 0x24              |
-| 4           | 0xDA              |
-| 5           | 0xDB              |
-| 6           | 0xDC              |
-| 7           | 0x25              |
-| 8           | 0x90              |
-| 9           | 0x91              |
-| ..          | ..                |
+| GpioPadName | GpioPadDescriptor | Description |
+| ----------- | ----------------- | ----------- |
+| 1           | 0xCC              |             |
+| 2           | 0x24              |             |
+| 4           | 0xDA              |             |
+| 5           | 0xDB              |             |
+| 6           | 0xDC              |             |
+| 7           | 0x25              |             |
+| 8           | 0x90              |             |
+| 9           | 0x91              |             |
+| 0xA         | 0x96              |             |
+| 0xB         | 0x97              |             |
+| 0xD         | 6                 |             |
+| 0xE         | 0x78              |             |
+| 0xF         | 0x93              |             |
+| 0x10        | 0x7D              |             |
+| 0x11        | 0x7C              |             |
+| 0x12        | 0x7B              |             |
+| 0x13        | 0x7A              |             |
+| 0x14        | 0xBC              |             |
+| 0x15        | 0xAE              |             |
+| 0x17        | 0xB9              |             |
+| 0x18        | 0xBD              |             |
+| 0x19        | 0xBE              | Volume key  |
+| 0x1A        | 0xBF              | Volume key  |
+| 0x1B        | 0xC0              |             |
+| 0x1C        | 0xC1              |             |
+| 0x1D        | 0xA9              |             |
+| 0x1E        | 0xAA              |             |
+| 0x20        | 0xAD              |             |
+| 0x21        | 0xC8              |             |
+| 0x22        | 0xCA              |             |
+| 0x23        | 0xCB              |             |
+| 0x24        | 0x4F              |             |
+| 0x25        | 0x50              |             |
+| 0x26        | 0x51              |             |
+| 0x27        | 0x52              |             |
+| 0x28        | 0x54              |             |
+| 0x29        | 0x56              |             |
+| 0x2A        | 0x57              |             |
+| ..          | ..                |             |
 
 ## OpenSessionForTest
 
