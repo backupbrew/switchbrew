@@ -39,7 +39,7 @@
 |-
 |  0x184000
 |  
-|  Unknown, 0x20-bytes hash + one u32?
+|  Unknown, 0x20-bytes hash + one u64?
 |}
 
 '''Boot Partition 1 (1 of 1)'''

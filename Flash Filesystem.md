@@ -14,7 +14,7 @@
 | 0x100000 |      | Title 0100000000000819 "package1"                                                               |
 | 0x140000 |      | Title 0100000000000819 "package1" (Backup)                                                      |
 | 0x180000 |      | Keyblob area, the first 0xB0 is identical to the console-unique "customer data" section in BCTs |
-| 0x184000 |      | Unknown, 0x20-bytes hash + one u32?                                                             |
+| 0x184000 |      | Unknown, 0x20-bytes hash + one u64?                                                             |
 
 **Boot Partition 1 (1 of 1)**
 
