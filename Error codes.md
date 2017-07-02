@@ -38,6 +38,7 @@ fatal-errors, since the Description ends with bit21.
 | 24    | SDMMC                                                  |
 | 26    | SPL                                                    |
 | 100   | ETHC                                                   |
+| 101   | I2C                                                    |
 | 105   | Settings                                               |
 | 110   | NIFM                                                   |
 | 114   | Display                                                |

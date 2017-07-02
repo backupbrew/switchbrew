@@ -50,6 +50,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 100 || ETHC
 |-
+| 101 || I2C
+|-
 | 105 || Settings
 |-
 | 110 || NIFM
