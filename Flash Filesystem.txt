@@ -11,27 +11,27 @@
 |-
 |  0x000000
 |  
-|  title 0100000000000819 BCT
+|  Title 0100000000000819 BCT
 |-
 |  0x004000
 |  
-|  title 010000000000081A BCT
+|  Title 010000000000081A BCT
 |-
 |  0x008000
 |  
-|  title 0100000000000819 BCT
+|  Title 0100000000000819 BCT
 |-
 |  0x00C000
 |  
-|  title 010000000000081A BCT
+|  Title 010000000000081A BCT
 |-
 |  0x100000
 |  
-|  title 0100000000000819 "package1"
+|  Title 0100000000000819 "package1"
 |-
 |  0x140000
 |  
-|  title 0100000000000819 "package1" (Backup)
+|  Title 0100000000000819 "package1" (Backup)
 |-
 |  0x180000
 |  
@@ -51,11 +51,11 @@
 |-
 |  0x000000
 |  
-|  title 010000000000081A "package1"
+|  Title 010000000000081A "package1"
 |-
 |  0x040000
 |  
-|  title 010000000000081A "package1" (Backup)
+|  Title 010000000000081A "package1" (Backup)
 |}
 
 == User Partitions ==

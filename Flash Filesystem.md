@@ -6,12 +6,12 @@
 
 | Offset   | Size | Description                                |
 | -------- | ---- | ------------------------------------------ |
-| 0x000000 |      | title 0100000000000819 BCT                 |
-| 0x004000 |      | title 010000000000081A BCT                 |
-| 0x008000 |      | title 0100000000000819 BCT                 |
-| 0x00C000 |      | title 010000000000081A BCT                 |
-| 0x100000 |      | title 0100000000000819 "package1"          |
-| 0x140000 |      | title 0100000000000819 "package1" (Backup) |
+| 0x000000 |      | Title 0100000000000819 BCT                 |
+| 0x004000 |      | Title 010000000000081A BCT                 |
+| 0x008000 |      | Title 0100000000000819 BCT                 |
+| 0x00C000 |      | Title 010000000000081A BCT                 |
+| 0x100000 |      | Title 0100000000000819 "package1"          |
+| 0x140000 |      | Title 0100000000000819 "package1" (Backup) |
 | 0x180000 |      | Keyblob area                               |
 | 0x184000 |      | Unknown, 0x20-bytes hash + one u32?        |
 
@@ -19,8 +19,8 @@
 
 | Offset   | Size | Description                                |
 | -------- | ---- | ------------------------------------------ |
-| 0x000000 |      | title 010000000000081A "package1"          |
-| 0x040000 |      | title 010000000000081A "package1" (Backup) |
+| 0x000000 |      | Title 010000000000081A "package1"          |
+| 0x040000 |      | Title 010000000000081A "package1" (Backup) |
 
 ## User Partitions
 
