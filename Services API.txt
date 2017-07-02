@@ -191,7 +191,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | srv: Main, ldr: Loader, pr: Program Registry
 |-
 | gpio, i2c, i2c:pcv, pinmux, pwm, uart
-| [[I2C services]], [[UART services]]
+| [[Bus services]]
 |
 |-
 | lbl
