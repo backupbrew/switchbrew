@@ -1,0 +1,62 @@
+This page describes the format of savegames contained in NAND.
+
+
+=== AES CMAC header ===
+
+
+{| class="wikitable"
+|-
+! Image offset
+! Length
+! Description
+|-
+| 0x00
+| 0x10
+| AES-CMAC
+|-
+| 0x10
+| 0xF0
+| Zero padding
+|}
+
+
+==== DISF ====
+
+
+* This is located @ 0x100 in the image, following the CMAC header.
+
+
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0x000
+| 4
+| Magic ("DISF")
+|-
+| 0x004
+| 4
+| Magic Number (0x40000)
+|-
+| 0x008
+| 32
+| Hash
+|-
+| 0x258
+| 
+| End
+|}
+
+
+==== DPFS ====
+
+
+* This is located @ 0x200 in the image, following DISF.
+
+
+==== IVFC ====
+
+
+* Generally follows DPFS, similar to 3DS.
