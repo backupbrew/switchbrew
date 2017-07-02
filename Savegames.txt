@@ -1,8 +1,6 @@
 This page describes the format of savegames contained in NAND.
 
-
 === AES CMAC header ===
-
 
 {| class="wikitable"
 |-
@@ -19,12 +17,9 @@ This page describes the format of savegames contained in NAND.
 | Zero padding
 |}
 
-
 ==== DISF ====
 
-
 * This is located @ 0x100 in the image, following the CMAC header.
-
 
 {| class="wikitable"
 |-
@@ -49,14 +44,11 @@ This page describes the format of savegames contained in NAND.
 | End
 |}
 
-
 ==== DPFS ====
-
 
 * This is located @ 0x200 in the image, following DISF.
 
 
 ==== IVFC ====
-
 
 * Generally follows DPFS, similar to 3DS.
