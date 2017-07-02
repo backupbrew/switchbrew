@@ -3,10 +3,14 @@ For the content of the NCA FS which can be [[Filesystem_services|mounted]], see 
 = Metadata file =
 This is the file that ends in <code>".cnmt{.nca}"</code> or <code>"meta0.ncd"</code>. This seems to replace the TMD format.
 
-There's at least 3 different filenames used for ".cnmt":
+There's at least 7 different filenames used for ".cnmt":
 * "Application_{lower-case hex titleID}.cnmt"
 * "Patch_{lower-case hex titleID}.cnmt"
 * "SystemUpdate_{hex titleID}.cnmt"
+* "SystemData_{lower-case hex titleID}.cnmt"
+* "SystemProgram_{lower-case hex titleID}.cnmt"
+* "BootImagePackage_{lower-case hex titleID}.cnmt"
+* "BootImagePackageSafe_{lower-case hex titleID}.cnmt"
 
 It starts with a header:
 {| class="wikitable" border="1"
