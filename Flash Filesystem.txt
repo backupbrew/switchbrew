@@ -4,7 +4,7 @@
 !  Partition name
 !  Offset
 !  Size
-!  Partition ID
+!  [[Filesystem_services|Bis]] Partition ID
 !  Description
 |-
 |  N/A
@@ -41,7 +41,7 @@
 |  0x01800000
 |  0x00800000
 |  23
-|  ?
+|  Data read via Bis-storage is zeros until offset 0x4000. The content of the package2 file from "Firmware package B" is located at offset 0x4000.
 |-
 |  BCPKG2-4-SafeMode-Sub
 |  0x02000000
