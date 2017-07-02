@@ -8,7 +8,8 @@ access a NCA-type with a FS-type not listed below.
 
 ## FS-type5
 
-Only contains the [.cnmt](NCA.md "wikilink") file.
+Only contains the [.cnmt](NCA.md "wikilink") file. This also how the
+0100000000000816 title is mounted.
 
 # NCA-type1
 
