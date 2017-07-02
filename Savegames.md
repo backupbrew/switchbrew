@@ -47,3 +47,33 @@ This page describes the format of savegames contained in NAND.
 #### IVFC
 
   - Generally follows DPFS, similar to 3DS.
+
+#### JNGL
+
+  - Generally follows IVFC
+
+| Start | Length | Description            |
+| ----- | ------ | ---------------------- |
+| 0x00  | 4      | Magic ("JNGL")         |
+| 0x04  | 4      | Magic Number (0x10000) |
+|       |        |                        |
+
+#### SAVE
+
+  - Generally follows JNGL, structure is different from 3DS.
+
+| Start | Length | Description            |
+| ----- | ------ | ---------------------- |
+| 0x00  | 4      | Magic ("SAVE")         |
+| 0x04  | 4      | Magic Number (0x60000) |
+|       |        |                        |
+
+#### RMAP
+
+  - There are generally two RMAP blocks in sequence.
+
+| Start | Length | Description            |
+| ----- | ------ | ---------------------- |
+| 0x00  | 4      | Magic ("RMAP")         |
+| 0x04  | 4      | Magic Number (0x10000) |
+|       |        |                        |
