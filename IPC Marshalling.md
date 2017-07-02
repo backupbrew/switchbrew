@@ -27,13 +27,13 @@ u32's.
 There can only be one of this descriptor type. It is enabled by bit31 of
 the second word.
 
-| Word | Bits | Description                |
-| ---- | ---- | -------------------------- |
-| 0    | 0    | Send current PID.          |
-| 0    | 4-1  | Number of handles to copy  |
-| 0    | 8-5  | Number of handles to move? |
-| ...  |      | Handles to copy            |
-| ...  |      | Handles to move?           |
+| Word | Bits | Description               |
+| ---- | ---- | ------------------------- |
+| 0    | 0    | Send current PID.         |
+| 0    | 4-1  | Number of handles to copy |
+| 0    | 8-5  | Number of handles to move |
+| ...  |      | Handles to copy           |
+| ...  |      | Handles to move           |
 
 ### Buffer descriptor A/B
 
@@ -145,3 +145,14 @@ All offsets are given is in number of u32 words.
 `  u32 unk2;`  
 `  u32 unk3;`  
 `}`
+
+## Control
+
+When type == 5 you are talking to kernel.
+
+| Cmd | Name                   |
+| --- | ---------------------- |
+| 0   | ConvertSessionToDomain |
+| 2   | DuplicateSession       |
+| 3   | QueryPointerBufferSize |
+| 4   | DuplicateSessionEx     |
