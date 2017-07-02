@@ -23,8 +23,9 @@ header:
 | 0xC    | 1    | Type (see [Title Types](Content%20Manager%20services#Title%20Types.md##Title_Types "wikilink")) |
 | 0xD    | 1    |                                                                                                 |
 | 0xE    | 2    | Offset to table relative to the end of this 0x20-byte header.                                   |
-| 0x10   | 2    | Number of entries                                                                               |
-| 0x12   | 14   |                                                                                                 |
+| 0x10   | 2    | Number of content entries                                                                       |
+| 0x12   | 2    | Number of meta entries                                                                          |
+| 0x14   | 12   |                                                                                                 |
 
 With SystemUpdate, the 4-bytes at offset 0xE are zero, with the
 entry-count field located at offset 0x12 instead(header size is the
@@ -72,6 +73,18 @@ bytes:
 | 0x36   | 1    | Type (0=meta, 1=program, 2=data, 3=control, 4=offline-manual [html](Internet%20Browser.md "wikilink"), 5=legal [html](Internet%20Browser.md "wikilink")) |
 | 0x37   | 1    |                                                                                                                                                          |
 
-With SystemUpdate, each entry is 0x10-bytes, with the same format listed
-here:
+## Meta records
+
+Each entry is 0x10
+bytes:
+
+| Offset | Size | Description                                                                                     |
+| ------ | ---- | ----------------------------------------------------------------------------------------------- |
+| 0x0    | 8    | Title ID                                                                                        |
+| 0x8    | 4    | Title version                                                                                   |
+| 0xC    | 1    | Type (see [Title Types](Content%20Manager%20services#Title%20Types.md##Title_Types "wikilink")) |
+| 0xD    | 1    | ? bit0 set = don't install?                                                                     |
+| 0xE    | 2    | Unused?                                                                                         |
+
+This is used for SystemUpdate, see here:
 [Content\_Manager\_services\#GetUpdateTitleList](Content%20Manager%20services#GetUpdateTitleList.md##GetUpdateTitleList "wikilink").
