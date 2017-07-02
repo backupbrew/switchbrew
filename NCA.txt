@@ -21,7 +21,7 @@ It starts with a header:
 |-
 | 0x8
 | 4
-|
+| u32 [[Title_list|title-version]]
 |-
 | 0xC
 | 1
