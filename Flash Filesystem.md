@@ -65,3 +65,17 @@
 `        │   └── Sequence.log`  
 `        └── USB_AND_HP`  
 `            └── Sequence.log`
+
+# SYSTEM
+
+`SYSTEM`  
+`├── PRF2SAFE.RCV`  
+`├── Contents`  
+`│   ├── placehld`  
+`│   │   └── ... `[`NCA`](NCA.md "wikilink")  
+`│   └── registered`  
+`│       └── ... `[`NCA`](NCA.md "wikilink")  
+`├── save`  
+`│   └── ...`  
+`└── saveMeta`  
+`    └── ...`

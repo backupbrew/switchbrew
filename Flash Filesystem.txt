@@ -165,3 +165,16 @@
          │   └── Sequence.log
          └── USB_AND_HP
              └── Sequence.log
+
+= SYSTEM =
+ SYSTEM
+ ├── PRF2SAFE.RCV
+ ├── Contents
+ │   ├── placehld
+ │   │   └── ... [[NCA]]
+ │   └── registered
+ │       └── ... [[NCA]]
+ ├── save
+ │   └── ...
+ └── saveMeta
+     └── ...
