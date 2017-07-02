@@ -148,7 +148,7 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000000814 || [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || Chinese font
 |-
-| 0100000000000816 || v450 ([[1.0.0]]? See [[Filesystem_services#GetGameCardUpdatePartitionInfo|here]]),  [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90), [[2.2.0|v196628]] (0.3.0.20), [[2.3.0|v262164]] (0.4.0.20), [[3.0.0|v201327002]] (12.0.1.154) || Updated with each sysupdate?
+| 0100000000000816 || v450 ([[1.0.0]]? See [[Filesystem_services#GetGameCardUpdatePartitionInfo|here]]),  [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131162]] (0.2.0.90), [[2.2.0|v196628]] (0.3.0.20), [[2.3.0|v262164]] (0.4.0.20), [[3.0.0|v201327002]] (12.0.1.154) || Contains the title-listing for the associated sysupdate in the [[NCA]]-type0 .cnmt.
 |-
 | 0100000000000818 || [[2.0.0|v65796]] (0.1.1.4), [[2.3.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || System config
 |-
