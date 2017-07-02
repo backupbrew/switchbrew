@@ -128,3 +128,5 @@ Each entry is 0x38 bytes:
 | 1
 |
 |}
+
+With SystemUpdate, each entry is 0x10-bytes, with the same format listed here: [[Content_Manager_services#GetUpdateTitleList]].
