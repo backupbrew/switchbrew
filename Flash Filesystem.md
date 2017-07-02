@@ -2,18 +2,19 @@
 
 ## Boot Partitions
 
-**Boot Partition 0 (0 of 1)**
+**Boot Partition 0 (0 of
+1)**
 
-| Offset   | Size | Description                                |
-| -------- | ---- | ------------------------------------------ |
-| 0x000000 |      | Title 0100000000000819 BCT                 |
-| 0x004000 |      | Title 010000000000081A BCT                 |
-| 0x008000 |      | Title 0100000000000819 BCT                 |
-| 0x00C000 |      | Title 010000000000081A BCT                 |
-| 0x100000 |      | Title 0100000000000819 "package1"          |
-| 0x140000 |      | Title 0100000000000819 "package1" (Backup) |
-| 0x180000 |      | Keyblob area                               |
-| 0x184000 |      | Unknown, 0x20-bytes hash + one u32?        |
+| Offset   | Size | Description                                                                                     |
+| -------- | ---- | ----------------------------------------------------------------------------------------------- |
+| 0x000000 |      | Title 0100000000000819 BCT                                                                      |
+| 0x004000 |      | Title 010000000000081A BCT                                                                      |
+| 0x008000 |      | Title 0100000000000819 BCT                                                                      |
+| 0x00C000 |      | Title 010000000000081A BCT                                                                      |
+| 0x100000 |      | Title 0100000000000819 "package1"                                                               |
+| 0x140000 |      | Title 0100000000000819 "package1" (Backup)                                                      |
+| 0x180000 |      | Keyblob area, the first 0xB0 is identical to the console-unique "customer data" section in BCTs |
+| 0x184000 |      | Unknown, 0x20-bytes hash + one u32?                                                             |
 
 **Boot Partition 1 (1 of 1)**
 

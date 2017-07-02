@@ -35,7 +35,7 @@
 |-
 |  0x180000
 |  
-|  Keyblob area
+|  Keyblob area, the first 0xB0 is identical to the console-unique "customer data" section in BCTs
 |-
 |  0x184000
 |  
