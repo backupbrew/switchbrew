@@ -27,6 +27,22 @@ This page describes the format of savegames contained in NAND.
 #### DPFS
 
   - This is located @ 0x200 in the image, following DISF.
+  - Block sizes are log2
+
+| Start | Length | Description            |
+| ----- | ------ | ---------------------- |
+| 0x00  | 4      | Magic ("DPFS")         |
+| 0x04  | 4      | Magic Number (0x10000) |
+| 0x08  | 8      | Offset 0               |
+| 0x10  | 8      | Size 0                 |
+| 0x18  | 8      | Block Size 0           |
+| 0x20  | 8      | Offset 1               |
+| 0x28  | 8      | Size 1                 |
+| 0x30  | 8      | Block Size 1           |
+| 0x38  | 8      | Offset 2               |
+| 0x40  | 8      | Size 2                 |
+| 0x48  | 8      | Block Size 2           |
+|       |        |                        |
 
 #### IVFC
 
