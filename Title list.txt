@@ -152,11 +152,11 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000000818 || [[2.0.0|v65796]] (0.1.1.4), [[2.3.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || System config
 |-
-| 0100000000000819 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || Firmware package A. Identical to 010000000000081B with different package2. Unused?
+| 0100000000000819 || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || Firmware package A, retail normal firmware. Identical to 010000000000081B with different package2.
 |-
 | 010000000000081A || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || Firmware package B, safe mode firmware.
 |-
-| 010000000000081B || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || Firmware package C, normal firmware. Title exists on CDN but not installed on retail systems.
+| 010000000000081B || [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || Firmware package C, unknown normal firmware. Title exists on CDN but not installed on retail systems.
 |-
 | 010000000000081D || [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || Errdisp strings
 |-
