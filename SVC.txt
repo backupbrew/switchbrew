@@ -412,7 +412,7 @@ Size must match size given in map syscall, otherwise there's an invalid-size err
 |}
 
 Bit32: is_mirrored
-Bit34: is_nv_locked
+Bit34: is_device_mapped
 Bit35: is_uncached?
 
 =Exception Handling=

@@ -269,7 +269,7 @@ invalid-size error.
 | 0xE          | Transfer memory      |                   |
 | 0x10         | Reserved             |                   |
 
-Bit32: is\_mirrored Bit34: is\_nv\_locked Bit35: is\_uncached?
+Bit32: is\_mirrored Bit34: is\_device\_mapped Bit35: is\_uncached?
 
 # Exception Handling
 
