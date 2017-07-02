@@ -136,19 +136,19 @@
 |-
 | 0x52 || [[#svcUnmapTransferMemory]] || W0=mirror_handle, X1=addr, X2=size || W0=result
 |-
-| 0x53 || svcCreateInterruptEvent ||  || 
+| 0x53 || svcCreateInterruptEvent || X1=irq_id || W0=result, W1=handle
 |-
 | 0x54 || svcQueryPhysicalAddress ||  || 
 |-
 | 0x55 || svcQueryIoMapping || X0=physaddr, X1=size || X0=virtaddr
 |-
-| 0x56 || svcCreateDeviceAddressSpace || || 
+| 0x56 || svcCreateDeviceAddressSpace || X1=start_addr?, X2=size? || W0=result, W1=handle
 |-
-| 0x57 || svcAttachDeviceAddressSpace || || 
+| 0x57 || svcAttachDeviceAddressSpace || W0=handle, X1=device? || W0=result
 |-
-| 0x58 || svcDetachDeviceAddressSpace || || 
+| 0x58 || svcDetachDeviceAddressSpace || W0=handle, X1=device? || W0=result
 |-
-| 0x59 || svcMapDeviceAddressSpaceByForce || || 
+| 0x59 || svcMapDeviceAddressSpaceByForce || W0=handle, W1=proc_handle?, X2=proc_addr?, X3=size?, X4=map_addr?, W5=perm || W0=result 
 |-
 | 0x5A || svcMapDeviceAddressSpaceAligned || || 
 |-
