@@ -3,24 +3,24 @@
 This is an array of
 u32's.
 
-| Word | Bits  | Description                                                                                                                          |
-| ---- | ----- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| 0    | 15-0  | Type. 4=Request, 5=Control                                                                                                           |
-| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                                                                                         |
-| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                                         |
-| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                                         |
-| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed.                                                                          |
-| 1    | 9-0   | Total word count (in u32's).                                                                                                         |
-| 1    | 13-10 | Flags for buf C descriptor. Value 1 = write output data into cmdreply(separate from raw-data). If set to 2, enable buf C descriptor. |
-| 1    | 31    | Enable handle descriptor.                                                                                                            |
-| ...  |       | Handle descriptor, if enabled.                                                                                                       |
-| ...  |       | Buf X descriptors, each one 2 words.                                                                                                 |
-| ...  |       | Buf A descriptors, each one 3 words.                                                                                                 |
-| ...  |       | Buf B descriptors, each one 3 words.                                                                                                 |
-| ...  |       | Type W descriptors, each one 3 words.                                                                                                |
-| ...  |       | Padding                                                                                                                              |
-| ...  |       | Raw data                                                                                                                             |
-| ...  |       | Buf C descriptors, each one 2 words.                                                                                                 |
+| Word | Bits  | Description                                                 |
+| ---- | ----- | ----------------------------------------------------------- |
+| 0    | 15-0  | Type. 4=Request, 5=Control                                  |
+| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                |
+| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                |
+| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                |
+| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed. |
+| 1    | 9-0   | Total word count (in u32's).                                |
+| 1    | 13-10 | Flags for buf C descriptor.                                 |
+| 1    | 31    | Enable handle descriptor.                                   |
+| ...  |       | Handle descriptor, if enabled.                              |
+| ...  |       | Buf X descriptors, each one 2 words.                        |
+| ...  |       | Buf A descriptors, each one 3 words.                        |
+| ...  |       | Buf B descriptors, each one 3 words.                        |
+| ...  |       | Type W descriptors, each one 3 words.                       |
+| ...  |       | Padding                                                     |
+| ...  |       | Raw data                                                    |
+| ...  |       | Buf C descriptors, each one 2 words.                        |
 
 ### Handle descriptor
 
@@ -35,7 +35,24 @@ the second word.
 | ...  |      | Handles to copy           |
 | ...  |      | Handles to move           |
 
-### Buffer descriptor A/B
+### Buffer descriptor X "Pointer"
+
+This one is packed even worse than A, they inserted the bit38-36 of the
+address *on top* of the counter field.
+
+Officially, the counter is known as "receive index". This one writes to
+the buffer described in the ReceiveList.
+
+| Word | Bits  | Description               |
+| ---- | ----- | ------------------------- |
+| 0    | 5-0   | Bits 5-0 of counter.      |
+| 0    | 8-6   | Bit 38-36 of address.     |
+| 0    | 11-9  | Bits 11-9 of counter.     |
+| 0    | 15-12 | Bit 35-32 of address.     |
+| 0    | 31-16 | Size                      |
+| 1    |       | Lower 32-bits of address. |
+
+### Buffer descriptor A/B/W "Send"/"Receive"/"Exchange"
 
 This packing is so unnecessarily complex.
 
@@ -48,30 +65,22 @@ This packing is so unnecessarily complex.
 | 2    | 27-24 | Bit 35-32 of size.           |
 | 2    | 31-28 | Bit 35-32 of address.        |
 
-### Buffer descriptor C
+### Buffer descriptor C "ReceiveList"
+
+There's a 4-bit flag in the main header controlling the behavior of C
+descriptors.
+
+If it has value 0, the C descriptor functionality is disabled. If it has
+value 1, there is no C descriptor. If it has value 2, there is a single
+C descriptor.
+
+Otherwise it has (flag-2) C descriptors.
 
 | Word | Bits  | Description               |
 | ---- | ----- | ------------------------- |
 | 0    |       | Lower 32-bits of address. |
 | 1    | 15-0  | Rest of address.          |
 | 1    | 31-16 | Size                      |
-
-Ignored by kernel unless the cmdreply has bufX-descriptor enabled?
-Probably copies the data from the cmdreply bufX to this bufC?
-
-### Buffer descriptor X
-
-This one is packed even worse than A, they inserted the bit38-36 of the
-address *on top* of the counter field.
-
-| Word | Bits  | Description               |
-| ---- | ----- | ------------------------- |
-| 0    | 5-0   | Bits 5-0 of counter.      |
-| 0    | 8-6   | Bit 38-36 of address.     |
-| 0    | 11-9  | Bits 11-9 of counter.     |
-| 0    | 15-12 | Bit 35-32 of address.     |
-| 0    | 31-16 | Size                      |
-| 1    |       | Lower 32-bits of address. |
 
 ## Raw data portion
 
