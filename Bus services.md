@@ -15,22 +15,22 @@
 Same thing as OpenSessionForDev except the descriptor is looked up in a
 table:
 
-| Input id | GpioPadName |
-| -------- | ----------- |
-| 2        | 0x24        |
-| 4        | 0xDA        |
-| 5        | 0xDB        |
-| 6        | 0xDC        |
-| 7        | 0x25        |
-| 8        | 0x90        |
-| 9        | 0x91        |
-| ..       | ..          |
+| GpioPadName | GpioPadDescriptor |
+| ----------- | ----------------- |
+| 2           | 0x24              |
+| 4           | 0xDA              |
+| 5           | 0xDB              |
+| 6           | 0xDC              |
+| 7           | 0x25              |
+| 8           | 0x90              |
+| 9           | 0x91              |
+| ..          | ..                |
 
 ## OpenSessionForTest
 
 Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 
-## GpioPadName
+## GpioPadDescriptor
 
 | Bits | Description      |
 | ---- | ---------------- |

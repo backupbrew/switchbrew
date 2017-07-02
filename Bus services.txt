@@ -23,7 +23,7 @@ Same thing as OpenSessionForDev except the descriptor is looked up in a table:
 
 {| class="wikitable" border="1"
 |-
-! Input id || GpioPadName
+! GpioPadName || GpioPadDescriptor
 |-
 | 2 || 0x24
 |-
@@ -45,7 +45,7 @@ Same thing as OpenSessionForDev except the descriptor is looked up in a table:
 == OpenSessionForTest ==
 Same as [[#OpenSession]] but panics on failure.
 
-== GpioPadName ==
+== GpioPadDescriptor ==
 {| class="wikitable" border="1"
 |-
 ! Bits || Description
