@@ -1,4 +1,4 @@
-### NAND structure
+# NAND structure
 
 ## Boot Partitions
 
@@ -39,7 +39,7 @@
 | SYSTEM                 | 0x07800000 | 0xA0000000  | 31                                                      | FAT32 filesystem                                                                                                                                                                            |
 | USER                   | 0xA7800000 | 0x680000000 | 30                                                      | FAT32 filesystem                                                                                                                                                                            |
 
-# PRODINFOF
+### PRODINFOF
 
 `PRODINFOF`  
 `├── Certifications`  
@@ -66,16 +66,28 @@
 `        └── USB_AND_HP`  
 `            └── Sequence.log`
 
-# SYSTEM
+### SYSTEM
 
 `SYSTEM`  
 `├── PRF2SAFE.RCV`  
 `├── Contents`  
-`│   ├── placehld`  
+`│   ├── registered`  
 `│   │   └── ... `[`NCA`](NCA.md "wikilink")  
-`│   └── registered`  
+`│   └── placehld`  
 `│       └── ... `[`NCA`](NCA.md "wikilink")  
 `├── save`  
 `│   └── ...`  
 `└── saveMeta`  
+`    └── ...`
+
+### SAFE
+
+`SAFE`  
+`├── PRF2SAFE.RCV`  
+`├── Contents`  
+`│   ├── registered`  
+`│   │   └── ... `[`NCA`](NCA.md "wikilink")` (nothing installed?)`  
+`│   └── placehld`  
+`│       └── ... `[`NCA`](NCA.md "wikilink")  
+`└── save`  
 `    └── ...`

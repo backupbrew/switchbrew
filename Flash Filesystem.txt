@@ -1,4 +1,4 @@
-=== NAND structure ===
+= NAND structure =
 
 == Boot Partitions ==
 
@@ -140,7 +140,7 @@
 |  FAT32 filesystem
 |}
 
-= PRODINFOF =
+=== PRODINFOF ===
  PRODINFOF
  ├── Certifications
  │   └── WirelessCertification.png
@@ -166,15 +166,26 @@
          └── USB_AND_HP
              └── Sequence.log
 
-= SYSTEM =
+=== SYSTEM ===
  SYSTEM
  ├── PRF2SAFE.RCV
  ├── Contents
- │   ├── placehld
+ │   ├── registered
  │   │   └── ... [[NCA]]
- │   └── registered
+ │   └── placehld
  │       └── ... [[NCA]]
  ├── save
  │   └── ...
  └── saveMeta
+     └── ...
+
+=== SAFE ===
+ SAFE
+ ├── PRF2SAFE.RCV
+ ├── Contents
+ │   ├── registered
+ │   │   └── ... [[NCA]] (nothing installed?)
+ │   └── placehld
+ │       └── ... [[NCA]]
+ └── save
      └── ...
