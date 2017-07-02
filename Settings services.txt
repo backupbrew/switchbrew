@@ -80,6 +80,8 @@ Used by SSL-sysmodule, see [[SSL_services|here]].
 | ? || GetSystemVersion
 |-
 | ? || GetSerialNumber (Returns the 0x18-byte SerialNumber string)
+|-
+| 56 || [[Flash_Filesystem#PRODINFOF|GetWirelessCertification]]
 |}
 
 == GetSystemVersion ==

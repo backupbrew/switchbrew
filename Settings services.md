@@ -63,10 +63,11 @@ Used by SSL-sysmodule, see
 
 # set:sys
 
-| Cmd | Name                                                        |
-| --- | ----------------------------------------------------------- |
-| ?   | GetSystemVersion                                            |
-| ?   | GetSerialNumber (Returns the 0x18-byte SerialNumber string) |
+| Cmd | Name                                                                              |
+| --- | --------------------------------------------------------------------------------- |
+| ?   | GetSystemVersion                                                                  |
+| ?   | GetSerialNumber (Returns the 0x18-byte SerialNumber string)                       |
+| 56  | [GetWirelessCertification](Flash%20Filesystem#PRODINFOF.md##PRODINFOF "wikilink") |
 
 ## GetSystemVersion
 
