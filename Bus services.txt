@@ -3,27 +3,27 @@
 |-
 ! Cmd || Name
 |-
-| 0 || OpenGpioRaw
+| 0 || OpenSessionForDev
 |-
-| 1 || OpenGpioById
+| 1 || [[#OpenSession]]
 |-
-| 2 ||
+| 2 || [[#OpenSessionForTest]]
 |-
-| 3 ||
+| 3 || IsWakeEventActive 
 |-
-| 4 ||
+| 4 || GetWakeEventActiveFlagSet
 |-
-| 5 ||
+| 5 || SetWakeEventActiveFlagSetForDebug
 |-
 | 6 ||
 |}
 
-== OpenGpioById ==
-Same thing as OpenGpioByRaw except the descriptor is looked up in a table:
+== OpenSession ==
+Same thing as OpenSessionForDev except the descriptor is looked up in a table:
 
 {| class="wikitable" border="1"
 |-
-! Input id || GpioDescriptor
+! Input id || GpioPadName
 |-
 | 2 || 0x24
 |-
@@ -42,7 +42,10 @@ Same thing as OpenGpioByRaw except the descriptor is looked up in a table:
 | .. || ..
 |}
 
-== GpioDescriptor ==
+== OpenSessionForTest ==
+Same as [[#OpenSession]] but panics on failure.
+
+== GpioPadName ==
 {| class="wikitable" border="1"
 |-
 ! Bits || Description

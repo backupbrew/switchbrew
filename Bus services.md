@@ -1,32 +1,36 @@
 # gpio
 
-| Cmd | Name         |
-| --- | ------------ |
-| 0   | OpenGpioRaw  |
-| 1   | OpenGpioById |
-| 2   |              |
-| 3   |              |
-| 4   |              |
-| 5   |              |
-| 6   |              |
+| Cmd | Name                                                   |
+| --- | ------------------------------------------------------ |
+| 0   | OpenSessionForDev                                      |
+| 1   | [\#OpenSession](#OpenSession "wikilink")               |
+| 2   | [\#OpenSessionForTest](#OpenSessionForTest "wikilink") |
+| 3   | IsWakeEventActive                                      |
+| 4   | GetWakeEventActiveFlagSet                              |
+| 5   | SetWakeEventActiveFlagSetForDebug                      |
+| 6   |                                                        |
 
-## OpenGpioById
+## OpenSession
 
-Same thing as OpenGpioByRaw except the descriptor is looked up in a
+Same thing as OpenSessionForDev except the descriptor is looked up in a
 table:
 
-| Input id | GpioDescriptor |
-| -------- | -------------- |
-| 2        | 0x24           |
-| 4        | 0xDA           |
-| 5        | 0xDB           |
-| 6        | 0xDC           |
-| 7        | 0x25           |
-| 8        | 0x90           |
-| 9        | 0x91           |
-| ..       | ..             |
+| Input id | GpioPadName |
+| -------- | ----------- |
+| 2        | 0x24        |
+| 4        | 0xDA        |
+| 5        | 0xDB        |
+| 6        | 0xDC        |
+| 7        | 0x25        |
+| 8        | 0x90        |
+| 9        | 0x91        |
+| ..       | ..          |
 
-## GpioDescriptor
+## OpenSessionForTest
+
+Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
+
+## GpioPadName
 
 | Bits | Description      |
 | ---- | ---------------- |
