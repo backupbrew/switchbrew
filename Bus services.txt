@@ -1,0 +1,108 @@
+= gpio =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || OpenGpioRaw
+|-
+| 1 || OpenGpioById
+|-
+| 2 ||
+|-
+| 3 ||
+|-
+| 4 ||
+|-
+| 5 ||
+|-
+| 6 ||
+|}
+
+== OpenGpioById ==
+Same thing as OpenGpioByRaw except the descriptor is looked up in a table:
+
+{| class="wikitable" border="1"
+|-
+! Input id || GpioDescriptor
+|-
+| 2 || 0x24
+|-
+| 4 || 0xDA
+|-
+| 5 || 0xDB
+|-
+| 6 || 0xDC
+|-
+| 7 || 0x25
+|-
+| 8 || 0x90
+|-
+| 9 || 0x91
+|-
+| .. || ..
+|}
+
+== GpioDescriptor ==
+{| class="wikitable" border="1"
+|-
+! Bits || Description
+|-
+| 7-5 || Controller index
+|-
+| 4-3 || Port index
+|-
+| 2-0 || Pin number
+|}
+
+= i2c =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || Black screen hang.
+|-
+| 1 || || Takes a word. Returns a session handle.
+|-
+| 2 || || Returns a u8/bool.
+|-
+| 3 || || Black screen hang.
+|}
+
+= i2c:pcv =
+
+= uart =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || Returns a u8/bool.
+|-
+| 1 || || Returns a u8/bool.
+|-
+| 2 || || Returns a u8/bool.
+|-
+| 3 || || Returns a u8/bool.
+|-
+| 4 || || Takes marshalled arguments.
+|-
+| 5 || || Takes marshalled arguments.
+|-
+| 6 || || Returns a handle to an IPC session [[#IUartSubinterface]].
+|}
+
+== IUartSubinterface ==
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || Takes marshalled arguments
+|-
+| 1 || || Takes marshalled arguments
+|-
+| 2 || || 
+|-
+| 3 || || Takes marshalled arguments
+|-
+| 4 || || Returns 2x u64. Both zero.
+|}
