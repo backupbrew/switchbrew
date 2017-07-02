@@ -98,12 +98,23 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 
 # i2c
 
-| Cmd | Name | Notes                                   |
-| --- | ---- | --------------------------------------- |
-| 0   |      | Black screen hang.                      |
-| 1   |      | Takes a word. Returns a session handle. |
-| 2   |      | Returns a u8/bool.                      |
-| 3   |      | Black screen hang.                      |
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | OpenSessionForDev |
+| 1   | OpenSession       |
+| 2   | HasDevice         |
+| 3   | HasDeviceForDev   |
+
+## II2cSession
+
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   |                    |
+| 1   |                    |
+| 2   |                    |
+| 3   | Send               |
+| 4   | Receive            |
+| 5   | ExecuteCommandList |
 
 # i2c:pcv
 

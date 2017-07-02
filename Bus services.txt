@@ -164,15 +164,33 @@ Same as [[#OpenSession]] but panics on failure.
 = i2c =
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || || Black screen hang.
+| 0 || OpenSessionForDev
 |-
-| 1 || || Takes a word. Returns a session handle.
+| 1 || OpenSession
 |-
-| 2 || || Returns a u8/bool.
+| 2 || HasDevice
 |-
-| 3 || || Black screen hang.
+| 3 || HasDeviceForDev
+|}
+
+== II2cSession ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || Send
+|-
+| 4 || Receive
+|-
+| 5 || ExecuteCommandList
 |}
 
 = i2c:pcv =
