@@ -14,3 +14,30 @@
 | SAFE                   | 0x03800000 | 0x04000000  | 29                                                      | FAT32 filesystem                                                                                                                 |
 | SYSTEM                 | 0x07800000 | 0xA0000000  | 31                                                      | FAT32 filesystem                                                                                                                 |
 | USER                   | 0xA7800000 | 0x680000000 | 30                                                      | FAT32 filesystem                                                                                                                 |
+
+# PRODINFOF
+
+`PRODINFOF`  
+`├── Certifications`  
+`│   └── WirelessCertification.png`  
+`└── ptd`  
+`    ├── DeviceIdWithEmsBit.dat`  
+`    ├── Ecid.dat`  
+`    ├── prodCode.dat`  
+`    └── log`  
+`        ├── Process_asm1.log`  
+`        ├── Process_board1.log`  
+`        ├── TestFlagLine.log`  
+`        ├── TestFlagQc.log`  
+`        ├── AGING`  
+`        │   └── Sequence.log`  
+`        ├── BOARD_TEST`  
+`        │   └── Sequence.log`  
+`        ├── BOARD_WIRELESS`  
+`        │   └── Sequence.log`  
+`        ├── FINAL_CHECK`  
+`        │   └── Sequence.log`  
+`        ├── LCD_AND_KEY`  
+`        │   └── Sequence.log`  
+`        └── USB_AND_HP`  
+`            └── Sequence.log`
