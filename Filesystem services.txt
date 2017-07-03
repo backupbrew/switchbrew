@@ -386,8 +386,8 @@ Returns a titleID and the title-version for it.
 |}
 
 =BisPartitionID=
-* 0: This gives raw access to nand sectors containing the BCT.
-* 10: Raw NAND sectors starting at the bootloader in the boot-partition.
+* 0: Raw NAND sectors access for MMC [[Flash_Filesystem|boot]] partition 0.
+* 10: Raw NAND sectors access for MMC [[Flash_Filesystem|boot]] partition 1.
 * Rest: see [[Flash_Filesystem|here]].
 
 [[Category:Services]]

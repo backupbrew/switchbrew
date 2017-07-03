@@ -274,9 +274,10 @@ with storageid=nandsys, for checking whether a sysupdate is required.
 
 # BisPartitionID
 
-  - 0: This gives raw access to nand sectors containing the BCT.
-  - 10: Raw NAND sectors starting at the bootloader in the
-    boot-partition.
+  - 0: Raw NAND sectors access for MMC
+    [boot](Flash%20Filesystem.md "wikilink") partition 0.
+  - 10: Raw NAND sectors access for MMC
+    [boot](Flash%20Filesystem.md "wikilink") partition 1.
   - Rest: see [here](Flash%20Filesystem.md "wikilink").
 
 [Category:Services](Category:Services "wikilink")
