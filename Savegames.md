@@ -56,6 +56,13 @@ This page describes the format of savegames contained in NAND.
 | ----- | ------ | ---------------------- |
 | 0x00  | 4      | Magic ("JNGL")         |
 | 0x04  | 4      | Magic Number (0x10000) |
+| 0x08  | 8      | Savedata Size          |
+| 0x10  | 8      | Unknown, Size          |
+| 0x18  | 8      | Savedata Blocksize?    |
+| 0x20  | 4      | Unknown                |
+| 0x24  | 4      | Unknown                |
+| 0x28  | 8      | Unknown                |
+| 0x30  | 464    | Padding?               |
 |       |        |                        |
 
 #### SAVE
