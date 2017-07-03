@@ -73,6 +73,10 @@ This page describes the format of savegames contained in NAND.
 | ----- | ------ | ---------------------- |
 | 0x00  | 4      | Magic ("SAVE")         |
 | 0x04  | 4      | Magic Number (0x60000) |
+| 0x08  | 8      | Unknown, number        |
+| 0x10  | 8      | Unknown, block size    |
+| 0x18  | 8      | Unknown, block size    |
+| 0x20  | 8      | Unknown                |
 |       |        |                        |
 
 #### RMAP
