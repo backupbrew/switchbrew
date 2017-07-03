@@ -130,7 +130,7 @@
 |  SYSTEM
 |  0x07800000
 |  0xA0000000
-|  31
+|  31 (and 32?)
 |  FAT32 filesystem
 |-
 |  USER
