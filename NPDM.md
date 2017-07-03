@@ -45,14 +45,13 @@ field 0 instead of
 
 # FS Access Control
 
-| Word | Bit | Description                                                                  |
-| ---- | --- | ---------------------------------------------------------------------------- |
-| 0    |     | Version? Always 1.                                                           |
-| 1    | 0   | MountContent\* is accessible when set.                                       |
-|      |     |                                                                              |
-| 0    | 3   | This is only bit set for ShopN in the permissions-u32.                       |
-| 1    | 2   | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27? |
-| 1    | 3   | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 28? |
+| Word | Bit | Description                                                                         |
+| ---- | --- | ----------------------------------------------------------------------------------- |
+| 0    |     | Version? Always 1.                                                                  |
+| 1    | 0   | MountContent\* is accessible when set.                                              |
+|      |     |                                                                                     |
+| 0    | 3   | This is only bit set for ShopN in the permissions-u32.                              |
+| 1    | 2   | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28? |
 
 # Service Access Control
 
