@@ -105,7 +105,7 @@ For example, the MOD header is essentially a replacement for a PT_DYNAMIC progra
 All offsets are signed 32bit values relative to the magic field.
 The 32bits at image base + 4 must point to the magic field.
 The MOD structure is designed such that it can be placed at image base and point to itself.
-The 2 fields preceding the magic field get copied around with the structure, even if it is relocated to somewhere besides the image base.
+The 2 fields preceding the magic field get copied around with the structure, even if it is relocated to somewhere besides the image base. If MOD is not located at image base, the value at offset 4 must still point to the MOD magic. In the case of .text being at image base, this implies that the first instruction can only be an unconditional branch over the offset literal.
 {| class="wikitable" border="1"
 |-
 ! Offset

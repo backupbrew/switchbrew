@@ -48,7 +48,11 @@ All offsets are signed 32bit values relative to the magic field. The
 structure is designed such that it can be placed at image base and point
 to itself. The 2 fields preceding the magic field get copied around with
 the structure, even if it is relocated to somewhere besides the image
-base.
+base. If MOD is not located at image base, the value at offset 4 must
+still point to the MOD magic. In the case of .text being at image base,
+this implies that the first instruction can only be an unconditional
+branch over the offset
+literal.
 
 | Offset | Size | Description                                                              |
 | ------ | ---- | ------------------------------------------------------------------------ |
