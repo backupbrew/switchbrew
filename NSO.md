@@ -36,3 +36,28 @@ headers):
 | 0x98   | 8         | .rodata-relative extents of .dynsym                                                                 |
 | 0xA0   | 0x20 \* 3 | SHA256 hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
 | 0x100  |           | Compressed sections                                                                                 |
+
+Most data in Switch binaries are standard ELF structures, however some
+are custom. For example, the MOD header is essentially a replacement for
+a PT\_DYNAMIC program header.
+
+### MOD
+
+All offsets are signed 32bit values relative to the magic field. The
+32bits at image base + 4 must point to the magic field. The MOD
+structure is designed such that it can be placed at image base and point
+to itself. The 2 fields preceding the magic field get copied around with
+the structure, even if it is relocated to somewhere besides the image
+base.
+
+| Offset | Size | Description                                                              |
+| ------ | ---- | ------------------------------------------------------------------------ |
+| 0x00   | 4    | zero padding                                                             |
+| 0x04   | 4    | offset to magic. Always 8 (so it works when MOD is at image\_base + 0).  |
+| 0x08   | 4    | magic "MOD0"                                                             |
+| 0x0C   | 4    | .dynamic offset                                                          |
+| 0x10   | 4    | .bss start offset                                                        |
+| 0x14   | 4    | .bss end offset                                                          |
+| 0x18   | 4    | .eh\_frame start offset                                                  |
+| 0x1C   | 4    | .eh\_frame end offset                                                    |
+| 0x20   | 4    | offset to runtime-generated module object. typically equal to .bss base. |

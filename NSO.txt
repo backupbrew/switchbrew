@@ -97,3 +97,54 @@ It starts with the "NSO" header and mainly describes .text, .rodata, and .data s
 |
 | Compressed sections
 |}
+
+Most data in Switch binaries are standard ELF structures, however some are custom.
+For example, the MOD header is essentially a replacement for a PT_DYNAMIC program header.
+
+=== MOD ===
+All offsets are signed 32bit values relative to the magic field.
+The 32bits at image base + 4 must point to the magic field.
+The MOD structure is designed such that it can be placed at image base and point to itself.
+The 2 fields preceding the magic field get copied around with the structure, even if it is relocated to somewhere besides the image base.
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x00
+| 4
+| zero padding
+|-
+| 0x04
+| 4
+| offset to magic. Always 8 (so it works when MOD is at image_base + 0).
+|-
+| 0x08
+| 4
+| magic "MOD0"
+|-
+| 0x0C
+| 4
+| .dynamic offset
+|-
+| 0x10
+| 4
+| .bss start offset
+|-
+| 0x14
+| 4
+| .bss end offset
+|-
+| 0x18
+| 4
+| .eh_frame start offset
+|-
+| 0x1C
+| 4
+| .eh_frame end offset
+|-
+| 0x20
+| 4
+| offset to runtime-generated module object. typically equal to .bss base.
+|}
