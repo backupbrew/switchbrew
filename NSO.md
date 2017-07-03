@@ -27,10 +27,9 @@ headers):
 | 0x0    | 4         | Magic "NSO0"                                                                                        |
 | 0x4    | 4         |                                                                                                     |
 | 0x8    | 4         |                                                                                                     |
-| 0xC    | 4         |                                                                                                     |
+| 0xC    | 4         | Always 0x3f?                                                                                        |
 | 0x10   | 0x10 \* 3 | SegmentHeader for each segment                                                                      |
-| 0x40   | 0x14      | Value of "build id" from ELF's GNU .note section                                                    |
-| 0x54   | 0xC       | Padding                                                                                             |
+| 0x40   | 0x20      | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes.    |
 | 0x60   | 0x4 \* 3  | file size of each segment (i.e. LZ4-compressed size)                                                |
 | 0x6c   | 0x24      | Padding                                                                                             |
 | 0x90   | 8         | .rodata-relative extents of .dynstr                                                                 |
