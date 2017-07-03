@@ -48,6 +48,31 @@ This page describes the format of savegames contained in NAND.
 
   - Generally follows DPFS, similar to 3DS.
 
+| Start | Length | Description                  |
+| ----- | ------ | ---------------------------- |
+| 0x00  | 4      | Magic ("IVFC")               |
+| 0x04  | 4      | Magic Number (0x20000)       |
+| 0x08  | 8      | Master hash size?            |
+| 0x10  | 8      | Level 1 offset               |
+| 0x18  | 8      | Level 1 size                 |
+| 0x20  | 4      | Level 1 block size, in log2  |
+| 0x24  | 4      | Reserved                     |
+| 0x28  | 8      | Level 2 offset               |
+| 0x30  | 8      | Level 2 size                 |
+| 0x38  | 4      | Level 2 block size, in log2. |
+| 0x3C  | 4      | Reserved                     |
+| 0x40  | 8      | Level 3 offset               |
+| 0x48  | 8      | Level 3 size                 |
+| 0x50  | 4      | Level 3 block size, in log2. |
+| 0x54  | 4      | Reserved                     |
+| 0x58  | 8      | Level 4 offset               |
+| 0x60  | 8      | Level 4 size                 |
+| 0x68  | 4      | Level 4 block size, in log2. |
+| 0x6C  | 4      | Reserved                     |
+| 0x70  | 48     | Unknown, reserved?           |
+| 0xA0  | 32     | Hash                         |
+|       |        |                              |
+
 #### JNGL
 
   - Generally follows IVFC
