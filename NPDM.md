@@ -40,15 +40,19 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 # ACI0
 
 Looks like an old crappy version of ACID. It has the guessed version
-field 0 instead of 1.
+field 0 instead of
+1.
 
 # FS Access Control
 
-| Word | Bit | Description                                            |
-| ---- | --- | ------------------------------------------------------ |
-| 0    |     | Version? Always 1.                                     |
-| 1    | 0   | MountContent\* is accessible when set.                 |
-| 0    | 3   | This is only bit set for ShopN in the permissions-u32. |
+| Word | Bit | Description                                                                  |
+| ---- | --- | ---------------------------------------------------------------------------- |
+| 0    |     | Version? Always 1.                                                           |
+| 1    | 0   | MountContent\* is accessible when set.                                       |
+|      |     |                                                                              |
+| 0    | 3   | This is only bit set for ShopN in the permissions-u32.                       |
+| 1    | 2   | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27? |
+| 1    | 3   | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 28? |
 
 # Service Access Control
 
