@@ -14,7 +14,7 @@
 | 2    | MountRomFs                                                                             |
 | 7    | [\#MountContent7](#MountContent7 "wikilink")                                           |
 | 8    | [\#MountContent](#MountContent "wikilink")                                             |
-| 11   | MountBis                                                                               |
+| 11   | [\#MountBis](#MountBis "wikilink")                                                     |
 | 12   | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                     |
 | 13   | InvalidateBisCache                                                                     |
 | 17   | OpenHostFileSystemImpl                                                                 |
@@ -105,6 +105,13 @@ May return errors when attempting to access NCA-paths for an
 update-title with a gamecard, when the gamecard isn't inserted. May
 return error 0x7D402 in some cases with update-titles. Non-val2 in32
 values with NCA-type1 are unusable, even for normal titles.
+
+## MountBis
+
+Takes a type-0x19 input buffer string and a u32 Bis partitionID(see
+below). Official user-process code sets instr\[0\] = 0 normally.
+
+Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 ## OpenBisPartition
 

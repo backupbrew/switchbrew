@@ -23,7 +23,7 @@
 |-
 | 8 || [[#MountContent]]
 |-
-| 11 || MountBis
+| 11 || [[#MountBis]]
 |-
 | 12 || [[#OpenBisPartition]]
 |-
@@ -165,6 +165,11 @@ The input buffer is the output string path from nsam [[NS_Services#GetContentNca
 Returns an [[#IFileSystem]].
 
 May return errors when attempting to access NCA-paths for an update-title with a gamecard, when the gamecard isn't inserted. May return error 0x7D402 in some cases with update-titles. Non-val2 in32 values with NCA-type1 are unusable, even for normal titles.
+
+== MountBis ==
+Takes a type-0x19 input buffer string and a u32 Bis partitionID(see below). Official user-process code sets instr[0] = 0 normally.
+
+Returns an [[#IFileSystem]].
 
 == OpenBisPartition ==
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not exist, 0x320002 for partitions which cannot be opened and a valid [[#IStorage]] handle otherwise.
