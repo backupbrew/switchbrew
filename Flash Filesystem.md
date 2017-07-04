@@ -86,6 +86,21 @@ the [DeviceCert](Settings%20services.md "wikilink").
 `└── saveMeta`  
 `    └── ... (empty?)`
 
+### USER
+
+`USER`  
+`├── PRF2SAFE.RCV`  
+`├── Album (Same layout as `[`SD`](SD%20Filesystem.md "wikilink")`)`  
+`├── Contents`  
+`│   ├── registered`  
+`│   │   └── ... `[`NCA`](NCA.md "wikilink")  
+`│   └── placehld`  
+`│       └── ... `[`NCA`](NCA.md "wikilink")  
+`├── `[`save`](Savegames.md "wikilink")  
+`│   └── ...`  
+`└── saveMeta`  
+`    └── ... `
+
 ### SAFE
 
 `SAFE`  

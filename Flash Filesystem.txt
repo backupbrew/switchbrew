@@ -182,6 +182,20 @@ Contains a 0x10-byte uppercase hex string, identical to the DeviceId in the [[Se
  └── saveMeta
      └── ... (empty?)
 
+=== USER ===
+ USER
+ ├── PRF2SAFE.RCV
+ ├── Album (Same layout as [[SD_Filesystem|SD]])
+ ├── Contents
+ │   ├── registered
+ │   │   └── ... [[NCA]]
+ │   └── placehld
+ │       └── ... [[NCA]]
+ ├── [[Savegames|save]]
+ │   └── ...
+ └── saveMeta
+     └── ... 
+
 === SAFE ===
  SAFE
  ├── PRF2SAFE.RCV
