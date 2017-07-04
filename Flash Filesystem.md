@@ -98,3 +98,6 @@ the [DeviceCert](Settings%20services.md "wikilink").
 `└── `[`save`](Savegames.md "wikilink")  
 `    ├── 8000000000000000`  
 `    └── 8000000000000120`
+
+On a v2.1 system with MountBis, the only thing under here is
+"PRF2SAFE.RCV".
