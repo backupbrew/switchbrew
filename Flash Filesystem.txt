@@ -190,6 +190,8 @@ Contains a 0x10-byte uppercase hex string, identical to the DeviceId in the [[Se
  └── saveMeta
      └── ... (empty?)
 
+The saves stored under this partition are only for system-titles / etc.
+
 === USER ===
  USER
  ├── PRF2SAFE.RCV
@@ -203,6 +205,8 @@ Contains a 0x10-byte uppercase hex string, identical to the DeviceId in the [[Se
  │   └── ...
  └── saveMeta
      └── ... 
+
+The saves for all non-system applications, regardless of where the application is located(storageID), is stored here. May include other saves too.
 
 === SAFE ===
  SAFE

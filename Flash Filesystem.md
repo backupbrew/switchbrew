@@ -91,6 +91,8 @@ the [DeviceCert](Settings%20services.md "wikilink").
 `└── saveMeta`  
 `    └── ... (empty?)`
 
+The saves stored under this partition are only for system-titles / etc.
+
 ### USER
 
 `USER`  
@@ -105,6 +107,10 @@ the [DeviceCert](Settings%20services.md "wikilink").
 `│   └── ...`  
 `└── saveMeta`  
 `    └── ... `
+
+The saves for all non-system applications, regardless of where the
+application is located(storageID), is stored here. May include other
+saves too.
 
 ### SAFE
 
