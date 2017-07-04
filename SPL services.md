@@ -32,7 +32,7 @@ params.
 
 | ConfigItem | Name                                  |
 | ---------- | ------------------------------------- |
-| 5          | HardwareType                          |
+| 5          | HardwareType (0=Icosa, 1=Copper)      |
 | 8          | 64bit DeviceId with byte7 clear.      |
 | 11         | Allow skipping RSA signatures on NRR. |
 
