@@ -1,4 +1,8 @@
-This page describes the format of savegames contained in NAND.
+This page describes the format of savegames contained in NAND. NAND
+savegames do not use an container with the entire file encrypted,
+however most of the file is encrypted(?). This might mean the
+file-data(not filesystem) is encrypted?(However some cases there's
+plaintext game related strings etc)
 
 ### AES CMAC header
 
