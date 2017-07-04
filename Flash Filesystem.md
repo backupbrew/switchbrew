@@ -40,6 +40,10 @@
 | SYSTEM                 | 0x07800000 | 0xA0000000  | 31 (and 32?)                                            | FAT32 filesystem                                                                                                                                                                                                      |
 | USER                   | 0xA7800000 | 0x680000000 | 30                                                      | FAT32 filesystem                                                                                                                                                                                                      |
 
+[NCAs](NCA.md "wikilink") stored in NAND are raw, identical to the data
+readable with
+[Content\_Manager\_services\#ReadEntryRaw](Content%20Manager%20services#ReadEntryRaw.md##ReadEntryRaw "wikilink").
+
 ### PRODINFOF
 
 `PRODINFOF`  
