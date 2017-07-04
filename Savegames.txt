@@ -326,6 +326,10 @@ This page describes the format of savegames contained in NAND. NAND savegames do
 
 === Files ===
 
+==== File Offset Table ====
+
+* Indexes 0 and 1 are reserved to point towards the folder and file tables.
+
 ===== File Offset Table Entry =====
 
 {| class="wikitable"
@@ -336,7 +340,7 @@ This page describes the format of savegames contained in NAND. NAND savegames do
 |-
 | 0x00
 | 3
-| File offset, in blocks
+| Data offset, in blocks
 |-
 | 0x03
 | 1

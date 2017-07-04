@@ -119,11 +119,16 @@ of encrypted data in the saveimage.
 
 ### Files
 
+#### File Offset Table
+
+  - Indexes 0 and 1 are reserved to point towards the folder and file
+    tables.
+
 ##### File Offset Table Entry
 
 | Start | Length | Description            |
 | ----- | ------ | ---------------------- |
-| 0x00  | 3      | File offset, in blocks |
+| 0x00  | 3      | Data offset, in blocks |
 | 0x03  | 1      | Unknown, 80            |
 | 0x04  | 4      | Unknown, 0             |
 
