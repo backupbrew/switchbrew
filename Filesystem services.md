@@ -118,6 +118,12 @@ below). Official user-process code sets instr\[0\] = 0 normally.
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
+Only partitionIDs for FAT partitions are usable with this, otherwise
+error 0x2EE202 is returned. Seems to be about the same as
+[\#OpenBisPartition](#OpenBisPartition "wikilink") except this mounts
+the partition filesystem instead of allowing direct access to the
+partition sectors.
+
 ## OpenBisPartition
 
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not

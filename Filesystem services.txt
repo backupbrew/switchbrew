@@ -174,6 +174,8 @@ Takes a type-0x19 input buffer string and a u32 Bis partitionID(see below). Offi
 
 Returns an [[#IFileSystem]].
 
+Only partitionIDs for FAT partitions are usable with this, otherwise error 0x2EE202 is returned. Seems to be about the same as [[#OpenBisPartition]] except this mounts the partition filesystem instead of allowing direct access to the partition sectors.
+
 == OpenBisPartition ==
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not exist, 0x320002 for partitions which cannot be opened and a valid [[#IStorage]] handle otherwise.
 
