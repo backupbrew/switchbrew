@@ -1,7 +1,7 @@
 This page describes the format of savegames contained in NAND. NAND
-savegames do not use an container with the entire file encrypted. A lot
-of the saveimage appears to have uninitialized data, resulting in a lot
-of encrypted data in the saveimage.
+savegames do not use an container with the entire file encrypted.
+Various areas of the saveimage is uninitialized data, resulting in
+encrypted data in those areas(like 3DS did).
 
 ### AES CMAC header
 
