@@ -128,9 +128,9 @@
 |  FAT32 filesystem
 |-
 |  SYSTEM
-|  0x07800000
+|  0x07800000 
 |  0xA0000000
-|  31 (and 32?)
+|  31 (and 32?(Error 0x2EE202 is returned for 32))
 |  FAT32 filesystem
 |-
 |  USER
