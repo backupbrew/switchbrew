@@ -138,6 +138,12 @@
 |  0x680000000
 |  30
 |  FAT32 filesystem
+|-
+| 
+| 0x747BFFE00
+| 0x200
+| 
+| This is the backup GPT header specified by the main GPT header. This is also the last sector readable with Bis-storage paritionID 20.
 |}
 
 [[NCA]]s stored in NAND are raw, identical to the data readable with [[Content_Manager_services#ReadEntryRaw]].
