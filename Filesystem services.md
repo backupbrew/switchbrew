@@ -9,7 +9,7 @@
 
 | Cmd  | Name                                                                                   |
 | ---- | -------------------------------------------------------------------------------------- |
-| 0    | MountContent                                                                           |
+| 0    | MountApplicationPackage                                                                |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |
 | 2    | MountRomFs                                                                             |
 | 7    | [\#MountContent7](#MountContent7 "wikilink")                                           |
@@ -64,6 +64,11 @@
 | 1004 | SetGlobalAccessLogMode                                                                 |
 | 1005 | GetGlobalAccessLogMode                                                                 |
 | 1006 | OutputAccessLogToSdCard                                                                |
+
+## MountApplicationPackage
+
+Presumably about the same as MountContent except this uses the titleID
+associated with the FS session?
 
 ## Initialize
 

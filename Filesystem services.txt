@@ -13,7 +13,7 @@
 |-
 ! Cmd || Name
 |-
-| 0 || MountContent
+| 0 || MountApplicationPackage
 |-
 | 1 || [[#Initialize]]
 |-
@@ -123,6 +123,9 @@
 |-
 | 1006 || OutputAccessLogToSdCard
 |}
+
+== MountApplicationPackage ==
+Presumably about the same as MountContent except this uses the titleID associated with the FS session?
 
 == Initialize ==
 {| class="wikitable" border="1"
