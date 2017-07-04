@@ -166,6 +166,9 @@
          └── USB_AND_HP
              └── Sequence.log
 
+==== DeviceIdWithEmsBit.dat ====
+Contains a 0x10-byte uppercase hex string, identical to the DeviceId in the [[Settings_services|DeviceCert]].
+
 === SYSTEM ===
  SYSTEM
  ├── PRF2SAFE.RCV

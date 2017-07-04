@@ -67,6 +67,11 @@
 `        └── USB_AND_HP`  
 `            └── Sequence.log`
 
+#### DeviceIdWithEmsBit.dat
+
+Contains a 0x10-byte uppercase hex string, identical to the DeviceId in
+the [DeviceCert](Settings%20services.md "wikilink").
+
 ### SYSTEM
 
 `SYSTEM`  
