@@ -69,9 +69,9 @@
 |-
 |  N/A
 |  0x0
-|  ?
+|  
 |  20
-|  GPT header, partition ID also provides raw access to all partitions
+|  GPT header, Bis-storage also allows raw access to the entire NAND eMMC sectors starting at sector0.
 |-
 |  PRODINFO
 |  0x00004400
