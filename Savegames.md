@@ -119,9 +119,17 @@ of encrypted data in the saveimage.
 
 ### Files
 
-  - The root file/folder index is generally 2
+##### File Offset Table Entry
+
+| Start | Length | Description            |
+| ----- | ------ | ---------------------- |
+| 0x00  | 3      | File offset, in blocks |
+| 0x03  | 1      | Unknown, 80            |
+| 0x04  | 4      | Unknown, 0             |
 
 #### File/Folder Table Entry
+
+  - The root file/folder index is generally 2
 
 | Start | Length | Description                                       |
 | ----- | ------ | ------------------------------------------------- |
