@@ -116,3 +116,20 @@ of encrypted data in the saveimage.
 | 0x00  | 4      | Magic ("RMAP")         |
 | 0x04  | 4      | Magic Number (0x10000) |
 |       |        |                        |
+
+### Files
+
+  - The root file/folder index is generally 2
+
+#### File/Folder Table Entry
+
+| Start | Length | Description                                       |
+| ----- | ------ | ------------------------------------------------- |
+| 0x00  | 4      | Parent Folder Index                               |
+| 0x04  | 64     | Filename                                          |
+| 0x44  | 4      | File/Folder Index?                                |
+| 0x48  | 4      | File offset index in offset table, 0 for folders  |
+| 0x4c  | 8      | File size, or number of files for folders         |
+| 0x54  | 8      | Unknown                                           |
+| 0x5c  | 4      | Next File Index, same as folder index for folders |
+|       |        |                                                   |
