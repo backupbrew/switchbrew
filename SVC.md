@@ -257,6 +257,7 @@ invalid-size error.
 
 | Lower 8 bits | Type                 | Meaning           |
 | ------------ | -------------------- | ----------------- |
+| 0x0          | Unmapped             |                   |
 | 0x1          | IO                   |                   |
 | 0x3          | Code static          | .text and .rodata |
 | 0x4          | Code                 | .data             |
