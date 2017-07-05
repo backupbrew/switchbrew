@@ -2,4 +2,4 @@ This page is for the Switch equivalent of online/local protocol [https://www.3db
 
 Note: the wifi protocol used for local-WLAN is different from UDS, which 3DS and Wii U used.
 
-This protocol has changed since PRUDP. The actual data in the UDP frames start with hex "32 ab 98 64".
+While the Switch still uses UDP for peer to peer communication (packets starting with 0x32AB9864), it doesn't seem to be using PRUDP anymore. Instead, a bunch of https requests are made.
