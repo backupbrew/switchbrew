@@ -62,6 +62,6 @@ literal.
 | 0x0C   | 4    | .dynamic offset                                                          |
 | 0x10   | 4    | .bss start offset                                                        |
 | 0x14   | 4    | .bss end offset                                                          |
-| 0x18   | 4    | .eh\_frame start offset                                                  |
-| 0x1C   | 4    | .eh\_frame end offset                                                    |
+| 0x18   | 4    | .eh\_frame\_hdr start offset                                             |
+| 0x1C   | 4    | .eh\_frame\_hdr end offset                                               |
 | 0x20   | 4    | offset to runtime-generated module object. typically equal to .bss base. |

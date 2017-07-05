@@ -138,11 +138,11 @@ The 2 fields preceding the magic field get copied around with the structure, eve
 |-
 | 0x18
 | 4
-| .eh_frame start offset
+| .eh_frame_hdr start offset
 |-
 | 0x1C
 | 4
-| .eh_frame end offset
+| .eh_frame_hdr end offset
 |-
 | 0x20
 | 4
