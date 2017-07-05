@@ -26,7 +26,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 5 || NCM
 |-
-| 6 || DEVICE
+| 6 || DD
 |-
 | 8 || LR
 |-
