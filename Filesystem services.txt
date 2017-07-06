@@ -63,7 +63,7 @@
 |-
 | 31 || MountGameCardPartition
 |-
-| 51 || <Mount*>?
+| 51 || MountTitleSavedata
 |-
 | 52 || [[#MountSystemSaveData]]
 |-

@@ -36,7 +36,7 @@
 | 27   |                                                                                        |
 | 30   | OpenGameCardPartition                                                                  |
 | 31   | MountGameCardPartition                                                                 |
-| 51   | \<Mount\*\>?                                                                           |
+| 51   | MountTitleSavedata                                                                     |
 | 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |
 | 53   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 58   | ReadSaveDataFileSystemExtraData                                                        |
