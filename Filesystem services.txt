@@ -489,11 +489,11 @@ Total size is 0x40-bytes.
 |-
 | 0x10
 | 0x8
-| 0x4000 for SystemSaveData. [[Savegames|IVFC]] level4 block-size in bytes?
+| 0x4000 for SystemSaveData/SaveData. [[Savegames|IVFC]] level4 block-size in bytes?
 |-
 | 0x18
 | 0x8
-| Web-applet only uses 0 here for SystemSaveData.
+| Official user-processes only uses 0 here for SystemSaveData/SaveData. For the dedicated save-creation code with SaveData, this value comes from an input param with official user-processes.
 |-
 | 0x20
 | 0x4
