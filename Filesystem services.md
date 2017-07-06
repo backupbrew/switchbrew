@@ -142,6 +142,11 @@ exist, 0x320002 for partitions which cannot be opened and a valid
 Takes a 0x40-byte Save-struct entry, a 0x40-byte SaveCreate-struct
 entry, and a 0x10-byte input struct.
 
+Only the first 0x5-bytes in the 0x10-byte struct are initialized:
+all-zero when automatically creating savedata during savecommon mount by
+official user-processes. In the dedicated save-creation code in official
+user-processes: +0 u32 = 0x40060, +4 u8 = 1.
+
 Creates regular savedata.
 
 ## CreateSystemSaveData
