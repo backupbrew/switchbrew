@@ -85,16 +85,29 @@ Otherwise it has (flag-2) C descriptors.
 ## Raw data portion
 
 This is an array of u32's, but individual parameters are generally
-stored as u64's.
+stored as
+u64's.
 
-| Word | Description                                              |
-| ---- | -------------------------------------------------------- |
-| ...  | Padding to align to 16                                   |
-| ...  | Domain header padded to 16 if required                   |
-| \+0  | Magic ("SFCI" for requests, "SFCO" for responses) as u64 |
-| \+2  | Cmd id as u64                                            |
-| ...  | Input parameters                                         |
-| ...  | Any u16 buffer sizes packed and aligned to 2 bytes       |
+| Word | Description                                                                                              |
+| ---- | -------------------------------------------------------------------------------------------------------- |
+| ...  | Padding to align to 16                                                                                   |
+| ...  | [Domain header](IPC%20Marshalling#Domain%20header.md##Domain_header "wikilink") padded to 16 if required |
+| \+0  | Magic ("SFCI" for requests, "SFCO" for responses) as u64                                                 |
+| \+2  | Cmd id as u64                                                                                            |
+| ...  | Input parameters                                                                                         |
+| ...  | Any u16 buffer sizes packed and aligned to 2 bytes                                                       |
+
+### Domain header
+
+This is an optional header used to wrap up requests sent to domains
+instead of
+sessions.
+
+| Word | Bits  | Description                                                                            |
+| ---- | ----- | -------------------------------------------------------------------------------------- |
+| 0    | 15-0  | Always 1.                                                                              |
+| 0    | 31-16 | Request size (0x10 bytes for SFCI magic and cmd ID, plus size of input parameters).    |
+| 1    |       | Domain ID (from cmd 0 in [Control](IPC%20Marshalling#Control.md##Control "wikilink")). |
 
 ## Official marshalling code
 

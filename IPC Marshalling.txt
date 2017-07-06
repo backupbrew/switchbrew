@@ -119,7 +119,7 @@ This is an array of u32's, but individual parameters are generally stored as u64
 |-
 | ... || Padding to align to 16
 |-
-| ... || Domain header padded to 16 if required
+| ... || [[IPC_Marshalling#Domain_header|Domain header]] padded to 16 if required
 |-
 | +0 || Magic ("SFCI" for requests, "SFCO" for responses) as u64
 |-
@@ -128,6 +128,19 @@ This is an array of u32's, but individual parameters are generally stored as u64
 | ... || Input parameters
 |-
 | ... || Any u16 buffer sizes packed and aligned to 2 bytes
+|}
+
+=== Domain header ===
+This is an optional header used to wrap up requests sent to domains instead of sessions.
+
+{| class="wikitable" border="1"
+! Word || Bits || Description
+|-
+| 0 || 15-0 || Always 1.
+|-
+| 0 || 31-16 || Request size (0x10 bytes for SFCI magic and cmd ID, plus size of input parameters).
+|-
+| 1 || || Domain ID (from cmd 0 in [[IPC_Marshalling#Control|Control]]).
 |}
 
 == Official marshalling code ==
