@@ -49,9 +49,10 @@ readable with
 [Content\_Manager\_services\#ReadEntryRaw](Content%20Manager%20services#ReadEntryRaw.md##ReadEntryRaw "wikilink").
 
 The filenames for saveimages is just "<lower-case hex u64 saveID>".
-saveIDs aren't related to the titleID, or at least not for
-USER-partition saves. The high u32 of the saveID is normally either
-0x00000000 or 0x80000000.
+SYSTEM-partition saveIDs are specified by
+[FS](Filesystem%20services.md "wikilink") commands, while USER-partition
+saveIDs are determined by FS-module internally. The high u32 of the
+saveID is normally either 0x00000000 or 0x80000000.
 
 ### PRODINFOF
 
