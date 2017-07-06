@@ -47,7 +47,7 @@ Y denotes the total size of the "signature data" section and depends on the sign
 | 0x3C
 |-
 | 0x010002
-| Elliptic Curve with SHA1
+| ECDSA SHA1
 | 0x3C
 | 0x40
 |-
@@ -62,7 +62,7 @@ Y denotes the total size of the "signature data" section and depends on the sign
 | 0x3C
 |-
 | 0x010005
-| ECDSA with SHA256
+| ECDSA SHA256
 | 0x3C
 | 0x40
 |}
@@ -118,13 +118,13 @@ CommonETicket (or cetk) no longer exist.
 |  RSA-2048
 |  XS00000021
 |  ?
-|  Used to verify (some?) ticket signatures
+|  Used to verify ticket signatures using RSA title key block
 |-
 |  Ticket
 |  RSA-2048
 |  XS00000020
 |  ?
-|  Used to verify (some?) ticket signatures
+|  Used to verify ticket signatures using AES title key block
 |-
 |  CA
 |  RSA-4096

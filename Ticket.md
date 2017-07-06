@@ -21,14 +21,14 @@ the signature type.
 
 #### Signature type
 
-| Value    | Signature method         | Signature size | Padding size |
-| -------- | ------------------------ | -------------- | ------------ |
-| 0x010000 | RSA\_4096 SHA1           | 0x200          | 0x3C         |
-| 0x010001 | RSA\_2048 SHA1           | 0x100          | 0x3C         |
-| 0x010002 | Elliptic Curve with SHA1 | 0x3C           | 0x40         |
-| 0x010003 | RSA\_4096 SHA256         | 0x200          | 0x3C         |
-| 0x010004 | RSA\_2048 SHA256         | 0x100          | 0x3C         |
-| 0x010005 | ECDSA with SHA256        | 0x3C           | 0x40         |
+| Value    | Signature method | Signature size | Padding size |
+| -------- | ---------------- | -------------- | ------------ |
+| 0x010000 | RSA\_4096 SHA1   | 0x200          | 0x3C         |
+| 0x010001 | RSA\_2048 SHA1   | 0x100          | 0x3C         |
+| 0x010002 | ECDSA SHA1       | 0x3C           | 0x40         |
+| 0x010003 | RSA\_4096 SHA256 | 0x200          | 0x3C         |
+| 0x010004 | RSA\_2048 SHA256 | 0x100          | 0x3C         |
+| 0x010005 | ECDSA SHA256     | 0x3C           | 0x40         |
 
 The hash for the signature is calculated over the ticket data.
 
@@ -63,11 +63,11 @@ exist.
 
 ## Certificate chain
 
-| Certificate | Signature type | Retail cert name | Debug cert name | Description                              |
-| ----------- | -------------- | ---------------- | --------------- | ---------------------------------------- |
-| Ticket      | RSA-2048       | XS00000021       | ?               | Used to verify (some?) ticket signatures |
-| Ticket      | RSA-2048       | XS00000020       | ?               | Used to verify (some?) ticket signatures |
-| CA          | RSA-4096       | CA00000003       | CA00000004      | Used to verify the ticket certificate    |
+| Certificate | Signature type | Retail cert name | Debug cert name | Description                                                |
+| ----------- | -------------- | ---------------- | --------------- | ---------------------------------------------------------- |
+| Ticket      | RSA-2048       | XS00000021       | ?               | Used to verify ticket signatures using RSA title key block |
+| Ticket      | RSA-2048       | XS00000020       | ?               | Used to verify ticket signatures using AES title key block |
+| CA          | RSA-4096       | CA00000003       | CA00000004      | Used to verify the ticket certificate                      |
 
 The CA certificate is issued by 'Root', the public key for which is
 stored in ES.
