@@ -190,7 +190,7 @@ Only partitionIDs for FAT partitions are usable with this, otherwise error 0x2EE
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not exist, 0x320002 for partitions which cannot be opened and a valid [[#IStorage]] handle otherwise.
 
 == CreateSaveData ==
-Takes a 0x40-byte Save-struct entry, a 0x40-byte SaveCreate-struct entry, and a 0x10-byte userID struct.
+Takes a 0x40-byte Save-struct entry, a 0x40-byte SaveCreate-struct entry, and a 0x10-byte input struct.
 
 Creates regular savedata.
 

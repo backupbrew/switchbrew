@@ -140,7 +140,7 @@ exist, 0x320002 for partitions which cannot be opened and a valid
 ## CreateSaveData
 
 Takes a 0x40-byte Save-struct entry, a 0x40-byte SaveCreate-struct
-entry, and a 0x10-byte userID struct.
+entry, and a 0x10-byte input struct.
 
 Creates regular savedata.
 
