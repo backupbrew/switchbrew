@@ -367,9 +367,9 @@ Total size is
 | 0x10   | 0x8  | 0x4000 for SystemSaveData/SaveData. [IVFC](Savegames.md "wikilink") level4 block-size in bytes?                                                                                              |
 | 0x18   | 0x8  | Official user-processes only uses 0 here for SystemSaveData/SaveData. For the dedicated save-creation code with SaveData, this value comes from an input param with official user-processes. |
 | 0x20   | 0x4  | ?                                                                                                                                                                                            |
-| 0x24   | 0x1  | Same u8 field passed to the mount command?(Web-applet only uses 0 here for SystemSaveData)                                                                                                   |
-| 0x25   | 0x1  | 0 for SystemSaveData.                                                                                                                                                                        |
-| 0x26   | 0x1A | Not initialized for SystemSaveData.                                                                                                                                                          |
+| 0x24   | 0x1  | Official user-processes only uses 0 here for SystemSaveData, 1 for SaveData.                                                                                                                 |
+| 0x25   | 0x1  | 0 for SystemSaveData/SaveData.                                                                                                                                                               |
+| 0x26   | 0x1A | Not initialized for SystemSaveData/SaveData.                                                                                                                                                 |
 
 Total size is 0x40-bytes.
 
