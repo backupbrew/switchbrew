@@ -327,20 +327,21 @@ with storageid=nandsys, for checking whether a sysupdate is required.
 | 0x30   | 0x8  | 0 for SystemSaveData.                                                                                                     |
 | 0x38   | 0x8  | 0 for SystemSaveData.                                                                                                     |
 
-Total size is 0x40-bytes.
+Total size is
+0x40-bytes.
 
 # SaveCreate Struct
 
-| Offset | Size | Description                         |
-| ------ | ---- | ----------------------------------- |
-| 0x0    | 0x8  | ?                                   |
-| 0x8    | 0x8  | ?                                   |
-| 0x10   | 0x8  | 0x4000 for SystemSaveData.          |
-| 0x18   | 0x8  | ?                                   |
-| 0x20   | 0x4  | ?                                   |
-| 0x24   | 0x1  | ?                                   |
-| 0x25   | 0x1  | 0 for SystemSaveData.               |
-| 0x26   | 0x1A | Not initialized for SystemSaveData. |
+| Offset | Size | Description                                                                                |
+| ------ | ---- | ------------------------------------------------------------------------------------------ |
+| 0x0    | 0x8  | ?                                                                                          |
+| 0x8    | 0x8  | ?                                                                                          |
+| 0x10   | 0x8  | 0x4000 for SystemSaveData.                                                                 |
+| 0x18   | 0x8  | ?                                                                                          |
+| 0x20   | 0x4  | ?                                                                                          |
+| 0x24   | 0x1  | Same u8 field passed to the mount command?(Web-applet only uses 0 here for SystemSaveData) |
+| 0x25   | 0x1  | 0 for SystemSaveData.                                                                      |
+| 0x26   | 0x1A | Not initialized for SystemSaveData.                                                        |
 
 Total size is 0x40-bytes.
 

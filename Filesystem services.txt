@@ -477,7 +477,7 @@ Total size is 0x40-bytes.
 |-
 | 0x24
 | 0x1
-| ?
+| Same u8 field passed to the mount command?(Web-applet only uses 0 here for SystemSaveData)
 |-
 | 0x25
 | 0x1
