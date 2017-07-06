@@ -50,10 +50,10 @@ The hash for the signature is calculated over the ticket data.
 | 0x180  | 0x140 | Unknown         |
 
 The title key can be encrypted as a single AES block when title key type
-is 0 (presumably AES-128-CBC) or as an RSA-2048 message when title key
-type is 1. The latter is used for titles requiring stronger licensing
-(applications, add-on content), while the former (old) method is used
-for patches.
+is 0 (presumably AES-128-CBC) or as a "personalized" RSA-2048 message
+when title key type is 1. The latter is used for titles requiring
+stronger licensing (applications, add-on content), while the former
+(old) method is used for patches.
 
 When RSA is used, this uses an SPL key handle that is initialized with
 the console-unique RSA-2048 ticket key.
@@ -63,11 +63,11 @@ exist.
 
 ## Certificate chain
 
-| Certificate | Signature type | Retail cert name | Debug cert name | Description                                                |
-| ----------- | -------------- | ---------------- | --------------- | ---------------------------------------------------------- |
-| Ticket      | RSA-2048       | XS00000021       | ?               | Used to verify ticket signatures using RSA title key block |
-| Ticket      | RSA-2048       | XS00000020       | ?               | Used to verify ticket signatures using AES title key block |
-| CA          | RSA-4096       | CA00000003       | CA00000004      | Used to verify the ticket certificate                      |
+| Certificate | Signature type | Retail cert name | Debug cert name | Description                                                                         |
+| ----------- | -------------- | ---------------- | --------------- | ----------------------------------------------------------------------------------- |
+| Ticket      | RSA-2048       | XS00000021       | ?               | Used to verify ticket signatures using RSA title key block ("personalized" tickets) |
+| Ticket      | RSA-2048       | XS00000020       | ?               | Used to verify ticket signatures using AES title key block                          |
+| CA          | RSA-4096       | CA00000003       | CA00000004      | Used to verify the ticket certificate                                               |
 
 The CA certificate is issued by 'Root', the public key for which is
 stored in ES.
