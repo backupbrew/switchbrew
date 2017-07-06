@@ -360,16 +360,16 @@ Total size is
 
 # SaveCreate Struct
 
-| Offset | Size | Description                                                                                                                                                                                                 |
-| ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8  | [IVFC](Savegames.md "wikilink") level4 size?                                                                                                                                                                |
-| 0x8    | 0x8  | Same as offset 0x0 normally?                                                                                                                                                                                |
-| 0x10   | 0x8  | 0x4000 for SystemSaveData/SaveData/DeviceSaveData. [IVFC](Savegames.md "wikilink") level4 block-size in bytes?                                                                                              |
-| 0x18   | 0x8  | Official user-processes only uses 0 here for SystemSaveData/SaveData. For the dedicated save-creation code with SaveData/DeviceSaveData, this value comes from an input param with official user-processes. |
-| 0x20   | 0x4  | ?                                                                                                                                                                                                           |
-| 0x24   | 0x1  | Official user-processes only uses 0 here for SystemSaveData, 1 for SaveData/DeviceSaveData.                                                                                                                 |
-| 0x25   | 0x1  | 0 for SystemSaveData/SaveData.                                                                                                                                                                              |
-| 0x26   | 0x1A | Not initialized for SystemSaveData/SaveData.                                                                                                                                                                |
+| Offset | Size | Description                                                                                                                                                                                                                                                                                                       |
+| ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | [IVFC](Savegames.md "wikilink") level4 size?                                                                                                                                                                                                                                                                      |
+| 0x8    | 0x8  | Same as offset 0x0 normally? Hard-coded to 0x80000 for BcatSaveData.                                                                                                                                                                                                                                              |
+| 0x10   | 0x8  | 0x4000 for SystemSaveData/SaveData/DeviceSaveData/BcatSaveData. [IVFC](Savegames.md "wikilink") level4 block-size in bytes?                                                                                                                                                                                       |
+| 0x18   | 0x8  | Official user-processes only uses 0 here for SystemSaveData/SaveData. For the dedicated save-creation code with SaveData/DeviceSaveData, this value comes from an input param with official user-processes. For BcatSaveData, this is the hard-coded [titleID](Title%20list.md "wikilink") of the bcat-sysmodule. |
+| 0x20   | 0x4  | Written using an input param for official user-processes. Hard-coded 0 for BcatSaveData.                                                                                                                                                                                                                          |
+| 0x24   | 0x1  | Official user-processes only uses 0 here for SystemSaveData, 1 for SaveData/DeviceSaveData/BcatSaveData.                                                                                                                                                                                                          |
+| 0x25   | 0x1  | 0 for SystemSaveData/SaveData.                                                                                                                                                                                                                                                                                    |
+| 0x26   | 0x1A | Not initialized for SystemSaveData/SaveData.                                                                                                                                                                                                                                                                      |
 
 Total size is 0x40-bytes.
 
@@ -377,5 +377,16 @@ Total size is 0x40-bytes.
 
 This is accessed using the same commands for SaveData with the same
 input u8, the only difference compared to SaveData is the Save-struct.
+
+# BcatSaveData
+
+This is accessed using the same commands for SaveData with the same
+input u8. The Save-struct is the same as DeviceSaveData, except that the
+titleID field is set to <input titleID>. See above regarding
+SaveCreate-struct.
+
+The 0x10-byte struct passed to
+[\#CreateSaveData](#CreateSaveData "wikilink") has the first 0x5-bytes
+set to all-zero.
 
 [Category:Services](Category:Services "wikilink")
