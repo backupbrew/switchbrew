@@ -311,6 +311,21 @@ with storageid=nandsys, for checking whether a sysupdate is required.
     [boot](Flash%20Filesystem.md "wikilink") partition 0.
   - 10: Raw NAND sectors access for MMC
     [boot](Flash%20Filesystem.md "wikilink") partition 1.
-  - Rest: see [here](Flash%20Filesystem.md "wikilink").
+  - Rest: see
+[here](Flash%20Filesystem.md "wikilink").
+
+# Save Struct
+
+| Offset | Size | Description                                                                                                               |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | 0 for MountSystemSaveData.                                                                                                |
+| 0x8    | 0x10 | userID for user-specific savedata(saveuser) when set, otherwise when zero this indicates the common savedata(savecommon). |
+| 0x18   | 0x8  | u64 [saveID](Flash%20Filesystem.md "wikilink")                                                                            |
+| 0x20   | 0x8  | 0 for MountSystemSaveData.                                                                                                |
+| 0x28   | 0x8  | 0 for MountSystemSaveData.                                                                                                |
+| 0x30   | 0x8  | 0 for MountSystemSaveData.                                                                                                |
+| 0x38   | 0x8  | 0 for MountSystemSaveData.                                                                                                |
+
+Total size is 0x40-bytes.
 
 [Category:Services](Category:Services "wikilink")
