@@ -28,7 +28,7 @@
 | 18   | MountSdCard                                                                            |
 | 19   | FormatSdCard                                                                           |
 | 21   | DeleteSaveData                                                                         |
-| 22   | CreateSaveData                                                                         |
+| 22   | [\#CreateMountSaveData](#CreateMountSaveData "wikilink")                               |
 | 23   | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                             |
 | 24   | RegisterSaveDataAtomicDeletion                                                         |
 | 25   |                                                                                        |
@@ -36,7 +36,7 @@
 | 27   |                                                                                        |
 | 30   | OpenGameCardPartition                                                                  |
 | 31   | MountGameCardPartition                                                                 |
-| 51   | MountSaveData                                                                          |
+| 51   | \<Mount\*\>?                                                                           |
 | 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |
 | 53   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 58   | ReadSaveDataFileSystemExtraData                                                        |
@@ -136,6 +136,10 @@ partition sectors.
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not
 exist, 0x320002 for partitions which cannot be opened and a valid
 [\#IStorage](#IStorage "wikilink") handle otherwise.
+
+## CreateMountSaveData
+
+Creates regular savedata or mounts it, depending on input.
 
 ## MountSystemSaveData
 

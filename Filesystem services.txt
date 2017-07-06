@@ -47,7 +47,7 @@
 |-
 | 21 || DeleteSaveData
 |-
-| 22 || CreateSaveData
+| 22 || [[#CreateMountSaveData]]
 |-
 | 23 || [[#CreateSystemSaveData]]
 |-
@@ -63,7 +63,7 @@
 |-
 | 31 || MountGameCardPartition
 |-
-| 51 || MountSaveData
+| 51 || <Mount*>?
 |-
 | 52 || [[#MountSystemSaveData]]
 |-
@@ -188,6 +188,9 @@ Only partitionIDs for FAT partitions are usable with this, otherwise error 0x2EE
 
 == OpenBisPartition ==
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not exist, 0x320002 for partitions which cannot be opened and a valid [[#IStorage]] handle otherwise.
+
+== CreateMountSaveData ==
+Creates regular savedata or mounts it, depending on input.
 
 == MountSystemSaveData ==
 Takes an input u8 and a 0x40-byte Save-struct entry(see below). Web-applet only uses value0 for the input u8.
