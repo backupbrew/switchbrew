@@ -1,4 +1,35 @@
-# ncm
+LR (Location Resolver) contains services for internal file path and
+content management.
+
+# LR services
+
+## lr
+
+| Cmd | Name             | Notes             |
+| --- | ---------------- | ----------------- |
+| 0   | GetIPathResolver | Takes a StorageID |
+| 1   |                  |                   |
+| 2   | CheckStorage     | Takes a StorageID |
+| 3   |                  |                   |
+
+### IPathResolver
+
+| Cmd | Name              | Notes |
+| --- | ----------------- | ----- |
+| 0   | GetProgramNcaPath |       |
+| 1   | SetProgramNcaPath |       |
+| 2   |                   |       |
+| 3   |                   |       |
+| 4   | GetControlNcaPath |       |
+| 5   | SetControlNcaPath |       |
+| 6   |                   |       |
+| 7   |                   |       |
+| 8   |                   |       |
+| 9   |                   |       |
+
+# Content Manager services
+
+## ncm
 
 | Cmd | Name                           | Notes |
 | --- | ------------------------------ | ----- |
@@ -6,8 +37,8 @@
 | 1   |                                |       |
 | 2   |                                |       |
 | 3   |                                |       |
-| 4   | GetContentStorage              |       |
-| 5   | GetContentMetaDatabase         |       |
+| 4   | GetIContentStorage             |       |
+| 5   | GetIContentMetaDatabase        |       |
 | 8   |                                |       |
 | 9   | InitializeStorageForMediaId    |       |
 | 10  | UninitializeStorageForMediaId  |       |
@@ -17,7 +48,7 @@
 All of the above cmds takes a u8 as
 input.
 
-## IContentStorage
+### IContentStorage
 
 | Cmd | Name                                                   | Notes                                                            |
 | --- | ------------------------------------------------------ | ---------------------------------------------------------------- |
@@ -28,9 +59,9 @@ input.
 | 4   |                                                        | Takes a 0x10-sized entry, a u64-offset, and type-5 array.        |
 | 5   |                                                        | Takes two 0x10-sized entries.                                    |
 | 6   | DeleteContent?                                         | Takes a 0x10-sized entry.                                        |
-| 7   |                                                        | Takes a 0x10-sized entry, returns a bool/u8.                     |
-| 8   |                                                        | Takes a type-0x1A string and a 0x10-sized entry.                 |
-| 9   |                                                        | Takes a type-0x1A string and a 0x10-sized entry.                 |
+| 7   | IsNcaEntryValid                                        | Takes a 0x10-sized entry, returns a bool/u8.                     |
+| 8   | MakeNcaRegisteredPath                                  | Takes a type-0x1A string and a 0x10-sized entry.                 |
+| 9   | MakeNcaPlaceholderPath                                 | Takes a type-0x1A string and a 0x10-sized entry.                 |
 | 10  |                                                        | Void.                                                            |
 | 11  |                                                        | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32. |
 | 12  | [\#GetNumberOfEntries](#GetNumberOfEntries "wikilink") |                                                                  |
@@ -46,19 +77,19 @@ input.
 | 22  | GetFreeSpace                                           |                                                                  |
 | 23  | GetTotalSpace                                          |                                                                  |
 
-### GetRootEntry
+#### GetRootEntry
 
 Returns an entry of 16 completely random-looking bytes. It is not
 possible to read this entry.
 
 Changes on reboot?
 
-### GetNumberOfEntries
+#### GetNumberOfEntries
 
 Writes the total number of entries which can be read by GetEntries, to
 cmdreply <SFCO_offset>+0x10.
 
-### GetEntries
+#### GetEntries
 
 Takes an output buffer, u32 offset and gets all entries starting at that
 offset. Returns number of entries read.
@@ -69,14 +100,14 @@ The total read entries is exactly the same as the number of "<hex>.nca"
 directories in the storage FS(or at least under the "registered"
 directory?).
 
-### GetEntrySize
+#### GetEntrySize
 
 Takes a [\#NcaID](#NcaID "wikilink") as input.
 
 Returns the total size readable by ReadEntryRaw. This is the same as the
 size-field in the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
 
-### ReadEntryRaw
+#### ReadEntryRaw
 
 Takes an output buffer, a [\#NcaID](#NcaID "wikilink") as input, and a
 u64 file offset.
@@ -109,7 +140,7 @@ changing data in one block doesn't affect other blocks.
 
 See GetEntrySize for the total size readable with this.
 
-### GetNcaTitleInfo
+#### GetNcaTitleInfo
 
 Takes a [\#NcaID](#NcaID "wikilink") and returns the following
 0x10-sized entry.
@@ -123,7 +154,7 @@ be only usable with NcaIds which have [type](NCA.md "wikilink") 1 or 4.
 | 0x0    | 0x8  | Big-endian titleID     |
 | 0x8    | 0x8  | Unknown. Usually zero? |
 
-## IContentMetaDatabase
+### IContentMetaDatabase
 
 | Cmd | Name                                                   | Notes                                                                                           |
 | --- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
@@ -148,7 +179,7 @@ be only usable with NcaIds which have [type](NCA.md "wikilink") 1 or 4.
 | 18  |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
 | 19  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                        |
 
-### GetTitleIdInfo
+#### GetTitleIdInfo
 
 Takes a u64 title-id as input, returns same title-id together with info
 struct.
@@ -159,7 +190,7 @@ struct.
 `  u8   pad[3];`  
 `};`
 
-### GetTitleList
+#### GetTitleList
 
 Each 24-byte entries is as follows:
 
@@ -167,7 +198,7 @@ Each 24-byte entries is as follows:
 ` struct title_info info;`  
 ` u64    title_id;`
 
-### GetUpdateTitleList
+#### GetUpdateTitleList
 
 Takes a type-6 output buffer, each entry being 0x10-byte bytes, a u32
 entryoffset and a 0x10-sized entry. Returns a u32 for
@@ -188,7 +219,7 @@ This reads the titlelist stored in the specified title, normally a title
 with title-type 3, which is sysupdate-title 0100000000000816. Returns 0
 with total\_read\_entries=0 when used with other title(s).
 
-## NcaID
+### NcaID
 
 This is a 0x10-byte entry. This is originally from the hex portion of
 "<hex>.nca" directory-names from this storage FS(like
@@ -198,9 +229,9 @@ The NcaID is the same as the first 0x10-bytes from the calculated SHA256
 hash, from hashing the entire output from
 ReadEntryRaw.
 
-## Enums
+### Enums
 
-### Title Types
+#### Title Types
 
 | Value | Description                                                                                                                                                                      |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -212,3 +243,7 @@ ReadEntryRaw.
 | 0x80  | Regular application                                                                                                                                                              |
 | 0x81  | Update title                                                                                                                                                                     |
 | 0x82  | Add-on content                                                                                                                                                                   |
+
+## ncm:v
+
+[Category:Services](Category:Services "wikilink")

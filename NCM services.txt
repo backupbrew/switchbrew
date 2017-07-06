@@ -1,4 +1,48 @@
-= ncm =
+LR (Location Resolver) contains services for internal file path and content management.
+
+= LR services =
+== lr ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetIPathResolver || Takes a StorageID
+|-
+| 1 || || 
+|-
+| 2 || CheckStorage || Takes a StorageID
+|-
+| 3 || || 
+|}
+
+=== IPathResolver ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetProgramNcaPath ||
+|-
+| 1 || SetProgramNcaPath ||
+|-
+| 2 || ||
+|-
+| 3 || ||
+|-
+| 4 || GetControlNcaPath ||
+|-
+| 5 || SetControlNcaPath ||
+|-
+| 6 || ||
+|-
+| 7 || ||
+|-
+| 8 || ||
+|-
+| 9 || ||
+|}
+
+= Content Manager services =
+== ncm ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -11,9 +55,9 @@
 |-
 | 3 || || 
 |-
-| 4 || GetContentStorage ||
+| 4 || GetIContentStorage ||
 |-
-| 5 || GetContentMetaDatabase ||
+| 5 || GetIContentMetaDatabase ||
 |-
 | 8 || || 
 |-
@@ -28,7 +72,7 @@
 
 All of the above cmds takes a u8 as input.
 
-== IContentStorage ==
+=== IContentStorage ===
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -47,11 +91,11 @@ All of the above cmds takes a u8 as input.
 |-
 | 6 || DeleteContent? || Takes a 0x10-sized entry.
 |-
-| 7 || || Takes a 0x10-sized entry, returns a bool/u8.
+| 7 || IsNcaEntryValid || Takes a 0x10-sized entry, returns a bool/u8.
 |-
-| 8 || || Takes a type-0x1A string and a 0x10-sized entry.
+| 8 || MakeNcaRegisteredPath || Takes a type-0x1A string and a 0x10-sized entry.
 |-
-| 9 || || Takes a type-0x1A string and a 0x10-sized entry.
+| 9 || MakeNcaPlaceholderPath || Takes a type-0x1A string and a 0x10-sized entry.
 |-
 | 10 || || Void.
 |-
@@ -82,15 +126,15 @@ All of the above cmds takes a u8 as input.
 | 23 || GetTotalSpace ||
 |}
 
-=== GetRootEntry ===
+==== GetRootEntry ====
 Returns an entry of 16 completely random-looking bytes. It is not possible to read this entry.
 
 Changes on reboot?
 
-=== GetNumberOfEntries ===
+==== GetNumberOfEntries ====
 Writes the total number of entries which can be read by GetEntries, to cmdreply <SFCO_offset>+0x10.
 
-=== GetEntries ===
+==== GetEntries ====
 Takes an output buffer, u32 offset and gets all entries starting at that offset.
 Returns number of entries read.
 
@@ -98,12 +142,12 @@ Each entry is a [[#NcaID]].
 
 The total read entries is exactly the same as the number of "<hex>.nca" directories in the storage FS(or at least under the "registered" directory?).
 
-=== GetEntrySize ===
+==== GetEntrySize ====
 Takes a [[#NcaID]] as input.
 
 Returns the total size readable by ReadEntryRaw. This is the same as the size-field in the [[NAX0]] "<NcaID>.nca/00" file.
 
-=== ReadEntryRaw ===
+==== ReadEntryRaw ====
 Takes an output buffer, a [[#NcaID]] as input, and a u64 file offset.
 
 Returns encrypted looking data from the content in the [[NAX0]]. Doesn't match the encrypted raw data in the [[NAX0]] "<NcaID>.nca/00" file. Seems to be at least one crypto layer below the initial NAX0 layer, since the data doesn't change after NAX0 recreation.
@@ -116,7 +160,7 @@ This implies that that an AES mode is being used which isn't CTR, where changing
 
 See GetEntrySize for the total size readable with this.
 
-=== GetNcaTitleInfo ===
+==== GetNcaTitleInfo ====
 Takes a [[#NcaID]] and returns the following 0x10-sized entry.
 
 With some NcaIDs this may return 0 with an all-zero output entry. This seems to be the case for most/all (?) NandSystem NcaIds? This seems to be only usable with NcaIds which have [[NCA|type]] 1 or 4.
@@ -136,7 +180,7 @@ With some NcaIDs this may return 0 with an all-zero output entry. This seems to 
 | Unknown. Usually zero?
 |}
 
-== IContentMetaDatabase ==
+=== IContentMetaDatabase ===
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -182,7 +226,7 @@ With some NcaIDs this may return 0 with an all-zero output entry. This seems to 
 | 19 || || Takes a 0x10-sized entry. Returns a u32.
 |}
 
-=== GetTitleIdInfo ===
+==== GetTitleIdInfo ====
 Takes a u64 title-id as input, returns same title-id together with info struct.
 
  struct title_info {
@@ -191,7 +235,7 @@ Takes a u64 title-id as input, returns same title-id together with info struct.
    u8   pad[3];
  };
 
-=== GetTitleList ===
+==== GetTitleList ====
 Each 24-byte entries is as follows:
 
   u64    title_id_update;
@@ -199,7 +243,7 @@ Each 24-byte entries is as follows:
   u64    title_id;
 
 
-=== GetUpdateTitleList ===
+==== GetUpdateTitleList ====
 Takes a type-6 output buffer, each entry being 0x10-byte bytes, a u32 entryoffset and a 0x10-sized entry. Returns a u32 for total_read_entries.
 
 The input entry is the output entry from [[#GetTitleIdInfo]] starting at the TID. The output 0x10-bytes entries are the same as the output from [[#GetTitleIdInfo]] starting at the TID. However, "pad[0]" is used for something else it seems?(0 for everything except for TID [[Title_list|010000000000081B]], where it's 1)
@@ -208,13 +252,13 @@ See [[NCA#Meta_records]].
 
 This reads the titlelist stored in the specified title, normally a title with title-type 3, which is sysupdate-title 0100000000000816. Returns 0 with total_read_entries=0 when used with other title(s).
 
-== NcaID ==
+=== NcaID ===
 This is a 0x10-byte entry. This is originally from the hex portion of "<hex>.nca" directory-names from this storage FS(like [[SD_Filesystem|SD]]).
 
 The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, from hashing the entire output from ReadEntryRaw.
 
-== Enums ==
-=== Title Types ===
+=== Enums ===
+==== Title Types ====
 
 {| class="wikitable" border="1"
 |-
@@ -245,3 +289,7 @@ The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, f
 | 0x82
 | Add-on content
 |}
+
+== ncm:v ==
+
+[[Category:Services]]
