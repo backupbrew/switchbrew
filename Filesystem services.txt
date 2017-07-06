@@ -39,7 +39,7 @@
 |-
 | 22 || CreateSaveData
 |-
-| 23 || CreateSystemSaveData
+| 23 || [[#CreateSystemSaveData]]
 |-
 | 24 || RegisterSaveDataAtomicDeletion
 |-
@@ -55,7 +55,7 @@
 |-
 | 51 || MountSaveData
 |-
-| 52 || MountSystemSaveData
+| 52 || [[#MountSystemSaveData]]
 |-
 | 53 || Returns an [[#IFileSystem]].
 |-
@@ -178,6 +178,12 @@ Only partitionIDs for FAT partitions are usable with this, otherwise error 0x2EE
 
 == OpenBisPartition ==
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not exist, 0x320002 for partitions which cannot be opened and a valid [[#IStorage]] handle otherwise.
+
+== MountSystemSaveData ==
+Mounts savedata(savecommon/saveuser) in the SYSTEM [[Flash_Filesystem|NAND]] partition. One of the input params is the u64 [[Flash_Filesystem|saveID]].
+
+== CreateSystemSaveData ==
+Creates savedata(savecommon/saveuser) in the SYSTEM [[Flash_Filesystem|NAND]] partition. One of the input params is the u64 [[Flash_Filesystem|saveID]].
 
 == MountContentStorage ==
 Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.

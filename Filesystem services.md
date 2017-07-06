@@ -22,7 +22,7 @@
 | 19   | FormatSdCard                                                                           |
 | 21   | DeleteSaveData                                                                         |
 | 22   | CreateSaveData                                                                         |
-| 23   | CreateSystemSaveData                                                                   |
+| 23   | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                             |
 | 24   | RegisterSaveDataAtomicDeletion                                                         |
 | 25   |                                                                                        |
 | 26   | FormatSdCardDryRun                                                                     |
@@ -30,7 +30,7 @@
 | 30   | OpenGameCardPartition                                                                  |
 | 31   | MountGameCardPartition                                                                 |
 | 51   | MountSaveData                                                                          |
-| 52   | MountSystemSaveData                                                                    |
+| 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |
 | 53   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 58   | ReadSaveDataFileSystemExtraData                                                        |
 | 59   |                                                                                        |
@@ -129,6 +129,18 @@ partition sectors.
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not
 exist, 0x320002 for partitions which cannot be opened and a valid
 [\#IStorage](#IStorage "wikilink") handle otherwise.
+
+## MountSystemSaveData
+
+Mounts savedata(savecommon/saveuser) in the SYSTEM
+[NAND](Flash%20Filesystem.md "wikilink") partition. One of the input
+params is the u64 [saveID](Flash%20Filesystem.md "wikilink").
+
+## CreateSystemSaveData
+
+Creates savedata(savecommon/saveuser) in the SYSTEM
+[NAND](Flash%20Filesystem.md "wikilink") partition. One of the input
+params is the u64 [saveID](Flash%20Filesystem.md "wikilink").
 
 ## MountContentStorage
 
