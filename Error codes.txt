@@ -229,13 +229,15 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x11A0B || 141 || Went past maximum during marshalling.
 |-
-| 0x1900B || 200 || IPC Query 0 failed.
+| 0x1900B || 200 || Session doesn't support domains.
 |-
-| 0x25A0B || 301 || Remote process is dead
+| 0x25A0B || 301 || Remote process is dead.
 |-
 | 0x3D60B || 491 || IPC Query 1 failed.
 |-
 | 0x20F || 1 || Pid not found
+|-
+| 0x60F || 3 || Process has no pending events
 |-
 | 0x410 || 2 || Title-id not found
 |-
