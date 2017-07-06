@@ -192,6 +192,8 @@ Takes a u32 partition ID, returns 0x2EE202 for partitions which do not exist, 0x
 == MountSystemSaveData ==
 Takes an input u8 and a 0x40-byte Save-struct entry(see below). Web-applet only uses value0 for the input u8.
 
+Returns an [[#IFileSystem]].
+
 Mounts savedata in the SYSTEM [[Flash_Filesystem|NAND]] partition.
 
 == CreateSystemSaveData ==

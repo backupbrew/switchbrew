@@ -142,6 +142,8 @@ exist, 0x320002 for partitions which cannot be opened and a valid
 Takes an input u8 and a 0x40-byte Save-struct entry(see below).
 Web-applet only uses value0 for the input u8.
 
+Returns an [\#IFileSystem](#IFileSystem "wikilink").
+
 Mounts savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
 partition.
 
