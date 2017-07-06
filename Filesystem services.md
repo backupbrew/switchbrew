@@ -319,13 +319,13 @@ with storageid=nandsys, for checking whether a sysupdate is required.
 
 | Offset | Size | Description                                                                                                               |
 | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8  | 0 for MountSystemSaveData.                                                                                                |
+| 0x0    | 0x8  | 0 for SystemSaveData.                                                                                                     |
 | 0x8    | 0x10 | userID for user-specific savedata(saveuser) when set, otherwise when zero this indicates the common savedata(savecommon). |
 | 0x18   | 0x8  | u64 [saveID](Flash%20Filesystem.md "wikilink")                                                                            |
-| 0x20   | 0x8  | 0 for MountSystemSaveData.                                                                                                |
-| 0x28   | 0x8  | 0 for MountSystemSaveData.                                                                                                |
-| 0x30   | 0x8  | 0 for MountSystemSaveData.                                                                                                |
-| 0x38   | 0x8  | 0 for MountSystemSaveData.                                                                                                |
+| 0x20   | 0x8  | 0 for SystemSaveData.                                                                                                     |
+| 0x28   | 0x8  | 0 for SystemSaveData.                                                                                                     |
+| 0x30   | 0x8  | 0 for SystemSaveData.                                                                                                     |
+| 0x38   | 0x8  | 0 for SystemSaveData.                                                                                                     |
 
 Total size is 0x40-bytes.
 
