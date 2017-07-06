@@ -8,6 +8,14 @@
 | 1 || EnableMaintenanceMode
 |}
 
+= pm:info =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetProcessTitleID
+|}
+
 = pm:shell =
 {| class="wikitable" border="1"
 |-

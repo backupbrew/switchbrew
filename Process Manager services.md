@@ -5,6 +5,12 @@
 | 0   | GetMaintenanceMode?   |
 | 1   | EnableMaintenanceMode |
 
+# pm:info
+
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | GetProcessTitleID |
+
 # pm:shell
 
 | Cmd | Name                                                |
