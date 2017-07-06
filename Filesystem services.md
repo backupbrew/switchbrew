@@ -36,7 +36,7 @@
 | 27   |                                                                                        |
 | 30   | OpenGameCardPartition                                                                  |
 | 31   | MountGameCardPartition                                                                 |
-| 51   | MountSavedata                                                                          |
+| 51   | [\#MountSavedata](#MountSavedata "wikilink")                                           |
 | 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |
 | 53   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 58   | ReadSaveDataFileSystemExtraData                                                        |
@@ -141,22 +141,28 @@ exist, 0x320002 for partitions which cannot be opened and a valid
 
 Creates regular savedata.
 
-## MountSystemSaveData
-
-Takes an input u8 and a 0x40-byte Save-struct entry(see below).
-Web-applet only uses value0 for the input u8.
-
-Returns an [\#IFileSystem](#IFileSystem "wikilink").
-
-Mounts savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
-partition.
-
 ## CreateSystemSaveData
 
 Takes a 0x40-byte Save-struct entry and a 0x40-byte SaveCreate-struct
 entry.
 
 Creates savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
+partition.
+
+## MountSaveData
+
+Takes an input u8 and a 0x40-byte Save-struct entry.
+
+Returns an [\#IFileSystem](#IFileSystem "wikilink").
+
+## MountSystemSaveData
+
+Takes an input u8 and a 0x40-byte Save-struct entry. Web-applet only
+uses value0 for the input u8.
+
+Returns an [\#IFileSystem](#IFileSystem "wikilink").
+
+Mounts savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
 partition.
 
 ## MountContentStorage
