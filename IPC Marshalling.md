@@ -10,7 +10,7 @@ u32's.
 | 0    | 23-20 | Number of buf A descriptors (each: 3 words).                |
 | 0    | 27-24 | Number of buf B descriptors (each: 3 words).                |
 | 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed. |
-| 1    | 9-0   | Total word count (in u32's).                                |
+| 1    | 9-0   | Raw data size (in u32's).                                   |
 | 1    | 13-10 | Flags for buf C descriptor.                                 |
 | 1    | 31    | Enable handle descriptor.                                   |
 | ...  |       | Handle descriptor, if enabled.                              |
@@ -18,8 +18,7 @@ u32's.
 | ...  |       | Buf A descriptors, each one 3 words.                        |
 | ...  |       | Buf B descriptors, each one 3 words.                        |
 | ...  |       | Type W descriptors, each one 3 words.                       |
-| ...  |       | Padding                                                     |
-| ...  |       | Raw data                                                    |
+| ...  |       | Raw data (including any padding).                           |
 | ...  |       | Buf C descriptors, each one 2 words.                        |
 
 ### Handle descriptor
@@ -32,6 +31,7 @@ the second word.
 | 0    | 0    | Send current PID.         |
 | 0    | 4-1  | Number of handles to copy |
 | 0    | 8-5  | Number of handles to move |
+| ...  |      | 8-byte PID if enabled     |
 | ...  |      | Handles to copy           |
 | ...  |      | Handles to move           |
 
@@ -84,15 +84,17 @@ Otherwise it has (flag-2) C descriptors.
 
 ## Raw data portion
 
-This is an array of u64's. It's always aligned to 16 so sometimes there
-is padding words before it.
+This is an array of u32's, but individual parameters are generally
+stored as u64's.
 
-| Word | Description                                       |
-| ---- | ------------------------------------------------- |
-| ...  | Pid is written here if enabled.                   |
-| \+0  | Magic ("SFCI" for requests, "SFCO" for responses) |
-| \+1  | Cmd id                                            |
-| ...  | Rest of raw data.                                 |
+| Word | Description                                              |
+| ---- | -------------------------------------------------------- |
+| ...  | Padding to align to 16                                   |
+| ...  | Domain header padded to 16 if required                   |
+| \+0  | Magic ("SFCI" for requests, "SFCO" for responses) as u64 |
+| \+2  | Cmd id as u64                                            |
+| ...  | Input parameters                                         |
+| ...  | Any u16 buffer sizes packed and aligned to 2 bytes       |
 
 ## Official marshalling code
 
@@ -149,7 +151,7 @@ All offsets are given is in number of u32 words.
 
 ## Control
 
-When type == 5 you are talking to kernel.
+When type == 5 you are talking to the IPC manager.
 
 | Cmd | Name                   |
 | --- | ---------------------- |
