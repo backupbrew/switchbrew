@@ -39,7 +39,7 @@
 |-
 |  0x184000
 |  
-|  Unknown, 0x20-bytes hash + one u64? All zero on 1.0.
+|  Unknown, 0x20-bytes hash (updated when bcpkg-2-1 updates) + one u64? (may be incremented on bcpkg update) All zero on 1.0.
 |}
 
 '''Boot Partition 1 (1 of 1)'''
