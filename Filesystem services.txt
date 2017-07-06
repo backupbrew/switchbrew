@@ -180,6 +180,8 @@ Only partitionIDs for FAT partitions are usable with this, otherwise error 0x2EE
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not exist, 0x320002 for partitions which cannot be opened and a valid [[#IStorage]] handle otherwise.
 
 == MountSystemSaveData ==
+Takes an input u8 and a 0x40-byte Save-struct entry. Web-applet only uses value0 for the input u8.
+
 Mounts savedata(savecommon/saveuser) in the SYSTEM [[Flash_Filesystem|NAND]] partition. One of the input params is the u64 [[Flash_Filesystem|saveID]].
 
 == CreateSystemSaveData ==
