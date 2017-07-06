@@ -49,9 +49,13 @@ field 0 instead of
 | ---- | --- | ----------------------------------------------------------------------------------- |
 | 0    |     | Version? Always 1.                                                                  |
 | 1    | 0   | MountContent\* is accessible when set.                                              |
-|      |     |                                                                                     |
-| 0    | 3   | This is only bit set for ShopN in the permissions-u32.                              |
 | 1    | 2   | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28? |
+
+Web-applets access control:
+
+  - "LibAppletWeb" and "LibAppletOff" have same access control: word0
+    bit0 set, word1 bit0 and bit3 set, and word2 bit30 set.
+  - Rest of the web-applets: Same as above except word1 bit0 isn't set.
 
 # Service Access Control
 
