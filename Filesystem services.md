@@ -373,4 +373,9 @@ Total size is
 
 Total size is 0x40-bytes.
 
+# DeviceSaveData
+
+This is accessed using the same commands for SaveData with the same
+input u8, the only difference compared to SaveData is the Save-struct.
+
 [Category:Services](Category:Services "wikilink")
