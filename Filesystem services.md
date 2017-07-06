@@ -27,7 +27,7 @@
 | 17   | OpenHostFileSystemImpl                                                                 |
 | 18   | MountSdCard                                                                            |
 | 19   | FormatSdCard                                                                           |
-| 21   | DeleteSaveData                                                                         |
+| 21   | [\#DeleteSaveData](#DeleteSaveData "wikilink")                                         |
 | 22   | [\#CreateSaveData](#CreateSaveData "wikilink")                                         |
 | 23   | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                             |
 | 24   | RegisterSaveDataAtomicDeletion                                                         |
@@ -136,6 +136,10 @@ partition sectors.
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not
 exist, 0x320002 for partitions which cannot be opened and a valid
 [\#IStorage](#IStorage "wikilink") handle otherwise.
+
+## DeleteSaveData
+
+Takes an input u64.
 
 ## CreateSaveData
 
