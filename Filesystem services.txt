@@ -457,7 +457,7 @@ Total size is 0x40-bytes.
 |-
 | 0x0
 | 0x8
-| Somehow related to savedata size?
+| [[Savegames|IVFC]] level4 size?
 |-
 | 0x8
 | 0x8
@@ -465,7 +465,7 @@ Total size is 0x40-bytes.
 |-
 | 0x10
 | 0x8
-| 0x4000 for SystemSaveData.
+| 0x4000 for SystemSaveData. [[Savegames|IVFC]] level4 block-size in bytes?
 |-
 | 0x18
 | 0x8

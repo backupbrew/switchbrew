@@ -334,9 +334,9 @@ Total size is
 
 | Offset | Size | Description                                                                                |
 | ------ | ---- | ------------------------------------------------------------------------------------------ |
-| 0x0    | 0x8  | Somehow related to savedata size?                                                          |
+| 0x0    | 0x8  | [IVFC](Savegames.md "wikilink") level4 size?                                               |
 | 0x8    | 0x8  | Same as offset 0x0 normally?                                                               |
-| 0x10   | 0x8  | 0x4000 for SystemSaveData.                                                                 |
+| 0x10   | 0x8  | 0x4000 for SystemSaveData. [IVFC](Savegames.md "wikilink") level4 block-size in bytes?     |
 | 0x18   | 0x8  | Web-applet only uses 0 here for SystemSaveData.                                            |
 | 0x20   | 0x4  | ?                                                                                          |
 | 0x24   | 0x1  | Same u8 field passed to the mount command?(Web-applet only uses 0 here for SystemSaveData) |
