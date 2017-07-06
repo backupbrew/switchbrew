@@ -30,7 +30,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 8 || LR
 |-
-| 9 || RO service
+| 9 || Loader
 |-
 | 10 || CMIF (IPC command interface)
 |-
@@ -212,6 +212,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 0x17C05 || 190 || Gamecard not initialized
 |-
 | 0x1F405 || 250 || Sdcard not inserted
+|-
+| 0x409 || 2 || Maximum processes loaded
 |-
 | 0x6609 || 51 || Invalid memory state/permission
 |-

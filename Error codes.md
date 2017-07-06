@@ -28,7 +28,7 @@ fatal-errors, since the Description ends with bit21.
 | 5     | NCM                                                    |
 | 6     | DD                                                     |
 | 8     | LR                                                     |
-| 9     | RO service                                             |
+| 9     | Loader                                                 |
 | 10    | CMIF (IPC command interface)                           |
 | 11    | HIPC (IPC)                                             |
 | 15    | PM                                                     |
@@ -124,6 +124,7 @@ applets.
 | 0xDC05            | 110         | Gamecard not inserted                                                                                                                                                                |
 | 0x17C05           | 190         | Gamecard not initialized                                                                                                                                                             |
 | 0x1F405           | 250         | Sdcard not inserted                                                                                                                                                                  |
+| 0x409             | 2           | Maximum processes loaded                                                                                                                                                             |
 | 0x6609            | 51          | Invalid memory state/permission                                                                                                                                                      |
 | 0x6A09            | 53          | Invalid NRR                                                                                                                                                                          |
 | 0xA209            | 81          | Unaligned NRR address                                                                                                                                                                |
