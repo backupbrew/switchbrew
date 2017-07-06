@@ -439,7 +439,7 @@ Returns a titleID and the title-version for it.
 |-
 | 0x0
 | 0x8
-| 0 for SystemSaveData.
+| 0 for SystemSaveData. SaveData: 0 can be used for accessing the savedata associated with the current FS session titleID, otherwise when set this is the titleID associated with the savedata to access.
 |-
 | 0x8
 | 0x10
@@ -447,7 +447,7 @@ Returns a titleID and the title-version for it.
 |-
 | 0x18
 | 0x8
-| u64 [[Flash_Filesystem|saveID]]. 0 can be used with SaveData for using the savedata associated with the current FS session titleID.
+| u64 [[Flash_Filesystem|saveID]]. 0 for SaveData.
 |-
 | 0x20
 | 0x8

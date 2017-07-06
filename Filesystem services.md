@@ -337,15 +337,15 @@ with storageid=nandsys, for checking whether a sysupdate is required.
 
 # Save Struct
 
-| Offset | Size | Description                                                                                                                                        |
-| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8  | 0 for SystemSaveData.                                                                                                                              |
-| 0x8    | 0x10 | userID for user-specific savedata(saveuser) when set, otherwise when zero this indicates the common savedata(savecommon).                          |
-| 0x18   | 0x8  | u64 [saveID](Flash%20Filesystem.md "wikilink"). 0 can be used with SaveData for using the savedata associated with the current FS session titleID. |
-| 0x20   | 0x8  | 0 for SystemSaveData. 1 for SaveData.                                                                                                              |
-| 0x28   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                     |
-| 0x30   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                     |
-| 0x38   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                     |
+| Offset | Size | Description                                                                                                                                                                                             |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | 0 for SystemSaveData. SaveData: 0 can be used for accessing the savedata associated with the current FS session titleID, otherwise when set this is the titleID associated with the savedata to access. |
+| 0x8    | 0x10 | userID for user-specific savedata(saveuser) when set, otherwise when zero this indicates the common savedata(savecommon).                                                                               |
+| 0x18   | 0x8  | u64 [saveID](Flash%20Filesystem.md "wikilink"). 0 for SaveData.                                                                                                                                         |
+| 0x20   | 0x8  | 0 for SystemSaveData. 1 for SaveData.                                                                                                                                                                   |
+| 0x28   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
+| 0x30   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
+| 0x38   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
 
 Total size is
 0x40-bytes.
