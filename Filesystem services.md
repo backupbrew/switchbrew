@@ -1,9 +1,16 @@
 # fsp-ldr
 
-| Cmd | Name              |
-| --- | ----------------- |
-| 0   | MountCode         |
-| 1   | IsArchivedProgram |
+| Cmd | Name          |
+| --- | ------------- |
+| 0   | MountCode     |
+| 1   | IsCodeMounted |
+
+# fsp-pr
+
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   | SetFsPermissions   |
+| 1   | ClearFsPermissions |
 
 # fsp-srv
 

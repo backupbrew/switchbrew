@@ -5,7 +5,17 @@
 |-
 | 0 || MountCode
 |-
-| 1 || IsArchivedProgram
+| 1 || IsCodeMounted
+|}
+
+= fsp-pr =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || SetFsPermissions
+|-
+| 1 || ClearFsPermissions
 |}
 
 = fsp-srv =
