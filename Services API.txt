@@ -211,7 +211,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 |
 |-
 | lr, ncm, ncm:v
-| [[Content Manager services]]
+| [[Location Resolver services]]
 |
 |-
 | nfc:am, nfc:mf:u, nfc:user, nfc:sys
