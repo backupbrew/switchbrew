@@ -360,16 +360,16 @@ Total size is
 
 # SaveCreate Struct
 
-| Offset | Size | Description                                                                                                                                                                                  |
-| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8  | [IVFC](Savegames.md "wikilink") level4 size?                                                                                                                                                 |
-| 0x8    | 0x8  | Same as offset 0x0 normally?                                                                                                                                                                 |
-| 0x10   | 0x8  | 0x4000 for SystemSaveData/SaveData. [IVFC](Savegames.md "wikilink") level4 block-size in bytes?                                                                                              |
-| 0x18   | 0x8  | Official user-processes only uses 0 here for SystemSaveData/SaveData. For the dedicated save-creation code with SaveData, this value comes from an input param with official user-processes. |
-| 0x20   | 0x4  | ?                                                                                                                                                                                            |
-| 0x24   | 0x1  | Official user-processes only uses 0 here for SystemSaveData, 1 for SaveData.                                                                                                                 |
-| 0x25   | 0x1  | 0 for SystemSaveData/SaveData.                                                                                                                                                               |
-| 0x26   | 0x1A | Not initialized for SystemSaveData/SaveData.                                                                                                                                                 |
+| Offset | Size | Description                                                                                                                                                                                                 |
+| ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | [IVFC](Savegames.md "wikilink") level4 size?                                                                                                                                                                |
+| 0x8    | 0x8  | Same as offset 0x0 normally?                                                                                                                                                                                |
+| 0x10   | 0x8  | 0x4000 for SystemSaveData/SaveData/DeviceSaveData. [IVFC](Savegames.md "wikilink") level4 block-size in bytes?                                                                                              |
+| 0x18   | 0x8  | Official user-processes only uses 0 here for SystemSaveData/SaveData. For the dedicated save-creation code with SaveData/DeviceSaveData, this value comes from an input param with official user-processes. |
+| 0x20   | 0x4  | ?                                                                                                                                                                                                           |
+| 0x24   | 0x1  | Official user-processes only uses 0 here for SystemSaveData, 1 for SaveData/DeviceSaveData.                                                                                                                 |
+| 0x25   | 0x1  | 0 for SystemSaveData/SaveData.                                                                                                                                                                              |
+| 0x26   | 0x1A | Not initialized for SystemSaveData/SaveData.                                                                                                                                                                |
 
 Total size is 0x40-bytes.
 
