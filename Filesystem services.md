@@ -329,4 +329,12 @@ with storageid=nandsys, for checking whether a sysupdate is required.
 
 Total size is 0x40-bytes.
 
+# SaveCreate Struct
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x40 | ?           |
+
+Total size is 0x40-bytes.
+
 [Category:Services](Category:Services "wikilink")

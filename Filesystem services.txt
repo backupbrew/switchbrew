@@ -448,4 +448,18 @@ Returns a titleID and the title-version for it.
 
 Total size is 0x40-bytes.
 
+=SaveCreate Struct=
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x40
+| ?
+|}
+
+Total size is 0x40-bytes.
+
 [[Category:Services]]
