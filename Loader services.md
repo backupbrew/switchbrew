@@ -1,9 +1,19 @@
-# ldr:shel
+# ldr:dmnt
 
 | Cmd | Name |
 | --- | ---- |
 | 0   |      |
 | 1   |      |
+| 2   |      |
+
+# ldr:pm
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
 
 # ldr:ro
 
@@ -58,5 +68,25 @@
 | 0    | "SFCI"                      |
 | 1    | 0x00000004                  |
 | 2    | Always 0.                   |
+
+# ldr:shel
+
+| Cmd | Name                                               |
+| --- | -------------------------------------------------- |
+| 0   | [\#LoadProcess](#LoadProcess "wikilink")           |
+| 1   | [\#ClearProcessList](#ClearProcessList "wikilink") |
+
+## LoadProcess
+
+Takes a type-0x19 input buffer with launch arguments (as string), an u32
+(size of arguments string), and an input title-id.
+
+Loads a process for the specified title-id and passes along the supplied
+arguments. Loaded processes are kept in a queue waiting for PM to launch
+them. The maximum number of waiting processes in this list is 10.
+
+## ClearProcessList
+
+Clears the loaded processes waiting queue.
 
 [Category:Services](Category:Services "wikilink")
