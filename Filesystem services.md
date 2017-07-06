@@ -132,18 +132,19 @@ exist, 0x320002 for partitions which cannot be opened and a valid
 
 ## MountSystemSaveData
 
-Takes an input u8 and a 0x40-byte Save-struct entry. Web-applet only
-uses value0 for the input u8.
+Takes an input u8 and a 0x40-byte Save-struct entry(see below).
+Web-applet only uses value0 for the input u8.
 
-Mounts savedata(savecommon/saveuser) in the SYSTEM
-[NAND](Flash%20Filesystem.md "wikilink") partition. One of the input
-params is the u64 [saveID](Flash%20Filesystem.md "wikilink").
+Mounts savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
+partition.
 
 ## CreateSystemSaveData
 
-Creates savedata(savecommon/saveuser) in the SYSTEM
-[NAND](Flash%20Filesystem.md "wikilink") partition. One of the input
-params is the u64 [saveID](Flash%20Filesystem.md "wikilink").
+Takes a 0x40-byte Save-struct entry and a 0x40-byte SaveCreate-struct
+entry.
+
+Creates savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
+partition.
 
 ## MountContentStorage
 
