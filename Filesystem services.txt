@@ -286,7 +286,7 @@ There are two main implementations of this interface:
 |}
 
 == Commit ==
-Like 3DS, this has to be used after writing to savedata for the changes to take affect.
+Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after writing to savedata for the changes to take affect.
 
 = IDirectory =
 {| class="wikitable" border="1"

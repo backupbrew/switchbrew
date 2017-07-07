@@ -242,8 +242,8 @@ There are two main implementations of this interface:
 
 ## Commit
 
-Like 3DS, this has to be used after writing to savedata for the changes
-to take affect.
+Like [3DS](https://3dbrew.org/wiki/FS:ControlArchive), this has to be
+used after writing to savedata for the changes to take affect.
 
 # IDirectory
 
