@@ -458,7 +458,7 @@ Returns a titleID and the title-version for it.
 |-
 | 0x20
 | 0x8
-| 0 for SystemSaveData. 1 for SaveData. 2 for DeviceSaveData(with official user-processes all other fields are 0 for DeviceSaveData).
+| ContentStorageId? 0 for SystemSaveData. 1 for SaveData. 2 for DeviceSaveData(with official user-processes all other fields are 0 for DeviceSaveData).
 |-
 | 0x28
 | 0x8
