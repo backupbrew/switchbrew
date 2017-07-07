@@ -3,7 +3,7 @@ This page documents the partitions that can mounted by [[Filesystem_services#Mou
 The below sections are for each partitionID.
 
 =0=
-Contains the gamecard sysupdate. Attempting to mount this results in error 0x13DA02. Using certain [[Location_Resolver_services|NCM]] commands first might be required?
+Contains the gamecard sysupdate. Attempting to mount this results in error 0x13DA02.
 
 =2=
 Contains the game [[NCA]]s.

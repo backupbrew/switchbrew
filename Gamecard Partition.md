@@ -6,9 +6,7 @@ The below sections are for each partitionID.
 # 0
 
 Contains the gamecard sysupdate. Attempting to mount this results in
-error 0x13DA02. Using certain
-[NCM](Location%20Resolver%20services.md "wikilink") commands first might
-be required?
+error 0x13DA02.
 
 # 2
 
