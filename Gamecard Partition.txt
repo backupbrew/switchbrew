@@ -8,5 +8,5 @@ Contains the gamecard sysupdate. Attempting to mount this results in error 0x13D
 =2=
 Contains the game [[NCA]]s.
 
-* "<NcaId>.nca" ...
+* "<NcaId>.nca" The usual raw NCAs.
 * "<NcaId>.cnmt.nca" Encrypted [[NCA]]-type0 content.

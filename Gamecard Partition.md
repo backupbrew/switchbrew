@@ -14,5 +14,5 @@ be required?
 
 Contains the game [NCAs](NCA.md "wikilink").
 
-  - "<NcaId>.nca" ...
+  - "<NcaId>.nca" The usual raw NCAs.
   - "<NcaId>.cnmt.nca" Encrypted [NCA](NCA.md "wikilink")-type0 content.
