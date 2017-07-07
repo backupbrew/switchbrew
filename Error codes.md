@@ -100,6 +100,7 @@ applets.
 | 0xFA01            | 125         | Wrong memory permission?                                                                                                                                                             |
 | 0x10601           | 131         | Port max sessions exceeded                                                                                                                                                           |
 | 0x10801           | 132         | Out of memory                                                                                                                                                                        |
+| 0xE02             | 7           | High byte in input u64 is zero.                                                                                                                                                      |
 | 0x7802            | 60          | The specified [NCA](NCA.md "wikilink")-type doesn't exist for this title.                                                                                                            |
 | 0x7D202           | 1001        | Process does not have RomFs                                                                                                                                                          |
 | 0x7D402           | 1002        | Title-id not found / savedata not found.                                                                                                                                             |
