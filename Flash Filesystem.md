@@ -114,8 +114,9 @@ The saves stored under this partition are only for system-titles / etc.
 `│       └── ... `[`NCA`](NCA.md "wikilink")  
 `├── `[`save`](Savegames.md "wikilink")  
 `│   └── ...`  
-`└── saveMeta`  
-`    └── ... `
+`├── saveMeta`  
+`│   └── ... `  
+`└── temp `
 
 The saves for all non-system applications, regardless of where the
 application is located(storageID), is stored here. Each user account

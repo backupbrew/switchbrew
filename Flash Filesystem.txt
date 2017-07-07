@@ -207,8 +207,9 @@ The saves stored under this partition are only for system-titles / etc.
  │       └── ... [[NCA]]
  ├── [[Savegames|save]]
  │   └── ...
- └── saveMeta
-     └── ... 
+ ├── saveMeta
+ │   └── ... 
+ └── temp 
 
 The saves for all non-system applications, regardless of where the application is located(storageID), is stored here. Each user account which has savedata has a separate saveimage. Save-common for an application is presumably a separate saveimage too. Every saveimage here is ''only'' for applications.
 
