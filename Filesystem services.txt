@@ -450,7 +450,7 @@ Returns a titleID and the title-version for it.
 |-
 | 0x8
 | 0x10
-| userID for user-specific savedata(saveuser) when set, otherwise when zero this indicates the common savedata(savecommon).
+| userID for user-specific savedata(saveuser) when set, otherwise when zero this indicates the common savedata(savecommon). This is loaded from [[Account_services]].
 |-
 | 0x18
 | 0x8
