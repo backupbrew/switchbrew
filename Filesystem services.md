@@ -240,6 +240,11 @@ There are two main implementations of this interface:
 | 11  | GetFreeSpaceSize           |
 | 12  | GetTotalSpaceSize          |
 
+## Commit
+
+Like 3DS, this has to be used after writing to savedata for the changes
+to take affect.
+
 # IDirectory
 
 | Cmd | Name          |
