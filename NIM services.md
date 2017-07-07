@@ -1,5 +1,22 @@
 # nim
 
+| Cmd | Name |
+| --- | ---- |
+| 1   |      |
+| 2   |      |
+
+## Cmd1
+
+Takes a 0x10-byte input struct, from the output of cmd2.
+
+## Cmd2
+
+Takes a type-0x6 output buffer, for an array of 0x10-byte entries.
+Returns an u32 for total output entries.
+
+Doesn't return anything on a v2.1 system where sysupdate domains are
+blocked.
+
 # nim:shp
 
 # ntc
