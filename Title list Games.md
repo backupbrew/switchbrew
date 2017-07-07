@@ -154,6 +154,8 @@
 | 01007C2002B3C800 |                                                                           |                                        |                                                       | GoNNER                                         | JPN, USA | Update     |
 | 0100737003190000 |                                                                           |                                        |                                                       | IMPLOSION                                      | JPN, USA | Game       |
 | 0100737003190800 |                                                                           |                                        |                                                       | IMPLOSION                                      | JPN, USA | Update     |
+| 0100737003190000 |                                                                           |                                        |                                                       | IMPLOSION                                      | EUR      | Game       |
+| 0100737003190800 |                                                                           |                                        |                                                       | IMPLOSION                                      | EUR      | Update     |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
