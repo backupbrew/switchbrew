@@ -209,6 +209,8 @@ Takes two input u32s, with the second u32 located at +4 in rawdata after the fir
 
 Returns an [[#IFileSystem]].
 
+Mounts a gamcard [[Gamecard_Partition|partition]].
+
 == MountSaveData ==
 Takes an input u8 and a 0x40-byte Save-struct entry. Official user-process code is only known to use value 1 for the u8.
 

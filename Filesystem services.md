@@ -168,6 +168,8 @@ the first u32.
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
+Mounts a gamcard [partition](Gamecard%20Partition.md "wikilink").
+
 ## MountSaveData
 
 Takes an input u8 and a 0x40-byte Save-struct entry. Official
