@@ -209,6 +209,8 @@ Takes an input u8 and a 0x40-byte Save-struct entry. Official user-process code 
 
 Returns an [[#IFileSystem]].
 
+Permissions aren't checked until the specified save is successfully found.
+
 == MountSystemSaveData ==
 Takes an input u8 and a 0x40-byte Save-struct entry. Web-applet only uses value0 for the input u8.
 

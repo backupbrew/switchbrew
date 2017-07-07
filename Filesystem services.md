@@ -168,6 +168,9 @@ user-process code is only known to use value 1 for the u8.
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
+Permissions aren't checked until the specified save is successfully
+found.
+
 ## MountSystemSaveData
 
 Takes an input u8 and a 0x40-byte Save-struct entry. Web-applet only
