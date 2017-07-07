@@ -11,7 +11,7 @@
 |-
 | 3 || get_unk_key
 |-
-| 4 || GetActiveUser
+| 4 || [[#GetActiveUser]]
 |-
 | 5 || RegisterInterface_Profile
 |-
@@ -41,5 +41,10 @@
 |-
 | 999 ||
 |}
+
+== GetActiveUser ==
+Returns the 0x10-byte userID.
+
+Returns 0 with output=all-zero if an user account was never selected.
 
 [[Category:Services]]
