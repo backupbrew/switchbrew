@@ -99,7 +99,7 @@
 |-
 | 601 || QuerySaveDataTotalSize
 |-
-| 602 || VerifySaveData
+| 602 || [[#VerifySaveData]]
 |-
 | 603 || CorruptSaveDataForDebug
 |-
@@ -231,6 +231,11 @@ This command returns a session to a port implementing the [[#IEventNotifier]] in
 
 == OpenGameCardDetectionEventNotifier ==
 This command returns a session to a port implementing the [[#IEventNotifier]] interface.
+
+== VerifySaveData ==
+Takes an unknown input u64 and a type-0x6 output buffer.
+
+The input u64 high-byte must be non-zero, otherwise an [[Error_codes|error]] is returned(0xE02).
 
 = IStorage =
 This is the interface for a raw device, usually a block device.

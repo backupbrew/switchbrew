@@ -54,7 +54,7 @@
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink") |
 | 600  | SetCurrentPosixTime                                                                    |
 | 601  | QuerySaveDataTotalSize                                                                 |
-| 602  | VerifySaveData                                                                         |
+| 602  | [\#VerifySaveData](#VerifySaveData "wikilink")                                         |
 | 603  | CorruptSaveDataForDebug                                                                |
 | 604  | CreatePaddingFile                                                                      |
 | 605  | DeleteAllPaddingFiles                                                                  |
@@ -204,6 +204,13 @@ This command returns a session to a port implementing the
 
 This command returns a session to a port implementing the
 [\#IEventNotifier](#IEventNotifier "wikilink") interface.
+
+## VerifySaveData
+
+Takes an unknown input u64 and a type-0x6 output buffer.
+
+The input u64 high-byte must be non-zero, otherwise an
+[error](Error%20codes.md "wikilink") is returned(0xE02).
 
 # IStorage
 
