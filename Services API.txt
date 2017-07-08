@@ -115,7 +115,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | am: Application Manager, su: System Update
 |-
 | apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?)
-| ?
+| [[APM services]]
 |
 |-
 | arp:r, arp:w, bgtc:t, bgtc:sc
