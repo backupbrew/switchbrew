@@ -39,7 +39,9 @@ clocks for CPU, GPU, and memory.
 | 0x92220007 | Unknown profiles  |
 | 0x92220008 |                   |
 
-Unknown profiles can be applied in handheld mode.
+The lower 16 bits seem to loosely indicate relative profile performance,
+with higher values being slower. Unknown profiles can be applied in
+handheld mode (these may be ultra-low-power modes).
 
 ## apm:p
 

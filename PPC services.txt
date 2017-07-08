@@ -59,7 +59,7 @@ APM is utilized for setting system performance profiles; including clocks for CP
 |-
 | 0x92220008 || 
 |}
-Unknown profiles can be applied in handheld mode.
+The lower 16 bits seem to loosely indicate relative profile performance, with higher values being slower. Unknown profiles can be applied in handheld mode (these may be ultra-low-power modes).
 
 == apm:p ==
 
