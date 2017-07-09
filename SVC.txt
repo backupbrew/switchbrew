@@ -88,6 +88,10 @@
 |-
 | 0x2B || svcFlushDataCache ||  || 
 |-
+| 0x2C || ? ||  || This SVC was added in version [[3.0.0]].
+|-
+| 0x2D || ?||  || This SVC was added in version [[3.0.0]].
+|-
 | .... || ? || ? || ?
 |-
 | 0x2F || svcGetLastThreadInfo ||  || 
