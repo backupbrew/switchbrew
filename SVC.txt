@@ -62,7 +62,7 @@
 |-
 | 0x1E || svcGetSystemTick ||  || 
 |-
-| 0x1F || svcConnectToPort || X1=port_name_str || W0=result, W1=handle
+| 0x1F || svcConnectToNamedPort || X1=port_name_str || W0=result, W1=handle
 |-
 | 0x20 || svcSendSyncRequestLight ||  || 
 |-
