@@ -88,10 +88,6 @@
 |-
 | 0x2B || svcFlushDataCache ||  || 
 |-
-| 0x2C || svcFlushEntireInsnCache?  ||  ||
-|-
-| 0x2D || svcFlushInsnCache? ||  || 
-|-
 | .... || ? || ? || ?
 |-
 | 0x2F || svcGetLastThreadInfo ||  || 
