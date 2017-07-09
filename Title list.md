@@ -48,11 +48,6 @@
 
 The built-in system modules are FS, LOADER, LR, PM, SM, and CRYPTO.
 
-The boot2.ProdBoot sysmodule is probably for booting into
-[Recovery\_Mode](Recovery%20Mode.md "wikilink"), going by strings?(This
-process doesn't have any register-allowed-services in the
-[NPDM](NPDM.md "wikilink"))
-
 Note: unlike 3DS, Switch doesn't have a dedicated HTTP-sysmodule.
 Instead, processes using HTTP(S) just use libcurl + socket/ssl
 services.
