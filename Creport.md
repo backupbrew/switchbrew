@@ -64,10 +64,10 @@ the following(swkbd and all
 This is probably because of privacy concerns (software keyboard +
 browser could contain passwords and personal info).
 
-For all other title-ids, it generates a random AES-128 key and iv using
+For all other title-ids, it generates a random AES-128 key and CTR using
 `csrng`.
 
-It encrypts the entire event buffer with this AES key and iv. Then it
+It encrypts the entire event buffer with this AES key and CTR. Then it
 encrypts the key-iv-pair using RSA-PSS with a hardcoded pubkey and
 exponent `0x10001`.
 

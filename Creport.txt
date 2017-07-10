@@ -42,9 +42,9 @@ It does *not* add the event buffer to the report if title-id is any of the follo
 
 This is probably because of privacy concerns (software keyboard + browser could contain passwords and personal info).
 
-For all other title-ids, it generates a random AES-128 key and iv using <code>csrng</code>.
+For all other title-ids, it generates a random AES-128 key and CTR using <code>csrng</code>.
 
-It encrypts the entire event buffer with this AES key and iv.
+It encrypts the entire event buffer with this AES key and CTR.
 Then it encrypts the key-iv-pair using RSA-PSS with a hardcoded pubkey and exponent <code>0x10001</code>.
 
 These are added to the error report:
