@@ -180,6 +180,9 @@ Returns an [\#IFileSystem](#IFileSystem "wikilink").
 Permissions aren't checked until the specified save is successfully
 found.
 
+Only one process can mount a given savedata at any given time (this
+includes systemsavedata).
+
 ## MountSystemSaveData
 
 Takes an input u8 and a 0x40-byte Save-struct entry. Web-applet only
