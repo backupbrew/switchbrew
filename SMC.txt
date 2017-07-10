@@ -4,6 +4,8 @@ The secure monitor provides two top level handlers of which each provides a rang
 
 == Id 0 ==
 
+Cryptography related functions.
+
 {| class=wikitable
 ! Sub-Id || Name || In || Out
 |-
@@ -46,10 +48,12 @@ The secure monitor provides two top level handlers of which each provides a rang
 
 == Id 1 ==
 
+General and power related functions.
+
 {| class=wikitable
 ! Sub-Id || Name || In || Out
 |-
-| 0xC4000001 || || ||
+| 0xC4000001 || oyasumi || ||
 |-
 | 0x84000002 || || ||
 |-

@@ -5,6 +5,8 @@ provides a range of sub handlers.
 
 ## Id 0
 
+Cryptography related functions.
+
 | Sub-Id     | Name                     | In | Out |
 | ---------- | ------------------------ | -- | --- |
 | 0xC3000401 |                          |    |     |
@@ -28,9 +30,11 @@ provides a range of sub handlers.
 
 ## Id 1
 
+General and power related functions.
+
 | Sub-Id     | Name                     | In | Out |
 | ---------- | ------------------------ | -- | --- |
-| 0xC4000001 |                          |    |     |
+| 0xC4000001 | oyasumi                  |    |     |
 | 0x84000002 |                          |    |     |
 | 0xC4000003 |                          |    |     |
 | 0xC3000004 | (Same as Id 0 Sub-Id 2.) |    |     |
