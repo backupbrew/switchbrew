@@ -3,6 +3,17 @@
 The secure monitor provides two top level handlers of which each
 provides a range of sub handlers.
 
+Secure Monitor Calls follow the ARM SMC calling
+convention:
+
+| Bit number | Bit mask   | Description                                             |
+| ---------- | ---------- | ------------------------------------------------------- |
+| 31         | 0x80000000 | Set to 0 means Yielding Call; Set to 1 means Fast Call. |
+| 30         | 0x40000000 | Set to 0 means SMC32 convention; Set to 1 means SMC64.  |
+| 29-24      | 0x3F000000 | Service Call ranges.                                    |
+| 23-16      | 0x00FF0000 | Must be zero.                                           |
+| 15-0       | 0x0000FFFF | Function number within the range call type.             |
+
 ## Id 0
 
 Cryptography related functions.
@@ -34,9 +45,9 @@ General and power related functions.
 
 | Sub-Id     | Name                     | In | Out |
 | ---------- | ------------------------ | -- | --- |
-| 0xC4000001 | oyasumi                  |    |     |
-| 0x84000002 |                          |    |     |
-| 0xC4000003 |                          |    |     |
+| 0xC4000001 | CPU\_SUSPEND (oyasumi)   |    |     |
+| 0x84000002 | CPU\_OFF                 |    |     |
+| 0xC4000003 | CPU\_ON                  |    |     |
 | 0xC3000004 | (Same as Id 0 Sub-Id 2.) |    |     |
 | 0xC3000005 |                          |    |     |
 | 0xC3000006 |                          |    |     |
