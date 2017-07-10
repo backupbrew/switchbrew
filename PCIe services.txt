@@ -3,15 +3,22 @@
 |-
 ! Cmd || Name
 |-
-| 0 || [[#Initialize]]
+| 0 || [[#GetISession]]
+|-
+| 1 || [[#ListEndpoints]]
 |}
 
 == Initialize ==
 Takes the current process handle (0xFFFF8001).
 
-Returns an event handle and session handle to a [[#IPCIESubinterface]].
+Returns an event handle and session handle to a [[#ISession]].
 
-== IPCIESubinterface ==
+== ListEndpoints ==
+Takes a type-6 buffer.
+
+Returns a list of connected PCIe endpoint devices.
+
+== ISession ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -23,4 +30,38 @@ Returns an event handle and session handle to a [[#IPCIESubinterface]].
 | 2 || || Always returns 0x1278?
 |-
 | 3 || || Takes a type-6 buffer. Always returns 0x1278?
+|-
+| 4 || ||
+|-
+| 5 || ||
+|-
+| 6 || ||
+|-
+| 7 || ||
+|-
+| 8 || ||
+|-
+| 9 || ||
+|-
+| 10 || ||
+|-
+| 11 || ||
+|-
+| 12 || ||
+|-
+| 13 || ||
+|-
+| 14 || ||
+|-
+| 15 || ||
+|-
+| 16 || ||
+|-
+| 17 || ||
+|-
+| 18 || ||
+|-
+| 19 || ||
+|-
+| 20 || ||
 |}

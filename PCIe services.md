@@ -1,17 +1,24 @@
 # pcie
 
-| Cmd | Name                                   |
-| --- | -------------------------------------- |
-| 0   | [\#Initialize](#Initialize "wikilink") |
+| Cmd | Name                                         |
+| --- | -------------------------------------------- |
+| 0   | [\#GetISession](#GetISession "wikilink")     |
+| 1   | [\#ListEndpoints](#ListEndpoints "wikilink") |
 
 ## Initialize
 
 Takes the current process handle (0xFFFF8001).
 
 Returns an event handle and session handle to a
-[\#IPCIESubinterface](#IPCIESubinterface "wikilink").
+[\#ISession](#ISession "wikilink").
 
-## IPCIESubinterface
+## ListEndpoints
+
+Takes a type-6 buffer.
+
+Returns a list of connected PCIe endpoint devices.
+
+## ISession
 
 | Cmd | Name | Notes                                         |
 | --- | ---- | --------------------------------------------- |
@@ -19,3 +26,20 @@ Returns an event handle and session handle to a
 | 1   |      | Always returns 0x1278?                        |
 | 2   |      | Always returns 0x1278?                        |
 | 3   |      | Takes a type-6 buffer. Always returns 0x1278? |
+| 4   |      |                                               |
+| 5   |      |                                               |
+| 6   |      |                                               |
+| 7   |      |                                               |
+| 8   |      |                                               |
+| 9   |      |                                               |
+| 10  |      |                                               |
+| 11  |      |                                               |
+| 12  |      |                                               |
+| 13  |      |                                               |
+| 14  |      |                                               |
+| 15  |      |                                               |
+| 16  |      |                                               |
+| 17  |      |                                               |
+| 18  |      |                                               |
+| 19  |      |                                               |
+| 20  |      |                                               |
