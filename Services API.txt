@@ -100,7 +100,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 |-
 | acc:u0, acc:u1, acc:aa, acc:su
 | [[Account services]]
-| u1: User, su: Admin
+| u0: System, u1: User, su: Admin, aa: Baas
 |-
 | ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, (htc?), irs, irs:sys, xcd:sys
 | [[HID services]]
@@ -119,7 +119,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 |
 |-
 | arp:r, arp:w, bgtc:t, bgtc:sc
-|
+| Glue services
 | r: Reader, w: Writer
 |-
 | audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus
@@ -139,31 +139,27 @@ This service is presumably equivalent to 3DS "srv:pm".
 |
 |-
 | btdrv
-| Bluetooth Driver services?
+| Bluetooth Driver services
 | 
 |-
 | btm, btm:dbg, btm:sys
-| Battery services?
+| Battery services
 | 
 |-
 | caps:a, caps:c
 | Capture services
 | a: Album, ss: Screenshot
 |-
-| caps:sc, caps:ss, mm:u, vi:m, vi:s, vi:u
+| caps:sc, caps:ss, mm:u, vi:m, vi:s, vi:u, cec-mgr
 | [[Display services]]
-|
-|-
-| cec-mgr
-|
-|
+| 
 |-
 | csrng
 | [[Secure RNG services]]
 | 
 |-
 | dispdrv
-|
+| Nvnflinger services
 |
 |-
 | erpt:c, erpt:r
@@ -171,16 +167,16 @@ This service is presumably equivalent to 3DS "srv:pm".
 |
 |-
 | es
-| ETicket services?
+| ETicket services
 |
 |-
 | fan, psm, tc, ts
-|
+| PTM services
 |
 |-
 | fatal:u, fatal:p
 | Fatal Error services
-| u: User, p: Privileged?
+| u: User, p: Privileged
 |-
 | friend:u, friend:v, friend:m, friend:s, friend:a
 | Friend services
@@ -227,7 +223,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | shp: eShop
 |-
 | npns:u, npns:s
-| ?
+| NPNS services
 |
 |-
 | nvdrv:a, nvdrv:s, nvdrv:t, nvdrv, nvdrvdbg, nvgem:c, nvgem:cd, nvmemp
@@ -247,7 +243,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 |
 |-
 | psc:c, psc:m
-| ?
+| PSC services
 | 
 |-
 | set, set:fd, set:cal, set:sys
