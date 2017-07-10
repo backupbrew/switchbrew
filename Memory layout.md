@@ -81,5 +81,5 @@ The table for TTBR0 only contains the following:
     size; if(endaddr \>= 0x80000001){...}"
       - The size is loaded from: "(u32 \*0x70019050 & 0x3fff) \<\< 20;"
       - The value written to the MMU-table descriptor is: "physaddr |
-        val | 0x709;". val is 1\<\<52 when "size\>\>34" is non-zero,
-        otherwise val=0.
+        val | 0x709;". val is 1\<\<52 when "size\>\>34" is non-zero and
+        when "if((physaddr & 0x3c0000000) == 0)", otherwise val=0.
