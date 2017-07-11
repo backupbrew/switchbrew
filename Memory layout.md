@@ -169,4 +169,15 @@ each one is 0x1000-bytes.
 | 0xFFFFFFF7FFDFB000 | 0x50041000 |
 | 0xFFFFFFF7FFDFD000 | 0x50042000 |
 
-The rest are are mapped to core-specific physaddrs: ...
+The rest are are mapped to core-specific physaddrs, each one is
+0x1000-bytes. Descriptor ORR-value =
+0x6000000000070B.
+
+| Vmem               | Physmem                                            |
+| ------------------ | -------------------------------------------------- |
+| 0xFFFFFFF7FFDF7000 | \<physaddr from vmem 0xFFFFFFF7FFDF6000\> + 0x1000 |
+| 0xFFFFFFF7FFDF3000 | \<physaddr from vmem 0xFFFFFFF7FFDF2000\> + 0x1000 |
+| 0xFFFFFFF7FFDF6000 | 0x800XX000                                         |
+| 0xFFFFFFF7FFDF2000 | 0x800XX000                                         |
+| 0xFFFFFFF7FFDFF000 | 0x800XX000                                         |
+| 0xFFFFFFF7FFDF9000 | 0x800XX000                                         |
