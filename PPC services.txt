@@ -77,7 +77,7 @@ Internally known as ISystemManager
 |}
 Clocks are all in MHz.
 
-Configurations 0x10001 and 0x10002 are only available in boost mode.
+Configurations 0x10001 and 0x20000 are only available while docked. Configurations 0x10002 and 0x20002 do not seem to be available at all (dependent on apm settings?).
 
 
 [[Category:Services]]
