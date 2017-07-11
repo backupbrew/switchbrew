@@ -25,12 +25,12 @@
 
 ### Keyblob
 
-| Offset | Size  | Description               |
-| ------ | ----- | ------------------------- |
-| 0x0    | 0x10  | Keyblob AES-CMAC          |
-| 0x10   | 0x10  | Keyblob AES CTR           |
-| 0x20   | 0x90  | Keyblob encrypted payload |
-| 0xB0   | 0x150 | Unused, all-zero.         |
+| Offset | Size  | Description                                                                                                                                    |
+| ------ | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x10  | Keyblob AES-CMAC over the remaining 0xA0-bytes (Checked with a safe memcmp which won't abort early, calls the general panic() func on failure) |
+| 0x10   | 0x10  | Keyblob AES CTR                                                                                                                                |
+| 0x20   | 0x90  | Keyblob encrypted payload                                                                                                                      |
+| 0xB0   | 0x150 | Unused, all-zero.                                                                                                                              |
 
 The data at 0x180000 is an array of 0x200-byte entries, with a total of
 32 entries. Therefore, there's 32 different keyblobs are stored here.
@@ -41,8 +41,19 @@ section in BCTs(BCT+0x450), which is what gets used during system boot.
 
 Which keyblob is loaded from here during install is presumably somewhere
 in BCT? \<v3.0 use index0, v3.0 uses index1. Hence, the installed
-keyblob was changed with
-v3.0.
+keyblob was changed with v3.0.
+
+#### panic
+
+The ARM7 panic() function does the following:
+
+  - Clears memory.
+  - ...
+  - Writes 0x1 to FUSE\_DIS\_PGM. From nvdia source: "check that fuse
+    options write access hasn't been disabled".
+  - ...
+  - Executes: while(1)\*((u32\*)0x60007004) =
+0x5\<\<28;
 
 ## User Partitions
 
