@@ -43,6 +43,11 @@ Which keyblob is loaded from here during install is presumably somewhere
 in BCT? \<v3.0 use index0, v3.0 uses index1. Hence, the installed
 keyblob was changed with v3.0.
 
+BCT Offset 0x2330 is probably the field controlling this?(0x245C is a
+copy of this field?) There's at least 3 versions of package1: v1.0,
+v2.0, and v3.0, BCT was updated for all of these. With v1.0 and v2.0
+these two fields are the same(0x1), however with v3.0 it's 0x2.
+
 #### panic
 
 The ARM7 panic() function does the following:
