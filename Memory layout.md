@@ -121,4 +121,11 @@ TTBR1:
       - Initializes level3 pagetable descriptor for vmem
         0xFFFFFFF7FF600000. physaddr = tablebase + (0x5\<\<12).
       - Initializes level3 pagetable descriptor for vmem
-        0xFFFFFFF7FF800000. physaddr = tablebase + (0x6\<\<12).
+        0xFFFFFFF7FF800000. physaddr = tablebase +
+(0x6\<\<12).
+
+| Vmem                                               | Physmem    | Size    | Descriptor ORR-value | Permissions | Description      |
+| -------------------------------------------------- | ---------- | ------- | -------------------- | ----------- | ---------------- |
+| 0xFFFFFFF7FFC00000..0xFFFFFFF7FFC62000 (inclusive) | 0x800A0000 | 0x63000 | 0x78B                |             | Kernel .text     |
+| 0xFFFFFFF7FFC63000..0xFFFFFFF7FFC65000 (inclusive) | 0x80103000 | 0x3000  | 0x6000000000078B     |             | Kernel .rodata   |
+| 0xFFFFFFF7FFC66000..0xFFFFFFF7FFC6E000 (inclusive) | 0x80106000 | 0x9000  | 0x6000000000070B     |             | Kernel .data/... |
