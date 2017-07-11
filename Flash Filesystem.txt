@@ -71,7 +71,7 @@
 |-
 | 0x10
 | 0x10
-| Keyblob AES IV
+| Keyblob AES CTR
 |-
 | 0x20
 | 0x90

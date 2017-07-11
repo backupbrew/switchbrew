@@ -28,7 +28,7 @@
 | Offset | Size  | Description               |
 | ------ | ----- | ------------------------- |
 | 0x0    | 0x10  | Keyblob AES-CMAC          |
-| 0x10   | 0x10  | Keyblob AES IV            |
+| 0x10   | 0x10  | Keyblob AES CTR           |
 | 0x20   | 0x90  | Keyblob encrypted payload |
 | 0xB0   | 0x150 | Unused, all-zero.         |
 
