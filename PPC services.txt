@@ -49,31 +49,35 @@ Internally known as ISystemManager
 === PerformanceConfiguration ===
 {| class="wikitable" border="1"
 |-
-! Value || Name
+! Value || CPU clock || GPU clock || Memory clock
 |-
-| 0x10000 || Docked profiles
+| 0x00010000 || 1020 || 384 || 1600
 |-
-| 0x10001 || 
+| 0x00010001 || 1020 || 768 || 1600
 |-
-| 0x10002 || 
+| 0x00010002 || 1224 || 691.2 || 1600
 |-
-| 0x20000 || Handheld profiles
+| 0x00020000 || 1020 || 230.4 || 1600
 |-
-| 0x20001 || 
+| 0x00020001 || 1020 || 307.2 || 1600
 |-
-| 0x20002 || 
+| 0x00020002 || 1224|| 230.4 || 1600
 |-
-| 0x20003 || 
+| 0x00020003 || 1020 || 307 || 1331.2
 |-
-| 0x20004 || 
+| 0x00020004 || 1020 || 384 || 1331.2
 |-
-| 0x20005 || 
+| 0x00020005 || 1020 || 307.2 || 1065.6
 |-
-| 0x20006 || 
+| 0x00020006 || 1020 || 384 || 1065.6
 |-
-| 0x92220007 || Unknown profiles
+| 0x92220007 || 1020  || 460.8 || 1600
 |-
-| 0x92220008 || 
+| 0x92220008 || 1020 || 460.8 || 1331.2
 |}
+Clocks are all in MHz.
+
+Configurations 0x10001 and 0x10002 are only available in boost mode.
+
 
 [[Category:Services]]
