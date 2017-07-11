@@ -70,6 +70,8 @@ software.
 ` Basically, the table is accessed as: ((u64*)tablebase)[<IA[y:30]>], where y = (37-T*SZ)+26. That is, starting at bit "y" ending(inclusive) at bit30. For TTBR0*_EL1, y = 32, while for TTBR1_EL1 y = 35.`  
 ` Hence, for TTBR0, index=((vaddr>>30) & 0x7), and for TTBR1, index=((vaddr>>30) & 0x3f).`
 
+As of [2.0.0](2.0.0.md "wikilink") KASLR is not used.
+
 ## [2.0.0](2.0.0.md "wikilink")
 
 "Vector Base Address Register (EL1)" = 0xfffffff7ffc50800.
