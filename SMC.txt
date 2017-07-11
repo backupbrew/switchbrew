@@ -24,9 +24,9 @@ Cryptography related functions.
 {| class=wikitable
 ! Sub-Id || Name || In || Out
 |-
-| 0xC3000401 || || ||
+| 0xC3000401 || SetConfig || ||
 |-
-| 0xC3000002 || (Same as Id 1 Sub-Id 4.) || ||
+| 0xC3000002 || GetConfig (Same as Id 1 Sub-Id 4.) || ||
 |-
 | 0xC3000003 || || ||
 |-
@@ -36,9 +36,9 @@ Cryptography related functions.
 |-
 | 0xC3000006 || || ||
 |-
-| 0xC3000007 || || ||
+| 0xC3000007 || Keygen7 || ||
 |-
-| 0xC3000008 || || ||
+| 0xC3000008 || SetKeyslotFromXY || ||
 |-
 | 0xC3000009 || || ||
 |-
@@ -56,9 +56,9 @@ Cryptography related functions.
 |-
 | 0xC3000610 || || ||
 |-
-| 0xC3000011 || || ||
+| 0xC3000011 || SetKeyslotFromX || ||
 |-
-| 0xC3000012 || || ||
+| 0xC3000012 || Keygen12 || ||
 |}
 
 == Id 1 ==
@@ -74,13 +74,13 @@ General and power related functions.
 |-
 | 0xC4000003 || CPU_ON || ||
 |-
-| 0xC3000004 || (Same as Id 0 Sub-Id 2.) || ||
+| 0xC3000004 || GetConfig (Same as Id 0 Sub-Id 2.) || ||
 |-
 | 0xC3000005 || || ||
 |-
-| 0xC3000006 || || ||
+| 0xC3000006 || Panic || ||
 |-
 | 0xC3000007 || || ||
 |-
-| 0xC3000008 || || ||
+| 0xC3000008 || ReadWriteRegister || ||
 |}
