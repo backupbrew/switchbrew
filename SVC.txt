@@ -314,6 +314,8 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 | Process || 15 || 0 || Map region size.
 |-
 | Process || 18 || 0 || Title-id, introduced with [[3.0.0]]
+|-
+| ? || 0xF0000002 || 0 || Unknown. Uses the input handle.
 |}
 
 == svcReadWriteRegister ==
