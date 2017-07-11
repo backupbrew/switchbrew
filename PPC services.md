@@ -8,7 +8,19 @@ clocks for CPU, GPU, and memory.
 | 0   | [GetISession](#ISession "wikilink") |       |
 | 1   | GetPerformanceMode                  |       |
 
-### ISession
+## apm:p
+
+| Cmd | Name                                | Notes                                       |
+| --- | ----------------------------------- | ------------------------------------------- |
+| 0   | [GetISession](#ISession "wikilink") | Same as apm ISession - but more privileged? |
+| 1   | ?                                   |                                             |
+
+## apm:sys
+
+Internally known as
+ISystemManager
+
+## ISession
 
 | Cmd | Name                        | Notes                                                   |
 | --- | --------------------------- | ------------------------------------------------------- |
@@ -38,13 +50,5 @@ clocks for CPU, GPU, and memory.
 | 0x20006    |                   |
 | 0x92220007 | Unknown profiles  |
 | 0x92220008 |                   |
-
-The lower 16 bits seem to loosely indicate relative profile performance,
-with higher values being slower. Unknown profiles can be applied in
-handheld mode (these may be ultra-low-power modes).
-
-## apm:p
-
-## apm:sys
 
 [Category:Services](Category:Services "wikilink")

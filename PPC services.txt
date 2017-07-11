@@ -10,7 +10,23 @@ APM is utilized for setting system performance profiles; including clocks for CP
 | 1 || GetPerformanceMode || 
 |}
 
-=== ISession ===
+== apm:p ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || [[#ISession|GetISession]] || Same as apm ISession - but more privileged?
+|-
+| 1 || ? || 
+|}
+
+
+== apm:sys ==
+Internally known as ISystemManager
+
+
+
+== ISession ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -59,11 +75,5 @@ APM is utilized for setting system performance profiles; including clocks for CP
 |-
 | 0x92220008 || 
 |}
-The lower 16 bits seem to loosely indicate relative profile performance, with higher values being slower. Unknown profiles can be applied in handheld mode (these may be ultra-low-power modes).
-
-== apm:p ==
-
-
-== apm:sys ==
 
 [[Category:Services]]
