@@ -96,3 +96,29 @@ TTBR1:
       - "endaddr = 0x3fffffff + (<size from above> |
         0xfffffff800000000); enaddr = (endaddr & 0xffffffffc0000000)-1;
         if(endaddr \>= 0xfffffff800000001){<map mem>}"
+
+<!-- end list -->
+
+  - Initializes level2 pagetable descriptor for vmem 0xFFFFFFF7C0000000.
+    descriptor = 0x3 | physaddr. physaddr is core-specific.
+  - Initializes level3 pagetable descriptor for vmem 0xFFFFFFF7FFC00000.
+    descriptor = 0x3 | physaddr. physaddr is core-specific.
+  - The content of the pagetable for the following level3 mmutables are
+    not initialized in the main mmutable-init func. descriptor =
+    0x8007c003(0x3 | <physaddr tablebase>). tablebase=0x8007c000.
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FEE00000. physaddr = tablebase + (0x1\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF000000. physaddr = tablebase + (0x2\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF200000. physaddr = tablebase + (0x3\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FFA00000. physaddr = tablebase + (0x7\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FEC00000. physaddr = tablebase.
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF400000. physaddr = tablebase + (0x4\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF600000. physaddr = tablebase + (0x5\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF800000. physaddr = tablebase + (0x6\<\<12).
