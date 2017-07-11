@@ -55,6 +55,19 @@ Clocks are all in MHz.
 
 Configurations 0x10001 and 0x20000 are only available while docked.
 Configurations 0x10002 and 0x20002 do not seem to be available at all
-(dependent on apm settings?).
+(dependent on apm
+settings?).
+
+## Settings
+
+| Key                                          | Size   | Notes                                                                                                             |
+| -------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------- |
+| battery\_draining\_enabled                   | 1      | ?                                                                                                                 |
+| performance\_mode\_policy                    | strlen | "auto": use boost mode when docked. "normal": never use boost mode. "boost": always use boost mode (devkit only). |
+| sdev\_cpu\_overclock\_enabled                | 1      | Not used as of 3.0. May have been used to allow access to 1224MHz CPU mode?                                       |
+| sdev\_throttling\_additional\_delay\_us      | 4      | ?                                                                                                                 |
+| sdev\_throttling\_additional\_delay\_enabled | 1      | ?                                                                                                                 |
+| throttling\_for\_smpd\_enabled               | 1      | Not used as of 3.0.                                                                                               |
+| throttling\_for\_undock\_enabled             | 1      | Not used as of 3.0.                                                                                               |
 
 [Category:Services](Category:Services "wikilink")
