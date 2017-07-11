@@ -22,20 +22,20 @@ Cryptography related functions.
 | ---------- | ---------------------------------- | -- | --- |
 | 0xC3000401 | SetConfig                          |    |     |
 | 0xC3000002 | GetConfig (Same as Id 1 Sub-Id 4.) |    |     |
-| 0xC3000003 |                                    |    |     |
-| 0xC3000404 |                                    |    |     |
-| 0xC3000E05 |                                    |    |     |
-| 0xC3000006 |                                    |    |     |
+| 0xC3000003 | CheckStatus\_5\_9\_F\_10           |    |     |
+| 0xC3000404 | GetResult\_5\_9\_F\_10             |    |     |
+| 0xC3000E05 | ExpMod                             |    |     |
+| 0xC3000006 | PrngX931 (Same as Id 1 Sub-Id 5.)  |    |     |
 | 0xC3000007 | Keygen7                            |    |     |
 | 0xC3000008 | SetKeyslotFromXY                   |    |     |
-| 0xC3000009 |                                    |    |     |
-| 0xC300000A |                                    |    |     |
-| 0xC300040B |                                    |    |     |
-| 0xC300100C |                                    |    |     |
-| 0xC300100D |                                    |    |     |
-| 0xC300100E |                                    |    |     |
-| 0xC300060F |                                    |    |     |
-| 0xC3000610 |                                    |    |     |
+| 0xC3000009 | SymmetricCrypto                    |    |     |
+| 0xC300000A | KeygenA                            |    |     |
+| 0xC300040B | CMAC                               |    |     |
+| 0xC300100C | ImportParamsFor10                  |    |     |
+| 0xC300100D | DecryptExpModParams                |    |     |
+| 0xC300100E | ImportParamsForF                   |    |     |
+| 0xC300060F | ExpMod                             |    |     |
+| 0xC3000610 | ExpMod                             |    |     |
 | 0xC3000011 | SetKeyslotFromX                    |    |     |
 | 0xC3000012 | Keygen12                           |    |     |
 
@@ -49,7 +49,7 @@ General and power related functions.
 | 0x84000002 | CPU\_OFF                           |    |     |
 | 0xC4000003 | CPU\_ON                            |    |     |
 | 0xC3000004 | GetConfig (Same as Id 0 Sub-Id 2.) |    |     |
-| 0xC3000005 |                                    |    |     |
+| 0xC3000005 | PrngX931 (Same as Id 0 Sub-Id 6.)  |    |     |
 | 0xC3000006 | Panic                              |    |     |
 | 0xC3000007 |                                    |    |     |
 | 0xC3000008 | ReadWriteRegister                  |    |     |
