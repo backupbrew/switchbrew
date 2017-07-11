@@ -5,16 +5,16 @@
 **Boot Partition 0 (0 of
 1)**
 
-| Offset   | Size | Description                                                                                                                |
-| -------- | ---- | -------------------------------------------------------------------------------------------------------------------------- |
-| 0x000000 |      | Title 0100000000000819 BCT                                                                                                 |
-| 0x004000 |      | Title 010000000000081A BCT                                                                                                 |
-| 0x008000 |      | Title 0100000000000819 BCT                                                                                                 |
-| 0x00C000 |      | Title 010000000000081A BCT                                                                                                 |
-| 0x100000 |      | Title 0100000000000819 "package1"                                                                                          |
-| 0x140000 |      | Title 0100000000000819 "package1" (Backup)                                                                                 |
-| 0x180000 |      | Keyblob area, the first 0xB0 is identical to the console-unique "customer data" section in BCTs                            |
-| 0x184000 |      | Unknown, 0x20-bytes hash (updated when bcpkg-2-1 updates) + one u64? (may be incremented on bcpkg update) All zero on 1.0. |
+| Offset   | Size   | Description                                                                                                                |
+| -------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
+| 0x000000 |        | Title 0100000000000819 BCT                                                                                                 |
+| 0x004000 |        | Title 010000000000081A BCT                                                                                                 |
+| 0x008000 |        | Title 0100000000000819 BCT                                                                                                 |
+| 0x00C000 |        | Title 010000000000081A BCT                                                                                                 |
+| 0x100000 |        | Title 0100000000000819 "package1"                                                                                          |
+| 0x140000 |        | Title 0100000000000819 "package1" (Backup)                                                                                 |
+| 0x180000 | 0x4000 | Keyblob area                                                                                                               |
+| 0x184000 |        | Unknown, 0x20-bytes hash (updated when bcpkg-2-1 updates) + one u64? (may be incremented on bcpkg update) All zero on 1.0. |
 
 **Boot Partition 1 (1 of 1)**
 
@@ -22,6 +22,25 @@
 | -------- | ---- | ------------------------------------------ |
 | 0x000000 |      | Title 010000000000081A "package1"          |
 | 0x040000 |      | Title 010000000000081A "package1" (Backup) |
+
+### Keyblob
+
+| Offset | Size  | Description       |
+| ------ | ----- | ----------------- |
+| 0x0    | 0xB0  | Actual keyblob    |
+| 0xB0   | 0x150 | Unused, all-zero. |
+
+The data at 0x180000 is an array of 0x200-byte entries, with a total of
+32 entries. Therefore, there's 32 different keyblobs are stored here.
+The raw data for each one is unique compared to the others.
+
+The 0xB0-byte keyblob is installed to the console-unique "customer data"
+section in BCTs(BCT+0x450), which is what gets used during system boot.
+
+Which keyblob is loaded from here during install is presumably somewhere
+in BCT? \<v3.0 use index0, v3.0 uses index1. Hence, the installed
+keyblob was changed with
+v3.0.
 
 ## User Partitions
 
