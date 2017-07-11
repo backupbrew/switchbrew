@@ -15,9 +15,9 @@ APM is utilized for setting system performance profiles; including clocks for CP
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetPerformanceConfiguration || Takes u32 PerformanceMode
+| 0 || SetPerformanceConfiguration || Takes u32 PerformanceMode
 |-
-| 1 || SetPerformanceConfiguration || Takes u32 PerformanceMode, u32 PerformanceConfiguration 
+| 1 || GetPerformanceConfiguration  || Takes u32 PerformanceMode, u32 PerformanceConfiguration 
 |}
 
 === PerformanceMode ===

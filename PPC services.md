@@ -12,8 +12,8 @@ clocks for CPU, GPU, and memory.
 
 | Cmd | Name                        | Notes                                                   |
 | --- | --------------------------- | ------------------------------------------------------- |
-| 0   | GetPerformanceConfiguration | Takes u32 PerformanceMode                               |
-| 1   | SetPerformanceConfiguration | Takes u32 PerformanceMode, u32 PerformanceConfiguration |
+| 0   | SetPerformanceConfiguration | Takes u32 PerformanceMode                               |
+| 1   | GetPerformanceConfiguration | Takes u32 PerformanceMode, u32 PerformanceConfiguration |
 
 ### PerformanceMode
 
