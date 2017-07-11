@@ -25,10 +25,12 @@
 
 ### Keyblob
 
-| Offset | Size  | Description       |
-| ------ | ----- | ----------------- |
-| 0x0    | 0xB0  | Actual keyblob    |
-| 0xB0   | 0x150 | Unused, all-zero. |
+| Offset | Size  | Description               |
+| ------ | ----- | ------------------------- |
+| 0x0    | 0x10  | Keyblob AES-CMAC          |
+| 0x10   | 0x10  | Keyblob AES IV            |
+| 0x20   | 0x90  | Keyblob encrypted payload |
+| 0xB0   | 0x150 | Unused, all-zero.         |
 
 The data at 0x180000 is an array of 0x200-byte entries, with a total of
 32 entries. Therefore, there's 32 different keyblobs are stored here.
