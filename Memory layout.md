@@ -155,3 +155,18 @@ each one is 0x1000-bytes.
 | 0xFFFFFFF7FFDDC000 | 0x80071000 |
 | 0xFFFFFFF7FFDE6000 | 0x80072000 |
 | 0xFFFFFFF7FFDF0000 | 0x80073000 |
+
+The following uses descriptor ORR-value 0x60000000000607, the size of
+each one is 0x1000-bytes.
+
+| Vmem               | Physmem    |
+| ------------------ | ---------- |
+| 0xFFFFFFF7FFDC6000 | 0x70019000 |
+| 0xFFFFFFF7FFDC4000 | 0x7001C000 |
+| 0xFFFFFFF7FFDC2000 | 0x7001D000 |
+| 0xFFFFFFF7FFDC0000 | 0x60006000 |
+| 0xFFFFFFF7FFDC8000 | 0x70006000 |
+| 0xFFFFFFF7FFDFB000 | 0x50041000 |
+| 0xFFFFFFF7FFDFD000 | 0x50042000 |
+
+The rest are are mapped to core-specific physaddrs: ...
