@@ -327,53 +327,53 @@ rw_mask is 0 for reading and -1 for writing.
 {| class=wikitable
 ! Address || Description
 |-
-| 0x700192E8 || 
+| 0x700192E8 || MC_LATENCY_ALLOWANCE_DC_0_0 (Latency allowance settings for DC clients)
 |-
-| 0x700192EC || 
+| 0x700192EC || MC_LATENCY_ALLOWANCE_DC_1_0 (Latency allowance settings for DC clients)
 |-
-| 0x700192F0 || 
+| 0x700192F0 || MC_LATENCY_ALLOWANCE_DC_2_0 (Latency allowance settings for DC clients)
 |-
-| 0x700192F4 || 
+| 0x700192F4 || MC_LATENCY_ALLOWANCE_DCB_0_0 (Latency allowance settings for DCB clients)
 |-
-| 0x700192F8 || 
+| 0x700192F8 || MC_LATENCY_ALLOWANCE_DCB_1_0 (Latency allowance settings for DCB clients) 
 |-
-| 0x7001941C || 
+| 0x7001941C || MC_DIS_PTSA_RATE_0 (DDA rate for dis PTSA)
 |-
-| 0x70019420 || 
+| 0x70019420 || MC_DIS_PTSA_MIN_0 (DDA minimum value for direct client dis PTSA.)
 |-
-| 0x70019424 || 
+| 0x70019424 || MC_DIS_PTSA_MAX_0 (DDA maximum value for direct client dis PTSA.)
 |-
-| 0x70019428 || 
+| 0x70019428 || MC_DISB_PTSA_RATE_0 (DDA rate for disb PTSA)
 |-
-| 0x7001942C ||
+| 0x7001942C || MC_DISB_PTSA_MIN_0 (DDA minimum value for direct client disb PTSA)
 |-
-| 0x70019430 ||
+| 0x70019430 || MC_DISB_PTSA_MAX_0 (DDA maximum value for direct client disb PTSA)
 |-
-| 0x7001944C ||
+| 0x7001944C || MC_MLL_MPCORER_PTSA_RATE_0 (DDA rate for mll_mpcorer PTSA)
 |-
-| 0x7001947C ||
+| 0x7001947C || MC_RING1_PTSA_RATE_0 (DDA rate for ring1 PTSA)
 |-
-| 0x70019480 ||
+| 0x70019480 || MC_RING1_PTSA_MIN_0 (DDA minimum value for direct client ring1 PTSA)
 |-
-| 0x70019484 ||
+| 0x70019484 || MC_RING1_PTSA_MAX_0 (DDA maximum value for direct client ring1 PTSA)
 |-
-| 0x7001950C ||
+| 0x7001950C || MC_FTOP_PTSA_RATE_0 (DDA rate for ftop PTSA)
 |-
-| 0x70019670 ||
+| 0x70019670 || MC_SEC_CARVEOUT_BOM_0 (Baseaddress for the SEC carveout address space.)
 |-
-| 0x70019674 ||
+| 0x70019674 || MC_SEC_CARVEOUT_SIZE_MB_0 (Size in MB for the SEC carveout region) 
 |-
-| 0x70019690 ||
+| 0x70019690 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0A_0 (Scaled Latency Allowance settings for DISPLAY0A) 
 |-
-| 0x70019694 ||
+| 0x70019694 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0AB_0 (Scaled Latency Allowance settings for DISPLAY0AB)
 |-
-| 0x70019698 ||
+| 0x70019698 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0B_0 (Scaled Latency Allowance settings for DISPLAY0B)
 |-
-| 0x7001969C ||
+| 0x7001969C || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0BB_0 (Scaled Latency Allowance settings for DISPLAY0BB)
 |-
-| 0x700196A0 ||
+| 0x700196A0 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0C_0 (Scaled Latency Allowance settings for DISPLAY0C)
 |-
-| 0x700196A4 ||
+| 0x700196A4 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0CB_0 (Scaled Latency Allowance settings for DISPLAY0CB)
 |-
 | 0x70019C5C ||
 |}
