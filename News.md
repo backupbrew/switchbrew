@@ -18,8 +18,7 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 ### News
 
-\<\!-- On June 9th,hackers discovered a kernel\! (Major update off the
-discussion: Hacking and Homebrew)
+</noinclude>
 
   - **19 June 17** Nintendo released system update
     [3.0.0](3.0.0.md "wikilink").
