@@ -129,7 +129,7 @@ The ARM7 panic() function does the following:
 |  0x00800000
 |  0x00800000
 |  21
-|  For all these packages, data starts at offset 0x4000 and is not console-unique. This is installed from "package2" in firmware package A (0100000000000819) by default. With the exFAT update installed, this is switched to firmware package C (010000000000081B).
+|  For all these packages, data starts at offset 0x4000 and is not console-unique. This is installed from "package2" in firmware package A (0100000000000819) by default. With the exFAT update installed, this is switched to firmware package C (010000000000081B). The data stored here matches the raw /package2 file stored in the 81[9AB] data archives -- there is no additional encryption.
 |-
 |  BCPKG2-2-Normal-Sub
 |  0x01000000
