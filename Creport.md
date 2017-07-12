@@ -36,9 +36,11 @@ Then depending on exception type it stores:
   - `? (9)`: Always (u64) 0.
 
 For all exceptions, it then adds more data from
-svcGetDebugThreadParam/svcGetDebugThreadContext. This reads the flag
-from `ATTACH_PROCESS` to determine whether to read 0x10 bytes using
-svcReadDebugProcessMemory.
+svcGetDebugThreadParam/svcGetDebugThreadContext. "Usually" (when is this
+not the case?), this data includes a size u64 for the register dump
+region + the values of all general purpose registers+SP and PC, as well
+as 0x80 of stack. This reads the flag from `ATTACH_PROCESS` to determine
+whether to read 0x10 bytes using svcReadDebugProcessMemory.
 
 All other events (`USER_BREAK`, etc) don't store any extra data except
 type and address.
