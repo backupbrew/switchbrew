@@ -203,7 +203,7 @@ it will return
 | Process     | 14         | 0                     | Map region base. Randomized.                                                                                                                                       |
 | Process     | 15         | 0                     | Map region size.                                                                                                                                                   |
 | Process     | 18         | 0                     | Title-id, introduced with [3.0.0](3.0.0.md "wikilink")                                                                                                             |
-| ?           | 0xF0000002 | 0                     | Unknown. Uses the input handle.                                                                                                                                    |
+| ?           | 0xF0000002 | 0                     | Unknown. Uses the input handle. Returns a tick-count?                                                                                                              |
 
 ## svcReadWriteRegister
 
