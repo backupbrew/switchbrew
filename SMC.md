@@ -26,7 +26,7 @@ Cryptography related functions.
 | 0xC3000404 | GetResult\_5\_9\_F\_10             |    |     |
 | 0xC3000E05 | ExpMod                             |    |     |
 | 0xC3000006 | PrngX931 (Same as Id 1 Sub-Id 5.)  |    |     |
-| 0xC3000007 | Keygen7                            |    |     |
+| 0xC3000007 | KeygenAndSealX                     |    |     |
 | 0xC3000008 | SetKeyslotFromXY                   |    |     |
 | 0xC3000009 | SymmetricCrypto                    |    |     |
 | 0xC300000A | KeygenA                            |    |     |
@@ -36,8 +36,8 @@ Cryptography related functions.
 | 0xC300100E | ImportParamsForF                   |    |     |
 | 0xC300060F | ExpMod                             |    |     |
 | 0xC3000610 | ExpMod                             |    |     |
-| 0xC3000011 | SetKeyslotFromX                    |    |     |
-| 0xC3000012 | Keygen12                           |    |     |
+| 0xC3000011 | SetKeyslotFromZ                    |    |     |
+| 0xC3000012 | KeygenAndSealZ                     |    |     |
 
 ## Id 1
 
