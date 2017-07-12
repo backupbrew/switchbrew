@@ -89,6 +89,10 @@ this applet is the above conntest URL.
 
 This is only available starting with [2.0.0](2.0.0.md "wikilink").
 
+Prior to version [3.0.0](3.0.0.md "wikilink"), this applet was launched
+when attempting a system update from recovery mode if needed. This was
+changed to display a "This feature is not available." popup instead.
+
 ## Whitelisted Applets
 
 The v2.1 main-codebin page-aligned .text size is 0x1000-bytes larger
