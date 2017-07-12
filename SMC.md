@@ -3,16 +3,21 @@
 The secure monitor provides two top level handlers of which each
 provides a range of sub handlers.
 
-Secure Monitor Calls follow the ARM SMC calling
-convention:
+Secure Monitor Calls follow the ARM SMC calling convention up to a small
+change:
 
-| Bit number | Bit mask   | Description                                             |
-| ---------- | ---------- | ------------------------------------------------------- |
-| 31         | 0x80000000 | Set to 0 means Yielding Call; Set to 1 means Fast Call. |
-| 30         | 0x40000000 | Set to 0 means SMC32 convention; Set to 1 means SMC64.  |
-| 29-24      | 0x3F000000 | Service Call ranges.                                    |
-| 23-16      | 0x00FF0000 | Must be zero.                                           |
-| 15-0       | 0x0000FFFF | Function number within the range call type.             |
+| Bit number | Bit mask   | Description                                                           |
+| ---------- | ---------- | --------------------------------------------------------------------- |
+| 31         | 0x80000000 | Set to 0 means Yielding Call; Set to 1 means Fast Call.               |
+| 30         | 0x40000000 | Set to 0 means SMC32 convention; Set to 1 means SMC64.                |
+| 29-24      | 0x3F000000 | Service Call ranges.                                                  |
+| 23-16      | 0x00FF0000 | Must be zero.                                                         |
+| 15-8       | 0x0000FF00 | Argument type. This is different from the ARM SMC calling convention. |
+| 7-0        | 0x000000FF | Function number within the range call type.                           |
+
+If bit *n* is set in the argument type then parameter X*n* is treated as
+a pointer and the kernel will setup address translation for it in
+[svcCallSecureMonitor](SVC#svcCallSecureMonitor.md##svcCallSecureMonitor "wikilink").
 
 ## Id 0
 
