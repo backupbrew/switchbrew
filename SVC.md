@@ -214,33 +214,33 @@ writing.
 
 ### Registers
 
-| Address    | Description                                                                                      |
-| ---------- | ------------------------------------------------------------------------------------------------ |
-| 0x700192E8 | MC\_LATENCY\_ALLOWANCE\_DC\_0\_0 (Latency allowance settings for DC clients)                     |
-| 0x700192EC | MC\_LATENCY\_ALLOWANCE\_DC\_1\_0 (Latency allowance settings for DC clients)                     |
-| 0x700192F0 | MC\_LATENCY\_ALLOWANCE\_DC\_2\_0 (Latency allowance settings for DC clients)                     |
-| 0x700192F4 | MC\_LATENCY\_ALLOWANCE\_DCB\_0\_0 (Latency allowance settings for DCB clients)                   |
-| 0x700192F8 | MC\_LATENCY\_ALLOWANCE\_DCB\_1\_0 (Latency allowance settings for DCB clients)                   |
-| 0x7001941C | MC\_DIS\_PTSA\_RATE\_0 (DDA rate for dis PTSA)                                                   |
-| 0x70019420 | MC\_DIS\_PTSA\_MIN\_0 (DDA minimum value for direct client dis PTSA.)                            |
-| 0x70019424 | MC\_DIS\_PTSA\_MAX\_0 (DDA maximum value for direct client dis PTSA.)                            |
-| 0x70019428 | MC\_DISB\_PTSA\_RATE\_0 (DDA rate for disb PTSA)                                                 |
-| 0x7001942C | MC\_DISB\_PTSA\_MIN\_0 (DDA minimum value for direct client disb PTSA)                           |
-| 0x70019430 | MC\_DISB\_PTSA\_MAX\_0 (DDA maximum value for direct client disb PTSA)                           |
-| 0x7001944C | MC\_MLL\_MPCORER\_PTSA\_RATE\_0 (DDA rate for mll\_mpcorer PTSA)                                 |
-| 0x7001947C | MC\_RING1\_PTSA\_RATE\_0 (DDA rate for ring1 PTSA)                                               |
-| 0x70019480 | MC\_RING1\_PTSA\_MIN\_0 (DDA minimum value for direct client ring1 PTSA)                         |
-| 0x70019484 | MC\_RING1\_PTSA\_MAX\_0 (DDA maximum value for direct client ring1 PTSA)                         |
-| 0x7001950C | MC\_FTOP\_PTSA\_RATE\_0 (DDA rate for ftop PTSA)                                                 |
-| 0x70019670 | MC\_SEC\_CARVEOUT\_BOM\_0 (Baseaddress for the SEC carveout address space.)                      |
-| 0x70019674 | MC\_SEC\_CARVEOUT\_SIZE\_MB\_0 (Size in MB for the SEC carveout region)                          |
-| 0x70019690 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0A\_0 (Scaled Latency Allowance settings for DISPLAY0A)   |
-| 0x70019694 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0AB\_0 (Scaled Latency Allowance settings for DISPLAY0AB) |
-| 0x70019698 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0B\_0 (Scaled Latency Allowance settings for DISPLAY0B)   |
-| 0x7001969C | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0BB\_0 (Scaled Latency Allowance settings for DISPLAY0BB) |
-| 0x700196A0 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0C\_0 (Scaled Latency Allowance settings for DISPLAY0C)   |
-| 0x700196A4 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0CB\_0 (Scaled Latency Allowance settings for DISPLAY0CB) |
-| 0x70019C5C |                                                                                                  |
+| Address    | Register Name                                 | Description                                      |
+| ---------- | --------------------------------------------- | ------------------------------------------------ |
+| 0x700192E8 | MC\_LATENCY\_ALLOWANCE\_DC\_0\_0              | Latency allowance settings for DC clients        |
+| 0x700192EC | MC\_LATENCY\_ALLOWANCE\_DC\_1\_0              | Latency allowance settings for DC clients        |
+| 0x700192F0 | MC\_LATENCY\_ALLOWANCE\_DC\_2\_0              | Latency allowance settings for DC clients        |
+| 0x700192F4 | MC\_LATENCY\_ALLOWANCE\_DCB\_0\_0             | Latency allowance settings for DCB clients       |
+| 0x700192F8 | MC\_LATENCY\_ALLOWANCE\_DCB\_1\_0             | Latency allowance settings for DCB clients       |
+| 0x7001941C | MC\_DIS\_PTSA\_RATE\_0                        | DDA rate for dis PTSA                            |
+| 0x70019420 | MC\_DIS\_PTSA\_MIN\_0                         | DDA minimum value for direct client dis PTSA.    |
+| 0x70019424 | MC\_DIS\_PTSA\_MAX\_0                         | DDA maximum value for direct client dis PTSA.    |
+| 0x70019428 | MC\_DISB\_PTSA\_RATE\_0                       | DDA rate for disb PTSA                           |
+| 0x7001942C | MC\_DISB\_PTSA\_MIN\_0                        | DDA minimum value for direct client disb PTSA    |
+| 0x70019430 | MC\_DISB\_PTSA\_MAX\_0                        | DDA maximum value for direct client disb PTSA    |
+| 0x7001944C | MC\_MLL\_MPCORER\_PTSA\_RATE\_0               | DDA rate for mll\_mpcorer PTSA                   |
+| 0x7001947C | MC\_RING1\_PTSA\_RATE\_0                      | DDA rate for ring1 PTSA                          |
+| 0x70019480 | MC\_RING1\_PTSA\_MIN\_0                       | DDA minimum value for direct client ring1 PTSA   |
+| 0x70019484 | MC\_RING1\_PTSA\_MAX\_0                       | DDA maximum value for direct client ring1 PTSA   |
+| 0x7001950C | MC\_FTOP\_PTSA\_RATE\_0                       | DDA rate for ftop PTSA                           |
+| 0x70019670 | MC\_SEC\_CARVEOUT\_BOM\_0                     | Baseaddress for the SEC carveout address space.  |
+| 0x70019674 | MC\_SEC\_CARVEOUT\_SIZE\_MB\_0                | Size in MB for the SEC carveout region           |
+| 0x70019690 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0A\_0  | Scaled Latency Allowance settings for DISPLAY0A  |
+| 0x70019694 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0AB\_0 | Scaled Latency Allowance settings for DISPLAY0AB |
+| 0x70019698 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0B\_0  | Scaled Latency Allowance settings for DISPLAY0B  |
+| 0x7001969C | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0BB\_0 | Scaled Latency Allowance settings for DISPLAY0BB |
+| 0x700196A0 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0C\_0  | Scaled Latency Allowance settings for DISPLAY0C  |
+| 0x700196A4 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0CB\_0 | Scaled Latency Allowance settings for DISPLAY0CB |
+| 0x70019C5C |                                               |                                                  |
 
 ## svcMapTransferMemory
 
