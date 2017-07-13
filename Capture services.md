@@ -15,5 +15,5 @@ stored timestamp values. If this doesn't match the timestamp string
 stored in EXIF, then an error 0xA34CE is returned. Otherwise, the entire
 JPEG is loaded into memory, and the stored EXIF maker note is cleared to
 zeroes. Then, an HMAC-SHA256 is computed over the entire JPEG using a
-hardcoded secret key. if (memcmp(calculated\_hmac, stored\_hmac) == 0),
-the screenshot is valid, else 0xA3ACE is returned.
+hardcoded secret key. if (memcmp(calculated\_hmac, stored\_hmac, 0x10)
+== 0), the screenshot is valid, else 0xA3ACE is returned.
