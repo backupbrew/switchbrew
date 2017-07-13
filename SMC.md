@@ -36,11 +36,11 @@ Cryptography related functions.
 | 0xC3000009 | SymmetricCrypto                    |    |     |
 | 0xC300000A | KeygenA                            |    |     |
 | 0xC300040B | CMAC                               |    |     |
-| 0xC300100C | ImportParamsFor10                  |    |     |
-| 0xC300100D | DecryptExpModParams                |    |     |
-| 0xC300100E | ImportParamsForF                   |    |     |
+| 0xC300100C | ImportParamsFor10WithXY            |    |     |
+| 0xC300100D | DecryptExpModParamsWithXY          |    |     |
+| 0xC300100E | ImportParamsForFWithXY             |    |     |
 | 0xC300060F | ExpMod                             |    |     |
-| 0xC3000610 | ExpMod                             |    |     |
+| 0xC3000610 | ExpModAndKeygenAndSealZ            |    |     |
 | 0xC3000011 | SetKeyslotFromZ                    |    |     |
 | 0xC3000012 | KeygenAndSealZ                     |    |     |
 
