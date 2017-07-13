@@ -5,6 +5,43 @@ shared-memory.
 
 # hid:dbg
 
+| Cmd | Name                             |
+| --- | -------------------------------- |
+| 0   | DeactivateDebugPad               |
+| 1   | SetDebugPadAutoPilotState        |
+| 2   | UnsetDebugPadAutoPilotState      |
+| 10  | DeactivateTouchScreen            |
+| 11  | SetTouchScreenAutoPilotState     |
+| 12  | UnsetTouchScreenAutoPilotState   |
+| 20  | DeactivateMouse                  |
+| 21  | SetMouseAutoPilotState           |
+| 22  | UnsetMouseAutoPilotState         |
+| 30  | DeactivateKeyboard               |
+| 31  | SetKeyboardAutoPilotState        |
+| 32  | UnsetKeyboardAutoPilotState      |
+| 50  | DeactivateXpad                   |
+| 51  | SetXpadAutoPilotState            |
+| 52  | UnsetXpadAutoPilotState          |
+| 60  | DeactivateJoyXpad                |
+| 91  |                                  |
+| 110 | DeactivateHomeButton             |
+| 111 | SetHomeButtonAutoPilotState      |
+| 112 | UnsetHomeButtonAutoPilotState    |
+| 120 | DeactivateSleepButton            |
+| 121 | SetSleepButtonAutoPilotState     |
+| 122 | UnsetSleepButtonAutoPilotState   |
+| 123 | DeactivateInputDetector          |
+| 130 | DeactivateCaptureButton          |
+| 131 | SetCaptureButtonAutoPilotState   |
+| 132 | UnsetCaptureButtonAutoPilotState |
+| 201 | ActivateFirmwareUpdate           |
+| 202 | DeactivateFirmwareUpdate         |
+| 203 | StartFirmwareUpdate              |
+| 204 | GetFirmwareUpdateStage           |
+| 205 | GetFirmwareVersion               |
+| 206 | GetDestinationFirmwareVersion    |
+| 207 |                                  |
+
 # hid:sys
 
 [Category:Services](Category:Services "wikilink")
