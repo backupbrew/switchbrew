@@ -158,8 +158,8 @@
 | 0100737003190800 |                                                                           |                                        |                                                       | IMPLOSION                                      | EUR      | Update      |
 | 01004040033CE000 |                                                                           |                                        | NicoNico Video Sharing Application                    | niconico                                       | JPN      | Application |
 | 01004040033CE800 |                                                                           |                                        | NicoNico Video Sharing Application                    | niconico                                       | JPN      | Update      |
-| 010019A0038FA000 |                                                                           |                                        |                                                       | ACA NeoGeo Fatal Legend SPECIAL                | ALL      | VC          |
-| 010019A0038FA800 |                                                                           |                                        |                                                       | ACA NeoGeo Fatal Legend SPECIAL                | ALL      | Update      |
+| 010019A0038FA000 |                                                                           |                                        |                                                       | ACA NeoGeo Fatal Fury SPECIAL                  | ALL      | VC          |
+| 010019A0038FA800 |                                                                           |                                        |                                                       | ACA NeoGeo Fatal Fury SPECIAL                  | ALL      | Update      |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
