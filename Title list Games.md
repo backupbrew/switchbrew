@@ -160,6 +160,8 @@
 | 01004040033CE800 |                                                                           |                                        | NicoNico Video Sharing Application                    | niconico                                       | JPN      | Update      |
 | 010019A0038FA000 |                                                                           |                                        |                                                       | ACA NeoGeo Fatal Fury SPECIAL                  | ALL      | VC          |
 | 010019A0038FA800 |                                                                           |                                        |                                                       | ACA NeoGeo Fatal Fury SPECIAL                  | ALL      | Update      |
+| 01003C700009C000 |                                                                           |                                        |                                                       | Splatoon 2                                     | JPN      | Game        |
+| 01003C700009C800 |                                                                           |                                        |                                                       | Splatoon 2                                     | JPN      | Update      |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
