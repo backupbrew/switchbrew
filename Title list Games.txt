@@ -312,6 +312,10 @@
 | 0100737003190000 || || || || IMPLOSION || EUR || Game
 |-
 | 0100737003190800 || || || || IMPLOSION || EUR || Update
+|-
+| 01004040033CE000 || || || NicoNico Video Sharing Application || niconico || JPN || Application
+|-
+| 01004040033CE800 || || || NicoNico Video Sharing Application || niconico || JPN || Update
 |}
 Game updates have the same titleID as the main application, except with bitmask 0x800 set.
 
