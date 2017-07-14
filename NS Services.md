@@ -51,7 +51,7 @@ This is the Switch equivalent of
 | 57   |                                                                          |
 | 58   |                                                                          |
 | 59   |                                                                          |
-| 60   | GetLanguageIdFromString                                                  |
+| 60   | [\#GetLanguageIdFromString](#GetLanguageIdFromString "wikilink")         |
 | 61   |                                                                          |
 | 62   |                                                                          |
 | 63   |                                                                          |
@@ -155,6 +155,13 @@ Takes an input media-id that must be 5.
 Returns the u64 from
 [Content\_Manager\_services\#IContentStorage](Content%20Manager%20services#IContentStorage.md##IContentStorage "wikilink")
 cmd23.
+
+## GetLanguageIdFromString
+
+Takes an input u8 pointer for the resulting Id to be written to and a
+string represented as a u64 (i.e 0x53552D6E65 for 'en-US').
+
+Returns 0 if an ID was successfully found, otherwise returns 0x25810.
 
 ## GetTitlesInfo
 
