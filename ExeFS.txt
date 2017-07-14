@@ -13,3 +13,5 @@ Some game titles may also contain:
 * "/[[NSO|subsdk2]]"
 * "/[[NSO|subsdk3]]"
 * "/[[NSO|subsdk4]]"
+* "/[[NSO|subsdk5]]"
+* "/[[NSO|subsdk6]]"
