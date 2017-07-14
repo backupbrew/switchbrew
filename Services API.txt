@@ -139,7 +139,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 |
 |-
 | btdrv
-| Bluetooth Driver services
+| [[Bluetooth Driver services]]
 | 
 |-
 | btm, btm:dbg, btm:sys
