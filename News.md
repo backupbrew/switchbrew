@@ -20,6 +20,7 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **15 July 17** As of July 9th,Hackers just discovered the Kernel.
   - **19 June 17** Nintendo released system update
     [3.0.0](3.0.0.md "wikilink").
   - **15 May 17** Nintendo released system update
