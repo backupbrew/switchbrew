@@ -13,15 +13,15 @@
 = ldr:pm =
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Arguments
 |-
-| 0 ||
+| 0 || ||
 |-
-| 1 ||
+| 1 || GetProgramInfo || Takes in a storageID + titleID, writes output to a C descriptor buffer.
 |-
-| 2 ||
+| 2 || || 
 |-
-| 3 ||
+| 3 || ||
 |}
 
 = ldr:ro =

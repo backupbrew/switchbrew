@@ -8,12 +8,12 @@
 
 # ldr:pm
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
+| Cmd | Name           | Arguments                                                               |
+| --- | -------------- | ----------------------------------------------------------------------- |
+| 0   |                |                                                                         |
+| 1   | GetProgramInfo | Takes in a storageID + titleID, writes output to a C descriptor buffer. |
+| 2   |                |                                                                         |
+| 3   |                |                                                                         |
 
 # ldr:ro
 
