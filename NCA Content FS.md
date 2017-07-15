@@ -25,7 +25,9 @@ include the "Licensed" gfx.
 
 # NCA-type2
 
-Unknown. Presumably what the nandsys 8XX titles use.
+What the nandsys 8XX SystemData titles use.
+
+## FS-type6
 
 # NCA-type3
 

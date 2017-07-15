@@ -13,7 +13,9 @@ Contains the logo gfx displayed when an application is booted. Doesn't include t
 * "/StartupMovie.gif" Nintendo Switch animation displayed in the bottom-right of the screen.
 
 =NCA-type2=
-Unknown. Presumably what the nandsys 8XX titles use.
+What the nandsys 8XX SystemData titles use.
+
+==FS-type6==
 
 =NCA-type3=
 ==FS-type3==
