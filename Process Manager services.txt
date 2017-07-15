@@ -35,7 +35,7 @@
 |-
 | 6 || FinalizeCrashingProcess
 |-
-| 7 ||
+| 7 || NotifyBootFinished
 |-
 | 8 || GetCrashingProcessPid
 |}

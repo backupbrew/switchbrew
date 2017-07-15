@@ -22,7 +22,7 @@
 | 4   | GetProcessEventType (0=CONTINUE, 1=CRASHING, 2,3,5) |
 | 5   | FinalizeEventType2                                  |
 | 6   | FinalizeCrashingProcess                             |
-| 7   |                                                     |
+| 7   | NotifyBootFinished                                  |
 | 8   | GetCrashingProcessPid                               |
 
 [Category:Services](Category:Services "wikilink")
