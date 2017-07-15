@@ -9,7 +9,8 @@ For older news, see the [[:News/Archive|news archive]].
 
 === News ===
 <!-- Add news below --></noinclude>
-*'''15 July 17''' As of July 9th,Hackers just discovered the Kernel.
+*'''15 July 17''' First Virtual Console Emulator discoverd on Switch Firmware.
+*'''15 July 17''' As of July 9th,Hackers just discovered the Nintendo Switch Kernel.
 *'''19 June 17''' Nintendo released system update [[3.0.0]].
 *'''15 May 17''' Nintendo released system update [[2.3.0]].
 *'''17 April 17''' Nintendo released system update [[2.2.0]].
