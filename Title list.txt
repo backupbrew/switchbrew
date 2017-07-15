@@ -179,6 +179,10 @@ No 01000000000020XX titles exist on retail systems.
 | 0100000000000820 || [[2.0.0|v260]] (0.0.1.4), [[3.0.0|v201327002]] (12.0.1.154) || Copper system config
 |-
 | 0100000000000821 || [[2.0.0|v260]] (0.0.1.4), [[3.0.0|v201327002]] (12.0.1.154) || Hoag system config
+|-
+| 0100000000000822 || || ac_#_nx binaries (Not normally installed on retail systems?)
+|-
+| 0100000000000823 || || Firmware binaries for peripherals (Not normally installed on retail systems?)
 |}
 
 == System Applets ==
