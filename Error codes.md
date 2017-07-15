@@ -117,6 +117,7 @@ applets.
 | 0x2F5A02          | 6061        | Offset outside storage                                                                                                                                                               |
 | 0x313802          | 6300        | Operation not supported                                                                                                                                                              |
 | 0x320002          | 6400        | Permission denied                                                                                                                                                                    |
+| 0x326602          | 6451        | Missing titlekey(?) required to mount content                                                                                                                                        |
 | 0x3EA03           | 501         | Invalid handle                                                                                                                                                                       |
 | 0x3EE03           | 503         | Invalid memory mirror                                                                                                                                                                |
 | 0xA05             | 5           | [NcaID](Content%20Manager%20services.md "wikilink") not found. Returned when attempting to mount titles which exist that aren't \*8XX titles, the same way \*8XX titles are mounted. |

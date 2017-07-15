@@ -199,6 +199,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x320002 || 6400 || Permission denied
 |-
+| 0x326602 || 6451 || Missing titlekey(?) required to mount content
+|-
 | 0x3EA03 || 501 || Invalid handle
 |-
 | 0x3EE03 || 503 || Invalid memory mirror
