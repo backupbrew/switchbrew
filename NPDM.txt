@@ -171,7 +171,7 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 
 {| class="wikitable" border="1"
 |-
-! Pattern of bits 15-0
+! Pattern of lower bits
 ! Type
 ! Fields
 |-
@@ -193,5 +193,9 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 |-
 | <code>0bxxxx011111111111</code>
 | Interrupt pair
-| Bits 12-21: irq0, bits 20-31: irq1, 0x3FF means empty.  
+| Bits 12-21: irq0, bits 20-31: irq1, 0x3FF means empty.
+|-
+| All ones
+| Ignored
+|
 |}
