@@ -134,7 +134,7 @@ Inherits from: [[#KSynchronizationObject]]
 | ..
 |}
 
-== KTransferMemory ==
+= KTransferMemory =
 Size: 0x48
 
 Inherits from: [[#KAutoObject]]
