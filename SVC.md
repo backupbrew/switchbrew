@@ -294,7 +294,7 @@ input.
 | 0xDC7E03  | Code static          | .text and .rodata |
 | 0x4       | Code                 | .data             |
 | 0x17EBD05 | Heap                 |                   |
-| 0x6       | Shared memory block  |                   |
+| 0x402006  | Shared memory block  |                   |
 | 0x8       | Module code static   | .text and .rodata |
 | 0x9       | Module code          | .data             |
 | 0xB       | Mapped memory        |                   |
