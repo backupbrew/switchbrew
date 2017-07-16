@@ -165,7 +165,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x10601 || 131 || Port max sessions exceeded
 |-
-| 0x10801 || 132 || Out of memory
+| 0x10801 || 132 || Resource limit exceeded
 |-
 | 0xE02 || 7 || High byte in input u64 is zero.
 |-
