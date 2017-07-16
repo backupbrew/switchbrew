@@ -106,7 +106,7 @@
 | 0x76 | svcQueryProcessMemory                                                              |                                                                               |                                                             |
 | 0x77 | svcMapProcessCodeMemory                                                            | W0=process\_handle, X21dstaddr, X2=srcaddr, X3=size                           | W0=result                                                   |
 | 0x78 | svcUnmapProcessCodeMemory                                                          | W0=process\_handle, X1=dstaddr, X2=srcaddr, X3=size                           | W0=result                                                   |
-| 0x79 | svcCreateProcess                                                                   |                                                                               |                                                             |
+| 0x79 | [\#svcCreateProcess](#svcCreateProcess "wikilink")                                 | X1=procinfo\_ptr, X2=caps\_ptr, W3=cap\_num                                   | W0=result, W1=process\_handle                               |
 | 0x7A | svcStartProcess                                                                    |                                                                               |                                                             |
 | 0x7B | svcTerminateProcess                                                                |                                                                               |                                                             |
 | 0x7C | svcGetProcessInfo                                                                  |                                                                               |                                                             |
@@ -254,6 +254,25 @@ svcCreateMemoryMirror, otherwise error.
 
 Size must match size given in map syscall, otherwise there's an
 invalid-size error.
+
+## svcCreateProcess
+
+Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as input.
+
+# Structures
+
+## CreateProcessInfo
+
+| Offset | Length | Description          |
+| ------ | ------ | -------------------- |
+| 0      | 8      |                      |
+| 8      | 2      |                      |
+| 0xA    | 2      |                      |
+| 0x18   | 8      | ASLR base            |
+| 0x20   | 4      | Number of ASLR pages |
+| 0x24   | 4      |                      |
+| 0x28   | 4      |                      |
+| 0x2C   | 4      |                      |
 
 ## MemoryAttribute
 

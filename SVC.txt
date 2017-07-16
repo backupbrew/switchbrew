@@ -210,7 +210,7 @@
 |-
 | 0x78 || svcUnmapProcessCodeMemory || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
 |-
-| 0x79 || svcCreateProcess || || 
+| 0x79 || [[#svcCreateProcess]] || X1=procinfo_ptr, X2=caps_ptr, W3=cap_num ||  W0=result, W1=process_handle
 |-
 | 0x7A || svcStartProcess || || 
 |-
@@ -385,6 +385,31 @@ You must pass same size and permissions as given in svcCreateMemoryMirror, other
 
 == svcUnmapTransferMemory ==
 Size must match size given in map syscall, otherwise there's an invalid-size error.
+
+== svcCreateProcess ==
+Takes a [[#CreateProcessInfo]] as input.
+
+= Structures =
+== CreateProcessInfo ==
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0 || 8 ||
+|-
+| 8 || 2 ||
+|-
+| 0xA || 2 ||
+|-
+| 0x18 || 8 || ASLR base
+|-
+| 0x20 || 4 || Number of ASLR pages
+|-
+| 0x24 || 4 ||
+|-
+| 0x28 || 4 ||
+|-
+| 0x2C || 4 ||
+|}
 
 == MemoryAttribute ==
 {| class=wikitable
