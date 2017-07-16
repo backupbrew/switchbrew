@@ -17,7 +17,23 @@
 
 ## GetProgramInfo
 
-Takes a TitleId + StorageId, writes output to a C descriptor buffer.
+Takes a TitleId + StorageId and writes output to a C descriptor buffer
+as
+follows:
+
+| Offset   | Size     | Description                                                                                                    |
+| -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| 0        | 0x4      |                                                                                                                |
+| 0x4      | 0x8      |                                                                                                                |
+| 0x8      | 0x8      | Title id                                                                                                       |
+| 0x10     | 0x4      | ACID [Service Access Control](NPDM#Service%20Access%20Control.md##Service_Access_Control "wikilink") list size |
+| 0x14     | 0x4      | ACI0 [Service Access Control](NPDM#Service%20Access%20Control.md##Service_Access_Control "wikilink") list size |
+| 0x18     | 0x4      | ACID [FS Access Control](NPDM#FS%20Access%20Control.md##FS_Access_Control "wikilink") buffer size              |
+| 0x1C     | 0x4      | ACI0 [FS Access Control](NPDM#FS%20Access%20Control.md##FS_Access_Control "wikilink") buffer size              |
+| 0x20     | <Varies> | ACID [Service Access Control](NPDM#Service%20Access%20Control.md##Service_Access_Control "wikilink") list      |
+| <Varies> | <Varies> | ACI0 [Service Access Control](NPDM#Service%20Access%20Control.md##Service_Access_Control "wikilink") list      |
+| <Varies> | <Varies> | ACID [FS Access Control](NPDM#FS%20Access%20Control.md##FS_Access_Control "wikilink") buffer                   |
+| <Varies> | <Varies> | ACI0 [FS Access Control](NPDM#FS%20Access%20Control.md##FS_Access_Control "wikilink")                          |
 
 ## RegisterTitle
 

@@ -25,7 +25,58 @@
 |}
 
 == GetProgramInfo ==
-Takes a TitleId + StorageId, writes output to a C descriptor buffer.
+Takes a TitleId + StorageId and writes output to a C descriptor buffer as follows:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0
+| 0x4
+| 
+|-
+| 0x4
+| 0x8
+| 
+|-
+| 0x8
+| 0x8
+| Title id
+|-
+| 0x10
+| 0x4
+| ACID [[NPDM#Service Access Control|Service Access Control]] list size
+|-
+| 0x14
+| 0x4
+| ACI0 [[NPDM#Service Access Control|Service Access Control]] list size
+|-
+| 0x18
+| 0x4
+| ACID [[NPDM#FS Access Control|FS Access Control]] buffer size
+|-
+| 0x1C
+| 0x4
+| ACI0 [[NPDM#FS Access Control|FS Access Control]] buffer size
+|-
+| 0x20
+| <Varies>
+| ACID [[NPDM#Service Access Control|Service Access Control]] list
+|-
+| <Varies>
+| <Varies>
+| ACI0 [[NPDM#Service Access Control|Service Access Control]] list
+|-
+| <Varies>
+| <Varies>
+| ACID [[NPDM#FS Access Control|FS Access Control]] buffer
+|-
+| <Varies>
+| <Varies>
+| ACI0 [[NPDM#FS Access Control|FS Access Control]]
+|}
 
 == RegisterTitle ==
 Takes a TitleId + StorageId, returns an index.
