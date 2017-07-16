@@ -7,6 +7,9 @@ When linking the Nintendo Account with Facebook, the Facebook Auth website will 
 ! System Version
 ! UA String
 |-
+| [[1.0.0]]
+| Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.4.25 NintendoBrowser/5.1.0.11682
+|-
 | [[2.0.0]]
 | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.9 NintendoBrowser/5.1.0.13341
 |-
