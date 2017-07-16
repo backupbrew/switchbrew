@@ -8,12 +8,45 @@
 
 # ldr:pm
 
-| Cmd | Name           | Arguments                                                               |
-| --- | -------------- | ----------------------------------------------------------------------- |
-| 0   |                |                                                                         |
-| 1   | GetProgramInfo | Takes in a storageID + titleID, writes output to a C descriptor buffer. |
-| 2   |                |                                                                         |
-| 3   |                |                                                                         |
+| Cmd | Name                                             |
+| --- | ------------------------------------------------ |
+| 0   | CreateProcess                                    |
+| 1   | [\#GetProgramInfo](#GetProgramInfo "wikilink")   |
+| 2   | [\#RegisterTitle](#RegisterTitle "wikilink")     |
+| 3   | [\#UnregisterTitle](#UnregisterTitle "wikilink") |
+
+## GetProgramInfo
+
+Takes a TitleId + StorageId, writes output to a C descriptor buffer.
+
+## RegisterTitle
+
+Takes a TitleId + StorageId, returns an index.
+
+## UnregisterTitle
+
+Takes the index from
+[\#RegisterTitle](#RegisterTitle "wikilink").
+
+# ldr:shel
+
+| Cmd | Name                                                             |
+| --- | ---------------------------------------------------------------- |
+| 0   | [\#AddProcessToLaunchQueue](#AddProcessToLaunchQueue "wikilink") |
+| 1   | [\#ClearLaunchQueue](#ClearLaunchQueue "wikilink")               |
+
+## AddProcessToLaunchQueue
+
+Takes a type-0x19 input buffer with launch arguments (as string), an u32
+(size of arguments string), and an input title-id.
+
+Loads a process for the specified title-id and passes along the supplied
+arguments. Loaded processes are kept in a queue waiting for PM to launch
+them. The maximum number of waiting processes in this list is 10.
+
+## ClearLaunchQueue
+
+Clears the loaded processes waiting queue.
 
 # ldr:ro
 
@@ -68,25 +101,5 @@
 | 0    | "SFCI"                      |
 | 1    | 0x00000004                  |
 | 2    | Always 0.                   |
-
-# ldr:shel
-
-| Cmd | Name                                               |
-| --- | -------------------------------------------------- |
-| 0   | [\#LoadProcess](#LoadProcess "wikilink")           |
-| 1   | [\#ClearProcessList](#ClearProcessList "wikilink") |
-
-## LoadProcess
-
-Takes a type-0x19 input buffer with launch arguments (as string), an u32
-(size of arguments string), and an input title-id.
-
-Loads a process for the specified title-id and passes along the supplied
-arguments. Loaded processes are kept in a queue waiting for PM to launch
-them. The maximum number of waiting processes in this list is 10.
-
-## ClearProcessList
-
-Clears the loaded processes waiting queue.
 
 [Category:Services](Category:Services "wikilink")
