@@ -277,6 +277,11 @@ input.
 
 ## MemoryAttribute
 
+| Bits | Description                                                                |
+| ---- | -------------------------------------------------------------------------- |
+| 7-0  | Type                                                                       |
+| 8    | Is [\#svcSetMemoryPermission](#svcSetMemoryPermission "wikilink") allowed? |
+
 | Value     | Type                 | Meaning           |
 | --------- | -------------------- | ----------------- |
 | 0x0       | Unmapped             |                   |

@@ -413,6 +413,14 @@ Takes a [[#CreateProcessInfo]] as input.
 
 == MemoryAttribute ==
 {| class=wikitable
+! Bits || Description
+|-
+| 7-0 || Type
+|-
+| 8 || Is [[#svcSetMemoryPermission]] allowed?
+|}
+
+{| class=wikitable
 ! Value || Type || Meaning
 |-
 | 0x0 || Unmapped ||
