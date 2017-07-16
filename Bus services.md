@@ -118,19 +118,31 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 
 # i2c:pcv
 
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 10  |      |
+| 11  |      |
+| 12  |      |
+
 # uart
 
-| Cmd | Name | Notes                                                                                    |
-| --- | ---- | ---------------------------------------------------------------------------------------- |
-| 0   |      | Returns a u8/bool.                                                                       |
-| 1   |      | Returns a u8/bool.                                                                       |
-| 2   |      | Returns a u8/bool.                                                                       |
-| 3   |      | Returns a u8/bool.                                                                       |
-| 4   |      | Takes marshalled arguments.                                                              |
-| 5   |      | Takes marshalled arguments.                                                              |
-| 6   |      | Returns a handle to an IPC session [\#IUartSubinterface](#IUartSubinterface "wikilink"). |
+| Cmd | Name            | Notes                       |
+| --- | --------------- | --------------------------- |
+| 0   |                 | Returns a u8/bool.          |
+| 1   |                 | Returns a u8/bool.          |
+| 2   |                 | Returns a u8/bool.          |
+| 3   |                 | Returns a u8/bool.          |
+| 4   |                 | Takes marshalled arguments. |
+| 5   |                 | Takes marshalled arguments. |
+| 6   | GetIPortSession |                             |
+| 7   |                 |                             |
+| 8   |                 |                             |
+|     |                 |                             |
 
-## IUartSubinterface
+## IPortSession
 
 | Cmd | Name | Notes                      |
 | --- | ---- | -------------------------- |
@@ -139,3 +151,7 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 | 2   |      |                            |
 | 3   |      | Takes marshalled arguments |
 | 4   |      | Returns 2x u64. Both zero. |
+| 5   |      |                            |
+| 6   |      |                            |
+| 7   |      |                            |
+|     |      |                            |

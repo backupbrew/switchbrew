@@ -194,6 +194,22 @@ Same as [[#OpenSession]] but panics on failure.
 |}
 
 = i2c:pcv =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 ||
+|-
+| 10 ||
+|-
+| 11 ||
+|-
+| 12 ||
+|}
 
 = uart =
 {| class="wikitable" border="1"
@@ -212,10 +228,15 @@ Same as [[#OpenSession]] but panics on failure.
 |-
 | 5 || || Takes marshalled arguments.
 |-
-| 6 || || Returns a handle to an IPC session [[#IUartSubinterface]].
+| 6 || GetIPortSession ||
+|-
+| 7 || || 
+|-
+| 8 || || 
+|-
 |}
 
-== IUartSubinterface ==
+== IPortSession ==
 
 {| class="wikitable" border="1"
 |-
@@ -230,4 +251,11 @@ Same as [[#OpenSession]] but panics on failure.
 | 3 || || Takes marshalled arguments
 |-
 | 4 || || Returns 2x u64. Both zero.
+|-
+| 5 || || 
+|-
+| 6 || || 
+|-
+| 7 || || 
+|-
 |}
