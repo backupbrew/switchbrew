@@ -20,7 +20,7 @@
 | 0x10 | svcGetCurrentProcessorNumber                                                       | None                                                                          | W0/X0=cpuid                                         |
 | 0x11 | svcSignalEvent                                                                     | W0=handle                                                                     | ?                                                   |
 | 0x12 | svcClearEvent                                                                      | W0=handle                                                                     | ?                                                   |
-| 0x13 | svcMapSharedMemory                                                                 | W0=memblk\_handle, X1=addr, X2=size, W3=perm                                  | W0=result                                           |
+| 0x13 | [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink")                             | W0=memblk\_handle, X1=addr, X2=size, W3=perm                                  | W0=result                                           |
 | 0x14 | svcUnmapSharedMemory                                                               | W0=memblk\_handle, X1=addr, X2=size                                           | W0=result                                           |
 | 0x15 | [\#svcCreateTransferMemory](#svcCreateTransferMemory "wikilink")                   | X1=addr, X2=size, W3=perm                                                     | W0=result, W1=handle                                |
 | 0x16 | svcCloseHandle                                                                     | W0=handle                                                                     | W0=result                                           |
@@ -155,6 +155,12 @@ Processor\_id must be 0,1,2,3 or -2.
 ## svcSleepThread
 
 Setting nano=0 means "yield thread".
+
+## svcMapSharedMemory
+
+Maps the block supplied by the handle. The required permissions are
+different for the process that created the handle and all other
+processes.
 
 ## svcCreateTransferMemory
 

@@ -38,7 +38,7 @@
 |-
 | 0x12 || svcClearEvent || W0=handle || ?
 |-
-| 0x13 || svcMapSharedMemory || W0=memblk_handle, X1=addr, X2=size, W3=perm || W0=result
+| 0x13 || [[#svcMapSharedMemory]] || W0=memblk_handle, X1=addr, X2=size, W3=perm || W0=result
 |-
 | 0x14 || svcUnmapSharedMemory || W0=memblk_handle, X1=addr, X2=size || W0=result                                                 
 |-
@@ -260,6 +260,9 @@ Processor_id must be 0,1,2,3 or -2.
 
 == svcSleepThread ==
 Setting nano=0 means "yield thread".
+
+== svcMapSharedMemory ==
+Maps the block supplied by the handle. The required permissions are different for the process that created the handle and all other processes.
 
 == svcCreateTransferMemory ==
 This one reprotects the src block with perms you give it. It also sets bit32 into [[#MemoryAttribute]].
