@@ -60,13 +60,13 @@ fatal-errors, since the Description ends with bit21.
 | 147   | ERPT                                                   |
 | 148   | APM                                                    |
 | 154   | NPNS                                                   |
+| 157   | ARP                                                    |
 | 161   | NFC                                                    |
 | 162   | Userland assert                                        |
 | 168   | Userland crash                                         |
 | 203   | HID                                                    |
 | 206   | Capture                                                |
 | 651   | TC                                                     |
-| 669   | ARP                                                    |
 | 800   | [General web-applet](Internet%20Browser.md "wikilink") |
 | 809   | [WifiWebAuthApplet](Internet%20Browser.md "wikilink")  |
 | 810   | [Whitelisted-applet](Internet%20Browser.md "wikilink") |
@@ -172,6 +172,10 @@ applets.
 | 0x2C7C            | 22          | Argument is invalid                                                                                                                                                                  |
 | 0x3C7C            | 30          | Bad input buffer size                                                                                                                                                                |
 | 0x407C            | 32          | Invalid input buffer                                                                                                                                                                 |
+| 0x3C9D            | 30          | Address is NULL                                                                                                                                                                      |
+| 0x3E9D            | 31          | PID is NULL                                                                                                                                                                          |
+| 0x549D            | 42          | Already bound                                                                                                                                                                        |
+| 0xCC9D            | 102         | Invalid PID                                                                                                                                                                          |
 | 0x3CF089          | 7800        | Unknown/invalid libcurl error.                                                                                                                                                       |
 | 0x3E8289-0x3F4089 | 8001-8096   | libcurl error 1-96. Some of the libcurl errors in the error-table map to the above unknown-libcurl-error however.                                                                    |
 
