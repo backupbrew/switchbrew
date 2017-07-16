@@ -228,6 +228,8 @@
 == svcSetHeapSize ==
 Size must be a multiple of 0x2000000. The heap base-address is written to out.
 
+It allows both extending and shrinking the heap.
+
 == svcSetMemoryPermission ==
 Bit2 of permission (exec) is not allowed.
 
