@@ -26,7 +26,7 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 | 0x100  | 0x100 | RSA-2048 public key                                                   |
 | 0x200  | 0x4   | Magic "ACID".                                                         |
 | 0x204  | 0x8   | Zeroes                                                                |
-| 0x20C  | 0x4   | Format version? (1)                                                   |
+| 0x20C  | 0x4   | Retail flag. Must be 1 on retail, on devunit 0 is also allowed.       |
 | 0x210  | 0x8   | Title id                                                              |
 | 0x218  | 0x8   | Title id again                                                        |
 | 0x220  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") offset           |

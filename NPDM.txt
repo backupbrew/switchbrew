@@ -76,7 +76,7 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |-
 | 0x20C
 | 0x4
-| Format version? (1)
+| Retail flag. Must be 1 on retail, on devunit 0 is also allowed.
 |-
 | 0x210
 | 0x8
