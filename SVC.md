@@ -280,7 +280,8 @@ input.
 | Value    | Type                 | Meaning           |
 | -------- | -------------------- | ----------------- |
 | 0x0      | Unmapped             |                   |
-| 0x1      | IO                   |                   |
+| 0x2001   | IO                   |                   |
+| 0x42002  | IO                   |                   |
 | 0xDC7E03 | Code static          | .text and .rodata |
 | 0x4      | Code                 | .data             |
 | 0x5      | Heap                 |                   |
