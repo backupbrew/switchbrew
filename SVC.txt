@@ -413,31 +413,31 @@ Takes a [[#CreateProcessInfo]] as input.
 
 == MemoryAttribute ==
 {| class=wikitable
-! Lower 8 bits || Type                 || Meaning
+! Value || Type || Meaning
 |-
-| 0x0          || Unmapped             ||
+| 0x0 || Unmapped ||
 |-
-| 0x1          || IO                   ||
+| 0x1 || IO ||
 |-
-| 0x3          || Code static          || .text and .rodata
+| 0xDC7E03 || Code static || .text and .rodata
 |-
-| 0x4          || Code                 || .data
+| 0x4 || Code || .data
 |-
-| 0x5          || Heap                 ||
+| 0x5 || Heap ||
 |-
-| 0x6          || Shared memory block  ||
+| 0x6 || Shared memory block ||
 |-
-| 0x8          || Module code static   || .text and .rodata
+| 0x8 || Module code static || .text and .rodata
 |-
-| 0x9          || Module code          || .data
+| 0x9 || Module code || .data
 |-
-| 0xB          || Mapped memory        ||
+| 0xB || Mapped memory ||
 |-
-| 0xC          || Thread local storage ||
+| 0xC || Thread local storage ||
 |-
-| 0xE          || Transfer memory      ||
+| 0xE || Transfer memory ||
 |-
-| 0x10         || Reserved             ||
+| 0x10|| Reserved ||
 |}
 
 Bit32: is_mirrored
