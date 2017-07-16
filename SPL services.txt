@@ -5,15 +5,15 @@
 |-
 | 0 || [[#GetConfig]] || 
 |-
-| 1 || || Unknown marshalling.
+| 1 || ||
 |-
 | 2 || [[#ScrambleKeyA]] ||
 |-
-| 3 || || Always returns 0x2D1A?
+| 3 || ||
 |-
 | 4 || [[#ScrambleKeyB]] ||
 |-
-| 5 || || Always returns 0x41A?
+| 5 || [[#SetConfig]] ||
 |-
 | 7 || || 
 |-
@@ -25,7 +25,7 @@
 |-
 | 12 || || 
 |-
-| 13 || || 
+| 13 || [[#EncDec0]] || 
 |-
 | 14 || || 
 |-
@@ -76,10 +76,20 @@ Behaves similar to [[#ScrambleKeyA]], but with different output.
 
 Also console unique. This is not the inverse operation of [[#ScrambleKeyA]].
 
+== SetConfig ==
+Takes two input words, a ConfigItem and the value to set.
+
+{| class="wikitable" border="1"
+|-
+! ConfigItem || Name
+|-
+| 13 || Unknown.
+|}
+
 == GetDevunitFlag ==
 No input params.
 
 Returns an u8 flag for whether the system is devunit. Output flag is 0 on retail.
 
-== Cmd13 ==
+== EncDec0 ==
 Last SPL cmd used by [[SSL_services|SSL]]-sysmodule for TLS client-privk.

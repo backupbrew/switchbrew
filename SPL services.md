@@ -1,29 +1,29 @@
 # spl:
 
-| Cmd | Name                                           | Notes                  |
-| --- | ---------------------------------------------- | ---------------------- |
-| 0   | [\#GetConfig](#GetConfig "wikilink")           |                        |
-| 1   |                                                | Unknown marshalling.   |
-| 2   | [\#ScrambleKeyA](#ScrambleKeyA "wikilink")     |                        |
-| 3   |                                                | Always returns 0x2D1A? |
-| 4   | [\#ScrambleKeyB](#ScrambleKeyB "wikilink")     |                        |
-| 5   |                                                | Always returns 0x41A?  |
-| 7   |                                                |                        |
-| 9   |                                                |                        |
-| 10  |                                                |                        |
-| 11  | [\#GetDevunitFlag](#GetDevunitFlag "wikilink") |                        |
-| 12  |                                                |                        |
-| 13  |                                                |                        |
-| 14  |                                                |                        |
-| 15  |                                                |                        |
-| 16  |                                                |                        |
-| 17  |                                                |                        |
-| 18  |                                                |                        |
-| 19  |                                                |                        |
-| 20  |                                                |                        |
-| 21  |                                                |                        |
-| 22  |                                                |                        |
-| 23  |                                                |                        |
+| Cmd | Name                                           | Notes |
+| --- | ---------------------------------------------- | ----- |
+| 0   | [\#GetConfig](#GetConfig "wikilink")           |       |
+| 1   |                                                |       |
+| 2   | [\#ScrambleKeyA](#ScrambleKeyA "wikilink")     |       |
+| 3   |                                                |       |
+| 4   | [\#ScrambleKeyB](#ScrambleKeyB "wikilink")     |       |
+| 5   | [\#SetConfig](#SetConfig "wikilink")           |       |
+| 7   |                                                |       |
+| 9   |                                                |       |
+| 10  |                                                |       |
+| 11  | [\#GetDevunitFlag](#GetDevunitFlag "wikilink") |       |
+| 12  |                                                |       |
+| 13  | [\#EncDec0](#EncDec0 "wikilink")               |       |
+| 14  |                                                |       |
+| 15  |                                                |       |
+| 16  |                                                |       |
+| 17  |                                                |       |
+| 18  |                                                |       |
+| 19  |                                                |       |
+| 20  |                                                |       |
+| 21  |                                                |       |
+| 22  |                                                |       |
+| 23  |                                                |       |
 
 ## GetConfig
 
@@ -57,6 +57,14 @@ different output.
 Also console unique. This is not the inverse operation of
 [\#ScrambleKeyA](#ScrambleKeyA "wikilink").
 
+## SetConfig
+
+Takes two input words, a ConfigItem and the value to set.
+
+| ConfigItem | Name     |
+| ---------- | -------- |
+| 13         | Unknown. |
+
 ## GetDevunitFlag
 
 No input params.
@@ -64,7 +72,7 @@ No input params.
 Returns an u8 flag for whether the system is devunit. Output flag is 0
 on retail.
 
-## Cmd13
+## EncDec0
 
 Last SPL cmd used by [SSL](SSL%20services.md "wikilink")-sysmodule for
 TLS client-privk.
