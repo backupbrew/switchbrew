@@ -3,7 +3,7 @@
 | Cmd | Name          | Arguments                                                       | Notes                                                |
 | --- | ------------- | --------------------------------------------------------------- | ---------------------------------------------------- |
 | 0   | MountCode     | u64 TID + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink"). |
-| 1   | IsCodeMounted | u64 TID                                                         | Returns PID of process that has code mounted.        |
+| 1   | IsCodeMounted | u64 PID                                                         | Returns a bool (1 if code is mounted).               |
 
 # fsp-pr
 
