@@ -130,7 +130,7 @@
 |-
 | 0x4F || svcSetProcessActivity ||  || 
 |-
-| 0x50 || svcCreateSharedMemory || W1=size?, W2=perm0, W3=perm1 || W0=result, W1=handle
+| 0x50 || [[#svcCreateSharedMemory]] || W1=size?, W2=myperm, W3=otherperm || W0=result, W1=handle
 |-
 | 0x51 || [[#svcMapTransferMemory]] || X0=mirror_handle, X1=addr, X2=size, W3=perm || W0=result
 |-
@@ -379,6 +379,9 @@ rw_mask is 0 for reading and -1 for writing.
 |-
 | 0x70019C5C ||
 |}
+
+== svcCreateSharedMemory ==
+Other perm can be used to enforce permission 1, 3, or 0x10000000 if don't care.
 
 == svcMapTransferMemory ==
 The newly mapped pages will have [[#MemoryAttribute]] type 0xE.

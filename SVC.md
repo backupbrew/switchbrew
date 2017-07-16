@@ -66,7 +66,7 @@
 | 0x4D | svcSleepSystem                                                                     |                                                                               |                                                             |
 | 0x4E | [\#svcReadWriteRegister](#svcReadWriteRegister "wikilink")                         | X1=reg\_addr, W2=rw\_mask, W3=in\_val                                         | W0=result, W1=out\_val                                      |
 | 0x4F | svcSetProcessActivity                                                              |                                                                               |                                                             |
-| 0x50 | svcCreateSharedMemory                                                              | W1=size?, W2=perm0, W3=perm1                                                  | W0=result, W1=handle                                        |
+| 0x50 | [\#svcCreateSharedMemory](#svcCreateSharedMemory "wikilink")                       | W1=size?, W2=myperm, W3=otherperm                                             | W0=result, W1=handle                                        |
 | 0x51 | [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink")                         | X0=mirror\_handle, X1=addr, X2=size, W3=perm                                  | W0=result                                                   |
 | 0x52 | [\#svcUnmapTransferMemory](#svcUnmapTransferMemory "wikilink")                     | W0=mirror\_handle, X1=addr, X2=size                                           | W0=result                                                   |
 | 0x53 | svcCreateInterruptEvent                                                            | X1=irq\_id                                                                    | W0=result, W1=handle                                        |
@@ -243,6 +243,11 @@ writing.
 | 0x700196A0 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0C\_0  | Scaled Latency Allowance settings for DISPLAY0C  |
 | 0x700196A4 | MC\_SCALED\_LATENCY\_ALLOWANCE\_DISPLAY0CB\_0 | Scaled Latency Allowance settings for DISPLAY0CB |
 | 0x70019C5C |                                               |                                                  |
+
+## svcCreateSharedMemory
+
+Other perm can be used to enforce permission 1, 3, or 0x10000000 if
+don't care.
 
 ## svcMapTransferMemory
 
