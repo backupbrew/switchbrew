@@ -281,6 +281,7 @@ input.
 | ---- | -------------------------------------------------------------------------- |
 | 7-0  | Type                                                                       |
 | 8    | Is [\#svcSetMemoryPermission](#svcSetMemoryPermission "wikilink") allowed? |
+| 24   | Is [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink") allowed?   |
 
 | Value     | Type                 | Meaning           |
 | --------- | -------------------- | ----------------- |

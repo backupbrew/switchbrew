@@ -418,6 +418,8 @@ Takes a [[#CreateProcessInfo]] as input.
 | 7-0 || Type
 |-
 | 8 || Is [[#svcSetMemoryPermission]] allowed?
+|-
+| 24 || Is [[#svcSetMemoryAttribute]] allowed?
 |}
 
 {| class=wikitable
