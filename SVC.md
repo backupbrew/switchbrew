@@ -315,23 +315,24 @@ These take a device id and a device address space handle.
 | 21   | Can be used with [\#svcSendSyncRequestWithUserBuffer](#svcSendSyncRequestWithUserBuffer "wikilink") |
 | 24   | Can be used with [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink")                       |
 
-| Value     | Type                  | Meaning           |
-| --------- | --------------------- | ----------------- |
-| 0x0       | Unmapped              |                   |
-| 0x2001    | IO                    |                   |
-| 0x42002   | IO                    |                   |
-| 0xDC7E03  | Code static           | .text and .rodata |
-| 0x4       | Code                  | .data             |
-| 0x17EBD05 | Heap                  |                   |
-| 0x402006  | Shared memory block   |                   |
-| 0x482907  | Weird mapped memory   |                   |
-| 0x8       | Module code static    | .text and .rodata |
-| 0x9       | Module code           | .data             |
-| 0x5C3C0B  | Mapped memory         |                   |
-| 0xC       | Thread local storage  |                   |
-| 0x15C3C0D | Weird transfer memory |                   |
-| 0x5C380E  | Transfer memory       |                   |
-| 0x10      | Reserved              |                   |
+| Value     | Type                  | Meaning                                                                  |
+| --------- | --------------------- | ------------------------------------------------------------------------ |
+| 0x0       | Unmapped              |                                                                          |
+| 0x2001    | IO                    |                                                                          |
+| 0x42002   | IO                    |                                                                          |
+| 0xDC7E03  | Code static           | .text and .rodata                                                        |
+| 0x4       | Code                  | .data                                                                    |
+| 0x17EBD05 | Heap                  | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").             |
+| 0x402006  | Shared memory block   | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").     |
+| 0x482907  | Weird mapped memory   | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                 |
+| 0x8       | Module code static    | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").        |
+| 0x9       | Module code           | .data                                                                    |
+| 0x5C3C0B  | Mapped memory         | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                 |
+| 0xC       | Thread local storage  | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").          |
+| 0x15C3C0D | Weird transfer memory | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink"). |
+| 0x5C380E  | Transfer memory       | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink"). |
+| 0x40380F  | Process memory        | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").   |
+| 0x10      | Reserved              |                                                                          |
 
 Bit32: is\_mirrored Bit34: is\_device\_mapped Bit35: is\_uncached?
 
