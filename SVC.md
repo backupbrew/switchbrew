@@ -326,7 +326,7 @@ These take a device id and a device address space handle.
 | 0x17EBD05 | Heap                  | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                               |
 | 0x402006  | Shared memory block   | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                       |
 | 0x482907  | Weird mapped memory   | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                   |
-| 0x8       | Module code static    |                                                                                            |
+| 0xDD7E08  | Module code static    | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").             |
 | 0x9       | Module code           | .data                                                                                      |
 | 0x5C3C0B  | Mapped memory         | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                   |
 | 0xC       | Thread local storage  | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                            |

@@ -474,7 +474,7 @@ These take a device id and a device address space handle.
 |-
 | 0x482907 || Weird mapped memory || Mapped using [[#svcMapMemory]].
 |-
-| 0x8 || Module code static ||
+| 0xDD7E08 || Module code static ||  Mapped using [[#svcMapProcessCodeMemory]].
 |-
 | 0x9 || Module code || .data
 |-
