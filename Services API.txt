@@ -220,7 +220,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |
 |-
 | lr, ncm, ncm:v
-| [[Location Resolver services]]
+| [[NCM services]]
 |
 |-
 | nfc:am, nfc:mf:u, nfc:user, nfc:sys

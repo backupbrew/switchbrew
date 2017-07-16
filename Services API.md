@@ -219,7 +219,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="even">
 <td><p>lr, ncm, ncm:v</p></td>
-<td><p><a href="Location Resolver services.md" title="wikilink">Location Resolver services</a></p></td>
+<td><p><a href="NCM services.md" title="wikilink">NCM services</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">
