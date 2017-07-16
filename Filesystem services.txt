@@ -73,7 +73,7 @@
 |-
 | 58 || ReadSaveDataFileSystemExtraData
 |-
-| 59 || 
+| 59 || WriteSaveDataFileSystemExtraData
 |-
 | 60 || OpenSaveDataInfoReader
 |-
@@ -109,7 +109,7 @@
 |-
 | 605 || DeleteAllPaddingFiles
 |-
-| 606 ||
+| 606 || GetRightsId
 |-
 | 607 || RegisterExternalKey
 |-
@@ -117,9 +117,9 @@
 |-
 | 609 ||
 |-
-| 620 ||
+| 620 || SetSdCardEncryptionSeed
 |-
-| 800 ||
+| 800 || GetAndClearFileSystemProxyErrorInfo
 |-
 | 1000 || SetBisRootForHost
 |-
@@ -345,11 +345,11 @@ Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after 
 |-
 | 2 || GetSdCardCid
 |-
-| 3 ||
+| 3 || GetSdCardUserAreaSize
 |-
-| 4 ||
+| 4 || GetSdCardProtectedAreaSize
 |-
-| 5 ||
+| 5 || GetAndClearSdCardErrorInfo
 |-
 | 6 ||
 |-
@@ -361,11 +361,11 @@ Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after 
 |-
 | 111 || GetMmcPartitionSize
 |-
-| 112 ||
+| 112 || GetMmcPatrolCount
 |-
-| 113 ||
+| 113 || GetAndClearMmcErrorInfo
 |-
-| 114 ||
+| 114 || GetMmcExtendedCsd
 |-
 | 200 || IsGameCardInserted
 |-
@@ -391,11 +391,11 @@ Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after 
 |-
 | 211 || GetGameCardImageHash
 |-
-| 212 ||
+| 212 || GetGameCardErrorInfo
 |-
 | 213 ||
 |-
-| 214 ||
+| 214 || GetGameCardCid
 |-
 | 215 ||
 |-

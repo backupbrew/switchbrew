@@ -41,7 +41,7 @@
 | 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |
 | 53   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |
 | 58   | ReadSaveDataFileSystemExtraData                                                        |
-| 59   |                                                                                        |
+| 59   | WriteSaveDataFileSystemExtraData                                                       |
 | 60   | OpenSaveDataInfoReader                                                                 |
 | 61   | OpenSaveDataIterator                                                                   |
 | 80   | OpenSaveDataThumbnailFile                                                              |
@@ -59,12 +59,12 @@
 | 603  | CorruptSaveDataForDebug                                                                |
 | 604  | CreatePaddingFile                                                                      |
 | 605  | DeleteAllPaddingFiles                                                                  |
-| 606  |                                                                                        |
+| 606  | GetRightsId                                                                            |
 | 607  | RegisterExternalKey                                                                    |
 | 608  | UnregisterExternalKey                                                                  |
 | 609  |                                                                                        |
-| 620  |                                                                                        |
-| 800  |                                                                                        |
+| 620  | SetSdCardEncryptionSeed                                                                |
+| 800  | GetAndClearFileSystemProxyErrorInfo                                                    |
 | 1000 | SetBisRootForHost                                                                      |
 | 1001 |                                                                                        |
 | 1002 | SetSaveDataRootPath                                                                    |
@@ -294,17 +294,17 @@ used after writing to savedata for the changes to take affect.
 | 0   | IsSdCardInserted                                                               |
 | 1   | GetSdCardSpeedMode                                                             |
 | 2   | GetSdCardCid                                                                   |
-| 3   |                                                                                |
-| 4   |                                                                                |
-| 5   |                                                                                |
+| 3   | GetSdCardUserAreaSize                                                          |
+| 4   | GetSdCardProtectedAreaSize                                                     |
+| 5   | GetAndClearSdCardErrorInfo                                                     |
 | 6   |                                                                                |
 | 100 | GetMmcCid                                                                      |
 | 101 | GetMmcSpeedMode                                                                |
 | 110 | EraseMmc                                                                       |
 | 111 | GetMmcPartitionSize                                                            |
-| 112 |                                                                                |
-| 113 |                                                                                |
-| 114 |                                                                                |
+| 112 | GetMmcPatrolCount                                                              |
+| 113 | GetAndClearMmcErrorInfo                                                        |
+| 114 | GetMmcExtendedCsd                                                              |
 | 200 | IsGameCardInserted                                                             |
 | 201 | EraseGameCard                                                                  |
 | 202 | GetGameCardHandle                                                              |
@@ -317,9 +317,9 @@ used after writing to savedata for the changes to take affect.
 | 209 | WriteToGameCard                                                                |
 | 210 | SetVerifyWriteEnalbleFlag                                                      |
 | 211 | GetGameCardImageHash                                                           |
-| 212 |                                                                                |
+| 212 | GetGameCardErrorInfo                                                           |
 | 213 |                                                                                |
-| 214 |                                                                                |
+| 214 | GetGameCardCid                                                                 |
 | 215 |                                                                                |
 | 216 |                                                                                |
 | 300 | SetSpeedEmulationMode                                                          |
