@@ -189,7 +189,7 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 |-
 | <code>0bxxxxxxxx01111111</code>
 | Map IO range
-| Bits 7-31: page then size alternating
+| Bits 7-30: alternating start page and number of pages, bit31: alternating read-only flag then MemoryAttribute 0x2001/0x42002 selector flag
 |-
 | <code>0bxxxx011111111111</code>
 | Interrupt pair

@@ -80,10 +80,10 @@ The service string can contain a wildcard `*` character.
 On Switch, descriptors are identified by pattern 01..11 in low
 bits.
 
-| Pattern of bits 15-0 | Type           | Fields                                                 |
-| -------------------- | -------------- | ------------------------------------------------------ |
-| `0bxxxxxxxxxxxx0111` | Kernel flags   | 5-0: Main thread priority?                             |
-| `0bxxxxxxxxxxx01111` | Syscall mask   | Bits 29-31: Syscall mask table index; Bits 5-28: mask  |
-| `0bxxxxxxxxx0111111` | Map IO page    | Bits 7-31: page                                        |
-| `0bxxxxxxxx01111111` | Map IO range   | Bits 7-31: page then size alternating                  |
-| `0bxxxx011111111111` | Interrupt pair | Bits 12-21: irq0, bits 20-31: irq1, 0x3FF means empty. |
+| Pattern of bits 15-0 | Type           | Fields                                                                                                                                     |
+| -------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `0bxxxxxxxxxxxx0111` | Kernel flags   | 5-0: Main thread priority?                                                                                                                 |
+| `0bxxxxxxxxxxx01111` | Syscall mask   | Bits 29-31: Syscall mask table index; Bits 5-28: mask                                                                                      |
+| `0bxxxxxxxxx0111111` | Map IO page    | Bits 7-31: page                                                                                                                            |
+| `0bxxxxxxxx01111111` | Map IO range   | Bits 7-30: alternating start page and number of pages, bit31: alternating read-only flag then MemoryAttribute 0x2001/0x42002 selector flag |
+| `0bxxxx011111111111` | Interrupt pair | Bits 12-21: irq0, bits 20-31: irq1, 0x3FF means empty.                                                                                     |
