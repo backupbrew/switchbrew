@@ -317,24 +317,24 @@ These take a device id and a device address space handle.
 | 23   | Can be used with [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink")                           |
 | 24   | Can be used with [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink")                       |
 
-| Value     | Type                  | Meaning                                                                                                             |
-| --------- | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| 0x0       | Unmapped              |                                                                                                                     |
-| 0x2001    | IO                    | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| 0x42002   | IO                    | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| 0xDC7E03  | Code static           | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
-| 0x1FEBD04 | Code                  | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| 0x17EBD05 | Heap                  | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
-| 0x402006  | Shared memory block   | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                                                |
-| 0x482907  | Weird mapped memory   | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| 0xDD7E08  | Module code static    | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
-| 0x1FFBD09 | Module code mutable   | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| 0x5C3C0B  | Mapped memory         | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| 0xC       | Thread local storage  | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
-| 0x15C3C0D | Weird transfer memory | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink").                                            |
-| 0x5C380E  | Transfer memory       | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink").                                            |
-| 0x40380F  | Process memory        | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
-| 0x10      | Reserved              |                                                                                                                     |
+| Value      | Type                  | Meaning                                                                                                             |
+| ---------- | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 0x00000000 | Unmapped              |                                                                                                                     |
+| 0x00002001 | IO                    | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
+| 0x00042002 | IO                    | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
+| 0x00DC7E03 | Code static           | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
+| 0x01FEBD04 | Code                  | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
+| 0x017EBD05 | Heap                  | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
+| 0x00402006 | Shared memory block   | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                                                |
+| 0x00482907 | Weird mapped memory   | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
+| 0x00DD7E08 | Module code static    | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
+| 0x01FFBD09 | Module code mutable   | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
+| 0x005C3C0B | Mapped memory         | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
+| 0x0040200C | Thread local storage  | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
+| 0x015C3C0D | Weird transfer memory | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink").                                            |
+| 0x005C380E | Transfer memory       | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink").                                            |
+| 0x0040380F | Process memory        | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
+| 0x00000010 | Reserved              |                                                                                                                     |
 
 Bit32: is\_mirrored Bit34: is\_device\_mapped Bit35: is\_uncached?
 
