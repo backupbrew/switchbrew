@@ -298,22 +298,23 @@ input.
 | 15   | Is [\#svcMapMemory](#svcMapMemory "wikilink") allowed?                     |
 | 24   | Is [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink") allowed?   |
 
-| Value     | Type                 | Meaning           |
-| --------- | -------------------- | ----------------- |
-| 0x0       | Unmapped             |                   |
-| 0x2001    | IO                   |                   |
-| 0x42002   | IO                   |                   |
-| 0xDC7E03  | Code static          | .text and .rodata |
-| 0x4       | Code                 | .data             |
-| 0x17EBD05 | Heap                 |                   |
-| 0x402006  | Shared memory block  |                   |
-| 0x8       | Module code static   | .text and .rodata |
-| 0x9       | Module code          | .data             |
-| 0xB       | Mapped memory        |                   |
-| 0xC       | Thread local storage |                   |
-| 0x5C380E  | Transfer memory 1    |                   |
-| 0x15C3C0D | Transfer memory 2    |                   |
-| 0x10      | Reserved             |                   |
+| Value     | Type                  | Meaning           |
+| --------- | --------------------- | ----------------- |
+| 0x0       | Unmapped              |                   |
+| 0x2001    | IO                    |                   |
+| 0x42002   | IO                    |                   |
+| 0xDC7E03  | Code static           | .text and .rodata |
+| 0x4       | Code                  | .data             |
+| 0x17EBD05 | Heap                  |                   |
+| 0x402006  | Shared memory block   |                   |
+| 0x482907  | Weird mapped memory   |                   |
+| 0x8       | Module code static    | .text and .rodata |
+| 0x9       | Module code           | .data             |
+| 0x5C3C0B  | Normal mapped memory  |                   |
+| 0xC       | Thread local storage  |                   |
+| 0x15C3C0D | Weird transfer memory |                   |
+| 0x5C380E  | Normal ransfer memory |                   |
+| 0x10      | Reserved              |                   |
 
 Bit32: is\_mirrored Bit34: is\_device\_mapped Bit35: is\_uncached?
 
