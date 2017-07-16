@@ -123,6 +123,8 @@ When a fatal-error is received the error code is outputted using the following f
 {| class=wikitable
 ! Value || Description || Description
 |-
+| 0x1C01 || 14 || Invalid kernel capability descriptor
+|-
 | 0xCA01 || 101 || Invalid size
 |-
 | 0xCC01 || 102 || Invalid address
