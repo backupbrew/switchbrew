@@ -183,6 +183,6 @@ This is a listing of known System Savedata and what titles they
 correspond
 to.
 
-| SaveID             | Owner | Notes                                                                                                                              |
-| ------------------ | ----- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 0x80000000000000d1 | erpt  | Contains "/journal" report listing + actual crash reports ("/%08x-%04x-%04x-%02x%02x-%04x%08x"), which are serialized via MsgPack. |
+| SaveID             | Owner | Notes                                                                                                                                                     |
+| ------------------ | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x80000000000000d1 | erpt  | Contains "/journal" report listing + actual crash reports ("/%08x-%04x-%04x-%02x%02x-%04x%08x"), which are serialized via [MsgPack](http://msgpack.org/). |
