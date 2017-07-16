@@ -283,6 +283,8 @@ Inherits from: [[#KSynchronizationObject]]
 |}
 
 == KClientPort ==
+Size: 0x38
+
 Inherits from: [[#KSynchronizationObject]]
 
 {| class="wikitable" border="1"

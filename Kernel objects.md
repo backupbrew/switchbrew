@@ -128,6 +128,8 @@ Inherits from:
 
 ## KClientPort
 
+Size: 0x38
+
 Inherits from:
 [\#KSynchronizationObject](#KSynchronizationObject "wikilink")
 
