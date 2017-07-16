@@ -9,16 +9,16 @@ Size: 0x10
 
 # KSynchronizationObject
 
-Size: 0x20
+Size: 0x28
 
 Inherits from:
 [\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                               | Description    |
-| ------ | -------------------------------------------------- | -------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")           |                |
-| 0x10   | u64                                                | ThreadSyncNum  |
-| 0x18   | [\#KLinkedListNode](#KLinkedListNode "wikilink")\* | ThreadSyncList |
+| Offset | Type                                             | Description    |
+| ------ | ------------------------------------------------ | -------------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")         |                |
+| 0x10   | u64                                              | ThreadSyncNum  |
+| 0x18   | [\#KLinkedListNode](#KLinkedListNode "wikilink") | ThreadSyncList |
 
 # KLinkedListNode
 
@@ -139,3 +139,42 @@ Inherits from:
 | 0x28   | ?                                                              |                   |
 | 0x2C   | u32                                                            | MaxSessions \[?\] |
 | 0x30   | [\#KPort](#KPort "wikilink")\*                                 | Parent            |
+
+# KEvent
+
+Size: 0x70
+
+Inherits from:
+[\#KAutoObject](#KAutoObject "wikilink")
+
+| Offset | Type                                           | Description   |
+| ------ | ---------------------------------------------- | ------------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")       |               |
+| 0x10   | [\#KReadableEvent](#KReadableEvent "wikilink") | ReadableEvent |
+| 0x48   | [\#KWritableEvent](#KWritableEvent "wikilink") | WritableEvent |
+| 0x60   | [\#KProcess](#KProcess "wikilink")\*           | Creator       |
+| 0x68   | bool                                           | HasInited     |
+
+## KReadableEvent
+
+Size: 0x38
+
+Inherits from:
+[\#KSynchronizationEvent](#KSynchronizationEvent "wikilink")
+
+| Offset | Type                                                           | Description |
+| ------ | -------------------------------------------------------------- | ----------- |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |             |
+| 0x28   | bool                                                           |             |
+| 0x30   | [\#KEvent](#KEvent "wikilink")                                 | Parent      |
+
+## KWritableEvent
+
+Size: 0x18
+
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+
+| Offset | Type                                     | Description |
+| ------ | ---------------------------------------- | ----------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") |             |
+| 0x10   | [\#KEvent](#KEvent "wikilink")\*         | Parent      |
