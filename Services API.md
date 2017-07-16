@@ -64,8 +64,10 @@ handles retrieved directly from a SVC.
 
 # sm:m
 
-This service is presumably equivalent to 3DS
-"srv:pm".
+| Cmd | Name              | Arguments                                                                       | Notes |
+| --- | ----------------- | ------------------------------------------------------------------------------- | ----- |
+| 0   | RegisterProcess   | u32 PID + 2 A Descriptors (unknown, probably service access lists of some kind) |       |
+| 1   | UnregisterProcess | u32 PID                                                                         |       |
 
 # Service List
 

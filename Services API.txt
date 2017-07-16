@@ -89,7 +89,16 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |}
 
 = sm:m =
-This service is presumably equivalent to 3DS "srv:pm".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Arguments || Notes
+|-
+| 0 || RegisterProcess || u32 PID + 2 A Descriptors (unknown, probably service access lists of some kind) ||
+|-
+| 1 || UnregisterProcess || u32 PID ||
+|}
+
 
 = Service List =
 {| class="wikitable" border="1"
