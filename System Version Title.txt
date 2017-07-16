@@ -53,8 +53,8 @@ The FS for the system-version title(TID 0100000000000809) contains "/file":
 ! Hex ASCII String
 |-
 | 1.0.0
-| ?
-| ?
+| NintendoSDK Firmware for NX 1.0.0-15
+| 84b8da475a02261c456e6472b403b31416480165
 |-
 | 2.0.0
 | NintendoSDK Firmware for NX 2.0.0-15
