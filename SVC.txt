@@ -440,11 +440,15 @@ These take a device id and a device address space handle.
 |-
 | 7-0 || Type
 |-
-| 8 || Is [[#svcSetMemoryPermission]] allowed?
+| 8 || Can be used with [[#svcSetMemoryPermission]]
 |-
-| 15 || Is [[#svcMapMemory]] allowed?
+| 15 || Can be used with [[#svcMapMemory]]
 |-
-| 24 || Is [[#svcSetMemoryAttribute]] allowed?
+| 17 || Can be used with [[#svcCreateTransferMemory]]
+|-
+| 21 || Can be used with [[#svcSendSyncRequestWithUserBuffer]]
+|-
+| 24 || Can be used with [[#svcSetMemoryAttribute]]
 |}
 
 {| class=wikitable

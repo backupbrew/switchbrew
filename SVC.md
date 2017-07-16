@@ -305,12 +305,14 @@ These take a device id and a device address space handle.
 
 ## MemoryAttribute
 
-| Bits | Description                                                                |
-| ---- | -------------------------------------------------------------------------- |
-| 7-0  | Type                                                                       |
-| 8    | Is [\#svcSetMemoryPermission](#svcSetMemoryPermission "wikilink") allowed? |
-| 15   | Is [\#svcMapMemory](#svcMapMemory "wikilink") allowed?                     |
-| 24   | Is [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink") allowed?   |
+| Bits | Description                                                                                         |
+| ---- | --------------------------------------------------------------------------------------------------- |
+| 7-0  | Type                                                                                                |
+| 8    | Can be used with [\#svcSetMemoryPermission](#svcSetMemoryPermission "wikilink")                     |
+| 15   | Can be used with [\#svcMapMemory](#svcMapMemory "wikilink")                                         |
+| 17   | Can be used with [\#svcCreateTransferMemory](#svcCreateTransferMemory "wikilink")                   |
+| 21   | Can be used with [\#svcSendSyncRequestWithUserBuffer](#svcSendSyncRequestWithUserBuffer "wikilink") |
+| 24   | Can be used with [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink")                       |
 
 | Value     | Type                  | Meaning           |
 | --------- | --------------------- | ----------------- |
