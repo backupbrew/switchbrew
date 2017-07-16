@@ -247,7 +247,7 @@ This service is presumably equivalent to 3DS "srv:pm".
 | 
 |-
 | ldr:ro, ro:dmnt
-| [[Loader Services|RO services]]
+| [[Loader services|RO services]]
 | These services were split out of LDR into RO in version [[3.0.0]]
 |-
 | set, set:fd, set:cal, set:sys
