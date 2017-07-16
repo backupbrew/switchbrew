@@ -138,9 +138,9 @@
 |-
 | 0x53 || svcCreateInterruptEvent || X1=irq_id || W0=result, W1=handle
 |-
-| 0x54 || svcQueryPhysicalAddress ||  || 
+| 0x54 || [[#svcQueryPhysicalAddress]] ||  || 
 |-
-| 0x55 || svcQueryIoMapping || X0=physaddr, X1=size || X0=virtaddr
+| 0x55 || [[#svcQueryIoMapping]] || X0=physaddr, X1=size || X0=virtaddr
 |-
 | 0x56 || svcCreateDeviceAddressSpace || X1=start_addr?, X2=size? || W0=result, W1=handle
 |-
@@ -390,6 +390,11 @@ You must pass same size and permissions as given in svcCreateMemoryMirror, other
 
 == svcUnmapTransferMemory ==
 Size must match size given in map syscall, otherwise there's an invalid-size error.
+
+== svcQueryPhysicalAddress ==
+The inverse operation of [[#svcQueryIoAddress]].
+
+== svcQueryIoAddress ==
 
 == svcCreateProcess ==
 Takes a [[#CreateProcessInfo]] as input.

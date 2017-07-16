@@ -70,8 +70,8 @@
 | 0x51 | [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink")                         | X0=mirror\_handle, X1=addr, X2=size, W3=perm                                  | W0=result                                                   |
 | 0x52 | [\#svcUnmapTransferMemory](#svcUnmapTransferMemory "wikilink")                     | W0=mirror\_handle, X1=addr, X2=size                                           | W0=result                                                   |
 | 0x53 | svcCreateInterruptEvent                                                            | X1=irq\_id                                                                    | W0=result, W1=handle                                        |
-| 0x54 | svcQueryPhysicalAddress                                                            |                                                                               |                                                             |
-| 0x55 | svcQueryIoMapping                                                                  | X0=physaddr, X1=size                                                          | X0=virtaddr                                                 |
+| 0x54 | [\#svcQueryPhysicalAddress](#svcQueryPhysicalAddress "wikilink")                   |                                                                               |                                                             |
+| 0x55 | [\#svcQueryIoMapping](#svcQueryIoMapping "wikilink")                               | X0=physaddr, X1=size                                                          | X0=virtaddr                                                 |
 | 0x56 | svcCreateDeviceAddressSpace                                                        | X1=start\_addr?, X2=size?                                                     | W0=result, W1=handle                                        |
 | 0x57 | svcAttachDeviceAddressSpace                                                        | W0=handle, X1=device?                                                         | W0=result                                                   |
 | 0x58 | svcDetachDeviceAddressSpace                                                        | W0=handle, X1=device?                                                         | W0=result                                                   |
@@ -261,6 +261,13 @@ svcCreateMemoryMirror, otherwise error.
 
 Size must match size given in map syscall, otherwise there's an
 invalid-size error.
+
+## svcQueryPhysicalAddress
+
+The inverse operation of
+[\#svcQueryIoAddress](#svcQueryIoAddress "wikilink").
+
+## svcQueryIoAddress
 
 ## svcCreateProcess
 
