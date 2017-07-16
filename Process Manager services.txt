@@ -23,9 +23,9 @@
 |-
 | 0 || LaunchProcess
 |-
-| 1 || TerminatePid
+| 1 || TerminateProcessByPid
 |-
-| 2 ||
+| 2 || TerminateProcessByTitleID
 |-
 | 3 || GetProcessEventWaiter
 |-

@@ -16,8 +16,8 @@
 | Cmd | Name                                                |
 | --- | --------------------------------------------------- |
 | 0   | LaunchProcess                                       |
-| 1   | TerminatePid                                        |
-| 2   |                                                     |
+| 1   | TerminateProcessByPid                               |
+| 2   | TerminateProcessByTitleID                           |
 | 3   | GetProcessEventWaiter                               |
 | 4   | GetProcessEventType (0=CONTINUE, 1=CRASHING, 2,3,5) |
 | 5   | FinalizeEventType2                                  |
