@@ -11,13 +11,24 @@ Size: 0x10
 
 Size: 0x20
 
-Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+Inherits from:
+[\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                     | Description    |
-| ------ | ---------------------------------------- | -------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink") |                |
-| 0x10   | u64                                      | ThreadSyncNum  |
-| 0x18   | LinkedListNode\*                         | ThreadSyncList |
+| Offset | Type                                               | Description    |
+| ------ | -------------------------------------------------- | -------------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")           |                |
+| 0x10   | u64                                                | ThreadSyncNum  |
+| 0x18   | [\#KLinkedListNode](#KLinkedListNode "wikilink")\* | ThreadSyncList |
+
+# KLinkedListNode
+
+Size:
+0x10
+
+| Offset | Type                                               | Description |
+| ------ | -------------------------------------------------- | ----------- |
+| 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\* | Prev        |
+| 8      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\* | Next        |
 
 # KProcess
 
@@ -34,7 +45,7 @@ Inherits from:
 | 0xF0   | u64                                                            | TotalMemUsage |
 | 0xF8   | u64                                                            |               |
 | ..     | ..                                                             | ..            |
-| 0x100  | KLinkedListNode\*                                              | TlsPagesList  |
+| 0x100  | [\#KLinkedListNode](#KLinkedListNode "wikilink")\*             | TlsPagesList  |
 | ..     | ..                                                             | ..            |
 | 0x130  |                                                                | ProcessMutex  |
 | ..     | ..                                                             | ..            |

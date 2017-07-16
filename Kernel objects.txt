@@ -23,7 +23,19 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x10 || u64 || ThreadSyncNum
 |-
-| 0x18 || LinkedListNode* || ThreadSyncList
+| 0x18 || [[#KLinkedListNode]]* || ThreadSyncList
+|}
+
+= KLinkedListNode =
+Size: 0x10
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || [[#KLinkedListNode]]* || Prev
+|-
+| 8 || [[#KLinkedListNode]]* || Next
 |}
 
 = KProcess =
@@ -62,7 +74,7 @@ Inherits from: [[#KSynchronizationObject]]
 | ..
 |-
 | 0x100
-| KLinkedListNode*
+| [[#KLinkedListNode]]*
 | TlsPagesList
 |-
 | ..
