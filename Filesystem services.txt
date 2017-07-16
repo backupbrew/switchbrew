@@ -1,11 +1,11 @@
 = fsp-ldr =
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Arguments || Notes
 |-
-| 0 || MountCode
+| 0 || MountCode || u64 TID + X descriptor [[#ContentPath]] || Returns an [[#IFileSystem]].
 |-
-| 1 || IsCodeMounted
+| 1 || IsCodeMounted || u64 TID || Returns PID of process that has code mounted.
 |}
 
 = fsp-pr =
@@ -452,6 +452,31 @@ Returns a titleID and the title-version for it.
 |-
 | 2 || SdCard
 |}
+
+= ContentPath =
+
+These are the 0x300 paths to NCA files for the various filesystems FS can access, beginning with @. They're passed via X descriptors, and returned via various [[Location Resolver services|ncm/lr]] commands.
+
+{| class="wikitable" border="1"
+|-
+! Path || Notes
+|-
+| @GcApp || Gamecard App partition (Partition 2)
+|-
+| @GcS00000001 || Gamecard Contents.
+|-
+| @SdCardContent || Installed SD card contents
+|-
+| @Sdcard || Raw SD card partition
+|-
+| @SystemContent || NandSystem partition.
+|-
+| @upp || Gamecard update partition (Partition 0)
+|- 
+| @UserContent || NandUser partition.
+|}
+
+
 
 =BisPartitionID=
 * 0: Raw NAND sectors access for MMC [[Flash_Filesystem|boot]] partition 0.

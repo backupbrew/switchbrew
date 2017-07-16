@@ -1,9 +1,9 @@
 # fsp-ldr
 
-| Cmd | Name          |
-| --- | ------------- |
-| 0   | MountCode     |
-| 1   | IsCodeMounted |
+| Cmd | Name          | Arguments                                                       | Notes                                                |
+| --- | ------------- | --------------------------------------------------------------- | ---------------------------------------------------- |
+| 0   | MountCode     | u64 TID + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink"). |
+| 1   | IsCodeMounted | u64 TID                                                         | Returns PID of process that has code mounted.        |
 
 # fsp-pr
 
@@ -365,6 +365,23 @@ with storageid=nandsys, for checking whether a sysupdate is required.
 | 0     | NandSystem |
 | 1     | NandUser   |
 | 2     | SdCard     |
+
+# ContentPath
+
+These are the 0x300 paths to NCA files for the various filesystems FS
+can access, beginning with @. They're passed via X descriptors, and
+returned via various
+[ncm/lr](Location%20Resolver%20services.md "wikilink") commands.
+
+| Path           | Notes                                   |
+| -------------- | --------------------------------------- |
+| @GcApp         | Gamecard App partition (Partition 2)    |
+| @GcS00000001   | Gamecard Contents.                      |
+| @SdCardContent | Installed SD card contents              |
+| @Sdcard        | Raw SD card partition                   |
+| @SystemContent | NandSystem partition.                   |
+| @upp           | Gamecard update partition (Partition 0) |
+| @UserContent   | NandUser partition.                     |
 
 # BisPartitionID
 
