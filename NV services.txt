@@ -130,6 +130,8 @@ The following table contains known ioctls.
 |-
 | 0xC008001A || Inout || 8 || [[#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX]] ||
 |-
+| 0xC183001B || Inout || 387 || NVHOST_IOCTL_CTRL_GET_CONFIG ||
+|-
 | 0xC004001C || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_SIGNAL]] ||
 |-
 | 0xC010001D || Inout || 16 || [[#NVHOST_IOCTL_CTRL_EVENT_WAIT]] ||
@@ -252,6 +254,266 @@ Kills events. Exclusive to the Switch.
   struct {
     u64 __events;      // in (64-bit flag where each bit represents one event)
   };
+
+== /dev/nvmap ==
+{| class="wikitable" border="1"
+! Value || Direction || Size || Description || Notes
+|-
+| 0xC0080101 || Inout || 8 || [[#NVMAP_IOC_CREATE]] ||
+|-
+| 0x00000102 || - || 0 || NVMAP_IOC_CLAIM || Returns NotSupported
+|-
+| 0xC0080103 || Inout || 8 || [[#NVMAP_IOC_FROM_ID]] ||
+|-
+| 0xC0200104 || Inout || 32 || [[#NVMAP_IOC_ALLOC]] ||
+|-
+| 0xC0180105 || Inout || 24 || [[#NVMAP_IOC_FREE]] ||
+|-
+| 0xC0280106 || Inout || 40 || NVMAP_IOC_MMAP || Returns NotSupported
+|-
+| 0xC0280107 || Inout || 40 || NVMAP_IOC_WRITE || Returns NotSupported
+|-
+| 0xC0280108 || Inout || 40 || NVMAP_IOC_READ || Returns NotSupported
+|-
+| 0xC00C0109 || Inout || 12 || [[#NVMAP_IOC_PARAM]] ||
+|-
+| 0xC010010A || Inout || 16 || NVMAP_IOC_PIN_MULT || Returns NotSupported
+|-
+| 0xC010010B || Inout || 16 || NVMAP_IOC_UNPIN_MULT || Returns NotSupported
+|-
+| 0xC008010C || Inout || 8 || NVMAP_IOC_CACHE || Returns NotSupported
+|-
+| 0xC004010D || Inout || 4 || || Returns NotSupported
+|-
+| 0xC008010E || Inout || 8 || [[#NVMAP_IOC_GET_ID]] ||
+|-
+| 0xC004010F || Inout || 4 || || Returns NotSupported
+|-
+| 0x40040110 || In || 4 || || Returns NotSupported
+|-
+| 0x00000111 || - || 0 || || Returns NotSupported
+|}
+
+=== NVMAP_IOC_CREATE ===
+Creates an nvmap object. Identical to Linux driver.
+
+  struct {
+    u32 __size;   // in
+    u32 __handle; // out
+  };
+
+=== NVMAP_IOC_FROM_ID ===
+Get handle to an existing nvmap object. Identical to Linux driver.
+
+  struct {
+    u32 __id;     // in
+    u32 __handle; // out
+  };
+
+=== NVMAP_IOC_ALLOC ===
+Allocate memory for the nvmap object. Nintendo extended this one with 16 bytes, and changed it from in to inout.
+
+  struct {
+    u32 __handle;   // in
+    u32 __heapmask; // in
+    u32 __flags;    // in (0=read-only, 1=read-write)
+    u32 __align;    // in
+    u8  __kind;     // in
+    u8  __pad[7];
+    u64 __addr;     // in
+  };
+
+=== NVMAP_IOC_FREE ===
+This one is completely custom. Partly because the Linux driver passed the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
+
+  struct {
+    u32 __handle;   // in
+    u32 __pad;
+    u64 __refcount; // out
+    u32 __size;     // out
+    u32 __flags;    // out, 1=NOT_FREED_YET
+  };
+
+=== NVMAP_IOC_PARAM ===
+Returns info about a nvmap object. Identical to Linux driver, but extended with further params.
+
+  struct {
+    u32 __handle; // in
+    u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=BASE (returns error), 4=HEAP (always 0x40000000), 5=KIND, 6=COMPR (unused)
+    u32 __result; // out
+  };
+
+=== NVMAP_IOC_GET_ID ===
+Returns an id for a nvmap object. Identical to Linux driver.
+
+  struct {
+    u32 __id;     // out
+    u32 __handle; // in
+  };
+
+== /dev/nvdisp-ctrl ==
+{| class="wikitable" border="1"
+! Value || Direction || Size || Description || Notes
+|-
+| 0x80040212 || Out || 4 || ||
+|-
+| 0xC0140213 || Inout || 20 || ||
+|-
+| 0xC1100214 || Inout || 272 || ||
+|-
+| 0xC0040216 || Inout || 4 || ||
+|-
+| 0xC0040217 || Inout || 4 || ||
+|-
+| 0xC0100218 || Inout || 16 || ||
+|-
+| 0xC0100219 || Inout || 16 || ||
+|-
+| 0xC0040220 || Inout || 4 || ||
+|-
+|}
+
+== /dev/nvdisp-disp0, /dev/nvdisp-disp1 ==
+{| class="wikitable" border="1"
+! Value || Direction || Size || Description || Notes
+|-
+| 0x40040201 || In || 4 || ||
+|-
+| 0x40040202 || In || 4 || ||
+|-
+| 0xC4C80203 || In || 1224 || ||
+|-
+| 0x80380204 || Out || 56 || ||
+|-
+| 0x40380205 || Out || 56 || ||
+|-
+| 0x430C0206 || In || 780 || ||
+|-
+| 0x40010207 || In || 1 || ||
+|-
+| 0x80040208 || Out || 4 || ||
+|-
+| 0x80040209 || Out || 4 || ||
+|-
+| 0xC038020A || Inout || 56 || ||
+|-
+| 0x4018020B || In || 24 || ||
+|-
+| 0xC004020C || Inout || 4 || ||
+|-
+| 0x8040020D || Out || 64 || ||
+|-
+| 0xC99A020E || Inout || 2458 || ||
+|-
+| 0xC004020F || Inout || 4 || ||
+|-
+| 0x80600210 || Out || 96 || ||
+|-
+| 0x40600211 || In || 96 || ||
+|-
+| 0xEBFC0215 || Inout || 11260 || ||
+|-
+| 0xC003021A || Inout || 3 || ||
+|-
+| 0x803C021B || Out || 60 || ||
+|-
+| 0x403C021C || In || 60 || ||
+|-
+| 0xC03C021D || Inout || 60  || ||
+|-
+| 0xEF20021E || Inout || 12064 || ||
+|-
+| 0xC004021F || Inout || 4 || ||
+|-
+|}
+
+== /dev/nvcec-ctrl ==
+{| class="wikitable" border="1"
+! Value || Direction || Size || Description || Notes
+|-
+| 0x40010300 || In || 1 || ||
+|-
+| 0x40010301 || In || 1 || NVCEC_CTRL_ENABLE ||
+|-
+| 0x804C0302 || Out || 76 || NVCEC_CTRL_GET_PADDR ||
+|-
+| 0x40040303 || In || 4 || NVCEC_CTRL_SET_LADDR ||
+|-
+| 0xC04C0304 || Inout || 76 || NVCEC_CTRL_WRITE ||
+|-
+| 0xC04C0305 || Inout || 76 || NVCEC_CTRL_READ ||
+|-
+| 0x804C0306 || Out || 76 || NVCEC_CTRL_GET_CONNECTION_STATUS ||
+|-
+| 0x804C0307 || Out || 76 || NVCEC_CTRL_GET_WRITE_STATUS ||
+|-
+|}
+
+== /dev/nvhdcp_up-ctrl ==
+{| class="wikitable" border="1"
+! Value || Direction || Size || Description || Notes
+|-
+| 0xC4880401 || Inout || 1160 || ||
+|-
+| 0xC4880402 || Inout || 1160 || ||
+|-
+| 0x40010403 || In || 1 || ||
+|-
+|}
+
+== /dev/nvdcutil-disp0, /dev/nvdcutil-disp1 ==
+{| class="wikitable" border="1"
+! Value || Direction || Size || Description || Notes
+|-
+| 0x40010501 || In || 1 || ||
+|-
+| 0x40010502 || In || 1 || ||
+|-
+| 0x42040503 || In || 1056 || ||
+|-
+| 0x803C0504 || Out || 60 || ||
+|-
+|}
+
+== /dev/nvsched-ctrl ==
+{| class="wikitable" border="1"
+! Value || Direction || Size || Description || Notes
+|-
+| 0x00000601 || - || 0 || ||
+|-
+| 0x00000602 || - || 0 || ||
+|-
+| 0x40180603 || In || 1056 || ||
+|-
+| 0x40180604 || In || 60 || ||
+|-
+| 0x40080605 || In || 60 || ||
+|-
+| 0x80080606 || Out || 60 || ||
+|-
+| 0x80080607 || Out || 60 || ||
+|-
+| 0x40180608 || In || 24 || ||
+|-
+| 0x40100609 || In || 16 || ||
+|-
+| 0x4010060A || In || 16 || ||
+|-
+| 0x4008060B || In || 8 || ||
+|-
+| 0x8001060C || Out || 1 || ||
+|-
+| 0x8010060D || Out || 16 || ||
+|-
+| 0x400C060E || In || 12 || ||
+|-
+| 0x4008060F || In || 8 || ||
+|-
+| 0x40100610 || In || 16 || ||
+|-
+| 0x40100611 || In || 16 || ||
+|-
+|}
 
 == /dev/nvhost-as-gpu ==
 Each fd opened to this device creates an address space. An address space is then later bound with a channel.
@@ -384,101 +646,29 @@ Nintendo's custom implementation of NVGPU_GPU_IOCTL_ALLOC_AS (unavailable) with 
     u64 __unk2;            // in
   };
 
-== /dev/nvmap ==
+== /dev/nvhost-dbg-gpu ==
+Not accessible, but there is code to invoke it.
+
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0xC0080101 || Inout || 8 || [[#NVMAP_IOC_CREATE]] ||
+| 0x40084401 || In || 8 || NVGPU_DBG_GPU_IOCTL_BIND_CHANNEL ||
 |-
-| 0x00000102 || - || 0 || NVMAP_IOC_CLAIM || Returns NotSupported
+| 0xC0??4402 || Inout || Variable || NVGPU_DBG_GPU_IOCTL_REG_OPS ||
 |-
-| 0xC0080103 || Inout || 8 || [[#NVMAP_IOC_FROM_ID]] ||
+| 0x40084403 || In || 8 || NVGPU_DBG_GPU_IOCTL_EVENTS_CTRL ||
 |-
-| 0xC0200104 || Inout || 32 || [[#NVMAP_IOC_ALLOC]] ||
+| 0x40044404 || In || 4 || NVGPU_DBG_GPU_IOCTL_POWERGATE ||
 |-
-| 0xC0180105 || Inout || 24 || [[#NVMAP_IOC_FREE]] ||
+| 0x40044405 || In || 4 || NVGPU_DBG_GPU_IOCTL_SMPC_CTXSW_MODE ||
 |-
-| 0xC0280106 || Inout || 40 || NVMAP_IOC_MMAP || Returns NotSupported
+| 0xC0184407 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_PERFBUF_MAP ||
 |-
-| 0xC0280107 || Inout || 40 || NVMAP_IOC_WRITE || Returns NotSupported
+| 0x40084408 || In || 8 || NVGPU_DBG_GPU_IOCTL_PERFBUF_UNMAP ||
 |-
-| 0xC0280108 || Inout || 40 || NVMAP_IOC_READ || Returns NotSupported
+| 0x40084409 || In || 8 || NVGPU_DBG_GPU_IOCTL_PC_SAMPLING ||
 |-
-| 0xC00C0109 || Inout || 12 || [[#NVMAP_IOC_PARAM]] ||
-|-
-| 0xC010010A || Inout || 16 || NVMAP_IOC_PIN_MULT || Returns NotSupported
-|-
-| 0xC010010B || Inout || 16 || NVMAP_IOC_UNPIN_MULT || Returns NotSupported
-|-
-| 0xC008010C || Inout || 8 || NVMAP_IOC_CACHE || Returns NotSupported
-|-
-| 0xC004010D || Inout || 4 || || Returns NotSupported
-|-
-| 0xC008010E || Inout || 8 || [[#NVMAP_IOC_GET_ID]] ||
-|-
-| 0xC004010F || Inout || 4 || || Returns NotSupported
-|-
-| 0x40040110 || In || 4 || || Returns NotSupported
-|-
-| 0x00000111 || - || 0 || || Returns NotSupported
 |}
-
-=== NVMAP_IOC_CREATE ===
-Creates an nvmap object. Identical to Linux driver.
-
-  struct {
-    u32 __size;   // in
-    u32 __handle; // out
-  };
-
-=== NVMAP_IOC_FROM_ID ===
-Get handle to an existing nvmap object. Identical to Linux driver.
-
-  struct {
-    u32 __id;     // in
-    u32 __handle; // out
-  };
-
-=== NVMAP_IOC_ALLOC ===
-Allocate memory for the nvmap object. Nintendo extended this one with 16 bytes, and changed it from in to inout.
-
-  struct {
-    u32 __handle;   // in
-    u32 __heapmask; // in
-    u32 __flags;    // in (0=read-only, 1=read-write)
-    u32 __align;    // in
-    u8  __kind;     // in
-    u8  __pad[7];
-    u64 __addr;     // in
-  };
-
-=== NVMAP_IOC_FREE ===
-This one is completely custom. Partly because the Linux driver passed the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
-
-  struct {
-    u32 __handle;   // in
-    u32 __pad;
-    u64 __refcount; // out
-    u32 __size;     // out
-    u32 __flags;    // out, 1=NOT_FREED_YET
-  };
-
-=== NVMAP_IOC_PARAM ===
-Returns info about a nvmap object. Identical to Linux driver, but extended with further params.
-
-  struct {
-    u32 __handle; // in
-    u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=BASE (returns error), 4=HEAP (always 0x40000000), 5=KIND, 6=COMPR (unused)
-    u32 __result; // out
-  };
-
-=== NVMAP_IOC_GET_ID ===
-Returns an id for a nvmap object. Identical to Linux driver.
-
-  struct {
-    u32 __id;     // out
-    u32 __handle; // in
-  };
 
 == /dev/nvhost-ctrl-gpu ==
 This device is for global (context independent) operations on the gpu.  
@@ -614,6 +804,8 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 | 0xC0080004 || 8 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX ||
 |-
 | 0x40040007 || 4 || ||
+|-
+| 0x40080008 || 8 || NVHOST_IOCTL_CHANNEL_SET_CLK_RATE ||
 |-
 | 0xC0??0009 || Variable || NVHOST_IOCTL_CHANNEL_MAP_BUFFER ||
 |-
@@ -796,30 +988,6 @@ Allocates gpfifo entries with additional parameters and returns a fence. Exclusi
     u32 __unk2;                // in
     u32 __unk3;                // in
   };
-
-== Remaining Ioctls ==
-Not accessible, but there is code to invoke them.
-
-{| class="wikitable" border="1"
-! Value || Size || Description || Notes
-|-
-| /dev/nvhost-dbg-gpu || 0x40084401 || NVGPU_DBG_GPU_IOCTL_BIND_CHANNEL ||
-|-
-| /dev/nvhost-dbg-gpu || 0xC0??4402 || NVGPU_DBG_GPU_IOCTL_REG_OPS || ?? == size is unknown
-|-
-| /dev/nvhost-dbg-gpu || 0x40084403 || NVGPU_DBG_GPU_IOCTL_EVENTS_CTRL ||
-|-
-| /dev/nvhost-dbg-gpu || 0x40044404 || NVGPU_DBG_GPU_IOCTL_POWERGATE ||
-|-
-| /dev/nvhost-dbg-gpu || 0x40044405 || NVGPU_DBG_GPU_IOCTL_SMPC_CTXSW_MODE ||
-|-
-| /dev/nvhost-dbg-gpu || 0xC0184407 || NVGPU_DBG_GPU_IOCTL_PERFBUF_MAP ||
-|-
-| /dev/nvhost-dbg-gpu || 0x40084408 || NVGPU_DBG_GPU_IOCTL_PERFBUF_UNMAP ||
-|-
-| /dev/nvhost-dbg-gpu || 0x40084409 || NVGPU_DBG_GPU_IOCTL_PC_SAMPLING ||
-|-
-|}
 
 = nvmemp =
 NVIDIA memory profiler (this service is not available on retail units).

@@ -86,6 +86,7 @@ ioctls.
 | 0xC0180018 | Inout     | 24   | [\#NVHOST\_IOCTL\_CTRL\_MODULE\_REGRDWR](#NVHOST_IOCTL_CTRL_MODULE_REGRDWR "wikilink")      |       |
 | 0xC0100019 | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX](#NVHOST_IOCTL_CTRL_SYNCPT_WAITEX "wikilink")        |       |
 | 0xC008001A | Inout     | 8    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX](#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX "wikilink")   |       |
+| 0xC183001B | Inout     | 387  | NVHOST\_IOCTL\_CTRL\_GET\_CONFIG                                                            |       |
 | 0xC004001C | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_SIGNAL](#NVHOST_IOCTL_CTRL_EVENT_SIGNAL "wikilink")          |       |
 | 0xC010001D | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT](#NVHOST_IOCTL_CTRL_EVENT_WAIT "wikilink")              |       |
 | 0xC010001E | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT\_ASYNC](#NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC "wikilink") |       |
@@ -216,6 +217,195 @@ Switch.
 ` struct {`  
 `   u64 __events;      // in (64-bit flag where each bit represents one event)`  
 ` };`
+
+## /dev/nvmap
+
+| Value      | Direction | Size | Description                                             | Notes                |
+| ---------- | --------- | ---- | ------------------------------------------------------- | -------------------- |
+| 0xC0080101 | Inout     | 8    | [\#NVMAP\_IOC\_CREATE](#NVMAP_IOC_CREATE "wikilink")    |                      |
+| 0x00000102 | \-        | 0    | NVMAP\_IOC\_CLAIM                                       | Returns NotSupported |
+| 0xC0080103 | Inout     | 8    | [\#NVMAP\_IOC\_FROM\_ID](#NVMAP_IOC_FROM_ID "wikilink") |                      |
+| 0xC0200104 | Inout     | 32   | [\#NVMAP\_IOC\_ALLOC](#NVMAP_IOC_ALLOC "wikilink")      |                      |
+| 0xC0180105 | Inout     | 24   | [\#NVMAP\_IOC\_FREE](#NVMAP_IOC_FREE "wikilink")        |                      |
+| 0xC0280106 | Inout     | 40   | NVMAP\_IOC\_MMAP                                        | Returns NotSupported |
+| 0xC0280107 | Inout     | 40   | NVMAP\_IOC\_WRITE                                       | Returns NotSupported |
+| 0xC0280108 | Inout     | 40   | NVMAP\_IOC\_READ                                        | Returns NotSupported |
+| 0xC00C0109 | Inout     | 12   | [\#NVMAP\_IOC\_PARAM](#NVMAP_IOC_PARAM "wikilink")      |                      |
+| 0xC010010A | Inout     | 16   | NVMAP\_IOC\_PIN\_MULT                                   | Returns NotSupported |
+| 0xC010010B | Inout     | 16   | NVMAP\_IOC\_UNPIN\_MULT                                 | Returns NotSupported |
+| 0xC008010C | Inout     | 8    | NVMAP\_IOC\_CACHE                                       | Returns NotSupported |
+| 0xC004010D | Inout     | 4    |                                                         | Returns NotSupported |
+| 0xC008010E | Inout     | 8    | [\#NVMAP\_IOC\_GET\_ID](#NVMAP_IOC_GET_ID "wikilink")   |                      |
+| 0xC004010F | Inout     | 4    |                                                         | Returns NotSupported |
+| 0x40040110 | In        | 4    |                                                         | Returns NotSupported |
+| 0x00000111 | \-        | 0    |                                                         | Returns NotSupported |
+
+### NVMAP\_IOC\_CREATE
+
+Creates an nvmap object. Identical to Linux driver.
+
+` struct {`  
+`   u32 __size;   // in`  
+`   u32 __handle; // out`  
+` };`
+
+### NVMAP\_IOC\_FROM\_ID
+
+Get handle to an existing nvmap object. Identical to Linux driver.
+
+` struct {`  
+`   u32 __id;     // in`  
+`   u32 __handle; // out`  
+` };`
+
+### NVMAP\_IOC\_ALLOC
+
+Allocate memory for the nvmap object. Nintendo extended this one with 16
+bytes, and changed it from in to inout.
+
+` struct {`  
+`   u32 __handle;   // in`  
+`   u32 __heapmask; // in`  
+`   u32 __flags;    // in (0=read-only, 1=read-write)`  
+`   u32 __align;    // in`  
+`   u8  __kind;     // in`  
+`   u8  __pad[7];`  
+`   u64 __addr;     // in`  
+` };`
+
+### NVMAP\_IOC\_FREE
+
+This one is completely custom. Partly because the Linux driver passed
+the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
+
+` struct {`  
+`   u32 __handle;   // in`  
+`   u32 __pad;`  
+`   u64 __refcount; // out`  
+`   u32 __size;     // out`  
+`   u32 __flags;    // out, 1=NOT_FREED_YET`  
+` };`
+
+### NVMAP\_IOC\_PARAM
+
+Returns info about a nvmap object. Identical to Linux driver, but
+extended with further
+params.
+
+` struct {`  
+`   u32 __handle; // in`  
+`   u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=BASE (returns error), 4=HEAP (always 0x40000000), 5=KIND, 6=COMPR (unused)`  
+`   u32 __result; // out`  
+` };`
+
+### NVMAP\_IOC\_GET\_ID
+
+Returns an id for a nvmap object. Identical to Linux driver.
+
+` struct {`  
+`   u32 __id;     // out`  
+`   u32 __handle; // in`  
+` };`
+
+## /dev/nvdisp-ctrl
+
+| Value      | Direction | Size | Description | Notes |
+| ---------- | --------- | ---- | ----------- | ----- |
+| 0x80040212 | Out       | 4    |             |       |
+| 0xC0140213 | Inout     | 20   |             |       |
+| 0xC1100214 | Inout     | 272  |             |       |
+| 0xC0040216 | Inout     | 4    |             |       |
+| 0xC0040217 | Inout     | 4    |             |       |
+| 0xC0100218 | Inout     | 16   |             |       |
+| 0xC0100219 | Inout     | 16   |             |       |
+| 0xC0040220 | Inout     | 4    |             |       |
+|            |           |      |             |       |
+
+## /dev/nvdisp-disp0, /dev/nvdisp-disp1
+
+| Value      | Direction | Size  | Description | Notes |
+| ---------- | --------- | ----- | ----------- | ----- |
+| 0x40040201 | In        | 4     |             |       |
+| 0x40040202 | In        | 4     |             |       |
+| 0xC4C80203 | In        | 1224  |             |       |
+| 0x80380204 | Out       | 56    |             |       |
+| 0x40380205 | Out       | 56    |             |       |
+| 0x430C0206 | In        | 780   |             |       |
+| 0x40010207 | In        | 1     |             |       |
+| 0x80040208 | Out       | 4     |             |       |
+| 0x80040209 | Out       | 4     |             |       |
+| 0xC038020A | Inout     | 56    |             |       |
+| 0x4018020B | In        | 24    |             |       |
+| 0xC004020C | Inout     | 4     |             |       |
+| 0x8040020D | Out       | 64    |             |       |
+| 0xC99A020E | Inout     | 2458  |             |       |
+| 0xC004020F | Inout     | 4     |             |       |
+| 0x80600210 | Out       | 96    |             |       |
+| 0x40600211 | In        | 96    |             |       |
+| 0xEBFC0215 | Inout     | 11260 |             |       |
+| 0xC003021A | Inout     | 3     |             |       |
+| 0x803C021B | Out       | 60    |             |       |
+| 0x403C021C | In        | 60    |             |       |
+| 0xC03C021D | Inout     | 60    |             |       |
+| 0xEF20021E | Inout     | 12064 |             |       |
+| 0xC004021F | Inout     | 4     |             |       |
+|            |           |       |             |       |
+
+## /dev/nvcec-ctrl
+
+| Value      | Direction | Size | Description                          | Notes |
+| ---------- | --------- | ---- | ------------------------------------ | ----- |
+| 0x40010300 | In        | 1    |                                      |       |
+| 0x40010301 | In        | 1    | NVCEC\_CTRL\_ENABLE                  |       |
+| 0x804C0302 | Out       | 76   | NVCEC\_CTRL\_GET\_PADDR              |       |
+| 0x40040303 | In        | 4    | NVCEC\_CTRL\_SET\_LADDR              |       |
+| 0xC04C0304 | Inout     | 76   | NVCEC\_CTRL\_WRITE                   |       |
+| 0xC04C0305 | Inout     | 76   | NVCEC\_CTRL\_READ                    |       |
+| 0x804C0306 | Out       | 76   | NVCEC\_CTRL\_GET\_CONNECTION\_STATUS |       |
+| 0x804C0307 | Out       | 76   | NVCEC\_CTRL\_GET\_WRITE\_STATUS      |       |
+|            |           |      |                                      |       |
+
+## /dev/nvhdcp\_up-ctrl
+
+| Value      | Direction | Size | Description | Notes |
+| ---------- | --------- | ---- | ----------- | ----- |
+| 0xC4880401 | Inout     | 1160 |             |       |
+| 0xC4880402 | Inout     | 1160 |             |       |
+| 0x40010403 | In        | 1    |             |       |
+|            |           |      |             |       |
+
+## /dev/nvdcutil-disp0, /dev/nvdcutil-disp1
+
+| Value      | Direction | Size | Description | Notes |
+| ---------- | --------- | ---- | ----------- | ----- |
+| 0x40010501 | In        | 1    |             |       |
+| 0x40010502 | In        | 1    |             |       |
+| 0x42040503 | In        | 1056 |             |       |
+| 0x803C0504 | Out       | 60   |             |       |
+|            |           |      |             |       |
+
+## /dev/nvsched-ctrl
+
+| Value      | Direction | Size | Description | Notes |
+| ---------- | --------- | ---- | ----------- | ----- |
+| 0x00000601 | \-        | 0    |             |       |
+| 0x00000602 | \-        | 0    |             |       |
+| 0x40180603 | In        | 1056 |             |       |
+| 0x40180604 | In        | 60   |             |       |
+| 0x40080605 | In        | 60   |             |       |
+| 0x80080606 | Out       | 60   |             |       |
+| 0x80080607 | Out       | 60   |             |       |
+| 0x40180608 | In        | 24   |             |       |
+| 0x40100609 | In        | 16   |             |       |
+| 0x4010060A | In        | 16   |             |       |
+| 0x4008060B | In        | 8    |             |       |
+| 0x8001060C | Out       | 1    |             |       |
+| 0x8010060D | Out       | 16   |             |       |
+| 0x400C060E | In        | 12   |             |       |
+| 0x4008060F | In        | 8    |             |       |
+| 0x40100610 | In        | 16   |             |       |
+| 0x40100611 | In        | 16   |             |       |
+|            |           |      |             |       |
 
 ## /dev/nvhost-as-gpu
 
@@ -361,94 +551,22 @@ params.
 `   u64 __unk2;            // in`  
 ` };`
 
-## /dev/nvmap
+## /dev/nvhost-dbg-gpu
 
-| Value      | Direction | Size | Description                                             | Notes                |
-| ---------- | --------- | ---- | ------------------------------------------------------- | -------------------- |
-| 0xC0080101 | Inout     | 8    | [\#NVMAP\_IOC\_CREATE](#NVMAP_IOC_CREATE "wikilink")    |                      |
-| 0x00000102 | \-        | 0    | NVMAP\_IOC\_CLAIM                                       | Returns NotSupported |
-| 0xC0080103 | Inout     | 8    | [\#NVMAP\_IOC\_FROM\_ID](#NVMAP_IOC_FROM_ID "wikilink") |                      |
-| 0xC0200104 | Inout     | 32   | [\#NVMAP\_IOC\_ALLOC](#NVMAP_IOC_ALLOC "wikilink")      |                      |
-| 0xC0180105 | Inout     | 24   | [\#NVMAP\_IOC\_FREE](#NVMAP_IOC_FREE "wikilink")        |                      |
-| 0xC0280106 | Inout     | 40   | NVMAP\_IOC\_MMAP                                        | Returns NotSupported |
-| 0xC0280107 | Inout     | 40   | NVMAP\_IOC\_WRITE                                       | Returns NotSupported |
-| 0xC0280108 | Inout     | 40   | NVMAP\_IOC\_READ                                        | Returns NotSupported |
-| 0xC00C0109 | Inout     | 12   | [\#NVMAP\_IOC\_PARAM](#NVMAP_IOC_PARAM "wikilink")      |                      |
-| 0xC010010A | Inout     | 16   | NVMAP\_IOC\_PIN\_MULT                                   | Returns NotSupported |
-| 0xC010010B | Inout     | 16   | NVMAP\_IOC\_UNPIN\_MULT                                 | Returns NotSupported |
-| 0xC008010C | Inout     | 8    | NVMAP\_IOC\_CACHE                                       | Returns NotSupported |
-| 0xC004010D | Inout     | 4    |                                                         | Returns NotSupported |
-| 0xC008010E | Inout     | 8    | [\#NVMAP\_IOC\_GET\_ID](#NVMAP_IOC_GET_ID "wikilink")   |                      |
-| 0xC004010F | Inout     | 4    |                                                         | Returns NotSupported |
-| 0x40040110 | In        | 4    |                                                         | Returns NotSupported |
-| 0x00000111 | \-        | 0    |                                                         | Returns NotSupported |
+Not accessible, but there is code to invoke
+it.
 
-### NVMAP\_IOC\_CREATE
-
-Creates an nvmap object. Identical to Linux driver.
-
-` struct {`  
-`   u32 __size;   // in`  
-`   u32 __handle; // out`  
-` };`
-
-### NVMAP\_IOC\_FROM\_ID
-
-Get handle to an existing nvmap object. Identical to Linux driver.
-
-` struct {`  
-`   u32 __id;     // in`  
-`   u32 __handle; // out`  
-` };`
-
-### NVMAP\_IOC\_ALLOC
-
-Allocate memory for the nvmap object. Nintendo extended this one with 16
-bytes, and changed it from in to inout.
-
-` struct {`  
-`   u32 __handle;   // in`  
-`   u32 __heapmask; // in`  
-`   u32 __flags;    // in (0=read-only, 1=read-write)`  
-`   u32 __align;    // in`  
-`   u8  __kind;     // in`  
-`   u8  __pad[7];`  
-`   u64 __addr;     // in`  
-` };`
-
-### NVMAP\_IOC\_FREE
-
-This one is completely custom. Partly because the Linux driver passed
-the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
-
-` struct {`  
-`   u32 __handle;   // in`  
-`   u32 __pad;`  
-`   u64 __refcount; // out`  
-`   u32 __size;     // out`  
-`   u32 __flags;    // out, 1=NOT_FREED_YET`  
-` };`
-
-### NVMAP\_IOC\_PARAM
-
-Returns info about a nvmap object. Identical to Linux driver, but
-extended with further
-params.
-
-` struct {`  
-`   u32 __handle; // in`  
-`   u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=BASE (returns error), 4=HEAP (always 0x40000000), 5=KIND, 6=COMPR (unused)`  
-`   u32 __result; // out`  
-` };`
-
-### NVMAP\_IOC\_GET\_ID
-
-Returns an id for a nvmap object. Identical to Linux driver.
-
-` struct {`  
-`   u32 __id;     // out`  
-`   u32 __handle; // in`  
-` };`
+| Value      | Direction | Size     | Description                               | Notes |
+| ---------- | --------- | -------- | ----------------------------------------- | ----- |
+| 0x40084401 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL     |       |
+| 0xC0??4402 | Inout     | Variable | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS          |       |
+| 0x40084403 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL      |       |
+| 0x40044404 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE         |       |
+| 0x40044405 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE |       |
+| 0xC0184407 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP      |       |
+| 0x40084408 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP    |       |
+| 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING      |       |
+|            |           |          |                                           |       |
 
 ## /dev/nvhost-ctrl-gpu
 
@@ -566,6 +684,7 @@ interface.
 | 0xC0080003 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE                                                               |                                      |
 | 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                            |                                      |
 | 0x40040007 | 4        |                                                                                                     |                                      |
+| 0x40080008 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE                                                              |                                      |
 | 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER                                                                 |                                      |
 | 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER                                                               |                                      |
 | 0x00000013 | 0        |                                                                                                     |                                      |
@@ -746,23 +865,6 @@ Exclusive to the Switch.
 `   u32 __unk2;                // in`  
 `   u32 __unk3;                // in`  
 ` };`
-
-## Remaining Ioctls
-
-Not accessible, but there is code to invoke
-them.
-
-| Value               | Size       | Description                               | Notes                 |
-| ------------------- | ---------- | ----------------------------------------- | --------------------- |
-| /dev/nvhost-dbg-gpu | 0x40084401 | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL     |                       |
-| /dev/nvhost-dbg-gpu | 0xC0??4402 | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS          | ?? == size is unknown |
-| /dev/nvhost-dbg-gpu | 0x40084403 | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL      |                       |
-| /dev/nvhost-dbg-gpu | 0x40044404 | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE         |                       |
-| /dev/nvhost-dbg-gpu | 0x40044405 | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE |                       |
-| /dev/nvhost-dbg-gpu | 0xC0184407 | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP      |                       |
-| /dev/nvhost-dbg-gpu | 0x40084408 | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP    |                       |
-| /dev/nvhost-dbg-gpu | 0x40084409 | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING      |                       |
-|                     |            |                                           |                       |
 
 # nvmemp
 
