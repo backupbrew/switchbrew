@@ -458,11 +458,11 @@ These take a device id and a device address space handle.
 |-
 | 0x0 || Unmapped ||
 |-
-| 0x2001 || IO ||
+| 0x2001 || IO || Mapped by kernel capability parsing in [[#svcCreateProcess]]. 
 |-
-| 0x42002 || IO ||
+| 0x42002 || IO || Mapped by kernel capability parsing in [[#svcCreateProcess]].
 |-
-| 0xDC7E03 || Code static || .text and .rodata
+| 0xDC7E03 || Code static || Mapped during [[#svcCreateProcess]].
 |-
 | 0x4 || Code || .data
 |-
@@ -472,7 +472,7 @@ These take a device id and a device address space handle.
 |-
 | 0x482907 || Weird mapped memory || Mapped using [[#svcMapMemory]].
 |-
-| 0x8 || Module code static || Mapped during [[#svcCreateProcess]].
+| 0x8 || Module code static ||
 |-
 | 0x9 || Module code || .data
 |-
