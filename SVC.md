@@ -72,13 +72,13 @@
 | 0x53 | svcCreateInterruptEvent                                                            | X1=irq\_id                                                                    | W0=result, W1=handle                                |
 | 0x54 | [\#svcQueryPhysicalAddress](#svcQueryPhysicalAddress "wikilink")                   |                                                                               |                                                     |
 | 0x55 | [\#svcQueryIoMapping](#svcQueryIoMapping "wikilink")                               | X0=physaddr, X1=size                                                          | X0=virtaddr                                         |
-| 0x56 | svcCreateDeviceAddressSpace                                                        | X1=start\_addr?, X2=size?                                                     | W0=result, W1=handle                                |
-| 0x57 | svcAttachDeviceAddressSpace                                                        | W0=handle, X1=device?                                                         | W0=result                                           |
-| 0x58 | svcDetachDeviceAddressSpace                                                        | W0=handle, X1=device?                                                         | W0=result                                           |
-| 0x59 | svcMapDeviceAddressSpaceByForce                                                    | W0=handle, W1=proc\_handle?, X2=proc\_addr?, X3=size?, X4=map\_addr?, W5=perm | W0=result                                           |
+| 0x56 | svcCreateDeviceAddressSpace                                                        | X1=dev\_addr, X2=dev\_size                                                    | W0=result, W1=handle                                |
+| 0x57 | [\#svcAttachDeviceAddressSpace](#svcAttachDeviceAddressSpace "wikilink")           | W0=device, X1=handle                                                          | W0=result                                           |
+| 0x58 | [\#svcDetachDeviceAddressSpace](#svcDetachDeviceAddressSpace "wikilink")           | W0=device, X1=handle                                                          | W0=result                                           |
+| 0x59 | svcMapDeviceAddressSpaceByForce                                                    | W0=handle, W1=proc\_handle, X2=dev\_addr, X3=dev\_size, X4=map\_addr, W5=perm | W0=result                                           |
 | 0x5A | svcMapDeviceAddressSpaceAligned                                                    |                                                                               |                                                     |
 | 0x5B | svcMapDeviceAddressSpace                                                           |                                                                               |                                                     |
-| 0x5C | svcUnmapDeviceAddressSpace                                                         |                                                                               |                                                     |
+| 0x5C | svcUnmapDeviceAddressSpace                                                         | W0=handle, W1=proc\_handle, X2=map\_addr, X3=map\_size, W4=perm               | W0=result                                           |
 | 0x5D | svcInvalidateProcessDataCache                                                      |                                                                               |                                                     |
 | 0x5E | svcStoreProcessDataCache                                                           |                                                                               |                                                     |
 | 0x5F | svcFlushProcessDataCache                                                           |                                                                               |                                                     |
@@ -265,14 +265,22 @@ invalid-size error.
 ## svcQueryPhysicalAddress
 
 The inverse operation of
-[\#svcQueryIoAddress](#svcQueryIoAddress "wikilink").
+[\#svcQueryIoMapping](#svcQueryIoMapping "wikilink").
 
-## svcQueryIoAddress
+## svcQueryIoMapping
 
 ## svcCreateProcess
 
-Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as
-input.
+Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as input.
+
+## svcAttachDeviceAddressSpace / svcDetachDeviceAddressSpace
+
+These take a device id and a device address space handle.
+
+| Device | Name   | Description                 |
+| ------ | ------ | --------------------------- |
+| 0x0A   | APBDMA | Tegra's APB DMA controller. |
+|        |        |                             |
 
 # Structures
 

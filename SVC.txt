@@ -142,19 +142,19 @@
 |-
 | 0x55 || [[#svcQueryIoMapping]] || X0=physaddr, X1=size || X0=virtaddr
 |-
-| 0x56 || svcCreateDeviceAddressSpace || X1=start_addr?, X2=size? || W0=result, W1=handle
+| 0x56 || svcCreateDeviceAddressSpace || X1=dev_addr, X2=dev_size || W0=result, W1=handle
 |-
-| 0x57 || svcAttachDeviceAddressSpace || W0=handle, X1=device? || W0=result
+| 0x57 || [[#svcAttachDeviceAddressSpace]] || W0=device, X1=handle || W0=result
 |-
-| 0x58 || svcDetachDeviceAddressSpace || W0=handle, X1=device? || W0=result
+| 0x58 || [[#svcDetachDeviceAddressSpace]] || W0=device, X1=handle || W0=result
 |-
-| 0x59 || svcMapDeviceAddressSpaceByForce || W0=handle, W1=proc_handle?, X2=proc_addr?, X3=size?, X4=map_addr?, W5=perm || W0=result 
+| 0x59 || svcMapDeviceAddressSpaceByForce || W0=handle, W1=proc_handle, X2=dev_addr, X3=dev_size, X4=map_addr, W5=perm || W0=result 
 |-
 | 0x5A || svcMapDeviceAddressSpaceAligned || || 
 |-
 | 0x5B || svcMapDeviceAddressSpace || || 
 |-
-| 0x5C || svcUnmapDeviceAddressSpace || || 
+| 0x5C || svcUnmapDeviceAddressSpace || W0=handle, W1=proc_handle, X2=map_addr, X3=map_size, W4=perm || W0=result
 |-
 | 0x5D || svcInvalidateProcessDataCache || || 
 |-
@@ -392,12 +392,22 @@ You must pass same size and permissions as given in svcCreateMemoryMirror, other
 Size must match size given in map syscall, otherwise there's an invalid-size error.
 
 == svcQueryPhysicalAddress ==
-The inverse operation of [[#svcQueryIoAddress]].
+The inverse operation of [[#svcQueryIoMapping]].
 
-== svcQueryIoAddress ==
+== svcQueryIoMapping ==
 
 == svcCreateProcess ==
 Takes a [[#CreateProcessInfo]] as input.
+
+== svcAttachDeviceAddressSpace / svcDetachDeviceAddressSpace ==
+These take a device id and a device address space handle.
+
+{| class=wikitable
+! Device || Name || Description
+|-
+| 0x0A || APBDMA || Tegra's APB DMA controller.
+|-
+|}
 
 = Structures =
 == CreateProcessInfo ==
