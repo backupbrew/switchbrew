@@ -313,6 +313,7 @@ These take a device id and a device address space handle.
 | 15   | Can be used with [\#svcMapMemory](#svcMapMemory "wikilink")                                         |
 | 17   | Can be used with [\#svcCreateTransferMemory](#svcCreateTransferMemory "wikilink")                   |
 | 21   | Can be used with [\#svcSendSyncRequestWithUserBuffer](#svcSendSyncRequestWithUserBuffer "wikilink") |
+| 23   | Can be used with [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink")                           |
 | 24   | Can be used with [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink")                       |
 
 | Value     | Type                  | Meaning                                                                                    |

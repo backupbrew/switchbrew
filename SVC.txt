@@ -450,6 +450,8 @@ These take a device id and a device address space handle.
 |-
 | 21 || Can be used with [[#svcSendSyncRequestWithUserBuffer]]
 |-
+| 23 || Can be used with [[#svcMapProcessMemory]]
+|-
 | 24 || Can be used with [[#svcSetMemoryAttribute]]
 |}
 
