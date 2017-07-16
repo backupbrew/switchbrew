@@ -165,6 +165,14 @@ The size used for [[SVC|svcSetHeapSize]] by the web-applets is 0x15600000. Under
 
 == Versions ==
 
+=== [[1.0.0]] ===
+"shareddata:/buildinfo/buildinfo.dat" content:
+  r:11682
+  p:NX64
+  v:Pilot
+  d:2016-11-25 23:30
+  n:0.4.25
+
 === [[2.0.0]] ===
 
 "shareddata:/buildinfo/buildinfo.dat" content:

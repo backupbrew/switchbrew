@@ -191,6 +191,16 @@ without an error being returned, is 0x1B400000.
 
 ## Versions
 
+### [1.0.0](1.0.0.md "wikilink")
+
+"shareddata:/buildinfo/buildinfo.dat" content:
+
+` r:11682`  
+` p:NX64`  
+` v:Pilot`  
+` d:2016-11-25 23:30`  
+` n:0.4.25`
+
 ### [2.0.0](2.0.0.md "wikilink")
 
 "shareddata:/buildinfo/buildinfo.dat" content:
