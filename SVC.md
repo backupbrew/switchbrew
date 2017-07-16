@@ -304,7 +304,8 @@ input.
 | 0x9       | Module code          | .data             |
 | 0xB       | Mapped memory        |                   |
 | 0xC       | Thread local storage |                   |
-| 0xE       | Transfer memory      |                   |
+| 0x5C380E  | Transfer memory 1    |                   |
+| 0x15C3C0D | Transfer memory 2    |                   |
 | 0x10      | Reserved             |                   |
 
 Bit32: is\_mirrored Bit34: is\_device\_mapped Bit35: is\_uncached?
