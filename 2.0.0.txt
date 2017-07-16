@@ -26,3 +26,13 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 **To turn this ON/OFF, head to System Settings > System > Console Battery (%)
 *Format the microSD card
 **To format, head to System Settings > System > Initialize > Format microSD Card
+
+==System Titles==
+* Every system module was updated.
+** The [[creport]] system module (0100000000000036) was added. 
+* Every system applet was updated.
+* Every 01000000000008XX title was updated except for:
+** 0100000000000805(CHN/KOR dictionary), 0100000000000808("European, English and Japanese dictionaries"), 010000000000080A(Chara?), and 010000000000080C(EULA).
+* The following 01000000000008XX titles were added:
+** 0100000000000800(SSL trusted certs), 0100000000000807(Hotspot List), 010000000000081E(Dummy file), 010000000000081F(Icosa system config), 0100000000000820(Copper system config), 0100000000000821(Hoag system config),
+* The System Application "flog" (01008BB00013C000) was added.
