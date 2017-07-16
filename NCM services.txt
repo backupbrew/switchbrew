@@ -1,44 +1,78 @@
-LR (Location Resolver) contains services for internal file path and content management.
+NCM contains services for internal file path and content management.
 
-= LR services =
+= Location Resolver services =
 == lr ==
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetPathResolverForStorage || Takes a [[Filesystem_services#StorageId|StorageID]]
+| 0 || GetIPathResolverForStorage || [[Filesystem_services#StorageId|StorageID]] ||
 |-
-| 1 || GetPatchPathResolver? || 
+| 1 || GetIPatchPathResolver || None || 
 |-
-| 2 || CheckStorage || Takes a [[Filesystem_services#StorageId|StorageID]]
+| 2 || CheckStorage || [[Filesystem_services#StorageId|StorageID]] ||
 |-
-| 3 || || 
+| 3 || GetITitleList || None  ||
 |}
 
-=== IPathResolver ===
+=== IPathResolverForStorage ===
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetProgramNcaPath ||
+| 0 || GetProgramNcaPath || u64 TID + C descriptor || 
 |-
-| 1 || SetProgramNcaPath ||
+| 1 || SetProgramNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || 
 |-
-| 2 || ||
+| 2 || GetUserRootNcaPath || u64 TID + C descriptor ||
 |-
-| 3 || ||
+| 3 || GetUserType4NcaPath || u64 TID + C descriptor ||
 |-
-| 4 || GetControlNcaPath ||
+| 4 || GetControlNcaPath || u64 TID + C descriptor ||
 |-
-| 5 || SetControlNcaPath ||
+| 5 || SetControlNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |-
-| 6 || ||
+| 6 || SetUserType4NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |-
-| 7 || ||
+| 7 || GetUserType5NcaPath || u64 TID + C descriptor ||
 |-
-| 8 || ||
+| 8 || SetUserType5NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |-
-| 9 || ||
+| 9 || ClearPathResolverForStorage || None || Clears all NCA paths set.
+|}
+
+=== IPatchPathResolver ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Arguments || Notes
+|-
+| 0 || GetPatchType0NcaPath || u64 TID + C descriptor || 
+|-
+| 1 || SetPatchType0NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || 
+|-
+| 2 || RegisterPatchTitle0 || u64 TID ||
+|-
+| 3 || SetPatchTitle0NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+|-
+| 4 || GetPatchType1NcaPath || u64 TID + C descriptor ||
+|-
+| 5 || SetPatchType1NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+|-
+| 6 || RegisterPatchTitle1 || u64 TID ||
+|-
+| 7 || SetPatchTitle1NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+|}
+
+=== ITitleList ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Arguments || Notes
+|-
+| 0 || GetTitleNcaPath || u64 TID + C descriptor || 
+|-
+| 1 || RegisterTitle || [[Filesystem_services#StorageId|StorageID]] + u64 TID || 
+|-
+| 2 || ClearTitleList || None || Clears all registered titles here.
 |}
 
 = Content Manager services =

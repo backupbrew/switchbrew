@@ -1,32 +1,52 @@
-LR (Location Resolver) contains services for internal file path and
-content
+NCM contains services for internal file path and content
 management.
 
-# LR services
+# Location Resolver services
 
 ## lr
 
-| Cmd | Name                      | Notes                                                                         |
-| --- | ------------------------- | ----------------------------------------------------------------------------- |
-| 0   | GetPathResolverForStorage | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |
-| 1   | GetPatchPathResolver?     |                                                                               |
-| 2   | CheckStorage              | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |
-| 3   |                           |                                                                               |
+| Cmd | Name                       | Arguments                                                             | Notes |
+| --- | -------------------------- | --------------------------------------------------------------------- | ----- |
+| 0   | GetIPathResolverForStorage | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 1   | GetIPatchPathResolver      | None                                                                  |       |
+| 2   | CheckStorage               | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 3   | GetITitleList              | None                                                                  |       |
 
-### IPathResolver
+### IPathResolverForStorage
 
-| Cmd | Name              | Notes |
-| --- | ----------------- | ----- |
-| 0   | GetProgramNcaPath |       |
-| 1   | SetProgramNcaPath |       |
-| 2   |                   |       |
-| 3   |                   |       |
-| 4   | GetControlNcaPath |       |
-| 5   | SetControlNcaPath |       |
-| 6   |                   |       |
-| 7   |                   |       |
-| 8   |                   |       |
-| 9   |                   |       |
+| Cmd | Name                        | Arguments                                                                                          | Notes                     |
+| --- | --------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------- |
+| 0   | GetProgramNcaPath           | u64 TID + C descriptor                                                                             |                           |
+| 1   | SetProgramNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                           |
+| 2   | GetUserRootNcaPath          | u64 TID + C descriptor                                                                             |                           |
+| 3   | GetUserType4NcaPath         | u64 TID + C descriptor                                                                             |                           |
+| 4   | GetControlNcaPath           | u64 TID + C descriptor                                                                             |                           |
+| 5   | SetControlNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                           |
+| 6   | SetUserType4NcaPath         | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                           |
+| 7   | GetUserType5NcaPath         | u64 TID + C descriptor                                                                             |                           |
+| 8   | SetUserType5NcaPath         | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                           |
+| 9   | ClearPathResolverForStorage | None                                                                                               | Clears all NCA paths set. |
+
+### IPatchPathResolver
+
+| Cmd | Name                  | Arguments                                                                                          | Notes |
+| --- | --------------------- | -------------------------------------------------------------------------------------------------- | ----- |
+| 0   | GetPatchType0NcaPath  | u64 TID + C descriptor                                                                             |       |
+| 1   | SetPatchType0NcaPath  | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |       |
+| 2   | RegisterPatchTitle0   | u64 TID                                                                                            |       |
+| 3   | SetPatchTitle0NcaPath | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |       |
+| 4   | GetPatchType1NcaPath  | u64 TID + C descriptor                                                                             |       |
+| 5   | SetPatchType1NcaPath  | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |       |
+| 6   | RegisterPatchTitle1   | u64 TID                                                                                            |       |
+| 7   | SetPatchTitle1NcaPath | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |       |
+
+### ITitleList
+
+| Cmd | Name            | Arguments                                                                       | Notes                              |
+| --- | --------------- | ------------------------------------------------------------------------------- | ---------------------------------- |
+| 0   | GetTitleNcaPath | u64 TID + C descriptor                                                          |                                    |
+| 1   | RegisterTitle   | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TID |                                    |
+| 2   | ClearTitleList  | None                                                                            | Clears all registered titles here. |
 
 # Content Manager services
 
