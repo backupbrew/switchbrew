@@ -142,7 +142,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |
 |-
 | bpc, bpc:r, pcv, pcv:imm, time:u, time:a, time:s
-| [[BPC services]]
+| [[PCV services]]
 |
 |-
 | bsd:u, bsd:s, bsdcfg, ethc:c, ethc:i, nsd:u, nsd:a, sfdnsres
@@ -182,7 +182,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |
 |-
 | fan, psm, tc, ts
-| PTM services
+| [[PTM services]]
 |
 |-
 | fatal:u, fatal:p

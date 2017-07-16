@@ -123,7 +123,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="odd">
 <td><p>bpc, bpc:r, pcv, pcv:imm, time:u, time:a, time:s</p></td>
-<td><p><a href="BPC services.md" title="wikilink">BPC services</a></p></td>
+<td><p><a href="PCV services.md" title="wikilink">PCV services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -173,7 +173,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="odd">
 <td><p>fan, psm, tc, ts</p></td>
-<td><p>PTM services</p></td>
+<td><p><a href="PTM services.md" title="wikilink">PTM services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
