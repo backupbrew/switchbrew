@@ -419,6 +419,8 @@ Takes a [[#CreateProcessInfo]] as input.
 |-
 | 8 || Is [[#svcSetMemoryPermission]] allowed?
 |-
+| 15 || Is [[#svcMapMemory]] allowed?
+|-
 | 24 || Is [[#svcSetMemoryAttribute]] allowed?
 |}
 
