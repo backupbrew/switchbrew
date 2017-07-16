@@ -1,10 +1,10 @@
 # ldr:dmnt
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
+| Cmd | Name                  |
+| --- | --------------------- |
+| 0   | AddProcessToDmntQueue |
+| 1   | ClearDmntQueue        |
+| 2   |                       |
 
 # ldr:pm
 

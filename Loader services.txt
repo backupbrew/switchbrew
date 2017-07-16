@@ -3,9 +3,9 @@
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || AddProcessToDmntQueue
 |-
-| 1 ||
+| 1 || ClearDmntQueue
 |-
 | 2 ||
 |}
