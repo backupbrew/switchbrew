@@ -30,6 +30,18 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 | 0x4
 | Magic "META".
 |-
+| 0xE
+| 1
+| 
+|-
+| 0xF
+| 1
+| 
+|-
+| 0x1C
+| 4
+| 
+|-
 | 0x20
 | ?
 | Title name
