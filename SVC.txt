@@ -454,37 +454,37 @@ These take a device id and a device address space handle.
 {| class=wikitable
 ! Value || Type || Meaning
 |-
-| 0x00000000 || Unmapped ||
+| <code>0x00000000</code> || Unmapped ||
 |-
-| 0x00002001 || IO || Mapped by kernel capability parsing in [[#svcCreateProcess]]. 
+| <code>0x00002001</code> || IO || Mapped by kernel capability parsing in [[#svcCreateProcess]]. 
 |-
-| 0x00042002 || IO || Mapped by kernel capability parsing in [[#svcCreateProcess]].
+| <code>0x00042002</code> || IO || Mapped by kernel capability parsing in [[#svcCreateProcess]].
 |-
-| 0x00DC7E03 || Code static || Mapped during [[#svcCreateProcess]].
+| <code>0x00DC7E03</code> || Code static || Mapped during [[#svcCreateProcess]].
 |-
-| 0x01FEBD04 || Code || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
+| <code>0x01FEBD04</code> || Code || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
 |-
-| 0x017EBD05 || Heap || Mapped using [[#svcSetHeapSize]].
+| <code>0x017EBD05</code> || Heap || Mapped using [[#svcSetHeapSize]].
 |-
-| 0x00402006 || Shared memory block || Mapped using [[#svcMapSharedMemory]].
+| <code>0x00402006</code> || Shared memory block || Mapped using [[#svcMapSharedMemory]].
 |-
-| 0x00482907 || Weird mapped memory || Mapped using [[#svcMapMemory]].
+| <code>0x00482907</code> || Weird mapped memory || Mapped using [[#svcMapMemory]].
 |-
-| 0x00DD7E08 || Module code static || Mapped using [[#svcMapProcessCodeMemory]].
+| <code>0x00DD7E08</code> || Module code static || Mapped using [[#svcMapProcessCodeMemory]].
 |-
-| 0x01FFBD09 || Module code mutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
+| <code>0x01FFBD09</code> || Module code mutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
 |-
-| 0x005C3C0B || Mapped memory || Mapped using [[#svcMapMemory]].
+| <code>0x005C3C0B</code> || Mapped memory || Mapped using [[#svcMapMemory]].
 |-
-| 0x0040200C || Thread local storage || Mapped during [[#svcCreateThread]].
+| <code>0x0040200C</code> || Thread local storage || Mapped during [[#svcCreateThread]].
 |-
-| 0x015C3C0D || Weird transfer memory || Mapped using [[#svcMapTransferMemory]].
+| <code>0x015C3C0D</code> || Weird transfer memory || Mapped using [[#svcMapTransferMemory]].
 |-
-| 0x005C380E || Transfer memory || Mapped using [[#svcMapTransferMemory]].
+| <code>0x005C380E</code> || Transfer memory || Mapped using [[#svcMapTransferMemory]].
 |-
-| 0x0040380F || Process memory || Mapped using [[#svcMapProcessMemory]].
+| <code>0x0040380F</code> || Process memory || Mapped using [[#svcMapProcessMemory]].
 |-
-| 0x00000010 || Reserved ||
+| <code>0x00000010</code> || Reserved ||
 |}
 
 Bit32: is_mirrored
