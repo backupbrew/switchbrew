@@ -446,6 +446,8 @@ These take a device id and a device address space handle.
 |-
 | 15 || Can be used with [[#svcMapMemory]]
 |-
+| 16 || Can be used with [[#svcUnmapProcessMemory]]
+|-
 | 17 || Can be used with [[#svcCreateTransferMemory]]
 |-
 | 21 || Can be used with [[#svcSendSyncRequestWithUserBuffer]]

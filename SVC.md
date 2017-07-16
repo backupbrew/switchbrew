@@ -311,6 +311,7 @@ These take a device id and a device address space handle.
 | 8    | Can be used with [\#svcSetMemoryPermission](#svcSetMemoryPermission "wikilink")                     |
 | 14   | Can be used with [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink")       |
 | 15   | Can be used with [\#svcMapMemory](#svcMapMemory "wikilink")                                         |
+| 16   | Can be used with [\#svcUnmapProcessMemory](#svcUnmapProcessMemory "wikilink")                       |
 | 17   | Can be used with [\#svcCreateTransferMemory](#svcCreateTransferMemory "wikilink")                   |
 | 21   | Can be used with [\#svcSendSyncRequestWithUserBuffer](#svcSendSyncRequestWithUserBuffer "wikilink") |
 | 23   | Can be used with [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink")                           |
