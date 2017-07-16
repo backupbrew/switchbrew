@@ -283,8 +283,8 @@ input.
 | 0      | 8      |                                                                                                                                              |
 | 8      | 2      |                                                                                                                                              |
 | 0xA    | 2      |                                                                                                                                              |
-| 0x18   | 8      | ASLR base                                                                                                                                    |
-| 0x20   | 4      | Number of ASLR pages                                                                                                                         |
+| 0x18   | 8      | Code base                                                                                                                                    |
+| 0x20   | 4      | Number of code pages                                                                                                                         |
 | 0x24   | 4      | MemoryManagement flags. Bit0: is\_64bit (maybe?), bit3-1: MMU table size? (0=32-bit, 1=64-bit 0x800000000, 2=64-bit 0x400000000), bit5, bit6 |
 | 0x28   | 4      | ResourceLimit handle                                                                                                                         |
 | 0x2C   | 4      |                                                                                                                                              |
