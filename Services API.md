@@ -108,7 +108,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="even">
 <td><p>arp:r, arp:w, bgtc:t, bgtc:sc</p></td>
-<td><p>Glue services</p></td>
+<td><p><a href="Glue services.md" title="wikilink">Glue services</a></p></td>
 <td><p>r: Reader, w: Writer</p></td>
 </tr>
 <tr class="odd">
