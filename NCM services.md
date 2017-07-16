@@ -5,12 +5,12 @@ content management.
 
 ## lr
 
-| Cmd | Name                       | Notes             |
-| --- | -------------------------- | ----------------- |
-| 0   | GetIPathResolverForStorage | Takes a StorageID |
-| 1   | GetOtherIPathResolver      |                   |
-| 2   | CheckStorage               | Takes a StorageID |
-| 3   |                            |                   |
+| Cmd | Name                      | Notes             |
+| --- | ------------------------- | ----------------- |
+| 0   | GetPathResolverForStorage | Takes a StorageID |
+| 1   | GetPatchPathResolver?     |                   |
+| 2   | CheckStorage              | Takes a StorageID |
+| 3   |                           |                   |
 
 ### IPathResolver
 
