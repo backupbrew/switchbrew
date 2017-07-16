@@ -468,7 +468,7 @@ These take a device id and a device address space handle.
 |-
 | 0xDC7E03 || Code static || Mapped during [[#svcCreateProcess]].
 |-
-| 0x4 || Code || .data
+| 0x1FEBD04 || Code || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
 |-
 | 0x17EBD05 || Heap || Mapped using [[#svcSetHeapSize]].
 |-
@@ -476,9 +476,9 @@ These take a device id and a device address space handle.
 |-
 | 0x482907 || Weird mapped memory || Mapped using [[#svcMapMemory]].
 |-
-| 0xDD7E08 || Module code static ||  Mapped using [[#svcMapProcessCodeMemory]].
+| 0xDD7E08 || Module code static || Mapped using [[#svcMapProcessCodeMemory]].
 |-
-| 0x9 || Module code || .data
+| 0x1FFBD09 || Module code mutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
 |-
 | 0x5C3C0B || Mapped memory || Mapped using [[#svcMapMemory]].
 |-
