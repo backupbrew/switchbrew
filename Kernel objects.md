@@ -81,3 +81,18 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 | 0x30   | u64                                      | BaseAddress  |
 | 0x40   | int                                      | Permission   |
 | 0x44   | bool                                     | HasInited    |
+
+# KSharedMemory
+
+Size: 0x40
+
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+
+| Offset | Type                                     | Description  |
+| ------ | ---------------------------------------- | ------------ |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") |              |
+| 0x10   | KMemoryBlockList                         | Blocks       |
+| 0x28   | [\#KProcess](#KProcess "wikilink")\*     | OwnerProcess |
+| 0x30   | int                                      | LocalPerm    |
+| 0x34   | int                                      | RemotePerm   |
+| 0x38   | bool                                     | HasInited    |

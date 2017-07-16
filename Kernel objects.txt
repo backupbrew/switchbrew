@@ -181,3 +181,39 @@ Inherits from: [[#KAutoObject]]
 | bool
 | HasInited
 |}
+
+= KSharedMemory =
+Size: 0x40
+
+Inherits from: [[#KAutoObject]]
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| [[#KAutoObject]]
+|
+|-
+| 0x10
+| KMemoryBlockList
+| Blocks
+|-
+| 0x28
+| [[#KProcess]]*
+| OwnerProcess
+|-
+| 0x30
+| int
+| LocalPerm
+|-
+| 0x34
+| int
+| RemotePerm
+|-
+| 0x38
+| bool
+| HasInited
+|}
