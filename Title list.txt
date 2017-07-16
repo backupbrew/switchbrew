@@ -130,7 +130,7 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000000804 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || HTML resources: Open-source licenses("Intellectual Property Notices") and seizure warnings("Health & Safety Information"). The former is stored at FS "/legallines.htdocs/", while the latter is at "/safe.htdocs/".
 |-
-| 0100000000000805 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v450]] (0.0.1.194) || Chinese and Korean dictionaries
+| 0100000000000805 || [[1.0.0|v450]] (0.0.1.194) || Chinese and Korean dictionaries
 |-
 | 0100000000000806 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || Bad words
 |-
@@ -140,7 +140,7 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000000809 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v196628]] (0.3.0.20), [[2.2.0|v196628]] (0.3.0.20), [[2.3.0|v262164]] (0.4.0.20), [[3.0.0|v201327002]] (12.0.1.154) || [[System Version Title]]
 |-
-| 010000000000080A || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v450]] (0.0.1.194), [[3.0.0|v201327002]] (12.0.1.154) || Chara?
+| 010000000000080A || [[1.0.0|v450]] (0.0.1.194), [[3.0.0|v201327002]] (12.0.1.154) || Chara?
 |-
 | 010000000000080B || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || Tutorial images and strings. Used for the offline news by the News applet.
 |-
