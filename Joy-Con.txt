@@ -10,6 +10,8 @@ The firmware of the Joy-Cons seems to be generic across all instances. Details s
 |-
 | Joy-Con Right (Red) || [[:File:pad.R.bin|flash dump]]
 |}
+The flash is in a patch-ram format. Tools for dealing with it are available [https://github.com/shuffle2/nxpad].
+A dump of the ROM region (taken while firmware was running) can be found [[:File:bcm20734_rom.bin|here]]. Note this is the same SoC used on the other controller models, as well.
 
 == Left & Right Separate Joy-con ==
 

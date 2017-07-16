@@ -16,6 +16,12 @@ Controller as well.
 | Joy-Con Left (Blue) | [flash dump](:File:pad.L.bin.md "wikilink") |
 | Joy-Con Right (Red) | [flash dump](:File:pad.R.bin.md "wikilink") |
 
+The flash is in a patch-ram format. Tools for dealing with it are
+available [2](https://github.com/shuffle2/nxpad). A dump of the ROM
+region (taken while firmware was running) can be found
+[here](:File:bcm20734%20rom.bin.md "wikilink"). Note this is the same
+SoC used on the other controller models, as well.
+
 ## Left & Right Separate Joy-con
 
 When paired directly to a computer over bluetooth, the joy-con both
