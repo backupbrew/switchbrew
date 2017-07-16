@@ -96,3 +96,44 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 | 0x30   | int                                      | LocalPerm    |
 | 0x34   | int                                      | RemotePerm   |
 | 0x38   | bool                                     | HasInited    |
+
+# KPort
+
+Size: 0xA8
+
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+
+| Offset | Type                                     | Description   |
+| ------ | ---------------------------------------- | ------------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") |               |
+| 0x10   | [\#KServerPort](#KServerPort "wikilink") | ServerPort    |
+| 0x60   | [\#KClientPort](#KClientPort "wikilink") | ClientPort    |
+| 0x98   | u64                                      |               |
+| 0xA0   | bool                                     | HasInited     |
+| 0xA1   | bool                                     | IsLight \[?\] |
+
+## KServerPort
+
+Size: 0x50
+
+Inherits from:
+[\#KSynchronizationObject](#KSynchronizationObject "wikilink")
+
+| Offset | Type                                                           | Description |
+| ------ | -------------------------------------------------------------- | ----------- |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |             |
+| 0x28   | [\#KLinkedListNode](#KLinkedListNode "wikilink")               |             |
+| 0x38   | [\#KLinkedListNode](#KLinkedListNode "wikilink")               |             |
+| 0x48   | [\#KPort](#KPort "wikilink")\*                                 | Parent      |
+
+## KClientPort
+
+Inherits from:
+[\#KSynchronizationObject](#KSynchronizationObject "wikilink")
+
+| Offset | Type                                                           | Description       |
+| ------ | -------------------------------------------------------------- | ----------------- |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |                   |
+| 0x28   | ?                                                              |                   |
+| 0x2C   | u32                                                            | MaxSessions \[?\] |
+| 0x30   | [\#KPort](#KPort "wikilink")\*                                 | Parent            |

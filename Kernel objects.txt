@@ -217,3 +217,93 @@ Inherits from: [[#KAutoObject]]
 | bool
 | HasInited
 |}
+
+= KPort =
+Size: 0xA8
+
+Inherits from: [[#KAutoObject]]
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| [[#KAutoObject]]
+|
+|-
+| 0x10
+| [[#KServerPort]]
+| ServerPort
+|-
+| 0x60
+| [[#KClientPort]]
+| ClientPort
+|-
+| 0x98
+| u64
+|
+|-
+| 0xA0
+| bool
+| HasInited
+|-
+| 0xA1
+| bool
+| IsLight [?]
+|}
+
+== KServerPort ==
+Size: 0x50
+
+Inherits from: [[#KSynchronizationObject]]
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| [[#KSynchronizationObject]]
+|
+|-
+| 0x28
+| [[#KLinkedListNode]]
+| 
+|-
+| 0x38
+| [[#KLinkedListNode]]
+| 
+|-
+| 0x48
+| [[#KPort]]*
+| Parent
+|}
+
+== KClientPort ==
+Inherits from: [[#KSynchronizationObject]]
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| [[#KSynchronizationObject]]
+|
+|-
+| 0x28
+| ?
+| 
+|-
+| 0x2C
+| u32
+| MaxSessions [?]
+|-
+| 0x30
+| [[#KPort]]*
+| Parent
+|}
