@@ -82,8 +82,8 @@ bits.
 
 | Pattern of lower bits | Type             | Fields                                                                                                                                     |
 | --------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `0bxxxxxxxxxxxx0111`  | Kernel flags     | Bit29-31: Flags table index, bits28-5: Flags                                                                                               |
-| `0bxxxxxxxxxxx01111`  | Syscall mask     | Bits 29-31: Syscall mask table index; Bits 5-28: mask                                                                                      |
+| `0bxxxxxxxxxxxx0111`  | Kernel flags     |                                                                                                                                            |
+| `0bxxxxxxxxxxx01111`  | Syscall mask     | Bits 29-31: Syscall mask table index; Bits 28-5: mask                                                                                      |
 | `0bxxxxxxxxx0111111`  | Map IO page (RW) | Bits 7-31: page                                                                                                                            |
 | `0bxxxxxxxx01111111`  | Map IO range     | Bits 7-30: alternating start page and number of pages, bit31: alternating read-only flag then MemoryAttribute 0x2001/0x42002 selector flag |
 | `0bxxxx011111111111`  | Interrupt pair   | Bits 12-21: irq0, bits 20-31: irq1, 0x3FF means empty.                                                                                     |

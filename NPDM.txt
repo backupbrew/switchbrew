@@ -177,11 +177,11 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 |-
 | <code>0bxxxxxxxxxxxx0111</code>
 | Kernel flags
-| Bit29-31: Flags table index, bits28-5: Flags 
+| 
 |-
 | <code>0bxxxxxxxxxxx01111</code>
 | Syscall mask
-| Bits 29-31: Syscall mask table index; Bits 5-28: mask
+| Bits 29-31: Syscall mask table index; Bits 28-5: mask
 |-
 | <code>0bxxxxxxxxx0111111</code>
 | Map IO page (RW)
