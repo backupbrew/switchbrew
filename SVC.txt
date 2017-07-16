@@ -425,7 +425,7 @@ Takes a [[#CreateProcessInfo]] as input.
 |-
 | 0x4 || Code || .data
 |-
-| 0x5 || Heap ||
+| 0x17EBD05 || Heap ||
 |-
 | 0x6 || Shared memory block ||
 |-

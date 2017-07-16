@@ -277,21 +277,21 @@ input.
 
 ## MemoryAttribute
 
-| Value    | Type                 | Meaning           |
-| -------- | -------------------- | ----------------- |
-| 0x0      | Unmapped             |                   |
-| 0x2001   | IO                   |                   |
-| 0x42002  | IO                   |                   |
-| 0xDC7E03 | Code static          | .text and .rodata |
-| 0x4      | Code                 | .data             |
-| 0x5      | Heap                 |                   |
-| 0x6      | Shared memory block  |                   |
-| 0x8      | Module code static   | .text and .rodata |
-| 0x9      | Module code          | .data             |
-| 0xB      | Mapped memory        |                   |
-| 0xC      | Thread local storage |                   |
-| 0xE      | Transfer memory      |                   |
-| 0x10     | Reserved             |                   |
+| Value     | Type                 | Meaning           |
+| --------- | -------------------- | ----------------- |
+| 0x0       | Unmapped             |                   |
+| 0x2001    | IO                   |                   |
+| 0x42002   | IO                   |                   |
+| 0xDC7E03  | Code static          | .text and .rodata |
+| 0x4       | Code                 | .data             |
+| 0x17EBD05 | Heap                 |                   |
+| 0x6       | Shared memory block  |                   |
+| 0x8       | Module code static   | .text and .rodata |
+| 0x9       | Module code          | .data             |
+| 0xB       | Mapped memory        |                   |
+| 0xC       | Thread local storage |                   |
+| 0xE       | Transfer memory      |                   |
+| 0x10      | Reserved             |                   |
 
 Bit32: is\_mirrored Bit34: is\_device\_mapped Bit35: is\_uncached?
 
