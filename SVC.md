@@ -310,10 +310,10 @@ input.
 | 0x482907  | Weird mapped memory   |                   |
 | 0x8       | Module code static    | .text and .rodata |
 | 0x9       | Module code           | .data             |
-| 0x5C3C0B  | Normal mapped memory  |                   |
+| 0x5C3C0B  | Mapped memory         |                   |
 | 0xC       | Thread local storage  |                   |
 | 0x15C3C0D | Weird transfer memory |                   |
-| 0x5C380E  | Normal ransfer memory |                   |
+| 0x5C380E  | Transfer memory       |                   |
 | 0x10      | Reserved              |                   |
 
 Bit32: is\_mirrored Bit34: is\_device\_mapped Bit35: is\_uncached?
