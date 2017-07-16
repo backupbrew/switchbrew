@@ -6,11 +6,11 @@ LR (Location Resolver) contains services for internal file path and content mana
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetPathResolverForStorage || Takes a StorageID
+| 0 || GetPathResolverForStorage || Takes a [[Filesystem_services#StorageId|StorageID]]
 |-
 | 1 || GetPatchPathResolver? || 
 |-
-| 2 || CheckStorage || Takes a StorageID
+| 2 || CheckStorage || Takes a [[Filesystem_services#StorageId|StorageID]]
 |-
 | 3 || || 
 |}

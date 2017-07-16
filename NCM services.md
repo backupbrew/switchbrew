@@ -1,16 +1,17 @@
 LR (Location Resolver) contains services for internal file path and
-content management.
+content
+management.
 
 # LR services
 
 ## lr
 
-| Cmd | Name                      | Notes             |
-| --- | ------------------------- | ----------------- |
-| 0   | GetPathResolverForStorage | Takes a StorageID |
-| 1   | GetPatchPathResolver?     |                   |
-| 2   | CheckStorage              | Takes a StorageID |
-| 3   |                           |                   |
+| Cmd | Name                      | Notes                                                                         |
+| --- | ------------------------- | ----------------------------------------------------------------------------- |
+| 0   | GetPathResolverForStorage | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |
+| 1   | GetPatchPathResolver?     |                                                                               |
+| 2   | CheckStorage              | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |
+| 3   |                           |                                                                               |
 
 ### IPathResolver
 
