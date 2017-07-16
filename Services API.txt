@@ -110,9 +110,9 @@ This service is presumably equivalent to 3DS "srv:pm".
 | Applet services, [[OMM services]]
 |
 |-
-| aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry
+| aoc:u, ovln:rcv, ovln:snd, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web
 | [[NS Services]]
-| am: Application Manager, su: System Update
+| am: Application Manager, su: System Update. Version [[3.0.0]] replaced ns:am with ns:am2, ns:ec, ns:rid, ns:rt, ns:vm, and ns:web.
 |-
 | apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?)
 | [[APM services]]
@@ -198,9 +198,9 @@ This service is presumably equivalent to 3DS "srv:pm".
 | [[Local Network Monitor services]]
 |
 |-
-| ldr:pm, ldr:ro, ldr:shel, ldr:dmnt
+| ldr:pm, ldr:shel
 | [[Loader services]]
-|
+| Prior to version [[3.0.0]], ldr:ro and ldr:dmnt were hosted by ldr instead of ro.
 |-
 | lm
 | Log services
@@ -246,9 +246,17 @@ This service is presumably equivalent to 3DS "srv:pm".
 | PSC services
 | 
 |-
+| ldr:ro, ro:dmnt
+| [[Loader Services|RO services]]
+| These services were split out of LDR into RO in version [[3.0.0]]
+|-
 | set, set:fd, set:cal, set:sys
 | [[Settings services]]
 | cal: calibration, sys: System Settings
+|-
+| mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u
+| Shared Database Services
+| These services were split out of NS into SDB in version [[3.0.0]]
 |-
 | ssl
 | [[SSL services]]
