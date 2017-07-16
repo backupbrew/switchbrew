@@ -1,0 +1,35 @@
+= arp:r =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || ReadHeader0
+|-
+| 1 || ReadHeader1
+|-
+| 2 || ReadData0
+|-
+| 3 || ReadData1
+|}
+
+= arp:w =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetIRegistrar
+|-
+| 1 || SubmitWriter
+|}
+
+== IRegistrar ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || BindRegistrar
+|-
+| 1 || WriteHeader
+|-
+| 2 || WriteData
+|}
