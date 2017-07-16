@@ -81,6 +81,10 @@ Used by SSL-sysmodule, see [[SSL_services|here]].
 |-
 | ? || GetSerialNumber (Returns the 0x18-byte SerialNumber string)
 |-
+| 37 || QuerySetting
+|-
+| 38 || ReadSetting
+|-
 | 56 || [[Flash_Filesystem#PRODINFOF|GetWirelessCertification]]
 |}
 

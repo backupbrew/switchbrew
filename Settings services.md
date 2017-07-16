@@ -67,6 +67,8 @@ Used by SSL-sysmodule, see
 | --- | --------------------------------------------------------------------------------- |
 | ?   | GetSystemVersion                                                                  |
 | ?   | GetSerialNumber (Returns the 0x18-byte SerialNumber string)                       |
+| 37  | QuerySetting                                                                      |
+| 38  | ReadSetting                                                                       |
 | 56  | [GetWirelessCertification](Flash%20Filesystem#PRODINFOF.md##PRODINFOF "wikilink") |
 
 ## GetSystemVersion
