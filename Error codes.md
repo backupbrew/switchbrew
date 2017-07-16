@@ -93,7 +93,7 @@ applets.
 | 0xE601            | 115         | Syscall copy from user failed.                                                                                                                                                       |
 | 0xE801            | 116         | ID1 outside valid range in svcGetInfo.                                                                                                                                               |
 | 0xEA01            | 117         | Time out? When you give 0 handles to svcWaitSynchronizationN.                                                                                                                        |
-| 0xEE01            | 119         | When you give too many handles to svcWaitSynchronizationN.                                                                                                                           |
+| 0xEE01            | 119         | Exceeding maximum                                                                                                                                                                    |
 | 0xF001            | 120         | ID0 outside valid range in svcGetInfo.                                                                                                                                               |
 | 0xF201            | 121         | No such port                                                                                                                                                                         |
 | 0xF601            | 123         | Port remote dead                                                                                                                                                                     |
