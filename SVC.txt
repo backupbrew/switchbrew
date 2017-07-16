@@ -442,7 +442,7 @@ These take a device id and a device address space handle.
 |-
 | 8 || Can be used with [[#svcSetMemoryPermission]]
 |-
-| 15 || Can be used with [[#svcSetProcessMemoryPermission]]
+| 14 || Can be used with [[#svcSetProcessMemoryPermission]]
 |-
 | 15 || Can be used with [[#svcMapMemory]]
 |-
