@@ -295,6 +295,12 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x80E16 || 1031 || Not initialized
 |-
+| 0x41A || 2 || Argument is invalid
+|-
+| 0xD01A || 104 || Not initialized
+|-
+| 0xD21A || 105 || Already initialized
+|-
 | 0x287C || 20 || Argument is NULL
 |-
 | 0x2C7C || 22 || Argument is invalid
