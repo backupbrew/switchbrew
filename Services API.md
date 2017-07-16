@@ -122,7 +122,7 @@ handles retrieved directly from a SVC.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>bpc, bpc:r, pcv, pcv:imm, time:u, time:a, time:s</p></td>
+<td><p>bpc, bpc:r, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s</p></td>
 <td><p><a href="PCV services.md" title="wikilink">PCV services</a></p></td>
 <td></td>
 </tr>
