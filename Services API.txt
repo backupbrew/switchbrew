@@ -211,7 +211,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |-
 | [ [[1.0.0]]+ ] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt
 
-[ [[3.0.0]]+ ] ldr:pm, ldr:shell
+[ [[3.0.0]]+ ] ldr:pm, ldr:shel, ldr:dmnt
 | [[Loader services]]
 |
 |-

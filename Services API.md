@@ -208,7 +208,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="even">
 <td><p>[ <a href="1.0.0.md" title="wikilink">1.0.0</a>+ ] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt</p>
-<p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a>+ ] ldr:pm, ldr:shell</p></td>
+<p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a>+ ] ldr:pm, ldr:shel, ldr:dmnt</p></td>
 <td><p><a href="Loader services.md" title="wikilink">Loader services</a></p></td>
 <td></td>
 </tr>
