@@ -178,3 +178,16 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 | ------ | ---------------------------------------- | ----------- |
 | 0      | [\#KAutoObject](#KAutoObject "wikilink") |             |
 | 0x10   | [\#KEvent](#KEvent "wikilink")\*         | Parent      |
+
+## KInterruptEvent
+
+Size: 0x50
+
+Inherits from:
+[\#KReadableEvent](#KReadableEvent "wikilink")
+
+| Offset | Type                                           | Description   |
+| ------ | ---------------------------------------------- | ------------- |
+| 0      | [\#KReadableEvent](#KReadableEvent "wikilink") |               |
+| 0x38   |                                                |               |
+| 0x48   | u32                                            | IrqId (or -1) |

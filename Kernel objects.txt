@@ -385,3 +385,27 @@ Inherits from: [[#KAutoObject]]
 | [[#KEvent]]*
 | Parent
 |}
+
+== KInterruptEvent ==
+Size: 0x50
+
+Inherits from: [[#KReadableEvent]]
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| [[#KReadableEvent]]
+|
+|-
+| 0x38
+|
+|
+|-
+| 0x48
+| u32
+| IrqId (or -1)
+|}
