@@ -7,3 +7,10 @@ section, when the NCA includes that section.
 
 Contains the raw FS for the logo FS, see
 [here](NCA%20Content%20FS.md "wikilink") for mounted-FS contents.
+
+There's 0x4000-bytes of zeros at rawnca+0x4000, then the actual data
+starts at absolute offset 0x8000, which is the PFS0.
+
+# PFS0
+
+This is the FS which has magicnum "PFS0" at header+0.

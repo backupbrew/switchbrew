@@ -4,3 +4,8 @@ The only known section which is not encrypted in the raw NCA is the logo section
 
 ==Logo section==
 Contains the raw FS for the logo FS, see [[NCA_Content_FS|here]] for mounted-FS contents.
+
+There's 0x4000-bytes of zeros at rawnca+0x4000, then the actual data starts at absolute offset 0x8000, which is the PFS0.
+
+=PFS0=
+This is the FS which has magicnum "PFS0" at header+0.
