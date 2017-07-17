@@ -193,7 +193,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x251002 || 4744 || Invalid [[NAX0]] magicnum.
 |-
-| 0x2EE202 || 6001 || Wrong permissions
+| 0x2EE202 || 6001 || Invalid input
 |-
 | 0x2EE602 || 6003 || Path too long
 |-
