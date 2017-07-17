@@ -47,7 +47,7 @@ Inherits from:
 | ..     | ..                                                             | ..            |
 | 0x100  | [\#KLinkedListNode](#KLinkedListNode "wikilink")\*             | TlsPagesList  |
 | ..     | ..                                                             | ..            |
-| 0x130  |                                                                | ProcessMutex  |
+| 0x130  | KRecursiveLock                                                 | ProcessMutex  |
 | ..     | ..                                                             | ..            |
 | 0x288  | KProcessHandleTable                                            | HandleTable   |
 
@@ -191,3 +191,31 @@ Inherits from:
 | 0      | [\#KReadableEvent](#KReadableEvent "wikilink") |               |
 | 0x38   |                                                |               |
 | 0x48   | u32                                            | IrqId (or -1) |
+
+# KAddressSpace
+
+Size: 0x70
+
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+
+| Offset | Type                                       | Description |
+| ------ | ------------------------------------------ | ----------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")   |             |
+| 0x10   | KRecursiveLock                             | Mutex       |
+| 0x18   | [\#KSmmuManager](#KSmmuManager "wikilink") | Manager     |
+| 0x58   | u64                                        | BaseAddress |
+| 0x60   | u64                                        | Size        |
+| 0x68   | bool                                       | HasInited   |
+
+## KSmmuManager
+
+Size: 0x40
+
+| Offset | Type     | Description   |
+| ------ | -------- | ------------- |
+| 0      | u8\[4\]  | PageTableIdx  |
+| 8      | u64\[4\] | AltPageTables |
+| 0x28   |          |               |
+| 0x30   |          |               |
+| 0x34   |          |               |
+| 0x38   |          |               |
