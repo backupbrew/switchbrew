@@ -166,7 +166,7 @@ Inherits from:
 | ------ | -------------------------------------------------------------- | ----------- |
 | 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |             |
 | 0x28   | bool                                                           |             |
-| 0x30   | [\#KEvent](#KEvent "wikilink")                                 | Parent      |
+| 0x30   | [\#KEvent](#KEvent "wikilink")\*                               | Parent      |
 
 ## KWritableEvent
 

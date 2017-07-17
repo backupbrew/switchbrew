@@ -362,7 +362,7 @@ Inherits from: [[#KSynchronizationEvent]]
 |
 |-
 | 0x30
-| [[#KEvent]]
+| [[#KEvent]]*
 | Parent
 |}
 
