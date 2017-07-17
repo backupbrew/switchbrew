@@ -198,7 +198,7 @@
 |-
 | 0x76 || svcQueryProcessMemory || || 
 |-
-| 0x77 || svcMapProcessCodeMemory || W0=process_handle, X21dstaddr, X2=srcaddr, X3=size || W0=result
+| 0x77 || svcMapProcessCodeMemory || W0=process_handle, X2=dstaddr, X2=srcaddr, X3=size || W0=result
 |-
 | 0x78 || svcUnmapProcessCodeMemory || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
 |-
