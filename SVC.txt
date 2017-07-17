@@ -130,7 +130,7 @@
 |-
 | 0x52 || [[#svcUnmapTransferMemory]] || W0=mirror_handle, X1=addr, X2=size || W0=result
 |-
-| 0x53 || svcCreateInterruptEvent || X1=irq_id || W0=result, W1=handle
+| 0x53 || svcCreateInterruptEvent || X1=irq_id, W2=flag || W0=result, W1=handle
 |-
 | 0x54 || [[#svcQueryPhysicalAddress]] ||  || 
 |-
