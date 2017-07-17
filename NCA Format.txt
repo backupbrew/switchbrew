@@ -1,0 +1,6 @@
+Raw NCAs are encrypted.
+
+The only known section which is not encrypted in the raw NCA is the logo section, when the NCA includes that section.
+
+==Logo section==
+Contains the raw FS for the logo FS, see [[NCA_Content_FS|here]] for mounted-FS contents.
