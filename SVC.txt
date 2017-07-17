@@ -316,9 +316,11 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |}
 
 == svcReadWriteRegister ==
-Read/write Tegra hardware registers, input address is physical-address.
+Read/write Tegra hardware registers with a hardcoded whitelist. Input address is physical-address.
 
 rw_mask is 0 for reading and -1 for writing.
+
+The whitelist is same for writing as for reading.
 
 === Registers ===
 {| class=wikitable
