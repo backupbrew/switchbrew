@@ -22,8 +22,16 @@ The only known area which is not encrypted in the raw NCA is the logo section, w
 | Magicnum "NCA3"
 |-
 | 0x204
-| 0x3
+| 0x1
 | ?
+|-
+| 0x205
+| 0x1
+| Type value?
+|-
+| 0x206
+| 0x1
+| Crypto flags? Normally 0. With [[3.0.0]]+ ncatype1 content this is 2: new keydata is used for this content, this field seems to control that.
 |-
 | 0x207
 | 0x1
