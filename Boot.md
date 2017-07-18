@@ -40,4 +40,5 @@ stored in NAND, also error 0xC9E if hash doesn't match.
 
 If this function returns 0xC9E, it calls a function to repair the NAND.
 
-When done it calls the PM NotifyBootCompleted.
+When done it calls the [PM](Process%20Manager%20services.md "wikilink")
+NotifyBootCompleted.

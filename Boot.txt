@@ -24,4 +24,4 @@ After that it also checks the hash of "nx/package2" against two pkg2s stored in 
 
 If this function returns 0xC9E, it calls a function to repair the NAND.
 
-When done it calls the PM NotifyBootCompleted.
+When done it calls the [[Process_Manager_services|PM]] NotifyBootCompleted.
