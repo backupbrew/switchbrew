@@ -39,8 +39,10 @@ console unique.
 The 0xB0-byte keyblob is installed to the "customer data" section in
 BCTs (BCT+0x450).
 
-BCT offset 0x2330/0x245C is probably the field controlling which keyblob
-gets used \[?\].
+BCT offset 0x2330 is the field controlling which keyblob gets used. NS
+uses this to inject the appropriate keyblob on system update.
+[Boot](Boot.md "wikilink") also uses this index for repairing corrupt
+sectors.
 
 With \[ [3.0.0](3.0.0.md "wikilink") + \] index 2 is used instead of
 index

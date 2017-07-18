@@ -86,7 +86,7 @@ Starting at 0x180000 is an array of 0x200-byte entries, for a total of 32 keyblo
 
 The 0xB0-byte keyblob is installed to the "customer data" section in BCTs (BCT+0x450).
 
-BCT offset 0x2330/0x245C is probably the field controlling which keyblob gets used [?].
+BCT offset 0x2330 is the field controlling which keyblob gets used. NS uses this to inject the appropriate keyblob on system update. [[Boot]] also uses this index for repairing corrupt sectors.
 
 With [ [[3.0.0]] + ] index 2 is used instead of index 1.
 
@@ -258,7 +258,6 @@ The saves for all non-system applications, regardless of where the application i
      └── 8000000000000120
 
 On a v2.1 system with MountBis, the only thing under here is "PRF2SAFE.RCV".
-
 
 = System Savegames =
 
