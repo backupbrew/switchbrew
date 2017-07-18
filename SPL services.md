@@ -11,7 +11,7 @@
 | 7   | Prng                                                                 | uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink")                                                                               |
 | 9   | ImportExpModParams                                                   | wrapper for [ImportParamsForFWithXY](SMC#ImportParamsForFWithXY.md##ImportParamsForFWithXY "wikilink")                              |
 | 10  | ExpMod                                                               | wrapper for [ExpMod](SMC#ExpMod.md##ExpMod "wikilink")                                                                              |
-| 11  | [\#GetDevunitFlag](#GetDevunitFlag "wikilink")                       | uses [GetConfig](SMC#GetConfig.md##GetConfig "wikilink")                                                                            |
+| 11  | [\#IsDevUnit](#IsDevUnit "wikilink")                                 | uses [GetConfig](SMC#GetConfig.md##GetConfig "wikilink")                                                                            |
 | 12  | KeygenA                                                              | wrapper for [KeygenA](SMC#KeygenA.md##KeygenA "wikilink")                                                                           |
 | 13  | [\#DecryptExpModParamsWithXY](#DecryptExpModParamsWithXY "wikilink") | wrapper for [DecryptExpModParamsWithXY](SMC#DecryptExpModParamsWithXY.md##DecryptExpModParamsWithXY "wikilink")                     |
 | 14  | DecryptAESCBC                                                        | decrypts 16 bytes, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X, Y and a fixed CBC IV |
@@ -62,7 +62,7 @@ Takes two input words, a ConfigItem and the value to set.
 | ---------- | ---------------- |
 | 13         | Battery profile? |
 
-## GetDevunitFlag
+## IsDevUnit
 
 No input params.
 

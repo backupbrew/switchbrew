@@ -21,7 +21,7 @@
 |-
 | 10 || ExpMod || wrapper for [[SMC#ExpMod|ExpMod]]
 |-
-| 11 || [[#GetDevunitFlag]] || uses [[SMC#GetConfig|GetConfig]]
+| 11 || [[#IsDevUnit]] || uses [[SMC#GetConfig|GetConfig]]
 |-
 | 12 || KeygenA || wrapper for [[SMC#KeygenA|KeygenA]]
 |-
@@ -91,7 +91,7 @@ Takes two input words, a ConfigItem and the value to set.
 | 13 || Battery profile?
 |}
 
-== GetDevunitFlag ==
+== IsDevUnit ==
 No input params.
 
 Returns an u8 flag for whether the system is devunit. Output flag is 0 on retail.
