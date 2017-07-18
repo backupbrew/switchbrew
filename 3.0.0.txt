@@ -51,6 +51,8 @@ NS-sysmodule was updated, this fixed a vuln in multiple [[Switch_System_Flaws|cm
 ==Keys==
 The used [[Flash_Filesystem#Keyblob|keyblob]] was changed from index0 to index1, this was the first time it was changed.
 
+New keydata was introduced for NCA content, see [[NCA_Format|here]].
+
 ==OSS==
 The updated [https://www.nintendo.co.jp/support/oss/index.html OSS] includes a number of WebKit changes.
 
