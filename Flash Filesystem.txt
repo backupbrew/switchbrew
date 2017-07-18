@@ -90,14 +90,6 @@ BCT offset 0x2330/0x245C is probably the field controlling which keyblob gets us
 
 With [ [[3.0.0]] + ] index 2 is used instead of index 1.
 
-==== panic ====
-The ARM7 panic() function does the following:
-* Clears memory.
-* ...
-* Writes 0x1 to FUSE_DIS_PGM. From nvdia source: "check that fuse options write access hasn't been disabled".
-* ...
-* Executes: while(1)*((u32*)0x60007004) = 0x5<<28;
-
 == User Partitions ==
 {| class="wikitable" border="1"
 |-

@@ -43,19 +43,8 @@ BCT offset 0x2330/0x245C is probably the field controlling which keyblob
 gets used \[?\].
 
 With \[ [3.0.0](3.0.0.md "wikilink") + \] index 2 is used instead of
-index 1.
-
-#### panic
-
-The ARM7 panic() function does the following:
-
-  - Clears memory.
-  - ...
-  - Writes 0x1 to FUSE\_DIS\_PGM. From nvdia source: "check that fuse
-    options write access hasn't been disabled".
-  - ...
-  - Executes: while(1)\*((u32\*)0x60007004) =
-0x5\<\<28;
+index
+1.
 
 ## User Partitions
 
