@@ -51,3 +51,15 @@ This is the FS which has magicnum "HFS0" at header+0.
 | 0x10         | X    | File Entry Table         |
 | 0x10 + X     | Y    | String Table             |
 | 0x10 + X + Y | Z    | Raw File Data            |
+
+Where File Entry Table consists of Number of Files
+FileEntries:
+
+| Offset | Size | Description                                                                                                              |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x8  | Offset of file in Data                                                                                                   |
+| 0x8    | 0x8  | Size of file in Data                                                                                                     |
+| 0x10   | 0x4  | Offset of filename in String Table                                                                                       |
+| 0x14   | 0x4  | Size of Hashed region of file (for HFS0s, this is the size of the pre-filedata portion, for NCAs this is usually 0x200). |
+| 0x18   | 8    | Zero/Reserved                                                                                                            |
+| 0x20   | 0x20 | SHA256 hash of the first (size of hashed region) bytes of filedata.                                                      |
