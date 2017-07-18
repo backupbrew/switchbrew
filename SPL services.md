@@ -30,13 +30,15 @@
 Takes an input word (ConfigItem), and returns a u64 with the config
 params.
 
-| ConfigItem | Name                                  |
-| ---------- | ------------------------------------- |
-| 2          | Memory configuration.                 |
-| 5          | HardwareType (0=Icosa, 1=Copper)      |
-| 8          | 64bit DeviceId with byte7 clear.      |
-| 11         | Allow skipping RSA signatures on NRR. |
-| 13         | Battery profile?                      |
+| ConfigItem | Name                             |
+| ---------- | -------------------------------- |
+| 2          | MemoryConfiguration              |
+| 5          | HardwareType (0=Icosa, 1=Copper) |
+| 7          | IsRecoveryBoot                   |
+| 8          | DeviceId (byte7 clear).          |
+| 9          | BootReason                       |
+| 11         | AllowSkippingNrrSignatures       |
+| 13         | BatteryProfile?                  |
 
 Output from this when used by [NIM](NIM%20services.md "wikilink") must
 match the [set:cal](Settings%20services.md "wikilink") DeviceId with
