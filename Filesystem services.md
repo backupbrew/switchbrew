@@ -66,7 +66,7 @@
 | 620  | SetSdCardEncryptionSeed                                                                |
 | 800  | GetAndClearFileSystemProxyErrorInfo                                                    |
 | 1000 | SetBisRootForHost                                                                      |
-| 1001 |                                                                                        |
+| 1001 | SetSaveDataSize                                                                        |
 | 1002 | SetSaveDataRootPath                                                                    |
 | 1003 | DisableAutoSaveDataCreation                                                            |
 | 1004 | SetGlobalAccessLogMode                                                                 |

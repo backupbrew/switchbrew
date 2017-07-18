@@ -123,7 +123,7 @@
 |-
 | 1000 || SetBisRootForHost
 |-
-| 1001 ||
+| 1001 || SetSaveDataSize
 |-
 | 1002 || SetSaveDataRootPath
 |-
