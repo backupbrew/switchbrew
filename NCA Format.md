@@ -1,8 +1,9 @@
 The entire raw NCAs are encrypted.
 
 The only known area which is not encrypted in the raw NCA is the logo
-section, when the NCA includes that
-section.
+section, when the NCA includes that section. Everything else documented
+on this page is for the plaintext version of that
+data.
 
 # Header
 
