@@ -11,11 +11,11 @@ The only known area which is not encrypted in the raw NCA is the logo section, w
 |-
 | 0x0
 | 0x100
-| RSA-2048 signature over the 0x200-bytes starting at offset 0x200.
+| RSA-2048 signature over the 0x200-bytes starting at offset 0x200 using fixed key.
 |-
 | 0x100
 | 0x100
-| Unknown. All-zero in some NCAs, non-zero for others. Presumably a RSA signature?
+| RSA-2048 signature over the 0x200-bytes starting at offset 0x200 using key from [[NPDM]], or zeroes if not a program.
 |-
 | 0x200
 | 0x4

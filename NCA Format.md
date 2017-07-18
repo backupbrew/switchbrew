@@ -7,19 +7,19 @@ data.
 
 # Header
 
-| Offset | Size            | Description                                                                      |
-| ------ | --------------- | -------------------------------------------------------------------------------- |
-| 0x0    | 0x100           | RSA-2048 signature over the 0x200-bytes starting at offset 0x200.                |
-| 0x100  | 0x100           | Unknown. All-zero in some NCAs, non-zero for others. Presumably a RSA signature? |
-| 0x200  | 0x4             | Magicnum "NCA3"                                                                  |
-| 0x204  | 0x3             | ?                                                                                |
-| 0x207  | 0x1             | Key index                                                                        |
-| 0x208  | 0x8             | Size of the entire NCA.                                                          |
-| 0x210  | 0x8             | titleID                                                                          |
-| 0x230  | 0x10            | Rights ID ([Ticket](Ticket.md "wikilink"))                                       |
-| 0x240  | 0x10\*0x4(0x40) | Table for each section, see below.                                               |
-| 0x280  | 0x20\*0x4(0x80) | Table of SHA256 hashes, over each 0x200-byte Section Header Block.               |
-| 0x300  | 0x10\*0x4(0x40) | Key area                                                                         |
+| Offset | Size            | Description                                                                                                                             |
+| ------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x100           | RSA-2048 signature over the 0x200-bytes starting at offset 0x200 using fixed key.                                                       |
+| 0x100  | 0x100           | RSA-2048 signature over the 0x200-bytes starting at offset 0x200 using key from [NPDM](NPDM.md "wikilink"), or zeroes if not a program. |
+| 0x200  | 0x4             | Magicnum "NCA3"                                                                                                                         |
+| 0x204  | 0x3             | ?                                                                                                                                       |
+| 0x207  | 0x1             | Key index                                                                                                                               |
+| 0x208  | 0x8             | Size of the entire NCA.                                                                                                                 |
+| 0x210  | 0x8             | titleID                                                                                                                                 |
+| 0x230  | 0x10            | Rights ID ([Ticket](Ticket.md "wikilink"))                                                                                              |
+| 0x240  | 0x10\*0x4(0x40) | Table for each section, see below.                                                                                                      |
+| 0x280  | 0x20\*0x4(0x80) | Table of SHA256 hashes, over each 0x200-byte Section Header Block.                                                                      |
+| 0x300  | 0x10\*0x4(0x40) | Key area                                                                                                                                |
 
 The header is 0x400-bytes, at NCA+0.
 
