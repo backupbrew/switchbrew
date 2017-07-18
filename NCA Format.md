@@ -10,14 +10,14 @@ The first {at least 0xC00 bytes} are encrypted with AES-XTS with sector
 size 0x200, at least 6 sectors in total. Everything in this region uses
 same keydata.
 
-| Offset | XTS Sector | Description           |
-| ------ | ---------- | --------------------- |
-| 0x0    | 0          | NCA Header Signatures |
-| 0x200  | 1          | NCA Header Data       |
-| 0x400  | 2          | NCA Section 0 Data    |
-| 0x600  | 3          | NCA Section 1 Data    |
-| 0x800  | 4          | NCA Section 2 Data    |
-| 0xA00  | 5          | NCA Section 3 Data    |
+| Offset | Description           |
+| ------ | --------------------- |
+| 0x0    | NCA Header Signatures |
+| 0x200  | NCA Header Data       |
+| 0x400  | NCA Section 0 Data    |
+| 0x600  | NCA Section 1 Data    |
+| 0x800  | NCA Section 2 Data    |
+| 0xA00  | NCA Section 3 Data    |
 
 # Header
 
