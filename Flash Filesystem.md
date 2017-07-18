@@ -32,21 +32,18 @@
 | 0x20   | 0x90  | Keyblob encrypted payload                                                                                                                      |
 | 0xB0   | 0x150 | Unused, all-zero.                                                                                                                              |
 
-The data at 0x180000 is an array of 0x200-byte entries, with a total of
-32 entries. Therefore, there's 32 different keyblobs are stored here.
-The raw data for each one is unique compared to the others.
+Starting at 0x180000 is an array of 0x200-byte entries, for a total of
+32 keyblobs. Each one is unique compared to the others. They are all
+console unique.
 
-The 0xB0-byte keyblob is installed to the console-unique "customer data"
-section in BCTs(BCT+0x450), which is what gets used during system boot.
+The 0xB0-byte keyblob is installed to the "customer data" section in
+BCTs (BCT+0x450).
 
-Which keyblob is loaded from here during install is presumably somewhere
-in BCT? \<v3.0 use index0, v3.0 uses index1. Hence, the installed
-keyblob was changed with v3.0.
+BCT offset 0x2330/0x245C is probably the field controlling which keyblob
+gets used \[?\].
 
-BCT Offset 0x2330 is probably the field controlling this?(0x245C is a
-copy of this field?) There's at least 3 versions of package1: v1.0,
-v2.0, and v3.0, BCT was updated for all of these. With v1.0 and v2.0
-these two fields are the same(0x1), however with v3.0 it's 0x2.
+With \[ [3.0.0](3.0.0.md "wikilink") + \] index 2 is used instead of
+index 1.
 
 #### panic
 
