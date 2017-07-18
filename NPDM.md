@@ -43,22 +43,53 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 # ACI0
 
 Looks like an old crappy version of ACID. It has the guessed version
-field 0 instead of
-1.
+field 0 instead of 1.
 
 # FS Access Control
 
-| Word | Bit | Description                                                                         |
-| ---- | --- | ----------------------------------------------------------------------------------- |
-| 0    |     | Version? Always 1.                                                                  |
-| 1    | 0   | MountContent\* is accessible when set.                                              |
-| 1    | 2   | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28? |
+| Offset | Size | Description                   |
+| ------ | ---- | ----------------------------- |
+| 0x0    | 0x4  | Version (usually 1).          |
+| 0x4    | 0x8  | FS Access Rights              |
+| 0xC    | 0x4  | ContentOwnerIds start offset  |
+| 0x10   | 0x4  | ContentOwnerIds end offset    |
+| 0x14   | 0x4  | SaveDataOwnerIds start offset |
+| 0x18   | 0x4  | SavaDataOwnerIds end offset   |
+
+### FS Access Rights
+
+| Bit and bitmask            | Description                                                                                      |
+| -------------------------- | ------------------------------------------------------------------------------------------------ |
+| `0`, `0x1`                 | ApplicationInfo (MountContent\* is accessible when set)                                          |
+| `1`, `0x2`                 | BootModeControl                                                                                  |
+| `2`, `0x4`                 | Calibration (Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28) |
+| `3`, `0x8`                 | SystemSaveData                                                                                   |
+| `4`, `0x10`                | GameCard                                                                                         |
+| `5`, `0x20`                | SaveDataBackup                                                                                   |
+| `6`, `0x40`                | SaveDataManagement                                                                               |
+| `7`, `0x80`                | BisAllRaw                                                                                        |
+| `8`, `0x100`               | GameCardRaw                                                                                      |
+| `9`, `0x200`               | GameCardPrivate                                                                                  |
+| `10`, `0x400`              | SetTime                                                                                          |
+| `11`, `0x800`              | ContentManager                                                                                   |
+| `12`, `0x1000`             | ImageManager                                                                                     |
+| `13`, `0x2000`             | CreateSaveData                                                                                   |
+| `14`, `0x4000`             | SystemSaveDataManagement                                                                         |
+| `15`, `0x8000`             | BisFileSystem                                                                                    |
+| `16`, `0x10000`            | SystemUpdate                                                                                     |
+| `17`, `0x20000`            | SaveDataMeta                                                                                     |
+| `18`, `0x40000`            | DeviceSaveControl                                                                                |
+| `19`, `0x80000`            | SettingsControl                                                                                  |
+| `62`, `0x4000000000000000` | Debug                                                                                            |
+| `63`, `0x8000000000000000` | FullPermission                                                                                   |
 
 Web-applets access control:
 
   - "LibAppletWeb" and "LibAppletOff" have same access control: word0
-    bit0 set, word1 bit0 and bit3 set, and word2 bit30 set.
-  - Rest of the web-applets: Same as above except word1 bit0 isn't set.
+    bit0 set, **ApplicationInfo** and **SystemSaveData** set, and
+    **Debug** set.
+  - Rest of the web-applets: Same as above except **ApplicationInfo**
+    isn't set.
 
 # Service Access Control
 
