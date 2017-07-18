@@ -138,7 +138,7 @@ The total size is 0x200-bytes.
 |-
 | 0x28
 | 0x4
-| ?
+| Block size in bytes.
 |-
 | 0x2C
 | 0x4
@@ -202,7 +202,7 @@ See [[ExeFS|here]] for mounted-FS ExeFS contents.
 |-
 | 0x0
 | X
-| Table of hashes.
+| Table of SHA256 hashes.
 |-
 | X
 | Y
@@ -214,3 +214,7 @@ See [[ExeFS|here]] for mounted-FS ExeFS contents.
 |}
 
 This is the FS which has magicnum "PFS0" at header+0.
+
+The hash table is hashes for every {Block size from superblock} starting at the PFS0 header. The size used for the last hash is {PFS0 filesystem size from superblock} - offset_relativeto_header.
+
+See also the PFS0 superblock above.

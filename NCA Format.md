@@ -63,7 +63,7 @@ The total size is
 | Offset | Size | Description                                                                        |
 | ------ | ---- | ---------------------------------------------------------------------------------- |
 | 0x8    | 0x20 | SHA256 hash over the hash-table at section-start+0 with the below hash-table size. |
-| 0x28   | 0x4  | ?                                                                                  |
+| 0x28   | 0x4  | Block size in bytes.                                                               |
 | 0x2C   | 0x4  | ?                                                                                  |
 | 0x38   | 0x8? | Size of hash-table.                                                                |
 | 0x40   | 0x8? | Offset relative to section-start where the PFS0 header is located.                 |
@@ -97,8 +97,14 @@ See [here](ExeFS.md "wikilink") for mounted-FS ExeFS contents.
 
 | Offset | Size | Description                              |
 | ------ | ---- | ---------------------------------------- |
-| 0x0    | X    | Table of hashes.                         |
+| 0x0    | X    | Table of SHA256 hashes.                  |
 | X      | Y    | Zeros for alignment to {alignment size}. |
 | X+Y    |      | Start of the PFS0 header.                |
 
 This is the FS which has magicnum "PFS0" at header+0.
+
+The hash table is hashes for every {Block size from superblock} starting
+at the PFS0 header. The size used for the last hash is {PFS0 filesystem
+size from superblock} - offset\_relativeto\_header.
+
+See also the PFS0 superblock above.
