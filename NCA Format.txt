@@ -49,15 +49,15 @@ The first {at least 0xC00 bytes} are encrypted with AES-XTS with sector size 0x2
 |-
 | 0x204
 | 0x1
-| ?
+| Distribution Type (0=Download, 1=GameCard)
 |-
 | 0x205
 | 0x1
-| Type value?
+| Content Type (0=Program, 1=Meta, 2=Control, 3=Manual, 4=Data)
 |-
 | 0x206
 | 0x1
-| Crypto flags? Normally 0. With [[3.0.0]]+ ncatype1(not used for ncatype0, unknown for others) content this is 2: new keydata is used for this content, this field seems to control that.
+| Crypto Type (0=Auto, 1=None, 2=Unknown added with With [[3.0.0]]+ ncatype1(not used for ncatype0, unknown for others), 3=AES-CTR)
 |-
 | 0x207
 | 0x1
@@ -87,6 +87,7 @@ The first {at least 0xC00 bytes} are encrypted with AES-XTS with sector size 0x2
 | 0x10*0x4(0x40)
 | Key area
 |}
+
 
 The header is 0x400-bytes, at NCA+0.
 
