@@ -2,7 +2,7 @@
 
 | Cmd | Name                  |
 | --- | --------------------- |
-| 0   | GetMaintenanceMode?   |
+| 0   | GetMaintenanceMode    |
 | 1   | EnableMaintenanceMode |
 
 # pm:info
