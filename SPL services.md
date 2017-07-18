@@ -4,26 +4,26 @@
 | --- | ---------------------------------------------- | ----- |
 | 0   | [\#GetConfig](#GetConfig "wikilink")           |       |
 | 1   |                                                |       |
-| 2   | [\#ScrambleKeyA](#ScrambleKeyA "wikilink")     |       |
+| 2   | [\#KeyGen0](#KeyGen0 "wikilink")               |       |
 | 3   |                                                |       |
-| 4   | [\#ScrambleKeyB](#ScrambleKeyB "wikilink")     |       |
+| 4   | Aes128Ctr                                      |       |
 | 5   | [\#SetConfig](#SetConfig "wikilink")           |       |
 | 7   |                                                |       |
 | 9   |                                                |       |
 | 10  |                                                |       |
 | 11  | [\#GetDevunitFlag](#GetDevunitFlag "wikilink") |       |
-| 12  |                                                |       |
+| 12  | KeyGen1                                        |       |
 | 13  | [\#EncDec0](#EncDec0 "wikilink")               |       |
-| 14  |                                                |       |
+| 14  | KeyGen2                                        |       |
 | 15  |                                                |       |
 | 16  |                                                |       |
-| 17  |                                                |       |
-| 18  |                                                |       |
+| 17  | EncDec1                                        |       |
+| 18  | EncDec2                                        |       |
 | 19  |                                                |       |
 | 20  |                                                |       |
 | 21  |                                                |       |
 | 22  |                                                |       |
-| 23  |                                                |       |
+| 23  | GetSplWaitEvent                                |       |
 
 ## GetConfig
 
@@ -32,9 +32,11 @@ params.
 
 | ConfigItem | Name                                  |
 | ---------- | ------------------------------------- |
+| 2          | Memory configuration.                 |
 | 5          | HardwareType (0=Icosa, 1=Copper)      |
 | 8          | 64bit DeviceId with byte7 clear.      |
 | 11         | Allow skipping RSA signatures on NRR. |
+| 13         | Battery profile?                      |
 
 Output from this when used by [NIM](NIM%20services.md "wikilink") must
 match the [set:cal](Settings%20services.md "wikilink") DeviceId with
@@ -43,27 +45,19 @@ byte7 cleared, otherwise NIM will panic.
 [RO](Loader%20services.md "wikilink") checks id11, if set then skipping
 NRR rsa signatures is allowed.
 
-## ScrambleKeyA
+## KeyGen0
 
 Takes 16-bytes as input and two u32s. Outputs random-looking 16-bytes.
 
 Same input gives same output. Output changes when system is rebooted.
 
-## ScrambleKeyB
-
-Behaves similar to [\#ScrambleKeyA](#ScrambleKeyA "wikilink"), but with
-different output.
-
-Also console unique. This is not the inverse operation of
-[\#ScrambleKeyA](#ScrambleKeyA "wikilink").
-
 ## SetConfig
 
 Takes two input words, a ConfigItem and the value to set.
 
-| ConfigItem | Name     |
-| ---------- | -------- |
-| 13         | Unknown. |
+| ConfigItem | Name             |
+| ---------- | ---------------- |
+| 13         | Battery profile? |
 
 ## GetDevunitFlag
 

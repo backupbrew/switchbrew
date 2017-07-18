@@ -7,11 +7,11 @@
 |-
 | 1 || ||
 |-
-| 2 || [[#ScrambleKeyA]] ||
+| 2 || [[#KeyGen0]] ||
 |-
 | 3 || ||
 |-
-| 4 || [[#ScrambleKeyB]] ||
+| 4 || Aes128Ctr ||
 |-
 | 5 || [[#SetConfig]] ||
 |-
@@ -23,19 +23,19 @@
 |-
 | 11 || [[#GetDevunitFlag]] || 
 |-
-| 12 || || 
+| 12 || KeyGen1 || 
 |-
 | 13 || [[#EncDec0]] || 
 |-
-| 14 || || 
+| 14 || KeyGen2 || 
 |-
 | 15 || || 
 |-
 | 16 || || 
 |-
-| 17 || || 
+| 17 || EncDec1 || 
 |-
-| 18 || || 
+| 18 || EncDec2 || 
 |-
 | 19 || || 
 |-
@@ -45,7 +45,7 @@
 |-
 | 22 || || 
 |-
-| 23 || || 
+| 23 || GetSplWaitEvent || 
 |}
 
 == GetConfig ==
@@ -55,26 +55,25 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 |-
 ! ConfigItem || Name
 |-
+| 2 || Memory configuration.
+|-
 | 5 || HardwareType (0=Icosa, 1=Copper)
 |-
 | 8 || 64bit DeviceId with byte7 clear.
 |-
 | 11 || Allow skipping RSA signatures on NRR.
+|-
+| 13 || Battery profile?
 |}
 
 Output from this when used by [[NIM_services|NIM]] must match the [[Settings_services|set:cal]] DeviceId with byte7 cleared, otherwise NIM will panic.
 
 [[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
 
-== ScrambleKeyA ==
+== KeyGen0 ==
 Takes 16-bytes as input and two u32s. Outputs random-looking 16-bytes.
 
 Same input gives same output. Output changes when system is rebooted.
-
-== ScrambleKeyB ==
-Behaves similar to [[#ScrambleKeyA]], but with different output.
-
-Also console unique. This is not the inverse operation of [[#ScrambleKeyA]].
 
 == SetConfig ==
 Takes two input words, a ConfigItem and the value to set.
@@ -83,7 +82,7 @@ Takes two input words, a ConfigItem and the value to set.
 |-
 ! ConfigItem || Name
 |-
-| 13 || Unknown.
+| 13 || Battery profile?
 |}
 
 == GetDevunitFlag ==
