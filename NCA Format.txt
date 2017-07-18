@@ -192,7 +192,7 @@ This documents the structure of Section Header Block +0 for PFS0.
 |-
 | 0x8
 | 
-| IVFC header
+| IVFC header. Seems to be similar to [[Savegames]] IVFC, but format is different(same magicnum at hdr+4).
 |}
 
 This documents the structure of Section Header Block +0 for RomFS.

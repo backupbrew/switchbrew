@@ -80,13 +80,14 @@ The total size is
 | 0x144  | ?    | 0x1?                                                                               |
 | 0x148  | 0xB8 | Normally zeros.                                                                    |
 
-This documents the structure of Section Header Block +0 for PFS0.
+This documents the structure of Section Header Block +0 for
+PFS0.
 
 ## RomFS superblock
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x8    |      | IVFC header |
+| Offset | Size | Description                                                                                                                     |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 0x8    |      | IVFC header. Seems to be similar to [Savegames](Savegames.md "wikilink") IVFC, but format is different(same magicnum at hdr+4). |
 
 This documents the structure of Section Header Block +0 for RomFS.
 
