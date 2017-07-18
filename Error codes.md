@@ -61,6 +61,7 @@ fatal-errors, since the Description ends with bit21.
 | 148   | APM                                                    |
 | 154   | NPNS                                                   |
 | 157   | ARP                                                    |
+| 158   | BOOT                                                   |
 | 161   | NFC                                                    |
 | 162   | Userland assert                                        |
 | 168   | Userland crash                                         |

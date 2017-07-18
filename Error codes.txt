@@ -96,6 +96,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 157 || ARP
 |-
+| 158 || BOOT
+|-
 | 161 || NFC
 |-
 | 162 || Userland assert
