@@ -1,5 +1,6 @@
 boot is a built-in sysmodule.
 
+= Boot =
 First up it initializes gpios and sets the gpio voltage to 1.8v.
 
 Then it checks battery charge and SoC temperature using i2c. If either is bad, it shows one of two different bitmaps from .data in the framebuffer.
@@ -10,6 +11,7 @@ Otherwise, it continues by reading the first two bytes of the BCT at +0xC000 of 
 
 If byte0 is non-zero, it does a repair with type=4. If byte1 is non-zero, it does a repair with type=5.
 
+== Repair ==
 It uses ncm IContentMetaDatabase Iterate with supplied type value. The purpose of this ncm usage is to look up the "bip" title-id (0100000000000819 or 010000000000081A) for said type.
 
 It mounts the found bip title-id at "bip", reads the "bip:/nx/bct" file in that filesystem. Then it reads the console-unique keyblobs from NAND, and injects the keyblob based on the u32-index at BCT+0x2330 into the BCT buffer+0x450.
@@ -24,4 +26,6 @@ After that it also checks the hash of "nx/package2" against two pkg2s stored in 
 
 If this function returns 0xC9E, it calls a function to repair the NAND.
 
-When done it calls the [[Process_Manager_services|PM]] NotifyBootCompleted.
+== Done ==
+
+When done it calls the [[Process_Manager_services|pm:shell]] NotifyBootCompleted, and exits itself.

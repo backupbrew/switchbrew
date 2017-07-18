@@ -1,5 +1,7 @@
 boot is a built-in sysmodule.
 
+# Boot
+
 First up it initializes gpios and sets the gpio voltage to 1.8v.
 
 Then it checks battery charge and SoC temperature using i2c. If either
@@ -14,6 +16,8 @@ Otherwise, it continues by reading the first two bytes of the BCT at
 
 If byte0 is non-zero, it does a repair with type=4. If byte1 is
 non-zero, it does a repair with type=5.
+
+## Repair
 
 It uses ncm IContentMetaDatabase Iterate with supplied type value. The
 purpose of this ncm usage is to look up the "bip" title-id
@@ -40,5 +44,8 @@ stored in NAND, also error 0xC9E if hash doesn't match.
 
 If this function returns 0xC9E, it calls a function to repair the NAND.
 
-When done it calls the [PM](Process%20Manager%20services.md "wikilink")
-NotifyBootCompleted.
+## Done
+
+When done it calls the
+[pm:shell](Process%20Manager%20services.md "wikilink")
+NotifyBootCompleted, and exits itself.
