@@ -57,7 +57,7 @@ The first {at least 0xC00 bytes} are encrypted with AES-XTS with sector size 0x2
 |-
 | 0x206
 | 0x1
-| Crypto Type (0=Auto, 1=None, 2=Unknown added with With [[3.0.0]]+ ncatype1(not used for ncatype0, unknown for others), 3=AES-CTR)
+| Crypto Type (0=Auto, 1=None, 2=Unknown added with [[3.0.0]], used with ncatype1(not used for ncatype0, unknown for others), 3=AES-CTR)
 |-
 | 0x207
 | 0x1
