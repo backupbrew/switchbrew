@@ -8,12 +8,43 @@
 | 1 || EnableMaintenanceMode
 |}
 
+= pm:dmnt =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#GetZero]]
+|-
+| 1 || [[#GetProcessesWithFlag4]]
+|-
+| 2 || [[#StartProcess]]
+|-
+| 3 || GetProcessTitleIdByPid
+|-
+| 4 || .. Returns a handle.
+|-
+| 5 || GetCrashingProcessPid
+|-
+| 6 || .. Returns a handle.
+|}
+
+== GetZero ==
+Always returns u32 0.
+
+== GetProcessesWithFlag4 ==
+Returns an array of pids of all processes that have mask 4 set in process flags.
+
+== StartProcess ==
+Takes a pid. Process state must be 0 or 1. Then it uses svcStartProcess(process_handle, u8, u8, u32) with args coming from ldr:pm GetProgramInfo.
+
+After that, it sets process state to 2.
+
 = pm:info =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || GetProcessTitleID
+| 0 || GetProcessTitleIdByPid
 |}
 
 = pm:shell =

@@ -5,11 +5,40 @@
 | 0   | GetMaintenanceMode    |
 | 1   | EnableMaintenanceMode |
 
+# pm:dmnt
+
+| Cmd | Name                                                         |
+| --- | ------------------------------------------------------------ |
+| 0   | [\#GetZero](#GetZero "wikilink")                             |
+| 1   | [\#GetProcessesWithFlag4](#GetProcessesWithFlag4 "wikilink") |
+| 2   | [\#StartProcess](#StartProcess "wikilink")                   |
+| 3   | GetProcessTitleIdByPid                                       |
+| 4   | .. Returns a handle.                                         |
+| 5   | GetCrashingProcessPid                                        |
+| 6   | .. Returns a handle.                                         |
+
+## GetZero
+
+Always returns u32 0.
+
+## GetProcessesWithFlag4
+
+Returns an array of pids of all processes that have mask 4 set in
+process flags.
+
+## StartProcess
+
+Takes a pid. Process state must be 0 or 1. Then it uses
+svcStartProcess(process\_handle, u8, u8, u32) with args coming from
+ldr:pm GetProgramInfo.
+
+After that, it sets process state to 2.
+
 # pm:info
 
-| Cmd | Name              |
-| --- | ----------------- |
-| 0   | GetProcessTitleID |
+| Cmd | Name                   |
+| --- | ---------------------- |
+| 0   | GetProcessTitleIdByPid |
 
 # pm:shell
 
