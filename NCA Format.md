@@ -49,20 +49,45 @@ hard-coded to
 | 0x3    | 0x1  | ?                                                                                                                        |
 | 0x4    | 0x1  | Crypto type. 0 and \>4 are invalid. 1 = none(plaintext from raw NCA). 2 = other crypto. 3 = regular crypto. 4 = unknown. |
 | 0x5    | 0x1  | Padding?                                                                                                                 |
-| 0x8    |      | Start of the fs-specific header data.                                                                                    |
+| 0x8    |      | FS-specific superblock.                                                                                                  |
 
 The Section Header Block for each section is at
 absoluteoffset+0x400+(sectionid\*0x200), where sectionid corresponds to
 the index used with the entry/hash tables.
 
-The total size is 0x200-bytes.
+The total size is
+0x200-bytes.
 
-## Logo section
+## PFS0 superblock
+
+| Offset | Size | Description                                                          |
+| ------ | ---- | -------------------------------------------------------------------- |
+| 0x8    | 0x20 | SHA256 hash                                                          |
+| 0x28   | 0x4  | ?                                                                    |
+| 0x2C   | 0x4  | ?                                                                    |
+| 0x38   | 0x8? | Size of hash-table.                                                  |
+| 0x40   | 0x8? | Offset relative to section-start where the PFS0 header is located.   |
+| 0x48   | 0x8  | Actual byte-size of the PFS0 filesystem relative to the PFS0 header. |
+| 0x50   | 0xF4 | Normally zeros.                                                      |
+| 0x144  | ?    | 0x1?                                                                 |
+| 0x148  | 0xB8 | Normally zeros.                                                      |
+
+This documents the structure of Section Header Block +0 for PFS0.
+
+## RomFS superblock
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x8    |      | IVFC header |
+
+This documents the structure of Section Header Block +0 for RomFS.
+
+# Logo section
 
 This is a PFS0. See [here](NCA%20Content%20FS.md "wikilink") for the
 mounted-FS logo contents.
 
-## ExeFS section
+# ExeFS section
 
 This is a PFS0.
 
