@@ -4,29 +4,6 @@ The only known area which is not encrypted in the raw NCA is the logo section, w
 
 =Encryption=
 The first {at least 0xC00 bytes} are encrypted with AES-XTS with sector size 0x200, at least 6 sectors in total. Everything in this region uses same keydata.
-{| class="wikitable" border="1"
-|-
-! Offset
-! Description
-|-
-| 0x0
-| NCA Header Signatures
-|-
-| 0x200
-| NCA Header Data
-|-
-| 0x400
-| NCA Section 0 Data
-|-
-| 0x600
-| NCA Section 1 Data
-|-
-| 0x800
-| NCA Section 2 Data
-|-
-| 0xA00
-| NCA Section 3 Data
-|}
 
 =Header=
 {| class="wikitable" border="1"

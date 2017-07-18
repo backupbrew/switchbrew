@@ -8,16 +8,8 @@ on this page is for the plaintext version of that data.
 
 The first {at least 0xC00 bytes} are encrypted with AES-XTS with sector
 size 0x200, at least 6 sectors in total. Everything in this region uses
-same keydata.
-
-| Offset | Description           |
-| ------ | --------------------- |
-| 0x0    | NCA Header Signatures |
-| 0x200  | NCA Header Data       |
-| 0x400  | NCA Section 0 Data    |
-| 0x600  | NCA Section 1 Data    |
-| 0x800  | NCA Section 2 Data    |
-| 0xA00  | NCA Section 3 Data    |
+same
+keydata.
 
 # Header
 
