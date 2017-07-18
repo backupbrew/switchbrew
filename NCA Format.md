@@ -54,7 +54,7 @@ hard-coded to
 |        |      |                                                                                                                          |
 | 0x1    | 0x1  | ?                                                                                                                        |
 | 0x2    | 0x1  | ?                                                                                                                        |
-| 0x3    | 0x1  | ?                                                                                                                        |
+| 0x3    | 0x1  | Filesystem type. 0x2 = PFS0, 0x3 = RomFS, everything else is invalid.                                                    |
 | 0x4    | 0x1  | Crypto type. 0 and \>4 are invalid. 1 = none(plaintext from raw NCA). 2 = other crypto. 3 = regular crypto. 4 = unknown. |
 | 0x5    | 0x1  | Padding?                                                                                                                 |
 | 0x8    |      | FS-specific superblock.                                                                                                  |

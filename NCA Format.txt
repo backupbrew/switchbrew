@@ -118,7 +118,7 @@ Media offset is absoluteoffset/{mediasize}, where mediasize is hard-coded to 0x2
 |-
 | 0x3
 | 0x1
-| ?
+| Filesystem type. 0x2 = PFS0, 0x3 = RomFS, everything else is invalid.
 |-
 | 0x4
 | 0x1
