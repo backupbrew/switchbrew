@@ -296,7 +296,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Zero    || 8 || 0 || Always 0. Used during exception handling.
 |-
-| Zero    || 9 || 0 || This creates and returns an unknown handle.
+| Zero    || 9 || 0 || This creates and returns an ResourceLimit handle. Used by [[Process_Manager_services|PM]].
 |-
 | Zero    || 10 || -1, {current coreid} || Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?
 |-
