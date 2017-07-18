@@ -1,4 +1,4 @@
-[[Link title]]The 3.0.0 system update was released on June 19, 2017. This update was released for all regions.
+The 3.0.0 system update was released on June 19, 2017. This update was released for all regions.
 
 Security flaws fixed: yes.
 
@@ -47,6 +47,9 @@ Two new system modules were added, "ro" and "sdb".
 
 === [[NS_Services|NS]]-sysmodule ===
 NS-sysmodule was updated, this fixed a vuln in multiple [[Switch_System_Flaws|cmds]].
+
+==Keys==
+The used [[Flash_Filesystem#Keyblob|keyblob]] was changed from index0 to index1, this was the first time it was changed.
 
 ==OSS==
 The updated [https://www.nintendo.co.jp/support/oss/index.html OSS] includes a number of WebKit changes.
