@@ -1,0 +1,107 @@
+=Header=
+The header is 0x200-bytes, at Gamecard+0.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x100
+| RSA-2048 signature, presumably.
+|-
+| 0x100
+| 0x4
+| Magicnum "HEAD"
+|-
+| 0x104
+| 0x4
+| Offset of Secure partition (Size of non-secure data?), in Media Units
+|-
+| 0x108
+| 0x4
+| 0xFFFFFFFF
+|-
+| 0x10C
+| 0x4
+| ?
+|-
+| 0x110
+| 0x8
+| ?
+|-
+| 0x118
+| 0x8
+| Size of the Gamecart, in Media Units
+|-
+| 0x120
+| 0x10
+| ?
+|-
+| 0x130
+| 0x8
+| Offset of HFS0 FS partition
+|-
+| 0x138
+| 8
+| HFS0 Header size
+|-
+| 0x140
+| 0x20
+| SHA256 hash of the HFS0 Header
+|-
+| 0x160
+| 0x20
+| SHA256 hash of ?
+|-
+| 0x180
+| 0x4
+| 1?
+|-
+| 0x184
+| 0x4
+| 2?
+|-
+| 0x188
+| 0x4
+| 0?
+|-
+| 0x18C
+| 0x4
+| Offset of Secure partition (Size of non-secure data?), in Media Units, again.
+|-
+| 0x190
+| 0x70
+| Encrypted data/hashes of some kind
+|}
+
+
+= Cert =
+
+This is for the CERT, located at Gamecard + 0x7000 (always?). This matches exactly the output from fsp-srv IDeviceOperator cmd 206 "GetGameCardDeviceCertificate".
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x100
+| RSA-2048 signature, presumably.
+|-
+| 0x100
+| 0x4
+| Magicnum "CERT"
+|-
+| 0x110
+| 0x10
+| ?
+|-
+| 0x12A
+| 0xD6
+| Encrypted data. Some kind of key?
+|}
+
+The data between the CERT and the start of the HFS0 is all 0xFF.
