@@ -17,7 +17,7 @@ The header is 0x200-bytes, at Gamecard+0.
 |-
 | 0x104
 | 0x4
-| Offset of Secure partition (Size of non-secure data?), in Media Units
+| Offset of Secure partition (Size of non-secure data?), in Media Units (0x200 bytes for switch gamecarts)
 |-
 | 0x108
 | 0x4
