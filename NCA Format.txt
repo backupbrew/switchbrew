@@ -134,7 +134,7 @@ The total size is 0x200-bytes.
 |-
 | 0x8
 | 0x20
-| SHA256 hash
+| SHA256 hash over the hash-table at section-start+0 with the below hash-table size.
 |-
 | 0x28
 | 0x4
