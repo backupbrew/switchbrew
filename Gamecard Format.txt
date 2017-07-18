@@ -176,3 +176,14 @@ Where File Entry Table consists of Number of Files FileEntries:
 | 0x20
 | SHA256 hash of the first (size of hashed region) bytes of filedata.
 |}
+
+The string table is 00-padded to align the start of raw filedata with a sector/media unit boundary (usually?).
+
+=Typical Cartridge Layout=
+Observed gamecarts contain three partitions: "update", "normal", and "secure".
+
+The update partition (Gamecard partition 0 for fsp-srv cmd 31) contains .cnmt.nca + .nca files for the entire system update required to play the game. Launch day carts contain a full copy of 1.0 ncas, newer carts contain newer sysupdate NCAs etc.
+
+The normal partition contains the .cnmt.nca and the game icondata nca. This is presumably for future compatibility so that if a future update changes the cryptographic protocol for the secure partition, Game icon data can still be shown in the home menu on old firmwares.
+
+The secure partition contains an identical copy of the .cnmt.nca and game icondata nca, as well as all other ncas required for the game.
