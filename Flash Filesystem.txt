@@ -98,6 +98,8 @@ BCT offset 0x2330 is the field controlling which keyblob gets used. NS uses this
 
 With [ [[3.0.0]] + ] index 2 is used instead of index 1.
 
+The Tegra 210 BCT format can be found in nvidia's cbootimage [https://github.com/thierryreding/tegra-avp/blob/35f467996e532357db54894c975acab93293d219/include/avp/tegra210/bct.h#L521]
+
 == User Partitions ==
 {| class="wikitable" border="1"
 |-

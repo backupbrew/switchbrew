@@ -47,8 +47,10 @@ uses this to inject the appropriate keyblob on system update.
 sectors.
 
 With \[ [3.0.0](3.0.0.md "wikilink") + \] index 2 is used instead of
-index
-1.
+index 1.
+
+The Tegra 210 BCT format can be found in nvidia's cbootimage
+[1](https://github.com/thierryreding/tegra-avp/blob/35f467996e532357db54894c975acab93293d219/include/avp/tegra210/bct.h#L521)
 
 ## User Partitions
 
