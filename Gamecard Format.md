@@ -37,3 +37,17 @@ matches exactly the output from fsp-srv IDeviceOperator cmd 206
 | 0x12A  | 0xD6  | Encrypted data. Some kind of key? |
 
 The data between the CERT and the start of the HFS0 is all 0xFF.
+
+# HFS0
+
+This is the FS which has magicnum "HFS0" at header+0.
+
+| Offset       | Size | Description              |
+| ------------ | ---- | ------------------------ |
+| 0x0          | 0x4  | HFS0 Magic               |
+| 0x4          | 0x4  | Number of files          |
+| 0x8          | 0x4  | Size of the string table |
+| 0xC          | 0x4  | Zero/Reserved            |
+| 0x10         | X    | File Entry Table         |
+| 0x10 + X     | Y    | String Table             |
+| 0x10 + X + Y | Z    | Raw File Data            |
