@@ -61,7 +61,7 @@
 |-
 | 27 ||
 |-
-| 30 || OpenGameCardPartition
+| 30 || [[#OpenGameCardPartition]]
 |-
 | 31 || [[#MountGameCardPartition]]
 |-
@@ -206,12 +206,16 @@ Takes a 0x40-byte Save-struct entry and a 0x40-byte SaveCreate-struct entry.
 
 Creates savedata in the SYSTEM [[Flash_Filesystem|NAND]] partition.
 
+== OpenGameCardPartition ==
+
+Takes an input u32 (partition ID), and returns an [[#IStorage]] for the [[Gamecard_Format|partition]].
+
 == MountGameCardPartition ==
 Takes two input u32s, with the second u32 located at +4 in rawdata after the first u32.
 
 Returns an [[#IFileSystem]].
 
-Mounts a gamcard [[Gamecard_Partition|partition]].
+Mounts a gamecard [[Gamecard_Partition|partition]].
 
 == MountSaveData ==
 Takes an input u8 and a 0x40-byte Save-struct entry. Official user-process code is only known to use value 1 for the u8.

@@ -35,7 +35,7 @@
 | 25   |                                                                                        |
 | 26   | FormatSdCardDryRun                                                                     |
 | 27   |                                                                                        |
-| 30   | OpenGameCardPartition                                                                  |
+| 30   | [\#OpenGameCardPartition](#OpenGameCardPartition "wikilink")                           |
 | 31   | [\#MountGameCardPartition](#MountGameCardPartition "wikilink")                         |
 | 51   | [\#MountSaveData](#MountSaveData "wikilink")                                           |
 | 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |
@@ -162,6 +162,12 @@ entry.
 Creates savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
 partition.
 
+## OpenGameCardPartition
+
+Takes an input u32 (partition ID), and returns an
+[\#IStorage](#IStorage "wikilink") for the
+[partition](Gamecard%20Format.md "wikilink").
+
 ## MountGameCardPartition
 
 Takes two input u32s, with the second u32 located at +4 in rawdata after
@@ -169,7 +175,7 @@ the first u32.
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
-Mounts a gamcard [partition](Gamecard%20Partition.md "wikilink").
+Mounts a gamecard [partition](Gamecard%20Partition.md "wikilink").
 
 ## MountSaveData
 
