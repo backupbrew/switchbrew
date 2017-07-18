@@ -149,10 +149,30 @@ contents.
 | {Hash-table \<offset+size\> from superblock} |                                   | Zeros for alignment to {alignment size}. |
 | {PFS0 offset from superblock}                | {PFS0 size from superblock}       | The actual PFS0.                         |
 
-This is the FS which has magicnum "PFS0" at header+0.
+This is the FS which has magicnum "PFS0" at header+0. This is very
+similar to [HFS0](Gamecard%20Format.md "wikilink").
 
 The hash table is hashes for every {Block size from superblock} starting
 at the PFS0 header. The size used for the last hash is {PFS0 filesystem
 size from superblock} - offset\_relativeto\_header.
 
 See also the PFS0 superblock above.
+
+| Offset       | Size | Description              |
+| ------------ | ---- | ------------------------ |
+| 0x0          | 0x4  | "PFS0" Magic             |
+| 0x4          | 0x4  | Number of files          |
+| 0x8          | 0x4  | Size of the string table |
+| 0xC          | 0x4  | Zero/Reserved            |
+| 0x10         | X    | File Entry Table         |
+| 0x10 + X     | Y    | String Table             |
+| 0x10 + X + Y | Z    | Raw File Data            |
+
+Where File Entry Table consists of Number of Files FileEntries:
+
+| Offset | Size | Description                        |
+| ------ | ---- | ---------------------------------- |
+| 0x0    | 0x8  | Offset of file in Data             |
+| 0x8    | 0x8  | Size of file in Data               |
+| 0x10   | 0x4  | Offset of filename in String Table |
+| 0x14   | 0x4  | Normally zero?                     |
