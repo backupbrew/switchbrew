@@ -73,8 +73,9 @@ The total size is
 | 0x8    | 0x20 | SHA256 hash over the hash-table at section-start+0 with the below hash-table size. |
 | 0x28   | 0x4  | Block size in bytes.                                                               |
 | 0x2C   | 0x4  | Must be 0x2.                                                                       |
-| 0x38   | 0x8? | Size of hash-table.                                                                |
-| 0x40   | 0x8? | Offset relative to section-start where the PFS0 header is located.                 |
+| 0x30   | 0x8  | Normally zero?                                                                     |
+| 0x38   | 0x8  | Size of hash-table.                                                                |
+| 0x40   | 0x8  | Offset relative to section-start where the PFS0 header is located.                 |
 | 0x48   | 0x8  | Actual byte-size of the PFS0 filesystem relative to the PFS0 header.               |
 | 0x50   | 0xF4 | Normally zeros.                                                                    |
 | 0x144  | ?    | 0x1?                                                                               |
