@@ -3,43 +3,43 @@
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || [[#GetConfig]] || 
+| 0 || [[#GetConfig]] || wrapper for [[SMC#GetConfig|GetConfig]]
 |-
-| 1 || ||
+| 1 || ExpMod || user supplied modulus and exponent
 |-
-| 2 || [[#KeyGen0]] ||
+| 2 || [[#KeygenAndSealX]] || wrapper for [[SMC#KeygenAndSealX|KeygenAndSealX]]
 |-
-| 3 || ||
+| 3 || SetKeyslotFromXY || wrapper for [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]]
 |-
-| 4 || Aes128Ctr ||
+| 4 || DecryptAESCBCWithX || decrypts 16 bytes, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with a fixed Y and a fixed CBC IV
 |-
-| 5 || [[#SetConfig]] ||
+| 5 || [[#SetConfig]] || wrapper for [[SMC#SetConfig|SetConfig]]
 |-
-| 7 || || 
+| 7 || Prng || uses [[SMC#PrngX931|PrngX931]]
 |-
-| 9 || || 
+| 9 || ImportExpModParams || wrapper for [[SMC#ImportParamsForFWithXY|ImportParamsForFWithXY]]
 |-
-| 10 || || 
+| 10 || ExpMod || wrapper for [[SMC#ExpMod|ExpMod]]
 |-
-| 11 || [[#GetDevunitFlag]] || 
+| 11 || [[#GetDevunitFlag]] || uses [[SMC#GetConfig|GetConfig]]
 |-
-| 12 || KeyGen1 || 
+| 12 || KeygenA || wrapper for [[SMC#KeygenA|KeygenA]]
 |-
-| 13 || [[#EncDec0]] || 
+| 13 || [[#DecryptExpModParamsWithXY]] || wrapper for [[SMC#DecryptExpModParamsWithXY|DecryptExpModParamsWithXY]]
 |-
-| 14 || KeyGen2 || 
+| 14 || DecryptAESCBC || decrypts 16 bytes, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X, Y and a fixed CBC IV
 |-
-| 15 || || 
+| 15 || SymmetricCrypto || wrapper for [[SMC#SymmetricCrypto|SymmetricCrypto]]
 |-
-| 16 || || 
+| 16 || CMAC || wrapper for [[SMC#CMAC|CMAC]]
 |-
-| 17 || EncDec1 || 
+| 17 || ImportExpModParams || wrapper for [[SMC#ImportParamsFor10WithXY|ImportParamsFor10WithXY]]
 |-
-| 18 || EncDec2 || 
+| 18 || ExpModAndKeygenAndSealZ || wrapper for [[SMC#ExpModAndKeygenAndSealZ|ExpModAndKeygenAndSealZ]]
 |-
-| 19 || || 
+| 19 || SetKeyslotFromZ || wrapper for [[SMC#SetKeyslotFromZ|SetKeyslotFromZ]]
 |-
-| 20 || || 
+| 20 || KeygenAndSealZ || wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]]
 |-
 | 21 || || 
 |-
@@ -74,7 +74,7 @@ Output from this when used by [[NIM_services|NIM]] must match the [[Settings_ser
 
 [[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
 
-== KeyGen0 ==
+== KeygenAndSealX ==
 Takes 16-bytes as input and two u32s. Outputs random-looking 16-bytes.
 
 Same input gives same output. Output changes when system is rebooted.
@@ -94,5 +94,5 @@ No input params.
 
 Returns an u8 flag for whether the system is devunit. Output flag is 0 on retail.
 
-== EncDec0 ==
+== DecryptExpModParamsWithXY ==
 Last SPL cmd used by [[SSL_services|SSL]]-sysmodule for TLS client-privk.
