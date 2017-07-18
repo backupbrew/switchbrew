@@ -32,6 +32,7 @@ params.
 
 | ConfigItem | Name                             |
 | ---------- | -------------------------------- |
+| 1          | DisableProgramVerification       |
 | 2          | MemoryConfiguration              |
 | 5          | HardwareType (0=Icosa, 1=Copper) |
 | 7          | IsRecoveryBoot                   |
