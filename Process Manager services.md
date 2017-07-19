@@ -1,5 +1,9 @@
+# Process Tracker thread
+
 PM has a separate thread that is waiting for synchronization on process
 handles.
+
+## State changes
 
 When the kernel signals a process handle, it uses svcResetSignal on the
 process handle and then it uses svcGetProcessInfo to read out the
@@ -23,6 +27,41 @@ If process flags has mask 1 set:
 If mask 1 is not set, it immediately does what is otherwise done by the
 [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink") command.
 
+## Process launch
+
+This thread can also be triggered by the pm:shell
+[\#LaunchProcess](#LaunchProcess "wikilink") cmd.
+
+It uses [ldr:pm](Loader%20services.md "wikilink") GetProgramInfo with
+the supplied title-id.
+
+If ((\*(u8\*) (info\_output+2)) & 3) is == 1, it goes through the
+process list and errors if any has bit 0x40 set. Thus only one process
+can have bit 0x40 set at a time.
+
+It calls [ldr:pm](Loader%20services.md "wikilink") RegisterTitle, then
+[ldr:pm](Loader%20services.md "wikilink") CreateProcess, then
+[fsp-pr](Filesystem%20services.md "wikilink") RegisterTitle, then
+[sm:m](Services%20API.md "wikilink") RegisterTitle.
+
+The second input argument for [ldr:pm](Loader%20services.md "wikilink")
+CreateProcess is (launch\_flags \>\> 2) & 3.
+
+If launch\_flags has mask 1 set, it sets mask 1 in process flags.
+
+If launch\_flags flags has mask 0x10 set, it sets mask 8 in process
+flags.
+
+If ((\*(u8\*) (info\_output+2)) & 3) is == 1, it sets 0x40 in the
+process flags, and signals the event returned by
+[\#EnableDebug](#EnableDebug "wikilink").
+
+Finally it does svcStartProcess on the process handle that was returned
+by [ldr:pm](Loader%20services.md "wikilink") CreateProcess.
+
+Thus at the point of launch, the pid is already registered in ldr, fs,
+sm, and pm.
+
 # pm:bm
 
 | Cmd | Name                  |
@@ -38,9 +77,9 @@ If mask 1 is not set, it immediately does what is otherwise done by the
 | 1   | [\#GetProcessesWithFlag4](#GetProcessesWithFlag4 "wikilink") |
 | 2   | [\#StartProcess](#StartProcess "wikilink")                   |
 | 3   | GetProcessTitleIdByPid                                       |
-| 4   | .. Returns a handle.                                         |
+| 4   | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink") |
 | 5   | GetCrashingProcessPid                                        |
-| 6   | .. Returns a handle.                                         |
+| 6   | [\#EnableDebug](#EnableDebug "wikilink")                     |
 
 ## GetZero
 
@@ -59,6 +98,20 @@ ldr:pm GetProgramInfo.
 
 After that, it sets process state to 2.
 
+## EnableDebugForTitleId
+
+Takes a title-id of the program to debug. Sets this to a global field.
+Next time it gets launched it will be handled differently.
+
+Returns an event handle that is signaled when the requested title is
+launched.
+
+## EnableDebug
+
+Does \*not\* take a specific title-id as input.
+
+Returns an event handle that is triggered for debug titles.
+
 # pm:info
 
 | Cmd | Name                   |
@@ -69,7 +122,7 @@ After that, it sets process state to 2.
 
 | Cmd | Name                                                             |
 | --- | ---------------------------------------------------------------- |
-| 0   | LaunchProcess                                                    |
+| 0   | [\#LaunchProcess](#LaunchProcess "wikilink")                     |
 | 1   | TerminateProcessByPid                                            |
 | 2   | TerminateProcessByTitleID                                        |
 | 3   | GetProcessEventWaiter                                            |
@@ -78,6 +131,11 @@ After that, it sets process state to 2.
 | 6   | [\#ClearProcessCrashedFlag](#ClearProcessCrashedFlag "wikilink") |
 | 7   | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")           |
 | 8   | [\#GetCrashingProcessPid](#GetCrashingProcessPid "wikilink")     |
+
+## LaunchProcess
+
+Takes a title-id and launch\_flags. See [\#Process
+launch](#Process_launch "wikilink").
 
 ## FinalizeDeadProcess
 
