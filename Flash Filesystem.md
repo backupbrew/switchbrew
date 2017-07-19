@@ -5,17 +5,17 @@
 **Boot Partition 0 (0 of
 1)**
 
-| Offset   | Size    | Description                                                                        |
-| -------- | ------- | ---------------------------------------------------------------------------------- |
-| 0x000000 | 0x4000  | Title 0100000000000819 BCT                                                         |
-| 0x004000 | 0x4000  | Title 010000000000081A BCT                                                         |
-| 0x008000 | 0x4000  | Title 0100000000000819 BCT                                                         |
-| 0x00C000 | 0x4000  | Title 010000000000081A BCT                                                         |
-| 0x100000 | 0x40000 | Title 0100000000000819 "package1"                                                  |
-| 0x140000 | 0x40000 | Title 0100000000000819 "package1" (Backup)                                         |
-| 0x180000 | 0x4000  | Keyblob area                                                                       |
-| 0x184000 | 0x20    | Unknown pseudorandom data, changes every boot. All zero on 1.0.                    |
-| 0x184020 | 0x8?    | Increments on every boot. Bottom 10 bits (0x3FF) are always zero. All zero on 1.0. |
+| Offset   | Size    | Description                                                                                                       |
+| -------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| 0x000000 | 0x4000  | Title 0100000000000819 BCT                                                                                        |
+| 0x004000 | 0x4000  | Title 010000000000081A BCT                                                                                        |
+| 0x008000 | 0x4000  | Title 0100000000000819 BCT                                                                                        |
+| 0x00C000 | 0x4000  | Title 010000000000081A BCT                                                                                        |
+| 0x100000 | 0x40000 | Title 0100000000000819 "package1"                                                                                 |
+| 0x140000 | 0x40000 | Title 0100000000000819 "package1" (Backup)                                                                        |
+| 0x180000 | 0x4000  | Keyblob area                                                                                                      |
+| 0x184000 | 0x20    | Unknown pseudorandom data, often changes on reboot. All zero on 1.0.                                              |
+| 0x184020 | 0x8?    | Increments on every boot until hitting a certain number? Bottom 10 bits (0x3FF) are always zero. All zero on 1.0. |
 
 **Boot Partition 1 (1 of 1)**
 

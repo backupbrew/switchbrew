@@ -39,11 +39,11 @@
 |-
 |  0x184000
 |  0x20
-|  Unknown pseudorandom data, changes every boot. All zero on 1.0.
+|  Unknown pseudorandom data, often changes on reboot. All zero on 1.0.
 |-
 |  0x184020
 |  0x8?
-| Increments on every boot. Bottom 10 bits (0x3FF) are always zero. All zero on 1.0.
+| Increments on every boot until hitting a certain number? Bottom 10 bits (0x3FF) are always zero. All zero on 1.0.
 |}
 
 '''Boot Partition 1 (1 of 1)'''
