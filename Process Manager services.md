@@ -54,7 +54,9 @@ flags.
 
 If ((\*(u8\*) (info\_output+2)) & 3) is == 1, it sets 0x40 in the
 process flags, and signals the event returned by
-[\#EnableDebug](#EnableDebug "wikilink").
+[\#EnableDebug](#EnableDebug "wikilink"). svcStartProcess is not called
+in this case, it has to be done manually by the
+[\#StartProcess](#StartProcess "wikilink") command.
 
 Finally it does svcStartProcess on the process handle that was returned
 by [ldr:pm](Loader%20services.md "wikilink") CreateProcess, and sets
