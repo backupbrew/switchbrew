@@ -49,8 +49,7 @@ CreateProcess is (launch\_flags \>\> 2) & 3.
 
 If launch\_flags has mask 1 set, it sets mask 1 in process flags.
 
-If launch\_flags flags has mask 0x10 set, it sets mask 8 in process
-flags.
+If launch\_flags has mask 0x10 set, it sets mask 8 in process flags.
 
 If ((\*(u8\*) (info\_output+2)) & 3) is == 1, it sets 0x40 in the
 process flags, and signals the event returned by
@@ -58,15 +57,17 @@ process flags, and signals the event returned by
 in this case, it has to be done manually by the
 [\#StartProcess](#StartProcess "wikilink") command.
 
-Finally it does svcStartProcess on the process handle that was returned
-by [ldr:pm](Loader%20services.md "wikilink") CreateProcess, and sets
-process state to 2.
-
 If the title-id matches the title-id given in
 [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink"), then
 svcStartProcess is not called. Instead process remains in suspended
 state, and has to be done manually by the
 [\#StartProcess](#StartProcess "wikilink") command.
+
+If launch\_flags has mask 2 set, svcStartProcess is skipped.
+
+Finally it does svcStartProcess on the process handle that was returned
+by [ldr:pm](Loader%20services.md "wikilink") CreateProcess, and sets
+process state to 2.
 
 Thus at the point of launch, the pid is already registered in ldr, fs,
 sm, and pm.
