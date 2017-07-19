@@ -9,7 +9,7 @@ When the kernel signals a process handle, it uses svcResetSignal on the
 process handle and then it uses svcGetProcessInfo to read out the
 ProcessState.
 
-If the process moved state non-3 -\> 3 it clears bit4 in process flags.
+If the process moved state non-3 -\> 3 it clears 4 in process flags.
 
 If process flags has mask 8 set:
 
