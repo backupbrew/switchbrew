@@ -35,6 +35,8 @@ If ((*(u8*) (info_output+2)) & 3) is == 1, it sets 0x40 in the process flags, an
 
 Finally it does svcStartProcess on the process handle that was returned by [[Loader_services|ldr:pm]] CreateProcess, and sets process state to 2.
 
+If the title-id matches the title-id given in [[#EnableDebugForTitleId]], then svcStartProcess is not called. Instead process remains in suspended state, and has to be done manually by the [[#StartProcess]] command.
+
 Thus at the point of launch, the pid is already registered in ldr, fs, sm, and pm.
 
 = pm:bm =

@@ -60,6 +60,12 @@ Finally it does svcStartProcess on the process handle that was returned
 by [ldr:pm](Loader%20services.md "wikilink") CreateProcess, and sets
 process state to 2.
 
+If the title-id matches the title-id given in
+[\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink"), then
+svcStartProcess is not called. Instead process remains in suspended
+state, and has to be done manually by the
+[\#StartProcess](#StartProcess "wikilink") command.
+
 Thus at the point of launch, the pid is already registered in ldr, fs,
 sm, and pm.
 
