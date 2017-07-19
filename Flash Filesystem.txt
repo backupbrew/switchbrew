@@ -38,8 +38,12 @@
 |  Keyblob area
 |-
 |  0x184000
-|  
-|  Unknown, 0x20-bytes hash (updated when bcpkg-2-1 updates) + one u64? (may be incremented on bcpkg update) All zero on 1.0.
+|  0x20
+|  Unknown pseudorandom data, changes every boot. All zero on 1.0.
+|-
+|  0x184020
+|  0x8?
+| Increments on every boot. Bottom 10 bits (0x3FF) are always zero. All zero on 1.0.
 |}
 
 '''Boot Partition 1 (1 of 1)'''
