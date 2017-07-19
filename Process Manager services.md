@@ -1,3 +1,28 @@
+PM has a separate thread that is waiting for synchronization on process
+handles.
+
+When the kernel signals a process handle, it uses svcResetSignal on the
+process handle and then it uses svcGetProcessInfo to read out the
+ProcessState.
+
+If the process moved state non-3 -\> 3 it clears bit4 in process flags.
+
+If process flags has mask 8 set:
+
+  - If new state is 2, it clears 0x20 and sets 0x10 in process flags,
+    and signals the ProcessEventWaiter handle.
+  - If new state is 4, it clears 0x20 and sets 0x10 in process flags,
+    and signals the ProcessEventWaiter handle.
+  - If new state is 7, it sets 0x30 in process flags, and signals the
+    ProcessEventWaiter handle.
+
+If process flags has mask 1 set:
+
+  - If new state is 6, it signals the ProcessEventWaiter handle.
+
+If mask 1 is not set, it immediately does what is otherwise done by the
+[\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink") command.
+
 # pm:bm
 
 | Cmd | Name                  |
