@@ -27,12 +27,12 @@
 
 ### Keyblob
 
-| Offset | Size  | Description                                                                                                                                    |
-| ------ | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x10  | Keyblob AES-CMAC over the remaining 0xA0-bytes (Checked with a safe memcmp which won't abort early, calls the general panic() func on failure) |
-| 0x10   | 0x10  | Keyblob AES CTR                                                                                                                                |
-| 0x20   | 0x90  | Keyblob encrypted payload                                                                                                                      |
-| 0xB0   | 0x150 | Unused, all-zero.                                                                                                                              |
+| Offset | Size  | Description                                                                                                                                                       |
+| ------ | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x10  | Keyblob AES-CMAC over the remaining 0xA0-bytes (Checked with a mem-diff function which is safe against timing attacks, calls the general panic() func on failure) |
+| 0x10   | 0x10  | Keyblob AES CTR                                                                                                                                                   |
+| 0x20   | 0x90  | Keyblob encrypted payload                                                                                                                                         |
+| 0xB0   | 0x150 | Unused, all-zero.                                                                                                                                                 |
 
 Starting at 0x180000 is an array of 0x200-byte entries, for a total of
 32 keyblobs. Each one is unique compared to the others. They are all

@@ -75,7 +75,7 @@
 |-
 | 0x0
 | 0x10
-| Keyblob AES-CMAC over the remaining 0xA0-bytes (Checked with a safe memcmp which won't abort early, calls the general panic() func on failure)
+| Keyblob AES-CMAC over the remaining 0xA0-bytes (Checked with a mem-diff function which is safe against timing attacks, calls the general panic() func on failure)
 |-
 | 0x10
 | 0x10
