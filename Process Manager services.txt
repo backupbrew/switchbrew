@@ -109,7 +109,7 @@ Returns an event handle that is triggered for debug titles.
 |-
 | 1 || TerminateProcessByPid
 |-
-| 2 || TerminateProcessByTitleID
+| 2 || TerminateProcessByTitleId
 |-
 | 3 || GetProcessEventWaiter
 |-

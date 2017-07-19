@@ -134,7 +134,7 @@ Returns an event handle that is triggered for debug titles.
 | --- | -------------------------------------------------------------------------- |
 | 0   | [\#LaunchProcess](#LaunchProcess "wikilink")                               |
 | 1   | TerminateProcessByPid                                                      |
-| 2   | TerminateProcessByTitleID                                                  |
+| 2   | TerminateProcessByTitleId                                                  |
 | 3   | GetProcessEventWaiter                                                      |
 | 4   | GetProcessEventType (0=CONTINUE, 1=CRASHING, 2,3,5)                        |
 | 5   | [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")                   |
