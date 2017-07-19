@@ -99,7 +99,6 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | 1 || UnregisterProcess || u32 PID ||
 |}
 
-
 = Service List =
 {| class="wikitable" border="1"
 |-
