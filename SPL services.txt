@@ -11,7 +11,7 @@
 |-
 | 3 || SetKeyslotFromXY || wrapper for [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]]
 |-
-| 4 || DecryptAESCBCWithX || decrypts 16 bytes, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with a fixed Y and a fixed CBC IV
+| 4 || DecryptAESECBWithX || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with a fixed Y
 |-
 | 5 || [[#SetConfig]] || wrapper for [[SMC#SetConfig|SetConfig]]
 |-
@@ -27,7 +27,7 @@
 |-
 | 13 || [[#DecryptExpModParamsWithXY]] || wrapper for [[SMC#DecryptExpModParamsWithXY|DecryptExpModParamsWithXY]]
 |-
-| 14 || DecryptAESCBC || decrypts 16 bytes, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X, Y and a fixed CBC IV
+| 14 || DecryptAESECB || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X and Y
 |-
 | 15 || SymmetricCrypto || wrapper for [[SMC#SymmetricCrypto|SymmetricCrypto]]
 |-

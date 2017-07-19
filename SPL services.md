@@ -6,7 +6,7 @@
 | 1   | ExpMod                                                               | user supplied modulus and exponent                                                                                                  |
 | 2   | [\#KeygenAndSealX](#KeygenAndSealX "wikilink")                       | wrapper for [KeygenAndSealX](SMC#KeygenAndSealX.md##KeygenAndSealX "wikilink")                                                      |
 | 3   | SetKeyslotFromXY                                                     | wrapper for [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink")                                                |
-| 4   | DecryptAESCBCWithX                                                   | decrypts 16 bytes, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with a fixed Y and a fixed CBC IV  |
+| 4   | DecryptAESECBWithX                                                   | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with a fixed Y     |
 | 5   | [\#SetConfig](#SetConfig "wikilink")                                 | wrapper for [SetConfig](SMC#SetConfig.md##SetConfig "wikilink")                                                                     |
 | 7   | Prng                                                                 | uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink")                                                                               |
 | 9   | ImportExpModParams                                                   | wrapper for [ImportParamsForFWithXY](SMC#ImportParamsForFWithXY.md##ImportParamsForFWithXY "wikilink")                              |
@@ -14,7 +14,7 @@
 | 11  | [\#IsDevUnit](#IsDevUnit "wikilink")                                 | uses [GetConfig](SMC#GetConfig.md##GetConfig "wikilink")                                                                            |
 | 12  | KeygenA                                                              | wrapper for [KeygenA](SMC#KeygenA.md##KeygenA "wikilink")                                                                           |
 | 13  | [\#DecryptExpModParamsWithXY](#DecryptExpModParamsWithXY "wikilink") | wrapper for [DecryptExpModParamsWithXY](SMC#DecryptExpModParamsWithXY.md##DecryptExpModParamsWithXY "wikilink")                     |
-| 14  | DecryptAESCBC                                                        | decrypts 16 bytes, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X, Y and a fixed CBC IV |
+| 14  | DecryptAESECB                                                        | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X and Y |
 | 15  | SymmetricCrypto                                                      | wrapper for [SymmetricCrypto](SMC#SymmetricCrypto.md##SymmetricCrypto "wikilink")                                                   |
 | 16  | CMAC                                                                 | wrapper for [CMAC](SMC#CMAC.md##CMAC "wikilink")                                                                                    |
 | 17  | ImportExpModParams                                                   | wrapper for [ImportParamsFor10WithXY](SMC#ImportParamsFor10WithXY.md##ImportParamsFor10WithXY "wikilink")                           |
