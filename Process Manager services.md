@@ -57,7 +57,8 @@ process flags, and signals the event returned by
 [\#EnableDebug](#EnableDebug "wikilink").
 
 Finally it does svcStartProcess on the process handle that was returned
-by [ldr:pm](Loader%20services.md "wikilink") CreateProcess.
+by [ldr:pm](Loader%20services.md "wikilink") CreateProcess, and sets
+process state to 2.
 
 Thus at the point of launch, the pid is already registered in ldr, fs,
 sm, and pm.

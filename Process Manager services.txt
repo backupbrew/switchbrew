@@ -33,7 +33,7 @@ If launch_flags flags has mask 0x10 set, it sets mask 8 in process flags.
 
 If ((*(u8*) (info_output+2)) & 3) is == 1, it sets 0x40 in the process flags, and signals the event returned by [[#EnableDebug]].
 
-Finally it does svcStartProcess on the process handle that was returned by [[Loader_services|ldr:pm]] CreateProcess.
+Finally it does svcStartProcess on the process handle that was returned by [[Loader_services|ldr:pm]] CreateProcess, and sets process state to 2.
 
 Thus at the point of launch, the pid is already registered in ldr, fs, sm, and pm.
 
