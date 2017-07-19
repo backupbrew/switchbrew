@@ -150,7 +150,9 @@ contents.
 | {PFS0 offset from superblock}                | {PFS0 size from superblock}       | The actual PFS0.                         |
 
 This is the FS which has magicnum "PFS0" at header+0. This is very
-similar to [HFS0](Gamecard%20Format.md "wikilink").
+similar to [HFS0](Gamecard%20Format.md "wikilink"). A tool for
+extracting this FS is available
+[here](https://gist.github.com/yellows8/1a96c2b846f4ebc4bb45d7f7fa1eb7db).
 
 The hash table is hashes for every {Block size from superblock} starting
 at the PFS0 header. The size used for the last hash is {PFS0 filesystem
