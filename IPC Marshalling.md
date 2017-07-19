@@ -3,23 +3,23 @@
 This is an array of
 u32's.
 
-| Word | Bits  | Description                                                 |
-| ---- | ----- | ----------------------------------------------------------- |
-| 0    | 15-0  | Type. 4=Request, 5=Control                                  |
-| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                |
-| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                |
-| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                |
-| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed. |
-| 1    | 9-0   | Raw data size (in u32's).                                   |
-| 1    | 13-10 | Flags for buf C descriptor.                                 |
-| 1    | 31    | Enable handle descriptor.                                   |
-| ...  |       | Handle descriptor, if enabled.                              |
-| ...  |       | Buf X descriptors, each one 2 words.                        |
-| ...  |       | Buf A descriptors, each one 3 words.                        |
-| ...  |       | Buf B descriptors, each one 3 words.                        |
-| ...  |       | Type W descriptors, each one 3 words.                       |
-| ...  |       | Raw data (including any padding).                           |
-| ...  |       | Buf C descriptors, each one 2 words.                        |
+| Word | Bits  | Description                                                                                                 |
+| ---- | ----- | ----------------------------------------------------------------------------------------------------------- |
+| 0    | 15-0  | Type. 4=Request, 5=Control                                                                                  |
+| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                                                                |
+| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                |
+| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                |
+| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed.                                                 |
+| 1    | 9-0   | Size of raw data section in u32s.                                                                           |
+| 1    | 13-10 | Flags for buf C descriptor.                                                                                 |
+| 1    | 31    | Enable handle descriptor.                                                                                   |
+| ...  |       | [Handle descriptor](#Handle_descriptor "wikilink"), if enabled.                                             |
+| ...  |       | [Buf X descriptors](#Buffer_descriptor_X_"Pointer" "wikilink"), each one 2 words.                           |
+| ...  |       | [Buf A descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.     |
+| ...  |       | [Buf B descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.     |
+| ...  |       | [Type W descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.    |
+| ...  |       | [Raw data section](#Raw_data_section "wikilink") (including padding before and after aligned data section). |
+| ...  |       | [Buf C descriptors](#Buffer_descriptor_C_"ReceiveList" "wikilink"), each one 2 words.                       |
 
 ### Handle descriptor
 
@@ -82,32 +82,45 @@ Otherwise it has (flag-2) C descriptors.
 | 1    | 15-0  | Rest of address.          |
 | 1    | 31-16 | Size                      |
 
-## Raw data portion
+## Raw data section
+
+| Word | Description                                                                                                                       |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------- |
+| ...  | Padding to align to 16 bytes.                                                                                                     |
+| ...  | If sent to an object domain, a [domain message](#Domain_message "wikilink"), otherwise a [data payload](#Data_payload "wikilink") |
+| ...  | Padding                                                                                                                           |
+
+The total amount of padding within the raw data section is always 0x10
+bytes. This means that if no padding is required before the message,
+there will be 0x10 bytes of padding after the message (before the C
+descriptors). The length of the message can be calculated as the length
+of the raw data section - 0x10 bytes,
+
+### Domain message
+
+This header is used to wrap up requests sent to domains instead of
+sessions.
+
+| Word | Bits  | Description                                                                                      |
+| ---- | ----- | ------------------------------------------------------------------------------------------------ |
+| 0    | 7-0   | Command. 1=send message, 2=close virtual handle                                                  |
+| 0    | 31-16 | Length of [data payload](IPC%20Marshalling#Data%20payload.md##Data_payload "wikilink") in bytes. |
+| 1    |       | Object ID (from cmd 0 in [Control](IPC%20Marshalling#Control.md##Control "wikilink")).           |
+| 2    |       | Padding to align to u64                                                                          |
+| 3    |       |                                                                                                  |
+| 4... |       | [Data payload](#Data_payload "wikilink")                                                         |
+
+### Data payload
 
 This is an array of u32's, but individual parameters are generally
 stored as
 u64's.
 
-| Word | Description                                                                                              |
-| ---- | -------------------------------------------------------------------------------------------------------- |
-| ...  | Padding to align to 16                                                                                   |
-| ...  | [Domain header](IPC%20Marshalling#Domain%20header.md##Domain_header "wikilink") padded to 16 if required |
-| \+0  | Magic ("SFCI" for requests, "SFCO" for responses) as u64                                                 |
-| \+2  | Cmd id as u64                                                                                            |
-| ...  | Input parameters                                                                                         |
-| ...  | Any u16 buffer sizes packed and aligned to 2 bytes                                                       |
-
-### Domain header
-
-This is an optional header used to wrap up requests sent to domains
-instead of
-sessions.
-
-| Word | Bits  | Description                                                                            |
-| ---- | ----- | -------------------------------------------------------------------------------------- |
-| 0    | 15-0  | Always 1.                                                                              |
-| 0    | 31-16 | Request size (0x10 bytes for SFCI magic and cmd ID, plus size of input parameters).    |
-| 1    |       | Domain ID (from cmd 0 in [Control](IPC%20Marshalling#Control.md##Control "wikilink")). |
+| Word | Description                                                                                     |
+| ---- | ----------------------------------------------------------------------------------------------- |
+| 0    | Magic ("SFCI" for requests, "SFCO" for responses) as u64.                                       |
+| 2    | Command id as u64 for requests, [error code](Error%20codes.md "wikilink") as u64 for responses. |
+| 4... | Input parameters or return values                                                               |
 
 ## Official marshalling code
 
