@@ -38,6 +38,7 @@ params.
 | 7          | IsRecoveryBoot                   |
 | 8          | DeviceId (byte7 clear).          |
 | 9          | BootReason                       |
+| 10         | MemoryArrange                    |
 | 11         | AllowSkippingNrrSignatures       |
 | 13         | BatteryProfile?                  |
 

@@ -67,6 +67,8 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 |-
 | 9 || BootReason
 |-
+| 10 || MemoryArrange
+|-
 | 11 || AllowSkippingNrrSignatures
 |-
 | 13 || BatteryProfile?
