@@ -127,17 +127,17 @@ Returns an event handle that is triggered for debug titles.
 
 # pm:shell
 
-| Cmd | Name                                                             |
-| --- | ---------------------------------------------------------------- |
-| 0   | [\#LaunchProcess](#LaunchProcess "wikilink")                     |
-| 1   | TerminateProcessByPid                                            |
-| 2   | TerminateProcessByTitleID                                        |
-| 3   | GetProcessEventWaiter                                            |
-| 4   | GetProcessEventType (0=CONTINUE, 1=CRASHING, 2,3,5)              |
-| 5   | [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")         |
-| 6   | [\#ClearProcessCrashedFlag](#ClearProcessCrashedFlag "wikilink") |
-| 7   | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")           |
-| 8   | [\#GetCrashingProcessPid](#GetCrashingProcessPid "wikilink")     |
+| Cmd | Name                                                                       |
+| --- | -------------------------------------------------------------------------- |
+| 0   | [\#LaunchProcess](#LaunchProcess "wikilink")                               |
+| 1   | TerminateProcessByPid                                                      |
+| 2   | TerminateProcessByTitleID                                                  |
+| 3   | GetProcessEventWaiter                                                      |
+| 4   | GetProcessEventType (0=CONTINUE, 1=CRASHING, 2,3,5)                        |
+| 5   | [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")                   |
+| 6   | [\#ClearProcessNotificationFlag](#ClearProcessNotificationFlag "wikilink") |
+| 7   | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                     |
+| 8   | [\#GetCrashingProcessPid](#GetCrashingProcessPid "wikilink")               |
 
 ## LaunchProcess
 
@@ -152,7 +152,7 @@ unregisters the pid in fsp:pr, sm:m, and ldr:pm.
 Then it removes the process from PMs internal linked-list of active
 processes.
 
-## ClearProcessCrashedFlag
+## ClearProcessNotificationFlag
 
 Takes a pid as input. Clears 0x10 from process flags.
 

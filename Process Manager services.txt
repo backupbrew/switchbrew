@@ -115,7 +115,7 @@ Returns an event handle that is triggered for debug titles.
 |-
 | 5 || [[#FinalizeDeadProcess]]
 |-
-| 6 || [[#ClearProcessCrashedFlag]]
+| 6 || [[#ClearProcessNotificationFlag]]
 |-
 | 7 || [[#NotifyBootFinished]]
 |-
@@ -130,7 +130,7 @@ Takes a pid as input. If the process with pid has the state "dead", it unregiste
 
 Then it removes the process from PMs internal linked-list of active processes.
 
-== ClearProcessCrashedFlag ==
+== ClearProcessNotificationFlag ==
 Takes a pid as input. Clears 0x10 from process flags. 
 
 == NotifyBootFinished ==
