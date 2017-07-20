@@ -481,5 +481,5 @@ Size: 0x40
 |-
 | 0x3C
 | u32
-| RegVal36Bit
+| RegVal36BitEmpty
 |}

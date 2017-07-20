@@ -219,4 +219,4 @@ Size: 0x40
 | 0x30   | u32         | RegVal32Bit         |
 | 0x34   | u32         | RegVal32BitEmpty    |
 | 0x38   | u32         | RegVal36Bit         |
-| 0x3C   | u32         | RegVal36Bit         |
+| 0x3C   | u32         | RegVal36BitEmpty    |
