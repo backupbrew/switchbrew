@@ -13,6 +13,8 @@ Binaries mapped by RO seems to be mapped randomly everywhere in the entire addre
 
 For all binaries(main area / NROs), the R-- section is always located immediately after R-X. The RW- section is always located immediately after the R-- section. Hence, there's no extra randomization / guard-pages for these sections.
 
+On version [[1.0.0]], the initial binaries loaded into memory by the kernel always have the upper 32-bits as all-zero, so there are 6 fewer bits of layout randomization. 
+
 ==TLS==
 This is the 0x200-byte thread-local-storage, the base address is loaded via ARM threadid register tpidrro_el0.
 

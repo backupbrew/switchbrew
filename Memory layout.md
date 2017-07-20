@@ -24,6 +24,10 @@ immediately after R-X. The RW- section is always located immediately
 after the R-- section. Hence, there's no extra randomization /
 guard-pages for these sections.
 
+On version [1.0.0](1.0.0.md "wikilink"), the initial binaries loaded
+into memory by the kernel always have the upper 32-bits as all-zero, so
+there are 6 fewer bits of layout randomization.
+
 ## TLS
 
 This is the 0x200-byte thread-local-storage, the base address is loaded
