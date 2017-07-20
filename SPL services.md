@@ -3,24 +3,24 @@
 | Cmd | Name                                                                 | Notes                                                                                                                               |
 | --- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | 0   | [\#GetConfig](#GetConfig "wikilink")                                 | wrapper for [GetConfig](SMC#GetConfig.md##GetConfig "wikilink")                                                                     |
-| 1   | ExpMod                                                               | user supplied modulus and exponent                                                                                                  |
-| 2   | [\#KeygenAndSealX](#KeygenAndSealX "wikilink")                       | wrapper for [KeygenAndSealX](SMC#KeygenAndSealX.md##KeygenAndSealX "wikilink")                                                      |
-| 3   | SetKeyslotFromXY                                                     | wrapper for [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink")                                                |
-| 4   | DecryptAESECBWithX                                                   | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with a fixed Y     |
+| 1   |                                                                      | user supplied modulus and exponent                                                                                                  |
+| 2   | [\#GenerateAesKek](#GenerateAesKek "wikilink")                       | wrapper for [KeygenAndSealX](SMC#KeygenAndSealX.md##KeygenAndSealX "wikilink")                                                      |
+| 3   |                                                                      | wrapper for [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink")                                                |
+| 4   | GenerateAesKey                                                       | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with a fixed Y     |
 | 5   | [\#SetConfig](#SetConfig "wikilink")                                 | wrapper for [SetConfig](SMC#SetConfig.md##SetConfig "wikilink")                                                                     |
-| 7   | Prng                                                                 | uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink")                                                                               |
-| 9   | ImportExpModParams                                                   | wrapper for [ImportParamsForFWithXY](SMC#ImportParamsForFWithXY.md##ImportParamsForFWithXY "wikilink")                              |
-| 10  | ExpMod                                                               | wrapper for [ExpMod](SMC#ExpMod.md##ExpMod "wikilink")                                                                              |
+| 7   | GetRandom                                                            | uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink")                                                                               |
+| 9   |                                                                      | wrapper for [ImportParamsForFWithXY](SMC#ImportParamsForFWithXY.md##ImportParamsForFWithXY "wikilink")                              |
+| 10  |                                                                      | wrapper for [ExpMod](SMC#ExpMod.md##ExpMod "wikilink")                                                                              |
 | 11  | [\#IsDevUnit](#IsDevUnit "wikilink")                                 | uses [GetConfig](SMC#GetConfig.md##GetConfig "wikilink")                                                                            |
-| 12  | KeygenA                                                              | wrapper for [KeygenA](SMC#KeygenA.md##KeygenA "wikilink")                                                                           |
+| 12  | GenerateSpecificAesKey                                               | wrapper for [KeygenA](SMC#KeygenA.md##KeygenA "wikilink")                                                                           |
 | 13  | [\#DecryptExpModParamsWithXY](#DecryptExpModParamsWithXY "wikilink") | wrapper for [DecryptExpModParamsWithXY](SMC#DecryptExpModParamsWithXY.md##DecryptExpModParamsWithXY "wikilink")                     |
-| 14  | DecryptAESECB                                                        | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X and Y |
-| 15  | SymmetricCrypto                                                      | wrapper for [SymmetricCrypto](SMC#SymmetricCrypto.md##SymmetricCrypto "wikilink")                                                   |
-| 16  | CMAC                                                                 | wrapper for [CMAC](SMC#CMAC.md##CMAC "wikilink")                                                                                    |
-| 17  | ImportExpModParams                                                   | wrapper for [ImportParamsFor10WithXY](SMC#ImportParamsFor10WithXY.md##ImportParamsFor10WithXY "wikilink")                           |
-| 18  | ExpModAndKeygenAndSealZ                                              | wrapper for [ExpModAndKeygenAndSealZ](SMC#ExpModAndKeygenAndSealZ.md##ExpModAndKeygenAndSealZ "wikilink")                           |
-| 19  | SetKeyslotFromZ                                                      | wrapper for [SetKeyslotFromZ](SMC#SetKeyslotFromZ.md##SetKeyslotFromZ "wikilink")                                                   |
-| 20  | KeygenAndSealZ                                                       | wrapper for [KeygenAndSealZ](SMC#KeygenAndSealZ.md##KeygenAndSealZ "wikilink")                                                      |
+| 14  |                                                                      | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X and Y |
+| 15  |                                                                      | wrapper for [SymmetricCrypto](SMC#SymmetricCrypto.md##SymmetricCrypto "wikilink")                                                   |
+| 16  |                                                                      | wrapper for [CMAC](SMC#CMAC.md##CMAC "wikilink")                                                                                    |
+| 17  |                                                                      | wrapper for [ImportParamsFor10WithXY](SMC#ImportParamsFor10WithXY.md##ImportParamsFor10WithXY "wikilink")                           |
+| 18  |                                                                      | wrapper for [ExpModAndKeygenAndSealZ](SMC#ExpModAndKeygenAndSealZ.md##ExpModAndKeygenAndSealZ "wikilink")                           |
+| 19  |                                                                      | wrapper for [SetKeyslotFromZ](SMC#SetKeyslotFromZ.md##SetKeyslotFromZ "wikilink")                                                   |
+| 20  |                                                                      | wrapper for [KeygenAndSealZ](SMC#KeygenAndSealZ.md##KeygenAndSealZ "wikilink")                                                      |
 | 21  |                                                                      |                                                                                                                                     |
 | 22  |                                                                      |                                                                                                                                     |
 | 23  | GetSplWaitEvent                                                      |                                                                                                                                     |
@@ -49,7 +49,7 @@ byte7 cleared, otherwise NIM will panic.
 [RO](Loader%20services.md "wikilink") checks id11, if set then skipping
 NRR rsa signatures is allowed.
 
-## KeygenAndSealX
+## GenerateAesKek
 
 Takes 16-bytes as input and two u32s. Outputs random-looking 16-bytes.
 

@@ -5,41 +5,41 @@
 |-
 | 0 || [[#GetConfig]] || wrapper for [[SMC#GetConfig|GetConfig]]
 |-
-| 1 || ExpMod || user supplied modulus and exponent
+| 1 || || user supplied modulus and exponent
 |-
-| 2 || [[#KeygenAndSealX]] || wrapper for [[SMC#KeygenAndSealX|KeygenAndSealX]]
+| 2 || [[#GenerateAesKek]] || wrapper for [[SMC#KeygenAndSealX|KeygenAndSealX]]
 |-
-| 3 || SetKeyslotFromXY || wrapper for [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]]
+| 3 || || wrapper for [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]]
 |-
-| 4 || DecryptAESECBWithX || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with a fixed Y
+| 4 || GenerateAesKey || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with a fixed Y
 |-
 | 5 || [[#SetConfig]] || wrapper for [[SMC#SetConfig|SetConfig]]
 |-
-| 7 || Prng || uses [[SMC#PrngX931|PrngX931]]
+| 7 || GetRandom || uses [[SMC#PrngX931|PrngX931]]
 |-
-| 9 || ImportExpModParams || wrapper for [[SMC#ImportParamsForFWithXY|ImportParamsForFWithXY]]
+| 9 || || wrapper for [[SMC#ImportParamsForFWithXY|ImportParamsForFWithXY]]
 |-
-| 10 || ExpMod || wrapper for [[SMC#ExpMod|ExpMod]]
+| 10 || || wrapper for [[SMC#ExpMod|ExpMod]]
 |-
 | 11 || [[#IsDevUnit]] || uses [[SMC#GetConfig|GetConfig]]
 |-
-| 12 || KeygenA || wrapper for [[SMC#KeygenA|KeygenA]]
+| 12 || GenerateSpecificAesKey || wrapper for [[SMC#KeygenA|KeygenA]]
 |-
 | 13 || [[#DecryptExpModParamsWithXY]] || wrapper for [[SMC#DecryptExpModParamsWithXY|DecryptExpModParamsWithXY]]
 |-
-| 14 || DecryptAESECB || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X and Y
+| 14 || || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X and Y
 |-
-| 15 || SymmetricCrypto || wrapper for [[SMC#SymmetricCrypto|SymmetricCrypto]]
+| 15 || || wrapper for [[SMC#SymmetricCrypto|SymmetricCrypto]]
 |-
-| 16 || CMAC || wrapper for [[SMC#CMAC|CMAC]]
+| 16 || || wrapper for [[SMC#CMAC|CMAC]]
 |-
-| 17 || ImportExpModParams || wrapper for [[SMC#ImportParamsFor10WithXY|ImportParamsFor10WithXY]]
+| 17 || || wrapper for [[SMC#ImportParamsFor10WithXY|ImportParamsFor10WithXY]]
 |-
-| 18 || ExpModAndKeygenAndSealZ || wrapper for [[SMC#ExpModAndKeygenAndSealZ|ExpModAndKeygenAndSealZ]]
+| 18 || || wrapper for [[SMC#ExpModAndKeygenAndSealZ|ExpModAndKeygenAndSealZ]]
 |-
-| 19 || SetKeyslotFromZ || wrapper for [[SMC#SetKeyslotFromZ|SetKeyslotFromZ]]
+| 19 || || wrapper for [[SMC#SetKeyslotFromZ|SetKeyslotFromZ]]
 |-
-| 20 || KeygenAndSealZ || wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]]
+| 20 || || wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]]
 |-
 | 21 || || 
 |-
@@ -78,7 +78,7 @@ Output from this when used by [[NIM_services|NIM]] must match the [[Settings_ser
 
 [[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
 
-== KeygenAndSealX ==
+== GenerateAesKek ==
 Takes 16-bytes as input and two u32s. Outputs random-looking 16-bytes.
 
 Same input gives same output. Output changes when system is rebooted.
