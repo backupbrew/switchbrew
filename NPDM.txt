@@ -131,113 +131,29 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 Looks like an old crappy version of ACID. It has the guessed version field 0 instead of 1.
 
 = FS Access Control =
-{| class="wikitable" border="1"
-|-
-! Offset
-! Size
-! Description
-|-
-| 0x0
-| 0x4
-| Version (usually 1).
-|-
-| 0x4
-| 0x8
-| FS Access Rights
-|-
-| 0xC
-| 0x4
-| ContentOwnerIds start offset 
-|-
-| 0x10
-| 0x4
-| ContentOwnerIds end offset 
-|-
-| 0x14
-| 0x4
-| SaveDataOwnerIds start offset 
-|-
-| 0x18
-| 0x4
-| SavaDataOwnerIds end offset 
-|}
 
-=== FS Access Rights ===
 {| class="wikitable" border="1"
 |-
-! Bit and bitmask
+! Word
+! Bit
 ! Description
 |-
-| <code>0</code>, <code>0x1</code>
-| ApplicationInfo (MountContent* is accessible when set)
+| 0
+|
+| Version? Always 1.
 |-
-| <code>1</code>, <code>0x2</code>
-| BootModeControl
+| 1
+| 0
+| MountContent* is accessible when set.
 |-
-| <code>2</code>, <code>0x4</code>
-| Calibration (Enables access to [[Filesystem_services|Bis]] partitionID 27 and 28)
-|-
-| <code>3</code>, <code>0x8</code>
-| SystemSaveData
-|-
-| <code>4</code>, <code>0x10</code>
-| GameCard
-|-
-| <code>5</code>, <code>0x20</code>
-| SaveDataBackup
-|-
-| <code>6</code>, <code>0x40</code>
-| SaveDataManagement
-|-
-| <code>7</code>, <code>0x80</code>
-| BisAllRaw
-|-
-| <code>8</code>, <code>0x100</code>
-| GameCardRaw
-|-
-| <code>9</code>, <code>0x200</code>
-| GameCardPrivate
-|-
-| <code>10</code>, <code>0x400</code>
-| SetTime
-|-
-| <code>11</code>, <code>0x800</code>
-| ContentManager
-|-
-| <code>12</code>, <code>0x1000</code>
-| ImageManager
-|-
-| <code>13</code>, <code>0x2000</code>
-| CreateSaveData
-|-
-| <code>14</code>, <code>0x4000</code>
-| SystemSaveDataManagement
-|-
-| <code>15</code>, <code>0x8000</code>
-| BisFileSystem
-|-
-| <code>16</code>, <code>0x10000</code>
-| SystemUpdate
-|-
-| <code>17</code>, <code>0x20000</code>
-| SaveDataMeta
-|-
-| <code>18</code>, <code>0x40000</code>
-| DeviceSaveControl
-|-
-| <code>19</code>, <code>0x80000</code>
-| SettingsControl
-|-
-| <code>62</code>, <code>0x4000000000000000</code>
-| Debug
-|-
-| <code>63</code>, <code>0x8000000000000000</code>
-| FullPermission
+| 1
+| 2
+| Enables access to [[Filesystem_services|Bis]] partitionID 27 and 28?
 |}
 
 Web-applets access control:
-* "LibAppletWeb" and "LibAppletOff" have same access control: word0 bit0 set, '''ApplicationInfo''' and '''SystemSaveData''' set, and '''Debug''' set.
-* Rest of the web-applets: Same as above except '''ApplicationInfo'''  isn't set.
+* "LibAppletWeb" and "LibAppletOff" have same access control: word0 bit0 set, word1 bit0 and bit3 set, and word2 bit30 set.
+* Rest of the web-applets: Same as above except word1 bit0 isn't set.
 
 = Service Access Control =
 This is a list of [[Services_API|service]]-name strings which the title has access to, with the following structure:
