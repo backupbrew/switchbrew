@@ -22,8 +22,7 @@ Secure Monitor Calls follow the ARM SMC calling convention up to a small change:
 If bit ''n'' is set in the argument type then parameter X''n'' is treated as a pointer and the kernel will setup address translation for it in [[SVC#svcCallSecureMonitor|svcCallSecureMonitor]].
 
 == Id 0 ==
-
-Cryptography related functions.
+Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
 
 {| class=wikitable
 ! Sub-Id || Name || In || Out
@@ -66,8 +65,7 @@ Cryptography related functions.
 |}
 
 == Id 1 ==
-
-General and power related functions.
+Functions exposed to the kernel internally.
 
 {| class=wikitable
 ! Sub-Id || Name || In || Out

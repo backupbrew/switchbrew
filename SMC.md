@@ -21,7 +21,8 @@ a pointer and the kernel will setup address translation for it in
 
 ## Id 0
 
-Cryptography related functions.
+Functions exposed to user-mode processes using
+[svcCallSecureMonitor](SVC.md "wikilink").
 
 | Sub-Id     | Name                               | In | Out |
 | ---------- | ---------------------------------- | -- | --- |
@@ -46,7 +47,7 @@ Cryptography related functions.
 
 ## Id 1
 
-General and power related functions.
+Functions exposed to the kernel internally.
 
 | Sub-Id     | Name                               | In | Out |
 | ---------- | ---------------------------------- | -- | --- |
