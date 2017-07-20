@@ -89,4 +89,12 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 |  On exploit's fix in [[3.0.0]]
 |  qlutoo, Reswitched team (independently)
 |-
+| Unchecked domain ID in common IPC code
+| Prior to [[2.0.0]], object IDs in [[IPC_Marshalling#Domain_message|domain messages]] are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.
+|
+| [[2.0.0]]
+| 
+|
+|
+|
 |}
