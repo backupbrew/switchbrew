@@ -11,7 +11,7 @@
 | 7   | GetRandom                                                            | uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink")                                                                               |
 | 9   |                                                                      | wrapper for [ImportParamsForFWithXY](SMC#ImportParamsForFWithXY.md##ImportParamsForFWithXY "wikilink")                              |
 | 10  |                                                                      | wrapper for [ExpMod](SMC#ExpMod.md##ExpMod "wikilink")                                                                              |
-| 11  | [\#IsDevUnit](#IsDevUnit "wikilink")                                 | uses [GetConfig](SMC#GetConfig.md##GetConfig "wikilink")                                                                            |
+| 11  | [\#IsDevUnit](#IsDevUnit "wikilink")                                 |                                                                                                                                     |
 | 12  | GenerateSpecificAesKey                                               | wrapper for [KeygenA](SMC#KeygenA.md##KeygenA "wikilink")                                                                           |
 | 13  | [\#DecryptExpModParamsWithXY](#DecryptExpModParamsWithXY "wikilink") | wrapper for [DecryptExpModParamsWithXY](SMC#DecryptExpModParamsWithXY.md##DecryptExpModParamsWithXY "wikilink")                     |
 | 14  |                                                                      | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X and Y |
@@ -35,6 +35,7 @@ params.
 | 1          | DisableProgramVerification       |
 | 2          | MemoryConfiguration              |
 | 5          | HardwareType (0=Icosa, 1=Copper) |
+| 6          | IsRetail                         |
 | 7          | IsRecoveryBoot                   |
 | 8          | DeviceId (byte7 clear).          |
 | 9          | BootReason                       |
@@ -66,6 +67,9 @@ Takes two input words, a ConfigItem and the value to set.
 ## IsDevUnit
 
 No input params.
+
+Uses [\#GetConfig](#GetConfig "wikilink") internally with id=6. Returns
+true if output from that is 0, or if the SMC returned error 2.
 
 Returns an u8 flag for whether the system is devunit. Output flag is 0
 on retail.

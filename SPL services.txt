@@ -21,7 +21,7 @@
 |-
 | 10 || || wrapper for [[SMC#ExpMod|ExpMod]]
 |-
-| 11 || [[#IsDevUnit]] || uses [[SMC#GetConfig|GetConfig]]
+| 11 || [[#IsDevUnit]] ||
 |-
 | 12 || GenerateSpecificAesKey || wrapper for [[SMC#KeygenA|KeygenA]]
 |-
@@ -61,6 +61,8 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 |-
 | 5 || HardwareType (0=Icosa, 1=Copper)
 |-
+| 6 || IsRetail
+|-
 | 7 || IsRecoveryBoot
 |-
 | 8 || DeviceId (byte7 clear).
@@ -95,6 +97,8 @@ Takes two input words, a ConfigItem and the value to set.
 
 == IsDevUnit ==
 No input params.
+
+Uses [[#GetConfig]] internally with id=6. Returns true if output from that is 0, or if the SMC returned error 2.
 
 Returns an u8 flag for whether the system is devunit. Output flag is 0 on retail.
 
