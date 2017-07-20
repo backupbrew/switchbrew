@@ -9,7 +9,7 @@
 |-
 | 2 || [[#GenerateAesKek]] || wrapper for [[SMC#KeygenAndSealX|KeygenAndSealX]]
 |-
-| 3 || || wrapper for [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]]
+| 3 || LoadAesKey || wrapper for [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]]
 |-
 | 4 || GenerateAesKey || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with a fixed Y
 |-
@@ -31,7 +31,7 @@
 |-
 | 15 || || wrapper for [[SMC#SymmetricCrypto|SymmetricCrypto]]
 |-
-| 16 || || wrapper for [[SMC#CMAC|CMAC]]
+| 16 || ComputeCmac || wrapper for [[SMC#CMAC|CMAC]]
 |-
 | 17 || || wrapper for [[SMC#ImportParamsFor10WithXY|ImportParamsFor10WithXY]]
 |-
