@@ -211,11 +211,12 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 Size: 0x40
 
-| Offset | Type     | Description   |
-| ------ | -------- | ------------- |
-| 0      | u8\[4\]  | PageTableIdx  |
-| 8      | u64\[4\] | AltPageTables |
-| 0x28   |          |               |
-| 0x30   |          |               |
-| 0x34   |          |               |
-| 0x38   |          |               |
+| Offset | Type        | Description         |
+| ------ | ----------- | ------------------- |
+| 0      | u8\[4\]     | PageTableAsids      |
+| 8      | void\*\[4\] | PageDirectories     |
+| 0x28   | u64         | AttachedDevicesMask |
+| 0x30   | u32         | RegVal32Bit         |
+| 0x34   | u32         | RegVal32BitEmpty    |
+| 0x38   | u32         | RegVal36Bit         |
+| 0x3C   | u32         | RegVal36Bit         |
