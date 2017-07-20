@@ -135,7 +135,7 @@ systems.
 
 | Title-id         | Versions                                | Description                                                                                                  |
 | ---------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| 01008BB00013C000 | [v450](2.0.0.md "wikilink") (0.0.1.194) | "flog" NES emulator. Installed on retail systems but not known be launched by anything officially currently. |
+| 01008BB00013C000 | [v450](1.0.0.md "wikilink") (0.0.1.194) | "flog" NES emulator. Installed on retail systems but not known be launched by anything officially currently. |
 
 ## Games
 

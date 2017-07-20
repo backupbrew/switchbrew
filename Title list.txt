@@ -236,7 +236,7 @@ No 01000000000020XX titles exist on retail systems.
 {| class=wikitable
 ! Title-id || Versions || Description
 |-
-| 01008BB00013C000 || [[2.0.0|v450]] (0.0.1.194) || "flog" NES emulator. Installed on retail systems but not known be launched by anything officially currently.
+| 01008BB00013C000 || [[1.0.0|v450]] (0.0.1.194) || "flog" NES emulator. Installed on retail systems but not known be launched by anything officially currently.
 |}
 
 == Games ==
