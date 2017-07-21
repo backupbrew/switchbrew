@@ -205,7 +205,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | 
 |-
 | ldn:m, ldn:s, ldn:u
-| [[Local Network Monitor services]]
+| [[LDN services]]
 |
 |-
 | [ [[1.0.0]]+ ] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt

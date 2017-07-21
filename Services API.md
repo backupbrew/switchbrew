@@ -203,7 +203,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="odd">
 <td><p>ldn:m, ldn:s, ldn:u</p></td>
-<td><p><a href="Local Network Monitor services.md" title="wikilink">Local Network Monitor services</a></p></td>
+<td><p><a href="LDN services.md" title="wikilink">LDN services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
