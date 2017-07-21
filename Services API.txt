@@ -164,10 +164,6 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | [[Display services]]
 | 
 |-
-| csrng
-| [[Secure RNG services]]
-| 
-|-
 | dispdrv
 | Nvnflinger services
 |
@@ -278,7 +274,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | [[SSL services]]
 |
 |-
-| spl:
+| csrng, spl:
 | [[SPL services]]
 | 
 |-
