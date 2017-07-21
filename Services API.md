@@ -86,7 +86,7 @@ handles retrieved directly from a SVC.
 <td><p>u0: System, u1: User, su: Admin, aa: Baas</p></td>
 </tr>
 <tr class="even">
-<td><p>ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, (htc?), irs, irs:sys, xcd:sys</p></td>
+<td><p>ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, irs, irs:sys, xcd:sys</p></td>
 <td><p><a href="HID services.md" title="wikilink">HID services</a></p></td>
 <td></td>
 </tr>
@@ -197,107 +197,112 @@ handles retrieved directly from a SVC.
 <td></td>
 </tr>
 <tr class="even">
+<td><p>htc, htcs, htc:tenv</p></td>
+<td><p><a href="TMA services.md" title="wikilink">TMA services</a></p></td>
+<td></td>
+</tr>
+<tr class="odd">
 <td><p>lbl</p></td>
 <td><p><a href="Backlight services.md" title="wikilink">Backlight services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>ldn:m, ldn:s, ldn:u</p></td>
 <td><p><a href="Local Network Monitor services.md" title="wikilink">Local Network Monitor services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>[ <a href="1.0.0.md" title="wikilink">1.0.0</a>+ ] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt</p>
 <p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a>+ ] ldr:pm, ldr:shel, ldr:dmnt</p></td>
 <td><p><a href="Loader services.md" title="wikilink">Loader services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>lm</p></td>
 <td><p>Log services</p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>lr, ncm, ncm:v</p></td>
 <td><p><a href="NCM services.md" title="wikilink">NCM services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>nfc:am, nfc:mf:u, nfc:user, nfc:sys</p></td>
 <td><p>NFC services</p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>nifm:u, nifm:a, nifm:s</p></td>
 <td><p><a href="Network Interface services.md" title="wikilink">Network Interface services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>nim, nim:shp, ntc</p></td>
 <td><p><a href="NIM services.md" title="wikilink">NIM services</a></p></td>
 <td><p>shp: eShop</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>npns:u, npns:s</p></td>
 <td><p>NPNS services</p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>nvdrv:a, nvdrv:s, nvdrv:t, nvdrv, nvdrvdbg, nvgem:c, nvgem:cd, nvmemp</p></td>
 <td><p><a href="NV services.md" title="wikilink">NV services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>pcie</p></td>
 <td><p><a href="PCIe services.md" title="wikilink">PCIe services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>pctl, pctl:a, pctl:s, pctl:r</p></td>
 <td><p>Parental Control services</p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>pm:bm, pm:info, pm:shell</p></td>
 <td><p><a href="Process Manager services.md" title="wikilink">Process Manager services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>psc:c, psc:m</p></td>
 <td><p>PSC services</p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a>+ ] ldr:ro, ro:dmnt</p></td>
 <td><p><a href="Loader services.md" title="wikilink">RO services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>set, set:fd, set:cal, set:sys</p></td>
 <td><p><a href="Settings services.md" title="wikilink">Settings services</a></p></td>
 <td><p>cal: calibration, sys: System Settings</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a>+ ] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u</p></td>
 <td><p>Shared Database Services</p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>ssl</p></td>
 <td><p><a href="SSL services.md" title="wikilink">SSL services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>spl:</p></td>
 <td><p><a href="SPL services.md" title="wikilink">SPL services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pm</p></td>
 <td><p>USB services</p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc</p></td>
 <td><p>WLAN services</p></td>
 <td></td>

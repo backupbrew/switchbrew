@@ -110,7 +110,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | [[Account services]]
 | u0: System, u1: User, su: Admin, aa: Baas
 |-
-| ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, (htc?), irs, irs:sys, xcd:sys
+| ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, irs, irs:sys, xcd:sys
 | [[HID services]]
 |
 |-
@@ -198,6 +198,10 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |-
 | gpio, i2c, i2c:pcv, pinmux, pwm, uart
 | [[Bus services]]
+|
+|-
+| htc, htcs, htc:tenv
+| [[TMA services]]
 |
 |-
 | lbl
