@@ -56,36 +56,42 @@ Thus at the point of launch, the pid is already registered in ldr, fs, sm, and p
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetZero]]
+| 0 || [[#GetDebugMode]]
 |-
-| 1 || [[#GetProcessesWithFlag4]]
+| 1 || [[#GetDebugProcesses]]
 |-
-| 2 || [[#StartProcess]]
+| 2 || [[#StartDebugProcess]]
 |-
-| 3 || GetProcessTitleIdByPid
+| 3 || [[#GetDebugProcessTitleIdByPid]]
 |-
 | 4 || [[#EnableDebugForTitleId]]
 |-
-| 5 || GetCrashingProcessPid
+| 5 || [[#GetCrashingDebugProcessPid]]
 |-
 | 6 || [[#EnableDebug]]
 |}
 
-== GetZero ==
-Always returns u32 0.
+== GetDebugMode ==
+Always returns u32 0 on retail.
 
-== GetProcessesWithFlag4 ==
+== GetDebugProcesses ==
 Returns an array of pids of all processes that have mask 4 set in process flags.
 
-== StartProcess ==
+== StartDebugProcess ==
 Takes a pid. Process state must be 0 or 1. Then it uses svcStartProcess(process_handle, u8, u8, u32) with args coming from ldr:pm GetProgramInfo.
 
 After that, it sets process state to 2.
+
+== GetDebugProcessTitleIdByPid ==
+Same as [[Process_Manager_services#GetProcessTitleIdByPid|GetProcessTitleIdByPid]] but for debug processes.
 
 == EnableDebugForTitleId ==
 Takes a title-id of the program to debug. Sets this to a global field. Next time it gets launched it will be handled differently.
 
 Returns an event handle that is signaled when the requested title is launched.
+
+== GetCrashingDebugProcessPid ==
+Same as [[Process_Manager_services#GetCrashingProcessPid|GetCrashingProcessPid]] but for debug processes.
 
 == EnableDebug ==
 Does *not* take a specific title-id as input.
@@ -97,8 +103,11 @@ Returns an event handle that is triggered for debug titles.
 |-
 ! Cmd || Name
 |-
-| 0 || GetProcessTitleIdByPid
+| 0 || [[#GetProcessTitleIdByPid]]
 |}
+
+== GetProcessTitleIdByPid ==
+Takes a pid and returns the title-id associated with the process.
 
 = pm:shell =
 {| class="wikitable" border="1"

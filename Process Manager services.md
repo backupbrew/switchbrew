@@ -81,32 +81,38 @@ sm, and pm.
 
 # pm:dmnt
 
-| Cmd | Name                                                         |
-| --- | ------------------------------------------------------------ |
-| 0   | [\#GetZero](#GetZero "wikilink")                             |
-| 1   | [\#GetProcessesWithFlag4](#GetProcessesWithFlag4 "wikilink") |
-| 2   | [\#StartProcess](#StartProcess "wikilink")                   |
-| 3   | GetProcessTitleIdByPid                                       |
-| 4   | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink") |
-| 5   | GetCrashingProcessPid                                        |
-| 6   | [\#EnableDebug](#EnableDebug "wikilink")                     |
+| Cmd | Name                                                                     |
+| --- | ------------------------------------------------------------------------ |
+| 0   | [\#GetDebugMode](#GetDebugMode "wikilink")                               |
+| 1   | [\#GetDebugProcesses](#GetDebugProcesses "wikilink")                     |
+| 2   | [\#StartDebugProcess](#StartDebugProcess "wikilink")                     |
+| 3   | [\#GetDebugProcessTitleIdByPid](#GetDebugProcessTitleIdByPid "wikilink") |
+| 4   | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink")             |
+| 5   | [\#GetCrashingDebugProcessPid](#GetCrashingDebugProcessPid "wikilink")   |
+| 6   | [\#EnableDebug](#EnableDebug "wikilink")                                 |
 
-## GetZero
+## GetDebugMode
 
-Always returns u32 0.
+Always returns u32 0 on retail.
 
-## GetProcessesWithFlag4
+## GetDebugProcesses
 
 Returns an array of pids of all processes that have mask 4 set in
 process flags.
 
-## StartProcess
+## StartDebugProcess
 
 Takes a pid. Process state must be 0 or 1. Then it uses
 svcStartProcess(process\_handle, u8, u8, u32) with args coming from
 ldr:pm GetProgramInfo.
 
 After that, it sets process state to 2.
+
+## GetDebugProcessTitleIdByPid
+
+Same as
+[GetProcessTitleIdByPid](Process%20Manager%20services#GetProcessTitleIdByPid.md##GetProcessTitleIdByPid "wikilink")
+but for debug processes.
 
 ## EnableDebugForTitleId
 
@@ -116,6 +122,12 @@ Next time it gets launched it will be handled differently.
 Returns an event handle that is signaled when the requested title is
 launched.
 
+## GetCrashingDebugProcessPid
+
+Same as
+[GetCrashingProcessPid](Process%20Manager%20services#GetCrashingProcessPid.md##GetCrashingProcessPid "wikilink")
+but for debug processes.
+
 ## EnableDebug
 
 Does \*not\* take a specific title-id as input.
@@ -124,9 +136,14 @@ Returns an event handle that is triggered for debug titles.
 
 # pm:info
 
-| Cmd | Name                   |
-| --- | ---------------------- |
-| 0   | GetProcessTitleIdByPid |
+| Cmd | Name                                                           |
+| --- | -------------------------------------------------------------- |
+| 0   | [\#GetProcessTitleIdByPid](#GetProcessTitleIdByPid "wikilink") |
+
+## GetProcessTitleIdByPid
+
+Takes a pid and returns the title-id associated with the
+process.
 
 # pm:shell
 
