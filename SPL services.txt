@@ -52,9 +52,9 @@ Takes a type-6 buffer and fills it with random data.
 |-
 | 20 || || wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]]
 |-
-| 21 || || 
+| 21 || [[#UninitializeSpl]] || 
 |-
-| 22 || || 
+| 22 || [[#InitializeSpl]] || 
 |-
 | 23 || GetSplWaitEvent || 
 |}
@@ -116,3 +116,9 @@ Returns an u8 flag for whether the system is devunit. Output flag is 0 on retail
 
 == DecryptExpModParamsWithXY ==
 Last SPL cmd used by [[SSL_services|SSL]]-sysmodule for TLS client-privk.
+
+== UninitializeSpl ==
+Returns a single u32 (always 3?) only once.
+
+== InitializeSpl ==
+Takes a single u32 (always 3?) only once.

@@ -32,8 +32,8 @@ data.
 | 18  |                                                                      | wrapper for [ExpModAndKeygenAndSealZ](SMC#ExpModAndKeygenAndSealZ.md##ExpModAndKeygenAndSealZ "wikilink")                           |
 | 19  |                                                                      | wrapper for [SetKeyslotFromZ](SMC#SetKeyslotFromZ.md##SetKeyslotFromZ "wikilink")                                                   |
 | 20  |                                                                      | wrapper for [KeygenAndSealZ](SMC#KeygenAndSealZ.md##KeygenAndSealZ "wikilink")                                                      |
-| 21  |                                                                      |                                                                                                                                     |
-| 22  |                                                                      |                                                                                                                                     |
+| 21  | [\#UninitializeSpl](#UninitializeSpl "wikilink")                     |                                                                                                                                     |
+| 22  | [\#InitializeSpl](#InitializeSpl "wikilink")                         |                                                                                                                                     |
 | 23  | GetSplWaitEvent                                                      |                                                                                                                                     |
 
 ## GetConfig
@@ -91,3 +91,11 @@ on retail.
 
 Last SPL cmd used by [SSL](SSL%20services.md "wikilink")-sysmodule for
 TLS client-privk.
+
+## UninitializeSpl
+
+Returns a single u32 (always 3?) only once.
+
+## InitializeSpl
+
+Takes a single u32 (always 3?) only once.
