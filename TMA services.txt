@@ -1,0 +1,8 @@
+TMA (Target Manager?) acts as a debugging sysmodule for development kits. This system module is loaded in retail units, but remains unused.
+
+= htc =
+= htcs =
+= htc:tenv =
+These services are inaccessible on retail units. However, all [[Title_list#System_Applets|System Applets]] have permission to access them (see [[NPDM#Service_Access_Control]]).
+
+[[Category:Services]]
