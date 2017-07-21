@@ -1,14 +1,71 @@
+LDN handles all local network communication.
+
 # ldn:m
 
-| Cmd | Name           |
-| --- | -------------- |
-| 0   |                |
-| 1   |                |
-| 2   |                |
-| 3   |                |
-| 4   |                |
-| 5   |                |
-| 100 | start\_monitor |
-| 101 | stop\_monitor  |
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   | GetIMonitorService |
+|     |                    |
+
+## IMonitorService
+
+| Cmd | Name          |
+| --- | ------------- |
+| 0   | GetNifmStatus |
+| 1   |               |
+| 2   |               |
+| 3   |               |
+| 4   |               |
+| 5   |               |
+| 100 | StartMonitor  |
+| 101 | StopMonitor   |
+|     |               |
+
+# ldn:s
+
+| Cmd | Name                                |
+| --- | ----------------------------------- |
+| 0   | GetISystemLocalCommunicationService |
+|     |                                     |
+
+# ldn:u
+
+| Cmd | Name                              |
+| --- | --------------------------------- |
+| 0   | GetIUserLocalCommunicationService |
+|     |                                   |
+
+## ISystemLocalCommunicationService / IUserLocalCommunicationService
+
+| Cmd | Name            |
+| --- | --------------- |
+| 0   |                 |
+| 1   |                 |
+| 2   |                 |
+| 3   |                 |
+| 4   |                 |
+| 5   |                 |
+| 100 | GetUnkWaitEvent |
+| 101 |                 |
+| 102 | FrameSendRecv0  |
+| 103 | FrameSendRecv1  |
+| 200 |                 |
+| 201 |                 |
+| 202 | FrameSendRecv2  |
+| 203 | FrameSendRecv3  |
+| 204 |                 |
+| 205 |                 |
+| 206 |                 |
+| 207 |                 |
+| 208 |                 |
+| 209 |                 |
+| 300 |                 |
+| 301 |                 |
+| 302 | FrameSendRecv4  |
+| 303 | FrameSendRecv5  |
+| 304 |                 |
+| 400 |                 |
+| 401 |                 |
+|     |                 |
 
 [Category:Services](Category:Services "wikilink")
