@@ -3,12 +3,18 @@
 |-
 ! Cmd || Name
 |-
-| 0 || AddProcessToDmntQueue
+| 0 || AddProcessToDebugLaunchQueue
 |-
-| 1 || ClearDmntQueue
+| 1 || ClearDebugLaunchQueue
 |-
 | 2 ||
 |}
+
+== AddProcessToDebugLaunchQueue ==
+Same as [[Loader_services#AddProcessToLaunchQueue|AddProcessToLaunchQueue]] but for processes marked as debug.
+
+== ClearDebugLaunchQueue ==
+Same as [[Loader_services#ClearLaunchQueue|ClearLaunchQueue]] but for processes marked as debug.
 
 = ldr:pm =
 {| class="wikitable" border="1"

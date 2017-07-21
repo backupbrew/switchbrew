@@ -1,10 +1,22 @@
 # ldr:dmnt
 
-| Cmd | Name                  |
-| --- | --------------------- |
-| 0   | AddProcessToDmntQueue |
-| 1   | ClearDmntQueue        |
-| 2   |                       |
+| Cmd | Name                         |
+| --- | ---------------------------- |
+| 0   | AddProcessToDebugLaunchQueue |
+| 1   | ClearDebugLaunchQueue        |
+| 2   |                              |
+
+## AddProcessToDebugLaunchQueue
+
+Same as
+[AddProcessToLaunchQueue](Loader%20services#AddProcessToLaunchQueue.md##AddProcessToLaunchQueue "wikilink")
+but for processes marked as debug.
+
+## ClearDebugLaunchQueue
+
+Same as
+[ClearLaunchQueue](Loader%20services#ClearLaunchQueue.md##ClearLaunchQueue "wikilink")
+but for processes marked as debug.
 
 # ldr:pm
 
