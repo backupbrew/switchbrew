@@ -1,3 +1,14 @@
+# csrng
+
+| Cmd | Name                                           |
+| --- | ---------------------------------------------- |
+| 0   | [\#GetRandomBytes](#GetRandomBytes "wikilink") |
+
+## GetRandomBytes
+
+Takes a type-6 buffer and fills it with random
+data.
+
 # spl:
 
 | Cmd | Name                                                                 | Notes                                                                                                                               |
@@ -52,7 +63,9 @@ NRR rsa signatures is allowed.
 
 ## GenerateAesKek
 
-Takes 16-bytes as input and two u32s. Outputs random-looking 16-bytes.
+Takes a 16-byte seed ("BisEncryptionKeySourceForKek") and two words
+("KeyGeneration" and "option") as input. KeyGeneration ranges from 0 to
+2.
 
 Same input gives same output. Output changes when system is rebooted.
 

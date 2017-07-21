@@ -1,3 +1,14 @@
+= csrng =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#GetRandomBytes]]
+|}
+
+== GetRandomBytes ==
+Takes a type-6 buffer and fills it with random data.
+
 = spl: =
 {| class="wikitable" border="1"
 |-
@@ -81,7 +92,8 @@ Output from this when used by [[NIM_services|NIM]] must match the [[Settings_ser
 [[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
 
 == GenerateAesKek ==
-Takes 16-bytes as input and two u32s. Outputs random-looking 16-bytes.
+Takes a 16-byte seed ("BisEncryptionKeySourceForKek") and two words ("KeyGeneration" and "option") as input.
+KeyGeneration ranges from 0 to 2.
 
 Same input gives same output. Output changes when system is rebooted.
 
