@@ -2,8 +2,8 @@
 
 The bluetooth driver implements the bluetooth protocol over h4/uart.
 
-It interfaces with the [uart](Uart.md "wikilink") service to actually
-talk with the bluetooth hardware.
+It interfaces with the [uart](Bus%20services#uart.md##uart "wikilink")
+service to actually talk with the bluetooth hardware.
 
 The code seems to be derived from a broadcom stack. A good starting
 point for similar source code can be found in the MICO project:
