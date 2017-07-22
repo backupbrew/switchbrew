@@ -242,4 +242,4 @@ No 01000000000020XX titles exist on retail systems.
 The titleID for "flog" is used by 3 funcs in [[qlaunch]].
 
 == Games ==
-See [[Title_list/Games|here]].
+See [[Title_list/Games|here]]..
