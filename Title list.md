@@ -133,9 +133,12 @@ systems.
 
 ## System Applications
 
-| Title-id         | Versions                                | Description                                                                                                  |
-| ---------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| 01008BB00013C000 | [v450](1.0.0.md "wikilink") (0.0.1.194) | "flog" NES emulator. Installed on retail systems but not known be launched by anything officially currently. |
+| Title-id         | Versions                                | Description                                       |
+| ---------------- | --------------------------------------- | ------------------------------------------------- |
+| 01008BB00013C000 | [v450](1.0.0.md "wikilink") (0.0.1.194) | "flog" NES emulator. Installed on retail systems. |
+
+The titleID for "flog" is used by 3 funcs in
+[qlaunch](Qlaunch.md "wikilink").
 
 ## Games
 
