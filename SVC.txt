@@ -444,6 +444,10 @@ These take a device id and a device address space handle.
 |-
 | 17 || Can be used with [[#svcCreateTransferMemory]]
 |-
+| 19 || Can be used with [[#svcMapDeviceAddressSpace]]/[[#svcMapDeviceAddressSpaceByForce]]
+|-
+| 20 || Can be used with [[#svcMapDeviceAddressSpaceAligned]]
+|-
 | 21 || Can be used with [[#svcSendSyncRequestWithUserBuffer]]
 |-
 | 22 || Is cached, maybe?
