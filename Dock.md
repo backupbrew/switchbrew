@@ -57,7 +57,9 @@ Dumps (fw-1.0.0):<br />
 
 ## Other Resources
 
-1.  [iFixit's Nintendo Switch
+1.  [List of compatibles USB
+    devices](List%20of%20compatibles%20USB%20devices.md "wikilink")
+2.  [iFixit's Nintendo Switch
     teardown](https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263)
-2.  [dekuNukem's Reverse
+3.  [dekuNukem's Reverse
     Engineering](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering)

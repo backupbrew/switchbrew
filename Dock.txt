@@ -21,5 +21,6 @@
 |}
 
 ==Other Resources==
+# [[List of compatibles USB devices]]
 # [https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263 iFixit's Nintendo Switch teardown]
 # [https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering dekuNukem's Reverse Engineering]
