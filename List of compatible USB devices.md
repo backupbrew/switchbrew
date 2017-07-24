@@ -6,3 +6,9 @@
   - Nintendo Switch Pro Controller
   - Mayflash's GameCube Adapter :
     <http://www.mayflash.com/products/nintendowiiu/w012.html>
+  - Brook GC to SW Controller Adapter :
+    <http://www.brookaccessory.com/detail/93354732/>
+  - Brook PS3/PS4 to Wii U Super Converter :
+    <http://www.brookaccessory.com/Super%20Converters/list.html>
+  - USB Keyboards
+  - USB-C OTG
