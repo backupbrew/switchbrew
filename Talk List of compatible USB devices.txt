@@ -1,0 +1,1 @@
+Could be improved with a table for purposes and FW compatibility
