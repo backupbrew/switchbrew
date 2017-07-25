@@ -449,7 +449,7 @@ These take a device id and a device address space handle.
 |-
 | 8 || [[#svcSetMemoryPermission|PermissionChangeAllowed]]
 |-
-| 14 || [[#svcSetProcessMemoryPermission|ProcessPermissionChangedAllowed]]
+| 14 || [[#svcSetProcessMemoryPermission|ProcessPermissionChangeAllowed]]
 |-
 | 15 || [[#svcMapMemory|MapAllowed]]
 |-

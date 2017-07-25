@@ -317,7 +317,7 @@ These take a device id and a device address space handle.
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 7-0  | Type                                                                                                                                                                       |
 | 8    | [PermissionChangeAllowed](#svcSetMemoryPermission "wikilink")                                                                                                              |
-| 14   | [ProcessPermissionChangedAllowed](#svcSetProcessMemoryPermission "wikilink")                                                                                               |
+| 14   | [ProcessPermissionChangeAllowed](#svcSetProcessMemoryPermission "wikilink")                                                                                                |
 | 15   | [MapAllowed](#svcMapMemory "wikilink")                                                                                                                                     |
 | 16   | [UnmapProcessCodeMemoryAllowed](#svcUnmapProcessCodeMemory "wikilink")                                                                                                     |
 | 17   | [TransferMemoryAllowed](#svcCreateTransferMemory "wikilink")                                                                                                               |
