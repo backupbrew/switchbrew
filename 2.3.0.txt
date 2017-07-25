@@ -17,8 +17,5 @@ Exactly the following [[Title_list|titles]] were updated in the below ranges:
 * The only updated 01000000000008XX titles are: 0100000000000816, [[System_Version_Title]], title storing "Support Error Codes" message strings, and System config.
 * There are no updated 01000000000010XX titles.
 
-===[[Internet_Browser|Browser]]===
-The Internet Browser was not updated for any applets.
-
-===[[NS_Services|NS]]-sysmodule===
-The NS-sysmodule was not updated.
+===System config===
+A new entry with name "nv!nvn_no_vsync_capability" was added. The value of the "ntc!autonomic_correction_interval_seconds" config was changed from 0xD2F00(864000) to 0x69780(432000).
