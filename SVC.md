@@ -126,11 +126,11 @@ Setting write-only is not allowed either
 
 ## svcSetMemoryAttribute
 
-| State0 | State1 | Action                                                           |
-| ------ | ------ | ---------------------------------------------------------------- |
-| 0      | 0      | Clear bit35 in [\#MemoryAttribute](#MemoryAttribute "wikilink"). |
-| 8      | 0      | Clear bit35 in [\#MemoryAttribute](#MemoryAttribute "wikilink"). |
-| 8      | 8      | Set bit35 in [\#MemoryAttribute](#MemoryAttribute "wikilink").   |
+| State0 | State1 | Action                                                          |
+| ------ | ------ | --------------------------------------------------------------- |
+| 0      | 0      | Clear bit3 in [\#MemoryAttribute](#MemoryAttribute "wikilink"). |
+| 8      | 0      | Clear bit3 in [\#MemoryAttribute](#MemoryAttribute "wikilink"). |
+| 8      | 8      | Set bit3 in [\#MemoryAttribute](#MemoryAttribute "wikilink").   |
 
 This might used for switching between cached and non-cached mappings.
 
@@ -141,7 +141,7 @@ Memory is only allowed to be mapped into a special region.
 Code can get the range of this region from
 [\#svcGetInfo](#svcGetInfo "wikilink").
 
-The source region gets reprotected to ---, and sets bit32 is set in
+The source region gets reprotected to ---, and sets bit0 is set in
 [\#MemoryAttribute](#MemoryAttribute "wikilink").
 
 ## svcCreateThread
@@ -161,11 +161,11 @@ processes.
 ## svcCreateTransferMemory
 
 This one reprotects the src block with perms you give it. It also sets
-bit32 into [\#MemoryAttribute](#MemoryAttribute "wikilink").
+bit0 into [\#MemoryAttribute](#MemoryAttribute "wikilink").
 
 Executable bit perm not allowed.
 
-Closing all handles automatically causes the bit32 in
+Closing all handles automatically causes the bit0 in
 [\#MemoryAttribute](#MemoryAttribute "wikilink") to clear, and the
 permission to reset.
 
@@ -257,7 +257,7 @@ don't care.
 ## svcMapTransferMemory
 
 The newly mapped pages will have
-[\#MemoryAttribute](#MemoryAttribute "wikilink") type 0xE.
+[\#MemoryState](#MemoryState "wikilink") type 0xE.
 
 You must pass same size and permissions as given in
 svcCreateMemoryMirror, otherwise error.
