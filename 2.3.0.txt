@@ -14,7 +14,7 @@ Exactly the following [[Title_list|titles]] were updated in the below ranges:
 ** bsdsockets
 ** nvservices
 ** creport
-* The only updated 01000000000008XX titles are: 0100000000000816, and [[System_Version_Title]].
+* The only updated 01000000000008XX titles are: 0100000000000816, [[System_Version_Title]], title storing "Support Error Codes" message strings, and System config.
 * There are no updated 01000000000010XX titles.
 
 ===[[Internet_Browser|Browser]]===
