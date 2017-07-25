@@ -9,12 +9,11 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 *General system stability improvements to enhance the user's experience
 
 ==System Titles==
-Exactly the following [[Title_list|titles]] were updated in the below ranges:
+Exactly the following [[Title_list|titles]] were updated:
 * The only updated sysmodules are:
 ** wlan
 ** nfc
 * The only updated 01000000000008XX titles are: 0100000000000801 (Error message archive), 0100000000000816, and [[System_Version_Title]].
-* There are no updated 01000000000010XX titles.
 
 ===[[Internet_Browser|Browser]]===
 The Internet Browser was not updated for any applets.
