@@ -155,6 +155,8 @@ Inherits from: [[#KSynchronizationObject]]
 |}
 
 == KMemoryBlock ==
+Size: 0x40
+
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -187,7 +189,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x30
 | u32
-| MemoryState
+| State
 |-
 | 0x34
 | u16
@@ -203,14 +205,58 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x39
 | u8
-| 
+| UnkAttribute
 |-
 | 0x3A
 | u8
-| MemoryAttribute
+| Attribute
 |}
 
-= KMemoryBlockInfo =
+== KMemoryBlockInfo ==
+Size: 0x20
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| u64
+| BaseAddress
+|-
+| 8
+| u64
+| Size
+|-
+| 0x10
+| u32
+| State
+|-
+| 0x14
+| u8
+| Permission
+|-
+| 0x15
+| u8
+| Attribute
+|-
+| 0x16
+| u8
+| UnkAttribute
+|-
+| 
+| 
+| Pad
+|-
+| 0x18
+| u16
+| IpcRefCount [?]
+|-
+| 0x1A
+| u16
+| DeviceMapRefCount
+|}
 
 = KTransferMemory =
 Size: 0x48

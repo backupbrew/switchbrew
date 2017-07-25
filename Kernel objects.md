@@ -71,6 +71,9 @@ Inherits from:
 
 ## KMemoryBlock
 
+Size:
+0x40
+
 | Offset | Type                                         | Description       |
 | ------ | -------------------------------------------- | ----------------- |
 | 0      | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | Next              |
@@ -79,14 +82,28 @@ Inherits from:
 | 0x18   |                                              |                   |
 | 0x20   | u64                                          | BaseAddress       |
 | 0x28   | u64                                          | NumOfPages        |
-| 0x30   | u32                                          | MemoryState       |
+| 0x30   | u32                                          | State             |
 | 0x34   | u16                                          | IpcRefCount \[?\] |
 | 0x36   | u16                                          | DeviceMapRefCount |
 | 0x38   | u8                                           | Permission        |
-| 0x39   | u8                                           |                   |
-| 0x3A   | u8                                           | MemoryAttribute   |
+| 0x39   | u8                                           | UnkAttribute      |
+| 0x3A   | u8                                           | Attribute         |
 
-# KMemoryBlockInfo
+## KMemoryBlockInfo
+
+Size: 0x20
+
+| Offset | Type | Description       |
+| ------ | ---- | ----------------- |
+| 0      | u64  | BaseAddress       |
+| 8      | u64  | Size              |
+| 0x10   | u32  | State             |
+| 0x14   | u8   | Permission        |
+| 0x15   | u8   | Attribute         |
+| 0x16   | u8   | UnkAttribute      |
+|        |      | Pad               |
+| 0x18   | u16  | IpcRefCount \[?\] |
+| 0x1A   | u16  | DeviceMapRefCount |
 
 # KTransferMemory
 
