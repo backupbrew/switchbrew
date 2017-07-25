@@ -407,6 +407,89 @@ These take a device id and a device address space handle.
 |}
 
 = Structures =
+== DeviceName ==
+{| class=wikitable
+! Value || Name
+|-
+| 0 || AFI
+|-
+| 1 || AVPC
+|-
+| 2 || DC
+|-
+| 3 || DCB
+|-
+| 4 || HC
+|-
+| 5 || HDA
+|-
+| 6 || ISP2
+|-
+| 7 || MSENC NVENC
+|-
+| 8 || NV
+|-
+| 9 || NV2
+|-
+| 10 || PPCS
+|-
+| 11 || SATA
+|-
+| 12 || VI
+|-
+| 13 || VIC
+|-
+| 14 || XUSB_HOST
+|-
+| 15 || XUSB_DEV
+|-
+| 16 || TSEC
+|-
+| 17 || PPCS1
+|-
+| 18 || DC1
+|-
+| 19 || SDMMC1A
+|-
+| 20 || SDMMC2A
+|-
+| 21 || SDMMC3A
+|-
+| 22 || SDMMC4A
+|-
+| 23 || ISP2B
+|-
+| 24 || GPU
+|-
+| 25 || GPUB
+|-
+| 26 || PPCS2
+|-
+| 27 || NVDEC
+|-
+| 28 || APE
+|-
+| 29 || SE
+|-
+| 30 || NVJPG
+|-
+| 31 || HC1
+|-
+| 32 || SE1
+|-
+| 33 || AXIAP
+|-
+| 34 || ETR
+|-
+| 35 || TSECB
+|-
+| 36 || TSEC1
+|-
+| 37 || TSECB1
+|-
+| 38 || NVDEC1
+|}
+
 == CreateProcessInfo ==
 {| class=wikitable
 ! Offset || Length || Description
