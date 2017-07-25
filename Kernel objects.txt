@@ -69,10 +69,6 @@ Inherits from: [[#KSynchronizationObject]]
 | u64
 |
 |-
-| ..
-| ..
-| ..
-|-
 | 0x100
 | [[#KLinkedListNode]]*
 | TlsPagesList
