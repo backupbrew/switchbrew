@@ -291,18 +291,27 @@ These take a device id and a device address space handle.
 
 ## CreateProcessInfo
 
-| Offset | Length | Description                                                                                                                                  |
-| ------ | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0      | 8      |                                                                                                                                              |
-| 8      | 2      |                                                                                                                                              |
-| 0xA    | 2      |                                                                                                                                              |
-| 0x18   | 8      | Code base                                                                                                                                    |
-| 0x20   | 4      | Number of code pages                                                                                                                         |
-| 0x24   | 4      | MemoryManagement flags. Bit0: is\_64bit (maybe?), bit3-1: MMU table size? (0=32-bit, 1=64-bit 0x800000000, 2=64-bit 0x400000000), bit5, bit6 |
-| 0x28   | 4      | ResourceLimit handle                                                                                                                         |
-| 0x2C   | 4      |                                                                                                                                              |
+| Offset | Length | Description                                                                                                                                 |
+| ------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0      | 8      |                                                                                                                                             |
+| 8      | 2      |                                                                                                                                             |
+| 0xA    | 2      |                                                                                                                                             |
+| 0x18   | 8      | CodeAddr                                                                                                                                    |
+| 0x20   | 4      | CodeNumPages                                                                                                                                |
+| 0x24   | 4      | MemoryManagementFlags. Bit0: is\_64bit (maybe?), bit3-1: MMU table size? (0=32-bit, 1=64-bit 0x800000000, 2=64-bit 0x400000000), bit5, bit6 |
+| 0x28   | 4      | ResourceLimitHandle                                                                                                                         |
+| 0x2C   | 4      |                                                                                                                                             |
 
 ## MemoryAttribute
+
+| Bits | Description       |
+| ---- | ----------------- |
+| 0    | IsBorrowed        |
+| 1    | IsIpcMapped \[?\] |
+| 2    | IsDeviceMapped    |
+| 3    | IsUncached \[?\]  |
+
+## MemoryState
 
 | Bits | Description                                                                                                                                                          |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -337,8 +346,6 @@ These take a device id and a device address space handle.
 | `0x005C380E` | Transfer memory       | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink").                                            |
 | `0x0040380F` | Process memory        | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
 | `0x00000010` | Reserved              |                                                                                                                     |
-
-Bit32: is\_mirrored Bit34: is\_device\_mapped Bit35: is\_uncached?
 
 # Exception Handling
 

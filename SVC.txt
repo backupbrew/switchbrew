@@ -417,18 +417,31 @@ These take a device id and a device address space handle.
 |-
 | 0xA || 2 ||
 |-
-| 0x18 || 8 || Code base
+| 0x18 || 8 || CodeAddr
 |-
-| 0x20 || 4 || Number of code pages
+| 0x20 || 4 || CodeNumPages
 |-
-| 0x24 || 4 || MemoryManagement flags. Bit0: is_64bit (maybe?), bit3-1: MMU table size? (0=32-bit, 1=64-bit 0x800000000, 2=64-bit 0x400000000), bit5, bit6
+| 0x24 || 4 || MemoryManagementFlags. Bit0: is_64bit (maybe?), bit3-1: MMU table size? (0=32-bit, 1=64-bit 0x800000000, 2=64-bit 0x400000000), bit5, bit6
 |-
-| 0x28 || 4 || ResourceLimit handle
+| 0x28 || 4 || ResourceLimitHandle
 |-
 | 0x2C || 4 ||
 |}
 
 == MemoryAttribute ==
+{| class=wikitable
+! Bits || Description
+|-
+| 0 || IsBorrowed
+|-
+| 1 || IsIpcMapped [?]
+|-
+| 2 || IsDeviceMapped
+|-
+| 3 || IsUncached [?]
+|}
+
+== MemoryState ==
 {| class=wikitable
 ! Bits || Description
 |-
@@ -492,10 +505,6 @@ These take a device id and a device address space handle.
 |-
 | <code>0x00000010</code> || Reserved ||
 |}
-
-Bit32: is_mirrored
-Bit34: is_device_mapped
-Bit35: is_uncached?
 
 =Exception Handling=
 There appears to be userland code for handling exceptions, however this doesn't seem to be executed on retail.
