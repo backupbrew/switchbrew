@@ -313,20 +313,20 @@ These take a device id and a device address space handle.
 
 ## MemoryState
 
-| Bits | Description                                                                                                                                                          |
-| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 7-0  | Type                                                                                                                                                                 |
-| 8    | Can be used with [\#svcSetMemoryPermission](#svcSetMemoryPermission "wikilink")                                                                                      |
-| 14   | Can be used with [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink")                                                                        |
-| 15   | Can be used with [\#svcMapMemory](#svcMapMemory "wikilink")                                                                                                          |
-| 16   | Can be used with [\#svcUnmapProcessCodeMemory](#svcUnmapProcessCodeMemory "wikilink")                                                                                |
-| 17   | Can be used with [\#svcCreateTransferMemory](#svcCreateTransferMemory "wikilink")                                                                                    |
-| 19   | Can be used with [\#svcMapDeviceAddressSpace](#svcMapDeviceAddressSpace "wikilink")/[\#svcMapDeviceAddressSpaceByForce](#svcMapDeviceAddressSpaceByForce "wikilink") |
-| 20   | Can be used with [\#svcMapDeviceAddressSpaceAligned](#svcMapDeviceAddressSpaceAligned "wikilink")                                                                    |
-| 21   | Can be used with [\#svcSendSyncRequestWithUserBuffer](#svcSendSyncRequestWithUserBuffer "wikilink")                                                                  |
-| 22   | Is cached, maybe?                                                                                                                                                    |
-| 23   | Can be used with [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink")                                                                                            |
-| 24   | Can be used with [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink")                                                                                        |
+| Bits | Description                                                                                                                                                                |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 7-0  | Type                                                                                                                                                                       |
+| 8    | [PermissionChangeAllowed](#svcSetMemoryPermission "wikilink")                                                                                                              |
+| 14   | [ProcessPermissionChangedAllowed](#svcSetProcessMemoryPermission "wikilink")                                                                                               |
+| 15   | [MapAllowed](#svcMapMemory "wikilink")                                                                                                                                     |
+| 16   | [UnmapProcessCodeMemoryAllowed](#svcUnmapProcessCodeMemory "wikilink")                                                                                                     |
+| 17   | [TransferMemoryAllowed](#svcCreateTransferMemory "wikilink")                                                                                                               |
+| 19   | MapDeviceAllowed ([\#svcMapDeviceAddressSpace](#svcMapDeviceAddressSpace "wikilink") and [\#svcMapDeviceAddressSpaceByForce](#svcMapDeviceAddressSpaceByForce "wikilink")) |
+| 20   | [MapDeviceAlignedAllowed](#svcMapDeviceAddressSpaceAligned "wikilink")                                                                                                     |
+| 21   | [IpcBufferAllowed](#svcSendSyncRequestWithUserBuffer "wikilink")                                                                                                           |
+| 22   | IsCached \[?\]                                                                                                                                                             |
+| 23   | [MapProcessAllowed](#svcMapProcessMemory "wikilink")                                                                                                                       |
+| 24   | [AttributeChangeAllowed](#svcSetMemoryAttribute "wikilink")                                                                                                                |
 
 | Value        | Type                  | Meaning                                                                                                             |
 | ------------ | --------------------- | ------------------------------------------------------------------------------------------------------------------- |

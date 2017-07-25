@@ -447,27 +447,27 @@ These take a device id and a device address space handle.
 |-
 | 7-0 || Type
 |-
-| 8 || Can be used with [[#svcSetMemoryPermission]]
+| 8 || [[#svcSetMemoryPermission|PermissionChangeAllowed]]
 |-
-| 14 || Can be used with [[#svcSetProcessMemoryPermission]]
+| 14 || [[#svcSetProcessMemoryPermission|ProcessPermissionChangedAllowed]]
 |-
-| 15 || Can be used with [[#svcMapMemory]]
+| 15 || [[#svcMapMemory|MapAllowed]]
 |-
-| 16 || Can be used with [[#svcUnmapProcessCodeMemory]]
+| 16 || [[#svcUnmapProcessCodeMemory|UnmapProcessCodeMemoryAllowed]]
 |-
-| 17 || Can be used with [[#svcCreateTransferMemory]]
+| 17 || [[#svcCreateTransferMemory|TransferMemoryAllowed]]
 |-
-| 19 || Can be used with [[#svcMapDeviceAddressSpace]]/[[#svcMapDeviceAddressSpaceByForce]]
+| 19 || MapDeviceAllowed ([[#svcMapDeviceAddressSpace]] and [[#svcMapDeviceAddressSpaceByForce]])
 |-
-| 20 || Can be used with [[#svcMapDeviceAddressSpaceAligned]]
+| 20 || [[#svcMapDeviceAddressSpaceAligned|MapDeviceAlignedAllowed]]
 |-
-| 21 || Can be used with [[#svcSendSyncRequestWithUserBuffer]]
+| 21 || [[#svcSendSyncRequestWithUserBuffer|IpcBufferAllowed]]
 |-
-| 22 || Is cached, maybe?
+| 22 || IsCached [?]
 |-
-| 23 || Can be used with [[#svcMapProcessMemory]]
+| 23 || [[#svcMapProcessMemory|MapProcessAllowed]]
 |-
-| 24 || Can be used with [[#svcSetMemoryAttribute]]
+| 24 || [[#svcSetMemoryAttribute|AttributeChangeAllowed]]
 |}
 
 {| class=wikitable
