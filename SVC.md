@@ -280,12 +280,8 @@ Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as input.
 
 ## svcAttachDeviceAddressSpace / svcDetachDeviceAddressSpace
 
-These take a device id and a device address space handle.
-
-| Device | Name   | Description                 |
-| ------ | ------ | --------------------------- |
-| 0x0A   | APBDMA | Tegra's APB DMA controller. |
-|        |        |                             |
+These take a [\#DeviceName](#DeviceName "wikilink") and a device address
+space handle.
 
 # Structures
 

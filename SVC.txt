@@ -397,14 +397,7 @@ The inverse operation of [[#svcQueryIoMapping]].
 Takes a [[#CreateProcessInfo]] as input.
 
 == svcAttachDeviceAddressSpace / svcDetachDeviceAddressSpace ==
-These take a device id and a device address space handle.
-
-{| class=wikitable
-! Device || Name || Description
-|-
-| 0x0A || APBDMA || Tegra's APB DMA controller.
-|-
-|}
+These take a [[#DeviceName]] and a device address space handle.
 
 = Structures =
 == DeviceName ==
