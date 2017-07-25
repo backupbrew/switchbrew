@@ -53,19 +53,40 @@ Inherits from:
 
 ## KProcessMm
 
-| Offset | Type           | Description       |
-| ------ | -------------- | ----------------- |
-| 0      | \*             | Vtable            |
-| 8      | u64            | AddrSpaceMinAddr  |
-| 0x10   | u64            | AddrSpaceMaxAddr  |
-| 0x18   | u64            | HeapBaseAddr      |
-| 0x20   | u64            | HeapEndAddr       |
-| 0x28   | u64            | HeapCurAddr       |
-| 0x30   | u64            | MapRegionBaseAddr |
-| 0x38   | u64            | MapRegionEnd      |
-| 0x40   | u64            | HeapMaxAllocation |
-| 0x48   | KRecursiveLock | Mutex             |
-| ..     | ..             | ..                |
+| Offset | Type                                         | Description       |
+| ------ | -------------------------------------------- | ----------------- |
+| 0      | \*                                           | Vtable            |
+| 8      | u64                                          | AddrSpaceMinAddr  |
+| 0x10   | u64                                          | AddrSpaceMaxAddr  |
+| 0x18   | u64                                          | HeapBaseAddr      |
+| 0x20   | u64                                          | HeapEndAddr       |
+| 0x28   | u64                                          | HeapCurAddr       |
+| 0x30   | u64                                          | MapRegionBaseAddr |
+| 0x38   | u64                                          | MapRegionEnd      |
+| 0x40   | u64                                          | HeapMaxAllocation |
+| 0x48   | KRecursiveLock                               | Mutex             |
+| 0x50   |                                              |                   |
+| 0x60   | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | MemoryBlockList   |
+| ..     | ..                                           | ..                |
+
+## KMemoryBlock
+
+| Offset | Type                                         | Description       |
+| ------ | -------------------------------------------- | ----------------- |
+| 0      | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | Next              |
+| 8      | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | Prev              |
+| 0x10   |                                              |                   |
+| 0x18   |                                              |                   |
+| 0x20   | u64                                          | BaseAddress       |
+| 0x28   | u64                                          | NumOfPages        |
+| 0x30   | u32                                          | MemoryState       |
+| 0x34   | u16                                          | IpcRefCount \[?\] |
+| 0x36   | u16                                          | DeviceMapRefCount |
+| 0x38   | u8                                           | Permission        |
+| 0x39   | u8                                           |                   |
+| 0x3A   | u8                                           | MemoryAttribute   |
+
+# KMemoryBlockInfo
 
 # KTransferMemory
 
