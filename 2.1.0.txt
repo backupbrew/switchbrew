@@ -34,6 +34,15 @@ A browser vuln was [[Switch_Userland_Flaws|fixed]], see also [[Internet_Browser|
 ===[[Title_list|FIRM]] Packages===
 The only changes in titles 0100000000000819 and 010000000000081A was that "/nx/package2" in the FS were updated. 010000000000081B firm was also updated.
 
+819:
+
+Kernel was not changed.
+
+Sysmodules:
+* All 3 codebin sections in the following sysmodules were updated: boot, FS, Loader, and NCM. Offset of the RW section for FS increased by 0x1000.
+* For ProcessMana and sm, only the RO section changed. The only change was the builid hash at the very end of the section, following the "GNU" string.
+* spl wasn't updated.
+
 ===[[NS_Services|NS]]-sysmodule===
 The NS-sysmodule was updated. 4 new funcs were added and 29 funcs were updated.
 
