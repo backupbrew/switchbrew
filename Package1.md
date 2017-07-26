@@ -63,8 +63,10 @@ function, and the check will call panic.
 
 The bootloader will check if someone attempted to downgrade it. A fuse
 array will be checked, if too many fuses are burnt the bootloader will
-detect a downgrade attempt. The fuse array and the expected number of
-burnt fuses is different on unit type 0 (non-retail) and unit type 1
+detect a downgrade attempt. If too little are set, the bootloader will
+program the expected bitmap and force a reset. The fuse array and the
+expected number of burnt fuses is different on unit type 0 (non-retail)
+and unit type 1
 (retail).
 
 | System version | Expected number of burnt fuses (retail) | Expected number of burnt fuses (non-retail) |
@@ -79,8 +81,7 @@ The panic function does the following things:
 
   - It clears the stack
   - It disables(?) and clears the security engine
-  - It sets a fuse (so that Nintendo knows that you attempted to mess
-    with the bootloader)
+  - It disables fuse programming
   - It clears the key area
   - It clears the data for stage 2
   - It signals over the debug interface that a panic occurred until the
