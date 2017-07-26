@@ -24,7 +24,7 @@ It then clears the (empty) bss and calls the functions in the (empty) init array
 * Fuse coherency is checked, potentially panicking.
 * The copy of the BCT left by the bootROM is checked. If the version field doesn't match the expected version field, panic.
 * Anti-downgrade fuses are checked, potentially panicking.
-* [1.0.0-2.3.0] Some fuse is written to.
+* [1.0.0-2.3.0] Fuse programming is disabled until next reboot.
 * The memory controller is powered on and setup to allow GPU DMA to the IRAM. This will be needed to interact with the Falcon.
 * [1.0.0-2.3.0] The security engine address is setup
 * [1.0.0-2.3.0] Bit30 of offset 0x800 of the security engine is checked: if set, panic.

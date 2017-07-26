@@ -36,7 +36,7 @@ the exception vectors to point at the panic function. It then clears the
   - The copy of the BCT left by the bootROM is checked. If the version
     field doesn't match the expected version field, panic.
   - Anti-downgrade fuses are checked, potentially panicking.
-  - \[1.0.0-2.3.0\] Some fuse is written to.
+  - \[1.0.0-2.3.0\] Fuse programming is disabled until next reboot.
   - The memory controller is powered on and setup to allow GPU DMA to
     the IRAM. This will be needed to interact with the Falcon.
   - \[1.0.0-2.3.0\] The security engine address is setup
