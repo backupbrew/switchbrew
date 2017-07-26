@@ -209,7 +209,7 @@ HEX codes for the colors shown in the "Controllers" menu of the Switch UI can be
 |-
 | Neon Blue || #0AB9E6 || #001E1E
 |-
-| Neon Yellow || || 
+| Neon Yellow || #E6FF00 || #142800
 |-
 | Neon Green || || 
 |-
