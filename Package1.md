@@ -38,7 +38,8 @@ the exception vectors to point at the panic function. It then clears the
   - Anti-downgrade fuses are checked, potentially panicking.
   - \[1.0.0-2.3.0\] Fuse programming is disabled until next reboot.
   - The memory controller is powered on and setup to allow GPU DMA to
-    the IRAM. This will be needed to interact with the Falcon.
+    the IRAM. This will be needed to interact with the Falcon and with
+    the security engine.
   - \[1.0.0-2.3.0\] The security engine address is setup
   - \[1.0.0-2.3.0\] Bit30 of offset 0x800 of the security engine is
     checked: if set, panic.

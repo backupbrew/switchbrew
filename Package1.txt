@@ -25,7 +25,7 @@ It then clears the (empty) bss and calls the functions in the (empty) init array
 * The copy of the BCT left by the bootROM is checked. If the version field doesn't match the expected version field, panic.
 * Anti-downgrade fuses are checked, potentially panicking.
 * [1.0.0-2.3.0] Fuse programming is disabled until next reboot.
-* The memory controller is powered on and setup to allow GPU DMA to the IRAM. This will be needed to interact with the Falcon.
+* The memory controller is powered on and setup to allow GPU DMA to the IRAM. This will be needed to interact with the Falcon and with the security engine.
 * [1.0.0-2.3.0] The security engine address is setup
 * [1.0.0-2.3.0] Bit30 of offset 0x800 of the security engine is checked: if set, panic.
 * Key generation is performed. If the unit type is equal to 0 (non-retail) AND if some fuse is clear, the secondary method will be used. Else, the main method will be used.
