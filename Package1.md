@@ -161,11 +161,11 @@ and the SSK are cleared. The master static seed is decrypted with
 keyslot 0xC and stored in keyslot 0xC. A constant block is decrypted
 with keyslot 0xD and stored in keyslot 0xD.
 
-## Stage 2
+## Stage 2 (package1.1)
 
 The second stage of the bootloader is the encrypted part of the
 bootloader. It is much bigger than stage 1, but what it does is
-currently unknown due to its being encryptd.
+currently unknown due to its being encrypted.
 
 ### Header format
 
