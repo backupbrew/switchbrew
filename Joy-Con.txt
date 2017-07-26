@@ -197,3 +197,21 @@ HID Input Report Descriptor (Hexadecimal):
 |-
 |0xC0,              || End Collection
 |}
+
+==Colors==
+HEX codes for the colors shown in the "Controllers" menu of the Switch UI can be found in a Joy-con SPI dump starting at offset 0x6050. Body color is first followed by button color and each is 3 bytes long. These values are able to be re-written with any HEX color value to make the Joy-cons show up as different colors in the UI. The following is a list of official HEX colors recovered from SPI dumps.
+{| class="wikitable"
+! Color Name || Body HEX || Button HEX
+|-
+| Gray || #828282 || #0F0F0F
+|-
+| Neon Red || #FF3C28 || #1E0A0A
+|-
+| Neon Blue || #0AB9E6 || #001E1E
+|-
+| Neon Yellow || || 
+|-
+| Neon Green || || 
+|-
+| Neon Pink || ||
+|}
