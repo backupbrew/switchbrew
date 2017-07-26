@@ -94,6 +94,23 @@
 | Unused, all-zero.
 |}
 
+Decrypted Keydata format:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x80
+| Array of master static key encryption keys
+|-
+| 0x80
+| 0x10 
+| [[Package1|Stage 2]] key
+|}
+
 Starting at 0x180000 is an array of 0x200-byte entries, for a total of 32 keyblobs. Each one is unique compared to the others. They are all console unique.
 
 The 0xB0-byte keyblob is installed to the "customer data" section in BCTs (BCT+0x450).

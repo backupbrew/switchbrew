@@ -35,6 +35,13 @@
 | 0x20   | 0x90  | Keyblob encrypted payload                                                                                                                                         |
 | 0xB0   | 0x150 | Unused, all-zero.                                                                                                                                                 |
 
+Decrypted Keydata format:
+
+| Offset | Size | Description                                |
+| ------ | ---- | ------------------------------------------ |
+| 0x0    | 0x80 | Array of master static key encryption keys |
+| 0x80   | 0x10 | [Stage 2](Package1.md "wikilink") key      |
+
 Starting at 0x180000 is an array of 0x200-byte entries, for a total of
 32 keyblobs. Each one is unique compared to the others. They are all
 console unique.
