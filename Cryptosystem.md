@@ -49,9 +49,8 @@ encryption key and the stage 2 key are stored in a keyblob. The keyblob
 format is described
 [here](Flash%20Filesystem#Keyblob.md##Keyblob "wikilink").
 
-32 of these blobs are stored in the eMMC. Only one at a time is loaded,
-it is controlled by the bootloader version field in the BCT (at
-+0x2330).
+The 32 blobs are stored in the eMMC. Only one at a time is loaded, it is
+controlled by the bootloader version field in the BCT (at +0x2330).
 
 Although the keydata is presumably common to all consoles, each keyblob
 is console-unique, because the key used to encrypt it is at the factory
