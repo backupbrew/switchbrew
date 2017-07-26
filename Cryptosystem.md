@@ -84,7 +84,7 @@ the exploit or glitch would have to be re-done on each new bootloader
 revision (if it's not patched).
 
 The key-derivation is described
-[here](#Package1#Key_generation "wikilink").
+[here](Package1#Key%20generation.md##Key_generation "wikilink").
 
 #### Table of used keyblobs
 

@@ -67,7 +67,7 @@ The bootloader only stores the seed constants for the keyblob loaded by the curr
 
 This mechanism provides several advantages. If the stage 2 bootloader is compromised, stage 1 can just use another master static key in the keyblob. If stage 1 itself is glitched or exploited in such a way the keyblob is dumped, Nintendo just has to change the loaded keyblob: the vulnerable bootloader won't be able to decrypt the new keyblob, as the keyblob key it knows is different from the one needed. Even if somehow an exploit or glitch allowed one to be able to use the SBK to generate keyblob keys, the seed constants for future keyblobs are unknown (and will be until Nintendo releases new bootloaders that use them), and so the exploit or glitch would have to be re-done on each new bootloader revision (if it's not patched).
 
-The key-derivation is described [[#Package1#Key_generation|here]].
+The key-derivation is described [[Package1#Key_generation|here]].
 
 ==== Table of used keyblobs ====
 
