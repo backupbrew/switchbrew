@@ -96,9 +96,7 @@ The key-derivation is described
 
 It is currently unknown what key generation the stage 2 bootloader does.
 
-## Secure world (TrustZone) software
+## Secure Monitor
 
-The Secure world software performs all runtime cryptographic operations.
-
-It is currently unknown what operations the Secure world software
-performs.
+The secure monitor performs some runtime cryptographic operations. See
+[SMC](SMC.md "wikilink") for what operations it provides.
