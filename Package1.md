@@ -63,10 +63,9 @@ function, and the check will call panic.
 
 The bootloader will check if someone attempted to downgrade it. A fuse
 array will be checked, if too many fuses are burnt the bootloader will
-detect a downgrade attempt. If too little are set, the bootloader will
-program the expected bitmap and force a reset. The fuse array and the
-expected number of burnt fuses is different on unit type 0 (non-retail)
-and unit type 1
+panic. If too little are set, the bootloader will program the expected
+bitmap and force a reset. The fuse array and the expected number of
+burnt fuses is different on unit type 0 (non-retail) and unit type 1
 (retail).
 
 | System version | Expected number of burnt fuses (retail) | Expected number of burnt fuses (non-retail) |
