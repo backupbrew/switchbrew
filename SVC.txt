@@ -144,7 +144,7 @@
 |-
 | 0x59 || svcMapDeviceAddressSpaceByForce || W0=handle, W1=proc_handle, X2=dev_addr, X3=dev_size, X4=map_addr, W5=perm || W0=result 
 |-
-| 0x5A || svcMapDeviceAddressSpaceAligned || || 
+| 0x5A || svcMapDeviceAddressSpaceAligned || W0=handle, W1=proc_handle, X2=dev_addr, X3=dev_size, X4=map_addr, W5=perm || W0=result 
 |-
 | 0x5B || svcMapDeviceAddressSpace || || 
 |-
