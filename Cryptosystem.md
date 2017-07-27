@@ -82,6 +82,9 @@ will be until Nintendo releases new bootloaders that use them), and so
 the exploit or glitch would have to be re-done on each new bootloader
 revision (if it's not patched).
 
+Dumping the fuses of any single system would effectively bypass all of
+the above security mechanisms.
+
 The key-derivation is described
 [here](Package1#Key%20generation.md##Key_generation "wikilink").
 
