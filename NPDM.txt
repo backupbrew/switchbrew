@@ -72,11 +72,11 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |-
 | 0
 | 0x100
-| RSA-2048 signature
+| RSA-2048 signature, seems to verify the data starting at 0x100 with the size field from 0x204.
 |-
 | 0x100
 | 0x100
-| RSA-2048 public key
+| RSA-2048 public key, seems to be used for the second [[NCA_Format|NCA]] signature.
 |-
 | 0x200
 | 0x4
@@ -84,7 +84,7 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |-
 | 0x204
 | 0x4
-| 
+| s32 Size field used with the above signature(?).
 |-
 | 0x208
 | 0x4
