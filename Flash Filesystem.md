@@ -1,5 +1,9 @@
 # NAND structure
 
+The Switch's eMMC storage features a large user area, two smaller boot
+partitions, and a replay-protected memory block which is unused (no
+authentication key is programmed).
+
 ## Boot Partitions
 
 **Boot Partition 0 (0 of
