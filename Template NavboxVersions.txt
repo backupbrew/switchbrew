@@ -1,0 +1,8 @@
+<center>
+{| class="wikitable"
+|-
+! colspan="2" | Nintendo Switch [[System Versions]]
+|-
+| align="center" | [[1.0.0]] • [[2.0.0]] • [[2.1.0]] • [[2.2.0]] • [[2.3.0]] • [[3.0.0]]
+|-|}
+</center>
