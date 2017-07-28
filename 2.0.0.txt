@@ -36,3 +36,4 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 * The following 01000000000008XX titles were added:
 ** 0100000000000800(SSL trusted certs), 0100000000000807(Hotspot List), 010000000000081E(Dummy file), 010000000000081F(Icosa system config), 0100000000000820(Copper system config), 0100000000000821(Hoag system config),
 * The System Application "flog" (01008BB00013C000) was added.
+{{NavboxVersions}}
