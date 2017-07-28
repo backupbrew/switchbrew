@@ -42,6 +42,8 @@ Sysmodules:
 * All 3 codebin sections in the following sysmodules were updated: boot, FS, Loader, and NCM. Offset of the RW section for FS increased by 0x1000.
 * For ProcessMana and sm, only the RO section changed. The only change was the builid hash at the very end of the section, following the "GNU" string.
 * spl wasn't updated.
+** Loader: Only changes in .text was a rebuild with latest SDK, now has the same additional IPC cmd code as NS(see below).
+** boot: .text now has latest SDK changes + various other changes.
 
 ===[[NS_Services|NS]]-sysmodule===
 The NS-sysmodule was updated. 4 new funcs were added and 29 funcs were updated.
