@@ -13,6 +13,19 @@
 | 1   | ClearFsPermissions            | u32 PID to clear                                                                                                                                                    |                                                                                                                                    |
 | 256 | SetEnabledProgramVerification | bool enabled                                                                                                                                                        |                                                                                                                                    |
 
+## SetEnabledProgramVerification
+
+Seems to sets a global flag to inputval & 1.
+
+When the flag is zero, it will set ret=0 instead of ret={error} when
+verifying a RSA signature fails. This RSA signature seems to be the
+signature in the [NPDM](NPDM.md "wikilink") ACID. It then skips
+verifying what seems to be the second signature in the [NCA
+header](NCA%20Format.md "wikilink"). Note that if verifying the NPDM(?)
+signature is successful, and verifying that second signature fails, it
+will throw an error and
+abort.
+
 # fsp-srv
 
 | Cmd  | Name                                                                                   |
