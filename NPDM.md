@@ -85,7 +85,6 @@ bits.
 | --------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `0bxxxxxxxxxxxx0111`  | Kernel flags     | Bit31-24: Highest allowed cpu id, bit23-16: Lowest allowed cpu id, bit15-10: Highest allowed thread prio, bit9-4: Lowest allowed thread prio |
 | `0bxxxxxxxxxxx01111`  | Syscall mask     | Bits 29-31: Syscall mask table index; Bits 5-28: Mask                                                                                        |
-| `0bxxxxxxxxxx011111`  | ?                | Unknown. Requires two consecutive pairs of this descriptor type.                                                                             |
 | `0bxxxxxxxxx0111111`  | Map IO page (RW) | Bits 7-31: Page                                                                                                                              |
 | `0bxxxxxxxx01111111`  | Map IO range     | Bits 7-30: Alternating start page and number of pages, bit31: Alternating read-only flag then MemoryAttribute 0x2001/0x42002 selector flag   |
 | `0bxxxx011111111111`  | Interrupt pair   | Bits 12-21: Irq0, bits 20-31: Irq1, 0x3FF means empty.                                                                                       |
