@@ -1,1 +1,2 @@
-Launch-day version, without most of the online features.
+Prelaunch system version, without most of the online features.
+{{NavboxVersions}}
