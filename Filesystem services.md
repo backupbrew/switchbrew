@@ -7,11 +7,11 @@
 
 # fsp-pr
 
-| Cmd | Name                          | Arguments                                                                                                                                                           | Notes                                                         |
-| --- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| 0   | SetFsPermissions              | u8 storageID, u32 PID, u64 TID, ACI0\_buf\_size, ACID\_buf\_size + two A descriptors (the 0x1C FS-access control from ACI0 + the 0x2C FS-access control from ACID). | Actual FS permissions are set to (ACI0\_perms & ACID\_perms). |
-| 1   | ClearFsPermissions            | u32 PID to clear                                                                                                                                                    |                                                               |
-| 256 | SetEnabledProgramVerification | bool enabled                                                                                                                                                        |                                                               |
+| Cmd | Name                          | Arguments                                                                                                                                                           | Notes                                                                                                                              |
+| --- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | SetFsPermissions              | u8 storageID, u32 PID, u64 TID, ACI0\_buf\_size, ACID\_buf\_size + two A descriptors (the 0x1C FS-access control from ACI0 + the 0x2C FS-access control from ACID). | Actual FS permissions are set to (ACI0\_perms & ACID\_perms). Will panic(svcBreak) when buffer sizes from ipc-rawdata are invalid. |
+| 1   | ClearFsPermissions            | u32 PID to clear                                                                                                                                                    |                                                                                                                                    |
+| 256 | SetEnabledProgramVerification | bool enabled                                                                                                                                                        |                                                                                                                                    |
 
 # fsp-srv
 

@@ -13,7 +13,7 @@
 |-
 ! Cmd || Name || Arguments || Notes
 |-
-| 0 || SetFsPermissions || u8 storageID, u32 PID, u64 TID, ACI0_buf_size, ACID_buf_size + two A descriptors (the 0x1C FS-access control from ACI0 + the 0x2C FS-access control from ACID). || Actual FS permissions are set to (ACI0_perms & ACID_perms).
+| 0 || SetFsPermissions || u8 storageID, u32 PID, u64 TID, ACI0_buf_size, ACID_buf_size + two A descriptors (the 0x1C FS-access control from ACI0 + the 0x2C FS-access control from ACID). || Actual FS permissions are set to (ACI0_perms & ACID_perms). Will panic(svcBreak) when buffer sizes from ipc-rawdata are invalid.
 |-
 | 1 || ClearFsPermissions || u32 PID to clear ||
 |-
