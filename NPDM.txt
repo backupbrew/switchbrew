@@ -83,7 +83,11 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 | Magic "ACID".
 |-
 | 0x204
-| 0x8
+| 0x4
+| 
+|-
+| 0x208
+| 0x4
 | Zeroes
 |-
 | 0x20C
