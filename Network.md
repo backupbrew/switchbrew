@@ -16,6 +16,10 @@ used for. Only HTTPS is used with these domains unless noted otherwise.
     Same result as dauth when blocked.
   - "consumer.lp1.npns.srv.nintendo.net": Same result as dauth when
     blocked.
+  - "api.accounts.nintendo.com": Appears to be used by Nintendo apps to
+    get metadata for Switch user profiles.
+  - "api-lp1.znc.srv.nintendo.net": Used by the Switch Online app to get
+    app data, like the list of game-specific services to display.
 
 Note: "break Nintendo-acount..." is for "posting to social-media" in
 user-profile, results may vary with eShop(for non-dauth).
