@@ -4,7 +4,7 @@
 ! Release date
 |-
 | [[1.0.0]]
-| Unknown
+| Before console release
 |-
 | [[2.0.0]]
 | March 2, 2017
