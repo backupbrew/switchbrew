@@ -230,3 +230,5 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 | Ignored
 |
 |}
+
+Only certain memory ranges are allowed to be mapped via these descriptors.

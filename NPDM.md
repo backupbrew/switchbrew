@@ -93,3 +93,6 @@ bits.
 | `0xx011111111111111`  | bit14                    | Kernel release version | Bits 15-X: Version. The raw descriptor is compared with 0x80000, when less than an error is returned. This is equivalent to comparing the bits starting at bit15 with 0x10. The raw descriptor is also stored into {state}. This enforces a minimum required version, not a maximum. |
 | `0x0111111111111111`  | bit15                    |                        |                                                                                                                                                                                                                                                                                      |
 | All ones              |                          | Ignored                |                                                                                                                                                                                                                                                                                      |
+
+Only certain memory ranges are allowed to be mapped via these
+descriptors.
