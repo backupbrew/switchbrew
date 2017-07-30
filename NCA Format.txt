@@ -360,7 +360,7 @@ This documents the structure of Section Header Block +0 for RomFS.
 | "BKTR"
 |-
 | 0x14
-| 0x4?
+| 0x4
 | u32, must be <=1.
 |-
 | 0x18

@@ -144,7 +144,7 @@ RomFS.
 |       |        |                                                          |
 | 0x8   | 0x8    | Size                                                     |
 | 0x10  | 0x4    | "BKTR"                                                   |
-| 0x14  | 0x4?   | u32, must be \<=1.                                       |
+| 0x14  | 0x4    | u32, must be \<=1.                                       |
 | 0x18  | 0x4    | s32, must be \>=1.                                       |
 | 0x1C  | 0x4    | ?                                                        |
 | 0x20  | 0x20   | Same as the above 0x20-bytes except with different data. |
