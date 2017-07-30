@@ -65,6 +65,7 @@ hard-coded to
 | 0x4    | 0x1  | Crypto type. 0 and \>4 are invalid. 1 = none(plaintext from raw NCA). 2 = other crypto. 3 = regular crypto. 4 = unknown. |
 | 0x5    | 0x1  | Padding?                                                                                                                 |
 | 0x8    |      | FS-specific superblock.                                                                                                  |
+| 0x100  | ?    | Optional BKTR header. Can be used with any section, but only known to be used with game-updates RomFS.                   |
 
 The Section Header Block for each section is at
 absoluteoffset+0x400+(sectionid\*0x200), where sectionid corresponds to
@@ -96,7 +97,6 @@ PFS0.
 | Offset | Size | Description                                                                                                                              |
 | ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x8    | 0xE0 | IVFC header. Basically the same as [Savegames](Savegames.md "wikilink") IVFC except with 2 more levels and +0x0C is non-zero, see below. |
-| 0x100  | ?    | BKTR header for game-updates.                                                                                                            |
 
 This documents the structure of Section Header Block +0 for
 RomFS.
@@ -136,13 +136,13 @@ RomFS.
 | 0xA0  | 32     | Unknown, reserved?                                                    |
 | 0xC0  | 32     | Hash                                                                  |
 
-### BKTR
+## BKTR
 
 | Start | Length | Description                                              |
 | ----- | ------ | -------------------------------------------------------- |
 | 0x0   | 0x8?   | Offset                                                   |
 |       |        |                                                          |
-| 0x8   | 0x8?   | Size                                                     |
+| 0x8   | 0x8    | Size                                                     |
 | 0x10  | 0x4    | "BKTR"                                                   |
 | 0x14  | 0x4?   | u32, must be \<=1.                                       |
 | 0x18  | 0x4    | s32, must be \>=1.                                       |
@@ -150,6 +150,8 @@ RomFS.
 | 0x20  | 0x20   | Same as the above 0x20-bytes except with different data. |
 | 0x40  | 0x4?   | ?                                                        |
 | 0x44  | 0x4?   | ?                                                        |
+
+Using this header is enabled when offset 0x8 in this header is non-zero.
 
 The two sections specified by the two BKTR entries are usually(?) at the
 very end of the section data(section\_endoffset-{size of BKTR

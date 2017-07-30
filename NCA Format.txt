@@ -137,6 +137,10 @@ Media offset is absoluteoffset/{mediasize}, where mediasize is hard-coded to 0x2
 | 0x8
 | 
 | FS-specific superblock.
+|-
+| 0x100
+| ?
+| Optional BKTR header. Can be used with any section, but only known to be used with game-updates RomFS.
 |}
 
 The Section Header Block for each section is at absoluteoffset+0x400+(sectionid*0x200), where sectionid corresponds to the index used with the entry/hash tables.
@@ -203,10 +207,6 @@ This documents the structure of Section Header Block +0 for PFS0.
 | 0x8
 | 0xE0
 | IVFC header. Basically the same as [[Savegames]] IVFC except with 2 more levels and +0x0C is non-zero, see below.
-|-
-| 0x100
-| ?
-| BKTR header for game-updates.
 |}
 
 This documents the structure of Section Header Block +0 for RomFS.
@@ -339,7 +339,7 @@ This documents the structure of Section Header Block +0 for RomFS.
 | Hash
 |}
 
-=== BKTR ===
+== BKTR ==
 {| class="wikitable"
 |-
 ! Start
@@ -352,7 +352,7 @@ This documents the structure of Section Header Block +0 for RomFS.
 |-
 |-
 | 0x8
-| 0x8?
+| 0x8
 | Size
 |-
 | 0x10
@@ -383,6 +383,8 @@ This documents the structure of Section Header Block +0 for RomFS.
 | 0x4?
 | ?
 |}
+
+Using this header is enabled when offset 0x8 in this header is non-zero.
 
 The two sections specified by the two BKTR entries are usually(?) at the very end of the section data(section_endoffset-{size of BKTR sections}).
 
