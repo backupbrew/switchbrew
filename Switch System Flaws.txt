@@ -22,7 +22,9 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 |}
 
 == System software ==
-=== Kernel ===
+
+
+=== Stage 1 Bootloader ===
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -34,16 +36,19 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 !  Public disclosure timeframe
 !  Discovered by
 |-
-|  No public Kernel exploits 
-|
-|
-|
-|
-|
-|
-|
+|  Null-dereference in panic()
+|  The Switch's stage 1 bootloader, on panic(), clears the stack and then attempts to clear the Security Engine. However, it does so by dereferencing a pointer to the SE in .bss (initially NULL), and this pointer doesn't get initialized until partway into the bootloader's main(). Thus, a panic() caused prior to SE initialization would result in the SE pointer still being NULL when dereferenced. This would cause a data abort, causing the bootloader to clear the stack and then try to clear the security engine...dereferencing NULL again, over and over in a loop.
+
+In 3.0.0, this was fixed by moving the security engine initialization earlier in main(), before the first function that could potentially panic().
+|  Infinite clear-the-stack-then-data-abort loop very early in boot, before SBK/other keyslots are cleared. Probably useless for anything more interesting.
+|  [[3.0.0]]
+|  [[3.0.0]]
+|  Early July, 2017
+|  July 30, 2017
+|  Everyone who diff'd 2.3.0 and 3.0.0 Package1
 |-
 |}
+
 
 === TrustZone ===
 {| class="wikitable" border="1"
@@ -67,6 +72,30 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 |
 |-
 |}
+
+=== Kernel ===
+{| class="wikitable" border="1"
+|-
+!  Summary
+!  Description
+!  Successful exploitation result
+!  Fixed in system version
+!  Last system version this flaw was checked for
+!  Timeframe this was discovered
+!  Public disclosure timeframe
+!  Discovered by
+|-
+|  No public Kernel exploits 
+|
+|
+|
+|
+|
+|
+|
+|-
+|}
+
 
 === System Modules ===
 {| class="wikitable" border="1"

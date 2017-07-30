@@ -13,12 +13,45 @@ Flaws.
 
 ## System software
 
-### Kernel
+### Stage 1 Bootloader
 
-| Summary                   | Description | Successful exploitation result | Fixed in system version | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by |
-| ------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
-| No public Kernel exploits |             |                                |                         |                                               |                               |                             |               |
-|                           |             |                                |                         |                                               |                               |                             |               |
+<table>
+<thead>
+<tr class="header">
+<th><p>Summary</p></th>
+<th><p>Description</p></th>
+<th><p>Successful exploitation result</p></th>
+<th><p>Fixed in system version</p></th>
+<th><p>Last system version this flaw was checked for</p></th>
+<th><p>Timeframe this was discovered</p></th>
+<th><p>Public disclosure timeframe</p></th>
+<th><p>Discovered by</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Null-dereference in panic()</p></td>
+<td><p>The Switch's stage 1 bootloader, on panic(), clears the stack and then attempts to clear the Security Engine. However, it does so by dereferencing a pointer to the SE in .bss (initially NULL), and this pointer doesn't get initialized until partway into the bootloader's main(). Thus, a panic() caused prior to SE initialization would result in the SE pointer still being NULL when dereferenced. This would cause a data abort, causing the bootloader to clear the stack and then try to clear the security engine...dereferencing NULL again, over and over in a loop.</p>
+<p>In 3.0.0, this was fixed by moving the security engine initialization earlier in main(), before the first function that could potentially panic().</p></td>
+<td><p>Infinite clear-the-stack-then-data-abort loop very early in boot, before SBK/other keyslots are cleared. Probably useless for anything more interesting.</p></td>
+<td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
+<td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
+<td><p>Early July, 2017</p></td>
+<td><p>July 30, 2017</p></td>
+<td><p>Everyone who diff'd 2.3.0 and 3.0.0 Package1</p></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ### TrustZone
 
@@ -26,6 +59,13 @@ Flaws.
 | -------------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
 | No public ARM TrustZone exploits |             |                                |                         |                                               |                               |                             |               |
 |                                  |             |                                |                         |                                               |                               |                             |               |
+
+### Kernel
+
+| Summary                   | Description | Successful exploitation result | Fixed in system version | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by |
+| ------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
+| No public Kernel exploits |             |                                |                         |                                               |                               |                             |               |
+|                           |             |                                |                         |                                               |                               |                             |               |
 
 ### System Modules
 
