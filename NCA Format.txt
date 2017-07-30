@@ -361,10 +361,14 @@ This documents the structure of Section Header Block +0 for RomFS.
 |-
 | 0x14
 | 0x4?
-| Value 0x1?
+| u32, must be <=1.
 |-
 | 0x18
-| 0x8?
+| 0x4
+| s32, must be >=1.
+|-
+| 0x1C
+| 0x4
 | ?
 |-
 | 0x20
