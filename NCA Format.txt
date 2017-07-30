@@ -347,7 +347,7 @@ This documents the structure of Section Header Block +0 for RomFS.
 ! Description
 |-
 | 0x0
-| 0x8?
+| 0x8
 | Offset
 |-
 |-
@@ -385,6 +385,8 @@ This documents the structure of Section Header Block +0 for RomFS.
 |}
 
 Using this header is enabled when offset 0x8 in this header is non-zero.
+
+The above byte-offsets are relative to the start of the section-data.
 
 The two sections specified by the two BKTR entries are usually(?) at the very end of the section data(section_endoffset-{size of BKTR sections}).
 

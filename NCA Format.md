@@ -140,7 +140,7 @@ RomFS.
 
 | Start | Length | Description                                              |
 | ----- | ------ | -------------------------------------------------------- |
-| 0x0   | 0x8?   | Offset                                                   |
+| 0x0   | 0x8    | Offset                                                   |
 |       |        |                                                          |
 | 0x8   | 0x8    | Size                                                     |
 | 0x10  | 0x4    | "BKTR"                                                   |
@@ -152,6 +152,8 @@ RomFS.
 | 0x44  | 0x4?   | ?                                                        |
 
 Using this header is enabled when offset 0x8 in this header is non-zero.
+
+The above byte-offsets are relative to the start of the section-data.
 
 The two sections specified by the two BKTR entries are usually(?) at the
 very end of the section data(section\_endoffset-{size of BKTR
