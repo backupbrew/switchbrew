@@ -16,6 +16,8 @@ used for. Only HTTPS is used with these domains unless noted otherwise.
     Same result as dauth when blocked.
   - "consumer.lp1.npns.srv.nintendo.net": Same result as dauth when
     blocked.
+  - "e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com": Used to handle
+    account metadata. (friends, profile, etc)
   - "api.accounts.nintendo.com": Appears to be used by Nintendo apps to
     get metadata for Switch user profiles.
   - "api-lp1.znc.srv.nintendo.net": Used by the Switch Online app to get
