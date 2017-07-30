@@ -140,15 +140,19 @@ RomFS.
 
 | Start | Length | Description                                              |
 | ----- | ------ | -------------------------------------------------------- |
-| 0x0   | 0x8?   | Offset?                                                  |
+| 0x0   | 0x8?   | Offset                                                   |
 |       |        |                                                          |
-| 0x8   | 0x8?   | Size?                                                    |
+| 0x8   | 0x8?   | Size                                                     |
 | 0x10  | 0x4    | "BKTR"                                                   |
 | 0x14  | 0x4?   | Value 0x1?                                               |
 | 0x18  | 0x8?   | ?                                                        |
-| 0x20  | 0x20   | Same as the above 0x20-bytes except with different data? |
+| 0x20  | 0x20   | Same as the above 0x20-bytes except with different data. |
 | 0x40  | 0x4?   | ?                                                        |
 | 0x44  | 0x4?   | ?                                                        |
+
+The two sections specified by the two BKTR entries are usually(?) at the
+very end of the section data(section\_endoffset-{size of BKTR
+sections}).
 
 # Logo section
 
