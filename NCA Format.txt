@@ -203,6 +203,10 @@ This documents the structure of Section Header Block +0 for PFS0.
 | 0x8
 | 0xE0
 | IVFC header. Basically the same as [[Savegames]] IVFC except with 2 more levels and +0x0C is non-zero, see below.
+|-
+| 0x100
+| ?
+| BKTR header for game-updates.
 |}
 
 This documents the structure of Section Header Block +0 for RomFS.
@@ -333,6 +337,47 @@ This documents the structure of Section Header Block +0 for RomFS.
 | 0xC0
 | 32
 | Hash
+|}
+
+=== BKTR ===
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0x0
+| 0x8?
+| Offset?
+|-
+|-
+| 0x8
+| 0x8?
+| ?
+|-
+| 0x10
+| 0x4
+| "BKTR"
+|-
+| 0x14
+| 0x4?
+| Value 0x1?
+|-
+| 0x18
+| 0x8?
+| ?
+|-
+| 0x20
+| 0x20
+| Same as the above 0x20-bytes except with different data?
+|-
+| 0x40
+| 0x4?
+| ?
+|-
+| 0x44
+| 0x4?
+| ?
 |}
 
 =Logo section=
