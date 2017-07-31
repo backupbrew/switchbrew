@@ -110,3 +110,7 @@ The following response is json from accessing the above aqua URL:
 
 `{` `"contents_delivery_required_title_id": "0100000000000816",`
 `"contents_delivery_required_title_version": 0` `}`
+
+A while after [3.0.0](3.0.0.md "wikilink") release, the above
+title-version was changed to the one for v3.0("Last-Modified: Thu, 29
+Jun 2017 00:00:04 GMT").
