@@ -53,11 +53,14 @@
 | 0100000000000037 | [v201327002](3.0.0.md "wikilink") (12.0.1.154)                                                                                                                                                                         | ro                                      |
 | 0100000000000039 | [v201327002](3.0.0.md "wikilink") (12.0.1.154)                                                                                                                                                                         | sdb                                     |
 
-The built-in system modules are FS, LOADER, LR, PM, SM, and CRYPTO.
+The built-in system modules are {see above 7 modules}.
 
 Note: unlike 3DS, Switch doesn't have a dedicated HTTP-sysmodule.
-Instead, processes using HTTP(S) just use libcurl + socket/ssl
-services.
+Instead, processes using HTTP(S) just use libcurl + socket/ssl services.
+
+As of [2.0.0](2.0.0.md "wikilink"), the only sysmodule with a RomFS is
+"hid", which only contains:
+"ftmFwUpdate/NTD\_4CD\_1801.fts256".
 
 ## System Debug Applets
 
