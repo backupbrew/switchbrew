@@ -10,7 +10,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 
 ==System Titles==
 Exactly the following was updated:
-* Every sysmodule.
+* Every sysmodule, probably only re-encrypted using new key material.
 * Every web-applet.
 * Sysupdate titlelisting-title, browser "shareddata:/", [[System Version Title]], and all FIRM packages.
 
