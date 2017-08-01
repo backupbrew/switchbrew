@@ -53,28 +53,10 @@ the exception vectors to point at the panic function. It then clears the
   - The stack is pivoted to a secondary stack, the main stack and the
     key area are cleared, and stage 1 jumps to stage 2's entrypoint.
 
-#### Fuse coherency
-
-Unit type is computed from data from a fuse. It must be either 0
-(non-retail) or 1 (retail). If it's neither, 2 will be returned by the
-function, and the check will call panic.
-
 #### Downgrade check
 
-The bootloader verifies a lockdown fuse counter to prevent downgrading.
-A 32-bit lockdown value at fuse offset 0x1E4 is checked. If too many
-fuses are burned the bootloader will panic. If too few are burned, the
-bootloader will program the expected number of bits and force a reset.
-The expected lockdown value differs between unit type 0 (non-retail) and
-unit type 1
-(retail).
-
-| System version | Expected number of burnt fuses (retail) | Expected number of burnt fuses (non-retail) |
-| -------------- | --------------------------------------- | ------------------------------------------- |
-| 1.0.0          | 1                                       | 0                                           |
-| 2.0.0-2.3.0    | 2                                       | 0                                           |
-| 3.0.0          | 3                                       | 1                                           |
-| 3.0.1          | 4                                       | 1                                           |
+See
+[Anti-downgrade](Fuses#Anti-downgrade.md##Anti-downgrade "wikilink").
 
 #### Panic
 
