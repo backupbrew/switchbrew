@@ -9,7 +9,15 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * If the system's battery power display suddenly increases or decreases, it will gradually improve by following these steps.
 
 ==System Titles==
-<fill this in (manually) later>
+Exactly the following was updated:
+* Every sysmodule.
+* Every web-applet.
+* Sysupdate titlelisting-title, browser "shareddata:/", [[System Version Title]], and all FIRM packages.
+
+===FIRM packages===
+819:
+
+Everything under RomFS was updated.
 
 ==Internet Browser==
 All webapplets were updated, vulnerabilities were fixed. 803/buildinfo/buildinfo.dat contains the following:
