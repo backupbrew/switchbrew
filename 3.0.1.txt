@@ -11,6 +11,15 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+==Internet Browser==
+All webapplets were updated, vulnerabilities were fixed. 803/buildinfo/buildinfo.dat contains the following:
+  r:14938
+  p:NX64
+  v:Release
+  d:2017-07-11 17:51
+  n:0.6.10
+
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=07-31-17_08-05-16&sys=hac]
