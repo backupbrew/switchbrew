@@ -1,0 +1,15 @@
+The WiiU+Switch 3.0.1 system update was released on July 31, 2017. This WiiU update was released for the following regions: USA, EUR, and JPN. This Switch update was released for the following regions: ALL.
+
+Security flaws fixed: <fill this in manually later, see the updatedetails page from the ninupdates-report page(s) once available for now>.
+
+==Change-log==
+[http://en-americas-support.nintendo.com/app/answers/detail/a_id/1436/p/431/c/267 Official] USA change-log:
+* N/A, see the official page for the actual changelog.
+
+==System Titles==
+<fill this in (manually) later>
+
+==See Also==
+System update report(s):
+* [https://yls8.mtheall.com/ninupdates/reports.php?date=05-20-13_08-58-07&sys=wup]
+* [https://yls8.mtheall.com/ninupdates/reports.php?date=07-31-17_08-05-16&sys=hac]
