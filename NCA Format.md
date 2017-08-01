@@ -25,6 +25,7 @@ keydata.
 | 0x208  | 0x8             | Size of the entire NCA.                                                                                                                   |
 | 0x210  | 0x8             | titleID                                                                                                                                   |
 | 0x21C  | 0x4             | Version value? Compared with a required minimum-value.                                                                                    |
+| 0x220  | ?               | Crypto-Type2. 0x3 = Unknown added with [3.0.1](3.0.1.md "wikilink").                                                                      |
 | 0x230  | 0x10            | Rights ID ([Ticket](Ticket.md "wikilink"))                                                                                                |
 | 0x240  | 0x10\*0x4(0x40) | Table for each section, see below.                                                                                                        |
 | 0x280  | 0x20\*0x4(0x80) | Table of SHA256 hashes, over each 0x200-byte Section Header Block.                                                                        |
@@ -37,6 +38,10 @@ When the above "Crypto Type" field is 0x2(?) on \>=v3.0, different
 this is used with every ncatype except ncatype0. The only other
 exception is {data-content} for the firm titles: this is required in
 order for older-system-versions to install it.
+
+Crypto-Type2 0x3 is used for all [3.0.1](3.0.1.md "wikilink") sysmodules
+and the
+[System\_Version\_Title](System%20Version%20Title.md "wikilink").
 
 ## Section Table Entry
 
