@@ -35,3 +35,5 @@ New keydata was introduced for NCA content, see [[NCA_Format|here]].
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=07-31-17_08-05-16&sys=hac]
+
+{{NavboxVersions}}
