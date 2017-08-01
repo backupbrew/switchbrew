@@ -58,8 +58,9 @@ uses this to inject the appropriate keyblob on system update.
 [Boot](Boot.md "wikilink") also uses this index for repairing corrupt
 sectors.
 
-With \[ [3.0.0](3.0.0.md "wikilink") + \] index 2 is used instead of
-index 1.
+With \[ [3.0.0](3.0.0.md "wikilink") \] index 2 is used instead of index
+1. With \[ [3.0.1](3.0.1.md "wikilink") + \] index 3 is used instead of
+index 2.
 
 The Tegra 210 BCT format can be found in nvidia's cbootimage
 [1](https://github.com/thierryreding/tegra-avp/blob/35f467996e532357db54894c975acab93293d219/include/avp/tegra210/bct.h#L521)
