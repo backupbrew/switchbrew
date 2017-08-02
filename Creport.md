@@ -8,7 +8,7 @@ the cloud server by [Eupld services](Eupld%20services.md "wikilink").
 
 \[2.1.0+\]: An additional input argument string is now used. Only the
 first byte is used: `inarg_flag = u8 inarg[1][0];` This is compared with
-'1' only with the below titleID code, and near the end of main().
+'1' only with the below titleID code, and near the end of nnMain().
 
 ## Crash dumping
 
@@ -135,3 +135,13 @@ fatal-err depending on exception type
   - 6 -\> No fatal-err
   - 8 -\> 0x10A8
   - Default: 0x4A2
+
+## [2.1.0](2.1.0.md "wikilink")
+
+Exactly the following code was changed:
+
+  - nnMain(): Updated.
+  - L\_1ee0(prev ver L\_1c90): Updated.
+  - L\_ad34: New func, svcQueryDebugProcessMemory.
+  - L\_e290: New func. "L\_12cf0(<inparams>); return inx0;"
+  - L\_12cf0: New func. Only called by L\_e290.

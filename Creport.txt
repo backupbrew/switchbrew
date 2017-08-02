@@ -2,7 +2,7 @@ This process is launched by [[NS Services|NS]] when [[Process Manager services|P
 
 Creport takes a string containing a pid formatted in base10 as input, and generates an error report. This error report can later be sent to the cloud server by [[Eupld services]].
 
-[2.1.0+]: An additional input argument string is now used. Only the first byte is used: <code>inarg_flag = u8 inarg[1][0];</code> This is compared with '1' only with the below titleID code, and near the end of main().
+[2.1.0+]: An additional input argument string is now used. Only the first byte is used: <code>inarg_flag = u8 inarg[1][0];</code> This is compared with '1' only with the below titleID code, and near the end of nnMain().
 
 == Crash dumping ==
 It uses the [[SVC|svcDebugActiveProcess]] to start a debug-session for the pid. It loops [[SVC|svcGetDebugEvent]] to fetch all debug events.
@@ -95,3 +95,12 @@ It uses "ns:dev" to terminate the pid, and then it throws the following fatal-er
 * 6 -> No fatal-err
 * 8 -> 0x10A8
 * Default: 0x4A2
+
+== [[2.1.0]] ==
+Exactly the following code was changed:
+
+* nnMain(): Updated.
+* L_1ee0(prev ver L_1c90): Updated.
+* L_ad34: New func, svcQueryDebugProcessMemory.
+* L_e290: New func. "L_12cf0(<inparams>); return inx0;"
+* L_12cf0: New func. Only called by L_e290.
