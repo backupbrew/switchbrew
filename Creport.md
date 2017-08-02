@@ -145,3 +145,23 @@ Exactly the following code was changed:
   - L\_ad34: New func, svcQueryDebugProcessMemory.
   - L\_e290: New func. "L\_12cf0(<inparams>); return inx0;"
   - L\_12cf0: New func. Only called by L\_e290.
+
+nnMain:
+
+  - Two input arguments are now used+required, see above.
+  - ...
+  - TID handling block was updated, see above.
+  - The check for <is_blacklisted> was changed from
+    "if(val\<=0)<branch>" to "if(val\<1)<branch>".
+  - The code block at the very end of this func was updated.
+      - Prev code: `if(`<loadedval>` != 1)return;` New code:
+        `if(`<loadedval>`
+        != 1)`<jump over the two following func calls which are the same as prev ver>
+      - Following the two funcs mentioned above, prev code:
+        `if(`<loadedval>` == 1 && (u8 *(ptr+1) & 1) == 0)`<call func>`;
+        return;` New code: `if(inarg_flag != '1' && (u8 *(ptr+1) & 1)
+        == 0 && ((u8 *(ptr+0) ^ 0x1) & 0x1) == 0)`<call func>`; return;`
+      - <call func> here is throw\_fatalerr(ptr+4). The above second
+        block basically changed the conditions required for throwing
+        fatal-error. For example, fatal-error is no longer thrown when
+        applications(?) crash.
