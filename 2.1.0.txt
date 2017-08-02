@@ -24,7 +24,7 @@ Exactly the following [[Title_list|titles]] were updated:
 ** pctl
 ** eupld
 ** fatal
-** creport
+** creport (See [[Creport|here]] for changes)
 * The only updated 01000000000008XX titles are: [[Internet_Browser|shareddata]], 0100000000000816, FIRM-packages(see below), and [[System_Version_Title]].
 * The only updated 01000000000010XX titles are: "System applet", 0100000000001008, 010000000000100A, [[Internet_Browser|ShopN]], 010000000000100F, [[Internet_Browser|Whitelisted-applet]], and [[Internet_Browser|WifiWebAuthApplet]].
 
