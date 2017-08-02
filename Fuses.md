@@ -137,7 +137,7 @@ anti-downgrade control.
 
 ## Anti-downgrade
 
-The fisrt bootloader verifies
+The first bootloader verifies
 [FUSE\_BURNT\_FUSE\_COUNT\_1](#FUSE_BURNT_FUSE_COUNT_1 "wikilink") to
 prevent downgrading. How many fuses are expected to be burnt depends the
 device's unit type as

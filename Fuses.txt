@@ -218,7 +218,7 @@ The first bootloader only burns fuses in this region.
 Both fuse offsets 0x3A (odm_reserved + 0x0C) and 0x3C (odm_reserved + 0x0E) are used for anti-downgrade control.
 
 == Anti-downgrade ==
-The fisrt bootloader verifies [[#FUSE_BURNT_FUSE_COUNT_1|FUSE_BURNT_FUSE_COUNT_1]] to prevent downgrading.
+The first bootloader verifies [[#FUSE_BURNT_FUSE_COUNT_1|FUSE_BURNT_FUSE_COUNT_1]] to prevent downgrading.
 How many fuses are expected to be burnt depends the device's unit type as below.
 
 {| class="wikitable" border="1"
