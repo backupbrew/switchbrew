@@ -6,6 +6,9 @@ Creport takes a string containing a pid formatted in base10 as input,
 and generates an error report. This error report can later be sent to
 the cloud server by [Eupld services](Eupld%20services.md "wikilink").
 
+\[2.1.0+\]: An additional input argument string is now used. Only the
+first byte is used: `inarg_flag = u8 inarg[1][0];`
+
 ## Crash dumping
 
 It uses the [svcDebugActiveProcess](SVC.md "wikilink") to start a
@@ -53,8 +56,8 @@ constructs an error report:
   - Field115 "ProgramId": (String) Title-id snprintf'ed as "%08llx".
   - Field116 "AbortFlag": (Bool) 0.
 
-It does \*not\* add the event buffer to the report if title-id is any of
-the following(swkbd and all
+It does \*not\* add the event buffer to the report(blacklisted) if
+title-id is any of the following(swkbd and all
 [web-applets](Internet%20Browser.md "wikilink") except offline-applet):
 
   - 0100000000001008
@@ -62,6 +65,45 @@ the following(swkbd and all
   - 010000000000100B
   - 0100000000001010
   - 0100000000001011
+
+\[2.1.0+\]:
+
+  - If the TID is not one of the above, it then checks if the TID
+    matches the creport-sysmodule. If so, it's flagged as blacklisted
+    like the above.
+  - Then, if inarg\_flag(see above) is set to '1', the following
+    titleIDs are checked. When set to '1', and the titleID matches one
+    of the checked tittleIDs, it will continue as normal. Otherwise,
+    it's handled as if it's blacklisted. Hence, end-result is that the
+    checked TIDs are handled the same way as past system-versions, while
+    non-checked TIDs are
+blacklisted.
+
+` if(tid > 0x0100704000B39FFF)`  
+` {`  
+`     if(tid <= 0x01009b500007BFFF)`  
+`     {`  
+`         if(tid == 0x0100704000B3A000)`<continue as normal>`;//"Snipperclips" (Game)`  
+`         if(tid == 0x01007EF00011E000)`<continue as normal>`;//"The Legend of Zelda: Breath of the Wild"`  
+`     }`  
+`     else`  
+`     {`  
+`         if(tid == 0x01009B500007C000)`<continue as normal>`;//"ARMS"`  
+`         if(tid == 0x0100D87002EE0000)`<continue as normal>`;//"Snipperclips - Cut it out, together!"`  
+`         if(tid == 0x0100F8F0000A2000)`<continue as normal>`;//"Splatoon 2" (EUR)`  
+`     }`  
+` }`  
+` else if(tid <= 0x0100152000021FFF)`  
+` {`  
+`     if(tid == 0x010000A00218E000)`<continue as normal>`;//"Splatoon 2 Global Testfire"`  
+`     if(tid == 0x01000320000CC000)`<continue as normal>`;//"1-2 Switch"`  
+` }`  
+` else`  
+` {`  
+`     if(tid == 0x0100152000022000)`<continue as normal>`;//"Mario Kart 8 Deluxe"`  
+`     if(tid == 0x01003BC0000A0000)`<continue as normal>`;//"Splatoon 2" (USA)`  
+`     if(tid == 0x01003C700009C000)`<continue as normal>`;//"Splatoon 2" (JPN)`  
+` }`
 
 This is probably because of privacy concerns (software keyboard +
 browser could contain passwords and personal info).
