@@ -87,7 +87,7 @@ Thus you need the private key to decrypt the crash dump.
 
 Finally, the error report is sent to "erpt:c" cmd1.
 
-It uses "ns:dev" to terminate the pid, and then it throws the following fatal-err depending on exception type
+It uses "ns:dev" to terminate the pid. If certain checks pass, then it throws the following fatal-err depending on exception type:
 * 0 -> 0xA8
 * 1 -> 0x2A8
 * 2 -> 0x4A8,
