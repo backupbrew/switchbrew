@@ -7,7 +7,8 @@ and generates an error report. This error report can later be sent to
 the cloud server by [Eupld services](Eupld%20services.md "wikilink").
 
 \[2.1.0+\]: An additional input argument string is now used. Only the
-first byte is used: `inarg_flag = u8 inarg[1][0];`
+first byte is used: `inarg_flag = u8 inarg[1][0];` This is compared with
+'1' only with the below titleID code, and near the end of main().
 
 ## Crash dumping
 
