@@ -127,6 +127,7 @@ The ASLR'd codebin base(rtld+0) for the below addrs is 0x6f0c00000. For "prev ve
   
   L_6f0c60d60
   updated, prev ver @ L_5381860a78.
+  Updated for the additional argument passed to [[creport]].
   Code was updated starting at 0x6f0c61190(prev 0x5381860ea8). An additional param is passed to the snprintf call as well.
   Some code was added at the end before the last branch.
   
