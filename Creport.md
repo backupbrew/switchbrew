@@ -125,7 +125,9 @@ Exactly the following code was changed:
 nnMain:
 
   - Two input arguments are now used+required, see above.
-  - ...
+  - During init near the start of this func, u64 val0 is now written to
+    x24+32.
+  - A lot of new code was added.
   - TID handling block was updated, see above.
   - The check for <is_blacklisted> was changed from
     "if(val\<=0)<branch>" to "if(val\<1)<branch>".
