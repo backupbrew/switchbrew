@@ -42,35 +42,18 @@ It does *not* add the event buffer to the report(blacklisted) if title-id is any
 * 0100000000001010
 * 0100000000001011
 
-[2.1.0+]:
-* If the TID is not one of the above, it then checks if the TID matches the creport-sysmodule. If so, it's flagged as blacklisted like the above.
-* Then, if inarg_flag(see above) is set to '1', the following titleIDs are checked. When set to '1', and the titleID matches one of the checked tittleIDs, it will continue as normal. Otherwise, it's handled as if it's blacklisted. Hence, end-result is that the checked TIDs are handled the same way as past system-versions, while non-checked TIDs are blacklisted.
+[2.1.0+] It also blacklists the creport-sysmodule title-id. Then, if inarg_flag(see above) is set to '1', all title-ids are blacklisted except for the following whitelist:
 
-  if(tid > 0x0100704000B39FFF)
-  {
-      if(tid <= 0x01009b500007BFFF)
-      {
-          if(tid == 0x0100704000B3A000)<continue as normal>;//"Snipperclips" (Game)
-          if(tid == 0x01007EF00011E000)<continue as normal>;//"The Legend of Zelda: Breath of the Wild"
-      }
-      else
-      {
-          if(tid == 0x01009B500007C000)<continue as normal>;//"ARMS"
-          if(tid == 0x0100D87002EE0000)<continue as normal>;//"Snipperclips - Cut it out, together!"
-          if(tid == 0x0100F8F0000A2000)<continue as normal>;//"Splatoon 2" (EUR)
-      }
-  }
-  else if(tid <= 0x0100152000021FFF)
-  {
-      if(tid == 0x010000A00218E000)<continue as normal>;//"Splatoon 2 Global Testfire"
-      if(tid == 0x01000320000CC000)<continue as normal>;//"1-2 Switch"
-  }
-  else
-  {
-      if(tid == 0x0100152000022000)<continue as normal>;//"Mario Kart 8 Deluxe"
-      if(tid == 0x01003BC0000A0000)<continue as normal>;//"Splatoon 2" (USA)
-      if(tid == 0x01003C700009C000)<continue as normal>;//"Splatoon 2" (JPN)
-  }
+* 0x0100704000B3A000 "Snipperclips" (Game)
+* 0x01007EF00011E000 "The Legend of Zelda: Breath of the Wild"
+* 0x01009B500007C000 "ARMS"
+* 0x0100D87002EE0000 "Snipperclips - Cut it out, together!"
+* 0x0100F8F0000A2000 "Splatoon 2" (EUR)
+* 0x010000A00218E000 "Splatoon 2 Global Testfire"
+* 0x01000320000CC000 "1-2 Switch"
+* 0x0100152000022000 "Mario Kart 8 Deluxe"
+* 0x01003BC0000A0000 "Splatoon 2" (USA)
+* 0x01003C700009C000 "Splatoon 2" (JPN)
 
 This is probably because of privacy concerns (software keyboard + browser could contain passwords and personal info).
 
