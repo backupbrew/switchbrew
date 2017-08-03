@@ -52,9 +52,9 @@ bus, and the bus will be 'floating'. Due to the pull-ups on the bus, it
 will slowly converge to logic HIGH state. The Switch will clock 2 cycles
 to allow the bus to settle a direction change. The Switch host will then
 clock 2 more cycles and if the game cartridge didn't receive the CRC OK,
-it will respond with "00 01". Otherwise it will respond with "00 00".
-After this the Switch will keep clocking and the cartridge will respond
-with a busy signal by pulling DAT0 low.
+it will respond with "00 01". Otherwise it will respond with "00 00" and
+pull DAT0 low on the next cycle to signal it is busy. The Switch host
+will keep clocking until the cartridge is ready.
 
 When the game cartridge is ready to send the actual data response, it
 will pull the DAT0 pin high for 2 cycles to let the Switch host know.
