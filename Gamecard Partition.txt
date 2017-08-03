@@ -3,10 +3,7 @@ This page documents the partitions that can mounted by [[Filesystem_services#Mou
 The below sections are for each partitionID.
 
 =0=
-Contains the gamecard sysupdate. Attempting to mount this results in error 0x13DA02.
+Contains the gamecard sysupdate, see [[Gamecard_Format|here]]. Attempting to mount this results in error 0x13DA02.
 
 =2=
-Contains the game [[NCA]]s.
-
-* "<NcaId>.nca" The usual raw NCAs.
-* "<NcaId>.cnmt.nca" Encrypted [[NCA]]-type0 content.
+See [[Gamecard_Format|here]].
