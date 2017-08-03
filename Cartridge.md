@@ -51,17 +51,17 @@ over the command bytes. After this, the Switch stops driving the data
 bus, and the bus will be 'floating'. Due to the pull-ups on the bus, it
 will slowly converge to logic HIGH state. The Switch will clock 2 cycles
 to allow the bus to settle a direction change. The Switch host will then
-clock 2 more cycles and if the game cartridge didn't receive the CRC OK,
-it will respond with "00 01". Otherwise it will respond with "00 00" and
-pull DAT0 low on the next cycle to signal it is busy. The Switch host
-will keep clocking until the cartridge is ready.
+clock another cycle and if the game cartridge didn't receive the CRC OK,
+it will respond with "01". Otherwise it will respond with "00" and pull
+DAT0 low on the next cycle to signal it is busy. The Switch host will
+then keep clocking until the cartridge is ready.
 
 When the game cartridge is ready to send the actual data response, it
 will pull the DAT0 pin high for 2 cycles to let the Switch host know.
-After this, the game cartridge will send the actual response bytes.
+After this, the game cartridge will send the actual data response bytes.
 
 The actual response bytes are also followed immediately by a 4-byte
-CRC-32 over the actual response bytes.
+CRC-32 over the actual data response bytes.
 
 ## Commands
 
