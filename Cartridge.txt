@@ -126,51 +126,67 @@ A typical boot up sequence of a game cartridge looks like this:
 
 {| class="wikitable"
 ! Command
+! Size
 ! Description
 |-
 | <code>5B000000000000010000000000000000</code>
+| 0x200
 | Read sector 0, contains "HEAD" blob
 |- 
 | <code>5B000000000000010000000000000000</code>
+| 0x200
 | Read sector 0, contains "HEAD" blob
 |- 
 | <code>56000000000000000000000000000000</code>
+| 0x4
 | Read card id "AE F8 01 21"
 |- 
 | <code>28000000000000000000000000000000</code>
+| 0x4
 | Read ??? "02 00 00 00"
 |- 
 | <code>A5000000000000000000000000000000</code>
+| 0x4
 | Read ??? "00 00 00 00"
 |- 
 | <code>56000000000000000000000000000000</code>
+| 0x4
 | Read card id "AE F8 01 21"
 |- 
 | <code>28000000000000000000000000000000</code>
+| 0x4
 | Read ??? "02 00 00 00"
 |- 
 | <code>5B000000380000010000000000000000</code>
+| 0x200
 | Read sector 0x38, contains "CERT" blob
 |- 
 | <code>E2000000000000000000000000000000</code>
+| 0x4
 | Read ??? "01 00 00 00"
 |- 
 | <code>E0000000000000000000000000000000</code>
+| 0x200
 | Read crypto-challenge header
 |- 
 | <code>200838A25A344F818ABB6456694D4E8D</code>
+| 0
 | Enter crypto mode with seed "0838A25A344F818ABB6456694D4E8D"
 |- 
 | <code>7EE41FDF12C01C157CC899910673A0CF</code>
-| Encrypted command
+| 0x40
+| Encrypted command, possibly read UID?
 |- 
 | <code>263C8230EC15FAE3CE79365BD850F4BD</code>
+| 0x0
 | Encrypted command
 |- 
 | <code>B6FDA6F37FFA29E18831D0B217DFBDBE</code>
-| Encrypted command
+| 0x4
+| Encrypted command, possibly read card id?
 |- 
 | <code>7B97F7DF07240AA9870E1C974336FA8A</code>
+| 0x4
 | Encrypted command
 |- 
 |}

@@ -66,24 +66,24 @@ CRC-32 over the actual response bytes.
 A typical boot up sequence of a game cartridge looks like
 this:
 
-| Command                            | Description                                                  |
-| ---------------------------------- | ------------------------------------------------------------ |
-| `5B000000000000010000000000000000` | Read sector 0, contains "HEAD" blob                          |
-| `5B000000000000010000000000000000` | Read sector 0, contains "HEAD" blob                          |
-| `56000000000000000000000000000000` | Read card id "AE F8 01 21"                                   |
-| `28000000000000000000000000000000` | Read ??? "02 00 00 00"                                       |
-| `A5000000000000000000000000000000` | Read ??? "00 00 00 00"                                       |
-| `56000000000000000000000000000000` | Read card id "AE F8 01 21"                                   |
-| `28000000000000000000000000000000` | Read ??? "02 00 00 00"                                       |
-| `5B000000380000010000000000000000` | Read sector 0x38, contains "CERT" blob                       |
-| `E2000000000000000000000000000000` | Read ??? "01 00 00 00"                                       |
-| `E0000000000000000000000000000000` | Read crypto-challenge header                                 |
-| `200838A25A344F818ABB6456694D4E8D` | Enter crypto mode with seed "0838A25A344F818ABB6456694D4E8D" |
-| `7EE41FDF12C01C157CC899910673A0CF` | Encrypted command                                            |
-| `263C8230EC15FAE3CE79365BD850F4BD` | Encrypted command                                            |
-| `B6FDA6F37FFA29E18831D0B217DFBDBE` | Encrypted command                                            |
-| `7B97F7DF07240AA9870E1C974336FA8A` | Encrypted command                                            |
-|                                    |                                                              |
+| Command                            | Size  | Description                                                  |
+| ---------------------------------- | ----- | ------------------------------------------------------------ |
+| `5B000000000000010000000000000000` | 0x200 | Read sector 0, contains "HEAD" blob                          |
+| `5B000000000000010000000000000000` | 0x200 | Read sector 0, contains "HEAD" blob                          |
+| `56000000000000000000000000000000` | 0x4   | Read card id "AE F8 01 21"                                   |
+| `28000000000000000000000000000000` | 0x4   | Read ??? "02 00 00 00"                                       |
+| `A5000000000000000000000000000000` | 0x4   | Read ??? "00 00 00 00"                                       |
+| `56000000000000000000000000000000` | 0x4   | Read card id "AE F8 01 21"                                   |
+| `28000000000000000000000000000000` | 0x4   | Read ??? "02 00 00 00"                                       |
+| `5B000000380000010000000000000000` | 0x200 | Read sector 0x38, contains "CERT" blob                       |
+| `E2000000000000000000000000000000` | 0x4   | Read ??? "01 00 00 00"                                       |
+| `E0000000000000000000000000000000` | 0x200 | Read crypto-challenge header                                 |
+| `200838A25A344F818ABB6456694D4E8D` | 0     | Enter crypto mode with seed "0838A25A344F818ABB6456694D4E8D" |
+| `7EE41FDF12C01C157CC899910673A0CF` | 0x40  | Encrypted command, possibly read UID?                        |
+| `263C8230EC15FAE3CE79365BD850F4BD` | 0x0   | Encrypted command                                            |
+| `B6FDA6F37FFA29E18831D0B217DFBDBE` | 0x4   | Encrypted command, possibly read card id?                    |
+| `7B97F7DF07240AA9870E1C974336FA8A` | 0x4   | Encrypted command                                            |
+|                                    |       |                                                              |
 
 The meaning of some these commands are currently unknown.
 
