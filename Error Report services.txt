@@ -7,23 +7,23 @@
 ==Fields==
 {| class="wikitable" border="1"
 |-
-! Name
 ! ID
+! Name
 ! Format
 ! Description
 |-
+| 
 | OccurrenceTimestamp
-| 
-| Decimal
+| Integer
 | UTC unix timestamp
 |-
+| 
 | OccurrenceTimestampNet
-| 
-| Decimal
+| Integer
 | UTC unix timestamp
 |-
-| ThrottlingTimestamp
 | 
-| Decimal
+| ThrottlingTimestamp
+| Integer
 | UTC unix timestamp
 |}
