@@ -26,7 +26,7 @@ Exactly the following [[Title_list|titles]] were updated:
 ** fatal
 ** creport (See [[Creport|here]] for changes)
 * The only updated 01000000000008XX titles are: [[Internet_Browser|shareddata]], 0100000000000816, FIRM-packages(see below), and [[System_Version_Title]].
-* The only updated 01000000000010XX titles are: "System applet", 0100000000001008, 010000000000100A, [[Internet_Browser|ShopN]], 010000000000100F, [[Internet_Browser|Whitelisted-applet]], and [[Internet_Browser|WifiWebAuthApplet]].
+* The only updated 01000000000010XX titles are: "System applet"(qlaunch), 0100000000001008, 010000000000100A, [[Internet_Browser|ShopN]], 010000000000100F, [[Internet_Browser|Whitelisted-applet]], and [[Internet_Browser|WifiWebAuthApplet]].
 
 ===[[Internet_Browser|Browser]]===
 A browser vuln was [[Switch_Userland_Flaws|fixed]], see also [[Internet_Browser|here]] for v2.1 browser details.
@@ -44,6 +44,45 @@ Sysmodules:
 * spl wasn't updated.
 ** Loader: Only changes in .text was a rebuild with latest SDK, now has the same additional IPC cmd code as NS(see below).
 ** boot: .text now has latest SDK changes + various other changes.
+
+===[[qlaunch]]===
+...
+
+RomFS:
+* "/message/{dirname}/option.msbt.szs": Updated
+* "/message/{dirname}/setting.msbt.szs": Updated
+
+  diff --git a/{...}/0100000000001000/v65796/message_USen_option.msbt.szs.decom_wstrs b/{...}/0100000000001000/v131162/message_USen_option.msbt.szs.decom_wstrs
+  index 53fe4b3..3a97770 100644
+  --- a/{...}/0100000000001000/v65796/message_USen_option.msbt.szs.decom_wstrs
+  +++ b/{...}/0100000000001000/v131162/message_USen_option.msbt.szs.decom_wstrs
+  @@ -20,7 +20,7 @@ Archive Software
+   Data for this software will be deleted to free storage space. After this, only save data and the icon on the HOME Menu will remain.
+   Data for this software will be deleted to free storage space. After this, only save data and the icon on the HOME Menu will remain. You can redownload the data to use the software again.
+   Delete Software
+  -The software and icon on the HOME Menu will be deleted. You can redownload the software from Nintendo eShop. Remaining user data can be deleted from Manage Save Data/Screenshots in Data Management.
+  +Save data will not be deleted.
+   This software will now be deleted.
+   Deleted software and downloadable content can be redownloaded from Nintendo eShop.
+   The software icon will be removed from
+
+  diff --git a/{...}/0100000000001000/v65796/message_USen_setting.msbt.szs.decom_wstrs b/{...}/0100000000001000/v131162/message_USen_setting.msbt.szs.decom_wstrs
+  index e0a50f7..d419d95 100644
+  --- a/{...}/0100000000001000/v65796/message_USen_setting.msbt.szs.decom_wstrs
+  +++ b/{...}/0100000000001000/v131162/message_USen_setting.msbt.szs.decom_wstrs
+  @@ -123,7 +123,8 @@ Check for Corrupt Data
+   Archive Software
+   The software will be deleted to free storage space. You can redownload the software by selecting the icon on the HOME Menu. Remaining user data can be deleted from Manage Save Data/Screenshots in Data Management.
+   Delete Software
+  -The software and icon on the HOME Menu will be deleted. You can redownload the software from Nintendo eShop. Remaining user data can be deleted from Manage Save Data/Screenshots in Data Management.
+  +The software and icon on the HOME Menu will be deleted to manage storage space. Digital software can be redownloaded from the Nintendo eShop. Other user data for the game, such as save data or screenshots, will not be deleted and can be managed in System Settings 
+  + Data Management.
+   Archive
+   Archive this software?
+   Only the software icon on the HOME Menu will remain. You can use the software again by redownloading the data.
+
+=== Application crashes ===
+As documented [[Creport|here]], a fatal-error is no longer thrown when applications crash. Instead, qlaunch displays an error message, without requiring a reboot. It appears [[2.0.0]] qlaunch already had the message string for this, which is: "The software was closed because an error occurred."
 
 ===[[NS_Services|NS]]-sysmodule===
 The NS-sysmodule was updated. 4 new funcs were added and 29 funcs were updated.
