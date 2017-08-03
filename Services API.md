@@ -158,7 +158,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="even">
 <td><p>erpt:c, erpt:r</p></td>
-<td><p>Error Report services</p></td>
+<td><p><a href="Error Report services.md" title="wikilink">Error Report services</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">
