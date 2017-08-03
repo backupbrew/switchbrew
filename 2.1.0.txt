@@ -84,6 +84,11 @@ RomFS:
 === Application crashes ===
 As documented [[Creport|here]], a fatal-error is no longer thrown when applications crash. Instead, [[qlaunch]] displays an error message, without requiring a reboot. It appears [[2.0.0]] qlaunch already had the message string for this, which is: "The software was closed because an error occurred."
 
+===erpt===
+...
+
+The following strings were added to the codebin: "GameCardInsertionCount", "GameCardRemovalCount", and "GameCardAsicInitializeCount".
+
 ===[[NS_Services|NS]]-sysmodule===
 The NS-sysmodule was updated. 4 new funcs were added and 29 funcs were updated.
 
