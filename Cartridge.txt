@@ -200,7 +200,7 @@ After a few initial plaintext commands, the Switch instructs the game cartridge 
 == Manufacturers ==
 
 ;Macronix (MX)
-: Uses package: BGA
+: Uses package: LGA
 : Uses card id: 0xC2
 ;OKI Semiconductor 
 : Uses package: TSOP-48

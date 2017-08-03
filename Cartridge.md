@@ -97,7 +97,7 @@ is currently unknown.
 ## Manufacturers
 
   - Macronix (MX)  
-    Uses package: BGA
+    Uses package: LGA
     Uses card id: 0xC2
   - OKI Semiconductor  
     Uses package: TSOP-48
