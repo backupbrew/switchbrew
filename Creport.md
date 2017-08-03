@@ -71,19 +71,25 @@ title-id is any of the following(swkbd and all
 inarg\_flag(see above) is set to '1', all title-ids are blacklisted
 except for the following whitelist:
 
-  - 0x0100704000B3A000 "Snipperclips" (Game)
-  - 0x01007EF00011E000 "The Legend of Zelda: Breath of the Wild"
-  - 0x01009B500007C000 "ARMS"
-  - 0x0100D87002EE0000 "Snipperclips - Cut it out, together\!"
-  - 0x0100F8F0000A2000 "Splatoon 2" (EUR)
-  - 0x010000A00218E000 "Splatoon 2 Global Testfire"
-  - 0x01000320000CC000 "1-2 Switch"
-  - 0x0100152000022000 "Mario Kart 8 Deluxe"
-  - 0x01003BC0000A0000 "Splatoon 2" (USA)
-  - 0x01003C700009C000 "Splatoon 2" (JPN)
+  - 0100704000B3A000 "Snipperclips" (Game)
+  - 01007EF00011E000 "The Legend of Zelda: Breath of the Wild"
+  - 01009B500007C000 "ARMS"
+  - \[2.3.0+\] 0100C5E003B40000 "ARMS Global Testpunch"
+  - 0100D87002EE0000 "Snipperclips - Cut it out, together\!"
+  - 0100F8F0000A2000 "Splatoon 2" (EUR)
+  - 010000A00218E000 "Splatoon 2 Global Testfire"
+  - 01000320000CC000 "1-2 Switch"
+  - 0100152000022000 "Mario Kart 8 Deluxe"
+  - 01003BC0000A0000 "Splatoon 2" (USA)
+  - 01003C700009C000 "Splatoon 2" (JPN)
 
 This is probably because of privacy concerns (software keyboard +
 browser could contain passwords and personal info).
+
+The above whitelist handling is probably so that only Nintendo
+(published) applications get full exception info reported, since
+crash-reports for other applications probably(?) wouldn't be shared with
+third-parties.
 
 For all other title-ids, it generates a random AES-128 key and CTR using
 `csrng`.
@@ -143,3 +149,9 @@ nnMain:
         block basically changed the conditions required for throwing
         fatal-error. For example, fatal-error is no longer thrown when
         applications crash.
+
+## [2.3.0](2.3.0.md "wikilink")
+
+Exactly the following code was changed:
+
+Only change was adding a titleID to the above whitelist.
