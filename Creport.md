@@ -164,4 +164,4 @@ nnMain:
       - <call func> here is throw\_fatalerr(ptr+4). The above second
         block basically changed the conditions required for throwing
         fatal-error. For example, fatal-error is no longer thrown when
-        applications(?) crash.
+        applications crash.
