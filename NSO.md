@@ -1,17 +1,7 @@
 NSO is the main executable format.
 
 It starts with the "NSO" header and mainly describes .text, .rodata, and
-.data segments (like a short-form of ELF program
-headers):
-
-### SegmentHeader
-
-| Offset | Size | Description                                                               |
-| ------ | ---- | ------------------------------------------------------------------------- |
-| 0x0    | 4    | file offset of data                                                       |
-| 0x4    | 4    | memory offset loaded to                                                   |
-| 0x8    | 4    | size of data copied to memory offset (i.e. size after decompression)      |
-| 0xC    | 4    | alignment used on memory size / size of .bss in the case of .data segment |
+.data segments (like a short-form of ELF program headers):
 
 ### .rodata-relative extent
 
@@ -22,20 +12,33 @@ headers):
 
 ### NSO Header
 
-| Offset | Size      | Description                                                                                         |
-| ------ | --------- | --------------------------------------------------------------------------------------------------- |
-| 0x0    | 4         | Magic "NSO0"                                                                                        |
-| 0x4    | 4         |                                                                                                     |
-| 0x8    | 4         |                                                                                                     |
-| 0xC    | 4         | Always 0x3f?                                                                                        |
-| 0x10   | 0x10 \* 3 | SegmentHeader for each segment                                                                      |
-| 0x40   | 0x20      | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes.    |
-| 0x60   | 0x4 \* 3  | file size of each segment (i.e. LZ4-compressed size)                                                |
-| 0x6c   | 0x24      | Padding                                                                                             |
-| 0x90   | 8         | .rodata-relative extents of .dynstr                                                                 |
-| 0x98   | 8         | .rodata-relative extents of .dynsym                                                                 |
-| 0xA0   | 0x20 \* 3 | SHA256 hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
-| 0x100  |           | Compressed sections                                                                                 |
+| Offset | Size      | Description                                                                                             |
+| ------ | --------- | ------------------------------------------------------------------------------------------------------- |
+| 0x0    | 4         | Magic "NSO0"                                                                                            |
+| 0x4    | 4         | Version                                                                                                 |
+| 0x8    | 4         | Reserved1                                                                                               |
+| 0xC    | 4         | Flags: TextCompress = 1, RoCompress = 2, DataCompress = 4, TextHash = 8, RoHash = 0x10, DataHash = 0x20 |
+| 0x10   | 4         | TextFileOffset                                                                                          |
+| 0x14   | 4         | TextMemoryOffset                                                                                        |
+| 0x18   | 4         | TextSize                                                                                                |
+| 0x1C   | 4         | ModuleNameOffset                                                                                        |
+| 0x20   | 4         | RoFileOffset                                                                                            |
+| 0x24   | 4         | RoMemoryOffset                                                                                          |
+| 0x28   | 4         | RoSize                                                                                                  |
+| 0x2C   | 4         | ModuleNameSize                                                                                          |
+| 0x30   | 4         | DataFileOffset                                                                                          |
+| 0x34   | 4         | DataMemoryOffset                                                                                        |
+| 0x38   | 4         | DataSize                                                                                                |
+| 0x3C   | 4         | BssSize                                                                                                 |
+| 0x40   | 0x20      | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes.        |
+| 0x60   | 0x4       | TextFileSize                                                                                            |
+| 0x64   | 0x4       | RoFileSize                                                                                              |
+| 0x68   | 0x4       | DataFileSize                                                                                            |
+| 0x6c   | 0x24      | Padding                                                                                                 |
+| 0x90   | 8         | .rodata-relative extents of .dynstr                                                                     |
+| 0x98   | 8         | .rodata-relative extents of .dynsym                                                                     |
+| 0xA0   | 0x20 \* 3 | SHA256 hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data.     |
+| 0x100  |           | Compressed sections                                                                                     |
 
 Most data in Switch binaries are standard ELF structures, however some
 are custom. For example, the MOD header is essentially a replacement for
