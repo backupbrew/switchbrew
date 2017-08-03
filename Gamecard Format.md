@@ -19,7 +19,7 @@ Gamecard+0.
 | 0x130  | 0x8   | Offset of HFS0 FS partition                                                                              |
 | 0x138  | 8     | HFS0 Header size                                                                                         |
 | 0x140  | 0x20  | SHA256 hash of the HFS0 Header                                                                           |
-| 0x160  | 0x20  | SHA256 hash of ?                                                                                         |
+| 0x160  | 0x20  | SHA256 hash of the crypto header                                                                         |
 | 0x180  | 0x4   | 1?                                                                                                       |
 | 0x184  | 0x4   | 2?                                                                                                       |
 | 0x188  | 0x4   | 0?                                                                                                       |

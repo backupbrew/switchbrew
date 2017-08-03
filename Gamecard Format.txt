@@ -65,7 +65,7 @@ The header is 0x200-bytes, at Gamecard+0.
 |-
 | 0x160
 | 0x20
-| SHA256 hash of ?
+| SHA256 hash of the crypto header
 |-
 | 0x180
 | 0x4
