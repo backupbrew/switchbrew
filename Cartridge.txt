@@ -1,5 +1,18 @@
+{|  style="float:right; margin-left: 0px;"
+|-
+| [[File:ZeldaFront.jpg|200px|thumb|right|A Switch game cartridge, frontside]] 
+| [[File:ZeldaBack.jpg|200px|thumb|right|A Switch game cartridge, backside]] 
+|-
+| [[File:CartridgeFront.jpeg|200px|thumb|right|Close-up of frontside PCB]]
+|rowspan="2"|[[File:CartridgeBack.jpeg|200px|thumb|right|Close-up of backside PCB]]
+|-
+|[[File:CartridgeFrontBare.jpeg|200px|thumb|right|Close-up of stripped frontside PCB]]
+|
+|-
+|}
 
-===== Pinout =====
+
+== Pinout ==
 [[File:Gamecard-pinout.png|400px]]
 
 {| class="wikitable"
@@ -93,7 +106,7 @@
 All IO use 1.8V for logic HIGH and 0V for logic LOW.
 
 
-===== Protocol =====
+== Protocol ==
 Switch game cartridges use a simple (but Nintendo proprietery) SPI-like bus with 8-bit width (DAT7..0). It is very similar to the bus interface of 3DS game cartridges, except with very different commands.
 
 The Switch host starts a transfer by first pulling CS low, followed by clocking a byte each clock cycle. The bus data will always be ready before the rising edge of the CLK signal, so that it can be captured on the rising edge.
@@ -107,7 +120,9 @@ Before the game cartridge responds with the actual response data, it will send b
 
 The actual response bytes are also followed immediately by a 4-byte CRC-32 over the actual response bytes.
 
-===== Commands =====
+== Commands ==
+
+A typical boot up sequence of a game cartridge looks like this:
 
 {| class="wikitable"
 ! Command
@@ -163,47 +178,17 @@ The actual response bytes are also followed immediately by a 4-byte CRC-32 over 
 
 The meaning of some these commands are currently unknown.
 
-===== Encryption =====
+== Encryption ==
 After a few initial plaintext commands, the Switch instructs the game cartridge to enter into encrypted mode. From that point on, commands and responses are sent encrypted over the bus. The encryption algorithm used is currently unknown.
 
-= 1,2 Switch =
+== Manufacturers ==
 
-Credit images: smiba ([http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/ link])
-
-=== Description ===
-* Package: TSOP-48
-* Manufacturer: Unknown
-
-=== Frontside ===
-[[File:CartridgeFront.jpeg|600px]]
-
-=== Frontside (bare) ===
-[[File:CartridgeFrontBare.jpeg|600px]]
-
-=== Backside ===
-[[File:CartridgeBack.jpeg|600px]]
-
-= Zelda: Breath of the wild =
-Credit images: Retr0id ([http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/ link])
-
-=== Description ===
-* Package: Custom
-* Manufacturer: Macronix (MX)
-
-=== Overview === 
-[[File:CartridgeZelda.jpeg|600px]]
-
-=== Frontside ===
-[[File:CartridgeZeldaFront.jpeg|600px]]
-
-=== Backside ===
-[[File:CartridgeZeldaBack.jpeg|600px]]
-
-= Schematic =
-Credit images: smiba ([http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/ link])
-
-=== Connector Pinout Schematic ===
-[[File:CatridgePinout.png|600px]]
-
-=== Chip Pinout Schematic ===
-[[File:CartridgePinoutTsop.png|600px]]
+;Macronix (MX)
+: Uses package: BGA
+: Uses card id: 0xC2
+;OKI Semiconductor 
+: Uses package: TSOP-48
+: Uses card id: 0xAE
+;SanDisk?
+: Uses package: ??
+: Uses card id: 0x45 ?

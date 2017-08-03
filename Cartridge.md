@@ -1,4 +1,11 @@
-##### Pinout
+|                                                                                                     |                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| ![A Switch game cartridge, frontside](ZeldaFront.jpg "A Switch game cartridge, frontside")          | ![A Switch game cartridge, backside](ZeldaBack.jpg "A Switch game cartridge, backside") |
+| ![Close-up of frontside PCB](CartridgeFront.jpeg "Close-up of frontside PCB")                       | ![Close-up of backside PCB](CartridgeBack.jpeg "Close-up of backside PCB")              |
+| ![Close-up of stripped frontside PCB](CartridgeFrontBare.jpeg "Close-up of stripped frontside PCB") |                                                                                         |
+|                                                                                                     |                                                                                         |
+
+## Pinout
 
 ![Gamecard-pinout.png](Gamecard-pinout.png
 "Gamecard-pinout.png")
@@ -25,7 +32,7 @@
 
 All IO use 1.8V for logic HIGH and 0V for logic LOW.
 
-##### Protocol
+## Protocol
 
 Switch game cartridges use a simple (but Nintendo proprietery) SPI-like
 bus with 8-bit width (DAT7..0). It is very similar to the bus interface
@@ -52,10 +59,12 @@ host know. After this, the game cartridge will send the actual response
 bytes.
 
 The actual response bytes are also followed immediately by a 4-byte
-CRC-32 over the actual response
-bytes.
+CRC-32 over the actual response bytes.
 
-##### Commands
+## Commands
+
+A typical boot up sequence of a game cartridge looks like
+this:
 
 | Command                            | Description                                                  |
 | ---------------------------------- | ------------------------------------------------------------ |
@@ -78,70 +87,21 @@ bytes.
 
 The meaning of some these commands are currently unknown.
 
-##### Encryption
+## Encryption
 
 After a few initial plaintext commands, the Switch instructs the game
 cartridge to enter into encrypted mode. From that point on, commands and
 responses are sent encrypted over the bus. The encryption algorithm used
 is currently unknown.
 
-# 1,2 Switch
+## Manufacturers
 
-Credit images: smiba
-([link](http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/))
-
-### Description
-
-  - Package: TSOP-48
-  - Manufacturer: Unknown
-
-### Frontside
-
-![CartridgeFront.jpeg](CartridgeFront.jpeg "CartridgeFront.jpeg")
-
-### Frontside (bare)
-
-![CartridgeFrontBare.jpeg](CartridgeFrontBare.jpeg
-"CartridgeFrontBare.jpeg")
-
-### Backside
-
-![CartridgeBack.jpeg](CartridgeBack.jpeg "CartridgeBack.jpeg")
-
-# Zelda: Breath of the wild
-
-Credit images: Retr0id
-([link](http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/))
-
-### Description
-
-  - Package: Custom
-  - Manufacturer: Macronix (MX)
-
-### Overview
-
-![CartridgeZelda.jpeg](CartridgeZelda.jpeg "CartridgeZelda.jpeg")
-
-### Frontside
-
-![CartridgeZeldaFront.jpeg](CartridgeZeldaFront.jpeg
-"CartridgeZeldaFront.jpeg")
-
-### Backside
-
-![CartridgeZeldaBack.jpeg](CartridgeZeldaBack.jpeg
-"CartridgeZeldaBack.jpeg")
-
-# Schematic
-
-Credit images: smiba
-([link](http://gbatemp.net/threads/switch-cartridge-reverse-engineering.464580/))
-
-### Connector Pinout Schematic
-
-![CatridgePinout.png](CatridgePinout.png "CatridgePinout.png")
-
-### Chip Pinout Schematic
-
-![CartridgePinoutTsop.png](CartridgePinoutTsop.png
-"CartridgePinoutTsop.png")
+  - Macronix (MX)  
+    Uses package: BGA
+    Uses card id: 0xC2
+  - OKI Semiconductor  
+    Uses package: TSOP-48
+    Uses card id: 0xAE
+  - SanDisk?  
+    Uses package: ??
+    Uses card id: 0x45 ?
