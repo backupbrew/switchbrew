@@ -70,7 +70,7 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 | 0x10
 | ProductCode
 |-
-| 0x30
+| 0x40
 | 0x30
 | Reserved3
 |-

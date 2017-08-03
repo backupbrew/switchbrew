@@ -22,7 +22,7 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 | 0x1C   | 0x4  | MainThreadStackSize               |
 | 0x20   | 0x10 | Title name                        |
 | 0x30   | 0x10 | ProductCode                       |
-| 0x30   | 0x30 | Reserved3                         |
+| 0x40   | 0x30 | Reserved3                         |
 | 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset |
 | 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size   |
 | 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset |
