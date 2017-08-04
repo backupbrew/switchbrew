@@ -1,3 +1,14 @@
+This sysmodule handles a lot of stuff internally, going by
+service-access-control etc.
+
+Contains multiple raw images, with at least the following:
+"NN\_OMM\_CHARGING\_BIN\_{begin|end}"(charging icon), low-battery icon,
+and the Nintendo Switch logo displayed during system boot.
+
+This is only sysmodule using the
+[usb:pd\*](USB%20services.md "wikilink") [Dock](Dock.md "wikilink")
+services besides [PTM\_services](PTM%20services.md "wikilink").
+
 # appletAE
 
 # appletOE
