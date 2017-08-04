@@ -82,7 +82,7 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 |-
 | 10 || MemoryArrange
 |-
-| 11 || AllowSkippingNrrSignatures
+| 11 || AllowSkippingNrrSignatures. Also used by FS-sysmodule for non-RSA: when zero, bit62 in fsp-pr registration permissions are force-cleared to zero, otherwise the original is used.
 |-
 | 13 || BatteryProfile?
 |}

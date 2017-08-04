@@ -41,18 +41,18 @@ data.
 Takes an input word (ConfigItem), and returns a u64 with the config
 params.
 
-| ConfigItem | Name                             |
-| ---------- | -------------------------------- |
-| 1          | DisableProgramVerification       |
-| 2          | MemoryConfiguration              |
-| 5          | HardwareType (0=Icosa, 1=Copper) |
-| 6          | IsRetail                         |
-| 7          | IsRecoveryBoot                   |
-| 8          | DeviceId (byte7 clear).          |
-| 9          | BootReason                       |
-| 10         | MemoryArrange                    |
-| 11         | AllowSkippingNrrSignatures       |
-| 13         | BatteryProfile?                  |
+| ConfigItem | Name                                                                                                                                                                              |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1          | DisableProgramVerification                                                                                                                                                        |
+| 2          | MemoryConfiguration                                                                                                                                                               |
+| 5          | HardwareType (0=Icosa, 1=Copper)                                                                                                                                                  |
+| 6          | IsRetail                                                                                                                                                                          |
+| 7          | IsRecoveryBoot                                                                                                                                                                    |
+| 8          | DeviceId (byte7 clear).                                                                                                                                                           |
+| 9          | BootReason                                                                                                                                                                        |
+| 10         | MemoryArrange                                                                                                                                                                     |
+| 11         | AllowSkippingNrrSignatures. Also used by FS-sysmodule for non-RSA: when zero, bit62 in fsp-pr registration permissions are force-cleared to zero, otherwise the original is used. |
+| 13         | BatteryProfile?                                                                                                                                                                   |
 
 Output from this when used by [NIM](NIM%20services.md "wikilink") must
 match the [set:cal](Settings%20services.md "wikilink") DeviceId with
