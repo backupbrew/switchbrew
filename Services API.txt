@@ -279,7 +279,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | 
 |-
 | usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pm
-| USB services
+| [[USB services]]
 | 
 |-
 | wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc

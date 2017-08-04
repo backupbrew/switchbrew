@@ -294,7 +294,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="odd">
 <td><p>usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pm</p></td>
-<td><p>USB services</p></td>
+<td><p><a href="USB services.md" title="wikilink">USB services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
