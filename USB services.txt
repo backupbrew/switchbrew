@@ -1,12 +1,16 @@
 One symbol in USB-sysmodule is: "vtable for nn::usb::detail::UsbComplexTegra21x".
 
 =usb:ds=
+Not used by any sysmodule.
 
 =usb:hs=
+General USB devices usage, used by hid-sysmodule and bsdsockets-sysmodule.
 
 =usb:pd=
+Only sysmodules with access to this are [[PTM_services|PTM]] and [[AM_services|AM]].
 
 =usb:pd:c=
 USB-sysmodule symbols for this refer to "Cradle", which is the [[Dock]].
 
 =usb:pm=
+Presumably Power Management, only sysmodule using this is [[PTM_services|PTM]].
