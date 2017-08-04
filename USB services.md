@@ -1,3 +1,6 @@
+One symbol in USB-sysmodule is: "vtable for
+nn::usb::detail::UsbComplexTegra21x".
+
 # usb:ds
 
 # usb:hs
