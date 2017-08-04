@@ -6,8 +6,7 @@ The below sections are for each partitionID.
 # 0
 
 Contains the gamecard sysupdate, see
-[here](Gamecard%20Format.md "wikilink"). Attempting to mount this
-results in error 0x13DA02.
+[here](Gamecard%20Format.md "wikilink").
 
 # 2
 
