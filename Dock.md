@@ -1,3 +1,6 @@
+The Dock is internally called "Cradle"(strings/symbols in
+system-titles).
+
 ## Components
 
 <table>
