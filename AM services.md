@@ -1,3 +1,9 @@
+# appletAE
+
+# appletOE
+
+# idle:sys
+
 # omm
 
 | Cmd | Name           |
@@ -12,5 +18,7 @@
 | 7   | TurnOffScreen  |
 | 8   |                |
 | 9   |                |
+
+# spsm
 
 [Category:Services](Category:Services "wikilink")

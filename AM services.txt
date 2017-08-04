@@ -1,3 +1,9 @@
+=appletAE=
+
+=appletOE=
+
+=idle:sys=
+
 = omm =
 {| class="wikitable" border="1"
 |-
@@ -23,5 +29,7 @@
 |-
 | 9 ||
 |}
+
+=spsm=
 
 [[Category:Services]]
