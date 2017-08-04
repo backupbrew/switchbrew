@@ -7,9 +7,9 @@ nn::usb::detail::UsbComplexTegra21x".
 
 # usb:pd
 
+# usb:pd:c
+
 USB-sysmodule symbols for this refer to "Cradle", which is the
 [Dock](Dock.md "wikilink").
-
-# usb:pd:c
 
 # usb:pm

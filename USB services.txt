@@ -5,8 +5,8 @@ One symbol in USB-sysmodule is: "vtable for nn::usb::detail::UsbComplexTegra21x"
 =usb:hs=
 
 =usb:pd=
-USB-sysmodule symbols for this refer to "Cradle", which is the [[Dock]].
 
 =usb:pd:c=
+USB-sysmodule symbols for this refer to "Cradle", which is the [[Dock]].
 
 =usb:pm=
