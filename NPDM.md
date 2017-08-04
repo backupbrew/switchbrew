@@ -55,6 +55,9 @@ field 0 instead of
 | 1    | 0   | MountContent\* is accessible when set.                                              |
 | 1    | 2   | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28? |
 
+For bit62 in word1, see
+[here](SPL%20services#GetConfig.md##GetConfig "wikilink").
+
 Web-applets access control:
 
   - "LibAppletWeb" and "LibAppletOff" have same access control: word0

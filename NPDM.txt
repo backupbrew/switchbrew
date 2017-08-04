@@ -155,6 +155,8 @@ Looks like an old crappy version of ACID. It has the guessed version field 0 ins
 | Enables access to [[Filesystem_services|Bis]] partitionID 27 and 28?
 |}
 
+For bit62 in word1, see [[SPL_services#GetConfig|here]].
+
 Web-applets access control:
 * "LibAppletWeb" and "LibAppletOff" have same access control: word0 bit0 set, word1 bit0 and bit3 set, and word2 bit30 set.
 * Rest of the web-applets: Same as above except word1 bit0 isn't set.
