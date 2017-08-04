@@ -115,7 +115,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |
 |-
 | appletAE, appletOE, idle:sys, omm, spsm
-| Applet services, [[OMM services]]
+| [[AM services]]
 |
 |-
 | [ [[1.0.0]] +] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry

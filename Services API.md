@@ -92,7 +92,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="odd">
 <td><p>appletAE, appletOE, idle:sys, omm, spsm</p></td>
-<td><p>Applet services, <a href="OMM services.md" title="wikilink">OMM services</a></p></td>
+<td><p><a href="AM services.md" title="wikilink">AM services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
