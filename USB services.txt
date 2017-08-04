@@ -1,0 +1,10 @@
+=usb:ds=
+
+=usb:hs=
+
+=usb:pd=
+USB-sysmodule symbols for this refer to "Cradle", which is the [[Dock]].
+
+=usb:pd:c=
+
+=usb:pm=
