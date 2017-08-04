@@ -12,17 +12,10 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 | Offset | Size | Description                       |
 | ------ | ---- | --------------------------------- |
 | 0x0    | 0x4  | Magic "META".                     |
-| 0x4    | 0x8  | Reserved1                         |
-| 0xC    | 1    | Flags                             |
-| 0xD    | 1    | UnusedData                        |
-| 0xE    | 1    | MainThreadPriority                |
-| 0xF    | 1    | MainThreadCoreNumber              |
-| 0x10   | 0x8  | Reserved2                         |
-| 0x18   | 0x4  | Version                           |
-| 0x1C   | 0x4  | MainThreadStackSize               |
-| 0x20   | 0x10 | Title name                        |
-| 0x30   | 0x10 | ProductCode                       |
-| 0x40   | 0x30 | Reserved3                         |
+| 0xE    | 1    |                                   |
+| 0xF    | 1    |                                   |
+| 0x1C   | 4    |                                   |
+| 0x20   | ?    | Title name                        |
 | 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset |
 | 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size   |
 | 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset |
