@@ -90,6 +90,12 @@ this:
 
 The meaning of some these commands are currently unknown.
 
+## Observations
+
+  - The entire game cartridge can be dumped using the plaintext 5B
+    commands (including "update" and "normal" partitions) except for the
+    "secure" partition which can only be read from encrypted mode.
+
 ## Encryption
 
 After a few initial plaintext commands, the Switch instructs the game
