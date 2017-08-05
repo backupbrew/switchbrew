@@ -114,6 +114,8 @@ As of [[2.0.0]], the only sysmodule with a RomFS is "hid", which only contains: 
 ! Title-id || Versions || Description
 |-
 | 0100000000002071 ||  || Snapshot Dumper? Used by [[NS_Services|NS]].
+|-
+| 010000000000209B ||  || "am.debug". Used by [[AM_services|AM]].
 |}
 
 No 01000000000020XX titles exist on retail systems.

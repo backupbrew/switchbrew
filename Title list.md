@@ -67,6 +67,7 @@ As of [2.0.0](2.0.0.md "wikilink"), the only sysmodule with a RomFS is
 | Title-id         | Versions | Description                                                 |
 | ---------------- | -------- | ----------------------------------------------------------- |
 | 0100000000002071 |          | Snapshot Dumper? Used by [NS](NS%20Services.md "wikilink"). |
+| 010000000000209B |          | "am.debug". Used by [AM](AM%20services.md "wikilink").      |
 
 No 01000000000020XX titles exist on retail
 systems.
