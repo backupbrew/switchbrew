@@ -195,7 +195,7 @@ A typical boot up sequence of a game cartridge (in this case, the game "1,2 Swit
 The meaning of some these commands are currently unknown.
 
 == Observations ==
-* The entire game cartridge can be dumped using the plaintext 5B commands (including "update" and "normal" partitions) except for the "secure" partition which can only be read from encrypted mode.
+* The entire game cartridge contents can be dumped using the plaintext 5B commands (including "update" and "normal" partitions) except for the "secure" partition which can only be read from encrypted mode.
 
 == Encryption ==
 After a few initial plaintext commands, the Switch instructs the game cartridge to enter into encrypted mode. From that point on, commands and responses are sent encrypted over the bus. The encryption algorithm used is currently unknown.
