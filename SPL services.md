@@ -54,9 +54,12 @@ params.
 | 11         | AllowSkippingNrrSignatures. Also used by FS-sysmodule for non-RSA: when zero, bit62 in fsp-pr registration permissions are force-cleared to zero, otherwise the original is used. |
 | 13         | BatteryProfile?                                                                                                                                                                   |
 
-Output from this when used by [NIM](NIM%20services.md "wikilink") must
-match the [set:cal](Settings%20services.md "wikilink") DeviceId with
-byte7 cleared, otherwise NIM will panic.
+[PM](Process%20Manager%20services.md "wikilink") checks id1 and if
+non-zero, calls fsp-pr SetEnabledProgramVerification(false).
+
+[NIM](NIM%20services.md "wikilink") checks that id8 output must match
+the [set:cal](Settings%20services.md "wikilink") DeviceId with byte7
+cleared, otherwise panic.
 
 [RO](Loader%20services.md "wikilink") checks id11, if set then skipping
 NRR rsa signatures is allowed.

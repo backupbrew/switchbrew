@@ -87,7 +87,9 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 | 13 || BatteryProfile?
 |}
 
-Output from this when used by [[NIM_services|NIM]] must match the [[Settings_services|set:cal]] DeviceId with byte7 cleared, otherwise NIM will panic.
+[[Process Manager services|PM]] checks id1 and if non-zero, calls fsp-pr SetEnabledProgramVerification(false).
+
+[[NIM_services|NIM]] checks that id8 output must match the [[Settings_services|set:cal]] DeviceId with byte7 cleared, otherwise panic.
 
 [[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
 
