@@ -61,8 +61,8 @@ non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 the [set:cal](Settings%20services.md "wikilink") DeviceId with byte7
 cleared, otherwise panic.
 
-[RO](Loader%20services.md "wikilink") checks id11, if set then skipping
-NRR rsa signatures is allowed.
+\[3.0.0+\] [RO](Loader%20services.md "wikilink") checks id11, if set
+then skipping NRR rsa signatures is allowed.
 
 ## GenerateAesKek
 

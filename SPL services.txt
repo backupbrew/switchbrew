@@ -91,7 +91,7 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 
 [[NIM_services|NIM]] checks that id8 output must match the [[Settings_services|set:cal]] DeviceId with byte7 cleared, otherwise panic.
 
-[[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
+[3.0.0+] [[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
 
 == GenerateAesKek ==
 Takes a 16-byte seed ("BisEncryptionKeySourceForKek") and two words ("KeyGeneration" and "option") as input.
