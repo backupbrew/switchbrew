@@ -32,7 +32,7 @@ Takes a type-6 buffer and fills it with random data.
 |-
 | 10 || || wrapper for [[SMC#ExpMod|ExpMod]]
 |-
-| 11 || [[#IsDevUnit]] ||
+| 11 || [[#IsDevelopment]] ||
 |-
 | 12 || GenerateSpecificAesKey || wrapper for [[SMC#KeygenA|KeygenA]]
 |-
@@ -109,7 +109,7 @@ Takes two input words, a ConfigItem and the value to set.
 | 13 || Battery profile?
 |}
 
-== IsDevUnit ==
+== IsDevelopment ==
 No input params.
 
 Uses [[#GetConfig]] internally with id=6. Returns true if output from that is 0, or if the SMC returned error 2.

@@ -22,7 +22,7 @@ data.
 | 7   | GetRandom                                                            | uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink")                                                                               |
 | 9   |                                                                      | wrapper for [ImportParamsForFWithXY](SMC#ImportParamsForFWithXY.md##ImportParamsForFWithXY "wikilink")                              |
 | 10  |                                                                      | wrapper for [ExpMod](SMC#ExpMod.md##ExpMod "wikilink")                                                                              |
-| 11  | [\#IsDevUnit](#IsDevUnit "wikilink")                                 |                                                                                                                                     |
+| 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                         |                                                                                                                                     |
 | 12  | GenerateSpecificAesKey                                               | wrapper for [KeygenA](SMC#KeygenA.md##KeygenA "wikilink")                                                                           |
 | 13  | [\#DecryptExpModParamsWithXY](#DecryptExpModParamsWithXY "wikilink") | wrapper for [DecryptExpModParamsWithXY](SMC#DecryptExpModParamsWithXY.md##DecryptExpModParamsWithXY "wikilink")                     |
 | 14  |                                                                      | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X and Y |
@@ -80,7 +80,7 @@ Takes two input words, a ConfigItem and the value to set.
 | ---------- | ---------------- |
 | 13         | Battery profile? |
 
-## IsDevUnit
+## IsDevelopment
 
 No input params.
 
