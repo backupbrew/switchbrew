@@ -17,18 +17,21 @@ services besides [PTM\_services](PTM%20services.md "wikilink").
 
 # omm
 
-| Cmd | Name           |
-| --- | -------------- |
-| 0   |                |
-| 1   |                |
-| 2   |                |
-| 3   | DisableScreen? |
-| 4   |                |
-| 5   |                |
-| 6   | TurnOnScreen   |
-| 7   | TurnOffScreen  |
-| 8   |                |
-| 9   |                |
+Operation Mode Manager (OMM) is a service responsible for arbitrating
+the operation changes between docked and handheld modes.
+
+| Cmd | Name             |
+| --- | ---------------- |
+| 0   | GetOperationMode |
+| 1   | GetOmmWaitEvent  |
+| 2   |                  |
+| 3   |                  |
+| 4   |                  |
+| 5   |                  |
+| 6   |                  |
+| 7   |                  |
+| 8   |                  |
+| 9   |                  |
 
 # spsm
 

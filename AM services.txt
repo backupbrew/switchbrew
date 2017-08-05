@@ -11,25 +11,27 @@ This is only sysmodule using the [[USB_services|usb:pd*]] [[Dock]] services besi
 =idle:sys=
 
 = omm =
+Operation Mode Manager (OMM) is a service responsible for arbitrating the operation changes between docked and handheld modes.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetOperationMode
 |-
-| 1 ||
+| 1 || GetOmmWaitEvent
 |-
 | 2 ||
 |-
-| 3 || DisableScreen?
+| 3 ||
 |-
 | 4 ||
 |-
 | 5 ||
 |-
-| 6 || TurnOnScreen
+| 6 ||
 |-
-| 7 || TurnOffScreen
+| 7 ||
 |-
 | 8 ||
 |-
