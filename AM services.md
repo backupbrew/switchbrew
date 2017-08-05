@@ -1,13 +1,10 @@
-This sysmodule handles a lot of stuff internally, going by
-service-access-control etc.
+AM (Applet Manager) provides services for interacting with system
+applets while abstracting several aspects of power and operation
+management.
 
 Contains multiple raw images, with at least the following:
 "NN\_OMM\_CHARGING\_BIN\_{begin|end}"(charging icon), low-battery icon,
 and the Nintendo Switch logo displayed during system boot.
-
-This is only sysmodule using the
-[usb:pd\*](USB%20services.md "wikilink") [Dock](Dock.md "wikilink")
-services besides [PTM\_services](PTM%20services.md "wikilink").
 
 # appletAE
 
@@ -18,7 +15,10 @@ services besides [PTM\_services](PTM%20services.md "wikilink").
 # omm
 
 Operation Mode Manager (OMM) is a service responsible for arbitrating
-the operation changes between docked and handheld modes.
+the operation changes between docked and handheld modes. Besides
+[PTM\_services](PTM%20services.md "wikilink"), this is the only service
+that interacts with the [Dock](Dock.md "wikilink") through
+[usb:pd\*](USB%20services.md "wikilink").
 
 | Cmd | Name             |
 | --- | ---------------- |
