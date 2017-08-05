@@ -206,43 +206,4 @@ structure:
 | 8   |                |
 | 9   |                |
 
-# Enums
-
-### AppletId
-
-| ID   | Description                                                                                                                                                          |
-| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x02 | Unknown (throws fatal error 2128-0203)                                                                                                                               |
-| 0x03 | Unknown (throws fatal error 2128-0203)                                                                                                                               |
-| 0x04 | Unknown (throws fatal error 2128-0203)                                                                                                                               |
-| 0x0C | Unknown (blinks the screen)                                                                                                                                          |
-| 0x0D | Unknown (displays "Checking for free space...")                                                                                                                      |
-| 0x0E | ErrorApplet                                                                                                                                                          |
-| 0x0F | NetworkSelect                                                                                                                                                        |
-| 0x10 | PlayerSelect                                                                                                                                                         |
-| 0x11 | Swkbd (on-screen keyboard)                                                                                                                                           |
-| 0x13 | [WebApplet](Internet%20Browser.md "wikilink") From WebApplet string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletWeb".                                   |
-| 0x14 | Ec ([ShopN](Internet%20Browser.md "wikilink")) From ShopN string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletShop".                                     |
-| 0x15 | Album                                                                                                                                                                |
-| 0x18 | [Whitelisted](Internet%20Browser.md "wikilink") web-applet (From whitelisted web-applet string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletLoginShare") |
-| 0x19 | [WifiWebAuth](Internet%20Browser.md "wikilink") (From browser string: "aInfo.appletId == ::nn::applet::AppletId\_LibraryAppletWifiWebAuth")                          |
-
-This seems to be the equivalent of
-[this](https://3dbrew.org/wiki/NS_and_APT_Services#AppIDs).
-
-### ShimKind
-
-This is from strings and code in the [
-web-applets](Internet%20Browser.md "wikilink").
-
-This indicates the type of web-applet.
-
-| shimKind value | Description       |
-| -------------- | ----------------- |
-| 2              | LoginApplet       |
-| 4              | ShareApplet       |
-| 5              | WebApplet         |
-| 6              | WifiWebAuthApplet |
-| 7              | LobbyApplet       |
-
 [Category:Services](Category:Services "wikilink")
