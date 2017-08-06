@@ -109,6 +109,16 @@ In 3.0.0, this was fixed by moving the security engine initialization earlier in
 !  Public disclosure timeframe
 !  Discovered by
 |-
+| Out-of-bounds array read for [[BCAT_Content_Container]] secret-data index
+| The [[BCAT_Content_Container]] secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed.
+This is not useful since the string loaded from this array is only involved with key-generation.
+| 
+| Unknown
+| [[2.0.0]]
+| August 5, 2017
+| August 6, 2017
+| [[User:Yellows8|Yellows8]]
+|-
 |  OOB Read in NS system module (pl:utoohax, pl:utonium, maybe other names)
 |  Prior to [[3.0.0]], pl:u (Shared Font services implemented in the NS sysmodule) service commands 1,2,3 took in a signed 32-bit index and returned that index of an array but did not check that index at all. This allowed for an arbitrary read within a 34-bit range (33-bit signed) from NS .bss. In [[3.0.0]], sending out of range indexes causes error code 0x60A to be returned.
 |  Dumping full NS .text, .rodata and .data, infoleak, etc
