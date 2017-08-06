@@ -4,6 +4,10 @@ services.
 
 # BCAT services
 
+Equivalent to 3DS BOSS(SpotPass). See
+[here](BCAT%20Content%20Container.md "wikilink") for
+BCAT-content-container.
+
 ## bcat:u
 
 ## bcat:s

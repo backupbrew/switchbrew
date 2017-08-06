@@ -1,6 +1,8 @@
 BCAT (Background Content Asymmetric synchronized delivery and Transmission) encompasses a set of content download/upload related services.
 
 = BCAT services =
+Equivalent to 3DS BOSS(SpotPass). See [[BCAT_Content_Container|here]] for BCAT-content-container.
+
 == bcat:u ==
 
 == bcat:s ==
@@ -8,7 +10,6 @@ BCAT (Background Content Asymmetric synchronized delivery and Transmission) enco
 == bcat:m ==
 
 == bcat:a ==
-
 
 = News services =
 
