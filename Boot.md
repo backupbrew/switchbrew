@@ -1,8 +1,16 @@
 boot is a built-in sysmodule.
 
+\[2.0.0+\] all panic strings were removed/censored.
+
 # Boot
 
 First up it initializes gpios and sets the gpio voltage to 1.8v.
+
+\[2.0.0+\] Code to initialize gpio differently for Copper/Icosa (based
+on spl HardwareType flag) was removed.
+
+\[2.0.0+\] the "WecDriver" now uses svcReadWriteRegister instead of
+svcQueryIoMapping to write to 0x7000E400 io (PMC).
 
 Then it checks battery charge and SoC temperature using i2c. If either
 is bad, it shows one of two different bitmaps from .data in the
