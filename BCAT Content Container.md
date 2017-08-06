@@ -1,0 +1,17 @@
+Content downloaded by [BCAT](BCAT%20services.md "wikilink") normally
+uses this container.
+
+# Header
+
+| Offset | Size  | Description                     |
+| ------ | ----- | ------------------------------- |
+| 0x0    | 0x4   | Magicnum "bcat"                 |
+| 0x4    | 0x1   | ?                               |
+| 0x5    | 0x1   | Crypto type                     |
+| 0x6    | 0x1   | ?                               |
+| 0x7    | 0x1   | Secret-data index               |
+| 0x8    | 0x8   | Normally zero?                  |
+| 0x10   | 0x10  | Base IV                         |
+| 0x20   | 0x100 | RSA-2048 signature, presumably. |
+
+The header is 0x120-bytes.
