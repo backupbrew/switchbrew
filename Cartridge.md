@@ -69,24 +69,24 @@ A typical boot up sequence of a game cartridge (in this case, the game
 "1,2 Switch") looks like
 this:
 
-| Command                            | Size  | Description                                                  |
-| ---------------------------------- | ----- | ------------------------------------------------------------ |
-| `5B000000000000010000000000000000` | 0x200 | Read sector 0, contains "HEAD" blob                          |
-| `5B000000000000010000000000000000` | 0x200 | Read sector 0, contains "HEAD" blob                          |
-| `56000000000000000000000000000000` | 0x4   | Read card id "AE F8 01 21"                                   |
-| `28000000000000000000000000000000` | 0x4   | Read ??? "02 00 00 00"                                       |
-| `A5000000000000000000000000000000` | 0x4   | Read ??? "00 00 00 00"                                       |
-| `56000000000000000000000000000000` | 0x4   | Read card id "AE F8 01 21"                                   |
-| `28000000000000000000000000000000` | 0x4   | Read ??? "02 00 00 00"                                       |
-| `5B000000380000010000000000000000` | 0x200 | Read sector 0x38, contains "CERT" blob                       |
-| `E2000000000000000000000000000000` | 0x4   | Read ??? "01 00 00 00"                                       |
-| `E0000000000000000000000000000000` | 0x200 | Read crypto-challenge header                                 |
-| `200838A25A344F818ABB6456694D4E8D` | 0     | Enter crypto mode with seed "0838A25A344F818ABB6456694D4E8D" |
-| `7EE41FDF12C01C157CC899910673A0CF` | 0x40  | Encrypted command, possibly read UID?                        |
-| `263C8230EC15FAE3CE79365BD850F4BD` | 0x0   | Encrypted command                                            |
-| `B6FDA6F37FFA29E18831D0B217DFBDBE` | 0x4   | Encrypted command, possibly read card id?                    |
-| `7B97F7DF07240AA9870E1C974336FA8A` | 0x4   | Encrypted command                                            |
-|                                    |       |                                                              |
+| Command                            | Size  | Description                                                                  |
+| ---------------------------------- | ----- | ---------------------------------------------------------------------------- |
+| `5B000000000000010000000000000000` | 0x200 | Read sector 0, contains "HEAD" blob                                          |
+| `5B000000000000010000000000000000` | 0x200 | Read sector 0, contains "HEAD" blob                                          |
+| `56000000000000000000000000000000` | 0x4   | Read card id "AE F8 01 21"                                                   |
+| `28000000000000000000000000000000` | 0x4   | Read ??? "02 00 00 00"                                                       |
+| `A5000000000000000000000000000000` | 0x4   | Read ??? "00 00 00 00"                                                       |
+| `56000000000000000000000000000000` | 0x4   | Read card id "AE F8 01 21"                                                   |
+| `28000000000000000000000000000000` | 0x4   | Read ??? "02 00 00 00"                                                       |
+| `5B000000380000010000000000000000` | 0x200 | Read sector 0x38, contains "CERT" blob                                       |
+| `E2000000000000000000000000000000` | 0x4   | Read ??? "01 00 00 00"                                                       |
+| `E0000000000000000000000000000000` | 0x200 | Read crypto-challenge header                                                 |
+| `200838A25A344F818ABB6456694D4E8D` | 0     | Enter crypto mode1 with HOST-RANDOM "0838A25A344F818ABB6456694D4E8D"         |
+| `7EE41FDF12C01C157CC899910673A0CF` | 0x40  | Encrypted crypto mode1 command, reads CART-RANDOM                            |
+| `263C8230EC15FAE3CE79365BD850F4BD` | 0x0   | Encrypted mode1 command, enters crypto mode2 with (HOST-RANDOM, CART-RANDOM) |
+| `B6FDA6F37FFA29E18831D0B217DFBDBE` | 0x4   | Encrypted mode2 command, possibly read card id?                              |
+| `7B97F7DF07240AA9870E1C974336FA8A` | 0x4   | Encrypted mode2 command                                                      |
+|                                    |       |                                                                              |
 
 The meaning of some these commands are currently unknown.
 
@@ -102,6 +102,16 @@ After a few initial plaintext commands, the Switch instructs the game
 cartridge to enter into encrypted mode. From that point on, commands and
 responses are sent encrypted over the bus. The encryption algorithm used
 is currently unknown.
+
+There appear to be 2 kinds of crypto mode.
+
+Crypto mode1 is initiated solely by the HOST-RANDOM as random session
+seed. In that mode, the Switch host requests for the game cartridge
+random seed, and then sends a command to enter crypto mode2.
+
+Crypto mode2 takes into account the CART-RANDOM seed generated by the
+cartridge, and possibly the previous HOST-RANDOM. With this scheme
+replay attacks are not possible when crypto mode2 has been entered.
 
 ## Manufacturers
 
