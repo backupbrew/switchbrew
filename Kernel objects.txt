@@ -177,6 +177,10 @@ Inherits from: [[#KSynchronizationObject]]
 | [[#KProcessHandleTable]]
 | HandleTable
 |-
+| 0x528
+| void*
+| ReservedTlsEntry
+|-
 | 0x530
 | u64
 |

@@ -71,6 +71,7 @@ Inherits from:
 | 0x278  | u64                                                            | MaxMemoryUsage                |
 | 0x280  | u64                                                            | From\_CreateProcessInfo\_0xC  |
 | 0x288  | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")       | HandleTable                   |
+| 0x528  | void\*                                                         | ReservedTlsEntry              |
 | 0x530  | u64                                                            |                               |
 | 0x538  | u64                                                            |                               |
 | 0x540  | u64                                                            |                               |
