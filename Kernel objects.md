@@ -57,18 +57,19 @@ Inherits from:
 | 0x180  | u8                                                             | HasStateChanged               |
 | 0x181  | u8                                                             |                               |
 | 0x182  | u8                                                             |                               |
-| 0x183  | u8\[12\]                                                       | FirstBytesOfCreateProcessInfo |
+| 0x183  | u8\[12\]                                                       | From\_CreateProcessInfo\_0    |
 | 0x18F  | u8                                                             | InitiallyZero                 |
 | 0x190  | u16                                                            | NumberOfCreatedThreads        |
-|        |                                                                | Pad                           |
+| 0x194  | u32                                                            | From\_CreateProcessInfo\_0x24 |
 | 0x198  | [\#KProcessCapabilities](#KProcessCapabilities "wikilink")     | Capabilities                  |
-| 0x248  | u64                                                            |                               |
+| 0x248  | u64                                                            | From\_CreateProcessInfo\_0x10 |
 | 0x250  | u64                                                            | ProcessId                     |
 | 0x258  | u64                                                            | CreatedTickstamp              |
-| ..     | ..                                                             | ..                            |
+| 0x260  | u64                                                            | From\_CreateProcessInfo\_0x18 |
 | 0x268  | u64                                                            | FirstMemoryUsage              |
 | 0x270  | u64                                                            | SecondMemoryUsage             |
 | 0x278  | u64                                                            | MaxMemoryUsage                |
+| 0x280  | u64                                                            | From\_CreateProcessInfo\_0xC  |
 | 0x288  | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")       | HandleTable                   |
 | 0x530  | u64                                                            |                               |
 | 0x538  | u64                                                            |                               |
