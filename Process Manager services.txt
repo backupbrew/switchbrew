@@ -29,7 +29,9 @@ Resource limits for the process is selected by ((*(u8*) (info_output+2)) & 3) be
 
 It calls [[Loader_services|ldr:pm]] RegisterTitle, then [[Loader_services|ldr:pm]] CreateProcess, then [[Filesystem_services|fsp-pr]] RegisterTitle, then [[Services_API|sm:m]] RegisterTitle.
 
-The second input argument for [[Loader_services|ldr:pm]] CreateProcess is (launch_flags >> 2) & 3.
+[1.0.0] The second input argument for [[Loader_services|ldr:pm]] CreateProcess is (launch_flags >> 2) & 3.
+
+[2.0.0+] The second input argument for [[Loader_services|ldr:pm]] CreateProcess is ((launch_flags >> 2) & 2) | ((launch_flags >> 1) != 1).
 
 If launch_flags has mask 1 set, it sets mask 1 in process flags.
 

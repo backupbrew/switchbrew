@@ -50,8 +50,13 @@ It calls [ldr:pm](Loader%20services.md "wikilink") RegisterTitle, then
 [fsp-pr](Filesystem%20services.md "wikilink") RegisterTitle, then
 [sm:m](Services%20API.md "wikilink") RegisterTitle.
 
-The second input argument for [ldr:pm](Loader%20services.md "wikilink")
-CreateProcess is (launch\_flags \>\> 2) & 3.
+\[1.0.0\] The second input argument for
+[ldr:pm](Loader%20services.md "wikilink") CreateProcess is
+(launch\_flags \>\> 2) & 3.
+
+\[2.0.0+\] The second input argument for
+[ldr:pm](Loader%20services.md "wikilink") CreateProcess is
+((launch\_flags \>\> 2) & 2) | ((launch\_flags \>\> 1) \!= 1).
 
 If launch\_flags has mask 1 set, it sets mask 1 in process flags.
 
