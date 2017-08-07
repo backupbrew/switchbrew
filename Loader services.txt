@@ -44,12 +44,16 @@ Takes a TitleId + StorageId and writes output to a C descriptor buffer as follow
 | Arg1 to svcStartProcess
 |-
 | 0x1
-| 0x2
+| 0x1
 | Arg2 to svcStartProcess
+|-
+| 0x2
+| 0x1
+| PmFlags
 |-
 | 0x3
 | 0x1
-|
+| Padding
 |-
 | 0x4
 | 0x4
