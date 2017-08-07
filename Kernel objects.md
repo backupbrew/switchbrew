@@ -83,10 +83,10 @@ Size: 0xB0
 | 0x10   | u8\[128\] | IrqAccessMask            |
 | 0x90   | u64       | AllowedCpuIdBitmask      |
 | 0x98   | u64       | AllowedThreadPrioBitmask |
-| 0xA0   | 4         |                          |
-| 0xA4   | 4         |                          |
-| 0xA8   | 4         |                          |
-| 0xAC   | 4         |                          |
+| 0xA0   | u32       |                          |
+| 0xA4   | u32       | HandleTableSize          |
+| 0xA8   | u32       |                          |
+| 0xAC   | u32       |                          |
 
 ## KProcessHandleTable
 
