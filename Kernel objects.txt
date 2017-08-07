@@ -78,8 +78,8 @@ Inherits from: [[#KSynchronizationObject]]
 | ProcessMutex
 |-
 | 0x138
-| u64
-| 
+| KRecursiveLock
+| ThreadingMutex
 |-
 | 0x140
 | u64
