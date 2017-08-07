@@ -98,12 +98,8 @@ Inherits from: [[#KSynchronizationObject]]
 | ThreadingMutex
 |-
 | 0x140
-| u64
-| 
-|-
-| 0x148
-| u64
-| 
+| KLinkedListNode<KThread>
+| ThreadArbiterList
 |-
 | 0x150
 | KLinkedListManager

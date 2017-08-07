@@ -51,8 +51,7 @@ Inherits from:
 | 0x128  | u32                                                            | State                               |
 | 0x130  | KRecursiveLock                                                 | ProcessMutex                        |
 | 0x138  | KRecursiveLock                                                 | ThreadingMutex                      |
-| 0x140  | u64                                                            |                                     |
-| 0x148  | u64                                                            |                                     |
+| 0x140  | KLinkedListNode<KThread>                                       | ThreadArbiterList                   |
 | 0x150  | KLinkedListManager                                             |                                     |
 | 0x180  | u8                                                             | HasStateChanged                     |
 | 0x181  | u8                                                             | HasInitialized                      |
