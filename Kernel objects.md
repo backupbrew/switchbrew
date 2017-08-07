@@ -54,8 +54,8 @@ Inherits from:
 | 0x140  | u64                                                            |                        |
 | 0x148  | u64                                                            |                        |
 | 0x150  | KLinkedListManager                                             |                        |
-| 0x180  | u8                                                             |                        |
-| 0x181  | u8                                                             | SignalValue            |
+| 0x180  | u8                                                             | HasStateChanged        |
+| 0x181  | u8                                                             |                        |
 |        |                                                                | Pad                    |
 | 0x190  | u16                                                            | NumberOfCreatedThreads |
 |        |                                                                | Pad                    |

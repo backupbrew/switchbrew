@@ -54,7 +54,7 @@ Inherits from: [[#KSynchronizationObject]]
 |
 |-
 | 0x28
-|
+| 
 | 
 |-
 | 0x38
@@ -111,11 +111,11 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x180
 | u8
-| 
+| HasStateChanged
 |-
 | 0x181
 | u8
-| SignalValue
+| 
 |-
 | 
 | 
