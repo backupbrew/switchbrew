@@ -39,13 +39,21 @@ Takes a TitleId + StorageId and writes output to a C descriptor buffer as follow
 ! Size
 ! Description
 |-
-| 0
-| 0x4
-| 
+| 0x0
+| 0x1
+| Arg1 to svcCreateProcess
+|-
+| 0x1
+| 0x2
+| Arg2 to svcCreateProcess
+|-
+| 0x3
+| 0x1
+|
 |-
 | 0x4
-| 0x8
-| 
+| 0x4
+| Arg3 to svcCreateProcess
 |-
 | 0x8
 | 0x8
