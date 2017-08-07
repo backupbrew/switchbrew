@@ -41,11 +41,11 @@ Takes a TitleId + StorageId and writes output to a C descriptor buffer as follow
 |-
 | 0x0
 | 0x1
-| Arg1 to svcStartProcess
+| MainThreadPrio. Arg1 to svcStartProcess
 |-
 | 0x1
 | 0x1
-| Arg2 to svcStartProcess
+| DefaultCpuId. Arg2 to svcStartProcess
 |-
 | 0x2
 | 0x1
@@ -57,7 +57,7 @@ Takes a TitleId + StorageId and writes output to a C descriptor buffer as follow
 |-
 | 0x4
 | 0x4
-| Arg3 to svcStartProcess
+| MainThreadStackSize. Arg3 to svcStartProcess
 |-
 | 0x8
 | 0x8

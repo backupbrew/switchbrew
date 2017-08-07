@@ -35,11 +35,11 @@ follows:
 
 | Offset   | Size     | Description                                                                                                    |
 | -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| 0x0      | 0x1      | Arg1 to svcStartProcess                                                                                        |
-| 0x1      | 0x1      | Arg2 to svcStartProcess                                                                                        |
+| 0x0      | 0x1      | MainThreadPrio. Arg1 to svcStartProcess                                                                        |
+| 0x1      | 0x1      | DefaultCpuId. Arg2 to svcStartProcess                                                                          |
 | 0x2      | 0x1      | PmFlags, see [here](Process%20Manager%20services.md "wikilink").                                               |
 | 0x3      | 0x1      | Padding                                                                                                        |
-| 0x4      | 0x4      | Arg3 to svcStartProcess                                                                                        |
+| 0x4      | 0x4      | MainThreadStackSize. Arg3 to svcStartProcess                                                                   |
 | 0x8      | 0x8      | Title id                                                                                                       |
 | 0x10     | 0x4      | ACID [Service Access Control](NPDM#Service%20Access%20Control.md##Service_Access_Control "wikilink") list size |
 | 0x14     | 0x4      | ACI0 [Service Access Control](NPDM#Service%20Access%20Control.md##Service_Access_Control "wikilink") list size |
