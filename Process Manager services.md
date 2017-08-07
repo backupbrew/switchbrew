@@ -177,19 +177,17 @@ launch](#Process_launch "wikilink").
 
 ## GetProcessEventType
 
-Returns 1 if flags has bit1 set.
+Returns 1 if flags has mask 2 set.
 
-Returns 2 if flags has bit0 set and state is 6.
+Returns 2 if flags has mask 1 set and state is 6.
 
-Returns 3 if flags has bit4 set and not bit5.
+Returns 3 if flags has mask 0x10 set and not bit5.
 
-Returns 4 if flags has both bit4 and bit5 set.
+Returns 4 if flags has mask 0x30 set.
 
-\[2.0.0+\] returns 5 if state \>= 2 and bit8 is set.
+\[2.0.0+\] returns 5 if state \>= 2 and flags has mask 0x100 set.
 
 Returns 0 if process is not found.
-
-`(0=CONTINUE, 1=CRASHING, 2,3,5)`
 
 ## FinalizeDeadProcess
 
