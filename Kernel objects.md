@@ -50,7 +50,10 @@ Inherits from:
 | ..     | ..                                                             | ..            |
 | 0x198  | [\#KProcessCapabilities](#KProcessCapabilities "wikilink")     | Capabilities  |
 | ..     | ..                                                             | ..            |
-| 0x288  | KProcessHandleTable                                            | HandleTable   |
+| 0x250  | u64                                                            | Pid           |
+| ..     | ..                                                             | ..            |
+| 0x288  | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")       | HandleTable   |
+| 0x530  |                                                                |               |
 
 ## KProcessMm
 
@@ -72,12 +75,29 @@ Inherits from:
 
 ## KProcessCapabilities
 
+Size: 0xB0
+
 | Offset | Type      | Description              |
 | ------ | --------- | ------------------------ |
 | 0      | u8\[16\]  | SvcAccessMask            |
 | 0x10   | u8\[128\] | IrqAccessMask            |
 | 0x90   | u64       | AllowedCpuIdBitmask      |
 | 0x98   | u64       | AllowedThreadPrioBitmask |
+| 0xA0   | 4         |                          |
+| 0xA4   | 4         |                          |
+| 0xA8   | 4         |                          |
+| 0xAC   | 4         |                          |
+
+## KProcessHandleTable
+
+Size: 0x2A0
+
+| Offset | Type    | Description |
+| ------ | ------- | ----------- |
+| 0      | u64     |             |
+| 8      | u64     |             |
+| 0x296  | u16     |             |
+| 0x298  | u8/bool |             |
 
 ## KMemoryBlock
 
