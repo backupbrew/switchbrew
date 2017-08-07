@@ -303,9 +303,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x41A || 2 || Argument is invalid
 |-
-| 0xD01A || 104 || Not initialized
+| 0xD01A || 104 || All AES engines busy
 |-
-| 0xD21A || 105 || Already initialized
+| 0xD21A || 105 || Invalid AES engine-id
 |-
 | 0x287C || 20 || Argument is NULL
 |-
