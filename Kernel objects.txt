@@ -89,9 +89,9 @@ Inherits from: [[#KSynchronizationObject]]
 | [[#KProcessCapabilities]]
 | Capabilities
 |-
-| ..
-| ..
-| ..
+| 0x248
+| u64
+| 
 |-
 | 0x250
 | u64
