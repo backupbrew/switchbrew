@@ -70,8 +70,24 @@ Inherits from: [[#KSynchronizationObject]]
 | TlsPagesListCount
 |-
 | 0x100
-| KLinkedListManager
+| [[#KLinkedListNode]]
 | TlsPagesList
+|-
+| 0x110
+| s32
+| DefaultCpuCore
+|-
+| 0x118
+| 
+| 
+|-
+| 0x120
+| [[#KResourceLimit]]*
+| ResourceLimit
+|-
+| 0x128
+|
+|
 |-
 | 0x130
 | KRecursiveLock
