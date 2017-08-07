@@ -2,6 +2,8 @@ boot is a built-in sysmodule.
 
 \[2.0.0+\] all panic strings were removed/censored.
 
+\[2.1.0+\] code was updated with changes to the ncm interface.
+
 # Boot
 
 First up it initializes gpios and sets the gpio voltage to 1.8v.
