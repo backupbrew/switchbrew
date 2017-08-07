@@ -90,18 +90,19 @@ Size: 0xB0
 
 ## KProcessHandleTable
 
-Size: 0x2A0
+Size:
+0x2A0
 
-| Offset | Type               | Description   |
-| ------ | ------------------ | ------------- |
-| 0      | KHandleEntry\*     | TablePtr      |
-| 8      | KHandleEntry\*     | NextFreeEntry |
-| 0x10   | KHandleEntry\[40\] | InternalTable |
-| 0x290  | u16                | Size          |
-| 0x292  | u16                | Initially 0   |
-| 0x294  | u16                | Initially 1   |
-| 0x296  | u16                |               |
-| 0x298  | KSpinlock          | Lock          |
+| Offset | Type                                             | Description   |
+| ------ | ------------------------------------------------ | ------------- |
+| 0      | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | TablePtr      |
+| 8      | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | NextFreeEntry |
+| 0x10   | [\#KHandleEntry](#KHandleEntry "wikilink")\[40\] | InternalTable |
+| 0x290  | u16                                              | Size          |
+| 0x292  | u16                                              | Initially 0   |
+| 0x294  | u16                                              | Initially 1   |
+| 0x296  | u16                                              |               |
+| 0x298  | KSpinlock                                        | Lock          |
 
 ### KHandleEntry
 

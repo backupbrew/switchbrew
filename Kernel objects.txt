@@ -222,15 +222,15 @@ Size: 0x2A0
 ! Description
 |-
 | 0
-| KHandleEntry*
+| [[#KHandleEntry]]*
 | TablePtr
 |-
 | 8
-| KHandleEntry*
+| [[#KHandleEntry]]*
 | NextFreeEntry
 |-
 | 0x10
-| KHandleEntry[40]
+| [[#KHandleEntry]][40]
 | InternalTable
 |-
 | 0x290
