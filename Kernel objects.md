@@ -78,7 +78,9 @@ Inherits from:
 | 0x548  | KLinkedListNode                                                | ThreadList                    |
 | 0x558  | u32                                                            |                               |
 | 0x55C  | u32                                                            | HasStarted                    |
-| 0x560  | u64\[10\]                                                      |                               |
+| 0x560  | u64\[8\]                                                       |                               |
+| 0x5A0  | u64                                                            |                               |
+| 0x5A8  | u64                                                            |                               |
 
 ## KProcessMm
 

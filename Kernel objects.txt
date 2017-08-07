@@ -206,7 +206,15 @@ Inherits from: [[#KSynchronizationObject]]
 | HasStarted
 |-
 | 0x560
-| u64[10]
+| u64[8]
+|
+|-
+| 0x5A0
+| u64
+|
+|-
+| 0x5A8
+| u64
 |
 |}
 
