@@ -9,7 +9,7 @@ container.
 | 0x0    | 0x4   | Magicnum "bcat"                                                                          |
 | 0x4    | 0x1   | ?                                                                                        |
 | 0x5    | 0x1   | Crypto type: 0x1 = type1, 0x2 = type2, 0x3 = type3. Everything else indicates plaintext. |
-| 0x6    | 0x1   | ?                                                                                        |
+| 0x6    | 0x1   | RSA Hash Type: 0x1,0x3 = SHA256, 0x0,0x2 = SHA1                                          |
 | 0x7    | 0x1   | Secret-data index                                                                        |
 | 0x8    | 0x8   | Normally zero?                                                                           |
 | 0x10   | 0x10  | Base IV/CTR                                                                              |
