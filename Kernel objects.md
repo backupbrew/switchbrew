@@ -109,7 +109,7 @@ Size:
 | Offset | Type                                       | Description     |
 | ------ | ------------------------------------------ | --------------- |
 | 0      | u16                                        | HandleUpperBits |
-| 2      | u8                                         |                 |
+| 2      | u8                                         | ObjectType      |
 | 8      | [\#KAutoObject](#KAutoObject "wikilink")\* | Object          |
 
 ## KMemoryBlock

@@ -267,7 +267,7 @@ Size: 0x2A0
 |-
 | 2
 | u8
-|
+| ObjectType
 |-
 | 8
 | [[#KAutoObject]]*
