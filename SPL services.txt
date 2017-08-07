@@ -1,15 +1,6 @@
-= csrng =
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || [[#GetRandomBytes]]
-|}
-
-== GetRandomBytes ==
-Takes a type-6 buffer and fills it with random data.
-
 = spl: =
+[2.0.0+] Where previously only one AES engine was utilized, there is now support for 4 of them.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -20,9 +11,9 @@ Takes a type-6 buffer and fills it with random data.
 |-
 | 2 || [[#GenerateAesKek]] || wrapper for [[SMC#KeygenAndSealX|KeygenAndSealX]]
 |-
-| 3 || LoadAesKey || wrapper for [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]]
+| 3 || [[#LoadAesKey]] || wrapper for [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]]
 |-
-| 4 || GenerateAesKey || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with a fixed Y
+| 4 || [[#GenerateAesKey]] || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with a fixed Y
 |-
 | 5 || [[#SetConfig]] || wrapper for [[SMC#SetConfig|SetConfig]]
 |-
@@ -38,25 +29,25 @@ Takes a type-6 buffer and fills it with random data.
 |-
 | 13 || [[#DecryptExpModParamsWithXY]] || wrapper for [[SMC#DecryptExpModParamsWithXY|DecryptExpModParamsWithXY]]
 |-
-| 14 || || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X and Y
+| 14 || [[#GenerateAesKeyOther]] || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X and Y
 |-
-| 15 || DecryptAesCtr || wrapper for [[SMC#SymmetricCrypto|SymmetricCrypto]]
+| 15 || [[#DecryptAesCtr]] || wrapper for [[SMC#SymmetricCrypto|SymmetricCrypto]]
 |-
-| 16 || ComputeCmac || wrapper for [[SMC#CMAC|CMAC]]
+| 16 || [[#ComputeCmac]] || wrapper for [[SMC#CMAC|CMAC]]
 |-
 | 17 || || wrapper for [[SMC#ImportParamsFor10WithXY|ImportParamsFor10WithXY]]
 |-
 | 18 || || wrapper for [[SMC#ExpModAndKeygenAndSealZ|ExpModAndKeygenAndSealZ]]
 |-
-| 19 || || wrapper for [[SMC#SetKeyslotFromZ|SetKeyslotFromZ]]
+| 19 || [[#SetKeyslotFromZ]] || wrapper for [[SMC#SetKeyslotFromZ|SetKeyslotFromZ]]
 |-
-| 20 || || wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]]
+| 20 || [2.0.0+] || wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]]
 |-
-| 21 || [[#UninitializeSpl]] || 
+| 21 || [2.0.0+] [[#LockAesEngine]] || 
 |-
-| 22 || [[#InitializeSpl]] || 
+| 22 || [2.0.0+] [[#UnlockAesEngine]] || 
 |-
-| 23 || GetSplWaitEvent || 
+| 23 || [2.0.0+] GetSplWaitEvent || 
 |}
 
 == GetConfig ==
@@ -99,6 +90,12 @@ KeyGeneration ranges from 0 to 2.
 
 Same input gives same output. Output changes when system is rebooted.
 
+== LoadAesKey ==
+[2.0.0+] Now verifies that the engine used (0..3) is locked/owned by the current spl session, otherwise errors with 0xD21A. Previously engine was hardcoded to 0.
+
+== GenerateAesKey ==
+[2.0.0+] Previously it used engine 0 always. Now it tries to allocate an engine to be used, returns 0xD01A if they're all busy. After command is done, the engine is released.
+
 == SetConfig ==
 Takes two input words, a ConfigItem and the value to set.
 
@@ -106,7 +103,7 @@ Takes two input words, a ConfigItem and the value to set.
 |-
 ! ConfigItem || Name
 |-
-| 13 || Battery profile?
+| 13 || BatteryProfile?
 |}
 
 == IsDevelopment ==
@@ -119,8 +116,22 @@ Returns an u8 flag for whether the system is devunit. Output flag is 0 on retail
 == DecryptExpModParamsWithXY ==
 Last SPL cmd used by [[SSL_services|SSL]]-sysmodule for TLS client-privk.
 
-== UninitializeSpl ==
-Returns a single u32 (always 3?) only once.
+== GenerateAesKeyOther ==
+Scrambles with a different constant than non-"other" version.
 
-== InitializeSpl ==
-Takes a single u32 (always 3?) only once.
+[2.0.0+] Introduced same engine allocation code as for [[#GenerateAesKey]].
+
+== DecryptAesCtr ==
+[2.0.0+] Verifies the engine is locked by current session, same change as [[#LoadAesKey]].
+
+== ComputeCmac ==
+[2.0.0+] Verifies the engine is locked by current session, same change as [[#LoadAesKey]].
+
+== SetKeyslotFromZ ==
+[2.0.0+] Verifies the engine is locked by current session, same change as [[#LoadAesKey]].
+
+== LockAesEngine ==
+Returns the id of the engine that was locked, or 0xD01A if all engines are busy. You need to lock an engine before using AES functions.
+
+== UnlockAesEngine ==
+Takes a single u32 and unlocks the engine with that id. It must be owned by current session otherwise 0xD21A will be returned.
