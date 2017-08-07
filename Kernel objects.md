@@ -61,7 +61,7 @@ Inherits from:
 |        |                                                                | Pad                    |
 | 0x198  | [\#KProcessCapabilities](#KProcessCapabilities "wikilink")     | Capabilities           |
 | 0x248  | u64                                                            |                        |
-| 0x250  | u64                                                            | Pid                    |
+| 0x250  | u64                                                            | ProcessId              |
 | ..     | ..                                                             | ..                     |
 | 0x288  | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")       | HandleTable            |
 | 0x530  | u64                                                            |                        |

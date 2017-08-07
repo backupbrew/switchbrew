@@ -139,7 +139,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x250
 | u64
-| Pid
+| ProcessId
 |-
 | ..
 | ..
