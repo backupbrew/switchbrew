@@ -117,9 +117,17 @@ Inherits from: [[#KSynchronizationObject]]
 | u8
 | 
 |-
+| 0x182
+| u8
 | 
-| 
-| Pad
+|-
+| 0x183
+| u8[12]
+| FirstBytesOfCreateProcessInfo
+|-
+| 0x18F
+| u8
+| InitiallyZero
 |-
 | 0x190
 | u16
@@ -140,6 +148,10 @@ Inherits from: [[#KSynchronizationObject]]
 | 0x250
 | u64
 | ProcessId
+|-
+| 0x258
+| u64
+| CreatedTickstamp
 |-
 | ..
 | ..
