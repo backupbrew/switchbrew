@@ -122,7 +122,7 @@ Takes a pid and returns the title-id associated with the process.
 |-
 | 3 || GetProcessEventWaiter
 |-
-| 4 || GetProcessEventType (0=CONTINUE, 1=CRASHING, 2,3,5)
+| 4 || [[#GetProcessEventType]]
 |-
 | 5 || [[#FinalizeDeadProcess]]
 |-
@@ -135,6 +135,21 @@ Takes a pid and returns the title-id associated with the process.
 
 == LaunchProcess ==
 Takes a title-id and launch_flags. See [[#Process launch]].
+
+== GetProcessEventType ==
+Returns 1 if flags has bit1 set.
+
+Returns 2 if flags has bit0 set and state is 6.
+
+Returns 3 if flags has bit4 set and not bit5.
+
+Returns 4 if flags has both bit4 and bit5 set.
+
+[2.0.0+] returns 5 if state >= 2 and bit8 is set.
+
+Returns 0 if process is not found.
+
+ (0=CONTINUE, 1=CRASHING, 2,3,5)
 
 == FinalizeDeadProcess ==
 Takes a pid as input. If the process with pid has the state "dead", it unregisters the pid in fsp:pr, sm:m, and ldr:pm.

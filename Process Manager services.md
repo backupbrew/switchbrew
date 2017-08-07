@@ -153,7 +153,7 @@ process.
 | 1   | TerminateProcessByPid                                                      |
 | 2   | TerminateProcessByTitleId                                                  |
 | 3   | GetProcessEventWaiter                                                      |
-| 4   | GetProcessEventType (0=CONTINUE, 1=CRASHING, 2,3,5)                        |
+| 4   | [\#GetProcessEventType](#GetProcessEventType "wikilink")                   |
 | 5   | [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")                   |
 | 6   | [\#ClearProcessNotificationFlag](#ClearProcessNotificationFlag "wikilink") |
 | 7   | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                     |
@@ -163,6 +163,22 @@ process.
 
 Takes a title-id and launch\_flags. See [\#Process
 launch](#Process_launch "wikilink").
+
+## GetProcessEventType
+
+Returns 1 if flags has bit1 set.
+
+Returns 2 if flags has bit0 set and state is 6.
+
+Returns 3 if flags has bit4 set and not bit5.
+
+Returns 4 if flags has both bit4 and bit5 set.
+
+\[2.0.0+\] returns 5 if state \>= 2 and bit8 is set.
+
+Returns 0 if process is not found.
+
+`(0=CONTINUE, 1=CRASHING, 2,3,5)`
 
 ## FinalizeDeadProcess
 
