@@ -66,9 +66,9 @@ Inherits from:
 | 0x250  | u64                                                            | ProcessId                     |
 | 0x258  | u64                                                            | CreatedTickstamp              |
 | 0x260  | u64                                                            | From\_CreateProcessInfo\_0x18 |
-| 0x268  | u64                                                            | FirstMemoryUsage              |
-| 0x270  | u64                                                            | SecondMemoryUsage             |
-| 0x278  | u64                                                            | MaxMemoryUsage                |
+| 0x268  | u64                                                            | CodeMemUsage                  |
+| 0x270  | u64                                                            | DynamicMemUsage               |
+| 0x278  | u64                                                            | MaxTotalMemUsage              |
 | 0x280  | u64                                                            | From\_CreateProcessInfo\_0xC  |
 | 0x288  | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")       | HandleTable                   |
 | 0x528  | void\*                                                         | ReservedTlsEntry              |

@@ -159,15 +159,15 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x268
 | u64
-| FirstMemoryUsage
+| CodeMemUsage
 |-
 | 0x270
 | u64
-| SecondMemoryUsage
+| DynamicMemUsage
 |-
 | 0x278
 | u64
-| MaxMemoryUsage
+| MaxTotalMemUsage
 |-
 | 0x280
 | u64
