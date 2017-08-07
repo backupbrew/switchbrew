@@ -60,6 +60,7 @@ Inherits from:
 | 0x183  | u8\[12\]                                                       | From\_CreateProcessInfo\_0    |
 | 0x18F  | u8                                                             | InitiallyZero                 |
 | 0x190  | u16                                                            | NumberOfCreatedThreads        |
+| 0x192  | u16                                                            | ThreadingRelatedInitiallyZero |
 | 0x194  | u32                                                            | From\_CreateProcessInfo\_0x24 |
 | 0x198  | [\#KProcessCapabilities](#KProcessCapabilities "wikilink")     | Capabilities                  |
 | 0x248  | u64                                                            | From\_CreateProcessInfo\_0x10 |

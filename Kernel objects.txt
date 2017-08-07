@@ -133,6 +133,10 @@ Inherits from: [[#KSynchronizationObject]]
 | u16
 | NumberOfCreatedThreads
 |-
+| 0x192
+| u16
+| ThreadingRelatedInitiallyZero
+|-
 | 0x194
 | u32
 | From_CreateProcessInfo_0x24
