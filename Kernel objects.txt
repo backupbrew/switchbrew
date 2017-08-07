@@ -78,8 +78,8 @@ Inherits from: [[#KSynchronizationObject]]
 | DefaultCpuCore
 |-
 | 0x118
-| 
-| 
+| u64
+| InitiallyZero
 |-
 | 0x120
 | [[#KResourceLimit]]*
@@ -119,7 +119,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x182
 | u8
-| 
+| From_CreateProcessInfo_0x24_Bit6
 |-
 | 0x183
 | u8[12]
@@ -195,7 +195,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x540
 | u64
-|
+| InitiallyZero
 |-
 | 0x548
 | KLinkedListNode
