@@ -104,6 +104,10 @@ builds anyway.
 Returns an array of pids of all processes that have mask 4 set in
 process flags.
 
+\[2.0.0+\] Additional check on input that can return 0xC0F. The meaning
+is probably useless because function is somewhat nopped on non-dev
+builds anyway.
+
 ## StartDebugProcess
 
 Takes a pid. Process state must be 0 or 1. Then it uses
