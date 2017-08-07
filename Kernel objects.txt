@@ -145,6 +145,18 @@ Inherits from: [[#KSynchronizationObject]]
 | ..
 | ..
 |-
+| 0x268
+| u64
+| FirstMemoryUsage
+|-
+| 0x270
+| u64
+| SecondMemoryUsage
+|-
+| 0x278
+| u64
+| MaxMemoryUsage
+|-
 | 0x288
 | [[#KProcessHandleTable]]
 | HandleTable

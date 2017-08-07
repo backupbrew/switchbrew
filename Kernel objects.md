@@ -63,6 +63,9 @@ Inherits from:
 | 0x248  | u64                                                            |                        |
 | 0x250  | u64                                                            | ProcessId              |
 | ..     | ..                                                             | ..                     |
+| 0x268  | u64                                                            | FirstMemoryUsage       |
+| 0x270  | u64                                                            | SecondMemoryUsage      |
+| 0x278  | u64                                                            | MaxMemoryUsage         |
 | 0x288  | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")       | HandleTable            |
 | 0x530  | u64                                                            |                        |
 | 0x538  | u64                                                            |                        |
