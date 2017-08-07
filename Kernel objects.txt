@@ -250,7 +250,7 @@ Size: 0x2A0
 | NumActiveSlots
 |-
 | 0x298
-| KSpinlock
+| KSpinLock
 | Lock
 |}
 

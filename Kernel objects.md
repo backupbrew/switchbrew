@@ -102,7 +102,7 @@ Size:
 | 0x292  | u16                                              |                 |
 | 0x294  | u16                                              | UpperBitCounter |
 | 0x296  | u16                                              | NumActiveSlots  |
-| 0x298  | KSpinlock                                        | Lock            |
+| 0x298  | KSpinLock                                        | Lock            |
 
 ### KHandleEntry
 
