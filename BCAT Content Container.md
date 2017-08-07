@@ -3,16 +3,16 @@ uses this container.
 
 # Header
 
-| Offset | Size  | Description                     |
-| ------ | ----- | ------------------------------- |
-| 0x0    | 0x4   | Magicnum "bcat"                 |
-| 0x4    | 0x1   | ?                               |
-| 0x5    | 0x1   | Crypto type                     |
-| 0x6    | 0x1   | ?                               |
-| 0x7    | 0x1   | Secret-data index               |
-| 0x8    | 0x8   | Normally zero?                  |
-| 0x10   | 0x10  | Base IV/CTR                     |
-| 0x20   | 0x100 | RSA-2048 signature, presumably. |
+| Offset | Size  | Description        |
+| ------ | ----- | ------------------ |
+| 0x0    | 0x4   | Magicnum "bcat"    |
+| 0x4    | 0x1   | ?                  |
+| 0x5    | 0x1   | Crypto type        |
+| 0x6    | 0x1   | ?                  |
+| 0x7    | 0x1   | Secret-data index  |
+| 0x8    | 0x8   | Normally zero?     |
+| 0x10   | 0x10  | Base IV/CTR        |
+| 0x20   | 0x100 | RSA-2048 signature |
 
 The header is 0x120-bytes.
 
@@ -27,9 +27,9 @@ passphrase\_len=strlen(passphrase). 0x40-bytes are read from the file,
 with 0x0 being written to passphrase\[total\_read\_data\]. salt\_len =
 strlen(salt).
 
-salt is the snprintf output from "%016llx%s", where the former is
-presumably the titleID, while the latter is secretdata\_str.
-secretdata\_str = secretdata\_array\[\<value of hdr+0x7\>\].
+salt is the snprintf output from "%016llx%s", where the former is the
+titleID, while the latter is secretdata\_str. secretdata\_str =
+secretdata\_array\[\<value of hdr+0x7\>\].
 
 Settings config for 1-byte \<"bcat", "production\_mode"\> is loaded,
 when retval\!=1 or output\_config\!=0, then secretdata\_array =
