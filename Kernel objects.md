@@ -93,22 +93,23 @@ Size: 0xB0
 Size:
 0x2A0
 
-| Offset | Type                                             | Description   |
-| ------ | ------------------------------------------------ | ------------- |
-| 0      | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | TablePtr      |
-| 8      | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | NextFreeEntry |
-| 0x10   | [\#KHandleEntry](#KHandleEntry "wikilink")\[40\] | InternalTable |
-| 0x290  | u16                                              | Size          |
-| 0x292  | u16                                              | Initially 0   |
-| 0x294  | u16                                              | Initially 1   |
-| 0x296  | u16                                              |               |
-| 0x298  | KSpinlock                                        | Lock          |
+| Offset | Type                                             | Description     |
+| ------ | ------------------------------------------------ | --------------- |
+| 0      | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | TablePtr        |
+| 8      | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | NextFreeEntry   |
+| 0x10   | [\#KHandleEntry](#KHandleEntry "wikilink")\[40\] | InternalTable   |
+| 0x290  | u16                                              | Size            |
+| 0x292  | u16                                              |                 |
+| 0x294  | u16                                              | UpperBitCounter |
+| 0x296  | u16                                              | NumActiveSlots  |
+| 0x298  | KSpinlock                                        | Lock            |
 
 ### KHandleEntry
 
 | Offset | Type                                       | Description     |
 | ------ | ------------------------------------------ | --------------- |
 | 0      | u16                                        | HandleUpperBits |
+| 2      | u8                                         |                 |
 | 8      | [\#KAutoObject](#KAutoObject "wikilink")\* | Object          |
 
 ## KMemoryBlock

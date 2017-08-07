@@ -239,15 +239,15 @@ Size: 0x2A0
 |-
 | 0x292
 | u16
-| Initially 0
+| 
 |-
 | 0x294
 | u16
-| Initially 1
+| UpperBitCounter
 |-
 | 0x296
 | u16
-|
+| NumActiveSlots
 |-
 | 0x298
 | KSpinlock
@@ -264,6 +264,10 @@ Size: 0x2A0
 | 0
 | u16
 | HandleUpperBits
+|-
+| 2
+| u8
+|
 |-
 | 8
 | [[#KAutoObject]]*
