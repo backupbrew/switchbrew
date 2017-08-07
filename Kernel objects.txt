@@ -115,7 +115,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x181
 | u8
-| 
+| HasInitialized
 |-
 | 0x182
 | u8

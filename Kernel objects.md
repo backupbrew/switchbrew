@@ -55,7 +55,7 @@ Inherits from:
 | 0x148  | u64                                                            |                               |
 | 0x150  | KLinkedListManager                                             |                               |
 | 0x180  | u8                                                             | HasStateChanged               |
-| 0x181  | u8                                                             |                               |
+| 0x181  | u8                                                             | HasInitialized                |
 | 0x182  | u8                                                             |                               |
 | 0x183  | u8\[12\]                                                       | From\_CreateProcessInfo\_0    |
 | 0x18F  | u8                                                             | InitiallyZero                 |
