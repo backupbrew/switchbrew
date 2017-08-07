@@ -85,6 +85,14 @@ Inherits from: [[#KSynchronizationObject]]
 | ..
 | ..
 |-
+| 0x198
+| KProcessCapabilities
+| Capabilities
+|-
+| ..
+| ..
+| ..
+|-
 | 0x288
 | KProcessHandleTable
 | HandleTable
@@ -149,6 +157,30 @@ Inherits from: [[#KSynchronizationObject]]
 | ..
 | ..
 |}
+
+== KProcessCapabilities ==
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| u8[16]
+| SvcAccessMask
+|-
+| 0x10
+| u8[128]
+| IrqAccessMask
+|-
+| 0x90
+| u64
+| AllowedCpuIdBitmask
+|-
+| 0x98
+| u64
+| AllowedThreadPrioBitmask
+}
 
 == KMemoryBlock ==
 Size: 0x40
