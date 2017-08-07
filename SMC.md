@@ -43,7 +43,7 @@ Functions exposed to user-mode processes using
 | 0xC300060F | ExpMod                             |    |     |
 | 0xC3000610 | ExpModAndKeygenAndSealZ            |    |     |
 | 0xC3000011 | SetKeyslotFromZ                    |    |     |
-| 0xC3000012 | \[2.0.0\]+ KeygenAndSealZ          |    |     |
+| 0xC3000012 | \[2.0.0+\] KeygenAndSealZ          |    |     |
 
 ## Id 1
 
