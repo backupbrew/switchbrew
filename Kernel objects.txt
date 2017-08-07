@@ -67,7 +67,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0xF8
 | u64
-|
+| TlsPagesListCount
 |-
 | 0x100
 | KLinkedListManager

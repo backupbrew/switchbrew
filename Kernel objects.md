@@ -43,7 +43,7 @@ Inherits from:
 | 0x28   |                                                                |                        |
 | 0x38   | [\#KProcessMm](#KProcessMm "wikilink")                         | MemoryManager          |
 | 0xF0   | u64                                                            | TotalMemUsage          |
-| 0xF8   | u64                                                            |                        |
+| 0xF8   | u64                                                            | TlsPagesListCount      |
 | 0x100  | KLinkedListManager                                             | TlsPagesList           |
 | 0x130  | KRecursiveLock                                                 | ProcessMutex           |
 | 0x138  | KRecursiveLock                                                 | ThreadingMutex         |
