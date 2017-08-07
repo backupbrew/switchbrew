@@ -17,7 +17,7 @@ Content downloaded by [[BCAT_services|BCAT]] normally uses this container.
 |-
 | 0x5
 | 0x1
-| Crypto type
+| Crypto type: 0x1 = type1, 0x2 = type2, 0x3 = type3. Everything else indicates plaintext.
 |-
 | 0x6
 | 0x1
