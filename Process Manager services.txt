@@ -47,7 +47,7 @@ If launch_flags has mask 2 set, svcStartProcess is skipped.
 
 Finally it does svcStartProcess on the process handle that was returned by [[Loader_services|ldr:pm]] CreateProcess, and sets process state to 2.
 
-The arguments for svcStartProcess are process_handle, *(u8*)info_output, *(u16*)(info_output+1), *(u32*)(info_output+4). 
+The arguments for svcStartProcess are process_handle, *(u8*)info_output, *(u8*)(info_output+1), *(u32*)(info_output+4). 
 
 Thus at the point of launch, the pid is already registered in ldr, fs, sm, and pm.
 

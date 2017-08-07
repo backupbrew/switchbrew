@@ -82,7 +82,7 @@ by [ldr:pm](Loader%20services.md "wikilink") CreateProcess, and sets
 process state to 2.
 
 The arguments for svcStartProcess are process\_handle,
-\*(u8\*)info\_output, \*(u16\*)(info\_output+1),
+\*(u8\*)info\_output, \*(u8\*)(info\_output+1),
 \*(u32\*)(info\_output+4).
 
 Thus at the point of launch, the pid is already registered in ldr, fs,
