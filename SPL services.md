@@ -1,8 +1,11 @@
 # spl:
 
 \[2.0.0+\] Where previously only one AES engine was utilized, there is
-now support for 4 of
-them.
+now support for 4 of them.
+
+\[2.0.0+\] When the session closes, all AES engines that were locked are
+automatically
+unlocked.
 
 | Cmd | Name                                                                 | Notes                                                                                                                               |
 | --- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
