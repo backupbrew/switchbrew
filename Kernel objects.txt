@@ -107,7 +107,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x190
 | u16
-| 
+| NumberOfCreatedThreads
 |-
 | 
 | 
