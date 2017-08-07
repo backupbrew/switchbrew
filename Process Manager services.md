@@ -60,6 +60,9 @@ If launch\_flags has mask 0x10 set, it sets mask 8 in process flags.
 \[2.0.0+\] If launch\_flags has mask 0x20 set, it sets mask 0x80 in
 process flags.
 
+\[2.0.0+\] The launch\_flags mask 0x10 and 0x20 will be ignored unless
+((\*(u8\*) (info\_output+2)) & 4) is set.
+
 If ((\*(u8\*) (info\_output+2)) & 3) is == 1, it sets 0x40 in the
 process flags, and signals the event returned by
 [\#EnableDebug](#EnableDebug "wikilink"). svcStartProcess is not called
