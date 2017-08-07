@@ -11,6 +11,8 @@ If process flags has mask 8 set:
 * If new state is 4, it clears 0x20 and sets 0x10 in process flags, and signals the ProcessEventWaiter handle.
 * If new state is 7, it sets 0x30 in process flags, and signals the ProcessEventWaiter handle.
 
+[2.0.0+] If new state is 2, and process flags has 0x80 set, it sets mask 0x100 and signals the ProcessEventWaiter handle.
+
 If process flags has mask 1 set:
 * If new state is 6, it signals the ProcessEventWaiter handle.
 
