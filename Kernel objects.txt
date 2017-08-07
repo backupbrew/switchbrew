@@ -183,7 +183,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x528
 | void*
-| ReservedTlsEntry
+| UsermodeExceptionTlsArea
 |-
 | 0x530
 | u64
