@@ -75,7 +75,7 @@ Inherits from:
 | 0x528  | void\*                                                         | UsermodeExceptionTlsArea            |
 | 0x530  | u64                                                            |                                     |
 | 0x538  | u64                                                            |                                     |
-| 0x540  | u64                                                            | InitiallyZero                       |
+| 0x540  | [KThread](KThread.md "wikilink")\*                             | ExceptionThread                     |
 | 0x548  | KLinkedListNode                                                | ThreadList                          |
 | 0x558  | u32                                                            |                                     |
 | 0x55C  | u32                                                            | HasStarted                          |

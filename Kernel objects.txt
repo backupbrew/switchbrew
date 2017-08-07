@@ -194,8 +194,8 @@ Inherits from: [[#KSynchronizationObject]]
 |
 |-
 | 0x540
-| u64
-| InitiallyZero
+| [[KThread]]*
+| ExceptionThread
 |-
 | 0x548
 | KLinkedListNode
