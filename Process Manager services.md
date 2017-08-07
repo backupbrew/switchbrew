@@ -95,6 +95,10 @@ sm, and pm.
 
 Always returns u32 0 on retail.
 
+\[2.0.0+\] Additional check on input that can return 0xC0F. The meaning
+is probably useless because function is somewhat nopped on non-dev
+builds anyway.
+
 ## GetDebugProcesses
 
 Returns an array of pids of all processes that have mask 4 set in
