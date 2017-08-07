@@ -250,8 +250,24 @@ Size: 0x2A0
 |
 |-
 | 0x298
-| u8/bool
-|
+| KSpinlock
+| Lock
+|}
+
+=== KHandleEntry ===
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| u16
+| HandleUpperBits
+|-
+| 8
+| [[#KAutoObject]]*
+| Object
 |}
 
 == KMemoryBlock ==

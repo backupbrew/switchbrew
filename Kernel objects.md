@@ -101,7 +101,14 @@ Size: 0x2A0
 | 0x292  | u16                | Initially 0   |
 | 0x294  | u16                | Initially 1   |
 | 0x296  | u16                |               |
-| 0x298  | u8/bool            |               |
+| 0x298  | KSpinlock          | Lock          |
+
+### KHandleEntry
+
+| Offset | Type                                       | Description     |
+| ------ | ------------------------------------------ | --------------- |
+| 0      | u16                                        | HandleUpperBits |
+| 8      | [\#KAutoObject](#KAutoObject "wikilink")\* | Object          |
 
 ## KMemoryBlock
 
