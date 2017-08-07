@@ -1,3 +1,14 @@
+# csrng
+
+| Cmd | Name                                           |
+| --- | ---------------------------------------------- |
+| 0   | [\#GetRandomBytes](#GetRandomBytes "wikilink") |
+
+## GetRandomBytes
+
+Takes a type-6 buffer and fills it with random data. Same command for
+"spl:" and "csrng" services.
+
 # spl:
 
 \[2.0.0+\] Where previously only one AES engine was utilized, there is
@@ -15,7 +26,7 @@ unlocked.
 | 3   | [\#LoadAesKey](#LoadAesKey "wikilink")                               | wrapper for [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink")                                                |
 | 4   | [\#GenerateAesKey](#GenerateAesKey "wikilink")                       | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with a fixed Y     |
 | 5   | [\#SetConfig](#SetConfig "wikilink")                                 | wrapper for [SetConfig](SMC#SetConfig.md##SetConfig "wikilink")                                                                     |
-| 7   | GetRandom                                                            | uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink")                                                                               |
+| 7   | [\#GetRandomBytes](#GetRandomBytes "wikilink")                       | uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink")                                                                               |
 | 9   |                                                                      | wrapper for [ImportParamsForFWithXY](SMC#ImportParamsForFWithXY.md##ImportParamsForFWithXY "wikilink")                              |
 | 10  |                                                                      | wrapper for [ExpMod](SMC#ExpMod.md##ExpMod "wikilink")                                                                              |
 | 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                         |                                                                                                                                     |

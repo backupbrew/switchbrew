@@ -1,3 +1,14 @@
+= csrng =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#GetRandomBytes]]
+|}
+
+== GetRandomBytes ==
+Takes a type-6 buffer and fills it with random data. Same command for "spl:" and "csrng" services.
+
 = spl: =
 [2.0.0+] Where previously only one AES engine was utilized, there is now support for 4 of them.
 
@@ -19,7 +30,7 @@
 |-
 | 5 || [[#SetConfig]] || wrapper for [[SMC#SetConfig|SetConfig]]
 |-
-| 7 || GetRandom || uses [[SMC#PrngX931|PrngX931]]
+| 7 || [[#GetRandomBytes]] || uses [[SMC#PrngX931|PrngX931]]
 |-
 | 9 || || wrapper for [[SMC#ImportParamsForFWithXY|ImportParamsForFWithXY]]
 |-
