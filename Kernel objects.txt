@@ -86,8 +86,8 @@ Inherits from: [[#KSynchronizationObject]]
 | ResourceLimit
 |-
 | 0x128
-|
-|
+| u32
+| State
 |-
 | 0x130
 | KRecursiveLock

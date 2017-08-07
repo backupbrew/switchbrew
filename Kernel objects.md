@@ -48,7 +48,7 @@ Inherits from:
 | 0x110  | s32                                                            | DefaultCpuCore         |
 | 0x118  |                                                                |                        |
 | 0x120  | [\#KResourceLimit](#KResourceLimit "wikilink")\*               | ResourceLimit          |
-| 0x128  |                                                                |                        |
+| 0x128  | u32                                                            | State                  |
 | 0x130  | KRecursiveLock                                                 | ProcessMutex           |
 | 0x138  | KRecursiveLock                                                 | ThreadingMutex         |
 | 0x140  | u64                                                            |                        |
