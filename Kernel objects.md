@@ -63,7 +63,7 @@ Inherits from:
 | 0x530  | u64                                                            |                |
 | 0x538  | u64                                                            |                |
 | 0x540  | u64                                                            |                |
-| 0x548  | KLinkedListNode                                                |                |
+| 0x548  | KLinkedListNode                                                | ThreadList     |
 | 0x558  | u32                                                            |                |
 | 0x55C  | u32                                                            | HasStarted     |
 | 0x560  | u64\[10\]                                                      |                |

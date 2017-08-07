@@ -147,7 +147,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x548
 | KLinkedListNode
-| 
+| ThreadList
 |-
 | 0x558
 | u32
