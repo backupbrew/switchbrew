@@ -49,7 +49,7 @@ Takes a TitleId + StorageId and writes output to a C descriptor buffer as follow
 |-
 | 0x2
 | 0x1
-| PmFlags
+| PmFlags, see [[Process Manager services|here]].
 |-
 | 0x3
 | 0x1

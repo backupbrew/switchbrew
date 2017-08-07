@@ -37,7 +37,7 @@ follows:
 | -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
 | 0x0      | 0x1      | Arg1 to svcStartProcess                                                                                        |
 | 0x1      | 0x1      | Arg2 to svcStartProcess                                                                                        |
-| 0x2      | 0x1      | PmFlags                                                                                                        |
+| 0x2      | 0x1      | PmFlags, see [here](Process%20Manager%20services.md "wikilink").                                               |
 | 0x3      | 0x1      | Padding                                                                                                        |
 | 0x4      | 0x4      | Arg3 to svcStartProcess                                                                                        |
 | 0x8      | 0x8      | Title id                                                                                                       |
