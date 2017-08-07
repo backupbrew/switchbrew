@@ -186,19 +186,15 @@ Inherits from: [[#KSynchronizationObject]]
 | UsermodeExceptionTlsArea
 |-
 | 0x530
-| u64
-|
-|-
-| 0x538
-| u64
-|
+| KLinkedListNode<KThread>
+| ExceptionThreadList
 |-
 | 0x540
-| [[KThread]]*
+| KThread*
 | ExceptionThread
 |-
 | 0x548
-| KLinkedListNode
+| KLinkedListNode<KThread>
 | ThreadList
 |-
 | 0x558
