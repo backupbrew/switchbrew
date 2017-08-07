@@ -92,12 +92,16 @@ Size: 0xB0
 
 Size: 0x2A0
 
-| Offset | Type    | Description |
-| ------ | ------- | ----------- |
-| 0      | u64     |             |
-| 8      | u64     |             |
-| 0x296  | u16     |             |
-| 0x298  | u8/bool |             |
+| Offset | Type               | Description   |
+| ------ | ------------------ | ------------- |
+| 0      | KHandleEntry\*     | TablePtr      |
+| 8      | KHandleEntry\*     | NextFreeEntry |
+| 0x10   | KHandleEntry\[40\] | InternalTable |
+| 0x290  | u16                | Size          |
+| 0x292  | u16                | Initially 0   |
+| 0x294  | u16                | Initially 1   |
+| 0x296  | u16                |               |
+| 0x298  | u8/bool            |               |
 
 ## KMemoryBlock
 

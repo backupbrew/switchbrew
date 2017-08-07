@@ -222,12 +222,28 @@ Size: 0x2A0
 ! Description
 |-
 | 0
-| u64
-|
+| KHandleEntry*
+| TablePtr
 |-
 | 8
-| u64
-|
+| KHandleEntry*
+| NextFreeEntry
+|-
+| 0x10
+| KHandleEntry[40]
+| InternalTable
+|-
+| 0x290
+| u16
+| Size
+|-
+| 0x292
+| u16
+| Initially 0
+|-
+| 0x294
+| u16
+| Initially 1
 |-
 | 0x296
 | u16
