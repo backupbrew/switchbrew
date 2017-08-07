@@ -36,4 +36,4 @@ If this function returns 0xC9E, it calls a function to repair the NAND.
 
 == Done ==
 
-When done it calls the [[Process_Manager_services|pm:shell]] NotifyBootCompleted, and exits itself.
+When done it calls the [[Process_Manager_services|pm:shell]] NotifyBootCompleted (which launches [[boot2]]), and exits itself.

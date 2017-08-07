@@ -58,4 +58,5 @@ If this function returns 0xC9E, it calls a function to repair the NAND.
 
 When done it calls the
 [pm:shell](Process%20Manager%20services.md "wikilink")
-NotifyBootCompleted, and exits itself.
+NotifyBootCompleted (which launches [boot2](Boot2.md "wikilink")), and
+exits itself.
