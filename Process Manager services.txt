@@ -33,6 +33,8 @@ If launch_flags has mask 1 set, it sets mask 1 in process flags.
 
 If launch_flags has mask 0x10 set, it sets mask 8 in process flags.
 
+[2.0.0+] If launch_flags has mask 0x20 set, it sets mask 0x80 in process flags.
+
 If ((*(u8*) (info_output+2)) & 3) is == 1, it sets 0x40 in the process flags, and signals the event returned by [[#EnableDebug]]. svcStartProcess is not called in this case, it has to be done manually by the [[#StartProcess]] command.
 
 If the title-id matches the title-id given in [[#EnableDebugForTitleId]], then svcStartProcess is not called. Instead process remains in suspended state, and has to be done manually by the [[#StartProcess]] command.
