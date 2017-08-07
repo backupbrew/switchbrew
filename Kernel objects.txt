@@ -86,7 +86,7 @@ Inherits from: [[#KSynchronizationObject]]
 | ..
 |-
 | 0x198
-| KProcessCapabilities
+| [[#KProcessCapabilities]]
 | Capabilities
 |-
 | ..
@@ -180,7 +180,7 @@ Inherits from: [[#KSynchronizationObject]]
 | 0x98
 | u64
 | AllowedThreadPrioBitmask
-}
+|}
 
 == KMemoryBlock ==
 Size: 0x40
