@@ -70,20 +70,48 @@ Inherits from: [[#KSynchronizationObject]]
 |
 |-
 | 0x100
-| [[#KLinkedListNode]]*
+| KLinkedListManager
 | TlsPagesList
-|-
-| ..
-| ..
-| ..
 |-
 | 0x130
 | KRecursiveLock
 | ProcessMutex
 |-
-| ..
-| ..
-| ..
+| 0x138
+| u64
+| 
+|-
+| 0x140
+| u64
+| 
+|-
+| 0x148
+| u64
+| 
+|-
+| 0x150
+| KLinkedListManager
+| 
+|-
+| 0x180
+| u8
+| 
+|-
+| 0x181
+| u8
+| SignalValue
+|-
+| 
+| 
+| Pad
+|-
+| 0x190
+| u16
+| 
+|-
+| 
+| 
+| Pad
 |-
 | 0x198
 | [[#KProcessCapabilities]]
@@ -106,7 +134,31 @@ Inherits from: [[#KSynchronizationObject]]
 | HandleTable
 |-
 | 0x530
+| u64
 |
+|-
+| 0x538
+| u64
+|
+|-
+| 0x540
+| u64
+|
+|-
+| 0x548
+| KLinkedListNode
+| 
+|-
+| 0x558
+| u32
+|
+|-
+| 0x55C
+| u32
+| HasStarted
+|-
+| 0x560
+| u64[10]
 |
 |}
 

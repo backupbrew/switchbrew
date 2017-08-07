@@ -44,16 +44,29 @@ Inherits from:
 | 0x38   | [\#KProcessMm](#KProcessMm "wikilink")                         | MemoryManager |
 | 0xF0   | u64                                                            | TotalMemUsage |
 | 0xF8   | u64                                                            |               |
-| 0x100  | [\#KLinkedListNode](#KLinkedListNode "wikilink")\*             | TlsPagesList  |
-| ..     | ..                                                             | ..            |
+| 0x100  | KLinkedListManager                                             | TlsPagesList  |
 | 0x130  | KRecursiveLock                                                 | ProcessMutex  |
-| ..     | ..                                                             | ..            |
+| 0x138  | u64                                                            |               |
+| 0x140  | u64                                                            |               |
+| 0x148  | u64                                                            |               |
+| 0x150  | KLinkedListManager                                             |               |
+| 0x180  | u8                                                             |               |
+| 0x181  | u8                                                             | SignalValue   |
+|        |                                                                | Pad           |
+| 0x190  | u16                                                            |               |
+|        |                                                                | Pad           |
 | 0x198  | [\#KProcessCapabilities](#KProcessCapabilities "wikilink")     | Capabilities  |
 | 0x248  | u64                                                            |               |
 | 0x250  | u64                                                            | Pid           |
 | ..     | ..                                                             | ..            |
 | 0x288  | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")       | HandleTable   |
-| 0x530  |                                                                |               |
+| 0x530  | u64                                                            |               |
+| 0x538  | u64                                                            |               |
+| 0x540  | u64                                                            |               |
+| 0x548  | KLinkedListNode                                                |               |
+| 0x558  | u32                                                            |               |
+| 0x55C  | u32                                                            | HasStarted    |
+| 0x560  | u64\[10\]                                                      |               |
 
 ## KProcessMm
 
