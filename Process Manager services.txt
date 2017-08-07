@@ -25,6 +25,8 @@ It uses [[Loader_services|ldr:pm]] GetProgramInfo with the supplied title-id.
 
 If ((*(u8*) (info_output+2)) & 3) is == 1, it goes through the process list and errors if any has bit 0x40 set. Thus only one process can have bit 0x40 set at a time.
 
+Resource limits for the process is selected by ((*(u8*) (info_output+2)) & 3) being 0, 1, or 2. Value 3 is not used.
+
 It calls [[Loader_services|ldr:pm]] RegisterTitle, then [[Loader_services|ldr:pm]] CreateProcess, then [[Filesystem_services|fsp-pr]] RegisterTitle, then [[Services_API|sm:m]] RegisterTitle.
 
 The second input argument for [[Loader_services|ldr:pm]] CreateProcess is (launch_flags >> 2) & 3.
@@ -42,6 +44,8 @@ If the title-id matches the title-id given in [[#EnableDebugForTitleId]], then s
 If launch_flags has mask 2 set, svcStartProcess is skipped.
 
 Finally it does svcStartProcess on the process handle that was returned by [[Loader_services|ldr:pm]] CreateProcess, and sets process state to 2.
+
+The arguments for svcStartProcess are process_handle, *(u8*)info_output, *(u16*)(info_output+1), *(u32*)(info_output+4). 
 
 Thus at the point of launch, the pid is already registered in ldr, fs, sm, and pm.
 
