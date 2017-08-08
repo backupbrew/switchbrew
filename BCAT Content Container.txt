@@ -45,7 +45,7 @@ The header is 0x120-bytes.
 =Key generation=
 The AES keydata is the output from pkcs5_pbkdf2_hmac, with SHA256: password = <passphrase string loaded from file>, salt = <below salt string>, and iteration_count=4096.
 
-The passphrase is loaded from "<basepath>/passphrase.bin". passphrase_len=strlen(passphrase). 0x40-bytes are read from the file, with 0x0 being written to passphrase[total_read_data]. salt_len = strlen(salt).
+The passphrase is loaded from "<basepath>/passphrase.bin" (this data originally comes from the title's control.nacp @ 0x3100). passphrase_len=strlen(passphrase). 0x40-bytes are read from the file, with 0x0 being written to passphrase[total_read_data]. salt_len = strlen(salt).
 
 salt is the snprintf output from "%016llx%s", where the former is the titleID, while the latter is secretdata_str. secretdata_str = secretdata_array[<value of hdr+0x7>].
 

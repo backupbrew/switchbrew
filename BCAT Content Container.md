@@ -23,7 +23,8 @@ The AES keydata is the output from pkcs5\_pbkdf2\_hmac, with SHA256:
 password = <passphrase string loaded from file>, salt =
 <below salt string>, and iteration\_count=4096.
 
-The passphrase is loaded from "<basepath>/passphrase.bin".
+The passphrase is loaded from "<basepath>/passphrase.bin" (this data
+originally comes from the title's control.nacp @ 0x3100).
 passphrase\_len=strlen(passphrase). 0x40-bytes are read from the file,
 with 0x0 being written to passphrase\[total\_read\_data\]. salt\_len =
 strlen(salt).
