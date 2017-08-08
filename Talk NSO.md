@@ -6,3 +6,11 @@ Has anyone made a tool for decompressing the "main" file in the exefs?
     --[SciresM](User:SciresM "wikilink")
     ([talk](User%20talk:SciresM.md "wikilink")) 10:07, 7 August 2017
     (CDT)
+
+<!-- end list -->
+
+  -   
+    Thanks. Can I share this link, or would you prefer I didn't?
+    --[Hiccup](User:Hiccup "wikilink")
+    ([talk](User%20talk:Hiccup.md "wikilink")) 06:43, 8 August 2017
+    (CDT)
