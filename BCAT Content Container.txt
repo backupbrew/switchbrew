@@ -21,7 +21,7 @@ Content downloaded by [[BCAT_services|BCAT]] normally uses this container.
 |-
 | 0x6
 | 0x1
-| RSA Hash Type: 0x1,0x3 = SHA256, 0x0,0x2 = SHA1
+| RSA/Hash Type: {0x0,0x2} = SHA1, {0x1,0x3} = SHA256. The former value in each pair is RSA PKCS1. Value >0x3 eventually results in an error being thrown.
 |-
 | 0x7
 | 0x1

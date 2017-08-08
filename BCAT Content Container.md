@@ -4,16 +4,16 @@ container.
 
 # Header
 
-| Offset | Size  | Description                                                                                                |
-| ------ | ----- | ---------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4   | Magicnum "bcat"                                                                                            |
-| 0x4    | 0x1   | ?                                                                                                          |
-| 0x5    | 0x1   | Crypto type: 0x1 = AES-128-CTR, 0x2 = AES-192-CTR, 0x3 = AES-256-CTR. Everything else indicates plaintext. |
-| 0x6    | 0x1   | RSA Hash Type: 0x1,0x3 = SHA256, 0x0,0x2 = SHA1                                                            |
-| 0x7    | 0x1   | Secret-data index                                                                                          |
-| 0x8    | 0x8   | Normally zero?                                                                                             |
-| 0x10   | 0x10  | Base IV/CTR                                                                                                |
-| 0x20   | 0x100 | RSA-2048 signature                                                                                         |
+| Offset | Size  | Description                                                                                                                                               |
+| ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4   | Magicnum "bcat"                                                                                                                                           |
+| 0x4    | 0x1   | ?                                                                                                                                                         |
+| 0x5    | 0x1   | Crypto type: 0x1 = AES-128-CTR, 0x2 = AES-192-CTR, 0x3 = AES-256-CTR. Everything else indicates plaintext.                                                |
+| 0x6    | 0x1   | RSA/Hash Type: {0x0,0x2} = SHA1, {0x1,0x3} = SHA256. The former value in each pair is RSA PKCS1. Value \>0x3 eventually results in an error being thrown. |
+| 0x7    | 0x1   | Secret-data index                                                                                                                                         |
+| 0x8    | 0x8   | Normally zero?                                                                                                                                            |
+| 0x10   | 0x10  | Base IV/CTR                                                                                                                                               |
+| 0x20   | 0x100 | RSA-2048 signature                                                                                                                                        |
 
 The header is 0x120-bytes.
 
