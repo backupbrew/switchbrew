@@ -21,7 +21,7 @@ Content downloaded by [[BCAT_services|BCAT]] normally uses this container.
 |-
 | 0x6
 | 0x1
-| RSA/Hash Type: {0x0,0x2} = SHA1, {0x1,0x3} = SHA256. The former value in each pair is RSA PKCS1. Value >0x3 eventually results in an error being thrown.
+| RSA/Hash Type: {0x0,0x2} = SHA1, {0x1,0x3} = SHA256. The former value in each pair is RSA PKCS1, while the later value in each pair is RSA PSS. Value >0x3 eventually results in an error being thrown.
 |-
 | 0x7
 | 0x1
@@ -41,6 +41,8 @@ Content downloaded by [[BCAT_services|BCAT]] normally uses this container.
 |}
 
 The header is 0x120-bytes.
+
+Settings config for 1-byte <"bcat", "production_mode"> is loaded, the output is used to determine which RSA modulo to use.
 
 =Key generation=
 The AES keydata is the output from pkcs5_pbkdf2_hmac, with SHA256: password = <passphrase string loaded from file>, salt = <below salt string>, and iteration_count=4096.
