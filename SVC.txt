@@ -294,7 +294,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 7 || 0 || Process heap size.
 |-
-| Zero    || 8 || 0 || ExceptionInfo.
+| Zero    || 8 || 0 || ExceptionInfo from current process.
 |-
 | Zero    || 9 || 0 || This creates and returns an ResourceLimit handle. Used by [[Process_Manager_services|PM]].
 |-

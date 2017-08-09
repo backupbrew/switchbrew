@@ -198,7 +198,7 @@ it will return
 | Process     | 5          | 0                     | Heap region size. Always 0x180000000.                                                                                                                              |
 | Process     | 6          | 0                     | Total memory usage?                                                                                                                                                |
 | Process     | 7          | 0                     | Process heap size.                                                                                                                                                 |
-| Zero        | 8          | 0                     | ExceptionInfo.                                                                                                                                                     |
+| Zero        | 8          | 0                     | ExceptionInfo from current process.                                                                                                                                |
 | Zero        | 9          | 0                     | This creates and returns an ResourceLimit handle. Used by [PM](Process%20Manager%20services.md "wikilink").                                                        |
 | Zero        | 10         | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?                                                                      |
 | Zero        | 11         | 0-3                   | Returns random from TRNG. Used to seed usermode PRNGs. Unknown what exactly causes this output to change, however it does change when exiting+launching a process. |
