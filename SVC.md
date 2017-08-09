@@ -190,14 +190,14 @@ it will return
 
 | Handle type | Id0        | Id1                   | Description                                                                                                 |
 | ----------- | ---------- | --------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Process     | 0          | 0                     | AllowedCpuIdBitmask. Always 0xF meaning all 4 cores available.                                              |
-| Process     | 1          | 0                     | Always 0xfffffffff0000000.                                                                                  |
-| Process     | 2          | 0                     | Randomized unknown base-address.                                                                            |
-| Process     | 3          | 0                     | Always 0x1000000000.                                                                                        |
-| Process     | 4          | 0                     | Heap base. Randomized.                                                                                      |
-| Process     | 5          | 0                     | Heap region size. Always 0x180000000.                                                                       |
-| Process     | 6          | 0                     | Total memory usage?                                                                                         |
-| Process     | 7          | 0                     | Process heap size.                                                                                          |
+| Process     | 0          | 0                     | AllowedCpuIdBitmask                                                                                         |
+| Process     | 1          | 0                     | AllowedThreadPrioBitmask                                                                                    |
+| Process     | 2          | 0                     | MapRegionBaseAddress                                                                                        |
+| Process     | 3          | 0                     | MapRegionSize                                                                                               |
+| Process     | 4          | 0                     | HeapRegionBaseAddress                                                                                       |
+| Process     | 5          | 0                     | HeapRegionSize                                                                                              |
+| Process     | 6          | 0                     | TotalMemoryUsage                                                                                            |
+| Process     | 7          | 0                     | TotalHeapUsage                                                                                              |
 | Zero        | 8          | 0                     | ExceptionInfo for current process.                                                                          |
 | Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink"). |
 | Zero        | 10         | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?               |

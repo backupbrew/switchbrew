@@ -278,21 +278,21 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 {| class=wikitable
 ! Handle type || Id0 || Id1 || Description
 |-
-| Process || 0 || 0 || AllowedCpuIdBitmask. Always 0xF meaning all 4 cores available.
+| Process || 0 || 0 || AllowedCpuIdBitmask
 |-
-| Process || 1 || 0 || Always 0xfffffffff0000000.
+| Process || 1 || 0 || AllowedThreadPrioBitmask
 |-
-| Process || 2 || 0 || Randomized unknown base-address.
+| Process || 2 || 0 || MapRegionBaseAddress
 |-
-| Process || 3 || 0 || Always 0x1000000000.
+| Process || 3 || 0 || MapRegionSize
 |-
-| Process || 4 || 0 || Heap base. Randomized.
+| Process || 4 || 0 || HeapRegionBaseAddress
 |-
-| Process || 5 || 0 || Heap region size. Always 0x180000000.
+| Process || 5 || 0 || HeapRegionSize
 |-
-| Process || 6 || 0 || Total memory usage?
+| Process || 6 || 0 || TotalMemoryUsage
 |-
-| Process || 7 || 0 || Process heap size.
+| Process || 7 || 0 || TotalHeapUsage
 |-
 | Zero    || 8 || 0 || ExceptionInfo for current process.
 |-
