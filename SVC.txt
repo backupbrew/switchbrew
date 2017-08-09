@@ -278,7 +278,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 {| class=wikitable
 ! Handle type || Id0 || Id1 || Description
 |-
-| Process || 0 || 0 || Core available mask. Always 0xF meaning all 4 cores available.
+| Process || 0 || 0 || AllowedCpuIdBitmask. Always 0xF meaning all 4 cores available.
 |-
 | Process || 1 || 0 || Always 0xfffffffff0000000.
 |-
@@ -294,7 +294,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 7 || 0 || Process heap size.
 |-
-| Zero    || 8 || 0 || Always 0. Used during exception handling.
+| Zero    || 8 || 0 || ExceptionInfo.
 |-
 | Zero    || 9 || 0 || This creates and returns an ResourceLimit handle. Used by [[Process_Manager_services|PM]].
 |-
