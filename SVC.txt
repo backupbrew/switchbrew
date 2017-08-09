@@ -495,7 +495,7 @@ These take a [[#DeviceName]] and a device address space handle.
 |-
 | 0xC || 4 ||
 |-
-| 0x10 || 8 ||
+| 0x10 || 8 || TitleId
 |-
 | 0x18 || 8 || CodeAddr
 |-
