@@ -207,7 +207,7 @@ it will return
 | Process     | 14         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] MapRegionBased. Randomized.                                             |
 | Process     | 15         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] MapRegionSize.                                                          |
 | Process     | 18         | 0                     | \[ [3.0.0](3.0.0.md "wikilink") +\] Title-id.                                                               |
-| ?           | 0xF0000002 | 0                     | Performance counter related.                                                                                |
+| Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
 ## svcReadWriteRegister
 

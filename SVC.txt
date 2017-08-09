@@ -312,7 +312,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 18 || 0 || [ [[3.0.0]] +] Title-id.
 |-
-| ? || 0xF0000002 || 0 || Performance counter related.
+| Thread || 0xF0000002 || 0 || Performance counter related.
 |}
 
 == svcReadWriteRegister ==
