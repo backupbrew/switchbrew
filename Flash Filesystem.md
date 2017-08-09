@@ -190,5 +190,9 @@ to.
 
 | SaveID             | Owner | Notes                                                                                                                                                     |
 | ------------------ | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x8000000000000092 | bcat? |                                                                                                                                                           |
+| 0x8000000000000041 | ns    | nsaccache:/ (Home menu icondata/lru list for recently played games)                                                                                       |
+| 0x8000000000000045 | ns    | vmdb:/ (Version List/Required Version List storage)                                                                                                       |
+| 0x8000000000000090 | bcat  | news:/ (Actual news msgpack archives)                                                                                                                     |
+| 0x8000000000000091 | bcat  | news-sys:/ (News metadata, tasklist, history, database, required system version etc)                                                                      |
+| 0x8000000000000092 | bcat  | news-dl:/ (Storage for newly(?) downloaded news list/data)                                                                                                |
 | 0x80000000000000d1 | erpt  | Contains "/journal" report listing + actual crash reports ("/%08x-%04x-%04x-%02x%02x-%04x%08x"), which are serialized via [MsgPack](http://msgpack.org/). |
