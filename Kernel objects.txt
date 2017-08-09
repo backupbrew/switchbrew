@@ -520,6 +520,10 @@ Inherits from: [[#KAutoObject]]
 | 0x44
 | bool
 | HasInited
+|-
+| 0x45
+| bool
+| IsMapped
 |}
 
 = KSharedMemory =

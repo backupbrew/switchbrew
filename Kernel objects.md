@@ -189,6 +189,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 | 0x30   | u64                                      | BaseAddress  |
 | 0x40   | int                                      | Permission   |
 | 0x44   | bool                                     | HasInited    |
+| 0x45   | bool                                     | IsMapped     |
 
 # KSharedMemory
 
