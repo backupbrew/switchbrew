@@ -331,18 +331,18 @@ space handle.
 
 ## CreateProcessInfo
 
-| Offset | Length | Description                                                                                                                                 |
-| ------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0      | 8      |                                                                                                                                             |
-| 8      | 2      |                                                                                                                                             |
-| 0xA    | 2      |                                                                                                                                             |
-| 0xC    | 4      |                                                                                                                                             |
-| 0x10   | 8      | TitleId                                                                                                                                     |
-| 0x18   | 8      | CodeAddr                                                                                                                                    |
-| 0x20   | 4      | CodeNumPages                                                                                                                                |
-| 0x24   | 4      | MemoryManagementFlags. Bit0: is\_64bit (maybe?), bit3-1: MMU table size? (0=32-bit, 1=64-bit 0x800000000, 2=64-bit 0x400000000), bit5, bit6 |
-| 0x28   | 4      | ResourceLimitHandle                                                                                                                         |
-| 0x2C   | 4      |                                                                                                                                             |
+| Offset | Length | Description                                                                                                                                |
+| ------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0      | 8      |                                                                                                                                            |
+| 8      | 2      |                                                                                                                                            |
+| 0xA    | 2      |                                                                                                                                            |
+| 0xC    | 4      |                                                                                                                                            |
+| 0x10   | 8      | TitleId                                                                                                                                    |
+| 0x18   | 8      | CodeAddr                                                                                                                                   |
+| 0x20   | 4      | CodeNumPages                                                                                                                               |
+| 0x24   | 4      | Flags. Bit0: Is64bit (maybe?), bit3-1: MmuTableType (0=32-bit, 1=64-bit 0x800000000, 2=64-bit 0x400000000), bit4: DebugAllowed, bit5, bit6 |
+| 0x28   | 4      | ResourceLimitHandle                                                                                                                        |
+| 0x2C   | 4      |                                                                                                                                            |
 
 ## MemoryAttribute
 
