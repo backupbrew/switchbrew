@@ -79,7 +79,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x118
 | u64
-| InitiallyZero
+| ExceptionInfo
 |-
 | 0x120
 | [[#KResourceLimit]]*
