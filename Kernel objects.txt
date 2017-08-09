@@ -135,7 +135,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x194
 | u32
-| From_CreateProcessInfo_0x24
+| ProcessFlags
 |-
 | 0x198
 | [[#KProcessCapabilities]]
