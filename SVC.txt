@@ -300,7 +300,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Zero    || 10 || -1, {current coreid} || Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?
 |-
-| Zero    || 11 || 0-3 || Returns random from TRNG. Used to seed usermode PRNGs. Unknown what exactly causes this output to change, however it does change when exiting+launching a process.
+| Zero    || 11 || 0-3 || RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.
 |-
 | Process || 12 || 0 || Address space start. Always 0x8000000.
 |-

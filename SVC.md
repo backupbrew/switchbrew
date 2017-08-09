@@ -188,26 +188,26 @@ it will return
 
 ## svcGetInfo
 
-| Handle type | Id0        | Id1                   | Description                                                                                                                                                        |
-| ----------- | ---------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Process     | 0          | 0                     | AllowedCpuIdBitmask. Always 0xF meaning all 4 cores available.                                                                                                     |
-| Process     | 1          | 0                     | Always 0xfffffffff0000000.                                                                                                                                         |
-| Process     | 2          | 0                     | Randomized unknown base-address.                                                                                                                                   |
-| Process     | 3          | 0                     | Always 0x1000000000.                                                                                                                                               |
-| Process     | 4          | 0                     | Heap base. Randomized.                                                                                                                                             |
-| Process     | 5          | 0                     | Heap region size. Always 0x180000000.                                                                                                                              |
-| Process     | 6          | 0                     | Total memory usage?                                                                                                                                                |
-| Process     | 7          | 0                     | Process heap size.                                                                                                                                                 |
-| Zero        | 8          | 0                     | ExceptionInfo for current process.                                                                                                                                 |
-| Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink").                                                        |
-| Zero        | 10         | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?                                                                      |
-| Zero        | 11         | 0-3                   | Returns random from TRNG. Used to seed usermode PRNGs. Unknown what exactly causes this output to change, however it does change when exiting+launching a process. |
-| Process     | 12         | 0                     | Address space start. Always 0x8000000.                                                                                                                             |
-| Process     | 13         | 0                     | Address space size. Always 0x7ff8000000.                                                                                                                           |
-| Process     | 14         | 0                     | Map region base. Randomized.                                                                                                                                       |
-| Process     | 15         | 0                     | Map region size.                                                                                                                                                   |
-| Process     | 18         | 0                     | \[ [3.0.0](3.0.0.md "wikilink") +\] Title-id.                                                                                                                      |
-| ?           | 0xF0000002 | 0                     | Performance counter related.                                                                                                                                       |
+| Handle type | Id0        | Id1                   | Description                                                                                                 |
+| ----------- | ---------- | --------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Process     | 0          | 0                     | AllowedCpuIdBitmask. Always 0xF meaning all 4 cores available.                                              |
+| Process     | 1          | 0                     | Always 0xfffffffff0000000.                                                                                  |
+| Process     | 2          | 0                     | Randomized unknown base-address.                                                                            |
+| Process     | 3          | 0                     | Always 0x1000000000.                                                                                        |
+| Process     | 4          | 0                     | Heap base. Randomized.                                                                                      |
+| Process     | 5          | 0                     | Heap region size. Always 0x180000000.                                                                       |
+| Process     | 6          | 0                     | Total memory usage?                                                                                         |
+| Process     | 7          | 0                     | Process heap size.                                                                                          |
+| Zero        | 8          | 0                     | ExceptionInfo for current process.                                                                          |
+| Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink"). |
+| Zero        | 10         | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?               |
+| Zero        | 11         | 0-3                   | RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.                                      |
+| Process     | 12         | 0                     | Address space start. Always 0x8000000.                                                                      |
+| Process     | 13         | 0                     | Address space size. Always 0x7ff8000000.                                                                    |
+| Process     | 14         | 0                     | Map region base. Randomized.                                                                                |
+| Process     | 15         | 0                     | Map region size.                                                                                            |
+| Process     | 18         | 0                     | \[ [3.0.0](3.0.0.md "wikilink") +\] Title-id.                                                               |
+| ?           | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
 ## svcReadWriteRegister
 
