@@ -305,7 +305,7 @@ Size: 0xB0
 |-
 | 0xA0
 | u32
-|
+| DebuggingFlags (bit0: can be debugged, bit1: can debug others)
 |-
 | 0xA4
 | u32
