@@ -48,18 +48,18 @@ unlocked.
 Takes an input word (ConfigItem), and returns a u64 with the config
 params.
 
-| ConfigItem | Name                                                                                                                                                                              |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1          | DisableProgramVerification                                                                                                                                                        |
-| 2          | MemoryConfiguration                                                                                                                                                               |
-| 5          | HardwareType (0=Icosa, 1=Copper)                                                                                                                                                  |
-| 6          | IsRetail                                                                                                                                                                          |
-| 7          | IsRecoveryBoot                                                                                                                                                                    |
-| 8          | DeviceId (byte7 clear).                                                                                                                                                           |
-| 9          | BootReason                                                                                                                                                                        |
-| 10         | MemoryArrange                                                                                                                                                                     |
-| 11         | AllowSkippingNrrSignatures. Also used by FS-sysmodule for non-RSA: when zero, bit62 in fsp-pr registration permissions are force-cleared to zero, otherwise the original is used. |
-| 13         | BatteryProfile?                                                                                                                                                                   |
+| ConfigItem | Name                             |
+| ---------- | -------------------------------- |
+| 1          | DisableProgramVerification       |
+| 2          | MemoryConfiguration              |
+| 5          | HardwareType (0=Icosa, 1=Copper) |
+| 6          | IsRetail                         |
+| 7          | IsRecoveryBoot                   |
+| 8          | DeviceId (byte7 clear).          |
+| 9          | BootReason                       |
+| 10         | MemoryArrange                    |
+| 11         | IsDebugMode                      |
+| 13         | BatteryProfile?                  |
 
 [PM](Process%20Manager%20services.md "wikilink") checks id1 and if
 non-zero, calls fsp-pr SetEnabledProgramVerification(false).
@@ -70,6 +70,10 @@ cleared, otherwise panic.
 
 \[3.0.0+\] [RO](Loader%20services.md "wikilink") checks id11, if set
 then skipping NRR rsa signatures is allowed.
+
+Kernel uses id11 to determine behavior of svcBreak positive arguments.
+It will break instead of just force-exiting the process which is what
+happens on retail.
 
 ## GenerateAesKek
 
