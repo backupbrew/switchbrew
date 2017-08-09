@@ -302,13 +302,13 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Zero    || 11 || 0-3 || RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.
 |-
-| Process || 12 || 0 || Address space start. Always 0x8000000.
+| Process || 12 || 0 || [ [[2.0.0]] +] AddressSpaceStart.
 |-
-| Process || 13 || 0 || Address space size. Always 0x7ff8000000.
+| Process || 13 || 0 || [ [[2.0.0]] +] AddressSpaceSize.
 |-
-| Process || 14 || 0 || Map region base. Randomized.
+| Process || 14 || 0 || [ [[2.0.0]] +] MapRegionBased. Randomized.
 |-
-| Process || 15 || 0 || Map region size.
+| Process || 15 || 0 || [ [[2.0.0]] +] MapRegionSize.
 |-
 | Process || 18 || 0 || [ [[3.0.0]] +] Title-id.
 |-

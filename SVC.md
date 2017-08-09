@@ -202,10 +202,10 @@ it will return
 | Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink"). |
 | Zero        | 10         | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?               |
 | Zero        | 11         | 0-3                   | RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.                                      |
-| Process     | 12         | 0                     | Address space start. Always 0x8000000.                                                                      |
-| Process     | 13         | 0                     | Address space size. Always 0x7ff8000000.                                                                    |
-| Process     | 14         | 0                     | Map region base. Randomized.                                                                                |
-| Process     | 15         | 0                     | Map region size.                                                                                            |
+| Process     | 12         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] AddressSpaceStart.                                                      |
+| Process     | 13         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] AddressSpaceSize.                                                       |
+| Process     | 14         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] MapRegionBased. Randomized.                                             |
+| Process     | 15         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] MapRegionSize.                                                          |
 | Process     | 18         | 0                     | \[ [3.0.0](3.0.0.md "wikilink") +\] Title-id.                                                               |
 | ?           | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
