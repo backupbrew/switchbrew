@@ -52,7 +52,8 @@ Inherits from:
 | 0x130  | KRecursiveLock                                                 | ProcessMutex                        |
 | 0x138  | KRecursiveLock                                                 | ThreadingMutex                      |
 | 0x140  | KLinkedListNode<KThread>                                       | ThreadArbiterList                   |
-| 0x150  | KLinkedListManager                                             |                                     |
+| 0x150  | KLinkedListNode                                                |                                     |
+| 0x160  | u64\[4\]                                                       | RandomEntropy                       |
 | 0x180  | u8                                                             | HasStateChanged                     |
 | 0x181  | u8                                                             | HasInitialized                      |
 | 0x182  | u8                                                             | From\_CreateProcessInfo\_0x24\_Bit6 |

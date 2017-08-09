@@ -102,8 +102,12 @@ Inherits from: [[#KSynchronizationObject]]
 | ThreadArbiterList
 |-
 | 0x150
-| KLinkedListManager
+| KLinkedListNode
 | 
+|-
+| 0x160
+| u64[4]
+| RandomEntropy
 |-
 | 0x180
 | u8
