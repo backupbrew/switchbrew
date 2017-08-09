@@ -46,7 +46,7 @@ Inherits from:
 | 0xF8   | u64                                                            | TlsPagesListCount                   |
 | 0x100  | [\#KLinkedListNode](#KLinkedListNode "wikilink")               | TlsPagesList                        |
 | 0x110  | s32                                                            | DefaultCpuCore                      |
-| 0x118  | u64                                                            | ExceptionInfo                       |
+| 0x118  | KDebug\*                                                       | Debug                               |
 | 0x120  | [\#KResourceLimit](#KResourceLimit "wikilink")\*               | ResourceLimit                       |
 | 0x128  | u32                                                            | State                               |
 | 0x130  | KRecursiveLock                                                 | ProcessMutex                        |

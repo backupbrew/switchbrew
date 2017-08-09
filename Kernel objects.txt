@@ -78,8 +78,8 @@ Inherits from: [[#KSynchronizationObject]]
 | DefaultCpuCore
 |-
 | 0x118
-| u64
-| ExceptionInfo
+| KDebug*
+| Debug
 |-
 | 0x120
 | [[#KResourceLimit]]*
