@@ -42,8 +42,14 @@ Presumably Network Time
     titleID, only for eShop titles it appears. Returns .json title-info.
   - https://superfly.hac.%%.d4c.nintendo.net/v1/a/%016llx/dv %016llx is
     titleID, only for eShop titles it appears. Output is similar to
-    above URL.
+    above
+    URL.
   - https://aauth-%.ndas.srv.nintendo.net/v1/time
+  - https://beach.hac.%.eshop.nintendo.net/v1/rom\_cards?application\_id=%016llx\&rom\_card\_cert=%s
+  - https://beach.hac.%.eshop.nintendo.net/v1/rom\_cards/register?application\_id=%016llx\&rom\_card\_cert=%s\&expected\_gold\_point=%d
+  - https://beach.hac.%.eshop.nintendo.net/v1/my/devices/hac/link?lang=en
+  - https://beach.hac.%.eshop.nintendo.net/v1/my/virtual\_account?lang=en
+  - https://tagaya.hac.%.eshop.nintendo.net/tagaya/hac\_versionlist
   - ...
   - "https://dauth-%.ndas.srv.nintendo.net/v1/device\_auth\_token"
     CURLOPT\_POSTFIELDS is set to the output from: snprintf(...,

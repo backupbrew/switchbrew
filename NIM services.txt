@@ -30,6 +30,11 @@ Presumably Network Time Sync?
 * <nowiki>https://superfly.hac.%%.d4c.nintendo.net/v1/t/%016llx/dv</nowiki> %016llx is titleID, only for eShop titles it appears. Returns .json title-info.
 * <nowiki>https://superfly.hac.%%.d4c.nintendo.net/v1/a/%016llx/dv</nowiki> %016llx is titleID, only for eShop titles it appears. Output is similar to above URL.
 * <nowiki>https://aauth-%.ndas.srv.nintendo.net/v1/time</nowiki>
+* <nowiki>https://beach.hac.%.eshop.nintendo.net/v1/rom_cards?application_id=%016llx&rom_card_cert=%s</nowiki>
+* <nowiki>https://beach.hac.%.eshop.nintendo.net/v1/rom_cards/register?application_id=%016llx&rom_card_cert=%s&expected_gold_point=%d</nowiki>
+* <nowiki>https://beach.hac.%.eshop.nintendo.net/v1/my/devices/hac/link?lang=en</nowiki>
+* <nowiki>https://beach.hac.%.eshop.nintendo.net/v1/my/virtual_account?lang=en</nowiki>
+* <nowiki>https://tagaya.hac.%.eshop.nintendo.net/tagaya/hac_versionlist</nowiki>
 * ...
 * <nowiki>"https://dauth-%.ndas.srv.nintendo.net/v1/device_auth_token"</nowiki> CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "system_version=%08x&client_id=%s", <output parsed from a func>, "<hard-coded hex string>");
 
