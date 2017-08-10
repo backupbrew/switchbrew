@@ -59,8 +59,7 @@ Note: unlike 3DS, Switch doesn't have a dedicated HTTP-sysmodule.
 Instead, processes using HTTP(S) just use libcurl + socket/ssl services.
 
 As of [2.0.0](2.0.0.md "wikilink"), the only sysmodule with a RomFS is
-"hid", which only contains:
-"ftmFwUpdate/NTD\_4CD\_1801.fts256".
+[hid-sysmodule](HID%20services.md "wikilink").
 
 ## System Debug Applets
 

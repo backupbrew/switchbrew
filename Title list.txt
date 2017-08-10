@@ -107,7 +107,7 @@ The built-in system modules are {see above 7 modules}.
 
 Note: unlike 3DS, Switch doesn't have a dedicated HTTP-sysmodule. Instead, processes using HTTP(S) just use libcurl + socket/ssl services.
 
-As of [[2.0.0]], the only sysmodule with a RomFS is "hid", which only contains: "ftmFwUpdate/NTD_4CD_1801.fts256".
+As of [[2.0.0]], the only sysmodule with a RomFS is [[HID_services|hid-sysmodule]].
 
 == System Debug Applets ==
 {| class=wikitable
