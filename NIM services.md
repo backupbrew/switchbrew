@@ -55,7 +55,17 @@ Presumably Network Time
     CURLOPT\_POSTFIELDS is set to the output from: snprintf(...,
     "system\_version=%08x\&client\_id=%s",
     <output parsed from a func>
-    , "<hard-coded hex string>");
+    ,
+    "<hard-coded hex string>");
+  - https://ecs-%.hac.shop.nintendo.net/ecs/services/rest/AccountGetETickets
+  - https://ecs-%.hac.shop.nintendo.net/ecs/services/rest/GetAccountStatus
+  - https://ias-%.hac.shop.nintendo.net/ias/services/rest/Register
+  - https://ias-%.hac.shop.nintendo.net/ias/services/rest/GetChallenge
+  - https://ias-%.hac.shop.nintendo.net/ias/services/rest/Unregister
+  - https://ias-%.hac.shop.nintendo.net/ias/services/rest/GetRegistrationInfo
+  - https://ias-%.hac.shop.nintendo.net/ias/services/rest/CompleteETicketSync
+  - https://ias-%.hac.shop.nintendo.net/ias/services/rest/AccountTransfer
+  - https://ias-%.hac.shop.nintendo.net/ias/services/rest/SyncRegistration
 
 These are not accessible without the required TLS client cert+privk,
 minus the time URL which can be accessed without any client cert+privk
