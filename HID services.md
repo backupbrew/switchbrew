@@ -44,4 +44,10 @@ shared-memory.
 
 # hid:sys
 
+# RomFS
+
+The hid-sysmodule RomFS only contains
+"/ftmFwUpdate/NTD\_4CD\_1801.fts256". Content doesn't seem to match
+[Joy-Con](Joy-Con.md "wikilink") FW.
+
 [Category:Services](Category:Services "wikilink")

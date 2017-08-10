@@ -79,3 +79,6 @@ See [[HID_Shared_Memory|here]] for the HID shared-memory.
 = hid:sys =
 
 [[Category:Services]]
+
+=RomFS=
+The hid-sysmodule RomFS only contains "/ftmFwUpdate/NTD_4CD_1801.fts256". Content doesn't seem to match [[Joy-Con]] FW.
