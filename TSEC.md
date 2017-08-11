@@ -1,11 +1,12 @@
 Like most Tegra based devices, the Switch's GPU also includes a Falcon
-microprocessor.
+microprocessor. TSEC is a NVIDIA Falcon microprocessor with crypto
+extensions.
 
 # Driver
 
-A host driver for communicating with the Falcon is mapped to physical
-address 0x54500000 with a total size of 0x40000 bytes and exposes
-several
+A host driver for communicating with the TSEC/Falcon is mapped to
+physical address 0x54500000 with a total size of 0x40000 bytes and
+exposes several
 registers.
 
 ## Registers
@@ -254,12 +255,25 @@ registers modified by Falcon.
   
 `return;`
 
-# Firmware
+# TSEC Firmware
 
-The actual code loaded into Falcon is assembled in NVIDIA's proprietary
+The actual code loaded into TSEC is assembled in NVIDIA's proprietary
 fuc5 ISA using crypto extensions. Stored inside the first bootloader,
 this firmware binary is split into 4 blobs: Stage0, Stage1, Stage2 and
 key data.
+
+Firmware can be disassembled with
+[http:x//envytools.readthedocs.io/en/latest/](Http:x%20%20envytools.readthedocs.io%20en%20latest%20.md)"
+envytools'
+[https:x//github.com/envytools/envytools/tree/master/envydis](Https:x%20%20github.com%20envytools%20envytools%20tree%20master%20envydis.md)
+envydis:
+
+`envydis -i tsec_fw.bin -m falcon -V fuc5 -F crypt`
+
+Note that the instruction set has variable length instructions, and the
+disassembler is not very good at detecting locations it should start
+disassembling from. One needs to disassemble multiple sub-regions and
+join them together.
 
 ## Stage 0
 
@@ -600,4 +614,60 @@ after the Switch's kernel is loaded (HOVI == Horizon VI?).
 
 ## Key data
 
-Small buffer stored after Stage 0's code and used across all stages.
+Small buffer stored after Stage 0's code and used across all
+stages.
+
+## Notes
+
+[https:x//wiki.0x04.net/wiki/Marcin\_Ko%C5%9Bcielnicki](Https:x%20%20wiki.0x04.net%20wiki%20Marcin%20Ko%C5%9Bcielnicki.md)
+mwk shared additional info learned from RE of falcon processors over the
+years, which hasn't made it into envytools documentation yet:
+
+### cxset
+
+cxset instruction provides a way to change behavior of a variable amount
+of successively executed DMA-related instructions.
+
+for example: `000000de: f4 3c 02 cxset 0x2`
+
+can be read as: `dma_override(type=crypto_reg, count=2)`
+
+The argument to cxset specifies the type of behavior change in the top 3
+bits, and the number of DMA-related instructions the effect lasts for in
+the lower 5 bits.
+
+#### Override Types
+
+Unlisted values are unknown, but probably do something.
+
+| Value | Effect                                        |
+| ----- | --------------------------------------------- |
+| 0b000 | falcon data mem \<-\> falcon $cX register     |
+| 0b001 | external mem \<-\> crypto input/output stream |
+
+#### DMA-Related Instructions
+
+At least the following instructions may have changed behavior, and count
+against the cxset "count" argument: `xdwait`, `xdst`, `xdld`.
+
+For example, if override type=0b000, then the "length" argument to
+`xdst` is instead treated as the index of the target $cX register.
+
+### Register ACLs
+
+Falcon tracks permission metadata about each crypto reg. Permissions
+include read/write ability per execution mode, as well as ability to use
+the reg for encrypt/decrypt, among other permissions. Permissions are
+propagated when registers are referenced by instructions (e.g. moving a
+value from read-protected $cX to $cY will result in $cY also being
+read-protected).
+
+### Authenticated Mode Entry/Exit
+
+Entry to Authenticated Mode always sets $pc to the address supplied in
+$cauth (ie the base of the signature-checked region). This takes effect
+when trying to branch to any address within the range covered by $cauth.
+
+Exit from Authenticated Mode must poke a special register (this seems to
+be I\[0x10300\] = 0) before leaving authenticated code pages. Failure to
+do this would result in the Falcon core halting.
