@@ -38,6 +38,16 @@ At least the following instructions may have changed behavior, and count against
 
 For example, if override type=0b000, then the "length" argument to <code>xdst</code> is instead treated as the index of the target $cX register.
 
+=== Register ACLs ===
+
+Falcon tracks permission metadata about each crypto reg. Permissions include read/write ability per execution mode, as well as ability to use the reg for encrypt/decrypt, among other permissions. Permissions are propagated when registers are referenced by instructions (e.g. moving a value from read-protected $cX to $cY will result in $cY also being read-protected).
+
+=== Authenticated Mode Entry/Exit ===
+
+Entry to Authenticated Mode always sets $pc to the address supplied in $cauth (ie the base of the signature-checked region). This takes effect when trying to branch to any address within the range covered by $cauth.
+
+Exit from Authenticated Mode must poke a special register (this seems to be I[0x10300] = 0) before leaving authenticated code pages. Failure to do this would result in the Falcon core halting.
+
 == Annotated Assembly ==
 
 Keep in mind the architecture is not officially documented, so some things may be incorrect.
