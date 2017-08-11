@@ -282,11 +282,11 @@ pointer.
 `// Set the stack pointer`  
 `*(u32 *)sp = data_seg_size;`
 
-`u32 boot_base_addr = 0;`  
-`u32 key_data_buf[0x7C];`
-
 ### Stage 1 loading
 
+`u32 boot_base_addr = 0;`  
+`u32 key_data_buf[0x7C];`  
+  
 `// Read the key data from memory`  
 `u32 key_data_addr = 0x300;`  
 `u32 key_data_size = 0x7C;`  
