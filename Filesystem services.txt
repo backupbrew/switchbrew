@@ -410,6 +410,8 @@ Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after 
 |-
 | 216 ||
 |-
+| 217 || [2.1.0+]
+|-
 | 300 || SetSpeedEmulationMode
 |-
 | 301 || GetSpeedEmulationMode

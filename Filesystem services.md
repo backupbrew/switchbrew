@@ -341,6 +341,7 @@ used after writing to savedata for the changes to take affect.
 | 214 | GetGameCardCid                                                                 |
 | 215 |                                                                                |
 | 216 |                                                                                |
+| 217 | \[2.1.0+\]                                                                     |
 | 300 | SetSpeedEmulationMode                                                          |
 | 301 | GetSpeedEmulationMode                                                          |
 
