@@ -548,7 +548,7 @@ This stage is responsible for reconfiguring the Falcon's crypto co-processor and
        u32 src_size = blob2_size;
        u32 iv_addr = key_buf + 0x40;
        u32 dst_addr = boot_base_addr;
-       u32 mode = 0;   // AES-128-CBC
+       u32 mode = 0;   // AES-128-ECB
        u32 version = 0;
        
        // Decrypt Stage2
