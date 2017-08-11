@@ -608,9 +608,8 @@ co-processor and loading, decrypting, authenticating and executing Stage
 
 ## Stage 2
 
-This stage is decrypted by Stage 1 using an hardware secret. It is
-likely to be the main firmware code that stays running on the Falcon
-after the Switch's kernel is loaded (HOVI == Horizon VI?).
+This stage is decrypted by Stage 1 using an hardware secret (HOVI ==
+Horizon VI?).
 
 ## Key data
 
