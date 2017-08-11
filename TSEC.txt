@@ -622,7 +622,7 @@ Small buffer stored after Stage 0's code and used across all stages.
 
 == Notes ==
 
-https:x//wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki mwk shared additional info learned from RE of falcon processors over the years, which hasn't made it into envytools documentation yet:
+[https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki mwk] shared additional info learned from RE of falcon processors over the years, which hasn't made it into envytools documentation yet:
 
 === cxset ===
 
@@ -658,6 +658,6 @@ Falcon tracks permission metadata about each crypto reg. Permissions include rea
 
 === Authenticated Mode Entry/Exit ===
 
-Entry to Authenticated Mode always sets $pc to the address supplied in $cauth (ie the base of the signature-checked region). This takes effect when trying to branch to any address within the range covered by $cauth.
+Entry to Authenticated Mode always sets $pc to the address supplied in $cauth (ie the base of the signature-checked region). This takes effect when trying to branch to any address within the range covered by $cauth. Entry to Authenticated Mode (also called "Secure Mode") computes a MAC over the $cauth region and compares it to $c6 in order to perform the signature check.
 
 Exit from Authenticated Mode must poke a special register (this seems to be I[0x10300] = 0) before leaving authenticated code pages. Failure to do this would result in the Falcon core halting.

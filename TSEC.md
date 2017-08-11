@@ -614,14 +614,13 @@ after the Switch's kernel is loaded (HOVI == Horizon VI?).
 
 ## Key data
 
-Small buffer stored after Stage 0's code and used across all
-stages.
+Small buffer stored after Stage 0's code and used across all stages.
 
 ## Notes
 
-[https:x//wiki.0x04.net/wiki/Marcin\_Ko%C5%9Bcielnicki](Https:x%20%20wiki.0x04.net%20wiki%20Marcin%20Ko%C5%9Bcielnicki.md)
-mwk shared additional info learned from RE of falcon processors over the
-years, which hasn't made it into envytools documentation yet:
+[mwk](https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki) shared
+additional info learned from RE of falcon processors over the years,
+which hasn't made it into envytools documentation yet:
 
 ### cxset
 
@@ -667,6 +666,9 @@ read-protected).
 Entry to Authenticated Mode always sets $pc to the address supplied in
 $cauth (ie the base of the signature-checked region). This takes effect
 when trying to branch to any address within the range covered by $cauth.
+Entry to Authenticated Mode (also called "Secure Mode") computes a MAC
+over the $cauth region and compares it to $c6 in order to perform the
+signature check.
 
 Exit from Authenticated Mode must poke a special register (this seems to
 be I\[0x10300\] = 0) before leaving authenticated code pages. Failure to
