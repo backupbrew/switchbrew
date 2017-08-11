@@ -61,6 +61,9 @@ read-protected).
 Entry to Authenticated Mode always sets $pc to the address supplied in
 $cauth (ie the base of the signature-checked region). This takes effect
 when trying to branch to any address within the range covered by $cauth.
+Entry to Authenticated Mode (also called "Secure Mode") computes a MAC
+over the $cauth region and compares it to $c6 in order to perform the
+signature check.
 
 Exit from Authenticated Mode must poke a special register (this seems to
 be I\[0x10300\] = 0) before leaving authenticated code pages. Failure to
