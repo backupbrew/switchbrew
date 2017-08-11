@@ -341,7 +341,7 @@ used after writing to savedata for the changes to take affect.
 | 214 | GetGameCardCid                                                                 |
 | 215 |                                                                                |
 | 216 |                                                                                |
-| 217 | \[2.1.0+\]                                                                     |
+| 217 | \[2.1.0+\] Returns 0x40-bytes of output data.                                  |
 | 300 | SetSpeedEmulationMode                                                          |
 | 301 | GetSpeedEmulationMode                                                          |
 

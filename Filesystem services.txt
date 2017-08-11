@@ -410,7 +410,7 @@ Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after 
 |-
 | 216 ||
 |-
-| 217 || [2.1.0+]
+| 217 || [2.1.0+] Returns 0x40-bytes of output data.
 |-
 | 300 || SetSpeedEmulationMode
 |-
