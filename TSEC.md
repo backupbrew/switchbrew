@@ -178,7 +178,7 @@ segment in IMEM.
 Falcon is booted up and the first bootloader waits for it to
 finish.
 
-`// Set host1x sync config`  
+`// Set something in host channel 0 (host1x) MMIO region`  
 `*(u32 *)0x50003300 = 0x34C2E1DA;`  
   
 `// Clear Falcon scratch1 MMIO`  
