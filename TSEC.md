@@ -196,8 +196,8 @@ finish.
 `// Wait for Falcon's DMA engine to be idle`  
 `wait_flcn_dma_idle();`  
   
-`u32 boot_res = 0;`
-
+`u32 boot_res = 0;`  
+  
 `// The bootloader allows the TSEC two seconds from this point to do its job`  
 `u32 maximum_time = read_timer() + 2000000; `  
   
