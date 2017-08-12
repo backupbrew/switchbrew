@@ -439,7 +439,7 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `cauth(cauth_old & 0x7FFFF);`  
   
 `// Set the target port for memory transfers`  
-`// Target will now be 0 (crypto?)`  
+`// Target will now be 0 (DMA)`  
 `xtargets(0);`  
   
 `// Wait for all data loads/stores to finish`  
@@ -461,13 +461,13 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `xdwait();`  
   
 `// Clear all crypto registers, except c6 which is used for auth`  
-`*(u32 *)c0 ^= *(u32 *)c0;`  
-`*(u32 *)c1 = *(u32 *)c0;`  
-`*(u32 *)c2 = *(u32 *)c0;`  
-`*(u32 *)c3 = *(u32 *)c0;`  
-`*(u32 *)c4 = *(u32 *)c0;`  
-`*(u32 *)c5 = *(u32 *)c0;`  
-`*(u32 *)c7 = *(u32 *)c0;`  
+`cxor(c0, c0);`  
+`cmov(c1, c0);`  
+`cmov(c2, c0);`  
+`cmov(c3, c0);`  
+`cmov(c4, c0);`  
+`cmov(c5, c0);`  
+`cmov(c7, c0);`  
   
 `// Update engine specific IO (crypto?)`  
 `*(u32 *)0x00020E00 &= 0xEFFFF;`  
@@ -495,18 +495,18 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `load_stage2(key_buf, key_version, is_blob_dec);`  
   
 `// Partially unknown fuc5 instruction`  
-`// Likely forces propagation of permissions, hiding all cX registers `  
+`// Likely forces a change of permissions`  
 `acl_chmod(c0, c0);`  
   
 `// Clear all crypto registers and propagate permissions`  
-`*(u32 *)c0 ^= *(u32 *)c0;`  
-`*(u32 *)c1 ^= *(u32 *)c1;`  
-`*(u32 *)c2 ^= *(u32 *)c2;`  
-`*(u32 *)c3 ^= *(u32 *)c3;`  
-`*(u32 *)c4 ^= *(u32 *)c4;`  
-`*(u32 *)c5 ^= *(u32 *)c5;`  
-`*(u32 *)c6 ^= *(u32 *)c6;`  
-`*(u32 *)c7 ^= *(u32 *)c7;`  
+`cxor(c0, c0);`  
+`cxor(c1, c1);`  
+`cxor(c2, c2);`  
+`cxor(c3, c3);`  
+`cxor(c4, c4);`  
+`cxor(c5, c5);`  
+`cxor(c6, c6);`  
+`cxor(c7, c7);`  
   
 `// Exit Authenticated Mode`  
 `*(u32 *)0x00010300 = 0;`  
@@ -633,6 +633,288 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `cauth(c_old);`  
   
 `return res;`
+
+#### keygen
+
+This method takes **type** and **mode** as arguments and generates a
+key.
+
+`u32 seed_buf[0x10];`  
+  
+`// Read a 16 bytes seed based on supplied type`  
+`/*`  
+`   Type 0: "CODE_SIG_01" + null padding`  
+`   Type 1: "CODE_ENC_01" + null padding`  
+`*/`  
+`get_seed(seed_buf, type);`  
+  
+`// This will write the seed into crypt register c0 `  
+`crypt_store(0, seed_buf);`  
+  
+`// fuc5 csecret instruction`  
+`// Load selected secret into crypt register c1`  
+`csecret(c1, 0x26);`  
+  
+`// fuc5 ckeyreg instruction`  
+`// Binds c1 register as the key for enc/dec operations`  
+`ckeyreg(c1);`  
+  
+`// fuc5 cenc instruction`  
+`// Encrypts seed_buf (in c0) using keyreg value as key into c1`  
+`cenc(c1, c0);`  
+  
+`// fuc5 csigenc instruction`  
+`// Encrypt code sig with c1 register as key`  
+`csigenc(c1, c1);`  
+  
+`// Copy the result into c4 (will be used as key)`  
+`cmov(c4, c1);`  
+  
+`// Do key expansion (for decryption)`  
+`if (mode != 0)`  
+`   ckexp(c4, c4);      // fuc5 ckexp instruction`  
+  
+`return;`
+
+#### enc\_buffer
+
+This method takes **buf** (a 16 bytes buffer) and **size** as arguments
+and encrypts the supplied buffer.
+
+`// Set first 3 words to null`  
+`*(u32 *)(buf + 0x00) = 0;`  
+`*(u32 *)(buf + 0x04) = 0;`  
+`*(u32 *)(buf + 0x08) = 0;`  
+  
+`// Swap halves (b16, b32 and b16 again)`  
+`hswap(size);`  
+  
+`// Store the size as the last word`  
+`*(u32 *)(buf + 0x0C) = size;`  
+  
+`// This will write buf into crypt register c3 `  
+`crypt_store(0x03, buf);`  
+  
+`// fuc5 ckeyreg instruction`  
+`// Binds c4 register (from keygen) as the key for enc/dec operations`  
+`ckeyreg(c4);`  
+  
+`// fuc5 cenc instruction`  
+`// Encrypts buf (in c3) using keyreg value as key into c5`  
+`cenc(c5, c3);`  
+  
+`// This will read into buf from crypt register c5 `  
+`crypt_load(0x05, buf);`  
+  
+`return;`
+
+#### do\_crypto
+
+This is the method responsible for all crypto operations performed
+during Stage 1. It takes **src\_addr**, **src\_size**, **iv\_addr**,
+**dst\_addr**, **mode** and **crypt\_ver** as
+arguments.
+
+`// Check for invalid source data size`  
+`if (!src_size || (src_size & 0x0F))`  
+`  exit();`  
+  
+`// Check for invalid source data address`  
+`if (src_addr & 0x0F)`  
+`  exit();`  
+  
+`// Check for invalid destination data address`  
+`if (dst_addr & 0x0F)`  
+`  exit();`  
+  
+`// Use IV if available`  
+`if (iv_addr)`  
+`{`  
+`  // This will write the iv_addr into crypt register c5 `  
+`  crypt_store(0x05, iv_addr);`  
+`}`  
+`else`  
+`{`  
+`  // Clear c5 register (use null IV)`  
+`  cxor(c5, c5);`  
+`}`  
+  
+`// Use key in c4`  
+`ckeyreg(c4);`  
+  
+`// AES-128-ECB? decrypt`  
+`if (mode == 0x00)`  
+`{`  
+`  // Create crypto script with 5 instructions`  
+`  cs0begin(0x05);`  
+`   `  
+`  cxsin(c3);                   // Read 0x10 bytes from crypto stream into c3`  
+`  cdec(c2, c3);                // Decrypt from c3 into c2`  
+`  cxor(c5, c2);                // XOR c2 with c5 and store in c5`  
+`  cxsout(c5);                  // Write 0x10 bytes into crypto stream from c5`  
+`  cmov(c5, c3);                // Move c3 into c5`  
+`}`  
+`else if (mode == 0x01)     // AES-128-ECB? encrypt`  
+`{`  
+`  // Create crypto script with 4 instructions`  
+`  cs0begin(0x04);`  
+`   `  
+`  cxsin(c3);                   // Read 0x10 bytes from crypto stream into c3`  
+`  cxor(c3, c5);                // XOR c5 with c3 and store in c3`  
+`  cenc(c5, c3);                // Encrypt from c3 into c5`  
+`  cxsout(c5);                  // Write 0x10 bytes into crypto stream from c5`  
+`}`  
+`else if (mode == 0x02)     // AES-CMAC`  
+`{`  
+`  // Create crypto script with 3 instructions`  
+`  cs0begin(0x03);`  
+`   `  
+`  cxsin(c3);                   // Read 0x10 bytes from crypto stream into c3`  
+`  cxor(c5, c3);                // XOR c5 with c3 and store in c3`  
+`  cenc(c5, c5);                // Encrypt from c5 into c5`  
+`}`  
+`else if (mode == 0x03)     // AES-128-ECB? decrypt (no IV)`  
+`{`  
+`  // Create crypto script with 3 instructions`  
+`  cs0begin(0x03);`  
+`   `  
+`  cxsin(c3);                   // Read 0x10 bytes from crypto stream into c3`  
+`  cdec(c5, c3);                // Decrypt from c3 into c5`  
+`  cxsout(c5);                  // Write 0x10 bytes into crypto stream from c5`  
+`}`  
+`else if (mode == 0x04)     // AES-128-ECB? encrypt (no IV)`  
+`{`  
+`  // Create crypto script with 3 instructions`  
+`  cs0begin(0x03);`  
+`   `  
+`  cxsin(c3);                   // Read 0x10 bytes from crypto stream into c3`  
+`  cenc(c5, c3);                // Encrypt from c3 into c5`  
+`  cxsout(c5);                  // Write 0x10 bytes into crypto stream from c5`  
+`}`  
+`else`  
+`  return;`  
+  
+`// Main loop`  
+`while (src_size > 0)`  
+`{`  
+`  u32 blk_count = (src_size >> 0x04);`  
+`   `  
+`  if (blk_count > 0x10)`  
+`    blk_count = 0x10;`  
+`  `  
+`  // Check size align`  
+`  if (blk_count & (blk_count - 0x01))`  
+`    blk_count = 0x01;`  
+  
+`  u32 blk_size = (blk_count << 0x04);`  
+`  `  
+`  u32 crypt_xfer_src = 0;`  
+`  u32 crypt_xfer_dst = 0;`  
+`  `  
+`  if (block_size == 0x20)`  
+`  {`  
+`     crypt_xfer_src = (0x00030000 | src_addr);`  
+`     crypt_xfer_dst = (0x00030000 | dst_addr);`  
+`     `  
+`     // Execute crypto script 2 times (1 for each block)`  
+`     cs0exec(0x02);`  
+`  }`  
+`  if (block_size == 0x40)`  
+`  {`  
+`     crypt_xfer_src = (0x00040000 | src_addr);`  
+`     crypt_xfer_dst = (0x00040000 | dst_addr);`  
+`     `  
+`     // Execute crypto script 4 times (1 for each block)`  
+`     cs0exec(0x04);`  
+`  }`  
+`  if (block_size == 0x80)`  
+`  {`  
+`     crypt_xfer_src = (0x00050000 | src_addr);`  
+`     crypt_xfer_dst = (0x00050000 | dst_addr);`  
+`     `  
+`     // Execute crypto script 8 times (1 for each block)`  
+`     cs0exec(0x08);`  
+`  }`  
+`  if (block_size == 0x100)`  
+`  {`  
+`     crypt_xfer_src = (0x00060000 | src_addr);`  
+`     crypt_xfer_dst = (0x00060000 | dst_addr);`  
+`     `  
+`     // Execute crypto script 16 times (1 for each block)`  
+`     cs0exec(0x10);`  
+`  }`  
+`  else`  
+`  {`  
+`     crypt_xfer_src = (0x00020000 | src_addr);`  
+`     crypt_xfer_dst = (0x00020000 | dst_addr);`  
+`     `  
+`     // Execute crypto script 1 time (1 for each block)`  
+`     cs0exec(0x01);`  
+  
+`     // Ensure proper block size`  
+`     block_size = 0x10;`  
+`  }`  
+  
+`  // fuc5 crypt cxset instruction`  
+`  // The next xfer instruction will be overridden`  
+`  // and target changes from DMA to crypto `  
+`  if (crypt_ver == 0x01)`  
+`    cxset(0xA1);         // Flag 0xA0 is unknown`  
+`  else`  
+`    cxset(0x21);         // Flag 0x20 is unknown`  
+  
+`  // Transfer data into the selected crypto register`  
+`  xdst(crypt_xfer_src, crypt_xfer_src);`  
+`  `  
+`  // AES-CMAC only needs one more xfer instruction`  
+`  if (mode == 0x02)`  
+`  {`  
+`     // fuc5 crypt cxset instruction`  
+`     // The next xfer instruction will be overridden`  
+`     // and target changes from DMA to crypto `  
+`     if (crypt_ver == 0x01)`  
+`       cxset(0xA1);     // Flag 0xA0 is unknown`  
+`     else`  
+`       cxset(0x21);     // Flag 0x20 is unknown`  
+`       `  
+`     // Wait for all data loads/stores to finish`  
+`     xdwait();`  
+`  }`  
+`  else  // AES enc/dec needs 2 more xfer instructions`  
+`  {`  
+`     // fuc5 crypt cxset instruction`  
+`     // The next 2 xfer instructions will be overridden`  
+`     // and target changes from DMA to crypto `  
+`     if (crypt_ver == 0x01)`  
+`       cxset(0xA2);            // Flag 0xA0 is unknown`  
+`     else`  
+`       cxset(0x22);            // Flag 0x20 is unknown`  
+  
+`     // Transfer data from the selected crypto register`  
+`     xdst(crypt_xfer_dst, crypt_xfer_dst);`  
+`       `  
+`     // Wait for all data loads/stores to finish`  
+`     xdwait();`  
+  
+`     // Increase the destination address by block size`  
+`     dst_addr += block_size;`  
+`  }`  
+`  `  
+`  // Increase the source address by block size`  
+`  src_addr += block_size;`  
+  
+`  // Decrease the source size by block size`  
+`  src_size -= block_size;`  
+`}`  
+  
+`// AES-CMAC result is in c5`  
+`if (mode == 0x02)`  
+`{`  
+`   // This will read into dst_addr from crypt register c5 `  
+`   crypt_load(0x05, dst_addr);`  
+`}`  
+  
+`return;`
 
 ## Stage 2
 
