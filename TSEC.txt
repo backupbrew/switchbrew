@@ -382,19 +382,20 @@ Falcon sets up it's own stack pointer.
           // Copy key data
           memcpy(key_buf, key_data_buf, 0x7C);
  
-          u32 xfer_size_flag = 0x00060000;
+          u32 crypt_reg_flag = 0x00060000;
           u32 blob1_hash_addr = key_buf + 0x20; 
  
           // fuc5 crypt cauth instruction
           // Set auth_addr to 0x300 and auth_size to blob1_size
-          *(u32 *)cauth = ((blob1_size << 0x10) | (0x300 >> 0x08));
+          cauth((blob1_size << 0x10) | (0x300 >> 0x08));
  
           // fuc5 crypt cxset instruction
-          // Set crypto transfer mode
-          *(u32 *)cx = 0x02;
+          // The next 2 xfer instructions will be overridden
+          // and target changes from DMA to crypto
+          cxset(0x02);
           
-          // Transfer data from/to Falcon
- 	  xdst(0, (blob1_hash_addr | xfer_size_flag));
+          // Transfer data to crypto register c6
+ 	  xdst(0, (blob1_hash_addr | crypt_reg_flag));
  					
  	  // Wait for all data loads/stores to finish
  	  xdwait();
