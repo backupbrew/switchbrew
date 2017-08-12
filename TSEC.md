@@ -263,10 +263,8 @@ this firmware binary is split into 4 blobs: Stage0, Stage1, Stage2 and
 key data.
 
 Firmware can be disassembled with
-[http:x//envytools.readthedocs.io/en/latest/](Http:x%20%20envytools.readthedocs.io%20en%20latest%20.md)"
-envytools'
-[https:x//github.com/envytools/envytools/tree/master/envydis](Https:x%20%20github.com%20envytools%20envytools%20tree%20master%20envydis.md)
-envydis:
+[envytools'](http://envytools.readthedocs.io/en/latest/)
+[envydis](https://github.com/envytools/envytools/tree/master/envydis):
 
 `envydis -i tsec_fw.bin -m falcon -V fuc5 -F crypt`
 
