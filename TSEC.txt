@@ -434,14 +434,15 @@ This stage is responsible for reconfiguring the Falcon's crypto co-processor and
  *(u8 *)flags_ie2 = 0;
  
  // fuc5 crypt cxset instruction
- // Set crypto transfer mode
- *(u32 *)cx = 0x80;
+ // Clear overrides?
+ cxset(0x80);
  
  // fuc5 crypt cauth instruction
- *(u32 *)cauth &= 0x7FFFF;
+ // Clear auth_addr
+ cauth(old_cauth & 0x7FFFF);
  
  // Set the target port for memory transfers
- // Target will now be 0 (crypto)
+ // Target will now be 0 (crypto?)
  xtargets(0);
  
  // Wait for all data loads/stores to finish
@@ -451,17 +452,18 @@ This stage is responsible for reconfiguring the Falcon's crypto co-processor and
  xcwait();
  
  // fuc5 crypt cxset instruction
- // Set crypto transfer mode
- *(u32 *)cx = 0x02;
+ // The next 2 xfer instructions will be overridden
+ // and target changes from DMA to crypto
+ cxset(0x02);
  
- // Transfer data from/to Falcon
- // This should clear all previous hashes
+ // Transfer data to crypto register c0
+ // This should clear any leftover data
  xdst(0, 0);
  
  // Wait for all data loads/stores to finish
  xdwait();
  
- // Clear crypto registers
+ // Clear all crypto registers, except c6 which is used for auth
  *(u32 *)c0 ^= *(u32 *)c0;
  *(u32 *)c1 = *(u32 *)c0;
  *(u32 *)c2 = *(u32 *)c0;
@@ -495,7 +497,11 @@ This stage is responsible for reconfiguring the Falcon's crypto co-processor and
  // Decrypt and load Stage2
  load_stage2(key_buf, key_version, is_blob_dec);
  
- // Clear crypto registers
+ // Partially unknown fuc5 instruction
+ // Likely forces propagation of permissions, hiding all cX registers 
+ acl_chmod(c0, c0);
+ 
+ // Clear all crypto registers and propagate permissions
  *(u32 *)c0 ^= *(u32 *)c0;
  *(u32 *)c1 ^= *(u32 *)c1;
  *(u32 *)c2 ^= *(u32 *)c2;
@@ -505,7 +511,7 @@ This stage is responsible for reconfiguring the Falcon's crypto co-processor and
  *(u32 *)c6 ^= *(u32 *)c6;
  *(u32 *)c7 ^= *(u32 *)c7;
  
- // Signal unknown engine
+ // Exit Authenticated Mode
  *(u32 *)0x00010300 = 0;
  
  return;
