@@ -653,27 +653,27 @@ Small buffer stored after Stage 0's code and used across all stages.
 |-
 | 0x10
 | 0x10
-| blob0 hash
+| blob0 auth hash
 |-
 | 0x20
 | 0x10
-| blob1 hash
+| blob1 auth hash
 |-
 | 0x30
 | 0x10
-| blob2 hash
+| blob2 auth hash
 |-
 | 0x40
 | 0x10
-| blob2 IV
+| blob2 AES IV
 |-
 | 0x50
 | 0x10
-| HOVI_EKS_01
+| HOVI eks seed
 |-
 | 0x60
 | 0x10
-| HOVI_COMMON_01
+| HOVI common seed
 |-
 | 0x70
 | 0x04

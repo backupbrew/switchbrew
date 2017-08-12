@@ -643,12 +643,12 @@ Small buffer stored after Stage 0's code and used across all stages.
 | Offset | Size | Description      |
 | ------ | ---- | ---------------- |
 | 0x00   | 0x10 | Device key       |
-| 0x10   | 0x10 | blob0 hash       |
-| 0x20   | 0x10 | blob1 hash       |
-| 0x30   | 0x10 | blob2 hash       |
-| 0x40   | 0x10 | blob2 IV         |
-| 0x50   | 0x10 | HOVI\_EKS\_01    |
-| 0x60   | 0x10 | HOVI\_COMMON\_01 |
+| 0x10   | 0x10 | blob0 auth hash  |
+| 0x20   | 0x10 | blob1 auth hash  |
+| 0x30   | 0x10 | blob2 auth hash  |
+| 0x40   | 0x10 | blob2 AES IV     |
+| 0x50   | 0x10 | HOVI eks seed    |
+| 0x60   | 0x10 | HOVI common seed |
 | 0x70   | 0x04 | blob0 size       |
 | 0x74   | 0x04 | blob1 size       |
 | 0x78   | 0x04 | blob2 size       |
