@@ -439,7 +439,7 @@ This stage is responsible for reconfiguring the Falcon's crypto co-processor and
  
  // fuc5 crypt cauth instruction
  // Clear auth_addr
- cauth(old_cauth & 0x7FFFF);
+ cauth(cauth_old & 0x7FFFF);
  
  // Set the target port for memory transfers
  // Target will now be 0 (crypto?)

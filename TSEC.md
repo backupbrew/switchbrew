@@ -433,7 +433,7 @@ co-processor and loading, decrypting, authenticating and executing Stage
   
 `// fuc5 crypt cauth instruction`  
 `// Clear auth_addr`  
-`cauth(old_cauth & 0x7FFFF);`  
+`cauth(cauth_old & 0x7FFFF);`  
   
 `// Set the target port for memory transfers`  
 `// Target will now be 0 (crypto?)`  
