@@ -586,24 +586,25 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `}`  
   
 `// fuc5 crypt cxset instruction`  
-`// Set crypto transfer mode`  
-`*(u32 *)cx = 0x02;`  
+`// The next 2 xfer instructions will be overridden`  
+`// and target changes from DMA to crypto`  
+`cxset(0x02);`  
   
-`u32 xfer_size_flag = 0x00060000;`  
+`u32 crypt_reg_flag = 0x00060000;`  
 `u32 blob2_hash_addr = key_buf + 0x30;`  
   
-`// Transfer data from/to Falcon`  
-`xdst(0, (blob2_hash_addr | xfer_size_flag));`  
+`// Transfer data to crypto register c6`  
+`xdst(0, (blob2_hash_addr | crypt_reg_flag));`  
 `               `  
 `// Wait for all data loads/stores to finish`  
 `xdwait();`  
   
 `// Save previous cauth value`  
-`u32 cauth_old = *(u32 *)cauth;`  
+`u32 c_old = cauth_old;`  
   
 `// fuc5 crypt cauth instruction`  
 `// Set auth_addr to blob2_virt_addr and auth_size to blob2_size`  
-`*(u32 *)cauth = ((blob2_virt_addr >> 0x08) | (blob2_size << 0x10));`  
+`cauth((blob2_virt_addr >> 0x08) | (blob2_size << 0x10));`  
   
 `u32 hovi_key_addr = 0;`  
   
@@ -624,8 +625,9 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `// Clear out key data`  
 `memset(key_buf, 0, 0x7C);`  
   
+`// fuc5 crypt cauth instruction`  
 `// Restore previous cauth value`  
-`*(u32 *)cauth = cauth_old;`  
+`cauth(c_old);`  
   
 `return res;`
 
