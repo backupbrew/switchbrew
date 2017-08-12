@@ -395,11 +395,11 @@ Falcon sets up it's own stack pointer.
           cxset(0x02);
           
           // Transfer data to crypto register c6
- 	  xdst(0, (blob1_hash_addr | crypt_reg_flag));
- 					
- 	  // Wait for all data loads/stores to finish
- 	  xdwait();
- 
+ 	 xdst(0, (blob1_hash_addr | crypt_reg_flag));
+ 	  			
+ 	 // Wait for all data loads/stores to finish
+ 	 xdwait();
+          
           // Jump to Stage1
           u32 stage1_res = exec_stage1(key_buf, key_version, is_blob_dec);
           is_blob_dec = true;  // Set this to prevent decrypting again
