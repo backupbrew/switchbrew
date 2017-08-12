@@ -175,7 +175,8 @@ segment in IMEM.
 
 ## Firmware booting
 
-Falcon is booted up and the first bootloader waits for it to finish.
+Falcon is booted up and the first bootloader waits for it to
+finish.
 
 `// Set host1x sync config`  
 `*(u32 *)0x50003300 = 0x34C2E1DA;`  
@@ -195,19 +196,21 @@ Falcon is booted up and the first bootloader waits for it to finish.
 `// Wait for Falcon's DMA engine to be idle`  
 `wait_flcn_dma_idle();`  
   
-`u32 boot_res = 0;`  
-`u32 time = 0;`  
+`u32 boot_res = 0;`
+
+`// The bootloader allows the TSEC two seconds from this point to do its job`  
+`u32 maximum_time = read_timer() + 2000000; `  
   
 `while (!boot_res)`  
 `{`  
 `   // Read boot result from scratch1 MMIO`  
 `   boot_res = *(u32 *)FALCON_SCRATCH1;`  
 `   `  
-`   // Read from RTC_MILLISECONDS`  
-`   time = rtc_read();`  
+`   // Read from TIMERUS_CNTR_1US (microseconds from boot)`  
+`   u32 current_time = read_timer();`  
 `   `  
 `   // Booting is taking too long`  
-`   if (time > 2000000)`  
+`   if (current_time > maximum_time)`  
 `      panic();`  
 `}`  
   
