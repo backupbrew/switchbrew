@@ -229,12 +229,12 @@ Size: 0x50
 Inherits from:
 [\#KSynchronizationObject](#KSynchronizationObject "wikilink")
 
-| Offset | Type                                                           | Description         |
-| ------ | -------------------------------------------------------------- | ------------------- |
-| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |                     |
-| 0x28   | [\#KLinkedListNode](#KLinkedListNode "wikilink")               |                     |
-| 0x38   | [\#KLinkedListNode](#KLinkedListNode "wikilink")               | IncomingConnections |
-| 0x48   | [\#KPort](#KPort "wikilink")\*                                 | Parent              |
+| Offset | Type                                                           | Description              |
+| ------ | -------------------------------------------------------------- | ------------------------ |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |                          |
+| 0x28   | [\#KLinkedListNode](#KLinkedListNode "wikilink")               | IncomingConnections      |
+| 0x38   | [\#KLinkedListNode](#KLinkedListNode "wikilink")               | IncomingLightConnections |
+| 0x48   | [\#KPort](#KPort "wikilink")\*                                 | Parent                   |
 
 ## KClientPort
 

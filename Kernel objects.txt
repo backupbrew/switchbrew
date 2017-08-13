@@ -615,11 +615,11 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x28
 | [[#KLinkedListNode]]
-| 
+| IncomingConnections
 |-
 | 0x38
 | [[#KLinkedListNode]]
-| IncomingConnections
+| IncomingLightConnections
 |-
 | 0x48
 | [[#KPort]]*
