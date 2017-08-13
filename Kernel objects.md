@@ -84,21 +84,21 @@ Inherits from:
 
 ## KProcessMm
 
-| Offset | Type                                         | Description       |
-| ------ | -------------------------------------------- | ----------------- |
-| 0      | \*                                           | Vtable            |
-| 8      | u64                                          | AddrSpaceMinAddr  |
-| 0x10   | u64                                          | AddrSpaceMaxAddr  |
-| 0x18   | u64                                          | HeapBaseAddr      |
-| 0x20   | u64                                          | HeapEndAddr       |
-| 0x28   | u64                                          | HeapCurAddr       |
-| 0x30   | u64                                          | MapRegionBaseAddr |
-| 0x38   | u64                                          | MapRegionEnd      |
-| 0x40   | u64                                          | HeapMaxAllocation |
-| 0x48   | KRecursiveLock                               | Mutex             |
-| 0x50   |                                              |                   |
-| 0x60   | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | MemoryBlockList   |
-| ..     | ..                                           | ..                |
+| Offset | Type                                         | Description        |
+| ------ | -------------------------------------------- | ------------------ |
+| 0      | \*                                           | Vtable             |
+| 8      | u64                                          | AddrSpaceMinAddr   |
+| 0x10   | u64                                          | AddrSpaceMaxAddr   |
+| 0x18   | u64                                          | HeapRegionBaseAddr |
+| 0x20   | u64                                          | HeapRegionEndAddr  |
+| 0x28   | u64                                          | HeapCurAddr        |
+| 0x30   | u64                                          | MapRegionBaseAddr  |
+| 0x38   | u64                                          | MapRegionEnd       |
+| 0x40   | u64                                          | HeapMaxAllocation  |
+| 0x48   | KRecursiveLock                               | Mutex              |
+| 0x50   |                                              |                    |
+| 0x60   | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | MemoryBlockList    |
+| ..     | ..                                           | ..                 |
 
 ## KProcessCapabilities
 

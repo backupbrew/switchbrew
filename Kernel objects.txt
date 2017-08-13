@@ -239,11 +239,11 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x18
 | u64
-| HeapBaseAddr
+| HeapRegionBaseAddr
 |-
 | 0x20
 | u64
-| HeapEndAddr
+| HeapRegionEndAddr
 |-
 | 0x28
 | u64
