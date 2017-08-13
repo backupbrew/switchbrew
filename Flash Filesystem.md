@@ -188,11 +188,21 @@ This is a listing of known System Savedata and what titles they
 correspond
 to.
 
-| SaveID             | Owner | Notes                                                                                                                                                     |
-| ------------------ | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x8000000000000041 | ns    | nsaccache:/ (Home menu icondata/lru list for recently played games)                                                                                       |
-| 0x8000000000000045 | ns    | vmdb:/ (Version List/Required Version List storage)                                                                                                       |
-| 0x8000000000000090 | bcat  | news:/ (Actual news msgpack archives)                                                                                                                     |
-| 0x8000000000000091 | bcat  | news-sys:/ (News metadata, tasklist, history, database, required system version etc)                                                                      |
-| 0x8000000000000092 | bcat  | news-dl:/ (Storage for newly(?) downloaded news list/data)                                                                                                |
-| 0x80000000000000d1 | erpt  | Contains "/journal" report listing + actual crash reports ("/%08x-%04x-%04x-%02x%02x-%04x%08x"), which are serialized via [MsgPack](http://msgpack.org/). |
+| SaveID             | Owner | Mount            | Notes                                                                                                                                                     |
+| ------------------ | ----- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x8000000000000030 | ns    | mii:/            | Mii database.                                                                                                                                             |
+| 0x8000000000000031 | ns    | mii:/            | Mii test mode database.                                                                                                                                   |
+| 0x8000000000000040 | ns    | apprecdb:/       |                                                                                                                                                           |
+| 0x8000000000000041 | ns    | nsaccache:/      | Home menu icondata/lru list for recently played games.                                                                                                    |
+| 0x8000000000000043 | ns    | ns\_appman:/     |                                                                                                                                                           |
+| 0x8000000000000044 | ns    | ns\_sysup:/      | Content update context.                                                                                                                                   |
+| 0x8000000000000045 | ns    | vmdb:/           | Version List/Required Version List storage.                                                                                                               |
+| 0x8000000000000046 | ns    | dtlman:/         |                                                                                                                                                           |
+| 0x8000000000000047 | ns    | ns\_exfat:/      |                                                                                                                                                           |
+| 0x8000000000000048 | ns    | ns\_systemseed:/ |                                                                                                                                                           |
+| 0x8000000000000090 | bcat  | news:/           | Actual news msgpack archives.                                                                                                                             |
+| 0x8000000000000091 | bcat  | news-sys:/       | News metadata, tasklist, history, database, required system version, etc.                                                                                 |
+| 0x8000000000000092 | bcat  | news-dl:/        | Storage for newly(?) downloaded news list/data.                                                                                                           |
+| 0x80000000000000D1 | erpt  | save:/           | Contains "/journal" report listing + actual crash reports ("/%08x-%04x-%04x-%02x%02x-%04x%08x"), which are serialized via [MsgPack](http://msgpack.org/). |
+| 0x80000000000000F0 | ns    | pdm:/            | Play Data log.                                                                                                                                            |
+|                    |       |                  |                                                                                                                                                           |

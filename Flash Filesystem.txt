@@ -298,17 +298,36 @@ On a v2.1 system with MountBis, the only thing under here is "PRF2SAFE.RCV".
 This is a listing of known System Savedata and what titles they correspond to.
 
 {| class="wikitable" border="1"
-! SaveID || Owner || Notes
+! SaveID || Owner || Mount || Notes
 |-
-| 0x8000000000000041 || ns || <nowiki>nsaccache:/</nowiki> (Home menu icondata/lru list for recently played games) 
+| 0x8000000000000030 || ns || <nowiki>mii:/</nowiki> || Mii database.
 |-
-| 0x8000000000000045 || ns || <nowiki>vmdb:/</nowiki> (Version List/Required Version List storage)
+| 0x8000000000000031 || ns || <nowiki>mii:/</nowiki> || Mii test mode database.
 |-
-| 0x8000000000000090 || bcat || <nowiki>news:/</nowiki> (Actual news msgpack archives)
+| 0x8000000000000040 || ns || <nowiki>apprecdb:/</nowiki> ||
 |-
-| 0x8000000000000091 || bcat || <nowiki>news-sys:/</nowiki> (News metadata, tasklist, history, database, required system version etc)
+| 0x8000000000000041 || ns || <nowiki>nsaccache:/</nowiki> || Home menu icondata/lru list for recently played games.
 |-
-| 0x8000000000000092 || bcat || <nowiki>news-dl:/</nowiki> (Storage for newly(?) downloaded news list/data)
+| 0x8000000000000043 || ns || <nowiki>ns_appman:/</nowiki> ||
 |-
-| 0x80000000000000d1 || erpt || Contains "/journal" report listing + actual crash reports ("/%08x-%04x-%04x-%02x%02x-%04x%08x"), which are serialized via [http://msgpack.org/ MsgPack].
+| 0x8000000000000044 || ns || <nowiki>ns_sysup:/</nowiki> || Content update context.
+|-
+| 0x8000000000000045 || ns || <nowiki>vmdb:/</nowiki> || Version List/Required Version List storage.
+|-
+| 0x8000000000000046 || ns || <nowiki>dtlman:/</nowiki> ||
+|-
+| 0x8000000000000047 || ns || <nowiki>ns_exfat:/</nowiki> ||
+|-
+| 0x8000000000000048 || ns || <nowiki>ns_systemseed:/</nowiki> ||
+|-
+| 0x8000000000000090 || bcat || <nowiki>news:/</nowiki> || Actual news msgpack archives.
+|-
+| 0x8000000000000091 || bcat || <nowiki>news-sys:/</nowiki> || News metadata, tasklist, history, database, required system version, etc.
+|-
+| 0x8000000000000092 || bcat || <nowiki>news-dl:/</nowiki> || Storage for newly(?) downloaded news list/data.
+|-
+| 0x80000000000000D1 || erpt || <nowiki>save:/</nowiki> || Contains "/journal" report listing + actual crash reports ("/%08x-%04x-%04x-%02x%02x-%04x%08x"), which are serialized via [http://msgpack.org/ MsgPack].
+|-
+| 0x80000000000000F0 || ns || <nowiki>pdm:/</nowiki> || Play Data log.
+|-
 |}
