@@ -579,11 +579,11 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x10
 | [[#KServerPort]]
-| ServerPort
+| Server
 |-
 | 0x60
 | [[#KClientPort]]
-| ClientPort
+| Client
 |-
 | 0x98
 | u64
@@ -642,16 +642,112 @@ Inherits from: [[#KSynchronizationObject]]
 |
 |-
 | 0x28
-| ?
-| 
+| u32
+| NumSessions
 |-
 | 0x2C
 | u32
-| MaxSessions [?]
+| MaxSessions
 |-
 | 0x30
 | [[#KPort]]*
 | Parent
+|}
+
+= KLightSession =
+Size: 0xA8
+
+Inherits from: [[#KAutoObject]]
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| [[#KAutoObject]]
+|
+|-
+| 0x10
+| [[#KLightSessionServer]]
+| Server
+|-
+| 0x68
+| [[#KLightSessionClient]]
+| Client
+|-
+| 0xA0
+| bool
+| HasInited
+|}
+
+== KLightServerSession ==
+Size: 0x58
+
+Inherits from: [[#KAutoObject]]
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| [[#KAutoObject]]
+|
+|-
+| 0x10
+| KLinkedListNode
+| 
+|-
+| 0x20
+| [[#KLightSession]]
+| Parent
+|-
+| 0x20
+| [[#KClientPort]]*
+| Port
+|-
+| 0x28
+| u64[6]
+| 
+|}
+
+== KLightClientSession ==
+Size: 0x38
+
+Inherits from: [[#KAutoObject]]
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0
+| [[#KAutoObject]]
+|
+|-
+| 0x10
+| [[#KLightSession]]*
+| Parent
+|-
+| 0x18
+| bool
+| HasInited
+|-
+| 0x20
+| [[#KClientPort]]*
+| Port
+|-
+| 0x28
+| 
+| 
+|-
+| 0x30
+| [[#KProcess]]*
+| OwnerProcess
 |}
 
 = KEvent =
