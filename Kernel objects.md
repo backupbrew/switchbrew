@@ -216,8 +216,8 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 | Offset | Type                                     | Description   |
 | ------ | ---------------------------------------- | ------------- |
 | 0      | [\#KAutoObject](#KAutoObject "wikilink") |               |
-| 0x10   | [\#KServerPort](#KServerPort "wikilink") | Server        |
-| 0x60   | [\#KClientPort](#KClientPort "wikilink") | Client        |
+| 0x10   | [\#KServerPort](#KServerPort "wikilink") | ServerSide    |
+| 0x60   | [\#KClientPort](#KClientPort "wikilink") | ClientSide    |
 | 0x98   | u64                                      |               |
 | 0xA0   | bool                                     | HasInited     |
 | 0xA1   | bool                                     | IsLight \[?\] |
@@ -250,6 +250,51 @@ Inherits from:
 | 0x2C   | u32                                                            | MaxSessions |
 | 0x30   | [\#KPort](#KPort "wikilink")\*                                 | Parent      |
 
+# KSession
+
+Size: 0xB0
+
+Inherits from:
+[\#KAutoObject](#KAutoObject "wikilink")
+
+| Offset | Type                                           | Description |
+| ------ | ---------------------------------------------- | ----------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")       |             |
+| 0x10   | [\#KServerSession](#KServerSession "wikilink") | ServerSide  |
+| 0x70   | [\#KClientSession](#KClientSession "wikilink") | ClientSide  |
+| 0xA8   | bool                                           | HasInited   |
+
+## KServerSession
+
+Size: 0x60
+
+Inherits from:
+[\#KSynchronizationObject](#KSynchronizationObject "wikilink")
+
+| Offset | Type                                                           | Description |
+| ------ | -------------------------------------------------------------- | ----------- |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |             |
+| 0x28   | KLinkedListNode                                                |             |
+| 0x38   |                                                                |             |
+| 0x40   | KLinkedListNode                                                |             |
+| 0x50   |                                                                |             |
+| 0x58   |                                                                |             |
+
+## KClientSession
+
+Size: 0x38
+
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+
+| Offset | Type                                       | Description    |
+| ------ | ------------------------------------------ | -------------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")   |                |
+| 0x10   | [\#KSession](#KSession "wikilink")\*       | Parent         |
+| 0x18   | bool                                       | HasInited      |
+| 0x20   | [\#KClientPort](#KClientPort "wikilink")\* | ParentPort     |
+| 0x28   |                                            |                |
+| 0x30   | [\#KProcess](#KProcess "wikilink")\*       | CreatorProcess |
+
 # KLightSession
 
 Size: 0xA8
@@ -260,8 +305,8 @@ Inherits from:
 | Offset | Type                                                     | Description |
 | ------ | -------------------------------------------------------- | ----------- |
 | 0      | [\#KAutoObject](#KAutoObject "wikilink")                 |             |
-| 0x10   | [\#KLightSessionServer](#KLightSessionServer "wikilink") | Server      |
-| 0x68   | [\#KLightSessionClient](#KLightSessionClient "wikilink") | Client      |
+| 0x10   | [\#KLightSessionServer](#KLightSessionServer "wikilink") | ServerSide  |
+| 0x68   | [\#KLightSessionClient](#KLightSessionClient "wikilink") | ClientSide  |
 | 0xA0   | bool                                                     | HasInited   |
 
 ## KLightServerSession
@@ -285,14 +330,14 @@ Size: 0x38
 Inherits from:
 [\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                           | Description  |
-| ------ | ---------------------------------------------- | ------------ |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")       |              |
-| 0x10   | [\#KLightSession](#KLightSession "wikilink")\* | Parent       |
-| 0x18   | bool                                           | HasInited    |
-| 0x20   | [\#KClientPort](#KClientPort "wikilink")\*     | Port         |
-| 0x28   |                                                |              |
-| 0x30   | [\#KProcess](#KProcess "wikilink")\*           | OwnerProcess |
+| Offset | Type                                           | Description    |
+| ------ | ---------------------------------------------- | -------------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")       |                |
+| 0x10   | [\#KLightSession](#KLightSession "wikilink")\* | Parent         |
+| 0x18   | bool                                           | HasInited      |
+| 0x20   | [\#KClientPort](#KClientPort "wikilink")\*     | Port           |
+| 0x28   |                                                |                |
+| 0x30   | [\#KProcess](#KProcess "wikilink")\*           | CreatorProcess |
 
 # KEvent
 
