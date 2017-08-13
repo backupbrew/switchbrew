@@ -699,7 +699,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x28
 | KLinkedListNode
-|
+|  NodeFor__IncomingConnections
 |-
 | 0x38
 |

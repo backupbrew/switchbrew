@@ -271,14 +271,14 @@ Size: 0x60
 Inherits from:
 [\#KSynchronizationObject](#KSynchronizationObject "wikilink")
 
-| Offset | Type                                                           | Description |
-| ------ | -------------------------------------------------------------- | ----------- |
-| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |             |
-| 0x28   | KLinkedListNode                                                |             |
-| 0x38   |                                                                |             |
-| 0x40   | KLinkedListNode                                                |             |
-| 0x50   |                                                                |             |
-| 0x58   |                                                                |             |
+| Offset | Type                                                           | Description                    |
+| ------ | -------------------------------------------------------------- | ------------------------------ |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |                                |
+| 0x28   | KLinkedListNode                                                | NodeFor\_\_IncomingConnections |
+| 0x38   |                                                                |                                |
+| 0x40   | KLinkedListNode                                                |                                |
+| 0x50   |                                                                |                                |
+| 0x58   |                                                                |                                |
 
 ## KClientSession
 
