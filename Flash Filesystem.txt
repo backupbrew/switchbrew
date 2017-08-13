@@ -300,6 +300,12 @@ This is a listing of known System Savedata and what titles they correspond to.
 {| class="wikitable" border="1"
 ! SaveID || Owner || Mount || Notes
 |-
+| 0x8000000000000010 || account || <nowiki>account:/</nowiki> || Account database.
+|-
+| 0x8000000000000011 || account || <nowiki>idgen:/</nowiki> ||
+|-
+| 0x8000000000000020 || nfc || <nowiki>data:/</nowiki> || NFC data and backups.
+|-
 | 0x8000000000000030 || ns || <nowiki>mii:/</nowiki> || Mii database.
 |-
 | 0x8000000000000031 || ns || <nowiki>mii:/</nowiki> || Mii test mode database.
@@ -320,14 +326,64 @@ This is a listing of known System Savedata and what titles they correspond to.
 |-
 | 0x8000000000000048 || ns || <nowiki>ns_systemseed:/</nowiki> ||
 |-
+| 0x8000000000000050 || settings || <nowiki>SystemSettings:/</nowiki> ||
+|-
+| 0x8000000000000051 || settings || <nowiki>FwdbgSettingsS:/</nowiki> ||
+|-
+| 0x8000000000000052 || settings || <nowiki>PrivateSettings:/</nowiki> ||
+|-
+| 0x8000000000000053 || settings || <nowiki>DeviceSettings:/</nowiki> ||
+|-
+| 0x8000000000000054 || settings || <nowiki>ApplnSettings:/</nowiki> ||
+|-
+| 0x8000000000000060 || ssl || <nowiki>SslSave:/</nowiki> ||
+|-
+| 0x8000000000000070 || nim || <nowiki>nim_sys:/</nowiki> ||
+|-
+| 0x8000000000000071 || nim || <nowiki>nim_net:/</nowiki> ||
+|-
+| 0x8000000000000072 || nim || <nowiki>nim_tmp:/</nowiki> ||
+|-
+| 0x8000000000000073 || nim || <nowiki>nim_dac:/</nowiki> ||
+|-
+| 0x8000000000000074 || nim || <nowiki>nim_delta:/</nowiki> ||
+|-
+| 0x8000000000000075 || nim || <nowiki>nim_vac:/</nowiki> ||
+|-
+| 0x8000000000000080 || friends || <nowiki>friends:/</nowiki> ||
+|-
+| 0x8000000000000081 || friends || <nowiki>friends-sys:/</nowiki> ||
+|-
+| 0x8000000000000082 || friends || <nowiki>friends-image:/</nowiki> ||
+|-
 | 0x8000000000000090 || bcat || <nowiki>news:/</nowiki> || Actual news msgpack archives.
 |-
 | 0x8000000000000091 || bcat || <nowiki>news-sys:/</nowiki> || News metadata, tasklist, history, database, required system version, etc.
 |-
 | 0x8000000000000092 || bcat || <nowiki>news-dl:/</nowiki> || Storage for newly(?) downloaded news list/data.
 |-
+| 0x80000000000000A0 || bcat || <nowiki>prepo-sys:/</nowiki> || Play Report system information.
+|-
+| 0x80000000000000A1 || bcat || <nowiki>prepo:/</nowiki> || Play Report msgpack archives.
+|-
+| 0x80000000000000B0 || bsdsockets || <nowiki>nsdsave:/</nowiki> || Socket configuration saved data.
+|-
+| 0x80000000000000C1 || bcat || <nowiki>bcat-sys:/</nowiki> ||
+|-
+| 0x80000000000000C2 || bcat || <nowiki>bcat-dl:/</nowiki> ||
+|-
 | 0x80000000000000D1 || erpt || <nowiki>save:/</nowiki> || Contains "/journal" report listing + actual crash reports ("/%08x-%04x-%04x-%02x%02x-%04x%08x"), which are serialized via [http://msgpack.org/ MsgPack].
 |-
+| 0x80000000000000E0 || es || <nowiki>escertificate:/</nowiki> ||
+|-
+| 0x80000000000000E1 || es || <nowiki>escommon:/</nowiki> ||
+|-
+| 0x80000000000000E2 || es || <nowiki>espersonalized:/</nowiki> ||
+|-
 | 0x80000000000000F0 || ns || <nowiki>pdm:/</nowiki> || Play Data log.
+|-
+| 0x8000000000000100 || pctl || <nowiki>pctlss:/</nowiki> || Parental Control settings.
+|-
+| 0x8000000000000110 || npns || <nowiki>npns_save:/</nowiki> || Push notifications persistent storage.
 |-
 |}
