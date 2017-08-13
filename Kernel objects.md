@@ -320,7 +320,6 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 | 0      | [\#KAutoObject](#KAutoObject "wikilink")     |             |
 | 0x10   | KLinkedListNode                              |             |
 | 0x20   | [\#KLightSession](#KLightSession "wikilink") | Parent      |
-| 0x20   | [\#KClientPort](#KClientPort "wikilink")\*   | Port        |
 | 0x28   | u64\[6\]                                     |             |
 
 ## KLightClientSession

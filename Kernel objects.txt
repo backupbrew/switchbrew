@@ -805,10 +805,6 @@ Inherits from: [[#KAutoObject]]
 | [[#KLightSession]]
 | Parent
 |-
-| 0x20
-| [[#KClientPort]]*
-| Port
-|-
 | 0x28
 | u64[6]
 | 
