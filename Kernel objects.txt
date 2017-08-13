@@ -351,7 +351,7 @@ Size: 0x2A0
 |-
 | 0x294
 | u16
-| UpperBitCounter
+| IdCounter
 |-
 | 0x296
 | u16
@@ -371,7 +371,7 @@ Size: 0x2A0
 |-
 | 0
 | u16
-| HandleUpperBits
+| HandleId
 |-
 | 2
 | u8
