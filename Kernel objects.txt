@@ -799,7 +799,7 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x10
 | KLinkedListNode
-| 
+| NodeFor__IncomingLightConnections
 |-
 | 0x20
 | [[#KLightSession]]

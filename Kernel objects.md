@@ -313,14 +313,15 @@ Inherits from:
 
 Size: 0x58
 
-Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+Inherits from:
+[\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                         | Description |
-| ------ | -------------------------------------------- | ----------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")     |             |
-| 0x10   | KLinkedListNode                              |             |
-| 0x20   | [\#KLightSession](#KLightSession "wikilink") | Parent      |
-| 0x28   | u64\[6\]                                     |             |
+| Offset | Type                                         | Description                         |
+| ------ | -------------------------------------------- | ----------------------------------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")     |                                     |
+| 0x10   | KLinkedListNode                              | NodeFor\_\_IncomingLightConnections |
+| 0x20   | [\#KLightSession](#KLightSession "wikilink") | Parent                              |
+| 0x28   | u64\[6\]                                     |                                     |
 
 ## KLightClientSession
 
