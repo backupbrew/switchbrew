@@ -45,6 +45,25 @@ Sysmodules:
 ** Loader: Only changes in .text was a rebuild with latest SDK, now has the same additional IPC cmd code as NS(see below).
 ** boot: .text now has latest SDK changes + various other changes.
 
+====FS-module====
+There were two changes with [[Filesystem_services#IDeviceOperator|IDeviceOperator]] commands:
+* Code eventually executed for cmd216 was updated. Instead of directly writing to the output struct which is then copied to final output later, a tmpbuf is used which is then copied to the output struct. The 0x10-byte output struct is cleared at the start, and the only u16s copied to output struct from tmpbuf when successful are: +0, +4, +8, +14, and +12.
+* New command 217 was [[Filesystem_services#IDeviceOperator|added]].
+* See also below SDK section.
+
+Rest of the changes:
+* HFS0 error handling was updated.
+* The error returned in one case for a certain func was changed.
+* Code was moved into a separate func, which is now called by the func which was using that code. Similar-ish code in a different func was removed.
+* A certain func no longer writes an error to stack.
+* Various memwrite/memclear changes.
+* Various u16 counters are now incremented in some cases.
+* In a certain func an u32 field is now incremented at _this+16 in some cases.
+* Minor other change(s).
+
+===SDK===
+Every system-title with this system-version which uses FS now has IPC code for using the new IDeviceOperator cmd, including FS-module itself.
+
 ===[[qlaunch]]===
 ...
 
