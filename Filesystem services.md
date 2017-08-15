@@ -263,6 +263,11 @@ User-processes only use this when the value previously loaded from
 [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink") has bit1
 set.
 
+GetGlobalAccessLogMode and OutputAccessLogToSdCard are usable without
+special permissions, however SetGlobalAccessLogMode requires that. While
+OutputAccessLogToSdCard is usable with web-applet permissions, nothing
+is written to SD. It's unknown what triggers writing.
+
 # IStorage
 
 This is the interface for a raw device, usually a block device.
