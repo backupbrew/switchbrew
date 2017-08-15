@@ -270,6 +270,10 @@ special permissions, however SetGlobalAccessLogMode requires that. When
 bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for
 OutputAccessLogToSdCard.
 
+The input buffer is written to the "$FsAccessLog:/FsAccessLog.txt" file,
+where "$FsAccessLog" is the SD-card mount-name. It's written to the
+current end of the file(appended).
+
 # IStorage
 
 This is the interface for a raw device, usually a block device.
