@@ -252,6 +252,8 @@ Takes an input u32.
 
 Returns an output u32.
 
+GlobalAccessLogMode is normally 0.
+
 ## OutputAccessLogToSdCard
 
 Takes a type-0x5 input buffer.
