@@ -3,7 +3,9 @@ nn::usb::detail::UsbComplexTegra21x".
 
 # usb:ds
 
-Not used by any sysmodule.
+Not used by any system-title.
+
+Used for Switch\<\>PC USB comms?
 
 # usb:hs
 
@@ -12,7 +14,7 @@ bsdsockets-sysmodule.
 
 # usb:pd
 
-Only sysmodules with access to this are
+Only system-titles with access to this are
 [PTM](PTM%20services.md "wikilink") and
 [AM](AM%20services.md "wikilink").
 
@@ -23,5 +25,5 @@ USB-sysmodule symbols for this refer to "Cradle", which is the
 
 # usb:pm
 
-Presumably Power Management, only sysmodule using this is
+Presumably Power Management, only system-title using this is
 [PTM](PTM%20services.md "wikilink").
