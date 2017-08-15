@@ -264,9 +264,9 @@ User-processes only use this when the value previously loaded from
 set.
 
 GetGlobalAccessLogMode and OutputAccessLogToSdCard are usable without
-special permissions, however SetGlobalAccessLogMode requires that. While
-OutputAccessLogToSdCard is usable with web-applet permissions, nothing
-is written to SD. It's unknown what triggers writing.
+special permissions, however SetGlobalAccessLogMode requires that. When
+bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for
+OutputAccessLogToSdCard.
 
 # IStorage
 
