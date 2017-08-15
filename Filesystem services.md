@@ -82,9 +82,9 @@ abort.
 | 1001 | SetSaveDataSize                                                                        |
 | 1002 | SetSaveDataRootPath                                                                    |
 | 1003 | DisableAutoSaveDataCreation                                                            |
-| 1004 | SetGlobalAccessLogMode                                                                 |
-| 1005 | GetGlobalAccessLogMode                                                                 |
-| 1006 | OutputAccessLogToSdCard                                                                |
+| 1004 | [\#SetGlobalAccessLogMode](#SetGlobalAccessLogMode "wikilink")                         |
+| 1005 | [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink")                         |
+| 1006 | [\#OutputAccessLogToSdCard](#OutputAccessLogToSdCard "wikilink")                       |
 
 ## MountApplicationPackage
 
@@ -243,6 +243,25 @@ Takes an unknown input u64 and a type-0x6 output buffer.
 
 The input u64 high-byte must be non-zero, otherwise an
 [error](Error%20codes.md "wikilink") is returned(0xE02).
+
+## SetGlobalAccessLogMode
+
+Takes an input u32.
+
+## GetGlobalAccessLogMode
+
+Returns an output u32.
+
+## OutputAccessLogToSdCard
+
+Takes a type-0x5 input buffer.
+
+The input buffer is the string to output to the log. User-processes
+normally include a newline at the end.
+
+User-processes only use this when the value previously loaded from
+[\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink") has bit1
+set.
 
 # IStorage
 
