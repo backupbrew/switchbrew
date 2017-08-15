@@ -214,7 +214,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="odd">
 <td><p>lm</p></td>
-<td><p>Log services</p></td>
+<td><p><a href="Log services.md" title="wikilink">Log services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
