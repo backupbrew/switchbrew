@@ -256,6 +256,8 @@ Setting nano=0 means "yield thread".
 == svcMapSharedMemory ==
 Maps the block supplied by the handle. The required permissions are different for the process that created the handle and all other processes.
 
+Increases reference count for the KSharedMemory object. Thus in order to release the memory associated with the object, all handles to it must be closed and all mappings must be unmapped.
+
 == svcCreateTransferMemory ==
 This one reprotects the src block with perms you give it. It also sets bit0 into [[#MemoryAttribute]].
 
