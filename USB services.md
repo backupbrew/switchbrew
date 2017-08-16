@@ -5,7 +5,7 @@ nn::usb::detail::UsbComplexTegra21x".
 
 Not used by any system-title.
 
-Used for Switch\<\>PC USB comms?
+Used for Switch\<\>PC USB comms, aka Switch-as-device.
 
 # usb:hs
 

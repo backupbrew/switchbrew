@@ -3,7 +3,7 @@ One symbol in USB-sysmodule is: "vtable for nn::usb::detail::UsbComplexTegra21x"
 =usb:ds=
 Not used by any system-title.
 
-Used for Switch<>PC USB comms?
+Used for Switch<>PC USB comms, aka Switch-as-device.
 
 =usb:hs=
 General USB devices usage, used by hid-sysmodule and bsdsockets-sysmodule.
