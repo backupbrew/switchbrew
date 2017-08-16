@@ -513,6 +513,10 @@ Inherits from: [[#KAutoObject]]
 | u64
 | BaseAddress
 |-
+| 0x38
+| KRecursiveLock
+| Mutex
+|-
 | 0x40
 | int
 | Permission
