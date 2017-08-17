@@ -232,6 +232,10 @@ Bit2 of permission (exec) is not allowed. Setting write-only is not allowed eith
 This can be used to move back and forth between ---, r-- and rw-.
 
 == svcSetMemoryAttribute ==
+Description: Change attribute of page-aligned memory region. 
+
+This is used to turn on/off caching for a given memory area. Useful when talking to devices such as the GPU.
+
 {| class=wikitable
 ! State0 || State1 || Action
 |-
@@ -241,8 +245,6 @@ This can be used to move back and forth between ---, r-- and rw-.
 |-
 | 8 || 8 || Set bit3 in [[#MemoryAttribute]].
 |}
-
-This might used for switching between cached and non-cached mappings.
 
 == svcMapMemory ==
 Maps a memory range into a different range. Used for adding guard pages around stack.

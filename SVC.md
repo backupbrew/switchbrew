@@ -127,18 +127,21 @@ written to outaddr.
 Bit2 of permission (exec) is not allowed. Setting write-only is not
 allowed either (bit1).
 
-This can be used to move back and forth between ---, r-- and
-rw-.
+This can be used to move back and forth between ---, r-- and rw-.
 
 ## svcSetMemoryAttribute
+
+Description: Change attribute of page-aligned memory region.
+
+This is used to turn on/off caching for a given memory area. Useful when
+talking to devices such as the
+GPU.
 
 | State0 | State1 | Action                                                          |
 | ------ | ------ | --------------------------------------------------------------- |
 | 0      | 0      | Clear bit3 in [\#MemoryAttribute](#MemoryAttribute "wikilink"). |
 | 8      | 0      | Clear bit3 in [\#MemoryAttribute](#MemoryAttribute "wikilink"). |
 | 8      | 8      | Set bit3 in [\#MemoryAttribute](#MemoryAttribute "wikilink").   |
-
-This might used for switching between cached and non-cached mappings.
 
 ## svcMapMemory
 
