@@ -122,10 +122,13 @@ written to outaddr.
 
 ## svcSetMemoryPermission
 
-Bit2 of permission (exec) is not allowed.
+**Description:** Change CPU permission of memory region.
 
-Setting write-only is not allowed either
-(bit1).
+Bit2 of permission (exec) is not allowed. Setting write-only is not
+allowed either (bit1).
+
+This can be used to move back and forth between ---, r-- and
+rw-.
 
 ## svcSetMemoryAttribute
 
