@@ -77,7 +77,7 @@ Used by SSL-sysmodule, see [[SSL_services|here]].
 |-
 ! Cmd || Name
 |-
-| ? || GetSystemVersion
+| 3 || GetSystemVersion
 |-
 | ? || GetSerialNumber (Returns the 0x18-byte SerialNumber string)
 |-
@@ -89,6 +89,8 @@ Used by SSL-sysmodule, see [[SSL_services|here]].
 |}
 
 == GetSystemVersion ==
+Takes a type-0x1A output buffer. User-processes use hard-coded size 0x100.
+
 Returns the content of the [[System_Version_Title]] "/file".
 
 [[Category:Services]]
