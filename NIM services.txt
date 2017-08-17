@@ -36,7 +36,7 @@ Presumably Network Time Sync?
 * <nowiki>https://beach.hac.%.eshop.nintendo.net/v1/my/virtual_account?lang=en</nowiki>
 * <nowiki>https://tagaya.hac.%.eshop.nintendo.net/tagaya/hac_versionlist</nowiki>
 * ...
-* <nowiki>"https://dauth-%.ndas.srv.nintendo.net/v1/device_auth_token"</nowiki> CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "system_version=%08x&client_id=%s", <output parsed from a func>, "<hard-coded hex string>");
+* <nowiki>"https://dauth-%.ndas.srv.nintendo.net/v1/device_auth_token"</nowiki> CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "system_version=%08x&client_id=%s", <byte-swapped first 3 bytes from [[System_Version_Title]] loaded via [[Settings_services|settings]] cmd>, "<hard-coded hex string>");
 * <nowiki>https://ecs-%.hac.shop.nintendo.net/ecs/services/rest/AccountGetETickets</nowiki>
 * <nowiki>https://ecs-%.hac.shop.nintendo.net/ecs/services/rest/GetAccountStatus</nowiki>
 * <nowiki>https://ias-%.hac.shop.nintendo.net/ias/services/rest/Register</nowiki>

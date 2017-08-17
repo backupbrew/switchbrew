@@ -53,9 +53,10 @@ Presumably Network Time
   - ...
   - "https://dauth-%.ndas.srv.nintendo.net/v1/device\_auth\_token"
     CURLOPT\_POSTFIELDS is set to the output from: snprintf(...,
-    "system\_version=%08x\&client\_id=%s",
-    <output parsed from a func>
-    ,
+    "system\_version=%08x\&client\_id=%s", \<byte-swapped first 3 bytes
+    from
+    [System\_Version\_Title](System%20Version%20Title.md "wikilink")
+    loaded via [settings](Settings%20services.md "wikilink") cmd\>,
     "<hard-coded hex string>");
   - https://ecs-%.hac.shop.nintendo.net/ecs/services/rest/AccountGetETickets
   - https://ecs-%.hac.shop.nintendo.net/ecs/services/rest/GetAccountStatus
