@@ -145,11 +145,12 @@ GPU.
 
 ## svcMapMemory
 
-Maps a memory range into a different range. Used for adding guard pages
-around stack.
+**Description:** Maps a memory range into a different range.
 
-Source range gets reprotected to ---, and sets bit0 is set in
-[\#MemoryAttribute](#MemoryAttribute "wikilink").
+Useful for adding guard pages around stack.
+
+Source range gets reprotected to --- (it can no longer be accessed), and
+bit0 is set in [\#MemoryAttribute](#MemoryAttribute "wikilink").
 
 Destination range is enforced to be within a special region. Code can
 get the range of this region from [\#svcGetInfo](#svcGetInfo "wikilink")

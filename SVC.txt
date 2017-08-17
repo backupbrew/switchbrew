@@ -247,9 +247,11 @@ This is used to turn on/off caching for a given memory area. Useful when talking
 |}
 
 == svcMapMemory ==
-Maps a memory range into a different range. Used for adding guard pages around stack.
+'''Description:''' Maps a memory range into a different range.
 
-Source range gets reprotected to ---, and sets bit0 is set in [[#MemoryAttribute]].
+Useful for adding guard pages around stack.
+
+Source range gets reprotected to --- (it can no longer be accessed), and bit0 is set in [[#MemoryAttribute]].
 
 Destination range is enforced to be within a special region. Code can get the range of this region from [[#svcGetInfo]] id0=2,3.
 
