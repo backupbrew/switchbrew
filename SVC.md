@@ -131,7 +131,7 @@ This can be used to move back and forth between ---, r-- and rw-.
 
 ## svcSetMemoryAttribute
 
-Description: Change attribute of page-aligned memory region.
+**Description:** Change attribute of page-aligned memory region.
 
 This is used to turn on/off caching for a given memory area. Useful when
 talking to devices such as the
