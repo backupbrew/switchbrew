@@ -6,7 +6,7 @@
 | 0x2  | [\#svcSetMemoryPermission](#svcSetMemoryPermission "wikilink")                     | X0=addr, X1=size, W2=prot                                                           | W0=result                                           |
 | 0x3  | [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink")                       | X0=addr, X1=size, W2=state0, W3=state1                                              | W0=result                                           |
 | 0x4  | [\#svcMapMemory](#svcMapMemory "wikilink")                                         | X0=dstaddr, X1=srcaddr, X2=size                                                     | W0=result                                           |
-| 0x5  | svcUnmapMemory                                                                     | X0=dstaddr, X1=srcaddr, X2=size                                                     | W0=result                                           |
+| 0x5  | [\#svcUnmapMemory](#svcUnmapMemory "wikilink")                                     | X0=dstaddr, X1=srcaddr, X2=size                                                     | W0=result                                           |
 | 0x6  | svcQueryMemory                                                                     | X0=meminfo\_ptr, X2=addr                                                            | W0=result, W1=pageinfo                              |
 | 0x7  | svcExitProcess                                                                     | None                                                                                |                                                     |
 | 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")                                   | X1=entry, X2=arg, X3=stacktop, W4=prio, W5=processor\_id                            | W0=result, W1=handle                                |
@@ -156,12 +156,27 @@ Destination range is enforced to be within a special region. Code can
 get the range of this region from [\#svcGetInfo](#svcGetInfo "wikilink")
 id0=2,3.
 
+## svcUnmapMemory
+
+**Description:** Unmaps a region that was previously mapped with
+[\#svcMapMemory](#svcMapMemory "wikilink").
+
+It's possible to unmap ranges partially, you don't need to unmap the
+entire range "in one go".
+
+The srcaddr/dstaddr must match what was given when the pages were
+originally mapped.
+
 ## svcCreateThread
+
+**Description:** Create a thread in the current process.
 
 Processor\_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for
 process.
 
 ## svcSleepThread
+
+**Description:** Sleep for a specified amount of time, or yield thread.
 
 Setting nano=0 means "yield thread".
 

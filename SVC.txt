@@ -10,7 +10,7 @@
 |-
 |  0x4 || [[#svcMapMemory]] || X0=dstaddr, X1=srcaddr, X2=size || W0=result
 |-
-|  0x5 || svcUnmapMemory || X0=dstaddr, X1=srcaddr, X2=size || W0=result
+|  0x5 || [[#svcUnmapMemory]] || X0=dstaddr, X1=srcaddr, X2=size || W0=result
 |-
 |  0x6 || svcQueryMemory || X0=meminfo_ptr, X2=addr || W0=result, W1=pageinfo                                                         
 |-
@@ -255,10 +255,21 @@ Source range gets reprotected to --- (it can no longer be accessed), and bit0 is
 
 Destination range is enforced to be within a special region. Code can get the range of this region from [[#svcGetInfo]] id0=2,3.
 
+== svcUnmapMemory ==
+'''Description:''' Unmaps a region that was previously mapped with [[#svcMapMemory]].
+
+It's possible to unmap ranges partially, you don't need to unmap the entire range "in one go".
+
+The srcaddr/dstaddr must match what was given when the pages were originally mapped.
+
 == svcCreateThread ==
+'''Description:''' Create a thread in the current process.
+
 Processor_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for process.
 
 == svcSleepThread ==
+'''Description:''' Sleep for a specified amount of time, or yield thread.
+
 Setting nano=0 means "yield thread".
 
 == svcMapSharedMemory ==
