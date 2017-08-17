@@ -20,23 +20,23 @@ NCM contains services for internal file path and content management.
 |-
 ! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetProgramNcaPath || u64 TID + C descriptor || 
+| 0 || GetProgramNcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
 |-
-| 1 || SetProgramNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || 
+| 1 || SetProgramNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
 |-
-| 2 || GetUserRootNcaPath || u64 TID + C descriptor ||
+| 2 || GetUserControlNcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type3|NCA-type3]] (gamecard only?).
 |-
-| 3 || GetUserType4NcaPath || u64 TID + C descriptor ||
+| 3 || GetDocHtmlNcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type4|NCA-type4]].
 |-
-| 4 || GetControlNcaPath || u64 TID + C descriptor ||
+| 4 || GetControlNcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type3|NCA-type3]].
 |-
-| 5 || SetControlNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+| 5 || SetControlNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Used for [[NCA_Content_FS#NCA-type3|NCA-type3]].
 |-
-| 6 || SetUserType4NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+| 6 || SetDocHtmlNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Used for [[NCA_Content_FS#NCA-type4|NCA-type4]].
 |-
-| 7 || GetUserType5NcaPath || u64 TID + C descriptor ||
+| 7 || GetInfoHtmlNcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type5|NCA-type5]].
 |-
-| 8 || SetUserType5NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+| 8 || SetInfoHtmlNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Used for [[NCA_Content_FS#NCA-type5|NCA-type5]].
 |-
 | 9 || ClearPathResolverForStorage || None || Clears all NCA paths set.
 |}
@@ -322,6 +322,10 @@ The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, f
 |-
 | 0x82
 | Add-on content
+|-
+| 0x83
+| Delta title
+|-
 |}
 
 == ncm:v ==

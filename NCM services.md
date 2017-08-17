@@ -14,18 +14,18 @@ management.
 
 ### IPathResolverForStorage
 
-| Cmd | Name                        | Arguments                                                                                          | Notes                     |
-| --- | --------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------- |
-| 0   | GetProgramNcaPath           | u64 TID + C descriptor                                                                             |                           |
-| 1   | SetProgramNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                           |
-| 2   | GetUserRootNcaPath          | u64 TID + C descriptor                                                                             |                           |
-| 3   | GetUserType4NcaPath         | u64 TID + C descriptor                                                                             |                           |
-| 4   | GetControlNcaPath           | u64 TID + C descriptor                                                                             |                           |
-| 5   | SetControlNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                           |
-| 6   | SetUserType4NcaPath         | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                           |
-| 7   | GetUserType5NcaPath         | u64 TID + C descriptor                                                                             |                           |
-| 8   | SetUserType5NcaPath         | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                           |
-| 9   | ClearPathResolverForStorage | None                                                                                               | Clears all NCA paths set. |
+| Cmd | Name                        | Arguments                                                                                          | Notes                                                                                         |
+| --- | --------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| 0   | GetProgramNcaPath           | u64 TID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                  |
+| 1   | SetProgramNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                  |
+| 2   | GetUserControlNcaPath       | u64 TID + C descriptor                                                                             | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink") (gamecard only?). |
+| 3   | GetDocHtmlNcaPath           | u64 TID + C descriptor                                                                             | Used for [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").                  |
+| 4   | GetControlNcaPath           | u64 TID + C descriptor                                                                             | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").                  |
+| 5   | SetControlNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").                  |
+| 6   | SetDocHtmlNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").                  |
+| 7   | GetInfoHtmlNcaPath          | u64 TID + C descriptor                                                                             | Used for [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").                  |
+| 8   | SetInfoHtmlNcaPath          | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").                  |
+| 9   | ClearPathResolverForStorage | None                                                                                               | Clears all NCA paths set.                                                                     |
 
 ### IPatchPathResolver
 
@@ -264,6 +264,8 @@ ReadEntryRaw.
 | 0x80  | Regular application                                                                                                                                                              |
 | 0x81  | Update title                                                                                                                                                                     |
 | 0x82  | Add-on content                                                                                                                                                                   |
+| 0x83  | Delta title                                                                                                                                                                      |
+|       |                                                                                                                                                                                  |
 
 ## ncm:v
 
