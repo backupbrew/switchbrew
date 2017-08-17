@@ -423,17 +423,33 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 | 0x28	
 | Controller Header	
 |-
-| 0x3A0	
-| 0x28 * 17	
-| Controller Joined States	
+| 0x28	
+| 0x20 header + 0x30 * 17	
+| Controller Pro Controller State
 |-
-| 0x10E0	
-| 0x28 * 17	
-| Controller Left States	
+| 0x378	
+| 0x20 header + 0x30 * 17	
+| Controller Handheld Joined State
 |-
-| 0x1430	
-| 0x28 * 17	
-| Controller Right States	
+| 0x6C8	
+| 0x20 header + 0x30 * 17	
+| Controller Joined State (Lone Joy-Con or Pair of Joy-Con)
+|-
+| 0xA18	
+| 0x20 header + 0x30 * 17	
+| Controller Left State (Vertical Controls w/ Joy-Con Half)
+|-
+| 0xD68	
+| 0x20 header + 0x30 * 17	
+| Controller Right State (Vertical Controls w/ Joy-Con Half)
+|-
+| 0x10B8	
+| 0x20 header + 0x30 * 17	
+| Controller Main State (No Analog Sticks)
+|-
+| 0x1408
+| 0x20 header + 0x30 * 17	
+| Controller Main State
 |-
 | 0x41D0	
 | 0x10	
@@ -455,7 +471,7 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 0x0	
 | 0x4
-| Status, bit3 pair, bit4 left, bit5 right
+| Status, bit0 Pro Controller/HID controller, bit1 wired for handheld, bit2 pair, bit3 left, bit4 right
 |-
 | 0x4
 | 0x4
@@ -463,19 +479,19 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 0x8
 | 0x4
-| Unknown, 2 for Joy-Con pair
+| bit1 color set does not exist
 |-
 | 0xC
 | 0x4
-| RGBA Body Color (single Joy-Con)
+| RGBA Body Color (single Joy-Con or Pro Controller)
 |-
 | 0x10
 | 0x4
-| RGBA Button Color (single Joy-Con)
+| RGBA Button Color (single Joy-Con or Pro Controller)
 |-
 | 0x14
 | 0x4
-| Unknown
+| bit1 color set does not exist
 |-
 | 0x18
 | 0x4
