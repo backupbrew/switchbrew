@@ -31,16 +31,14 @@ if not all input methods available to applications.
 
 ### Touch Header
 
-| Offset | Size in bytes | Description |
-| ------ | ------------- | ----------- |
-| 0x0    | 0x4           | Unk         |
-| 0x4    | 0x4           | Unk         |
-| 0x8    | 0x4           | Unk         |
-| 0xC    | 0x4           | Unk         |
-| 0x10   | 0x8           | Unk         |
-| 0x18   | 0x8           | Unk         |
-| 0x20   | 0x8           | Timestamp   |
-|        |               |             |
+| Offset | Size in bytes | Description       |
+| ------ | ------------- | ----------------- |
+| 0x0    | 0x8           | Timestamp         |
+| 0x8    | 0x8           | Number of Entries |
+| 0x10   | 0x8           | Unk               |
+| 0x18   | 0x8           | Unk, 0x10         |
+| 0x20   | 0x8           | Timestamp         |
+|        |               |                   |
 
 ### Touch Entry
 
@@ -82,15 +80,13 @@ if not all input methods available to applications.
 
 ### Mouse Header
 
-| Offset | Size in bytes | Description                      |
-| ------ | ------------- | -------------------------------- |
-| 0x0    | 0x4           | Timestamp?                       |
-| 0x4    | 0x4           | Unknown                          |
-| 0x8    | 0x4           | Unknown                          |
-| 0xC    | 0x4           | Unknown                          |
-| 0x10   | 0x8           | 6 when connected, 1 disconnected |
-| 0x18   | 0x8           | Unknown                          |
-|        |               |                                  |
+| Offset | Size in bytes | Description                           |
+| ------ | ------------- | ------------------------------------- |
+| 0x0    | 0x8           | Timestamp                             |
+| 0x8    | 0x8           | Number of Entries                     |
+| 0x10   | 0x8           | Unk, 6 when connected, 1 disconnected |
+| 0x18   | 0x8           | Unk, 0x10                             |
+|        |               |                                       |
 
 ### Mouse Entry
 
@@ -117,15 +113,13 @@ if not all input methods available to applications.
 
 ### Keyboard Header
 
-| Offset | Size in bytes | Description      |
-| ------ | ------------- | ---------------- |
-| 0x0    | 0x4           | Timestamp?       |
-| 0x4    | 0x4           | Unknown          |
-| 0x8    | 0x4           | Unknown          |
-| 0xC    | 0x4           | Unknown          |
-| 0x10   | 0x8           | 6 when connected |
-| 0x18   | 0x8           | Unknown          |
-|        |               |                  |
+| Offset | Size in bytes | Description           |
+| ------ | ------------- | --------------------- |
+| 0x0    | 0x8           | Timestamp             |
+| 0x8    | 0x8           | Number of Entries     |
+| 0x10   | 0x8           | Unk, 6 when connected |
+| 0x18   | 0x8           | Unk, 0x10             |
+|        |               |                       |
 
 ### Keyboard Entry
 
@@ -190,6 +184,16 @@ each available controller.
 | 0x20   | 0x4           | RGBA Body Color (left Joy-Con)                                                                        |
 | 0x24   | 0x4           | RGBA Button Color (left Joy-Con)                                                                      |
 |        |               |                                                                                                       |
+
+#### Controller State Header
+
+| Offset | Size in bytes | Description                  |
+| ------ | ------------- | ---------------------------- |
+| 0x0    | 0x8           | Timestamp                    |
+| 0x8    | 0x8           | Number of entries, always 17 |
+| 0x10   | 0x8           | Unknown, increments          |
+| 0x8    | 0x8           | Unknown, 0x10                |
+|        |               |                              |
 
 #### Controller State
 
