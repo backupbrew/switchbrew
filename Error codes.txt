@@ -227,7 +227,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x20805 || 260 || Storage not mounted
 |-
-| 0x408 || 2 || Invalid program TitleID.
+| 0x408 || 2 || Not initialized.
 |-
 | 0x608 || 3 || Invalid control StorageID.
 |-
@@ -270,6 +270,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 0xF010 || 120 || Gamecard sysupdate not required
 |-
 | 0x1F610 || 251 || Unexpected StorageId
+|-
+| 0x415 || 2 || Not initialized.
 |-
 | 0x615 || 3 || Max sessions
 |-

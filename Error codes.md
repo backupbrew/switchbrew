@@ -131,7 +131,7 @@ applets.
 | 0x17C05           | 190         | Gamecard not initialized                                                                                                                                                             |
 | 0x1F405           | 250         | Sdcard not inserted                                                                                                                                                                  |
 | 0x20805           | 260         | Storage not mounted                                                                                                                                                                  |
-| 0x408             | 2           | Invalid program TitleID.                                                                                                                                                             |
+| 0x408             | 2           | Not initialized.                                                                                                                                                                     |
 | 0x608             | 3           | Invalid control StorageID.                                                                                                                                                           |
 | 0x808             | 4           | Storage not found.                                                                                                                                                                   |
 | 0xA08             | 5           | Access denied.                                                                                                                                                                       |
@@ -153,6 +153,7 @@ applets.
 | 0x410             | 2           | Title-id not found                                                                                                                                                                   |
 | 0xF010            | 120         | Gamecard sysupdate not required                                                                                                                                                      |
 | 0x1F610           | 251         | Unexpected StorageId                                                                                                                                                                 |
+| 0x415             | 2           | Not initialized.                                                                                                                                                                     |
 | 0x615             | 3           | Max sessions                                                                                                                                                                         |
 | 0xC15             | 6           | Invalid name (all zeroes)                                                                                                                                                            |
 | 0x1015            | 8           | Permission denied                                                                                                                                                                    |
