@@ -71,6 +71,9 @@ Used by SSL-sysmodule, see
 | 56  | [GetWirelessCertification](Flash%20Filesystem#PRODINFOF.md##PRODINFOF "wikilink") |
 | 68  | GetSerialNumber                                                                   |
 
+Official user-processes get a new service session handle each time a
+set:sys cmd is used, with the session being closed aftewards.
+
 ## ReadSetting
 
 Takes two type-0x19 input buffers and a type-0x6 output buffer.
