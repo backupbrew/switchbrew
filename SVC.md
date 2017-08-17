@@ -148,7 +148,8 @@ id0=2,3.
 
 ## svcCreateThread
 
-Processor\_id must be 0,1,2,3 or -2.
+Processor\_id must be 0,1,2,3 or -2 (-2 means use the default cpuid for
+process).
 
 ## svcSleepThread
 
