@@ -112,7 +112,7 @@ In 3.0.0, this was fixed by moving the security engine initialization earlier in
 | Service access control bypass (sm:h, smhax, probably other names) (SM:Initialize() not checked)
 | Prior to [[3.0.1]], the service manager ("sm") built-in system module treats a user as though it has full permissions if the user creates a new "sm:" port session but bypasses [[Services_API#Initialize|initialization]].
 In [[3.0.1]], "sm" returns error code 0x415 if [[Services_API#Initialize|Initialize]] has not been called yet.
-| Acquiring, registering, and unregistering of arbitrary services
+| Acquiring, registering, and unregistering arbitrary services
 | [[3.0.1]]
 | [[3.0.1]]
 | April 2017
