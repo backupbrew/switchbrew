@@ -92,7 +92,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 200 || OpenHost
 |-
-| 202 || OpenDataStorageByDataId
+| 202 || [[#OpenDataStorageByDataId]]
 |-
 | 203 || Returns an [[#IStorage]].
 |-
@@ -243,6 +243,11 @@ Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.
 
 Returns an [[#IFileSystem]] with NCA files. The read data from these files is identical to the data read by [[Content_Manager_services#ReadEntryRaw]].
 
+== OpenDataStorageByDataId ==
+Takes a [[#StorageId]] and a TitleID.
+
+Returns a [[IPC_Marshalling#Domain_message|domain object ID]] implementing the [[#IStorage]] interface for data archives.
+
 == OpenDeviceOperator ==
 This command returns a session to a port implementing the [[#IDeviceOperator]] interface.
 
@@ -285,11 +290,11 @@ This is the interface for a raw device, usually a block device.
 |-
 | 0 || Read || Takes a type-0x46 buffer, an offset and length 
 |-
-| 1 || Write ||
+| 1 || Write || Takes a type-0x45 buffer, an offset and length 
 |-
-| 2 || Flush ||
+| 2 || Flush || None
 |-
-| 3 || SetSize ||
+| 3 || SetSize || Takes a size
 |-
 | 4 || GetSize || None
 |}
@@ -484,7 +489,6 @@ Returns a titleID and the title-version for it.
 |}
 
 = ContentPath =
-
 These are the 0x300 paths to NCA files for the various filesystems FS can access, beginning with @. They're passed via X descriptors, and returned via various [[Location Resolver services|ncm/lr]] commands.
 
 {| class="wikitable" border="1"
@@ -505,8 +509,6 @@ These are the 0x300 paths to NCA files for the various filesystems FS can access
 |- 
 | @UserContent || NandUser partition.
 |}
-
-
 
 =BisPartitionID=
 * 0: Raw NAND sectors access for MMC [[Flash_Filesystem|boot]] partition 0.

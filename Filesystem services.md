@@ -61,7 +61,7 @@ abort.
 | 100  | MountImageDirectory                                                                    |
 | 110  | [\#MountContentStorage](#MountContentStorage "wikilink")                               |
 | 200  | OpenHost                                                                               |
-| 202  | OpenDataStorageByDataId                                                                |
+| 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                       |
 | 203  | Returns an [\#IStorage](#IStorage "wikilink").                                         |
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")     |
@@ -222,6 +222,15 @@ Returns an [\#IFileSystem](#IFileSystem "wikilink") with NCA files. The
 read data from these files is identical to the data read by
 [Content\_Manager\_services\#ReadEntryRaw](Content%20Manager%20services#ReadEntryRaw.md##ReadEntryRaw "wikilink").
 
+## OpenDataStorageByDataId
+
+Takes a [\#StorageId](#StorageId "wikilink") and a TitleID.
+
+Returns a [domain object
+ID](IPC%20Marshalling#Domain%20message.md##Domain_message "wikilink")
+implementing the [\#IStorage](#IStorage "wikilink") interface for data
+archives.
+
 ## OpenDeviceOperator
 
 This command returns a session to a port implementing the
@@ -282,9 +291,9 @@ This is the interface for a raw device, usually a block device.
 | Cmd | Name    | Arguments                                      |
 | --- | ------- | ---------------------------------------------- |
 | 0   | Read    | Takes a type-0x46 buffer, an offset and length |
-| 1   | Write   |                                                |
-| 2   | Flush   |                                                |
-| 3   | SetSize |                                                |
+| 1   | Write   | Takes a type-0x45 buffer, an offset and length |
+| 2   | Flush   | None                                           |
+| 3   | SetSize | Takes a size                                   |
 | 4   | GetSize | None                                           |
 
 # IFileSystem
