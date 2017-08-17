@@ -96,7 +96,9 @@ Takes two type-0x19 input buffers and a type-0x6 output buffer.
 == GetSystemVersion ==
 Takes a type-0x1A output buffer. User-processes use hard-coded size 0x100.
 
-Returns the content of the [[System_Version_Title]] "/file".
+If needed, reads the content of the [[System_Version_Title]] "/file" into state. This is only done once.
+
+Then the above 0x100-byte data is copied to the output buffer.
 
 == GetSerialNumber ==
 Returns the 0x18-byte SerialNumber string.

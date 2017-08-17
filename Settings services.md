@@ -83,9 +83,11 @@ Takes two type-0x19 input buffers and a type-0x6 output buffer.
 Takes a type-0x1A output buffer. User-processes use hard-coded size
 0x100.
 
-Returns the content of the
-[System\_Version\_Title](System%20Version%20Title.md "wikilink")
-"/file".
+If needed, reads the content of the
+[System\_Version\_Title](System%20Version%20Title.md "wikilink") "/file"
+into state. This is only done once.
+
+Then the above 0x100-byte data is copied to the output buffer.
 
 ## GetSerialNumber
 
