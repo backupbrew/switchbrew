@@ -268,7 +268,8 @@ set.
 GetGlobalAccessLogMode and OutputAccessLogToSdCard are usable without
 special permissions, however SetGlobalAccessLogMode requires that. When
 bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for
-OutputAccessLogToSdCard.
+OutputAccessLogToSdCard. However even with that set the log doesn't show
+up SD, unknown why.
 
 The input buffer is written to the "$FsAccessLog:/FsAccessLog.txt" file,
 where "$FsAccessLog" is the SD-card mount-name. It's written to the

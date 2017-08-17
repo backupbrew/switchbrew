@@ -272,7 +272,7 @@ The input buffer is the string to output to the log. User-processes normally inc
 
 User-processes only use this when the value previously loaded from [[#GetGlobalAccessLogMode]] has bit1 set.
 
-GetGlobalAccessLogMode and OutputAccessLogToSdCard are usable without special permissions, however SetGlobalAccessLogMode requires that. When bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for OutputAccessLogToSdCard.
+GetGlobalAccessLogMode and OutputAccessLogToSdCard are usable without special permissions, however SetGlobalAccessLogMode requires that. When bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for OutputAccessLogToSdCard. However even with that set the log doesn't show up SD, unknown why.
 
 The input buffer is written to the "$FsAccessLog:/FsAccessLog.txt" file, where "$FsAccessLog" is the SD-card mount-name. It's written to the current end of the file(appended).
 
