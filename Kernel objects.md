@@ -214,14 +214,14 @@ Size: 0xA8
 
 Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                     | Description   |
-| ------ | ---------------------------------------- | ------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink") |               |
-| 0x10   | [\#KServerPort](#KServerPort "wikilink") | ServerSide    |
-| 0x60   | [\#KClientPort](#KClientPort "wikilink") | ClientSide    |
-| 0x98   | u64                                      |               |
-| 0xA0   | bool                                     | HasInited     |
-| 0xA1   | bool                                     | IsLight \[?\] |
+| Offset | Type                                     | Description |
+| ------ | ---------------------------------------- | ----------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") |             |
+| 0x10   | [\#KServerPort](#KServerPort "wikilink") | ServerSide  |
+| 0x60   | [\#KClientPort](#KClientPort "wikilink") | ClientSide  |
+| 0x98   | u64                                      |             |
+| 0xA0   | bool                                     | HasInited   |
+| 0xA1   | bool                                     | IsLight     |
 
 ## KServerPort
 

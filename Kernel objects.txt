@@ -599,7 +599,7 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0xA1
 | bool
-| IsLight [?]
+| IsLight
 |}
 
 == KServerPort ==
