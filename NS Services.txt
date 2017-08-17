@@ -9,9 +9,9 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 1 ||
 |-
-| 2 ||
+| 2 || GetTitleHtmlNcaPath
 |-
-| 3 ||
+| 3 || SubmitArpData
 |-
 | 4 ||
 |-
@@ -45,9 +45,9 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 27 ||
 |-
-| 30 ||
+| 30 || GetIAsyncValue
 |-
-| 31 ||
+| 31 || GetIAsyncResult
 |-
 | 33 ||
 |-
@@ -101,19 +101,19 @@ This is the Switch equivalent of [https://3dbrew.org/wiki/NS_and_APT_Services th
 |-
 | 61 ||
 |-
-| 62 ||
+| 62 || GetIGameCardStopper
 |-
 | 63 ||
 |-
 | 64 ||
 |-
-| 65 ||
+| 65 || GetIRequestServerStopper
 |-
-| 100 || InitializeNXFileSystem?
+| 100 || DeleteUserContent0
 |-
-| 101 || ? Seems to wipe filesystem but keeps some data (savegames? users?)
+| 101 || DeleteUserContent1
 |-
-| 102 ||
+| 102 || DeleteUserContent2
 |-
 | 200 ||
 |-
@@ -301,15 +301,13 @@ Entry structure:
 |}
 
 = ns:su =
-
-= ns:dev =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || LaunchTitle
+| 0 ||
 |-
-| 1 || TerminateTitle
+| 1 || GetISystemUpdateControl
 |-
 | 2 ||
 |-
@@ -321,11 +319,56 @@ Entry structure:
 |-
 | 6 ||
 |-
-| 7 ||
+| 9 || GetNsSuWaitEvent
 |-
-| 8 ||
+| 10 ||
 |-
-| 9 ||
 |}
+
+= ns:dev =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#LaunchTitle]]
+|-
+| 1 || [[#TerminateTitleByPid]]
+|-
+| 2 || [[#TerminateTitleByTitleId]]
+|-
+| 3 || [[#GetNsDevWaitEvent]]
+|-
+| 4 || [[#GetNsDevEventType]]
+|-
+| 5 || [[#TerminateCrashingTitle]]
+|-
+| 6 || [[#InstallTitle]]
+|-
+| 7 || SetEventState6
+|-
+| 8 || SetEventState
+|-
+|}
+
+== LaunchTitle ==
+Wrapper for "pm:shell" [[Process_Manager_services#LaunchProcess|LaunchProcess]].
+
+== TerminateTitleByPid ==
+Wrapper for "pm:shell" [[Process_Manager_services#TerminateTitleByPid|TerminateTitleByPid]].
+
+== TerminateTitleByTitleId ==
+Wrapper for "pm:shell" [[Process_Manager_services#TerminateTitleByTitleId|TerminateTitleByTitleId]].
+
+== GetNsDevWaitEvent ==
+Wrapper for "pm:shell" [[Process_Manager_services#GetProcessEventWaiter|GetProcessEventWaiter]].
+
+== GetNsDevEventType ==
+Wrapper for "pm:shell" [[Process_Manager_services#GetProcessEventType|GetProcessEventType]].
+
+== TerminateCrashingTitle ==
+Calls "pm:shell" [[Process_Manager_services#GetCrashingProcessPid|GetCrashingProcessPid]] and sends PID to [[Process_Manager_services#TerminateTitleByPid|TerminateTitleByPid]].
+
+== InstallTitle ==
+Calls [[NCM_services#IPathResolverForStorage|IPathResolverForStorage]] Set...NcaPath functions.
 
 [[Category:Services]]

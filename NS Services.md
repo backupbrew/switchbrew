@@ -7,8 +7,8 @@ This is the Switch equivalent of
 | ---- | ------------------------------------------------------------------------ |
 | 0    | [\#GetTitlesInfo](#GetTitlesInfo "wikilink")                             |
 | 1    |                                                                          |
-| 2    |                                                                          |
-| 3    |                                                                          |
+| 2    | GetTitleHtmlNcaPath                                                      |
+| 3    | SubmitArpData                                                            |
 | 4    |                                                                          |
 | 5    |                                                                          |
 | 6    |                                                                          |
@@ -25,8 +25,8 @@ This is the Switch equivalent of
 | 23   |                                                                          |
 | 25   |                                                                          |
 | 27   |                                                                          |
-| 30   |                                                                          |
-| 31   |                                                                          |
+| 30   | GetIAsyncValue                                                           |
+| 31   | GetIAsyncResult                                                          |
 | 33   |                                                                          |
 | 35   |                                                                          |
 | 36   |                                                                          |
@@ -53,13 +53,13 @@ This is the Switch equivalent of
 | 59   |                                                                          |
 | 60   | [\#GetLanguageIdFromString](#GetLanguageIdFromString "wikilink")         |
 | 61   |                                                                          |
-| 62   |                                                                          |
+| 62   | GetIGameCardStopper                                                      |
 | 63   |                                                                          |
 | 64   |                                                                          |
-| 65   |                                                                          |
-| 100  | InitializeNXFileSystem?                                                  |
-| 101  | ? Seems to wipe filesystem but keeps some data (savegames? users?)       |
-| 102  |                                                                          |
+| 65   | GetIRequestServerStopper                                                 |
+| 100  | DeleteUserContent0                                                       |
+| 101  | DeleteUserContent1                                                       |
+| 102  | DeleteUserContent2                                                       |
 | 200  |                                                                          |
 | 201  |                                                                          |
 | 210  |                                                                          |
@@ -191,19 +191,70 @@ structure:
 
 # ns:su
 
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 0   |                         |
+| 1   | GetISystemUpdateControl |
+| 2   |                         |
+| 3   |                         |
+| 4   |                         |
+| 5   |                         |
+| 6   |                         |
+| 9   | GetNsSuWaitEvent        |
+| 10  |                         |
+|     |                         |
+
 # ns:dev
 
-| Cmd | Name           |
-| --- | -------------- |
-| 0   | LaunchTitle    |
-| 1   | TerminateTitle |
-| 2   |                |
-| 3   |                |
-| 4   |                |
-| 5   |                |
-| 6   |                |
-| 7   |                |
-| 8   |                |
-| 9   |                |
+| Cmd | Name                                                             |
+| --- | ---------------------------------------------------------------- |
+| 0   | [\#LaunchTitle](#LaunchTitle "wikilink")                         |
+| 1   | [\#TerminateTitleByPid](#TerminateTitleByPid "wikilink")         |
+| 2   | [\#TerminateTitleByTitleId](#TerminateTitleByTitleId "wikilink") |
+| 3   | [\#GetNsDevWaitEvent](#GetNsDevWaitEvent "wikilink")             |
+| 4   | [\#GetNsDevEventType](#GetNsDevEventType "wikilink")             |
+| 5   | [\#TerminateCrashingTitle](#TerminateCrashingTitle "wikilink")   |
+| 6   | [\#InstallTitle](#InstallTitle "wikilink")                       |
+| 7   | SetEventState6                                                   |
+| 8   | SetEventState                                                    |
+|     |                                                                  |
+
+## LaunchTitle
+
+Wrapper for "pm:shell"
+[LaunchProcess](Process%20Manager%20services#LaunchProcess.md##LaunchProcess "wikilink").
+
+## TerminateTitleByPid
+
+Wrapper for "pm:shell"
+[TerminateTitleByPid](Process%20Manager%20services#TerminateTitleByPid.md##TerminateTitleByPid "wikilink").
+
+## TerminateTitleByTitleId
+
+Wrapper for "pm:shell"
+[TerminateTitleByTitleId](Process%20Manager%20services#TerminateTitleByTitleId.md##TerminateTitleByTitleId "wikilink").
+
+## GetNsDevWaitEvent
+
+Wrapper for "pm:shell"
+[GetProcessEventWaiter](Process%20Manager%20services#GetProcessEventWaiter.md##GetProcessEventWaiter "wikilink").
+
+## GetNsDevEventType
+
+Wrapper for "pm:shell"
+[GetProcessEventType](Process%20Manager%20services#GetProcessEventType.md##GetProcessEventType "wikilink").
+
+## TerminateCrashingTitle
+
+Calls "pm:shell"
+[GetCrashingProcessPid](Process%20Manager%20services#GetCrashingProcessPid.md##GetCrashingProcessPid "wikilink")
+and sends PID to
+[TerminateTitleByPid](Process%20Manager%20services#TerminateTitleByPid.md##TerminateTitleByPid "wikilink").
+
+## InstallTitle
+
+Calls
+[IPathResolverForStorage](NCM%20services#IPathResolverForStorage.md##IPathResolverForStorage "wikilink")
+Set...NcaPath functions.
 
 [Category:Services](Category:Services "wikilink")
