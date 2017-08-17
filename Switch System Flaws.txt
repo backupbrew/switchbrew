@@ -96,8 +96,7 @@ In 3.0.0, this was fixed by moving the security engine initialization earlier in
 |-
 |}
 
-
-=== System Modules ===
+=== FIRM-package System Modules ===
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -118,6 +117,19 @@ In [[3.0.1]], "sm" returns error code 0x415 if [[Services_API#Initialize|Initial
 | April 2017
 | August 17, 2017
 | Everyone
+|}
+
+=== System Modules ===
+{| class="wikitable" border="1"
+|-
+!  Summary
+!  Description
+!  Successful exploitation result
+!  Fixed in system version
+!  Last system version this flaw was checked for
+!  Timeframe this was discovered
+!  Public disclosure timeframe
+!  Discovered by
 |-
 | Out-of-bounds array read for [[BCAT_Content_Container]] secret-data index
 | The [[BCAT_Content_Container]] secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed.
