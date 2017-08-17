@@ -248,7 +248,7 @@ Source range gets reprotected to ---, and sets bit0 is set in [[#MemoryAttribute
 Destination range is enforced to be within a special region. Code can get the range of this region from [[#svcGetInfo]] id0=2,3.
 
 == svcCreateThread ==
-Processor_id must be 0,1,2,3 or -2 (-2 means use the default cpuid for process).
+Processor_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for process.
 
 == svcSleepThread ==
 Setting nano=0 means "yield thread".
