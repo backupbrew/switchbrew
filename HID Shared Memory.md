@@ -196,12 +196,13 @@ each available controller.
 | Offset | Size in bytes | Description                                   |
 | ------ | ------------- | --------------------------------------------- |
 | 0x0    | 0x8           | Timestamp                                     |
-| 0x8    | 0x8           | Button State                                  |
-| 0xC    | 0x4           | Left Joystick X                               |
-| 0x10   | 0x4           | Left Joystick Y                               |
-| 0x14   | 0x4           | Right Joystick X                              |
-| 0x18   | 0x4           | Right Joystick Y                              |
-| 0x20   | 0x8           | Controller State (bit0 connected, bit1 wired) |
+| 0x8    | 0x8           | Timestamp Again                               |
+| 0x10   | 0x8           | Button State                                  |
+| 0x18   | 0x4           | Left Joystick X                               |
+| 0x1C   | 0x4           | Left Joystick Y                               |
+| 0x20   | 0x4           | Right Joystick X                              |
+| 0x24   | 0x4           | Right Joystick Y                              |
+| 0x28   | 0x8           | Controller State (bit0 connected, bit1 wired) |
 |        |               |                                               |
 
 ##### Button State
