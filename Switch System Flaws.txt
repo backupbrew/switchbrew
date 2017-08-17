@@ -109,6 +109,16 @@ In 3.0.0, this was fixed by moving the security engine initialization earlier in
 !  Public disclosure timeframe
 !  Discovered by
 |-
+| Arbitrary service handle forging
+| Prior to [[3.0.1]], the service manager ("sm") built-in system module could provide valid handles for any [[Services_API|service]] if the user creates a new "sm:" port session but bypasses [[Services_API#Initialize|initialization]].
+In [[3.0.1]], "sm" returns error code 0x415 if [[Services_API#Initialize|Initialize]] has not been called yet.
+| Access to any service
+| [[3.0.1]]
+| [[3.0.1]]
+| April 2017
+| August 17, 2017
+| Everyone
+|-
 | Out-of-bounds array read for [[BCAT_Content_Container]] secret-data index
 | The [[BCAT_Content_Container]] secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed.
 This is not useful since the string loaded from this array is only involved with key-generation.
