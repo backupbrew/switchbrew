@@ -80,6 +80,8 @@ When the above "Crypto Type" field is 0x2(?) on >=v3.0, different {crypto/keydat
 
 Crypto-Type2 0x3 is used for all [[3.0.1]] sysmodules and the [[System_Version_Title]].
 
+Note: in some cases various game content uses the above newer crypto as well.
+
 ==Section Table Entry==
 {| class="wikitable" border="1"
 |-

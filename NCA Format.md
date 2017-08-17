@@ -43,6 +43,9 @@ Crypto-Type2 0x3 is used for all [3.0.1](3.0.1.md "wikilink") sysmodules
 and the
 [System\_Version\_Title](System%20Version%20Title.md "wikilink").
 
+Note: in some cases various game content uses the above newer crypto as
+well.
+
 ## Section Table Entry
 
 | Offset | Size | Description      |
