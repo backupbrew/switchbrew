@@ -241,11 +241,11 @@ Setting write-only is not allowed either (bit1).
 This might used for switching between cached and non-cached mappings.
 
 == svcMapMemory ==
-Memory is only allowed to be mapped into a special region.
+Maps a memory range into a different range. Used for adding guard pages around stack.
 
-Code can get the range of this region from [[#svcGetInfo]].
+Source range gets reprotected to ---, and sets bit0 is set in [[#MemoryAttribute]].
 
-The source region gets reprotected to ---, and sets bit0 is set in [[#MemoryAttribute]].
+Destination range is enforced to be within a special region. Code can get the range of this region from [[#svcGetInfo]] id0=2,3.
 
 == svcCreateThread ==
 Processor_id must be 0,1,2,3 or -2.

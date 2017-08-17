@@ -136,13 +136,15 @@ This might used for switching between cached and non-cached mappings.
 
 ## svcMapMemory
 
-Memory is only allowed to be mapped into a special region.
+Maps a memory range into a different range. Used for adding guard pages
+around stack.
 
-Code can get the range of this region from
-[\#svcGetInfo](#svcGetInfo "wikilink").
-
-The source region gets reprotected to ---, and sets bit0 is set in
+Source range gets reprotected to ---, and sets bit0 is set in
 [\#MemoryAttribute](#MemoryAttribute "wikilink").
+
+Destination range is enforced to be within a special region. Code can
+get the range of this region from [\#svcGetInfo](#svcGetInfo "wikilink")
+id0=2,3.
 
 ## svcCreateThread
 
