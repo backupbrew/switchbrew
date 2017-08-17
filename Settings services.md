@@ -66,10 +66,10 @@ Used by SSL-sysmodule, see
 | Cmd | Name                                                                              |
 | --- | --------------------------------------------------------------------------------- |
 | 3   | GetSystemVersion                                                                  |
-| ?   | GetSerialNumber (Returns the 0x18-byte SerialNumber string)                       |
 | 37  | QuerySetting                                                                      |
 | 38  | ReadSetting                                                                       |
 | 56  | [GetWirelessCertification](Flash%20Filesystem#PRODINFOF.md##PRODINFOF "wikilink") |
+| 68  | GetSerialNumber                                                                   |
 
 ## GetSystemVersion
 
@@ -79,5 +79,9 @@ Takes a type-0x1A output buffer. User-processes use hard-coded size
 Returns the content of the
 [System\_Version\_Title](System%20Version%20Title.md "wikilink")
 "/file".
+
+## GetSerialNumber
+
+Returns the 0x18-byte SerialNumber string.
 
 [Category:Services](Category:Services "wikilink")
