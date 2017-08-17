@@ -122,7 +122,7 @@ written to outaddr.
 
 ## svcSetMemoryPermission
 
-**Description:** Change CPU permission of memory region.
+**Description:** Change permission of page-aligned memory region.
 
 Bit2 of permission (exec) is not allowed. Setting write-only is not
 allowed either (bit1).

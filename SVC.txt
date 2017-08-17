@@ -225,7 +225,7 @@ Size must be a multiple of 0x2000000.
 On success, the heap base-address (which is fixed by kernel, aslr'd) is written to outaddr.
 
 == svcSetMemoryPermission ==
-'''Description:''' Change CPU permission of memory region.
+'''Description:''' Change permission of page-aligned memory region.
 
 Bit2 of permission (exec) is not allowed. Setting write-only is not allowed either (bit1).
 
