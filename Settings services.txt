@@ -85,6 +85,8 @@ Used by SSL-sysmodule, see [[SSL_services|here]].
 |-
 | 56 || [[Flash_Filesystem#PRODINFOF|GetWirelessCertification]]
 |-
+| 62 || GetDebugMode
+|-
 | 68 || GetSerialNumber
 |}
 
@@ -95,12 +97,21 @@ Takes two type-0x19 input buffers and a type-0x6 output buffer. Returns an outpu
 
 The outbuf_size is compared with the config_size. When config_size is larger than outbuf_size, outbuf_size is used for the memcpy, otherwise config_size is used. Afterwards the size used for the memcpy is written to output(see above).
 
+If loading from main config fails, it will also attempt to load config from various state if the input strings match hard-coded strings.
+
 == GetSystemVersion ==
 Takes a type-0x1A output buffer. User-processes use hard-coded size 0x100.
 
 If needed, reads the content of the [[System_Version_Title]] "/file" into state. This is only done once.
 
 Then the above 0x100-byte data is copied to the output buffer.
+
+== GetDebugMode ==
+Returns an output u8.
+
+Loads the 1-byte config for <"settings_debug", "is_debug_mode_enabled">. If that fails, value 0x1 is written to output. This uses the same func as ReadSetting internally.
+
+Returned retval is always 0.
 
 == GetSerialNumber ==
 Returns the 0x18-byte SerialNumber string.

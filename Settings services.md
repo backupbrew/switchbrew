@@ -69,6 +69,7 @@ Used by SSL-sysmodule, see
 | 37  | QuerySetting                                                                      |
 | 38  | ReadSetting                                                                       |
 | 56  | [GetWirelessCertification](Flash%20Filesystem#PRODINFOF.md##PRODINFOF "wikilink") |
+| 62  | GetDebugMode                                                                      |
 | 68  | GetSerialNumber                                                                   |
 
 Official user-processes get a new service session handle each time a
@@ -84,6 +85,9 @@ larger than outbuf\_size, outbuf\_size is used for the memcpy, otherwise
 config\_size is used. Afterwards the size used for the memcpy is written
 to output(see above).
 
+If loading from main config fails, it will also attempt to load config
+from various state if the input strings match hard-coded strings.
+
 ## GetSystemVersion
 
 Takes a type-0x1A output buffer. User-processes use hard-coded size
@@ -94,6 +98,16 @@ If needed, reads the content of the
 into state. This is only done once.
 
 Then the above 0x100-byte data is copied to the output buffer.
+
+## GetDebugMode
+
+Returns an output u8.
+
+Loads the 1-byte config for \<"settings\_debug",
+"is\_debug\_mode\_enabled"\>. If that fails, value 0x1 is written to
+output. This uses the same func as ReadSetting internally.
+
+Returned retval is always 0.
 
 ## GetSerialNumber
 
