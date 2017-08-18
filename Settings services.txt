@@ -91,7 +91,9 @@ Used by SSL-sysmodule, see [[SSL_services|here]].
 Official user-processes get a new service session handle each time a set:sys cmd is used, with the session being closed aftewards.
 
 == ReadSetting ==
-Takes two type-0x19 input buffers and a type-0x6 output buffer.
+Takes two type-0x19 input buffers and a type-0x6 output buffer. Returns an output u64 for the actual size written to the outbuf.
+
+The outbuf_size is compared with the config_size. When config_size is larger than outbuf_size, outbuf_size is used for the memcpy, otherwise config_size is used. Afterwards the size used for the memcpy is written to output(see above).
 
 == GetSystemVersion ==
 Takes a type-0x1A output buffer. User-processes use hard-coded size 0x100.

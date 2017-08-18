@@ -76,7 +76,13 @@ set:sys cmd is used, with the session being closed aftewards.
 
 ## ReadSetting
 
-Takes two type-0x19 input buffers and a type-0x6 output buffer.
+Takes two type-0x19 input buffers and a type-0x6 output buffer. Returns
+an output u64 for the actual size written to the outbuf.
+
+The outbuf\_size is compared with the config\_size. When config\_size is
+larger than outbuf\_size, outbuf\_size is used for the memcpy, otherwise
+config\_size is used. Afterwards the size used for the memcpy is written
+to output(see above).
 
 ## GetSystemVersion
 
