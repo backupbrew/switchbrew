@@ -60,7 +60,7 @@
 |-
 | 0x1D || svcSignalProcessWideKey || X0=ptr, W1=value || W0=result
 |-
-| 0x1E || svcGetSystemTick ||  || 
+| 0x1E || svcGetSystemTick ||  || X0={value of cntpct_el0}
 |-
 | 0x1F || svcConnectToNamedPort || X1=port_name_str || W0=result, W1=handle
 |-
