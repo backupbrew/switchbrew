@@ -241,6 +241,10 @@ it will return
 | Process     | 18         | 0                     | \[ [3.0.0](3.0.0.md "wikilink") +\] Title-id.                                                               |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
+## svcDumpInfo
+
+Does nothing, just returns with registers set to all-zero.
+
 ## svcReadWriteRegister
 
 Read/write Tegra hardware registers with a hardcoded whitelist. Input

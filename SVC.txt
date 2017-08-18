@@ -336,6 +336,9 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 | Thread || 0xF0000002 || 0 || Performance counter related.
 |}
 
+== svcDumpInfo ==
+Does nothing, just returns with registers set to all-zero.
+
 == svcReadWriteRegister ==
 Read/write Tegra hardware registers with a hardcoded whitelist. Input address is physical-address.
 
