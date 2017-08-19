@@ -108,6 +108,13 @@ As documented [[Creport|here]], a fatal-error is no longer thrown when applicati
 
 The following strings were added to the codebin: "GameCardInsertionCount", "GameCardRemovalCount", and "GameCardAsicInitializeCount".
 
+===[[NV_services|nvservices]]-sysmodule===
+Only 1 func was changed: L_30f20, which is at L_30f20 in prev ver.
+
+Strings containing paths were changed. For example, "'''D:/Home/teamcity/work/hr'''/3rdparty/hos-ddk-minimal/ddk/Programs/Chris/Include\nn/spl/spl_Api.h" is now "'''C:/dvs/git/dirty/git-master_hos'''/3rdparty/hos-ddk-minimal/ddk/Programs/Chris/Include\nn/spl/spl_Api.h".
+
+Also, "'''D:/Home/teamcity/work/hr'''/hos/services/src/libs/nnmem/mem_StandardAllocator.cpp" is now "'''C:/dvs/git/dirty/git-master_hos'''/hos/services/src/libs/nnmem/mem_StandardAllocator.cpp", etc.
+
 ===[[NS_Services|NS]]-sysmodule===
 The NS-sysmodule was updated. 4 new funcs were added and 29 funcs were updated.
 
