@@ -1,88 +1,60 @@
-The Nintendo Switch makes use of Tegra's efuse driver for a number of operations. This driver is mapped to physical address 0x7000F800 with a total size of 0x400 bytes and exposes several registers for fuse programming and other miscellaneous functions.
+The Nintendo Switch makes use of Tegra's fuse driver for a number of operations. This driver is mapped to physical address 0x7000F800 with a total size of 0x400 bytes and exposes several registers for fuse programming.
+
+Registers from 0x7000F800 to 0x7000F800 + 0xFF can be used to directly program the hardware fuse array, while registers from 0x7000F800 + 0x100 (FUSE_CHIP_REG_START_OFFSET) to 0x7000F800 + 0x3FC (FUSE_CHIP_REG_END_OFFSET) represent cached values read from certain fuses.
 
 == Registers ==
 Below is a list of fuse driver registers used by the Switch's bootloaders.
 
+=== Driver registers ===
 {| class="wikitable" border="1"
 !  Name
 !  Address
-!  Width
 |-
 | [[#FUSE_CTRL|FUSE_CTRL]]
 | 0x7000F800
-| 0x04
 |-
 | [[#FUSE_REG_ADDR|FUSE_REG_ADDR]]
 | 0x7000F804
-| 0x04
 |-
 | [[#FUSE_REG_READ|FUSE_REG_READ]]
 | 0x7000F808
-| 0x04
 |-
 | [[#FUSE_REG_WRITE|FUSE_REG_WRITE]]
 | 0x7000F80C
-| 0x04
+|-
+| FUSE_TIME_RD1
+| 0x7000F810
+|-
+| FUSE_TIME_RD2
+| 0x7000F814
+|-
+| FUSE_TIME_PGM1
+| 0x7000F818
 |-
 | [[#FUSE_TIME_PGM2|FUSE_TIME_PGM2]]
 | 0x7000F81C
-| 0x04
+|-
+| FUSE_PRIV2INTFC
+| 0x7000F820
+|-
+| FUSE_FUSEBYPASS
+| 0x7000F824
+|-
+| FUSE_PRIVATEKEYDISABLE
+| 0x7000F828
 |-
 | [[#FUSE_DIS_PGM|FUSE_DIS_PGM]]
 | 0x7000F82C
-| 0x04
 |-
 | [[#FUSE_WRITE_ACCESS|FUSE_WRITE_ACCESS]]
 | 0x7000F830
-| 0x04
 |-
-| [[#FUSE_SKU_INFO|FUSE_SKU_INFO]]
-| 0x7000F910
-| 0x04
-|-
-| [[#FUSE_SPEEDO_1_CALIB_0|FUSE_SPEEDO_1_CALIB_0]]
-| 0x7000F938
-| 0x04
-|-
-| FUSE_GCPLEX_CONFIG_FUSE_0
-| 0x7000F9C8
-| 0x04
-|-
-| FUSE_GCPLEX_CONFIG_FUSE_1
-| 0x7000F9CC
-| 0x04
-|-
-| FUSE_GCPLEX_CONFIG_FUSE_2
-| 0x7000F9D0
-| 0x04
-|-
-| FUSE_GCPLEX_CONFIG_FUSE_3
-| 0x7000F9D4
-| 0x04
-|-
-| [[#FUSE_GCPLEX_CONFIG_FUSE_4|FUSE_GCPLEX_CONFIG_FUSE_4]]
-| 0x7000F9D8
-| 0x04
-|-
-| FUSE_GCPLEX_CONFIG_FUSE_5
-| 0x7000F9DC
-| 0x04
-|-
-| [[#FUSE_BURNT_FUSE_COUNT_0|FUSE_BURNT_FUSE_COUNT_0]]
-| 0x7000F9E0
-| 0x04
-|-
-| [[#FUSE_BURNT_FUSE_COUNT_1|FUSE_BURNT_FUSE_COUNT_1]]
-| 0x7000F9E4
-| 0x04
-|-
-| [[#FUSE_MASTER_KEY_VER|FUSE_MASTER_KEY_VER]]
-| 0x7000FB94
-| 0x04
+| FUSE_PWR_GOOD_SW
+| 0x7000F834
 |-
 |}
 
-=== FUSE_CTRL ===
+==== FUSE_CTRL ====
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -96,32 +68,275 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 |}
 
 Before fuse reading/writing the power down mode must be disabled.
+FUSE_SENSE mode flushes programmed values into the [[Fuses#Cache_registers|cache registers]].
 
-=== FUSE_REG_ADDR ===
+==== FUSE_REG_ADDR ====
 This register takes the address of the fuse to be read/written/sensed.
 
-=== FUSE_REG_READ ===
+==== FUSE_REG_READ ====
 This register receives the value read from the fuse.
 
-=== FUSE_REG_WRITE ===
+==== FUSE_REG_WRITE ====
 This register takes the value to be written to the fuse.
 
-=== FUSE_TIME_PGM2 ===
+==== FUSE_TIME_PGM2 ====
 This register takes the fuse programming pulse (0xC0 == 19200 kHz).
 
-=== FUSE_DIS_PGM ===
+==== FUSE_DIS_PGM ====
 If set to 0x01, this register disables fuse programming.
 
-=== FUSE_WRITE_ACCESS ===
-If set to 0x01, this register disables software writes to the fuse registers.
+==== FUSE_WRITE_ACCESS ====
+If set to 0x01, this register disables software writes to the fuse driver registers.
 
-=== FUSE_SKU_INFO ===
+
+=== Cache registers ===
+{| class="wikitable" border="1"
+!  Name
+!  Address
+|-
+| [[#FUSE_SKU_INFO|FUSE_SKU_INFO]]
+| 0x7000F910
+|-
+| FUSE_CPU_SPEEDO_0
+| 0x7000F914
+|-
+| FUSE_CPU_IDDQ
+| 0x7000F918
+|-
+| FUSE_FT_REV
+| 0x7000F928
+|-
+| FUSE_CPU_SPEEDO_1
+| 0x7000F92C
+|-
+| FUSE_CPU_SPEEDO_2
+| 0x7000F930
+|-
+| FUSE_SOC_SPEEDO_0
+| 0x7000F934
+|-
+| [[#FUSE_SOC_SPEEDO_1|FUSE_SOC_SPEEDO_1]]
+| 0x7000F938
+|-
+| FUSE_SOC_SPEEDO_2
+| 0x7000F93C
+|-
+| FUSE_SOC_IDDQ
+| 0x7000F940
+|-
+| FUSE_TSENSOR_1
+| 0x7000F984
+|-
+| FUSE_TSENSOR_2
+| 0x7000F988
+|-
+| FUSE_CP_REV
+| 0x7000F990
+|-
+| FUSE_TSENSOR_0
+| 0x7000F998
+|-
+| FUSE_FIRST_BOOTROM_PATCH_SIZE_REG
+| 0x7000F99C
+|-
+| FUSE_VP8_ENABLE
+| 0x7000F9C4
+|-
+| FUSE_RESERVED_ODM0
+| 0x7000F9C8
+|-
+| FUSE_RESERVED_ODM1
+| 0x7000F9CC
+|-
+| FUSE_RESERVED_ODM2
+| 0x7000F9D0
+|-
+| FUSE_RESERVED_ODM3
+| 0x7000F9D4
+|-
+| [[#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]
+| 0x7000F9D8
+|-
+| FUSE_RESERVED_ODM5
+| 0x7000F9DC
+|-
+| [[#FUSE_RESERVED_ODM6|FUSE_RESERVED_ODM6]]
+| 0x7000F9E0
+|-
+| [[#FUSE_RESERVED_ODM7|FUSE_RESERVED_ODM7]]
+| 0x7000F9E4
+|-
+| FUSE_SKU_USB_CALIB
+| 0x7000F9F0
+|-
+| FUSE_SKU_DIRECT_CONFIG
+| 0x7000F9F4
+|-
+| FUSE_VENDOR_CODE
+| 0x7000FA00
+|-
+| FUSE_FAB_CODE
+| 0x7000FA04
+|-
+| FUSE_LOT_CODE_0
+| 0x7000FA08
+|-
+| FUSE_LOT_CODE_1
+| 0x7000FA0C
+|-
+| FUSE_WAFER_ID
+| 0x7000FA10
+|-
+| FUSE_X_COORDINATE
+| 0x7000FA14
+|-
+| FUSE_Y_COORDINATE
+| 0x7000FA18
+|-
+| FUSE_GPU_IDDQ
+| 0x7000FA28
+|-
+| FUSE_TSENSOR_3
+| 0x7000FA2C
+|-
+| FUSE_OPT_SUBREVISION
+| 0x7000FA48
+|-
+| FUSE_TSENSOR_4
+| 0x7000FA54
+|-
+| FUSE_TSENSOR_5
+| 0x7000FA58
+|-
+| FUSE_TSENSOR_6
+| 0x7000FA5C
+|-
+| FUSE_TSENSOR_7
+| 0x7000FA60
+|-
+| FUSE_OPT_PRIV_SEC_DIS
+| 0x7000FA64
+|-
+| FUSE_TSENSOR_COMMON
+| 0x7000FA80
+|-
+| FUSE_TSENSOR_8
+| 0x7000FAD4
+|-
+| FUSE_RESERVED_CALIB
+| 0x7000FB04
+|-
+| FUSE_TSENSOR_9
+| 0x7000FB1C
+|-
+| FUSE_USB_CALIB_EXT
+| 0x7000FB50
+|-
+| FUSE_SPARE_BIT_0
+| 0x7000FB80
+|-
+| FUSE_SPARE_BIT_1
+| 0x7000FB84
+|-
+| FUSE_SPARE_BIT_2
+| 0x7000FB88
+|-
+| FUSE_SPARE_BIT_3
+| 0x7000FB8C
+|-
+| FUSE_SPARE_BIT_4
+| 0x7000FB90
+|-
+| [[#FUSE_SPARE_BIT_5|FUSE_SPARE_BIT_5]]
+| 0x7000FB94
+|-
+| FUSE_SPARE_BIT_6
+| 0x7000FB98
+|-
+| FUSE_SPARE_BIT_7
+| 0x7000FB9C
+|-
+| FUSE_SPARE_BIT_8
+| 0x7000FBA0
+|-
+| FUSE_SPARE_BIT_9
+| 0x7000FBA4
+|-
+| FUSE_SPARE_BIT_10
+| 0x7000FBA8
+|-
+| FUSE_SPARE_BIT_11
+| 0x7000FBAC
+|-
+| FUSE_SPARE_BIT_12
+| 0x7000FBB0
+|-
+| FUSE_SPARE_BIT_13
+| 0x7000FBB4
+|-
+| FUSE_SPARE_BIT_14
+| 0x7000FBB8
+|-
+| FUSE_SPARE_BIT_15
+| 0x7000FBBC
+|-
+| FUSE_SPARE_BIT_16
+| 0x7000FBC0
+|-
+| FUSE_SPARE_BIT_17
+| 0x7000FBC4
+|-
+| FUSE_SPARE_BIT_18
+| 0x7000FBC8
+|-
+| FUSE_SPARE_BIT_19
+| 0x7000FBCC
+|-
+| FUSE_SPARE_BIT_20
+| 0x7000FBD0
+|-
+| FUSE_SPARE_BIT_21
+| 0x7000FBD4
+|-
+| FUSE_SPARE_BIT_22
+| 0x7000FBD8
+|-
+| FUSE_SPARE_BIT_23
+| 0x7000FBDC
+|-
+| FUSE_SPARE_BIT_24
+| 0x7000FBE0
+|-
+| FUSE_SPARE_BIT_25
+| 0x7000FBE4
+|-
+| FUSE_SPARE_BIT_26
+| 0x7000FBE8
+|-
+| FUSE_SPARE_BIT_27
+| 0x7000FBEC
+|-
+| FUSE_SPARE_BIT_28
+| 0x7000FBF0
+|-
+| FUSE_SPARE_BIT_29
+| 0x7000FBF4
+|-
+| FUSE_SPARE_BIT_30
+| 0x7000FBF8
+|-
+| FUSE_SPARE_BIT_31
+| 0x7000FBFC
+|-
+|}
+
+==== FUSE_SKU_INFO ====
 Stores the SKU ID (must be 0x83).
 
-=== FUSE_SPEEDO_1_CALIB_0 ===
-Seems to store the bootrom patch version.
+==== FUSE_SOC_SPEEDO_1 ====
+Stores the bootrom patch version.
 
-=== FUSE_GCPLEX_CONFIG_FUSE_4 ===
+==== FUSE_RESERVED_ODM4 ====
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -142,25 +357,25 @@ Seems to store the bootrom patch version.
 
 This stores some device configuration parameters.
 
-=== FUSE_MASTER_KEY_VER ===
+==== FUSE_RESERVED_ODM6 ====
+This register returns the value programmed into index 0x3A of the fuse array. 
+
+==== FUSE_RESERVED_ODM7 ====
+This register returns the value programmed into index 0x3C of the fuse array.
+
+==== FUSE_SPARE_BIT_5 ====
 Must be non-zero on retail units, otherwise the first bootloader panics.
 On debug units it can be zero, which tells the bootloader to choose from two debug master key seeds. If set to non-zero on a debug unit, it tells the bootloader to choose from two retail master key seeds (only the last one matches the retail master key seed).
-
-=== FUSE_BURNT_FUSE_COUNT_0 ===
-This register returns the value programmed into offset 0x3A of the fuse array. 
-
-=== FUSE_BURNT_FUSE_COUNT_1 ===
-This register returns the value programmed into offset 0x3C of the fuse array.
 
 == eFuses ==
 The actual hardware fuses can be programmed through the fuse driver after enabling fuse programming.
 
-Below is a list of common fuse offsets used by Tegra devices (and applicable to the Switch).
-Note that offsets are relative to the start of the fuse array and a single fuse write operation always writes the same word at both (fuse_offset + 0) and (fuse_offset + 1).
+Below is a list of common fuse indexes used by Tegra devices (and applicable to the Switch).
+Note that the indexes are relative to the start of the fuse array and each element is a 4 byte word. A single fuse write operation always writes the same word at both fuse_array + 0 (PRIMARY_ALIAS) and fuse_array + 1 (REDUNDANT_ALIAS).
 
 {| class="wikitable" border="1"
 !  Name
-!  Offset
+!  Index
 !  Bits
 |-
 | jtag_disable
@@ -215,10 +430,10 @@ Note that offsets are relative to the start of the fuse array and a single fuse 
 
 === odm_reserved ===
 The first bootloader only burns fuses in this region.
-Both fuse offsets 0x3A (odm_reserved + 0x0C) and 0x3C (odm_reserved + 0x0E) are used for anti-downgrade control.
+Both fuse indexes 0x3A (odm_reserved + 0x0C) and 0x3C (odm_reserved + 0x0E) are used for anti-downgrade control. These fuses will have their values cached into [[#FUSE_RESERVED_ODM6|FUSE_RESERVED_ODM6]] and [[#FUSE_RESERVED_ODM7|FUSE_RESERVED_ODM7]].
 
 == Anti-downgrade ==
-The first bootloader verifies [[#FUSE_BURNT_FUSE_COUNT_1|FUSE_BURNT_FUSE_COUNT_1]] to prevent downgrading.
+The first bootloader verifies [[#FUSE_RESERVED_ODM7|FUSE_RESERVED_ODM7]] to prevent downgrading.
 How many fuses are expected to be burnt depends the device's unit type as below.
 
 {| class="wikitable" border="1"
@@ -246,7 +461,7 @@ How many fuses are expected to be burnt depends the device's unit type as below.
 
 If too many fuses are burnt the bootloader will panic immediately.
 
-If too few are burnt, the bootloader will enable fuse programming and write the expected value to fuse offsets 0x3A and 0x3C. Afterwards, fuse programming is disabled and a magic value (0x21 == TEGRA210) is written to an unknown PMC register (0x7000EC40). Finally, the watchdog timer is initialized and programmed to force a reset.
+If too few are burnt, the bootloader will enable fuse programming and write the expected value to fuse indexes 0x3A and 0x3C. Afterwards, fuse programming is disabled and a magic value (0x21 == TEGRA210) is written to PMC_SCRATCH200 register (0x7000EC40). Finally, the watchdog timer is initialized and programmed to force a reset.
 
-On a subsequent boot, after the anti-downgrade fuses are checked again, PMC_RST_STATUS (0x7000E5B4) is checked and if set to 0x01 (watchdog reset) the unknown PMC register (0x7000EC40) will be checked for the magic value 0x21.
+On a subsequent boot, after the anti-downgrade fuses are checked again, the PMC_RST_STATUS register (0x7000E5B4) is checked and if set to 0x01 (watchdog reset) the PMC_SCRATCH200 register (0x7000EC40) will be checked for the magic value (0x21 == TEGRA210).
 PMC_RST_STATUS will only be set back to 0 (power on reset) if the fuse count matches the new expected value, otherwise the system will panic.
