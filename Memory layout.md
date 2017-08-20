@@ -130,50 +130,39 @@ TTBR1:
         0xFFFFFFF7FF800000. physaddr = tablebase +
 (0x6\<\<12).
 
-| Vmem                                               | Physmem    | Size    | Descriptor ORR-value | Permissions | Description      |
-| -------------------------------------------------- | ---------- | ------- | -------------------- | ----------- | ---------------- |
-| 0xFFFFFFF7FFC00000..0xFFFFFFF7FFC62000 (inclusive) | 0x800A0000 | 0x63000 | 0x78B                |             | Kernel .text     |
-| 0xFFFFFFF7FFC63000..0xFFFFFFF7FFC65000 (inclusive) | 0x80103000 | 0x3000  | 0x6000000000078B     |             | Kernel .rodata   |
-| 0xFFFFFFF7FFC66000..0xFFFFFFF7FFC6E000 (inclusive) | 0x80106000 | 0x9000  | 0x6000000000070B     |             | Kernel .data/... |
-
-The following uses descriptor ORR-value 0x6000000000070B, the size of
-each one is 0x1000-bytes.
-
-| Vmem               | Physmem    |
-| ------------------ | ---------- |
-| 0xFFFFFFF7FFDCA000 | 0x80060000 |
-| 0xFFFFFFF7FFDCB000 | 0x80061000 |
-| 0xFFFFFFF7FFDCE000 | 0x80068000 |
-| 0xFFFFFFF7FFDD4000 | 0x80062000 |
-| 0xFFFFFFF7FFDD5000 | 0x80063000 |
-| 0xFFFFFFF7FFDD8000 | 0x8006A000 |
-| 0xFFFFFFF7FFDD9000 | 0x8006B000 |
-| 0xFFFFFFF7FFDDE000 | 0x80064000 |
-| 0xFFFFFFF7FFDDF000 | 0x80065000 |
-| 0xFFFFFFF7FFDE2000 | 0x8006C000 |
-| 0xFFFFFFF7FFDE3000 | 0x8006D000 |
-| 0xFFFFFFF7FFDE8000 | 0x80066000 |
-| 0xFFFFFFF7FFDE9000 | 0x80067000 |
-| 0xFFFFFFF7FFDCF000 | 0x80069000 |
-| 0xFFFFFFF7FFDEC000 | 0x8006E000 |
-| 0xFFFFFFF7FFDED000 | 0x8006F000 |
-| 0xFFFFFFF7FFDD2000 | 0x80070000 |
-| 0xFFFFFFF7FFDDC000 | 0x80071000 |
-| 0xFFFFFFF7FFDE6000 | 0x80072000 |
-| 0xFFFFFFF7FFDF0000 | 0x80073000 |
-
-The following uses descriptor ORR-value 0x60000000000607, the size of
-each one is 0x1000-bytes.
-
-| Vmem               | Physmem    |
-| ------------------ | ---------- |
-| 0xFFFFFFF7FFDC6000 | 0x70019000 |
-| 0xFFFFFFF7FFDC4000 | 0x7001C000 |
-| 0xFFFFFFF7FFDC2000 | 0x7001D000 |
-| 0xFFFFFFF7FFDC0000 | 0x60006000 |
-| 0xFFFFFFF7FFDC8000 | 0x70006000 |
-| 0xFFFFFFF7FFDFB000 | 0x50041000 |
-| 0xFFFFFFF7FFDFD000 | 0x50042000 |
+| Virtual                               | Physical   | Size    | Attributes       | Permissions | Description              |
+| ------------------------------------- | ---------- | ------- | ---------------- | ----------- | ------------------------ |
+| 0xFFFFFFF800000000-...                | 0x80000000 | ...     | ?                | ?           | Raw DRAM access          |
+| 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC62FFF | 0x800A0000 | 0x63000 | 0x78B            | R-X         | Kernel .text             |
+| 0xFFFFFFF7FFC63000-0xFFFFFFF7FFC65FFF | 0x80103000 | 0x3000  | 0x6000000000078B | R--         | Kernel .rodata           |
+| 0xFFFFFFF7FFC66000-0xFFFFFFF7FFC6EFFF | 0x80106000 | 0x9000  | 0x6000000000070B | RW-         | Kernel .data+.bss        |
+| 0xFFFFFFF7FFDCA000-0xFFFFFFF7FFDCAFFF | 0x80060000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDCB000-0xFFFFFFF7FFDCBFFF | 0x80061000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDCE000-0xFFFFFFF7FFDCEFFF | 0x80068000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDD4000-0xFFFFFFF7FFDD4FFF | 0x80062000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDD5000-0xFFFFFFF7FFDD5FFF | 0x80063000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDD8000-0xFFFFFFF7FFDD8FFF | 0x8006A000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDD9000-0xFFFFFFF7FFDD9FFF | 0x8006B000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDDE000-0xFFFFFFF7FFDDEFFF | 0x80064000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDDF000-0xFFFFFFF7FFDDFFFF | 0x80065000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDE2000-0xFFFFFFF7FFDE2FFF | 0x8006C000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDE3000-0xFFFFFFF7FFDE3FFF | 0x8006D000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDE8000-0xFFFFFFF7FFDE8FFF | 0x80066000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDE9000-0xFFFFFFF7FFDE9FFF | 0x80067000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDCF000-0xFFFFFFF7FFDCFFFF | 0x80069000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDEC000-0xFFFFFFF7FFDECFFF | 0x8006E000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDED000-0xFFFFFFF7FFDEDFFF | 0x8006F000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDD2000-0xFFFFFFF7FFDD2FFF | 0x80070000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDDC000-0xFFFFFFF7FFDDCFFF | 0x80071000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDE6000-0xFFFFFFF7FFDE6FFF | 0x80072000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDF0000-0xFFFFFFF7FFDF0FFF | 0x80073000 | 0x1000  | 0x6000000000070B | RW-         |                          |
+| 0xFFFFFFF7FFDC6000-0xFFFFFFF7FFDC6FFF | 0x70019000 | 0x1000  | 0x60000000000607 | RW-         | MC IO                    |
+| 0xFFFFFFF7FFDC4000-0xFFFFFFF7FFDC4FFF | 0x7001C000 | 0x1000  | 0x60000000000607 | RW-         | MC0 IO                   |
+| 0xFFFFFFF7FFDC2000-0xFFFFFFF7FFDC2FFF | 0x7001D000 | 0x1000  | 0x60000000000607 | RW-         | MC1 IO                   |
+| 0xFFFFFFF7FFDC0000-0xFFFFFFF7FFDC0FFF | 0x60006000 | 0x1000  | 0x60000000000607 | RW-         | CLK IO                   |
+| 0xFFFFFFF7FFDC8000-0xFFFFFFF7FFDC8FFF | 0x70006000 | 0x1000  | 0x60000000000607 | RW-         | UART-A IO                |
+| 0xFFFFFFF7FFDFB000-0xFFFFFFF7FFDFBFFF | 0x50041000 | 0x1000  | 0x60000000000607 | RW-         | Interrupt Distributor IO |
+| 0xFFFFFFF7FFDFD000-0xFFFFFFF7FFDFDFFF | 0x50042000 | 0x1000  | 0x60000000000607 | RW-         | Interrupt Controller IO  |
 
 The rest are are mapped to core-specific physaddrs, each one is
 0x1000-bytes. Descriptor ORR-value =
