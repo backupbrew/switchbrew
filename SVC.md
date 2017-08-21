@@ -367,18 +367,22 @@ space handle.
 
 ## CreateProcessInfo
 
-| Offset | Length | Description                                                                                                                                |
-| ------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0      | 8      |                                                                                                                                            |
-| 8      | 2      |                                                                                                                                            |
-| 0xA    | 2      |                                                                                                                                            |
-| 0xC    | 4      |                                                                                                                                            |
-| 0x10   | 8      | TitleId                                                                                                                                    |
-| 0x18   | 8      | CodeAddr                                                                                                                                   |
-| 0x20   | 4      | CodeNumPages                                                                                                                               |
-| 0x24   | 4      | Flags. Bit0: Is64bit (maybe?), bit3-1: MmuTableType (0=32-bit, 1=64-bit 0x800000000, 2=64-bit 0x400000000), bit4: DebugAllowed, bit5, bit6 |
-| 0x28   | 4      | ResourceLimitHandle                                                                                                                        |
-| 0x2C   | 4      |                                                                                                                                            |
+| Offset | Length | Bits   | Description                                                                                                               |
+| ------ | ------ | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| 0      | 8      |        |                                                                                                                           |
+| 8      | 2      |        |                                                                                                                           |
+| 0xA    | 2      |        |                                                                                                                           |
+| 0xC    | 4      |        |                                                                                                                           |
+| 0x10   | 8      |        | TitleId                                                                                                                   |
+| 0x18   | 8      |        | CodeAddr                                                                                                                  |
+| 0x20   | 4      |        | CodeNumPages                                                                                                              |
+| 0x24   | 4      | Bit0   | Is64bit (maybe?)                                                                                                          |
+| 0x24   | 4      | Bit3-1 | AddressSpaceType (0=32-bit with map and heap regions, 1=36-bit with map and heap regions, 2=32-bit with heap region only) |
+| 0x24   | 4      | Bit4   |                                                                                                                           |
+| 0x24   | 4      | Bit5   | EnableAslr                                                                                                                |
+| 0x24   | 4      | Bit6   |                                                                                                                           |
+| 0x28   | 4      |        | ResourceLimitHandle                                                                                                       |
+| 0x2C   | 4      |        |                                                                                                                           |
 
 ## MemoryAttribute
 
