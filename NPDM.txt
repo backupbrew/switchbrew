@@ -204,8 +204,13 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 |-
 | <code>0bxxxx011111111111</code>
 | Bit11
-| Interrupt pair
+| InterruptPair
 | Bits 12-21: Irq0, bits 20-31: Irq1, 0x3FF means empty.
+|-
+| <code>0bxx01111111111111</code>
+| Bit13
+| ?
+| Bit15-14: ?
 |-
 | <code>0bx011111111111111</code>
 | Bit14
@@ -215,7 +220,7 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 | <code>0b0111111111111111</code>
 | Bit15
 | HandleTableSize
-| Bit26-16: Number of handles the table shall fit.
+| Bit25-16: Number of handles the table shall fit.
 |-
 | <code>0b1111111111111111</code>
 | Bit16
