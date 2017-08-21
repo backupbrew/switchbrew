@@ -16,9 +16,37 @@ Inherits from:
 
 | Offset | Type                                             | Description    |
 | ------ | ------------------------------------------------ | -------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")         |                |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")         | Inheritance    |
 | 0x10   | u64                                              | ThreadSyncNum  |
 | 0x18   | [\#KLinkedListNode](#KLinkedListNode "wikilink") | ThreadSyncList |
+
+# KRecursiveLock
+
+Size: 0x8
+
+| Offset | Type | Description |
+| ------ | ---- | ----------- |
+| 0      | u64  | OwnerTag    |
+
+# KSpinLock
+
+Size: 0x1
+
+| Offset | Type | Description |
+| ------ | ---- | ----------- |
+| 0      | u8   | IsBusy      |
+
+# KLockedList
+
+Size:
+0x28
+
+| Offset | Type                                             | Description |
+| ------ | ------------------------------------------------ | ----------- |
+| 0      | u64                                              | Count       |
+| 8      | [\#KLinkedListNode](#KLinkedListNode "wikilink") | List        |
+| 0x18   | [\#KRecursiveLock](#KRecursiveLock "wikilink")   | Mutex       |
+| 0x20   | u64                                              | MaxCount    |
 
 # KLinkedListNode
 
@@ -37,68 +65,50 @@ Size: 0x5B0
 Inherits from:
 [\#KSynchronizationObject](#KSynchronizationObject "wikilink")
 
-| Offset | Type                                                           | Description                         |
-| ------ | -------------------------------------------------------------- | ----------------------------------- |
-| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |                                     |
-| 0x28   |                                                                |                                     |
-| 0x38   | [\#KProcessMm](#KProcessMm "wikilink")                         | MemoryManager                       |
-| 0xF0   | u64                                                            | TotalMemUsage                       |
-| 0xF8   | u64                                                            | TlsPagesListCount                   |
-| 0x100  | [\#KLinkedListNode](#KLinkedListNode "wikilink")               | TlsPagesList                        |
-| 0x110  | s32                                                            | DefaultCpuCore                      |
-| 0x118  | KDebug\*                                                       | Debug                               |
-| 0x120  | [\#KResourceLimit](#KResourceLimit "wikilink")\*               | ResourceLimit                       |
-| 0x128  | u32                                                            | State                               |
-| 0x130  | KRecursiveLock                                                 | ProcessMutex                        |
-| 0x138  | KRecursiveLock                                                 | ThreadingMutex                      |
-| 0x140  | KLinkedListNode<KThread>                                       | ThreadArbiterList                   |
-| 0x150  | KLinkedListNode                                                |                                     |
-| 0x160  | u64\[4\]                                                       | RandomEntropy                       |
-| 0x180  | u8                                                             | HasStateChanged                     |
-| 0x181  | u8                                                             | HasInitialized                      |
-| 0x182  | u8                                                             | From\_CreateProcessInfo\_0x24\_Bit6 |
-| 0x183  | u8\[12\]                                                       | From\_CreateProcessInfo\_0          |
-| 0x18F  | u8                                                             | InitiallyZero                       |
-| 0x190  | u16                                                            | NumberOfCreatedThreads              |
-| 0x192  | u16                                                            | ThreadingRelatedInitiallyZero       |
-| 0x194  | u32                                                            | ProcessFlags                        |
-| 0x198  | [\#KProcessCapabilities](#KProcessCapabilities "wikilink")     | Capabilities                        |
-| 0x248  | u64                                                            | TitleId                             |
-| 0x250  | u64                                                            | ProcessId                           |
-| 0x258  | u64                                                            | CreatedTickstamp                    |
-| 0x260  | u64                                                            | From\_CreateProcessInfo\_0x18       |
-| 0x268  | u64                                                            | CodeMemUsage                        |
-| 0x270  | u64                                                            | DynamicMemUsage                     |
-| 0x278  | u64                                                            | MaxTotalMemUsage                    |
-| 0x280  | u64                                                            | From\_CreateProcessInfo\_0xC        |
-| 0x288  | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")       | HandleTable                         |
-| 0x528  | void\*                                                         | UsermodeExceptionTlsArea            |
-| 0x530  | KLinkedListNode<KThread>                                       | ExceptionThreadList                 |
-| 0x540  | KThread\*                                                      | ExceptionThread                     |
-| 0x548  | KLinkedListNode<KThread>                                       | ThreadList                          |
-| 0x558  | u32                                                            |                                     |
-| 0x55C  | u32                                                            | HasStarted                          |
-| 0x560  | u64\[8\]                                                       |                                     |
-| 0x5A0  | u64                                                            |                                     |
-| 0x5A8  | u64                                                            |                                     |
-
-## KProcessMm
-
-| Offset | Type                                         | Description        |
-| ------ | -------------------------------------------- | ------------------ |
-| 0      | \*                                           | Vtable             |
-| 8      | u64                                          | AddrSpaceMinAddr   |
-| 0x10   | u64                                          | AddrSpaceMaxAddr   |
-| 0x18   | u64                                          | HeapRegionBaseAddr |
-| 0x20   | u64                                          | HeapRegionEndAddr  |
-| 0x28   | u64                                          | HeapCurAddr        |
-| 0x30   | u64                                          | MapRegionBaseAddr  |
-| 0x38   | u64                                          | MapRegionEnd       |
-| 0x40   | u64                                          | HeapMaxAllocation  |
-| 0x48   | KRecursiveLock                               | Mutex              |
-| 0x50   |                                              |                    |
-| 0x60   | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | MemoryBlockList    |
-| ..     | ..                                           | ..                 |
+| Offset | Type                                                                                 | Description                   |
+| ------ | ------------------------------------------------------------------------------------ | ----------------------------- |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")                       | Inheritance                   |
+| 0x28   |                                                                                      |                               |
+| 0x38   | [\#KMemoryManager](#KMemoryManager "wikilink")                                       | MemoryManager                 |
+| 0xF0   | u64                                                                                  | TotalMemUsage                 |
+| 0xF8   | u64                                                                                  | TlsPagesListCount             |
+| 0x100  | [\#KLinkedListNode](#KLinkedListNode "wikilink")                                     | TlsPagesList                  |
+| 0x110  | s32                                                                                  | DefaultCpuCore                |
+| 0x118  | KDebug\*                                                                             | Debug                         |
+| 0x120  | [\#KResourceLimit](#KResourceLimit "wikilink")\*                                     | ResourceLimit                 |
+| 0x128  | u32                                                                                  | State                         |
+| 0x130  | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                       | ProcessMutex                  |
+| 0x138  | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                       | ThreadingMutex                |
+| 0x140  | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ThreadArbiterList             |
+| 0x150  | KLinkedListNode                                                                      |                               |
+| 0x160  | u64\[4\]                                                                             | RandomEntropy                 |
+| 0x180  | u8                                                                                   | HasStateChanged               |
+| 0x181  | u8                                                                                   | HasInitialized                |
+| 0x182  | u8                                                                                   | IsSystem                      |
+| 0x183  | u8\[12\]                                                                             | From\_CreateProcessInfo\_0    |
+| 0x18F  | u8                                                                                   | InitiallyZero                 |
+| 0x190  | u16                                                                                  | NumberOfCreatedThreads        |
+| 0x192  | u16                                                                                  | ThreadingRelatedInitiallyZero |
+| 0x194  | u32                                                                                  | ProcessFlags                  |
+| 0x198  | [\#KProcessCapabilities](#KProcessCapabilities "wikilink")                           | Capabilities                  |
+| 0x248  | u64                                                                                  | TitleId                       |
+| 0x250  | u64                                                                                  | ProcessId                     |
+| 0x258  | u64                                                                                  | CreatedTickstamp              |
+| 0x260  | u64                                                                                  | Entrypoint                    |
+| 0x268  | u64                                                                                  | CodeMemUsage                  |
+| 0x270  | u64                                                                                  | DynamicMemUsage               |
+| 0x278  | u64                                                                                  | MaxTotalMemUsage              |
+| 0x280  | u64                                                                                  | From\_CreateProcessInfo\_0xC  |
+| 0x288  | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")                             | HandleTable                   |
+| 0x528  | void\*                                                                               | UsermodeExceptionTlsArea      |
+| 0x530  | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ExceptionThreadList           |
+| 0x540  | [\#KThread](#KThread "wikilink")\*                                                   | ExceptionThread               |
+| 0x548  | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ThreadList                    |
+| 0x558  | u32                                                                                  |                               |
+| 0x55C  | u32                                                                                  | HasStarted                    |
+| 0x560  | u64\[8\]                                                                             |                               |
+| 0x5A0  | u64                                                                                  |                               |
+| 0x5A8  | u64                                                                                  |                               |
 
 ## KProcessCapabilities
 
@@ -130,7 +140,7 @@ Size:
 | 0x292  | u16                                              |                |
 | 0x294  | u16                                              | IdCounter      |
 | 0x296  | u16                                              | NumActiveSlots |
-| 0x298  | KSpinLock                                        | Lock           |
+| 0x298  | [\#KSpinLock](#KSpinLock "wikilink")             | Lock           |
 
 ### KHandleEntry
 
@@ -140,25 +150,78 @@ Size:
 | 2      | u8                                         | ObjectType  |
 | 8      | [\#KAutoObject](#KAutoObject "wikilink")\* | Object      |
 
+# KMemoryManager
+
+Size:
+0xB8
+
+| Offset | Type                                                     | Description                         |
+| ------ | -------------------------------------------------------- | ----------------------------------- |
+| 0      | \*                                                       | Vtable                              |
+| 8      | u64                                                      | AddrSpaceMinAddr                    |
+| 0x10   | u64                                                      | AddrSpaceMaxAddr                    |
+| 0x18   | u64                                                      | HeapRegionBaseAddr                  |
+| 0x20   | u64                                                      | HeapRegionEndAddr                   |
+| 0x28   | u64                                                      | HeapCurAddr                         |
+| 0x30   | u64                                                      | MapRegionBaseAddr                   |
+| 0x38   | u64                                                      | MapRegionEnd                        |
+| 0x40   | u64                                                      | HeapMaxAllocation                   |
+| 0x48   | [\#KRecursiveLock](#KRecursiveLock "wikilink")           | Mutex                               |
+| 0x50   | [\#KPageTable](#KPageTable "wikilink")                   | PageTable                           |
+| 0x60   | [\#KMemoryBlockManager](#KMemoryBlockManager "wikilink") | MemoryBlockManager                  |
+| 0x78   | bool                                                     | IsKernel                            |
+| 0x79   | bool                                                     | IsSystem                            |
+| 0x7A   | bool                                                     | IsAddrSpace36Bit                    |
+| 0x7B   | bool                                                     | HasAslr                             |
+| 0x7C   | u32                                                      | Is\_0x59\_If\_Cfg12\_Bit0\_ElseZero |
+| 0x80   | u32                                                      | Is\_0x5A\_If\_Cfg12\_Bit0\_ElseZero |
+| 0x84   | u32                                                      | Is\_0x58\_If\_Cfg12\_Bit0\_ElseZero |
+| 0x88   |                                                          |                                     |
+| 0x90   |                                                          |                                     |
+| 0x98   |                                                          |                                     |
+| 0xA0   | u64                                                      | TranslationTableBaseRegister0       |
+| 0xA8   | u64                                                      | TranslationControlRegister          |
+| 0xB0   | u8                                                       | AsidTagValue                        |
+
+## KPageTable
+
+Size: 0x10
+
+| Offset | Type   | Description       |
+| ------ | ------ | ----------------- |
+| 0      | void\* | RawPageTablePtr   |
+| 8      | bool   |                   |
+| 0xC    | u32    | AddrSpaceSizeInGb |
+
+## KMemoryBlockManager
+
+Size:
+0x18
+
+| Offset | Type                                         | Description     |
+| ------ | -------------------------------------------- | --------------- |
+| 0      | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | MemoryBlockList |
+| 8      | u64                                          | MaxAddr         |
+| 0x10   | u64                                          | MinAddr         |
+
 ## KMemoryBlock
 
 Size:
 0x40
 
-| Offset | Type                                         | Description       |
-| ------ | -------------------------------------------- | ----------------- |
-| 0      | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | Next              |
-| 8      | [\#KMemoryBlock](#KMemoryBlock "wikilink")\* | Prev              |
-| 0x10   |                                              |                   |
-| 0x18   |                                              |                   |
-| 0x20   | u64                                          | BaseAddress       |
-| 0x28   | u64                                          | NumOfPages        |
-| 0x30   | u32                                          | State             |
-| 0x34   | u16                                          | IpcRefCount \[?\] |
-| 0x36   | u16                                          | DeviceMapRefCount |
-| 0x38   | u8                                           | Permission        |
-| 0x39   | u8                                           | UnkAttribute      |
-| 0x3A   | u8                                           | Attribute         |
+| Offset | Type                                                                                           | Description                |
+| ------ | ---------------------------------------------------------------------------------------------- | -------------------------- |
+| 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KMemoryBlock](#KMemoryBlock "wikilink")\> | NodeFor\_\_MemoryBlockList |
+| 0x10   |                                                                                                |                            |
+| 0x18   |                                                                                                |                            |
+| 0x20   | u64                                                                                            | BaseAddress                |
+| 0x28   | u64                                                                                            | NumOfPages                 |
+| 0x30   | u32                                                                                            | State                      |
+| 0x34   | u16                                                                                            | IpcRefCount \[?\]          |
+| 0x36   | u16                                                                                            | DeviceMapRefCount          |
+| 0x38   | u8                                                                                             | Permission                 |
+| 0x39   | u8                                                                                             | UnkAttribute               |
+| 0x3A   | u8                                                                                             | Attribute                  |
 
 ## KMemoryBlockInfo
 
@@ -172,7 +235,6 @@ Size: 0x20
 | 0x14   | u8   | Permission        |
 | 0x15   | u8   | Attribute         |
 | 0x16   | u8   | UnkAttribute      |
-|        |      | Pad               |
 | 0x18   | u16  | IpcRefCount \[?\] |
 | 0x1A   | u16  | DeviceMapRefCount |
 
@@ -184,7 +246,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                     | Description  |
 | ------ | ---------------------------------------- | ------------ |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink") |              |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance  |
 | 0x10   | KMemoryBlockList                         | Blocks       |
 | 0x28   | [\#KProcess](#KProcess "wikilink")\*     | OwnerProcess |
 | 0x30   | u64                                      | BaseAddress  |
@@ -199,14 +261,14 @@ Size: 0x40
 
 Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                     | Description  |
-| ------ | ---------------------------------------- | ------------ |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink") |              |
-| 0x10   | KMemoryBlockList                         | Blocks       |
-| 0x28   | [\#KProcess](#KProcess "wikilink")\*     | OwnerProcess |
-| 0x30   | int                                      | LocalPerm    |
-| 0x34   | int                                      | RemotePerm   |
-| 0x38   | bool                                     | HasInited    |
+| Offset | Type                                     | Description      |
+| ------ | ---------------------------------------- | ---------------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance      |
+| 0x10   | KMemoryBlockList                         | Blocks           |
+| 0x28   | [\#KProcess](#KProcess "wikilink")\*     | OwnerProcess     |
+| 0x30   | int                                      | LocalPermission  |
+| 0x34   | int                                      | RemotePermission |
+| 0x38   | bool                                     | HasInited        |
 
 # KPort
 
@@ -216,7 +278,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                     | Description |
 | ------ | ---------------------------------------- | ----------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink") |             |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance |
 | 0x10   | [\#KServerPort](#KServerPort "wikilink") | ServerSide  |
 | 0x60   | [\#KClientPort](#KClientPort "wikilink") | ClientSide  |
 | 0x98   | u64                                      |             |
@@ -232,7 +294,7 @@ Inherits from:
 
 | Offset | Type                                                           | Description              |
 | ------ | -------------------------------------------------------------- | ------------------------ |
-| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |                          |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") | Inheritance              |
 | 0x28   | [\#KLinkedListNode](#KLinkedListNode "wikilink")               | IncomingConnections      |
 | 0x38   | [\#KLinkedListNode](#KLinkedListNode "wikilink")               | IncomingLightConnections |
 | 0x48   | [\#KPort](#KPort "wikilink")\*                                 | Parent                   |
@@ -246,7 +308,7 @@ Inherits from:
 
 | Offset | Type                                                           | Description |
 | ------ | -------------------------------------------------------------- | ----------- |
-| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |             |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") | Inheritance |
 | 0x28   | u32                                                            | NumSessions |
 | 0x2C   | u32                                                            | MaxSessions |
 | 0x30   | [\#KPort](#KPort "wikilink")\*                                 | Parent      |
@@ -260,7 +322,7 @@ Inherits from:
 
 | Offset | Type                                           | Description |
 | ------ | ---------------------------------------------- | ----------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")       |             |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")       | Inheritance |
 | 0x10   | [\#KServerSession](#KServerSession "wikilink") | ServerSide  |
 | 0x70   | [\#KClientSession](#KClientSession "wikilink") | ClientSide  |
 | 0xA8   | bool                                           | HasInited   |
@@ -274,7 +336,7 @@ Inherits from:
 
 | Offset | Type                                                           | Description                    |
 | ------ | -------------------------------------------------------------- | ------------------------------ |
-| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |                                |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") | Inheritance                    |
 | 0x28   | KLinkedListNode                                                | NodeFor\_\_IncomingConnections |
 | 0x38   |                                                                |                                |
 | 0x40   | KLinkedListNode                                                |                                |
@@ -289,7 +351,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                       | Description    |
 | ------ | ------------------------------------------ | -------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")   |                |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")   | Inheritance    |
 | 0x10   | [\#KSession](#KSession "wikilink")\*       | Parent         |
 | 0x18   | bool                                       | HasInited      |
 | 0x20   | [\#KClientPort](#KClientPort "wikilink")\* | ParentPort     |
@@ -305,7 +367,7 @@ Inherits from:
 
 | Offset | Type                                                     | Description |
 | ------ | -------------------------------------------------------- | ----------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")                 |             |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")                 | Inheritance |
 | 0x10   | [\#KLightSessionServer](#KLightSessionServer "wikilink") | ServerSide  |
 | 0x68   | [\#KLightSessionClient](#KLightSessionClient "wikilink") | ClientSide  |
 | 0xA0   | bool                                                     | HasInited   |
@@ -319,7 +381,7 @@ Inherits from:
 
 | Offset | Type                                         | Description                         |
 | ------ | -------------------------------------------- | ----------------------------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")     |                                     |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")     | Inheritance                         |
 | 0x10   | KLinkedListNode                              | NodeFor\_\_IncomingLightConnections |
 | 0x20   | [\#KLightSession](#KLightSession "wikilink") | Parent                              |
 | 0x28   | u64\[6\]                                     |                                     |
@@ -333,7 +395,7 @@ Inherits from:
 
 | Offset | Type                                           | Description    |
 | ------ | ---------------------------------------------- | -------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")       |                |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")       | Inheritance    |
 | 0x10   | [\#KLightSession](#KLightSession "wikilink")\* | Parent         |
 | 0x18   | bool                                           | HasInited      |
 | 0x20   | [\#KClientPort](#KClientPort "wikilink")\*     | Port           |
@@ -349,7 +411,7 @@ Inherits from:
 
 | Offset | Type                                           | Description   |
 | ------ | ---------------------------------------------- | ------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")       |               |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")       | Inheritance   |
 | 0x10   | [\#KReadableEvent](#KReadableEvent "wikilink") | ReadableEvent |
 | 0x48   | [\#KWritableEvent](#KWritableEvent "wikilink") | WritableEvent |
 | 0x60   | [\#KProcess](#KProcess "wikilink")\*           | Creator       |
@@ -364,7 +426,7 @@ Inherits from:
 
 | Offset | Type                                                           | Description |
 | ------ | -------------------------------------------------------------- | ----------- |
-| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") |             |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") | Inheritance |
 | 0x28   | bool                                                           |             |
 | 0x30   | [\#KEvent](#KEvent "wikilink")\*                               | Parent      |
 
@@ -376,7 +438,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                     | Description |
 | ------ | ---------------------------------------- | ----------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink") |             |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance |
 | 0x10   | [\#KEvent](#KEvent "wikilink")\*         | Parent      |
 
 ## KInterruptEvent
@@ -388,7 +450,7 @@ Inherits from:
 
 | Offset | Type                                           | Description   |
 | ------ | ---------------------------------------------- | ------------- |
-| 0      | [\#KReadableEvent](#KReadableEvent "wikilink") |               |
+| 0      | [\#KReadableEvent](#KReadableEvent "wikilink") | Inheritance   |
 | 0x38   |                                                |               |
 | 0x48   | u32                                            | IrqId (or -1) |
 
@@ -396,16 +458,17 @@ Inherits from:
 
 Size: 0x70
 
-Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+Inherits from:
+[\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                       | Description |
-| ------ | ------------------------------------------ | ----------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")   |             |
-| 0x10   | KRecursiveLock                             | Mutex       |
-| 0x18   | [\#KSmmuManager](#KSmmuManager "wikilink") | Manager     |
-| 0x58   | u64                                        | BaseAddress |
-| 0x60   | u64                                        | Size        |
-| 0x68   | bool                                       | HasInited   |
+| Offset | Type                                           | Description |
+| ------ | ---------------------------------------------- | ----------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")       | Inheritance |
+| 0x10   | [\#KRecursiveLock](#KRecursiveLock "wikilink") | Mutex       |
+| 0x18   | [\#KSmmuManager](#KSmmuManager "wikilink")     | Manager     |
+| 0x58   | u64                                            | BaseAddress |
+| 0x60   | u64                                            | Size        |
+| 0x68   | bool                                           | HasInited   |
 
 ## KSmmuManager
 
