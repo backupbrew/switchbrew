@@ -50,28 +50,6 @@ On version [[1.0.0]], the initial binaries loaded into memory by the kernel alwa
  this->MapBaseAddr = BaseAddr + min(rnd0, rnd1)
  this->HeapRegionBaseAddr = this->MapBaseAddr + MapRegionSize + max(rnd0, rnd1) - min(rnd0, rnd1)
 
-==TLS==
-This is the 0x200-byte thread-local-storage, the base address is loaded via ARM threadid register tpidrro_el0.
-
-{| class="wikitable" border="1"
-|-
-! Offset
-! Size
-! Description
-|-
-| 0x0
-| 0x100
-| [[IPC_Marshalling|IPC]] command buffer
-|-
-| 0x100
-| 0xF8
-| ?
-|-
-| 0x1F8
-| 0x8
-| Address of threadctx+0x58.
-|}
-
 ==Thread context==
 This is the structure of the 0x228-byte threadctx used by official userland software.
 
