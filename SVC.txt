@@ -589,7 +589,7 @@ These take a [[#DeviceName]] and a device address space handle.
 |-
 | <code>0x00002001</code> || IO || Mapped by kernel capability parsing in [[#svcCreateProcess]]. 
 |-
-| <code>0x00042002</code> || IO || Mapped by kernel capability parsing in [[#svcCreateProcess]].
+| <code>0x00042002</code> || Normal || Mapped by kernel capability parsing in [[#svcCreateProcess]].
 |-
 | <code>0x00DC7E03</code> || Code static || Mapped during [[#svcCreateProcess]].
 |-

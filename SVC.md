@@ -414,7 +414,7 @@ space handle.
 | ------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------------- |
 | `0x00000000` | Unmapped                 |                                                                                                                     |
 | `0x00002001` | IO                       | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| `0x00042002` | IO                       | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
+| `0x00042002` | Normal                   | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
 | `0x00DC7E03` | Code static              | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
 | `0x01FEBD04` | Code                     | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
 | `0x017EBD05` | Heap                     | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
