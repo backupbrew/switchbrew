@@ -69,19 +69,6 @@ randomization.
 `this->MapBaseAddr = BaseAddr + min(rnd0, rnd1)`  
 `this->HeapRegionBaseAddr = this->MapBaseAddr + MapRegionSize + max(rnd0, rnd1) - min(rnd0, rnd1)`
 
-## Thread context
-
-This is the structure of the 0x228-byte threadctx used by official
-userland
-software.
-
-| Offset | Size  | Description                                                           |
-| ------ | ----- | --------------------------------------------------------------------- |
-| 0x0    | 0xA8  | ?                                                                     |
-| 0xA8   | 0x8   | Address of the stack-bottom-mirror which the thread was created with. |
-| 0xB0   | 0x8   | Size of the stack.                                                    |
-| 0xB8   | 0x178 | ?                                                                     |
-
 # Kernel
 
 ` Granule size for TTBR0*_EL1 is 4KB.`  
