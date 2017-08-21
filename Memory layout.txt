@@ -1,15 +1,17 @@
 = Userspace =
-The userspace virtual address space has 38 bits. It seems that when the IPC protocol was designed, it was only 36 bits leading to a weird encoding format.
+The userspace virtual address space can be either 32 or 36 bits. [2.0.0+] introduced support for 38 bit address spaces.
 
-There are several regions maintained by the kernel, each one starting at the upper bits bit37-21 randomized:
-* Main binary region.
-* Heap region.
+There are two regions randomized and enforced by the kernel, each one with upper bits random and 2MB-aligned:
+* Heap region, available from [[SVC#svcGetInfo]].
 * Stack mapping region, available from [[SVC#svcGetInfo]].
 
-For the stack mapping region, the userland randomizes a page-offset where to start inside the region.
-This adds some additional entropy.
+The main binary is placed at an address that is provided to the kernel by Loader via [[SVC#svcCreateProcess]].
 
-Binaries mapped by RO seems to be mapped randomly everywhere in the entire address space. The random base address for each NRO has bits 37-12 randomized, unlike the main binary region.
+Typically on 2.0.0+ systems, the main binary region has randomness in bits 37-21.
+
+For the stack mapping region, the userland randomizes a page-offset where to start inside the region. This adds some additional entropy.
+
+Binaries mapped by RO are mapped randomly everywhere in the entire address space. The base address for each NRO has all bits randomized and are 4K-aligned. This means that typically, on 2.0.0+ systems, bits 37-12 of the NRO base address are random.
 
 For all binaries(main area / NROs), the R-- section is always located immediately after R-X. The RW- section is always located immediately after the R-- section. Hence, there's no extra randomization / guard-pages for these sections.
 
