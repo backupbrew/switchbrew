@@ -410,24 +410,24 @@ space handle.
 | 23   | [MapProcessAllowed](#svcMapProcessMemory "wikilink")                                                                                                                       |
 | 24   | [AttributeChangeAllowed](#svcSetMemoryAttribute "wikilink")                                                                                                                |
 
-| Value        | Type                     | Meaning                                                                                                             |
-| ------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------------- |
-| `0x00000000` | Unmapped                 |                                                                                                                     |
-| `0x00002001` | IO                       | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| `0x00042002` | Normal                   | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| `0x00DC7E03` | Code static              | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
-| `0x01FEBD04` | Code                     | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| `0x017EBD05` | Heap                     | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
-| `0x00402006` | Shared memory block      | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                                                |
-| `0x00482907` | Weird mapped memory      | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| `0x00DD7E08` | Module code static       | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
-| `0x01FFBD09` | Module code mutable      | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| `0x005C3C0B` | Mapped memory            | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| `0x0040200C` | Thread local storage     | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
-| `0x015C3C0D` | Isolated transfer memory | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm=0.         |
-| `0x005C380E` | Transfer memory          | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm\!=0.       |
-| `0x0040380F` | Process memory           | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
-| `0x00000010` | Reserved                 |                                                                                                                     |
+| Value        | Type                                                           | Meaning                                                                                                             |
+| ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `0x00000000` | Unmapped                                                       |                                                                                                                     |
+| `0x00002001` | IO                                                             | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
+| `0x00042002` | Normal                                                         | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
+| `0x00DC7E03` | Code static                                                    | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
+| `0x01FEBD04` | Code                                                           | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
+| `0x017EBD05` | Heap                                                           | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
+| `0x00402006` | Shared memory block                                            | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                                                |
+| `0x00482907` | Weird mapped memory                                            | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
+| `0x00DD7E08` | Module code static                                             | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
+| `0x01FFBD09` | Module code mutable                                            | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
+| `0x005C3C0B` | Mapped memory                                                  | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
+| `0x0040200C` | [Thread local storage](Thread%20Local%20Storage.md "wikilink") | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
+| `0x015C3C0D` | Isolated transfer memory                                       | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm=0.         |
+| `0x005C380E` | Transfer memory                                                | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm\!=0.       |
+| `0x0040380F` | Process memory                                                 | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
+| `0x00000010` | Reserved                                                       |                                                                                                                     |
 
 # Exception Handling
 

@@ -607,7 +607,7 @@ These take a [[#DeviceName]] and a device address space handle.
 |-
 | <code>0x005C3C0B</code> || Mapped memory || Mapped using [[#svcMapMemory]].
 |-
-| <code>0x0040200C</code> || Thread local storage || Mapped during [[#svcCreateThread]].
+| <code>0x0040200C</code> || [[Thread Local Storage|Thread local storage]] || Mapped during [[#svcCreateThread]].
 |-
 | <code>0x015C3C0D</code> || Isolated transfer memory || Mapped using [[#svcMapTransferMemory]] when the owning process has perm=0.
 |-
