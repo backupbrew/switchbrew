@@ -88,6 +88,8 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 |-
 | 11 || IsDebugMode
 |-
+| 12 || KernelMemoryConfiguration
+|-
 | 13 || BatteryProfile?
 |}
 
@@ -98,6 +100,8 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 [3.0.0+] [[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
 
 Kernel uses id11 to determine behavior of svcBreak positive arguments. It will break instead of just force-exiting the process which is what happens on retail.
+
+Kernel uses id12 when setting up memory sizes and attributes.
 
 == GenerateAesKek ==
 Takes a 16-byte seed ("BisEncryptionKeySourceForKek") and two words ("KeyGeneration" and "option") as input.

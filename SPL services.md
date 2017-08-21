@@ -59,6 +59,7 @@ params.
 | 9          | BootReason                       |
 | 10         | MemoryArrange                    |
 | 11         | IsDebugMode                      |
+| 12         | KernelMemoryConfiguration        |
 | 13         | BatteryProfile?                  |
 
 [PM](Process%20Manager%20services.md "wikilink") checks id1 and if
@@ -74,6 +75,8 @@ then skipping NRR rsa signatures is allowed.
 Kernel uses id11 to determine behavior of svcBreak positive arguments.
 It will break instead of just force-exiting the process which is what
 happens on retail.
+
+Kernel uses id12 when setting up memory sizes and attributes.
 
 ## GenerateAesKek
 
