@@ -1,5 +1,5 @@
 == IPC Command Structure ==
-This is an array of u32's.
+This is an array of u32's, usually located in [[Thread Local Storage]].
 
 {| class="wikitable" border="1"
 ! Word || Bits || Description

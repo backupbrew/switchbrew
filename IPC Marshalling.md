@@ -1,7 +1,7 @@
 ## IPC Command Structure
 
-This is an array of
-u32's.
+This is an array of u32's, usually located in [Thread Local
+Storage](Thread%20Local%20Storage.md "wikilink").
 
 | Word | Bits  | Description                                                                                                 |
 | ---- | ----- | ----------------------------------------------------------------------------------------------------------- |
