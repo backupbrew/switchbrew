@@ -183,49 +183,44 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 ! Fields
 |-
 | <code>0bxxxxxxxxxxxx0111</code>
-| 
-| Kernel flags
+| Bit3
+| KernelFlags
 | Bit31-24: Highest allowed cpu id, bit23-16: Lowest allowed cpu id, bit15-10: Highest allowed thread prio, bit9-4: Lowest allowed thread prio
 |-
 | <code>0bxxxxxxxxxxx01111</code>
-| 
-| Syscall mask
+| Bit4
+| SyscallMask
 | Bits 29-31: Syscall mask table index; Bits 5-28: Mask
 |-
 | <code>0bxxxxxxxxx0111111</code>
-| 
-| Map IO page (RW)
-| Bits 7-31: Page
-|-
-| <code>0bxxxxxxxx01111111</code>
-| 
-| Map IO range
+| Bit6
+| MapIoOrNormalRange
 | Bits 7-30: Alternating start page and number of pages, bit31: Alternating read-only flag then MemoryAttribute 0x2001/0x42002 selector flag
 |-
+| <code>0bxxxxxxxx01111111</code>
+| Bit7
+| MapNormalPage (RW)
+| Bits 7-31: Page
+|-
 | <code>0bxxxx011111111111</code>
-| 
+| Bit11
 | Interrupt pair
 | Bits 12-21: Irq0, bits 20-31: Irq1, 0x3FF means empty.
 |-
-| <code>0xxxx0111111111111</code>
-| 
-|
-|
+| <code>0bx011111111111111</code>
+| Bit14
+| KernelReleaseVersion
+| Bits 15-X: Version. The raw descriptor is compared with 0x80000, when less than an error is returned. This is equivalent to comparing the bits starting at bit15 with 0x10. This enforces a minimum required version, not a maximum.
 |-
-| <code>0xxx01111111111111</code>
-| 
-|
-|
+| <code>0b0111111111111111</code>
+| Bit15
+| HandleTableSize
+| Bit26-16: Number of handles the table shall fit.
 |-
-| <code>0xx011111111111111</code>
-| bit14
-| Kernel release version
-| Bits 15-X: Version. The raw descriptor is compared with 0x80000, when less than an error is returned. This is equivalent to comparing the bits starting at bit15 with 0x10. The raw descriptor is also stored into {state}. This enforces a minimum required version, not a maximum.
-|-
-| <code>0x0111111111111111</code>
-| bit15
-|
-|
+| <code>0b1111111111111111</code>
+| Bit16
+| DebugFlags
+| Bit17: can be debugged, bit18: can debug others
 |-
 | All ones
 | 
