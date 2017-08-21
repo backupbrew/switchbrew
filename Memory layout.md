@@ -33,7 +33,41 @@ guard-pages for these sections.
 
 On version [1.0.0](1.0.0.md "wikilink"), the initial binaries loaded
 into memory by the kernel always have the upper 32-bits as all-zero, so
-there are 6 fewer bits of layout randomization.
+there are 6 fewer bits of layout
+randomization.
+
+# Kernel Implementation of Userland ASLR
+
+## 1.0.0
+
+`if (AddressSpaceType == 2) {`  
+`  BaseAddr = 0x80000000; // 64-bit`  
+`  RandomMax = 0x6400;`  
+`}`  
+`else {`  
+`  BaseAddr = 0x40000000; // 32-bit`  
+`  RandomMax = 0x200;`  
+`}`  
+  
+`if (AddressSpaceType == 4) {`  
+`  MapRegionSize = 0;`  
+`  HeapRegionSize = 0x80000000;`  
+`}`  
+`else {`  
+`  MapRegionSize = 0x40000000;`  
+`  HeapRegionSize = 0x40000000;`  
+`}`  
+  
+`if (EnableAslr) {`  
+`  rnd0 = GetRandomRange(0, RandomMax) << 21;`  
+`  rnd1 = GetRandomRange(0, RandomMax) << 21;`  
+`}`  
+`else {`  
+`  rnd0 = rnd1 = 0;`  
+`}`  
+  
+`this->MapBaseAddr = BaseAddr + min(rnd0, rnd1)`  
+`this->HeapRegionBaseAddr = this->MapBaseAddr + MapRegionSize + max(rnd0, rnd1) - min(rnd0, rnd1)`
 
 ## TLS
 

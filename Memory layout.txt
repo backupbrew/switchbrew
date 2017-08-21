@@ -17,6 +17,39 @@ For all binaries(main area / NROs), the R-- section is always located immediatel
 
 On version [[1.0.0]], the initial binaries loaded into memory by the kernel always have the upper 32-bits as all-zero, so there are 6 fewer bits of layout randomization. 
 
+= Kernel Implementation of Userland ASLR =
+
+== 1.0.0 ==
+
+ if (AddressSpaceType == 2) {
+   BaseAddr = 0x80000000; // 64-bit
+   RandomMax = 0x6400;
+ }
+ else {
+   BaseAddr = 0x40000000; // 32-bit
+   RandomMax = 0x200;
+ }
+ 
+ if (AddressSpaceType == 4) {
+   MapRegionSize = 0;
+   HeapRegionSize = 0x80000000;
+ }
+ else {
+   MapRegionSize = 0x40000000;
+   HeapRegionSize = 0x40000000;
+ }
+ 
+ if (EnableAslr) {
+   rnd0 = GetRandomRange(0, RandomMax) << 21;
+   rnd1 = GetRandomRange(0, RandomMax) << 21;
+ }
+ else {
+   rnd0 = rnd1 = 0;
+ }
+ 
+ this->MapBaseAddr = BaseAddr + min(rnd0, rnd1)
+ this->HeapRegionBaseAddr = this->MapBaseAddr + MapRegionSize + max(rnd0, rnd1) - min(rnd0, rnd1)
+
 ==TLS==
 This is the 0x200-byte thread-local-storage, the base address is loaded via ARM threadid register tpidrro_el0.
 
