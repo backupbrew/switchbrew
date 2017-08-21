@@ -482,3 +482,15 @@ Size: 0x40
 | 0x34   | u32         | RegVal32BitEmpty    |
 | 0x38   | u32         | RegVal36Bit         |
 | 0x3C   | u32         | RegVal36BitEmpty    |
+
+# KResourceLimit
+
+Size:
+0x68
+
+| Offset | Type                                           | Description  |
+| ------ | ---------------------------------------------- | ------------ |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")       | Inheritance  |
+| 0x10   | u64\[5\]                                       | CurrentValue |
+| 0x38   | u64\[5\]                                       | LimitValue   |
+| 0x60   | [\#KRecursiveLock](#KRecursiveLock "wikilink") | Mutex        |

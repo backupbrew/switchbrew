@@ -755,3 +755,21 @@ Size: 0x40
 |-
 | 0x3C || u32 || RegVal36BitEmpty
 |}
+
+= KResourceLimit =
+Size: 0x68
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0 || [[#KAutoObject]] || Inheritance
+|-
+| 0x10 || u64[5] || CurrentValue
+|-
+| 0x38 || u64[5] || LimitValue
+|-
+| 0x60 || [[#KRecursiveLock]] || Mutex
+|}
