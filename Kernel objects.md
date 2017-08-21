@@ -112,19 +112,18 @@ Inherits from:
 
 ## KProcessCapabilities
 
-Size:
-0xB0
+Size: 0xB0
 
-| Offset | Type      | Description                                                    |
-| ------ | --------- | -------------------------------------------------------------- |
-| 0      | u8\[16\]  | SvcAccessMask                                                  |
-| 0x10   | u8\[128\] | IrqAccessMask                                                  |
-| 0x90   | u64       | AllowedCpuIdBitmask                                            |
-| 0x98   | u64       | AllowedThreadPrioBitmask                                       |
-| 0xA0   | u32       | DebuggingFlags (bit0: can be debugged, bit1: can debug others) |
-| 0xA4   | u32       | HandleTableSize                                                |
-| 0xA8   | u32       |                                                                |
-| 0xAC   | u32       |                                                                |
+| Offset | Type      | Description              |
+| ------ | --------- | ------------------------ |
+| 0      | u8\[16\]  | SvcAccessMask            |
+| 0x10   | u8\[128\] | IrqAccessMask            |
+| 0x90   | u64       | AllowedCpuIdBitmask      |
+| 0x98   | u64       | AllowedThreadPrioBitmask |
+| 0xA0   | u32       | DebuggingFlags           |
+| 0xA4   | u32       | HandleTableSize          |
+| 0xA8   | u32       | KernelReleaseVersion     |
+| 0xAC   | u32       |                          |
 
 ## KProcessHandleTable
 
