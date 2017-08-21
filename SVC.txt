@@ -546,7 +546,7 @@ These take a [[#DeviceName]] and a device address space handle.
 |-
 | 0 || IsBorrowed
 |-
-| 1 || IsIpcMapped [?]
+| 1 || IsIpcMapped
 |-
 | 2 || IsDeviceMapped
 |-

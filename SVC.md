@@ -386,12 +386,12 @@ space handle.
 
 ## MemoryAttribute
 
-| Bits | Description       |
-| ---- | ----------------- |
-| 0    | IsBorrowed        |
-| 1    | IsIpcMapped \[?\] |
-| 2    | IsDeviceMapped    |
-| 3    | IsUncached \[?\]  |
+| Bits | Description      |
+| ---- | ---------------- |
+| 0    | IsBorrowed       |
+| 1    | IsIpcMapped      |
+| 2    | IsDeviceMapped   |
+| 3    | IsUncached \[?\] |
 
 ## MemoryState
 
