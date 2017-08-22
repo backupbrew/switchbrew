@@ -244,7 +244,7 @@ it will return
 | Process     | 5          | 0                     | HeapRegionSize                                                                                              |
 | Process     | 6          | 0                     | TotalMemoryUsage                                                                                            |
 | Process     | 7          | 0                     | TotalHeapUsage                                                                                              |
-| Zero        | 8          | 0                     | ExceptionInfo for current process.                                                                          |
+| Zero        | 8          | 0                     | IsCurrentProcessBeingDebugged                                                                               |
 | Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink"). |
 | Zero        | 10         | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?               |
 | Zero        | 11         | 0-3                   | RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.                                      |
@@ -410,15 +410,16 @@ space handle.
 | 0x18   | 4      | Permission (bit0: R, bit1: W, bit2: X)                               |
 | 0x1C   | 4      | DeviceRefCount                                                       |
 | 0x20   | 4      | IpcRefCount                                                          |
+| 0x24   | 4      | Padding: always zero                                                 |
 
 ## MemoryAttribute
 
-| Bits | Description      |
-| ---- | ---------------- |
-| 0    | IsBorrowed       |
-| 1    | IsIpcMapped      |
-| 2    | IsDeviceMapped   |
-| 3    | IsUncached \[?\] |
+| Bits | Description                               |
+| ---- | ----------------------------------------- |
+| 0    | IsBorrowed                                |
+| 1    | IsIpcMapped: when IpcRefCount \> 0.       |
+| 2    | IsDeviceMapped: when DeviceRefCount \> 0. |
+| 3    | IsUncached                                |
 
 ## MemoryState
 

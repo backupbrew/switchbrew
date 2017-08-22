@@ -325,7 +325,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 7 || 0 || TotalHeapUsage
 |-
-| Zero    || 8 || 0 || ExceptionInfo for current process.
+| Zero    || 8 || 0 || IsCurrentProcessBeingDebugged
 |-
 | Zero    || 9 || 0 || Returns ResourceLimit handle for current process. Used by [[Process_Manager_services|PM]].
 |-
@@ -569,6 +569,8 @@ These take a [[#DeviceName]] and a device address space handle.
 | 0x1C || 4 || DeviceRefCount
 |-
 | 0x20 || 4 || IpcRefCount
+|-
+| 0x24 || 4 || Padding: always zero
 |}
 
 == MemoryAttribute ==
@@ -577,11 +579,11 @@ These take a [[#DeviceName]] and a device address space handle.
 |-
 | 0 || IsBorrowed
 |-
-| 1 || IsIpcMapped
+| 1 || IsIpcMapped: when IpcRefCount > 0.
 |-
-| 2 || IsDeviceMapped
+| 2 || IsDeviceMapped: when DeviceRefCount > 0.
 |-
-| 3 || IsUncached [?]
+| 3 || IsUncached
 |}
 
 == MemoryState ==
