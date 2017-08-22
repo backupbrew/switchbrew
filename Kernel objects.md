@@ -494,3 +494,50 @@ Size:
 | 0x10   | u64\[5\]                                       | CurrentValue |
 | 0x38   | u64\[5\]                                       | LimitValue   |
 | 0x60   | [\#KRecursiveLock](#KRecursiveLock "wikilink") | Mutex        |
+
+# KPoolManager
+
+Size:
+0x380
+
+| Offset | Type                                                | Description       |
+| ------ | --------------------------------------------------- | ----------------- |
+| 0      | [\#KPoolAllocator](#KPoolAllocator "wikilink")\[3\] | Allocator         |
+| 0x348  | [\#KPoolRefManager](#KPoolRefManager "wikilink")    | RefManager        |
+| 0x368  | u64                                                 | AllocationCounter |
+| 0x370  | u64                                                 |                   |
+| 0x378  | [\#KRecursiveLock](#KRecursiveLock "wikilink")      | Mutex             |
+
+## KPoolAllocator
+
+Size: 0x118
+
+| Offset | Type                              | Description |
+| ------ | --------------------------------- | ----------- |
+| 0      | void\*                            | MemoryBase  |
+| 8      | u64                               | MemorySize  |
+| 0x10   | s32                               | NumPools    |
+| 0x18   | [\#KPool](#KPool "wikilink")\[8\] | Pools       |
+
+### KPool
+
+Size: 0x20
+
+| Offset | Type          | Description            |
+| ------ | ------------- | ---------------------- |
+| 0      | KPoolHeader\* | FirstFreeChunk         |
+| 8      | u64           |                        |
+| 0x10   | u64           |                        |
+| 0x18   | void\*        | SingletonTableEntryPtr |
+
+## KPoolRefManager
+
+Size:
+0x20
+
+| Offset | Type                                         | Description   |
+| ------ | -------------------------------------------- | ------------- |
+| 0      | [\#KPoolManager](#KPoolManager "wikilink")\* | Parent        |
+| 8      | void\*                                       | PoolBase      |
+| 0x10   | u64                                          | MaxPage       |
+| 0x18   | s16\*                                        | RefCountTable |
