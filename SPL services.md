@@ -76,10 +76,11 @@ Kernel uses id11 to determine behavior of svcBreak positive arguments.
 It will break instead of just force-exiting the process which is what
 happens on retail.
 
-Kernel uses id12 when setting up the available RAM size. If bit0 is set,
+Kernel reads id12 when setting up memory-related code. If bit0 is set,
 it will memset various allocated memory-regions with 0x58, 0x59, 0x5A
 ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find
-uninitialized memory bugs.
+uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB
+of DRAM instead of 4GB.
 
 ## GenerateAesKek
 

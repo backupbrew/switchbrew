@@ -101,7 +101,7 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 
 Kernel uses id11 to determine behavior of svcBreak positive arguments. It will break instead of just force-exiting the process which is what happens on retail.
 
-Kernel uses id12 when setting up the available RAM size. If bit0 is set, it will memset various allocated memory-regions with 0x58, 0x59, 0x5A ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find uninitialized memory bugs.
+Kernel reads id12 when setting up memory-related code. If bit0 is set, it will memset various allocated memory-regions with 0x58, 0x59, 0x5A ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB of DRAM instead of 4GB.
 
 == GenerateAesKek ==
 Takes a 16-byte seed ("BisEncryptionKeySourceForKek") and two words ("KeyGeneration" and "option") as input.
