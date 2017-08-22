@@ -542,4 +542,4 @@ Size:
 | 0      | [\#KPoolManager](#KPoolManager "wikilink")\* | Parent        |
 | 8      | void\*                                       | PoolBase      |
 | 0x10   | u64                                          | MaxPage       |
-| 0x18   | s16\*                                        | RefCountTable |
+| 0x18   | u16\*                                        | RefCountTable |
