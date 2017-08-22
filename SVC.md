@@ -155,9 +155,17 @@ Useful for adding guard pages around stack.
 Source range gets reprotected to --- (it can no longer be accessed), and
 bit0 is set in [\#MemoryAttribute](#MemoryAttribute "wikilink").
 
-Destination range is enforced to be within a special region. Code can
-get the range of this region from [\#svcGetInfo](#svcGetInfo "wikilink")
-id0=2,3.
+If dstaddr \>= LowerTreshold, the dst-range is enforced to be within the
+process' "MapRegion". Code can get the range of this region from
+[\#svcGetInfo](#svcGetInfo "wikilink") id0=2,3.
+
+In this case, the mapped memory will have state `0x482907`.
+
+As long as (dstaddr+size) \< LowerThreshold, then you can map anywhere
+but the mapped memory will have state `0x5C3C0B` instead.
+
+LowerTreshold is 0x80000000 for 36-bit address spaces, and 0x40000000
+for 32-bit ones.
 
 ## svcUnmapMemory
 
