@@ -7,8 +7,8 @@
 | 0x3  | [\#svcSetMemoryAttribute](#svcSetMemoryAttribute "wikilink")                       | X0=addr, X1=size, W2=state0, W3=state1                                              | W0=result                                           |
 | 0x4  | [\#svcMapMemory](#svcMapMemory "wikilink")                                         | X0=dstaddr, X1=srcaddr, X2=size                                                     | W0=result                                           |
 | 0x5  | [\#svcUnmapMemory](#svcUnmapMemory "wikilink")                                     | X0=dstaddr, X1=srcaddr, X2=size                                                     | W0=result                                           |
-| 0x6  | svcQueryMemory                                                                     | X0=meminfo\_ptr, X2=addr                                                            | W0=result, W1=pageinfo                              |
-| 0x7  | svcExitProcess                                                                     | None                                                                                |                                                     |
+| 0x6  | [\#svcQueryMemory](#svcQueryMemory "wikilink")                                     | X0=meminfo\_ptr, X2=addr                                                            | W0=result, W1=pageinfo                              |
+| 0x7  | [\#svcExitProcess](#svcExitProcess "wikilink")                                     | None                                                                                |                                                     |
 | 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")                                   | X1=entry, X2=arg, X3=stacktop, W4=prio, W5=processor\_id                            | W0=result, W1=handle                                |
 | 0x9  | svcStartThread                                                                     | W0=thread\_handle                                                                   | W0=result                                           |
 | 0xA  | svcExitThread                                                                      | None                                                                                |                                                     |
@@ -169,6 +169,17 @@ entire range "in one go".
 
 The srcaddr/dstaddr must match what was given when the pages were
 originally mapped.
+
+## svcQueryMemory
+
+**Description:** Query information about an address. Will always fetch
+the lowest page-aligned mapping that contains the provided address.
+
+Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
+
+## svcExitProcess
+
+**Description:** Exits the current process.
 
 ## svcCreateThread
 
@@ -387,6 +398,18 @@ space handle.
 |        |        | Bit6   | IsSystem                                                                                                                             |
 | 0x28   | 4      |        | ResourceLimitHandle                                                                                                                  |
 | 0x2C   | 4      |        |                                                                                                                                      |
+
+## MemoryInfo
+
+| Offset | Length | Description                                                          |
+| ------ | ------ | -------------------------------------------------------------------- |
+| 0      | 8      | BaseAddress                                                          |
+| 8      | 8      | Size                                                                 |
+| 0x10   | 4      | MemoryType: lower 8 bits of [\#MemoryState](#MemoryState "wikilink") |
+| 0x14   | 4      | [\#MemoryAttribute](#MemoryAttribute "wikilink")                     |
+| 0x18   | 4      | Permission (bit0: R, bit1: W, bit2: X)                               |
+| 0x1C   | 4      | DeviceRefCount                                                       |
+| 0x20   | 4      | IpcRefCount                                                          |
 
 ## MemoryAttribute
 
