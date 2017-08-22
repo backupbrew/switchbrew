@@ -18,9 +18,9 @@
 |-
 |  0x8 || [[#svcCreateThread]] || X1=entry, X2=arg, X3=stacktop, W4=prio, W5=processor_id  || W0=result, W1=handle
 |-
-|  0x9 || svcStartThread || W0=thread_handle || W0=result
+|  0x9 || [[#svcStartThread]] || W0=thread_handle || W0=result
 |-
-|  0xA || svcExitThread || None ||                                                         
+|  0xA || [[#svcExitThread]] || None ||                                                         
 |-
 |  0xB || [[#svcSleepThread]] || X0=nano || W0=result
 |-
@@ -276,6 +276,12 @@ Outputs a [[#MemoryInfo]] struct.
 '''Description:''' Create a thread in the current process.
 
 Processor_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for process.
+
+== svcStartThread ==
+'''Description:''' Starts the thread for the provided handle.
+
+== svcExitThread ==
+'''Description:''' Exits the current thread.
 
 == svcSleepThread ==
 '''Description:''' Sleep for a specified amount of time, or yield thread.

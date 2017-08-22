@@ -10,8 +10,8 @@
 | 0x6  | [\#svcQueryMemory](#svcQueryMemory "wikilink")                                     | X0=meminfo\_ptr, X2=addr                                                            | W0=result, W1=pageinfo                              |
 | 0x7  | [\#svcExitProcess](#svcExitProcess "wikilink")                                     | None                                                                                |                                                     |
 | 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")                                   | X1=entry, X2=arg, X3=stacktop, W4=prio, W5=processor\_id                            | W0=result, W1=handle                                |
-| 0x9  | svcStartThread                                                                     | W0=thread\_handle                                                                   | W0=result                                           |
-| 0xA  | svcExitThread                                                                      | None                                                                                |                                                     |
+| 0x9  | [\#svcStartThread](#svcStartThread "wikilink")                                     | W0=thread\_handle                                                                   | W0=result                                           |
+| 0xA  | [\#svcExitThread](#svcExitThread "wikilink")                                       | None                                                                                |                                                     |
 | 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")                                     | X0=nano                                                                             | W0=result                                           |
 | 0xC  | svcGetThreadPriority                                                               | W1=thread\_handle                                                                   | W0=result, W1=prio                                  |
 | 0xD  | svcSetThreadPriority                                                               | W0=thread\_handle, W1=prio                                                          | W0=result                                           |
@@ -187,6 +187,14 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
 Processor\_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for
 process.
+
+## svcStartThread
+
+**Description:** Starts the thread for the provided handle.
+
+## svcExitThread
+
+**Description:** Exits the current thread.
 
 ## svcSleepThread
 
