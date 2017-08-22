@@ -81,7 +81,7 @@ to SMEP on x86).
 For userland pages, the kernel has same access as userland (either both
 are read-only or both are read-write). This rule has one exception:
 pages that are mapped unreadable in usermode are still forced readable
-from kernelmode.
+from kernelmode. Thus it does not have SMAP.
 
 As of [2.0.0](2.0.0.md "wikilink") KASLR is not
 used.
