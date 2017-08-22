@@ -485,8 +485,10 @@ Size: 0x40
 
 # KResourceLimit
 
-Size:
-0x68
+Size: 0x68
+
+Inherits from:
+[\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                           | Description  |
 | ------ | ---------------------------------------------- | ------------ |

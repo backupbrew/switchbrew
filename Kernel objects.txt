@@ -759,6 +759,8 @@ Size: 0x40
 = KResourceLimit =
 Size: 0x68
 
+Inherits from: [[#KAutoObject]]
+
 {| class="wikitable" border="1"
 |-
 ! Offset
