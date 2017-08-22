@@ -1,0 +1,244 @@
+BCT (Boot Configuration Table) is a data structure present on Tegra based devices that supplies boot time configuration parameters.
+
+The Switch's BCT is included in the firmware package titles (0100000000000819 and 010000000000081A) and is installed into eMMC storage's [[#Flash_Filesystem#Boot_Partitions|boot partition 0]]. A total of four BCT copies can be installed into the system: normal, normal backup, safe mode and safe mode backup.
+
+During boot, the boot ROM parses the appropriate BCT from eMMC storage and stores a copy of it in IRAM at address 0x40000000.
+
+= Structure =
+Below is the BCT structure used by the Switch, which is a minimal variation of the Tegra 210 BCT format.
+
+{| class="wikitable" border="1"
+|-
+!  Offset
+!  Size
+!  Field
+!  Description
+|-
+|  0x0000
+|  0x210
+|  bad_block_table
+|  Table containing information on bad blocks
+ 0x0000: num_entries (0x200)
+ 0x0004: virtual_block_size (0x0F)
+ 0x0005: block_size (0x0E)
+ 0x0006: bad_blocks
+ 0x0206: reserved
+|-
+|  0x0210
+|  0x100
+|  bct_key
+|  BCT RSA key modulus
+|-
+|  0x0310
+|  0x30
+|  bct_signature
+|  BCT object signature
+ 0x0310: hash (empty)
+ 0x0320: rsa_pss_signature
+|-
+|  0x0420
+|  0x04
+|  sec_provisioning_key_num_insecure
+|  Used for Factory Secure Provisioning. Always 0.
+|-
+|  0x0424
+|  0x20
+|  sec_provisioning_key
+|  Used for Factory Secure Provisioning. Always empty.
+|-
+|  0x0444
+|  0xCC
+|  customer_data
+|  Data block available for the customer. Used in key generation.
+ 0x0444: padding_0x0C
+ 0x0450: keyblob_0xB0
+ 0x0500: padding_0x08
+|-
+|  0x0508
+|  0x04
+|  odm_data
+|  Legacy field. Unused.
+|-
+|  0x050C
+|  0x04
+|  reserved0
+|  Legacy field. Unused.
+|-
+|  0x0510
+|  0x10
+|  random_aes_block
+|  Always empty.
+|-
+|  0x0520
+|  0x10
+|  unique_chip_id
+|  Always empty.
+|-
+|  0x0530
+|  0x04
+|  boot_data_version
+|  Set to 0x00210001.
+|-
+|  0x0534
+|  0x04
+|  block_size_log2
+|  Always 0x0E.
+|-
+|  0x0538
+|  0x04
+|  page_size_log2
+|  Always 0x09.
+|-
+|  0x053C
+|  0x04
+|  partition_size
+|  Always 0x01000000.
+|-
+|  0x0540
+|  0x04
+|  num_param_sets
+|  Number of device parameter sets. Always 0x01.
+|-
+|  0x0544
+|  0x04
+|  dev_type
+|  Device type. Set to 0x04 (dev_type_sdmmc).
+|-
+|  0x0548
+|  0x40
+|  dev_params
+| Device parameters
+  0x0548: sdmmc_clock_divider (0x09 == 24MHz)
+  0x054C: sdmmc_data_width (0x02 == sdmmc_data_width_8bit)
+|-
+|  0x0588
+|  0x04
+|  num_sdram_sets
+|  Number of SDRAM parameter sets. Set to 0?
+|-
+|  0x058C
+|  0x768
+|  sdram_params0
+|  
+|-
+|  0x0CF4
+|  0x768
+|  sdram_params1
+|  
+|-
+|  0x145C
+|  0x768
+|  sdram_params2
+|  
+|-
+|  0x1BC4
+|  0x768
+|  sdram_params3
+|  
+|-
+|  0x232C
+|  0x04
+|  num_bootloaders
+|  Number of bootloaders installed. Always 0x02 (maximum is 0x04).
+|-
+|  0x2330
+|  0x12C
+|  bootloader0_info
+|  Configuration parameters for bootloader 0 (normal).
+ 0x2330: version (variable)
+ 0x2334: start_block (0x00000040)
+ 0x2338: start_page (0x00000000)
+ 0x233C: length (variable)
+ 0x2340: load_addr (0x40010000)
+ 0x2344: entry_point (0x40010020)
+ 0x2348: attribute (0x00000000)
+ 0x234C: bootloader0_hash (empty)
+ 0x235C: bootloader0_rsa_pss_signature
+|-
+|  0x245C
+|  0x12C
+|  bootloader1_info
+|  Configuration parameters for bootloader 1 (safe mode).
+ 0x245C: version (variable)
+ 0x2460: start_block (0x00000050)
+ 0x2464: start_page (0x00000000)
+ 0x2468: length (variable)
+ 0x246C: load_addr (0x40010000)
+ 0x2470: entry_point (0x40010020)
+ 0x2474: attribute (0x00000000)
+ 0x2478: bootloader1_hash (empty)
+ 0x2488: bootloader1_rsa_pss_signature
+|-
+|  0x2588
+|  0x258
+|  reserved1
+|  Reserved space for bootloaders 2 and 3 (currently unused).
+|-
+|  0x27E0
+|  0x04
+|  enable_fail_back
+|  Always 0.
+|-
+|  0x27E4
+|  0x04
+|  secure_debug_control
+|  Always 0.
+|-
+|  0x27E8
+|  0x04
+|  sec_provisioning_key_num_secure
+|  Always 0.
+|-
+|  0x27EC
+|  0x04
+|  unk0
+|  Always 0x08?
+|-
+|  0x27F0
+|  0x10
+|  reserved2
+|  Empty.
+|-
+|}
+
+== IRAM ==
+When copied to IRAM, the BCT has an additional header as follows.
+
+{| class="wikitable" border="1"
+|-
+!  Offset
+!  Size
+!  Field
+!  Description
+|-
+|  0x00
+|  0x50
+|  bct_global_header
+|  Contains pointers to actual BCT data.
+ 0x4C: bct_data_addr (address of the actual BCT)
+|-
+|  0x50
+|  0x18
+|  bootloader0_header
+|  Unknown structure.
+ 0x00: is_active (if set to 0x01, bootloader0 is used) 
+|-
+|  0x68
+|  0x18
+|  bootloader1_header
+|  Unknown structure.
+ 0x00: is_active (if set to 0x01, bootloader1 is used) 
+|-
+|  0x80
+|  0x18
+|  bootloader2_header
+|  Unknown structure.
+ 0x00: is_active (if set to 0x01, bootloader2 is used) 
+|-
+|  0x98
+|  0x18
+|  bootloader3_header
+|  Unknown structure.
+ 0x00: is_active (if set to 0x01, bootloader3 is used) 
+|-
+|}
