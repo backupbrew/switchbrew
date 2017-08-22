@@ -13,11 +13,11 @@
 | 0x9  | [\#svcStartThread](#svcStartThread "wikilink")                                     | W0=thread\_handle                                                                   | W0=result                                           |
 | 0xA  | [\#svcExitThread](#svcExitThread "wikilink")                                       | None                                                                                |                                                     |
 | 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")                                     | X0=nano                                                                             | W0=result                                           |
-| 0xC  | svcGetThreadPriority                                                               | W1=thread\_handle                                                                   | W0=result, W1=prio                                  |
-| 0xD  | svcSetThreadPriority                                                               | W0=thread\_handle, W1=prio                                                          | W0=result                                           |
-| 0xE  | svcGetThreadCoreMask                                                               | W2=thread\_handle                                                                   | W0=result, W1=out, X2=out                           |
-| 0xF  | svcSetThreadCoreMask                                                               | W0=thread\_handle, W1=in, X2=in2                                                    | W0=result                                           |
-| 0x10 | svcGetCurrentProcessorNumber                                                       | None                                                                                | W0/X0=cpuid                                         |
+| 0xC  | [\#svcGetThreadPriority](#svcGetThreadPriority "wikilink")                         | W1=thread\_handle                                                                   | W0=result, W1=prio                                  |
+| 0xD  | [\#svcSetThreadPriority](#svcSetThreadPriority "wikilink")                         | W0=thread\_handle, W1=prio                                                          | W0=result                                           |
+| 0xE  | [\#svcGetThreadCoreMask](#svcGetThreadCoreMask "wikilink")                         | W2=thread\_handle                                                                   | W0=result, W1=out, X2=out                           |
+| 0xF  | [\#svcSetThreadCoreMask](#svcSetThreadCoreMask "wikilink")                         | W0=thread\_handle, W1=in, X2=in2                                                    | W0=result                                           |
+| 0x10 | [\#svcGetCurrentProcessorNumber](#svcGetCurrentProcessorNumber "wikilink")         | None                                                                                | W0/X0=cpuid                                         |
 | 0x11 | svcSignalEvent                                                                     | W0=wevent\_handle                                                                   | W0=result                                           |
 | 0x12 | svcClearEvent                                                                      | W0=wevent\_or\_revent\_handle                                                       | W0=result                                           |
 | 0x13 | [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink")                             | W0=memblk\_handle, X1=addr, X2=size, W3=perm                                        | W0=result                                           |
@@ -209,6 +209,30 @@ process.
 **Description:** Sleep for a specified amount of time, or yield thread.
 
 Setting nano=0 means "yield thread".
+
+## svcGetThreadPriority
+
+**Description:** Get priority of provided thread handle.
+
+## svcSetThreadPriority
+
+**Description:** Set priority of provided thread handle.
+
+Priority is a number 0-0x3F. Lower value means higher priority.
+
+## svcGetThreadCoreMask
+
+**Description:** Get affinity mask of provided thread handle.
+
+## svcSetThreadCoreMask
+
+**Description:** Set affinity mask of provided thread handle.
+
+## svcGetCurrentProcessorNumber
+
+**Description:** Get which cpu is executing the current thread.
+
+Cpu-id is an integer in the range 0-3.
 
 ## svcMapSharedMemory
 
