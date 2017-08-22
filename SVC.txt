@@ -134,7 +134,7 @@
 |-
 | 0x54 || [[#svcQueryPhysicalAddress]] ||  || 
 |-
-| 0x55 || [[#svcQueryIoMapping]] || X0=physaddr, X1=size || X0=virtaddr
+| 0x55 || [[#svcQueryIoMapping]] || X1=physaddr, X2=size || W0=result, X1=virtaddr
 |-
 | 0x56 || svcCreateDeviceAddressSpace || X1=dev_addr, X2=dev_size || W0=result, W1=handle
 |-
@@ -387,61 +387,6 @@ rw_mask is 0 for reading and -1 for writing.
 
 The whitelist is same for writing as for reading.
 
-=== Registers ===
-{| class=wikitable
-! Address || Register Name || Description
-|-
-| 0x700192E8 || MC_LATENCY_ALLOWANCE_DC_0_0 || Latency allowance settings for DC clients
-|-
-| 0x700192EC || MC_LATENCY_ALLOWANCE_DC_1_0 || Latency allowance settings for DC clients
-|-
-| 0x700192F0 || MC_LATENCY_ALLOWANCE_DC_2_0 || Latency allowance settings for DC clients
-|-
-| 0x700192F4 || MC_LATENCY_ALLOWANCE_DCB_0_0 || Latency allowance settings for DCB clients
-|-
-| 0x700192F8 || MC_LATENCY_ALLOWANCE_DCB_1_0 || Latency allowance settings for DCB clients 
-|-
-| 0x7001941C || MC_DIS_PTSA_RATE_0 || DDA rate for dis PTSA
-|-
-| 0x70019420 || MC_DIS_PTSA_MIN_0 || DDA minimum value for direct client dis PTSA.
-|-
-| 0x70019424 || MC_DIS_PTSA_MAX_0 || DDA maximum value for direct client dis PTSA.
-|-
-| 0x70019428 || MC_DISB_PTSA_RATE_0 || DDA rate for disb PTSA
-|-
-| 0x7001942C || MC_DISB_PTSA_MIN_0 || DDA minimum value for direct client disb PTSA
-|-
-| 0x70019430 || MC_DISB_PTSA_MAX_0 || DDA maximum value for direct client disb PTSA
-|-
-| 0x7001944C || MC_MLL_MPCORER_PTSA_RATE_0 || DDA rate for mll_mpcorer PTSA
-|-
-| 0x7001947C || MC_RING1_PTSA_RATE_0 || DDA rate for ring1 PTSA
-|-
-| 0x70019480 || MC_RING1_PTSA_MIN_0 || DDA minimum value for direct client ring1 PTSA
-|-
-| 0x70019484 || MC_RING1_PTSA_MAX_0 || DDA maximum value for direct client ring1 PTSA
-|-
-| 0x7001950C || MC_FTOP_PTSA_RATE_0 || DDA rate for ftop PTSA
-|-
-| 0x70019670 || MC_SEC_CARVEOUT_BOM_0 || Baseaddress for the SEC carveout address space.
-|-
-| 0x70019674 || MC_SEC_CARVEOUT_SIZE_MB_0 || Size in MB for the SEC carveout region
-|-
-| 0x70019690 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0A_0 || Scaled Latency Allowance settings for DISPLAY0A
-|-
-| 0x70019694 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0AB_0 || Scaled Latency Allowance settings for DISPLAY0AB
-|-
-| 0x70019698 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0B_0 || Scaled Latency Allowance settings for DISPLAY0B
-|-
-| 0x7001969C || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0BB_0 || Scaled Latency Allowance settings for DISPLAY0BB
-|-
-| 0x700196A0 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0C_0 || Scaled Latency Allowance settings for DISPLAY0C
-|-
-| 0x700196A4 || MC_SCALED_LATENCY_ALLOWANCE_DISPLAY0CB_0 || Scaled Latency Allowance settings for DISPLAY0CB
-|-
-| 0x70019C5C ||
-|}
-
 == svcCreateSharedMemory ==
 Other perm can be used to enforce permission 1, 3, or 0x10000000 if don't care.
 
@@ -457,12 +402,16 @@ Size must match size given in map syscall, otherwise there's an invalid-size err
 The inverse operation of [[#svcQueryIoMapping]].
 
 == svcQueryIoMapping ==
+'''Description:''' Returns a virtual address mapped to a given IO range.
 
 == svcCreateProcess ==
 Takes a [[#CreateProcessInfo]] as input.
 
-== svcAttachDeviceAddressSpace / svcDetachDeviceAddressSpace ==
-These take a [[#DeviceName]] and a device address space handle.
+== svcAttachDeviceAddressSpace ==
+'''Description:''' Attach an address space to a [[#DeviceName|device]].
+
+== svcDetachDeviceAddressSpace ==
+'''Description:''' Detach an address space from a [[#DeviceName|device]].
 
 = Structures =
 == DeviceName ==
