@@ -134,8 +134,11 @@ This can be used to move back and forth between ---, r-- and rw-.
 **Description:** Change attribute of page-aligned memory region.
 
 This is used to turn on/off caching for a given memory area. Useful when
-talking to devices such as the
-GPU.
+talking to devices such as the GPU.
+
+What happens "under the hood" is the "Memory Attribute Indirection
+Register" index is changed from 2 to 3 in the MMU
+descriptor.
 
 | State0 | State1 | Action                                                          |
 | ------ | ------ | --------------------------------------------------------------- |
