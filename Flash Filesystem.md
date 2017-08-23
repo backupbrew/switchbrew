@@ -11,13 +11,13 @@ authentication key is programmed).
 
 | Offset   | Size    | Description                                                                                                       |
 | -------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| 0x000000 | 0x4000  | Title 0100000000000819 BCT                                                                                        |
-| 0x004000 | 0x4000  | Title 010000000000081A BCT                                                                                        |
-| 0x008000 | 0x4000  | Title 0100000000000819 BCT                                                                                        |
-| 0x00C000 | 0x4000  | Title 010000000000081A BCT                                                                                        |
+| 0x000000 | 0x4000  | Title 0100000000000819 [BCT](#BCT "wikilink")                                                                     |
+| 0x004000 | 0x4000  | Title 010000000000081A [BCT](#BCT "wikilink")                                                                     |
+| 0x008000 | 0x4000  | Title 0100000000000819 [BCT](#BCT "wikilink")                                                                     |
+| 0x00C000 | 0x4000  | Title 010000000000081A [BCT](#BCT "wikilink")                                                                     |
 | 0x100000 | 0x40000 | Title 0100000000000819 "package1"                                                                                 |
 | 0x140000 | 0x40000 | Title 0100000000000819 "package1" (Backup)                                                                        |
-| 0x180000 | 0x4000  | Keyblob area                                                                                                      |
+| 0x180000 | 0x4000  | [Keyblob area](#Flash_Filesystem#Keyblob "wikilink")                                                              |
 | 0x184000 | 0x20    | Unknown pseudorandom data, often changes on reboot. All zero on 1.0.                                              |
 | 0x184020 | 0x8?    | Increments on every boot until hitting a certain number? Bottom 10 bits (0x3FF) are always zero. All zero on 1.0. |
 
@@ -32,38 +32,28 @@ authentication key is programmed).
 
 ### Keyblob
 
-| Offset | Size  | Description                                                                                                                                                       |
-| ------ | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x10  | Keyblob AES-CMAC over the remaining 0xA0-bytes (Checked with a mem-diff function which is safe against timing attacks, calls the general panic() func on failure) |
-| 0x10   | 0x10  | Keyblob AES CTR                                                                                                                                                   |
-| 0x20   | 0x90  | Keyblob encrypted payload                                                                                                                                         |
-| 0xB0   | 0x150 | Unused, all-zero.                                                                                                                                                 |
+Starting at offset 0x180000 is an array of 0x200-byte entries, for a
+total of 32 keyblobs. Each one is unique compared to the others and they
+are all console unique.
 
-Decrypted Keydata format:
+From each 0x200-byte entry only the first 0xB0 bytes effectively form
+the keyblob as
+below.
 
-| Offset | Size | Description                                |
-| ------ | ---- | ------------------------------------------ |
-| 0x0    | 0x80 | Array of master static key encryption keys |
-| 0x80   | 0x10 | [Stage 2](Package1.md "wikilink") key      |
+| Offset | Size  | Description                                                             |
+| ------ | ----- | ----------------------------------------------------------------------- |
+| 0x0    | 0x10  | Keyblob AES-CMAC over the next 0xA0 bytes (safe against timing attacks) |
+| 0x10   | 0x10  | Keyblob AES CTR                                                         |
+| 0x20   | 0x90  | Keyblob encrypted payload                                               |
+| 0xB0   | 0x150 | Unused, all-zero.                                                       |
 
-Starting at 0x180000 is an array of 0x200-byte entries, for a total of
-32 keyblobs. Each one is unique compared to the others. They are all
-console unique.
+The bootloader0's version (offset 0x2330 in the BCT) acts as an index to
+control which keyblob should be installed into the system.
+[NS](#NS_Services "wikilink") uses this during system updates to install
+the keyblob into the customer data section in BCTs (offset 0x450).
 
-The 0xB0-byte keyblob is installed to the "customer data" section in
-BCTs (BCT+0x450).
-
-BCT offset 0x2330 is the field controlling which keyblob gets used. NS
-uses this to inject the appropriate keyblob on system update.
 [Boot](Boot.md "wikilink") also uses this index for repairing corrupt
 sectors.
-
-With \[ [3.0.0](3.0.0.md "wikilink") \] index 2 is used instead of index
-1. With \[ [3.0.1](3.0.1.md "wikilink") + \] index 3 is used instead of
-index 2.
-
-The Tegra 210 BCT format can be found in nvidia's cbootimage
-[1](https://github.com/thierryreding/tegra-avp/blob/35f467996e532357db54894c975acab93293d219/include/avp/tegra210/bct.h#L521)
 
 ## User Partitions
 

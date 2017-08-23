@@ -12,19 +12,19 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |-
 |  0x000000
 |  0x4000
-|  Title 0100000000000819 BCT
+|  Title 0100000000000819 [[#BCT|BCT]]
 |-
 |  0x004000
 |  0x4000
-|  Title 010000000000081A BCT
+|  Title 010000000000081A [[#BCT|BCT]]
 |-
 |  0x008000
 |  0x4000
-|  Title 0100000000000819 BCT
+|  Title 0100000000000819 [[#BCT|BCT]]
 |-
 |  0x00C000
 |  0x4000
-|  Title 010000000000081A BCT
+|  Title 010000000000081A [[#BCT|BCT]]
 |-
 |  0x100000
 |  0x40000
@@ -36,7 +36,7 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |-
 |  0x180000
 |  0x4000
-|  Keyblob area
+|  [[#Flash_Filesystem#Keyblob|Keyblob area]]
 |-
 |  0x184000
 |  0x20
@@ -72,6 +72,10 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |}
 
 === Keyblob ===
+Starting at offset 0x180000 is an array of 0x200-byte entries, for a total of 32 keyblobs. Each one is unique compared to the others and they are all console unique.
+
+From each 0x200-byte entry only the first 0xB0 bytes effectively form the keyblob as below.
+
 {| class="wikitable" border="1"
 |-
 !  Offset
@@ -80,7 +84,7 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |-
 | 0x0
 | 0x10
-| Keyblob AES-CMAC over the remaining 0xA0-bytes (Checked with a mem-diff function which is safe against timing attacks, calls the general panic() func on failure)
+| Keyblob AES-CMAC over the next 0xA0 bytes (safe against timing attacks)
 |-
 | 0x10
 | 0x10
@@ -95,34 +99,10 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 | Unused, all-zero.
 |}
 
-Decrypted Keydata format:
+The bootloader0's version (offset 0x2330 in the BCT) acts as an index to control which keyblob should be installed into the system.
+[[#NS_Services|NS]] uses this during system updates to install the keyblob into the customer data section in BCTs (offset 0x450).
 
-{| class="wikitable" border="1"
-|-
-! Offset
-! Size
-! Description
-|-
-| 0x0
-| 0x80
-| Array of master static key encryption keys
-|-
-| 0x80
-| 0x10 
-| [[Package1|Stage 2]] key
-|}
-
-Starting at 0x180000 is an array of 0x200-byte entries, for a total of 32 keyblobs. Each one is unique compared to the others. They are all console unique.
-
-The 0xB0-byte keyblob is installed to the "customer data" section in BCTs (BCT+0x450).
-
-BCT offset 0x2330 is the field controlling which keyblob gets used. NS uses this to inject the appropriate keyblob on system update. [[Boot]] also uses this index for repairing corrupt sectors.
-
-With [ [[3.0.0]] ] index 2 is used instead of index 1.
-With [ [[3.0.1]] + ] index 3 is used instead of index 2.
-
-
-The Tegra 210 BCT format can be found in nvidia's cbootimage [https://github.com/thierryreding/tegra-avp/blob/35f467996e532357db54894c975acab93293d219/include/avp/tegra210/bct.h#L521]
+[[Boot]] also uses this index for repairing corrupt sectors.
 
 == User Partitions ==
 {| class="wikitable" border="1"
