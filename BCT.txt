@@ -220,7 +220,7 @@ The decrypted keyblob payload is as follows.
 |-
 | 0x80
 | 0x10 
-| [[Package1|Stage 2]] key
+| [[Package1#Stage_1|Stage 1]] key
 |}
 
 === bootloader0_info ===

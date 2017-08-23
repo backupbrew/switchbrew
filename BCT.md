@@ -262,12 +262,13 @@ at offset 0x0450, to store the active
 zero.
 
 The first bootloader validates and decrypts this block for further key
-generation. The decrypted keyblob payload is as follows.
+generation. The decrypted keyblob payload is as
+follows.
 
-| Offset | Size | Description                                |
-| ------ | ---- | ------------------------------------------ |
-| 0x0    | 0x80 | Array of master static key encryption keys |
-| 0x80   | 0x10 | [Stage 2](Package1.md "wikilink") key      |
+| Offset | Size | Description                                              |
+| ------ | ---- | -------------------------------------------------------- |
+| 0x0    | 0x80 | Array of master static key encryption keys               |
+| 0x80   | 0x10 | [Stage 1](Package1#Stage%201.md##Stage_1 "wikilink") key |
 
 ### bootloader0\_info
 
