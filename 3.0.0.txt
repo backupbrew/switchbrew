@@ -51,7 +51,7 @@ Two new system-data titles were [[Title_list|added]]: 0100000000000822 and 01000
 NS-sysmodule was updated, this fixed a vuln in multiple [[Switch_System_Flaws|cmds]].
 
 ==Keys==
-The used [[Flash_Filesystem#Keyblob|keyblob]] was changed from 1 to 2, this was the first time it was changed.
+The bootloader [[BCT#bootloader0_info|version]] was changed from 1 to 2, this was the first time it was changed.
 
 New keydata was introduced for NCA content, see [[NCA_Format|here]].
 
