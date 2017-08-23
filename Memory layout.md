@@ -93,6 +93,7 @@ used.
 | All   | 0xFFFFFFFFBFC00000-0xFFFFFFFFBFC45FFF | 0x800A0000 | 0x46000 | 0x78B            | R-X         | Kernel .text      |
 | All   | 0xFFFFFFFFBFC46000-0xFFFFFFFFBFC48FFF | 0x800E6000 | 0x3000  | 0x6000000000078B | R--         | Kernel .rodata    |
 | All   | 0xFFFFFFFFBFC49000-0xFFFFFFFFBFC4FFFF | 0x800E9000 | 0x7000  | 0x6000000000070B | RW-         | Kernel .data+.bss |
+| All   | 0xFFFFFFFFBFD72000-0xFFFFFFFFBFD72FFF | 0x6000F000 | 0x1000  | 0x60000000000607 | RW-         |                   |
 | All   | 0xFFFFFFFFBFDB5000-0xFFFFFFFFBFDB5FFF | 0x60007000 | 0x1000  | 0x60000000000607 | RW-         |                   |
 | All   | 0xFFFFFFFFBFDB7000-0xFFFFFFFFBFDB7FFF | 0x60004000 | 0x1000  | 0x60000000000607 | RW-         |                   |
 | All   | 0xFFFFFFFFBFDB9000-0xFFFFFFFFBFDB9FFF | 0x60001000 | 0x1000  | 0x60000000000607 | RW-         |                   |
@@ -115,7 +116,12 @@ used.
 | All   | 0xFFFFFFFFBFDE6000-0xFFFFFFFFBFDE6FFF | 0x80072000 | 0x1000  | 0x6000000000070B | RW-         |                   |
 | All   | 0xFFFFFFFFBFDE8000-0xFFFFFFFFBFDE9FFF | 0x80066000 | 0x2000  | 0x6000000000070B | RW-         |                   |
 | All   | 0xFFFFFFFFBFDF0000-0xFFFFFFFFBFDF0FFF | 0x80073000 | 0x1000  | 0x6000000000070B | RW-         |                   |
+| All   | 0xFFFFFFFFBFDFB000-0xFFFFFFFFBFDFBFFF | 0x50041000 | 0x1000  | 0x60000000000607 | RW-         |                   |
+| All   | 0xFFFFFFFFBFDFD000-0xFFFFFFFFBFDFDFFF | 0x50042000 | 0x1000  | 0x60000000000607 | RW-         |                   |
 | All   | 0xFFFFFFFE00000000-...                | 0x80000000 | ...     | 0x60000000000709 | RW-         | Raw DRAM access   |
+
+bfdf
+b000
 
 ## 2.0.0
 
