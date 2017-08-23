@@ -181,7 +181,7 @@ variation of the Tegra 210 BCT format.
 <tr class="even">
 <td><p>0x2330</p></td>
 <td><p>0x12C</p></td>
-<td><p>bootloader0_info</p></td>
+<td><p><a href="#bootloader0_info" title="wikilink">bootloader0_info</a></p></td>
 <td><p>Configuration parameters for bootloader 0 (normal).</p>
 <p><code>0x2330: version (variable)</code><br />
 <code>0x2334: start_block (0x00000040)</code><br />
@@ -268,6 +268,23 @@ generation. The decrypted keyblob payload is as follows.
 | ------ | ---- | ------------------------------------------ |
 | 0x0    | 0x80 | Array of master static key encryption keys |
 | 0x80   | 0x10 | [Stage 2](Package1.md "wikilink") key      |
+
+### bootloader0\_info
+
+#### 1.0.0 - 2.3.0
+
+The version field is set to 0x01, meaning that the first keyblob is to
+be used.
+
+#### 3.0.0
+
+The version field was changed to 0x02, meaning that the second keyblob
+is now used.
+
+#### 3.0.1
+
+The version field was changed to 0x03, meaning that the third keyblob is
+now used.
 
 ## IRAM
 

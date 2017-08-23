@@ -144,7 +144,7 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |-
 |  0x2330
 |  0x12C
-|  bootloader0_info
+|  [[#bootloader0_info|bootloader0_info]]
 |  Configuration parameters for bootloader 0 (normal).
  0x2330: version (variable)
  0x2334: start_block (0x00000040)
@@ -222,6 +222,16 @@ The decrypted keyblob payload is as follows.
 | 0x10 
 | [[Package1|Stage 2]] key
 |}
+
+=== bootloader0_info ===
+==== 1.0.0 - 2.3.0 ====
+The version field is set to 0x01, meaning that the first keyblob is to be used.
+
+==== 3.0.0 ====
+The version field was changed to 0x02, meaning that the second keyblob is now used.
+
+==== 3.0.1 ==== 
+The version field was changed to 0x03, meaning that the third keyblob is now used.
 
 == IRAM ==
 When copied to IRAM, the BCT has an additional header as follows.
