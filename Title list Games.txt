@@ -330,6 +330,8 @@
 | 0100C3700416A800 || || || || SUPER PING PONG TRICKSHOT || JPN || Update
 |-
 | 01003BC0000A0000 || || Gamecard: 2.3.0 || Gamecard Front: LA-H-AAB6B-USA || Splatoon 2 || USA || Game
+|-
+| 01003BC0000A0800 || v262144(Display-ver 1.2.0 - uses [[3.0.1]] NCA crypto([[NCA|nca-type0]])) || || || Splatoon 2 || USA || Update
 |}
 Game updates have the same titleID as the main application, except with bitmask 0x800 set.
 
