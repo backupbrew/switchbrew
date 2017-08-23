@@ -49,7 +49,7 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |-
 |  0x0444
 |  0xCC
-|  [[#BCT#customer_data|customer_data]]
+|  [[#customer_data|customer_data]]
 |  Data block available for the customer. Used in key generation.
  0x0444: padding_0x0C
  0x0450: keyblob_0xB0

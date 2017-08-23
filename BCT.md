@@ -68,7 +68,7 @@ variation of the Tegra 210 BCT format.
 <tr class="even">
 <td><p>0x0444</p></td>
 <td><p>0xCC</p></td>
-<td><p><a href="#BCT#customer_data" title="wikilink">customer_data</a></p></td>
+<td><p><a href="#customer_data" title="wikilink">customer_data</a></p></td>
 <td><p>Data block available for the customer. Used in key generation.</p>
 <p><code>0x0444: padding_0x0C</code><br />
 <code>0x0450: keyblob_0xB0</code><br />
