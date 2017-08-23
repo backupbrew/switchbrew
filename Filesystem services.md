@@ -86,6 +86,47 @@ abort.
 | 1005 | [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink")                         |
 | 1006 | [\#OutputAccessLogToSdCard](#OutputAccessLogToSdCard "wikilink")                       |
 
+## Permissions
+
+Each time permissions are checked, the [process-obj](#fsp-pr "wikilink")
+is loaded using the session PID, then a func is called with the
+permissions-type. The func retval is checked, then the permissions
+[error](Error%20codes.md "wikilink") is thrown if needed.
+
+Internally in that process-obj load func, it will load the obj as normal
+when the PID is \>6, otherwise it will use a fixed obj. If not done
+already, that fixed obj will be initialized using fixed input data, via
+the same code used internally by [\#fsp-pr](#fsp-pr "wikilink").
+
+In general this func uses the input permissions-type to determine what
+mask value to use. That value is masked with the
+[permissions](NPDM.md "wikilink") from the above process-obj. When the
+result is 0, 0 is returned, otherwise non-zero is returned. The default
+non-zero retval is basically 0x3.
+
+Panic is triggered when the input type is
+\>0x26.
+
+| Type(s)                            | Mask                | Non-zero retval | Notes                                                                                                                           |
+| ---------------------------------- | ------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 0xA 0xD 0x16 0x1F 0x20 0x21 0x22   | 0x8000000000000080  | Default         |                                                                                                                                 |
+| 0x15 0x17 0x18 0x19 0x1A 0x1B 0x1C | 0x8000000000010080  | Default         |                                                                                                                                 |
+| 0x0 0x1 0x2 0x3 0x4 0x5            | 0x8000000000000801  | 0x1             |                                                                                                                                 |
+| 0x9 0x1D 0x1E                      | 0x8000000000000084  | Default         |                                                                                                                                 |
+| 0xB 0xC                            | 0x8000000000008080  | Default         |                                                                                                                                 |
+| 0xE 0x23                           | 0xc000000000200000  | Default         |                                                                                                                                 |
+| 0x12 0x13                          | 0x8000000000000020  | Default         |                                                                                                                                 |
+| 0x6                                |                     |                 | In this case it appears the func returns retval & 0xff, where retval = {bit0=0, bit1..bit63=obj\_permissions starting at bit0}? |
+| 0x7                                | 0x8000000000000800  | Default         |                                                                                                                                 |
+| 0x8                                | 0x8000000000001000  | Default         |                                                                                                                                 |
+| 0xF                                | 0x8000000000000010  | Default         |                                                                                                                                 |
+| 0x10                               | 0x8000000000040020; | Default         |                                                                                                                                 |
+| 0x11                               | 0x8000000000000028  | Default         |                                                                                                                                 |
+| 0x14                               | 0x8000000000010082  | Default         |                                                                                                                                 |
+| 0x24                               | 0x8000000000000100  | Default         |                                                                                                                                 |
+| 0x25                               | 0x8000000000100008  | 0x1             |                                                                                                                                 |
+| 0x26                               | 0xC000000000400000  | Default         |                                                                                                                                 |
+
 ## MountApplicationPackage
 
 Presumably about the same as MountContent except this uses the titleID
