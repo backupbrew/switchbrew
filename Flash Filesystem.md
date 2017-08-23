@@ -47,10 +47,11 @@ below.
 | 0x20   | 0x90  | Keyblob encrypted payload                                               |
 | 0xB0   | 0x150 | Unused, all-zero.                                                       |
 
-The bootloader0's version (offset 0x2330 in the BCT) acts as an index to
-control which keyblob should be installed into the system.
+The active bootloader's version (offset 0x2330 in the BCT) acts as an
+index to control which keyblob should be installed into the system.
 [NS](#NS_Services "wikilink") uses this during system updates to install
-the keyblob into the customer data section in BCTs (offset 0x450).
+the keyblob into the [customer data](#BCT#customer_data "wikilink")
+section in BCTs (offset 0x450).
 
 [Boot](Boot.md "wikilink") also uses this index for repairing corrupt
 sectors.
