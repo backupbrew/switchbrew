@@ -13,6 +13,8 @@ and stores a copy of it in IRAM at address 0x40000000.
 
 # Structure
 
+## NAND
+
 Below is the BCT structure used by the Switch, which is a minimal
 variation of the Tegra 210 BCT format.
 
@@ -66,7 +68,7 @@ variation of the Tegra 210 BCT format.
 <tr class="even">
 <td><p>0x0444</p></td>
 <td><p>0xCC</p></td>
-<td><p>customer_data</p></td>
+<td><p><a href="#BCT#customer_data" title="wikilink">customer_data</a></p></td>
 <td><p>Data block available for the customer. Used in key generation.</p>
 <p><code>0x0444: padding_0x0C</code><br />
 <code>0x0450: keyblob_0xB0</code><br />
@@ -250,6 +252,22 @@ variation of the Tegra 210 BCT format.
 </tr>
 </tbody>
 </table>
+
+### customer\_data
+
+This data block is ignored by the boot ROM, therefore is available for
+the programmer to use freely. The Switch uses 0xB0 bytes of this area,
+at offset 0x0450, to store the active
+[keyblob](#Flash_Filesystem#Keyblob "wikilink"). All remaining bytes are
+zero.
+
+The first bootloader validates and decrypts this block for further key
+generation. The decrypted keyblob payload is as follows.
+
+| Offset | Size | Description                                |
+| ------ | ---- | ------------------------------------------ |
+| 0x0    | 0x80 | Array of master static key encryption keys |
+| 0x80   | 0x10 | [Stage 2](Package1.md "wikilink") key      |
 
 ## IRAM
 
