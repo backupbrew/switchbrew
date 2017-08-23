@@ -50,8 +50,9 @@ below.
 The active bootloader's version (offset 0x2330 in the BCT) acts as an
 index to control which keyblob should be installed into the system.
 [NS](#NS_Services "wikilink") uses this during system updates to install
-the keyblob into the [customer data](#BCT#customer_data "wikilink")
-section in BCTs (offset 0x450).
+the keyblob into the [customer
+data](BCT#customer%20data.md##customer_data "wikilink") section in BCTs
+(offset 0x450).
 
 [Boot](Boot.md "wikilink") also uses this index for repairing corrupt
 sectors.
