@@ -95,10 +95,10 @@ sm, and pm.
 
 # pm:bm
 
-| Cmd | Name                  |
-| --- | --------------------- |
-| 0   | GetMaintenanceMode    |
-| 1   | EnableMaintenanceMode |
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   | GetBootMode        |
+| 1   | SetMaintenanceBoot |
 
 # pm:dmnt
 

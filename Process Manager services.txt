@@ -58,9 +58,9 @@ Thus at the point of launch, the pid is already registered in ldr, fs, sm, and p
 |-
 ! Cmd || Name
 |-
-| 0 || GetMaintenanceMode
+| 0 || GetBootMode
 |-
-| 1 || EnableMaintenanceMode
+| 1 || SetMaintenanceBoot
 |}
 
 = pm:dmnt =
