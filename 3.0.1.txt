@@ -28,7 +28,7 @@ All webapplets were updated, vulnerabilities were fixed. 803/buildinfo/buildinfo
   n:0.6.10
 
 ==Keys==
-The used [[Flash_Filesystem#Keyblob|keyblob]] index was updated.
+The bootloader [[BCT#bootloader0_info|version]] was changed from 2 to 3.
 
 New keydata was introduced for NCA content, see [[NCA_Format|here]].
 
