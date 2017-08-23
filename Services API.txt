@@ -247,7 +247,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |
 |-
 | pctl, pctl:a, pctl:s, pctl:r
-| Parental Control services
+| [[Parental Control services]]
 |
 |-
 | pm:bm, pm:info, pm:shell

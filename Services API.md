@@ -254,7 +254,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="odd">
 <td><p>pctl, pctl:a, pctl:s, pctl:r</p></td>
-<td><p>Parental Control services</p></td>
+<td><p><a href="Parental Control services.md" title="wikilink">Parental Control services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
