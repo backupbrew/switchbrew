@@ -225,4 +225,6 @@ to.
 | 0x80000000000000F0 | ns         | pdm:/             | Play Data log.                                                                                                                                            |
 | 0x8000000000000100 | pctl       | pctlss:/          | Parental Control settings.                                                                                                                                |
 | 0x8000000000000110 | npns       | npns\_save:/      | Push notifications persistent storage.                                                                                                                    |
+| 0x8000000000000120 | ncm        | ?                 | meta/imkvdb.arc for system partition.                                                                                                                     |
+| 0x8000000000000121 | ncm        | ?                 | meta/imkvdb.arc for sd partition.                                                                                                                         |
 |                    |            |                   |                                                                                                                                                           |
