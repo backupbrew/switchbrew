@@ -1,100 +1,426 @@
-The Nintendo Switch's bootloader (called "package1") is the first custom piece of code running on the Switch. It is loaded in the IRAM and launched by the Tegra X1 bootROM according to the BCT. It runs on the boot processor, an ARM7TDMI called "BPMP" by NVidia (Boot and Power Management Processor).
-It is split into two parts, one that is in plaintext, one that is encrypted. The bootROM does not perform any symmetric cryptographic operations on the bootloader it loads.
+Present on the firmware package titles (0100000000000819 and 010000000000081A) and installed into eMMC storage's [[#Flash_Filesystem#Boot_Partitions|boot partitions 0 and 1]], "package1" contains the first Switch bootloader to run under the NVIDIA boot processor (an ARM7TDMI called "BPMP", "BPMP-Lite", "AVP" or "COP").
 
-== Stage 1 ==
+The boot ROM validates, copies to IRAM and executes this package by parsing it's information block from the [[#BCT|BCT]].
 
-The first stage of the bootloader is the plaintext part of the bootloader. It has four goals: to power on devices, to look for incoherencies, to generate keys, and to decrypt and launch the second stage.
-The stage 1 bootloader's authors knew that the code was in plaintext, and thus took extra care to try to protect the bootloader from side-channel attacks.
+= Bootloader =
+Split into two main stages, the bootloader is responsible for setting up hardware, generate keys and prepare the main CPU ("CCPLEX").
 
-=== Execution flow ===
+== Stage 0 ==
+The code for this stage is stored in plaintext inside the package. By looking into the BCT's bootloader0_info (normal) or bootloader1_info (safe mode), the boot ROM starts executing this stage at address 0x40010020 in IRAM.
 
-==== Startup ====
+=== Initialization ===
+The stack pointer is set.
 
-After setting up the stack and branching to main, stage 1 poisons all the exception vectors to point at the panic function.
-It then clears the (empty) bss and calls the functions in the (empty) init array.
+ // Set the stack pointer
+ *(u32 *)sp = 0x40008000;
+ 
+ // Jump to main
+ bootloader_main();
+ 
+ // Infinite loop
+ deadlock();
 
-==== Main ====
+=== Main ===
+The bootloader poisons the exception vectors, cleans up memory (.bss and init_array), sets up hardware devices (including the security engine and fuses), does all the necessary checks, generates keys and finally decrypts and executes the next stage.
 
-* Registers are setup
-* A device (?) is powered on
-* Flags are set on the clock-reset registers
-* [3.0.0+] The security engine address is setup
-* [3.0.0+] Bit30 of offset 0x800 of the security engine is checked: if set, panic.
-* The SKU info is checked. If it doesn't match 0x83, panic.
-* Fuse coherency is checked, potentially panicking.
-* The copy of the BCT left by the bootROM is checked. If the version field doesn't match the expected version field, panic.
-* Anti-downgrade fuses are checked, potentially panicking.
-* [1.0.0-2.3.0] Fuse programming is disabled until next reboot.
-* The memory controller is powered on and setup to allow GPU DMA to the IRAM. This will be needed to interact with the Falcon and with the security engine.
-* [1.0.0-2.3.0] The security engine address is setup
-* [1.0.0-2.3.0] Bit30 of offset 0x800 of the security engine is checked: if set, panic.
-* Key generation is performed. If the unit type is equal to 0 (non-retail) AND if some fuse is clear, the secondary method will be used. Else, the main method will be used.
-* Stage 2 is decrypted with keyslot 0xB. Keyslot 0xB is cleared, and the second stage's header validity is checked. If any of this fails, panic.
-* The entrypoint of stage 2 is computed.
-* The stack is pivoted to a secondary stack, the main stack and the key area are cleared, and stage 1 jumps to stage 2's entrypoint.
-
-==== Downgrade check ====
-
-See [[Fuses#Anti-downgrade|Anti-downgrade]].
+ // Poison all exception vectors
+ *(u32 *)0x6000F200 = panic();
+ *(u32 *)0x6000F204 = panic();
+ *(u32 *)0x6000F208 = panic();
+ *(u32 *)0x6000F20C = panic();
+ *(u32 *)0x6000F210 = panic();
+ *(u32 *)0x6000F214 = panic();
+ *(u32 *)0x6000F218 = panic();
+ *(u32 *)0x6000F21C = panic();
+ 
+ u32 bss_addr_end = bss_addr_start;
+ u32 bss_offset = 0;
+ u32 bss_size = bss_addr_end - bss_addr_start;
+ 
+ // Clear .bss region
+ // Never happens due to bss_size being set to 0
+ while (bss_offset < bss_size)
+ {
+    *(u32 *)bss_addr_start + bss_offset = 0;
+    bss_offset += 0x04;
+ }
+ 
+ u32 init_array_addr_end = init_array_addr_start;
+ u32 init_array_offset = init_array_addr_start;
+ 
+ // Call init methods
+ // Never happens due to init_array_addr_end being set to init_array_addr_start
+ while (init_array_offset < init_array_addr_end)
+ {
+    u32 init_method_offset = *(u32 *)init_array_offset;
+ 
+    call_init_method(init_method_offset + init_array_offset);
+    init_array_offset += 0x04;
+ }
+ 
+ // Setup I2S1, I2S2, I2S3, I2S4, DISPLAY and VIC
+ enable_hw_devices();
+ 
+ // Program the SE clock and resets
+ // Uses RST_DEVICES_V, CLK_OUT_ENB_V, CLK_SOURCE_SE and CLK_V_SE
+ enable_se_clkrst();
+ 
+ // Set MISC_CLK_ENB
+ // This makes fuse registers visible
+ enable_misc_clk(0x01);
+ 
+ // Read FUSE_SKU_INFO and compare with 0x83
+ check_sku();
+ 
+ // Check configuration fuses
+ check_config_fuses();
+ 
+ u32 bct_iram_addr = 0x40000000;
+ 
+ // Check bootloader version from BCT
+ check_bootloader_ver(bct_iram_addr);
+ 
+ // Check anti-downgrade fuses
+ check_downgrade();
+ 
+ // Set FUSE_DIS_PGM
+ // Disables fuse programming until next reboot
+ disable_fuse_pgm();
+ 
+ // Setup memory controllers
+ enable_mem();
+ 
+ // Setup the security engine's address
+ set_se_addr(0x70012000);
+ 
+ // Check SE global config
+ check_se_status();
+ 
+ // Generate keys
+ keygen(bct_iram_addr);
+ 
+ u32 stage1_addr = 0x40013FE0;
+ 
+ // Decrypt next stage
+ stage1_addr = decrypt_stage1(stage1_addr);
+ 
+ u32 stage1_sp = 0x40007000;
+ 
+ // Set the stack pointer and jump to a stub responsible
+ // for cleaning up and branching into the actual stage 1
+ exec_stage1_stub(stage1_addr, stage1_stub_addr, stage1_sp);
+ 
+ return;
 
 ==== Panic ====
+If a panic occurs, all sensitive memory contents are cleared, the security engine and fuse programming are disabled and the boot processor is left in a halted state.
 
-The panic function does the following things:
-* It clears the stack
-* It disables(?) and clears the security engine
-* It disables fuse programming
-* It clears the key area
-* It clears the data for stage 2
-* It signals over the debug interface that a panic occurred until the Switch is reset.
+ // Clear all stack contents
+ clear_stack();
+ 
+ // Terminate the security engine
+ disable_se();
+ 
+ // Set FUSE_DIS_PGM
+ // Disables fuse programming until next reboot
+ disable_fuse_pgm();
+ 
+ // Clear temporary key storage memory
+ clear_mem();
+ 
+ // Clear the stage 1 binary
+ clear_stage1();
+ 
+ u32 FLOW_CTLR_HALT_COP_EVENTS = 0x60007004;
+ u32 FLOW_MODE_STOP = 0x40000000;
+ u32 HALT_COP_EVENT_JTAG = 0x10000000;
+ 
+ // Halt the boot processor
+ while (true)
+    *(u32 *)FLOW_CTLR_HALT_COP_EVENTS = (FLOW_MODE_STOP | HALT_COP_EVENT_JTAG);
 
-=== Key generation ===
-For more detail on the Switch's Cryptosystem, please see [[Cryptosystem|this page]].
+==== Anti-downgrade ====
+See [[Fuses#Anti-downgrade|Anti-downgrade]].
 
-In all cases, at the end of the key generation function three keys are generated: the stage 2 key (stored in keyslot 0xB), the master static key (stored in keyslot 0xC), and the master device key (stored in keyslot 0xD).
-The two keys initialized by the bootROM (the SBK, stored in keyslot 0xE, and the SSK, stored in keyslot 0xF) are cleared immediately after the bootloader is finished using them.
-Keyslots 0xC and 0xD are marked unreadable. Keyslot 0xB is not, but is is cleared by stage 1 after stage 2's decryption anyway.
+==== Key generation ====
+After the security engine is ready and before decrypting the next stage, the bootloader initializes and generates several keys into hardware keyslots.
+For more details on the Switch's cryptosystem, please see [[#Cryptosystem|this page]].
 
-==== Main method ====
+===== Selection =====
+Depending on [[Fuses#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]] and [[Fuses#FUSE_SPARE_BIT_5|FUSE_SPARE_BIT_5]] different static seeds are selected for key generation.
 
-This method is called when the unit type is equal to 1 (retail) OR when unit type is equal to 0 and some fuse is set. 
+ // Initialize keyslots 0x0C and 0x0D as readable
+ init_keyslot(0x0C, 0x15);
+ init_keyslot(0x0D, 0x15);
+ 
+ // Find the BCT's data address from IRAM header
+ u32 bct_data_addr = *(u32 *)bct_imem_addr + 0x4C;
+ u32 bct_customer_data_addr = *(u32 *)bct_data_addr + 0x450;
+ 
+ // Wrapper to get unit type from FUSE_RESERVED_ODM4
+ // This tells if the device is retail or debug
+ bool is_retail = is_unit_retail();
+ 
+ u32 master_static_seed_addr = 0;
+ u32 master_static_seed_size = 0;
+ 
+ if (is_retail)
+ {
+    // Read FUSE_SPARE_BIT_5
+    // This tells which master key to use
+    u32 master_key_ver = read_fuse_spare_bit_5();
+ 
+    // Invalid for retail
+    if (!master_key_ver)
+       panic();
+    else
+    {
+       master_static_seed_addr = static_seed1_addr;
+       master_static_seed_size = 0x10;
+ 
+       // Generate retail keys
+       generate_retail_keys(bct_customer_data_addr, static_seed_addr, static_seed_size);
+    }
+ }
+ else
+ {
+    // Read FUSE_SPARE_BIT_5
+    // This tells which master key to use
+    u32 master_key_ver = read_fuse_spare_bit_5();
+ 
+    // Use debug key set
+    if (!master_key_ver)
+    {
+       // Read the first byte of the BCT RSA PSS signature
+       u8 rsa_pss_1_byte = *(u8 *)bct_data_addr + 0x210;
+ 
+       if (rsa_pss_1_byte == 0x11)
+       {
+          master_static_seed_addr = static_seed6_addr;
+          master_static_seed_size = 0x10;
+       }
+       else	                          
+       {
+          master_static_seed_addr = static_seed7_addr;
+          master_static_seed_size = 0x10;
+       }
+ 
+       // Generate debug keys
+       generate_debug_keys(static_seed_addr, static_seed_size);
+    }
+    else
+    {
+       // Read the first byte of the BCT RSA PSS signature
+       u8 rsa_pss_1_byte = *(u8 *)bct_data_addr + 0x210;
+ 
+       if (rsa_pss_1_byte == 0x4F)		// Different key as in retail mode
+       {
+          master_static_seed_addr = static_seed0_addr;
+          master_static_seed_size = 0x10;
+       }
+       else	                                // Same key as in retail mode
+       {
+          master_static_seed_addr = static_seed1_addr;
+          master_static_seed_size = 0x10;
+       }
+ 
+       // Generate retail keys
+       generate_retail_keys(bct_customer_data_addr, master_static_seed_addr, master_static_seed_size);
+    }
+ }
+ 
+ // Initialize keyslots 0x0C and 0x0D as unreadable
+ init_keyslot(0x0C, 0xFF);
+ init_keyslot(0x0D, 0xFF);
+ 
+ return;
 
-The master static seed selected depends on whether the unit type is zero and whether the last byte of the bootloader's RSA modulus is 0x4F.
+===== generate_retail_keys =====
+In order to generate retail keys, the bootloader starts by initializing TSEC and grabbing it's [[TSEC#Device_key_generation|device key]]. Using static seeds and the SBK, the keyblob injected into the BCT's [[BCT#customer_data|customer_data]] is validated and decrypted. The resulting keys will then be used to generate the master static key and the master device key.
 
-* Falcon microcode is loaded, the device keyblob seed generation key is obtained from the Falcon.
-* The device keyblob seed generation key is stored in keyslot 0xD.
-* [3.0.0+] keyblob key seed 1 is generated by decrypting the keyblob seed constant 1 with the device keyblob seed generation key
-* [3.0.0+] keyblob key 1 is generated by decrypting keyblob key seed 1 with the SBK. The result is directly stored in keyslot 0xA without leaving the crypto engine.
-* keyblob key seed N is generated by decrypting the keyblob seed constant N with the device keyblob seed generation key
-* keyblob key N is generated by decrypting keyblob key seed N with the SBK. The result is directly stored in keyslot 0xD without leaving the crypto engine.
-* The SBK and the SSK are cleared.
-* The constant MAC key generator block is decrypted with keyblob key N to generate keyblob MAC key N. The result is directly stored in keyslot 0xB without leaving the crypto engine.
-* With keyblob MAC key N, AES CMAC is performed over the keyblob.
-* With a comparison function which is safe against timing attacks, the CMAC is compared with the stored CMAC. If they differ, panic is called.
-* The keyblob data is decrypted with AES-CTR, using the keyblob key N and the stored CTR.
-* The stage 2 decryption key (the ninth key in the blob) is loaded in keyslot 0xB.
-* The master static key encryption key. is loaded in keyslot 0xC.
-* The decrypted keyblob data is erased.
-* The master static key is generated by decrypting the master static seed with the master static key encryption key. The result is directly stored in keyslot 0xC without leaving the crypto engine.
-* [1.0.0-2.3.0] The master device key is generated by decrypting a constant block with keyslot 0xD (which contains keyblob N's key 1). The result is directly stored in keyslot 0xD without leaving the crypto engine.
-* [3.0.0+] The master device key is generated by decrypting a constant block with keyslot 0xA (which contains keyblob 1's key 1). The result is directly stored in keyslot 0xD without leaving the crypto engine.
-* [3.0.0+] Keyslot 0xA is cleared.
+See the pseudocode bellow for the detailed process.
 
-==== Secondary method ====
+ u32 in_addr = 0;
+ u32 in_size = 0;
+ u32 out_addr = 0;
+ u32 out_size = 0;
+ u32 keyslot = 0;
+ u32 keyslot_dst = 0;
+ 
+ // Get the TSEC device key
+ tsec_get_device_key(tsec_device_key_addr, 0x10);
+ 
+ // Install the TSEC device key into keyslot 0x0D
+ set_keyslot_data(0x0D, tsec_device_key_addr, 0x10);
+ 
+ in_addr = static_seed2_addr;
+ in_size = 0x10;
+ out_addr = keyblob_device_key_addr;
+ out_size = 0x10;
+ keyslot = 0x0D;
+ 
+ // Use the tsec_device_key (keyslot 0x0D) to decrypt the static_seed2
+ // This generates the keyblob_device_key
+ aes_ecb_decrypt(out_addr, out_size, keyslot, in_addr, in_size);
+ 
+ in_addr = keyblob_device_key_addr;
+ in_size = 0x10;
+ keyslot = 0x0E;
+ keyslot_dst = 0x0D;
+ 
+ // Use SBK (keyslot 0x0E) to further decrypt the
+ // keyblob_device_key and install it into keyslot 0x0D
+ // This will generate the keyblob_key
+ decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
+ 
+ // Clear SBK and SSK keyslots
+ clear_keyslot(0x0E);
+ clear_keyslot(0x0F);
+ 
+ in_addr = static_seed4_addr;
+ in_size = 0x10;
+ keyslot = 0x0D;
+ keyslot_dst = 0x0B;
+ 
+ // Use keyblob_key (keyslot 0x0D) to decrypt the
+ // static_seed4_addr and install it to keyslot 0x0B
+ // This will generate the bct_mac_key
+ decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
+ 
+ in_addr = bct_customer_data_addr + 0x10;
+ in_size = 0xA0;
+ out_addr = mac_addr;
+ out_size = 0x10;
+ keyslot = 0x0B;
+ 
+ // Use the bct_mac_key (keyslot 0x0B) to generate
+ // CMAC over bct_customer_data_addr + 0x10
+ aes_cmac(out_addr, out_size, keyslot, in_addr, in_size);
+ 
+ // Comapre the generated hash with the first
+ // 0x10 bytes of bct_customer_data
+ bool match = safe_memcmp(mac_addr, bct_customer_data_addr, 0x10);
+ 
+ // Hashes don't match
+ if (!match)
+    panic();
+ 
+ in_addr = bct_customer_data_addr + 0x20;
+ in_size = 0x90;
+ ctr_addr = bct_customer_data_addr + 0x10;
+ ctr_size = 0x10;
+ out_addr = dec_payload_addr;
+ out_size = 0x90;
+ keyslot = 0x0D;
+ 
+ // AES-CTR decrypt
+ // Use the keyblob_key (keyslot 0x0D) to decrypt bct_customer_data_addr + 0x20
+ // using bct_customer_data_addr + 0x10 as CTR
+ aes_ctr_decrypt(out_addr, out_size, keyslot, in_addr, in_size, ctr_addr, ctr_size);
+ 
+ // Install the last decrypted keyblob key into keyslot 0x0B
+ // This is the pk11_key
+ set_keyslot_data(0x0B, dec_payload_addr + 0x80, 0x10);
+ 
+ // Install the first decrypted keyblob key into keyslot 0x0C
+ // This is the master_static_kek
+ set_keyslot_data(0x0C, dec_payload_addr, 0x10);
+ 
+ // Clear out the decrypted data
+ memclear(dec_payload_addr, 0x90);
+ 
+ in_addr = master_static_seed_addr;
+ in_size = master_static_seed_size;
+ keyslot = 0x0C;
+ keyslot_dst = 0x0C;
+ 
+ // Use the master_static_kek (keyslot 0x0C) to decrypt
+ // master_static_seed and install it into keyslot 0x0C
+ // This will generate the master_static_key
+ decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
+ 
+ in_addr = static_seed3_addr;
+ in_size = 0x10;
+ keyslot = 0x0D;
+ keyslot_dst = 0x0D;
+ 
+ // Use keyblob_key (keyslot 0x0D) to decrypt
+ // static_seed3_addr and install it into keyslot 0x0D
+ // This will generate the master_device_key
+ decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
+ 
+ return;
 
-The secondary method (which is never launched on retail units) is very simple.
-First a master static seed is selected (depending on whether the bootloader's RSA modulus ends with 0x11).
-Then, a constant block is decrypted by the SBK. The result is the stage 2 key and will be stored in keyslot 0xB. 
-A constant block will be decrypted by the SBK and temporarily stored in keyslot 0xC. Another constant block will be decrypted by the SSK and temporarily stored in keyslot 0xD.
-Both the SBK and the SSK are cleared.
-The master static seed is decrypted with keyslot 0xC and stored in keyslot 0xC.
-A constant block is decrypted with keyslot 0xD and stored in keyslot 0xD. 
+===== generate_debug_keys =====
+In order to generate debug keys, the bootloader only uses static seeds, the SBK and the SSK.
 
-== Stage 2 (package1.1) ==
+See the pseudocode bellow for the detailed process.
 
-The second stage of the bootloader is the encrypted part of the bootloader. It is much bigger than stage 1, but what it does is currently unknown due to its being encrypted.
+ u32 in_addr = 0;
+ u32 in_size = 0;
+ u32 keyslot = 0;
+ u32 keyslot_dst = 0;
+ 
+ in_addr = static_seed8_addr;
+ in_size = 0x10;
+ keyslot = 0x0E;
+ keyslot_dst = 0x0B;
+ 
+ // Use SBK (keyslot 0x0E) to decrypt the
+ // static_seed8 and install it to keyslot 0x0B
+ // This will generate debug_pk11_key
+ decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
+ 
+ in_addr = static_seed5_addr;
+ in_size = 0x10;
+ keyslot = 0x0E;
+ keyslot_dst = 0x0C;
+ 
+ // Use SBK (keyslot 0x0E) to decrypt the
+ // static_seed5 and install it to keyslot 0x0C
+ // This will generate debug_master_static_kek
+ decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
+ 
+ in_addr = static_seed9_addr;
+ in_size = 0x10;
+ keyslot = 0x0F;
+ keyslot_dst = 0x0D;
+ 
+ // Use SSK (keyslot 0x0F) to decrypt the
+ // static_seed9 and install it to keyslot 0x0D
+ // This will generate debug_keyblob_key
+ decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
+ 
+ // Clear SBK and SSK keyslots
+ clear_keyslot(0x0E);
+ clear_keyslot(0x0F);
+ 
+ in_addr = master_static_seed_addr;
+ in_size = master_static_seed_size;
+ keyslot = 0x0C;
+ keyslot_dst = 0x0C;
+ 
+ // Use the debug_master_static_kek (keyslot 0x0C) to decrypt the
+ // master_static_seed and install it to keyslot 0x0C
+ // This will generate the master_static_key
+ decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
+ 
+ in_addr = static_seed3_addr;
+ in_size = 0x10;
+ keyslot = 0x0D;
+ keyslot_dst = 0x0D;
+ 
+ // Use debug_keyblob_key (keyslot 0x0D) to decrypt the
+ // static_seed3 and install it to keyslot 0x0D
+ // This will generate the master_device_key
+ decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
+ 
+ return;
 
-=== Header format ===
+== Stage 1 ==
+Known as "package1.1", the code for this stage is stored encrypted inside the package. When decrypted, this stage is encapsulated in a header.
 
+=== Header ===
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -107,7 +433,7 @@ The second stage of the bootloader is the encrypted part of the bootloader. It i
 |-
 | 0x4
 | 4
-| Size of section 3
+| Main size
 |-
 | 0x8
 | 8
@@ -115,20 +441,24 @@ The second stage of the bootloader is the encrypted part of the bootloader. It i
 |-
 | 0x10
 | 4
-| Size of section 2
+| Section 0 size
 |-
 | 0x14
 | 4
-| Entrypoint of section 2
+| Section 0 offset
 |-
 | 0x18
 | 4
-| Size of section 1
+| Section 1 size
 |-
 | 0x1C
 | 4
-| Entrypoint of section 1?
+| Section 1 offset
 |}
 
-Entrypoints are relative to the section.
-Stage 1 jumps to the entrypoint of section 2.
+= Changelog =
+== 3.0.0 ==
+* The functions set_se_addr() and check_se_status() are now called right after enabling the security engine clocks and resets.
+See [[Switch_System_Flaws#Stage_1_Bootloader]].
+
+* Keyslot 0x0A is now used instead of keyslot 0x0D for generating the master_device_key.
