@@ -86,11 +86,17 @@ usermode are still forced readable from kernelmode.
 As of [2.0.0](2.0.0.md "wikilink") KASLR is not
 used.
 
-## [2.0.0](2.0.0.md "wikilink")
+## 1.0.0
+
+| Cores | Virtual | Physical | Size | Attributes | Permissions | Description |
+| ----- | ------- | -------- | ---- | ---------- | ----------- | ----------- |
+|       |         |          |      |            |             |             |
+
+## 2.0.0
 
 | Cores | Virtual                               | Physical   | Size    | Attributes       | Permissions | Description                                 |
 | ----- | ------------------------------------- | ---------- | ------- | ---------------- | ----------- | ------------------------------------------- |
-| All   | 0xFFFFFFF800000000-...                | 0x80000000 | ...     | ?                | ?           | Raw DRAM access                             |
+| All   | 0xFFFFFFF800000000-...                | 0x80000000 | ...     | 0x60000000000709 | RW-         | Raw DRAM access                             |
 | All   | 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC62FFF | 0x800A0000 | 0x63000 | 0x78B            | R-X         | Kernel .text                                |
 | All   | 0xFFFFFFF7FFC63000-0xFFFFFFF7FFC65FFF | 0x80103000 | 0x3000  | 0x6000000000078B | R--         | Kernel .rodata                              |
 | All   | 0xFFFFFFF7FFC66000-0xFFFFFFF7FFC6EFFF | 0x80106000 | 0x9000  | 0x6000000000070B | RW-         | Kernel .data+.bss                           |
