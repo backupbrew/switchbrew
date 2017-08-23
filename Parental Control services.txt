@@ -1,0 +1,181 @@
+pctl handles all parental controls management.
+
+= pctl =
+= pctl:a =
+= pctl:r =
+= pctl:s =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetService
+|-
+|}
+
+== IParentalControlService ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 1001 || CheckFreeCommunicationPermission
+|-
+| 1002 || ConfirmLaunchApplicationPermission
+|-
+| 1003 || ConfirmResumeApplicationPermission
+|-
+| 1004 || ConfirmSnsPostPermission
+|-
+| 1005 || ConfirmSystemSettingsPermission
+|-
+| 1006 || IsRestrictionTemporaryUnlocked
+|-
+| 1007 || RevertRestrictionTemporaryUnlocked
+|-
+| 1008 || EnterRestrictedSystemSettings
+|-
+| 1009 || LeaveRestrictedSystemSettings
+|-
+| 1010 || IsRestrictedSystemSettingsEntered
+|-
+| 1011 || RevertRestrictedSystemSettingsEntered
+|-
+| 1012 || GetRestrictedFeatures
+|-
+| 1031 || IsRestrictionEnabled
+|-
+| 1032 || GetSafetyLevel
+|-
+| 1033 || SetSafetyLevel
+|-
+| 1034 || GetSafetyLevelSettings
+|-
+| 1035 || GetCurrentSettings
+|-
+| 1036 || SetCustomSafetyLevelSettings
+|-
+| 1037 || GetDefaultRatingOrganization
+|-
+| 1038 || SetDefaultRatingOrganization
+|-
+| 1039 || GetFreeCommunicationApplicationListCount
+|-
+| 1042 || AddToFreeCommunicationApplicationList
+|-
+| 1043 || DeleteSettings
+|-
+| 1044 || GetFreeCommunicationApplicationList
+|-
+| 1045 || UpdateFreeCommunicationApplicationList
+|-
+| 1046 || DisableFeaturesForReset
+|-
+| 1047 || NotifyApplicationDownloadStarted
+|-
+| 1201 || UnlockRestrictionTemporarily
+|-
+| 1202 || UnlockSystemSettingsRestriction
+|-
+| 1203 || SetPinCode
+|-
+| 1204 || [[#GenerateInquiryCode]]
+|-
+| 1205 || [[#CheckMasterKey]]
+|-
+| 1206 || GetPinCodeLength
+|-
+| 1207 || GetPinCodeChangedEvent
+|-
+| 1403 || IsPairingActive
+|-
+| 1406 || GetSettingsLastUpdated
+|-
+| 1411 || GetPairingAccountInfo
+|-
+| 1421 || GetAccountNickname
+|-
+| 1424 || GetAccountState
+|-
+| 1432 || GetSynchronizationEvent
+|-
+| 1451 || StartPlayTimer
+|-
+| 1452 || StopPlayTimer
+|-
+| 1453 || IsPlayTimerEnabled
+|-
+| 1454 || GetPlayTimerRemainingTime
+|-
+| 1455 || IsRestrictedByPlayTimer
+|-
+| 1456 || GetPlayTimerSettings
+|-
+| 1457 || GetPlayTimerEventToRequestSuspension
+|-
+| 1471 || NotifyWrongPinCodeInputManyTimes
+|-
+| 1472 || CancelNetworkRequest
+|-
+| 1473 || GetUnlinkedEvent
+|-
+| 1474 || ClearUnlinkedEvent
+|-
+| 1601 || DisableAllFeatures
+|-
+| 1602 || PostEnableAllFeatures
+|-
+| 1603 || IsAllFeaturesDisabled
+|-
+| 1901 || DeleteFromFreeCommunicationApplicationListForDebug
+|-
+| 1902 || ClearFreeCommunicationApplicationListForDebug
+|-
+| 1941 || DeletePairing
+|-
+| 1951 || SetPlayTimerSettingsForDebug
+|-
+| 1952 || GetPlayTimerSpentTimeForTest
+|-
+| 2001 || RequestPairingAsync
+|-
+| 2002 || FinishRequestPairing
+|-
+| 2003 || AuthorizePairingAsync
+|-
+| 2004 || FinishAuthorizePairing
+|-
+| 2005 || RetrievePairingInfoAsync
+|-
+| 2006 || FinishRetrievePairingInfo
+|-
+| 2007 || UnlinkPairingAsync
+|-
+| 2008 || FinishUnlinkPairing
+|-
+| 2009 || GetAccountMiiImageAsync
+|-
+| 2010 || FinishGetAccountMiiImage
+|-
+| 2011 || GetAccountMiiImageContentTypeAsync
+|-
+| 2012 || FinishGetAccountMiiImageContentType
+|-
+| 2013 || SynchronizeParentalControlSettingsAsync
+|-
+| 2014 || FinishSynchronizeParentalControlSettings
+|-
+| 2015 || FinishSynchronizeParentalControlSettingsWithLastUpdated
+|-
+|}
+
+
+== GenerateInquiryCode ==
+This cmd takes no input, and produces 0x20 bytes of raw output containing snprintf("%02d%08llu", 10, [inquiry_rnd]) on <= [[3.0.0]]. This changed on [[3.0.1]] to produce "11(...)" instead of "10(...)".
+
+The random number generation relies on TinyMT.
+
+== CheckMasterKey ==
+This cmd takes the 0x20 bytes produced by GenerateInquiryCode, and an 0x20 byte X descriptor containing snprintf("%08llu", master_key), and returns a bool 00 if the master key is not valid, and 01 if it is.
+
+Master Keys are validated as follows on <= [[3.0.0]]: first, svcSleepThread(1000000000LL) is called to introduce a delay to prevent brute force attacks. Then, strlen(master_key) is called -- if this is not 8, 0 is returned. Next, the inquiry code is regenerated and snprintf("%02d%08llu", 10, generated_inquiry_rnd) is compared to the inquiry data passed in as an argument. If this doesn't match, 0 is returned. Then, hmac-sha256(snprintf("%02d%08llu", 10, generated_inquiry_rnd)) is called using hardcoded keydata, and the master key argument is compared to snprintf("%08llu", (hmac_result & 0xFFFFFFFFFFFF) % 100000000). If this matches, 1 is returned, otherwise 0 is returned.
+
+On [[3.0.1]] this was presumably changed to use different keydata.
