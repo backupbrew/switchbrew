@@ -243,13 +243,13 @@ variation of the Tegra 210 BCT format.
 <td><p>0x27E9</p></td>
 <td><p>0x12</p></td>
 <td><p>reserved2</p></td>
-<td><p>Always starts with 0x80000000?</p></td>
+<td><p>Always starts with 0x80000000 (NVBOOT padding pattern).</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x27FB</p></td>
 <td><p>0x05</p></td>
 <td><p>padding</p></td>
-<td><p>Empty.</p></td>
+<td><p>Empty. Not part of BCT data.</p></td>
 </tr>
 <tr class="even">
 <td></td>

@@ -195,12 +195,12 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |  0x27E9
 |  0x12
 |  reserved2
-|  Always starts with 0x80000000?
+|  Always starts with 0x80000000 (NVBOOT padding pattern).
 |-
 |  0x27FB
 |  0x05
 |  padding
-|  Empty.
+|  Empty. Not part of BCT data.
 |-
 |}
 
