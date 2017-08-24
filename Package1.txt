@@ -478,6 +478,55 @@ See the pseudocode bellow for the detailed process.
  
  return;
 
+==== Stage 1 loading ====
+After generating all the necessary keys, the bootloader proceeds to decrypt and launch the next stage.
+
+===== Decryption =====
+The encrypted stage 1 binary is stored inside the package prepended with it's CTR and total image size. After checking the image's size against an hardcoded value (can change on firmware updates), the image is AES-CTR decrypted and the keyslot used for decryption is immediately cleared.
+
+ // Maximum stage 1 size on firmware version 1.0.0
+ u32 max_stage1_size = 0x29000;
+ 
+ u32 stage1_image_size = *(u32 *)stage1_addr;
+ u32 stage1_image_ctr_addr = stage1_addr + 0x10; 
+ u32 stage1_image_addr = stage1_addr + 0x20;
+ 
+ // Validate stage 1's size
+ if (stage1_image_size > max_stage1_size)
+    panic();
+ 
+ u32 in_addr = stage1_image_addr;
+ u32 in_size = stage1_image_size;
+ u32 ctr_addr = stage1_image_ctr_addr;
+ u32 ctr_size = 0x10;
+ u32 out_addr = stage1_image_addr;
+ u32 out_size = stage1_image_size;
+ u32 keyslot = 0x0B;
+ 
+ // AES-CTR decrypt
+ // Use the pk11_key (keyslot 0x0B) to decrypt stage 1 in place
+ aes_ctr_decrypt(out_addr, out_size, keyslot, in_addr, in_size, ctr_addr, ctr_size);
+ 
+ // Clear pk11_key keyslot
+ clear_keyslot(0x0B);
+ 
+ // Validate the decrypted stage 1 image
+ // Checks the "PK11" magic and some pk11 header fields
+ bool is_valid = check_stage1(stage1_image_addr, stage1_image_size);
+ 
+ // Invalid stage 1 image
+ if (!is_valid)
+    panic();
+ 
+ u32 pk11_header_size = 0x20;
+ u32 pk11_sec0_offset = *(u32 *)stage1_image_addr + 0x14;
+ u32 pk11_sec1_size = *(u32 *)stage1_image_addr + 0x18;
+ 
+ // Calculate PK11 main entrypoint
+ u32 pk11_main_addr = (stage1_image_addr + pk11_header_size + pk11_sec0_offset + pk11_sec1_size);
+ 		
+ return pk11_main_addr;
+
 == Stage 1 ==
 Known as "package1.1", the code for this stage is stored encrypted inside the package. When decrypted, this stage is encapsulated in a header.
 
