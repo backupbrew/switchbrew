@@ -234,7 +234,7 @@ aperture designed for AHB redirected access to IRAM.
 After the security engine is ready and before decrypting the next stage,
 the bootloader initializes and generates several keys into hardware
 keyslots. For more details on the Switch's cryptosystem, please see
-[this page](#Cryptosystem "wikilink").
+[this page](Cryptosystem.md "wikilink").
 
 ##### Selection
 

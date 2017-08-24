@@ -205,7 +205,7 @@ After disabling fuse programming, the bootloader configures the EMC and MEM/MC. 
 
 ==== Key generation ====
 After the security engine is ready and before decrypting the next stage, the bootloader initializes and generates several keys into hardware keyslots.
-For more details on the Switch's cryptosystem, please see [[#Cryptosystem|this page]].
+For more details on the Switch's cryptosystem, please see [[Cryptosystem|this page]].
 
 ===== Selection =====
 Depending on [[Fuses#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]] and [[Fuses#FUSE_SPARE_BIT_5|FUSE_SPARE_BIT_5]] different static seeds are selected for key generation.
