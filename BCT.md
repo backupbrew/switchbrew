@@ -74,7 +74,7 @@ variation of the Tegra 210 BCT format.
 </tr>
 <tr class="even">
 <td><p>0x0444</p></td>
-<td><p>0xCC</p></td>
+<td><p>0xC4</p></td>
 <td><p><a href="#customer_data" title="wikilink">customer_data</a></p></td>
 <td><p>Data block available for the customer. Used in key generation.</p>
 <p><code>0x0444: padding_0x0C</code><br />
@@ -109,7 +109,7 @@ variation of the Tegra 210 BCT format.
 <td><p>0x0530</p></td>
 <td><p>0x04</p></td>
 <td><p>boot_data_version</p></td>
-<td><p>Set to 0x00210001.</p></td>
+<td><p>Set to 0x00210001 (BOOTDATA_VERSION_T210).</p></td>
 </tr>
 <tr class="even">
 <td><p>0x0534</p></td>
@@ -223,32 +223,32 @@ variation of the Tegra 210 BCT format.
 </tr>
 <tr class="odd">
 <td><p>0x27E0</p></td>
-<td><p>0x04</p></td>
+<td><p>0x01</p></td>
 <td><p>enable_fail_back</p></td>
 <td><p>Always 0.</p></td>
 </tr>
 <tr class="even">
-<td><p>0x27E4</p></td>
+<td><p>0x27E1</p></td>
 <td><p>0x04</p></td>
 <td><p>secure_debug_control</p></td>
 <td><p>Always 0.</p></td>
 </tr>
 <tr class="odd">
-<td><p>0x27E8</p></td>
+<td><p>0x27E5</p></td>
 <td><p>0x04</p></td>
 <td><p>sec_provisioning_key_num_secure</p></td>
-<td><p>Always 0.</p></td>
+<td><p>Used for Factory Secure Provisioning. Always 0.</p></td>
 </tr>
 <tr class="even">
-<td><p>0x27EC</p></td>
-<td><p>0x04</p></td>
-<td><p>unk0</p></td>
-<td><p>Always 0x08?</p></td>
+<td><p>0x27E9</p></td>
+<td><p>0x12</p></td>
+<td><p>reserved2</p></td>
+<td><p>Always starts with 0x80000000?</p></td>
 </tr>
 <tr class="odd">
-<td><p>0x27F0</p></td>
-<td><p>0x10</p></td>
-<td><p>reserved2</p></td>
+<td><p>0x27FB</p></td>
+<td><p>0x05</p></td>
+<td><p>padding</p></td>
 <td><p>Empty.</p></td>
 </tr>
 <tr class="even">

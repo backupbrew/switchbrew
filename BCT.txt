@@ -50,7 +50,7 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |  Used for Factory Secure Provisioning. Always empty.
 |-
 |  0x0444
-|  0xCC
+|  0xC4
 |  [[#customer_data|customer_data]]
 |  Data block available for the customer. Used in key generation.
  0x0444: padding_0x0C
@@ -80,7 +80,7 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |  0x0530
 |  0x04
 |  boot_data_version
-|  Set to 0x00210001.
+|  Set to 0x00210001 (BOOTDATA_VERSION_T210).
 |-
 |  0x0534
 |  0x04
@@ -178,28 +178,28 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |  Reserved space for bootloaders 2 and 3 (currently unused).
 |-
 |  0x27E0
-|  0x04
+|  0x01
 |  enable_fail_back
 |  Always 0.
 |-
-|  0x27E4
+|  0x27E1
 |  0x04
 |  secure_debug_control
 |  Always 0.
 |-
-|  0x27E8
+|  0x27E5
 |  0x04
 |  sec_provisioning_key_num_secure
-|  Always 0.
+|  Used for Factory Secure Provisioning. Always 0.
 |-
-|  0x27EC
-|  0x04
-|  unk0
-|  Always 0x08?
-|-
-|  0x27F0
-|  0x10
+|  0x27E9
+|  0x12
 |  reserved2
+|  Always starts with 0x80000000?
+|-
+|  0x27FB
+|  0x05
+|  padding
 |  Empty.
 |-
 |}
