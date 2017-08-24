@@ -1,6 +1,6 @@
 Present on the firmware package titles (0100000000000819 and 010000000000081A) and installed into eMMC storage's [[Flash_Filesystem#Boot_Partitions|boot partitions 0 and 1]], "package1" contains the first Switch bootloader to run under the NVIDIA boot processor (an ARM7TDMI called "BPMP", "BPMP-Lite", "AVP" or "COP").
 
-The boot ROM validates, copies to IRAM and executes this package by parsing it's information block from the [[#BCT|BCT]].
+The boot ROM validates, copies to IRAM and executes this package by parsing it's information block from the [[BCT|BCT]].
 
 = Bootloader =
 Split into two main stages, the bootloader is responsible for setting up hardware, generate keys and prepare the main CPU ("CCPLEX").

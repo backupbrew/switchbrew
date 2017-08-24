@@ -6,7 +6,7 @@ and
 boot processor (an ARM7TDMI called "BPMP", "BPMP-Lite", "AVP" or "COP").
 
 The boot ROM validates, copies to IRAM and executes this package by
-parsing it's information block from the [BCT](#BCT "wikilink").
+parsing it's information block from the [BCT](BCT.md "wikilink").
 
 # Bootloader
 
