@@ -11,13 +11,13 @@ authentication key is programmed).
 
 | Offset   | Size    | Description                                                                                                       |
 | -------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| 0x000000 | 0x4000  | Title 0100000000000819 [BCT](#BCT "wikilink")                                                                     |
-| 0x004000 | 0x4000  | Title 010000000000081A [BCT](#BCT "wikilink")                                                                     |
-| 0x008000 | 0x4000  | Title 0100000000000819 [BCT](#BCT "wikilink")                                                                     |
-| 0x00C000 | 0x4000  | Title 010000000000081A [BCT](#BCT "wikilink")                                                                     |
+| 0x000000 | 0x4000  | Title 0100000000000819 [BCT](BCT.md "wikilink")                                                                   |
+| 0x004000 | 0x4000  | Title 010000000000081A [BCT](BCT.md "wikilink")                                                                   |
+| 0x008000 | 0x4000  | Title 0100000000000819 [BCT](BCT.md "wikilink")                                                                   |
+| 0x00C000 | 0x4000  | Title 010000000000081A [BCT](BCT.md "wikilink")                                                                   |
 | 0x100000 | 0x40000 | Title 0100000000000819 "package1"                                                                                 |
 | 0x140000 | 0x40000 | Title 0100000000000819 "package1" (Backup)                                                                        |
-| 0x180000 | 0x4000  | [Keyblob area](#Flash_Filesystem#Keyblob "wikilink")                                                              |
+| 0x180000 | 0x4000  | [Keyblob area](#Keyblob "wikilink")                                                                               |
 | 0x184000 | 0x20    | Unknown pseudorandom data, often changes on reboot. All zero on 1.0.                                              |
 | 0x184020 | 0x8?    | Increments on every boot until hitting a certain number? Bottom 10 bits (0x3FF) are always zero. All zero on 1.0. |
 
@@ -49,8 +49,8 @@ below.
 
 The active bootloader's version (offset 0x2330 in the BCT) acts as an
 index to control which keyblob should be installed into the system.
-[NS](#NS_Services "wikilink") uses this during system updates to install
-the keyblob into the [customer
+[NS](NS%20Services.md "wikilink") uses this during system updates to
+install the keyblob into the [customer
 data](BCT#customer%20data.md##customer_data "wikilink") section in BCTs
 (offset 0x450).
 

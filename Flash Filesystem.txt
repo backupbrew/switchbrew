@@ -12,19 +12,19 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |-
 |  0x000000
 |  0x4000
-|  Title 0100000000000819 [[#BCT|BCT]]
+|  Title 0100000000000819 [[BCT|BCT]]
 |-
 |  0x004000
 |  0x4000
-|  Title 010000000000081A [[#BCT|BCT]]
+|  Title 010000000000081A [[BCT|BCT]]
 |-
 |  0x008000
 |  0x4000
-|  Title 0100000000000819 [[#BCT|BCT]]
+|  Title 0100000000000819 [[BCT|BCT]]
 |-
 |  0x00C000
 |  0x4000
-|  Title 010000000000081A [[#BCT|BCT]]
+|  Title 010000000000081A [[BCT|BCT]]
 |-
 |  0x100000
 |  0x40000
@@ -36,7 +36,7 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |-
 |  0x180000
 |  0x4000
-|  [[#Flash_Filesystem#Keyblob|Keyblob area]]
+|  [[#Keyblob|Keyblob area]]
 |-
 |  0x184000
 |  0x20
@@ -100,7 +100,7 @@ From each 0x200-byte entry only the first 0xB0 bytes effectively form the keyblo
 |}
 
 The active bootloader's version (offset 0x2330 in the BCT) acts as an index to control which keyblob should be installed into the system.
-[[#NS_Services|NS]] uses this during system updates to install the keyblob into the [[BCT#customer_data|customer data]] section in BCTs (offset 0x450).
+[[NS_Services|NS]] uses this during system updates to install the keyblob into the [[BCT#customer_data|customer data]] section in BCTs (offset 0x450).
 
 [[Boot]] also uses this index for repairing corrupt sectors.
 
