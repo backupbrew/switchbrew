@@ -9,8 +9,8 @@ A total of four BCT copies can be installed into the system: normal,
 normal backup, safe mode and safe mode backup.
 
 By design, the BCT's data is only signed after offset 0x0510. Therefore,
-regions like [customer\_data](Customer%20data.md "wikilink") can be
-freely modified without resigning. This is done by
+regions like [customer\_data](#customer_data "wikilink") can be freely
+modified without resigning. This is done by
 [NS](NS%20Services.md "wikilink") when injecting a new
 [keyblob](Flash%20Filesystem#Keyblob.md##Keyblob "wikilink") during a
 system update, for example.
