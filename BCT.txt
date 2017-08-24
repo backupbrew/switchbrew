@@ -1,6 +1,6 @@
 BCT (Boot Configuration Table) is a data structure present on Tegra based devices that supplies boot time configuration parameters.
 
-The Switch's BCT is included in the firmware package titles (0100000000000819 and 010000000000081A) and is installed into eMMC storage's [[#Flash_Filesystem#Boot_Partitions|boot partition 0]]. A total of four BCT copies can be installed into the system: normal, normal backup, safe mode and safe mode backup.
+The Switch's BCT is included in the firmware package titles (0100000000000819 and 010000000000081A) and is installed into eMMC storage's [[Flash_Filesystem#Boot_Partitions|boot partition 0]]. A total of four BCT copies can be installed into the system: normal, normal backup, safe mode and safe mode backup.
 
 During boot, the boot ROM parses the appropriate BCT from eMMC storage and stores a copy of it in IRAM at address 0x40000000.
 
@@ -204,7 +204,7 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 
 === customer_data ===
 This data block is ignored by the boot ROM, therefore is available for the programmer to use freely.
-The Switch uses 0xB0 bytes of this area, at offset 0x0450, to store the active [[#Flash_Filesystem#Keyblob|keyblob]]. All remaining bytes are zero.
+The Switch uses 0xB0 bytes of this area, at offset 0x0450, to store the active [[Flash_Filesystem#Keyblob|keyblob]]. All remaining bytes are zero.
 
 The first bootloader validates and decrypts this block for further key generation.
 The decrypted keyblob payload is as follows.

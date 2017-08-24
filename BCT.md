@@ -4,9 +4,9 @@ based devices that supplies boot time configuration parameters.
 The Switch's BCT is included in the firmware package titles
 (0100000000000819 and 010000000000081A) and is installed into eMMC
 storage's [boot partition
-0](#Flash_Filesystem#Boot_Partitions "wikilink"). A total of four BCT
-copies can be installed into the system: normal, normal backup, safe
-mode and safe mode backup.
+0](Flash%20Filesystem#Boot%20Partitions.md##Boot_Partitions "wikilink").
+A total of four BCT copies can be installed into the system: normal,
+normal backup, safe mode and safe mode backup.
 
 During boot, the boot ROM parses the appropriate BCT from eMMC storage
 and stores a copy of it in IRAM at address 0x40000000.
@@ -258,8 +258,8 @@ variation of the Tegra 210 BCT format.
 This data block is ignored by the boot ROM, therefore is available for
 the programmer to use freely. The Switch uses 0xB0 bytes of this area,
 at offset 0x0450, to store the active
-[keyblob](#Flash_Filesystem#Keyblob "wikilink"). All remaining bytes are
-zero.
+[keyblob](Flash%20Filesystem#Keyblob.md##Keyblob "wikilink"). All
+remaining bytes are zero.
 
 The first bootloader validates and decrypts this block for further key
 generation. The decrypted keyblob payload is as
