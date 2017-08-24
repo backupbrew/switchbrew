@@ -52,15 +52,30 @@ params.
 | ---------- | -------------------------------- |
 | 1          | DisableProgramVerification       |
 | 2          | MemoryConfiguration              |
+| 3          | Returns 0x2C?                    |
+| 4          | Returns 0x02?                    |
 | 5          | HardwareType (0=Icosa, 1=Copper) |
 | 6          | IsRetail                         |
 | 7          | IsRecoveryBoot                   |
-| 8          | DeviceId (byte7 clear).          |
+| 8          | DeviceId (byte7 clear)           |
 | 9          | BootReason                       |
 | 10         | MemoryArrange                    |
 | 11         | IsDebugMode                      |
 | 12         | KernelMemoryConfiguration        |
-| 13         | BatteryProfile?                  |
+| 13         | BatteryProfile                   |
+
+[PCV](PCV%20services.md "wikilink") configures memory profiles based on
+id2.
+
+| Platform     | Version                                 | Revision | id2    |
+| ------------ | --------------------------------------- | -------- | ------ |
+| "jetson-tx1" | "11\_40800\_01\_V9.8.3\_V1.6"           | N/A      | N/A    |
+| "nx-abcb"    | "10\_40800\_NoCfgVersion\_V9.8.4\_V1.6" | 0        | 0      |
+| "nx-abca2"   | "10\_40800\_NoCfgVersion\_V9.8.7\_V1.6" | 0        | 0 or 3 |
+| "nx-abca2"   | "10\_40800\_NoCfgVersion\_V9.8.7\_V1.6" | 1        | 4      |
+| "nx-abca2"   | "10\_40800\_NoCfgVersion\_V9.8.7\_V1.6" | 2        | 1      |
+| "nx-abca2"   | "10\_40800\_NoCfgVersion\_V9.8.7\_V1.6" | 3        | 2      |
+|              |                                         |          |        |
 
 [PM](Process%20Manager%20services.md "wikilink") checks id1 and if
 non-zero, calls fsp-pr SetEnabledProgramVerification(false).
@@ -106,9 +121,9 @@ is done, the engine is released.
 
 Takes two input words, a ConfigItem and the value to set.
 
-| ConfigItem | Name            |
-| ---------- | --------------- |
-| 13         | BatteryProfile? |
+| ConfigItem | Name           |
+| ---------- | -------------- |
+| 13         | BatteryProfile |
 
 ## IsDevelopment
 

@@ -74,13 +74,17 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 |-
 | 2 || MemoryConfiguration
 |-
+| 3 || Returns 0x2C?
+|-
+| 4 || Returns 0x02?
+|-
 | 5 || HardwareType (0=Icosa, 1=Copper)
 |-
 | 6 || IsRetail
 |-
 | 7 || IsRecoveryBoot
 |-
-| 8 || DeviceId (byte7 clear).
+| 8 || DeviceId (byte7 clear)
 |-
 | 9 || BootReason
 |-
@@ -90,8 +94,50 @@ Takes an input word (ConfigItem), and returns a u64 with the config params.
 |-
 | 12 || KernelMemoryConfiguration
 |-
-| 13 || BatteryProfile?
+| 13 || BatteryProfile
 |}
+
+
+[[PCV_services|PCV]] configures memory profiles based on id2.
+{| class="wikitable" border="1"
+|-
+!  Platform
+!  Version
+!  Revision
+!  id2
+|-
+|  "jetson-tx1"
+|  "11_40800_01_V9.8.3_V1.6"
+|  N/A
+|  N/A
+|-
+|  "nx-abcb"
+|  "10_40800_NoCfgVersion_V9.8.4_V1.6"
+|  0
+|  0
+|-
+|  "nx-abca2"
+|  "10_40800_NoCfgVersion_V9.8.7_V1.6"
+|  0
+|  0 or 3
+|-
+|  "nx-abca2"
+|  "10_40800_NoCfgVersion_V9.8.7_V1.6"
+|  1
+|  4
+|-
+|  "nx-abca2"
+|  "10_40800_NoCfgVersion_V9.8.7_V1.6"
+|  2
+|  1
+|-
+|  "nx-abca2"
+|  "10_40800_NoCfgVersion_V9.8.7_V1.6"
+|  3
+|  2
+|-
+|}
+
 
 [[Process Manager services|PM]] checks id1 and if non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 
@@ -122,7 +168,7 @@ Takes two input words, a ConfigItem and the value to set.
 |-
 ! ConfigItem || Name
 |-
-| 13 || BatteryProfile?
+| 13 || BatteryProfile
 |}
 
 == IsDevelopment ==
