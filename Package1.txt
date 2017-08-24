@@ -88,7 +88,7 @@ The bootloader poisons the exception vectors, cleans up memory (.bss and init_ar
  disable_fuse_pgm();
  
  // Setup memory controllers
- enable_mem();
+ enable_mem_ctl();
  
  // Setup the security engine's address
  set_se_addr(0x70012000);
@@ -141,6 +141,67 @@ If a panic occurs, all sensitive memory contents are cleared, the security engin
 
 ==== Anti-downgrade ====
 See [[Fuses#Anti-downgrade|Anti-downgrade]].
+
+==== Memory controllers ====
+After disabling fuse programming, the bootloader configures the EMC and MEM/MC. It additionally disables QSPI resets and programs a special aperture designed for AHB redirected access to IRAM.
+
+ u32 PERIPH_CLK_SOURCE_EMC = 0x6000619C;
+ u32 CLK_OUT_ENB_SET_H = 0x60006328;
+ u32 CLK_OUT_ENB_SET_X = 0x60006284;
+ u32 RST_DEVICES_SET_H = 0x60006308;
+ u32 RST_DEVICES_CLR_Y = 0x600062AC;
+ u32 MC_IRAM_REG_CTRL = 0x70019964;
+ u32 MC_IRAM_BOM = 0x7001965C;
+ u32 MC_IRAM_TOM = 0x70019660;
+ 
+ // Initialize EMC's clock source
+ u32 emc_clk_src_val = *(u32 *)PERIPH_CLK_SOURCE_EMC;
+ *(u32 *)PERIPH_CLK_SOURCE_EMC = (emc_clk_src_val | 0x40000000);
+ 
+ // Enable CLK_H_EMC
+ u32 clk_out_enb_h_val = *(u32 *)CLK_OUT_ENB_SET_H;
+ clk_out_enb_h_val &= ~(0x2000000);
+ clk_out_enb_h_val |= 0x2000000;
+ *(u32 *)CLK_OUT_ENB_SET_H = clk_out_enb_h_val;
+ 
+ // Enable CLK_H_MEM
+ clk_out_enb_h_val = *(u32 *)CLK_OUT_ENB_SET_H;
+ clk_out_enb_h_val &= ~(0x01);
+ clk_out_enb_h_val |= 0x01;
+ *(u32 *)CLK_OUT_ENB_SET_H = clk_out_enb_h_val;
+ 
+ // Enable CLK_X_EMC_DLL
+ u32 clk_out_enb_x_val = *(u32 *)CLK_OUT_ENB_SET_X;
+ clk_out_enb_x_val &= ~(0x4000);
+ clk_out_enb_x_val |= 0x4000;
+ *(u32 *)CLK_OUT_ENB_SET_X = clk_out_enb_x_val;
+ 
+ // Enable RST_H_EMC and RST_H_MEM
+ *(u32 *)RST_DEVICES_SET_H = 0x2000001;
+ 
+ // Wait a while
+ mdelay(0x05);
+ 
+ // Disable RST_Y_QSPI
+ u32 rst_clr_y_val = *(u32 *)RST_DEVICES_CLR_Y;
+ rst_clr_y_val &= ~(0x80000);
+ rst_clr_y_val |= 0x80000;
+ *(u32 *)RST_DEVICES_CLR_Y = rst_clr_y_val;
+ 
+ // Refresh MC_IRAM_REG_CTRL
+ // Should be set to 0 (MC_ENABLE_IRAM_CFG_WRITES)
+ u32 mc_iram_reg_ctrl_val = *(u32 *)MC_IRAM_REG_CTRL;
+ *(u32 *)MC_IRAM_REG_CTRL = mc_iram_reg_ctrl_val;
+ 
+ // Set base and top addresses for AHB redirected IRAM path
+ // This allows devices like the GPU to access this range
+ *(u32 *)MC_IRAM_BOM = 0x40000000;
+ *(u32 *)MC_IRAM_TOM = 0x4003F000;
+ 
+ // Read back MC_IRAM_REG_CTRL
+ mc_iram_reg_ctrl_val = *(u32 *)MC_IRAM_REG_CTRL;
+ 	
+ return mc_iram_reg_ctrl_val;
 
 ==== Key generation ====
 After the security engine is ready and before decrypting the next stage, the bootloader initializes and generates several keys into hardware keyslots.
