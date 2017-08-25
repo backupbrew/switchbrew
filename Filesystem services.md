@@ -104,8 +104,10 @@ mask value to use. That value is masked with the
 result is 0, 0 is returned, otherwise non-zero is returned. The default
 non-zero retval is basically 0x3.
 
-Panic is triggered when the input type is
-\>0x26.
+Panic is triggered when the input type is \>{max value} /
+invalid.
+
+Func0:
 
 | Type(s)                            | Mask               | Non-zero retval | Notes                                                                                                                           |
 | ---------------------------------- | ------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -126,6 +128,32 @@ Panic is triggered when the input type is
 | 0x24                               | 0x8000000000000100 | Default         |                                                                                                                                 |
 | 0x25                               | 0x8000000000100008 | 0x1             |                                                                                                                                 |
 | 0x26                               | 0xC000000000400000 | Default         |                                                                                                                                 |
+
+Func1(non-zero retval is always 0x1):
+
+| Type(s)   | Mask               | Notes   |
+| --------- | ------------------ | ------- |
+| 0x0 0x1   | 0x8000000000000080 |         |
+| 0x2 0x3   | 0x8000000000000010 |         |
+| 0x4 0x5   | 0x8000000000000200 |         |
+| 0x7 0xB   | 0x8000000000000060 |         |
+| 0xC 0x1A  | 0x8000000000004020 |         |
+| 0x10 0x11 | 0x8000000000080000 |         |
+| 0x6       | 0x8000000000002020 |         |
+| 0x8       | 0x8000000000000028 |         |
+| 0x9       | 0x8000000000000020 |         |
+| 0xA       | 0x8000000000004028 |         |
+| 0xD       | 0x8000000000020000 |         |
+| 0xE       | 0x8000000000000400 |         |
+| 0xF       | 0x8000000000004060 |         |
+| 0x13      | 0xC000000000800000 |         |
+| 0x14      | 0xC000000001000000 |         |
+| 0x15      | 0xC000000002000000 |         |
+| 0x16      | 0x8000000004000000 |         |
+| 0x17      | 0x8000000008000000 |         |
+| 0x18      | 0x8000000010000000 |         |
+| 0x19      | 0x8000000000000800 |         |
+| 0x12      |                    | Invalid |
 
 ## MountApplicationPackage
 
