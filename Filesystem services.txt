@@ -28,117 +28,117 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 = fsp-srv =
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Required permissions-type and func
 |-
-| 0 || MountApplicationPackage
+| 0 || MountApplicationPackage || 
 |-
-| 1 || [[#Initialize]]
+| 1 || [[#Initialize]] || 
 |-
-| 2 || MountRomFs
+| 2 || MountRomFs || 
 |-
-| 7 || [[#MountContent7]]
+| 7 || [[#MountContent7]] || 
 |-
-| 8 || [[#MountContent]]
+| 8 || [[#MountContent]] || 
 |-
-| 11 || [[#MountBis]]
+| 11 || [[#MountBis]] || 
 |-
-| 12 || [[#OpenBisPartition]]
+| 12 || [[#OpenBisPartition]] || 
 |-
-| 13 || InvalidateBisCache
+| 13 || InvalidateBisCache || 
 |-
-| 17 || OpenHostFileSystemImpl
+| 17 || OpenHostFileSystemImpl || 
 |-
-| 18 || MountSdCard
+| 18 || MountSdCard || 
 |-
-| 19 || FormatSdCard
+| 19 || FormatSdCard || 
 |-
-| 21 || [[#DeleteSaveData]]
+| 21 || [[#DeleteSaveData]] || 
 |-
-| 22 || [[#CreateSaveData]]
+| 22 || [[#CreateSaveData]] || 
 |-
-| 23 || [[#CreateSystemSaveData]]
+| 23 || [[#CreateSystemSaveData]] || 
 |-
-| 24 || RegisterSaveDataAtomicDeletion
+| 24 || RegisterSaveDataAtomicDeletion || 
 |-
-| 25 ||
+| 25 || || 
 |-
-| 26 || FormatSdCardDryRun 
+| 26 || FormatSdCardDryRun || 
 |-
-| 27 ||
+| 27 || || 
 |-
-| 30 || [[#OpenGameCardPartition]]
+| 30 || [[#OpenGameCardPartition]] || 
 |-
-| 31 || [[#MountGameCardPartition]]
+| 31 || [[#MountGameCardPartition]] || 
 |-
-| 51 || [[#MountSaveData]]
+| 51 || [[#MountSaveData]] || 
 |-
-| 52 || [[#MountSystemSaveData]]
+| 52 || [[#MountSystemSaveData]] || 
 |-
-| 53 || Returns an [[#IFileSystem]].
+| 53 || Returns an [[#IFileSystem]]. || 
 |-
-| 58 || ReadSaveDataFileSystemExtraData
+| 58 || ReadSaveDataFileSystemExtraData || 
 |-
-| 59 || WriteSaveDataFileSystemExtraData
+| 59 || WriteSaveDataFileSystemExtraData || 
 |-
-| 60 || OpenSaveDataInfoReader
+| 60 || OpenSaveDataInfoReader || 
 |-
-| 61 || OpenSaveDataIterator
+| 61 || OpenSaveDataIterator || 
 |-
-| 80 || OpenSaveDataThumbnailFile
+| 80 || OpenSaveDataThumbnailFile || 
 |-
-| 100 || MountImageDirectory
+| 100 || MountImageDirectory || 
 |-
-| 110 || [[#MountContentStorage]]
+| 110 || [[#MountContentStorage]] || 
 |-
-| 200 || OpenHost
+| 200 || OpenHost || 
 |-
-| 202 || [[#OpenDataStorageByDataId]]
+| 202 || [[#OpenDataStorageByDataId]] || 
 |-
-| 203 || Returns an [[#IStorage]].
+| 203 || Returns an [[#IStorage]]. || 
 |-
-| 400 || [[#OpenDeviceOperator]]
+| 400 || [[#OpenDeviceOperator]] || 
 |-
-| 500 || [[#OpenSdCardDetectionEventNotifier]]
+| 500 || [[#OpenSdCardDetectionEventNotifier]] || 
 |-
-| 501 || [[#OpenGameCardDetectionEventNotifier]]
+| 501 || [[#OpenGameCardDetectionEventNotifier]] || 
 |-
-| 600 || SetCurrentPosixTime
+| 600 || SetCurrentPosixTime || 
 |-
-| 601 || QuerySaveDataTotalSize
+| 601 || QuerySaveDataTotalSize || 
 |-
-| 602 || [[#VerifySaveData]]
+| 602 || [[#VerifySaveData]] || 
 |-
-| 603 || CorruptSaveDataForDebug
+| 603 || CorruptSaveDataForDebug || 
 |-
-| 604 || CreatePaddingFile
+| 604 || CreatePaddingFile || 
 |-
-| 605 || DeleteAllPaddingFiles
+| 605 || DeleteAllPaddingFiles || 
 |-
-| 606 || GetRightsId
+| 606 || GetRightsId || 
 |-
-| 607 || RegisterExternalKey
+| 607 || RegisterExternalKey || 
 |-
-| 608 || UnregisterExternalKey
+| 608 || UnregisterExternalKey || 
 |-
-| 609 ||
+| 609 || || 
 |-
-| 620 || SetSdCardEncryptionSeed
+| 620 || SetSdCardEncryptionSeed || 
 |-
-| 800 || GetAndClearFileSystemProxyErrorInfo
+| 800 || GetAndClearFileSystemProxyErrorInfo || 
 |-
-| 1000 || SetBisRootForHost
+| 1000 || SetBisRootForHost || 
 |-
-| 1001 || SetSaveDataSize
+| 1001 || SetSaveDataSize || 
 |-
-| 1002 || SetSaveDataRootPath
+| 1002 || SetSaveDataRootPath || 
 |-
-| 1003 || DisableAutoSaveDataCreation
+| 1003 || DisableAutoSaveDataCreation || 
 |-
-| 1004 || [[#SetGlobalAccessLogMode]]
+| 1004 || [[#SetGlobalAccessLogMode]] || 0x10, 1
 |-
-| 1005 || [[#GetGlobalAccessLogMode]]
+| 1005 || [[#GetGlobalAccessLogMode]] || None
 |-
-| 1006 || [[#OutputAccessLogToSdCard]]
+| 1006 || [[#OutputAccessLogToSdCard]] || None
 |}
 
 == Permissions ==
