@@ -107,25 +107,25 @@ non-zero retval is basically 0x3.
 Panic is triggered when the input type is
 \>0x26.
 
-| Type(s)                            | Mask                | Non-zero retval | Notes                                                                                                                           |
-| ---------------------------------- | ------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| 0xA 0xD 0x16 0x1F 0x20 0x21 0x22   | 0x8000000000000080  | Default         |                                                                                                                                 |
-| 0x15 0x17 0x18 0x19 0x1A 0x1B 0x1C | 0x8000000000010080  | Default         |                                                                                                                                 |
-| 0x0 0x1 0x2 0x3 0x4 0x5            | 0x8000000000000801  | 0x1             |                                                                                                                                 |
-| 0x9 0x1D 0x1E                      | 0x8000000000000084  | Default         |                                                                                                                                 |
-| 0xB 0xC                            | 0x8000000000008080  | Default         |                                                                                                                                 |
-| 0xE 0x23                           | 0xc000000000200000  | Default         |                                                                                                                                 |
-| 0x12 0x13                          | 0x8000000000000020  | Default         |                                                                                                                                 |
-| 0x6                                |                     |                 | In this case it appears the func returns retval & 0xff, where retval = {bit0=0, bit1..bit63=obj\_permissions starting at bit0}? |
-| 0x7                                | 0x8000000000000800  | Default         |                                                                                                                                 |
-| 0x8                                | 0x8000000000001000  | Default         |                                                                                                                                 |
-| 0xF                                | 0x8000000000000010  | Default         |                                                                                                                                 |
-| 0x10                               | 0x8000000000040020; | Default         |                                                                                                                                 |
-| 0x11                               | 0x8000000000000028  | Default         |                                                                                                                                 |
-| 0x14                               | 0x8000000000010082  | Default         |                                                                                                                                 |
-| 0x24                               | 0x8000000000000100  | Default         |                                                                                                                                 |
-| 0x25                               | 0x8000000000100008  | 0x1             |                                                                                                                                 |
-| 0x26                               | 0xC000000000400000  | Default         |                                                                                                                                 |
+| Type(s)                            | Mask               | Non-zero retval | Notes                                                                                                                           |
+| ---------------------------------- | ------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 0xA 0xD 0x16 0x1F 0x20 0x21 0x22   | 0x8000000000000080 | Default         |                                                                                                                                 |
+| 0x15 0x17 0x18 0x19 0x1A 0x1B 0x1C | 0x8000000000010080 | Default         |                                                                                                                                 |
+| 0x0 0x1 0x2 0x3 0x4 0x5            | 0x8000000000000801 | 0x1             |                                                                                                                                 |
+| 0x9 0x1D 0x1E                      | 0x8000000000000084 | Default         |                                                                                                                                 |
+| 0xB 0xC                            | 0x8000000000008080 | Default         |                                                                                                                                 |
+| 0xE 0x23                           | 0xc000000000200000 | Default         |                                                                                                                                 |
+| 0x12 0x13                          | 0x8000000000000020 | Default         |                                                                                                                                 |
+| 0x6                                |                    |                 | In this case it appears the func returns retval & 0xff, where retval = {bit0=0, bit1..bit63=obj\_permissions starting at bit0}? |
+| 0x7                                | 0x8000000000000800 | Default         |                                                                                                                                 |
+| 0x8                                | 0x8000000000001000 | Default         |                                                                                                                                 |
+| 0xF                                | 0x8000000000000010 | Default         |                                                                                                                                 |
+| 0x10                               | 0x8000000000040020 | Default         |                                                                                                                                 |
+| 0x11                               | 0x8000000000000028 | Default         |                                                                                                                                 |
+| 0x14                               | 0x8000000000010082 | Default         |                                                                                                                                 |
+| 0x24                               | 0x8000000000000100 | Default         |                                                                                                                                 |
+| 0x25                               | 0x8000000000100008 | 0x1             |                                                                                                                                 |
+| 0x26                               | 0xC000000000400000 | Default         |                                                                                                                                 |
 
 ## MountApplicationPackage
 
