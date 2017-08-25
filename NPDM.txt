@@ -159,7 +159,7 @@ Looks like an old crappy version of ACID. It has the guessed version field 0 ins
 | ...
 |}
 
-Permissions bitmask:
+[[Filesystem_services#Permissions|Permissions]] bitmask:
 {| class="wikitable" border="1"
 |-
 ! Bit
@@ -170,6 +170,9 @@ Permissions bitmask:
 |-
 | 34
 | Enables access to [[Filesystem_services|Bis]] partitionID 27 and 28?
+|-
+| 63
+| Enables access to everything: all [[Filesystem_services#Permissions|permission-types]] which check a bitmask have this bit set.
 |}
 
 For bit62 in permissions, see [[SPL_services#GetConfig|here]].

@@ -55,13 +55,14 @@ field 0 instead of 1.
 | 0x4    | 0x8  | Permissions bitmask                  |
 | ...    | ...  | ...                                  |
 
-Permissions
+[Permissions](Filesystem%20services#Permissions.md##Permissions "wikilink")
 bitmask:
 
-| Bit | Description                                                                         |
-| --- | ----------------------------------------------------------------------------------- |
-| 0   | MountContent\* is accessible when set.                                              |
-| 34  | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28? |
+| Bit | Description                                                                                                                                                 |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | MountContent\* is accessible when set.                                                                                                                      |
+| 34  | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28?                                                                         |
+| 63  | Enables access to everything: all [permission-types](Filesystem%20services#Permissions.md##Permissions "wikilink") which check a bitmask have this bit set. |
 
 For bit62 in permissions, see
 [here](SPL%20services#GetConfig.md##GetConfig "wikilink").
