@@ -44,25 +44,33 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 # ACI0
 
 Looks like an old crappy version of ACID. It has the guessed version
-field 0 instead of
-1.
+field 0 instead of 1.
 
 # FS Access Control
 
-| Word | Bit | Description                                                                         |
-| ---- | --- | ----------------------------------------------------------------------------------- |
-| 0    |     | Version? Always 1.                                                                  |
-| 1    | 0   | MountContent\* is accessible when set.                                              |
-| 1    | 2   | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28? |
+| Offset | Size | Description                          |
+| ------ | ---- | ------------------------------------ |
+| 0x0    | 0x1  | Version? Always 1. Must be non-zero. |
+| 0x1    | 0x3  | Padding                              |
+| 0x4    | 0x8  | Permissions bitmask                  |
+| ...    | ...  | ...                                  |
 
-For bit62 in word1, see
+Permissions
+bitmask:
+
+| Bit | Description                                                                         |
+| --- | ----------------------------------------------------------------------------------- |
+| 0   | MountContent\* is accessible when set.                                              |
+| 34  | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28? |
+
+For bit62 in permissions, see
 [here](SPL%20services#GetConfig.md##GetConfig "wikilink").
 
-Web-applets access control:
+Web-applets permissions:
 
-  - "LibAppletWeb" and "LibAppletOff" have same access control: word0
-    bit0 set, word1 bit0 and bit3 set, and word2 bit30 set.
-  - Rest of the web-applets: Same as above except word1 bit0 isn't set.
+  - "LibAppletWeb" and "LibAppletOff" have same access control: bit0 and
+    bit3 set, and bit62 set.
+  - Rest of the web-applets: Same as above except bit0 isn't set.
 
 # Service Access Control
 
