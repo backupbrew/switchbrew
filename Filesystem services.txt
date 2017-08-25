@@ -164,7 +164,7 @@ Panic is triggered when the input type is >0x26.
 |-
 | 0xB 0xC || 0x8000000000008080 || Default || 
 |-
-| 0xE 0x23 || 0xc000000000200000 || Default || 
+| 0xE 0x23 || 0xC000000000200000 || Default || 
 |-
 | 0x12 0x13 || 0x8000000000000020 || Default || 
 |-

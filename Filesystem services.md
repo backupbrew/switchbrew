@@ -114,7 +114,7 @@ Panic is triggered when the input type is
 | 0x0 0x1 0x2 0x3 0x4 0x5            | 0x8000000000000801 | 0x1             |                                                                                                                                 |
 | 0x9 0x1D 0x1E                      | 0x8000000000000084 | Default         |                                                                                                                                 |
 | 0xB 0xC                            | 0x8000000000008080 | Default         |                                                                                                                                 |
-| 0xE 0x23                           | 0xc000000000200000 | Default         |                                                                                                                                 |
+| 0xE 0x23                           | 0xC000000000200000 | Default         |                                                                                                                                 |
 | 0x12 0x13                          | 0x8000000000000020 | Default         |                                                                                                                                 |
 | 0x6                                |                    |                 | In this case it appears the func returns retval & 0xff, where retval = {bit0=0, bit1..bit63=obj\_permissions starting at bit0}? |
 | 0x7                                | 0x8000000000000800 | Default         |                                                                                                                                 |
