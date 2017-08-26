@@ -106,21 +106,21 @@ used.
 | 0xFFFFFFFFBFDC8000-0xFFFFFFFFBFDC8FFF | 0x70006000                 | 0x1000  | 0x60000000000607 | RW-         | UART-A                                      |
 | 0xFFFFFFFFBFDCA000-0xFFFFFFFFBFDCBFFF | 0x80060000                 | 0x2000  | 0x6000000000070B | RW-         |                                             |
 | 0xFFFFFFFFBFDCE000-0xFFFFFFFFBFDCFFFF | 0x80068000                 | 0x2000  | 0x6000000000070B | RW-         | Kernel main stack (cpu0)                    |
-| 0xFFFFFFFFBFDD2000-0xFFFFFFFFBFDD2FFF | 0x80070000                 | 0x1000  | 0x6000000000070B | RW-         |                                             |
+| 0xFFFFFFFFBFDD2000-0xFFFFFFFFBFDD2FFF | 0x80070000                 | 0x1000  | 0x6000000000070B | RW-         | Kernel runner stack (cpu0)                  |
 | 0xFFFFFFFFBFDD4000-0xFFFFFFFFBFDD5FFF | 0x80062000                 | 0x2000  | 0x6000000000070B | RW-         |                                             |
 | 0xFFFFFFFFBFDD8000-0xFFFFFFFFBFDD9FFF | 0x8006A000                 | 0x2000  | 0x6000000000070B | RW-         | Kernel main stack (cpu1)                    |
-| 0xFFFFFFFFBFDDC000-0xFFFFFFFFBFDDCFFF | 0x80071000                 | 0x1000  | 0x6000000000070B | RW-         |                                             |
+| 0xFFFFFFFFBFDDC000-0xFFFFFFFFBFDDCFFF | 0x80071000                 | 0x1000  | 0x6000000000070B | RW-         | Kernel runner stack (cpu1)                  |
 | 0xFFFFFFFFBFDDE000-0xFFFFFFFFBFDDFFFF | 0x80064000                 | 0x2000  | 0x6000000000070B | RW-         |                                             |
 | 0xFFFFFFFFBFDE2000-0xFFFFFFFFBFDE3FFF | 0x8006C000                 | 0x2000  | 0x6000000000070B | RW-         | Kernel main stack (cpu2)                    |
-| 0xFFFFFFFFBFDE6000-0xFFFFFFFFBFDE6FFF | 0x80072000                 | 0x1000  | 0x6000000000070B | RW-         |                                             |
+| 0xFFFFFFFFBFDE6000-0xFFFFFFFFBFDE6FFF | 0x80072000                 | 0x1000  | 0x6000000000070B | RW-         | Kernel runner stack (cpu2)                  |
 | 0xFFFFFFFFBFDE8000-0xFFFFFFFFBFDE9FFF | 0x80066000                 | 0x2000  | 0x6000000000070B | RW-         |                                             |
 | 0xFFFFFFFFBFDEC000-0xFFFFFFFFBFDEDFFF | 0x8006E000                 | 0x2000  | 0x6000000000070B | RW-         | Kernel main stack (cpu3)                    |
-| 0xFFFFFFFFBFDF0000-0xFFFFFFFFBFDF0FFF | 0x80073000                 | 0x1000  | 0x6000000000070B | RW-         |                                             |
+| 0xFFFFFFFFBFDF0000-0xFFFFFFFFBFDF0FFF | 0x80073000                 | 0x1000  | 0x6000000000070B | RW-         | Kernel runner stack (cpu3)                  |
 | 0xFFFFFFFFBFDFB000-0xFFFFFFFFBFDFBFFF | 0x50041000                 | 0x1000  | 0x60000000000607 | RW-         | ARM Interrupt Distributor                   |
 | 0xFFFFFFFFBFDFD000-0xFFFFFFFFBFDFDFFF | 0x50042000                 | 0x1000  | 0x60000000000607 | RW-         | Interrupt Controller Physical CPU interface |
 | 0xFFFFFFFFBFDF2000-0xFFFFFFFFBFDF3FFF | 0x80060000+(cpuid\*0x2000) | 0x2000  | 0x6000000000070B | RW-         |                                             |
 | 0xFFFFFFFFBFDF6000-0xFFFFFFFFBFDF7FFF | 0x80068000+(cpuid\*0x2000) | 0x2000  | 0x6000000000070B | RW-         | Kernel main stack (per-core self-mirror)    |
-| 0xFFFFFFFFBFDFF000-0xFFFFFFFFBFDFFFFF | 0x80084000+(cpuid\*0x1000) | 0x1000  | 0x6000000000070B | RW-         |                                             |
+| 0xFFFFFFFFBFDFF000-0xFFFFFFFFBFDFFFFF | 0x80084000+(cpuid\*0x1000) | 0x1000  | 0x6000000000070B | RW-         | Kernel runner stack (per-core self-mirror)  |
 | 0xFFFFFFFE00000000-...                | 0x80000000                 | ...     | 0x60000000000709 | RW-         | Raw DRAM access                             |
 
 ## 2.0.0
