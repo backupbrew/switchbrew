@@ -73,7 +73,7 @@ abort.
 | 604  | CreatePaddingFile                                                                      |                                    |
 | 605  | DeleteAllPaddingFiles                                                                  |                                    |
 | 606  | GetRightsId                                                                            |                                    |
-| 607  | RegisterExternalKey                                                                    |                                    |
+| 607  | RegisterExternalKey                                                                    | 0x18, 1                            |
 | 608  | UnregisterExternalKey                                                                  |                                    |
 | 609  | Returns 0x10-byte output. Takes a ContentPath?                                         |                                    |
 | 620  | [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                       | 0x19, 1                            |
