@@ -75,7 +75,7 @@ abort.
 | 606  | GetRightsId                                                                            |                                    |
 | 607  | RegisterExternalKey                                                                    |                                    |
 | 608  | UnregisterExternalKey                                                                  |                                    |
-| 609  |                                                                                        |                                    |
+| 609  | Returns 0x10-byte output. Takes a ContentPath?                                         |                                    |
 | 620  | SetSdCardEncryptionSeed                                                                |                                    |
 | 800  | GetAndClearFileSystemProxyErrorInfo                                                    |                                    |
 | 1000 | SetBisRootForHost                                                                      |                                    |

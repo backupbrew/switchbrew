@@ -120,7 +120,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 608 || UnregisterExternalKey || 
 |-
-| 609 || || 
+| 609 || Returns 0x10-byte output. Takes a ContentPath? || 
 |-
 | 620 || SetSdCardEncryptionSeed || 
 |-
