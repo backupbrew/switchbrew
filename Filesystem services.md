@@ -326,6 +326,13 @@ The input u64 high-byte must be non-zero, otherwise an
 
 Takes 0x10-bytes of input.
 
+Appears to be used to load the seed into FS-module state, since
+FS-module itself doesn't seem to have file-reading code to handle this
+itself.
+
+[NS](NS%20Services.md "wikilink")-module uses this with data read from a
+file.
+
 ## SetGlobalAccessLogMode
 
 Takes an input u32.
