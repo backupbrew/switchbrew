@@ -1,6 +1,3 @@
-This is the Switch equivalent of
-[this](https://3dbrew.org/wiki/NS_and_APT_Services).
-
 # ns:am
 
 | Cmd  | Name                                                                     |
