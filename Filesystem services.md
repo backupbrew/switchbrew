@@ -30,7 +30,7 @@ abort.
 
 | Cmd  | Name                                                                                   | Required permissions-type and func |
 | ---- | -------------------------------------------------------------------------------------- | ---------------------------------- |
-| 0    | MountApplicationPackage                                                                |                                    |
+| 0    | MountApplicationPackage (FS-module v2.x cmdhandler only supports cmds \>=1)            |                                    |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |                                    |
 | 2    | MountRomFs                                                                             |                                    |
 | 7    | [\#MountContent7](#MountContent7 "wikilink")                                           |                                    |

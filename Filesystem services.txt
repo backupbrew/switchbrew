@@ -30,7 +30,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 ! Cmd || Name || Required permissions-type and func
 |-
-| 0 || MountApplicationPackage || 
+| 0 || MountApplicationPackage (FS-module v2.x cmdhandler only supports cmds >=1) || 
 |-
 | 1 || [[#Initialize]] || 
 |-
