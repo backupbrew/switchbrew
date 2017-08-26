@@ -120,6 +120,12 @@ As of [[2.0.0]] KASLR is not used.
 |-
 | All || 0xFFFFFFFFBFDFD000-0xFFFFFFFFBFDFDFFF || 0x50042000 || 0x1000 || 0x60000000000607 || RW- || Interrupt Controller Physical CPU interface
 |-
+| All || 0xFFFFFFFFBFDF2000-0xFFFFFFFFBFDF3FFF || 0x80060000+(cpuid*0x2000) || 0x2000 || 0x6000000000070B || RW- ||
+|-
+| All || 0xFFFFFFFFBFDF6000-0xFFFFFFFFBFDF7FFF || 0x80068000+(cpuid*0x2000) || 0x2000 || 0x6000000000070B || RW- || Kernel main stack (per-core self-mirror)
+|-
+| All || 0xFFFFFFFFBFDFF000-0xFFFFFFFFBFDFFFFF || 0x80084000+(cpuid*0x1000) || 0x1000 || 0x6000000000070B || RW- ||
+|-
 | All || 0xFFFFFFFE00000000-... || 0x80000000 || ... || 0x60000000000709 || RW- || Raw DRAM access
 |}
 
