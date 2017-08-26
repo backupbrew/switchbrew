@@ -76,7 +76,7 @@ abort.
 | 607  | RegisterExternalKey                                                                    |                                    |
 | 608  | UnregisterExternalKey                                                                  |                                    |
 | 609  | Returns 0x10-byte output. Takes a ContentPath?                                         |                                    |
-| 620  | SetSdCardEncryptionSeed                                                                |                                    |
+| 620  | [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                       | 0x19, 1                            |
 | 800  | GetAndClearFileSystemProxyErrorInfo                                                    |                                    |
 | 1000 | SetBisRootForHost                                                                      |                                    |
 | 1001 | SetSaveDataSize                                                                        |                                    |
@@ -322,6 +322,10 @@ Takes an unknown input u64 and a type-0x6 output buffer.
 The input u64 high-byte must be non-zero, otherwise an
 [error](Error%20codes.md "wikilink") is returned(0xE02).
 
+## SetSdCardEncryptionSeed
+
+Takes 0x10-bytes of input.
+
 ## SetGlobalAccessLogMode
 
 Takes an input u32.
@@ -343,11 +347,9 @@ User-processes only use this when the value previously loaded from
 [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink") has bit1
 set.
 
-GetGlobalAccessLogMode and OutputAccessLogToSdCard are usable without
-special permissions, however SetGlobalAccessLogMode requires that. When
-bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for
-OutputAccessLogToSdCard. However even with that set the log doesn't show
-up SD, unknown why.
+When bit1 in GlobalAccessLogMode is clear, FS-module will just return 0
+for OutputAccessLogToSdCard. However even with that set the log doesn't
+show up SD, unknown why.
 
 The input buffer is written to the "$FsAccessLog:/FsAccessLog.txt" file,
 where "$FsAccessLog" is the SD-card mount-name. It's written to the

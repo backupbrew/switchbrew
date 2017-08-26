@@ -122,7 +122,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 609 || Returns 0x10-byte output. Takes a ContentPath? || 
 |-
-| 620 || SetSdCardEncryptionSeed || 
+| 620 || [[#SetSdCardEncryptionSeed]] || 0x19, 1
 |-
 | 800 || GetAndClearFileSystemProxyErrorInfo || 
 |-
@@ -359,6 +359,9 @@ Takes an unknown input u64 and a type-0x6 output buffer.
 
 The input u64 high-byte must be non-zero, otherwise an [[Error_codes|error]] is returned(0xE02).
 
+== SetSdCardEncryptionSeed ==
+Takes 0x10-bytes of input.
+
 == SetGlobalAccessLogMode ==
 Takes an input u32.
 
@@ -374,7 +377,7 @@ The input buffer is the string to output to the log. User-processes normally inc
 
 User-processes only use this when the value previously loaded from [[#GetGlobalAccessLogMode]] has bit1 set.
 
-GetGlobalAccessLogMode and OutputAccessLogToSdCard are usable without special permissions, however SetGlobalAccessLogMode requires that. When bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for OutputAccessLogToSdCard. However even with that set the log doesn't show up SD, unknown why.
+When bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for OutputAccessLogToSdCard. However even with that set the log doesn't show up SD, unknown why.
 
 The input buffer is written to the "$FsAccessLog:/FsAccessLog.txt" file, where "$FsAccessLog" is the SD-card mount-name. It's written to the current end of the file(appended).
 
