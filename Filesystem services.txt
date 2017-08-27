@@ -102,7 +102,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 501 || [[#OpenGameCardDetectionEventNotifier]] || 
 |-
-| 600 || SetCurrentPosixTime || 
+| 600 || SetCurrentPosixTime || 0x18, 1
 |-
 | 601 || QuerySaveDataTotalSize || 
 |-

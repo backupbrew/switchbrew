@@ -66,7 +66,7 @@ abort.
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |                                    |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")     |                                    |
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink") |                                    |
-| 600  | SetCurrentPosixTime                                                                    |                                    |
+| 600  | SetCurrentPosixTime                                                                    | 0x18, 1                            |
 | 601  | QuerySaveDataTotalSize                                                                 |                                    |
 | 602  | [\#VerifySaveData](#VerifySaveData "wikilink")                                         |                                    |
 | 603  | CorruptSaveDataForDebug                                                                |                                    |
