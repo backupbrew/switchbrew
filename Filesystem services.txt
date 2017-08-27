@@ -36,7 +36,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 7 || [[#MountContent7]] || 
 |-
-| 8 || [[#MountContent]] || 
+| 8 || [[#MountContent]] || Depends on input.
 |-
 | 11 || [[#MountBis]] || 
 |-

@@ -33,7 +33,7 @@ abort.
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |                                    |
 | 2    | MountRomFs                                                                             |                                    |
 | 7    | [\#MountContent7](#MountContent7 "wikilink")                                           |                                    |
-| 8    | [\#MountContent](#MountContent "wikilink")                                             |                                    |
+| 8    | [\#MountContent](#MountContent "wikilink")                                             | Depends on input.                  |
 | 11   | [\#MountBis](#MountBis "wikilink")                                                     |                                    |
 | 12   | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                     |                                    |
 | 13   | InvalidateBisCache                                                                     |                                    |
