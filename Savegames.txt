@@ -36,7 +36,7 @@ This page describes the format of savegames contained in NAND. NAND savegames do
 |-
 | 0x008
 | 32
-| Hash
+| Hash of start of DPFS to end of 0x4000 block (usually/always? 0x300-0x3FFF)
 |-
 | 0x028
 | 8

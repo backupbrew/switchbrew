@@ -12,20 +12,21 @@ encrypted data in those areas(like 3DS did).
 
 #### DISF
 
-  - This is located @ 0x100 in the image, following the CMAC header.
+  - This is located @ 0x100 in the image, following the CMAC
+header.
 
-| Start | Length | Description                      |
-| ----- | ------ | -------------------------------- |
-| 0x000 | 4      | Magic ("DISF")                   |
-| 0x004 | 4      | Magic Number (0x40000)           |
-| 0x008 | 32     | Hash                             |
-| 0x028 | 8      | Primary Partition Table Offset   |
-| 0x030 | 8      | Primary Partition Table Size     |
-| 0x038 | 8      | Secondary Partition Table Offset |
-| 0x040 | 8      | Secondary Partition Table Size   |
-| 0x048 | 8      | Save Partition Offset            |
-| 0x050 | 8      | Save Partition Size              |
-| 0x258 |        | End                              |
+| Start | Length | Description                                                                 |
+| ----- | ------ | --------------------------------------------------------------------------- |
+| 0x000 | 4      | Magic ("DISF")                                                              |
+| 0x004 | 4      | Magic Number (0x40000)                                                      |
+| 0x008 | 32     | Hash of start of DPFS to end of 0x4000 block (usually/always? 0x300-0x3FFF) |
+| 0x028 | 8      | Primary Partition Table Offset                                              |
+| 0x030 | 8      | Primary Partition Table Size                                                |
+| 0x038 | 8      | Secondary Partition Table Offset                                            |
+| 0x040 | 8      | Secondary Partition Table Size                                              |
+| 0x048 | 8      | Save Partition Offset                                                       |
+| 0x050 | 8      | Save Partition Size                                                         |
+| 0x258 |        | End                                                                         |
 
 #### DPFS
 
