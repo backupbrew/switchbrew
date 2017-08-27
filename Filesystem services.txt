@@ -280,7 +280,28 @@ Returns an [[#IFileSystem]].
 
 May return errors when attempting to access NCA-paths for an update-title with a gamecard, when the gamecard isn't inserted. May return error 0x7D402 in some cases with update-titles. Non-val2 in32 values with NCA-type1 are unusable, even for normal titles.
 
-The official "MountApplicationPackage" func uses this with titleid=0 and in32=7.
+The official "MountApplicationPackage" func uses this with in64=0 and in32=7.
+
+After the in32-specific permissions are checked, it then checks permissions with permissions-type 0x25 and func0.
+
+When in32=5, it uses in64=0xffffffffffffffff internally, otherwise it checks if in64 is set to 0xffffffffffffffff then throws an error if so.
+
+{| class="wikitable" border="1"
+|-
+! in32 || Required permissions-type and func
+|-
+| 2 || 0x0, 0
+|-
+| 3 || 0x2, 0
+|-
+| 4 || 0x3, 0
+|-
+| 5 || 0x1, 0
+|-
+| 6 || 0x4, 0
+|-
+| 7 || 0x5, 0
+|}
 
 == MountBis ==
 Takes a type-0x19 input buffer string and a u32 Bis partitionID(see below). Official user-process code sets instr[0] = 0 normally.
