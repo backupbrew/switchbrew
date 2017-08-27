@@ -200,8 +200,8 @@ values with NCA-type1 are unusable, even for normal titles.
 The official "MountApplicationPackage" func uses this with in64=0 and
 in32=7.
 
-After the in32-specific permissions are checked, it then checks
-permissions with permissions-type 0x25 and func0.
+After the in32-specific permissions are checked, it then gets the func
+retval for permissions-type 0x25 and func0.
 
 When in32=5, it uses in64=0xffffffffffffffff internally, otherwise it
 checks if in64 is set to 0xffffffffffffffff then throws an error if so.
