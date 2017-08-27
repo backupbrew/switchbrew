@@ -185,6 +185,8 @@ Takes a type-0x19 input buffer, an in32, and an input title-id.
 
 The in32 must be 5 if the NCA type is 0 (control).
 
+The in32 must be 2..7.
+
 The input buffer is the output string path from nsam
 [GetContentNcaPath](NS%20Services#GetContentNcaPath.md##GetContentNcaPath "wikilink").
 
