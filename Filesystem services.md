@@ -30,7 +30,6 @@ abort.
 
 | Cmd  | Name                                                                                   | Required permissions-type and func |
 | ---- | -------------------------------------------------------------------------------------- | ---------------------------------- |
-| 0    | MountApplicationPackage (FS-module v2.x cmdhandler only supports cmds \>=1)            |                                    |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |                                    |
 | 2    | MountRomFs                                                                             |                                    |
 | 7    | [\#MountContent7](#MountContent7 "wikilink")                                           |                                    |
@@ -155,11 +154,6 @@ Func1(non-zero retval is always 0x1):
 | 0x19      | 0x8000000000000800 |         |
 | 0x12      |                    | Invalid |
 
-## MountApplicationPackage
-
-Presumably about the same as MountContent except this uses the titleID
-associated with the FS session?
-
 ## Initialize
 
 | Word | Value              |
@@ -200,6 +194,9 @@ May return errors when attempting to access NCA-paths for an
 update-title with a gamecard, when the gamecard isn't inserted. May
 return error 0x7D402 in some cases with update-titles. Non-val2 in32
 values with NCA-type1 are unusable, even for normal titles.
+
+The official "MountApplicationPackage" func uses this with titleid=0 and
+in32=7.
 
 ## MountBis
 
