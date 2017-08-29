@@ -50,6 +50,7 @@ fatal-errors, since the Description ends with bit21.
 | 123   | SSL                                                    |
 | 124   | Account                                                |
 | 126   | Mii                                                    |
+| 128   | AM                                                     |
 | 129   | Play Report                                            |
 | 133   | PCV                                                    |
 | 134   | OMM                                                    |
