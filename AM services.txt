@@ -3,8 +3,153 @@ AM (Applet Manager) provides services for interacting with system applets while 
 Contains multiple raw images, with at least the following: "NN_OMM_CHARGING_BIN_{begin|end}"(charging icon), low-battery icon, and the Nintendo Switch logo displayed during system boot.
 
 = appletAE =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 100 || GetISystemAppletProxy
+|-
+| 200 || GetILibraryAppletProxy
+|-
+| 300 || GetIOverlayAppletProxy
+|-
+| 350 || GetIApplicationProxy
+|-
+| 400 || GetILibraryAppletCreator
+|-
+|}
+
+== ISystemAppletProxy ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetICommonStateGetter
+|-
+| 1 || GetISelfController
+|-
+| 2 || GetIWindowController
+|-
+| 3 || GetIAudioController
+|-
+| 4 || GetIDisplayController
+|-
+| 10 || GetIProcessWindingController
+|-
+| 11 || GetILibraryAppletCreator
+|-
+| 20 || GetIHomeMenuFunctions
+|-
+| 21 || GetIGlobalStateController
+|-
+| 22 || GetIApplicationCreator
+|-
+| 1000 || GetIDebugFunctions
+|-
+|}
+
+== ILibraryAppletProxy ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetICommonStateGetter
+|-
+| 1 || GetISelfController
+|-
+| 2 || GetIWindowController
+|-
+| 3 || GetIAudioController
+|-
+| 4 || GetIDisplayController
+|-
+| 10 || GetIProcessWindingController
+|-
+| 11 || GetILibraryAppletCreator
+|-
+| 20 || GetILibraryAppletSelfAccessor
+|-
+| 1000 || GetIDebugFunctions
+|-
+|}
+
+== IOverlayAppletProxy ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetICommonStateGetter
+|-
+| 1 || GetISelfController
+|-
+| 2 || GetIWindowController
+|-
+| 3 || GetIAudioController
+|-
+| 4 || GetIDisplayController
+|-
+| 10 || GetIProcessWindingController
+|-
+| 11 || GetILibraryAppletCreator
+|-
+| 20 || GetIOverlayFunctions
+|-
+| 1000 || GetIDebugFunctions
+|-
+|}
+
+== IApplicationProxy ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetICommonStateGetter
+|-
+| 1 || GetISelfController
+|-
+| 2 || GetIWindowController
+|-
+| 3 || GetIAudioController
+|-
+| 4 || GetIDisplayController
+|-
+| 10 || GetIProcessWindingController
+|-
+| 11 || GetILibraryAppletCreator
+|-
+| 20 || GetIApplicationFunctions
+|-
+| 1000 || GetIDebugFunctions
+|-
+|}
+
+== ILibraryAppletCreator ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetILibraryAppletAccessor
+|-
+| 1 || TerminateAllLibraryApplets
+|-
+| 2 || AreAnyLibraryAppletsLeft
+|-
+| 10 || CreateStorage
+|-
+| 11 || CreateTransferMemoryStorage
+|-
+| 12 || CreateHandleStorage
+|-
+|}
 
 = appletOE =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetIApplicationProxy
+|-
+|}
 
 = idle:sys =
 

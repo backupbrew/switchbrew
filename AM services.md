@@ -8,7 +8,95 @@ and the Nintendo Switch logo displayed during system boot.
 
 # appletAE
 
+| Cmd | Name                     |
+| --- | ------------------------ |
+| 100 | GetISystemAppletProxy    |
+| 200 | GetILibraryAppletProxy   |
+| 300 | GetIOverlayAppletProxy   |
+| 350 | GetIApplicationProxy     |
+| 400 | GetILibraryAppletCreator |
+|     |                          |
+
+## ISystemAppletProxy
+
+| Cmd  | Name                         |
+| ---- | ---------------------------- |
+| 0    | GetICommonStateGetter        |
+| 1    | GetISelfController           |
+| 2    | GetIWindowController         |
+| 3    | GetIAudioController          |
+| 4    | GetIDisplayController        |
+| 10   | GetIProcessWindingController |
+| 11   | GetILibraryAppletCreator     |
+| 20   | GetIHomeMenuFunctions        |
+| 21   | GetIGlobalStateController    |
+| 22   | GetIApplicationCreator       |
+| 1000 | GetIDebugFunctions           |
+|      |                              |
+
+## ILibraryAppletProxy
+
+| Cmd  | Name                          |
+| ---- | ----------------------------- |
+| 0    | GetICommonStateGetter         |
+| 1    | GetISelfController            |
+| 2    | GetIWindowController          |
+| 3    | GetIAudioController           |
+| 4    | GetIDisplayController         |
+| 10   | GetIProcessWindingController  |
+| 11   | GetILibraryAppletCreator      |
+| 20   | GetILibraryAppletSelfAccessor |
+| 1000 | GetIDebugFunctions            |
+|      |                               |
+
+## IOverlayAppletProxy
+
+| Cmd  | Name                         |
+| ---- | ---------------------------- |
+| 0    | GetICommonStateGetter        |
+| 1    | GetISelfController           |
+| 2    | GetIWindowController         |
+| 3    | GetIAudioController          |
+| 4    | GetIDisplayController        |
+| 10   | GetIProcessWindingController |
+| 11   | GetILibraryAppletCreator     |
+| 20   | GetIOverlayFunctions         |
+| 1000 | GetIDebugFunctions           |
+|      |                              |
+
+## IApplicationProxy
+
+| Cmd  | Name                         |
+| ---- | ---------------------------- |
+| 0    | GetICommonStateGetter        |
+| 1    | GetISelfController           |
+| 2    | GetIWindowController         |
+| 3    | GetIAudioController          |
+| 4    | GetIDisplayController        |
+| 10   | GetIProcessWindingController |
+| 11   | GetILibraryAppletCreator     |
+| 20   | GetIApplicationFunctions     |
+| 1000 | GetIDebugFunctions           |
+|      |                              |
+
+## ILibraryAppletCreator
+
+| Cmd | Name                        |
+| --- | --------------------------- |
+| 0   | GetILibraryAppletAccessor   |
+| 1   | TerminateAllLibraryApplets  |
+| 2   | AreAnyLibraryAppletsLeft    |
+| 10  | CreateStorage               |
+| 11  | CreateTransferMemoryStorage |
+| 12  | CreateHandleStorage         |
+|     |                             |
+
 # appletOE
+
+| Cmd | Name                 |
+| --- | -------------------- |
+| 0   | GetIApplicationProxy |
+|     |                      |
 
 # idle:sys
 
