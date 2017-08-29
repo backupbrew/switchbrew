@@ -223,13 +223,15 @@ When type == 5 you are talking to the IPC manager.
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Arguments
 |-
-| 0 || ConvertSessionToDomain
+| 0 || ConvertSessionToDomain || None
 |-
-| 2 || DuplicateSession
+| 1 || ConvertDomainToSession || u32 domain
 |-
-| 3 || QueryPointerBufferSize
+| 2 || DuplicateSession || None
 |-
-| 4 || DuplicateSessionEx
+| 3 || QueryPointerBufferSize || None
+|-
+| 4 || DuplicateSessionEx || u32 unknown
 |}

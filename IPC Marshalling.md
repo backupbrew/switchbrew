@@ -179,9 +179,10 @@ All offsets are given is in number of u32 words.
 
 When type == 5 you are talking to the IPC manager.
 
-| Cmd | Name                   |
-| --- | ---------------------- |
-| 0   | ConvertSessionToDomain |
-| 2   | DuplicateSession       |
-| 3   | QueryPointerBufferSize |
-| 4   | DuplicateSessionEx     |
+| Cmd | Name                   | Arguments   |
+| --- | ---------------------- | ----------- |
+| 0   | ConvertSessionToDomain | None        |
+| 1   | ConvertDomainToSession | u32 domain  |
+| 2   | DuplicateSession       | None        |
+| 3   | QueryPointerBufferSize | None        |
+| 4   | DuplicateSessionEx     | u32 unknown |
