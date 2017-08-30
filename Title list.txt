@@ -100,6 +100,8 @@
 |-
 | 0100000000000037 || [[3.0.0|v201327002]] (12.0.1.154) || ro
 |-
+| 0100000000000038 || || This title is referenced by [[3.0.0]] boot2.prodBoot, but does not exist on retail systems.
+|-
 | 0100000000000039 || [[3.0.0|v201327002]] (12.0.1.154) || sdb
 |}
 
