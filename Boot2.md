@@ -59,6 +59,9 @@ titles in this order:
   - 0100000000000032 (eclct)
   - 010000000000002F (npns) \[skipped in maintenance\]
   - 0100000000000034 (fatal)
+  - 0100000000000037 (ro) \[3.0.0+\]
+  - 0100000000000038 (doesn't exist on retail systems) \[3.0.0+\]
+  - 0100000000000039 (sdb) \[3.0.0+\]
 
 This list is probably optimized for boot-time. It launches
 display-related things first presumably to make sure it displays
