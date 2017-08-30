@@ -31,9 +31,10 @@ abort.
 | Cmd  | Name                                                                                   | Required permissions-type and func |
 | ---- | -------------------------------------------------------------------------------------- | ---------------------------------- |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |                                    |
-| 2    | MountRomFs                                                                             |                                    |
+| 2    | OpenDataFileSystemByCurrentProcess                                                     |                                    |
 | 7    | [\#MountContent7](#MountContent7 "wikilink")                                           |                                    |
 | 8    | [\#MountContent](#MountContent "wikilink")                                             | Depends on input.                  |
+| 9    | OpenDataFileSystemByApplicationId \[3.0.0+\]                                           |                                    |
 | 11   | [\#MountBis](#MountBis "wikilink")                                                     |                                    |
 | 12   | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                     |                                    |
 | 13   | InvalidateBisCache                                                                     |                                    |
@@ -44,14 +45,16 @@ abort.
 | 22   | [\#CreateSaveData](#CreateSaveData "wikilink")                                         |                                    |
 | 23   | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                             |                                    |
 | 24   | RegisterSaveDataAtomicDeletion                                                         |                                    |
-| 25   |                                                                                        |                                    |
+| 25   | DeleteSaveDataWithSpaceId                                                              |                                    |
 | 26   | FormatSdCardDryRun                                                                     |                                    |
-| 27   |                                                                                        |                                    |
+| 27   | IsExFatSupported                                                                       |                                    |
 | 30   | [\#OpenGameCardPartition](#OpenGameCardPartition "wikilink")                           |                                    |
 | 31   | [\#MountGameCardPartition](#MountGameCardPartition "wikilink")                         |                                    |
+| 32   | ExtendSaveData \[3.0.0+\]                                                              |                                    |
 | 51   | [\#MountSaveData](#MountSaveData "wikilink")                                           |                                    |
 | 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |                                    |
-| 53   | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                   |                                    |
+| 53   | MountSaveDataReadOnly                                                                  |                                    |
+| 57   | ReadSaveDataFileSystemExtraDataWithSpaceId \[3.0.0+\]                                  |                                    |
 | 58   | ReadSaveDataFileSystemExtraData                                                        |                                    |
 | 59   | WriteSaveDataFileSystemExtraData                                                       |                                    |
 | 60   | OpenSaveDataInfoReader                                                                 |                                    |
@@ -59,7 +62,8 @@ abort.
 | 80   | OpenSaveDataThumbnailFile                                                              |                                    |
 | 100  | MountImageDirectory                                                                    |                                    |
 | 110  | [\#MountContentStorage](#MountContentStorage "wikilink")                               |                                    |
-| 200  | OpenHost                                                                               |                                    |
+| 200  | OpenDataStorageByCurrentProcess                                                        |                                    |
+| 201  | OpenDataStorageByApplicationId \[3.0.0+\]                                              |                                    |
 | 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                       |                                    |
 | 203  | Returns an [\#IStorage](#IStorage "wikilink").                                         |                                    |
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |                                    |
@@ -74,7 +78,8 @@ abort.
 | 606  | GetRightsId                                                                            |                                    |
 | 607  | RegisterExternalKey                                                                    | 0x18, 1                            |
 | 608  | UnregisterExternalKey                                                                  |                                    |
-| 609  | Returns 0x10-byte output. Takes a ContentPath?                                         |                                    |
+| 609  | GetRightsIdByPath                                                                      |                                    |
+| 610  | GetRightsIdByPath2 (returns extra byte) \[3.0.0+\]                                     |                                    |
 | 620  | [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                       | 0x19, 1                            |
 | 800  | GetAndClearFileSystemProxyErrorInfo                                                    |                                    |
 | 1000 | SetBisRootForHost                                                                      |                                    |

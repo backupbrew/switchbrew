@@ -32,11 +32,13 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 1 || [[#Initialize]] || 
 |-
-| 2 || MountRomFs || 
+| 2 || OpenDataFileSystemByCurrentProcess || 
 |-
 | 7 || [[#MountContent7]] || 
 |-
 | 8 || [[#MountContent]] || Depends on input.
+|-
+| 9 || OpenDataFileSystemByApplicationId [3.0.0+] ||
 |-
 | 11 || [[#MountBis]] || 
 |-
@@ -58,21 +60,25 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 24 || RegisterSaveDataAtomicDeletion || 
 |-
-| 25 || || 
+| 25 || DeleteSaveDataWithSpaceId || 
 |-
 | 26 || FormatSdCardDryRun || 
 |-
-| 27 || || 
+| 27 || IsExFatSupported || 
 |-
 | 30 || [[#OpenGameCardPartition]] || 
 |-
 | 31 || [[#MountGameCardPartition]] || 
 |-
+| 32 || ExtendSaveData [3.0.0+] ||
+|-
 | 51 || [[#MountSaveData]] || 
 |-
 | 52 || [[#MountSystemSaveData]] || 
 |-
-| 53 || Returns an [[#IFileSystem]]. || 
+| 53 || MountSaveDataReadOnly || 
+|-
+| 57 || ReadSaveDataFileSystemExtraDataWithSpaceId [3.0.0+] || 
 |-
 | 58 || ReadSaveDataFileSystemExtraData || 
 |-
@@ -88,7 +94,9 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 110 || [[#MountContentStorage]] || 
 |-
-| 200 || OpenHost || 
+| 200 || OpenDataStorageByCurrentProcess || 
+|-
+| 201 || OpenDataStorageByApplicationId [3.0.0+] || 
 |-
 | 202 || [[#OpenDataStorageByDataId]] || 
 |-
@@ -118,7 +126,9 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 608 || UnregisterExternalKey || 
 |-
-| 609 || Returns 0x10-byte output. Takes a ContentPath? || 
+| 609 || GetRightsIdByPath || 
+|-
+| 610 || GetRightsIdByPath2 (returns extra byte) [3.0.0+] || 
 |-
 | 620 || [[#SetSdCardEncryptionSeed]] || 0x19, 1
 |-
