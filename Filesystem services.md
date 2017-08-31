@@ -403,21 +403,23 @@ There are two main implementations of this interface:
   - **IPC proxy**: Used for all non-RomFS filesystems. In this case,
     actual filesystem implementation is in the FS process.
 
-| Cmd | Name                       |
-| --- | -------------------------- |
-| 0   | CreateFile                 |
-| 1   | DeleteFile                 |
-| 2   | CreateDirectory            |
-| 3   | DeleteDirectory            |
-| 4   | DeleteDirectoryRecursively |
-| 5   | RenameFile                 |
-| 6   | RenameDirectory            |
-| 7   | GetEntryType               |
-| 8   | OpenFile                   |
-| 9   | OpenDirectory              |
-| 10  | Commit                     |
-| 11  | GetFreeSpaceSize           |
-| 12  | GetTotalSpaceSize          |
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   | CreateFile                           |
+| 1   | DeleteFile                           |
+| 2   | CreateDirectory                      |
+| 3   | DeleteDirectory                      |
+| 4   | DeleteDirectoryRecursively           |
+| 5   | RenameFile                           |
+| 6   | RenameDirectory                      |
+| 7   | GetEntryType                         |
+| 8   | OpenFile                             |
+| 9   | OpenDirectory                        |
+| 10  | Commit                               |
+| 11  | GetFreeSpaceSize                     |
+| 12  | GetTotalSpaceSize                    |
+| 13  | CleanDirectoryRecursively \[3.0.0+\] |
+| 14  | GetFileTimeStampRaw \[3.0.0+\]       |
 
 ## Commit
 

@@ -468,6 +468,10 @@ There are two main implementations of this interface:
 | 11 || GetFreeSpaceSize
 |-
 | 12 || GetTotalSpaceSize
+|-
+| 13 || CleanDirectoryRecursively [3.0.0+]
+|-
+| 14 || GetFileTimeStampRaw [3.0.0+]
 |}
 
 == Commit ==
