@@ -1,7 +1,7 @@
 One symbol in USB-sysmodule is: "vtable for nn::usb::detail::UsbComplexTegra21x".
 
 =usb:ds=
-Not used by any system-title.
+Not used by any retail system-title. Seems to be used during [[Factory Setup|factory setup]] by [[Manu Services|manu]].
 
 Used for Switch<>PC USB comms, aka Switch-as-device.
 

@@ -3,7 +3,9 @@ nn::usb::detail::UsbComplexTegra21x".
 
 # usb:ds
 
-Not used by any system-title.
+Not used by any retail system-title. Seems to be used during [factory
+setup](Factory%20Setup.md "wikilink") by
+[manu](Manu%20Services.md "wikilink").
 
 Used for Switch\<\>PC USB comms, aka Switch-as-device.
 
