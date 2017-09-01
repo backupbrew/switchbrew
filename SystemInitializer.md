@@ -7,3 +7,7 @@ Initial system installer: used to write/verify console specific
 *calibration* data such as asymmetric keys and write/verify NAND
 partitions from an initial installation image. Hence, this initializes
 the entire NAND. This includes an option for erasing NAND.
+
+Uses input parameters from <argc/argv>. Returns without doing anything
+if the required parameters are not passed. Uses logging code for all
+text output which basically uses svcOutputDebugString eventually.
