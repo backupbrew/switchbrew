@@ -79,7 +79,7 @@ After that, the process exits itself.
 
 When not in maintenance mode, boot2.manuBoot boots exactly the same
 titles as boot2.prodBoot in the same order, and then finishes by booting
-010000000000B14A ([Manu](Manu%20services.md "wikilink")) before exiting.
+010000000000B14A ([Manu](Manu%20Services.md "wikilink")) before exiting.
 
 When in maintenance mode, boot2.manuBoot boots titles in the following
 order:
