@@ -70,7 +70,7 @@ Factory firmware contains a stripped down version of the Switch's OS with unnece
 |-
 |  1000000000000001
 |  SystemInitializ
-|  Initial system installer (used to write/verify console specific ''calibration'' data such as asymmetric keys and write/verify NAND partitions from an initial installation image).
+|  Strings internally refer to this as "SystemInitializer". Initial system installer: used to write/verify console specific ''calibration'' data such as asymmetric keys and write/verify NAND partitions from an initial installation image. Hence, this initializes the entire NAND. This includes an option for erasing NAND.
 |-
 |  1000000000000004
 |  ?
