@@ -3,11 +3,46 @@ nn::usb::detail::UsbComplexTegra21x".
 
 # usb:ds
 
-Not used by any retail system-title. Seems to be used during [factory
-setup](Factory%20Setup.md "wikilink") by
+Used for Switch\<\>PC USB comms, aka Switch-as-device. This service is
+used during [factory setup](Factory%20Setup.md "wikilink") by
 [manu](Manu%20Services.md "wikilink").
 
-Used for Switch\<\>PC USB comms, aka Switch-as-device.
+| Cmd | Name                |
+| --- | ------------------- |
+| 0   | BindComplex         |
+| 1   | BindClientProcess   |
+| 2   | GetDsInterface      |
+| 3   | GetStateChangeEvent |
+| 4   |                     |
+| 5   | SetVidPidBcd        |
+
+## IDsInterface
+
+| Cmd | Name                      |
+| --- | ------------------------- |
+| 0   | GetDsEndpoint             |
+| 1   | GetSetupEvent             |
+| 2   |                           |
+| 3   |                           |
+| 4   |                           |
+| 5   |                           |
+| 6   |                           |
+| 7   | GetCtrlInCompletionEvent  |
+| 8   |                           |
+| 9   | GetCtrlOutCompletionEvent |
+| 10  |                           |
+| 11  |                           |
+
+### IDsEndpoint
+
+| Cmd | Name            |
+| --- | --------------- |
+| 0   | PostBufferAsync |
+| 1   |                 |
+| 2   |                 |
+| 3   | GetReportData   |
+| 4   |                 |
+| 5   |                 |
 
 # usb:hs
 
