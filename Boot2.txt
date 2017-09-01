@@ -1,6 +1,6 @@
 boot2 is the first non-built-in sysmodule. It's hardcoded to be the first sysmodule launched by PM.
 
-On retail systems, the boot2 title installed is named "boot2.prodBoot". During [[Factory Setup|the factory]], the installed boot2 title is "boot2.manuBoot".
+On retail systems, the boot2 title installed is named "boot2.prodBoot". During [[Factory Setup|the factory setup process]], the installed boot2 title is "boot2.manuBoot".
 
 = boot2.prodBoot =
 It connects to "pm:shell" service and launches the following titles in this order:
