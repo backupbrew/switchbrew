@@ -271,7 +271,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | cal: calibration, sys: System Settings
 |-
 | [ [[3.0.0]]+ ] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u
-| [[Shared Database Services]]
+| [[Shared Database services]]
 |
 |-
 | ssl

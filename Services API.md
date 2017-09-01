@@ -284,7 +284,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="odd">
 <td><p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a>+ ] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u</p></td>
-<td><p><a href="Shared Database Services.md" title="wikilink">Shared Database Services</a></p></td>
+<td><p><a href="Shared Database services.md" title="wikilink">Shared Database services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
