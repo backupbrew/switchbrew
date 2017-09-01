@@ -84,6 +84,12 @@ Otherwise it has (flag-2) C descriptors.
 
 ## Raw data section
 
+![An example of an IPC message with a type 0xA buffer in it. Red is
+headers/descriptors, yellow is padding, and blue is data/buffer lengths.
+Note that the size of the u16 array for type A lengths is padded to fill
+up a whole word.](Ipc_msg_buffer_type_a_example.png
+"An example of an IPC message with a type 0xA buffer in it. Red is headers/descriptors, yellow is padding, and blue is data/buffer lengths. Note that the size of the u16 array for type A lengths is padded to fill up a whole word.")
+
 | Word | Description                                                                                                                       |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------- |
 | ...  | Padding to align to 16 bytes.                                                                                                     |
@@ -95,12 +101,6 @@ The total amount of padding within the raw data section is always 0x10
 bytes. This means that if no padding is required before the message,
 there will be 0x10 bytes of padding after the message (before the buffer
 type 0xA lengths).
-
-![An example of an IPC message with a type 0xA buffer in it. Red is
-headers/descriptors, yellow is padding, and blue is data/buffer lengths.
-Note that the size of the u16 array for type A lengths is padded to fill
-up a whole word.](Ipc_msg_buffer_type_a_example.png
-"An example of an IPC message with a type 0xA buffer in it. Red is headers/descriptors, yellow is padding, and blue is data/buffer lengths. Note that the size of the u16 array for type A lengths is padded to fill up a whole word.")
 
 ### Domain message
 

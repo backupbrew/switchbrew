@@ -113,6 +113,8 @@ Otherwise it has (flag-2) C descriptors.
 
 == Raw data section ==
 
+[[File:Ipc msg buffer type a example.png|thumb|An example of an IPC message with a type 0xA buffer in it. Red is headers/descriptors, yellow is padding, and blue is data/buffer lengths. Note that the size of the u16 array for type A lengths is padded to fill up a whole word.]]
+
 {| class="wikitable" border="1"
 ! Word || Description
 |-
@@ -126,8 +128,6 @@ Otherwise it has (flag-2) C descriptors.
 |}
 
 The total amount of padding within the raw data section is always 0x10 bytes. This means that if no padding is required before the message, there will be 0x10 bytes of padding after the message (before the buffer type 0xA lengths).
-
-[[File:Ipc msg buffer type a example.png|thumb|An example of an IPC message with a type 0xA buffer in it. Red is headers/descriptors, yellow is padding, and blue is data/buffer lengths. Note that the size of the u16 array for type A lengths is padded to fill up a whole word.]]
 
 === Domain message ===
 This header is used to wrap up requests sent to domains instead of sessions.
