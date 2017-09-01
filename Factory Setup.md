@@ -18,6 +18,10 @@ Factory firmware contains a stripped down version of the Switch's OS
 with unnecessary titles removed, and a number of additional debug titles
 installed.
 
+![TestApplicationLauncher running on a
+console.](TestApplicationLauncher.jpg
+"TestApplicationLauncher running on a console.")
+
 #### Removed Titles
 
   - The following system data archive titles are present in retail

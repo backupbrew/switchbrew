@@ -10,6 +10,8 @@ Test Application Launcher is used to launch a number of tests, "CAL0" calibratio
 
 Factory firmware contains a stripped down version of the Switch's OS with unnecessary titles removed, and a number of additional debug titles installed.
 
+[[File:TestApplicationLauncher.jpg|400px|thumb|right|TestApplicationLauncher running on a console.]]
+
 ==== Removed Titles ====
 
 * The following system data archive titles are present in retail firmware, but not installed at the factory: 0100000000000801, 0100000000000803, 0100000000000804, 0100000000000805, 0100000000000808, 010000000000080A, 010000000000080B, 010000000000080C, 010000000000080D, 010000000000081A, 010000000000081B, 010000000000081E.
