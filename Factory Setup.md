@@ -3,7 +3,7 @@
 At the factory, a minimal version of the Switch OS is installed. A
 modified version of the [boot2](Boot2.md "wikilink") title
 (boot2.manuBoot) is installed that launches an additional
-"[Manu](Manu%20services.md "wikilink")" sysmodule, and the system config
+"[Manu](Manu%20Services.md "wikilink")" sysmodule, and the system config
 title specifies to launch "Test Application Launcher" instead of
 qlaunch.
 
@@ -49,7 +49,7 @@ installed.
 | 0100000000002006 | C5Wireless                            | Wireless testing.                                                                     |
 | 010000000000204E | A4BoardCalWriti                       | Writes calibration data to NAND.                                                      |
 | 010000000000209C | TestApplication                       | "Test Application Launcher", factory qlaunch replacement. Used to launch other tests. |
-| 010000000000B14A | [Manu](Manu%20services.md "wikilink") | Manufacturing sysmodule.                                                              |
+| 010000000000B14A | [Manu](Manu%20Services.md "wikilink") | Manufacturing sysmodule.                                                              |
 | 1000000000000001 | SystemInitializ                       | NAND partition verifier/writer.                                                       |
 | 1000000000000004 | ?                                     | ?                                                                                     |
 |                  |                                       |                                                                                       |

@@ -1,6 +1,6 @@
 == Setup Process ==
 
-At the factory, a minimal version of the Switch OS is installed. A modified version of the [[boot2]] title (boot2.manuBoot) is installed that launches an additional "[[Manu services|Manu]]" sysmodule, and the system config title specifies to launch "Test Application Launcher" instead of qlaunch.
+At the factory, a minimal version of the Switch OS is installed. A modified version of the [[boot2]] title (boot2.manuBoot) is installed that launches an additional "[[Manu Services|Manu]]" sysmodule, and the system config title specifies to launch "Test Application Launcher" instead of qlaunch.
 
 Test Application Launcher is used to launch a number of tests, "CAL0" calibration data is written to NAND, and retail firmware is installed.
 
@@ -63,7 +63,7 @@ Factory firmware contains a stripped down version of the Switch's OS with unnece
 |  "Test Application Launcher", factory qlaunch replacement. Used to launch other tests.
 |-
 |  010000000000B14A
-|  [[Manu services|Manu]]
+|  [[Manu Services|Manu]]
 |  Manufacturing sysmodule.
 |-
 |  1000000000000001
