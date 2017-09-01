@@ -117,7 +117,7 @@ The active bootloader's version (offset 0x2330 in the BCT) acts as an index to c
 |  0x0
 |  
 |  20
-|  GPT header, Bis-storage also allows raw access to the entire NAND eMMC sectors starting at sector0.
+|  GPT header, Bis-storage also allows raw access to the entire NAND eMMC sectors starting at sector0. The official name for this partitionID from [[SystemInitializer]] is "nn::fs::BisPartitionId::UserDataRoot".
 |-
 |  PRODINFO
 |  0x00004400
