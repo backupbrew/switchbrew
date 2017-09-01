@@ -1,5 +1,6 @@
 Manu ("Manufacturing") services are provided by the 010000000000B14A
-sysmodule, which is installed at the factory but not on normal retail
+sysmodule, which is installed at the
+[factory](Factory%20Setup.md "wikilink") but not on normal retail
 systems.
 
 # manu
@@ -14,3 +15,6 @@ systems.
 | 5   |      | Takes 0x10 bytes of input and a B descriptor, and produces 8 bytes of output.                    |
 | 6   |      | Takes 0x10 bytes of input and an A descriptor, and produces 8 bytes of output.                   |
 |     |      |                                                                                                  |
+
+This seems to interface with [usb:ds](USB%20services.md "wikilink").
+SystemInitializer only uses cmd1..cmd3.

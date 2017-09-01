@@ -1,4 +1,4 @@
-Manu ("Manufacturing") services are provided by the 010000000000B14A sysmodule, which is installed at the factory but not on normal retail systems.
+Manu ("Manufacturing") services are provided by the 010000000000B14A sysmodule, which is installed at the [[Factory_Setup|factory]] but not on normal retail systems.
 
 = manu =
 
@@ -21,3 +21,5 @@ Manu ("Manufacturing") services are provided by the 010000000000B14A sysmodule, 
 | 6 || || Takes 0x10 bytes of input and an A descriptor, and produces 8 bytes of output.
 |-
 |}
+
+This seems to interface with [[USB_services|usb:ds]]. SystemInitializer only uses cmd1..cmd3.
