@@ -239,6 +239,12 @@ Takes a u32 partition ID, returns 0x2EE202 for partitions which do not
 exist, 0x320002 for partitions which cannot be opened and a valid
 [\#IStorage](#IStorage "wikilink") handle otherwise.
 
+## InvalidateBisCache
+
+Seems to invalidate the Bis cache for MBR/GPT after overwriting that
+data via the OpenBisPartition IStorage. Used by
+[SystemInitializer](SystemInitializer.md "wikilink").
+
 ## DeleteSaveData
 
 Takes an input u64.
