@@ -18,7 +18,7 @@
 |-
 | 0100000000000007 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || tma
 |-
-| 0100000000000008 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || [[Boot2|boot2.ProdBoot]]
+| 0100000000000008 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || [[Boot2|boot2]]
 |-
 | 0100000000000009 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || settings
 |-
@@ -28,11 +28,15 @@
 |-
 | 010000000000000C || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || bcat
 |-
+| 010000000000000D || || Launched by maintenance mode [[Boot2|boot2.manuBoot]], but not present in retail or [[Factory Setup|factory firmware]].
+|-
 | 010000000000000E || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || friends
 |-
 | 010000000000000F || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131082]] (0.2.0.10), [[3.0.0|v201327002]] (12.0.1.154) || nifm
 |-
 | 0100000000000010 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131132]] (0.2.0.60), [[3.0.0|v201327002]] (12.0.1.154) || ptm
+|-
+| 0100000000000011 || || Launched by maintenance mode [[Boot2|boot2.manuBoot]], but not present in retail or [[Factory Setup|factory firmware]].
 |-
 | 0100000000000012 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[2.3.0|v131092]] (0.2.0.20), [[3.0.0|v201327002]] (12.0.1.154) || bsdsockets
 |-
@@ -43,6 +47,8 @@
 | 0100000000000015 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || LogManager.Prod
 |-
 | 0100000000000016 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[2.1.0|v131082]] (0.2.0.10), [[2.2.0|v196608]] (0.3.0.0), [[3.0.0|v201327002]] (12.0.1.154) || wlan
+|-
+| 0100000000000017 || || Launched by maintenance mode [[Boot2|boot2.manuBoot]], but not present in retail or [[Factory Setup|factory firmware]].
 |-
 | 0100000000000018 || [[1.0.0|v450]] (0.0.1.194), [[2.0.0|v65796]] (0.1.1.4), [[3.0.0|v201327002]] (12.0.1.154) || ldn
 |-
@@ -114,6 +120,24 @@ As of [[2.0.0]], the only sysmodule with a RomFS is [[HID_services|hid-sysmodule
 == System Debug Applets ==
 {| class=wikitable
 ! Title-id || Versions || Description
+|-
+| 0100000000002000 ||  || BoardTest
+|-
+| 0100000000002001 ||  || ?  - Probably Battery Vendor related.
+|-
+| 0100000000002002 ||  || C1LcdAndKey - LCD/Keyboard testing.
+|-
+| 0100000000002003 ||  || C2UsbHpmic - USB testing.
+|-
+| 0100000000002004 ||  || C3Aging - Graphics/Framerate testing.
+|-
+| 0100000000002005 ||  || C4SixAxis - Sixaxis (controller peripheral) testing.
+|-
+| 0100000000002006 ||  || C5Wireless - Wireless testing.
+|-
+| 010000000000204E ||  || A4BoardCalWriti - Writes calibration data to NAND.
+|-
+| 010000000000209C ||  || TestApplication - "Test Application Launcher", factory qlaunch replacement. Used to launch other tests.
 |-
 | 0100000000002071 ||  || Snapshot Dumper? Used by [[NS_Services|NS]].
 |-
@@ -237,6 +261,25 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000001016 || || TID used by [[NS_Services|NS]] when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.
 |}
+
+== Factory System Modules ==
+{| class=wikitable
+! Title-id || Versions || Description
+|-
+| 100000000000B120 || || Launched by maintenance mode [[Boot2|boot2.manuBoot]], but not present in retail or [[Factory Setup|factory firmware]].
+|-
+| 100000000000B14A || || [[Manu services|manu]] - insatlled in [[Factory Setup|factory firmware]].
+|}
+
+== Target Tools ==
+{| class=wikitable
+! Title-id || Versions || Description
+|-
+| 1000000000000001 || || [[Factory Setup|SystemInitializ]]
+|-
+| 1000000000000004 || || ?
+|}
+
 
 == System Applications ==
 {| class=wikitable
