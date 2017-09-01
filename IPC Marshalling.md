@@ -89,12 +89,18 @@ Otherwise it has (flag-2) C descriptors.
 | ...  | Padding to align to 16 bytes.                                                                                                     |
 | ...  | If sent to an object domain, a [domain message](#Domain_message "wikilink"), otherwise a [data payload](#Data_payload "wikilink") |
 | ...  | Padding                                                                                                                           |
+| ...  | Buffer type 0xA lengths (u16 array)                                                                                               |
 
 The total amount of padding within the raw data section is always 0x10
 bytes. This means that if no padding is required before the message,
-there will be 0x10 bytes of padding after the message (before the C
-descriptors). The length of the message can be calculated as the length
-of the raw data section - 0x10 bytes,
+there will be 0x10 bytes of padding after the message (before the buffer
+type 0xA lengths).
+
+![An example of an IPC message with a type 0xA buffer in it. Red is
+headers/descriptors, yellow is padding, and blue is data/buffer lengths.
+Note that the size of the u16 array for type A lengths is padded to fill
+up a whole word.](Ipc_msg_buffer_type_a_example.png
+"An example of an IPC message with a type 0xA buffer in it. Red is headers/descriptors, yellow is padding, and blue is data/buffer lengths. Note that the size of the u16 array for type A lengths is padded to fill up a whole word.")
 
 ### Domain message
 
