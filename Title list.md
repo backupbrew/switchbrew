@@ -152,7 +152,7 @@ systems.
 | Title-id         | Versions | Description                                                                                                                                         |
 | ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 100000000000B120 |          | Launched by maintenance mode [boot2.manuBoot](Boot2.md "wikilink"), but not present in retail or [factory firmware](Factory%20Setup.md "wikilink"). |
-| 100000000000B14A |          | [manu](Manu%20Services.md "wikilink") - insatlled in [factory firmware](Factory%20Setup.md "wikilink").                                             |
+| 100000000000B14A |          | [manu](Manu%20Services.md "wikilink") - installed in [factory firmware](Factory%20Setup.md "wikilink").                                             |
 
 ## Target Tools
 

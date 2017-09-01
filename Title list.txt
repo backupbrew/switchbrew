@@ -268,7 +268,7 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 100000000000B120 || || Launched by maintenance mode [[Boot2|boot2.manuBoot]], but not present in retail or [[Factory Setup|factory firmware]].
 |-
-| 100000000000B14A || || [[Manu Services|manu]] - insatlled in [[Factory Setup|factory firmware]].
+| 100000000000B14A || || [[Manu Services|manu]] - installed in [[Factory Setup|factory firmware]].
 |}
 
 == Target Tools ==
