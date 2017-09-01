@@ -8,7 +8,7 @@ Manu ("Manufacturing") services are provided by the 010000000000B14A sysmodule, 
 |-
 | 0 || || Takes 4 bytes of input, and produces 0 bytes output.
 |-
-| 1 || || Takes an X descriptor, and produces, 8 bytes output.
+| 1 || FsFile_Exists || Takes an X descriptor, and produces, 8 bytes output.
 |-
 | 2 || || Takes 0x18 bytes of input, a B descriptor, and an X descriptor, and produces 0 bytes of output.
 |-
@@ -23,3 +23,10 @@ Manu ("Manufacturing") services are provided by the 010000000000B14A sysmodule, 
 |}
 
 This seems to interface with [[USB_services|usb:ds]]. SystemInitializer only uses cmd1..cmd3.
+
+== FsFile_Exists ==
+Takes an input path string, returns 8-bytes for the output u8 flag.
+
+Checks whether the specified file exists.
+
+This is "FsFile::Exists" in SystemInitializer.
