@@ -32,7 +32,7 @@ unlocked.
 | 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                         |                                                                                                                                     |
 | 12  | GenerateSpecificAesKey                                               | wrapper for [KeygenA](SMC#KeygenA.md##KeygenA "wikilink")                                                                           |
 | 13  | [\#DecryptExpModParamsWithXY](#DecryptExpModParamsWithXY "wikilink") | wrapper for [DecryptExpModParamsWithXY](SMC#DecryptExpModParamsWithXY.md##DecryptExpModParamsWithXY "wikilink")                     |
-| 14  | [\#GenerateAesKeyOther](#GenerateAesKeyOther "wikilink")             | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X and Y |
+| 14  | [\#DecryptAesKey](#DecryptAesKey "wikilink")                         | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X and Y |
 | 15  | [\#DecryptAesCtr](#DecryptAesCtr "wikilink")                         | wrapper for [SymmetricCrypto](SMC#SymmetricCrypto.md##SymmetricCrypto "wikilink")                                                   |
 | 16  | [\#ComputeCmac](#ComputeCmac "wikilink")                             | wrapper for [CMAC](SMC#CMAC.md##CMAC "wikilink")                                                                                    |
 | 17  |                                                                      | wrapper for [ImportParamsFor10WithXY](SMC#ImportParamsFor10WithXY.md##ImportParamsFor10WithXY "wikilink")                           |
@@ -140,7 +140,7 @@ on retail.
 Last SPL cmd used by [SSL](SSL%20services.md "wikilink")-sysmodule for
 TLS client-privk.
 
-## GenerateAesKeyOther
+## DecryptAesKey
 
 Scrambles with a different constant than non-"other" version.
 

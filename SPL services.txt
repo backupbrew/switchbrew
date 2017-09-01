@@ -42,7 +42,7 @@ Takes a type-6 buffer and fills it with random data. Same command for "spl:" and
 |-
 | 13 || [[#DecryptExpModParamsWithXY]] || wrapper for [[SMC#DecryptExpModParamsWithXY|DecryptExpModParamsWithXY]]
 |-
-| 14 || [[#GenerateAesKeyOther]] || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X and Y
+| 14 || [[#DecryptAesKey]] || decrypts 0x10 bytes using AES ECB, uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X and Y
 |-
 | 15 || [[#DecryptAesCtr]] || wrapper for [[SMC#SymmetricCrypto|SymmetricCrypto]]
 |-
@@ -181,7 +181,7 @@ Returns an u8 flag for whether the system is devunit. Output flag is 0 on retail
 == DecryptExpModParamsWithXY ==
 Last SPL cmd used by [[SSL_services|SSL]]-sysmodule for TLS client-privk.
 
-== GenerateAesKeyOther ==
+== DecryptAesKey ==
 Scrambles with a different constant than non-"other" version.
 
 [2.0.0+] Introduced same engine allocation code as for [[#GenerateAesKey]].
