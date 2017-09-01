@@ -219,7 +219,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="even">
 <td><p>manu</p></td>
-<td><p><a href="Manu services.md" title="wikilink">Manu services</a></p></td>
+<td><p><a href="Manu Services.md" title="wikilink">Manu Services</a></p></td>
 <td><p>&quot;Manufacturing&quot;, present in factory firmware but not installed on retail systems.</p></td>
 </tr>
 <tr class="odd">

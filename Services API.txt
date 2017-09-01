@@ -219,7 +219,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |
 |-
 | manu
-| [[Manu services]]
+| [[Manu Services]]
 | "Manufacturing", present in factory firmware but not installed on retail systems.
 |-
 | lr, ncm, ncm:v
