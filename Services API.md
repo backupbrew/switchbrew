@@ -97,7 +97,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="even">
 <td><p>[1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry</p>
-<p>[ [3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd</p></td>
+<p><code>[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd</code></p></td>
 <td><p><a href="NS Services.md" title="wikilink">NS Services</a></p></td>
 <td><p>am: Application Manager, su: System Update</p></td>
 </tr>
@@ -213,7 +213,7 @@ handles retrieved directly from a SVC.
 </tr>
 <tr class="odd">
 <td><p>[1.0.0+] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt</p>
-<p><code>[3.0.0+] ldr:pm, ldr:shel, ldr:dmnt</code></p></td>
+<p>[3.0.0+] ldr:pm, ldr:shel, ldr:dmnt</p></td>
 <td><p><a href="Loader services.md" title="wikilink">Loader services</a></p></td>
 <td></td>
 </tr>
