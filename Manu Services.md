@@ -19,13 +19,12 @@ systems.
 All commands are wrappers for [usb:ds](USB%20services.md "wikilink")
 requests with USB configured as:
 
-`VID: 0x057E (Nintendo Co., Ltd)`  
-`PID: 0x3000`  
-`BCD: [0x62-byte array]`  
-`    0x00: 0x0100`  
-`    0x02: "Nintendo"`  
-`    0x22: "NintendoSdkDebugger"`  
-`    0x42: "SerialNumber"`
+`VID:           0x057E (Nintendo Co., Ltd)`  
+`PID:           0x3000`  
+`BCD:           0x0100 (USB 1.0)`  
+`Manufacturer:  "Nintendo"`  
+`Product:       "NintendoSdkDebugger"`  
+`SerialNumber:  "SerialNumber"`
 
 [SystemInitializer](SystemInitializer.md "wikilink") only uses
 cmd1..cmd3.
