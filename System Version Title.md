@@ -16,6 +16,8 @@ The FS for the system-version title(TID 0100000000000809) contains
 
 ## Known Versions
 
+### Retail Firmware Updates
+
 | Firmware | Version String                         | Hex ASCII String                         |
 | -------- | -------------------------------------- | ---------------------------------------- |
 | 1.0.0    | NintendoSDK Firmware for NX 1.0.0-15   | 84b8da475a02261c456e6472b403b31416480165 |
@@ -25,3 +27,10 @@ The FS for the system-version title(TID 0100000000000809) contains
 | 2.3.0    | NintendoSDK Firmware for NX 2.3.0-0    | 3ed3bbc8885b6362f4f244dcecd2b430fa27310e |
 | 3.0.0    | NintendoSDK Firmware for NX 3.0.0-10.0 | 7fbde2b0bba4d14107bf836e4643043d9f6c8e47 |
 | 3.0.1    | NintendoSDK Firmware for NX 3.0.1-0.0  | a3363e086791370ed89dca69c697b4a8bc443d66 |
+
+### Other
+
+| Firmware | Version String                       | Hex ASCII String                         | Note                                                           |
+| -------- | ------------------------------------ | ---------------------------------------- | -------------------------------------------------------------- |
+| 2.0.0-13 | NintendoSDK Firmware for NX 2.0.0-13 | 60b5fa391b0055f50fec362d29ac18395f387412 | Revision of [factory firmware](Factory%20Setup.md "wikilink"). |
+|          |                                      |                                          |                                                                |
