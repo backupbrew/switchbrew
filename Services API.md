@@ -96,8 +96,8 @@ handles retrieved directly from a SVC.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>[ <a href="1.0.0.md" title="wikilink">1.0.0</a> +] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry</p>
-<p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a> +] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd</p></td>
+<td><p>[1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry</p>
+<p>[ [3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd</p></td>
 <td><p><a href="NS Services.md" title="wikilink">NS Services</a></p></td>
 <td><p>am: Application Manager, su: System Update</p></td>
 </tr>
@@ -119,7 +119,7 @@ handles retrieved directly from a SVC.
 <tr class="even">
 <td><p>banana</p></td>
 <td><p>?</p></td>
-<td><p>Some games on <a href="[3.0.0.md" title="wikilink">[3.0.0</a>+] have access to this service, but it doesn't appear to be present on retail devices.</p></td>
+<td><p>Some games on [3.0.0+] have access to this service, but it doesn't appear to be present on retail devices.</p></td>
 </tr>
 <tr class="odd">
 <td><p>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, prepo:a</p></td>
@@ -212,8 +212,8 @@ handles retrieved directly from a SVC.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>[ <a href="1.0.0.md" title="wikilink">1.0.0</a>+ ] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt</p>
-<p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a>+ ] ldr:pm, ldr:shel, ldr:dmnt</p></td>
+<td><p>[1.0.0+] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt</p>
+<p><code>[3.0.0+] ldr:pm, ldr:shel, ldr:dmnt</code></p></td>
 <td><p><a href="Loader services.md" title="wikilink">Loader services</a></p></td>
 <td></td>
 </tr>
@@ -278,7 +278,7 @@ handles retrieved directly from a SVC.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a>+ ] ldr:ro, ro:dmnt</p></td>
+<td><p>[3.0.0+] ldr:ro, ro:dmnt</p></td>
 <td><p><a href="Loader services.md" title="wikilink">RO services</a></p></td>
 <td></td>
 </tr>
@@ -288,7 +288,7 @@ handles retrieved directly from a SVC.
 <td><p>cal: calibration, sys: System Settings</p></td>
 </tr>
 <tr class="even">
-<td><p>[ <a href="3.0.0.md" title="wikilink">3.0.0</a>+ ] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u</p></td>
+<td><p>[3.0.0+] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u</p></td>
 <td><p><a href="Shared Database services.md" title="wikilink">Shared Database services</a></p></td>
 <td></td>
 </tr>

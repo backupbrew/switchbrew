@@ -118,9 +118,9 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | [[AM services]]
 |
 |-
-| [ [[1.0.0]] +] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry
+| [1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry
 
-[ [[3.0.0]] +] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd
+[ [3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd
 | [[NS Services]]
 | am: Application Manager, su: System Update
 |-
@@ -138,7 +138,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |-
 | <nowiki>banana</nowiki>
 | ?
-| Some games on [[[3.0.0]]+] have access to this service, but it doesn't appear to be present on retail devices.
+| Some games on [3.0.0+] have access to this service, but it doesn't appear to be present on retail devices.
 |-
 | <nowiki>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, prepo:a</nowiki>
 | [[BCAT services]]
@@ -212,9 +212,9 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | [[LDN services]]
 |
 |-
-| [ [[1.0.0]]+ ] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt
+| [1.0.0+] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt
 
-[ [[3.0.0]]+ ] ldr:pm, ldr:shel, ldr:dmnt
+ [3.0.0+] ldr:pm, ldr:shel, ldr:dmnt
 | [[Loader services]]
 |
 |-
@@ -266,7 +266,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | PSC services
 | 
 |-
-| [ [[3.0.0]]+ ] ldr:ro, ro:dmnt
+| [3.0.0+] ldr:ro, ro:dmnt
 | [[Loader services|RO services]]
 |
 |-
@@ -274,7 +274,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | [[Settings services]]
 | cal: calibration, sys: System Settings
 |-
-| [ [[3.0.0]]+ ] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u
+| [3.0.0+] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u
 | [[Shared Database services]]
 |
 |-
