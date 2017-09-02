@@ -110,7 +110,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 202 || [[#OpenDataStorageByDataId]] || 
 |-
-| 203 || [2.0.0+] Returns an [[#IStorage]]. || 
+| 203 || Returns an [[#IStorage]]. || 
 |-
 | 400 || [[#OpenDeviceOperator]] || 
 |-

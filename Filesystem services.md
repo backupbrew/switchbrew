@@ -78,7 +78,7 @@ abort.
 | 200  | OpenDataStorageByCurrentProcess                                                        |                                    |
 | 201  | OpenDataStorageByApplicationId \[3.0.0+\]                                              |                                    |
 | 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                       |                                    |
-| 203  | \[2.0.0+\] Returns an [\#IStorage](#IStorage "wikilink").                              |                                    |
+| 203  | Returns an [\#IStorage](#IStorage "wikilink").                                         |                                    |
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |                                    |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")     |                                    |
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink") |                                    |
