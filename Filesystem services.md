@@ -62,7 +62,7 @@ abort.
 | 26   | \[2.0.0+\] FormatSdCardDryRun                                                          |                                    |
 | 27   | \[2.0.0+\] IsExFatSupported                                                            |                                    |
 | 30   | [\#OpenGameCardPartition](#OpenGameCardPartition "wikilink")                           |                                    |
-| 31   | \[2.0.0+\] [\#MountGameCardPartition](#MountGameCardPartition "wikilink")              |                                    |
+| 31   | [\#MountGameCardPartition](#MountGameCardPartition "wikilink")                         |                                    |
 | 32   | \[3.0.0+\] ExtendSaveData                                                              |                                    |
 | 51   | [\#MountSaveData](#MountSaveData "wikilink")                                           |                                    |
 | 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |                                    |
