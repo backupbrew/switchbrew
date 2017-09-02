@@ -553,9 +553,9 @@ returned via various
 
 | Path           | Notes                                   |
 | -------------- | --------------------------------------- |
-| @SystemContent | NandSystem partition.                   |
-| @UserContent   | NandUser partition.                     |
-| @SdCardContent | Installed SD card contents              |
+| @SystemContent |                                         |
+| @UserContent   |                                         |
+| @SdCardContent |                                         |
 | @CalibFile     |                                         |
 | @Safe          |                                         |
 | @User          |                                         |

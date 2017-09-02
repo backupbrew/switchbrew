@@ -646,23 +646,23 @@ These are the 0x300 paths to NCA files for the various filesystems FS can access
 |-
 ! Path || Notes
 |-
-| @SystemContent || NandSystem partition.
+| @SystemContent ||
 |- 
-| @UserContent || NandUser partition.
+| @UserContent ||
 |-
-| @SdCardContent || Installed SD card contents
+| @SdCardContent ||
 |-
-| @CalibFile
+| @CalibFile ||
 |-
-| @Safe
+| @Safe ||
 |-
-| @User
+| @User ||
 |-
-| @System
+| @System ||
 |-
-| @Sdcard
+| @Sdcard ||
 |-
-| @Host
+| @Host ||
 |-
 | @GcApp || Gamecard App partition (Partition 2)
 |-
