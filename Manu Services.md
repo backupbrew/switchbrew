@@ -5,23 +5,39 @@ systems.
 
 # manu
 
-| Cmd | Name           | Notes                                                                                            |
-| --- | -------------- | ------------------------------------------------------------------------------------------------ |
-| 0   |                | Takes 4 bytes of input, and produces 0 bytes output.                                             |
-| 1   | FsFile\_Exists | Takes an X descriptor, and produces, 8 bytes output.                                             |
-| 2   | FsFile\_Read   | Takes 0x18 bytes of input, a B descriptor, and an X descriptor, and produces 0 bytes of output.  |
-| 3   | FsFile\_Write  | Takes 0x18 bytes of input, an A descriptor, and an X descriptor, and produces 0 bytes of output. |
-| 4   |                | Takes 4 bytes of input, and produces 0 bytes of output.                                          |
-| 5   |                | Takes 0x10 bytes of input and a B descriptor, and produces 8 bytes of output.                    |
-| 6   |                | Takes 0x10 bytes of input and an A descriptor, and produces 8 bytes of output.                   |
-|     |                |                                                                                                  |
+| Cmd | Name                      | Notes                                                                                            |
+| --- | ------------------------- | ------------------------------------------------------------------------------------------------ |
+| 0   | InitUsbTransferPipeFsFile | Takes 4 bytes of input, and produces 0 bytes output.                                             |
+| 1   | FsFile\_Exists            | Takes an X descriptor, and produces, 8 bytes output.                                             |
+| 2   | FsFile\_Read              | Takes 0x18 bytes of input, a B descriptor, and an X descriptor, and produces 0 bytes of output.  |
+| 3   | FsFile\_Write             | Takes 0x18 bytes of input, an A descriptor, and an X descriptor, and produces 0 bytes of output. |
+| 4   | InitUsbTransferPipeRaw    | Takes 4 bytes of input, and produces 0 bytes of output.                                          |
+| 5   | Raw\_Read                 | Takes 0x10 bytes of input and a B descriptor, and produces 8 bytes of output.                    |
+| 6   | Raw\_Write                | Takes 0x10 bytes of input and an A descriptor, and produces 8 bytes of output.                   |
+|     |                           |                                                                                                  |
 
-This seems to interface with [usb:ds](USB%20services.md "wikilink").
-SystemInitializer only uses cmd1..cmd3.
+All commands are wrappers for [usb:ds](USB%20services.md "wikilink")
+requests with USB configured as:
+
+`VID: 0x057E (Nintendo Co., Ltd)`  
+`PID: 0x3000`  
+`BCD: [0x62-byte array]`  
+`    0x00: 0x0100`  
+`    0x02: "Nintendo"`  
+`    0x22: "NintendoSdkDebugger"`  
+`    0x42: "SerialNumber"`
+
+[SystemInitializer](SystemInitializer.md "wikilink") only uses
+cmd1..cmd3.
+
+## InitUsbTransferPipeFsFile
+
+Takes an unknown u32 (ID?) and configures a transfer pipe over
+[usb:ds](USB%20services.md "wikilink") for file access mode.
 
 ## FsFile\_Exists
 
-Takes an input path string(type-0x9 buffer), returns 8-bytes for the
+Takes an input path string (type-0x9 buffer), returns 8-bytes for the
 output u8 flag.
 
 Checks whether the specified file exists.
@@ -44,3 +60,20 @@ Writes data to the specified file.
 
 SystemInitializer also uses this as "FsFile::Create" with all input u64s
 set to 0.
+
+## InitUsbTransferPipeRaw
+
+Takes an unknown u32 (ID?) and configures a transfer pipe over
+[usb:ds](USB%20services.md "wikilink") for raw access mode.
+
+## Raw\_Read
+
+Takes a type-0x6 output buffer and 2 u64s: **offset** and **size**.
+
+Reads raw data from the device.
+
+## Raw\_Write
+
+Takes a type-0x5 input buffer and 2 u64s: **offset** and **size**.
+
+Writes raw data to the device.
