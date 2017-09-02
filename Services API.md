@@ -119,7 +119,7 @@ handles retrieved directly from a SVC.
 <tr class="even">
 <td><p>banana</p></td>
 <td><p>?</p></td>
-<td><p>Some games on <a href="3.0.0.md" title="wikilink">3.0.0</a>+ have access to this service, but it doesn't appear to be present on retail devices.</p></td>
+<td><p>Some games on <a href="[3.0.0.md" title="wikilink">[3.0.0</a>+] have access to this service, but it doesn't appear to be present on retail devices.</p></td>
 </tr>
 <tr class="odd">
 <td><p>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, prepo:a</p></td>
