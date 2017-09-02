@@ -42,7 +42,7 @@ abort.
 
 | Cmd  | Name                                                                                   | Required permissions-type and func |
 | ---- | -------------------------------------------------------------------------------------- | ---------------------------------- |
-| 0    | \[1.0.0\] ?                                                                            |                                    |
+| 0    | \[1.0.0\] [\#MountContent](#MountContent "wikilink")                                   |                                    |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |                                    |
 | 2    | OpenDataFileSystemByCurrentProcess                                                     |                                    |
 | 7    | \[2.0.0+\] [\#MountContent7](#MountContent7 "wikilink")                                |                                    |
