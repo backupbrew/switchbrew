@@ -457,18 +457,18 @@ used after writing to savedata for the changes to take affect.
 | --- | ------------------------------------------------------------------------------ |
 | 0   | IsSdCardInserted                                                               |
 | 1   | GetSdCardSpeedMode                                                             |
-| 2   | GetSdCardCid                                                                   |
-| 3   | GetSdCardUserAreaSize                                                          |
-| 4   | GetSdCardProtectedAreaSize                                                     |
-| 5   | GetAndClearSdCardErrorInfo                                                     |
-| 6   |                                                                                |
+| 2   | \[2.0.0+\] GetSdCardCid                                                        |
+| 3   | \[2.0.0+\] GetSdCardUserAreaSize                                               |
+| 4   | \[2.0.0+\] GetSdCardProtectedAreaSize                                          |
+| 5   | \[2.0.0+\] GetAndClearSdCardErrorInfo                                          |
+| 6   | \[2.0.0+\]                                                                     |
 | 100 | GetMmcCid                                                                      |
 | 101 | GetMmcSpeedMode                                                                |
 | 110 | EraseMmc                                                                       |
 | 111 | GetMmcPartitionSize                                                            |
-| 112 | GetMmcPatrolCount                                                              |
-| 113 | GetAndClearMmcErrorInfo                                                        |
-| 114 | GetMmcExtendedCsd                                                              |
+| 112 | \[2.0.0+\] GetMmcPatrolCount                                                   |
+| 113 | \[2.0.0+\] GetAndClearMmcErrorInfo                                             |
+| 114 | \[2.0.0+\] GetMmcExtendedCsd                                                   |
 | 200 | IsGameCardInserted                                                             |
 | 201 | EraseGameCard                                                                  |
 | 202 | GetGameCardHandle                                                              |
@@ -481,11 +481,11 @@ used after writing to savedata for the changes to take affect.
 | 209 | WriteToGameCard                                                                |
 | 210 | SetVerifyWriteEnalbleFlag                                                      |
 | 211 | GetGameCardImageHash                                                           |
-| 212 | GetGameCardErrorInfo                                                           |
-| 213 |                                                                                |
-| 214 | GetGameCardCid                                                                 |
-| 215 |                                                                                |
-| 216 |                                                                                |
+| 212 | \[2.0.0+\] GetGameCardErrorInfo                                                |
+| 213 | \[2.0.0+\]                                                                     |
+| 214 | \[2.0.0+\] GetGameCardCid                                                      |
+| 215 | \[2.0.0+\]                                                                     |
+| 216 | \[2.0.0+\]                                                                     |
 | 217 | \[2.1.0+\] Returns 0x40-bytes of output data.                                  |
 | 300 | SetSpeedEmulationMode                                                          |
 | 301 | GetSpeedEmulationMode                                                          |

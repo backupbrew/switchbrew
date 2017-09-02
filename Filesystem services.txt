@@ -517,15 +517,15 @@ Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after 
 |-
 | 1 || GetSdCardSpeedMode
 |-
-| 2 || GetSdCardCid
+| 2 || [2.0.0+] GetSdCardCid
 |-
-| 3 || GetSdCardUserAreaSize
+| 3 || [2.0.0+] GetSdCardUserAreaSize
 |-
-| 4 || GetSdCardProtectedAreaSize
+| 4 || [2.0.0+] GetSdCardProtectedAreaSize
 |-
-| 5 || GetAndClearSdCardErrorInfo
+| 5 || [2.0.0+] GetAndClearSdCardErrorInfo
 |-
-| 6 ||
+| 6 || [2.0.0+]
 |-
 | 100 || GetMmcCid
 |-
@@ -535,11 +535,11 @@ Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after 
 |-
 | 111 || GetMmcPartitionSize
 |-
-| 112 || GetMmcPatrolCount
+| 112 || [2.0.0+] GetMmcPatrolCount
 |-
-| 113 || GetAndClearMmcErrorInfo
+| 113 || [2.0.0+] GetAndClearMmcErrorInfo
 |-
-| 114 || GetMmcExtendedCsd
+| 114 || [2.0.0+] GetMmcExtendedCsd
 |-
 | 200 || IsGameCardInserted
 |-
@@ -565,15 +565,15 @@ Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after 
 |-
 | 211 || GetGameCardImageHash
 |-
-| 212 || GetGameCardErrorInfo
+| 212 || [2.0.0+] GetGameCardErrorInfo
 |-
-| 213 ||
+| 213 || [2.0.0+]
 |-
-| 214 || GetGameCardCid
+| 214 || [2.0.0+] GetGameCardCid
 |-
-| 215 ||
+| 215 || [2.0.0+]
 |-
-| 216 ||
+| 216 || [2.0.0+]
 |-
 | 217 || [2.1.0+] Returns 0x40-bytes of output data.
 |-
