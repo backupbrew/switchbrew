@@ -553,13 +553,18 @@ returned via various
 
 | Path           | Notes                                   |
 | -------------- | --------------------------------------- |
+| @SystemContent | NandSystem partition.                   |
+| @UserContent   | NandUser partition.                     |
+| @SdCardContent | Installed SD card contents              |
+| @CalibFile     |                                         |
+| @Safe          |                                         |
+| @User          |                                         |
+| @System        |                                         |
+| @Sdcard        |                                         |
+| @Host          |                                         |
 | @GcApp         | Gamecard App partition (Partition 2)    |
 | @GcS00000001   | Gamecard Contents.                      |
-| @SdCardContent | Installed SD card contents              |
-| @Sdcard        | Raw SD card partition                   |
-| @SystemContent | NandSystem partition.                   |
 | @upp           | Gamecard update partition (Partition 0) |
-| @UserContent   | NandUser partition.                     |
 
 # BisPartitionID
 
