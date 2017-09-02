@@ -38,6 +38,8 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 ! Cmd || Name || Required permissions-type and func
 |-
+| 0 || [1.0.0] ? || 
+|-
 | 1 || [[#Initialize]] || 
 |-
 | 2 || OpenDataFileSystemByCurrentProcess || 
