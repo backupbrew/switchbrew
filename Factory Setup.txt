@@ -8,7 +8,7 @@ Test Application Launcher is used to launch a number of tests, "CAL0" calibratio
 
 === Overview ===
 
-Factory firmware contains a stripped down version of the Switch's OS with unnecessary titles removed, and a number of additional debug titles installed.
+Factory firmware contains a stripped down version of the Switch's OS with unnecessary titles removed, and a number of additional debug titles installed. The version of the OS installed at the factory is receiving updates as new switches are manufactured. At least four revisions of factory firmware are known to have been used in production.
 
 [[File:TestApplicationLauncher.jpg|400px|thumb|right|TestApplicationLauncher running on a console.]]
 

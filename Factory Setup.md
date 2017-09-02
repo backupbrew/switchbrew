@@ -16,7 +16,9 @@ calibration data is written to NAND, and retail firmware is installed.
 
 Factory firmware contains a stripped down version of the Switch's OS
 with unnecessary titles removed, and a number of additional debug titles
-installed.
+installed. The version of the OS installed at the factory is receiving
+updates as new switches are manufactured. At least four revisions of
+factory firmware are known to have been used in production.
 
 ![TestApplicationLauncher running on a
 console.](TestApplicationLauncher.jpg
