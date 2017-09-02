@@ -11,14 +11,22 @@
 = fsp-pr =
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Arguments || Notes
+! Cmd || Name || Notes
 |-
-| 0 || SetFsPermissions || u8 storageID, u32 PID, u64 TID, ACI0_buf_size, ACID_buf_size + two A descriptors (the 0x1C FS-access control from ACI0 + the 0x2C FS-access control from ACID). || Actual FS permissions are set to (ACI0_perms & ACID_perms). Will panic(svcBreak) when buffer sizes from ipc-rawdata are invalid.
+| 0 || [[#SetFsPermissions]] ||
 |-
-| 1 || ClearFsPermissions || u32 PID to clear ||
+| 1 || [[#ClearFsPermissions]] ||
 |-
-| 256 || SetEnabledProgramVerification || bool enabled ||
+| 256 || [[#SetEnabledProgramVerification]] ||
 |}
+
+== SetFsPermissions ==
+Takes a storageID, a pid, a titleID and two type-A buffers. One contains ACI0 contents, other one contains ACID contents.
+
+Final FS permissions are stored as (ACI0_perms & ACID_perms). Will panic(svcBreak) when buffer sizes from ipc-rawdata are invalid.
+
+== ClearFsPermissions ==
+Takes a pid. Removes registered FS permissions for that PID.
 
 == SetEnabledProgramVerification ==
 Seems to sets a global flag to inputval & 1.

@@ -7,11 +7,23 @@
 
 # fsp-pr
 
-| Cmd | Name                          | Arguments                                                                                                                                                           | Notes                                                                                                                              |
-| --- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | SetFsPermissions              | u8 storageID, u32 PID, u64 TID, ACI0\_buf\_size, ACID\_buf\_size + two A descriptors (the 0x1C FS-access control from ACI0 + the 0x2C FS-access control from ACID). | Actual FS permissions are set to (ACI0\_perms & ACID\_perms). Will panic(svcBreak) when buffer sizes from ipc-rawdata are invalid. |
-| 1   | ClearFsPermissions            | u32 PID to clear                                                                                                                                                    |                                                                                                                                    |
-| 256 | SetEnabledProgramVerification | bool enabled                                                                                                                                                        |                                                                                                                                    |
+| Cmd | Name                                                                         | Notes |
+| --- | ---------------------------------------------------------------------------- | ----- |
+| 0   | [\#SetFsPermissions](#SetFsPermissions "wikilink")                           |       |
+| 1   | [\#ClearFsPermissions](#ClearFsPermissions "wikilink")                       |       |
+| 256 | [\#SetEnabledProgramVerification](#SetEnabledProgramVerification "wikilink") |       |
+
+## SetFsPermissions
+
+Takes a storageID, a pid, a titleID and two type-A buffers. One contains
+ACI0 contents, other one contains ACID contents.
+
+Final FS permissions are stored as (ACI0\_perms & ACID\_perms). Will
+panic(svcBreak) when buffer sizes from ipc-rawdata are invalid.
+
+## ClearFsPermissions
+
+Takes a pid. Removes registered FS permissions for that PID.
 
 ## SetEnabledProgramVerification
 
