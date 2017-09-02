@@ -158,7 +158,7 @@ Performs asymmetric crypto with user supplied modulus and exponent.
 Takes a 16-byte EKS ('''Encryption Key Source''') and two words ('''KeyGeneration''' and '''option''') as input.
 '''KeyGeneration''' ranges from 0 to 2.
 
-Returns an hardware scrambled sealed KEK ('''Key Encryption Key''' used as '''key_x''').
+Returns a scrambled sealed KEK ('''Key Encryption Key''' used as '''key_x''').
 
 == LoadAesKey ==
 Takes a u32 ('''keyslot''') and two 16-byte keys ('''key_x''' and '''key_y''').
@@ -210,7 +210,7 @@ Returns an u8 flag for whether the system is devunit. Output flag is 0 on retail
 Takes a 16-byte seed ('''key_seed''') and two words ('''KeyGeneration''' and '''option''') as input.
 '''KeyGeneration''' ranges from 0 to 2.
 
-Returns an hardware scrambled (unsealed?) key ('''key_a''').
+Returns a scrambled (unsealed?) key ('''key_a''').
 
 == DecryptPrivk ==
 Takes one type-10 (C descriptor) buffer ('''dec_privk_out_buf'''), one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
@@ -265,7 +265,7 @@ Sets the specified '''keyslot''' with a key generated from '''key_z'''.
 == GenerateRsaKek ==
 Takes a 16-byte EKS ('''Encryption Key Source''').
 
-Returns an hardware scrambled sealed KEK ('''Key Encryption Key''' used as '''key_z''').
+Returns a scrambled sealed KEK ('''Key Encryption Key''' used as '''key_z''').
 
 == LockAesEngine ==
 Returns the id of the engine that was locked, or 0xD01A if all engines are busy. You need to lock an engine before using AES functions.

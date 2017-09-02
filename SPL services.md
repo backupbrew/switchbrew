@@ -110,7 +110,7 @@ Takes a 16-byte EKS (**Encryption Key Source**) and two words
 (**KeyGeneration** and **option**) as input. **KeyGeneration** ranges
 from 0 to 2.
 
-Returns an hardware scrambled sealed KEK (**Key Encryption Key** used as
+Returns a scrambled sealed KEK (**Key Encryption Key** used as
 **key\_x**).
 
 ## LoadAesKey
@@ -184,7 +184,7 @@ on retail.
 Takes a 16-byte seed (**key\_seed**) and two words (**KeyGeneration**
 and **option**) as input. **KeyGeneration** ranges from 0 to 2.
 
-Returns an hardware scrambled (unsealed?) key (**key\_a**).
+Returns a scrambled (unsealed?) key (**key\_a**).
 
 ## DecryptPrivk
 
@@ -263,7 +263,7 @@ Sets the specified **keyslot** with a key generated from **key\_z**.
 
 Takes a 16-byte EKS (**Encryption Key Source**).
 
-Returns an hardware scrambled sealed KEK (**Key Encryption Key** used as
+Returns a scrambled sealed KEK (**Key Encryption Key** used as
 **key\_z**).
 
 ## LockAesEngine
