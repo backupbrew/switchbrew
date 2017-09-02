@@ -54,13 +54,13 @@ Takes a type-6 buffer and fills it with random data. Same command for "spl:" and
 |-
 | 19 || [[#LoadRsaKey]] || Wrapper for [[SMC#SetKeyslotFromZ|SetKeyslotFromZ]].
 |-
-| 20 || [[#GenerateRsaKek]] || Wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]]. [2.0.0+] only.
+| 20 || [2.0.0+] [[#GenerateRsaKek]] || Wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]].
 |-
-| 21 || [[#LockAesEngine]] || [2.0.0+] only.
+| 21 || [2.0.0+] [[#LockAesEngine]] ||
 |-
-| 22 || [[#UnlockAesEngine]] || [2.0.0+] only.
+| 22 || [2.0.0+] [[#UnlockAesEngine]] ||
 |-
-| 23 || [[#GetSplWaitEvent]] || [2.0.0+] only.
+| 23 || [2.0.0+] [[#GetSplWaitEvent]] ||
 |}
 
 == GetConfig ==

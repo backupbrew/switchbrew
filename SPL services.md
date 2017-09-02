@@ -38,10 +38,10 @@ unlocked.
 | 17  | [\#DecryptImportPrivkForExpMod1](#DecryptImportPrivkForExpMod1 "wikilink") | Wrapper for [ImportParamsFor10WithXY](SMC#ImportParamsFor10WithXY.md##ImportParamsFor10WithXY "wikilink").                              |
 | 18  | [\#ExpMod1](#ExpMod1 "wikilink")                                           | Wrapper for [ExpModAndKeygenAndSealZ](SMC#ExpModAndKeygenAndSealZ.md##ExpModAndKeygenAndSealZ "wikilink").                              |
 | 19  | [\#LoadRsaKey](#LoadRsaKey "wikilink")                                     | Wrapper for [SetKeyslotFromZ](SMC#SetKeyslotFromZ.md##SetKeyslotFromZ "wikilink").                                                      |
-| 20  | [\#GenerateRsaKek](#GenerateRsaKek "wikilink")                             | Wrapper for [KeygenAndSealZ](SMC#KeygenAndSealZ.md##KeygenAndSealZ "wikilink"). \[2.0.0+\] only.                                        |
-| 21  | [\#LockAesEngine](#LockAesEngine "wikilink")                               | \[2.0.0+\] only.                                                                                                                        |
-| 22  | [\#UnlockAesEngine](#UnlockAesEngine "wikilink")                           | \[2.0.0+\] only.                                                                                                                        |
-| 23  | [\#GetSplWaitEvent](#GetSplWaitEvent "wikilink")                           | \[2.0.0+\] only.                                                                                                                        |
+| 20  | \[2.0.0+\] [\#GenerateRsaKek](#GenerateRsaKek "wikilink")                  | Wrapper for [KeygenAndSealZ](SMC#KeygenAndSealZ.md##KeygenAndSealZ "wikilink").                                                         |
+| 21  | \[2.0.0+\] [\#LockAesEngine](#LockAesEngine "wikilink")                    |                                                                                                                                         |
+| 22  | \[2.0.0+\] [\#UnlockAesEngine](#UnlockAesEngine "wikilink")                |                                                                                                                                         |
+| 23  | \[2.0.0+\] [\#GetSplWaitEvent](#GetSplWaitEvent "wikilink")                |                                                                                                                                         |
 
 ## GetConfig
 
