@@ -44,31 +44,31 @@ abort.
 | ---- | -------------------------------------------------------------------------------------- | ---------------------------------- |
 | 1    | [\#Initialize](#Initialize "wikilink")                                                 |                                    |
 | 2    | OpenDataFileSystemByCurrentProcess                                                     |                                    |
-| 7    | [\#MountContent7](#MountContent7 "wikilink")                                           |                                    |
-| 8    | [\#MountContent](#MountContent "wikilink")                                             | Depends on input.                  |
-| 9    | OpenDataFileSystemByApplicationId \[3.0.0+\]                                           |                                    |
+| 7    | \[2.0.0+\] [\#MountContent7](#MountContent7 "wikilink")                                |                                    |
+| 8    | \[2.0.0+\] [\#MountContent](#MountContent "wikilink")                                  | Depends on input.                  |
+| 9    | \[3.0.0+\] OpenDataFileSystemByApplicationId                                           |                                    |
 | 11   | [\#MountBis](#MountBis "wikilink")                                                     |                                    |
 | 12   | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                     |                                    |
 | 13   | InvalidateBisCache                                                                     |                                    |
 | 17   | OpenHostFileSystemImpl                                                                 |                                    |
 | 18   | MountSdCard                                                                            |                                    |
-| 19   | FormatSdCard                                                                           |                                    |
+| 19   | \[2.0.0+\] FormatSdCard                                                                |                                    |
 | 21   | [\#DeleteSaveData](#DeleteSaveData "wikilink")                                         |                                    |
 | 22   | [\#CreateSaveData](#CreateSaveData "wikilink")                                         |                                    |
 | 23   | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                             |                                    |
 | 24   | RegisterSaveDataAtomicDeletion                                                         |                                    |
-| 25   | DeleteSaveDataWithSpaceId                                                              |                                    |
-| 26   | FormatSdCardDryRun                                                                     |                                    |
-| 27   | IsExFatSupported                                                                       |                                    |
+| 25   | \[2.0.0+\] DeleteSaveDataWithSpaceId                                                   |                                    |
+| 26   | \[2.0.0+\] FormatSdCardDryRun                                                          |                                    |
+| 27   | \[2.0.0+\] IsExFatSupported                                                            |                                    |
 | 30   | [\#OpenGameCardPartition](#OpenGameCardPartition "wikilink")                           |                                    |
-| 31   | [\#MountGameCardPartition](#MountGameCardPartition "wikilink")                         |                                    |
-| 32   | ExtendSaveData \[3.0.0+\]                                                              |                                    |
+| 31   | \[2.0.0+\] [\#MountGameCardPartition](#MountGameCardPartition "wikilink")              |                                    |
+| 32   | \[3.0.0+\] ExtendSaveData                                                              |                                    |
 | 51   | [\#MountSaveData](#MountSaveData "wikilink")                                           |                                    |
 | 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |                                    |
-| 53   | MountSaveDataReadOnly                                                                  |                                    |
-| 57   | ReadSaveDataFileSystemExtraDataWithSpaceId \[3.0.0+\]                                  |                                    |
+| 53   | \[2.0.0+\] MountSaveDataReadOnly                                                       |                                    |
+| 57   | \[3.0.0+\] ReadSaveDataFileSystemExtraDataWithSpaceId                                  |                                    |
 | 58   | ReadSaveDataFileSystemExtraData                                                        |                                    |
-| 59   | WriteSaveDataFileSystemExtraData                                                       |                                    |
+| 59   | \[2.0.0+\] WriteSaveDataFileSystemExtraData                                            |                                    |
 | 60   | OpenSaveDataInfoReader                                                                 |                                    |
 | 61   | OpenSaveDataIterator                                                                   |                                    |
 | 80   | OpenSaveDataThumbnailFile                                                              |                                    |
@@ -77,7 +77,7 @@ abort.
 | 200  | OpenDataStorageByCurrentProcess                                                        |                                    |
 | 201  | OpenDataStorageByApplicationId \[3.0.0+\]                                              |                                    |
 | 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                       |                                    |
-| 203  | Returns an [\#IStorage](#IStorage "wikilink").                                         |                                    |
+| 203  | \[2.0.0+\] Returns an [\#IStorage](#IStorage "wikilink").                              |                                    |
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |                                    |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")     |                                    |
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink") |                                    |
@@ -87,13 +87,13 @@ abort.
 | 603  | CorruptSaveDataForDebug                                                                |                                    |
 | 604  | CreatePaddingFile                                                                      |                                    |
 | 605  | DeleteAllPaddingFiles                                                                  |                                    |
-| 606  | GetRightsId                                                                            |                                    |
-| 607  | RegisterExternalKey                                                                    | 0x18, 1                            |
-| 608  | UnregisterExternalKey                                                                  |                                    |
-| 609  | GetRightsIdByPath                                                                      |                                    |
-| 610  | GetRightsIdByPath2 (returns extra byte) \[3.0.0+\]                                     |                                    |
-| 620  | [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                       | 0x19, 1                            |
-| 800  | GetAndClearFileSystemProxyErrorInfo                                                    |                                    |
+| 606  | \[2.0.0+\] GetRightsId                                                                 |                                    |
+| 607  | \[2.0.0+\] RegisterExternalKey                                                         | 0x18, 1                            |
+| 608  | \[2.0.0+\] UnregisterExternalKey                                                       |                                    |
+| 609  | \[2.0.0+\] GetRightsIdByPath                                                           |                                    |
+| 610  | \[3.0.0+\] GetRightsIdByPath2 (returns extra byte)                                     |                                    |
+| 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")            | 0x19, 1                            |
+| 800  | \[2.0.0+\] GetAndClearFileSystemProxyErrorInfo                                         |                                    |
 | 1000 | SetBisRootForHost                                                                      |                                    |
 | 1001 | SetSaveDataSize                                                                        |                                    |
 | 1002 | SetSaveDataRootPath                                                                    |                                    |

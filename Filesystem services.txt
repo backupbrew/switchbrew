@@ -42,11 +42,11 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 2 || OpenDataFileSystemByCurrentProcess || 
 |-
-| 7 || [[#MountContent7]] || 
+| 7 || [2.0.0+] [[#MountContent7]] || 
 |-
-| 8 || [[#MountContent]] || Depends on input.
+| 8 || [2.0.0+] [[#MountContent]] || Depends on input.
 |-
-| 9 || OpenDataFileSystemByApplicationId [3.0.0+] ||
+| 9 || [3.0.0+] OpenDataFileSystemByApplicationId ||
 |-
 | 11 || [[#MountBis]] || 
 |-
@@ -58,7 +58,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 18 || MountSdCard || 
 |-
-| 19 || FormatSdCard || 
+| 19 || [2.0.0+] FormatSdCard || 
 |-
 | 21 || [[#DeleteSaveData]] || 
 |-
@@ -68,29 +68,29 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 24 || RegisterSaveDataAtomicDeletion || 
 |-
-| 25 || DeleteSaveDataWithSpaceId || 
+| 25 || [2.0.0+] DeleteSaveDataWithSpaceId || 
 |-
-| 26 || FormatSdCardDryRun || 
+| 26 || [2.0.0+] FormatSdCardDryRun || 
 |-
-| 27 || IsExFatSupported || 
+| 27 || [2.0.0+] IsExFatSupported || 
 |-
 | 30 || [[#OpenGameCardPartition]] || 
 |-
-| 31 || [[#MountGameCardPartition]] || 
+| 31 || [2.0.0+] [[#MountGameCardPartition]] || 
 |-
-| 32 || ExtendSaveData [3.0.0+] ||
+| 32 || [3.0.0+] ExtendSaveData ||
 |-
 | 51 || [[#MountSaveData]] || 
 |-
 | 52 || [[#MountSystemSaveData]] || 
 |-
-| 53 || MountSaveDataReadOnly || 
+| 53 || [2.0.0+] MountSaveDataReadOnly || 
 |-
-| 57 || ReadSaveDataFileSystemExtraDataWithSpaceId [3.0.0+] || 
+| 57 || [3.0.0+] ReadSaveDataFileSystemExtraDataWithSpaceId || 
 |-
 | 58 || ReadSaveDataFileSystemExtraData || 
 |-
-| 59 || WriteSaveDataFileSystemExtraData || 
+| 59 || [2.0.0+] WriteSaveDataFileSystemExtraData || 
 |-
 | 60 || OpenSaveDataInfoReader || 
 |-
@@ -108,7 +108,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 202 || [[#OpenDataStorageByDataId]] || 
 |-
-| 203 || Returns an [[#IStorage]]. || 
+| 203 || [2.0.0+] Returns an [[#IStorage]]. || 
 |-
 | 400 || [[#OpenDeviceOperator]] || 
 |-
@@ -128,19 +128,19 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 605 || DeleteAllPaddingFiles || 
 |-
-| 606 || GetRightsId || 
+| 606 || [2.0.0+] GetRightsId || 
 |-
-| 607 || RegisterExternalKey || 0x18, 1
+| 607 || [2.0.0+] RegisterExternalKey || 0x18, 1
 |-
-| 608 || UnregisterExternalKey || 
+| 608 || [2.0.0+] UnregisterExternalKey || 
 |-
-| 609 || GetRightsIdByPath || 
+| 609 || [2.0.0+] GetRightsIdByPath || 
 |-
-| 610 || GetRightsIdByPath2 (returns extra byte) [3.0.0+] || 
+| 610 || [3.0.0+] GetRightsIdByPath2 (returns extra byte) || 
 |-
-| 620 || [[#SetSdCardEncryptionSeed]] || 0x19, 1
+| 620 || [2.0.0+] [[#SetSdCardEncryptionSeed]] || 0x19, 1
 |-
-| 800 || GetAndClearFileSystemProxyErrorInfo || 
+| 800 || [2.0.0+] GetAndClearFileSystemProxyErrorInfo || 
 |-
 | 1000 || SetBisRootForHost || 
 |-
