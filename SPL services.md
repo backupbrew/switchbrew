@@ -18,35 +18,34 @@ now support for 4 of them.
 automatically
 unlocked.
 
-| Cmd | Name                                                                 | Notes                                                                                                                               |
-| --- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | [\#GetConfig](#GetConfig "wikilink")                                 | wrapper for [GetConfig](SMC#GetConfig.md##GetConfig "wikilink")                                                                     |
-| 1   |                                                                      | user supplied modulus and exponent                                                                                                  |
-| 2   | [\#GenerateAesKek](#GenerateAesKek "wikilink")                       | wrapper for [KeygenAndSealX](SMC#KeygenAndSealX.md##KeygenAndSealX "wikilink")                                                      |
-| 3   | [\#LoadAesKey](#LoadAesKey "wikilink")                               | wrapper for [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink")                                                |
-| 4   | [\#GenerateAesKey](#GenerateAesKey "wikilink")                       | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with a fixed Y     |
-| 5   | [\#SetConfig](#SetConfig "wikilink")                                 | wrapper for [SetConfig](SMC#SetConfig.md##SetConfig "wikilink")                                                                     |
-| 7   | [\#GetRandomBytes](#GetRandomBytes "wikilink")                       | uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink")                                                                               |
-| 9   |                                                                      | wrapper for [ImportParamsForFWithXY](SMC#ImportParamsForFWithXY.md##ImportParamsForFWithXY "wikilink")                              |
-| 10  |                                                                      | wrapper for [ExpMod](SMC#ExpMod.md##ExpMod "wikilink")                                                                              |
-| 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                         |                                                                                                                                     |
-| 12  | GenerateSpecificAesKey                                               | wrapper for [KeygenA](SMC#KeygenA.md##KeygenA "wikilink")                                                                           |
-| 13  | [\#DecryptExpModParamsWithXY](#DecryptExpModParamsWithXY "wikilink") | wrapper for [DecryptExpModParamsWithXY](SMC#DecryptExpModParamsWithXY.md##DecryptExpModParamsWithXY "wikilink")                     |
-| 14  | [\#DecryptAesKey](#DecryptAesKey "wikilink")                         | decrypts 0x10 bytes using AES ECB, uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X and Y |
-| 15  | [\#DecryptAesCtr](#DecryptAesCtr "wikilink")                         | wrapper for [SymmetricCrypto](SMC#SymmetricCrypto.md##SymmetricCrypto "wikilink")                                                   |
-| 16  | [\#ComputeCmac](#ComputeCmac "wikilink")                             | wrapper for [CMAC](SMC#CMAC.md##CMAC "wikilink")                                                                                    |
-| 17  |                                                                      | wrapper for [ImportParamsFor10WithXY](SMC#ImportParamsFor10WithXY.md##ImportParamsFor10WithXY "wikilink")                           |
-| 18  |                                                                      | wrapper for [ExpModAndKeygenAndSealZ](SMC#ExpModAndKeygenAndSealZ.md##ExpModAndKeygenAndSealZ "wikilink")                           |
-| 19  | [\#SetKeyslotFromZ](#SetKeyslotFromZ "wikilink")                     | wrapper for [SetKeyslotFromZ](SMC#SetKeyslotFromZ.md##SetKeyslotFromZ "wikilink")                                                   |
-| 20  | \[2.0.0+\]                                                           | wrapper for [KeygenAndSealZ](SMC#KeygenAndSealZ.md##KeygenAndSealZ "wikilink")                                                      |
-| 21  | \[2.0.0+\] [\#LockAesEngine](#LockAesEngine "wikilink")              |                                                                                                                                     |
-| 22  | \[2.0.0+\] [\#UnlockAesEngine](#UnlockAesEngine "wikilink")          |                                                                                                                                     |
-| 23  | \[2.0.0+\] GetSplWaitEvent                                           |                                                                                                                                     |
+| Cmd | Name                                                                       | Notes                                                                                                                                   |
+| --- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | [\#GetConfig](#GetConfig "wikilink")                                       | Wrapper for [GetConfig](SMC#GetConfig.md##GetConfig "wikilink").                                                                        |
+| 1   | [\#UserExpMod](#UserExpMod "wikilink")                                     | User supplied modulus and exponent.                                                                                                     |
+| 2   | [\#GenerateAesKek](#GenerateAesKek "wikilink")                             | Wrapper for [KeygenAndSealX](SMC#KeygenAndSealX.md##KeygenAndSealX "wikilink").                                                         |
+| 3   | [\#LoadAesKey](#LoadAesKey "wikilink")                                     | Wrapper for [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink").                                                   |
+| 4   | [\#GenerateAesKey](#GenerateAesKey "wikilink")                             | Decrypts 0x10 bytes using AES ECB and uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with a fixed Y.     |
+| 5   | [\#SetConfig](#SetConfig "wikilink")                                       | Wrapper for [SetConfig](SMC#SetConfig.md##SetConfig "wikilink").                                                                        |
+| 7   | [\#GetRandomBytes](#GetRandomBytes "wikilink")                             | Uses [PrngX931](SMC#PrngX931.md##PrngX931 "wikilink").                                                                                  |
+| 9   | [\#DecryptImportPrivkForExpMod0](#DecryptImportPrivkForExpMod0 "wikilink") | Wrapper for [ImportParamsForFWithXY](SMC#ImportParamsForFWithXY.md##ImportParamsForFWithXY "wikilink").                                 |
+| 10  | [\#ExpMod0](#ExpMod0 "wikilink")                                           | Wrapper for [ExpMod](SMC#ExpMod.md##ExpMod "wikilink").                                                                                 |
+| 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                               |                                                                                                                                         |
+| 12  | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")             | Wrapper for [KeygenA](SMC#KeygenA.md##KeygenA "wikilink").                                                                              |
+| 13  | [\#DecryptPrivk](#DecryptPrivk "wikilink")                                 | Wrapper for [DecryptExpModParamsWithXY](SMC#DecryptExpModParamsWithXY.md##DecryptExpModParamsWithXY "wikilink").                        |
+| 14  | [\#DecryptAesKey](#DecryptAesKey "wikilink")                               | Decrypts 0x10 bytes using AES ECB and uses [SetKeyslotFromXY](SMC#SetKeyslotFromXY.md##SetKeyslotFromXY "wikilink") with fixed X and Y. |
+| 15  | [\#DecryptAesCtr](#DecryptAesCtr "wikilink")                               | Wrapper for [SymmetricCrypto](SMC#SymmetricCrypto.md##SymmetricCrypto "wikilink").                                                      |
+| 16  | [\#ComputeCmac](#ComputeCmac "wikilink")                                   | Wrapper for [CMAC](SMC#CMAC.md##CMAC "wikilink").                                                                                       |
+| 17  | [\#DecryptImportPrivkForExpMod1](#DecryptImportPrivkForExpMod1 "wikilink") | Wrapper for [ImportParamsFor10WithXY](SMC#ImportParamsFor10WithXY.md##ImportParamsFor10WithXY "wikilink").                              |
+| 18  | [\#ExpMod1](#ExpMod1 "wikilink")                                           | Wrapper for [ExpModAndKeygenAndSealZ](SMC#ExpModAndKeygenAndSealZ.md##ExpModAndKeygenAndSealZ "wikilink").                              |
+| 19  | [\#LoadRsaKey](#LoadRsaKey "wikilink")                                     | Wrapper for [SetKeyslotFromZ](SMC#SetKeyslotFromZ.md##SetKeyslotFromZ "wikilink").                                                      |
+| 20  | [\#GenerateRsaKek](#GenerateRsaKek "wikilink")                             | Wrapper for [KeygenAndSealZ](SMC#KeygenAndSealZ.md##KeygenAndSealZ "wikilink"). \[2.0.0+\] only.                                        |
+| 21  | [\#LockAesEngine](#LockAesEngine "wikilink")                               | \[2.0.0+\] only.                                                                                                                        |
+| 22  | [\#UnlockAesEngine](#UnlockAesEngine "wikilink")                           | \[2.0.0+\] only.                                                                                                                        |
+| 23  | [\#GetSplWaitEvent](#GetSplWaitEvent "wikilink")                           | \[2.0.0+\] only.                                                                                                                        |
 
 ## GetConfig
 
-Takes an input word (ConfigItem), and returns a u64 with the config
-params.
+Takes a u32 (**ConfigItem**), and returns a u64 (**ConfigVal**).
 
 | ConfigItem | Name                             |
 | ---------- | -------------------------------- |
@@ -97,33 +96,78 @@ it will memset various allocated memory-regions with 0x58, 0x59, 0x5A
 uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB
 of DRAM instead of 4GB.
 
+## UserExpMod
+
+Takes one type-10 (C descriptor) buffer (**data\_out\_buf**) and 3
+type-9 (X descriptor) buffers (**data\_in\_buf**, **exp\_in\_buf** and
+**mod\_in\_buf**).
+
+Performs asymmetric crypto with user supplied modulus and exponent.
+
 ## GenerateAesKek
 
-Takes a 16-byte seed ("BisEncryptionKeySourceForKek") and two words
-("KeyGeneration" and "option") as input. KeyGeneration ranges from 0 to
-2.
+Takes a 16-byte EKS (**Encryption Key Source**) and two words
+(**KeyGeneration** and **option**) as input. **KeyGeneration** ranges
+from 0 to 2.
 
-Same input gives same output. Output changes when system is rebooted.
+Returns an hardware scrambled sealed KEK (**Key Encryption Key** used as
+**key\_x**).
 
 ## LoadAesKey
 
-\[2.0.0+\] Now verifies that the engine used (0..3) is locked/owned by
+Takes a u32 (**keyslot**) and two 16-byte keys (**key\_x** and
+**key\_y**).
+
+Sets the specified **keyslot** with a key generated from **key\_x** and
+**key\_y**.
+
+\[2.0.0+\] Now verifies that the engine in use (0..3) is locked/owned by
 the current spl session, otherwise errors with 0xD21A. Previously engine
 was hardcoded to 0.
 
 ## GenerateAesKey
 
-\[2.0.0+\] Previously it used engine 0 always. Now it tries to allocate
-an engine to be used, returns 0xD01A if they're all busy. After command
-is done, the engine is released.
+Takes a 16-byte KEK (**key\_x**) and a 16-byte encrypted key
+(**enc\_key**).
+
+Generates a new key by decrypting **enc\_key** with a key generated from
+the supplied **key\_x** and a fixed **key\_y**.
+
+\[2.0.0+\] Previously, it always used engine 0. Now it tries to allocate
+an engine to be used and returns 0xD01A if they're all busy. When the
+command is done, the engine is released.
 
 ## SetConfig
 
-Takes two input words, a ConfigItem and the value to set.
+Takes a u32 (**ConfigItem**) and a u64 (**ConfigVal**).
 
 | ConfigItem | Name           |
 | ---------- | -------------- |
 | 13         | BatteryProfile |
+
+Any other **ConfigItem**, besides 13, can't be set.
+
+## DecryptImportPrivkForExpMod0
+
+Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
+16-byte KEK (**key\_x**), a 16-byte key (**key\_y**) and a u32
+(**version**). **version** is 0 or 1.
+
+Decrypts **enc\_privk\_in\_buf** with a key generated from **key\_x**
+and **key\_y** and imports it for later usage.
+
+## ExpMod0
+
+Takes one type-10 (C descriptor) buffer (**data\_out\_buf**) and 3
+type-9 (X descriptor) buffers (**data\_in\_buf**, **param0\_in\_buf**
+and **param1\_in\_buf**).
+
+Decrypts **data\_in\_buf** into **data\_out\_buf** using the private key
+imported with
+[\#DecryptImportPrivkForExpMod0](#DecryptImportPrivkForExpMod0 "wikilink")
+and the supplied buffers **param0\_in\_buf** and **param1\_in\_buf**.
+
+Returns and unknown u32.
 
 ## IsDevelopment
 
@@ -135,32 +179,92 @@ true if output from that is 0, or if the SMC returned error 2.
 Returns an u8 flag for whether the system is devunit. Output flag is 0
 on retail.
 
-## DecryptExpModParamsWithXY
+## GenerateSpecificAesKey
 
-Last SPL cmd used by [SSL](SSL%20services.md "wikilink")-sysmodule for
-TLS client-privk.
+Takes a 16-byte seed (**key\_seed**) and two words (**KeyGeneration**
+and **option**) as input. **KeyGeneration** ranges from 0 to 2.
+
+Returns an hardware scrambled (unsealed?) key (**key\_a**).
+
+## DecryptPrivk
+
+Takes one type-10 (C descriptor) buffer (**dec\_privk\_out\_buf**), one
+type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a 16-byte KEK
+(**key\_x**), a 16-byte key (**key\_y**) and a u32 (**version**).
+**version** is 0 or 1.
+
+Decrypts **enc\_privk\_in\_buf** into **dec\_privk\_out\_buf** with a
+key generated from **key\_x** and **key\_y**.
+
+Used by [SSL](SSL%20services.md "wikilink")-sysmodule for TLS
+client-privk.
 
 ## DecryptAesKey
 
-Scrambles with a different constant than non-"other" version.
+Takes a 16-byte encrypted key (**enc\_key**) and two words
+(**KeyGeneration** and **option**) as input. **KeyGeneration** ranges
+from 0 to 2.
+
+Decrypts **enc\_key** with a key generated from fixed **key\_x** and
+**key\_y** and returns a 16-byte decrypted key (**dec\_key**).
 
 \[2.0.0+\] Introduced same engine allocation code as for
 [\#GenerateAesKey](#GenerateAesKey "wikilink").
 
 ## DecryptAesCtr
 
-\[2.0.0+\] Verifies the engine is locked by current session, same change
-as [\#LoadAesKey](#LoadAesKey "wikilink").
+Takes a type-0x46 (B descriptor) buffer (**data\_out\_buf**), a u32
+(**keyslot**), a type-0x45 (A descriptor) buffer (**data\_in\_buf**) and
+a 16-byte CTR (**aes\_ctr**).
+
+Decrypts **data\_in\_buf** into **data\_out\_buf** using the key set in
+the specified **keyslot**.
+
+\[2.0.0+\] Verifies the engine is locked by current session.
 
 ## ComputeCmac
 
-\[2.0.0+\] Verifies the engine is locked by current session, same change
-as [\#LoadAesKey](#LoadAesKey "wikilink").
+Takes one type-9 (X descriptor) buffer (**data\_in\_buf**) and a u32
+(**type?**).
 
-## SetKeyslotFromZ
+Returns a 16-byte CMAC calculated over **data\_in\_buf**.
 
-\[2.0.0+\] Verifies the engine is locked by current session, same change
-as [\#LoadAesKey](#LoadAesKey "wikilink").
+\[2.0.0+\] Verifies the engine is locked by current session.
+
+## DecryptImportPrivkForExpMod1
+
+Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
+16-byte KEK (**key\_x**), a 16-byte key (**key\_y**) and a u32
+(**version**). **version** is 0 or 1.
+
+Decrypts **enc\_privk\_in\_buf** with a key generated from **key\_x**
+and **key\_y** and imports it for later usage.
+
+## ExpMod1
+
+Takes 3 type-9 (X descriptor) buffers (**data\_in\_buf**,
+**param0\_in\_buf** and **param1\_in\_buf**).
+
+Decrypts **data\_in\_buf** using the private key imported with
+[\#DecryptImportPrivkForExpMod1](#DecryptImportPrivkForExpMod1 "wikilink")
+and the supplied buffers **param0\_in\_buf** and **param1\_in\_buf**.
+
+Generates and returns a 16-byte key (**key\_z**).
+
+## LoadRsaKey
+
+Takes a u32 (**keyslot**) and a 16-byte key (**key\_z**).
+
+Sets the specified **keyslot** with a key generated from **key\_z**.
+
+\[2.0.0+\] Verifies the engine is locked by current session.
+
+## GenerateRsaKek
+
+Takes a 16-byte EKS (**Encryption Key Source**).
+
+Returns an hardware scrambled sealed KEK (**Key Encryption Key** used as
+**key\_z**).
 
 ## LockAesEngine
 
@@ -171,3 +275,7 @@ are busy. You need to lock an engine before using AES functions.
 
 Takes a single u32 and unlocks the engine with that id. It must be owned
 by current session otherwise 0xD21A will be returned.
+
+## GetSplWaitEvent
+
+Returns an event handle for synchronizing with the locked AES engine.
