@@ -136,6 +136,10 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 | Audio services
 |
 |-
+| <nowiki>banana</nowiki>
+| ?
+| Some games on [[3.0.0]]+ have access to this service, but it doesn't appear to be present on retail devices.
+|-
 | <nowiki>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, prepo:a</nowiki>
 | [[BCAT services]]
 |
