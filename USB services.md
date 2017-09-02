@@ -23,8 +23,8 @@ used during [factory setup](Factory%20Setup.md "wikilink") by
 | 0   | GetDsEndpoint             |
 | 1   | GetSetupEvent             |
 | 2   |                           |
-| 3   |                           |
-| 4   |                           |
+| 3   | StartInterface            |
+| 4   | StopInterface             |
 | 5   |                           |
 | 6   |                           |
 | 7   | GetCtrlInCompletionEvent  |

@@ -32,9 +32,9 @@ This service is used during [[Factory Setup|factory setup]] by [[Manu Services|m
 |-
 | 2 || 
 |-
-| 3 || 
+| 3 || StartInterface
 |-
-| 4 || 
+| 4 || StopInterface
 |-
 | 5 || 
 |-
