@@ -120,7 +120,7 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |-
 | [1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry
 
- [3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd
+[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd
 | [[NS Services]]
 | am: Application Manager, su: System Update
 |-
