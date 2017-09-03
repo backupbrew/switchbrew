@@ -269,28 +269,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |}
 
 == Initialize ==
-{| class="wikitable" border="1"
-|-
-! Word || Value
-|-
-| 0 || 0x00000004
-|-
-| 1 || 0x8000000E
-|-
-| 2 || 0x00000001
-|- style="border-top: double"
-| 0-1 || Pid
-|- style="border-top: double"
-| 0 || Always. 0x18000001
-|-
-| 1 || Always. 0
-|-
-| 2 || "SCFI"
-|-
-| 3 || 0x00000001
-|-
-| 4 || Always 0.
-|}
+Takes a pid-decscriptor.
 
 == MountContent7 ==
 Takes an input u32 ([[NCA]]-type) and an u64 title-id. Web-applet loads the u32 from u32_table[inparam]. Only type4 is usable with this?

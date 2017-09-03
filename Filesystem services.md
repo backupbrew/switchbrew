@@ -176,17 +176,7 @@ happens.
 
 ## Initialize
 
-| Word | Value              |
-| ---- | ------------------ |
-| 0    | 0x00000004         |
-| 1    | 0x8000000E         |
-| 2    | 0x00000001         |
-| 0-1  | Pid                |
-| 0    | Always. 0x18000001 |
-| 1    | Always. 0          |
-| 2    | "SCFI"             |
-| 3    | 0x00000001         |
-| 4    | Always 0.          |
+Takes a pid-decscriptor.
 
 ## MountContent7
 
