@@ -184,6 +184,47 @@ applets.
 | 0x3CF089          | 7800        | Unknown/invalid libcurl error.                                                                                                                                                       |
 | 0x3E8289-0x3F4089 | 8001-8096   | libcurl error 1-96. Some of the libcurl errors in the error-table map to the above unknown-libcurl-error however.                                                                    |
 
+## FS Error Codes
+
+The following are the error codes recognized by
+nn::fs::detail::LogErrorMessage found in some
+[factory](Factory%20Setup.md "wikilink")
+titles:
+
+| Error Code          | Description                                               | Message                                                                                      |
+| ------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 0x7802              | 60                                                        | Error: Specified mount name already exists.                                                  |
+| 0xD401              | 106                                                       | Error: Passed buffer is not usable for fs library.                                           |
+| 0x7D202             | 1001                                                      | Error: Specified partition is not found.                                                     |
+| 0x7D402             | 1002                                                      | Error: Specified target is not found.                                                        |
+| 0xFA002 - 0x138602  | 2000 - 2499                                               | Error: Failed to access SD card.                                                             |
+| 0x136802 - 0x176E02 | 2500 - 2999                                               | Error: Failed to access game card.                                                           |
+| 0x177202            | 3001                                                      | Error: Specified operation is not implemented.                                               |
+| 0x177A02            | 3005                                                      | Error: Specified value is out of range.                                                      |
+| 0x1B5802 - 0x1F3E02 | 3500 - 3999                                               | Error: Failed to access MMC.                                                                 |
+| 0x1F4202 - 0x219602 | 4001 - 4299                                               | Error: ROM is corrupted.                                                                     |
+| 0x219A02 - 0x232602 | 4301 - 4499                                               | Error: Save data is corrupted.                                                               |
+| 0x232A02 - 0x23EE02 | 4501 - 4599                                               | Error: NCA is corrupted.                                                                     |
+| 0x23F202 - 0x243E02 | 4601 - 4639                                               | Error: Integrity verification failed.                                                        |
+| 0x244202 - 0x246602 | 4641 - 4659                                               | Error: Partition FS is corrupted.                                                            |
+| 0x246A02 - 0x248E02 | 4661 - 4679                                               | Error: Built-in-storage is corrupted.                                                        |
+| 0x249202 - 0x24B602 | 4681 - 4699                                               | Error: FAT FS is corrupted.                                                                  |
+| 0x24BA02 - 0x24DE02 | 4701 - 4719                                               | Error: HOST FS is corrupted.                                                                 |
+| 0x1F4002 - 0x270E02 | 4000, 4300, 4500, 4600, 4640, 4660, 4680, 4700, 4720-4999 | Error: Data is corrupted.                                                                    |
+| 0x271002 - 0x2EDE02 | 5000-5999                                                 | Error: Unexpected failure occurred.                                                          |
+| 0x2EE402 - 0x2F1A02 | 6002-6029                                                 | Error: Invalid path was specified.                                                           |
+| 0x2F5A02            | 6061                                                      | Error: Invalid offset was specified.                                                         |
+| 0x2F5C02            | 6062                                                      | Error: Invalid size was specified.                                                           |
+| 0x2F5E02            | 6063                                                      | Error: Null pointer argument was specified.                                                  |
+| 0x2EE002            | 6000                                                      | Error: Precondition violation.                                                               |
+| 0x2EE202 - 0x306E02 | 6001-6199                                                 | Error: Invalid argument was specified.                                                       |
+| 0x307202            | 6201                                                      | Error: OpenMode\_AllowAppend is required for implicit extension of file size by WriteFile(). |
+| 0x307002 - 0x313602 | 6200, 6202 - 6299                                         | Error: Invalid operation for the open mode.                                                  |
+| 0x313802 - 0x31FE02 | 6300-6399                                                 | Error: Unsupported operation.                                                                |
+| 0x320002 - 0x32C602 | 6400-6499                                                 | Error: Permission denied.                                                                    |
+| 0x346402            | 6706                                                      | Error: Enough journal space is not left.                                                     |
+| 0x346A02            | 6709                                                      | Error: The open count of files and directories reached the limitation.                       |
+
 # Fatal Errors
 
 | Error     | Description                                                                                                                                                                                        |
