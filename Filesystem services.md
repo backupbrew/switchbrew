@@ -111,7 +111,8 @@ The permission data is populated with data from the
 [NPDM](NPDM.md "wikilink"),
 
 If the processID is \<= 6 (which happens only for built-in sysmodules),
-it will use a hardcoded registration data.
+it will use a hardcoded registration data. The default mask in this case
+is 0x8000000000000000.
 
 Note that the functions check whether or not at least one bit is set in
 the mask. This means that, you don't need to set 0xFFFFFFFFFFFFFFFF to

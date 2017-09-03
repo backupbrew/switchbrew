@@ -162,7 +162,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 == Permissions ==
 Every time permissions are checked, the process registration [[#fsp-pr]] is loaded using the session processID. The permission data is populated with data from the [[NPDM]],
 
-If the processID is <= 6 (which happens only for built-in sysmodules), it will use a hardcoded registration data.
+If the processID is <= 6 (which happens only for built-in sysmodules), it will use a hardcoded registration data. The default mask in this case is 0x8000000000000000.
 
 Note that the functions check whether or not at least one bit is set in the mask. This means that, you don't need to set 0xFFFFFFFFFFFFFFFF to get all permissions: it suffices to set 0x8000000000000000.
 
