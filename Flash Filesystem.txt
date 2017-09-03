@@ -159,7 +159,7 @@ The active bootloader's version (offset 0x2330 in the BCT) acts as an index to c
 |  0x02800000
 |  0x00800000
 |  25
-|  Installed at the factory.
+|  Installed at the factory, never written afterwards on retail. In one case this is identical to normal [[1.0.0]] pkg2, except this has encrypted data at the end padded for 0x1000-byte alignment.
 |-
 |  BCPKG2-6-Repair-Sub
 |  0x03000000
