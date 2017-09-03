@@ -213,17 +213,17 @@ Func1(non-zero retval is always 0x1):
 |-
 ! Type(s) || Mask || Name || Used by
 |-
-| 0x0 || 0x8000000000000080 || BisAccess || [[#InvalidateBisCache]]
+| 0x0 || 0x8000000000000080 || BisCache || [[#InvalidateBisCache]]
 |-
-| 0x1 || 0x8000000000000080 || || [[#GetAndClearSdCardErrorInfo]]
+| 0x1 || 0x8000000000000080 || EraseMmc || [[#EraseMmc]]
 |-
-| 0x2 || 0x8000000000000010 || || 
+| 0x2 || 0x8000000000000010 || GameCardCertificate || [[#GetGameCardDeviceCertificate]]
 |-
-| 0x3 || 0x8000000000000010 || || 
+| 0x3 || 0x8000000000000010 || GameCardIdSet || [[#GetGameCardIdSet]]
 |-
-| 0x4 || 0x8000000000000200 || || 
+| 0x4 || 0x8000000000000200 || GameCardDriver || [[#FinalizeGameCardDriver]]
 |-
-| 0x5 || 0x8000000000000200 || || 
+| 0x5 || 0x8000000000000200 || GameCardAsic || [[#GetGameCardAsicInfo]]
 |-
 | 0x6 || 0x8000000000002020 || SaveDataCreate || [[#CreateSaveData]]
 |-
@@ -245,9 +245,9 @@ Func1(non-zero retval is always 0x1):
 |-
 | 0xF || 0x8000000000004060 || SaveDataExtraData || [[#ReadSaveDataFileSystemExtraData]]
 |-
-| 0x10 || 0x8000000000080000 || || [[#SetGlobalAccessMode]]
+| 0x10 || 0x8000000000080000 || GlobalMode || [[#SetGlobalAccessMode]]
 |-
-| 0x11 || 0x8000000000080000 || || 
+| 0x11 || 0x8000000000080000 || SpeedEmulation || [[#SetSpeedEmulationMode]]
 |-
 | 0x12 || Invalid || || 
 |-
