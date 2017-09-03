@@ -146,31 +146,38 @@ Func0:
 | 0x25                               | 0x8000000000100008 | 0x1             |                                                                                                                                 |
 | 0x26                               | 0xC000000000400000 | Default         |                                                                                                                                 |
 
-Func1(non-zero retval is always 0x1):
+Func1(non-zero retval is always
+0x1):
 
-| Type(s)   | Mask               | Notes   |
-| --------- | ------------------ | ------- |
-| 0x0 0x1   | 0x8000000000000080 |         |
-| 0x2 0x3   | 0x8000000000000010 |         |
-| 0x4 0x5   | 0x8000000000000200 |         |
-| 0x7 0xB   | 0x8000000000000060 |         |
-| 0xC 0x1A  | 0x8000000000004020 |         |
-| 0x10 0x11 | 0x8000000000080000 |         |
-| 0x6       | 0x8000000000002020 |         |
-| 0x8       | 0x8000000000000028 |         |
-| 0x9       | 0x8000000000000020 |         |
-| 0xA       | 0x8000000000004028 |         |
-| 0xD       | 0x8000000000020000 |         |
-| 0xE       | 0x8000000000000400 |         |
-| 0xF       | 0x8000000000004060 |         |
-| 0x13      | 0xC000000000800000 |         |
-| 0x14      | 0xC000000001000000 |         |
-| 0x15      | 0xC000000002000000 |         |
-| 0x16      | 0x8000000004000000 |         |
-| 0x17      | 0x8000000008000000 |         |
-| 0x18      | 0x8000000010000000 |         |
-| 0x19      | 0x8000000000000800 |         |
-| 0x12      |                    | Invalid |
+| Type(s)         | Mask               | Name                       | Used by                                                                                                                                                |
+| --------------- | ------------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0             | 0x8000000000000080 | BisAccess                  | [\#InvalidateBisCache](#InvalidateBisCache "wikilink")                                                                                                 |
+| 0x1             | 0x8000000000000080 |                            | [\#GetAndClearSdCardErrorInfo](#GetAndClearSdCardErrorInfo "wikilink")                                                                                 |
+| 0x2             | 0x8000000000000010 |                            |                                                                                                                                                        |
+| 0x3             | 0x8000000000000010 |                            |                                                                                                                                                        |
+| 0x4             | 0x8000000000000200 |                            |                                                                                                                                                        |
+| 0x5             | 0x8000000000000200 |                            |                                                                                                                                                        |
+| 0x6             | 0x8000000000002020 | SaveDataCreate             | [\#CreateSaveData](#CreateSaveData "wikilink")                                                                                                         |
+| 0x7             | 0x8000000000000060 | SaveDataDelete0            | [\#DeleteSaveData](#DeleteSaveData "wikilink"), [\#RegisterSaveDataAtomicDeletion](#RegisterSaveDataAtomicDeletion "wikilink")                         |
+| 0x8             | 0x8000000000000028 | SystemSaveDataCreate0      | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                                                                                             |
+| 0x9             | 0x8000000000000020 | SystemSaveDataCreate1      | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                                                                                             |
+| 0xA             | 0x8000000000004028 | SaveDataDelete1            | [\#DeleteSaveData](#DeleteSaveData "wikilink"), [\#RegisterSaveDataAtomicDeletion](#RegisterSaveDataAtomicDeletion "wikilink")                         |
+| 0xB             | 0x8000000000000060 | SaveDataIterators0         | [\#OpenSaveDataIterator](#OpenSaveDataIterator "wikilink"), [\#OpenSaveDataInfoIterator](#OpenSaveDataInfoIterator "wikilink")                         |
+| 0xC             | 0x8000000000004020 | SaveDataIterators1         | [\#OpenSaveDataIterator](#OpenSaveDataIterator "wikilink"), [\#OpenSaveDataInfoIterator](#OpenSaveDataInfoIterator "wikilink")                         |
+| 0xD             | 0x8000000000020000 | SaveThumbnails             | [\#OpenSaveDataThumbnailFile](#OpenSaveDataThumbnailFile "wikilink")                                                                                   |
+| 0xE             | 0x8000000000000400 | PosixTime                  | [\#SetCurrentPosixTime](#SetCurrentPosixTime "wikilink")                                                                                               |
+| 0xF             | 0x8000000000004060 | SaveDataExtraData          | [\#ReadSaveDataFileSystemExtraData](#ReadSaveDataFileSystemExtraData "wikilink")                                                                       |
+| 0x10            | 0x8000000000080000 |                            | [\#SetGlobalAccessMode](#SetGlobalAccessMode "wikilink")                                                                                               |
+| 0x11            | 0x8000000000080000 |                            |                                                                                                                                                        |
+| 0x12            | Invalid            |                            |                                                                                                                                                        |
+| 0x13            | 0xC000000000800000 | PaddingFiles               | [\#CreatePaddingFile](#CreatePaddingFile "wikilink"), [\#DeletePaddingFiles](#DeletePaddingFiles "wikilink")                                           |
+| 0x14            | 0xC000000001000000 | SaveData\_Debug            | [\#CorruptSaveDataForDebug](#CorruptSaveDataForDebug "wikilink")                                                                                       |
+| 0x15            | 0xC000000002000000 | SaveData\_SystemManagement | [\#CreateSaveData](#CreateSaveData "wikilink"), [\#MountSaveData](#MountSaveData "wikilink"), [\#SetSaveDataRootPath](#SetSaveDataRootPath "wikilink") |
+| \[2.0.0+\] 0x16 | 0x8000000004000000 |                            |                                                                                                                                                        |
+| \[2.0.0+\] 0x17 | 0x8000000008000000 |                            |                                                                                                                                                        |
+| \[2.0.0+\] 0x18 | 0x8000000010000000 |                            |                                                                                                                                                        |
+| \[2.0.0+\] 0x19 | 0x8000000000000800 |                            |                                                                                                                                                        |
+| \[2.0.0+\] 0x1A | 0x8000000000004020 |                            |                                                                                                                                                        |
 
 ## Initialize
 

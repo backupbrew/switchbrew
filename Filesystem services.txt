@@ -211,49 +211,61 @@ Func0:
 Func1(non-zero retval is always 0x1):
 {| class="wikitable" border="1"
 |-
-! Type(s) || Mask || Notes
+! Type(s) || Mask || Name || Used by
 |-
-| 0x0 0x1 || 0x8000000000000080 || 
+| 0x0 || 0x8000000000000080 || BisAccess || [[#InvalidateBisCache]]
 |-
-| 0x2 0x3 || 0x8000000000000010 || 
+| 0x1 || 0x8000000000000080 || || [[#GetAndClearSdCardErrorInfo]]
 |-
-| 0x4 0x5 || 0x8000000000000200 || 
+| 0x2 || 0x8000000000000010 || || 
 |-
-| 0x7 0xB || 0x8000000000000060 || 
+| 0x3 || 0x8000000000000010 || || 
 |-
-| 0xC 0x1A || 0x8000000000004020 || 
+| 0x4 || 0x8000000000000200 || || 
 |-
-| 0x10 0x11 || 0x8000000000080000 || 
+| 0x5 || 0x8000000000000200 || || 
 |-
-| 0x6 || 0x8000000000002020 || 
+| 0x6 || 0x8000000000002020 || SaveDataCreate || [[#CreateSaveData]]
 |-
-| 0x8 || 0x8000000000000028 || 
+| 0x7 || 0x8000000000000060 || SaveDataDelete0 || [[#DeleteSaveData]], [[#RegisterSaveDataAtomicDeletion]]
 |-
-| 0x9 || 0x8000000000000020 || 
+| 0x8 || 0x8000000000000028 || SystemSaveDataCreate0 || [[#CreateSystemSaveData]]
 |-
-| 0xA || 0x8000000000004028 || 
+| 0x9 || 0x8000000000000020 || SystemSaveDataCreate1 || [[#CreateSystemSaveData]]
 |-
-| 0xD || 0x8000000000020000 || 
+| 0xA || 0x8000000000004028 || SaveDataDelete1 || [[#DeleteSaveData]], [[#RegisterSaveDataAtomicDeletion]]
 |-
-| 0xE || 0x8000000000000400 || 
+| 0xB || 0x8000000000000060 || SaveDataIterators0 || [[#OpenSaveDataIterator]], [[#OpenSaveDataInfoIterator]]
 |-
-| 0xF || 0x8000000000004060 || 
+| 0xC || 0x8000000000004020 || SaveDataIterators1 || [[#OpenSaveDataIterator]], [[#OpenSaveDataInfoIterator]]
 |-
-| 0x13 || 0xC000000000800000 || 
+| 0xD || 0x8000000000020000 || SaveThumbnails || [[#OpenSaveDataThumbnailFile]]
 |-
-| 0x14 || 0xC000000001000000 || 
+| 0xE || 0x8000000000000400 || PosixTime || [[#SetCurrentPosixTime]]
 |-
-| 0x15 || 0xC000000002000000 || 
+| 0xF || 0x8000000000004060 || SaveDataExtraData || [[#ReadSaveDataFileSystemExtraData]]
 |-
-| 0x16 || 0x8000000004000000 || 
+| 0x10 || 0x8000000000080000 || || [[#SetGlobalAccessMode]]
 |-
-| 0x17 || 0x8000000008000000 || 
+| 0x11 || 0x8000000000080000 || || 
 |-
-| 0x18 || 0x8000000010000000 || 
+| 0x12 || Invalid || || 
 |-
-| 0x19 || 0x8000000000000800 || 
+| 0x13 || 0xC000000000800000 || PaddingFiles || [[#CreatePaddingFile]], [[#DeletePaddingFiles]] 
 |-
-| 0x12 || || Invalid
+| 0x14 || 0xC000000001000000 || SaveData_Debug || [[#CorruptSaveDataForDebug]]
+|-
+| 0x15 || 0xC000000002000000 || SaveData_SystemManagement || [[#CreateSaveData]], [[#MountSaveData]], [[#SetSaveDataRootPath]]
+|-
+| [2.0.0+] 0x16 || 0x8000000004000000 || || 
+|-
+| [2.0.0+] 0x17 || 0x8000000008000000 || || 
+|-
+| [2.0.0+] 0x18 || 0x8000000010000000 || || 
+|-
+| [2.0.0+] 0x19 || 0x8000000000000800 || || 
+|-
+| [2.0.0+] 0x1A || 0x8000000000004020 || || 
 |}
 
 == Initialize ==
