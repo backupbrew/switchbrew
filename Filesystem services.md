@@ -122,47 +122,47 @@ happens.
 
 ### RwPermissions
 
-| Type(s) | Mask               | Name | Value |
-| ------- | ------------------ | ---- | ----- |
-| 0x0     | 0x8000000000000801 |      | 1     |
-| 0x1     | 0x8000000000000801 |      | 1     |
-| 0x2     | 0x8000000000000801 |      | 1     |
-| 0x3     | 0x8000000000000801 |      | 1     |
-| 0x4     | 0x8000000000000801 |      | 1     |
-| 0x5     | 0x8000000000000801 |      | 1     |
-| 0x6     | 0x8000000000000000 |      | 3     |
-| 0x7     | 0x8000000000000800 |      | 3     |
-| 0x8     | 0x8000000000001000 |      | 3     |
-| 0x9     | 0x8000000000000084 |      | 3     |
-| 0xA     | 0x8000000000000080 |      | 3     |
-| 0xB     | 0x8000000000008080 |      | 3     |
-| 0xC     | 0x8000000000008080 |      | 3     |
-| 0xD     | 0x8000000000000080 |      | 3     |
-| 0xE     | 0xC000000000200000 |      | 3     |
-| 0xF     | 0x8000000000000010 |      | 3     |
-| 0x10    | 0x8000000000040020 |      | 3     |
-| 0x11    | 0x8000000000000028 |      | 3     |
-| 0x12    | 0x8000000000000020 |      | 3     |
-| 0x13    | 0x8000000000000020 |      | 3     |
-| 0x14    | 0x8000000000010082 |      | 3     |
-| 0x15    | 0x8000000000010080 |      | 3     |
-| 0x17    | 0x8000000000010080 |      | 3     |
-| 0x18    | 0x8000000000010080 |      | 3     |
-| 0x19    | 0x8000000000010080 |      | 3     |
-| 0x1A    | 0x8000000000010080 |      | 3     |
-| 0x1B    | 0x8000000000010080 |      | 3     |
-| 0x1C    | 0x8000000000010080 |      | 3     |
-| 0x16    | 0x8000000000000080 |      | 3     |
-| 0x1D    | 0x8000000000000084 |      | 3     |
-| 0x1E    | 0x8000000000000084 |      | 3     |
-| 0x1F    | 0x8000000000000080 |      | 3     |
-| 0x20    | 0x8000000000000080 |      | 3     |
-| 0x21    | 0x8000000000000080 |      | 3     |
-| 0x22    | 0x8000000000000080 |      | 3     |
-| 0x23    | 0xC000000000200000 |      | 3     |
-| 0x24    | 0x8000000000000100 |      | 3     |
-| 0x25    | 0x8000000000100008 |      | 1     |
-| 0x26    | 0xC000000000400000 |      | 3     |
+| Type(s) | Mask               | Name                  | Value | Used by                                                                                                                                                                    |
+| ------- | ------------------ | --------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0     | 0x8000000000000801 | MountContentType2     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
+| 0x1     | 0x8000000000000801 | MountContentType5     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
+| 0x2     | 0x8000000000000801 | MountContentType3     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
+| 0x3     | 0x8000000000000801 | MountContentType4     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
+| 0x4     | 0x8000000000000801 | MountContentType6     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
+| 0x5     | 0x8000000000000801 | MountContentType7     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
+| 0x6     | 0x8000000000000000 |                       | 3     |                                                                                                                                                                            |
+| 0x7     | 0x8000000000000800 | ContentStorageAccess  | 3     | [\#MountContentStorage](#MountContentStorage "wikilink")                                                                                                                   |
+| 0x8     | 0x8000000000001000 | ImageDirectoryAccess  | 3     | [\#MountImageDirectory](#MountImageDirectory "wikilink")                                                                                                                   |
+| 0x9     | 0x8000000000000084 | MountBisType28        | 3     | [\#MountBis](#MountBis "wikilink")                                                                                                                                         |
+| 0xA     | 0x8000000000000080 | MountBisType29        | 3     | [\#MountBis](#MountBis "wikilink")                                                                                                                                         |
+| 0xB     | 0x8000000000008080 | MountBisType30        | 3     | [\#MountBis](#MountBis "wikilink")                                                                                                                                         |
+| 0xC     | 0x8000000000008080 | MountBisType31        | 3     | [\#MountBis](#MountBis "wikilink")                                                                                                                                         |
+| 0xD     | 0x8000000000000080 |                       | 3     |                                                                                                                                                                            |
+| 0xE     | 0xC000000000200000 | SdCardAccess          | 3     | [\#MountSdCard](#MountSdCard "wikilink")                                                                                                                                   |
+| 0xF     | 0x8000000000000010 | GameCardUser          | 3     | [\#MountGameCardPartition](#MountGameCardPartition "wikilink")                                                                                                             |
+| 0x10    | 0x8000000000040020 | SaveDataAccess0       | 3     | [\#MountSaveData](#MountSaveData "wikilink")                                                                                                                               |
+| 0x11    | 0x8000000000000028 | SystemSaveDataAccess0 | 3     | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                                                                                                                   |
+| 0x12    | 0x8000000000000020 | SaveDataAccess1       | 3     | [\#MountSaveData](#MountSaveData "wikilink")                                                                                                                               |
+| 0x13    | 0x8000000000000020 | SystemSaveDataAccess1 | 3     | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                                                                                                                   |
+| 0x14    | 0x8000000000010082 | BisPartition0         | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x15    | 0x8000000000010080 | BisPartition10        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x17    | 0x8000000000010080 | BisPartition20        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x18    | 0x8000000000010080 | BisPartition21        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x19    | 0x8000000000010080 | BisPartition22        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x1A    | 0x8000000000010080 | BisPartition23        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x1B    | 0x8000000000010080 | BisPartition24        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x1C    | 0x8000000000010080 | BisPartition25        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x16    | 0x8000000000000080 | BisPartition26        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x1D    | 0x8000000000000084 | BisPartition27        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x1E    | 0x8000000000000084 | BisPartition28        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x1F    | 0x8000000000000080 | BisPartition29        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x20    | 0x8000000000000080 | BisPartition30        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x21    | 0x8000000000000080 | BisPartition31        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x22    | 0x8000000000000080 | BisPartition32        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
+| 0x23    | 0xC000000000200000 |                       | 3     |                                                                                                                                                                            |
+| 0x24    | 0x8000000000000100 | GameCard\_System      | 3     | [\#OpenGameCardPartition](#OpenGameCardPartition "wikilink"), [\#EraseGameCard](#EraseGameCard "wikilink") (bit1), [\#WriteToGameCard](#WriteToGameCard "wikilink") (bit1) |
+| 0x25    | 0x8000000000100008 | MountContent\_System  | 1     | [\#MountContent](#MountContent "wikilink"), [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                               |
+| 0x26    | 0xC000000000400000 | HostAccess            | 3     | [\#OpenHostFileSystemImpl](#OpenHostFileSystemImpl "wikilink")                                                                                                             |
 
 ### BoolPermissions
 
