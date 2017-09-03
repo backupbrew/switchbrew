@@ -160,15 +160,15 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |}
 
 == Permissions ==
-Each time permissions are checked, the [[#fsp-pr|process-obj]] is loaded using the session PID, then a func is called with the permissions-type. The func retval is checked, then the permissions [[Error_codes|error]] is thrown if needed.
+Every time permissions are checked, the process registration [[#fsp-pr]] is loaded using the session processID. The permission data is populated with data from the [[NPDM]],
 
-Internally in that process-obj load func, it will load the obj as normal when the PID is >6, otherwise it will use a fixed obj. If not done already, that fixed obj will be initialized using fixed input data, via the same code used internally by [[#fsp-pr]].
+If the processID is <= 6 (which happens only for built-in sysmodules), it will use a hardcoded registration data.
 
-In general this func uses the input permissions-type to determine what mask value to use. That value is masked with the [[NPDM|permissions]] from the above process-obj. When the result is 0, 0 is returned, otherwise non-zero is returned. The default non-zero retval is basically 0x3.
+Note that the functions check whether or not at least one bit is set in the mask. This means that, you don't need to set 0xFFFFFFFFFFFFFFFF to get all permissions: it suffices to set 0x8000000000000000.
 
-Panic is triggered when the input type is >{max value} / invalid.
+If the code were to request an invalid input type, panic. But this never happens.
 
-Func0:
+=== RwPermissions ===
 {| class="wikitable" border="1"
 |-
 ! Type(s) || Mask || Non-zero retval || Notes
@@ -208,7 +208,7 @@ Func0:
 | 0x26 || 0xC000000000400000 || Default || 
 |}
 
-Func1(non-zero retval is always 0x1):
+=== BoolPermissions ===
 {| class="wikitable" border="1"
 |-
 ! Type(s) || Mask || Name || Used by

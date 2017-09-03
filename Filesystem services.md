@@ -105,26 +105,22 @@ abort.
 
 ## Permissions
 
-Each time permissions are checked, the [process-obj](#fsp-pr "wikilink")
-is loaded using the session PID, then a func is called with the
-permissions-type. The func retval is checked, then the permissions
-[error](Error%20codes.md "wikilink") is thrown if needed.
+Every time permissions are checked, the process registration
+[\#fsp-pr](#fsp-pr "wikilink") is loaded using the session processID.
+The permission data is populated with data from the
+[NPDM](NPDM.md "wikilink"),
 
-Internally in that process-obj load func, it will load the obj as normal
-when the PID is \>6, otherwise it will use a fixed obj. If not done
-already, that fixed obj will be initialized using fixed input data, via
-the same code used internally by [\#fsp-pr](#fsp-pr "wikilink").
+If the processID is \<= 6 (which happens only for built-in sysmodules),
+it will use a hardcoded registration data.
 
-In general this func uses the input permissions-type to determine what
-mask value to use. That value is masked with the
-[permissions](NPDM.md "wikilink") from the above process-obj. When the
-result is 0, 0 is returned, otherwise non-zero is returned. The default
-non-zero retval is basically 0x3.
+Note that the functions check whether or not at least one bit is set in
+the mask. This means that, you don't need to set 0xFFFFFFFFFFFFFFFF to
+get all permissions: it suffices to set 0x8000000000000000.
 
-Panic is triggered when the input type is \>{max value} /
-invalid.
+If the code were to request an invalid input type, panic. But this never
+happens.
 
-Func0:
+### RwPermissions
 
 | Type(s)                            | Mask               | Non-zero retval | Notes                                                                                                                           |
 | ---------------------------------- | ------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -146,8 +142,7 @@ Func0:
 | 0x25                               | 0x8000000000100008 | 0x1             |                                                                                                                                 |
 | 0x26                               | 0xC000000000400000 | Default         |                                                                                                                                 |
 
-Func1(non-zero retval is always
-0x1):
+### BoolPermissions
 
 | Type(s)         | Mask               | Name                       | Used by                                                                                                                                                |
 | --------------- | ------------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
