@@ -17,87 +17,31 @@ Handles for services are retrieved from the service manager port, "sm:". Manager
 |}
 
 == Initialize ==
-{| class="wikitable" border="1"
-|-
-! Word || Value
-|-
-| 0 || 0x00000004
-|-
-| 1 || 0x8000000A
-|-
-| 2 || 0x00000001
-|- style="border-top: double"
-| 0-1 || Pid
-|- style="border-top: double"
-| 0 || "SFCI"
-|-
-| 1 || 0x00000000
-|-
-| 2 || Always 0.
-|}
+Takes a pid descriptor.
 
 == GetService ==
-{| class="wikitable" border="1"
-|-
-! Word || Value
-|-
-| 0 || 0x00000004
-|-
-| 1 || 0x0000000A
-|- style="border-top: double"
-| 0 || "SFCI"
-|-
-| 1 || 0x00000001
-|-
-| 2 || Service name, zero padded and casted to u64.
-|}
+Takes a zero-padded service name encoded as a u64 integer.
 
 == RegisterService ==
-{| class="wikitable" border="1"
-|-
-! Word || Value
-|-
-| 0 || 0x00000004
-|-
-| 1 || 0x0000000C
-|- style="border-top: double"
-| 0 || "SFCI"
-|-
-| 1 || 0x00000002
-|-
-| 2 || Service name, zero padded and casted to u64.
-|-
-| 3 || Max sessions? 32-bit integer.
-|-
-| 4 || Unknown bool
-|}
 
 == UnregisterService ==
-{| class="wikitable" border="1"
-|-
-! Word || Value
-|-
-| 0 || 0x00000004
-|-
-| 1 || 0x0000000A
-|- style="border-top: double"
-| 0 || "SFCI"
-|-
-| 1 || 0x00000003
-|-
-| 2 || Service name, zero padded and casted to u64.
-|}
 
 = sm:m =
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Arguments || Notes
+! Cmd || Name
 |-
-| 0 || RegisterProcess || u32 PID + 2 A Descriptors (unknown, probably service access lists of some kind) ||
+| 0 || [[#RegisterProcess]]
 |-
-| 1 || UnregisterProcess || u32 PID ||
+| 1 || [[#UnregisterProcess]]
 |}
+
+== RegisterProcess ==
+Takes a pid and two A descriptors with the ACID and ACI0 service lists. That data originates from [[NPDM]].
+
+== UnregisterProcess ==
+Takes a pid.
 
 = Service List =
 {| class="wikitable" border="1"

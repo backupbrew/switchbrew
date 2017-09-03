@@ -20,54 +20,31 @@ handles retrieved directly from a SVC.
 
 ## Initialize
 
-| Word | Value      |
-| ---- | ---------- |
-| 0    | 0x00000004 |
-| 1    | 0x8000000A |
-| 2    | 0x00000001 |
-| 0-1  | Pid        |
-| 0    | "SFCI"     |
-| 1    | 0x00000000 |
-| 2    | Always 0.  |
+Takes a pid descriptor.
 
 ## GetService
 
-| Word | Value                                        |
-| ---- | -------------------------------------------- |
-| 0    | 0x00000004                                   |
-| 1    | 0x0000000A                                   |
-| 0    | "SFCI"                                       |
-| 1    | 0x00000001                                   |
-| 2    | Service name, zero padded and casted to u64. |
+Takes a zero-padded service name encoded as a u64 integer.
 
 ## RegisterService
 
-| Word | Value                                        |
-| ---- | -------------------------------------------- |
-| 0    | 0x00000004                                   |
-| 1    | 0x0000000C                                   |
-| 0    | "SFCI"                                       |
-| 1    | 0x00000002                                   |
-| 2    | Service name, zero padded and casted to u64. |
-| 3    | Max sessions? 32-bit integer.                |
-| 4    | Unknown bool                                 |
-
 ## UnregisterService
-
-| Word | Value                                        |
-| ---- | -------------------------------------------- |
-| 0    | 0x00000004                                   |
-| 1    | 0x0000000A                                   |
-| 0    | "SFCI"                                       |
-| 1    | 0x00000003                                   |
-| 2    | Service name, zero padded and casted to u64. |
 
 # sm:m
 
-| Cmd | Name              | Arguments                                                                       | Notes |
-| --- | ----------------- | ------------------------------------------------------------------------------- | ----- |
-| 0   | RegisterProcess   | u32 PID + 2 A Descriptors (unknown, probably service access lists of some kind) |       |
-| 1   | UnregisterProcess | u32 PID                                                                         |       |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | [\#RegisterProcess](#RegisterProcess "wikilink")     |
+| 1   | [\#UnregisterProcess](#UnregisterProcess "wikilink") |
+
+## RegisterProcess
+
+Takes a pid and two A descriptors with the ACID and ACI0 service lists.
+That data originates from [NPDM](NPDM.md "wikilink").
+
+## UnregisterProcess
+
+Takes a pid.
 
 # Service List
 
