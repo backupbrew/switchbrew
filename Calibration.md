@@ -1,0 +1,79 @@
+During [factory setup](Factory%20Setup.md "wikilink"), the Switch goes
+through calibration and the generated data from this process is written
+to two [NAND user partitions](Flash%20Filesystem.md "wikilink")
+(**PRODINFO** and **PRODINFOF**).
+
+**PRODINFOF** is a FAT12 compliant filesystem and it's structure can be
+found [here](Flash%20Filesystem#PRODINFOF.md##PRODINFOF "wikilink").
+It's mainly used to keep calibration logs and other assorted files.
+
+**PRODINFO** is a raw binary blob containing the main calibration data,
+which ranges from hardware IDs to system keys.
+
+# CAL0
+
+This is the raw data stored under the PRODINFO partition. Each block of
+data is padded to 16 bytes, being the last 2 bytes a CRC16 over said
+block.
+
+Bellow is a list of offsets and sizes for each block of raw calibration
+data.
+
+| Offset | Size   | Field                               | Description                                                 |
+| ------ | ------ | ----------------------------------- | ----------------------------------------------------------- |
+| 0x0000 | 0x04   | magic                               | "CAL0" header magic.                                        |
+| 0x0004 | 0x04   | unk0                                | Always 0x07.                                                |
+| 0x0008 | 0x04   | calib\_data\_size                   | Total size of calibration data minus the 0x20 bytes header. |
+| 0x000C | 0x02   | version                             | Always 0x01.                                                |
+| 0x000E | 0x02   | revision                            | Increases each time calibration data is installed.          |
+| 0x0020 | 0x20   | calib\_data\_sha256                 | SHA256 hash calculated over calibration data.               |
+| 0x0040 | 0x1D   | config\_id1                         | Configuration ID string.                                    |
+| 0x0060 | 0x20   | unk1                                | Empty.                                                      |
+| 0x0080 | 0x04   | wlan\_country\_codes\_num           |                                                             |
+| 0x0084 | 0x17C  | wlan\_country\_codes                |                                                             |
+| 0x0210 | 0x06   | wlan\_mac\_addr                     |                                                             |
+| 0x0220 | 0x06   | bd\_addr                            |                                                             |
+| 0x0230 | 0x06   | accelerometer\_offset               |                                                             |
+| 0x0238 | 0x06   | accelerometer\_scale                |                                                             |
+| 0x0240 | 0x06   | gyroscope\_offset                   |                                                             |
+| 0x0248 | 0x06   | gyroscope\_scale                    |                                                             |
+| 0x0250 | 0x18   | serial\_number                      |                                                             |
+| 0x0270 | 0x30   | device\_key\_ecc\_p256              | Device key ECC-P256 variation (empty and unused).           |
+| 0x02B0 | 0x180  | device\_cert\_ecc\_p256             | Device certificate ECC-P256 variation (empty and unused).   |
+| 0x0440 | 0x30   | device\_key\_ecc\_b233              | Device key ECC-B233 variation (empty and unused).           |
+| 0x0480 | 0x180  | device\_cert\_ecc\_b233             | Device certificate ECC-B233 variation (active).             |
+| 0x0610 | 0x30   | eticket\_key\_ecc\_p256             | ETicket key ECC P256-variation (empty and unused).          |
+| 0x0650 | 0x180  | eticket\_cert\_ecc\_p256            | ETicket certificate ECC-P256 variation (empty and unused).  |
+| 0x07E0 | 0x30   | eticket\_key\_ecc\_b233             | ETicket key ECC-B233 variation (empty and unused).          |
+| 0x0820 | 0x180  | eticket\_cert\_ecc\_b233            | ETicket certificate ECC-B233 variation (empty and unused).  |
+| 0x09B0 | 0x110  | ssl\_key                            | SSL key (empty and unused).                                 |
+| 0x0AD0 | 0x04   | ssl\_cert\_size                     | Total size of the SSL certificate.                          |
+| 0x0AE0 | 0x800  | ssl\_cert                           | SSL certificate. Only ssl\_cert\_size bytes are used.       |
+| 0x12E0 | 0x20   | ssl\_cert\_sha256                   | SHA256 over the SSL certificate.                            |
+| 0x1300 | 0x1000 | random\_number                      | Random generated data.                                      |
+| 0x2300 | 0x20   | random\_number\_sha256              | SHA256 over the random data block.                          |
+| 0x2320 | 0x110  | gamecard\_key                       | Gamecard key (empty and unused).                            |
+| 0x2440 | 0x400  | gamecard\_cert                      | Gamecard certificate.                                       |
+| 0x2840 | 0x20   | gamecard\_cert\_sha256              | SHA256 over the gamecard certificate.                       |
+| 0x2860 | 0x220  | eticket\_key\_rsa                   | ETicket key RSA-2048 variation (empty and unused).          |
+| 0x2A90 | 0x240  | eticket\_cert\_rsa                  | ETicket certificate RSA-2048 variation (active).            |
+| 0x2CE0 | 0x18   | battery\_lot                        | Battery lot string ID.                                      |
+| 0x2D00 | 0x800  | speaker\_calib\_value               | Speaker calibration values. Only 0x5A bytes are used.       |
+| 0x3510 | 0x04   | region\_code                        |                                                             |
+| 0x3520 | 0x50   | amiibo\_key                         | Amiibo key.                                                 |
+| 0x3580 | 0x14   | amiibo\_cert\_ecqv                  | Amiibo certificate ECQV variation.                          |
+| 0x35A0 | 0x70   | amiibo\_cert\_ecdsa                 | Amiibo certificate ECDSA variation.                         |
+| 0x3620 | 0x40   | amiibo\_key\_ecqv\_bls              | Amiibo ECQV-BLS key.                                        |
+| 0x3670 | 0x20   | amiibo\_cert\_ecqv\_bls             | Amiibo certificate ECQV-BLS variation.                      |
+| 0x36A0 | 0x90   | amiibo\_root\_cert\_ecqv\_bls       | Amiibo root certificate ECQV-BLS variation.                 |
+| 0x3740 | 0x04   | product\_model                      |                                                             |
+| 0x3750 | 0x06   | color\_variation                    |                                                             |
+| 0x3760 | 0x0C   | lcd\_backlight\_brightness\_mapping |                                                             |
+| 0x3770 | 0x50   | device\_ext\_key\_ecc\_b233         | Extended device key ECC-B233 variation (active).            |
+| 0x37D0 | 0x30   | eticket\_ext\_key\_ecc\_p256        | Extended ETicket key ECC-P256 variation (empty and unused). |
+| 0x3830 | 0x50   | eticket\_ext\_key\_ecc\_b233        | Extended ETicket key ECC-B233 variation (empty and unused). |
+| 0x3890 | 0x240  | eticket\_ext\_key\_rsa              | Extended ETicket key RSA-2048 variation (active).           |
+| 0x3AE0 | 0x130  | ssl\_ext\_key                       | Extended SSL key (active).                                  |
+| 0x3C20 | 0x130  | gamecard\_ext\_key                  | Extended Gamecard key (active).                             |
+| 0x3D60 | 0x04   | lcd\_vendor\_id                     |                                                             |
+|        |        |                                     |                                                             |
