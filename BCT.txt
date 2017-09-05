@@ -117,26 +117,26 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |  0x0588
 |  0x04
 |  num_sdram_sets
-|  Number of SDRAM parameter sets. Set to 0?
+|  Number of SDRAM parameter sets. Always set to 0 (parameters unused).
 |-
 |  0x058C
 |  0x768
-|  sdram_params0
+|  sdram_params0. Default values filled in, but not used
 |  
 |-
 |  0x0CF4
 |  0x768
-|  sdram_params1
+|  sdram_params1. Default values filled in, but not used
 |  
 |-
 |  0x145C
 |  0x768
-|  sdram_params2
+|  sdram_params2. Default values filled in, but not used
 |  
 |-
 |  0x1BC4
 |  0x768
-|  sdram_params3
+|  sdram_params3. Default values filled in, but not used
 |  
 |-
 |  0x232C
