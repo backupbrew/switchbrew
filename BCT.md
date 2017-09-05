@@ -54,7 +54,7 @@ variation of the Tegra 210 BCT format.
 </tr>
 <tr class="odd">
 <td><p>0x0310</p></td>
-<td><p>0x30</p></td>
+<td><p>0x110</p></td>
 <td><p>bct_signature</p></td>
 <td><p>BCT object signature</p>
 <p><code>0x0310: hash (empty)</code><br />

@@ -33,7 +33,7 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |  BCT RSA key modulus
 |-
 |  0x0310
-|  0x30
+|  0x110
 |  bct_signature
 |  BCT object signature
  0x0310: hash (empty)
