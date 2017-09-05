@@ -158,26 +158,26 @@ variation of the Tegra 210 BCT format.
 <tr class="odd">
 <td><p>0x058C</p></td>
 <td><p>0x768</p></td>
-<td><p>sdram_params0. Default values filled in, but not used</p></td>
-<td></td>
+<td><p>sdram_params0</p></td>
+<td><p>Default values filled in, but not used</p></td>
 </tr>
 <tr class="even">
 <td><p>0x0CF4</p></td>
 <td><p>0x768</p></td>
-<td><p>sdram_params1. Default values filled in, but not used</p></td>
-<td></td>
+<td><p>sdram_params1</p></td>
+<td><p>Default values filled in, but not used</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x145C</p></td>
 <td><p>0x768</p></td>
-<td><p>sdram_params2. Default values filled in, but not used</p></td>
-<td></td>
+<td><p>sdram_params2</p></td>
+<td><p>Default values filled in, but not used</p></td>
 </tr>
 <tr class="even">
 <td><p>0x1BC4</p></td>
 <td><p>0x768</p></td>
-<td><p>sdram_params3. Default values filled in, but not used</p></td>
-<td></td>
+<td><p>sdram_params3</p></td>
+<td><p>Default values filled in, but not used</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x232C</p></td>
