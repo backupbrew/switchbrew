@@ -33,15 +33,19 @@ keydata.
 
 The header is 0x400-bytes, at NCA+0.
 
-When the above "Crypto Type" field is 0x2(?) on \>=v3.0, different
+When the above "Crypto Type" field is 0x2 on \>=v3.0, different
 {crypto/keydata} is used for the sections' data. With system content,
 this is used with every ncatype except ncatype0. The only other
 exception is {data-content} for the firm titles: this is required in
 order for older-system-versions to install it.
 
-Crypto-Type2 0x3 is used for all [3.0.1](3.0.1.md "wikilink") sysmodules
-and the
+Crypto-Type2 0x3(with the above crypto-type value) is used for all
+[3.0.1](3.0.1.md "wikilink") sysmodules and the
 [System\_Version\_Title](System%20Version%20Title.md "wikilink").
+
+With [3.0.2](3.0.2.md "wikilink"), all updated titles use the crypto
+from [3.0.1](3.0.1.md "wikilink") for non-ncatype0, except for firm
+{data-content}.
 
 Note: in some cases various game content uses the above newer crypto as
 well.
