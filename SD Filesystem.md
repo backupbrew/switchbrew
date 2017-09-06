@@ -21,6 +21,8 @@ Contains system-only savedata "8000000000000000" and "8000000000000124".
 
 ## Contents
 
+It seems this directory didn't exist until [2.0.0](2.0.0.md "wikilink").
+
 Contains directories "placehld" and "registered".
 
 Also contains file "private". Modifying this file results in the system
