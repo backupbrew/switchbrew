@@ -87,7 +87,7 @@ The key-derivation is described [[Package1#Key_generation|here]].
 | 2
 | 1
 |-
-| 3.0.1
+| 3.0.1-3.0.2
 | 3
 | 1
 |}
