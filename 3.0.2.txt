@@ -19,3 +19,5 @@ The only change under RomFS "/nx/" was package2. Filesize is same as before.
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=09-05-17_08-05-14&sys=hac]
+
+{{NavboxVersions}}
