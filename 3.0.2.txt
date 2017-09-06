@@ -9,7 +9,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * If the system's battery power display suddenly increases or decreases, it will gradually improve by following these steps.
 
 ==System Titles==
-<fill this in (manually) later>
+
+* bcat has been updated to include additional keys for key indexes 0x10-0x1F
 
 ===FIRM-packages===
 819:
