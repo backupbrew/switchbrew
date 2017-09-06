@@ -4,9 +4,9 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 
 ==Change-log==
 [http://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
-* General system stability improvements to enhance the user's experience, including:
-* Addressed an issue in which the remaining battery charge can't be displayed accurately 
-* If the system's battery power display suddenly increases or decreases, it will gradually improve by following these steps.
+* Nintendo Switch Online 
+* Added online play in Argentina, Brazil, Chile, Colombia, and Peru. This is currently available for free until the paid online service launches in 2018. 
+* General system stability improvements to enhance the user's experience
 
 ==System Titles==
 <fill this in (manually) later>
