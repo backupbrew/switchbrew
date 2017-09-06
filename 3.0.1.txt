@@ -32,6 +32,8 @@ The bootloader [[BCT#bootloader0_info|version]] was changed from 2 to 3.
 
 New keydata was introduced for NCA content, see [[NCA_Format|here]].
 
+New keydata was introduced for [[BCAT_Content_Container| BCAT containers]] for indexes 0x10 to 0x1F.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=07-31-17_08-05-16&sys=hac]
