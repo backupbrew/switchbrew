@@ -316,7 +316,7 @@ If the code were to request an invalid input type, panic. But this never happens
 Takes a pid-decscriptor.
 
 == MountContent7 ==
-Takes an input u32 ([[NCA]]-type) and an u64 title-id. Web-applet loads the u32 from u32_table[inparam]. Only type4 is usable with this?
+Takes an input u32 (same as [[#MountContent]]) and an u64 title-id. Web-applet loads the u32 from u32_table[inparam]. The in32 must be 4.
 
 Returns an [[#IFileSystem]].
 

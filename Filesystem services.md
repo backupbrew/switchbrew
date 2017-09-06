@@ -203,9 +203,9 @@ Takes a pid-decscriptor.
 
 ## MountContent7
 
-Takes an input u32 ([NCA](NCA.md "wikilink")-type) and an u64 title-id.
-Web-applet loads the u32 from u32\_table\[inparam\]. Only type4 is
-usable with this?
+Takes an input u32 (same as [\#MountContent](#MountContent "wikilink"))
+and an u64 title-id. Web-applet loads the u32 from
+u32\_table\[inparam\]. The in32 must be 4.
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
