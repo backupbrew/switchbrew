@@ -1,1 +1,1 @@
-As of this writing, the latest firmware is *' 3.0.1*'.
+As of this writing, the latest firmware is *' 3.0.2*'.
