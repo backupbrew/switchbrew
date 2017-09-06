@@ -9,7 +9,7 @@ For older news, see the [[:News/Archive|news archive]].
 
 === News ===
 <!-- Add news below --></noinclude>
+*'''5 September 17''' Nintendo released system update [[3.0.2]].
 *'''31 July 17''' Nintendo released system update [[3.0.1]].
 *'''19 June 17''' Nintendo released system update [[3.0.0]].
 *'''15 May 17''' Nintendo released system update [[2.3.0]].
-*'''17 April 17''' Nintendo released system update [[2.2.0]].
