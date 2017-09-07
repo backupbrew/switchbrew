@@ -129,7 +129,7 @@ All of the above cmds takes a u8 as input.
 |-
 | 6 || DeleteContent? || Takes a 0x10-sized entry.
 |-
-| 7 || IsNcaEntryValid || Takes a 0x10-sized entry, returns a bool.
+| 7 || IsNcaEntryValid || Takes a [[#NcaID]], returns a bool.
 |-
 | 8 || MakeNcaRegisteredPath || Takes a [[#NcaID]]. Returns a type-0x1A string.
 |-

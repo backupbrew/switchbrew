@@ -93,7 +93,7 @@ input.
 | 4   |                                                        | Takes a 0x10-sized entry, a u64-offset, and type-5 array.         |
 | 5   |                                                        | Takes two 0x10-sized entries.                                     |
 | 6   | DeleteContent?                                         | Takes a 0x10-sized entry.                                         |
-| 7   | IsNcaEntryValid                                        | Takes a 0x10-sized entry, returns a bool.                         |
+| 7   | IsNcaEntryValid                                        | Takes a [\#NcaID](#NcaID "wikilink"), returns a bool.             |
 | 8   | MakeNcaRegisteredPath                                  | Takes a [\#NcaID](#NcaID "wikilink"). Returns a type-0x1A string. |
 | 9   | MakeNcaPlaceholderPath                                 | Takes a [\#NcaID](#NcaID "wikilink"). Returns a type-0x1A string. |
 | 10  |                                                        | Void.                                                             |
