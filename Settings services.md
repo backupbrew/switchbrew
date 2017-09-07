@@ -11,31 +11,49 @@
 
 # set:cal
 
-| Cmd | Name              |
-| --- | ----------------- |
-| 14  | GetDeviceCert     |
-| 15  | GetDeviceCert2    |
-| 16  | GetTLSClientPrivk |
-| 17  | GetTLSClientCert  |
+| Cmd | Name                        |
+| --- | --------------------------- |
+| 0   | GetBdAddress                |
+| 1   | GetConfigurationId1         |
+| 2   | GetAccelerometerOffset      |
+| 3   | GetAccelerometerScale       |
+| 4   | GetGyroscopeOffset          |
+| 5   | GetGyroscopeScale           |
+| 6   | GetWlanMacAddress           |
+| 7   | GetWlanCountryCodesNum      |
+| 8   | GetWlanCountryCodes         |
+| 9   | GetSerialNumber             |
+| 10  |                             |
+| 11  |                             |
+| 12  | GetBatteryLot               |
+| 14  | GetDeviceCertECC            |
+| 15  | GetETicketCertRSA           |
+| 16  | GetSslKey                   |
+| 17  | GetSslCert                  |
+| 18  | GetGamecardKey              |
+| 19  | GetGamecardCert             |
+| 20  | GetDeviceKeyECC             |
+| 21  | GetETicketKeyRSA            |
+| 22  | GetSpeakerCalibrationValues |
+|     |                             |
 
-Used for accessing data calibrated at the factory. Probably only for
-console-unique data?(Everything read so far has been console-unique)
+Used for accessing data calibrated at the factory.
 
-## GetDeviceCert
+## GetDeviceCertECC
 
 Takes a type-0x16 output buffer with fixed size 0x180.
 
 Returns the DeviceCert. This is identical to 3DS DeviceCert/CTCert
 besides the strings. NIM loads the DeviceId from this.
 
-## GetDeviceCert2
+## GetETicketCertRSA
 
 Takes a type-0x16 output buffer with fixed size 0x240.
 
-Same as GetDeviceCert, except this returns more data and the data starts
-differing at offset 0x108 compared to GetDeviceCert.
+Same as GetDeviceCertECC, except this returns more data and the data
+starts differing at offset 0x108 compared to GetDeviceCert.
 
-## GetTLSClientPrivk
+## GetSslKey
 
 Takes a type-0x16 output buffer with fixed size 0x134.
 
@@ -45,7 +63,7 @@ setcal cmd?
 
 Used by SSL-sysmodule, see [here](SSL%20services.md "wikilink").
 
-## GetTLSClientCert
+## GetSslCert
 
 Takes a type-0x16 output buffer with fixed size 0x804.
 
