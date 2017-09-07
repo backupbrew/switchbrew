@@ -226,5 +226,5 @@ to.
 | 0x8000000000000100 | pctl       | pctlss:/          | Parental Control settings.                                                                                                                                |
 | 0x8000000000000110 | npns       | npns\_save:/      | Push notifications persistent storage.                                                                                                                    |
 | 0x8000000000000120 | ncm        | ?                 | meta/[imkvdb.arc](IMKV.md "wikilink") for system partition.                                                                                               |
-| 0x8000000000000121 | ncm        | ?                 | meta/[imkvdb.arc](IMKV.md "wikilink") for sd partition.                                                                                                   |
+| 0x8000000000000121 | ncm        | ?                 | meta/[imkvdb.arc](IMKV.md "wikilink") for sd partition. In some cases this save only contains a "meta/" directory without any file.                       |
 |                    |            |                   |                                                                                                                                                           |
