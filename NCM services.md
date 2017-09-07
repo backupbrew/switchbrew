@@ -5,14 +5,14 @@ management.
 
 ## lr
 
-| Cmd | Name                       | Arguments                                                             | Notes |
-| --- | -------------------------- | --------------------------------------------------------------------- | ----- |
-| 0   | GetIPathResolverForStorage | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
-| 1   | GetIPatchPathResolver      | None                                                                  |       |
-| 2   | CheckStorage               | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
-| 3   | GetITitleList              | None                                                                  |       |
+| Cmd | Name                           | Arguments                                                             | Notes |
+| --- | ------------------------------ | --------------------------------------------------------------------- | ----- |
+| 0   | GetILocationResolver           | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 1   | GetIRegisteredLocationResolver | None                                                                  |       |
+| 2   | CheckStorage                   | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 3   | IAddOnContentLocationResolver  | None                                                                  |       |
 
-### IPathResolverForStorage
+### ILocationResolver
 
 | Cmd | Name                        | Arguments                                                                                          | Notes                                                                                                           |
 | --- | --------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ entry for the specified titleID, 0x408 is returned for
 GetProgramNcaPath, while the rest of the commands return
 0xA08.
 
-### IPatchPathResolver
+### IRegisteredLocationResolver
 
 | Cmd | Name                  | Arguments                                                                                          | Notes |
 | --- | --------------------- | -------------------------------------------------------------------------------------------------- | ----- |
@@ -53,7 +53,7 @@ GetProgramNcaPath, while the rest of the commands return
 | 6   | RegisterPatchTitle1   | u64 TID                                                                                            |       |
 | 7   | SetPatchTitle1NcaPath | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |       |
 
-### ITitleList
+### IAddOnContentLocationResolver
 
 | Cmd | Name            | Arguments                                                                       | Notes                              |
 | --- | --------------- | ------------------------------------------------------------------------------- | ---------------------------------- |

@@ -6,16 +6,16 @@ NCM contains services for internal file path and content management.
 |-
 ! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetIPathResolverForStorage || [[Filesystem_services#StorageId|StorageID]] ||
+| 0 || GetILocationResolver || [[Filesystem_services#StorageId|StorageID]] ||
 |-
-| 1 || GetIPatchPathResolver || None || 
+| 1 || GetIRegisteredLocationResolver || None || 
 |-
 | 2 || CheckStorage || [[Filesystem_services#StorageId|StorageID]] ||
 |-
-| 3 || GetITitleList || None  ||
+| 3 || IAddOnContentLocationResolver || None  ||
 |}
 
-=== IPathResolverForStorage ===
+=== ILocationResolver ===
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Arguments || Notes
@@ -45,7 +45,7 @@ These get-commands load the [[Filesystem_services|ContentPath]] from linked-list
  
 The set commands always return 0. When the get-commands fail to find an entry for the specified titleID, 0x408 is returned for GetProgramNcaPath, while the rest of the commands return 0xA08.
 
-=== IPatchPathResolver ===
+=== IRegisteredLocationResolver ===
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Arguments || Notes
@@ -67,7 +67,7 @@ The set commands always return 0. When the get-commands fail to find an entry fo
 | 7 || SetPatchTitle1NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |}
 
-=== ITitleList ===
+=== IAddOnContentLocationResolver ===
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Arguments || Notes
