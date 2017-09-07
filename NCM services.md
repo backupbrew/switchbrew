@@ -84,32 +84,32 @@ input.
 
 ### IContentStorage
 
-| Cmd | Name                                                   | Notes                                                            |
-| --- | ------------------------------------------------------ | ---------------------------------------------------------------- |
-| 0   | [\#GetRootEntry](#GetRootEntry "wikilink")             |                                                                  |
-| 1   |                                                        | Takes two 0x10-sized entries, and a u64.                         |
-| 2   |                                                        | Takes a 0x10-sized entry.                                        |
-| 3   |                                                        | Takes a 0x10-sized entry, returns a bool/u8.                     |
-| 4   |                                                        | Takes a 0x10-sized entry, a u64-offset, and type-5 array.        |
-| 5   |                                                        | Takes two 0x10-sized entries.                                    |
-| 6   | DeleteContent?                                         | Takes a 0x10-sized entry.                                        |
-| 7   | IsNcaEntryValid                                        | Takes a 0x10-sized entry, returns a bool.                        |
-| 8   | MakeNcaRegisteredPath                                  | Takes a type-0x1A string and a 0x10-sized entry.                 |
-| 9   | MakeNcaPlaceholderPath                                 | Takes a type-0x1A string and a 0x10-sized entry.                 |
-| 10  |                                                        | Void.                                                            |
-| 11  |                                                        | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32. |
-| 12  | [\#GetNumberOfEntries](#GetNumberOfEntries "wikilink") |                                                                  |
-| 13  | [\#GetEntries](#GetEntries "wikilink")                 |                                                                  |
-| 14  | [\#GetEntrySize](#GetEntrySize "wikilink")             |                                                                  |
-| 15  |                                                        | Void.                                                            |
-| 16  |                                                        | Takes three 0x10-sized entries.                                  |
-| 17  |                                                        | Takes a 0x10-sized entry and a u64.                              |
-| 18  | [\#ReadEntryRaw](#ReadEntryRaw "wikilink")             |                                                                  |
-| 19  |                                                        | Takes a 0x10-sized entry and returns another 0x10-sized entry.   |
-| 20  | [\#GetNcaTitleInfo](#GetNcaTitleInfo "wikilink")       |                                                                  |
-| 21  |                                                        | Takes a 0x10-sized entry, a u64, and a type5 buffer.             |
-| 22  | GetFreeSpace                                           |                                                                  |
-| 23  | GetTotalSpace                                          |                                                                  |
+| Cmd | Name                                                   | Notes                                                             |
+| --- | ------------------------------------------------------ | ----------------------------------------------------------------- |
+| 0   | [\#GetRootEntry](#GetRootEntry "wikilink")             |                                                                   |
+| 1   |                                                        | Takes two 0x10-sized entries, and a u64.                          |
+| 2   |                                                        | Takes a 0x10-sized entry.                                         |
+| 3   |                                                        | Takes a 0x10-sized entry, returns a bool/u8.                      |
+| 4   |                                                        | Takes a 0x10-sized entry, a u64-offset, and type-5 array.         |
+| 5   |                                                        | Takes two 0x10-sized entries.                                     |
+| 6   | DeleteContent?                                         | Takes a 0x10-sized entry.                                         |
+| 7   | IsNcaEntryValid                                        | Takes a 0x10-sized entry, returns a bool.                         |
+| 8   | MakeNcaRegisteredPath                                  | Takes a [\#NcaID](#NcaID "wikilink"). Returns a type-0x1A string. |
+| 9   | MakeNcaPlaceholderPath                                 | Takes a [\#NcaID](#NcaID "wikilink"). Returns a type-0x1A string. |
+| 10  |                                                        | Void.                                                             |
+| 11  |                                                        | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32.  |
+| 12  | [\#GetNumberOfEntries](#GetNumberOfEntries "wikilink") |                                                                   |
+| 13  | [\#GetEntries](#GetEntries "wikilink")                 |                                                                   |
+| 14  | [\#GetEntrySize](#GetEntrySize "wikilink")             |                                                                   |
+| 15  |                                                        | Void.                                                             |
+| 16  |                                                        | Takes three 0x10-sized entries.                                   |
+| 17  |                                                        | Takes a 0x10-sized entry and a u64.                               |
+| 18  | [\#ReadEntryRaw](#ReadEntryRaw "wikilink")             |                                                                   |
+| 19  |                                                        | Takes a 0x10-sized entry and returns another 0x10-sized entry.    |
+| 20  | [\#GetNcaTitleInfo](#GetNcaTitleInfo "wikilink")       |                                                                   |
+| 21  |                                                        | Takes a 0x10-sized entry, a u64, and a type5 buffer.              |
+| 22  | GetFreeSpace                                           |                                                                   |
+| 23  | GetTotalSpace                                          |                                                                   |
 
 #### GetRootEntry
 
@@ -195,7 +195,7 @@ be only usable with NcaIds which have [type](NCA.md "wikilink") 1 or 4.
 | 0   | InsertContentEntry?                                    | Takes a 0x10-sized entry, a type-5 buffer and a u64.                                                                          |
 | 1   |                                                        | Takes a 0x10-sized entry, a type-6 buffer and a u64. Returns a u64.                                                           |
 | 2   |                                                        | Takes a 0x10-sized entry.                                                                                                     |
-| 3   | UpdateContentEntry                                     | Takes a [meta record entry](NCA#Meta%20records.md##Meta_records "wikilink") and a u8. Returns a [NcaID](NcaID.md "wikilink"). |
+| 3   | UpdateContentEntry                                     | Takes a [meta record entry](NCA#Meta%20records.md##Meta_records "wikilink") and a u8. Returns a [\#NcaID](#NcaID "wikilink"). |
 | 4   |                                                        | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.                                  |
 | 5   | Iterate                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.                               |
 | 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink")         |                                                                                                                               |

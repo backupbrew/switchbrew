@@ -131,9 +131,9 @@ All of the above cmds takes a u8 as input.
 |-
 | 7 || IsNcaEntryValid || Takes a 0x10-sized entry, returns a bool.
 |-
-| 8 || MakeNcaRegisteredPath || Takes a type-0x1A string and a 0x10-sized entry.
+| 8 || MakeNcaRegisteredPath || Takes a [[#NcaID]]. Returns a type-0x1A string.
 |-
-| 9 || MakeNcaPlaceholderPath || Takes a type-0x1A string and a 0x10-sized entry.
+| 9 || MakeNcaPlaceholderPath || Takes a [[#NcaID]]. Returns a type-0x1A string.
 |-
 | 10 || || Void.
 |-
@@ -229,7 +229,7 @@ With some NcaIDs this may return 0 with an all-zero output entry. This seems to 
 |-
 | 2 || || Takes a 0x10-sized entry.
 |-
-| 3 || UpdateContentEntry || Takes a [[NCA#Meta_records|meta record entry]] and a u8. Returns a [[NcaID]].
+| 3 || UpdateContentEntry || Takes a [[NCA#Meta_records|meta record entry]] and a u8. Returns a [[#NcaID]].
 |-
 | 4 || || Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.
 |-
