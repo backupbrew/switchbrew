@@ -50,7 +50,7 @@ The set commands always return 0. When the get-commands fail to find an entry fo
 |-
 ! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetPatchType0NcaPath || u64 TID + C descriptor || 
+| 0 || GetPatchType0NcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
 |-
 | 1 || SetPatchType0NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || 
 |-

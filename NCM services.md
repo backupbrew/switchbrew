@@ -42,16 +42,16 @@ GetProgramNcaPath, while the rest of the commands return
 
 ### IRegisteredLocationResolver
 
-| Cmd | Name                  | Arguments                                                                                          | Notes |
-| --- | --------------------- | -------------------------------------------------------------------------------------------------- | ----- |
-| 0   | GetPatchType0NcaPath  | u64 TID + C descriptor                                                                             |       |
-| 1   | SetPatchType0NcaPath  | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |       |
-| 2   | RegisterPatchTitle0   | u64 TID                                                                                            |       |
-| 3   | SetPatchTitle0NcaPath | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |       |
-| 4   | GetPatchType1NcaPath  | u64 TID + C descriptor                                                                             |       |
-| 5   | SetPatchType1NcaPath  | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |       |
-| 6   | RegisterPatchTitle1   | u64 TID                                                                                            |       |
-| 7   | SetPatchTitle1NcaPath | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |       |
+| Cmd | Name                  | Arguments                                                                                          | Notes                                                                        |
+| --- | --------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| 0   | GetPatchType0NcaPath  | u64 TID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink"). |
+| 1   | SetPatchType0NcaPath  | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                              |
+| 2   | RegisterPatchTitle0   | u64 TID                                                                                            |                                                                              |
+| 3   | SetPatchTitle0NcaPath | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                              |
+| 4   | GetPatchType1NcaPath  | u64 TID + C descriptor                                                                             |                                                                              |
+| 5   | SetPatchType1NcaPath  | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                              |
+| 6   | RegisterPatchTitle1   | u64 TID                                                                                            |                                                                              |
+| 7   | SetPatchTitle1NcaPath | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                              |
 
 ### IAddOnContentLocationResolver
 
