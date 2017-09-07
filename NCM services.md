@@ -5,35 +5,35 @@ management.
 
 ## lr
 
-| Cmd | Name                           | Arguments                                                             | Notes |
-| --- | ------------------------------ | --------------------------------------------------------------------- | ----- |
-| 0   | GetILocationResolver           | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
-| 1   | GetIRegisteredLocationResolver | None                                                                  |       |
-| 2   | CheckStorage                   | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
-| 3   | IAddOnContentLocationResolver  | None                                                                  |       |
+| Cmd | Name                            | Arguments                                                             | Notes |
+| --- | ------------------------------- | --------------------------------------------------------------------- | ----- |
+| 0   | GetLocationResolver             | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 1   | GetRegisteredLocationResolver   | None                                                                  |       |
+| 2   | CheckStorage                    | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 3   | GetAddOnContentLocationResolver | None                                                                  |       |
 
 ### ILocationResolver
 
-| Cmd | Name                        | Arguments                                                                                          | Notes                                                                                                           |
-| --- | --------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| 0   | GetProgramNcaPath           | u64 TID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                                    |
-| 1   | SetProgramNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                                    |
-| 2   | GetUserControlNcaPath       | u64 TID + C descriptor                                                                             | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink") (gamecard only?).                   |
-| 3   | GetDocHtmlNcaPath           | u64 TID + C descriptor                                                                             | Used for [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").                                    |
-| 4   | GetControlNcaPath           | u64 TID + C descriptor                                                                             | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink"). Stubbed, only returns error 0x608. |
-| 5   | SetControlNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").                                    |
-| 6   | SetDocHtmlNcaPath           | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").                                    |
-| 7   | GetInfoHtmlNcaPath          | u64 TID + C descriptor                                                                             | Used for [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").                                    |
-| 8   | SetInfoHtmlNcaPath          | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").                                    |
-| 9   | ClearPathResolverForStorage | None                                                                                               | Clears all NCA paths set.                                                                                       |
+| Cmd | Name                  | Arguments                                                                                          | Notes                                                                                                           |
+| --- | --------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 0   | GetProgramNcaPath     | u64 TID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                                    |
+| 1   | SetProgramNcaPath     | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                                    |
+| 2   | GetUserControlNcaPath | u64 TID + C descriptor                                                                             | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink") (gamecard only?).                   |
+| 3   | GetDocHtmlNcaPath     | u64 TID + C descriptor                                                                             | Used for [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").                                    |
+| 4   | GetControlNcaPath     | u64 TID + C descriptor                                                                             | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink"). Stubbed, only returns error 0x608. |
+| 5   | SetControlNcaPath     | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").                                    |
+| 6   | SetDocHtmlNcaPath     | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").                                    |
+| 7   | GetInfoHtmlNcaPath    | u64 TID + C descriptor                                                                             | Used for [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").                                    |
+| 8   | SetInfoHtmlNcaPath    | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").                                    |
+| 9   | ClearLocationResolver | None                                                                                               | Clears all NCA paths set.                                                                                       |
 
 These get-commands load the
 [ContentPath](Filesystem%20services.md "wikilink") from linked-lists in
 memory using the input titleID. The set-commands add a new entry to the
 list, if a matching entry is found it's removed first.
-ClearPathResolverForStorage frees all entries in all of these
-linked-lists. The ContentPath is only used with memcpy() here with
-size=0x300, nothing more.
+ClearLocationResolver frees all entries in all of these linked-lists.
+The ContentPath is only used with memcpy() here with size=0x300, nothing
+more.
 
 The set commands always return 0. When the get-commands fail to find an
 entry for the specified titleID, 0x408 is returned for
@@ -55,29 +55,29 @@ GetProgramNcaPath, while the rest of the commands return
 
 ### IAddOnContentLocationResolver
 
-| Cmd | Name            | Arguments                                                                       | Notes                              |
-| --- | --------------- | ------------------------------------------------------------------------------- | ---------------------------------- |
-| 0   | GetTitleNcaPath | u64 TID + C descriptor                                                          |                                    |
-| 1   | RegisterTitle   | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TID |                                    |
-| 2   | ClearTitleList  | None                                                                            | Clears all registered titles here. |
+| Cmd | Name                              | Arguments                                                                       | Notes                              |
+| --- | --------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- |
+| 0   | GetAddOnContentNcaPath            | u64 TID + C descriptor                                                          |                                    |
+| 1   | RegisterAddOnContent              | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TID |                                    |
+| 2   | ClearAddOnContentLocationResolver | None                                                                            | Clears all registered titles here. |
 
 # Content Manager services
 
 ## ncm
 
-| Cmd | Name                           | Notes |
-| --- | ------------------------------ | ----- |
-| 0   |                                |       |
-| 1   |                                |       |
-| 2   |                                |       |
-| 3   |                                |       |
-| 4   | GetIContentStorage             |       |
-| 5   | GetIContentMetaDatabase        |       |
-| 8   |                                |       |
-| 9   | InitializeStorageForMediaId    |       |
-| 10  | UninitializeStorageForMediaId  |       |
-| 11  | InitializeDatabaseForMediaId   |       |
-| 12  | UninitializeDatabaseForMediaId |       |
+| Cmd | Name                           | Notes                                                                          |
+| --- | ------------------------------ | ------------------------------------------------------------------------------ |
+| 0   |                                |                                                                                |
+| 1   |                                |                                                                                |
+| 2   |                                |                                                                                |
+| 3   |                                |                                                                                |
+| 4   | GetIContentStorage             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
+| 5   | GetIContentMetaDatabase        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
+| 8   |                                |                                                                                |
+| 9   | InitializeStorageForMediaId    |                                                                                |
+| 10  | UninitializeStorageForMediaId  |                                                                                |
+| 11  | InitializeDatabaseForMediaId   |                                                                                |
+| 12  | UninitializeDatabaseForMediaId |                                                                                |
 
 All of the above cmds takes a u8 as
 input.
@@ -93,7 +93,7 @@ input.
 | 4   |                                                        | Takes a 0x10-sized entry, a u64-offset, and type-5 array.        |
 | 5   |                                                        | Takes two 0x10-sized entries.                                    |
 | 6   | DeleteContent?                                         | Takes a 0x10-sized entry.                                        |
-| 7   | IsNcaEntryValid                                        | Takes a 0x10-sized entry, returns a bool/u8.                     |
+| 7   | IsNcaEntryValid                                        | Takes a 0x10-sized entry, returns a bool.                        |
 | 8   | MakeNcaRegisteredPath                                  | Takes a type-0x1A string and a 0x10-sized entry.                 |
 | 9   | MakeNcaPlaceholderPath                                 | Takes a type-0x1A string and a 0x10-sized entry.                 |
 | 10  |                                                        | Void.                                                            |
@@ -190,28 +190,28 @@ be only usable with NcaIds which have [type](NCA.md "wikilink") 1 or 4.
 
 ### IContentMetaDatabase
 
-| Cmd | Name                                                   | Notes                                                                                           |
-| --- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| 0   | InsertContentEntry?                                    | Takes a 0x10-sized entry, a type-5 buffer and a u64.                                            |
-| 1   |                                                        | Takes a 0x10-sized entry, a type-6 buffer and a u64. Returns a u64.                             |
-| 2   |                                                        | Takes a 0x10-sized entry.                                                                       |
-| 3   |                                                        | Takes a 0x10-sized entry and a bool/u8. Returns an 0x10-sized entry.                            |
-| 4   |                                                        | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.    |
-| 5   | Iterate                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32. |
-| 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink")         |                                                                                                 |
-| 7   | [\#GetTitleList](#GetTitleList "wikilink")             | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.             |
-| 8   |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
-| 9   |                                                        | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                            |
-| 10  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                        |
-| 11  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                        |
-| 12  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                        |
-| 13  |                                                        | Void.                                                                                           |
-| 14  |                                                        | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                 |
-| 15  | EndIteration                                           | Void.                                                                                           |
-| 16  |                                                        | Takes two 0x10-sized entries. Returns a bool/u8.                                                |
-| 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink") |                                                                                                 |
-| 18  |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                    |
-| 19  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                        |
+| Cmd | Name                                                   | Notes                                                                                                                         |
+| --- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| 0   | InsertContentEntry?                                    | Takes a 0x10-sized entry, a type-5 buffer and a u64.                                                                          |
+| 1   |                                                        | Takes a 0x10-sized entry, a type-6 buffer and a u64. Returns a u64.                                                           |
+| 2   |                                                        | Takes a 0x10-sized entry.                                                                                                     |
+| 3   | UpdateContentEntry                                     | Takes a [meta record entry](NCA#Meta%20records.md##Meta_records "wikilink") and a u8. Returns a [NcaID](NcaID.md "wikilink"). |
+| 4   |                                                        | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.                                  |
+| 5   | Iterate                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.                               |
+| 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink")         |                                                                                                                               |
+| 7   | [\#GetTitleList](#GetTitleList "wikilink")             | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.                                           |
+| 8   |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                  |
+| 9   |                                                        | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                                                          |
+| 10  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                                                      |
+| 11  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                                                      |
+| 12  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                                                      |
+| 13  |                                                        | Void.                                                                                                                         |
+| 14  |                                                        | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                                               |
+| 15  | EndIteration                                           | Void.                                                                                                                         |
+| 16  |                                                        | Takes two 0x10-sized entries. Returns a bool/u8.                                                                              |
+| 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink") |                                                                                                                               |
+| 18  |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                  |
+| 19  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                                                      |
 
 #### GetTitleIdInfo
 

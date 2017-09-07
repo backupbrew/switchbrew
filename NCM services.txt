@@ -6,13 +6,13 @@ NCM contains services for internal file path and content management.
 |-
 ! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetILocationResolver || [[Filesystem_services#StorageId|StorageID]] ||
+| 0 || GetLocationResolver || [[Filesystem_services#StorageId|StorageID]] ||
 |-
-| 1 || GetIRegisteredLocationResolver || None || 
+| 1 || GetRegisteredLocationResolver || None || 
 |-
 | 2 || CheckStorage || [[Filesystem_services#StorageId|StorageID]] ||
 |-
-| 3 || IAddOnContentLocationResolver || None  ||
+| 3 || GetAddOnContentLocationResolver || None  ||
 |}
 
 === ILocationResolver ===
@@ -38,10 +38,10 @@ NCM contains services for internal file path and content management.
 |-
 | 8 || SetInfoHtmlNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Used for [[NCA_Content_FS#NCA-type5|NCA-type5]].
 |-
-| 9 || ClearPathResolverForStorage || None || Clears all NCA paths set.
+| 9 || ClearLocationResolver || None || Clears all NCA paths set.
 |}
 
-These get-commands load the [[Filesystem_services|ContentPath]] from linked-lists in memory using the input titleID. The set-commands add a new entry to the list, if a matching entry is found it's removed first. ClearPathResolverForStorage frees all entries in all of these linked-lists. The ContentPath is only used with memcpy() here with size=0x300, nothing more.
+These get-commands load the [[Filesystem_services|ContentPath]] from linked-lists in memory using the input titleID. The set-commands add a new entry to the list, if a matching entry is found it's removed first. ClearLocationResolver frees all entries in all of these linked-lists. The ContentPath is only used with memcpy() here with size=0x300, nothing more.
  
 The set commands always return 0. When the get-commands fail to find an entry for the specified titleID, 0x408 is returned for GetProgramNcaPath, while the rest of the commands return 0xA08.
 
@@ -72,11 +72,11 @@ The set commands always return 0. When the get-commands fail to find an entry fo
 |-
 ! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetTitleNcaPath || u64 TID + C descriptor || 
+| 0 || GetAddOnContentNcaPath || u64 TID + C descriptor || 
 |-
-| 1 || RegisterTitle || [[Filesystem_services#StorageId|StorageID]] + u64 TID || 
+| 1 || RegisterAddOnContent || [[Filesystem_services#StorageId|StorageID]] + u64 TID || 
 |-
-| 2 || ClearTitleList || None || Clears all registered titles here.
+| 2 || ClearAddOnContentLocationResolver || None || Clears all registered titles here.
 |}
 
 = Content Manager services =
@@ -93,9 +93,9 @@ The set commands always return 0. When the get-commands fail to find an entry fo
 |-
 | 3 || || 
 |-
-| 4 || GetIContentStorage ||
+| 4 || GetIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
-| 5 || GetIContentMetaDatabase ||
+| 5 || GetIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
 | 8 || || 
 |-
@@ -129,7 +129,7 @@ All of the above cmds takes a u8 as input.
 |-
 | 6 || DeleteContent? || Takes a 0x10-sized entry.
 |-
-| 7 || IsNcaEntryValid || Takes a 0x10-sized entry, returns a bool/u8.
+| 7 || IsNcaEntryValid || Takes a 0x10-sized entry, returns a bool.
 |-
 | 8 || MakeNcaRegisteredPath || Takes a type-0x1A string and a 0x10-sized entry.
 |-
@@ -229,7 +229,7 @@ With some NcaIDs this may return 0 with an all-zero output entry. This seems to 
 |-
 | 2 || || Takes a 0x10-sized entry.
 |-
-| 3 || || Takes a 0x10-sized entry and a bool/u8. Returns an 0x10-sized entry.
+| 3 || UpdateContentEntry || Takes a [[NCA#Meta_records|meta record entry]] and a u8. Returns a [[NcaID]].
 |-
 | 4 || || Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.
 |-
