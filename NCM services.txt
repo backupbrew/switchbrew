@@ -28,7 +28,7 @@ NCM contains services for internal file path and content management.
 |-
 | 3 || GetDocHtmlNcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type4|NCA-type4]].
 |-
-| 4 || GetControlNcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type3|NCA-type3]].
+| 4 || GetControlNcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type3|NCA-type3]]. Stubbed, only returns error 0x608.
 |-
 | 5 || SetControlNcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Used for [[NCA_Content_FS#NCA-type3|NCA-type3]].
 |-
@@ -40,6 +40,10 @@ NCM contains services for internal file path and content management.
 |-
 | 9 || ClearPathResolverForStorage || None || Clears all NCA paths set.
 |}
+
+These get-commands load the [[Filesystem_services|ContentPath]] from linked-lists in memory using the input titleID. The set-commands add a new entry to the list, if a matching entry is found it's removed first. ClearPathResolverForStorage frees all entries in all of these linked-lists. The ContentPath is only used with memcpy() here with size=0x300, nothing more.
+ 
+The set commands always return 0. When the get-commands fail to find an entry for the specified titleID, 0x408 is returned for GetProgramNcaPath, while the rest of the commands return 0xA08.
 
 === IPatchPathResolver ===
 {| class="wikitable" border="1"
