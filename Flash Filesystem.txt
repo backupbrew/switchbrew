@@ -366,7 +366,7 @@ This is a listing of known System Savedata and what titles they correspond to.
 |-
 | 0x8000000000000110 || npns || <nowiki>npns_save:/</nowiki> || Push notifications persistent storage.
 |-
-| 0x8000000000000120 || ncm || ? || meta/[[IMKV|imkvdb.arc]] for system partition. Cache of data extracted from the [[NCA|cmnt]] for installed titles?(Including 816)
+| 0x8000000000000120 || ncm || ? || meta/[[IMKV|imkvdb.arc]] for system partition. Cache of data extracted from the [[NCA|.cnmt]] for installed titles?(Including 816)
 |-
 | 0x8000000000000121 || ncm || ? || meta/[[IMKV|imkvdb.arc]] for sd partition. In some cases this save only contains a "meta/" directory without any file.
 |-
