@@ -150,7 +150,7 @@ Takes a pid and returns the title-id associated with the process.
 |}
 
 == LaunchProcess ==
-Takes a title-id and launch_flags. See [[#Process launch]].
+Takes launch_flags, title-id, and storageID. See [[#Process launch]].
 
 == GetProcessEventType ==
 Returns 1 if flags has mask 2 set.

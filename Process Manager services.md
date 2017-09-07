@@ -190,7 +190,7 @@ process.
 
 ## LaunchProcess
 
-Takes a title-id and launch\_flags. See [\#Process
+Takes launch\_flags, title-id, and storageID. See [\#Process
 launch](#Process_launch "wikilink").
 
 ## GetProcessEventType
