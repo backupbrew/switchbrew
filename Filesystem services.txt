@@ -313,7 +313,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |}
 
 == Initialize ==
-Takes a pid-decscriptor.
+Takes a pid-descriptor.
 
 == MountContent7 ==
 Takes an input u32 (same as [[#MountContent]]) and an u64 title-id. Web-applet loads the u32 from u32_table[inparam]. The in32 must be 4.

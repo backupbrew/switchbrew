@@ -199,7 +199,7 @@ happens.
 
 ## Initialize
 
-Takes a pid-decscriptor.
+Takes a pid-descriptor.
 
 ## MountContent7
 
