@@ -238,6 +238,8 @@ retval for permissions-type 0x25 and func0.
 
 When in32=5, it uses in64=0xffffffffffffffff internally, otherwise it
 checks if in64 is set to 0xffffffffffffffff then throws an error if so.
+When the in64 used internally is not 0xffffffffffffffff, it's compared
+with the NCA titleID, then an error is thrown on mismatch.
 
 ## MountBis
 
