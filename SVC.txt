@@ -188,7 +188,7 @@
 |-
 | 0x71 || svcManageNamedPort || X1=namestr*, W2=maxsessions(?) || W0=result, W1=outhandle
 |-
-| 0x72 || svcConnectToPort || || 
+| 0x72 || svcConnectToPort || W1=inhandle || W0=result, W1=outhandle
 |-
 | 0x73 || svcSetProcessMemoryPermission || || 
 |-
