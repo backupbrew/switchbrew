@@ -162,6 +162,7 @@ systems.
 | ---------------- | -------- | ------------------------------------------------ |
 | 1000000000000001 |          | [SystemInitializ](Factory%20Setup.md "wikilink") |
 | 1000000000000004 |          | ?                                                |
+| 1000000000000007 |          | "ApplicationLauncer"                             |
 
 ## System Applications
 

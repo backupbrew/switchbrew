@@ -282,8 +282,9 @@ No 01000000000020XX titles exist on retail systems.
 | 1000000000000001 || || [[Factory Setup|SystemInitializ]]
 |-
 | 1000000000000004 || || ?
+|-
+| 1000000000000007 || || "ApplicationLauncer"
 |}
-
 
 == System Applications ==
 {| class=wikitable
