@@ -47,21 +47,21 @@
 |-
 | 12 || GetBatteryLot
 |-
-| 14 || GetDeviceCertECC
+| 14 || [[#GetDeviceCert]]
 |-
-| 15 || GetETicketCertRSA
+| 15 || [[#GetETicketCert]]
 |-
-| 16 || GetSslKey
+| 16 || [[#GetSslKey]]
 |-
-| 17 || GetSslCert
+| 17 || [[#GetSslCert]]
 |-
-| 18 || GetGamecardKey
+| 18 || [[#GetGameCardKey]]
 |-
-| 19 || GetGamecardCert
+| 19 || [[#GetGameCardCert]]
 |-
-| 20 || GetDeviceKeyECC
+| 20 || [[#GetDeviceKey]]
 |-
-| 21 || GetETicketKeyRSA
+| 21 || [[#GetETicketKey]]
 |-
 | 22 || GetSpeakerCalibrationValues
 |-
@@ -69,31 +69,49 @@
 
 Used for accessing data calibrated at the factory.
 
-== GetDeviceCertECC ==
+== GetDeviceCert ==
 Takes a type-0x16 output buffer with fixed size 0x180.
 
-Returns the DeviceCert. This is identical to 3DS DeviceCert/CTCert besides the strings. NIM loads the DeviceId from this.
+Returns the device certificate (ECC signed). This is identical to 3DS DeviceCert/CTCert besides the strings. NIM loads the DeviceId from this.
 
-== GetETicketCertRSA ==
+== GetETicketCert ==
 Takes a type-0x16 output buffer with fixed size 0x240.
 
-Same as GetDeviceCertECC, except this returns more data and the data starts differing at offset 0x108 compared to GetDeviceCert.
+Returns the ETicket certificate (RSA signed).
 
 == GetSslKey ==
 Takes a type-0x16 output buffer with fixed size 0x134.
 
-Returns a container-structure for the encrypted TLS client-privk. Decrypting this fails unless an unknown size >0x134 is passed to this setcal cmd?
+Returns the extended SSL key (0x130 bytes) from [[Calibration#CAL0|CAL0]]. If the extended key is not programmed then it falls back to the normal SSL key (0x110 bytes).
 
 Used by SSL-sysmodule, see [[SSL_services|here]].
 
 == GetSslCert ==
 Takes a type-0x16 output buffer with fixed size 0x804.
 
-Returns a container-structure for the plaintext TLS client-cert.
+Returns a [[Settings_services#setcal_Container_Structure|container]] with the plaintext SSL certificate.
 
 Used by SSL-sysmodule, see [[SSL_services|here]].
 
-=== setcal Container Structure ===
+== GetGameCardKey ==
+Takes a type-0x16 output buffer with fixed size 0x134.
+
+Returns the extended GameCard key (0x130 bytes) from [[Calibration#CAL0|CAL0]]. If the extended key is not programmed then it falls back to the normal GameCard key (0x110 bytes).
+
+== GetGameCardCert ==
+Takes a type-0x16 output buffer with fixed size 0x404.
+
+Returns a [[Settings_services#setcal_Container_Structure|container]] with the GameCard certificate.
+
+== GetDeviceKey ==
+Returns the extended device ECC-B233 key (0x50 bytes) from [[Calibration#CAL0|CAL0]]. If the extended key is not programmed then it falls back to the normal device ECC-B233 key (0x30 bytes).
+
+== GetETicketKey ==
+Takes a type-0x16 output buffer with fixed size 0x244.
+
+Returns the extended ETicket RSA-2048 key (0x240 bytes) from [[Calibration#CAL0|CAL0]]. If the extended key is not programmed then it falls back to the normal ETicket RSA-2048 key (0x220 bytes).
+
+== setcal Container Structure ==
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -109,22 +127,24 @@ Used by SSL-sysmodule, see [[SSL_services|here]].
 | Actual data starts here.
 |}
 
+This container is used for returning data with variable sizes.
+
 = set:sys =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 3 || GetSystemVersion
+| 3 || [[#GetSystemVersion]]
 |-
 | 37 || QuerySetting
 |-
-| 38 || ReadSetting
+| 38 || [[#ReadSetting]]
 |-
 | 56 || [[Flash_Filesystem#PRODINFOF|GetWirelessCertification]]
 |-
-| 62 || GetDebugMode
+| 62 || [[#GetDebugMode]]
 |-
-| 68 || GetSerialNumber
+| 68 || [[#GetSerialNumber]]
 |}
 
 Official user-processes get a new service session handle each time a set:sys cmd is used, with the session being closed aftewards.

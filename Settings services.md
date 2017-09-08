@@ -11,55 +11,54 @@
 
 # set:cal
 
-| Cmd | Name                        |
-| --- | --------------------------- |
-| 0   | GetBdAddress                |
-| 1   | GetConfigurationId1         |
-| 2   | GetAccelerometerOffset      |
-| 3   | GetAccelerometerScale       |
-| 4   | GetGyroscopeOffset          |
-| 5   | GetGyroscopeScale           |
-| 6   | GetWlanMacAddress           |
-| 7   | GetWlanCountryCodesNum      |
-| 8   | GetWlanCountryCodes         |
-| 9   | GetSerialNumber             |
-| 10  |                             |
-| 11  |                             |
-| 12  | GetBatteryLot               |
-| 14  | GetDeviceCertECC            |
-| 15  | GetETicketCertRSA           |
-| 16  | GetSslKey                   |
-| 17  | GetSslCert                  |
-| 18  | GetGamecardKey              |
-| 19  | GetGamecardCert             |
-| 20  | GetDeviceKeyECC             |
-| 21  | GetETicketKeyRSA            |
-| 22  | GetSpeakerCalibrationValues |
-|     |                             |
+| Cmd | Name                                             |
+| --- | ------------------------------------------------ |
+| 0   | GetBdAddress                                     |
+| 1   | GetConfigurationId1                              |
+| 2   | GetAccelerometerOffset                           |
+| 3   | GetAccelerometerScale                            |
+| 4   | GetGyroscopeOffset                               |
+| 5   | GetGyroscopeScale                                |
+| 6   | GetWlanMacAddress                                |
+| 7   | GetWlanCountryCodesNum                           |
+| 8   | GetWlanCountryCodes                              |
+| 9   | GetSerialNumber                                  |
+| 10  |                                                  |
+| 11  |                                                  |
+| 12  | GetBatteryLot                                    |
+| 14  | [\#GetDeviceCert](#GetDeviceCert "wikilink")     |
+| 15  | [\#GetETicketCert](#GetETicketCert "wikilink")   |
+| 16  | [\#GetSslKey](#GetSslKey "wikilink")             |
+| 17  | [\#GetSslCert](#GetSslCert "wikilink")           |
+| 18  | [\#GetGameCardKey](#GetGameCardKey "wikilink")   |
+| 19  | [\#GetGameCardCert](#GetGameCardCert "wikilink") |
+| 20  | [\#GetDeviceKey](#GetDeviceKey "wikilink")       |
+| 21  | [\#GetETicketKey](#GetETicketKey "wikilink")     |
+| 22  | GetSpeakerCalibrationValues                      |
+|     |                                                  |
 
 Used for accessing data calibrated at the factory.
 
-## GetDeviceCertECC
+## GetDeviceCert
 
 Takes a type-0x16 output buffer with fixed size 0x180.
 
-Returns the DeviceCert. This is identical to 3DS DeviceCert/CTCert
-besides the strings. NIM loads the DeviceId from this.
+Returns the device certificate (ECC signed). This is identical to 3DS
+DeviceCert/CTCert besides the strings. NIM loads the DeviceId from this.
 
-## GetETicketCertRSA
+## GetETicketCert
 
 Takes a type-0x16 output buffer with fixed size 0x240.
 
-Same as GetDeviceCertECC, except this returns more data and the data
-starts differing at offset 0x108 compared to GetDeviceCert.
+Returns the ETicket certificate (RSA signed).
 
 ## GetSslKey
 
 Takes a type-0x16 output buffer with fixed size 0x134.
 
-Returns a container-structure for the encrypted TLS client-privk.
-Decrypting this fails unless an unknown size \>0x134 is passed to this
-setcal cmd?
+Returns the extended SSL key (0x130 bytes) from
+[CAL0](Calibration#CAL0.md##CAL0 "wikilink"). If the extended key is not
+programmed then it falls back to the normal SSL key (0x110 bytes).
 
 Used by SSL-sysmodule, see [here](SSL%20services.md "wikilink").
 
@@ -67,28 +66,64 @@ Used by SSL-sysmodule, see [here](SSL%20services.md "wikilink").
 
 Takes a type-0x16 output buffer with fixed size 0x804.
 
-Returns a container-structure for the plaintext TLS client-cert.
+Returns a
+[container](Settings%20services#setcal%20Container%20Structure.md##setcal_Container_Structure "wikilink")
+with the plaintext SSL certificate.
 
-Used by SSL-sysmodule, see
-[here](SSL%20services.md "wikilink").
+Used by SSL-sysmodule, see [here](SSL%20services.md "wikilink").
 
-### setcal Container Structure
+## GetGameCardKey
+
+Takes a type-0x16 output buffer with fixed size 0x134.
+
+Returns the extended GameCard key (0x130 bytes) from
+[CAL0](Calibration#CAL0.md##CAL0 "wikilink"). If the extended key is not
+programmed then it falls back to the normal GameCard key (0x110 bytes).
+
+## GetGameCardCert
+
+Takes a type-0x16 output buffer with fixed size 0x404.
+
+Returns a
+[container](Settings%20services#setcal%20Container%20Structure.md##setcal_Container_Structure "wikilink")
+with the GameCard certificate.
+
+## GetDeviceKey
+
+Returns the extended device ECC-B233 key (0x50 bytes) from
+[CAL0](Calibration#CAL0.md##CAL0 "wikilink"). If the extended key is not
+programmed then it falls back to the normal device ECC-B233 key (0x30
+bytes).
+
+## GetETicketKey
+
+Takes a type-0x16 output buffer with fixed size 0x244.
+
+Returns the extended ETicket RSA-2048 key (0x240 bytes) from
+[CAL0](Calibration#CAL0.md##CAL0 "wikilink"). If the extended key is not
+programmed then it falls back to the normal ETicket RSA-2048 key (0x220
+bytes).
+
+## setcal Container Structure
 
 | Offset | Size         | Name                                           |
 | ------ | ------------ | ---------------------------------------------- |
 | 0x0    | 0x4          | Size (same size used for decryption if needed) |
 | 0x4    | {above size} | Actual data starts here.                       |
 
+This container is used for returning data with variable
+sizes.
+
 # set:sys
 
 | Cmd | Name                                                                              |
 | --- | --------------------------------------------------------------------------------- |
-| 3   | GetSystemVersion                                                                  |
+| 3   | [\#GetSystemVersion](#GetSystemVersion "wikilink")                                |
 | 37  | QuerySetting                                                                      |
-| 38  | ReadSetting                                                                       |
+| 38  | [\#ReadSetting](#ReadSetting "wikilink")                                          |
 | 56  | [GetWirelessCertification](Flash%20Filesystem#PRODINFOF.md##PRODINFOF "wikilink") |
-| 62  | GetDebugMode                                                                      |
-| 68  | GetSerialNumber                                                                   |
+| 62  | [\#GetDebugMode](#GetDebugMode "wikilink")                                        |
+| 68  | [\#GetSerialNumber](#GetSerialNumber "wikilink")                                  |
 
 Official user-processes get a new service session handle each time a
 set:sys cmd is used, with the session being closed aftewards.
