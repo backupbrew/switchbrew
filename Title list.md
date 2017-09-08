@@ -67,19 +67,21 @@ As of [2.0.0](2.0.0.md "wikilink"), the only sysmodule with a RomFS is
 
 ## System Debug Applets
 
-| Title-id         | Versions | Description                                                                                             |
-| ---------------- | -------- | ------------------------------------------------------------------------------------------------------- |
-| 0100000000002000 |          | BoardTest                                                                                               |
-| 0100000000002001 |          | ? - Probably Battery Vendor related.                                                                    |
-| 0100000000002002 |          | C1LcdAndKey - LCD/Keyboard testing.                                                                     |
-| 0100000000002003 |          | C2UsbHpmic - USB testing.                                                                               |
-| 0100000000002004 |          | C3Aging - Graphics/Framerate testing.                                                                   |
-| 0100000000002005 |          | C4SixAxis - Sixaxis (controller peripheral) testing.                                                    |
-| 0100000000002006 |          | C5Wireless - Wireless testing.                                                                          |
-| 010000000000204E |          | A4BoardCalWriti - Writes calibration data to NAND.                                                      |
-| 010000000000209C |          | TestApplication - "Test Application Launcher", factory qlaunch replacement. Used to launch other tests. |
-| 0100000000002071 |          | Snapshot Dumper? Used by [NS](NS%20Services.md "wikilink").                                             |
-| 010000000000209B |          | "am.debug". Used by [AM](AM%20services.md "wikilink").                                                  |
+| Title-id         | Versions | Description                                                                                            |
+| ---------------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| 0100000000002000 |          | "BoardTest"                                                                                            |
+| 0100000000002001 |          | "BoardWireless"                                                                                        |
+| 0100000000002002 |          | C1LcdAndKey ("LcdAndKey") - LCD/Keyboard testing.                                                      |
+| 0100000000002003 |          | C2UsbHpmic ("UsbAndHPMicTest") - USB and audio testing.                                                |
+| 0100000000002004 |          | C3Aging ("Aging") - Graphics/Framerate testing.                                                        |
+| 0100000000002005 |          | C4SixAxis ("6axisTest") - Sixaxis (controller peripheral) testing.                                     |
+| 0100000000002006 |          | C5Wireless ("AssembledWireless") - Wireless testing.                                                   |
+| 0100000000002007 |          | "FinalCheck"                                                                                           |
+| 0100000000002044 |          | "HB-TBIntegrationTest"                                                                                 |
+| 010000000000204E |          | A4BoardCalWriti ("BoardCalWriting") - Writes calibration data to NAND.                                 |
+| 010000000000209B |          | "am.debug" - Used by [AM](AM%20services.md "wikilink").                                                |
+| 010000000000209C |          | TestApplication ("TestApplicationLauncher") - Factory qlaunch replacement. Used to launch other tests. |
+| 0100000000002071 |          | Snapshot Dumper? - Used by [NS](NS%20Services.md "wikilink").                                          |
 
 No 01000000000020XX titles exist on retail
 systems.
