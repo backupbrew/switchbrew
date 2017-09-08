@@ -267,7 +267,7 @@ Bellow is a list of offsets and sizes for each block of raw calibration data.
 |  Extended device key (ECC-B233 version; active).
 |-
 |  0x37D0
-|  0x30
+|  0x50
 |  eticket_ext_key_ecc_p256
 |  Extended ETicket key (ECC-P256 version; empty and unused).
 |-

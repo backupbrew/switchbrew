@@ -71,7 +71,7 @@ data.
 | 0x3750 | 0x06   | color\_variation                    |                                                                                       |
 | 0x3760 | 0x0C   | lcd\_backlight\_brightness\_mapping |                                                                                       |
 | 0x3770 | 0x50   | device\_ext\_key\_ecc\_b233         | Extended device key (ECC-B233 version; active).                                       |
-| 0x37D0 | 0x30   | eticket\_ext\_key\_ecc\_p256        | Extended ETicket key (ECC-P256 version; empty and unused).                            |
+| 0x37D0 | 0x50   | eticket\_ext\_key\_ecc\_p256        | Extended ETicket key (ECC-P256 version; empty and unused).                            |
 | 0x3830 | 0x50   | eticket\_ext\_key\_ecc\_b233        | Extended ETicket key (ECC-B233 version; empty and unused).                            |
 | 0x3890 | 0x240  | eticket\_ext\_key\_rsa              | Extended ETicket key (RSA-2048 version; active).                                      |
 | 0x3AE0 | 0x130  | ssl\_ext\_key                       | Extended SSL key (active).                                                            |
