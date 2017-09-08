@@ -1,7 +1,7 @@
 =ssl=
 
 =Client cert+privk=
-SSL-sysmodule uses [[Settings_services|set:cal]] GetTLSClientPrivk and GetTLSClientCert. The rest of this section documents handling for the former, which can be decrypted with [[SPL_services|SPL]].
+SSL-sysmodule uses [[Settings_services|set:cal]] [[Settings_services#GetSslKey|GetSslKey]] and [[Settings_services#GetSslCert|GetSslCert]]. The rest of this section documents handling for the former, which can be decrypted with [[SPL_services|SPL]].
 
 key* below refers to the 3 0x10-byte input blocks passed to this code.
 

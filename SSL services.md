@@ -3,9 +3,10 @@
 # Client cert+privk
 
 SSL-sysmodule uses [set:cal](Settings%20services.md "wikilink")
-GetTLSClientPrivk and GetTLSClientCert. The rest of this section
-documents handling for the former, which can be decrypted with
-[SPL](SPL%20services.md "wikilink").
+[GetSslKey](Settings%20services#GetSslKey.md##GetSslKey "wikilink") and
+[GetSslCert](Settings%20services#GetSslCert.md##GetSslCert "wikilink").
+The rest of this section documents handling for the former, which can be
+decrypted with [SPL](SPL%20services.md "wikilink").
 
 key\* below refers to the 3 0x10-byte input blocks passed to this code.
 
