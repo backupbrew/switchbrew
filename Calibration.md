@@ -12,12 +12,8 @@ which ranges from hardware IDs to system keys.
 
 # CAL0
 
-This is the raw data stored under the PRODINFO partition. Each block of
-data is padded to 16 bytes, being the last 2 bytes a CRC16 over said
-block.
-
-Bellow is a list of offsets and sizes for each block of raw calibration
-data.
+This is the raw data stored under the PRODINFO
+partition.
 
 | Offset | Size   | Field                               | Description                                                                           |
 | ------ | ------ | ----------------------------------- | ------------------------------------------------------------------------------------- |
@@ -78,3 +74,41 @@ data.
 | 0x3C20 | 0x130  | gamecard\_ext\_key                  | Extended GameCard key (active).                                                       |
 | 0x3D60 | 0x04   | lcd\_vendor\_id                     |                                                                                       |
 |        |        |                                     |                                                                                       |
+
+## Error detection
+
+Each block of raw calibration data (with the exception of blocks with
+SHA256 hashes) is padded to 16 bytes, being the last 2 bytes a CRC-16
+over said block.
+
+`XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX`  
+`00 00 00 00 00 00 00 00 00 00 00 00 00 00 YY YY`  
+  
+`XX == data`  
+`00 == padding`  
+`YY == crc`
+
+The CRC-16 is generated as follows:
+
+`unsigned int crc_16_table[16] = {`  
+` 0x0000, 0xCC01, 0xD801, 0x1400, 0xF001, 0x3C00, 0x2800, 0xE401,`  
+` 0xA001, 0x6C00, 0x7800, 0xB401, 0x5000, 0x9C01, 0x8801, 0x4400 };`  
+  
+`unsigned short int get_crc_16 (char *p, int n) {`  
+` unsigned short int crc = 0x55AA;`  
+` int r;`  
+  
+` while (n-- > 0) {`  
+`   r = crc_16_table[crc & 0xF];`  
+`   crc = (crc >> 4) & 0x0FFF;`  
+`   crc = crc ^ r ^ crc_16_table[*p & 0xF];`  
+  
+`   r = crc_16_table[crc & 0xF];`  
+`   crc = (crc >> 4) & 0x0FFF;`  
+`   crc = crc ^ r ^ crc_16_table[(*p >> 4) & 0xF];`  
+  
+`   p++;`  
+` }`  
+  
+` return(crc);`  
+`}`
