@@ -47,15 +47,18 @@ installed.
 | Title ID         | Name                                  | Description                                                                                           |
 | ---------------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | 0100000000002000 | "BoardTest"                           |                                                                                                       |
-| 0100000000002001 | ?                                     | Probably Battery Vendor related.                                                                      |
+| 0100000000002001 | "BoardWireless"                       |                                                                                                       |
 | 0100000000002002 | C1LcdAndKey                           | LCD/Keyboard testing.                                                                                 |
 | 0100000000002003 | C2UsbHpmic                            | USB testing.                                                                                          |
 | 0100000000002004 | C3Aging                               | Graphics/Framerate testing.                                                                           |
 | 0100000000002005 | C4SixAxis                             | Sixaxis (controller peripheral) testing.                                                              |
 | 0100000000002006 | C5Wireless                            | Wireless testing.                                                                                     |
+| 0100000000002007 | "FinalCheck"                          |                                                                                                       |
+| 0100000000002044 | "HB-TBIntegrationTest"                |                                                                                                       |
 | 010000000000204E | A4BoardCalWriti                       | Writes calibration data to NAND.                                                                      |
 | 010000000000209C | TestApplication                       | "Test Application Launcher", factory qlaunch replacement. Used to launch other tests.                 |
 | 010000000000B14A | [Manu](Manu%20Services.md "wikilink") | Manufacturing sysmodule.                                                                              |
 | 1000000000000001 | SystemInitializ                       | Strings internally refer to this as "SystemInitializer". See [here](SystemInitializer.md "wikilink"). |
 | 1000000000000004 | ?                                     | ?                                                                                                     |
+| 1000000000000007 | "ApplicationLauncer"                  |                                                                                                       |
 |                  |                                       |                                                                                                       |
