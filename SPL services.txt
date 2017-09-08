@@ -188,7 +188,7 @@ Any other '''ConfigItem''', besides 13, can't be set.
 
 == DecryptImportPrivkForExpMod0 ==
 Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
-'''version''' is 0 or 1.
+'''version''' is 0 for normal keys or 1 for extended keys.
 
 Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key_y''' and imports it for later usage.
 
@@ -214,7 +214,7 @@ Returns a scrambled (unsealed?) key ('''key_a''').
 
 == DecryptPrivk ==
 Takes one type-10 (C descriptor) buffer ('''dec_privk_out_buf'''), one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
-'''version''' is 0 or 1.
+'''version''' is 0 for normal keys or 1 for extended keys.
 
 Decrypts '''enc_privk_in_buf''' into '''dec_privk_out_buf''' with a key generated from '''key_x''' and '''key_y'''.
 
@@ -244,7 +244,7 @@ Returns a 16-byte CMAC calculated over '''data_in_buf'''.
 
 == DecryptImportPrivkForExpMod1 ==
 Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
-'''version''' is 0 or 1.
+'''version''' is 0 for normal keys or 1 for extended keys.
 
 Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key_y''' and imports it for later usage.
 

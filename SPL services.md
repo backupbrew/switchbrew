@@ -151,7 +151,7 @@ Any other **ConfigItem**, besides 13, can't be set.
 
 Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 16-byte KEK (**key\_x**), a 16-byte key (**key\_y**) and a u32
-(**version**). **version** is 0 or 1.
+(**version**). **version** is 0 for normal keys or 1 for extended keys.
 
 Decrypts **enc\_privk\_in\_buf** with a key generated from **key\_x**
 and **key\_y** and imports it for later usage.
@@ -191,7 +191,7 @@ Returns a scrambled (unsealed?) key (**key\_a**).
 Takes one type-10 (C descriptor) buffer (**dec\_privk\_out\_buf**), one
 type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a 16-byte KEK
 (**key\_x**), a 16-byte key (**key\_y**) and a u32 (**version**).
-**version** is 0 or 1.
+**version** is 0 for normal keys or 1 for extended keys.
 
 Decrypts **enc\_privk\_in\_buf** into **dec\_privk\_out\_buf** with a
 key generated from **key\_x** and **key\_y**.
@@ -235,7 +235,7 @@ Returns a 16-byte CMAC calculated over **data\_in\_buf**.
 
 Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 16-byte KEK (**key\_x**), a 16-byte key (**key\_y**) and a u32
-(**version**). **version** is 0 or 1.
+(**version**). **version** is 0 for normal keys or 1 for extended keys.
 
 Decrypts **enc\_privk\_in\_buf** with a key generated from **key\_x**
 and **key\_y** and imports it for later usage.
