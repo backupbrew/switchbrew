@@ -23,13 +23,13 @@ Bellow is a list of offsets and sizes for each block of raw calibration data.
 |-
 |  0x0004
 |  0x04
-|  unk0
+|  unk
 |  Always 0x07.
 |-
 |  0x0008
 |  0x04
 |  calib_data_size
-|  Total size of calibration data minus the 0x20 bytes header.
+|  Total size of calibration data minus 0x40 bytes (header + calib_data_sha256).
 |-
 |  0x000C
 |  0x02
@@ -53,18 +53,23 @@ Bellow is a list of offsets and sizes for each block of raw calibration data.
 |-
 |  0x0060
 |  0x20
-|  unk1
+|  reserved
 |  Empty.
 |-
 |  0x0080
 |  0x04
 |  wlan_country_codes_num
-|  
+|  Number of elements in the wlan_country_codes array.
 |-
 |  0x0084
-|  0x17C
+|  0x04
+|  wlan_country_codes_last_idx
+|  Index of the last element in the wlan_country_codes array.
+|-
+|  0x0088
+|  0x180
 |  wlan_country_codes
-|  
+|  Array of WLAN country code strings. Each element is 3 bytes (code + NULL terminator).
 |-
 |  0x0210
 |  0x06
@@ -104,42 +109,42 @@ Bellow is a list of offsets and sizes for each block of raw calibration data.
 |  0x0270
 |  0x30
 |  device_key_ecc_p256
-|  Device key ECC-P256 variation (empty and unused).
+|  Device key (ECC-P256 version; empty and unused).
 |-
 |  0x02B0
 |  0x180
 |  device_cert_ecc_p256
-|  Device certificate ECC-P256 variation (empty and unused).
+|  Device certificate (ECC-P256 version; empty and unused).
 |-
 |  0x0440
 |  0x30
 |  device_key_ecc_b233
-|  Device key ECC-B233 variation (empty and unused).
+|  Device key (ECC-B233 version; empty and unused).
 |-
 |  0x0480
 |  0x180
 |  device_cert_ecc_b233
-|  Device certificate ECC-B233 variation (active).
+|  Device certificate (ECC-B233 version; active).
 |-
 |  0x0610
 |  0x30
 |  eticket_key_ecc_p256
-|  ETicket key ECC P256-variation (empty and unused).
+|  ETicket key (ECC-P256 version; empty and unused).
 |-
 |  0x0650
 |  0x180
 |  eticket_cert_ecc_p256
-|  ETicket certificate ECC-P256 variation (empty and unused).
+|  ETicket certificate (ECC-P256 version; empty and unused).
 |-
 |  0x07E0
 |  0x30
 |  eticket_key_ecc_b233
-|  ETicket key ECC-B233 variation (empty and unused).
+|  ETicket key (ECC-B233 version; empty and unused).
 |-
 |  0x0820
 |  0x180
 |  eticket_cert_ecc_b233
-|  ETicket certificate ECC-B233 variation (empty and unused).
+|  ETicket certificate (ECC-B233 version; empty and unused).
 |-
 |  0x09B0
 |  0x110
@@ -174,27 +179,27 @@ Bellow is a list of offsets and sizes for each block of raw calibration data.
 |  0x2320
 |  0x110
 |  gamecard_key
-|  Gamecard key (empty and unused).
+|  GameCard key (empty and unused).
 |-
 |  0x2440
 |  0x400
 |  gamecard_cert
-|  Gamecard certificate.
+|  GameCard certificate.
 |-
 |  0x2840
 |  0x20
 |  gamecard_cert_sha256
-|  SHA256 over the gamecard certificate.
+|  SHA256 over the GameCard certificate.
 |-
 |  0x2860
 |  0x220
 |  eticket_key_rsa
-|  ETicket key RSA-2048 variation (empty and unused).
+|  ETicket key (RSA-2048 version; empty and unused).
 |-
 |  0x2A90
 |  0x240
 |  eticket_cert_rsa
-|  ETicket certificate RSA-2048 variation (active).
+|  ETicket certificate (RSA-2048 version; active).
 |-
 |  0x2CE0
 |  0x18
@@ -214,32 +219,32 @@ Bellow is a list of offsets and sizes for each block of raw calibration data.
 |  0x3520
 |  0x50
 |  amiibo_key
-|  Amiibo key.
+|  Amiibo key (ECQV and ECDSA versions).
 |-
 |  0x3580
 |  0x14
 |  amiibo_cert_ecqv
-|  Amiibo certificate ECQV variation.
+|  Amiibo certificate (ECQV version).
 |-
 |  0x35A0
 |  0x70
 |  amiibo_cert_ecdsa
-|  Amiibo certificate ECDSA variation.
+|  Amiibo certificate (ECDSA version).
 |-
 |  0x3620
 |  0x40
 |  amiibo_key_ecqv_bls
-|  Amiibo ECQV-BLS key.
+|  Amiibo key (ECQV-BLS version).
 |-
 |  0x3670
 |  0x20
 |  amiibo_cert_ecqv_bls
-|  Amiibo certificate ECQV-BLS variation.
+|  Amiibo certificate (ECQV-BLS version).
 |-
 |  0x36A0
 |  0x90
 |  amiibo_root_cert_ecqv_bls
-|  Amiibo root certificate ECQV-BLS variation.
+|  Amiibo root certificate (ECQV-BLS version).
 |-
 |  0x3740
 |  0x04
@@ -259,22 +264,22 @@ Bellow is a list of offsets and sizes for each block of raw calibration data.
 |  0x3770
 |  0x50
 |  device_ext_key_ecc_b233
-|  Extended device key ECC-B233 variation (active).
+|  Extended device key (ECC-B233 version; active).
 |-
 |  0x37D0
 |  0x30
 |  eticket_ext_key_ecc_p256
-|  Extended ETicket key ECC-P256 variation (empty and unused).
+|  Extended ETicket key (ECC-P256 version; empty and unused).
 |-
 |  0x3830
 |  0x50
 |  eticket_ext_key_ecc_b233
-|  Extended ETicket key ECC-B233 variation (empty and unused).
+|  Extended ETicket key (ECC-B233 version; empty and unused).
 |-
 |  0x3890
 |  0x240
 |  eticket_ext_key_rsa
-|  Extended ETicket key RSA-2048 variation (active).
+|  Extended ETicket key (RSA-2048 version; active).
 |-
 |  0x3AE0
 |  0x130
@@ -284,7 +289,7 @@ Bellow is a list of offsets and sizes for each block of raw calibration data.
 |  0x3C20
 |  0x130
 |  gamecard_ext_key
-|  Extended Gamecard key (active).
+|  Extended GameCard key (active).
 |-
 |  0x3D60
 |  0x04
