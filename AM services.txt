@@ -7,15 +7,15 @@ Contains multiple raw images, with at least the following: "NN_OMM_CHARGING_BIN_
 |-
 ! Cmd || Name
 |-
-| 100 || GetISystemAppletProxy
+| 100 || GetSystemAppletProxy
 |-
-| 200 || GetILibraryAppletProxy
+| 200 || GetLibraryAppletProxy
 |-
-| 300 || GetIOverlayAppletProxy
+| 300 || GetOverlayAppletProxy
 |-
-| 350 || GetIApplicationProxy
+| 350 || GetApplicationProxy
 |-
-| 400 || GetILibraryAppletCreator
+| 400 || GetLibraryAppletCreator
 |-
 |}
 
@@ -24,27 +24,27 @@ Contains multiple raw images, with at least the following: "NN_OMM_CHARGING_BIN_
 |-
 ! Cmd || Name
 |-
-| 0 || GetICommonStateGetter
+| 0 || GetCommonStateGetter
 |-
-| 1 || GetISelfController
+| 1 || GetSelfController
 |-
-| 2 || GetIWindowController
+| 2 || GetWindowController
 |-
-| 3 || GetIAudioController
+| 3 || GetAudioController
 |-
-| 4 || GetIDisplayController
+| 4 || GetDisplayController
 |-
-| 10 || GetIProcessWindingController
+| 10 || GetProcessWindingController
 |-
-| 11 || GetILibraryAppletCreator
+| 11 || GetLibraryAppletCreator
 |-
-| 20 || GetIHomeMenuFunctions
+| 20 || GetHomeMenuFunctions
 |-
-| 21 || GetIGlobalStateController
+| 21 || GetGlobalStateController
 |-
-| 22 || GetIApplicationCreator
+| 22 || GetApplicationCreator
 |-
-| 1000 || GetIDebugFunctions
+| 1000 || GetDebugFunctions
 |-
 |}
 
@@ -53,23 +53,23 @@ Contains multiple raw images, with at least the following: "NN_OMM_CHARGING_BIN_
 |-
 ! Cmd || Name
 |-
-| 0 || GetICommonStateGetter
+| 0 || GetCommonStateGetter
 |-
-| 1 || GetISelfController
+| 1 || GetSelfController
 |-
-| 2 || GetIWindowController
+| 2 || GetWindowController
 |-
-| 3 || GetIAudioController
+| 3 || GetAudioController
 |-
-| 4 || GetIDisplayController
+| 4 || GetDisplayController
 |-
-| 10 || GetIProcessWindingController
+| 10 || GetProcessWindingController
 |-
-| 11 || GetILibraryAppletCreator
+| 11 || GetLibraryAppletCreator
 |-
-| 20 || GetILibraryAppletSelfAccessor
+| 20 || GetLibraryAppletSelfAccessor
 |-
-| 1000 || GetIDebugFunctions
+| 1000 || GetDebugFunctions
 |-
 |}
 
@@ -78,23 +78,23 @@ Contains multiple raw images, with at least the following: "NN_OMM_CHARGING_BIN_
 |-
 ! Cmd || Name
 |-
-| 0 || GetICommonStateGetter
+| 0 || GetCommonStateGetter
 |-
-| 1 || GetISelfController
+| 1 || GetSelfController
 |-
-| 2 || GetIWindowController
+| 2 || GetWindowController
 |-
-| 3 || GetIAudioController
+| 3 || GetAudioController
 |-
-| 4 || GetIDisplayController
+| 4 || GetDisplayController
 |-
-| 10 || GetIProcessWindingController
+| 10 || GetProcessWindingController
 |-
-| 11 || GetILibraryAppletCreator
+| 11 || GetLibraryAppletCreator
 |-
-| 20 || GetIOverlayFunctions
+| 20 || GetOverlayFunctions
 |-
-| 1000 || GetIDebugFunctions
+| 1000 || GetDebugFunctions
 |-
 |}
 
@@ -103,23 +103,23 @@ Contains multiple raw images, with at least the following: "NN_OMM_CHARGING_BIN_
 |-
 ! Cmd || Name
 |-
-| 0 || GetICommonStateGetter
+| 0 || GetCommonStateGetter
 |-
-| 1 || GetISelfController
+| 1 || GetSelfController
 |-
-| 2 || GetIWindowController
+| 2 || GetWindowController
 |-
-| 3 || GetIAudioController
+| 3 || GetAudioController
 |-
-| 4 || GetIDisplayController
+| 4 || GetDisplayController
 |-
-| 10 || GetIProcessWindingController
+| 10 || GetProcessWindingController
 |-
-| 11 || GetILibraryAppletCreator
+| 11 || GetLibraryAppletCreator
 |-
-| 20 || GetIApplicationFunctions
+| 20 || GetApplicationFunctions
 |-
-| 1000 || GetIDebugFunctions
+| 1000 || GetDebugFunctions
 |-
 |}
 
@@ -128,7 +128,7 @@ Contains multiple raw images, with at least the following: "NN_OMM_CHARGING_BIN_
 |-
 ! Cmd || Name
 |-
-| 0 || GetILibraryAppletAccessor
+| 0 || GetLibraryAppletAccessor
 |-
 | 1 || TerminateAllLibraryApplets
 |-
@@ -147,7 +147,7 @@ Contains multiple raw images, with at least the following: "NN_OMM_CHARGING_BIN_
 |-
 ! Cmd || Name
 |-
-| 0 || GetIApplicationProxy
+| 0 || GetApplicationProxy
 |-
 |}
 

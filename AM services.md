@@ -8,82 +8,82 @@ and the Nintendo Switch logo displayed during system boot.
 
 # appletAE
 
-| Cmd | Name                     |
-| --- | ------------------------ |
-| 100 | GetISystemAppletProxy    |
-| 200 | GetILibraryAppletProxy   |
-| 300 | GetIOverlayAppletProxy   |
-| 350 | GetIApplicationProxy     |
-| 400 | GetILibraryAppletCreator |
-|     |                          |
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 100 | GetSystemAppletProxy    |
+| 200 | GetLibraryAppletProxy   |
+| 300 | GetOverlayAppletProxy   |
+| 350 | GetApplicationProxy     |
+| 400 | GetLibraryAppletCreator |
+|     |                         |
 
 ## ISystemAppletProxy
 
-| Cmd  | Name                         |
-| ---- | ---------------------------- |
-| 0    | GetICommonStateGetter        |
-| 1    | GetISelfController           |
-| 2    | GetIWindowController         |
-| 3    | GetIAudioController          |
-| 4    | GetIDisplayController        |
-| 10   | GetIProcessWindingController |
-| 11   | GetILibraryAppletCreator     |
-| 20   | GetIHomeMenuFunctions        |
-| 21   | GetIGlobalStateController    |
-| 22   | GetIApplicationCreator       |
-| 1000 | GetIDebugFunctions           |
-|      |                              |
+| Cmd  | Name                        |
+| ---- | --------------------------- |
+| 0    | GetCommonStateGetter        |
+| 1    | GetSelfController           |
+| 2    | GetWindowController         |
+| 3    | GetAudioController          |
+| 4    | GetDisplayController        |
+| 10   | GetProcessWindingController |
+| 11   | GetLibraryAppletCreator     |
+| 20   | GetHomeMenuFunctions        |
+| 21   | GetGlobalStateController    |
+| 22   | GetApplicationCreator       |
+| 1000 | GetDebugFunctions           |
+|      |                             |
 
 ## ILibraryAppletProxy
 
-| Cmd  | Name                          |
-| ---- | ----------------------------- |
-| 0    | GetICommonStateGetter         |
-| 1    | GetISelfController            |
-| 2    | GetIWindowController          |
-| 3    | GetIAudioController           |
-| 4    | GetIDisplayController         |
-| 10   | GetIProcessWindingController  |
-| 11   | GetILibraryAppletCreator      |
-| 20   | GetILibraryAppletSelfAccessor |
-| 1000 | GetIDebugFunctions            |
-|      |                               |
+| Cmd  | Name                         |
+| ---- | ---------------------------- |
+| 0    | GetCommonStateGetter         |
+| 1    | GetSelfController            |
+| 2    | GetWindowController          |
+| 3    | GetAudioController           |
+| 4    | GetDisplayController         |
+| 10   | GetProcessWindingController  |
+| 11   | GetLibraryAppletCreator      |
+| 20   | GetLibraryAppletSelfAccessor |
+| 1000 | GetDebugFunctions            |
+|      |                              |
 
 ## IOverlayAppletProxy
 
-| Cmd  | Name                         |
-| ---- | ---------------------------- |
-| 0    | GetICommonStateGetter        |
-| 1    | GetISelfController           |
-| 2    | GetIWindowController         |
-| 3    | GetIAudioController          |
-| 4    | GetIDisplayController        |
-| 10   | GetIProcessWindingController |
-| 11   | GetILibraryAppletCreator     |
-| 20   | GetIOverlayFunctions         |
-| 1000 | GetIDebugFunctions           |
-|      |                              |
+| Cmd  | Name                        |
+| ---- | --------------------------- |
+| 0    | GetCommonStateGetter        |
+| 1    | GetSelfController           |
+| 2    | GetWindowController         |
+| 3    | GetAudioController          |
+| 4    | GetDisplayController        |
+| 10   | GetProcessWindingController |
+| 11   | GetLibraryAppletCreator     |
+| 20   | GetOverlayFunctions         |
+| 1000 | GetDebugFunctions           |
+|      |                             |
 
 ## IApplicationProxy
 
-| Cmd  | Name                         |
-| ---- | ---------------------------- |
-| 0    | GetICommonStateGetter        |
-| 1    | GetISelfController           |
-| 2    | GetIWindowController         |
-| 3    | GetIAudioController          |
-| 4    | GetIDisplayController        |
-| 10   | GetIProcessWindingController |
-| 11   | GetILibraryAppletCreator     |
-| 20   | GetIApplicationFunctions     |
-| 1000 | GetIDebugFunctions           |
-|      |                              |
+| Cmd  | Name                        |
+| ---- | --------------------------- |
+| 0    | GetCommonStateGetter        |
+| 1    | GetSelfController           |
+| 2    | GetWindowController         |
+| 3    | GetAudioController          |
+| 4    | GetDisplayController        |
+| 10   | GetProcessWindingController |
+| 11   | GetLibraryAppletCreator     |
+| 20   | GetApplicationFunctions     |
+| 1000 | GetDebugFunctions           |
+|      |                             |
 
 ## ILibraryAppletCreator
 
 | Cmd | Name                        |
 | --- | --------------------------- |
-| 0   | GetILibraryAppletAccessor   |
+| 0   | GetLibraryAppletAccessor    |
 | 1   | TerminateAllLibraryApplets  |
 | 2   | AreAnyLibraryAppletsLeft    |
 | 10  | CreateStorage               |
@@ -93,10 +93,10 @@ and the Nintendo Switch logo displayed during system boot.
 
 # appletOE
 
-| Cmd | Name                 |
-| --- | -------------------- |
-| 0   | GetIApplicationProxy |
-|     |                      |
+| Cmd | Name                |
+| --- | ------------------- |
+| 0   | GetApplicationProxy |
+|     |                     |
 
 # idle:sys
 
