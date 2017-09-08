@@ -12,6 +12,10 @@ management.
 | 2   | CheckStorage                    | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
 | 3   | GetAddOnContentLocationResolver | None                                                                  |       |
 
+The only non-builtin sysmodules which have access to this service are
+[boot2](Boot2.md "wikilink") and
+[NS](NS%20Services.md "wikilink").
+
 ### ILocationResolver
 
 | Cmd | Name                  | Arguments                                                                                          | Notes                                                                                                           |
