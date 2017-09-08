@@ -186,7 +186,7 @@
 |- style="border-top: double"
 | 0x70 || svcCreatePort || || 
 |-
-| 0x71 || svcManageNamedPort || || 
+| 0x71 || svcManageNamedPort || X1=namestr*, W2=maxsessions(?) || W0=result, W1=outhandle
 |-
 | 0x72 || svcConnectToPort || || 
 |-
