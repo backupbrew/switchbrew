@@ -349,6 +349,13 @@ Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as input.
 **Description:** Detach an address space from a
 [device](#DeviceName "wikilink").
 
+## Debugging
+
+\[2.0.0+\] Certain debug SVCs require that
+[IsDebugMode](SPL%20services#GetConfig.md##GetConfig "wikilink") is
+non-zero. Error 0x4201 is returned otherwise. svcWriteDebugProcessMemory
+requires this but not svcReadDebugProcessMemory.
+
 # Structures
 
 ## DeviceName
