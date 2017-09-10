@@ -88,7 +88,8 @@ then skipping NRR rsa signatures is allowed.
 
 Kernel uses id11 to determine behavior of svcBreak positive arguments.
 It will break instead of just force-exiting the process which is what
-happens on retail.
+happens on retail. This is also used with certain debug
+[SVCs](SVC.md "wikilink").
 
 Kernel reads id12 when setting up memory-related code. If bit0 is set,
 it will memset various allocated memory-regions with 0x58, 0x59, 0x5A
