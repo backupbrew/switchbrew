@@ -82,6 +82,7 @@ applets.
 | Value             | Description | Description                                                                                                                                                                          |
 | ----------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 0x1C01            | 14          | Invalid kernel capability descriptor                                                                                                                                                 |
+| 0x4201            | 33          | [IsDebugMode](SPL%20services#GetConfig.md##GetConfig "wikilink") isn't set.                                                                                                          |
 | 0xCA01            | 101         | Invalid size                                                                                                                                                                         |
 | 0xCC01            | 102         | Invalid address                                                                                                                                                                      |
 | 0xCE01            | 103         | Address is NULL / buffer size is too small.                                                                                                                                          |

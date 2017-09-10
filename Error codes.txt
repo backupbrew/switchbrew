@@ -129,6 +129,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1C01 || 14 || Invalid kernel capability descriptor
 |-
+| 0x4201 || 33 || [[SPL_services#GetConfig|IsDebugMode]] isn't set.
+|-
 | 0xCA01 || 101 || Invalid size
 |-
 | 0xCC01 || 102 || Invalid address
