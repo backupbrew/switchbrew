@@ -156,7 +156,7 @@
 |-
 | 0x5F || svcFlushProcessDataCache || || 
 |-
-| 0x60 || svcDebugActiveProcess || || 
+| 0x60 || svcDebugActiveProcess || X1=processID || W0=result, W1=out_debughandle
 |-
 | 0x61 || svcBreakDebugProcess || || 
 |-
