@@ -176,7 +176,7 @@
 |-
 | 0x69 || svcQueryDebugProcessMemory || X0=MemoryInfo*, X2=debughandle, X3=addr || W0=result, W1=PageInfo
 |-
-| 0x6A || svcReadDebugProcessMemory || || 
+| 0x6A || svcReadDebugProcessMemory || X0=ptr*, X1=debughandle, X2=?, W3=? || W0=result
 |-
 | 0x6B || svcWriteDebugProcessMemory || || 
 |-
