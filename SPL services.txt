@@ -145,7 +145,7 @@ Takes a u32 ('''ConfigItem'''), and returns a u64 ('''ConfigVal''').
 
 [3.0.0+] [[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
 
-Kernel uses id11 to determine behavior of svcBreak positive arguments. It will break instead of just force-exiting the process which is what happens on retail. This is also used with certain debug [[SVC|SVCs]].
+Kernel uses id11 to determine behavior of svcBreak positive arguments. It will break instead of just force-exiting the process which is what happens on retail. [2.0.0+] This is also used with certain debug [[SVC|SVCs]].
 
 Kernel reads id12 when setting up memory-related code. If bit0 is set, it will memset various allocated memory-regions with 0x58, 0x59, 0x5A ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB of DRAM instead of 4GB.
 
