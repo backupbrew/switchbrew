@@ -12,7 +12,7 @@
 |-
 |  0x5 || [[#svcUnmapMemory]] || X0=dstaddr, X1=srcaddr, X2=size || W0=result
 |-
-|  0x6 || [[#svcQueryMemory]] || X0=meminfo_ptr, X2=addr || W0=result, W1=pageinfo                                                         
+|  0x6 || [[#svcQueryMemory]] || X0=MemoryInfo*, X2=addr || W0=result, W1=PageInfo                                                         
 |-
 |  0x7 || [[#svcExitProcess]] || None ||
 |-
@@ -174,7 +174,7 @@
 |-
 | 0x68 || svcSetDebugThreadContext || || 
 |-
-| 0x69 || svcQueryDebugProcessMemory || || 
+| 0x69 || svcQueryDebugProcessMemory || X0=MemoryInfo*, X2=debughandle, X3=addr || W0=result, W1=PageInfo
 |-
 | 0x6A || svcReadDebugProcessMemory || || 
 |-
