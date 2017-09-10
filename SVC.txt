@@ -162,7 +162,7 @@
 |-
 | 0x62 || svcTerminateDebugProcess || || 
 |-
-| 0x63 || svcGetDebugEvent || || 
+| 0x63 || svcGetDebugEvent || X0=DebugEventInfo*, W1=debughandle || W0=result
 |-
 | 0x64 || svcContinueDebugEvent || || 
 |-
