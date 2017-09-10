@@ -170,7 +170,7 @@
 |-
 | 0x66 || svcGetThreadList || || 
 |-
-| 0x67 || svcGetDebugThreadContext || || 
+| 0x67 || svcGetDebugThreadContext || X0=ThreadContext*, X1=debughandle, X2=?, W3=? || W0=result
 |-
 | 0x68 || svcSetDebugThreadContext || || 
 |-
@@ -182,7 +182,7 @@
 |-
 | 0x6C || svcSetHardwareBreakPoint || || 
 |-
-| 0x6D || svcGetDebugThreadParam || || 
+| 0x6D || svcGetDebugThreadParam || X2=debughandle, X3=?, W4=DebugThreadParam || W0=result, X1=out0, W2=out1
 |- style="border-top: double"
 | 0x70 || svcCreatePort || || 
 |-
