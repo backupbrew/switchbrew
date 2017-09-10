@@ -176,9 +176,9 @@
 |-
 | 0x69 || svcQueryDebugProcessMemory || X0=MemoryInfo*, X2=debughandle, X3=addr || W0=result, W1=PageInfo
 |-
-| 0x6A || svcReadDebugProcessMemory || X0=dst_addr, X1=debughandle, X2=src_addr, W3=size || W0=result
+| 0x6A || svcReadDebugProcessMemory || X0=buffer*, X1=debughandle, X2=src_addr, X3=size || W0=result
 |-
-| 0x6B || svcWriteDebugProcessMemory || || 
+| 0x6B || svcWriteDebugProcessMemory || X0=debughandle, X1=buffer*, X2=dst_addr, X3=size || W0=result
 |-
 | 0x6C || svcSetHardwareBreakPoint || || 
 |-
