@@ -152,6 +152,8 @@ Takes a pid and returns the title-id associated with the process.
 == LaunchProcess ==
 Takes launch_flags, title-id, and storageID. See [[#Process launch]].
 
+Returns the u64 title PID.
+
 == GetProcessEventType ==
 Returns 1 if flags has mask 2 set.
 

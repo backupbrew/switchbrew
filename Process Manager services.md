@@ -193,6 +193,8 @@ process.
 Takes launch\_flags, title-id, and storageID. See [\#Process
 launch](#Process_launch "wikilink").
 
+Returns the u64 title PID.
+
 ## GetProcessEventType
 
 Returns 1 if flags has mask 2 set.
