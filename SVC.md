@@ -351,10 +351,16 @@ Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as input.
 
 ## Debugging
 
-\[2.0.0+\] Certain debug SVCs require that
+\[2.0.0+\] Exactly 6 debug SVCs require that
 [IsDebugMode](SPL%20services#GetConfig.md##GetConfig "wikilink") is
-non-zero. Error 0x4201 is returned otherwise. svcWriteDebugProcessMemory
-requires this but not svcReadDebugProcessMemory.
+non-zero. Error 0x4201 is returned otherwise.
+
+  - svcBreakDebugProcess
+  - svcContinueDebugEvent
+  - svcWriteDebugProcessMemory
+  - svcSetDebugThreadContext
+  - svcTerminateDebugProcess
+  - svcSetHardwareBreakPoint
 
 # Structures
 

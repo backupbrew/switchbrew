@@ -414,7 +414,13 @@ Takes a [[#CreateProcessInfo]] as input.
 '''Description:''' Detach an address space from a [[#DeviceName|device]].
 
 == Debugging ==
-[2.0.0+] Certain debug SVCs require that [[SPL_services#GetConfig|IsDebugMode]] is non-zero. Error 0x4201 is returned otherwise. svcWriteDebugProcessMemory requires this but not svcReadDebugProcessMemory.
+[2.0.0+] Exactly 6 debug SVCs require that [[SPL_services#GetConfig|IsDebugMode]] is non-zero. Error 0x4201 is returned otherwise.
+* svcBreakDebugProcess
+* svcContinueDebugEvent
+* svcWriteDebugProcessMemory
+* svcSetDebugThreadContext
+* svcTerminateDebugProcess
+* svcSetHardwareBreakPoint
 
 = Structures =
 == DeviceName ==
