@@ -98,4 +98,9 @@ The FS for the system-version title(TID 0100000000000809) contains "/file":
 | 60b5fa391b0055f50fec362d29ac18395f387412
 | Revision of [[Factory Setup|factory firmware]].
 |-
+| 3.0.0
+| NintendoSDK Firmware for NX 3.0.0-10.0
+| 83480e96a810a6c7cd3a8fb58dfb5b53961ac781
+| Revision of [[Factory Setup|factory firmware]].
+|-
 |}
