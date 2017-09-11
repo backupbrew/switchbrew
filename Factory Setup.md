@@ -59,6 +59,6 @@ installed.
 | 010000000000209C | TestApplication                       | "Test Application Launcher", factory qlaunch replacement. Used to launch other tests.                 |
 | 010000000000B14A | [Manu](Manu%20Services.md "wikilink") | Manufacturing sysmodule.                                                                              |
 | 1000000000000001 | SystemInitializ                       | Strings internally refer to this as "SystemInitializer". See [here](SystemInitializer.md "wikilink"). |
-| 1000000000000004 | ?                                     | ?                                                                                                     |
+| 1000000000000004 | CalWriterManu                         | ?                                                                                                     |
 | 1000000000000007 | "ApplicationLauncer"                  |                                                                                                       |
 |                  |                                       |                                                                                                       |
