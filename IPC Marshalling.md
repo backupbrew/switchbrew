@@ -82,6 +82,14 @@ Otherwise it has (flag-2) C descriptors.
 | 1    | 15-0  | Rest of address.          |
 | 1    | 31-16 | Size                      |
 
+### IPC buffers
+
+Buffer descriptor A and others map memory into the sysmodule process.
+With input buffers the memory permissions are set to read-only, for the
+mapped memory in the sysmodule. The buffer is automatically unmapped
+while the kernel handles the cmdreply, the sysmodule doesn't need to
+specify anything in the cmdreply to trigger this.
+
 ## Raw data section
 
 ![An example of an IPC message with a type 0xA buffer in it. Red is
