@@ -460,6 +460,7 @@ non-zero. Error 0x4201 is returned otherwise.
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 7-0  | Type                                                                                                                                                                       |
 | 8    | [PermissionChangeAllowed](#svcSetMemoryPermission "wikilink")                                                                                                              |
+| 9    | IsUserWritable \[?\]                                                                                                                                                       |
 | 10   | IpcSendAllowed\_Type0                                                                                                                                                      |
 | 11   | IpcSendAllowed\_Type3                                                                                                                                                      |
 | 12   | IpcSendAllowed\_Type1                                                                                                                                                      |

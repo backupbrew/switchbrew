@@ -586,6 +586,8 @@ Takes a [[#CreateProcessInfo]] as input.
 |-
 | 8 || [[#svcSetMemoryPermission|PermissionChangeAllowed]]
 |-
+| 9 || IsUserWritable [?]
+|-
 | 10 || IpcSendAllowed_Type0
 |-
 | 11 || IpcSendAllowed_Type3
