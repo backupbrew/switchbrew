@@ -54,16 +54,17 @@ the buffer described in the ReceiveList.
 
 ### Buffer descriptor A/B/W "Send"/"Receive"/"Exchange"
 
-This packing is so unnecessarily complex.
+This packing is so unnecessarily
+complex.
 
-| Word | Bits  | Description                  |
-| ---- | ----- | ---------------------------- |
-| 0    |       | Lower 32-bits of size.       |
-| 1    |       | Lower 32-bits of address.    |
-| 2    | 1-0   | Flags. Always set to 1 or 3. |
-| 2    | 4-2   | Bit 38-36 of address.        |
-| 2    | 27-24 | Bit 35-32 of size.           |
-| 2    | 31-28 | Bit 35-32 of address.        |
+| Word | Bits  | Description                                                                                                                      |
+| ---- | ----- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 0    |       | Lower 32-bits of size.                                                                                                           |
+| 1    |       | Lower 32-bits of address.                                                                                                        |
+| 2    | 1-0   | Flags. Always set to 0, 1 or 3. Determines what [MemoryState](SVC.md "wikilink") to use with the mapped memory in the sysmodule. |
+| 2    | 4-2   | Bit 38-36 of address.                                                                                                            |
+| 2    | 27-24 | Bit 35-32 of size.                                                                                                               |
+| 2    | 31-28 | Bit 35-32 of address.                                                                                                            |
 
 ### Buffer descriptor C "ReceiveList"
 
@@ -84,11 +85,11 @@ Otherwise it has (flag-2) C descriptors.
 
 ### IPC buffers
 
-Buffer descriptor A and others map memory into the sysmodule process.
-With input buffers the memory permissions are set to read-only, for the
-mapped memory in the sysmodule. The buffer is automatically unmapped
-while the kernel handles the cmdreply, the sysmodule doesn't need to
-specify anything in the cmdreply to trigger this.
+Buffer descriptor A/B/... map memory into the sysmodule process. For the
+mapped memory in the sysmodule the permissions are: desc-A = R--, desc-B
+= RW-. The buffer is automatically unmapped while the kernel handles the
+cmdreply, the sysmodule doesn't need to specify anything in the cmdreply
+to trigger this.
 
 This memory is mapped in the sysmodule to the same vaddr from the
 original user-process cmd-request, except with with bits \>=(~28(?))
