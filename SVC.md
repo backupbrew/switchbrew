@@ -301,10 +301,14 @@ Does nothing, just returns with registers set to all-zero.
 
 ## svcReadWriteRegister
 
-Read/write Tegra hardware registers with a hardcoded whitelist. Input
-address is physical-address.
+Read/write IO registers with a hardcoded whitelist. Input address is
+physical-address and must be aligned to 4.
 
-rw\_mask is 0 for reading and -1 for writing.
+rw\_mask is 0 for reading and 0xffffffff for writing. You can also write
+individual bits by using a mask value.
+
+You can only write to registers inside physical pages 0x70019000,
+0x7001C000, 0x7001D000, and they all share the same whitelist.
 
 The whitelist is same for writing as for reading.
 
