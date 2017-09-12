@@ -456,6 +456,9 @@ non-zero. Error 0x4201 is returned otherwise.
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 7-0  | Type                                                                                                                                                                       |
 | 8    | [PermissionChangeAllowed](#svcSetMemoryPermission "wikilink")                                                                                                              |
+| 10   | IpcSendAllowed\_Type0                                                                                                                                                      |
+| 11   | IpcSendAllowed\_Type3                                                                                                                                                      |
+| 12   | IpcSendAllowed\_Type1                                                                                                                                                      |
 | 14   | [ProcessPermissionChangeAllowed](#svcSetProcessMemoryPermission "wikilink")                                                                                                |
 | 15   | [MapAllowed](#svcMapMemory "wikilink")                                                                                                                                     |
 | 16   | [UnmapProcessCodeMemoryAllowed](#svcUnmapProcessCodeMemory "wikilink")                                                                                                     |
@@ -479,15 +482,15 @@ non-zero. Error 0x4201 is returned otherwise.
 | `0x00482907` | Weird mapped memory                                            | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
 | `0x00DD7E08` | Module code static                                             | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
 | `0x01FFBD09` | Module code mutable                                            | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| `0x???????A` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=0.                                                                                |
+| `0x005C3C0A` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=0.                                                                                |
 | `0x005C3C0B` | Mapped memory                                                  | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
 | `0x0040200C` | [Thread local storage](Thread%20Local%20Storage.md "wikilink") | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
 | `0x015C3C0D` | Isolated transfer memory                                       | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm=0.         |
 | `0x005C380E` | Transfer memory                                                | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm\!=0.       |
 | `0x0040380F` | Process memory                                                 | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
 | `0x00000010` | Reserved                                                       |                                                                                                                     |
-| `0x??????11` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=1.                                                                                |
-| `0x??????12` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=3.                                                                                |
+| `0x005C3811` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=1.                                                                                |
+| `0x004C2812` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=3.                                                                                |
 
 # Exception Handling
 

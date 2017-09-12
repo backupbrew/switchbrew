@@ -583,6 +583,12 @@ Takes a [[#CreateProcessInfo]] as input.
 |-
 | 8 || [[#svcSetMemoryPermission|PermissionChangeAllowed]]
 |-
+| 10 || IpcSendAllowed_Type0
+|-
+| 11 || IpcSendAllowed_Type3
+|-
+| 12 || IpcSendAllowed_Type1
+|-
 | 14 || [[#svcSetProcessMemoryPermission|ProcessPermissionChangeAllowed]]
 |-
 | 15 || [[#svcMapMemory|MapAllowed]]
@@ -627,7 +633,7 @@ Takes a [[#CreateProcessInfo]] as input.
 |-
 | <code>0x01FFBD09</code> || Module code mutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
 |-
-| <code>0x???????A</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=0.
+| <code>0x005C3C0A</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=0.
 |-
 | <code>0x005C3C0B</code> || Mapped memory || Mapped using [[#svcMapMemory]].
 |-
@@ -641,9 +647,9 @@ Takes a [[#CreateProcessInfo]] as input.
 |-
 | <code>0x00000010</code> || Reserved ||
 |-
-| <code>0x??????11</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=1.
+| <code>0x005C3811</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=1.
 |-
-| <code>0x??????12</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=3.
+| <code>0x004C2812</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=3.
 |}
 
 =Exception Handling=
