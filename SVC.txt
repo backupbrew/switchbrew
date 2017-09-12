@@ -627,6 +627,8 @@ Takes a [[#CreateProcessInfo]] as input.
 |-
 | <code>0x01FFBD09</code> || Module code mutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
 |-
+| <code>0x???????A</code> || [[IPC_Marshalling|IPC]] buffers
+|-
 | <code>0x005C3C0B</code> || Mapped memory || Mapped using [[#svcMapMemory]].
 |-
 | <code>0x0040200C</code> || [[Thread Local Storage|Thread local storage]] || Mapped during [[#svcCreateThread]].

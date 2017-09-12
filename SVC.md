@@ -479,6 +479,7 @@ non-zero. Error 0x4201 is returned otherwise.
 | `0x00482907` | Weird mapped memory                                            | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
 | `0x00DD7E08` | Module code static                                             | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
 | `0x01FFBD09` | Module code mutable                                            | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
+| `0x???????A` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 |                                                                                                                     |
 | `0x005C3C0B` | Mapped memory                                                  | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
 | `0x0040200C` | [Thread local storage](Thread%20Local%20Storage.md "wikilink") | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
 | `0x015C3C0D` | Isolated transfer memory                                       | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm=0.         |
