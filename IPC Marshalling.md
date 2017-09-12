@@ -90,6 +90,10 @@ mapped memory in the sysmodule. The buffer is automatically unmapped
 while the kernel handles the cmdreply, the sysmodule doesn't need to
 specify anything in the cmdreply to trigger this.
 
+This memory is mapped in the sysmodule to the same vaddr from the
+original user-process cmd-request, except with with bits \>=(~28(?))
+changed to a different ASLR'd region.
+
 ## Raw data section
 
 ![An example of an IPC message with a type 0xA buffer in it. Red is

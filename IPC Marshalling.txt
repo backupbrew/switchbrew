@@ -114,6 +114,8 @@ Otherwise it has (flag-2) C descriptors.
 === IPC buffers ===
 Buffer descriptor A and others map memory into the sysmodule process. With input buffers the memory permissions are set to read-only, for the mapped memory in the sysmodule. The buffer is automatically unmapped while the kernel handles the cmdreply, the sysmodule doesn't need to specify anything in the cmdreply to trigger this.
 
+This memory is mapped in the sysmodule to the same vaddr from the original user-process cmd-request, except with with bits >=(~28(?)) changed to a different ASLR'd region.
+
 == Raw data section ==
 
 [[File:Ipc msg buffer type a example.png|thumb|An example of an IPC message with a type 0xA buffer in it. Red is headers/descriptors, yellow is padding, and blue is data/buffer lengths. Note that the size of the u16 array for type A lengths is padded to fill up a whole word.]]
