@@ -22,7 +22,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 2 || FS
 |-
-| 3 || NVIDIA
+| 3 || NVIDIA, TransferMemory
 |-
 | 5 || NCM
 |-

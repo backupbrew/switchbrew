@@ -24,7 +24,7 @@ fatal-errors, since the Description ends with bit21.
 | ----- | ------------------------------------------------------ |
 | 1     | Kernel                                                 |
 | 2     | FS                                                     |
-| 3     | NVIDIA                                                 |
+| 3     | NVIDIA, TransferMemory                                 |
 | 5     | NCM                                                    |
 | 6     | DD                                                     |
 | 8     | LR                                                     |
