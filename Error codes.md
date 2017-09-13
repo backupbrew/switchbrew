@@ -99,7 +99,7 @@ applets.
 | 0xEE01            | 119         | Exceeding maximum                                                                                                                                                                    |
 | 0xF001            | 120         | Invalid enum                                                                                                                                                                         |
 | 0xF201            | 121         | No such entry                                                                                                                                                                        |
-| 0xF401            | 122         | Irq already registered                                                                                                                                                               |
+| 0xF401            | 122         | Irq/DeviceAddressSpace/{...} already registered                                                                                                                                      |
 | 0xF601            | 123         | Port remote dead                                                                                                                                                                     |
 | 0xF801            | 124         | Unhandled usermode exception                                                                                                                                                         |
 | 0xFA01            | 125         | Wrong memory permission?                                                                                                                                                             |

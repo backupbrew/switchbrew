@@ -163,7 +163,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xF201 || 121 || No such entry
 |-
-| 0xF401 || 122 || Irq already registered
+| 0xF401 || 122 || Irq/DeviceAddressSpace/{...} already registered
 |-
 | 0xF601 || 123 || Port remote dead
 |-
