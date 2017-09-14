@@ -237,8 +237,8 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 |-
 | <code>0bxx01111111111111</code>
 | Bit13
-| ?
-| Bit15-14: ?
+| ApplicationType
+| Bit16-14: ApplicationType, bit16 ignored. Parsed by [[Process Manager services]].
 |-
 | <code>0bx011111111111111</code>
 | Bit14
