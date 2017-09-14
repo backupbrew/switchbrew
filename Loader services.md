@@ -29,15 +29,15 @@ but for processes marked as debug.
 
 ## GetProgramInfo
 
-Takes a TitleId + StorageId and writes output to a C descriptor buffer
-as
+Takes a TitleId + StorageId, parses the NPDM, and writes output to a C
+descriptor buffer as
 follows:
 
 | Offset   | Size     | Description                                                                                                    |
 | -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
 | 0x0      | 0x1      | MainThreadPrio. Arg1 to svcStartProcess                                                                        |
 | 0x1      | 0x1      | DefaultCpuId. Arg2 to svcStartProcess                                                                          |
-| 0x2      | 0x1      | PmFlags, see [here](Process%20Manager%20services.md "wikilink").                                               |
+| 0x2      | 0x1      | ApplicationType, see [here](Process%20Manager%20services.md "wikilink").                                       |
 | 0x3      | 0x1      | Padding                                                                                                        |
 | 0x4      | 0x4      | MainThreadStackSize. Arg3 to svcStartProcess                                                                   |
 | 0x8      | 0x8      | Title id                                                                                                       |

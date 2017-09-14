@@ -31,7 +31,7 @@ Same as [[Loader_services#ClearLaunchQueue|ClearLaunchQueue]] but for processes 
 |}
 
 == GetProgramInfo ==
-Takes a TitleId + StorageId and writes output to a C descriptor buffer as follows:
+Takes a TitleId + StorageId, parses the NPDM, and writes output to a C descriptor buffer as follows:
 
 {| class="wikitable" border="1"
 |-
@@ -49,7 +49,7 @@ Takes a TitleId + StorageId and writes output to a C descriptor buffer as follow
 |-
 | 0x2
 | 0x1
-| PmFlags, see [[Process Manager services|here]].
+| ApplicationType, see [[Process Manager services|here]].
 |-
 | 0x3
 | 0x1
