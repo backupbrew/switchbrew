@@ -42,8 +42,8 @@ If ((\*(u8\*) (info\_output+2)) & 3) is == 1, it goes through the
 process list and errors if any has bit 0x40 set. Thus only one process
 can have bit 0x40 set at a time.
 
-Resource limits for the process is selected by ((\*(u8\*)
-(info\_output+2)) & 3) being 0, 1, or 2. Value 3 is not used.
+Resource limits for the process is selected by ApplicationType which is
+((\*(u8\*) (info\_output+2)) & 3) being 0, 1, or 2. Value 3 is not used.
 
 It calls [ldr:pm](Loader%20services.md "wikilink") RegisterTitle, then
 [ldr:pm](Loader%20services.md "wikilink") CreateProcess, then
