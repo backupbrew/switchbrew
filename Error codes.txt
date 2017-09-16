@@ -137,6 +137,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xCE01 || 103 || Address is NULL / buffer size is too small.
 |-
+| 0xD001 || 104 || Memory full
+|-
 | 0xD201 || 105 || Handle-table full.
 |-
 | 0xD401 || 106 || Invalid memory state / invalid memory permissions.
@@ -157,6 +159,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xEA01 || 117 || Time out? When you give 0 handles to svcWaitSynchronizationN.
 |-
+| 0xEC01 || 118 || Canceled/interrupted [?]
+|-
 | 0xEE01 || 119 || Exceeding maximum
 |-
 | 0xF001 || 120 || Invalid enum
@@ -167,15 +171,21 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xF601 || 123 || Port remote dead
 |-
-| 0xF801 || 124 || Unhandled usermode exception
+| 0xF801 || 124 || [Usermode] Unhandled interrupt
 |-
 | 0xFA01 || 125 || Wrong memory permission?
 |-
 | 0xFC01 || 126 || Reserved value
 |-
+| 0xFE01 || 127 || Invalid hardware breakpoint
+|-
+| 0x10001 || 128 || [Usermode] Fatal exception
+|-
 | 0x10601 || 131 || Port max sessions exceeded
 |-
 | 0x10801 || 132 || Resource limit exceeded
+|-
+| 0x41001 || 520 || Process not being debugged
 |-
 | 0xE02 || 7 || High byte in input u64 is zero.
 |-
