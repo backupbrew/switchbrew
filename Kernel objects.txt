@@ -193,7 +193,7 @@ Size: 0xB0
 |-
 | 0xA8 || u32 || KernelReleaseVersion
 |-
-| 0xAC || u32 ||
+| 0xAC || u32 || ApplicationType
 |}
 
 == KProcessHandleTable ==

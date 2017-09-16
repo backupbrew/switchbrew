@@ -123,7 +123,7 @@ Size: 0xB0
 | 0xA0   | u32       | DebuggingFlags           |
 | 0xA4   | u32       | HandleTableSize          |
 | 0xA8   | u32       | KernelReleaseVersion     |
-| 0xAC   | u32       |                          |
+| 0xAC   | u32       | ApplicationType          |
 
 ## KProcessHandleTable
 
