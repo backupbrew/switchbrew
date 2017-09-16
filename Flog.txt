@@ -1,5 +1,12 @@
-This is the system "flog" 01008BB00013C000 [[Title_list|title]]. This is a NES emulator. Installed on retail systems.
+This is the system "flog" 01008BB00013C000 [[Title_list|title]]. This is a NES emulator. Installed on retail systems since [[1.0.0]].
 
 The titleID for "flog" is used by 3 funcs in [[qlaunch]]. It's unknown what exactly triggers launching this title officially.
 
+The ROM is not loaded via [[Filesystem_services|FS]].
+
 "flog" == "golf" backwards. This runs the NES "Golf" game. Two-player via joy-cons is supported.
+
+[[File:Flog0.jpg|200px|thumb|left|Flog main-screen]]
+[[File:Flog1.jpg|200px|thumb|left|Flog 1-player]]
+[[File:Flog2.jpg|200px|thumb|left|Flog 2-player mode as player-1.]]
+[[File:Flog3.jpg|200px|thumb|left|Flog 2-player mode as player-2.]]
