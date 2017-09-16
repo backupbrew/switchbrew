@@ -103,6 +103,7 @@ applets.
 | 0xF601            | 123         | Port remote dead                                                                                                                                                                     |
 | 0xF801            | 124         | Unhandled usermode exception                                                                                                                                                         |
 | 0xFA01            | 125         | Wrong memory permission?                                                                                                                                                             |
+| 0xFC01            | 126         | Reserved value                                                                                                                                                                       |
 | 0x10601           | 131         | Port max sessions exceeded                                                                                                                                                           |
 | 0x10801           | 132         | Resource limit exceeded                                                                                                                                                              |
 | 0xE02             | 7           | High byte in input u64 is zero.                                                                                                                                                      |
