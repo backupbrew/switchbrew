@@ -15,8 +15,10 @@
 
 ## SetFsPermissions
 
-Takes a storageID, a pid, a titleID and two type-A buffers. One contains
-ACI0 contents, other one contains ACID contents.
+Takes a storageID, a pid, a titleID, a type-A buffer for the [ FS Access
+Header](NPDM#FS%20Access%20Header.md##FS_Access_Header "wikilink"), and
+a type-A buffer for the [ FS Access
+Control](NPDM#FS%20Access%20Control.md##FS_Access_Control "wikilink")
 
 Final FS permissions are stored as (ACI0\_perms & ACID\_perms). Will
 panic(svcBreak) when buffer sizes from ipc-rawdata are invalid.
