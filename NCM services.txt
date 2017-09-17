@@ -15,7 +15,7 @@ NCM contains services for internal file path and content management.
 | 3 || GetAddOnContentLocationResolver || None  ||
 |}
 
-The only non-builtin sysmodules which have access to this service are [[boot2]] and [[NS_Services|NS]].
+The only sysmodules which use this service are [[Filesystem_services|FS]], [[Loader_services|Loader]], and [[NS_Services|NS]]. [[boot2]] has access but doesn't use it.
 
 === ILocationResolver ===
 {| class="wikitable" border="1"
