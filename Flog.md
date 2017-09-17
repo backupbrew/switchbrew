@@ -9,7 +9,7 @@ methods.
 
 The ROM is not loaded via [FS](Filesystem%20services.md "wikilink").
 
-"flog" == "golf" backwards. This runs the NES "Golf" game. Two-player
+"flog" == "golf" backwards. This runs the NES "Golf" game. {1/2}-player
 via joy-cons is supported. Controls are "d-pad" buttons + stick, however
 motion control while holding the Z{L/R} button is also supported instead
 of using buttons.
