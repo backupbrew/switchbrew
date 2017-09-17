@@ -4,12 +4,15 @@ on retail systems since [1.0.0](1.0.0.md "wikilink").
 
 The titleID for "flog" is used by 3 funcs in
 [qlaunch](Qlaunch.md "wikilink"). It's unknown what exactly triggers
-launching this title officially.
+launching this title officially. This can be run with unofficial
+methods.
 
 The ROM is not loaded via [FS](Filesystem%20services.md "wikilink").
 
 "flog" == "golf" backwards. This runs the NES "Golf" game. Two-player
-via joy-cons is supported.
+via joy-cons is supported. Controls are "d-pad" buttons + stick, however
+motion control while holding the Z{L/R} button is also supported instead
+of using buttons.
 
 ![Flog main-screen](Flog0.jpg "Flog main-screen") ![Flog
 1-player](Flog1.jpg "Flog 1-player") ![Flog 2-player mode as
