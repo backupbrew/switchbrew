@@ -21,7 +21,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 </noinclude>
 
   - **17 September 17** [libnx](https://github.com/switchbrew/libnx) was
-    made public.
+    made public, with examples available
+    [here](https://github.com/switchbrew/switch-examples).
   - **5 September 17** Nintendo released system update
     [3.0.2](3.0.2.md "wikilink").
   - **31 July 17** Nintendo released system update
