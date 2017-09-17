@@ -51,13 +51,26 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 | 0x4    | 0xC  | Zeroes                                                                |
 | 0x10   | 0x8  | Title id                                                              |
 | 0x18   | 0x8  | Padding                                                               |
-| 0x20   | 0x4  | [\#FS Access Control](#FS_Access_Control "wikilink") offset           |
-| 0x24   | 0x4  | [\#FS Access Control](#FS_Access_Control "wikilink") size             |
+| 0x20   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") offset             |
+| 0x24   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") size               |
 | 0x28   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") offset |
 | 0x2C   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") size   |
 | 0x30   | 4    | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset   |
 | 0x34   | 4    | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size     |
 | 0x38   | 0x8  | Padding                                                               |
+
+# FS Access Header
+
+| Offset | Size | Description                          |
+| ------ | ---- | ------------------------------------ |
+| 0x0    | 0x1  | Version? Always 1. Must be non-zero. |
+| 0x1    | 0x3  | Padding                              |
+| 0x4    | 0x8  | Permissions bitmask                  |
+| 0xC    | 0x4  | Usually 0x1C                         |
+| 0x10   | 0x4  | Usually 0x0                          |
+| 0x14   | 0x4  | Usually 0x1C                         |
+| 0x18   | 0x4  | Usually 0x0                          |
+|        |      |                                      |
 
 # FS Access Control
 
@@ -66,7 +79,7 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 | 0x0    | 0x1  | Version? Always 1. Must be non-zero. |
 | 0x1    | 0x3  | Padding                              |
 | 0x4    | 0x8  | Permissions bitmask                  |
-| ...    | ...  | ...                                  |
+| 0xC    | 0x20 | Usually all zeroes for applications  |
 
 [Permissions](Filesystem%20services#Permissions.md##Permissions "wikilink")
 bitmask:

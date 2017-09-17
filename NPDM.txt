@@ -164,11 +164,11 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |-
 | 0x20
 | 0x4
-| [[#FS Access Control]] offset
+| [[#FS Access Header]] offset
 |-
 | 0x24
 | 0x4
-| [[#FS Access Control]] size
+| [[#FS Access Header]] size
 |-
 | 0x28
 | 0x4
@@ -191,6 +191,44 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 | Padding
 |}
 
+= FS Access Header =
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x1
+| Version? Always 1. Must be non-zero.
+|-
+| 0x1
+| 0x3
+| Padding
+|-
+| 0x4
+| 0x8
+| Permissions bitmask
+|-
+| 0xC
+| 0x4
+| Usually 0x1C
+|-
+| 0x10
+| 0x4
+| Usually 0x0
+|-
+| 0x14
+| 0x4
+| Usually 0x1C
+|-
+| 0x18
+| 0x4
+| Usually 0x0
+|-
+|}
+
 = FS Access Control =
 
 {| class="wikitable" border="1"
@@ -211,9 +249,9 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 | 0x8
 | Permissions bitmask
 |-
-| ...
-| ...
-| ...
+| 0xC
+| 0x20
+| Usually all zeroes for applications
 |}
 
 [[Filesystem_services#Permissions|Permissions]] bitmask:
