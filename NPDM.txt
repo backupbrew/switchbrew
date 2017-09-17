@@ -140,7 +140,56 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |}
 
 = ACI0 =
-Looks like an old crappy version of ACID. It has the guessed version field 0 instead of 1.
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x4
+| Magic "ACI0".
+|-
+| 0x4
+| 0xC
+| Zeroes
+|-
+| 0x10
+| 0x8
+| Title id
+|-
+| 0x18
+| 0x8
+| Padding
+|-
+| 0x20
+| 0x4
+| [[#FS Access Control]] offset
+|-
+| 0x24
+| 0x4
+| [[#FS Access Control]] size
+|-
+| 0x28
+| 0x4
+| [[#Service Access Control]] offset
+|-
+| 0x2C
+| 0x4
+| [[#Service Access Control]] size
+|-
+| 0x30
+| 4
+| [[#Kernel Access Control]] offset
+|-
+| 0x34
+| 4
+| [[#Kernel Access Control]] size
+|-
+| 0x38
+| 0x8
+| Padding
+|}
 
 = FS Access Control =
 
