@@ -7,7 +7,8 @@ The titleID for "flog" is used by 3 funcs in
 launching this title officially. This can be run with unofficial
 methods.
 
-The ROM is not loaded via [FS](Filesystem%20services.md "wikilink").
+The ROM is not loaded via [FS](Filesystem%20services.md "wikilink") but
+is embedded in the main binary.
 
 "flog" == "golf" backwards. This runs the NES "Golf" game. {1/2}-player
 via joy-cons is supported. Controls are "d-pad" buttons + stick, however

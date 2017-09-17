@@ -2,7 +2,7 @@ This is the system "flog" 01008BB00013C000 [[Title_list|title]]. This is a NES e
 
 The titleID for "flog" is used by 3 funcs in [[qlaunch]]. It's unknown what exactly triggers launching this title officially. This can be run with unofficial methods.
 
-The ROM is not loaded via [[Filesystem_services|FS]].
+The ROM is not loaded via [[Filesystem_services|FS]] but is embedded in the main binary.
 
 "flog" == "golf" backwards. This runs the NES "Golf" game. {1/2}-player via joy-cons is supported. Controls are "d-pad" buttons + stick, however motion control while holding the Z{L/R} button is also supported instead of using buttons.
 
