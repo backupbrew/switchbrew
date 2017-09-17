@@ -15,9 +15,10 @@
 
 ## SetFsPermissions
 
-Takes a storageID, a pid, a titleID, a type-A buffer for the [ FS Access
+Takes a storageID, a pid, a titleID, a 0x1C type-A buffer for the [ FS
+Access
 Header](NPDM#FS%20Access%20Header.md##FS_Access_Header "wikilink"), and
-a type-A buffer for the [ FS Access
+a 0x2C type-A buffer for the [ FS Access
 Control](NPDM#FS%20Access%20Control.md##FS_Access_Control "wikilink")
 
 Final FS permissions are stored as (ACI0\_perms & ACID\_perms). Will
