@@ -83,7 +83,7 @@
 | 0x61 | svcBreakDebugProcess                                                               |                                                                                             |                                                     |
 | 0x62 | svcTerminateDebugProcess                                                           |                                                                                             |                                                     |
 | 0x63 | svcGetDebugEvent                                                                   | X0=DebugEventInfo\*, W1=debughandle                                                         | W0=result                                           |
-| 0x64 | svcContinueDebugEvent                                                              |                                                                                             |                                                     |
+| 0x64 | svcContinueDebugEvent                                                              | W0=debughandle, W1=flags, X2=?                                                              | W0=result                                           |
 | 0x65 | svcGetProcessList                                                                  |                                                                                             |                                                     |
 | 0x66 | svcGetThreadList                                                                   |                                                                                             |                                                     |
 | 0x67 | svcGetDebugThreadContext                                                           | X0=ThreadContext\*, X1=debughandle, X2=?, W3=?                                              | W0=result                                           |
@@ -365,6 +365,10 @@ non-zero. Error 0x4201 is returned otherwise.
   - svcSetDebugThreadContext
   - svcTerminateDebugProcess
   - svcSetHardwareBreakPoint
+
+svcDebugActiveProcess stops execution of the target process, the normal
+method for resuming it requires svcContinueDebugEvent(see above).
+Closing the debug handle also results in execution being resumed.
 
 # Structures
 

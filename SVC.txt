@@ -164,7 +164,7 @@
 |-
 | 0x63 || svcGetDebugEvent || X0=DebugEventInfo*, W1=debughandle || W0=result
 |-
-| 0x64 || svcContinueDebugEvent || || 
+| 0x64 || svcContinueDebugEvent || W0=debughandle, W1=flags, X2=? || W0=result
 |-
 | 0x65 || svcGetProcessList || || 
 |-
@@ -424,6 +424,8 @@ Takes a [[#CreateProcessInfo]] as input.
 * svcSetDebugThreadContext
 * svcTerminateDebugProcess
 * svcSetHardwareBreakPoint
+
+svcDebugActiveProcess stops execution of the target process, the normal method for resuming it requires svcContinueDebugEvent(see above). Closing the debug handle also results in execution being resumed.
 
 = Structures =
 == DeviceName ==
