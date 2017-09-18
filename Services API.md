@@ -4,10 +4,12 @@ it first needs to get a handle to the named service, and then it can
 communicate with the service via inter-process communication (each
 service has a name up to 8 characters).
 
-Handles for services are retrieved from the service manager port, "sm:".
-Manager service "sm:m" also exists. Services are an abstraction of
-ports, they operate the same way except regular ports can have their
-handles retrieved directly from a SVC.
+Handles for services are retrieved from the service manager port, "sm:",
+and are released via svcCloseHandle or when a process is terminated or
+crashes. Manager service "sm:m" also exists. Services are an abstraction
+of ports, they operate the same way except regular ports can have their
+handles retrieved directly from a SVC. Services are also able to limit
+the number of handles given to other processes.
 
 # sm:
 
