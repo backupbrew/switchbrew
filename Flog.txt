@@ -1,12 +1,16 @@
 This is the system "flog" 01008BB00013C000 [[Title_list|title]]. This is a NES emulator. Installed on retail systems since [[1.0.0]].
 
-The titleID for "flog" is used by 3 funcs in [[qlaunch]]. It's unknown what exactly triggers launching this title officially. This can be run with unofficial methods.
+The titleID for "flog" is used by 3 funcs in [[qlaunch]]: 1 for checking whether to launch it, 1 for launching(?), and 1 that compares flog titleID with a field.
 
 The ROM is not loaded via [[Filesystem_services|FS]] but is embedded in the main binary.
 
 "flog" == "golf" backwards. This runs the NES "Golf" game. {1/2}-player via joy-con is supported. Controls are "d-pad" buttons + stick, however motion control while holding the Z{L/R} button is also supported instead of using buttons.
 
+==Official Launch==
 It is currently known to be launched by setting the system date to July 11 and performing a currently unknown motion with the two Joy-Con.
+
+==Screenshots==
+These screenshots were originally taken by executing flog with an unofficial method.
 
 [[File:Flog0.jpg|200px|thumb|left|Flog main-screen]]
 [[File:Flog1.jpg|200px|thumb|left|Flog 1-player]]
