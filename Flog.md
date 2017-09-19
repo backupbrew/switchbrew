@@ -22,7 +22,11 @@ It checks exactly the following:
 
   - Both Joy-Cons must be detached from the system.
   - The same motion checks for both Joy-Cons must pass, at the same
-    time.
+    time. The motion seems to be a reference to
+    [this](https://www.youtube.com/watch?time_continue=17&v=BdQg43n2OaM).
+    Hold the Joy-Cons pointing forwards/downwards, then move Joy-Cons to
+    a vertical position, and hold it there for a bit. The Joy-Con grip
+    can be used for this.
   - The month+day must match the date of Iwata's
     [death](https://en.wikipedia.org/wiki/Satoru_Iwata): July 11. The
     loaded date seems to originate from network-time-sync'd time?
