@@ -90,9 +90,9 @@ The following is
 | Cmd | Name                  | Notes                                                       |
 | --- | --------------------- | ----------------------------------------------------------- |
 | 0   | GetCurrentTime        | Returns an nn::time::PosixTime (time since epoch).          |
-| 2   | SetCurrentTime        | Takes an nn::time::PosixTime.                               |
-| 3   | GetSystemClockContext | Returns an 0x20 byte struct (nn::time::SystemClockContext). |
-| 4   | SetSystemClockContext | Takes an nn::time::SystemClockContext                       |
+| 1   | SetCurrentTime        | Takes an nn::time::PosixTime.                               |
+| 2   | GetSystemClockContext | Returns an 0x20 byte struct (nn::time::SystemClockContext). |
+| 3   | SetSystemClockContext | Takes an nn::time::SystemClockContext                       |
 |     |                       |                                                             |
 
 # ITimeZoneService
