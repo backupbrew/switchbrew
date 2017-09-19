@@ -2,15 +2,15 @@
 
 | Cmd  | Name                                                                     |
 | ---- | ------------------------------------------------------------------------ |
-| 0    | [\#GetTitlesInfo](#GetTitlesInfo "wikilink")                             |
+| 0    | [\#ListApplicationRecord](#ListApplicationRecord "wikilink")             |
 | 1    |                                                                          |
-| 2    | GetTitleHtmlNcaPath                                                      |
+| 2    | GetApplicationRecordUpdateSystemEvent                                    |
 | 3    | SubmitArpData                                                            |
 | 4    |                                                                          |
 | 5    |                                                                          |
 | 6    |                                                                          |
 | 7    |                                                                          |
-| 8    |                                                                          |
+| 8    | IsApplicationEntityMovable                                               |
 | 9    |                                                                          |
 | 11   |                                                                          |
 | 13   |                                                                          |
@@ -34,16 +34,16 @@
 | 41   |                                                                          |
 | 42   |                                                                          |
 | 43   |                                                                          |
-| 44   |                                                                          |
+| 44   | GetSdCardMountStatusChangedEvent                                         |
 | 45   |                                                                          |
 | 46   |                                                                          |
 | 47   | [\#GetFreeSpace](#GetFreeSpace "wikilink")                               |
 | 48   | [\#GetTotalSpace](#GetTotalSpace "wikilink")                             |
 | 49   |                                                                          |
-| 52   |                                                                          |
+| 52   | GetGameCardUpdateDetectionEvent                                          |
 | 53   |                                                                          |
 | 54   |                                                                          |
-| 55   |                                                                          |
+| 55   | GetApplicationDesiredLanguage                                            |
 | 56   |                                                                          |
 | 57   |                                                                          |
 | 58   |                                                                          |
@@ -51,10 +51,10 @@
 | 60   | [\#GetLanguageIdFromString](#GetLanguageIdFromString "wikilink")         |
 | 61   |                                                                          |
 | 62   | GetIGameCardStopper                                                      |
-| 63   |                                                                          |
+| 63   | IsSystemProgramInstalled                                                 |
 | 64   |                                                                          |
 | 65   | GetIRequestServerStopper                                                 |
-| 100  | DeleteUserContent0                                                       |
+| 100  | ResetToFactorySettings                                                   |
 | 101  | DeleteUserContent1                                                       |
 | 102  | DeleteUserContent2                                                       |
 | 200  |                                                                          |
@@ -160,7 +160,7 @@ string represented as a u64 (i.e 0x53552D6E65 for 'en-US').
 
 Returns 0 if an ID was successfully found, otherwise returns 0x25810.
 
-## GetTitlesInfo
+## ListApplicationRecord
 
 Takes a type-6 output buffer and an u64.
 

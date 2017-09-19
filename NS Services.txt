@@ -3,11 +3,11 @@
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetTitlesInfo]]
+| 0 || [[#ListApplicationRecord]]
 |-
 | 1 ||
 |-
-| 2 || GetTitleHtmlNcaPath
+| 2 || GetApplicationRecordUpdateSystemEvent
 |-
 | 3 || SubmitArpData
 |-
@@ -19,7 +19,7 @@
 |-
 | 7 ||
 |-
-| 8 ||
+| 8 || IsApplicationEntityMovable
 |-
 | 9 ||
 |-
@@ -67,7 +67,7 @@
 |-
 | 43 ||
 |-
-| 44 ||
+| 44 || GetSdCardMountStatusChangedEvent
 |-
 | 45 ||
 |-
@@ -79,13 +79,13 @@
 |-
 | 49 ||
 |-
-| 52 ||
+| 52 || GetGameCardUpdateDetectionEvent
 |-
 | 53 ||
 |-
 | 54 ||
 |-
-| 55 ||
+| 55 || GetApplicationDesiredLanguage
 |-
 | 56 ||
 |-
@@ -101,13 +101,13 @@
 |-
 | 62 || GetIGameCardStopper
 |-
-| 63 ||
+| 63 || IsSystemProgramInstalled
 |-
 | 64 ||
 |-
 | 65 || GetIRequestServerStopper
 |-
-| 100 || DeleteUserContent0
+| 100 || ResetToFactorySettings
 |-
 | 101 || DeleteUserContent1
 |-
@@ -258,7 +258,7 @@ Takes an input u8 pointer for the resulting Id to be written to and a string rep
 
 Returns 0 if an ID was successfully found, otherwise returns 0x25810.
 
-== GetTitlesInfo ==
+== ListApplicationRecord ==
 Takes a type-6 output buffer and an u64.
 
 Returns an array of title-info entries using the specified offset and size. No input titleID is passed to this.
