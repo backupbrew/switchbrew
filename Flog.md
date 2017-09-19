@@ -26,8 +26,8 @@ It checks exactly the following:
   - The month+day must match the date of Iwata's
     [death](https://en.wikipedia.org/wiki/Satoru_Iwata): July 11. The
     loaded date seems to originate from network-time-sync'd time?
-  - The output from a certain function must return 0..2. On one system
-    this was tested with, this check would pass.
+  - The output from a certain function must return 0, 1, or 2. On one
+    system this was tested with, this check would pass.
   - Lastly a nsam cmd is used. Probably to verify that the title is
     installed?
 
