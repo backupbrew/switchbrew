@@ -16,8 +16,20 @@ of using buttons.
 
 ## Official Launch
 
-It is currently known to be launched by setting the system date to July
-11 and performing a currently unknown motion with the two Joy-Con.
+The checks for this only run while Home Menu is active, aka main-menu.
+
+It checks exactly the following:
+
+  - Both Joy-Cons must be detached from the system.
+  - The same motion checks for both Joy-Cons must pass, at the same
+    time.
+  - The date is checked.
+  - The output from a certain function must return 0..2. On one system
+    this was tested with, this check would pass.
+  - Lastly a nsam cmd is used. Probably to verify that the title is
+    installed?
+
+Once everything passes it continues to the code which launches(?) flog.
 
 ## Screenshots
 
