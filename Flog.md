@@ -11,9 +11,12 @@ The ROM is not loaded via [FS](Filesystem%20services.md "wikilink") but
 is embedded in the main binary.
 
 "flog" == "golf" backwards. This runs the NES "Golf" game. {1/2}-player
-via joy-cons is supported. Controls are "d-pad" buttons + stick, however
+via joy-con is supported. Controls are "d-pad" buttons + stick, however
 motion control while holding the Z{L/R} button is also supported instead
 of using buttons.
+
+It is currently known to be launched by setting the system date to July
+11 and performing a currently unknown motion with the two Joy-Con.
 
 ![Flog main-screen](Flog0.jpg "Flog main-screen") ![Flog
 1-player](Flog1.jpg "Flog 1-player") ![Flog 2-player mode as
