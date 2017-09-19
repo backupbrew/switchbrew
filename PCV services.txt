@@ -153,3 +153,28 @@ The following is "nn::timesrv::detail::service::IStaticService"
 
 
 = ITimeZoneService =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetDeviceLocationName || Returns an nn::time::LocationName (0x24 bytes).
+|-
+| 1 || SetDeviceLocationName || Takes an nn::time::LocationName.
+|-
+| 2 || GetTotalLocationNameCount || Returns an 0x20 byte struct (nn::time::SystemClockContext).
+|-
+| 3 || LoadLocationNameList || 
+|-
+| 4 || LoadTimeZoneRule || 
+|-
+| 5 || GetTimeZoneRuleVersion ||  
+|-
+| 100 || ToCalendarTime || 
+|-
+| 101 || ToCalendarTimeWithMyRule || 
+|-
+| 200 || ToPosixTime || 
+|-
+| 201 || ToPosixTimeWithMyRule || 
+|-
+|}
