@@ -11,81 +11,91 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 0 || 
 |-
-| 1 || 
+| 1 || Init
 |-
-| 2 || 
+| 2 || Enable
 |-
-| 3 || 
+| 3 || Disable
 |-
-| 4 || 
+| 4 || CleanupAndShutdown
 |-
-| 5 || 
+| 5 || GetAdapterProperties
 |-
-| 6 || 
+| 6 || GetAdapterProperty
 |-
-| 7 || 
+| 7 || SetAdapterProperty
 |-
-| 8 || 
+| 8 || StartDiscovery
 |-
-| 9 || 
+| 9 || CancelDiscovery
 |-
-| 10 || 
+| 10 || CreateBond
 |-
-| 11 || 
+| 11 || RemoveBond
 |-
-| 12 || 
+| 12 || CancelBond
 |-
-| 13 || 
+| 13 || PinReply
 |-
-| 14 || 
+| 14 || SspReply
 |-
-| 15 || 
+| 15 ||
 |-
-| 16 || 
+| 16 || InitInterfaces
 |-
-| 17 || 
+| 17 || HidHostInterface_Connect
 |-
-| 18 || 
+| 18 || HidHostInterface_Disconnect
 |-
-| 19 || SendData
+| 19 || HidHostInterface_SendData
 |-
-| 20 || 
+| 20 || HidHostInterface_SendData2
 |-
-| 21 || SetReport
+| 21 || HidHostInterface_SetReport
 |-
-| 22 || GetReport
+| 22 || HidHostInterface_GetReport
 |-
-| 23 || 
+| 23 || HidHostInterface_WakeController
 |-
-| 24 || 
+| 24 || HidHostInterface_AddPairedDevice
 |-
-| 25 || 
+| 25 || HidHostInterface_GetPairedDevice
 |-
-| 26 || 
+| 26 || HidHostInterface_CleanupAndShutdown
 |-
 | 27 || 
 |-
-| 28 || 
+| 28 || ExtInterface_SetTSI
 |-
-| 29 || 
+| 29 || ExtInterface_SetBurstMode
 |-
-| 30 || 
+| 30 || ExtInterface_SetZeroRetran
 |-
-| 31 || 
+| 31 || ExtInterface_SetMcMode
 |-
-| 32 || 
+| 32 || ExtInterface_StartLlrMode
 |-
-| 33 || 
+| 33 || ExtInterface_ExitLlrMode
 |-
-| 34 || 
+| 34 || ExtInterface_SetRadio
 |-
-| 35 || 
+| 35 || ExtInterface_SetVisibility
 |-
 | 36 || 
 |-
 | 37 || 
 |-
-| 38 || 
+| 38 || HidHostInterface_GetLatestPlr
 |-
-| 39 || 
+| 39 || ExtInterface_GetPendingConnections
+|-
+| 40 || HidHostInterface_GetChannelMap
+|-
+| 41 || SetIsBluetoothBoostEnabled
+|-
+| 42 || GetIsBluetoothBoostEnabled
+|-
+| 43 || SetIsBluetoothAfhEnabled
+|-
+| 44 || GetIsBluetoothAfhEnabled
 |}

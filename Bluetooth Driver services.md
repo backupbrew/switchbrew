@@ -11,45 +11,50 @@ point for similar source code can be found in the MICO project:
 Note that the library files contain many (symbolized) functions which
 match btdrv.
 
-| Cmd | Name      |
-| --- | --------- |
-| 0   |           |
-| 1   |           |
-| 2   |           |
-| 3   |           |
-| 4   |           |
-| 5   |           |
-| 6   |           |
-| 7   |           |
-| 8   |           |
-| 9   |           |
-| 10  |           |
-| 11  |           |
-| 12  |           |
-| 13  |           |
-| 14  |           |
-| 15  |           |
-| 16  |           |
-| 17  |           |
-| 18  |           |
-| 19  | SendData  |
-| 20  |           |
-| 21  | SetReport |
-| 22  | GetReport |
-| 23  |           |
-| 24  |           |
-| 25  |           |
-| 26  |           |
-| 27  |           |
-| 28  |           |
-| 29  |           |
-| 30  |           |
-| 31  |           |
-| 32  |           |
-| 33  |           |
-| 34  |           |
-| 35  |           |
-| 36  |           |
-| 37  |           |
-| 38  |           |
-| 39  |           |
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   |                                      |
+| 1   | Init                                 |
+| 2   | Enable                               |
+| 3   | Disable                              |
+| 4   | CleanupAndShutdown                   |
+| 5   | GetAdapterProperties                 |
+| 6   | GetAdapterProperty                   |
+| 7   | SetAdapterProperty                   |
+| 8   | StartDiscovery                       |
+| 9   | CancelDiscovery                      |
+| 10  | CreateBond                           |
+| 11  | RemoveBond                           |
+| 12  | CancelBond                           |
+| 13  | PinReply                             |
+| 14  | SspReply                             |
+| 15  |                                      |
+| 16  | InitInterfaces                       |
+| 17  | HidHostInterface\_Connect            |
+| 18  | HidHostInterface\_Disconnect         |
+| 19  | HidHostInterface\_SendData           |
+| 20  | HidHostInterface\_SendData2          |
+| 21  | HidHostInterface\_SetReport          |
+| 22  | HidHostInterface\_GetReport          |
+| 23  | HidHostInterface\_WakeController     |
+| 24  | HidHostInterface\_AddPairedDevice    |
+| 25  | HidHostInterface\_GetPairedDevice    |
+| 26  | HidHostInterface\_CleanupAndShutdown |
+| 27  |                                      |
+| 28  | ExtInterface\_SetTSI                 |
+| 29  | ExtInterface\_SetBurstMode           |
+| 30  | ExtInterface\_SetZeroRetran          |
+| 31  | ExtInterface\_SetMcMode              |
+| 32  | ExtInterface\_StartLlrMode           |
+| 33  | ExtInterface\_ExitLlrMode            |
+| 34  | ExtInterface\_SetRadio               |
+| 35  | ExtInterface\_SetVisibility          |
+| 36  |                                      |
+| 37  |                                      |
+| 38  | HidHostInterface\_GetLatestPlr       |
+| 39  | ExtInterface\_GetPendingConnections  |
+| 40  | HidHostInterface\_GetChannelMap      |
+| 41  | SetIsBluetoothBoostEnabled           |
+| 42  | GetIsBluetoothBoostEnabled           |
+| 43  | SetIsBluetoothAfhEnabled             |
+| 44  | GetIsBluetoothAfhEnabled             |
