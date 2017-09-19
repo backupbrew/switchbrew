@@ -70,3 +70,21 @@ The following is
 | 101 | SetStandardUserSystemClockAutomaticCorrectionEnabled |                                                                |
 | 200 | IsStandardNetworkSystemClockAccuracySufficient       |                                                                |
 |     |                                                      |                                                                |
+
+# ISteadyClock
+
+| Cmd | Name                |
+| --- | ------------------- |
+| 0   | GetCurrentTimePoint |
+| 2   | GetTestOffset       |
+| 3   | SetTestOffset       |
+| 100 | GetRtcValue         |
+| 101 | IsRtcResetDetected  |
+| 102 | GetSetupResultValue |
+| 200 | GetInternalOffset   |
+| 201 | SetInternalOffset   |
+|     |                     |
+
+# ISystemClock
+
+# ITimeZoneService
