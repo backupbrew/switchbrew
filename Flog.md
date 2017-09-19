@@ -40,7 +40,9 @@ It checks exactly the following:
   - Lastly a [nsam](NS%20Services.md "wikilink") cmd is used. Probably
     to verify that the title is installed?
 
-Once everything passes it continues to the code which launches(?) flog.
+Once everything passes it continues to the code which launches flog.
+When flog is launched, audio is played which matches
+[this](https://www.youtube.com/watch?v=SeVTJu_Yn2Y&feature=youtu.be&t=17s).
 
 ## Screenshots
 
