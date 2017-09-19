@@ -37,8 +37,8 @@ It checks exactly the following:
     time-sync being handled by [NIM](NIM%20services.md "wikilink").
   - The output from a certain function must return 0, 1, or 2. On one
     system this was tested with, this check would pass.
-  - Lastly a nsam cmd is used. Probably to verify that the title is
-    installed?
+  - Lastly a [nsam](NS%20Services.md "wikilink") cmd is used. Probably
+    to verify that the title is installed?
 
 Once everything passes it continues to the code which launches(?) flog.
 
