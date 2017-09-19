@@ -29,7 +29,10 @@ It checks exactly the following:
     can be used for this.
   - The month+day must match the date of Iwata's
     [death](https://en.wikipedia.org/wiki/Satoru_Iwata): July 11. The
-    loaded date seems to originate from network-time-sync'd time?
+    loaded date originates from network-time-sync'd time, regardless of
+    whether the user has it enabled or not. When the system was never
+    connected to the Internet, it comes from the user-specified date
+    instead.
   - The output from a certain function must return 0, 1, or 2. On one
     system this was tested with, this check would pass.
   - Lastly a nsam cmd is used. Probably to verify that the title is
