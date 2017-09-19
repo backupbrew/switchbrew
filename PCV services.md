@@ -53,3 +53,20 @@
 | --- | ---- |
 | 0   |      |
 |     |      |
+
+# time:u, time:a, time:s
+
+The following is
+"nn::timesrv::detail::<service::IStaticService>"
+
+| Cmd | Name                                                 | Notes                                                          |
+| --- | ---------------------------------------------------- | -------------------------------------------------------------- |
+| 0   | GetStandardUserSystemClock                           | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 1   | GetStandardNetworkSystemClock                        | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 2   | GetStandardSteadyClock                               | Returns an [\#ISteadyClock](#ISteadyClock "wikilink").         |
+| 3   | GetTimeZoneService                                   | Returns an [\#ITimeZoneService](#ITimeZoneService "wikilink"). |
+| 4   | GetStandardLocalSystemClock                          | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 100 | IsStandardUserSystemClockAutomaticCorrectionEnabled  |                                                                |
+| 101 | SetStandardUserSystemClockAutomaticCorrectionEnabled |                                                                |
+| 200 | IsStandardNetworkSystemClockAccuracySufficient       |                                                                |
+|     |                                                      |                                                                |
