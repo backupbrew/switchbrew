@@ -71,23 +71,23 @@ This is "nn::pcv::detail::IPcvService".
 |-
 | 17 || Finalize
 |-
-| 17 || PowerOn
+| 18 || PowerOn
 |-
-| 17 || PowerOff
+| 19 || PowerOff
 |-
-| 17 || ChangeVoltage
+| 20 || ChangeVoltage
 |-
-| 17 || GetPowerClockInfoEvent
+| 21 || GetPowerClockInfoEvent
 |-
-| 17 || GetOscillatorClock
+| 22 || GetOscillatorClock
 |-
-| 17 || GetDvfsTable
+| 23 || GetDvfsTable
 |-
-| 17 || GetModuleStateTable
+| 24 || GetModuleStateTable
 |-
-| 17 || GetPowerDomainStateTable
+| 25 || GetPowerDomainStateTable
 |-
-| 17 || GetFuseInfo
+| 26 || GetFuseInfo
 |-
 |}
 

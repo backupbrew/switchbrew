@@ -40,15 +40,15 @@ This is "nn::pcv::detail::IPcvService".
 | 15  | Initialize               |
 | 16  | IsInitialized            |
 | 17  | Finalize                 |
-| 17  | PowerOn                  |
-| 17  | PowerOff                 |
-| 17  | ChangeVoltage            |
-| 17  | GetPowerClockInfoEvent   |
-| 17  | GetOscillatorClock       |
-| 17  | GetDvfsTable             |
-| 17  | GetModuleStateTable      |
-| 17  | GetPowerDomainStateTable |
-| 17  | GetFuseInfo              |
+| 18  | PowerOn                  |
+| 19  | PowerOff                 |
+| 20  | ChangeVoltage            |
+| 21  | GetPowerClockInfoEvent   |
+| 22  | GetOscillatorClock       |
+| 23  | GetDvfsTable             |
+| 24  | GetModuleStateTable      |
+| 25  | GetPowerDomainStateTable |
+| 26  | GetFuseInfo              |
 |     |                          |
 
 # pcv:arb
