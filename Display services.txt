@@ -22,214 +22,225 @@ NVIDIA multimedia (NvMM) platform service.
 | 7 || module_get_clk_rate
 |}
 
-= vi:u "ApplicationRootService" =
+= vi:u =
+This is "nn::visrv::sf::IApplicationRootService".
+
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || RegisterInterface_ApplicationDisplayService
+| 0 || GetDisplayService || Returns an [[#IApplicationDisplayService]].
 |-
 |}
 
-= vi:m "ManagerRootService" =
+= vi:m =
+This is "nn::visrv::sf::IManagerRootService".
+
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 2 || RegisterInterface_ApplicationDisplayService
+| 2 || GetDisplayService || Returns an [[#IApplicationDisplayService]].
 |-
-| 3 || RegisterInterface2_ApplicationDisplayService
+| 3 || GetDisplayServiceWithProxyNameExchange || Returns an [[#IApplicationDisplayService]].
 |-
 |}
 
-= vi:s "SystemRootService" =
+= vi:s =
+This is "nn::visrv::sf::ISystemRootService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 1 || RegisterInterface_ApplicationDisplayService
+| 1 || GetDisplayService || Returns an [[#IApplicationDisplayService]].
 |-
-| 3 || RegisterInterface2_ApplicationDisplayService
+| 3 || GetDisplayServiceWithProxyNameExchange || Returns an [[#IApplicationDisplayService]].
 |-
 |}
 
 = IApplicationDisplayService =
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 100 || RegisterInterface_HOSBinderDriver
+| 100 || GetRelayService || Returns an [[#IHOSBinderDriver]].
 |-
-| 101 || RegisterInterface_SystemDisplayService
+| 101 || GetSystemDisplayService || Returns an [[#ISystemDisplayService]].
 |-
-| 102 || RegisterInterface_ManagerDisplayService
+| 102 || GetManagerDisplayService || Returns an [[#IManagerDisplayService]].
 |-
-| 103 || RegisterInterface2_HOSBinderDriver
+| 103 || GetIndirectDisplayTransactionService || Returns an [[#IHOSBinderDriver]].
 |-
-| 1000 || GetDisplayProfiles
+| 1000 || ListDisplays ||
 |-
-| 1010 || 
+| 1010 || OpenDisplay ||
 |-
-| 1011 || 
+| 1011 || OpenDefaultDisplay ||
 |-
-| 1020 || 
+| 1020 || CloseDisplay ||
 |-
-| 1101 || 
+| 1101 || SetDisplayEnabled ||
 |-
-| 1102 || GetDisplaySize
+| 1102 || GetDisplayResolution ||
 |-
-| 2020 || 
+| 2020 || OpenLayer ||
 |-
-| 2021 || 
+| 2021 || CloseLayer ||
 |-
-| 2030 || 
+| 2030 || CreateStrayLayer ||
 |-
-| 2031 || 
+| 2031 || DestroyStrayLayer ||
 |-
-| 2101 || 
+| 2101 || SetLayerScalingMode ||
 |-
-| 2450 || 
+| 2450 || GetIndirectLayerImageMap ||
 |-
-| 2451 || 
+| 2451 || GetIndirectLayerImageCropMap ||
 |-
-| 2460 || 
+| 2460 || GetIndirectLayerImageRequiredMemoryInfo ||
 |-
-| 5202 || 
+| 5202 || GetDisplayVsyncEvent ||
 |-
-| 5203 || 
+| 5203 || GetDisplayVsyncEventForDebug ||
 |-
 |}
 
-= IHOSBinderDriver =
+== IHOSBinderDriver ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || TransactParcel
 |-
-| 1 || 
+| 1 || AdjustRefcount
 |-
-| 2 || 
+| 2 || GetNativeHandle
 |-
+| 3 || TransactParcelAuto
 |}
 
-= ISystemDisplayService =
+== ISystemDisplayService ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 1200 || 
+| 1200 || GetZOrderCountMin
 |-
-| 1202 || 
+| 1202 || GetZOrderCountMax
 |-
-| 1203 || 
+| 1203 || GetDisplayLogicalResolution
 |-
-| 2201 || 
+| 1204 || SetDisplayMagnification
 |-
-| 2203 || 
+| 2201 || SetLayerPosition
 |-
-| 2204 || 
+| 2203 || SetLayerSize
 |-
-| 2205 || 
+| 2204 || GetLayerZ
 |-
-| 2207 || 
+| 2205 || SetLayerZ
 |-
-| 2209 || 
+| 2207 || SetLayerVisibility
 |-
-| 2312 || 
+| 2209 || SetLayerAlpha
 |-
-| 2400 || 
+| 2312 || CreateStrayLayer
 |-
-| 2401 || 
+| 2400 || OpenIndirectLayer
 |-
-| 2402 || 
+| 2401 || CloseIndirectLayer
 |-
-| 3000 || 
+| 2402 || FlipIndirectLayer
 |-
-| 3001 || 
+| 3000 || ListDisplayModes
 |-
-| 3002 || 
+| 3001 || ListDisplayRgbRanges
 |-
-| 3200 || 
+| 3002 || ListDisplayContentTypes
 |-
-| 3201 || 
+| 3200 || GetDisplayMode
 |-
-| 3202 || 
+| 3201 || SetDisplayMode
 |-
-| 3203 || 
+| 3202 || GetDisplayUnderscan
 |-
-| 3204 || 
+| 3203 || SetDisplayUnderscan
 |-
-| 3205 || 
+| 3204 || GetDisplayContentType
 |-
-| 3206 || 
+| 3205 || SetDisplayContentType
 |-
-| 3207 || 
+| 3206 || GetDisplayRgbRange
 |-
-| 3208 || 
+| 3207 || SetDisplayRgbRange
 |-
-| 3209 || 
+| 3208 || GetDisplayCmuMode
 |-
-| 3210 || 
+| 3209 || SetDisplayCmuMode
 |-
-| 3211 || 
+| 3210 || GetDisplayContrastRatio
 |-
-| 3214 || 
+| 3211 || SetDisplayContrastRatio
 |-
-| 3215 || 
+| 3214 || GetDisplayGamma
 |-
-| 3216 || 
+| 3215 || SetDisplayGamma
 |-
-| 3217 || 
+| 3216 || GetDisplayCmuLuma
+|-
+| 3217 || SetDisplayCmuLuma
 |-
 |}
 
-= IManagerDisplayService =
+== IManagerDisplayService ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 2010 || 
+| 1102 || GetDisplayResolution
 |-
-| 2011 || 
+| 2010 || CreateManagedLayer
 |-
-| 2050 || 
+| 2011 || DestroyManagedLayer
 |-
-| 2051 || 
+| 2050 || CreateIndirectLayer
 |-
-| 2052 || 
+| 2051 || DestroyIndirectLayer
 |-
-| 2053 || 
+| 2052 || CreateIndirectProducerEndPoint
 |-
-| 2054 || 
+| 2053 || DestroyIndirectProducerEndPoint
 |-
-| 2055 || 
+| 2054 || CreateIndirectConsumerEndPoint
 |-
-| 2300 || 
+| 2055 || DestroyIndirectConsumerEndPoint
 |-
-| 2301 || 
+| 2300 || AcquireLayerTexturePresentingEvent
 |-
-| 2302 || 
+| 2301 || ReleaseLayerTexturePresentingEvent
 |-
-| 2402 || 
+| 2302 || GetDisplayHotplugEvent
 |-
-| 4201 || 
+| 2402 || GetDisplayHotplugState
 |-
-| 4203 || 
+| 4201 || SetDisplayAlpha
 |-
-| 4205 || 
+| 4203 || SetDisplayLayerStack
 |-
-| 6000 || 
+| 4205 || SetDisplayPowerState
 |-
-| 6001 || 
+| 6000 || AddToLayerStack
 |-
-| 6002 || 
+| 6001 || RemoveFromLayerStack
 |-
-| 7000 || 
+| 6002 || SetLayerVisibility
 |-
-| 8000 || 
+| 7000 || SetContentVisibility
 |-
-| 8100 || 
+| 8000 || SetConductorLayer
+|-
+| 8100 || SetIndirectProducerFlipOffset
 |}
 
 [[Category:Services]]
