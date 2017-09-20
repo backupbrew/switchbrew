@@ -1,10 +1,13 @@
 This is the system "flog" 01008BB00013C000
-[title](Title%20list.md "wikilink"). This is a NES emulator. Installed
-on retail systems since [1.0.0](1.0.0.md "wikilink").
+[title](Title%20list.md "wikilink"). "flog" is a full-fledged NES
+emulator and is installed on retail systems since
+[1.0.0](1.0.0.md "wikilink").
 
-The titleID for "flog" is used by 3 funcs in
+The titleID for "flog" is used by 3 functions in
 [qlaunch](Qlaunch.md "wikilink"): 1 for checking whether to launch it, 1
-for launching(?), and 1 that compares flog titleID with a field.
+for registering it as an
+[applet](AM%20services#appletAE.md##appletAE "wikilink") and 1 to launch
+it.
 
 The ROM is not loaded via [FS](Filesystem%20services.md "wikilink") but
 is embedded in the main binary.
@@ -16,32 +19,42 @@ of using buttons.
 
 ## Official Launch
 
-The checks for this only run while Home Menu is active, aka main-menu.
+[qlaunch](Qlaunch.md "wikilink") periodically checks if the user is in
+"/RootScene/SceneResidentMenu", which represents the Home Menu (aka
+main-menu). If so, the following checks are then performed in order:
 
-It checks exactly the following:
-
-  - Both Joy-Cons must be detached from the system.
-  - The same motion checks for both Joy-Cons must pass, at the same
-    time. The motion seems to be a reference to
-    [this](https://www.youtube.com/watch?time_continue=17&v=BdQg43n2OaM).
+  - The Joy-Cons' state is read from [HID shared
+    memory](HID%20Shared%20Memory.md "wikilink") and both must be active
+    and detached from the console.
+  - "StartSixAxisSensor" [hid](HID%20services#hid.md##hid "wikilink")
+    command is called for each Joy-Con so motion data can be captured.
+  - After capturing the motion data, the same motion checks for both
+    Joy-Cons must pass at the same time. This motion data is analyzed in
+    a small state machine consisting of a total of 7 steps and the
+    motion itself is a reference to [Iwata's Direct
+    gesture](https://www.youtube.com/watch?time_continue=17&v=BdQg43n2OaM).
     Hold the Joy-Cons pointing forwards/downwards, then move Joy-Cons to
     a vertical position, and hold it there for a bit. The Joy-Con grip
     can be used for this.
-  - The month+day must match the date of Iwata's
-    [death](https://en.wikipedia.org/wiki/Satoru_Iwata): July 11. The
+  - The system's month and day must be July 11th, which is the date of
+    Iwata's [passing](https://en.wikipedia.org/wiki/Satoru_Iwata). The
     loaded date originates from network-time-sync'd time, regardless of
     whether the user has it enabled or not. When the system was never
     connected to the Internet, it comes from the user-specified date
     instead. This is loaded from the
     [time](PCV%20services.md "wikilink") service-cmds, with the actual
     time-sync being handled by [NIM](NIM%20services.md "wikilink").
-  - The output from a certain function must return 0, 1, or 2. On one
-    system this was tested with, this check would pass.
-  - Lastly a [nsam](NS%20Services.md "wikilink") cmd is used. Probably
-    to verify that the title is installed?
+  - A wrapper for "GetLanguageCode"
+    [set](Settings%20services#set.md##set "wikilink") command is called
+    and the returned code must be 0 (JPja), 1 (USen) or 2 (EUen). Any
+    other combination of region and language will fail.
+  - Lastly, "IsSystemProgramInstalled"
+    [ns:am](NS%20Services#ns:am.md##ns:am "wikilink") command is called,
+    which should return 1 if the "flog" title is installed.
 
-Once everything passes it continues to the code which launches flog.
-When flog is launched, audio is played which matches
+Once everything passes it continues to the code which launches "flog".
+When "flog" is launched a small audio clip named "SeTestTone" is played
+which matches
 [this](https://www.youtube.com/watch?v=SeVTJu_Yn2Y&feature=youtu.be&t=17s).
 
 ## Screenshots
