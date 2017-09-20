@@ -292,7 +292,7 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 01008BB00013C000 || [[1.0.0|v450]] (0.0.1.194) || "[[flog]]" NES emulator.
 |-
-| 0100069000078000 || v0 || "Retail Interactive Display Menu". This title is referenced by [[qlaunch]], but is not normally installed on retail systems.
+| 0100069000078000 || v0 || "Retail Interactive Display Menu". This title can be launched by [[qlaunch]], but is not normally installed on retail systems.
 |}
 
 == Games ==
