@@ -46,8 +46,10 @@ main-menu). If so, the following checks are then performed in order:
     time-sync being handled by [NIM](NIM%20services.md "wikilink").
   - A wrapper for "GetLanguageCode"
     [set](Settings%20services#set.md##set "wikilink") command is called
-    and the returned code must be 0 (JPja), 1 (USen) or 2 (EUen). Any
-    other combination of region and language will fail.
+    and the returned code must be 0 (JPja), 1 (USen) or 2 (EUen). Other
+    combinations of region and language may have it's code translated
+    internally to a valid one (0, 1 or 2), which seems to be the case
+    for 12 (CNzh), 13 (KRko) and 14 (TWzh).
   - Lastly, "IsSystemProgramInstalled"
     [ns:am](NS%20Services#ns:am.md##ns:am "wikilink") command is called,
     which should return 1 if the "flog" title is installed.
