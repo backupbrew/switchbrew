@@ -29,6 +29,8 @@
 = bpc:r =
 
 = pcv =
+This is "nn::pcv::detail::IPcvService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -37,60 +39,83 @@
 |-
 | 1 || SetClockEnabled
 |-
-| 2 ||
+| 2 || SetClockRate
 |-
-| 3 ||
+| 3 || GetClockRate
 |-
-| 4 ||
+| 4 || GetState
 |-
-| 5 ||
+| 5 || GetPossibleClockRates
 |-
-| 6 ||
+| 6 || SetMinVClockRate
 |-
 | 7 || SetReset
 |-
-| 8 ||
+| 8 || SetVoltageEnabled
 |-
-| 9 ||
+| 9 || GetVoltageEnabled
 |-
-| 10 ||
+| 10 || GetVoltageRange
 |-
-| 11 ||
+| 11 || SetVoltageValue
 |-
-| 12 ||
+| 12 || GetVoltageValue
 |-
-| 13 ||
+| 13 || GetTemperatureThresholds
 |-
-| 14 ||
+| 14 || SetTemperature
 |-
-| 15 ||
+| 15 || Initialize
 |-
-| 16 ||
+| 16 || IsInitialized
 |-
-| 17 ||
+| 17 || Finalize
+|-
+| 17 || PowerOn
+|-
+| 17 || PowerOff
+|-
+| 17 || ChangeVoltage
+|-
+| 17 || GetPowerClockInfoEvent
+|-
+| 17 || GetOscillatorClock
+|-
+| 17 || GetDvfsTable
+|-
+| 17 || GetModuleStateTable
+|-
+| 17 || GetPowerDomainStateTable
+|-
+| 17 || GetFuseInfo
 |-
 |}
 
 = pcv:arb =
+This is "nn::pcv::IArbitrationManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || ReleaseControl
 |-
 |}
 
 = pcv:imm =
+This is "nn::pcv::IImmediateManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || SetClockRate
 |-
 |}
 
 = time:u, time:a, time:s =
-The following is "nn::timesrv::detail::service::IStaticService"
+This is "nn::timesrv::detail::service::IStaticService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -113,7 +138,7 @@ The following is "nn::timesrv::detail::service::IStaticService"
 |-
 |}
 
-= ISteadyClock =
+== ISteadyClock ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -136,7 +161,7 @@ The following is "nn::timesrv::detail::service::IStaticService"
 |-
 |}
 
-= ISystemClock =
+== ISystemClock ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -151,8 +176,7 @@ The following is "nn::timesrv::detail::service::IStaticService"
 |-
 |}
 
-
-= ITimeZoneService =
+== ITimeZoneService ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes

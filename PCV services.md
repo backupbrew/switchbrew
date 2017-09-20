@@ -18,46 +18,61 @@
 
 # pcv
 
-| Cmd | Name            |
-| --- | --------------- |
-| 0   | SetPowerEnabled |
-| 1   | SetClockEnabled |
-| 2   |                 |
-| 3   |                 |
-| 4   |                 |
-| 5   |                 |
-| 6   |                 |
-| 7   | SetReset        |
-| 8   |                 |
-| 9   |                 |
-| 10  |                 |
-| 11  |                 |
-| 12  |                 |
-| 13  |                 |
-| 14  |                 |
-| 15  |                 |
-| 16  |                 |
-| 17  |                 |
-|     |                 |
+This is "nn::pcv::detail::IPcvService".
+
+| Cmd | Name                     |
+| --- | ------------------------ |
+| 0   | SetPowerEnabled          |
+| 1   | SetClockEnabled          |
+| 2   | SetClockRate             |
+| 3   | GetClockRate             |
+| 4   | GetState                 |
+| 5   | GetPossibleClockRates    |
+| 6   | SetMinVClockRate         |
+| 7   | SetReset                 |
+| 8   | SetVoltageEnabled        |
+| 9   | GetVoltageEnabled        |
+| 10  | GetVoltageRange          |
+| 11  | SetVoltageValue          |
+| 12  | GetVoltageValue          |
+| 13  | GetTemperatureThresholds |
+| 14  | SetTemperature           |
+| 15  | Initialize               |
+| 16  | IsInitialized            |
+| 17  | Finalize                 |
+| 17  | PowerOn                  |
+| 17  | PowerOff                 |
+| 17  | ChangeVoltage            |
+| 17  | GetPowerClockInfoEvent   |
+| 17  | GetOscillatorClock       |
+| 17  | GetDvfsTable             |
+| 17  | GetModuleStateTable      |
+| 17  | GetPowerDomainStateTable |
+| 17  | GetFuseInfo              |
+|     |                          |
 
 # pcv:arb
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-|     |      |
+This is "nn::pcv::IArbitrationManager".
+
+| Cmd | Name           |
+| --- | -------------- |
+| 0   | ReleaseControl |
+|     |                |
 
 # pcv:imm
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-|     |      |
+This is "nn::pcv::IImmediateManager".
+
+| Cmd | Name         |
+| --- | ------------ |
+| 0   | SetClockRate |
+|     |              |
 
 # time:u, time:a, time:s
 
-The following is
-"nn::timesrv::detail::<service::IStaticService>"
+This is
+"nn::timesrv::detail::<service::IStaticService>".
 
 | Cmd | Name                                                 | Notes                                                          |
 | --- | ---------------------------------------------------- | -------------------------------------------------------------- |
@@ -71,7 +86,7 @@ The following is
 | 200 | IsStandardNetworkSystemClockAccuracySufficient       |                                                                |
 |     |                                                      |                                                                |
 
-# ISteadyClock
+## ISteadyClock
 
 | Cmd | Name                |
 | --- | ------------------- |
@@ -85,7 +100,7 @@ The following is
 | 201 | SetInternalOffset   |
 |     |                     |
 
-# ISystemClock
+## ISystemClock
 
 | Cmd | Name                  | Notes                                                       |
 | --- | --------------------- | ----------------------------------------------------------- |
@@ -95,7 +110,7 @@ The following is
 | 3   | SetSystemClockContext | Takes an nn::time::SystemClockContext                       |
 |     |                       |                                                             |
 
-# ITimeZoneService
+## ITimeZoneService
 
 | Cmd | Name                      | Notes                                                       |
 | --- | ------------------------- | ----------------------------------------------------------- |
