@@ -1,3 +1,17 @@
+# aoc:u
+
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   | CountAddOnContentByApplicationId     |
+| 1   | ListAddOnContentByApplicationId      |
+| 2   | CountAddOnContent                    |
+| 3   | ListAddOnContent                     |
+| 4   | GetAddOnContentBaseIdByApplicationId |
+| 5   | GetAddOnContentBaseId                |
+| 6   | PrepareAddOnContentByApplicationId   |
+| 7   | PrepareAddOnContent                  |
+|     |                                      |
+
 # ns:am
 
 | Cmd  | Name                                                                     |
