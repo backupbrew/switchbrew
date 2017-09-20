@@ -166,9 +166,10 @@ systems.
 
 ## System Applications
 
-| Title-id         | Versions                                | Description                                |
-| ---------------- | --------------------------------------- | ------------------------------------------ |
-| 01008BB00013C000 | [v450](1.0.0.md "wikilink") (0.0.1.194) | "[flog](Flog.md "wikilink")" NES emulator. |
+| Title-id         | Versions                                | Description                                                                                                                                       |
+| ---------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 01008BB00013C000 | [v450](1.0.0.md "wikilink") (0.0.1.194) | "[flog](Flog.md "wikilink")" NES emulator.                                                                                                        |
+| 0100069000078000 | v0                                      | "Retail Interactive Display Menu". This title is referenced by [qlaunch](Qlaunch.md "wikilink"), but is not normally installed on retail systems. |
 
 ## Games
 
