@@ -22,6 +22,8 @@ Doesn't return anything on a v2.1 system where sysupdate domains are blocked.
 
 Presumably Network Time Sync?
 
+Network-time-sync uses the "<...>/time" HTTPS URL listed in the below Network section. This just returns an UTC Unix time string.
+
 =Network=
 * <nowiki>https://sun.hac.%%.d4c.nintendo.net/v1/system_update_meta?device_id=%016llx</nowiki>
 * <nowiki>https://aqua.hac.%%.d4c.nintendo.net/required_system_update_meta?device_id=%016llx</nowiki>

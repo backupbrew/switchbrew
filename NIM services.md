@@ -21,8 +21,11 @@ blocked.
 
 # ntc
 
-Presumably Network Time
-    Sync?
+Presumably Network Time Sync?
+
+Network-time-sync uses the "\<...\>/time" HTTPS URL listed in the below
+Network section. This just returns an UTC Unix time
+    string.
 
 # Network
 
