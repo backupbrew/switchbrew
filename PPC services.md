@@ -1,24 +1,36 @@
-APM is utilized for setting system performance profiles; including
-clocks for CPU, GPU, and memory.
+APM is utilized for setting system performance profiles including clocks
+for CPU, GPU, and memory.
 
 ## apm
 
-| Cmd | Name                                | Notes |
-| --- | ----------------------------------- | ----- |
-| 0   | [GetISession](#ISession "wikilink") |       |
-| 1   | GetPerformanceMode                  |       |
+This is
+"nn::apm::IManager".
+
+| Cmd | Name               | Notes                                          |
+| --- | ------------------ | ---------------------------------------------- |
+| 0   | OpenSession        | Returns an [\#ISession](#ISession "wikilink"). |
+| 1   | GetPerformanceMode |                                                |
 
 ## apm:p
 
-| Cmd | Name                                | Notes                                       |
-| --- | ----------------------------------- | ------------------------------------------- |
-| 0   | [GetISession](#ISession "wikilink") | Same as apm ISession - but more privileged? |
-| 1   | ?                                   |                                             |
+This is "nn::apm::IManagerPrivileged".
+
+| Cmd | Name        | Notes                                          |
+| --- | ----------- | ---------------------------------------------- |
+| 0   | OpenSession | Returns an [\#ISession](#ISession "wikilink"). |
 
 ## apm:sys
 
-Internally known as
-ISystemManager
+This is
+"nn::apm::ISystemManager".
+
+| Cmd | Name                     | Notes                                          |
+| --- | ------------------------ | ---------------------------------------------- |
+| 0   | RequestPerformanceMode   |                                                |
+| 1   | GetPerformanceEvent      | Returns an [\#ISession](#ISession "wikilink"). |
+| 2   | GetThrottlingState       |                                                |
+| 3   | GetLastThrottlingState   |                                                |
+| 4   | ClearLastThrottlingState |                                                |
 
 ## ISession
 
