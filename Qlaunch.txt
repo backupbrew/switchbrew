@@ -4,3 +4,5 @@ This is multiple "applets" under one title, with at minimum the following:
 * Home Menu
 * [[System Settings]]
 * [[News]]
+
+This title can also launch [[flog]] and [[Title_list#System_Applications|0100069000078000]].
