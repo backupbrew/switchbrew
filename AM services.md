@@ -8,95 +8,402 @@ and the Nintendo Switch logo displayed during system boot.
 
 # appletAE
 
-| Cmd | Name                    |
-| --- | ----------------------- |
-| 100 | GetSystemAppletProxy    |
-| 200 | GetLibraryAppletProxy   |
-| 300 | GetOverlayAppletProxy   |
-| 350 | GetApplicationProxy     |
-| 400 | GetLibraryAppletCreator |
-|     |                         |
+This is
+"nn::am::<service::IAllSystemAppletProxiesService>".
+
+| Cmd | Name                                     | Notes                                                                    |
+| --- | ---------------------------------------- | ------------------------------------------------------------------------ |
+| 100 | OpenSystemAppletProxy                    | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").       |
+| 200 | OpenLibraryAppletProxyOld                | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
+| 201 | OpenLibraryAppletProxy                   | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
+| 300 | OpenOverlayAppletProxy                   | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").     |
+| 350 | OpenSystemApplicationProxy               | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").         |
+| 400 | CreateSelfLibraryAppletCreatorForDevelop | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink"). |
+|     |                                          |                                                                          |
 
 ## ISystemAppletProxy
 
-| Cmd  | Name                        |
-| ---- | --------------------------- |
-| 0    | GetCommonStateGetter        |
-| 1    | GetSelfController           |
-| 2    | GetWindowController         |
-| 3    | GetAudioController          |
-| 4    | GetDisplayController        |
-| 10   | GetProcessWindingController |
-| 11   | GetLibraryAppletCreator     |
-| 20   | GetHomeMenuFunctions        |
-| 21   | GetGlobalStateController    |
-| 22   | GetApplicationCreator       |
-| 1000 | GetDebugFunctions           |
-|      |                             |
+| Cmd  | Name                        | Notes                                                                            |
+| ---- | --------------------------- | -------------------------------------------------------------------------------- |
+| 0    | GetCommonStateGetter        | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").               |
+| 1    | GetSelfController           | Returns an [\#ISelfController](#ISelfController "wikilink").                     |
+| 2    | GetWindowController         | Returns an [\#IWindowController](#IWindowController "wikilink").                 |
+| 3    | GetAudioController          | Returns an [\#IAudioController](#IAudioController "wikilink").                   |
+| 4    | GetDisplayController        | Returns an [\#IDisplayController](#IDisplayController "wikilink").               |
+| 10   | GetProcessWindingController | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink"). |
+| 11   | GetLibraryAppletCreator     | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").         |
+| 20   | GetHomeMenuFunctions        | Returns an [\#IHomeMenuFunctions](#IHomeMenuFunctions "wikilink").               |
+| 21   | GetGlobalStateController    | Returns an [\#IGlobalStateController](#IGlobalStateController "wikilink").       |
+| 22   | GetApplicationCreator       | Returns an [\#IApplicationCreator](#IApplicationCreator "wikilink").             |
+| 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
+|      |                             |                                                                                  |
+
+### IHomeMenuFunctions
+
+| Cmd | Name                            | Notes                                                                          |
+| --- | ------------------------------- | ------------------------------------------------------------------------------ |
+| 10  | RequestToGetForeground          |                                                                                |
+| 11  | LockForeground                  |                                                                                |
+| 12  | UnlockForeground                |                                                                                |
+| 20  | PopFromGeneralChannel           | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 21  | GetPopFromGeneralChannelEvent   |                                                                                |
+| 30  | GetHomeButtonWriterLockAccessor | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
+| 31  | GetWriterLockAccessorEx         | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
+|     |                                 |                                                                                |
+
+#### ILockAccessor
+
+| Cmd | Name     |
+| --- | -------- |
+| 1   | TryLock  |
+| 2   | Unlock   |
+| 3   | GetEvent |
+
+### IGlobalStateController
+
+| Cmd | Name                              |
+| --- | --------------------------------- |
+| 0   | RequestToEnterSleep               |
+| 1   | EnterSleep                        |
+| 2   | StartSleepSequence                |
+| 3   | StartShutdownSequence             |
+| 4   | StartRebootSequence               |
+| 10  | LoadAndApplyIdlePolicySettings    |
+| 11  | NotifyCecSettingsChanged          |
+| 12  | SetDefaultHomeButtonLongPressTime |
+| 13  | UpdateDefaultDisplayResolution    |
+| 14  | ShouldSleepOnBoot                 |
+|     |                                   |
+
+### IApplicationCreator
+
+| Cmd | Name                                 | Notes                                                                  |
+| --- | ------------------------------------ | ---------------------------------------------------------------------- |
+| 0   | CreateApplication                    | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
+| 1   | PopLaunchRequestedApplication        | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
+| 10  | CreateSystemApplication              | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
+| 100 | PopFloatingApplicationForDevelopment | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
+
+#### IApplicationAccessor
+
+| Cmd | Name                                 | Notes                                                                          |
+| --- | ------------------------------------ | ------------------------------------------------------------------------------ |
+| 0   | GetAppletStateChangedEvent           |                                                                                |
+| 1   | IsCompleted                          |                                                                                |
+| 10  | Start                                |                                                                                |
+| 20  | RequestExit                          |                                                                                |
+| 25  | Terminate                            |                                                                                |
+| 30  | GetResult                            |                                                                                |
+| 101 | RequestForApplicationToGetForeground |                                                                                |
+| 110 | TerminateAllLibraryApplets           |                                                                                |
+| 111 | AreAnyLibraryAppletsLeft             |                                                                                |
+| 112 | GetCurrentLibraryApplet              | Returns an [\#IAppletAccessor](#IAppletAccessor "wikilink").                   |
+| 120 | GetApplicationId                     |                                                                                |
+| 121 | PushLaunchParameter                  | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 122 | GetApplicationControlProperty        |                                                                                |
+| 123 | GetApplicationLaunchProperty         |                                                                                |
+
+##### IAppletAccessor
+
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | GetAppletStateChangedEvent |
+| 1   | IsCompleted                |
+| 10  | Start                      |
+| 20  | RequestExit                |
+| 25  | Terminate                  |
+| 30  | GetResult                  |
 
 ## ILibraryAppletProxy
 
-| Cmd  | Name                         |
-| ---- | ---------------------------- |
-| 0    | GetCommonStateGetter         |
-| 1    | GetSelfController            |
-| 2    | GetWindowController          |
-| 3    | GetAudioController           |
-| 4    | GetDisplayController         |
-| 10   | GetProcessWindingController  |
-| 11   | GetLibraryAppletCreator      |
-| 20   | GetLibraryAppletSelfAccessor |
-| 1000 | GetDebugFunctions            |
-|      |                              |
+| Cmd  | Name                         | Notes                                                                              |
+| ---- | ---------------------------- | ---------------------------------------------------------------------------------- |
+| 0    | GetCommonStateGetter         | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").                 |
+| 1    | GetSelfController            | Returns an [\#ISelfController](#ISelfController "wikilink").                       |
+| 2    | GetWindowController          | Returns an [\#IWindowController](#IWindowController "wikilink").                   |
+| 3    | GetAudioController           | Returns an [\#IAudioController](#IAudioController "wikilink").                     |
+| 4    | GetDisplayController         | Returns an [\#IDisplayController](#IDisplayController "wikilink").                 |
+| 10   | GetProcessWindingController  | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink").   |
+| 11   | GetLibraryAppletCreator      | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").           |
+| 20   | GetLibraryAppletSelfAccessor | Returns an [\#ILibraryAppletSelfAccessor](#ILibraryAppletSelfAccessor "wikilink"). |
+| 1000 | GetDebugFunctions            | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                       |
+|      |                              |                                                                                    |
+
+### ILibraryAppletSelfAccessor
+
+| Cmd | Name                                    | Notes                                                                          |
+| --- | --------------------------------------- | ------------------------------------------------------------------------------ |
+| 0   | PopInData                               | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 1   | PushOutData                             | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 2   | PopInteractiveInData                    | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 3   | PushInteractiveOutData                  | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 5   | GetPopInDataEvent                       |                                                                                |
+| 6   | GetPopInteractiveInDataEvent            |                                                                                |
+| 10  | ExitProcessAndReturn                    |                                                                                |
+| 11  | GetLibraryAppletInfo                    |                                                                                |
+| 12  | GetMainAppletIdentityInfo               |                                                                                |
+| 13  | CanUseApplicationCore                   |                                                                                |
+| 14  | GetCallerAppletIdentityInfo             |                                                                                |
+| 15  | GetMainAppletApplicationControlProperty |                                                                                |
+| 16  | GetMainAppletStorageId                  |                                                                                |
+| 17  | GetCallerAppletIdentityInfoStack        |                                                                                |
+| 20  | PopExtraStorage                         | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 25  | GetPopExtraStorageEvent                 |                                                                                |
+| 30  | UnpopInData                             | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 31  | UnpopExtraStorage                       | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 40  | GetIndirectLayerProducerHandle          |                                                                                |
+| 50  | ReportVisibleError                      |                                                                                |
 
 ## IOverlayAppletProxy
 
-| Cmd  | Name                        |
-| ---- | --------------------------- |
-| 0    | GetCommonStateGetter        |
-| 1    | GetSelfController           |
-| 2    | GetWindowController         |
-| 3    | GetAudioController          |
-| 4    | GetDisplayController        |
-| 10   | GetProcessWindingController |
-| 11   | GetLibraryAppletCreator     |
-| 20   | GetOverlayFunctions         |
-| 1000 | GetDebugFunctions           |
-|      |                             |
+| Cmd  | Name                        | Notes                                                                            |
+| ---- | --------------------------- | -------------------------------------------------------------------------------- |
+| 0    | GetCommonStateGetter        | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").               |
+| 1    | GetSelfController           | Returns an [\#ISelfController](#ISelfController "wikilink").                     |
+| 2    | GetWindowController         | Returns an [\#IWindowController](#IWindowController "wikilink").                 |
+| 3    | GetAudioController          | Returns an [\#IAudioController](#IAudioController "wikilink").                   |
+| 4    | GetDisplayController        | Returns an [\#IDisplayController](#IDisplayController "wikilink").               |
+| 10   | GetProcessWindingController | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink"). |
+| 11   | GetLibraryAppletCreator     | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").         |
+| 20   | GetOverlayFunctions         | Returns an [\#IOverlayFunctions](#IOverlayFunctions "wikilink").                 |
+| 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
+|      |                             |                                                                                  |
+
+### IOverlayFunctions
+
+| Cmd | Name                                  |
+| --- | ------------------------------------- |
+| 0   | BeginToWatchShortHomeButtonMessage    |
+| 1   | EndToWatchShortHomeButtonMessage      |
+| 2   | GetApplicationIdForLogo               |
+| 3   | SetGpuTimeSliceBoost                  |
+| 4   | SetAutoSleepTimeAndDimmingTimeEnabled |
+| 5   | TerminateApplicationAndSetReason      |
+| 6   | SetScreenShotPermissionGlobally       |
 
 ## IApplicationProxy
 
-| Cmd  | Name                        |
-| ---- | --------------------------- |
-| 0    | GetCommonStateGetter        |
-| 1    | GetSelfController           |
-| 2    | GetWindowController         |
-| 3    | GetAudioController          |
-| 4    | GetDisplayController        |
-| 10   | GetProcessWindingController |
-| 11   | GetLibraryAppletCreator     |
-| 20   | GetApplicationFunctions     |
-| 1000 | GetDebugFunctions           |
-|      |                             |
+| Cmd  | Name                        | Notes                                                                            |
+| ---- | --------------------------- | -------------------------------------------------------------------------------- |
+| 0    | GetCommonStateGetter        | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").               |
+| 1    | GetSelfController           | Returns an [\#ISelfController](#ISelfController "wikilink").                     |
+| 2    | GetWindowController         | Returns an [\#IWindowController](#IWindowController "wikilink").                 |
+| 3    | GetAudioController          | Returns an [\#IAudioController](#IAudioController "wikilink").                   |
+| 4    | GetDisplayController        | Returns an [\#IDisplayController](#IDisplayController "wikilink").               |
+| 10   | GetProcessWindingController | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink"). |
+| 11   | GetLibraryAppletCreator     | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").         |
+| 20   | GetApplicationFunctions     | Returns an [\#IApplicationFunctions](#IApplicationFunctions "wikilink").         |
+| 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
+|      |                             |                                                                                  |
+
+### IApplicationFunctions
+
+| Cmd | Name                                              | Notes                                                                          |
+| --- | ------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 1   | PopLaunchParameter                                | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 10  | CreateApplicationAndPushAndRequestToStart         | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 11  | CreateApplicationAndPushAndRequestToStartForQuest | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 20  | EnsureSaveData                                    |                                                                                |
+| 21  | GetDesiredLanguage                                |                                                                                |
+| 22  | SetTerminateResult                                |                                                                                |
+| 23  | GetDisplayVersion                                 |                                                                                |
+| 24  | GetLaunchStorageInfoForDebug                      |                                                                                |
+| 25  | ExtendSaveData                                    |                                                                                |
+| 26  | GetSaveDataSize                                   |                                                                                |
+| 30  | BeginBlockingHomeButtonShortAndLongPressed        |                                                                                |
+| 31  | EndBlockingHomeButtonShortAndLongPressed          |                                                                                |
+| 32  | BeginBlockingHomeButton                           |                                                                                |
+| 33  | EndBlockingHomeButton                             |                                                                                |
+| 40  | NotifyRunning                                     |                                                                                |
+| 50  | GetPseudoDeviceId                                 |                                                                                |
+| 60  | SetMediaPlaybackStateForApplication               |                                                                                |
+| 65  | IsGamePlayRecordingSupported                      |                                                                                |
+| 66  | InitializeGamePlayRecording                       |                                                                                |
+| 67  | SetGamePlayRecordingState                         |                                                                                |
+| 70  | RequestToShutdown                                 |                                                                                |
+| 71  | RequestToReboot                                   |                                                                                |
 
 ## ILibraryAppletCreator
 
-| Cmd | Name                        |
-| --- | --------------------------- |
-| 0   | GetLibraryAppletAccessor    |
-| 1   | TerminateAllLibraryApplets  |
-| 2   | AreAnyLibraryAppletsLeft    |
-| 10  | CreateStorage               |
-| 11  | CreateTransferMemoryStorage |
-| 12  | CreateHandleStorage         |
-|     |                             |
+| Cmd | Name                        | Notes                                                                          |
+| --- | --------------------------- | ------------------------------------------------------------------------------ |
+| 0   | CreateLibraryApplet         | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").     |
+| 1   | TerminateAllLibraryApplets  |                                                                                |
+| 2   | AreAnyLibraryAppletsLeft    |                                                                                |
+| 10  | CreateStorage               | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 11  | CreateTransferMemoryStorage | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 12  | CreateHandleStorage         | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+|     |                             |                                                                                |
+
+### ILibraryAppletAccessor
+
+| Cmd | Name                                      | Notes                                                                          |
+| --- | ----------------------------------------- | ------------------------------------------------------------------------------ |
+| 0   | GetAppletStateChangedEvent                |                                                                                |
+| 1   | IsCompleted                               |                                                                                |
+| 10  | Start                                     |                                                                                |
+| 20  | RequestExit                               |                                                                                |
+| 25  | Terminate                                 |                                                                                |
+| 30  | GetResult                                 |                                                                                |
+| 50  | SetOutOfFocusApplicationSuspendingEnabled |                                                                                |
+| 100 | PushInData                                | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 101 | PopOutData                                | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 102 | PushExtraStorage                          | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 103 | PushInteractiveInData                     | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 104 | PopInteractiveOutData                     | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 105 | GetPopOutDataEvent                        |                                                                                |
+| 106 | GetPopInteractiveOutDataEvent             |                                                                                |
+| 110 | NeedsToExitProcess                        |                                                                                |
+| 120 | GetLibraryAppletInfo                      |                                                                                |
+| 150 | RequestForAppletToGetForeground           |                                                                                |
+| 160 | GetIndirectLayerConsumerHandle            |                                                                                |
+
+## ICommonStateGetter
+
+| Cmd | Name                                   | Notes                                                                          |
+| --- | -------------------------------------- | ------------------------------------------------------------------------------ |
+| 0   | GetEventHandle                         |                                                                                |
+| 1   | ReceiveMessage                         |                                                                                |
+| 2   | GetThisAppletKind                      |                                                                                |
+| 3   | AllowToEnterSleep                      |                                                                                |
+| 4   | DisallowToEnterSleep                   |                                                                                |
+| 5   | GetOperationMode                       |                                                                                |
+| 6   | GetPerformanceMode                     |                                                                                |
+| 7   | GetCradleStatus                        |                                                                                |
+| 8   | GetBootMode                            |                                                                                |
+| 9   | GetCurrentFocusState                   |                                                                                |
+| 10  | RequestToAcquireSleepLock              |                                                                                |
+| 11  | ReleaseSleepLock                       |                                                                                |
+| 12  | ReleaseSleepLockTransiently            |                                                                                |
+| 13  | GetAcquiredSleepLockEvent              |                                                                                |
+| 20  | PushToGeneralChannel                   | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 30  | GetHomeButtonReaderLockAccessor        | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
+| 31  | GetReaderLockAccessorEx                | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
+| 40  | GetCradleFwVersion                     |                                                                                |
+| 50  | IsVrModeEnabled                        |                                                                                |
+| 51  | SetVrModeEnabled                       |                                                                                |
+| 55  | IsInControllerFirmwareUpdateSection    |                                                                                |
+| 60  | GetDefaultDisplayResolution            |                                                                                |
+| 61  | GetDefaultDisplayResolutionChangeEvent |                                                                                |
+
+## ISelfController
+
+| Cmd | Name                                        |
+| --- | ------------------------------------------- |
+| 0   | Exit                                        |
+| 1   | LockExit                                    |
+| 2   | UnlockExit                                  |
+| 3   | EnterFatalSection                           |
+| 4   | LeaveFatalSection                           |
+| 9   | GetLibraryAppletLaunchableEvent             |
+| 10  | SetScreenShotPermission                     |
+| 11  | SetOperationModeChangedNotification         |
+| 12  | SetPerformanceModeChangedNotification       |
+| 13  | SetFocusHandlingMode                        |
+| 14  | SetRestartMessageEnabled                    |
+| 15  | SetScreenShotAppletIdentityInfo             |
+| 16  | SetOutOfFocusSuspendingEnabled              |
+| 17  | SetControllerFirmwareUpdateSection          |
+| 18  | SetRequiresCaptureButtonShortPressedMessage |
+| 19  | SetScreenShotImageOrientation               |
+| 40  | CreateManagedDisplayLayer                   |
+| 50  | SetHandlesRequestToDisplay                  |
+| 51  | ApproveToDisplay                            |
+| 60  | OverrideAutoSleepTimeAndDimmingTime         |
+| 61  | SetMediaPlaybackState                       |
+| 62  | SetIdleTimeDetectionExtension               |
+| 63  | GetIdleTimeDetectionExtension               |
+| 64  | SetInputDetectionSourceSet                  |
+| 65  | ReportUserIsActive                          |
+| 66  | GetCurrentIlluminance                       |
+| 67  | IsIlluminanceAvailable                      |
+
+## IWindowController
+
+| Cmd | Name                         | Notes                      |
+| --- | ---------------------------- | -------------------------- |
+| 0   | CreateWindow                 | Returns an IWindow object. |
+| 1   | GetAppletResourceUserId      |                            |
+| 10  | AcquireForegroundRights      |                            |
+| 11  | ReleaseForegroundRights      |                            |
+| 12  | RejectToChangeIntoBackground |                            |
+
+## IAudioController
+
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   | SetExpectedMasterVolume              |
+| 1   | GetMainAppletExpectedMasterVolume    |
+| 2   | GetLibraryAppletExpectedMasterVolume |
+| 3   | ChangeMainAppletMasterVolume         |
+| 4   | SetTransparentVolumeRate             |
+
+## IDisplayController
+
+| Cmd | Name                                  |
+| --- | ------------------------------------- |
+| 0   | GetLastForegroundCaptureImage         |
+| 1   | UpdateLastForegroundCaptureImage      |
+| 2   | GetLastApplicationCaptureImage        |
+| 3   | GetCallerAppletCaptureImage           |
+| 4   | UpdateCallerAppletCaptureImage        |
+| 5   | GetLastForegroundCaptureImageEx       |
+| 6   | GetLastApplicationCaptureImageEx      |
+| 7   | GetCallerAppletCaptureImageEx         |
+| 8   | TakeScreenShotOfOwnLayer              |
+| 10  | AcquireLastApplicationCaptureBuffer   |
+| 11  | ReleaseLastApplicationCaptureBuffer   |
+| 12  | AcquireLastForegroundCaptureBuffer    |
+| 13  | ReleaseLastForegroundCaptureBuffer    |
+| 14  | AcquireCallerAppletCaptureBuffer      |
+| 15  | ReleaseCallerAppletCaptureBuffer      |
+| 16  | AcquireLastApplicationCaptureBufferEx |
+| 17  | AcquireLastForegroundCaptureBufferEx  |
+| 18  | AcquireCallerAppletCaptureBufferEx    |
+| 20  | ClearCaptureBuffer                    |
+| 21  | ClearAppletTransitionBuffer           |
+
+## ILibraryAppletCreator
+
+| Cmd | Name                        | Notes                                                                          |
+| --- | --------------------------- | ------------------------------------------------------------------------------ |
+| 0   | CreateLibraryApplet         | Returns a [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").      |
+| 1   | TerminateAllLibraryApplets  |                                                                                |
+| 2   | AreAnyLibraryAppletsLeft    |                                                                                |
+| 10  | CreateStorage               | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 11  | CreateTransferMemoryStorage | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 12  | CreateHandleStorage         | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+
+## IProcessWindingController
+
+| Cmd | Name                               | Notes                                                                          |
+| --- | ---------------------------------- | ------------------------------------------------------------------------------ |
+| 0   | GetLaunchReason                    |                                                                                |
+| 11  | OpenCallingLibraryApplet           | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").     |
+| 21  | PushContext                        | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 22  | PopContext                         | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 23  | CancelWindingReservation           |                                                                                |
+| 30  | WindAndDoReserved                  |                                                                                |
+| 40  | ReserveToStartAndWaitAndUnwindThis | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").     |
+
+## IDebugFunctions
+
+| Cmd | Name                            | Notes                                                                  |
+| --- | ------------------------------- | ---------------------------------------------------------------------- |
+| 0   | NotifyMessageToHomeMenuForDebug |                                                                        |
+| 1   | OpenMainApplication             | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
+| 10  | EmulateButtonEvent              |                                                                        |
+| 20  | InvalidateTransitionLayer       |                                                                        |
 
 # appletOE
 
-| Cmd | Name                |
-| --- | ------------------- |
-| 0   | GetApplicationProxy |
-|     |                     |
+This is
+"nn::am::<service::IApplicationProxyService>".
+
+| Cmd | Name                 | Notes                                                            |
+| --- | -------------------- | ---------------------------------------------------------------- |
+| 0   | OpenApplicationProxy | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink"). |
+|     |                      |                                                                  |
 
 # idle:sys
 

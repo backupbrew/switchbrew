@@ -3,151 +3,683 @@ AM (Applet Manager) provides services for interacting with system applets while 
 Contains multiple raw images, with at least the following: "NN_OMM_CHARGING_BIN_{begin|end}"(charging icon), low-battery icon, and the Nintendo Switch logo displayed during system boot.
 
 = appletAE =
+This is "nn::am::service::IAllSystemAppletProxiesService".
+
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 100 || GetSystemAppletProxy
+| 100 || OpenSystemAppletProxy || Returns an [[#ISystemAppletProxy]].
 |-
-| 200 || GetLibraryAppletProxy
+| 200 || OpenLibraryAppletProxyOld || Returns an [[#ILibraryAppletProxy]].
 |-
-| 300 || GetOverlayAppletProxy
+| 201 || OpenLibraryAppletProxy || Returns an [[#ILibraryAppletProxy]].
 |-
-| 350 || GetApplicationProxy
+| 300 || OpenOverlayAppletProxy || Returns an [[#IOverlayAppletProxy]].
 |-
-| 400 || GetLibraryAppletCreator
+| 350 || OpenSystemApplicationProxy || Returns an [[#IApplicationProxy]].
+|-
+| 400 || CreateSelfLibraryAppletCreatorForDevelop || Returns an [[#ILibraryAppletCreator]].
 |-
 |}
 
 == ISystemAppletProxy ==
 {| class="wikitable" border="1"
 |-
+! Cmd || Name || Notes
+|-
+| 0 || GetCommonStateGetter || Returns an [[#ICommonStateGetter]].
+|-
+| 1 || GetSelfController || Returns an [[#ISelfController]].
+|-
+| 2 || GetWindowController || Returns an [[#IWindowController]].
+|-
+| 3 || GetAudioController || Returns an [[#IAudioController]].
+|-
+| 4 || GetDisplayController || Returns an [[#IDisplayController]].
+|-
+| 10 || GetProcessWindingController || Returns an [[#IProcessWindingController]].
+|-
+| 11 || GetLibraryAppletCreator || Returns an [[#ILibraryAppletCreator]].
+|-
+| 20 || GetHomeMenuFunctions || Returns an [[#IHomeMenuFunctions]].
+|-
+| 21 || GetGlobalStateController || Returns an [[#IGlobalStateController]].
+|-
+| 22 || GetApplicationCreator || Returns an [[#IApplicationCreator]].
+|-
+| 1000 || GetDebugFunctions || Returns an [[#IDebugFunctions]].
+|-
+|}
+
+=== IHomeMenuFunctions ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 10 || RequestToGetForeground || 
+|-
+| 11 || LockForeground ||
+|-
+| 12 || UnlockForeground || 
+|-
+| 20 || PopFromGeneralChannel || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 21 || GetPopFromGeneralChannelEvent ||
+|-
+| 30 || GetHomeButtonWriterLockAccessor || Returns an [[#ILockAccessor]].
+|-
+| 31 || GetWriterLockAccessorEx || Returns an [[#ILockAccessor]].
+|-
+|}
+
+==== ILockAccessor ====
+{| class="wikitable" border="1"
+|-
 ! Cmd || Name
 |-
-| 0 || GetCommonStateGetter
+| 1 || TryLock
 |-
-| 1 || GetSelfController
+| 2 || Unlock
 |-
-| 2 || GetWindowController
+| 3 || GetEvent
+|}
+
+=== IGlobalStateController ===
+{| class="wikitable" border="1"
 |-
-| 3 || GetAudioController
+! Cmd || Name
 |-
-| 4 || GetDisplayController
+| 0 || RequestToEnterSleep
 |-
-| 10 || GetProcessWindingController
+| 1 || EnterSleep
 |-
-| 11 || GetLibraryAppletCreator
+| 2 || StartSleepSequence
 |-
-| 20 || GetHomeMenuFunctions
+| 3 || StartShutdownSequence
 |-
-| 21 || GetGlobalStateController
+| 4 || StartRebootSequence
 |-
-| 22 || GetApplicationCreator
+| 10 || LoadAndApplyIdlePolicySettings
 |-
-| 1000 || GetDebugFunctions
+| 11 || NotifyCecSettingsChanged
 |-
+| 12 || SetDefaultHomeButtonLongPressTime
+|-
+| 13 || UpdateDefaultDisplayResolution
+|-
+| 14 || ShouldSleepOnBoot
+|-
+|}
+
+=== IApplicationCreator ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || CreateApplication || Returns an [[#IApplicationAccessor]].
+|-
+| 1 || PopLaunchRequestedApplication || Returns an [[#IApplicationAccessor]].
+|-
+| 10 || CreateSystemApplication || Returns an [[#IApplicationAccessor]].
+|-
+| 100 || PopFloatingApplicationForDevelopment || Returns an [[#IApplicationAccessor]].
+|}
+
+==== IApplicationAccessor ====
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetAppletStateChangedEvent ||
+|-
+| 1 || IsCompleted ||
+|-
+| 10 || Start ||
+|-
+| 20 || RequestExit || 
+|-
+| 25 || Terminate || 
+|-
+| 30 || GetResult || 
+|-
+| 101 || RequestForApplicationToGetForeground || 
+|-
+| 110 || TerminateAllLibraryApplets || 
+|-
+| 111 || AreAnyLibraryAppletsLeft || 
+|-
+| 112 || GetCurrentLibraryApplet || Returns an [[#IAppletAccessor]].
+|-
+| 120 || GetApplicationId || 
+|-
+| 121 || PushLaunchParameter || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 122 || GetApplicationControlProperty || 
+|-
+| 123 || GetApplicationLaunchProperty || 
+|}
+
+===== IAppletAccessor =====
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetAppletStateChangedEvent
+|-
+| 1 || IsCompleted
+|-
+| 10 || Start
+|-
+| 20 || RequestExit
+|-
+| 25 || Terminate
+|-
+| 30 || GetResult
 |}
 
 == ILibraryAppletProxy ==
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || GetCommonStateGetter
+| 0 || GetCommonStateGetter || Returns an [[#ICommonStateGetter]].
 |-
-| 1 || GetSelfController
+| 1 || GetSelfController || Returns an [[#ISelfController]].
 |-
-| 2 || GetWindowController
+| 2 || GetWindowController || Returns an [[#IWindowController]].
 |-
-| 3 || GetAudioController
+| 3 || GetAudioController || Returns an [[#IAudioController]].
 |-
-| 4 || GetDisplayController
+| 4 || GetDisplayController || Returns an [[#IDisplayController]].
 |-
-| 10 || GetProcessWindingController
+| 10 || GetProcessWindingController || Returns an [[#IProcessWindingController]].
 |-
-| 11 || GetLibraryAppletCreator
+| 11 || GetLibraryAppletCreator || Returns an [[#ILibraryAppletCreator]].
 |-
-| 20 || GetLibraryAppletSelfAccessor
+| 20 || GetLibraryAppletSelfAccessor || Returns an [[#ILibraryAppletSelfAccessor]].
 |-
-| 1000 || GetDebugFunctions
+| 1000 || GetDebugFunctions || Returns an [[#IDebugFunctions]].
 |-
+|}
+
+=== ILibraryAppletSelfAccessor ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || PopInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 1 || PushOutData || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 2 || PopInteractiveInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 3 || PushInteractiveOutData || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 5 || GetPopInDataEvent ||
+|-
+| 6 || GetPopInteractiveInDataEvent ||
+|-
+| 10 || ExitProcessAndReturn ||
+|-
+| 11 || GetLibraryAppletInfo ||
+|-
+| 12 || GetMainAppletIdentityInfo ||
+|-
+| 13 || CanUseApplicationCore ||
+|-
+| 14 || GetCallerAppletIdentityInfo ||
+|-
+| 15 || GetMainAppletApplicationControlProperty ||
+|-
+| 16 || GetMainAppletStorageId ||
+|-
+| 17 || GetCallerAppletIdentityInfoStack ||
+|-
+| 20 || PopExtraStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 25 || GetPopExtraStorageEvent ||
+|-
+| 30 || UnpopInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 31 || UnpopExtraStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 40 || GetIndirectLayerProducerHandle ||
+|-
+| 50 || ReportVisibleError ||
 |}
 
 == IOverlayAppletProxy ==
 {| class="wikitable" border="1"
 |-
+! Cmd || Name || Notes
+|-
+| 0 || GetCommonStateGetter || Returns an [[#ICommonStateGetter]].
+|-
+| 1 || GetSelfController || Returns an [[#ISelfController]].
+|-
+| 2 || GetWindowController || Returns an [[#IWindowController]].
+|-
+| 3 || GetAudioController || Returns an [[#IAudioController]].
+|-
+| 4 || GetDisplayController || Returns an [[#IDisplayController]].
+|-
+| 10 || GetProcessWindingController || Returns an [[#IProcessWindingController]].
+|-
+| 11 || GetLibraryAppletCreator || Returns an [[#ILibraryAppletCreator]].
+|-
+| 20 || GetOverlayFunctions || Returns an [[#IOverlayFunctions]].
+|-
+| 1000 || GetDebugFunctions || Returns an [[#IDebugFunctions]].
+|-
+|}
+
+=== IOverlayFunctions ===
+{| class="wikitable" border="1"
+|-
 ! Cmd || Name
 |-
-| 0 || GetCommonStateGetter
+| 0 || BeginToWatchShortHomeButtonMessage
 |-
-| 1 || GetSelfController
+| 1 || EndToWatchShortHomeButtonMessage
 |-
-| 2 || GetWindowController
+| 2 || GetApplicationIdForLogo
 |-
-| 3 || GetAudioController
+| 3 || SetGpuTimeSliceBoost
 |-
-| 4 || GetDisplayController
+| 4 || SetAutoSleepTimeAndDimmingTimeEnabled
 |-
-| 10 || GetProcessWindingController
+| 5 || TerminateApplicationAndSetReason
 |-
-| 11 || GetLibraryAppletCreator
-|-
-| 20 || GetOverlayFunctions
-|-
-| 1000 || GetDebugFunctions
-|-
+| 6 || SetScreenShotPermissionGlobally
 |}
 
 == IApplicationProxy ==
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || GetCommonStateGetter
+| 0 || GetCommonStateGetter || Returns an [[#ICommonStateGetter]].
 |-
-| 1 || GetSelfController
+| 1 || GetSelfController || Returns an [[#ISelfController]].
 |-
-| 2 || GetWindowController
+| 2 || GetWindowController || Returns an [[#IWindowController]].
 |-
-| 3 || GetAudioController
+| 3 || GetAudioController || Returns an [[#IAudioController]].
 |-
-| 4 || GetDisplayController
+| 4 || GetDisplayController || Returns an [[#IDisplayController]].
 |-
-| 10 || GetProcessWindingController
+| 10 || GetProcessWindingController || Returns an [[#IProcessWindingController]].
 |-
-| 11 || GetLibraryAppletCreator
+| 11 || GetLibraryAppletCreator || Returns an [[#ILibraryAppletCreator]].
 |-
-| 20 || GetApplicationFunctions
+| 20 || GetApplicationFunctions || Returns an [[#IApplicationFunctions]].
 |-
-| 1000 || GetDebugFunctions
+| 1000 || GetDebugFunctions || Returns an [[#IDebugFunctions]].
 |-
+|}
+
+=== IApplicationFunctions ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 1 || PopLaunchParameter || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 10 || CreateApplicationAndPushAndRequestToStart || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 11 || CreateApplicationAndPushAndRequestToStartForQuest || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 20 || EnsureSaveData ||
+|-
+| 21 || GetDesiredLanguage ||
+|-
+| 22 || SetTerminateResult ||
+|-
+| 23 || GetDisplayVersion ||
+|-
+| 24 || GetLaunchStorageInfoForDebug ||
+|-
+| 25 || ExtendSaveData ||
+|-
+| 26 || GetSaveDataSize ||
+|-
+| 30 || BeginBlockingHomeButtonShortAndLongPressed ||
+|-
+| 31 || EndBlockingHomeButtonShortAndLongPressed ||
+|-
+| 32 || BeginBlockingHomeButton ||
+|-
+| 33 || EndBlockingHomeButton ||
+|-
+| 40 || NotifyRunning ||
+|-
+| 50 || GetPseudoDeviceId ||
+|-
+| 60 || SetMediaPlaybackStateForApplication ||
+|-
+| 65 || IsGamePlayRecordingSupported ||
+|-
+| 66 || InitializeGamePlayRecording ||
+|-
+| 67 || SetGamePlayRecordingState ||
+|-
+| 70 || RequestToShutdown ||
+|-
+| 71 || RequestToReboot ||
 |}
 
 == ILibraryAppletCreator ==
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || GetLibraryAppletAccessor
+| 0 || CreateLibraryApplet || Returns an [[#ILibraryAppletAccessor]].
 |-
-| 1 || TerminateAllLibraryApplets
+| 1 || TerminateAllLibraryApplets ||
 |-
-| 2 || AreAnyLibraryAppletsLeft
+| 2 || AreAnyLibraryAppletsLeft ||
 |-
-| 10 || CreateStorage
+| 10 || CreateStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
 |-
-| 11 || CreateTransferMemoryStorage
+| 11 || CreateTransferMemoryStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
 |-
-| 12 || CreateHandleStorage
+| 12 || CreateHandleStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
 |-
 |}
 
-= appletOE =
+=== ILibraryAppletAccessor ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetAppletStateChangedEvent ||
+|-
+| 1 || IsCompleted ||
+|-
+| 10 || Start ||
+|-
+| 20 || RequestExit ||
+|-
+| 25 || Terminate ||
+|-
+| 30 || GetResult ||
+|-
+| 50 || SetOutOfFocusApplicationSuspendingEnabled ||
+|-
+| 100 || PushInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 101 || PopOutData || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 102 || PushExtraStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 103 || PushInteractiveInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 104 || PopInteractiveOutData || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 105 || GetPopOutDataEvent ||
+|-
+| 106 || GetPopInteractiveOutDataEvent ||
+|-
+| 110 || NeedsToExitProcess ||
+|-
+| 120 || GetLibraryAppletInfo ||
+|-
+| 150 || RequestForAppletToGetForeground ||
+|-
+| 160 || GetIndirectLayerConsumerHandle ||
+|}
+
+== ICommonStateGetter ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetEventHandle ||
+|-
+| 1 || ReceiveMessage ||
+|-
+| 2 || GetThisAppletKind ||
+|-
+| 3 || AllowToEnterSleep ||
+|-
+| 4 || DisallowToEnterSleep ||
+|-
+| 5 || GetOperationMode ||
+|-
+| 6 || GetPerformanceMode ||
+|-
+| 7 || GetCradleStatus ||
+|-
+| 8 || GetBootMode ||
+|-
+| 9 || GetCurrentFocusState ||
+|-
+| 10 || RequestToAcquireSleepLock ||
+|-
+| 11 || ReleaseSleepLock ||
+|-
+| 12 || ReleaseSleepLockTransiently ||
+|-
+| 13 || GetAcquiredSleepLockEvent ||
+|-
+| 20 || PushToGeneralChannel || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 30 || GetHomeButtonReaderLockAccessor || Returns an [[#ILockAccessor]].
+|-
+| 31 || GetReaderLockAccessorEx || Returns an [[#ILockAccessor]].
+|-
+| 40 || GetCradleFwVersion ||
+|-
+| 50 || IsVrModeEnabled ||
+|-
+| 51 || SetVrModeEnabled ||
+|-
+| 55 || IsInControllerFirmwareUpdateSection ||
+|-
+| 60 || GetDefaultDisplayResolution ||
+|-
+| 61 || GetDefaultDisplayResolutionChangeEvent ||
+|}
+
+== ISelfController ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || GetApplicationProxy
+| 0 || Exit
+|-
+| 1 || LockExit
+|-
+| 2 || UnlockExit
+|-
+| 3 || EnterFatalSection
+|-
+| 4 || LeaveFatalSection
+|-
+| 9 || GetLibraryAppletLaunchableEvent
+|-
+| 10 || SetScreenShotPermission
+|-
+| 11 || SetOperationModeChangedNotification
+|-
+| 12 || SetPerformanceModeChangedNotification
+|-
+| 13 || SetFocusHandlingMode
+|-
+| 14 || SetRestartMessageEnabled
+|-
+| 15 || SetScreenShotAppletIdentityInfo
+|-
+| 16 || SetOutOfFocusSuspendingEnabled
+|-
+| 17 || SetControllerFirmwareUpdateSection
+|-
+| 18 || SetRequiresCaptureButtonShortPressedMessage
+|-
+| 19 || SetScreenShotImageOrientation
+|-
+| 40 || CreateManagedDisplayLayer
+|-
+| 50 || SetHandlesRequestToDisplay
+|-
+| 51 || ApproveToDisplay
+|-
+| 60 || OverrideAutoSleepTimeAndDimmingTime
+|-
+| 61 || SetMediaPlaybackState
+|-
+| 62 || SetIdleTimeDetectionExtension
+|-
+| 63 || GetIdleTimeDetectionExtension
+|-
+| 64 || SetInputDetectionSourceSet
+|-
+| 65 || ReportUserIsActive
+|-
+| 66 || GetCurrentIlluminance
+|-
+| 67 || IsIlluminanceAvailable
+|}
+
+== IWindowController ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || CreateWindow || Returns an IWindow object.
+|-
+| 1 || GetAppletResourceUserId ||
+|-
+| 10 || AcquireForegroundRights ||
+|-
+| 11 || ReleaseForegroundRights ||
+|-
+| 12 || RejectToChangeIntoBackground ||
+|}
+
+== IAudioController ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || SetExpectedMasterVolume
+|-
+| 1 || GetMainAppletExpectedMasterVolume
+|-
+| 2 || GetLibraryAppletExpectedMasterVolume
+|-
+| 3 || ChangeMainAppletMasterVolume
+|-
+| 4 || SetTransparentVolumeRate
+|}
+
+== IDisplayController ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetLastForegroundCaptureImage
+|-
+| 1 || UpdateLastForegroundCaptureImage
+|-
+| 2 || GetLastApplicationCaptureImage
+|-
+| 3 || GetCallerAppletCaptureImage
+|-
+| 4 || UpdateCallerAppletCaptureImage
+|-
+| 5 || GetLastForegroundCaptureImageEx
+|-
+| 6 || GetLastApplicationCaptureImageEx
+|-
+| 7 || GetCallerAppletCaptureImageEx
+|-
+| 8 || TakeScreenShotOfOwnLayer
+|-
+| 10 || AcquireLastApplicationCaptureBuffer
+|-
+| 11 || ReleaseLastApplicationCaptureBuffer
+|-
+| 12 || AcquireLastForegroundCaptureBuffer
+|-
+| 13 || ReleaseLastForegroundCaptureBuffer
+|-
+| 14 || AcquireCallerAppletCaptureBuffer
+|-
+| 15 || ReleaseCallerAppletCaptureBuffer
+|-
+| 16 || AcquireLastApplicationCaptureBufferEx
+|-
+| 17 || AcquireLastForegroundCaptureBufferEx
+|-
+| 18 || AcquireCallerAppletCaptureBufferEx
+|-
+| 20 || ClearCaptureBuffer
+|-
+| 21 || ClearAppletTransitionBuffer
+|}
+
+== ILibraryAppletCreator==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || CreateLibraryApplet || Returns a [[#ILibraryAppletAccessor]].
+|-
+| 1 || TerminateAllLibraryApplets ||
+|-
+| 2 || AreAnyLibraryAppletsLeft ||
+|-
+| 10 || CreateStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 11 || CreateTransferMemoryStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 12 || CreateHandleStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+|}
+
+== IProcessWindingController ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetLaunchReason ||
+|-
+| 11 || OpenCallingLibraryApplet || Returns an [[#ILibraryAppletAccessor]].
+|-
+| 21 || PushContext || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 22 || PopContext || Returns an [[Filesystem_services#IStorage|IStorage]].
+|-
+| 23 || CancelWindingReservation ||
+|-
+| 30 || WindAndDoReserved ||
+|-
+| 40 || ReserveToStartAndWaitAndUnwindThis || Returns an [[#ILibraryAppletAccessor]].
+|}
+
+== IDebugFunctions ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || NotifyMessageToHomeMenuForDebug ||
+|-
+| 1 || OpenMainApplication || Returns an [[#IApplicationAccessor]].
+|-
+| 10 || EmulateButtonEvent ||
+|-
+| 20 || InvalidateTransitionLayer ||
+|}
+
+= appletOE =
+This is "nn::am::service::IApplicationProxyService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || OpenApplicationProxy || Returns an [[#IApplicationProxy]].
 |-
 |}
 
@@ -182,7 +714,7 @@ Besides [[PTM_services]], this is the only service that interacts with the [[Doc
 | 9 ||
 |}
 
-=spsm=
+= spsm =
 
 
 = Enums =
