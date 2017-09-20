@@ -35,11 +35,11 @@
 | 42   |                                                                          |
 | 43   |                                                                          |
 | 44   | GetSdCardMountStatusChangedEvent                                         |
-| 45   |                                                                          |
-| 46   |                                                                          |
+| 45   | GetGameCardAttachmentEvent                                               |
+| 46   | GetGameCardAttachmentInfo                                                |
 | 47   | [\#GetFreeSpace](#GetFreeSpace "wikilink")                               |
 | 48   | [\#GetTotalSpace](#GetTotalSpace "wikilink")                             |
-| 49   |                                                                          |
+| 49   | GetSdCardRemovedEvent                                                    |
 | 52   | GetGameCardUpdateDetectionEvent                                          |
 | 53   |                                                                          |
 | 54   |                                                                          |
@@ -47,7 +47,7 @@
 | 56   |                                                                          |
 | 57   |                                                                          |
 | 58   |                                                                          |
-| 59   |                                                                          |
+| 59   | ConvertApplicationLanguageToLanguageCode                                 |
 | 60   | [\#GetLanguageIdFromString](#GetLanguageIdFromString "wikilink")         |
 | 61   |                                                                          |
 | 62   | GetIGameCardStopper                                                      |
@@ -55,14 +55,14 @@
 | 64   |                                                                          |
 | 65   | GetIRequestServerStopper                                                 |
 | 100  | ResetToFactorySettings                                                   |
-| 101  | DeleteUserContent1                                                       |
+| 101  | ResetToFactorySettingsWithoutUserSaveData                                |
 | 102  | DeleteUserContent2                                                       |
 | 200  |                                                                          |
 | 201  |                                                                          |
 | 210  |                                                                          |
 | 220  |                                                                          |
-| 300  |                                                                          |
-| 301  |                                                                          |
+| 300  | GetApplicationShellEvent                                                 |
+| 301  | PopApplicationShellEventInfo                                             |
 | 302  |                                                                          |
 | 303  |                                                                          |
 | 304  |                                                                          |

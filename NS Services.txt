@@ -69,15 +69,15 @@
 |-
 | 44 || GetSdCardMountStatusChangedEvent
 |-
-| 45 ||
+| 45 || GetGameCardAttachmentEvent
 |-
-| 46 ||
+| 46 || GetGameCardAttachmentInfo
 |-
 | 47 || [[#GetFreeSpace]]
 |-
 | 48 || [[#GetTotalSpace]]
 |-
-| 49 ||
+| 49 || GetSdCardRemovedEvent
 |-
 | 52 || GetGameCardUpdateDetectionEvent
 |-
@@ -93,7 +93,7 @@
 |-
 | 58 ||
 |-
-| 59 ||
+| 59 || ConvertApplicationLanguageToLanguageCode
 |-
 | 60 || [[#GetLanguageIdFromString]]
 |-
@@ -109,7 +109,7 @@
 |-
 | 100 || ResetToFactorySettings
 |-
-| 101 || DeleteUserContent1
+| 101 || ResetToFactorySettingsWithoutUserSaveData
 |-
 | 102 || DeleteUserContent2
 |-
@@ -121,9 +121,9 @@
 |-
 | 220 ||
 |-
-| 300 ||
+| 300 || GetApplicationShellEvent
 |-
-| 301 ||
+| 301 || PopApplicationShellEventInfo
 |-
 | 302 ||
 |-
