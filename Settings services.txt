@@ -1,27 +1,53 @@
 = set =
+This is "nn::settings::ISettingsServer".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
 | 0 || GetLanguageCode
 |-
-| 1 || SetLanguageCode
+| 1 || GetAvailableLanguageCodes
 |-
-| 3 ||
+| 3 || GetAvailableLanguageCodeCount
 |-
-| 4 ||
+| 4 || GetRegionCode
 |}
 
 = set:fd =
+This is "nn::settings::IFirmwareDebugSettingsServer".
 
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 2 || SetSettingsItemValue ||
+|-
+| 3 || ResetSettingsItemValue ||
+|-
+| 4 || CreateSettingsItemKeyIterator || Returns an [[#ISettingsItemKeyIterator]].
+|}
 
-
-= set:cal =
+== ISettingsItemKeyIterator ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || GetBdAddress
+| 0 || GoNext
+|-
+| 1 || GetKeySize
+|-
+| 2 || GetKey
+|}
+
+= set:cal =
+This is "nn::settings::IFactorySettingsServer".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetBluetoothBdAddress
 |-
 | 1 || GetConfigurationId1
 |-
@@ -33,48 +59,48 @@
 |-
 | 5 || GetGyroscopeScale
 |-
-| 6 || GetWlanMacAddress
+| 6 || GetWirelessLanMacAddress
 |-
-| 7 || GetWlanCountryCodesNum
+| 7 || GetWirelessLanCountryCodeCount
 |-
-| 8 || GetWlanCountryCodes
+| 8 || GetWirelessLanCountryCodes
 |-
 | 9 || GetSerialNumber
 |-
-| 10 || 
+| 10 || SetInitialSystemAppletProgramId
 |-
-| 11 || 
+| 11 || SetOverlayDispProgramId
 |-
 | 12 || GetBatteryLot
 |-
-| 14 || [[#GetDeviceCert]]
+| 14 || [[#GetEciDeviceCertificate]]
 |-
-| 15 || [[#GetETicketCert]]
+| 15 || [[#GetEticketDeviceCertificate]]
 |-
 | 16 || [[#GetSslKey]]
 |-
-| 17 || [[#GetSslCert]]
+| 17 || [[#GetSslCertificate]]
 |-
 | 18 || [[#GetGameCardKey]]
 |-
-| 19 || [[#GetGameCardCert]]
+| 19 || [[#GetGameCardCertificate]]
 |-
-| 20 || [[#GetDeviceKey]]
+| 20 || [[#GetEciDeviceKey]]
 |-
-| 21 || [[#GetETicketKey]]
+| 21 || [[#GetEticketDeviceKey]]
 |-
-| 22 || GetSpeakerCalibrationValues
+| 22 || GetSpeakerParameter
 |-
 |}
 
 Used for accessing data calibrated at the factory.
 
-== GetDeviceCert ==
+== GetEciDeviceCertificate ==
 Takes a type-0x16 output buffer with fixed size 0x180.
 
 Returns the device certificate (ECC signed). This is identical to 3DS DeviceCert/CTCert besides the strings. NIM loads the DeviceId from this.
 
-== GetETicketCert ==
+== GetEticketDeviceCertificate ==
 Takes a type-0x16 output buffer with fixed size 0x240.
 
 Returns the ETicket certificate (RSA signed).
@@ -86,7 +112,7 @@ Returns the extended SSL key (0x130 bytes) from [[Calibration#CAL0|CAL0]]. If th
 
 Used by SSL-sysmodule, see [[SSL_services|here]].
 
-== GetSslCert ==
+== GetSslCertificate ==
 Takes a type-0x16 output buffer with fixed size 0x804.
 
 Returns a [[Settings_services#setcal_Container_Structure|container]] with the plaintext SSL certificate.
@@ -98,15 +124,15 @@ Takes a type-0x16 output buffer with fixed size 0x134.
 
 Returns the extended GameCard key (0x130 bytes) from [[Calibration#CAL0|CAL0]]. If the extended key is not programmed then it falls back to the normal GameCard key (0x110 bytes).
 
-== GetGameCardCert ==
+== GetGameCardCertificate ==
 Takes a type-0x16 output buffer with fixed size 0x404.
 
 Returns a [[Settings_services#setcal_Container_Structure|container]] with the GameCard certificate.
 
-== GetDeviceKey ==
+== GetEciDeviceKey ==
 Returns the extended device ECC-B233 key (0x50 bytes) from [[Calibration#CAL0|CAL0]]. If the extended key is not programmed then it falls back to the normal device ECC-B233 key (0x30 bytes).
 
-== GetETicketKey ==
+== GetEticketDeviceKey ==
 Takes a type-0x16 output buffer with fixed size 0x244.
 
 Returns the extended ETicket RSA-2048 key (0x240 bytes) from [[Calibration#CAL0|CAL0]]. If the extended key is not programmed then it falls back to the normal ETicket RSA-2048 key (0x220 bytes).
@@ -130,40 +156,266 @@ Returns the extended ETicket RSA-2048 key (0x240 bytes) from [[Calibration#CAL0|
 This container is used for returning data with variable sizes.
 
 = set:sys =
+This is "nn::settings::ISystemSettingsServer".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 3 || [[#GetSystemVersion]]
+| 0 || SetLanguageCode
 |-
-| 37 || QuerySetting
+| 1 || SetNetworkSettings
 |-
-| 38 || [[#ReadSetting]]
+| 2 || GetNetworkSettings
 |-
-| 56 || [[Flash_Filesystem#PRODINFOF|GetWirelessCertification]]
+| 3 || [[#GetFirmwareVersion]]
 |-
-| 62 || [[#GetDebugMode]]
+| 4 || GetFirmwareVersion2
+|-
+| 7 || GetLockScreenFlag
+|-
+| 8 || SetLockScreenFlag
+|-
+| 9 || GetBacklightSettings
+|-
+| 10 || SetBacklightSettings
+|-
+| 11 || SetBluetoothDevicesSettings
+|-
+| 12 || GetBluetoothDevicesSettings
+|-
+| 13 || GetExternalSteadyClockSourceId
+|-
+| 14 || SetExternalSteadyClockSourceId
+|-
+| 15 || GetUserSystemClockContext
+|-
+| 16 || SetUserSystemClockContext
+|-
+| 17 || GetAccountSettings
+|-
+| 18 || SetAccountSettings
+|-
+| 19 || GetAudioVolume
+|-
+| 20 || SetAudioVolume
+|-
+| 21 || GetEulaVersions
+|-
+| 22 || SetEulaVersions
+|-
+| 23 || GetColorSetId
+|-
+| 24 || SetColorSetId
+|-
+| 25 || GetConsoleInformationUploadFlag
+|-
+| 26 || SetConsoleInformationUploadFlag
+|-
+| 27 || GetAutomaticApplicationDownloadFlag
+|-
+| 28 || SetAutomaticApplicationDownloadFlag
+|-
+| 29 || GetNotificationSettings
+|-
+| 30 || SetNotificationSettings
+|-
+| 31 || GetAccountNotificationSettings
+|-
+| 32 || SetAccountNotificationSettings
+|-
+| 35 || GetVibrationMasterVolume
+|-
+| 36 || SetVibrationMasterVolume
+|-
+| 37 || GetSettingsItemValueSize
+|-
+| 38 || [[#GetSettingsItemValue]]
+|-
+| 39 || GetTvSettings
+|-
+| 40 || SetTvSettings
+|-
+| 41 || GetEdid
+|-
+| 42 || SetEdid
+|-
+| 43 || GetAudioOutputMode
+|-
+| 44 || SetAudioOutputMode
+|-
+| 45 || IsForceMuteOnHeadphoneRemoved
+|-
+| 46 || SetForceMuteOnHeadphoneRemoved
+|-
+| 47 || GetQuestFlag
+|-
+| 48 || SetQuestFlag
+|-
+| 49 || GetDataDeletionSettings
+|-
+| 50 || SetDataDeletionSettings
+|-
+| 51 || GetInitialSystemAppletProgramId
+|-
+| 52 || GetOverlayDispProgramId
+|-
+| 53 || GetDeviceTimeZoneLocationName
+|-
+| 54 || SetDeviceTimeZoneLocationName
+|-
+| 55 || GetWirelessCertificationFileSize
+|-
+| 56 || [[Flash_Filesystem#PRODINFOF|GetWirelessCertificationFile]]
+|-
+| 57 || SetRegionCode
+|-
+| 58 || GetNetworkSystemClockContext
+|-
+| 59 || SetNetworkSystemClockContext
+|-
+| 60 || IsUserSystemClockAutomaticCorrectionEnabled
+|-
+| 61 || SetUserSystemClockAutomaticCorrectionEnabled
+|-
+| 62 || [[#GetDebugModeFlag]]
+|-
+| 63 || GetPrimaryAlbumStorage
+|-
+| 64 || SetPrimaryAlbumStorage
+|-
+| 65 || GetUsb30EnableFlag
+|-
+| 66 || SetUsb30EnableFlag
+|-
+| 67 || GetBatteryLot
 |-
 | 68 || [[#GetSerialNumber]]
+|-
+| 69 || GetNfcEnableFlag
+|-
+| 70 || SetNfcEnableFlag
+|-
+| 71 || GetSleepSettings
+|-
+| 72 || SetSleepSettings
+|-
+| 73 || GetWirelessLanEnableFlag
+|-
+| 74 || SetWirelessLanEnableFlag
+|-
+| 75 || GetInitialLaunchSettings
+|-
+| 76 || SetInitialLaunchSettings
+|-
+| 77 || GetDeviceNickName
+|-
+| 78 || SetDeviceNickName
+|-
+| 79 || GetProductModel
+|-
+| 80 || GetLdnChannel
+|-
+| 81 || SetLdnChannel
+|-
+| 82 || AcquireTelemetryDirtyFlagEventHandle
+|-
+| 83 || GetTelemetryDirtyFlags
+|-
+| 84 || GetPtmBatteryLot
+|-
+| 85 || SetPtmBatteryLot
+|-
+| 86 || GetPtmFuelGaugeParameter
+|-
+| 87 || SetPtmFuelGaugeParameter
+|-
+| 88 || GetBluetoothEnableFlag
+|-
+| 89 || SetBluetoothEnableFlag
+|-
+| 90 || GetMiiAuthorId
+|-
+| 91 || SetShutdownRtcValue
+|-
+| 92 || GetShutdownRtcValue
+|-
+| 93 || AcquireFatalDirtyFlagEventHandle
+|-
+| 94 || GetFatalDirtyFlags
+|-
+| 95 || GetAutoUpdateEnableFlag
+|-
+| 96 || SetAutoUpdateEnableFlag
+|-
+| 97 || GetNxControllerSettings
+|-
+| 98 || SetNxControllerSettings
+|-
+| 99 || GetBatteryPercentageFlag
+|-
+| 100 || SetBatteryPercentageFlag
+|-
+| 101 || GetExternalRtcResetFlag
+|-
+| 102 || SetExternalRtcResetFlag
+|-
+| 103 || GetUsbFullKeyEnableFlag
+|-
+| 104 || SetUsbFullKeyEnableFlag
+|-
+| 105 || SetExternalSteadyClockInternalOffset
+|-
+| 106 || GetExternalSteadyClockInternalOffset
+|-
+| 107 || GetBacklightSettingsEx
+|-
+| 108 || SetBacklightSettingsEx
+|-
+| 109 || GetHeadphoneVolumeWarningCount
+|-
+| 110 || SetHeadphoneVolumeWarningCount
+|-
+| 111 || GetBluetoothAfhEnableFlag
+|-
+| 112 || SetBluetoothAfhEnableFlag
+|-
+| 113 || GetBluetoothBoostEnableFlag
+|-
+| 114 || SetBluetoothBoostEnableFlag
+|-
+| 115 || GetInRepairProcessEnableFlag
+|-
+| 116 || SetInRepairProcessEnableFlag
+|-
+| 117 || GetHeadphoneVolumeUpdateFlag
+|-
+| 118 || SetHeadphoneVolumeUpdateFlag
+|-
+| 119 || NeedsToUpdateHeadphoneVolume
+|-
+| 120 || GetPushNotificationActivityModeOnSleep
+|-
+| 121 || SetPushNotificationActivityModeOnSleep
 |}
 
 Official user-processes get a new service session handle each time a set:sys cmd is used, with the session being closed aftewards.
 
-== ReadSetting ==
-Takes two type-0x19 input buffers and a type-0x6 output buffer. Returns an output u64 for the actual size written to the outbuf.
-
-The outbuf_size is compared with the config_size. When config_size is larger than outbuf_size, outbuf_size is used for the memcpy, otherwise config_size is used. Afterwards the size used for the memcpy is written to output(see above).
-
-If loading from main config fails, it will also attempt to load config from various state if the input strings match hard-coded strings.
-
-== GetSystemVersion ==
+== GetFirmwareVersion ==
 Takes a type-0x1A output buffer. User-processes use hard-coded size 0x100.
 
 If needed, reads the content of the [[System_Version_Title]] "/file" into state. This is only done once.
 
 Then the above 0x100-byte data is copied to the output buffer.
 
-== GetDebugMode ==
+== GetSettingsItemValue ==
+Takes two type-0x19 input buffers and a type-0x6 output buffer. Returns an output u64 for the actual size written to the outbuf.
+
+The outbuf_size is compared with the config_size. When config_size is larger than outbuf_size, outbuf_size is used for the memcpy, otherwise config_size is used. Afterwards the size used for the memcpy is written to output(see above).
+
+If loading from main config fails, it will also attempt to load config from various state if the input strings match hard-coded strings.
+
+== GetDebugModeFlag ==
 Returns an output u8.
 
 Loads the 1-byte config for <"settings_debug", "is_debug_mode_enabled">. If that fails, value 0x1 is written to output. This uses the same func as ReadSetting internally.

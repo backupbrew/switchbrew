@@ -1,52 +1,74 @@
 # set
 
-| Cmd | Name            |
-| --- | --------------- |
-| 0   | GetLanguageCode |
-| 1   | SetLanguageCode |
-| 3   |                 |
-| 4   |                 |
+This is "nn::settings::ISettingsServer".
+
+| Cmd | Name                          |
+| --- | ----------------------------- |
+| 0   | GetLanguageCode               |
+| 1   | GetAvailableLanguageCodes     |
+| 3   | GetAvailableLanguageCodeCount |
+| 4   | GetRegionCode                 |
 
 # set:fd
 
+This is
+"nn::settings::IFirmwareDebugSettingsServer".
+
+| Cmd | Name                          | Notes                                                                          |
+| --- | ----------------------------- | ------------------------------------------------------------------------------ |
+| 2   | SetSettingsItemValue          |                                                                                |
+| 3   | ResetSettingsItemValue        |                                                                                |
+| 4   | CreateSettingsItemKeyIterator | Returns an [\#ISettingsItemKeyIterator](#ISettingsItemKeyIterator "wikilink"). |
+
+## ISettingsItemKeyIterator
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   | GoNext     |
+| 1   | GetKeySize |
+| 2   | GetKey     |
+
 # set:cal
 
-| Cmd | Name                                             |
-| --- | ------------------------------------------------ |
-| 0   | GetBdAddress                                     |
-| 1   | GetConfigurationId1                              |
-| 2   | GetAccelerometerOffset                           |
-| 3   | GetAccelerometerScale                            |
-| 4   | GetGyroscopeOffset                               |
-| 5   | GetGyroscopeScale                                |
-| 6   | GetWlanMacAddress                                |
-| 7   | GetWlanCountryCodesNum                           |
-| 8   | GetWlanCountryCodes                              |
-| 9   | GetSerialNumber                                  |
-| 10  |                                                  |
-| 11  |                                                  |
-| 12  | GetBatteryLot                                    |
-| 14  | [\#GetDeviceCert](#GetDeviceCert "wikilink")     |
-| 15  | [\#GetETicketCert](#GetETicketCert "wikilink")   |
-| 16  | [\#GetSslKey](#GetSslKey "wikilink")             |
-| 17  | [\#GetSslCert](#GetSslCert "wikilink")           |
-| 18  | [\#GetGameCardKey](#GetGameCardKey "wikilink")   |
-| 19  | [\#GetGameCardCert](#GetGameCardCert "wikilink") |
-| 20  | [\#GetDeviceKey](#GetDeviceKey "wikilink")       |
-| 21  | [\#GetETicketKey](#GetETicketKey "wikilink")     |
-| 22  | GetSpeakerCalibrationValues                      |
-|     |                                                  |
+This is
+"nn::settings::IFactorySettingsServer".
+
+| Cmd | Name                                                                     |
+| --- | ------------------------------------------------------------------------ |
+| 0   | GetBluetoothBdAddress                                                    |
+| 1   | GetConfigurationId1                                                      |
+| 2   | GetAccelerometerOffset                                                   |
+| 3   | GetAccelerometerScale                                                    |
+| 4   | GetGyroscopeOffset                                                       |
+| 5   | GetGyroscopeScale                                                        |
+| 6   | GetWirelessLanMacAddress                                                 |
+| 7   | GetWirelessLanCountryCodeCount                                           |
+| 8   | GetWirelessLanCountryCodes                                               |
+| 9   | GetSerialNumber                                                          |
+| 10  | SetInitialSystemAppletProgramId                                          |
+| 11  | SetOverlayDispProgramId                                                  |
+| 12  | GetBatteryLot                                                            |
+| 14  | [\#GetEciDeviceCertificate](#GetEciDeviceCertificate "wikilink")         |
+| 15  | [\#GetEticketDeviceCertificate](#GetEticketDeviceCertificate "wikilink") |
+| 16  | [\#GetSslKey](#GetSslKey "wikilink")                                     |
+| 17  | [\#GetSslCertificate](#GetSslCertificate "wikilink")                     |
+| 18  | [\#GetGameCardKey](#GetGameCardKey "wikilink")                           |
+| 19  | [\#GetGameCardCertificate](#GetGameCardCertificate "wikilink")           |
+| 20  | [\#GetEciDeviceKey](#GetEciDeviceKey "wikilink")                         |
+| 21  | [\#GetEticketDeviceKey](#GetEticketDeviceKey "wikilink")                 |
+| 22  | GetSpeakerParameter                                                      |
+|     |                                                                          |
 
 Used for accessing data calibrated at the factory.
 
-## GetDeviceCert
+## GetEciDeviceCertificate
 
 Takes a type-0x16 output buffer with fixed size 0x180.
 
 Returns the device certificate (ECC signed). This is identical to 3DS
 DeviceCert/CTCert besides the strings. NIM loads the DeviceId from this.
 
-## GetETicketCert
+## GetEticketDeviceCertificate
 
 Takes a type-0x16 output buffer with fixed size 0x240.
 
@@ -62,7 +84,7 @@ programmed then it falls back to the normal SSL key (0x110 bytes).
 
 Used by SSL-sysmodule, see [here](SSL%20services.md "wikilink").
 
-## GetSslCert
+## GetSslCertificate
 
 Takes a type-0x16 output buffer with fixed size 0x804.
 
@@ -80,7 +102,7 @@ Returns the extended GameCard key (0x130 bytes) from
 [CAL0](Calibration#CAL0.md##CAL0 "wikilink"). If the extended key is not
 programmed then it falls back to the normal GameCard key (0x110 bytes).
 
-## GetGameCardCert
+## GetGameCardCertificate
 
 Takes a type-0x16 output buffer with fixed size 0x404.
 
@@ -88,14 +110,14 @@ Returns a
 [container](Settings%20services#setcal%20Container%20Structure.md##setcal_Container_Structure "wikilink")
 with the GameCard certificate.
 
-## GetDeviceKey
+## GetEciDeviceKey
 
 Returns the extended device ECC-B233 key (0x50 bytes) from
 [CAL0](Calibration#CAL0.md##CAL0 "wikilink"). If the extended key is not
 programmed then it falls back to the normal device ECC-B233 key (0x30
 bytes).
 
-## GetETicketKey
+## GetEticketDeviceKey
 
 Takes a type-0x16 output buffer with fixed size 0x244.
 
@@ -111,24 +133,149 @@ bytes).
 | 0x0    | 0x4          | Size (same size used for decryption if needed) |
 | 0x4    | {above size} | Actual data starts here.                       |
 
-This container is used for returning data with variable
-sizes.
+This container is used for returning data with variable sizes.
 
 # set:sys
 
-| Cmd | Name                                                                              |
-| --- | --------------------------------------------------------------------------------- |
-| 3   | [\#GetSystemVersion](#GetSystemVersion "wikilink")                                |
-| 37  | QuerySetting                                                                      |
-| 38  | [\#ReadSetting](#ReadSetting "wikilink")                                          |
-| 56  | [GetWirelessCertification](Flash%20Filesystem#PRODINFOF.md##PRODINFOF "wikilink") |
-| 62  | [\#GetDebugMode](#GetDebugMode "wikilink")                                        |
-| 68  | [\#GetSerialNumber](#GetSerialNumber "wikilink")                                  |
+This is
+"nn::settings::ISystemSettingsServer".
+
+| Cmd | Name                                                                                  |
+| --- | ------------------------------------------------------------------------------------- |
+| 0   | SetLanguageCode                                                                       |
+| 1   | SetNetworkSettings                                                                    |
+| 2   | GetNetworkSettings                                                                    |
+| 3   | [\#GetFirmwareVersion](#GetFirmwareVersion "wikilink")                                |
+| 4   | GetFirmwareVersion2                                                                   |
+| 7   | GetLockScreenFlag                                                                     |
+| 8   | SetLockScreenFlag                                                                     |
+| 9   | GetBacklightSettings                                                                  |
+| 10  | SetBacklightSettings                                                                  |
+| 11  | SetBluetoothDevicesSettings                                                           |
+| 12  | GetBluetoothDevicesSettings                                                           |
+| 13  | GetExternalSteadyClockSourceId                                                        |
+| 14  | SetExternalSteadyClockSourceId                                                        |
+| 15  | GetUserSystemClockContext                                                             |
+| 16  | SetUserSystemClockContext                                                             |
+| 17  | GetAccountSettings                                                                    |
+| 18  | SetAccountSettings                                                                    |
+| 19  | GetAudioVolume                                                                        |
+| 20  | SetAudioVolume                                                                        |
+| 21  | GetEulaVersions                                                                       |
+| 22  | SetEulaVersions                                                                       |
+| 23  | GetColorSetId                                                                         |
+| 24  | SetColorSetId                                                                         |
+| 25  | GetConsoleInformationUploadFlag                                                       |
+| 26  | SetConsoleInformationUploadFlag                                                       |
+| 27  | GetAutomaticApplicationDownloadFlag                                                   |
+| 28  | SetAutomaticApplicationDownloadFlag                                                   |
+| 29  | GetNotificationSettings                                                               |
+| 30  | SetNotificationSettings                                                               |
+| 31  | GetAccountNotificationSettings                                                        |
+| 32  | SetAccountNotificationSettings                                                        |
+| 35  | GetVibrationMasterVolume                                                              |
+| 36  | SetVibrationMasterVolume                                                              |
+| 37  | GetSettingsItemValueSize                                                              |
+| 38  | [\#GetSettingsItemValue](#GetSettingsItemValue "wikilink")                            |
+| 39  | GetTvSettings                                                                         |
+| 40  | SetTvSettings                                                                         |
+| 41  | GetEdid                                                                               |
+| 42  | SetEdid                                                                               |
+| 43  | GetAudioOutputMode                                                                    |
+| 44  | SetAudioOutputMode                                                                    |
+| 45  | IsForceMuteOnHeadphoneRemoved                                                         |
+| 46  | SetForceMuteOnHeadphoneRemoved                                                        |
+| 47  | GetQuestFlag                                                                          |
+| 48  | SetQuestFlag                                                                          |
+| 49  | GetDataDeletionSettings                                                               |
+| 50  | SetDataDeletionSettings                                                               |
+| 51  | GetInitialSystemAppletProgramId                                                       |
+| 52  | GetOverlayDispProgramId                                                               |
+| 53  | GetDeviceTimeZoneLocationName                                                         |
+| 54  | SetDeviceTimeZoneLocationName                                                         |
+| 55  | GetWirelessCertificationFileSize                                                      |
+| 56  | [GetWirelessCertificationFile](Flash%20Filesystem#PRODINFOF.md##PRODINFOF "wikilink") |
+| 57  | SetRegionCode                                                                         |
+| 58  | GetNetworkSystemClockContext                                                          |
+| 59  | SetNetworkSystemClockContext                                                          |
+| 60  | IsUserSystemClockAutomaticCorrectionEnabled                                           |
+| 61  | SetUserSystemClockAutomaticCorrectionEnabled                                          |
+| 62  | [\#GetDebugModeFlag](#GetDebugModeFlag "wikilink")                                    |
+| 63  | GetPrimaryAlbumStorage                                                                |
+| 64  | SetPrimaryAlbumStorage                                                                |
+| 65  | GetUsb30EnableFlag                                                                    |
+| 66  | SetUsb30EnableFlag                                                                    |
+| 67  | GetBatteryLot                                                                         |
+| 68  | [\#GetSerialNumber](#GetSerialNumber "wikilink")                                      |
+| 69  | GetNfcEnableFlag                                                                      |
+| 70  | SetNfcEnableFlag                                                                      |
+| 71  | GetSleepSettings                                                                      |
+| 72  | SetSleepSettings                                                                      |
+| 73  | GetWirelessLanEnableFlag                                                              |
+| 74  | SetWirelessLanEnableFlag                                                              |
+| 75  | GetInitialLaunchSettings                                                              |
+| 76  | SetInitialLaunchSettings                                                              |
+| 77  | GetDeviceNickName                                                                     |
+| 78  | SetDeviceNickName                                                                     |
+| 79  | GetProductModel                                                                       |
+| 80  | GetLdnChannel                                                                         |
+| 81  | SetLdnChannel                                                                         |
+| 82  | AcquireTelemetryDirtyFlagEventHandle                                                  |
+| 83  | GetTelemetryDirtyFlags                                                                |
+| 84  | GetPtmBatteryLot                                                                      |
+| 85  | SetPtmBatteryLot                                                                      |
+| 86  | GetPtmFuelGaugeParameter                                                              |
+| 87  | SetPtmFuelGaugeParameter                                                              |
+| 88  | GetBluetoothEnableFlag                                                                |
+| 89  | SetBluetoothEnableFlag                                                                |
+| 90  | GetMiiAuthorId                                                                        |
+| 91  | SetShutdownRtcValue                                                                   |
+| 92  | GetShutdownRtcValue                                                                   |
+| 93  | AcquireFatalDirtyFlagEventHandle                                                      |
+| 94  | GetFatalDirtyFlags                                                                    |
+| 95  | GetAutoUpdateEnableFlag                                                               |
+| 96  | SetAutoUpdateEnableFlag                                                               |
+| 97  | GetNxControllerSettings                                                               |
+| 98  | SetNxControllerSettings                                                               |
+| 99  | GetBatteryPercentageFlag                                                              |
+| 100 | SetBatteryPercentageFlag                                                              |
+| 101 | GetExternalRtcResetFlag                                                               |
+| 102 | SetExternalRtcResetFlag                                                               |
+| 103 | GetUsbFullKeyEnableFlag                                                               |
+| 104 | SetUsbFullKeyEnableFlag                                                               |
+| 105 | SetExternalSteadyClockInternalOffset                                                  |
+| 106 | GetExternalSteadyClockInternalOffset                                                  |
+| 107 | GetBacklightSettingsEx                                                                |
+| 108 | SetBacklightSettingsEx                                                                |
+| 109 | GetHeadphoneVolumeWarningCount                                                        |
+| 110 | SetHeadphoneVolumeWarningCount                                                        |
+| 111 | GetBluetoothAfhEnableFlag                                                             |
+| 112 | SetBluetoothAfhEnableFlag                                                             |
+| 113 | GetBluetoothBoostEnableFlag                                                           |
+| 114 | SetBluetoothBoostEnableFlag                                                           |
+| 115 | GetInRepairProcessEnableFlag                                                          |
+| 116 | SetInRepairProcessEnableFlag                                                          |
+| 117 | GetHeadphoneVolumeUpdateFlag                                                          |
+| 118 | SetHeadphoneVolumeUpdateFlag                                                          |
+| 119 | NeedsToUpdateHeadphoneVolume                                                          |
+| 120 | GetPushNotificationActivityModeOnSleep                                                |
+| 121 | SetPushNotificationActivityModeOnSleep                                                |
 
 Official user-processes get a new service session handle each time a
 set:sys cmd is used, with the session being closed aftewards.
 
-## ReadSetting
+## GetFirmwareVersion
+
+Takes a type-0x1A output buffer. User-processes use hard-coded size
+0x100.
+
+If needed, reads the content of the
+[System\_Version\_Title](System%20Version%20Title.md "wikilink") "/file"
+into state. This is only done once.
+
+Then the above 0x100-byte data is copied to the output buffer.
+
+## GetSettingsItemValue
 
 Takes two type-0x19 input buffers and a type-0x6 output buffer. Returns
 an output u64 for the actual size written to the outbuf.
@@ -141,18 +288,7 @@ to output(see above).
 If loading from main config fails, it will also attempt to load config
 from various state if the input strings match hard-coded strings.
 
-## GetSystemVersion
-
-Takes a type-0x1A output buffer. User-processes use hard-coded size
-0x100.
-
-If needed, reads the content of the
-[System\_Version\_Title](System%20Version%20Title.md "wikilink") "/file"
-into state. This is only done once.
-
-Then the above 0x100-byte data is copied to the output buffer.
-
-## GetDebugMode
+## GetDebugModeFlag
 
 Returns an output u8.
 
