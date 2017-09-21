@@ -79,7 +79,7 @@ output u64.
 ## OpenDisplay
 
 Takes a [\#DisplayName](#DisplayName "wikilink") as input. Returns an
-output u64, the Display-handle.
+output u64, the DisplayId.
 
 To open the default display, input string "Default" can be used.
 
@@ -92,7 +92,15 @@ OpenDisplay with the default string instead.
 
 ## CloseDisplay
 
-Takes an input u64 Display-handle.
+Takes an input u64, DisplayId.
+
+## SetDisplayEnabled
+
+Takes an input u32 boolean, and an u64(DisplayId?).
+
+## GetDisplayResolution
+
+Takes an input u64 DisplayId and returns two output u64s.
 
 ## IHOSBinderDriver
 
