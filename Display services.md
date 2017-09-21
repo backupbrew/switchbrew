@@ -106,9 +106,9 @@ Takes an input u64 DisplayId and returns two output u64s.
 
 Takes a PID-descriptor, an type-0x6 buffer, a
 [\#DisplayName](#DisplayName "wikilink")(which was previously used with
-[\#OpenDisplay](#OpenDisplay "wikilink")), and two u64s(last u64 is
-[AppletResourceUserId](AM%20services.md "wikilink")). Returns an output
-u64.
+[\#OpenDisplay](#OpenDisplay "wikilink")), an u64 ExternalLayerId, and
+an u64 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an
+output u64.
 
 ## CloseLayer
 
