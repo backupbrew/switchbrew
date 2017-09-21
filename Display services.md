@@ -70,6 +70,11 @@ This is "nn::visrv::sf::ISystemRootService".
 | 5203 | GetDisplayVsyncEventForDebug            |                                                                            |
 |      |                                         |                                                                            |
 
+## ListDisplays
+
+Takes a type-0x6 output buffer containing the 0x60-byte output entries.
+Returns an output u64.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |

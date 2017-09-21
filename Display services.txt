@@ -72,7 +72,7 @@ This is "nn::visrv::sf::ISystemRootService".
 |-
 | 103 || GetIndirectDisplayTransactionService || Returns an [[#IHOSBinderDriver]].
 |-
-| 1000 || ListDisplays ||
+| 1000 || ListDisplays || 
 |-
 | 1010 || OpenDisplay ||
 |-
@@ -105,6 +105,9 @@ This is "nn::visrv::sf::ISystemRootService".
 | 5203 || GetDisplayVsyncEventForDebug ||
 |-
 |}
+
+== ListDisplays ==
+Takes a type-0x6 output buffer containing the 0x60-byte output entries. Returns an output u64.
 
 == IHOSBinderDriver ==
 {| class="wikitable" border="1"
