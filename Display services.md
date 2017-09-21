@@ -54,7 +54,7 @@ This is "nn::visrv::sf::ISystemRootService".
 | 103  | GetIndirectDisplayTransactionService    | Returns an [\#IHOSBinderDriver](#IHOSBinderDriver "wikilink").             |
 | 1000 | ListDisplays                            |                                                                            |
 | 1010 | OpenDisplay                             |                                                                            |
-| 1011 | OpenDefaultDisplay                      | Returns an output u64.                                                     |
+| 1011 | OpenDefaultDisplay                      |                                                                            |
 | 1020 | CloseDisplay                            |                                                                            |
 | 1101 | SetDisplayEnabled                       |                                                                            |
 | 1102 | GetDisplayResolution                    |                                                                            |
@@ -81,6 +81,17 @@ Takes 0x40-byte of input, this is a NUL-terminated string. Returns an
 output u64, the Display-handle.
 
 To open the default display, input string "Default" can be used.
+
+## OpenDefaultDisplay
+
+Returns an output u64.
+
+Probably not (?) used by newer official user-processes, since those use
+OpenDisplay with the default string instead.
+
+## CloseDisplay
+
+Takes an input u64 Display-handle.
 
 ## IHOSBinderDriver
 

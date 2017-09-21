@@ -76,7 +76,7 @@ This is "nn::visrv::sf::ISystemRootService".
 |-
 | 1010 || OpenDisplay ||
 |-
-| 1011 || OpenDefaultDisplay || Returns an output u64.
+| 1011 || OpenDefaultDisplay || 
 |-
 | 1020 || CloseDisplay ||
 |-
@@ -113,6 +113,14 @@ Takes a type-0x6 output buffer containing the array of DisplayInfo output entrie
 Takes 0x40-byte of input, this is a NUL-terminated string. Returns an output u64, the Display-handle.
 
 To open the default display, input string "Default" can be used.
+
+== OpenDefaultDisplay ==
+Returns an output u64.
+
+Probably not (?) used by newer official user-processes, since those use OpenDisplay with the default string instead.
+
+== CloseDisplay ==
+Takes an input u64 Display-handle.
 
 == IHOSBinderDriver ==
 {| class="wikitable" border="1"
