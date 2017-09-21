@@ -112,6 +112,14 @@ output u64.
 
 Takes an input u64.
 
+## CreateStrayLayer
+
+Takes a type-0x6 buffer, an u32, and an u64. Returns two output u64s.
+
+## DestroyStrayLayer
+
+Takes an input u64.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |
