@@ -102,6 +102,12 @@ Takes an input u32 boolean, and an u64(DisplayId?).
 
 Takes an input u64 DisplayId and returns two output u64s.
 
+## OpenLayer
+
+Takes a PID-descriptor, an type-0x6 buffer, a
+[\#DisplayName](#DisplayName "wikilink"), and two u64s. Returns an
+output u64.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |
