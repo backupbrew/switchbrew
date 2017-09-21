@@ -108,6 +108,10 @@ Takes a PID-descriptor, an type-0x6 buffer, a
 [\#DisplayName](#DisplayName "wikilink"), and two u64s. Returns an
 output u64.
 
+## CloseLayer
+
+Takes an input u64.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |

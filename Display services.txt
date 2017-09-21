@@ -131,6 +131,9 @@ Takes an input u64 DisplayId and returns two output u64s.
 == OpenLayer ==
 Takes a PID-descriptor, an type-0x6 buffer, a [[#DisplayName]], and two u64s. Returns an output u64.
 
+== CloseLayer ==
+Takes an input u64.
+
 == IHOSBinderDriver ==
 {| class="wikitable" border="1"
 |-
