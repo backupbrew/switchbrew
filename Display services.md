@@ -72,8 +72,8 @@ This is "nn::visrv::sf::ISystemRootService".
 
 ## ListDisplays
 
-Takes a type-0x6 output buffer containing the 0x60-byte output entries.
-Returns an output u64.
+Takes a type-0x6 output buffer containing the array of DisplayInfo
+output entries. Returns an output u64.
 
 ## IHOSBinderDriver
 
@@ -149,5 +149,9 @@ Returns an output u64.
 | 7000 | SetContentVisibility               |
 | 8000 | SetConductorLayer                  |
 | 8100 | SetIndirectProducerFlipOffset      |
+
+# DisplayInfo
+
+This is a 0x60-byte structure.
 
 [Category:Services](Category:Services "wikilink")
