@@ -105,8 +105,9 @@ Takes an input u64 DisplayId and returns two output u64s.
 ## OpenLayer
 
 Takes a PID-descriptor, an type-0x6 buffer, a
-[\#DisplayName](#DisplayName "wikilink"), and two u64s. Returns an
-output u64.
+[\#DisplayName](#DisplayName "wikilink"), and two u64s(last u64 is
+"[nn::applet::AppletResourceUserId](AM%20services.md "wikilink")").
+Returns an output u64.
 
 ## CloseLayer
 
@@ -126,8 +127,9 @@ Takes an input u32("ScalingMode") and u64.
 
 ## GetIndirectLayerImageMap
 
-Takes a PID-descriptor, an type-0x46 buffer, and four u64s. Returns two
-output u64s.
+Takes a PID-descriptor, an type-0x46 buffer, and four u64s(last u64 is
+"[nn::applet::AppletResourceUserId](AM%20services.md "wikilink")").
+Returns two output u64s.
 
 ## IHOSBinderDriver
 
