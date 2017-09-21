@@ -110,13 +110,23 @@ Takes a PID-descriptor, an type-0x6 buffer, a
 an u64 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an
 output u64.
 
+Official user-processes use an ExternalLayerId stored in a global state
+field if non-zero, otherwise:
+
+  - When AppletResourceUserId==0,
+    [\#CreateStrayLayer](#CreateStrayLayer "wikilink") is used and the
+    output from that is used for ExternalLayerId.
+  - When AppletResourceUserId\!=0, {unknown cmd} is used and the output
+    from that is used for ExternalLayerId.
+
 ## CloseLayer
 
 Takes an input u64.
 
 ## CreateStrayLayer
 
-Takes a type-0x6 buffer, an u32, and an u64. Returns two output u64s.
+Takes a type-0x6 buffer, an u32, and an u64. Returns two output u64s,
+first u64 is an ExternalLayerId.
 
 ## DestroyStrayLayer
 
