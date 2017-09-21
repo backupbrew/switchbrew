@@ -558,6 +558,9 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 | 12 || RejectToChangeIntoBackground ||
 |}
 
+=== GetAppletResourceUserId ===
+Returns an output u64: [[#AppletResourceUserId]].
+
 == IAudioController ==
 {| class="wikitable" border="1"
 |-
@@ -832,5 +835,8 @@ This indicates the type of web-applet.
 | 7
 | LobbyApplet
 |}
+
+=AppletResourceUserId=
+This u64 is officially called "nn::applet::AppletResourceUserId". Used by a number of non-AM services.
 
 [[Category:Services]]

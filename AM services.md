@@ -328,6 +328,11 @@ This is
 | 11  | ReleaseForegroundRights      |                            |
 | 12  | RejectToChangeIntoBackground |                            |
 
+### GetAppletResourceUserId
+
+Returns an output u64:
+[\#AppletResourceUserId](#AppletResourceUserId "wikilink").
+
 ## IAudioController
 
 | Cmd | Name                                 |
@@ -472,5 +477,10 @@ This indicates the type of web-applet.
 | 5              | WebApplet         |
 | 6              | WifiWebAuthApplet |
 | 7              | LobbyApplet       |
+
+# AppletResourceUserId
+
+This u64 is officially called "nn::applet::AppletResourceUserId". Used
+by a number of non-AM services.
 
 [Category:Services](Category:Services "wikilink")
