@@ -106,8 +106,8 @@ Takes an input u64 DisplayId and returns two output u64s.
 
 Takes a PID-descriptor, an type-0x6 buffer, a
 [\#DisplayName](#DisplayName "wikilink"), and two u64s(last u64 is
-"[nn::applet::AppletResourceUserId](AM%20services.md "wikilink")").
-Returns an output u64.
+[AppletResourceUserId](AM%20services.md "wikilink")). Returns an output
+u64.
 
 ## CloseLayer
 
@@ -128,16 +128,14 @@ Takes an input u32("ScalingMode") and u64.
 ## GetIndirectLayerImageMap
 
 Takes a PID-descriptor, an type-0x46 buffer, and four u64s(last u64 is
-"[nn::applet::AppletResourceUserId](AM%20services.md "wikilink")").
-Returns two output u64s.
+[AppletResourceUserId](AM%20services.md "wikilink")). Returns two output
+u64s.
 
 ## GetIndirectLayerImageCropMap
 
 Takes a PID-descriptor, an type-0x46 buffer, four floats, four u64s(last
-u64 is
-"[nn::applet::AppletResourceUserId](AM%20services.md "wikilink")").
-Returns two output u64s. The floats are stored immediately after each
-other(32bits).
+u64 is [AppletResourceUserId](AM%20services.md "wikilink")). Returns two
+output u64s. The floats are stored immediately after each other(32bits).
 
 ## GetIndirectLayerImageRequiredMemoryInfo
 
