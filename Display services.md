@@ -120,6 +120,10 @@ Takes a type-0x6 buffer, an u32, and an u64. Returns two output u64s.
 
 Takes an input u64.
 
+## SetLayerScalingMode
+
+Takes an input u32("ScalingMode") and u64.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |
