@@ -124,6 +124,11 @@ Takes an input u64.
 
 Takes an input u32("ScalingMode") and u64.
 
+## GetIndirectLayerImageMap
+
+Takes a PID-descriptor, an type-0x46 buffer, and four u64s. Returns two
+output u64s.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |

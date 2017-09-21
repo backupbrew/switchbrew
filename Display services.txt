@@ -143,6 +143,9 @@ Takes an input u64.
 == SetLayerScalingMode ==
 Takes an input u32("ScalingMode") and u64.
 
+== GetIndirectLayerImageMap ==
+Takes a PID-descriptor, an type-0x46 buffer, and four u64s. Returns two output u64s.
+
 == IHOSBinderDriver ==
 {| class="wikitable" border="1"
 |-
