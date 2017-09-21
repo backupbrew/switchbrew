@@ -28,11 +28,11 @@ This is
 This is
 "nn::visrv::sf::IManagerRootService".
 
-| Cmd | Name                                   | Notes                                                                              |
-| --- | -------------------------------------- | ---------------------------------------------------------------------------------- |
-| 2   | GetDisplayService                      | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). |
-| 3   | GetDisplayServiceWithProxyNameExchange | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). |
-|     |                                        |                                                                                    |
+| Cmd | Name                                   | Notes                                                                                                          |
+| --- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 2   | GetDisplayService                      | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").                             |
+| 3   | GetDisplayServiceWithProxyNameExchange | Takes an input u64 and u32. Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). |
+|     |                                        |                                                                                                                |
 
 # vi:s
 

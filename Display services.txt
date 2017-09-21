@@ -42,7 +42,7 @@ This is "nn::visrv::sf::IManagerRootService".
 |-
 | 2 || GetDisplayService || Returns an [[#IApplicationDisplayService]].
 |-
-| 3 || GetDisplayServiceWithProxyNameExchange || Returns an [[#IApplicationDisplayService]].
+| 3 || GetDisplayServiceWithProxyNameExchange || Takes an input u64 and u32. Returns an [[#IApplicationDisplayService]].
 |-
 |}
 
