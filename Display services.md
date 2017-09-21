@@ -114,10 +114,10 @@ Official user-processes use an ExternalLayerId stored in a global state
 field if non-zero, otherwise:
 
   - When AppletResourceUserId==0,
-    [\#CreateStrayLayer](#CreateStrayLayer "wikilink") is used and the
-    output from that is used for ExternalLayerId.
+    [\#CreateStrayLayer](#CreateStrayLayer "wikilink") is used instead
+    of the OpenLayer cmd.
   - When AppletResourceUserId\!=0, {unknown cmd} is used and the output
-    from that is used for ExternalLayerId.
+    from that is used for ExternalLayerId with the OpenLayer cmd.
 
 ## CloseLayer
 

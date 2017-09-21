@@ -132,8 +132,8 @@ Takes an input u64 DisplayId and returns two output u64s.
 Takes a PID-descriptor, an type-0x6 buffer, a [[#DisplayName]](which was previously used with [[#OpenDisplay]]), an u64 ExternalLayerId, and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64.
 
 Official user-processes use an ExternalLayerId stored in a global state field if non-zero, otherwise:
-* When AppletResourceUserId==0, [[#CreateStrayLayer]] is used and the output from that is used for ExternalLayerId.
-* When AppletResourceUserId!=0, {unknown cmd} is used and the output from that is used for ExternalLayerId.
+* When AppletResourceUserId==0, [[#CreateStrayLayer]] is used instead of the OpenLayer cmd.
+* When AppletResourceUserId!=0, {unknown cmd} is used and the output from that is used for ExternalLayerId with the OpenLayer cmd.
 
 == CloseLayer ==
 Takes an input u64.
