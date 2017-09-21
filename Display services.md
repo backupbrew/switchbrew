@@ -72,12 +72,13 @@ This is "nn::visrv::sf::ISystemRootService".
 
 ## ListDisplays
 
-Takes a type-0x6 output buffer containing the array of DisplayInfo
-output entries. Returns an output u64.
+Takes a type-0x6 output buffer containing the array of
+[\#DisplayInfo](#DisplayInfo "wikilink") output entries. Returns an
+output u64.
 
 ## OpenDisplay
 
-Takes 0x40-byte of input, this is a NUL-terminated string. Returns an
+Takes a [\#DisplayName](#DisplayName "wikilink") as input. Returns an
 output u64, the Display-handle.
 
 To open the default display, input string "Default" can be used.
@@ -171,5 +172,9 @@ Takes an input u64 Display-handle.
 # DisplayInfo
 
 This is a 0x60-byte structure.
+
+# DisplayName
+
+This is a 0x40-byte block: a NUL-terminated string.
 
 [Category:Services](Category:Services "wikilink")
