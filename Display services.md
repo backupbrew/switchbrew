@@ -131,6 +131,14 @@ Takes a PID-descriptor, an type-0x46 buffer, and four u64s(last u64 is
 "[nn::applet::AppletResourceUserId](AM%20services.md "wikilink")").
 Returns two output u64s.
 
+## GetIndirectLayerImageCropMap
+
+Takes a PID-descriptor, an type-0x46 buffer, four floats, four u64s(last
+u64 is
+"[nn::applet::AppletResourceUserId](AM%20services.md "wikilink")").
+Returns two output u64s. The floats are stored immediately after each
+other(32bits).
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |
