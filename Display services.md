@@ -105,7 +105,8 @@ Takes an input u64 DisplayId and returns two output u64s.
 ## OpenLayer
 
 Takes a PID-descriptor, an type-0x6 buffer, a
-[\#DisplayName](#DisplayName "wikilink"), and two u64s(last u64 is
+[\#DisplayName](#DisplayName "wikilink")(which was previously used with
+[\#OpenDisplay](#OpenDisplay "wikilink")), and two u64s(last u64 is
 [AppletResourceUserId](AM%20services.md "wikilink")). Returns an output
 u64.
 

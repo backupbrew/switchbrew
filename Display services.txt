@@ -129,7 +129,7 @@ Takes an input u32 boolean, and an u64(DisplayId?).
 Takes an input u64 DisplayId and returns two output u64s.
 
 == OpenLayer ==
-Takes a PID-descriptor, an type-0x6 buffer, a [[#DisplayName]], and two u64s(last u64 is [[AM_services|AppletResourceUserId]]). Returns an output u64.
+Takes a PID-descriptor, an type-0x6 buffer, a [[#DisplayName]](which was previously used with [[#OpenDisplay]]), and two u64s(last u64 is [[AM_services|AppletResourceUserId]]). Returns an output u64.
 
 == CloseLayer ==
 Takes an input u64.
