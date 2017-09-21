@@ -80,6 +80,8 @@ output entries. Returns an output u64.
 Takes 0x40-byte of input, this is a NUL-terminated string. Returns an
 output u64, the Display-handle.
 
+To open the default display, input string "Default" can be used.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |
