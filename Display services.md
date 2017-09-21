@@ -54,7 +54,7 @@ This is "nn::visrv::sf::ISystemRootService".
 | 103  | GetIndirectDisplayTransactionService    | Returns an [\#IHOSBinderDriver](#IHOSBinderDriver "wikilink").             |
 | 1000 | ListDisplays                            |                                                                            |
 | 1010 | OpenDisplay                             |                                                                            |
-| 1011 | OpenDefaultDisplay                      |                                                                            |
+| 1011 | OpenDefaultDisplay                      | Returns an output u64.                                                     |
 | 1020 | CloseDisplay                            |                                                                            |
 | 1101 | SetDisplayEnabled                       |                                                                            |
 | 1102 | GetDisplayResolution                    |                                                                            |

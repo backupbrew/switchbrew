@@ -76,7 +76,7 @@ This is "nn::visrv::sf::ISystemRootService".
 |-
 | 1010 || OpenDisplay ||
 |-
-| 1011 || OpenDefaultDisplay ||
+| 1011 || OpenDefaultDisplay || Returns an output u64.
 |-
 | 1020 || CloseDisplay ||
 |-
