@@ -139,6 +139,10 @@ u64 is
 Returns two output u64s. The floats are stored immediately after each
 other(32bits).
 
+## GetIndirectLayerImageRequiredMemoryInfo
+
+Takes two input u64s. Returns two output u64s.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |

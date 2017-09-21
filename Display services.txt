@@ -149,6 +149,9 @@ Takes a PID-descriptor, an type-0x46 buffer, and four u64s(last u64 is "[[AM_ser
 == GetIndirectLayerImageCropMap ==
 Takes a PID-descriptor, an type-0x46 buffer, four floats, four u64s(last u64 is "[[AM_services|nn::applet::AppletResourceUserId]]"). Returns two output u64s. The floats are stored immediately after each other(32bits).
 
+== GetIndirectLayerImageRequiredMemoryInfo ==
+Takes two input u64s. Returns two output u64s.
+
 == IHOSBinderDriver ==
 {| class="wikitable" border="1"
 |-
