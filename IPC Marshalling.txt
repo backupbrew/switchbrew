@@ -12,7 +12,9 @@ This is an array of u32's, usually located in [[Thread Local Storage]].
 |-
 | 0 || 27-24 || Number of buf B descriptors (each: 3 words).
 |-
-| 0 || 31-28 || Number of buf W desciptors (each: 3 words), never observed.
+| 0 || 30(?)-28 || Number of buf W desciptors (each: 3 words), never observed.
+|-
+| 0 || 31 || ?
 |-
 | 1 || 9-0 || Size of raw data section in u32s.
 |-
