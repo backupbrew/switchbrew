@@ -152,6 +152,12 @@ Takes a PID-descriptor, an type-0x46 buffer, four floats, four u64s(last u64 is 
 == GetIndirectLayerImageRequiredMemoryInfo ==
 Takes two input u64s. Returns two output u64s.
 
+== GetDisplayVsyncEvent ==
+Takes an input u64 DisplayId and returns a handle.
+
+== GetDisplayVsyncEventForDebug ==
+Takes an input u64 DisplayId and returns a handle.
+
 == IHOSBinderDriver ==
 {| class="wikitable" border="1"
 |-

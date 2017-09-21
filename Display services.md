@@ -143,6 +143,14 @@ other(32bits).
 
 Takes two input u64s. Returns two output u64s.
 
+## GetDisplayVsyncEvent
+
+Takes an input u64 DisplayId and returns a handle.
+
+## GetDisplayVsyncEventForDebug
+
+Takes an input u64 DisplayId and returns a handle.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |
