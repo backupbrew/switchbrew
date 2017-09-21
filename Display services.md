@@ -75,6 +75,11 @@ This is "nn::visrv::sf::ISystemRootService".
 Takes a type-0x6 output buffer containing the array of DisplayInfo
 output entries. Returns an output u64.
 
+## OpenDisplay
+
+Takes 0x40-byte of input, this is a NUL-terminated string. Returns an
+output u64, the Display-handle.
+
 ## IHOSBinderDriver
 
 | Cmd | Name               |
