@@ -108,7 +108,7 @@ Takes a PID-descriptor, an type-0x6 buffer, a
 [\#DisplayName](#DisplayName "wikilink")(which was previously used with
 [\#OpenDisplay](#OpenDisplay "wikilink")), an u64 ExternalLayerId, and
 an u64 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an
-output u64.
+output u64 LayerHandle.
 
 Official user-processes use an ExternalLayerId stored in a global state
 field if non-zero, otherwise:
@@ -125,8 +125,8 @@ Takes an input u64.
 
 ## CreateStrayLayer
 
-Takes a type-0x6 buffer, an u32, and an u64. Returns two output u64s,
-first u64 is an ExternalLayerId.
+Takes a type-0x6 buffer, an u32, and an u64. Returns two output u64s:
+ExternalLayerId and LayerHandle.
 
 ## DestroyStrayLayer
 

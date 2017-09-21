@@ -129,7 +129,7 @@ Takes an input u32 boolean, and an u64(DisplayId?).
 Takes an input u64 DisplayId and returns two output u64s.
 
 == OpenLayer ==
-Takes a PID-descriptor, an type-0x6 buffer, a [[#DisplayName]](which was previously used with [[#OpenDisplay]]), an u64 ExternalLayerId, and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64.
+Takes a PID-descriptor, an type-0x6 buffer, a [[#DisplayName]](which was previously used with [[#OpenDisplay]]), an u64 ExternalLayerId, and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64 LayerHandle.
 
 Official user-processes use an ExternalLayerId stored in a global state field if non-zero, otherwise:
 * When AppletResourceUserId==0, [[#CreateStrayLayer]] is used instead of the OpenLayer cmd.
@@ -139,7 +139,7 @@ Official user-processes use an ExternalLayerId stored in a global state field if
 Takes an input u64.
 
 == CreateStrayLayer ==
-Takes a type-0x6 buffer, an u32, and an u64. Returns two output u64s, first u64 is an ExternalLayerId.
+Takes a type-0x6 buffer, an u32, and an u64. Returns two output u64s: ExternalLayerId and LayerHandle.
 
 == DestroyStrayLayer ==
 Takes an input u64.
