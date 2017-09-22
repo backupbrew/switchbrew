@@ -29,7 +29,7 @@ This is "nn::visrv::sf::IApplicationRootService".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetDisplayService || Returns an [[#IApplicationDisplayService]].
+| 0 || GetDisplayService || Returns an [[#IApplicationDisplayService]]. Takes an input u64(?), can be zero.
 |-
 |}
 

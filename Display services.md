@@ -18,10 +18,10 @@ NVIDIA multimedia (NvMM) platform service.
 This is
 "nn::visrv::sf::IApplicationRootService".
 
-| Cmd | Name              | Notes                                                                              |
-| --- | ----------------- | ---------------------------------------------------------------------------------- |
-| 0   | GetDisplayService | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). |
-|     |                   |                                                                                    |
+| Cmd | Name              | Notes                                                                                                                  |
+| --- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 0   | GetDisplayService | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). Takes an input u64(?), can be zero. |
+|     |                   |                                                                                                                        |
 
 # vi:m
 
