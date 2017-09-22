@@ -318,6 +318,12 @@ This is
 | 66  | GetCurrentIlluminance                       |
 | 67  | IsIlluminanceAvailable                      |
 
+### CreateManagedDisplayLayer
+
+Returns an output u64 LayerId which is then used by the user-process
+with
+[Display\_services\#OpenLayer](Display%20services#OpenLayer.md##OpenLayer "wikilink").
+
 ## IWindowController
 
 | Cmd | Name                         | Notes                      |

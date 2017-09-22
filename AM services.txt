@@ -542,6 +542,9 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 | 67 || IsIlluminanceAvailable
 |}
 
+===CreateManagedDisplayLayer===
+Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].
+
 == IWindowController ==
 {| class="wikitable" border="1"
 |-
