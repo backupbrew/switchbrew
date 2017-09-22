@@ -355,21 +355,21 @@ Returns an id for a nvmap object. Identical to Linux driver.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0x80040212 || Out || 4 || ||
+| 0x80040212 || Out || 4 || TEGRA_DC_EXT_CONTROL_GET_NUM_OUTPUTS ||
 |-
-| 0xC0140213 || Inout || 20 || ||
+| 0xC0140213 || Inout || 20 || TEGRA_DC_EXT_CONTROL_GET_OUTPUT_PROPERTIES ||
 |-
-| 0xC1100214 || Inout || 272 || ||
+| 0xC1100214 || Inout || 272 || TEGRA_DC_EXT_CONTROL_GET_OUTPUT_EDID ||
 |-
-| 0xC0040216 || Inout || 4 || ||
+| 0xC0040216 || Inout || 4 || TEGRA_DC_EXT_CONTROL_SET_EVENT0 ||
 |-
-| 0xC0040217 || Inout || 4 || ||
+| 0xC0040217 || Inout || 4 || TEGRA_DC_EXT_CONTROL_SET_EVENT1 ||
 |-
-| 0xC0100218 || Inout || 16 || ||
+| 0xC0100218 || Inout || 16 || TEGRA_DC_EXT_CONTROL_SET_EVENT2 ||
 |-
-| 0xC0100219 || Inout || 16 || ||
+| 0xC0100219 || Inout || 16 || TEGRA_DC_EXT_CONTROL_SET_EVENT3 ||
 |-
-| 0xC0040220 || Inout || 4 || ||
+| 0xC0040220 || Inout || 4 || TEGRA_DC_EXT_CONTROL_SET_EVENT4 ||
 |-
 |}
 
