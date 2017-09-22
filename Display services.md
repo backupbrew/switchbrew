@@ -1,3 +1,7 @@
+The only image data contained in this sysmodule is basically a saved
+display framebuffer, no image data for actively-used
+layers/framebuffers.
+
 # mm:u
 
 NVIDIA multimedia (NvMM) platform service.
