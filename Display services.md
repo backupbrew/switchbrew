@@ -109,7 +109,7 @@ Takes a PID-descriptor, a type-0x6 buffer for the output
 [\#DisplayName](#DisplayName "wikilink")(which was previously used with
 [\#OpenDisplay](#OpenDisplay "wikilink")), an u64 ExternalLayerId, and
 an u64 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an
-output u64 LayerHandle.
+output u64 NativeWindow\_Size.
 
 Official user-processes use an ExternalLayerId stored in a global state
 field if non-zero, otherwise:
@@ -128,7 +128,7 @@ Takes an input u64.
 
 Takes a type-0x6 buffer for the output
 [\#NativeWindow](#NativeWindow "wikilink"), an u32, and an u64. Returns
-two output u64s: ExternalLayerId and LayerHandle.
+two output u64s: ExternalLayerId and NativeWindow\_Size.
 
 ## DestroyStrayLayer
 
@@ -247,7 +247,7 @@ This is a 0x40-byte block: a NUL-terminated string.
 
 # NativeWindow
 
-Size of this buffer is 0x100-bytes(outbuf size used by official
+Max size of this buffer is 0x100-bytes(outbuf size used by official
 user-processes). Parsed("Deserialize...") by a function called by the
 code described under [\#OpenLayer](#OpenLayer "wikilink"), which
 executes code with Android symbols.
