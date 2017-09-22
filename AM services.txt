@@ -25,6 +25,8 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 
 All of these commands take the same input: handle-descriptor for PID + 1 copy-handle, and an u64.
 
+This service seems to be used by all system non-regular-applications.
+
 == ISystemAppletProxy ==
 {| class="wikitable" border="1"
 |-
@@ -690,6 +692,8 @@ This is "nn::am::service::IApplicationProxyService".
 | 0 || OpenApplicationProxy || Returns an [[#IApplicationProxy]]. See [[#appletAE]].
 |-
 |}
+
+This seems to be used by all(?) regular-applications, even [[flog]].
 
 = idle:sys =
 

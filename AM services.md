@@ -22,8 +22,10 @@ This is
 |     |                                          |                                                                          |
 
 All of these commands take the same input: handle-descriptor for PID + 1
-copy-handle, and an
-u64.
+copy-handle, and an u64.
+
+This service seems to be used by all system
+non-regular-applications.
 
 ## ISystemAppletProxy
 
@@ -419,6 +421,9 @@ This is
 | --- | -------------------- | -------------------------------------------------------------------------------------------------------- |
 | 0   | OpenApplicationProxy | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink"). See [\#appletAE](#appletAE "wikilink"). |
 |     |                      |                                                                                                          |
+
+This seems to be used by all(?) regular-applications, even
+[flog](Flog.md "wikilink").
 
 # idle:sys
 
