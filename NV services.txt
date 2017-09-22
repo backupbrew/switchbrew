@@ -1,6 +1,6 @@
 The Switch makes use of a customized NVIDIA driver.
 
-= nvdrv:a =
+= nvdrv, nvdrv:a, nvdrv:s, nvdrv:t =
 Main NVIDIA driver service.
 
 {| class="wikitable" border="1"
@@ -19,13 +19,13 @@ Main NVIDIA driver service.
 |-
 | 5 || MapSharedMem
 |-
-| 6 || ?
+| 6 || GetStatus
 |-
-| 7 || ?
+| 7 || ForceSetClientPID
 |-
-| 8 || BindDisplayService
+| 8 || SetClientPID
 |-
-| 9 || ?
+| 9 || DumpGraphicsMemoryInfo
 |}
 
 == Open ==
