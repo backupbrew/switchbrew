@@ -107,33 +107,35 @@ Takes an input u64 DisplayId and returns two output u64s.
 Takes a PID-descriptor, a type-0x6 buffer for the output
 [\#NativeWindow](#NativeWindow "wikilink"), a
 [\#DisplayName](#DisplayName "wikilink")(which was previously used with
-[\#OpenDisplay](#OpenDisplay "wikilink")), an u64 ExternalLayerId, and
-an u64 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an
-output u64 NativeWindow\_Size.
+[\#OpenDisplay](#OpenDisplay "wikilink")), an u64 LayerId, and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"). Returns an output
+u64 NativeWindow\_Size.
 
-Official user-processes use an ExternalLayerId stored in a global state
-field if non-zero, otherwise:
+Official user-processes use a LayerId stored in a global state
+field("...ExternalLayerId") if non-zero, otherwise:
 
   - When AppletResourceUserId==0,
     [\#CreateStrayLayer](#CreateStrayLayer "wikilink") is used instead
     of the OpenLayer cmd.
   - When AppletResourceUserId\!=0, {unknown cmd} is used and the output
-    from that is used for ExternalLayerId with the OpenLayer cmd.
+    from that is used for LayerId with the OpenLayer cmd.
 
 ## CloseLayer
 
-Takes an input u64.
+Takes an input u64: LayerId which was used with
+[\#OpenLayer](#OpenLayer "wikilink").
 
 ## CreateStrayLayer
 
 Takes a type-0x6 buffer for the output
 [\#NativeWindow](#NativeWindow "wikilink"), an u32(LayerFlags bitmask),
-and an u64 DisplayId. Returns two output u64s: ExternalLayerId and
+and an u64 DisplayId. Returns two output u64s: LayerId and
 NativeWindow\_Size.
 
 ## DestroyStrayLayer
 
-Takes an input u64.
+Takes an input u64: LayerId from
+[\#CreateStrayLayer](#CreateStrayLayer "wikilink").
 
 ## SetLayerScalingMode
 

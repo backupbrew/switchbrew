@@ -129,20 +129,20 @@ Takes an input u32 boolean, and an u64(DisplayId?).
 Takes an input u64 DisplayId and returns two output u64s.
 
 == OpenLayer ==
-Takes a PID-descriptor, a type-0x6 buffer for the output [[#NativeWindow]], a [[#DisplayName]](which was previously used with [[#OpenDisplay]]), an u64 ExternalLayerId, and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64 NativeWindow_Size.
+Takes a PID-descriptor, a type-0x6 buffer for the output [[#NativeWindow]], a [[#DisplayName]](which was previously used with [[#OpenDisplay]]), an u64 LayerId, and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64 NativeWindow_Size.
 
-Official user-processes use an ExternalLayerId stored in a global state field if non-zero, otherwise:
+Official user-processes use a LayerId stored in a global state field("...ExternalLayerId") if non-zero, otherwise:
 * When AppletResourceUserId==0, [[#CreateStrayLayer]] is used instead of the OpenLayer cmd.
-* When AppletResourceUserId!=0, {unknown cmd} is used and the output from that is used for ExternalLayerId with the OpenLayer cmd.
+* When AppletResourceUserId!=0, {unknown cmd} is used and the output from that is used for LayerId with the OpenLayer cmd.
 
 == CloseLayer ==
-Takes an input u64.
+Takes an input u64: LayerId which was used with [[#OpenLayer]].
 
 == CreateStrayLayer ==
-Takes a type-0x6 buffer for the output [[#NativeWindow]], an u32(LayerFlags bitmask), and an u64 DisplayId. Returns two output u64s: ExternalLayerId and NativeWindow_Size.
+Takes a type-0x6 buffer for the output [[#NativeWindow]], an u32(LayerFlags bitmask), and an u64 DisplayId. Returns two output u64s: LayerId and NativeWindow_Size.
 
 == DestroyStrayLayer ==
-Takes an input u64.
+Takes an input u64: LayerId from [[#CreateStrayLayer]].
 
 == SetLayerScalingMode ==
 Takes an input u32("ScalingMode") and u64.
