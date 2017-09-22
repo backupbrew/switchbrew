@@ -145,8 +145,10 @@ Takes an input u32("ScalingMode") and u64.
 
 ## GetIndirectLayerImageMap
 
-Takes a PID-descriptor, an type-0x46 buffer, and four u64s(last u64 is
-[AppletResourceUserId](AM%20services.md "wikilink")). Returns two output
+Takes a PID-descriptor, an type-0x46 buffer, and four u64s: width(s32),
+height(s32), \<output from [AM](AM%20services.md "wikilink")
+GetIndirectLayerConsumerHandle\>, and
+[AppletResourceUserId](AM%20services.md "wikilink"). Returns two output
 u64s.
 
 ## GetIndirectLayerImageCropMap
@@ -157,7 +159,7 @@ output u64s. The floats are stored immediately after each other(32bits).
 
 ## GetIndirectLayerImageRequiredMemoryInfo
 
-Takes two input u64s. Returns two output u64s.
+Takes two input u64s: with and height. Returns two output u64s.
 
 ## GetDisplayVsyncEvent
 
