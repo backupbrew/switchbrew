@@ -249,7 +249,18 @@ Takes an input u64 DisplayId and returns a handle.
 
 # DisplayInfo
 
+| Offset | Size | Description                              |
+| ------ | ---- | ---------------------------------------- |
+| 0x0    | 0x40 | [\#DisplayName](#DisplayName "wikilink") |
+| 0x40   | 0x8? | Normally 0x1 for the "Default" Display?  |
+| 0x48   | 0x8? | Normally 0x1 for the "Default" Display?  |
+| 0x50   | 0x8? | Width                                    |
+| 0x58   | 0x8? | Height                                   |
+
 This is a 0x60-byte structure.
+
+The width/height for the "Default" Display is the resolution for 1080p
+even when in handheld-mode.
 
 # DisplayName
 
