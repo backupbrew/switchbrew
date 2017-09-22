@@ -154,7 +154,7 @@ Takes a PID-descriptor, an type-0x46 buffer, and four u64s: width(s32), height(s
 Takes a PID-descriptor, an type-0x46 buffer, four floats, four u64s(last u64 is [[AM_services|AppletResourceUserId]]). Returns two output u64s. The floats are stored immediately after each other(32bits).
 
 == GetIndirectLayerImageRequiredMemoryInfo ==
-Takes two input u64s: with and height. Returns two output u64s.
+Takes two input u64s: with and height. Returns two output u64s. First u64 is the buffer size to use with the ImageMap cmds.
 
 == GetDisplayVsyncEvent ==
 Takes an input u64 DisplayId and returns a handle.
