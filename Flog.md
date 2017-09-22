@@ -41,7 +41,8 @@ main-menu). If so, the following checks are then performed in order:
     loaded date originates from network-time-sync'd time, regardless of
     whether the user has it enabled or not. When the system was never
     connected to the Internet, it comes from the user-specified date
-    instead. This is loaded from the
+    instead(for [1.0.0](1.0.0.md "wikilink") systems, might be different
+    for newer systems?). This is loaded from the
     [time](PCV%20services.md "wikilink") service-cmds, with the actual
     time-sync being handled by [NIM](NIM%20services.md "wikilink").
   - A wrapper for "GetLanguageCode"
