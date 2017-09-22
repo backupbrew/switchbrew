@@ -107,7 +107,9 @@ This is "nn::visrv::sf::ISystemRootService".
 |}
 
 == ListDisplays ==
-Takes a type-0x6 output buffer containing the array of [[#DisplayInfo]] output entries. Returns an output u64.
+Takes a type-0x6 output buffer containing the array of [[#DisplayInfo]] output entries. Returns an output u64: total number of output entries.
+
+Normally(?) this only returns the "Default" display.
 
 == OpenDisplay ==
 Takes a [[#DisplayName]] as input. Returns an output u64, the DisplayId.

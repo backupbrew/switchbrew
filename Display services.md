@@ -74,7 +74,9 @@ This is "nn::visrv::sf::ISystemRootService".
 
 Takes a type-0x6 output buffer containing the array of
 [\#DisplayInfo](#DisplayInfo "wikilink") output entries. Returns an
-output u64.
+output u64: total number of output entries.
+
+Normally(?) this only returns the "Default" display.
 
 ## OpenDisplay
 
