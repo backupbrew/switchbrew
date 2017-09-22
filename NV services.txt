@@ -377,53 +377,53 @@ Returns an id for a nvmap object. Identical to Linux driver.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0x40040201 || In || 4 || ||
+| 0x40040201 || In || 4 || TEGRA_DC_EXT_GET_WINDOW ||
 |-
-| 0x40040202 || In || 4 || ||
+| 0x40040202 || In || 4 || TEGRA_DC_EXT_PUT_WINDOW ||
 |-
-| 0xC4C80203 || In || 1224 || ||
+| 0xC4C80203 || In || 1224 || TEGRA_DC_EXT_FLIP ||
 |-
-| 0x80380204 || Out || 56 || ||
+| 0x80380204 || Out || 56 || TEGRA_DC_EXT_GET_MODE ||
 |-
-| 0x40380205 || Out || 56 || ||
+| 0x40380205 || Out || 56 || TEGRA_DC_EXT_SET_MODE ||
 |-
-| 0x430C0206 || In || 780 || ||
+| 0x430C0206 || In || 780 || TEGRA_DC_EXT_SET_LUT ||
 |-
-| 0x40010207 || In || 1 || ||
+| 0x40010207 || In || 1 || TEGRA_DC_EXT_ENABLE_DISABLE_CRC ||
 |-
-| 0x80040208 || Out || 4 || ||
+| 0x80040208 || Out || 4 || TEGRA_DC_EXT_GET_CRC ||
 |-
-| 0x80040209 || Out || 4 || ||
+| 0x80040209 || Out || 4 || TEGRA_DC_EXT_GET_HEAD_STATUS ||
 |-
-| 0xC038020A || Inout || 56 || ||
+| 0xC038020A || Inout || 56 || TEGRA_DC_EXT_VALIDATE_MODE ||
 |-
-| 0x4018020B || In || 24 || ||
+| 0x4018020B || In || 24 || TEGRA_DC_EXT_SET_CSC ||
 |-
-| 0xC004020C || Inout || 4 || ||
+| 0xC004020C || Inout || 4 || TEGRA_DC_EXT_GET_VBLANK_SYNCPT ||
 |-
-| 0x8040020D || Out || 64 || ||
+| 0x8040020D || Out || 64 || TEGRA_DC_EXT_GET_UNDERFLOWS ||
 |-
-| 0xC99A020E || Inout || 2458 || ||
+| 0xC99A020E || Inout || 2458 || TEGRA_DC_EXT_SET_CMU ||
 |-
-| 0xC004020F || Inout || 4 || ||
+| 0xC004020F || Inout || 4 || TEGRA_DC_EXT_DPMS ||
 |-
-| 0x80600210 || Out || 96 || ||
+| 0x80600210 || Out || 96 || TEGRA_DC_EXT_GET_AVI_INFOFRAME ||
 |-
-| 0x40600211 || In || 96 || ||
+| 0x40600211 || In || 96 || TEGRA_DC_EXT_SET_AVI_INFOFRAME ||
 |-
-| 0xEBFC0215 || Inout || 11260 || ||
+| 0xEBFC0215 || Inout || 11260 || TEGRA_DC_EXT_GET_MODE_DB ||
 |-
-| 0xC003021A || Inout || 3 || ||
+| 0xC003021A || Inout || 3 || TEGRA_DC_EXT_PANEL_GET_VENDOR_ID ||
 |-
-| 0x803C021B || Out || 60 || ||
+| 0x803C021B || Out || 60 || TEGRA_DC_EXT_GET_MODE2 ||
 |-
-| 0x403C021C || In || 60 || ||
+| 0x403C021C || In || 60 || TEGRA_DC_EXT_SET_MODE2 ||
 |-
-| 0xC03C021D || Inout || 60  || ||
+| 0xC03C021D || Inout || 60  || TEGRA_DC_EXT_VALIDATE_MODE2 ||
 |-
-| 0xEF20021E || Inout || 12064 || ||
+| 0xEF20021E || Inout || 12064 || TEGRA_DC_EXT_GET_MODE_DB2 ||
 |-
-| 0xC004021F || Inout || 4 || ||
+| 0xC004021F || Inout || 4 || TEGRA_DC_EXT_GET_WINMASK ||
 |-
 |}
 

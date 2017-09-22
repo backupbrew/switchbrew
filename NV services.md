@@ -324,33 +324,33 @@ driver.
 
 ## /dev/nvdisp-disp0, /dev/nvdisp-disp1
 
-| Value      | Direction | Size  | Description | Notes |
-| ---------- | --------- | ----- | ----------- | ----- |
-| 0x40040201 | In        | 4     |             |       |
-| 0x40040202 | In        | 4     |             |       |
-| 0xC4C80203 | In        | 1224  |             |       |
-| 0x80380204 | Out       | 56    |             |       |
-| 0x40380205 | Out       | 56    |             |       |
-| 0x430C0206 | In        | 780   |             |       |
-| 0x40010207 | In        | 1     |             |       |
-| 0x80040208 | Out       | 4     |             |       |
-| 0x80040209 | Out       | 4     |             |       |
-| 0xC038020A | Inout     | 56    |             |       |
-| 0x4018020B | In        | 24    |             |       |
-| 0xC004020C | Inout     | 4     |             |       |
-| 0x8040020D | Out       | 64    |             |       |
-| 0xC99A020E | Inout     | 2458  |             |       |
-| 0xC004020F | Inout     | 4     |             |       |
-| 0x80600210 | Out       | 96    |             |       |
-| 0x40600211 | In        | 96    |             |       |
-| 0xEBFC0215 | Inout     | 11260 |             |       |
-| 0xC003021A | Inout     | 3     |             |       |
-| 0x803C021B | Out       | 60    |             |       |
-| 0x403C021C | In        | 60    |             |       |
-| 0xC03C021D | Inout     | 60    |             |       |
-| 0xEF20021E | Inout     | 12064 |             |       |
-| 0xC004021F | Inout     | 4     |             |       |
-|            |           |       |             |       |
+| Value      | Direction | Size  | Description                            | Notes |
+| ---------- | --------- | ----- | -------------------------------------- | ----- |
+| 0x40040201 | In        | 4     | TEGRA\_DC\_EXT\_GET\_WINDOW            |       |
+| 0x40040202 | In        | 4     | TEGRA\_DC\_EXT\_PUT\_WINDOW            |       |
+| 0xC4C80203 | In        | 1224  | TEGRA\_DC\_EXT\_FLIP                   |       |
+| 0x80380204 | Out       | 56    | TEGRA\_DC\_EXT\_GET\_MODE              |       |
+| 0x40380205 | Out       | 56    | TEGRA\_DC\_EXT\_SET\_MODE              |       |
+| 0x430C0206 | In        | 780   | TEGRA\_DC\_EXT\_SET\_LUT               |       |
+| 0x40010207 | In        | 1     | TEGRA\_DC\_EXT\_ENABLE\_DISABLE\_CRC   |       |
+| 0x80040208 | Out       | 4     | TEGRA\_DC\_EXT\_GET\_CRC               |       |
+| 0x80040209 | Out       | 4     | TEGRA\_DC\_EXT\_GET\_HEAD\_STATUS      |       |
+| 0xC038020A | Inout     | 56    | TEGRA\_DC\_EXT\_VALIDATE\_MODE         |       |
+| 0x4018020B | In        | 24    | TEGRA\_DC\_EXT\_SET\_CSC               |       |
+| 0xC004020C | Inout     | 4     | TEGRA\_DC\_EXT\_GET\_VBLANK\_SYNCPT    |       |
+| 0x8040020D | Out       | 64    | TEGRA\_DC\_EXT\_GET\_UNDERFLOWS        |       |
+| 0xC99A020E | Inout     | 2458  | TEGRA\_DC\_EXT\_SET\_CMU               |       |
+| 0xC004020F | Inout     | 4     | TEGRA\_DC\_EXT\_DPMS                   |       |
+| 0x80600210 | Out       | 96    | TEGRA\_DC\_EXT\_GET\_AVI\_INFOFRAME    |       |
+| 0x40600211 | In        | 96    | TEGRA\_DC\_EXT\_SET\_AVI\_INFOFRAME    |       |
+| 0xEBFC0215 | Inout     | 11260 | TEGRA\_DC\_EXT\_GET\_MODE\_DB          |       |
+| 0xC003021A | Inout     | 3     | TEGRA\_DC\_EXT\_PANEL\_GET\_VENDOR\_ID |       |
+| 0x803C021B | Out       | 60    | TEGRA\_DC\_EXT\_GET\_MODE2             |       |
+| 0x403C021C | In        | 60    | TEGRA\_DC\_EXT\_SET\_MODE2             |       |
+| 0xC03C021D | Inout     | 60    | TEGRA\_DC\_EXT\_VALIDATE\_MODE2        |       |
+| 0xEF20021E | Inout     | 12064 | TEGRA\_DC\_EXT\_GET\_MODE\_DB2         |       |
+| 0xC004021F | Inout     | 4     | TEGRA\_DC\_EXT\_GET\_WINMASK           |       |
+|            |           |       |                                        |       |
 
 ## /dev/nvcec-ctrl
 
