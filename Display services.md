@@ -117,9 +117,10 @@ field("...ExternalLayerId") if non-zero, otherwise:
   - When AppletResourceUserId==0,
     [\#CreateStrayLayer](#CreateStrayLayer "wikilink") is used instead
     of the OpenLayer cmd.
-  - When AppletResourceUserId\!=0, [AM](AM%20services.md "wikilink")
-    ISelfController-CreateManagedDisplayLayer is used and the output
-    from that is used for LayerId with the OpenLayer cmd.
+  - When AppletResourceUserId\!=0,
+    [AM\_services\#CreateManagedDisplayLayer](AM%20services#CreateManagedDisplayLayer.md##CreateManagedDisplayLayer "wikilink")
+    is used and the output from that is used for LayerId with the
+    OpenLayer cmd.
 
 ## CloseLayer
 
