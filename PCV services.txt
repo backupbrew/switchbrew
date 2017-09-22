@@ -1,23 +1,25 @@
 = bpc =
+This is "nn::bpc::IBoardPowerControlManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || ShutdownConsole
+| 0 || ShutdownSystem
 |-
-| 1 || RebootConsole
+| 1 || RebootSystem
 |-
-| 2 ||
+| 2 || GetWakeupReason
 |-
-| 3 ||
+| 3 || GetShutdownReason
 |-
-| 4 ||
+| 4 || GetAcOk
 |-
-| 5 || Returns an event handle.
+| 5 || GetBoardPowerControlEvent
 |-
-| 6 ||
+| 6 || GetSleepButtonState
 |-
-| 7 || Returns an event handle.
+| 7 || GetPowerEvent
 |-
 | 8 ||
 |-
@@ -27,6 +29,20 @@
 |}
 
 = bpc:r =
+This is "nn::bpc::IRtcManager".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetExternalRtcValue
+|-
+| 1 || SetExternalRtcValue
+|-
+| 2 || ReadExternalRtcResetFlag
+|-
+| 3 || ClearExternalRtcResetFlag
+|}
 
 = pcv =
 This is "nn::pcv::detail::IPcvService".

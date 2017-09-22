@@ -1,20 +1,31 @@
 # bpc
 
-| Cmd | Name                     |
-| --- | ------------------------ |
-| 0   | ShutdownConsole          |
-| 1   | RebootConsole            |
-| 2   |                          |
-| 3   |                          |
-| 4   |                          |
-| 5   | Returns an event handle. |
-| 6   |                          |
-| 7   | Returns an event handle. |
-| 8   |                          |
-| 9   |                          |
-| 10  |                          |
+This is "nn::bpc::IBoardPowerControlManager".
+
+| Cmd | Name                      |
+| --- | ------------------------- |
+| 0   | ShutdownSystem            |
+| 1   | RebootSystem              |
+| 2   | GetWakeupReason           |
+| 3   | GetShutdownReason         |
+| 4   | GetAcOk                   |
+| 5   | GetBoardPowerControlEvent |
+| 6   | GetSleepButtonState       |
+| 7   | GetPowerEvent             |
+| 8   |                           |
+| 9   |                           |
+| 10  |                           |
 
 # bpc:r
+
+This is "nn::bpc::IRtcManager".
+
+| Cmd | Name                      |
+| --- | ------------------------- |
+| 0   | GetExternalRtcValue       |
+| 1   | SetExternalRtcValue       |
+| 2   | ReadExternalRtcResetFlag  |
+| 3   | ClearExternalRtcResetFlag |
 
 # pcv
 
