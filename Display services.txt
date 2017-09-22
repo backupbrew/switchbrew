@@ -139,7 +139,7 @@ Official user-processes use an ExternalLayerId stored in a global state field if
 Takes an input u64.
 
 == CreateStrayLayer ==
-Takes a type-0x6 buffer for the output [[#NativeWindow]], an u32(LayerFlags bitmask), and an u64. Returns two output u64s: ExternalLayerId and NativeWindow_Size.
+Takes a type-0x6 buffer for the output [[#NativeWindow]], an u32(LayerFlags bitmask), and an u64 DisplayId. Returns two output u64s: ExternalLayerId and NativeWindow_Size.
 
 == DestroyStrayLayer ==
 Takes an input u64.
