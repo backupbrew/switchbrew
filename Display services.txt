@@ -133,7 +133,7 @@ Takes a PID-descriptor, a type-0x6 buffer for the output [[#NativeWindow]], a [[
 
 Official user-processes use a LayerId stored in a global state field("...ExternalLayerId") if non-zero, otherwise:
 * When AppletResourceUserId==0, [[#CreateStrayLayer]] is used instead of the OpenLayer cmd.
-* When AppletResourceUserId!=0, {unknown cmd} is used and the output from that is used for LayerId with the OpenLayer cmd.
+* When AppletResourceUserId!=0, [[AM_services|AM]] ISelfController-CreateManagedDisplayLayer is used and the output from that is used for LayerId with the OpenLayer cmd.
 
 == CloseLayer ==
 Takes an input u64: LayerId which was used with [[#OpenLayer]].
