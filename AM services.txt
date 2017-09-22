@@ -685,7 +685,7 @@ This is "nn::am::service::IApplicationProxyService".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || OpenApplicationProxy || Returns an [[#IApplicationProxy]].
+| 0 || OpenApplicationProxy || Returns an [[#IApplicationProxy]]. See [[#appletAE]].
 |-
 |}
 

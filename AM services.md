@@ -411,10 +411,10 @@ Returns an output u64:
 This is
 "nn::am::<service::IApplicationProxyService>".
 
-| Cmd | Name                 | Notes                                                            |
-| --- | -------------------- | ---------------------------------------------------------------- |
-| 0   | OpenApplicationProxy | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink"). |
-|     |                      |                                                                  |
+| Cmd | Name                 | Notes                                                                                                    |
+| --- | -------------------- | -------------------------------------------------------------------------------------------------------- |
+| 0   | OpenApplicationProxy | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink"). See [\#appletAE](#appletAE "wikilink"). |
+|     |                      |                                                                                                          |
 
 # idle:sys
 
