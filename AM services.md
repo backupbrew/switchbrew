@@ -21,8 +21,9 @@ This is
 | 400 | CreateSelfLibraryAppletCreatorForDevelop | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink"). |
 |     |                                          |                                                                          |
 
-All of these commands take the same
-input.
+All of these commands take the same input: handle-descriptor for PID + 1
+copy-handle, and an
+u64.
 
 ## ISystemAppletProxy
 
