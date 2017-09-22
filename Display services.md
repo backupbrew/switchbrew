@@ -127,8 +127,9 @@ Takes an input u64.
 ## CreateStrayLayer
 
 Takes a type-0x6 buffer for the output
-[\#NativeWindow](#NativeWindow "wikilink"), an u32, and an u64. Returns
-two output u64s: ExternalLayerId and NativeWindow\_Size.
+[\#NativeWindow](#NativeWindow "wikilink"), an u32(LayerFlags bitmask),
+and an u64. Returns two output u64s: ExternalLayerId and
+NativeWindow\_Size.
 
 ## DestroyStrayLayer
 
