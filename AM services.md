@@ -21,6 +21,9 @@ This is
 | 400 | CreateSelfLibraryAppletCreatorForDevelop | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink"). |
 |     |                                          |                                                                          |
 
+All of these commands take the same
+input.
+
 ## ISystemAppletProxy
 
 | Cmd  | Name                        | Notes                                                                            |

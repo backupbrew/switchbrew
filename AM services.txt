@@ -23,6 +23,8 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 |-
 |}
 
+All of these commands take the same input.
+
 == ISystemAppletProxy ==
 {| class="wikitable" border="1"
 |-
