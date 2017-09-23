@@ -272,6 +272,15 @@ This is a 0x40-byte block: a NUL-terminated string.
 
 # NativeWindow
 
+| Offset | Size | Description                |
+| ------ | ---- | -------------------------- |
+| 0x0    | 0x8? | ?                          |
+| 0x8    | 0x8? | ?                          |
+| 0x10   | 0x8? | ?                          |
+| 0x18   | 0x8? | ?                          |
+| 0x20   | 0x8? | ?                          |
+| 0x28   | ?    | "dispdrv" string normally? |
+
 Max size of this buffer is 0x100-bytes(outbuf size used by official
 user-processes). Parsed("Deserialize...") by a function called by the
 code described under [\#OpenLayer](#OpenLayer "wikilink"), which
