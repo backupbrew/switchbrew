@@ -325,6 +325,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xD21A || 105 || Invalid AES engine-id
 |-
+| 0xCC74 || 102 || Time not set
+|-
 | 0x287C || 20 || Argument is NULL
 |-
 | 0x2C7C || 22 || Argument is invalid
