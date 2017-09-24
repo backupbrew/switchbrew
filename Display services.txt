@@ -35,19 +35,6 @@ This is "nn::visrv::sf::IApplicationRootService".
 |-
 |}
 
-= vi:m =
-This is "nn::visrv::sf::IManagerRootService".
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name || Notes
-|-
-| 2 || GetDisplayService || Returns an [[#IApplicationDisplayService]].
-|-
-| 3 || GetDisplayServiceWithProxyNameExchange || Takes an input u64 and u32. Returns an [[#IApplicationDisplayService]].
-|-
-|}
-
 = vi:s =
 This is "nn::visrv::sf::ISystemRootService".
 
@@ -58,6 +45,19 @@ This is "nn::visrv::sf::ISystemRootService".
 | 1 || GetDisplayService || Returns an [[#IApplicationDisplayService]].
 |-
 | 3 || GetDisplayServiceWithProxyNameExchange || Returns an [[#IApplicationDisplayService]].
+|-
+|}
+
+= vi:m =
+This is "nn::visrv::sf::IManagerRootService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 2 || GetDisplayService || Returns an [[#IApplicationDisplayService]].
+|-
+| 3 || GetDisplayServiceWithProxyNameExchange || Takes an input u64 and u32. Returns an [[#IApplicationDisplayService]].
 |-
 |}
 

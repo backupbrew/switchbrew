@@ -27,6 +27,16 @@ This is
 | 0   | GetDisplayService | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). Takes an input u64(?), can be zero. |
 |     |                   |                                                                                                                        |
 
+# vi:s
+
+This is "nn::visrv::sf::ISystemRootService".
+
+| Cmd | Name                                   |
+| --- | -------------------------------------- |
+| 1   | GetDisplayService                      |
+| 3   | GetDisplayServiceWithProxyNameExchange |
+|     |                                        |
+
 # vi:m
 
 This is
@@ -37,16 +47,6 @@ This is
 | 2   | GetDisplayService                      | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").                             |
 | 3   | GetDisplayServiceWithProxyNameExchange | Takes an input u64 and u32. Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). |
 |     |                                        |                                                                                                                |
-
-# vi:s
-
-This is "nn::visrv::sf::ISystemRootService".
-
-| Cmd | Name                                   |
-| --- | -------------------------------------- |
-| 1   | GetDisplayService                      |
-| 3   | GetDisplayServiceWithProxyNameExchange |
-|     |                                        |
 
 # IApplicationDisplayService
 
