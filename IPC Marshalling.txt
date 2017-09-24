@@ -169,6 +169,8 @@ This is an array of u32's, but individual parameters are generally stored as u64
 | 4... || Input parameters or return values
 |}
 
+Many messages which require the PID also require a placeholder u64 value passed in the input parameters. In these cases the OverwriteClientProcessId method is called to replace the value before it is used.
+
 == Official marshalling code ==
 The official marshalling function takes an array of (buf_ptr, size) pairs and a type-field for each such pair.
 

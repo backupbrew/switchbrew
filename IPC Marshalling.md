@@ -141,6 +141,11 @@ u64's.
 | 2    | Command id as u64 for requests, [error code](Error%20codes.md "wikilink") as u64 for responses. |
 | 4... | Input parameters or return values                                                               |
 
+Many messages which require the PID also require a placeholder u64 value
+passed in the input parameters. In these cases the
+OverwriteClientProcessId method is called to replace the value before it
+is used.
+
 ## Official marshalling code
 
 The official marshalling function takes an array of (buf\_ptr, size)
