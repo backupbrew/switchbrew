@@ -74,6 +74,15 @@ This is "nn::visrv::sf::ISystemRootService".
 | 5203 | GetDisplayVsyncEventForDebug            |                                                                            |
 |      |                                         |                                                                            |
 
+Available sessions for each service:
+
+  - "vi:u": Only GetRelayService.
+  - "vi:s": Everything except GetManagerDisplayService.
+  - "vi:m": All.
+
+When attempting to use a get-session cmd with a service it's not
+available with, error 0xA72 is returned.
+
 ## ListDisplays
 
 Takes a type-0x6 output buffer containing the array of
