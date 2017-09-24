@@ -131,7 +131,7 @@ Takes a pid.
 |
 |-
 | fatal:u, fatal:p
-| Fatal Error services
+| [[Fatal services]]
 | u: User, p: Privileged
 |-
 | friend:u, friend:v, friend:m, friend:s, friend:a

@@ -163,7 +163,7 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>fatal:u, fatal:p</p></td>
-<td><p>Fatal Error services</p></td>
+<td><p><a href="Fatal services.md" title="wikilink">Fatal services</a></p></td>
 <td><p>u: User, p: Privileged</p></td>
 </tr>
 <tr class="odd">
