@@ -22,7 +22,7 @@ the number of handles given to other processes.
 
 ## Initialize
 
-Takes a pid descriptor and an input u64.
+Takes a pid descriptor and a reserved input u64.
 
 ## GetService
 
