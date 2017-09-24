@@ -166,7 +166,8 @@
 | 0100C3700416A800 |                                                                                                           |                                        |                                                       | SUPER PING PONG TRICKSHOT                      | JPN      | Update      |
 | 01003BC0000A0000 |                                                                                                           | Gamecard: 2.3.0                        | Gamecard Front: LA-H-AAB6B-USA                        | Splatoon 2                                     | USA      | Game        |
 | 01003BC0000A0800 | v262144(Display-ver 1.2.0 - uses [3.0.1](3.0.1.md "wikilink") NCA crypto([nca-type0](NCA.md "wikilink"))) |                                        |                                                       | Splatoon 2                                     | USA      | Update      |
-| 010067300059A000 |                                                                                                           |                                        |                                                       | Mario + Rabbids Kingdom Battle                 | USA      | Game        |
+| 010067300059A000 |                                                                                                           | Gamecard: 2.1.0                        |                                                       | Mario + Rabbids Kingdom Battle                 | USA      | Game        |
+| 0100b3f000be2000 |                                                                                                           | Gamecard: 3.0.0                        |                                                       | Pokken Tournament DX                           | ALL      | Game        |
 
 Game updates have the same titleID as the main application, except with
 bitmask 0x800 set.
