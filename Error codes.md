@@ -68,7 +68,7 @@ fatal-errors, since the Description ends with bit21.
 | 168   | Userland crash                                         |
 | 203   | HID                                                    |
 | 206   | Capture                                                |
-| 456   | libnx                                                  |
+| 345   | libnx                                                  |
 | 651   | TC                                                     |
 | 800   | [General web-applet](Internet%20Browser.md "wikilink") |
 | 809   | [WifiWebAuthApplet](Internet%20Browser.md "wikilink")  |

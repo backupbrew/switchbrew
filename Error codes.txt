@@ -110,7 +110,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 206 || Capture
 |-
-| 456 || libnx
+| 345 || libnx
 |-
 | 651 || TC
 |-
