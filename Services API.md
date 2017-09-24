@@ -22,15 +22,21 @@ the number of handles given to other processes.
 
 ## Initialize
 
-Takes a pid descriptor.
+Takes a pid descriptor and an input u64.
 
 ## GetService
 
-Takes a zero-padded service name encoded as a u64 integer.
+Takes a zero-padded service name encoded as an u64 integer. Returns a
+handle.
 
 ## RegisterService
 
+Takes a zero-padded service name encoded as an u64 integer, an u8 bool,
+and an u32 at the next word. Returns a handle.
+
 ## UnregisterService
+
+Takes a zero-padded service name encoded as an u64 integer.
 
 # sm:m
 
