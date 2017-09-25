@@ -208,7 +208,6 @@ For buffers with flag 0x20 it creates two descriptors (A+X or B+C), but one desc
 
 (The order in which the deferred type 0x20 buffers are processed is determined by a convoluted loop.)
 
-
 == Official IPC Cmd Structure ==
 Official struct that is stored for each IPC command. It contains precalculated offsets for different portions of the command structure.
 
