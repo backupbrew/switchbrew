@@ -15,12 +15,12 @@
 | 
 | OccurrenceTimestamp
 | Integer
-| UTC unix timestamp
+| UTC unix timestamp from [[PCV_services|user-time]].
 |-
 | 
 | OccurrenceTimestampNet
 | Integer
-| UTC unix timestamp
+| UTC unix timestamp from [[PCV_services|network-time]].
 |-
 | 
 | ThrottlingTimestamp
