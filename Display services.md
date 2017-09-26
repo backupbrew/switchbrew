@@ -89,6 +89,11 @@ Available sessions for each service:
 When attempting to use a get-session cmd with a service it's not
 available with, error 0xA72 is returned.
 
+These commands using PIDs have AppletResourceUserId as the last input
+u64, hence AppletResourceUserId must
+[match](IPC%20Marshalling.md "wikilink") the user-process PID(no special
+handling for value 0).
+
 ## ListDisplays
 
 Takes a type-0x6 output buffer containing the array of
