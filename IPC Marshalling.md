@@ -35,6 +35,17 @@ the second word.
 | ...  |      | Handles to copy           |
 | ...  |      | Handles to move           |
 
+Sysmodules load the last u64 of rawdata when handling the PID. This is
+not written by kernel. For sysmodule handling:
+
+  - In some cases: The rawdata\_u64 is written to stack as the initial
+    PID, but this is never used since the get-pid function always
+    overwrites the output PID when it returns retval 0.
+  - In other cases: The rawdata\_u64 is compared with the PID from the
+    descriptor. On mismatch and when rawdata\_u64\!=0, error 0x60A is
+    returned. The PID value passed to the cmdhandler vtable funcptr is
+    the rawdata\_u64.
+
 ### Buffer descriptor X "Pointer"
 
 This one is packed even worse than A, they inserted the bit38-36 of the
