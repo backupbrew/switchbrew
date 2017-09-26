@@ -501,12 +501,18 @@ Closing the debug handle also results in execution being resumed.
 | `0x005C3811` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=1.                                                                                |
 | `0x004C2812` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=3.                                                                                |
 
-# Exception Handling
+# Exception handling
 
-There appears to be userland code for handling exceptions, however this
-doesn't seem to be executed on retail.
+There is userland code for handling exceptions, however this doesn't
+seem to be executed on retail mode.
 
-On usermode exception, it jumps to main code binary entrypoint
-(main\_binary\_address+0) with X0=exception\_info\_ptr and
-X1=exception\_info2\_ptr. On boot, X0 is set to 0 triggering normal crt0
-setup.
+When a usermode exception occurs, it jumps to the main code binary
+entrypoint (main\_binary\_address + 0 == **\_start**).
+
+During normal boot **\_start** is invoked with X0=0 and
+X1=main\_thread\_handle (triggering normal crt0 setup). During an
+usermode exception **\_start** is invoked with X0=exception\_info0\_ptr
+and X1=exception\_info1\_ptr instead.
+
+The **\_start** method determines whether to boot normally or handle an
+exception if X0 is set to 0 or not.
