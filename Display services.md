@@ -143,6 +143,9 @@ field("...ExternalLayerId") if non-zero, otherwise:
     is used and the output from that is used for LayerId with the
     OpenLayer cmd.
 
+This OpenLayer command returns error 0x272 when the AppletResourceUserId
+is invalid.
+
 ## CloseLayer
 
 Takes an input u64: LayerId which was used with
