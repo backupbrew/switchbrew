@@ -246,7 +246,7 @@ When type == 5 you are talking to the IPC manager. These are processed by the sy
 |-
 | 2 || DuplicateSession || None || 
 |-
-| 3 || QueryPointerBufferSize || None || u16 size
+| 3 || QueryPointerBufferSize || None || u32 as u16-size
 |-
 | 4 || DuplicateSessionEx || u32 unknown || 
 |}
