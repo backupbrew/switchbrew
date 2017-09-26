@@ -327,6 +327,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xD21A || 105 || Invalid AES engine-id
 |-
+| 0x272 || 1 || Invalid AppletResourceUserId
+|-
 | 0xCC74 || 102 || Time not set
 |-
 | 0x287C || 20 || Argument is NULL
