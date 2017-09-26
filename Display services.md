@@ -2,6 +2,12 @@ The only image data contained in this sysmodule is basically a saved
 display framebuffer, no image data for actively-used
 layers/framebuffers.
 
+# caps:sc
+
+# caps:ss
+
+# cec-mgr
+
 # mm:u
 
 NVIDIA multimedia (NvMM) platform service.
