@@ -4,7 +4,7 @@ This is an array of u32's, usually located in [[Thread Local Storage]].
 {| class="wikitable" border="1"
 ! Word || Bits || Description
 |-
-| 0 || 15-0 || Type. 4=Request, 5=Control
+| 0 || 15-0 || Type. 0=Control-Reply, 4=Request, 5=Control
 |-
 | 0 || 19-16 || Number of buf X descriptors (each: 2 words).
 |-
@@ -238,15 +238,15 @@ When type == 5 you are talking to the IPC manager. These are processed by the sy
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Arguments
+! Cmd || Name || Arguments || Output
 |-
-| 0 || ConvertSessionToDomain || None
+| 0 || ConvertSessionToDomain || None || 
 |-
-| 1 || ConvertDomainToSession || u32 domain
+| 1 || ConvertDomainToSession || u32 domain || 
 |-
-| 2 || DuplicateSession || None
+| 2 || DuplicateSession || None || 
 |-
-| 3 || QueryPointerBufferSize || None
+| 3 || QueryPointerBufferSize || None || u16 size
 |-
-| 4 || DuplicateSessionEx || u32 unknown
+| 4 || DuplicateSessionEx || u32 unknown || 
 |}

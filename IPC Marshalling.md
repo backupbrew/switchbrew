@@ -5,7 +5,7 @@ Storage](Thread%20Local%20Storage.md "wikilink").
 
 | Word | Bits  | Description                                                                                                 |
 | ---- | ----- | ----------------------------------------------------------------------------------------------------------- |
-| 0    | 15-0  | Type. 4=Request, 5=Control                                                                                  |
+| 0    | 15-0  | Type. 0=Control-Reply, 4=Request, 5=Control                                                                 |
 | 0    | 19-16 | Number of buf X descriptors (each: 2 words).                                                                |
 | 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                |
 | 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                |
@@ -219,10 +219,10 @@ All offsets are given is in number of u32 words.
 When type == 5 you are talking to the IPC manager. These are processed
 by the sysmodule.
 
-| Cmd | Name                   | Arguments   |
-| --- | ---------------------- | ----------- |
-| 0   | ConvertSessionToDomain | None        |
-| 1   | ConvertDomainToSession | u32 domain  |
-| 2   | DuplicateSession       | None        |
-| 3   | QueryPointerBufferSize | None        |
-| 4   | DuplicateSessionEx     | u32 unknown |
+| Cmd | Name                   | Arguments   | Output   |
+| --- | ---------------------- | ----------- | -------- |
+| 0   | ConvertSessionToDomain | None        |          |
+| 1   | ConvertDomainToSession | u32 domain  |          |
+| 2   | DuplicateSession       | None        |          |
+| 3   | QueryPointerBufferSize | None        | u16 size |
+| 4   | DuplicateSessionEx     | u32 unknown |          |
