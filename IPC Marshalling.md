@@ -38,9 +38,10 @@ the second word.
 Sysmodules load the last u64 of rawdata when handling the PID. This is
 not written by kernel. For sysmodule handling:
 
-  - In some cases: The rawdata\_u64 is written to stack as the initial
-    PID, but this is never used since the get-pid function always
-    overwrites the output PID when it returns retval 0.
+  - In some cases: these commands require a placeholder u64 value passed
+    in the input parameters, as mentioned above. In these cases the
+    OverwriteClientProcessId method is called to replace the value
+    before it is used.
   - In other cases: The rawdata\_u64 is compared with the PID from the
     descriptor. On mismatch and when rawdata\_u64\!=0, error 0x60A is
     returned. The PID value passed to the cmdhandler vtable funcptr is
@@ -151,11 +152,6 @@ u64's.
 | 0    | Magic ("SFCI" for requests, "SFCO" for responses) as u64.                                       |
 | 2    | Command id as u64 for requests, [error code](Error%20codes.md "wikilink") as u64 for responses. |
 | 4... | Input parameters or return values                                                               |
-
-Many messages which require the PID also require a placeholder u64 value
-passed in the input parameters. In these cases the
-OverwriteClientProcessId method is called to replace the value before it
-is used.
 
 ## Official marshalling code
 
