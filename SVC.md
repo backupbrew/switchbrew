@@ -516,3 +516,8 @@ and X1=exception\_info1\_ptr instead.
 
 The **\_start** method determines whether to boot normally or handle an
 exception if X0 is set to 0 or not.
+
+# ResourceLimit
+
+For regular-applications, the reslimit(?) seems to only allow 1
+NamedPort handle to be open at a time?

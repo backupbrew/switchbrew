@@ -668,3 +668,6 @@ During normal boot '''_start''' is invoked with X0=0 and X1=main_thread_handle (
 During an usermode exception '''_start''' is invoked with X0=exception_info0_ptr and X1=exception_info1_ptr instead.
 
 The '''_start''' method determines whether to boot normally or handle an exception if X0 is set to 0 or not.
+
+= ResourceLimit  =
+For regular-applications, the reslimit(?) seems to only allow 1 NamedPort handle to be open at a time?
