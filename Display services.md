@@ -25,13 +25,22 @@ NVIDIA multimedia (NvMM) platform service.
 
 # vi:u
 
-This is
-"nn::visrv::sf::IApplicationRootService".
+This is "nn::visrv::sf::IApplicationRootService".
 
-| Cmd | Name              | Notes                                                                                                                  |
-| --- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 0   | GetDisplayService | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). Takes an input u64(?), can be zero. |
-|     |                   |                                                                                                                        |
+| Cmd | Name              | Notes |
+| --- | ----------------- | ----- |
+| 0   | GetDisplayService |       |
+|     |                   |       |
+
+## GetDisplayService
+
+Returns an
+[\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").
+Takes an input u32, user-processes use 0 or 1, with 0 for
+regular-applications normally. 0 = user-service(vi:u), 1 =
+non-user-service? Returns an error when using value 1 with vi:u(same
+error listed below for IApplicationDisplayService for unavailable
+commands).
 
 # vi:s
 
@@ -50,7 +59,7 @@ This is
 
 | Cmd | Name                                   | Notes                                                                                                          |
 | --- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| 2   | GetDisplayService                      | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").                             |
+| 2   | GetDisplayService                      | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). Same input as vi:u.         |
 | 3   | GetDisplayServiceWithProxyNameExchange | Takes an input u64 and u32. Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). |
 |     |                                        |                                                                                                                |
 
