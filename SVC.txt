@@ -88,9 +88,9 @@
 |-
 | 0x2B || svcFlushDataCache ||  || 
 |-
-| 0x2C || [ [3.0.0+] ] svcMapPhysicalMemory ||  ||
+| 0x2C || [3.0.0+] svcMapPhysicalMemory ||  ||
 |-
-| 0x2D || [ [3.0.0+] ] svcUnmapPhysicalMemory||  ||
+| 0x2D || [3.0.0+] svcUnmapPhysicalMemory||  ||
 |-
 | .... || ? || ? || ?
 |-
