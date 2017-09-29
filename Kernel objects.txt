@@ -72,7 +72,6 @@ Size: 0x10
 Inherits from: [[#KSynchronizationObject]]
 
 <div style="display: inline-block">
-
 {| class="wikitable" border="1"
 |-
 ! 1.0.0 Offset || Type || Description
@@ -275,11 +274,11 @@ Size: 0xB0
 
 [2.0.0] Size: 0x20E8
 
+<div style="display: inline-block">
+
 {| class="wikitable" border="1"
 |-
-! Offset
-! Type
-! Description
+! 1.0.0 Offset || Type || Description
 |-
 | 0 || [[#KHandleEntry]]* || TablePtr
 |-
@@ -297,8 +296,38 @@ Size: 0xB0
 |-
 | 0x298 || [[#KSpinLock]] || Lock
 |}
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! 2.0.0 Offset || Type || Description
+|-
+| 0 || [[#KHandleEntry]]* || TablePtr
+|-
+| 8 || [[#KHandleEntry]]* || NextFreeEntry
+|-
+| 0x10 || [[#KHandleEntry]][1024] || InternalTable
+|-
+| 0x2010 || u16 || Size
+|-
+| 0x2012 || u16 ||
+|-
+| 0x2014 || u16 || IdCounter
+|-
+| 0x2016 || u16 || NumActiveSlots
+|-
+| 0x2040 || u16 ||
+|-
+| 0x2080 || u16 ||
+|}
+</div>
 
 === KHandleEntry ===
+[1.0.0] Size: 0x10
+
+[2.0.0] Size: 8
+
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -313,7 +342,7 @@ Size: 0xB0
 |}
 
 === KSpinLock ===
-Size: 0x1
+[1.0.0] Size: 0x1
 
 {| class="wikitable" border="1"
 |-

@@ -174,18 +174,42 @@ Size: 0xB0
 \[2.0.0\] Size:
 0x20E8
 
-| Offset | Type                                             | Description    |
-| ------ | ------------------------------------------------ | -------------- |
-| 0      | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | TablePtr       |
-| 8      | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | NextFreeEntry  |
-| 0x10   | [\#KHandleEntry](#KHandleEntry "wikilink")\[40\] | InternalTable  |
-| 0x290  | u16                                              | Size           |
-| 0x292  | u16                                              |                |
-| 0x294  | u16                                              | IdCounter      |
-| 0x296  | u16                                              | NumActiveSlots |
-| 0x298  | [\#KSpinLock](#KSpinLock "wikilink")             | Lock           |
+<div style="display: inline-block">
+
+| 1.0.0 Offset | Type                                             | Description    |
+| ------------ | ------------------------------------------------ | -------------- |
+| 0            | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | TablePtr       |
+| 8            | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | NextFreeEntry  |
+| 0x10         | [\#KHandleEntry](#KHandleEntry "wikilink")\[40\] | InternalTable  |
+| 0x290        | u16                                              | Size           |
+| 0x292        | u16                                              |                |
+| 0x294        | u16                                              | IdCounter      |
+| 0x296        | u16                                              | NumActiveSlots |
+| 0x298        | [\#KSpinLock](#KSpinLock "wikilink")             | Lock           |
+
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+
+| 2.0.0 Offset | Type                                               | Description    |
+| ------------ | -------------------------------------------------- | -------------- |
+| 0            | [\#KHandleEntry](#KHandleEntry "wikilink")\*       | TablePtr       |
+| 8            | [\#KHandleEntry](#KHandleEntry "wikilink")\*       | NextFreeEntry  |
+| 0x10         | [\#KHandleEntry](#KHandleEntry "wikilink")\[1024\] | InternalTable  |
+| 0x2010       | u16                                                | Size           |
+| 0x2012       | u16                                                |                |
+| 0x2014       | u16                                                | IdCounter      |
+| 0x2016       | u16                                                | NumActiveSlots |
+| 0x2040       | u16                                                |                |
+| 0x2080       | u16                                                |                |
+
+</div>
 
 ### KHandleEntry
+
+\[1.0.0\] Size: 0x10
+
+\[2.0.0\] Size: 8
 
 | Offset | Type                                       | Description |
 | ------ | ------------------------------------------ | ----------- |
@@ -195,7 +219,7 @@ Size: 0xB0
 
 ### KSpinLock
 
-Size: 0x1
+\[1.0.0\] Size: 0x1
 
 | Offset | Type | Description |
 | ------ | ---- | ----------- |
