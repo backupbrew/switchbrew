@@ -110,9 +110,15 @@ Inherits from:
 
 <div style="display: inline-block; vertical-align:top;">
 
-| 2.0.0 Offset | Type | Description |
-| ------------ | ---- | ----------- |
-|              |      |             |
+| 2.0.0 Offset | Type                                                           | Description       |
+| ------------ | -------------------------------------------------------------- | ----------------- |
+| 0            | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") | Inheritance       |
+| 0x28         |                                                                |                   |
+| 0x38         | [\#KMemoryManager](#KMemoryManager "wikilink")                 | MemoryManager     |
+| 0x100        | u64                                                            | TotalMemUsage     |
+| 0x108        | u64                                                            | TlsPagesListCount |
+| 0x110        | [\#KLinkedListNode](#KLinkedListNode "wikilink")               | TlsPagesList      |
+|              |                                                                |                   |
 
 </div>
 
