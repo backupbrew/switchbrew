@@ -432,83 +432,83 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 {| class=wikitable
 ! Value || Name
 |-
-| 0 || AFI
+| 0 || DeviceName_AFI
 |-
-| 1 || AVPC
+| 1 || DeviceName_AVPC
 |-
-| 2 || DC
+| 2 || DeviceName_DC
 |-
-| 3 || DCB
+| 3 || DeviceName_DCB
 |-
-| 4 || HC
+| 4 || DeviceName_HC
 |-
-| 5 || HDA
+| 5 || DeviceName_HDA
 |-
-| 6 || ISP2
+| 6 || DeviceName_ISP2
 |-
-| 7 || MSENC NVENC
+| 7 || DeviceName_MSENCNVENC
 |-
-| 8 || NV
+| 8 || DeviceName_NV
 |-
-| 9 || NV2
+| 9 || DeviceName_NV2
 |-
-| 10 || PPCS
+| 10 || DeviceName_PPCS
 |-
-| 11 || SATA
+| 11 || DeviceName_SATA
 |-
-| 12 || VI
+| 12 || DeviceName_VI
 |-
-| 13 || VIC
+| 13 || DeviceName_VIC
 |-
-| 14 || XUSB_HOST
+| 14 || DeviceName_XUSB_HOST
 |-
-| 15 || XUSB_DEV
+| 15 || DeviceName_XUSB_DEV
 |-
-| 16 || TSEC
+| 16 || DeviceName_TSEC
 |-
-| 17 || PPCS1
+| 17 || DeviceName_PPCS1
 |-
-| 18 || DC1
+| 18 || DeviceName_DC1
 |-
-| 19 || SDMMC1A
+| 19 || DeviceName_SDMMC1A
 |-
-| 20 || SDMMC2A
+| 20 || DeviceName_SDMMC2A
 |-
-| 21 || SDMMC3A
+| 21 || DeviceName_SDMMC3A
 |-
-| 22 || SDMMC4A
+| 22 || DeviceName_SDMMC4A
 |-
-| 23 || ISP2B
+| 23 || DeviceName_ISP2B
 |-
-| 24 || GPU
+| 24 || DeviceName_GPU
 |-
-| 25 || GPUB
+| 25 || DeviceName_GPUB
 |-
-| 26 || PPCS2
+| 26 || DeviceName_PPCS2
 |-
-| 27 || NVDEC
+| 27 || DeviceName_NVDEC
 |-
-| 28 || APE
+| 28 || DeviceName_APE
 |-
-| 29 || SE
+| 29 || DeviceName_SE
 |-
-| 30 || NVJPG
+| 30 || DeviceName_NVJPG
 |-
-| 31 || HC1
+| 31 || DeviceName_HC1
 |-
-| 32 || SE1
+| 32 || DeviceName_SE1
 |-
-| 33 || AXIAP
+| 33 || DeviceName_AXIAP
 |-
-| 34 || ETR
+| 34 || DeviceName_ETR
 |-
-| 35 || TSECB
+| 35 || DeviceName_TSECB
 |-
-| 36 || TSEC1
+| 36 || DeviceName_TSEC1
 |-
-| 37 || TSECB1
+| 37 || DeviceName_TSECB1
 |-
-| 38 || NVDEC1
+| 38 || DeviceName_NVDEC1
 |}
 
 == CreateProcessInfo ==
