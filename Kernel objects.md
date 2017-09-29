@@ -135,6 +135,8 @@ Inherits from:
 | 0x1A0        | u16                                                                                  | NumberOfCreatedThreads        |
 | 0x1A2        | u16                                                                                  | ThreadingRelatedInitiallyZero |
 | 0x1A4        | u32                                                                                  | ProcessFlags                  |
+| 0x1A8        | [\#KProcessCapabilities](#KProcessCapabilities "wikilink")                           | Capabilities                  |
+| 0x258        | u64                                                                                  |                               |
 
 </div>
 
