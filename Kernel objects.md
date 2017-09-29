@@ -110,15 +110,31 @@ Inherits from:
 
 <div style="display: inline-block; vertical-align:top;">
 
-| 2.0.0 Offset | Type                                                           | Description       |
-| ------------ | -------------------------------------------------------------- | ----------------- |
-| 0            | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") | Inheritance       |
-| 0x28         |                                                                |                   |
-| 0x38         | [\#KMemoryManager](#KMemoryManager "wikilink")                 | MemoryManager     |
-| 0x100        | u64                                                            | TotalMemUsage     |
-| 0x108        | u64                                                            | TlsPagesListCount |
-| 0x110        | [\#KLinkedListNode](#KLinkedListNode "wikilink")               | TlsPagesList      |
-|              |                                                                |                   |
+| 2.0.0 Offset | Type                                                                                 | Description                   |
+| ------------ | ------------------------------------------------------------------------------------ | ----------------------------- |
+| 0            | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")                       | Inheritance                   |
+| 0x28         |                                                                                      |                               |
+| 0x38         | [\#KMemoryManager](#KMemoryManager "wikilink")                                       | MemoryManager                 |
+| 0x100        | u64                                                                                  | TotalMemUsage                 |
+| 0x108        | u64                                                                                  | TlsPagesListCount             |
+| 0x110        | [\#KLinkedListNode](#KLinkedListNode "wikilink")                                     | TlsPagesList                  |
+| 0x120        | s32                                                                                  | DefaultCpuCore                |
+| 0x128        | KDebug\*                                                                             | Debug                         |
+| 0x130        | [\#KResourceLimit](#KResourceLimit "wikilink")\*                                     | ResourceLimit                 |
+| 0x138        | u32                                                                                  | State                         |
+| 0x140        | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                       | ProcessMutex                  |
+| 0x148        | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                       | ThreadingMutex                |
+| 0x150        | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ThreadArbiterList             |
+| 0x160        | KLinkedListNode                                                                      |                               |
+| 0x170        | u64\[4\]                                                                             | RandomEntropy                 |
+| 0x190        | u8                                                                                   | HasStateChanged               |
+| 0x191        | u8                                                                                   | HasInitialized                |
+| 0x192        | u8                                                                                   | IsSystem                      |
+| 0x193        | u8\[12\]                                                                             | From\_CreateProcessInfo\_0    |
+| 0x19F        | u8                                                                                   | InitiallyZero                 |
+| 0x1A0        | u16                                                                                  | NumberOfCreatedThreads        |
+| 0x1A2        | u16                                                                                  | ThreadingRelatedInitiallyZero |
+| 0x1A4        | u32                                                                                  | ProcessFlags                  |
 
 </div>
 

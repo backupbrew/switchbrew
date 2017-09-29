@@ -180,7 +180,39 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x110 || [[#KLinkedListNode]] || TlsPagesList
 |-
-
+| 0x120 || s32 || DefaultCpuCore
+|-
+| 0x128 || KDebug* || Debug
+|-
+| 0x130 || [[#KResourceLimit]]* || ResourceLimit
+|-
+| 0x138 || u32 || State
+|-
+| 0x140 || [[#KRecursiveLock]] || ProcessMutex
+|-
+| 0x148 || [[#KRecursiveLock]] || ThreadingMutex
+|-
+| 0x150 || [[#KLinkedListNode]]<[[#KThread]]> || ThreadArbiterList
+|-
+| 0x160 || KLinkedListNode ||
+|-
+| 0x170 || u64[4] || RandomEntropy
+|-
+| 0x190 || u8 || HasStateChanged
+|-
+| 0x191 || u8 || HasInitialized
+|-
+| 0x192 || u8 || IsSystem
+|-
+| 0x193 || u8[12] || From_CreateProcessInfo_0
+|-
+| 0x19F || u8 || InitiallyZero
+|-
+| 0x1A0 || u16 || NumberOfCreatedThreads
+|-
+| 0x1A2 || u16 || ThreadingRelatedInitiallyZero
+|-
+| 0x1A4 || u32 || ProcessFlags
 |}
 </div>
 
