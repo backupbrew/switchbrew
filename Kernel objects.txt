@@ -36,16 +36,6 @@ Size: 0x8
 | 0 || u64 || OwnerTag
 |}
 
-= KSpinLock =
-Size: 0x1
-
-{| class="wikitable" border="1"
-|-
-! Offset || Type || Description
-|-
-| 0 || u8 || IsBusy
-|}
-
 = KLockedList =
 Size: 0x28
 
@@ -245,6 +235,16 @@ Size: 0x2A0
 | 2 || u8 || ObjectType
 |-
 | 8 || [[#KAutoObject]]* || Object
+|}
+
+=== KSpinLock ===
+Size: 0x1
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || u8 || IsBusy
 |}
 
 = KMemoryManager =

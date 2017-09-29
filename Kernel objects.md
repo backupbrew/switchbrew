@@ -28,14 +28,6 @@ Size: 0x8
 | ------ | ---- | ----------- |
 | 0      | u64  | OwnerTag    |
 
-# KSpinLock
-
-Size: 0x1
-
-| Offset | Type | Description |
-| ------ | ---- | ----------- |
-| 0      | u8   | IsBusy      |
-
 # KLockedList
 
 Size:
@@ -162,6 +154,14 @@ Size:
 | 0      | u16                                        | HandleId    |
 | 2      | u8                                         | ObjectType  |
 | 8      | [\#KAutoObject](#KAutoObject "wikilink")\* | Object      |
+
+### KSpinLock
+
+Size: 0x1
+
+| Offset | Type | Description |
+| ------ | ---- | ----------- |
+| 0      | u8   | IsBusy      |
 
 # KMemoryManager
 
