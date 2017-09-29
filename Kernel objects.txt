@@ -341,7 +341,7 @@ Size: 0xB0
 <div style="display: inline-block; vertical-align:top;">
 {| class="wikitable" border="1"
 |-
-! 1.0.0 Offset || Type || Description
+! 2.0.0 Offset || Type || Description
 |-
 | 0 || u16 || HandleId
 |-

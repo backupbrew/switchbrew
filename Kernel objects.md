@@ -223,7 +223,7 @@ Size: 0xB0
 
 <div style="display: inline-block; vertical-align:top;">
 
-| 1.0.0 Offset | Type | Description         |
+| 2.0.0 Offset | Type | Description         |
 | ------------ | ---- | ------------------- |
 | 0            | u16  | HandleId            |
 | 2            | u8   | ObjectType          |
