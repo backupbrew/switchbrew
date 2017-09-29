@@ -75,15 +75,17 @@ Size: 0x10
 |}
 
 = KProcess =
-Size: 0x5B0
+[1.0.0] Size: 0x5B0
+
+[2.0.0] Size: 0x2480
 
 Inherits from: [[#KSynchronizationObject]]
 
+<div style="display: inline-block">
+
 {| class="wikitable" border="1"
 |-
-! Offset
-! Type
-! Description
+! 1.0.0 Offset || Type || Description
 |-
 | 0 || [[#KSynchronizationObject]] || Inheritance
 |-
@@ -169,6 +171,15 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x5A8 || u64 ||
 |}
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! 2.0.0 Offset || Type || Description
+|-
+|}
+</div>
 
 == KProcessCapabilities ==
 Size: 0xB0
