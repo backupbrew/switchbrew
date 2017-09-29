@@ -275,7 +275,6 @@ Size: 0xB0
 [2.0.0] Size: 0x20E8
 
 <div style="display: inline-block">
-
 {| class="wikitable" border="1"
 |-
 ! 1.0.0 Offset || Type || Description
@@ -317,9 +316,7 @@ Size: 0xB0
 |-
 | 0x2016 || u16 || NumActiveSlots
 |-
-| 0x2040 || u16 ||
-|-
-| 0x2080 || u16 ||
+| 0x2040 || [[#KSpinLock]] || Lock
 |}
 </div>
 
@@ -344,12 +341,27 @@ Size: 0xB0
 === KSpinLock ===
 [1.0.0] Size: 0x1
 
+[2.0.0] Size: 0x40
+
+<div style="display: inline-block">
 {| class="wikitable" border="1"
 |-
-! Offset || Type || Description
+! 1.0.0 Offset || Type || Description
 |-
 | 0 || u8 || IsBusy
 |}
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! 2.0.0 Offset || Type || Description
+|-
+| 0 || u16 ||
+|-
+| 0x20 || u16 ||
+|}
+</div>
 
 = KMemoryManager =
 [1.0.0] Size: 0xB8

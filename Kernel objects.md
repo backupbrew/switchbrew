@@ -200,8 +200,7 @@ Size: 0xB0
 | 0x2012       | u16                                                |                |
 | 0x2014       | u16                                                | IdCounter      |
 | 0x2016       | u16                                                | NumActiveSlots |
-| 0x2040       | u16                                                |                |
-| 0x2080       | u16                                                |                |
+| 0x2040       | [\#KSpinLock](#KSpinLock "wikilink")               | Lock           |
 
 </div>
 
@@ -221,9 +220,24 @@ Size: 0xB0
 
 \[1.0.0\] Size: 0x1
 
-| Offset | Type | Description |
-| ------ | ---- | ----------- |
-| 0      | u8   | IsBusy      |
+\[2.0.0\] Size: 0x40
+
+<div style="display: inline-block">
+
+| 1.0.0 Offset | Type | Description |
+| ------------ | ---- | ----------- |
+| 0            | u8   | IsBusy      |
+
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+
+| 2.0.0 Offset | Type | Description |
+| ------------ | ---- | ----------- |
+| 0            | u16  |             |
+| 0x20         | u16  |             |
+
+</div>
 
 # KMemoryManager
 
