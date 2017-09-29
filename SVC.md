@@ -418,23 +418,31 @@ Closing the debug handle also results in execution being resumed.
 
 ## CreateProcessInfo
 
-| Offset | Length | Bits   | Description                                                                                                                          |
-| ------ | ------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| 0      | 8      |        |                                                                                                                                      |
-| 8      | 2      |        |                                                                                                                                      |
-| 0xA    | 2      |        |                                                                                                                                      |
-| 0xC    | 4      |        |                                                                                                                                      |
-| 0x10   | 8      |        | TitleId                                                                                                                              |
-| 0x18   | 8      |        | CodeAddr                                                                                                                             |
-| 0x20   | 4      |        | CodeNumPages                                                                                                                         |
-| 0x24   | 4      |        | MmuFlags                                                                                                                             |
-|        |        | Bit0   | Is64bit                                                                                                                              |
-|        |        | Bit3-1 | AddressSpaceType (0=32-bit with map and heap regions, 1=36-bit with map and heap regions, 2=32-bit with heap region only), 3=Invalid |
-|        |        | Bit4   |                                                                                                                                      |
-|        |        | Bit5   | EnableAslr                                                                                                                           |
-|        |        | Bit6   | IsSystem                                                                                                                             |
-| 0x28   | 4      |        | ResourceLimitHandle                                                                                                                  |
-| 0x2C   | 4      |        |                                                                                                                                      |
+| Offset | Length | Bits   | Description                                        |
+| ------ | ------ | ------ | -------------------------------------------------- |
+| 0      | 8      |        |                                                    |
+| 8      | 2      |        |                                                    |
+| 0xA    | 2      |        |                                                    |
+| 0xC    | 4      |        |                                                    |
+| 0x10   | 8      |        | TitleId                                            |
+| 0x18   | 8      |        | CodeAddr                                           |
+| 0x20   | 4      |        | CodeNumPages                                       |
+| 0x24   | 4      |        | MmuFlags                                           |
+|        |        | Bit0   | Is64bit                                            |
+|        |        | Bit3-1 | [\#AddressSpaceType](#AddressSpaceType "wikilink") |
+|        |        | Bit4   |                                                    |
+|        |        | Bit5   | EnableAslr                                         |
+|        |        | Bit6   | IsSystem                                           |
+| 0x28   | 4      |        | ResourceLimitHandle                                |
+| 0x2C   | 4      |        |                                                    |
+
+### AddressSpaceType
+
+| Type | Name              | Description                            |
+| ---- | ----------------- | -------------------------------------- |
+| 0    | Normal\_32Bit     |                                        |
+| 1    | Normal\_36Bit     |                                        |
+| 2    | WithoutMap\_32Bit | Appears to be missing map region \[?\] |
 
 ## MemoryInfo
 

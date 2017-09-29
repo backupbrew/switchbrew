@@ -533,7 +533,7 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 |-
 | || || Bit0 || Is64bit
 |-
-| || || Bit3-1 || AddressSpaceType (0=32-bit with map and heap regions, 1=36-bit with map and heap regions, 2=32-bit with heap region only), 3=Invalid
+| || || Bit3-1 || [[#AddressSpaceType]]
 |-
 | || || Bit4 ||
 |-
@@ -544,6 +544,17 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 | 0x28 || 4 || || ResourceLimitHandle
 |-
 | 0x2C || 4 ||
+|}
+
+=== AddressSpaceType ===
+{| class=wikitable
+! Type || Name || Description
+|-
+| 0 || Normal_32Bit ||
+|-
+| 1 || Normal_36Bit ||
+|-
+| 2 || WithoutMap_32Bit || Appears to be missing map region [?]
 |}
 
 == MemoryInfo ==
