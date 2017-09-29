@@ -211,7 +211,9 @@ Size: 0xB0
 |}
 
 == KProcessHandleTable ==
-Size: 0x2A0
+[1.0.0] Size: 0x2A0
+
+[2.0.0] Size: 0x20C8
 
 {| class="wikitable" border="1"
 |-
@@ -261,7 +263,9 @@ Size: 0x1
 |}
 
 = KMemoryManager =
-Size: 0xB8
+[1.0.0] Size: 0xB8
+
+[2.0.0] Size: 0xC8
 
 {| class="wikitable" border="1"
 |-
