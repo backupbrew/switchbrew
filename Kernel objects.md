@@ -182,7 +182,7 @@ Size: 0xB0
 | 8            | [\#KHandleEntry](#KHandleEntry "wikilink")\*     | NextFreeEntry  |
 | 0x10         | [\#KHandleEntry](#KHandleEntry "wikilink")\[40\] | InternalTable  |
 | 0x290        | u16                                              | Size           |
-| 0x292        | u16                                              |                |
+| 0x292        | u16                                              | MaxUsageAtOnce |
 | 0x294        | u16                                              | IdCounter      |
 | 0x296        | u16                                              | NumActiveSlots |
 | 0x298        | [\#KSpinLock](#KSpinLock "wikilink")             | Lock           |
@@ -197,7 +197,7 @@ Size: 0xB0
 | 8            | [\#KHandleEntry](#KHandleEntry "wikilink")\*       | NextFreeEntry  |
 | 0x10         | [\#KHandleEntry](#KHandleEntry "wikilink")\[1024\] | InternalTable  |
 | 0x2010       | u16                                                | Size           |
-| 0x2012       | u16                                                |                |
+| 0x2012       | u16                                                | MaxUsageAtOnce |
 | 0x2014       | u16                                                | IdCounter      |
 | 0x2016       | u16                                                | NumActiveSlots |
 | 0x2040       | [\#KSpinLock](#KSpinLock "wikilink")               | Lock           |

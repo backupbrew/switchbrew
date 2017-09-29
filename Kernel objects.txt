@@ -287,7 +287,7 @@ Size: 0xB0
 |-
 | 0x290 || u16 || Size
 |-
-| 0x292 || u16 ||
+| 0x292 || u16 || MaxUsageAtOnce
 |-
 | 0x294 || u16 || IdCounter
 |-
@@ -310,7 +310,7 @@ Size: 0xB0
 |-
 | 0x2010 || u16 || Size
 |-
-| 0x2012 || u16 ||
+| 0x2012 || u16 || MaxUsageAtOnce
 |-
 | 0x2014 || u16 || IdCounter
 |-
