@@ -453,7 +453,7 @@ Inherits from:
 | 0x38   |                                                |               |
 | 0x48   | u32                                            | IrqId (or -1) |
 
-# KAddressSpace
+# KDeviceAddressSpace
 
 Size: 0x70
 
@@ -468,6 +468,8 @@ Inherits from:
 | 0x58   | u64                                            | BaseAddress |
 | 0x60   | u64                                            | Size        |
 | 0x68   | bool                                           | HasInited   |
+
+\[1.0.0\] It was called KAddressSpace.
 
 ## KSmmuManager
 
