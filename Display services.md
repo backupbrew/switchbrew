@@ -217,6 +217,8 @@ Takes an input u64 DisplayId and returns a handle.
 | 2   | [\#GetNativeHandle](#GetNativeHandle "wikilink")       |
 | 3   | [\#TransactParcelAuto](#TransactParcelAuto "wikilink") |
 
+This uses Android code.
+
 Command(s) from here are constantly used while displaying gfx.
 
 ### TransactParcel

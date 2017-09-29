@@ -200,6 +200,8 @@ Takes an input u64 DisplayId and returns a handle.
 | 3 || [[#TransactParcelAuto]]
 |}
 
+This uses Android code.
+
 Command(s) from here are constantly used while displaying gfx.
 
 === TransactParcel ===
