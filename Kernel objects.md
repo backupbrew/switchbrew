@@ -145,6 +145,10 @@ Inherits from:
 | 0x288        | u64                                                                                  | MaxTotalMemUsage              |
 | 0x290        | u32                                                                                  | From\_CreateProcessInfo\_0xC  |
 | 0x298        | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")                             | HandleTable                   |
+| 0x2380       | void\*                                                                               | UsermodeExceptionTlsArea      |
+| 0x2388       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ExceptionThreadList           |
+| 0x2398       | [\#KThread](#KThread "wikilink")\*                                                   | ExceptionThread               |
+| 0x23A0       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ThreadList                    |
 
 </div>
 

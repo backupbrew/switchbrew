@@ -233,6 +233,14 @@ Inherits from: [[#KSynchronizationObject]]
 | 0x290 || u32 || From_CreateProcessInfo_0xC
 |-
 | 0x298 || [[#KProcessHandleTable]] || HandleTable
+|-
+| 0x2380 || void* || UsermodeExceptionTlsArea
+|-
+| 0x2388 || [[#KLinkedListNode]]<[[#KThread]]> || ExceptionThreadList
+|-
+| 0x2398 || [[#KThread]]* || ExceptionThread
+|-
+| 0x23A0 || [[#KLinkedListNode]]<[[#KThread]]> || ThreadList
 |}
 </div>
 
