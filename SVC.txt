@@ -657,6 +657,8 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 | <code>0x005C3811</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=1.
 |-
 | <code>0x004C2812</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=3.
+|-
+| [2.0.0+] <code>0x00002013</code> || Unknown per-thread read-only memory || Mapped in hardcoded process (?) during [[svcCreateThread]].
 |}
 
 = Exception handling =
