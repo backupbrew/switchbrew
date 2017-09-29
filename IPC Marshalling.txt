@@ -120,6 +120,8 @@ Buffer descriptor A/B/... map memory into the sysmodule process. For the mapped 
 
 This memory is mapped in the sysmodule to the same vaddr from the original user-process cmd-request, except with with bits >=(~28(?)) changed to a different ASLR'd region.
 
+No user-process->sysmodule memcpy is done for outbufs, only sysmodule->user-process.
+
 == Raw data section ==
 
 [[File:Ipc msg buffer type a example.png|thumb|An example of an IPC message with a type 0xA buffer in it. Red is headers/descriptors, yellow is padding, and blue is data/buffer lengths. Note that the size of the u16 array for type A lengths is padded to fill up a whole word.]]

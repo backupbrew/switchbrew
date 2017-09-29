@@ -107,6 +107,9 @@ This memory is mapped in the sysmodule to the same vaddr from the
 original user-process cmd-request, except with with bits \>=(~28(?))
 changed to a different ASLR'd region.
 
+No user-process-\>sysmodule memcpy is done for outbufs, only
+sysmodule-\>user-process.
+
 ## Raw data section
 
 ![An example of an IPC message with a type 0xA buffer in it. Red is
