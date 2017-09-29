@@ -88,9 +88,9 @@
 |-
 | 0x2B || svcFlushDataCache ||  || 
 |-
-| 0x2C || [ [[3.0.0]]+ ] svcMapPhysicalMemory ||  ||
+| 0x2C || [ [3.0.0+] ] svcMapPhysicalMemory ||  ||
 |-
-| 0x2D || [ [[3.0.0]]+ ] svcUnmapPhysicalMemory||  ||
+| 0x2D || [ [3.0.0+] ] svcUnmapPhysicalMemory||  ||
 |-
 | .... || ? || ? || ?
 |-
@@ -364,15 +364,15 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Zero    || 11 || 0-3 || RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.
 |-
-| Process || 12 || 0 || [ [[2.0.0]] +] AddressSpaceStart.
+| Process || 12 || 0 || [2.0.0+] AddressSpaceStart.
 |-
-| Process || 13 || 0 || [ [[2.0.0]] +] AddressSpaceSize.
+| Process || 13 || 0 || [2.0.0+] AddressSpaceSize.
 |-
-| Process || 14 || 0 || [ [[2.0.0]] +] MapRegionBased. Randomized.
+| Process || 14 || 0 || [2.0.0+] MapRegionBased. Randomized.
 |-
-| Process || 15 || 0 || [ [[2.0.0]] +] MapRegionSize.
+| Process || 15 || 0 || [2.0.0+] MapRegionSize.
 |-
-| Process || 18 || 0 || [ [[3.0.0]] +] Title-id.
+| Process || 18 || 0 || [3.0.0+] Title-id.
 |-
 | Thread || 0xF0000002 || 0 || Performance counter related.
 |}

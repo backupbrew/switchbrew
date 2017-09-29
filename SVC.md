@@ -45,8 +45,8 @@
 | 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                                             | X1=info\_id, X2=handle, X3=info\_sub\_id                                                    | W0=result, X1=out                                   |
 | 0x2A | svcFlushEntireDataCache                                                            |                                                                                             |                                                     |
 | 0x2B | svcFlushDataCache                                                                  |                                                                                             |                                                     |
-| 0x2C | \[ [3.0.0](3.0.0.md "wikilink")+ \] svcMapPhysicalMemory                           |                                                                                             |                                                     |
-| 0x2D | \[ [3.0.0](3.0.0.md "wikilink")+ \] svcUnmapPhysicalMemory                         |                                                                                             |                                                     |
+| 0x2C | \[ \[3.0.0+\] \] svcMapPhysicalMemory                                              |                                                                                             |                                                     |
+| 0x2D | \[ \[3.0.0+\] \] svcUnmapPhysicalMemory                                            |                                                                                             |                                                     |
 | .... | ?                                                                                  | ?                                                                                           | ?                                                   |
 | 0x2F | svcGetLastThreadInfo                                                               |                                                                                             |                                                     |
 | 0x30 | svcGetResourceLimitLimitValue                                                      |                                                                                             |                                                     |
@@ -288,11 +288,11 @@ it will return
 | Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink"). |
 | Zero        | 10         | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?               |
 | Zero        | 11         | 0-3                   | RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.                                      |
-| Process     | 12         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] AddressSpaceStart.                                                      |
-| Process     | 13         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] AddressSpaceSize.                                                       |
-| Process     | 14         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] MapRegionBased. Randomized.                                             |
-| Process     | 15         | 0                     | \[ [2.0.0](2.0.0.md "wikilink") +\] MapRegionSize.                                                          |
-| Process     | 18         | 0                     | \[ [3.0.0](3.0.0.md "wikilink") +\] Title-id.                                                               |
+| Process     | 12         | 0                     | \[2.0.0+\] AddressSpaceStart.                                                                               |
+| Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize.                                                                                |
+| Process     | 14         | 0                     | \[2.0.0+\] MapRegionBased. Randomized.                                                                      |
+| Process     | 15         | 0                     | \[2.0.0+\] MapRegionSize.                                                                                   |
+| Process     | 18         | 0                     | \[3.0.0+\] Title-id.                                                                                        |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
 ## svcDumpInfo
