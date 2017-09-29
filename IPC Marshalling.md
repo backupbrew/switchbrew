@@ -5,7 +5,7 @@ Storage](Thread%20Local%20Storage.md "wikilink").
 
 | Word | Bits  | Description                                                                                                 |
 | ---- | ----- | ----------------------------------------------------------------------------------------------------------- |
-| 0    | 15-0  | Type. 0=Control-Reply, 4=Request, 5=Control                                                                 |
+| 0    | 15-0  | Type. 4=Request, 5=Control                                                                                  |
 | 0    | 19-16 | Number of buf X descriptors (each: 2 words).                                                                |
 | 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                |
 | 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                |
