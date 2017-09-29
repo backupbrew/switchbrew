@@ -200,6 +200,8 @@ Takes an input u64 DisplayId and returns a handle.
 | 3 || [[#TransactParcelAuto]]
 |}
 
+Command(s) from here are constantly used while displaying gfx.
+
 === TransactParcel ===
 Takes a s32, an u32, a type-0x5 input buffer, a type-0x6 output buffer, and an input u32. Each word is immediately after the previous word.
 

@@ -217,6 +217,8 @@ Takes an input u64 DisplayId and returns a handle.
 | 2   | [\#GetNativeHandle](#GetNativeHandle "wikilink")       |
 | 3   | [\#TransactParcelAuto](#TransactParcelAuto "wikilink") |
 
+Command(s) from here are constantly used while displaying gfx.
+
 ### TransactParcel
 
 Takes a s32, an u32, a type-0x5 input buffer, a type-0x6 output buffer,
