@@ -94,7 +94,7 @@ Inherits from:
 | 0x268        | u64                                                                                  | CodeMemUsage                  |
 | 0x270        | u64                                                                                  | DynamicMemUsage               |
 | 0x278        | u64                                                                                  | MaxTotalMemUsage              |
-| 0x280        | u64                                                                                  | From\_CreateProcessInfo\_0xC  |
+| 0x280        | u32                                                                                  | From\_CreateProcessInfo\_0xC  |
 | 0x288        | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")                             | HandleTable                   |
 | 0x528        | void\*                                                                               | UsermodeExceptionTlsArea      |
 | 0x530        | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ExceptionThreadList           |
@@ -136,7 +136,15 @@ Inherits from:
 | 0x1A2        | u16                                                                                  | ThreadingRelatedInitiallyZero |
 | 0x1A4        | u32                                                                                  | ProcessFlags                  |
 | 0x1A8        | [\#KProcessCapabilities](#KProcessCapabilities "wikilink")                           | Capabilities                  |
-| 0x258        | u64                                                                                  |                               |
+| 0x258        | u64                                                                                  | TitleId                       |
+| 0x260        | u64                                                                                  | ProcessId                     |
+| 0x268        | u64                                                                                  | CreatedTickstamp              |
+| 0x270        | u64                                                                                  | Entrypoint                    |
+| 0x278        | u64                                                                                  | CodeMemUsage                  |
+| 0x280        | u64                                                                                  | DynamicMemUsage               |
+| 0x288        | u64                                                                                  | MaxTotalMemUsage              |
+| 0x290        | u32                                                                                  | From\_CreateProcessInfo\_0xC  |
+| 0x298        | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")                             | HandleTable                   |
 
 </div>
 
