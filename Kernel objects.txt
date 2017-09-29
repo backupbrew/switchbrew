@@ -325,11 +325,10 @@ Size: 0xB0
 
 [2.0.0] Size: 8
 
+<div style="display: inline-block">
 {| class="wikitable" border="1"
 |-
-! Offset
-! Type
-! Description
+! 1.0.0 Offset || Type || Description
 |-
 | 0 || u16 || HandleId
 |-
@@ -337,6 +336,20 @@ Size: 0xB0
 |-
 | 8 || [[#KAutoObject]]* || Object
 |}
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! 1.0.0 Offset || Type || Description
+|-
+| 0 || u16 || HandleId
+|-
+| 2 || u8 || ObjectType
+|-
+| 4 || u32 || ObjectCompressedPtr
+|}
+</div>
 
 === KSpinLock ===
 [1.0.0] Size: 0x1

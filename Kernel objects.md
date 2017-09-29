@@ -208,13 +208,28 @@ Size: 0xB0
 
 \[1.0.0\] Size: 0x10
 
-\[2.0.0\] Size: 8
+\[2.0.0\] Size:
+8
 
-| Offset | Type                                       | Description |
-| ------ | ------------------------------------------ | ----------- |
-| 0      | u16                                        | HandleId    |
-| 2      | u8                                         | ObjectType  |
-| 8      | [\#KAutoObject](#KAutoObject "wikilink")\* | Object      |
+<div style="display: inline-block">
+
+| 1.0.0 Offset | Type                                       | Description |
+| ------------ | ------------------------------------------ | ----------- |
+| 0            | u16                                        | HandleId    |
+| 2            | u8                                         | ObjectType  |
+| 8            | [\#KAutoObject](#KAutoObject "wikilink")\* | Object      |
+
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+
+| 1.0.0 Offset | Type | Description         |
+| ------------ | ---- | ------------------- |
+| 0            | u16  | HandleId            |
+| 2            | u8   | ObjectType          |
+| 4            | u32  | ObjectCompressedPtr |
+
+</div>
 
 ### KSpinLock
 
