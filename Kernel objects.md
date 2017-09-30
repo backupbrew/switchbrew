@@ -620,16 +620,34 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 ## KInterruptEvent
 
-Size: 0x50
+\[1.0.0\] Size: 0x50
+
+\[2.0.0\] Size: 0x48
 
 Inherits from:
 [\#KReadableEvent](#KReadableEvent "wikilink")
 
-| Offset | Type                                           | Description   |
-| ------ | ---------------------------------------------- | ------------- |
-| 0      | [\#KReadableEvent](#KReadableEvent "wikilink") | Inheritance   |
-| 0x38   |                                                |               |
-| 0x48   | u32                                            | IrqId (or -1) |
+| 1.0.0 Offset | Type                                           | Description   |
+| ------------ | ---------------------------------------------- | ------------- |
+| 0            | [\#KReadableEvent](#KReadableEvent "wikilink") | Inheritance   |
+| 0x38         |                                                |               |
+| 0x48         | u32                                            | IrqId (or -1) |
+
+| 2.0.0 Offset | Type                                                       | Description     |
+| ------------ | ---------------------------------------------------------- | --------------- |
+| 0            | [\#KReadableEvent](#KReadableEvent "wikilink")             | Inheritance     |
+| 0x38         | [\#KIrqRegistrationRef](#KIrqRegistrationRef "wikilink")\* | Reference       |
+| 0x40         | u32                                                        | IrqId (or -1)   |
+| 0x44         | bool                                                       | IsIrqRegistered |
+
+### KIrqRegistrationRef
+
+| Offset | Type                                               | Description   |
+| ------ | -------------------------------------------------- | ------------- |
+| 0      | \*                                                 | Vtable        |
+| 8      | u64                                                | InitiallyZero |
+| 0x10   | [\#KInterruptEvent](#KInterruptEvent "wikilink")\* | IrqEventPtr   |
+| 0x18   | s32                                                | IrqId         |
 
 # KDeviceAddressSpace
 

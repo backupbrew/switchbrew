@@ -939,21 +939,48 @@ Inherits from: [[#KAutoObject]]
 |}
 
 == KInterruptEvent ==
-Size: 0x50
+[1.0.0] Size: 0x50
+
+[2.0.0] Size: 0x48
 
 Inherits from: [[#KReadableEvent]]
 
 {| class="wikitable" border="1"
 |-
-! Offset
-! Type
-! Description
+! 1.0.0 Offset || Type || Description
 |-
 | 0 || [[#KReadableEvent]] || Inheritance
 |-
 | 0x38 || ||
 |-
 | 0x48 || u32 || IrqId (or -1)
+|}
+
+{| class="wikitable" border="1"
+|-
+! 2.0.0 Offset || Type || Description
+|-
+| 0 || [[#KReadableEvent]] || Inheritance
+|-
+| 0x38 || [[#KIrqRegistrationRef]]* || Reference
+|-
+| 0x40 || u32 || IrqId (or -1)
+|-
+| 0x44 || bool || IsIrqRegistered
+|}
+
+=== KIrqRegistrationRef ===
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || * || Vtable
+|-
+| 8 || u64 || InitiallyZero
+|-
+| 0x10 || [[#KInterruptEvent]]* || IrqEventPtr
+|-
+| 0x18 || s32 || IrqId
 |}
 
 = KDeviceAddressSpace =
