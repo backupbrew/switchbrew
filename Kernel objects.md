@@ -256,16 +256,16 @@ Size: 0xB0
 
 </div>
 
-## KSharedMemoryReference
+## KSharedMemoryRef
 
 \[2.0.0\] Size:
 0x40
 
-| Offset | Type                                                                                                               | Description                      |
-| ------ | ------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
-| 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KSharedMemoryReference](#KSharedMemoryReference "wikilink")\> | Node\_\_MappedSharedMemoriesList |
-| 0x10   | [\#KSharedMemory\*](#KSharedMemory* "wikilink")                                                                    | SharedMem                        |
-| 0x18   | u64                                                                                                                | InitiallyZero                    |
+| Offset | Type                                                                                                   | Description                         |
+| ------ | ------------------------------------------------------------------------------------------------------ | ----------------------------------- |
+| 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KSharedMemoryRef](#KSharedMemoryRef "wikilink")\> | NodeFor\_\_MappedSharedMemoriesList |
+| 0x10   | [\#KSharedMemory\*](#KSharedMemory* "wikilink")                                                        | SharedMem                           |
+| 0x18   | u64                                                                                                    | InitiallyZero                       |
 
 # KMemoryManager
 
