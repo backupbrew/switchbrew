@@ -27,29 +27,34 @@ The tsec key is the source of all per-console entropy, because SSK is not used o
 ! Set by
 ! Cleared by
 ! Per-console
+! Per-firmware
 |-
 | 11
 | Package1Key
 | [[Package1]]
 | [[Package1]]
 | No
+| Yes
 |-
 | 12
 | MasterKey
 | [[Package1]]
 | Forever
 | No
+| Yes, on security updates
 |-
 | 13
 | PerConsoleKey
 | [[Package1]]
 | Forever
 | Yes
+| No
 |-
 | 14
 | SecureBootKey
 | Bootrom
 | [[Package1]]
+| No
 | No
 |-
 | 15
@@ -57,6 +62,7 @@ The tsec key is the source of all per-console entropy, because SSK is not used o
 | Bootrom
 | [[Package1]]
 | Yes
+| No
 |}
 
 Note: aes_unwrap(wrapped_key, wrap_key) is just another name for a single AES-128 block decryption.
