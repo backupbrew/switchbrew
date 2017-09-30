@@ -100,8 +100,8 @@ Inherits from:
 | 0x530        | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ExceptionThreadList           |
 | 0x540        | [\#KThread](#KThread "wikilink")\*                                                   | ExceptionThread               |
 | 0x548        | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ThreadList                    |
-| 0x558        | u32                                                                                  |                               |
-| 0x55C        | u32                                                                                  | HasStarted                    |
+| 0x558        | bool                                                                                 | HasStarted                    |
+| 0x55C        | u32                                                                                  |                               |
 | 0x560        | u64\[8\]                                                                             | UnusedPerformanceCounters     |
 | 0x5A0        | u64                                                                                  |                               |
 | 0x5A8        | u64                                                                                  |                               |
@@ -156,7 +156,8 @@ Inherits from:
 | 0x23A0       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\>                   | ThreadList                    |
 | 0x23B0       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KSharedMemoryRef](#KSharedMemoryRef "wikilink")\> | MappedSharedMemoriesList      |
 | 0x23B8       | u64                                                                                                    |                               |
-| 0x23C0       | u64                                                                                                    |                               |
+| 0x23C0       | bool                                                                                                   | HasStarted                    |
+| 0x23C1       | bool                                                                                                   |                               |
 | 0x23C8       | u64                                                                                                    |                               |
 | 0x23D0       | u64                                                                                                    |                               |
 | 0x23D8       | u64                                                                                                    |                               |
