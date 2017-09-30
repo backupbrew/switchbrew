@@ -448,11 +448,12 @@ Closing the debug handle also results in execution being resumed.
 
 ### AddressSpaceType
 
-| Type | Name              | Description                            |
-| ---- | ----------------- | -------------------------------------- |
-| 0    | Normal\_32Bit     |                                        |
-| 1    | Normal\_36Bit     |                                        |
-| 2    | WithoutMap\_32Bit | Appears to be missing map region \[?\] |
+| Type | Name                     | Width | Description                            |
+| ---- | ------------------------ | ----- | -------------------------------------- |
+| 0    | Normal\_32Bit            | 32    |                                        |
+| 1    | Normal\_36Bit            | 36    |                                        |
+| 2    | WithoutMap\_32Bit        | 32    | Appears to be missing map region \[?\] |
+| 3    | \[2.0.0+\] Normal\_39Bit | 39    |                                        |
 
 ## MemoryInfo
 

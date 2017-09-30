@@ -556,13 +556,15 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 
 === AddressSpaceType ===
 {| class=wikitable
-! Type || Name || Description
+! Type || Name || Width || Description
 |-
-| 0 || Normal_32Bit ||
+| 0 || Normal_32Bit || 32 ||
 |-
-| 1 || Normal_36Bit ||
+| 1 || Normal_36Bit || 36 ||
 |-
-| 2 || WithoutMap_32Bit || Appears to be missing map region [?]
+| 2 || WithoutMap_32Bit || 32 || Appears to be missing map region [?]
+|-
+| 3 || [2.0.0+] Normal_39Bit || 39 ||
 |}
 
 == MemoryInfo ==
