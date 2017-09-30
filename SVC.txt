@@ -659,7 +659,7 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 |-
 | <code>0x00402006</code> || Shared memory block || Mapped using [[#svcMapSharedMemory]].
 |-
-| <code>0x00482907</code> || Weird mapped memory || Mapped using [[#svcMapMemory]].
+| <code>0x00482907</code> || [1.0.0] Weird mapped memory || Mapped using [[#svcMapMemory]].
 |-
 | <code>0x00DD7E08</code> || Module code static || Mapped using [[#svcMapProcessCodeMemory]].
 |-
@@ -683,7 +683,7 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 |-
 | <code>0x004C2812</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=3.
 |-
-| [2.0.0+] <code>0x00002013</code> || Unknown per-thread read-only memory || Mapped in hardcoded process (?) during [[svcCreateThread]].
+| <code>0x00002013</code> || [2.0.0+] Unknown per-thread read-only memory || Mapped in hardcoded process (?) during [[svcCreateThread]].
 |}
 
 = Exception handling =
