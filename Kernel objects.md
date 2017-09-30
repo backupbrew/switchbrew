@@ -319,7 +319,7 @@ Size: 0xB0
 | 0x9C   | bool                                                     | IsKernel                            |
 | 0x9D   | bool                                                     | IsSystem                            |
 | 0x9E   | bool                                                     | HasAslr                             |
-| 0xA0   | u32                                                      |                                     |
+| 0xA0   | u32                                                      | PoolPartition                       |
 | 0xA4   | u32                                                      | Is\_0x5A\_If\_Cfg12\_Bit0\_ElseZero |
 | 0xA8   | u32                                                      | Is\_0x59\_If\_Cfg12\_Bit0\_ElseZero |
 | 0xAC   | u32                                                      | Is\_0x58\_If\_Cfg12\_Bit0\_ElseZero |
