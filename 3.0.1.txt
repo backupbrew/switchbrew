@@ -19,6 +19,8 @@ Exactly the following was updated:
 
 Everything under RomFS was updated.
 
+Kernel wasn't updated.
+
 ==Internet Browser==
 All webapplets were updated, vulnerabilities were fixed. 803/buildinfo/buildinfo.dat contains the following:
   r:14938
