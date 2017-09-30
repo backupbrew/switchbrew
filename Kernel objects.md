@@ -155,7 +155,6 @@ Inherits from:
 | 0x2398       | [\#KThread](#KThread "wikilink")\*                                                                     | ExceptionThread               |
 | 0x23A0       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\>                   | ThreadList                    |
 | 0x23B0       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KSharedMemoryRef](#KSharedMemoryRef "wikilink")\> | MappedSharedMemoriesList      |
-| 0x23B8       | u64                                                                                                    |                               |
 | 0x23C0       | bool                                                                                                   | HasStarted                    |
 | 0x23C1       | bool                                                                                                   |                               |
 | 0x23C8       | u64                                                                                                    |                               |
