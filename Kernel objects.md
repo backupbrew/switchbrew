@@ -102,7 +102,7 @@ Inherits from:
 | 0x548        | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ThreadList                    |
 | 0x558        | u32                                                                                  |                               |
 | 0x55C        | u32                                                                                  | HasStarted                    |
-| 0x560        | u64\[8\]                                                                             |                               |
+| 0x560        | u64\[8\]                                                                             | UnusedPerformanceCounters     |
 | 0x5A0        | u64                                                                                  |                               |
 | 0x5A8        | u64                                                                                  |                               |
 
@@ -144,13 +144,30 @@ Inherits from:
 | 0x280        | u64                                                                                                    | DynamicMemUsage               |
 | 0x288        | u64                                                                                                    | MaxTotalMemUsage              |
 | 0x290        | u32                                                                                                    | From\_CreateProcessInfo\_0xC  |
-|              |                                                                                                        |                               |
+| 0x298        | u64                                                                                                    |                               |
+| 0x2A0        | u64                                                                                                    |                               |
+| 0x2A8        | u64                                                                                                    |                               |
+| 0x2B0        | u64                                                                                                    |                               |
+| 0x2B8        | u64                                                                                                    |                               |
 | 0x2C0        | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")                                               | HandleTable                   |
 | 0x2380       | void\*                                                                                                 | UsermodeExceptionTlsArea      |
 | 0x2388       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\>                   | ExceptionThreadList           |
 | 0x2398       | [\#KThread](#KThread "wikilink")\*                                                                     | ExceptionThread               |
 | 0x23A0       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\>                   | ThreadList                    |
 | 0x23B0       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KSharedMemoryRef](#KSharedMemoryRef "wikilink")\> | MappedSharedMemoriesList      |
+| 0x23B8       | u64                                                                                                    |                               |
+| 0x23C0       | u64                                                                                                    |                               |
+| 0x23C8       | u64                                                                                                    |                               |
+| 0x23D0       | u64                                                                                                    |                               |
+| 0x23D8       | u64                                                                                                    |                               |
+| 0x23E0       | u64                                                                                                    |                               |
+| 0x23E8       | u64                                                                                                    |                               |
+| 0x23F0       | u64                                                                                                    |                               |
+| 0x23F8       | u64                                                                                                    |                               |
+| 0x2400       | u64\[8\]                                                                                               | UnusedPerformanceCounters     |
+| 0x2440       | u64                                                                                                    |                               |
+| 0x2448       | u64                                                                                                    |                               |
+| ...          | ...                                                                                                    | ...                           |
 
 </div>
 
