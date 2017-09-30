@@ -150,22 +150,26 @@ descriptor.
 
 **Description:** Maps a memory range into a different range.
 
-Useful for adding guard pages around stack.
+Mainly used for adding guard pages around stack.
 
 Source range gets reprotected to --- (it can no longer be accessed), and
-bit0 is set in [\#MemoryAttribute](#MemoryAttribute "wikilink").
+bit0 is set in the source
+[\#MemoryAttribute](#MemoryAttribute "wikilink").
 
 If dstaddr \>= LowerTreshold, the dst-range is enforced to be within the
 process' "MapRegion". Code can get the range of this region from
 [\#svcGetInfo](#svcGetInfo "wikilink") id0=2,3.
 
-In this case, the mapped memory will have state `0x482907`.
+In this case, the mapped memory will have state `0x5C3C0B`.
 
 As long as (dstaddr+size) \< LowerThreshold, then you can map anywhere
-but the mapped memory will have state `0x5C3C0B` instead.
+but the mapped memory will have state `0x482907` instead.
 
 LowerTreshold is 0x80000000 for 36-bit address spaces, and 0x40000000
 for 32-bit ones.
+
+\[2.0.0+\] Support for the `0x482907` mappings outside the "MapRegion"
+were removed.
 
 ## svcUnmapMemory
 
