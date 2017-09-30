@@ -231,7 +231,9 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x290 || u32 || From_CreateProcessInfo_0xC
 |-
-| 0x298 || [[#KProcessHandleTable]] || HandleTable
+|
+|-
+| 0x2C0 || [[#KProcessHandleTable]] || HandleTable
 |-
 | 0x2380 || void* || UsermodeExceptionTlsArea
 |-
@@ -272,7 +274,7 @@ Size: 0xB0
 == KProcessHandleTable ==
 [1.0.0] Size: 0x2A0
 
-[2.0.0] Size: 0x20E8
+[2.0.0] Size: 0x20C0
 
 <div style="display: inline-block">
 {| class="wikitable" border="1"
