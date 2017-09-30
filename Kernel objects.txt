@@ -461,9 +461,9 @@ Size: 0xB0
 |-
 | 0x28 || u64 || HeapCurAddr
 |-
-| 0x30 || u64 || 
+| 0x30 || u64 || NewUnknownRegionBaseAddr
 |-
-| 0x38 || u64 || 
+| 0x38 || u64 || NewUnknownRegionEndAddr
 |-
 | 0x40 || u64 || MapRegionBaseAddr
 |-
@@ -473,7 +473,7 @@ Size: 0xB0
 |-
 | 0x58 || u64 || 
 |-
-| 0x60 || u64 || 
+| 0x60 || u64 || HeapMaxAllocation
 |-
 | 0x68 || [[#KRecursiveLock]] || Mutex
 |-
