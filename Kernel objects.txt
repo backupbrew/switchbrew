@@ -404,7 +404,7 @@ Size: 0xB0
 |-
 | 0x30 || u64 || MapRegionBaseAddr
 |-
-| 0x38 || u64 || MapRegionEnd
+| 0x38 || u64 || MapRegionEndAddr
 |-
 | 0x40 || u64 || HeapMaxAllocation
 |-
@@ -465,9 +465,9 @@ Size: 0xB0
 |-
 | 0x38 || u64 || 
 |-
-| 0x40 || u64 || 
+| 0x40 || u64 || MapRegionBaseAddr
 |-
-| 0x48 || u64 || 
+| 0x48 || u64 || MapRegionEndAddr
 |-
 | 0x50 || u64 || 
 |-

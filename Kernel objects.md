@@ -273,7 +273,7 @@ Size: 0xB0
 | 0x20   | u64                                                      | HeapRegionEndAddr                   |
 | 0x28   | u64                                                      | HeapCurAddr                         |
 | 0x30   | u64                                                      | MapRegionBaseAddr                   |
-| 0x38   | u64                                                      | MapRegionEnd                        |
+| 0x38   | u64                                                      | MapRegionEndAddr                    |
 | 0x40   | u64                                                      | HeapMaxAllocation                   |
 | 0x48   | [\#KRecursiveLock](#KRecursiveLock "wikilink")           | Mutex                               |
 | 0x50   | [\#KPageTable](#KPageTable "wikilink")                   | PageTable                           |
@@ -306,8 +306,8 @@ Size: 0xB0
 | 0x28   | u64                                                      | HeapCurAddr                         |
 | 0x30   | u64                                                      |                                     |
 | 0x38   | u64                                                      |                                     |
-| 0x40   | u64                                                      |                                     |
-| 0x48   | u64                                                      |                                     |
+| 0x40   | u64                                                      | MapRegionBaseAddr                   |
+| 0x48   | u64                                                      | MapRegionEndAddr                    |
 | 0x50   | u64                                                      |                                     |
 | 0x58   | u64                                                      |                                     |
 | 0x60   | u64                                                      |                                     |
