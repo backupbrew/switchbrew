@@ -34,7 +34,7 @@ The first {at least 0xC00 bytes} are encrypted with AES-XTS with sector size 0x2
 |-
 | 0x206
 | 0x1
-| Crypto Type, must be 0-2. Only used stating with [[3.0.0]]. Normally 0. Value 2 is normally used by content using [[3.0.0]] crypto.
+| Crypto Type, must be 0-2. Only used stating with [[3.0.0]]. Normally 0. 2 = supported starting with [[3.0.0]].
 |-
 | 0x207
 | 0x1
