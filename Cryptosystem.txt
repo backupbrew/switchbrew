@@ -59,6 +59,8 @@ The tsec key is the source of all per-console entropy, because SSK is not used o
 | Yes
 |}
 
+Note: aes_unwrap(wrapped_key, wrap_key) is just another name for a single AES-128 block decryption.
+
 If bit0 of 0x7000FB94 is clear, it will initialize keys like this (probably used for internal development units only):
   // Final keys:
   package1_key    /* slot11 */ = aes_unwrap(f5baeadb.., sbk)

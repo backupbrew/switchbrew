@@ -35,6 +35,9 @@ retail.
 | 14      | SecureBootKey    | Bootrom                            | [Package1](Package1.md "wikilink") | No          |
 | 15      | SecureStorageKey | Bootrom                            | [Package1](Package1.md "wikilink") | Yes         |
 
+Note: aes\_unwrap(wrapped\_key, wrap\_key) is just another name for a
+single AES-128 block decryption.
+
 If bit0 of 0x7000FB94 is clear, it will initialize keys like this
 (probably used for internal development units
 only):
