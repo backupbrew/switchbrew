@@ -319,8 +319,8 @@ The whitelist is:
 `0x4c4, 0x4c8, 0x4cc, 0x584, 0x588, 0x58c.`
 
 \[2.0.0+\] The IO registers in range 0x7000E400 size 0xC00 skip the
-whitelist, and does a TrustZone performs call using
-[SMC](SMC.md "wikilink") 0xC3000003.
+whitelist, and does a TrustZone call using [SMC](SMC.md "wikilink")
+0xC3000003.
 
 ## svcCreateSharedMemory
 
