@@ -692,7 +692,9 @@ Size:
 
 ## KPoolAllocator
 
-Size: 0x118
+\[1.0.0\] Size: 0x118
+
+\[2.0.0\] Size: 0x228
 
 | Offset | Type                              | Description |
 | ------ | --------------------------------- | ----------- |
