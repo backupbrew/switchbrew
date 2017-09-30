@@ -649,7 +649,7 @@ Inherits from: [[#KAutoObject]]
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Offset || Type || Description
+! 1.0.0 Offset || Type || Description
 |-
 | 0 || [[#KAutoObject]] || Inheritance
 |-
@@ -668,7 +668,7 @@ Inherits from: [[#KAutoObject]]
 <div style="display: inline-block; vertical-align:top;">
 {| class="wikitable" border="1"
 |-
-! Offset || Type || Description
+! 2.0.0 Offset || Type || Description
 |-
 | 0 || [[#KAutoObject]] || Inheritance
 |-
@@ -686,6 +686,7 @@ Inherits from: [[#KAutoObject]]
 |}
 
 </div>
+
 = KPort =
 Size: 0xA8
 

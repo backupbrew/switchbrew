@@ -418,32 +418,33 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 \[2.0.0\] Size: 0x48
 
-Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+Inherits from:
+[\#KAutoObject](#KAutoObject "wikilink")
 
 <div style="display: inline-block;">
 
-| Offset | Type                                     | Description      |
-| ------ | ---------------------------------------- | ---------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance      |
-| 0x10   | KMemoryBlockList                         | Blocks           |
-| 0x28   | [\#KProcess](#KProcess "wikilink")\*     | OwnerProcess     |
-| 0x30   | int                                      | LocalPermission  |
-| 0x34   | int                                      | RemotePermission |
-| 0x38   | bool                                     | HasInited        |
+| 1.0.0 Offset | Type                                     | Description      |
+| ------------ | ---------------------------------------- | ---------------- |
+| 0            | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance      |
+| 0x10         | KMemoryBlockList                         | Blocks           |
+| 0x28         | [\#KProcess](#KProcess "wikilink")\*     | OwnerProcess     |
+| 0x30         | int                                      | LocalPermission  |
+| 0x34         | int                                      | RemotePermission |
+| 0x38         | bool                                     | HasInited        |
 
 </div>
 
 <div style="display: inline-block; vertical-align:top;">
 
-| Offset | Type                                             | Description        |
-| ------ | ------------------------------------------------ | ------------------ |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")         | Inheritance        |
-| 0x10   | KMemoryBlockList                                 | Blocks             |
-| 0x28   | [\#KResourceLimit](#KResourceLimit "wikilink")\* | OwnerResourceLimit |
-| 0x30   | u64                                              | OwnerProcessPid    |
-| 0x38   | int                                              | LocalPermission    |
-| 0x3C   | int                                              | RemotePermission   |
-| 0x40   | bool                                             | HasInited          |
+| 2.0.0 Offset | Type                                             | Description        |
+| ------------ | ------------------------------------------------ | ------------------ |
+| 0            | [\#KAutoObject](#KAutoObject "wikilink")         | Inheritance        |
+| 0x10         | KMemoryBlockList                                 | Blocks             |
+| 0x28         | [\#KResourceLimit](#KResourceLimit "wikilink")\* | OwnerResourceLimit |
+| 0x30         | u64                                              | OwnerProcessPid    |
+| 0x38         | int                                              | LocalPermission    |
+| 0x3C         | int                                              | RemotePermission   |
+| 0x40         | bool                                             | HasInited          |
 
 </div>
 
