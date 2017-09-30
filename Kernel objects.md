@@ -64,7 +64,7 @@ Inherits from:
 | 1.0.0 Offset | Type                                                                                 | Description                   |
 | ------------ | ------------------------------------------------------------------------------------ | ----------------------------- |
 | 0            | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")                       | Inheritance                   |
-| 0x28         |                                                                                      |                               |
+| 0x28         | KProcessScheduler                                                                    | Scheduler                     |
 | 0x38         | [\#KMemoryManager](#KMemoryManager "wikilink")                                       | MemoryManager                 |
 | 0xF0         | u64                                                                                  | TotalMemUsage                 |
 | 0xF8         | u64                                                                                  | TlsPagesListCount             |
@@ -113,7 +113,7 @@ Inherits from:
 | 2.0.0 Offset | Type                                                                                 | Description                   |
 | ------------ | ------------------------------------------------------------------------------------ | ----------------------------- |
 | 0            | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")                       | Inheritance                   |
-| 0x28         |                                                                                      |                               |
+| 0x28         | KProcessScheduler                                                                    | Scheduler                     |
 | 0x38         | [\#KMemoryManager](#KMemoryManager "wikilink")                                       | MemoryManager                 |
 | 0x100        | u64                                                                                  | TotalMemUsage                 |
 | 0x108        | u64                                                                                  | TlsPagesListCount             |
