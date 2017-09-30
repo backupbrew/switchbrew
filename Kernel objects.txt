@@ -626,15 +626,16 @@ Inherits from: [[#KAutoObject]]
 |}
 
 = KSharedMemory =
-Size: 0x40
+[1.0.0] Size: 0x40
+
+[2.0.0] Size: 0x48
 
 Inherits from: [[#KAutoObject]]
 
+<div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Offset
-! Type
-! Description
+! Offset || Type || Description
 |-
 | 0 || [[#KAutoObject]] || Inheritance
 |-
@@ -648,7 +649,29 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x38 || bool || HasInited
 |}
+</div>
 
+<div style="display: inline-block; vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || [[#KAutoObject]] || Inheritance
+|-
+| 0x10 || KMemoryBlockList || Blocks
+|-
+| 0x28 || [[#KResourceLimit]]* || OwnerResourceLimit
+|-
+| 0x30 || u64 || OwnerProcessPid
+|-
+| 0x38 || int || LocalPermission
+|-
+| 0x3C || int || RemotePermission
+|-
+| 0x40 || bool || HasInited
+|}
+
+</div>
 = KPort =
 Size: 0xA8
 
