@@ -47,10 +47,19 @@ Two new system modules were added, "ro" and "sdb".
 
 Two new system-data titles were [[Title_list|added]]: 0100000000000822 and 0100000000000823.
 
+=== FIRM ===
+All FIRM-package titles were updated, as listed above.
+
+819:
+
+Kernel was updated.
+
+All firm-sysmodules were updated. These also includes the updated rtld.
+
 === [[NS_Services|NS]]-sysmodule ===
 NS-sysmodule was updated, this fixed a vuln in multiple [[Switch_System_Flaws|cmds]].
 
-=== Rtld ===
+== Rtld ==
 All processes built for 3.0.0 now include an updated rtld.
 
 ==Keys==
