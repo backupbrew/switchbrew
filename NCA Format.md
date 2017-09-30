@@ -50,6 +50,18 @@ from [3.0.1](3.0.1.md "wikilink") for non-ncatype0, except for firm
 Note: in some cases various game content uses the above newer crypto as
 well.
 
+The keyindex passed to the contentkey-generation funcptr is determined
+as follows:
+
+  - Pre-[3.0.0](3.0.0.md "wikilink"): The ncahdr keyindex field(0x207)
+    is passed directly.
+  - [3.0.0](3.0.0.md "wikilink")+: It's determined using ncahdr
+    keyindex(0x207) and "Crypto Type"(0x206). The end result is
+    basically the same, except when ncahdr\_x206 == 0x2, final\_index is
+    new\_base\_index+ncahdr\_keyindex. Actual implementation loads index
+    from u32\_array\[ncahdr\_crypto\_type\], where the address of
+    u32\_array is different for each ncahdr\_keyindex.
+
 ## Section Table Entry
 
 | Offset | Size | Description      |

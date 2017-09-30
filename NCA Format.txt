@@ -84,6 +84,10 @@ With [[3.0.2]], all updated titles use the crypto from [[3.0.1]] for non-ncatype
 
 Note: in some cases various game content uses the above newer crypto as well.
 
+The keyindex passed to the contentkey-generation funcptr is determined as follows:
+* Pre-[[3.0.0]]: The ncahdr keyindex field(0x207) is passed directly.
+* [[3.0.0]]+: It's determined using ncahdr keyindex(0x207) and "Crypto Type"(0x206). The end result is basically the same, except when ncahdr_x206 == 0x2, final_index is new_base_index+ncahdr_keyindex. Actual implementation loads index from u32_array[ncahdr_crypto_type], where the address of u32_array is different for each ncahdr_keyindex.
+
 ==Section Table Entry==
 {| class="wikitable" border="1"
 |-
