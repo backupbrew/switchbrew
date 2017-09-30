@@ -21,7 +21,7 @@ keydata.
 | 0x204  | 0x1             | 0 for system NCAs. 1 for a NCA from gamecard.                                                                                                                                        |
 | 0x205  | 0x1             | Content Type (0=Program, 1=Meta, 2=Control, 3=Manual, 4=Data)                                                                                                                        |
 | 0x206  | 0x1             | Crypto Type, must be 0-2. Only used stating with [3.0.0](3.0.0.md "wikilink"). Normally 0. Value 2 is normally used by content using [3.0.0](3.0.0.md "wikilink") crypto.            |
-| 0x207  | 0x1             | Key index                                                                                                                                                                            |
+| 0x207  | 0x1             | Key index, must be 0-2.                                                                                                                                                              |
 | 0x208  | 0x8             | Size of the entire NCA.                                                                                                                                                              |
 | 0x210  | 0x8             | titleID                                                                                                                                                                              |
 | 0x21C  | 0x4             | sdk\_version. byte0 is normally 0? Compared with a required minimum-value(0x000B0000). Matches this string from codebin: "FS\_ACCESS: { sdk\_version: {byte3}.{byte2}.{byte1}, ...". |
