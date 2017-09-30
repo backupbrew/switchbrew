@@ -36,11 +36,13 @@ retail.
 | 15      | SecureStorageKey | Bootrom                            | [Package1](Package1.md "wikilink") | Yes         |
 
 If bit0 of 0x7000FB94 is clear, it will initialize keys like this
-(probably used for internal development units only):
+(probably used for internal development units
+only):
 
-` keyslot11 = aes_unwrap(f5baeadb.., sbk)`  
-` keyslot12 = aes_unwrap(5ff9c2d9.., sbk)`  
-` keyslot13 = aes_unwrap(4f025f0e..., aes_unwrap(6e4a9592.., ssk))`
+` // Final keys:`  
+` package1_key    /* slot11 */ = aes_unwrap(f5baeadb.., sbk)`  
+` master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x11 ? aff11423.. : 5e177ee1.., aes_unwrap(5ff9c2d9.., sbk))`  
+` per_console_key /* slot13 */ = aes_unwrap(4f025f0e..., aes_unwrap(6e4a9592.., ssk))`
 
 Normal key generation looks like this on
 1.0.0/2.0.0:
