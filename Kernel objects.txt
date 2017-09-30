@@ -459,7 +459,7 @@ Size: 0xB0
 |-
 | 0x20 || u64 || HeapRegionEndAddr
 |-
-| 0x28 || u64 || HeapRegionCurAddr
+| 0x28 || u64 || HeapCurAddr
 |-
 | 0x30 || u64 || 
 |-

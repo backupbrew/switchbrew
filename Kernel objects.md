@@ -303,7 +303,7 @@ Size: 0xB0
 | 0x10   | u64                                                      | AddrSpaceMaxAddr                    |
 | 0x18   | u64                                                      | HeapRegionBaseAddr                  |
 | 0x20   | u64                                                      | HeapRegionEndAddr                   |
-| 0x28   | u64                                                      | HeapRegionCurAddr                   |
+| 0x28   | u64                                                      | HeapCurAddr                         |
 | 0x30   | u64                                                      |                                     |
 | 0x38   | u64                                                      |                                     |
 | 0x40   | u64                                                      |                                     |
