@@ -573,7 +573,7 @@ it.
 | 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING                   |       |
 | 0x4008440A | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_TIMEOUT                        |       |
 | 0x8008440B | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT                   |       |
-| 0x8004440C | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT                   |       |
+| 0x8004440C | Out       | 4        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT\_SIZE         |       |
 | 0x0000440D | ?         | ?        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT (uses Ioctl3) |       |
 |            |           |          |                                                        |       |
 

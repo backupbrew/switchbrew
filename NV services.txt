@@ -680,7 +680,7 @@ Not accessible, but there is code to invoke it.
 |-
 | 0x8008440B || Out || 8 || NVGPU_DBG_GPU_IOCTL_GET_TIMEOUT ||
 |-
-| 0x8004440C || Out || 8 || NVGPU_DBG_GPU_IOCTL_GET_TIMEOUT ||
+| 0x8004440C || Out || 4 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT_SIZE ||
 |-
 | 0x0000440D || ? || ? || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT (uses Ioctl3)
 |-
