@@ -525,7 +525,7 @@ Closing the debug handle also results in execution being resumed.
 | `0x00000010` | Reserved                                                       |                                                                                                                     |
 | `0x005C3811` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=1.                                                                                |
 | `0x004C2812` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=3.                                                                                |
-| `0x00002013` | Unknown per-thread read-only memory                            | Mapped in hardcoded kernel during [svcCreateThread](SvcCreateThread.md "wikilink").                                 |
+| `0x00002013` | Kernel per-thread stack                                        | Mapped in kernel during [svcCreateThread](SvcCreateThread.md "wikilink").                                           |
 
 # Exception handling
 
