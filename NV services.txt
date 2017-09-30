@@ -541,7 +541,7 @@ Once a nvgpu channel has been bound to an address space it cannot be unbound. Th
 |-
 | 0x40284109 || In || 40 || [[#NVGPU_AS_IOCTL_INITIALIZE_EX]] ||
 |-
-| 0xC0144114 || Inout || 20 || ||
+| 0xC0144114 || Inout || 20 || NVGPU_AS_IOCTL_REMAP ||
 |}
 
 === NVGPU_AS_IOCTL_BIND_CHANNEL ===
@@ -668,6 +668,12 @@ Not accessible, but there is code to invoke it.
 |-
 | 0x40084409 || In || 8 || NVGPU_DBG_GPU_IOCTL_PC_SAMPLING ||
 |-
+| 0x4008440A || In || 8 || NVGPU_DBG_GPU_IOCTL_TIMEOUT ||
+|-
+| 0x8008440B || Out || 8 || NVGPU_DBG_GPU_IOCTL_GET_TIMEOUT ||
+|-
+| 0x8004440C || Out || 8 || NVGPU_DBG_GPU_IOCTL_GET_TIMEOUT ||
+|-
 |}
 
 == /dev/nvhost-ctrl-gpu ==
@@ -690,13 +696,13 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0x40084707 || In || 8 || [[#NVGPU_GPU_IOCTL_FLUSH_L2]] ||
 |-
-| 0x4008470E || In || 8 || ||
+| 0x4008470E || In || 8 || NVGPU_GPU_IOCTL_SET_MMUDEBUG_MODE ||
 |-
-| 0x4010470F || In || 16 || ||
+| 0x4010470F || In || 16 || NVGPU_GPU_IOCTL_SET_SM_DEBUG_MODE ||
 |-
-| 0xC0084710 || Inout || 8 || ||
+| 0xC0084710 || Inout || 8 || NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE ||
 |-
-| 0x80084711 || Out || 8 || ||
+| 0x80084711 || Out || 8 || NVGPU_GPU_IOCTL_GET_TPC_EXCEPTION_EN_STATUS ||
 |-
 | 0x80084712 || Out || 8 || ||
 |-
@@ -708,9 +714,11 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0x8018471A || Out || 24 || ||
 |-
-| 0xC008471B || Inout || 8 || ||
+| 0xC008471B || Inout || 8 || NVGPU_GPU_IOCTL_GET_ERROR_CHANNEL_USER_DATA ||
 |-
-| 0xC010471C || Inout || 16 || ||
+| 0xC010471C || Inout || 16 || NVGPU_GPU_IOCTL_GET_GPU_TIME ||
+|-
+| 0xC108471D || Inout || 264 || NVGPU_GPU_IOCTL_GET_CPU_TIME_CORRELATION_INFO ||
 |}
 
 === NVGPU_GPU_IOCTL_GET_CHARACTERISTICS ===
@@ -843,20 +851,20 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC0104813 || 16 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS_SNAPSHOT ||
 |-
-| 0x80804816 || 128 || || Only works when the channel is busy
+| 0x80804816 || 128 || NVGPU_IOCTL_CHANNEL_GET_ERROR_INFO || Only works when the channel is busy
 |-
 | 0xC0104817 || 16 || [[#NVGPU_IOCTL_CHANNEL_GET_ERROR]] ||
 |-
 | 0x40204818 || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX]] ||
 |-
-| 0xC0??4819 || Variable || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX]] ||
+| 0xC0??4819 || Variable || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY]] ||
 |-
 | 0xC020481A || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2]] ||
 |-
 |- style="border-top: double"
-| 0x40084714 || 8 || set_user_address || Sets an unknown user context address
+| 0x40084714 || 8 || NVGPU_IOCTL_CHANNEL_SET_USER_DATA || Sets an unknown user context address
 |-
-| 0x80084715 || 8 || get_user_address || Gets an unknown user context address
+| 0x80084715 || 8 || NVGPU_IOCTL_CHANNEL_GET_USER_DATA || Gets an unknown user context address
 |}
 
 === NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD ===
@@ -951,7 +959,7 @@ Returns the current error notification caught by the error notifier. Exclusive t
     u16 __status;       // inout (always 0xFFFF)
   };
 
-=== NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX ===
+=== NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY ===
 Allocates gpfifo entries with additional parameters. Exclusive to the Switch.
 
   struct {

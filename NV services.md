@@ -429,7 +429,7 @@ none).
 | 0x40104107 | In        | 16   | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")           |       |
 | 0xC0404108 | Inout     | 64   | [\#NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS](#NVGPU_AS_IOCTL_GET_VA_REGIONS "wikilink") |       |
 | 0x40284109 | In        | 40   | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink")    |       |
-| 0xC0144114 | Inout     | 20   |                                                                                   |       |
+| 0xC0144114 | Inout     | 20   | NVGPU\_AS\_IOCTL\_REMAP                                                           |       |
 
 ### NVGPU\_AS\_IOCTL\_BIND\_CHANNEL
 
@@ -567,6 +567,9 @@ it.
 | 0xC0184407 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP      |       |
 | 0x40084408 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP    |       |
 | 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING      |       |
+| 0x4008440A | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_TIMEOUT           |       |
+| 0x8008440B | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT      |       |
+| 0x8004440C | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT      |       |
 |            |           |          |                                           |       |
 
 ## /dev/nvhost-ctrl-gpu
@@ -583,17 +586,18 @@ gpu.
 | 0xC0B04705 | Inout     | 176  | [\#NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS](#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS "wikilink") |       |
 | 0xC0184706 | Inout     | 24   | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS                                                           |       |
 | 0x40084707 | In        | 8    | [\#NVGPU\_GPU\_IOCTL\_FLUSH\_L2](#NVGPU_GPU_IOCTL_FLUSH_L2 "wikilink")                       |       |
-| 0x4008470E | In        | 8    |                                                                                              |       |
-| 0x4010470F | In        | 16   |                                                                                              |       |
-| 0xC0084710 | Inout     | 8    |                                                                                              |       |
-| 0x80084711 | Out       | 8    |                                                                                              |       |
+| 0x4008470E | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_MMUDEBUG\_MODE                                                       |       |
+| 0x4010470F | In        | 16   | NVGPU\_GPU\_IOCTL\_SET\_SM\_DEBUG\_MODE                                                      |       |
+| 0xC0084710 | Inout     | 8    | NVGPU\_GPU\_IOCTL\_WAIT\_FOR\_PAUSE                                                          |       |
+| 0x80084711 | Out       | 8    | NVGPU\_GPU\_IOCTL\_GET\_TPC\_EXCEPTION\_EN\_STATUS                                           |       |
 | 0x80084712 | Out       | 8    |                                                                                              |       |
 | 0xC0044713 | Inout     | 4    |                                                                                              |       |
 | 0x80084714 | Out       | 8    | [\#NVGPU\_GPU\_IOCTL\_GET\_L2\_STATE](#NVGPU_GPU_IOCTL_GET_L2_STATE "wikilink")              |       |
 | 0x80044715 | Out       | 4    |                                                                                              |       |
 | 0x8018471A | Out       | 24   |                                                                                              |       |
-| 0xC008471B | Inout     | 8    |                                                                                              |       |
-| 0xC010471C | Inout     | 16   |                                                                                              |       |
+| 0xC008471B | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_ERROR\_CHANNEL\_USER\_DATA                                           |       |
+| 0xC010471C | Inout     | 16   | NVGPU\_GPU\_IOCTL\_GET\_GPU\_TIME                                                            |       |
+| 0xC108471D | Inout     | 264  | NVGPU\_GPU\_IOCTL\_GET\_CPU\_TIME\_CORRELATION\_INFO                                         |       |
 
 ### NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS
 
@@ -678,40 +682,40 @@ interface.
 
 ## Channel Ioctls
 
-| Value      | Size     | Description                                                                                         | Notes                                |
-| ---------- | -------- | --------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| 0xC0??0001 | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT                                                                      |                                      |
-| 0xC0080002 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT                                                              |                                      |
-| 0xC0080003 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE                                                               |                                      |
-| 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                            |                                      |
-| 0x40040007 | 4        |                                                                                                     |                                      |
-| 0x40080008 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE                                                              |                                      |
-| 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER                                                                 |                                      |
-| 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER                                                               |                                      |
-| 0x00000013 | 0        |                                                                                                     |                                      |
-| 0x40044801 | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD](#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD "wikilink")             |                                      |
-| 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_TIMEOUT                                                                 |                                      |
-| 0x40084805 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO "wikilink")              |                                      |
-| 0xC0044807 | 4        | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS                                                                 |                                      |
-| 0xC0??4808 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO "wikilink")            |                                      |
-| 0xC0104809 | 16       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX](#NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX "wikilink")           |                                      |
-| 0xC010480B | 16       | NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND                                                                  |                                      |
-| 0xC018480C | 24       | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER](#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER "wikilink") |                                      |
-| 0x4004480D | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY](#NVGPU_IOCTL_CHANNEL_SET_PRIORITY "wikilink")              |                                      |
-| 0x0000480E | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_ENABLE](#NVGPU_IOCTL_CHANNEL_ENABLE "wikilink")                           |                                      |
-| 0x0000480F | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_DISABLE](#NVGPU_IOCTL_CHANNEL_DISABLE "wikilink")                         |                                      |
-| 0x00004810 | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_PREEMPT](#NVGPU_IOCTL_CHANNEL_PREEMPT "wikilink")                         |                                      |
-| 0x00004811 | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_FORCE\_RESET](#NVGPU_IOCTL_CHANNEL_FORCE_RESET "wikilink")                |                                      |
-| 0x40084812 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_EVENTS\_CTRL](#NVGPU_IOCTL_CHANNEL_EVENTS_CTRL "wikilink")                |                                      |
-| 0xC0104813 | 16       | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS\_SNAPSHOT                                                       |                                      |
-| 0x80804816 | 128      |                                                                                                     | Only works when the channel is busy  |
-| 0xC0104817 | 16       | [\#NVGPU\_IOCTL\_CHANNEL\_GET\_ERROR](#NVGPU_IOCTL_CHANNEL_GET_ERROR "wikilink")                    |                                      |
-| 0x40204818 | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX "wikilink")       |                                      |
-| 0xC0??4819 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_EX](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX "wikilink")     |                                      |
-| 0xC020481A | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 "wikilink")     |                                      |
-|            |          |                                                                                                     |                                      |
-| 0x40084714 | 8        | set\_user\_address                                                                                  | Sets an unknown user context address |
-| 0x80084715 | 8        | get\_user\_address                                                                                  | Gets an unknown user context address |
+| Value      | Size     | Description                                                                                           | Notes                                |
+| ---------- | -------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| 0xC0??0001 | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT                                                                        |                                      |
+| 0xC0080002 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT                                                                |                                      |
+| 0xC0080003 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE                                                                 |                                      |
+| 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                              |                                      |
+| 0x40040007 | 4        |                                                                                                       |                                      |
+| 0x40080008 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE                                                                |                                      |
+| 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER                                                                   |                                      |
+| 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER                                                                 |                                      |
+| 0x00000013 | 0        |                                                                                                       |                                      |
+| 0x40044801 | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD](#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD "wikilink")               |                                      |
+| 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_TIMEOUT                                                                   |                                      |
+| 0x40084805 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO "wikilink")                |                                      |
+| 0xC0044807 | 4        | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS                                                                   |                                      |
+| 0xC0??4808 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO "wikilink")              |                                      |
+| 0xC0104809 | 16       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX](#NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX "wikilink")             |                                      |
+| 0xC010480B | 16       | NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND                                                                    |                                      |
+| 0xC018480C | 24       | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER](#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER "wikilink")   |                                      |
+| 0x4004480D | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY](#NVGPU_IOCTL_CHANNEL_SET_PRIORITY "wikilink")                |                                      |
+| 0x0000480E | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_ENABLE](#NVGPU_IOCTL_CHANNEL_ENABLE "wikilink")                             |                                      |
+| 0x0000480F | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_DISABLE](#NVGPU_IOCTL_CHANNEL_DISABLE "wikilink")                           |                                      |
+| 0x00004810 | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_PREEMPT](#NVGPU_IOCTL_CHANNEL_PREEMPT "wikilink")                           |                                      |
+| 0x00004811 | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_FORCE\_RESET](#NVGPU_IOCTL_CHANNEL_FORCE_RESET "wikilink")                  |                                      |
+| 0x40084812 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_EVENTS\_CTRL](#NVGPU_IOCTL_CHANNEL_EVENTS_CTRL "wikilink")                  |                                      |
+| 0xC0104813 | 16       | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS\_SNAPSHOT                                                         |                                      |
+| 0x80804816 | 128      | NVGPU\_IOCTL\_CHANNEL\_GET\_ERROR\_INFO                                                               | Only works when the channel is busy  |
+| 0xC0104817 | 16       | [\#NVGPU\_IOCTL\_CHANNEL\_GET\_ERROR](#NVGPU_IOCTL_CHANNEL_GET_ERROR "wikilink")                      |                                      |
+| 0x40204818 | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX "wikilink")         |                                      |
+| 0xC0??4819 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY "wikilink") |                                      |
+| 0xC020481A | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 "wikilink")       |                                      |
+|            |          |                                                                                                       |                                      |
+| 0x40084714 | 8        | NVGPU\_IOCTL\_CHANNEL\_SET\_USER\_DATA                                                                | Sets an unknown user context address |
+| 0x80084715 | 8        | NVGPU\_IOCTL\_CHANNEL\_GET\_USER\_DATA                                                                | Gets an unknown user context address |
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD
 
@@ -823,7 +827,7 @@ Exclusive to the Switch.
 `   u16 __status;       // inout (always 0xFFFF)`  
 ` };`
 
-### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX
+### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY
 
 Allocates gpfifo entries with additional parameters. Exclusive to the
 Switch.
