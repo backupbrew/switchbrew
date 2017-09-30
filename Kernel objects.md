@@ -262,6 +262,8 @@ Size: 0xB0
 \[2.0.0\] Size:
 0xC8
 
+<div style="display: inline-block">
+
 | Offset | Type                                                     | Description                         |
 | ------ | -------------------------------------------------------- | ----------------------------------- |
 | 0      | \*                                                       | Vtable                              |
@@ -289,6 +291,42 @@ Size: 0xB0
 | 0xA0   | u64                                                      | TranslationTableBaseRegister0       |
 | 0xA8   | u64                                                      | TranslationControlRegister          |
 | 0xB0   | u8                                                       | AsidTagValue                        |
+
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+
+| Offset | Type                                                     | Description                         |
+| ------ | -------------------------------------------------------- | ----------------------------------- |
+| 0      | \*                                                       | Vtable                              |
+| 8      | u64                                                      | AddrSpaceMinAddr                    |
+| 0x10   | u64                                                      | AddrSpaceMaxAddr                    |
+| 0x18   | u64                                                      |                                     |
+| 0x20   | u64                                                      |                                     |
+| 0x28   | u64                                                      |                                     |
+| 0x30   | u64                                                      |                                     |
+| 0x38   | u64                                                      |                                     |
+| 0x40   | u64                                                      |                                     |
+| 0x48   | u64                                                      |                                     |
+| 0x50   | u64                                                      |                                     |
+| 0x58   | u64                                                      |                                     |
+| 0x60   | u64                                                      |                                     |
+| 0x68   | [\#KRecursiveLock](#KRecursiveLock "wikilink")           | Mutex                               |
+| 0x70   | [\#KPageTable](#KPageTable "wikilink")                   | PageTable                           |
+| 0x80   | [\#KMemoryBlockManager](#KMemoryBlockManager "wikilink") | MemoryBlockManager                  |
+| 0x98   | u32                                                      | AddressSpaceWidth (32/36/39)        |
+| 0x9C   | bool                                                     | IsKernel                            |
+| 0x9D   | bool                                                     | IsSystem                            |
+| 0x9E   | bool                                                     | HasAslr                             |
+| 0xA0   | u32                                                      |                                     |
+| 0xA4   | u32                                                      | Is\_0x5A\_If\_Cfg12\_Bit0\_ElseZero |
+| 0xA8   | u32                                                      | Is\_0x59\_If\_Cfg12\_Bit0\_ElseZero |
+| 0xAC   | u32                                                      | Is\_0x58\_If\_Cfg12\_Bit0\_ElseZero |
+| 0xB0   | u64                                                      | TranslationTableBaseRegister0       |
+| 0xB8   | u64                                                      | TranslationTableBaseRegister0       |
+| 0xC0   | u32                                                      | AsidTagValue                        |
+
+</div>
 
 ## KPageTable
 

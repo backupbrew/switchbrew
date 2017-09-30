@@ -383,6 +383,7 @@ Size: 0xB0
 
 [2.0.0] Size: 0xC8
 
+<div style="display: inline-block">
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -439,6 +440,70 @@ Size: 0xB0
 |-
 | 0xB0 || u8 || AsidTagValue
 |}
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! Offset
+! Type
+! Description
+|-
+| 0 || * || Vtable
+|-
+| 8 || u64 || AddrSpaceMinAddr
+|-
+| 0x10 || u64 || AddrSpaceMaxAddr
+|-
+| 0x18 || u64 || 
+|-
+| 0x20 || u64 || 
+|-
+| 0x28 || u64 || 
+|-
+| 0x30 || u64 || 
+|-
+| 0x38 || u64 || 
+|-
+| 0x40 || u64 || 
+|-
+| 0x48 || u64 || 
+|-
+| 0x50 || u64 || 
+|-
+| 0x58 || u64 || 
+|-
+| 0x60 || u64 || 
+|-
+| 0x68 || [[#KRecursiveLock]] || Mutex
+|-
+| 0x70 || [[#KPageTable]] || PageTable
+|-
+| 0x80 || [[#KMemoryBlockManager]] || MemoryBlockManager
+|-
+| 0x98 || u32 || AddressSpaceWidth (32/36/39)
+|-
+| 0x9C || bool || IsKernel
+|-
+| 0x9D || bool || IsSystem
+|-
+| 0x9E || bool || HasAslr
+|-
+| 0xA0 || u32 ||
+|-
+| 0xA4 || u32 || Is_0x5A_If_Cfg12_Bit0_ElseZero
+|-
+| 0xA8 || u32 || Is_0x59_If_Cfg12_Bit0_ElseZero
+|-
+| 0xAC || u32 || Is_0x58_If_Cfg12_Bit0_ElseZero
+|-
+| 0xB0 || u64 || TranslationTableBaseRegister0
+|-
+| 0xB8 || u64 || TranslationTableBaseRegister0
+|-
+| 0xC0 || u32 || AsidTagValue
+|}
+</div>
 
 == KPageTable ==
 Size: 0x10
