@@ -50,6 +50,9 @@ Two new system-data titles were [[Title_list|added]]: 0100000000000822 and 01000
 === [[NS_Services|NS]]-sysmodule ===
 NS-sysmodule was updated, this fixed a vuln in multiple [[Switch_System_Flaws|cmds]].
 
+=== Rtld ===
+All processes built for 3.0.0 now include an updated rtld.
+
 ==Keys==
 The bootloader [[BCT#bootloader0_info|version]] was changed from 1 to 2, this was the first time it was changed.
 
