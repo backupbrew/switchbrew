@@ -945,6 +945,7 @@ Inherits from: [[#KAutoObject]]
 
 Inherits from: [[#KReadableEvent]]
 
+<div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
 ! 1.0.0 Offset || Type || Description
@@ -955,7 +956,9 @@ Inherits from: [[#KReadableEvent]]
 |-
 | 0x48 || u32 || IrqId (or -1)
 |}
+</div>
 
+<div style="display: inline-block; vertical-align:top;">
 {| class="wikitable" border="1"
 |-
 ! 2.0.0 Offset || Type || Description
@@ -968,8 +971,11 @@ Inherits from: [[#KReadableEvent]]
 |-
 | 0x44 || bool || IsIrqRegistered
 |}
+</div>
 
 === KIrqRegistrationRef ===
+[2.0.0] Size: 0x20
+
 {| class="wikitable" border="1"
 |-
 ! Offset || Type || Description

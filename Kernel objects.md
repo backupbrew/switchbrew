@@ -627,11 +627,17 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 Inherits from:
 [\#KReadableEvent](#KReadableEvent "wikilink")
 
+<div style="display: inline-block;">
+
 | 1.0.0 Offset | Type                                           | Description   |
 | ------------ | ---------------------------------------------- | ------------- |
 | 0            | [\#KReadableEvent](#KReadableEvent "wikilink") | Inheritance   |
 | 0x38         |                                                |               |
 | 0x48         | u32                                            | IrqId (or -1) |
+
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
 
 | 2.0.0 Offset | Type                                                       | Description     |
 | ------------ | ---------------------------------------------------------- | --------------- |
@@ -640,7 +646,12 @@ Inherits from:
 | 0x40         | u32                                                        | IrqId (or -1)   |
 | 0x44         | bool                                                       | IsIrqRegistered |
 
+</div>
+
 ### KIrqRegistrationRef
+
+\[2.0.0\] Size:
+0x20
 
 | Offset | Type                                               | Description   |
 | ------ | -------------------------------------------------- | ------------- |
