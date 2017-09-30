@@ -323,7 +323,7 @@ Size: 0xB0
 | 0xA8   | u32                                                      | Is\_0x59\_If\_Cfg12\_Bit0\_ElseZero |
 | 0xAC   | u32                                                      | Is\_0x58\_If\_Cfg12\_Bit0\_ElseZero |
 | 0xB0   | u64                                                      | TranslationTableBaseRegister0       |
-| 0xB8   | u64                                                      | TranslationTableBaseRegister0       |
+| 0xB8   | u64                                                      | TranslationControlRegister          |
 | 0xC0   | u32                                                      | AsidTagValue                        |
 
 </div>
