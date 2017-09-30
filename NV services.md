@@ -16,6 +16,10 @@ Main NVIDIA driver service.
 | 7   | ForceSetClientPID                      |
 | 8   | SetClientPID                           |
 | 9   | DumpGraphicsMemoryInfo                 |
+| 10  | \[3.0.0+\]                             |
+| 11  | \[3.0.0+\] Ioctl2                      |
+| 12  | \[3.0.0+\] Ioctl3                      |
+| 13  | \[3.0.0+\]                             |
 
 ## Open
 
@@ -557,20 +561,21 @@ params.
 Not accessible, but there is code to invoke
 it.
 
-| Value      | Direction | Size     | Description                               | Notes |
-| ---------- | --------- | -------- | ----------------------------------------- | ----- |
-| 0x40084401 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL     |       |
-| 0xC0??4402 | Inout     | Variable | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS          |       |
-| 0x40084403 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL      |       |
-| 0x40044404 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE         |       |
-| 0x40044405 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE |       |
-| 0xC0184407 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP      |       |
-| 0x40084408 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP    |       |
-| 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING      |       |
-| 0x4008440A | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_TIMEOUT           |       |
-| 0x8008440B | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT      |       |
-| 0x8004440C | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT      |       |
-|            |           |          |                                           |       |
+| Value      | Direction | Size     | Description                                            | Notes |
+| ---------- | --------- | -------- | ------------------------------------------------------ | ----- |
+| 0x40084401 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL                  |       |
+| 0xC0??4402 | Inout     | Variable | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS                       |       |
+| 0x40084403 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL                   |       |
+| 0x40044404 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE                      |       |
+| 0x40044405 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE              |       |
+| 0xC0184407 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP                   |       |
+| 0x40084408 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP                 |       |
+| 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING                   |       |
+| 0x4008440A | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_TIMEOUT                        |       |
+| 0x8008440B | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT                   |       |
+| 0x8004440C | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT                   |       |
+| 0x0000440D | ?         | ?        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT (uses Ioctl3) |       |
+|            |           |          |                                                        |       |
 
 ## /dev/nvhost-ctrl-gpu
 

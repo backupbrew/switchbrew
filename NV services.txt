@@ -26,6 +26,14 @@ Main NVIDIA driver service.
 | 8 || SetClientPID
 |-
 | 9 || DumpGraphicsMemoryInfo
+|-
+| 10 || [3.0.0+]
+|-
+| 11 || [3.0.0+] Ioctl2
+|-
+| 12 || [3.0.0+] Ioctl3
+|-
+| 13 || [3.0.0+]
 |}
 
 == Open ==
@@ -673,6 +681,8 @@ Not accessible, but there is code to invoke it.
 | 0x8008440B || Out || 8 || NVGPU_DBG_GPU_IOCTL_GET_TIMEOUT ||
 |-
 | 0x8004440C || Out || 8 || NVGPU_DBG_GPU_IOCTL_GET_TIMEOUT ||
+|-
+| 0x0000440D || ? || ? || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT (uses Ioctl3)
 |-
 |}
 
