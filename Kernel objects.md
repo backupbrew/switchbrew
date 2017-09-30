@@ -150,6 +150,7 @@ Inherits from:
 | 0x2388       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ExceptionThreadList           |
 | 0x2398       | [\#KThread](#KThread "wikilink")\*                                                   | ExceptionThread               |
 | 0x23A0       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ThreadList                    |
+| 0x23B0       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<?\>                                | MappedSharedMemories          |
 
 </div>
 

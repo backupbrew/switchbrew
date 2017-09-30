@@ -242,6 +242,8 @@ Inherits from: [[#KSynchronizationObject]]
 | 0x2398 || [[#KThread]]* || ExceptionThread
 |-
 | 0x23A0 || [[#KLinkedListNode]]<[[#KThread]]> || ThreadList
+|-
+| 0x23B0 || [[#KLinkedListNode]]<?> || MappedSharedMemories
 |}
 </div>
 
