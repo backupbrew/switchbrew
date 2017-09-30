@@ -255,19 +255,21 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x23C0 || bool || HasStarted
 |-
-| 0x23C1 || bool || 
+| 0x23C1 || bool || HasException
 |-
-| 0x23C8 || u64 ||
+| 0x23C4 || u32 || ExceptionEnum0
 |-
-| 0x23D0 || u64 ||
+| 0x23C8 || u64 || ExceptionEnum1
 |-
-| 0x23D8 || u64 ||
+| 0x23D0 || u64 || ExceptionThreadUnkInfo0
 |-
-| 0x23E0 || u64 ||
+| 0x23D8 || u64 || BreakArg0
 |-
-| 0x23E8 || u64 ||
+| 0x23E0 || u64 || BreakArg1
 |-
-| 0x23F0 || u64 ||
+| 0x23E8 || u64 || BreakArg2
+|-
+| 0x23F0 || u64 || ExceptionThreadUnkInfo1
 |-
 | 0x23F8 || u64 ||
 |-
