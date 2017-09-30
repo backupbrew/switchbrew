@@ -36,4 +36,34 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 * The following 01000000000008XX titles were added:
 ** 0100000000000800(SSL trusted certs), 0100000000000807(Hotspot List), 010000000000081E(Dummy file), 010000000000081F(Icosa system config), 0100000000000820(Copper system config), 0100000000000821(Hoag system config),
 * The System Application "flog" (01008BB00013C000) was added.
+
+==Kernel==
+* KPoolManager was completely rewritten.
+
+* KHandleTable default size was improved from 40 to 1024.
+* The code to create a bigger handle table in allocated pool memory has been removed.
+* KHandleTable spinlock was given core-suspension logic.
+* KHandleTable compresses 64-bit pointers into 32-bit offsets.
+
+* KAddressSpace was renamed to KDeviceAddressSpace.
+
+* KSharedMemory now doesn't incref for each map.
+** Instead it maintains a list of every map (each 0x20-byte entry).
+** Probably to do better cleanup.
+
+* KInterruptEvent changed:
+** Creation doesn't use KIrqSingleton directly anymore.
+** Instead it allocates a 0x20-byte entry, and then uses KIrqSingleton.
+** Probaly to do better cleanup.
+
+* Size-checks >= 0x180000000 was added to a bunch of syscalls.
+
+* Restriction on debug SVCs were loosened to support [[creport]].
+
+* svcReadWriteRegister was extended with more registers.
+
+* Added blacklist on [[NPDM]] kernel descriptor memory mappings.
+
+* Process exception dispatching was implemented/improved.
+
 {{NavboxVersions}}
