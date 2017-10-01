@@ -732,6 +732,8 @@ Inherits from:
 \[2.0.0\] Size:
 0x450
 
+<div style="display: inline-block;">
+
 | 1.0.0 Offset | Type                                                | Description       |
 | ------------ | --------------------------------------------------- | ----------------- |
 | 0            | [\#KPoolAllocator](#KPoolAllocator "wikilink")\[3\] | Allocator         |
@@ -740,6 +742,10 @@ Inherits from:
 | 0x370        | u64                                                 |                   |
 | 0x378        | [\#KRecursiveLock](#KRecursiveLock "wikilink")      | Mutex             |
 
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+
 | 2.0.0 Offset | Type                                             | Description    |
 | ------------ | ------------------------------------------------ | -------------- |
 | 0            | [\#KPoolAllocator](#KPoolAllocator "wikilink")   | Allocator0     |
@@ -747,11 +753,15 @@ Inherits from:
 | 0x228        | [\#KPoolAllocator](#KPoolAllocator "wikilink")   | Allocator1     |
 | 0x448        | [\#KPartitionInfo](#KPartitionInfo "wikilink")\* | PartitionInfo1 |
 
+</div>
+
 ## KPoolAllocator
 
 \[1.0.0\] Size: 0x118
 
 \[2.0.0\] Size: 0x220
+
+<div style="display: inline-block;">
 
 | 1.0.0 Offset | Type                              | Description |
 | ------------ | --------------------------------- | ----------- |
@@ -760,6 +770,10 @@ Inherits from:
 | 0x10         | s32                               | NumPools    |
 | 0x18         | [\#KPool](#KPool "wikilink")\[8\] | Pools       |
 
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+
 | 2.0.0 Offset | Type                              | Description |
 | ------------ | --------------------------------- | ----------- |
 | 0            | void\*                            | MemoryBase  |
@@ -767,11 +781,15 @@ Inherits from:
 | 0x10         | [\#KPool](#KPool "wikilink")\[8\] | Pools       |
 | 0x210        | s32                               | NumPools    |
 
+</div>
+
 ### KPool
 
 \[1.0.0\] Size: 0x20
 
 \[2.0.0\] Size: 0x40
+
+<div style="display: inline-block;">
 
 | 1.0.0 Offset | Type          | Description            |
 | ------------ | ------------- | ---------------------- |
@@ -779,6 +797,10 @@ Inherits from:
 | 8            | u64           |                        |
 | 0x10         | u64           |                        |
 | 0x18         | void\*        | SingletonTableEntryPtr |
+
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
 
 | 2.0.0 Offset | Type                           | Description            |
 | ------------ | ------------------------------ | ---------------------- |
@@ -788,6 +810,8 @@ Inherits from:
 | 0x18         | void\*                         | SingletonTableEntryPtr |
 | 0x20         | [\#KPool](#KPool "wikilink")\* | Parent                 |
 | 0x30         | u64\[2\]                       | DmaProtectionKey       |
+
+</div>
 
 ## KPoolRefManager
 

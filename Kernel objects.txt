@@ -1101,6 +1101,7 @@ Inherits from: [[#KAutoObject]]
 
 [2.0.0] Size: 0x450
 
+<div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
 ! 1.0.0 Offset || Type || Description
@@ -1115,7 +1116,9 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x378 || [[#KRecursiveLock]] || Mutex
 |}
+</div>
 
+<div style="display: inline-block; vertical-align:top;">
 {| class="wikitable" border="1"
 |-
 ! 2.0.0 Offset || Type || Description
@@ -1128,12 +1131,14 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x448 || [[#KPartitionInfo]]* || PartitionInfo1
 |}
+</div>
 
 == KPoolAllocator ==
 [1.0.0] Size: 0x118
 
 [2.0.0] Size: 0x220
 
+<div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
 ! 1.0.0 Offset || Type || Description
@@ -1146,7 +1151,9 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x18 || [[#KPool]][8] || Pools
 |}
+</div>
 
+<div style="display: inline-block; vertical-align:top;">
 {| class="wikitable" border="1"
 |-
 ! 2.0.0 Offset || Type || Description
@@ -1159,12 +1166,14 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x210 || s32 || NumPools
 |}
+</div>
 
 === KPool ===
 [1.0.0] Size: 0x20
 
 [2.0.0] Size: 0x40
 
+<div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
 ! 1.0.0 Offset || Type || Description
@@ -1177,7 +1186,9 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x18 || void* || SingletonTableEntryPtr
 |}
+</div>
 
+<div style="display: inline-block; vertical-align:top;">
 {| class="wikitable" border="1"
 |-
 ! 2.0.0 Offset || Type || Description
@@ -1194,7 +1205,7 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0x30 || u64[2] || DmaProtectionKey
 |}
-
+</div>
 
 == KPoolRefManager ==
 [1.0.0] Size: 0x20
