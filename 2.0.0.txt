@@ -53,6 +53,9 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 ** Instead it maintains a list of every map (each 0x20-byte entry).
 ** Probably to do better cleanup.
 
+* KSharedMemory no longer references the owning KProcess.
+** Instead it stores the pid, so that the process can be freed even though the shared memory still exists.
+
 * KInterruptEvent changed:
 ** Creation doesn't use KIrqSingleton directly anymore.
 ** Instead it allocates a 0x20-byte entry, and then uses KIrqSingleton.
