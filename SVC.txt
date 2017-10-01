@@ -686,7 +686,7 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 |-
 | <code>0x004C2812</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=3.
 |-
-| <code>0x00002013</code> || Kernel per-thread stack || Mapped in kernel during [[svcCreateThread]].
+| <code>0x00002013</code> || Kernel per-thread stack || Mapped in kernel during [[#svcCreateThread]].
 |}
 
 = Exception handling =
