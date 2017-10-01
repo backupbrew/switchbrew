@@ -135,12 +135,10 @@ bits.
 ## Mapping restrictions
 
 The physaddr range 0x80060000-0x81970FFF is not allowed to be mapped as
-IO.
+IO. The physaddr range 0x80000000-0x1000000000 is not allowed to be
+mapped as Normal.
 
-\[2.0.0+\] The range was changed into 0x80060000-0x81D3FFFF.
-
-The physaddr range 0x80000000-0x1000000000 is not allowed to be mapped
-as Normal.
+\[2.0.0+\] The range for IO was changed into 0x80060000-0x81D3FFFF.
 
 \[2.0.0+\] A blacklist was added for IO and Normal mappings:
 
@@ -151,3 +149,10 @@ as Normal.
   - 0x70019000 (MC)
   - 0x7001C000 (MC0)
   - 0x7001D000 (MC1)
+
+## Kernel versions
+
+| Firmware | Kernel Version | Minimum Allowed |
+| -------- | -------------- | --------------- |
+| 1.0.0    | 5.0            | 3.0             |
+| 2.0.0    | 6.1            | 3.0             |
