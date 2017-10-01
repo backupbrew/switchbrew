@@ -20,7 +20,7 @@ keydata.
 | 0x200  | 0x4             | Magicnum "NCA3"                                                                                                                                                                      |
 | 0x204  | 0x1             | 0 for system NCAs. 1 for a NCA from gamecard.                                                                                                                                        |
 | 0x205  | 0x1             | Content Type (0=Program, 1=Meta, 2=Control, 3=Manual, 4=Data)                                                                                                                        |
-| 0x206  | 0x1             | Crypto Type, must be 0-2. Only used stating with [3.0.0](3.0.0.md "wikilink"). Normally 0. 2 = Crypto supported starting with [3.0.0](3.0.0.md "wikilink").                          |
+| 0x206  | 0x1             | Crypto Type. Only used stating with [3.0.0](3.0.0.md "wikilink"). Normally 0. 2 = Crypto supported starting with [3.0.0](3.0.0.md "wikilink").                                       |
 | 0x207  | 0x1             | Key index, must be 0-2.                                                                                                                                                              |
 | 0x208  | 0x8             | Size of the entire NCA.                                                                                                                                                              |
 | 0x210  | 0x8             | titleID                                                                                                                                                                              |
@@ -56,11 +56,28 @@ as follows:
   - Pre-[3.0.0](3.0.0.md "wikilink"): The ncahdr keyindex field(0x207)
     is passed directly.
   - [3.0.0](3.0.0.md "wikilink")+: It's determined using ncahdr
-    keyindex(0x207) and "Crypto Type"(0x206). The end result is
-    basically the same, except when ncahdr\_x206 == 0x2, final\_index is
-    new\_base\_index+ncahdr\_keyindex. Actual implementation loads index
-    from u32\_array\[ncahdr\_crypto\_type\], where the address of
-    u32\_array is different for each ncahdr\_keyindex.
+    keyindex(0x207) and "Crypto Type"(0x206). The latter field must be
+    0-2. In each ncahdr\_keyindex block, it executes
+    "if(ncahdr\_x206\>=3)<panic>", but that won't trigger due to the
+    earlier check. The end result is basically the same as
+    pre-[3.0.0](3.0.0.md "wikilink"), except when ncahdr\_x206 == 0x2,
+    final\_index is new\_base\_index+ncahdr\_keyindex. Actual
+    implementation loads index from u32\_array\[ncahdr\_crypto\_type\],
+    where the address of u32\_array is different for each
+    ncahdr\_keyindex.
+  - [3.0.1](3.0.1.md "wikilink")+: The dedicated range check for
+    ncahdr\_x206("Crypto Type") was removed, since the updated code no
+    longer needs it. The output from a function masked with 0xFF is now
+    used instead of ncahdr\_x206(ncahdr\_crypto\_type). The range check
+    for that field was changed from {ncahdr\_x206 check with panic
+    described above}, to "if(index\>=4)final\_index=10;"(skips accessing
+    the array and uses 10 directly). The arrays were updated with an
+    additional entry: final\_index=v301\_base\_index+ncahdr\_keyindex.
+      - The keydata for the above index10 is not(?) known to be
+        initialized.
+      - The new function called by the code described above does:
+      - `if(ncahdr_x206 < ncahdr_x220){ret = ncahdr_x220; } else { ret =
+        ncahdr_x206; } return ret;`
 
 ## Section Table Entry
 

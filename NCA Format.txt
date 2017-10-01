@@ -34,7 +34,7 @@ The first {at least 0xC00 bytes} are encrypted with AES-XTS with sector size 0x2
 |-
 | 0x206
 | 0x1
-| Crypto Type, must be 0-2. Only used stating with [[3.0.0]]. Normally 0. 2 = Crypto supported starting with [[3.0.0]].
+| Crypto Type. Only used stating with [[3.0.0]]. Normally 0. 2 = Crypto supported starting with [[3.0.0]].
 |-
 | 0x207
 | 0x1
@@ -86,7 +86,11 @@ Note: in some cases various game content uses the above newer crypto as well.
 
 The keyindex passed to the contentkey-generation funcptr is determined as follows:
 * Pre-[[3.0.0]]: The ncahdr keyindex field(0x207) is passed directly.
-* [[3.0.0]]+: It's determined using ncahdr keyindex(0x207) and "Crypto Type"(0x206). The end result is basically the same, except when ncahdr_x206 == 0x2, final_index is new_base_index+ncahdr_keyindex. Actual implementation loads index from u32_array[ncahdr_crypto_type], where the address of u32_array is different for each ncahdr_keyindex.
+* [[3.0.0]]+: It's determined using ncahdr keyindex(0x207) and "Crypto Type"(0x206). The latter field must be 0-2. In each ncahdr_keyindex block, it executes "if(ncahdr_x206>=3)<panic>", but that won't trigger due to the earlier check. The end result is basically the same as pre-[[3.0.0]], except when ncahdr_x206 == 0x2, final_index is new_base_index+ncahdr_keyindex. Actual implementation loads index from u32_array[ncahdr_crypto_type], where the address of u32_array is different for each ncahdr_keyindex.
+* [[3.0.1]]+: The dedicated range check for ncahdr_x206("Crypto Type") was removed, since the updated code no longer needs it. The output from a function masked with 0xFF is now used instead of ncahdr_x206(ncahdr_crypto_type). The range check for that field was changed from {ncahdr_x206 check with panic described above}, to "if(index>=4)final_index=10;"(skips accessing the array and uses 10 directly). The arrays were updated with an additional entry: final_index=v301_base_index+ncahdr_keyindex.
+** The keydata for the above index10 is not(?) known to be initialized.
+** The new function called by the code described above does:
+** <code>if(ncahdr_x206 < ncahdr_x220){ret = ncahdr_x220; } else { ret = ncahdr_x206; } return ret;</code>
 
 ==Section Table Entry==
 {| class="wikitable" border="1"
