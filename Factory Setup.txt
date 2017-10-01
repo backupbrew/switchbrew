@@ -29,12 +29,12 @@ Factory firmware contains a stripped down version of the Switch's OS with unnece
 !  Description
 |-
 |  0100000000002000
-|  "BoardTest"
-|  
+|  BoardFunction
+|  Board testing.
 |-
 |  0100000000002001
-|  "BoardWireless" 
-|  
+|  A3Wireless
+|  Wireless testing.
 |-
 |  0100000000002002
 |  C1LcdAndKey

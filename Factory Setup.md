@@ -46,8 +46,8 @@ installed.
 
 | Title ID         | Name                                  | Description                                                                                           |
 | ---------------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| 0100000000002000 | "BoardTest"                           |                                                                                                       |
-| 0100000000002001 | "BoardWireless"                       |                                                                                                       |
+| 0100000000002000 | BoardFunction                         | Board testing.                                                                                        |
+| 0100000000002001 | A3Wireless                            | Wireless testing.                                                                                     |
 | 0100000000002002 | C1LcdAndKey                           | LCD/Keyboard testing.                                                                                 |
 | 0100000000002003 | C2UsbHpmic                            | USB testing.                                                                                          |
 | 0100000000002004 | C3Aging                               | Graphics/Framerate testing.                                                                           |
