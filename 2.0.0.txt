@@ -78,4 +78,6 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 
 * On startup, kernel now calls SMC id1 0xC3000007 with the kernel memory range start and size.
 
+* Aarch64 exception vector for "SError interrupt" was implemented.
+
 {{NavboxVersions}}
