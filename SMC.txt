@@ -82,7 +82,7 @@ Functions exposed to the kernel internally.
 |-
 | 0xC3000006 || Panic || ||
 |-
-| 0xC3000007 || || ||
+| 0xC3000007 || [2.0.0+] || ||
 |-
-| 0xC3000008 || ReadWriteRegister || ||
+| 0xC3000008 || [2.0.0+] ReadWriteRegister || ||
 |}

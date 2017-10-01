@@ -57,5 +57,5 @@ Functions exposed to the kernel internally.
 | 0xC3000004 | GetConfig (Same as Id 0 Sub-Id 2.) |    |     |
 | 0xC3000005 | PrngX931 (Same as Id 0 Sub-Id 6.)  |    |     |
 | 0xC3000006 | Panic                              |    |     |
-| 0xC3000007 |                                    |    |     |
-| 0xC3000008 | ReadWriteRegister                  |    |     |
+| 0xC3000007 | \[2.0.0+\]                         |    |     |
+| 0xC3000008 | \[2.0.0+\] ReadWriteRegister       |    |     |
