@@ -105,7 +105,7 @@
 | 0x79 | [\#svcCreateProcess](#svcCreateProcess "wikilink")                                 | X1=procinfo\_ptr, X2=caps\_ptr, W3=cap\_num                                                 | W0=result, W1=process\_handle                       |
 | 0x7A | svcStartProcess                                                                    | W0=proc\_handle, W1=main\_thread\_prio, W2=default\_cpuid, W3=main\_thread\_stacksz         | W0=result                                           |
 | 0x7B | svcTerminateProcess                                                                |                                                                                             |                                                     |
-| 0x7C | svcGetProcessInfo                                                                  |                                                                                             |                                                     |
+| 0x7C | [\#svcGetProcessInfo](#svcGetProcessInfo "wikilink")                               |                                                                                             |                                                     |
 | 0x7D | svcCreateResourceLimit                                                             |                                                                                             |                                                     |
 | 0x7E | svcSetResourceLimitLimitValue                                                      |                                                                                             |                                                     |
 | 0x7F | svcCallSecureMonitor                                                               |                                                                                             |                                                     |
@@ -368,6 +368,10 @@ Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as input.
 
 **Description:** Detach an address space from a
 [device](#DeviceName "wikilink").
+
+## svcGetProcessInfo
+
+Returns an enum with value 0-7.
 
 ## Debugging
 

@@ -208,7 +208,7 @@
 |-
 | 0x7B || svcTerminateProcess || || 
 |-
-| 0x7C || svcGetProcessInfo || || 
+| 0x7C || [[#svcGetProcessInfo]] || || 
 |-
 | 0x7D || svcCreateResourceLimit || || 
 |-
@@ -427,6 +427,9 @@ Takes a [[#CreateProcessInfo]] as input.
 
 == svcDetachDeviceAddressSpace ==
 '''Description:''' Detach an address space from a [[#DeviceName|device]].
+
+== svcGetProcessInfo ==
+Returns an enum with value 0-7.
 
 == Debugging ==
 [2.0.0+] Exactly 6 debug SVCs require that [[SPL_services#GetConfig|IsDebugMode]] is non-zero. Error 0x4201 is returned otherwise.
