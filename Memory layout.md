@@ -10,6 +10,8 @@ with upper bits random and 2MB-aligned:
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
   - Stack mapping region, available from
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
+  - \[2.0.0+\] Unknown region, available from
+    [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
 
 The main binary is placed at an address that is provided to the kernel
 by Loader via
