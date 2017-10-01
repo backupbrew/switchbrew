@@ -130,16 +130,24 @@ As of [[2.0.0]] KASLR is not used.
 | 0xFFFFFFFE00000000-... || 0x80000000 || ... || 0x60000000000709 || RW- || Raw DRAM access
 |}
 
-== 2.0.0 ==
+== 2.0.0-3.0.0 ==
 {| class="wikitable" border="1"
 |-
 ! Cores || Virtual || Physical || Size || Attributes || Permissions || Description
 |-
-| All || 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC62FFF || 0x800A0000 || 0x63000 || 0x78B || R-X || Kernel .text
+| All || 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC62FFF || 0x800A0000 || 0x63000 || 0x78B || R-X || [2.0.0] Kernel .text
 |-
-| All || 0xFFFFFFF7FFC63000-0xFFFFFFF7FFC65FFF || 0x80103000 || 0x3000 || 0x6000000000078B || R-- || Kernel .rodata
+| All || 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC62FFF || 0x800A0000 || 0x4B000 || 0x78B || R-X || [3.0.0] Kernel .text
 |-
-| All || 0xFFFFFFF7FFC66000-0xFFFFFFF7FFC6EFFF || 0x80106000 || 0x9000 || 0x6000000000070B || RW- || Kernel .data+.bss
+| All || 0xFFFFFFF7FFC63000-0xFFFFFFF7FFC65FFF || 0x80103000 || 0x3000 || 0x6000000000078B || R-- || [2.0.0] Kernel .rodata
+|-
+| All || 0xFFFFFFF7FFC4B000-0xFFFFFFF7FFC4DFFF || 0x800EB000 || 0x3000 || 0x6000000000078B || R-- || [3.0.0] Kernel .rodata
+|-
+| All || 0xFFFFFFF7FFC66000-0xFFFFFFF7FFC6EFFF || 0x80106000 || 0x9000 || 0x6000000000070B || RW- || [2.0.0] Kernel .data+.bss
+|-
+| All || 0xFFFFFFF7FFC4E000-0xFFFFFFF7FFC5AFFF || 0x800EE000 || 0xD000 || 0x6000000000070B || RW- || [3.0.0] Kernel .data+.bss
+|-
+| All || 0xFFFFFFF7FFDC0000-0xFFFFFFF7FFDC0FFF || 0x60006000 || 0x1000 || 0x60000000000607 || RW- || Clock and Reset
 |-
 | All || 0xFFFFFFF7FFDC0000-0xFFFFFFF7FFDC0FFF || 0x60006000 || 0x1000 || 0x60000000000607 || RW- || Clock and Reset
 |-
