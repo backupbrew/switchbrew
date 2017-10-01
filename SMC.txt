@@ -70,11 +70,11 @@ Functions exposed to the kernel internally.
 {| class=wikitable
 ! Sub-Id || Name || In || Out
 |-
-| 0xC4000001 || CPU_SUSPEND (oyasumi) || ||
+| 0xC4000001 || CpuSuspend (oyasumi) || ||
 |-
-| 0x84000002 || CPU_OFF || ||
+| 0x84000002 || CpuOff || ||
 |-
-| 0xC4000003 || CPU_ON || ||
+| 0xC4000003 || CpuOn || ||
 |-
 | 0xC3000004 || GetConfig (Same as Id 0 Sub-Id 2.) || ||
 |-

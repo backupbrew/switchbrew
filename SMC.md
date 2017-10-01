@@ -51,9 +51,9 @@ Functions exposed to the kernel internally.
 
 | Sub-Id     | Name                               | In | Out |
 | ---------- | ---------------------------------- | -- | --- |
-| 0xC4000001 | CPU\_SUSPEND (oyasumi)             |    |     |
-| 0x84000002 | CPU\_OFF                           |    |     |
-| 0xC4000003 | CPU\_ON                            |    |     |
+| 0xC4000001 | CpuSuspend (oyasumi)               |    |     |
+| 0x84000002 | CpuOff                             |    |     |
+| 0xC4000003 | CpuOn                              |    |     |
 | 0xC3000004 | GetConfig (Same as Id 0 Sub-Id 2.) |    |     |
 | 0xC3000005 | PrngX931 (Same as Id 0 Sub-Id 6.)  |    |     |
 | 0xC3000006 | Panic                              |    |     |
