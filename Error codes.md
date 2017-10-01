@@ -116,6 +116,7 @@ applets.
 | 0x7802            | 60          | The specified [NCA](NCA.md "wikilink")-type doesn't exist for this title.                                                                                                            |
 | 0x7D202           | 1001        | Process does not have RomFs                                                                                                                                                          |
 | 0x7D402           | 1002        | Title-id not found / savedata not found.                                                                                                                                             |
+| 0xFA202           | 2001        | SD card not inserted                                                                                                                                                                 |
 | 0x13B002          | 2520        | Gamecard not inserted                                                                                                                                                                |
 | 0x13DA02          | 2541        | Version check failed when mounting gamecard sysupdate partition?                                                                                                                     |
 | 0x171402          | 2954        | Invalid gamecard handle.                                                                                                                                                             |
@@ -247,9 +248,9 @@ titles:
 
 # Support Errors
 
-| Error | Module                     | Description | Notes               |
-| ----- | -------------------------- | ----------- | ------------------- |
-|       | {web-applets listed above} | 2750        | MP4 parsing failed. |
+| Error \! Module | Description                | Notes |
+| --------------- | -------------------------- | ----- |
+|                 | {web-applets listed above} | 2750  |
 
 Normal error-codes displayed by the system also use the same format as
 fatal-errors.

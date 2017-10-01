@@ -197,6 +197,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x7D402 || 1002 || Title-id not found / savedata not found.
 |-
+| 0xFA202 || 2001 || SD card not inserted
+|-
 | 0x13B002 || 2520 || Gamecard not inserted
 |-
 | 0x13DA02 || 2541 || Version check failed when mounting gamecard sysupdate partition?
@@ -444,7 +446,7 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 
 = Support Errors =
 {| class=wikitable
-! Error !! Module || Description || Notes
+! Error ! Module || Description || Notes
 |-
 | 
 | {web-applets listed above}
