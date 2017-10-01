@@ -136,19 +136,19 @@
 |-
 | 0x55 || [[#svcQueryIoMapping]] || X1=physaddr, X2=size || W0=result, X1=virtaddr
 |-
-| 0x56 || svcCreateDeviceAddressSpace || X1=dev_addr, X2=dev_size || W0=result, W1=handle
+| 0x56 || [[#svcCreateDeviceAddressSpace]] || X1=dev_as_start_addr, X2=dev_as_end_addr || W0=result, W1=dev_as_handle
 |-
-| 0x57 || [[#svcAttachDeviceAddressSpace]] || W0=device, X1=handle || W0=result
+| 0x57 || [[#svcAttachDeviceAddressSpace]] || W0=device, X1=dev_as_handle || W0=result
 |-
-| 0x58 || [[#svcDetachDeviceAddressSpace]] || W0=device, X1=handle || W0=result
+| 0x58 || [[#svcDetachDeviceAddressSpace]] || W0=device, X1=dev_as_handle || W0=result
 |-
-| 0x59 || svcMapDeviceAddressSpaceByForce || W0=handle, W1=proc_handle, X2=dev_addr, X3=dev_size, X4=map_addr, W5=perm || W0=result 
+| 0x59 || [[#svcMapDeviceAddressSpaceByForce]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr, W5=perm || W0=result 
 |-
-| 0x5A || svcMapDeviceAddressSpaceAligned || W0=handle, W1=proc_handle, X2=dev_addr, X3=dev_size, X4=map_addr, W5=perm || W0=result 
+| 0x5A || [[#svcMapDeviceAddressSpaceAligned]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr, W5=perm || W0=result 
 |-
 | 0x5B || svcMapDeviceAddressSpace || || 
 |-
-| 0x5C || svcUnmapDeviceAddressSpace || W0=handle, W1=proc_handle, X2=map_addr, X3=map_size, W4=perm || W0=result
+| 0x5C || [[#svcUnmapDeviceAddressSpace]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr || W0=result
 |-
 | 0x5D || svcInvalidateProcessDataCache || || 
 |-
@@ -389,7 +389,7 @@ Read/write IO registers with a hardcoded whitelist. Input address is physical-ad
 
 rw_mask is 0 for reading and 0xffffffff for writing. You can also write individual bits by using a mask value.
 
-You can only write to registers inside physical pages 0x70019000, 0x7001C000, 0x7001D000, and they all share the same whitelist.
+You can only write to registers inside physical pages 0x70019000 (MC), 0x7001C000 (MC0), 0x7001D000 (MC1), and they all share the same whitelist.
 
 The whitelist is same for writing as for reading.
 
@@ -400,7 +400,7 @@ The whitelist is:
 
 [2.0.0+] Whitelist was extended with <code>0x4c4, 0x4c8, 0x4cc, 0x584, 0x588, 0x58c.</code>
 
-[2.0.0+] The IO registers in range 0x7000E400 size 0xC00 skip the whitelist, and does a TrustZone call using [[SMC]] Id1 0xC3000008(ReadWriteRegister).
+[2.0.0+] The IO registers in range 0x7000E400 (PMC) size 0xC00 skip the whitelist, and do a TrustZone call using [[SMC]] Id1 0xC3000008(ReadWriteRegister).
 
 == svcCreateSharedMemory ==
 Other perm can be used to enforce permission 1, 3, or 0x10000000 if don't care.
@@ -419,14 +419,34 @@ The inverse operation of [[#svcQueryIoMapping]].
 == svcQueryIoMapping ==
 '''Description:''' Returns a virtual address mapped to a given IO range.
 
-== svcCreateProcess ==
-Takes a [[#CreateProcessInfo]] as input.
+== svcCreateDeviceAddressSpace ==
+'''Description:''' Creates a virtual address space for binding device address spaces and returns a handle.
+
+dev_as_start_addr is normally set to 0 and dev_as_end_addr is normally set to 0xFFFFFFFF.
 
 == svcAttachDeviceAddressSpace ==
-'''Description:''' Attach an address space to a [[#DeviceName|device]].
+'''Description:''' Attaches a device address space to a [[#DeviceName|device]].
 
 == svcDetachDeviceAddressSpace ==
-'''Description:''' Detach an address space from a [[#DeviceName|device]].
+'''Description:''' Detaches a device address space from a [[#DeviceName|device]].
+
+== svcMapDeviceAddressSpaceByForce ==
+'''Description:''' Maps an attached device address space to an userspace address.
+
+dev_map_addr is the userspace destination address, while dev_as_addr is the source address between dev_as_start_addr and dev_as_end_addr (passed to [[#svcCreateDeviceAddressSpace]]).
+
+The userspace destination address must have the [[SVC#MemoryState|MapDeviceAllowed]] bit set. Bit [[SVC#MemoryAttribute|IsDeviceMapped]] will be set after mapping.
+
+== svcMapDeviceAddressSpaceAligned ==
+'''Description:''' Maps an attached device address space to an userspace address.
+
+Same as [[#svcMapDeviceAddressSpaceByForce]], but the userspace destination address must have the [[SVC#MemoryState|MapDeviceAlignedAllowed]] bit set instead.
+
+== svcUnmapDeviceAddressSpace ==
+'''Description:''' Unmaps an attached device address space from an userspace address.
+
+== svcCreateProcess ==
+Takes a [[#CreateProcessInfo]] as input.
 
 == svcGetProcessInfo ==
 Returns an enum with value 0-7.
