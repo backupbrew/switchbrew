@@ -69,6 +69,8 @@ Size: 0x10
 
 [2.0.0] Size: 0x2480
 
+[3.0.0] Size: 0x2580
+
 Inherits from: [[#KSynchronizationObject]]
 
 <div style="display: inline-block">
