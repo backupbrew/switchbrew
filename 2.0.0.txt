@@ -76,4 +76,6 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 * Support for processes with 39-bit AddressSpaceType was added.
 ** Includes required IPC changes.
 
+* On startup, kernel now calls SMC id1 0xC3000007 with the kernel memory range start and size.
+
 {{NavboxVersions}}
