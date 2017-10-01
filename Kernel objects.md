@@ -730,41 +730,68 @@ Inherits from:
 \[1.0.0\] Size: 0x380
 
 \[2.0.0\] Size:
-0x228
+0x450
 
-| Offset | Type                                                | Description       |
-| ------ | --------------------------------------------------- | ----------------- |
-| 0      | [\#KPoolAllocator](#KPoolAllocator "wikilink")\[3\] | Allocator         |
-| 0x348  | [\#KPoolRefManager](#KPoolRefManager "wikilink")    | RefManager        |
-| 0x368  | u64                                                 | AllocationCounter |
-| 0x370  | u64                                                 |                   |
-| 0x378  | [\#KRecursiveLock](#KRecursiveLock "wikilink")      | Mutex             |
+| 1.0.0 Offset | Type                                                | Description       |
+| ------------ | --------------------------------------------------- | ----------------- |
+| 0            | [\#KPoolAllocator](#KPoolAllocator "wikilink")\[3\] | Allocator         |
+| 0x348        | [\#KPoolRefManager](#KPoolRefManager "wikilink")    | RefManager        |
+| 0x368        | u64                                                 | AllocationCounter |
+| 0x370        | u64                                                 |                   |
+| 0x378        | [\#KRecursiveLock](#KRecursiveLock "wikilink")      | Mutex             |
+
+| 2.0.0 Offset | Type                                             | Description    |
+| ------------ | ------------------------------------------------ | -------------- |
+| 0            | [\#KPoolAllocator](#KPoolAllocator "wikilink")   | Allocator0     |
+| 0x220        | [\#KPartitionInfo](#KPartitionInfo "wikilink")\* | PartitionInfo0 |
+| 0x228        | [\#KPoolAllocator](#KPoolAllocator "wikilink")   | Allocator1     |
+| 0x448        | [\#KPartitionInfo](#KPartitionInfo "wikilink")\* | PartitionInfo1 |
 
 ## KPoolAllocator
 
-Size: 0x118
+\[1.0.0\] Size: 0x118
 
-| Offset | Type                              | Description |
-| ------ | --------------------------------- | ----------- |
-| 0      | void\*                            | MemoryBase  |
-| 8      | u64                               | MemorySize  |
-| 0x10   | s32                               | NumPools    |
-| 0x18   | [\#KPool](#KPool "wikilink")\[8\] | Pools       |
+\[2.0.0\] Size: 0x220
+
+| 1.0.0 Offset | Type                              | Description |
+| ------------ | --------------------------------- | ----------- |
+| 0            | void\*                            | MemoryBase  |
+| 8            | u64                               | MemorySize  |
+| 0x10         | s32                               | NumPools    |
+| 0x18         | [\#KPool](#KPool "wikilink")\[8\] | Pools       |
+
+| 2.0.0 Offset | Type                              | Description |
+| ------------ | --------------------------------- | ----------- |
+| 0            | void\*                            | MemoryBase  |
+| 8            | u64                               | MemorySize  |
+| 0x10         | [\#KPool](#KPool "wikilink")\[8\] | Pools       |
+| 0x210        | s32                               | NumPools    |
 
 ### KPool
 
-Size: 0x20
+\[1.0.0\] Size: 0x20
 
-| Offset | Type          | Description            |
-| ------ | ------------- | ---------------------- |
-| 0      | KPoolHeader\* | FirstFreeChunk         |
-| 8      | u64           |                        |
-| 0x10   | u64           |                        |
-| 0x18   | void\*        | SingletonTableEntryPtr |
+\[2.0.0\] Size: 0x40
+
+| 1.0.0 Offset | Type          | Description            |
+| ------------ | ------------- | ---------------------- |
+| 0            | KPoolHeader\* | FirstFreeChunk         |
+| 8            | u64           |                        |
+| 0x10         | u64           |                        |
+| 0x18         | void\*        | SingletonTableEntryPtr |
+
+| 2.0.0 Offset | Type                           | Description            |
+| ------------ | ------------------------------ | ---------------------- |
+| 0            | KPoolHeader\*                  | FirstFreeChunk         |
+| 8            | u64                            |                        |
+| 0x10         | u64                            |                        |
+| 0x18         | void\*                         | SingletonTableEntryPtr |
+| 0x20         | [\#KPool](#KPool "wikilink")\* | Parent                 |
+| 0x30         | u64\[2\]                       | DmaProtectionKey       |
 
 ## KPoolRefManager
 
-Size:
+\[1.0.0\] Size:
 0x20
 
 | Offset | Type                                         | Description   |
