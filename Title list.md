@@ -173,4 +173,4 @@ systems.
 
 ## Games
 
-See [here](Title%20list%20Games.md "wikilink")..
+See [here](Title%20list%20Games.md "wikilink").

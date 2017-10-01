@@ -296,4 +296,4 @@ No 01000000000020XX titles exist on retail systems.
 |}
 
 == Games ==
-See [[Title_list/Games|here]]..
+See [[Title_list/Games|here]].
