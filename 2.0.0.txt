@@ -38,7 +38,9 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 * The System Application "flog" (01008BB00013C000) was added.
 
 ==Kernel==
-* KPoolManager was completely rewritten.
+* KPoolManager was majorly rewritten.
+** Per-page reference counting was removed.
+** Added MAC crypto on heap-chunk headers, to protect against DMA attacks (same as 3DS).
 
 * KHandleTable default size was improved from 40 to 1024.
 * The code to create a bigger handle table in allocated pool memory has been removed.
