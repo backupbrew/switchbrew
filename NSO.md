@@ -4,23 +4,7 @@ It starts with the "NSO" header and mainly describes .text, .rodata, and
 .data segments (like a short-form of ELF program
 headers):
 
-### SegmentHeader
-
-| Offset | Size | Description                                                               |
-| ------ | ---- | ------------------------------------------------------------------------- |
-| 0x0    | 4    | file offset of data                                                       |
-| 0x4    | 4    | memory offset loaded to                                                   |
-| 0x8    | 4    | size of data copied to memory offset (i.e. size after decompression)      |
-| 0xC    | 4    | alignment used on memory size / size of .bss in the case of .data segment |
-
-### .rodata-relative extent
-
-| Offset | Size | Description                  |
-| ------ | ---- | ---------------------------- |
-| 0x0    | 4    | offset (relative to .rodata) |
-| 0x4    | 4    | size of region               |
-
-### NSO Header
+# NSO Header
 
 | Offset | Size      | Description                                                                                         |
 | ------ | --------- | --------------------------------------------------------------------------------------------------- |
@@ -28,9 +12,9 @@ headers):
 | 0x4    | 4         |                                                                                                     |
 | 0x8    | 4         |                                                                                                     |
 | 0xC    | 4         | Always 0x3f?                                                                                        |
-| 0x10   | 0x10 \* 3 | SegmentHeader for each segment                                                                      |
+| 0x10   | 0x10 \* 3 | SegmentHeader\[3\]                                                                                  |
 | 0x40   | 0x20      | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes.    |
-| 0x60   | 0x4 \* 3  | file size of each segment (i.e. LZ4-compressed size)                                                |
+| 0x60   | 0x4 \* 3  | CompressedSize\[3\]                                                                                 |
 | 0x6c   | 0x24      | Padding                                                                                             |
 | 0x90   | 8         | .rodata-relative extents of .dynstr                                                                 |
 | 0x98   | 8         | .rodata-relative extents of .dynsym                                                                 |
@@ -41,7 +25,23 @@ Most data in Switch binaries are standard ELF structures, however some
 are custom. For example, the MOD header is essentially a replacement for
 a PT\_DYNAMIC program header.
 
-### MOD
+## SegmentHeader
+
+| Offset | Size | Description               |
+| ------ | ---- | ------------------------- |
+| 0x0    | 4    | FileOffset                |
+| 0x4    | 4    | MemoryOffset              |
+| 0x8    | 4    | DecompressedSize          |
+| 0xC    | 4    | UnkOffset/UnkSize/BssSize |
+
+## .rodata-relative extent
+
+| Offset | Size | Description        |
+| ------ | ---- | ------------------ |
+| 0x0    | 4    | RegionRoDataOffset |
+| 0x4    | 4    | RegionSize         |
+
+## MOD
 
 All offsets are signed 32bit values relative to the magic field. The
 32bits at image base + 4 must point to the magic field. The MOD
@@ -56,9 +56,9 @@ literal.
 
 | Offset | Size | Description                                                              |
 | ------ | ---- | ------------------------------------------------------------------------ |
-| 0x00   | 4    | zero padding                                                             |
-| 0x04   | 4    | offset to magic. Always 8 (so it works when MOD is at image\_base + 0).  |
-| 0x08   | 4    | magic "MOD0"                                                             |
+| 0x00   | 4    | ZeroPadding                                                              |
+| 0x04   | 4    | MagicOffset. Always 8 (so it works when MOD is at image\_base + 0).      |
+| 0x08   | 4    | Magic "MOD0"                                                             |
 | 0x0C   | 4    | .dynamic offset                                                          |
 | 0x10   | 4    | .bss start offset                                                        |
 | 0x14   | 4    | .bss end offset                                                          |
