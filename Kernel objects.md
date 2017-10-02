@@ -102,8 +102,8 @@ Inherits from:
 | 0x540        | [\#KThread](#KThread "wikilink")\*                                                   | ExceptionThread               |
 | 0x548        | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ThreadList                    |
 | 0x558        | bool                                                                                 | HasStarted                    |
-| 0x55C        | u32                                                                                  |                               |
-| 0x560        | u64\[8\]                                                                             | UnusedPerformanceCounters     |
+| 0x55C        | u32                                                                                  | UnusedZero                    |
+| 0x560        | u64\[8\]                                                                             | UnusedZeroes                  |
 | 0x5A0        | u64                                                                                  |                               |
 | 0x5A8        | u64                                                                                  |                               |
 
@@ -164,8 +164,8 @@ Inherits from:
 | 0x23E0       | u64                                                                                                    | BreakArg1                     |
 | 0x23E8       | u64                                                                                                    | BreakArg2                     |
 | 0x23F0       | u64                                                                                                    | ExceptionThreadUnkInfo1       |
-| 0x23F8       | u64                                                                                                    |                               |
-| 0x2400       | u64\[8\]                                                                                               | UnusedPerformanceCounters     |
+| 0x23F8       | u32                                                                                                    | UnusedZero                    |
+| 0x2400       | u64\[8\]                                                                                               | UnusedZeroes                  |
 | 0x2440       | u64                                                                                                    |                               |
 | 0x2448       | u64                                                                                                    |                               |
 | ...          | ...                                                                                                    | ...                           |

@@ -152,9 +152,9 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x558 || bool || HasStarted
 |-
-| 0x55C || u32 ||
+| 0x55C || u32 || UnusedZero
 |-
-| 0x560 || u64[8] || UnusedPerformanceCounters
+| 0x560 || u64[8] || UnusedZeroes
 |-
 | 0x5A0 || u64 ||
 |-
@@ -269,9 +269,9 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x23F0 || u64 || ExceptionThreadUnkInfo1
 |-
-| 0x23F8 || u64 ||
+| 0x23F8 || u32 || UnusedZero
 |-
-| 0x2400 || u64[8] || UnusedPerformanceCounters
+| 0x2400 || u64[8] || UnusedZeroes
 |-
 | 0x2440 || u64 ||
 |-
