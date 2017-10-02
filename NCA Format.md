@@ -50,8 +50,8 @@ from [3.0.1](3.0.1.md "wikilink") for non-ncatype0, except for firm
 Note: in some cases various game content uses the above newer crypto as
 well.
 
-The keyindex passed to the contentkey-generation funcptr is determined
-as follows:
+The keyindex passed to <key-generation-related code> is determined as
+follows:
 
   - Pre-[3.0.0](3.0.0.md "wikilink"): The ncahdr keyindex field(0x207)
     is passed directly.

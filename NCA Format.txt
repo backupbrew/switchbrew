@@ -84,7 +84,7 @@ With [[3.0.2]], all updated titles use the crypto from [[3.0.1]] for non-ncatype
 
 Note: in some cases various game content uses the above newer crypto as well.
 
-The keyindex passed to the contentkey-generation funcptr is determined as follows:
+The keyindex passed to <key-generation-related code> is determined as follows:
 * Pre-[[3.0.0]]: The ncahdr keyindex field(0x207) is passed directly.
 * [[3.0.0]]+: It's determined using ncahdr keyindex(0x207) and "Crypto Type"(0x206). The latter field must be 0-2. In each ncahdr_keyindex block, it executes "if(ncahdr_x206>=3)<panic>", but that won't trigger due to the earlier check. The end result is basically the same as pre-[[3.0.0]], except when ncahdr_x206 == 0x2, final_index is new_base_index+ncahdr_keyindex. Actual implementation loads index from u32_array[ncahdr_crypto_type], where the address of u32_array is different for each ncahdr_keyindex.
 * [[3.0.1]]+: The dedicated range check for ncahdr_x206("Crypto Type") was removed, since the updated code no longer needs it. The output from a function masked with 0xFF is now used instead of ncahdr_x206(ncahdr_crypto_type). The range check for that field was changed from {ncahdr_x206 check with panic described above}, to "if(index>=4)final_index=10;"(skips accessing the array and uses 10 directly). The arrays were updated with an additional entry: final_index=v301_base_index+ncahdr_keyindex.
