@@ -104,8 +104,8 @@ Inherits from:
 | 0x558        | bool                                                                                 | HasStarted                    |
 | 0x55C        | u32                                                                                  | UnusedZero                    |
 | 0x560        | u64\[8\]                                                                             | UnusedZeroes                  |
-| 0x5A0        | u64                                                                                  |                               |
-| 0x5A8        | u64                                                                                  |                               |
+| 0x5A0        | u64                                                                                  | UnusedZero                    |
+| 0x5A8        | u64                                                                                  | UnusedZero                    |
 
 </div>
 
@@ -144,11 +144,7 @@ Inherits from:
 | 0x280        | u64                                                                                                    | DynamicMemUsage               |
 | 0x288        | u64                                                                                                    | MaxTotalMemUsage              |
 | 0x290        | u32                                                                                                    | From\_CreateProcessInfo\_0xC  |
-| 0x298        | u64                                                                                                    |                               |
-| 0x2A0        | u64                                                                                                    |                               |
-| 0x2A8        | u64                                                                                                    |                               |
-| 0x2B0        | u64                                                                                                    |                               |
-| 0x2B8        | u64                                                                                                    |                               |
+| 0x298        | u64\[5\]                                                                                               | Unused \[?\]                  |
 | 0x2C0        | [\#KProcessHandleTable](#KProcessHandleTable "wikilink")                                               | HandleTable                   |
 | 0x2380       | void\*                                                                                                 | UsermodeExceptionTlsArea      |
 | 0x2388       | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\>                   | ExceptionThreadList           |
@@ -166,9 +162,9 @@ Inherits from:
 | 0x23F0       | u64                                                                                                    | ExceptionThreadUnkInfo1       |
 | 0x23F8       | u32                                                                                                    | UnusedZero                    |
 | 0x2400       | u64\[8\]                                                                                               | UnusedZeroes                  |
-| 0x2440       | u64                                                                                                    |                               |
-| 0x2448       | u64                                                                                                    |                               |
-| ...          | ...                                                                                                    | ...                           |
+| 0x2440       | u64                                                                                                    | UnusedZero                    |
+| 0x2448       | u64                                                                                                    | UnusedZero                    |
+| 0x2450       | u64\[6\]                                                                                               | Unused \[?\]                  |
 
 </div>
 
