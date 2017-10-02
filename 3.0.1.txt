@@ -25,6 +25,9 @@ Kernel wasn't updated.
 
 The following firm-sysmodules were updated: FS, boot, and sm. The remaining modules(Loader, NCM, ProcessMana, and spl) were rebuilt: hashid following "GNU" string was updated.
 
+====[[Filesystem_services|FS]]====
+Basically all code changes are related to the new [[NCA_Format|NCA]] crypto. Key-init function was updated due to the new NCA crypto. Various keyindex values were updated due to the new NCA crypto, for non-NCA and NCA code. A function which returned ncahdr_x206("Crypto Type") was replaced with a branch to the new <get-final-cryptotype> function described [[NCA_Format|here]](equivalent to similar changes elsewhere).
+
 ==Internet Browser==
 All webapplets were updated, vulnerabilities were fixed. 803/buildinfo/buildinfo.dat contains the following:
   r:14938
