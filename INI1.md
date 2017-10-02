@@ -12,16 +12,16 @@
 Kernel internal
 process?
 
-| Offset | Type                                              | Description  |
-| ------ | ------------------------------------------------- | ------------ |
-| 0x0    | u32                                               | Magic "KIP1" |
-| 0x4    | char\[12\]                                        | Name         |
-| 0x10   | u64                                               | TitleId      |
-| 0x18   | u32                                               |              |
-| 0x1C   | u32                                               |              |
-| 0x20   | [\#SectionHeader](#SectionHeader "wikilink")\[3\] | Sections     |
-| 0x50   | char\[0x20\]                                      | Padding      |
-| 0x70   | u64\[0x20\]                                       | KernelCaps   |
+| Offset | Type                                              | Description                                                               |
+| ------ | ------------------------------------------------- | ------------------------------------------------------------------------- |
+| 0x0    | u32                                               | Magic "KIP1"                                                              |
+| 0x4    | char\[12\]                                        | Name                                                                      |
+| 0x10   | u64                                               | TitleId                                                                   |
+| 0x18   | u32                                               |                                                                           |
+| 0x1C   | u32                                               | Flags / etc. Byte3 bit0-2: compression-enable for each section, when set. |
+| 0x20   | [\#SectionHeader](#SectionHeader "wikilink")\[3\] | Sections                                                                  |
+| 0x50   | char\[0x20\]                                      | Padding                                                                   |
+| 0x70   | u64\[0x20\]                                       | KernelCaps                                                                |
 
 ### SectionHeader
 

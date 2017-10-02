@@ -49,7 +49,7 @@ Kernel internal process?
 |-
 | 0x1C
 | u32
-| 
+| Flags / etc. Byte3 bit0-2: compression-enable for each section, when set.
 |-
 | 0x20
 | [[#SectionHeader]][3]
