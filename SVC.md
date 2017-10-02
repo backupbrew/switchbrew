@@ -480,9 +480,7 @@ Closing the debug handle also results in execution being resumed.
 
 | Offset | Length | Bits   | Description                                        |
 | ------ | ------ | ------ | -------------------------------------------------- |
-| 0      | 8      |        |                                                    |
-| 8      | 2      |        |                                                    |
-| 0xA    | 2      |        |                                                    |
+| 0      | 12     |        | ProcessName (doesn't have to be null-terminated)   |
 | 0xC    | 4      |        |                                                    |
 | 0x10   | 8      |        | TitleId                                            |
 | 0x18   | 8      |        | CodeAddr                                           |
