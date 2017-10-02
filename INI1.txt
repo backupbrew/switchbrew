@@ -49,7 +49,7 @@ Kernel internal process?
 |-
 | 0x1C
 | u32
-| TotalSize
+| 
 |-
 | 0x20
 | [[#SectionHeader]][3]
