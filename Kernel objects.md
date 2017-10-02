@@ -83,8 +83,7 @@ Inherits from:
 | 0x180        | u8                                                                                   | HasStateChanged               |
 | 0x181        | u8                                                                                   | HasInitialized                |
 | 0x182        | u8                                                                                   | IsSystem                      |
-| 0x183        | u8\[12\]                                                                             | From\_CreateProcessInfo\_0    |
-| 0x18F        | u8                                                                                   | InitiallyZero                 |
+| 0x183        | u8\[12+1\]                                                                           | ProcessName                   |
 | 0x190        | u16                                                                                  | NumberOfCreatedThreads        |
 | 0x192        | u16                                                                                  | ThreadingRelatedInitiallyZero |
 | 0x194        | u32                                                                                  | ProcessFlags                  |
@@ -132,7 +131,7 @@ Inherits from:
 | 0x190        | u8                                                                                                     | HasStateChanged               |
 | 0x191        | u8                                                                                                     | HasInitialized                |
 | 0x192        | u8                                                                                                     | IsSystem                      |
-| 0x193        | u8\[12\]                                                                                               | From\_CreateProcessInfo\_0    |
+| 0x193        | u8\[12+1\]                                                                                             | ProcessName                   |
 | 0x19F        | u8                                                                                                     | InitiallyZero                 |
 | 0x1A0        | u16                                                                                                    | NumberOfCreatedThreads        |
 | 0x1A2        | u16                                                                                                    | ThreadingRelatedInitiallyZero |

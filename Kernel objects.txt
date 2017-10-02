@@ -114,9 +114,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x182 || u8 || IsSystem
 |-
-| 0x183 || u8[12] || From_CreateProcessInfo_0
-|-
-| 0x18F || u8 || InitiallyZero
+| 0x183 || u8[12+1] || ProcessName
 |-
 | 0x190 || u16 || NumberOfCreatedThreads
 |-
@@ -205,7 +203,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x192 || u8 || IsSystem
 |-
-| 0x193 || u8[12] || From_CreateProcessInfo_0
+| 0x193 || u8[12+1] || ProcessName
 |-
 | 0x19F || u8 || InitiallyZero
 |-
