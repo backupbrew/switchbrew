@@ -14,6 +14,8 @@ Exactly the following was updated:
 * Every web-applet.
 * Sysupdate titlelisting-title, browser "shareddata:/", [[System Version Title]], and all FIRM packages.
 
+The creport-sysmodule was rebuilt: only change was the hashid following the "GNU" string.
+
 ===FIRM packages===
 819:
 
