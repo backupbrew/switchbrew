@@ -216,7 +216,7 @@ No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000000822 || [[3.0.0|v201327002]] (12.0.1.154) || ac_#_nx binaries
 |-
-| 0100000000000823 || [[3.0.0|v201327002]] (12.0.1.154) || Firmware binaries for peripherals
+| 0100000000000823 || [[3.0.0|v201327002]] (12.0.1.154) || Firmware binaries for peripherals. Contains version.dat and *_nx files. All of the *_nx files stored under here appears to be compressed with gzip.
 |}
 
 == System Applets ==
