@@ -28,6 +28,10 @@ The following firm-sysmodules were updated: FS, boot, and sm. The remaining modu
 ====[[Filesystem_services|FS]]====
 Basically all code changes are related to the new [[NCA_Format|NCA]] crypto. Key-init function was updated due to the new NCA crypto. Various keyindex values were updated due to the new NCA crypto, for non-NCA and NCA code. A function which returned ncahdr_x206("Crypto Type") was replaced with a branch to the new <get-final-cryptotype> function described [[NCA_Format|here]](equivalent to similar changes elsewhere).
 
+====boot====
+Updated 1 func and added a new func:
+* Added a call to <new func>. w1 value passed to L_381c(prev ver L_37d4) is now the output of <mask>, instead of fixed to 0x1.
+
 ==Internet Browser==
 All webapplets were updated, vulnerabilities were fixed. 803/buildinfo/buildinfo.dat contains the following:
   r:14938
