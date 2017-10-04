@@ -209,8 +209,15 @@ mounted-FS logo contents.
 
 This is a PFS0.
 
-See [here](ExeFS.md "wikilink") for mounted-FS ExeFS
-contents.
+See [here](ExeFS.md "wikilink") for mounted-FS ExeFS contents.
+
+# Game-updates
+
+The section-data for the ncatype1 RomFS section(section1) is a
+place-holder: it's identical to section0(ExeFS). The RomFS-superblock
+for this section is used with other data. The RomFS data seems to stored
+under multiple ncatype6 content, at the "section0\_pfs0/fragment"
+file?
 
 # PFS0
 
