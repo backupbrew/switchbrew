@@ -18,6 +18,15 @@ The only change under RomFS "/nx/" was package2. Filesize is same as before.
 
 Kernel was updated. FIRM-sysmodules were not updated.
 
+===Firmware for peripherals===
+The [[Title_list|0100000000000823]] title was updated, the following was updated in RomFS:
+* /ac_0_not_b_nx
+* /ac_1_not_b_nx
+* /ac_2_not_b_nx
+* /ac_3_b1_nx
+* /ac_3_b2_nx
+* /ac_3_not_b_nx
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=09-05-17_08-05-14&sys=hac]
