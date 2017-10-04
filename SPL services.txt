@@ -20,7 +20,7 @@ Takes a type-6 buffer and fills it with random data. Same command for "spl:" and
 |-
 | 0 || [[#GetConfig]] || Wrapper for [[SMC#GetConfig|GetConfig]].
 |-
-| 1 || [[#UserExpMod]] || User supplied modulus and exponent.
+| 1 || [[#UserExpMod]] || Speculative name. User supplied modulus and exponent.
 |-
 | 2 || [[#GenerateAesKek]] || Wrapper for [[SMC#KeygenAndSealX|KeygenAndSealX]].
 |-
@@ -32,15 +32,15 @@ Takes a type-6 buffer and fills it with random data. Same command for "spl:" and
 |-
 | 7 || [[#GetRandomBytes]] || Uses [[SMC#PrngX931|PrngX931]].
 |-
-| 9 || [[#DecryptImportPrivkForExpMod0]] || Wrapper for [[SMC#ImportParamsForFWithXY|ImportParamsForFWithXY]].
+| 9 || [[#DecryptImportPrivkForExpMod0]] || Speculative name. Wrapper for [[SMC#ImportParamsForFWithXY|ImportParamsForFWithXY]].
 |-
-| 10 || [[#ExpMod0]] || Wrapper for [[SMC#ExpMod|ExpMod]].
+| 10 || [[#ExpMod0]] || Speculative name. Wrapper for [[SMC#ExpMod|ExpMod]].
 |-
 | 11 || [[#IsDevelopment]] ||
 |-
 | 12 || [[#GenerateSpecificAesKey]] || Wrapper for [[SMC#KeygenA|KeygenA]].
 |-
-| 13 || [[#DecryptPrivk]] || Wrapper for [[SMC#DecryptExpModParamsWithXY|DecryptExpModParamsWithXY]].
+| 13 || [[#DecryptPrivk]] || Speculative name. Wrapper for [[SMC#DecryptExpModParamsWithXY|DecryptExpModParamsWithXY]].
 |-
 | 14 || [[#DecryptAesKey]] || Decrypts 0x10 bytes using AES ECB and uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X and Y.
 |-
@@ -48,9 +48,9 @@ Takes a type-6 buffer and fills it with random data. Same command for "spl:" and
 |-
 | 16 || [[#ComputeCmac]] || Wrapper for [[SMC#CMAC|CMAC]].
 |-
-| 17 || [[#DecryptImportPrivkForExpMod1]] || Wrapper for [[SMC#ImportParamsFor10WithXY|ImportParamsFor10WithXY]].
+| 17 || [[#DecryptImportPrivkForExpMod1]] || Speculative name. Wrapper for [[SMC#ImportParamsFor10WithXY|ImportParamsFor10WithXY]].
 |-
-| 18 || [[#ExpMod1]] || Wrapper for [[SMC#ExpModAndKeygenAndSealZ|ExpModAndKeygenAndSealZ]].
+| 18 || [[#ExpMod1]] || Speculative name. Wrapper for [[SMC#ExpModAndKeygenAndSealZ|ExpModAndKeygenAndSealZ]].
 |-
 | 19 || [[#LoadRsaKey]] || Wrapper for [[SMC#SetKeyslotFromZ|SetKeyslotFromZ]].
 |-
