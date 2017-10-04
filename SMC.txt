@@ -31,38 +31,100 @@ Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
 |-
 | 0xC3000002 || GetConfig (Same as Id 1 Sub-Id 4.) || ||
 |-
-| 0xC3000003 || CheckStatus_5_9_F_10 || ||
+| 0xC3000003 || CheckStatus || ||
 |-
-| 0xC3000404 || GetResult_5_9_F_10 || ||
+| 0xC3000404 || GetResult || ||
 |-
 | 0xC3000E05 || ExpMod || ||
 |-
-| 0xC3000006 || PrngX931 (Same as Id 1 Sub-Id 5.) || ||
+| 0xC3000006 || GetRandomBytes (Same as Id 1 Sub-Id 5.) || ||
 |-
-| 0xC3000007 || KeygenAndSealX || ||
+| 0xC3000007 || [[#GenerateAesKek]] || ||
 |-
-| 0xC3000008 || SetKeyslotFromXY || ||
+| 0xC3000008 || [[#LoadAesKey]] || ||
 |-
-| 0xC3000009 || SymmetricCrypto || ||
+| 0xC3000009 || [[#DecryptAesCtr]] || ||
 |-
-| 0xC300000A || KeygenA || ||
+| 0xC300000A || [[#GenerateSpecificAesKey]] || ||
 |-
-| 0xC300040B || CMAC || ||
+| 0xC300040B || [[#ComputeCmac]] || ||
 |-
-| 0xC300100C || ImportParamsFor10WithXY || ||
+| 0xC300100C || [[#LoadRsaPrivateKey]] || ||
 |-
-| 0xC300100D || DecryptExpModParamsWithXY || ||
+| 0xC300100D || [[#PrivateRsa]] || ||
 |-
-| 0xC300100E || ImportParamsForFWithXY || ||
+| 0xC300100E || [[#LoadRsaPublicKey]] || ||
 |-
-| 0xC300060F || ExpMod || ||
+| 0xC300060F || [[#PublicRsa]] || ||
 |-
-| 0xC3000610 || ExpModAndKeygenAndSealZ || ||
+| 0xC3000610 || [[#UnwrapRsaEncryptedAesKey]] || ||
 |-
-| 0xC3000011 || SetKeyslotFromZ || ||
+| 0xC3000011 || [[#LoadRsaWrappedAesKey]] || ||
 |-
-| 0xC3000012 || [2.0.0+] KeygenAndSealZ || ||
+| 0xC3000012 || [2.0.0+] GenerateRsaKek || ||
 |}
+
+=== GenerateAesKek ===
+Takes an "access key" as input, an [[#CryptoUsecase]].
+
+Returns a session-unique kek for said usecase.
+
+=== LoadAesKey ===
+Takes a session kek created with [[#GenerateAesKek]], and a wrapped AES key.
+
+The session kek must have been created with CryptoUsecase_AesCtr.
+
+=== DecryptAesCtr ===
+Encrypts/decrypts using AesCtr.
+
+Key must be set prior using one of the [[#LoadAesKey]], [[#GenerateSpecificAesKey]] or [[#LoadRsaWrappedAesKey]] commands.
+
+=== GenerateSpecificAesKey ===
+Todo: This one seems unrelated to [[#CryptoUsecase]].
+
+=== LoadRsaPrivateKey ===
+Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA private key.
+
+The session kek must have been created with CryptoUsecase_PrivateRsa.
+
+=== PrivateRsa ===
+Encrypts using Rsa private key.
+
+Key must be set prior using the [[#LoadRsaPrivateKey]] command.
+
+=== LoadRsaPublicKey ===
+Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA public key.
+
+The session kek must have been created with CryptoUsecase_PublicRsa.
+
+=== PublicRsa ===
+Encrypts using Rsa public key.
+
+Key must be set prior using the [[#LoadRsaPublicKey]] command.
+
+=== UnwrapRsaEncryptedAesKey ===
+Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA public key.
+
+Returns a session-unique AES key especially for use in [[#LoadRsaWrappedAesKey]].
+
+The session kek must have been created with CryptoUsecase_RsaWrappedAesKey.
+
+=== LoadRsaWrappedAesKey ===
+Takes a session-unique AES key from [[#UnwrapRsaEncryptedAesKey]].
+
+=== enum CryptoUsecase ===
+{| class=wikitable
+! Value || Name
+|-
+| 0 || CryptoUsecase_AesCtr
+|-
+| 1 || CryptoUsecase_PrivateRsa
+|-
+| 2 || CryptoUsecase_PublicRsa
+|-
+| 3 || CryptoUsecase_RsaWrappedAesKey
+|}
+
 
 == Id 1 ==
 Functions exposed to the kernel internally.
@@ -78,7 +140,7 @@ Functions exposed to the kernel internally.
 |-
 | 0xC3000004 || GetConfig (Same as Id 0 Sub-Id 2.) || ||
 |-
-| 0xC3000005 || PrngX931 (Same as Id 0 Sub-Id 6.) || ||
+| 0xC3000005 || GetRandomBytes (Same as Id 0 Sub-Id 6.) || ||
 |-
 | 0xC3000006 || Panic || ||
 |-

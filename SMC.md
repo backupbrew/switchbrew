@@ -24,38 +24,122 @@ a pointer and the kernel will setup address translation for it in
 Functions exposed to user-mode processes using
 [svcCallSecureMonitor](SVC.md "wikilink").
 
-| Sub-Id     | Name                               | In | Out |
-| ---------- | ---------------------------------- | -- | --- |
-| 0xC3000401 | SetConfig                          |    |     |
-| 0xC3000002 | GetConfig (Same as Id 1 Sub-Id 4.) |    |     |
-| 0xC3000003 | CheckStatus\_5\_9\_F\_10           |    |     |
-| 0xC3000404 | GetResult\_5\_9\_F\_10             |    |     |
-| 0xC3000E05 | ExpMod                             |    |     |
-| 0xC3000006 | PrngX931 (Same as Id 1 Sub-Id 5.)  |    |     |
-| 0xC3000007 | KeygenAndSealX                     |    |     |
-| 0xC3000008 | SetKeyslotFromXY                   |    |     |
-| 0xC3000009 | SymmetricCrypto                    |    |     |
-| 0xC300000A | KeygenA                            |    |     |
-| 0xC300040B | CMAC                               |    |     |
-| 0xC300100C | ImportParamsFor10WithXY            |    |     |
-| 0xC300100D | DecryptExpModParamsWithXY          |    |     |
-| 0xC300100E | ImportParamsForFWithXY             |    |     |
-| 0xC300060F | ExpMod                             |    |     |
-| 0xC3000610 | ExpModAndKeygenAndSealZ            |    |     |
-| 0xC3000011 | SetKeyslotFromZ                    |    |     |
-| 0xC3000012 | \[2.0.0+\] KeygenAndSealZ          |    |     |
+| Sub-Id     | Name                                                               | In | Out |
+| ---------- | ------------------------------------------------------------------ | -- | --- |
+| 0xC3000401 | SetConfig                                                          |    |     |
+| 0xC3000002 | GetConfig (Same as Id 1 Sub-Id 4.)                                 |    |     |
+| 0xC3000003 | CheckStatus                                                        |    |     |
+| 0xC3000404 | GetResult                                                          |    |     |
+| 0xC3000E05 | ExpMod                                                             |    |     |
+| 0xC3000006 | GetRandomBytes (Same as Id 1 Sub-Id 5.)                            |    |     |
+| 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                     |    |     |
+| 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                             |    |     |
+| 0xC3000009 | [\#DecryptAesCtr](#DecryptAesCtr "wikilink")                       |    |     |
+| 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")     |    |     |
+| 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                           |    |     |
+| 0xC300100C | [\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink")               |    |     |
+| 0xC300100D | [\#PrivateRsa](#PrivateRsa "wikilink")                             |    |     |
+| 0xC300100E | [\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink")                 |    |     |
+| 0xC300060F | [\#PublicRsa](#PublicRsa "wikilink")                               |    |     |
+| 0xC3000610 | [\#UnwrapRsaEncryptedAesKey](#UnwrapRsaEncryptedAesKey "wikilink") |    |     |
+| 0xC3000011 | [\#LoadRsaWrappedAesKey](#LoadRsaWrappedAesKey "wikilink")         |    |     |
+| 0xC3000012 | \[2.0.0+\] GenerateRsaKek                                          |    |     |
+
+### GenerateAesKek
+
+Takes an "access key" as input, an
+[\#CryptoUsecase](#CryptoUsecase "wikilink").
+
+Returns a session-unique kek for said usecase.
+
+### LoadAesKey
+
+Takes a session kek created with
+[\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped AES key.
+
+The session kek must have been created with CryptoUsecase\_AesCtr.
+
+### DecryptAesCtr
+
+Encrypts/decrypts using AesCtr.
+
+Key must be set prior using one of the
+[\#LoadAesKey](#LoadAesKey "wikilink"),
+[\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink") or
+[\#LoadRsaWrappedAesKey](#LoadRsaWrappedAesKey "wikilink") commands.
+
+### GenerateSpecificAesKey
+
+Todo: This one seems unrelated to
+[\#CryptoUsecase](#CryptoUsecase "wikilink").
+
+### LoadRsaPrivateKey
+
+Takes a session kek created with
+[\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA
+private key.
+
+The session kek must have been created with CryptoUsecase\_PrivateRsa.
+
+### PrivateRsa
+
+Encrypts using Rsa private key.
+
+Key must be set prior using the
+[\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink") command.
+
+### LoadRsaPublicKey
+
+Takes a session kek created with
+[\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA public
+key.
+
+The session kek must have been created with CryptoUsecase\_PublicRsa.
+
+### PublicRsa
+
+Encrypts using Rsa public key.
+
+Key must be set prior using the
+[\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink") command.
+
+### UnwrapRsaEncryptedAesKey
+
+Takes a session kek created with
+[\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA public
+key.
+
+Returns a session-unique AES key especially for use in
+[\#LoadRsaWrappedAesKey](#LoadRsaWrappedAesKey "wikilink").
+
+The session kek must have been created with
+CryptoUsecase\_RsaWrappedAesKey.
+
+### LoadRsaWrappedAesKey
+
+Takes a session-unique AES key from
+[\#UnwrapRsaEncryptedAesKey](#UnwrapRsaEncryptedAesKey "wikilink").
+
+### enum CryptoUsecase
+
+| Value | Name                            |
+| ----- | ------------------------------- |
+| 0     | CryptoUsecase\_AesCtr           |
+| 1     | CryptoUsecase\_PrivateRsa       |
+| 2     | CryptoUsecase\_PublicRsa        |
+| 3     | CryptoUsecase\_RsaWrappedAesKey |
 
 ## Id 1
 
 Functions exposed to the kernel internally.
 
-| Sub-Id     | Name                               | In | Out |
-| ---------- | ---------------------------------- | -- | --- |
-| 0xC4000001 | CpuSuspend (oyasumi)               |    |     |
-| 0x84000002 | CpuOff                             |    |     |
-| 0xC4000003 | CpuOn                              |    |     |
-| 0xC3000004 | GetConfig (Same as Id 0 Sub-Id 2.) |    |     |
-| 0xC3000005 | PrngX931 (Same as Id 0 Sub-Id 6.)  |    |     |
-| 0xC3000006 | Panic                              |    |     |
-| 0xC3000007 | \[2.0.0+\] ProtectKernelRegion     |    |     |
-| 0xC3000008 | \[2.0.0+\] ReadWriteRegister       |    |     |
+| Sub-Id     | Name                                    | In | Out |
+| ---------- | --------------------------------------- | -- | --- |
+| 0xC4000001 | CpuSuspend (oyasumi)                    |    |     |
+| 0x84000002 | CpuOff                                  |    |     |
+| 0xC4000003 | CpuOn                                   |    |     |
+| 0xC3000004 | GetConfig (Same as Id 0 Sub-Id 2.)      |    |     |
+| 0xC3000005 | GetRandomBytes (Same as Id 0 Sub-Id 6.) |    |     |
+| 0xC3000006 | Panic                                   |    |     |
+| 0xC3000007 | \[2.0.0+\] ProtectKernelRegion          |    |     |
+| 0xC3000008 | \[2.0.0+\] ReadWriteRegister            |    |     |
