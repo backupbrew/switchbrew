@@ -34,7 +34,7 @@ Functions exposed to user-mode processes using
 | 0xC3000006 | GetRandomBytes (Same as Id 1 Sub-Id 5.)                            |    |     |
 | 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                     |    |     |
 | 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                             |    |     |
-| 0xC3000009 | [\#DecryptAesCtr](#DecryptAesCtr "wikilink")                       |    |     |
+| 0xC3000009 | [\#DecryptAes](#DecryptAes "wikilink")                             |    |     |
 | 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")     |    |     |
 | 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                           |    |     |
 | 0xC300100C | [\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink")               |    |     |
@@ -57,11 +57,11 @@ Returns a session-unique kek for said usecase.
 Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped AES key.
 
-The session kek must have been created with CryptoUsecase\_AesCtr.
+The session kek must have been created with CryptoUsecase\_Aes.
 
-### DecryptAesCtr
+### DecryptAes
 
-Encrypts/decrypts using AesCtr.
+Encrypts/decrypts using Aes (CTR, CBC-Encrypt, CBC-Decrypt).
 
 Key must be set prior using one of the
 [\#LoadAesKey](#LoadAesKey "wikilink"),
@@ -124,7 +124,7 @@ Takes a session-unique AES key from
 
 | Value | Name                            |
 | ----- | ------------------------------- |
-| 0     | CryptoUsecase\_AesCtr           |
+| 0     | CryptoUsecase\_Aes              |
 | 1     | CryptoUsecase\_PrivateRsa       |
 | 2     | CryptoUsecase\_PublicRsa        |
 | 3     | CryptoUsecase\_RsaWrappedAesKey |
