@@ -45,6 +45,23 @@ Functions exposed to user-mode processes using
 | 0xC3000011 | [\#LoadRsaWrappedAesKey](#LoadRsaWrappedAesKey "wikilink")         |    |     |
 | 0xC3000012 | \[2.0.0+\] GenerateRsaKek                                          |    |     |
 
+The overall concept here is the following:
+
+  - All key material (AES and RSA) is stored in userspace, but it's
+    encrypted with random AES kek's ("key encryption key").
+  - Each kek is generated as a function of an access key (picked at
+    random).
+  - The kek is generated differently depending on the
+    [\#CryptoUsecase](#CryptoUsecase "wikilink") the key is used for.
+      - This means: Each key is "locked" to the
+        [\#CryptoUsecase](#CryptoUsecase "wikilink") it was designated
+        for.
+      - You can use a key for a different usecase, but you will only get
+        garbage output.
+  - After the kek has been generated, it is wrapped with a
+    session-specific key and given back to userspace.
+      - This means: Plaintext kek keys never leave TrustZone.
+
 ### GenerateAesKek
 
 Takes an "access key" as input, an
