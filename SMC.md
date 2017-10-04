@@ -48,7 +48,7 @@ Functions exposed to user-mode processes using
 The overall concept here is the following:
 
   - All key material (AES and RSA) is stored in userspace, but it's
-    encrypted with random AES kek's ("key encryption key").
+    encrypted with random AES kek's ("key encryption keys").
   - Each kek is generated as a function of an access key (picked at
     random).
   - The kek is generated differently depending on the
@@ -61,6 +61,7 @@ The overall concept here is the following:
   - After the kek has been generated, it is wrapped with a
     session-specific key and given back to userspace.
       - This means: Plaintext kek keys never leave TrustZone.
+      - Further, this means: Actual AES/RSA keys never leave TrustZone.
 
 ### GenerateAesKek
 
