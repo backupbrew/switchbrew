@@ -34,7 +34,7 @@ Functions exposed to user-mode processes using
 | 0xC3000006 | GetRandomBytes (Same as Id 1 Sub-Id 5.)                            |    |     |
 | 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                     |    |     |
 | 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                             |    |     |
-| 0xC3000009 | [\#DecryptAes](#DecryptAes "wikilink")                             |    |     |
+| 0xC3000009 | [\#CryptAes](#CryptAes "wikilink")                                 |    |     |
 | 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")     |    |     |
 | 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                           |    |     |
 | 0xC300100C | [\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink")               |    |     |
@@ -59,9 +59,9 @@ Takes a session kek created with
 
 The session kek must have been created with CryptoUsecase\_Aes.
 
-### DecryptAes
+### CryptAes
 
-Encrypts/decrypts using Aes (CTR, CBC-Encrypt, CBC-Decrypt).
+Encrypts/decrypts using Aes (CTR and CBC).
 
 Key must be set prior using one of the
 [\#LoadAesKey](#LoadAesKey "wikilink"),

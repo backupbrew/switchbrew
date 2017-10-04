@@ -43,7 +43,7 @@ Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
 |-
 | 0xC3000008 || [[#LoadAesKey]] || ||
 |-
-| 0xC3000009 || [[#DecryptAes]] || ||
+| 0xC3000009 || [[#CryptAes]] || ||
 |-
 | 0xC300000A || [[#GenerateSpecificAesKey]] || ||
 |-
@@ -74,8 +74,8 @@ Takes a session kek created with [[#GenerateAesKek]], and a wrapped AES key.
 
 The session kek must have been created with CryptoUsecase_Aes.
 
-=== DecryptAes ===
-Encrypts/decrypts using Aes (CTR, CBC-Encrypt, CBC-Decrypt).
+=== CryptAes ===
+Encrypts/decrypts using Aes (CTR and CBC).
 
 Key must be set prior using one of the [[#LoadAesKey]], [[#GenerateSpecificAesKey]] or [[#LoadRsaWrappedAesKey]] commands.
 
