@@ -364,14 +364,26 @@ This service seems to be used by all system non-regular-applications.
 |-
 | 65 || IsGamePlayRecordingSupported ||
 |-
-| 66 || InitializeGamePlayRecording ||
+| 66 || [[#InitializeGamePlayRecording]] ||
 |-
-| 67 || SetGamePlayRecordingState ||
+| 67 || [[#SetGamePlayRecordingState]] ||
 |-
 | 70 || RequestToShutdown ||
 |-
 | 71 || RequestToReboot ||
 |}
+
+The BOTW game uses this GamePlayRecording functionality from the main-nso "nninitStartup" function. The official code GamePlayRecording-enable does the following:
+* [[SVC|Creates]] TransferMemory using the input buffer and size, with permissions=0.
+* Uses [[#InitializeGamePlayRecording]] with the TransferMemory.
+* Closes the TransferMemory handle, + TransferMemory cleanup.
+* Uses [[#SetGamePlayRecordingState]] with value 0x1.
+
+==== InitializeGamePlayRecording ====
+Takes a TransferMemory handle and an u64 for the size of the TransferMemory.
+
+==== SetGamePlayRecordingState ====
+Takes an input u32.
 
 == ILibraryAppletCreator ==
 {| class="wikitable" border="1"

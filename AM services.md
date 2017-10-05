@@ -204,30 +204,54 @@ non-regular-applications.
 
 ### IApplicationFunctions
 
-| Cmd | Name                                              | Notes                                                                          |
-| --- | ------------------------------------------------- | ------------------------------------------------------------------------------ |
-| 1   | PopLaunchParameter                                | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 10  | CreateApplicationAndPushAndRequestToStart         | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 11  | CreateApplicationAndPushAndRequestToStartForQuest | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 20  | EnsureSaveData                                    |                                                                                |
-| 21  | GetDesiredLanguage                                |                                                                                |
-| 22  | SetTerminateResult                                |                                                                                |
-| 23  | GetDisplayVersion                                 |                                                                                |
-| 24  | GetLaunchStorageInfoForDebug                      |                                                                                |
-| 25  | ExtendSaveData                                    |                                                                                |
-| 26  | GetSaveDataSize                                   |                                                                                |
-| 30  | BeginBlockingHomeButtonShortAndLongPressed        |                                                                                |
-| 31  | EndBlockingHomeButtonShortAndLongPressed          |                                                                                |
-| 32  | BeginBlockingHomeButton                           |                                                                                |
-| 33  | EndBlockingHomeButton                             |                                                                                |
-| 40  | NotifyRunning                                     |                                                                                |
-| 50  | GetPseudoDeviceId                                 |                                                                                |
-| 60  | SetMediaPlaybackStateForApplication               |                                                                                |
-| 65  | IsGamePlayRecordingSupported                      |                                                                                |
-| 66  | InitializeGamePlayRecording                       |                                                                                |
-| 67  | SetGamePlayRecordingState                         |                                                                                |
-| 70  | RequestToShutdown                                 |                                                                                |
-| 71  | RequestToReboot                                   |                                                                                |
+| Cmd | Name                                                                     | Notes                                                                          |
+| --- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| 1   | PopLaunchParameter                                                       | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 10  | CreateApplicationAndPushAndRequestToStart                                | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 11  | CreateApplicationAndPushAndRequestToStartForQuest                        | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 20  | EnsureSaveData                                                           |                                                                                |
+| 21  | GetDesiredLanguage                                                       |                                                                                |
+| 22  | SetTerminateResult                                                       |                                                                                |
+| 23  | GetDisplayVersion                                                        |                                                                                |
+| 24  | GetLaunchStorageInfoForDebug                                             |                                                                                |
+| 25  | ExtendSaveData                                                           |                                                                                |
+| 26  | GetSaveDataSize                                                          |                                                                                |
+| 30  | BeginBlockingHomeButtonShortAndLongPressed                               |                                                                                |
+| 31  | EndBlockingHomeButtonShortAndLongPressed                                 |                                                                                |
+| 32  | BeginBlockingHomeButton                                                  |                                                                                |
+| 33  | EndBlockingHomeButton                                                    |                                                                                |
+| 40  | NotifyRunning                                                            |                                                                                |
+| 50  | GetPseudoDeviceId                                                        |                                                                                |
+| 60  | SetMediaPlaybackStateForApplication                                      |                                                                                |
+| 65  | IsGamePlayRecordingSupported                                             |                                                                                |
+| 66  | [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink") |                                                                                |
+| 67  | [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")     |                                                                                |
+| 70  | RequestToShutdown                                                        |                                                                                |
+| 71  | RequestToReboot                                                          |                                                                                |
+
+The BOTW game uses this GamePlayRecording functionality from the
+main-nso "nninitStartup" function. The official code
+GamePlayRecording-enable does the following:
+
+  - [Creates](SVC.md "wikilink") TransferMemory using the input buffer
+    and size, with permissions=0.
+  - Uses
+    [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")
+    with the TransferMemory.
+  - Closes the TransferMemory handle, + TransferMemory cleanup.
+  - Uses
+    [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")
+    with value 0x1.
+
+#### InitializeGamePlayRecording
+
+Takes a TransferMemory handle and an u64 for the size of the
+TransferMemory.
+
+#### SetGamePlayRecordingState
+
+Takes an input
+u32.
 
 ## ILibraryAppletCreator
 
