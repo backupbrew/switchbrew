@@ -182,6 +182,7 @@ to.
 
 | SaveID             | Owner      | Mount             | Notes                                                                                                                                                        |
 | ------------------ | ---------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0x8000000000000000 |            |                   |                                                                                                                                                              |
 | 0x8000000000000010 | account    | account:/         | Account database.                                                                                                                                            |
 | 0x8000000000000011 | account    | idgen:/           |                                                                                                                                                              |
 | 0x8000000000000020 | nfc        | data:/            | NFC data and backups.                                                                                                                                        |
@@ -227,4 +228,22 @@ to.
 | 0x8000000000000110 | npns       | npns\_save:/      | Push notifications persistent storage.                                                                                                                       |
 | 0x8000000000000120 | ncm        | ?                 | meta/[imkvdb.arc](IMKV.md "wikilink") for system partition. Cache of data extracted from the [.cnmt](NCA.md "wikilink") for installed titles?(Including 816) |
 | 0x8000000000000121 | ncm        | ?                 | meta/[imkvdb.arc](IMKV.md "wikilink") for sd partition. In some cases this save only contains a "meta/" directory without any file.                          |
+| 0x8000000000000122 |            |                   |                                                                                                                                                              |
+| 0x8000000000001010 |            |                   |                                                                                                                                                              |
+| 0x8000000000001040 |            |                   |                                                                                                                                                              |
+| 0x8000000000001050 |            |                   |                                                                                                                                                              |
+| 0x8000000000001070 |            |                   |                                                                                                                                                              |
+| 0x80000000000010B0 |            |                   |                                                                                                                                                              |
+| 0x0000000000000001 |            |                   |                                                                                                                                                              |
+| 0x0000000000000003 |            |                   |                                                                                                                                                              |
+| 0x0000000000000004 |            |                   |                                                                                                                                                              |
+| 0x0000000000000005 |            |                   |                                                                                                                                                              |
+| 0x0000000000000006 |            |                   |                                                                                                                                                              |
+| 0x0000000000000007 |            |                   |                                                                                                                                                              |
+| 0x0000000000000008 |            |                   |                                                                                                                                                              |
+| 0x0000000000000009 |            |                   |                                                                                                                                                              |
+| 0x000000000000000A |            |                   |                                                                                                                                                              |
+| 0x8000000000001060 |            |                   |                                                                                                                                                              |
+| 0x000000000000000C |            |                   |                                                                                                                                                              |
+| 0x000000000000000D |            |                   |                                                                                                                                                              |
 |                    |            |                   |                                                                                                                                                              |
