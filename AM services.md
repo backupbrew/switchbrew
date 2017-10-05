@@ -220,7 +220,7 @@ non-regular-applications.
 | 31  | EndBlockingHomeButtonShortAndLongPressed                                 |                                                                                |
 | 32  | BeginBlockingHomeButton                                                  |                                                                                |
 | 33  | EndBlockingHomeButton                                                    |                                                                                |
-| 40  | NotifyRunning                                                            |                                                                                |
+| 40  | [\#NotifyRunning](#NotifyRunning "wikilink")                             |                                                                                |
 | 50  | GetPseudoDeviceId                                                        |                                                                                |
 | 60  | SetMediaPlaybackStateForApplication                                      |                                                                                |
 | 65  | IsGamePlayRecordingSupported                                             |                                                                                |
@@ -242,6 +242,11 @@ GamePlayRecording-enable does the following:
   - Uses
     [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")
     with value 0x1.
+
+#### NotifyRunning
+
+Takes no input. Returns an output u8, which is ignored by official
+user-processes.
 
 #### InitializeGamePlayRecording
 

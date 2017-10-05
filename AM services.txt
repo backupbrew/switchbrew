@@ -356,7 +356,7 @@ This service seems to be used by all system non-regular-applications.
 |-
 | 33 || EndBlockingHomeButton ||
 |-
-| 40 || NotifyRunning ||
+| 40 || [[#NotifyRunning]] ||
 |-
 | 50 || GetPseudoDeviceId ||
 |-
@@ -378,6 +378,9 @@ The BOTW game uses this GamePlayRecording functionality from the main-nso "nnini
 * Uses [[#InitializeGamePlayRecording]] with the TransferMemory.
 * Closes the TransferMemory handle, + TransferMemory cleanup.
 * Uses [[#SetGamePlayRecordingState]] with value 0x1.
+
+==== NotifyRunning ====
+Takes no input. Returns an output u8, which is ignored by official user-processes.
 
 ==== InitializeGamePlayRecording ====
 Takes a TransferMemory handle and an u64 for the size of the TransferMemory.
