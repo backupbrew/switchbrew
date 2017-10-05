@@ -1,33 +1,33 @@
 # bsd:u
 
-| Cmd | Name        |
-| --- | ----------- |
-| 0   | Initialize  |
-| 1   |             |
-| 2   | socket      |
-| 3   |             |
-| 4   |             |
-| 5   |             |
-| 6   |             |
-| 7   |             |
-| 8   | recv        |
-| 9   |             |
-| 10  | send        |
-| 11  | sendto      |
-| 12  | accept      |
-| 13  | bind        |
-| 14  | connect     |
-| 15  |             |
-| 16  | getsockname |
-| 17  |             |
-| 18  | listen      |
-| 19  |             |
-| 20  |             |
-| 21  | setsockopt  |
-| 22  | shutdown    |
-| 23  |             |
-| 24  |             |
-| 25  |             |
-| 26  | close       |
-| 27  |             |
-| 28  |             |
+| Cmd | Name                        |
+| --- | --------------------------- |
+| 0   | RegisterClient (Initialize) |
+| 1   | StartMonitoring             |
+| 2   | Socket                      |
+| 3   | SocketExempt                |
+| 4   | Open                        |
+| 5   | Select                      |
+| 6   | Poll                        |
+| 7   | Sysctl                      |
+| 8   | Recv                        |
+| 9   | RecvFrom                    |
+| 10  | Send                        |
+| 11  | SendTo                      |
+| 12  | Accept                      |
+| 13  | Bind                        |
+| 14  | Connect                     |
+| 15  | GetPeerName                 |
+| 16  | GetSockName                 |
+| 17  | GetSockOpt                  |
+| 18  | Listen                      |
+| 19  | Ioctl                       |
+| 20  | Fcntl                       |
+| 21  | SetSockOpt                  |
+| 22  | Shutdown                    |
+| 23  | ShutdownAllSockets          |
+| 24  | Write                       |
+| 25  | Read                        |
+| 26  | Close                       |
+| 27  | DuplicateSocket             |
+| 28  | GetResourceStatistics       |

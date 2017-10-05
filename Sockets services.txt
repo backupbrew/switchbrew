@@ -3,61 +3,61 @@
 |-
 ! Cmd || Name
 |-
-| 0 || Initialize
+| 0  || RegisterClient (Initialize)
 |-
-| 1 ||
+| 1  || StartMonitoring
 |-
-| 2 || socket
+| 2  || Socket
 |-
-| 3 ||
+| 3  || SocketExempt
 |-
-| 4 ||
+| 4  || Open
 |-
-| 5 ||
+| 5  || Select
 |-
-| 6 ||
+| 6  || Poll
 |-
-| 7 ||
+| 7  || Sysctl
 |-
-| 8 || recv
+| 8  || Recv
 |-
-| 9 ||
+| 9  || RecvFrom
 |-
-| 10 || send
+| 10 || Send
 |-
-| 11 || sendto
+| 11 || SendTo
 |-
-| 12 || accept
+| 12 || Accept
 |-
-| 13 || bind
+| 13 || Bind
 |-
-| 14 || connect
+| 14 || Connect
 |-
-| 15 ||
+| 15 || GetPeerName
 |-
-| 16 || getsockname
+| 16 || GetSockName
 |-
-| 17 ||
+| 17 || GetSockOpt
 |-
-| 18 || listen
+| 18 || Listen
 |-
-| 19 ||
+| 19 || Ioctl
 |-
-| 20 ||
+| 20 || Fcntl
 |-
-| 21 || setsockopt
+| 21 || SetSockOpt
 |-
-| 22 || shutdown
+| 22 || Shutdown
 |-
-| 23 ||
+| 23 || ShutdownAllSockets
 |-
-| 24 ||
+| 24 || Write
 |-
-| 25 ||
+| 25 || Read
 |-
-| 26 || close
+| 26 || Close
 |-
-| 27 ||
+| 27 || DuplicateSocket
 |-
-| 28 ||
+| 28 || GetResourceStatistics
 |}
