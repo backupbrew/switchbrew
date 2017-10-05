@@ -31,3 +31,5 @@
 | 26  | Close                       |
 | 27  | DuplicateSocket             |
 | 28  | GetResourceStatistics       |
+| 29  | \[3.0.0+\] RecvMMsg         |
+| 30  | \[3.0.0+\] SendMMsg         |
