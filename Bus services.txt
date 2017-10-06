@@ -259,3 +259,31 @@ Same as [[#OpenSession]] but panics on failure.
 | 7 || || 
 |-
 |}
+
+= pwm =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || OpenSessionForDev
+|-
+| 1 || OpenSession
+|}
+
+== IChannelSession ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || SetPeriod
+|-
+| 1 || GetPeriod
+|-
+| 2 || SetDuty
+|-
+| 3 || GetDuty
+|-
+| 4 || SetEnabled
+|-
+| 5 || GetEnabled
+|}

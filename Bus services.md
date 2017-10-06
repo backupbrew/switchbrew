@@ -155,3 +155,21 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 | 6   |      |                            |
 | 7   |      |                            |
 |     |      |                            |
+
+# pwm
+
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | OpenSessionForDev |
+| 1   | OpenSession       |
+
+## IChannelSession
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   | SetPeriod  |
+| 1   | GetPeriod  |
+| 2   | SetDuty    |
+| 3   | GetDuty    |
+| 4   | SetEnabled |
+| 5   | GetEnabled |
