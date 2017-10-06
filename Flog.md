@@ -60,7 +60,7 @@ main-menu). If so, the following checks are then performed in order:
 Once everything passes it continues to the code which launches "flog".
 When "flog" is launched a small audio clip named "SeTestTone" is played
 which matches
-[this](https://www.youtube.com/embed/SeVTJu_Yn2Y?start=17&end=18).
+[this](https://www.youtube.com/embed/SeVTJu_Yn2Y?start=17&end=18&autoplay=1).
 
 ## Screenshots
 

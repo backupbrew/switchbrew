@@ -15,7 +15,7 @@ The ROM is not loaded via [[Filesystem_services|FS]] but is embedded in the main
 * A wrapper for "GetLanguageCode" [[Settings_services#set|set]] command is called and the returned code must be 0 (JPja), 1 (USen) or 2 (EUen). Other combinations of region and language may have it's code translated internally to a valid one (0, 1 or 2), which seems to be the case for 12 (CNzh), 13 (KRko) and 14 (TWzh).
 * Lastly, "IsSystemProgramInstalled" [[NS_Services#ns:am|ns:am]] command is called, which should return 1 if the "flog" title is installed.
 
-Once everything passes it continues to the code which launches "flog". When "flog" is launched a small audio clip named "SeTestTone" is played which matches [https://www.youtube.com/embed/SeVTJu_Yn2Y?start=17&end=18 this].
+Once everything passes it continues to the code which launches "flog". When "flog" is launched a small audio clip named "SeTestTone" is played which matches [https://www.youtube.com/embed/SeVTJu_Yn2Y?start=17&end=18&autoplay=1 this].
 
 ==Screenshots==
 These screenshots were originally taken by executing flog with an unofficial method.
