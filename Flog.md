@@ -32,10 +32,10 @@ main-menu). If so, the following checks are then performed in order:
     Joy-Cons must pass at the same time. This motion data is analyzed in
     a small state machine consisting of a total of 7 steps and the
     motion itself is a reference to [Iwata's Direct
-    gesture](https://www.youtube.com/watch?time_continue=17&v=BdQg43n2OaM).
-    Hold the Joy-Cons pointing forwards/downwards, then move Joy-Cons to
-    a vertical position, and hold it there for a bit. The Joy-Con grip
-    can be used for this.
+    gesture](https://www.youtube.com/watch?v=BdQg43n2OaM&t=17s). Hold
+    the Joy-Cons pointing forwards/downwards, then move Joy-Cons to a
+    vertical position, and hold it there for a bit. The Joy-Con grip can
+    be used for this.
   - The system's month and day must be July 11th, which is the date of
     Iwata's [passing](https://en.wikipedia.org/wiki/Satoru_Iwata). The
     loaded date originates from network-time-sync'd time, regardless of
@@ -59,8 +59,7 @@ main-menu). If so, the following checks are then performed in order:
 
 Once everything passes it continues to the code which launches "flog".
 When "flog" is launched a small audio clip named "SeTestTone" is played
-which matches
-[this](https://www.youtube.com/watch?v=SeVTJu_Yn2Y&feature=youtu.be&t=17s).
+which matches [this](https://www.youtube.com/watch?v=SeVTJu_Yn2Y&t=17s).
 
 ## Screenshots
 
