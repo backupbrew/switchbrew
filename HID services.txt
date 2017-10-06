@@ -123,7 +123,7 @@ This is "nn::hid::IHidServer".
 |-
 | 200 || GetVibrationDeviceInfo
 |-
-| 201 || SendVibrationValue
+| 201 || [[#SendVibrationValue]]
 |-
 | 202 || GetActualVibrationValue
 |-
@@ -151,6 +151,9 @@ This is "nn::hid::IHidServer".
 |-
 | 1001 || GetNpadCommunicationMode
 |}
+
+== SendVibrationValue ==
+Takes a PID-descriptor, an u32 VibrationDeviceHandle, 0x10-byte VibrationValue immediately after that, and an u64 [[AM_services|AppletResourceUserId]].
 
 = hid:dbg =
 This is "nn::hid::IHidDebugServer".
