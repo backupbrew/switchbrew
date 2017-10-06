@@ -309,7 +309,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 505 || EnableAppletToGetSixAxisSensor
 |-
-| 510 || SetVibrationMasterVolume
+| 510 || [[#SetVibrationMasterVolume]]
 |-
 | 511 || GetVibrationMasterVolume
 |-
@@ -393,6 +393,9 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 1007 || GetFirmwareUpdateState
 |}
+
+== SetVibrationMasterVolume ==
+Takes an input 32bit float.
 
 [[Category:Services]]
 
