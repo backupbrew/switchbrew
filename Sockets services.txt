@@ -1,4 +1,4 @@
-= bsd:u =
+= bsd:u / bsd:s =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -64,4 +64,72 @@
 | 29 || [3.0.0+] RecvMMsg
 |-
 | 30 || [3.0.0+] SendMMsg
+|}
+
+
+= sfdnsres =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || SetDnsAddressesPrivate
+|-
+| 1 || GetDnsAddressPrivate
+|-
+| 2 || GetHostByName
+|-
+| 3 || GetHostByAddr
+|-
+| 4 || GetHostStringError
+|-
+| 5 || GetGaiStringError
+|-
+| 6 || GetAddrInfo
+|-
+| 7 || GetNameInfo
+|-
+| 8 || RequestCancelHandle
+|-
+| 9 || CancelSocketCall
+|}
+
+
+= nsd:u / nsd:a =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 10 || GetSettingName
+|-
+| 11 || GetEnvironmentIdentifier
+|-
+| 12 || GetDeviceId
+|-
+| 13 || DeleteSettings
+|-
+| 14 || ImportSettings
+|-
+| 20 || Resolve
+|-
+| 21 || ResolveEx
+|-
+| 30 || GetNasServiceSetting
+|-
+| 31 || GetNasServiceSettingEx
+|-
+| 40 || GetNasRequestFqdn
+|-
+| 41 || GetNasRequestFqdnEx
+|-
+| 42 || GetNasApiFqdn
+|-
+| 43 || GetNasApiFqdnEx
+|-
+| 50 || GetCurrentSetting
+|-
+| 60 || ReadSaveDataFromFsForTest
+|-
+| 61 || WriteSaveDataToFsForTest
+|-
+| 62 || DeleteSaveDataOfFsForTest
 |}
