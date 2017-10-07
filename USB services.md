@@ -146,6 +146,9 @@ Takes 2 type-5 buffers and returns an
 0x09, 0x04, 0x04, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0x00) in the first
 buffer and a string ("usb") in the second buffer.
 
+Returns an error when [\#BindDevice](#BindDevice "wikilink") wasn't
+used.
+
 Structure of the first buffer(this is similar to
 [libusb\_\_interface\_\_descriptor](http://libusb.sourceforge.net/api-1.0/structlibusb__interface__descriptor.html)):
 
