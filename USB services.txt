@@ -123,13 +123,13 @@ Structure of the first buffer(this is similar to [http://libusb.sourceforge.net/
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x1 || bLength
+| 0x0 || 0x1 || bLength. Must match 0x9.
 |-
-| 0x1 || 0x1 || ?
+| 0x1 || 0x1 || bDescriptorType. Must match 0x4.
 |-
-| 0x2 || 0x1 || ?
+| 0x2 || 0x1 || When 0x4, an error will be thrown if certain state checks don't pass. Otherwise, this must be <=3.
 |-
-| 0x3 || 0x1 || ?
+| 0x3 || 0x1 || Must match 0x0.
 |-
 | 0x4 || 0x1 || ?
 |-

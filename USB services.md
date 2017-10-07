@@ -152,17 +152,17 @@ used.
 Structure of the first buffer(this is similar to
 [libusb\_\_interface\_\_descriptor](http://libusb.sourceforge.net/api-1.0/structlibusb__interface__descriptor.html)):
 
-| Offset | Size | Description        |
-| ------ | ---- | ------------------ |
-| 0x0    | 0x1  | bLength            |
-| 0x1    | 0x1  | ?                  |
-| 0x2    | 0x1  | ?                  |
-| 0x3    | 0x1  | ?                  |
-| 0x4    | 0x1  | ?                  |
-| 0x5    | 0x1  | bInterfaceClass    |
-| 0x6    | 0x1  | bInterfaceSubClass |
-| 0x7    | 0x1  | bInterfaceProtocol |
-| 0x8    | 0x1  | ?                  |
+| Offset | Size | Description                                                                                         |
+| ------ | ---- | --------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | bLength. Must match 0x9.                                                                            |
+| 0x1    | 0x1  | bDescriptorType. Must match 0x4.                                                                    |
+| 0x2    | 0x1  | When 0x4, an error will be thrown if certain state checks don't pass. Otherwise, this must be \<=3. |
+| 0x3    | 0x1  | Must match 0x0.                                                                                     |
+| 0x4    | 0x1  | ?                                                                                                   |
+| 0x5    | 0x1  | bInterfaceClass                                                                                     |
+| 0x6    | 0x1  | bInterfaceSubClass                                                                                  |
+| 0x7    | 0x1  | bInterfaceProtocol                                                                                  |
+| 0x8    | 0x1  | ?                                                                                                   |
 
 ## GetStateChangeEvent
 
