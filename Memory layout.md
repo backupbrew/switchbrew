@@ -6,7 +6,7 @@ The userspace virtual address space can be either 32 or 36 bits.
 There are two regions randomized and enforced by the kernel, each one
 with upper bits random and 2MB-aligned:
 
-  - HeapRegion, available from
+  - ReservedHeapRegion, available from
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
   - ReservedMapRegion, available from
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
