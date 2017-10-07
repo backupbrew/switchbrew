@@ -10,7 +10,9 @@ used during [factory setup](Factory%20Setup.md "wikilink") by
 This service session is used as an IPC
 [domain](IPC%20Marshalling.md "wikilink"). All of these {get-session}
 commands also return an output u8 and the u32
-\<[domainID](IPC%20Marshalling.md "wikilink")\>.
+\<[domainID](IPC%20Marshalling.md "wikilink")\>, for using those
+sessions as
+domains.
 
 | Cmd | Name                                                     | Notes                            |
 | --- | -------------------------------------------------------- | -------------------------------- |
