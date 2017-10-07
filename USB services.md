@@ -56,10 +56,15 @@ config.
 ` SerialNumber: SerialNumber`
 
 The following is the default `lsusb -v {...}` output when the usbds
-service wasn't used. The endpoints are configured using
+service wasn't used.
+
+The endpoints are configured using
 [\#GetDsEndpoint](#GetDsEndpoint "wikilink"), the total number of
 endpoints is the number of open [\#IDsEndpoint](#IDsEndpoint "wikilink")
-sessions.
+sessions. bInterfaceNumber is {0-based index for the enabled
+[\#IDsInterface](#IDsInterface "wikilink") session.} Some of the
+interface fields are configured using
+[\#GetDsInterface](#GetDsInterface "wikilink").
 
 ` Bus 003 Device 006: ID 057e:2000 Nintendo Co., Ltd `  
 ` Couldn't open device, some information will be missing`  
@@ -124,6 +129,9 @@ sessions.
 Takes an u32 (**complexId**). [Manu](Manu%20Services.md "wikilink")
 sends 0x02.
 
+Once this command is used, the USB device will not be listed with
+`lsusb` until [\#EnableInterface](#EnableInterface "wikilink") is used.
+
 ## BindClientProcess
 
 Takes 1 copy-handle for the current process (0xFFFF8001).
@@ -135,6 +143,21 @@ Takes 2 type-5 buffers and returns an
 [Manu](Manu%20Services.md "wikilink") sends a 0x09-byte command (e.g.:
 0x09, 0x04, 0x04, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0x00) in the first
 buffer and a string ("usb") in the second buffer.
+
+Structure of the first buffer(this is similar to
+[libusb\_\_interface\_\_descriptor](http://libusb.sourceforge.net/api-1.0/structlibusb__interface__descriptor.html)):
+
+| Offset | Size | Description        |
+| ------ | ---- | ------------------ |
+| 0x0    | 0x1  | bLength            |
+| 0x1    | 0x1  | ?                  |
+| 0x2    | 0x1  | ?                  |
+| 0x3    | 0x1  | ?                  |
+| 0x4    | 0x1  | ?                  |
+| 0x5    | 0x1  | bInterfaceClass    |
+| 0x6    | 0x1  | bInterfaceSubClass |
+| 0x7    | 0x1  | bInterfaceProtocol |
+| 0x8    | 0x1  | ?                  |
 
 ## GetStateChangeEvent
 
@@ -197,6 +220,9 @@ Returns an event handle for interface setup changes.
 ### EnableInterface
 
 Takes no arguments. Enables the current interface.
+
+Only one interface can be enabled at time, this indicates which
+interface is actually used for USB.
 
 ### DisableInterface
 
