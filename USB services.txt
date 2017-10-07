@@ -10,7 +10,7 @@ This service session is used as an IPC [[IPC_Marshalling|domain]] by [[Manu Serv
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || [[#BindComplex]] || 
+| 0 || [[#BindDevice]] || 
 |-
 | 1 || [[#BindClientProcess]] || 
 |-
@@ -26,7 +26,7 @@ This service session is used as an IPC [[IPC_Marshalling|domain]] by [[Manu Serv
 Initialization done by [[Manu Services|manu]]:
 * Initial service init:
 ** Get service/etc.
-** Uses [[#BindComplex]].
+** Uses [[#BindDevice]].
 ** Uses [[#BindClientProcess]].
 ** Uses [[#GetStateChangeEvent]].
 ** Uses [[#SetVidPidBcd]].
@@ -105,10 +105,10 @@ The endpoints are configured using [[#GetDsEndpoint]], the total number of endpo
           wMaxPacketSize     0x0001  1x 1 bytes
           bInterval              16
 
-== BindComplex ==
+== BindDevice ==
 Takes an u32 ('''complexId'''). [[Manu_Services|Manu]] sends 0x02.
 
-Once this command is used, the USB device will not be listed with <code>lsusb</code> until [[#EnableInterface]] is used.
+Binding more than once with the current session is not allowed. Once this command is used, the USB device will not be listed with <code>lsusb</code> until [[#EnableInterface]] is used.
 
 == BindClientProcess ==
 Takes 1 copy-handle for the current process (0xFFFF8001).

@@ -17,7 +17,7 @@ domains.
 
 | Cmd | Name                                                     | Notes                            |
 | --- | -------------------------------------------------------- | -------------------------------- |
-| 0   | [\#BindComplex](#BindComplex "wikilink")                 |                                  |
+| 0   | [\#BindDevice](#BindDevice "wikilink")                   |                                  |
 | 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |                                  |
 | 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |                                  |
 | 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |                                  |
@@ -28,7 +28,7 @@ Initialization done by [manu](Manu%20Services.md "wikilink"):
 
   - Initial service init:
       - Get service/etc.
-      - Uses [\#BindComplex](#BindComplex "wikilink").
+      - Uses [\#BindDevice](#BindDevice "wikilink").
       - Uses [\#BindClientProcess](#BindClientProcess "wikilink").
       - Uses [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink").
       - Uses [\#SetVidPidBcd](#SetVidPidBcd "wikilink").
@@ -125,13 +125,14 @@ interface fields are configured using
 `         wMaxPacketSize     0x0001  1x 1 bytes`  
 `         bInterval              16`
 
-## BindComplex
+## BindDevice
 
 Takes an u32 (**complexId**). [Manu](Manu%20Services.md "wikilink")
 sends 0x02.
 
-Once this command is used, the USB device will not be listed with
-`lsusb` until [\#EnableInterface](#EnableInterface "wikilink") is used.
+Binding more than once with the current session is not allowed. Once
+this command is used, the USB device will not be listed with `lsusb`
+until [\#EnableInterface](#EnableInterface "wikilink") is used.
 
 ## BindClientProcess
 
