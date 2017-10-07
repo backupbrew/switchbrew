@@ -180,7 +180,7 @@ The last 3 blocks are strings. The data following each string is all-zero, for p
 |-
 | 1 || [[#GetSetupEvent]] || 
 |-
-| 2 || || Takes a type-0x6 output buffer, no other output.
+| 2 || || Takes a type-0x6 output buffer, no other output. Memcpys data to outbuf with outsize, uses size 0x8 if outsize is too large.
 |-
 | 3 || [[#EnableInterface]] || 
 |-
