@@ -42,6 +42,19 @@ Returns an event handle for state changes.
 Takes a type-5 buffer with 0x66 bytes of USB descriptor data (see
 [manu](Manu%20Services#manu.md##manu "wikilink")).
 
+| Offset | Size | Description     |
+| ------ | ---- | --------------- |
+| 0x0    | 0x2  | VID (idVendor)  |
+| 0x2    | 0x2  | PID (idProduct) |
+| 0x4    | 0x2  | bcdUSB          |
+| 0x6    | 0x20 | Manufacturer    |
+| 0x26   | 0x20 | Product         |
+| 0x46   | 0x20 | SerialNumber    |
+
+The last 3 blocks are strings. The data following each string is
+all-zero, for padding to size
+0x20.
+
 ## IDsInterface
 
 | Cmd | Name                                                                 |
