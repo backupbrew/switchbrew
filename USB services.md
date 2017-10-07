@@ -45,9 +45,10 @@ Initialization done by [manu](Manu%20Services.md "wikilink"):
 
 ## Configuration
 
-The following is the default USB config strings, when the usbds service
-wasn't used. These can be set with
-[\#SetVidPidBcd](#SetVidPidBcd "wikilink"). The default string for
+The following is the default USB config strings, while the usbds service
+isn't being used. All of the below configuration will reset to the
+defaults when all usbds-related sessions are closed. These can be set
+with [\#SetVidPidBcd](#SetVidPidBcd "wikilink"). The default string for
 Product is loaded from [settings](Settings%20services.md "wikilink")
 config.
 
