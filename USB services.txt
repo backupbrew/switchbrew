@@ -4,7 +4,7 @@ One symbol in USB-sysmodule is: "vtable for nn::usb::detail::UsbComplexTegra21x"
 Used for Switch<>PC USB comms, aka Switch-as-device.
 This service is used during [[Factory Setup|factory setup]] by [[Manu Services|manu]].
 
-This service session is used as an IPC [[IPC_Marshalling|domain]]. All of these {get-session} commands also return an output u8 and the u32 <[[IPC_Marshalling|domainID]]>, for using those sessions as domains.
+This service session is used as an IPC [[IPC_Marshalling|domain]] by [[Manu Services|manu]]. All of these {get-session} commands also return an output u8 and the u32 <[[IPC_Marshalling|domainID]]>, for using those sessions as domains.
 
 {| class="wikitable" border="1"
 |-
@@ -22,6 +22,20 @@ This service session is used as an IPC [[IPC_Marshalling|domain]]. All of these 
 |-
 | 5 || [[#SetVidPidBcd]] || 
 |}
+
+Initialization done by [[Manu Services|manu]]:
+* Initial service init:
+** Get service/etc.
+** Uses [[#BindComplex]].
+** Uses [[#BindClientProcess]].
+** Uses [[#GetStateChangeEvent]].
+** Uses [[#SetVidPidBcd]].
+* Interface init:
+** Uses [[#GetDsInterface]], then uses commands from that with the rest of the following.
+** Uses [[#GetSetupEvent]].
+** Uses [[#GetCtrlInCompletionEvent]].
+** Uses [[#GetCtrlOutCompletionEvent]].
+* Initializes two endpoints via using [[#GetDsEndpoint]] twice.
 
 == Configuration ==
 The following is the default USB config strings, when the usbds service wasn't used. These can be set with [[#SetVidPidBcd]]. The default string for Product is loaded from [[Settings_services|settings]] config.

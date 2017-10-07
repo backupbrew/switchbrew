@@ -8,7 +8,8 @@ used during [factory setup](Factory%20Setup.md "wikilink") by
 [manu](Manu%20Services.md "wikilink").
 
 This service session is used as an IPC
-[domain](IPC%20Marshalling.md "wikilink"). All of these {get-session}
+[domain](IPC%20Marshalling.md "wikilink") by
+[manu](Manu%20Services.md "wikilink"). All of these {get-session}
 commands also return an output u8 and the u32
 \<[domainID](IPC%20Marshalling.md "wikilink")\>, for using those
 sessions as
@@ -22,6 +23,25 @@ domains.
 | 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |                                  |
 | 4   |                                                          | No input. Returns an output u32. |
 | 5   | [\#SetVidPidBcd](#SetVidPidBcd "wikilink")               |                                  |
+
+Initialization done by [manu](Manu%20Services.md "wikilink"):
+
+  - Initial service init:
+      - Get service/etc.
+      - Uses [\#BindComplex](#BindComplex "wikilink").
+      - Uses [\#BindClientProcess](#BindClientProcess "wikilink").
+      - Uses [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink").
+      - Uses [\#SetVidPidBcd](#SetVidPidBcd "wikilink").
+  - Interface init:
+      - Uses [\#GetDsInterface](#GetDsInterface "wikilink"), then uses
+        commands from that with the rest of the following.
+      - Uses [\#GetSetupEvent](#GetSetupEvent "wikilink").
+      - Uses
+        [\#GetCtrlInCompletionEvent](#GetCtrlInCompletionEvent "wikilink").
+      - Uses
+        [\#GetCtrlOutCompletionEvent](#GetCtrlOutCompletionEvent "wikilink").
+  - Initializes two endpoints via using
+    [\#GetDsEndpoint](#GetDsEndpoint "wikilink") twice.
 
 ## Configuration
 
