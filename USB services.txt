@@ -88,7 +88,11 @@ The last 3 blocks are strings. The data following each string is all-zero, for p
 |}
 
 === GetDsEndpoint ===
-Takes a type-5 buffer and returns an [[#IDsEndpoint]]. [[Manu_Services|Manu]] sends a 0x07-byte command (e.g.: 0x07, 0x05, 0x80, 0x02, 0x00, 0x02, 0x00) in the first buffer.
+Takes a type-5 buffer and returns an [[#IDsEndpoint]]. [[Manu_Services|Manu]] uses this twice for getting two endpoint sessions, with the following 0x7-byte buffer data:
+* First endpoint: 0x07, 0x05, 0x80, 0x02, 0x00, 0x02, 0x00.
+* Second endpoint: Same as above except byte2 is 0x00.
+
+Each field is an u8, except for offset 0x4-0x5 which is an u16.
 
 === GetSetupEvent ===
 Returns an event handle for interface setup changes.

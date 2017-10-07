@@ -83,8 +83,13 @@ all-zero, for padding to size
 
 Takes a type-5 buffer and returns an
 [\#IDsEndpoint](#IDsEndpoint "wikilink").
-[Manu](Manu%20Services.md "wikilink") sends a 0x07-byte command (e.g.:
-0x07, 0x05, 0x80, 0x02, 0x00, 0x02, 0x00) in the first buffer.
+[Manu](Manu%20Services.md "wikilink") uses this twice for getting two
+endpoint sessions, with the following 0x7-byte buffer data:
+
+  - First endpoint: 0x07, 0x05, 0x80, 0x02, 0x00, 0x02, 0x00.
+  - Second endpoint: Same as above except byte2 is 0x00.
+
+Each field is an u8, except for offset 0x4-0x5 which is an u16.
 
 ### GetSetupEvent
 
