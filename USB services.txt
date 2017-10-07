@@ -168,31 +168,31 @@ The last 3 blocks are strings. The data following each string is all-zero, for p
 == IDsInterface ==
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || [[#GetDsEndpoint]]
+| 0 || [[#GetDsEndpoint]] || 
 |-
-| 1 || [[#GetSetupEvent]]
+| 1 || [[#GetSetupEvent]] || 
 |-
-| 2 || 
+| 2 || || Takes a type-0x6 output buffer, no other output.
 |-
-| 3 || [[#EnableInterface]]
+| 3 || [[#EnableInterface]] || 
 |-
-| 4 || [[#DisableInterface]]
+| 4 || [[#DisableInterface]] || 
 |-
-| 5 || 
+| 5 || || Takes an u32 and an u64. Returns an output u32.
 |-
-| 6 || 
+| 6 || || Takes an u32 and an u64. Returns an output u32.
 |-
-| 7 || [[#GetCtrlInCompletionEvent]]
+| 7 || [[#GetCtrlInCompletionEvent]] || 
 |-
-| 8 || 
+| 8 || || No input. Returns 0x84 bytes of output.
 |-
-| 9 || [[#GetCtrlOutCompletionEvent]]
+| 9 || [[#GetCtrlOutCompletionEvent]] || 
 |-
-| 10 || 
+| 10 || || No input. Returns 0x84 bytes of output.
 |-
-| 11 || 
+| 11 || || No input/output.
 |}
 
 === GetDsEndpoint ===

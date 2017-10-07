@@ -184,20 +184,20 @@ all-zero, for padding to size
 
 ## IDsInterface
 
-| Cmd | Name                                                                 |
-| --- | -------------------------------------------------------------------- |
-| 0   | [\#GetDsEndpoint](#GetDsEndpoint "wikilink")                         |
-| 1   | [\#GetSetupEvent](#GetSetupEvent "wikilink")                         |
-| 2   |                                                                      |
-| 3   | [\#EnableInterface](#EnableInterface "wikilink")                     |
-| 4   | [\#DisableInterface](#DisableInterface "wikilink")                   |
-| 5   |                                                                      |
-| 6   |                                                                      |
-| 7   | [\#GetCtrlInCompletionEvent](#GetCtrlInCompletionEvent "wikilink")   |
-| 8   |                                                                      |
-| 9   | [\#GetCtrlOutCompletionEvent](#GetCtrlOutCompletionEvent "wikilink") |
-| 10  |                                                                      |
-| 11  |                                                                      |
+| Cmd | Name                                                                 | Notes                                            |
+| --- | -------------------------------------------------------------------- | ------------------------------------------------ |
+| 0   | [\#GetDsEndpoint](#GetDsEndpoint "wikilink")                         |                                                  |
+| 1   | [\#GetSetupEvent](#GetSetupEvent "wikilink")                         |                                                  |
+| 2   |                                                                      | Takes a type-0x6 output buffer, no other output. |
+| 3   | [\#EnableInterface](#EnableInterface "wikilink")                     |                                                  |
+| 4   | [\#DisableInterface](#DisableInterface "wikilink")                   |                                                  |
+| 5   |                                                                      | Takes an u32 and an u64. Returns an output u32.  |
+| 6   |                                                                      | Takes an u32 and an u64. Returns an output u32.  |
+| 7   | [\#GetCtrlInCompletionEvent](#GetCtrlInCompletionEvent "wikilink")   |                                                  |
+| 8   |                                                                      | No input. Returns 0x84 bytes of output.          |
+| 9   | [\#GetCtrlOutCompletionEvent](#GetCtrlOutCompletionEvent "wikilink") |                                                  |
+| 10  |                                                                      | No input. Returns 0x84 bytes of output.          |
+| 11  |                                                                      | No input/output.                                 |
 
 ### GetDsEndpoint
 
