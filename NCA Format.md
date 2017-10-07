@@ -6,10 +6,12 @@ on this page is for the plaintext version of that data.
 
 # Encryption
 
-The first {at least 0xC00 bytes} are encrypted with AES-XTS with sector
-size 0x200, at least 6 sectors in total. Everything in this region uses
-same
-keydata.
+The first 0xC00 bytes are encrypted with AES-XTS with sector size 0x200
+with a non-standard "tweak" (endianness is reversed, see
+[here](https://gist.github.com/SciresM/fe8a631d13c069bd66e9c656ab5b3f7f)),
+this encrypted data is an 0x400 NCA header + an 0x200 header for each
+section in the section
+table.
 
 # Header
 
