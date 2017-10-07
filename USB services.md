@@ -56,7 +56,10 @@ config.
 ` SerialNumber: SerialNumber`
 
 The following is the default `lsusb -v {...}` output when the usbds
-service wasn't used:
+service wasn't used. The endpoints are configured using
+[\#GetDsEndpoint](#GetDsEndpoint "wikilink"), the total number of
+endpoints is the number of open [\#IDsEndpoint](#IDsEndpoint "wikilink")
+sessions.
 
 ` Bus 003 Device 006: ID 057e:2000 Nintendo Co., Ltd `  
 ` Couldn't open device, some information will be missing`  

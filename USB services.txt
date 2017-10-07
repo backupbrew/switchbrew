@@ -43,7 +43,7 @@ The following is the default USB config strings, when the usbds service wasn't u
   Manufacturer: Nintendo
   SerialNumber: SerialNumber
 
-The following is the default <code>lsusb -v {...}</code> output when the usbds service wasn't used:
+The following is the default <code>lsusb -v {...}</code> output when the usbds service wasn't used. The endpoints are configured using [[#GetDsEndpoint]], the total number of endpoints is the number of open [[#IDsEndpoint]] sessions.
 
   Bus 003 Device 006: ID 057e:2000 Nintendo Co., Ltd 
   Couldn't open device, some information will be missing
