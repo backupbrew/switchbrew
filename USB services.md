@@ -224,6 +224,9 @@ Each field is an u8, except for offset 0x4-0x5 which is an u16.
 This structure matches
 [libusb\_endpoint\_descriptor](http://libusb.sourceforge.net/api-1.0/structlibusb__endpoint__descriptor.html).
 
+The buffer size must be \>=0x7. Only the first 0x7-bytes from the buffer
+are used.
+
 ### GetSetupEvent
 
 Returns an event handle for interface setup changes.
