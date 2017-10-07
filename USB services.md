@@ -7,14 +7,17 @@ Used for Switch\<\>PC USB comms, aka Switch-as-device. This service is
 used during [factory setup](Factory%20Setup.md "wikilink") by
 [manu](Manu%20Services.md "wikilink").
 
-| Cmd | Name                                                     |
-| --- | -------------------------------------------------------- |
-| 0   | [\#BindComplex](#BindComplex "wikilink")                 |
-| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |
-| 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |
-| 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |
-| 4   |                                                          |
-| 5   | [\#SetVidPidBcd](#SetVidPidBcd "wikilink")               |
+This service session is used as an IPC
+[domain](IPC%20Marshalling.md "wikilink").
+
+| Cmd | Name                                                     | Notes                            |
+| --- | -------------------------------------------------------- | -------------------------------- |
+| 0   | [\#BindComplex](#BindComplex "wikilink")                 |                                  |
+| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |                                  |
+| 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |                                  |
+| 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |                                  |
+| 4   |                                                          | No input. Returns an output u32. |
+| 5   | [\#SetVidPidBcd](#SetVidPidBcd "wikilink")               |                                  |
 
 ## BindComplex
 

@@ -4,21 +4,23 @@ One symbol in USB-sysmodule is: "vtable for nn::usb::detail::UsbComplexTegra21x"
 Used for Switch<>PC USB comms, aka Switch-as-device.
 This service is used during [[Factory Setup|factory setup]] by [[Manu Services|manu]].
 
+This service session is used as an IPC [[IPC_Marshalling|domain]].
+
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || [[#BindComplex]]
+| 0 || [[#BindComplex]] || 
 |-
-| 1 || [[#BindClientProcess]]
+| 1 || [[#BindClientProcess]] || 
 |-
-| 2 || [[#GetDsInterface]]
+| 2 || [[#GetDsInterface]] || 
 |-
-| 3 || [[#GetStateChangeEvent]]
+| 3 || [[#GetStateChangeEvent]] || 
 |-
-| 4 || 
+| 4 || || No input. Returns an output u32.
 |-
-| 5 || [[#SetVidPidBcd]]
+| 5 || [[#SetVidPidBcd]] || 
 |}
 
 == BindComplex ==
