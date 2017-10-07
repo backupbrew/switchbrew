@@ -252,7 +252,7 @@ commands.
 
 #### PostBufferAsync
 
-Takes an u32 (**size**) and an u64 (**buffer**).
+Takes an u32 (**size**) and an u64 (**buffer**). Returns an output u32.
 
 #### GetReportData
 

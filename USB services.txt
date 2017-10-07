@@ -240,7 +240,7 @@ Returns an event handle for polling the completion of output control commands.
 |}
 
 ==== PostBufferAsync ====
-Takes an u32 ('''size''') and an u64 ('''buffer''').
+Takes an u32 ('''size''') and an u64 ('''buffer'''). Returns an output u32.
 
 ==== GetReportData ====
 Returns 0x84 bytes of report data from the endpoint.
