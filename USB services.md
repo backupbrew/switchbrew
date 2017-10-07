@@ -8,7 +8,9 @@ used during [factory setup](Factory%20Setup.md "wikilink") by
 [manu](Manu%20Services.md "wikilink").
 
 This service session is used as an IPC
-[domain](IPC%20Marshalling.md "wikilink").
+[domain](IPC%20Marshalling.md "wikilink"). All of these {get-session}
+commands also return an output u8 and the u32
+\<[domainID](IPC%20Marshalling.md "wikilink")\>.
 
 | Cmd | Name                                                     | Notes                            |
 | --- | -------------------------------------------------------- | -------------------------------- |
