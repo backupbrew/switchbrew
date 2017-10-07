@@ -224,19 +224,19 @@ Returns an event handle for polling the completion of output control commands.
 === IDsEndpoint ===
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || [[#PostBufferAsync]]
+| 0 || [[#PostBufferAsync]] || 
 |-
-| 1 || 
+| 1 || || No input/output.
 |-
-| 2 || 
+| 2 || || No input. Returns an output handle?
 |-
-| 3 || [[#GetReportData]]
+| 3 || [[#GetReportData]] || 
 |-
-| 4 || 
+| 4 || || No input/output.
 |-
-| 5 || 
+| 5 || || Takes an input u8, no output.
 |}
 
 ==== PostBufferAsync ====

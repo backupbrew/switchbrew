@@ -241,14 +241,14 @@ commands.
 
 ### IDsEndpoint
 
-| Cmd | Name                                             |
-| --- | ------------------------------------------------ |
-| 0   | [\#PostBufferAsync](#PostBufferAsync "wikilink") |
-| 1   |                                                  |
-| 2   |                                                  |
-| 3   | [\#GetReportData](#GetReportData "wikilink")     |
-| 4   |                                                  |
-| 5   |                                                  |
+| Cmd | Name                                             | Notes                               |
+| --- | ------------------------------------------------ | ----------------------------------- |
+| 0   | [\#PostBufferAsync](#PostBufferAsync "wikilink") |                                     |
+| 1   |                                                  | No input/output.                    |
+| 2   |                                                  | No input. Returns an output handle? |
+| 3   | [\#GetReportData](#GetReportData "wikilink")     |                                     |
+| 4   |                                                  | No input/output.                    |
+| 5   |                                                  | Takes an input u8, no output.       |
 
 #### PostBufferAsync
 
