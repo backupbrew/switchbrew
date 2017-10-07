@@ -23,6 +23,72 @@ This service session is used as an IPC [[IPC_Marshalling|domain]]. All of these 
 | 5 || [[#SetVidPidBcd]] || 
 |}
 
+== Configuration ==
+The following is the default USB config strings, when the usbds service wasn't used. These can be set with [[#SetVidPidBcd]]. The default string for Product is loaded from [[Settings_services|settings]] config.
+  Product: Nintendo Switch
+  Manufacturer: Nintendo
+  SerialNumber: SerialNumber
+
+The following is the default <code>lsusb -v {...}</code> output when the usbds service wasn't used:
+
+  Bus 003 Device 006: ID 057e:2000 Nintendo Co., Ltd 
+  Couldn't open device, some information will be missing
+  Device Descriptor:
+    bLength                18
+    bDescriptorType         1
+    bcdUSB               2.00
+    bDeviceClass            0 (Defined at Interface level)
+    bDeviceSubClass         0 
+    bDeviceProtocol         0 
+    bMaxPacketSize0        64
+    idVendor           0x057e Nintendo Co., Ltd
+    idProduct          0x2000 
+    bcdDevice            1.00
+    iManufacturer           1 
+    iProduct                2 
+    iSerial                 3 
+    bNumConfigurations      1
+    Configuration Descriptor:
+      bLength                 9
+      bDescriptorType         2
+      wTotalLength           34
+      bNumInterfaces          1
+      bConfigurationValue     1
+      iConfiguration          0 
+      bmAttributes         0xc0
+        Self Powered
+      MaxPower              {...}
+      Interface Descriptor:
+        bLength                 9
+        bDescriptorType         4
+        bInterfaceNumber        0
+        bAlternateSetting       0
+        bNumEndpoints           1
+        bInterfaceClass         3 Human Interface Device
+        bInterfaceSubClass      0 No Subclass
+        bInterfaceProtocol      0 None
+        iInterface              0 
+          HID Device Descriptor:
+            bLength                 9
+            bDescriptorType        33
+            bcdHID               2.00
+            bCountryCode            0 Not supported
+            bNumDescriptors         1
+            bDescriptorType        34 Report
+            wDescriptorLength      26
+           Report Descriptors: 
+             ** UNAVAILABLE **
+        Endpoint Descriptor:
+          bLength                 7
+          bDescriptorType         5
+          bEndpointAddress     0x81  EP 1 IN
+          bmAttributes            3
+            Transfer Type            Interrupt
+            Synch Type               None
+            Usage Type               Data
+          wMaxPacketSize     0x0001  1x 1 bytes
+          bInterval              16
+
 == BindComplex ==
 Takes an u32 ('''complexId'''). [[Manu_Services|Manu]] sends 0x02.
 
