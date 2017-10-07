@@ -2,9 +2,9 @@
 The userspace virtual address space can be either 32 or 36 bits. [2.0.0+] introduced support for 38 bit address spaces.
 
 There are two regions randomized and enforced by the kernel, each one with upper bits random and 2MB-aligned:
-* Heap region, available from [[SVC#svcGetInfo]].
-* Stack mapping region, available from [[SVC#svcGetInfo]].
-* [2.0.0+] Unknown region, available from [[SVC#svcGetInfo]].
+* HeapRegion, available from [[SVC#svcGetInfo]].
+* ReservedRegion0, available from [[SVC#svcGetInfo]].
+* [2.0.0+] ReservedRegion1, available from [[SVC#svcGetInfo]].
 
 The main binary is placed at an address that is provided to the kernel by Loader via [[SVC#svcCreateProcess]].
 

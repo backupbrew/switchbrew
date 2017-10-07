@@ -6,11 +6,11 @@ The userspace virtual address space can be either 32 or 36 bits.
 There are two regions randomized and enforced by the kernel, each one
 with upper bits random and 2MB-aligned:
 
-  - Heap region, available from
+  - HeapRegion, available from
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
-  - Stack mapping region, available from
+  - ReservedRegion0, available from
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
-  - \[2.0.0+\] Unknown region, available from
+  - \[2.0.0+\] ReservedRegion1, available from
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
 
 The main binary is placed at an address that is provided to the kernel
