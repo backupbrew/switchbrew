@@ -15,14 +15,14 @@ commands also return an output u8 and the u32
 sessions as
 domains.
 
-| Cmd | Name                                                     | Notes                            |
-| --- | -------------------------------------------------------- | -------------------------------- |
-| 0   | [\#BindDevice](#BindDevice "wikilink")                   |                                  |
-| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |                                  |
-| 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |                                  |
-| 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |                                  |
-| 4   |                                                          | No input. Returns an output u32. |
-| 5   | [\#SetVidPidBcd](#SetVidPidBcd "wikilink")               |                                  |
+| Cmd | Name                                                     | Notes                                                                                                      |
+| --- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 0   | [\#BindDevice](#BindDevice "wikilink")                   |                                                                                                            |
+| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |                                                                                                            |
+| 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |                                                                                                            |
+| 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |                                                                                                            |
+| 4   |                                                          | No input. Returns an output u32. Returns an error when [\#BindDevice](#BindDevice "wikilink") wasn't used. |
+| 5   | [\#SetVidPidBcd](#SetVidPidBcd "wikilink")               |                                                                                                            |
 
 Initialization done by [manu](Manu%20Services.md "wikilink"):
 

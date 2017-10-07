@@ -18,7 +18,7 @@ This service session is used as an IPC [[IPC_Marshalling|domain]] by [[Manu Serv
 |-
 | 3 || [[#GetStateChangeEvent]] || 
 |-
-| 4 || || No input. Returns an output u32.
+| 4 || || No input. Returns an output u32. Returns an error when [[#BindDevice]] wasn't used.
 |-
 | 5 || [[#SetVidPidBcd]] || 
 |}
