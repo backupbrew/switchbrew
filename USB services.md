@@ -146,6 +146,9 @@ Takes 2 type-5 buffers and returns an
 0x09, 0x04, 0x04, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0x00) in the first
 buffer and a string ("usb") in the second buffer.
 
+When the strlen output for the second buffer is \>=0x40, size 0x40 is
+used instead for copying the string.
+
 Returns an error when [\#BindDevice](#BindDevice "wikilink") wasn't
 used.
 
@@ -163,6 +166,8 @@ Structure of the first buffer(this is similar to
 | 0x6    | 0x1  | bInterfaceSubClass                                                                                  |
 | 0x7    | 0x1  | bInterfaceProtocol                                                                                  |
 | 0x8    | 0x1  | ?                                                                                                   |
+
+Only the first 0x9-bytes are used.
 
 ## GetStateChangeEvent
 
