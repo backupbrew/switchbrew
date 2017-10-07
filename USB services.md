@@ -225,7 +225,11 @@ This structure matches
 [libusb\_endpoint\_descriptor](http://libusb.sourceforge.net/api-1.0/structlibusb__endpoint__descriptor.html).
 
 The buffer size must be \>=0x7. Only the first 0x7-bytes from the buffer
-are used.
+are used. Byte0(bLength) must match 0x7, and byte1(bDescriptorType) must
+match 0x5. Byte2(bEndpointAddress) is only compared with 0x80 to
+determine whether to use an input or output endpoint, the actual
+endpoint-number is allocated automatically by checking state. Hence, all
+input endpoints must use bEndpointAddress==0x80.
 
 ### GetSetupEvent
 
