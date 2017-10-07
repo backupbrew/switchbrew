@@ -8,9 +8,9 @@ with upper bits random and 2MB-aligned:
 
   - HeapRegion, available from
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
-  - ReservedRegion0, available from
+  - ReservedMapRegion, available from
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
-  - \[2.0.0+\] ReservedRegion1, available from
+  - \[2.0.0+\] NewReservedRegion, available from
     [SVC\#svcGetInfo](SVC#svcGetInfo.md##svcGetInfo "wikilink").
 
 The main binary is placed at an address that is provided to the kernel
