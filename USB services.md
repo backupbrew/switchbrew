@@ -147,7 +147,8 @@ Takes 2 type-5 buffers and returns an
 buffer and a string ("usb") in the second buffer.
 
 When the strlen output for the second buffer is \>=0x40, size 0x40 is
-used instead for copying the string.
+used instead for copying the string. This is the interface name, it's
+not sent over USB.
 
 Returns an error when [\#BindDevice](#BindDevice "wikilink") wasn't
 used.
