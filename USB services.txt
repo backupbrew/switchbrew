@@ -122,7 +122,7 @@ Returns an error when [[#BindDevice]] wasn't used.
 
 Up to 4 interfaces can be used+[[#EnableInterface|enabled]].
 
-Structure of the first buffer(this is similar to [http://libusb.sourceforge.net/api-1.0/structlibusb__interface__descriptor.html libusb__interface__descriptor]):
+Structure of the first buffer(this is the same as [http://libusb.sourceforge.net/api-1.0/structlibusb__interface__descriptor.html libusb__interface__descriptor]):
 {| class="wikitable" border="1"
 |-
 ! Offset || Size || Description
@@ -133,9 +133,9 @@ Structure of the first buffer(this is similar to [http://libusb.sourceforge.net/
 |-
 | 0x2 || 0x1 || bInterfaceNumber. When 0x4, the bInterfaceNumber is automatically allocated(error will be thrown if no space). Otherwise, it's used directly and must be <=3.
 |-
-| 0x3 || 0x1 || Must match 0x0.
+| 0x3 || 0x1 || bAlternateSetting. Must match 0x0.
 |-
-| 0x4 || 0x1 || ?
+| 0x4 || 0x1 || bNumEndpoints. Ignored.
 |-
 | 0x5 || 0x1 || bInterfaceClass
 |-
@@ -143,7 +143,7 @@ Structure of the first buffer(this is similar to [http://libusb.sourceforge.net/
 |-
 | 0x7 || 0x1 || bInterfaceProtocol
 |-
-| 0x8 || 0x1 || ?
+| 0x8 || 0x1 || iInterface. Ignored.
 |}
 
 Only the first 0x9-bytes are used.
