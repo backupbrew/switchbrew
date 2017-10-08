@@ -186,20 +186,22 @@ The last 3 blocks are strings. The data following each string is all-zero, for p
 |-
 | 4 || [[#DisableInterface]] || 
 |-
-| 5 || || Takes an u32 and an u64. Returns an output u32.
+| 5 || [[#CtrlInPostBufferAsync]] || 
 |-
-| 6 || || Takes an u32 and an u64. Returns an output u32.
+| 6 || [[#CtrlOutPostBufferAsync]] || 
 |-
 | 7 || [[#GetCtrlInCompletionEvent]] || 
 |-
-| 8 || || No input. Returns 0x84 bytes of output.
+| 8 || [[#GetCtrlInReportData]] || 
 |-
 | 9 || [[#GetCtrlOutCompletionEvent]] || 
 |-
-| 10 || || No input. Returns 0x84 bytes of output.
+| 10 || [[#GetCtrlOutReportData]] || 
 |-
 | 11 || [[#StallCtrl]] || 
 |}
+
+Commands [[#CtrlInPostBufferAsync]], [[#CtrlOutPostBufferAsync]], and [[#StallCtrl]], will throw an error if the interface is not [[#EnableInterface|enabled]]. [[#GetDsEndpoint]] will throw an error if the interface is [[#EnableInterface|enabled]].
 
 === GetDsEndpoint ===
 Takes a type-5 buffer and returns an [[#IDsEndpoint]]. [[Manu_Services|Manu]] uses this twice for getting two endpoint sessions, with the following 0x7-byte buffer data:
@@ -223,11 +225,23 @@ Only one interface can be enabled at time, this indicates which interface is act
 === DisableInterface ===
 Takes no arguments. Disables the current interface.
 
+=== CtrlInPostBufferAsync ===
+Same as [[#PostBufferAsync]](with same input/output), except this uses control input endpoint 0x80.
+
+=== CtrlOutPostBufferAsync ===
+Same as [[#PostBufferAsync]](with same input/output), except this uses control output endpoint 0x00.
+
 === GetCtrlInCompletionEvent ===
-Returns an event handle for polling the completion of input control commands.
+Returns an event handle for polling the completion of input control commands. Same as [[#GetCompletionEvent]], except this uses control input endpoint 0x80.
+
+=== GetCtrlInReportData ===
+Same as [[#GetReportData]](with same input/output), except this uses control input endpoint 0x80.
 
 === GetCtrlOutCompletionEvent ===
-Returns an event handle for polling the completion of output control commands.
+Returns an event handle for polling the completion of output control commands. Same as [[#GetCompletionEvent]], except this uses control output endpoint 0x00.
+
+=== GetCtrlOutReportData ===
+Same as [[#GetReportData]](with same input/output), except this uses control output endpoint 0x00.
 
 === StallCtrl ===
 No input/output.
@@ -243,7 +257,7 @@ Calls a function with both control endpoints(0x80 and 0x00) with the same functi
 |-
 | 1 || || No input/output.
 |-
-| 2 || || No input. Returns an output handle?
+| 2 || [[#GetCompletionEvent]] || 
 |-
 | 3 || [[#GetReportData]] || 
 |-
@@ -255,8 +269,15 @@ Calls a function with both control endpoints(0x80 and 0x00) with the same functi
 ==== PostBufferAsync ====
 Takes an u32 ('''size''') and an u64 ('''buffer'''). Returns an output u32.
 
+The buffer address must be 0x1000-byte aligned.
+
+Used for data-transfer with input/output endpoints.
+
+==== GetCompletionEvent ====
+No input. Returns an output event handle for polling the completion of [[#PostBufferAsync]](?).
+
 ==== GetReportData ====
-Returns 0x84 bytes of report data from the endpoint.
+No input. Returns 0x84 bytes of report data from the endpoint.
 
 ==== Stall ====
 No input/output.

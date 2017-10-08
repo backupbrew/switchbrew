@@ -201,13 +201,20 @@ all-zero, for padding to size
 | 2   |                                                                      | Takes a type-0x6 output buffer, no other output. Memcpys data to outbuf with outsize, uses size 0x8 if outsize is too large. |
 | 3   | [\#EnableInterface](#EnableInterface "wikilink")                     |                                                                                                                              |
 | 4   | [\#DisableInterface](#DisableInterface "wikilink")                   |                                                                                                                              |
-| 5   |                                                                      | Takes an u32 and an u64. Returns an output u32.                                                                              |
-| 6   |                                                                      | Takes an u32 and an u64. Returns an output u32.                                                                              |
+| 5   | [\#CtrlInPostBufferAsync](#CtrlInPostBufferAsync "wikilink")         |                                                                                                                              |
+| 6   | [\#CtrlOutPostBufferAsync](#CtrlOutPostBufferAsync "wikilink")       |                                                                                                                              |
 | 7   | [\#GetCtrlInCompletionEvent](#GetCtrlInCompletionEvent "wikilink")   |                                                                                                                              |
-| 8   |                                                                      | No input. Returns 0x84 bytes of output.                                                                                      |
+| 8   | [\#GetCtrlInReportData](#GetCtrlInReportData "wikilink")             |                                                                                                                              |
 | 9   | [\#GetCtrlOutCompletionEvent](#GetCtrlOutCompletionEvent "wikilink") |                                                                                                                              |
-| 10  |                                                                      | No input. Returns 0x84 bytes of output.                                                                                      |
+| 10  | [\#GetCtrlOutReportData](#GetCtrlOutReportData "wikilink")           |                                                                                                                              |
 | 11  | [\#StallCtrl](#StallCtrl "wikilink")                                 |                                                                                                                              |
+
+Commands [\#CtrlInPostBufferAsync](#CtrlInPostBufferAsync "wikilink"),
+[\#CtrlOutPostBufferAsync](#CtrlOutPostBufferAsync "wikilink"), and
+[\#StallCtrl](#StallCtrl "wikilink"), will throw an error if the
+interface is not [enabled](#EnableInterface "wikilink").
+[\#GetDsEndpoint](#GetDsEndpoint "wikilink") will throw an error if the
+interface is [enabled](#EnableInterface "wikilink").
 
 ### GetDsEndpoint
 
@@ -246,15 +253,39 @@ interface is actually used for USB.
 
 Takes no arguments. Disables the current interface.
 
+### CtrlInPostBufferAsync
+
+Same as [\#PostBufferAsync](#PostBufferAsync "wikilink")(with same
+input/output), except this uses control input endpoint 0x80.
+
+### CtrlOutPostBufferAsync
+
+Same as [\#PostBufferAsync](#PostBufferAsync "wikilink")(with same
+input/output), except this uses control output endpoint 0x00.
+
 ### GetCtrlInCompletionEvent
 
 Returns an event handle for polling the completion of input control
-commands.
+commands. Same as
+[\#GetCompletionEvent](#GetCompletionEvent "wikilink"), except this uses
+control input endpoint 0x80.
+
+### GetCtrlInReportData
+
+Same as [\#GetReportData](#GetReportData "wikilink")(with same
+input/output), except this uses control input endpoint 0x80.
 
 ### GetCtrlOutCompletionEvent
 
 Returns an event handle for polling the completion of output control
-commands.
+commands. Same as
+[\#GetCompletionEvent](#GetCompletionEvent "wikilink"), except this uses
+control output endpoint 0x00.
+
+### GetCtrlOutReportData
+
+Same as [\#GetReportData](#GetReportData "wikilink")(with same
+input/output), except this uses control output endpoint 0x00.
 
 ### StallCtrl
 
@@ -266,22 +297,31 @@ same function. From strings: "m\_pProtocol-\>Stall(0x80)"
 
 ### IDsEndpoint
 
-| Cmd | Name                                             | Notes                               |
-| --- | ------------------------------------------------ | ----------------------------------- |
-| 0   | [\#PostBufferAsync](#PostBufferAsync "wikilink") |                                     |
-| 1   |                                                  | No input/output.                    |
-| 2   |                                                  | No input. Returns an output handle? |
-| 3   | [\#GetReportData](#GetReportData "wikilink")     |                                     |
-| 4   | [\#Stall](#Stall "wikilink")                     |                                     |
-| 5   |                                                  | Takes an input u8, no output.       |
+| Cmd | Name                                                   | Notes                         |
+| --- | ------------------------------------------------------ | ----------------------------- |
+| 0   | [\#PostBufferAsync](#PostBufferAsync "wikilink")       |                               |
+| 1   |                                                        | No input/output.              |
+| 2   | [\#GetCompletionEvent](#GetCompletionEvent "wikilink") |                               |
+| 3   | [\#GetReportData](#GetReportData "wikilink")           |                               |
+| 4   | [\#Stall](#Stall "wikilink")                           |                               |
+| 5   |                                                        | Takes an input u8, no output. |
 
 #### PostBufferAsync
 
 Takes an u32 (**size**) and an u64 (**buffer**). Returns an output u32.
 
+The buffer address must be 0x1000-byte aligned.
+
+Used for data-transfer with input/output endpoints.
+
+#### GetCompletionEvent
+
+No input. Returns an output event handle for polling the completion of
+[\#PostBufferAsync](#PostBufferAsync "wikilink")(?).
+
 #### GetReportData
 
-Returns 0x84 bytes of report data from the endpoint.
+No input. Returns 0x84 bytes of report data from the endpoint.
 
 #### Stall
 
