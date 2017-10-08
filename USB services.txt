@@ -120,6 +120,8 @@ When the strlen output for the second buffer is >=0x40, size 0x40 is used instea
 
 Returns an error when [[#BindDevice]] wasn't used.
 
+Up to 4 interfaces can be used+[[#EnableInterface|enabled]].
+
 Structure of the first buffer(this is similar to [http://libusb.sourceforge.net/api-1.0/structlibusb__interface__descriptor.html libusb__interface__descriptor]):
 {| class="wikitable" border="1"
 |-
@@ -129,7 +131,7 @@ Structure of the first buffer(this is similar to [http://libusb.sourceforge.net/
 |-
 | 0x1 || 0x1 || bDescriptorType. Must match 0x4.
 |-
-| 0x2 || 0x1 || When 0x4, an error will be thrown if certain state checks don't pass. Otherwise, this must be <=3.
+| 0x2 || 0x1 || bInterfaceNumber. When 0x4, the bInterfaceNumber is automatically allocated(error will be thrown if no space). Otherwise, it's used directly and must be <=3.
 |-
 | 0x3 || 0x1 || Must match 0x0.
 |-
@@ -220,7 +222,9 @@ Returns an event handle for interface setup changes.
 === EnableInterface ===
 Takes no arguments. Enables the current interface.
 
-Only one interface can be enabled at time, this indicates which interface is actually used for USB.
+Only one interface can be enabled at a time per bInterfaceNumber. When bInterfaceNumber is auto-allocate(0x4) for [[#GetDsEndpoint]] this isn't an issue since the final bInterfaceNumber will be unique.
+
+Once enabled, the device/interface can then actually be used over USB.
 
 === DisableInterface ===
 Takes no arguments. Disables the current interface.

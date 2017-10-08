@@ -153,20 +153,22 @@ not sent over USB.
 Returns an error when [\#BindDevice](#BindDevice "wikilink") wasn't
 used.
 
+Up to 4 interfaces can be used+[enabled](#EnableInterface "wikilink").
+
 Structure of the first buffer(this is similar to
 [libusb\_\_interface\_\_descriptor](http://libusb.sourceforge.net/api-1.0/structlibusb__interface__descriptor.html)):
 
-| Offset | Size | Description                                                                                         |
-| ------ | ---- | --------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x1  | bLength. Must match 0x9.                                                                            |
-| 0x1    | 0x1  | bDescriptorType. Must match 0x4.                                                                    |
-| 0x2    | 0x1  | When 0x4, an error will be thrown if certain state checks don't pass. Otherwise, this must be \<=3. |
-| 0x3    | 0x1  | Must match 0x0.                                                                                     |
-| 0x4    | 0x1  | ?                                                                                                   |
-| 0x5    | 0x1  | bInterfaceClass                                                                                     |
-| 0x6    | 0x1  | bInterfaceSubClass                                                                                  |
-| 0x7    | 0x1  | bInterfaceProtocol                                                                                  |
-| 0x8    | 0x1  | ?                                                                                                   |
+| Offset | Size | Description                                                                                                                                                    |
+| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | bLength. Must match 0x9.                                                                                                                                       |
+| 0x1    | 0x1  | bDescriptorType. Must match 0x4.                                                                                                                               |
+| 0x2    | 0x1  | bInterfaceNumber. When 0x4, the bInterfaceNumber is automatically allocated(error will be thrown if no space). Otherwise, it's used directly and must be \<=3. |
+| 0x3    | 0x1  | Must match 0x0.                                                                                                                                                |
+| 0x4    | 0x1  | ?                                                                                                                                                              |
+| 0x5    | 0x1  | bInterfaceClass                                                                                                                                                |
+| 0x6    | 0x1  | bInterfaceSubClass                                                                                                                                             |
+| 0x7    | 0x1  | bInterfaceProtocol                                                                                                                                             |
+| 0x8    | 0x1  | ?                                                                                                                                                              |
 
 Only the first 0x9-bytes are used.
 
@@ -246,8 +248,12 @@ Returns an event handle for interface setup changes.
 
 Takes no arguments. Enables the current interface.
 
-Only one interface can be enabled at time, this indicates which
-interface is actually used for USB.
+Only one interface can be enabled at a time per bInterfaceNumber. When
+bInterfaceNumber is auto-allocate(0x4) for
+[\#GetDsEndpoint](#GetDsEndpoint "wikilink") this isn't an issue since
+the final bInterfaceNumber will be unique.
+
+Once enabled, the device/interface can then actually be used over USB.
 
 ### DisableInterface
 
