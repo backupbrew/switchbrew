@@ -174,7 +174,11 @@ Only the first 0x9-bytes are used.
 
 ## GetStateChangeEvent
 
-Returns an event handle for state changes.
+Returns an event handle for state changes. Signalled when
+Switch\<-\>host USB comms change between started/stopped. USB cable
+connected/disconnected while at least 1 interface was enabled, or
+interface enabled/disabled while the USB cable was connected which then
+caused USB-comms state to change.
 
 ## SetVidPidBcd
 
@@ -243,7 +247,7 @@ input endpoints must use bEndpointAddress==0x80.
 
 ### GetSetupEvent
 
-Returns an event handle for interface setup changes.
+Returns an event handle. Unknown what triggers signalling.
 
 ### EnableInterface
 

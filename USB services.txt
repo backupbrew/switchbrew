@@ -149,7 +149,7 @@ Structure of the first buffer(this is similar to [http://libusb.sourceforge.net/
 Only the first 0x9-bytes are used.
 
 == GetStateChangeEvent ==
-Returns an event handle for state changes.
+Returns an event handle for state changes. Signalled when Switch<->host USB comms change between started/stopped. USB cable connected/disconnected while at least 1 interface was enabled, or interface enabled/disabled while the USB cable was connected which then caused USB-comms state to change.
 
 == SetVidPidBcd ==
 Takes a type-5 buffer with 0x66 bytes of USB descriptor data (see [[Manu_Services#manu|manu]]).
@@ -217,7 +217,7 @@ This structure matches [http://libusb.sourceforge.net/api-1.0/structlibusb__endp
 The buffer size must be >=0x7. Only the first 0x7-bytes from the buffer are used. Byte0(bLength) must match 0x7, and byte1(bDescriptorType) must match 0x5. Byte2(bEndpointAddress) is only compared with 0x80 to determine whether to use an input or output endpoint, the actual endpoint-number is allocated automatically by checking state. Hence, all input endpoints must use bEndpointAddress==0x80.
 
 === GetSetupEvent ===
-Returns an event handle for interface setup changes.
+Returns an event handle. Unknown what triggers signalling.
 
 === EnableInterface ===
 Takes no arguments. Enables the current interface.
