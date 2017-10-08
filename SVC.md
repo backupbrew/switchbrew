@@ -297,7 +297,7 @@ it will return
 | Process     | 12         | 0                     | \[2.0.0+\] AddressSpaceStart                                                                                |
 | Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize                                                                                 |
 | Process     | 14         | 0                     | \[2.0.0+\] NewReservedRegionStartAddr                                                                       |
-| Process     | 15         | 0                     | \[2.0.0+\] NewReservedRegionEndAddr                                                                         |
+| Process     | 15         | 0                     | \[2.0.0+\] NewReservedRegionSize                                                                            |
 | Process     | 18         | 0                     | \[3.0.0+\] Title-id.                                                                                        |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
