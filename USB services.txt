@@ -198,7 +198,7 @@ The last 3 blocks are strings. The data following each string is all-zero, for p
 |-
 | 10 || || No input. Returns 0x84 bytes of output.
 |-
-| 11 || || No input/output.
+| 11 || [[#StallCtrl]] || 
 |}
 
 === GetDsEndpoint ===
@@ -229,6 +229,11 @@ Returns an event handle for polling the completion of input control commands.
 === GetCtrlOutCompletionEvent ===
 Returns an event handle for polling the completion of output control commands.
 
+=== StallCtrl ===
+No input/output.
+
+Calls a function with both control endpoints(0x80 and 0x00) with the same function. From strings: "m_pProtocol->Stall(0x80)" "m_pProtocol->Stall(0x00)".
+
 === IDsEndpoint ===
 {| class="wikitable" border="1"
 |-
@@ -242,7 +247,7 @@ Returns an event handle for polling the completion of output control commands.
 |-
 | 3 || [[#GetReportData]] || 
 |-
-| 4 || || No input/output.
+| 4 || [[#Stall]] || 
 |-
 | 5 || || Takes an input u8, no output.
 |}
@@ -252,6 +257,11 @@ Takes an u32 ('''size''') and an u64 ('''buffer'''). Returns an output u32.
 
 ==== GetReportData ====
 Returns 0x84 bytes of report data from the endpoint.
+
+==== Stall ====
+No input/output.
+
+Calls the same function used by [[#StallCtrl]], except this uses the endpoint associated with the current session.
 
 = usb:hs =
 General USB devices usage, used by hid-sysmodule and bsdsockets-sysmodule.

@@ -207,7 +207,7 @@ all-zero, for padding to size
 | 8   |                                                                      | No input. Returns 0x84 bytes of output.                                                                                      |
 | 9   | [\#GetCtrlOutCompletionEvent](#GetCtrlOutCompletionEvent "wikilink") |                                                                                                                              |
 | 10  |                                                                      | No input. Returns 0x84 bytes of output.                                                                                      |
-| 11  |                                                                      | No input/output.                                                                                                             |
+| 11  | [\#StallCtrl](#StallCtrl "wikilink")                                 |                                                                                                                              |
 
 ### GetDsEndpoint
 
@@ -256,6 +256,14 @@ commands.
 Returns an event handle for polling the completion of output control
 commands.
 
+### StallCtrl
+
+No input/output.
+
+Calls a function with both control endpoints(0x80 and 0x00) with the
+same function. From strings: "m\_pProtocol-\>Stall(0x80)"
+"m\_pProtocol-\>Stall(0x00)".
+
 ### IDsEndpoint
 
 | Cmd | Name                                             | Notes                               |
@@ -264,7 +272,7 @@ commands.
 | 1   |                                                  | No input/output.                    |
 | 2   |                                                  | No input. Returns an output handle? |
 | 3   | [\#GetReportData](#GetReportData "wikilink")     |                                     |
-| 4   |                                                  | No input/output.                    |
+| 4   | [\#Stall](#Stall "wikilink")                     |                                     |
 | 5   |                                                  | Takes an input u8, no output.       |
 
 #### PostBufferAsync
@@ -274,6 +282,13 @@ Takes an u32 (**size**) and an u64 (**buffer**). Returns an output u32.
 #### GetReportData
 
 Returns 0x84 bytes of report data from the endpoint.
+
+#### Stall
+
+No input/output.
+
+Calls the same function used by [\#StallCtrl](#StallCtrl "wikilink"),
+except this uses the endpoint associated with the current session.
 
 # usb:hs
 
