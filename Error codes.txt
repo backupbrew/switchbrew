@@ -159,7 +159,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xE801 || 116 || Invalid combination
 |-
-| 0xEA01 || 117 || Time out? When you give 0 handles to svcWaitSynchronizationN.
+| 0xEA01 || 117 || Time out. Also when you give 0 handles to svcWaitSynchronizationN.
 |-
 | 0xEC01 || 118 || Canceled/interrupted [?]
 |-

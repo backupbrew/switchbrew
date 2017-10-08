@@ -97,7 +97,7 @@ applets.
 | 0xE401            | 114         | Invalid handle.                                                                                                                                                                      |
 | 0xE601            | 115         | Syscall copy from user failed.                                                                                                                                                       |
 | 0xE801            | 116         | Invalid combination                                                                                                                                                                  |
-| 0xEA01            | 117         | Time out? When you give 0 handles to svcWaitSynchronizationN.                                                                                                                        |
+| 0xEA01            | 117         | Time out. Also when you give 0 handles to svcWaitSynchronizationN.                                                                                                                   |
 | 0xEC01            | 118         | Canceled/interrupted \[?\]                                                                                                                                                           |
 | 0xEE01            | 119         | Exceeding maximum                                                                                                                                                                    |
 | 0xF001            | 120         | Invalid enum                                                                                                                                                                         |
