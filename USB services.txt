@@ -207,8 +207,14 @@ Commands cmd2, [[#CtrlInPostBufferAsync]], [[#CtrlOutPostBufferAsync]], and [[#S
 
 === GetDsEndpoint ===
 Takes a type-5 buffer and returns an [[#IDsEndpoint]]. [[Manu_Services|Manu]] uses this twice for getting two endpoint sessions, with the following 0x7-byte buffer data:
-* First endpoint: 0x07, 0x05, 0x80, 0x02, 0x00, 0x02, 0x00.
-* Second endpoint: Same as above except byte2 is 0x00.
+* First endpoint: 0x07, 0x05, 0x80, 0x02, 0x00, 0x02, 0x00
+** bLength=0x7
+** bDescriptorType=LIBUSB_DT_ENDPOINT
+** bEndpointAddress=LIBUSB_ENDPOINT_IN
+** bmAttributes=LIBUSB_TRANSFER_TYPE_BULK
+** wMaxPacketSize=0x200
+** bInterval=0
+* Second endpoint: Same as above except byte2 is 0x00(bEndpointAddress=LIBUSB_ENDPOINT_OUT).
 
 Each field is an u8, except for offset 0x4-0x5 which is an u16.
 

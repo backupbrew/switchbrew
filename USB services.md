@@ -230,8 +230,15 @@ Takes a type-5 buffer and returns an
 [Manu](Manu%20Services.md "wikilink") uses this twice for getting two
 endpoint sessions, with the following 0x7-byte buffer data:
 
-  - First endpoint: 0x07, 0x05, 0x80, 0x02, 0x00, 0x02, 0x00.
-  - Second endpoint: Same as above except byte2 is 0x00.
+  - First endpoint: 0x07, 0x05, 0x80, 0x02, 0x00, 0x02, 0x00
+      - bLength=0x7
+      - bDescriptorType=LIBUSB\_DT\_ENDPOINT
+      - bEndpointAddress=LIBUSB\_ENDPOINT\_IN
+      - bmAttributes=LIBUSB\_TRANSFER\_TYPE\_BULK
+      - wMaxPacketSize=0x200
+      - bInterval=0
+  - Second endpoint: Same as above except byte2 is
+    0x00(bEndpointAddress=LIBUSB\_ENDPOINT\_OUT).
 
 Each field is an u8, except for offset 0x4-0x5 which is an u16.
 
