@@ -147,7 +147,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xD801 || 108 || When trying to set executable permission on memory.
 |-
-| 0xDC01 || 110 || Stack address outside allowed range
+| 0xDC01 || 110 || Invalid memory range
 |-
 | 0xE001 || 112 || Invalid thread priority.
 |-
