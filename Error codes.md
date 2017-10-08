@@ -182,7 +182,7 @@ applets.
 | 0x41A             | 2           | Argument is invalid                                                                                                                                                                  |
 | 0xD01A            | 104         | All AES engines busy                                                                                                                                                                 |
 | 0xD21A            | 105         | Invalid AES engine-id                                                                                                                                                                |
-| 0x272             | 1           | Invalid AppletResourceUserId                                                                                                                                                         |
+| 0x272             | 1           | Generic error                                                                                                                                                                        |
 | 0xCC74            | 102         | Time not set                                                                                                                                                                         |
 | 0x287C            | 20          | Argument is NULL                                                                                                                                                                     |
 | 0x2C7C            | 22          | Argument is invalid                                                                                                                                                                  |
