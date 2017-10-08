@@ -362,20 +362,24 @@ The width/height for the "Default" Display is the resolution for 1080p even when
 =DisplayName=
 This is a 0x40-byte block: a NUL-terminated string.
 
-=NativeWindow=
+= NativeWindow =
 {| class="wikitable" border="1"
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x8? || ?
+| 0x0 || 0x4 || DataSize
 |-
-| 0x8 || 0x8? || ?
+| 0x4 || 0x4 || DataOffset
 |-
-| 0x10 || 0x8? || ?
+| 0x8 || 0x4 || ObjectsSize
 |-
-| 0x18 || 0x8? || ?
+| 0xC || 0x4 || ObjectsOffset
 |-
-| 0x20 || 0x8? || ?
+| 0x10 || 0x4 || ?
+|-
+| 0x18 || 0x4 || ?
+|-
+| 0x20 || 0x84 || ?
 |-
 | 0x28 || ? || "dispdrv" string normally?
 |}

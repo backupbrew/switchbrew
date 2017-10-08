@@ -331,11 +331,13 @@ This is a 0x40-byte block: a NUL-terminated string.
 
 | Offset | Size | Description                |
 | ------ | ---- | -------------------------- |
-| 0x0    | 0x8? | ?                          |
-| 0x8    | 0x8? | ?                          |
-| 0x10   | 0x8? | ?                          |
-| 0x18   | 0x8? | ?                          |
-| 0x20   | 0x8? | ?                          |
+| 0x0    | 0x4  | DataSize                   |
+| 0x4    | 0x4  | DataOffset                 |
+| 0x8    | 0x4  | ObjectsSize                |
+| 0xC    | 0x4  | ObjectsOffset              |
+| 0x10   | 0x4  | ?                          |
+| 0x18   | 0x4  | ?                          |
+| 0x20   | 0x84 | ?                          |
 | 0x28   | ?    | "dispdrv" string normally? |
 
 Max size of this buffer is 0x100-bytes(outbuf size used by official
