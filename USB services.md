@@ -211,7 +211,8 @@ all-zero, for padding to size
 | 10  | [\#GetCtrlOutReportData](#GetCtrlOutReportData "wikilink")           |                                                                                                                              |
 | 11  | [\#StallCtrl](#StallCtrl "wikilink")                                 |                                                                                                                              |
 
-Commands [\#CtrlInPostBufferAsync](#CtrlInPostBufferAsync "wikilink"),
+Commands cmd2,
+[\#CtrlInPostBufferAsync](#CtrlInPostBufferAsync "wikilink"),
 [\#CtrlOutPostBufferAsync](#CtrlOutPostBufferAsync "wikilink"), and
 [\#StallCtrl](#StallCtrl "wikilink"), will throw an error if the
 interface is not [enabled](#EnableInterface "wikilink").

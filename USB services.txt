@@ -203,7 +203,7 @@ The last 3 blocks are strings. The data following each string is all-zero, for p
 | 11 || [[#StallCtrl]] || 
 |}
 
-Commands [[#CtrlInPostBufferAsync]], [[#CtrlOutPostBufferAsync]], and [[#StallCtrl]], will throw an error if the interface is not [[#EnableInterface|enabled]]. [[#GetDsEndpoint]] will throw an error if the interface is [[#EnableInterface|enabled]].
+Commands cmd2, [[#CtrlInPostBufferAsync]], [[#CtrlOutPostBufferAsync]], and [[#StallCtrl]], will throw an error if the interface is not [[#EnableInterface|enabled]]. [[#GetDsEndpoint]] will throw an error if the interface is [[#EnableInterface|enabled]].
 
 === GetDsEndpoint ===
 Takes a type-5 buffer and returns an [[#IDsEndpoint]]. [[Manu_Services|Manu]] uses this twice for getting two endpoint sessions, with the following 0x7-byte buffer data:
