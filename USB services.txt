@@ -164,7 +164,7 @@ Takes a type-5 buffer with 0x66 bytes of USB descriptor data (see [[Manu_Service
 |-
 | 0x2 || 0x2 || PID (idProduct)
 |-
-| 0x4 || 0x2 || bcdUSB
+| 0x4 || 0x2 || bcdDevice
 |-
 | 0x6 || 0x20 || Manufacturer
 |-
