@@ -342,9 +342,11 @@ same function. From strings: "m\_pProtocol-\>Stall(0x80)"
 
 #### PostBufferAsync
 
-Takes an u32 (**size**) and an u64 (**buffer**). Returns an output u32.
+Takes an u32 (**size**) and an u64 (**buffer**). Returns an output u32,
+this is unrelated to size.
 
-The buffer address must be 0x1000-byte aligned.
+The buffer address must be 0x1000-byte aligned. The input size doesn't
+matter.
 
 Used for data-transfer with input/output endpoints.
 

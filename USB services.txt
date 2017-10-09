@@ -284,9 +284,9 @@ Calls a function with both control endpoints(0x80 and 0x00) with the same functi
 |}
 
 ==== PostBufferAsync ====
-Takes an u32 ('''size''') and an u64 ('''buffer'''). Returns an output u32.
+Takes an u32 ('''size''') and an u64 ('''buffer'''). Returns an output u32, this is unrelated to size.
 
-The buffer address must be 0x1000-byte aligned.
+The buffer address must be 0x1000-byte aligned. The input size doesn't matter.
 
 Used for data-transfer with input/output endpoints.
 
