@@ -26,6 +26,10 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |  0x4000
 |  Title 010000000000081A [[BCT|BCT]]
 |-
+|  0x010000
+|  0x0F0000
+|  60 additional BCTs, normally unused/empty on retail systems.
+|-
 |  0x100000
 |  0x40000
 |  Title 0100000000000819 "package1"
