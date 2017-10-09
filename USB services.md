@@ -67,6 +67,11 @@ sessions. bInterfaceNumber is {0-based index for the enabled
 interface fields are configured using
 [\#GetDsInterface](#GetDsInterface "wikilink").
 
+Additional descriptors for use with interfaces/endpoints can't be
+configured with usbds, even though the former is used for the default
+HID interface. This seems to be the main(?) restriction with using usbds
+for Switch-as-arbitrary-devices.
+
 ` Bus 003 Device 006: ID 057e:2000 Nintendo Co., Ltd `  
 ` Couldn't open device, some information will be missing`  
 ` Device Descriptor:`  
