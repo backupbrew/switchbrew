@@ -50,7 +50,7 @@ isn't being used. All of the below configuration will reset to the
 defaults when all usbds-related sessions are closed. These can be set
 with [\#SetVidPidBcd](#SetVidPidBcd "wikilink"). The default string for
 Product is loaded from [settings](Settings%20services.md "wikilink")
-config.
+config. The default is referred to by usb-sysmodule as "Dummy".
 
 ` Product: Nintendo Switch`  
 ` Manufacturer: Nintendo`  

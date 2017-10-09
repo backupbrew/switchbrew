@@ -38,7 +38,7 @@ Initialization done by [[Manu Services|manu]]:
 * Initializes two endpoints via using [[#GetDsEndpoint]] twice.
 
 == Configuration ==
-The following is the default USB config strings, while the usbds service isn't being used. All of the below configuration will reset to the defaults when all usbds-related sessions are closed. These can be set with [[#SetVidPidBcd]]. The default string for Product is loaded from [[Settings_services|settings]] config.
+The following is the default USB config strings, while the usbds service isn't being used. All of the below configuration will reset to the defaults when all usbds-related sessions are closed. These can be set with [[#SetVidPidBcd]]. The default string for Product is loaded from [[Settings_services|settings]] config. The default is referred to by usb-sysmodule as "Dummy".
   Product: Nintendo Switch
   Manufacturer: Nintendo
   SerialNumber: SerialNumber
