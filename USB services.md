@@ -339,7 +339,9 @@ No input. Returns an output event handle for polling the completion of
 
 #### GetReportData
 
-No input. Returns 0x84 bytes of report data from the endpoint.
+No input. Returns 0x84 bytes of report data from the endpoint. Seems to
+be eventually loaded from state, since this doesn't trigger any USB bus
+activity.
 
 #### Stall
 
