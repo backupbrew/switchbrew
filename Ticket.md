@@ -49,17 +49,15 @@ The hash for the signature is calculated over the ticket data.
 | 0x174  | 0xC   | Unknown         |
 | 0x180  | 0x140 | Unknown         |
 
-The title key can be encrypted as a single AES block when title key type
-is 0 (presumably AES-128-CBC) or as a "personalized" RSA-2048 message
-when title key type is 1. The latter is used for titles requiring
-stronger licensing (applications, add-on content), while the former
-(old) method is used for patches.
+The title key can be stored as a 16-byte block when tickets are "common"
+\[2.0.0+\], or as a "personalized" RSA-2048 message when title key type
+is 1. The latter is used for titles requiring stronger licensing
+(applications, add-on content), while the former (old) method is used
+for patches.
 
 When RSA is used, this uses an SPL key handle that is initialized with
-the console-unique RSA-2048 ticket key.
-
-CommonETicket (or cetk) no longer
-exist.
+the console-unique RSA-2048 ticket
+key.
 
 ## Certificate chain
 
