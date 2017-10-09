@@ -70,7 +70,8 @@ interface fields are configured using
 Additional descriptors for use with interfaces/endpoints can't be
 configured with usbds, even though the former is used for the default
 HID interface. This seems to be the main(?) restriction with using usbds
-for Switch-as-arbitrary-devices.
+for Switch-as-arbitrary-devices. The device class fields can't be
+configured, interface class fields are set instead.
 
 ` Bus 003 Device 006: ID 057e:2000 Nintendo Co., Ltd `  
 ` Couldn't open device, some information will be missing`  
@@ -248,7 +249,8 @@ endpoint sessions, with the following 0x7-byte buffer data:
 Each field is an u8, except for offset 0x4-0x5 which is an u16.
 
 This structure matches
-[libusb\_endpoint\_descriptor](http://libusb.sourceforge.net/api-1.0/structlibusb__endpoint__descriptor.html).
+[libusb\_endpoint\_descriptor](http://libusb.sourceforge.net/api-1.0/structlibusb__endpoint__descriptor.html),
+with audio-only-devices fields bRefresh and bSynchAddress removed.
 
 The buffer size must be \>=0x7. Only the first 0x7-bytes from the buffer
 are used.
