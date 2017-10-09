@@ -188,6 +188,7 @@ applets.
 | 0x2C7C            | 22          | Argument is invalid                                                                                                                                                                  |
 | 0x3C7C            | 30          | Bad input buffer size                                                                                                                                                                |
 | 0x407C            | 32          | Invalid input buffer                                                                                                                                                                 |
+| 0x668C            | 51          | USB data-transfer in progress                                                                                                                                                        |
 | 0x3C9D            | 30          | Address is NULL                                                                                                                                                                      |
 | 0x3E9D            | 31          | PID is NULL                                                                                                                                                                          |
 | 0x549D            | 42          | Already bound                                                                                                                                                                        |
