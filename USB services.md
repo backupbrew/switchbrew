@@ -351,7 +351,8 @@ Used for data-transfer with input/output endpoints.
 #### GetCompletionEvent
 
 No input. Returns an output event handle for polling the completion of
-[\#PostBufferAsync](#PostBufferAsync "wikilink")(?).
+[\#PostBufferAsync](#PostBufferAsync "wikilink"), even when it finished
+via [\#Stall](#Stall "wikilink").
 
 #### GetReportData
 
@@ -365,6 +366,9 @@ No input/output.
 
 Calls the same function used by [\#StallCtrl](#StallCtrl "wikilink"),
 except this uses the endpoint associated with the current session.
+
+Stops in-progress data-transfer done by
+[\#PostBufferAsync](#PostBufferAsync "wikilink").
 
 # usb:hs
 

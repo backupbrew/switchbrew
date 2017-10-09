@@ -291,7 +291,7 @@ The buffer address must be 0x1000-byte aligned.
 Used for data-transfer with input/output endpoints.
 
 ==== GetCompletionEvent ====
-No input. Returns an output event handle for polling the completion of [[#PostBufferAsync]](?).
+No input. Returns an output event handle for polling the completion of [[#PostBufferAsync]], even when it finished via [[#Stall]].
 
 ==== GetReportData ====
 No input. Returns 0x84 bytes of report data from the endpoint. Seems to be eventually loaded from state, since this doesn't trigger any USB bus activity.
@@ -300,6 +300,8 @@ No input. Returns 0x84 bytes of report data from the endpoint. Seems to be event
 No input/output.
 
 Calls the same function used by [[#StallCtrl]], except this uses the endpoint associated with the current session.
+
+Stops in-progress data-transfer done by [[#PostBufferAsync]].
 
 = usb:hs =
 General USB devices usage, used by hid-sysmodule and bsdsockets-sysmodule.
