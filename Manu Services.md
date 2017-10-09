@@ -21,7 +21,7 @@ requests with USB configured as:
 
 `VID:           0x057E (Nintendo Co., Ltd)`  
 `PID:           0x3000`  
-`BCD:           0x0100 (USB 1.0)`  
+`bcdDevice:     0x0100 (1.00)`  
 `Manufacturer:  "Nintendo"`  
 `Product:       "NintendoSdkDebugger"`  
 `SerialNumber:  "SerialNumber"`
