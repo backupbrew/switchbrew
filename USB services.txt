@@ -153,6 +153,8 @@ Only the first 0x9-bytes are used.
 == GetStateChangeEvent ==
 Returns an event handle for state changes. Signalled when Switch<->host USB comms change between started/stopped. USB cable connected/disconnected while at least 1 interface was enabled, or interface enabled/disabled while the USB cable was connected which then caused USB-comms state to change.
 
+This is signalled before the endpoints are actually ready for data-transfer - there's currently no known way to properly check for that.
+
 == SetVidPidBcd ==
 Takes a type-5 buffer with 0x66 bytes of USB descriptor data (see [[Manu_Services#manu|manu]]).
 
@@ -230,7 +232,7 @@ The buffer size must be >=0x7. Only the first 0x7-bytes from the buffer are used
 From the Tegra datasheet: "The maximum packet size supported on any endpoint is 1024 bytes in high-speed mode, for both device and host modes."
 
 === GetSetupEvent ===
-Returns an event handle. Unknown what triggers signalling.
+Returns an event handle. Unknown what triggers signalling, not signalled during interface-enable / device<>host USB-comms init.
 
 === EnableInterface ===
 Takes no arguments. Enables the current interface.
@@ -289,6 +291,8 @@ Takes an u32 ('''size''') and an u64 ('''buffer'''). Returns an output u32, this
 The buffer address must be 0x1000-byte aligned. The input size doesn't matter.
 
 Used for data-transfer with input/output endpoints.
+
+The user-process must flush dcache for the buffer before using this command.
 
 ==== GetCompletionEvent ====
 No input. Returns an output event handle for polling the completion of [[#PostBufferAsync]], even when it finished via [[#Stall]].

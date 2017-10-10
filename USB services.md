@@ -186,6 +186,10 @@ connected/disconnected while at least 1 interface was enabled, or
 interface enabled/disabled while the USB cable was connected which then
 caused USB-comms state to change.
 
+This is signalled before the endpoints are actually ready for
+data-transfer - there's currently no known way to properly check for
+that.
+
 ## SetVidPidBcd
 
 Takes a type-5 buffer with 0x66 bytes of USB descriptor data (see
@@ -272,7 +276,8 @@ modes."
 
 ### GetSetupEvent
 
-Returns an event handle. Unknown what triggers signalling.
+Returns an event handle. Unknown what triggers signalling, not signalled
+during interface-enable / device\<\>host USB-comms init.
 
 ### EnableInterface
 
@@ -351,6 +356,9 @@ The buffer address must be 0x1000-byte aligned. The input size doesn't
 matter.
 
 Used for data-transfer with input/output endpoints.
+
+The user-process must flush dcache for the buffer before using this
+command.
 
 #### GetCompletionEvent
 
