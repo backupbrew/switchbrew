@@ -195,7 +195,10 @@ No input. Returns an output u32. Returns an error when
 Returns the current state. Values:
 
   - 0: Initial state.
-  - ...
+  - 6: Device init starting.
+  - 3: {Initialization}, previous state is 6.
+  - 4: {Initialization}, previous state is 3.
+  - 5: Initialization done, data-transfer is now available.
 
 ## SetVidPidBcd
 
