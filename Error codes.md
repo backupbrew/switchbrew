@@ -141,6 +141,8 @@ applets.
 | 0x17C05           | 190         | Gamecard not initialized                                                                                                                                                             |
 | 0x1F405           | 250         | Sdcard not inserted                                                                                                                                                                  |
 | 0x20805           | 260         | Storage not mounted                                                                                                                                                                  |
+| 0x806             | 4           | Converted from error 0xD401.                                                                                                                                                         |
+| 0x1006            | 8           | Converted from error 0xE401.                                                                                                                                                         |
 | 0x408             | 2           | Not initialized.                                                                                                                                                                     |
 | 0x608             | 3           | Invalid control StorageID.                                                                                                                                                           |
 | 0x808             | 4           | Storage not found.                                                                                                                                                                   |

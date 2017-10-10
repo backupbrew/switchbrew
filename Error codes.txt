@@ -247,6 +247,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x20805 || 260 || Storage not mounted
 |-
+| 0x806 || 4 || Converted from error 0xD401.
+|-
+| 0x1006 || 8 || Converted from error 0xE401.
+|-
 | 0x408 || 2 || Not initialized.
 |-
 | 0x608 || 3 || Invalid control StorageID.
