@@ -18,7 +18,7 @@ This service session is used as an IPC [[IPC_Marshalling|domain]] by [[Manu Serv
 |-
 | 3 || [[#GetStateChangeEvent]] || 
 |-
-| 4 || || No input. Returns an output u32. Returns an error when [[#BindDevice]] wasn't used.
+| 4 || [[#GetState]] || 
 |-
 | 5 || [[#SetVidPidBcd]] || 
 |}
@@ -151,9 +151,14 @@ Structure of the first buffer(this is the same as [http://libusb.sourceforge.net
 Only the first 0x9-bytes are used.
 
 == GetStateChangeEvent ==
-Returns an event handle for state changes. Signalled when Switch<->host USB comms change between started/stopped. USB cable connected/disconnected while at least 1 interface was enabled, or interface enabled/disabled while the USB cable was connected which then caused USB-comms state to change.
+Returns an event handle for when the state returned by [[#GetState]] changes. Signalled when Switch<->host USB comms change between started/stopped. USB cable connected/disconnected while at least 1 interface was enabled, or interface enabled/disabled while the USB cable was connected which then caused USB-comms state to change.
 
-This is signalled before the endpoints are actually ready for data-transfer - there's currently no known way to properly check for that.
+== GetState ==
+No input. Returns an output u32. Returns an error when [[#BindDevice]] wasn't used.
+
+Returns the current state. Values: 
+* 0: Initial state.
+* ...
 
 == SetVidPidBcd ==
 Takes a type-5 buffer with 0x66 bytes of USB descriptor data (see [[Manu_Services#manu|manu]]).

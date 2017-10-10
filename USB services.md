@@ -15,14 +15,14 @@ commands also return an output u8 and the u32
 sessions as
 domains.
 
-| Cmd | Name                                                     | Notes                                                                                                      |
-| --- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| 0   | [\#BindDevice](#BindDevice "wikilink")                   |                                                                                                            |
-| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |                                                                                                            |
-| 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |                                                                                                            |
-| 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |                                                                                                            |
-| 4   |                                                          | No input. Returns an output u32. Returns an error when [\#BindDevice](#BindDevice "wikilink") wasn't used. |
-| 5   | [\#SetVidPidBcd](#SetVidPidBcd "wikilink")               |                                                                                                            |
+| Cmd | Name                                                     | Notes |
+| --- | -------------------------------------------------------- | ----- |
+| 0   | [\#BindDevice](#BindDevice "wikilink")                   |       |
+| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |       |
+| 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |       |
+| 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |       |
+| 4   | [\#GetState](#GetState "wikilink")                       |       |
+| 5   | [\#SetVidPidBcd](#SetVidPidBcd "wikilink")               |       |
 
 Initialization done by [manu](Manu%20Services.md "wikilink"):
 
@@ -180,15 +180,22 @@ Only the first 0x9-bytes are used.
 
 ## GetStateChangeEvent
 
-Returns an event handle for state changes. Signalled when
+Returns an event handle for when the state returned by
+[\#GetState](#GetState "wikilink") changes. Signalled when
 Switch\<-\>host USB comms change between started/stopped. USB cable
 connected/disconnected while at least 1 interface was enabled, or
 interface enabled/disabled while the USB cable was connected which then
 caused USB-comms state to change.
 
-This is signalled before the endpoints are actually ready for
-data-transfer - there's currently no known way to properly check for
-that.
+## GetState
+
+No input. Returns an output u32. Returns an error when
+[\#BindDevice](#BindDevice "wikilink") wasn't used.
+
+Returns the current state. Values:
+
+  - 0: Initial state.
+  - ...
 
 ## SetVidPidBcd
 
