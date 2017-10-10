@@ -140,6 +140,9 @@ Binding more than once with the current session is not allowed. Once
 this command is used, the USB device will not be listed with `lsusb`
 until [\#EnableInterface](#EnableInterface "wikilink") is used.
 
+Returns a not-found error when complexId isn't 0x02, for values 0x0-0x4
+(while in handheld-mode at least).
+
 ## BindClientProcess
 
 Takes 1 copy-handle for the current process (0xFFFF8001).
