@@ -204,7 +204,7 @@ Takes a type-5 buffer with 0x66 bytes of USB descriptor data (see
 | 0x26   | 0x20 | Product         |
 | 0x46   | 0x20 | SerialNumber    |
 
-The last 3 blocks are strings. The data following each string is
+The last 3 blocks are ASCII strings. The data following each string is
 all-zero, for padding to size
 0x20.
 
