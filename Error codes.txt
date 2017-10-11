@@ -159,7 +159,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xE801 || 116 || Invalid combination
 |-
-| 0xEA01 || 117 || Time out? When you give 0 handles to svcWaitSynchronizationN.
+| 0xEA01 || 117 || Time out. Also when you give 0 handles to svcWaitSynchronizationN.
 |-
 | 0xEC01 || 118 || Canceled/interrupted [?]
 |-
@@ -246,6 +246,10 @@ When a fatal-error is received the error code is outputted using the following f
 | 0x1F405 || 250 || Sdcard not inserted
 |-
 | 0x20805 || 260 || Storage not mounted
+|-
+| 0x806 || 4 || Converted from error 0xD401.
+|-
+| 0x1006 || 8 || Converted from error 0xE401.
 |-
 | 0x408 || 2 || Not initialized.
 |-
@@ -340,6 +344,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 0x3C7C || 30 || Bad input buffer size
 |-
 | 0x407C || 32 || Invalid input buffer
+|-
+| 0x668C || 51 || USB data-transfer in progress
 |-
 | 0x3C9D || 30 || Address is NULL
 |-
