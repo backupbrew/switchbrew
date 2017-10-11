@@ -97,7 +97,7 @@ applets.
 | 0xE401            | 114         | Invalid handle.                                                                                                                                                                      |
 | 0xE601            | 115         | Syscall copy from user failed.                                                                                                                                                       |
 | 0xE801            | 116         | Invalid combination                                                                                                                                                                  |
-| 0xEA01            | 117         | Time out. Also when you give 0 handles to svcWaitSynchronizationN.                                                                                                                   |
+| 0xEA01            | 117         | Time out? When you give 0 handles to svcWaitSynchronizationN.                                                                                                                        |
 | 0xEC01            | 118         | Canceled/interrupted \[?\]                                                                                                                                                           |
 | 0xEE01            | 119         | Exceeding maximum                                                                                                                                                                    |
 | 0xF001            | 120         | Invalid enum                                                                                                                                                                         |
@@ -141,8 +141,6 @@ applets.
 | 0x17C05           | 190         | Gamecard not initialized                                                                                                                                                             |
 | 0x1F405           | 250         | Sdcard not inserted                                                                                                                                                                  |
 | 0x20805           | 260         | Storage not mounted                                                                                                                                                                  |
-| 0x806             | 4           | Converted from error 0xD401.                                                                                                                                                         |
-| 0x1006            | 8           | Converted from error 0xE401.                                                                                                                                                         |
 | 0x408             | 2           | Not initialized.                                                                                                                                                                     |
 | 0x608             | 3           | Invalid control StorageID.                                                                                                                                                           |
 | 0x808             | 4           | Storage not found.                                                                                                                                                                   |
@@ -190,7 +188,6 @@ applets.
 | 0x2C7C            | 22          | Argument is invalid                                                                                                                                                                  |
 | 0x3C7C            | 30          | Bad input buffer size                                                                                                                                                                |
 | 0x407C            | 32          | Invalid input buffer                                                                                                                                                                 |
-| 0x668C            | 51          | USB data-transfer in progress                                                                                                                                                        |
 | 0x3C9D            | 30          | Address is NULL                                                                                                                                                                      |
 | 0x3E9D            | 31          | PID is NULL                                                                                                                                                                          |
 | 0x549D            | 42          | Already bound                                                                                                                                                                        |
