@@ -296,7 +296,7 @@ Calls a function with both control endpoints(0x80 and 0x00) with the same functi
 |}
 
 ==== PostBufferAsync ====
-Takes an u32 ('''size''') and an u64 ('''buffer'''). Returns an output u32, this is unrelated to size.
+Takes an u32 ('''size''') and an u64 ('''buffer'''). Returns an output u32 ('''urbId'''). The output urbId can then be used while parsing the output of [[#GetReportData]], after waiting for the CompletionEvent to be signalled.
 
 The buffer address must be 0x1000-byte aligned. The input size doesn't matter.
 
@@ -312,7 +312,16 @@ For receiving data, if size is less than {actual received USB packet size} the r
 No input. Returns an output event handle for polling the completion of [[#PostBufferAsync]], even when it finished via [[#Stall]].
 
 ==== GetReportData ====
-No input. Returns 0x84 bytes of report data from the endpoint. Seems to be eventually loaded from state, since this doesn't trigger any USB bus activity.
+No input. Returns 0x84 bytes of report data from the endpoint. Seems to be eventually loaded from state, since this doesn't trigger any USB bus activity. All-zero before PostBufferAsync was used at least once.
+
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| ... || ... || ...
+|-
+| 0x80 || 0x4 || u32 report count
+|}
 
 ==== Stall ====
 No input/output.

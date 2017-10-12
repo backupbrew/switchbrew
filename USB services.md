@@ -362,8 +362,10 @@ same function. From strings: "m\_pProtocol-\>Stall(0x80)"
 
 #### PostBufferAsync
 
-Takes an u32 (**size**) and an u64 (**buffer**). Returns an output u32,
-this is unrelated to size.
+Takes an u32 (**size**) and an u64 (**buffer**). Returns an output u32
+(**urbId**). The output urbId can then be used while parsing the output
+of [\#GetReportData](#GetReportData "wikilink"), after waiting for the
+CompletionEvent to be signalled.
 
 The buffer address must be 0x1000-byte aligned. The input size doesn't
 matter.
@@ -392,7 +394,12 @@ via [\#Stall](#Stall "wikilink").
 
 No input. Returns 0x84 bytes of report data from the endpoint. Seems to
 be eventually loaded from state, since this doesn't trigger any USB bus
-activity.
+activity. All-zero before PostBufferAsync was used at least once.
+
+| Offset | Size | Description      |
+| ------ | ---- | ---------------- |
+| ...    | ...  | ...              |
+| 0x80   | 0x4  | u32 report count |
 
 #### Stall
 
