@@ -124,9 +124,6 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_SOC_IDDQ
 | 0x7000F940
 |-
-| FUSE_SOC_IDDQ
-| 0x7000F940
-|-
 | [[#FUSE_FA|FUSE_FA]]
 | 0x7000F948
 |-
