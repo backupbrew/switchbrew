@@ -373,6 +373,15 @@ Used for data-transfer with input/output endpoints.
 The user-process must flush dcache for the buffer before using this
 command.
 
+When sending data where size is larger than wMaxPacketSize, it will
+automatically send multiple USB packets where last packet size =
+{remaining size}. Every {wMaxPacketSize}-bytes is a different packet.
+
+For receiving data, if size is less than {actual received USB packet
+size} the rest of the packet will be discarded. Later PostBufferAsync
+cmd(s) will only return data from new packets, not the remainder of the
+earlier packet(s).
+
 #### GetCompletionEvent
 
 No input. Returns an output event handle for polling the completion of
