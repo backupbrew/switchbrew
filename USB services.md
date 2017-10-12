@@ -402,15 +402,16 @@ once.
 | 0x0    | 0x10\*0x8(0x80) | 0x8 entries 0x10-bytes each for each report. |
 | 0x80   | 0x4             | u32 report count                             |
 
-Entry data:
+Entry
+data:
 
-| Offset | Size | Description                              |
-| ------ | ---- | ---------------------------------------- |
-| 0x0    | 0x4  | u32 id (urbId from post-buffer commands) |
-| 0x4    | 0x4  | u32 requestedSize                        |
-| 0x8    | 0x4  | u32 transferredSize                      |
-| 0xC    | 0x4  | u32 urb status                           |
-|        |      |                                          |
+| Offset | Size | Description                                                                                                        |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x4  | u32 id (urbId from post-buffer commands)                                                                           |
+| 0x4    | 0x4  | u32 requestedSize                                                                                                  |
+| 0x8    | 0x4  | u32 transferredSize                                                                                                |
+| 0xC    | 0x4  | u32 urb status, converted to error-codes. 0x3 = success, 0x4 = 0x828c, 0x5 = 0x748c. All other values are invalid. |
+|        |      |                                                                                                                    |
 
 #### Stall
 

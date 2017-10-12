@@ -334,7 +334,7 @@ Entry data:
 |-
 | 0x8 || 0x4 || u32 transferredSize
 |-
-| 0xC || 0x4 || u32 urb status
+| 0xC || 0x4 || u32 urb status, converted to error-codes. 0x3 = success, 0x4 = 0x828c, 0x5 = 0x748c. All other values are invalid.
 |-
 |}
 
