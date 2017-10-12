@@ -124,8 +124,11 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_SOC_IDDQ
 | 0x7000F940
 |-
-| FUSE_TSENSOR_1
-| 0x7000F984
+| FUSE_SOC_IDDQ
+| 0x7000F940
+|-
+| [[#FUSE_FA|FUSE_FA]]
+| 0x7000F948
 |-
 | FUSE_TSENSOR_2
 | 0x7000F988
@@ -332,6 +335,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 
 ==== FUSE_SKU_INFO ====
 Stores the SKU ID (must be 0x83).
+
+==== FUSE_FA ====
+Stores if in factory mode (0 = factory).
 
 ==== FUSE_SOC_SPEEDO_1 ====
 Stores the bootrom patch version.

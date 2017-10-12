@@ -85,7 +85,8 @@ driver registers.
 | [FUSE\_SOC\_SPEEDO\_1](#FUSE_SOC_SPEEDO_1 "wikilink")  | 0x7000F938 |
 | FUSE\_SOC\_SPEEDO\_2                                   | 0x7000F93C |
 | FUSE\_SOC\_IDDQ                                        | 0x7000F940 |
-| FUSE\_TSENSOR\_1                                       | 0x7000F984 |
+| FUSE\_SOC\_IDDQ                                        | 0x7000F940 |
+| [FUSE\_FA](#FUSE_FA "wikilink")                        | 0x7000F948 |
 | FUSE\_TSENSOR\_2                                       | 0x7000F988 |
 | FUSE\_CP\_REV                                          | 0x7000F990 |
 | FUSE\_TSENSOR\_0                                       | 0x7000F998 |
@@ -158,6 +159,10 @@ driver registers.
 #### FUSE\_SKU\_INFO
 
 Stores the SKU ID (must be 0x83).
+
+#### FUSE\_FA
+
+Stores if in factory mode (0 = factory).
 
 #### FUSE\_SOC\_SPEEDO\_1
 
