@@ -337,7 +337,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 Stores the SKU ID (must be 0x83).
 
 ==== FUSE_FA ====
-Stores failure analysis (0 = factory mode).
+Stores failure analysis mode.
 
 ==== FUSE_SOC_SPEEDO_1 ====
 Stores the bootrom patch version.

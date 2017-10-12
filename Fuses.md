@@ -162,7 +162,7 @@ Stores the SKU ID (must be 0x83).
 
 #### FUSE\_FA
 
-Stores failure analysis (0 = factory mode).
+Stores failure analysis mode.
 
 #### FUSE\_SOC\_SPEEDO\_1
 
