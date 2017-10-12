@@ -86,6 +86,7 @@ driver registers.
 | FUSE\_SOC\_SPEEDO\_2                                   | 0x7000F93C |
 | FUSE\_SOC\_IDDQ                                        | 0x7000F940 |
 | [FUSE\_FA](#FUSE_FA "wikilink")                        | 0x7000F948 |
+| FUSE\_TSENSOR\_1                                       | 0x7000F984 |
 | FUSE\_TSENSOR\_2                                       | 0x7000F988 |
 | FUSE\_CP\_REV                                          | 0x7000F990 |
 | FUSE\_TSENSOR\_0                                       | 0x7000F998 |

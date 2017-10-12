@@ -127,6 +127,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | [[#FUSE_FA|FUSE_FA]]
 | 0x7000F948
 |-
+| FUSE_TSENSOR_1
+| 0x7000F984
+|-
 | FUSE_TSENSOR_2
 | 0x7000F988
 |-
