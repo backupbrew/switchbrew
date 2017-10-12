@@ -979,7 +979,7 @@ Inherits from: [[#KReadableEvent]]
 |-
 | 0 || [[#KReadableEvent]] || Inheritance
 |-
-| 0x38 || ||
+| 0x38 || [[#KInterruptReceiver]] || Receiver
 |-
 | 0x48 || u32 || IrqId (or -1)
 |}
@@ -999,6 +999,18 @@ Inherits from: [[#KReadableEvent]]
 | 0x44 || bool || IsIrqRegistered
 |}
 </div>
+
+=== KInterruptReceiver ===
+[1.0.0] Size: 0x10
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || * || Vtable
+|-
+| 8 || u64 ||
+|}
 
 === KIrqRegistrationRef ===
 [2.0.0] Size: 0x20
@@ -1211,4 +1223,38 @@ Inherits from: [[#KAutoObject]]
 | 0x10 || u64 || MaxPage
 |-
 | 0x18 || u16* || RefCountTable
+|}
+
+= KIrqManager =
+[1.0.0] Size: 0x1608
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || [[#KIrqEntry]][32] || Core0Irq
+|-
+| 0x200 || [[#KIrqEntry]][32] || Core1Irq
+|-
+| 0x400 || [[#KIrqEntry]][32] || Core2Irq
+|-
+| 0x600 || [[#KIrqEntry]][32] || Core3Irq
+|-
+| 0x800 || [[#KIrqEntry]][224] || SharedIrqs
+|-
+| 0x1600 || [[#KRecursiveLock]] || Mutex
+|}
+
+== KIrqEntry ==
+[1.0.0] Size: 0x10
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || [[#KIrqReciever*]] || Receiver
+|-
+| 8 || u8 || State0
+|-
+| 9 || u8 || State1
 |}

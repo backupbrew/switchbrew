@@ -644,11 +644,11 @@ Inherits from:
 
 <div style="display: inline-block;">
 
-| 1.0.0 Offset | Type                                           | Description   |
-| ------------ | ---------------------------------------------- | ------------- |
-| 0            | [\#KReadableEvent](#KReadableEvent "wikilink") | Inheritance   |
-| 0x38         |                                                |               |
-| 0x48         | u32                                            | IrqId (or -1) |
+| 1.0.0 Offset | Type                                                   | Description   |
+| ------------ | ------------------------------------------------------ | ------------- |
+| 0            | [\#KReadableEvent](#KReadableEvent "wikilink")         | Inheritance   |
+| 0x38         | [\#KInterruptReceiver](#KInterruptReceiver "wikilink") | Receiver      |
+| 0x48         | u32                                                    | IrqId (or -1) |
 
 </div>
 
@@ -662,6 +662,15 @@ Inherits from:
 | 0x44         | bool                                                       | IsIrqRegistered |
 
 </div>
+
+### KInterruptReceiver
+
+\[1.0.0\] Size: 0x10
+
+| Offset | Type | Description |
+| ------ | ---- | ----------- |
+| 0      | \*   | Vtable      |
+| 8      | u64  |             |
 
 ### KIrqRegistrationRef
 
@@ -820,3 +829,27 @@ Inherits from:
 | 8      | void\*                                       | PoolBase      |
 | 0x10   | u64                                          | MaxPage       |
 | 0x18   | u16\*                                        | RefCountTable |
+
+# KIrqManager
+
+\[1.0.0\] Size:
+0x1608
+
+| Offset | Type                                           | Description |
+| ------ | ---------------------------------------------- | ----------- |
+| 0      | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]     | Core0Irq    |
+| 0x200  | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]     | Core1Irq    |
+| 0x400  | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]     | Core2Irq    |
+| 0x600  | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]     | Core3Irq    |
+| 0x800  | [\#KIrqEntry](#KIrqEntry "wikilink")\[224\]    | SharedIrqs  |
+| 0x1600 | [\#KRecursiveLock](#KRecursiveLock "wikilink") | Mutex       |
+
+## KIrqEntry
+
+\[1.0.0\] Size: 0x10
+
+| Offset | Type                                          | Description |
+| ------ | --------------------------------------------- | ----------- |
+| 0      | [\#KIrqReciever\*](#KIrqReciever* "wikilink") | Receiver    |
+| 8      | u8                                            | State0      |
+| 9      | u8                                            | State1      |
