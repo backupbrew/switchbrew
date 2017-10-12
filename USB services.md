@@ -394,12 +394,23 @@ via [\#Stall](#Stall "wikilink").
 
 No input. Returns 0x84 bytes of report data from the endpoint. Seems to
 be eventually loaded from state, since this doesn't trigger any USB bus
-activity. All-zero before PostBufferAsync was used at least once.
+activity. All-zero before PostBufferAsync was used at least
+once.
 
-| Offset | Size | Description      |
-| ------ | ---- | ---------------- |
-| ...    | ...  | ...              |
-| 0x80   | 0x4  | u32 report count |
+| Offset | Size            | Description                                  |
+| ------ | --------------- | -------------------------------------------- |
+| 0x0    | 0x10\*0x8(0x80) | 0x8 entries 0x10-bytes each for each report. |
+| 0x80   | 0x4             | u32 report count                             |
+
+Entry data:
+
+| Offset | Size | Description                              |
+| ------ | ---- | ---------------------------------------- |
+| 0x0    | 0x4  | u32 id (urbId from post-buffer commands) |
+| 0x4    | 0x4  | u32 requestedSize                        |
+| 0x8    | 0x4  | u32 transferredSize                      |
+| 0xC    | 0x4  | u32 urb status                           |
+|        |      |                                          |
 
 #### Stall
 
