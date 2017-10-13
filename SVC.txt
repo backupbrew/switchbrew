@@ -654,7 +654,7 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 |-
 | 21 || [[#svcSendSyncRequestWithUserBuffer|IpcBufferAllowed]]
 |-
-| 22 || IsCached [?]
+| 22 || IsPoolAllocated/IsReferenceCounted
 |-
 | 23 || [[#svcMapProcessMemory|MapProcessAllowed]]
 |-

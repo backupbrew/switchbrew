@@ -542,7 +542,7 @@ Closing the debug handle also results in execution being resumed.
 | 19   | MapDeviceAllowed ([\#svcMapDeviceAddressSpace](#svcMapDeviceAddressSpace "wikilink") and [\#svcMapDeviceAddressSpaceByForce](#svcMapDeviceAddressSpaceByForce "wikilink")) |
 | 20   | [MapDeviceAlignedAllowed](#svcMapDeviceAddressSpaceAligned "wikilink")                                                                                                     |
 | 21   | [IpcBufferAllowed](#svcSendSyncRequestWithUserBuffer "wikilink")                                                                                                           |
-| 22   | IsCached \[?\]                                                                                                                                                             |
+| 22   | IsPoolAllocated/IsReferenceCounted                                                                                                                                         |
 | 23   | [MapProcessAllowed](#svcMapProcessMemory "wikilink")                                                                                                                       |
 | 24   | [AttributeChangeAllowed](#svcSetMemoryAttribute "wikilink")                                                                                                                |
 
