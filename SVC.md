@@ -130,7 +130,7 @@ extend and shrink the heap.
 `Size` must be a multiple of 0x2000000.
 
 On success, the heap base-address (which is fixed by kernel, aslr'd) is
-written to code\>OutAddr</code>.
+written to `OutAddr`.
 
 \[2.0.0+\] `Size` must be less than 0x18000000.
 
