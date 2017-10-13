@@ -223,13 +223,13 @@ __NOTOC__
 <div style="display: inline-block">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name || Direction
+! Argument || Type || Name
 |-
-| X0 || u64 || <code>Size</code> || In
+| (In) X0 || u64 || <code>Size</code>
 |-
-| W0 || [[#Result]] || <code>Ret</code> || Out
+| (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| X1 || u64 || <code>OutAddr</code> || Out
+| (Out) X1 || u64 || <code>OutAddr</code>
 |}
 </div>
 
