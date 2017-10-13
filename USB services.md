@@ -3,8 +3,10 @@ nn::usb::detail::UsbComplexTegra21x".
 
 # usb:ds
 
-Used for Switch\<\>PC USB comms, aka Switch-as-device. This service is
-used during [factory setup](Factory%20Setup.md "wikilink") by
+Used for Switch\<\>PC USB comms, aka Switch-as-device. This seems to
+only be usable in handheld-mode with the Switch directly connected to a
+host via an USB cable, not(?) in docked-mode. This service is used
+during [factory setup](Factory%20Setup.md "wikilink") by
 [manu](Manu%20Services.md "wikilink").
 
 This service session is used as an IPC
@@ -141,7 +143,7 @@ this command is used, the USB device will not be listed with `lsusb`
 until [\#EnableInterface](#EnableInterface "wikilink") is used.
 
 Returns a not-found error when complexId isn't 0x02, for values 0x0-0x4
-(while in handheld-mode at least).
+at least.
 
 ## BindClientProcess
 

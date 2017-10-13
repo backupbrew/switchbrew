@@ -1,7 +1,7 @@
 One symbol in USB-sysmodule is: "vtable for nn::usb::detail::UsbComplexTegra21x".
 
 = usb:ds =
-Used for Switch<>PC USB comms, aka Switch-as-device.
+Used for Switch<>PC USB comms, aka Switch-as-device. This seems to only be usable in handheld-mode with the Switch directly connected to a host via an USB cable, not(?) in docked-mode.
 This service is used during [[Factory Setup|factory setup]] by [[Manu Services|manu]].
 
 This service session is used as an IPC [[IPC_Marshalling|domain]] by [[Manu Services|manu]]. All of these {get-session} commands also return an output u8 and the u32 <[[IPC_Marshalling|domainID]]>, for using those sessions as domains.
@@ -112,7 +112,7 @@ Takes an u32 ('''complexId'''). [[Manu_Services|Manu]] sends 0x02.
 
 Binding more than once with the current session is not allowed. Once this command is used, the USB device will not be listed with <code>lsusb</code> until [[#EnableInterface]] is used.
 
-Returns a not-found error when complexId isn't 0x02, for values 0x0-0x4 (while in handheld-mode at least).
+Returns a not-found error when complexId isn't 0x02, for values 0x0-0x4 at least.
 
 == BindClientProcess ==
 Takes 1 copy-handle for the current process (0xFFFF8001).
