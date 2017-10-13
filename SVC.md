@@ -114,7 +114,7 @@
 
 ## svcSetHeapSize
 
-<div style="display: inline-block">
+<div style="display: inline-block;">
 
 | Argument | Type                           | Name      |
 | -------- | ------------------------------ | --------- |
@@ -123,8 +123,6 @@
 | (Out) X1 | u64                            | `OutAddr` |
 
 </div>
-
-<div style="display: inline-block; vertical-align:top;">
 
 **Description:** Set the process heap to a given `Size`. It can both
 extend and shrink the heap.
@@ -135,8 +133,6 @@ On success, the heap base-address (which is fixed by kernel, aslr'd) is
 written to `OutAddr`.
 
 \[2.0.0+\] `Size` must be less than 0x18000000.
-
-</div>
 
 ## svcSetMemoryPermission
 
