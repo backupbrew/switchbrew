@@ -210,11 +210,11 @@ __NOTOC__
 |-
 | 0x7B || svcTerminateProcess || W0=process_handle || W0=result
 |-
-| 0x7C || [[#svcGetProcessInfo]] || W0=process_handle || W0=result, X1=process_state
+| 0x7C || [[#svcGetProcessInfo]] || W0=process_handle || W0=result, X1=[[#ProcessState]]
 |-
-| 0x7D || svcCreateResourceLimit || || 
+| 0x7D || svcCreateResourceLimit || None || W0=result, W1=reslimit_handle 
 |-
-| 0x7E || svcSetResourceLimitLimitValue || || 
+| 0x7E || svcSetResourceLimitLimitValue || W0=reslimit_handle, W1=[[#LimitableResource]], X2=value || W0=result
 |-
 | 0x7F || svcCallSecureMonitor || || 
 |}
