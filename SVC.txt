@@ -198,9 +198,9 @@
 |-
 | 0x76 || [[#svcQueryProcessMemory]] || X0=meminfo_ptr, W2=process_handle, X3=addr || W0=result, W1=pageinfo
 |-
-| 0x77 || svcMapProcessCodeMemory || W0=process_handle, X2=dstaddr, X2=srcaddr, X3=size || W0=result
+| 0x77 || [[#svcMapProcessCodeMemory]] || W0=process_handle, X2=dstaddr, X2=srcaddr, X3=size || W0=result
 |-
-| 0x78 || svcUnmapProcessCodeMemory || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
+| 0x78 || [[#svcUnmapProcessCodeMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
 |-
 | 0x79 || [[#svcCreateProcess]] || X1=procinfo_ptr, X2=caps_ptr, W3=cap_num ||  W0=result, W1=process_handle
 |-
@@ -470,6 +470,12 @@ Unmaps what was mapped by [[#svcMapProcessMemory]].
 
 == svcQueryProcessMemory ==
 Equivalent to [[#svcQueryMemory]] except takes a process handle.
+
+== svcMapProcessCodeMemory ==
+Takes a process handle, and maps normal heap in that process as executable code in that process. Used when loading NROs.
+
+== svcUnmapProcessCodeMemory ==
+Unmaps what was mapped by [[#svcMapProcessCodeMemory]].
 
 == svcCreateProcess ==
 Takes a [[#CreateProcessInfo]] as input.
