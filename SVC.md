@@ -519,6 +519,16 @@ Closing the debug handle also results in execution being resumed.
 | 37    | DeviceName\_TSECB1     |
 | 38    | DeviceName\_NVDEC1     |
 
+## LimitableResource
+
+| Value | Name                                |
+| ----- | ----------------------------------- |
+| 0     | LimitableResource\_Memory           |
+| 1     | LimitableResource\_Threads          |
+| 2     | LimitableResource\_Events           |
+| 3     | LimitableResource\_TransferMemories |
+| 4     | LimitableResource\_Sessions         |
+
 ## CreateProcessInfo
 
 | Offset | Length | Bits   | Description                                        |
@@ -627,8 +637,3 @@ and X1=exception\_info1\_ptr instead.
 
 The **\_start** method determines whether to boot normally or handle an
 exception if X0 is set to 0 or not.
-
-# ResourceLimit
-
-For regular-applications, the reslimit(?) seems to only allow 1
-NamedPort handle to be open at a time?
