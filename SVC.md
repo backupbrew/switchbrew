@@ -114,11 +114,11 @@
 
 <div style="display: inline-block">
 
-| Argument | Type                           | Name    | Direction |
-| -------- | ------------------------------ | ------- | --------- |
-| X0       | u64                            | Size    | In        |
-| W0       | [\#Result](#Result "wikilink") | Ret     | Out       |
-| X1       | u64                            | OutAddr | In        |
+| Argument | Type                           | Name      | Direction |
+| -------- | ------------------------------ | --------- | --------- |
+| X0       | u64                            | `Size`    | In        |
+| W0       | [\#Result](#Result "wikilink") | `Ret`     | Out       |
+| X1       | u64                            | `OutAddr` | Out       |
 
 </div>
 

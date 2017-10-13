@@ -223,11 +223,11 @@
 |-
 ! Argument || Type || Name || Direction
 |-
-| X0 || u64 || Size || In
+| X0 || u64 || <code>Size</code> || In
 |-
-| W0 || [[#Result]] || Ret || Out
+| W0 || [[#Result]] || <code>Ret</code> || Out
 |-
-| X1 || u64 || OutAddr || In
+| X1 || u64 || <code>OutAddr</code> || Out
 |}
 </div>
 
