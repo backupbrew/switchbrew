@@ -67,7 +67,7 @@ sessions. bInterfaceNumber is {0-based index for the enabled
 interface fields are configured using
 [\#GetDsInterface](#GetDsInterface "wikilink").
 
-Additional descriptors for use with interfaces/endpoints can't be
+Additional descriptors for use with interfaces and endpoints can't be
 configured with usbds, even though the former is used for the default
 HID interface. This seems to be the main(?) restriction with using usbds
 for Switch-as-arbitrary-devices. The device class fields can't be
