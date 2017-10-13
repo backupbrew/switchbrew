@@ -1,3 +1,5 @@
+__NOTOC__
+
 = System calls =
 {| class=wikitable
 ! Id || Name || In || Out

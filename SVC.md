@@ -1,3 +1,5 @@
+\_\_NOTOC\_\_
+
 # System calls
 
 | Id   | Name                                                                               | In                                                                                                  | Out                                                 |
