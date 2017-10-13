@@ -206,11 +206,11 @@ __NOTOC__
 |-
 | 0x79 || [[#svcCreateProcess]] || X1=procinfo_ptr, X2=caps_ptr, W3=cap_num ||  W0=result, W1=process_handle
 |-
-| 0x7A || svcStartProcess || W0=proc_handle, W1=main_thread_prio, W2=default_cpuid, W3=main_thread_stacksz || W0=result
+| 0x7A || svcStartProcess || W0=process_handle, W1=main_thread_prio, W2=default_cpuid, W3=main_thread_stacksz || W0=result
 |-
-| 0x7B || svcTerminateProcess || || 
+| 0x7B || svcTerminateProcess || W0=process_handle || W0=result
 |-
-| 0x7C || [[#svcGetProcessInfo]] || || 
+| 0x7C || [[#svcGetProcessInfo]] || W0=process_handle || W0=result, X1=process_state
 |-
 | 0x7D || svcCreateResourceLimit || || 
 |-
