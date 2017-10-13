@@ -99,7 +99,7 @@
 | 0x73 | svcSetProcessMemoryPermission                                                      |                                                                                                     |                                                     |
 | 0x74 | [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink")                           | X0=srcaddr, W1=process\_handle, X2=dstaddr, X3=size                                                 | W0=result                                           |
 | 0x75 | [\#svcUnmapProcessMemory](#svcUnmapProcessMemory "wikilink")                       | W0=process\_handle, X1=dstaddr, X2=srcaddr, X3=size                                                 | W0=result                                           |
-| 0x76 | svcQueryProcessMemory                                                              |                                                                                                     |                                                     |
+| 0x76 | [\#svcQueryProcessMemory](#svcQueryProcessMemory "wikilink")                       | X0=meminfo\_ptr, W2=process\_handle, X3=addr                                                        | W0=result, W1=pageinfo                              |
 | 0x77 | svcMapProcessCodeMemory                                                            | W0=process\_handle, X2=dstaddr, X2=srcaddr, X3=size                                                 | W0=result                                           |
 | 0x78 | svcUnmapProcessCodeMemory                                                          | W0=process\_handle, X1=dstaddr, X2=srcaddr, X3=size                                                 | W0=result                                           |
 | 0x79 | [\#svcCreateProcess](#svcCreateProcess "wikilink")                                 | X1=procinfo\_ptr, X2=caps\_ptr, W3=cap\_num                                                         | W0=result, W1=process\_handle                       |
@@ -416,6 +416,11 @@ This allows mapping code and rodata with RW- permission.
 
 Unmaps what was mapped by
 [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").
+
+## svcQueryProcessMemory
+
+Equivalent to [\#svcQueryMemory](#svcQueryMemory "wikilink") except
+takes a process handle.
 
 ## svcCreateProcess
 
