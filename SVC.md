@@ -97,8 +97,8 @@
 | 0x71 | svcManageNamedPort                                                                 | X1=namestr\*, W2=maxsessions(?)                                                                     | W0=result, W1=outhandle                             |
 | 0x72 | svcConnectToPort                                                                   | W1=inhandle                                                                                         | W0=result, W1=outhandle                             |
 | 0x73 | svcSetProcessMemoryPermission                                                      |                                                                                                     |                                                     |
-| 0x74 | svcMapProcessMemory                                                                | X0=srcaddr, W1=process\_handle, X2=dstaddr, X3=size                                                 | W0=result                                           |
-| 0x75 | svcUnmapProcessMemory                                                              | W0=process\_handle, X1=dstaddr, X2=srcaddr, X3=size                                                 | W0=result                                           |
+| 0x74 | [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink")                           | X0=srcaddr, W1=process\_handle, X2=dstaddr, X3=size                                                 | W0=result                                           |
+| 0x75 | [\#svcUnmapProcessMemory](#svcUnmapProcessMemory "wikilink")                       | W0=process\_handle, X1=dstaddr, X2=srcaddr, X3=size                                                 | W0=result                                           |
 | 0x76 | svcQueryProcessMemory                                                              |                                                                                                     |                                                     |
 | 0x77 | svcMapProcessCodeMemory                                                            | W0=process\_handle, X2=dstaddr, X2=srcaddr, X3=size                                                 | W0=result                                           |
 | 0x78 | svcUnmapProcessCodeMemory                                                          | W0=process\_handle, X1=dstaddr, X2=srcaddr, X3=size                                                 | W0=result                                           |
@@ -404,6 +404,18 @@ bit set instead.
 
 **Description:** Unmaps an attached device address space from an
 userspace address.
+
+## svcMapProcessMemory
+
+Maps the src address from the supplied process handle into the current
+process.
+
+This allows mapping code and rodata with RW- permission.
+
+## svcUnmapProcessMemory
+
+Unmaps what was mapped by
+[\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").
 
 ## svcCreateProcess
 

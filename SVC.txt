@@ -192,9 +192,9 @@
 |-
 | 0x73 || svcSetProcessMemoryPermission || || 
 |-
-| 0x74 || svcMapProcessMemory || X0=srcaddr, W1=process_handle, X2=dstaddr, X3=size || W0=result
+| 0x74 || [[#svcMapProcessMemory]] || X0=srcaddr, W1=process_handle, X2=dstaddr, X3=size || W0=result
 |-
-| 0x75 || svcUnmapProcessMemory || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
+| 0x75 || [[#svcUnmapProcessMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
 |-
 | 0x76 || svcQueryProcessMemory || || 
 |-
@@ -444,6 +444,14 @@ Same as [[#svcMapDeviceAddressSpaceByForce]], but the userspace destination addr
 
 == svcUnmapDeviceAddressSpace ==
 '''Description:''' Unmaps an attached device address space from an userspace address.
+
+== svcMapProcessMemory ==
+Maps the src address from the supplied process handle into the current process.
+
+This allows mapping code and rodata with RW- permission.
+
+== svcUnmapProcessMemory ==
+Unmaps what was mapped by [[#svcMapProcessMemory]].
 
 == svcCreateProcess ==
 Takes a [[#CreateProcessInfo]] as input.
