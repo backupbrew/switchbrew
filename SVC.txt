@@ -188,11 +188,11 @@ __NOTOC__
 |- style="border-top: double"
 | 0x70 || svcCreatePort || || 
 |-
-| 0x71 || svcManageNamedPort || X1=namestr*, W2=maxsessions(?) || W0=result, W1=outhandle
+| 0x71 || svcManageNamedPort || X1=name_ptr, W2=max_sessions(?) || W0=result, W1=serverport_handle
 |-
-| 0x72 || svcConnectToPort || W1=inhandle || W0=result, W1=outhandle
+| 0x72 || svcConnectToPort || W1=clientport_handle || W0=result, W1=session_handle
 |-
-| 0x73 || svcSetProcessMemoryPermission || || 
+| 0x73 || svcSetProcessMemoryPermission || X0=addr, X1=size, W2=perm || W0=result
 |-
 | 0x74 || [[#svcMapProcessMemory]] || X0=srcaddr, W1=process_handle, X2=dstaddr, X3=size || W0=result
 |-
