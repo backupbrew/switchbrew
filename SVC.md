@@ -1020,8 +1020,8 @@ Closing the debug handle also results in execution being resumed.
 | 0x10   | 4      | MemoryType: lower 8 bits of [\#MemoryState](#MemoryState "wikilink") |
 | 0x14   | 4      | [\#MemoryAttribute](#MemoryAttribute "wikilink")                     |
 | 0x18   | 4      | Permission (bit0: R, bit1: W, bit2: X)                               |
-| 0x1C   | 4      | DeviceRefCount                                                       |
-| 0x20   | 4      | IpcRefCount                                                          |
+| 0x1C   | 4      | IpcRefCount                                                          |
+| 0x20   | 4      | DeviceRefCount                                                       |
 | 0x24   | 4      | Padding: always zero                                                 |
 
 ## MemoryAttribute
