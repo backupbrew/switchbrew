@@ -74,28 +74,26 @@ __NOTOC__
 |-
 | 0x23 || svcSendAsyncRequestWithUserBuffer ||  || 
 |-
-| 0x24 || svcGetProcessId ||  || 
+| 0x24 || svcGetProcessId || W0=thread_or_process_or_debug_handle || W0=result, X1=pid
 |-
 | 0x25 || svcGetThreadId || W0=thread_handle || W0=result, X1=out
 |-
 | 0x26 || svcBreak || X0,X1,X2=info || ?
 |-
-| 0x27 || svcOutputDebugString || X0=str, X1=size || 
+| 0x27 || svcOutputDebugString || X0=str, X1=size || W0=result
 |-
 | 0x28 || svcReturnFromException || X0=result || 
 |-
 | 0x29 || [[#svcGetInfo]] || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
 |-
-| 0x2A || svcFlushEntireDataCache ||  || 
+| 0x2A || svcFlushEntireDataCache || None || None
 |-
-| 0x2B || svcFlushDataCache ||  || 
+| 0x2B || svcFlushDataCache || X0=addr, X1=size || W0=result
 |-
 | 0x2C || [3.0.0+] svcMapPhysicalMemory ||  ||
 |-
 | 0x2D || [3.0.0+] svcUnmapPhysicalMemory||  ||
-|-
-| .... || ? || ? || ?
-|-
+|- style="border-top: double"
 | 0x2F || svcGetLastThreadInfo || None || W0=result, W1,W2,W3,W4=unk, W5=truncated_u64, W6=bool
 |-
 | 0x30 || svcGetResourceLimitLimitValue || W1=reslimit_handle, W2=[[#LimitableResource]] || W0=result, X1=value
