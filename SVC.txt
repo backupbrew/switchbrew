@@ -158,15 +158,15 @@ __NOTOC__
 |-
 | 0x5F || svcFlushProcessDataCache || || 
 |-
-| 0x60 || svcDebugActiveProcess || X1=processID || W0=result, W1=out_debughandle
+| 0x60 || svcDebugActiveProcess || X1=pid || W0=result, W1=debug_handle
 |-
-| 0x61 || svcBreakDebugProcess || || 
+| 0x61 || svcBreakDebugProcess || W0=debug_handle || W0=result
 |-
-| 0x62 || svcTerminateDebugProcess || || 
+| 0x62 || svcTerminateDebugProcess || W0=debug_handle || W0=result
 |-
-| 0x63 || svcGetDebugEvent || X0=DebugEventInfo*, W1=debughandle || W0=result
+| 0x63 || svcGetDebugEvent || X0=DebugEventInfo*, W1=debug_handle || W0=result
 |-
-| 0x64 || svcContinueDebugEvent || W0=debughandle, W1=flags, X2=? || W0=result
+| 0x64 || svcContinueDebugEvent || W0=debug_handle, W1=flags, X2=? || W0=result
 |-
 | 0x65 || svcGetProcessList || X1=pids_out_ptr, W2=max_out || W0=result, W1=num_out 
 |-
