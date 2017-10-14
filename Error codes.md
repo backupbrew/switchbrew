@@ -112,6 +112,7 @@ applets.
 | 0x10201           | 129         | Last thread didn't belong to your process                                                                                                                                            |
 | 0x10601           | 131         | Port max sessions exceeded                                                                                                                                                           |
 | 0x10801           | 132         | Resource limit exceeded                                                                                                                                                              |
+| 0x20801           | 260         | Remote command buffer too small                                                                                                                                                      |
 | 0x41001           | 520         | Process not being debugged                                                                                                                                                           |
 | 0xE02             | 7           | High byte in input u64 is zero.                                                                                                                                                      |
 | 0x7802            | 60          | The specified [NCA](NCA.md "wikilink")-type doesn't exist for this title.                                                                                                            |
