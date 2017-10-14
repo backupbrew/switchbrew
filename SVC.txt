@@ -1149,7 +1149,7 @@ Takes a [[#CreateProcessInfo]] as input.
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || [[#ProcessState|| <code>Process State</code>
+| (Out) W1 || [[#ProcessState]] || <code>Process State</code>
 |}
 </div>
 

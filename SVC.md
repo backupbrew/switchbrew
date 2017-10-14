@@ -894,17 +894,18 @@ Unmaps what was mapped by
 
 </div>
 
-Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as input.
+Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as
+input.
 
 ## svcGetProcessInfo
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name             |
-| -------- | ------------------------------ | ---------------- |
-| (In) W0  | u64                            | `Process Handle` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
-| (Out) W1 | \[\[\#ProcessState             | `Process State`  |
+| Argument | Type                                       | Name             |
+| -------- | ------------------------------------------ | ---------------- |
+| (In) W0  | u64                                        | `Process Handle` |
+| (Out) W0 | [\#Result](#Result "wikilink")             | `Ret`            |
+| (Out) W1 | [\#ProcessState](#ProcessState "wikilink") | `Process State`  |
 
 </div>
 
