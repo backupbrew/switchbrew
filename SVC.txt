@@ -152,11 +152,11 @@ __NOTOC__
 |-
 | 0x5C || [[#svcUnmapDeviceAddressSpace]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr || W0=result
 |-
-| 0x5D || svcInvalidateProcessDataCache || || 
+| 0x5D || svcInvalidateProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
 |-
-| 0x5E || svcStoreProcessDataCache || || 
+| 0x5E || svcStoreProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
 |-
-| 0x5F || svcFlushProcessDataCache || || 
+| 0x5F || svcFlushProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
 |-
 | 0x60 || svcDebugActiveProcess || X1=pid || W0=result, W1=debug_handle
 |-
