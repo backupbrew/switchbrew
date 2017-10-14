@@ -124,7 +124,7 @@ __NOTOC__
 |-
 | 0x4E || [[#svcReadWriteRegister]] || X1=reg_addr, W2=rw_mask, W3=in_val || W0=result, W1=out_val
 |-
-| 0x4F || svcSetProcessActivity ||  || 
+| 0x4F || svcSetProcessActivity || W0=process_handle, W1=bool || W0=result
 |-
 | 0x50 || [[#svcCreateSharedMemory]] || W1=size?, W2=myperm, W3=otherperm || W0=result, W1=handle
 |-
