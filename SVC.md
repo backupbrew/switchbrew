@@ -723,6 +723,20 @@ normally set to 0xFFFFFFFF.
 
 ## svcMapDeviceAddressSpaceByForce
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name               |
+| -------- | ------------------------------ | ------------------ |
+| (In) W0  | u64                            | `Device as Handle` |
+| (In) W1  | u64                            | `Process Handle`   |
+| (In) X2  | u64                            | `Device Map Addr`  |
+| (In) X3  | u64                            | `Device as Size`   |
+| (In) X4  | u64                            | `Device as Addr`   |
+| (In) W5  | u64                            | `Permissions`      |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+
+</div>
+
 **Description:** Maps an attached device address space to an userspace
 address.
 
@@ -738,6 +752,20 @@ will be set after mapping.
 
 ## svcMapDeviceAddressSpaceAligned
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name               |
+| -------- | ------------------------------ | ------------------ |
+| (In) W0  | u64                            | `Device as Handle` |
+| (In) W1  | u64                            | `Process Handle`   |
+| (In) X2  | u64                            | `Device Map Addr`  |
+| (In) X3  | u64                            | `Device as Size`   |
+| (In) X4  | u64                            | `Device as Addr`   |
+| (In) W5  | u64                            | `Permissions`      |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+
+</div>
+
 **Description:** Maps an attached device address space to an userspace
 address.
 
@@ -749,10 +777,35 @@ bit set instead.
 
 ## svcUnmapDeviceAddressSpace
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name               |
+| -------- | ------------------------------ | ------------------ |
+| (In) W0  | u64                            | `Device as Handle` |
+| (In) W1  | u64                            | `Process Handle`   |
+| (In) X2  | u64                            | `Device Map Addr`  |
+| (In) X3  | u64                            | `Device as Size`   |
+| (In) X4  | u64                            | `Device as Addr`   |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+
+</div>
+
 **Description:** Unmaps an attached device address space from an
 userspace address.
 
 ## svcMapProcessMemory
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name             |
+| -------- | ------------------------------ | ---------------- |
+| (In) X0  | u64                            | `Src Addr`       |
+| (In) W1  | u64                            | `Process Handle` |
+| (In) X2  | u64                            | `Dest Addr`      |
+| (In) X3  | u64                            | `Size`           |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+
+</div>
 
 Maps the src address from the supplied process handle into the current
 process.
@@ -761,29 +814,99 @@ This allows mapping code and rodata with RW- permission.
 
 ## svcUnmapProcessMemory
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name             |
+| -------- | ------------------------------ | ---------------- |
+| (In) W0  | u64                            | `Process Handle` |
+| (In) X1  | u64                            | `Dest Addr`      |
+| (In) X2  | u64                            | `Src Addr`       |
+| (In) X3  | u64                            | `Size`           |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+
+</div>
+
 Unmaps what was mapped by
 [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").
 
 ## svcQueryProcessMemory
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name              |
+| -------- | ------------------------------ | ----------------- |
+| (In) X0  | u64                            | `Meminfo Pointer` |
+| (In) W2  | u64                            | `Process Handle`  |
+| (In) X3  | u64                            | `Addr`            |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`             |
+| (Out) W1 | PageInfo                       | `Page Info`       |
+
+</div>
 
 Equivalent to [\#svcQueryMemory](#svcQueryMemory "wikilink") except
 takes a process handle.
 
 ## svcMapProcessCodeMemory
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name             |
+| -------- | ------------------------------ | ---------------- |
+| (In) W0  | u64                            | `Process Handle` |
+| (In) X1  | u64                            | `Dest Addr`      |
+| (In) X2  | u64                            | `Src Addr`       |
+| (In) X3  | u64                            | `Size`           |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+
+</div>
+
 Takes a process handle, and maps normal heap in that process as
 executable code in that process. Used when loading NROs.
 
 ## svcUnmapProcessCodeMemory
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name             |
+| -------- | ------------------------------ | ---------------- |
+| (In) W0  | u64                            | `Process Handle` |
+| (In) X1  | u64                            | `Dest Addr`      |
+| (In) X2  | u64                            | `Src Addr`       |
+| (In) X3  | u64                            | `Size`           |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+
+</div>
 
 Unmaps what was mapped by
 [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").
 
 ## svcCreateProcess
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name                   |
+| -------- | ------------------------------ | ---------------------- |
+| (In) X1  | u64                            | `ProcInfo Pointer`     |
+| (In) X2  | u64                            | `Capabilities Pointer` |
+| (In) X3  | u64                            | `Capibility Num`       |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                  |
+| (Out) W1 | u64                            | `Process Handle`       |
+
+</div>
+
 Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as input.
 
 ## svcGetProcessInfo
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name             |
+| -------- | ------------------------------ | ---------------- |
+| (In) W0  | u64                            | `Process Handle` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+| (Out) W1 | \[\[\#ProcessState             | `Process State`  |
+
+</div>
 
 Returns an enum with value 0-7.
 
