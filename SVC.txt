@@ -664,6 +664,24 @@ Size must be 0x1000-aligned.
 When used on retail where inx0 bit31 is clear, the system will throw a [[Error_codes|fatal-error]]. Otherwise when bit31 is set, it will return 0.
 
 == svcGetInfo ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || <code>Info ID</code>
+|-
+| (In) X2 || u64 || <code>Handle</code>
+|-
+| (In) X3 || u64 || <code>Info Sub ID</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Ret</code>
+|-
+| (Out) X1 || u64 || <code>Out</code>
+|}
+</div>
+
 {| class=wikitable
 ! Handle type || Id0 || Id1 || Description
 |-
@@ -705,9 +723,39 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |}
 
 == svcDumpInfo ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) None || || 
+|-
+| (Out) None || ||
+|}
+</div>
+
 Does nothing, just returns with registers set to all-zero.
 
 == svcReadWriteRegister ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || <code>Reg Addr</code>
+|-
+| (In) W2 || u64 || <code>RW Mask</code>
+|-
+| (In) W3 || u64 || <code>In Value</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Ret</code>
+|-
+| (Out) W1|| u64 || <code>Out Value</code>
+|}
+</div>
+
 Read/write IO registers with a hardcoded whitelist. Input address is physical-address and must be aligned to 4.
 
 rw_mask is 0 for reading and 0xffffffff for writing. You can also write individual bits by using a mask value.
@@ -726,31 +774,161 @@ The whitelist is:
 [2.0.0+] The IO registers in range 0x7000E400 (PMC) size 0xC00 skip the whitelist, and do a TrustZone call using [[SMC]] Id1 0xC3000008(ReadWriteRegister).
 
 == svcCreateSharedMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W1 || u64 || <code>Size</code>
+|-
+| (In) W2 || u64 || <code>My Permissions</code>
+|-
+| (In) W3 || u64 || <code>Other Permissions</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Ret</code>
+|-
+| (Out) W1|| u64 || <code>Shared Memory Handle</code>
+|}
+</div>
+
 Other perm can be used to enforce permission 1, 3, or 0x10000000 if don't care.
 
 == svcMapTransferMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || u64 || <code>Transfer Mem Handle</code>
+|-
+| (In) X1 || u64 || <code>Addr</code>
+|-
+| (In) X2 || u64 || <code>Size</code>
+|-
+| (In) W3 || u64 || <code>Permissions</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Ret</code>
+|}
+</div>
+
 The newly mapped pages will have [[#MemoryState]] type 0xE.
 
 You must pass same size and permissions as given in svcCreateMemoryMirror, otherwise error.
 
 == svcUnmapTransferMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || u64 || <code>Transfer Mem Handle</code>
+|-
+| (In) X1 || u64 || <code>Addr</code>
+|-
+| (In) X2 || u64 || <code>Size</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Ret</code>
+|}
+</div>
+
 Size must match size given in map syscall, otherwise there's an invalid-size error.
 
 == svcQueryPhysicalAddress ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || <code>Addr</code>
+|-
+| (Out) W0 || [[#Result]]|| <code>Ret</code>
+|-
+| (Out) X1 || u64 || <code>Out0</code>
+|-
+| (Out) X2 || u64 || <code>Out1</code>
+|-
+| (Out) X3 || u64 || <code>Out2</code>
+|}
+</div>
+
 The inverse operation of [[#svcQueryIoMapping]].
 
 == svcQueryIoMapping ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || <code>Physical Address</code>
+|-
+| (In) X2 || u64 || <code>Size</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Ret</code>
+|-
+| (Out) X1 || u64 || <code>Virtual Address</code>
+|}
+</div>
+
 '''Description:''' Returns a virtual address mapped to a given IO range.
 
 == svcCreateDeviceAddressSpace ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || <code>Device as Start Addr</code>
+|-
+| (In) X2 || u64 || <code>Device as End Addr</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Ret</code>
+|-
+| (Out) W1 || u64 || <code>Device as Handle</code>
+|}
+</div>
+
 '''Description:''' Creates a virtual address space for binding device address spaces and returns a handle.
 
 dev_as_start_addr is normally set to 0 and dev_as_end_addr is normally set to 0xFFFFFFFF.
 
 == svcAttachDeviceAddressSpace ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || u64 || <code>Device</code>
+|-
+| (In) X1 || u64 || <code>Device as Handle</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Ret</code>
+|}
+</div>
+
 '''Description:''' Attaches a device address space to a [[#DeviceName|device]].
 
 == svcDetachDeviceAddressSpace ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || u64 || <code>Device</code>
+|-
+| (In) X1 || u64 || <code>Device as Handle</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Ret</code>
+|}
+</div>
+
 '''Description:''' Detaches a device address space from a [[#DeviceName|device]].
 
 == svcMapDeviceAddressSpaceByForce ==

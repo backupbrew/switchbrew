@@ -501,10 +501,21 @@ Size must be 0x1000-aligned.
 
 When used on retail where inx0 bit31 is clear, the system will throw a
 [fatal-error](Error%20codes.md "wikilink"). Otherwise when bit31 is set,
-it will return
-0.
+it will return 0.
 
 ## svcGetInfo
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name          |
+| -------- | ------------------------------ | ------------- |
+| (In) X1  | u64                            | `Info ID`     |
+| (In) X2  | u64                            | `Handle`      |
+| (In) X3  | u64                            | `Info Sub ID` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
+| (Out) X1 | u64                            | `Out`         |
+
+</div>
 
 | Handle type | Id0        | Id1                   | Description                                                                                                 |
 | ----------- | ---------- | --------------------- | ----------------------------------------------------------------------------------------------------------- |
@@ -529,9 +540,30 @@ it will return
 
 ## svcDumpInfo
 
+<div style="display: inline-block;">
+
+| Argument   | Type | Name |
+| ---------- | ---- | ---- |
+| (In) None  |      |      |
+| (Out) None |      |      |
+
+</div>
+
 Does nothing, just returns with registers set to all-zero.
 
 ## svcReadWriteRegister
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name        |
+| -------- | ------------------------------ | ----------- |
+| (In) X1  | u64                            | `Reg Addr`  |
+| (In) W2  | u64                            | `RW Mask`   |
+| (In) W3  | u64                            | `In Value`  |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`       |
+| (Out) W1 | u64                            | `Out Value` |
+
+</div>
 
 Read/write IO registers with a hardcoded whitelist. Input address is
 physical-address and must be aligned to 4.
@@ -557,10 +589,34 @@ Id1 0xC3000008(ReadWriteRegister).
 
 ## svcCreateSharedMemory
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name                   |
+| -------- | ------------------------------ | ---------------------- |
+| (In) W1  | u64                            | `Size`                 |
+| (In) W2  | u64                            | `My Permissions`       |
+| (In) W3  | u64                            | `Other Permissions`    |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                  |
+| (Out) W1 | u64                            | `Shared Memory Handle` |
+
+</div>
+
 Other perm can be used to enforce permission 1, 3, or 0x10000000 if
 don't care.
 
 ## svcMapTransferMemory
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name                  |
+| -------- | ------------------------------ | --------------------- |
+| (In) X0  | u64                            | `Transfer Mem Handle` |
+| (In) X1  | u64                            | `Addr`                |
+| (In) X2  | u64                            | `Size`                |
+| (In) W3  | u64                            | `Permissions`         |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                 |
+
+</div>
 
 The newly mapped pages will have
 [\#MemoryState](#MemoryState "wikilink") type 0xE.
@@ -570,19 +626,64 @@ svcCreateMemoryMirror, otherwise error.
 
 ## svcUnmapTransferMemory
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name                  |
+| -------- | ------------------------------ | --------------------- |
+| (In) X0  | u64                            | `Transfer Mem Handle` |
+| (In) X1  | u64                            | `Addr`                |
+| (In) X2  | u64                            | `Size`                |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                 |
+
+</div>
+
 Size must match size given in map syscall, otherwise there's an
 invalid-size error.
 
 ## svcQueryPhysicalAddress
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) X1  | u64                            | `Addr` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+| (Out) X1 | u64                            | `Out0` |
+| (Out) X2 | u64                            | `Out1` |
+| (Out) X3 | u64                            | `Out2` |
+
+</div>
 
 The inverse operation of
 [\#svcQueryIoMapping](#svcQueryIoMapping "wikilink").
 
 ## svcQueryIoMapping
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name               |
+| -------- | ------------------------------ | ------------------ |
+| (In) X1  | u64                            | `Physical Address` |
+| (In) X2  | u64                            | `Size`             |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+| (Out) X1 | u64                            | `Virtual Address`  |
+
+</div>
+
 **Description:** Returns a virtual address mapped to a given IO range.
 
 ## svcCreateDeviceAddressSpace
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name                   |
+| -------- | ------------------------------ | ---------------------- |
+| (In) X1  | u64                            | `Device as Start Addr` |
+| (In) X2  | u64                            | `Device as End Addr`   |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                  |
+| (Out) W1 | u64                            | `Device as Handle`     |
+
+</div>
 
 **Description:** Creates a virtual address space for binding device
 address spaces and returns a handle.
@@ -592,10 +693,30 @@ normally set to 0xFFFFFFFF.
 
 ## svcAttachDeviceAddressSpace
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name               |
+| -------- | ------------------------------ | ------------------ |
+| (In) W0  | u64                            | `Device`           |
+| (In) X1  | u64                            | `Device as Handle` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+
+</div>
+
 **Description:** Attaches a device address space to a
 [device](#DeviceName "wikilink").
 
 ## svcDetachDeviceAddressSpace
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name               |
+| -------- | ------------------------------ | ------------------ |
+| (In) W0  | u64                            | `Device`           |
+| (In) X1  | u64                            | `Device as Handle` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+
+</div>
 
 **Description:** Detaches a device address space from a
 [device](#DeviceName "wikilink").
