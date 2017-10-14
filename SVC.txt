@@ -408,7 +408,7 @@ Outputs a [[#MemoryInfo]] struct.
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || Handle || <code>Handle</code>
+| (Out) W1 || Handle<Thread> || <code>Handle</code>
 |}
 </div>
 
@@ -506,13 +506,13 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 |-
 ! Argument || Type || Name
 |-
-| (In) W2 || u64 || <code>Handle</code>
+| (In) W2 || Handle<Thread> || <code>Handle</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || u64 || <code>Out</code>
+| (Out) W1 || u32 || <code>Out0</code>
 |-
-| (Out) X2 || u64 || <code>Out</code>
+| (Out) X2 || u64 || <code>Out1</code>
 |}
 </div>
 
@@ -525,11 +525,11 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Handle</code>
+| (In) W0 || Handle<Thread> || <code>Handle</code>
 |-
-| (In) W1 || u64 || <code>In</code>
+| (In) W1 || u32 || <code>In0</code>
 |-
-| (In) X2 || u64 || <code>In</code>
+| (In) X2 || u64 || <code>In1</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -546,7 +546,7 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 |-
 | (In) None || || 
 |-
-| (Out) W0/X0 || u64 || <code>CPU ID</code>
+| (Out) W0/X0 || u64 || <code>CpuId</code>
 |}
 </div>
 
@@ -561,13 +561,13 @@ Cpu-id is an integer in the range 0-3.
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Mem Block Handle</code>
+| (In) W0 || Handle<SharedMemory> || <code>MemHandle</code>
 |-
 | (In) X1 || u64 || <code>Addr</code>
 |-
 | (In) X2 || u64 || <code>Size</code>
 |-
-| (In) W3 || u64 || <code>Permissions</code>
+| (In) W3 || [[#Permission]] || <code>Permissions</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -588,11 +588,11 @@ Increases reference count for the KSharedMemory object. Thus in order to release
 |-
 | (In) X2 || u64 || <code>Size</code>
 |-
-| (In) W3 || u64 || <code>Permissions</code>
+| (In) W3 || [[#Permission]] || <code>Permissions</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || u64 || <code>Handle</code>
+| (Out) W1 || Handle<TransferMemory> || <code>Handle</code>
 |}
 </div>
 
@@ -609,15 +609,15 @@ Closing all handles automatically causes the bit0 in [[#MemoryAttribute]] to cle
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || <code>Handles Pointer</code>
+| (In) X1 || Handle* || <code>HandlesPtr</code>
 |-
-| (In) W2 || u64 || <code>Number of Handles</code>
+| (In) W2 || u64 || <code>HandlesNum</code>
 |-
 | (In) X3 || u64 || <code>Timeout</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || u64 || <code>Handle Index</code>
+| (Out) W1 || u64 || <code>HandleIndex</code>
 |}
 </div>
 
@@ -632,11 +632,11 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>Command Buffer Pointer</code>
+| (In) X0 || u64 || <code>CmdPtr</code>
 |-
 | (In) X1 || u64 || <code>Size</code>
 |-
-| (In) X2 || u64 || <code>Handle</code>
+| (In) W2 || Handle<Session> || <code>Handle</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -670,11 +670,11 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || <code>Info ID</code>
+| (In) X1 || u64 || <code>InfoId</code>
 |-
-| (In) X2 || u64 || <code>Handle</code>
+| (In) W2 || Handle || <code>Handle</code>
 |-
-| (In) X3 || u64 || <code>Info Sub ID</code>
+| (In) X3 || u64 || <code>InfoSubId</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-

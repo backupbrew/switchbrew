@@ -283,7 +283,7 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 | (In) W4  | u32                            | `Priority`    |
 | (In) W5  | u32                            | `ProcessorId` |
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
-| (Out) W1 | Handle                         | `Handle`      |
+| (Out) W1 | Handle<Thread>                 | `Handle`      |
 
 </div>
 
@@ -369,10 +369,10 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 | Argument | Type                           | Name     |
 | -------- | ------------------------------ | -------- |
-| (In) W2  | u64                            | `Handle` |
+| (In) W2  | Handle<Thread>                 | `Handle` |
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
-| (Out) W1 | u64                            | `Out`    |
-| (Out) X2 | u64                            | `Out`    |
+| (Out) W1 | u32                            | `Out0`   |
+| (Out) X2 | u64                            | `Out1`   |
 
 </div>
 
@@ -384,9 +384,9 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 | Argument | Type                           | Name     |
 | -------- | ------------------------------ | -------- |
-| (In) W0  | u64                            | `Handle` |
-| (In) W1  | u64                            | `In`     |
-| (In) X2  | u64                            | `In`     |
+| (In) W0  | Handle<Thread>                 | `Handle` |
+| (In) W1  | u32                            | `In0`    |
+| (In) X2  | u64                            | `In1`    |
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
 
 </div>
@@ -397,10 +397,10 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 <div style="display: inline-block;">
 
-| Argument    | Type | Name     |
-| ----------- | ---- | -------- |
-| (In) None   |      |          |
-| (Out) W0/X0 | u64  | `CPU ID` |
+| Argument    | Type | Name    |
+| ----------- | ---- | ------- |
+| (In) None   |      |         |
+| (Out) W0/X0 | u64  | `CpuId` |
 
 </div>
 
@@ -412,13 +412,13 @@ Cpu-id is an integer in the range 0-3.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name               |
-| -------- | ------------------------------ | ------------------ |
-| (In) W0  | u64                            | `Mem Block Handle` |
-| (In) X1  | u64                            | `Addr`             |
-| (In) X2  | u64                            | `Size`             |
-| (In) W3  | u64                            | `Permissions`      |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+| Argument | Type                                   | Name          |
+| -------- | -------------------------------------- | ------------- |
+| (In) W0  | Handle<SharedMemory>                   | `MemHandle`   |
+| (In) X1  | u64                                    | `Addr`        |
+| (In) X2  | u64                                    | `Size`        |
+| (In) W3  | [\#Permission](#Permission "wikilink") | `Permissions` |
+| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`         |
 
 </div>
 
@@ -434,13 +434,13 @@ closed and all mappings must be unmapped.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name          |
-| -------- | ------------------------------ | ------------- |
-| (In) X1  | u64                            | `Addr`        |
-| (In) X2  | u64                            | `Size`        |
-| (In) W3  | u64                            | `Permissions` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
-| (Out) W1 | u64                            | `Handle`      |
+| Argument | Type                                   | Name          |
+| -------- | -------------------------------------- | ------------- |
+| (In) X1  | u64                                    | `Addr`        |
+| (In) X2  | u64                                    | `Size`        |
+| (In) W3  | [\#Permission](#Permission "wikilink") | `Permissions` |
+| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`         |
+| (Out) W1 | Handle<TransferMemory>                 | `Handle`      |
 
 </div>
 
@@ -457,13 +457,13 @@ permission to reset.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name                |
-| -------- | ------------------------------ | ------------------- |
-| (In) X1  | u64                            | `Handles Pointer`   |
-| (In) W2  | u64                            | `Number of Handles` |
-| (In) X3  | u64                            | `Timeout`           |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`               |
-| (Out) W1 | u64                            | `Handle Index`      |
+| Argument | Type                           | Name          |
+| -------- | ------------------------------ | ------------- |
+| (In) X1  | Handle\*                       | `HandlesPtr`  |
+| (In) W2  | u64                            | `HandlesNum`  |
+| (In) X3  | u64                            | `Timeout`     |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
+| (Out) W1 | u64                            | `HandleIndex` |
 
 </div>
 
@@ -475,12 +475,12 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name                     |
-| -------- | ------------------------------ | ------------------------ |
-| (In) X0  | u64                            | `Command Buffer Pointer` |
-| (In) X1  | u64                            | `Size`                   |
-| (In) X2  | u64                            | `Handle`                 |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                    |
+| Argument | Type                           | Name     |
+| -------- | ------------------------------ | -------- |
+| (In) X0  | u64                            | `CmdPtr` |
+| (In) X1  | u64                            | `Size`   |
+| (In) W2  | Handle<Session>                | `Handle` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
 
 </div>
 
@@ -507,13 +507,13 @@ it will return 0.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name          |
-| -------- | ------------------------------ | ------------- |
-| (In) X1  | u64                            | `Info ID`     |
-| (In) X2  | u64                            | `Handle`      |
-| (In) X3  | u64                            | `Info Sub ID` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
-| (Out) X1 | u64                            | `Out`         |
+| Argument | Type                           | Name        |
+| -------- | ------------------------------ | ----------- |
+| (In) X1  | u64                            | `InfoId`    |
+| (In) W2  | Handle                         | `Handle`    |
+| (In) X3  | u64                            | `InfoSubId` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`       |
+| (Out) X1 | u64                            | `Out`       |
 
 </div>
 
