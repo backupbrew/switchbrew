@@ -324,9 +324,28 @@ process.
 
 Setting nano=0 means "yield thread".
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) X1  | u64                            | `Nano` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+
+</div>
+
 ## svcGetThreadPriority
 
 **Description:** Get priority of provided thread handle.
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name       |
+| -------- | ------------------------------ | ---------- |
+| (In) W1  | u64                            | `Handle`   |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
+| (Out) W1 | u64                            | `Priority` |
+
+</div>
 
 ## svcSetThreadPriority
 
@@ -334,13 +353,45 @@ Setting nano=0 means "yield thread".
 
 Priority is a number 0-0x3F. Lower value means higher priority.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name       |
+| -------- | ------------------------------ | ---------- |
+| (In) W0  | u64                            | `Handle`   |
+| (In) W1  | u64                            | `Priority` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
+
+</div>
+
 ## svcGetThreadCoreMask
 
 **Description:** Get affinity mask of provided thread handle.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name     |
+| -------- | ------------------------------ | -------- |
+| (In) W2  | u64                            | `Handle` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
+| (Out) W1 | u64                            | `Out`    |
+| (Out) X2 | u64                            | `Out`    |
+
+</div>
+
 ## svcSetThreadCoreMask
 
 **Description:** Set affinity mask of provided thread handle.
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name     |
+| -------- | ------------------------------ | -------- |
+| (In) W0  | u64                            | `Handle` |
+| (In) W1  | u64                            | `In`     |
+| (In) X2  | u64                            | `In`     |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
+
+</div>
 
 ## svcGetCurrentProcessorNumber
 
@@ -367,6 +418,18 @@ Increases reference count for the KSharedMemory object. Thus in order to
 release the memory associated with the object, all handles to it must be
 closed and all mappings must be unmapped.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name               |
+| -------- | ------------------------------ | ------------------ |
+| (In) W0  | u64                            | `Mem Block Handle` |
+| (In) X1  | u64                            | `Addr`             |
+| (In) X2  | u64                            | `Size`             |
+| (In) W3  | u64                            | `Permissions`      |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+
+</div>
+
 ## svcCreateTransferMemory
 
 This one reprotects the src block with perms you give it. It also sets
@@ -378,22 +441,67 @@ Closing all handles automatically causes the bit0 in
 [\#MemoryAttribute](#MemoryAttribute "wikilink") to clear, and the
 permission to reset.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name          |
+| -------- | ------------------------------ | ------------- |
+| (In) X1  | u64                            | `Addr`        |
+| (In) X2  | u64                            | `Size`        |
+| (In) W3  | u64                            | `Permissions` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
+| (Out) W1 | u64                            | `Handle`      |
+
+</div>
+
 ## svcWaitSynchronization
 
 Works with num\_handles \<= 0x40, error on num\_handles == 0.
 
 Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name                |
+| -------- | ------------------------------ | ------------------- |
+| (In) X1  | u64                            | `Handles Pointer`   |
+| (In) W2  | u64                            | `Number of Handles` |
+| (In) X3  | u64                            | `Timeout`           |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`               |
+| (Out) W1 | u64                            | `Handle Index`      |
+
+</div>
+
 ## svcSendSyncRequestWithUserBuffer
 
 Size must be 0x1000-aligned.
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name                     |
+| -------- | ------------------------------ | ------------------------ |
+| (In) X0  | u64                            | `Command Buffer Pointer` |
+| (In) X1  | u64                            | `Size`                   |
+| (In) X2  | u64                            | `Handle`                 |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                    |
+
+</div>
 
 ## svcBreak
 
 When used on retail where inx0 bit31 is clear, the system will throw a
 [fatal-error](Error%20codes.md "wikilink"). Otherwise when bit31 is set,
-it will return
-0.
+it will return 0.
+
+<div style="display: inline-block;">
+
+| Argument | Type | Name   |
+| -------- | ---- | ------ |
+| (In) X0  | u64  |        |
+| (In) X1  | u64  |        |
+| (In) X2  | u64  | `Info` |
+| (Out) ?  | ?    | `?`    |
+
+</div>
 
 ## svcGetInfo
 
