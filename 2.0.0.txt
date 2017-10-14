@@ -47,9 +47,8 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 
 * KAddressSpace was renamed to KDeviceAddressSpace.
 
-* KSharedMemory now doesn't incref for each map.
-** Instead it maintains a list of every map (each 0x20-byte entry).
-** Probably to do better cleanup.
+* KSharedMemory now maintains a list of every map (each 0x20-byte entry).
+** To do cleanup of mapped shared memories when a process is killed.
 
 * KSharedMemory no longer references the owning KProcess.
 ** Instead it stores the pid, so that the process can be freed even though the shared memory still exists.
