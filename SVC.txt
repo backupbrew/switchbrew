@@ -40,19 +40,19 @@ __NOTOC__
 |-
 | 0x12 || svcClearEvent || W0=wevent_or_revent_handle || W0=result
 |-
-| 0x13 || [[#svcMapSharedMemory]] || W0=memblk_handle, X1=addr, X2=size, W3=perm || W0=result
+| 0x13 || [[#svcMapSharedMemory]] || W0=shmem_handle, X1=addr, X2=size, W3=perm || W0=result
 |-
-| 0x14 || svcUnmapSharedMemory || W0=memblk_handle, X1=addr, X2=size || W0=result                                                 
+| 0x14 || svcUnmapSharedMemory || W0=shmem_handle, X1=addr, X2=size || W0=result                                                 
 |-
-| 0x15 || [[#svcCreateTransferMemory]] || X1=addr, X2=size, W3=perm || W0=result, W1=handle
+| 0x15 || [[#svcCreateTransferMemory]] || X1=addr, X2=size, W3=perm || W0=result, W1=tmem_handle
 |-
 | 0x16 || svcCloseHandle || W0=handle || W0=result
 |-
-| 0x17 || svcResetSignal || W0=handle || W0=result
+| 0x17 || svcResetSignal || W0=revent_or_process_handle || W0=result
 |-
 | 0x18 || [[#svcWaitSynchronization]] || X1=handles_ptr, W2=num_handles. X3=timeout || W0=result, W1=handle_idx
 |-
-| 0x19 || svcCancelSynchronization || W0=handle || W0=result
+| 0x19 || svcCancelSynchronization || W0=thread_handle || W0=result
 |-
 | 0x1A || svcArbitrateLock || W0=cur_thread_handle, X1=ptr, W2=req_thread_handle ||                                     
 |-
@@ -62,17 +62,17 @@ __NOTOC__
 |-
 | 0x1D || svcSignalProcessWideKey || X0=ptr, W1=value || W0=result
 |-
-| 0x1E || svcGetSystemTick ||  || X0={value of cntpct_el0}
+| 0x1E || svcGetSystemTick || None || X0={value of cntpct_el0}
 |-
 | 0x1F || svcConnectToNamedPort || X1=port_name_str || W0=result, W1=handle
 |-
-| 0x20 || svcSendSyncRequestLight ||  || 
+| 0x20 || svcSendSyncRequestLight || W0=light_session_handle, X1=? || W0=result
 |-
-| 0x21 || svcSendSyncRequest || X0=handle || W0=result
+| 0x21 || svcSendSyncRequest || X0=normal_session_handle || W0=result
 |-
 | 0x22 || [[#svcSendSyncRequestWithUserBuffer]] || X0=cmdbufptr, X1=size, X2=handle || W0=result
 |-
-| 0x23 || svcSendAsyncRequestWithUserBuffer ||  || 
+| 0x23 || svcSendAsyncRequestWithUserBuffer || X1=cmdbufptr, X2=size, X3=handle || W0=result, W1=event_handle
 |-
 | 0x24 || svcGetProcessId || W0=thread_or_process_or_debug_handle || W0=result, X1=pid
 |-
@@ -124,11 +124,11 @@ __NOTOC__
 |-
 | 0x4F || svcSetProcessActivity || W0=process_handle, W1=bool || W0=result
 |-
-| 0x50 || [[#svcCreateSharedMemory]] || W1=size?, W2=myperm, W3=otherperm || W0=result, W1=handle
+| 0x50 || [[#svcCreateSharedMemory]] || W1=size, W2=myperm, W3=otherperm || W0=result, W1=shmem_handle
 |-
-| 0x51 || [[#svcMapTransferMemory]] || X0=mirror_handle, X1=addr, X2=size, W3=perm || W0=result
+| 0x51 || [[#svcMapTransferMemory]] || X0=tmem_handle, X1=addr, X2=size, W3=perm || W0=result
 |-
-| 0x52 || [[#svcUnmapTransferMemory]] || W0=mirror_handle, X1=addr, X2=size || W0=result
+| 0x52 || [[#svcUnmapTransferMemory]] || W0=tmemhandle, X1=addr, X2=size || W0=result
 |-
 | 0x53 || svcCreateInterruptEvent || X1=irq_id, W2=flag || W0=result, W1=handle
 |-
