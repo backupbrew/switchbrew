@@ -246,7 +246,7 @@ On success, the heap base-address (which is fixed by kernel, aslr'd) is written 
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>Addr</code>
+| (In) X0 || void* || <code>Addr</code>
 |-
 | (In) X1 || u64 || <code>Size</code>
 |-
@@ -269,7 +269,7 @@ This can be used to move back and forth between ---, r-- and rw-.
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>Addr</code>
+| (In) X0 || void* || <code>Addr</code>
 |-
 | (In) X1 || u64 || <code>Size</code>
 |-
@@ -304,9 +304,9 @@ What happens "under the hood" is the "Memory Attribute Indirection Register" ind
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>Dst</code>
+| (In) X0 || void* || <code>DstAddr</code>
 |-
-| (In) X1 || u64 || <code>Src</code>
+| (In) X1 || void* || <code>SrcAddr</code>
 |-
 | (In) X2 || u64 || <code>Size</code>
 |-
@@ -337,9 +337,9 @@ LowerTreshold is 0x80000000 for 36-bit address spaces, and 0x40000000 for 32-bit
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>Dst</code>
+| (In) X0 || void* || <code>DstAddr</code>
 |-
-| (In) X1 || u64 || <code>Src</code>
+| (In) X1 || void* || <code>SrcAddr</code>
 |-
 | (In) X2 || u64 || <code>Size</code>
 |-
@@ -362,7 +362,7 @@ The srcaddr/dstaddr must match what was given when the pages were originally map
 |-
 | (In) X0 || [[#MemoryInfo]]* || <code>MemInfo</code>
 |-
-| (In) X2 || u64 || <code>Addr</code>
+| (In) X2 || void* || <code>Addr</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
@@ -396,11 +396,11 @@ Outputs a [[#MemoryInfo]] struct.
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || <code>Entry</code>
+| (In) X1 || void(*)(void*) || <code>Entry</code>
 |-
-| (In) X2 || u64 || <code>Arg</code>
+| (In) X2 || void* || <code>Arg</code>
 |-
-| (In) X3 || u64 || <code>StackTop</code>
+| (In) X3 || void* || <code>StackTop</code>
 |-
 | (In) W4 || u32 || <code>Priority</code>
 |-
@@ -423,7 +423,7 @@ Processor_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for process.
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || Handle<KThread> || <code>Handle</code>
+| (In) W0 || Handle<Thread> || <code>Handle</code>
 |-
 | (Out) None ||  ||
 |}
@@ -563,7 +563,7 @@ Cpu-id is an integer in the range 0-3.
 |-
 | (In) W0 || Handle<SharedMemory> || <code>MemHandle</code>
 |-
-| (In) X1 || u64 || <code>Addr</code>
+| (In) X1 || void* || <code>Addr</code>
 |-
 | (In) X2 || u64 || <code>Size</code>
 |-
@@ -584,7 +584,7 @@ Increases reference count for the KSharedMemory object. Thus in order to release
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || <code>Addr</code>
+| (In) X1 || void* || <code>Addr</code>
 |-
 | (In) X2 || u64 || <code>Size</code>
 |-
@@ -632,7 +632,7 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>CmdPtr</code>
+| (In) X0 || void* || <code>CmdPtr</code>
 |-
 | (In) X1 || u64 || <code>Size</code>
 |-
@@ -744,15 +744,15 @@ Does nothing, just returns with registers set to all-zero.
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || <code>Reg Addr</code>
+| (In) X1 || u64 || <code>RegAddr</code>
 |-
-| (In) W2 || u64 || <code>RW Mask</code>
+| (In) W2 || u64 || <code>RwMask</code>
 |-
-| (In) W3 || u64 || <code>In Value</code>
+| (In) W3 || u64 || <code>InValue</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1|| u64 || <code>Out Value</code>
+| (Out) W1|| u64 || <code>OutValue</code>
 |}
 </div>
 
@@ -782,13 +782,13 @@ The whitelist is:
 |-
 | (In) W1 || u64 || <code>Size</code>
 |-
-| (In) W2 || u64 || <code>My Permissions</code>
+| (In) W2 || [[#Permission]] || <code>LocalPerm</code>
 |-
-| (In) W3 || u64 || <code>Other Permissions</code>
+| (In) W3 || [[#Permission]] || <code>RemotePerm</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1|| u64 || <code>Shared Memory Handle</code>
+| (Out) W1 || Handle<SharedMemory> || <code>MemHandle</code>
 |}
 </div>
 
@@ -801,13 +801,13 @@ Other perm can be used to enforce permission 1, 3, or 0x10000000 if don't care.
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>Transfer Mem Handle</code>
+| (In) X0 || Handle<TransferMemory> || <code>MemHandle</code>
 |-
-| (In) X1 || u64 || <code>Addr</code>
+| (In) X1 || void* || <code>Addr</code>
 |-
 | (In) X2 || u64 || <code>Size</code>
 |-
-| (In) W3 || u64 || <code>Permissions</code>
+| (In) W3 || [[#Permission]] || <code>Permissions</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -824,9 +824,9 @@ You must pass same size and permissions as given in svcCreateMemoryMirror, other
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>Transfer Mem Handle</code>
+| (In) X0 || Handle<TransferMemory> || <code>MemHandle</code>
 |-
-| (In) X1 || u64 || <code>Addr</code>
+| (In) X1 || void* || <code>Addr</code>
 |-
 | (In) X2 || u64 || <code>Size</code>
 |-
@@ -864,13 +864,13 @@ The inverse operation of [[#svcQueryIoMapping]].
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || <code>Physical Address</code>
+| (In) X1 || u64 || <code>PhysAddr</code>
 |-
 | (In) X2 || u64 || <code>Size</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) X1 || u64 || <code>Virtual Address</code>
+| (Out) X1 || void* || <code>VirtAddr</code>
 |}
 </div>
 
@@ -883,13 +883,13 @@ The inverse operation of [[#svcQueryIoMapping]].
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || <code>Device as Start Addr</code>
+| (In) X1 || u64 || <code>StartAddr</code>
 |-
-| (In) X2 || u64 || <code>Device as End Addr</code>
+| (In) X2 || u64 || <code>EndAddr</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || u64 || <code>Device as Handle</code>
+| (Out) W1 || Handle<DeviceAddressSpace> || <code>AddressSpaceHandle</code>
 |}
 </div>
 
@@ -904,9 +904,9 @@ dev_as_start_addr is normally set to 0 and dev_as_end_addr is normally set to 0x
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Device</code>
+| (In) W0 || [[#DeviceName]] || <code>DeviceId</code>
 |-
-| (In) X1 || u64 || <code>Device as Handle</code>
+| (In) X1 || Handle<DeviceAddressSpace> || <code>DeviceAsHandle</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -921,9 +921,9 @@ dev_as_start_addr is normally set to 0 and dev_as_end_addr is normally set to 0x
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Device</code>
+| (In) W0 || [[#DeviceName]] || <code>DeviceId</code>
 |-
-| (In) X1 || u64 || <code>Device as Handle</code>
+| (In) X1 || Handle<DeviceAddressSpace> || <code>DeviceAsHandle</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -938,17 +938,17 @@ dev_as_start_addr is normally set to 0 and dev_as_end_addr is normally set to 0x
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Device as Handle</code>
+| (In) W0 || Handle<DeviceAddressSpace> || <code>DeviceAsHandle</code>
 |-
-| (In) W1 || u64 || <code>Process Handle</code>
+| (In) W1 || Handle<Process> || <code>ProcessHandle</code>
 |-
-| (In) X2 || u64 || <code>Device Map Addr</code>
+| (In) X2 || void* || <code>SrcAddr</code>
 |-
-| (In) X3 || u64 || <code>Device as Size</code>
+| (In) X3 || u64 || <code>DeviceAsSize</code>
 |-
-| (In) X4 || u64 || <code>Device as Addr</code>
+| (In) X4 || u64 || <code>DeviceAsAddr</code>
 |-
-| (In) W5 || u64 || <code>Permissions</code>
+| (In) W5 || [[#Permission]] || <code>Permissions</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -967,17 +967,17 @@ The userspace destination address must have the [[SVC#MemoryState|MapDeviceAllow
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Device as Handle</code>
+| (In) W0 || Handle<DeviceAddressSpace> || <code>DeviceAsHandle</code>
 |-
-| (In) W1 || u64 || <code>Process Handle</code>
+| (In) W1 || Handle<Process> || <code>ProcessHandle</code>
 |-
-| (In) X2 || u64 || <code>Device Map Addr</code>
+| (In) X2 || void* || <code>SrcAddr</code>
 |-
-| (In) X3 || u64 || <code>Device as Size</code>
+| (In) X3 || u64 || <code>DeviceAsSize</code>
 |-
-| (In) X4 || u64 || <code>Device as Addr</code>
+| (In) X4 || u64 || <code>DeviceAsAddr</code>
 |-
-| (In) W5 || u64 || <code>Permissions</code>
+| (In) W5 || [[#Permission]] || <code>Permissions</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -994,15 +994,15 @@ Same as [[#svcMapDeviceAddressSpaceByForce]], but the userspace destination addr
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Device as Handle</code>
+| (In) W0 || Handle<DeviceAddressSpace> || <code>DeviceAsHandle</code>
 |-
-| (In) W1 || u64 || <code>Process Handle</code>
+| (In) W1 || Handle<Process> || <code>ProcessHandle</code>
 |-
-| (In) X2 || u64 || <code>Device Map Addr</code>
+| (In) X2 || void* || <code>SrcAddr</code>
 |-
-| (In) X3 || u64 || <code>Device as Size</code>
+| (In) X3 || u64 || <code>DeviceAsSize</code>
 |-
-| (In) X4 || u64 || <code>Device as Addr</code>
+| (In) X4 || u64 || <code>DeviceAsAddr</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -1017,11 +1017,11 @@ Same as [[#svcMapDeviceAddressSpaceByForce]], but the userspace destination addr
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>Src Addr</code>
+| (In) X0 || u64 || <code>SrcAddr</code>
 |-
-| (In) W1 || u64 || <code>Process Handle</code>
+| (In) W1 || u64 || <code>ProcessHandle</code>
 |-
-| (In) X2 || u64 || <code>Dest Addr</code>
+| (In) X2 || void* || <code>DstAddr</code>
 |-
 | (In) X3 || u64 || <code>Size</code>
 |-
@@ -1040,11 +1040,11 @@ This allows mapping code and rodata with RW- permission.
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Process Handle</code>
+| (In) W0 || Handle<Process> || <code>ProcessHandle</code>
 |-
-| (In) X1 || u64 || <code>Dest Addr</code>
+| (In) X1 || void* || <code>DstAddr</code>
 |-
-| (In) X2 || u64 || <code>Src Addr</code>
+| (In) X2 || u64 || <code>SrcAddr</code>
 |-
 | (In) X3 || u64 || <code>Size</code>
 |-
@@ -1061,7 +1061,7 @@ Unmaps what was mapped by [[#svcMapProcessMemory]].
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>MemInfoPtr</code>
+| (In) X0 || [[#MemoryInfo]]* || <code>MemInfoPtr</code>
 |-
 | (In) W2 || Handle<Process> || <code>ProcessHandle</code>
 |-
@@ -1082,11 +1082,11 @@ Equivalent to [[#svcQueryMemory]] except takes a process handle.
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Process Handle</code>
+| (In) W0 || Handle<Process> || <code>ProcessHandle</code>
 |-
-| (In) X1 || u64 || <code>Dest Addr</code>
+| (In) X1 || u64 || <code>DstAddr</code>
 |-
-| (In) X2 || u64 || <code>Src Addr</code>
+| (In) X2 || u64 || <code>SrcAddr</code>
 |-
 | (In) X3 || u64 || <code>Size</code>
 |-
@@ -1103,9 +1103,9 @@ Takes a process handle, and maps normal heap in that process as executable code 
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Process Handle</code>
+| (In) W0 || Handle<Process> || <code>ProcessHandle</code>
 |-
-| (In) X1 || u64 || <code>Dest Addr</code>
+| (In) X1 || u64 || <code>DstAddr</code>
 |-
 | (In) X2 || u64 || <code>Src Addr</code>
 |-
@@ -1124,15 +1124,15 @@ Unmaps what was mapped by [[#svcMapProcessCodeMemory]].
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || <code>ProcInfo Pointer</code>
+| (In) X1 || [[#CreateProcessInfo]]* || <code>InfoPtr</code>
 |-
-| (In) X2 || u64 || <code>Capabilities Pointer</code>
+| (In) X2 || u64 || <code>CapabilitiesPtr</code>
 |-
-| (In) X3 || u64 || <code>Capibility Num</code>
+| (In) X3 || u64 || <code>CapibilitiesNum</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || u64 || <code>Process Handle</code>
+| (Out) W1 || Handle<Process> || <code>ProcessHandle</code>
 |}
 </div>
 
@@ -1145,11 +1145,11 @@ Takes a [[#CreateProcessInfo]] as input.
 |-
 ! Argument || Type || Name
 |-
-| (In) W0 || u64 || <code>Process Handle</code>
+| (In) W0 || Handle<Process> || <code>ProcessHandle</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || [[#ProcessState]] || <code>Process State</code>
+| (Out) W1 || [[#ProcessState]] || <code>State</code>
 |}
 </div>
 

@@ -139,7 +139,7 @@ written to `OutAddr`.
 
 | Argument | Type                                   | Name   |
 | -------- | -------------------------------------- | ------ |
-| (In) X0  | u64                                    | `Addr` |
+| (In) X0  | void\*                                 | `Addr` |
 | (In) X1  | u64                                    | `Size` |
 | (In) W2  | [\#Permission](#Permission "wikilink") | `Prot` |
 | (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`  |
@@ -159,7 +159,7 @@ This can be used to move back and forth between ---, r-- and rw-.
 
 | Argument | Type                           | Name     |
 | -------- | ------------------------------ | -------- |
-| (In) X0  | u64                            | `Addr`   |
+| (In) X0  | void\*                         | `Addr`   |
 | (In) X1  | u64                            | `Size`   |
 | (In) W2  | u32                            | `State0` |
 | (In) W3  | u32                            | `State1` |
@@ -186,12 +186,12 @@ descriptor.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name   |
-| -------- | ------------------------------ | ------ |
-| (In) X0  | u64                            | `Dst`  |
-| (In) X1  | u64                            | `Src`  |
-| (In) X2  | u64                            | `Size` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+| Argument | Type                           | Name      |
+| -------- | ------------------------------ | --------- |
+| (In) X0  | void\*                         | `DstAddr` |
+| (In) X1  | void\*                         | `SrcAddr` |
+| (In) X2  | u64                            | `Size`    |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`     |
 
 </div>
 
@@ -222,12 +222,12 @@ were removed.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name   |
-| -------- | ------------------------------ | ------ |
-| (In) X0  | u64                            | `Dst`  |
-| (In) X1  | u64                            | `Src`  |
-| (In) X2  | u64                            | `Size` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+| Argument | Type                           | Name      |
+| -------- | ------------------------------ | --------- |
+| (In) X0  | void\*                         | `DstAddr` |
+| (In) X1  | void\*                         | `SrcAddr` |
+| (In) X2  | u64                            | `Size`    |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`     |
 
 </div>
 
@@ -247,7 +247,7 @@ originally mapped.
 | Argument | Type                                     | Name       |
 | -------- | ---------------------------------------- | ---------- |
 | (In) X0  | [\#MemoryInfo](#MemoryInfo "wikilink")\* | `MemInfo`  |
-| (In) X2  | u64                                      | `Addr`     |
+| (In) X2  | void\*                                   | `Addr`     |
 | (Out) W0 | [\#Result](#Result "wikilink")           | `Ret`      |
 | (Out) W1 | PageInfo                                 | `PageInfo` |
 
@@ -277,9 +277,9 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
 | Argument | Type                           | Name          |
 | -------- | ------------------------------ | ------------- |
-| (In) X1  | u64                            | `Entry`       |
-| (In) X2  | u64                            | `Arg`         |
-| (In) X3  | u64                            | `StackTop`    |
+| (In) X1  | void(\*)(void\*)               | `Entry`       |
+| (In) X2  | void\*                         | `Arg`         |
+| (In) X3  | void\*                         | `StackTop`    |
 | (In) W4  | u32                            | `Priority`    |
 | (In) W5  | u32                            | `ProcessorId` |
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
@@ -296,10 +296,10 @@ process.
 
 <div style="display: inline-block;">
 
-| Argument   | Type            | Name     |
-| ---------- | --------------- | -------- |
-| (In) W0    | Handle<KThread> | `Handle` |
-| (Out) None |                 |          |
+| Argument   | Type           | Name     |
+| ---------- | -------------- | -------- |
+| (In) W0    | Handle<Thread> | `Handle` |
+| (Out) None |                |          |
 
 </div>
 
@@ -415,7 +415,7 @@ Cpu-id is an integer in the range 0-3.
 | Argument | Type                                   | Name          |
 | -------- | -------------------------------------- | ------------- |
 | (In) W0  | Handle<SharedMemory>                   | `MemHandle`   |
-| (In) X1  | u64                                    | `Addr`        |
+| (In) X1  | void\*                                 | `Addr`        |
 | (In) X2  | u64                                    | `Size`        |
 | (In) W3  | [\#Permission](#Permission "wikilink") | `Permissions` |
 | (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`         |
@@ -436,7 +436,7 @@ closed and all mappings must be unmapped.
 
 | Argument | Type                                   | Name          |
 | -------- | -------------------------------------- | ------------- |
-| (In) X1  | u64                                    | `Addr`        |
+| (In) X1  | void\*                                 | `Addr`        |
 | (In) X2  | u64                                    | `Size`        |
 | (In) W3  | [\#Permission](#Permission "wikilink") | `Permissions` |
 | (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`         |
@@ -477,7 +477,7 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 | Argument | Type                           | Name     |
 | -------- | ------------------------------ | -------- |
-| (In) X0  | u64                            | `CmdPtr` |
+| (In) X0  | void\*                         | `CmdPtr` |
 | (In) X1  | u64                            | `Size`   |
 | (In) W2  | Handle<Session>                | `Handle` |
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
@@ -555,13 +555,13 @@ Does nothing, just returns with registers set to all-zero.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name        |
-| -------- | ------------------------------ | ----------- |
-| (In) X1  | u64                            | `Reg Addr`  |
-| (In) W2  | u64                            | `RW Mask`   |
-| (In) W3  | u64                            | `In Value`  |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`       |
-| (Out) W1 | u64                            | `Out Value` |
+| Argument | Type                           | Name       |
+| -------- | ------------------------------ | ---------- |
+| (In) X1  | u64                            | `RegAddr`  |
+| (In) W2  | u64                            | `RwMask`   |
+| (In) W3  | u64                            | `InValue`  |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
+| (Out) W1 | u64                            | `OutValue` |
 
 </div>
 
@@ -591,13 +591,13 @@ Id1 0xC3000008(ReadWriteRegister).
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name                   |
-| -------- | ------------------------------ | ---------------------- |
-| (In) W1  | u64                            | `Size`                 |
-| (In) W2  | u64                            | `My Permissions`       |
-| (In) W3  | u64                            | `Other Permissions`    |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                  |
-| (Out) W1 | u64                            | `Shared Memory Handle` |
+| Argument | Type                                   | Name         |
+| -------- | -------------------------------------- | ------------ |
+| (In) W1  | u64                                    | `Size`       |
+| (In) W2  | [\#Permission](#Permission "wikilink") | `LocalPerm`  |
+| (In) W3  | [\#Permission](#Permission "wikilink") | `RemotePerm` |
+| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`        |
+| (Out) W1 | Handle<SharedMemory>                   | `MemHandle`  |
 
 </div>
 
@@ -608,13 +608,13 @@ don't care.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name                  |
-| -------- | ------------------------------ | --------------------- |
-| (In) X0  | u64                            | `Transfer Mem Handle` |
-| (In) X1  | u64                            | `Addr`                |
-| (In) X2  | u64                            | `Size`                |
-| (In) W3  | u64                            | `Permissions`         |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                 |
+| Argument | Type                                   | Name          |
+| -------- | -------------------------------------- | ------------- |
+| (In) X0  | Handle<TransferMemory>                 | `MemHandle`   |
+| (In) X1  | void\*                                 | `Addr`        |
+| (In) X2  | u64                                    | `Size`        |
+| (In) W3  | [\#Permission](#Permission "wikilink") | `Permissions` |
+| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`         |
 
 </div>
 
@@ -628,12 +628,12 @@ svcCreateMemoryMirror, otherwise error.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name                  |
-| -------- | ------------------------------ | --------------------- |
-| (In) X0  | u64                            | `Transfer Mem Handle` |
-| (In) X1  | u64                            | `Addr`                |
-| (In) X2  | u64                            | `Size`                |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                 |
+| Argument | Type                           | Name        |
+| -------- | ------------------------------ | ----------- |
+| (In) X0  | Handle<TransferMemory>         | `MemHandle` |
+| (In) X1  | void\*                         | `Addr`      |
+| (In) X2  | u64                            | `Size`      |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`       |
 
 </div>
 
@@ -661,12 +661,12 @@ The inverse operation of
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name               |
-| -------- | ------------------------------ | ------------------ |
-| (In) X1  | u64                            | `Physical Address` |
-| (In) X2  | u64                            | `Size`             |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
-| (Out) X1 | u64                            | `Virtual Address`  |
+| Argument | Type                           | Name       |
+| -------- | ------------------------------ | ---------- |
+| (In) X1  | u64                            | `PhysAddr` |
+| (In) X2  | u64                            | `Size`     |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
+| (Out) X1 | void\*                         | `VirtAddr` |
 
 </div>
 
@@ -676,12 +676,12 @@ The inverse operation of
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name                   |
-| -------- | ------------------------------ | ---------------------- |
-| (In) X1  | u64                            | `Device as Start Addr` |
-| (In) X2  | u64                            | `Device as End Addr`   |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                  |
-| (Out) W1 | u64                            | `Device as Handle`     |
+| Argument | Type                           | Name                 |
+| -------- | ------------------------------ | -------------------- |
+| (In) X1  | u64                            | `StartAddr`          |
+| (In) X2  | u64                            | `EndAddr`            |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                |
+| (Out) W1 | Handle<DeviceAddressSpace>     | `AddressSpaceHandle` |
 
 </div>
 
@@ -695,11 +695,11 @@ normally set to 0xFFFFFFFF.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name               |
-| -------- | ------------------------------ | ------------------ |
-| (In) W0  | u64                            | `Device`           |
-| (In) X1  | u64                            | `Device as Handle` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+| Argument | Type                                   | Name             |
+| -------- | -------------------------------------- | ---------------- |
+| (In) W0  | [\#DeviceName](#DeviceName "wikilink") | `DeviceId`       |
+| (In) X1  | Handle<DeviceAddressSpace>             | `DeviceAsHandle` |
+| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`            |
 
 </div>
 
@@ -710,11 +710,11 @@ normally set to 0xFFFFFFFF.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name               |
-| -------- | ------------------------------ | ------------------ |
-| (In) W0  | u64                            | `Device`           |
-| (In) X1  | u64                            | `Device as Handle` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+| Argument | Type                                   | Name             |
+| -------- | -------------------------------------- | ---------------- |
+| (In) W0  | [\#DeviceName](#DeviceName "wikilink") | `DeviceId`       |
+| (In) X1  | Handle<DeviceAddressSpace>             | `DeviceAsHandle` |
+| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`            |
 
 </div>
 
@@ -725,15 +725,15 @@ normally set to 0xFFFFFFFF.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name               |
-| -------- | ------------------------------ | ------------------ |
-| (In) W0  | u64                            | `Device as Handle` |
-| (In) W1  | u64                            | `Process Handle`   |
-| (In) X2  | u64                            | `Device Map Addr`  |
-| (In) X3  | u64                            | `Device as Size`   |
-| (In) X4  | u64                            | `Device as Addr`   |
-| (In) W5  | u64                            | `Permissions`      |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+| Argument | Type                                   | Name             |
+| -------- | -------------------------------------- | ---------------- |
+| (In) W0  | Handle<DeviceAddressSpace>             | `DeviceAsHandle` |
+| (In) W1  | Handle<Process>                        | `ProcessHandle`  |
+| (In) X2  | void\*                                 | `SrcAddr`        |
+| (In) X3  | u64                                    | `DeviceAsSize`   |
+| (In) X4  | u64                                    | `DeviceAsAddr`   |
+| (In) W5  | [\#Permission](#Permission "wikilink") | `Permissions`    |
+| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`            |
 
 </div>
 
@@ -754,15 +754,15 @@ will be set after mapping.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name               |
-| -------- | ------------------------------ | ------------------ |
-| (In) W0  | u64                            | `Device as Handle` |
-| (In) W1  | u64                            | `Process Handle`   |
-| (In) X2  | u64                            | `Device Map Addr`  |
-| (In) X3  | u64                            | `Device as Size`   |
-| (In) X4  | u64                            | `Device as Addr`   |
-| (In) W5  | u64                            | `Permissions`      |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+| Argument | Type                                   | Name             |
+| -------- | -------------------------------------- | ---------------- |
+| (In) W0  | Handle<DeviceAddressSpace>             | `DeviceAsHandle` |
+| (In) W1  | Handle<Process>                        | `ProcessHandle`  |
+| (In) X2  | void\*                                 | `SrcAddr`        |
+| (In) X3  | u64                                    | `DeviceAsSize`   |
+| (In) X4  | u64                                    | `DeviceAsAddr`   |
+| (In) W5  | [\#Permission](#Permission "wikilink") | `Permissions`    |
+| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`            |
 
 </div>
 
@@ -779,14 +779,14 @@ bit set instead.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name               |
-| -------- | ------------------------------ | ------------------ |
-| (In) W0  | u64                            | `Device as Handle` |
-| (In) W1  | u64                            | `Process Handle`   |
-| (In) X2  | u64                            | `Device Map Addr`  |
-| (In) X3  | u64                            | `Device as Size`   |
-| (In) X4  | u64                            | `Device as Addr`   |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`              |
+| Argument | Type                           | Name             |
+| -------- | ------------------------------ | ---------------- |
+| (In) W0  | Handle<DeviceAddressSpace>     | `DeviceAsHandle` |
+| (In) W1  | Handle<Process>                | `ProcessHandle`  |
+| (In) X2  | void\*                         | `SrcAddr`        |
+| (In) X3  | u64                            | `DeviceAsSize`   |
+| (In) X4  | u64                            | `DeviceAsAddr`   |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
 
 </div>
 
@@ -797,13 +797,13 @@ userspace address.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name             |
-| -------- | ------------------------------ | ---------------- |
-| (In) X0  | u64                            | `Src Addr`       |
-| (In) W1  | u64                            | `Process Handle` |
-| (In) X2  | u64                            | `Dest Addr`      |
-| (In) X3  | u64                            | `Size`           |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+| Argument | Type                           | Name            |
+| -------- | ------------------------------ | --------------- |
+| (In) X0  | u64                            | `SrcAddr`       |
+| (In) W1  | u64                            | `ProcessHandle` |
+| (In) X2  | void\*                         | `DstAddr`       |
+| (In) X3  | u64                            | `Size`          |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
 
 </div>
 
@@ -816,13 +816,13 @@ This allows mapping code and rodata with RW- permission.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name             |
-| -------- | ------------------------------ | ---------------- |
-| (In) W0  | u64                            | `Process Handle` |
-| (In) X1  | u64                            | `Dest Addr`      |
-| (In) X2  | u64                            | `Src Addr`       |
-| (In) X3  | u64                            | `Size`           |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+| Argument | Type                           | Name            |
+| -------- | ------------------------------ | --------------- |
+| (In) W0  | Handle<Process>                | `ProcessHandle` |
+| (In) X1  | void\*                         | `DstAddr`       |
+| (In) X2  | u64                            | `SrcAddr`       |
+| (In) X3  | u64                            | `Size`          |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
 
 </div>
 
@@ -833,13 +833,13 @@ Unmaps what was mapped by
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name            |
-| -------- | ------------------------------ | --------------- |
-| (In) X0  | u64                            | `MemInfoPtr`    |
-| (In) W2  | Handle<Process>                | `ProcessHandle` |
-| (In) X3  | u64                            | `Addr`          |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
-| (Out) W1 | PageInfo                       | `PageInfo`      |
+| Argument | Type                                     | Name            |
+| -------- | ---------------------------------------- | --------------- |
+| (In) X0  | [\#MemoryInfo](#MemoryInfo "wikilink")\* | `MemInfoPtr`    |
+| (In) W2  | Handle<Process>                          | `ProcessHandle` |
+| (In) X3  | u64                                      | `Addr`          |
+| (Out) W0 | [\#Result](#Result "wikilink")           | `Ret`           |
+| (Out) W1 | PageInfo                                 | `PageInfo`      |
 
 </div>
 
@@ -850,13 +850,13 @@ takes a process handle.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name             |
-| -------- | ------------------------------ | ---------------- |
-| (In) W0  | u64                            | `Process Handle` |
-| (In) X1  | u64                            | `Dest Addr`      |
-| (In) X2  | u64                            | `Src Addr`       |
-| (In) X3  | u64                            | `Size`           |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+| Argument | Type                           | Name            |
+| -------- | ------------------------------ | --------------- |
+| (In) W0  | Handle<Process>                | `ProcessHandle` |
+| (In) X1  | u64                            | `DstAddr`       |
+| (In) X2  | u64                            | `SrcAddr`       |
+| (In) X3  | u64                            | `Size`          |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
 
 </div>
 
@@ -867,13 +867,13 @@ executable code in that process. Used when loading NROs.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name             |
-| -------- | ------------------------------ | ---------------- |
-| (In) W0  | u64                            | `Process Handle` |
-| (In) X1  | u64                            | `Dest Addr`      |
-| (In) X2  | u64                            | `Src Addr`       |
-| (In) X3  | u64                            | `Size`           |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+| Argument | Type                           | Name            |
+| -------- | ------------------------------ | --------------- |
+| (In) W0  | Handle<Process>                | `ProcessHandle` |
+| (In) X1  | u64                            | `DstAddr`       |
+| (In) X2  | u64                            | `Src Addr`      |
+| (In) X3  | u64                            | `Size`          |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
 
 </div>
 
@@ -884,13 +884,13 @@ Unmaps what was mapped by
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name                   |
-| -------- | ------------------------------ | ---------------------- |
-| (In) X1  | u64                            | `ProcInfo Pointer`     |
-| (In) X2  | u64                            | `Capabilities Pointer` |
-| (In) X3  | u64                            | `Capibility Num`       |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                  |
-| (Out) W1 | u64                            | `Process Handle`       |
+| Argument | Type                                                   | Name              |
+| -------- | ------------------------------------------------------ | ----------------- |
+| (In) X1  | [\#CreateProcessInfo](#CreateProcessInfo "wikilink")\* | `InfoPtr`         |
+| (In) X2  | u64                                                    | `CapabilitiesPtr` |
+| (In) X3  | u64                                                    | `CapibilitiesNum` |
+| (Out) W0 | [\#Result](#Result "wikilink")                         | `Ret`             |
+| (Out) W1 | Handle<Process>                                        | `ProcessHandle`   |
 
 </div>
 
@@ -901,11 +901,11 @@ input.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                       | Name             |
-| -------- | ------------------------------------------ | ---------------- |
-| (In) W0  | u64                                        | `Process Handle` |
-| (Out) W0 | [\#Result](#Result "wikilink")             | `Ret`            |
-| (Out) W1 | [\#ProcessState](#ProcessState "wikilink") | `Process State`  |
+| Argument | Type                                       | Name            |
+| -------- | ------------------------------------------ | --------------- |
+| (In) W0  | Handle<Process>                            | `ProcessHandle` |
+| (Out) W0 | [\#Result](#Result "wikilink")             | `Ret`           |
+| (Out) W1 | [\#ProcessState](#ProcessState "wikilink") | `State`         |
 
 </div>
 
