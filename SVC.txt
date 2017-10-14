@@ -250,7 +250,7 @@ On success, the heap base-address (which is fixed by kernel, aslr'd) is written 
 |-
 | (In) X1 || u64 || <code>Size</code>
 |-
-| (In) W2 || u64 || <code>Prot</code>
+| (In) W2 || [[#Permission]] || <code>Prot</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -273,9 +273,9 @@ This can be used to move back and forth between ---, r-- and rw-.
 |-
 | (In) X1 || u64 || <code>Size</code>
 |-
-| (In) W2 || u64 || <code>State0</code>
+| (In) W2 || u32 || <code>State0</code>
 |-
-| (In) W3 || u64 || <code>State1</code>
+| (In) W3 || u32 || <code>State1</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -360,13 +360,13 @@ The srcaddr/dstaddr must match what was given when the pages were originally map
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || MemoryInfo*|| <code>Mem Info</code>
+| (In) X0 || [[#MemoryInfo]]* || <code>MemInfo</code>
 |-
 | (In) X2 || u64 || <code>Addr</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || PageInfo || <code>Page Info</code>
+| (Out) W1 || PageInfo || <code>PageInfo</code>
 |}
 </div>
 
@@ -400,11 +400,11 @@ Outputs a [[#MemoryInfo]] struct.
 |-
 | (In) X2 || u64 || <code>Arg</code>
 |-
-| (In) X3 || u64 || <code>Stack Top</code>
+| (In) X3 || u64 || <code>StackTop</code>
 |-
-| (In) W4 || u64 || <code>Priority</code>
+| (In) W4 || u32 || <code>Priority</code>
 |-
-| (In) W5 || u64 || <code>Processor ID</code>
+| (In) W5 || u32 || <code>ProcessorId</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
@@ -423,7 +423,7 @@ Processor_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for process.
 |-
 ! Argument || Type || Name
 |-
-| (In) W0|| u64 || <code>Handle</code>
+| (In) W0 || Handle<KThread> || <code>Handle</code>
 |-
 | (Out) None ||  ||
 |}
@@ -470,7 +470,7 @@ Setting nano=0 means "yield thread".
 |-
 ! Argument || Type || Name
 |-
-| (In) W1|| u64 || <code>Handle</code>
+| (In) W1|| Handle<Thread> || <code>Handle</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
@@ -487,9 +487,9 @@ Setting nano=0 means "yield thread".
 |-
 ! Argument || Type || Name
 |-
-| (In) W0|| u64 || <code>Handle</code>
+| (In) W0|| Handle<Thread> || <code>Handle</code>
 |-
-| (In) W1|| u64 || <code>Priority</code>
+| (In) W1|| u32 || <code>Priority</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |}
@@ -1061,15 +1061,15 @@ Unmaps what was mapped by [[#svcMapProcessMemory]].
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || <code>Meminfo Pointer</code>
+| (In) X0 || u64 || <code>MemInfoPtr</code>
 |-
-| (In) W2 || u64 || <code>Process Handle</code>
+| (In) W2 || Handle<Process> || <code>ProcessHandle</code>
 |-
 | (In) X3 || u64 || <code>Addr</code>
 |-
 | (Out) W0 || [[#Result]] || <code>Ret</code>
 |-
-| (Out) W1 || PageInfo || <code>Page Info</code>
+| (Out) W1 || PageInfo || <code>PageInfo</code>
 |}
 </div>
 

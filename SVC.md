@@ -137,12 +137,12 @@ written to `OutAddr`.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name   |
-| -------- | ------------------------------ | ------ |
-| (In) X0  | u64                            | `Addr` |
-| (In) X1  | u64                            | `Size` |
-| (In) W2  | u64                            | `Prot` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+| Argument | Type                                   | Name   |
+| -------- | -------------------------------------- | ------ |
+| (In) X0  | u64                                    | `Addr` |
+| (In) X1  | u64                                    | `Size` |
+| (In) W2  | [\#Permission](#Permission "wikilink") | `Prot` |
+| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`  |
 
 </div>
 
@@ -161,8 +161,8 @@ This can be used to move back and forth between ---, r-- and rw-.
 | -------- | ------------------------------ | -------- |
 | (In) X0  | u64                            | `Addr`   |
 | (In) X1  | u64                            | `Size`   |
-| (In) W2  | u64                            | `State0` |
-| (In) W3  | u64                            | `State1` |
+| (In) W2  | u32                            | `State0` |
+| (In) W3  | u32                            | `State1` |
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
 
 </div>
@@ -244,12 +244,12 @@ originally mapped.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name        |
-| -------- | ------------------------------ | ----------- |
-| (In) X0  | MemoryInfo\*                   | `Mem Info`  |
-| (In) X2  | u64                            | `Addr`      |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`       |
-| (Out) W1 | PageInfo                       | `Page Info` |
+| Argument | Type                                     | Name       |
+| -------- | ---------------------------------------- | ---------- |
+| (In) X0  | [\#MemoryInfo](#MemoryInfo "wikilink")\* | `MemInfo`  |
+| (In) X2  | u64                                      | `Addr`     |
+| (Out) W0 | [\#Result](#Result "wikilink")           | `Ret`      |
+| (Out) W1 | PageInfo                                 | `PageInfo` |
 
 </div>
 
@@ -275,15 +275,15 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name           |
-| -------- | ------------------------------ | -------------- |
-| (In) X1  | u64                            | `Entry`        |
-| (In) X2  | u64                            | `Arg`          |
-| (In) X3  | u64                            | `Stack Top`    |
-| (In) W4  | u64                            | `Priority`     |
-| (In) W5  | u64                            | `Processor ID` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`          |
-| (Out) W1 | Handle                         | `Handle`       |
+| Argument | Type                           | Name          |
+| -------- | ------------------------------ | ------------- |
+| (In) X1  | u64                            | `Entry`       |
+| (In) X2  | u64                            | `Arg`         |
+| (In) X3  | u64                            | `StackTop`    |
+| (In) W4  | u32                            | `Priority`    |
+| (In) W5  | u32                            | `ProcessorId` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
+| (Out) W1 | Handle                         | `Handle`      |
 
 </div>
 
@@ -296,10 +296,10 @@ process.
 
 <div style="display: inline-block;">
 
-| Argument   | Type | Name     |
-| ---------- | ---- | -------- |
-| (In) W0    | u64  | `Handle` |
-| (Out) None |      |          |
+| Argument   | Type            | Name     |
+| ---------- | --------------- | -------- |
+| (In) W0    | Handle<KThread> | `Handle` |
+| (Out) None |                 |          |
 
 </div>
 
@@ -339,7 +339,7 @@ Setting nano=0 means "yield thread".
 
 | Argument | Type                           | Name       |
 | -------- | ------------------------------ | ---------- |
-| (In) W1  | u64                            | `Handle`   |
+| (In) W1  | Handle<Thread>                 | `Handle`   |
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
 | (Out) W1 | u64                            | `Priority` |
 
@@ -353,8 +353,8 @@ Setting nano=0 means "yield thread".
 
 | Argument | Type                           | Name       |
 | -------- | ------------------------------ | ---------- |
-| (In) W0  | u64                            | `Handle`   |
-| (In) W1  | u64                            | `Priority` |
+| (In) W0  | Handle<Thread>                 | `Handle`   |
+| (In) W1  | u32                            | `Priority` |
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
 
 </div>
@@ -833,13 +833,13 @@ Unmaps what was mapped by
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name              |
-| -------- | ------------------------------ | ----------------- |
-| (In) X0  | u64                            | `Meminfo Pointer` |
-| (In) W2  | u64                            | `Process Handle`  |
-| (In) X3  | u64                            | `Addr`            |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`             |
-| (Out) W1 | PageInfo                       | `Page Info`       |
+| Argument | Type                           | Name            |
+| -------- | ------------------------------ | --------------- |
+| (In) X0  | u64                            | `MemInfoPtr`    |
+| (In) W2  | Handle<Process>                | `ProcessHandle` |
+| (In) X3  | u64                            | `Addr`          |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
+| (Out) W1 | PageInfo                       | `PageInfo`      |
 
 </div>
 
