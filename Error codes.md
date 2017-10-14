@@ -109,6 +109,7 @@ applets.
 | 0xFC01            | 126         | Reserved value                                                                                                                                                                       |
 | 0xFE01            | 127         | Invalid hardware breakpoint                                                                                                                                                          |
 | 0x10001           | 128         | \[Usermode\] Fatal exception                                                                                                                                                         |
+| 0x10201           | 129         | Last thread didn't belong to your process                                                                                                                                            |
 | 0x10601           | 131         | Port max sessions exceeded                                                                                                                                                           |
 | 0x10801           | 132         | Resource limit exceeded                                                                                                                                                              |
 | 0x41001           | 520         | Process not being debugged                                                                                                                                                           |
