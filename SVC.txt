@@ -170,9 +170,9 @@ __NOTOC__
 |-
 | 0x65 || svcGetProcessList || || 
 |-
-| 0x66 || svcGetThreadList || || 
+| 0x66 || svcGetThreadList || X1=pids_out_ptr, W2=max_out, W3=debug_handle_or_zero || W0=result, X1=num_out
 |-
-| 0x67 || svcGetDebugThreadContext || X0=ThreadContext*, X1=debughandle, X2=?, W3=? || W0=result
+| 0x67 || svcGetDebugThreadContext || X0=ThreadContext*, X1=debug_handle, X2=?, W3=? || W0=result
 |-
 | 0x68 || svcSetDebugThreadContext || || 
 |-
