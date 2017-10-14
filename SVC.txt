@@ -112,7 +112,7 @@ __NOTOC__
 |-
 | 0x41 || svcAcceptSession || W1=port_handle || W0=result, W1=session_handle
 |-
-| 0x42 || svcReplyAndReceiveLight ||  || 
+| 0x42 || svcReplyAndReceiveLight || W0=light_session_handle || W0=result, W1,W2,W3,W4,W5,W6,W7=out
 |-
 | 0x43 || svcReplyAndReceive || X1=ptr_handles, W2=num_handles, X3=replytarget_handle(0=none), X4=timeout || W0=result, W1=handle_idx
 |-
