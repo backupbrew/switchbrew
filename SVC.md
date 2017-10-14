@@ -118,7 +118,7 @@
 
 | Argument | Type                           | Name      |
 | -------- | ------------------------------ | --------- |
-| (In) X0  | u64                            | `Size`    |
+| (In) W1  | u64                            | `Size`    |
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`     |
 | (Out) X1 | u64                            | `OutAddr` |
 
@@ -143,6 +143,17 @@ allowed either (bit1).
 
 This can be used to move back and forth between ---, r-- and rw-.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) X0  | u64                            | `Addr` |
+| (In) X1  | u64                            | `Size` |
+| (In) W2  | u64                            | `Prot` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+
+</div>
+
 ## svcSetMemoryAttribute
 
 **Description:** Change attribute of page-aligned memory region.
@@ -151,8 +162,19 @@ This is used to turn on/off caching for a given memory area. Useful when
 talking to devices such as the GPU.
 
 What happens "under the hood" is the "Memory Attribute Indirection
-Register" index is changed from 2 to 3 in the MMU
-descriptor.
+Register" index is changed from 2 to 3 in the MMU descriptor.
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name     |
+| -------- | ------------------------------ | -------- |
+| (In) X0  | u64                            | `Addr`   |
+| (In) X1  | u64                            | `Size`   |
+| (In) W2  | u64                            | `State0` |
+| (In) W3  | u64                            | `State1` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
+
+</div>
 
 | State0 | State1 | Action                                                          |
 | ------ | ------ | --------------------------------------------------------------- |
@@ -185,6 +207,17 @@ for 32-bit ones.
 \[2.0.0+\] Support for the `0x482907` mappings outside the "MapRegion"
 were removed.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) X0  | u64                            | `Dst`  |
+| (In) X1  | u64                            | `Src`  |
+| (In) X2  | u64                            | `Size` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+
+</div>
+
 ## svcUnmapMemory
 
 **Description:** Unmaps a region that was previously mapped with
@@ -196,6 +229,17 @@ entire range "in one go".
 The srcaddr/dstaddr must match what was given when the pages were
 originally mapped.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) X0  | u64                            | `Dst`  |
+| (In) X1  | u64                            | `Src`  |
+| (In) X2  | u64                            | `Size` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+
+</div>
+
 ## svcQueryMemory
 
 **Description:** Query information about an address. Will always fetch
@@ -203,9 +247,29 @@ the lowest page-aligned mapping that contains the provided address.
 
 Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name        |
+| -------- | ------------------------------ | ----------- |
+| (In) X0  | MemoryInfo\*                   | `Mem Info`  |
+| (In) X2  | u64                            | `Addr`      |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`       |
+| (Out) W1 | PageInfo                       | `Page Info` |
+
+</div>
+
 ## svcExitProcess
 
 **Description:** Exits the current process.
+
+<div style="display: inline-block;">
+
+| Argument   | Type | Name |
+| ---------- | ---- | ---- |
+| (In) None  |      |      |
+| (Out) None |      |      |
+
+</div>
 
 ## svcCreateThread
 
@@ -214,13 +278,45 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 Processor\_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for
 process.
 
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name           |
+| -------- | ------------------------------ | -------------- |
+| (In) X1  | u64                            | `Entry`        |
+| (In) X2  | u64                            | `Arg`          |
+| (In) X3  | u64                            | `Stack Top`    |
+| (In) W4  | u64                            | `Priority`     |
+| (In) W5  | u64                            | `Processor ID` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`          |
+| (Out) W1 | Handle                         | `Handle`       |
+
+</div>
+
 ## svcStartThread
 
 **Description:** Starts the thread for the provided handle.
 
+<div style="display: inline-block;">
+
+| Argument   | Type | Name     |
+| ---------- | ---- | -------- |
+| (In) W0    | u64  | `Handle` |
+| (Out) None |      |          |
+
+</div>
+
 ## svcExitThread
 
 **Description:** Exits the current thread.
+
+<div style="display: inline-block;">
+
+| Argument   | Type | Name |
+| ---------- | ---- | ---- |
+| (In) None  |      |      |
+| (Out) None |      |      |
+
+</div>
 
 ## svcSleepThread
 
@@ -251,6 +347,15 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 **Description:** Get which cpu is executing the current thread.
 
 Cpu-id is an integer in the range 0-3.
+
+<div style="display: inline-block;">
+
+| Argument    | Type | Name     |
+| ----------- | ---- | -------- |
+| (In) None   |      |          |
+| (Out) W0/X0 | u64  | `CPU ID` |
+
+</div>
 
 ## svcMapSharedMemory
 
