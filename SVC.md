@@ -136,13 +136,6 @@ written to `OutAddr`.
 
 ## svcSetMemoryPermission
 
-**Description:** Change permission of page-aligned memory region.
-
-Bit2 of permission (exec) is not allowed. Setting write-only is not
-allowed either (bit1).
-
-This can be used to move back and forth between ---, r-- and rw-.
-
 <div style="display: inline-block;">
 
 | Argument | Type                           | Name   |
@@ -154,15 +147,14 @@ This can be used to move back and forth between ---, r-- and rw-.
 
 </div>
 
+**Description:** Change permission of page-aligned memory region.
+
+Bit2 of permission (exec) is not allowed. Setting write-only is not
+allowed either (bit1).
+
+This can be used to move back and forth between ---, r-- and rw-.
+
 ## svcSetMemoryAttribute
-
-**Description:** Change attribute of page-aligned memory region.
-
-This is used to turn on/off caching for a given memory area. Useful when
-talking to devices such as the GPU.
-
-What happens "under the hood" is the "Memory Attribute Indirection
-Register" index is changed from 2 to 3 in the MMU descriptor.
 
 <div style="display: inline-block;">
 
@@ -176,6 +168,15 @@ Register" index is changed from 2 to 3 in the MMU descriptor.
 
 </div>
 
+**Description:** Change attribute of page-aligned memory region.
+
+This is used to turn on/off caching for a given memory area. Useful when
+talking to devices such as the GPU.
+
+What happens "under the hood" is the "Memory Attribute Indirection
+Register" index is changed from 2 to 3 in the MMU
+descriptor.
+
 | State0 | State1 | Action                                                          |
 | ------ | ------ | --------------------------------------------------------------- |
 | 0      | 0      | Clear bit3 in [\#MemoryAttribute](#MemoryAttribute "wikilink"). |
@@ -183,6 +184,17 @@ Register" index is changed from 2 to 3 in the MMU descriptor.
 | 8      | 8      | Set bit3 in [\#MemoryAttribute](#MemoryAttribute "wikilink").   |
 
 ## svcMapMemory
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) X0  | u64                            | `Dst`  |
+| (In) X1  | u64                            | `Src`  |
+| (In) X2  | u64                            | `Size` |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+
+</div>
 
 **Description:** Maps a memory range into a different range.
 
@@ -207,6 +219,8 @@ for 32-bit ones.
 \[2.0.0+\] Support for the `0x482907` mappings outside the "MapRegion"
 were removed.
 
+## svcUnmapMemory
+
 <div style="display: inline-block;">
 
 | Argument | Type                           | Name   |
@@ -217,8 +231,6 @@ were removed.
 | (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
 
 </div>
-
-## svcUnmapMemory
 
 **Description:** Unmaps a region that was previously mapped with
 [\#svcMapMemory](#svcMapMemory "wikilink").
@@ -229,23 +241,7 @@ entire range "in one go".
 The srcaddr/dstaddr must match what was given when the pages were
 originally mapped.
 
-<div style="display: inline-block;">
-
-| Argument | Type                           | Name   |
-| -------- | ------------------------------ | ------ |
-| (In) X0  | u64                            | `Dst`  |
-| (In) X1  | u64                            | `Src`  |
-| (In) X2  | u64                            | `Size` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
-
-</div>
-
 ## svcQueryMemory
-
-**Description:** Query information about an address. Will always fetch
-the lowest page-aligned mapping that contains the provided address.
-
-Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
 <div style="display: inline-block;">
 
@@ -258,9 +254,12 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
 </div>
 
-## svcExitProcess
+**Description:** Query information about an address. Will always fetch
+the lowest page-aligned mapping that contains the provided address.
 
-**Description:** Exits the current process.
+Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
+
+## svcExitProcess
 
 <div style="display: inline-block;">
 
@@ -271,12 +270,9 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
 </div>
 
+**Description:** Exits the current process.
+
 ## svcCreateThread
-
-**Description:** Create a thread in the current process.
-
-Processor\_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for
-process.
 
 <div style="display: inline-block;">
 
@@ -292,9 +288,12 @@ process.
 
 </div>
 
-## svcStartThread
+**Description:** Create a thread in the current process.
 
-**Description:** Starts the thread for the provided handle.
+Processor\_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for
+process.
+
+## svcStartThread
 
 <div style="display: inline-block;">
 
@@ -305,9 +304,9 @@ process.
 
 </div>
 
-## svcExitThread
+**Description:** Starts the thread for the provided handle.
 
-**Description:** Exits the current thread.
+## svcExitThread
 
 <div style="display: inline-block;">
 
@@ -318,11 +317,9 @@ process.
 
 </div>
 
+**Description:** Exits the current thread.
+
 ## svcSleepThread
-
-**Description:** Sleep for a specified amount of time, or yield thread.
-
-Setting nano=0 means "yield thread".
 
 <div style="display: inline-block;">
 
@@ -333,9 +330,11 @@ Setting nano=0 means "yield thread".
 
 </div>
 
-## svcGetThreadPriority
+**Description:** Sleep for a specified amount of time, or yield thread.
 
-**Description:** Get priority of provided thread handle.
+Setting nano=0 means "yield thread".
+
+## svcGetThreadPriority
 
 <div style="display: inline-block;">
 
@@ -347,11 +346,9 @@ Setting nano=0 means "yield thread".
 
 </div>
 
+**Description:** Get priority of provided thread handle.
+
 ## svcSetThreadPriority
-
-**Description:** Set priority of provided thread handle.
-
-Priority is a number 0-0x3F. Lower value means higher priority.
 
 <div style="display: inline-block;">
 
@@ -363,9 +360,11 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 </div>
 
-## svcGetThreadCoreMask
+**Description:** Set priority of provided thread handle.
 
-**Description:** Get affinity mask of provided thread handle.
+Priority is a number 0-0x3F. Lower value means higher priority.
+
+## svcGetThreadCoreMask
 
 <div style="display: inline-block;">
 
@@ -378,9 +377,9 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 </div>
 
-## svcSetThreadCoreMask
+**Description:** Get affinity mask of provided thread handle.
 
-**Description:** Set affinity mask of provided thread handle.
+## svcSetThreadCoreMask
 
 <div style="display: inline-block;">
 
@@ -393,11 +392,9 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 </div>
 
+**Description:** Set affinity mask of provided thread handle.
+
 ## svcGetCurrentProcessorNumber
-
-**Description:** Get which cpu is executing the current thread.
-
-Cpu-id is an integer in the range 0-3.
 
 <div style="display: inline-block;">
 
@@ -408,15 +405,11 @@ Cpu-id is an integer in the range 0-3.
 
 </div>
 
+**Description:** Get which cpu is executing the current thread.
+
+Cpu-id is an integer in the range 0-3.
+
 ## svcMapSharedMemory
-
-Maps the block supplied by the handle. The required permissions are
-different for the process that created the handle and all other
-processes.
-
-Increases reference count for the KSharedMemory object. Thus in order to
-release the memory associated with the object, all handles to it must be
-closed and all mappings must be unmapped.
 
 <div style="display: inline-block;">
 
@@ -430,16 +423,15 @@ closed and all mappings must be unmapped.
 
 </div>
 
+Maps the block supplied by the handle. The required permissions are
+different for the process that created the handle and all other
+processes.
+
+Increases reference count for the KSharedMemory object. Thus in order to
+release the memory associated with the object, all handles to it must be
+closed and all mappings must be unmapped.
+
 ## svcCreateTransferMemory
-
-This one reprotects the src block with perms you give it. It also sets
-bit0 into [\#MemoryAttribute](#MemoryAttribute "wikilink").
-
-Executable bit perm not allowed.
-
-Closing all handles automatically causes the bit0 in
-[\#MemoryAttribute](#MemoryAttribute "wikilink") to clear, and the
-permission to reset.
 
 <div style="display: inline-block;">
 
@@ -453,11 +445,16 @@ permission to reset.
 
 </div>
 
+This one reprotects the src block with perms you give it. It also sets
+bit0 into [\#MemoryAttribute](#MemoryAttribute "wikilink").
+
+Executable bit perm not allowed.
+
+Closing all handles automatically causes the bit0 in
+[\#MemoryAttribute](#MemoryAttribute "wikilink") to clear, and the
+permission to reset.
+
 ## svcWaitSynchronization
-
-Works with num\_handles \<= 0x40, error on num\_handles == 0.
-
-Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 <div style="display: inline-block;">
 
@@ -471,9 +468,11 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 </div>
 
-## svcSendSyncRequestWithUserBuffer
+Works with num\_handles \<= 0x40, error on num\_handles == 0.
 
-Size must be 0x1000-aligned.
+Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
+
+## svcSendSyncRequestWithUserBuffer
 
 <div style="display: inline-block;">
 
@@ -486,11 +485,9 @@ Size must be 0x1000-aligned.
 
 </div>
 
-## svcBreak
+Size must be 0x1000-aligned.
 
-When used on retail where inx0 bit31 is clear, the system will throw a
-[fatal-error](Error%20codes.md "wikilink"). Otherwise when bit31 is set,
-it will return 0.
+## svcBreak
 
 <div style="display: inline-block;">
 
@@ -502,6 +499,11 @@ it will return 0.
 | (Out) ?  | ?    | `?`    |
 
 </div>
+
+When used on retail where inx0 bit31 is clear, the system will throw a
+[fatal-error](Error%20codes.md "wikilink"). Otherwise when bit31 is set,
+it will return
+0.
 
 ## svcGetInfo
 
