@@ -184,7 +184,7 @@ applets.
 | 0x80C16           | 1030        | Already initialized                                                                                                                                                                  |
 | 0x80E16           | 1031        | Not initialized                                                                                                                                                                      |
 | 0x41A             | 2           | Argument is invalid                                                                                                                                                                  |
-| 0xCA1A            | 100         | Incorrect buffer size                                                                                                                                                                |
+| 0xC81A            | 100         | Incorrect buffer size                                                                                                                                                                |
 | 0xCA1A            | 101         | Unknown TZ error                                                                                                                                                                     |
 | 0xD01A            | 104         | All AES engines busy                                                                                                                                                                 |
 | 0xD21A            | 105         | Invalid AES engine-id                                                                                                                                                                |

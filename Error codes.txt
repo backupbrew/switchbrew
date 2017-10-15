@@ -333,7 +333,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x41A || 2 || Argument is invalid
 |-
-| 0xCA1A || 100 || Incorrect buffer size
+| 0xC81A || 100 || Incorrect buffer size
 |-
 | 0xCA1A || 101 || Unknown TZ error
 |-
