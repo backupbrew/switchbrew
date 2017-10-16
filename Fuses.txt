@@ -127,6 +127,30 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | [[#FUSE_FA|FUSE_FA]]
 | 0x7000F948
 |-
+| [[#FUSE_PUBLIC_KEY|FUSE_PUBLIC_KEY0]]
+| 0x7000F964
+|-
+| [[#FUSE_PUBLIC_KEY|FUSE_PUBLIC_KEY1]]
+| 0x7000F968
+|-
+| [[#FUSE_PUBLIC_KEY|FUSE_PUBLIC_KEY2]]
+| 0x7000F96C
+|-
+| [[#FUSE_PUBLIC_KEY|FUSE_PUBLIC_KEY3]]
+| 0x7000F970
+|-
+| [[#FUSE_PUBLIC_KEY|FUSE_PUBLIC_KEY4]]
+| 0x7000F974
+|-
+| [[#FUSE_PUBLIC_KEY|FUSE_PUBLIC_KEY5]]
+| 0x7000F978
+|-
+| [[#FUSE_PUBLIC_KEY|FUSE_PUBLIC_KEY6]]
+| 0x7000F97C
+|-
+| [[#FUSE_PUBLIC_KEY|FUSE_PUBLIC_KEY7]]
+| 0x7000F980
+|-
 | FUSE_TSENSOR_1
 | 0x7000F984
 |-
@@ -391,6 +415,10 @@ On debug units it can be zero, which tells the bootloader to choose from two deb
 ==== FUSE_PRIVATE_KEY ====
 This stores the 160-bit private key (128 bit SBK + 32-bit device key).
 Reads to these registers after the SBK is locked out produce all-FF output.
+
+==== FUSE_PUBLIC_KEY ====
+This stores the SHA256 hash of the 2048-bit RSA key expected at BCT+0x210.
+
 
 == eFuses ==
 The actual hardware fuses can be programmed through the fuse driver after enabling fuse programming.

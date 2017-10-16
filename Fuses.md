@@ -86,6 +86,14 @@ driver registers.
 | FUSE\_SOC\_SPEEDO\_2                                   | 0x7000F93C |
 | FUSE\_SOC\_IDDQ                                        | 0x7000F940 |
 | [FUSE\_FA](#FUSE_FA "wikilink")                        | 0x7000F948 |
+| [FUSE\_PUBLIC\_KEY0](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F964 |
+| [FUSE\_PUBLIC\_KEY1](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F968 |
+| [FUSE\_PUBLIC\_KEY2](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F96C |
+| [FUSE\_PUBLIC\_KEY3](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F970 |
+| [FUSE\_PUBLIC\_KEY4](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F974 |
+| [FUSE\_PUBLIC\_KEY5](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F978 |
+| [FUSE\_PUBLIC\_KEY6](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F97C |
+| [FUSE\_PUBLIC\_KEY7](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F980 |
 | FUSE\_TSENSOR\_1                                       | 0x7000F984 |
 | FUSE\_TSENSOR\_2                                       | 0x7000F988 |
 | FUSE\_CP\_REV                                          | 0x7000F990 |
@@ -208,6 +216,11 @@ one matches the retail master key seed).
 This stores the 160-bit private key (128 bit SBK + 32-bit device key).
 Reads to these registers after the SBK is locked out produce all-FF
 output.
+
+#### FUSE\_PUBLIC\_KEY
+
+This stores the SHA256 hash of the 2048-bit RSA key expected at
+BCT+0x210.
 
 ## eFuses
 
