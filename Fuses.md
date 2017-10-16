@@ -91,6 +91,11 @@ driver registers.
 | FUSE\_CP\_REV                                          | 0x7000F990 |
 | FUSE\_TSENSOR\_0                                       | 0x7000F998 |
 | FUSE\_FIRST\_BOOTROM\_PATCH\_SIZE\_REG                 | 0x7000F99C |
+| [FUSE\_PRIVATE\_KEY0](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9A4 |
+| [FUSE\_PRIVATE\_KEY1](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9A8 |
+| [FUSE\_PRIVATE\_KEY2](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9AC |
+| [FUSE\_PRIVATE\_KEY3](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B0 |
+| [FUSE\_PRIVATE\_KEY4](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B4 |
 | FUSE\_VP8\_ENABLE                                      | 0x7000F9C4 |
 | FUSE\_RESERVED\_ODM0                                   | 0x7000F9C8 |
 | FUSE\_RESERVED\_ODM1                                   | 0x7000F9CC |
@@ -197,6 +202,12 @@ On debug units it can be zero, which tells the bootloader to choose from
 two debug master key seeds. If set to non-zero on a debug unit, it tells
 the bootloader to choose from two retail master key seeds (only the last
 one matches the retail master key seed).
+
+#### FUSE\_PRIVATE\_KEY
+
+This stores the 160-bit private key (128 bit SBK + 32-bit device key).
+Reads to these registers after the SBK is locked out produce all-FF
+output.
 
 ## eFuses
 

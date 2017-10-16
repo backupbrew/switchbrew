@@ -142,6 +142,21 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_FIRST_BOOTROM_PATCH_SIZE_REG
 | 0x7000F99C
 |-
+| [[#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY0]]
+| 0x7000F9A4
+|-
+| [[#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY1]]
+| 0x7000F9A8
+|-
+| [[#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY2]]
+| 0x7000F9AC
+|-
+| [[#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY3]]
+| 0x7000F9B0
+|-
+| [[#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY4]]
+| 0x7000F9B4
+|-
 | FUSE_VP8_ENABLE
 | 0x7000F9C4
 |-
@@ -372,6 +387,10 @@ This register returns the value programmed into index 0x3C of the fuse array.
 ==== FUSE_SPARE_BIT_5 ====
 Must be non-zero on retail units, otherwise the first bootloader panics.
 On debug units it can be zero, which tells the bootloader to choose from two debug master key seeds. If set to non-zero on a debug unit, it tells the bootloader to choose from two retail master key seeds (only the last one matches the retail master key seed).
+
+==== FUSE_PRIVATE_KEY ====
+This stores the 160-bit private key (128 bit SBK + 32-bit device key).
+Reads to these registers after the SBK is locked out produce all-FF output.
 
 == eFuses ==
 The actual hardware fuses can be programmed through the fuse driver after enabling fuse programming.
