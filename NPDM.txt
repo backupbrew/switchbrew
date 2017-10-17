@@ -373,6 +373,8 @@ The physaddr range 0x80000000-0x1000000000 is not allowed to be mapped as Normal
 | 2.0.0 || 6.1.0 || 3.0.0
 |-
 | 3.0.0 || 7.4.0 || 3.0.0
+|-
+| 3.0.2 || 7.4.0 || 3.0.0
 |}
 
 Bit31-19: Major version
