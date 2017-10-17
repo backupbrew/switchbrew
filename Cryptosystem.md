@@ -5,11 +5,16 @@ The bootrom initializes two keyslots in the hardware engine:
   - the SBK (Secure Boot Key) in keyslot 14
   - the SSK (Secure Storage Key) in keyslot 15.
 
-Reads from both of these keyslots are disabled by the bootROM. These
-keys is stored in fuses, and can no longer be accessed after bootrom.
+Reads from both of these keyslots are disabled by the bootROM. The SBK
+is stored in
+[FUSE\_PRIVATE\_KEY](Fuses#FUSE%20PRIVATE%20KEY.md##FUSE_PRIVATE_KEY "wikilink"),
+which are locked to read out only FFs after the bootrom finishes.
 
-SBK should be shared amongst all consoles, and SSK console-unique. But
-we don't know this is the case.
+SBK should be shared amongst all consoles, but we don't know this is the
+case.
+
+The SSK is derived on boot via the SBK, the 32-bit console-unique
+"Device Key", and hardware information stored in fuses.
 
 ## Falcon coprocessor
 
