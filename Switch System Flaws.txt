@@ -94,6 +94,16 @@ In 3.0.0, this was fixed by moving the security engine initialization earlier in
 | 17 October
 | plutoo
 |-
+| Bad irq_id check in CreateInterruptEvent
+| CreateInterruptEvent syscall is designed to work only for irq_id >= 32. All irq_ids < 32 are "per-core" and reserved for kernel use (watchdog/scheduling/core communications).
+On 1.0.0 you could supply irq_id < 32 and it would write outside the SharedIrqs table.
+| You can register irq's in the Core3Irqs table, and thus register per-core irqs for core3, that are normally reserved for kernel. Useless.
+| 1.0.0
+| 1.0.0
+| ~October
+| 17 October
+| plutoo
+|-
 |}
 
 === FIRM-package System Modules ===
