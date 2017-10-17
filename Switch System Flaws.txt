@@ -85,14 +85,14 @@ In 3.0.0, this was fixed by moving the security engine initialization earlier in
 !  Public disclosure timeframe
 !  Discovered by
 |-
-|  No public Kernel exploits 
-|
-|
-|
-|
-|
-|
-|
+| GetLastThreadInfo UAF
+| GetLastThreadInfo syscall gets last-scheduled-KThread pointer from KScheduler object. This pointer is not reference counted, and can be pointing to a freed KThread.
+| Nothing. There is a theoretical race that might leak 
+| Unfixed
+| 
+| 15 October
+| 17 October
+| plutoo
 |-
 |}
 
