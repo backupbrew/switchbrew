@@ -51,7 +51,7 @@ follows:
 `     `  
 `     encryptWithSBK(keyBuffer); // keyBuffer = AES-ECB(SBK, XOR(AES-ECB(SBK, deviceKey || {...}), HARDWARE_INFO_BUFFER))`  
 `     `  
-`     setKeyslot(KEYSLOT_SSK, keyBuffer); SSK = keyBuffer.`  
+`     setKeyslot(KEYSLOT_SSK, keyBuffer); // SSK = keyBuffer.`  
 ` }`  
 
 ## Falcon coprocessor
