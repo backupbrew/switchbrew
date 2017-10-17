@@ -11,6 +11,42 @@ SBK should be shared amongst all consoles, but we don't know this is the case.
 
 The SSK is derived on boot via the SBK, the 32-bit console-unique "Device Key", and hardware information stored in fuses.
 
+Pseudocode for the derivation is as follows:
+  void generateSSK() {
+      char keyBuffer[0x10]; // Used to store keydata
+      uint hwInfoBuffer[4]; // Used to store info about hardware from fuses
+      uint deviceKey = getDeviceKey(); // Reads 32-bit device key from FUSE_PRIVATE_KEY4.
+      for (int i = 0; i < 4; i++) { // Keybuffer = deviceKey || deviceKey || deviceKey || deviceKey
+          ((uint *)keyBuffer)[i] = deviceKey;
+      }
+      
+      encryptWithSBK(keyBuffer); // keyBuffer = AES-ECB(SBK, deviceKey || {...})
+      
+      // Set up Hardware info buffer
+      uint vendor_code = *((uint *)0x7000FA00) & 0x0000000F; // FUSE_VENDOR_CODE
+      uint fab_code    = *((uint *)0x7000FA04) & 0x0000000F; // FUSE_FAB_CODE
+      uint lot_code_0  = *((uint *)0x7000FA08) & 0xFFFFFFFF; // FUSE_LOT_CODE_0
+      uint lot_code_1  = *((uint *)0x7000FA0C) & 0x0FFFFFFF; // FUSE_LOT_CODE_1
+      uint wafer_id    = *((uint *)0x7000FA10) & 0x0000003F; // FUSE_WAFER_ID
+      uint x_coord     = *((uint *)0x7000FA14) & 0x000001FF; // FUSE_X_COORDINATE
+      uint y_coord     = *((uint *)0x7000FA18) & 0x000001FF; // FUSE_Y_COORDINATE
+      uint unk_hw_fuse = *((uint *)0x7000FA20) & 0x0000003F; // Unknown cached fuse.
+      
+      // HARDWARE_INFO_BUFFER = unk_hw_fuse || Y_COORD || X_COORD || WAFER_ID || LOT_CODE || FAB_CODE || VENDOR_ID
+      hwInfoBuffer[0] = (lot_code_1 << 30) | (wafer_id << 24) | (x_coord << 15) | (y_coord << 6) | unk_hw_fuse;
+      hwInfoBuffer[1] = (lot_code_0 << 26) | (lot_code_1 >> 2);
+      hwInfoBuffer[2] = (fab_code << 26) | (lot_code_0 >> 6);
+      hwInfoBuffer[3] = vendor_code;
+      
+      for (int i = 0; i < 0x10; i++) { // keyBuffer = XOR(AES-ECB(SBK, deviceKey || {...}), HARDWARE_INFO_BUFFER)
+          keyBuffer[i] ^= ((char *)hwInfoBuffer)[i];
+      }
+      
+      encryptWithSBK(keyBuffer); // keyBuffer = AES-ECB(SBK, XOR(AES-ECB(SBK, deviceKey || {...}), HARDWARE_INFO_BUFFER))
+      
+      setKeyslot(KEYSLOT_SSK, keyBuffer); SSK = keyBuffer.
+  }
+ 
 == Falcon coprocessor ==
 The falcon processor (TSEC) stores a special console-unique key (that will be referred to as the "tsec key").
 
