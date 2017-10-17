@@ -31,7 +31,7 @@ follows:
 `     `  
 `     // Set up Hardware info buffer`  
 `     uint vendor_code = *((uint *)0x7000FA00) & 0x0000000F; // FUSE_VENDOR_CODE`  
-`     uint fab_code    = *((uint *)0x7000FA04) & 0x0000000F; // FUSE_FAB_CODE`  
+`     uint fab_code    = *((uint *)0x7000FA04) & 0x0000003F; // FUSE_FAB_CODE`  
 `     uint lot_code_0  = *((uint *)0x7000FA08) & 0xFFFFFFFF; // FUSE_LOT_CODE_0`  
 `     uint lot_code_1  = *((uint *)0x7000FA0C) & 0x0FFFFFFF; // FUSE_LOT_CODE_1`  
 `     uint wafer_id    = *((uint *)0x7000FA10) & 0x0000003F; // FUSE_WAFER_ID`  
