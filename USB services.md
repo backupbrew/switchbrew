@@ -380,6 +380,9 @@ command.
 When sending data where size is larger than wMaxPacketSize, it will
 automatically send multiple USB packets where last packet size =
 {remaining size}. Every {wMaxPacketSize}-bytes is a different packet.
+This only occurs in some cases. When **size** is ~0x1000000(exact size
+unknown), Switch-side silently hangs, while host-side will timeout(no
+traffic on USB bus indicating failure).
 
 For receiving data, if size is less than {actual received USB packet
 size} the rest of the packet will be discarded. Later PostBufferAsync
