@@ -163,9 +163,9 @@ This is not useful since the string loaded from this array is only involved with
 | Unchecked domain ID in common IPC code
 | Prior to [[2.0.0]], object IDs in [[IPC_Marshalling#Domain_message|domain messages]] are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.
 |
-| [[2.0.0]]
-| 
-|
-|
-|
+| 2.0.0
+| 2.0.0
+| ~July 2017
+| 20 July 2017‎
+| hthh
 |}
