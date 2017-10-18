@@ -233,21 +233,22 @@ start of the fuse array and each element is a 4 byte word. A single fuse
 write operation always writes the same word at both fuse\_array + 0
 (PRIMARY\_ALIAS) and fuse\_array + 1 (REDUNDANT\_ALIAS).
 
-| Name                                      | Index | Bits |
-| ----------------------------------------- | ----- | ---- |
-| jtag\_disable                             | 0x00  | 1    |
-| odm\_production\_mode                     | 0x00  | 1    |
-| odm\_lock                                 | 0x00  | 4    |
-| public\_key                               | 0x0C  | 256  |
-| secure\_boot\_key                         | 0x22  | 128  |
-| device\_key                               | 0x2A  | 32   |
-| sec\_boot\_dev\_cfg                       | 0x2C  | 16   |
-| sec\_boot\_dev\_sel                       | 0x2C  | 3    |
-| sw\_reserved                              | 0x2E  | 12   |
-| ignore\_dev\_sel\_straps                  | 0x2E  | 1    |
-| [odm\_reserved](#odm_reserved "wikilink") | 0x2E  | 256  |
-| pkc\_disable                              | 0x52  | 1    |
-|                                           |       |      |
+| Name                                          | Index | Bits |
+| --------------------------------------------- | ----- | ---- |
+| jtag\_disable                                 | 0x00  | 1    |
+| odm\_production\_mode                         | 0x00  | 1    |
+| odm\_lock                                     | 0x00  | 4    |
+| public\_key                                   | 0x0C  | 256  |
+| secure\_boot\_key                             | 0x22  | 128  |
+| device\_key                                   | 0x2A  | 32   |
+| sec\_boot\_dev\_cfg                           | 0x2C  | 16   |
+| sec\_boot\_dev\_sel                           | 0x2C  | 3    |
+| sw\_reserved                                  | 0x2E  | 12   |
+| ignore\_dev\_sel\_straps                      | 0x2E  | 1    |
+| [odm\_reserved](#odm_reserved "wikilink")     | 0x2E  | 256  |
+| pkc\_disable                                  | 0x52  | 1    |
+| [bootrom\_ipatch](#bootrom_ipatch "wikilink") | 0x72  | 624  |
+|                                               |       |      |
 
 ### odm\_reserved
 
@@ -256,6 +257,34 @@ The first bootloader only burns fuses in this region. Both fuse indexes
 anti-downgrade control. These fuses will have their values cached into
 [FUSE\_RESERVED\_ODM6](#FUSE_RESERVED_ODM6 "wikilink") and
 [FUSE\_RESERVED\_ODM7](#FUSE_RESERVED_ODM7 "wikilink").
+
+### bootrom\_ipatch
+
+Tegra210 based hardware such as the Switch provides support for bootrom
+patches. The patch data is burned to the hardware fuse array using a
+specific format (see [shuffle2's ipatch
+decoder](https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af))
+and is executed by the bootrom, replacing it's original code.
+
+The following represents the patch data dumped from a 2.0.0 Switch
+console:
+
+`Patch address       Patch data `  
+`0x001016AE          0xDF00    // svc #0x00 (offset 0x48)`  
+`0x00103040          0xDF22    // svc #0x22 (offset 0x8c)`  
+`0x00106F2E          0xDF26    // svc #0x26 (offset 0x94)`  
+`0x0010FB3C          0x2000    // movs r0, #0x00`  
+`0x00100856          0xDF2C    // svc #0x2c (offset 0xa0)`  
+`0x00106F54          0xDF42    // svc #0x42 (offset 0xcc)`  
+`0x001012E4          0xDF4B    // svc #0x4b (offset 0xde)`  
+`0x00104526          0xDF54    // svc #0x54 (offset 0xf0)`  
+`0x001043F4          0xDF5D    // svc #0x5d (offset 0x102)`  
+`0x00117744          0xAC57    // data`  
+`0x00117758          0x3D19    // data`  
+`0x00103D2A          0x2001    // movs r0, #0x01`
+
+The last 4 patches are exclusive to the Switch, while the remaining ones
+are often included in most Tegra210 based devices.
 
 ## Anti-downgrade
 
