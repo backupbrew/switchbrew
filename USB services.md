@@ -450,15 +450,15 @@ USB-sysmodule symbols for this refer to "Cradle", which is the
 
 ## Session
 
-| Cmd | Name | Notes |
-| --- | ---- | ----- |
-| 0   |      |       |
-| 1   |      |       |
-| 2   |      |       |
-| 3   |      |       |
-| 4   |      |       |
-| 5   |      |       |
-| 6   |      |       |
+| Cmd | Name | Notes                                                                                |
+| --- | ---- | ------------------------------------------------------------------------------------ |
+| 0   |      | Takes two input u32s with the second u32 immediately after the first one. No output. |
+| 1   |      | Takes an input u32. Returns an output u32.                                           |
+| 2   |      | No input/output.                                                                     |
+| 3   |      | No input. Returns an output u16.                                                     |
+| 4   |      | No input. Returns an output u16.                                                     |
+| 5   |      | No input. Returns an output u16.                                                     |
+| 6   |      | No input. Returns an output u16.                                                     |
 
 # usb:pm
 
