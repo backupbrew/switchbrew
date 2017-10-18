@@ -444,6 +444,22 @@ Only system-titles with access to this are
 USB-sysmodule symbols for this refer to "Cradle", which is the
 [Dock](Dock.md "wikilink").
 
+| Cmd | Name | Notes                                   |
+| --- | ---- | --------------------------------------- |
+| 0   |      | Returns a session handle for the below. |
+
+## Session
+
+| Cmd | Name | Notes |
+| --- | ---- | ----- |
+| 0   |      |       |
+| 1   |      |       |
+| 2   |      |       |
+| 3   |      |       |
+| 4   |      |       |
+| 5   |      |       |
+| 6   |      |       |
+
 # usb:pm
 
 Presumably Power Management, only system-title using this is
