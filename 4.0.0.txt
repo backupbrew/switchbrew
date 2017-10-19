@@ -46,7 +46,7 @@ The package1 entrypoint address specified by BCT was increased by 0x20-bytes, si
   This func now includes bits 16-19 in the OR'd flag used in the switch, and now returns 4 as a default invalid result instead of the low bit of [[Fuses|FUSE_SPARE_BIT_5]].
   
   checkFuseCoherency (LT_400106e4)
-  This func was updated to take into account the new invalid retval for getOdmFuse4Type. C
+  This func was updated to take into account the new invalid retval for getOdmFuse4Type.
   Check that bootrom patch version was < 0x1F was removed, and patch version is still validated to be < 0x7F.
     
   decryptAndParsePK11 (LT_40010734)
