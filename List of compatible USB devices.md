@@ -12,3 +12,5 @@
     <http://www.brookaccessory.com/Super%20Converters/list.html>
   - USB Keyboards
   - USB-C OTG
+  - USB headsets (since 4.0.0) :
+    <https://www.reddit.com/r/NintendoSwitch/comments/77dc85/400_update_added_support_for_wireless_usb/>
