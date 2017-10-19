@@ -22,6 +22,9 @@ Storage](Thread%20Local%20Storage.md "wikilink").
 | ...  |       | [Raw data section](#Raw_data_section "wikilink") (including padding before and after aligned data section). |
 | ...  |       | [Buf C descriptors](#Buffer_descriptor_C_"ReceiveList" "wikilink"), each one 2 words.                       |
 
+First two header u32's and handle descriptor (if enabled) are copied
+as-is from one process to the other.
+
 ### Handle descriptor
 
 There can only be one of this descriptor type. It is enabled by bit31 of

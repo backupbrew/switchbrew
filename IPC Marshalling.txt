@@ -37,6 +37,8 @@ This is an array of u32's, usually located in [[Thread Local Storage]].
 | ... || || [[#Buffer descriptor C "ReceiveList"|Buf C descriptors]], each one 2 words.
 |}
 
+First two header u32's and handle descriptor (if enabled) are copied as-is from one process to the other.
+
 === Handle descriptor ===
 There can only be one of this descriptor type. It is enabled by bit31 of the second word.
 
