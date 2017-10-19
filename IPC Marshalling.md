@@ -48,8 +48,7 @@ not written by kernel. For sysmodule handling:
     returned. The PID value passed to the cmdhandler vtable funcptr is
     the rawdata\_u64.
 
-First two header u32's and handle descriptor (if enabled) are copied
-as-is from one process to the other.
+Handle 0 is allowed, and just means no handle was sent.
 
 ### Buffer descriptor X "Pointer"
 
