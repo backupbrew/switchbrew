@@ -79,6 +79,8 @@ complex.
 | 2    | 27-24 | Bit 35-32 of size.                                                                                                               |
 | 2    | 31-28 | Bit 35-32 of address.                                                                                                            |
 
+A reply must not use A/B/W, svcReplyAndReceive will return 0xE801.
+
 ### Buffer descriptor C "ReceiveList"
 
 There's a 4-bit flag in the main header controlling the behavior of C
