@@ -47,8 +47,8 @@ The package1 entrypoint address specified by BCT was increased by 0x20-bytes, si
   
   checkFuseCoherency (LT_400106e4)
   This func was updated to take into account the new invalid retval for getOdmFuse4Type.
-  Checks that were only enforced on retail prior to this update (bootROM patch must not be < 0x7F and EKS must be provisionned) are now enforced for dev too.
-  The now redundant bootROM < 0x1F check was removed.
+  Checks that were only enforced on retail prior to this update (bootROM patch must be < 0x7F and EKS must be provisionned) are now enforced for dev too.
+  The now redundant bootROM patch version < 0x1F check was removed.
     
   decryptAndParsePK11 (LT_40010734)
   The entrypoint calculation code no longer adds *(package11Header + 0x4) to the address.
