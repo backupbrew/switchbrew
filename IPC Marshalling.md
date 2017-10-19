@@ -112,12 +112,21 @@ buffers respectively.
 There's a 4-bit flag in the main header controlling the behavior of C
 descriptors.
 
-If it has value 0, the C descriptor functionality is disabled. If it has
-value 1, there is no C descriptor. If it has value 2, there is a single
-C descriptor.
+If it has value 0, the C descriptor functionality is disabled.
 
-Otherwise it has (flag-2) C descriptors. Note that flag=2 and flag=3
-both encode a single C descriptor.
+If it has value 1, there is an "inlined" C buffer after the raw data.
+Received data is copied to ROUND\_UP(cmdbuf+raw\_size+index, 16)
+
+If it has value 2, there is a single C descriptor.
+
+Otherwise it has (flag-2) C descriptors. In this case, index picks which
+C descriptor to copy received data to \[instead of picking the offset
+into the buffer\].
+
+Data sent with this method must have MemoryState 0x4000000 mask set.
+
+After reply, X descriptors are written to the sender containing the
+address, size and index that were copied to.
 
 | Word | Bits  | Description               |
 | ---- | ----- | ------------------------- |
