@@ -378,6 +378,7 @@ The BOTW game uses this GamePlayRecording functionality from the main-nso "nnini
 * Uses [[#InitializeGamePlayRecording]] with the TransferMemory.
 * Closes the TransferMemory handle, + TransferMemory cleanup.
 * Uses [[#SetGamePlayRecordingState]] with value 0x1.
+This GamePlayRecording functionality presumably enables the video-recording usable starting with [[4.0.0]].
 
 ==== NotifyRunning ====
 Takes no input. Returns an output u8, which is ignored by official user-processes.

@@ -243,6 +243,9 @@ GamePlayRecording-enable does the following:
     [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")
     with value 0x1.
 
+This GamePlayRecording functionality presumably enables the
+video-recording usable starting with [4.0.0](4.0.0.md "wikilink").
+
 #### NotifyRunning
 
 Takes no input. Returns an output u8, which is ignored by official
