@@ -834,17 +834,17 @@ Size: 0x158
 |-
 | 0x120 || [[#KBufferDescriptor]]* || ExternalBufferTable
 |-
-| 0x128 || u8 || Offset0
+| 0x128 || u8 || NumSendBuffers
 |-
-| 0x129 || u8 || Offset1
+| 0x129 || u8 || NumRecvBuffers
 |-
-| 0x12A || u8 || Offset2
+| 0x12A || u8 || NumExchBuffers
 |-
-| 0x130 || [[KThread]]* || SenderThread
+| 0x130 || [[#KThread]]* || SenderThread
 |-
 | 0x138 || u64 || InitiallyZero
 |-
-| 0x140 || [[KWritableEvent]]* || ForAsyncEvent
+| 0x140 || [[#KWritableEvent]]* || ForAsyncEvent
 |-
 | 0x148 || u64 || CustomCmdbufAddr
 |-

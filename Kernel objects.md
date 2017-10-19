@@ -546,12 +546,12 @@ Size:
 | 0x10   | KLinkedListNode                                           | NodeFor\_\_RequestList |
 | 0x20   | [\#KBufferDescriptor](#KBufferDescriptor "wikilink")\[8\] | BufferTable            |
 | 0x120  | [\#KBufferDescriptor](#KBufferDescriptor "wikilink")\*    | ExternalBufferTable    |
-| 0x128  | u8                                                        | Offset0                |
-| 0x129  | u8                                                        | Offset1                |
-| 0x12A  | u8                                                        | Offset2                |
-| 0x130  | [KThread](KThread.md "wikilink")\*                        | SenderThread           |
+| 0x128  | u8                                                        | NumSendBuffers         |
+| 0x129  | u8                                                        | NumRecvBuffers         |
+| 0x12A  | u8                                                        | NumExchBuffers         |
+| 0x130  | [\#KThread](#KThread "wikilink")\*                        | SenderThread           |
 | 0x138  | u64                                                       | InitiallyZero          |
-| 0x140  | [KWritableEvent](KWritableEvent.md "wikilink")\*          | ForAsyncEvent          |
+| 0x140  | [\#KWritableEvent](#KWritableEvent "wikilink")\*          | ForAsyncEvent          |
 | 0x148  | u64                                                       | CustomCmdbufAddr       |
 | 0x150  | u64                                                       | CustomCmdbufSize       |
 
