@@ -55,7 +55,7 @@ The package1 entrypoint address specified by BCT was increased by 0x20-bytes, si
   generateKeys (LT_400107a2)
   setKeyslotFlags(keyslot, 0x15) is now additionally called on keyslots 14 and 15.
   The code for switching key generation method depending on fuses (unit type) and last byte of PKC modulus has been removed, and replaced with a call to a single key generation function.
-  The code block inbetween the keyslot-config code was replaced with just a call to LT_40011264.
+  The code block inbetween the keyslot-config code was replaced with just a call to LT_40011264(same function mentioned above).
   setKeyslotFlags(keyslot, 0xFF) is now used on keyslots 12 and 15 instead of 12 and 13.
   
   downgradeFuseCheck (LT_400111cc)
