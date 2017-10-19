@@ -189,7 +189,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x10801 || 132 || Resource limit exceeded
 |-
-| 0x20801 || 260 || Remote command buffer too small
+| 0x20801 || 260 || Command buffer too small
 |-
 | 0x41001 || 520 || Process not being debugged
 |-
