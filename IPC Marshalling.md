@@ -12,6 +12,7 @@ Storage](Thread%20Local%20Storage.md "wikilink").
 | 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed.                                                 |
 | 1    | 9-0   | Size of raw data section in u32s.                                                                           |
 | 1    | 13-10 | Flags for buf C descriptor.                                                                                 |
+| 1    | 30-20 | ?                                                                                                           |
 | 1    | 31    | Enable handle descriptor.                                                                                   |
 | ...  |       | [Handle descriptor](#Handle_descriptor "wikilink"), if enabled.                                             |
 | ...  |       | [Buf X descriptors](#Buffer_descriptor_X_"Pointer" "wikilink"), each one 2 words.                           |

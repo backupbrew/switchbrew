@@ -18,6 +18,8 @@ This is an array of u32's, usually located in [[Thread Local Storage]].
 |-
 | 1 || 13-10 || Flags for buf C descriptor.
 |-
+| 1 || 30-20 || ?
+|-
 | 1 || 31 || Enable handle descriptor.
 |-
 | ... || || [[#Handle descriptor|Handle descriptor]], if enabled.
