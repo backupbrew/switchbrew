@@ -77,6 +77,6 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 
 * AArch64 exception vector for "SError interrupt" was implemented.
 
-* TLS pages are now allocated with a slabheap.
+* Kernel stacks are now allocated with a slabheap.
 
 {{NavboxVersions}}
