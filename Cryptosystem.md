@@ -70,13 +70,15 @@ retail.
 
 ### Key generation
 
-| Keyslot | Name             | Set by                             | Cleared by                         | Per-console | Per-firmware             |
-| ------- | ---------------- | ---------------------------------- | ---------------------------------- | ----------- | ------------------------ |
-| 11      | Package1Key      | [Package1](Package1.md "wikilink") | [Package1](Package1.md "wikilink") | No          | Yes                      |
-| 12      | MasterKey        | [Package1](Package1.md "wikilink") | Forever                            | No          | Yes, on security updates |
-| 13      | PerConsoleKey    | [Package1](Package1.md "wikilink") | Forever                            | Yes         | No                       |
-| 14      | SecureBootKey    | Bootrom                            | [Package1](Package1.md "wikilink") | No          | No                       |
-| 15      | SecureStorageKey | Bootrom                            | [Package1](Package1.md "wikilink") | Yes         | No                       |
+| Keyslot | Name               | Set by                             | Cleared by                         | Per-console | Per-firmware             | Introduced in                |
+| ------- | ------------------ | ---------------------------------- | ---------------------------------- | ----------- | ------------------------ | ---------------------------- |
+| 11      | Package1Key        | [Package1](Package1.md "wikilink") | [Package1](Package1.md "wikilink") | No          | Yes                      | [1.0.0](1.0.0.md "wikilink") |
+| 12      | MasterKey          | [Package1](Package1.md "wikilink") | Forever                            | No          | Yes, on security updates | [1.0.0](1.0.0.md "wikilink") |
+| 13      | PerConsoleKey      | [Package1](Package1.md "wikilink") | Forever                            | Yes         | No                       | [1.0.0](1.0.0.md "wikilink") |
+| 14      | SecureBootKey      | Bootrom                            | [Package1](Package1.md "wikilink") | No          | No                       | [1.0.0](1.0.0.md "wikilink") |
+| 14      | OtherMasterKey     | [Package1](Package1.md "wikilink") | ?                                  | No          | Yes, on security updates | [4.0.0](4.0.0.md "wikilink") |
+| 15      | SecureStorageKey   | Bootrom                            | [Package1](Package1.md "wikilink") | Yes         | No                       | [1.0.0](1.0.0.md "wikilink") |
+| 15      | OtherPerConsoleKey | [Package1](Package1.md "wikilink") | ?                                  | Yes         | No                       | [4.0.0](4.0.0.md "wikilink") |
 
 Note: aes\_unwrap(wrapped\_key, wrap\_key) is just another name for a
 single AES-128 block decryption.
@@ -134,6 +136,7 @@ The key-derivation is described in more detail
 | 1.0.0-2.3.0    | 1            | 1                                                |
 | 3.0.0          | 2            | 1                                                |
 | 3.0.1-3.0.2    | 3            | 1                                                |
+| 4.0.0          | 4            | 1                                                |
 
 ## Bootloader stage 1
 
