@@ -84,3 +84,5 @@ The updated [https://www.nintendo.co.jp/support/oss/index.html OSS] includes Web
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=10-18-17_08-05-13&sys=hac]
+
+{{NavboxVersions}}
