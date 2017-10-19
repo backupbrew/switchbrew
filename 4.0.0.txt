@@ -59,7 +59,7 @@ The package1 entrypoint address specified by BCT was increased by 0x20-bytes, si
   setKeyslotFlags(keyslot, 0xFF) is now used on keyslots 12 and 15 instead of 12 and 13.
 
   downgradeFuseCheck (LT_400111cc)
-  The burnt fuse information stored in .rodata now expects 4 fuses to be burnt for retail units, instead of 3.
+  The burnt fuse information stored in .rodata now expects 5 fuses to be burnt for retail units, instead of 4.
   
   generateKeysFromBITAddress (LT_40011264)
   Instead of calling generateKeysLegacyMethod, this now calls generateKeysFromKeyblobAndKeyseeds (the main key generation function). Legacy key generation code has been removed.
