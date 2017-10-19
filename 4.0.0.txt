@@ -34,6 +34,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * 4 new sysmodules were added, and new FIRM-package title 010000000000081C was added.
 
 ===FIRM===
+Everything under RomFS was updated.
+
 The package1 entrypoint address specified by BCT was increased by 0x20-bytes, since there's now an additional 0x20-bytes at the start of package1. The additional data is identical to the 0x20-byte block before it.
 
 ==Keys==
