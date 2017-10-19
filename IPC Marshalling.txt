@@ -104,17 +104,20 @@ A reply must not use A/B/W, svcReplyAndReceive will return 0xE801.
 
 [[SVC|MemoryAttribute]] IsBorrowed and IsUncached are never allowed for the source address.
 
+"Send" means buffer is sent from source process into service process.
+
+"Receive" means that data is copied from service process into user process.
+
+"Exchange" means both "Send" and "Receive".
+
 ==== Flags ====
 Determines what [[SVC|MemoryState]] to use with the mapped memory in the sysmodule.
 
 Used to enforce whether or not device mapping is allowed for src and dst buffers respectively.
  
-* Flag0: [[SVC|MemoryAttribute]] IsDeviceMapped is *not* allowed in the source addr.
-* Flag0: Destination mapping has MapDeviceAlignedAllowed clear in [[SVC|MemoryState]].
-* Flag1: [[SVC|MemoryAttribute]] IsDeviceMapped is allowed in the source addr.
-* Flag1: Destination mapping has MapDeviceAlignedAllowed set in [[SVC|MemoryState]].
-* Flag3: [[SVC|MemoryAttribute]] IsDeviceMapped is allowed in the source addr.
-* Flag3: Destination mapping has MapDeviceAlignedAllowed clear in [[SVC|MemoryState]].
+* Flag0: Device mapping *not* allowed for src or dst.
+* Flag1: Device mapping allowed for src and dst.
+* Flag3: Device mapping allowed for src but not for dst.
 
 === Buffer descriptor C "ReceiveList" ===
 There's a 4-bit flag in the main header controlling the behavior of C descriptors.

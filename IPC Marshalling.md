@@ -83,6 +83,13 @@ A reply must not use A/B/W, svcReplyAndReceive will return 0xE801.
 [MemoryAttribute](SVC.md "wikilink") IsBorrowed and IsUncached are never
 allowed for the source address.
 
+"Send" means buffer is sent from source process into service process.
+
+"Receive" means that data is copied from service process into user
+process.
+
+"Exchange" means both "Send" and "Receive".
+
 #### Flags
 
 Determines what [MemoryState](SVC.md "wikilink") to use with the mapped
@@ -91,18 +98,9 @@ memory in the sysmodule.
 Used to enforce whether or not device mapping is allowed for src and dst
 buffers respectively.
 
-  - Flag0: [MemoryAttribute](SVC.md "wikilink") IsDeviceMapped is
-    \*not\* allowed in the source addr.
-  - Flag0: Destination mapping has MapDeviceAlignedAllowed clear in
-    [MemoryState](SVC.md "wikilink").
-  - Flag1: [MemoryAttribute](SVC.md "wikilink") IsDeviceMapped is
-    allowed in the source addr.
-  - Flag1: Destination mapping has MapDeviceAlignedAllowed set in
-    [MemoryState](SVC.md "wikilink").
-  - Flag3: [MemoryAttribute](SVC.md "wikilink") IsDeviceMapped is
-    allowed in the source addr.
-  - Flag3: Destination mapping has MapDeviceAlignedAllowed clear in
-    [MemoryState](SVC.md "wikilink").
+  - Flag0: Device mapping \*not\* allowed for src or dst.
+  - Flag1: Device mapping allowed for src and dst.
+  - Flag3: Device mapping allowed for src but not for dst.
 
 ### Buffer descriptor C "ReceiveList"
 
