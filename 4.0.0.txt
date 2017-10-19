@@ -38,6 +38,9 @@ All of these updated titles now use the new [[NCA_Format|NCA]] crypto for [[NCA|
 
 [[Flash_Filesystem|Keyblob]] 4 is now used, instead of 3.
 
+==OSS==
+The updated [https://www.nintendo.co.jp/support/oss/index.html OSS] includes WebKit changes.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=10-18-17_08-05-13&sys=hac]
