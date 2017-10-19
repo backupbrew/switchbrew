@@ -36,6 +36,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==Keys==
 All of these updated titles now use the new [[NCA_Format|NCA]] crypto for [[NCA|non-ncatype0]](all content except .cnmt content), except for all of the FIRM-packages including the new one(required for FIRM installation).
 
+[[Flash_Filesystem|Keyblob]] 4 is now used, instead of 3.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=10-18-17_08-05-13&sys=hac]
