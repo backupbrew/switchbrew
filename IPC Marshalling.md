@@ -88,7 +88,8 @@ If it has value 0, the C descriptor functionality is disabled. If it has
 value 1, there is no C descriptor. If it has value 2, there is a single
 C descriptor.
 
-Otherwise it has (flag-2) C descriptors.
+Otherwise it has (flag-2) C descriptors. Note that flag=2 and flag=3
+both encode a single C descriptor.
 
 | Word | Bits  | Description               |
 | ---- | ----- | ------------------------- |
