@@ -10,11 +10,27 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 
 ==System Titles==
 Exactly the following was updated:
-* Every sysmodule, probably only re-encrypted using new key material.
+* Every sysmodule.
 * Every web-applet.
 * Sysupdate titlelisting-title, browser "shareddata:/", [[System Version Title]], and all FIRM packages.
 
-The creport-sysmodule was rebuilt: only change was the hashid following the "GNU" string.
+All sysmodules were rebuilt, where the only change was the hashid following the "GNU" string, however some sysmodules have additional changes.
+* Some sysmodules have strings containing "D:\'''h'''ome\teamcity\work\sdk\Externals\{...}" changed to "D:\'''H'''ome\teamcity\work\sdk\Externals\{...}".
+* Build timestamp in wlan-sysmodule was updated.
+
+Actual updated sysmodules:
+* nvservices
+* pcv
+* account
+* nim
+* pctl
+* npns
+* eupld
+
+The only changes for npns and account: The <nowiki>"https://dauth-%.ndas.srv.nintendo.net/v1/device_auth_token"</nowiki> URL was changed to <nowiki>"https://dauth-%.ndas.srv.nintendo.net/{hex string}/device_auth_token"</nowiki>.
+
+The above new URL was added(not replacing any URL in .(ro)data) to nim, + code changes. A "device_auth_token" string in nim was removed.
+
 
 ===FIRM packages===
 819:
