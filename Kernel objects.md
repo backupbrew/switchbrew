@@ -526,14 +526,46 @@ Size: 0x60
 Inherits from:
 [\#KSynchronizationObject](#KSynchronizationObject "wikilink")
 
-| Offset | Type                                                           | Description                    |
-| ------ | -------------------------------------------------------------- | ------------------------------ |
-| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink") | Inheritance                    |
-| 0x28   | KLinkedListNode                                                | NodeFor\_\_IncomingConnections |
-| 0x38   |                                                                |                                |
-| 0x40   | KLinkedListNode                                                |                                |
-| 0x50   |                                                                |                                |
-| 0x58   |                                                                |                                |
+| Offset | Type                                                                  | Description                    |
+| ------ | --------------------------------------------------------------------- | ------------------------------ |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")        | Inheritance                    |
+| 0x28   | KLinkedListNode                                                       | NodeFor\_\_IncomingConnections |
+| 0x38   | [\#KSession\*](#KSession* "wikilink")                                 | Parent                         |
+| 0x40   | KLinkedListNode\<[\#KSessionRequest](#KSessionRequest "wikilink")\*\> | RequestList                    |
+| 0x50   | [\#KSessionRequest](#KSessionRequest "wikilink")\*                    | ActiveRequest                  |
+| 0x58   |                                                                       |                                |
+
+### KSessionRequest
+
+Size:
+0x158
+
+| Offset | Type                                                      | Description            |
+| ------ | --------------------------------------------------------- | ---------------------- |
+| 0      | \*                                                        | Vtable                 |
+| 0x10   | KLinkedListNode                                           | NodeFor\_\_RequestList |
+| 0x20   | [\#KBufferDescriptor](#KBufferDescriptor "wikilink")\[8\] | BufferTable            |
+| 0x120  | [\#KBufferDescriptor](#KBufferDescriptor "wikilink")\*    | ExternalBufferTable    |
+| 0x128  | u8                                                        | Offset0                |
+| 0x129  | u8                                                        | Offset1                |
+| 0x12A  | u8                                                        | Offset2                |
+| 0x130  | [KThread](KThread.md "wikilink")\*                        | SenderThread           |
+| 0x138  | u64                                                       | InitiallyZero          |
+| 0x140  | [KWritableEvent](KWritableEvent.md "wikilink")\*          | ForAsyncEvent          |
+| 0x148  | u64                                                       | CustomCmdbufAddr       |
+| 0x150  | u64                                                       | CustomCmdbufSize       |
+
+### KBufferDescriptor
+
+Size: 0x20
+
+| Offset | Type | Description       |
+| ------ | ---- | ----------------- |
+| 0      | u64  | UserVirtAddr      |
+| 8      | u64  | Size              |
+| 0x10   | u64  |                   |
+| 0x18   | u64  | BufferMemoryState |
+|        |      |                   |
 
 ## KClientSession
 
