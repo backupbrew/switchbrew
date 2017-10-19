@@ -1,3 +1,5 @@
+  - **19 June 17** Nintendo released system update
+    [3.0.0](3.0.0.md "wikilink").
   - **15 May 17** Nintendo released system update
     [2.3.0](2.3.0.md "wikilink").
   - **17 April 17** Nintendo released system update
