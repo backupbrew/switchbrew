@@ -31,6 +31,8 @@ The only changes for npns and account: The <nowiki>"https://dauth-%.ndas.srv.nin
 
 The above new URL was added(not replacing any URL in .(ro)data) to nim, + code changes. A "device_auth_token" string in nim was removed.
 
+As of October 19, 2017, manually accessing the above new URL with the proper post-data works fine, however accessing the old URL returns the following: <code>{"errors":[{"code":"0007","message":"System update is required."}]}</code>
+Hence, all sysmodules using the old URL would throw a sysupdate-required error.
 
 ===FIRM packages===
 819:
