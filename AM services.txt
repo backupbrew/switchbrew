@@ -373,7 +373,7 @@ This service seems to be used by all system non-regular-applications.
 | 71 || [3.0.0+] RequestToReboot ||
 |}
 
-The BOTW game uses this GamePlayRecording functionality from the main-nso "nninitStartup" function. The official code GamePlayRecording-enable does the following:
+The BOTW game uses this GamePlayRecording functionality from the main-nso "nninitStartup" function, with size 0x6000000(96MiB). The official GamePlayRecording-enable code does the following(this will panic on any failure):
 * [[SVC|Creates]] TransferMemory using the input buffer and size, with permissions=0.
 * Uses [[#InitializeGamePlayRecording]] with the TransferMemory.
 * Closes the TransferMemory handle, + TransferMemory cleanup.

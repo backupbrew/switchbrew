@@ -230,8 +230,9 @@ non-regular-applications.
 | 71  | \[3.0.0+\] RequestToReboot                                                          |                                                                                |
 
 The BOTW game uses this GamePlayRecording functionality from the
-main-nso "nninitStartup" function. The official code
-GamePlayRecording-enable does the following:
+main-nso "nninitStartup" function, with size 0x6000000(96MiB). The
+official GamePlayRecording-enable code does the following(this will
+panic on any failure):
 
   - [Creates](SVC.md "wikilink") TransferMemory using the input buffer
     and size, with permissions=0.
