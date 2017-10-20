@@ -362,15 +362,15 @@ This service seems to be used by all system non-regular-applications.
 |-
 | 60 || SetMediaPlaybackStateForApplication ||
 |-
-| 65 || IsGamePlayRecordingSupported ||
+| 65 || [3.0.0+] IsGamePlayRecordingSupported ||
 |-
-| 66 || [[#InitializeGamePlayRecording]] ||
+| 66 || [3.0.0+] [[#InitializeGamePlayRecording]] ||
 |-
-| 67 || [[#SetGamePlayRecordingState]] ||
+| 67 || [3.0.0+] [[#SetGamePlayRecordingState]] ||
 |-
-| 70 || RequestToShutdown ||
+| 70 || [3.0.0+] RequestToShutdown ||
 |-
-| 71 || RequestToReboot ||
+| 71 || [3.0.0+] RequestToReboot ||
 |}
 
 The BOTW game uses this GamePlayRecording functionality from the main-nso "nninitStartup" function. The official code GamePlayRecording-enable does the following:
