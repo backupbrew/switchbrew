@@ -109,7 +109,7 @@ only):
 Normal key generation looks like this on
 1.0.0/2.0.0:
 
-` keyblob_key /* slot13 */ = aes_unwrap(aes_unwrap(df206f59.., tsec_key /* slot13 */, sbk /* slot14 */)`  
+` keyblob_key /* slot13 */ = aes_unwrap(aes_unwrap(df206f59.., tsec_key /* slot13 */), sbk /* slot14 */)`  
 ` cmac_key    /* slot11 */ = aes_unwrap(59c7fb6f.., keyblob_key)`  
 ` `  
 ` if aes_cmac(buf=keyblob+0x10, len=0xA0, cmac_key) != keyblob[0:0x10]:`  
@@ -121,6 +121,24 @@ Normal key generation looks like this on
 ` package1_key    /* slot11 */ = keyblob[0x80:0x90]`  
 ` master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x4f ? normalseed_dev : normalseed_retail, keyblob+0x20)`  
 ` per_console_key /* slot13 */ = aes_unwrap(4f025f0e.., keyblob_key)`
+
+.. and on 3.0.0, they moved keyslots around a little to generate the
+same per-console key as
+1.0.0:
+
+` keyblob_key_10 /* slot10 */ = aes_unwrap(aes_unwrap(df206f59.., tsec_key /* slot13 */), sbk /* slot14 */)`  
+` keyblob_key    /* slot13 */ = aes_unwrap(aes_unwrap(0c25615d.., tsec_key /* slot13 */), sbk /* slot14 */)`  
+` cmac_key       /* slot11 */ = aes_unwrap(59c7fb6f.., keyblob_key)`  
+` `  
+` if aes_cmac(buf=keyblob+0x10, len=0xA0, cmac_key) != keyblob[0:0x10]:`  
+`   panic()`  
+` `  
+` aes_ctr_decrypt(buf=keyblob+0x20, len=0x90, iv=keyblob+0x10 key=keyblob_key)`  
+` `  
+` // Final keys:`  
+` package1_key    /* slot11 */ = keyblob[0x80:0x90]`  
+` master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x4f ? normalseed_dev : normalseed_retail, keyblob+0x20)`  
+` per_console_key /* slot13 */ = aes_unwrap(4f025f0e.., keyblob_key_10)`
 
 SBK and SSK keyslots are cleared after keys have been generated.
 
