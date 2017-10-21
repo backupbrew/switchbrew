@@ -3,6 +3,6 @@ This is the title with process-name "qlaunch" launched by [[NS_Services|NS]] wit
 This is multiple "applets" under one title, with at minimum the following:
 * Home Menu
 * [[System Settings]]
-* [[News]]
+* [[News_Applet|News]]
 
 This title can also launch [[flog]] and [[Title_list#System_Applications|0100069000078000]].
