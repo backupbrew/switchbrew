@@ -164,4 +164,4 @@ Functions exposed to the kernel internally.
 
 # Errors
 
-2: Invalid input
+2: Invalid input 3: Busy
