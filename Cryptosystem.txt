@@ -146,14 +146,12 @@ The tsec key is the source of all per-console entropy, because SSK is not used o
 
 
 === Key generation ===
-
-
 Note: aes_unwrap(wrapped_key, wrap_key) is just another name for a single AES-128 block decryption.
 
 If bit0 of 0x7000FB94 is clear, it will initialize keys like this (probably used for internal development units only):
   // Final keys:
-  package1_key    /* slot11 */ = aes_unwrap(f5baeadb.., sbk)
-  master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x11 ? aff11423.. : 5e177ee1.., aes_unwrap(5ff9c2d9.., sbk))
+  package1_key    /* slot11 */ = aes_unwrap(f5b1eadb.., sbk)
+  master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x11 ? simpleseed_dev0 : simpleseed_dev1, aes_unwrap(5ff9c2d9.., sbk))
   per_console_key /* slot13 */ = aes_unwrap(4f025f0e..., aes_unwrap(6e4a9592.., ssk))
 
 Normal key generation looks like this on 1.0.0/2.0.0:
@@ -167,7 +165,7 @@ Normal key generation looks like this on 1.0.0/2.0.0:
   
   // Final keys:
   package1_key    /* slot11 */ = keyblob[0x80:0x90]
-  master_key      /* slot12 */ = aes_unwrap(is_debug ? 0542a0fd.. : d8a2410a.., keyblob+0x20)
+  master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x4f ? 0542a0fd.. : d8a2410a.., keyblob+0x20)
   per_console_key /* slot13 */ = aes_unwrap(4f025f0e.., keyblob_key)
 
 SBK and SSK keyslots are cleared after keys have been generated.
@@ -183,6 +181,16 @@ This means that if you have an attack on the bootloader, you need to re-preform 
 Dumping the SBK and TSEC key of any single system should be enough to derive all key material on the system.
 
 The key-derivation is described in more detail [[Package1#Key_generation|here]].
+
+==== Seeds ====
+  [1.0.0] simpleseed_dev0   = aff11423...
+  [1.0.0] simpleseed_dev1   = 5e177ee1...
+  [1.0.0] normalseed_dev    = 0542a0fd...
+  [1.0.0] normalseed_retail = d8a2410a...
+  [3.0.0] simpleseed_dev0   = de00216a...
+  [3.0.0] simpleseed_dev1   = 2db7c0a1...
+  [3.0.0] normalseed_dev    = 678c5a03...
+  [3.0.0] normalseed_retail = d8a2410a...
 
 ==== Table of used keyblobs ====
 
