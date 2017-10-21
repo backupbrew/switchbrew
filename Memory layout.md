@@ -197,11 +197,11 @@ The rest are are mapped to core-specific physaddrs, each one is
 | 0x1F01A0000 | 0x7C010000 | 0x10000 | 0x40000000000384     |             | TZRAM                                       |
 | 0x1F01C3000 | 0x80010000 | 0x10000 | 0x40000000000324     |             | EMEM                                        |
 | 0x1F01C2000 | 0x8000F000 | 0x1000  | 0x40000000000324     |             | EMEM                                        |
-| 0x1F01E0000 | 0x7C013000 | 0xB000  | 0x304                |             | TZRAM                                       |
-| 0x1F01F0000 | 0x7C01E000 | 0x2000  | 0x304                |             | TZRAM                                       |
+| 0x1F01E0000 | 0x7C013000 | 0xB000  | 0x304                |             | TZRAM (TrustZone .text)                     |
+| 0x1F01F0000 | 0x7C01E000 | 0x2000  | 0x304                |             | TZRAM (Armv8Boot .text)                     |
 | 0x1F01F6000 | 0x7C01E000 | 0x1000  | 0x40000000000304     |             | TZRAM                                       |
 | 0x1F01F8000 | 0x7C01F000 | 0x1000  | 0x40000000000304     |             | TZRAM                                       |
-| 0x1F01FA000 | 0x7C010000 | 0x1000  | 0x304                |             | TZRAM                                       |
+| 0x1F01FA000 | 0x7C010000 | 0x1000  | 0x304                |             | TZRAM (Exception vectors)                   |
 | 0x1F01FC000 | 0x7C011000 | 0x1000  | 0x40000000000304     |             | TZRAM                                       |
 | 0x1F01FE000 | 0x7C012000 | 0x1000  | 0x40000000000304     |             | TZRAM                                       |
 

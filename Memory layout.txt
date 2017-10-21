@@ -381,14 +381,14 @@ The rest are are mapped to core-specific physaddrs, each one is 0x1000-bytes. De
 | 0xB000
 | 0x304
 | 
-| TZRAM
+| TZRAM (TrustZone .text)
 |-
 | 0x1F01F0000
 | 0x7C01E000
 | 0x2000
 | 0x304
 | 
-| TZRAM
+| TZRAM (Armv8Boot .text)
 |-
 | 0x1F01F6000
 | 0x7C01E000
@@ -409,7 +409,7 @@ The rest are are mapped to core-specific physaddrs, each one is 0x1000-bytes. De
 | 0x1000
 | 0x304
 | 
-| TZRAM
+| TZRAM (Exception vectors)
 |-
 | 0x1F01FC000
 | 0x7C011000
