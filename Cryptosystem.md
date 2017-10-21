@@ -119,7 +119,7 @@ Normal key generation looks like this on
 ` `  
 ` // Final keys:`  
 ` package1_key    /* slot11 */ = keyblob[0x80:0x90]`  
-` master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x4f ? 0542a0fd.. : d8a2410a.., keyblob+0x20)`  
+` master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x4f ? normalseed_dev : normalseed_retail, keyblob+0x20)`  
 ` per_console_key /* slot13 */ = aes_unwrap(4f025f0e.., keyblob_key)`
 
 SBK and SSK keyslots are cleared after keys have been generated.
