@@ -134,8 +134,8 @@ bits.
 
 ## Mapping restrictions
 
-The physaddr range 0x80060000-0x81970FFF is not allowed to be mapped as
-IO. The physaddr range 0x80000000-0x1000000000 is not allowed to be
+The physaddr range 0x80060000-0x2000000000 is not allowed to be mapped
+as IO. The physaddr range 0x80000000-0x2000000000 is not allowed to be
 mapped as Normal.
 
 \[2.0.0+\] The range for IO was changed into 0x80060000-0x81D3FFFF.
