@@ -167,8 +167,8 @@ The key-derivation is described in more detail
 ` [1.0.0] simpleseed_dev0   = aff11423...`  
 ` [1.0.0] simpleseed_dev1   = 5e177ee1...`  
 ` [1.0.0] normalseed_dev    = 0542a0fd...`  
-` [1.0.0] normalseed_retail = d8a2410a...`
-
+` [1.0.0] normalseed_retail = d8a2410a...`  
+` `  
 ` [3.0.0] wrapped_keyblob_key = 0c25615d...  `  
 ` [3.0.0] simpleseed_dev0   = de00216a...`  
 ` [3.0.0] simpleseed_dev1   = 2db7c0a1...`  
