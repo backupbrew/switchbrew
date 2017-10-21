@@ -56,91 +56,97 @@ The tsec key is the source of all per-console entropy, because SSK is not used o
 
 == Package1 ==
 
-=== Key generation ===
+=== Key table during package1 ===
 
 {| class="wikitable" border="1"
 |-
 ! Keyslot
 ! Name
 ! Set by
-! Cleared by
 ! Per-console
 ! Per-firmware
-! Introduced in
-! Deprecated on
 |-
 | 11
 | Package1Key
 | [[Package1]]
-| [[Package1]]
 | No
 | Yes
-| [[1.0.0]]
-| Never
-|-
-| 12
-| MasterKey
-| [[Package1]]
-| Forever
-| No
-| Yes, on security updates
-| [[1.0.0]]
-| Never
-|-
-| 13
-| PerConsoleKey
-| [[Package1]]
-| Forever
-| Yes
-| No
-| [[1.0.0]]
-| [[4.0.0]]
-|-
-| 13
-| OtherPerConsoleKey
-| [[Package1]]
-| ?
-| Yes
-| No
-| [[4.0.0]]
-| Never
 |-
 | 14
 | SecureBootKey
 | Bootrom
-| [[Package1]]
 | No
 | No
-| [[1.0.0]]
-| Never
-|-
-| 14
-| OtherMasterKey
-| [[Package1]]
-| ?
-| No
-| Yes, on security updates
-| [[4.0.0]]
-| Never
 |-
 | 15
 | SecureStorageKey
 | Bootrom
+| Yes
+| No
+|}
+
+=== [1.0.0-3.0.2] Key table after package1 ===
+
+{| class="wikitable" border="1"
+|-
+! Keyslot
+! Name
+! Set by
+! Per-console
+! Per-firmware
+|-
+| 12
+| MasterKey
+| [[Package1]]
+| No
+| Yes, on security updates
+|-
+| 13
+| PerConsoleKey
 | [[Package1]]
 | Yes
 | No
-| [[1.0.0]]
-| Never
+|}
+
+=== [4.0.0]+ Key table after package1 ===
+
+{| class="wikitable" border="1"
+|-
+! Keyslot
+! Name
+! Set by
+! Per-console
+! Per-firmware
+|-
+| 12
+| MasterKey
+| [[Package1]]
+| No
+| Yes, on security updates
+|-
+| 13
+| PerConsoleKey_40
+| [[Package1]]
+| Yes
+| No
+|-
+| 14
+| MasterKey_40
+| [[Package1]]
+| No
+| Yes, on security updates
 |-
 | 15
 | PerConsoleKey
 | [[Package1]]
-| Forever
 | Yes
 | No
-| [[4.0.0]]
-| Never
 |}
+
+
+
+=== Key generation ===
+
 
 Note: aes_unwrap(wrapped_key, wrap_key) is just another name for a single AES-128 block decryption.
 

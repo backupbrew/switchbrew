@@ -68,18 +68,31 @@ retail.
 
 ## Package1
 
-### Key generation
+### Key table during package1
 
-| Keyslot | Name               | Set by                             | Cleared by                         | Per-console | Per-firmware             | Introduced in                | Deprecated on                |
-| ------- | ------------------ | ---------------------------------- | ---------------------------------- | ----------- | ------------------------ | ---------------------------- | ---------------------------- |
-| 11      | Package1Key        | [Package1](Package1.md "wikilink") | [Package1](Package1.md "wikilink") | No          | Yes                      | [1.0.0](1.0.0.md "wikilink") | Never                        |
-| 12      | MasterKey          | [Package1](Package1.md "wikilink") | Forever                            | No          | Yes, on security updates | [1.0.0](1.0.0.md "wikilink") | Never                        |
-| 13      | PerConsoleKey      | [Package1](Package1.md "wikilink") | Forever                            | Yes         | No                       | [1.0.0](1.0.0.md "wikilink") | [4.0.0](4.0.0.md "wikilink") |
-| 13      | OtherPerConsoleKey | [Package1](Package1.md "wikilink") | ?                                  | Yes         | No                       | [4.0.0](4.0.0.md "wikilink") | Never                        |
-| 14      | SecureBootKey      | Bootrom                            | [Package1](Package1.md "wikilink") | No          | No                       | [1.0.0](1.0.0.md "wikilink") | Never                        |
-| 14      | OtherMasterKey     | [Package1](Package1.md "wikilink") | ?                                  | No          | Yes, on security updates | [4.0.0](4.0.0.md "wikilink") | Never                        |
-| 15      | SecureStorageKey   | Bootrom                            | [Package1](Package1.md "wikilink") | Yes         | No                       | [1.0.0](1.0.0.md "wikilink") | Never                        |
-| 15      | PerConsoleKey      | [Package1](Package1.md "wikilink") | Forever                            | Yes         | No                       | [4.0.0](4.0.0.md "wikilink") | Never                        |
+| Keyslot | Name             | Set by                             | Per-console | Per-firmware |
+| ------- | ---------------- | ---------------------------------- | ----------- | ------------ |
+| 11      | Package1Key      | [Package1](Package1.md "wikilink") | No          | Yes          |
+| 14      | SecureBootKey    | Bootrom                            | No          | No           |
+| 15      | SecureStorageKey | Bootrom                            | Yes         | No           |
+
+### \[1.0.0-3.0.2\] Key table after package1
+
+| Keyslot | Name          | Set by                             | Per-console | Per-firmware             |
+| ------- | ------------- | ---------------------------------- | ----------- | ------------------------ |
+| 12      | MasterKey     | [Package1](Package1.md "wikilink") | No          | Yes, on security updates |
+| 13      | PerConsoleKey | [Package1](Package1.md "wikilink") | Yes         | No                       |
+
+### \[4.0.0\]+ Key table after package1
+
+| Keyslot | Name              | Set by                             | Per-console | Per-firmware             |
+| ------- | ----------------- | ---------------------------------- | ----------- | ------------------------ |
+| 12      | MasterKey         | [Package1](Package1.md "wikilink") | No          | Yes, on security updates |
+| 13      | PerConsoleKey\_40 | [Package1](Package1.md "wikilink") | Yes         | No                       |
+| 14      | MasterKey\_40     | [Package1](Package1.md "wikilink") | No          | Yes, on security updates |
+| 15      | PerConsoleKey     | [Package1](Package1.md "wikilink") | Yes         | No                       |
+
+### Key generation
 
 Note: aes\_unwrap(wrapped\_key, wrap\_key) is just another name for a
 single AES-128 block decryption.
