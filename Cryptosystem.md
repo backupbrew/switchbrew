@@ -109,7 +109,7 @@ only):
 Normal key generation looks like this on
 1.0.0/2.0.0:
 
-` keyblob_key /* slot13 */ = aes_unwrap(aes_unwrap(df206f59.., tsec_key /* slot13 */), sbk /* slot14 */)`  
+` keyblob_key /* slot13 */ = aes_unwrap(aes_unwrap(wrapped_keyblob_key, tsec_key /* slot13 */), sbk /* slot14 */)`  
 ` cmac_key    /* slot11 */ = aes_unwrap(59c7fb6f.., keyblob_key)`  
 ` `  
 ` if aes_cmac(buf=keyblob+0x10, len=0xA0, cmac_key) != keyblob[0:0x10]:`  
@@ -127,7 +127,7 @@ same per-console key as
 1.0.0:
 
 ` old_keyblob_key /* slot10 */ = aes_unwrap(aes_unwrap(df206f59.., tsec_key /* slot13 */), sbk /* slot14 */)`  
-` keyblob_key     /* slot13 */ = aes_unwrap(aes_unwrap(0c25615d.., tsec_key /* slot13 */), sbk /* slot14 */)`  
+` keyblob_key     /* slot13 */ = aes_unwrap(aes_unwrap(wrapped_keyblob_key, tsec_key /* slot13 */), sbk /* slot14 */)`  
 ` cmac_key        /* slot11 */ = aes_unwrap(59c7fb6f.., keyblob_key)`  
 ` `  
 ` if aes_cmac(buf=keyblob+0x10, len=0xA0, cmac_key) != keyblob[0:0x10]:`  
@@ -163,16 +163,19 @@ The key-derivation is described in more detail
 
 #### Seeds
 
+` [1.0.0] wrapped_keyblob_key = df206f59...`  
 ` [1.0.0] simpleseed_dev0   = aff11423...`  
 ` [1.0.0] simpleseed_dev1   = 5e177ee1...`  
 ` [1.0.0] normalseed_dev    = 0542a0fd...`  
-` [1.0.0] normalseed_retail = d8a2410a...`  
-` `  
+` [1.0.0] normalseed_retail = d8a2410a...`
+
+` [3.0.0] wrapped_keyblob_key = 0c25615d...  `  
 ` [3.0.0] simpleseed_dev0   = de00216a...`  
 ` [3.0.0] simpleseed_dev1   = 2db7c0a1...`  
 ` [3.0.0] normalseed_dev    = 678c5a03...`  
 ` [3.0.0] normalseed_retail = d8a2410a...`  
 ` `  
+` [3.0.1] wrapped_keyblob_key = 337685ee...  `  
 ` [3.0.1] simpleseed_dev0   = e045f5ba...`  
 ` [3.0.1] simpleseed_dev1   = 84d92e0d...`  
 ` [3.0.1] normalseed_dev    = cd88155b...`  
