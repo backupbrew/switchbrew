@@ -140,6 +140,21 @@ same per-console key as
 ` master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x4f ? normalseed_dev : normalseed_retail, keyblob+0x20)`  
 ` per_console_key /* slot13 */ = aes_unwrap(4f025f0e.., old_keyblob_key)`
 
+.. and on 4.0.0 it was further moved
+around:
+
+` old_keyblob_key /* slot15 */ = aes_unwrap(aes_unwrap(df206f59.., tsec_key /* slot13 */), sbk /* slot14 */)`  
+` keyblob_key     /* slot13 */ = aes_unwrap(aes_unwrap(wrapped_keyblob_key, tsec_key /* slot13 */), sbk /* slot14 */)`  
+` cmac_key        /* slot11 */ = aes_unwrap(59c7fb6f.., keyblob_key)`  
+` `  
+` if aes_cmac(buf=keyblob+0x10, len=0xA0, cmac_key) != keyblob[0:0x10]:`  
+`   panic()`  
+` `  
+` aes_ctr_decrypt(buf=keyblob+0x20, len=0x90, iv=keyblob+0x10 key=keyblob_key)`  
+` `  
+` // Final keys:`  
+` hmm`
+
 SBK and SSK keyslots are cleared after keys have been generated.
 
 See table above for which keys are console unique.
@@ -179,7 +194,9 @@ The key-derivation is described in more detail
 ` [3.0.1] simpleseed_dev0   = e045f5ba...`  
 ` [3.0.1] simpleseed_dev1   = 84d92e0d...`  
 ` [3.0.1] normalseed_dev    = cd88155b...`  
-` [3.0.1] normalseed_retail = d8a2410a...`
+` [3.0.1] normalseed_retail = d8a2410a...`  
+` `  
+` [4.0.0] wrapped_keyblob_key = 2d1f4880...`
 
 #### Table of used keyblobs
 
