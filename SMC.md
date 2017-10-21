@@ -161,3 +161,7 @@ Functions exposed to the kernel internally.
 | 0xC3000006 | Panic                                   |    |     |
 | 0xC3000007 | \[2.0.0+\] ProtectKernelRegion          |    |     |
 | 0xC3000008 | \[2.0.0+\] ReadWriteRegister            |    |     |
+
+# Errors
+
+2: Invalid input

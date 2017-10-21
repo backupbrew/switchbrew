@@ -157,3 +157,6 @@ Functions exposed to the kernel internally.
 |-
 | 0xC3000008 || [2.0.0+] ReadWriteRegister || ||
 |}
+
+= Errors =
+2: Invalid input
