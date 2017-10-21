@@ -167,10 +167,16 @@ The key-derivation is described in more detail
 ` [1.0.0] simpleseed_dev1   = 5e177ee1...`  
 ` [1.0.0] normalseed_dev    = 0542a0fd...`  
 ` [1.0.0] normalseed_retail = d8a2410a...`  
+` `  
 ` [3.0.0] simpleseed_dev0   = de00216a...`  
 ` [3.0.0] simpleseed_dev1   = 2db7c0a1...`  
 ` [3.0.0] normalseed_dev    = 678c5a03...`  
-` [3.0.0] normalseed_retail = d8a2410a...`
+` [3.0.0] normalseed_retail = d8a2410a...`  
+` `  
+` [3.0.1] simpleseed_dev0   = e045f5ba...`  
+` [3.0.1] simpleseed_dev1   = 84d92e0d...`  
+` [3.0.1] normalseed_dev    = cd88155b...`  
+` [3.0.1] normalseed_retail = d8a2410a...`
 
 #### Table of used keyblobs
 
