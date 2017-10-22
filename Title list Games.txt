@@ -159,7 +159,7 @@
 |-
 | 010085300314E000 || v0 || || || Kamiko || USA || Game
 |-
-| 010085500130A000 || v0 || || || LEGO® CITY Undercover || EUR || Game
+| 010085500130A000 || v0 || || Gamecard Front: LA-H-ABM2B-EUR Back: ABM2B41X000 || LEGO® CITY Undercover || EUR || Game
 |-
 | 010085500130A800 || v131072 (0.2.0.0) || || || LEGO® CITY Undercover || EUR || Update
 |-
@@ -343,7 +343,6 @@ The following data was found in [[NS_Services|NS]](NUL-terminators removed):
  {tasks":[{id":xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",titles":[{id":0100c5e003b40000",version":0,type":Application"},{id":0100c5e003b40800",version":65536,type":Patch"}],owner_application":0100c5e003b40000"}],format_version":1,last_modified":1497023220,required_system_version":0"}.
 
 "xxx..." Is where lowercase hex is in the original data.
-
 
 =VersionList=
 The following was parsed from data dumped on June 10, 2017. This is located after strings "nsaccache:/cache/lru_list.dat", "nsaccache", and "ns_appman" in memory. Format is similar to 3DS eShop VersionList: header is 0x20-bytes instead of 0x10(due to word size presumably). The structure of the title entries are still 0x10-bytes, with the unk field being used now. The unk field is presumably the minimum required title-version for this TID when non-zero, refusing to launch the app otherwise. That's only enforced when that version was already installed on the system at some point however. The order of the below titles is the same as what was in memory.
