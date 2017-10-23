@@ -17,3 +17,9 @@ JPEG is loaded into memory, and the stored EXIF maker note is cleared to
 zeroes. Then, an HMAC-SHA256 is computed over the entire JPEG using a
 hardcoded secret key. if (memcmp(calculated\_hmac, stored\_hmac, 0x10)
 == 0), the screenshot is valid, else 0xA3ACE is returned.
+
+## Videos
+
+[4.0.0](4.0.0.md "wikilink") includes video playback etc support in
+Album via mp4. These include a JPEG thumbnail, which is presumably used
+for video "validation".
