@@ -35,8 +35,17 @@ guard-pages for these sections.
 
 On version [1.0.0](1.0.0.md "wikilink"), the initial binaries loaded
 into memory by the kernel always have the upper 32-bits as all-zero, so
-there are 6 fewer bits of layout
-randomization.
+there are 6 fewer bits of layout randomization.
+
+Binaries loaded within the main-binary-region are loaded into memory in
+the following order, immediately after each other, for the binaries
+which exist in
+[ExeFS](ExeFS.md "wikilink"):
+
+  - rtld
+  - main
+  - subsdk\*
+  - sdk
 
 ## ASLR Implementation
 

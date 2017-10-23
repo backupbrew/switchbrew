@@ -18,6 +18,12 @@ For all binaries(main area / NROs), the R-- section is always located immediatel
 
 On version [[1.0.0]], the initial binaries loaded into memory by the kernel always have the upper 32-bits as all-zero, so there are 6 fewer bits of layout randomization. 
 
+Binaries loaded within the main-binary-region are loaded into memory in the following order, immediately after each other, for the binaries which exist in [[ExeFS]]:
+* rtld
+* main
+* subsdk*
+* sdk
+
 == ASLR Implementation ==
 
 === 1.0.0 ===
