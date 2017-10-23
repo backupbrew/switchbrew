@@ -221,6 +221,9 @@ This uses Android code.
 
 Command(s) from here are constantly used while displaying gfx.
 
+TransactParcel is used by 1.0.0 official user-processes, while starting
+with {unknown version} TransactParcelAuto is used instead.
+
 ### TransactParcel
 
 Takes a s32, an u32, a type-0x5 input buffer, a type-0x6 output buffer,
