@@ -24,4 +24,5 @@ hardcoded secret key. if (memcmp(calculated\_hmac, stored\_hmac, 0x10)
 Album via mp4. These include a JPEG thumbnail, which is presumably used
 for video "validation". The EXIF from this JPEG doesn't seem to contain
 the same HMAC data as the original Album JPEGs. The EXIF is also now
-much larger, with random-looking data at the end.
+much larger: the MakerNote is 0x498-bytes, with random-looking data for
+all of it starting at offset +0x8.
