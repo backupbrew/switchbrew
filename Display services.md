@@ -237,7 +237,7 @@ word. No additional output.
 ### GetNativeHandle
 
 Takes an input s32 and u32, with the latter immediately following the
-previous word. Returns an output handle.
+previous word. Returns an output event handle.
 
 ### TransactParcelAuto
 

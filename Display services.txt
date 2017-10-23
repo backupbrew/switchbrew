@@ -213,7 +213,7 @@ Takes a s32, an u32, a type-0x5 input buffer, a type-0x6 output buffer, and an i
 Takes 3 input s32s, with each word immediately following the previous word. No additional output.
 
 === GetNativeHandle ===
-Takes an input s32 and u32, with the latter immediately following the previous word. Returns an output handle.
+Takes an input s32 and u32, with the latter immediately following the previous word. Returns an output event handle.
 
 === TransactParcelAuto ===
 Takes a s32, an u32, a type-0x21 input buffer, a type-0x22 output buffer, and an input u32. Each word is immediately after the previous word.
