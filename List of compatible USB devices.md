@@ -6,6 +6,8 @@
   - Nintendo Switch Pro Controller
   - Mayflash's GameCube Adapter :
     <http://www.mayflash.com/products/nintendowiiu/w012.html>
+  - Nintendo Wii U GameCube Adapter (since 4.0.0) :
+    <http://nintendoeverything.com/switchs-4-0-0-update-now-allows-for-gamecube-controller-support-with-wii-u-gamecube-adapter/>
   - Brook GC to SW Controller Adapter :
     <http://www.brookaccessory.com/detail/93354732/>
   - Brook PS3/PS4 to Wii U Super Converter :
