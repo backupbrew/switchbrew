@@ -265,7 +265,21 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xE08 || 7 || Title is not registered.
 |-
+| 0x209 || 1 || Args too long.
+|-
 | 0x409 || 2 || Maximum processes loaded.
+|-
+| 0x609 || 3 || NPDM too big.
+|-
+| 0x809 || 4 || Invalid NPDM.
+|-
+| 0xA09 || 5 || Invalid files.
+|-
+| 0xE09 || 7 || Already registered.
+|-
+| 0x1009 || 8 || Title not found.
+|-
+| 0x1209 || 9 || Title-id in ACI0 doesn't match range in ACID.
 |-
 | 0x6609 || 51 || Invalid memory state/permission
 |-
@@ -276,6 +290,29 @@ When a fatal-error is received the error code is outputted using the following f
 | 0xA409 || 82 || Bad NRR size
 |-
 | 0xAA09 || 85 || Bad NRR address
+|-
+| 0xAE09 || 87 || Bad initialization
+|-
+| 0xC809 || 100 || Unknown ACI0 descriptor
+|-
+| 0xCE09 || 103 || ACID/ACI0 don't match for descriptor "KernelFlags"
+|-
+| 0xD009 || 104 || ACID/ACI0 don't match for descriptor "SyscallMask"
+|-
+| 0xD409 || 106 || ACID/ACI0 don't match for descriptor "MapIoOrNormalRange"
+|-
+| 0xD609 || 107 || ACID/ACI0 don't match for descriptor "MapNormalPage"
+|-
+| 0xDE09 || 111 || ACID/ACI0 don't match for descriptor "InterruptPair"
+|-
+| 0xE209 ||  || ACID/ACI0 don't match for descriptor "ApplicationType"
+|-
+| 0xE409 ||  || ACID/ACI0 don't match for descriptor "KernelReleaseVersion"
+|-
+| 0xE609 ||  || ACID/ACI0 don't match for descriptor "HandleTableSize"
+|-
+| 0xE809 ||  || ACID/ACI0 don't match for descriptor "DebugFlags"
+
 |-
 | 0x1A80A || 212 || Bad magic (expected 'SFCO')
 |-
