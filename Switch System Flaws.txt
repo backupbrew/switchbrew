@@ -85,6 +85,15 @@ In 3.0.0, this was fixed by moving the security engine initialization earlier in
 !  Public disclosure timeframe
 !  Discovered by
 |-
+| Syscall Infoleaks
+| Many syscalls leaked kernel pointers on sad paths (for example svcSetHeapSize and svcQueryMemory), until they landed a bunch of fixes in 2.0.0.
+| Nothing really.
+| Unfixed
+| 2.0.0
+| 
+| 
+| ?
+|-
 | GetLastThreadInfo UAF
 | GetLastThreadInfo syscall gets last-scheduled-KThread pointer from KScheduler object. This pointer is not reference counted, and can be pointing to a freed KThread.
 | Nothing. There is a theoretical race that might leak from a KThread from a different process, but it's impossible to trigger practically.
