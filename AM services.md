@@ -450,13 +450,26 @@ Returns an output u64:
 This is
 "nn::am::<service::IApplicationProxyService>".
 
-| Cmd | Name                 | Notes                                                                                                    |
-| --- | -------------------- | -------------------------------------------------------------------------------------------------------- |
-| 0   | OpenApplicationProxy | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink"). See [\#appletAE](#appletAE "wikilink"). |
-|     |                      |                                                                                                          |
+| Cmd | Name                                                       | Notes |
+| --- | ---------------------------------------------------------- | ----- |
+| 0   | [\#OpenApplicationProxy](#OpenApplicationProxy "wikilink") |       |
+|     |                                                            |       |
 
 This seems to be used by all(?) regular-applications, even
 [flog](Flog.md "wikilink").
+
+## OpenApplicationProxy
+
+Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink"). See
+[\#appletAE](#appletAE "wikilink").
+
+Takes a [reserved](IPC%20Marshalling.md "wikilink") input u64(official
+user-processes use hard-code value 0), a PID, and a process
+copy-handle(cur-proc handle alias).
+
+On failure, official user-processes will retry using this command in a
+loop while the retval is 0x19280, with svcSleepThread(10000000) being
+called first.
 
 # idle:sys
 
