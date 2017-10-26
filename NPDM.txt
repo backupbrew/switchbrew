@@ -34,6 +34,14 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |
 |
 |-
+| 0x8
+|
+|
+|-
+| 0xC
+| 1
+| MmuFlags
+|-
 | 0xE
 | 1
 | MainThreadPrio
@@ -45,6 +53,10 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 | 0x10
 |
 |
+|-
+| 0x18
+| 4
+| Gets fed into CreateProcessInfo+0xC
 |-
 | 0x1C
 | 4

@@ -9,19 +9,22 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 
 # META
 
-| Offset | Size | Description                       |
-| ------ | ---- | --------------------------------- |
-| 0x0    | 0x4  | Magic "META".                     |
-| 0x4    |      |                                   |
-| 0xE    | 1    | MainThreadPrio                    |
-| 0xF    | 1    | DefaultCpuId                      |
-| 0x10   |      |                                   |
-| 0x1C   | 4    | MainStackSize                     |
-| 0x20   | ?    | Title name                        |
-| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset |
-| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size   |
-| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset |
-| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size   |
+| Offset | Size | Description                         |
+| ------ | ---- | ----------------------------------- |
+| 0x0    | 0x4  | Magic "META".                       |
+| 0x4    |      |                                     |
+| 0x8    |      |                                     |
+| 0xC    | 1    | MmuFlags                            |
+| 0xE    | 1    | MainThreadPrio                      |
+| 0xF    | 1    | DefaultCpuId                        |
+| 0x10   |      |                                     |
+| 0x18   | 4    | Gets fed into CreateProcessInfo+0xC |
+| 0x1C   | 4    | MainStackSize                       |
+| 0x20   | ?    | Title name                          |
+| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset   |
+| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size     |
+| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset   |
+| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size     |
 
 # ACID
 
