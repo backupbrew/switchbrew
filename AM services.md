@@ -21,8 +21,10 @@ This is
 | 400 | CreateSelfLibraryAppletCreatorForDevelop | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink"). |
 |     |                                          |                                                                          |
 
-All of these commands take the same input: handle-descriptor for PID + 1
-copy-handle, and an u64.
+All of these commands take the same input as
+[\#OpenApplicationProxy](#OpenApplicationProxy "wikilink"), with the
+same user-process retry-loop as
+[\#OpenApplicationProxy](#OpenApplicationProxy "wikilink").
 
 This service seems to be used by all system
 non-regular-applications.

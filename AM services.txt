@@ -23,7 +23,7 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 |-
 |}
 
-All of these commands take the same input: handle-descriptor for PID + 1 copy-handle, and an u64.
+All of these commands take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]].
 
 This service seems to be used by all system non-regular-applications.
 
