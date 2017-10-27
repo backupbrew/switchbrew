@@ -8,7 +8,7 @@ This is
 
 | Cmd  | Name                                                             |
 | ---- | ---------------------------------------------------------------- |
-| 0    | CreateAppletResource                                             |
+| 0    | [\#CreateAppletResource](#CreateAppletResource "wikilink")       |
 | 1    | ActivateDebugPad                                                 |
 | 11   | ActivateTouchScreen                                              |
 | 21   | ActivateMouse                                                    |
@@ -81,6 +81,12 @@ This is
 | 1000 | SetNpadCommunicationMode                                         |
 | 1001 | GetNpadCommunicationMode                                         |
 
+## CreateAppletResource
+
+Takes a PID and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"). Returns an
+[\#IAppletResource](#IAppletResource "wikilink").
+
 ## SendVibrationValue
 
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, 0x10-byte
@@ -92,6 +98,17 @@ VibrationValue immediately after that, and an u64
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, and an u64
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns the
 0x10-byte VibrationValue.
+
+## IAppletResource
+
+| Cmd | Name                                                         |
+| --- | ------------------------------------------------------------ |
+| 0   | [\#GetSharedMemoryHandle](#GetSharedMemoryHandle "wikilink") |
+
+### GetSharedMemoryHandle
+
+No input. Returned a [sharedmem](HID%20Shared%20Memory.md "wikilink")
+handle.
 
 # hid:dbg
 

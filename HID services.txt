@@ -7,7 +7,7 @@ This is "nn::hid::IHidServer".
 |-
 ! Cmd || Name
 |-
-| 0 || CreateAppletResource
+| 0 || [[#CreateAppletResource]]
 |-
 | 1 || ActivateDebugPad
 |-
@@ -152,11 +152,26 @@ This is "nn::hid::IHidServer".
 | 1001 || GetNpadCommunicationMode
 |}
 
+== CreateAppletResource ==
+Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an [[#IAppletResource]].
+
 == SendVibrationValue ==
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, 0x10-byte VibrationValue immediately after that, and an u64 [[AM_services|AppletResourceUserId]].
 
 == GetActualVibrationValue ==
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, and an u64 [[AM_services|AppletResourceUserId]]. Returns the 0x10-byte VibrationValue.
+
+== IAppletResource ==
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#GetSharedMemoryHandle]]
+|}
+
+=== GetSharedMemoryHandle ===
+No input. Returned a [[HID_Shared_Memory|sharedmem]] handle.
 
 = hid:dbg =
 This is "nn::hid::IHidDebugServer".
