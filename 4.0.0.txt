@@ -32,7 +32,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ** The Nintendo Switch console supports WEP, WPA-PSK(AES), and WPA2-PSK(AES). If your router is using a different security type (e.g. WPA-PSK(TKIP)), you will need to change this security type within your router's settings.
 
 ==Unofficial Changes==
-* Support for Wii U GameCube Adapter and Headsets [[List of compatible USB devices | over USB]]
+* Added support for Wii U GameCube Adapter and Headsets [[List of compatible USB devices | over USB]]
 
 ==System Titles==
 <fill this in (manually) later>
