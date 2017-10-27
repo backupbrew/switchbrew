@@ -31,6 +31,9 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * Changed the specification which hid wireless networks using TKIP security from the network search results.  Wireless networks using TKIP security will now display in search results as a grayed-out selection instead of not being displayed
 ** The Nintendo Switch console supports WEP, WPA-PSK(AES), and WPA2-PSK(AES). If your router is using a different security type (e.g. WPA-PSK(TKIP)), you will need to change this security type within your router's settings.
 
+==Unofficial Changes==
+* Support for Wii U GameCube Adapter and Headsets [[List of compatible USB devices | over USB]]
+
 ==System Titles==
 <fill this in (manually) later>
 
