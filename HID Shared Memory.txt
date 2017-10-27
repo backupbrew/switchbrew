@@ -507,7 +507,7 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 | 0x8
 | Unknown, increments
 |-
-| 0x8
+| 0x18
 | 0x8
 | Unknown, 0x10
 |-

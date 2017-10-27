@@ -192,7 +192,7 @@ each available controller.
 | 0x0    | 0x8           | Timestamp                    |
 | 0x8    | 0x8           | Number of entries, always 17 |
 | 0x10   | 0x8           | Unknown, increments          |
-| 0x8    | 0x8           | Unknown, 0x10                |
+| 0x18   | 0x8           | Unknown, 0x10                |
 |        |               |                              |
 
 #### Controller State
