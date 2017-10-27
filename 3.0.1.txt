@@ -4,9 +4,10 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 
 ==Change-log==
 [http://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
-* General system stability improvements to enhance the user's experience, including:
+
+'''General system stability improvements to enhance the user's experience, including:'''
 * Addressed an issue in which the remaining battery charge can't be displayed accurately 
-* If the system's battery power display suddenly increases or decreases, it will gradually improve by following these steps.
+** If the system's battery power display suddenly increases or decreases, it will gradually improve by [http://en-americas-support.nintendo.com/app/answers/detail/a_id/27111 following these steps].
 
 ==System Titles==
 Exactly the following was updated:
