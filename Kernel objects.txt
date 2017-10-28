@@ -1274,6 +1274,25 @@ Inherits from: [[#KAutoObject]]
 | 0x18 || u16* || RefCountTable
 |}
 
+= KPageTableAllocator =
+Size: 0x30
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || u64 ||
+|-
+| 0x10 || u16* || RefCountTable
+|-
+| 0x10 || void* || BaseAddress
+|-
+| 0x18 || u64 || Size
+|-
+| 0x20 || u64 ||
+|-
+| 0x28 || u64 ||
+
 = KIrqManager =
 [1.0.0] Size: 0x1608
 
