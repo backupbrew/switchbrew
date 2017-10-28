@@ -686,28 +686,29 @@ Inherits from:
 
 <div style="display: inline-block; vertical-align:top;">
 
-| 2.0.0 Offset | Type                                                       | Description     |
-| ------------ | ---------------------------------------------------------- | --------------- |
-| 0            | [\#KReadableEvent](#KReadableEvent "wikilink")             | Inheritance     |
-| 0x38         | [\#KIrqRegistrationRef](#KIrqRegistrationRef "wikilink")\* | Reference       |
-| 0x40         | u32                                                        | IrqId (or -1)   |
-| 0x44         | bool                                                       | IsIrqRegistered |
+| 2.0.0 Offset | Type                                                     | Description     |
+| ------------ | -------------------------------------------------------- | --------------- |
+| 0            | [\#KReadableEvent](#KReadableEvent "wikilink")           | Inheritance     |
+| 0x38         | [\#KInterruptReceiver](#KInterruptReceiver "wikilink")\* | Receiver        |
+| 0x40         | u32                                                      | IrqId (or -1)   |
+| 0x44         | bool                                                     | IsIrqRegistered |
 
 </div>
 
 ### KInterruptReceiver
 
-\[1.0.0\] Size: 0x10
+\[1.0.0\] Size: 0x10 \[2.0.0\] Size: 0x20
+
+<div style="display: inline-block;">
 
 | Offset | Type | Description |
 | ------ | ---- | ----------- |
 | 0      | \*   | Vtable      |
 | 8      | u64  |             |
 
-### KIrqRegistrationRef
+</div>
 
-\[2.0.0\] Size:
-0x20
+<div style="display: inline-block; vertical-align:top;">
 
 | Offset | Type                                               | Description   |
 | ------ | -------------------------------------------------- | ------------- |
@@ -715,6 +716,8 @@ Inherits from:
 | 8      | u64                                                | InitiallyZero |
 | 0x10   | [\#KInterruptEvent](#KInterruptEvent "wikilink")\* | IrqEventPtr   |
 | 0x18   | s32                                                | IrqId         |
+
+</div>
 
 # KDeviceAddressSpace
 

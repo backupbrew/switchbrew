@@ -1039,7 +1039,7 @@ Inherits from: [[#KReadableEvent]]
 |-
 | 0 || [[#KReadableEvent]] || Inheritance
 |-
-| 0x38 || [[#KIrqRegistrationRef]]* || Reference
+| 0x38 || [[#KInterruptReceiver]]* || Receiver
 |-
 | 0x40 || u32 || IrqId (or -1)
 |-
@@ -1049,7 +1049,9 @@ Inherits from: [[#KReadableEvent]]
 
 === KInterruptReceiver ===
 [1.0.0] Size: 0x10
+[2.0.0] Size: 0x20
 
+<div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
 ! Offset || Type || Description
@@ -1058,10 +1060,9 @@ Inherits from: [[#KReadableEvent]]
 |-
 | 8 || u64 ||
 |}
+</div>
 
-=== KIrqRegistrationRef ===
-[2.0.0] Size: 0x20
-
+<div style="display: inline-block; vertical-align:top;">
 {| class="wikitable" border="1"
 |-
 ! Offset || Type || Description
@@ -1074,6 +1075,7 @@ Inherits from: [[#KReadableEvent]]
 |-
 | 0x18 || s32 || IrqId
 |}
+</div>
 
 = KDeviceAddressSpace =
 Size: 0x70
