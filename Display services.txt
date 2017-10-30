@@ -85,7 +85,7 @@ Takes an input u64 and u32. Returns an [[#IApplicationDisplayService]].
 = IApplicationDisplayService =
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
 | 100 || [[#GetRelayService]]
 |-
