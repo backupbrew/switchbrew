@@ -1,0 +1,33 @@
+= dispdrv =
+This is "nns::hosbinder::IHOSBinderDriver".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#TransactParcel]]
+|-
+| 1 || [[#AdjustRefcount]]
+|-
+| 2 || [[#GetNativeHandle]]
+|-
+| 3 || [[#TransactParcelAuto]]
+|}
+
+This uses Android code.
+
+Command(s) from here are constantly used while displaying gfx.
+
+TransactParcel is used by 1.0.0 official user-processes, while starting with {unknown version} TransactParcelAuto is used instead.
+
+== TransactParcel ==
+Takes a s32, an u32, a type-0x5 input buffer, a type-0x6 output buffer, and an input u32. Each word is immediately after the previous word.
+
+== AdjustRefcount ==
+Takes 3 input s32s, with each word immediately following the previous word. No additional output.
+
+== GetNativeHandle ==
+Takes an input s32 and u32, with the latter immediately following the previous word. Returns an output event handle.
+
+== TransactParcelAuto ==
+Takes a s32, an u32, a type-0x21 input buffer, a type-0x22 output buffer, and an input u32. Each word is immediately after the previous word.
