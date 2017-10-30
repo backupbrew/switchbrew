@@ -27,10 +27,10 @@ NVIDIA multimedia (NvMM) platform service.
 
 This is "nn::visrv::sf::IApplicationRootService".
 
-| Cmd | Name              | Notes |
-| --- | ----------------- | ----- |
-| 0   | GetDisplayService |       |
-|     |                   |       |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | [\#GetDisplayService](#GetDisplayService "wikilink") |
+|     |                                                      |
 
 ## GetDisplayService
 
@@ -44,50 +44,73 @@ commands).
 
 # vi:s
 
-This is "nn::visrv::sf::ISystemRootService".
+This is
+"nn::visrv::sf::ISystemRootService".
 
-| Cmd | Name                                   |
-| --- | -------------------------------------- |
-| 1   | GetDisplayService                      |
-| 3   | GetDisplayServiceWithProxyNameExchange |
-|     |                                        |
+| Cmd | Name                                                                                           |
+| --- | ---------------------------------------------------------------------------------------------- |
+| 1   | [\#GetDisplayService](#GetDisplayService "wikilink")                                           |
+| 3   | [\#GetDisplayServiceWithProxyNameExchange](#GetDisplayServiceWithProxyNameExchange "wikilink") |
+|     |                                                                                                |
+
+## GetDisplayService
+
+Returns an
+[\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").
+Same input as vi:u.
+
+## GetDisplayServiceWithProxyNameExchange
+
+Returns an
+[\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").
 
 # vi:m
 
 This is
 "nn::visrv::sf::IManagerRootService".
 
-| Cmd | Name                                   | Notes                                                                                                          |
-| --- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| 2   | GetDisplayService                      | Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). Same input as vi:u.         |
-| 3   | GetDisplayServiceWithProxyNameExchange | Takes an input u64 and u32. Returns an [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink"). |
-|     |                                        |                                                                                                                |
+| Cmd | Name                                                                                           |
+| --- | ---------------------------------------------------------------------------------------------- |
+| 2   | [\#GetDisplayService](#GetDisplayService "wikilink")                                           |
+| 3   | [\#GetDisplayServiceWithProxyNameExchange](#GetDisplayServiceWithProxyNameExchange "wikilink") |
+|     |                                                                                                |
+
+## GetDisplayService
+
+Returns an
+[\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").
+Same input as vi:u.
+
+## GetDisplayServiceWithProxyNameExchange
+
+Takes an input u64 and u32. Returns an
+[\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").
 
 # IApplicationDisplayService
 
-| Cmd  | Name                                    | Notes                                                                      |
-| ---- | --------------------------------------- | -------------------------------------------------------------------------- |
-| 100  | GetRelayService                         | Returns an [\#IHOSBinderDriver](#IHOSBinderDriver "wikilink").             |
-| 101  | GetSystemDisplayService                 | Returns an [\#ISystemDisplayService](#ISystemDisplayService "wikilink").   |
-| 102  | GetManagerDisplayService                | Returns an [\#IManagerDisplayService](#IManagerDisplayService "wikilink"). |
-| 103  | GetIndirectDisplayTransactionService    | Returns an [\#IHOSBinderDriver](#IHOSBinderDriver "wikilink").             |
-| 1000 | ListDisplays                            |                                                                            |
-| 1010 | OpenDisplay                             |                                                                            |
-| 1011 | OpenDefaultDisplay                      |                                                                            |
-| 1020 | CloseDisplay                            |                                                                            |
-| 1101 | SetDisplayEnabled                       |                                                                            |
-| 1102 | GetDisplayResolution                    |                                                                            |
-| 2020 | OpenLayer                               |                                                                            |
-| 2021 | CloseLayer                              |                                                                            |
-| 2030 | CreateStrayLayer                        |                                                                            |
-| 2031 | DestroyStrayLayer                       |                                                                            |
-| 2101 | SetLayerScalingMode                     |                                                                            |
-| 2450 | GetIndirectLayerImageMap                |                                                                            |
-| 2451 | GetIndirectLayerImageCropMap            |                                                                            |
-| 2460 | GetIndirectLayerImageRequiredMemoryInfo |                                                                            |
-| 5202 | GetDisplayVsyncEvent                    |                                                                            |
-| 5203 | GetDisplayVsyncEventForDebug            |                                                                            |
-|      |                                         |                                                                            |
+| Cmd  | Name                                                                                             | Notes |
+| ---- | ------------------------------------------------------------------------------------------------ | ----- |
+| 100  | [\#GetRelayService](#GetRelayService "wikilink")                                                 |       |
+| 101  | [\#GetSystemDisplayService](#GetSystemDisplayService "wikilink")                                 |       |
+| 102  | [\#GetManagerDisplayService](#GetManagerDisplayService "wikilink")                               |       |
+| 103  | [\#GetIndirectDisplayTransactionService](#GetIndirectDisplayTransactionService "wikilink")       |       |
+| 1000 | [\#ListDisplays](#ListDisplays "wikilink")                                                       |       |
+| 1010 | [\#OpenDisplay](#OpenDisplay "wikilink")                                                         |       |
+| 1011 | [\#OpenDefaultDisplay](#OpenDefaultDisplay "wikilink")                                           |       |
+| 1020 | [\#CloseDisplay](#CloseDisplay "wikilink")                                                       |       |
+| 1101 | [\#SetDisplayEnabled](#SetDisplayEnabled "wikilink")                                             |       |
+| 1102 | [\#GetDisplayResolution](#GetDisplayResolution "wikilink")                                       |       |
+| 2020 | [\#OpenLayer](#OpenLayer "wikilink")                                                             |       |
+| 2021 | [\#CloseLayer](#CloseLayer "wikilink")                                                           |       |
+| 2030 | [\#CreateStrayLayer](#CreateStrayLayer "wikilink")                                               |       |
+| 2031 | [\#DestroyStrayLayer](#DestroyStrayLayer "wikilink")                                             |       |
+| 2101 | [\#SetLayerScalingMode](#SetLayerScalingMode "wikilink")                                         |       |
+| 2450 | [\#GetIndirectLayerImageMap](#GetIndirectLayerImageMap "wikilink")                               |       |
+| 2451 | [\#GetIndirectLayerImageCropMap](#GetIndirectLayerImageCropMap "wikilink")                       |       |
+| 2460 | [\#GetIndirectLayerImageRequiredMemoryInfo](#GetIndirectLayerImageRequiredMemoryInfo "wikilink") |       |
+| 5202 | [\#GetDisplayVsyncEvent](#GetDisplayVsyncEvent "wikilink")                                       |       |
+| 5203 | [\#GetDisplayVsyncEventForDebug](#GetDisplayVsyncEventForDebug "wikilink")                       |       |
+|      |                                                                                                  |       |
 
 Available sessions for each service:
 
@@ -102,6 +125,28 @@ These commands using PIDs have AppletResourceUserId as the last input
 u64, hence AppletResourceUserId must
 [match](IPC%20Marshalling.md "wikilink") the user-process PID(no special
 handling for value 0).
+
+## GetRelayService
+
+Returns an
+[IHOSBinderDriver](Nvnflinger%20services#dispdrv.md##dispdrv "wikilink")
+interface which abstracts "nn::visrv::<service::RelayServiceImpl>".
+
+## GetIndirectDisplayTransactionService
+
+Returns an
+[IHOSBinderDriver](Nvnflinger%20services#dispdrv.md##dispdrv "wikilink")
+interface which abstracts
+"nn::visrv::<service::IndirectDisplayTransactionServiceImpl>".
+
+## GetSystemDisplayService
+
+Returns an [\#ISystemDisplayService](#ISystemDisplayService "wikilink").
+
+## GetManagerDisplayService
+
+Returns an
+[\#IManagerDisplayService](#IManagerDisplayService "wikilink").
 
 ## ListDisplays
 
@@ -208,43 +253,6 @@ Takes an input u64 DisplayId and returns a handle.
 
 Takes an input u64 DisplayId and returns a handle.
 
-## IHOSBinderDriver
-
-| Cmd | Name                                                   |
-| --- | ------------------------------------------------------ |
-| 0   | [\#TransactParcel](#TransactParcel "wikilink")         |
-| 1   | [\#AdjustRefcount](#AdjustRefcount "wikilink")         |
-| 2   | [\#GetNativeHandle](#GetNativeHandle "wikilink")       |
-| 3   | [\#TransactParcelAuto](#TransactParcelAuto "wikilink") |
-
-This uses Android code.
-
-Command(s) from here are constantly used while displaying gfx.
-
-TransactParcel is used by 1.0.0 official user-processes, while starting
-with {unknown version} TransactParcelAuto is used instead.
-
-### TransactParcel
-
-Takes a s32, an u32, a type-0x5 input buffer, a type-0x6 output buffer,
-and an input u32. Each word is immediately after the previous word.
-
-### AdjustRefcount
-
-Takes 3 input s32s, with each word immediately following the previous
-word. No additional output.
-
-### GetNativeHandle
-
-Takes an input s32 and u32, with the latter immediately following the
-previous word. Returns an output event handle.
-
-### TransactParcelAuto
-
-Takes a s32, an u32, a type-0x21 input buffer, a type-0x22 output
-buffer, and an input u32. Each word is immediately after the previous
-word.
-
 ## ISystemDisplayService
 
 | Cmd  | Name                        |
@@ -329,6 +337,8 @@ even when in handheld-mode.
 # DisplayName
 
 This is a 0x40-byte block: a NUL-terminated string.
+
+Can be "Default", "External", "Edid", "Internal" or "Null".
 
 # NativeWindow
 

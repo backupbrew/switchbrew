@@ -35,9 +35,9 @@ This is "nn::visrv::sf::IApplicationRootService".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || GetDisplayService || 
+| 0 || [[#GetDisplayService]]
 |-
 |}
 
@@ -51,69 +51,81 @@ This is "nn::visrv::sf::ISystemRootService".
 |-
 ! Cmd || Name
 |-
-| 1 || GetDisplayService || Returns an [[#IApplicationDisplayService]]. Same input as vi:u.
+| 1 || [[#GetDisplayService]]
 |-
-| 3 || GetDisplayServiceWithProxyNameExchange || Returns an [[#IApplicationDisplayService]].
+| 3 || [[#GetDisplayServiceWithProxyNameExchange]]
 |-
 |}
+
+== GetDisplayService ==
+Returns an [[#IApplicationDisplayService]]. Same input as vi:u.
+
+== GetDisplayServiceWithProxyNameExchange ==
+Returns an [[#IApplicationDisplayService]].
 
 = vi:m =
 This is "nn::visrv::sf::IManagerRootService".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 2 || GetDisplayService || Returns an [[#IApplicationDisplayService]]. Same input as vi:u.
+| 2 || [[#GetDisplayService]]
 |-
-| 3 || GetDisplayServiceWithProxyNameExchange || Takes an input u64 and u32. Returns an [[#IApplicationDisplayService]].
+| 3 || [[#GetDisplayServiceWithProxyNameExchange]]
 |-
 |}
+
+== GetDisplayService ==
+Returns an [[#IApplicationDisplayService]]. Same input as vi:u.
+
+== GetDisplayServiceWithProxyNameExchange ==
+Takes an input u64 and u32. Returns an [[#IApplicationDisplayService]].
 
 = IApplicationDisplayService =
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
 |-
-| 100 || GetRelayService || Returns an [[#IHOSBinderDriver]].
+| 100 || [[#GetRelayService]]
 |-
-| 101 || GetSystemDisplayService || Returns an [[#ISystemDisplayService]].
+| 101 || [[#GetSystemDisplayService]]
 |-
-| 102 || GetManagerDisplayService || Returns an [[#IManagerDisplayService]].
+| 102 || [[#GetManagerDisplayService]]
 |-
-| 103 || GetIndirectDisplayTransactionService || Returns an [[#IHOSBinderDriver]].
+| 103 || [[#GetIndirectDisplayTransactionService]]
 |-
-| 1000 || ListDisplays || 
+| 1000 || [[#ListDisplays]]
 |-
-| 1010 || OpenDisplay ||
+| 1010 || [[#OpenDisplay]]
 |-
-| 1011 || OpenDefaultDisplay || 
+| 1011 || [[#OpenDefaultDisplay]]
 |-
-| 1020 || CloseDisplay ||
+| 1020 || [[#CloseDisplay]]
 |-
-| 1101 || SetDisplayEnabled ||
+| 1101 || [[#SetDisplayEnabled]]
 |-
-| 1102 || GetDisplayResolution ||
+| 1102 || [[#GetDisplayResolution]]
 |-
-| 2020 || OpenLayer ||
+| 2020 || [[#OpenLayer]]
 |-
-| 2021 || CloseLayer ||
+| 2021 || [[#CloseLayer]]
 |-
-| 2030 || CreateStrayLayer ||
+| 2030 || [[#CreateStrayLayer]]
 |-
-| 2031 || DestroyStrayLayer ||
+| 2031 || [[#DestroyStrayLayer]]
 |-
-| 2101 || SetLayerScalingMode ||
+| 2101 || [[#SetLayerScalingMode]]
 |-
-| 2450 || GetIndirectLayerImageMap ||
+| 2450 || [[#GetIndirectLayerImageMap]]
 |-
-| 2451 || GetIndirectLayerImageCropMap ||
+| 2451 || [[#GetIndirectLayerImageCropMap]]
 |-
-| 2460 || GetIndirectLayerImageRequiredMemoryInfo ||
+| 2460 || [[#GetIndirectLayerImageRequiredMemoryInfo]]
 |-
-| 5202 || GetDisplayVsyncEvent ||
+| 5202 || [[#GetDisplayVsyncEvent]]
 |-
-| 5203 || GetDisplayVsyncEventForDebug ||
+| 5203 || [[#GetDisplayVsyncEventForDebug]]
 |-
 |}
 
@@ -125,6 +137,18 @@ Available sessions for each service:
 When attempting to use a get-session cmd with a service it's not available with, error 0xA72 is returned.
 
 These commands using PIDs have AppletResourceUserId as the last input u64, hence AppletResourceUserId must [[IPC_Marshalling|match]] the user-process PID(no special handling for value 0).
+
+== GetRelayService ==
+Returns an [[Nvnflinger_services#dispdrv|IHOSBinderDriver]] interface which abstracts "nn::visrv::service::RelayServiceImpl".
+
+== GetIndirectDisplayTransactionService ==
+Returns an [[Nvnflinger_services#dispdrv|IHOSBinderDriver]] interface which abstracts "nn::visrv::service::IndirectDisplayTransactionServiceImpl".
+
+== GetSystemDisplayService ==
+Returns an [[#ISystemDisplayService]].
+
+== GetManagerDisplayService ==
+Returns an [[#IManagerDisplayService]].
 
 == ListDisplays ==
 Takes a type-0x6 output buffer containing the array of [[#DisplayInfo]] output entries. Returns an output u64: total number of output entries.
@@ -185,38 +209,6 @@ Takes an input u64 DisplayId and returns a handle.
 
 == GetDisplayVsyncEventForDebug ==
 Takes an input u64 DisplayId and returns a handle.
-
-== IHOSBinderDriver ==
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || [[#TransactParcel]]
-|-
-| 1 || [[#AdjustRefcount]]
-|-
-| 2 || [[#GetNativeHandle]]
-|-
-| 3 || [[#TransactParcelAuto]]
-|}
-
-This uses Android code.
-
-Command(s) from here are constantly used while displaying gfx.
-
-TransactParcel is used by 1.0.0 official user-processes, while starting with {unknown version} TransactParcelAuto is used instead.
-
-=== TransactParcel ===
-Takes a s32, an u32, a type-0x5 input buffer, a type-0x6 output buffer, and an input u32. Each word is immediately after the previous word.
-
-=== AdjustRefcount ===
-Takes 3 input s32s, with each word immediately following the previous word. No additional output.
-
-=== GetNativeHandle ===
-Takes an input s32 and u32, with the latter immediately following the previous word. Returns an output event handle.
-
-=== TransactParcelAuto ===
-Takes a s32, an u32, a type-0x21 input buffer, a type-0x22 output buffer, and an input u32. Each word is immediately after the previous word.
 
 == ISystemDisplayService ==
 {| class="wikitable" border="1"
@@ -341,7 +333,7 @@ Takes a s32, an u32, a type-0x21 input buffer, a type-0x22 output buffer, and an
 | 8100 || SetIndirectProducerFlipOffset
 |}
 
-=DisplayInfo=
+= DisplayInfo =
 {| class="wikitable" border="1"
 |-
 ! Offset || Size || Description
@@ -361,8 +353,10 @@ This is a 0x60-byte structure.
 
 The width/height for the "Default" Display is the resolution for 1080p even when in handheld-mode.
 
-=DisplayName=
+= DisplayName =
 This is a 0x40-byte block: a NUL-terminated string.
+
+Can be "Default", "External", "Edid", "Internal" or "Null".
 
 = NativeWindow =
 {| class="wikitable" border="1"
