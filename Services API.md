@@ -143,7 +143,7 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>dispdrv</p></td>
-<td><p>Nvnflinger services</p></td>
+<td><p><a href="Nvnflinger services.md" title="wikilink">Nvnflinger services</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">

@@ -115,7 +115,7 @@ Takes a pid.
 | 
 |-
 | dispdrv
-| Nvnflinger services
+| [[Nvnflinger services]]
 |
 |-
 | erpt:c, erpt:r
