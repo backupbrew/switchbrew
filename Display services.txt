@@ -37,7 +37,7 @@ This is "nn::visrv::sf::IApplicationRootService".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetDisplayService]]
+| 0 || [[#vi:u#GetDisplayService|GetDisplayService]]
 |-
 |}
 
@@ -51,9 +51,9 @@ This is "nn::visrv::sf::ISystemRootService".
 |-
 ! Cmd || Name
 |-
-| 1 || [[#GetDisplayService]]
+| 1 || [[#vi:s#GetDisplayService|GetDisplayService]]
 |-
-| 3 || [[#GetDisplayServiceWithProxyNameExchange]]
+| 3 || [[#vi:s#GetDisplayServiceWithProxyNameExchange|GetDisplayServiceWithProxyNameExchange]]
 |-
 |}
 
@@ -70,9 +70,9 @@ This is "nn::visrv::sf::IManagerRootService".
 |-
 ! Cmd || Name
 |-
-| 2 || [[#GetDisplayService]]
+| 2 || [[#vi:m#GetDisplayService|GetDisplayService]]
 |-
-| 3 || [[#GetDisplayServiceWithProxyNameExchange]]
+| 3 || [[#vi:m#GetDisplayServiceWithProxyNameExchange|GetDisplayServiceWithProxyNameExchange]]
 |-
 |}
 
