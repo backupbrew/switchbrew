@@ -1,3 +1,13 @@
+Nvnflinger is responsible for mediating the communication between
+[vi](Display%20services.md "wikilink") and
+[nvservices](NV%20services.md "wikilink"). The
+[vi](Display%20services.md "wikilink") sysmodule relays display accesses
+to nvnflinger which in turn uses
+[/dev/nvdisp-ctrl](NV%20services#.2Fdev.2Fnvdisp-ctrl.md##.2Fdev.2Fnvdisp-ctrl "wikilink")
+and [/dev/nvdisp-disp0,
+/dev/nvdisp-disp1](NV%20services#.2Fdev.2Fnvdisp-disp0.2C%20.2Fdev.2Fnvdisp-disp1.md##.2Fdev.2Fnvdisp-disp0.2C_.2Fdev.2Fnvdisp-disp1 "wikilink")
+from [nvservices](NV%20services.md "wikilink").
+
 # dispdrv
 
 This is "nns::hosbinder::IHOSBinderDriver".
