@@ -27,10 +27,10 @@ NVIDIA multimedia (NvMM) platform service.
 
 This is "nn::visrv::sf::IApplicationRootService".
 
-| Cmd | Name                                                    |
-| --- | ------------------------------------------------------- |
-| 0   | [GetDisplayService](#vi:u#GetDisplayService "wikilink") |
-|     |                                                         |
+| Cmd | Name                                  |
+| --- | ------------------------------------- |
+| 0   | [GetDisplayService](#vi:u "wikilink") |
+|     |                                       |
 
 ## GetDisplayService
 
@@ -44,14 +44,13 @@ commands).
 
 # vi:s
 
-This is
-"nn::visrv::sf::ISystemRootService".
+This is "nn::visrv::sf::ISystemRootService".
 
-| Cmd | Name                                                                                              |
-| --- | ------------------------------------------------------------------------------------------------- |
-| 1   | [GetDisplayService](#vi:s#GetDisplayService "wikilink")                                           |
-| 3   | [GetDisplayServiceWithProxyNameExchange](#vi:s#GetDisplayServiceWithProxyNameExchange "wikilink") |
-|     |                                                                                                   |
+| Cmd | Name                                                       |
+| --- | ---------------------------------------------------------- |
+| 1   | [GetDisplayService](#vi:s "wikilink")                      |
+| 3   | [GetDisplayServiceWithProxyNameExchange](#vi:s "wikilink") |
+|     |                                                            |
 
 ## GetDisplayService
 
@@ -66,14 +65,13 @@ Returns an
 
 # vi:m
 
-This is
-"nn::visrv::sf::IManagerRootService".
+This is "nn::visrv::sf::IManagerRootService".
 
-| Cmd | Name                                                                                              |
-| --- | ------------------------------------------------------------------------------------------------- |
-| 2   | [GetDisplayService](#vi:m#GetDisplayService "wikilink")                                           |
-| 3   | [GetDisplayServiceWithProxyNameExchange](#vi:m#GetDisplayServiceWithProxyNameExchange "wikilink") |
-|     |                                                                                                   |
+| Cmd | Name                                                       |
+| --- | ---------------------------------------------------------- |
+| 2   | [GetDisplayService](#vi:m "wikilink")                      |
+| 3   | [GetDisplayServiceWithProxyNameExchange](#vi:m "wikilink") |
+|     |                                                            |
 
 ## GetDisplayService
 
