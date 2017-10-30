@@ -28,8 +28,12 @@ with {unknown version} TransactParcelAuto is used instead.
 
 ## TransactParcel
 
-Takes a s32, an u32, a type-0x5 input buffer, a type-0x6 output buffer,
-and an input u32. Each word is immediately after the previous word.
+Takes a s32 (Binder ID?), an u32 (**code**), a type-0x5 input buffer
+(**parcel\_data**), a type-0x6 output buffer (**parcel\_reply**) and an
+input u32 (**flags**). Each word is placed immediately after the
+previous word.
+
+Analogous to "onTransact" from "android.os.IServiceManager".
 
 ## AdjustRefcount
 
@@ -43,6 +47,7 @@ previous word. Returns an output event handle.
 
 ## TransactParcelAuto
 
-Takes a s32, an u32, a type-0x21 input buffer, a type-0x22 output
-buffer, and an input u32. Each word is immediately after the previous
-word.
+Takes a s32 (Binder ID?), an u32 (**code**), a type-0x21 input buffer
+(**parcel\_data**), a type-0x22 output buffer (**parcel\_reply**) and an
+input u32 (**flags**). Each word is placed immediately after the
+previous word.

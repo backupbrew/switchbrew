@@ -24,7 +24,9 @@ Command(s) from here are constantly used while displaying gfx.
 TransactParcel is used by 1.0.0 official user-processes, while starting with {unknown version} TransactParcelAuto is used instead.
 
 == TransactParcel ==
-Takes a s32, an u32, a type-0x5 input buffer, a type-0x6 output buffer, and an input u32. Each word is immediately after the previous word.
+Takes a s32 (Binder ID?), an u32 ('''code'''), a type-0x5 input buffer ('''parcel_data'''), a type-0x6 output buffer ('''parcel_reply''') and an input u32 ('''flags'''). Each word is placed immediately after the previous word.
+
+Analogous to "onTransact" from "android.os.IServiceManager".
 
 == AdjustRefcount ==
 Takes 3 input s32s, with each word immediately following the previous word. No additional output.
@@ -33,4 +35,4 @@ Takes 3 input s32s, with each word immediately following the previous word. No a
 Takes an input s32 and u32, with the latter immediately following the previous word. Returns an output event handle.
 
 == TransactParcelAuto ==
-Takes a s32, an u32, a type-0x21 input buffer, a type-0x22 output buffer, and an input u32. Each word is immediately after the previous word.
+Takes a s32 (Binder ID?), an u32 ('''code'''), a type-0x21 input buffer ('''parcel_data'''), a type-0x22 output buffer ('''parcel_reply''') and an input u32 ('''flags'''). Each word is placed immediately after the previous word.
