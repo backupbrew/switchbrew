@@ -145,7 +145,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xD401 || 106 || Invalid memory state / invalid memory permissions.
 |-
-| 0xD801 || 108 || When trying to set executable permission on memory.
+| 0xD801 || 108 || Invalid memory permissions.
 |-
 | 0xDC01 || 110 || Invalid memory range
 |-
