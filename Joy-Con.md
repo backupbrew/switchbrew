@@ -1,4 +1,4 @@
-The Joy-Cons use bluetooth or a wired connection to communicate with the
+The Joy-Con use bluetooth or a wired connection to communicate with the
 console, depending if they are physically connected to it or not.  
 dekuNukem has started RE on the protocols used
 [1](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering).
