@@ -144,3 +144,4 @@ of official HEX colors recovered from SPI dumps.
 | Neon Yellow | \#E6FF00 | \#142800   |
 | Neon Green  | \#1EDC00 | \#002800   |
 | Neon Pink   | \#FF3278 | \#28001E   |
+| Mario Red   |          |            |
