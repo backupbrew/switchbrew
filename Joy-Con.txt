@@ -215,5 +215,5 @@ HEX codes for the colors shown in the "Controllers" menu of the Switch UI can be
 |-
 | Neon Pink || #FF3278 || #28001E
 |-
-| Mario Red || || 
+| Mario Red || #e10f00 || #280a0a
 |}
