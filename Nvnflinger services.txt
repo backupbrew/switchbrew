@@ -29,7 +29,22 @@ Takes a s32 (Binder ID?), an u32 ('''code'''), a type-0x5 input buffer ('''parce
 Analogous to "onTransact" from "android.os.IServiceManager".
 
 == AdjustRefcount ==
-Takes 3 input s32s, with each word immediately following the previous word. No additional output.
+Takes 3 input s32s: {Binder ID?}, '''addval''', and '''type'''.  Each word immediately follows the previous word. No additional output.
+
+{| class="wikitable" border="1"
+|-
+! Called by official function
+! addval
+! type
+|-
+| "android::BpBinder::onFirstRef" || 1 || 1
+|-
+| "android::BpBinder::onLastStrongRef" || -1 || 1
+|-
+| ? || 1 || 0
+|-
+| ? || -1 || 0
+|}
 
 == GetNativeHandle ==
 Takes an input s32 and u32, with the latter immediately following the previous word. Returns an output event handle.

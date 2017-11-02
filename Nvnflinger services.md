@@ -37,8 +37,15 @@ Analogous to "onTransact" from "android.os.IServiceManager".
 
 ## AdjustRefcount
 
-Takes 3 input s32s, with each word immediately following the previous
-word. No additional output.
+Takes 3 input s32s: {Binder ID?}, **addval**, and **type**. Each word
+immediately follows the previous word. No additional output.
+
+| Called by official function          | addval | type |
+| ------------------------------------ | ------ | ---- |
+| "android::BpBinder::onFirstRef"      | 1      | 1    |
+| "android::BpBinder::onLastStrongRef" | \-1    | 1    |
+| ?                                    | 1      | 0    |
+| ?                                    | \-1    | 0    |
 
 ## GetNativeHandle
 
