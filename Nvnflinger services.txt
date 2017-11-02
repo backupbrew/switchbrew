@@ -46,6 +46,8 @@ Takes 3 input s32s: {Binder ID?}, '''addval''', and '''type'''.  Each word immed
 | ? || -1 || 0
 |}
 
+During init, {addval=1, type=0} is used then {addval=1, type=1} is used.
+
 == GetNativeHandle ==
 Takes an input s32 and u32, with the latter immediately following the previous word. Returns an output event handle.
 

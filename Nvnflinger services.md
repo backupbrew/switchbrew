@@ -47,6 +47,8 @@ immediately follows the previous word. No additional output.
 | ?                                    | 1      | 0    |
 | ?                                    | \-1    | 0    |
 
+During init, {addval=1, type=0} is used then {addval=1, type=1} is used.
+
 ## GetNativeHandle
 
 Takes an input s32 and u32, with the latter immediately following the
