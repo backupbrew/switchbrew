@@ -49,7 +49,7 @@ Takes 3 input s32s: {Binder ID?}, '''addval''', and '''type'''.  Each word immed
 During init, {addval=1, type=0} is used then {addval=1, type=1} is used.
 
 == GetNativeHandle ==
-Takes an input s32 and u32, with the latter immediately following the previous word. Returns an output event handle.
+Takes an input s32 (Binder ID?) and u32, with the latter immediately following the previous word. Returns an output event handle.
 
 == TransactParcelAuto ==
 Takes a s32 (Binder ID?), an u32 ('''code'''), a type-0x21 input buffer ('''parcel_data'''), a type-0x22 output buffer ('''parcel_reply''') and an input u32 ('''flags'''). Each word is placed immediately after the previous word.

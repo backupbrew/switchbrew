@@ -51,8 +51,8 @@ During init, {addval=1, type=0} is used then {addval=1, type=1} is used.
 
 ## GetNativeHandle
 
-Takes an input s32 and u32, with the latter immediately following the
-previous word. Returns an output event handle.
+Takes an input s32 (Binder ID?) and u32, with the latter immediately
+following the previous word. Returns an output event handle.
 
 ## TransactParcelAuto
 
