@@ -376,4 +376,22 @@ Can be "Default", "External", "Edid", "Internal" or "Null".
 
 Max size of this buffer is 0x100-bytes(outbuf size used by official user-processes). Parsed("Deserialize...") by a function called by the code described under [[#OpenLayer]], which executes code with Android symbols.
 
+== ParcelData ==
+This normally contains the following:
+
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || 0x2
+|-
+| 0x4 || 0x4 || Probably the user-process PID?
+|-
+| 0x8 || 0x4 || ID
+|-
+| ... || ... || ...
+|}
+
+The above ID is used for the ID param for the binder commands with [[#GetRelayService|IHOSBinderDriver]].
+
 [[Category:Services]]

@@ -353,4 +353,18 @@ user-processes). Parsed("Deserialize...") by a function called by the
 code described under [\#OpenLayer](#OpenLayer "wikilink"), which
 executes code with Android symbols.
 
+## ParcelData
+
+This normally contains the following:
+
+| Offset | Size | Description                    |
+| ------ | ---- | ------------------------------ |
+| 0x0    | 0x4  | 0x2                            |
+| 0x4    | 0x4  | Probably the user-process PID? |
+| 0x8    | 0x4  | ID                             |
+| ...    | ...  | ...                            |
+
+The above ID is used for the ID param for the binder commands with
+[IHOSBinderDriver](#GetRelayService "wikilink").
+
 [Category:Services](Category:Services "wikilink")
