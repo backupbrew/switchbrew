@@ -1166,7 +1166,7 @@ Returns an enum with value 0-7.
 
 svcDebugActiveProcess stops execution of the target process, the normal method for resuming it requires svcContinueDebugEvent(see above). Closing the debug handle also results in execution being resumed.
 
-= Structures =
+= Enum/Structures =
 == DeviceName ==
 {| class=wikitable
 ! Value || Name
@@ -1263,6 +1263,27 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 | 3 || LimitableResource_TransferMemories
 |-
 | 4 || LimitableResource_Sessions
+|}
+
+== ProcessState ==
+{| class=wikitable
+! Value || Name
+|-
+| 0 || ProcessState_Created
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 || ProcessState_Running
+|-
+| 5 || ProcessState_Exiting
+|-
+| 6 || ProcessState_Exited
+|-
+| 7 || ProcessState_DebugSuspended
 |}
 
 == CreateProcessInfo ==
@@ -1383,45 +1404,138 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 {| class=wikitable
 ! Value || Type || Meaning
 |-
-| <code>0x00000000</code> || Unmapped ||
+| <code>0x00000000</code> || MemoryType_Unmapped ||
 |-
-| <code>0x00002001</code> || IO || Mapped by kernel capability parsing in [[#svcCreateProcess]]. 
+| <code>0x00002001</code> || MemoryType_Io || Mapped by kernel capability parsing in [[#svcCreateProcess]]. 
 |-
-| <code>0x00042002</code> || Normal || Mapped by kernel capability parsing in [[#svcCreateProcess]].
+| <code>0x00042002</code> || MemoryType_Normal || Mapped by kernel capability parsing in [[#svcCreateProcess]].
 |-
-| <code>0x00DC7E03</code> || Code static || Mapped during [[#svcCreateProcess]].
+| <code>0x00DC7E03</code> || MemoryType_CodeStatic || Mapped during [[#svcCreateProcess]].
 |-
-| <code>0x01FEBD04</code> || Code || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
+| <code>0x01FEBD04</code> || MemoryType_CodeMutable || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
 |-
-| <code>0x017EBD05</code> || Heap || Mapped using [[#svcSetHeapSize]].
+| <code>0x017EBD05</code> || MemoryType_Heap || Mapped using [[#svcSetHeapSize]].
 |-
-| <code>0x00402006</code> || Shared memory block || Mapped using [[#svcMapSharedMemory]].
+| <code>0x00402006</code> || MemoryType_SharedMemory || Mapped using [[#svcMapSharedMemory]].
 |-
-| <code>0x00482907</code> || [1.0.0] Weird mapped memory || Mapped using [[#svcMapMemory]].
+| <code>0x00482907</code> || [1.0.0] MemoryType_WeirdSharedMemory || Mapped using [[#svcMapMemory]].
 |-
-| <code>0x00DD7E08</code> || Module code static || Mapped using [[#svcMapProcessCodeMemory]].
+| <code>0x00DD7E08</code> || MemoryType_ModuleCodeStatic || Mapped using [[#svcMapProcessCodeMemory]].
 |-
-| <code>0x01FFBD09</code> || Module code mutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
+| <code>0x01FFBD09</code> || MemoryType_ModuleCodeMutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
 |-
-| <code>0x005C3C0A</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=0.
+| <code>0x005C3C0A</code> || [[IPC_Marshalling|MemoryType_IpcBuffer0]] || IPC buffers with descriptor flags=0.
 |-
-| <code>0x005C3C0B</code> || Mapped memory || Mapped using [[#svcMapMemory]].
+| <code>0x005C3C0B</code> || MemoryType_MappedMemory || Mapped using [[#svcMapMemory]].
 |-
-| <code>0x0040200C</code> || [[Thread Local Storage|Thread local storage]] || Mapped during [[#svcCreateThread]].
+| <code>0x0040200C</code> || [[Thread Local Storage|MemoryType_ThreadLocal]] || Mapped during [[#svcCreateThread]].
 |-
-| <code>0x015C3C0D</code> || Isolated transfer memory || Mapped using [[#svcMapTransferMemory]] when the owning process has perm=0.
+| <code>0x015C3C0D</code> || MemoryType_TransferMemoryIsolated || Mapped using [[#svcMapTransferMemory]] when the owning process has perm=0.
 |-
-| <code>0x005C380E</code> || Transfer memory || Mapped using [[#svcMapTransferMemory]] when the owning process has perm!=0.
+| <code>0x005C380E</code> || MemoryType_TransferMemory || Mapped using [[#svcMapTransferMemory]] when the owning process has perm!=0.
 |-
-| <code>0x0040380F</code> || Process memory || Mapped using [[#svcMapProcessMemory]].
+| <code>0x0040380F</code> || MemoryType_ProcessMemory || Mapped using [[#svcMapProcessMemory]].
 |-
-| <code>0x00000010</code> || Reserved ||
+| <code>0x00000010</code> || MemoryType_Reserved ||
 |-
-| <code>0x005C3811</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=1.
+| <code>0x005C3811</code> || [[IPC_Marshalling|MemoryType_IpcBuffer1]] || IPC buffers with descriptor flags=1.
 |-
-| <code>0x004C2812</code> || [[IPC_Marshalling|IPC]] buffers || IPC buffers with descriptor flags=3.
+| <code>0x004C2812</code> || [[IPC_Marshalling|MemoryType_IpcBuffer3]] || IPC buffers with descriptor flags=3.
 |-
-| <code>0x00002013</code> || Kernel per-thread stack || Mapped in kernel during [[#svcCreateThread]].
+| <code>0x00002013</code> || MemoryType_KernelStack || Mapped in kernel during [[#svcCreateThread]].
+|}
+
+== DebugEventInfo ==
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0 || u32 || EventType
+|-
+| 4 || u32 || Flags (bit0: NeedsContinue)
+|-
+| 8 || u64 || ThreadId?
+|-
+| 0x10 || || PerTypeSpecifics
+|}
+
+AttachProcess specific:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x10 || u64 || TitleId
+|-
+| 0x18 || u64 || ProcessId
+|-
+| 0x20 || char[12] || ProcessName
+|-
+| 0x2C || u32 || MmuFlags
+|}
+
+AttachThread specific:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x10 || u64 ||
+|-
+| 0x18 || u64 ||
+|-
+| 0x20 || u64 ||
+|}
+
+ExitProcess/ExitThread specific:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x10 || u32 || ProcessId/ThreadId?
+|}
+
+Exception specific:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x10 || u64 || ExceptionType
+|-
+| 0x18 || u64 ||
+|-
+| 0x20 || || PerExceptionSpecifics
+|}
+
+=== DebugEventType ===
+{| class=wikitable
+! Value || Name
+|-
+| 0 || DebugEvent_AttachProcess
+|-
+| 1 || DebugEvent_AttachThread
+|-
+| 2 || DebugEvent_ExitProcess?
+|-
+| 3 || DebugEvent_ExitThread
+|-
+| 3 || DebugEvent_Exception
+|}
+
+=== DebugExceptionType ===
+{| class=wikitable
+! Value || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 ||
+|-
+| 3 ||
+|-
+| 4 ||
+|-
+| 5 ||
+|-
+| 6 ||
+|-
+| 7 ||
+|-
+| 8 ||
 |}
 
 = Exception handling =

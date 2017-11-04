@@ -928,7 +928,7 @@ svcDebugActiveProcess stops execution of the target process, the normal
 method for resuming it requires svcContinueDebugEvent(see above).
 Closing the debug handle also results in execution being resumed.
 
-# Structures
+# Enum/Structures
 
 ## DeviceName
 
@@ -983,6 +983,19 @@ Closing the debug handle also results in execution being resumed.
 | 2     | LimitableResource\_Events           |
 | 3     | LimitableResource\_TransferMemories |
 | 4     | LimitableResource\_Sessions         |
+
+## ProcessState
+
+| Value | Name                         |
+| ----- | ---------------------------- |
+| 0     | ProcessState\_Created        |
+| 1     |                              |
+| 2     |                              |
+| 3     |                              |
+| 4     | ProcessState\_Running        |
+| 5     | ProcessState\_Exiting        |
+| 6     | ProcessState\_Exited         |
+| 7     | ProcessState\_DebugSuspended |
 
 ## CreateProcessInfo
 
@@ -1054,28 +1067,92 @@ Closing the debug handle also results in execution being resumed.
 | 23   | [MapProcessAllowed](#svcMapProcessMemory "wikilink")                                                                                                                       |
 | 24   | [AttributeChangeAllowed](#svcSetMemoryAttribute "wikilink")                                                                                                                |
 
-| Value        | Type                                                           | Meaning                                                                                                             |
-| ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `0x00000000` | Unmapped                                                       |                                                                                                                     |
-| `0x00002001` | IO                                                             | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| `0x00042002` | Normal                                                         | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| `0x00DC7E03` | Code static                                                    | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
-| `0x01FEBD04` | Code                                                           | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| `0x017EBD05` | Heap                                                           | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
-| `0x00402006` | Shared memory block                                            | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                                                |
-| `0x00482907` | \[1.0.0\] Weird mapped memory                                  | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| `0x00DD7E08` | Module code static                                             | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
-| `0x01FFBD09` | Module code mutable                                            | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| `0x005C3C0A` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=0.                                                                                |
-| `0x005C3C0B` | Mapped memory                                                  | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| `0x0040200C` | [Thread local storage](Thread%20Local%20Storage.md "wikilink") | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
-| `0x015C3C0D` | Isolated transfer memory                                       | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm=0.         |
-| `0x005C380E` | Transfer memory                                                | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm\!=0.       |
-| `0x0040380F` | Process memory                                                 | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
-| `0x00000010` | Reserved                                                       |                                                                                                                     |
-| `0x005C3811` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=1.                                                                                |
-| `0x004C2812` | [IPC](IPC%20Marshalling.md "wikilink") buffers                 | IPC buffers with descriptor flags=3.                                                                                |
-| `0x00002013` | Kernel per-thread stack                                        | Mapped in kernel during [\#svcCreateThread](#svcCreateThread "wikilink").                                           |
+| Value        | Type                                                              | Meaning                                                                                                             |
+| ------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `0x00000000` | MemoryType\_Unmapped                                              |                                                                                                                     |
+| `0x00002001` | MemoryType\_Io                                                    | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
+| `0x00042002` | MemoryType\_Normal                                                | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
+| `0x00DC7E03` | MemoryType\_CodeStatic                                            | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
+| `0x01FEBD04` | MemoryType\_CodeMutable                                           | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
+| `0x017EBD05` | MemoryType\_Heap                                                  | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
+| `0x00402006` | MemoryType\_SharedMemory                                          | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                                                |
+| `0x00482907` | \[1.0.0\] MemoryType\_WeirdSharedMemory                           | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
+| `0x00DD7E08` | MemoryType\_ModuleCodeStatic                                      | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
+| `0x01FFBD09` | MemoryType\_ModuleCodeMutable                                     | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
+| `0x005C3C0A` | [MemoryType\_IpcBuffer0](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=0.                                                                                |
+| `0x005C3C0B` | MemoryType\_MappedMemory                                          | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
+| `0x0040200C` | [MemoryType\_ThreadLocal](Thread%20Local%20Storage.md "wikilink") | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
+| `0x015C3C0D` | MemoryType\_TransferMemoryIsolated                                | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm=0.         |
+| `0x005C380E` | MemoryType\_TransferMemory                                        | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm\!=0.       |
+| `0x0040380F` | MemoryType\_ProcessMemory                                         | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
+| `0x00000010` | MemoryType\_Reserved                                              |                                                                                                                     |
+| `0x005C3811` | [MemoryType\_IpcBuffer1](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=1.                                                                                |
+| `0x004C2812` | [MemoryType\_IpcBuffer3](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=3.                                                                                |
+| `0x00002013` | MemoryType\_KernelStack                                           | Mapped in kernel during [\#svcCreateThread](#svcCreateThread "wikilink").                                           |
+
+## DebugEventInfo
+
+| Offset | Length | Description                 |
+| ------ | ------ | --------------------------- |
+| 0      | u32    | EventType                   |
+| 4      | u32    | Flags (bit0: NeedsContinue) |
+| 8      | u64    | ThreadId?                   |
+| 0x10   |        | PerTypeSpecifics            |
+
+AttachProcess specific:
+
+| Offset | Length     | Description |
+| ------ | ---------- | ----------- |
+| 0x10   | u64        | TitleId     |
+| 0x18   | u64        | ProcessId   |
+| 0x20   | char\[12\] | ProcessName |
+| 0x2C   | u32        | MmuFlags    |
+
+AttachThread specific:
+
+| Offset | Length | Description |
+| ------ | ------ | ----------- |
+| 0x10   | u64    |             |
+| 0x18   | u64    |             |
+| 0x20   | u64    |             |
+
+ExitProcess/ExitThread specific:
+
+| Offset | Length | Description         |
+| ------ | ------ | ------------------- |
+| 0x10   | u32    | ProcessId/ThreadId? |
+
+Exception specific:
+
+| Offset | Length | Description           |
+| ------ | ------ | --------------------- |
+| 0x10   | u64    | ExceptionType         |
+| 0x18   | u64    |                       |
+| 0x20   |        | PerExceptionSpecifics |
+
+### DebugEventType
+
+| Value | Name                      |
+| ----- | ------------------------- |
+| 0     | DebugEvent\_AttachProcess |
+| 1     | DebugEvent\_AttachThread  |
+| 2     | DebugEvent\_ExitProcess?  |
+| 3     | DebugEvent\_ExitThread    |
+| 3     | DebugEvent\_Exception     |
+
+### DebugExceptionType
+
+| Value | Name |
+| ----- | ---- |
+| 0     |      |
+| 1     |      |
+| 2     |      |
+| 3     |      |
+| 4     |      |
+| 5     |      |
+| 6     |      |
+| 7     |      |
+| 8     |      |
 
 # Exception handling
 
