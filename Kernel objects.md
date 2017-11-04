@@ -72,7 +72,7 @@ Inherits from:
 | 0xF8         | u64                                                                                  | TlsPagesListCount             |
 | 0x100        | [\#KLinkedListNode](#KLinkedListNode "wikilink")                                     | TlsPagesList                  |
 | 0x110        | s32                                                                                  | DefaultCpuCore                |
-| 0x118        | KDebug\*                                                                             | Debug                         |
+| 0x118        | [\#KDebug](#KDebug "wikilink")\*                                                     | Debug                         |
 | 0x120        | [\#KResourceLimit](#KResourceLimit "wikilink")\*                                     | ResourceLimit                 |
 | 0x128        | u32                                                                                  | State                         |
 | 0x130        | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                       | ProcessMutex                  |
@@ -120,7 +120,7 @@ Inherits from:
 | 0x108        | u64                                                                                                    | TlsPagesListCount             |
 | 0x110        | [\#KLinkedListNode](#KLinkedListNode "wikilink")                                                       | TlsPagesList                  |
 | 0x120        | s32                                                                                                    | DefaultCpuCore                |
-| 0x128        | KDebug\*                                                                                               | Debug                         |
+| 0x128        | [\#KDebug](#KDebug "wikilink")\*                                                                       | Debug                         |
 | 0x130        | [\#KResourceLimit](#KResourceLimit "wikilink")\*                                                       | ResourceLimit                 |
 | 0x138        | u32                                                                                                    | State                         |
 | 0x140        | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                                         | ProcessMutex                  |
@@ -901,3 +901,31 @@ Size: 0x30
 | 0      | [\#KIrqReciever\*](#KIrqReciever* "wikilink") | Receiver    |
 | 8      | u8                                            | State0      |
 | 9      | u8                                            | State1      |
+
+# KDebug
+
+Size:
+0x50
+
+| Offset | Type                                                                                         | Description |
+| ------ | -------------------------------------------------------------------------------------------- | ----------- |
+| 0      | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")                               | Inheritance |
+| 0x28   | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KDebugEvent](#KDebugEvent "wikilink")\> | EventList   |
+| 0x38   | u32                                                                                          | Flags       |
+| 0x40   | [\#KProcess](#KProcess "wikilink")\*                                                         | ProcessPtr  |
+| 0x48   | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                               | Mutex       |
+
+## KDebugEvent
+
+Size:
+0x60
+
+| Offset | Type                                                                                         | Description          |
+| ------ | -------------------------------------------------------------------------------------------- | -------------------- |
+| 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KDebugEvent](#KDebugEvent "wikilink")\> | NodeFor\_\_EventList |
+| 0x10   | u32                                                                                          | EventType            |
+| 0x14   | u32                                                                                          | ThreadId             |
+| 0x18   | u32                                                                                          | Flags                |
+| 0x1C   | u16                                                                                          |                      |
+| 0x1E   | bool                                                                                         |                      |
+| 0x20   | ...                                                                                          | ...                  |

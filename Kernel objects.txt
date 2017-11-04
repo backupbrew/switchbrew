@@ -92,7 +92,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x110 || s32 || DefaultCpuCore
 |-
-| 0x118 || KDebug* || Debug
+| 0x118 || [[#KDebug]]* || Debug
 |-
 | 0x120 || [[#KResourceLimit]]* || ResourceLimit
 |-
@@ -181,7 +181,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x120 || s32 || DefaultCpuCore
 |-
-| 0x128 || KDebug* || Debug
+| 0x128 || [[#KDebug]]* || Debug
 |-
 | 0x130 || [[#KResourceLimit]]* || ResourceLimit
 |-
@@ -1326,4 +1326,44 @@ Size: 0x30
 | 8 || u8 || State0
 |-
 | 9 || u8 || State1
+|}
+
+= KDebug =
+Size: 0x50
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || [[#KSynchronizationObject]] || Inheritance
+|-
+| 0x28 || [[#KLinkedListNode]]<[[#KDebugEvent]]> || EventList
+|-
+| 0x38 || u32 || Flags
+|-
+| 0x40 || [[#KProcess]]* || ProcessPtr
+|-
+| 0x48 || [[#KRecursiveLock]] || Mutex
+|}
+
+== KDebugEvent ==
+Size: 0x60
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || [[#KLinkedListNode]]<[[#KDebugEvent]]> || NodeFor__EventList
+|-
+| 0x10 || u32 || EventType
+|-
+| 0x14 || u32 || ThreadId
+|-
+| 0x18 || u32 || Flags
+|-
+| 0x1C || u16 ||
+|-
+| 0x1E || bool ||
+|-
+| 0x20 || ... || ...
 |}
