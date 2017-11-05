@@ -180,7 +180,7 @@ __NOTOC__
 |-
 | 0x6B || svcWriteDebugProcessMemory || X0=debug_handle, X1=buffer*, X2=dst_addr, X3=size || W0=result
 |-
-| 0x6C || svcSetHardwareBreakPoint || || 
+| 0x6C || svcSetHardwareBreakPoint || W0=HardwareBreakpointId, X1=watchpoint_flags, X2=watchpoint_value/debug_handle? || 
 |-
 | 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=DebugThreadParam || W0=result, X1=out0, W2=out1
 |- style="border-top: double"
