@@ -164,13 +164,13 @@ __NOTOC__
 |-
 | 0x63 || svcGetDebugEvent || X0=DebugEventInfo*, W1=debug_handle || W0=result
 |-
-| 0x64 || svcContinueDebugEvent || W0=debug_handle, W1=flags, X2=? || W0=result
+| 0x64 || svcContinueDebugEvent || W0=debug_handle, W1=flags, X2=thread_id || W0=result
 |-
 | 0x65 || svcGetProcessList || X1=pids_out_ptr, W2=max_out || W0=result, W1=num_out 
 |-
 | 0x66 || svcGetThreadList || X1=tids_out_ptr, W2=max_out, W3=debug_handle_or_zero || W0=result, X1=num_out
 |-
-| 0x67 || svcGetDebugThreadContext || X0=ThreadContext*, X1=debug_handle, X2=?, W3=? || W0=result
+| 0x67 || svcGetDebugThreadContext || X0=ThreadContext*, X1=debug_handle, X2=thread_id, W3=[[#ThreadContextRequestFlags]] || W0=result
 |-
 | 0x68 || svcSetDebugThreadContext || || 
 |-
