@@ -170,9 +170,9 @@ __NOTOC__
 |-
 | 0x66 || svcGetThreadList || X1=tids_out_ptr, W2=max_out, W3=debug_handle_or_zero || W0=result, X1=num_out
 |-
-| 0x67 || svcGetDebugThreadContext || X0=ThreadContext*, X1=debug_handle, X2=thread_id, W3=[[#ThreadContextRequestFlags]] || W0=result
+| 0x67 || svcGetDebugThreadContext || X0=ThreadContext*, X1=debug_handle, X2=thread_id, W3=[[#ThreadContextFlags]] || W0=result
 |-
-| 0x68 || svcSetDebugThreadContext || || 
+| 0x68 || svcSetDebugThreadContext || W0=debug_handle, W1=[[#ThreadContextFlags]], X3=ThreadContext* || W0=result
 |-
 | 0x69 || svcQueryDebugProcessMemory || X0=[[#MemoryInfo]]*, X2=debug_handle, X3=addr || W0=result, W1=PageInfo
 |-
@@ -1173,11 +1173,13 @@ Bitfield of one of more of these:
 {| class=wikitable
 ! Bit || Bitmask || Name
 |-
-| 0 || 1 || GetNormalContext
+| 0 || 1 || NormalContext
 |-
-| 1 || 2 || GetExtendedContext
+| 1 || 2 ||
 |-
-| 2 and 3 || 0xC || GetVeryExtendedContext
+| 2 || 4 ||
+|-
+| 3 || 8 ||
 |}
 
 == DeviceName ==
