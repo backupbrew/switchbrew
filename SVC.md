@@ -1107,7 +1107,7 @@ Bitfield of one of more of these:
 | ------ | ------ | --------------------------- |
 | 0      | u32    | EventType                   |
 | 4      | u32    | Flags (bit0: NeedsContinue) |
-| 8      | u64    | ThreadId?                   |
+| 8      | u64    | ThreadId                    |
 | 0x10   |        | PerTypeSpecifics            |
 
 AttachProcess specific:
@@ -1121,11 +1121,11 @@ AttachProcess specific:
 
 AttachThread specific:
 
-| Offset | Length | Description |
-| ------ | ------ | ----------- |
-| 0x10   | u64    |             |
-| 0x18   | u64    |             |
-| 0x20   | u64    |             |
+| Offset | Length | Description    |
+| ------ | ------ | -------------- |
+| 0x10   | u64    | ThreadId       |
+| 0x18   | u64    | EntrypointArg? |
+| 0x20   | u64    | Entrypoint     |
 
 ExitProcess/ExitThread specific:
 
