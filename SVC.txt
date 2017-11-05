@@ -1387,7 +1387,7 @@ Bitfield of one of more of these:
 |-
 | 8 || [[#svcSetMemoryPermission|PermissionChangeAllowed]]
 |-
-| 9 || IsUserWritable [?]
+| 9 || IsWritableByDebugDespiteNotBeingRw
 |-
 | 10 || IpcSendAllowed_Type0
 |-
