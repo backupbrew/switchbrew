@@ -1153,17 +1153,17 @@ Exception specific:
 
 ### DebugExceptionType
 
-| Value | Name |
-| ----- | ---- |
-| 0     |      |
-| 1     |      |
-| 2     |      |
-| 3     |      |
-| 4     |      |
-| 5     |      |
-| 6     |      |
-| 7     |      |
-| 8     |      |
+| Value | Name                        |
+| ----- | --------------------------- |
+| 0     |                             |
+| 1     |                             |
+| 2     |                             |
+| 3     |                             |
+| 4     | Exception\_DebuggerAttached |
+| 5     |                             |
+| 6     |                             |
+| 7     | Exception\_DebuggerBreak    |
+| 8     |                             |
 
 # Exception handling
 

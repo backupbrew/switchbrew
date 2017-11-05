@@ -1542,13 +1542,13 @@ Exception specific:
 |-
 | 3 ||
 |-
-| 4 ||
+| 4 || Exception_DebuggerAttached
 |-
 | 5 ||
 |-
 | 6 ||
 |-
-| 7 ||
+| 7 || Exception_DebuggerBreak
 |-
 | 8 ||
 |}
