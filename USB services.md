@@ -24,7 +24,7 @@ domains.
 | 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |       |
 | 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |       |
 | 4   | [\#GetState](#GetState "wikilink")                       |       |
-| 5   | [\#SetVidPidBcd](#SetVidPidBcd "wikilink")               |       |
+| 5   | \[2.0.0+\] [\#SetVidPidBcd](#SetVidPidBcd "wikilink")    |       |
 
 Initialization done by [manu](Manu%20Services.md "wikilink"):
 

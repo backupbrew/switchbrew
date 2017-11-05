@@ -20,7 +20,7 @@ This service session is used as an IPC [[IPC_Marshalling|domain]] by [[Manu Serv
 |-
 | 4 || [[#GetState]] || 
 |-
-| 5 || [[#SetVidPidBcd]] || 
+| 5 || [2.0.0+] [[#SetVidPidBcd]] || 
 |}
 
 Initialization done by [[Manu Services|manu]]:
