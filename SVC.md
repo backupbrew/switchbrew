@@ -1063,7 +1063,7 @@ Bitfield of one of more of these:
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 7-0  | Type                                                                                                                                                                       |
 | 8    | [PermissionChangeAllowed](#svcSetMemoryPermission "wikilink")                                                                                                              |
-| 9    | IsWritableByDebugDespiteNotBeingRw                                                                                                                                         |
+| 9    | IsReadWritableByDebugDespiteNotBeingReadWritable                                                                                                                           |
 | 10   | IpcSendAllowed\_Type0                                                                                                                                                      |
 | 11   | IpcSendAllowed\_Type3                                                                                                                                                      |
 | 12   | IpcSendAllowed\_Type1                                                                                                                                                      |
