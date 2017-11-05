@@ -930,6 +930,16 @@ Closing the debug handle also results in execution being resumed.
 
 # Enum/Structures
 
+## ThreadContextRequestFlags
+
+Bitfield of one of more of these:
+
+| Bit     | Bitmask | Name                   |
+| ------- | ------- | ---------------------- |
+| 0       | 1       | GetNormalContext       |
+| 1       | 2       | GetExtendedContext     |
+| 2 and 3 | 0xC     | GetVeryExtendedContext |
+
 ## DeviceName
 
 | Value | Name                   |

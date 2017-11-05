@@ -1167,6 +1167,19 @@ Returns an enum with value 0-7.
 svcDebugActiveProcess stops execution of the target process, the normal method for resuming it requires svcContinueDebugEvent(see above). Closing the debug handle also results in execution being resumed.
 
 = Enum/Structures =
+== ThreadContextRequestFlags ==
+Bitfield of one of more of these:
+
+{| class=wikitable
+! Bit || Bitmask || Name
+|-
+| 0 || 1 || GetNormalContext
+|-
+| 1 || 2 || GetExtendedContext
+|-
+| 2 and 3 || 0xC || GetVeryExtendedContext
+|}
+
 == DeviceName ==
 {| class=wikitable
 ! Value || Name
