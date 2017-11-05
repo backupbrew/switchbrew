@@ -358,7 +358,7 @@ This is a 0x40-byte block: a NUL-terminated string.
 
 Can be "Default", "External", "Edid", "Internal" or "Null".
 
-= NativeWindow =
+= Parcel =
 {| class="wikitable" border="1"
 |-
 ! Offset || Size || Description
@@ -374,7 +374,11 @@ Can be "Default", "External", "Edid", "Internal" or "Null".
 | 0x10 || ? || FlattenedBinder
 |}
 
-Max size of this buffer is 0x100-bytes(outbuf size used by official user-processes). Parsed("Deserialize...") by a function called by the code described under [[#OpenLayer]], which executes code with Android symbols.
+= NativeWindow =
+
+Max size of this buffer is 0x100-bytes(outbuf size used by official user-processes). Parsed("...DeserializeNativeWindow()") by a function called by the code described under [[#OpenLayer]], which executes code with Android symbols.
+
+This is a [[#Parcel]].
 
 == ParcelData ==
 This normally contains the following:

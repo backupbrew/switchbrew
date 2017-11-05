@@ -338,7 +338,7 @@ This is a 0x40-byte block: a NUL-terminated string.
 
 Can be "Default", "External", "Edid", "Internal" or "Null".
 
-# NativeWindow
+# Parcel
 
 | Offset | Size | Description         |
 | ------ | ---- | ------------------- |
@@ -348,10 +348,14 @@ Can be "Default", "External", "Edid", "Internal" or "Null".
 | 0xC    | 0x4  | ParcelObjectsOffset |
 | 0x10   | ?    | FlattenedBinder     |
 
+# NativeWindow
+
 Max size of this buffer is 0x100-bytes(outbuf size used by official
-user-processes). Parsed("Deserialize...") by a function called by the
-code described under [\#OpenLayer](#OpenLayer "wikilink"), which
-executes code with Android symbols.
+user-processes). Parsed("...DeserializeNativeWindow()") by a function
+called by the code described under [\#OpenLayer](#OpenLayer "wikilink"),
+which executes code with Android symbols.
+
+This is a [\#Parcel](#Parcel "wikilink").
 
 ## ParcelData
 
