@@ -1578,7 +1578,6 @@ UserBreak specifics:
 | 0x30 || u64 || Info2
 |}
 
-
 BadSvcId specifics:
 {| class=wikitable
 ! Offset || Length || Description
