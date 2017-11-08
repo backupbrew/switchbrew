@@ -84,7 +84,7 @@
 | 0x61 | svcBreakDebugProcess                                                               | W0=debug\_handle                                                                                               | W0=result                                                |
 | 0x62 | svcTerminateDebugProcess                                                           | W0=debug\_handle                                                                                               | W0=result                                                |
 | 0x63 | svcGetDebugEvent                                                                   | X0=DebugEventInfo\*, W1=debug\_handle                                                                          | W0=result                                                |
-| 0x64 | svcContinueDebugEvent                                                              | W0=debug\_handle, W1=flags, X2=thread\_id                                                                      | W0=result                                                |
+| 0x64 | svcContinueDebugEvent                                                              | W0=debug\_handle, W1=[\#ContinueDebugFlags](#ContinueDebugFlags "wikilink"), X2=thread\_id                     | W0=result                                                |
 | 0x65 | svcGetProcessList                                                                  | X1=pids\_out\_ptr, W2=max\_out                                                                                 | W0=result, W1=num\_out                                   |
 | 0x66 | svcGetThreadList                                                                   | X1=tids\_out\_ptr, W2=max\_out, W3=debug\_handle\_or\_zero                                                     | W0=result, X1=num\_out                                   |
 | 0x67 | svcGetDebugThreadContext                                                           | X0=ThreadContext\*, X1=debug\_handle, X2=thread\_id, W3=[\#ThreadContextFlags](#ThreadContextFlags "wikilink") | W0=result                                                |
@@ -1100,6 +1100,14 @@ Bitfield of one of more of these:
 | `0x005C3811` | [MemoryType\_IpcBuffer1](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=1.                                                                                |
 | `0x004C2812` | [MemoryType\_IpcBuffer3](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=3.                                                                                |
 | `0x00002013` | MemoryType\_KernelStack                                           | Mapped in kernel during [\#svcCreateThread](#svcCreateThread "wikilink").                                           |
+
+## ContinueDebugFlags
+
+| Bit | Bitmask | Description      |
+| --- | ------- | ---------------- |
+| 0   | 1       | SwallowException |
+| 1   | 2       |                  |
+| 2   | 4       | ResumeAllThreads |
 
 ## DebugEventInfo
 
