@@ -1534,23 +1534,23 @@ Exception specific:
 {| class=wikitable
 ! Value || Name
 |-
-| 0 ||
+| 0 || Exception_UndefinedInstruction
 |-
-| 1 ||
+| 1 || Exception_InstructionAbort
 |-
-| 2 ||
+| 2 || Exception_DataAbortMisc
 |-
-| 3 ||
+| 3 || Exception_PcSpAlignmentFault
 |-
 | 4 || Exception_DebuggerAttached
 |-
-| 5 ||
+| 5 || Exception_BreakPoint
 |-
-| 6 ||
+| 6 || Exception_UserBreak
 |-
 | 7 || Exception_DebuggerBreak
 |-
-| 8 ||
+| 8 || Exception_BadSvcId
 |}
 
 = Exception handling =

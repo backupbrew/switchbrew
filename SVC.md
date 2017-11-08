@@ -1153,17 +1153,17 @@ Exception specific:
 
 ### DebugExceptionType
 
-| Value | Name                        |
-| ----- | --------------------------- |
-| 0     |                             |
-| 1     |                             |
-| 2     |                             |
-| 3     |                             |
-| 4     | Exception\_DebuggerAttached |
-| 5     |                             |
-| 6     |                             |
-| 7     | Exception\_DebuggerBreak    |
-| 8     |                             |
+| Value | Name                            |
+| ----- | ------------------------------- |
+| 0     | Exception\_UndefinedInstruction |
+| 1     | Exception\_InstructionAbort     |
+| 2     | Exception\_DataAbortMisc        |
+| 3     | Exception\_PcSpAlignmentFault   |
+| 4     | Exception\_DebuggerAttached     |
+| 5     | Exception\_BreakPoint           |
+| 6     | Exception\_UserBreak            |
+| 7     | Exception\_DebuggerBreak        |
+| 8     | Exception\_BadSvcId             |
 
 # Exception handling
 
