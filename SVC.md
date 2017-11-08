@@ -1165,6 +1165,32 @@ Exception specific:
 | 7     | Exception\_DebuggerBreak        |
 | 8     | Exception\_BadSvcId             |
 
+UndefinedInstruction specifics:
+
+| Offset | Length | Description |
+| ------ | ------ | ----------- |
+| 0x20   | u32    | Opcode      |
+
+BreakPoint specifics:
+
+| Offset | Length | Description  |
+| ------ | ------ | ------------ |
+| 0x20   | u32    | IsWatchpoint |
+
+UserBreak specifics:
+
+| Offset | Length | Description |
+| ------ | ------ | ----------- |
+| 0x20   | u32    | Info0       |
+| 0x28   | u64    | Info1       |
+| 0x30   | u64    | Info2       |
+
+BadSvcId specifics:
+
+| Offset | Length | Description |
+| ------ | ------ | ----------- |
+| 0x20   | u32    | SvcId       |
+
 # Exception handling
 
 There is userland code for handling exceptions, however this doesn't
