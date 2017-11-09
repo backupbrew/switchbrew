@@ -995,18 +995,18 @@ Bitfield of one of more of these:
 | 3     | LimitableResource\_TransferMemories |
 | 4     | LimitableResource\_Sessions         |
 
-## ProcessState
+## ProcessEvent
 
 | Value | Name                         |
 | ----- | ---------------------------- |
-| 0     | ProcessState\_Created        |
-| 1     |                              |
-| 2     |                              |
+| 0     | ProcessEvent\_Created        |
+| 1     | ProcessEvent\_DebugAttached  |
+| 2     | ProcessEvent\_DebugDetached  |
 | 3     |                              |
-| 4     | ProcessState\_Running        |
-| 5     | ProcessState\_Exiting        |
-| 6     | ProcessState\_Exited         |
-| 7     | ProcessState\_DebugSuspended |
+| 4     | ProcessEvent\_Running        |
+| 5     | ProcessEvent\_Exiting        |
+| 6     | ProcessEvent\_Exited         |
+| 7     | ProcessEvent\_DebugSuspended |
 
 ## CreateProcessInfo
 
