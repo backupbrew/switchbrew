@@ -3,6 +3,12 @@ The Switch makes use of a customized NVIDIA driver.
 = nvdrv, nvdrv:a, nvdrv:s, nvdrv:t =
 Main NVIDIA driver service.
 
+Each service is used by:
+* "nvdrv": regular applications
+* "nvdrv:a": applets
+* "nvdrv:s": sysmodules
+* "nvdrv:t": Not known to be used by anything on retail.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
