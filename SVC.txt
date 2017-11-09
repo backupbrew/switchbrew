@@ -74,7 +74,7 @@ __NOTOC__
 |-
 | 0x23 || svcSendAsyncRequestWithUserBuffer || X1=cmdbufptr, X2=size, X3=handle || W0=result, W1=event_handle
 |-
-| 0x24 || svcGetProcessId || W0=thread_or_process_or_debug_handle || W0=result, X1=pid
+| 0x24 || svcGetProcessId || W1=thread_or_process_or_debug_handle || W0=result, X1=pid
 |-
 | 0x25 || svcGetThreadId || W0=thread_handle || W0=result, X1=out
 |-
