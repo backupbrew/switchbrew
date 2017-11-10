@@ -1129,11 +1129,11 @@ AttachProcess specific:
 
 AttachThread specific:
 
-| Offset | Length | Description    |
-| ------ | ------ | -------------- |
-| 0x10   | u64    | ThreadId       |
-| 0x18   | u64    | EntrypointArg? |
-| 0x20   | u64    | Entrypoint     |
+| Offset | Length | Description |
+| ------ | ------ | ----------- |
+| 0x10   | u64    | ThreadId    |
+| 0x18   | u64    | TlsPtr      |
+| 0x20   | u64    | Entrypoint  |
 
 ExitProcess/ExitThread specific:
 
