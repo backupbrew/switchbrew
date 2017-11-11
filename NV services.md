@@ -11,22 +11,22 @@ Each service is used by:
   - "nvdrv:s": sysmodules
   - "nvdrv:t": Not known to be used by anything on retail.
 
-| Cmd | Name                                   |
-| --- | -------------------------------------- |
-| 0   | [\#Open](#Open "wikilink")             |
-| 1   | [\#Ioctl](#Ioctl "wikilink")           |
-| 2   | [\#Close](#Close "wikilink")           |
-| 3   | [\#Initialize](#Initialize "wikilink") |
-| 4   | QueryEvent                             |
-| 5   | MapSharedMem                           |
-| 6   | GetStatus                              |
-| 7   | ForceSetClientPID                      |
-| 8   | SetClientPID                           |
-| 9   | DumpGraphicsMemoryInfo                 |
-| 10  | \[3.0.0+\]                             |
-| 11  | \[3.0.0+\] Ioctl2                      |
-| 12  | \[3.0.0+\] Ioctl3                      |
-| 13  | \[3.0.0+\]                             |
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | [\#Open](#Open "wikilink")                 |
+| 1   | [\#Ioctl](#Ioctl "wikilink")               |
+| 2   | [\#Close](#Close "wikilink")               |
+| 3   | [\#Initialize](#Initialize "wikilink")     |
+| 4   | QueryEvent                                 |
+| 5   | MapSharedMem                               |
+| 6   | GetStatus                                  |
+| 7   | ForceSetClientPID                          |
+| 8   | [\#SetClientPID](#SetClientPID "wikilink") |
+| 9   | DumpGraphicsMemoryInfo                     |
+| 10  | \[3.0.0+\]                                 |
+| 11  | \[3.0.0+\] Ioctl2                          |
+| 12  | \[3.0.0+\] Ioctl3                          |
+| 13  | \[3.0.0+\]                                 |
 
 ## Open
 
@@ -74,6 +74,11 @@ Each service is used by:
 | 4    | Shared memory size                      |
 
 Webkit applet creates the shared memory with perm = 0 and size 0x300000.
+
+## SetClientPID
+
+Takes a PID-descriptor and an u64 which must
+[match](IPC%20marshalling.md "wikilink") the user-process PID.
 
 # Ioctls
 
