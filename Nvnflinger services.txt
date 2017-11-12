@@ -14,14 +14,14 @@ This is "nns::hosbinder::IHOSBinderDriver".
 |-
 | 2 || [[#GetNativeHandle]]
 |-
-| 3 || [[#TransactParcelAuto]]
+| 3 || [3.0.0+] [[#TransactParcelAuto]]
 |}
 
 This uses Android code.
 
 Command(s) from here are constantly used while displaying gfx.
 
-TransactParcel is used by 1.0.0 official user-processes, while starting with {unknown version} TransactParcelAuto is used instead.
+TransactParcel is used by 1.0.0 official user-processes, while starting with 3.0.0 TransactParcelAuto is used instead.
 
 For IHOSBinderDriver, the below '''ID''' is loaded from the layer's [[Display_services#NativeWindow]].
 
