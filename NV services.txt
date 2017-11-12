@@ -105,9 +105,9 @@ Each service is used by:
 |-
 | 1 || 0x80000009
 |-
-| ? || Handle descriptor: Current process
+| ? || Copy-handle descriptor: Current process
 |-
-| ? || Handle descriptor: Transfer memory
+| ? || Copy-handle descriptor: Transfer memory
 |- style="border-top: double"
 | 0-1 || "SFCI"
 |-
