@@ -78,7 +78,8 @@ Webkit applet creates the shared memory with perm = 0 and size 0x300000.
 ## SetClientPID
 
 Takes a PID-descriptor and an u64 which must
-[match](IPC%20Marshalling.md "wikilink") the user-process PID.
+[match](IPC%20Marshalling.md "wikilink") the user-process
+PID([AppletResourceUserId](AM%20services.md "wikilink")).
 
 # Ioctls
 
