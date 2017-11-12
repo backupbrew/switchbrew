@@ -119,7 +119,7 @@ Each service is used by:
 Webkit applet creates the shared memory with perm = 0 and size 0x300000.
 
 == SetClientPID ==
-Takes a PID-descriptor and an u64 which must [[IPC_marshalling|match]] the user-process PID.
+Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-process PID.
 
 = Ioctls =
 The ioctl number is generated with the following primitive (see Linux kernel):
