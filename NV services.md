@@ -9,7 +9,7 @@ Each service is used by:
   - "nvdrv": regular applications
   - "nvdrv:a": applets
   - "nvdrv:s": sysmodules
-  - "nvdrv:t": Not known to be used by anything on retail.
+  - "nvdrv:t": Only known to be used by factory title(s).
 
 | Cmd | Name                                       |
 | --- | ------------------------------------------ |
