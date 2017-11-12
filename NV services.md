@@ -63,17 +63,18 @@ Each service is used by:
 
 ## Initialize
 
-| Word | Value                                   |
-| ---- | --------------------------------------- |
-| 0    | 0x00000004                              |
-| 1    | 0x80000009                              |
-| ?    | Handle descriptor: Current process      |
-| ?    | Handle descriptor: Shared memory mirror |
-| 0-1  | "SFCI"                                  |
-| 2-3  | Cmd id (3)                              |
-| 4    | Shared memory size                      |
+| Word | Value                              |
+| ---- | ---------------------------------- |
+| 0    | 0x00000004                         |
+| 1    | 0x80000009                         |
+| ?    | Handle descriptor: Current process |
+| ?    | Handle descriptor: Transfer memory |
+| 0-1  | "SFCI"                             |
+| 2-3  | Cmd id (3)                         |
+| 4    | Transfer memory size               |
 
-Webkit applet creates the shared memory with perm = 0 and size 0x300000.
+Webkit applet creates the transfer-memory with perm = 0 and size
+0x300000.
 
 ## SetClientPID
 

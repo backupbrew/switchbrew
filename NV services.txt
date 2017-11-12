@@ -107,16 +107,16 @@ Each service is used by:
 |-
 | ? || Handle descriptor: Current process
 |-
-| ? || Handle descriptor: Shared memory mirror
+| ? || Handle descriptor: Transfer memory
 |- style="border-top: double"
 | 0-1 || "SFCI"
 |-
 | 2-3 || Cmd id (3)
 |-
-| 4 || Shared memory size
+| 4 || Transfer memory size
 |}
 
-Webkit applet creates the shared memory with perm = 0 and size 0x300000.
+Webkit applet creates the transfer-memory with perm = 0 and size 0x300000.
 
 == SetClientPID ==
 Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-process PID([[AM_services|AppletResourceUserId]]).
