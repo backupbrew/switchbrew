@@ -30,36 +30,17 @@ Each service is used by:
 
 ## Open
 
-| Word | Value                          |
-| ---- | ------------------------------ |
-| 0    | 0x00100004                     |
-| 1    | 0x00000008                     |
-| 2-4  | Type 5 descriptor: Device path |
-| 0-1  | "SFCI"                         |
-| 2-3  | Cmd id (0)                     |
+Takes a type-0x5 input buffer for the device-path. Returns the output
+32bit fd and the u32 error field.
 
 ## Ioctl
 
-| Word | Value                               |
-| ---- | ----------------------------------- |
-| 0    | 0x11100004                          |
-| 1    | 0x00000C0B                          |
-| ?    | Type 0x21 descriptor: Input buffer  |
-| ?    | Type 0x22 descriptor: Output buffer |
-| 0-1  | "SFCI"                              |
-| 2-3  | Cmd id (1)                          |
-| 4    | Device fd                           |
-| 5    | Ioctl Cmd                           |
+Takes a 32bit fd, an u32 ioctl cmd, a type-0x21 input buffer, and a
+type-0x22 output buffer. Returns the output u32 error field.
 
 ## Close
 
-| Word | Value      |
-| ---- | ---------- |
-| 0    | 0x00000004 |
-| 1    | 0x00000009 |
-| 0-1  | "SFCI"     |
-| 2-3  | Cmd id (2) |
-| 4    | Device fd  |
+Takes a 32bit fd. Returns the output u32 error field.
 
 ## Initialize
 
