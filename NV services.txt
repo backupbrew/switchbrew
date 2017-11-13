@@ -166,110 +166,110 @@ The following table contains known ioctls.
 Identical to Linux driver.
 
   struct {
-    u32 __id;      // in
-    u32 __value;   // out
+    __in  u32 id;
+    __out u32 value;
   };
 
 === NVHOST_IOCTL_CTRL_SYNCPT_INCR ===
 Identical to Linux driver.
 
   struct {
-    u32 __id;      // in
+    __in u32 id;
   };
 
 === NVHOST_IOCTL_CTRL_SYNCPT_WAIT ===
 Identical to Linux driver.
 
   struct {
-    u32 __id;          // in
-    u32 __thresh;      // in
-    s32 __timeout;     // in
+    __in u32 id;
+    __in u32 thresh;
+    __in s32 timeout;
   };
 
 === NVHOST_IOCTL_CTRL_MODULE_MUTEX ===
 Identical to Linux driver.
 
   struct {
-    u32 __id;          // in
-    u32 __lock;        // in (0==unlock; 1==lock)
+    __in u32 id;
+    __in u32 lock;        // (0==unlock; 1==lock)
   };
 
 === NVHOST_IOCTL_CTRL_MODULE_REGRDWR ===
 Identical to Linux driver. Uses 32-bit version and doesn't work.
 
   struct {
-    u32 __id;           // in
-    u32 __num_offsets;  // in
-    u32 __block_size;   // in
-    u32 __offsets;      // in
-    u32 __values;       // in
-    u32 __write;        // in
+    __in u32 id;
+    __in u32 num_offsets;
+    __in u32 block_size;
+    __in u32 offsets;
+    __in u32 values;
+    __in u32 write;
   };
 
 === NVHOST_IOCTL_CTRL_SYNCPT_WAITEX ===
 Identical to Linux driver.
 
   struct {
-    u32 __id;          // in
-    u32 __thresh;      // in
-    s32 __timeout;     // in
-    u32 __value;       // out
+    __in  u32 id;
+    __in  u32 thresh;
+    __in  s32 timeout;
+    __out u32 value;
   };
 
 === NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX ===
 Identical to Linux driver.
 
   struct {
-    u32 __id;      // in
-    u32 __value;   // out
+    __in  u32 id;
+    __out u32 value;
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_SIGNAL ===
 Signals an event. Exclusive to the Switch. 
 
   struct {
-    u32 __event_id;      // in (ranges from 0x01 to 0x3F)
+    __in u32 event_id;      // ranges from 0x01 to 0x3F
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_WAIT ===
 Waits on an event. Exclusive to the Switch. 
 
   struct {
-    u32 __unk0;         // in
-    u32 __unk1;         // in
-    s32 __timeout;      // in
-    u32 __event;        // inout (in=event_id; out=result)
+    __in    u32 unk0;
+    __in    u32 unk1;
+    __in    s32 __timeout;
+    __inout u32 __event;    // in=event_id; out=result
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC ===
 Waits on an event (async version). Exclusive to the Switch. 
 
   struct {
-    u32 __unk0;         // in
-    u32 __unk1;         // in
-    s32 __timeout;      // in
-    u32 __event;        // inout (in=event_id; out=result)
+    __in    u32 unk0;
+    __in    u32 unk1;
+    __in    s32 timeout;
+    __inout u32 event;      // in=event_id; out=result
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_REGISTER ===
 Registers an event. Exclusive to the Switch. 
 
   struct {
-    u32 __event_id;      // in (ranges from 0x01 to 0x3F)
+    __in u32 event_id;      // ranges from 0x01 to 0x3F
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_UNREGISTER ===
 Unregisters an event. Exclusive to the Switch. 
 
   struct {
-    u32 __event_id;      // in (ranges from 0x01 to 0x3F)
+    __in u32 event_id;      // ranges from 0x01 to 0x3F
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_KILL ===
 Kills events. Exclusive to the Switch. 
 
   struct {
-    u64 __events;      // in (64-bit flag where each bit represents one event)
+    __in u64 events;      // 64-bit bitfield where each bit represents one event
   };
 
 == /dev/nvmap ==
@@ -315,57 +315,57 @@ Kills events. Exclusive to the Switch.
 Creates an nvmap object. Identical to Linux driver.
 
   struct {
-    u32 __size;   // in
-    u32 __handle; // out
+    __in  u32 size;
+    __out u32 handle;
   };
 
 === NVMAP_IOC_FROM_ID ===
 Get handle to an existing nvmap object. Identical to Linux driver.
 
   struct {
-    u32 __id;     // in
-    u32 __handle; // out
+    __in  u32 id;
+    __out u32 handle;
   };
 
 === NVMAP_IOC_ALLOC ===
 Allocate memory for the nvmap object. Nintendo extended this one with 16 bytes, and changed it from in to inout.
 
   struct {
-    u32 __handle;   // in
-    u32 __heapmask; // in
-    u32 __flags;    // in (0=read-only, 1=read-write)
-    u32 __align;    // in
-    u8  __kind;     // in
-    u8  __pad[7];
-    u64 __addr;     // in
+    __in u32 handle;
+    __in u32 heapmask;
+    __in u32 flags;    // (0=read-only, 1=read-write)
+    __in u32 align;
+    __in u8  kind;
+    u8       pad[7];
+    __in u64 addr;
   };
 
 === NVMAP_IOC_FREE ===
 This one is completely custom. Partly because the Linux driver passed the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
 
   struct {
-    u32 __handle;   // in
-    u32 __pad;
-    u64 __refcount; // out
-    u32 __size;     // out
-    u32 __flags;    // out, 1=NOT_FREED_YET
+    __in  u32 handle;
+    u32       pad;
+    __out u64 refcount;
+    __out u32 size;
+    __out u32 flags;    // 1=NOT_FREED_YET
   };
 
 === NVMAP_IOC_PARAM ===
 Returns info about a nvmap object. Identical to Linux driver, but extended with further params.
 
   struct {
-    u32 __handle; // in
-    u32 __param;  // in, 1=SIZE, 2=ALIGNMENT, 3=BASE (returns error), 4=HEAP (always 0x40000000), 5=KIND, 6=COMPR (unused)
-    u32 __result; // out
+    __in  u32 handle;
+    __in  u32 param;  // 1=SIZE, 2=ALIGNMENT, 3=BASE (returns error), 4=HEAP (always 0x40000000), 5=KIND, 6=COMPR (unused)
+    __out u32 result;
   };
 
 === NVMAP_IOC_GET_ID ===
 Returns an id for a nvmap object. Identical to Linux driver.
 
   struct {
-    u32 __id;     // out
-    u32 __handle; // in
+    __out u32 id;
+    __in  u32 handle;
   };
 
 == /dev/nvdisp-ctrl ==
@@ -565,28 +565,28 @@ Once a nvgpu channel has been bound to an address space it cannot be unbound. Th
 Identical to Linux driver.
 
   struct {
-    u32 __fd; // in
+    __in u32 fd;
   };
 
 === NVGPU_AS_IOCTL_ALLOC_SPACE ===
 This one reserves pages in the device address space.
 
   struct {
-    u32 __pages;     // in
-    u32 __page_size; // in
-    u32 __flags;     // in
-    u32 __pad;
+    __in u32 pages;
+    __in u32 page_size;
+    __in u32 flags;
+    u32      pad;
     union {
-      u64 __offset;  // out
-      u64 __align;   // in
+      __out u64 offset;
+      __in  u64 align;
     };
   };
 
 === NVGPU_AS_IOCTL_FREE_SPACE ===
   struct {
-    u64 __offset;    // in
-    u32 __pages;     // in
-    u32 __page_size; // in
+    __in u64 offset;
+    __in u32 pages;
+    __in u32 page_size;
   };
 
 === NVGPU_AS_IOCTL_MAP_BUFFER ===
@@ -595,13 +595,13 @@ Map a memory region in the device address space. Identical to Linux driver prett
 On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit34 set.
 
   struct {
-    u32 __flags;        // in, bit0: fixed_offset, bit2: cacheable
-    u32 __reserved;
-    u32 __nvmap_handle; // in
-    u32 __page_size;    // inout, 0 means don't care
+    __in    u32 flags;        // bit0: fixed_offset, bit2: cacheable
+    u32         pad;
+    __in    u32 nvmap_handle;
+    __inout u32 page_size;    // 0 means don't care
     union {
-      u64 __offset;     // out
-      u64 __align;      // in
+      __out u64 offset;
+      __in  u64 align;
     };
   };
 
@@ -611,13 +611,13 @@ Map a memory region in the device address space. Identical to Linux driver prett
 On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit34 set.
 
   struct {
-    u32 __flags;          // in, 4 works
-    u32 __kind;           // in, -1 is default
-    u32 __nvmap_handle;   // in
-    u32 __page_size;      // inout, 0 means don't care
-    u64 __buffer_offset;  // in
-    u64 __mapping_size;   // in
-    u64 __offset;         // out
+    __in    u32 flags;          // bit0: fixed_offset, bit2: cacheable
+    __in    u32 kind;           // -1 is default
+    __in    u32 nvmap_handle;
+    __inout u32 page_size;      // 0 means don't care
+    __in    u64 buffer_offset;
+    __in    u64 mapping_size;
+    __out   u64 offset;
   };
 
 === NVGPU_AS_IOCTL_UNMAP_BUFFER ===
@@ -627,40 +627,40 @@ Doesn't do shit.
 Nintendo's custom implementation of NVGPU_GPU_IOCTL_ALLOC_AS (unavailable).
 
   struct {
-    u32 __big_page_size;   // in (depends on GPU's available_big_page_sizes; 0=default)
-    s32 __as_fd;           // in (ignored; passes 0)
-    u32 __flags;           // in (ignored; passes 0)
-    u32 __reserved;        // in (ignored; passes 0)
+    __in u32 big_page_size;   // depends on GPU's available_big_page_sizes; 0=default
+    __in s32 as_fd;           // ignored; passes 0
+    __in u32 flags;           // ignored; passes 0
+    __in u32 reserved;        // ignored; passes 0
   };
 
 === NVGPU_AS_IOCTL_GET_VA_REGIONS ===
 Nintendo modified to get rid of pointer in struct.
 
   struct va_region {
-    u64 __offset;
-    u32 __page_size;
-    u32 __reserved;
-    u64 __pages;
+    u64 offset;
+    u32 page_size;
+    u32 pad;
+    u64 pages;
   };
   
   struct {
-    u64              __not_used;   // (contained output user ptr on linux, ignored)
-    u32              __bufsize;    // inout, forced to 2*sizeof(struct va_region)
-    u32              __reserved;
-    struct va_region __regions[2]; // out
+    u64         not_used;   // (contained output user ptr on linux, ignored)
+    __inout u32 bufsize;    // forced to 2*sizeof(struct va_region)
+    u32         pad;
+    __out struct va_region regions[2];
   };
 
 === NVGPU_AS_IOCTL_INITIALIZE_EX ===
 Nintendo's custom implementation of NVGPU_GPU_IOCTL_ALLOC_AS (unavailable) with extra params.
 
   struct {
-    u32 __big_page_size;   // in (depends on GPU's available_big_page_sizes; 0=default)
-    s32 __as_fd;           // in (ignored; passes 0)
-    u32 __flags;           // in (ignored; passes 0)
-    u32 __reserved;        // in (ignored; passes 0)
-    u64 __unk0;            // in
-    u64 __unk1;            // in
-    u64 __unk2;            // in
+    __in u32 big_page_size;   // depends on GPU's available_big_page_sizes; 0=default
+    __in s32 as_fd;           // ignored; passes 0
+    __in u32 flags;           // ignored; passes 0
+    __in u32 reserved;        // ignored; passes 0
+    __in u64 unk0;
+    __in u64 unk1;
+    __in u64 unk2;
   };
 
 == /dev/nvhost-dbg-gpu ==
@@ -743,64 +743,64 @@ This device is for global (context independent) operations on the gpu.
 === NVGPU_GPU_IOCTL_GET_CHARACTERISTICS ===
 Returns the GPU characteristics. Modified to return inline data instead of using a pointer.
 
-  struct __gpu_characteristics {
-    u32 __arch;                           // 0x120 (NVGPU_GPU_ARCH_GM200)
-    u32 __impl;                           // 0xB (NVGPU_GPU_IMPL_GM20B)
-    u32 __rev;                            // 0xA1 (Revision A1)
-    u32 __num_gpc;                        // 0x1
-    u64 __L2_cache_size;                  // 0x40000
-    u64 __on_board_video_memory_size;     // 0x0 (not used)
-    u32 __num_tpc_per_gpc;                // 0x2
-    u32 __bus_type;                       // 0x20 (NVGPU_GPU_BUS_TYPE_AXI)
-    u32 __big_page_size;                  // 0x20000
-    u32 __compression_page_size;          // 0x20000
-    u32 __pde_coverage_bit_count;         // 0x1B
-    u32 __available_big_page_sizes;       // 0x30000
-    u32 __gpc_mask;                       // 0x1
-    u32 __sm_arch_sm_version;             // 0x503 (Maxwell Generation 5.0.3?)
-    u32 __sm_arch_spa_version;            // 0x503 (Maxwell Generation 5.0.3?)
-    u32 __sm_arch_warp_count;             // 0x80
-    u32 __gpu_va_bit_count;               // 0x28
-    u32 __reserved;                       // NULL
-    u64 __flags;                          // 0x55
-    u32 __twod_class;                     // 0x902D (FERMI_TWOD_A)
-    u32 __threed_class;                   // 0xB197 (MAXWELL_B)
-    u32 __compute_class;                  // 0xB1C0 (MAXWELL_COMPUTE_B)
-    u32 __gpfifo_class;                   // 0xB06F (MAXWELL_CHANNEL_GPFIFO_A)
-    u32 __inline_to_memory_class;         // 0xA140 (KEPLER_INLINE_TO_MEMORY_B)
-    u32 __dma_copy_class;                 // 0xB0B5 (MAXWELL_DMA_COPY_A)
-    u32 __max_fbps_count;                 // 0x1
-    u32 __fbp_en_mask;                    // 0x0 (disabled)
-    u32 __max_ltc_per_fbp;                // 0x2
-    u32 __max_lts_per_ltc;                // 0x1
-    u32 __max_tex_per_tpc;                // 0x0 (not supported)
-    u32 __max_gpc_count;                  // 0x1
-    u32 __rop_l2_en_mask_0;               // 0x21D70 (fuse_status_opt_rop_l2_fbp_r)
-    u32 __rop_l2_en_mask_1;               // 0x0
-    u64 __chipname;                       // 0x6230326D67 ("gm20b")
-    u64 __gr_compbit_store_base_hw;       // 0x0 (not supported)
+  struct gpu_characteristics {
+    u32 arch;                           // 0x120 (NVGPU_GPU_ARCH_GM200)
+    u32 impl;                           // 0xB (NVGPU_GPU_IMPL_GM20B)
+    u32 rev;                            // 0xA1 (Revision A1)
+    u32 num_gpc;                        // 0x1
+    u64 l2_cache_size;                  // 0x40000
+    u64 on_board_video_memory_size;     // 0x0 (not used)
+    u32 num_tpc_per_gpc;                // 0x2
+    u32 bus_type;                       // 0x20 (NVGPU_GPU_BUS_TYPE_AXI)
+    u32 big_page_size;                  // 0x20000
+    u32 compression_page_size;          // 0x20000
+    u32 pde_coverage_bit_count;         // 0x1B
+    u32 available_big_page_sizes;       // 0x30000
+    u32 gpc_mask;                       // 0x1
+    u32 sm_arch_sm_version;             // 0x503 (Maxwell Generation 5.0.3?)
+    u32 sm_arch_spa_version;            // 0x503 (Maxwell Generation 5.0.3?)
+    u32 sm_arch_warp_count;             // 0x80
+    u32 gpu_va_bit_count;               // 0x28
+    u32 reserved;                       // NULL
+    u64 flags;                          // 0x55
+    u32 twod_class;                     // 0x902D (FERMI_TWOD_A)
+    u32 threed_class;                   // 0xB197 (MAXWELL_B)
+    u32 compute_class;                  // 0xB1C0 (MAXWELL_COMPUTE_B)
+    u32 gpfifo_class;                   // 0xB06F (MAXWELL_CHANNEL_GPFIFO_A)
+    u32 inline_to_memory_class;         // 0xA140 (KEPLER_INLINE_TO_MEMORY_B)
+    u32 dma_copy_class;                 // 0xB0B5 (MAXWELL_DMA_COPY_A)
+    u32 max_fbps_count;                 // 0x1
+    u32 fbp_en_mask;                    // 0x0 (disabled)
+    u32 max_ltc_per_fbp;                // 0x2
+    u32 max_lts_per_ltc;                // 0x1
+    u32 max_tex_per_tpc;                // 0x0 (not supported)
+    u32 max_gpc_count;                  // 0x1
+    u32 rop_l2_en_mask_0;               // 0x21D70 (fuse_status_opt_rop_l2_fbp_r)
+    u32 rop_l2_en_mask_1;               // 0x0
+    u64 chipname;                       // 0x6230326D67 ("gm20b")
+    u64 gr_compbit_store_base_hw;       // 0x0 (not supported)
   };
  
   struct {
-    u64 __gpu_characteristics_buf_size;   // in/out (must not be NULL, but gets overwritten with 0xA0=max_size)
-    u64 __gpu_characteristics_buf_addr;   // in (ignored, but must not be NULL)
-    struct __gpu_characteristics gc;      // out
+    __inout u64 gpu_characteristics_buf_size;   // must not be NULL, but gets overwritten with 0xA0=max_size
+    __in    u64 gpu_characteristics_buf_addr;   // ignored, but must not be NULL
+    __out struct gpu_characteristics gc;
   };
 
 === NVGPU_GPU_IOCTL_FLUSH_L2 ===
 Flushes the GPU L2 cache.
 
   struct {
-    u32 __flush;          // in (l2_flush | l2_invalidate << 1 | fb_flush << 2)
-    u32 __reserved;       // in
+    __in u32 flush;          // l2_flush | l2_invalidate << 1 | fb_flush << 2
+    u32      reserved;
   };
 
 === NVGPU_GPU_IOCTL_GET_L2_STATE ===
 Returns the GPU L2 cache state.
 
   struct {
-    u32 __mask;        // out (always 0x07)
-    u32 __flush;       // out (active flush bit field)
+    __out u32 mask;        // always 0x07
+    __out u32 flush;       // active flush bit field
   };
 
 == Channels ==
@@ -890,62 +890,62 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 Binds a nvmap object to this channel. Identical to Linux driver.
 
   struct {
-    u32 __nvmap_fd;     // in
+    __in u32 nvmap_fd;
   };
 
 === NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO ===
 Allocates gpfifo entries. Identical to Linux driver.
 
   struct {
-    u32 __num_entries;     // in
-    u32 __flags;           // in
+    __in u32 num_entries;
+    __in u32 flags;
   };
 
 === NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO ===
 Submits a gpfifo object. Modified to take inline entry objects instead of a pointer.
 
   struct fence {
-    u32 __id;
-    u32 __value;
+    u32 id;
+    u32 value;
   };
   
   struct gpfifo_entry {
-    u32 __entry0;
-    u32 __entry1;
+    u32 entry0;
+    u32 entry1;
   };
   
   struct {
-    u64 __gpfifo;                     // in (pointer to gpfifo fence structs; ignored)
-    u32 __num_entries;                // in (number of fence objects being submitted)
-    u32 __flags;                      // in
-    struct fence        __fence_out;  // out (returned new fence object for others to wait on)
-    struct gpfifo_entry __entries[];  // in (depends on __num_entries)
+    __in u64 gpfifo;                      // (ignored) pointer to gpfifo fence structs
+    __in u32 num_entries;                 // number of fence objects being submitted
+    __in u32 flags;
+    __out struct fence fence_out;         // returned new fence object for others to wait on
+    __in  struct gpfifo_entry entries[];  // depends on num_entries
   };
 
 === NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX ===
 Allocates a graphics context object. Modified to ignore object's ID.
 
   struct {
-    u32 __class_num;    // in (0x902D=2d, 0xB197=3d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo)
-    u32 __flags;        // in
-    u64 __obj_id;       // out (ignored; used for FREE_OBJ_CTX ioctl, which is not supported)
+    __in  u32 class_num;    // 0x902D=2d, 0xB197=3d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo
+    __in  u32 flags;
+    __out u64 obj_id;       // (ignored) used for FREE_OBJ_CTX ioctl, which is not supported
   };
 
 === NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER ===
 Initializes the error notifier for this channel. Identical to Linux driver.
 
   struct {
-    u64 __offset;    // in
-    u64 __size;      // in
-    u32 __mem;       // in (nvmap object handle)
-    u32 __padding;   // in
+    __in u64 offset;
+    __in u64 size;
+    __in u32 mem;       // nvmap object handle
+    __in u32 padding;
   };
 
 === NVGPU_IOCTL_CHANNEL_SET_PRIORITY ===
 Change channel's priority. Identical to Linux driver.
 
   struct {
-    u32 __priority;    // in (0x32 is low, 0x64 is medium and 0x96 is high)
+    __in u32 priority;    // 0x32 is low, 0x64 is medium and 0x96 is high
   };
 
 === NVGPU_IOCTL_CHANNEL_ENABLE ===
@@ -964,32 +964,32 @@ Forces the channel to reset. Identical to Linux driver.
 Controls event notifications. Modified to take an additional argument.
 
   struct {
-    u32 __cmd;    // in (0=disable, 1=enable, 2=clear)
-    u32 __unk;    // in (accepts 1 or 2)
+    __in u32 cmd;    // 0=disable, 1=enable, 2=clear
+    __in u32 unk;    // accepts 1 or 2
   };
 
 === NVGPU_IOCTL_CHANNEL_GET_ERROR ===
 Returns the current error notification caught by the error notifier. Exclusive to the Switch.
 
   struct {
-    u64 __timestamp;    // out (nanoseconds since Jan. 1, 1970)
-    u32 __info32;       // out (error code)
-    u16 __info16;       // out (additional error info)
-    u16 __status;       // inout (always 0xFFFF)
+    __out   u64 timestamp;    // nanoseconds since Jan. 1, 1970
+    __out   u32 info32;       // error code
+    __out   u16 info16;       // additional error info
+    __inout u16 status;       // always 0xFFFF
   };
 
 === NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY ===
 Allocates gpfifo entries with additional parameters. Exclusive to the Switch.
 
   struct {
-    u32 __num_entries;     // in
-    u32 __flags;           // in
-    u32 __unk0;            // in (1 works)
-    u32 __unk1;            // in
-    u32 __unk2;            // in
-    u32 __unk3;            // in
-    u32 __unk4;            // in
-    u32 __unk5;            // in
+    __in u32 num_entries;
+    __in u32 flags;
+    __in u32 unk0;            // 1 works
+    __in u32 unk1;
+    __in u32 unk2;
+    __in u32 unk3;
+    __in u32 unk4;
+    __in u32 unk5;
   };
 
 === NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX ===
