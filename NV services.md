@@ -38,6 +38,9 @@ Takes a type-0x5 input buffer for the device-path. Returns the output
 Takes a 32bit fd, an u32 ioctl cmd, a type-0x21 input buffer, and a
 type-0x22 output buffer. Returns the output u32 error field.
 
+The addr/size for send/recv buffers are only set when the associated
+direction bit is set in the ioctl cmd(addr/size = 0 otherwise).
+
 ## Close
 
 Takes a 32bit fd. Returns the output u32 error field.
