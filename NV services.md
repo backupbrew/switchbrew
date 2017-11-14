@@ -500,7 +500,7 @@ set.
 `   __inout u32 page_size;      // 0 means don't care`  
 `   __in    u64 buffer_offset;`  
 `   __in    u64 mapping_size;`  
-`   __out   u64 offset;`  
+`   __inout   u64 offset;`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER

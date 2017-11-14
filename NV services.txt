@@ -574,7 +574,7 @@ On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit
     __inout u32 page_size;      // 0 means don't care
     __in    u64 buffer_offset;
     __in    u64 mapping_size;
-    __out   u64 offset;
+    __inout   u64 offset;
   };
 
 === NVGPU_AS_IOCTL_UNMAP_BUFFER ===
