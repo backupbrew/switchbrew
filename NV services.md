@@ -925,4 +925,9 @@ return code.
 | 0x30003 | FileOperationFailed  |
 | 0x3000F | IoctlFailed          |
 
+# Panic
+
+In some cases {NV/GPU}(?) may panic. End result is that the system hangs
+with a white-screen.
+
 [Category:Services](Category:Services "wikilink")

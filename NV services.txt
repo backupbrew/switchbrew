@@ -1043,4 +1043,7 @@ Most nvidia driver commands return an error code apart from the normal return co
 | 0x3000F || IoctlFailed                        
 |}
 
+= Panic =
+In some cases {NV/GPU}(?) may panic. End result is that the system hangs with a white-screen.
+
 [[Category:Services]]
