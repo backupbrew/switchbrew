@@ -87,6 +87,10 @@ PID([AppletResourceUserId](AM%20services.md "wikilink")).
 
 No input or output.
 
+## Cmd10
+
+Takes a copy-handle and an input u32. Returns an output u32.
+
 # Ioctls
 
 The ioctl number is generated with the following primitive (see Linux
