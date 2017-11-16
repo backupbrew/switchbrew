@@ -27,7 +27,7 @@ Each service is used by:
 |-
 | 6 || GetStatus
 |-
-| 7 || ForceSetClientPID
+| 7 || [[#ForceSetClientPID]]
 |-
 | 8 || [[#SetClientPID]]
 |-
@@ -77,6 +77,9 @@ Webkit applet creates the transfer-memory with perm = 0 and size 0x300000.
 
 == QueryEvent ==
 Takes two input u32s(fd and event_id), with the second word immediately after the first one. Returns an output u32 and a copy-handle.
+
+== ForceSetClientPID ==
+Takes an input u64. Returns an output u32.
 
 == SetClientPID ==
 Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-process PID([[AM_services|AppletResourceUserId]]).

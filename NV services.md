@@ -11,22 +11,22 @@ Each service is used by:
   - "nvdrv:s": sysmodules
   - "nvdrv:t": Only known to be used by factory title(s).
 
-| Cmd | Name                                       |
-| --- | ------------------------------------------ |
-| 0   | [\#Open](#Open "wikilink")                 |
-| 1   | [\#Ioctl](#Ioctl "wikilink")               |
-| 2   | [\#Close](#Close "wikilink")               |
-| 3   | [\#Initialize](#Initialize "wikilink")     |
-| 4   | [\#QueryEvent](#QueryEvent "wikilink")     |
-| 5   | MapSharedMem                               |
-| 6   | GetStatus                                  |
-| 7   | ForceSetClientPID                          |
-| 8   | [\#SetClientPID](#SetClientPID "wikilink") |
-| 9   | DumpGraphicsMemoryInfo                     |
-| 10  | \[3.0.0+\]                                 |
-| 11  | \[3.0.0+\] Ioctl2                          |
-| 12  | \[3.0.0+\] Ioctl3                          |
-| 13  | \[3.0.0+\]                                 |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | [\#Open](#Open "wikilink")                           |
+| 1   | [\#Ioctl](#Ioctl "wikilink")                         |
+| 2   | [\#Close](#Close "wikilink")                         |
+| 3   | [\#Initialize](#Initialize "wikilink")               |
+| 4   | [\#QueryEvent](#QueryEvent "wikilink")               |
+| 5   | MapSharedMem                                         |
+| 6   | GetStatus                                            |
+| 7   | [\#ForceSetClientPID](#ForceSetClientPID "wikilink") |
+| 8   | [\#SetClientPID](#SetClientPID "wikilink")           |
+| 9   | DumpGraphicsMemoryInfo                               |
+| 10  | \[3.0.0+\]                                           |
+| 11  | \[3.0.0+\] Ioctl2                                    |
+| 12  | \[3.0.0+\] Ioctl3                                    |
+| 13  | \[3.0.0+\]                                           |
 
 ## Open
 
@@ -64,6 +64,10 @@ Webkit applet creates the transfer-memory with perm = 0 and size
 
 Takes two input u32s(fd and event\_id), with the second word immediately
 after the first one. Returns an output u32 and a copy-handle.
+
+## ForceSetClientPID
+
+Takes an input u64. Returns an output u32.
 
 ## SetClientPID
 
