@@ -23,7 +23,7 @@ Each service is used by:
 |-
 | 4 || [[#QueryEvent]]
 |-
-| 5 || MapSharedMem
+| 5 || [[#MapSharedMem]]
 |-
 | 6 || [[#GetStatus]]
 |-
@@ -77,6 +77,9 @@ Webkit applet creates the transfer-memory with perm = 0 and size 0x300000.
 
 == QueryEvent ==
 Takes two input u32s(fd and event_id), with the second word immediately after the first one. Returns an output u32 and a copy-handle.
+
+== MapSharedMem ==
+Takes a copy-handle and two input u32s. Returns an output u32.
 
 == GetStatus ==
 Takes no input. Returns 0x10-bytes of output then an output u32.
