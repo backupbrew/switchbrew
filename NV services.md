@@ -19,7 +19,7 @@ Each service is used by:
 | 3   | [\#Initialize](#Initialize "wikilink")               |
 | 4   | [\#QueryEvent](#QueryEvent "wikilink")               |
 | 5   | MapSharedMem                                         |
-| 6   | GetStatus                                            |
+| 6   | [\#GetStatus](#GetStatus "wikilink")                 |
 | 7   | [\#ForceSetClientPID](#ForceSetClientPID "wikilink") |
 | 8   | [\#SetClientPID](#SetClientPID "wikilink")           |
 | 9   | DumpGraphicsMemoryInfo                               |
@@ -64,6 +64,10 @@ Webkit applet creates the transfer-memory with perm = 0 and size
 
 Takes two input u32s(fd and event\_id), with the second word immediately
 after the first one. Returns an output u32 and a copy-handle.
+
+## GetStatus
+
+Takes no input. Returns 0x10-bytes of output then an output u32.
 
 ## ForceSetClientPID
 
