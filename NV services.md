@@ -17,7 +17,7 @@ Each service is used by:
 | 1   | [\#Ioctl](#Ioctl "wikilink")               |
 | 2   | [\#Close](#Close "wikilink")               |
 | 3   | [\#Initialize](#Initialize "wikilink")     |
-| 4   | QueryEvent                                 |
+| 4   | [\#QueryEvent](#QueryEvent "wikilink")     |
 | 5   | MapSharedMem                               |
 | 6   | GetStatus                                  |
 | 7   | ForceSetClientPID                          |
@@ -59,6 +59,11 @@ Takes a 32bit fd. Returns the output u32 error field.
 
 Webkit applet creates the transfer-memory with perm = 0 and size
 0x300000.
+
+## QueryEvent
+
+Takes two input u32s(fd and event\_id), with the second word immediately
+after the first one. Returns an output u32 and a copy-handle.
 
 ## SetClientPID
 
