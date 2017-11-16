@@ -650,7 +650,7 @@ Nintendo's custom implementation of NVGPU_GPU_IOCTL_ALLOC_AS (unavailable) with 
   };
 
 === NVGPU_AS_IOCTL_REMAP ===
-Nintendo's custom implementation of adress space remapping.
+Nintendo's custom implementation of address space remapping.
 
   struct remap_entry {
     __in u16 flags;        // 0 or 4

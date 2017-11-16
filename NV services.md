@@ -623,7 +623,7 @@ params.
 
 ### NVGPU\_AS\_IOCTL\_REMAP
 
-Nintendo's custom implementation of adress space remapping.
+Nintendo's custom implementation of address space remapping.
 
 ` struct remap_entry {`  
 `   __in u16 flags;        // 0 or 4`  
