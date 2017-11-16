@@ -91,6 +91,11 @@ No input or output.
 
 Takes a copy-handle and an input u32. Returns an output u32.
 
+## Ioctl2
+
+Takes a type-0x21 buffer, a type-0x22 buffer, a type-0x21 buffer, and
+two input u32s. Returns an output u32.
+
 # Ioctls
 
 The ioctl number is generated with the following primitive (see Linux
