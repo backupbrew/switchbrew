@@ -31,7 +31,7 @@ Each service is used by:
 |-
 | 8 || [[#SetClientPID]]
 |-
-| 9 || DumpGraphicsMemoryInfo
+| 9 || [[#DumpGraphicsMemoryInfo]]
 |-
 | 10 || [3.0.0+]
 |-
@@ -89,6 +89,9 @@ Takes an input u64. Returns an output u32.
 
 == SetClientPID ==
 Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-process PID([[AM_services|AppletResourceUserId]]).
+
+== DumpGraphicsMemoryInfo ==
+No input or output.
 
 = Ioctls =
 The ioctl number is generated with the following primitive (see Linux kernel):

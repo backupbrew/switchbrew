@@ -11,22 +11,22 @@ Each service is used by:
   - "nvdrv:s": sysmodules
   - "nvdrv:t": Only known to be used by factory title(s).
 
-| Cmd | Name                                                 |
-| --- | ---------------------------------------------------- |
-| 0   | [\#Open](#Open "wikilink")                           |
-| 1   | [\#Ioctl](#Ioctl "wikilink")                         |
-| 2   | [\#Close](#Close "wikilink")                         |
-| 3   | [\#Initialize](#Initialize "wikilink")               |
-| 4   | [\#QueryEvent](#QueryEvent "wikilink")               |
-| 5   | [\#MapSharedMem](#MapSharedMem "wikilink")           |
-| 6   | [\#GetStatus](#GetStatus "wikilink")                 |
-| 7   | [\#ForceSetClientPID](#ForceSetClientPID "wikilink") |
-| 8   | [\#SetClientPID](#SetClientPID "wikilink")           |
-| 9   | DumpGraphicsMemoryInfo                               |
-| 10  | \[3.0.0+\]                                           |
-| 11  | \[3.0.0+\] Ioctl2                                    |
-| 12  | \[3.0.0+\] Ioctl3                                    |
-| 13  | \[3.0.0+\]                                           |
+| Cmd | Name                                                           |
+| --- | -------------------------------------------------------------- |
+| 0   | [\#Open](#Open "wikilink")                                     |
+| 1   | [\#Ioctl](#Ioctl "wikilink")                                   |
+| 2   | [\#Close](#Close "wikilink")                                   |
+| 3   | [\#Initialize](#Initialize "wikilink")                         |
+| 4   | [\#QueryEvent](#QueryEvent "wikilink")                         |
+| 5   | [\#MapSharedMem](#MapSharedMem "wikilink")                     |
+| 6   | [\#GetStatus](#GetStatus "wikilink")                           |
+| 7   | [\#ForceSetClientPID](#ForceSetClientPID "wikilink")           |
+| 8   | [\#SetClientPID](#SetClientPID "wikilink")                     |
+| 9   | [\#DumpGraphicsMemoryInfo](#DumpGraphicsMemoryInfo "wikilink") |
+| 10  | \[3.0.0+\]                                                     |
+| 11  | \[3.0.0+\] Ioctl2                                              |
+| 12  | \[3.0.0+\] Ioctl3                                              |
+| 13  | \[3.0.0+\]                                                     |
 
 ## Open
 
@@ -82,6 +82,10 @@ Takes an input u64. Returns an output u32.
 Takes a PID-descriptor and an u64 which must
 [match](IPC%20Marshalling.md "wikilink") the user-process
 PID([AppletResourceUserId](AM%20services.md "wikilink")).
+
+## DumpGraphicsMemoryInfo
+
+No input or output.
 
 # Ioctls
 
