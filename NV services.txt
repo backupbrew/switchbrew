@@ -1,4 +1,4 @@
-The Switch makes use of a customized NVIDIA driver.
+The Switch uses a customized NVIDIA driver.
 
 = nvdrv, nvdrv:a, nvdrv:s, nvdrv:t =
 Main NVIDIA driver service.
@@ -7,7 +7,7 @@ Each service is used by:
 * "nvdrv": regular applications
 * "nvdrv:a": applets
 * "nvdrv:s": sysmodules
-* "nvdrv:t": Only known to be used by factory title(s).
+* "nvdrv:t": factory titles
 
 {| class="wikitable" border="1"
 |-
@@ -43,61 +43,44 @@ Each service is used by:
 |}
 
 == Open ==
-Takes a type-0x5 input buffer for the device-path. Returns the output 32bit fd and the u32 error field.
+Takes a type-0x5 input buffer for the device-path. Returns the output 32bit '''fd''' and the u32 '''error_code'''.
 
 == Ioctl ==
-Takes a 32bit fd, an u32 ioctl cmd, a type-0x21 input buffer, and a type-0x22 output buffer. Returns the output u32 error field.
+Takes a 32bit '''fd''', an u32 '''ioctl_cmd''', a type-0x21 input buffer, and a type-0x22 output buffer. Returns an output u32 ('''error_code''').
 
-The addr/size for send/recv buffers are only set when the associated direction bit is set in the ioctl cmd(addr/size = 0 otherwise).
+The addr/size for send/recv buffers are only set when the associated direction bit is set in the ioctl cmd (addr/size = 0 otherwise).
 
 == Close ==
-Takes a 32bit fd. Returns the output u32 error field.
+Takes a 32bit '''fd'''. Returns an output u32 ('''error_code''').
 
 == Initialize ==
-{| class="wikitable" border="1"
-|-
-! Word || Value
-|-
-| 0 || 0x00000004
-|-
-| 1 || 0x80000009
-|-
-| ? || Copy-handle descriptor: Current process
-|-
-| ? || Copy-handle descriptor: Transfer memory
-|- style="border-top: double"
-| 0-1 || "SFCI"
-|-
-| 2-3 || Cmd id (3)
-|-
-| 4 || Transfer memory size
-|}
+Takes two copy-handles ('''current_process''' and '''transfer_memory''') and an input u32 ('''transfer_memory_size'''). Returns an output u32 ('''error_code''').
 
 Webkit applet creates the transfer-memory with perm = 0 and size 0x300000.
 
 == QueryEvent ==
-Takes two input u32s(fd and event_id), with the second word immediately after the first one. Returns an output u32 and a copy-handle.
+Takes two input u32s ('''fd''' and '''event_id'''), with the second word immediately after the first one. Returns an output u32 ('''error_code''') and a copy-handle ('''event_handle''').
 
 == MapSharedMem ==
-Takes a copy-handle and two input u32s. Returns an output u32.
+Takes a copy-handle ('''transfer_memory''') and two input u32s ('''fd''' and '''nvmap_handle'''). Returns an output u32 ('''error_code''').
 
 == GetStatus ==
-Takes no input. Returns 0x10-bytes of output then an output u32.
+Takes no input. Returns 0x10-bytes and an output u32 ('''error_code''').
 
 == ForceSetClientPID ==
-Takes an input u64. Returns an output u32.
+Takes an input u64 which must [[IPC_Marshalling|match]] the user-process PID ([[AM_services|AppletResourceUserId]]). Returns an output u32 ('''error_code''').
 
 == SetClientPID ==
-Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-process PID([[AM_services|AppletResourceUserId]]).
+Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-process PID ([[AM_services|AppletResourceUserId]]). Returns an output u32 ('''error_code''').
 
 == DumpGraphicsMemoryInfo ==
-No input or output.
+No input or output. Does nothing.
 
 == Cmd10 ==
-Takes a copy-handle and an input u32. Returns an output u32.
+Takes a copy-handle and an input u32. Returns an output u32 ('''error_code''').
 
 == Ioctl2 ==
-Takes a type-0x21 buffer, a type-0x22 buffer, a type-0x21 buffer, and two input u32s. Returns an output u32.
+Takes a type-0x21 buffer, a type-0x22 buffer, a type-0x21 buffer, and two input u32s. Returns an output u32 ('''error_code''').
 
 == Ioctl3 ==
 Same input/output as Ioctl2, except cmdhdr_word1 is 0x100B instead of 0xC0B.
@@ -133,7 +116,7 @@ The following table contains known ioctls.
 |-
 | 0xC008001A || Inout || 8 || [[#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX]] ||
 |-
-| 0xC183001B || Inout || 387 || NVHOST_IOCTL_CTRL_GET_CONFIG ||
+| 0xC183001B || Inout || 387 || [[#NVHOST_IOCTL_CTRL_GET_CONFIG]] ||
 |-
 | 0xC004001C || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_SIGNAL]] ||
 |-
@@ -210,52 +193,65 @@ Identical to Linux driver.
     __out u32 value;
   };
 
-=== NVHOST_IOCTL_CTRL_EVENT_SIGNAL ===
-Signals an event. Exclusive to the Switch. 
+=== NVHOST_IOCTL_CTRL_GET_CONFIG ===
+Gets configured settings. Not available in production mode.
 
   struct {
-    __in u32 event_id;      // ranges from 0x01 to 0x3F
+    __in char domain_str[0x41];       // "nv"
+    __in char param_str[0x41];
+    __out char config_str[0x101];
+  };
+
+=== NVHOST_IOCTL_CTRL_EVENT_SIGNAL ===
+Signals an user event. Exclusive to the Switch.
+
+  struct {
+    __in u32 user_event_id;      // ranges from 0x00 to 0x3F
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_WAIT ===
-Waits on an event. Exclusive to the Switch. 
+Waits on an event. If waiting fails, returns error code 0x05 (Timeout) and sets '''value''' to (('''syncpt_id''' << 0x10) | 0x10000000).
+
+Depending on '''threshold''', an '''user_event_id''' may be returned for using with other event ioctls.
 
   struct {
-    __in    u32 unk0;
-    __in    u32 unk1;
-    __in    s32 __timeout;
-    __inout u32 __event;    // in=event_id; out=result
+    __in    u32 syncpt_id;
+    __in    u32 threshold;
+    __in    s32 timeout;
+    __inout u32 value;           // in=user_event_id (ignored); out=syncpt_value or user_event_id
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC ===
-Waits on an event (async version). Exclusive to the Switch. 
+Waits on an event (async version). If waiting fails, returns error code 0x0B (BadValue).
+
+Depending on '''threshold''', an '''user_event_id''' may be returned for using with other event ioctls.
 
   struct {
-    __in    u32 unk0;
-    __in    u32 unk1;
-    __in    s32 timeout;
-    __inout u32 event;      // in=event_id; out=result
+    __in    u32 syncpt_id;
+    __in    u32 threshold;
+    __in    u32 timeout;
+    __inout u32 value;           // in=user_event_id (ignored); out=syncpt_value or user_event_id
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_REGISTER ===
-Registers an event. Exclusive to the Switch. 
+Registers an user event. Exclusive to the Switch. 
 
   struct {
-    __in u32 event_id;      // ranges from 0x01 to 0x3F
+    __in u32 user_event_id;      // ranges from 0x00 to 0x3F
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_UNREGISTER ===
-Unregisters an event. Exclusive to the Switch. 
+Unregisters an user event. Exclusive to the Switch. 
 
   struct {
-    __in u32 event_id;      // ranges from 0x01 to 0x3F
+    __in u32 user_event_id;      // ranges from 0x00 to 0x3F
   };
 
 === NVHOST_IOCTL_CTRL_EVENT_KILL ===
-Kills events. Exclusive to the Switch. 
+Kills user events. Exclusive to the Switch. 
 
   struct {
-    __in u64 events;      // 64-bit bitfield where each bit represents one event
+    __in u64 user_events;       // 64-bit bitfield where each bit represents one event
   };
 
 == /dev/nvmap ==
@@ -544,7 +540,7 @@ Once a nvgpu channel has been bound to an address space it cannot be unbound. Th
 |-
 | 0x40284109 || In || 40 || [[#NVGPU_AS_IOCTL_INITIALIZE_EX]] ||
 |-
-| 0xC0144114 || Inout || 20 || NVGPU_AS_IOCTL_REMAP ||
+| 0xC0??4114 || Inout || Variable || [[#NVGPU_AS_IOCTL_REMAP]] ||
 |}
 
 === NVGPU_AS_IOCTL_BIND_CHANNEL ===
@@ -607,7 +603,11 @@ On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit
   };
 
 === NVGPU_AS_IOCTL_UNMAP_BUFFER ===
-Doesn't do shit.
+Unmap a memory region from the device address space.
+
+ struct {
+    __in u64 offset;
+  };
 
 === NVGPU_AS_IOCTL_INITIALIZE ===
 Nintendo's custom implementation of NVGPU_GPU_IOCTL_ALLOC_AS (unavailable).
@@ -648,6 +648,22 @@ Nintendo's custom implementation of NVGPU_GPU_IOCTL_ALLOC_AS (unavailable) with 
     __in u64 unk1;
     __in u64 unk2;
   };
+
+=== NVGPU_AS_IOCTL_REMAP ===
+Nintendo's custom implementation of adress space remapping.
+
+  struct remap_entry {
+    __in u16 flags;        // 0 or 4
+    __in u16 kind;           
+    __in u32 unk0;
+    __in u32 unk1;
+    __in u32 unk2;
+    __in u32 unk3;
+  };
+ 
+ struct {
+    __in struct remap_entry entries[];
+ };
 
 == /dev/nvhost-dbg-gpu ==
 Not accessible, but there is code to invoke it.
@@ -709,11 +725,11 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0x80084711 || Out || 8 || NVGPU_GPU_IOCTL_GET_TPC_EXCEPTION_EN_STATUS ||
 |-
-| 0x80084712 || Out || 8 || ||
+| 0x80084712 || Out || 8 || NVGPU_GPU_IOCTL_NUM_VSMS ||
 |-
-| 0xC0044713 || Inout || 4 || ||
+| 0xC0044713 || Inout || 4 || NVGPU_GPU_IOCTL_VSMS_MAPPING ||
 |-
-| 0x80084714 || Out || 8 || [[#NVGPU_GPU_IOCTL_GET_L2_STATE]] ||
+| 0x80084714 || Out || 8 || [[#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK]] ||
 |-
 | 0x80044715 || Out || 4 || ||
 |-
@@ -781,12 +797,12 @@ Flushes the GPU L2 cache.
     u32      reserved;
   };
 
-=== NVGPU_GPU_IOCTL_GET_L2_STATE ===
-Returns the GPU L2 cache state.
+=== NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK ===
+Returns the mask value for a ZBC slot.
 
   struct {
-    __out u32 mask;        // always 0x07
-    __out u32 flush;       // active flush bit field
+    __out u32 slot;       // always 0x07
+    __out u32 mask;
   };
 
 == Channels ==
@@ -852,13 +868,13 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0x00004811 || 0 || [[#NVGPU_IOCTL_CHANNEL_FORCE_RESET]] ||
 |-
-| 0x40084812 || 8 || [[#NVGPU_IOCTL_CHANNEL_EVENTS_CTRL]] ||
+| 0x40084812 || 8 || [[#NVGPU_IOCTL_CHANNEL_EVENT_ID_CONTROL]] ||
 |-
 | 0xC0104813 || 16 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS_SNAPSHOT ||
 |-
-| 0x80804816 || 128 || NVGPU_IOCTL_CHANNEL_GET_ERROR_INFO || Only works when the channel is busy
+| 0x80804816 || 128 || NVGPU_IOCTL_CHANNEL_GET_ERROR_INFO ||
 |-
-| 0xC0104817 || 16 || [[#NVGPU_IOCTL_CHANNEL_GET_ERROR]] ||
+| 0xC0104817 || 16 || [[#NVGPU_IOCTL_CHANNEL_GET_ERROR_NOTIFICATION]] ||
 |-
 | 0x40204818 || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX]] ||
 |-
@@ -946,15 +962,15 @@ Clears the FIFO pipe for this channel. Identical to Linux driver.
 === NVGPU_IOCTL_CHANNEL_FORCE_RESET ===
 Forces the channel to reset. Identical to Linux driver.
 
-=== NVGPU_IOCTL_CHANNEL_EVENTS_CTRL ===
-Controls event notifications. Modified to take an additional argument.
+=== NVGPU_IOCTL_CHANNEL_EVENT_ID_CONTROL ===
+Controls event notifications.
 
   struct {
     __in u32 cmd;    // 0=disable, 1=enable, 2=clear
-    __in u32 unk;    // accepts 1 or 2
+    __in u32 id;
   };
 
-=== NVGPU_IOCTL_CHANNEL_GET_ERROR ===
+=== NVGPU_IOCTL_CHANNEL_GET_ERROR_NOTIFICATION ===
 Returns the current error notification caught by the error notifier. Exclusive to the Switch.
 
   struct {
@@ -1073,6 +1089,8 @@ Most nvidia driver commands return an error code apart from the normal return co
 |}
 
 = Panic =
-In some cases {NV/GPU}(?) may panic. End result is that the system hangs with a white-screen.
+In some cases, a panic may occur. NV forces a crash by doing:
+ (void *)0 = 0xCAFE;
+End result is that the system hangs with a white-screen.
 
 [[Category:Services]]
