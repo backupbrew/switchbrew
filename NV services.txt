@@ -35,9 +35,9 @@ Each service is used by:
 |-
 | 10 || [3.0.0+]
 |-
-| 11 || [3.0.0+] Ioctl2
+| 11 || [3.0.0+] [[#Ioctl2]]
 |-
-| 12 || [3.0.0+] Ioctl3
+| 12 || [3.0.0+] [[#Ioctl3]]
 |-
 | 13 || [3.0.0+]
 |}
@@ -101,6 +101,11 @@ Takes a type-0x21 buffer, a type-0x22 buffer, a type-0x21 buffer, and two input 
 
 == Ioctl3 ==
 Same input/output as Ioctl2, except cmdhdr_word1 is 0x100B instead of 0xC0B.
+
+== Cmd13 ==
+Takes an input u64. No output.
+
+Official user-processes starting with 3.0.0 now use this at the end of nvdrv service init with value 0x1.
 
 = Ioctls =
 The ioctl number is generated with the following primitive (see Linux kernel):

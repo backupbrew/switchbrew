@@ -24,8 +24,8 @@ Each service is used by:
 | 8   | [\#SetClientPID](#SetClientPID "wikilink")                     |
 | 9   | [\#DumpGraphicsMemoryInfo](#DumpGraphicsMemoryInfo "wikilink") |
 | 10  | \[3.0.0+\]                                                     |
-| 11  | \[3.0.0+\] Ioctl2                                              |
-| 12  | \[3.0.0+\] Ioctl3                                              |
+| 11  | \[3.0.0+\] [\#Ioctl2](#Ioctl2 "wikilink")                      |
+| 12  | \[3.0.0+\] [\#Ioctl3](#Ioctl3 "wikilink")                      |
 | 13  | \[3.0.0+\]                                                     |
 
 ## Open
@@ -100,6 +100,13 @@ two input u32s. Returns an output u32.
 
 Same input/output as Ioctl2, except cmdhdr\_word1 is 0x100B instead of
 0xC0B.
+
+## Cmd13
+
+Takes an input u64. No output.
+
+Official user-processes starting with 3.0.0 now use this at the end of
+nvdrv service init with value 0x1.
 
 # Ioctls
 
