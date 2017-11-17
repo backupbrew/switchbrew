@@ -369,7 +369,7 @@ Returns an id for a nvmap object. Identical to Linux
 driver.
 
 ` struct {`  
-`   __out u32 id;`  
+`   __out u32 id; //~0 indicates error`  
 `   __in  u32 handle;`  
 ` };`
 
