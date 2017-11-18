@@ -1,3 +1,14 @@
+# LaunchFlags
+
+| Bit | Mask | Name                                       |
+| --- | ---- | ------------------------------------------ |
+| 0   | 1    | LaunchFlags\_NotifyWhenExited              |
+| 1   | 2    | LaunchFlags\_StartSuspended                |
+| 2   | 4    |                                            |
+| 3   | 8    |                                            |
+| 4   | 0x10 | LaunchFlags\_NotifyDebugEvents             |
+| 5   | 0x20 | \[2.0.0+\] LaunchFlags\_NotifyDebugSpecial |
+
 # Process Tracker thread
 
 PM has a separate thread that is waiting for synchronization on process
@@ -41,8 +52,8 @@ It uses [ldr:pm](Loader%20services.md "wikilink") GetProgramInfo with
 the supplied title-id.
 
 If ApplicationType == Application, it goes through the process list and
-errors if any has bit 0x40 set. Thus you can only run one Application at
-a time.
+errors if any has mask 0x40 set. Thus you can only run one Application
+at a time.
 
 Resource limits for the process is selected by ApplicationType.
 
@@ -201,7 +212,7 @@ Returns 1 if flags has mask 2 set.
 
 Returns 2 if flags has mask 1 set and state is 6.
 
-Returns 3 if flags has mask 0x10 set and not bit5.
+Returns 3 if flags has mask 0x10 set and not 0x20.
 
 Returns 4 if flags has mask 0x30 set.
 
