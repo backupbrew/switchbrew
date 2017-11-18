@@ -1002,7 +1002,7 @@ Bitfield of one of more of these:
 | 0     | ProcessEvent\_Created        |
 | 1     | ProcessEvent\_DebugAttached  |
 | 2     | ProcessEvent\_DebugDetached  |
-| 3     |                              |
+| 3     | ProcessEvent\_Crashed        |
 | 4     | ProcessEvent\_Running        |
 | 5     | ProcessEvent\_Exiting        |
 | 6     | ProcessEvent\_Exited         |

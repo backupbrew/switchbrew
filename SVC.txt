@@ -1290,7 +1290,7 @@ Bitfield of one of more of these:
 |-
 | 2 || ProcessEvent_DebugDetached
 |-
-| 3 || 
+| 3 || ProcessEvent_Crashed
 |-
 | 4 || ProcessEvent_Running
 |-
