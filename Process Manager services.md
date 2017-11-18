@@ -9,15 +9,16 @@ When the kernel signals a process handle, it uses svcResetSignal on the
 process handle and then it uses svcGetProcessInfo to read out the
 ProcessEvent.
 
-If the process moved from non-3 -\> 3 it clears 4 in process flags.
+If the process moved from non-crashed -\> ProcessEvent\_Crashed it
+clears 4 in process flags.
 
 If process flags has mask 8 set:
 
   - If event is ProcessEvent\_Running or ProcessEvent\_DebugDetached, it
     clears 0x20 and sets 0x10 in process flags, and signals the
     ProcessEventWaiter handle.
-  - If event is ProcessEvent\_DebugSuspended, it sets 0x30 in process
-    flags, and signals the ProcessEventWaiter handle.
+  - If event is ProcessEvent\_DebugSuspended, it sets 0x20 and 0x10 in
+    process flags, and signals the ProcessEventWaiter handle.
 
 \[2.0.0+\] If new state is ProcessEvent\_DebugDetached, and process
 flags has 0x80 set, it sets mask 0x100 and signals the
