@@ -79,7 +79,7 @@ Thus at the point of launch, the pid is already registered in ldr, fs, sm, and p
 |-
 | 5 || [[#GetDebuggedPid]]
 |-
-| 6 || [[#EnableDebug]]
+| 6 || [[#EnableDebugForApplication]]
 |}
 
 == IsDebugMode ==
@@ -112,10 +112,10 @@ Returns an event handle that is signaled when the requested title is about to be
 == GetDebuggedPid ==
 Returns the pid of the debugged process.
 
-== EnableDebug ==
+== EnableDebugForApplication ==
 Does *not* take a specific title-id as input.
 
-Returns an event handle that is triggered for debug titles.
+Returns an event handle that is triggered for application titles.
 
 = pm:info =
 {| class="wikitable" border="1"

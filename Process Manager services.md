@@ -105,15 +105,15 @@ sm, and pm.
 
 # pm:dmnt
 
-| Cmd | Name                                                         |
-| --- | ------------------------------------------------------------ |
-| 0   | [\#IsDebugMode](#IsDebugMode "wikilink")                     |
-| 1   | [\#GetDebugProcesses](#GetDebugProcesses "wikilink")         |
-| 2   | [\#StartDebugProcess](#StartDebugProcess "wikilink")         |
-| 3   | [\#GetDebuggedTitleId](#GetDebuggedTitleId "wikilink")       |
-| 4   | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink") |
-| 5   | [\#GetDebuggedPid](#GetDebuggedPid "wikilink")               |
-| 6   | [\#EnableDebug](#EnableDebug "wikilink")                     |
+| Cmd | Name                                                                 |
+| --- | -------------------------------------------------------------------- |
+| 0   | [\#IsDebugMode](#IsDebugMode "wikilink")                             |
+| 1   | [\#GetDebugProcesses](#GetDebugProcesses "wikilink")                 |
+| 2   | [\#StartDebugProcess](#StartDebugProcess "wikilink")                 |
+| 3   | [\#GetDebuggedTitleId](#GetDebuggedTitleId "wikilink")               |
+| 4   | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink")         |
+| 5   | [\#GetDebuggedPid](#GetDebuggedPid "wikilink")                       |
+| 6   | [\#EnableDebugForApplication](#EnableDebugForApplication "wikilink") |
 
 ## IsDebugMode
 
@@ -159,11 +159,11 @@ about to be launched.
 
 Returns the pid of the debugged process.
 
-## EnableDebug
+## EnableDebugForApplication
 
 Does \*not\* take a specific title-id as input.
 
-Returns an event handle that is triggered for debug titles.
+Returns an event handle that is triggered for application titles.
 
 # pm:info
 
