@@ -70,9 +70,9 @@ process flags.
 
 If ApplicationType == Application, it sets 0x40 in the process flags,
 and signals the event returned by
-[\#EnableDebug](#EnableDebug "wikilink"). svcStartProcess is not called
-in this case, it has to be done manually by the
-[\#StartProcess](#StartProcess "wikilink") command.
+[\#EnableDebugForApplication](#EnableDebugForApplication "wikilink").
+svcStartProcess is not called in this case, it has to be done manually
+by the [\#StartProcess](#StartProcess "wikilink") command.
 
 If the title-id matches the title-id given in
 [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink"), then

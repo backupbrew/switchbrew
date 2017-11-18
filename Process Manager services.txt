@@ -40,7 +40,7 @@ If launch_flags has mask 0x10 set, it sets mask 8 in process flags.
 
 [2.0.0+] The launch_flags mask 0x10 and 0x20 will be ignored unless ((*(u8*) (info_output+2)) & 4) is set.
 
-If ApplicationType == Application, it sets 0x40 in the process flags, and signals the event returned by [[#EnableDebug]]. svcStartProcess is not called in this case, it has to be done manually by the [[#StartProcess]] command.
+If ApplicationType == Application, it sets 0x40 in the process flags, and signals the event returned by [[#EnableDebugForApplication]]. svcStartProcess is not called in this case, it has to be done manually by the [[#StartProcess]] command.
 
 If the title-id matches the title-id given in [[#EnableDebugForTitleId]], then svcStartProcess is not called. Instead process remains in suspended state, and has to be done manually by the [[#StartProcess]] command.
 
