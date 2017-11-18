@@ -22,9 +22,9 @@ This thread can also be triggered by the pm:shell [[#LaunchProcess]] cmd.
 
 It uses [[Loader_services|ldr:pm]] GetProgramInfo with the supplied title-id.
 
-If ((*(u8*) (info_output+2)) & 3) is == 1, it goes through the process list and errors if any has bit 0x40 set. Thus you can only run one application at a time.
+If ApplicationType == Application, it goes through the process list and errors if any has bit 0x40 set. Thus you can only run one Application at a time.
 
-Resource limits for the process is selected by ApplicationType which is ((*(u8*) (info_output+2)) & 3) being 0, 1, or 2. Value 3 is not used. 0 = sysmodule(sysmodules don't have the ApplicationType kernel [[NPDM|descriptor]]), 1 = application, 2 = applet.
+Resource limits for the process is selected by ApplicationType.
 
 It calls [[Loader_services|ldr:pm]] RegisterTitle, then [[Loader_services|ldr:pm]] CreateProcess, then [[Filesystem_services|fsp-pr]] RegisterTitle, then [[Services_API|sm:m]] RegisterTitle.
 
@@ -40,7 +40,7 @@ If launch_flags has mask 0x10 set, it sets mask 8 in process flags.
 
 [2.0.0+] The launch_flags mask 0x10 and 0x20 will be ignored unless ((*(u8*) (info_output+2)) & 4) is set.
 
-If ((*(u8*) (info_output+2)) & 3) is == 1, it sets 0x40 in the process flags, and signals the event returned by [[#EnableDebug]]. svcStartProcess is not called in this case, it has to be done manually by the [[#StartProcess]] command.
+If ApplicationType == Application, it sets 0x40 in the process flags, and signals the event returned by [[#EnableDebug]]. svcStartProcess is not called in this case, it has to be done manually by the [[#StartProcess]] command.
 
 If the title-id matches the title-id given in [[#EnableDebugForTitleId]], then svcStartProcess is not called. Instead process remains in suspended state, and has to be done manually by the [[#StartProcess]] command.
 

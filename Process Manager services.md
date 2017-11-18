@@ -39,14 +39,11 @@ This thread can also be triggered by the pm:shell
 It uses [ldr:pm](Loader%20services.md "wikilink") GetProgramInfo with
 the supplied title-id.
 
-If ((\*(u8\*) (info\_output+2)) & 3) is == 1, it goes through the
-process list and errors if any has bit 0x40 set. Thus you can only run
-one application at a time.
+If ApplicationType == Application, it goes through the process list and
+errors if any has bit 0x40 set. Thus you can only run one Application at
+a time.
 
-Resource limits for the process is selected by ApplicationType which is
-((\*(u8\*) (info\_output+2)) & 3) being 0, 1, or 2. Value 3 is not used.
-0 = sysmodule(sysmodules don't have the ApplicationType kernel
-[descriptor](NPDM.md "wikilink")), 1 = application, 2 = applet.
+Resource limits for the process is selected by ApplicationType.
 
 It calls [ldr:pm](Loader%20services.md "wikilink") RegisterTitle, then
 [ldr:pm](Loader%20services.md "wikilink") CreateProcess, then
@@ -71,8 +68,8 @@ process flags.
 \[2.0.0+\] The launch\_flags mask 0x10 and 0x20 will be ignored unless
 ((\*(u8\*) (info\_output+2)) & 4) is set.
 
-If ((\*(u8\*) (info\_output+2)) & 3) is == 1, it sets 0x40 in the
-process flags, and signals the event returned by
+If ApplicationType == Application, it sets 0x40 in the process flags,
+and signals the event returned by
 [\#EnableDebug](#EnableDebug "wikilink"). svcStartProcess is not called
 in this case, it has to be done manually by the
 [\#StartProcess](#StartProcess "wikilink") command.
