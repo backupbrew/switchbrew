@@ -7,25 +7,26 @@ handles.
 
 When the kernel signals a process handle, it uses svcResetSignal on the
 process handle and then it uses svcGetProcessInfo to read out the
-ProcessState.
+ProcessEvent.
 
-If the process moved state non-3 -\> 3 it clears 4 in process flags.
+If the process moved from non-3 -\> 3 it clears 4 in process flags.
 
 If process flags has mask 8 set:
 
-  - If new state is 2, it clears 0x20 and sets 0x10 in process flags,
-    and signals the ProcessEventWaiter handle.
-  - If new state is 4, it clears 0x20 and sets 0x10 in process flags,
-    and signals the ProcessEventWaiter handle.
-  - If new state is 7, it sets 0x30 in process flags, and signals the
+  - If event is ProcessEvent\_Running or ProcessEvent\_DebugDetached, it
+    clears 0x20 and sets 0x10 in process flags, and signals the
     ProcessEventWaiter handle.
+  - If event is ProcessEvent\_DebugSuspended, it sets 0x30 in process
+    flags, and signals the ProcessEventWaiter handle.
 
-\[2.0.0+\] If new state is 2, and process flags has 0x80 set, it sets
-mask 0x100 and signals the ProcessEventWaiter handle.
+\[2.0.0+\] If new state is ProcessEvent\_DebugDetached, and process
+flags has 0x80 set, it sets mask 0x100 and signals the
+ProcessEventWaiter handle.
 
 If process flags has mask 1 set:
 
-  - If new state is 6, it signals the ProcessEventWaiter handle.
+  - If new state is ProcessEvent\_Exited, it signals the
+    ProcessEventWaiter handle.
 
 If mask 1 is not set, it immediately does what is otherwise done by the
 [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink") command.
@@ -39,8 +40,8 @@ It uses [ldr:pm](Loader%20services.md "wikilink") GetProgramInfo with
 the supplied title-id.
 
 If ((\*(u8\*) (info\_output+2)) & 3) is == 1, it goes through the
-process list and errors if any has bit 0x40 set. Thus only one process
-can have bit 0x40 set at a time.
+process list and errors if any has bit 0x40 set. Thus you can only run
+one application at a time.
 
 Resource limits for the process is selected by ApplicationType which is
 ((\*(u8\*) (info\_output+2)) & 3) being 0, 1, or 2. Value 3 is not used.
@@ -104,17 +105,17 @@ sm, and pm.
 
 # pm:dmnt
 
-| Cmd | Name                                                                     |
-| --- | ------------------------------------------------------------------------ |
-| 0   | [\#GetDebugMode](#GetDebugMode "wikilink")                               |
-| 1   | [\#GetDebugProcesses](#GetDebugProcesses "wikilink")                     |
-| 2   | [\#StartDebugProcess](#StartDebugProcess "wikilink")                     |
-| 3   | [\#GetDebugProcessTitleIdByPid](#GetDebugProcessTitleIdByPid "wikilink") |
-| 4   | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink")             |
-| 5   | [\#GetCrashingDebugProcessPid](#GetCrashingDebugProcessPid "wikilink")   |
-| 6   | [\#EnableDebug](#EnableDebug "wikilink")                                 |
+| Cmd | Name                                                         |
+| --- | ------------------------------------------------------------ |
+| 0   | [\#IsDebugMode](#IsDebugMode "wikilink")                     |
+| 1   | [\#GetDebugProcesses](#GetDebugProcesses "wikilink")         |
+| 2   | [\#StartDebugProcess](#StartDebugProcess "wikilink")         |
+| 3   | [\#GetDebuggedTitleId](#GetDebuggedTitleId "wikilink")       |
+| 4   | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink") |
+| 5   | [\#GetDebuggedPid](#GetDebuggedPid "wikilink")               |
+| 6   | [\#EnableDebug](#EnableDebug "wikilink")                     |
 
-## GetDebugMode
+## IsDebugMode
 
 Always returns u32 0 on retail.
 
@@ -133,31 +134,30 @@ builds anyway.
 
 ## StartDebugProcess
 
-Takes a pid. Process state must be 0 or 1. Then it uses
-svcStartProcess(process\_handle, u8, u8, u32) with args coming from
-ldr:pm GetProgramInfo.
+Takes a pid. Last process event must be ProcessEvent\_Created or
+ProcessEvent\_DebugAttached.
 
-After that, it sets process state to 2.
+Then it uses svcStartProcess(process\_handle, u8, u8, u32) with args
+coming from ldr:pm GetProgramInfo.
 
-## GetDebugProcessTitleIdByPid
+After that, it sets last process state to ProcessEvent\_DebugDetached.
 
-Same as
-[GetProcessTitleIdByPid](Process%20Manager%20services#GetProcessTitleIdByPid.md##GetProcessTitleIdByPid "wikilink")
-but for debug processes.
+## GetDebuggedTitleId
+
+Takes a pid and returns the title-id.
 
 ## EnableDebugForTitleId
 
 Takes a title-id of the program to debug. Sets this to a global field.
+
 Next time it gets launched it will be handled differently.
 
 Returns an event handle that is signaled when the requested title is
-launched.
+about to be launched.
 
-## GetCrashingDebugProcessPid
+## GetDebuggedPid
 
-Same as
-[GetCrashingProcessPid](Process%20Manager%20services#GetCrashingProcessPid.md##GetCrashingProcessPid "wikilink")
-but for debug processes.
+Returns the pid of the debugged process.
 
 ## EnableDebug
 
@@ -167,11 +167,11 @@ Returns an event handle that is triggered for debug titles.
 
 # pm:info
 
-| Cmd | Name                                                           |
-| --- | -------------------------------------------------------------- |
-| 0   | [\#GetProcessTitleIdByPid](#GetProcessTitleIdByPid "wikilink") |
+| Cmd | Name                                   |
+| --- | -------------------------------------- |
+| 0   | [\#GetTitleId](#GetTitleId "wikilink") |
 
-## GetProcessTitleIdByPid
+## GetTitleId
 
 Takes a pid and returns the title-id associated with the
 process.
@@ -188,7 +188,7 @@ process.
 | 5   | [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")                   |
 | 6   | [\#ClearProcessNotificationFlag](#ClearProcessNotificationFlag "wikilink") |
 | 7   | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                     |
-| 8   | [\#GetCrashingProcessPid](#GetCrashingProcessPid "wikilink")               |
+| 8   | [\#GetApplicationPid](#GetApplicationPid "wikilink")                       |
 
 ## LaunchProcess
 
@@ -227,7 +227,7 @@ Takes a pid as input. Clears 0x10 from process flags.
 
 Launches a process with hardcoded [boot2](Boot2.md "wikilink") title-id.
 
-## GetCrashingProcessPid
+## GetApplicationPid
 
 Loops through the internal linked-list of processes, looks for mask 0x40
 set in process flags. Returns pid of first such entry.

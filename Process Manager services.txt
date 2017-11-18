@@ -2,19 +2,18 @@
 PM has a separate thread that is waiting for synchronization on process handles.
 
 == State changes ==
-When the kernel signals a process handle, it uses svcResetSignal on the process handle and then it uses svcGetProcessInfo to read out the ProcessState.
+When the kernel signals a process handle, it uses svcResetSignal on the process handle and then it uses svcGetProcessInfo to read out the ProcessEvent.
 
-If the process moved state non-3 -> 3 it clears 4 in process flags.
+If the process moved from non-3 -> 3 it clears 4 in process flags.
 
 If process flags has mask 8 set:
-* If new state is 2, it clears 0x20 and sets 0x10 in process flags, and signals the ProcessEventWaiter handle.
-* If new state is 4, it clears 0x20 and sets 0x10 in process flags, and signals the ProcessEventWaiter handle.
-* If new state is 7, it sets 0x30 in process flags, and signals the ProcessEventWaiter handle.
+* If event is ProcessEvent_Running or ProcessEvent_DebugDetached, it clears 0x20 and sets 0x10 in process flags, and signals the ProcessEventWaiter handle.
+* If event is ProcessEvent_DebugSuspended, it sets 0x30 in process flags, and signals the ProcessEventWaiter handle.
 
-[2.0.0+] If new state is 2, and process flags has 0x80 set, it sets mask 0x100 and signals the ProcessEventWaiter handle.
+[2.0.0+] If new state is ProcessEvent_DebugDetached, and process flags has 0x80 set, it sets mask 0x100 and signals the ProcessEventWaiter handle.
 
 If process flags has mask 1 set:
-* If new state is 6, it signals the ProcessEventWaiter handle.
+* If new state is ProcessEvent_Exited, it signals the ProcessEventWaiter handle.
 
 If mask 1 is not set, it immediately does what is otherwise done by the [[#FinalizeDeadProcess]] command.
 
@@ -23,7 +22,7 @@ This thread can also be triggered by the pm:shell [[#LaunchProcess]] cmd.
 
 It uses [[Loader_services|ldr:pm]] GetProgramInfo with the supplied title-id.
 
-If ((*(u8*) (info_output+2)) & 3) is == 1, it goes through the process list and errors if any has bit 0x40 set. Thus only one process can have bit 0x40 set at a time.
+If ((*(u8*) (info_output+2)) & 3) is == 1, it goes through the process list and errors if any has bit 0x40 set. Thus you can only run one application at a time.
 
 Resource limits for the process is selected by ApplicationType which is ((*(u8*) (info_output+2)) & 3) being 0, 1, or 2. Value 3 is not used. 0 = sysmodule(sysmodules don't have the ApplicationType kernel [[NPDM|descriptor]]), 1 = application, 2 = applet.
 
@@ -68,22 +67,22 @@ Thus at the point of launch, the pid is already registered in ldr, fs, sm, and p
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetDebugMode]]
+| 0 || [[#IsDebugMode]]
 |-
 | 1 || [[#GetDebugProcesses]]
 |-
 | 2 || [[#StartDebugProcess]]
 |-
-| 3 || [[#GetDebugProcessTitleIdByPid]]
+| 3 || [[#GetDebuggedTitleId]]
 |-
 | 4 || [[#EnableDebugForTitleId]]
 |-
-| 5 || [[#GetCrashingDebugProcessPid]]
+| 5 || [[#GetDebuggedPid]]
 |-
 | 6 || [[#EnableDebug]]
 |}
 
-== GetDebugMode ==
+== IsDebugMode ==
 Always returns u32 0 on retail.
 
 [2.0.0+] Additional check on input that can return 0xC0F. The meaning is probably useless because function is somewhat nopped on non-dev builds anyway.
@@ -94,20 +93,24 @@ Returns an array of pids of all processes that have mask 4 set in process flags.
 [2.0.0+] Additional check on input that can return 0xC0F. The meaning is probably useless because function is somewhat nopped on non-dev builds anyway.
 
 == StartDebugProcess ==
-Takes a pid. Process state must be 0 or 1. Then it uses svcStartProcess(process_handle, u8, u8, u32) with args coming from ldr:pm GetProgramInfo.
+Takes a pid. Last process event must be ProcessEvent_Created or ProcessEvent_DebugAttached.
 
-After that, it sets process state to 2.
+Then it uses svcStartProcess(process_handle, u8, u8, u32) with args coming from ldr:pm GetProgramInfo.
 
-== GetDebugProcessTitleIdByPid ==
-Same as [[Process_Manager_services#GetProcessTitleIdByPid|GetProcessTitleIdByPid]] but for debug processes.
+After that, it sets last process state to ProcessEvent_DebugDetached.
+
+== GetDebuggedTitleId ==
+Takes a pid and returns the title-id.
 
 == EnableDebugForTitleId ==
-Takes a title-id of the program to debug. Sets this to a global field. Next time it gets launched it will be handled differently.
+Takes a title-id of the program to debug. Sets this to a global field.
 
-Returns an event handle that is signaled when the requested title is launched.
+Next time it gets launched it will be handled differently.
 
-== GetCrashingDebugProcessPid ==
-Same as [[Process_Manager_services#GetCrashingProcessPid|GetCrashingProcessPid]] but for debug processes.
+Returns an event handle that is signaled when the requested title is about to be launched.
+
+== GetDebuggedPid ==
+Returns the pid of the debugged process.
 
 == EnableDebug ==
 Does *not* take a specific title-id as input.
@@ -119,10 +122,10 @@ Returns an event handle that is triggered for debug titles.
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetProcessTitleIdByPid]]
+| 0 || [[#GetTitleId]]
 |}
 
-== GetProcessTitleIdByPid ==
+== GetTitleId ==
 Takes a pid and returns the title-id associated with the process.
 
 = pm:shell =
@@ -146,7 +149,7 @@ Takes a pid and returns the title-id associated with the process.
 |-
 | 7 || [[#NotifyBootFinished]]
 |-
-| 8 || [[#GetCrashingProcessPid]]
+| 8 || [[#GetApplicationPid]]
 |}
 
 == LaunchProcess ==
@@ -178,7 +181,7 @@ Takes a pid as input. Clears 0x10 from process flags.
 == NotifyBootFinished ==
 Launches a process with hardcoded [[boot2]] title-id.
 
-== GetCrashingProcessPid ==
+== GetApplicationPid ==
 Loops through the internal linked-list of processes, looks for mask 0x40 set in process flags. Returns pid of first such entry.
 
 [[Category:Services]]
