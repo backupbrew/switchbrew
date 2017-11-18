@@ -337,7 +337,7 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 | <code>0bxx01111111111111</code>
 | Bit13
 | ApplicationType
-| Bit16-14: ApplicationType, bit16 ignored. Parsed by [[Process Manager services]].
+| Bit16-14: ApplicationType (0=sysmodule, 1=application, 2=applet), bit16 ignored. Parsed by [[Process Manager services]]. Defaults to 0 if descriptor doesn't exist. Can only run 1 application at a time.
 |-
 | <code>0bx011111111111111</code>
 | Bit14
