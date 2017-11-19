@@ -93,7 +93,7 @@
 | 0x6A | svcReadDebugProcessMemory                                                          | X0=buffer\*, X1=debug\_handle, X2=src\_addr, X3=size                                                           | W0=result                                                |
 | 0x6B | svcWriteDebugProcessMemory                                                         | X0=debug\_handle, X1=buffer\*, X2=dst\_addr, X3=size                                                           | W0=result                                                |
 | 0x6C | svcSetHardwareBreakPoint                                                           | W0=HardwareBreakpointId, X1=watchpoint\_flags, X2=watchpoint\_value/debug\_handle?                             |                                                          |
-| 0x6D | svcGetDebugThreadParam                                                             | X2=debug\_handle, X3=thread\_id, W4=DebugThreadParam                                                           | W0=result, X1=out0, W2=out1                              |
+| 0x6D | svcGetDebugThreadParam                                                             | X2=debug\_handle, X3=thread\_id, W4=[\#DebugThreadParam](#DebugThreadParam "wikilink")                         | W0=result, X1=out0, W2=out1                              |
 | 0x70 | svcCreatePort                                                                      |                                                                                                                |                                                          |
 | 0x71 | svcManageNamedPort                                                                 | X1=name\_ptr, W2=max\_sessions(?)                                                                              | W0=result, W1=serverport\_handle                         |
 | 0x72 | svcConnectToPort                                                                   | W1=clientport\_handle                                                                                          | W0=result, W1=session\_handle                            |
@@ -1007,6 +1007,16 @@ Bitfield of one of more of these:
 | 5     | ProcessEvent\_Exiting        |
 | 6     | ProcessEvent\_Exited         |
 | 7     | ProcessEvent\_DebugSuspended |
+
+## DebugThreadParam
+
+| Value | Name                             |
+| ----- | -------------------------------- |
+| 0     | DebugThreadParam\_ActualPriority |
+| 1     |                                  |
+| 2     | DebugThreadParam\_CpuCore        |
+| 3     |                                  |
+| 4     | DebugThreadParam\_CoreMask       |
 
 ## CreateProcessInfo
 

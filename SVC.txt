@@ -182,7 +182,7 @@ __NOTOC__
 |-
 | 0x6C || svcSetHardwareBreakPoint || W0=HardwareBreakpointId, X1=watchpoint_flags, X2=watchpoint_value/debug_handle? || 
 |-
-| 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=DebugThreadParam || W0=result, X1=out0, W2=out1
+| 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=[[#DebugThreadParam]] || W0=result, X1=out0, W2=out1
 |- style="border-top: double"
 | 0x70 || svcCreatePort || || 
 |-
@@ -1299,6 +1299,21 @@ Bitfield of one of more of these:
 | 6 || ProcessEvent_Exited
 |-
 | 7 || ProcessEvent_DebugSuspended
+|}
+
+== DebugThreadParam ==
+{| class=wikitable
+! Value || Name
+|-
+| 0 || DebugThreadParam_ActualPriority
+|-
+| 1 ||
+|-
+| 2 || DebugThreadParam_CpuCore
+|-
+| 3 ||
+|-
+| 4 || DebugThreadParam_CoreMask
 |}
 
 == CreateProcessInfo ==
