@@ -8,6 +8,10 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 !   Size in bytes
 !   Description
 |-
+| 0x0
+| 0x400
+| Unknown, Header?
+|-
 | 0x400
 | 0x3000
 | Capacitive Touchscreen
@@ -46,6 +50,10 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x5000
 | 0x200
+| Unknown
+|-
+| 0x5200
+| 0x800
 | Unknown
 |-
 | 0x5A00
