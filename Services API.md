@@ -98,7 +98,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus</p></td>
-<td><p>Audio services</p></td>
+<td><p><a href="Audio services.md" title="wikilink">Audio services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">

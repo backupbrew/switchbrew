@@ -79,7 +79,7 @@ Takes a pid.
 | r: Reader, w: Writer
 |-
 | audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus
-| Audio services
+| [[Audio services]]
 |
 |-
 | <nowiki>banana</nowiki>
