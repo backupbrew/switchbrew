@@ -129,7 +129,7 @@ if not all input methods available to applications.
 | ------ | ------------- | -------------------------------------------------------------------------------------------------- |
 | 0x0    | 0x8           | Timestamp                                                                                          |
 | 0x8    | 0x8           | Timestamp Again?                                                                                   |
-| 0x10   | 0x4           | Modifier Mask                                                                                      |
+| 0x10   | 0x8           | Modifier Mask                                                                                      |
 | 0x18   | 0x20          | Keys Down, each key gets one bit based on the HID keyboard scan code (F1 is 0x3A, bit 0x3A is set) |
 |        |               |                                                                                                    |
 
