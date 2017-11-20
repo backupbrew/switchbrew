@@ -102,15 +102,15 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x8	
 | 0x8	
-| Number of Entries
+| Number of Entries, always 17
 |-
 | 0x10	
 | 0x8	
-| Unk	
+| Latest Entry Index
 |-
 | 0x18	
 | 0x8	
-| Unk, 0x10	
+| Maximum Entry Index, always 16	
 |-
 | 0x20	
 | 0x8	
@@ -226,15 +226,15 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x8	
 | 0x8	
-| Number of Entries
+| Number of Entries, always 17
 |-
 | 0x10	
 | 0x8	
-| Unk, 6 when connected, 1 disconnected
+| Latest Entry Index
 |-
 | 0x18	
 | 0x8	
-| Unk, 0x10	
+| Maximum Entry Index, always 16
 |-
 |}
 
@@ -317,15 +317,15 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x8	
 | 0x8	
-| Number of Entries
+| Number of Entries, always 17
 |-
 | 0x10	
 | 0x8	
-| Unk, 6 when connected
+| Latest Entry Index
 |-
 | 0x18	
 | 0x8	
-| Unk, 0x10	
+| Maximum Entry Index, always 16
 |-
 |}
 
@@ -512,11 +512,11 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 0x10
 | 0x8
-| Unknown, increments
+| Latest Entry Index
 |-
 | 0x18
 | 0x8
-| Unknown, 0x10
+| Maximum Entry Index, always 16
 |-
 |}
 
@@ -640,5 +640,11 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 23
 | Right Stick Down
+|-
+| 24
+| SL
+|-
+| 25
+| SR
 |-
 |}

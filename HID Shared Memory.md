@@ -33,14 +33,14 @@ if not all input methods available to applications.
 
 ### Touch Header
 
-| Offset | Size in bytes | Description       |
-| ------ | ------------- | ----------------- |
-| 0x0    | 0x8           | Timestamp         |
-| 0x8    | 0x8           | Number of Entries |
-| 0x10   | 0x8           | Unk               |
-| 0x18   | 0x8           | Unk, 0x10         |
-| 0x20   | 0x8           | Timestamp         |
-|        |               |                   |
+| Offset | Size in bytes | Description                    |
+| ------ | ------------- | ------------------------------ |
+| 0x0    | 0x8           | Timestamp                      |
+| 0x8    | 0x8           | Number of Entries, always 17   |
+| 0x10   | 0x8           | Latest Entry Index             |
+| 0x18   | 0x8           | Maximum Entry Index, always 16 |
+| 0x20   | 0x8           | Timestamp                      |
+|        |               |                                |
 
 ### Touch Entry
 
@@ -82,13 +82,13 @@ if not all input methods available to applications.
 
 ### Mouse Header
 
-| Offset | Size in bytes | Description                           |
-| ------ | ------------- | ------------------------------------- |
-| 0x0    | 0x8           | Timestamp                             |
-| 0x8    | 0x8           | Number of Entries                     |
-| 0x10   | 0x8           | Unk, 6 when connected, 1 disconnected |
-| 0x18   | 0x8           | Unk, 0x10                             |
-|        |               |                                       |
+| Offset | Size in bytes | Description                    |
+| ------ | ------------- | ------------------------------ |
+| 0x0    | 0x8           | Timestamp                      |
+| 0x8    | 0x8           | Number of Entries, always 17   |
+| 0x10   | 0x8           | Latest Entry Index             |
+| 0x18   | 0x8           | Maximum Entry Index, always 16 |
+|        |               |                                |
 
 ### Mouse Entry
 
@@ -115,13 +115,13 @@ if not all input methods available to applications.
 
 ### Keyboard Header
 
-| Offset | Size in bytes | Description           |
-| ------ | ------------- | --------------------- |
-| 0x0    | 0x8           | Timestamp             |
-| 0x8    | 0x8           | Number of Entries     |
-| 0x10   | 0x8           | Unk, 6 when connected |
-| 0x18   | 0x8           | Unk, 0x10             |
-|        |               |                       |
+| Offset | Size in bytes | Description                    |
+| ------ | ------------- | ------------------------------ |
+| 0x0    | 0x8           | Timestamp                      |
+| 0x8    | 0x8           | Number of Entries, always 17   |
+| 0x10   | 0x8           | Latest Entry Index             |
+| 0x18   | 0x8           | Maximum Entry Index, always 16 |
+|        |               |                                |
 
 ### Keyboard Entry
 
@@ -189,13 +189,13 @@ each available controller.
 
 #### Controller State Header
 
-| Offset | Size in bytes | Description                  |
-| ------ | ------------- | ---------------------------- |
-| 0x0    | 0x8           | Timestamp                    |
-| 0x8    | 0x8           | Number of entries, always 17 |
-| 0x10   | 0x8           | Unknown, increments          |
-| 0x18   | 0x8           | Unknown, 0x10                |
-|        |               |                              |
+| Offset | Size in bytes | Description                    |
+| ------ | ------------- | ------------------------------ |
+| 0x0    | 0x8           | Timestamp                      |
+| 0x8    | 0x8           | Number of entries, always 17   |
+| 0x10   | 0x8           | Latest Entry Index             |
+| 0x18   | 0x8           | Maximum Entry Index, always 16 |
+|        |               |                                |
 
 #### Controller State
 
@@ -239,4 +239,6 @@ each available controller.
 | 21  | Right Stick Up      |
 | 22  | Right Stick Right   |
 | 23  | Right Stick Down    |
+| 24  | SL                  |
+| 25  | SR                  |
 |     |                     |
