@@ -79,4 +79,6 @@ This is the [http://en-americas-support.nintendo.com/app/answers/detail/a_id/225
 
 * Kernel stacks are now allocated with a slabheap.
 
+* While 1.0.0 had two pools with size 0, now it uses all three. The last one size is calculated dynamically to fit all the built-in sysmodules, and it's now protected by the kernel carveout.
+
 {{NavboxVersions}}
