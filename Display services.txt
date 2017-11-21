@@ -172,7 +172,7 @@ Takes an input u64, DisplayId.
 Takes an input u32 boolean, and an u64(DisplayId?).
 
 == GetDisplayResolution ==
-Takes an input u64 DisplayId and returns two output u64s.
+Takes an input u64 DisplayId and returns two output u64s: width and height.
 
 == OpenLayer ==
 Takes a PID-descriptor, a type-0x6 buffer for the output [[#NativeWindow]], a [[#DisplayName]](which was previously used with [[#OpenDisplay]]), an u64 LayerId, and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64 NativeWindow_Size.

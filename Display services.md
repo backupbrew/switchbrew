@@ -178,7 +178,8 @@ Takes an input u32 boolean, and an u64(DisplayId?).
 
 ## GetDisplayResolution
 
-Takes an input u64 DisplayId and returns two output u64s.
+Takes an input u64 DisplayId and returns two output u64s: width and
+height.
 
 ## OpenLayer
 
