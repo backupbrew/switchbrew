@@ -90,9 +90,9 @@ saveIDs are determined by FS-module internally. The high u32 of the
 saveID is normally either 0x00000000 or 0x80000000.
 
 Encrypted partitions use AES-XTS using the same non-standard
-(endian-swapped) tweak as other Nintendo AES-XTS code, initial\_sector
-== 0, and sector size 0x4000. All encrypted partitions use console
-unique keydata.
+(endian-swapped) tweak as other Nintendo AES-XTS code, initial\_sector =
+0, and sector size 0x4000. All encrypted partitions use console unique
+keydata.
 
 ### PRODINFOF
 
