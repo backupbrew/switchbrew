@@ -453,7 +453,7 @@ There are two main implementations of this interface:
 
 ## OpenDirectory
 
-Takes a type-0x6 output buffer and an u64 **filter\_flags**.
+Takes a type-0x9 input buffer for the path and an u64 **filter\_flags**.
 **filter\_flags** controls what type of entries are read by the
 [\#IDirectory](#IDirectory "wikilink"): bitmask 0x1 = directories,
 bitmask 0x2 = files.
