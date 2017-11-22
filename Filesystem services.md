@@ -465,10 +465,34 @@ used after writing to savedata for the changes to take affect.
 
 # IDirectory
 
-| Cmd | Name          |
-| --- | ------------- |
-| 0   | Read          |
-| 1   | GetEntryCount |
+| Cmd | Name                                         |
+| --- | -------------------------------------------- |
+| 0   | [\#Read](#Read "wikilink")                   |
+| 1   | [\#GetEntryCount](#GetEntryCount "wikilink") |
+
+## Read
+
+Takes a type-0x6 output buffer and an input u64. Unknown what the u64 is
+for, doesn't(?) seem to affect output. Returns an output u64(?) for the
+total number of read entries, this is 0 when no more entries are
+available.
+
+The output buffer contains the read array of
+[\#DirectoryEntry](#DirectoryEntry "wikilink"). This doesn't include
+entries for "." and "..".
+
+## GetEntryCount
+
+Returns an u64 for the total number of readable entries.
+
+# DirectoryEntry
+
+| Offset | Size  | Description                        |
+| ------ | ----- | ---------------------------------- |
+| 0x0    | 0x300 | Path                               |
+| 0x300  | 0x4   | ?                                  |
+| 0x304  | 0x4   | u32 type: 0 = directory, 1 = file. |
+| 0x308  | 0x8?  | Filesize, 0 for directories.       |
 
 # IFile
 
