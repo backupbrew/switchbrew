@@ -433,23 +433,30 @@ There are two main implementations of this interface:
   - **IPC proxy**: Used for all non-RomFS filesystems. In this case,
     actual filesystem implementation is in the FS process.
 
-| Cmd | Name                                 |
-| --- | ------------------------------------ |
-| 0   | CreateFile                           |
-| 1   | DeleteFile                           |
-| 2   | CreateDirectory                      |
-| 3   | DeleteDirectory                      |
-| 4   | DeleteDirectoryRecursively           |
-| 5   | RenameFile                           |
-| 6   | RenameDirectory                      |
-| 7   | GetEntryType                         |
-| 8   | OpenFile                             |
-| 9   | OpenDirectory                        |
-| 10  | Commit                               |
-| 11  | GetFreeSpaceSize                     |
-| 12  | GetTotalSpaceSize                    |
-| 13  | CleanDirectoryRecursively \[3.0.0+\] |
-| 14  | GetFileTimeStampRaw \[3.0.0+\]       |
+| Cmd | Name                                         |
+| --- | -------------------------------------------- |
+| 0   | CreateFile                                   |
+| 1   | DeleteFile                                   |
+| 2   | CreateDirectory                              |
+| 3   | DeleteDirectory                              |
+| 4   | DeleteDirectoryRecursively                   |
+| 5   | RenameFile                                   |
+| 6   | RenameDirectory                              |
+| 7   | GetEntryType                                 |
+| 8   | OpenFile                                     |
+| 9   | [\#OpenDirectory](#OpenDirectory "wikilink") |
+| 10  | [\#Commit](#Commit "wikilink")               |
+| 11  | GetFreeSpaceSize                             |
+| 12  | GetTotalSpaceSize                            |
+| 13  | CleanDirectoryRecursively \[3.0.0+\]         |
+| 14  | GetFileTimeStampRaw \[3.0.0+\]               |
+
+## OpenDirectory
+
+Takes a type-0x6 output buffer and an u64 **filter\_flags**.
+**filter\_flags** controls what type of entries are read by the
+[\#IDirectory](#IDirectory "wikilink"): bitmask 0x1 = directories,
+bitmask 0x2 = files.
 
 ## Commit
 

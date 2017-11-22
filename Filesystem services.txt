@@ -492,9 +492,9 @@ There are two main implementations of this interface:
 |-
 | 8 || OpenFile
 |-
-| 9 || OpenDirectory
+| 9 || [[#OpenDirectory]]
 |-
-| 10 || Commit
+| 10 || [[#Commit]]
 |-
 | 11 || GetFreeSpaceSize
 |-
@@ -504,6 +504,9 @@ There are two main implementations of this interface:
 |-
 | 14 || GetFileTimeStampRaw [3.0.0+]
 |}
+
+==OpenDirectory==
+Takes a type-0x6 output buffer and an u64 '''filter_flags'''. '''filter_flags''' controls what type of entries are read by the [[#IDirectory]]: bitmask 0x1 = directories, bitmask 0x2 = files.
 
 == Commit ==
 Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after writing to savedata for the changes to take affect.
