@@ -35,11 +35,11 @@ if not all input methods available to applications.
 
 | Offset | Size in bytes | Description                    |
 | ------ | ------------- | ------------------------------ |
-| 0x0    | 0x8           | Timestamp                      |
+| 0x0    | 0x8           | Timestamp in ticks?            |
 | 0x8    | 0x8           | Number of Entries, always 17   |
 | 0x10   | 0x8           | Latest Entry Index             |
 | 0x18   | 0x8           | Maximum Entry Index, always 16 |
-| 0x20   | 0x8           | Timestamp                      |
+| 0x20   | 0x8           | Timestamp in samples           |
 |        |               |                                |
 
 ### Touch Entry
@@ -52,25 +52,26 @@ if not all input methods available to applications.
 
 #### Touch Structure Header
 
-| Offset | Size in bytes | Description       |
-| ------ | ------------- | ----------------- |
-| 0x0    | 0x8           | Timestamp         |
-| 0x8    | 0x8           | Number of Touches |
-|        |               |                   |
+| Offset | Size in bytes | Description          |
+| ------ | ------------- | -------------------- |
+| 0x0    | 0x8           | Timestamp in samples |
+| 0x8    | 0x8           | Number of Touches    |
+|        |               |                      |
 
 #### Touch Data Entry
 
-| Offset | Size in bytes | Description      |
-| ------ | ------------- | ---------------- |
-| 0x0    | 0x8           | Timestamp        |
-| 0x8    | 0x8           | Unknown          |
-| 0x10   | 0x4           | Touch X          |
-| 0x14   | 0x4           | Touch Y          |
-| 0x18   | 0x4           | Touch Diameter X |
-| 0x1C   | 0x4           | Touch Diameter Y |
-| 0x20   | 0x4           | Angle            |
-| 0x24   | 0x4           | Unknown          |
-|        |               |                  |
+| Offset | Size in bytes | Description          |
+| ------ | ------------- | -------------------- |
+| 0x0    | 0x8           | Timestamp in samples |
+| 0x8    | 0x4           | Padding              |
+| 0xC    | 0x4           | Touch Index          |
+| 0x10   | 0x4           | Touch X              |
+| 0x14   | 0x4           | Touch Y              |
+| 0x18   | 0x4           | Touch Diameter X     |
+| 0x1C   | 0x4           | Touch Diameter Y     |
+| 0x20   | 0x4           | Angle                |
+| 0x24   | 0x4           | Padding              |
+|        |               |                      |
 
 ## Mouse
 
@@ -84,7 +85,7 @@ if not all input methods available to applications.
 
 | Offset | Size in bytes | Description                    |
 | ------ | ------------- | ------------------------------ |
-| 0x0    | 0x8           | Timestamp                      |
+| 0x0    | 0x8           | Timestamp in ticks?            |
 | 0x8    | 0x8           | Number of Entries, always 17   |
 | 0x10   | 0x8           | Latest Entry Index             |
 | 0x18   | 0x8           | Maximum Entry Index, always 16 |
@@ -92,18 +93,18 @@ if not all input methods available to applications.
 
 ### Mouse Entry
 
-| Offset | Size in bytes | Description      |
-| ------ | ------------- | ---------------- |
-| 0x0    | 0x8           | Timestamp        |
-| 0x8    | 0x8           | Timestamp Again? |
-| 0x10   | 0x4           | Mouse X          |
-| 0x14   | 0x4           | Mouse Y          |
-| 0x18   | 0x4           | Mouse X Change   |
-| 0x1C   | 0x4           | Mouse Y Change   |
-| 0x20   | 0x4           | Scroll Change Y  |
-| 0x24   | 0x4           | Scroll Change X? |
-| 0x28   | 0x8           | Mouse Buttons    |
-|        |               |                  |
+| Offset | Size in bytes | Description                 |
+| ------ | ------------- | --------------------------- |
+| 0x0    | 0x8           | Timestamp in samples        |
+| 0x8    | 0x8           | Timestamp in samples again? |
+| 0x10   | 0x4           | Mouse X                     |
+| 0x14   | 0x4           | Mouse Y                     |
+| 0x18   | 0x4           | Mouse X Change              |
+| 0x1C   | 0x4           | Mouse Y Change              |
+| 0x20   | 0x4           | Scroll Change Y             |
+| 0x24   | 0x4           | Scroll Change X?            |
+| 0x28   | 0x8           | Mouse Buttons               |
+|        |               |                             |
 
 ## Keyboard
 
@@ -117,7 +118,7 @@ if not all input methods available to applications.
 
 | Offset | Size in bytes | Description                    |
 | ------ | ------------- | ------------------------------ |
-| 0x0    | 0x8           | Timestamp                      |
+| 0x0    | 0x8           | Timestamp in ticks?            |
 | 0x8    | 0x8           | Number of Entries, always 17   |
 | 0x10   | 0x8           | Latest Entry Index             |
 | 0x18   | 0x8           | Maximum Entry Index, always 16 |
@@ -127,8 +128,8 @@ if not all input methods available to applications.
 
 | Offset | Size in bytes | Description                                                                                        |
 | ------ | ------------- | -------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8           | Timestamp                                                                                          |
-| 0x8    | 0x8           | Timestamp Again?                                                                                   |
+| 0x0    | 0x8           | Timestamp in samples                                                                               |
+| 0x8    | 0x8           | Timestamp in samples again?                                                                        |
 | 0x10   | 0x8           | Modifier Mask                                                                                      |
 | 0x18   | 0x20          | Keys Down, each key gets one bit based on the HID keyboard scan code (F1 is 0x3A, bit 0x3A is set) |
 |        |               |                                                                                                    |
@@ -191,7 +192,7 @@ each available controller.
 
 | Offset | Size in bytes | Description                    |
 | ------ | ------------- | ------------------------------ |
-| 0x0    | 0x8           | Timestamp                      |
+| 0x0    | 0x8           | Timestamp in ticks?            |
 | 0x8    | 0x8           | Number of entries, always 17   |
 | 0x10   | 0x8           | Latest Entry Index             |
 | 0x18   | 0x8           | Maximum Entry Index, always 16 |
@@ -201,8 +202,8 @@ each available controller.
 
 | Offset | Size in bytes | Description                                   |
 | ------ | ------------- | --------------------------------------------- |
-| 0x0    | 0x8           | Timestamp                                     |
-| 0x8    | 0x8           | Timestamp Again                               |
+| 0x0    | 0x8           | Timestamp in samples                          |
+| 0x8    | 0x8           | Timestamp in samples again                    |
 | 0x10   | 0x8           | Button State                                  |
 | 0x18   | 0x4           | Left Joystick X                               |
 | 0x1C   | 0x4           | Left Joystick Y                               |

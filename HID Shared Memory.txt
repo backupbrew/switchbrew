@@ -98,7 +98,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x0	
 | 0x8	
-| Timestamp	
+| Timestamp in ticks?	
 |-
 | 0x8	
 | 0x8	
@@ -114,7 +114,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x20	
 | 0x8	
-| Timestamp	
+| Timestamp in samples	
 |-
 |}
 
@@ -145,7 +145,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x0	
 | 0x8	
-| Timestamp	
+| Timestamp in samples
 |-
 | 0x8	
 | 0x8	
@@ -162,11 +162,15 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x0	
 | 0x8	
-| Timestamp	
+| Timestamp in samples
 |-
 | 0x8	
-| 0x8	
-| Unknown	
+| 0x4	
+| Padding	
+|-
+| 0xC	
+| 0x4	
+| Touch Index	
 |-
 | 0x10	
 | 0x4	
@@ -190,7 +194,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x24	
 | 0x4	
-| Unknown	
+| Padding	
 |-
 |}
 
@@ -222,7 +226,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x0	
 | 0x8	
-| Timestamp	
+| Timestamp in ticks?
 |-
 | 0x8	
 | 0x8	
@@ -248,11 +252,11 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x0	
 | 0x8	
-| Timestamp	
+| Timestamp in samples
 |-
 | 0x8	
 | 0x8	
-| Timestamp Again?	
+| Timestamp in samples again?	
 |-
 | 0x10	
 | 0x4	
@@ -313,7 +317,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x0	
 | 0x8	
-| Timestamp	
+| Timestamp in ticks?
 |-
 | 0x8	
 | 0x8	
@@ -339,11 +343,11 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 |-
 | 0x0	
 | 0x8	
-| Timestamp	
+| Timestamp in samples
 |-
 | 0x8	
 | 0x8	
-| Timestamp Again?	
+| Timestamp in samples again?	
 |-
 | 0x10	
 | 0x8	
@@ -504,7 +508,7 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 0x0
 | 0x8
-| Timestamp
+| Timestamp in ticks?
 |-
 | 0x8
 | 0x8
@@ -530,11 +534,11 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 0x0
 | 0x8
-| Timestamp
+| Timestamp in samples
 |-
 | 0x8
 | 0x8
-| Timestamp Again
+| Timestamp in samples again
 |-
 | 0x10
 | 0x8
