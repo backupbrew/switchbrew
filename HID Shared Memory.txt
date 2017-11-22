@@ -83,7 +83,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 | Touch Header	
 |-
 | 0x28	
-| 0x294/0x29C * 17 (size of entry depends on the index, even is 0x294 and odd is 0x29C)
+| 0x298 * 17
 | Touch Entries	
 |-
 |}
