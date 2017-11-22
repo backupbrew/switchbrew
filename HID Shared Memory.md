@@ -25,11 +25,11 @@ if not all input methods available to applications.
 
 ## Capacitive Touchscreen
 
-| Offset | Size in bytes | Description   |
-| ------ | ------------- | ------------- |
-| 0x0    | 0x28          | Touch Header  |
-| 0x28   | 0x290 \* 17   | Touch Entries |
-|        |               |               |
+| Offset | Size in bytes                                                                          | Description   |
+| ------ | -------------------------------------------------------------------------------------- | ------------- |
+| 0x0    | 0x28                                                                                   | Touch Header  |
+| 0x28   | 0x294/0x29C \* 17 (size of entry depends on the index, even is 0x294 and odd is 0x29C) | Touch Entries |
+|        |                                                                                        |               |
 
 ### Touch Header
 
