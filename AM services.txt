@@ -13,7 +13,7 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 |-
 | 200 || OpenLibraryAppletProxyOld || Returns an [[#ILibraryAppletProxy]].
 |-
-| 201 || OpenLibraryAppletProxy || Returns an [[#ILibraryAppletProxy]].
+| 201 || [[#OpenLibraryAppletProxy]] || Returns an [[#ILibraryAppletProxy]].
 |-
 | 300 || OpenOverlayAppletProxy || Returns an [[#IOverlayAppletProxy]].
 |-
@@ -23,9 +23,16 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 |-
 |}
 
-All of these commands take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]].
+All of these commands except [[#OpenLibraryAppletProxy]] take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]].
 
 This service seems to be used by all system non-regular-applications.
+
+== OpenLibraryAppletProxy ==
+Returns an [[#IApplicationProxy]].
+
+Takes a [[IPC_Marshalling|reserved]] input u64(official user-processes use hard-code value 0), a PID,a process copy-handle(cur-proc handle alias), and an 0x80-byte type-0x15 input buffer '''AppletAttribute'''.
+
+Official user-processes use the same retry loop with this as the other Open*Proxy commands.
 
 == ISystemAppletProxy ==
 {| class="wikitable" border="1"
