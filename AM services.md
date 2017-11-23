@@ -35,7 +35,7 @@ This service seems to be used by all system non-regular-applications.
 Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").
 
 Takes a [reserved](IPC%20Marshalling.md "wikilink") input u64(official
-user-processes use hard-code value 0), a PID,a process
+user-processes use hard-coded value 0), a PID,a process
 copy-handle(cur-proc handle alias), and an 0x80-byte type-0x15 input
 buffer **AppletAttribute**.
 
@@ -480,7 +480,7 @@ Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink"). See
 [\#appletAE](#appletAE "wikilink").
 
 Takes a [reserved](IPC%20Marshalling.md "wikilink") input u64(official
-user-processes use hard-code value 0), a PID, and a process
+user-processes use hard-coded value 0), a PID, and a process
 copy-handle(cur-proc handle alias).
 
 On failure, official user-processes will retry using this command in a
