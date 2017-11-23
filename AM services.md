@@ -11,15 +11,15 @@ and the Nintendo Switch logo displayed during system boot.
 This is
 "nn::am::<service::IAllSystemAppletProxiesService>".
 
-| Cmd | Name                                                           | Notes                                                                    |
-| --- | -------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| 100 | OpenSystemAppletProxy                                          | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").       |
-| 200 | OpenLibraryAppletProxyOld                                      | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
-| 201 | [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
-| 300 | OpenOverlayAppletProxy                                         | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").     |
-| 350 | OpenSystemApplicationProxy                                     | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").         |
-| 400 | CreateSelfLibraryAppletCreatorForDevelop                       | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink"). |
-|     |                                                                |                                                                          |
+| Cmd | Name                                                                      | Notes                                                                    |
+| --- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| 100 | OpenSystemAppletProxy                                                     | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").       |
+| 200 | OpenLibraryAppletProxy ( \[3.0.0+\] OpenLibraryAppletProxyOld)            | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
+| 201 | \[3.0.0+\] [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
+| 300 | OpenOverlayAppletProxy                                                    | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").     |
+| 350 | OpenSystemApplicationProxy                                                | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").         |
+| 400 | CreateSelfLibraryAppletCreatorForDevelop                                  | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink"). |
+|     |                                                                           |                                                                          |
 
 All of these commands except
 [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") take the

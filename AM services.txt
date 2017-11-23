@@ -11,9 +11,9 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 |-
 | 100 || OpenSystemAppletProxy || Returns an [[#ISystemAppletProxy]].
 |-
-| 200 || OpenLibraryAppletProxyOld || Returns an [[#ILibraryAppletProxy]].
+| 200 || OpenLibraryAppletProxy ( [3.0.0+] OpenLibraryAppletProxyOld) || Returns an [[#ILibraryAppletProxy]].
 |-
-| 201 || [[#OpenLibraryAppletProxy]] || Returns an [[#ILibraryAppletProxy]].
+| 201 || [3.0.0+] [[#OpenLibraryAppletProxy]] || Returns an [[#ILibraryAppletProxy]].
 |-
 | 300 || OpenOverlayAppletProxy || Returns an [[#IOverlayAppletProxy]].
 |-
