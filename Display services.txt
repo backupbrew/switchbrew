@@ -93,7 +93,7 @@ Takes an input u64 and u32. Returns an [[#IApplicationDisplayService]].
 |-
 | 102 || [[#GetManagerDisplayService]]
 |-
-| 103 || [[#GetIndirectDisplayTransactionService]]
+| 103 || [2.0.0+] [[#GetIndirectDisplayTransactionService]]
 |-
 | 1000 || [[#ListDisplays]]
 |-
