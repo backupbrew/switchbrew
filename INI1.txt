@@ -87,3 +87,6 @@ Kernel internal process?
 | u32
 | 
 |}
+
+=== Compression ===
+The compression used here is BLZ, with a modified footer since 3ds. The footer is now 0xC bytes instead of 0x8, and has the form u32 compressed_data_len; u32 initial_index; u32 additional_len_when_uncompressed;

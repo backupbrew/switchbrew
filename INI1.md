@@ -31,3 +31,10 @@ process?
 | 0x4    | u32  | DecompressedSize |
 | 0x8    | u32  | CompressedSize   |
 | 0xC    | u32  |                  |
+
+### Compression
+
+The compression used here is BLZ, with a modified footer since 3ds. The
+footer is now 0xC bytes instead of 0x8, and has the form u32
+compressed\_data\_len; u32 initial\_index; u32
+additional\_len\_when\_uncompressed;
