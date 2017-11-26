@@ -130,11 +130,11 @@ The 2 fields preceding the magic field get copied around with the structure, eve
 |-
 | 0x10
 | 4
-| .tdata offset
+| .bss start offset
 |-
 | 0x14
 | 4
-| .tbss offset
+| .bss end offset
 |-
 | 0x18
 | 4
