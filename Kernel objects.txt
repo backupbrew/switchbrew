@@ -1383,7 +1383,7 @@ Size: 0x50
 |-
 | 0 || [[#KLockedList]] || LockedList 
 |-
-| 0x28 || [[#KSlabHeap]] || ObjectLink 
+| 0x28 || [[#KSlabHeap]] || SlabHeap 
 |}
 
 

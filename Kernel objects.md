@@ -931,7 +931,7 @@ Size: 0x50
 | Offset | Type                                     | Description |
 | ------ | ---------------------------------------- | ----------- |
 | 0      | [\#KLockedList](#KLockedList "wikilink") | LockedList  |
-| 0x28   | [\#KSlabHeap](#KSlabHeap "wikilink")     | ObjectLink  |
+| 0x28   | [\#KSlabHeap](#KSlabHeap "wikilink")     | SlabHeap    |
 
 # KSlabHeap
 
