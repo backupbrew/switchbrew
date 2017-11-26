@@ -924,16 +924,16 @@ Inherits from:
 | 0x10   | u64                                          | MaxPage       |
 | 0x18   | u16\*                                        | RefCountTable |
 
-# KObjectList
+# KObjectAllocator
 
 Size: 0x50
 
 | Offset | Type                                     | Description |
 | ------ | ---------------------------------------- | ----------- |
 | 0      | [\#KLockedList](#KLockedList "wikilink") | LockedList  |
-| 0x28   | [\#KObjectLink](#KObjectLink "wikilink") | ObjectLink  |
+| 0x28   | [\#KSlabHeap](#KSlabHeap "wikilink")     | ObjectLink  |
 
-# KObjectLink
+# KSlabHeap
 
 Size: 0x28
 
