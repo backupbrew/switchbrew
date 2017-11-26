@@ -1374,6 +1374,38 @@ Inherits from: [[#KAutoObject]]
 | 0x18 || u16* || RefCountTable
 |}
 
+= KObjectList =
+Size: 0x50
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || [[#KLockedList]] || LockedList 
+|-
+| 0x28 || [[#KObjectLink]] || ObjectLink 
+|}
+
+
+= KObjectLink =
+Size: 0x28
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || void* || FreeListHead 
+|-
+| 0x8 || u64 || 
+|-
+| 0x10 || void* || HeapPtr
+|-
+| 0x18 || u64 || TotalHeapSize
+|-
+| 0x20 || u64 || SingleObjectSize
+|}
+
+
 = KPageTableAllocator =
 Size: 0x30
 

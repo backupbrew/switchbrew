@@ -924,6 +924,27 @@ Inherits from:
 | 0x10   | u64                                          | MaxPage       |
 | 0x18   | u16\*                                        | RefCountTable |
 
+# KObjectList
+
+Size: 0x50
+
+| Offset | Type                                     | Description |
+| ------ | ---------------------------------------- | ----------- |
+| 0      | [\#KLockedList](#KLockedList "wikilink") | LockedList  |
+| 0x28   | [\#KObjectLink](#KObjectLink "wikilink") | ObjectLink  |
+
+# KObjectLink
+
+Size: 0x28
+
+| Offset | Type   | Description      |
+| ------ | ------ | ---------------- |
+| 0      | void\* | FreeListHead     |
+| 0x8    | u64    |                  |
+| 0x10   | void\* | HeapPtr          |
+| 0x18   | u64    | TotalHeapSize    |
+| 0x20   | u64    | SingleObjectSize |
+
 # KPageTableAllocator
 
 Size: 0x30
