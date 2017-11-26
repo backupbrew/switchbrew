@@ -353,7 +353,7 @@
 |-
 | 0100E67003A86000 || Disgaea 5 Complete Demo || EUR USA || || v0 || || Demo
 |-
-| 0100574002AF4000 || ONE PIECE: Unlimited World Red Deluxe Edition || ALL || || || || Game
+| 0100574002AF4000 || ONE PIECE: Unlimited World Red Deluxe Edition || ALL || || || Gamecard Front: LA-H-ACL9A-{region} Back: ACL9A13A000 || Game
 |-
 | 010057D0021E8000 || Shovel Knight: Treasure Trove || ALL || || v0 || || Game
 |-
@@ -511,7 +511,7 @@
 |-
 | 0100506005A2C000 || LOST SPHEAR Demo || JPN || || || || Demo
 |-
-| 010078D000F88000 || DRAGON BALL Xenoverse 2 for Nintendo Switch || ALL || || || || Game
+| 010078D000F88000 || DRAGON BALL Xenoverse 2 for Nintendo Switch || ALL || || || Gamecard Front: LA-H-ABYBA-{region} Back: ABYBA08B00 || Game
 |-
 | 010078D000F88800 || DRAGON BALL Xenoverse 2 for Nintendo Switch || ALL || || || || Update
 |-
