@@ -60,8 +60,8 @@ literal.
 | 0x04   | 4    | MagicOffset. Always 8 (so it works when MOD is at image\_base + 0).      |
 | 0x08   | 4    | Magic "MOD0"                                                             |
 | 0x0C   | 4    | .dynamic offset                                                          |
-| 0x10   | 4    | .bss start offset                                                        |
-| 0x14   | 4    | .bss end offset                                                          |
+| 0x10   | 4    | .tdata offset                                                            |
+| 0x14   | 4    | .tbss offset                                                             |
 | 0x18   | 4    | .eh\_frame\_hdr start offset                                             |
 | 0x1C   | 4    | .eh\_frame\_hdr end offset                                               |
 | 0x20   | 4    | offset to runtime-generated module object. typically equal to .bss base. |
