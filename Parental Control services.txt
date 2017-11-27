@@ -178,4 +178,4 @@ This cmd takes the 0x20 bytes produced by GenerateInquiryCode, and an 0x20 byte 
 
 Master Keys are validated as follows on <= [[3.0.0]]: first, svcSleepThread(1000000000LL) is called to introduce a delay to prevent brute force attacks. Then, strlen(master_key) is called -- if this is not 8, 0 is returned. Next, the inquiry code is regenerated and snprintf("%02d%08llu", 10, generated_inquiry_rnd) is compared to the inquiry data passed in as an argument. If this doesn't match, 0 is returned. Then, hmac-sha256(snprintf("%02d%08llu", 10, generated_inquiry_rnd)) is called using hardcoded keydata, and the master key argument is compared to snprintf("%08llu", (hmac_result & 0xFFFFFFFFFFFF) % 100000000). If this matches, 1 is returned, otherwise 0 is returned.
 
-On [[3.0.1]] this was presumably changed to use different keydata.
+On [[3.0.1]] this was changed to use different hardcoded keydata, and to pass 11 as the snprintf argument instead of 10.

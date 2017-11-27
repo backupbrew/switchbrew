@@ -120,5 +120,6 @@ called using hardcoded keydata, and the master key argument is compared
 to snprintf("%08llu", (hmac\_result & 0xFFFFFFFFFFFF) % 100000000). If
 this matches, 1 is returned, otherwise 0 is returned.
 
-On [3.0.1](3.0.1.md "wikilink") this was presumably changed to use
-different keydata.
+On [3.0.1](3.0.1.md "wikilink") this was changed to use different
+hardcoded keydata, and to pass 11 as the snprintf argument instead of
+10.
