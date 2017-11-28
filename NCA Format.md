@@ -215,11 +215,10 @@ See [here](ExeFS.md "wikilink") for mounted-FS ExeFS contents.
 
 # Game-updates
 
-The section-data for the ncatype1 RomFS section(section1) is a
-place-holder: it's identical to section0(ExeFS). The RomFS-superblock
-for this section is used with other data. The RomFS data seems to stored
-under multiple ncatype6 content, at the "section0\_pfs0/fragment"
-file?
+The section-data for ncatype1 RomFS section(section1) uses
+section-crypto-type 0x4. Game-updates also contain multiple ncatype6
+content, which contain
+"section0\_pfs0/fragment".
 
 # PFS0
 
