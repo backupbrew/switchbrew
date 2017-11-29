@@ -453,8 +453,8 @@ There are two main implementations of this interface:
 
 ## GetEntryType
 
-Takes a type-0x9 input buffer for the path and returns an output u32
-[\#DirectoryEntryType](#DirectoryEntryType "wikilink").
+Takes a type-0x9 input buffer for the path and returns
+[\#DirectoryEntryType](#DirectoryEntryType "wikilink") as an output u32.
 
 ## OpenDirectory
 
@@ -507,12 +507,13 @@ entries.
 | ------ | ----- | ------------------------------------------------------ |
 | 0x0    | 0x300 | Path                                                   |
 | 0x300  | 0x4   | ?                                                      |
-| 0x304  | 0x4   | [\#DirectoryEntryType](#DirectoryEntryType "wikilink") |
+| 0x304  | 0x1   | [\#DirectoryEntryType](#DirectoryEntryType "wikilink") |
+| 0x305  | 0x3   | Padding?                                               |
 | 0x308  | 0x8?  | Filesize, 0 for directories.                           |
 
 # DirectoryEntryType
 
-u32 type: 0 = directory, 1 = file.
+s8 type: 0 = directory, 1 = file.
 
 # IFile
 
