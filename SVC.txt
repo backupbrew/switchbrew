@@ -132,7 +132,7 @@ __NOTOC__
 |-
 | 0x53 || svcCreateInterruptEvent || X1=irq_id, W2=flag || W0=result, W1=handle
 |-
-| 0x54 || [[#svcQueryPhysicalAddress]] || X1=addr || W0=result, X1=out0, X2=out1, X3=out2
+| 0x54 || [[#svcQueryPhysicalAddress]] || X1=addr || W0=result, X1=physaddr, X2=kerneladdr, X3=size
 |-
 | 0x55 || [[#svcQueryIoMapping]] || X1=physaddr, X2=size || W0=result, X1=virtaddr
 |-
