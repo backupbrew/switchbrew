@@ -442,7 +442,7 @@ There are two main implementations of this interface:
 | 4   | DeleteDirectoryRecursively                           |
 | 5   | RenameFile                                           |
 | 6   | RenameDirectory                                      |
-| 7   | GetEntryType                                         |
+| 7   | [\#GetEntryType](#GetEntryType "wikilink")           |
 | 8   | OpenFile                                             |
 | 9   | [\#OpenDirectory](#OpenDirectory "wikilink")         |
 | 10  | [\#Commit](#Commit "wikilink")                       |
@@ -450,6 +450,11 @@ There are two main implementations of this interface:
 | 12  | [\#GetTotalSpaceSize](#GetTotalSpaceSize "wikilink") |
 | 13  | CleanDirectoryRecursively \[3.0.0+\]                 |
 | 14  | GetFileTimeStampRaw \[3.0.0+\]                       |
+
+## GetEntryType
+
+Takes a type-0x9 input buffer for the path and returns an output u32
+[\#DirectoryEntryType](#DirectoryEntryType "wikilink").
 
 ## OpenDirectory
 
@@ -493,16 +498,21 @@ entries for "." and "..".
 
 ## GetEntryCount
 
-Returns an u64 for the total number of readable entries.
+Returns an u64 for the total number of readable
+entries.
 
 # DirectoryEntry
 
-| Offset | Size  | Description                        |
-| ------ | ----- | ---------------------------------- |
-| 0x0    | 0x300 | Path                               |
-| 0x300  | 0x4   | ?                                  |
-| 0x304  | 0x4   | u32 type: 0 = directory, 1 = file. |
-| 0x308  | 0x8?  | Filesize, 0 for directories.       |
+| Offset | Size  | Description                                            |
+| ------ | ----- | ------------------------------------------------------ |
+| 0x0    | 0x300 | Path                                                   |
+| 0x300  | 0x4   | ?                                                      |
+| 0x304  | 0x4   | [\#DirectoryEntryType](#DirectoryEntryType "wikilink") |
+| 0x308  | 0x8?  | Filesize, 0 for directories.                           |
+
+# DirectoryEntryType
+
+u32 type: 0 = directory, 1 = file.
 
 # IFile
 

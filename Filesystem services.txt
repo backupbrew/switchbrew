@@ -488,7 +488,7 @@ There are two main implementations of this interface:
 |-
 | 6 || RenameDirectory
 |-
-| 7 || GetEntryType
+| 7 || [[#GetEntryType]]
 |-
 | 8 || OpenFile
 |-
@@ -504,6 +504,9 @@ There are two main implementations of this interface:
 |-
 | 14 || GetFileTimeStampRaw [3.0.0+]
 |}
+
+== GetEntryType ==
+Takes a type-0x9 input buffer for the path and returns an output u32 [[#DirectoryEntryType]].
 
 ==OpenDirectory==
 Takes a type-0x9 input buffer for the path and an u64 '''filter_flags'''. '''filter_flags''' controls what type of entries are read by the [[#IDirectory]]: bitmask 0x1 = directories, bitmask 0x2 = files.
@@ -544,10 +547,13 @@ Returns an u64 for the total number of readable entries.
 |-
 | 0x300 || 0x4 || ?
 |-
-| 0x304 || 0x4 || u32 type: 0 = directory, 1 = file.
+| 0x304 || 0x4 || [[#DirectoryEntryType]]
 |-
 | 0x308 || 0x8? || Filesize, 0 for directories.
 |}
+
+= DirectoryEntryType =
+u32 type: 0 = directory, 1 = file.
 
 = IFile =
 {| class="wikitable" border="1"
