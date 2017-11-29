@@ -1085,6 +1085,7 @@ Bitfield of one of more of these:
 | 15   | [MapAllowed](#svcMapMemory "wikilink")                                                                                                                                     |
 | 16   | [UnmapProcessCodeMemoryAllowed](#svcUnmapProcessCodeMemory "wikilink")                                                                                                     |
 | 17   | [TransferMemoryAllowed](#svcCreateTransferMemory "wikilink")                                                                                                               |
+| 18   | [QueryPhysicalAddressAllowed](#svcQueryPhysicalAddress "wikilink")                                                                                                         |
 | 19   | MapDeviceAllowed ([\#svcMapDeviceAddressSpace](#svcMapDeviceAddressSpace "wikilink") and [\#svcMapDeviceAddressSpaceByForce](#svcMapDeviceAddressSpaceByForce "wikilink")) |
 | 20   | [MapDeviceAlignedAllowed](#svcMapDeviceAddressSpaceAligned "wikilink")                                                                                                     |
 | 21   | [IpcBufferAllowed](#svcSendSyncRequestWithUserBuffer "wikilink")                                                                                                           |

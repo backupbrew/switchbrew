@@ -1423,6 +1423,8 @@ Bitfield of one of more of these:
 |-
 | 17 || [[#svcCreateTransferMemory|TransferMemoryAllowed]]
 |-
+| 18 || [[#svcQueryPhysicalAddress|QueryPhysicalAddressAllowed]]
+|-
 | 19 || MapDeviceAllowed ([[#svcMapDeviceAddressSpace]] and [[#svcMapDeviceAddressSpaceByForce]])
 |-
 | 20 || [[#svcMapDeviceAddressSpaceAligned|MapDeviceAlignedAllowed]]
