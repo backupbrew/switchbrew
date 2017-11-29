@@ -20,13 +20,22 @@ Inherits from:
 | 0x10   | u64                                              | ThreadSyncNum  |
 | 0x18   | [\#KLinkedListNode](#KLinkedListNode "wikilink") | ThreadSyncList |
 
-# KRecursiveLock
+# KMutex
 
 Size: 0x8
 
 | Offset | Type | Description |
 | ------ | ---- | ----------- |
 | 0      | u64  | OwnerTag    |
+
+# KRecursiveLock
+
+Size: 0x18
+
+| Offset | Type                                | Description |
+| ------ | ----------------------------------- | ----------- |
+| 0      | [\#KThread](#KThread "wikilink") \* | Owner       |
+| 8      | s32                                 | Count       |
 
 # KLockedList
 
@@ -37,7 +46,7 @@ Size:
 | ------ | ------------------------------------------------ | ----------- |
 | 0      | u64                                              | Count       |
 | 8      | [\#KLinkedListNode](#KLinkedListNode "wikilink") | List        |
-| 0x18   | [\#KRecursiveLock](#KRecursiveLock "wikilink")   | Mutex       |
+| 0x18   | [\#KMutex](#KMutex "wikilink")                   | Mutex       |
 | 0x20   | u64                                              | MaxCount    |
 
 # KLinkedListNode
@@ -134,8 +143,8 @@ Inherits from:
 | 0x118        | [\#KDebug](#KDebug "wikilink")\*                                                     | Debug                         |
 | 0x120        | [\#KResourceLimit](#KResourceLimit "wikilink")\*                                     | ResourceLimit                 |
 | 0x128        | u32                                                                                  | State                         |
-| 0x130        | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                       | ProcessMutex                  |
-| 0x138        | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                       | ThreadingMutex                |
+| 0x130        | [\#KMutex](#KMutex "wikilink")                                                       | ProcessMutex                  |
+| 0x138        | [\#KMutex](#KMutex "wikilink")                                                       | ThreadingMutex                |
 | 0x140        | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\> | ThreadArbiterList             |
 | 0x150        | KLinkedListNode                                                                      |                               |
 | 0x160        | u64\[4\]                                                                             | RandomEntropy                 |
@@ -182,8 +191,8 @@ Inherits from:
 | 0x128        | [\#KDebug](#KDebug "wikilink")\*                                                                       | Debug                         |
 | 0x130        | [\#KResourceLimit](#KResourceLimit "wikilink")\*                                                       | ResourceLimit                 |
 | 0x138        | u32                                                                                                    | State                         |
-| 0x140        | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                                         | ProcessMutex                  |
-| 0x148        | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                                         | ThreadingMutex                |
+| 0x140        | [\#KMutex](#KMutex "wikilink")                                                                         | ProcessMutex                  |
+| 0x148        | [\#KMutex](#KMutex "wikilink")                                                                         | ThreadingMutex                |
 | 0x150        | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink")\>                   | ThreadArbiterList             |
 | 0x160        | KLinkedListNode                                                                                        |                               |
 | 0x170        | u64\[4\]                                                                                               | RandomEntropy                 |
@@ -360,7 +369,7 @@ Size: 0xB0
 | 0x30         | u64                                                      | MapRegionBaseAddr                   |
 | 0x38         | u64                                                      | MapRegionEndAddr                    |
 | 0x40         | u64                                                      | HeapMaxAllocation                   |
-| 0x48         | [\#KRecursiveLock](#KRecursiveLock "wikilink")           | Mutex                               |
+| 0x48         | [\#KMutex](#KMutex "wikilink")                           | Mutex                               |
 | 0x50         | [\#KPageTable](#KPageTable "wikilink")                   | PageTable                           |
 | 0x60         | [\#KMemoryBlockManager](#KMemoryBlockManager "wikilink") | MemoryBlockManager                  |
 | 0x78         | bool                                                     | IsKernel                            |
@@ -396,7 +405,7 @@ Size: 0xB0
 | 0x50         | u64                                                      |                                     |
 | 0x58         | u64                                                      |                                     |
 | 0x60         | u64                                                      | HeapMaxAllocation                   |
-| 0x68         | [\#KRecursiveLock](#KRecursiveLock "wikilink")           | Mutex                               |
+| 0x68         | [\#KMutex](#KMutex "wikilink")                           | Mutex                               |
 | 0x70         | [\#KPageTable](#KPageTable "wikilink")                   | PageTable                           |
 | 0x80         | [\#KMemoryBlockManager](#KMemoryBlockManager "wikilink") | MemoryBlockManager                  |
 | 0x98         | u32                                                      | AddressSpaceWidth (32/36/39)        |
@@ -480,7 +489,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 | 0x10   | KMemoryBlockList                         | Blocks       |
 | 0x28   | [\#KProcess](#KProcess "wikilink")\*     | OwnerProcess |
 | 0x30   | u64                                      | BaseAddress  |
-| 0x38   | KRecursiveLock                           | Mutex        |
+| 0x38   | KMutex                                   | Mutex        |
 | 0x40   | int                                      | Permission   |
 | 0x44   | bool                                     | HasInited    |
 | 0x45   | bool                                     | IsMapped     |
@@ -782,17 +791,16 @@ Inherits from:
 
 Size: 0x70
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                           | Description |
-| ------ | ---------------------------------------------- | ----------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")       | Inheritance |
-| 0x10   | [\#KRecursiveLock](#KRecursiveLock "wikilink") | Mutex       |
-| 0x18   | [\#KSmmuManager](#KSmmuManager "wikilink")     | Manager     |
-| 0x58   | u64                                            | BaseAddress |
-| 0x60   | u64                                            | Size        |
-| 0x68   | bool                                           | HasInited   |
+| Offset | Type                                       | Description |
+| ------ | ------------------------------------------ | ----------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")   | Inheritance |
+| 0x10   | [\#KMutex](#KMutex "wikilink")             | Mutex       |
+| 0x18   | [\#KSmmuManager](#KSmmuManager "wikilink") | Manager     |
+| 0x58   | u64                                        | BaseAddress |
+| 0x60   | u64                                        | Size        |
+| 0x68   | bool                                       | HasInited   |
 
 \[1.0.0\] It was called KAddressSpace.
 
@@ -814,15 +822,14 @@ Size: 0x40
 
 Size: 0x68
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                           | Description  |
-| ------ | ---------------------------------------------- | ------------ |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")       | Inheritance  |
-| 0x10   | u64\[5\]                                       | CurrentValue |
-| 0x38   | u64\[5\]                                       | LimitValue   |
-| 0x60   | [\#KRecursiveLock](#KRecursiveLock "wikilink") | Mutex        |
+| Offset | Type                                     | Description  |
+| ------ | ---------------------------------------- | ------------ |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance  |
+| 0x10   | u64\[5\]                                 | CurrentValue |
+| 0x38   | u64\[5\]                                 | LimitValue   |
+| 0x60   | [\#KMutex](#KMutex "wikilink")           | Mutex        |
 
 # KPoolManager
 
@@ -839,7 +846,7 @@ Inherits from:
 | 0x348        | [\#KPoolRefManager](#KPoolRefManager "wikilink")    | RefManager        |
 | 0x368        | u64                                                 | AllocationCounter |
 | 0x370        | u64                                                 |                   |
-| 0x378        | [\#KRecursiveLock](#KRecursiveLock "wikilink")      | Mutex             |
+| 0x378        | [\#KMutex](#KMutex "wikilink")                      | Mutex             |
 
 </div>
 
@@ -960,17 +967,16 @@ Size: 0x30
 
 # KIrqManager
 
-\[1.0.0\] Size:
-0x1608
+\[1.0.0\] Size: 0x1608
 
-| Offset | Type                                           | Description |
-| ------ | ---------------------------------------------- | ----------- |
-| 0      | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]     | Core0Irq    |
-| 0x200  | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]     | Core1Irq    |
-| 0x400  | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]     | Core2Irq    |
-| 0x600  | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]     | Core3Irq    |
-| 0x800  | [\#KIrqEntry](#KIrqEntry "wikilink")\[224\]    | SharedIrqs  |
-| 0x1600 | [\#KRecursiveLock](#KRecursiveLock "wikilink") | Mutex       |
+| Offset | Type                                        | Description |
+| ------ | ------------------------------------------- | ----------- |
+| 0      | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]  | Core0Irq    |
+| 0x200  | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]  | Core1Irq    |
+| 0x400  | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]  | Core2Irq    |
+| 0x600  | [\#KIrqEntry](#KIrqEntry "wikilink")\[32\]  | Core3Irq    |
+| 0x800  | [\#KIrqEntry](#KIrqEntry "wikilink")\[224\] | SharedIrqs  |
+| 0x1600 | [\#KMutex](#KMutex "wikilink")              | Mutex       |
 
 ## KIrqEntry
 
@@ -993,7 +999,7 @@ Size:
 | 0x28   | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KDebugEvent](#KDebugEvent "wikilink")\> | EventList   |
 | 0x38   | u32                                                                                          | Flags       |
 | 0x40   | [\#KProcess](#KProcess "wikilink")\*                                                         | ProcessPtr  |
-| 0x48   | [\#KRecursiveLock](#KRecursiveLock "wikilink")                                               | Mutex       |
+| 0x48   | [\#KMutex](#KMutex "wikilink")                                                               | Mutex       |
 
 ## KDebugEvent
 
