@@ -5,7 +5,7 @@ Size: 0x10
 | Offset | Type | Description    |
 | ------ | ---- | -------------- |
 | 0      | \*   | Vtable         |
-| 8      | u64  | ReferenceCount |
+| 8      | u32  | ReferenceCount |
 
 # KSynchronizationObject
 
