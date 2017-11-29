@@ -852,15 +852,13 @@ Size must match size given in map syscall, otherwise there's an invalid-size err
 |-
 | (Out) W0 || [[#Result]]|| <code>Ret</code>
 |-
-| (Out) X1 || u64 || <code>Out0</code>
+| (Out) X1 || u64 || <code>PhysAddr</code>
 |-
-| (Out) X2 || u64 || <code>Out1</code>
+| (Out) X2 || u64 || <code>KernelAddr</code>
 |-
-| (Out) X3 || u64 || <code>Out2</code>
+| (Out) X3 || u64 || <code>Size</code>
 |}
 </div>
-
-The inverse operation of [[#svcQueryIoMapping]].
 
 == svcQueryIoMapping ==
 

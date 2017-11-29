@@ -648,18 +648,15 @@ invalid-size error.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name   |
-| -------- | ------------------------------ | ------ |
-| (In) X1  | u64                            | `Addr` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
-| (Out) X1 | u64                            | `Out0` |
-| (Out) X2 | u64                            | `Out1` |
-| (Out) X3 | u64                            | `Out2` |
+| Argument | Type                           | Name         |
+| -------- | ------------------------------ | ------------ |
+| (In) X1  | u64                            | `Addr`       |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`        |
+| (Out) X1 | u64                            | `PhysAddr`   |
+| (Out) X2 | u64                            | `KernelAddr` |
+| (Out) X3 | u64                            | `Size`       |
 
 </div>
-
-The inverse operation of
-[\#svcQueryIoMapping](#svcQueryIoMapping "wikilink").
 
 ## svcQueryIoMapping
 
