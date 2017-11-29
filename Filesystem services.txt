@@ -496,9 +496,9 @@ There are two main implementations of this interface:
 |-
 | 10 || [[#Commit]]
 |-
-| 11 || GetFreeSpaceSize
+| 11 || [[#GetFreeSpaceSize]]
 |-
-| 12 || GetTotalSpaceSize
+| 12 || [[#GetTotalSpaceSize]]
 |-
 | 13 || CleanDirectoryRecursively [3.0.0+]
 |-
@@ -510,6 +510,12 @@ Takes a type-0x9 input buffer for the path and an u64 '''filter_flags'''. '''fil
 
 == Commit ==
 Like [https://3dbrew.org/wiki/FS:ControlArchive 3DS], this has to be used after writing to savedata for the changes to take affect.
+
+== GetFreeSpaceSize ==
+Takes a type-0x9 input buffer for the path and returns an output byte-size u64 for the total free space with this FS.
+
+== GetTotalSpaceSize ==
+Takes a type-0x9 input buffer for the path and returns an output byte-size u64 for the total space available with this FS(free+used).
 
 = IDirectory =
 {| class="wikitable" border="1"
