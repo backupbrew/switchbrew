@@ -1,6 +1,7 @@
 This is the 0x200-byte TLS (thread local storage). It's base address is
-loaded via ARM threadid register
-tpidrro\_el0.
+loaded via ARM threadid register tpidrro\_el0. TLS for multiple threads
+are stored in the same page, with the first TLS normally(?) located at
+page+0x200.
 
 # Structure
 
