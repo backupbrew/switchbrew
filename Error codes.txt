@@ -193,7 +193,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x41001 || 520 || Process not being debugged
 |-
-| 0xE02 || 7 || High byte in input u64 is zero.
+| 0xE02 || 7 || Savedata [[Filesystem_services|already]] mounted
 |-
 | 0x7802 || 60 || The specified [[NCA]]-type doesn't exist for this title.
 |-

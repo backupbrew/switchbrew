@@ -114,7 +114,7 @@ applets.
 | 0x10801           | 132         | Resource limit exceeded                                                                                                                                                              |
 | 0x20801           | 260         | Command buffer too small                                                                                                                                                             |
 | 0x41001           | 520         | Process not being debugged                                                                                                                                                           |
-| 0xE02             | 7           | High byte in input u64 is zero.                                                                                                                                                      |
+| 0xE02             | 7           | Savedata [already](Filesystem%20services.md "wikilink") mounted                                                                                                                      |
 | 0x7802            | 60          | The specified [NCA](NCA.md "wikilink")-type doesn't exist for this title.                                                                                                            |
 | 0x7D202           | 1001        | Process does not have RomFs                                                                                                                                                          |
 | 0x7D402           | 1002        | Title-id not found / savedata not found.                                                                                                                                             |
