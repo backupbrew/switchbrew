@@ -86,7 +86,7 @@ applets.
 | 0x4201            | 33          | [IsDebugMode](SPL%20services#GetConfig.md##GetConfig "wikilink") isn't set.                                                                                                          |
 | 0xCA01            | 101         | Invalid size                                                                                                                                                                         |
 | 0xCC01            | 102         | Invalid address                                                                                                                                                                      |
-| 0xCE01            | 103         | Address is NULL / buffer size is too small.                                                                                                                                          |
+| 0xCE01            | 103         | Slabheap full                                                                                                                                                                        |
 | 0xD001            | 104         | Memory full                                                                                                                                                                          |
 | 0xD201            | 105         | Handle-table full.                                                                                                                                                                   |
 | 0xD401            | 106         | Invalid memory state / invalid memory permissions.                                                                                                                                   |
