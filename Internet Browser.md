@@ -161,6 +161,31 @@ that the content of each file differs.
 This applet uses a whitelist, but it doesn't come from "<data:/>" like
 whitelisted-applet.
 
+#### WebApplet launch with Tetris
+
+The Tetris game/demo can be used to launch the online-WebApplet. This
+*only* applies to the JPN region of the game/demo: "ぷよぷよ™テトリス®Ｓ"(aka
+"Puyo Puyo Tetris"). Note that the gamecard for this can be used to
+launch the online-WebApplet on system-version \>=1.0.0.
+
+First, launch the offline-WebApplet for the manual:
+
+  - Game: Main-menu -\> press A with the already selected top menu
+    button -\> press the R button.
+  - Demo: Main-menu -\> select menu button on the right side -\> press
+    A.
+
+Then in the manual:
+
+  - Press A -\> select the bottom menu entry in the list.
+  - Select the SEGA icon -\> press A.
+
+The offline-WebApplet will then launch the online-WebApplet with the
+plain-http "http://sega.jp/" URL. Non-JPN regions of Tetris don't have
+any external link in the manual. For example, with your own DNS-server
+setup to return your own server address for this domain, you can load
+your own content for use with online-WebApplet.
+
 ### Offline Applet
 
 Minus TIDs, the [NPDM](NPDM.md "wikilink") is the same as
