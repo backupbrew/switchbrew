@@ -541,7 +541,7 @@ No input. Returns an output u8.
 |-
 | 12 || SetPerformanceModeChangedNotification
 |-
-| 13 || SetFocusHandlingMode
+| 13 || [[#SetFocusHandlingMode]]
 |-
 | 14 || SetRestartMessageEnabled
 |-
@@ -555,7 +555,7 @@ No input. Returns an output u8.
 |-
 | 19 || SetScreenShotImageOrientation
 |-
-| 40 || CreateManagedDisplayLayer
+| 40 || [[#CreateManagedDisplayLayer]]
 |-
 | 50 || SetHandlesRequestToDisplay
 |-
@@ -577,6 +577,9 @@ No input. Returns an output u8.
 |-
 | 67 || IsIlluminanceAvailable
 |}
+
+===SetFocusHandlingMode===
+Takes 3 input u8s with each field located immediately after the previous u8, these are bool flags. No output.
 
 ===CreateManagedDisplayLayer===
 Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].
