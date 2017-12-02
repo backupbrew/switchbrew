@@ -594,6 +594,9 @@ Returns an output u64 LayerId which is then used by the user-process with [[Disp
 === GetAppletResourceUserId ===
 Returns an output u64: [[#AppletResourceUserId]].
 
+=== AcquireForegroundRights ===
+No input/output.
+
 == IAudioController ==
 {| class="wikitable" border="1"
 |-

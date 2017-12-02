@@ -398,6 +398,10 @@ with
 Returns an output u64:
 [\#AppletResourceUserId](#AppletResourceUserId "wikilink").
 
+### AcquireForegroundRights
+
+No input/output.
+
 ## IAudioController
 
 | Cmd | Name                                 |
