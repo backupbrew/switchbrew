@@ -61,7 +61,7 @@ Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
 |-
 | 0xC3000011 || [[#LoadRsaWrappedAesKey]] || ||
 |-
-| 0xC3000012 || [2.0.0+] GenerateRsaKek || ||
+| 0xC3000012 || [2.0.0+] GenerateRsaWrappedAesKek || ||
 |}
 
 The overall concept here is the following:

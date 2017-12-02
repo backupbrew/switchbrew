@@ -43,7 +43,7 @@ Functions exposed to user-mode processes using
 | 0xC300060F | [\#PublicRsa](#PublicRsa "wikilink")                               |    |     |
 | 0xC3000610 | [\#UnwrapRsaEncryptedAesKey](#UnwrapRsaEncryptedAesKey "wikilink") |    |     |
 | 0xC3000011 | [\#LoadRsaWrappedAesKey](#LoadRsaWrappedAesKey "wikilink")         |    |     |
-| 0xC3000012 | \[2.0.0+\] GenerateRsaKek                                          |    |     |
+| 0xC3000012 | \[2.0.0+\] GenerateRsaWrappedAesKek                                |    |     |
 
 The overall concept here is the following:
 
