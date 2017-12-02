@@ -166,6 +166,8 @@ Then in the manual:
 
 The offline-WebApplet will then launch the online-WebApplet with the plain-http <nowiki>"http://sega.jp/"</nowiki> URL. Non-JPN regions of Tetris don't have any external link in the manual. For example, with your own DNS-server setup to return your own server address for this domain, you can load your own content for use with online-WebApplet.
 
+As of 12/01/2017 this still works on the latest update for Tetris (version 1.1.2).
+
 === Offline Applet ===
 Minus TIDs, the [[NPDM]] is the same as 010000000000100A except 010000000000100A has access to more/other services.
 

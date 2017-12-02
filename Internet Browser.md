@@ -186,6 +186,9 @@ any external link in the manual. For example, with your own DNS-server
 setup to return your own server address for this domain, you can load
 your own content for use with online-WebApplet.
 
+As of 12/01/2017 this still works on the latest update for Tetris
+(version 1.1.2).
+
 ### Offline Applet
 
 Minus TIDs, the [NPDM](NPDM.md "wikilink") is the same as
