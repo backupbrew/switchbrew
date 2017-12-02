@@ -480,7 +480,7 @@ Takes an input u32.
 |-
 | 8 || GetBootMode ||
 |-
-| 9 || GetCurrentFocusState ||
+| 9 || [[#GetCurrentFocusState]] ||
 |-
 | 10 || RequestToAcquireSleepLock ||
 |-
@@ -508,6 +508,9 @@ Takes an input u32.
 |-
 | 61 || GetDefaultDisplayResolutionChangeEvent ||
 |}
+
+=== GetCurrentFocusState ===
+No input. Returns an output u8.
 
 == ISelfController ==
 {| class="wikitable" border="1"
