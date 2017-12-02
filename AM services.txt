@@ -462,9 +462,9 @@ Takes an input u32.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetEventHandle ||
+| 0 || [[#GetEventHandle]] ||
 |-
-| 1 || ReceiveMessage ||
+| 1 || [[#ReceiveMessage]] ||
 |-
 | 2 || GetThisAppletKind ||
 |-
@@ -508,6 +508,12 @@ Takes an input u32.
 |-
 | 61 || GetDefaultDisplayResolutionChangeEvent ||
 |}
+
+=== GetEventHandle ===
+No input. Returns an output event handle. This is signalled when a message is available with [[#ReceiveMessage]].
+
+=== ReceiveMessage ===
+No input. Returns an output u32. Error 0x680 indicates no message is available?
 
 === GetCurrentFocusState ===
 No input. Returns an output u8.

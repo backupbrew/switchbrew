@@ -317,8 +317,8 @@ u32.
 
 | Cmd | Name                                                       | Notes                                                                          |
 | --- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| 0   | GetEventHandle                                             |                                                                                |
-| 1   | ReceiveMessage                                             |                                                                                |
+| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")             |                                                                                |
+| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")             |                                                                                |
 | 2   | GetThisAppletKind                                          |                                                                                |
 | 3   | AllowToEnterSleep                                          |                                                                                |
 | 4   | DisallowToEnterSleep                                       |                                                                                |
@@ -340,6 +340,17 @@ u32.
 | 55  | IsInControllerFirmwareUpdateSection                        |                                                                                |
 | 60  | GetDefaultDisplayResolution                                |                                                                                |
 | 61  | GetDefaultDisplayResolutionChangeEvent                     |                                                                                |
+
+### GetEventHandle
+
+No input. Returns an output event handle. This is signalled when a
+message is available with
+[\#ReceiveMessage](#ReceiveMessage "wikilink").
+
+### ReceiveMessage
+
+No input. Returns an output u32. Error 0x680 indicates no message is
+available?
 
 ### GetCurrentFocusState
 
