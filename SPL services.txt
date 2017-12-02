@@ -18,43 +18,43 @@ Takes a type-6 buffer and fills it with random data. Same command for "spl:" and
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || [[#GetConfig]] || Wrapper for [[SMC#GetConfig|GetConfig]].
+| 0 || [[#GetConfig]] || Wrapper for [[SMC#GetConfig|GetConfig SMC]].
 |-
 | 1 || [[#UserExpMod]] || Speculative name. User supplied modulus and exponent.
 |-
-| 2 || [[#GenerateAesKek]] || Wrapper for [[SMC#KeygenAndSealX|KeygenAndSealX]].
+| 2 || [[#GenerateAesKek]] || Wrapper for [[SMC#GenerateAesKek|GenerateAesKek SMC]].
 |-
-| 3 || [[#LoadAesKey]] || Wrapper for [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]].
+| 3 || [[#LoadAesKey]] || Wrapper for [[SMC#LoadAesKey|LoadAesKey SMC]].
 |-
-| 4 || [[#GenerateAesKey]] || Decrypts 0x10 bytes using AES ECB and uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with a fixed Y.
+| 4 || [[#GenerateAesKey]] || Decrypts 0x10 bytes using AES ECB and uses [[SMC#LoadAesKey|LoadAesKey SMC]] with a fixed Y.
 |-
-| 5 || [[#SetConfig]] || Wrapper for [[SMC#SetConfig|SetConfig]].
+| 5 || [[#SetConfig]] || Wrapper for [[SMC#SetConfig|SetConfig SMC]].
 |-
-| 7 || [[#GetRandomBytes]] || Uses [[SMC#PrngX931|PrngX931]].
+| 7 || [[#GetRandomBytes]] || Uses [[SMC#GetRandomBytes|GetRandomBytes SMC]].
 |-
-| 9 || [[#DecryptImportPrivkForExpMod0]] || Speculative name. Wrapper for [[SMC#ImportParamsForFWithXY|ImportParamsForFWithXY]].
+| 9 || [[#DecryptImportPrivkForExpMod0]] || Speculative name. Wrapper for [[SMC#LoadRsaPublicKey|LoadRsaPublicKey SMC]].
 |-
-| 10 || [[#ExpMod0]] || Speculative name. Wrapper for [[SMC#ExpMod|ExpMod]].
+| 10 || [[#ExpMod0]] || Speculative name. Wrapper for [[SMC#PublicRsa|PublicRsa SMC]].
 |-
 | 11 || [[#IsDevelopment]] ||
 |-
-| 12 || [[#GenerateSpecificAesKey]] || Wrapper for [[SMC#KeygenA|KeygenA]].
+| 12 || [[#GenerateSpecificAesKey]] || Wrapper for [[SMC#GenerateSpecificAesKey|GenerateSpecificAesKey SMC]].
 |-
-| 13 || [[#DecryptPrivk]] || Speculative name. Wrapper for [[SMC#DecryptExpModParamsWithXY|DecryptExpModParamsWithXY]].
+| 13 || [[#DecryptPrivk]] || Speculative name. Wrapper for [[SMC#PrivateRsa|PrivateRsa SMC]].
 |-
-| 14 || [[#DecryptAesKey]] || Decrypts 0x10 bytes using AES ECB and uses [[SMC#SetKeyslotFromXY|SetKeyslotFromXY]] with fixed X and Y.
+| 14 || [[#DecryptAesKey]] || Decrypts 0x10 bytes using AES ECB and uses [[SMC#LoadAesKey|LoadAesKey SMC]] with fixed X and Y.
 |-
-| 15 || [[#DecryptAesCtr]] || Wrapper for [[SMC#SymmetricCrypto|SymmetricCrypto]].
+| 15 || [[#DecryptAesCtr]] || Wrapper for [[SMC#CryptAes|CryptAes SMC]].
 |-
-| 16 || [[#ComputeCmac]] || Wrapper for [[SMC#CMAC|CMAC]].
+| 16 || [[#ComputeCmac]] || Wrapper for [[SMC#ComputeCmac|ComputeCmac SMC]].
 |-
-| 17 || [[#DecryptImportPrivkForExpMod1]] || Speculative name. Wrapper for [[SMC#ImportParamsFor10WithXY|ImportParamsFor10WithXY]].
+| 17 || [[#DecryptImportPrivkForExpMod1]] || Speculative name. Wrapper for [[SMC#LoadRsaPrivateKey|LoadRsaPrivateKey SMC]].
 |-
-| 18 || [[#ExpMod1]] || Speculative name. Wrapper for [[SMC#ExpModAndKeygenAndSealZ|ExpModAndKeygenAndSealZ]].
+| 18 || [[#ExpMod1]] || Speculative name. Wrapper for [[SMC#UnwrapRsaEncryptedAesKey|UnwrapRsaEncryptedAesKey SMC]].
 |-
-| 19 || [[#LoadRsaKey]] || Wrapper for [[SMC#SetKeyslotFromZ|SetKeyslotFromZ]].
+| 19 || [[#LoadPreparedAesKey]] || Wrapper for [[SMC#LoadRsaWrappedAesKey|LoadRsaWrappedAesKey SMC]].
 |-
-| 20 || [2.0.0+] [[#GenerateRsaKek]] || Wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]].
+| 20 || [2.0.0+] [[#GeneratePreparedAesKek]] || Wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]].
 |-
 | 21 || [2.0.0+] [[#LockAesEngine]] ||
 |-
@@ -255,14 +255,14 @@ Decrypts '''data_in_buf''' using the private key imported with [[#DecryptImportP
 
 Generates and returns a 16-byte key ('''key_z''').
 
-== LoadRsaKey ==
+== LoadPreparedAesKey ==
 Takes a u32 ('''keyslot''') and a 16-byte key ('''key_z''').
 
 Sets the specified '''keyslot''' with a key generated from '''key_z'''.
 
 [2.0.0+] Verifies the engine is locked by current session.
 
-== GenerateRsaKek ==
+== GeneratePreparedAesKek ==
 Takes a 16-byte EKS ('''Encryption Key Source''').
 
 Returns a scrambled sealed KEK ('''Key Encryption Key''' used as '''key_z''').
