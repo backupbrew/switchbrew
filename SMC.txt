@@ -147,9 +147,9 @@ Functions exposed to the kernel internally.
 |-
 | 0xC4000003 || CpuOn || ||
 |-
-| 0xC3000004 || GetConfig (Same as Id 0 Sub-Id 2.) || ||
+| 0xC3000004 || GetConfig (Same as Id 0 Sub-Id 2.) || W1=config_item, X2,X3,X4,X5,X6,X7=0 || X0=result, X1,X2,X3,X4=config_val
 |-
-| 0xC3000005 || GetRandomBytes (Same as Id 0 Sub-Id 6.) || ||
+| 0xC3000005 || GetRandomBytes (Same as Id 0 Sub-Id 6.) || X1=dst_addr, X2,X3,X4,X5,X6,X7=0 ||
 |-
 | 0xC3000006 || Panic || W1=unk, X2,X3,X4,X5,X6,X7=0 || X0=result
 |-

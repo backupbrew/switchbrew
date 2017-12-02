@@ -152,16 +152,16 @@ Takes a session-unique AES key from
 Functions exposed to the kernel
 internally.
 
-| Sub-Id     | Name                                    | In                                                     | Out       |
-| ---------- | --------------------------------------- | ------------------------------------------------------ | --------- |
-| 0xC4000001 | CpuSuspend                              | X1=power\_state, X2=entrypoint\_addr, X3=context\_addr | None      |
-| 0x84000002 | CpuOff                                  | None                                                   | None      |
-| 0xC4000003 | CpuOn                                   |                                                        |           |
-| 0xC3000004 | GetConfig (Same as Id 0 Sub-Id 2.)      |                                                        |           |
-| 0xC3000005 | GetRandomBytes (Same as Id 0 Sub-Id 6.) |                                                        |           |
-| 0xC3000006 | Panic                                   | W1=unk, X2,X3,X4,X5,X6,X7=0                            | X0=result |
-| 0xC3000007 | \[2.0.0+\] ProtectKernelRegion          |                                                        |           |
-| 0xC3000008 | \[2.0.0+\] ReadWriteRegister            |                                                        |           |
+| Sub-Id     | Name                                    | In                                                     | Out                                |
+| ---------- | --------------------------------------- | ------------------------------------------------------ | ---------------------------------- |
+| 0xC4000001 | CpuSuspend                              | X1=power\_state, X2=entrypoint\_addr, X3=context\_addr | None                               |
+| 0x84000002 | CpuOff                                  | None                                                   | None                               |
+| 0xC4000003 | CpuOn                                   |                                                        |                                    |
+| 0xC3000004 | GetConfig (Same as Id 0 Sub-Id 2.)      | W1=config\_item, X2,X3,X4,X5,X6,X7=0                   | X0=result, X1,X2,X3,X4=config\_val |
+| 0xC3000005 | GetRandomBytes (Same as Id 0 Sub-Id 6.) | X1=dst\_addr, X2,X3,X4,X5,X6,X7=0                      |                                    |
+| 0xC3000006 | Panic                                   | W1=unk, X2,X3,X4,X5,X6,X7=0                            | X0=result                          |
+| 0xC3000007 | \[2.0.0+\] ProtectKernelRegion          |                                                        |                                    |
+| 0xC3000008 | \[2.0.0+\] ReadWriteRegister            |                                                        |                                    |
 
 # Errors
 
