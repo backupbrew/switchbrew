@@ -38,7 +38,7 @@ unlocked.
 | 17  | [\#DecryptImportPrivkForExpMod1](#DecryptImportPrivkForExpMod1 "wikilink") | Speculative name. Wrapper for [LoadRsaPrivateKey SMC](SMC#LoadRsaPrivateKey.md##LoadRsaPrivateKey "wikilink").                      |
 | 18  | [\#ExpMod1](#ExpMod1 "wikilink")                                           | Speculative name. Wrapper for [UnwrapRsaEncryptedAesKey SMC](SMC#UnwrapRsaEncryptedAesKey.md##UnwrapRsaEncryptedAesKey "wikilink"). |
 | 19  | [\#LoadPreparedAesKey](#LoadPreparedAesKey "wikilink")                     | Wrapper for [LoadRsaWrappedAesKey SMC](SMC#LoadRsaWrappedAesKey.md##LoadRsaWrappedAesKey "wikilink").                               |
-| 20  | \[2.0.0+\] [\#GeneratePreparedAesKek](#GeneratePreparedAesKek "wikilink")  | Wrapper for [KeygenAndSealZ](SMC#KeygenAndSealZ.md##KeygenAndSealZ "wikilink").                                                     |
+| 20  | \[2.0.0+\] [\#GeneratePreparedAesKek](#GeneratePreparedAesKek "wikilink")  | Wrapper for [GenerateRsaWrappedAesKek SMC](SMC#GenerateRsaWrappedAesKek.md##GenerateRsaWrappedAesKek "wikilink").                   |
 | 21  | \[2.0.0+\] [\#LockAesEngine](#LockAesEngine "wikilink")                    |                                                                                                                                     |
 | 22  | \[2.0.0+\] [\#UnlockAesEngine](#UnlockAesEngine "wikilink")                |                                                                                                                                     |
 | 23  | \[2.0.0+\] [\#GetSplWaitEvent](#GetSplWaitEvent "wikilink")                |                                                                                                                                     |

@@ -54,7 +54,7 @@ Takes a type-6 buffer and fills it with random data. Same command for "spl:" and
 |-
 | 19 || [[#LoadPreparedAesKey]] || Wrapper for [[SMC#LoadRsaWrappedAesKey|LoadRsaWrappedAesKey SMC]].
 |-
-| 20 || [2.0.0+] [[#GeneratePreparedAesKek]] || Wrapper for [[SMC#KeygenAndSealZ|KeygenAndSealZ]].
+| 20 || [2.0.0+] [[#GeneratePreparedAesKek]] || Wrapper for [[SMC#GenerateRsaWrappedAesKek|GenerateRsaWrappedAesKek SMC]].
 |-
 | 21 || [2.0.0+] [[#LockAesEngine]] ||
 |-
