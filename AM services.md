@@ -359,40 +359,44 @@ u8.
 
 ## ISelfController
 
-| Cmd | Name                                                                 |
-| --- | -------------------------------------------------------------------- |
-| 0   | Exit                                                                 |
-| 1   | LockExit                                                             |
-| 2   | UnlockExit                                                           |
-| 3   | EnterFatalSection                                                    |
-| 4   | LeaveFatalSection                                                    |
-| 9   | GetLibraryAppletLaunchableEvent                                      |
-| 10  | SetScreenShotPermission                                              |
-| 11  | SetOperationModeChangedNotification                                  |
-| 12  | SetPerformanceModeChangedNotification                                |
-| 13  | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")           |
-| 14  | SetRestartMessageEnabled                                             |
-| 15  | SetScreenShotAppletIdentityInfo                                      |
-| 16  | SetOutOfFocusSuspendingEnabled                                       |
-| 17  | SetControllerFirmwareUpdateSection                                   |
-| 18  | SetRequiresCaptureButtonShortPressedMessage                          |
-| 19  | SetScreenShotImageOrientation                                        |
-| 40  | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink") |
-| 50  | SetHandlesRequestToDisplay                                           |
-| 51  | ApproveToDisplay                                                     |
-| 60  | OverrideAutoSleepTimeAndDimmingTime                                  |
-| 61  | SetMediaPlaybackState                                                |
-| 62  | SetIdleTimeDetectionExtension                                        |
-| 63  | GetIdleTimeDetectionExtension                                        |
-| 64  | SetInputDetectionSourceSet                                           |
-| 65  | ReportUserIsActive                                                   |
-| 66  | GetCurrentIlluminance                                                |
-| 67  | IsIlluminanceAvailable                                               |
+| Cmd | Name                                                                           |
+| --- | ------------------------------------------------------------------------------ |
+| 0   | Exit                                                                           |
+| 1   | LockExit                                                                       |
+| 2   | UnlockExit                                                                     |
+| 3   | EnterFatalSection                                                              |
+| 4   | LeaveFatalSection                                                              |
+| 9   | GetLibraryAppletLaunchableEvent                                                |
+| 10  | SetScreenShotPermission                                                        |
+| 11  | SetOperationModeChangedNotification                                            |
+| 12  | SetPerformanceModeChangedNotification                                          |
+| 13  | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                     |
+| 14  | SetRestartMessageEnabled                                                       |
+| 15  | SetScreenShotAppletIdentityInfo                                                |
+| 16  | [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink") |
+| 17  | SetControllerFirmwareUpdateSection                                             |
+| 18  | SetRequiresCaptureButtonShortPressedMessage                                    |
+| 19  | SetScreenShotImageOrientation                                                  |
+| 40  | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")           |
+| 50  | SetHandlesRequestToDisplay                                                     |
+| 51  | ApproveToDisplay                                                               |
+| 60  | OverrideAutoSleepTimeAndDimmingTime                                            |
+| 61  | SetMediaPlaybackState                                                          |
+| 62  | SetIdleTimeDetectionExtension                                                  |
+| 63  | GetIdleTimeDetectionExtension                                                  |
+| 64  | SetInputDetectionSourceSet                                                     |
+| 65  | ReportUserIsActive                                                             |
+| 66  | GetCurrentIlluminance                                                          |
+| 67  | IsIlluminanceAvailable                                                         |
 
 ### SetFocusHandlingMode
 
 Takes 3 input u8s with each field located immediately after the previous
 u8, these are bool flags. No output.
+
+### SetOutOfFocusSuspendingEnabled
+
+Takes an input u8(bool flag). No output.
 
 ### CreateManagedDisplayLayer
 

@@ -547,7 +547,7 @@ No input. Returns an output u8.
 |-
 | 15 || SetScreenShotAppletIdentityInfo
 |-
-| 16 || SetOutOfFocusSuspendingEnabled
+| 16 || [[#SetOutOfFocusSuspendingEnabled]]
 |-
 | 17 || SetControllerFirmwareUpdateSection
 |-
@@ -580,6 +580,9 @@ No input. Returns an output u8.
 
 ===SetFocusHandlingMode===
 Takes 3 input u8s with each field located immediately after the previous u8, these are bool flags. No output.
+
+===SetOutOfFocusSuspendingEnabled===
+Takes an input u8(bool flag). No output.
 
 ===CreateManagedDisplayLayer===
 Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].
