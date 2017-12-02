@@ -582,9 +582,9 @@ Returns an output u64 LayerId which is then used by the user-process with [[Disp
 |-
 | 0 || CreateWindow || Returns an IWindow object.
 |-
-| 1 || GetAppletResourceUserId ||
+| 1 || [[#GetAppletResourceUserId]] ||
 |-
-| 10 || AcquireForegroundRights ||
+| 10 || [[#AcquireForegroundRights]] ||
 |-
 | 11 || ReleaseForegroundRights ||
 |-

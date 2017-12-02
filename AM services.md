@@ -385,13 +385,13 @@ with
 
 ## IWindowController
 
-| Cmd | Name                         | Notes                      |
-| --- | ---------------------------- | -------------------------- |
-| 0   | CreateWindow                 | Returns an IWindow object. |
-| 1   | GetAppletResourceUserId      |                            |
-| 10  | AcquireForegroundRights      |                            |
-| 11  | ReleaseForegroundRights      |                            |
-| 12  | RejectToChangeIntoBackground |                            |
+| Cmd | Name                                                             | Notes                      |
+| --- | ---------------------------------------------------------------- | -------------------------- |
+| 0   | CreateWindow                                                     | Returns an IWindow object. |
+| 1   | [\#GetAppletResourceUserId](#GetAppletResourceUserId "wikilink") |                            |
+| 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink") |                            |
+| 11  | ReleaseForegroundRights                                          |                            |
+| 12  | RejectToChangeIntoBackground                                     |                            |
 
 ### GetAppletResourceUserId
 
