@@ -235,6 +235,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_Y_COORDINATE
 | 0x7000FA18
 |-
+| FUSE_SATA_CALIB
+| 0x7000FA24
+|-
 | FUSE_GPU_IDDQ
 | 0x7000FA28
 |-
@@ -418,7 +421,6 @@ Reads to these registers after the SBK is locked out produce all-FF output.
 
 ==== FUSE_PUBLIC_KEY ====
 This stores the SHA256 hash of the 2048-bit RSA key expected at BCT+0x210.
-
 
 == eFuses ==
 The actual hardware fuses can be programmed through the fuse driver after enabling fuse programming.

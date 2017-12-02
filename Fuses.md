@@ -122,6 +122,7 @@ driver registers.
 | FUSE\_WAFER\_ID                                        | 0x7000FA10 |
 | FUSE\_X\_COORDINATE                                    | 0x7000FA14 |
 | FUSE\_Y\_COORDINATE                                    | 0x7000FA18 |
+| FUSE\_SATA\_CALIB                                      | 0x7000FA24 |
 | FUSE\_GPU\_IDDQ                                        | 0x7000FA28 |
 | FUSE\_TSENSOR\_3                                       | 0x7000FA2C |
 | FUSE\_OPT\_SUBREVISION                                 | 0x7000FA48 |
