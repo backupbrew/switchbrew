@@ -498,15 +498,15 @@ Takes an input u32.
 |-
 | 40 || GetCradleFwVersion ||
 |-
-| 50 || IsVrModeEnabled ||
+| 50 || [3.0.0+] IsVrModeEnabled ||
 |-
-| 51 || SetVrModeEnabled ||
+| 51 || [3.0.0+] SetVrModeEnabled ||
 |-
-| 55 || IsInControllerFirmwareUpdateSection ||
+| 55 || [3.0.0+] IsInControllerFirmwareUpdateSection ||
 |-
-| 60 || GetDefaultDisplayResolution ||
+| 60 || [3.0.0+] GetDefaultDisplayResolution ||
 |-
-| 61 || GetDefaultDisplayResolutionChangeEvent ||
+| 61 || [3.0.0+] GetDefaultDisplayResolutionChangeEvent ||
 |}
 
 === GetEventHandle ===

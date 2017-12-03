@@ -335,11 +335,11 @@ u32.
 | 30  | GetHomeButtonReaderLockAccessor                            | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
 | 31  | GetReaderLockAccessorEx                                    | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
 | 40  | GetCradleFwVersion                                         |                                                                                |
-| 50  | IsVrModeEnabled                                            |                                                                                |
-| 51  | SetVrModeEnabled                                           |                                                                                |
-| 55  | IsInControllerFirmwareUpdateSection                        |                                                                                |
-| 60  | GetDefaultDisplayResolution                                |                                                                                |
-| 61  | GetDefaultDisplayResolutionChangeEvent                     |                                                                                |
+| 50  | \[3.0.0+\] IsVrModeEnabled                                 |                                                                                |
+| 51  | \[3.0.0+\] SetVrModeEnabled                                |                                                                                |
+| 55  | \[3.0.0+\] IsInControllerFirmwareUpdateSection             |                                                                                |
+| 60  | \[3.0.0+\] GetDefaultDisplayResolution                     |                                                                                |
+| 61  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent          |                                                                                |
 
 ### GetEventHandle
 
