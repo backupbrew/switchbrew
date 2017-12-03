@@ -40,7 +40,7 @@
 |-
 | 6 ||
 |-
-| 7 || GetIPsmSession
+| 7 || OpenSession
 |-
 | 8 ||
 |-
@@ -50,9 +50,9 @@
 |-
 | 11 ||
 |-
-| 12 ||
+| 12 || GetBatteryVoltageState
 |-
-| 13 ||
+| 13 || GetRawBatteryChargePercentage
 |-
 | 14 ||
 |-
@@ -62,6 +62,22 @@
 |-
 | 17 ||
 |-
+|}
+
+== IPsmSession ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || BindStateChangeEvent
+|-
+| 1 || UnbindStateChangeEvent
+|-
+| 2 || SetChargerTypeChangeEventEnabled
+|-
+| 3 || SetPowerSupplyChangeEventEnabled
+|-
+| 4 || SetBatteryVoltageStateChangeEventEnabled
 |}
 
 = tc =
