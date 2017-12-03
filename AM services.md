@@ -83,19 +83,19 @@ commands.
 
 ### IGlobalStateController
 
-| Cmd | Name                              |
-| --- | --------------------------------- |
-| 0   | RequestToEnterSleep               |
-| 1   | EnterSleep                        |
-| 2   | StartSleepSequence                |
-| 3   | StartShutdownSequence             |
-| 4   | StartRebootSequence               |
-| 10  | LoadAndApplyIdlePolicySettings    |
-| 11  | NotifyCecSettingsChanged          |
-| 12  | SetDefaultHomeButtonLongPressTime |
-| 13  | UpdateDefaultDisplayResolution    |
-| 14  | ShouldSleepOnBoot                 |
-|     |                                   |
+| Cmd | Name                                         |
+| --- | -------------------------------------------- |
+| 0   | RequestToEnterSleep                          |
+| 1   | EnterSleep                                   |
+| 2   | StartSleepSequence                           |
+| 3   | StartShutdownSequence                        |
+| 4   | StartRebootSequence                          |
+| 10  | LoadAndApplyIdlePolicySettings               |
+| 11  | \[2.0.0+\] NotifyCecSettingsChanged          |
+| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime |
+| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution    |
+| 14  | \[2.0.0+\] ShouldSleepOnBoot                 |
+|     |                                              |
 
 ### IApplicationCreator
 

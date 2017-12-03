@@ -113,13 +113,13 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 10 || LoadAndApplyIdlePolicySettings
 |-
-| 11 || NotifyCecSettingsChanged
+| 11 || [2.0.0+] NotifyCecSettingsChanged
 |-
-| 12 || SetDefaultHomeButtonLongPressTime
+| 12 || [2.0.0+] SetDefaultHomeButtonLongPressTime
 |-
-| 13 || UpdateDefaultDisplayResolution
+| 13 || [2.0.0+] UpdateDefaultDisplayResolution
 |-
-| 14 || ShouldSleepOnBoot
+| 14 || [2.0.0+] ShouldSleepOnBoot
 |-
 |}
 
