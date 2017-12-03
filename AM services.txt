@@ -534,9 +534,9 @@ Updates internal AM state fields. If the new state doesn't match the previous st
 |-
 | 2 || UnlockExit
 |-
-| 3 || EnterFatalSection
+| 3 || [2.0.0+] EnterFatalSection
 |-
-| 4 || LeaveFatalSection
+| 4 || [2.0.0+] LeaveFatalSection
 |-
 | 9 || GetLibraryAppletLaunchableEvent
 |-
@@ -550,15 +550,15 @@ Updates internal AM state fields. If the new state doesn't match the previous st
 |-
 | 14 || SetRestartMessageEnabled
 |-
-| 15 || SetScreenShotAppletIdentityInfo
+| 15 || [2.0.0+] SetScreenShotAppletIdentityInfo
 |-
-| 16 || [[#SetOutOfFocusSuspendingEnabled]]
+| 16 || [2.0.0+] [[#SetOutOfFocusSuspendingEnabled]]
 |-
-| 17 || SetControllerFirmwareUpdateSection
+| 17 || [2.0.0+] SetControllerFirmwareUpdateSection
 |-
-| 18 || SetRequiresCaptureButtonShortPressedMessage
+| 18 || [2.0.0+] SetRequiresCaptureButtonShortPressedMessage
 |-
-| 19 || SetScreenShotImageOrientation
+| 19 || [2.0.0+] SetScreenShotImageOrientation
 |-
 | 40 || [[#CreateManagedDisplayLayer]]
 |-
@@ -576,11 +576,11 @@ Updates internal AM state fields. If the new state doesn't match the previous st
 |-
 | 64 || SetInputDetectionSourceSet
 |-
-| 65 || ReportUserIsActive
+| 65 || [2.0.0+] ReportUserIsActive
 |-
-| 66 || GetCurrentIlluminance
+| 66 || [2.0.0+] GetCurrentIlluminance
 |-
-| 67 || IsIlluminanceAvailable
+| 67 || [2.0.0+] IsIlluminanceAvailable
 |}
 
 ===SetFocusHandlingMode===
