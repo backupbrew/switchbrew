@@ -280,15 +280,15 @@ u32.
 
 ## ILibraryAppletCreator
 
-| Cmd | Name                        | Notes                                                                          |
-| --- | --------------------------- | ------------------------------------------------------------------------------ |
-| 0   | CreateLibraryApplet         | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").     |
-| 1   | TerminateAllLibraryApplets  |                                                                                |
-| 2   | AreAnyLibraryAppletsLeft    |                                                                                |
-| 10  | CreateStorage               | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 11  | CreateTransferMemoryStorage | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 12  | CreateHandleStorage         | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-|     |                             |                                                                                |
+| Cmd | Name                           | Notes                                                                          |
+| --- | ------------------------------ | ------------------------------------------------------------------------------ |
+| 0   | CreateLibraryApplet            | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").     |
+| 1   | TerminateAllLibraryApplets     |                                                                                |
+| 2   | AreAnyLibraryAppletsLeft       |                                                                                |
+| 10  | CreateStorage                  | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 11  | CreateTransferMemoryStorage    | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 12  | \[2.0.0+\] CreateHandleStorage | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+|     |                                |                                                                                |
 
 ### ILibraryAppletAccessor
 

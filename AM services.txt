@@ -411,7 +411,7 @@ Takes an input u32.
 |-
 | 11 || CreateTransferMemoryStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
 |-
-| 12 || CreateHandleStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 12 || [2.0.0+] CreateHandleStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
 |-
 |}
 
