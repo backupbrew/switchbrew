@@ -69,7 +69,7 @@
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || SetOperatingMode
 |-
 | 1 || GetThermalEvent
 |-
