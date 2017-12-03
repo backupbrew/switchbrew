@@ -298,11 +298,11 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 3 || SetGpuTimeSliceBoost
 |-
-| 4 || SetAutoSleepTimeAndDimmingTimeEnabled
+| 4 || [2.0.0+] SetAutoSleepTimeAndDimmingTimeEnabled
 |-
-| 5 || TerminateApplicationAndSetReason
+| 5 || [2.0.0+] TerminateApplicationAndSetReason
 |-
-| 6 || SetScreenShotPermissionGlobally
+| 6 || [2.0.0+] SetScreenShotPermissionGlobally
 |}
 
 == IApplicationProxy ==

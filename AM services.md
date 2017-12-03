@@ -193,15 +193,15 @@ commands.
 
 ### IOverlayFunctions
 
-| Cmd | Name                                  |
-| --- | ------------------------------------- |
-| 0   | BeginToWatchShortHomeButtonMessage    |
-| 1   | EndToWatchShortHomeButtonMessage      |
-| 2   | GetApplicationIdForLogo               |
-| 3   | SetGpuTimeSliceBoost                  |
-| 4   | SetAutoSleepTimeAndDimmingTimeEnabled |
-| 5   | TerminateApplicationAndSetReason      |
-| 6   | SetScreenShotPermissionGlobally       |
+| Cmd | Name                                             |
+| --- | ------------------------------------------------ |
+| 0   | BeginToWatchShortHomeButtonMessage               |
+| 1   | EndToWatchShortHomeButtonMessage                 |
+| 2   | GetApplicationIdForLogo                          |
+| 3   | SetGpuTimeSliceBoost                             |
+| 4   | \[2.0.0+\] SetAutoSleepTimeAndDimmingTimeEnabled |
+| 5   | \[2.0.0+\] TerminateApplicationAndSetReason      |
+| 6   | \[2.0.0+\] SetScreenShotPermissionGlobally       |
 
 ## IApplicationProxy
 
