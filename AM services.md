@@ -311,7 +311,7 @@ u32.
 | 110 | NeedsToExitProcess                        |                                                                                |
 | 120 | GetLibraryAppletInfo                      |                                                                                |
 | 150 | RequestForAppletToGetForeground           |                                                                                |
-| 160 | GetIndirectLayerConsumerHandle            |                                                                                |
+| 160 | \[2.0.0+\] GetIndirectLayerConsumerHandle |                                                                                |
 
 ## ICommonStateGetter
 

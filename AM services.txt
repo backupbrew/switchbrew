@@ -454,7 +454,7 @@ Takes an input u32.
 |-
 | 150 || RequestForAppletToGetForeground ||
 |-
-| 160 || GetIndirectLayerConsumerHandle ||
+| 160 || [2.0.0+] GetIndirectLayerConsumerHandle ||
 |}
 
 == ICommonStateGetter ==
