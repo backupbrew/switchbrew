@@ -108,22 +108,22 @@ commands.
 
 #### IApplicationAccessor
 
-| Cmd | Name                                 | Notes                                                                          |
-| --- | ------------------------------------ | ------------------------------------------------------------------------------ |
-| 0   | GetAppletStateChangedEvent           |                                                                                |
-| 1   | IsCompleted                          |                                                                                |
-| 10  | Start                                |                                                                                |
-| 20  | RequestExit                          |                                                                                |
-| 25  | Terminate                            |                                                                                |
-| 30  | GetResult                            |                                                                                |
-| 101 | RequestForApplicationToGetForeground |                                                                                |
-| 110 | TerminateAllLibraryApplets           |                                                                                |
-| 111 | AreAnyLibraryAppletsLeft             |                                                                                |
-| 112 | GetCurrentLibraryApplet              | Returns an [\#IAppletAccessor](#IAppletAccessor "wikilink").                   |
-| 120 | GetApplicationId                     |                                                                                |
-| 121 | PushLaunchParameter                  | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 122 | GetApplicationControlProperty        |                                                                                |
-| 123 | GetApplicationLaunchProperty         |                                                                                |
+| Cmd | Name                                    | Notes                                                                          |
+| --- | --------------------------------------- | ------------------------------------------------------------------------------ |
+| 0   | GetAppletStateChangedEvent              |                                                                                |
+| 1   | IsCompleted                             |                                                                                |
+| 10  | Start                                   |                                                                                |
+| 20  | RequestExit                             |                                                                                |
+| 25  | Terminate                               |                                                                                |
+| 30  | GetResult                               |                                                                                |
+| 101 | RequestForApplicationToGetForeground    |                                                                                |
+| 110 | TerminateAllLibraryApplets              |                                                                                |
+| 111 | AreAnyLibraryAppletsLeft                |                                                                                |
+| 112 | GetCurrentLibraryApplet                 | Returns an [\#IAppletAccessor](#IAppletAccessor "wikilink").                   |
+| 120 | GetApplicationId                        |                                                                                |
+| 121 | PushLaunchParameter                     | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 122 | GetApplicationControlProperty           |                                                                                |
+| 123 | \[2.0.0+\] GetApplicationLaunchProperty |                                                                                |
 
 ##### IAppletAccessor
 

@@ -168,7 +168,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 122 || GetApplicationControlProperty || 
 |-
-| 123 || GetApplicationLaunchProperty || 
+| 123 || [2.0.0+] GetApplicationLaunchProperty || 
 |}
 
 ===== IAppletAccessor =====
