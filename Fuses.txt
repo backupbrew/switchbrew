@@ -492,7 +492,9 @@ The first bootloader only burns fuses in this region.
 Both fuse indexes 0x3A (odm_reserved + 0x0C) and 0x3C (odm_reserved + 0x0E) are used for anti-downgrade control. These fuses will have their values cached into [[#FUSE_RESERVED_ODM6|FUSE_RESERVED_ODM6]] and [[#FUSE_RESERVED_ODM7|FUSE_RESERVED_ODM7]].
 
 === bootrom_ipatch ===
-Tegra210 based hardware such as the Switch provides support for bootrom patches. The patch data is burned to the hardware fuse array using a specific format (see [https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af shuffle2's ipatch decoder]) and is executed by the bootrom, replacing it's original code.
+Tegra210 based hardware such as the Switch provides support for bootrom patches. The patch data is burned to the hardware fuse array using a specific format (see [https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af shuffle2's ipatch decoder]). The bootrom reads these fuses in order to initialize the IPATCH hardware, which allows overriding data returned for code and data fetches done by BPMP.
+
+The revision stored in FUSE_CP_REV indicates the unique set of values stored in ipatch fuses.
 
 The following represents the patch data dumped from a 2.0.0 Switch console:
  Patch address       Patch data 

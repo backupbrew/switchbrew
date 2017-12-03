@@ -264,8 +264,13 @@ anti-downgrade control. These fuses will have their values cached into
 Tegra210 based hardware such as the Switch provides support for bootrom
 patches. The patch data is burned to the hardware fuse array using a
 specific format (see [shuffle2's ipatch
-decoder](https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af))
-and is executed by the bootrom, replacing it's original code.
+decoder](https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af)).
+The bootrom reads these fuses in order to initialize the IPATCH
+hardware, which allows overriding data returned for code and data
+fetches done by BPMP.
+
+The revision stored in FUSE\_CP\_REV indicates the unique set of values
+stored in ipatch fuses.
 
 The following represents the patch data dumped from a 2.0.0 Switch
 console:
