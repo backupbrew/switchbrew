@@ -72,7 +72,7 @@ Takes a pid.
 |-
 | apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?)
 | [[APM services]]
-| fgm: Fuel guage?
+|
 |-
 | arp:r, arp:w, bgtc:t, bgtc:sc
 | [[Glue services]]

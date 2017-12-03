@@ -89,7 +89,7 @@ Takes a pid.
 <tr class="odd">
 <td><p>apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?)</p></td>
 <td><p><a href="APM services.md" title="wikilink">APM services</a></p></td>
-<td><p>fgm: Fuel guage?</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>arp:r, arp:w, bgtc:t, bgtc:sc</p></td>
