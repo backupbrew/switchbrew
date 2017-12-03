@@ -780,7 +780,33 @@ Besides [[PTM_services]], this is the only service that interacts with the [[Doc
 |}
 
 = spsm =
+This is "IPowerStateInterface".
 
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetState
+|-
+| 1 || SleepSystemAndWaitAwake
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 || 
+|-
+| 5 || 
+|-
+| 6 || 
+|-
+| 7 || 
+|-
+| 8 || 
+|-
+| 9 || 
+|}
 
 = Enums =
 === AppletId ===
