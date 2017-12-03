@@ -1,4 +1,4 @@
-This is the format on the files stored on [[SD_Filesystem|SD]], unknown if this is used elsewhere.
+This is the format on the files stored on [[SD_Filesystem|SD]] (Nintendo Aes Xts).
 
 The data between this header and offset 0x4000 is unused/uninitialized it appears. The actual content which is encrypted, starts at offset 0x4000 with the size from the header.
 
