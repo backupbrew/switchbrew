@@ -339,7 +339,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 10 || CreateApplicationAndPushAndRequestToStart || Returns an [[Filesystem_services#IStorage|IStorage]].
 |-
-| 11 || CreateApplicationAndPushAndRequestToStartForQuest || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 11 || [2.0.0+] CreateApplicationAndPushAndRequestToStartForQuest || Returns an [[Filesystem_services#IStorage|IStorage]].
 |-
 | 20 || EnsureSaveData ||
 |-
@@ -349,11 +349,11 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 23 || GetDisplayVersion ||
 |-
-| 24 || GetLaunchStorageInfoForDebug ||
+| 24 || [2.0.0+] GetLaunchStorageInfoForDebug ||
 |-
-| 25 || ExtendSaveData ||
+| 25 || [2.0.0+] ExtendSaveData ||
 |-
-| 26 || GetSaveDataSize ||
+| 26 || [2.0.0+] GetSaveDataSize ||
 |-
 | 30 || BeginBlockingHomeButtonShortAndLongPressed ||
 |-
@@ -365,9 +365,9 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 40 || [[#NotifyRunning]] ||
 |-
-| 50 || GetPseudoDeviceId ||
+| 50 || [2.0.0+] GetPseudoDeviceId ||
 |-
-| 60 || SetMediaPlaybackStateForApplication ||
+| 60 || [2.0.0+] SetMediaPlaybackStateForApplication ||
 |-
 | 65 || [3.0.0+] IsGamePlayRecordingSupported ||
 |-

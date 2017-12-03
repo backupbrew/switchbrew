@@ -224,21 +224,21 @@ commands.
 | --- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | 1   | PopLaunchParameter                                                                  | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
 | 10  | CreateApplicationAndPushAndRequestToStart                                           | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 11  | CreateApplicationAndPushAndRequestToStartForQuest                                   | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 11  | \[2.0.0+\] CreateApplicationAndPushAndRequestToStartForQuest                        | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
 | 20  | EnsureSaveData                                                                      |                                                                                |
 | 21  | GetDesiredLanguage                                                                  |                                                                                |
 | 22  | SetTerminateResult                                                                  |                                                                                |
 | 23  | GetDisplayVersion                                                                   |                                                                                |
-| 24  | GetLaunchStorageInfoForDebug                                                        |                                                                                |
-| 25  | ExtendSaveData                                                                      |                                                                                |
-| 26  | GetSaveDataSize                                                                     |                                                                                |
+| 24  | \[2.0.0+\] GetLaunchStorageInfoForDebug                                             |                                                                                |
+| 25  | \[2.0.0+\] ExtendSaveData                                                           |                                                                                |
+| 26  | \[2.0.0+\] GetSaveDataSize                                                          |                                                                                |
 | 30  | BeginBlockingHomeButtonShortAndLongPressed                                          |                                                                                |
 | 31  | EndBlockingHomeButtonShortAndLongPressed                                            |                                                                                |
 | 32  | BeginBlockingHomeButton                                                             |                                                                                |
 | 33  | EndBlockingHomeButton                                                               |                                                                                |
 | 40  | [\#NotifyRunning](#NotifyRunning "wikilink")                                        |                                                                                |
-| 50  | GetPseudoDeviceId                                                                   |                                                                                |
-| 60  | SetMediaPlaybackStateForApplication                                                 |                                                                                |
+| 50  | \[2.0.0+\] GetPseudoDeviceId                                                        |                                                                                |
+| 60  | \[2.0.0+\] SetMediaPlaybackStateForApplication                                      |                                                                                |
 | 65  | \[3.0.0+\] IsGamePlayRecordingSupported                                             |                                                                                |
 | 66  | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink") |                                                                                |
 | 67  | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")     |                                                                                |
