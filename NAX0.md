@@ -1,5 +1,6 @@
 This is the format on the files stored on
-[SD](SD%20Filesystem.md "wikilink") (Nintendo Aes Xts).
+[SD](SD%20Filesystem.md "wikilink") (Nintendo Aes Xts -- official name
+is AesXtsFilesystem/AesXtsFile).
 
 The data between this header and offset 0x4000 is unused/uninitialized
 it appears. The actual content which is encrypted, starts at offset
