@@ -361,7 +361,9 @@ No input. Returns an output u8.
 Takes an input u8 bool flag. No output.
 
 Updates internal AM state fields. If the new state doesn't match the
-previous state, this uses two service commands(?) depending on whether
+previous state, this uses the
+[Backlight\_services](Backlight%20services.md "wikilink")
+{Disable/Enable}VrMode command depending on whether
 flag={disable/enable}.
 
 ## ISelfController
