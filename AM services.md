@@ -535,18 +535,18 @@ the operation changes between docked and handheld modes. Besides
 that interacts with the [Dock](Dock.md "wikilink") through
 [usb:pd\*](USB%20services.md "wikilink").
 
-| Cmd | Name             |
-| --- | ---------------- |
-| 0   | GetOperationMode |
-| 1   | GetOmmWaitEvent  |
-| 2   |                  |
-| 3   |                  |
-| 4   |                  |
-| 5   |                  |
-| 6   |                  |
-| 7   |                  |
-| 8   |                  |
-| 9   |                  |
+| Cmd | Name                        |
+| --- | --------------------------- |
+| 0   | GetOperationMode            |
+| 1   | GetOperationModeChangeEvent |
+| 2   | EnableAudioVisual           |
+| 3   | DisableAudioVisual          |
+| 4   | EnterSleepAndWait           |
+| 5   | GetCradleStatus             |
+| 6   | FadeInDisplay               |
+| 7   | FadeOutDisplay              |
+| 8   | \[2.0.0+\]                  |
+| 9   | \[2.0.0+\]                  |
 
 # spsm
 
