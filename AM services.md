@@ -333,8 +333,8 @@ u32.
 | 13  | GetAcquiredSleepLockEvent                                     |                                                                                |
 | 20  | PushToGeneralChannel                                          | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
 | 30  | GetHomeButtonReaderLockAccessor                               | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
-| 31  | GetReaderLockAccessorEx                                       | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
-| 40  | GetCradleFwVersion                                            |                                                                                |
+| 31  | \[2.0.0+\] GetReaderLockAccessorEx                            | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
+| 40  | \[2.0.0+\] GetCradleFwVersion                                 |                                                                                |
 | 50  | \[3.0.0+\] IsVrModeEnabled                                    |                                                                                |
 | 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink") |                                                                                |
 | 55  | \[3.0.0+\] IsInControllerFirmwareUpdateSection                |                                                                                |

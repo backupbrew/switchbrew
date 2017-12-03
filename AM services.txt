@@ -494,9 +494,9 @@ Takes an input u32.
 |-
 | 30 || GetHomeButtonReaderLockAccessor || Returns an [[#ILockAccessor]].
 |-
-| 31 || GetReaderLockAccessorEx || Returns an [[#ILockAccessor]].
+| 31 || [2.0.0+] GetReaderLockAccessorEx || Returns an [[#ILockAccessor]].
 |-
-| 40 || GetCradleFwVersion ||
+| 40 || [2.0.0+] GetCradleFwVersion ||
 |-
 | 50 || [3.0.0+] IsVrModeEnabled ||
 |-
