@@ -444,28 +444,28 @@ No input/output.
 
 ## IDisplayController
 
-| Cmd | Name                                  |
-| --- | ------------------------------------- |
-| 0   | GetLastForegroundCaptureImage         |
-| 1   | UpdateLastForegroundCaptureImage      |
-| 2   | GetLastApplicationCaptureImage        |
-| 3   | GetCallerAppletCaptureImage           |
-| 4   | UpdateCallerAppletCaptureImage        |
-| 5   | GetLastForegroundCaptureImageEx       |
-| 6   | GetLastApplicationCaptureImageEx      |
-| 7   | GetCallerAppletCaptureImageEx         |
-| 8   | TakeScreenShotOfOwnLayer              |
-| 10  | AcquireLastApplicationCaptureBuffer   |
-| 11  | ReleaseLastApplicationCaptureBuffer   |
-| 12  | AcquireLastForegroundCaptureBuffer    |
-| 13  | ReleaseLastForegroundCaptureBuffer    |
-| 14  | AcquireCallerAppletCaptureBuffer      |
-| 15  | ReleaseCallerAppletCaptureBuffer      |
-| 16  | AcquireLastApplicationCaptureBufferEx |
-| 17  | AcquireLastForegroundCaptureBufferEx  |
-| 18  | AcquireCallerAppletCaptureBufferEx    |
-| 20  | ClearCaptureBuffer                    |
-| 21  | ClearAppletTransitionBuffer           |
+| Cmd | Name                                   |
+| --- | -------------------------------------- |
+| 0   | GetLastForegroundCaptureImage          |
+| 1   | UpdateLastForegroundCaptureImage       |
+| 2   | GetLastApplicationCaptureImage         |
+| 3   | GetCallerAppletCaptureImage            |
+| 4   | UpdateCallerAppletCaptureImage         |
+| 5   | GetLastForegroundCaptureImageEx        |
+| 6   | GetLastApplicationCaptureImageEx       |
+| 7   | GetCallerAppletCaptureImageEx          |
+| 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer    |
+| 10  | AcquireLastApplicationCaptureBuffer    |
+| 11  | ReleaseLastApplicationCaptureBuffer    |
+| 12  | AcquireLastForegroundCaptureBuffer     |
+| 13  | ReleaseLastForegroundCaptureBuffer     |
+| 14  | AcquireCallerAppletCaptureBuffer       |
+| 15  | ReleaseCallerAppletCaptureBuffer       |
+| 16  | AcquireLastApplicationCaptureBufferEx  |
+| 17  | AcquireLastForegroundCaptureBufferEx   |
+| 18  | AcquireCallerAppletCaptureBufferEx     |
+| 20  | \[2.0.0+\] ClearCaptureBuffer          |
+| 21  | \[2.0.0+\] ClearAppletTransitionBuffer |
 
 ## ILibraryAppletCreator
 

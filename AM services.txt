@@ -651,7 +651,7 @@ No input/output.
 |-
 | 7 || GetCallerAppletCaptureImageEx
 |-
-| 8 || TakeScreenShotOfOwnLayer
+| 8 || [2.0.0+] TakeScreenShotOfOwnLayer
 |-
 | 10 || AcquireLastApplicationCaptureBuffer
 |-
@@ -671,9 +671,9 @@ No input/output.
 |-
 | 18 || AcquireCallerAppletCaptureBufferEx
 |-
-| 20 || ClearCaptureBuffer
+| 20 || [2.0.0+] ClearCaptureBuffer
 |-
-| 21 || ClearAppletTransitionBuffer
+| 21 || [2.0.0+] ClearAppletTransitionBuffer
 |}
 
 == ILibraryAppletCreator==
