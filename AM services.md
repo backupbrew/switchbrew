@@ -62,16 +62,16 @@ commands.
 
 ### IHomeMenuFunctions
 
-| Cmd | Name                            | Notes                                                                          |
-| --- | ------------------------------- | ------------------------------------------------------------------------------ |
-| 10  | RequestToGetForeground          |                                                                                |
-| 11  | LockForeground                  |                                                                                |
-| 12  | UnlockForeground                |                                                                                |
-| 20  | PopFromGeneralChannel           | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 21  | GetPopFromGeneralChannelEvent   |                                                                                |
-| 30  | GetHomeButtonWriterLockAccessor | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
-| 31  | GetWriterLockAccessorEx         | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
-|     |                                 |                                                                                |
+| Cmd | Name                               | Notes                                                                          |
+| --- | ---------------------------------- | ------------------------------------------------------------------------------ |
+| 10  | RequestToGetForeground             |                                                                                |
+| 11  | LockForeground                     |                                                                                |
+| 12  | UnlockForeground                   |                                                                                |
+| 20  | PopFromGeneralChannel              | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 21  | GetPopFromGeneralChannelEvent      |                                                                                |
+| 30  | GetHomeButtonWriterLockAccessor    | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
+| 31  | \[2.0.0+\] GetWriterLockAccessorEx | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
+|     |                                    |                                                                                |
 
 #### ILockAccessor
 

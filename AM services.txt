@@ -80,7 +80,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 30 || GetHomeButtonWriterLockAccessor || Returns an [[#ILockAccessor]].
 |-
-| 31 || GetWriterLockAccessorEx || Returns an [[#ILockAccessor]].
+| 31 || [2.0.0+] GetWriterLockAccessorEx || Returns an [[#ILockAccessor]].
 |-
 |}
 
