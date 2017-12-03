@@ -315,31 +315,31 @@ u32.
 
 ## ICommonStateGetter
 
-| Cmd | Name                                                       | Notes                                                                          |
-| --- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")             |                                                                                |
-| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")             |                                                                                |
-| 2   | GetThisAppletKind                                          |                                                                                |
-| 3   | AllowToEnterSleep                                          |                                                                                |
-| 4   | DisallowToEnterSleep                                       |                                                                                |
-| 5   | GetOperationMode                                           |                                                                                |
-| 6   | GetPerformanceMode                                         |                                                                                |
-| 7   | GetCradleStatus                                            |                                                                                |
-| 8   | GetBootMode                                                |                                                                                |
-| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink") |                                                                                |
-| 10  | RequestToAcquireSleepLock                                  |                                                                                |
-| 11  | ReleaseSleepLock                                           |                                                                                |
-| 12  | ReleaseSleepLockTransiently                                |                                                                                |
-| 13  | GetAcquiredSleepLockEvent                                  |                                                                                |
-| 20  | PushToGeneralChannel                                       | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 30  | GetHomeButtonReaderLockAccessor                            | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
-| 31  | GetReaderLockAccessorEx                                    | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
-| 40  | GetCradleFwVersion                                         |                                                                                |
-| 50  | \[3.0.0+\] IsVrModeEnabled                                 |                                                                                |
-| 51  | \[3.0.0+\] SetVrModeEnabled                                |                                                                                |
-| 55  | \[3.0.0+\] IsInControllerFirmwareUpdateSection             |                                                                                |
-| 60  | \[3.0.0+\] GetDefaultDisplayResolution                     |                                                                                |
-| 61  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent          |                                                                                |
+| Cmd | Name                                                          | Notes                                                                          |
+| --- | ------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                |                                                                                |
+| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                |                                                                                |
+| 2   | GetThisAppletKind                                             |                                                                                |
+| 3   | AllowToEnterSleep                                             |                                                                                |
+| 4   | DisallowToEnterSleep                                          |                                                                                |
+| 5   | GetOperationMode                                              |                                                                                |
+| 6   | GetPerformanceMode                                            |                                                                                |
+| 7   | GetCradleStatus                                               |                                                                                |
+| 8   | GetBootMode                                                   |                                                                                |
+| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")    |                                                                                |
+| 10  | RequestToAcquireSleepLock                                     |                                                                                |
+| 11  | ReleaseSleepLock                                              |                                                                                |
+| 12  | ReleaseSleepLockTransiently                                   |                                                                                |
+| 13  | GetAcquiredSleepLockEvent                                     |                                                                                |
+| 20  | PushToGeneralChannel                                          | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 30  | GetHomeButtonReaderLockAccessor                               | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
+| 31  | GetReaderLockAccessorEx                                       | Returns an [\#ILockAccessor](#ILockAccessor "wikilink").                       |
+| 40  | GetCradleFwVersion                                            |                                                                                |
+| 50  | \[3.0.0+\] IsVrModeEnabled                                    |                                                                                |
+| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink") |                                                                                |
+| 55  | \[3.0.0+\] IsInControllerFirmwareUpdateSection                |                                                                                |
+| 60  | \[3.0.0+\] GetDefaultDisplayResolution                        |                                                                                |
+| 61  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent             |                                                                                |
 
 ### GetEventHandle
 
@@ -354,8 +354,15 @@ available?
 
 ### GetCurrentFocusState
 
-No input. Returns an output
-u8.
+No input. Returns an output u8.
+
+### SetVrModeEnabled
+
+Takes an input u8 bool flag. No output.
+
+Updates internal AM state fields. If the new state doesn't match the
+previous state, this uses two service commands(?) depending on whether
+flag={disable/enable}.
 
 ## ISelfController
 

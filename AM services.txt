@@ -500,7 +500,7 @@ Takes an input u32.
 |-
 | 50 || [3.0.0+] IsVrModeEnabled ||
 |-
-| 51 || [3.0.0+] SetVrModeEnabled ||
+| 51 || [3.0.0+] [[#SetVrModeEnabled]] ||
 |-
 | 55 || [3.0.0+] IsInControllerFirmwareUpdateSection ||
 |-
@@ -517,6 +517,11 @@ No input. Returns an output u32. Error 0x680 indicates no message is available?
 
 === GetCurrentFocusState ===
 No input. Returns an output u8.
+
+=== SetVrModeEnabled ===
+Takes an input u8 bool flag. No output.
+
+Updates internal AM state fields. If the new state doesn't match the previous state, this uses two service commands(?) depending on whether flag={disable/enable}.
 
 == ISelfController ==
 {| class="wikitable" border="1"
