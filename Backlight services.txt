@@ -36,4 +36,14 @@
 | 15 ||
 |-
 | 16 || ReadRawLightSensor
+|-
+| 26 || [[#EnableVrMode]]
+|-
+| 27 || [[#DisableVrMode]]
 |}
+
+==EnableVrMode==
+No input/output. Used by [[AM_services#SetVrModeEnabled]], hence this was probably added with 3.0.0?
+
+==DisableVrMode==
+No input/output. Used by [[AM_services#SetVrModeEnabled]], hence this was probably added with 3.0.0?
