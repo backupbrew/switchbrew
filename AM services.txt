@@ -345,7 +345,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 21 || GetDesiredLanguage ||
 |-
-| 22 || SetTerminateResult ||
+| 22 || [[#SetTerminateResult]] ||
 |-
 | 23 || GetDisplayVersion ||
 |-
@@ -386,6 +386,11 @@ The BOTW game uses this GamePlayRecording functionality from the main-nso "nnini
 * Closes the TransferMemory handle, + TransferMemory cleanup.
 * Uses [[#SetGamePlayRecordingState]] with value 0x1.
 This GamePlayRecording functionality presumably enables the video-recording usable starting with [[4.0.0]].
+
+==== SetTerminateResult ====
+Takes an input u32 '''Result''', no output.
+
+For example, in some cases official apps use this with [[Error_codes|error]] 0x2A2 then uses svcBreak.
 
 ==== NotifyRunning ====
 Takes no input. Returns an output u8, which is ignored by official user-processes.

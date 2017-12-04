@@ -227,7 +227,7 @@ commands.
 | 11  | \[2.0.0+\] CreateApplicationAndPushAndRequestToStartForQuest                        | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
 | 20  | EnsureSaveData                                                                      |                                                                                |
 | 21  | GetDesiredLanguage                                                                  |                                                                                |
-| 22  | SetTerminateResult                                                                  |                                                                                |
+| 22  | [\#SetTerminateResult](#SetTerminateResult "wikilink")                              |                                                                                |
 | 23  | GetDisplayVersion                                                                   |                                                                                |
 | 24  | \[2.0.0+\] GetLaunchStorageInfoForDebug                                             |                                                                                |
 | 25  | \[2.0.0+\] ExtendSaveData                                                           |                                                                                |
@@ -262,6 +262,13 @@ panic on any failure):
 
 This GamePlayRecording functionality presumably enables the
 video-recording usable starting with [4.0.0](4.0.0.md "wikilink").
+
+#### SetTerminateResult
+
+Takes an input u32 **Result**, no output.
+
+For example, in some cases official apps use this with
+[error](Error%20codes.md "wikilink") 0x2A2 then uses svcBreak.
 
 #### NotifyRunning
 
