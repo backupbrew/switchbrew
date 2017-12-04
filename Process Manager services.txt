@@ -91,11 +91,11 @@ Thus at the point of launch, the pid is already registered in ldr, fs, sm, and p
 |-
 | 2 || [[#StartDebugProcess]]
 |-
-| 3 || [[#GetDebuggedTitleId]]
+| 3 || [[#GetTitlePid]]
 |-
 | 4 || [[#EnableDebugForTitleId]]
 |-
-| 5 || [[#GetDebuggedPid]]
+| 5 || [[#GetApplicationPid]]
 |-
 | 6 || [[#EnableDebugForApplication]]
 |}
@@ -117,8 +117,8 @@ Then it uses svcStartProcess(process_handle, u8, u8, u32) with args coming from 
 
 After that, it sets last process state to ProcessEvent_DebugDetached.
 
-== GetDebuggedTitleId ==
-Takes a pid and returns the title-id.
+== GetTitlePid ==
+Takes a title-id and returns the pid.
 
 == EnableDebugForTitleId ==
 Takes a title-id of the program to debug. Sets this to a global field.
@@ -127,8 +127,8 @@ Next time it gets launched it will be handled differently.
 
 Returns an event handle that is signaled when the requested title is about to be launched.
 
-== GetDebuggedPid ==
-Returns the pid of the debugged process.
+== GetApplicationPid ==
+Returns the pid of the application process.
 
 == EnableDebugForApplication ==
 Does *not* take a specific title-id as input.

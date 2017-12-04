@@ -119,9 +119,9 @@ sm, and pm.
 | 0   | [\#IsDebugMode](#IsDebugMode "wikilink")                             |
 | 1   | [\#GetDebugProcesses](#GetDebugProcesses "wikilink")                 |
 | 2   | [\#StartDebugProcess](#StartDebugProcess "wikilink")                 |
-| 3   | [\#GetDebuggedTitleId](#GetDebuggedTitleId "wikilink")               |
+| 3   | [\#GetTitlePid](#GetTitlePid "wikilink")                             |
 | 4   | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink")         |
-| 5   | [\#GetDebuggedPid](#GetDebuggedPid "wikilink")                       |
+| 5   | [\#GetApplicationPid](#GetApplicationPid "wikilink")                 |
 | 6   | [\#EnableDebugForApplication](#EnableDebugForApplication "wikilink") |
 
 ## IsDebugMode
@@ -151,9 +151,9 @@ coming from ldr:pm GetProgramInfo.
 
 After that, it sets last process state to ProcessEvent\_DebugDetached.
 
-## GetDebuggedTitleId
+## GetTitlePid
 
-Takes a pid and returns the title-id.
+Takes a title-id and returns the pid.
 
 ## EnableDebugForTitleId
 
@@ -164,9 +164,9 @@ Next time it gets launched it will be handled differently.
 Returns an event handle that is signaled when the requested title is
 about to be launched.
 
-## GetDebuggedPid
+## GetApplicationPid
 
-Returns the pid of the debugged process.
+Returns the pid of the application process.
 
 ## EnableDebugForApplication
 
