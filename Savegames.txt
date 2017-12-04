@@ -95,32 +95,32 @@ This page describes the format of savegames contained in NAND. NAND savegames do
 | Size 0
 |-
 | 0x18
-| 8
-| Block Size 0
+| 4
+| Block Size 0, in log 2
 |-
-| 0x20
+| 0x1C
 | 8
 | Offset 1
 |-
-| 0x28
+| 0x24
 | 8
 | Size 1
 |-
-| 0x30
-| 8
-| Block Size 1
+| 0x2C
+| 4
+| Block Size 1, in log 2
 |-
-| 0x38
+| 0x30
 | 8
 | Offset 2
 |-
-| 0x40
+| 0x38
 | 8
 | Size 2
 |-
-| 0x48
-| 8
-| Block Size 2
+| 0x40
+| 4
+| Block Size 2, in log 2
 |-
 |}
 

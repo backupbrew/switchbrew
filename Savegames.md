@@ -39,13 +39,13 @@ header.
 | 0x04  | 4      | Magic Number (0x10000) |
 | 0x08  | 8      | Offset 0               |
 | 0x10  | 8      | Size 0                 |
-| 0x18  | 8      | Block Size 0           |
-| 0x20  | 8      | Offset 1               |
-| 0x28  | 8      | Size 1                 |
-| 0x30  | 8      | Block Size 1           |
-| 0x38  | 8      | Offset 2               |
-| 0x40  | 8      | Size 2                 |
-| 0x48  | 8      | Block Size 2           |
+| 0x18  | 4      | Block Size 0, in log 2 |
+| 0x1C  | 8      | Offset 1               |
+| 0x24  | 8      | Size 1                 |
+| 0x2C  | 4      | Block Size 1, in log 2 |
+| 0x30  | 8      | Offset 2               |
+| 0x38  | 8      | Size 2                 |
+| 0x40  | 4      | Block Size 2, in log 2 |
 |       |        |                        |
 
 #### IVFC
