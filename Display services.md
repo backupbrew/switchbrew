@@ -362,14 +362,20 @@ This is a [\#Parcel](#Parcel "wikilink").
 
 This normally contains the following:
 
-| Offset | Size | Description                    |
-| ------ | ---- | ------------------------------ |
-| 0x0    | 0x4  | 0x2                            |
-| 0x4    | 0x4  | Probably the user-process PID? |
-| 0x8    | 0x4  | ID                             |
-| ...    | ...  | ...                            |
+| Offset | Size | Description                      |
+| ------ | ---- | -------------------------------- |
+| 0x0    | 0x4  | 0x2                              |
+| 0x4    | 0x4  | Probably the user-process PID?   |
+| 0x8    | 0x4  | ID                               |
+| 0xC    | 0xC  | All-zero normally?               |
+| 0x18   | 0x8  | NUL-terminated "dispdrv" string. |
+| 0x20   | 0x8  | All-zero normally?               |
 
 The above ID is used for the ID param for the binder commands with
 [IHOSBinderDriver](#GetRelayService "wikilink").
+
+## ParcelObjects
+
+This normally contains an u32 with value 0?
 
 [Category:Services](Category:Services "wikilink")

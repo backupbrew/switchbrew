@@ -393,9 +393,16 @@ This normally contains the following:
 |-
 | 0x8 || 0x4 || ID
 |-
-| ... || ... || ...
+| 0xC || 0xC || All-zero normally?
+|-
+| 0x18 || 0x8 || NUL-terminated "dispdrv" string.
+|-
+| 0x20 || 0x8 || All-zero normally?
 |}
 
 The above ID is used for the ID param for the binder commands with [[#GetRelayService|IHOSBinderDriver]].
+
+== ParcelObjects ==
+This normally contains an u32 with value 0?
 
 [[Category:Services]]
