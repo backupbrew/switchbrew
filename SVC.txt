@@ -1558,7 +1558,7 @@ Exception specific:
 |-
 | 3 || DebugEvent_ExitThread
 |-
-| 3 || DebugEvent_Exception
+| 4 || DebugEvent_Exception
 |}
 
 === DebugExceptionType ===
