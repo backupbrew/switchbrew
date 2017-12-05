@@ -49,13 +49,21 @@
 |-
 | 22 ||
 |-
-| 26 || [[#EnableVrMode]]
+| 23 || [3.0.0+] 
 |-
-| 27 || [[#DisableVrMode]]
+| 24 || [3.0.0+] 
+|-
+| 25 || [3.0.0+] 
+|-
+| 26 || [3.0.0+] [[#EnableVrMode]]
+|-
+| 27 || [3.0.0+] [[#DisableVrMode]]
+|-
+| 28 || [3.0.0+] 
 |}
 
 ==EnableVrMode==
-No input/output. Used by [[AM_services#SetVrModeEnabled]], hence this was probably added with 3.0.0?
+No input/output. Used by [[AM_services#SetVrModeEnabled]].
 
 ==DisableVrMode==
-No input/output. Used by [[AM_services#SetVrModeEnabled]], hence this was probably added with 3.0.0?
+No input/output. Used by [[AM_services#SetVrModeEnabled]].
