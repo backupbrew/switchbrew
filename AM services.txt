@@ -524,7 +524,7 @@ Takes an input u32.
 | 61 || [3.0.0+] GetDefaultDisplayResolutionChangeEvent ||
 |}
 
-Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself.
+Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#NotificationMessage]]).
 
 === GetEventHandle ===
 No input. Returns an output event handle. This is signalled when a message is available with [[#ReceiveMessage]].
@@ -944,6 +944,19 @@ This indicates the type of web-applet.
 |-
 | 7
 | LobbyApplet
+|}
+
+===NotificationMessage===
+{| class="wikitable" border="1"
+|-
+!  ID
+!  Description
+|-
+| 0x10 || ?
+|-
+| 0x1E || OperationMode changed
+|-
+| 0x1F || PerformanceMode changed
 |}
 
 =AppletResourceUserId=

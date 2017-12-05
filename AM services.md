@@ -368,7 +368,8 @@ uses svcWaitSynchronization with the event from
 [\#GetEventHandle](#GetEventHandle "wikilink") to check whether a
 message is available, then if so it uses
 [\#ReceiveMessage](#ReceiveMessage "wikilink"). The actual handling for
-message IDs is done in the app itself.
+message IDs is done in the app itself(see
+[\#NotificationMessage](#NotificationMessage "wikilink")).
 
 ### GetEventHandle
 
@@ -643,6 +644,14 @@ This indicates the type of web-applet.
 | 5              | WebApplet         |
 | 6              | WifiWebAuthApplet |
 | 7              | LobbyApplet       |
+
+### NotificationMessage
+
+| ID   | Description             |
+| ---- | ----------------------- |
+| 0x10 | ?                       |
+| 0x1E | OperationMode changed   |
+| 0x1F | PerformanceMode changed |
 
 # AppletResourceUserId
 
