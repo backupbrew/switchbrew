@@ -240,7 +240,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 10 || ExitProcessAndReturn ||
 |-
-| 11 || GetLibraryAppletInfo ||
+| 11 || [[#GetLibraryAppletInfo]] ||
 |-
 | 12 || GetMainAppletIdentityInfo ||
 |-
@@ -266,6 +266,9 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 50 || [2.0.0+] ReportVisibleError ||
 |}
+
+====GetLibraryAppletInfo====
+No input. Returns an u64 LibraryAppletInfo.
 
 == IOverlayAppletProxy ==
 {| class="wikitable" border="1"

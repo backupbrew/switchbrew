@@ -162,28 +162,33 @@ commands.
 
 ### ILibraryAppletSelfAccessor
 
-| Cmd | Name                                               | Notes                                                                          |
-| --- | -------------------------------------------------- | ------------------------------------------------------------------------------ |
-| 0   | PopInData                                          | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 1   | PushOutData                                        | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 2   | PopInteractiveInData                               | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 3   | PushInteractiveOutData                             | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 5   | GetPopInDataEvent                                  |                                                                                |
-| 6   | GetPopInteractiveInDataEvent                       |                                                                                |
-| 10  | ExitProcessAndReturn                               |                                                                                |
-| 11  | GetLibraryAppletInfo                               |                                                                                |
-| 12  | GetMainAppletIdentityInfo                          |                                                                                |
-| 13  | CanUseApplicationCore                              |                                                                                |
-| 14  | GetCallerAppletIdentityInfo                        |                                                                                |
-| 15  | \[2.0.0+\] GetMainAppletApplicationControlProperty |                                                                                |
-| 16  | \[2.0.0+\] GetMainAppletStorageId                  |                                                                                |
-| 17  | \[2.0.0+\] GetCallerAppletIdentityInfoStack        |                                                                                |
-| 20  | PopExtraStorage                                    | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 25  | GetPopExtraStorageEvent                            |                                                                                |
-| 30  | UnpopInData                                        | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 31  | UnpopExtraStorage                                  | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 40  | \[2.0.0+\] GetIndirectLayerProducerHandle          |                                                                                |
-| 50  | \[2.0.0+\] ReportVisibleError                      |                                                                                |
+| Cmd | Name                                                       | Notes                                                                          |
+| --- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 0   | PopInData                                                  | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 1   | PushOutData                                                | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 2   | PopInteractiveInData                                       | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 3   | PushInteractiveOutData                                     | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 5   | GetPopInDataEvent                                          |                                                                                |
+| 6   | GetPopInteractiveInDataEvent                               |                                                                                |
+| 10  | ExitProcessAndReturn                                       |                                                                                |
+| 11  | [\#GetLibraryAppletInfo](#GetLibraryAppletInfo "wikilink") |                                                                                |
+| 12  | GetMainAppletIdentityInfo                                  |                                                                                |
+| 13  | CanUseApplicationCore                                      |                                                                                |
+| 14  | GetCallerAppletIdentityInfo                                |                                                                                |
+| 15  | \[2.0.0+\] GetMainAppletApplicationControlProperty         |                                                                                |
+| 16  | \[2.0.0+\] GetMainAppletStorageId                          |                                                                                |
+| 17  | \[2.0.0+\] GetCallerAppletIdentityInfoStack                |                                                                                |
+| 20  | PopExtraStorage                                            | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 25  | GetPopExtraStorageEvent                                    |                                                                                |
+| 30  | UnpopInData                                                | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 31  | UnpopExtraStorage                                          | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                  |                                                                                |
+| 50  | \[2.0.0+\] ReportVisibleError                              |                                                                                |
+
+#### GetLibraryAppletInfo
+
+No input. Returns an u64
+LibraryAppletInfo.
 
 ## IOverlayAppletProxy
 
