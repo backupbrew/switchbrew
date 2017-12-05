@@ -362,6 +362,14 @@ u32.
 | 60  | \[3.0.0+\] GetDefaultDisplayResolution                        |                                                                                |
 | 61  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent             |                                                                                |
 
+Officially notification messages are handled by the application itself,
+not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
+uses svcWaitSynchronization with the event from
+[\#GetEventHandle](#GetEventHandle "wikilink") to check whether a
+message is available, then if so it uses
+[\#ReceiveMessage](#ReceiveMessage "wikilink"). The actual handling for
+message IDs is done in the app itself.
+
 ### GetEventHandle
 
 No input. Returns an output event handle. This is signalled when a
@@ -371,7 +379,7 @@ message is available with
 ### ReceiveMessage
 
 No input. Returns an output u32. Error 0x680 indicates no message is
-available?
+available.
 
 ### GetCurrentFocusState
 
