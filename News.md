@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **4 December 17** Nintendo released system update
+    [4.1.0](4.1.0.md "wikilink").
   - **25 October 17** Nintendo released system update
     [4.0.1](4.0.1.md "wikilink").
   - **18 October 17** Nintendo released system update
@@ -29,5 +31,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     [here](https://github.com/switchbrew/switch-examples).
   - **5 September 17** Nintendo released system update
     [3.0.2](3.0.2.md "wikilink").
-  - **31 July 17** Nintendo released system update
-    [3.0.1](3.0.1.md "wikilink").

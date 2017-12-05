@@ -9,8 +9,8 @@ For older news, see the [[:News/Archive|news archive]].
 
 === News ===
 <!-- Add news below --></noinclude>
+*'''4 December 17''' Nintendo released system update [[4.1.0]].
 *'''25 October 17''' Nintendo released system update [[4.0.1]].
 *'''18 October 17''' Nintendo released system update [[4.0.0]].
 *'''17 September 17''' [https://github.com/switchbrew/libnx libnx] was made public, with examples available [https://github.com/switchbrew/switch-examples here].
 *'''5 September 17''' Nintendo released system update [[3.0.2]].
-*'''31 July 17''' Nintendo released system update [[3.0.1]].
