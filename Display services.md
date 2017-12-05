@@ -378,4 +378,11 @@ The above ID is used for the ID param for the binder commands with
 
 This normally contains an u32 with value 0?
 
+# Resolution handling
+
+There doesn't seem to be a way to get the actual TV resolution while
+using the "Default" Display. Official apps probably just hard-code what
+resolution to use depending on the current
+[OperationMode](AM%20services.md "wikilink")?
+
 [Category:Services](Category:Services "wikilink")
