@@ -496,15 +496,22 @@ No input/output.
 
 ## IProcessWindingController
 
-| Cmd | Name                               | Notes                                                                          |
-| --- | ---------------------------------- | ------------------------------------------------------------------------------ |
-| 0   | GetLaunchReason                    |                                                                                |
-| 11  | OpenCallingLibraryApplet           | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").     |
-| 21  | PushContext                        | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 22  | PopContext                         | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
-| 23  | CancelWindingReservation           |                                                                                |
-| 30  | WindAndDoReserved                  |                                                                                |
-| 40  | ReserveToStartAndWaitAndUnwindThis | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").     |
+| Cmd | Name                                             | Notes                                                                          |
+| --- | ------------------------------------------------ | ------------------------------------------------------------------------------ |
+| 0   | [\#GetLaunchReason](#GetLaunchReason "wikilink") |                                                                                |
+| 11  | OpenCallingLibraryApplet                         | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").     |
+| 21  | PushContext                                      | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 22  | PopContext                                       | Returns an [IStorage](Filesystem%20services#IStorage.md##IStorage "wikilink"). |
+| 23  | CancelWindingReservation                         |                                                                                |
+| 30  | WindAndDoReserved                                |                                                                                |
+| 40  | ReserveToStartAndWaitAndUnwindThis               | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").     |
+
+### GetLaunchReason
+
+No input. Returns an u32 AppletProcessLaunchReason.
+
+Used by
+LibraryApplets.
 
 ## IDebugFunctions
 

@@ -711,7 +711,7 @@ No input/output.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetLaunchReason ||
+| 0 || [[#GetLaunchReason]] ||
 |-
 | 11 || OpenCallingLibraryApplet || Returns an [[#ILibraryAppletAccessor]].
 |-
@@ -725,6 +725,11 @@ No input/output.
 |-
 | 40 || ReserveToStartAndWaitAndUnwindThis || Returns an [[#ILibraryAppletAccessor]].
 |}
+
+===GetLaunchReason===
+No input. Returns an u32 AppletProcessLaunchReason.
+
+Used by LibraryApplets.
 
 == IDebugFunctions ==
 {| class="wikitable" border="1"
