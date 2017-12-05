@@ -30,6 +30,15 @@ same user-process retry-loop as
 
 This service seems to be used by all system non-regular-applications.
 
+The 01000000000010XX system [titles](Title%20list.md "wikilink") use the
+following applet types(above Open{type}Proxy commands):
+
+  - "qlaunch": SystemApplet
+  - "overlay": OverlayApplet
+  - "starter": SystemApplication
+  - "maintenance": SystemApplet
+  - All others: LibraryApplet
+
 ## OpenLibraryAppletProxy
 
 Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").

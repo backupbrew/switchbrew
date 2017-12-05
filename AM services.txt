@@ -27,6 +27,13 @@ All of these commands except [[#OpenLibraryAppletProxy]] take the same input as 
 
 This service seems to be used by all system non-regular-applications.
 
+The 01000000000010XX system [[Title_list|titles]] use the following applet types(above Open{type}Proxy commands):
+* "qlaunch": SystemApplet
+* "overlay": OverlayApplet
+* "starter": SystemApplication
+* "maintenance": SystemApplet
+* All others: LibraryApplet
+
 == OpenLibraryAppletProxy ==
 Returns an [[#IApplicationProxy]].
 
