@@ -19,6 +19,12 @@
 | 14  |                                              |
 | 15  |                                              |
 | 16  | ReadRawLightSensor                           |
+| 17  |                                              |
+| 18  |                                              |
+| 19  |                                              |
+| 20  |                                              |
+| 21  |                                              |
+| 22  |                                              |
 | 26  | [\#EnableVrMode](#EnableVrMode "wikilink")   |
 | 27  | [\#DisableVrMode](#DisableVrMode "wikilink") |
 
