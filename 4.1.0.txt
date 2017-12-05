@@ -10,6 +10,9 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+===FIRM-packages===
+Every FIRM-package title was updated, the only change in RomFS was that package2 was updated.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=12-04-17_07-05-12&sys=hac]
