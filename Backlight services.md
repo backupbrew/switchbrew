@@ -30,14 +30,23 @@
 | 25  | \[3.0.0+\]                                              |
 | 26  | \[3.0.0+\] [\#EnableVrMode](#EnableVrMode "wikilink")   |
 | 27  | \[3.0.0+\] [\#DisableVrMode](#DisableVrMode "wikilink") |
-| 28  | \[3.0.0+\]                                              |
+| 28  | \[3.0.0+\] [\#GetVrMode](#GetVrMode "wikilink")         |
 
 ## EnableVrMode
 
 No input/output. Used by
 [AM\_services\#SetVrModeEnabled](AM%20services#SetVrModeEnabled.md##SetVrModeEnabled "wikilink").
 
+Sets a global state field to 0x1.
+
 ## DisableVrMode
 
 No input/output. Used by
 [AM\_services\#SetVrModeEnabled](AM%20services#SetVrModeEnabled.md##SetVrModeEnabled "wikilink").
+
+Sets the global state field used by
+[\#EnableVrMode](#EnableVrMode "wikilink") to 0x0.
+
+## GetVrMode
+
+No input. Returns an output u8 bool set by the above commands.

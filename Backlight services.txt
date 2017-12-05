@@ -59,11 +59,18 @@
 |-
 | 27 || [3.0.0+] [[#DisableVrMode]]
 |-
-| 28 || [3.0.0+] 
+| 28 || [3.0.0+] [[#GetVrMode]]
 |}
 
 ==EnableVrMode==
 No input/output. Used by [[AM_services#SetVrModeEnabled]].
 
+Sets a global state field to 0x1.
+
 ==DisableVrMode==
 No input/output. Used by [[AM_services#SetVrModeEnabled]].
+
+Sets the global state field used by [[#EnableVrMode]] to 0x0.
+
+==GetVrMode==
+No input. Returns an output u8 bool set by the above commands.
