@@ -471,6 +471,26 @@ Works with num\_handles \<= 0x40, error on num\_handles == 0.
 
 Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
+### Object types
+
+**Port:** signals when there is an incoming connection waiting to be
+[accepted](#svcAcceptSession "wikilink").
+
+**Session (server-side):** signals when there is an incoming message
+waiting to be [received](#svcReplyAndReceive "wikilink") or the pipe is
+closed.
+
+### Return codes
+
+**0x0:** Success. One of the objects was signalled before the timeout
+expired. Handle index is updated to indicate which object signalled.
+
+**0xe401:** Invalid handle. Returned when one of the handles passed is
+invalid. Handle index is not updated.
+
+**0xea01:** Timeout. Returned when no objects have been signalled within
+the timeout. Handle index is not updated.
+
 ## svcSendSyncRequestWithUserBuffer
 
 <div style="display: inline-block;">
