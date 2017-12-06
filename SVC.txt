@@ -104,7 +104,7 @@ __NOTOC__
 |-
 | 0x33 || svcGetThreadContext3 || W0=thread_handle, W1=[[#ThreadContext]]* || W0=result
 |- style="border-top: double"
-| 0x3C || svcDumpInfo ||  || 
+| 0x3C || [[#svcDumpInfo]] ||  || 
 |- style="border-top: double"
 | 0x40 || svcCreateSession || W2=is_light, X3=? || W0=result, W1=client_handle, W2=server_handle
 |-
