@@ -58,7 +58,7 @@
 | 0x40 | svcCreateSession                                                                   | W2=is\_light, X3=?                                                                                             | W0=result, W1=client\_handle, W2=server\_handle          |
 | 0x41 | [\#svcAcceptSession](#svcAcceptSession "wikilink")                                 | W1=port\_handle                                                                                                | W0=result, W1=session\_handle                            |
 | 0x42 | svcReplyAndReceiveLight                                                            | W0=light\_session\_handle                                                                                      | W0=result, W1,W2,W3,W4,W5,W6,W7=out                      |
-| 0x43 | svcReplyAndReceive                                                                 | X1=ptr\_handles, W2=num\_handles, X3=replytarget\_handle(0=none), X4=timeout                                   | W0=result, W1=handle\_idx                                |
+| 0x43 | [\#svcReplyAndReceive](#svcReplyAndReceive "wikilink")                             | X1=ptr\_handles, W2=num\_handles, X3=replytarget\_handle(0=none), X4=timeout                                   | W0=result, W1=handle\_idx                                |
 | 0x44 | svcReplyAndReceiveWithUserBuffer                                                   | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=replytarget\_handle(0=none), X6=timeout                    | W0=result, W1=handle\_idx                                |
 | 0x45 | svcCreateEvent                                                                     | None                                                                                                           | W0=result, W1=client\_handle ?, W2=server\_handle ?      |
 | 0x4D | svcSleepSystem                                                                     | None                                                                                                           | None                                                     |
@@ -586,6 +586,43 @@ Does nothing, just returns with registers set to all-zero.
 ### Result codes
 
 **0xf201:** No session waiting to be accepted
+
+## svcReplyAndReceive
+
+<div style="display: inline-block;">
+
+| Argument | Type                            | Name          |
+| -------- | ------------------------------- | ------------- |
+| (In) W1  | \*Handle<Port or ServerSession> | `Handles`     |
+| (In) W2  | u32                             | `NumHandles`  |
+| (In) W3  | Handle<ServerSession>           | `ReplyTarget` |
+| (In) X4  | u64 (nanoseconds)               | `Timeout`     |
+| (Out) W0 | [\#Result](#Result "wikilink")  | `Result`      |
+| (Out) W1 | u32                             | `HandleIndex` |
+
+</div>
+
+If `ReplyTarget` is not zero, a reply from the TLS will be sent to that
+session. Then it will wait until either of the passed sessions has an
+incoming message, is closed, a passed port has an incoming connection,
+or the timeout expires. If there is an incoming message, it is copied to
+the TLS.
+
+After being validated, passed handles will be enumerated in order; even
+if a session has been closed, if one that appears earlier in the list
+has an incoming message, it will take priority and a result code of 0x0
+will be returned.
+
+### Result codes
+
+**0x0:** Success. Either a session has an incoming message or a port has
+an incoming connection. `HandleIndex` is set appropriately.
+
+**0xea01:** Timeout. No handles were signalled before the timeout
+expired. `HandleIndex` is not updated.
+
+**0xf601:** Port remote dead. One of the sessions has been closed.
+`HandleIndex` is set appropriately.
 
 ## svcReadWriteRegister
 

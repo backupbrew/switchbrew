@@ -112,7 +112,7 @@ __NOTOC__
 |-
 | 0x42 || svcReplyAndReceiveLight || W0=light_session_handle || W0=result, W1,W2,W3,W4,W5,W6,W7=out
 |-
-| 0x43 || svcReplyAndReceive || X1=ptr_handles, W2=num_handles, X3=replytarget_handle(0=none), X4=timeout || W0=result, W1=handle_idx
+| 0x43 || [[#svcReplyAndReceive]] || X1=ptr_handles, W2=num_handles, X3=replytarget_handle(0=none), X4=timeout || W0=result, W1=handle_idx
 |-
 | 0x44 || svcReplyAndReceiveWithUserBuffer|| X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=replytarget_handle(0=none), X6=timeout || W0=result, W1=handle_idx
 |-
@@ -769,6 +769,41 @@ Does nothing, just returns with registers set to all-zero.
 === Result codes ===
 
 '''0xf201:''' No session waiting to be accepted
+
+== svcReplyAndReceive ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W1 || *Handle<Port or ServerSession> || <code>Handles</code>
+|-
+| (In) W2 || u32 || <code>NumHandles</code>
+|-
+| (In) W3 || Handle<ServerSession> || <code>ReplyTarget</code>
+|-
+| (In) X4 || u64 (nanoseconds) || <code>Timeout</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Result</code>
+|-
+| (Out) W1 || u32 || <code>HandleIndex</code>
+|}
+</div>
+
+If <code>ReplyTarget</code> is not zero, a reply from the TLS will be sent to that session.
+Then it will wait until either of the passed sessions has an incoming message, is closed, a passed port has an incoming connection, or the timeout expires.
+If there is an incoming message, it is copied to the TLS.
+
+After being validated, passed handles will be enumerated in order; even if a session has been closed, if one that appears earlier in the list has an incoming message, it will take priority and a result code of 0x0 will be returned.
+
+=== Result codes ===
+
+'''0x0:''' Success. Either a session has an incoming message or a port has an incoming connection. <code>HandleIndex</code> is set appropriately.
+
+'''0xea01:''' Timeout. No handles were signalled before the timeout expired. <code>HandleIndex</code> is not updated.
+
+'''0xf601:''' Port remote dead. One of the sessions has been closed. <code>HandleIndex</code> is set appropriately.
 
 == svcReadWriteRegister ==
 
