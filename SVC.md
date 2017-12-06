@@ -56,7 +56,7 @@
 | 0x33 | svcGetThreadContext3                                                               | W0=thread\_handle, W1=[\#ThreadContext](#ThreadContext "wikilink")\*                                           | W0=result                                                |
 | 0x3C | [\#svcDumpInfo](#svcDumpInfo "wikilink")                                           |                                                                                                                |                                                          |
 | 0x40 | svcCreateSession                                                                   | W2=is\_light, X3=?                                                                                             | W0=result, W1=client\_handle, W2=server\_handle          |
-| 0x41 | svcAcceptSession                                                                   | W1=port\_handle                                                                                                | W0=result, W1=session\_handle                            |
+| 0x41 | [\#svcAcceptSession](#svcAcceptSession "wikilink")                                 | W1=port\_handle                                                                                                | W0=result, W1=session\_handle                            |
 | 0x42 | svcReplyAndReceiveLight                                                            | W0=light\_session\_handle                                                                                      | W0=result, W1,W2,W3,W4,W5,W6,W7=out                      |
 | 0x43 | svcReplyAndReceive                                                                 | X1=ptr\_handles, W2=num\_handles, X3=replytarget\_handle(0=none), X4=timeout                                   | W0=result, W1=handle\_idx                                |
 | 0x44 | svcReplyAndReceiveWithUserBuffer                                                   | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=replytarget\_handle(0=none), X6=timeout                    | W0=result, W1=handle\_idx                                |
@@ -480,7 +480,7 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 waiting to be [received](#svcReplyAndReceive "wikilink") or the pipe is
 closed.
 
-### Return codes
+### Result codes
 
 **0x0:** Success. One of the objects was signalled before the timeout
 expired. Handle index is updated to indicate which object signalled.
@@ -570,6 +570,22 @@ it will return 0.
 </div>
 
 Does nothing, just returns with registers set to all-zero.
+
+## svcAcceptSession
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name      |
+| -------- | ------------------------------ | --------- |
+| (In) W1  | Handle<Port>                   | `Port`    |
+| (Out) W0 | [\#Result](#Result "wikilink") | `Result`  |
+| (Out) W1 | Handle<ServerSession>          | `Session` |
+
+</div>
+
+### Result codes
+
+**0xf201:** No session waiting to be accepted
 
 ## svcReadWriteRegister
 

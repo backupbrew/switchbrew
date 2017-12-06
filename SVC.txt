@@ -108,7 +108,7 @@ __NOTOC__
 |- style="border-top: double"
 | 0x40 || svcCreateSession || W2=is_light, X3=? || W0=result, W1=client_handle, W2=server_handle
 |-
-| 0x41 || svcAcceptSession || W1=port_handle || W0=result, W1=session_handle
+| 0x41 || [[#svcAcceptSession]] || W1=port_handle || W0=result, W1=session_handle
 |-
 | 0x42 || svcReplyAndReceiveLight || W0=light_session_handle || W0=result, W1,W2,W3,W4,W5,W6,W7=out
 |-
@@ -631,7 +631,7 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 '''Session (server-side):''' signals when there is an incoming message waiting to be [[#svcReplyAndReceive|received]] or the pipe is closed.
 
-=== Return codes ===
+=== Result codes ===
 
 '''0x0:''' Success. One of the objects was signalled before the timeout expired. Handle index is updated to indicate which object signalled.
 
@@ -750,6 +750,25 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 </div>
 
 Does nothing, just returns with registers set to all-zero.
+
+== svcAcceptSession ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W1 || Handle<Port> || <code>Port</code>
+|-
+| (Out) W0 || [[#Result]] || <code>Result</code>
+|-
+| (Out) W1 || Handle<ServerSession> || <code>Session</code>
+|}
+</div>
+
+=== Result codes ===
+
+'''0xf201:''' No session waiting to be accepted
 
 == svcReadWriteRegister ==
 
