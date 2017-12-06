@@ -202,6 +202,54 @@ The two sections specified by the two BKTR entries are usually(?) at the
 very end of the section data(section\_endoffset-{size of BKTR
 sections}).
 
+### RomFS Patching
+
+The BKTR section enables combining data from an update NCA with the
+RomFS from a base NCA to create a single patched RomFS image.
+
+The first BKTR entry describes how to map regions of the two RomFS
+images to create the patched RomFS. It has the following format:
+
+| Start  | Length  | Description        |
+| ------ | ------- | ------------------ |
+| 0x0    | 0x4004  | Padding/Unused?    |
+| 0x4004 | 0x4     | Number of Entries  |
+| 0x4008 | 0x8     | Patched RomFS Size |
+| 0x4010 | 0x14\*X | Relocation Entries |
+
+Where relocation entries are as follows:
+
+| Start | Length | Description                                 |
+| ----- | ------ | ------------------------------------------- |
+| 0x0   | 0x8    | Address in Patched RomFS                    |
+| 0x8   | 0x8    | Address in Source RomFS                     |
+| 0x10  | 0x4    | 1=Is from Patch RomFS, 0=Is from Base RomFS |
+
+The second BKTR entry describes the subsections within the Patch RomFS.
+It has the following format:
+
+| Start  | Length  | Description                     |
+| ------ | ------- | ------------------------------- |
+| 0x0    | 0x4004  | Padding/Unused?                 |
+| 0x4004 | 0x4     | Number of Entries               |
+| 0x4008 | 0x8     | Patch RomFS Size - BKTR entries |
+| 0x4010 | 0x10\*X | Subsection Entries              |
+
+Where subsection entries are as follows:
+
+| Start | Length | Description                  |
+| ----- | ------ | ---------------------------- |
+| 0x0   | 0x8    | Address in Patch RomFS       |
+| 0x8   | 0x4    | Padding/Unused?              |
+| 0xC   | 0x4    | Value for subsection AES-CTR |
+
+Official code assumes the relocation entries are sorted, and performs a
+binary search when determining where to read from. Each subsection in
+the Patch RomFS has its CTR calculated separately from the others based
+on the value in its entry (the BKTR entries use normal crypto). Thus
+decrypting a Patch RomFS requires decrypting and parsing the BKTR
+entries before anything else.
+
 # Logo section
 
 This is a PFS0. See [here](NCA%20Content%20FS.md "wikilink") for the
