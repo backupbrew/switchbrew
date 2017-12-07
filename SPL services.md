@@ -51,7 +51,7 @@ Takes a u32 (**ConfigItem**), and returns a u64 (**ConfigVal**).
 | ---------- | -------------------------------- |
 | 1          | DisableProgramVerification       |
 | 2          | MemoryConfiguration              |
-| 3          | Returns 0x2C?                    |
+| 3          | SecurityEngineIRQNumber          |
 | 4          | Returns 0x02?                    |
 | 5          | HardwareType (0=Icosa, 1=Copper) |
 | 6          | IsRetail                         |
