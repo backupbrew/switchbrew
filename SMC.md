@@ -19,31 +19,34 @@ If bit *n* is set in the argument type then parameter X*n* is treated as
 a pointer and the kernel will setup address translation for it in
 [svcCallSecureMonitor](SVC#svcCallSecureMonitor.md##svcCallSecureMonitor "wikilink").
 
-## Id 0
+SMC arguments are passed using registers X0-X7 with X0 always sending
+the call sub-id and returning the result of the call.
+
+## ID 0
 
 Functions exposed to user-mode processes using
 [svcCallSecureMonitor](SVC.md "wikilink").
 
-| Sub-Id     | Name                                                               | In | Out |
-| ---------- | ------------------------------------------------------------------ | -- | --- |
-| 0xC3000401 | SetConfig                                                          |    |     |
-| 0xC3000002 | GetConfig (Same as Id 1 Sub-Id 4.)                                 |    |     |
-| 0xC3000003 | CheckStatus                                                        |    |     |
-| 0xC3000404 | GetResult                                                          |    |     |
-| 0xC3000E05 | ExpMod                                                             |    |     |
-| 0xC3000006 | GetRandomBytes (Same as Id 1 Sub-Id 5.)                            |    |     |
-| 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                     |    |     |
-| 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                             |    |     |
-| 0xC3000009 | [\#CryptAes](#CryptAes "wikilink")                                 |    |     |
-| 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")     |    |     |
-| 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                           |    |     |
-| 0xC300100C | [\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink")               |    |     |
-| 0xC300100D | [\#PrivateRsa](#PrivateRsa "wikilink")                             |    |     |
-| 0xC300100E | [\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink")                 |    |     |
-| 0xC300060F | [\#PublicRsa](#PublicRsa "wikilink")                               |    |     |
-| 0xC3000610 | [\#UnwrapRsaEncryptedAesKey](#UnwrapRsaEncryptedAesKey "wikilink") |    |     |
-| 0xC3000011 | [\#LoadRsaWrappedAesKey](#LoadRsaWrappedAesKey "wikilink")         |    |     |
-| 0xC3000012 | \[2.0.0+\] GenerateRsaWrappedAesKek                                |    |     |
+| Sub-ID     | Name                                                           | In | Out |
+| ---------- | -------------------------------------------------------------- | -- | --- |
+| 0xC3000401 | SetConfig                                                      |    |     |
+| 0xC3000002 | GetConfig (Same as ID 1, Sub-ID 4)                             |    |     |
+| 0xC3000003 | CheckStatus                                                    |    |     |
+| 0xC3000404 | GetResult                                                      |    |     |
+| 0xC3000E05 | ExpMod                                                         |    |     |
+| 0xC3000006 | GetRandomBytes (Same as ID 1, Sub-ID 5)                        |    |     |
+| 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                 |    |     |
+| 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                         |    |     |
+| 0xC3000009 | [\#CryptAes](#CryptAes "wikilink")                             |    |     |
+| 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink") |    |     |
+| 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                       |    |     |
+| 0xC300100C | [\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink")           |    |     |
+| 0xC300100D | [\#PrivateRsa](#PrivateRsa "wikilink")                         |    |     |
+| 0xC300100E | [\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink")             |    |     |
+| 0xC300060F | [\#PublicRsa](#PublicRsa "wikilink")                           |    |     |
+| 0xC3000610 | [\#UnwrapPreparedAesKey](#UnwrapPreparedAesKey "wikilink")     |    |     |
+| 0xC3000011 | [\#LoadPreparedAesKey](#LoadPreparedAesKey "wikilink")         |    |     |
+| 0xC3000012 | \[2.0.0+\] GeneratePreparedAesKek                              |    |     |
 
 The overall concept here is the following:
 
@@ -62,6 +65,9 @@ The overall concept here is the following:
     session-specific key and given back to userspace.
       - This means: Plaintext kek keys never leave TrustZone.
       - Further, this means: Actual AES/RSA keys never leave TrustZone.
+
+Note: The [CryptoUsecase\_PreparedAesKey](#CryptoUsecase "wikilink")
+represents a RSA wrapped AES key.
 
 ### GenerateAesKek
 
@@ -121,48 +127,83 @@ Encrypts using Rsa public key.
 Key must be set prior using the
 [\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink") command.
 
-### UnwrapRsaEncryptedAesKey
+### UnwrapPreparedAesKey
 
 Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA public
 key.
 
 Returns a session-unique AES key especially for use in
-[\#LoadRsaWrappedAesKey](#LoadRsaWrappedAesKey "wikilink").
+[\#LoadPreparedAesKey](#LoadPreparedAesKey "wikilink").
 
 The session kek must have been created with
-CryptoUsecase\_RsaWrappedAesKey.
+CryptoUsecase\_PreparedAesKey.
 
-### LoadRsaWrappedAesKey
+### LoadPreparedAesKey
 
 Takes a session-unique AES key from
-[\#UnwrapRsaEncryptedAesKey](#UnwrapRsaEncryptedAesKey "wikilink").
+[\#UnwrapPreparedAesKey](#UnwrapPreparedAesKey "wikilink").
 
 ### enum CryptoUsecase
 
-| Value | Name                            |
-| ----- | ------------------------------- |
-| 0     | CryptoUsecase\_Aes              |
-| 1     | CryptoUsecase\_PrivateRsa       |
-| 2     | CryptoUsecase\_PublicRsa        |
-| 3     | CryptoUsecase\_RsaWrappedAesKey |
+| Value | Name                          |
+| ----- | ----------------------------- |
+| 0     | CryptoUsecase\_Aes            |
+| 1     | CryptoUsecase\_PrivateRsa     |
+| 2     | CryptoUsecase\_PublicRsa      |
+| 3     | CryptoUsecase\_PreparedAesKey |
 
-## Id 1
+## ID 1
 
 Functions exposed to the kernel
 internally.
 
-| Sub-Id     | Name                                    | In                                                     | Out                                |
-| ---------- | --------------------------------------- | ------------------------------------------------------ | ---------------------------------- |
-| 0xC4000001 | CpuSuspend                              | X1=power\_state, X2=entrypoint\_addr, X3=context\_addr | None                               |
-| 0x84000002 | CpuOff                                  | None                                                   | None                               |
-| 0xC4000003 | CpuOn                                   |                                                        |                                    |
-| 0xC3000004 | GetConfig (Same as Id 0 Sub-Id 2.)      | W1=config\_item, X2,X3,X4,X5,X6,X7=0                   | X0=result, X1,X2,X3,X4=config\_val |
-| 0xC3000005 | GetRandomBytes (Same as Id 0 Sub-Id 6.) | X1=dst\_addr, X2,X3,X4,X5,X6,X7=0                      |                                    |
-| 0xC3000006 | Panic                                   | W1=unk, X2,X3,X4,X5,X6,X7=0                            | X0=result                          |
-| 0xC3000007 | \[2.0.0+\] ProtectKernelRegion          |                                                        |                                    |
-| 0xC3000008 | \[2.0.0+\] ReadWriteRegister            |                                                        |                                    |
+| Sub-ID     | Name                                                                    | In                                                                 | Out                                         |
+| ---------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
+| 0xC4000001 | [\#CpuSuspend](#CpuSuspend "wikilink")                                  | X1=power\_state, X2=entrypoint\_addr, X3=context\_id               | None                                        |
+| 0x84000002 | [\#CpuOff](#CpuOff "wikilink")                                          | None                                                               | None                                        |
+| 0xC4000003 | [\#CpuOn](#CpuOn "wikilink")                                            | X1=target\_cpu, X2=entrypoint\_addr, X3=context\_id, X4,X5,X6,X7=0 | X0=result                                   |
+| 0xC3000004 | [\#GetConfig](#GetConfig "wikilink") (Same as ID 0, Sub-ID 2)           | W1=config\_item, X2,X3,X4,X5,X6,X7=0                               | X0=result, X1,X2,X3,X4=config\_val          |
+| 0xC3000005 | [\#GetRandomBytes](#GetRandomBytes "wikilink") (Same as ID 0, Sub-ID 6) | X1=size, X2,X3,X4,X5,X6,X7=0                                       | X0=result, X1,X2,X3,X4,X5,X6,X7=rand\_bytes |
+| 0xC3000006 | [\#Panic](#Panic "wikilink")                                            | W1=unk, X2,X3,X4,X5,X6,X7=0                                        | X0=result                                   |
+| 0xC3000007 | \[2.0.0+\] ProtectKernelRegion                                          |                                                                    |                                             |
+| 0xC3000008 | \[2.0.0+\] ReadWriteRegister                                            |                                                                    |                                             |
+
+### CpuSuspend
+
+Standard ARM PCSI SMC. Suspends the CPU (CPU0).
+
+The kernel calls this SMC on shutdown with **power\_state** set to
+0x0201001B (power level: 0x02==system; power type: 0x01==powerdown; ID:
+0x1B).
+
+### CpuOff
+
+Standard ARM PCSI SMC. Turns off the CPU (CPU1, CPU2 or CPU3).
+
+### CpuOn
+
+Standard ARM PCSI SMC. Turns on the CPU (CPU1, CPU2 or CPU3).
+
+### GetConfig
+
+Takes a **config\_item** and returns an associated **config\_val**.
+
+### GetRandomBytes
+
+Takes a **size** and returns **rand\_bytes**.
+
+The kernel limits **size** to 0x38 (for fitting in return registers).
+
+### Panic
+
+Issues a system panic.
+
+The kernel always calls this with **unk** set to 0xF00.
 
 # Errors
 
-2: Invalid input 3: Busy
+| Value | Description   |
+| ----- | ------------- |
+| 2     | Invalid input |
+| 3     | Busy          |
