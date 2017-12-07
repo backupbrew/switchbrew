@@ -90,9 +90,9 @@ __NOTOC__
 |-
 | 0x2B || svcFlushDataCache || X0=addr, X1=size || W0=result
 |-
-| 0x2C || [3.0.0+] svcMapPhysicalMemory ||  ||
+| 0x2C || [3.0.0+] svcMapPhysicalMemory || X0=addr, X1=size || W0=result
 |-
-| 0x2D || [3.0.0+] svcUnmapPhysicalMemory||  ||
+| 0x2D || [3.0.0+] svcUnmapPhysicalMemory|| X0=addr, X1=size || W0=result
 |- style="border-top: double"
 | 0x2F || svcGetLastThreadInfo || None || W0=result, W1,W2,W3,W4=unk, W5=truncated_u64, W6=bool
 |-
@@ -130,7 +130,7 @@ __NOTOC__
 |-
 | 0x52 || [[#svcUnmapTransferMemory]] || W0=tmemhandle, X1=addr, X2=size || W0=result
 |-
-| 0x53 || svcCreateInterruptEvent || X1=irq_id, W2=flag || W0=result, W1=handle
+| 0x53 || svcCreateInterruptEvent || X1=irq_num, W2=flag || W0=result, W1=handle
 |-
 | 0x54 || [[#svcQueryPhysicalAddress]] || X1=addr || W0=result, X1=physaddr, X2=kerneladdr, X3=size
 |-
@@ -184,9 +184,9 @@ __NOTOC__
 |-
 | 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=[[#DebugThreadParam]] || W0=result, X1=out0, W2=out1
 |- style="border-top: double"
-| 0x70 || svcCreatePort || || 
+| 0x70 || svcCreatePort || W2=max_sessions, W3=unk_bool, X4=name_ptr || W0=result, W1=clientport_handle, W2=serverport_handle
 |-
-| 0x71 || svcManageNamedPort || X1=name_ptr, W2=max_sessions(?) || W0=result, W1=serverport_handle
+| 0x71 || svcManageNamedPort || X1=name_ptr, W2=max_sessions || W0=result, W1=serverport_handle
 |-
 | 0x72 || svcConnectToPort || W1=clientport_handle || W0=result, W1=session_handle
 |-
@@ -214,7 +214,7 @@ __NOTOC__
 |-
 | 0x7E || svcSetResourceLimitLimitValue || W0=reslimit_handle, W1=[[#LimitableResource]], X2=value || W0=result
 |-
-| 0x7F || svcCallSecureMonitor || || 
+| 0x7F || svcCallSecureMonitor || X0=smc_sub_id, X1,X2,X3,X4,X5,X6,X7=smc_args || X0,X1,X2,X3,X4,X5,X6,X7=result
 |}
 
 == svcSetHeapSize ==
