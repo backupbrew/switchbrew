@@ -20,7 +20,7 @@ Takes a type-6 buffer and fills it with random data. Same command for "spl:" and
 |-
 | 0 || [[#GetConfig]] || Wrapper for [[SMC#GetConfig|GetConfig SMC]].
 |-
-| 1 || [[#UserExpMod]] || Speculative name. User supplied modulus and exponent.
+| 1 || [[#UserExpMod]] || Speculative name. Wrapper for [[SMC#ExpMod|ExpMod SMC]].
 |-
 | 2 || [[#GenerateAesKek]] || Wrapper for [[SMC#GenerateAesKek|GenerateAesKek SMC]].
 |-
@@ -50,11 +50,11 @@ Takes a type-6 buffer and fills it with random data. Same command for "spl:" and
 |-
 | 17 || [[#DecryptImportPrivkForExpMod1]] || Speculative name. Wrapper for [[SMC#LoadRsaPrivateKey|LoadRsaPrivateKey SMC]].
 |-
-| 18 || [[#ExpMod1]] || Speculative name. Wrapper for [[SMC#UnwrapRsaEncryptedAesKey|UnwrapRsaEncryptedAesKey SMC]].
+| 18 || [[#ExpMod1]] || Speculative name. Wrapper for [[SMC#UnwrapPreparedAesKey|UnwrapPreparedAesKey SMC]].
 |-
-| 19 || [[#LoadPreparedAesKey]] || Wrapper for [[SMC#LoadRsaWrappedAesKey|LoadRsaWrappedAesKey SMC]].
+| 19 || [[#LoadPreparedAesKey]] || Wrapper for [[SMC#LoadPreparedAesKey|LoadPreparedAesKey SMC]].
 |-
-| 20 || [2.0.0+] [[#GeneratePreparedAesKek]] || Wrapper for [[SMC#GenerateRsaWrappedAesKek|GenerateRsaWrappedAesKek SMC]].
+| 20 || [2.0.0+] [[#GeneratePreparedAesKek]] || Wrapper for [[SMC#GeneratePreparedAesKek|GeneratePreparedAesKek SMC]].
 |-
 | 21 || [2.0.0+] [[#LockAesEngine]] ||
 |-
