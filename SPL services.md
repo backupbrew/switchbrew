@@ -63,6 +63,9 @@ Takes a u32 (**ConfigItem**), and returns a u64 (**ConfigVal**).
 | 12         | KernelMemoryConfiguration        |
 | 13         | BatteryProfile                   |
 
+[PM](Process%20Manager%20services.md "wikilink") checks id1 and if
+non-zero, calls fsp-pr SetEnabledProgramVerification(false).
+
 [PCV](PCV%20services.md "wikilink") configures memory profiles based on
 id2.
 
@@ -77,9 +80,6 @@ id2.
 |              |                                         |          |        |
 
 SPL uses id3 for setting up the security engine IRQ.
-
-[PM](Process%20Manager%20services.md "wikilink") checks id1 and if
-non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 
 [NIM](NIM%20services.md "wikilink") checks that id8 output must match
 the [set:cal](Settings%20services.md "wikilink") DeviceId with byte7

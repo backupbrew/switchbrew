@@ -97,6 +97,8 @@ Takes a u32 ('''ConfigItem'''), and returns a u64 ('''ConfigVal''').
 | 13 || BatteryProfile
 |}
 
+[[Process Manager services|PM]] checks id1 and if non-zero, calls fsp-pr SetEnabledProgramVerification(false).
+
 [[PCV_services|PCV]] configures memory profiles based on id2.
 {| class="wikitable" border="1"
 |-
@@ -138,8 +140,6 @@ Takes a u32 ('''ConfigItem'''), and returns a u64 ('''ConfigVal''').
 |}
 
 SPL uses id3 for setting up the security engine IRQ.
-
-[[Process Manager services|PM]] checks id1 and if non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 
 [[NIM_services|NIM]] checks that id8 output must match the [[Settings_services|set:cal]] DeviceId with byte7 cleared, otherwise panic.
 
