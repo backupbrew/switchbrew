@@ -76,6 +76,9 @@ id2.
 | "nx-abca2"   | "10\_40800\_NoCfgVersion\_V9.8.7\_V1.6" | 3        | 2      |
 |              |                                         |          |        |
 
+[SPL](SPL%20services.md "wikilink") uses id3 for setting up the security
+engine IRQ.
+
 [PM](Process%20Manager%20services.md "wikilink") checks id1 and if
 non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 
