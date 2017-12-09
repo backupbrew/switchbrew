@@ -491,7 +491,9 @@ This is a PFS0.
 See [[ExeFS|here]] for mounted-FS ExeFS contents.
 
 =Game-updates=
-The section-data for ncatype1 RomFS section(section1) uses section-crypto-type 0x4. Game-updates also contain multiple ncatype6 content, which contain "section0_pfs0/fragment".
+The section-data for ncatype1 RomFS section(section1) uses section-crypto-type 0x4.
+
+Game-updates also contain multiple ncatype6 content, which contain "section0_pfs0/fragment". Some of these are just NCAs, unknown for the rest(presumably NCAs with additional crypto?). The first ncatype6 content fragment file has a NDV0 header, with the NCA starting at offset 0x44.
 
 =PFS0=
 {| class="wikitable" border="1"
