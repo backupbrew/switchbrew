@@ -1,50 +1,471 @@
-= acc:u1 =
+= acc:su =
+This is "nn::account::IAccountServiceForAdministrator".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name ||
+|-
+| 0 || GetUserCount ||
+|-
+| 1 || GetUserExistence ||
+|-
+| 2 || ListAllUsers ||
+|-
+| 3 || ListOpenUsers ||
+|-
+| 4 || GetLastOpenedUser ||
+|-
+| 5 || GetProfile || Returns an [[#IProfile]].
+|-
+| 6 || GetProfileDigest ||
+|-
+| 50 || IsUserRegistrationRequestPermitted ||
+|-
+| 51 || TrySelectUserWithoutInteraction ||
+|-
+| 100 || GetUserRegistrationNotifier || Returns an [[#INotifier]].
+|-
+| 101 || GetUserStateChangeNotifier || Returns an [[#INotifier]].
+|-
+| 102 || GetBaasAccountManagerForSystemService || Returns an [[#IManagerForSystemService]].
+|-
+| 103 || GetBaasUserAvailabilityChangeNotifier || Returns an [[#INotifier]].
+|-
+| 104 || GetProfileUpdateNotifier || Returns an [[#INotifier]].
+|-
+| 110 || StoreSaveDataThumbnail ||
+|-
+| 111 || ClearSaveDataThumbnail ||
+|-
+| 112 || LoadSaveDataThumbnail ||
+|-
+| 190 || GetUserLastOpenedApplication ||
+|-
+| 200 || BeginUserRegistration ||
+|-
+| 201 || CompleteUserRegistration ||
+|-
+| 202 || CancelUserRegistration ||
+|-
+| 203 || DeleteUser ||
+|-
+| 204 || SetUserPosition ||
+|-
+| 205 || GetProfileEditor || Returns an [[#IProfileEditor]].
+|-
+| 206 || CompleteUserRegistrationForcibly ||
+|-
+| 210 || CreateFloatingRegistrationRequest || Returns an [[#IFloatingRegistrationRequest]].
+|-
+| 230 || AuthenticateServiceAsync || Returns an [[#IAsyncContext]].
+|-
+| 250 || GetBaasAccountAdministrator || Returns an [[#IAdministrator]].
+|-
+| 290 || ProxyProcedureForGuestLoginWithNintendoAccount || Returns an [[#IOAuthProcedureForExternalNsa]].
+|-
+| 291 || ProxyProcedureForFloatingRegistrationWithNintendoAccount || Returns an [[#IOAuthProcedureForExternalNsa]].
+|-
+| 299 || SuspendBackgroundDaemon || Returns an [[#ISessionObject]].
+|-
+| 997 || DebugInvalidateTokenCacheForUser ||
+|-
+| 998 || DebugSetUserStateClose ||
+|-
+| 999 || DebugSetUserStateOpen ||
+|}
+
+== IManagerForSystemService ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || CheckAvailability ||
+|-
+| 1 || GetAccountId ||
+|-
+| 2 || EnsureIdTokenCacheAsync || Returns an [[#IAsyncContext]].
+|-
+| 3 || LoadIdTokenCache ||
+|-
+| 100 || SetSystemProgramIdentification ||
+|-
+| 120 || GetNintendoAccountId ||
+|-
+| 130 || GetNintendoAccountUserResourceCache ||
+|-
+| 131 || RefreshNintendoAccountUserResourceCacheAsync || Returns an [[#IAsyncContext]].
+|-
+| 132 || RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed || Returns an [[#IAsyncContext]].
+|-
+| 150 || CreateAuthorizationRequest || Returns an [[#IAuthorizationRequest]].
+|}
+
+== IFloatingRegistrationRequest ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetSessionId ||
+|-
+| 12 || GetAccountId ||
+|-
+| 13 || GetLinkedNintendoAccountId ||
+|-
+| 14 || GetNickname ||
+|-
+| 15 || GetProfileImage ||
+|-
+| 21 || LoadIdTokenCache ||
+|-
+| 100 || RegisterAsync || Returns an [[#IAsyncContext]].
+|-
+| 101 || RegisterWithUidAsync || Returns an [[#IAsyncContext]].
+|-
+| 110 || SetSystemProgramIdentification ||
+|-
+| 111 || EnsureIdTokenCacheAsync || Returns an [[#IAsyncContext]].
+|}
+
+== IAdministrator ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || CheckAvailability ||
+|-
+| 1 || GetAccountId ||
+|-
+| 2 || EnsureIdTokenCacheAsync || Returns an [[#IAsyncContext]].
+|-
+| 3 || LoadIdTokenCache ||
+|-
+| 100 || SetSystemProgramIdentification ||
+|-
+| 120 || GetNintendoAccountId ||
+|-
+| 130 || GetNintendoAccountUserResourceCache ||
+|-
+| 131 || RefreshNintendoAccountUserResourceCacheAsync || Returns an [[#IAsyncContext]].
+|-
+| 132 || RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed || Returns an [[#IAsyncContext]].
+|-
+| 150 || CreateAuthorizationRequest || Returns an [[#IAuthorizationRequest]].
+|-
+| 200 || IsRegistered ||
+|-
+| 201 || RegisterAsync || Returns an [[#IAsyncContext]].
+|-
+| 202 || UnregisterAsync || Returns an [[#IAsyncContext]].
+|-
+| 203 || DeleteRegistrationInfoLocally ||
+|-
+| 220 || SynchronizeProfileAsync || Returns an [[#IAsyncContext]].
+|-
+| 221 || UploadProfileAsync || Returns an [[#IAsyncContext]].
+|-
+| 222 || SynchronizeProfileAsyncIfSecondsElapsed || Returns an [[#IAsyncContext]].
+|-
+| 250 || IsLinkedWithNintendoAccount ||
+|-
+| 251 || CreateProcedureToLinkWithNintendoAccount || Returns an [[#IOAuthProcedureForNintendoAccountLinkage]].
+|-
+| 252 || ResumeProcedureToLinkWithNintendoAccount || Returns an [[#IOAuthProcedureForNintendoAccountLinkage]].
+|-
+| 255 || CreateProcedureToUpdateLinkageStateOfNintendoAccount || Returns an [[#IOAuthProcedure]].
+|-
+| 256 || ResumeProcedureToUpdateLinkageStateOfNintendoAccount || Returns an [[#IOAuthProcedure]].
+|-
+| 260 || CreateProcedureToLinkNnidWithNintendoAccount || Returns an [[#IOAuthProcedure]].
+|-
+| 261 || ResumeProcedureToLinkNnidWithNintendoAccount || Returns an [[#IOAuthProcedure]].
+|-
+| 280 || ProxyProcedureToAcquireApplicationAuthorizationForNintendoAccount || Returns an [[#IOAuthProcedure]].
+|-
+| 997 || DebugUnlinkNintendoAccountAsync || Returns an [[#IAsyncContext]].
+|-
+| 998 || DebugSetAvailabilityErrorDetail ||
+|}
+
+== IAuthorizationRequest ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetSessionId ||
+|-
+| 10 || InvokeWithoutInteractionAsync || Returns an [[#IAsyncContext]].
+|-
+| 19 || IsAuthorized ||
+|-
+| 20 || GetAuthorizationCode ||
+|-
+| 21 || GetIdToken ||
+|-
+| 22 || GetState ||
+|}
+
+== IOAuthProcedure ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || PrepareAsync || Returns an [[#IAsyncContext]].
+|-
+| 1 || GetRequest ||
+|-
+| 2 || ApplyResponse ||
+|-
+| 3 || ApplyResponseAsync || Returns an [[#IAsyncContext]].
+|-
+| 10 || Suspend ||
+|}
+
+== IOAuthProcedureForExternalNsa ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || PrepareAsync || Returns an [[#IAsyncContext]].
+|-
+| 1 || GetRequest ||
+|-
+| 2 || ApplyResponse ||
+|-
+| 3 || ApplyResponseAsync || Returns an [[#IAsyncContext]].
+|-
+| 10 || Suspend ||
+|-
+| 100 || GetAccountId ||
+|-
+| 101 || GetLinkedNintendoAccountId ||
+|-
+| 102 || GetNickname ||
+|-
+| 103 || GetProfileImage ||
+|}
+
+== IOAuthProcedureForNintendoAccountLinkage ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || PrepareAsync || Returns an [[#IAsyncContext]].
+|-
+| 1 || GetRequest ||
+|-
+| 2 || ApplyResponse ||
+|-
+| 3 || ApplyResponseAsync || Returns an [[#IAsyncContext]].
+|-
+| 10 || Suspend ||
+|-
+| 100 || GetRequestWithTheme ||
+|-
+| 101 || IsNetworkServiceAccountReplaced ||
+|-
+| 199 || GetUrlForIntroductionOfExtraMembership ||
+|}
+
+== INotifier ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || GetNumActiveUsers
-|-
-| 1 || DoesUserExist
-|-
-| 2 || GetOpenUserIDs
-|-
-| 3 || get_unk_key
-|-
-| 4 || [[#GetActiveUser]]
-|-
-| 5 || RegisterInterface_Profile
-|-
-| 50 || GetSelectedPlayer?
-|-
-| 51 || GetSelectedPlayer2?
-|-
-| 100 || RegisterInterface_Notifier
-|-
-| 101 || RegisterInterface2_Notifier
-|-
-| 102 || RegisterInterface_Baas
-|-
-| 103 || RegisterInterface3_Notifier
-|-
-| 104 || RegisterInterface4_Notifier
-|-
-| 110 ||
-|-
-| 111 ||
-|-
-| 112 ||
-|-
-| 190 ||
-|-
-| 998 ||
-|-
-| 999 ||
+| 0 || GetSystemEvent
 |}
 
-== GetActiveUser ==
-Returns the 0x10-byte userID.
+== IProfile ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Get
+|-
+| 1 || GetBase
+|-
+| 10 || GetImageSize
+|-
+| 11 || LoadImage
+|}
 
-Returns 0 with output=all-zero if an user account was never selected.
+== IProfileEditor ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Get
+|-
+| 1 || GetBase
+|-
+| 10 || GetImageSize
+|-
+| 11 || LoadImage
+|-
+| 100 || Store
+|-
+| 101 || StoreWithImage
+|}
 
-[[Category:Services]]
+== IAsyncContext ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetSystemEvent
+|-
+| 1 || Cancel
+|-
+| 2 || HasDone
+|-
+| 3 || GetResult
+|}
+
+== ISessionObject ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 999 || Dummy
+|}
+
+= acc:u0 =
+This is "nn::account::IAccountServiceForApplication".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetUserCount ||
+|-
+| 1 || GetUserExistence ||
+|-
+| 2 || ListAllUsers ||
+|-
+| 3 || ListOpenUsers ||
+|-
+| 4 || GetLastOpenedUser ||
+|-
+| 5 || GetProfile || Returns an [[#IProfile]].
+|-
+| 6 || GetProfileDigest ||
+|-
+| 50 || IsUserRegistrationRequestPermitted ||
+|-
+| 51 || TrySelectUserWithoutInteraction ||
+|-
+| 100 || InitializeApplicationInfo ||
+|-
+| 101 || GetBaasAccountManagerForApplication || Returns an [[#IManagerForApplication]].
+|-
+| 102 || AuthenticateApplicationAsync || Returns an [[#IAsyncContext]].
+|-
+| 110 || StoreSaveDataThumbnail ||
+|-
+| 111 || ClearSaveDataThumbnail ||
+|-
+| 120 || CreateGuestLoginRequest || Returns an [[#IGuestLoginRequest]].
+|}
+
+== IGuestLoginRequest ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetSessionId
+|-
+| 12 || GetAccountId
+|-
+| 13 || GetLinkedNintendoAccountId
+|-
+| 14 || GetNickname
+|-
+| 15 || GetProfileImage
+|-
+| 21 || LoadIdTokenCache
+|}
+
+== IManagerForApplication ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || CheckAvailability ||
+|-
+| 1 || GetAccountId ||
+|-
+| 2 || EnsureIdTokenCacheAsync || Returns an [[#IAsyncContext]].
+|-
+| 3 || LoadIdTokenCache ||
+|-
+| 130 || GetNintendoAccountUserResourceCacheForApplication ||
+|-
+| 150 || CreateAuthorizationRequest || Returns an [[#IAuthorizationRequest]].
+|}
+
+= acc:u1 =
+This is "nn::account::IAccountServiceForSystemService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetUserCount ||
+|-
+| 1 || GetUserExistence ||
+|-
+| 2 || ListAllUsers ||
+|-
+| 3 || ListOpenUsers ||
+|-
+| 4 || GetLastOpenedUser ||
+|-
+| 5 || GetProfile || Returns an [[#IProfile]].
+|-
+| 6 || GetProfileDigest ||
+|-
+| 50 || IsUserRegistrationRequestPermitted ||
+|-
+| 51 || TrySelectUserWithoutInteraction ||
+|-
+| 100 || GetUserRegistrationNotifier || Returns an [[#INotifier]].
+|-
+| 101 || GetUserStateChangeNotifier || Returns an [[#INotifier]].
+|-
+| 102 || GetBaasAccountManagerForSystemService || Returns an [[#IManagerForSystemService]].
+|-
+| 103 || GetBaasUserAvailabilityChangeNotifier || Returns an [[#INotifier]].
+|-
+| 104 || GetProfileUpdateNotifier || Returns an [[#INotifier]].
+|-
+| 110 || StoreSaveDataThumbnail ||
+|-
+| 111 || ClearSaveDataThumbnail ||
+|-
+| 112 || LoadSaveDataThumbnail ||
+|-
+| 190 || GetUserLastOpenedApplication ||
+|-
+| 997 || DebugInvalidateTokenCacheForUser ||
+|-
+| 998 || DebugSetUserStateClose ||
+|-
+| 999 || DebugSetUserStateOpen ||
+|}
+
+= acc:aa =
+This is "nn::account::IBaasAccessTokenAccessor".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || EnsureCacheAsync || Returns an [[#IAsyncContext]].
+|-
+| 1 || LoadCache ||
+|-
+| 2 || GetDeviceAccountId ||
+|-
+| 50 || RegisterNotificationTokenAsync || Returns an [[#IAsyncContext]].
+|-
+| 51 || UnregisterNotificationTokenAsync || Returns an [[#IAsyncContext]].
+|}
