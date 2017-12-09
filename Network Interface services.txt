@@ -1,82 +1,177 @@
-= nifm:s =
-== StaticService ==
+= nifm:a =
+This is "nn::nifm::detail::IStaticService".
+
+== IStaticService ==
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
+|- 
+| 4 || CreateGeneralService ([3.0.0+] CreateGeneralServiceOld) || Returns an [[#IGeneralService]].
 |-
-| 4 || RegisterInterface_GeneralService
+| 5 || [3.0.0+] CreateGeneralService || Returns an [[#IGeneralService]].
 |-
 |}
 
-== GeneralService ==
+=== IGeneralService ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 1 || GetClientId ||
+|-
+| 2 || CreateScanRequest || Returns an [[#IScanRequest]].
+|-
+| 4 || CreateRequest || Returns an [[#IRequest]].
+|-
+| 5 || GetCurrentNetworkProfile ||
+|-
+| 6 || EnumerateNetworkInterfaces ||
+|-
+| 7 || EnumerateNetworkProfiles ||
+|-
+| 8 || GetNetworkProfile ||
+|-
+| 9 || SetNetworkProfile ||
+|-
+| 10 || RemoveNetworkProfile ||
+|-
+| 11 || GetScanData ||
+|-
+| 12 || GetCurrentIpAddress ||
+|-
+| 13 || GetCurrentAccessPoint ||
+|-
+| 14 || CreateTemporaryNetworkProfile || Returns an [[#INetworkProfile]].
+|-
+| 15 || GetCurrentIpConfigInfo ||
+|-
+| 16 || SetWirelessCommunicationEnabled ||
+|-
+| 17 || IsWirelessCommunicationEnabled ||
+|-
+| 18 || GetInternetConnectionStatus ||
+|-
+| 19 || SetEthernetCommunicationEnabled ||
+|-
+| 20 || IsEthernetCommunicationEnabled ||
+|-
+| 21 || IsAnyInternetRequestAccepted ||
+|-
+| 22 || IsAnyForegroundRequestAccepted ||
+|-
+| 23 || PutToSleep ||
+|-
+| 24 || WakeUp ||
+|-
+| 25 || GetSsidListVersion ||
+|-
+| 26 || SetExclusiveClient ||
+|-
+| 27 || GetDefaultIpSetting ||
+|-
+| 28 || SetDefaultIpSetting ||
+|-
+| 29 || SetWirelessCommunicationEnabledForTest ||
+|-
+| 30 || SetEthernetCommunicationEnabledForTest ||
+|-
+| 31 || GetTelemetorySystemEventReadableHandle ||
+|-
+| 32 || GetTelemetryInfo ||
+|-
+| 33 || ConfirmSystemAvailability ||
+|-
+|}
+
+==== IScanRequest ====
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
+|- 
+| 0 || Submit
 |-
-| 1 || GetDeviceID?
+| 1 || IsProcessing
 |-
-| 2 || RegisterInterface_ScanRequest
+| 2 || GetResult
 |-
-| 4 || RegisterInterface_Request
-|-
-| 5 || GetCurrentProxySetting
-|-
-| 6 || GetEthernetID?
-|-
-| 7 || GetEthernetSettings?
-|-
-| 8 || 
-|-
-| 9 || 
-|-
-| 10 || 
-|-
-| 11 || GetAPInfo?
-|-
-| 12 || GetIPAddress
-|-
-| 13 || GetSSIDInfo?
-|-
-| 14 || RegisterInterface_NetworkProfile
-|-
-| 15 || GetConnInfo
-|-
-| 16 || SetFlightModeOnOff
-|-
-| 17 || GetFlightModeOnOff
-|-
-| 18 || 
-|-
-| 19 || SetUnkMode
-|-
-| 20 || GetUnkMode
-|-
-| 21 || IsEthIfActive
-|-
-| 22 || GetEthIfState
-|-
-| 23 || EthIfDown
-|-
-| 24 || EthIfUp
-|-
-| 25 || 
-|-
-| 26 || 
-|-
-| 27 || 
-|-
-| 28 || 
-|-
-| 29 || 
-|-
-| 30 || 
-|-
-| 31 || 
-|-
-| 32 || DumpNetworkInfo
-|-
-| 33 ||
+| 3 || GetSystemEventReadableHandle
 |-
 |}
+
+==== IRequest ====
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|- 
+| 0 || GetRequestState
+|-
+| 1 || GetResult
+|-
+| 2 || GetSystemEventReadableHandles
+|-
+| 3 || Cancel
+|-
+| 4 || Submit
+|-
+| 5 || SetRequirement
+|-
+| 6 || SetRequirementPreset
+|-
+| 8 || SetPriority
+|-
+| 9 || SetNetworkProfileId
+|-
+| 10 || SetRejectable
+|-
+| 11 || SetConnectionConfirmationOption
+|-
+| 12 || SetPersistent
+|-
+| 13 || SetInstant
+|-
+| 14 || SetSustainable
+|-
+| 15 || SetRawPriority
+|-
+| 16 || SetGreedy
+|-
+| 17 || SetSharable
+|-
+| 18 || SetRequirementByRevision
+|-
+| 19 || GetRequirement
+|-
+| 20 || GetRevision
+|-
+| 21 || GetAppletInfo
+|-
+| 22 || GetAdditionalInfo
+|-
+| 23 || SetKeptInSleep
+|-
+| 24 || RegisterSocketDescriptor
+|-
+| 25 || UnregisterSocketDescriptor
+|-
+|}
+
+==== INetworkProfile ====
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|- 
+| 0 || Update
+|-
+| 1 || Persist ([3.0.0+] PersistOld)
+|-
+| 2 || [3.0.0+] Persist
+|-
+|}
+
+= nifm:s =
+Same as [[#nifm:a|nifm:a]].
+
+= nifm:u =
+Same as [[#nifm:a|nifm:a]].
 
 [[Category:Services]]
