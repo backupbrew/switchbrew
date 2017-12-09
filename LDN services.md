@@ -2,10 +2,13 @@ LDN handles all local network communication.
 
 # ldn:m
 
-| Cmd | Name               |
-| --- | ------------------ |
-| 0   | GetIMonitorService |
-|     |                    |
+This is
+"nn::ldn::detail::IMonitorServiceCreator".
+
+| Cmd | Name              | Notes                                                        |
+| --- | ----------------- | ------------------------------------------------------------ |
+| 0   | GetMonitorService | Returns an [\#IMonitorService](#IMonitorService "wikilink"). |
+|     |                   |                                                              |
 
 ## IMonitorService
 
@@ -23,49 +26,60 @@ LDN handles all local network communication.
 
 # ldn:s
 
-| Cmd | Name                                |
-| --- | ----------------------------------- |
-| 0   | GetISystemLocalCommunicationService |
-|     |                                     |
+This is
+"nn::ldn::detail::ISystemServiceCreator".
+
+| Cmd | Name                               | Notes                                                                                          |
+| --- | ---------------------------------- | ---------------------------------------------------------------------------------------------- |
+| 0   | GetSystemLocalCommunicationService | Returns an [\#ISystemLocalCommunicationService](#ISystemLocalCommunicationService "wikilink"). |
+|     |                                    |                                                                                                |
+
+## ISystemLocalCommunicationService
+
+| Cmd | Name             |
+| --- | ---------------- |
+| 0   |                  |
+| 1   | GetNetworkInfo   |
+| 2   |                  |
+| 3   |                  |
+| 4   |                  |
+| 5   |                  |
+| 100 | GetUnkWaitEvent  |
+| 101 |                  |
+| 102 |                  |
+| 103 |                  |
+| 200 | OpenAccessPoint  |
+| 201 | CloseAccessPoint |
+| 202 |                  |
+| 203 |                  |
+| 204 | DestroyNetwork   |
+| 205 |                  |
+| 206 |                  |
+| 207 |                  |
+| 208 |                  |
+| 209 |                  |
+| 300 | OpenStation      |
+| 301 | CloseStation     |
+| 302 |                  |
+| 303 |                  |
+| 304 | Disconnect       |
+| 400 | InitializeSystem |
+| 401 | TerminateSystem  |
+|     |                  |
 
 # ldn:u
 
-| Cmd | Name                              |
-| --- | --------------------------------- |
-| 0   | GetIUserLocalCommunicationService |
-|     |                                   |
+This is
+"nn::ldn::detail::IUserServiceCreator".
 
-## ISystemLocalCommunicationService / IUserLocalCommunicationService
+| Cmd | Name                             | Notes                                                                                      |
+| --- | -------------------------------- | ------------------------------------------------------------------------------------------ |
+| 0   | GetUserLocalCommunicationService | Returns an [\#IUserLocalCommunicationService](#IUserLocalCommunicationService "wikilink"). |
+|     |                                  |                                                                                            |
 
-| Cmd | Name            |
-| --- | --------------- |
-| 0   |                 |
-| 1   |                 |
-| 2   |                 |
-| 3   |                 |
-| 4   |                 |
-| 5   |                 |
-| 100 | GetUnkWaitEvent |
-| 101 |                 |
-| 102 | FrameSendRecv0  |
-| 103 | FrameSendRecv1  |
-| 200 |                 |
-| 201 |                 |
-| 202 | FrameSendRecv2  |
-| 203 | FrameSendRecv3  |
-| 204 |                 |
-| 205 |                 |
-| 206 |                 |
-| 207 |                 |
-| 208 |                 |
-| 209 |                 |
-| 300 |                 |
-| 301 |                 |
-| 302 | FrameSendRecv4  |
-| 303 | FrameSendRecv5  |
-| 304 |                 |
-| 400 |                 |
-| 401 |                 |
-|     |                 |
+## IUserLocalCommunicationService
+
+Same as
+[\#ISystemLocalCommunicationService](#ISystemLocalCommunicationService "wikilink").
 
 [Category:Services](Category:Services "wikilink")

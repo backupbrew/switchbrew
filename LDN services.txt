@@ -1,11 +1,13 @@
 LDN handles all local network communication.
 
 = ldn:m =
+This is "nn::ldn::detail::IMonitorServiceCreator".
+
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || GetIMonitorService
+| 0 || GetMonitorService || Returns an [[#IMonitorService]].
 |-
 |}
 
@@ -33,31 +35,24 @@ LDN handles all local network communication.
 |}
 
 = ldn:s =
+This is "nn::ldn::detail::ISystemServiceCreator".
+
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || GetISystemLocalCommunicationService
+| 0 || GetSystemLocalCommunicationService || Returns an [[#ISystemLocalCommunicationService]].
 |-
 |}
 
-= ldn:u =
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || GetIUserLocalCommunicationService
-|-
-|}
-
-== ISystemLocalCommunicationService / IUserLocalCommunicationService ==
+== ISystemLocalCommunicationService ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
 | 0 ||
 |-
-| 1 ||
+| 1 || GetNetworkInfo
 |-
 | 2 ||
 |-
@@ -71,19 +66,19 @@ LDN handles all local network communication.
 |-
 | 101 ||
 |-
-| 102 || FrameSendRecv0
+| 102 ||
 |-
-| 103 || FrameSendRecv1
+| 103 ||
 |-
-| 200 ||
+| 200 || OpenAccessPoint
 |-
-| 201 ||
+| 201 || CloseAccessPoint
 |-
-| 202 || FrameSendRecv2
+| 202 ||
 |-
-| 203 || FrameSendRecv3
+| 203 ||
 |-
-| 204 ||
+| 204 || DestroyNetwork
 |-
 | 205 ||
 |-
@@ -95,20 +90,34 @@ LDN handles all local network communication.
 |-
 | 209 ||
 |-
-| 300 ||
+| 300 || OpenStation
 |-
-| 301 ||
+| 301 || CloseStation
 |-
-| 302 || FrameSendRecv4
+| 302 ||
 |-
-| 303 || FrameSendRecv5
+| 303 ||
 |-
-| 304 ||
+| 304 || Disconnect
 |-
-| 400 ||
+| 400 || InitializeSystem
 |-
-| 401 ||
+| 401 || TerminateSystem
 |-
 |}
+
+= ldn:u =
+This is "nn::ldn::detail::IUserServiceCreator".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetUserLocalCommunicationService || Returns an [[#IUserLocalCommunicationService]].
+|-
+|}
+
+== IUserLocalCommunicationService ==
+Same as [[#ISystemLocalCommunicationService]].
 
 [[Category:Services]]
