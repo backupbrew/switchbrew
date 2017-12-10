@@ -87,7 +87,7 @@ Takes a pid.
 <td><p>am: Application Manager, su: System Update</p></td>
 </tr>
 <tr class="odd">
-<td><p>apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?)</p></td>
+<td><p>apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?), (aoc:apm??)</p></td>
 <td><p><a href="APM services.md" title="wikilink">APM services</a></p></td>
 <td></td>
 </tr>
