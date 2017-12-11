@@ -65,3 +65,22 @@ literal.
 | 0x18   | 4    | .eh\_frame\_hdr start offset                                             |
 | 0x1C   | 4    | .eh\_frame\_hdr end offset                                               |
 | 0x20   | 4    | offset to runtime-generated module object. typically equal to .bss base. |
+
+# Arguments
+
+It's unknown how Loader determines where to store the
+[arguments](Loader%20services#AddProcessToLaunchQueue.md##AddProcessToLaunchQueue "wikilink").
+Official processes use argdata\_addr = {page-aligned \_end}.
+svcQueryMemory is used by official sw to verify that argdata\_addr is
+mapped RW. Afterwards, official sw aligns the argdata\_addr to 4-bytes.
+Structure located at
+argdata\_addr:
+
+| Offset | Size      | Description                                                                                                           |
+| ------ | --------- | --------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4       | This is the total allocated space relative to argdata\_addr, used for calculating the max size of the argv ptr array. |
+| 0x4    | 0x4       | This is the total\_bytesize of the actual argdata string.                                                             |
+| 0x20   | See above | Actual argdata string.                                                                                                |
+
+argv\_ptrarray written by official processes is at
+(actual\_argdata\_string+(actual\_argdata\_size\*2)) + 0x9 & ~0x7.

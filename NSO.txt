@@ -148,3 +148,21 @@ The 2 fields preceding the magic field get copied around with the structure, eve
 | 4
 | offset to runtime-generated module object. typically equal to .bss base.
 |}
+
+=Arguments=
+It's unknown how Loader determines where to store the [[Loader_services#AddProcessToLaunchQueue|arguments]]. Official processes use argdata_addr = {page-aligned _end}. svcQueryMemory is used by official sw to verify that argdata_addr is mapped RW. Afterwards, official sw aligns the argdata_addr to 4-bytes. Structure located at argdata_addr:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0 || 0x4 || This is the total allocated space relative to argdata_addr, used for calculating the max size of the argv ptr array.
+|-
+| 0x4 || 0x4 || This is the total_bytesize of the actual argdata string.
+|-
+| 0x20 || See above || Actual argdata string.
+|}
+
+argv_ptrarray written by official processes is at (actual_argdata_string+(actual_argdata_size*2)) + 0x9 & ~0x7.
