@@ -1,2 +1,4 @@
 [[File:Ax88179.jpg|100px|thumb|right|The AX88179 Chipset]]
-The Nintendo Switch supports Ethernet, but a USB LAN Adapter is required. The chipset of this LAN Adapter must be the [http://www.asix.com.tw/products.php?op=pItemdetail&PItemID=131;71;112 ASIX AX88179] chipset.
+The Nintendo Switch supports Ethernet, but a USB LAN Adapter is required. The chipset of this LAN Adapter must be the [http://www.asix.com.tw/products.php?op=pItemdetail&PItemID=131;71;112 ASIX AX8817X] or the ASIX 88772 chipset.
+
+bsdsockets-sysmodule contains symbols for "...Asix8817X" and "...Asix88772".
