@@ -138,12 +138,13 @@ values are able to be re-written with any HEX color value to make the
 Joy-cons show up as different colors in the UI. The following is a list
 of official HEX colors recovered from SPI dumps.
 
-| Color Name  | Body HEX | Button HEX |
-| ----------- | -------- | ---------- |
-| Gray        | \#828282 | \#0F0F0F   |
-| Neon Red    | \#FF3C28 | \#1E0A0A   |
-| Neon Blue   | \#0AB9E6 | \#001E1E   |
-| Neon Yellow | \#E6FF00 | \#142800   |
-| Neon Green  | \#1EDC00 | \#002800   |
-| Neon Pink   | \#FF3278 | \#28001E   |
-| Mario Red   | \#E10F00 | \#280A0A   |
+| Color Name           | Body HEX             | Button HEX |
+| -------------------- | -------------------- | ---------- |
+| Gray                 | \#828282             | \#0F0F0F   |
+| Neon Red             | \#FF3C28             | \#1E0A0A   |
+| Neon Blue            | \#0AB9E6             | \#001E1E   |
+| Neon Yellow          | \#E6FF00             | \#142800   |
+| Neon Green           | \#1EDC00             | \#002800   |
+| Neon Pink            | \#FF3278             | \#28001E   |
+| Mario Red            | \#E10F00             | \#280A0A   |
+| Black Pro Controller | \#323232 or \#323231 | ?          |
