@@ -5,6 +5,8 @@ dekuNukem has started RE on the protocols used
 
 ## Firmware
 
+*See also: [Joy-Con Firmware](Joy-Con%20Firmware.md "wikilink")*
+
 The firmware of the Joy-Cons seems to be generic across all instances.
 Details such as the handedness of the controller and the color is just
 indicated in a configuration part of the flash. Judging by quick glance
