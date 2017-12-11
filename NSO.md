@@ -68,19 +68,22 @@ literal.
 
 # Arguments
 
-It's unknown how Loader determines where to store the
-[arguments](Loader%20services#AddProcessToLaunchQueue.md##AddProcessToLaunchQueue "wikilink").
-Official processes use argdata\_addr = {page-aligned \_end}.
-svcQueryMemory is used by official sw to verify that argdata\_addr is
-mapped RW. Afterwards, official sw aligns the argdata\_addr to 4-bytes.
+Loader maps memory and writes the
+[arguments](Loader%20services#AddProcessToLaunchQueue.md##AddProcessToLaunchQueue "wikilink")
+to {end of rwdata section specified by last SegmentHeader}. Official
+processes use argdata\_addr = {page-aligned \_end}. svcQueryMemory is
+used by official sw to verify that argdata\_addr is mapped RW, since
+this memory is only mapped when arguments are specified via that
+command. Afterwards, official sw aligns the argdata\_addr to 4-bytes.
 Structure located at
 argdata\_addr:
 
-| Offset | Size      | Description                                                                                                           |
-| ------ | --------- | --------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4       | This is the total allocated space relative to argdata\_addr, used for calculating the max size of the argv ptr array. |
-| 0x4    | 0x4       | This is the total\_bytesize of the actual argdata string.                                                             |
-| 0x20   | See above | Actual argdata string.                                                                                                |
+| Offset | Size      | Description                                                                                                                            |
+| ------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4       | This is the total allocated space relative to argdata\_addr, used for calculating the max size of the argv ptr array. Normally 0x9000? |
+| 0x4    | 0x4       | This is the total\_bytesize of the actual argdata string.                                                                              |
+| 0x8    | 0x18      | Unused by official sw.                                                                                                                 |
+| 0x20   | See above | Actual argdata string.                                                                                                                 |
 
 argv\_ptrarray written by official processes is at
 (actual\_argdata\_string+(actual\_argdata\_size\*2)) + 0x9 & ~0x7.

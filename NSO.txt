@@ -150,7 +150,7 @@ The 2 fields preceding the magic field get copied around with the structure, eve
 |}
 
 =Arguments=
-It's unknown how Loader determines where to store the [[Loader_services#AddProcessToLaunchQueue|arguments]]. Official processes use argdata_addr = {page-aligned _end}. svcQueryMemory is used by official sw to verify that argdata_addr is mapped RW. Afterwards, official sw aligns the argdata_addr to 4-bytes. Structure located at argdata_addr:
+Loader maps memory and writes the [[Loader_services#AddProcessToLaunchQueue|arguments]] to {end of rwdata section specified by last SegmentHeader}. Official processes use argdata_addr = {page-aligned _end}. svcQueryMemory is used by official sw to verify that argdata_addr is mapped RW, since this memory is only mapped when arguments are specified via that command. Afterwards, official sw aligns the argdata_addr to 4-bytes. Structure located at argdata_addr:
 
 {| class="wikitable" border="1"
 |-
@@ -158,9 +158,11 @@ It's unknown how Loader determines where to store the [[Loader_services#AddProce
 ! Size
 ! Description
 |-
-| 0x0 || 0x4 || This is the total allocated space relative to argdata_addr, used for calculating the max size of the argv ptr array.
+| 0x0 || 0x4 || This is the total allocated space relative to argdata_addr, used for calculating the max size of the argv ptr array. Normally 0x9000?
 |-
 | 0x4 || 0x4 || This is the total_bytesize of the actual argdata string.
+|-
+| 0x8 || 0x18 || Unused by official sw.
 |-
 | 0x20 || See above || Actual argdata string.
 |}
