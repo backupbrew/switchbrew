@@ -85,5 +85,7 @@ argdata\_addr:
 | 0x8    | 0x18      | Unused by official sw.                                                                                                                 |
 | 0x20   | See above | Actual argdata string.                                                                                                                 |
 
-argv\_ptrarray written by official processes is at
-(actual\_argdata\_string+(actual\_argdata\_size\*2)) + 0x9 & ~0x7.
+  - The copy of the args used with the argv array is written by official
+    processes to actual\_argdata\_string+actual\_argdata\_size.
+  - argv\_ptrarray written by official processes is at
+    (args\_copy+actual\_argdata\_size) + 0x9 & ~0x7.

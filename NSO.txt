@@ -167,4 +167,5 @@ Loader maps memory and writes the [[Loader_services#AddProcessToLaunchQueue|argu
 | 0x20 || See above || Actual argdata string.
 |}
 
-argv_ptrarray written by official processes is at (actual_argdata_string+(actual_argdata_size*2)) + 0x9 & ~0x7.
+* The copy of the args used with the argv array is written by official processes to actual_argdata_string+actual_argdata_size.
+* argv_ptrarray written by official processes is at (args_copy+actual_argdata_size) + 0x9 & ~0x7.
