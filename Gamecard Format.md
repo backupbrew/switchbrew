@@ -5,7 +5,7 @@ Gamecard+0.
 
 | Offset | Size  | Description                                                                                              |
 | ------ | ----- | -------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x100 | RSA-2048 signature, presumably.                                                                          |
+| 0x0    | 0x100 | RSA-2048 PKCS \#1 signature over the data from 0x100 - 0x200.                                            |
 | 0x100  | 0x4   | Magicnum "HEAD"                                                                                          |
 | 0x104  | 0x4   | Offset of Secure partition (Size of non-secure data?), in Media Units (0x200 bytes for switch gamecarts) |
 | 0x108  | 0x4   | 0xFFFFFFFF                                                                                               |
@@ -32,12 +32,12 @@ This is for the CERT, located at Gamecard + 0x7000 (always?). This
 matches exactly the output from fsp-srv IDeviceOperator cmd 206
 "GetGameCardDeviceCertificate".
 
-| Offset | Size  | Description                       |
-| ------ | ----- | --------------------------------- |
-| 0x0    | 0x100 | RSA-2048 signature, presumably.   |
-| 0x100  | 0x4   | Magicnum "CERT"                   |
-| 0x110  | 0x10  | ?                                 |
-| 0x12A  | 0xD6  | Encrypted data. Some kind of key? |
+| Offset | Size  | Description                                                   |
+| ------ | ----- | ------------------------------------------------------------- |
+| 0x0    | 0x100 | RSA-2048 PKCS \#1 signature over the data from 0x100 - 0x200. |
+| 0x100  | 0x4   | Magicnum "CERT"                                               |
+| 0x110  | 0x10  | ?                                                             |
+| 0x12A  | 0xD6  | Encrypted data. Some kind of key?                             |
 
 The data between the CERT and the start of the HFS0 is all 0xFF.
 

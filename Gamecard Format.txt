@@ -9,7 +9,7 @@ The header is 0x200-bytes, at Gamecard+0.
 |-
 | 0x0
 | 0x100
-| RSA-2048 signature, presumably.
+| RSA-2048 PKCS #1 signature over the data from 0x100 - 0x200.
 |-
 | 0x100
 | 0x4
@@ -101,7 +101,7 @@ This is for the CERT, located at Gamecard + 0x7000 (always?). This matches exact
 |-
 | 0x0
 | 0x100
-| RSA-2048 signature, presumably.
+| RSA-2048 PKCS #1 signature over the data from 0x100 - 0x200.
 |-
 | 0x100
 | 0x4
