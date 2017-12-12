@@ -1,3 +1,5 @@
+The Joy-Con is internally called Ukyo. (Strings in the firmware) The firmware is written in C++. (Also found in strings in the firmware)
+
 = Joy-Con Firmware File =
 
 The length of the firmware must be 524288 bytes.
