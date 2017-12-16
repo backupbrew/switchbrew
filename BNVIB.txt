@@ -1,0 +1,85 @@
+BNVIB is the vibration file for the HD Rumble in the Joy-Con or Pro Controller. 
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x00 || 0x01 || Vibration Type (see [[#Vibration Types|Vibration Types]])
+|-
+| 0x04 || 0x01 || Magic number (0x03)
+|-
+| 0x06 || ? || Vibration Data
+|}
+
+The size of a sample is 4 bytes. The sample rate is in milliseconds.
+
+= Vibration Types =
+
+{| class="wikitable" border="1"
+|-
+!  Value
+! Description
+|-
+| 0x04 || Normal vibration (Vibrate 1 time) (see [[#Normal Vibration|Normal Vibration]])
+|-
+| 0x0C || Loop vibration (see [[#Loop Vibration|Loop Vibration]])
+|-
+| 0x10 || Loop and wait vibration (see [[#Loop and Wait Vibration|Loop and Wait Vibration]])
+|}
+
+== Normal Vibration ==
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x00 || 0x02 || Sample rate (LE)
+|-
+| 0x02 || 0x04 || Vibration size (vibsize) (LE)
+|-
+| 0x06  || vibsize || Samples
+|}
+
+== Loop Vibration ==
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x00 || 0x02 || Sample rate (LE)
+|-
+| 0x02 ||0x04 ||  Loop start (LE)
+|-
+| 0x06 || 0x04 || Loop end (LE)
+|-
+| 0x0A || 0x04 || Vibration size (vibsize) (LE)
+|-
+| 0x0E || vibsize || Samples
+|}
+
+== Loop and Wait Vibration ==
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x00 || 0x02 || Sample rate (LE)
+|-
+| 0x02 || 0x04 || Loop start (LE)
+|-
+| 0x06 || 0x04 || Loop end (LE)
+|-
+| 0x0A || 0x04 || Loop wait (LE)
+|-
+| 0x0E || 0x04 || Vibration size (vibsize) (LE)
+|-
+| 0x13 || vibsize || Samples
+|}
