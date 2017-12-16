@@ -1,4 +1,5 @@
-BNVIB is the vibration file for the HD Rumble in the Joy-Con or Pro
+BNVIB (Binary NX Vibration) is the vibration file for the HD Rumble in
+the Joy-Con or Pro
 Controller.
 
 | Offset | Size | Description                                                         |
