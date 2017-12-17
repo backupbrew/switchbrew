@@ -541,20 +541,20 @@ it will return 0.
 | ----------- | ---------- | --------------------- | ----------------------------------------------------------------------------------------------------------- |
 | Process     | 0          | 0                     | AllowedCpuIdBitmask                                                                                         |
 | Process     | 1          | 0                     | AllowedThreadPrioBitmask                                                                                    |
-| Process     | 2          | 0                     | ReservedMapRegionBaseAddress                                                                                |
-| Process     | 3          | 0                     | ReservedMapRegionSize                                                                                       |
-| Process     | 4          | 0                     | ReservedHeapRegionBaseAddress                                                                               |
-| Process     | 5          | 0                     | ReservedHeapRegionSize                                                                                      |
+| Process     | 2          | 0                     | MapRegionBaseAddr                                                                                           |
+| Process     | 3          | 0                     | MapRegionSize                                                                                               |
+| Process     | 4          | 0                     | HeapRegionBaseAddr                                                                                          |
+| Process     | 5          | 0                     | HeapRegionSize                                                                                              |
 | Process     | 6          | 0                     | TotalMemoryUsage                                                                                            |
 | Process     | 7          | 0                     | TotalHeapUsage                                                                                              |
 | Zero        | 8          | 0                     | IsCurrentProcessBeingDebugged                                                                               |
 | Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink"). |
 | Zero        | 10         | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?               |
 | Zero        | 11         | 0-3                   | RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.                                      |
-| Process     | 12         | 0                     | \[2.0.0+\] AddressSpaceStart                                                                                |
+| Process     | 12         | 0                     | \[2.0.0+\] AddressSpaceBaseAddr                                                                             |
 | Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize                                                                                 |
-| Process     | 14         | 0                     | \[2.0.0+\] NewReservedRegionStartAddr                                                                       |
-| Process     | 15         | 0                     | \[2.0.0+\] NewReservedRegionSize                                                                            |
+| Process     | 14         | 0                     | \[2.0.0+\] NewMapRegionBaseAddr                                                                             |
+| Process     | 15         | 0                     | \[2.0.0+\] NewMapRegionSize                                                                                 |
 | Process     | 18         | 0                     | \[3.0.0+\] Title-id.                                                                                        |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 

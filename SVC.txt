@@ -703,13 +703,13 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 1 || 0 || AllowedThreadPrioBitmask
 |-
-| Process || 2 || 0 || ReservedMapRegionBaseAddress
+| Process || 2 || 0 || MapRegionBaseAddr
 |-
-| Process || 3 || 0 || ReservedMapRegionSize
+| Process || 3 || 0 || MapRegionSize
 |-
-| Process || 4 || 0 || ReservedHeapRegionBaseAddress
+| Process || 4 || 0 || HeapRegionBaseAddr
 |-
-| Process || 5 || 0 || ReservedHeapRegionSize
+| Process || 5 || 0 || HeapRegionSize
 |-
 | Process || 6 || 0 || TotalMemoryUsage
 |-
@@ -723,13 +723,13 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Zero    || 11 || 0-3 || RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.
 |-
-| Process || 12 || 0 || [2.0.0+] AddressSpaceStart
+| Process || 12 || 0 || [2.0.0+] AddressSpaceBaseAddr
 |-
 | Process || 13 || 0 || [2.0.0+] AddressSpaceSize
 |-
-| Process || 14 || 0 || [2.0.0+] NewReservedRegionStartAddr
+| Process || 14 || 0 || [2.0.0+] NewMapRegionBaseAddr
 |-
-| Process || 15 || 0 || [2.0.0+] NewReservedRegionSize
+| Process || 15 || 0 || [2.0.0+] NewMapRegionSize
 |-
 | Process || 18 || 0 || [3.0.0+] Title-id.
 |-
