@@ -214,7 +214,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0xF8 || u64 || TlsPagesListCount
 |-
-| 0x100 || [[#KLinkedListNode]] || TlsPagesList
+| 0x100 || [[#KLinkedList]]<[[#KListEntry]]<[[#TlsPageManager]]>> || TlsPagesList
 |-
 | 0x110 || s32 || DefaultCpuCore
 |-
@@ -303,7 +303,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x108 || u64 || TlsPagesListCount
 |-
-| 0x110 || [[#KLinkedListNode]] || TlsPagesList
+| 0x100 || [[#KLinkedList]]<[[#KListEntry]]<[[#TlsPageManager]]>> || TlsPagesList
 |-
 | 0x120 || s32 || DefaultCpuCore
 |-
