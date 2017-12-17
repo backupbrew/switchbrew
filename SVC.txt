@@ -1622,9 +1622,9 @@ Exception specific:
 |-
 | 1 || DebugEvent_AttachThread
 |-
-| 2 || DebugEvent_ExitThread
+| 2 ||
 |-
-| 3 || DebugEvent_ExitProcess
+| 3 || DebugEvent_Exit
 |-
 | 4 || DebugEvent_Exception
 |}
