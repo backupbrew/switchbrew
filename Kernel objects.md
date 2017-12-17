@@ -98,7 +98,7 @@ Inherits from:
 | 0x570        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")           | SignalledObjectPtr?          |
 | 0x578        | KLinkedListNode                                                          |                              |
 | 0x588        | KLinkedListNode                                                          |                              |
-| 0x598        | KLinkedListNode                                                          |                              |
+| 0x598        | KLinkedListNode                                                          | NodeFor\_\_ThreadList        |
 | 0x5A8        | KLinkedListNode                                                          | NodeFor\_\_ThreadsOnSameCore |
 | 0x5B8        | u64                                                                      |                              |
 | 0x5C0        | u64                                                                      |                              |

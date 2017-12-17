@@ -137,7 +137,7 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x588 || KLinkedListNode ||
 |-
-| 0x598 || KLinkedListNode ||
+| 0x598 || KLinkedListNode || NodeFor__ThreadList
 |-
 | 0x5A8 || KLinkedListNode || NodeFor__ThreadsOnSameCore
 |-
