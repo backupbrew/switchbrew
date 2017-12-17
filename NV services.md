@@ -628,10 +628,10 @@ Nintendo's custom implementation of address space remapping.
 ` struct remap_entry {`  
 `   __in u16 flags;        // 0 or 4`  
 `   __in u16 kind;           `  
-`   __in u32 unk0;`  
-`   __in u32 unk1;`  
-`   __in u32 unk2;`  
-`   __in u32 unk3;`  
+`   __in u32 nvmap_handle;`  
+`   __in u32 padding;`  
+`   __in u32 offset;       // (alloc_space_offset >> 0x10)`  
+`   __in u32 pages;        // alloc_space_pages`  
 ` };`  
   
 `struct {`  
@@ -666,10 +666,10 @@ gpu.
 
 | Value      | Direction | Size | Description                                                                                               | Notes |
 | ---------- | --------- | ---- | --------------------------------------------------------------------------------------------------------- | ----- |
-| 0x80044701 | Out       | 4    | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE                                                                  |       |
-| 0x80284702 | Out       | 40   | NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO                                                                       |       |
-| 0x402C4703 | In        | 44   | NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE                                                                        |       |
-| 0xC0344704 | Inout     | 52   | NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE                                                                      |       |
+| 0x80044701 | Out       | 4    | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE](#NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE "wikilink")              |       |
+| 0x80284702 | Out       | 40   | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO](#NVGPU_GPU_IOCTL_ZCULL_GET_INFO "wikilink")                       |       |
+| 0x402C4703 | In        | 44   | [\#NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE](#NVGPU_GPU_IOCTL_ZBC_SET_TABLE "wikilink")                         |       |
+| 0xC0344704 | Inout     | 52   | [\#NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE](#NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE "wikilink")                     |       |
 | 0xC0B04705 | Inout     | 176  | [\#NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS](#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS "wikilink")              |       |
 | 0xC0184706 | Inout     | 24   | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS                                                                        |       |
 | 0x40084707 | In        | 8    | [\#NVGPU\_GPU\_IOCTL\_FLUSH\_L2](#NVGPU_GPU_IOCTL_FLUSH_L2 "wikilink")                                    |       |
@@ -685,6 +685,57 @@ gpu.
 | 0xC008471B | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_ERROR\_CHANNEL\_USER\_DATA                                                        |       |
 | 0xC010471C | Inout     | 16   | NVGPU\_GPU\_IOCTL\_GET\_GPU\_TIME                                                                         |       |
 | 0xC108471D | Inout     | 264  | NVGPU\_GPU\_IOCTL\_GET\_CPU\_TIME\_CORRELATION\_INFO                                                      |       |
+
+### NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE
+
+Returns the GPU's ZCULL context size. Identical to Linux driver.
+
+`struct {`  
+`   __out u32 size;`  
+` };`
+
+### NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE
+
+Returns GPU's ZCULL information. Identical to Linux driver.
+
+`struct {`  
+`   __out u32 width_align_pixels;`  
+`   __out u32 height_align_pixels;`  
+`   __out u32 pixel_squares_by_aliquots;`  
+`   __out u32 aliquot_total;`  
+`   __out u32 region_byte_multiplier;`  
+`   __out u32 region_header_size;`  
+`   __out u32 subregion_header_size;`  
+`   __out u32 subregion_width_align_pixels;`  
+`   __out u32 subregion_height_align_pixels;`  
+`   __out u32 subregion_count;`  
+` };`
+
+### NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE
+
+Sets the active ZBC table. Identical to Linux driver.
+
+`struct {`  
+`   __in u32 color_ds[4];`  
+`   __in u32 color_l2[4];`  
+`   __in u32 depth;`  
+`   __in u32 format;`  
+`   __in u32 type;         // 1=color, 2=depth`  
+` };`
+
+### NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE
+
+Queries the active ZBC table. Identical to Linux driver.
+
+`struct {`  
+`   __out u32 color_ds[4];`  
+`   __out u32 color_l2[4];`  
+`   __out u32 depth;`  
+`   __out u32 ref_cnt;`  
+`   __out u32 format;`  
+`   __out u32 type;`  
+`   __inout u32 index_size;`  
+` };`
 
 ### NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS
 
@@ -786,7 +837,7 @@ interface.
 | 0xC0044807 | 4        | NVGPU\_IOCTL\_CHANNEL\_CYCLE\_STATS                                                                         |                                      |
 | 0xC0??4808 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO "wikilink")                    |                                      |
 | 0xC0104809 | 16       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX](#NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX "wikilink")                   |                                      |
-| 0xC010480B | 16       | NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND                                                                          |                                      |
+| 0xC010480B | 16       | [\#NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND](#NVGPU_IOCTL_CHANNEL_ZCULL_BIND "wikilink")                          |                                      |
 | 0xC018480C | 24       | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER](#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER "wikilink")         |                                      |
 | 0x4004480D | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY](#NVGPU_IOCTL_CHANNEL_SET_PRIORITY "wikilink")                      |                                      |
 | 0x0000480E | 0        | [\#NVGPU\_IOCTL\_CHANNEL\_ENABLE](#NVGPU_IOCTL_CHANNEL_ENABLE "wikilink")                                   |                                      |
@@ -833,8 +884,8 @@ pointer.
 ` };`  
 ` `  
 ` struct gpfifo_entry {`  
-`   u32 entry0;`  
-`   u32 entry1;`  
+`   u32 entry0;                           // gpu_va_lo`  
+`   u32 entry1;                           // gpu_va_hi | (unk_0x02 << 0x08) | (size << 0x0A) | (unk_0x01 << 0x1F)`  
 ` };`  
 ` `  
 ` struct {`  
@@ -854,6 +905,17 @@ ID.
 `   __in  u32 class_num;    // 0x902D=2d, 0xB197=3d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo`  
 `   __in  u32 flags;`  
 `   __out u64 obj_id;       // (ignored) used for FREE_OBJ_CTX ioctl, which is not supported`  
+` };`
+
+### NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND
+
+Binds a ZCULL context to the channel. Identical to Linux
+driver.
+
+`struct {`  
+`   __in u64 gpu_va;`  
+`   __in u32 mode;         // 0=global, 1=no_ctxsw, 2=separate_buffer, 3=part_of_regular_buf`  
+`   __in u32 padding;`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER

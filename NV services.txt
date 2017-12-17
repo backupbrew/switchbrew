@@ -655,10 +655,10 @@ Nintendo's custom implementation of address space remapping.
   struct remap_entry {
     __in u16 flags;        // 0 or 4
     __in u16 kind;           
-    __in u32 unk0;
-    __in u32 unk1;
-    __in u32 unk2;
-    __in u32 unk3;
+    __in u32 nvmap_handle;
+    __in u32 padding;
+    __in u32 offset;       // (alloc_space_offset >> 0x10)
+    __in u32 pages;        // alloc_space_pages
   };
  
  struct {
@@ -703,13 +703,13 @@ This device is for global (context independent) operations on the gpu.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0x80044701 || Out || 4 || NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE ||
+| 0x80044701 || Out || 4 || [[#NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE]] ||
 |-
-| 0x80284702 || Out || 40 || NVGPU_GPU_IOCTL_ZCULL_GET_INFO ||
+| 0x80284702 || Out || 40 || [[#NVGPU_GPU_IOCTL_ZCULL_GET_INFO]] ||
 |-
-| 0x402C4703 || In || 44 || NVGPU_GPU_IOCTL_ZBC_SET_TABLE ||
+| 0x402C4703 || In || 44 || [[#NVGPU_GPU_IOCTL_ZBC_SET_TABLE]] ||
 |-
-| 0xC0344704 || Inout || 52 || NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE ||
+| 0xC0344704 || Inout || 52 || [[#NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE]] ||
 |-
 | 0xC0B04705 || Inout || 176 || [[#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS]] ||
 |-
@@ -741,6 +741,53 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0xC108471D || Inout || 264 || NVGPU_GPU_IOCTL_GET_CPU_TIME_CORRELATION_INFO ||
 |}
+
+=== NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE ===
+Returns the GPU's ZCULL context size. Identical to Linux driver.
+
+ struct {
+    __out u32 size;
+  };
+
+=== NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE ===
+Returns GPU's ZCULL information. Identical to Linux driver.
+
+ struct {
+    __out u32 width_align_pixels;
+    __out u32 height_align_pixels;
+    __out u32 pixel_squares_by_aliquots;
+    __out u32 aliquot_total;
+    __out u32 region_byte_multiplier;
+    __out u32 region_header_size;
+    __out u32 subregion_header_size;
+    __out u32 subregion_width_align_pixels;
+    __out u32 subregion_height_align_pixels;
+    __out u32 subregion_count;
+  };
+
+=== NVGPU_GPU_IOCTL_ZBC_SET_TABLE ===
+Sets the active ZBC table. Identical to Linux driver.
+
+ struct {
+    __in u32 color_ds[4];
+    __in u32 color_l2[4];
+    __in u32 depth;
+    __in u32 format;
+    __in u32 type;         // 1=color, 2=depth
+  };
+
+=== NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE ===
+Queries the active ZBC table. Identical to Linux driver.
+
+ struct {
+    __out u32 color_ds[4];
+    __out u32 color_l2[4];
+    __out u32 depth;
+    __out u32 ref_cnt;
+    __out u32 format;
+    __out u32 type;
+    __inout u32 index_size;
+  };
 
 === NVGPU_GPU_IOCTL_GET_CHARACTERISTICS ===
 Returns the GPU characteristics. Modified to return inline data instead of using a pointer.
@@ -854,7 +901,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC0104809 || 16 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX]] ||
 |-
-| 0xC010480B || 16 || NVGPU_IOCTL_CHANNEL_ZCULL_BIND ||
+| 0xC010480B || 16 || [[#NVGPU_IOCTL_CHANNEL_ZCULL_BIND]] ||
 |-
 | 0xC018480C || 24 || [[#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER]] ||
 |-
@@ -912,8 +959,8 @@ Submits a gpfifo object. Modified to take inline entry objects instead of a poin
   };
   
   struct gpfifo_entry {
-    u32 entry0;
-    u32 entry1;
+    u32 entry0;                           // gpu_va_lo
+    u32 entry1;                           // gpu_va_hi | (unk_0x02 << 0x08) | (size << 0x0A) | (unk_0x01 << 0x1F)
   };
   
   struct {
@@ -931,6 +978,15 @@ Allocates a graphics context object. Modified to ignore object's ID.
     __in  u32 class_num;    // 0x902D=2d, 0xB197=3d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo
     __in  u32 flags;
     __out u64 obj_id;       // (ignored) used for FREE_OBJ_CTX ioctl, which is not supported
+  };
+
+=== NVGPU_IOCTL_CHANNEL_ZCULL_BIND ===
+Binds a ZCULL context to the channel. Identical to Linux driver.
+
+ struct {
+    __in u64 gpu_va;
+    __in u32 mode;         // 0=global, 1=no_ctxsw, 2=separate_buffer, 3=part_of_regular_buf
+    __in u32 padding;
   };
 
 === NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER ===
