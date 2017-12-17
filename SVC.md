@@ -1212,6 +1212,13 @@ AttachProcess specific:
 | 0x20   | char\[12\] | ProcessName |
 | 0x2C   | u32        | MmuFlags    |
 
+Exit
+specific:
+
+| Offset | Length | Description                                                 |
+| ------ | ------ | ----------------------------------------------------------- |
+| 0x10   | u64    | Type (0=PausedThread, 1=RunningThread, 2=TerminatedProcess) |
+
 AttachThread specific:
 
 | Offset | Length | Description |
