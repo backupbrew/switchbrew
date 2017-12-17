@@ -262,7 +262,7 @@ Size: 0x20
 | 0      | void\*                                | TlsPagePtr  |
 | 8      | [\#KProcess\*](#KProcess* "wikilink") | ProcessPtr  |
 | 0x10   | u32                                   | UsageCount  |
-| 0x14   | u8\[8\]                               | IsSlotBusy  |
+| 0x14   | u8\[8\]                               | IsSlotFree  |
 
 ## KProcessCapabilities
 
