@@ -77,6 +77,18 @@ Size: 0x10
 | 8 || [[#KLinkedListNode]]* || Next
 |}
 
+= KListEntry =
+Size: 0x18
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || [[#KLinkedListNode]] || NodeFor__List
+|-
+| 0x10 || T* || Ptr
+|}
+
 = KThread =
 [1.0.0] Size: 0x620
 

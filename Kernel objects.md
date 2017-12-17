@@ -59,6 +59,16 @@ Size:
 | 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\* | Prev        |
 | 8      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\* | Next        |
 
+# KListEntry
+
+Size:
+0x18
+
+| Offset | Type                                             | Description     |
+| ------ | ------------------------------------------------ | --------------- |
+| 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink") | NodeFor\_\_List |
+| 0x10   | T\*                                              | Ptr             |
+
 # KThread
 
 \[1.0.0\] Size: 0x620
