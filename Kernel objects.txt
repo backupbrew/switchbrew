@@ -633,9 +633,9 @@ Size: 0xB0
 |-
 | 0x38 || u64 || MapRegionEndAddr
 |-
-| 0x40 || u64 || NewUnknownRegionBaseAddr
+| 0x40 || u64 || NewMapRegionBaseAddr
 |-
-| 0x48 || u64 || NewUnknownRegionEndAddr
+| 0x48 || u64 || NewMapRegionEndAddr
 |-
 | 0x50 || u64 || TlsIoRegionBaseAddr
 |-
