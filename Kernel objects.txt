@@ -637,9 +637,9 @@ Size: 0xB0
 |-
 | 0x48 || u64 || NewUnknownRegionEndAddr
 |-
-| 0x50 || u64 || IoRegionBaseAddr
+| 0x50 || u64 || TlsIoRegionBaseAddr
 |-
-| 0x58 || u64 || IoRegionEndAddr
+| 0x58 || u64 || TlsIoRegionEndAddr
 |-
 | 0x60 || u64 || HeapMaxAllocation
 |-

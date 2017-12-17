@@ -409,8 +409,8 @@ Size: 0xB0
 | 0x38         | u64                                                      | MapRegionEndAddr                    |
 | 0x40         | u64                                                      | NewUnknownRegionBaseAddr            |
 | 0x48         | u64                                                      | NewUnknownRegionEndAddr             |
-| 0x50         | u64                                                      | IoRegionBaseAddr                    |
-| 0x58         | u64                                                      | IoRegionEndAddr                     |
+| 0x50         | u64                                                      | TlsIoRegionBaseAddr                 |
+| 0x58         | u64                                                      | TlsIoRegionEndAddr                  |
 | 0x60         | u64                                                      | HeapMaxAllocation                   |
 | 0x68         | [\#KMutex](#KMutex "wikilink")                           | Mutex                               |
 | 0x70         | [\#KPageTable](#KPageTable "wikilink")                   | PageTable                           |
