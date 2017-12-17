@@ -71,52 +71,59 @@ Inherits from:
 
 <div style="display: inline-block">
 
-| 1.0.0 Offset | Type                                                                     | Description              |
-| ------------ | ------------------------------------------------------------------------ | ------------------------ |
-| 0            | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")           | Inheritance              |
-| 0x28         | KSchedulerObject0                                                        | Inheritance              |
-| 0x48         | KSchedulerObject1                                                        | Inheritance              |
-| 0x58         | KSchedulerObject2                                                        | Inheritance              |
-| 0x70         | KThreadContext                                                           | Context                  |
-| 0x2F0        | u64                                                                      | CoreMask                 |
-| 0x2F8        | u64                                                                      |                          |
-| 0x300        | u64                                                                      | ThreadId                 |
-| 0x308        | u64                                                                      |                          |
-| 0x310        | u64                                                                      |                          |
-| 0x318        | u64                                                                      |                          |
-| 0x320        | u64                                                                      |                          |
-| 0x328        | u64                                                                      | Entrypoint               |
-| 0x330        | u64                                                                      |                          |
-| 0x338        | [\#KProcess\*](#KProcess* "wikilink")                                    | ProcessPtr               |
-| 0x340        | void\*                                                                   | KernelThreadStack        |
-| 0x348        | u64                                                                      |                          |
-| 0x350        | void\*                                                                   | TlsKernelPtr             |
-| 0x358        | void\*                                                                   | TlsPhysicalPtr           |
-| 0x360        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")\*\[0x40\] | SyncObjects              |
-| 0x560        | u64                                                                      |                          |
-| 0x568        | u64                                                                      |                          |
-| 0x570        | u64                                                                      |                          |
-| 0x578        | KLinkedListNode                                                          |                          |
-| 0x588        | KLinkedListNode                                                          |                          |
-| 0x598        | KLinkedListNode                                                          |                          |
-| 0x5A8        | KLinkedListNode                                                          |                          |
-| 0x5B8        | u64                                                                      |                          |
-| 0x5C0        | u64                                                                      |                          |
-| 0x5C8        | u64                                                                      |                          |
-| 0x5D0        | u64                                                                      |                          |
-| 0x5D8        | u64                                                                      |                          |
-| 0x5E0        | u32                                                                      |                          |
-| 0x5E4        | u32                                                                      | SchedulingFlags\_Default |
-| 0x5E8        | u32                                                                      |                          |
-| 0x5EC        | u32                                                                      |                          |
-| 0x5F0        | u32                                                                      | ActualPriority           |
-| 0x5F4        | u32                                                                      |                          |
-| 0x5F8        | u32                                                                      |                          |
-| 0x5FC        | u32                                                                      |                          |
-| 0x600        | u32                                                                      | WantedPriority           |
-| 0x604        | u32                                                                      | CpuCore                  |
-| 0x608        | u32                                                                      | SchedulingFlags          |
-| ...          | ...                                                                      | ...                      |
+| 1.0.0 Offset | Type                                                                     | Description                  |
+| ------------ | ------------------------------------------------------------------------ | ---------------------------- |
+| 0            | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")           | Inheritance                  |
+| 0x28         | KSchedulerObject0                                                        | Inheritance                  |
+| 0x48         | KSchedulerObject1                                                        | Inheritance                  |
+| 0x58         | KSchedulerObject2                                                        | Inheritance                  |
+| 0x70         | KThreadContext                                                           | Context                      |
+| 0x2F0        | u64                                                                      | CoreMask                     |
+| 0x2F8        | u64                                                                      | CoreMaskOverride             |
+| 0x300        | u64                                                                      | ThreadId                     |
+| 0x308        | u64                                                                      |                              |
+| 0x310        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")\*         | SignalledObjectPtr           |
+| 0x318        | u64                                                                      |                              |
+| 0x320        | u64                                                                      |                              |
+| 0x328        | u64                                                                      | Entrypoint                   |
+| 0x330        | u64                                                                      |                              |
+| 0x338        | [\#KProcess\*](#KProcess* "wikilink")                                    | ProcessPtr                   |
+| 0x340        | void\*                                                                   | KernelThreadStack            |
+| 0x348        | u64                                                                      |                              |
+| 0x350        | void\*                                                                   | TlsKernelPtr                 |
+| 0x358        | void\*                                                                   | TlsPhysicalPtr               |
+| 0x360        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")\*\[0x40\] | SyncObjects                  |
+| 0x560        | u64                                                                      |                              |
+| 0x568        | u64                                                                      |                              |
+| 0x570        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")           | SignalledObjectPtr?          |
+| 0x578        | KLinkedListNode                                                          |                              |
+| 0x588        | KLinkedListNode                                                          |                              |
+| 0x598        | KLinkedListNode                                                          |                              |
+| 0x5A8        | KLinkedListNode                                                          | NodeFor\_\_ThreadsOnSameCore |
+| 0x5B8        | u64                                                                      |                              |
+| 0x5C0        | u64                                                                      |                              |
+| 0x5C8        | u64                                                                      |                              |
+| 0x5D0        | u64                                                                      |                              |
+| 0x5D8        | u64                                                                      |                              |
+| 0x5E0        | u32                                                                      |                              |
+| 0x5E4        | u32                                                                      | SchedulingFlags\_Default     |
+| 0x5E8        | u32                                                                      | WaitSync\_RetVal             |
+| 0x5EC        | u32                                                                      |                              |
+| 0x5F0        | u32                                                                      | ActualPriority               |
+| 0x5F4        | u32                                                                      |                              |
+| 0x5F8        | u32                                                                      |                              |
+| 0x5FC        | u32                                                                      |                              |
+| 0x600        | u32                                                                      | WantedPriority               |
+| 0x604        | u32                                                                      | CpuCore                      |
+| 0x608        | u8                                                                       | State                        |
+| 0x609        | u8                                                                       | IsRunning                    |
+| 0x60A        | u8                                                                       |                              |
+| 0x60B        | u8                                                                       |                              |
+| 0x60C        | u8                                                                       |                              |
+| 0x60D        | u8                                                                       |                              |
+| 0x60E        | u8                                                                       | HasExited                    |
+| 0x60F        | u8                                                                       | HasCpuCoreOverride           |
+| ...          | ...                                                                      | ...                          |
 
 # KProcess
 

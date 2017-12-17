@@ -99,13 +99,13 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x2F0 || u64 || CoreMask
 |-
-| 0x2F8 || u64 ||
+| 0x2F8 || u64 || CoreMaskOverride
 |-
 | 0x300 || u64 || ThreadId
 |-
 | 0x308 || u64 ||
 |-
-| 0x310 || u64 ||
+| 0x310 || [[#KSynchronizationObject]]* || SignalledObjectPtr
 |-
 | 0x318 || u64 ||
 |-
@@ -131,7 +131,7 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x568 || u64 ||
 |-
-| 0x570 || u64 ||
+| 0x570 || [[#KSynchronizationObject]] || SignalledObjectPtr?
 |-
 | 0x578 || KLinkedListNode ||
 |-
@@ -139,7 +139,7 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x598 || KLinkedListNode ||
 |-
-| 0x5A8 || KLinkedListNode ||
+| 0x5A8 || KLinkedListNode || NodeFor__ThreadsOnSameCore
 |-
 | 0x5B8 || u64 ||
 |-
@@ -155,7 +155,7 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x5E4 || u32 || SchedulingFlags_Default
 |-
-| 0x5E8 || u32 ||
+| 0x5E8 || u32 || WaitSync_RetVal
 |-
 | 0x5EC || u32 ||
 |-
@@ -171,11 +171,24 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x604 || u32 || CpuCore
 |-
-| 0x608 || u32 || SchedulingFlags
+| 0x608 || u8 || State
+|-
+| 0x609 || u8 || IsRunning
+|-
+| 0x60A || u8 ||
+|-
+| 0x60B || u8 ||
+|-
+| 0x60C || u8 ||
+|-
+| 0x60D || u8 ||
+|-
+| 0x60E || u8 || HasExited
+|-
+| 0x60F || u8 || HasCpuCoreOverride
 |-
 | ... || ... || ...
 |}
-
 
 = KProcess =
 [1.0.0] Size: 0x5B0
