@@ -1212,13 +1212,6 @@ AttachProcess specific:
 | 0x20   | char\[12\] | ProcessName |
 | 0x2C   | u32        | MmuFlags    |
 
-Exit
-specific:
-
-| Offset | Length | Description                                                 |
-| ------ | ------ | ----------------------------------------------------------- |
-| 0x10   | u64    | Type (0=PausedThread, 1=RunningThread, 2=TerminatedProcess) |
-
 AttachThread specific:
 
 | Offset | Length | Description |
@@ -1227,11 +1220,12 @@ AttachThread specific:
 | 0x18   | u64    | TlsPtr      |
 | 0x20   | u64    | Entrypoint  |
 
-ExitProcess/ExitThread specific:
+Exit
+specific:
 
-| Offset | Length | Description         |
-| ------ | ------ | ------------------- |
-| 0x10   | u32    | ProcessId/ThreadId? |
+| Offset | Length | Description                                                 |
+| ------ | ------ | ----------------------------------------------------------- |
+| 0x10   | u64    | Type (0=PausedThread, 1=RunningThread, 2=TerminatedProcess) |
 
 Exception specific:
 
