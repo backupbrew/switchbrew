@@ -3,7 +3,7 @@ This is "nn::account::IAccountServiceForAdministrator".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name ||
+! Cmd || Name || Notes
 |-
 | 0 || GetUserCount ||
 |-

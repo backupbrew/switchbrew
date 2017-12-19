@@ -3,7 +3,7 @@
 This is
 "nn::account::IAccountServiceForAdministrator".
 
-| Cmd | Name                                                     |                                                                                          |
+| Cmd | Name                                                     | Notes                                                                                    |
 | --- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | 0   | GetUserCount                                             |                                                                                          |
 | 1   | GetUserExistence                                         |                                                                                          |
