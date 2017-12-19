@@ -32,7 +32,7 @@ handle.
 ## RegisterService
 
 Takes a zero-padded service name encoded as an u64 integer, an u8 bool,
-and an u32 at the next word. Returns a handle.
+and an u32 (session count) at the next word. Returns a handle.
 
 ## UnregisterService
 
