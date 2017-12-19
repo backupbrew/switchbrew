@@ -209,7 +209,7 @@ Takes a pid.
 |
 |-
 | psc:c, psc:m
-| PSC services
+| [[PSC services]]
 | 
 |-
 | [3.0.0+] ldr:ro, ro:dmnt

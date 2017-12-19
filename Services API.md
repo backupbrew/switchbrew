@@ -259,7 +259,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>psc:c, psc:m</p></td>
-<td><p>PSC services</p></td>
+<td><p><a href="PSC services.md" title="wikilink">PSC services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
