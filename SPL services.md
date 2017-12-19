@@ -27,8 +27,8 @@ unlocked.
 | 4   | [\#GenerateAesKey](#GenerateAesKey "wikilink")                             | Decrypts 0x10 bytes using AES ECB and uses [LoadAesKey SMC](SMC#LoadAesKey.md##LoadAesKey "wikilink") with a fixed Y.     |
 | 5   | [\#SetConfig](#SetConfig "wikilink")                                       | Wrapper for [SetConfig SMC](SMC#SetConfig.md##SetConfig "wikilink").                                                      |
 | 7   | [\#GetRandomBytes](#GetRandomBytes "wikilink")                             | Uses [GetRandomBytes SMC](SMC#GetRandomBytes.md##GetRandomBytes "wikilink").                                              |
-| 9   | [\#DecryptImportPrivkForExpMod0](#DecryptImportPrivkForExpMod0 "wikilink") | Speculative name. Wrapper for [LoadRsaPublicKey SMC](SMC#LoadRsaPublicKey.md##LoadRsaPublicKey "wikilink").               |
-| 10  | [\#ExpMod0](#ExpMod0 "wikilink")                                           | Speculative name. Wrapper for [PublicRsa SMC](SMC#PublicRsa.md##PublicRsa "wikilink").                                    |
+| 9   | [\#DecryptImportPrivkForRsaOaep](#DecryptImportPrivkForRsaOaep "wikilink") | Speculative name. Wrapper for [LoadRsaPublicKey SMC](SMC#LoadRsaPublicKey.md##LoadRsaPublicKey "wikilink").               |
+| 10  | [\#DecryptRsaOaep](#DecryptRsaOaep "wikilink")                             | Speculative name. Uses [PublicRsa SMC](SMC#PublicRsa.md##PublicRsa "wikilink").                                           |
 | 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                               |                                                                                                                           |
 | 12  | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")             | Wrapper for [GenerateSpecificAesKey SMC](SMC#GenerateSpecificAesKey.md##GenerateSpecificAesKey "wikilink").               |
 | 13  | [\#DecryptPrivk](#DecryptPrivk "wikilink")                                 | Speculative name. Wrapper for [PrivateRsa SMC](SMC#PrivateRsa.md##PrivateRsa "wikilink").                                 |
@@ -150,7 +150,7 @@ Takes a u32 (**ConfigItem**) and a u64 (**ConfigVal**).
 
 Any other **ConfigItem**, besides 13, can't be set.
 
-## DecryptImportPrivkForExpMod0
+## DecryptImportPrivkForRsaOaep
 
 Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 16-byte KEK (**key\_x**), a 16-byte key (**key\_y**) and a u32
@@ -159,18 +159,19 @@ Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 Decrypts **enc\_privk\_in\_buf** with a key generated from **key\_x**
 and **key\_y** and imports it for later usage.
 
-## ExpMod0
+## DecryptRsaOaep
 
 Takes one type-10 (C descriptor) buffer (**data\_out\_buf**) and 3
-type-9 (X descriptor) buffers (**data\_in\_buf**, **param0\_in\_buf**
-and **param1\_in\_buf**).
+type-9 (X descriptor) buffers (**data\_in\_buf**, **mod\_in\_buf** and
+**label\_hash\_in\_buf**).
 
 Decrypts **data\_in\_buf** into **data\_out\_buf** using the private key
 imported with
-[\#DecryptImportPrivkForExpMod0](#DecryptImportPrivkForExpMod0 "wikilink")
-and the supplied buffers **param0\_in\_buf** and **param1\_in\_buf**.
+[\#DecryptImportPrivkForRsaOaep](#DecryptImportPrivkForRsaOaep "wikilink")
+and the supplied **mod\_in\_buf**. Afterwards, verifies RSA-OAEP
+encoding using **label\_hash\_in\_buf**.
 
-Returns and unknown u32.
+Returns an u32 (**dec\_data\_size**).
 
 ## IsDevelopment
 
@@ -187,7 +188,7 @@ on retail.
 Takes a 16-byte seed (**key\_seed**) and two words (**KeyGeneration**
 and **option**) as input. **KeyGeneration** ranges from 0 to 2.
 
-Returns a scrambled (unsealed?) key (**key\_a**).
+Returns a scrambled key (**key\_a**).
 
 ## DecryptPrivk
 
@@ -246,11 +247,11 @@ and **key\_y** and imports it for later usage.
 ## ExpMod1
 
 Takes 3 type-9 (X descriptor) buffers (**data\_in\_buf**,
-**param0\_in\_buf** and **param1\_in\_buf**).
+**mod\_in\_buf** and **param0\_in\_buf**).
 
 Decrypts **data\_in\_buf** using the private key imported with
 [\#DecryptImportPrivkForExpMod1](#DecryptImportPrivkForExpMod1 "wikilink")
-and the supplied buffers **param0\_in\_buf** and **param1\_in\_buf**.
+and the supplied **mod\_in\_buf** and **param0\_in\_buf**.
 
 Generates and returns a 16-byte key (**key\_z**).
 
