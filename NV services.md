@@ -614,7 +614,7 @@ params.
 ` struct {`  
 `   __in u32 big_page_size;   // depends on GPU's available_big_page_sizes; 0=default`  
 `   __in s32 as_fd;           // ignored; passes 0`  
-`   __in u32 flags;           // ignored; passes 0`  
+`   __in u32 flags;           // passes 0`  
 `   __in u32 reserved;        // ignored; passes 0`  
 `   __in u64 unk0;`  
 `   __in u64 unk1;`  
