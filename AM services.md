@@ -343,7 +343,7 @@ u32.
 | 2   | GetThisAppletKind                                             |                                                                                |
 | 3   | AllowToEnterSleep                                             |                                                                                |
 | 4   | DisallowToEnterSleep                                          |                                                                                |
-| 5   | GetOperationMode                                              |                                                                                |
+| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")            |                                                                                |
 | 6   | GetPerformanceMode                                            |                                                                                |
 | 7   | GetCradleStatus                                               |                                                                                |
 | 8   | GetBootMode                                                   |                                                                                |
@@ -381,6 +381,11 @@ message is available with
 
 No input. Returns an output u32. Error 0x680 indicates no message is
 available.
+
+### GetOperationMode
+
+No input. Returns an output u8 for the current
+[\#OperationMode](#OperationMode "wikilink").
 
 ### GetCurrentFocusState
 
@@ -656,6 +661,13 @@ This indicates the type of web-applet.
 | 0x10 | ?                                                      |
 | 0x1E | OperationMode changed                                  |
 | 0x1F | PerformanceMode changed                                |
+
+### OperationMode
+
+| Value | Description |
+| ----- | ----------- |
+| 0     | Handheld    |
+| 1     | Docked      |
 
 # AppletResourceUserId
 
