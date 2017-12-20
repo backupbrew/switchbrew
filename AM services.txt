@@ -533,7 +533,10 @@ No input. Returns an output event handle. This is signalled when a message is av
 No input. Returns an output u32. Error 0x680 indicates no message is available.
 
 === GetCurrentFocusState ===
-No input. Returns an output u8.
+No input. Returns an output u8:
+
+* 1: In focus.
+* 2/3: Out of focus(running in "background").
 
 === SetVrModeEnabled ===
 Takes an input u8 bool flag. No output.

@@ -384,7 +384,10 @@ available.
 
 ### GetCurrentFocusState
 
-No input. Returns an output u8.
+No input. Returns an output u8:
+
+  - 1: In focus.
+  - 2/3: Out of focus(running in "background").
 
 ### SetVrModeEnabled
 
