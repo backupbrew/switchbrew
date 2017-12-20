@@ -647,11 +647,12 @@ This indicates the type of web-applet.
 
 ### NotificationMessage
 
-| ID   | Description             |
-| ---- | ----------------------- |
-| 0x10 | ?                       |
-| 0x1E | OperationMode changed   |
-| 0x1F | PerformanceMode changed |
+| ID   | Description                                            |
+| ---- | ------------------------------------------------------ |
+| 0xF  | FocusState [changed](#GetCurrentFocusState "wikilink") |
+| 0x10 | ?                                                      |
+| 0x1E | OperationMode changed                                  |
+| 0x1F | PerformanceMode changed                                |
 
 # AppletResourceUserId
 

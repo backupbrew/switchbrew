@@ -952,6 +952,8 @@ This indicates the type of web-applet.
 !  ID
 !  Description
 |-
+| 0xF || FocusState [[#GetCurrentFocusState|changed]]
+|-
 | 0x10 || ?
 |-
 | 0x1E || OperationMode changed
