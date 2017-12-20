@@ -113,7 +113,7 @@ This is "nn::hid::IHidServer".
 |-
 | 128 || SetNpadHandheldActivationMode
 |-
-| 129 || GetNpadHandheldActivationMode
+| 129 || [[#GetNpadHandheldActivationMode]]
 |-
 | 130 || SwapNpadAssignment
 |-
@@ -154,6 +154,9 @@ This is "nn::hid::IHidServer".
 
 == CreateAppletResource ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an [[#IAppletResource]].
+
+== GetNpadHandheldActivationMode ==
+Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64. Official user-processes panic if the output u64 is not 0-2.
 
 == SendVibrationValue ==
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, 0x10-byte VibrationValue immediately after that, and an u64 [[AM_services|AppletResourceUserId]].
