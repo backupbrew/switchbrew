@@ -406,6 +406,6 @@ The above ID is used for the ID param for the binder commands with [[#GetRelaySe
 This normally contains an u32 with value 0?
 
 =Resolution handling=
-There doesn't seem to be a way to get the actual TV resolution while using the "Default" Display. Official apps probably just hard-code what resolution to use depending on the current [[AM_services|OperationMode]]?
+There doesn't seem to be a way to get the actual TV resolution while using the "Default" Display. Official apps just hard-code what resolution to use depending on the current [[AM_services|OperationMode]].
 
 [[Category:Services]]
