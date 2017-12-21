@@ -188,7 +188,7 @@ Stores the bootrom patch version.
 | ---- | ----------------------------------------- |
 | 0-1  | Unit type (3 = debug; 0 = retail)         |
 | 2    | Unknown config (must be 1 on retail)      |
-| 3    | Memory Configuration                      |
+| 3-7  | Memory Configuration                      |
 | 8    | Unknown config mask (must be 0 on retail) |
 | 9    | Unit type mask (0 = debug; 1 = retail)    |
 |      |                                           |
