@@ -148,7 +148,7 @@ mapped as Normal.
   - 0x50040000-0x50060000 (ARM, Interrupt Controller)
   - 0x6000F000 (Exception Vectors)
   - 0x6001DC00-0x6001E000 (IPATCH)
-  - 0x7000E000 (EMC0)
+  - 0x7000E000 (RTC/PMC)
   - 0x70019000 (MC)
   - 0x7001C000 (MC0)
   - 0x7001D000 (MC1)
