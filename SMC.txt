@@ -53,7 +53,7 @@ Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
 |-
 | 0xC300100C || [[#LoadRsaPrivateKey]] || ||
 |-
-| 0xC300100D || [[#PrivateRsa]] || ||
+| 0xC300100D || [[#DecryptRsaPrivateKey]] || ||
 |-
 | 0xC300100E || [[#LoadRsaPublicKey]] || ||
 |-
@@ -102,10 +102,10 @@ Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA private 
 
 The session kek must have been created with CryptoUsecase_PrivateRsa.
 
-=== PrivateRsa ===
-Encrypts using Rsa private key.
+=== DecryptRsaPrivateKey ===
+Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
 
-Key must be set prior using the [[#LoadRsaPrivateKey]] command.
+The session kek must have been created with CryptoUsecase_PrivateRsa.
 
 === LoadRsaPublicKey ===
 Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA public key.

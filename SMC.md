@@ -41,7 +41,7 @@ Functions exposed to user-mode processes using
 | 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink") |    |     |
 | 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                       |    |     |
 | 0xC300100C | [\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink")           |    |     |
-| 0xC300100D | [\#PrivateRsa](#PrivateRsa "wikilink")                         |    |     |
+| 0xC300100D | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")     |    |     |
 | 0xC300100E | [\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink")             |    |     |
 | 0xC300060F | [\#PublicRsa](#PublicRsa "wikilink")                           |    |     |
 | 0xC3000610 | [\#UnwrapPreparedAesKey](#UnwrapPreparedAesKey "wikilink")     |    |     |
@@ -105,12 +105,13 @@ private key.
 
 The session kek must have been created with CryptoUsecase\_PrivateRsa.
 
-### PrivateRsa
+### DecryptRsaPrivateKey
 
-Encrypts using Rsa private key.
+Takes a session kek created with
+[\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, and a
+wrapped RSA private key.
 
-Key must be set prior using the
-[\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink") command.
+The session kek must have been created with CryptoUsecase\_PrivateRsa.
 
 ### LoadRsaPublicKey
 
