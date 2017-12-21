@@ -100,10 +100,11 @@ Todo: This one seems unrelated to
 ### LoadRsaPrivateKey
 
 Takes a session kek created with
-[\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA
-private key.
+[\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, and a
+wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase\_PrivateRsa.
+The session kek must have been created with
+CryptoUsecase\_PreparedAesKey.
 
 ### DecryptRsaPrivateKey
 

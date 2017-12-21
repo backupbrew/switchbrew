@@ -98,9 +98,9 @@ Key must be set prior using one of the [[#LoadAesKey]], [[#GenerateSpecificAesKe
 Todo: This one seems unrelated to [[#CryptoUsecase]].
 
 === LoadRsaPrivateKey ===
-Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA private key.
+Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase_PrivateRsa.
+The session kek must have been created with CryptoUsecase_PreparedAesKey.
 
 === DecryptRsaPrivateKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
