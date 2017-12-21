@@ -395,6 +395,9 @@ Stores the bootrom patch version.
 | 2
 | Unknown config (must be 1 on retail)
 |-
+| 3
+| Memory Configuration
+|-
 | 8
 | Unknown config mask (must be 0 on retail)
 |-
