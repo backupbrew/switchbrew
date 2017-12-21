@@ -489,7 +489,7 @@ Takes an input u32.
 |-
 | 5 || [[#GetOperationMode]] ||
 |-
-| 6 || GetPerformanceMode ||
+| 6 || [[#GetPerformanceMode]] ||
 |-
 | 7 || GetCradleStatus ||
 |-
@@ -534,6 +534,9 @@ No input. Returns an output u32. Error 0x680 indicates no message is available.
 
 === GetOperationMode ===
 No input. Returns an output u8 for the current [[#OperationMode]].
+
+=== GetPerformanceMode ===
+No input. Returns an output u32 for the current PerformanceMode.
 
 === GetCurrentFocusState ===
 No input. Returns an output u8:

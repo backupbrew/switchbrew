@@ -344,7 +344,7 @@ u32.
 | 3   | AllowToEnterSleep                                             |                                                                                |
 | 4   | DisallowToEnterSleep                                          |                                                                                |
 | 5   | [\#GetOperationMode](#GetOperationMode "wikilink")            |                                                                                |
-| 6   | GetPerformanceMode                                            |                                                                                |
+| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")        |                                                                                |
 | 7   | GetCradleStatus                                               |                                                                                |
 | 8   | GetBootMode                                                   |                                                                                |
 | 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")    |                                                                                |
@@ -386,6 +386,10 @@ available.
 
 No input. Returns an output u8 for the current
 [\#OperationMode](#OperationMode "wikilink").
+
+### GetPerformanceMode
+
+No input. Returns an output u32 for the current PerformanceMode.
 
 ### GetCurrentFocusState
 
