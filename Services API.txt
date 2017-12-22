@@ -176,7 +176,7 @@ Takes a pid.
 | [[NCM services]]
 |
 |-
-| nfc:am, nfc:mf:u, nfc:user, nfc:sys
+| nfc:am, nfc:mf:u, nfc:user, nfc:sys, nfp:user, nfp:dbg
 | NFC services
 | 
 |-
