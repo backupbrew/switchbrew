@@ -218,7 +218,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>nfc:am, nfc:mf:u, nfc:user, nfc:sys, nfp:user, nfp:dbg</p></td>
+<td><p>nfc:am, nfc:mf:u, nfc:user, nfc:sys, nfp:user, nfp:dbg, nfp:sys</p></td>
 <td><p>NFC services</p></td>
 <td></td>
 </tr>
