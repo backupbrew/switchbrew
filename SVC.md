@@ -115,34 +115,34 @@
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name      |
-| -------- | ------------------------------ | --------- |
-| (In) W1  | u64                            | `Size`    |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`     |
-| (Out) X1 | u64                            | `OutAddr` |
+| Argument | Type                           | Name    |
+| -------- | ------------------------------ | ------- |
+| (In) W1  | u64                            | Size    |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret     |
+| (Out) X1 | u64                            | OutAddr |
 
 </div>
 
-**Description:** Set the process heap to a given `Size`. It can both
+**Description:** Set the process heap to a given Size. It can both
 extend and shrink the heap.
 
-`Size` must be a multiple of 0x2000000.
+Size must be a multiple of 0x2000000.
 
 On success, the heap base-address (which is fixed by kernel, aslr'd) is
-written to `OutAddr`.
+written to OutAddr.
 
-\[2.0.0+\] `Size` must be less than 0x18000000.
+\[2.0.0+\] Size must be less than 0x18000000.
 
 ## svcSetMemoryPermission
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name   |
-| -------- | -------------------------------------- | ------ |
-| (In) X0  | void\*                                 | `Addr` |
-| (In) X1  | u64                                    | `Size` |
-| (In) W2  | [\#Permission](#Permission "wikilink") | `Prot` |
-| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`  |
+| Argument | Type                                   | Name |
+| -------- | -------------------------------------- | ---- |
+| (In) X0  | void\*                                 | Addr |
+| (In) X1  | u64                                    | Size |
+| (In) W2  | [\#Permission](#Permission "wikilink") | Prot |
+| (Out) W0 | [\#Result](#Result "wikilink")         | Ret  |
 
 </div>
 
@@ -157,13 +157,13 @@ This can be used to move back and forth between ---, r-- and rw-.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name     |
-| -------- | ------------------------------ | -------- |
-| (In) X0  | void\*                         | `Addr`   |
-| (In) X1  | u64                            | `Size`   |
-| (In) W2  | u32                            | `State0` |
-| (In) W3  | u32                            | `State1` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) X0  | void\*                         | Addr   |
+| (In) X1  | u64                            | Size   |
+| (In) W2  | u32                            | State0 |
+| (In) W3  | u32                            | State1 |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret    |
 
 </div>
 
@@ -186,12 +186,12 @@ descriptor.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name      |
-| -------- | ------------------------------ | --------- |
-| (In) X0  | void\*                         | `DstAddr` |
-| (In) X1  | void\*                         | `SrcAddr` |
-| (In) X2  | u64                            | `Size`    |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`     |
+| Argument | Type                           | Name    |
+| -------- | ------------------------------ | ------- |
+| (In) X0  | void\*                         | DstAddr |
+| (In) X1  | void\*                         | SrcAddr |
+| (In) X2  | u64                            | Size    |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret     |
 
 </div>
 
@@ -207,27 +207,27 @@ If dstaddr \>= LowerTreshold, the dst-range is enforced to be within the
 process' "MapRegion". Code can get the range of this region from
 [\#svcGetInfo](#svcGetInfo "wikilink") id0=2,3.
 
-In this case, the mapped memory will have state `0x5C3C0B`.
+In this case, the mapped memory will have state 0x5C3C0B.
 
 As long as (dstaddr+size) \< LowerThreshold, then you can map anywhere
-but the mapped memory will have state `0x482907` instead.
+but the mapped memory will have state 0x482907 instead.
 
 LowerTreshold is 0x80000000 for 36-bit address spaces, and 0x40000000
 for 32-bit ones.
 
-\[2.0.0+\] Support for the `0x482907` mappings outside the "MapRegion"
+\[2.0.0+\] Support for the 0x482907 mappings outside the "MapRegion"
 were removed.
 
 ## svcUnmapMemory
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name      |
-| -------- | ------------------------------ | --------- |
-| (In) X0  | void\*                         | `DstAddr` |
-| (In) X1  | void\*                         | `SrcAddr` |
-| (In) X2  | u64                            | `Size`    |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`     |
+| Argument | Type                           | Name    |
+| -------- | ------------------------------ | ------- |
+| (In) X0  | void\*                         | DstAddr |
+| (In) X1  | void\*                         | SrcAddr |
+| (In) X2  | u64                            | Size    |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret     |
 
 </div>
 
@@ -244,12 +244,12 @@ originally mapped.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                     | Name       |
-| -------- | ---------------------------------------- | ---------- |
-| (In) X0  | [\#MemoryInfo](#MemoryInfo "wikilink")\* | `MemInfo`  |
-| (In) X2  | void\*                                   | `Addr`     |
-| (Out) W0 | [\#Result](#Result "wikilink")           | `Ret`      |
-| (Out) W1 | PageInfo                                 | `PageInfo` |
+| Argument | Type                                     | Name     |
+| -------- | ---------------------------------------- | -------- |
+| (In) X0  | [\#MemoryInfo](#MemoryInfo "wikilink")\* | MemInfo  |
+| (In) X2  | void\*                                   | Addr     |
+| (Out) W0 | [\#Result](#Result "wikilink")           | Ret      |
+| (Out) W1 | PageInfo                                 | PageInfo |
 
 </div>
 
@@ -275,15 +275,15 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name          |
-| -------- | ------------------------------ | ------------- |
-| (In) X1  | void(\*)(void\*)               | `Entry`       |
-| (In) X2  | void\*                         | `Arg`         |
-| (In) X3  | void\*                         | `StackTop`    |
-| (In) W4  | u32                            | `Priority`    |
-| (In) W5  | u32                            | `ProcessorId` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
-| (Out) W1 | Handle<Thread>                 | `Handle`      |
+| Argument | Type                           | Name        |
+| -------- | ------------------------------ | ----------- |
+| (In) X1  | void(\*)(void\*)               | Entry       |
+| (In) X2  | void\*                         | Arg         |
+| (In) X3  | void\*                         | StackTop    |
+| (In) W4  | u32                            | Priority    |
+| (In) W5  | u32                            | ProcessorId |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret         |
+| (Out) W1 | Handle<Thread>                 | Handle      |
 
 </div>
 
@@ -296,10 +296,10 @@ process.
 
 <div style="display: inline-block;">
 
-| Argument   | Type           | Name     |
-| ---------- | -------------- | -------- |
-| (In) W0    | Handle<Thread> | `Handle` |
-| (Out) None |                |          |
+| Argument   | Type           | Name   |
+| ---------- | -------------- | ------ |
+| (In) W0    | Handle<Thread> | Handle |
+| (Out) None |                |        |
 
 </div>
 
@@ -322,10 +322,10 @@ process.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name   |
-| -------- | ------------------------------ | ------ |
-| (In) X1  | u64                            | `Nano` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`  |
+| Argument | Type                           | Name |
+| -------- | ------------------------------ | ---- |
+| (In) X1  | u64                            | Nano |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret  |
 
 </div>
 
@@ -337,11 +337,11 @@ Setting nano=0 means "yield thread".
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name       |
-| -------- | ------------------------------ | ---------- |
-| (In) W1  | Handle<Thread>                 | `Handle`   |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
-| (Out) W1 | u64                            | `Priority` |
+| Argument | Type                           | Name     |
+| -------- | ------------------------------ | -------- |
+| (In) W1  | Handle<Thread>                 | Handle   |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret      |
+| (Out) W1 | u64                            | Priority |
 
 </div>
 
@@ -351,11 +351,11 @@ Setting nano=0 means "yield thread".
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name       |
-| -------- | ------------------------------ | ---------- |
-| (In) W0  | Handle<Thread>                 | `Handle`   |
-| (In) W1  | u32                            | `Priority` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
+| Argument | Type                           | Name     |
+| -------- | ------------------------------ | -------- |
+| (In) W0  | Handle<Thread>                 | Handle   |
+| (In) W1  | u32                            | Priority |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret      |
 
 </div>
 
@@ -367,12 +367,12 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name     |
-| -------- | ------------------------------ | -------- |
-| (In) W2  | Handle<Thread>                 | `Handle` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
-| (Out) W1 | u32                            | `Out0`   |
-| (Out) X2 | u64                            | `Out1`   |
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) W2  | Handle<Thread>                 | Handle |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret    |
+| (Out) W1 | u32                            | Out0   |
+| (Out) X2 | u64                            | Out1   |
 
 </div>
 
@@ -382,12 +382,12 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name     |
-| -------- | ------------------------------ | -------- |
-| (In) W0  | Handle<Thread>                 | `Handle` |
-| (In) W1  | u32                            | `In0`    |
-| (In) X2  | u64                            | `In1`    |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) W0  | Handle<Thread>                 | Handle |
+| (In) W1  | u32                            | In0    |
+| (In) X2  | u64                            | In1    |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret    |
 
 </div>
 
@@ -397,10 +397,10 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 <div style="display: inline-block;">
 
-| Argument    | Type | Name    |
-| ----------- | ---- | ------- |
-| (In) None   |      |         |
-| (Out) W0/X0 | u64  | `CpuId` |
+| Argument    | Type | Name  |
+| ----------- | ---- | ----- |
+| (In) None   |      |       |
+| (Out) W0/X0 | u64  | CpuId |
 
 </div>
 
@@ -412,13 +412,13 @@ Cpu-id is an integer in the range 0-3.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name          |
-| -------- | -------------------------------------- | ------------- |
-| (In) W0  | Handle<SharedMemory>                   | `MemHandle`   |
-| (In) X1  | void\*                                 | `Addr`        |
-| (In) X2  | u64                                    | `Size`        |
-| (In) W3  | [\#Permission](#Permission "wikilink") | `Permissions` |
-| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`         |
+| Argument | Type                                   | Name        |
+| -------- | -------------------------------------- | ----------- |
+| (In) W0  | Handle<SharedMemory>                   | MemHandle   |
+| (In) X1  | void\*                                 | Addr        |
+| (In) X2  | u64                                    | Size        |
+| (In) W3  | [\#Permission](#Permission "wikilink") | Permissions |
+| (Out) W0 | [\#Result](#Result "wikilink")         | Ret         |
 
 </div>
 
@@ -434,13 +434,13 @@ closed and all mappings must be unmapped.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name          |
-| -------- | -------------------------------------- | ------------- |
-| (In) X1  | void\*                                 | `Addr`        |
-| (In) X2  | u64                                    | `Size`        |
-| (In) W3  | [\#Permission](#Permission "wikilink") | `Permissions` |
-| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`         |
-| (Out) W1 | Handle<TransferMemory>                 | `Handle`      |
+| Argument | Type                                   | Name        |
+| -------- | -------------------------------------- | ----------- |
+| (In) X1  | void\*                                 | Addr        |
+| (In) X2  | u64                                    | Size        |
+| (In) W3  | [\#Permission](#Permission "wikilink") | Permissions |
+| (Out) W0 | [\#Result](#Result "wikilink")         | Ret         |
+| (Out) W1 | Handle<TransferMemory>                 | Handle      |
 
 </div>
 
@@ -457,13 +457,13 @@ permission to reset.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name          |
-| -------- | ------------------------------ | ------------- |
-| (In) X1  | Handle\*                       | `HandlesPtr`  |
-| (In) W2  | u64                            | `HandlesNum`  |
-| (In) X3  | u64                            | `Timeout`     |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`         |
-| (Out) W1 | u64                            | `HandleIndex` |
+| Argument | Type                           | Name        |
+| -------- | ------------------------------ | ----------- |
+| (In) X1  | Handle\*                       | HandlesPtr  |
+| (In) W2  | u64                            | HandlesNum  |
+| (In) X3  | u64                            | Timeout     |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret         |
+| (Out) W1 | u64                            | HandleIndex |
 
 </div>
 
@@ -495,12 +495,12 @@ the timeout. Handle index is not updated.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name     |
-| -------- | ------------------------------ | -------- |
-| (In) X0  | void\*                         | `CmdPtr` |
-| (In) X1  | u64                            | `Size`   |
-| (In) W2  | Handle<Session>                | `Handle` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`    |
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) X0  | void\*                         | CmdPtr |
+| (In) X1  | u64                            | Size   |
+| (In) W2  | Handle<Session>                | Handle |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret    |
 
 </div>
 
@@ -510,12 +510,12 @@ Size must be 0x1000-aligned.
 
 <div style="display: inline-block;">
 
-| Argument | Type | Name   |
-| -------- | ---- | ------ |
-| (In) X0  | u64  |        |
-| (In) X1  | u64  |        |
-| (In) X2  | u64  | `Info` |
-| (Out) ?  | ?    | `?`    |
+| Argument | Type | Name |
+| -------- | ---- | ---- |
+| (In) X0  | u64  |      |
+| (In) X1  | u64  |      |
+| (In) X2  | u64  | Info |
+| (Out) ?  | ?    | ?    |
 
 </div>
 
@@ -527,13 +527,13 @@ it will return 0.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name        |
-| -------- | ------------------------------ | ----------- |
-| (In) X1  | u64                            | `InfoId`    |
-| (In) W2  | Handle                         | `Handle`    |
-| (In) X3  | u64                            | `InfoSubId` |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`       |
-| (Out) X1 | u64                            | `Out`       |
+| Argument | Type                           | Name      |
+| -------- | ------------------------------ | --------- |
+| (In) X1  | u64                            | InfoId    |
+| (In) W2  | Handle                         | Handle    |
+| (In) X3  | u64                            | InfoSubId |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret       |
+| (Out) X1 | u64                            | Out       |
 
 </div>
 
@@ -575,11 +575,11 @@ Does nothing, just returns with registers set to all-zero.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name      |
-| -------- | ------------------------------ | --------- |
-| (In) W1  | Handle<Port>                   | `Port`    |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Result`  |
-| (Out) W1 | Handle<ServerSession>          | `Session` |
+| Argument | Type                           | Name    |
+| -------- | ------------------------------ | ------- |
+| (In) W1  | Handle<Port>                   | Port    |
+| (Out) W0 | [\#Result](#Result "wikilink") | Result  |
+| (Out) W1 | Handle<ServerSession>          | Session |
 
 </div>
 
@@ -591,18 +591,18 @@ Does nothing, just returns with registers set to all-zero.
 
 <div style="display: inline-block;">
 
-| Argument | Type                            | Name          |
-| -------- | ------------------------------- | ------------- |
-| (In) W1  | \*Handle<Port or ServerSession> | `Handles`     |
-| (In) W2  | u32                             | `NumHandles`  |
-| (In) W3  | Handle<ServerSession>           | `ReplyTarget` |
-| (In) X4  | u64 (nanoseconds)               | `Timeout`     |
-| (Out) W0 | [\#Result](#Result "wikilink")  | `Result`      |
-| (Out) W1 | u32                             | `HandleIndex` |
+| Argument | Type                            | Name        |
+| -------- | ------------------------------- | ----------- |
+| (In) W1  | \*Handle<Port or ServerSession> | Handles     |
+| (In) W2  | u32                             | NumHandles  |
+| (In) W3  | Handle<ServerSession>           | ReplyTarget |
+| (In) X4  | u64 (nanoseconds)               | Timeout     |
+| (Out) W0 | [\#Result](#Result "wikilink")  | Result      |
+| (Out) W1 | u32                             | HandleIndex |
 
 </div>
 
-If `ReplyTarget` is not zero, a reply from the TLS will be sent to that
+If ReplyTarget is not zero, a reply from the TLS will be sent to that
 session. Then it will wait until either of the passed sessions has an
 incoming message, is closed, a passed port has an incoming connection,
 or the timeout expires. If there is an incoming message, it is copied to
@@ -616,25 +616,25 @@ will be returned.
 ### Result codes
 
 **0x0:** Success. Either a session has an incoming message or a port has
-an incoming connection. `HandleIndex` is set appropriately.
+an incoming connection. HandleIndex is set appropriately.
 
 **0xea01:** Timeout. No handles were signalled before the timeout
-expired. `HandleIndex` is not updated.
+expired. HandleIndex is not updated.
 
 **0xf601:** Port remote dead. One of the sessions has been closed.
-`HandleIndex` is set appropriately.
+HandleIndex is set appropriately.
 
 ## svcReadWriteRegister
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name       |
-| -------- | ------------------------------ | ---------- |
-| (In) X1  | u64                            | `RegAddr`  |
-| (In) W2  | u64                            | `RwMask`   |
-| (In) W3  | u64                            | `InValue`  |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
-| (Out) W1 | u64                            | `OutValue` |
+| Argument | Type                           | Name     |
+| -------- | ------------------------------ | -------- |
+| (In) X1  | u64                            | RegAddr  |
+| (In) W2  | u64                            | RwMask   |
+| (In) W3  | u64                            | InValue  |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret      |
+| (Out) W1 | u64                            | OutValue |
 
 </div>
 
@@ -651,10 +651,22 @@ whitelist.
 The whitelist is same for writing as for reading.
 
 The whitelist is:
-`0x054, 0x090, 0x094, 0x098, 0x09c, 0x0a0, 0x0a4, 0x0a8, 0x0ac, 0x0b0, 0x0b4, 0x0b8, 0x0bc, 0x0c0, 0x0c4, 0x0c8, 0x0d0, 0x0d4, 0x0d8, 0x0dc, 0x0e0, 0x100, 0x108, 0x10c, 0x118, 0x11c, 0x124, 0x128, 0x12c, 0x130, 0x134, 0x138, 0x13c, 0x158, 0x15c, 0x164, 0x168, 0x16c, 0x170, 0x174, 0x178, 0x17c, 0x200, 0x204, 0x2e4, 0x2e8, 0x2ec, 0x2f4, 0x2f8, 0x310, 0x314, 0x320, 0x328, 0x344, 0x348, 0x370, 0x374, 0x37c, 0x380, 0x390, 0x394, 0x398, 0x3ac, 0x3b8, 0x3bc, 0x3c0, 0x3c4, 0x3d8, 0x3e8, 0x41c, 0x420, 0x424, 0x428, 0x42c, 0x430, 0x44c, 0x47c, 0x480, 0x484, 0x50c, 0x554, 0x558, 0x55c, 0x670, 0x674, 0x690, 0x694, 0x698, 0x69c, 0x6a0, 0x6a4, 0x6c0, 0x6c4, 0x6f0, 0x6f4, 0x960, 0x970, 0x974, 0xa20, 0xa24, 0xb88, 0xb8c, 0xbc4, 0xbc8, 0xbcc, 0xbd0, 0xbd4, 0xbd8, 0xbdc, 0xbe0, 0xbe4, 0xbe8, 0xbec, 0xc00, 0xc5c, 0xcac`
 
-\[2.0.0+\] Whitelist was extended with
-`0x4c4, 0x4c8, 0x4cc, 0x584, 0x588, 0x58c.`
+0x054, 0x090, 0x094, 0x098, 0x09c, 0x0a0, 0x0a4, 0x0a8, 0x0ac, 0x0b0,
+0x0b4, 0x0b8, 0x0bc, 0x0c0, 0x0c4, 0x0c8, 0x0d0, 0x0d4, 0x0d8, 0x0dc,
+0x0e0, 0x100, 0x108, 0x10c, 0x118, 0x11c, 0x124, 0x128, 0x12c, 0x130,
+0x134, 0x138, 0x13c, 0x158, 0x15c, 0x164, 0x168, 0x16c, 0x170, 0x174,
+0x178, 0x17c, 0x200, 0x204, 0x2e4, 0x2e8, 0x2ec, 0x2f4, 0x2f8, 0x310,
+0x314, 0x320, 0x328, 0x344, 0x348, 0x370, 0x374, 0x37c, 0x380, 0x390,
+0x394, 0x398, 0x3ac, 0x3b8, 0x3bc, 0x3c0, 0x3c4, 0x3d8, 0x3e8, 0x41c,
+0x420, 0x424, 0x428, 0x42c, 0x430, 0x44c, 0x47c, 0x480, 0x484, 0x50c,
+0x554, 0x558, 0x55c, 0x670, 0x674, 0x690, 0x694, 0x698, 0x69c, 0x6a0,
+0x6a4, 0x6c0, 0x6c4, 0x6f0, 0x6f4, 0x960, 0x970, 0x974, 0xa20, 0xa24,
+0xb88, 0xb8c, 0xbc4, 0xbc8, 0xbcc, 0xbd0, 0xbd4, 0xbd8, 0xbdc, 0xbe0,
+0xbe4, 0xbe8, 0xbec, 0xc00, 0xc5c, 0xcac
+
+\[2.0.0+\] Whitelist was extended with 0x4c4, 0x4c8, 0x4cc, 0x584,
+0x588, 0x58c.
 
 \[2.0.0+\] The IO registers in range 0x7000E400 (PMC) size 0xC00 skip
 the whitelist, and do a TrustZone call using [SMC](SMC.md "wikilink")
@@ -662,19 +674,23 @@ Id1 0xC3000008(ReadWriteRegister).
 
 Here is the whitelist imposed by that SMC, relative to the start of the
 PMC registers:
-`0x000, 0x00c, 0x010, 0x014, 0x01c, 0x020, 0x02c, 0x030, 0x034, 0x038, 0x03c, 0x040, 0x044, 0x048, 0x0dc, 0x0e0, 0x0e4, 0x160, 0x164, 0x168, 0x170, 0x1a8, 0x1b8, 0x1bc, 0x1c0, 0x1c4, 0x1c8, 0x2b4, 0x2d4, 0x440, 0x4d8`
+
+0x000, 0x00c, 0x010, 0x014, 0x01c, 0x020, 0x02c, 0x030, 0x034, 0x038,
+0x03c, 0x040, 0x044, 0x048, 0x0dc, 0x0e0, 0x0e4, 0x160, 0x164, 0x168,
+0x170, 0x1a8, 0x1b8, 0x1bc, 0x1c0, 0x1c4, 0x1c8, 0x2b4, 0x2d4, 0x440,
+0x4d8
 
 ## svcCreateSharedMemory
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name         |
-| -------- | -------------------------------------- | ------------ |
-| (In) W1  | u64                                    | `Size`       |
-| (In) W2  | [\#Permission](#Permission "wikilink") | `LocalPerm`  |
-| (In) W3  | [\#Permission](#Permission "wikilink") | `RemotePerm` |
-| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`        |
-| (Out) W1 | Handle<SharedMemory>                   | `MemHandle`  |
+| Argument | Type                                   | Name       |
+| -------- | -------------------------------------- | ---------- |
+| (In) W1  | u64                                    | Size       |
+| (In) W2  | [\#Permission](#Permission "wikilink") | LocalPerm  |
+| (In) W3  | [\#Permission](#Permission "wikilink") | RemotePerm |
+| (Out) W0 | [\#Result](#Result "wikilink")         | Ret        |
+| (Out) W1 | Handle<SharedMemory>                   | MemHandle  |
 
 </div>
 
@@ -685,13 +701,13 @@ don't care.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name          |
-| -------- | -------------------------------------- | ------------- |
-| (In) X0  | Handle<TransferMemory>                 | `MemHandle`   |
-| (In) X1  | void\*                                 | `Addr`        |
-| (In) X2  | u64                                    | `Size`        |
-| (In) W3  | [\#Permission](#Permission "wikilink") | `Permissions` |
-| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`         |
+| Argument | Type                                   | Name        |
+| -------- | -------------------------------------- | ----------- |
+| (In) X0  | Handle<TransferMemory>                 | MemHandle   |
+| (In) X1  | void\*                                 | Addr        |
+| (In) X2  | u64                                    | Size        |
+| (In) W3  | [\#Permission](#Permission "wikilink") | Permissions |
+| (Out) W0 | [\#Result](#Result "wikilink")         | Ret         |
 
 </div>
 
@@ -705,12 +721,12 @@ svcCreateMemoryMirror, otherwise error.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name        |
-| -------- | ------------------------------ | ----------- |
-| (In) X0  | Handle<TransferMemory>         | `MemHandle` |
-| (In) X1  | void\*                         | `Addr`      |
-| (In) X2  | u64                            | `Size`      |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`       |
+| Argument | Type                           | Name      |
+| -------- | ------------------------------ | --------- |
+| (In) X0  | Handle<TransferMemory>         | MemHandle |
+| (In) X1  | void\*                         | Addr      |
+| (In) X2  | u64                            | Size      |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret       |
 
 </div>
 
@@ -721,13 +737,13 @@ invalid-size error.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name         |
-| -------- | ------------------------------ | ------------ |
-| (In) X1  | u64                            | `Addr`       |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`        |
-| (Out) X1 | u64                            | `PhysAddr`   |
-| (Out) X2 | u64                            | `KernelAddr` |
-| (Out) X3 | u64                            | `Size`       |
+| Argument | Type                           | Name       |
+| -------- | ------------------------------ | ---------- |
+| (In) X1  | u64                            | Addr       |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret        |
+| (Out) X1 | u64                            | PhysAddr   |
+| (Out) X2 | u64                            | KernelAddr |
+| (Out) X3 | u64                            | Size       |
 
 </div>
 
@@ -735,12 +751,12 @@ invalid-size error.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name       |
-| -------- | ------------------------------ | ---------- |
-| (In) X1  | u64                            | `PhysAddr` |
-| (In) X2  | u64                            | `Size`     |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`      |
-| (Out) X1 | void\*                         | `VirtAddr` |
+| Argument | Type                           | Name     |
+| -------- | ------------------------------ | -------- |
+| (In) X1  | u64                            | PhysAddr |
+| (In) X2  | u64                            | Size     |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret      |
+| (Out) X1 | void\*                         | VirtAddr |
 
 </div>
 
@@ -750,12 +766,12 @@ invalid-size error.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name                 |
-| -------- | ------------------------------ | -------------------- |
-| (In) X1  | u64                            | `StartAddr`          |
-| (In) X2  | u64                            | `EndAddr`            |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`                |
-| (Out) W1 | Handle<DeviceAddressSpace>     | `AddressSpaceHandle` |
+| Argument | Type                           | Name               |
+| -------- | ------------------------------ | ------------------ |
+| (In) X1  | u64                            | StartAddr          |
+| (In) X2  | u64                            | EndAddr            |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret                |
+| (Out) W1 | Handle<DeviceAddressSpace>     | AddressSpaceHandle |
 
 </div>
 
@@ -769,11 +785,11 @@ normally set to 0xFFFFFFFF.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name             |
-| -------- | -------------------------------------- | ---------------- |
-| (In) W0  | [\#DeviceName](#DeviceName "wikilink") | `DeviceId`       |
-| (In) X1  | Handle<DeviceAddressSpace>             | `DeviceAsHandle` |
-| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`            |
+| Argument | Type                                   | Name           |
+| -------- | -------------------------------------- | -------------- |
+| (In) W0  | [\#DeviceName](#DeviceName "wikilink") | DeviceId       |
+| (In) X1  | Handle<DeviceAddressSpace>             | DeviceAsHandle |
+| (Out) W0 | [\#Result](#Result "wikilink")         | Ret            |
 
 </div>
 
@@ -784,11 +800,11 @@ normally set to 0xFFFFFFFF.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name             |
-| -------- | -------------------------------------- | ---------------- |
-| (In) W0  | [\#DeviceName](#DeviceName "wikilink") | `DeviceId`       |
-| (In) X1  | Handle<DeviceAddressSpace>             | `DeviceAsHandle` |
-| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`            |
+| Argument | Type                                   | Name           |
+| -------- | -------------------------------------- | -------------- |
+| (In) W0  | [\#DeviceName](#DeviceName "wikilink") | DeviceId       |
+| (In) X1  | Handle<DeviceAddressSpace>             | DeviceAsHandle |
+| (Out) W0 | [\#Result](#Result "wikilink")         | Ret            |
 
 </div>
 
@@ -799,15 +815,15 @@ normally set to 0xFFFFFFFF.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name             |
-| -------- | -------------------------------------- | ---------------- |
-| (In) W0  | Handle<DeviceAddressSpace>             | `DeviceAsHandle` |
-| (In) W1  | Handle<Process>                        | `ProcessHandle`  |
-| (In) X2  | void\*                                 | `SrcAddr`        |
-| (In) X3  | u64                                    | `DeviceAsSize`   |
-| (In) X4  | u64                                    | `DeviceAsAddr`   |
-| (In) W5  | [\#Permission](#Permission "wikilink") | `Permissions`    |
-| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`            |
+| Argument | Type                                   | Name           |
+| -------- | -------------------------------------- | -------------- |
+| (In) W0  | Handle<DeviceAddressSpace>             | DeviceAsHandle |
+| (In) W1  | Handle<Process>                        | ProcessHandle  |
+| (In) X2  | void\*                                 | SrcAddr        |
+| (In) X3  | u64                                    | DeviceAsSize   |
+| (In) X4  | u64                                    | DeviceAsAddr   |
+| (In) W5  | [\#Permission](#Permission "wikilink") | Permissions    |
+| (Out) W0 | [\#Result](#Result "wikilink")         | Ret            |
 
 </div>
 
@@ -828,15 +844,15 @@ will be set after mapping.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name             |
-| -------- | -------------------------------------- | ---------------- |
-| (In) W0  | Handle<DeviceAddressSpace>             | `DeviceAsHandle` |
-| (In) W1  | Handle<Process>                        | `ProcessHandle`  |
-| (In) X2  | void\*                                 | `SrcAddr`        |
-| (In) X3  | u64                                    | `DeviceAsSize`   |
-| (In) X4  | u64                                    | `DeviceAsAddr`   |
-| (In) W5  | [\#Permission](#Permission "wikilink") | `Permissions`    |
-| (Out) W0 | [\#Result](#Result "wikilink")         | `Ret`            |
+| Argument | Type                                   | Name           |
+| -------- | -------------------------------------- | -------------- |
+| (In) W0  | Handle<DeviceAddressSpace>             | DeviceAsHandle |
+| (In) W1  | Handle<Process>                        | ProcessHandle  |
+| (In) X2  | void\*                                 | SrcAddr        |
+| (In) X3  | u64                                    | DeviceAsSize   |
+| (In) X4  | u64                                    | DeviceAsAddr   |
+| (In) W5  | [\#Permission](#Permission "wikilink") | Permissions    |
+| (Out) W0 | [\#Result](#Result "wikilink")         | Ret            |
 
 </div>
 
@@ -853,14 +869,14 @@ bit set instead.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name             |
-| -------- | ------------------------------ | ---------------- |
-| (In) W0  | Handle<DeviceAddressSpace>     | `DeviceAsHandle` |
-| (In) W1  | Handle<Process>                | `ProcessHandle`  |
-| (In) X2  | void\*                         | `SrcAddr`        |
-| (In) X3  | u64                            | `DeviceAsSize`   |
-| (In) X4  | u64                            | `DeviceAsAddr`   |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`            |
+| Argument | Type                           | Name           |
+| -------- | ------------------------------ | -------------- |
+| (In) W0  | Handle<DeviceAddressSpace>     | DeviceAsHandle |
+| (In) W1  | Handle<Process>                | ProcessHandle  |
+| (In) X2  | void\*                         | SrcAddr        |
+| (In) X3  | u64                            | DeviceAsSize   |
+| (In) X4  | u64                            | DeviceAsAddr   |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret            |
 
 </div>
 
@@ -871,13 +887,13 @@ userspace address.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name            |
-| -------- | ------------------------------ | --------------- |
-| (In) X0  | u64                            | `SrcAddr`       |
-| (In) W1  | u64                            | `ProcessHandle` |
-| (In) X2  | void\*                         | `DstAddr`       |
-| (In) X3  | u64                            | `Size`          |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
+| Argument | Type                           | Name          |
+| -------- | ------------------------------ | ------------- |
+| (In) X0  | u64                            | SrcAddr       |
+| (In) W1  | u64                            | ProcessHandle |
+| (In) X2  | void\*                         | DstAddr       |
+| (In) X3  | u64                            | Size          |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
 
 </div>
 
@@ -890,13 +906,13 @@ This allows mapping code and rodata with RW- permission.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name            |
-| -------- | ------------------------------ | --------------- |
-| (In) W0  | Handle<Process>                | `ProcessHandle` |
-| (In) X1  | void\*                         | `DstAddr`       |
-| (In) X2  | u64                            | `SrcAddr`       |
-| (In) X3  | u64                            | `Size`          |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
+| Argument | Type                           | Name          |
+| -------- | ------------------------------ | ------------- |
+| (In) W0  | Handle<Process>                | ProcessHandle |
+| (In) X1  | void\*                         | DstAddr       |
+| (In) X2  | u64                            | SrcAddr       |
+| (In) X3  | u64                            | Size          |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
 
 </div>
 
@@ -907,13 +923,13 @@ Unmaps what was mapped by
 
 <div style="display: inline-block;">
 
-| Argument | Type                                     | Name            |
-| -------- | ---------------------------------------- | --------------- |
-| (In) X0  | [\#MemoryInfo](#MemoryInfo "wikilink")\* | `MemInfoPtr`    |
-| (In) W2  | Handle<Process>                          | `ProcessHandle` |
-| (In) X3  | u64                                      | `Addr`          |
-| (Out) W0 | [\#Result](#Result "wikilink")           | `Ret`           |
-| (Out) W1 | PageInfo                                 | `PageInfo`      |
+| Argument | Type                                     | Name          |
+| -------- | ---------------------------------------- | ------------- |
+| (In) X0  | [\#MemoryInfo](#MemoryInfo "wikilink")\* | MemInfoPtr    |
+| (In) W2  | Handle<Process>                          | ProcessHandle |
+| (In) X3  | u64                                      | Addr          |
+| (Out) W0 | [\#Result](#Result "wikilink")           | Ret           |
+| (Out) W1 | PageInfo                                 | PageInfo      |
 
 </div>
 
@@ -924,13 +940,13 @@ takes a process handle.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name            |
-| -------- | ------------------------------ | --------------- |
-| (In) W0  | Handle<Process>                | `ProcessHandle` |
-| (In) X1  | u64                            | `DstAddr`       |
-| (In) X2  | u64                            | `SrcAddr`       |
-| (In) X3  | u64                            | `Size`          |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
+| Argument | Type                           | Name          |
+| -------- | ------------------------------ | ------------- |
+| (In) W0  | Handle<Process>                | ProcessHandle |
+| (In) X1  | u64                            | DstAddr       |
+| (In) X2  | u64                            | SrcAddr       |
+| (In) X3  | u64                            | Size          |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
 
 </div>
 
@@ -941,13 +957,13 @@ executable code in that process. Used when loading NROs.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name            |
-| -------- | ------------------------------ | --------------- |
-| (In) W0  | Handle<Process>                | `ProcessHandle` |
-| (In) X1  | u64                            | `DstAddr`       |
-| (In) X2  | u64                            | `Src Addr`      |
-| (In) X3  | u64                            | `Size`          |
-| (Out) W0 | [\#Result](#Result "wikilink") | `Ret`           |
+| Argument | Type                           | Name          |
+| -------- | ------------------------------ | ------------- |
+| (In) W0  | Handle<Process>                | ProcessHandle |
+| (In) X1  | u64                            | DstAddr       |
+| (In) X2  | u64                            | Src Addr      |
+| (In) X3  | u64                            | Size          |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
 
 </div>
 
@@ -958,13 +974,13 @@ Unmaps what was mapped by
 
 <div style="display: inline-block;">
 
-| Argument | Type                                                   | Name              |
-| -------- | ------------------------------------------------------ | ----------------- |
-| (In) X1  | [\#CreateProcessInfo](#CreateProcessInfo "wikilink")\* | `InfoPtr`         |
-| (In) X2  | u64                                                    | `CapabilitiesPtr` |
-| (In) X3  | u64                                                    | `CapibilitiesNum` |
-| (Out) W0 | [\#Result](#Result "wikilink")                         | `Ret`             |
-| (Out) W1 | Handle<Process>                                        | `ProcessHandle`   |
+| Argument | Type                                                   | Name            |
+| -------- | ------------------------------------------------------ | --------------- |
+| (In) X1  | [\#CreateProcessInfo](#CreateProcessInfo "wikilink")\* | InfoPtr         |
+| (In) X2  | u64                                                    | CapabilitiesPtr |
+| (In) X3  | u64                                                    | CapibilitiesNum |
+| (Out) W0 | [\#Result](#Result "wikilink")                         | Ret             |
+| (Out) W1 | Handle<Process>                                        | ProcessHandle   |
 
 </div>
 
@@ -975,11 +991,11 @@ input.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                       | Name            |
-| -------- | ------------------------------------------ | --------------- |
-| (In) W0  | Handle<Process>                            | `ProcessHandle` |
-| (Out) W0 | [\#Result](#Result "wikilink")             | `Ret`           |
-| (Out) W1 | [\#ProcessState](#ProcessState "wikilink") | `State`         |
+| Argument | Type                                       | Name          |
+| -------- | ------------------------------------------ | ------------- |
+| (In) W0  | Handle<Process>                            | ProcessHandle |
+| (Out) W0 | [\#Result](#Result "wikilink")             | Ret           |
+| (Out) W1 | [\#ProcessState](#ProcessState "wikilink") | State         |
 
 </div>
 
@@ -1163,28 +1179,28 @@ Bitfield of one of more of these:
 | 23   | [MapProcessAllowed](#svcMapProcessMemory "wikilink")                                                                                                                       |
 | 24   | [AttributeChangeAllowed](#svcSetMemoryAttribute "wikilink")                                                                                                                |
 
-| Value        | Type                                                              | Meaning                                                                                                             |
-| ------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `0x00000000` | MemoryType\_Unmapped                                              |                                                                                                                     |
-| `0x00002001` | MemoryType\_Io                                                    | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| `0x00042002` | MemoryType\_Normal                                                | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| `0x00DC7E03` | MemoryType\_CodeStatic                                            | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
-| `0x01FEBD04` | MemoryType\_CodeMutable                                           | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| `0x017EBD05` | MemoryType\_Heap                                                  | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
-| `0x00402006` | MemoryType\_SharedMemory                                          | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                                                |
-| `0x00482907` | \[1.0.0\] MemoryType\_WeirdSharedMemory                           | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| `0x00DD7E08` | MemoryType\_ModuleCodeStatic                                      | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
-| `0x01FFBD09` | MemoryType\_ModuleCodeMutable                                     | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| `0x005C3C0A` | [MemoryType\_IpcBuffer0](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=0.                                                                                |
-| `0x005C3C0B` | MemoryType\_MappedMemory                                          | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| `0x0040200C` | [MemoryType\_ThreadLocal](Thread%20Local%20Storage.md "wikilink") | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
-| `0x015C3C0D` | MemoryType\_TransferMemoryIsolated                                | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm=0.         |
-| `0x005C380E` | MemoryType\_TransferMemory                                        | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm\!=0.       |
-| `0x0040380F` | MemoryType\_ProcessMemory                                         | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
-| `0x00000010` | MemoryType\_Reserved                                              |                                                                                                                     |
-| `0x005C3811` | [MemoryType\_IpcBuffer1](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=1.                                                                                |
-| `0x004C2812` | [MemoryType\_IpcBuffer3](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=3.                                                                                |
-| `0x00002013` | MemoryType\_KernelStack                                           | Mapped in kernel during [\#svcCreateThread](#svcCreateThread "wikilink").                                           |
+| Value      | Type                                                              | Meaning                                                                                                             |
+| ---------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 0x00000000 | MemoryType\_Unmapped                                              |                                                                                                                     |
+| 0x00002001 | MemoryType\_Io                                                    | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
+| 0x00042002 | MemoryType\_Normal                                                | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
+| 0x00DC7E03 | MemoryType\_CodeStatic                                            | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
+| 0x01FEBD04 | MemoryType\_CodeMutable                                           | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
+| 0x017EBD05 | MemoryType\_Heap                                                  | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
+| 0x00402006 | MemoryType\_SharedMemory                                          | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                                                |
+| 0x00482907 | \[1.0.0\] MemoryType\_WeirdSharedMemory                           | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
+| 0x00DD7E08 | MemoryType\_ModuleCodeStatic                                      | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
+| 0x01FFBD09 | MemoryType\_ModuleCodeMutable                                     | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
+| 0x005C3C0A | [MemoryType\_IpcBuffer0](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=0.                                                                                |
+| 0x005C3C0B | MemoryType\_MappedMemory                                          | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
+| 0x0040200C | [MemoryType\_ThreadLocal](Thread%20Local%20Storage.md "wikilink") | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
+| 0x015C3C0D | MemoryType\_TransferMemoryIsolated                                | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm=0.         |
+| 0x005C380E | MemoryType\_TransferMemory                                        | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm\!=0.       |
+| 0x0040380F | MemoryType\_ProcessMemory                                         | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
+| 0x00000010 | MemoryType\_Reserved                                              |                                                                                                                     |
+| 0x005C3811 | [MemoryType\_IpcBuffer1](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=1.                                                                                |
+| 0x004C2812 | [MemoryType\_IpcBuffer3](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=3.                                                                                |
+| 0x00002013 | MemoryType\_KernelStack                                           | Mapped in kernel during [\#svcCreateThread](#svcCreateThread "wikilink").                                           |
 
 ## ContinueDebugFlags
 
