@@ -20,6 +20,9 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **28 December 17** The 34c3 Switch
+    [talk](https://events.ccc.de/congress/2017/Fahrplan/events/8941.html)
+    will take place.
   - **4 December 17** Nintendo released system update
     [4.1.0](4.1.0.md "wikilink").
   - **25 October 17** Nintendo released system update
@@ -29,5 +32,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
   - **17 September 17** [libnx](https://github.com/switchbrew/libnx) was
     made public, with examples available
     [here](https://github.com/switchbrew/switch-examples).
-  - **5 September 17** Nintendo released system update
-    [3.0.2](3.0.2.md "wikilink").
