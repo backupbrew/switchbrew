@@ -29,6 +29,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     [4.0.1](4.0.1.md "wikilink").
   - **18 October 17** Nintendo released system update
     [4.0.0](4.0.0.md "wikilink").
-  - **17 September 17** [libnx](https://github.com/switchbrew/libnx) was
-    made public, with examples available
-    [here](https://github.com/switchbrew/switch-examples).
