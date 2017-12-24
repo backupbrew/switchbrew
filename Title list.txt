@@ -116,7 +116,7 @@
 |-
 | 010000000000003C || 4.0.0+ || jpegdec
 |-
-| 010000000000003D || 4.0.0+ || safemode
+| 010000000000003D || 4.0.0+ || [[safemode]]
 |}
 
 The built-in system modules are {see above 7 modules}.
