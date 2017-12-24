@@ -104,9 +104,9 @@ __NOTOC__
 |-
 | 0x33 || svcGetThreadContext3 || W0=thread_handle, W1=[[#ThreadContext]]* || W0=result
 |-
-| 0x34 || [4.0.0+] || ||
+| 0x34 || [4.0.0+] || X0=ptr, W1=type, X2=? X3=timeout ||
 |-
-| 0x35 || [4.0.0+] || ||
+| 0x35 || [4.0.0+] || X0=ptr, W1=type, X2=? W3=? ||
 |- style="border-top: double"
 | 0x3C || [[#svcDumpInfo]] || ||
 |-
