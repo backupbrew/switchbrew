@@ -15,7 +15,7 @@ Every FIRM-package title was updated, the only change in RomFS was that package2
 
 819:
 
-Kernel wasn't updated.
+Kernel wasn't updated. The only updated firm-sysmodule was FS, the rest were only rebuilt.
 
 ==See Also==
 System update report(s):
