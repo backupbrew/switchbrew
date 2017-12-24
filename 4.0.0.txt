@@ -50,6 +50,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * New synchronization syscalls 0x34, 0x35 added.
 * Added new syscall svcDumpInfoNew, but it's stubbed.
 * The linked-list node for KAutoObjects was added to the struct itself instead of being a separate allocation.
+* svcGetInfo now exposes the first and last process id for built-in modules.
+** This is used by some services to make sure we can't connect to them from outside a privileged module.
 
 ===FIRM===
 Everything under RomFS was updated.
