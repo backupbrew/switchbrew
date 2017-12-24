@@ -4,6 +4,7 @@
 | --- | ------------- | --------------------------------------------------------------- | ---------------------------------------------------- |
 | 0   | MountCode     | u64 TID + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink"). |
 | 1   | IsCodeMounted | u64 PID                                                         | Returns a bool (1 if code is mounted).               |
+| 2   | \[4.0.0+\]    |                                                                 |                                                      |
 
 # fsp-pr
 
@@ -11,6 +12,7 @@
 | --- | ---------------------------------------------------------------------------- | ----- |
 | 0   | [\#SetFsPermissions](#SetFsPermissions "wikilink")                           |       |
 | 1   | [\#ClearFsPermissions](#ClearFsPermissions "wikilink")                       |       |
+| 2   | \[4.0.0+\]                                                                   |       |
 | 256 | [\#SetEnabledProgramVerification](#SetEnabledProgramVerification "wikilink") |       |
 
 ## SetFsPermissions
@@ -64,6 +66,7 @@ abort.
 | 25   | \[2.0.0+\] DeleteSaveDataWithSpaceId                                                   |
 | 26   | \[2.0.0+\] FormatSdCardDryRun                                                          |
 | 27   | \[2.0.0+\] IsExFatSupported                                                            |
+| 28   | \[4.0.0+\] DeleteSystemSaveData                                                        |
 | 30   | [\#OpenGameCardPartition](#OpenGameCardPartition "wikilink")                           |
 | 31   | [\#MountGameCardPartition](#MountGameCardPartition "wikilink")                         |
 | 32   | \[3.0.0+\] ExtendSaveData                                                              |
@@ -76,6 +79,7 @@ abort.
 | 60   | OpenSaveDataInfoReader                                                                 |
 | 61   | OpenSaveDataIterator                                                                   |
 | 80   | OpenSaveDataThumbnailFile                                                              |
+| 81   | \[4.0.0+\]                                                                             |
 | 100  | MountImageDirectory                                                                    |
 | 110  | [\#MountContentStorage](#MountContentStorage "wikilink")                               |
 | 200  | OpenDataStorageByCurrentProcess                                                        |
@@ -96,7 +100,14 @@ abort.
 | 608  | \[2.0.0+\] UnregisterExternalKey                                                       |
 | 609  | \[2.0.0+\] GetRightsIdByPath                                                           |
 | 610  | \[3.0.0+\] GetRightsIdByPath2 (returns extra byte)                                     |
+| 611  | \[4.0.0+\]                                                                             |
+| 612  | \[4.0.0+\]                                                                             |
+| 613  | \[4.0.0+\]                                                                             |
+| 614  | \[4.0.0+\]                                                                             |
 | 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")            |
+| 630  | \[4.0.0+\]                                                                             |
+| 631  | \[4.0.0+\]                                                                             |
+| 640  | \[4.0.0+\] IsSignedSystemPartitionOnSdCardValid                                        |
 | 800  | \[2.0.0+\] GetAndClearFileSystemProxyErrorInfo                                         |
 | 1000 | SetBisRootForHost                                                                      |
 | 1001 | SetSaveDataSize                                                                        |
@@ -105,6 +116,10 @@ abort.
 | 1004 | [\#SetGlobalAccessLogMode](#SetGlobalAccessLogMode "wikilink")                         |
 | 1005 | [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink")                         |
 | 1006 | [\#OutputAccessLogToSdCard](#OutputAccessLogToSdCard "wikilink")                       |
+| 1007 | \[4.0.0+\]                                                                             |
+| 1008 | \[4.0.0+\] MountRegisteredUpdatePartition                                              |
+| 1009 | \[4.0.0+\]                                                                             |
+| 1100 | \[4.0.0+\]                                                                             |
 
 ## Permissions
 
@@ -415,13 +430,14 @@ current end of the file(appended).
 
 This is the interface for a raw device, usually a block device.
 
-| Cmd | Name    | Arguments                                      |
-| --- | ------- | ---------------------------------------------- |
-| 0   | Read    | Takes a type-0x46 buffer, an offset and length |
-| 1   | Write   | Takes a type-0x45 buffer, an offset and length |
-| 2   | Flush   | None                                           |
-| 3   | SetSize | Takes a size                                   |
-| 4   | GetSize | None                                           |
+| Cmd | Name       | Arguments                                      |
+| --- | ---------- | ---------------------------------------------- |
+| 0   | Read       | Takes a type-0x46 buffer, an offset and length |
+| 1   | Write      | Takes a type-0x45 buffer, an offset and length |
+| 2   | Flush      | None                                           |
+| 3   | SetSize    | Takes a size                                   |
+| 4   | GetSize    | None                                           |
+| 5   | \[4.0.0+\] |                                                |
 
 # IFileSystem
 
@@ -450,6 +466,7 @@ There are two main implementations of this interface:
 | 12  | [\#GetTotalSpaceSize](#GetTotalSpaceSize "wikilink") |
 | 13  | CleanDirectoryRecursively \[3.0.0+\]                 |
 | 14  | GetFileTimeStampRaw \[3.0.0+\]                       |
+| 15  | \[4.0.0+\]                                           |
 
 ## GetEntryType
 
@@ -517,13 +534,14 @@ s8 type: 0 = directory, 1 = file.
 
 # IFile
 
-| Cmd | Name    |
-| --- | ------- |
-| 0   | Read    |
-| 1   | Write   |
-| 2   | Flush   |
-| 3   | SetSize |
-| 4   | GetSize |
+| Cmd | Name       |
+| --- | ---------- |
+| 0   | Read       |
+| 1   | Write      |
+| 2   | Flush      |
+| 3   | SetSize    |
+| 4   | GetSize    |
+| 5   | \[4.0.0+\] |
 
 # ISaveDataInfoReader
 
@@ -545,6 +563,8 @@ s8 type: 0 = directory, 1 = file.
 | 112 | \[2.0.0+\] GetMmcPatrolCount                                                   |
 | 113 | \[2.0.0+\] GetAndClearMmcErrorInfo                                             |
 | 114 | \[2.0.0+\] GetMmcExtendedCsd                                                   |
+| 115 | \[4.0.0+\]                                                                     |
+| 116 | \[4.0.0+\]                                                                     |
 | 200 | IsGameCardInserted                                                             |
 | 201 | EraseGameCard                                                                  |
 | 202 | GetGameCardHandle                                                              |
