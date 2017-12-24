@@ -1000,7 +1000,7 @@ executable code in that process. Used when loading NROs.
 | -------- | ------------------------------ | ------------- |
 | (In) W0  | Handle<Process>                | ProcessHandle |
 | (In) X1  | u64                            | DstAddr       |
-| (In) X2  | u64                            | Src Addr      |
+| (In) X2  | u64                            | SrcAddr       |
 | (In) X3  | u64                            | Size          |
 | (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
 
