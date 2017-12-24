@@ -1,0 +1,66 @@
+This process was added in firmware version 4.0.0.
+
+Safemode can be launched by a button combo at boot and has the task of performing any pending system updates.
+
+= Initialization =
+It calls [[Settings_services#set:sys|GetSafemodeFlag]] to check whether updates need to be installed or not. If no updates need to be installed it calls [[PCV_services#bpc|RebootSystem]], otherwise, the process continues.
+
+It creates and starts a new thread with the sole purpose of setting up the display and showing a progress bar using raw graphics data embedded in the sysmodule's binary.
+
+The display is configured as follows:
+ *(u32 *)DC_CMD_DISPLAY_WINDOW_HEADER = 0x00000040;    // WINDOW_C_SELECT
+ *(u32 *)DC_WIN_WIN_OPTIONS = 0x00000000;              // NO_OPTIONS
+ *(u32 *)DC_CMD_DISPLAY_WINDOW_HEADER = 0x00000020;    // WINDOW_B_SELECT
+ *(u32 *)DC_WIN_WIN_OPTIONS = 0x00000000;              // NO_OPTIONS
+ *(u32 *)DC_CMD_DISPLAY_WINDOW_HEADER = 0x00000010;    // WINDOW_A_SELECT
+ *(u32 *)DC_WIN_WIN_OPTIONS = 0x00000000;              // NO_OPTIONS
+ *(u32 *)DC_DISP_DISP_WIN_OPTIONS = 0x20000000;        // DSI_ENABLE
+ *(u32 *)DC_WIN_COLOR_DEPTH = 0x0000000D;              // WIN_COLOR_DEPTH_R8G8B8A8
+ *(u32 *)DC_WIN_WIN_OPTIONS = 0x00000000;              // NO_OPTIONS
+ *(u32 *)DC_WIN_WIN_OPTIONS = 0x00000000;              // NO_OPTIONS
+ *(u32 *)DC_WIN_POSITION = 0x00000000;
+ *(u32 *)DC_WIN_H_INITIAL_DDA = 0x00000000;
+ *(u32 *)DC_WIN_V_INITIAL_DDA = 0x00000000;
+ *(u32 *)DC_WIN_PRESCALED_SIZE = 0x05000B40;           // H_PRESCALED_SIZE=1280, V_PRESCALED_SIZE=2880
+ *(u32 *)DC_WIN_DDA_INCREMENT = 0x10001000;            // H_DDA_INC=0x1000, V_DDA_INC=0x1000
+ *(u32 *)DC_WIN_SIZE = 0x050002D0;                     // H_SIZE=1280, V_SIZE=720
+ *(u32 *)DC_WIN_LINE_STRIDE = 0x06000C00;              // UV_LINE_STRIDE=0x600, LINE_STRIDE=0xC00
+ *(u32 *)DC_WIN_BUFFER_CONTROL = 0x00000000;           // BUFFER_CONTROL_HOST
+ *(u32 *)DC_WIN_BUFFER_SURFACE_KIND = 0x00000000;      // DC_WIN_BUFFER_SURFACE_PITCH
+ *(u32 *)DC_WINBUF_START_ADDR = 0xC0000000;
+ *(u32 *)DC_WINBUF_ADDR_H_OFFSET = 0x00000000;
+ *(u32 *)DC_WINBUF_ADDR_V_OFFSET = 0x00000000;
+ *(u32 *)DC_WIN_WIN_OPTIONS = 0x00000000;              // NO_OPTIONS
+ *(u32 *)DC_DISP_DISP_WIN_OPTIONS = 0x20000000;        // DSI_ENABLE
+ *(u32 *)DC_WIN_WIN_OPTIONS = 0x00000000;              // NO_OPTIONS
+ *(u32 *)DC_DISP_DISP_WIN_OPTIONS = 0x20000000;        // DSI_ENABLE
+ *(u32 *)DC_WIN_WIN_OPTIONS = 0x00000000;              // NO_OPTIONS
+ *(u32 *)DC_DISP_DISP_WIN_OPTIONS = 0x20000000;        // DSI_ENABLE
+ *(u32 *)DC_WIN_WIN_OPTIONS = 0x40000000;              // WIN_ENABLE
+ *(u32 *)DC_CMD_DISPLAY_COMMAND = 0x00000020;          // DISP_CTRL_MODE_C_DISPLAY
+ *(u32 *)DC_CMD_STATE_CONTROL = 0x00000300;            // GENERAL_UPDATE | WIN_A_UPDATE
+ *(u32 *)DC_CMD_STATE_CONTROL = 0x00000003;            // GENERAL_ACT_REQ | WIN_A_ACT_REQ
+
+While this thread is running, safemode proceeds with the actual update process.
+
+== System update ==
+Safemode sets up service sessions for [[NS_Services|ns:su]] and [[Network_Interface_services#nifm:u|nifm:u]].
+
+It calls [[Network_Interface_services#nifm:u|CreateRequest ]] with '''request_id''' 0x02.
+
+Then calls [[Network_Interface_services#nifm:u|GetSystemEventReadableHandles]] on the returned [[Network_Interface_services#IRequest|IRequest]] and creates an event object.
+
+It uses [[Network_Interface_services#nifm:u|GetRequestState]] and [[Network_Interface_services#nifm:u|GetResult]] for synchronizing with the request object, calls [[Network_Interface_services#IRequest|Submit]] on the request and waits for it to finish.
+
+After submitting the first request, safemode repeats the request process again and waits for it to finish. If the request fails to finish at this point, [[PCV_services#bpc|RebootSystem]] is called.
+
+It calls [[NS_Services#ns:su|GetISystemUpdateControl]] and creates a system update event by calling:
+* [[Network_Interface_services#nifm:u|GetClientId]] to obtain the current client's ID;
+* [[Network_Interface_services#nifm:u|IsAnyInternetRequestAccepted]] with the returned client ID (if no request was accepted, error 0x2A810 is returned);
+* [[NS_Services#ns:su|ISystemUpdateControl cmd2]].
+
+After this, an event object is created and safemode loops waiting on it while calling [[NS_Services#ns:su|ISystemUpdateControl cmd3]] (update event?).
+
+When the system update event is signalled, safemode calls [[NS_Services#ns:su|ns:su cmd0]] (get update status?) and if this fails, [[PCV_services#bpc|RebootSystem]] is called.
+
+Finally, [[NS_Services#ns:su|ISystemUpdateControl cmd4]] is called and the process exits.
