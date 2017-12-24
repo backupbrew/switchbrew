@@ -433,22 +433,22 @@ driver.
 
 ## /dev/nvhdcp\_up-ctrl
 
-| Value      | Direction | Size | Description | Notes |
-| ---------- | --------- | ---- | ----------- | ----- |
-| 0xC4880401 | Inout     | 1160 |             |       |
-| 0xC4880402 | Inout     | 1160 |             |       |
-| 0x40010403 | In        | 1    |             |       |
-|            |           |      |             |       |
+| Value      | Direction | Size | Description              | Notes |
+| ---------- | --------- | ---- | ------------------------ | ----- |
+| 0xC4880401 | Inout     | 1160 | TEGRAIO\_NVHDCP\_READ\_M |       |
+| 0xC4880402 | Inout     | 1160 | TEGRAIO\_NVHDCP\_READ\_S |       |
+| 0x40010403 | In        | 1    | TEGRAIO\_NVHDCP\_ON\_OFF |       |
+|            |           |      |                          |       |
 
 ## /dev/nvdcutil-disp0, /dev/nvdcutil-disp1
 
-| Value      | Direction | Size | Description | Notes |
-| ---------- | --------- | ---- | ----------- | ----- |
-| 0x40010501 | In        | 1    |             |       |
-| 0x40010502 | In        | 1    |             |       |
-| 0x42040503 | In        | 1056 |             |       |
-| 0x803C0504 | Out       | 60   |             |       |
-|            |           |      |             |       |
+| Value      | Direction | Size | Description                               | Notes |
+| ---------- | --------- | ---- | ----------------------------------------- | ----- |
+| 0x40010501 | In        | 1    |                                           |       |
+| 0x40010502 | In        | 1    |                                           |       |
+| 0x42040503 | In        | 1056 |                                           |       |
+| 0x803C0504 | Out       | 60   | NVDCUTIL\_DISP\_IOCTL\_GET\_DISPLAY\_INFO |       |
+|            |           |      |                                           |       |
 
 ## /dev/nvsched-ctrl
 
@@ -471,6 +471,16 @@ driver.
 | 0x4008060F | In        | 8    |             |       |
 | 0x40100610 | In        | 16   |             |       |
 | 0x40100611 | In        | 16   |             |       |
+|            |           |      |             |       |
+
+## /dev/nverpt-ctrl
+
+Added in firmware version 4.0.0.
+
+| Value      | Direction | Size | Description | Notes |
+| ---------- | --------- | ---- | ----------- | ----- |
+| 0xC1280701 | Inout     | 296  |             |       |
+| 0xCF580702 | Inout     | 3928 |             |       |
 |            |           |      |             |       |
 
 ## /dev/nvhost-as-gpu
@@ -656,7 +666,7 @@ it.
 | 0x4008440A | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_TIMEOUT                        |       |
 | 0x8008440B | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT                   |       |
 | 0x8004440C | Out       | 4        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT\_SIZE         |       |
-| 0x0000440D | ?         | ?        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT (uses Ioctl3) |       |
+| 0x0000440D | None      | 0        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT (uses Ioctl3) |       |
 |            |           |          |                                                        |       |
 
 ## /dev/nvhost-ctrl-gpu
@@ -851,6 +861,8 @@ interface.
 | 0x40204818 | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX "wikilink")               |                                      |
 | 0xC0??4819 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY "wikilink")       |                                      |
 | 0xC020481A | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 "wikilink")             |                                      |
+| 0xC018481B | 24       | (uses Ioctl2)                                                                                               |                                      |
+| 0xC018481C | 24       | (uses Ioctl2)                                                                                               |                                      |
 |            |          |                                                                                                             |                                      |
 | 0x40084714 | 8        | NVGPU\_IOCTL\_CHANNEL\_SET\_USER\_DATA                                                                      | Sets an unknown user context address |
 | 0x80084715 | 8        | NVGPU\_IOCTL\_CHANNEL\_GET\_USER\_DATA                                                                      | Gets an unknown user context address |

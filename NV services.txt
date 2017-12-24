@@ -452,11 +452,11 @@ Returns an id for a nvmap object. Identical to Linux driver.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0xC4880401 || Inout || 1160 || ||
+| 0xC4880401 || Inout || 1160 || TEGRAIO_NVHDCP_READ_M ||
 |-
-| 0xC4880402 || Inout || 1160 || ||
+| 0xC4880402 || Inout || 1160 || TEGRAIO_NVHDCP_READ_S ||
 |-
-| 0x40010403 || In || 1 || ||
+| 0x40010403 || In || 1 || TEGRAIO_NVHDCP_ON_OFF ||
 |-
 |}
 
@@ -470,7 +470,7 @@ Returns an id for a nvmap object. Identical to Linux driver.
 |-
 | 0x42040503 || In || 1056 || ||
 |-
-| 0x803C0504 || Out || 60 || ||
+| 0x803C0504 || Out || 60 || NVDCUTIL_DISP_IOCTL_GET_DISPLAY_INFO ||
 |-
 |}
 
@@ -511,6 +511,18 @@ Returns an id for a nvmap object. Identical to Linux driver.
 | 0x40100610 || In || 16 || ||
 |-
 | 0x40100611 || In || 16 || ||
+|-
+|}
+
+== /dev/nverpt-ctrl ==
+Added in firmware version 4.0.0.
+
+{| class="wikitable" border="1"
+! Value || Direction || Size || Description || Notes
+|-
+| 0xC1280701 || Inout || 296 || ||
+|-
+| 0xCF580702 || Inout || 3928 || ||
 |-
 |}
 
@@ -693,7 +705,7 @@ Not accessible, but there is code to invoke it.
 |-
 | 0x8004440C || Out || 4 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT_SIZE ||
 |-
-| 0x0000440D || ? || ? || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT (uses Ioctl3)
+| 0x0000440D || None || 0 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT (uses Ioctl3) ||
 |-
 |}
 
@@ -928,6 +940,10 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 | 0xC0??4819 || Variable || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY]] ||
 |-
 | 0xC020481A || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2]] ||
+|-
+| 0xC018481B || 24 || (uses Ioctl2) ||
+|-
+| 0xC018481C || 24 || (uses Ioctl2) ||
 |-
 |- style="border-top: double"
 | 0x40084714 || 8 || NVGPU_IOCTL_CHANNEL_SET_USER_DATA || Sets an unknown user context address
