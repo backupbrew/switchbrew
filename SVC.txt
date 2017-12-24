@@ -741,9 +741,17 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 15 || 0 || [2.0.0+] NewMapRegionSize
 |-
-| Process || 18 || 0 || [3.0.0+] Title-id.
+| Process || 16 || 0 || [3.0.0+] Some size in bytes.
 |-
-| Thread || 0xF0000002 || 0 || Performance counter related.
+| Process || 17 || 0 || [3.0.0+] Some size in bytes.
+|-
+| Process || 18 || 0 || [3.0.0+] TitleId
+|-
+| Zero    || 19 || 0 || [4.0.0+]
+|-
+| Zero    || 19 || 1 || [4.0.0+]
+|-
+| Thread  || 0xF0000002 || 0 || Performance counter related.
 |}
 
 == svcMapPhysicalMemory ==

@@ -560,7 +560,11 @@ it will return 0.
 | Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize                                                                                 |
 | Process     | 14         | 0                     | \[2.0.0+\] NewMapRegionBaseAddr                                                                             |
 | Process     | 15         | 0                     | \[2.0.0+\] NewMapRegionSize                                                                                 |
-| Process     | 18         | 0                     | \[3.0.0+\] Title-id.                                                                                        |
+| Process     | 16         | 0                     | \[3.0.0+\] Some size in bytes.                                                                              |
+| Process     | 17         | 0                     | \[3.0.0+\] Some size in bytes.                                                                              |
+| Process     | 18         | 0                     | \[3.0.0+\] TitleId                                                                                          |
+| Zero        | 19         | 0                     | \[4.0.0+\]                                                                                                  |
+| Zero        | 19         | 1                     | \[4.0.0+\]                                                                                                  |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
 ## svcMapPhysicalMemory
