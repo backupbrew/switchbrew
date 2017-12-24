@@ -1,10 +1,10 @@
 # fsp-ldr
 
-| Cmd | Name          | Arguments                                                       | Notes                                                |
-| --- | ------------- | --------------------------------------------------------------- | ---------------------------------------------------- |
-| 0   | MountCode     | u64 TID + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink"). |
-| 1   | IsCodeMounted | u64 PID                                                         | Returns a bool (1 if code is mounted).               |
-| 2   | \[4.0.0+\]    |                                                                 |                                                      |
+| Cmd | Name                  | Arguments                                                           | Notes                                                |
+| --- | --------------------- | ------------------------------------------------------------------- | ---------------------------------------------------- |
+| 0   | MountCode             | u64 TitleId + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink"). |
+| 1   | IsCodeMounted         | u64 ProcessId                                                       | Returns a bool (1 if code is mounted).               |
+| 2   | \[4.0.0+\] Initialize | PID descriptor                                                      |                                                      |
 
 # fsp-pr
 
