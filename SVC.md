@@ -1210,14 +1210,17 @@ Bitfield of one of more of these:
 <td><p>Mapped during <a href="#svcCreateProcess" class="uri" title="wikilink">#svcCreateProcess</a>.</p></td>
 </tr>
 <tr class="odd">
-<td><p>[1.0.0+] 0x01FEBD04</p>
-<p>[4.0.0+] 0x03FEBD04</p></td>
+<td><p>[1.0.0+]</p>
+<p>0x01FEBD04</p>
+<p>[4.0.0+]</p>
+<p>0x03FEBD04</p></td>
 <td><p>MemoryType_CodeMutable</p></td>
 <td><p>Transition from 0xDC7E03 performed by <a href="#svcSetProcessMemoryPermission" class="uri" title="wikilink">#svcSetProcessMemoryPermission</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>[1.0.0+] 0x017EBD05</p>
-<p>[4.0.0+] 0x037EBD05</p></td>
+<p>[4.0.0+]</p>
+<p>0x037EBD05</p></td>
 <td><p>MemoryType_Heap</p></td>
 <td><p>Mapped using <a href="#svcSetHeapSize" class="uri" title="wikilink">#svcSetHeapSize</a>.</p></td>
 </tr>

@@ -1518,9 +1518,11 @@ Bitfield of one of more of these:
 | 0x00DC7E03 || MemoryType_CodeStatic || Mapped during [[#svcCreateProcess]].
 |-
 | [1.0.0+]
+
 0x01FEBD04
 
 [4.0.0+]
+
 0x03FEBD04
 || MemoryType_CodeMutable || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
 |-
@@ -1528,6 +1530,7 @@ Bitfield of one of more of these:
 0x017EBD05
 
 [4.0.0+]
+
 0x037EBD05
 || MemoryType_Heap || Mapped using [[#svcSetHeapSize]].
 |-
