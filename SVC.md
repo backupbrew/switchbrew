@@ -64,8 +64,8 @@
 | 0x43 | [\#svcReplyAndReceive](#svcReplyAndReceive "wikilink")                             | X1=ptr\_handles, W2=num\_handles, X3=replytarget\_handle(0=none), X4=timeout                                   | W0=result, W1=handle\_idx                                |
 | 0x44 | svcReplyAndReceiveWithUserBuffer                                                   | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=replytarget\_handle(0=none), X6=timeout                    | W0=result, W1=handle\_idx                                |
 | 0x45 | svcCreateEvent                                                                     | None                                                                                                           | W0=result, W1=client\_handle ?, W2=server\_handle ?      |
-| 0x4B | \[4.0.0+\] svcCreateUnknownMemory                                                  |                                                                                                                |                                                          |
-| 0x4C | \[4.0.0+\]                                                                         |                                                                                                                |                                                          |
+| 0x4B | \[4.0.0+\] svcCreateJitMemory                                                      | X1=addr, X2=size                                                                                               | W0=result, W1=jit\_handle                                |
+| 0x4C | \[4.0.0+\] [\#svcMapJitMemory](#svcMapJitMemory "wikilink")                        | W0=jit\_handle, W1=[\#MapJitOperation](#MapJitOperation "wikilink"), X2=dstaddr, X3=size, W4=perm              | W0=result                                                |
 | 0x4D | svcSleepSystem                                                                     | None                                                                                                           | None                                                     |
 | 0x4E | [\#svcReadWriteRegister](#svcReadWriteRegister "wikilink")                         | X1=reg\_addr, W2=rw\_mask, W3=in\_val                                                                          | W0=result, W1=out\_val                                   |
 | 0x4F | svcSetProcessActivity                                                              | W0=process\_handle, W1=bool                                                                                    | W0=result                                                |
@@ -634,6 +634,26 @@ expired. HandleIndex is not updated.
 **0xf601:** Port remote dead. One of the sessions has been closed.
 HandleIndex is set appropriately.
 
+## svcCreateJitMemory
+
+Takes an address range with backing memory to create the JIT memory
+object.
+
+The memory is initially memset to 0xFF after being locked.
+
+## svcMapJitMemory
+
+Maps the backing memory for a JIT memory object into the current
+process.
+
+If operation is JitMapOperation\_MapOwner, permission must be RW-.
+
+If operation is JitMapOperation\_MapSlave, permission must be R-- or
+R-X.
+
+This allows one "secure JIT" process to map the memory as RW-, and the
+other "slave" process to map it R-X.
+
 ## svcReadWriteRegister
 
 <div style="display: inline-block;">
@@ -1085,6 +1105,15 @@ Bitfield of one of more of these:
 | 37    | DeviceName\_TSECB1     |
 | 38    | DeviceName\_NVDEC1     |
 
+## MapJitOperation
+
+| Value | Name                        |
+| ----- | --------------------------- |
+| 0     | MapJitOperation\_MapOwner   |
+| 1     | MapJitOperation\_MapSlave   |
+| 2     | MapJitOperation\_UnmapOwner |
+| 3     | MapJitOperation\_UnmapSlave |
+
 ## LimitableResource
 
 | Value | Name                                |
@@ -1188,7 +1217,7 @@ Bitfield of one of more of these:
 | 22   | IsPoolAllocated/IsReferenceCounted                                                                                                                                         |
 | 23   | [MapProcessAllowed](#svcMapProcessMemory "wikilink")                                                                                                                       |
 | 24   | [AttributeChangeAllowed](#svcSetMemoryAttribute "wikilink")                                                                                                                |
-| 25   | \[4.0.0+\] UnknownMemoryAllowed                                                                                                                                            |
+| 25   | \[4.0.0+\] JitMemoryAllowed                                                                                                                                                |
 
 <table>
 <thead>
@@ -1306,6 +1335,16 @@ Bitfield of one of more of these:
 <td><p>0x00002013</p></td>
 <td><p>MemoryType_KernelStack</p></td>
 <td><p>Mapped in kernel during <a href="#svcCreateThread" class="uri" title="wikilink">#svcCreateThread</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x00402214</p></td>
+<td><p>MemoryType_JitReadOnly</p></td>
+<td><p>Mapped in kernel during <a href="#svcMapJitMemory" class="uri" title="wikilink">#svcMapJitMemory</a>.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x00402015</p></td>
+<td><p>MemoryType_JitWritable</p></td>
+<td><p>Mapped in kernel during <a href="#svcMapJitMemory" class="uri" title="wikilink">#svcMapJitMemory</a>.</p></td>
 </tr>
 </tbody>
 </table>

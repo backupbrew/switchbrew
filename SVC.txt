@@ -124,9 +124,9 @@ __NOTOC__
 |-
 | 0x45 || svcCreateEvent || None || W0=result, W1=client_handle ?, W2=server_handle ?
 |- style="border-top: double"
-| 0x4B || [4.0.0+] svcCreateUnknownMemory || ||
+| 0x4B || [4.0.0+] svcCreateJitMemory || X1=addr, X2=size || W0=result, W1=jit_handle
 |-
-| 0x4C || [4.0.0+] || ||
+| 0x4C || [4.0.0+] [[#svcMapJitMemory]] || W0=jit_handle, W1=[[#MapJitOperation]], X2=dstaddr, X3=size, W4=perm || W0=result
 |-
 | 0x4D || svcSleepSystem || None || None
 |-
@@ -818,6 +818,20 @@ After being validated, passed handles will be enumerated in order; even if a ses
 
 '''0xf601:''' Port remote dead. One of the sessions has been closed. HandleIndex is set appropriately.
 
+== svcCreateJitMemory ==
+Takes an address range with backing memory to create the JIT memory object.
+
+The memory is initially memset to 0xFF after being locked.
+
+== svcMapJitMemory ==
+Maps the backing memory for a JIT memory object into the current process.
+
+If operation is JitMapOperation_MapOwner, permission must be RW-.
+
+If operation is JitMapOperation_MapSlave, permission must be R-- or R-X.
+
+This allows one "secure JIT" process to map the memory as RW-, and the other "slave" process to map it R-X.
+
 == svcReadWriteRegister ==
 
 <div style="display: inline-block;">
@@ -1349,6 +1363,20 @@ Bitfield of one of more of these:
 | 38 || DeviceName_NVDEC1
 |}
 
+== MapJitOperation ==
+{| class=wikitable
+! Value || Name
+|-
+| 0 || MapJitOperation_MapOwner
+|-
+| 1 || MapJitOperation_MapSlave
+|-
+| 2 || MapJitOperation_UnmapOwner
+|-
+| 3 || MapJitOperation_UnmapSlave
+|}
+
+
 == LimitableResource ==
 {| class=wikitable
 ! Value || Name
@@ -1516,7 +1544,7 @@ Bitfield of one of more of these:
 |-
 | 24 || [[#svcSetMemoryAttribute|AttributeChangeAllowed]]
 |-
-| 25 || [4.0.0+] UnknownMemoryAllowed
+| 25 || [4.0.0+] JitMemoryAllowed
 |}
 
 {| class=wikitable
@@ -1581,6 +1609,10 @@ Bitfield of one of more of these:
 | 0x004C2812 || [[IPC_Marshalling|MemoryType_IpcBuffer3]] || IPC buffers with descriptor flags=3.
 |-
 | 0x00002013 || MemoryType_KernelStack || Mapped in kernel during [[#svcCreateThread]].
+|-
+| 0x00402214 || MemoryType_JitReadOnly || Mapped in kernel during [[#svcMapJitMemory]].
+|-
+| 0x00402015 || MemoryType_JitWritable || Mapped in kernel during [[#svcMapJitMemory]].
 |}
 
 == ContinueDebugFlags ==
