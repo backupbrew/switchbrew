@@ -299,7 +299,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>[4.0.0+] grc:c</p></td>
-<td><p>GRC services</p></td>
+<td><p><a href="GRC services.md" title="wikilink">GRC services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">

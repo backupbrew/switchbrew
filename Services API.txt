@@ -241,7 +241,7 @@ Takes a pid.
 |
 |-
 | [4.0.0+] grc:c
-| GRC services
+| [[GRC services]]
 | 
 |-
 | [4.0.0+] mig:usr
