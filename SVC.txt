@@ -1,3 +1,1470 @@
+__NOTOC__
+
+= System calls =
+{| class=wikitable
+! Id || Name || In || Out
+|-
+|  0x1 || [[#svcSetHeapSize]] || W1=size || W0=result, X1=outaddr
+|-
+|  0x2 || [[#svcSetMemoryPermission]] || X0=addr, X1=size, W2=prot || W0=result
+|-
+|  0x3 || [[#svcSetMemoryAttribute]] || X0=addr, X1=size, W2=state0, W3=state1 || W0=result
+|-
+|  0x4 || [[#svcMapMemory]] || X0=dstaddr, X1=srcaddr, X2=size || W0=result
+|-
+|  0x5 || [[#svcUnmapMemory]] || X0=dstaddr, X1=srcaddr, X2=size || W0=result
+|-
+|  0x6 || [[#svcQueryMemory]] || X0=MemoryInfo*, X2=addr || W0=result, W1=PageInfo                                                         
+|-
+|  0x7 || [[#svcExitProcess]] || None ||
+|-
+|  0x8 || [[#svcCreateThread]] || X1=entry, X2=arg, X3=stacktop, W4=prio, W5=processor_id  || W0=result, W1=handle
+|-
+|  0x9 || [[#svcStartThread]] || W0=thread_handle || W0=result
+|-
+|  0xA || [[#svcExitThread]] || None ||                                                         
+|-
+|  0xB || [[#svcSleepThread]] || X0=nano || W0=result
+|-
+|  0xC || [[#svcGetThreadPriority]] || W1=thread_handle || W0=result, W1=prio
+|-
+|  0xD || [[#svcSetThreadPriority]] || W0=thread_handle, W1=prio || W0=result
+|-
+|  0xE || [[#svcGetThreadCoreMask]] || W2=thread_handle || W0=result, W1=out, X2=out
+|-
+|  0xF || [[#svcSetThreadCoreMask]] || W0=thread_handle, W1=in, X2=in2 || W0=result
+|-
+| 0x10 || [[#svcGetCurrentProcessorNumber]] || None || W0/X0=cpuid
+|-
+| 0x11 || svcSignalEvent || W0=wevent_handle || W0=result
+|-
+| 0x12 || svcClearEvent || W0=wevent_or_revent_handle || W0=result
+|-
+| 0x13 || [[#svcMapSharedMemory]] || W0=shmem_handle, X1=addr, X2=size, W3=perm || W0=result
+|-
+| 0x14 || svcUnmapSharedMemory || W0=shmem_handle, X1=addr, X2=size || W0=result                                                 
+|-
+| 0x15 || [[#svcCreateTransferMemory]] || X1=addr, X2=size, W3=perm || W0=result, W1=tmem_handle
+|-
+| 0x16 || svcCloseHandle || W0=handle || W0=result
+|-
+| 0x17 || svcResetSignal || W0=revent_or_process_handle || W0=result
+|-
+| 0x18 || [[#svcWaitSynchronization]] || X1=handles_ptr, W2=num_handles. X3=timeout || W0=result, W1=handle_idx
+|-
+| 0x19 || svcCancelSynchronization || W0=thread_handle || W0=result
+|-
+| 0x1A || svcArbitrateLock || W0=cur_thread_handle, X1=ptr, W2=req_thread_handle ||                                     
+|-
+| 0x1B || svcArbitrateUnlock || X0=ptr ||
+|-
+| 0x1C || svcWaitProcessWideKeyAtomic || X0=ptr0, X1=ptr, W2=thread_handle, X3=timeout || W0=result
+|-
+| 0x1D || svcSignalProcessWideKey || X0=ptr, W1=value || W0=result
+|-
+| 0x1E || svcGetSystemTick || None || X0={value of cntpct_el0}
+|-
+| 0x1F || svcConnectToNamedPort || X1=port_name_str || W0=result, W1=handle
+|-
+| 0x20 || svcSendSyncRequestLight || W0=light_session_handle, X1=? || W0=result
+|-
+| 0x21 || svcSendSyncRequest || X0=normal_session_handle || W0=result
+|-
+| 0x22 || [[#svcSendSyncRequestWithUserBuffer]] || X0=cmdbufptr, X1=size, X2=handle || W0=result
+|-
+| 0x23 || svcSendAsyncRequestWithUserBuffer || X1=cmdbufptr, X2=size, X3=handle || W0=result, W1=event_handle
+|-
+| 0x24 || svcGetProcessId || W1=thread_or_process_or_debug_handle || W0=result, X1=pid
+|-
+| 0x25 || svcGetThreadId || W0=thread_handle || W0=result, X1=out
+|-
+| 0x26 || svcBreak || X0,X1,X2=info || ?
+|-
+| 0x27 || svcOutputDebugString || X0=str, X1=size || W0=result
+|-
+| 0x28 || svcReturnFromException || X0=result || 
+|-
+| 0x29 || [[#svcGetInfo]] || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
+|-
+| 0x2A || svcFlushEntireDataCache || None || None
+|-
+| 0x2B || svcFlushDataCache || X0=addr, X1=size || W0=result
+|-
+| 0x2C || [3.0.0+] svcMapPhysicalMemory || X0=addr, X1=size || W0=result
+|-
+| 0x2D || [3.0.0+] svcUnmapPhysicalMemory|| X0=addr, X1=size || W0=result
+|- style="border-top: double"
+| 0x2F || svcGetLastThreadInfo || None || W0=result, W1,W2,W3,W4=unk, W5=truncated_u64, W6=bool
+|-
+| 0x30 || svcGetResourceLimitLimitValue || W1=reslimit_handle, W2=[[#LimitableResource]] || W0=result, X1=value
+|-
+| 0x31 || svcGetResourceLimitCurrentValue || W1=reslimit_handle, W2=[[#LimitableResource]] || W0=result, X1=value
+|-
+| 0x32 || svcSetThreadActivity || W0=thread_handle, W1=bool || W0=result
+|-
+| 0x33 || svcGetThreadContext3 || W0=thread_handle, W1=[[#ThreadContext]]* || W0=result
+|- style="border-top: double"
+| 0x3C || [[#svcDumpInfo]] ||  || 
+|- style="border-top: double"
+| 0x40 || svcCreateSession || W2=is_light, X3=? || W0=result, W1=server_handle, W2=client_handle
+|-
+| 0x41 || [[#svcAcceptSession]] || W1=port_handle || W0=result, W1=session_handle
+|-
+| 0x42 || svcReplyAndReceiveLight || W0=light_session_handle || W0=result, W1,W2,W3,W4,W5,W6,W7=out
+|-
+| 0x43 || [[#svcReplyAndReceive]] || X1=ptr_handles, W2=num_handles, X3=replytarget_handle(0=none), X4=timeout || W0=result, W1=handle_idx
+|-
+| 0x44 || svcReplyAndReceiveWithUserBuffer|| X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=replytarget_handle(0=none), X6=timeout || W0=result, W1=handle_idx
+|-
+| 0x45 || svcCreateEvent || None || W0=result, W1=client_handle ?, W2=server_handle ?
+|- style="border-top: double"
+| 0x4D || svcSleepSystem || None || None
+|-
+| 0x4E || [[#svcReadWriteRegister]] || X1=reg_addr, W2=rw_mask, W3=in_val || W0=result, W1=out_val
+|-
+| 0x4F || svcSetProcessActivity || W0=process_handle, W1=bool || W0=result
+|-
+| 0x50 || [[#svcCreateSharedMemory]] || W1=size, W2=myperm, W3=otherperm || W0=result, W1=shmem_handle
+|-
+| 0x51 || [[#svcMapTransferMemory]] || X0=tmem_handle, X1=addr, X2=size, W3=perm || W0=result
+|-
+| 0x52 || [[#svcUnmapTransferMemory]] || W0=tmemhandle, X1=addr, X2=size || W0=result
+|-
+| 0x53 || svcCreateInterruptEvent || X1=irq_num, W2=flag || W0=result, W1=handle
+|-
+| 0x54 || [[#svcQueryPhysicalAddress]] || X1=addr || W0=result, X1=physaddr, X2=kerneladdr, X3=size
+|-
+| 0x55 || [[#svcQueryIoMapping]] || X1=physaddr, X2=size || W0=result, X1=virtaddr
+|-
+| 0x56 || [[#svcCreateDeviceAddressSpace]] || X1=dev_as_start_addr, X2=dev_as_end_addr || W0=result, W1=dev_as_handle
+|-
+| 0x57 || [[#svcAttachDeviceAddressSpace]] || W0=device, X1=dev_as_handle || W0=result
+|-
+| 0x58 || [[#svcDetachDeviceAddressSpace]] || W0=device, X1=dev_as_handle || W0=result
+|-
+| 0x59 || [[#svcMapDeviceAddressSpaceByForce]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr, W5=perm || W0=result 
+|-
+| 0x5A || [[#svcMapDeviceAddressSpaceAligned]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr, W5=perm || W0=result 
+|-
+| 0x5B || svcMapDeviceAddressSpace || || 
+|-
+| 0x5C || [[#svcUnmapDeviceAddressSpace]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr || W0=result
+|-
+| 0x5D || svcInvalidateProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
+|-
+| 0x5E || svcStoreProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
+|-
+| 0x5F || svcFlushProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
+|-
+| 0x60 || svcDebugActiveProcess || X1=pid || W0=result, W1=debug_handle
+|-
+| 0x61 || svcBreakDebugProcess || W0=debug_handle || W0=result
+|-
+| 0x62 || svcTerminateDebugProcess || W0=debug_handle || W0=result
+|-
+| 0x63 || svcGetDebugEvent || X0=DebugEventInfo*, W1=debug_handle || W0=result
+|-
+| 0x64 || svcContinueDebugEvent || W0=debug_handle, W1=[[#ContinueDebugFlags]], X2=thread_id || W0=result
+|-
+| 0x65 || svcGetProcessList || X1=pids_out_ptr, W2=max_out || W0=result, W1=num_out 
+|-
+| 0x66 || svcGetThreadList || X1=tids_out_ptr, W2=max_out, W3=debug_handle_or_zero || W0=result, X1=num_out
+|-
+| 0x67 || svcGetDebugThreadContext || X0=ThreadContext*, X1=debug_handle, X2=thread_id, W3=[[#ThreadContextFlags]] || W0=result
+|-
+| 0x68 || svcSetDebugThreadContext || W0=debug_handle, W1=[[#ThreadContextFlags]], X2=ThreadContext* || W0=result
+|-
+| 0x69 || svcQueryDebugProcessMemory || X0=[[#MemoryInfo]]*, X2=debug_handle, X3=addr || W0=result, W1=PageInfo
+|-
+| 0x6A || svcReadDebugProcessMemory || X0=buffer*, X1=debug_handle, X2=src_addr, X3=size || W0=result
+|-
+| 0x6B || svcWriteDebugProcessMemory || X0=debug_handle, X1=buffer*, X2=dst_addr, X3=size || W0=result
+|-
+| 0x6C || svcSetHardwareBreakPoint || W0=HardwareBreakpointId, X1=watchpoint_flags, X2=watchpoint_value/debug_handle? || 
+|-
+| 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=[[#DebugThreadParam]] || W0=result, X1=out0, W2=out1
+|- style="border-top: double"
+| 0x70 || svcCreatePort || W2=max_sessions, W3=unk_bool, X4=name_ptr || W0=result, W1=clientport_handle, W2=serverport_handle
+|-
+| 0x71 || svcManageNamedPort || X1=name_ptr, W2=max_sessions || W0=result, W1=serverport_handle
+|-
+| 0x72 || svcConnectToPort || W1=clientport_handle || W0=result, W1=session_handle
+|-
+| 0x73 || svcSetProcessMemoryPermission || X0=addr, X1=size, W2=perm || W0=result
+|-
+| 0x74 || [[#svcMapProcessMemory]] || X0=srcaddr, W1=process_handle, X2=dstaddr, X3=size || W0=result
+|-
+| 0x75 || [[#svcUnmapProcessMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
+|-
+| 0x76 || [[#svcQueryProcessMemory]] || X0=meminfo_ptr, W2=process_handle, X3=addr || W0=result, W1=pageinfo
+|-
+| 0x77 || [[#svcMapProcessCodeMemory]] || W0=process_handle, X2=dstaddr, X2=srcaddr, X3=size || W0=result
+|-
+| 0x78 || [[#svcUnmapProcessCodeMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
+|-
+| 0x79 || [[#svcCreateProcess]] || X1=procinfo_ptr, X2=caps_ptr, W3=cap_num ||  W0=result, W1=process_handle
+|-
+| 0x7A || svcStartProcess || W0=process_handle, W1=main_thread_prio, W2=default_cpuid, W3=main_thread_stacksz || W0=result
+|-
+| 0x7B || svcTerminateProcess || W0=process_handle || W0=result
+|-
+| 0x7C || [[#svcGetProcessInfo]] || W0=process_handle || W0=result, X1=[[#ProcessState]]
+|-
+| 0x7D || svcCreateResourceLimit || None || W0=result, W1=reslimit_handle 
+|-
+| 0x7E || svcSetResourceLimitLimitValue || W0=reslimit_handle, W1=[[#LimitableResource]], X2=value || W0=result
+|-
+| 0x7F || svcCallSecureMonitor || X0=smc_sub_id, X1,X2,X3,X4,X5,X6,X7=smc_args || X0,X1,X2,X3,X4,X5,X6,X7=result
+|}
+
+== svcSetHeapSize ==
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W1 || u64 || Size
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) X1 || u64 || OutAddr
+|}
+</div>
+
+'''Description:''' Set the process heap to a given Size. It can both extend and shrink the heap.
+
+Size must be a multiple of 0x2000000.
+
+On success, the heap base-address (which is fixed by kernel, aslr'd) is written to OutAddr.
+
+[2.0.0+] Size must be less than 0x18000000.
+
+== svcSetMemoryPermission ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || void* || Addr
+|-
+| (In) X1 || u64 || Size
+|-
+| (In) W2 || [[#Permission]] || Prot
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Change permission of page-aligned memory region.
+
+Bit2 of permission (exec) is not allowed. Setting write-only is not allowed either (bit1).
+
+This can be used to move back and forth between ---, r-- and rw-.
+
+== svcSetMemoryAttribute ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || void* || Addr
+|-
+| (In) X1 || u64 || Size
+|-
+| (In) W2 || u32 || State0
+|-
+| (In) W3 || u32 || State1
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Change attribute of page-aligned memory region. 
+
+This is used to turn on/off caching for a given memory area. Useful when talking to devices such as the GPU.
+
+What happens "under the hood" is the "Memory Attribute Indirection Register" index is changed from 2 to 3 in the MMU descriptor.
+
+{| class=wikitable
+! State0 || State1 || Action
+|-
+| 0 || 0 || Clear bit3 in [[#MemoryAttribute]].
+|-
+| 8 || 0 || Clear bit3 in [[#MemoryAttribute]].
+|-
+| 8 || 8 || Set bit3 in [[#MemoryAttribute]].
+|}
+
+== svcMapMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || void* || DstAddr
+|-
+| (In) X1 || void* || SrcAddr
+|-
+| (In) X2 || u64 || Size
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Maps a memory range into a different range.
+
+Mainly used for adding guard pages around stack.
+
+Source range gets reprotected to --- (it can no longer be accessed), and bit0 is set in the source [[#MemoryAttribute]].
+
+If dstaddr >= LowerTreshold, the dst-range is enforced to be within the process' "MapRegion". Code can get the range of this region from [[#svcGetInfo]] id0=2,3.
+
+In this case, the mapped memory will have state 0x5C3C0B.
+
+As long as (dstaddr+size) < LowerThreshold, then you can map anywhere but the mapped memory will have state 0x482907 instead.
+
+LowerTreshold is 0x80000000 for 36-bit address spaces, and 0x40000000 for 32-bit ones.
+
+[2.0.0+] Support for the 0x482907 mappings outside the "MapRegion" were removed.
+
+== svcUnmapMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || void* || DstAddr
+|-
+| (In) X1 || void* || SrcAddr
+|-
+| (In) X2 || u64 || Size
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Unmaps a region that was previously mapped with [[#svcMapMemory]].
+
+It's possible to unmap ranges partially, you don't need to unmap the entire range "in one go".
+
+The srcaddr/dstaddr must match what was given when the pages were originally mapped.
+
+== svcQueryMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || [[#MemoryInfo]]* || MemInfo
+|-
+| (In) X2 || void* || Addr
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || PageInfo || PageInfo
+|}
+</div>
+
+'''Description:''' Query information about an address. Will always fetch the lowest page-aligned mapping that contains the provided address.
+
+Outputs a [[#MemoryInfo]] struct.
+
+== svcExitProcess ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) None || || 
+|-
+| (Out) None || ||
+|}
+</div>
+
+'''Description:''' Exits the current process.
+
+== svcCreateThread ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || void(*)(void*) || Entry
+|-
+| (In) X2 || void* || Arg
+|-
+| (In) X3 || void* || StackTop
+|-
+| (In) W4 || u32 || Priority
+|-
+| (In) W5 || u32 || ProcessorId
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || Handle<Thread> || Handle
+|}
+</div>
+
+'''Description:''' Create a thread in the current process.
+
+Processor_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for process.
+
+== svcStartThread ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<Thread> || Handle
+|-
+| (Out) None ||  ||
+|}
+</div>
+
+'''Description:''' Starts the thread for the provided handle.
+
+== svcExitThread ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) None || || 
+|-
+| (Out) None || ||
+|}
+</div>
+
+'''Description:''' Exits the current thread.
+
+== svcSleepThread ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || Nano
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Sleep for a specified amount of time, or yield thread.
+
+Setting nano=0 means "yield thread".
+
+== svcGetThreadPriority ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W1|| Handle<Thread> || Handle
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || u64 || Priority
+|}
+</div>
+
+'''Description:''' Get priority of provided thread handle.
+
+== svcSetThreadPriority ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0|| Handle<Thread> || Handle
+|-
+| (In) W1|| u32 || Priority
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Set priority of provided thread handle.
+
+Priority is a number 0-0x3F. Lower value means higher priority.
+
+== svcGetThreadCoreMask ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W2 || Handle<Thread> || Handle
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || u32 || Out0
+|-
+| (Out) X2 || u64 || Out1
+|}
+</div>
+
+'''Description:''' Get affinity mask of provided thread handle.
+
+== svcSetThreadCoreMask ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<Thread> || Handle
+|-
+| (In) W1 || u32 || In0
+|-
+| (In) X2 || u64 || In1
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Set affinity mask of provided thread handle.
+
+== svcGetCurrentProcessorNumber ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) None || || 
+|-
+| (Out) W0/X0 || u64 || CpuId
+|}
+</div>
+
+'''Description:''' Get which cpu is executing the current thread.
+
+Cpu-id is an integer in the range 0-3.
+
+== svcMapSharedMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<SharedMemory> || MemHandle
+|-
+| (In) X1 || void* || Addr
+|-
+| (In) X2 || u64 || Size
+|-
+| (In) W3 || [[#Permission]] || Permissions
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+Maps the block supplied by the handle. The required permissions are different for the process that created the handle and all other processes.
+
+Increases reference count for the KSharedMemory object. Thus in order to release the memory associated with the object, all handles to it must be closed and all mappings must be unmapped.
+
+== svcCreateTransferMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || void* || Addr
+|-
+| (In) X2 || u64 || Size
+|-
+| (In) W3 || [[#Permission]] || Permissions
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || Handle<TransferMemory> || Handle
+|}
+</div>
+
+This one reprotects the src block with perms you give it. It also sets bit0 into [[#MemoryAttribute]].
+
+Executable bit perm not allowed.
+
+Closing all handles automatically causes the bit0 in [[#MemoryAttribute]] to clear, and the permission to reset.
+
+== svcWaitSynchronization ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || Handle* || HandlesPtr
+|-
+| (In) W2 || u64 || HandlesNum
+|-
+| (In) X3 || u64 || Timeout
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || u64 || HandleIndex
+|}
+</div>
+
+Works with num_handles <= 0x40, error on num_handles == 0.
+
+Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
+
+=== Object types ===
+
+'''Port:''' signals when there is an incoming connection waiting to be [[#svcAcceptSession|accepted]].
+
+'''Session (server-side):''' signals when there is an incoming message waiting to be [[#svcReplyAndReceive|received]] or the pipe is closed.
+
+=== Result codes ===
+
+'''0x0:''' Success. One of the objects was signalled before the timeout expired. Handle index is updated to indicate which object signalled.
+
+'''0xe401:''' Invalid handle. Returned when one of the handles passed is invalid. Handle index is not updated.
+
+'''0xea01:''' Timeout. Returned when no objects have been signalled within the timeout. Handle index is not updated.
+
+== svcSendSyncRequestWithUserBuffer ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || void* || CmdPtr
+|-
+| (In) X1 || u64 || Size
+|-
+| (In) W2 || Handle<Session> || Handle
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+Size must be 0x1000-aligned.
+
+== svcBreak ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || u64 ||
+|-
+| (In) X1 || u64 ||
+|-
+| (In) X2 || u64 || Info
+|-
+| (Out) ? || ? || ?
+|}
+</div>
+
+When used on retail where inx0 bit31 is clear, the system will throw a [[Error_codes|fatal-error]]. Otherwise when bit31 is set, it will return 0.
+
+== svcGetInfo ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || InfoId
+|-
+| (In) W2 || Handle || Handle
+|-
+| (In) X3 || u64 || InfoSubId
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) X1 || u64 || Out
+|}
+</div>
+
+{| class=wikitable
+! Handle type || Id0 || Id1 || Description
+|-
+| Process || 0 || 0 || AllowedCpuIdBitmask
+|-
+| Process || 1 || 0 || AllowedThreadPrioBitmask
+|-
+| Process || 2 || 0 || MapRegionBaseAddr
+|-
+| Process || 3 || 0 || MapRegionSize
+|-
+| Process || 4 || 0 || HeapRegionBaseAddr
+|-
+| Process || 5 || 0 || HeapRegionSize
+|-
+| Process || 6 || 0 || TotalMemoryUsage
+|-
+| Process || 7 || 0 || TotalHeapUsage
+|-
+| Zero    || 8 || 0 || IsCurrentProcessBeingDebugged
+|-
+| Zero    || 9 || 0 || Returns ResourceLimit handle for current process. Used by [[Process_Manager_services|PM]].
+|-
+| Zero    || 10 || -1, {current coreid} || Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?
+|-
+| Zero    || 11 || 0-3 || RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.
+|-
+| Process || 12 || 0 || [2.0.0+] AddressSpaceBaseAddr
+|-
+| Process || 13 || 0 || [2.0.0+] AddressSpaceSize
+|-
+| Process || 14 || 0 || [2.0.0+] NewMapRegionBaseAddr
+|-
+| Process || 15 || 0 || [2.0.0+] NewMapRegionSize
+|-
+| Process || 18 || 0 || [3.0.0+] Title-id.
+|-
+| Thread || 0xF0000002 || 0 || Performance counter related.
+|}
+
+== svcDumpInfo ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) None || || 
+|-
+| (Out) None || ||
+|}
+</div>
+
+Does nothing, just returns with registers set to all-zero.
+
+== svcAcceptSession ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W1 || Handle<Port> || Port
+|-
+| (Out) W0 || [[#Result]] || Result
+|-
+| (Out) W1 || Handle<ServerSession> || Session
+|}
+</div>
+
+=== Result codes ===
+
+'''0xf201:''' No session waiting to be accepted
+
+== svcReplyAndReceive ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W1 || *Handle<Port or ServerSession> || Handles
+|-
+| (In) W2 || u32 || NumHandles
+|-
+| (In) W3 || Handle<ServerSession> || ReplyTarget
+|-
+| (In) X4 || u64 (nanoseconds) || Timeout
+|-
+| (Out) W0 || [[#Result]] || Result
+|-
+| (Out) W1 || u32 || HandleIndex
+|}
+</div>
+
+If ReplyTarget is not zero, a reply from the TLS will be sent to that session.
+Then it will wait until either of the passed sessions has an incoming message, is closed, a passed port has an incoming connection, or the timeout expires.
+If there is an incoming message, it is copied to the TLS.
+
+After being validated, passed handles will be enumerated in order; even if a session has been closed, if one that appears earlier in the list has an incoming message, it will take priority and a result code of 0x0 will be returned.
+
+=== Result codes ===
+
+'''0x0:''' Success. Either a session has an incoming message or a port has an incoming connection. HandleIndex is set appropriately.
+
+'''0xea01:''' Timeout. No handles were signalled before the timeout expired. HandleIndex is not updated.
+
+'''0xf601:''' Port remote dead. One of the sessions has been closed. HandleIndex is set appropriately.
+
+== svcReadWriteRegister ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || RegAddr
+|-
+| (In) W2 || u64 || RwMask
+|-
+| (In) W3 || u64 || InValue
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1|| u64 || OutValue
+|}
+</div>
+
+Read/write IO registers with a hardcoded whitelist. Input address is physical-address and must be aligned to 4.
+
+rw_mask is 0 for reading and 0xffffffff for writing. You can also write individual bits by using a mask value.
+
+You can only write to registers inside physical pages 0x70019000 (MC), 0x7001C000 (MC0), 0x7001D000 (MC1), and they all share the same whitelist.
+
+The whitelist is same for writing as for reading.
+
+The whitelist is:
+
+0x054, 0x090, 0x094, 0x098, 0x09c, 0x0a0, 0x0a4, 0x0a8, 0x0ac, 0x0b0, 0x0b4, 0x0b8, 0x0bc, 0x0c0, 0x0c4, 0x0c8, 0x0d0, 0x0d4, 0x0d8, 0x0dc, 0x0e0, 0x100, 0x108, 0x10c, 0x118, 0x11c, 0x124, 0x128, 0x12c, 0x130, 0x134, 0x138, 0x13c, 0x158, 0x15c, 0x164, 0x168, 0x16c, 0x170, 0x174, 0x178, 0x17c, 0x200, 0x204, 0x2e4, 0x2e8, 0x2ec, 0x2f4, 0x2f8, 0x310, 0x314, 0x320, 0x328, 0x344, 0x348, 0x370, 0x374, 0x37c, 0x380, 0x390, 0x394, 0x398, 0x3ac, 0x3b8, 0x3bc, 0x3c0, 0x3c4, 0x3d8, 0x3e8, 0x41c, 0x420, 0x424, 0x428, 0x42c, 0x430, 0x44c, 0x47c, 0x480, 0x484, 0x50c, 0x554, 0x558, 0x55c, 0x670, 0x674, 0x690, 0x694, 0x698, 0x69c, 0x6a0, 0x6a4, 0x6c0, 0x6c4, 0x6f0, 0x6f4, 0x960, 0x970, 0x974, 0xa20, 0xa24, 0xb88, 0xb8c, 0xbc4, 0xbc8, 0xbcc, 0xbd0, 0xbd4, 0xbd8, 0xbdc, 0xbe0, 0xbe4, 0xbe8, 0xbec, 0xc00, 0xc5c, 0xcac
+
+
+[2.0.0+] Whitelist was extended with 0x4c4, 0x4c8, 0x4cc, 0x584, 0x588, 0x58c.
+
+[2.0.0+] The IO registers in range 0x7000E400 (PMC) size 0xC00 skip the whitelist, and do a TrustZone call using [[SMC]] Id1 0xC3000008(ReadWriteRegister).
+
+Here is the whitelist imposed by that SMC, relative to the start of the PMC registers:
+
+0x000, 0x00c, 0x010, 0x014, 0x01c, 0x020, 0x02c, 0x030, 0x034, 0x038, 0x03c, 0x040, 0x044, 0x048, 0x0dc, 0x0e0, 0x0e4, 0x160, 0x164, 0x168, 0x170, 0x1a8, 0x1b8, 0x1bc, 0x1c0, 0x1c4, 0x1c8, 0x2b4, 0x2d4, 0x440, 0x4d8
+
+
+== svcCreateSharedMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W1 || u64 || Size
+|-
+| (In) W2 || [[#Permission]] || LocalPerm
+|-
+| (In) W3 || [[#Permission]] || RemotePerm
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || Handle<SharedMemory> || MemHandle
+|}
+</div>
+
+Other perm can be used to enforce permission 1, 3, or 0x10000000 if don't care.
+
+== svcMapTransferMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || Handle<TransferMemory> || MemHandle
+|-
+| (In) X1 || void* || Addr
+|-
+| (In) X2 || u64 || Size
+|-
+| (In) W3 || [[#Permission]] || Permissions
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+The newly mapped pages will have [[#MemoryState]] type 0xE.
+
+You must pass same size and permissions as given in svcCreateMemoryMirror, otherwise error.
+
+== svcUnmapTransferMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || Handle<TransferMemory> || MemHandle
+|-
+| (In) X1 || void* || Addr
+|-
+| (In) X2 || u64 || Size
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+Size must match size given in map syscall, otherwise there's an invalid-size error.
+
+== svcQueryPhysicalAddress ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || Addr
+|-
+| (Out) W0 || [[#Result]]|| Ret
+|-
+| (Out) X1 || u64 || PhysAddr
+|-
+| (Out) X2 || u64 || KernelAddr
+|-
+| (Out) X3 || u64 || Size
+|}
+</div>
+
+== svcQueryIoMapping ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || PhysAddr
+|-
+| (In) X2 || u64 || Size
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) X1 || void* || VirtAddr
+|}
+</div>
+
+'''Description:''' Returns a virtual address mapped to a given IO range.
+
+== svcCreateDeviceAddressSpace ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || StartAddr
+|-
+| (In) X2 || u64 || EndAddr
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || Handle<DeviceAddressSpace> || AddressSpaceHandle
+|}
+</div>
+
+'''Description:''' Creates a virtual address space for binding device address spaces and returns a handle.
+
+dev_as_start_addr is normally set to 0 and dev_as_end_addr is normally set to 0xFFFFFFFF.
+
+== svcAttachDeviceAddressSpace ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || [[#DeviceName]] || DeviceId
+|-
+| (In) X1 || Handle<DeviceAddressSpace> || DeviceAsHandle
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Attaches a device address space to a [[#DeviceName|device]].
+
+== svcDetachDeviceAddressSpace ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || [[#DeviceName]] || DeviceId
+|-
+| (In) X1 || Handle<DeviceAddressSpace> || DeviceAsHandle
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Detaches a device address space from a [[#DeviceName|device]].
+
+== svcMapDeviceAddressSpaceByForce ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<DeviceAddressSpace> || DeviceAsHandle
+|-
+| (In) W1 || Handle<Process> || ProcessHandle
+|-
+| (In) X2 || void* || SrcAddr
+|-
+| (In) X3 || u64 || DeviceAsSize
+|-
+| (In) X4 || u64 || DeviceAsAddr
+|-
+| (In) W5 || [[#Permission]] || Permissions
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Maps an attached device address space to an userspace address.
+
+dev_map_addr is the userspace destination address, while dev_as_addr is the source address between dev_as_start_addr and dev_as_end_addr (passed to [[#svcCreateDeviceAddressSpace]]).
+
+The userspace destination address must have the [[SVC#MemoryState|MapDeviceAllowed]] bit set. Bit [[SVC#MemoryAttribute|IsDeviceMapped]] will be set after mapping.
+
+== svcMapDeviceAddressSpaceAligned ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<DeviceAddressSpace> || DeviceAsHandle
+|-
+| (In) W1 || Handle<Process> || ProcessHandle
+|-
+| (In) X2 || void* || SrcAddr
+|-
+| (In) X3 || u64 || DeviceAsSize
+|-
+| (In) X4 || u64 || DeviceAsAddr
+|-
+| (In) W5 || [[#Permission]] || Permissions
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Maps an attached device address space to an userspace address.
+
+Same as [[#svcMapDeviceAddressSpaceByForce]], but the userspace destination address must have the [[SVC#MemoryState|MapDeviceAlignedAllowed]] bit set instead.
+
+== svcUnmapDeviceAddressSpace ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<DeviceAddressSpace> || DeviceAsHandle
+|-
+| (In) W1 || Handle<Process> || ProcessHandle
+|-
+| (In) X2 || void* || SrcAddr
+|-
+| (In) X3 || u64 || DeviceAsSize
+|-
+| (In) X4 || u64 || DeviceAsAddr
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+'''Description:''' Unmaps an attached device address space from an userspace address.
+
+== svcMapProcessMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || u64 || SrcAddr
+|-
+| (In) W1 || u64 || ProcessHandle
+|-
+| (In) X2 || void* || DstAddr
+|-
+| (In) X3 || u64 || Size
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+Maps the src address from the supplied process handle into the current process.
+
+This allows mapping code and rodata with RW- permission.
+
+== svcUnmapProcessMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<Process> || ProcessHandle
+|-
+| (In) X1 || void* || DstAddr
+|-
+| (In) X2 || u64 || SrcAddr
+|-
+| (In) X3 || u64 || Size
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+Unmaps what was mapped by [[#svcMapProcessMemory]].
+
+== svcQueryProcessMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || [[#MemoryInfo]]* || MemInfoPtr
+|-
+| (In) W2 || Handle<Process> || ProcessHandle
+|-
+| (In) X3 || u64 || Addr
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || PageInfo || PageInfo
+|}
+</div>
+
+Equivalent to [[#svcQueryMemory]] except takes a process handle.
+
+== svcMapProcessCodeMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<Process> || ProcessHandle
+|-
+| (In) X1 || u64 || DstAddr
+|-
+| (In) X2 || u64 || SrcAddr
+|-
+| (In) X3 || u64 || Size
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+Takes a process handle, and maps normal heap in that process as executable code in that process. Used when loading NROs.
+
+== svcUnmapProcessCodeMemory ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<Process> || ProcessHandle
+|-
+| (In) X1 || u64 || DstAddr
+|-
+| (In) X2 || u64 || Src Addr
+|-
+| (In) X3 || u64 || Size
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+Unmaps what was mapped by [[#svcMapProcessCodeMemory]].
+
+== svcCreateProcess ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || [[#CreateProcessInfo]]* || InfoPtr
+|-
+| (In) X2 || u64 || CapabilitiesPtr
+|-
+| (In) X3 || u64 || CapibilitiesNum
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || Handle<Process> || ProcessHandle
+|}
+</div>
+
+Takes a [[#CreateProcessInfo]] as input.
+
+== svcGetProcessInfo ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<Process> || ProcessHandle
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || [[#ProcessState]] || State
+|}
+</div>
+
+Returns an enum with value 0-7.
+
+== Debugging ==
+[2.0.0+] Exactly 6 debug SVCs require that [[SPL_services#GetConfig|IsDebugMode]] is non-zero. Error 0x4201 is returned otherwise.
+* svcBreakDebugProcess
+* svcContinueDebugEvent
+* svcWriteDebugProcessMemory
+* svcSetDebugThreadContext
+* svcTerminateDebugProcess
+* svcSetHardwareBreakPoint
+
+svcDebugActiveProcess stops execution of the target process, the normal method for resuming it requires svcContinueDebugEvent(see above). Closing the debug handle also results in execution being resumed.
+
+= Enum/Structures =
+== ThreadContextRequestFlags ==
+Bitfield of one of more of these:
+
+{| class=wikitable
+! Bit || Bitmask || Name
+|-
+| 0 || 1 || NormalContext
+|-
+| 1 || 2 ||
+|-
+| 2 || 4 ||
+|-
+| 3 || 8 ||
+|}
+
+== DeviceName ==
+{| class=wikitable
+! Value || Name
+|-
+| 0 || DeviceName_AFI
+|-
+| 1 || DeviceName_AVPC
+|-
+| 2 || DeviceName_DC
+|-
+| 3 || DeviceName_DCB
+|-
+| 4 || DeviceName_HC
+|-
+| 5 || DeviceName_HDA
+|-
+| 6 || DeviceName_ISP2
+|-
+| 7 || DeviceName_MSENCNVENC
+|-
+| 8 || DeviceName_NV
+|-
+| 9 || DeviceName_NV2
+|-
+| 10 || DeviceName_PPCS
+|-
+| 11 || DeviceName_SATA
+|-
+| 12 || DeviceName_VI
+|-
+| 13 || DeviceName_VIC
+|-
+| 14 || DeviceName_XUSB_HOST
+|-
+| 15 || DeviceName_XUSB_DEV
+|-
+| 16 || DeviceName_TSEC
+|-
+| 17 || DeviceName_PPCS1
+|-
+| 18 || DeviceName_DC1
+|-
+| 19 || DeviceName_SDMMC1A
+|-
+| 20 || DeviceName_SDMMC2A
+|-
+| 21 || DeviceName_SDMMC3A
+|-
+| 22 || DeviceName_SDMMC4A
+|-
+| 23 || DeviceName_ISP2B
+|-
+| 24 || DeviceName_GPU
+|-
+| 25 || DeviceName_GPUB
+|-
+| 26 || DeviceName_PPCS2
+|-
+| 27 || DeviceName_NVDEC
+|-
+| 28 || DeviceName_APE
+|-
+| 29 || DeviceName_SE
+|-
+| 30 || DeviceName_NVJPG
+|-
+| 31 || DeviceName_HC1
+|-
+| 32 || DeviceName_SE1
+|-
+| 33 || DeviceName_AXIAP
+|-
+| 34 || DeviceName_ETR
+|-
+| 35 || DeviceName_TSECB
+|-
+| 36 || DeviceName_TSEC1
+|-
+| 37 || DeviceName_TSECB1
+|-
+| 38 || DeviceName_NVDEC1
+|}
+
+== LimitableResource ==
+{| class=wikitable
+! Value || Name
+|-
+| 0 || LimitableResource_Memory
+|-
+| 1 || LimitableResource_Threads
+|-
+| 2 || LimitableResource_Events
+|-
+| 3 || LimitableResource_TransferMemories
+|-
+| 4 || LimitableResource_Sessions
+|}
+
+== ProcessEvent ==
+{| class=wikitable
+! Value || Name
+|-
+| 0 || ProcessEvent_Created
+|-
+| 1 || ProcessEvent_DebugAttached
+|-
+| 2 || ProcessEvent_DebugDetached
+|-
+| 3 || ProcessEvent_Crashed
+|-
+| 4 || ProcessEvent_Running
+|-
+| 5 || ProcessEvent_Exiting
+|-
+| 6 || ProcessEvent_Exited
+|-
+| 7 || ProcessEvent_DebugSuspended
+|}
+
+== DebugThreadParam ==
+{| class=wikitable
+! Value || Name
+|-
+| 0 || DebugThreadParam_ActualPriority
+|-
+| 1 ||
+|-
+| 2 || DebugThreadParam_CpuCore
+|-
+| 3 ||
+|-
+| 4 || DebugThreadParam_CoreMask
+|}
+
+== CreateProcessInfo ==
+{| class=wikitable
+! Offset || Length || Bits || Description
+|-
+| 0 || 12 || || ProcessName (doesn't have to be null-terminated)
+|-
+| 0xC || 4 || ||
+|-
+| 0x10 || 8 || || TitleId
+|-
+| 0x18 || 8 || || CodeAddr
+|-
+| 0x20 || 4 || || CodeNumPages
+|-
+| 0x24 || 4 || || MmuFlags
+|-
+| || || Bit0 || Is64bit
+|-
+| || || Bit3-1 || [[#AddressSpaceType]]
+|-
+| || || Bit4 ||
+|-
+| || || Bit5 || EnableAslr
+|-
+| || || Bit6 || IsSystem
+|-
+| 0x28 || 4 || || ResourceLimitHandle
+|-
+| 0x2C || 4 ||
+|}
+
+=== AddressSpaceType ===
+{| class=wikitable
+! Type || Name || Width || Description
+|-
+| 0 || Normal_32Bit || 32 ||
+|-
+| 1 || Normal_36Bit || 36 ||
+|-
+| 2 || WithoutMap_32Bit || 32 || Appears to be missing map region [?]
+|-
+| 3 || [2.0.0+] Normal_39Bit || 39 ||
+|}
+
+== MemoryInfo ==
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0 || 8 || BaseAddress
+|-
+| 8 || 8 || Size
+|-
+| 0x10 || 4 || MemoryType: lower 8 bits of [[#MemoryState]]
+|-
+| 0x14 || 4 || [[#MemoryAttribute]]
+|-
+| 0x18 || 4 || Permission (bit0: R, bit1: W, bit2: X)
+|-
+| 0x1C || 4 || IpcRefCount
+|-
+| 0x20 || 4 || DeviceRefCount
+|-
+| 0x24 || 4 || Padding: always zero
+|}
+
+== MemoryAttribute ==
+{| class=wikitable
+! Bits || Description
+|-
+| 0 || IsBorrowed
+|-
+| 1 || IsIpcMapped: when IpcRefCount > 0.
+|-
+| 2 || IsDeviceMapped: when DeviceRefCount > 0.
+|-
+| 3 || IsUncached
+|}
+
 == MemoryState ==
 {| class=wikitable
 ! Bits || Description
@@ -35,8 +1502,6 @@
 | 23 || [[#svcMapProcessMemory|MapProcessAllowed]]
 |-
 | 24 || [[#svcSetMemoryAttribute|AttributeChangeAllowed]]
-|-
-| 25 || UnknownMemoryAllowed
 |}
 
 {| class=wikitable
@@ -50,23 +1515,9 @@
 |-
 | 0x00DC7E03 || MemoryType_CodeStatic || Mapped during [[#svcCreateProcess]].
 |-
-| [1.0.0-3.0.1]
-
-0x01FEBD04
-
-[4.0.0+]
-
-0x03FEBD04
-|| MemoryType_CodeMutable || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
+| 0x01FEBD04 || MemoryType_CodeMutable || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
 |-
-| [1.0.0-3.0.1]
-
-0x017EBD05
-
-[4.0.0+]
-
-0x037EBD05
-|| MemoryType_Heap || Mapped using [[#svcSetHeapSize]].
+| 0x017EBD05 || MemoryType_Heap || Mapped using [[#svcSetHeapSize]].
 |-
 | 0x00402006 || MemoryType_SharedMemory || Mapped using [[#svcMapSharedMemory]].
 |-
@@ -74,14 +1525,7 @@
 |-
 | 0x00DD7E08 || MemoryType_ModuleCodeStatic || Mapped using [[#svcMapProcessCodeMemory]].
 |-
-| [1.0.0-3.0.1]
-
-0x01FFBD09
-
-[4.0.0+]
-
-0x03FFBD09
-|| MemoryType_ModuleCodeMutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
+| 0x01FFBD09 || MemoryType_ModuleCodeMutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
 |-
 | 0x005C3C0A || [[IPC_Marshalling|MemoryType_IpcBuffer0]] || IPC buffers with descriptor flags=0.
 |-
@@ -103,3 +1547,149 @@
 |-
 | 0x00002013 || MemoryType_KernelStack || Mapped in kernel during [[#svcCreateThread]].
 |}
+
+== ContinueDebugFlags ==
+{| class=wikitable
+! Bit || Bitmask || Description
+|-
+| 0 || 1 || SwallowException
+|-
+| 1 || 2 ||
+|-
+| 2 || 4 || ResumeAllThreads
+|}
+
+== DebugEventInfo ==
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0 || u32 || EventType
+|-
+| 4 || u32 || Flags (bit0: NeedsContinue)
+|-
+| 8 || u64 || ThreadId
+|-
+| 0x10 || || PerTypeSpecifics
+|}
+
+AttachProcess specific:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x10 || u64 || TitleId
+|-
+| 0x18 || u64 || ProcessId
+|-
+| 0x20 || char[12] || ProcessName
+|-
+| 0x2C || u32 || MmuFlags
+|}
+
+AttachThread specific:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x10 || u64 || ThreadId
+|-
+| 0x18 || u64 || TlsPtr
+|-
+| 0x20 || u64 || Entrypoint
+|}
+
+Exit specific:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x10 || u64 || Type (0=PausedThread, 1=RunningThread, 2=TerminatedProcess)
+|}
+
+Exception specific:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x10 || u64 || ExceptionType
+|-
+| 0x18 || u64 || FaultRegister
+|-
+| 0x20 || || PerExceptionSpecifics
+|}
+
+=== DebugEventType ===
+{| class=wikitable
+! Value || Name
+|-
+| 0 || DebugEvent_AttachProcess
+|-
+| 1 || DebugEvent_AttachThread
+|-
+| 2 ||
+|-
+| 3 || DebugEvent_Exit
+|-
+| 4 || DebugEvent_Exception
+|}
+
+=== DebugExceptionType ===
+{| class=wikitable
+! Value || Name
+|-
+| 0 || Exception_UndefinedInstruction
+|-
+| 1 || Exception_InstructionAbort
+|-
+| 2 || Exception_DataAbortMisc
+|-
+| 3 || Exception_PcSpAlignmentFault
+|-
+| 4 || Exception_DebuggerAttached
+|-
+| 5 || Exception_BreakPoint
+|-
+| 6 || Exception_UserBreak
+|-
+| 7 || Exception_DebuggerBreak
+|-
+| 8 || Exception_BadSvcId
+|}
+
+UndefinedInstruction specifics:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x20 || u32 || Opcode
+|}
+
+BreakPoint specifics:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x20 || u32 || IsWatchpoint
+|}
+
+UserBreak specifics:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x20 || u32 || Info0
+|-
+| 0x28 || u64 || Info1
+|-
+| 0x30 || u64 || Info2
+|}
+
+BadSvcId specifics:
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x20 || u32 || SvcId
+|}
+
+= Exception handling =
+There is userland code for handling exceptions, however this doesn't seem to be executed on retail mode.
+
+When a usermode exception occurs, it jumps to the main code binary entrypoint (main_binary_address + 0 == '''_start''').
+
+During normal boot '''_start''' is invoked with X0=0 and X1=main_thread_handle (triggering normal crt0 setup).
+During an usermode exception '''_start''' is invoked with X0=exception_info0_ptr and X1=exception_info1_ptr instead.
+
+The '''_start''' method determines whether to boot normally or handle an exception if X0 is set to 0 or not.
