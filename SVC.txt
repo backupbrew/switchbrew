@@ -1436,8 +1436,6 @@ Bitfield of one of more of these:
 |-
 | 0 || 12 || || ProcessName (doesn't have to be null-terminated)
 |-
-| 0xC || 4 || ||
-|-
 | 0x10 || 8 || || TitleId
 |-
 | 0x18 || 8 || || CodeAddr

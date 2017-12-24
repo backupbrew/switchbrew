@@ -1157,7 +1157,6 @@ Bitfield of one of more of these:
 | Offset | Length | Bits   | Description                                        |
 | ------ | ------ | ------ | -------------------------------------------------- |
 | 0      | 12     |        | ProcessName (doesn't have to be null-terminated)   |
-| 0xC    | 4      |        |                                                    |
 | 0x10   | 8      |        | TitleId                                            |
 | 0x18   | 8      |        | CodeAddr                                           |
 | 0x20   | 4      |        | CodeNumPages                                       |
