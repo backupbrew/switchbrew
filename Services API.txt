@@ -228,7 +228,9 @@ Takes a pid.
 | [[SSL services]]
 |
 |-
-| csrng, spl:
+| [1.0.0+] csrng, spl:
+
+[4.0.0+] csrng, spl:, spl:mig, spl:fs, spl:ssl, spl:es
 | [[SPL services]]
 | 
 |-
