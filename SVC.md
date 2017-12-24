@@ -1017,7 +1017,7 @@ Unmaps what was mapped by
 | -------- | ------------------------------------------------------ | --------------- |
 | (In) X1  | [\#CreateProcessInfo](#CreateProcessInfo "wikilink")\* | InfoPtr         |
 | (In) X2  | u64                                                    | CapabilitiesPtr |
-| (In) X3  | u64                                                    | CapibilitiesNum |
+| (In) X3  | u64                                                    | CapabilitiesNum |
 | (Out) W0 | [\#Result](#Result "wikilink")                         | Ret             |
 | (Out) W1 | Handle<Process>                                        | ProcessHandle   |
 

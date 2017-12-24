@@ -1236,7 +1236,7 @@ Unmaps what was mapped by [[#svcMapProcessCodeMemory]].
 |-
 | (In) X2 || u64 || CapabilitiesPtr
 |-
-| (In) X3 || u64 || CapibilitiesNum
+| (In) X3 || u64 || CapabilitiesNum
 |-
 | (Out) W0 || [[#Result]] || Ret
 |-
