@@ -40,6 +40,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * Every single system title was updated, except for: 0100000000000805("Chinese and Korean dictionaries"), 0100000000000808("European, English and Japanese dictionaries"), and 010000000000080C("EULA").
 * 4 new sysmodules were added, and new FIRM-package title 010000000000081C was added.
 
+* [[Flog]] was stubbed: official code for launching it was removed from [[qlaunch|the home menu]], and *all* code was overwritten with garbage. Thus, even attempts to launch it manually will result in [[Loader services|loader]] returning error 0xA09.
+
 ==Kernel==
 * All RTTI symbols were removed, can no longer know official name of kernel objects. :(
 * JIT syscalls were added.
