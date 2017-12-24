@@ -124,7 +124,7 @@ __NOTOC__
 |-
 | 0x45 || svcCreateEvent || None || W0=result, W1=client_handle ?, W2=server_handle ?
 |- style="border-top: double"
-| 0x4B || [4.0.0+] svcCreateJitMemory || X1=addr, X2=size || W0=result, W1=jit_handle
+| 0x4B || [4.0.0+] [[#svcCreateJitMemory]] || X1=addr, X2=size || W0=result, W1=jit_handle
 |-
 | 0x4C || [4.0.0+] [[#svcMapJitMemory]] || W0=jit_handle, W1=[[#MapJitOperation]], X2=dstaddr, X3=size, W4=perm || W0=result
 |-
@@ -826,9 +826,11 @@ The memory is initially memset to 0xFF after being locked.
 == svcMapJitMemory ==
 Maps the backing memory for a JIT memory object into the current process.
 
-If operation is JitMapOperation_MapOwner, permission must be RW-.
+For [[#MapJitOperation|MapJitOperation_MapOwner]], memory permission must be RW-.
 
-If operation is JitMapOperation_MapSlave, permission must be R-- or R-X.
+For [[#MapJitOperation|MapJitOperation_MapSlave]], memory permission must be R-- or R-X.
+
+Operations [[#MapJitOperation|MapJitOperation_UnmapOwner/MapJitOperation_UnmapSlave]] unmap memory that was previously mapped this way.
 
 This allows one "secure JIT" process to map the memory as RW-, and the other "slave" process to map it R-X.
 

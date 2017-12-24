@@ -64,7 +64,7 @@
 | 0x43 | [\#svcReplyAndReceive](#svcReplyAndReceive "wikilink")                             | X1=ptr\_handles, W2=num\_handles, X3=replytarget\_handle(0=none), X4=timeout                                   | W0=result, W1=handle\_idx                                |
 | 0x44 | svcReplyAndReceiveWithUserBuffer                                                   | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=replytarget\_handle(0=none), X6=timeout                    | W0=result, W1=handle\_idx                                |
 | 0x45 | svcCreateEvent                                                                     | None                                                                                                           | W0=result, W1=client\_handle ?, W2=server\_handle ?      |
-| 0x4B | \[4.0.0+\] svcCreateJitMemory                                                      | X1=addr, X2=size                                                                                               | W0=result, W1=jit\_handle                                |
+| 0x4B | \[4.0.0+\] [\#svcCreateJitMemory](#svcCreateJitMemory "wikilink")                  | X1=addr, X2=size                                                                                               | W0=result, W1=jit\_handle                                |
 | 0x4C | \[4.0.0+\] [\#svcMapJitMemory](#svcMapJitMemory "wikilink")                        | W0=jit\_handle, W1=[\#MapJitOperation](#MapJitOperation "wikilink"), X2=dstaddr, X3=size, W4=perm              | W0=result                                                |
 | 0x4D | svcSleepSystem                                                                     | None                                                                                                           | None                                                     |
 | 0x4E | [\#svcReadWriteRegister](#svcReadWriteRegister "wikilink")                         | X1=reg\_addr, W2=rw\_mask, W3=in\_val                                                                          | W0=result, W1=out\_val                                   |
@@ -646,10 +646,15 @@ The memory is initially memset to 0xFF after being locked.
 Maps the backing memory for a JIT memory object into the current
 process.
 
-If operation is JitMapOperation\_MapOwner, permission must be RW-.
+For [MapJitOperation\_MapOwner](#MapJitOperation "wikilink"), memory
+permission must be RW-.
 
-If operation is JitMapOperation\_MapSlave, permission must be R-- or
-R-X.
+For [MapJitOperation\_MapSlave](#MapJitOperation "wikilink"), memory
+permission must be R-- or R-X.
+
+Operations
+[MapJitOperation\_UnmapOwner/MapJitOperation\_UnmapSlave](#MapJitOperation "wikilink")
+unmap memory that was previously mapped this way.
 
 This allows one "secure JIT" process to map the memory as RW-, and the
 other "slave" process to map it R-X.
