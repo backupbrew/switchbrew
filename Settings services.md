@@ -260,6 +260,7 @@ This is
 | 119 | NeedsToUpdateHeadphoneVolume                                                          |
 | 120 | GetPushNotificationActivityModeOnSleep                                                |
 | 121 | SetPushNotificationActivityModeOnSleep                                                |
+| 122 | [\#GetSafemodeFlag](#GetSafemodeFlag "wikilink")                                      |
 
 Official user-processes get a new service session handle each time a
 set:sys cmd is used, with the session being closed aftewards.
@@ -301,5 +302,9 @@ Returned retval is always 0.
 ## GetSerialNumber
 
 Returns the 0x18-byte SerialNumber string.
+
+## GetSafemodeFlag
+
+Returns 0x01 if [safemode](Safemode.md "wikilink") needs to be launched.
 
 [Category:Services](Category:Services "wikilink")

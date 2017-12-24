@@ -397,6 +397,8 @@ This is "nn::settings::ISystemSettingsServer".
 | 120 || GetPushNotificationActivityModeOnSleep
 |-
 | 121 || SetPushNotificationActivityModeOnSleep
+|-
+| 122 || [[#GetSafemodeFlag]]
 |}
 
 Official user-processes get a new service session handle each time a set:sys cmd is used, with the session being closed aftewards.
@@ -424,5 +426,8 @@ Returned retval is always 0.
 
 == GetSerialNumber ==
 Returns the 0x18-byte SerialNumber string.
+
+== GetSafemodeFlag ==
+Returns 0x01 if [[Safemode|safemode]] needs to be launched.
 
 [[Category:Services]]
