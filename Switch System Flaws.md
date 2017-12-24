@@ -71,9 +71,43 @@ Flaws.
 
 ### FIRM-package System Modules
 
-| Summary                                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Successful exploitation result                               | Fixed in system version      | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
-| Service access control bypass (sm:h, smhax, probably other names) | Prior to [3.0.1](3.0.1.md "wikilink"), the *service manager* (sm) built-in system module treats a user as though it has full permissions if the user creates a new "sm:" port session but bypasses [initialization](Services%20API#Initialize.md##Initialize "wikilink"). This is due to the other sm commands skipping the service ACL check for Pids \<= 7 (i.e. all kernel bundled modules) and that skipping the initialization command leaves the Pid field uninitialized. In [3.0.1](3.0.1.md "wikilink"), sm returns error code 0x415 if [Initialize](Services%20API#Initialize.md##Initialize "wikilink") has not been called yet. | Acquiring, registering, and unregistering arbitrary services | [3.0.1](3.0.1.md "wikilink") | [3.0.1](3.0.1.md "wikilink")                  | May 2017                      | August 17, 2017             | Everyone      |
+<table>
+<thead>
+<tr class="header">
+<th><p>Summary</p></th>
+<th><p>Description</p></th>
+<th><p>Successful exploitation result</p></th>
+<th><p>Fixed in system version</p></th>
+<th><p>Last system version this flaw was checked for</p></th>
+<th><p>Timeframe this was discovered</p></th>
+<th><p>Public disclosure timeframe</p></th>
+<th><p>Discovered by</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Service access control bypass (sm:h, smhax, probably other names)</p></td>
+<td><p>Prior to <a href="3.0.1.md" title="wikilink">3.0.1</a>, the <em>service manager</em> (sm) built-in system module treats a user as though it has full permissions if the user creates a new &quot;sm:&quot; port session but bypasses <a href="Services API#Initialize.md##Initialize" title="wikilink">initialization</a>. This is due to the other sm commands skipping the service ACL check for Pids &lt;= 7 (i.e. all kernel bundled modules) and that skipping the initialization command leaves the Pid field uninitialized. In <a href="3.0.1.md" title="wikilink">3.0.1</a>, sm returns error code 0x415 if <a href="Services API#Initialize.md##Initialize" title="wikilink">Initialize</a> has not been called yet.</p></td>
+<td><p>Acquiring, registering, and unregistering arbitrary services</p></td>
+<td><p><a href="3.0.1.md" title="wikilink">3.0.1</a></p></td>
+<td><p><a href="3.0.1.md" title="wikilink">3.0.1</a></p></td>
+<td><p>May 2017</p></td>
+<td><p>August 17, 2017</p></td>
+<td><p>Everyone</p></td>
+</tr>
+<tr class="even">
+<td><p>Overly permissing SPL service</p></td>
+<td><p>The concept behind the switch's <a href="SMC.md" title="wikilink">Secure Monitor</a> is that all cryptographic keydata is located in userspace, but stored as &quot;access keys&quot; encrypted with &quot;keks&quot; that never leave TrustZone. The <a href="SPL services.md" title="wikilink">spl</a> (&quot;security processor liaison&quot;?) service serves as an interface between the rest of the system and the secure monitor. Prior to <a href="4.0.0.md" title="wikilink">4.0.0</a>, spl exposed only a single service &quot;spl:&quot;, which provided all TrustZone wrapper functions to all sysmodules with access to it. Thus anyone with access to the spl: service (via smhax or by pwning a sysmodule with access) could do crypto with any access keys they knew.</p>
+<p>This was fixed in <a href="4.0.0.md" title="wikilink">4.0.0</a> by splitting spl: into spl:, spl:mig, spl:ssl, spl:es, and spl:fs.</p></td>
+<td><p>Arbitrary spl: crypto with any access keys one knows. For example, one could use the SSL module's access keys to decrypt their console's SSL certificate private key without having to pwn the SSL sysmodule.</p></td>
+<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
+<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
+<td><p>Summer 2017 (after smhax was discovered).</p></td>
+<td><p>December 23, 2017</p></td>
+<td><p>Everyone</p></td>
+</tr>
+</tbody>
+</table>
 
 ### System Modules
 

@@ -136,6 +136,17 @@ In [[3.0.1]], sm returns error code 0x415 if [[Services_API#Initialize|Initializ
 | May 2017
 | August 17, 2017
 | Everyone
+|-
+| Overly permissing SPL service
+| The concept behind the switch's [[SMC|Secure Monitor]] is that all cryptographic keydata is located in userspace, but stored as "access keys" encrypted with "keks" that never leave TrustZone. The [[SPL services|spl]] ("security processor liaison"?) service serves as an interface between the rest of the system and the secure monitor. Prior to [[4.0.0]], spl exposed only a single service "spl:", which provided all TrustZone wrapper functions to all sysmodules with access to it. Thus anyone with access to the spl: service (via smhax or by pwning a sysmodule with access) could do crypto with any access keys they knew. 
+
+This was fixed in [[4.0.0]] by splitting spl: into spl:, spl:mig, spl:ssl, spl:es, and spl:fs.
+| Arbitrary spl: crypto with any access keys one knows. For example, one could use the SSL module's access keys to decrypt their console's SSL certificate private key without having to pwn the SSL sysmodule.
+| [[4.0.0]]
+| [[4.0.0]]
+| Summer 2017 (after smhax was discovered).
+| December 23, 2017
+| Everyone
 |}
 
 === System Modules ===
