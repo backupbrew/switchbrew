@@ -47,7 +47,7 @@
 | 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                                             | X1=info\_id, X2=handle, X3=info\_sub\_id                                                                       | W0=result, X1=out                                        |
 | 0x2A | svcFlushEntireDataCache                                                            | None                                                                                                           | None                                                     |
 | 0x2B | svcFlushDataCache                                                                  | X0=addr, X1=size                                                                                               | W0=result                                                |
-| 0x2C | \[3.0.0+\] svcMapPhysicalMemory                                                    | X0=addr, X1=size                                                                                               | W0=result                                                |
+| 0x2C | \[3.0.0+\] [\#svcMapPhysicalMemory](#svcMapPhysicalMemory "wikilink")              | X0=addr, X1=size                                                                                               | W0=result                                                |
 | 0x2D | \[3.0.0+\] svcUnmapPhysicalMemory                                                  | X0=addr, X1=size                                                                                               | W0=result                                                |
 | 0x2F | svcGetLastThreadInfo                                                               | None                                                                                                           | W0=result, W1,W2,W3,W4=unk, W5=truncated\_u64, W6=bool   |
 | 0x30 | svcGetResourceLimitLimitValue                                                      | W1=reslimit\_handle, W2=[\#LimitableResource](#LimitableResource "wikilink")                                   | W0=result, X1=value                                      |
@@ -562,6 +562,11 @@ it will return 0.
 | Process     | 15         | 0                     | \[2.0.0+\] NewMapRegionSize                                                                                 |
 | Process     | 18         | 0                     | \[3.0.0+\] Title-id.                                                                                        |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
+
+## svcMapPhysicalMemory
+
+This is like svcSetHeapSize except you can allocate heap at any address
+you'd like.
 
 ## svcDumpInfo
 
