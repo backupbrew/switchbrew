@@ -1178,29 +1178,124 @@ Bitfield of one of more of these:
 | 22   | IsPoolAllocated/IsReferenceCounted                                                                                                                                         |
 | 23   | [MapProcessAllowed](#svcMapProcessMemory "wikilink")                                                                                                                       |
 | 24   | [AttributeChangeAllowed](#svcSetMemoryAttribute "wikilink")                                                                                                                |
+| 25   | \[4.0.0+\] UnknownMemoryAllowed                                                                                                                                            |
 
-| Value      | Type                                                              | Meaning                                                                                                             |
-| ---------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| 0x00000000 | MemoryType\_Unmapped                                              |                                                                                                                     |
-| 0x00002001 | MemoryType\_Io                                                    | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| 0x00042002 | MemoryType\_Normal                                                | Mapped by kernel capability parsing in [\#svcCreateProcess](#svcCreateProcess "wikilink").                          |
-| 0x00DC7E03 | MemoryType\_CodeStatic                                            | Mapped during [\#svcCreateProcess](#svcCreateProcess "wikilink").                                                   |
-| 0x01FEBD04 | MemoryType\_CodeMutable                                           | Transition from 0xDC7E03 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| 0x017EBD05 | MemoryType\_Heap                                                  | Mapped using [\#svcSetHeapSize](#svcSetHeapSize "wikilink").                                                        |
-| 0x00402006 | MemoryType\_SharedMemory                                          | Mapped using [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink").                                                |
-| 0x00482907 | \[1.0.0\] MemoryType\_WeirdSharedMemory                           | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| 0x00DD7E08 | MemoryType\_ModuleCodeStatic                                      | Mapped using [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink").                                      |
-| 0x01FFBD09 | MemoryType\_ModuleCodeMutable                                     | Transition from 0xDD7E08 performed by [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink"). |
-| 0x005C3C0A | [MemoryType\_IpcBuffer0](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=0.                                                                                |
-| 0x005C3C0B | MemoryType\_MappedMemory                                          | Mapped using [\#svcMapMemory](#svcMapMemory "wikilink").                                                            |
-| 0x0040200C | [MemoryType\_ThreadLocal](Thread%20Local%20Storage.md "wikilink") | Mapped during [\#svcCreateThread](#svcCreateThread "wikilink").                                                     |
-| 0x015C3C0D | MemoryType\_TransferMemoryIsolated                                | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm=0.         |
-| 0x005C380E | MemoryType\_TransferMemory                                        | Mapped using [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink") when the owning process has perm\!=0.       |
-| 0x0040380F | MemoryType\_ProcessMemory                                         | Mapped using [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink").                                              |
-| 0x00000010 | MemoryType\_Reserved                                              |                                                                                                                     |
-| 0x005C3811 | [MemoryType\_IpcBuffer1](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=1.                                                                                |
-| 0x004C2812 | [MemoryType\_IpcBuffer3](IPC%20Marshalling.md "wikilink")         | IPC buffers with descriptor flags=3.                                                                                |
-| 0x00002013 | MemoryType\_KernelStack                                           | Mapped in kernel during [\#svcCreateThread](#svcCreateThread "wikilink").                                           |
+<table>
+<thead>
+<tr class="header">
+<th><p>Value</p></th>
+<th><p>Type</p></th>
+<th><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x00000000</p></td>
+<td><p>MemoryType_Unmapped</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x00002001</p></td>
+<td><p>MemoryType_Io</p></td>
+<td><p>Mapped by kernel capability parsing in <a href="#svcCreateProcess" class="uri" title="wikilink">#svcCreateProcess</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x00042002</p></td>
+<td><p>MemoryType_Normal</p></td>
+<td><p>Mapped by kernel capability parsing in <a href="#svcCreateProcess" class="uri" title="wikilink">#svcCreateProcess</a>.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x00DC7E03</p></td>
+<td><p>MemoryType_CodeStatic</p></td>
+<td><p>Mapped during <a href="#svcCreateProcess" class="uri" title="wikilink">#svcCreateProcess</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>[1.0.0+] 0x01FEBD04</p>
+<p>[4.0.0+] 0x03FEBD04</p></td>
+<td><p>MemoryType_CodeMutable</p></td>
+<td><p>Transition from 0xDC7E03 performed by <a href="#svcSetProcessMemoryPermission" class="uri" title="wikilink">#svcSetProcessMemoryPermission</a>.</p></td>
+</tr>
+<tr class="even">
+<td><p>[1.0.0+] 0x017EBD05</p>
+<p>[4.0.0+] 0x037EBD05</p></td>
+<td><p>MemoryType_Heap</p></td>
+<td><p>Mapped using <a href="#svcSetHeapSize" class="uri" title="wikilink">#svcSetHeapSize</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x00402006</p></td>
+<td><p>MemoryType_SharedMemory</p></td>
+<td><p>Mapped using <a href="#svcMapSharedMemory" class="uri" title="wikilink">#svcMapSharedMemory</a>.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x00482907</p></td>
+<td><p>[1.0.0] MemoryType_WeirdSharedMemory</p></td>
+<td><p>Mapped using <a href="#svcMapMemory" class="uri" title="wikilink">#svcMapMemory</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x00DD7E08</p></td>
+<td><p>MemoryType_ModuleCodeStatic</p></td>
+<td><p>Mapped using <a href="#svcMapProcessCodeMemory" class="uri" title="wikilink">#svcMapProcessCodeMemory</a>.</p></td>
+</tr>
+<tr class="even">
+<td><p>[1.0.0+]</p>
+<p>0x01FFBD09</p>
+<p>[4.0.0+]</p>
+<p>0x03FFBD09</p></td>
+<td><p>MemoryType_ModuleCodeMutable</p></td>
+<td><p>Transition from 0xDD7E08 performed by <a href="#svcSetProcessMemoryPermission" class="uri" title="wikilink">#svcSetProcessMemoryPermission</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x005C3C0A</p></td>
+<td><p><a href="IPC Marshalling.md" title="wikilink">MemoryType_IpcBuffer0</a></p></td>
+<td><p>IPC buffers with descriptor flags=0.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x005C3C0B</p></td>
+<td><p>MemoryType_MappedMemory</p></td>
+<td><p>Mapped using <a href="#svcMapMemory" class="uri" title="wikilink">#svcMapMemory</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x0040200C</p></td>
+<td><p><a href="Thread Local Storage.md" title="wikilink">MemoryType_ThreadLocal</a></p></td>
+<td><p>Mapped during <a href="#svcCreateThread" class="uri" title="wikilink">#svcCreateThread</a>.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x015C3C0D</p></td>
+<td><p>MemoryType_TransferMemoryIsolated</p></td>
+<td><p>Mapped using <a href="#svcMapTransferMemory" class="uri" title="wikilink">#svcMapTransferMemory</a> when the owning process has perm=0.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x005C380E</p></td>
+<td><p>MemoryType_TransferMemory</p></td>
+<td><p>Mapped using <a href="#svcMapTransferMemory" class="uri" title="wikilink">#svcMapTransferMemory</a> when the owning process has perm!=0.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x0040380F</p></td>
+<td><p>MemoryType_ProcessMemory</p></td>
+<td><p>Mapped using <a href="#svcMapProcessMemory" class="uri" title="wikilink">#svcMapProcessMemory</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x00000010</p></td>
+<td><p>MemoryType_Reserved</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x005C3811</p></td>
+<td><p><a href="IPC Marshalling.md" title="wikilink">MemoryType_IpcBuffer1</a></p></td>
+<td><p>IPC buffers with descriptor flags=1.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x004C2812</p></td>
+<td><p><a href="IPC Marshalling.md" title="wikilink">MemoryType_IpcBuffer3</a></p></td>
+<td><p>IPC buffers with descriptor flags=3.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x00002013</p></td>
+<td><p>MemoryType_KernelStack</p></td>
+<td><p>Mapped in kernel during <a href="#svcCreateThread" class="uri" title="wikilink">#svcCreateThread</a>.</p></td>
+</tr>
+</tbody>
+</table>
 
 ## ContinueDebugFlags
 

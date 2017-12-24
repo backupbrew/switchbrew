@@ -1502,6 +1502,8 @@ Bitfield of one of more of these:
 | 23 || [[#svcMapProcessMemory|MapProcessAllowed]]
 |-
 | 24 || [[#svcSetMemoryAttribute|AttributeChangeAllowed]]
+|-
+| 25 || [4.0.0+] UnknownMemoryAllowed
 |}
 
 {| class=wikitable
@@ -1515,9 +1517,19 @@ Bitfield of one of more of these:
 |-
 | 0x00DC7E03 || MemoryType_CodeStatic || Mapped during [[#svcCreateProcess]].
 |-
-| 0x01FEBD04 || MemoryType_CodeMutable || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
+| [1.0.0+]
+0x01FEBD04
+
+[4.0.0+]
+0x03FEBD04
+|| MemoryType_CodeMutable || Transition from 0xDC7E03 performed by [[#svcSetProcessMemoryPermission]].
 |-
-| 0x017EBD05 || MemoryType_Heap || Mapped using [[#svcSetHeapSize]].
+| [1.0.0+]
+0x017EBD05
+
+[4.0.0+]
+0x037EBD05
+|| MemoryType_Heap || Mapped using [[#svcSetHeapSize]].
 |-
 | 0x00402006 || MemoryType_SharedMemory || Mapped using [[#svcMapSharedMemory]].
 |-
@@ -1525,7 +1537,14 @@ Bitfield of one of more of these:
 |-
 | 0x00DD7E08 || MemoryType_ModuleCodeStatic || Mapped using [[#svcMapProcessCodeMemory]].
 |-
-| 0x01FFBD09 || MemoryType_ModuleCodeMutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
+| [1.0.0+]
+
+0x01FFBD09
+
+[4.0.0+]
+
+0x03FFBD09
+|| MemoryType_ModuleCodeMutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
 |-
 | 0x005C3C0A || [[IPC_Marshalling|MemoryType_IpcBuffer0]] || IPC buffers with descriptor flags=0.
 |-
