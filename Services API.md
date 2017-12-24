@@ -304,12 +304,12 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>[4.0.0+] mig:usr</p></td>
-<td><p>Migration services</p></td>
+<td><p><a href="Migration services.md" title="wikilink">Migration services</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>[4.0.0+] caps:dc</p></td>
-<td><p>Jpegdec services</p></td>
+<td><p><a href="Jpegdec services.md" title="wikilink">Jpegdec services</a></p></td>
 <td></td>
 </tr>
 </tbody>

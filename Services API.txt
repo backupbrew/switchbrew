@@ -245,11 +245,11 @@ Takes a pid.
 | 
 |-
 | [4.0.0+] mig:usr
-| Migration services
+| [[Migration services]]
 | 
 |-
 | [4.0.0+] caps:dc
-| Jpegdec services
+| [[Jpegdec services]]
 | 
 |}
 
