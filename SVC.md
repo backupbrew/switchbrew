@@ -563,8 +563,8 @@ it will return 0.
 | Process     | 16         | 0                     | \[3.0.0+\] Some size in bytes.                                                                              |
 | Process     | 17         | 0                     | \[3.0.0+\] Some size in bytes.                                                                              |
 | Process     | 18         | 0                     | \[3.0.0+\] TitleId                                                                                          |
-| Zero        | 19         | 0                     | \[4.0.0+\]                                                                                                  |
-| Zero        | 19         | 1                     | \[4.0.0+\]                                                                                                  |
+| Zero        | 19         | 0                     | \[4.0.0+\] PrivilegedProcessId\_LowerBound                                                                  |
+| Zero        | 19         | 1                     | \[4.0.0+\] PrivilegedProcessId\_UpperBound                                                                  |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
 ## svcMapPhysicalMemory
