@@ -96,7 +96,7 @@ Flaws.
 <td><p>Everyone</p></td>
 </tr>
 <tr class="even">
-<td><p>Overly permissing SPL service</p></td>
+<td><p>Overly permissive SPL service</p></td>
 <td><p>The concept behind the switch's <a href="SMC.md" title="wikilink">Secure Monitor</a> is that all cryptographic keydata is located in userspace, but stored as &quot;access keys&quot; encrypted with &quot;keks&quot; that never leave TrustZone. The <a href="SPL services.md" title="wikilink">spl</a> (&quot;security processor liaison&quot;?) service serves as an interface between the rest of the system and the secure monitor. Prior to <a href="4.0.0.md" title="wikilink">4.0.0</a>, spl exposed only a single service &quot;spl:&quot;, which provided all TrustZone wrapper functions to all sysmodules with access to it. Thus anyone with access to the spl: service (via smhax or by pwning a sysmodule with access) could do crypto with any access keys they knew.</p>
 <p>This was fixed in <a href="4.0.0.md" title="wikilink">4.0.0</a> by splitting spl: into spl:, spl:mig, spl:ssl, spl:es, and spl:fs.</p></td>
 <td><p>Arbitrary spl: crypto with any access keys one knows. For example, one could use the SSL module's access keys to decrypt their console's SSL certificate private key without having to pwn the SSL sysmodule.</p></td>
