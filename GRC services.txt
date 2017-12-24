@@ -1,4 +1,6 @@
-GRC (Game Recording) uses libstagefright for writing [[4.0.0|recorded]] video to MP4s.
+GRC (Game Recording) uses libstagefright and the NvMMLite TVMR library for writing [[4.0.0|recorded]] video to MP4s.
+
+Error reporting is done using the new [[NV_services#/dev/nverpt-ctrl|/dev/nverpt-ctrl]] ioctls.
 
 = grc:c =
 This is "nn::grcsrv::IContinuousRecorder".
