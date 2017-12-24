@@ -297,6 +297,21 @@ Takes a pid.
 <td><p>WLAN services</p></td>
 <td></td>
 </tr>
+<tr class="odd">
+<td><p>[4.0.0+] grc:c</p></td>
+<td><p>GRC services</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>[4.0.0+] mig:usr</p></td>
+<td><p>Migration services</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>[4.0.0+] caps:dc</p></td>
+<td><p>Jpegdec services</p></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 

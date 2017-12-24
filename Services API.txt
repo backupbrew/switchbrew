@@ -239,6 +239,18 @@ Takes a pid.
 | wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc
 | WLAN services
 |
+|-
+| [4.0.0+] grc:c
+| GRC services
+| 
+|-
+| [4.0.0+] mig:usr
+| Migration services
+| 
+|-
+| [4.0.0+] caps:dc
+| Jpegdec services
+| 
 |}
 
 [[Category:Services]]
