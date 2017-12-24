@@ -1,6 +1,6 @@
-This appears to use libstagefright for writing [[4.0.0|recorded]] video to MP4s.
+GRC (Game Recording) uses libstagefright for writing [[4.0.0|recorded]] video to MP4s.
 
-=grc:c =
+= grc:c =
 This is "nn::grcsrv::IContinuousRecorder".
 
 {| class="wikitable" border="1"
