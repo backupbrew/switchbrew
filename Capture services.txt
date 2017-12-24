@@ -11,3 +11,5 @@ Screenshots are validated as follows: The JPEG's MAC is extracted from the EXIF 
 
 == Videos ==
 [[4.0.0]] includes video playback etc support in Album via mp4. These include a JPEG thumbnail, which is presumably used for video "validation". The EXIF from this JPEG doesn't seem to contain the same HMAC data as the original Album JPEGs. The EXIF is also now much larger: the MakerNote is 0x498-bytes, with random-looking data for all of it starting at offset +0x8.
+
+Note: the Album process itself uses libstagefright for video playback.

@@ -26,3 +26,5 @@ for video "validation". The EXIF from this JPEG doesn't seem to contain
 the same HMAC data as the original Album JPEGs. The EXIF is also now
 much larger: the MakerNote is 0x498-bytes, with random-looking data for
 all of it starting at offset +0x8.
+
+Note: the Album process itself uses libstagefright for video playback.
