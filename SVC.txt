@@ -1612,9 +1612,9 @@ Bitfield of one of more of these:
 |-
 | 0x00002013 || MemoryType_KernelStack || Mapped in kernel during [[#svcCreateThread]].
 |-
-| 0x00402214 || MemoryType_JitReadOnly || Mapped in kernel during [[#svcMapJitMemory]].
+| 0x00402214 || [4.0.0+] MemoryType_JitReadOnly || Mapped in kernel during [[#svcMapJitMemory]].
 |-
-| 0x00402015 || MemoryType_JitWritable || Mapped in kernel during [[#svcMapJitMemory]].
+| 0x00402015 || [4.0.0+] MemoryType_JitWritable || Mapped in kernel during [[#svcMapJitMemory]].
 |}
 
 == ContinueDebugFlags ==

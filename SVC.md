@@ -1343,12 +1343,12 @@ Bitfield of one of more of these:
 </tr>
 <tr class="odd">
 <td><p>0x00402214</p></td>
-<td><p>MemoryType_JitReadOnly</p></td>
+<td><p>[4.0.0+] MemoryType_JitReadOnly</p></td>
 <td><p>Mapped in kernel during <a href="#svcMapJitMemory" class="uri" title="wikilink">#svcMapJitMemory</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x00402015</p></td>
-<td><p>MemoryType_JitWritable</p></td>
+<td><p>[4.0.0+] MemoryType_JitWritable</p></td>
 <td><p>Mapped in kernel during <a href="#svcMapJitMemory" class="uri" title="wikilink">#svcMapJitMemory</a>.</p></td>
 </tr>
 </tbody>
