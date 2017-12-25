@@ -3,7 +3,7 @@ This process was added in firmware version 4.0.0.
 Safemode can be launched by a button combo at boot and has the task of performing any pending system updates.
 
 = Initialization =
-It calls [[Settings_services#set:sys|GetSafemodeFlag]] to check whether updates need to be installed or not. If no updates need to be installed it calls [[PCV_services#bpc|RebootSystem]], otherwise, the process continues.
+It calls [[Settings_services#set:sys|GetServiceDiscoveryControlSettings]] to check whether updates need to be installed or not. If no updates need to be installed it calls [[PCV_services#bpc|RebootSystem]], otherwise, the process continues.
 
 It creates and starts a new thread with the sole purpose of setting up the display and showing a progress bar using raw graphics data embedded in the sysmodule's binary.
 

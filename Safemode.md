@@ -6,9 +6,9 @@ performing any pending system updates.
 # Initialization
 
 It calls
-[GetSafemodeFlag](Settings%20services#set:sys.md##set:sys "wikilink") to
-check whether updates need to be installed or not. If no updates need to
-be installed it calls
+[GetServiceDiscoveryControlSettings](Settings%20services#set:sys.md##set:sys "wikilink")
+to check whether updates need to be installed or not. If no updates need
+to be installed it calls
 [RebootSystem](PCV%20services#bpc.md##bpc "wikilink"), otherwise, the
 process continues.
 
