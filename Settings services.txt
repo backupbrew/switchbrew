@@ -398,7 +398,7 @@ This is "nn::settings::ISystemSettingsServer".
 |-
 | 121 || SetPushNotificationActivityModeOnSleep
 |-
-| 122 || [4.0.0+] GetServiceDiscoveryControlSettings (aka [[#GetSafemodeFlag]])
+| 122 || [4.0.0+] [[#GetServiceDiscoveryControlSettings]]
 |-
 | 123 || [4.0.0+] SetServiceDiscoveryControlSettings
 |-
@@ -463,7 +463,7 @@ Returned retval is always 0.
 == GetSerialNumber ==
 Returns the 0x18-byte SerialNumber string.
 
-== GetSafemodeFlag ==
-Returns 0x01 if [[Safemode|safemode]] needs to be launched. (officially "GetServiceDiscoveryControlSettings")
+== GetServiceDiscoveryControlSettings ==
+Returns 0x01 if [[Safemode|safemode]] needs to be launched.
 
 [[Category:Services]]
