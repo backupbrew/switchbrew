@@ -1,5 +1,3 @@
-# VersionList
-
 The following was parsed from data dumped on June 10, 2017. This is
 located after strings "nsaccache:/cache/lru\_list.dat", "nsaccache", and
 "ns\_appman" in memory. Format is similar to 3DS eShop VersionList:

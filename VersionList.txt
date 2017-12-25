@@ -1,4 +1,3 @@
-=VersionList=
 The following was parsed from data dumped on June 10, 2017. This is located after strings "nsaccache:/cache/lru_list.dat", "nsaccache", and "ns_appman" in memory. Format is similar to 3DS eShop VersionList: header is 0x20-bytes instead of 0x10(due to word size presumably). The structure of the title entries are still 0x10-bytes, with the unk field being used now. The unk field is presumably the minimum required title-version for this TID when non-zero, refusing to launch the app otherwise. That's only enforced when that version was already installed on the system at some point however. The order of the below titles is the same as what was in memory.
 
  u64 titleID             version unk
