@@ -1,73 +1,515 @@
 ## System Modules
 
-| Title-id         | Versions                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Description                                                                                                                                         |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0100000000000000 | \[bundled with kernel\]                                                                                                                                                                                                                                                                                                                                                                                                                                             | FS                                                                                                                                                  |
-| 0100000000000001 | \[bundled with kernel\]                                                                                                                                                                                                                                                                                                                                                                                                                                             | Loader                                                                                                                                              |
-| 0100000000000002 | \[bundled with kernel\]                                                                                                                                                                                                                                                                                                                                                                                                                                             | NCM                                                                                                                                                 |
-| 0100000000000003 | \[bundled with kernel\]                                                                                                                                                                                                                                                                                                                                                                                                                                             | ProcessMana                                                                                                                                         |
-| 0100000000000004 | \[bundled with kernel\]                                                                                                                                                                                                                                                                                                                                                                                                                                             | sm                                                                                                                                                  |
-| 0100000000000005 | \[bundled with kernel\]                                                                                                                                                                                                                                                                                                                                                                                                                                             | [boot](Boot.md "wikilink")                                                                                                                          |
-| 0100000000000006 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | usb                                                                                                                                                 |
-| 0100000000000007 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | tma                                                                                                                                                 |
-| 0100000000000008 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | [boot2](Boot2.md "wikilink")                                                                                                                        |
-| 0100000000000009 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | settings                                                                                                                                            |
-| 010000000000000A | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | bus                                                                                                                                                 |
-| 010000000000000B | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | bluetooth                                                                                                                                           |
-| 010000000000000C | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                      | bcat                                                                                                                                                |
-| 010000000000000D |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Launched by maintenance mode [boot2.manuBoot](Boot2.md "wikilink"), but not present in retail or [factory firmware](Factory%20Setup.md "wikilink"). |
-| 010000000000000E | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | friends                                                                                                                                             |
-| 010000000000000F | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.1.0.md "wikilink") (0.2.0.10), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                          | nifm                                                                                                                                                |
-| 0100000000000010 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131132](2.1.0.md "wikilink") (0.2.0.60), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                          | ptm                                                                                                                                                 |
-| 0100000000000011 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Launched by maintenance mode [boot2.manuBoot](Boot2.md "wikilink"), but not present in retail or [factory firmware](Factory%20Setup.md "wikilink"). |
-| 0100000000000012 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131092](2.3.0.md "wikilink") (0.2.0.20), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                           | bsdsockets                                                                                                                                          |
-| 0100000000000013 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131132](2.1.0.md "wikilink") (0.2.0.60), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v269484082](4.1.0.md "wikilink") (16.16.0.50)                                                                                                                                          | hid                                                                                                                                                 |
-| 0100000000000014 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | audio                                                                                                                                               |
-| 0100000000000015 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | LogManager.Prod                                                                                                                                     |
-| 0100000000000016 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.1.0.md "wikilink") (0.2.0.10), [v196608](2.2.0.md "wikilink") (0.3.0.0), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                 | wlan                                                                                                                                                |
-| 0100000000000017 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Launched by maintenance mode [boot2.manuBoot](Boot2.md "wikilink"), but not present in retail or [factory firmware](Factory%20Setup.md "wikilink"). |
-| 0100000000000018 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | ldn                                                                                                                                                 |
-| 0100000000000019 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.1.0.md "wikilink") (0.2.0.10), [v196628](2.3.0.md "wikilink") (0.3.0.20), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v268501002](4.0.1.md "wikilink") (16.1.0.10), [v269484082](4.1.0.md "wikilink") (16.16.0.50) | nvservices                                                                                                                                          |
-| 010000000000001A | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | pcv                                                                                                                                                 |
-| 010000000000001B | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | ppc                                                                                                                                                 |
-| 010000000000001C | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.1.0.md "wikilink") (0.2.0.10), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v269484082](4.1.0.md "wikilink") (16.16.0.50)                                                                                                                                          | nvnflinger                                                                                                                                          |
-| 010000000000001D | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | pcie.withoutHb                                                                                                                                      |
-| 010000000000001E | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                      | account                                                                                                                                             |
-| 010000000000001F | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131132](2.1.0.md "wikilink") (0.2.0.60), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                          | ns                                                                                                                                                  |
-| 0100000000000020 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131072](2.2.0.md "wikilink") (0.2.0.0), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                           | nfc                                                                                                                                                 |
-| 0100000000000021 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | psc                                                                                                                                                 |
-| 0100000000000022 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | capsrv                                                                                                                                              |
-| 0100000000000023 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131132](2.1.0.md "wikilink") (0.2.0.60), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                          | am                                                                                                                                                  |
-| 0100000000000024 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | ssl                                                                                                                                                 |
-| 0100000000000025 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.1.0.md "wikilink") (0.2.0.10), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v269484082](4.1.0.md "wikilink") (16.16.0.50)                                                                                                                                          | nim                                                                                                                                                 |
-| 0100000000000028 | \[bundled with kernel\]                                                                                                                                                                                                                                                                                                                                                                                                                                             | spl                                                                                                                                                 |
-| 0100000000000029 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | lbl                                                                                                                                                 |
-| 010000000000002A | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | btm                                                                                                                                                 |
-| 010000000000002B | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131132](2.1.0.md "wikilink") (0.2.0.60), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                          | erpt                                                                                                                                                |
-| 010000000000002D | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | vi                                                                                                                                                  |
-| 010000000000002E | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.1.0.md "wikilink") (0.2.0.10), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                          | pctl                                                                                                                                                |
-| 010000000000002F | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | npns                                                                                                                                                |
-| 0100000000000030 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131132](2.1.0.md "wikilink") (0.2.0.60), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                          | [eupld](Eupld%20services.md "wikilink")                                                                                                             |
-| 0100000000000031 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | glue                                                                                                                                                |
-| 0100000000000032 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | eclct                                                                                                                                               |
-| 0100000000000033 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | es                                                                                                                                                  |
-| 0100000000000034 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131132](2.1.0.md "wikilink") (0.2.0.60), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v269484082](4.1.0.md "wikilink") (16.16.0.50)                                                                                                                                          | fatal                                                                                                                                               |
-| 0100000000000035 | [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                                                                      | grc                                                                                                                                                 |
-| 0100000000000036 | [v260](2.0.0.md "wikilink") (0.0.1.4), [v65596](2.1.0.md "wikilink") (0.1.0.60), [v131092](2.3.0.md "wikilink") (0.2.0.20), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                            | [creport](Creport.md "wikilink")                                                                                                                    |
-| 0100000000000037 | [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                       | ro                                                                                                                                                  |
-| 0100000000000038 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | This title is referenced by [3.0.0](3.0.0.md "wikilink") boot2.prodBoot, but does not exist on retail systems.                                      |
-| 0100000000000039 | [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                       | sdb                                                                                                                                                 |
-| 010000000000003A | [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                                                                      | migration                                                                                                                                           |
-| 010000000000003C | [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                                                                      | jpegdec                                                                                                                                             |
-| 010000000000003D | [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                                                                      | [safemode](Safemode.md "wikilink")                                                                                                                  |
-
-Note: unlike 3DS, Switch doesn't have a dedicated HTTP-sysmodule.
+Note: Unlike 3DS, Switch doesn't have a dedicated HTTP-sysmodule.
 Instead, processes using HTTP(S) just use libcurl + socket/ssl services.
 
 As of [2.0.0](2.0.0.md "wikilink"), the only sysmodule with a RomFS is
 [hid-sysmodule](HID%20services.md "wikilink").
 
+<table>
+<thead>
+<tr class="header">
+<th><p>Title-id</p></th>
+<th><p>Versions</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0100000000000000</p></td>
+<td><p>[bundled with kernel]</p></td>
+<td><p>FS</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000001</p></td>
+<td><p>[bundled with kernel]</p></td>
+<td><p>Loader</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000002</p></td>
+<td><p>[bundled with kernel]</p></td>
+<td><p>NCM</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000003</p></td>
+<td><p>[bundled with kernel]</p></td>
+<td><p>ProcessMana</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000004</p></td>
+<td><p>[bundled with kernel]</p></td>
+<td><p>sm</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000005</p></td>
+<td><p>[bundled with kernel]</p></td>
+<td><p><a href="Boot.md" title="wikilink">boot</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000006</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>usb</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000007</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>tma</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000008</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p><a href="Boot2.md" title="wikilink">boot2</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000009</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>settings</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000000A</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>bus</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000000B</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>bluetooth</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000000C</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>bcat</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000000D</p></td>
+<td></td>
+<td><p>Launched by maintenance mode <a href="Boot2.md" title="wikilink">boot2.manuBoot</a>, but not present in retail or <a href="Factory Setup.md" title="wikilink">factory firmware</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000000E</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>friends</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000000F</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>nifm</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000010</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131132</a> (0.2.0.60)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>ptm</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000011</p></td>
+<td></td>
+<td><p>Launched by maintenance mode <a href="Boot2.md" title="wikilink">boot2.manuBoot</a>, but not present in retail or <a href="Factory Setup.md" title="wikilink">factory firmware</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000012</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.3.0.md" title="wikilink">v131092</a> (0.2.0.20)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>bsdsockets</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000013</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131132</a> (0.2.0.60)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>hid</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000014</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>audio</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000015</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>LogManager.Prod</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000016</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="2.2.0.md" title="wikilink">v196608</a> (0.3.0.0)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>wlan</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000017</p></td>
+<td></td>
+<td><p>Launched by maintenance mode <a href="Boot2.md" title="wikilink">boot2.manuBoot</a>, but not present in retail or <a href="Factory Setup.md" title="wikilink">factory firmware</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000018</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>ldn</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000019</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="2.3.0.md" title="wikilink">v196628</a> (0.3.0.20)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.0.1.md" title="wikilink">v268501002</a> (16.1.0.10)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>nvservices</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000001A</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>pcv</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000001B</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>ppc</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000001C</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>nvnflinger</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000001D</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>pcie.withoutHb</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000001E</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>account</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000001F</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131132</a> (0.2.0.60)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>ns</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000020</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.2.0.md" title="wikilink">v131072</a> (0.2.0.0)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>nfc</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000021</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>psc</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000022</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>capsrv</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000023</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131132</a> (0.2.0.60)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>am</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000024</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>ssl</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000025</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>nim</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000028</p></td>
+<td><p>[bundled with kernel]</p></td>
+<td><p>spl</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000029</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>lbl</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000002A</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>btm</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000002B</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131132</a> (0.2.0.60)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>erpt</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000002D</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>vi</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000002E</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>pctl</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000002F</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>npns</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000030</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131132</a> (0.2.0.60)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p><a href="Eupld services.md" title="wikilink">eupld</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000031</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>glue</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000032</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>eclct</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000033</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>es</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000034</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131132</a> (0.2.0.60)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>fatal</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000035</p></td>
+<td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>grc, added with <a href="4.0.0.md" title="wikilink">4.0.0 System Update</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000036</p></td>
+<td><p><a href="2.0.0.md" title="wikilink">v260</a> (0.0.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v65596</a> (0.1.0.60)<br />
+<a href="2.3.0.md" title="wikilink">v131092</a> (0.2.0.20)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p><a href="Creport.md" title="wikilink">creport</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000037</p></td>
+<td><p><a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>ro</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000038</p></td>
+<td></td>
+<td><p>This title is referenced by <a href="3.0.0.md" title="wikilink">3.0.0</a> boot2.prodBoot, but does not exist on retail systems.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000039</p></td>
+<td><p><a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>sdb</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000003A</p></td>
+<td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>migration, added with <a href="4.0.0.md" title="wikilink">4.0.0 System Update</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000003C</p></td>
+<td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>jpegdec, added with <a href="4.0.0.md" title="wikilink">4.0.0 System Update</a></p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000003D</p></td>
+<td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p><a href="Safemode.md" title="wikilink">safemode</a>, added with <a href="4.0.0.md" title="wikilink">4.0.0 System Update</a></p></td>
+</tr>
+</tbody>
+</table>
+
 ## System Debug Applets
+
+Note: No 01000000000020XX titles exist on retail
+systems.
 
 | Title-id         | Versions | Description                                                                                            |
 | ---------------- | -------- | ------------------------------------------------------------------------------------------------------ |
@@ -86,72 +528,486 @@ As of [2.0.0](2.0.0.md "wikilink"), the only sysmodule with a RomFS is
 | 0100000000002071 |          | "snap\_shot\_dump" - Used by [NS](NS%20Services.md "wikilink").                                        |
 | 01000000000020F0 |          | "devmenuapp\_installer" - Launched by [boot2](Boot2.md "wikilink").                                    |
 
-No 01000000000020XX titles exist on retail
-systems.
-
 ## System Data Archives
 
-| Title-id         | Versions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Description                                                                                                                                                                                                          |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0100000000000800 | [v260](1.0.0.md "wikilink") (0.0.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                          | SSL trusted certificates                                                                                                                                                                                             |
-| 0100000000000801 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v196628](2.2.0.md "wikilink") (0.3.0.20), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | Stores the message strings for Support Error Codes. There's "/DatabaseInfo" at FS root, then the rest is stored at "/{first 4 error digits}/{last 4 error digits}/".                                                 |
-| 0100000000000802 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | Random textures?                                                                                                                                                                                                     |
-| 0100000000000803 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v196628](2.1.0.md "wikilink") (0.3.0.20), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                     | Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...                                                                                                           |
-| 0100000000000804 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | HTML resources: Open-source licenses("Intellectual Property Notices") and seizure warnings("Health & Safety Information"). The former is stored at FS "/legallines.htdocs/", while the latter is at "/safe.htdocs/". |
-| 0100000000000805 | [v450](1.0.0.md "wikilink") (0.0.1.194)                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Chinese and Korean dictionaries                                                                                                                                                                                      |
-| 0100000000000806 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                | Bad words                                                                                                                                                                                                            |
-| 0100000000000807 | [v260](1.0.0.md "wikilink") (0.0.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                          | [Hotspot List](Hotspot%20List.md "wikilink")                                                                                                                                                                         |
-| 0100000000000808 | [v450](1.0.0.md "wikilink") (0.0.1.194)                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | European, English and Japanese dictionaries                                                                                                                                                                          |
-| 0100000000000809 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v196628](2.1.0.md "wikilink") (0.3.0.20), [v196628](2.2.0.md "wikilink") (0.3.0.20), [v262164](2.3.0.md "wikilink") (0.4.0.20), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v268501002](4.0.1.md "wikilink") (16.1.0.10), [v269484082](4.1.0.md "wikilink") (16.16.0.50) | [System Version Title](System%20Version%20Title.md "wikilink")                                                                                                                                                       |
-| 010000000000080A | [v450](1.0.0.md "wikilink") (0.0.1.194), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                        | Chara?                                                                                                                                                                                                               |
-| 010000000000080B | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | Tutorial images and strings. Used for the offline news by the News applet.                                                                                                                                           |
-| 010000000000080C | [v450](1.0.0.md "wikilink") (0.0.1.194)                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | EULA. Also accessed by [NS](NS%20Services.md "wikilink").                                                                                                                                                            |
-| 010000000000080D | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                               | Blacklist URL                                                                                                                                                                                                        |
-| 010000000000080E | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | Geo Zoneinfo                                                                                                                                                                                                         |
-| 0100000000000810 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | Extended font                                                                                                                                                                                                        |
-| 0100000000000811 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | Standard font                                                                                                                                                                                                        |
-| 0100000000000812 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | Korean font                                                                                                                                                                                                          |
-| 0100000000000813 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | Taiwanese font                                                                                                                                                                                                       |
-| 0100000000000814 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | Chinese font                                                                                                                                                                                                         |
-| 0100000000000816 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131162](2.1.0.md "wikilink") (0.2.0.90), [v196628](2.2.0.md "wikilink") (0.3.0.20), [v262164](2.3.0.md "wikilink") (0.4.0.20), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v268501002](4.0.1.md "wikilink") (16.1.0.10), [v269484082](4.1.0.md "wikilink") (16.16.0.50) | Contains the title-listing for the associated sysupdate in the [NCA](NCA.md "wikilink")-type0 .cnmt.                                                                                                                 |
-| 0100000000000818 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.3.0.md "wikilink") (0.2.0.10), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v269484082](4.1.0.md "wikilink") (16.16.0.50)                                                                                                                                                                                                                                    | System config                                                                                                                                                                                                        |
-| 0100000000000819 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.1.0.md "wikilink") (0.2.0.10), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v269484082](4.1.0.md "wikilink") (16.16.0.50)                                                                                                                                      | Firmware package A, normal firmware.                                                                                                                                                                                 |
-| 010000000000081A | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.1.0.md "wikilink") (0.2.0.10), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v269484082](4.1.0.md "wikilink") (16.16.0.50)                                                                                                                                      | Firmware package B, safe mode firmware.                                                                                                                                                                              |
-| 010000000000081B | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131082](2.1.0.md "wikilink") (0.2.0.10), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v269484082](4.1.0.md "wikilink") (16.16.0.50)                                                                                                                                      | Firmware package C, normal firmware (exFAT variant). Identical to 0100000000000819 with different package2. Requires a device ID to download from CDN.                                                               |
-| 010000000000081C | [v268435656](4.0.0.md "wikilink") (16.0.0.200), [v269484082](4.1.0.md "wikilink") (16.16.0.50)                                                                                                                                                                                                                                                                                                                                                                                                                 | Firmware package D, safe mode firmware (exFAT variant). Identical to 010000000000081A with different package2.                                                                                                       |
-| 010000000000081D | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                               | Errdisp strings                                                                                                                                                                                                      |
-| 010000000000081E | [v260](2.0.0.md "wikilink") (0.0.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                          | Dummy file                                                                                                                                                                                                           |
-| 010000000000081F | [v260](2.0.0.md "wikilink") (0.0.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                          | Icosa system config                                                                                                                                                                                                  |
-| 0100000000000820 | [v260](2.0.0.md "wikilink") (0.0.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                          | Copper system config                                                                                                                                                                                                 |
-| 0100000000000821 | [v260](2.0.0.md "wikilink") (0.0.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                          | Hoag system config                                                                                                                                                                                                   |
-| 0100000000000822 | [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201457684](3.0.2.md "wikilink") (12.2.0.20), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                  | Firmware binaries for peripherals (hardware within Joy-Cons/etc).                                                                                                                                                    |
-| 0100000000000823 | [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                                                                                                                                                                                                                                                                                                                                                 | Contains version.dat and ac\_\*\_nx files. All of the \*\_nx files stored under here are compressed with gzip.                                                                                                       |
+<table>
+<thead>
+<tr class="header">
+<th><p>Title-id</p></th>
+<th><p>Versions</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0100000000000800</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v260</a> (0.0.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>SSL trusted certificates</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000801</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.2.0.md" title="wikilink">v196628</a> (0.3.0.20)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Stores the message strings for Support Error Codes. There's &quot;/DatabaseInfo&quot; at FS root, then the rest is stored at &quot;/{first 4 error digits}/{last 4 error digits}/&quot;.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000802</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Random textures?</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000803</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v196628</a> (0.3.0.20)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Mounted as &quot;shareddata:/&quot;. Contains various browser data: emojis, OSS NROs, &quot;buildinfo/buildinfo.dat&quot;, ...</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000804</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>HTML resources: Open-source licenses(&quot;Intellectual Property Notices&quot;) and seizure warnings(&quot;Health &amp; Safety Information&quot;). The former is stored at FS &quot;/legallines.htdocs/&quot;<br />
+while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000805</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)</p></td>
+<td><p>Chinese and Korean dictionaries</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000806</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Bad words</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000807</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v260</a> (0.0.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p><a href="Hotspot List.md" title="wikilink">Hotspot List</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000808</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)</p></td>
+<td><p>European, English, and Japanese dictionaries</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000809</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v196628</a> (0.3.0.20)<br />
+<a href="2.2.0.md" title="wikilink">v196628</a> (0.3.0.20)<br />
+<a href="2.3.0.md" title="wikilink">v262164</a> (0.4.0.20)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.0.1.md" title="wikilink">v268501002</a> (16.1.0.10)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p><a href="System Version Title.md" title="wikilink">System Version Title</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000080A</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Chara?</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000080B</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Tutorial images and strings. Used for the offline news by the News applet.</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000080C</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)</p></td>
+<td><p>EULA. Also accessed by <a href="NS Services.md" title="wikilink">NS</a>.</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000080D</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Blacklist URL</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000080E</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Geo Zoneinfo</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000810</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Extended font</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000811</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Standard font</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000812</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Korean font</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000813</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Taiwanese font</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000814</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Chinese font</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000816</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131162</a> (0.2.0.90)<br />
+<a href="2.2.0.md" title="wikilink">v196628</a> (0.3.0.20)<br />
+<a href="2.3.0.md" title="wikilink">v262164</a> (0.4.0.20)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.0.1.md" title="wikilink">v268501002</a> (16.1.0.10)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>Contains the title-listing for the associated sysupdate in the <a href="NCA.md" title="wikilink">NCA</a>-type0 .cnmt.</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000818</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.3.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>System config</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000819</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>Firmware Package A: Normal Firmware.</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000081A</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>Firmware Package B: SafeMode Firmware.</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000081B</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131082</a> (0.2.0.10)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>Firmware Package C: Normal Firmware (exFAT variant). Identical to 0100000000000819 with different package2. Requires a device ID to download from CDN.</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000081C</p></td>
+<td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)<br />
+<a href="4.1.0.md" title="wikilink">v269484082</a> (16.16.0.50)</p></td>
+<td><p>Firmware Package D: SafeMode Firmware (exFAT variant). Identical to 010000000000081A with different package2.</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000081D</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Errdisp strings</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000081E</p></td>
+<td><p><a href="2.0.0.md" title="wikilink">v260</a> (0.0.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Dummy file</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000081F</p></td>
+<td><p><a href="2.0.0.md" title="wikilink">v260</a> (0.0.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Icosa system config</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000820</p></td>
+<td><p><a href="2.0.0.md" title="wikilink">v260</a> (0.0.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Copper system config</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000821</p></td>
+<td><p><a href="2.0.0.md" title="wikilink">v260</a> (0.0.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Hoag system config</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000822</p></td>
+<td><p><a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.2.md" title="wikilink">v201457684</a> (12.2.0.20)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Firmware binaries for peripherals (hardware within Joy-Cons/etc).</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000823</p></td>
+<td><p><a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>Contains version.dat and ac_*_nx files. All of the *_nx files stored under here are compressed with gzip.</p></td>
+</tr>
+</tbody>
+</table>
 
 ## System Applets
 
-| Title-id         | Versions                                                                                                                                                                                                                                                                   | Description                                                                                                                                                                                                                                                                 |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0100000000001000 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131162](2.1.0.md "wikilink") (0.2.0.90), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                | "[qlaunch](Qlaunch.md "wikilink")" System applet (Launched by NS with TID loaded from system-config-title)                                                                                                                                                                  |
-| 0100000000001001 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "auth"                                                                                                                                                                                                                                                                      |
-| 0100000000001002 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "cabinet"                                                                                                                                                                                                                                                                   |
-| 0100000000001003 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "controller"                                                                                                                                                                                                                                                                |
-| 0100000000001004 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "dataErase"                                                                                                                                                                                                                                                                 |
-| 0100000000001005 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "error"                                                                                                                                                                                                                                                                     |
-| 0100000000001006 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "netConnect"                                                                                                                                                                                                                                                                |
-| 0100000000001007 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "playerSelect"                                                                                                                                                                                                                                                              |
-| 0100000000001008 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131132](2.1.0.md "wikilink") (0.2.0.60), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                | "swkbd"                                                                                                                                                                                                                                                                     |
-| 0100000000001009 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "miiEdit"                                                                                                                                                                                                                                                                   |
-| 010000000000100A | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131162](2.1.0.md "wikilink") (0.2.0.90), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200) | "LibAppletWeb" [WebApplet](Internet%20Browser.md "wikilink")                                                                                                                                                                                                                |
-| 010000000000100B | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131162](2.1.0.md "wikilink") (0.2.0.90), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200) | "LibAppletShop" [ShopN](Internet%20Browser.md "wikilink") applet                                                                                                                                                                                                            |
-| 010000000000100C | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "overlayDisp" Overlay applet (TID is loaded by NS from system-config-title)                                                                                                                                                                                                 |
-| 010000000000100D | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "photoViewer"                                                                                                                                                                                                                                                               |
-| 010000000000100F | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131162](2.1.0.md "wikilink") (0.2.0.90), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200) | "LibAppletOff" [Offline](Internet%20Browser.md "wikilink") web-applet                                                                                                                                                                                                       |
-| 0100000000001010 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131162](2.1.0.md "wikilink") (0.2.0.90), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200) | "LibAppletLns" [Whitelisted](Internet%20Browser.md "wikilink") applet (LoginApplet+ShareApplet+LobbyApplet)                                                                                                                                                                 |
-| 0100000000001011 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v131162](2.1.0.md "wikilink") (0.2.0.90), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v201392178](3.0.1.md "wikilink") (12.1.0.50), [v268435656](4.0.0.md "wikilink") (16.0.0.200) | "LibAppletAuth" [WifiWebAuth](Internet%20Browser.md "wikilink") applet                                                                                                                                                                                                      |
-| 0100000000001012 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "starter"                                                                                                                                                                                                                                                                   |
-| 0100000000001013 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "myPage"                                                                                                                                                                                                                                                                    |
-| 0100000000001015 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v65796](2.0.0.md "wikilink") (0.1.1.4), [v201327002](3.0.0.md "wikilink") (12.0.1.154), [v268435656](4.0.0.md "wikilink") (16.0.0.200)                                                                                           | "maintenance" Initial applet displayed when booting into [Recovery\_Mode](Recovery%20Mode.md "wikilink"). TID launched by [NS](NS%20Services.md "wikilink") when a state flag is val1 indicating that this TID should be launched instead of the above "System applet" TID. |
-| 0100000000001016 |                                                                                                                                                                                                                                                                            | TID used by [NS](NS%20Services.md "wikilink") when a certain flag is non-zero, in multiple places including around code using string "application\_install". This title doesn't seem to exist for retail.                                                                   |
+<table>
+<thead>
+<tr class="header">
+<th><p>Title-id</p></th>
+<th><p>Versions</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0100000000001000</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131162</a> (0.2.0.90)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;<a href="Qlaunch.md" title="wikilink">qlaunch</a>&quot; System applet (Launched by NS with TID loaded from system-config-title)</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001001</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;auth&quot;</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000001002</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;cabinet&quot;</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001003</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;controller&quot;</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000001004</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;dataErase&quot;</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001005</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;error&quot;</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000001006</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;netConnect&quot;</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001007</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;playerSelect&quot;</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000001008</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131132</a> (0.2.0.60)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;swkbd&quot;</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001009</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;miiEdit&quot;</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000100A</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131162</a> (0.2.0.90)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;LibAppletWeb&quot; <a href="Internet Browser.md" title="wikilink">WebApplet</a></p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000100B</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131162</a> (0.2.0.90)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;LibAppletShop&quot; <a href="Internet Browser.md" title="wikilink">ShopN</a> applet</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000100C</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;overlayDisp&quot; Overlay applet (TID is loaded by NS from system-config-title)</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000100D</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;photoViewer&quot;</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000100F</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131162</a> (0.2.0.90)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;LibAppletOff&quot; <a href="Internet Browser.md" title="wikilink">Offline</a> web-applet</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001010</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131162</a> (0.2.0.90)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;LibAppletLns&quot; <a href="Internet Browser.md" title="wikilink">Whitelisted</a> applet (LoginApplet+ShareApplet+LobbyApplet)</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000001011</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="2.1.0.md" title="wikilink">v131162</a> (0.2.0.90)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="3.0.1.md" title="wikilink">v201392178</a> (12.1.0.50)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;LibAppletAuth&quot; <a href="Internet Browser.md" title="wikilink">WifiWebAuth</a> applet</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001012</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;starter&quot;</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000001013</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;myPage&quot;</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001015</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="2.0.0.md" title="wikilink">v65796</a> (0.1.1.4)<br />
+<a href="3.0.0.md" title="wikilink">v201327002</a> (12.0.1.154)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;maintenance&quot; Initial applet displayed when booting into <a href="Recovery Mode.md" title="wikilink">Recovery_Mode</a>. This title is launched by <a href="NS Services.md" title="wikilink">NS</a> when a state flag is val1 indicating that this title should be launched instead of the above &quot;System applet&quot; title.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000001016</p></td>
+<td></td>
+<td><p>TitleID used by <a href="NS Services.md" title="wikilink">NS</a> when a certain flag is non-zero, in multiple places including around code using string &quot;application_install&quot;. This title doesn't seem to exist for retail.</p></td>
+</tr>
+</tbody>
+</table>
 
 ## Factory System Modules
 
@@ -170,11 +1026,32 @@ systems.
 
 ## System Applications
 
-| Title-id         | Versions                                                                                | Description                                                                                                                                         |
-| ---------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 01008BB00013C000 | [v450](1.0.0.md "wikilink") (0.0.1.194), [v268435656](4.0.0.md "wikilink") (16.0.0.200) | "[flog](Flog.md "wikilink")" NES emulator.                                                                                                          |
-| 0100069000078000 | v0                                                                                      | "Retail Interactive Display Menu". This title can be launched by [qlaunch](Qlaunch.md "wikilink"), but is not normally installed on retail systems. |
+<table>
+<thead>
+<tr class="header">
+<th><p>Title-id</p></th>
+<th><p>Versions</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>01008BB00013C000</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.1.194)<br />
+<a href="4.0.0.md" title="wikilink">v268435656</a> (16.0.0.200)</p></td>
+<td><p>&quot;<a href="Flog.md" title="wikilink">flog</a>&quot; NES emulator.</p></td>
+</tr>
+<tr class="even">
+<td><p>0100069000078000</p></td>
+<td><p>v0</p></td>
+<td><p>&quot;Retail Interactive Display Menu&quot;. This title can be launched by <a href="Qlaunch.md" title="wikilink">qlaunch</a>, but is not normally installed on retail systems.</p></td>
+</tr>
+</tbody>
+</table>
 
-## Games
+## eShop Games / Applications
 
-See [here](Title%20list%20Games.md "wikilink").
+Note: Nintendo Switch game and application titles follow a higher
+entropy TitleID scheme than previous generation consoles.  
+Refer to the [Games List](Title%20list%20Games.md "wikilink") for more
+information.
