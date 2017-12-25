@@ -7,7 +7,14 @@ ioctls.
 
 # grc:c
 
-This is "nn::grcsrv::IContinuousRecorder".
+This is "nn::grcsrv::IGrcService"
+
+| Cmd | Name                  |
+| --- | --------------------- |
+| 1   | GetContinuousRecorder |
+| 2   | GetGameMovieTrimmer   |
+
+# nn::grcsrv::IContinuousRecorder
 
 | Cmd | Name |
 | --- | ---- |
@@ -17,3 +24,12 @@ This is "nn::grcsrv::IContinuousRecorder".
 | 11  |      |
 | 12  |      |
 | 13  |      |
+
+# nn::grcsrv::IGameMovieTrimmer
+
+| Cmd | Name |
+| --- | ---- |
+| 1   |      |
+| 2   |      |
+| 10  |      |
+| 20  |      |
