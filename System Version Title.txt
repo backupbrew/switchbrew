@@ -93,7 +93,7 @@ The FS for the system-version title(TID 0100000000000809) contains "/file":
 | NintendoSDK Firmware for NX 4.0.1-0.0
 | 826588c45cecab1672c46f5de87d83ea6008d583
 |-
-| 3.0.2
+| 4.1.0
 | NintendoSDK Firmware for NX 4.1.0-0.0
 | 314f9468b704e84e1ffed449dfa6108ba4be221d
 |}
