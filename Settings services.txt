@@ -398,7 +398,43 @@ This is "nn::settings::ISystemSettingsServer".
 |-
 | 121 || SetPushNotificationActivityModeOnSleep
 |-
-| 122 || [[#GetSafemodeFlag]]
+| 122 || [4.0.0+] GetServiceDiscoveryControlSettings (aka [[#GetSafemodeFlag]])
+|-
+| 123 || [4.0.0+] SetServiceDiscoveryControlSettings
+|-
+| 124 || [4.0.0+] GetErrorReportSharePermission
+|-
+| 125 || [4.0.0+] SetErrorReportSharePermission
+|-
+| 126 || [4.0.0+] GetAppletLaunchFlags
+|-
+| 127 || [4.0.0+] SetAppletLaunchFlags
+|-
+| 128 || [4.0.0+] GetConsoleSixAxisSensorAccelerationBias
+|-
+| 129 || [4.0.0+] SetConsoleSixAxisSensorAccelerationBias
+|-
+| 130 || [4.0.0+] GetConsoleSixAxisSensorAngularVelocityBias
+|-
+| 131 || [4.0.0+] SetConsoleSixAxisSensorAngularVelocityBias
+|-
+| 132 || [4.0.0+] GetConsoleSixAxisSensorAccelerationGain
+|-
+| 133 || [4.0.0+] SetConsoleSixAxisSensorAccelerationGain
+|-
+| 134 || [4.0.0+] GetConsoleSixAxisSensorAngularVelocityGain
+|-
+| 135 || [4.0.0+] SetConsoleSixAxisSensorAngularVelocityGain
+|-
+| 136 || [4.0.0+] GetKeyboardLayout
+|-
+| 137 || [4.0.0+] SetKeyboardLayout
+|-
+| 138 || [4.0.0+] GetWebInspectorFlag
+|-
+| 139 || [4.0.0+] GetAllowedSslHosts
+|-
+| 140 || [4.0.0+] GetHostFsMountPoint
 |}
 
 Official user-processes get a new service session handle each time a set:sys cmd is used, with the session being closed aftewards.
@@ -428,6 +464,6 @@ Returned retval is always 0.
 Returns the 0x18-byte SerialNumber string.
 
 == GetSafemodeFlag ==
-Returns 0x01 if [[Safemode|safemode]] needs to be launched.
+Returns 0x01 if [[Safemode|safemode]] needs to be launched. (officially "GetServiceDiscoveryControlSettings")
 
 [[Category:Services]]
