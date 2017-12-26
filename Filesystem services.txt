@@ -7,7 +7,7 @@
 |-
 | 1 || IsCodeMounted || u64 ProcessId || Returns a bool (1 if code is mounted).
 |-
-| 2 || [4.0.0+] Initialize || PID descriptor
+| 2 || [4.0.0+] Initialize || PID descriptor ||
 |}
 
 = fsp-pr =
@@ -19,7 +19,7 @@
 |-
 | 1 || [[#ClearFsPermissions]] ||
 |-
-| 2 || [4.0.0+]
+| 2 || [4.0.0+] Initialize ||
 |-
 | 256 || [[#SetEnabledProgramVerification]] ||
 |}
@@ -106,7 +106,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 80 || OpenSaveDataThumbnailFile
 |-
-| 81 || [4.0.0+]
+| 81 || [4.0.0+] OpenSaveDataTransferManager
 |-
 | 100 || MountImageDirectory
 |-
@@ -126,7 +126,7 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 501 || [[#OpenGameCardDetectionEventNotifier]]
 |-
-| 600 || SetCurrentPosixTime
+| 600 || [1.0.0-3.0.2] SetCurrentPosixTime
 |-
 | 601 || QuerySaveDataTotalSize
 |-
@@ -148,9 +148,9 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 610 || [3.0.0+] GetRightsIdByPath2 (returns extra byte)
 |-
-| 611 || [4.0.0+]
+| 611 || [4.0.0+] SetCurrentPosixTime
 |-
-| 612 || [4.0.0+]
+| 612 || [4.0.0+] GetFreeSpaceSize
 |-
 | 613 || [4.0.0+]
 |-
@@ -158,9 +158,9 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 620 || [2.0.0+] [[#SetSdCardEncryptionSeed]]
 |-
-| 630 || [4.0.0+]
+| 630 || [4.0.0+] SetSdCardAccessibility
 |-
-| 631 || [4.0.0+]
+| 631 || [4.0.0+] IsSdCardAccessible
 |-
 | 640 || [4.0.0+] IsSignedSystemPartitionOnSdCardValid
 |-
@@ -180,13 +180,13 @@ When the flag is zero, it will set ret=0 instead of ret={error} when verifying a
 |-
 | 1006 || [[#OutputAccessLogToSdCard]]
 |-
-| 1007 || [4.0.0+]
+| 1007 || [4.0.0+] RegisterUpdatePartition
 |-
 | 1008 || [4.0.0+] MountRegisteredUpdatePartition
 |-
 | 1009 || [4.0.0+]
 |-
-| 1100 || [4.0.0+]
+| 1100 || [4.0.0+] OverrideSaveDataTransferTokenSignVerificationKey
 |}
 
 == Permissions ==
@@ -493,7 +493,7 @@ This is the interface for a raw device, usually a block device.
 |-
 | 4 || GetSize || None
 |-
-| 5 || [4.0.0+] ||
+| 5 || [4.0.0+] OperateRange ||
 |}
 
 = IFileSystem =
@@ -536,7 +536,7 @@ There are two main implementations of this interface:
 |-
 | 14 || GetFileTimeStampRaw [3.0.0+]
 |-
-| 15 || [4.0.0+]
+| 15 || [4.0.0+] QueryEntry
 |}
 
 == GetEntryType ==
@@ -644,9 +644,9 @@ s8 type: 0 = directory, 1 = file.
 |-
 | 114 || [2.0.0+] GetMmcExtendedCsd
 |-
-| 115 || [4.0.0+]
+| 115 || [4.0.0+] SuspendMmcPatrol
 |-
-| 116 || [4.0.0+]
+| 116 || [4.0.0+] ResumeMmcPatrol
 |-
 | 200 || IsGameCardInserted
 |-
