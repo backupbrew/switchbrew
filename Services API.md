@@ -177,7 +177,7 @@ Takes a pid.
 <td><p>srv: Main, ldr: Loader, pr: Program Registry</p></td>
 </tr>
 <tr class="odd">
-<td><p>gpio, i2c, i2c:pcv, pinmux, pwm, uart, [4.0.0+] sasbus</p></td>
+<td><p>gpio, i2c, i2c:pcv, pinmux, pwm, uart, [3.0.0+] sasbus</p></td>
 <td><p><a href="Bus services.md" title="wikilink">Bus services</a></p></td>
 <td></td>
 </tr>

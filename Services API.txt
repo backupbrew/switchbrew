@@ -142,7 +142,7 @@ Takes a pid.
 | [[Filesystem services]]
 | srv: Main, ldr: Loader, pr: Program Registry
 |-
-| gpio, i2c, i2c:pcv, pinmux, pwm, uart, [4.0.0+] sasbus
+| gpio, i2c, i2c:pcv, pinmux, pwm, uart, [3.0.0+] sasbus
 | [[Bus services]]
 |
 |-
