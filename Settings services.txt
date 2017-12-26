@@ -9,9 +9,17 @@ This is "nn::settings::ISettingsServer".
 |-
 | 1 || GetAvailableLanguageCodes
 |-
+| 2 || [4.0.0+] MakeLanguageCode
+|-
 | 3 || GetAvailableLanguageCodeCount
 |-
 | 4 || GetRegionCode
+|-
+| 5 || [4.0.0+] GetAvailableLanguageCodes2
+|-
+| 6 || [4.0.0+] GetAvailableLanguageCodeCount2
+|-
+| 7 || [4.0.0+] GetKeyCodeMap
 |}
 
 = set:fd =
@@ -26,6 +34,16 @@ This is "nn::settings::IFirmwareDebugSettingsServer".
 | 3 || ResetSettingsItemValue ||
 |-
 | 4 || CreateSettingsItemKeyIterator || Returns an [[#ISettingsItemKeyIterator]].
+|-
+| 10 || [4.0.0+] ReadSettings ||
+|-
+| 11 || [4.0.0+] ResetSettings ||
+|-
+| 20 || [4.0.0+] SetWebInspectorFlag ||
+|-
+| 21 || [4.0.0+] SetAllowedSslHosts ||
+|-
+| 22 || [4.0.0+] SetHostFsMountPoint ||
 |}
 
 == ISettingsItemKeyIterator ==
@@ -90,6 +108,8 @@ This is "nn::settings::IFactorySettingsServer".
 | 21 || [[#GetEticketDeviceKey]]
 |-
 | 22 || GetSpeakerParameter
+|-
+| 23 || [4.0.0+] GetLcdVendorId
 |-
 |}
 
@@ -170,7 +190,7 @@ This is "nn::settings::ISystemSettingsServer".
 |-
 | 3 || [[#GetFirmwareVersion]]
 |-
-| 4 || GetFirmwareVersion2
+| 4 || [3.0.0+] GetFirmwareVersion2
 |-
 | 7 || GetLockScreenFlag
 |-
@@ -344,59 +364,59 @@ This is "nn::settings::ISystemSettingsServer".
 |-
 | 94 || GetFatalDirtyFlags
 |-
-| 95 || GetAutoUpdateEnableFlag
+| 95 || [2.0.0+] GetAutoUpdateEnableFlag
 |-
-| 96 || SetAutoUpdateEnableFlag
+| 96 || [2.0.0+] SetAutoUpdateEnableFlag
 |-
-| 97 || GetNxControllerSettings
+| 97 || [2.0.0+] GetNxControllerSettings
 |-
-| 98 || SetNxControllerSettings
+| 98 || [2.0.0+] SetNxControllerSettings
 |-
-| 99 || GetBatteryPercentageFlag
+| 99 || [2.0.0+] GetBatteryPercentageFlag
 |-
-| 100 || SetBatteryPercentageFlag
+| 100 || [2.0.0+] SetBatteryPercentageFlag
 |-
-| 101 || GetExternalRtcResetFlag
+| 101 || [2.0.0+] GetExternalRtcResetFlag
 |-
-| 102 || SetExternalRtcResetFlag
+| 102 || [2.0.0+] SetExternalRtcResetFlag
 |-
-| 103 || GetUsbFullKeyEnableFlag
+| 103 || [3.0.0+] GetUsbFullKeyEnableFlag
 |-
-| 104 || SetUsbFullKeyEnableFlag
+| 104 || [3.0.0+] SetUsbFullKeyEnableFlag
 |-
-| 105 || SetExternalSteadyClockInternalOffset
+| 105 || [3.0.0+] SetExternalSteadyClockInternalOffset
 |-
-| 106 || GetExternalSteadyClockInternalOffset
+| 106 || [3.0.0+] GetExternalSteadyClockInternalOffset
 |-
-| 107 || GetBacklightSettingsEx
+| 107 || [3.0.0+] GetBacklightSettingsEx
 |-
-| 108 || SetBacklightSettingsEx
+| 108 || [3.0.0+] SetBacklightSettingsEx
 |-
-| 109 || GetHeadphoneVolumeWarningCount
+| 109 || [3.0.0+] GetHeadphoneVolumeWarningCount
 |-
-| 110 || SetHeadphoneVolumeWarningCount
+| 110 || [3.0.0+] SetHeadphoneVolumeWarningCount
 |-
-| 111 || GetBluetoothAfhEnableFlag
+| 111 || [3.0.0+] GetBluetoothAfhEnableFlag
 |-
-| 112 || SetBluetoothAfhEnableFlag
+| 112 || [3.0.0+] SetBluetoothAfhEnableFlag
 |-
-| 113 || GetBluetoothBoostEnableFlag
+| 113 || [3.0.0+] GetBluetoothBoostEnableFlag
 |-
-| 114 || SetBluetoothBoostEnableFlag
+| 114 || [3.0.0+] SetBluetoothBoostEnableFlag
 |-
-| 115 || GetInRepairProcessEnableFlag
+| 115 || [3.0.0+] GetInRepairProcessEnableFlag
 |-
-| 116 || SetInRepairProcessEnableFlag
+| 116 || [3.0.0+] SetInRepairProcessEnableFlag
 |-
-| 117 || GetHeadphoneVolumeUpdateFlag
+| 117 || [3.0.0+] GetHeadphoneVolumeUpdateFlag
 |-
-| 118 || SetHeadphoneVolumeUpdateFlag
+| 118 || [3.0.0+] SetHeadphoneVolumeUpdateFlag
 |-
-| 119 || NeedsToUpdateHeadphoneVolume
+| 119 || [3.0.0+] NeedsToUpdateHeadphoneVolume
 |-
-| 120 || GetPushNotificationActivityModeOnSleep
+| 120 || [3.0.0+] GetPushNotificationActivityModeOnSleep
 |-
-| 121 || SetPushNotificationActivityModeOnSleep
+| 121 || [3.0.0+] SetPushNotificationActivityModeOnSleep
 |-
 | 122 || [4.0.0+] [[#GetServiceDiscoveryControlSettings]]
 |-

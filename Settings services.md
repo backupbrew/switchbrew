@@ -2,23 +2,32 @@
 
 This is "nn::settings::ISettingsServer".
 
-| Cmd | Name                          |
-| --- | ----------------------------- |
-| 0   | GetLanguageCode               |
-| 1   | GetAvailableLanguageCodes     |
-| 3   | GetAvailableLanguageCodeCount |
-| 4   | GetRegionCode                 |
+| Cmd | Name                                      |
+| --- | ----------------------------------------- |
+| 0   | GetLanguageCode                           |
+| 1   | GetAvailableLanguageCodes                 |
+| 2   | \[4.0.0+\] MakeLanguageCode               |
+| 3   | GetAvailableLanguageCodeCount             |
+| 4   | GetRegionCode                             |
+| 5   | \[4.0.0+\] GetAvailableLanguageCodes2     |
+| 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 |
+| 7   | \[4.0.0+\] GetKeyCodeMap                  |
 
 # set:fd
 
 This is
 "nn::settings::IFirmwareDebugSettingsServer".
 
-| Cmd | Name                          | Notes                                                                          |
-| --- | ----------------------------- | ------------------------------------------------------------------------------ |
-| 2   | SetSettingsItemValue          |                                                                                |
-| 3   | ResetSettingsItemValue        |                                                                                |
-| 4   | CreateSettingsItemKeyIterator | Returns an [\#ISettingsItemKeyIterator](#ISettingsItemKeyIterator "wikilink"). |
+| Cmd | Name                           | Notes                                                                          |
+| --- | ------------------------------ | ------------------------------------------------------------------------------ |
+| 2   | SetSettingsItemValue           |                                                                                |
+| 3   | ResetSettingsItemValue         |                                                                                |
+| 4   | CreateSettingsItemKeyIterator  | Returns an [\#ISettingsItemKeyIterator](#ISettingsItemKeyIterator "wikilink"). |
+| 10  | \[4.0.0+\] ReadSettings        |                                                                                |
+| 11  | \[4.0.0+\] ResetSettings       |                                                                                |
+| 20  | \[4.0.0+\] SetWebInspectorFlag |                                                                                |
+| 21  | \[4.0.0+\] SetAllowedSslHosts  |                                                                                |
+| 22  | \[4.0.0+\] SetHostFsMountPoint |                                                                                |
 
 ## ISettingsItemKeyIterator
 
@@ -57,6 +66,7 @@ This is
 | 20  | [\#GetEciDeviceKey](#GetEciDeviceKey "wikilink")                         |
 | 21  | [\#GetEticketDeviceKey](#GetEticketDeviceKey "wikilink")                 |
 | 22  | GetSpeakerParameter                                                      |
+| 23  | \[4.0.0+\] GetLcdVendorId                                                |
 |     |                                                                          |
 
 Used for accessing data calibrated at the factory.
@@ -146,7 +156,7 @@ This is
 | 1   | SetNetworkSettings                                                                                |
 | 2   | GetNetworkSettings                                                                                |
 | 3   | [\#GetFirmwareVersion](#GetFirmwareVersion "wikilink")                                            |
-| 4   | GetFirmwareVersion2                                                                               |
+| 4   | \[3.0.0+\] GetFirmwareVersion2                                                                    |
 | 7   | GetLockScreenFlag                                                                                 |
 | 8   | SetLockScreenFlag                                                                                 |
 | 9   | GetBacklightSettings                                                                              |
@@ -233,33 +243,33 @@ This is
 | 92  | GetShutdownRtcValue                                                                               |
 | 93  | AcquireFatalDirtyFlagEventHandle                                                                  |
 | 94  | GetFatalDirtyFlags                                                                                |
-| 95  | GetAutoUpdateEnableFlag                                                                           |
-| 96  | SetAutoUpdateEnableFlag                                                                           |
-| 97  | GetNxControllerSettings                                                                           |
-| 98  | SetNxControllerSettings                                                                           |
-| 99  | GetBatteryPercentageFlag                                                                          |
-| 100 | SetBatteryPercentageFlag                                                                          |
-| 101 | GetExternalRtcResetFlag                                                                           |
-| 102 | SetExternalRtcResetFlag                                                                           |
-| 103 | GetUsbFullKeyEnableFlag                                                                           |
-| 104 | SetUsbFullKeyEnableFlag                                                                           |
-| 105 | SetExternalSteadyClockInternalOffset                                                              |
-| 106 | GetExternalSteadyClockInternalOffset                                                              |
-| 107 | GetBacklightSettingsEx                                                                            |
-| 108 | SetBacklightSettingsEx                                                                            |
-| 109 | GetHeadphoneVolumeWarningCount                                                                    |
-| 110 | SetHeadphoneVolumeWarningCount                                                                    |
-| 111 | GetBluetoothAfhEnableFlag                                                                         |
-| 112 | SetBluetoothAfhEnableFlag                                                                         |
-| 113 | GetBluetoothBoostEnableFlag                                                                       |
-| 114 | SetBluetoothBoostEnableFlag                                                                       |
-| 115 | GetInRepairProcessEnableFlag                                                                      |
-| 116 | SetInRepairProcessEnableFlag                                                                      |
-| 117 | GetHeadphoneVolumeUpdateFlag                                                                      |
-| 118 | SetHeadphoneVolumeUpdateFlag                                                                      |
-| 119 | NeedsToUpdateHeadphoneVolume                                                                      |
-| 120 | GetPushNotificationActivityModeOnSleep                                                            |
-| 121 | SetPushNotificationActivityModeOnSleep                                                            |
+| 95  | \[2.0.0+\] GetAutoUpdateEnableFlag                                                                |
+| 96  | \[2.0.0+\] SetAutoUpdateEnableFlag                                                                |
+| 97  | \[2.0.0+\] GetNxControllerSettings                                                                |
+| 98  | \[2.0.0+\] SetNxControllerSettings                                                                |
+| 99  | \[2.0.0+\] GetBatteryPercentageFlag                                                               |
+| 100 | \[2.0.0+\] SetBatteryPercentageFlag                                                               |
+| 101 | \[2.0.0+\] GetExternalRtcResetFlag                                                                |
+| 102 | \[2.0.0+\] SetExternalRtcResetFlag                                                                |
+| 103 | \[3.0.0+\] GetUsbFullKeyEnableFlag                                                                |
+| 104 | \[3.0.0+\] SetUsbFullKeyEnableFlag                                                                |
+| 105 | \[3.0.0+\] SetExternalSteadyClockInternalOffset                                                   |
+| 106 | \[3.0.0+\] GetExternalSteadyClockInternalOffset                                                   |
+| 107 | \[3.0.0+\] GetBacklightSettingsEx                                                                 |
+| 108 | \[3.0.0+\] SetBacklightSettingsEx                                                                 |
+| 109 | \[3.0.0+\] GetHeadphoneVolumeWarningCount                                                         |
+| 110 | \[3.0.0+\] SetHeadphoneVolumeWarningCount                                                         |
+| 111 | \[3.0.0+\] GetBluetoothAfhEnableFlag                                                              |
+| 112 | \[3.0.0+\] SetBluetoothAfhEnableFlag                                                              |
+| 113 | \[3.0.0+\] GetBluetoothBoostEnableFlag                                                            |
+| 114 | \[3.0.0+\] SetBluetoothBoostEnableFlag                                                            |
+| 115 | \[3.0.0+\] GetInRepairProcessEnableFlag                                                           |
+| 116 | \[3.0.0+\] SetInRepairProcessEnableFlag                                                           |
+| 117 | \[3.0.0+\] GetHeadphoneVolumeUpdateFlag                                                           |
+| 118 | \[3.0.0+\] SetHeadphoneVolumeUpdateFlag                                                           |
+| 119 | \[3.0.0+\] NeedsToUpdateHeadphoneVolume                                                           |
+| 120 | \[3.0.0+\] GetPushNotificationActivityModeOnSleep                                                 |
+| 121 | \[3.0.0+\] SetPushNotificationActivityModeOnSleep                                                 |
 | 122 | \[4.0.0+\] [\#GetServiceDiscoveryControlSettings](#GetServiceDiscoveryControlSettings "wikilink") |
 | 123 | \[4.0.0+\] SetServiceDiscoveryControlSettings                                                     |
 | 124 | \[4.0.0+\] GetErrorReportSharePermission                                                          |
