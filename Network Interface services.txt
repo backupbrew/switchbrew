@@ -42,7 +42,10 @@ This is "nn::nifm::detail::IStaticService".
 |-
 | 12 || GetCurrentIpAddress ||
 |-
-| 13 || GetCurrentAccessPoint ||
+| 13
+| [1.0.0-3.0.2] GetCurrentAccessPoint
+[4.0.0+] GetCurrentAccessPointOld
+|
 |-
 | 14 || CreateTemporaryNetworkProfile || Returns an [[#INetworkProfile]].
 |-
