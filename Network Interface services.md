@@ -13,41 +13,45 @@ This is
 
 ### IGeneralService
 
-| Cmd | Name                                   | Notes                                                        |
-| --- | -------------------------------------- | ------------------------------------------------------------ |
-| 1   | GetClientId                            |                                                              |
-| 2   | CreateScanRequest                      | Returns an [\#IScanRequest](#IScanRequest "wikilink").       |
-| 4   | CreateRequest                          | Returns an [\#IRequest](#IRequest "wikilink").               |
-| 5   | GetCurrentNetworkProfile               |                                                              |
-| 6   | EnumerateNetworkInterfaces             |                                                              |
-| 7   | EnumerateNetworkProfiles               |                                                              |
-| 8   | GetNetworkProfile                      |                                                              |
-| 9   | SetNetworkProfile                      |                                                              |
-| 10  | RemoveNetworkProfile                   |                                                              |
-| 11  | GetScanData                            |                                                              |
-| 12  | GetCurrentIpAddress                    |                                                              |
-| 13  | GetCurrentAccessPoint                  |                                                              |
-| 14  | CreateTemporaryNetworkProfile          | Returns an [\#INetworkProfile](#INetworkProfile "wikilink"). |
-| 15  | GetCurrentIpConfigInfo                 |                                                              |
-| 16  | SetWirelessCommunicationEnabled        |                                                              |
-| 17  | IsWirelessCommunicationEnabled         |                                                              |
-| 18  | GetInternetConnectionStatus            |                                                              |
-| 19  | SetEthernetCommunicationEnabled        |                                                              |
-| 20  | IsEthernetCommunicationEnabled         |                                                              |
-| 21  | IsAnyInternetRequestAccepted           |                                                              |
-| 22  | IsAnyForegroundRequestAccepted         |                                                              |
-| 23  | PutToSleep                             |                                                              |
-| 24  | WakeUp                                 |                                                              |
-| 25  | GetSsidListVersion                     |                                                              |
-| 26  | SetExclusiveClient                     |                                                              |
-| 27  | GetDefaultIpSetting                    |                                                              |
-| 28  | SetDefaultIpSetting                    |                                                              |
-| 29  | SetWirelessCommunicationEnabledForTest |                                                              |
-| 30  | SetEthernetCommunicationEnabledForTest |                                                              |
-| 31  | GetTelemetorySystemEventReadableHandle |                                                              |
-| 32  | GetTelemetryInfo                       |                                                              |
-| 33  | ConfirmSystemAvailability              |                                                              |
-|     |                                        |                                                              |
+| Cmd | Name                                                  | Notes                                                        |
+| --- | ----------------------------------------------------- | ------------------------------------------------------------ |
+| 1   | GetClientId                                           |                                                              |
+| 2   | CreateScanRequest                                     | Returns an [\#IScanRequest](#IScanRequest "wikilink").       |
+| 4   | CreateRequest                                         | Returns an [\#IRequest](#IRequest "wikilink").               |
+| 5   | GetCurrentNetworkProfile                              |                                                              |
+| 6   | EnumerateNetworkInterfaces                            |                                                              |
+| 7   | EnumerateNetworkProfiles                              |                                                              |
+| 8   | GetNetworkProfile                                     |                                                              |
+| 9   | SetNetworkProfile                                     |                                                              |
+| 10  | RemoveNetworkProfile                                  |                                                              |
+| 11  | \[1.0.0-3.0.2\] GetScanData \[4.0.0+\] GetScanDataOld |                                                              |
+| 12  | GetCurrentIpAddress                                   |                                                              |
+| 13  | GetCurrentAccessPoint                                 |                                                              |
+| 14  | CreateTemporaryNetworkProfile                         | Returns an [\#INetworkProfile](#INetworkProfile "wikilink"). |
+| 15  | GetCurrentIpConfigInfo                                |                                                              |
+| 16  | SetWirelessCommunicationEnabled                       |                                                              |
+| 17  | IsWirelessCommunicationEnabled                        |                                                              |
+| 18  | GetInternetConnectionStatus                           |                                                              |
+| 19  | SetEthernetCommunicationEnabled                       |                                                              |
+| 20  | IsEthernetCommunicationEnabled                        |                                                              |
+| 21  | IsAnyInternetRequestAccepted                          |                                                              |
+| 22  | IsAnyForegroundRequestAccepted                        |                                                              |
+| 23  | PutToSleep                                            |                                                              |
+| 24  | WakeUp                                                |                                                              |
+| 25  | GetSsidListVersion                                    |                                                              |
+| 26  | SetExclusiveClient                                    |                                                              |
+| 27  | GetDefaultIpSetting                                   |                                                              |
+| 28  | SetDefaultIpSetting                                   |                                                              |
+| 29  | SetWirelessCommunicationEnabledForTest                |                                                              |
+| 30  | SetEthernetCommunicationEnabledForTest                |                                                              |
+| 31  | \[2.0.0+\] GetTelemetorySystemEventReadableHandle     |                                                              |
+| 32  | \[2.0.0+\] GetTelemetryInfo                           |                                                              |
+| 33  | \[2.0.0+\] ConfirmSystemAvailability                  |                                                              |
+| 34  | \[4.0.0+\] SetBackgroundRequestEnabled                |                                                              |
+| 35  | \[4.0.0+\] GetScanData                                |                                                              |
+| 36  | \[4.0.0+\] GetCurrentAccessPoint                      |                                                              |
+| 37  | \[4.0.0+\] Shutdown                                   |                                                              |
+|     |                                                       |                                                              |
 
 #### IScanRequest
 

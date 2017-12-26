@@ -35,7 +35,10 @@ This is "nn::nifm::detail::IStaticService".
 |-
 | 10 || RemoveNetworkProfile ||
 |-
-| 11 || GetScanData ||
+| 11
+| [1.0.0-3.0.2] GetScanData
+[4.0.0+] GetScanDataOld
+|
 |-
 | 12 || GetCurrentIpAddress ||
 |-
@@ -75,11 +78,19 @@ This is "nn::nifm::detail::IStaticService".
 |-
 | 30 || SetEthernetCommunicationEnabledForTest ||
 |-
-| 31 || GetTelemetorySystemEventReadableHandle ||
+| 31 || [2.0.0+] GetTelemetorySystemEventReadableHandle ||
 |-
-| 32 || GetTelemetryInfo ||
+| 32 || [2.0.0+] GetTelemetryInfo ||
 |-
-| 33 || ConfirmSystemAvailability ||
+| 33 || [2.0.0+] ConfirmSystemAvailability ||
+|-
+| 34 || [4.0.0+] SetBackgroundRequestEnabled ||
+|-
+| 35 || [4.0.0+] GetScanData ||
+|-
+| 36 || [4.0.0+] GetCurrentAccessPoint ||
+|-
+| 37 || [4.0.0+] Shutdown ||
 |-
 |}
 
