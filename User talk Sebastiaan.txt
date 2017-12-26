@@ -1,0 +1,7 @@
+Hey man,
+
+This wiki is for reverse engineering notes based on retail software.
+
+Please keep things from the official SDK off the wiki, thanks!
+
+[[User:Qlutoo|Qlutoo]] ([[User talk:Qlutoo|talk]]) 04:31, 26 December 2017 (CST)
