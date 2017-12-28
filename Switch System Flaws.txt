@@ -10,14 +10,16 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 !  Fixed with hardware model/revision
 !  Newest hardware model/revision this flaw was checked for
 !  Timeframe this was discovered
+!  Public disclosure timeframe
 !  Discovered by
 |-
-| No public hardware exploits 
-|
-|
-|
-|
-|
+| GMMU DMA attack
+| The Switch's GPU includes a separate MMU (GMMU) that is allowed to bypass the system's IOMMU (SMMU). By accessing the GPU's MMIO region and manipulating the page table entires in the GMMU an attacker can read/write any portion of the DRAM except memory carveouts.
+| None
+| [[4.1.0]]
+| Summer 2017
+| December 28, 2017
+| [[User:hexkyz|hexkyz]], [[User:SciresM|SciresM]] and [[User:qlutoo|qlutoo]]
 |-
 |}
 
@@ -111,7 +113,7 @@ On 1.0.0 you could supply irq_id < 32 and it would write outside the SharedIrqs 
 | 2.0.0
 | ~October
 | 17 October
-| plutoo
+| [[User:qlutoo|qlutoo]]
 |-
 |}
 
@@ -178,7 +180,7 @@ This is not useful since the string loaded from this array is only involved with
 |  [[3.0.0]]
 |  April 2017
 |  On exploit's fix in [[3.0.0]]
-|  qlutoo, Reswitched team (independently)
+|  [[User:qlutoo|qlutoo]], Reswitched team (independently)
 |-
 | Unchecked domain ID in common IPC code
 | Prior to [[2.0.0]], object IDs in [[IPC_Marshalling#Domain_message|domain messages]] are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.
@@ -187,5 +189,5 @@ This is not useful since the string loaded from this array is only involved with
 | 2.0.0
 | ~July 2017
 | 20 July 2017‎
-| hthh
+| [[User:hthh|hthh]]
 |}
