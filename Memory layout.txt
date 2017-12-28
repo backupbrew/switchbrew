@@ -26,7 +26,7 @@ Binaries loaded within the main-binary-region are loaded into memory in the foll
 * sdk
 
 == ASLR Implementation ==
-
+The kernel uses a MT19937 random number generator, seeded by a [[SMC#GetRandomBytes|smcGetRandomBytes]]
 === 1.0.0 ===
 
  if (AddressSpaceType == 2) {

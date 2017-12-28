@@ -40,8 +40,7 @@ there are 6 fewer bits of layout randomization.
 
 Binaries loaded within the main-binary-region are loaded into memory in
 the following order, immediately after each other, for the binaries
-which exist in
-[ExeFS](ExeFS.md "wikilink"):
+which exist in [ExeFS](ExeFS.md "wikilink"):
 
   - rtld
   - main
@@ -49,6 +48,9 @@ which exist in
   - sdk
 
 ## ASLR Implementation
+
+The kernel uses a MT19937 random number generator, seeded by a
+[smcGetRandomBytes](SMC#GetRandomBytes.md##GetRandomBytes "wikilink")
 
 ### 1.0.0
 
