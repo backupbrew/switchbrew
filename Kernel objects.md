@@ -91,12 +91,12 @@ Inherits from:
 | 0x2F0        | u64                                                                      | CoreMask                     |
 | 0x2F8        | u64                                                                      | CoreMaskOverride             |
 | 0x300        | u64                                                                      | ThreadId                     |
-| 0x308        | u64                                                                      |                              |
+| 0x308        | u64                                                                      | TotalTimeRunning             |
 | 0x310        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")\*         | SignalledObjectPtr           |
 | 0x318        | u64                                                                      |                              |
 | 0x320        | u64                                                                      |                              |
 | 0x328        | u64                                                                      | Entrypoint                   |
-| 0x330        | u64                                                                      |                              |
+| 0x330        | u64                                                                      | ArbitrationUserPtr           |
 | 0x338        | [\#KProcess\*](#KProcess* "wikilink")                                    | ProcessPtr                   |
 | 0x340        | void\*                                                                   | KernelThreadStack            |
 | 0x348        | u64                                                                      |                              |
@@ -115,7 +115,7 @@ Inherits from:
 | 0x5C8        | u64                                                                      |                              |
 | 0x5D0        | u64                                                                      |                              |
 | 0x5D8        | u64                                                                      |                              |
-| 0x5E0        | u32                                                                      |                              |
+| 0x5E0        | u32                                                                      | ArbitrationReqThreadHandle   |
 | 0x5E4        | u32                                                                      | SchedulingFlags\_Default     |
 | 0x5E8        | u32                                                                      | WaitSync\_RetVal             |
 | 0x5EC        | u32                                                                      |                              |
@@ -126,7 +126,7 @@ Inherits from:
 | 0x600        | u32                                                                      | WantedPriority               |
 | 0x604        | u32                                                                      | CpuCore                      |
 | 0x608        | u8                                                                       | State                        |
-| 0x609        | u8                                                                       | IsRunning                    |
+| 0x609        | u8                                                                       | ShallBeTerminated            |
 | 0x60A        | u8                                                                       |                              |
 | 0x60B        | u8                                                                       |                              |
 | 0x60C        | u8                                                                       |                              |
