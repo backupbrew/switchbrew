@@ -103,7 +103,7 @@ In 3.0.0, this was fixed by moving the security engine initialization earlier in
 | 
 | 15 October
 | 17 October
-| plutoo
+| [[User:qlutoo|qlutoo]]
 |-
 | Bad irq_id check in CreateInterruptEvent
 | CreateInterruptEvent syscall is designed to work only for irq_id >= 32. All irq_ids < 32 are "per-core" and reserved for kernel use (watchdog/scheduling/core communications).
