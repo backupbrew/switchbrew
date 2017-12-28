@@ -14,7 +14,7 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 !  Discovered by
 |-
 | GMMU DMA attack
-| The Switch's GPU includes a separate MMU (GMMU) that is allowed to bypass the system's IOMMU (SMMU). By accessing the GPU's MMIO region and manipulating the page table entires in the GMMU, an attacker can read/write any portion of the DRAM (except memory carveouts).
+| The Switch's GPU includes a separate MMU (GMMU) that is allowed to bypass the system's IOMMU (SMMU). By accessing the GPU's MMIO region and manipulating the page table entries in the GMMU, an attacker can read/write any portion of the DRAM (except memory carveouts).
 | None
 | [[4.1.0]]
 | Summer 2017
