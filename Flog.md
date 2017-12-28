@@ -1,7 +1,8 @@
-This is the system "flog" 01008BB00013C000
-[title](Title%20list.md "wikilink"). "flog" is a full-fledged NES
-emulator and is installed on retail systems since
-[1.0.0](1.0.0.md "wikilink").
+This was the system "flog" 01008BB00013C000
+[title](Title%20list.md "wikilink"). "flog" was a full-fledged NES
+emulator and was installed on all retail systems since
+[1.0.0](1.0.0.md "wikilink"). Flog was removed in
+[4.0.0](4.0.0.md "wikilink")
 
 The titleID for "flog" is used by 3 functions in
 [qlaunch](Qlaunch.md "wikilink"): 1 for checking whether to launch it, 1
