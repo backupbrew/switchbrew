@@ -77,8 +77,8 @@ Size: 0x10
 | 8 || [[#KLinkedListNode]]* || Next
 |}
 
-= KListEntry =
-Size: 0x18
+= KLinkedListEntry =
+Size: 0x10 + <code>sizeof(T)</code>
 
 {| class="wikitable" border="1"
 |-
@@ -86,7 +86,19 @@ Size: 0x18
 |-
 | 0 || [[#KLinkedListNode]] || NodeFor__List
 |-
-| 0x10 || T* || Ptr
+| 0x10 || T || Data
+|}
+
+= KLinkedList =
+Size: 0x18
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || u64 || Count 
+|-
+| 8 || [[#KLinkedListNode]] || Bounds (first, last)
 |}
 
 = KThread =
@@ -224,9 +236,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0xF0 || u64 || TotalMemUsage
 |-
-| 0xF8 || u64 || TlsPagesListCount
-|-
-| 0x100 || [[#KLinkedList]]<[[#KListEntry]]<[[#KTlsPageManager]]>> || TlsPagesList
+| 0xF8 || [[#KLinkedList]]<[[#KTlsPageManager]]*>> || TlsPagesList
 |-
 | 0x110 || s32 || DefaultCpuCore
 |-
@@ -240,7 +250,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x138 || [[#KMutex]] || ThreadingMutex
 |-
-| 0x140 || [[#KLinkedListNode]]<[[#KThread]]> || ThreadArbiterList
+| 0x140 || [[#KLinkedListNode]]<[[#KThread]] *> || ThreadArbiterList
 |-
 | 0x150 || KLinkedListNode ||
 |-
@@ -282,11 +292,11 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x528 || void* || UsermodeExceptionTlsArea
 |-
-| 0x530 || [[#KLinkedListNode]]<[[#KThread]]> || ExceptionThreadList
+| 0x530 || [[#KLinkedListNode]]<[[#KThread]] *> || ExceptionThreadList
 |-
 | 0x540 || [[#KThread]]* || ExceptionThread
 |-
-| 0x548 || [[#KLinkedListNode]]<[[#KThread]]> || ThreadList
+| 0x548 || [[#KLinkedListNode]]<[[#KThread]] *> || ThreadList
 |-
 | 0x558 || bool || HasStarted
 |-
@@ -313,9 +323,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x100 || u64 || TotalMemUsage
 |-
-| 0x108 || u64 || TlsPagesListCount
-|-
-| 0x100 || [[#KLinkedList]]<[[#KListEntry]]<[[#KTlsPageManager]]>> || TlsPagesList
+| 0x108 || [[#KLinkedList]]<[[#KTlsPageManager]]*> || TlsPagesList
 |-
 | 0x120 || s32 || DefaultCpuCore
 |-
@@ -329,7 +337,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x148 || [[#KMutex]] || ThreadingMutex
 |-
-| 0x150 || [[#KLinkedListNode]]<[[#KThread]]> || ThreadArbiterList
+| 0x150 || [[#KLinkedListNode]]<[[#KThread]] *> || ThreadArbiterList
 |-
 | 0x160 || KLinkedListNode ||
 |-
@@ -373,13 +381,13 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x2380 || void* || UsermodeExceptionTlsArea
 |-
-| 0x2388 || [[#KLinkedListNode]]<[[#KThread]]> || ExceptionThreadList
+| 0x2388 || [[#KLinkedListNode]]<[[#KThread]] *> || ExceptionThreadList
 |-
 | 0x2398 || [[#KThread]]* || ExceptionThread
 |-
-| 0x23A0 || [[#KLinkedListNode]]<[[#KThread]]> || ThreadList
+| 0x23A0 || [[#KLinkedListNode]]<[[#KThread]] *> || ThreadList
 |-
-| 0x23B0 || [[#KLinkedListNode]]<[[#KSharedMemoryRef]]> || MappedSharedMemoriesList
+| 0x23B0 || [[#KLinkedListNode]]<[[#KSharedMemoryRef]] *> || MappedSharedMemoriesList
 |-
 | 0x23C0 || bool || HasStarted
 |-
@@ -569,7 +577,7 @@ Size: 0xB0
 |-
 ! Offset || Type || Description
 |-
-| 0 || [[#KLinkedListNode]]<[[#KSharedMemoryRef]]> || NodeFor__MappedSharedMemoriesList
+| 0 || [[#KLinkedListNode]]<[[#KSharedMemoryRef]] *> || NodeFor__MappedSharedMemoriesList
 |-
 | 0x10 || [[#KSharedMemory*]] || SharedMem
 |-
@@ -744,7 +752,7 @@ Size: 0x40
 ! Type
 ! Description
 |-
-| 0 || [[#KLinkedListNode]]<[[#KMemoryBlock]]> || NodeFor__MemoryBlockList
+| 0 || [[#KLinkedListNode]]<[[#KMemoryBlock]] *> || NodeFor__MemoryBlockList
 |-
 | 0x10 || ||
 |-
@@ -1541,7 +1549,7 @@ Size: 0x60
 |-
 ! Offset || Type || Description
 |-
-| 0 || [[#KLinkedListNode]]<[[#KDebugEvent]]> || NodeFor__EventList
+| 0 || [[#KLinkedListNode]]<[[#KDebugEvent]] *> || NodeFor__EventList
 |-
 | 0x10 || u32 || EventType
 |-
