@@ -1091,4 +1091,11 @@ In some cases, a panic may occur. NV forces a crash by doing:
 
 End result is that the system hangs with a white-screen.
 
+## Gpfifo Panic
+
+When the gpfifo data in the gpu\_va buffers specified by the submitted
+gpfifo entries is invalid(?), eventually the user-process will be
+force-terminated after using the submit-gpfifo ioctl. It's unknown how
+exactly this is done.
+
 [Category:Services](Category:Services "wikilink")
