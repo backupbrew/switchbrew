@@ -54,17 +54,19 @@ Returns a AudioInState, 0x00=Started 0x01=Stopped
 
 | Cmd | Name                                           |
 | --- | ---------------------------------------------- |
-| 0   | SleepCodecController                           |
-| 1   | WakeCodecController                            |
-| 2   | [\#SetCodecVolume](#SetCodecVolume "wikilink") |
-| 3   | GetCodecVolumeMax                              |
-| 4   | GetCodecVolumeMin                              |
-| 5   | SetCodecActiveTarget                           |
-| 6   | Unknown                                        |
-| 7   | BindCodecHeadphoneMicJackInterrupt             |
-| 8   | IsCodecHeadphoneMicJackInserted                |
-| 9   | ClearCodecHeadphoneMicJackInterrupt            |
-| 10  | IsCodecDeviceRequested                         |
+| 0   | InitializeCodecController                      |
+| 1   | FinalizeCodecController                        |
+| 2   | SleepCodecController                           |
+| 3   | WakeCodecController                            |
+| 4   | [\#SetCodecVolume](#SetCodecVolume "wikilink") |
+| 5   | GetCodecVolumeMax                              |
+| 6   | GetCodecVolumeMin                              |
+| 7   | SetCodecActiveTarget                           |
+| 8   | Unknown                                        |
+| 9   | BindCodecHeadphoneMicJackInterrupt             |
+| 10  | IsCodecHeadphoneMicJackInserted                |
+| 11  | ClearCodecHeadphoneMicJackInterrupt            |
+| 12  | IsCodecDeviceRequested                         |
 
 ## SetCodecVolume
 

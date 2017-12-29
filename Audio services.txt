@@ -76,27 +76,31 @@ Returns a AudioInState, 0x00=Started 0x01=Stopped
 |-
 ! Cmd || Name
 |-
-| 0 || SleepCodecController
+| 0 || InitializeCodecController
 |-
-| 1 || WakeCodecController
+| 1 || FinalizeCodecController
 |-
-| 2 || [[#SetCodecVolume]]
+| 2 || SleepCodecController
 |-
-| 3 || GetCodecVolumeMax
+| 3 || WakeCodecController
 |-
-| 4 || GetCodecVolumeMin
+| 4 || [[#SetCodecVolume]]
 |-
-| 5 || SetCodecActiveTarget
+| 5 || GetCodecVolumeMax
 |-
-| 6 || Unknown
+| 6 || GetCodecVolumeMin
 |-
-| 7 || BindCodecHeadphoneMicJackInterrupt
+| 7 || SetCodecActiveTarget
 |-
-| 8 || IsCodecHeadphoneMicJackInserted
+| 8 || Unknown
 |-
-| 9 || ClearCodecHeadphoneMicJackInterrupt
+| 9 || BindCodecHeadphoneMicJackInterrupt
 |-
-| 10 || IsCodecDeviceRequested
+| 10 || IsCodecHeadphoneMicJackInserted
+|-
+| 11 || ClearCodecHeadphoneMicJackInterrupt
+|-
+| 12 || IsCodecDeviceRequested
 |}
 
 == SetCodecVolume ==
