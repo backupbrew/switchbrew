@@ -122,7 +122,7 @@ On 1.0.0 you could supply irq_id < 32 and it would write outside the SharedIrqs 
 | [[3.0.2]]
 | 
 | 34c3 (December 28, 2017)
-| 
+| [[User:qlutoo|qlutoo]]
 |-
 |}
 
