@@ -34,10 +34,10 @@ This is
 
 ## ISession
 
-| Cmd | Name                        | Notes                                                   |
-| --- | --------------------------- | ------------------------------------------------------- |
-| 0   | SetPerformanceConfiguration | Takes u32 PerformanceMode                               |
-| 1   | GetPerformanceConfiguration | Takes u32 PerformanceMode, u32 PerformanceConfiguration |
+| Cmd | Name                        | Notes                                                                   |
+| --- | --------------------------- | ----------------------------------------------------------------------- |
+| 0   | SetPerformanceConfiguration | Takes u32 PerformanceMode and u32 PerformanceConfiguration.             |
+| 1   | GetPerformanceConfiguration | Takes u32 PerformanceMode, returns output u32 PerformanceConfiguration. |
 
 ### PerformanceMode
 
