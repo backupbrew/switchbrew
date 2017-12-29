@@ -1,5 +1,5 @@
-TMA (Target Manager?) acts as a debugging sysmodule for development
-kits. This system module is loaded in retail units, but remains unused.
+TMA (Target Manager) acts as a debugging sysmodule for development kits.
+This system module is loaded in retail units, but remains unused.
 
 # htc
 
