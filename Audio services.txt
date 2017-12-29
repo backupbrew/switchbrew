@@ -70,4 +70,37 @@ Returns a AudioOutState, 0x00=Started 0x01=Stopped
 
 Returns a AudioInState, 0x00=Started 0x01=Stopped
 
+= codecctl =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || SleepCodecController
+|-
+| 1 || WakeCodecController
+|-
+| 2 || [[#SetCodecVolume]]
+|-
+| 3 || GetCodecVolumeMax
+|-
+| 4 || GetCodecVolumeMin
+|-
+| 5 || SetCodecActiveTarget
+|-
+| 6 || Unknown
+|-
+| 7 || BindCodecHeadphoneMicJackInterrupt
+|-
+| 8 || IsCodecHeadphoneMicJackInserted
+|-
+| 9 || ClearCodecHeadphoneMicJackInterrupt
+|-
+| 10 || IsCodecDeviceRequested
+|}
+
+== SetCodecVolume ==
+
+Takes a Volume (uint32)
+
 [[Category:Services]]
