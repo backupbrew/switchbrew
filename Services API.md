@@ -87,7 +87,7 @@ Takes a pid.
 <td><p>am: Application Manager, su: System Update</p></td>
 </tr>
 <tr class="odd">
-<td><p>apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?), (aoc:apm??)</p></td>
+<td><p>apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?)</p></td>
 <td><p><a href="APM services.md" title="wikilink">APM services</a></p></td>
 <td></td>
 </tr>
@@ -97,7 +97,7 @@ Takes a pid.
 <td><p>r: Reader, w: Writer</p></td>
 </tr>
 <tr class="odd">
-<td><p>audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus</p></td>
+<td><p>audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus, auddebug</p></td>
 <td><p><a href="Audio services.md" title="wikilink">Audio services</a></p></td>
 <td></td>
 </tr>

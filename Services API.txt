@@ -70,7 +70,7 @@ Takes a pid.
 | [[NS Services]]
 | am: Application Manager, su: System Update
 |-
-| apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?), (aoc:apm??)
+| apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?)
 | [[APM services]]
 |
 |-
@@ -78,7 +78,7 @@ Takes a pid.
 | [[Glue services]]
 | r: Reader, w: Writer
 |-
-| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus
+| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus, auddebug
 | [[Audio services]]
 |
 |-
