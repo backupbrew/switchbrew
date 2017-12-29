@@ -295,9 +295,10 @@ The table for TTBR0 only contains the following:
 TTBR1:
 
   - vmem 0xFFFFFFF800000000 is mapped to physmem 0x80000000. Similar to
-    above, except tmp=0 due to wrap-around, etc. The chunksize used when
-    increasing addr is 0xfffffff840000000, with another +=0x40000000
-    separate from the addr cmp for the loop.
+    above, except tmp=0 due to wrap-around, etc. This also has
+    usermode/kernel XN enabled in the descriptor ORR-value. The
+    chunksize used when increasing addr is 0xfffffff840000000, with
+    another +=0x40000000 separate from the addr cmp for the loop.
       - "endaddr = 0x3fffffff + (<size from above> |
         0xfffffff800000000); enaddr = (endaddr & 0xffffffffc0000000)-1;
         if(endaddr \>= 0xfffffff800000001){<map mem>}"
