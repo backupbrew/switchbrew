@@ -115,6 +115,15 @@ On 1.0.0 you could supply irq_id < 32 and it would write outside the SharedIrqs 
 | 17 October
 | [[User:qlutoo|qlutoo]]
 |-
+| Kernel .text mapped executable in usermode
+| Prior to [[3.0.2]] the kernel .text was [[Memory_layout|mapped]] in usermode as executable. This can be used for usermode ROP for bypassing ASLR, but SVCs/IPC are not usable by running kernel .text in usermode.
+| Executing kernel .text in usermode
+| [[3.0.2]]
+| [[3.0.2]]
+| 
+| 34c3 (December 28, 2017)
+| 
+|-
 |}
 
 === FIRM-package System Modules ===
