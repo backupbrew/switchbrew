@@ -327,7 +327,7 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 | <code>0bxxxxxxxx01111111</code>
 | Bit7
 | MapNormalPage (RW)
-| Bits 7-31: Page
+| Bits 8-31: Page
 |-
 | <code>0bxxxx011111111111</code>
 | Bit11
