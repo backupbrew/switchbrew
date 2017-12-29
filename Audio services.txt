@@ -16,7 +16,7 @@ Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle
 |-
 ! Cmd || Name
 |-
-| 0 || GetAudioOutState
+| 0 || [[#GetAudioOutState]]
 |-
 | 1 || StartAudioOut
 |-
@@ -31,5 +31,43 @@ Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle
 | 6 || ContainsAudioOutBuffer
 |}
 
+=== GetAudioOutState ===
+
+Returns a AudioOutState, 0x00=Started 0x01=Stopped
+
+= audin:u =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || ListAudioIns
+|-
+| 1 || OpenAudioIn
+|}
+
+== IAudioIn ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#GetAudioInState]]
+|-
+| 1 || StartAudioIn
+|-
+| 2 || StopAudioIn
+|-
+| 3 || AppendAudioInBuffer
+|-
+| 4 || RegisterBufferEvent
+|-
+| 5 || GetReleasedAudioInBuffer
+|-
+| 6 || ContainsAudioInBuffer
+|}
+
+=== GetAudioInState ===
+
+Returns a AudioInState, 0x00=Started 0x01=Stopped
 
 [[Category:Services]]
