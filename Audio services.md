@@ -25,7 +25,7 @@ Returns an [\#IAudioOut](#IAudioOut "wikilink") object.
 
 ### GetAudioOutState
 
-Returns a AudioOutState, 0x00=Started 0x01=Stopped
+Returns an AudioOutState, 0x00=Started 0x01=Stopped
 
 # audout:a
 
@@ -43,13 +43,13 @@ Returns a AudioOutState, 0x00=Started 0x01=Stopped
 
 ## RequestSuspendAudioOutsForDebug
 
-Takes a
+Takes an
 [AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 (u64)
 
 ## RequestResumeAudioOutsForDebug
 
-Takes a
+Takes an
 [AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 (u64)
 
@@ -74,7 +74,7 @@ Takes a
 
 ### GetAudioInState
 
-Returns a AudioInState, 0x00=Started 0x01=Stopped
+Returns an AudioInState, 0x00=Started 0x01=Stopped
 
 # audin:a
 
@@ -92,15 +92,33 @@ Returns a AudioInState, 0x00=Started 0x01=Stopped
 
 ## RequestSuspendAudioInsForDebug
 
-Takes a
+Takes an
 [AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 (u64)
 
 ## RequestResumeAudioInsForDebug
 
-Takes a
+Takes an
 [AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 (u64)
+
+# audrec:u
+
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 0   | OpenFinalOutputRecorder |
+
+## IFinalOutputRecorder
+
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   | GetFinalOutputRecorderState          |
+| 1   | StartFinalOutputRecorder             |
+| 2   | StopFinalOutputRecorder              |
+| 3   | AppendFinalOutputRecorderBuffer      |
+| 4   | RegisterBufferEvent                  |
+| 5   | GetReleasedFinalOutputRecorderBuffer |
+| 6   | ContainsFinalOutputRecorderBuffer    |
 
 # codecctl
 

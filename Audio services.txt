@@ -33,7 +33,7 @@ Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle
 
 === GetAudioOutState ===
 
-Returns a AudioOutState, 0x00=Started 0x01=Stopped
+Returns an AudioOutState, 0x00=Started 0x01=Stopped
 
 = audout:a =
 
@@ -59,11 +59,11 @@ Returns a AudioOutState, 0x00=Started 0x01=Stopped
 
 == RequestSuspendAudioOutsForDebug ==
 
-Takes a [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 == RequestResumeAudioOutsForDebug ==
 
-Takes a [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 = audin:u =
 
@@ -98,7 +98,7 @@ Takes a [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 === GetAudioInState ===
 
-Returns a AudioInState, 0x00=Started 0x01=Stopped
+Returns an AudioInState, 0x00=Started 0x01=Stopped
 
 = audin:a =
 
@@ -124,11 +124,40 @@ Returns a AudioInState, 0x00=Started 0x01=Stopped
 
 == RequestSuspendAudioInsForDebug ==
 
-Takes a [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 == RequestResumeAudioInsForDebug ==
 
-Takes a [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+
+= audrec:u =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || OpenFinalOutputRecorder
+|}
+
+== IFinalOutputRecorder ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetFinalOutputRecorderState
+|-
+| 1 || StartFinalOutputRecorder
+|-
+| 2 || StopFinalOutputRecorder
+|-
+| 3 || AppendFinalOutputRecorderBuffer
+|-
+| 4 || RegisterBufferEvent
+|-
+| 5 || GetReleasedFinalOutputRecorderBuffer
+|-
+| 6 || ContainsFinalOutputRecorderBuffer
+|}
 
 = codecctl =
 
