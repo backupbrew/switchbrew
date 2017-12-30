@@ -9,8 +9,10 @@
 
 Takes two u64s (an interface ID and a PID placeholder?), a PID, a
 process handle, and the name of the interface you want to connect to.
-Returns an [\#IAudioOut](#IAudioOut "wikilink")
-object.
+Returns an [\#IAudioOut](#IAudioOut "wikilink") object and four u32s:
+the sample rate, channel count, PCM format, and an unknown field. PCM
+format 2 is
+INT16.
 
 ## IAudioOut
 
