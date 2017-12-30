@@ -37,16 +37,15 @@ Returns an AudioOutState, 0x00=Started 0x01=Stopped
 Takes a u64 (not sure what this is, might act as some sort of identifier
 for the audio buffer? official applications seem to use the address of
 the audio buffer struct for this) and a buffer. The format of said
-buffer is as
-follows:
+buffer is as follows:
 
-| Offset | Size | Description                                                           |
-| ------ | ---- | --------------------------------------------------------------------- |
-| 0x00   | 8    | Some kind of pointer? This usually points to the sample data pointer. |
-| 0x08   | 8    | Pointer to sample data.                                               |
-| 0x10   | 8    | Capacity of sample buffer                                             |
-| 0x18   | 8    | Size of data in sample buffer                                         |
-| 0x20   | 8    | Unknown. Zero works.                                                  |
+| Offset | Size | Description                         |
+| ------ | ---- | ----------------------------------- |
+| 0x00   | 8    | Pointer to the sample data pointer. |
+| 0x08   | 8    | Pointer to sample data.             |
+| 0x10   | 8    | Capacity of sample buffer           |
+| 0x18   | 8    | Size of data in sample buffer       |
+| 0x20   | 8    | Unknown. Zero works.                |
 
 ### RegisterBufferEvent
 
@@ -58,32 +57,6 @@ Takes a buffer, which it will fill with the identifiers passed from
 [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") of audio
 buffers that have been released. Will return a u32 (may indicate how
 many buffers were released?)
-
-# audout:a
-
-| Cmd | Name                    |
-| --- | ----------------------- |
-| 0   | RequestSuspendAudioOuts |
-| 1   | RequestResumeAudioOuts  |
-
-# audout:d
-
-| Cmd | Name                                                                             |
-| --- | -------------------------------------------------------------------------------- |
-| 0   | [\#RequestSuspendAudioOutsForDebug](#RequestSuspendAudioOutsForDebug "wikilink") |
-| 1   | [\#RequestResumeAudioOutsForDebug](#RequestResumeAudioOutsForDebug "wikilink")   |
-
-## RequestSuspendAudioOutsForDebug
-
-Takes an
-[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
-(u64)
-
-## RequestResumeAudioOutsForDebug
-
-Takes an
-[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
-(u64)
 
 # audin:u
 
@@ -107,32 +80,6 @@ Takes an
 ### GetAudioInState
 
 Returns an AudioInState, 0x00=Started 0x01=Stopped
-
-# audin:a
-
-| Cmd | Name                   |
-| --- | ---------------------- |
-| 0   | RequestSuspendAudioIns |
-| 1   | RequestResumeAudioIns  |
-
-# audin:d
-
-| Cmd | Name                                                                           |
-| --- | ------------------------------------------------------------------------------ |
-| 0   | [\#RequestSuspendAudioInsForDebug](#RequestSuspendAudioInsForDebug "wikilink") |
-| 1   | [\#RequestResumeAudioInsForDebug](#RequestResumeAudioInsForDebug "wikilink")   |
-
-## RequestSuspendAudioInsForDebug
-
-Takes an
-[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
-(u64)
-
-## RequestResumeAudioInsForDebug
-
-Takes an
-[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
-(u64)
 
 # audrec:u
 
@@ -175,6 +122,32 @@ Takes an
 | 7   | Unknown                            |
 | 8   | SetAudioRendererRenderingTimeLimit |
 | 9   | GetAudioRendererRenderingTimeLimit |
+
+# audout:a, audin:a, audrec:a and audren:a
+
+| Cmd | Name           |
+| --- | -------------- |
+| 0   | RequestSuspend |
+| 1   | RequestResume  |
+
+# audout:d, audin:d, audrec:d and audren:d
+
+| Cmd | Name                                                           |
+| --- | -------------------------------------------------------------- |
+| 0   | [\#RequestSuspendForDebug](#RequestSuspendForDebug "wikilink") |
+| 1   | [\#RequestResumeForDebug](#RequestResumeForDebug "wikilink")   |
+
+## RequestSuspendForDebug
+
+Takes an
+[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+(u64)
+
+## RequestResumeForDebug
+
+Takes an
+[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+(u64)
 
 # codecctl
 

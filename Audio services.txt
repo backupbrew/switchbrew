@@ -48,7 +48,7 @@ The format of said buffer is as follows:
 |-
 ! Offset || Size || Description
 |-
-| 0x00 || 8 || Some kind of pointer? This usually points to the sample data pointer.
+| 0x00 || 8 || Pointer to the sample data pointer.
 |-
 | 0x08 || 8 || Pointer to sample data.
 |-
@@ -66,36 +66,6 @@ Returns an event handle that is signalled when a buffer is released
 === GetReleasedAudioOutBuffer ===
 
 Takes a buffer, which it will fill with the identifiers passed from [[#AppendAudioOutBuffer]] of audio buffers that have been released. Will return a u32 (may indicate how many buffers were released?)
-
-= audout:a =
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || RequestSuspendAudioOuts
-|-
-| 1 || RequestResumeAudioOuts
-|}
-
-= audout:d =
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || [[#RequestSuspendAudioOutsForDebug]]
-|-
-| 1 || [[#RequestResumeAudioOutsForDebug]]
-|}
-
-== RequestSuspendAudioOutsForDebug ==
-
-Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
-
-== RequestResumeAudioOutsForDebug ==
-
-Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 = audin:u =
 
@@ -131,36 +101,6 @@ Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 === GetAudioInState ===
 
 Returns an AudioInState, 0x00=Started 0x01=Stopped
-
-= audin:a =
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || RequestSuspendAudioIns
-|-
-| 1 || RequestResumeAudioIns
-|}
-
-= audin:d =
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || [[#RequestSuspendAudioInsForDebug]]
-|-
-| 1 || [[#RequestResumeAudioInsForDebug]]
-|}
-
-== RequestSuspendAudioInsForDebug ==
-
-Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
-
-== RequestResumeAudioInsForDebug ==
-
-Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 = audrec:u =
 
@@ -231,6 +171,36 @@ Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 |-
 | 9 || GetAudioRendererRenderingTimeLimit
 |}
+
+= audout:a, audin:a, audrec:a and audren:a =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RequestSuspend
+|-
+| 1 || RequestResume
+|}
+
+= audout:d, audin:d, audrec:d and audren:d =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#RequestSuspendForDebug]]
+|-
+| 1 || [[#RequestResumeForDebug]]
+|}
+
+== RequestSuspendForDebug ==
+
+Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+
+== RequestResumeForDebug ==
+
+Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 = codecctl =
 
