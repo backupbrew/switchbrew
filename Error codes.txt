@@ -501,7 +501,7 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 
 = Support Errors =
 {| class=wikitable
-! Error ! Module || Description || Notes
+! Error !! Module !! Description !! Notes
 |-
 | 
 | {web-applets listed above}

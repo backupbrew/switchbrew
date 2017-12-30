@@ -275,9 +275,9 @@ titles:
 
 # Support Errors
 
-| Error \! Module | Description                | Notes |
-| --------------- | -------------------------- | ----- |
-|                 | {web-applets listed above} | 2750  |
+| Error | Module                     | Description | Notes               |
+| ----- | -------------------------- | ----------- | ------------------- |
+|       | {web-applets listed above} | 2750        | MP4 parsing failed. |
 
 Normal error-codes displayed by the system also use the same format as
 fatal-errors.
