@@ -60,6 +60,7 @@ fatal-errors, since the Description ends with bit21.
 | 143   | BTM                                                    |
 | 147   | ERPT                                                   |
 | 148   | APM                                                    |
+| 153   | Audio                                                  |
 | 154   | NPNS                                                   |
 | 157   | ARP                                                    |
 | 158   | BOOT                                                   |
@@ -213,6 +214,7 @@ applets.
 | 0x3C7C            | 30          | Bad input buffer size                                                                                                                                                                |
 | 0x407C            | 32          | Invalid input buffer                                                                                                                                                                 |
 | 0x668C            | 51          | USB data-transfer in progress                                                                                                                                                        |
+| 0xC0899           | 1540        | Audio output was already started                                                                                                                                                     |
 | 0x3C9D            | 30          | Address is NULL                                                                                                                                                                      |
 | 0x3E9D            | 31          | PID is NULL                                                                                                                                                                          |
 | 0x549D            | 42          | Already bound                                                                                                                                                                        |
