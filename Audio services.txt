@@ -9,7 +9,7 @@
 |}
 
 == OpenAudioOut ==
-Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle, and the name of the interface you want to connect to. Returns an [[#IAudioOut]] object.
+Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle, and the name of the interface you want to connect to. Returns an [[#IAudioOut]] object and four u32s: the sample rate, channel count, PCM format, and an unknown field. PCM format 2 is INT16.
 
 == IAudioOut ==
 {| class="wikitable" border="1"
@@ -22,48 +22,50 @@ Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle
 |-
 | 2 || StopAudioOut
 |-
-| 3 || AppendAudioOutBuffer
+| 3 || [[#AppendAudioOutBuffer]] taking a type 0x5 (A descriptor) buffer
 |-
-| 4 || RegisterBufferEvent
+| 4 || [[#RegisterBufferEvent]]
 |-
-| 5 || GetReleasedAudioOutBuffer
+| 5 || [[#GetReleasedAudioOutBuffer]] taking a type 0x6 (B descriptor) buffer
 |-
 | 6 || ContainsAudioOutBuffer
+|-
+| 7 || [[#AppendAudioOutBuffer]] taking a type 0x21 buffer
+|-
+| 8 || [[#GetReleasedAudioOutBuffer]] taking a type 0x22 buffer
 |}
 
 === GetAudioOutState ===
 
 Returns an AudioOutState, 0x00=Started 0x01=Stopped
 
-= audout:a =
+=== AppendAudioOutBuffer ===
+
+Takes a u64 (not sure what this is, might act as some sort of identifier for the audio buffer? official applications seem to use the address of the audio buffer struct for this) and a buffer.
+The format of said buffer is as follows:
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Offset || Size || Description
 |-
-| 0 || RequestSuspendAudioOuts
+| 0x00 || 8 || Pointer to the sample data pointer.
 |-
-| 1 || RequestResumeAudioOuts
+| 0x08 || 8 || Pointer to sample data.
+|-
+| 0x10 || 8 || Capacity of sample buffer
+|-
+| 0x18 || 8 || Size of data in sample buffer
+|-
+| 0x20 || 8 || Unknown. Zero works.
 |}
 
-= audout:d =
+=== RegisterBufferEvent ===
 
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || [[#RequestSuspendAudioOutsForDebug]]
-|-
-| 1 || [[#RequestResumeAudioOutsForDebug]]
-|}
+Returns an event handle that is signalled when a buffer is released
 
-== RequestSuspendAudioOutsForDebug ==
+=== GetReleasedAudioOutBuffer ===
 
-Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
-
-== RequestResumeAudioOutsForDebug ==
-
-Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+Takes a buffer, which it will fill with the identifiers passed from [[#AppendAudioOutBuffer]] of audio buffers that have been released. Will return a u32 (may indicate how many buffers were released?)
 
 = audin:u =
 
@@ -99,36 +101,6 @@ Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 === GetAudioInState ===
 
 Returns an AudioInState, 0x00=Started 0x01=Stopped
-
-= audin:a =
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || RequestSuspendAudioIns
-|-
-| 1 || RequestResumeAudioIns
-|}
-
-= audin:d =
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || [[#RequestSuspendAudioInsForDebug]]
-|-
-| 1 || [[#RequestResumeAudioInsForDebug]]
-|}
-
-== RequestSuspendAudioInsForDebug ==
-
-Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
-
-== RequestResumeAudioInsForDebug ==
-
-Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 = audrec:u =
 
@@ -193,12 +165,42 @@ Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 |-
 | 6 || StopAudioRenderer
 |-
-| 7 || QuerySystemEvent
+| 7 || Unknown
 |-
 | 8 || SetAudioRendererRenderingTimeLimit
 |-
 | 9 || GetAudioRendererRenderingTimeLimit
 |}
+
+= audout:a, audin:a, audrec:a and audren:a =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RequestSuspend
+|-
+| 1 || RequestResume
+|}
+
+= audout:d, audin:d, audrec:d and audren:d =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#RequestSuspendForDebug]]
+|-
+| 1 || [[#RequestResumeForDebug]]
+|}
+
+== RequestSuspendForDebug ==
+
+Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+
+== RequestResumeForDebug ==
+
+Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 = codecctl =
 
