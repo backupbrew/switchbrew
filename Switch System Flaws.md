@@ -107,6 +107,17 @@ Flaws.
 <td><p>December 23, 2017</p></td>
 <td><p>Everyone</p></td>
 </tr>
+<tr class="odd">
+<td><p>Single session services not really single session</p></td>
+<td><p>Several &quot;critical&quot; services (like fsp-ldr, fsp-pr, sm:m, etc) are meant to only ever hold a single session with a specific sysmodule. However, when a sysmodule dies, all its service session handles are released -- and thus killing the holder of a single session handle would allow one (via sm:hax etc) to get access to that service.</p>
+<p>This was fixed in <a href="4.0.0.md" title="wikilink">4.0.0</a> by adding a semaphore to these critical single-session services, so that even if one gets access to them an error code will be returned when attempting to use any of their commands.</p></td>
+<td><p>With some way to access these services and kill their session holders: dumping sysmodule code, arbitrary service access, elevated filesystem permissions, etc.</p></td>
+<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
+<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
+<td><p>May/June 2017 (basically immediately after smhax was discovered)</p></td>
+<td><p>December 30, 2017</p></td>
+<td><p>Everyone</p></td>
+</tr>
 </tbody>
 </table>
 
