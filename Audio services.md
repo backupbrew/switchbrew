@@ -9,23 +9,53 @@
 
 Takes two u64s (an interface ID and a PID placeholder?), a PID, a
 process handle, and the name of the interface you want to connect to.
-Returns an [\#IAudioOut](#IAudioOut "wikilink") object.
+Returns an [\#IAudioOut](#IAudioOut "wikilink")
+object.
 
 ## IAudioOut
 
-| Cmd | Name                                               |
-| --- | -------------------------------------------------- |
-| 0   | [\#GetAudioOutState](#GetAudioOutState "wikilink") |
-| 1   | StartAudioOut                                      |
-| 2   | StopAudioOut                                       |
-| 3   | AppendAudioOutBuffer                               |
-| 4   | RegisterBufferEvent                                |
-| 5   | GetReleasedAudioOutBuffer                          |
-| 6   | ContainsAudioOutBuffer                             |
+| Cmd | Name                                                                                                         |
+| --- | ------------------------------------------------------------------------------------------------------------ |
+| 0   | [\#GetAudioOutState](#GetAudioOutState "wikilink")                                                           |
+| 1   | StartAudioOut                                                                                                |
+| 2   | StopAudioOut                                                                                                 |
+| 3   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") taking a type 0x5 (A descriptor) buffer           |
+| 4   | [\#RegisterBufferEvent](#RegisterBufferEvent "wikilink")                                                     |
+| 5   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink") taking a type 0x6 (B descriptor) buffer |
+| 6   | ContainsAudioOutBuffer                                                                                       |
+| 7   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") taking a type 0x21 buffer                         |
+| 8   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink") taking a type 0x22 buffer               |
 
 ### GetAudioOutState
 
 Returns an AudioOutState, 0x00=Started 0x01=Stopped
+
+### AppendAudioOutBuffer
+
+Takes a u64 (not sure what this is, might act as some sort of identifier
+for the audio buffer? official applications seem to use the address of
+the audio buffer struct for this) and a buffer. The format of said
+buffer is as
+follows:
+
+| Offset | Size | Description                                                           |
+| ------ | ---- | --------------------------------------------------------------------- |
+| 0x00   | 8    | Some kind of pointer? This usually points to the sample data pointer. |
+| 0x08   | 8    | Pointer to sample data.                                               |
+| 0x10   | 8    | Capacity of sample buffer                                             |
+| 0x18   | 8    | Size of data in sample buffer                                         |
+| 0x20   | 8    | Unknown. Zero works.                                                  |
+
+### RegisterBufferEvent
+
+Returns an event handle that is signalled when a buffer is released
+
+### GetReleasedAudioOutBuffer
+
+Takes a buffer, which it will fill with the identifiers passed from
+[\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") of audio
+buffers that have been released. Will return a u32 (may indicate how
+many buffers were released?)
 
 # audout:a
 
