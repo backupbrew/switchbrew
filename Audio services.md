@@ -120,6 +120,30 @@ Takes an
 | 5   | GetReleasedFinalOutputRecorderBuffer |
 | 6   | ContainsFinalOutputRecorderBuffer    |
 
+# audren:u
+
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   | OpenAudioRenderer                    |
+| 1   | GetAudioRendererWorkBufferSize       |
+| 2   | GetAudioRenderersProcessMasterVolume |
+| 3   | SetAudioRenderersProcessMasterVolume |
+
+## IAudioRenderer
+
+| Cmd | Name                               |
+| --- | ---------------------------------- |
+| 0   | GetAudioRendererSampleRate         |
+| 1   | GetAudioRendererSampleCount        |
+| 2   | GetAudioRendererMixBufferCount     |
+| 3   | GetAudioRendererState              |
+| 4   | RequestUpdateAudioRenderer         |
+| 5   | StartAudioRenderer                 |
+| 6   | StopAudioRenderer                  |
+| 7   | Unknown                            |
+| 8   | SetAudioRendererRenderingTimeLimit |
+| 9   | GetAudioRendererRenderingTimeLimit |
+
 # codecctl
 
 | Cmd | Name                                           |
