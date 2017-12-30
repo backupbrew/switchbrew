@@ -27,6 +27,32 @@ Returns an [\#IAudioOut](#IAudioOut "wikilink") object.
 
 Returns a AudioOutState, 0x00=Started 0x01=Stopped
 
+# audout:a
+
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 0   | RequestSuspendAudioOuts |
+| 1   | RequestResumeAudioOuts  |
+
+# audout:d
+
+| Cmd | Name                                                                             |
+| --- | -------------------------------------------------------------------------------- |
+| 0   | [\#RequestSuspendAudioOutsForDebug](#RequestSuspendAudioOutsForDebug "wikilink") |
+| 1   | [\#RequestResumeAudioOutsForDebug](#RequestResumeAudioOutsForDebug "wikilink")   |
+
+## RequestSuspendAudioOutsForDebug
+
+Takes a
+[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+(u64)
+
+## RequestResumeAudioOutsForDebug
+
+Takes a
+[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+(u64)
+
 # audin:u
 
 | Cmd | Name         |
@@ -49,6 +75,32 @@ Returns a AudioOutState, 0x00=Started 0x01=Stopped
 ### GetAudioInState
 
 Returns a AudioInState, 0x00=Started 0x01=Stopped
+
+# audin:a
+
+| Cmd | Name                   |
+| --- | ---------------------- |
+| 0   | RequestSuspendAudioIns |
+| 1   | RequestResumeAudioIns  |
+
+# audin:d
+
+| Cmd | Name                                                                           |
+| --- | ------------------------------------------------------------------------------ |
+| 0   | [\#RequestSuspendAudioInsForDebug](#RequestSuspendAudioInsForDebug "wikilink") |
+| 1   | [\#RequestResumeAudioInsForDebug](#RequestResumeAudioInsForDebug "wikilink")   |
+
+## RequestSuspendAudioInsForDebug
+
+Takes a
+[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+(u64)
+
+## RequestResumeAudioInsForDebug
+
+Takes a
+[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+(u64)
 
 # codecctl
 

@@ -35,6 +35,36 @@ Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle
 
 Returns a AudioOutState, 0x00=Started 0x01=Stopped
 
+= audout:a =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RequestSuspendAudioOuts
+|-
+| 1 || RequestResumeAudioOuts
+|}
+
+= audout:d =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#RequestSuspendAudioOutsForDebug]]
+|-
+| 1 || [[#RequestResumeAudioOutsForDebug]]
+|}
+
+== RequestSuspendAudioOutsForDebug ==
+
+Takes a [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+
+== RequestResumeAudioOutsForDebug ==
+
+Takes a [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+
 = audin:u =
 
 {| class="wikitable" border="1"
@@ -69,6 +99,36 @@ Returns a AudioOutState, 0x00=Started 0x01=Stopped
 === GetAudioInState ===
 
 Returns a AudioInState, 0x00=Started 0x01=Stopped
+
+= audin:a =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RequestSuspendAudioIns
+|-
+| 1 || RequestResumeAudioIns
+|}
+
+= audin:d =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#RequestSuspendAudioInsForDebug]]
+|-
+| 1 || [[#RequestResumeAudioInsForDebug]]
+|}
+
+== RequestSuspendAudioInsForDebug ==
+
+Takes a [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
+
+== RequestResumeAudioInsForDebug ==
+
+Takes a [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 = codecctl =
 
