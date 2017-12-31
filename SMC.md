@@ -168,8 +168,8 @@ internally.
 | 0xC3000004 | [\#GetConfig](#GetConfig "wikilink") (Same as ID 0, Sub-ID 2)           | W1=config\_item, X2,X3,X4,X5,X6,X7=0                               | X0=result, X1,X2,X3,X4=config\_val          |
 | 0xC3000005 | [\#GetRandomBytes](#GetRandomBytes "wikilink") (Same as ID 0, Sub-ID 6) | X1=size, X2,X3,X4,X5,X6,X7=0                                       | X0=result, X1,X2,X3,X4,X5,X6,X7=rand\_bytes |
 | 0xC3000006 | [\#Panic](#Panic "wikilink")                                            | W1=unk, X2,X3,X4,X5,X6,X7=0                                        | X0=result                                   |
-| 0xC3000007 | \[2.0.0+\] ProtectKernelRegion                                          |                                                                    |                                             |
-| 0xC3000008 | \[2.0.0+\] ReadWriteRegister                                            |                                                                    |                                             |
+| 0xC3000007 | \[2.0.0+\] ProtectKernelRegion                                          | X1=unk, X2=region\_phys\_addr, X3=region\_size, X4,X5,X6,X7=0      | X0=result                                   |
+| 0xC3000008 | \[2.0.0+\] ReadWriteRegister                                            | X1=reg\_addr, W2=rw\_mask, W3=in\_val, X4,X5,X6,X7=0               | X0=result, W1=out\_val                      |
 
 ### CpuSuspend
 

@@ -158,9 +158,9 @@ Functions exposed to the kernel internally.
 |-
 | 0xC3000006 || [[#Panic]] || W1=unk, X2,X3,X4,X5,X6,X7=0 || X0=result
 |-
-| 0xC3000007 || [2.0.0+] ProtectKernelRegion || ||
+| 0xC3000007 || [2.0.0+] ProtectKernelRegion || X1=unk, X2=region_phys_addr, X3=region_size, X4,X5,X6,X7=0 || X0=result
 |-
-| 0xC3000008 || [2.0.0+] ReadWriteRegister || ||
+| 0xC3000008 || [2.0.0+] ReadWriteRegister || X1=reg_addr, W2=rw_mask, W3=in_val, X4,X5,X6,X7=0 || X0=result, W1=out_val
 |}
 
 === CpuSuspend ===
