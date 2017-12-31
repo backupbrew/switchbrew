@@ -130,7 +130,7 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 | 4   | RequestUpdateAudioRenderer                                                             |
 | 5   | StartAudioRenderer                                                                     |
 | 6   | StopAudioRenderer                                                                      |
-| 7   | Unknown                                                                                |
+| 7   | QuerySystemEvent                                                                       |
 | 8   | [\#SetAudioRendererRenderingTimeLimit](#SetAudioRendererRenderingTimeLimit "wikilink") |
 | 9   | [\#GetAudioRendererRenderingTimeLimit](#GetAudioRendererRenderingTimeLimit "wikilink") |
 
