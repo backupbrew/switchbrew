@@ -35,7 +35,7 @@ and an unknown field.
 | 3   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") taking a type 0x5 (A descriptor) buffer           |
 | 4   | [\#RegisterBufferEvent](#RegisterBufferEvent "wikilink")                                                     |
 | 5   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink") taking a type 0x6 (B descriptor) buffer |
-| 6   | ContainsAudioOutBuffer                                                                                       |
+| 6   | [\#ContainsAudioOutBuffer](#ContainsAudioOutBuffer "wikilink")                                               |
 | 7   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") taking a type 0x21 buffer                         |
 | 8   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink") taking a type 0x22 buffer               |
 
@@ -68,6 +68,10 @@ Takes a buffer, which it will fill with the identifiers passed from
 [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") of audio
 buffers that have been released. Will return a u32 (may indicate how
 many buffers were released?)
+
+### ContainsAudioOutBuffer
+
+Takes a u64 (pointer to audio buffer?). Returns a bool. (u8)
 
 # audin:u
 
