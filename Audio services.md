@@ -10,9 +10,20 @@
 Takes two u64s (an interface ID and a PID placeholder?), a PID, a
 process handle, and the name of the interface you want to connect to.
 Returns an [\#IAudioOut](#IAudioOut "wikilink") object and four u32s:
-the sample rate, channel count, PCM format, and an unknown field. PCM
-format 2 is
-INT16.
+the sample rate, channel count, [PCM format](#PCM_format "wikilink"),
+and an unknown field.
+
+### PCM format
+
+| Value | Name      |
+| ----- | --------- |
+| 0     | Invalid   |
+| 1     | INT8      |
+| 2     | INT16     |
+| 3     | INT24     |
+| 4     | INT32     |
+| 5     | PCM Float |
+| 6     | ADPCM     |
 
 ## IAudioOut
 
