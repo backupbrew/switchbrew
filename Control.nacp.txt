@@ -78,8 +78,12 @@ Total size is 0x4000-bytes.
 | Zeros?
 |-
 | 0x30B0
-| 0x40 (0x8*0x8)
-| Array of application titleIDs, normally the same as the above app-titleIDs.
+| 0x8
+| Application titleID
+|-
+| 0x30B8
+| 0x38 (0x8*0x7)
+| Array of application titleIDs, normally the same as the above app-titleIDs. Only set for game-updates?
 |-
 | 0x30F0
 | 0x4
@@ -91,7 +95,7 @@ Total size is 0x4000-bytes.
 |-
 | 0x30F8
 | 0x8
-| Application titleID
+| Application titleID. Only set for game-updates?
 |-
 | 0x3100
 | 0xF00

@@ -7,30 +7,31 @@ Total size is
 
 # Structure
 
-| Offset | Size            | Description                                                                 |
-| ------ | --------------- | --------------------------------------------------------------------------- |
-| 0x0    | 0x2400          | Language entries                                                            |
-| 0x2400 | 0xC00           | Normally all-zero? Maybe more language entries?                             |
-| 0x3000 | 0x24            | Zeros?                                                                      |
-| 0x3024 | 0x4             | ?                                                                           |
-| 0x3028 | 0x4             | ?                                                                           |
-| 0x302C | 0x4             | ?                                                                           |
-| 0x3030 | 0x4             | ?                                                                           |
-| 0x3034 | 0x4             | ?                                                                           |
-| 0x3038 | 0x8             | Application titleID                                                         |
-| 0x3040 | 0x20            | ?                                                                           |
-| 0x3060 | 0x10            | Application version string, encoding unknown.                               |
-| 0x3070 | 0x8             | Usually app\_titleID+0x1000?                                                |
-| 0x3078 | 0x8             | Application titleID                                                         |
-| 0x3080 | 0x4             | ?                                                                           |
-| 0x3084 | 0x4             | ?                                                                           |
-| 0x3088 | 0x4             | ?                                                                           |
-| 0x308C | 0x24            | Zeros?                                                                      |
-| 0x30B0 | 0x40 (0x8\*0x8) | Array of application titleIDs, normally the same as the above app-titleIDs. |
-| 0x30F0 | 0x4             | ?                                                                           |
-| 0x30F4 | 0x4             | ?                                                                           |
-| 0x30F8 | 0x8             | Application titleID                                                         |
-| 0x3100 | 0xF00           | Normally all-zero?                                                          |
+| Offset | Size            | Description                                                                                            |
+| ------ | --------------- | ------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x2400          | Language entries                                                                                       |
+| 0x2400 | 0xC00           | Normally all-zero? Maybe more language entries?                                                        |
+| 0x3000 | 0x24            | Zeros?                                                                                                 |
+| 0x3024 | 0x4             | ?                                                                                                      |
+| 0x3028 | 0x4             | ?                                                                                                      |
+| 0x302C | 0x4             | ?                                                                                                      |
+| 0x3030 | 0x4             | ?                                                                                                      |
+| 0x3034 | 0x4             | ?                                                                                                      |
+| 0x3038 | 0x8             | Application titleID                                                                                    |
+| 0x3040 | 0x20            | ?                                                                                                      |
+| 0x3060 | 0x10            | Application version string, encoding unknown.                                                          |
+| 0x3070 | 0x8             | Usually app\_titleID+0x1000?                                                                           |
+| 0x3078 | 0x8             | Application titleID                                                                                    |
+| 0x3080 | 0x4             | ?                                                                                                      |
+| 0x3084 | 0x4             | ?                                                                                                      |
+| 0x3088 | 0x4             | ?                                                                                                      |
+| 0x308C | 0x24            | Zeros?                                                                                                 |
+| 0x30B0 | 0x8             | Application titleID                                                                                    |
+| 0x30B8 | 0x38 (0x8\*0x7) | Array of application titleIDs, normally the same as the above app-titleIDs. Only set for game-updates? |
+| 0x30F0 | 0x4             | ?                                                                                                      |
+| 0x30F4 | 0x4             | ?                                                                                                      |
+| 0x30F8 | 0x8             | Application titleID. Only set for game-updates?                                                        |
+| 0x3100 | 0xF00           | Normally all-zero?                                                                                     |
 
 ## Language Entry
 
