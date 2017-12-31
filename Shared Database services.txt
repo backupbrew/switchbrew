@@ -62,3 +62,12 @@ Takes a [[#SharedFontType]] (uint32), returns the offset (uint32) to the Font Ad
 |-
 | 0x05 || Nintendo Extended
 |}
+
+= mii:u, mii:e =
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetDatabaseServiceSharedPointer
+|}

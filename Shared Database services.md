@@ -45,3 +45,9 @@ the offset (uint32) to the Font Address.
 | 0x03  | Chinese Traditional             |
 | 0x04  | Korean (Hangul)                 |
 | 0x05  | Nintendo Extended               |
+
+# mii:u, mii:e
+
+| Cmd | Name                            |
+| --- | ------------------------------- |
+| 0   | GetDatabaseServiceSharedPointer |
