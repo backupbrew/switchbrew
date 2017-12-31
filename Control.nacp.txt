@@ -55,7 +55,7 @@ Total size is 0x4000-bytes.
 |-
 | 0x3070
 | 0x8
-| Usually app_titleID+0x1000?
+| Base titleID for DLC, set even when DLC is not used. Usually app_titleID+0x1000?
 |-
 | 0x3078
 | 0x8

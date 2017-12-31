@@ -20,7 +20,7 @@ Total size is
 | 0x3038 | 0x8             | Application titleID                                                                                    |
 | 0x3040 | 0x20            | ?                                                                                                      |
 | 0x3060 | 0x10            | Application version string, encoding unknown.                                                          |
-| 0x3070 | 0x8             | Usually app\_titleID+0x1000?                                                                           |
+| 0x3070 | 0x8             | Base titleID for DLC, set even when DLC is not used. Usually app\_titleID+0x1000?                      |
 | 0x3078 | 0x8             | Application titleID                                                                                    |
 | 0x3080 | 0x4             | ?                                                                                                      |
 | 0x3084 | 0x4             | ?                                                                                                      |
