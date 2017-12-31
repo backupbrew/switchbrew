@@ -41,7 +41,7 @@ and an unknown field.
 
 ### GetAudioOutState
 
-Returns an AudioOutState, 0x00=Started 0x01=Stopped
+Returns an AudioOutState, 0x00=Started 0x01=Stopped (u32)
 
 ### AppendAudioOutBuffer
 
@@ -90,7 +90,7 @@ many buffers were released?)
 
 ### GetAudioInState
 
-Returns an AudioInState, 0x00=Started 0x01=Stopped
+Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 
 # audrec:u
 
@@ -121,18 +121,18 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped
 
 ## IAudioRenderer
 
-| Cmd | Name                                                                           |
-| --- | ------------------------------------------------------------------------------ |
-| 0   | [\#GetAudioRendererSampleRate](#GetAudioRendererSampleRate "wikilink")         |
-| 1   | [\#GetAudioRendererSampleCount](#GetAudioRendererSampleCount "wikilink")       |
-| 2   | [\#GetAudioRendererMixBufferCount](#GetAudioRendererMixBufferCount "wikilink") |
-| 3   | [\#GetAudioRendererState](#GetAudioRendererState "wikilink")                   |
-| 4   | RequestUpdateAudioRenderer                                                     |
-| 5   | StartAudioRenderer                                                             |
-| 6   | StopAudioRenderer                                                              |
-| 7   | Unknown                                                                        |
-| 8   | SetAudioRendererRenderingTimeLimit                                             |
-| 9   | GetAudioRendererRenderingTimeLimit                                             |
+| Cmd | Name                                                                                   |
+| --- | -------------------------------------------------------------------------------------- |
+| 0   | [\#GetAudioRendererSampleRate](#GetAudioRendererSampleRate "wikilink")                 |
+| 1   | [\#GetAudioRendererSampleCount](#GetAudioRendererSampleCount "wikilink")               |
+| 2   | [\#GetAudioRendererMixBufferCount](#GetAudioRendererMixBufferCount "wikilink")         |
+| 3   | [\#GetAudioRendererState](#GetAudioRendererState "wikilink")                           |
+| 4   | RequestUpdateAudioRenderer                                                             |
+| 5   | StartAudioRenderer                                                                     |
+| 6   | StopAudioRenderer                                                                      |
+| 7   | Unknown                                                                                |
+| 8   | [\#SetAudioRendererRenderingTimeLimit](#SetAudioRendererRenderingTimeLimit "wikilink") |
+| 9   | [\#GetAudioRendererRenderingTimeLimit](#GetAudioRendererRenderingTimeLimit "wikilink") |
 
 ### GetAudioRendererSampleRate
 
@@ -148,7 +148,15 @@ Returns the number of Mix Buffers. (u32)
 
 ### GetAudioRendererState
 
-Returns an AudioRenderState, 0x00=Started 0x01=Stopped
+Returns an AudioRenderState, 0x00=Started 0x01=Stopped (u32)
+
+### SetAudioRendererRenderingTimeLimit
+
+Takes a upper limit of the rendering time in percent. (u32)
+
+### GetAudioRendererRenderingTimeLimit
+
+Returns the upper limit of the rendering time in percent. (u32)
 
 # audout:a, audin:a, audrec:a and audren:a
 

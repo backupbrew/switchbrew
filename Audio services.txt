@@ -59,7 +59,7 @@ Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle
 
 === GetAudioOutState ===
 
-Returns an AudioOutState, 0x00=Started 0x01=Stopped
+Returns an AudioOutState, 0x00=Started 0x01=Stopped (u32)
 
 === AppendAudioOutBuffer ===
 
@@ -122,7 +122,7 @@ Takes a buffer, which it will fill with the identifiers passed from [[#AppendAud
 
 === GetAudioInState ===
 
-Returns an AudioInState, 0x00=Started 0x01=Stopped
+Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 
 = audrec:u =
 
@@ -189,9 +189,9 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped
 |-
 | 7 || Unknown
 |-
-| 8 || SetAudioRendererRenderingTimeLimit
+| 8 || [[#SetAudioRendererRenderingTimeLimit]]
 |-
-| 9 || GetAudioRendererRenderingTimeLimit
+| 9 || [[#GetAudioRendererRenderingTimeLimit]]
 |}
 
 === GetAudioRendererSampleRate ===
@@ -204,8 +204,13 @@ Returns the Sample Count. (u32)
 Returns the number of Mix Buffers. (u32)
 
 === GetAudioRendererState ===
+Returns an AudioRenderState, 0x00=Started 0x01=Stopped (u32)
 
-Returns an AudioRenderState, 0x00=Started 0x01=Stopped
+=== SetAudioRendererRenderingTimeLimit ===
+Takes a upper limit of the rendering time in percent. (u32)
+
+=== GetAudioRendererRenderingTimeLimit ===
+Returns the upper limit of the rendering time in percent. (u32)
 
 = audout:a, audin:a, audrec:a and audren:a =
 
