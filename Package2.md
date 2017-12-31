@@ -117,4 +117,11 @@ expansion.
 ## Section 3
 
 This section is not present (CTR and SHA-256 hash in package2's header
-are NULL). Likely reserved for future expansion.
+are NULL). Likely reserved for future
+expansion.
+
+# Versions
+
+| System version               | Package1 maxver constant | Package1 minver constant | Package2 version field |
+| ---------------------------- | ------------------------ | ------------------------ | ---------------------- |
+| [2.0.0](2.0.0.md "wikilink") | 0x3                      | 0x4                      |                        |
