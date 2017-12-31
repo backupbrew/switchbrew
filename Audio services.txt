@@ -90,7 +90,7 @@ Returns an event handle that is signalled when a buffer is released
 Takes a buffer, which it will fill with the identifiers passed from [[#AppendAudioOutBuffer]] of audio buffers that have been released. Will return a u32 (may indicate how many buffers were released?)
 
 === ContainsAudioOutBuffer ===
-Takes a u64 (pointer to audio buffer?). Returns a bool. (u8)
+Takes a u64 (pointer to audio buffer?). Returns a bool. (u8) (0, if it doesn't contain the buffer)
 
 = audin:u =
 

@@ -71,7 +71,8 @@ many buffers were released?)
 
 ### ContainsAudioOutBuffer
 
-Takes a u64 (pointer to audio buffer?). Returns a bool. (u8)
+Takes a u64 (pointer to audio buffer?). Returns a bool. (u8) (0, if it
+doesn't contain the buffer)
 
 # audin:u
 
