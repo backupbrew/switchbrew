@@ -121,18 +121,34 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped
 
 ## IAudioRenderer
 
-| Cmd | Name                               |
-| --- | ---------------------------------- |
-| 0   | GetAudioRendererSampleRate         |
-| 1   | GetAudioRendererSampleCount        |
-| 2   | GetAudioRendererMixBufferCount     |
-| 3   | GetAudioRendererState              |
-| 4   | RequestUpdateAudioRenderer         |
-| 5   | StartAudioRenderer                 |
-| 6   | StopAudioRenderer                  |
-| 7   | Unknown                            |
-| 8   | SetAudioRendererRenderingTimeLimit |
-| 9   | GetAudioRendererRenderingTimeLimit |
+| Cmd | Name                                                                           |
+| --- | ------------------------------------------------------------------------------ |
+| 0   | [\#GetAudioRendererSampleRate](#GetAudioRendererSampleRate "wikilink")         |
+| 1   | [\#GetAudioRendererSampleCount](#GetAudioRendererSampleCount "wikilink")       |
+| 2   | [\#GetAudioRendererMixBufferCount](#GetAudioRendererMixBufferCount "wikilink") |
+| 3   | [\#GetAudioRendererState](#GetAudioRendererState "wikilink")                   |
+| 4   | RequestUpdateAudioRenderer                                                     |
+| 5   | StartAudioRenderer                                                             |
+| 6   | StopAudioRenderer                                                              |
+| 7   | Unknown                                                                        |
+| 8   | SetAudioRendererRenderingTimeLimit                                             |
+| 9   | GetAudioRendererRenderingTimeLimit                                             |
+
+### GetAudioRendererSampleRate
+
+Returns the Sample Rate. (u32)
+
+### GetAudioRendererSampleCount
+
+Returns the Sample Count. (u32)
+
+### GetAudioRendererMixBufferCount
+
+Returns the number of Mix Buffers. (u32)
+
+### GetAudioRendererState
+
+Returns an AudioRenderState, 0x00=Started 0x01=Stopped
 
 # audout:a, audin:a, audrec:a and audren:a
 

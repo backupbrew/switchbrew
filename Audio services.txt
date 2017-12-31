@@ -173,13 +173,13 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped
 |-
 ! Cmd || Name
 |-
-| 0 || GetAudioRendererSampleRate
+| 0 || [[#GetAudioRendererSampleRate]]
 |-
-| 1 || GetAudioRendererSampleCount
+| 1 || [[#GetAudioRendererSampleCount]]
 |-
-| 2 || GetAudioRendererMixBufferCount
+| 2 || [[#GetAudioRendererMixBufferCount]]
 |-
-| 3 || GetAudioRendererState
+| 3 || [[#GetAudioRendererState]]
 |-
 | 4 || RequestUpdateAudioRenderer
 |-
@@ -193,6 +193,19 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped
 |-
 | 9 || GetAudioRendererRenderingTimeLimit
 |}
+
+=== GetAudioRendererSampleRate ===
+Returns the Sample Rate. (u32)
+
+=== GetAudioRendererSampleCount ===
+Returns the Sample Count. (u32)
+
+=== GetAudioRendererMixBufferCount ===
+Returns the number of Mix Buffers. (u32)
+
+=== GetAudioRendererState ===
+
+Returns an AudioRenderState, 0x00=Started 0x01=Stopped
 
 = audout:a, audin:a, audrec:a and audren:a =
 
