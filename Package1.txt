@@ -1,4 +1,4 @@
-Present on the firmware package titles (0100000000000819 and 010000000000081A) and installed into eMMC storage's [[Flash_Filesystem#Boot_Partitions|boot partitions 0 and 1]], "package1" contains the first Switch bootloader to run under the NVIDIA boot processor (an ARM7TDMI called "BPMP", "BPMP-Lite", "AVP" or "COP").
+Present in the firmware package titles (0100000000000819, 010000000000081A, 010000000000081B and 010000000000081C) and installed into eMMC storage's [[Flash_Filesystem#Boot_Partitions|boot partitions 0 and 1]], "package1" contains the first Switch bootloader to run under the NVIDIA boot processor (an ARM7TDMI called "BPMP", "BPMP-Lite", "AVP" or "COP").
 
 The boot ROM validates, copies to IRAM and executes this package by parsing it's information block from the [[BCT|BCT]].
 
