@@ -70,8 +70,12 @@ When decrypted, package2's header is as follows.
 | Unknown
 |-
 | 0x5C
-| 0x4
-| Unknown
+| 0x2
+| Version. HighByte must be <{maxver} and LowByte must be >{minver}, where {maxver} and {minver} are constants used by TZ updated with each package1 update.
+|-
+| 0x5E
+| 0x2
+| ?
 |-
 | 0x60
 | 0x4

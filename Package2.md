@@ -26,31 +26,33 @@ a CTR stored inside the decrypted header.
 
 ## Header
 
-When decrypted, package2's header is as follows.
+When decrypted, package2's header is as
+follows.
 
-| Offset | Size | Description                           |
-| ------ | ---- | ------------------------------------- |
-| 0x0    | 0x10 | Decrypted header's CTR                |
-| 0x10   | 0x10 | Section 0 CTR                         |
-| 0x20   | 0x10 | Section 1 CTR                         |
-| 0x30   | 0x10 | Section 2 CTR                         |
-| 0x40   | 0x10 | Section 3 CTR                         |
-| 0x50   | 0x4  | Magic "PK21"                          |
-| 0x54   | 0x4  | Unknown                               |
-| 0x58   | 0x4  | Unknown                               |
-| 0x5C   | 0x4  | Unknown                               |
-| 0x60   | 0x4  | Section 0 size                        |
-| 0x64   | 0x4  | Section 1 size                        |
-| 0x68   | 0x4  | Section 2 size                        |
-| 0x6C   | 0x4  | Section 3 size                        |
-| 0x70   | 0x4  | Unknown                               |
-| 0x74   | 0x4  | Unknown                               |
-| 0x78   | 0x4  | Unknown                               |
-| 0x7C   | 0x4  | Unknown                               |
-| 0x80   | 0x20 | SHA-256 hash over encrypted section 0 |
-| 0xA0   | 0x20 | SHA-256 hash over encrypted section 1 |
-| 0xC0   | 0x20 | SHA-256 hash over encrypted section 2 |
-| 0xE0   | 0x20 | SHA-256 hash over encrypted section 3 |
+| Offset | Size | Description                                                                                                                                                  |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x10 | Decrypted header's CTR                                                                                                                                       |
+| 0x10   | 0x10 | Section 0 CTR                                                                                                                                                |
+| 0x20   | 0x10 | Section 1 CTR                                                                                                                                                |
+| 0x30   | 0x10 | Section 2 CTR                                                                                                                                                |
+| 0x40   | 0x10 | Section 3 CTR                                                                                                                                                |
+| 0x50   | 0x4  | Magic "PK21"                                                                                                                                                 |
+| 0x54   | 0x4  | Unknown                                                                                                                                                      |
+| 0x58   | 0x4  | Unknown                                                                                                                                                      |
+| 0x5C   | 0x2  | Version. HighByte must be \<{maxver} and LowByte must be \>{minver}, where {maxver} and {minver} are constants used by TZ updated with each package1 update. |
+| 0x5E   | 0x2  | ?                                                                                                                                                            |
+| 0x60   | 0x4  | Section 0 size                                                                                                                                               |
+| 0x64   | 0x4  | Section 1 size                                                                                                                                               |
+| 0x68   | 0x4  | Section 2 size                                                                                                                                               |
+| 0x6C   | 0x4  | Section 3 size                                                                                                                                               |
+| 0x70   | 0x4  | Unknown                                                                                                                                                      |
+| 0x74   | 0x4  | Unknown                                                                                                                                                      |
+| 0x78   | 0x4  | Unknown                                                                                                                                                      |
+| 0x7C   | 0x4  | Unknown                                                                                                                                                      |
+| 0x80   | 0x20 | SHA-256 hash over encrypted section 0                                                                                                                        |
+| 0xA0   | 0x20 | SHA-256 hash over encrypted section 1                                                                                                                        |
+| 0xC0   | 0x20 | SHA-256 hash over encrypted section 2                                                                                                                        |
+| 0xE0   | 0x20 | SHA-256 hash over encrypted section 3                                                                                                                        |
 
 Each section follows each other immediately and is encrypted with the
 same key used for encrypting the header.
