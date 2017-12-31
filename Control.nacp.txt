@@ -55,7 +55,7 @@ Total size is 0x4000-bytes.
 |-
 | 0x3070
 | 0x8
-| Some sort of titleID?
+| Usually app_titleID+0x1000?
 |-
 | 0x3078
 | 0x8
