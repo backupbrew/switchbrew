@@ -9,3 +9,5 @@ Please keep things from the official SDK off the wiki, thanks!
 PING
 
 [[User:Qlutoo|Qlutoo]] ([[User talk:Qlutoo|talk]]) 04:22, 31 December 2017 (CST)
+
+You're probably best joining #switchdev on EFNet if you wish to talk to Qlutoo directly. Much better than trying to chat on a wiki!

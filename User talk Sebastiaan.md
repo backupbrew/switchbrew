@@ -11,3 +11,6 @@ PING
 
 [Qlutoo](User:Qlutoo "wikilink")
 ([talk](User%20talk:Qlutoo.md "wikilink")) 04:22, 31 December 2017 (CST)
+
+You're probably best joining \#switchdev on EFNet if you wish to talk to
+Qlutoo directly. Much better than trying to chat on a wiki\!
