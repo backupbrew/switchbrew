@@ -7,13 +7,14 @@ partitions](Flash%20Filesystem#User%20Partitions.md##User_Partitions "wikilink")
 # Format
 
 Package2 is distributed in an already encrypted format. Therefore, it's
-not additionally encrypted when installed into the flash filesystem.
+not additionally encrypted when installed into the flash
+filesystem.
 
-| Offset | Size     | Description        |
-| ------ | -------- | ------------------ |
-| 0x0    | 0x100    | RSA-2048 signature |
-| 0x100  | 0x100    | Encrypted header   |
-| 0x200  | Variable | Encrypted body     |
+| Offset | Size     | Description                                         |
+| ------ | -------- | --------------------------------------------------- |
+| 0x0    | 0x100    | RSA-2048 signature (PKCS\#1 v2.1 RSASSA-PSS-VERIFY) |
+| 0x100  | 0x100    | Encrypted header                                    |
+| 0x200  | Variable | Encrypted body                                      |
 
 ## Encryption
 
