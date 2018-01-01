@@ -126,3 +126,4 @@ expansion.
 | System version               | Package1 maxver constant | Package1 minver constant | Package2 version field |
 | ---------------------------- | ------------------------ | ------------------------ | ---------------------- |
 | [2.0.0](2.0.0.md "wikilink") | 0x3                      | 0x4                      |                        |
+| [4.1.0](4.1.0.md "wikilink") | 0x6                      | 0x7                      |                        |

@@ -244,5 +244,9 @@ This section is not present (CTR and SHA-256 hash in package2's header are NULL)
 | [[2.0.0]]
 | 0x3
 | 0x4
+|-
+| [[4.1.0]]
+| 0x6
+| 0x7
 | 
 |}
