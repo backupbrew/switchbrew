@@ -570,6 +570,8 @@ Inherits from:
 
 \[4.0.0+\] Size: 0x58
 
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+
 | Offset | Type                                     | Description     |
 | ------ | ---------------------------------------- | --------------- |
 | 0      | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance     |

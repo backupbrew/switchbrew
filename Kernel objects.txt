@@ -880,6 +880,8 @@ Inherits from: [[#KAutoObject]]
 = KJitMemory =
 [4.0.0+] Size: 0x58
 
+Inherits from: [[#KAutoObject]]
+
 {| class="wikitable" border="1"
 |-
 ! Offset || Type || Description
