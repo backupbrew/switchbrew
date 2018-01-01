@@ -49,6 +49,17 @@ In 3.0.0, this was fixed by moving the security engine initialization earlier in
 |  July 30, 2017
 |  Everyone who diff'd 2.3.0 and 3.0.0 Package1
 |-
+|  FUSE_DIS_PGM not written by package1 
+|  The switch's hardware fuse driver contains a write-once bit in a register called "FUSE_DIS_PGM", which disables burning fuses until the next reboot. While Nintendo's bootloader code for waking up from sleep writes this on all firmware, the actual package1 initial bootloader forgets to write to it on cold reboot. 
+
+This isn't too big of a problem because another fuse is burnt on retail devices (production mode), which prevents burning *all* fuses other than ODM_RESERVED ones in hardware.
+|  Burning arbitrary ODM reserved fuses, which should never be possible for non-bootloader code.
+|  [[3.0.0]]
+|  [[3.0.0]]
+|  late summer/early fall 2017
+|  December 31, 2017
+|  SciresM, Motezazer
+|-
 |}
 
 

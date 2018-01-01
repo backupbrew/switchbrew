@@ -41,6 +41,17 @@ Flaws.
 <td><p>Everyone who diff'd 2.3.0 and 3.0.0 Package1</p></td>
 </tr>
 <tr class="even">
+<td><p>FUSE_DIS_PGM not written by package1</p></td>
+<td><p>The switch's hardware fuse driver contains a write-once bit in a register called &quot;FUSE_DIS_PGM&quot;, which disables burning fuses until the next reboot. While Nintendo's bootloader code for waking up from sleep writes this on all firmware, the actual package1 initial bootloader forgets to write to it on cold reboot.</p>
+<p>This isn't too big of a problem because another fuse is burnt on retail devices (production mode), which prevents burning *all* fuses other than ODM_RESERVED ones in hardware.</p></td>
+<td><p>Burning arbitrary ODM reserved fuses, which should never be possible for non-bootloader code.</p></td>
+<td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
+<td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
+<td><p>late summer/early fall 2017</p></td>
+<td><p>December 31, 2017</p></td>
+<td><p>SciresM, Motezazer</p></td>
+</tr>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>
