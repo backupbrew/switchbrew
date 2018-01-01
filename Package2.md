@@ -127,3 +127,49 @@ expansion.
 | ---------------------------- | ------------------------ | ------------------------ | ---------------------- |
 | [2.0.0](2.0.0.md "wikilink") | 0x3                      | 0x4                      |                        |
 | [4.1.0](4.1.0.md "wikilink") | 0x6                      | 0x7                      |                        |
+
+# Public Keys
+
+## Exponent
+
+`10001`
+
+## 4.1.0
+
+### Retail Modulus
+
+`8D 13 A7 77 6A E5 DC C0 3B 25 D0 58 E4 20 69 59`  
+`55 4B AB 70 40 08 28 07 A8 A7 FD 0F 31 2E 11 FE`  
+`47 A0 F9 9D DF 80 DB 86 5A 27 89 CD 97 6C 85 C5`  
+`6C 39 7F 41 F2 FF 24 20 C3 95 A6 F7 9D 4A 45 74`  
+`8B 5D 28 8A C6 99 35 68 85 A5 64 32 80 9F D3 48`  
+`39 A2 1D 24 67 69 DF 75 AC 12 B5 BD C3 29 90 BE`  
+`37 E4 A0 80 9A BE 36 BF 1F 2C AB 2B AD F5 97 32`  
+`9A 42 9D 09 8B 08 F0 63 47 A3 E9 1B 36 D8 2D 8A`  
+`D7 E1 54 11 95 E4 45 88 69 8A 2B 35 CE D0 A5 0B`  
+`D5 5D AC DB AF 11 4D CA B8 1E E7 01 9E F4 46 A3`  
+`8A 94 6D 76 BD 8A C8 3B D2 31 58 0C 79 A8 26 E9`  
+`D1 79 9C CB D4 2B 6A 4F C6 CC CF 90 A7 B9 98 47`  
+`FD FA 4C 6C 6F 81 87 3B CA B8 50 F6 3E 39 5D 4D`  
+`97 3F 0F 35 39 53 FB FA CD AB A8 7A 62 9A 3F F2`  
+`09 27 96 3F 07 9A 91 F7 16 BF C6 3A 82 5A 4B CF`  
+`49 50 95 8C 55 80 7E 39 B1 48 05 1E 21 C7 24 4F`
+
+### Debug Modulus
+
+`B3 65 54 FB 0A B0 1E 85 A7 F6 CF 91 8E BA 96 99`  
+`0D 8B 91 69 2A EE 01 20 4F 34 5C 2C 4F 4E 37 C7`  
+`F1 0B D4 CD A1 7F 93 F1 33 59 CE B1 E9 DD 26 E6`  
+`F3 BB 77 87 46 7A D6 4E 47 4A D1 41 B7 79 4A 38`  
+`06 6E CF 61 8F CD C1 40 0B FA 26 DC C0 34 51 83`  
+`D9 3B 11 54 3B 96 27 32 9A 95 BE 1E 68 11 50 A0`  
+`6B 10 A8 83 8B F5 FC BC 90 84 7A 5A 5C 43 52 E6`  
+`C8 26 E9 FE 06 A0 8B 53 0F AF 1E C4 1C 0B CF 50`  
+`1A A4 F3 5C FB F0 97 E4 DE 32 0A 9F E3 5A AA B7`  
+`44 7F 5C 33 60 B9 0F 22 2D 33 2A E9 69 79 31 42`  
+`8F E4 3A 13 8B E7 26 BD 08 87 6C A6 F2 73 F6 8E`  
+`A7 F2 FE FB 6C 28 66 0D BD D7 EB 42 A8 78 E6 B8`  
+`6B AE C7 A9 E2 40 6E 89 20 82 25 8E 3C 6A 60 D7`  
+`F3 56 8E EC 8D 51 8A 63 3C 04 78 23 0E 90 0C B4`  
+`E7 86 3B 4F 8E 13 09 47 32 0E 04 B8 4D 5B B0 46`  
+`71 B0 5C F4 AD 63 4F C5 E2 AC 1E C4 33 96 09 7B`
