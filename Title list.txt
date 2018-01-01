@@ -3,6 +3,8 @@ Note: Unlike 3DS, Switch doesn't have a dedicated HTTP-sysmodule. Instead, proce
 
 As of [[2.0.0]], the only sysmodule with a RomFS is [[HID_services|hid-sysmodule]].
 
+Decimal versions are shown here as an 8.8.8.8 bitfield, but the values fit a 6.10.16 bitfield better.
+
 {| class=wikitable
 ! Title-id || Versions || Description
 |-
