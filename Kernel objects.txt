@@ -884,7 +884,7 @@ Inherits from: [[#KAutoObject]]
 |-
 ! Offset || Type || Description
 |-
-| 0 || [[#KLinkedListNode]]<[[#KDebugEvent]] *> || Inheritance
+| 0 || [[#KAutoObject]] || Inheritance
 |-
 | 0x20 || KMemoryBlockList || Blocks
 |-
