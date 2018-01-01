@@ -566,6 +566,22 @@ Inherits from:
 
 </div>
 
+# KJitMemory
+
+\[4.0.0+\] Size:
+0x58
+
+| Offset | Type                                                                                            | Description     |
+| ------ | ----------------------------------------------------------------------------------------------- | --------------- |
+| 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KDebugEvent](#KDebugEvent "wikilink") \*\> | Inheritance     |
+| 0x20   | KMemoryBlockList                                                                                | Blocks          |
+| 0x38   | [\#KProcess](#KProcess "wikilink")\*                                                            | SrcProcessPtr   |
+| 0x40   | u64                                                                                             | SrcAddr         |
+| 0x48   | [\#KMutex](#KMutex "wikilink")                                                                  | Mutex           |
+| 0x50   | u8                                                                                              | HasInit         |
+| 0x51   | u8                                                                                              | HasMappedSlave  |
+| 0x52   | u8                                                                                              | HasMappedMaster |
+
 # KPort
 
 Size: 0xA8
