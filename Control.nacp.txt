@@ -1,4 +1,4 @@
-Roughly equivalent to non-gfx areas of 3DS SMDH. Also includes a string for the display-version of this title. All strings for language-entries are UTF-8, unlike SMDH which uses UTF-16.
+Roughly equivalent to non-gfx areas of 3DS SMDH. All strings for language-entries are UTF-8, unlike SMDH which uses UTF-16.
 
 Total size is 0x4000-bytes.
 
