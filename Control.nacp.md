@@ -31,7 +31,8 @@ Total size is
 | 0x30F0 | 0x4             | ?                                                                                                      |
 | 0x30F4 | 0x4             | ?                                                                                                      |
 | 0x30F8 | 0x8             | Application titleID. Only set for game-updates?                                                        |
-| 0x3100 | 0xF00           | Normally all-zero?                                                                                     |
+| 0x3100 | 0x40            | [BCAT](BCAT%20Content%20Container.md "wikilink") passphrase, all-zero when unused.                     |
+| 0x3140 | 0xEC0           | Normally all-zero?                                                                                     |
 
 ## Language Entry
 
