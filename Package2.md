@@ -130,11 +130,9 @@ expansion.
 
 # Public Keys
 
-## Exponent
+### Exponent
 
-`10001`
-
-## 4.1.0
+`0x10001`
 
 ### Retail Modulus
 

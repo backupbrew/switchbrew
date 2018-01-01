@@ -253,10 +253,8 @@ This section is not present (CTR and SHA-256 hash in package2's header are NULL)
 
 = Public Keys =
 
-== Exponent ==
- 10001
-
-== 4.1.0 ==
+=== Exponent ===
+ 0x10001
 
 === Retail Modulus ===
  8D 13 A7 77 6A E5 DC C0 3B 25 D0 58 E4 20 69 59
