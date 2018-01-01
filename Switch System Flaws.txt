@@ -56,6 +56,8 @@ This isn't too big of a problem because another fuse is burnt on retail devices 
 
 This was fixed in 3.0.0 by writing to the register on cold boot (although the write happens in TZ instead of package1 where it should take place, possibly to obfuscate the fact that they made this mistake).
 |  Burning arbitrary ODM reserved fuses, which should never be possible for non-bootloader code.
+
+Warning: one could irreparably brick one's console by playing with this.
 |  [[3.0.0]]
 |  [[3.0.0]]
 |  late summer/early fall 2017
