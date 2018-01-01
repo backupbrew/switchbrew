@@ -45,7 +45,7 @@ Flaws.
 <td><p>The switch's hardware fuse driver contains a write-once bit in a register called &quot;FUSE_DIS_PGM&quot;, which disables burning fuses until the next reboot. While Nintendo's bootloader code for waking up from sleep writes this on all firmware, the actual package1 initial bootloader forgets to write to it on cold reboot.</p>
 <p>This isn't too big of a problem because another fuse is burnt on retail devices (production mode), which prevents burning *all* fuses other than ODM_RESERVED ones in hardware.</p>
 <p>This was fixed in 3.0.0 by writing to the register on cold boot (although the write happens in TZ instead of package1 where it should take place, possibly to obfuscate the fact that they made this mistake).</p></td>
-<td><p>Burning arbitrary ODM reserved fuses, which should never be possible for non-bootloader code.</p>
+<td><p>Burning arbitrary ODM reserved fuses with TZ code execution, which should never be possible for non-bootloader code.</p>
 <p>Warning: one could irreparably brick one's console by playing with this.</p></td>
 <td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
 <td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
