@@ -6,8 +6,13 @@ Instead, processes using HTTP(S) just use libcurl + socket/ssl services.
 As of [2.0.0](2.0.0.md "wikilink"), the only sysmodule with a RomFS is
 [hid-sysmodule](HID%20services.md "wikilink").
 
-Decimal versions are shown here as an 8.8.8.8 bitfield, but the values
-fit a 6.10.16 bitfield better.
+Decimal versions are shown here as an 8.8.8.8 bitfield, but the actual
+format is:
+
+  - Bit31-Bit26: Major
+  - Bit25-Bit20: Middle
+  - Bit19-Bit16: Minor
+  - Bit15-Bit0: Build?
 
 <table>
 <thead>
