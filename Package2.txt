@@ -95,19 +95,19 @@ When decrypted, package2's header is as follows.
 |-
 | 0x70
 | 0x4
-| Unknown
+| Section 0 offset
 |-
 | 0x74
 | 0x4
-| Unknown
+| Section 1 offset
 |-
 | 0x78
 | 0x4
-| Unknown
+| Section 2 offset
 |-
 | 0x7C
 | 0x4
-| Unknown
+| Section 3 offset
 |-
 | 0x80
 | 0x20
@@ -127,6 +127,7 @@ When decrypted, package2's header is as follows.
 |}
 
 Each section follows each other immediately and is encrypted with the same key used for encrypting the header.
+The section offsets are relative to a base, which is typically 0x80000000 pointing to the base of DRAM.
 
 == Section 0 ==
 When decrypted, this section contains the plaintext Switch kernel binary.

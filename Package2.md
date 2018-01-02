@@ -46,17 +46,19 @@ follows.
 | 0x64   | 0x4  | Section 1 size                                                                                                                                               |
 | 0x68   | 0x4  | Section 2 size                                                                                                                                               |
 | 0x6C   | 0x4  | Section 3 size                                                                                                                                               |
-| 0x70   | 0x4  | Unknown                                                                                                                                                      |
-| 0x74   | 0x4  | Unknown                                                                                                                                                      |
-| 0x78   | 0x4  | Unknown                                                                                                                                                      |
-| 0x7C   | 0x4  | Unknown                                                                                                                                                      |
+| 0x70   | 0x4  | Section 0 offset                                                                                                                                             |
+| 0x74   | 0x4  | Section 1 offset                                                                                                                                             |
+| 0x78   | 0x4  | Section 2 offset                                                                                                                                             |
+| 0x7C   | 0x4  | Section 3 offset                                                                                                                                             |
 | 0x80   | 0x20 | SHA-256 hash over encrypted section 0                                                                                                                        |
 | 0xA0   | 0x20 | SHA-256 hash over encrypted section 1                                                                                                                        |
 | 0xC0   | 0x20 | SHA-256 hash over encrypted section 2                                                                                                                        |
 | 0xE0   | 0x20 | SHA-256 hash over encrypted section 3                                                                                                                        |
 
 Each section follows each other immediately and is encrypted with the
-same key used for encrypting the header.
+same key used for encrypting the header. The section offsets are
+relative to a base, which is typically 0x80000000 pointing to the base
+of DRAM.
 
 ## Section 0
 
