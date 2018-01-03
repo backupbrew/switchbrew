@@ -481,49 +481,7 @@ See the pseudocode bellow for the detailed process.
 == PK11 Blob ==
 This blob is stored encrypted inside the package and is decrypted by the initial bootloader.
 
-=== Header ===
-When decrypted, the blob is encapsulated in the following header.
-
-{| class="wikitable" border="1"
-|-
-! Offset
-! Size
-! Description
-|-
-| 0x0
-| 4
-| Magic "PK11"
-|-
-| 0x4
-| 4
-| Warmboot blob's size
-|-
-| 0x8
-| 4
-| Warmboot blob's offset
-|-
-| 0xC
-| 4
-| Unknown
-|-
-| 0x10
-| 4
-| NX bootloader blob's size
-|-
-| 0x14
-| 4
-| NX bootloader blob's offset
-|-
-| 0x18
-| 4
-| Secure Monitor blob's size
-|-
-| 0x1C
-| 4
-| Secure Monitor blob's offset
-|}
-
-=== Decryption ===
+=== Encryption ===
 The encrypted blob is prepended with it's CTR and total image size. After checking the image's size against an hardcoded value (can change on firmware updates), the image is AES-CTR decrypted and the keyslot used for decryption is immediately cleared.
 
  // Maximum encrypted blob's size on firmware version 1.0.0
@@ -561,13 +519,64 @@ The encrypted blob is prepended with it's CTR and total image size. After checki
     panic();
  
  u32 pk11_header_size = 0x20;
- u32 pk11_nx_boot_offset = *(u32 *)pk11_dec_blob_addr + 0x14;
- u32 pk11_sm_size = *(u32 *)pk11_dec_blob_addr + 0x18;
+ u32 pk11_sec1_offset = *(u32 *)pk11_dec_blob_addr + 0x14;
+ u32 pk11_sec2_size = *(u32 *)pk11_dec_blob_addr + 0x18;
  
  // Calculate NX bootloader's entrypoint
- u32 nx_boot_addr = (pk11_dec_blob_addr + pk11_header_size + pk11_nx_boot_offset + pk11_sm_size);
+ u32 nx_boot_addr = (pk11_dec_blob_addr + pk11_header_size + pk11_sec1_offset + pk11_sec2_size);
  		
  return nx_boot_addr;
+
+=== Header ===
+When decrypted, the blob is encapsulated in the following header.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 4
+| Magic "PK11"
+|-
+| 0x4
+| 4
+| Section 0 size
+|-
+| 0x8
+| 4
+| Section 0 offset
+|-
+| 0xC
+| 4
+| Unknown
+|-
+| 0x10
+| 4
+| Section 1 size
+|-
+| 0x14
+| 4
+| Section 1 offset
+|-
+| 0x18
+| 4
+| Section 2 size
+|-
+| 0x1C
+| 4
+| Section 2 offset
+|}
+
+=== Section 0 ===
+This section contains the warmboot binary.
+
+=== Section 1 ===
+This section contains the NX bootloader, which is run after the initial bootloader in package1.
+
+=== Section 2 ===
+This section contains the Secure Monitor binary.
 
 = Changelog =
 == 2.0.0 ==
