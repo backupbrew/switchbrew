@@ -582,21 +582,20 @@ cleared.
 
 ## Stage 1
 
-Known as "package1.1", the code for this stage is stored encrypted
-inside the package. When decrypted, this stage is encapsulated in a
-header.
+When decrypted, this stage is encapsulated in a header.
 
 ### Header
 
-| Offset | Size | Description      |
-| ------ | ---- | ---------------- |
-| 0x0    | 4    | Magic "PK11"     |
-| 0x4    | 4    | Main size        |
-| 0x8    | 8    | Unknown          |
-| 0x10   | 4    | Section 0 size   |
-| 0x14   | 4    | Section 0 offset |
-| 0x18   | 4    | Section 1 size   |
-| 0x1C   | 4    | Section 1 offset |
+| Offset | Size | Description                  |
+| ------ | ---- | ---------------------------- |
+| 0x0    | 4    | Magic "PK11"                 |
+| 0x4    | 4    | Warmboot blob's size         |
+| 0x8    | 4    | Warmboot blob's offset       |
+| 0xC    | 4    | Unknown                      |
+| 0x10   | 4    | NX bootloader blob's size    |
+| 0x14   | 4    | NX bootloader blob's offset  |
+| 0x18   | 4    | Secure Monitor blob's size   |
+| 0x1C   | 4    | Secure Monitor blob's offset |
 
 # Changelog
 

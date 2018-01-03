@@ -528,7 +528,7 @@ The encrypted stage 1 binary is stored inside the package prepended with it's CT
  return pk11_main_addr;
 
 == Stage 1 ==
-Known as "package1.1", the code for this stage is stored encrypted inside the package. When decrypted, this stage is encapsulated in a header.
+When decrypted, this stage is encapsulated in a header.
 
 === Header ===
 {| class="wikitable" border="1"
@@ -543,27 +543,31 @@ Known as "package1.1", the code for this stage is stored encrypted inside the pa
 |-
 | 0x4
 | 4
-| Main size
+| Warmboot blob's size
 |-
 | 0x8
-| 8
+| 4
+| Warmboot blob's offset
+|-
+| 0xC
+| 4
 | Unknown
 |-
 | 0x10
 | 4
-| Section 0 size
+| NX bootloader blob's size
 |-
 | 0x14
 | 4
-| Section 0 offset
+| NX bootloader blob's offset
 |-
 | 0x18
 | 4
-| Section 1 size
+| Secure Monitor blob's size
 |-
 | 0x1C
 | 4
-| Section 1 offset
+| Secure Monitor blob's offset
 |}
 
 = Changelog =
