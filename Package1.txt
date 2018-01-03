@@ -2,10 +2,10 @@ Present in the firmware package titles (0100000000000819, 010000000000081A, 0100
 
 The boot ROM validates, copies to IRAM and executes this package by parsing it's information block from the [[BCT|BCT]].
 
-= Bootloader =
-Split into two main stages, the bootloader is responsible for setting up hardware, generate keys and prepare the main CPU ("CCPLEX").
+= Format =
+Package1 is distributed as a plaintext initial bootloader and a secondary encrypted blob. Execution starts at the plaintext bootloader which will set up hardware, generate keys and decrypt the next stage.
 
-== Stage 0 ==
+== Bootloader ==
 The code for this stage is stored in plaintext inside the package. By looking into the BCT's bootloader0_info (normal) or bootloader1_info (safe mode), the boot ROM starts executing this stage at address 0x40010020 in IRAM.
 
 === Initialization ===
@@ -99,16 +99,16 @@ The bootloader poisons the exception vectors, cleans up memory (.bss and init_ar
  // Generate keys
  keygen(bct_iram_addr);
  
- u32 stage1_addr = 0x40013FE0;
+ u32 pk11_blob_addr = 0x40013FE0;
  
- // Decrypt next stage
- stage1_addr = decrypt_stage1(stage1_addr);
+ // Decrypt the PK11 blob and get the next stage's entrypoint
+ nx_boot_addr = decrypt_pk11_blob(pk11_blob_addr);
  
- u32 stage1_sp = 0x40007000;
+ u32 nx_boot_sp = 0x40007000;
  
  // Set the stack pointer and jump to a stub responsible
- // for cleaning up and branching into the actual stage 1
- exec_stage1_stub(stage1_addr, stage1_stub_addr, stage1_sp);
+ // for cleaning up and branching into the next stage
+ exec_nx_boot_stub(nx_boot_addr, nx_boot_stub_addr, nx_boot_sp);
  
  return;
 
@@ -128,8 +128,8 @@ If a panic occurs, all sensitive memory contents are cleared, the security engin
  // Clear temporary key storage memory
  clear_mem();
  
- // Clear the stage 1 binary
- clear_stage1();
+ // Clear the PK11 blob from memory
+ clear_pk11_blob();
  
  u32 FLOW_CTLR_HALT_COP_EVENTS = 0x60007004;
  u32 FLOW_MODE_STOP = 0x40000000;
@@ -478,59 +478,12 @@ See the pseudocode bellow for the detailed process.
  
  return;
 
-==== Stage 1 loading ====
-After generating all the necessary keys, the bootloader proceeds to decrypt and launch the next stage.
-
-===== Decryption =====
-The encrypted stage 1 binary is stored inside the package prepended with it's CTR and total image size. After checking the image's size against an hardcoded value (can change on firmware updates), the image is AES-CTR decrypted and the keyslot used for decryption is immediately cleared.
-
- // Maximum stage 1 size on firmware version 1.0.0
- u32 max_stage1_size = 0x29000;
- 
- u32 stage1_image_size = *(u32 *)stage1_addr;
- u32 stage1_image_ctr_addr = stage1_addr + 0x10; 
- u32 stage1_image_addr = stage1_addr + 0x20;
- 
- // Validate stage 1's size
- if (stage1_image_size > max_stage1_size)
-    panic();
- 
- u32 in_addr = stage1_image_addr;
- u32 in_size = stage1_image_size;
- u32 ctr_addr = stage1_image_ctr_addr;
- u32 ctr_size = 0x10;
- u32 out_addr = stage1_image_addr;
- u32 out_size = stage1_image_size;
- u32 keyslot = 0x0B;
- 
- // AES-CTR decrypt
- // Use the pk11_key (keyslot 0x0B) to decrypt stage 1 in place
- aes_ctr_decrypt(out_addr, out_size, keyslot, in_addr, in_size, ctr_addr, ctr_size);
- 
- // Clear pk11_key keyslot
- clear_keyslot(0x0B);
- 
- // Validate the decrypted stage 1 image
- // Checks the "PK11" magic and some pk11 header fields
- bool is_valid = check_stage1(stage1_image_addr, stage1_image_size);
- 
- // Invalid stage 1 image
- if (!is_valid)
-    panic();
- 
- u32 pk11_header_size = 0x20;
- u32 pk11_sec0_offset = *(u32 *)stage1_image_addr + 0x14;
- u32 pk11_sec1_size = *(u32 *)stage1_image_addr + 0x18;
- 
- // Calculate PK11 main entrypoint
- u32 pk11_main_addr = (stage1_image_addr + pk11_header_size + pk11_sec0_offset + pk11_sec1_size);
- 		
- return pk11_main_addr;
-
-== Stage 1 ==
-When decrypted, this stage is encapsulated in a header.
+== PK11 Blob ==
+This blob is stored encrypted inside the package and is decrypted by the initial bootloader.
 
 === Header ===
+When decrypted, the blob is encapsulated in the following header.
+
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -569,6 +522,52 @@ When decrypted, this stage is encapsulated in a header.
 | 4
 | Secure Monitor blob's offset
 |}
+
+=== Decryption ===
+The encrypted blob is prepended with it's CTR and total image size. After checking the image's size against an hardcoded value (can change on firmware updates), the image is AES-CTR decrypted and the keyslot used for decryption is immediately cleared.
+
+ // Maximum encrypted blob's size on firmware version 1.0.0
+ u32 max_pk11_enc_blob_size = 0x29000;
+ 
+ u32 pk11_enc_blob_size = *(u32 *)pk11_blob_addr;
+ u32 pk11_enc_blob_ctr_addr = pk11_blob_addr + 0x10; 
+ u32 pk11_enc_blob_addr = pk11_blob_addr + 0x20;
+ 
+ // Validate the encrypted blob's size
+ if (pk11_enc_blob_size > max_pk11_enc_blob_size)
+    panic();
+ 
+ u32 in_addr = pk11_enc_blob_addr;
+ u32 in_size = pk11_enc_blob_size;
+ u32 ctr_addr = pk11_enc_blob_ctr_addr;
+ u32 ctr_size = 0x10;
+ u32 out_addr = pk11_dec_blob_addr;
+ u32 out_size = pk11_dec_blob_size;
+ u32 keyslot = 0x0B;
+ 
+ // AES-CTR decrypt
+ // Use the pk11_key (keyslot 0x0B) to decrypt the blob in place
+ aes_ctr_decrypt(out_addr, out_size, keyslot, in_addr, in_size, ctr_addr, ctr_size);
+ 
+ // Clear pk11_key keyslot
+ clear_keyslot(0x0B);
+ 
+ // Validate the decrypted blob
+ // Checks the "PK11" magic and some pk11 header fields
+ bool is_valid = check_pk11_header(pk11_dec_blob_addr, pk11_dec_blob_size);
+ 
+ // Invalid PK11 image
+ if (!is_valid)
+    panic();
+ 
+ u32 pk11_header_size = 0x20;
+ u32 pk11_nx_boot_offset = *(u32 *)pk11_dec_blob_addr + 0x14;
+ u32 pk11_sm_size = *(u32 *)pk11_dec_blob_addr + 0x18;
+ 
+ // Calculate NX bootloader's entrypoint
+ u32 nx_boot_addr = (pk11_dec_blob_addr + pk11_header_size + pk11_nx_boot_offset + pk11_sm_size);
+ 		
+ return nx_boot_addr;
 
 = Changelog =
 == 2.0.0 ==
