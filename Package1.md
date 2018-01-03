@@ -599,6 +599,35 @@ When decrypted, this stage is encapsulated in a header.
 
 # Changelog
 
+## 2.0.0
+
+  - The encrypted binaries' order and calculation for next stage's
+    entrypoint was changed.
+
+Old layout (before
+2.0.0):
+
+`1.- PK11 header`  
+`2.- Secure Monitor blob`  
+`3.- NX bootloader blob`  
+`4.- Warmboot blob`  
+  
+`NX bootloader entrypoint is calculated as:`  
+`0x40013FE0 + 0x20 + 0x20 + NX bootloader blob's offset + Secure Monitor blob's size`
+
+New layout
+(2.0.0+):
+
+`1.- PK11 header`  
+`2.- Warmboot blob`  
+`3.- NX bootloader blob`  
+`4.- Secure Monitor blob`  
+  
+`NX bootloader entrypoint is calculated as:`  
+`0x40013FE0 + 0x20 + 0x20 + NX bootloader blob's offset + Warmboot blob's size`
+
+  - Some AES-ECB decryption related code was refactored.
+
 ## 3.0.0
 
   - The functions set\_se\_addr() and check\_se\_status() are now called
