@@ -31,9 +31,13 @@ Each entry is key-value pair:
 
 * 1: [[#MainThreadHandle]] [MANDATORY]
 
-* 2: [[#OverrideHeap]]
+* 2: [[#LoaderReturnAddr]] [MANDATORY]
 
-* 3: [[#OverrideService]]
+* 3: [[#OverrideHeap]]
+
+* 4: [[#OverrideService]]
+
+* 5: [[#Argv]]
 
 ==== EndOfList ====
 EndOfList is the final entry in the LoaderConfig.
@@ -51,10 +55,19 @@ This is the handle to the thread that is executing the entrypoint. Required for 
 * '''Value[0]:''' Handle to the main thread.
 * '''Value[1]:''' Ignored.
 
+==== LoaderReturnAddr ====
+When the homebrew has finished executing, it shall jump to this address to return to the homebrew menu.
+
+* '''Key:''' 1
+* '''IsMandatory:''' True
+* '''Value[0]:''' Function pointer with type <code>void __noreturn (*)(int result_code);</code>
+* '''Value[1]:''' Ignored.
+* '''DefaultBehavior:''' Exits process using svcExitProcess.
+
 ==== OverrideHeap ====
 If the NRO loader has reserved some space in the heap for itself, the application must not manipulate the heap.
 
-* '''Key:''' 2
+* '''Key:''' 3
 * '''IsMandatory:''' False
 * '''Value[0]:''' Base address of heap. Must be MemoryType 4, 5, or 9 with all reference counts being zero.
 * '''Value[1]:''' Size of heap.
@@ -65,8 +78,17 @@ The NRO loader should be able to steal handles from more priliveged processes. I
 
 Note: For services that authenticate with pid, the app should not attempt re-authentication with an overridden handle.
 
-* '''Key:''' 3
+* '''Key:''' 4
 * '''IsMandatory:''' False
 * '''Value[0]:''' Name of service, same format as for sm.
 * '''Value[1]:''' Service handle.
 * '''DefaultBehavior:''' Fetches service from "sm:" named port.
+
+==== Argv ====
+The NRO loader should be able to send argv.
+
+* '''Key:''' 5
+* '''IsMandatory:''' False
+* '''Value[0]:''' Argc.
+* '''Value[1]:''' Argv pointer.
+* '''DefaultBehavior:''' Setting (argc == 0, argv[0] == NULL), or argv parsed in NSO0 fashion.

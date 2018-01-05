@@ -45,11 +45,19 @@ Each entry is key-value pair:
 
 <!-- end list -->
 
-  - 2: [\#OverrideHeap](#OverrideHeap "wikilink")
+  - 2: [\#LoaderReturnAddr](#LoaderReturnAddr "wikilink") \[MANDATORY\]
 
 <!-- end list -->
 
-  - 3: [\#OverrideService](#OverrideService "wikilink")
+  - 3: [\#OverrideHeap](#OverrideHeap "wikilink")
+
+<!-- end list -->
+
+  - 4: [\#OverrideService](#OverrideService "wikilink")
+
+<!-- end list -->
+
+  - 5: [\#Argv](#Argv "wikilink")
 
 #### EndOfList
 
@@ -70,12 +78,24 @@ Required for mutex to function.
   - **Value\[0\]:** Handle to the main thread.
   - **Value\[1\]:** Ignored.
 
+#### LoaderReturnAddr
+
+When the homebrew has finished executing, it shall jump to this address
+to return to the homebrew menu.
+
+  - **Key:** 1
+  - **IsMandatory:** True
+  - **Value\[0\]:** Function pointer with type `void __noreturn (*)(int
+    result_code);`
+  - **Value\[1\]:** Ignored.
+  - **DefaultBehavior:** Exits process using svcExitProcess.
+
 #### OverrideHeap
 
 If the NRO loader has reserved some space in the heap for itself, the
 application must not manipulate the heap.
 
-  - **Key:** 2
+  - **Key:** 3
   - **IsMandatory:** False
   - **Value\[0\]:** Base address of heap. Must be MemoryType 4, 5, or 9
     with all reference counts being zero.
@@ -91,8 +111,19 @@ the normal one.
 Note: For services that authenticate with pid, the app should not
 attempt re-authentication with an overridden handle.
 
-  - **Key:** 3
+  - **Key:** 4
   - **IsMandatory:** False
   - **Value\[0\]:** Name of service, same format as for sm.
   - **Value\[1\]:** Service handle.
   - **DefaultBehavior:** Fetches service from "sm:" named port.
+
+#### Argv
+
+The NRO loader should be able to send argv.
+
+  - **Key:** 5
+  - **IsMandatory:** False
+  - **Value\[0\]:** Argc.
+  - **Value\[1\]:** Argv pointer.
+  - **DefaultBehavior:** Setting (argc == 0, argv\[0\] == NULL), or argv
+    parsed in NSO0 fashion.
