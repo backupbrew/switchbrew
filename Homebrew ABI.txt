@@ -61,7 +61,7 @@ This is the handle to the thread that is executing the entrypoint. Required for 
 ==== LoaderReturnAddr ====
 When the homebrew has finished executing, it shall jump to this address to return to the homebrew menu.
 
-* '''Key:''' 1
+* '''Key:''' 2
 * '''IsMandatory:''' True
 * '''Value[0]:''' Function pointer with type <code>void __noreturn (*)(int result_code);</code>
 * '''Value[1]:''' Ignored.

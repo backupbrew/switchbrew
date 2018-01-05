@@ -89,7 +89,7 @@ Required for mutex to function.
 When the homebrew has finished executing, it shall jump to this address
 to return to the homebrew menu.
 
-  - **Key:** 1
+  - **Key:** 2
   - **IsMandatory:** True
   - **Value\[0\]:** Function pointer with type `void __noreturn (*)(int
     result_code);`
