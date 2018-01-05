@@ -138,6 +138,6 @@ The NRO loader should be able to send argv.
   - **Key:** 5
   - **IsMandatory:** False
   - **Value\[0\]:** Argc.
-  - **Value\[1\]:** Argv pointer.
+  - **Value\[1\]:** Argv string pointer.
   - **DefaultBehavior:** Setting (argc == 0, argv\[0\] == NULL), or argv
     parsed in NSO0 fashion.
