@@ -91,7 +91,7 @@ the normal one.
 Note: For services that authenticate with pid, the app should not
 attempt re-authentication with an overridden handle.
 
-  - **Key:** 1
+  - **Key:** 3
   - **IsMandatory:** False
   - **Value\[0\]:** Name of service, same format as for sm.
   - **Value\[1\]:** Service handle.
