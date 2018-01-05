@@ -37,6 +37,11 @@ Each entry is key-value pair:
 
 ### Loader Config Keys
 
+A loader key can be mandatory or not mandatory. If an (at the time)
+unknown key is encountered, the program should jump to
+[\#LoaderReturnAddr](#LoaderReturnAddr "wikilink") with `result_code=346
+| (1<<9);`.
+
   - 0: [\#EndOfList](#EndOfList "wikilink") \[MANDATORY\]
 
 <!-- end list -->
