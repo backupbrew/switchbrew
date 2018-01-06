@@ -116,7 +116,7 @@ If the NRO loader has reserved some space in the heap for itself, the
 application must not manipulate the heap.
 
   - **Key:** 3
-  - **IsMandatory:** False
+  - **IsMandatory:** Loader-defined.
   - **Value\[0\]:** Base address of heap. Must be MemoryType 4, 5, or 9
     with all reference counts being zero.
   - **Value\[1\]:** Size of heap.
@@ -134,7 +134,7 @@ Note: For services that authenticate with pid, the app should not
 attempt re-authentication with an overridden handle.
 
   - **Key:** 4
-  - **IsMandatory:** False
+  - **IsMandatory:** Loader-defined.
   - **Value\[0\]:** Name of service, same format as for sm.
   - **Value\[1\]:** Service handle.
   - **DefaultBehavior:** Fetches service from "sm:" named port.
