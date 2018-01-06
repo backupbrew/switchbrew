@@ -38,9 +38,12 @@ Each entry is key-value pair:
 
 `struct LoaderConfigEntry {`  
 `  u32 Key;`  
-`  u8  IsMandatory;`  
-`  u8  Reserved[3];`  
+`  u32 Flags;`  
 `  u64 Value[2];`  
+`};`
+
+`enum LoaderConfigFlags {`  
+`  IsMandatory = BIT(0),`  
 `};`
 
 ### Loader Config Keys
