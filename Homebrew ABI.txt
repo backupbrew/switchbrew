@@ -1,7 +1,7 @@
 '''DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT'''
 
 === Entrypoint ===
-Entrypoint is at binary_ptr+0. At this offset, there is a branch instruction that jumps past the NRO0 header. This is for file format polyglot compatibility with NSO0.
+Entrypoint is at binary_ptr+0. At this offset, there is a branch instruction that jumps past the NRO0 header. This is for (.text) file format polyglot compatibility with NSO0.
 
 Every application should clean itself up before returning to loader.
 
@@ -55,6 +55,8 @@ If a key that is mandatory is not found (for example with an outdated loader), u
 * 5: [[#Argv]]
 
 * 6: [[#SyscallAvailableHint]]
+
+* 7: [[#AppletType]] [MANDATORY]
 
 ==== EndOfList ====
 EndOfList is the final entry in the LoaderConfig.
@@ -124,3 +126,19 @@ This entry allows loader to give hints about having access to rare syscalls (suc
 * '''Value[0]:''' Each byte is a rare syscall number that the process has access to. <code>0xFF</code> means byte should be ignored.
 * '''Value[1]:''' Same as above.
 * '''DefaultBehavior:''' If NSO0, assume kernelhax thus all rare syscalls are allowed. If NRO0, assume all rare syscalls are inaccessible.
+
+==== AppletType ====
+Specifies the [[AM_services|AM]] AppletType, used for selecting which Open*Proxy command to use.
+
+* '''Key:''' 7
+* '''IsMandatory:''' True
+* '''Value[0]:''' AppletType
+* '''Value[1]:''' Ignored.
+
+ enum LoaderConfigAppletType {
+   LoaderConfigAppletType_Application = 0,
+   LoaderConfigAppletType_SystemApplet = 1,
+   LoaderConfigAppletType_LibraryApplet = 2,
+   LoaderConfigAppletType_OverlayApplet = 3,
+   LoaderConfigAppletType_SystemApplication = 4,
+ };

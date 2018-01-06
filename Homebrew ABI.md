@@ -4,8 +4,8 @@ DRAFT DRAFT DRAFT**
 ### Entrypoint
 
 Entrypoint is at binary\_ptr+0. At this offset, there is a branch
-instruction that jumps past the NRO0 header. This is for file format
-polyglot compatibility with NSO0.
+instruction that jumps past the NRO0 header. This is for (.text) file
+format polyglot compatibility with NSO0.
 
 Every application should clean itself up before returning to loader.
 
@@ -82,6 +82,10 @@ loader), use `result_code=346 | ((200 + key) << 9);`.
 <!-- end list -->
 
   - 6: [\#SyscallAvailableHint](#SyscallAvailableHint "wikilink")
+
+<!-- end list -->
+
+  - 7: [\#AppletType](#AppletType "wikilink") \[MANDATORY\]
 
 #### EndOfList
 
@@ -173,3 +177,21 @@ syscalls (such as JIT).
   - **DefaultBehavior:** If NSO0, assume kernelhax thus all rare
     syscalls are allowed. If NRO0, assume all rare syscalls are
     inaccessible.
+
+#### AppletType
+
+Specifies the [AM](AM%20services.md "wikilink") AppletType, used for
+selecting which Open\*Proxy command to use.
+
+  - **Key:** 7
+  - **IsMandatory:** True
+  - **Value\[0\]:** AppletType
+  - **Value\[1\]:** Ignored.
+
+`enum LoaderConfigAppletType {`  
+`  LoaderConfigAppletType_Application = 0,`  
+`  LoaderConfigAppletType_SystemApplet = 1,`  
+`  LoaderConfigAppletType_LibraryApplet = 2,`  
+`  LoaderConfigAppletType_OverlayApplet = 3,`  
+`  LoaderConfigAppletType_SystemApplication = 4,`  
+`};`
