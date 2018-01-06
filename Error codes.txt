@@ -114,6 +114,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 345 || libnx
 |-
+| 346 || HomebrewLoader
+|-
 | 651 || TC
 |-
 | 800 || [[Internet_Browser|General web-applet]]

@@ -70,6 +70,7 @@ fatal-errors, since the Description ends with bit21.
 | 203   | HID                                                    |
 | 206   | Capture                                                |
 | 345   | libnx                                                  |
+| 346   | HomebrewLoader                                         |
 | 651   | TC                                                     |
 | 800   | [General web-applet](Internet%20Browser.md "wikilink") |
 | 809   | [WifiWebAuthApplet](Internet%20Browser.md "wikilink")  |
