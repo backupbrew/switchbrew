@@ -159,8 +159,8 @@ The NRO loader should be able to send argv.
   - **IsMandatory:** False
   - **Value\[0\]:** Argc.
   - **Value\[1\]:** Argv string pointer.
-  - **DefaultBehavior:** Setting (argc == 0, argv\[0\] == NULL), or argv
-    parsed in NSO0 fashion.
+  - **DefaultBehavior:** Setting (argc == 1, argv\[0\] == "unknown",
+    argv\[1\] == NULL), or argv parsed in NSO0 fashion.
 
 #### SyscallAvailableHint
 
