@@ -41,3 +41,12 @@ Total size is 0x300-bytes.
 | ------ | ----- | ---------------------------- |
 | 0x0    | 0x200 | Application name string      |
 | 0x200  | 0x100 | Application developer string |
+
+Entry index for each language:
+
+  - ...
+  - 2: Japanese
+  - ...
+
+Official apps tend to have the language entries' strings set to only
+English. Some apps don't have certain language entries set at all.
