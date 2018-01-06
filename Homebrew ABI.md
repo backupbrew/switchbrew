@@ -4,8 +4,8 @@ DRAFT DRAFT DRAFT**
 ### Entrypoint
 
 Entrypoint is at binary\_ptr+0. At this offset, there is a branch
-instruction that jumps past the NRO0 header. This is for compatibility
-with NSO0.
+instruction that jumps past the NRO0 header. This is for file format
+polyglot compatibility with NSO0.
 
 Every application should clean itself up before returning to loader.
 
