@@ -128,6 +128,8 @@ The NRO loader should be able to steal handles from more priliveged
 processes. In this case, the homebrew should use this handle instead of
 the normal one.
 
+Homebrew should allow up to 32 service overrides.
+
 Note: For services that authenticate with pid, the app should not
 attempt re-authentication with an overridden handle.
 
