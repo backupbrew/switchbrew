@@ -79,6 +79,10 @@ loader), use `result_code=346 | ((200 + key) << 9);`.
 
   - 5: [\#Argv](#Argv "wikilink")
 
+<!-- end list -->
+
+  - 6: [\#SyscallAvailableHint](#SyscallAvailableHint "wikilink")
+
 #### EndOfList
 
 EndOfList is the final entry in the LoaderConfig.
@@ -149,3 +153,19 @@ The NRO loader should be able to send argv.
   - **Value\[1\]:** Argv string pointer.
   - **DefaultBehavior:** Setting (argc == 0, argv\[0\] == NULL), or argv
     parsed in NSO0 fashion.
+
+#### SyscallAvailableHint
+
+Homebrew doesn't know if any privileged syscalls are available.
+
+This entry allows loader to give hints about having access to rare
+syscalls (such as JIT).
+
+  - **Key:** 6
+  - **IsMandatory:** False
+  - **Value\[0\]:** Each byte is a rare syscall number that the process
+    has access to. `0xFF` means byte should be ignored.
+  - **Value\[1\]:** Same as above.
+  - **DefaultBehavior:** If NSO0, assume kernelhax thus all rare
+    syscalls are allowed. If NRO0, assume all rare syscalls are
+    inaccessible.
