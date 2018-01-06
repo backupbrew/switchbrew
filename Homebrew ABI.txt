@@ -35,7 +35,9 @@ Each entry is key-value pair:
 === Loader Config Keys ===
 A loader key can be mandatory or not mandatory.
 
-If an (at the time) mandatory unknown key is encountered, the program should jump to [[#LoaderReturnAddr]] with <code>result_code=346 | (1<<9);</code>.  
+If an (at the time) mandatory unknown key is encountered, the program should jump to [[#LoaderReturnAddr]] with <code>result_code=346 | ((100 + key) << 9);</code>.  
+
+If a key that is mandatory is not found (for example with an outdated loader), use <code>result_code=346 | ((200 + key) << 9);</code>.
 
 * 0: [[#EndOfList]] [MANDATORY]
 

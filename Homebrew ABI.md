@@ -49,7 +49,10 @@ A loader key can be mandatory or not mandatory.
 
 If an (at the time) mandatory unknown key is encountered, the program
 should jump to [\#LoaderReturnAddr](#LoaderReturnAddr "wikilink") with
-`result_code=346 | (1<<9);`.
+`result_code=346 | ((100 + key) << 9);`.
+
+If a key that is mandatory is not found (for example with an outdated
+loader), use `result_code=346 | ((200 + key) << 9);`.
 
   - 0: [\#EndOfList](#EndOfList "wikilink") \[MANDATORY\]
 
