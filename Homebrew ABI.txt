@@ -97,6 +97,8 @@ Homebrew should allow up to 32 service overrides.
 
 Note: For services that authenticate with pid, the app should not attempt re-authentication with an overridden handle.
 
+Note: There needs be special handling for the file system service. If the original fsp-srv handle doesn't allow MountSdcard, it shall fallback to the stolen one, etc etc.
+
 * '''Key:''' 4
 * '''IsMandatory:''' Loader-defined.
 * '''Value[0]:''' Name of service, same format as for sm.
