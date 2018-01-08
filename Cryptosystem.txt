@@ -7,7 +7,7 @@ The bootrom initializes two keyslots in the hardware engine:
 Reads from both of these keyslots are disabled by the bootROM.
 The SBK is stored in [[Fuses#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY]], which are locked to read out only FFs after the bootrom finishes.
 
-SBK is '''unique''' per console, and not shared among consoles as originally believed.
+SBK should be shared amongst all consoles, but we don't know this is the case.
 
 The SSK is derived on boot via the SBK, the 32-bit console-unique "Device Key", and hardware information stored in fuses.
 
@@ -218,9 +218,6 @@ This means that if you have an attack on the bootloader, you need to re-preform 
 Dumping the SBK and TSEC key of any single system should be enough to derive all key material on the system.
 
 The key-derivation is described in more detail [[Package1#Key_generation|here]].
-
-==== Keyblob ====
-The keyblob is console unique, and changes with every bootloader update.
 
 ==== Seeds ====
   normalseed_retail = d8a2410a...
