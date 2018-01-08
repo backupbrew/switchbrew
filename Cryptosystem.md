@@ -10,8 +10,8 @@ is stored in
 [FUSE\_PRIVATE\_KEY](Fuses#FUSE%20PRIVATE%20KEY.md##FUSE_PRIVATE_KEY "wikilink"),
 which are locked to read out only FFs after the bootrom finishes.
 
-SBK should be shared amongst all consoles, but we don't know this is the
-case.
+SBK is **unique** per console, and not shared among consoles as
+originally believed.
 
 The SSK is derived on boot via the SBK, the 32-bit console-unique
 "Device Key", and hardware information stored in fuses.
@@ -181,6 +181,11 @@ derive all key material on the system.
 
 The key-derivation is described in more detail
 [here](Package1#Key%20generation.md##Key_generation "wikilink").
+
+#### Keyblob
+
+The keyblob is console unique, and changes with every bootloader
+update.
 
 #### Seeds
 
