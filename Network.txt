@@ -9,4 +9,4 @@ This page documents the DNS domains used by Switch, and what they're used for. O
 * "e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com": Used to handle account metadata. (friends, profile, etc)
 * "api.accounts.nintendo.com": Appears to be used by Nintendo apps to get metadata for Switch user profiles.
 * "api-lp1.znc.srv.nintendo.net": Used by the Switch Online app to get app data, like the list of game-specific services to display.
-Note: "break Nintendo-acount..." is for "posting to social-media" in user-profile, results may vary with eShop(for non-dauth).
+Note: "break Nintendo-account..." is for "posting to social-media" in user-profile, results may vary with the eShop (for non-dauth).
