@@ -24,7 +24,7 @@ Each nibble is duplicated to form a full byte before writing the final color to 
 
 == Panic colors ==
 {| class=wikitable
-! Color || Value || Domain
+! Color || Value
 |-
 | 0xFF0000 || Kernel
 |-

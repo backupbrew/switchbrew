@@ -30,13 +30,13 @@ full byte before writing the final color to the display's MMIO.
 
 ## Panic colors
 
-| Color    | Value                         | Domain |
-| -------- | ----------------------------- | ------ |
-| 0xFF0000 | Kernel                        |        |
-| 0xFFFF00 | Secure Monitor                |        |
-| 0xFFAA00 | Hardware?                     |        |
-| 0xFF00AA | Bootloader (general errors)   |        |
-| 0xAAFFFF | Bootloader (wrong bootloader) |        |
+| Color    | Value                         |
+| -------- | ----------------------------- |
+| 0xFF0000 | Kernel                        |
+| 0xFFFF00 | Secure Monitor                |
+| 0xFFAA00 | Hardware?                     |
+| 0xFF00AA | Bootloader (general errors)   |
+| 0xAAFFFF | Bootloader (wrong bootloader) |
 
 ## Panic codes
 
