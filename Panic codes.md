@@ -51,6 +51,7 @@ full byte before writing the final color to the display's MMIO.
 | 0x6   | Unknown Abort                          |
 | 0x7   |                                        |
 | 0x8   |                                        |
+| 0x9   | CPU is already awake                   |
 | 0x10  | Unknown exception                      |
 | 0x20  | Rebooting into SafeMode                |
 | 0x21  | Rebooting for anti-downgrade           |

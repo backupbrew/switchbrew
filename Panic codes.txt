@@ -59,6 +59,8 @@ Each nibble is duplicated to form a full byte before writing the final color to 
 |-
 | 0x8 || 
 |-
+| 0x9 || CPU is already awake
+|-
 | 0x10 || Unknown exception
 |-
 | 0x20 || Rebooting into SafeMode
