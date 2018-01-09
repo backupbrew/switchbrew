@@ -156,7 +156,7 @@ Functions exposed to the kernel internally.
 |-
 | 0xC3000005 || [[#GetRandomBytes]] (Same as ID 0, Sub-ID 6) || X1=size, X2,X3,X4,X5,X6,X7=0 || X0=result, X1,X2,X3,X4,X5,X6,X7=rand_bytes
 |-
-| 0xC3000006 || [[#Panic]] || W1=unk, X2,X3,X4,X5,X6,X7=0 || X0=result
+| 0xC3000006 || [[#Panic]] || W1=panic_color, X2,X3,X4,X5,X6,X7=0 || X0=result
 |-
 | 0xC3000007 || [2.0.0+] ProtectKernelRegion || X1=unk, X2=region_phys_addr, X3=region_size, X4,X5,X6,X7=0 || X0=result
 |-
@@ -185,7 +185,7 @@ The kernel limits '''size''' to 0x38 (for fitting in return registers).
 === Panic ===
 Issues a system panic.
 
-The kernel always calls this with '''unk''' set to 0xF00.
+The kernel always calls this with '''panic_color''' set to 0xF00.
 
 = Errors =
 {| class=wikitable
