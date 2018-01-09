@@ -313,13 +313,13 @@ If too many fuses are burnt the bootloader will panic immediately.
 
 If too few are burnt, the bootloader will enable fuse programming and
 write the expected value to fuse indexes 0x3A and 0x3C. Afterwards, fuse
-programming is disabled and a magic value (0x21 == TEGRA210) is written
-to PMC\_SCRATCH200 register (0x7000EC40). Finally, the watchdog timer is
+programming is disabled and the panic value 0x21 is written to
+PMC\_SCRATCH200 register (0x7000EC40). Finally, the watchdog timer is
 initialized and programmed to force a reset.
 
 On a subsequent boot, after the anti-downgrade fuses are checked again,
 the PMC\_RST\_STATUS register (0x7000E5B4) is checked and if set to 0x01
 (watchdog reset) the PMC\_SCRATCH200 register (0x7000EC40) will be
-checked for the magic value (0x21 == TEGRA210). PMC\_RST\_STATUS will
-only be set back to 0 (power on reset) if the fuse count matches the new
-expected value, otherwise the system will panic.
+checked for the panic value 0x21. PMC\_RST\_STATUS will only be set back
+to 0 (power on reset) if the fuse count matches the new expected value,
+otherwise the system will panic.
