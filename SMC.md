@@ -160,16 +160,16 @@ Takes a session-unique AES key from
 Functions exposed to the kernel
 internally.
 
-| Sub-ID     | Name                                                                    | In                                                                 | Out                                         |
-| ---------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
-| 0xC4000001 | [\#CpuSuspend](#CpuSuspend "wikilink")                                  | X1=power\_state, X2=entrypoint\_addr, X3=context\_id               | None                                        |
-| 0x84000002 | [\#CpuOff](#CpuOff "wikilink")                                          | None                                                               | None                                        |
-| 0xC4000003 | [\#CpuOn](#CpuOn "wikilink")                                            | X1=target\_cpu, X2=entrypoint\_addr, X3=context\_id, X4,X5,X6,X7=0 | X0=result                                   |
-| 0xC3000004 | [\#GetConfig](#GetConfig "wikilink") (Same as ID 0, Sub-ID 2)           | W1=config\_item, X2,X3,X4,X5,X6,X7=0                               | X0=result, X1,X2,X3,X4=config\_val          |
-| 0xC3000005 | [\#GetRandomBytes](#GetRandomBytes "wikilink") (Same as ID 0, Sub-ID 6) | X1=size, X2,X3,X4,X5,X6,X7=0                                       | X0=result, X1,X2,X3,X4,X5,X6,X7=rand\_bytes |
-| 0xC3000006 | [\#Panic](#Panic "wikilink")                                            | W1=panic\_color, X2,X3,X4,X5,X6,X7=0                               | X0=result                                   |
-| 0xC3000007 | \[2.0.0+\] ProtectKernelRegion                                          | X1=unk, X2=region\_phys\_addr, X3=region\_size, X4,X5,X6,X7=0      | X0=result                                   |
-| 0xC3000008 | \[2.0.0+\] ReadWriteRegister                                            | X1=reg\_addr, W2=rw\_mask, W3=in\_val, X4,X5,X6,X7=0               | X0=result, W1=out\_val                      |
+| Sub-ID     | Name                                                                    | In                                                                        | Out                                         |
+| ---------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------- |
+| 0xC4000001 | [\#CpuSuspend](#CpuSuspend "wikilink")                                  | X1=power\_state, X2=entrypoint\_addr, X3=context\_id                      | None                                        |
+| 0x84000002 | [\#CpuOff](#CpuOff "wikilink")                                          | None                                                                      | None                                        |
+| 0xC4000003 | [\#CpuOn](#CpuOn "wikilink")                                            | X1=target\_cpu, X2=entrypoint\_addr, X3=context\_id, X4,X5,X6,X7=0        | X0=result                                   |
+| 0xC3000004 | [\#GetConfig](#GetConfig "wikilink") (Same as ID 0, Sub-ID 2)           | W1=config\_item, X2,X3,X4,X5,X6,X7=0                                      | X0=result, X1,X2,X3,X4=config\_val          |
+| 0xC3000005 | [\#GetRandomBytes](#GetRandomBytes "wikilink") (Same as ID 0, Sub-ID 6) | X1=size, X2,X3,X4,X5,X6,X7=0                                              | X0=result, X1,X2,X3,X4,X5,X6,X7=rand\_bytes |
+| 0xC3000006 | [\#Panic](#Panic "wikilink")                                            | W1=panic\_color, X2,X3,X4,X5,X6,X7=0                                      | X0=result                                   |
+| 0xC3000007 | \[2.0.0+\] [\#ProtectKernelRegion](#ProtectKernelRegion "wikilink")     | X1=carveout\_index, X2=region\_phys\_addr, X3=region\_size, X4,X5,X6,X7=0 | X0=result                                   |
+| 0xC3000008 | \[2.0.0+\] [\#ReadWriteRegister](#ReadWriteRegister "wikilink")         | X1=reg\_addr, W2=rw\_mask, W3=in\_val, X4,X5,X6,X7=0                      | X0=result, W1=out\_val                      |
 
 ### CpuSuspend
 
@@ -202,6 +202,27 @@ The kernel limits **size** to 0x38 (for fitting in return registers).
 Issues a system panic.
 
 The kernel always calls this with **panic\_color** set to 0xF00.
+
+### ProtectKernelRegion
+
+Configures memory controller carveout regions.
+
+If **carveout\_index** is 0, **region\_phys\_addr** and **region\_size**
+are used to configure **MC\_SECURITY\_CARVEOUT4**. If
+**carveout\_index** is 1, **region\_phys\_addr** and **region\_size**
+are used to configure **MC\_SECURITY\_CARVEOUT5**. Any other
+**carveout\_index** values are invalid.
+
+The kernel calls this with **carveout\_index** set to 0,
+**region\_phys\_addr** set to 0x80060000 and **region\_size** set to a
+dynamically calculated size which covers all the kernel and built-in
+sysmodules' DRAM regions.
+
+### ReadWriteRegister
+
+Relays
+[svcReadWriteRegister](SVC#svcReadWriteRegister.md##svcReadWriteRegister "wikilink")
+to the Secure Monitor.
 
 # Errors
 

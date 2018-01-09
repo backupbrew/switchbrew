@@ -158,9 +158,9 @@ Functions exposed to the kernel internally.
 |-
 | 0xC3000006 || [[#Panic]] || W1=panic_color, X2,X3,X4,X5,X6,X7=0 || X0=result
 |-
-| 0xC3000007 || [2.0.0+] ProtectKernelRegion || X1=unk, X2=region_phys_addr, X3=region_size, X4,X5,X6,X7=0 || X0=result
+| 0xC3000007 || [2.0.0+] [[#ProtectKernelRegion]] || X1=carveout_index, X2=region_phys_addr, X3=region_size, X4,X5,X6,X7=0 || X0=result
 |-
-| 0xC3000008 || [2.0.0+] ReadWriteRegister || X1=reg_addr, W2=rw_mask, W3=in_val, X4,X5,X6,X7=0 || X0=result, W1=out_val
+| 0xC3000008 || [2.0.0+] [[#ReadWriteRegister]] || X1=reg_addr, W2=rw_mask, W3=in_val, X4,X5,X6,X7=0 || X0=result, W1=out_val
 |}
 
 === CpuSuspend ===
@@ -186,6 +186,18 @@ The kernel limits '''size''' to 0x38 (for fitting in return registers).
 Issues a system panic.
 
 The kernel always calls this with '''panic_color''' set to 0xF00.
+
+=== ProtectKernelRegion ===
+Configures memory controller carveout regions.
+
+If '''carveout_index''' is 0, '''region_phys_addr''' and '''region_size''' are used to configure '''MC_SECURITY_CARVEOUT4'''.
+If '''carveout_index''' is 1, '''region_phys_addr''' and '''region_size''' are used to configure '''MC_SECURITY_CARVEOUT5'''.
+Any other '''carveout_index''' values are invalid.
+
+The kernel calls this with '''carveout_index''' set to 0, '''region_phys_addr''' set to 0x80060000 and '''region_size''' set to a dynamically calculated size which covers all the kernel and built-in sysmodules' DRAM regions.
+
+=== ReadWriteRegister ===
+Relays [[SVC#svcReadWriteRegister|svcReadWriteRegister]] to the Secure Monitor.
 
 = Errors =
 {| class=wikitable
