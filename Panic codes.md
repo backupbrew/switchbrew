@@ -30,35 +30,41 @@ full byte before writing the final color to the display's MMIO.
 
 ## Panic colors
 
-| Color    | Value                         |
-| -------- | ----------------------------- |
-| 0xFF0000 | Kernel                        |
-| 0xFFFF00 | Secure Monitor                |
-| 0xFFAA00 | Hardware?                     |
-| 0xFF00AA | Bootloader (general errors)   |
-| 0xAAFFFF | Bootloader (wrong bootloader) |
+Different colors are used to represent panic events coming from
+different execution levels within the system.
+
+| Color    | Level                           |
+| -------- | ------------------------------- |
+| 0xFF0000 | Kernel                          |
+| 0xFFFF00 | Secure Monitor (general errors) |
+| 0xFFAA00 | Secure Monitor (deep sleep)     |
+| 0xFF00AA | Bootloader (general errors)     |
+| 0xAAFFFF | Bootloader (wrong bootloader)   |
 
 ## Panic codes
 
-| Value | Description                            |
-| ----- | -------------------------------------- |
-| 0x0   | No information                         |
-| 0x1   | Package2 signature verification failed |
-| 0x2   | Package2 meta verification failed      |
-| 0x3   | Package2 version check failed          |
-| 0x4   | Package2 payload verification failed   |
-| 0x5   | Unknown SMC                            |
-| 0x6   | Unknown Abort                          |
-| 0x7   |                                        |
-| 0x8   |                                        |
-| 0x9   | CPU is already awake                   |
-| 0x10  | Unknown exception                      |
-| 0x20  | Rebooting into SafeMode                |
-| 0x21  | Rebooting for anti-downgrade           |
-| 0x30  | General bootloader error               |
-| 0x31  | Invalid DRAM ID                        |
-| 0x32  | Invalid size                           |
-| 0x33  | Invalid argument                       |
-| 0x34  | Bad GPT                                |
-| 0x35  | Failed to boot SafeMode                |
-| 0x40  | Show error called (kernel panic)       |
+While any combination of panic colors and codes is possible, several
+panic codes are specifically tied to a certain execution level.
+
+| Value | Level          | Description                            |
+| ----- | -------------- | -------------------------------------- |
+| 0x0   | Any            | No information                         |
+| 0x1   | Bootloader     | Package2 signature verification failed |
+| 0x2   | Bootloader     | Package2 meta verification failed      |
+| 0x3   | Bootloader     | Package2 version check failed          |
+| 0x4   | Bootloader     | Package2 payload verification failed   |
+| 0x5   | Secure Monitor | Unknown SMC                            |
+| 0x6   | Secure Monitor | Unknown Abort                          |
+| 0x7   | Secure Monitor |                                        |
+| 0x8   | Secure Monitor |                                        |
+| 0x9   | Secure Monitor | CPU is already awake                   |
+| 0x10  | Any            | Unknown exception                      |
+| 0x20  | Bootloader     | Rebooting into SafeMode                |
+| 0x21  | Bootloader     | Rebooting for anti-downgrade           |
+| 0x30  | Bootloader     | General bootloader error               |
+| 0x31  | Bootloader     | Invalid DRAM ID                        |
+| 0x32  | Bootloader     | Invalid size                           |
+| 0x33  | Bootloader     | Invalid argument                       |
+| 0x34  | Bootloader     | Bad GPT                                |
+| 0x35  | Bootloader     | Failed to boot SafeMode                |
+| 0x40  | Kernel         | Show error called (kernel panic)       |
