@@ -38,10 +38,10 @@ follows.
 | 0x30   | 0x10 | Section 2 CTR                                                                                                                                                |
 | 0x40   | 0x10 | Section 3 CTR                                                                                                                                                |
 | 0x50   | 0x4  | Magic "PK21"                                                                                                                                                 |
-| 0x54   | 0x4  | Unknown                                                                                                                                                      |
-| 0x58   | 0x4  | Unknown                                                                                                                                                      |
+| 0x54   | 0x4  | Base offset                                                                                                                                                  |
+| 0x58   | 0x4  | Always 0                                                                                                                                                     |
 | 0x5C   | 0x2  | Version. HighByte must be \<{maxver} and LowByte must be \>{minver}, where {maxver} and {minver} are constants used by TZ updated with each package1 update. |
-| 0x5E   | 0x2  | ?                                                                                                                                                            |
+| 0x5E   | 0x2  | Padding                                                                                                                                                      |
 | 0x60   | 0x4  | Section 0 size                                                                                                                                               |
 | 0x64   | 0x4  | Section 1 size                                                                                                                                               |
 | 0x68   | 0x4  | Section 2 size                                                                                                                                               |
@@ -127,8 +127,9 @@ expansion.
 
 | System version               | Package1 maxver constant | Package1 minver constant | Package2 version field |
 | ---------------------------- | ------------------------ | ------------------------ | ---------------------- |
-| [2.0.0](2.0.0.md "wikilink") | 0x3                      | 0x4                      |                        |
-| [4.1.0](4.1.0.md "wikilink") | 0x6                      | 0x7                      |                        |
+| [1.0.0](1.0.0.md "wikilink") | 0x2                      | 0x3                      | 0x0104                 |
+| [2.0.0](2.0.0.md "wikilink") | 0x3                      | 0x4                      | 0x0205                 |
+| [4.1.0](4.1.0.md "wikilink") | 0x6                      | 0x7                      | 0x0508                 |
 
 # Public Keys
 

@@ -63,11 +63,11 @@ When decrypted, package2's header is as follows.
 |-
 | 0x54
 | 0x4
-| Unknown
+| Base offset
 |-
 | 0x58
 | 0x4
-| Unknown
+| Always 0
 |-
 | 0x5C
 | 0x2
@@ -75,7 +75,7 @@ When decrypted, package2's header is as follows.
 |-
 | 0x5E
 | 0x2
-| ?
+| Padding
 |-
 | 0x60
 | 0x4
@@ -242,14 +242,20 @@ This section is not present (CTR and SHA-256 hash in package2's header are NULL)
 ! Package1 minver constant
 ! Package2 version field
 |-
+| [[1.0.0]]
+| 0x2
+| 0x3
+| 0x0104
+|-
 | [[2.0.0]]
 | 0x3
 | 0x4
+| 0x0205
 |-
 | [[4.1.0]]
 | 0x6
 | 0x7
-| 
+| 0x0508
 |}
 
 = Public Keys =
