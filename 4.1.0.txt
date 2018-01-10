@@ -20,3 +20,5 @@ Kernel wasn't updated. The only updated firm-sysmodule was FS, the rest were onl
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=12-04-17_07-05-12&sys=hac]
+
+{{NavboxVersions}}
