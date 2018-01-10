@@ -49,10 +49,10 @@ panic codes are specifically tied to a certain execution level.
 | Value | Level          | Description                            |
 | ----- | -------------- | -------------------------------------- |
 | 0x0   | Any            | No information                         |
-| 0x1   | Bootloader     | Package2 signature verification failed |
-| 0x2   | Bootloader     | Package2 meta verification failed      |
-| 0x3   | Bootloader     | Package2 version check failed          |
-| 0x4   | Bootloader     | Package2 payload verification failed   |
+| 0x1   | Kernel         | Package2 signature verification failed |
+| 0x2   | Kernel         | Package2 meta verification failed      |
+| 0x3   | Kernel         | Package2 version check failed          |
+| 0x4   | Kernel         | Package2 payload verification failed   |
 | 0x5   | Secure Monitor | Unknown SMC                            |
 | 0x6   | Secure Monitor | Unknown Abort                          |
 | 0x7   | Secure Monitor |                                        |
