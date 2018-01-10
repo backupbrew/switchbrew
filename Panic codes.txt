@@ -59,9 +59,9 @@ While any combination of panic colors and codes is possible, several panic codes
 |-
 | 0x6 || Secure Monitor || Unknown Abort
 |-
-| 0x7 || Secure Monitor ||
+| 0x7 || Secure Monitor || Invalid CPU context
 |-
-| 0x8 || Secure Monitor ||
+| 0x8 || Secure Monitor || Invalid SE state
 |-
 | 0x9 || Secure Monitor || CPU is already awake
 |-

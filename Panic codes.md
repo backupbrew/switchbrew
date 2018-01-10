@@ -89,8 +89,8 @@ panic codes are specifically tied to a certain execution level.
 | 0x4   | Kernel         | Package2 payload verification failed   |
 | 0x5   | Secure Monitor | Unknown SMC                            |
 | 0x6   | Secure Monitor | Unknown Abort                          |
-| 0x7   | Secure Monitor |                                        |
-| 0x8   | Secure Monitor |                                        |
+| 0x7   | Secure Monitor | Invalid CPU context                    |
+| 0x8   | Secure Monitor | Invalid SE state                       |
 | 0x9   | Secure Monitor | CPU is already awake                   |
 | 0x10  | Any            | Unknown exception                      |
 | 0x20  | Bootloader     | Rebooting into SafeMode                |
