@@ -10,3 +10,4 @@
 | [3.0.2](3.0.2.md "wikilink") | September 5, 2017      |                     |
 | [4.0.0](4.0.0.md "wikilink") | October 18, 2017       | 2017-09-21 17:26:29 |
 | [4.0.1](4.0.1.md "wikilink") | October 25, 2017       |                     |
+| [4.1.0](4.1.0.md "wikilink") | December 4, 2017       |                     |
