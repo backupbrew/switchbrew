@@ -10,33 +10,33 @@ If a panic did occur, the Switch will paint the main screen with a solid color a
 {| class=wikitable
 ! Bits || Field
 |-
-| 31-28 || Red value
+| 31-28 || Blue value
 |-
 | 27-24 || Green value
 |-
-| 23-20 || Blue value
+| 23-20 || Red value
 |-
 | 19-0 || Description
 |}
 
-The red, green and blue values are nibbles which represent the color that will fill the panic screen.
+The blue, green and red values are nibbles which represent the color that will fill the panic screen.
 Each nibble is duplicated to form a full byte before writing the final color to the display's MMIO.
 
 == Panic colors ==
 Different colors are used to represent panic events coming from different execution levels within the system.
 
 {| class=wikitable
-! Color || Level
+! Color || Value || Level
 |-
-| 0xFF0000 || Kernel
+| <div style="width: 60px; height: 20px; background:#0000FF;"></div> || 0x0000FF || Kernel
 |-
-| 0xFFFF00 || Secure Monitor (general errors)
+| <div style="width: 60px; height: 20px; background:#00FFFF;"></div> || 0x00FFFF || Secure Monitor (general errors)
 |-
-| 0xFFAA00 || Secure Monitor (deep sleep)
+| <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || 0x00AAFF || Secure Monitor (deep sleep)
 |-
-| 0xFF00AA || Bootloader (general errors)
+| <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || 0xAA00FF || Bootloader (general errors)
 |-
-| 0xAAFFFF || Bootloader (wrong bootloader)
+| <div style="width: 60px; height: 20px; background:#FFFFAA;"></div> || 0xFFFFAA || Bootloader (wrong bootloader)
 |}
 
 == Panic codes ==

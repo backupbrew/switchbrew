@@ -19,12 +19,12 @@ color and halt execution.
 
 | Bits  | Field       |
 | ----- | ----------- |
-| 31-28 | Red value   |
+| 31-28 | Blue value  |
 | 27-24 | Green value |
-| 23-20 | Blue value  |
+| 23-20 | Red value   |
 | 19-0  | Description |
 
-The red, green and blue values are nibbles which represent the color
+The blue, green and red values are nibbles which represent the color
 that will fill the panic screen. Each nibble is duplicated to form a
 full byte before writing the final color to the display's MMIO.
 
@@ -33,13 +33,47 @@ full byte before writing the final color to the display's MMIO.
 Different colors are used to represent panic events coming from
 different execution levels within the system.
 
-| Color    | Level                           |
-| -------- | ------------------------------- |
-| 0xFF0000 | Kernel                          |
-| 0xFFFF00 | Secure Monitor (general errors) |
-| 0xFFAA00 | Secure Monitor (deep sleep)     |
-| 0xFF00AA | Bootloader (general errors)     |
-| 0xAAFFFF | Bootloader (wrong bootloader)   |
+<table>
+<thead>
+<tr class="header">
+<th><p>Color</p></th>
+<th><p>Value</p></th>
+<th><p>Level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div style="width: 60px; height: 20px; background:#0000FF;">
+</div></td>
+<td><p>0x0000FF</p></td>
+<td><p>Kernel</p></td>
+</tr>
+<tr class="even">
+<td><div style="width: 60px; height: 20px; background:#00FFFF;">
+</div></td>
+<td><p>0x00FFFF</p></td>
+<td><p>Secure Monitor (general errors)</p></td>
+</tr>
+<tr class="odd">
+<td><div style="width: 60px; height: 20px; background:#00AAFF;">
+</div></td>
+<td><p>0x00AAFF</p></td>
+<td><p>Secure Monitor (deep sleep)</p></td>
+</tr>
+<tr class="even">
+<td><div style="width: 60px; height: 20px; background:#AA00FF;">
+</div></td>
+<td><p>0xAA00FF</p></td>
+<td><p>Bootloader (general errors)</p></td>
+</tr>
+<tr class="odd">
+<td><div style="width: 60px; height: 20px; background:#FFFFAA;">
+</div></td>
+<td><p>0xFFFFAA</p></td>
+<td><p>Bootloader (wrong bootloader)</p></td>
+</tr>
+</tbody>
+</table>
 
 ## Panic codes
 
