@@ -190,31 +190,6 @@ your own content for use with online-WebApplet.
 As of 12/01/2017 this still works on the latest update for Tetris
 (version 1.1.2).
 
-#### WebApplet launch with Pinball FX3
-
-The free game Pinball FX3 can also be used to launche the
-online-WebApplet. I only tested it with the (Europe/German version yet).
-
-  - First, launche the game and press A to go to the Main-menu.
-
-Then open the privacy policy:
-
-Option 1 if you havent connectet your Nintendo account with your Zen
-account:
-
-  - Press DPad-right to get to "Matchup" -\> Then press A -\> Press Y to
-    see the privacy policy.
-
-Option 2:
-
-  - Press DPad-right 4 times until you reached options -\> A -\> Press 2
-    times L -\> Press DPad-down 2 times -\> Press A
-
-This will launch the online-WebApplet with the plain-http
-"http://blog.zenstudios.com/privacy\_policy\_console\_de-de.html"(de-de
-cause german version). With your own DNS-server you can now load your
-own content.(Same as Tetris)
-
 ### Offline Applet
 
 Minus TIDs, the [NPDM](NPDM.md "wikilink") is the same as
