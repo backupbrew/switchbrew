@@ -499,6 +499,9 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 |-
 | 2168-0003
 | Userland PC address not aligned to 4 bytes
+|-
+| 2168-0008
+| Can occur when attempting to call an svc outside the whitelist
 |}
 
 = Support Errors =
