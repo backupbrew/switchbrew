@@ -753,7 +753,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.2.md" title="wikilink">v201457684</a> (3.0.2.20)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="4.1.0.md" title="wikilink">v269484082</a> (4.1.0.50)</p></td>
-<td><p>Firmware Package B: SafeMode Firmware.</p></td>
+<td><p>Firmware Package B: SafeMode Firmware. While all data under RomFS differs from Normal, the only actual difference code-wise is that the FS and boot sysmodules .text differ.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000081B</p></td>
