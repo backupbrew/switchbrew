@@ -205,6 +205,6 @@ selecting which Open\*Proxy command to use.
 This flag means that AM services is broken, and must not be used.
 
   - **Key:** 8
-  - **IsMandatory:** False
+  - **IsMandatory:** Loader-defined.
   - **Value\[0\]:** AppletResourceUserId
   - **Value\[1\]:** Ignored.
