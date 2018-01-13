@@ -87,6 +87,10 @@ loader), use `result_code=346 | ((200 + key) << 9);`.
 
   - 7: [\#AppletType](#AppletType "wikilink") \[MANDATORY\]
 
+<!-- end list -->
+
+  - 8: [\#AppletWorkaround](#AppletWorkaround "wikilink")
+
 #### EndOfList
 
 EndOfList is the final entry in the LoaderConfig.
@@ -195,3 +199,12 @@ selecting which Open\*Proxy command to use.
 `  LoaderConfigAppletType_OverlayApplet = 3,`  
 `  LoaderConfigAppletType_SystemApplication = 4,`  
 `};`
+
+#### AppletWorkaround
+
+This flag means that AM services is broken, and must not be used.
+
+  - **Key:** 8
+  - **IsMandatory:** True
+  - **Value\[0\]:** AppletResourceUserId
+  - **Value\[1\]:** Ignored.
