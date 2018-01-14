@@ -546,6 +546,10 @@ s8 type: 0 = directory, 1 = file.
 
 # ISaveDataInfoReader
 
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+
 # IDeviceOperator
 
 | Cmd | Name                                                                           |

@@ -610,6 +610,12 @@ s8 type: 0 = directory, 1 = file.
 |}
 
 = ISaveDataInfoReader =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|}
 
 = IDeviceOperator =
 {| class="wikitable" border="1"
