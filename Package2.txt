@@ -202,7 +202,7 @@ Kernel internal process?
 |-
 | 0x20
 | [[#SectionHeader]][6]
-| Sections: .text, .rodata, .data, .bss and three reserved (ignored) sections.
+| Sections: .text, .rodata, .data, .bss and two reserved (ignored) sections.
 |-
 | 0x80
 | u64[0x20]
