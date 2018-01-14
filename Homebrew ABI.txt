@@ -32,23 +32,24 @@ Each entry is key-value pair:
  };
 
  enum LoaderConfigFlags {
-   IsMandatory = BIT(0),
+   IsRecognitionMandatory = BIT(0),
  };
 
 === Loader Config Keys ===
-A loader key can be mandatory or not mandatory.
+A loader key can be marked as recognition-mandatory or not recognition-mandatory in its <code>Flags</code> field.
+The presence-mandatory field is part of the specification and does not go in the <code>Flags</code> field, but any complying loader must pass all fields specified to be presence-mandatory.
 
-If an (at the time) mandatory unknown key is encountered, the program should jump to [[#LoaderReturnAddr]] with <code>result_code=346 | ((100 + key) << 9);</code>.  
+If a key is marked as recognition-mandatory and is not recognized by the application, the program should jump to [[#LoaderReturnAddr]] with <code>result_code=346 | ((100 + key) << 9);</code>, as the default behaviour may be unsafe.
 
-If a key that is mandatory is not found (for example with an outdated loader), use <code>result_code=346 | ((200 + key) << 9);</code>.
+If a key that is presence-mandatory is not found (for example with an outdated loader), use <code>result_code=346 | ((200 + key) << 9);</code>.
 
-* 0: [[#EndOfList]] [MANDATORY]
+* 0: [[#EndOfList]] [RECOGNITION-MANDATORY] [PRESENCE-MANDATORY]
 
-* 1: [[#MainThreadHandle]] [MANDATORY]
+* 1: [[#MainThreadHandle]] [RECOGNITION-MANDATORY] [PRESENCE-MANDATORY in some cases]
 
-* 2: [[#LoaderReturnAddr]] [MANDATORY]
+* 2: [[#LoaderReturnAddr]] [RECOGNITION-MANDATORY]
 
-* 3: [[#OverrideHeap]]
+* 3: [[#OverrideHeap]] [RECOGNITION-MANDATORY]
 
 * 4: [[#OverrideService]]
 
@@ -56,15 +57,16 @@ If a key that is mandatory is not found (for example with an outdated loader), u
 
 * 6: [[#SyscallAvailableHint]]
 
-* 7: [[#AppletType]] [MANDATORY]
+* 7: [[#AppletType]] [PRESENCE-MANDATORY in some cases]
 
-* 8: [[#AppletWorkaround]]
+* 8: [[#AppletWorkaround]] [RECOGNITION-MANDATORY]
 
 ==== EndOfList ====
 EndOfList is the final entry in the LoaderConfig.
 
 * '''Key:''' 0
-* '''IsMandatory:''' True
+* '''IsRecognitionMandatory:''' True, because not recognizing this tag would send the loader off the end of the list.
+* '''IsPresenceMandatory:''' True, because the list must be terminated.
 * '''Value[0]:''' Ignored.
 * '''Value[1]:''' Ignored.
 
@@ -72,15 +74,18 @@ EndOfList is the final entry in the LoaderConfig.
 This is the handle to the thread that is executing the entrypoint. Required for mutex to function.
 
 * '''Key:''' 1
-* '''IsMandatory:''' True
+* '''IsRecognitionMandatory:''' True.
+* '''IsPresenceMandatory:''' True if entry function was called with INVALID_HANDLE.
 * '''Value[0]:''' Handle to the main thread.
 * '''Value[1]:''' Ignored.
+* '''DefaultBehavior:''' Use main thread handle from entry function arguments.
 
 ==== LoaderReturnAddr ====
 When the homebrew has finished executing, it shall jump to this address to return to the homebrew menu.
 
 * '''Key:''' 2
-* '''IsMandatory:''' True
+* '''IsRecognitionMandatory:''' True, because the default behaviour may be unsafe if this key is not handled correctly.
+* '''IsPresenceMandatory:''' False.
 * '''Value[0]:''' Function pointer with type <code>void __noreturn (*)(int result_code);</code>
 * '''Value[1]:''' Ignored.
 * '''DefaultBehavior:''' Exits process using svcExitProcess.
@@ -89,7 +94,8 @@ When the homebrew has finished executing, it shall jump to this address to retur
 If the NRO loader has reserved some space in the heap for itself, the application must not manipulate the heap.
 
 * '''Key:''' 3
-* '''IsMandatory:''' Loader-defined.
+* '''IsRecognitionMandatory:''' True, because the default behaviour may be unsafe if this key is not handled correctly.
+* '''IsPresenceMandatory:''' False.
 * '''Value[0]:''' Base address of heap. Must be MemoryType 4, 5, or 9 with all reference counts being zero.
 * '''Value[1]:''' Size of heap.
 * '''DefaultBehavior:''' Allocates heap using svcSetHeapSize instead.
@@ -104,7 +110,8 @@ Note: For services that authenticate with pid, the app should not attempt re-aut
 Note: There needs be special handling for the file system service. If the original fsp-srv handle doesn't allow MountSdcard, it shall fallback to the stolen one, etc etc.
 
 * '''Key:''' 4
-* '''IsMandatory:''' Loader-defined.
+* '''IsRecognitionMandatory:''' False.
+* '''IsPresenceMandatory:''' False.
 * '''Value[0]:''' Name of service, same format as for sm.
 * '''Value[1]:''' Service handle.
 * '''DefaultBehavior:''' Fetches service from "sm:" named port.
@@ -113,7 +120,8 @@ Note: There needs be special handling for the file system service. If the origin
 The NRO loader should be able to send argv.
 
 * '''Key:''' 5
-* '''IsMandatory:''' False
+* '''IsRecognitionMandatory:''' False.
+* '''IsPresenceMandatory:''' False.
 * '''Value[0]:''' Argc.
 * '''Value[1]:''' Argv string pointer.
 * '''DefaultBehavior:''' Setting (argc == 1, argv[0] == "unknown", argv[1] == NULL), or argv parsed in NSO0 fashion.
@@ -124,6 +132,8 @@ Homebrew doesn't know if any privileged syscalls are available.
 This entry allows loader to give hints about having access to rare syscalls (such as JIT).
 
 * '''Key:''' 6
+* '''IsRecognitionMandatory:''' False.
+* '''IsPresenceMandatory:''' False.
 * '''IsMandatory:''' False
 * '''Value[0]:''' Each byte is a rare syscall number that the process has access to. <code>0xFF</code> means byte should be ignored.
 * '''Value[1]:''' Same as above.
@@ -133,7 +143,8 @@ This entry allows loader to give hints about having access to rare syscalls (suc
 Specifies the [[AM_services|AM]] AppletType, used for selecting which Open*Proxy command to use.
 
 * '''Key:''' 7
-* '''IsMandatory:''' True
+* '''IsRecognitionMandatory:''' False.
+* '''IsPresenceMandatory:''' Application-defined. Depends on whether the application is using any applet services or not.
 * '''Value[0]:''' AppletType
 * '''Value[1]:''' Ignored.
 
@@ -149,6 +160,7 @@ Specifies the [[AM_services|AM]] AppletType, used for selecting which Open*Proxy
 This flag means that AM services is broken, and must not be used.
 
 * '''Key:''' 8
-* '''IsMandatory:''' Loader-defined.
+* '''IsRecognitionMandatory:''' True, because the default behaviour (using applet services) is unsafe if this tag is passed.
+* '''IsPresenceMandatory:''' False.
 * '''Value[0]:''' AppletResourceUserId
 * '''Value[1]:''' Ignored.
