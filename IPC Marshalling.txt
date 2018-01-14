@@ -18,7 +18,7 @@ This is an array of u32's, usually located in [[Thread Local Storage]].
 |-
 | 1 || 13-10 || Flags for buf C descriptor.
 |-
-| 1 || 30-20 || Raw data section offset, 0 means default. Offset and offset+size must be in bounds and not overlap with other fields.
+| 1 || 30-20 || ?
 |-
 | 1 || 31 || Enable handle descriptor.
 |-
