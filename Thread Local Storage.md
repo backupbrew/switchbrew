@@ -65,7 +65,7 @@ storage](Thread%20Local%20Storage#Resource%20manager%20storage.md##Resource_mana
 | Offset | Size  | Description                                                                                                   |
 | ------ | ----- | ------------------------------------------------------------------------------------------------------------- |
 | 0x00   | 0x08  | Pointer to [thread context](Thread%20Local%20Storage#Thread%20context.md##Thread_context "wikilink") + 0x1C8. |
-| 0x08   | 0x08  | Unknown.                                                                                                      |
+| 0x08   | 0x08  | Pointer to [thread context](Thread%20Local%20Storage#Thread%20context.md##Thread_context "wikilink")          |
 | 0x10   | 0x08  | Pointer to [thread context](Thread%20Local%20Storage#Thread%20context.md##Thread_context "wikilink") + 0x10.  |
 | 0x18   | 0x08  | Pointer to [thread context](Thread%20Local%20Storage#Thread%20context.md##Thread_context "wikilink") + 0x10.  |
 | 0x20   | 0x20  | Empty.                                                                                                        |
@@ -74,16 +74,16 @@ storage](Thread%20Local%20Storage#Resource%20manager%20storage.md##Resource_mana
 | 0x48   | 0x08  | Thread stack base address.                                                                                    |
 | 0x50   | 0x08  | Thread stack base address mirror.                                                                             |
 | 0x58   | 0x08  | Thread stack size.                                                                                            |
-| 0x60   | 0x08  | Unknown.                                                                                                      |
-| 0x68   | 0x08  | Unknown.                                                                                                      |
+| 0x60   | 0x08  | Thread stub pointer.                                                                                          |
+| 0x68   | 0x08  | Thread ID.                                                                                                    |
 | 0x70   | 0x08  | Always 0?                                                                                                     |
 | 0x78   | 0x08  | Always 0?                                                                                                     |
 | 0x80   | 0x08  | Always 0?                                                                                                     |
 | 0x88   | 0x100 | Initially empty (contains unknown pointers).                                                                  |
 | 0x188  | 0x20  | Thread name.                                                                                                  |
 | 0x1A8  | 0x08  | Thread name address.                                                                                          |
-| 0x1B0  | 0x04  | Always 0.                                                                                                     |
-| 0x1B4  | 0x04  | Always 0.                                                                                                     |
+| 0x1B0  | 0x04  | Critical Section.                                                                                             |
+| 0x1B4  | 0x04  | Conditional Variable.                                                                                         |
 | 0x1B8  | 0x04  | Thread handle.                                                                                                |
 | 0x1BC  | 0x04  | Always 0.                                                                                                     |
 | 0x1C0  | 0x08  | Thread global mutex.                                                                                          |
