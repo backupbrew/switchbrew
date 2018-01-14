@@ -1010,7 +1010,8 @@ takes a process handle.
 </div>
 
 Takes a process handle, and maps normal heap in that process as
-executable code in that process. Used when loading NROs.
+executable code in that process. Used when loading NROs. This does not
+support using the current-process handle alias.
 
 ## svcUnmapProcessCodeMemory
 
