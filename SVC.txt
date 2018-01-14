@@ -741,7 +741,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 15 || 0 || [2.0.0+] NewMapRegionSize
 |-
-| Process || 16 || 0 || [3.0.0+] Some size in bytes.
+| Process || 16 || 0 || [3.0.0+] IsVirtualAddressMemoryEnabled
 |-
 | Process || 17 || 0 || [3.0.0+] Some size in bytes.
 |-

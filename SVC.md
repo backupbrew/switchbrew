@@ -560,7 +560,7 @@ it will return 0.
 | Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize                                                                                 |
 | Process     | 14         | 0                     | \[2.0.0+\] NewMapRegionBaseAddr                                                                             |
 | Process     | 15         | 0                     | \[2.0.0+\] NewMapRegionSize                                                                                 |
-| Process     | 16         | 0                     | \[3.0.0+\] Some size in bytes.                                                                              |
+| Process     | 16         | 0                     | \[3.0.0+\] IsVirtualAddressMemoryEnabled                                                                    |
 | Process     | 17         | 0                     | \[3.0.0+\] Some size in bytes.                                                                              |
 | Process     | 18         | 0                     | \[3.0.0+\] TitleId                                                                                          |
 | Zero        | 19         | 0                     | \[4.0.0+\] PrivilegedProcessId\_LowerBound                                                                  |
