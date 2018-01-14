@@ -583,11 +583,11 @@ s8 type: 0 = directory, 1 = file.
 | 210 | SetVerifyWriteEnalbleFlag                                                      |
 | 211 | GetGameCardImageHash                                                           |
 | 212 | \[2.0.0+\] GetGameCardErrorInfo                                                |
-| 213 | \[2.0.0+\]                                                                     |
-| 214 | \[2.0.0+\] GetGameCardCid                                                      |
-| 215 | \[2.0.0+\]                                                                     |
-| 216 | \[2.0.0+\]                                                                     |
-| 217 | \[2.1.0+\] Returns 0x40-bytes of output data.                                  |
+| 213 | \[2.0.0+\] EraseAndWriteParamDirectly                                          |
+| 214 | \[2.0.0+\] ReadParamDirectly                                                   |
+| 215 | \[2.0.0+\] ForceEraseGameCard                                                  |
+| 216 | \[2.0.0+\] GetGameCardErrorInfo                                                |
+| 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                          |
 | 218 | \[3.0.1+\]                                                                     |
 | 300 | SetSpeedEmulationMode                                                          |
 | 301 | GetSpeedEmulationMode                                                          |
