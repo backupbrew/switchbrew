@@ -102,7 +102,7 @@
 | 0x70 | svcCreatePort                                                                      | W2=max\_sessions, W3=unk\_bool, X4=name\_ptr                                                                   | W0=result, W1=clientport\_handle, W2=serverport\_handle  |
 | 0x71 | svcManageNamedPort                                                                 | X1=name\_ptr, W2=max\_sessions                                                                                 | W0=result, W1=serverport\_handle                         |
 | 0x72 | svcConnectToPort                                                                   | W1=clientport\_handle                                                                                          | W0=result, W1=session\_handle                            |
-| 0x73 | svcSetProcessMemoryPermission                                                      | X0=addr, X1=size, W2=perm                                                                                      | W0=result                                                |
+| 0x73 | [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink")       | W0=process\_handle, X1=addr, X2=size, W3=perm                                                                  | W0=result                                                |
 | 0x74 | [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink")                           | X0=srcaddr, W1=process\_handle, X2=dstaddr, X3=size                                                            | W0=result                                                |
 | 0x75 | [\#svcUnmapProcessMemory](#svcUnmapProcessMemory "wikilink")                       | W0=process\_handle, X1=dstaddr, X2=srcaddr, X3=size                                                            | W0=result                                                |
 | 0x76 | [\#svcQueryProcessMemory](#svcQueryProcessMemory "wikilink")                       | X0=meminfo\_ptr, W2=process\_handle, X3=addr                                                                   | W0=result, W1=pageinfo                                   |
@@ -922,6 +922,26 @@ bit set instead.
 **Description:** Unmaps an attached device address space from an
 userspace address.
 
+## svcSetProcessMemoryPermission
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name          |
+| -------- | ------------------------------ | ------------- |
+| (In) W0  | Handle<Process>                | ProcessHandle |
+| (In) X1  | u64                            | Addr          |
+| (In) X2  | u64                            | Size          |
+| (In) W3  | void\*                         | Perm          |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
+
+</div>
+
+This sets the memory permissions for the specified memory with the
+supplied process handle.
+
+This throws an error(0xD801) when the input perm is \>0x5, hence -WX and
+RWX are not allowed.
+
 ## svcMapProcessMemory
 
 <div style="display: inline-block;">
@@ -929,7 +949,7 @@ userspace address.
 | Argument | Type                           | Name          |
 | -------- | ------------------------------ | ------------- |
 | (In) X0  | u64                            | SrcAddr       |
-| (In) W1  | u64                            | ProcessHandle |
+| (In) W1  | Handle<Process>                | ProcessHandle |
 | (In) X2  | void\*                         | DstAddr       |
 | (In) X3  | u64                            | Size          |
 | (Out) W0 | [\#Result](#Result "wikilink") | Ret           |

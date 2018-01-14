@@ -200,7 +200,7 @@ __NOTOC__
 |-
 | 0x72 || svcConnectToPort || W1=clientport_handle || W0=result, W1=session_handle
 |-
-| 0x73 || svcSetProcessMemoryPermission || X0=addr, X1=size, W2=perm || W0=result
+| 0x73 || [[#svcSetProcessMemoryPermission]] || W0=process_handle, X1=addr, X2=size, W3=perm || W0=result
 |-
 | 0x74 || [[#svcMapProcessMemory]] || X0=srcaddr, W1=process_handle, X2=dstaddr, X3=size || W0=result
 |-
@@ -1118,6 +1118,29 @@ Same as [[#svcMapDeviceAddressSpaceByForce]], but the userspace destination addr
 
 '''Description:''' Unmaps an attached device address space from an userspace address.
 
+== svcSetProcessMemoryPermission ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<Process> || ProcessHandle
+|-
+| (In) X1 || u64 || Addr
+|-
+| (In) X2 || u64 || Size
+|-
+| (In) W3 || void* || Perm
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+This sets the memory permissions for the specified memory with the supplied process handle.
+
+This throws an error(0xD801) when the input perm is >0x5, hence -WX and RWX are not allowed.
+
 == svcMapProcessMemory ==
 
 <div style="display: inline-block;">
@@ -1127,7 +1150,7 @@ Same as [[#svcMapDeviceAddressSpaceByForce]], but the userspace destination addr
 |-
 | (In) X0 || u64 || SrcAddr
 |-
-| (In) W1 || u64 || ProcessHandle
+| (In) W1 || Handle<Process> || ProcessHandle
 |-
 | (In) X2 || void* || DstAddr
 |-
