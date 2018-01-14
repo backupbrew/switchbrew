@@ -628,7 +628,7 @@ s8 type: 0 = directory, 1 = file.
 |-
 | 5 || [2.0.0+] GetAndClearSdCardErrorInfo
 |-
-| 6 || [2.0.0+]
+| 6 || [2.0.0->3.0.0]
 |-
 | 100 || GetMmcCid
 |-
@@ -683,6 +683,8 @@ s8 type: 0 = directory, 1 = file.
 | 216 || [2.0.0+]
 |-
 | 217 || [2.1.0+] Returns 0x40-bytes of output data.
+|-
+| 218 || [3.0.1+]
 |-
 | 300 || SetSpeedEmulationMode
 |-
