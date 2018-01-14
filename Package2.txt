@@ -156,7 +156,7 @@ When decrypted, this section contains the built-in system modules encapsulated i
 |-
 | 0xC
 | u32
-| Zero
+| Padding (zero)
 |}
 
 ==== KIP1 ====
@@ -182,21 +182,29 @@ Kernel internal process?
 |-
 | 0x18
 | u32
-| 
+| KProcess+0x280
 |-
 | 0x1C
-| u32
-| Flags / etc. Byte3 bit0-2: compression-enable for each section, when set.
+| u8
+| Main thread priority
+|-
+| 0x1D
+| u8
+| Default CPU core
+|-
+| 0x1E
+| u8
+| Reserved (unused)
+|-
+| 0x1F
+| u8
+| Flags: bit0-2: compression-enable for each section, when set. Bit3: Is64Bit. Bit4: IsAddrSpace36Bit. Bit5-7: reserved (unused)
 |-
 | 0x20
-| [[#SectionHeader]][3]
-| Sections
+| [[#SectionHeader]][6]
+| Sections: .text, .rodata, .data, .bss and three reserved (ignored) sections.
 |-
-| 0x50
-| char[0x20]
-| Padding
-|-
-| 0x70
+| 0x80
 | u64[0x20]
 | KernelCaps
 |}
@@ -222,8 +230,10 @@ Kernel internal process?
 |-
 | 0xC
 | u32
-| 
+| Attribute: the size of the main thread's stack for .rodata, reserved otherwise.
 |}
+
+Compressed size can be 0 or lower than exepected, this is the case for BSS for example.
 
 ===== Compression =====
 The compression used here is BLZ, with a modified footer since 3ds. The footer is now 0xC bytes instead of 0x8, and has the form u32 compressed_data_len; u32 initial_index; u32 additional_len_when_uncompressed;

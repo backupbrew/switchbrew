@@ -77,32 +77,37 @@ encapsulated in a custom format.
 | 0x0    | u32  | Magic "INI1"    |
 | 0x4    | u32  | Size            |
 | 0x8    | u32  | NumberProcesses |
-| 0xC    | u32  | Zero            |
+| 0xC    | u32  | Padding (zero)  |
 
 #### KIP1
 
 Kernel internal
 process?
 
-| Offset | Type                                              | Description                                                               |
-| ------ | ------------------------------------------------- | ------------------------------------------------------------------------- |
-| 0x0    | u32                                               | Magic "KIP1"                                                              |
-| 0x4    | char\[12\]                                        | Name                                                                      |
-| 0x10   | u64                                               | TitleId                                                                   |
-| 0x18   | u32                                               |                                                                           |
-| 0x1C   | u32                                               | Flags / etc. Byte3 bit0-2: compression-enable for each section, when set. |
-| 0x20   | [\#SectionHeader](#SectionHeader "wikilink")\[3\] | Sections                                                                  |
-| 0x50   | char\[0x20\]                                      | Padding                                                                   |
-| 0x70   | u64\[0x20\]                                       | KernelCaps                                                                |
+| Offset | Type                                              | Description                                                                                                                    |
+| ------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | u32                                               | Magic "KIP1"                                                                                                                   |
+| 0x4    | char\[12\]                                        | Name                                                                                                                           |
+| 0x10   | u64                                               | TitleId                                                                                                                        |
+| 0x18   | u32                                               | KProcess+0x280                                                                                                                 |
+| 0x1C   | u8                                                | Main thread priority                                                                                                           |
+| 0x1D   | u8                                                | Default CPU core                                                                                                               |
+| 0x1E   | u8                                                | Reserved (unused)                                                                                                              |
+| 0x1F   | u8                                                | Flags: bit0-2: compression-enable for each section, when set. Bit3: Is64Bit. Bit4: IsAddrSpace36Bit. Bit5-7: reserved (unused) |
+| 0x20   | [\#SectionHeader](#SectionHeader "wikilink")\[6\] | Sections: .text, .rodata, .data, .bss and three reserved (ignored) sections.                                                   |
+| 0x80   | u64\[0x20\]                                       | KernelCaps                                                                                                                     |
 
 ##### SectionHeader
 
-| Offset | Type | Description      |
-| ------ | ---- | ---------------- |
-| 0x0    | u32  | OutOffset        |
-| 0x4    | u32  | DecompressedSize |
-| 0x8    | u32  | CompressedSize   |
-| 0xC    | u32  |                  |
+| Offset | Type | Description                                                                     |
+| ------ | ---- | ------------------------------------------------------------------------------- |
+| 0x0    | u32  | OutOffset                                                                       |
+| 0x4    | u32  | DecompressedSize                                                                |
+| 0x8    | u32  | CompressedSize                                                                  |
+| 0xC    | u32  | Attribute: the size of the main thread's stack for .rodata, reserved otherwise. |
+
+Compressed size can be 0 or lower than exepected, this is the case for
+BSS for example.
 
 ##### Compression
 
