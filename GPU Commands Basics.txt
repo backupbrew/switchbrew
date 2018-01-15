@@ -149,8 +149,8 @@ Note: This is a observation on how the game Puyo Puyo Tetris sends textured squa
 
 # VERTEX_ATTRIB_FORMAT (0-15) are set (only the first 3 are really used, the rest are set float, with Size = 1 and offset at 0).
 # VERTEX_ARRAY_FETCH (0) is set with the lower 12 bits set to 0x1c (Stride) and bit 12 to 1 (Enabled).
-# VERTEX_ARRAY_START_HIGH/LOW are set to the GPU Virtual Address where the Vertex Data is located.
-# VERTEX_ARRAY_LIMIT_HIGH/LOW are set to the GPU Virtual Address where the Vertex Data is located, plus the Vertex Data size in bytes minus 1.
+# VERTEX_ARRAY_START_HIGH/LOW (0) are set to the GPU Virtual Address where the Vertex Data is located.
+# VERTEX_ARRAY_LIMIT_HIGH/LOW (0) are set to the GPU Virtual Address where the Vertex Data is located, plus the Vertex Data size in bytes minus 1.
 # VERTEX_BEGIN_GL is used with the primitive type set to TRIANGLE_STRIP.
 # VERTEX_BUFFER_FIRST with value 0 (indicating the index of the first primitive to render?).
 # VERTEX_BUFFER_COUNT is set to 4, because the Vertex Buffer with the square has 4 vertices.

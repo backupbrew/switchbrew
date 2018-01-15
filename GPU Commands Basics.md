@@ -153,11 +153,11 @@ textured squares to the GPU.
     used, the rest are set float, with Size = 1 and offset at 0).
 2.  VERTEX\_ARRAY\_FETCH (0) is set with the lower 12 bits set to 0x1c
     (Stride) and bit 12 to 1 (Enabled).
-3.  VERTEX\_ARRAY\_START\_HIGH/LOW are set to the GPU Virtual Address
-    where the Vertex Data is located.
-4.  VERTEX\_ARRAY\_LIMIT\_HIGH/LOW are set to the GPU Virtual Address
-    where the Vertex Data is located, plus the Vertex Data size in bytes
-    minus 1.
+3.  VERTEX\_ARRAY\_START\_HIGH/LOW (0) are set to the GPU Virtual
+    Address where the Vertex Data is located.
+4.  VERTEX\_ARRAY\_LIMIT\_HIGH/LOW (0) are set to the GPU Virtual
+    Address where the Vertex Data is located, plus the Vertex Data size
+    in bytes minus 1.
 5.  VERTEX\_BEGIN\_GL is used with the primitive type set to
     TRIANGLE\_STRIP.
 6.  VERTEX\_BUFFER\_FIRST with value 0 (indicating the index of the
