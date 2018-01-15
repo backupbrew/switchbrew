@@ -213,8 +213,9 @@ syscalls (such as JIT).
   - **Key:** 6
   - **IsRecognitionMandatory:** False.
   - **IsPresenceMandatory:** False.
-  - **Value\[0-1\]:** 128bit mask for the entire SVC range, bit set =
-    SVC accessible.
+  - **Value\[0\]:** 64-bit mask for the 0-0x3F SVC range. n:th bit set
+    means SVC is accessible.
+  - **Value\[1\]:** 64-bit mask for the 0x40-0x7F SVC range.
   - **DefaultBehavior:** If NSO0, assume kernelhax thus all rare
     syscalls are allowed. If NRO0, assume all rare syscalls are
     inaccessible.
