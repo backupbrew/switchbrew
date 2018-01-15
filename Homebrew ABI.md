@@ -62,6 +62,9 @@ application, the program should jump to
 If a key that is presence-mandatory is not found (for example with an
 outdated loader), use `result_code=346 | ((200 + key) << 9);`.
 
+If there is some error encountered while validating an entry's values,
+use `result_code = 346 | ((300 + key) << 9);`.
+
   - 0: [\#EndOfList](#EndOfList "wikilink") \[RECOGNITION-MANDATORY\]
     \[PRESENCE-MANDATORY\]
 
