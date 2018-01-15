@@ -56,7 +56,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * The linked-list node for KAutoObjects was added to the struct itself instead of being a separate allocation.
 * svcGetInfo now exposes the first and last process id for built-in modules.
 ** This is used by some services to make sure we can't connect to them from outside a privileged module.
-* svcReadWriteRegister was updated.
+* svcReadWriteRegister was updated, now always goes through TZ for both PMC and MC. Whitelist for MC remains the same.
 
 ===FIRM===
 Everything under RomFS was updated.
