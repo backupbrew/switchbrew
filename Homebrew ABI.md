@@ -105,6 +105,10 @@ use `result_code = 346 | ((300 + key) << 9);`.
   - 8: [\#AppletWorkaround](#AppletWorkaround "wikilink")
     \[RECOGNITION-MANDATORY\]
 
+<!-- end list -->
+
+  - 9: [\#StdioSockets](#StdioSockets "wikilink")
+
 #### EndOfList
 
 EndOfList is the final entry in the LoaderConfig.
@@ -240,3 +244,22 @@ This flag means that AM services is broken, and must not be used.
   - **IsPresenceMandatory:** False.
   - **Value\[0\]:** AppletResourceUserId
   - **Value\[1\]:** Ignored.
+
+#### StdioSockets
+
+Use these sockets for standard input/output/error. There must be an
+[\#OverrideService](#OverrideService "wikilink") key present for either
+`bsd:u` or `bsd:s`, depending on which is indicated.
+
+  - **Key:** 9
+  - **IsRecognitionMandatory:** False.
+  - **IsPresenceMandatory:** False.
+  - **Value\[0\]:** First word: stdout file descriptor, second word:
+    stdin file descriptor
+  - **Value\[1\]:** Third word: stderr file descriptor, fourth word:
+    SocketService
+
+`enum LoaderConfigSocketService {`  
+`  LoaderConfigSocketService_BsdU = 0,`  
+`  LoaderConfigSocketService_BsdS = 1,`  
+`};`

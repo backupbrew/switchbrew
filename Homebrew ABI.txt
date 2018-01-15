@@ -63,6 +63,8 @@ If there is some error encountered while validating an entry's values, use <code
 
 * 8: [[#AppletWorkaround]] [RECOGNITION-MANDATORY]
 
+* 9: [[#StdioSockets]]
+
 ==== EndOfList ====
 EndOfList is the final entry in the LoaderConfig.
 
@@ -166,3 +168,17 @@ This flag means that AM services is broken, and must not be used.
 * '''IsPresenceMandatory:''' False.
 * '''Value[0]:''' AppletResourceUserId
 * '''Value[1]:''' Ignored.
+
+==== StdioSockets ====
+Use these sockets for standard input/output/error. There must be an [[#OverrideService]] key present for either <code>bsd:u</code> or <code>bsd:s</code>, depending on which is indicated.
+
+* '''Key:''' 9
+* '''IsRecognitionMandatory:''' False.
+* '''IsPresenceMandatory:''' False.
+* '''Value[0]:''' First word: stdout file descriptor, second word: stdin file descriptor
+* '''Value[1]:''' Third word: stderr file descriptor, fourth word: SocketService
+
+ enum LoaderConfigSocketService {
+   LoaderConfigSocketService_BsdU = 0,
+   LoaderConfigSocketService_BsdS = 1,
+ };
