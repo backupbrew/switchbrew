@@ -43,6 +43,10 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * [[Flog]] was stubbed: official code for launching it was removed from [[qlaunch|the home menu]], and *all* code was overwritten with garbage. Thus, even attempts to launch it manually will result in [[Loader services|loader]] returning error 0xA09.
 
 ==Kernel==
+* Kernel startup code was updated:
+** A new (unused?) function was added, this is roughly the same as the code which originally directly read a MC register (0x70019050) for [[Memory_layout|getting]] the DRAM size, except [[SMC]] ReadWriteRegister is used for the read instead.
+** The code which originally read the above register directly was replaced with an inlined version of the above function.
+
 * All RTTI symbols were removed, can no longer know official name of kernel objects. :(
 * JIT syscalls were added.
 ** New MemoryType bit for "JIT allowed".
@@ -52,6 +56,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * The linked-list node for KAutoObjects was added to the struct itself instead of being a separate allocation.
 * svcGetInfo now exposes the first and last process id for built-in modules.
 ** This is used by some services to make sure we can't connect to them from outside a privileged module.
+* svcReadWriteRegister was updated.
 
 ===FIRM===
 Everything under RomFS was updated.
