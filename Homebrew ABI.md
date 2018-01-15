@@ -213,9 +213,8 @@ syscalls (such as JIT).
   - **Key:** 6
   - **IsRecognitionMandatory:** False.
   - **IsPresenceMandatory:** False.
-  - **Value\[0\]:** Each byte is a rare syscall number that the process
-    has access to. `0xFF` means byte should be ignored.
-  - **Value\[1\]:** Same as above.
+  - **Value\[0-1\]:** 128bit mask for the entire SVC range, bit set =
+    SVC accessible.
   - **DefaultBehavior:** If NSO0, assume kernelhax thus all rare
     syscalls are allowed. If NRO0, assume all rare syscalls are
     inaccessible.

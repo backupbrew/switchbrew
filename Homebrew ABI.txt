@@ -142,8 +142,7 @@ This entry allows loader to give hints about having access to rare syscalls (suc
 * '''Key:''' 6
 * '''IsRecognitionMandatory:''' False.
 * '''IsPresenceMandatory:''' False.
-* '''Value[0]:''' Each byte is a rare syscall number that the process has access to. <code>0xFF</code> means byte should be ignored.
-* '''Value[1]:''' Same as above.
+* '''Value[0-1]:''' 128bit mask for the entire SVC range, bit set = SVC accessible.
 * '''DefaultBehavior:''' If NSO0, assume kernelhax thus all rare syscalls are allowed. If NRO0, assume all rare syscalls are inaccessible.
 
 ==== AppletType ====
