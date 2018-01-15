@@ -1,0 +1,168 @@
+==Mapping Memory==
+
+First, to map a memory region on the GPU Address Space, caching needs to be disabled by using [[SVC#svcSetMemoryAttribute|svcSetMemoryAttribute]]. The Address passed is the Virtual Address of the region that will be mapped, the size is the region size, and State0/1 are both set to 8 to disable caching of the memory region. This is done to ensure that the GPU can actually "see" the data written there, and it doesn't get stuck on some cache.
+
+Then, [[NV_services#NVMAP_IOC_CREATE|NVMAP_IOC_CREATE]] is used to create a nvmap object with the desired size. After, [[NV_services#NVMAP_IOC_ALLOC|NVMAP_IOC_ALLOC]] is used to allocate the memory on the GPU Address Space, and map data on the process Address Space into the GPU Address Space, by passing the virtual address as the input addr parameter, and also the Handle returned from [[NV_services#NVMAP_IOC_CREATE|NVMAP_IOC_CREATE]]. Lastly, the actual mapping is done by using [[NV_services#NVGPU_AS_IOCTL_MAP_BUFFER_EX|NVGPU_AS_IOCTL_MAP_BUFFER_EX]], and the GPU Virtual Address is returned on the offset parameter. It's also possible to manually set the offset where the mapping should be made on the GPU Address Space, by passing the address on the "offset" parameter, and setting the bit 0 of the flags parameter to 1. However, for this to work, the desired GPU Virtual Address needs to be previously reserved using [[NV_services#NVGPU_AS_IOCTL_ALLOC_SPACE|NVGPU_AS_IOCTL_ALLOC_SPACE]].
+
+The above process is used to map all data that needs to be sent to the GPU, like Textures, Command Lists (a.k.a. Push Buffers), Vertex/Index buffers and Shaders. They usually have their own mapping, but Command Lists can share the same mapping.
+
+==Commands Submission==
+
+Commands are sent to the GPU through [[NV_services#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO|NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO]]. This IoCtl command accepts various GpFifo entries, and each GpFifo entry points to a Command List. The GPU Command List is composed of 32-bits words, which usually are Command/Argument pairs.
+
+====Command Word Structure====
+
+{| class="wikitable"
+|-
+! scope="col"| Bits
+! scope="col"| Description
+|-
+|12-0
+|Command/Register Id
+|-
+|15-13
+|Sub Channel
+|-
+|28-16
+|Arguments Count (in 32-bits Words) or Inline Data (see below)
+|-
+|31-29
+|Mode
+|}
+
+====Command Mode====
+
+{| class="wikitable"
+|-
+! scope="col"| Mode
+! scope="col"| Description
+|-
+|1
+|Sequential Mode - Reads "Argument Count" arguments, while automatically incrementing the Register Id. So, each argument is written to a different register.
+|-
+|3
+|Normal Mode - This is a Command with multiple arguments. Reads "Argument Count" arguments, all belonging to the same Command.
+|-
+|4
+|Inline Mode - Bits 16:28 of the Command Word (where Inline Data is located) contains the Value of the argument written to the register. The next Word is another Command.
+|-
+|5
+|Unobserved, but is valid too.
+|}
+
+TODO: Find a better name for the "Normal Mode" and figure out what mode 5 is.
+
+Ohter mode values are unobserved.
+
+Note: All Commands/Register Id values are multiples of 4, so they are divided by 4 when packing, and multiplied by 4 when unpacking.
+
+==Sub Channel binding==
+
+All Command Id values < 0x100 are special and aren't fowarded to the engines. The command 0 is used to bind engines to Sub Channels, and needs to be used before commands are submited to the engines.
+
+The command 0 only has one argument, the Engine Id.
+
+====Engine Ids====
+
+{| class="wikitable"
+|-
+! scope="col"| Id
+! scope="col"| Engine
+|-
+|0x902d
+|2D
+|-
+|0xb197
+|3D
+|-
+|0xb1c0
+|Compute
+|-
+|0xa140
+|Kepler
+|-
+|0xb0b5 
+|DMA
+|}
+
+The bits 15-13 of the Command Word contains the Sub Channel index that should be bound.
+
+After binding the required Sub Channels, then the respective values can be used on the "Sub Channel" field of the Command Word to talk with the respective Engines.
+
+==Fences==
+
+Command Lists can contain fences to ensure that commands are executed on the correct order, and subsequent commands are only sent when the previously sent commands were already processed by the GPU. Fences uses the QUERY_* commands, and works like this:
+
+* First, QUERY_ADDRESS_HIGH and QUERY_ADDRESS_LOW commands are added to the Command List, with the High/Low 32 bits part of the 64-bits GPU Virtual Address where the fence is located. This GPU Virtual Address needs to be mapped to the process Virtual Address beforehand.
+* Then, QUERY_SEQUENCE is added with a sequential number. This number is basically a incrementing counter, so the first Command List can have QUERY_SEQUENCE = 1, the next one QUERY_SEQUENCE = 2, 3, 4... and so on.
+* Finally, QUERY_GET is added and contains the mode and other unknown data.
+
+====QUERY_GET Structure====
+
+{| class="wikitable"
+|-
+! scope="col"| Bits
+! scope="col"| Description
+|-
+|1-0
+|Mode
+|-
+|4
+|Fence
+|-
+|15-12
+|Unit 
+|}
+
+====QUERY_GET Mode====
+
+{| class="wikitable"
+|-
+! scope="col"| Value
+! scope="col"| Mode
+|-
+|0
+|Write
+|-
+|1
+|Sync
+|-
+|2
+|Write ? 
+|-
+|3
+|Write ?
+|}
+
+TODO: Move this to a separate page with all GPU Commands with descriptions. Also figure out what the other values mean.
+
+Some of the other fields are still unknown/unobserved.
+
+Official games will set Mode to 0, Fence to 1 and Unit to 0xF. The QUERY_SEQUENCE value is then written to the address pointed to by QUERY_ADDRESS.
+On the CPU side, the game code should wait until the value at the address pointed to by QUERY_ADDRESS is >= to the last written SEQUENCE value. Official code waits for this condition to be true on a loop, and won't send any further commands before that.
+
+==Vertex Data Submission==
+
+Note: This is a observation on how the game Puyo Puyo Tetris sends textured squares to the GPU.
+
+# VERTEX_ATTRIB_FORMAT (0-15) are set (only the first 3 are really used, the rest are set float, with Size = 1 and offset at 0).
+# VERTEX_ARRAY_FETCH (0) is set with the lower 12 bits set to 0x1c (Stride) and bit 12 to 1 (Enabled).
+# VERTEX_ARRAY_START_HIGH/LOW are set to the GPU Virtual Address where the Vertex Data is located.
+# VERTEX_ARRAY_LIMIT_HIGH/LOW are set to the GPU Virtual Address where the Vertex Data is located, plus the Vertex Data size in bytes minus 1.
+# VERTEX_BEGIN_GL is used with the primitive type set to TRIANGLE_STRIP.
+# VERTEX_BUFFER_FIRST with value 0 (indicating the index of the first primitive to render?).
+# VERTEX_BUFFER_COUNT is set to 4, because the Vertex Buffer with the square has 4 vertices.
+# VERTEX_END_GL is used with value 0 (currently unknown what this value means).
+
+==References==
+
+Check out those pages for more useful data.
+
+Register Id values from the Fermi family GPU (a bit older than the Tegra X1, but values seems to be mostly the same):
+[https://github.com/envytools/envytools/blob/master/rnndb/graph/gf100_3d.xml]
+
+Values for some types used on the above XML:
+[https://github.com/envytools/envytools/blob/master/rnndb/graph/nv_3ddefs.xml]
+
+Command Word packing code used on Mesa3d:
+[https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers/nouveau/nvc0/nvc0_winsys.h]
