@@ -114,6 +114,10 @@ wrapped RSA private key.
 
 The session kek must have been created with CryptoUsecase\_PrivateRsa.
 
+\[{Unknown version}+\] The SMC handler when certain conditions pass and
+SMC\_ID==0xC300100D now returns error 0x6 instead of calling the handler
+funcptr.
+
 ### LoadRsaPublicKey
 
 Takes a session kek created with

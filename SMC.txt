@@ -107,6 +107,8 @@ Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a w
 
 The session kek must have been created with CryptoUsecase_PrivateRsa.
 
+[{Unknown version}+] The SMC handler when certain conditions pass and SMC_ID==0xC300100D now returns error 0x6 instead of calling the handler funcptr.
+
 === LoadRsaPublicKey ===
 Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA public key.
 
