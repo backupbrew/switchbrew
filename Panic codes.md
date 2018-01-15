@@ -49,40 +49,40 @@ different execution levels within the system.
 <td><p>Default</p></td>
 </tr>
 <tr class="even">
+<td><div style="width: 60px; height: 20px; background:#FFAA00;">
+</div></td>
+<td><p>0xFFAA00</p></td>
+<td><p>GPU</p></td>
+</tr>
+<tr class="odd">
 <td><div style="width: 60px; height: 20px; background:#0000FF;">
 </div></td>
 <td><p>0x0000FF</p></td>
 <td><p>Kernel</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><div style="width: 60px; height: 20px; background:#00FFFF;">
 </div></td>
 <td><p>0x00FFFF</p></td>
 <td><p>Secure Monitor (general errors)</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><div style="width: 60px; height: 20px; background:#00AAFF;">
 </div></td>
 <td><p>0x00AAFF</p></td>
 <td><p>Secure Monitor (deep sleep)</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><div style="width: 60px; height: 20px; background:#AA00FF;">
 </div></td>
 <td><p>0xAA00FF</p></td>
 <td><p>Bootloader (general errors)</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><div style="width: 60px; height: 20px; background:#FFFFAA;">
 </div></td>
 <td><p>0xFFFFAA</p></td>
 <td><p>Bootloader (wrong bootloader)</p></td>
-</tr>
-<tr class="odd">
-<td><div style="width: 60px; height: 20px; background:#FFAA00;">
-</div></td>
-<td><p>0xFFAA00</p></td>
-<td><p>GPU</p></td>
 </tr>
 </tbody>
 </table>
