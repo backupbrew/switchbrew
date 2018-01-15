@@ -554,7 +554,7 @@ it will return 0.
 | Process     | 7          | 0                     | TotalHeapUsage                                                                                              |
 | Zero        | 8          | 0                     | IsCurrentProcessBeingDebugged                                                                               |
 | Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink"). |
-| Zero        | 10         | \-1, {current coreid} | Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?               |
+| Zero        | 10         | \-1, {current coreid} | IdleTickCount                                                                                               |
 | Zero        | 11         | 0-3                   | RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.                                      |
 | Process     | 12         | 0                     | \[2.0.0+\] AddressSpaceBaseAddr                                                                             |
 | Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize                                                                                 |

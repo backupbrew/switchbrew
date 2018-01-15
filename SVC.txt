@@ -729,7 +729,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Zero    || 9 || 0 || Returns ResourceLimit handle for current process. Used by [[Process_Manager_services|PM]].
 |-
-| Zero    || 10 || -1, {current coreid} || Unknown. Output data changes each time this SVC is used. Global and core-specific tick-count?
+| Zero    || 10 || -1, {current coreid} || IdleTickCount
 |-
 | Zero    || 11 || 0-3 || RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.
 |-
