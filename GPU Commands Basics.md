@@ -15,7 +15,7 @@ is used to create a nvmap object with the desired size. After,
 [NVMAP\_IOC\_ALLOC](NV%20services#NVMAP%20IOC%20ALLOC.md##NVMAP_IOC_ALLOC "wikilink")
 is used to allocate the memory on the GPU Address Space, and map data on
 the process Address Space into the GPU Address Space, by passing the
-virtual address as the input addr parameter, and also the Handle
+Virtual Address as the input addr parameter, and also the Handle
 returned from
 [NVMAP\_IOC\_CREATE](NV%20services#NVMAP%20IOC%20CREATE.md##NVMAP_IOC_CREATE "wikilink").
 Lastly, the actual mapping is done by using
@@ -28,10 +28,10 @@ for this to work, the desired GPU Virtual Address needs to be previously
 reserved using
 [NVGPU\_AS\_IOCTL\_ALLOC\_SPACE](NV%20services#NVGPU%20AS%20IOCTL%20ALLOC%20SPACE.md##NVGPU_AS_IOCTL_ALLOC_SPACE "wikilink").
 
-The above process is used to map all data that needs to be sent to the
-GPU, like Textures, Command Lists (a.k.a. Push Buffers), Vertex/Index
-buffers and Shaders. They usually have their own mapping, but Command
-Lists can share the same mapping.
+The above process is used to map all data that will be used by the GPU,
+like Textures, Command Lists (a.k.a. Push Buffers), Vertex/Index buffers
+and Shaders. They usually have their own mapping, but Command Lists can
+share the same mapping.
 
 ## Commands Submission
 
@@ -63,7 +63,7 @@ pairs.
 TODO: Find a better name for the "Normal Mode" and figure out what mode
 5 is.
 
-Ohter mode values are unobserved.
+Other mode values are unobserved.
 
 Note: All Commands/Register Id values are multiples of 4, so they are
 divided by 4 when packing, and multiplied by 4 when unpacking.

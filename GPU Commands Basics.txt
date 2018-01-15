@@ -2,9 +2,9 @@
 
 First, to map a memory region on the GPU Address Space, caching needs to be disabled by using [[SVC#svcSetMemoryAttribute|svcSetMemoryAttribute]]. The Address passed is the Virtual Address of the region that will be mapped, the size is the region size, and State0/1 are both set to 8 to disable caching of the memory region. This is done to ensure that the GPU can actually "see" the data written there, and it doesn't get stuck on some cache.
 
-Then, [[NV_services#NVMAP_IOC_CREATE|NVMAP_IOC_CREATE]] is used to create a nvmap object with the desired size. After, [[NV_services#NVMAP_IOC_ALLOC|NVMAP_IOC_ALLOC]] is used to allocate the memory on the GPU Address Space, and map data on the process Address Space into the GPU Address Space, by passing the virtual address as the input addr parameter, and also the Handle returned from [[NV_services#NVMAP_IOC_CREATE|NVMAP_IOC_CREATE]]. Lastly, the actual mapping is done by using [[NV_services#NVGPU_AS_IOCTL_MAP_BUFFER_EX|NVGPU_AS_IOCTL_MAP_BUFFER_EX]], and the GPU Virtual Address is returned on the offset parameter. It's also possible to manually set the offset where the mapping should be made on the GPU Address Space, by passing the address on the "offset" parameter, and setting the bit 0 of the flags parameter to 1. However, for this to work, the desired GPU Virtual Address needs to be previously reserved using [[NV_services#NVGPU_AS_IOCTL_ALLOC_SPACE|NVGPU_AS_IOCTL_ALLOC_SPACE]].
+Then, [[NV_services#NVMAP_IOC_CREATE|NVMAP_IOC_CREATE]] is used to create a nvmap object with the desired size. After, [[NV_services#NVMAP_IOC_ALLOC|NVMAP_IOC_ALLOC]] is used to allocate the memory on the GPU Address Space, and map data on the process Address Space into the GPU Address Space, by passing the Virtual Address as the input addr parameter, and also the Handle returned from [[NV_services#NVMAP_IOC_CREATE|NVMAP_IOC_CREATE]]. Lastly, the actual mapping is done by using [[NV_services#NVGPU_AS_IOCTL_MAP_BUFFER_EX|NVGPU_AS_IOCTL_MAP_BUFFER_EX]], and the GPU Virtual Address is returned on the offset parameter. It's also possible to manually set the offset where the mapping should be made on the GPU Address Space, by passing the address on the "offset" parameter, and setting the bit 0 of the flags parameter to 1. However, for this to work, the desired GPU Virtual Address needs to be previously reserved using [[NV_services#NVGPU_AS_IOCTL_ALLOC_SPACE|NVGPU_AS_IOCTL_ALLOC_SPACE]].
 
-The above process is used to map all data that needs to be sent to the GPU, like Textures, Command Lists (a.k.a. Push Buffers), Vertex/Index buffers and Shaders. They usually have their own mapping, but Command Lists can share the same mapping.
+The above process is used to map all data that will be used by the GPU, like Textures, Command Lists (a.k.a. Push Buffers), Vertex/Index buffers and Shaders. They usually have their own mapping, but Command Lists can share the same mapping.
 
 ==Commands Submission==
 
@@ -52,7 +52,7 @@ Commands are sent to the GPU through [[NV_services#NVGPU_IOCTL_CHANNEL_SUBMIT_GP
 
 TODO: Find a better name for the "Normal Mode" and figure out what mode 5 is.
 
-Ohter mode values are unobserved.
+Other mode values are unobserved.
 
 Note: All Commands/Register Id values are multiples of 4, so they are divided by 4 when packing, and multiplied by 4 when unpacking.
 
