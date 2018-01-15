@@ -31,8 +31,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100066004D68000 || This Is the Police || EUR USA || || || || Game
 |-
-| 0100069000078000 || This Is the Police || USA || || || || Game
-|-
 | 0100069000078800 || This Is the Police || USA || || || || Update
 |-
 | 010006A0042F0000 || 88 Heroes - 98 Heroes Edition || ALL || || || || Game
