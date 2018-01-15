@@ -28,6 +28,8 @@ Different colors are used to represent panic events coming from different execut
 {| class=wikitable
 ! Color || Value || Level
 |-
+| <div style="width: 60px; height: 20px; background:#000000;"></div> || 0x000000 || Default
+|-
 | <div style="width: 60px; height: 20px; background:#0000FF;"></div> || 0x0000FF || Kernel
 |-
 | <div style="width: 60px; height: 20px; background:#00FFFF;"></div> || 0x00FFFF || Secure Monitor (general errors)
@@ -37,6 +39,8 @@ Different colors are used to represent panic events coming from different execut
 | <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || 0xAA00FF || Bootloader (general errors)
 |-
 | <div style="width: 60px; height: 20px; background:#FFFFAA;"></div> || 0xFFFFAA || Bootloader (wrong bootloader)
+|-
+| <div style="width: 60px; height: 20px; background:#FFAA00;"></div> || 0xFFAA00 || GPU
 |}
 
 == Panic codes ==
