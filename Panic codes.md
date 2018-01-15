@@ -90,28 +90,140 @@ different execution levels within the system.
 ## Panic codes
 
 While any combination of panic colors and codes is possible, several
-panic codes are specifically tied to a certain execution level.
+panic codes are specifically tied to a certain color.
 
-| Value | Level            | Description                            |
-| ----- | ---------------- | -------------------------------------- |
-| 0x0   | Any              | No information                         |
-| 0x1   | Kernel           | Package2 signature verification failed |
-| 0x2   | Kernel           | Package2 meta verification failed      |
-| 0x3   | Kernel           | Package2 version check failed          |
-| 0x4   | Kernel           | Package2 payload verification failed   |
-| 0x5   | Secure Monitor   | Unknown SMC                            |
-| 0x6   | Secure Monitor   | Unknown Abort                          |
-| 0x7   | Secure Monitor   | Invalid CPU context                    |
-| 0x8   | Secure Monitor   | Invalid SE state                       |
-| 0x9   | Secure Monitor   | CPU is already awake                   |
-| 0x10  | Any              | Unknown exception                      |
-| 0x20  | Bootloader       | Rebooting into SafeMode                |
-| 0x21  | Bootloader       | Rebooting for anti-downgrade           |
-| 0x30  | Bootloader       | General bootloader error               |
-| 0x31  | Bootloader       | Invalid DRAM ID                        |
-| 0x32  | Bootloader       | Invalid size                           |
-| 0x33  | Bootloader       | Invalid argument                       |
-| 0x34  | Bootloader       | Bad GPT                                |
-| 0x35  | Bootloader       | Failed to boot SafeMode                |
-| 0x36  | Bootloader-color | \[4.0.0+\]                             |
-| 0x40  | Kernel           | Show error called (kernel panic)       |
+<table>
+<thead>
+<tr class="header">
+<th><p>Value</p></th>
+<th><p>Color</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x0</p></td>
+<td><p>Any</p></td>
+<td><p>No information</p></td>
+</tr>
+<tr class="even">
+<td><p>0x1</p></td>
+<td><div style="width: 60px; height: 20px; background:#0000FF;">
+</div></td>
+<td><p>Package2 signature verification failed</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2</p></td>
+<td><div style="width: 60px; height: 20px; background:#0000FF;">
+</div></td>
+<td><p>Package2 meta verification failed</p></td>
+</tr>
+<tr class="even">
+<td><p>0x3</p></td>
+<td><div style="width: 60px; height: 20px; background:#0000FF;">
+</div></td>
+<td><p>Package2 version check failed</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x4</p></td>
+<td><div style="width: 60px; height: 20px; background:#0000FF;">
+</div></td>
+<td><p>Package2 payload verification failed</p></td>
+</tr>
+<tr class="even">
+<td><p>0x5</p></td>
+<td><div style="width: 60px; height: 20px; background:#00FFFF;">
+</div></td>
+<td><p>Unknown SMC</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x6</p></td>
+<td><div style="width: 60px; height: 20px; background:#00FFFF;">
+</div></td>
+<td><p>Unknown Abort</p></td>
+</tr>
+<tr class="even">
+<td><p>0x7</p></td>
+<td><div style="width: 60px; height: 20px; background:#00AAFF;">
+</div></td>
+<td><p>Invalid CPU context</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x8</p></td>
+<td><div style="width: 60px; height: 20px; background:#00AAFF;">
+</div></td>
+<td><p>Invalid SE state</p></td>
+</tr>
+<tr class="even">
+<td><p>0x9</p></td>
+<td><div style="width: 60px; height: 20px; background:#00AAFF;">
+</div></td>
+<td><p>CPU is already awake [2.0.0+]</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x10</p></td>
+<td><p>Any</p></td>
+<td><p>Unknown exception</p></td>
+</tr>
+<tr class="even">
+<td><p>0x20</p></td>
+<td><div style="width: 60px; height: 20px; background:#000000;">
+</div></td>
+<td><p>Rebooting into SafeMode</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x21</p></td>
+<td><div style="width: 60px; height: 20px; background:#000000;">
+</div></td>
+<td><p>Rebooting for anti-downgrade</p></td>
+</tr>
+<tr class="even">
+<td><p>0x30</p></td>
+<td><div style="width: 60px; height: 20px; background:#AA00FF;">
+</div></td>
+<td><p>General bootloader error</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x31</p></td>
+<td><div style="width: 60px; height: 20px; background:#AA00FF;">
+</div></td>
+<td><p>Invalid DRAM ID</p></td>
+</tr>
+<tr class="even">
+<td><p>0x32</p></td>
+<td><div style="width: 60px; height: 20px; background:#AA00FF;">
+</div></td>
+<td><p>Invalid size</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x33</p></td>
+<td><div style="width: 60px; height: 20px; background:#AA00FF;">
+</div></td>
+<td><p>Invalid argument</p></td>
+</tr>
+<tr class="even">
+<td><p>0x34</p></td>
+<td><div style="width: 60px; height: 20px; background:#AA00FF;">
+</div></td>
+<td><p>Bad GPT</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x35</p></td>
+<td><div style="width: 60px; height: 20px; background:#AA00FF;">
+</div></td>
+<td><p>Failed to boot SafeMode</p></td>
+</tr>
+<tr class="even">
+<td><p>0x36</p></td>
+<td><div style="width: 60px; height: 20px; background:#AA00FF;">
+</div></td>
+<td><p>[4.0.0+]</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x40</p></td>
+<td><div style="width: 60px; height: 20px; background:#0000FF;">
+</div></td>
+<td><p>Show error called (kernel panic)</p></td>
+</tr>
+</tbody>
+</table>

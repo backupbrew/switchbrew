@@ -44,50 +44,50 @@ Different colors are used to represent panic events coming from different execut
 |}
 
 == Panic codes ==
-While any combination of panic colors and codes is possible, several panic codes are specifically tied to a certain execution level.
+While any combination of panic colors and codes is possible, several panic codes are specifically tied to a certain color.
 
 {| class=wikitable
-! Value || Level || Description
+! Value || Color || Description
 |-
 | 0x0 || Any || No information
 |-
-| 0x1 || Kernel || Package2 signature verification failed
+| 0x1 || <div style="width: 60px; height: 20px; background:#0000FF;"></div> || Package2 signature verification failed
 |-
-| 0x2 || Kernel || Package2 meta verification failed
+| 0x2 || <div style="width: 60px; height: 20px; background:#0000FF;"></div> || Package2 meta verification failed
 |-
-| 0x3 || Kernel || Package2 version check failed
+| 0x3 || <div style="width: 60px; height: 20px; background:#0000FF;"></div> || Package2 version check failed
 |-
-| 0x4 || Kernel || Package2 payload verification failed
+| 0x4 || <div style="width: 60px; height: 20px; background:#0000FF;"></div> || Package2 payload verification failed
 |-
-| 0x5 || Secure Monitor || Unknown SMC
+| 0x5 || <div style="width: 60px; height: 20px; background:#00FFFF;"></div> || Unknown SMC
 |-
-| 0x6 || Secure Monitor || Unknown Abort
+| 0x6 || <div style="width: 60px; height: 20px; background:#00FFFF;"></div> || Unknown Abort
 |-
-| 0x7 || Secure Monitor || Invalid CPU context
+| 0x7 || <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || Invalid CPU context
 |-
-| 0x8 || Secure Monitor || Invalid SE state
+| 0x8 || <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || Invalid SE state
 |-
-| 0x9 || Secure Monitor || CPU is already awake
+| 0x9 || <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || CPU is already awake [2.0.0+]
 |-
 | 0x10 || Any || Unknown exception
 |-
-| 0x20 || Bootloader || Rebooting into SafeMode
+| 0x20 || <div style="width: 60px; height: 20px; background:#000000;"></div> || Rebooting into SafeMode
 |-
-| 0x21 || Bootloader || Rebooting for anti-downgrade
+| 0x21 || <div style="width: 60px; height: 20px; background:#000000;"></div> || Rebooting for anti-downgrade
 |-
-| 0x30 || Bootloader || General bootloader error
+| 0x30 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || General bootloader error
 |-
-| 0x31 || Bootloader || Invalid DRAM ID
+| 0x31 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || Invalid DRAM ID
 |-
-| 0x32 || Bootloader || Invalid size
+| 0x32 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || Invalid size
 |-
-| 0x33 || Bootloader || Invalid argument
+| 0x33 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || Invalid argument
 |-
-| 0x34 || Bootloader || Bad GPT
+| 0x34 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || Bad GPT
 |-
-| 0x35 || Bootloader || Failed to boot SafeMode
+| 0x35 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || Failed to boot SafeMode
 |-
-| 0x36 || Bootloader-color || [4.0.0+] 
+| 0x36 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || [4.0.0+] 
 |-
-| 0x40 || Kernel || Show error called (kernel panic)
+| 0x40 || <div style="width: 60px; height: 20px; background:#0000FF;"></div> || Show error called (kernel panic)
 |}
