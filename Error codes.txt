@@ -114,7 +114,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 345 || libnx
 |-
-| 346 || HomebrewLoader
+| 346 || Homebrew Menu
+|-
+| 347 || Homebrew Loader
 |-
 | 651 || TC
 |-
