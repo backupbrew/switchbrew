@@ -109,6 +109,10 @@ use `result_code = 346 | ((300 + key) << 9);`.
 
   - 9: [\#StdioSockets](#StdioSockets "wikilink")
 
+<!-- end list -->
+
+  - 10: [\#ProcessHandle](#ProcessHandle "wikilink")
+
 #### EndOfList
 
 EndOfList is the final entry in the LoaderConfig.
@@ -209,7 +213,6 @@ syscalls (such as JIT).
   - **Key:** 6
   - **IsRecognitionMandatory:** False.
   - **IsPresenceMandatory:** False.
-  - **IsMandatory:** False
   - **Value\[0\]:** Each byte is a rare syscall number that the process
     has access to. `0xFF` means byte should be ignored.
   - **Value\[1\]:** Same as above.
@@ -266,3 +269,13 @@ Use these sockets for standard input/output/error. There must be an
 `  LoaderConfigSocketService_BsdU = 0,`  
 `  LoaderConfigSocketService_BsdS = 1,`  
 `};`
+
+#### ProcessHandle
+
+Handle to self process.
+
+  - **Key:** 10
+  - **IsRecognitionMandatory:** False.
+  - **IsPresenceMandatory:** False.
+  - **Value\[0\]:** Process handle.
+  - **Value\[1\]:** Ignored.

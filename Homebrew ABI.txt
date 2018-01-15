@@ -65,6 +65,8 @@ If there is some error encountered while validating an entry's values, use <code
 
 * 9: [[#StdioSockets]]
 
+* 10: [[#ProcessHandle]]
+
 ==== EndOfList ====
 EndOfList is the final entry in the LoaderConfig.
 
@@ -140,7 +142,6 @@ This entry allows loader to give hints about having access to rare syscalls (suc
 * '''Key:''' 6
 * '''IsRecognitionMandatory:''' False.
 * '''IsPresenceMandatory:''' False.
-* '''IsMandatory:''' False
 * '''Value[0]:''' Each byte is a rare syscall number that the process has access to. <code>0xFF</code> means byte should be ignored.
 * '''Value[1]:''' Same as above.
 * '''DefaultBehavior:''' If NSO0, assume kernelhax thus all rare syscalls are allowed. If NRO0, assume all rare syscalls are inaccessible.
@@ -184,3 +185,12 @@ Use these sockets for standard input/output/error. There must be an [[#OverrideS
    LoaderConfigSocketService_BsdU = 0,
    LoaderConfigSocketService_BsdS = 1,
  };
+
+==== ProcessHandle ====
+Handle to self process.
+
+* '''Key:''' 10
+* '''IsRecognitionMandatory:''' False.
+* '''IsPresenceMandatory:''' False.
+* '''Value[0]:''' Process handle.
+* '''Value[1]:''' Ignored.
