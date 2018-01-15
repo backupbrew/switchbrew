@@ -99,12 +99,12 @@ process?
 
 ##### SectionHeader
 
-| Offset | Type | Description                                                                     |
-| ------ | ---- | ------------------------------------------------------------------------------- |
-| 0x0    | u32  | OutOffset                                                                       |
-| 0x4    | u32  | DecompressedSize                                                                |
-| 0x8    | u32  | CompressedSize                                                                  |
-| 0xC    | u32  | Attribute: the size of the main thread's stack for .rodata, reserved otherwise. |
+| Offset | Type | Description                                                                              |
+| ------ | ---- | ---------------------------------------------------------------------------------------- |
+| 0x0    | u32  | OutOffset                                                                                |
+| 0x4    | u32  | DecompressedSize                                                                         |
+| 0x8    | u32  | CompressedSize                                                                           |
+| 0xC    | u32  | Attribute: the size in pages of the main thread's stack for .rodata, reserved otherwise. |
 
 Compressed size can be 0 or lower than exepected, this is the case for
 BSS for example.

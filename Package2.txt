@@ -230,7 +230,7 @@ Kernel internal process?
 |-
 | 0xC
 | u32
-| Attribute: the size of the main thread's stack for .rodata, reserved otherwise.
+| Attribute: the size in pages of the main thread's stack for .rodata, reserved otherwise.
 |}
 
 Compressed size can be 0 or lower than exepected, this is the case for BSS for example.
