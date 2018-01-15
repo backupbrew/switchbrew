@@ -139,6 +139,17 @@ On 1.0.0 you could supply irq_id < 32 and it would write outside the SharedIrqs 
 | 34c3 (December 28, 2017)
 | [[User:qlutoo|qlutoo]]
 |-
+| Memory Controller not properly secured
+| The Switch OS originally had the memory controller not set to be accessible only by the secure-world, which was problematic because insecure access can compromise the kernel.
+
+This was fixed partially in [[2.0.0]] by blacklisting the memory controller from being mapped by user-processes, and was fixed entirely in [[4.0.0]] by making the memory controller TZ-only and making all kernel accesses go through [[SMC|smcReadWriteRegister]].
+| With some way to access the memory controller MMIO, arbitrary kernel code execution.
+| [[4.0.0]]
+| [[4.0.0]]
+| January 2018
+| January 2018
+| SciresM, yellows8
+|-
 |}
 
 === FIRM-package System Modules ===
@@ -184,6 +195,7 @@ This was fixed in [[4.0.0]] by adding a semaphore to these critical single-sessi
 | May/June 2017 (basically immediately after smhax was discovered)
 | December 30, 2017
 | Everyone
+|-
 |}
 
 === System Modules ===

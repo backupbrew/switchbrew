@@ -75,13 +75,83 @@ Flaws.
 
 ### Kernel
 
-| Summary                                    | Description                                                                                                                                                                                                                                                                 | Successful exploitation result                                                                                                            | Fixed in system version      | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by                    |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | -------------------------------- |
-| Syscall Infoleaks                          | Many syscalls leaked kernel pointers on sad paths (for example svcSetHeapSize and svcQueryMemory), until they landed a bunch of fixes in 2.0.0.                                                                                                                             | Nothing really.                                                                                                                           | Unfixed                      | 2.0.0                                         |                               |                             | ?                                |
-| GetLastThreadInfo UAF                      | GetLastThreadInfo syscall gets last-scheduled-KThread pointer from KScheduler object. This pointer is not reference counted, and can be pointing to a freed KThread.                                                                                                        | Nothing. There is a theoretical race that might leak from a KThread from a different process, but it's impossible to trigger practically. | Unfixed                      |                                               | 15 October                    | 17 October                  | [qlutoo](User:qlutoo "wikilink") |
-| Bad irq\_id check in CreateInterruptEvent  | CreateInterruptEvent syscall is designed to work only for irq\_id \>= 32. All irq\_ids \< 32 are "per-core" and reserved for kernel use (watchdog/scheduling/core communications). On 1.0.0 you could supply irq\_id \< 32 and it would write outside the SharedIrqs table. | You can register irq's in the Core3Irqs table, and thus register per-core irqs for core3, that are normally reserved for kernel. Useless. | 2.0.0                        | 2.0.0                                         | ~October                      | 17 October                  | [qlutoo](User:qlutoo "wikilink") |
-| Kernel .text mapped executable in usermode | Prior to [3.0.2](3.0.2.md "wikilink") the kernel .text was [mapped](Memory%20layout.md "wikilink") in usermode as executable. This can be used for usermode ROP for bypassing ASLR, but SVCs/IPC are not usable by running kernel .text in usermode.                        | Executing kernel .text in usermode                                                                                                        | [3.0.2](3.0.2.md "wikilink") | [3.0.2](3.0.2.md "wikilink")                  |                               | 34c3 (December 28, 2017)    | [qlutoo](User:qlutoo "wikilink") |
-|                                            |                                                                                                                                                                                                                                                                             |                                                                                                                                           |                              |                                               |                               |                             |                                  |
+<table>
+<thead>
+<tr class="header">
+<th><p>Summary</p></th>
+<th><p>Description</p></th>
+<th><p>Successful exploitation result</p></th>
+<th><p>Fixed in system version</p></th>
+<th><p>Last system version this flaw was checked for</p></th>
+<th><p>Timeframe this was discovered</p></th>
+<th><p>Public disclosure timeframe</p></th>
+<th><p>Discovered by</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Syscall Infoleaks</p></td>
+<td><p>Many syscalls leaked kernel pointers on sad paths (for example svcSetHeapSize and svcQueryMemory), until they landed a bunch of fixes in 2.0.0.</p></td>
+<td><p>Nothing really.</p></td>
+<td><p>Unfixed</p></td>
+<td><p>2.0.0</p></td>
+<td></td>
+<td></td>
+<td><p>?</p></td>
+</tr>
+<tr class="even">
+<td><p>GetLastThreadInfo UAF</p></td>
+<td><p>GetLastThreadInfo syscall gets last-scheduled-KThread pointer from KScheduler object. This pointer is not reference counted, and can be pointing to a freed KThread.</p></td>
+<td><p>Nothing. There is a theoretical race that might leak from a KThread from a different process, but it's impossible to trigger practically.</p></td>
+<td><p>Unfixed</p></td>
+<td></td>
+<td><p>15 October</p></td>
+<td><p>17 October</p></td>
+<td><p><a href="User:qlutoo" title="wikilink">qlutoo</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>Bad irq_id check in CreateInterruptEvent</p></td>
+<td><p>CreateInterruptEvent syscall is designed to work only for irq_id &gt;= 32. All irq_ids &lt; 32 are &quot;per-core&quot; and reserved for kernel use (watchdog/scheduling/core communications). On 1.0.0 you could supply irq_id &lt; 32 and it would write outside the SharedIrqs table.</p></td>
+<td><p>You can register irq's in the Core3Irqs table, and thus register per-core irqs for core3, that are normally reserved for kernel. Useless.</p></td>
+<td><p>2.0.0</p></td>
+<td><p>2.0.0</p></td>
+<td><p>~October</p></td>
+<td><p>17 October</p></td>
+<td><p><a href="User:qlutoo" title="wikilink">qlutoo</a></p></td>
+</tr>
+<tr class="even">
+<td><p>Kernel .text mapped executable in usermode</p></td>
+<td><p>Prior to <a href="3.0.2.md" title="wikilink">3.0.2</a> the kernel .text was <a href="Memory layout.md" title="wikilink">mapped</a> in usermode as executable. This can be used for usermode ROP for bypassing ASLR, but SVCs/IPC are not usable by running kernel .text in usermode.</p></td>
+<td><p>Executing kernel .text in usermode</p></td>
+<td><p><a href="3.0.2.md" title="wikilink">3.0.2</a></p></td>
+<td><p><a href="3.0.2.md" title="wikilink">3.0.2</a></p></td>
+<td></td>
+<td><p>34c3 (December 28, 2017)</p></td>
+<td><p><a href="User:qlutoo" title="wikilink">qlutoo</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>Memory Controller not properly secured</p></td>
+<td><p>The Switch OS originally had the memory controller not set to be accessible only by the secure-world, which was problematic because insecure access can compromise the kernel.</p>
+<p>This was fixed partially in <a href="2.0.0.md" title="wikilink">2.0.0</a> by blacklisting the memory controller from being mapped by user-processes, and was fixed entirely in <a href="4.0.0.md" title="wikilink">4.0.0</a> by making the memory controller TZ-only and making all kernel accesses go through <a href="SMC.md" title="wikilink">smcReadWriteRegister</a>.</p></td>
+<td><p>With some way to access the memory controller MMIO, arbitrary kernel code execution.</p></td>
+<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
+<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
+<td><p>January 2018</p></td>
+<td><p>January 2018</p></td>
+<td><p>SciresM, yellows8</p></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ### FIRM-package System Modules
 
@@ -130,6 +200,16 @@ Flaws.
 <td><p>May/June 2017 (basically immediately after smhax was discovered)</p></td>
 <td><p>December 30, 2017</p></td>
 <td><p>Everyone</p></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
