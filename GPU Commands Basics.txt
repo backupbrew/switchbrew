@@ -44,7 +44,7 @@ Commands are sent to the GPU through [[NV_services#NVGPU_IOCTL_CHANNEL_SUBMIT_GP
 |Normal Mode - This is a Command with multiple arguments. Reads "Argument Count" arguments, all belonging to the same Command.
 |-
 |4
-|Inline Mode - Bits 16:28 of the Command Word (where Inline Data is located) contains the Value of the argument written to the register. The next Word is another Command.
+|Inline Mode - Bits 28-16 of the Command Word (where Inline Data is located) contains the Value of the argument written to the register. The next Word is another Command.
 |-
 |5
 |Unobserved, but is valid too.
