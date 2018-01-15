@@ -170,6 +170,9 @@ the normal one.
 
 Homebrew should allow up to 32 service overrides.
 
+Note: Overridden service handles should not be converted to domains or
+closed.
+
 Note: For services that authenticate with pid, the app should not
 attempt re-authentication with an overridden handle.
 

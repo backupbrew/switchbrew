@@ -109,6 +109,8 @@ The NRO loader should be able to steal handles from more priliveged processes. I
 
 Homebrew should allow up to 32 service overrides.
 
+Note: Overridden service handles should not be converted to domains or closed.
+
 Note: For services that authenticate with pid, the app should not attempt re-authentication with an overridden handle.
 
 Note: There needs be special handling for the file system service. If the original fsp-srv handle doesn't allow MountSdcard, it shall fallback to the stolen one, etc etc.
