@@ -80,25 +80,26 @@ different execution levels within the system.
 While any combination of panic colors and codes is possible, several
 panic codes are specifically tied to a certain execution level.
 
-| Value | Level          | Description                            |
-| ----- | -------------- | -------------------------------------- |
-| 0x0   | Any            | No information                         |
-| 0x1   | Kernel         | Package2 signature verification failed |
-| 0x2   | Kernel         | Package2 meta verification failed      |
-| 0x3   | Kernel         | Package2 version check failed          |
-| 0x4   | Kernel         | Package2 payload verification failed   |
-| 0x5   | Secure Monitor | Unknown SMC                            |
-| 0x6   | Secure Monitor | Unknown Abort                          |
-| 0x7   | Secure Monitor | Invalid CPU context                    |
-| 0x8   | Secure Monitor | Invalid SE state                       |
-| 0x9   | Secure Monitor | CPU is already awake                   |
-| 0x10  | Any            | Unknown exception                      |
-| 0x20  | Bootloader     | Rebooting into SafeMode                |
-| 0x21  | Bootloader     | Rebooting for anti-downgrade           |
-| 0x30  | Bootloader     | General bootloader error               |
-| 0x31  | Bootloader     | Invalid DRAM ID                        |
-| 0x32  | Bootloader     | Invalid size                           |
-| 0x33  | Bootloader     | Invalid argument                       |
-| 0x34  | Bootloader     | Bad GPT                                |
-| 0x35  | Bootloader     | Failed to boot SafeMode                |
-| 0x40  | Kernel         | Show error called (kernel panic)       |
+| Value | Level            | Description                            |
+| ----- | ---------------- | -------------------------------------- |
+| 0x0   | Any              | No information                         |
+| 0x1   | Kernel           | Package2 signature verification failed |
+| 0x2   | Kernel           | Package2 meta verification failed      |
+| 0x3   | Kernel           | Package2 version check failed          |
+| 0x4   | Kernel           | Package2 payload verification failed   |
+| 0x5   | Secure Monitor   | Unknown SMC                            |
+| 0x6   | Secure Monitor   | Unknown Abort                          |
+| 0x7   | Secure Monitor   | Invalid CPU context                    |
+| 0x8   | Secure Monitor   | Invalid SE state                       |
+| 0x9   | Secure Monitor   | CPU is already awake                   |
+| 0x10  | Any              | Unknown exception                      |
+| 0x20  | Bootloader       | Rebooting into SafeMode                |
+| 0x21  | Bootloader       | Rebooting for anti-downgrade           |
+| 0x30  | Bootloader       | General bootloader error               |
+| 0x31  | Bootloader       | Invalid DRAM ID                        |
+| 0x32  | Bootloader       | Invalid size                           |
+| 0x33  | Bootloader       | Invalid argument                       |
+| 0x34  | Bootloader       | Bad GPT                                |
+| 0x35  | Bootloader       | Failed to boot SafeMode                |
+| 0x36  | Bootloader-color | \[4.0.0+\]                             |
+| 0x40  | Kernel           | Show error called (kernel panic)       |

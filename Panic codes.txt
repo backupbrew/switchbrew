@@ -83,5 +83,7 @@ While any combination of panic colors and codes is possible, several panic codes
 |-
 | 0x35 || Bootloader || Failed to boot SafeMode
 |-
+| 0x36 || Bootloader-color || [4.0.0+] 
+|-
 | 0x40 || Kernel || Show error called (kernel panic)
 |}
