@@ -112,6 +112,9 @@ the QUERY\_\* commands, and works like this:
   - Finally, QUERY\_GET is added and contains the mode and other unknown
     data.
 
+The above commands are added using the Sequential Mode, since the Ids
+for all those 4 registers are sequential.
+
 #### QUERY\_GET Structure
 
 | Bits  | Description |
@@ -135,9 +138,9 @@ descriptions. Also figure out what the other values mean.
 Some of the other fields are still unknown/unobserved.
 
 Official games will set Mode to 0, Fence to 1 and Unit to 0xF. The
-QUERY\_SEQUENCE value is then written to the address pointed to by
-QUERY\_ADDRESS. On the CPU side, the game code should wait until the
-value at the address pointed to by QUERY\_ADDRESS is \>= to the last
+QUERY\_SEQUENCE value is then written by the GPU to the address pointed
+to by QUERY\_ADDRESS. On the CPU side, the game code should wait until
+the value at the address pointed to by QUERY\_ADDRESS is \>= to the last
 written SEQUENCE value. Official code waits for this condition to be
 true on a loop, and won't send any further commands before that.
 

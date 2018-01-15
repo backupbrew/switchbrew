@@ -97,6 +97,8 @@ Command Lists can contain fences to ensure that commands are executed on the cor
 * Then, QUERY_SEQUENCE is added with a sequential number. This number is basically a incrementing counter, so the first Command List can have QUERY_SEQUENCE = 1, the next one QUERY_SEQUENCE = 2, 3, 4... and so on.
 * Finally, QUERY_GET is added and contains the mode and other unknown data.
 
+The above commands are added using the Sequential Mode, since the Ids for all those 4 registers are sequential.
+
 ====QUERY_GET Structure====
 
 {| class="wikitable"
@@ -138,7 +140,7 @@ TODO: Move this to a separate page with all GPU Commands with descriptions. Also
 
 Some of the other fields are still unknown/unobserved.
 
-Official games will set Mode to 0, Fence to 1 and Unit to 0xF. The QUERY_SEQUENCE value is then written to the address pointed to by QUERY_ADDRESS.
+Official games will set Mode to 0, Fence to 1 and Unit to 0xF. The QUERY_SEQUENCE value is then written by the GPU to the address pointed to by QUERY_ADDRESS.
 On the CPU side, the game code should wait until the value at the address pointed to by QUERY_ADDRESS is >= to the last written SEQUENCE value. Official code waits for this condition to be true on a loop, and won't send any further commands before that.
 
 ==Vertex Data Submission==
