@@ -205,7 +205,7 @@ Kernel internal process?
 | Sections: .text, .rodata, .data, .bss and two reserved (ignored) sections.
 |-
 | 0x80
-| u64[0x20]
+| u32[0x20]
 | KernelCaps
 |}
 

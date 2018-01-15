@@ -95,7 +95,7 @@ process?
 | 0x1E   | u8                                                | Reserved (unused)                                                                                                              |
 | 0x1F   | u8                                                | Flags: bit0-2: compression-enable for each section, when set. Bit3: Is64Bit. Bit4: IsAddrSpace36Bit. Bit5-7: reserved (unused) |
 | 0x20   | [\#SectionHeader](#SectionHeader "wikilink")\[6\] | Sections: .text, .rodata, .data, .bss and two reserved (ignored) sections.                                                     |
-| 0x80   | u64\[0x20\]                                       | KernelCaps                                                                                                                     |
+| 0x80   | u32\[0x20\]                                       | KernelCaps                                                                                                                     |
 
 ##### SectionHeader
 
