@@ -32,7 +32,7 @@ follows.
 
 | Offset | Size | Description                                                                                                                                                  |
 | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0x0    | 0x10 | Decrypted header's CTR                                                                                                                                       |
+| 0x0    | 0x10 | Decrypted header's CTR. Also used to calculate the size of the entire package2 with the raw header: size = word2 ^ word3 ^ word0.                            |
 | 0x10   | 0x10 | Section 0 CTR                                                                                                                                                |
 | 0x20   | 0x10 | Section 1 CTR                                                                                                                                                |
 | 0x30   | 0x10 | Section 2 CTR                                                                                                                                                |
