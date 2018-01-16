@@ -15,6 +15,9 @@ This includes tasks like:
   - Resetting MemoryState
   - No leftover threads running in the background
 
+Original LR given to entrypoint should be returned to, X0 contains an
+error code. If original LR is NULL, svcExitProcess should be used.
+
 ### Entrypoint Arguments
 
 **NSO0:** the system executes binary\_ptr+0 with X0=NULL,
