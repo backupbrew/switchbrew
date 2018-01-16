@@ -96,7 +96,6 @@ Homebrew menu uses this pointer to write the path of next NRO to load, before re
 * '''IsPresenceMandatory:''' False.
 * '''Value[0]:''' Pointer to buffer of size 300 of next NRO to load. Should start with "sdmc:/".
 * '''Value[1]:''' Ignored.
-* '''DefaultBehavior:''' Returns back to where LR was when the program entered, or exits process using svcExitProcess if LR was NULL.
 
 ==== OverrideHeap ====
 If the NRO loader has reserved some space in the heap for itself, the application must not manipulate the heap.

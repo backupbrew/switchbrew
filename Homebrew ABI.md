@@ -151,8 +151,6 @@ before returning back to Homebrew loader.
   - **Value\[0\]:** Pointer to buffer of size 300 of next NRO to load.
     Should start with "sdmc:/".
   - **Value\[1\]:** Ignored.
-  - **DefaultBehavior:** Returns back to where LR was when the program
-    entered, or exits process using svcExitProcess if LR was NULL.
 
 #### OverrideHeap
 
