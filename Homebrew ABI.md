@@ -150,7 +150,8 @@ to return to the homebrew menu.
   - **Value\[0\]:** Function pointer with type `void __noreturn (*)(int
     result_code);`
   - **Value\[1\]:** Ignored.
-  - **DefaultBehavior:** Exits process using svcExitProcess.
+  - **DefaultBehavior:** Returns back to where LR was when the program
+    entered, or exits process using svcExitProcess if LR was NULL.
 
 #### OverrideHeap
 

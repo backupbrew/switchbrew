@@ -94,7 +94,7 @@ When the homebrew has finished executing, it shall jump to this address to retur
 * '''IsPresenceMandatory:''' False.
 * '''Value[0]:''' Function pointer with type <code>void __noreturn (*)(int result_code);</code>
 * '''Value[1]:''' Ignored.
-* '''DefaultBehavior:''' Exits process using svcExitProcess.
+* '''DefaultBehavior:''' Returns back to where LR was when the program entered, or exits process using svcExitProcess if LR was NULL.
 
 ==== OverrideHeap ====
 If the NRO loader has reserved some space in the heap for itself, the application must not manipulate the heap.
