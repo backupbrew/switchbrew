@@ -75,8 +75,7 @@ use `result_code = 346 | ((300 + key) << 9);`.
 
 <!-- end list -->
 
-  - 2: [\#LoaderReturnAddr](#LoaderReturnAddr "wikilink")
-    \[RECOGNITION-MANDATORY\]
+  - 2: [\#NextLoadPath](#NextLoadPath "wikilink")
 
 <!-- end list -->
 
@@ -138,17 +137,16 @@ Required for mutex to function.
   - **DefaultBehavior:** Use main thread handle from entry function
     arguments.
 
-#### LoaderReturnAddr
+#### NextLoadPath
 
-When the homebrew has finished executing, it shall jump to this address
-to return to the homebrew menu.
+Homebrew menu uses this pointer to write the path of next NRO to load,
+before returning back to Homebrew loader.
 
   - **Key:** 2
-  - **IsRecognitionMandatory:** True, because the default behaviour may
-    be unsafe if this key is not handled correctly.
+  - **IsRecognitionMandatory:** False.
   - **IsPresenceMandatory:** False.
-  - **Value\[0\]:** Function pointer with type `void __noreturn (*)(int
-    result_code);`
+  - **Value\[0\]:** Pointer to buffer of size 300 of next NRO to load.
+    Should start with "sdmc:/".
   - **Value\[1\]:** Ignored.
   - **DefaultBehavior:** Returns back to where LR was when the program
     entered, or exits process using svcExitProcess if LR was NULL.

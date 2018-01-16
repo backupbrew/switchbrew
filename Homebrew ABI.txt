@@ -49,7 +49,7 @@ If there is some error encountered while validating an entry's values, use <code
 
 * 1: [[#MainThreadHandle]] [RECOGNITION-MANDATORY] [PRESENCE-MANDATORY in some cases]
 
-* 2: [[#LoaderReturnAddr]] [RECOGNITION-MANDATORY]
+* 2: [[#NextLoadPath]]
 
 * 3: [[#OverrideHeap]] [RECOGNITION-MANDATORY]
 
@@ -86,13 +86,13 @@ This is the handle to the thread that is executing the entrypoint. Required for 
 * '''Value[1]:''' Ignored.
 * '''DefaultBehavior:''' Use main thread handle from entry function arguments.
 
-==== LoaderReturnAddr ====
-When the homebrew has finished executing, it shall jump to this address to return to the homebrew menu.
+==== NextLoadPath ====
+Homebrew menu uses this pointer to write the path of next NRO to load, before returning back to Homebrew loader.
 
 * '''Key:''' 2
-* '''IsRecognitionMandatory:''' True, because the default behaviour may be unsafe if this key is not handled correctly.
+* '''IsRecognitionMandatory:''' False.
 * '''IsPresenceMandatory:''' False.
-* '''Value[0]:''' Function pointer with type <code>void __noreturn (*)(int result_code);</code>
+* '''Value[0]:''' Pointer to buffer of size 300 of next NRO to load. Should start with "sdmc:/".
 * '''Value[1]:''' Ignored.
 * '''DefaultBehavior:''' Returns back to where LR was when the program entered, or exits process using svcExitProcess if LR was NULL.
 
