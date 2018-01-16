@@ -20,8 +20,8 @@ This includes tasks like:
 **NSO0:** the system executes binary\_ptr+0 with X0=NULL,
 X1=main\_thread\_handle.
 
-**NRO0:** the homebrew loader puts X1=0xFFFFFFFFFFFFFFFF
-\[INVALID\_HANDLE\] and X0=loader\_config\_ptr.
+**NRO0:** the homebrew loader puts X0=loader\_config\_ptr,
+X1=0xFFFFFFFFFFFFFFFF \[INVALID\_HANDLE\].
 
 ### Loader Config
 
