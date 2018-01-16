@@ -46,35 +46,32 @@ Each entry is key-value pair:
 `};`
 
 `enum LoaderConfigFlags {`  
-`  IsRecognitionMandatory = BIT(0),`  
+`  IsMandatory = BIT(0),`  
 `};`
 
 ### Loader Config Keys
 
-A loader key can be marked as recognition-mandatory or not
-recognition-mandatory in its `Flags` field. The presence-mandatory field
-is part of the specification and does not go in the `Flags` field, but
-any complying loader must pass all fields specified to be
-presence-mandatory.
+A loader key can be marked as mandatory or not in its `Flags` field.
 
-If a key is marked as recognition-mandatory and is not recognized by the
-application, the program should jump to
-[\#LoaderReturnAddr](#LoaderReturnAddr "wikilink") with `result_code=346
-| ((100 + key) << 9);`, as the default behaviour may be unsafe.
+If a key is marked as mandatory it means that the application cannot
+safely ignore it.
 
-If a key that is presence-mandatory is not found (for example with an
-outdated loader), use `result_code=346 | ((200 + key) << 9);`.
+Thus if said key is not recognized by the application, it should exit
+with `result_code=346 | ((100 + key) << 9);`, as the default behaviour
+may be unsafe.
+
+If a key that is required is not found (for example with an outdated
+loader), use `result_code=346 | ((200 + key) << 9);`.
 
 If there is some error encountered while validating an entry's values,
 use `result_code = 346 | ((300 + key) << 9);`.
 
-  - 0: [\#EndOfList](#EndOfList "wikilink") \[RECOGNITION-MANDATORY\]
-    \[PRESENCE-MANDATORY\]
+  - 0: [\#EndOfList](#EndOfList "wikilink"): Must be present
 
 <!-- end list -->
 
-  - 1: [\#MainThreadHandle](#MainThreadHandle "wikilink")
-    \[RECOGNITION-MANDATORY\] \[PRESENCE-MANDATORY in some cases\]
+  - 1: [\#MainThreadHandle](#MainThreadHandle "wikilink"): Must be
+    present
 
 <!-- end list -->
 
@@ -82,8 +79,8 @@ use `result_code = 346 | ((300 + key) << 9);`.
 
 <!-- end list -->
 
-  - 3: [\#OverrideHeap](#OverrideHeap "wikilink")
-    \[RECOGNITION-MANDATORY\]
+  - 3: [\#OverrideHeap](#OverrideHeap "wikilink"): If present, must not
+    be ignored
 
 <!-- end list -->
 
@@ -99,13 +96,12 @@ use `result_code = 346 | ((300 + key) << 9);`.
 
 <!-- end list -->
 
-  - 7: [\#AppletType](#AppletType "wikilink") \[PRESENCE-MANDATORY in
-    some cases\]
+  - 7: [\#AppletType](#AppletType "wikilink"): Must be present
 
 <!-- end list -->
 
-  - 8: [\#AppletWorkaround](#AppletWorkaround "wikilink")
-    \[RECOGNITION-MANDATORY\]
+  - 8: [\#AppletWorkaround](#AppletWorkaround "wikilink"): If present,
+    must not be ignored
 
 <!-- end list -->
 
@@ -120,9 +116,6 @@ use `result_code = 346 | ((300 + key) << 9);`.
 EndOfList is the final entry in the LoaderConfig.
 
   - **Key:** 0
-  - **IsRecognitionMandatory:** True, because not recognizing this tag
-    would send the loader off the end of the list.
-  - **IsPresenceMandatory:** True, because the list must be terminated.
   - **Value\[0\]:** Ignored.
   - **Value\[1\]:** Ignored.
 
@@ -132,9 +125,6 @@ This is the handle to the thread that is executing the entrypoint.
 Required for mutex to function.
 
   - **Key:** 1
-  - **IsRecognitionMandatory:** True.
-  - **IsPresenceMandatory:** True if entry function was called with
-    INVALID\_HANDLE.
   - **Value\[0\]:** Handle to the main thread.
   - **Value\[1\]:** Ignored.
   - **DefaultBehavior:** Use main thread handle from entry function
@@ -146,8 +136,6 @@ Homebrew menu uses this pointer to write the path of next NRO to load,
 before returning back to Homebrew loader.
 
   - **Key:** 2
-  - **IsRecognitionMandatory:** False.
-  - **IsPresenceMandatory:** False.
   - **Value\[0\]:** Pointer to buffer of size 300 of next NRO to load.
     Should start with "sdmc:/".
   - **Value\[1\]:** Ignored.
@@ -158,9 +146,6 @@ If the NRO loader has reserved some space in the heap for itself, the
 application must not manipulate the heap.
 
   - **Key:** 3
-  - **IsRecognitionMandatory:** True, because the default behaviour may
-    be unsafe if this key is not handled correctly.
-  - **IsPresenceMandatory:** False.
   - **Value\[0\]:** Base address of heap. Must be MemoryType 4, 5, or 9
     with all reference counts being zero.
   - **Value\[1\]:** Size of heap.
@@ -185,8 +170,6 @@ the original fsp-srv handle doesn't allow MountSdcard, it shall fallback
 to the stolen one, etc etc.
 
   - **Key:** 4
-  - **IsRecognitionMandatory:** False.
-  - **IsPresenceMandatory:** False.
   - **Value\[0\]:** Name of service, same format as for sm.
   - **Value\[1\]:** Service handle.
   - **DefaultBehavior:** Fetches service from "sm:" named port.
@@ -196,12 +179,10 @@ to the stolen one, etc etc.
 The NRO loader should be able to send argv.
 
   - **Key:** 5
-  - **IsRecognitionMandatory:** False.
-  - **IsPresenceMandatory:** False.
   - **Value\[0\]:** Argc.
   - **Value\[1\]:** Argv string pointer.
-  - **DefaultBehavior:** Setting (argc == 1, argv\[0\] == "unknown",
-    argv\[1\] == NULL), or argv parsed in NSO0 fashion.
+  - **DefaultBehavior:** Setting (argc == 1, argv\[0\] == "", argv\[1\]
+    == NULL), or argv parsed in NSO0 fashion.
 
 #### SyscallAvailableHint
 
@@ -211,8 +192,6 @@ This entry allows loader to give hints about having access to rare
 syscalls (such as JIT).
 
   - **Key:** 6
-  - **IsRecognitionMandatory:** False.
-  - **IsPresenceMandatory:** False.
   - **Value\[0\]:** 64-bit mask for the 0-0x3F SVC range. n:th bit set
     means SVC is accessible.
   - **Value\[1\]:** 64-bit mask for the 0x40-0x7F SVC range.
@@ -226,9 +205,6 @@ Specifies the [AM](AM%20services.md "wikilink") AppletType, used for
 selecting which Open\*Proxy command to use.
 
   - **Key:** 7
-  - **IsRecognitionMandatory:** False.
-  - **IsPresenceMandatory:** Application-defined. Depends on whether the
-    application is using any applet services or not.
   - **Value\[0\]:** AppletType
   - **Value\[1\]:** Ignored.
 
@@ -245,9 +221,6 @@ selecting which Open\*Proxy command to use.
 This flag means that AM services is broken, and must not be used.
 
   - **Key:** 8
-  - **IsRecognitionMandatory:** True, because the default behaviour
-    (using applet services) is unsafe if this tag is passed.
-  - **IsPresenceMandatory:** False.
   - **Value\[0\]:** AppletResourceUserId
   - **Value\[1\]:** Ignored.
 
@@ -258,8 +231,6 @@ Use these sockets for standard input/output/error. There must be an
 `bsd:u` or `bsd:s`, depending on which is indicated.
 
   - **Key:** 9
-  - **IsRecognitionMandatory:** False.
-  - **IsPresenceMandatory:** False.
   - **Value\[0\]:** First word: stdout file descriptor, second word:
     stdin file descriptor
   - **Value\[1\]:** Third word: stderr file descriptor, fourth word:
@@ -275,7 +246,5 @@ Use these sockets for standard input/output/error. There must be an
 Handle to self process.
 
   - **Key:** 10
-  - **IsRecognitionMandatory:** False.
-  - **IsPresenceMandatory:** False.
   - **Value\[0\]:** Process handle.
   - **Value\[1\]:** Ignored.
