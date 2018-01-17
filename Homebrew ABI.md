@@ -136,10 +136,10 @@ Homebrew menu uses this pointer to write the path of next NRO to load,
 before returning back to Homebrew loader.
 
   - **Key:** 2
-  - **Value\[0\]:** Pointer to buffer of size 512. File path should
+  - **Value\[0\]:** Pointer to buffer of size 512. NRO file path, should
     start with "sdmc:/".
-  - **Value\[1\]:** Pointer to buffer of size 2048. Contains the argv
-    string.
+  - **Value\[1\]:** Pointer to buffer of size 2048. Argv string to boot
+    NRO with.
 
 #### OverrideHeap
 

@@ -89,8 +89,8 @@ This is the handle to the thread that is executing the entrypoint. Required for 
 Homebrew menu uses this pointer to write the path of next NRO to load, before returning back to Homebrew loader.
 
 * '''Key:''' 2
-* '''Value[0]:''' Pointer to buffer of size 512. File path should start with "sdmc:/".
-* '''Value[1]:''' Pointer to buffer of size 2048. Contains the argv string.
+* '''Value[0]:''' Pointer to buffer of size 512. NRO file path, should start with "sdmc:/".
+* '''Value[1]:''' Pointer to buffer of size 2048. Argv string to boot NRO with.
 
 ==== OverrideHeap ====
 If the NRO loader has reserved some space in the heap for itself, the application must not manipulate the heap.
