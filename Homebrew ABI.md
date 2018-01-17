@@ -136,9 +136,10 @@ Homebrew menu uses this pointer to write the path of next NRO to load,
 before returning back to Homebrew loader.
 
   - **Key:** 2
-  - **Value\[0\]:** Pointer to buffer of size 512 containing the argv
-    string. File path should start with "sdmc:/".
-  - **Value\[1\]:** Ignored.
+  - **Value\[0\]:** Pointer to buffer of size 512. File path should
+    start with "sdmc:/".
+  - **Value\[1\]:** Pointer to buffer of size 2048. Contains the argv
+    string.
 
 #### OverrideHeap
 
@@ -179,7 +180,7 @@ to the stolen one, etc etc.
 The NRO loader should be able to send argv.
 
   - **Key:** 5
-  - **Value\[0\]:** Argc.
+  - **Value\[0\]:** Ignored.
   - **Value\[1\]:** Argv string pointer.
   - **DefaultBehavior:** Setting (argc == 1, argv\[0\] == "", argv\[1\]
     == NULL), or argv parsed in NSO0 fashion.
