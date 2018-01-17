@@ -184,8 +184,13 @@ The key-derivation is described in more detail
 
 #### Keyblob
 
-The keyblob is console unique, and changes with every bootloader
-update.
+There are 32 keyblobs written to NAND at factory, with each keyblob
+encrypted with a console-unique key derived from the console's SBK, the
+console's tsec key, and a constant specific to each keyblob.
+
+Despite being encrypted with console unique keys, though, the decrypted
+keyblob contents are shared for all
+consoles.
 
 #### Seeds
 
