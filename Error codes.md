@@ -186,6 +186,7 @@ applets.
 | 0x3D60B           | 491         | IPC Query 1 failed.                                                                                                                                                                  |
 | 0x20F             | 1           | Pid not found                                                                                                                                                                        |
 | 0x60F             | 3           | Process has no pending events                                                                                                                                                        |
+| 0xA0F             | 5           | Application already running                                                                                                                                                          |
 | 0x410             | 2           | Title-id not found                                                                                                                                                                   |
 | 0xF010            | 120         | Gamecard sysupdate not required                                                                                                                                                      |
 | 0x1F610           | 251         | Unexpected StorageId                                                                                                                                                                 |

@@ -320,7 +320,6 @@ When a fatal-error is received the error code is outputted using the following f
 | 0xE609 ||  || ACID/ACI0 don't match for descriptor "HandleTableSize"
 |-
 | 0xE809 ||  || ACID/ACI0 don't match for descriptor "DebugFlags"
-
 |-
 | 0x1A80A || 212 || Bad magic (expected 'SFCO')
 |-
@@ -337,6 +336,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 0x20F || 1 || Pid not found
 |-
 | 0x60F || 3 || Process has no pending events
+|-
+| 0xA0F || 5 || Application already running
 |-
 | 0x410 || 2 || Title-id not found
 |-
