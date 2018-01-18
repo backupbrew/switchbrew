@@ -90,7 +90,7 @@ Flaws.
 <td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
 <td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
 <td><p>December 2017 (Probably earlier by others)</p></td>
-<td><p>January 18, 2017</p></td>
+<td><p>January 18, 2018</p></td>
 <td><p>SciresM, probably others.</p></td>
 </tr>
 <tr class="even">
