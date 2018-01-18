@@ -88,7 +88,7 @@ However, the SMC handler enforces that all SMCs must be called from core #3, unl
 | [[2.0.0]]
 | December 2017 (Probably earlier by others)
 | January 18, 2017
-| Sciresm, probably others.
+| SciresM, probably others.
 |-
 |}
 
