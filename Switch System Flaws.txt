@@ -79,14 +79,16 @@ Warning: one could irreparably brick one's console by playing with this.
 !  Public disclosure timeframe
 !  Discovered by
 |-
-|  No public ARM TrustZone exploits 
-|
-|
-|
-|
-|
-|
-|
+|  Non-atomic mutexes
+|  When an [[SMC]] is called, TrustZone sets a global variable to mark that an SMC is in progress, so that two SMCs using shared resources (like the security engine) do not trample on one another. On 1.0.0, this global variable was written using non-atomic writes, and thus a race condition is possible.
+
+However, the SMC handler enforces that all SMCs must be called from core #3, unless the top-level handler ID is 1 (SMCs internal to the kernel). Thus, the only SMCs that can be run side-by-side are [any userland smc] and smcGetRandomBytesForKernel, and this turns out to not really be abusable.
+| Mostly useless. Maybe some oob-write into unused (and thus useless) memory if running smcGetRandomBytesForKernel and smcGetRandomBytesForUser at the same time.
+| [[2.0.0]]
+| [[2.0.0]]
+| December 2017 (Probably earlier by others)
+| January 18, 2017
+| Sciresm, probably others.
 |-
 |}
 

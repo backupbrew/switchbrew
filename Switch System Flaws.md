@@ -68,10 +68,43 @@ Flaws.
 
 ### TrustZone
 
-| Summary                          | Description | Successful exploitation result | Fixed in system version | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by |
-| -------------------------------- | ----------- | ------------------------------ | ----------------------- | --------------------------------------------- | ----------------------------- | --------------------------- | ------------- |
-| No public ARM TrustZone exploits |             |                                |                         |                                               |                               |                             |               |
-|                                  |             |                                |                         |                                               |                               |                             |               |
+<table>
+<thead>
+<tr class="header">
+<th><p>Summary</p></th>
+<th><p>Description</p></th>
+<th><p>Successful exploitation result</p></th>
+<th><p>Fixed in system version</p></th>
+<th><p>Last system version this flaw was checked for</p></th>
+<th><p>Timeframe this was discovered</p></th>
+<th><p>Public disclosure timeframe</p></th>
+<th><p>Discovered by</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Non-atomic mutexes</p></td>
+<td><p>When an <a href="SMC.md" title="wikilink">SMC</a> is called, TrustZone sets a global variable to mark that an SMC is in progress, so that two SMCs using shared resources (like the security engine) do not trample on one another. On 1.0.0, this global variable was written using non-atomic writes, and thus a race condition is possible.</p>
+<p>However, the SMC handler enforces that all SMCs must be called from core #3, unless the top-level handler ID is 1 (SMCs internal to the kernel). Thus, the only SMCs that can be run side-by-side are [any userland smc] and smcGetRandomBytesForKernel, and this turns out to not really be abusable.</p></td>
+<td><p>Mostly useless. Maybe some oob-write into unused (and thus useless) memory if running smcGetRandomBytesForKernel and smcGetRandomBytesForUser at the same time.</p></td>
+<td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
+<td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
+<td><p>December 2017 (Probably earlier by others)</p></td>
+<td><p>January 18, 2017</p></td>
+<td><p>Sciresm, probably others.</p></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ### Kernel
 
