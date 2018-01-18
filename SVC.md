@@ -329,7 +329,7 @@ process.
 
 | Argument | Type                           | Name |
 | -------- | ------------------------------ | ---- |
-| (In) X1  | u64                            | Nano |
+| (In) X0  | u64                            | Nano |
 | (Out) W0 | [\#Result](#Result "wikilink") | Ret  |
 
 </div>

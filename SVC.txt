@@ -463,7 +463,7 @@ Processor_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for process.
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || Nano
+| (In) X0 || u64 || Nano
 |-
 | (Out) W0 || [[#Result]] || Ret
 |}
