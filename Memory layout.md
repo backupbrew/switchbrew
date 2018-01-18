@@ -137,7 +137,7 @@ used.
 | 0xFFFFFFFFBFDFF000-0xFFFFFFFFBFDFFFFF | 0x80084000+(cpuid\*0x1000) | 0x1000  | 0x6000000000070B | RW-         | Kernel runner stack (per-core self-mirror)  |
 | 0xFFFFFFFE00000000-...                | 0x80000000                 | ...     | 0x60000000000709 | RW-         | Raw DRAM access                             |
 
-## 2.0.0-3.0.0
+## 2.0.0
 
 | Cores | Virtual                               | Physical   | Size    | Attributes       | Permissions | Description                                 |
 | ----- | ------------------------------------- | ---------- | ------- | ---------------- | ----------- | ------------------------------------------- |
@@ -168,6 +168,18 @@ used.
 | All   | 0xFFFFFFF7FFDFB000-0xFFFFFFF7FFDFBFFF | 0x50041000 | 0x1000  | 0x60000000000607 | RW-         | ARM Interrupt Distributor                   |
 | All   | 0xFFFFFFF7FFDFD000-0xFFFFFFF7FFDFDFFF | 0x50042000 | 0x1000  | 0x60000000000607 | RW-         | Interrupt Controller Physical CPU interface |
 | All   | 0xFFFFFFF800000000-...                | 0x80000000 | ...     | 0x60000000000709 | RW-         | Raw DRAM access                             |
+
+## 3.0.0
+
+| Cores | Virtual                               | Physical   | Size   | Attributes       | Permissions | Description                                 |
+| ----- | ------------------------------------- | ---------- | ------ | ---------------- | ----------- | ------------------------------------------- |
+| All   | 0xFFFFFFF7FFDAC000-0xFFFFFFF7FFDACFFF | 0x60006000 | 0x1000 | 0x60000000000607 | RW-         | Clock and Reset                             |
+| All   | 0xFFFFFFF7FFDAE000-0xFFFFFFF7FFDAEFFF | 0x7001D000 | 0x1000 | 0x60000000000607 | RW-         | MC1                                         |
+| All   | 0xFFFFFFF7FFDB0000-0xFFFFFFF7FFDB0FFF | 0x7001C000 | 0x1000 | 0x60000000000607 | RW-         | MC0                                         |
+| All   | 0xFFFFFFF7FFDB2000-0xFFFFFFF7FFDB2FFF | 0x70019000 | 0x1000 | 0x60000000000607 | RW-         | MC                                          |
+| All   | 0xFFFFFFF7FFDB4000-0xFFFFFFF7FFDB4FFF | 0x70006000 | 0x1000 | 0x60000000000607 | RW-         | UART-A                                      |
+| All   | 0xFFFFFFF7FFDFB000-0xFFFFFFF7FFDFBFFF | 0x50041000 | 0x1000 | 0x60000000000607 | RW-         | ARM Interrupt Distributor                   |
+| All   | 0xFFFFFFF7FFDFD000-0xFFFFFFF7FFDFDFFF | 0x50042000 | 0x1000 | 0x60000000000607 | RW-         | Interrupt Controller Physical CPU interface |
 
 The rest are are mapped to core-specific physaddrs, each one is
 0x1000-bytes. Descriptor ORR-value =
