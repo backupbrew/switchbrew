@@ -1186,7 +1186,7 @@ Bitfield of one of more of these:
 | 0x18   | 8      |        | CodeAddr                                           |
 | 0x20   | 4      |        | CodeNumPages                                       |
 | 0x24   | 4      |        | MmuFlags                                           |
-|        |        | Bit0   | Is64bit                                            |
+|        |        | Bit0   | IsAarch64                                          |
 |        |        | Bit3-1 | [\#AddressSpaceType](#AddressSpaceType "wikilink") |
 |        |        | Bit4   |                                                    |
 |        |        | Bit5   | EnableAslr                                         |
