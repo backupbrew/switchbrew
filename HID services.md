@@ -267,7 +267,7 @@ This is
 | 311 | [\#GetNpadIrCameraHandle](#GetNpadIrCameraHandle "wikilink")                   |
 | 312 | [\#RunDpdProcessor](#RunDpdProcessor "wikilink")                               |
 | 313 | [\#SuspendImageProcessor](#SuspendImageProcessor "wikilink")                   |
-| 314 | [\#CheckFirmwareVersion](#CheckFirmwareVersion "wikilink")                     |
+| 314 | \[3.0.0+\] [\#CheckFirmwareVersion](#CheckFirmwareVersion "wikilink")          |
 
 ## ActivateIrsensor
 

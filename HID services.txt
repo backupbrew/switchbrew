@@ -452,7 +452,7 @@ This is "nn::irsensor::IIrSensorServer".
 |-
 | 313 || [[#SuspendImageProcessor]]
 |-
-| 314 || [[#CheckFirmwareVersion]]
+| 314 || [3.0.0+] [[#CheckFirmwareVersion]]
 |}
 
 ==ActivateIrsensor==
