@@ -1093,6 +1093,15 @@ Allocates gpfifo entries with additional parameters and returns a fence. Exclusi
 = nvmemp =
 NVIDIA memory profiler (this service is not available on retail units).
 
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Cmd0
+|-
+| 1 || Cmd1
+|}
+
 = nvdrvdbg =
 {| class="wikitable" border="1"
 |-

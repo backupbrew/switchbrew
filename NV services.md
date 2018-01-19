@@ -1036,6 +1036,11 @@ Exclusive to the Switch.
 
 NVIDIA memory profiler (this service is not available on retail units).
 
+| Cmd | Name |
+| --- | ---- |
+| 0   | Cmd0 |
+| 1   | Cmd1 |
+
 # nvdrvdbg
 
 | Cmd | Name                               |
