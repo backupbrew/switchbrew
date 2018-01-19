@@ -36,7 +36,9 @@ Different colors are used to represent panic events coming from different execut
 |-
 | <div style="width: 60px; height: 20px; background:#00FFFF;"></div> || 0x00FFFF || Secure Monitor (general errors)
 |-
-| <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || 0x00AAFF || Secure Monitor (deep sleep)
+| <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || 0x00AAFF || Secure Monitor (deep sleep) [1.0.0+]
+|-
+| <div style="width: 60px; height: 20px; background:#FF77FF;"></div> || 0xFF77FF || Secure Monitor (deep sleep) [4.0.0+]
 |-
 | <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || 0xAA00FF || Bootloader (general errors)
 |-
@@ -63,11 +65,11 @@ While any combination of panic colors and codes is possible, several panic codes
 |-
 | 0x6 || <div style="width: 60px; height: 20px; background:#00FFFF;"></div> || Unknown Abort
 |-
-| 0x7 || <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || Invalid CPU context
+| 0x7 || <div style="width: 60px; height: 20px; background:#FF77FF;"></div> || Invalid CPU context
 |-
-| 0x8 || <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || Invalid SE state
+| 0x8 || <div style="width: 60px; height: 20px; background:#FF77FF;"></div> || Invalid SE state
 |-
-| 0x9 || <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || CPU is already awake [2.0.0+]
+| 0x9 || <div style="width: 60px; height: 20px; background:#FF77FF;"></div> || CPU is already awake [2.0.0+]
 |-
 | 0x10 || Any || Unknown exception
 |-
@@ -87,7 +89,7 @@ While any combination of panic colors and codes is possible, several panic codes
 |-
 | 0x35 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || Failed to boot SafeMode
 |-
-| 0x36 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || [4.0.0+] 
+| 0x36 || <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || Activity Monitor fired [4.0.0+] 
 |-
 | 0x40 || <div style="width: 60px; height: 20px; background:#0000FF;"></div> || Show error called (kernel panic)
 |}

@@ -70,15 +70,21 @@ different execution levels within the system.
 <td><div style="width: 60px; height: 20px; background:#00AAFF;">
 </div></td>
 <td><p>0x00AAFF</p></td>
-<td><p>Secure Monitor (deep sleep)</p></td>
+<td><p>Secure Monitor (deep sleep) [1.0.0+]</p></td>
 </tr>
 <tr class="even">
+<td><div style="width: 60px; height: 20px; background:#FF77FF;">
+</div></td>
+<td><p>0xFF77FF</p></td>
+<td><p>Secure Monitor (deep sleep) [4.0.0+]</p></td>
+</tr>
+<tr class="odd">
 <td><div style="width: 60px; height: 20px; background:#AA00FF;">
 </div></td>
 <td><p>0xAA00FF</p></td>
 <td><p>Bootloader (general errors)</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><div style="width: 60px; height: 20px; background:#FFFFAA;">
 </div></td>
 <td><p>0xFFFFAA</p></td>
@@ -144,19 +150,19 @@ panic codes are specifically tied to a certain color.
 </tr>
 <tr class="even">
 <td><p>0x7</p></td>
-<td><div style="width: 60px; height: 20px; background:#00AAFF;">
+<td><div style="width: 60px; height: 20px; background:#FF77FF;">
 </div></td>
 <td><p>Invalid CPU context</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x8</p></td>
-<td><div style="width: 60px; height: 20px; background:#00AAFF;">
+<td><div style="width: 60px; height: 20px; background:#FF77FF;">
 </div></td>
 <td><p>Invalid SE state</p></td>
 </tr>
 <tr class="even">
 <td><p>0x9</p></td>
-<td><div style="width: 60px; height: 20px; background:#00AAFF;">
+<td><div style="width: 60px; height: 20px; background:#FF77FF;">
 </div></td>
 <td><p>CPU is already awake [2.0.0+]</p></td>
 </tr>
@@ -217,7 +223,7 @@ panic codes are specifically tied to a certain color.
 <td><p>0x36</p></td>
 <td><div style="width: 60px; height: 20px; background:#AA00FF;">
 </div></td>
-<td><p>[4.0.0+]</p></td>
+<td><p>Activity Monitor fired [4.0.0+]</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x40</p></td>
