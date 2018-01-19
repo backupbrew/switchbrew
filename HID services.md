@@ -250,8 +250,137 @@ Takes an input 32bit float.
 
 # irs
 
-This is "nn::irsensor::IIrSensorServer". The SharedMemory is mapped with
-permissions=read-only and size=0x8000.
+This is
+"nn::irsensor::IIrSensorServer".
+
+| Cmd | Name                                                                           |
+| --- | ------------------------------------------------------------------------------ |
+| 302 | [\#ActivateIrsensor](#ActivateIrsensor "wikilink")                             |
+| 303 | [\#DeactivateIrsensor](#DeactivateIrsensor "wikilink")                         |
+| 304 | [\#GetIrsensorSharedMemoryHandle](#GetIrsensorSharedMemoryHandle "wikilink")   |
+| 305 | [\#StopImageProcessor](#StopImageProcessor "wikilink")                         |
+| 306 | [\#RunMomentProcessor](#RunMomentProcessor "wikilink")                         |
+| 307 | [\#RunClusteringProcessor](#RunClusteringProcessor "wikilink")                 |
+| 308 | [\#RunImageTransferProcessor](#RunImageTransferProcessor "wikilink")           |
+| 309 | [\#GetImageTransferProcessorState](#GetImageTransferProcessorState "wikilink") |
+| 310 | [\#RunTeraPluginProcessor](#RunTeraPluginProcessor "wikilink")                 |
+| 311 | [\#GetNpadIrCameraHandle](#GetNpadIrCameraHandle "wikilink")                   |
+| 312 | [\#RunDpdProcessor](#RunDpdProcessor "wikilink")                               |
+| 313 | [\#SuspendImageProcessor](#SuspendImageProcessor "wikilink")                   |
+| 314 | [\#CheckFirmwareVersion](#CheckFirmwareVersion "wikilink")                     |
+
+## ActivateIrsensor
+
+Takes a PID-descriptor and an
+[AppletResourceUserId](AM%20services.md "wikilink").
+
+## DeactivateIrsensor
+
+Takes a PID-descriptor and an
+[AppletResourceUserId](AM%20services.md "wikilink").
+
+## GetIrsensorSharedMemoryHandle
+
+Takes a PID-descriptor and an
+[AppletResourceUserId](AM%20services.md "wikilink"). Returns a
+SharedMemory handle.
+
+The SharedMemory is mapped with permissions=read-only and size=0x8000.
+
+## StopImageProcessor
+
+Takes a PID-descriptor, an
+[\#IrCameraHandle](#IrCameraHandle "wikilink"), and an
+[AppletResourceUserId](AM%20services.md "wikilink").
+
+## RunMomentProcessor
+
+Takes a PID-descriptor, an
+[\#IrCameraHandle](#IrCameraHandle "wikilink"), an
+[AppletResourceUserId](AM%20services.md "wikilink"), and a
+[\#PackedMomentProcessorConfig](#PackedMomentProcessorConfig "wikilink").
+
+## RunClusteringProcessor
+
+Takes a PID-descriptor, an
+[\#IrCameraHandle](#IrCameraHandle "wikilink"), an
+[AppletResourceUserId](AM%20services.md "wikilink"), and a
+[\#PackedClusteringProcessorConfig](#PackedClusteringProcessorConfig "wikilink").
+
+## RunImageTransferProcessor
+
+Takes a PID-descriptor, an
+[\#IrCameraHandle](#IrCameraHandle "wikilink"), an
+[AppletResourceUserId](AM%20services.md "wikilink"), a
+[\#PackedImageTransferProcessorConfig](#PackedImageTransferProcessorConfig "wikilink"),
+an u64, and a handle.
+
+## GetImageTransferProcessorState
+
+Takes a PID-descriptor, a type-0x6 output buffer, an
+[\#IrCameraHandle](#IrCameraHandle "wikilink"), and an
+[AppletResourceUserId](AM%20services.md "wikilink"). Returns an
+[\#ImageTransferProcessorState](#ImageTransferProcessorState "wikilink").
+
+## RunTeraPluginProcessor
+
+Takes a PID-descriptor, an
+[\#IrCameraHandle](#IrCameraHandle "wikilink"), a
+[\#PackedTeraPluginProcessorConfig](#PackedTeraPluginProcessorConfig "wikilink"),
+and an [AppletResourceUserId](AM%20services.md "wikilink").
+
+## GetNpadIrCameraHandle
+
+Takes an input u32. Returns an output
+[\#IrCameraHandle](#IrCameraHandle "wikilink").
+
+## RunDpdProcessor
+
+Takes a PID-descriptor, an
+[\#IrCameraHandle](#IrCameraHandle "wikilink"), a
+[\#PackedDpdProcessorConfig](#PackedDpdProcessorConfig "wikilink"), and
+an [AppletResourceUserId](AM%20services.md "wikilink").
+
+## SuspendImageProcessor
+
+Takes a PID-descriptor, an
+[\#IrCameraHandle](#IrCameraHandle "wikilink"), and an
+[AppletResourceUserId](AM%20services.md "wikilink").
+
+## CheckFirmwareVersion
+
+Takes a PID-descriptor, an
+[\#IrCameraHandle](#IrCameraHandle "wikilink"), a
+[\#PackedMcuVersion](#PackedMcuVersion "wikilink"), and an
+[AppletResourceUserId](AM%20services.md "wikilink").
+
+## IrCameraHandle
+
+This is an u32.
+
+## PackedMomentProcessorConfig
+
+This is a 0x20-byte struct.
+
+## PackedClusteringProcessorConfig
+
+This is a 0x28-byte struct.
+
+## ImageTransferProcessorState
+
+This is a 0x10-byte struct.
+
+## PackedTeraPluginProcessorConfig
+
+This is an u64.
+
+## PackedDpdProcessorConfig
+
+This is a 0x10-byte struct.
+
+## PackedMcuVersion
+
+This is an u32.
 
 # RomFS
 

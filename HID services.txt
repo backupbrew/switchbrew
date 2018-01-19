@@ -422,7 +422,100 @@ This is "nn::hid::IHidSystemServer".
 Takes an input 32bit float.
 
 =irs=
-This is "nn::irsensor::IIrSensorServer". The SharedMemory is mapped with permissions=read-only and size=0x8000.
+This is "nn::irsensor::IIrSensorServer".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 302 || [[#ActivateIrsensor]]
+|-
+| 303 || [[#DeactivateIrsensor]]
+|-
+| 304 || [[#GetIrsensorSharedMemoryHandle]]
+|-
+| 305 || [[#StopImageProcessor]]
+|-
+| 306 || [[#RunMomentProcessor]]
+|-
+| 307 || [[#RunClusteringProcessor]]
+|-
+| 308 || [[#RunImageTransferProcessor]]
+|-
+| 309 || [[#GetImageTransferProcessorState]]
+|-
+| 310 || [[#RunTeraPluginProcessor]]
+|-
+| 311 || [[#GetNpadIrCameraHandle]]
+|-
+| 312 || [[#RunDpdProcessor]]
+|-
+| 313 || [[#SuspendImageProcessor]]
+|-
+| 314 || [[#CheckFirmwareVersion]]
+|}
+
+==ActivateIrsensor==
+Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]].
+
+==DeactivateIrsensor==
+Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]].
+
+==GetIrsensorSharedMemoryHandle==
+Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]]. Returns a SharedMemory handle.
+
+The SharedMemory is mapped with permissions=read-only and size=0x8000.
+
+==StopImageProcessor==
+Takes a PID-descriptor, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]].
+
+==RunMomentProcessor==
+Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], and a [[#PackedMomentProcessorConfig]].
+
+==RunClusteringProcessor==
+Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], and a [[#PackedClusteringProcessorConfig]].
+
+==RunImageTransferProcessor==
+Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], a [[#PackedImageTransferProcessorConfig]], an u64, and a handle.
+
+==GetImageTransferProcessorState==
+Takes a PID-descriptor, a type-0x6 output buffer, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]]. Returns an [[#ImageTransferProcessorState]].
+
+==RunTeraPluginProcessor==
+Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedTeraPluginProcessorConfig]], and an [[AM_services|AppletResourceUserId]].
+
+==GetNpadIrCameraHandle==
+Takes an input u32. Returns an output [[#IrCameraHandle]].
+
+==RunDpdProcessor==
+Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedDpdProcessorConfig]], and an [[AM_services|AppletResourceUserId]].
+
+==SuspendImageProcessor==
+Takes a PID-descriptor, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]].
+
+==CheckFirmwareVersion==
+Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedMcuVersion]], and an [[AM_services|AppletResourceUserId]].
+
+==IrCameraHandle==
+This is an u32.
+
+==PackedMomentProcessorConfig==
+This is a 0x20-byte struct.
+
+==PackedClusteringProcessorConfig==
+This is a 0x28-byte struct.
+
+==ImageTransferProcessorState==
+This is a 0x10-byte struct.
+
+==PackedTeraPluginProcessorConfig==
+This is an u64.
+
+==PackedDpdProcessorConfig==
+This is a 0x10-byte struct.
+
+==PackedMcuVersion==
+This is an u32.
 
 =RomFS=
 The hid-sysmodule RomFS only contains "/ftmFwUpdate/NTD_4CD_1801.fts256". It's unknown what hw this is for.
