@@ -286,7 +286,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x278 || u64 || MaxTotalMemUsage
 |-
-| 0x280 || u32 || From_CreateProcessInfo_0xC
+| 0x280 || u32 || Process category (0: regular title, 1: kernel built-in)
 |-
 | 0x288 || [[#KProcessHandleTable]] || HandleTable
 |-
@@ -373,7 +373,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x288 || u64 || MaxTotalMemUsage
 |-
-| 0x290 || u32 || From_CreateProcessInfo_0xC
+| 0x290 || u32 || Process category (0: regular title, 1: kernel built-in)
 |-
 | 0x298 || u64[5] || Unused [?]
 |-
