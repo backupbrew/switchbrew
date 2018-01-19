@@ -315,7 +315,11 @@ Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), an
 [AppletResourceUserId](AM%20services.md "wikilink"), a
 [\#PackedImageTransferProcessorConfig](#PackedImageTransferProcessorConfig "wikilink"),
-an u64, and a handle. No output.
+an u64 for the TransferMemory\_size, and a TransferMemory handle. No
+output.
+
+Official sw creates the TransferMemory with an user-specified buffer and
+permissions=0.
 
 ## GetImageTransferProcessorState
 

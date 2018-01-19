@@ -476,7 +476,9 @@ Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceU
 Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], and a [[#PackedClusteringProcessorConfig]]. No output.
 
 ==RunImageTransferProcessor==
-Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], a [[#PackedImageTransferProcessorConfig]], an u64, and a handle. No output.
+Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], a [[#PackedImageTransferProcessorConfig]], an u64 for the TransferMemory_size, and a TransferMemory handle. No output.
+
+Official sw creates the TransferMemory with an user-specified buffer and permissions=0.
 
 ==GetImageTransferProcessorState==
 Takes a PID-descriptor, a type-0x6 output buffer, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]]. Returns an [[#ImageTransferProcessorState]]. No output.
