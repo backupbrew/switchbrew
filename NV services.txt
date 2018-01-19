@@ -1091,8 +1091,8 @@ Allocates gpfifo entries with additional parameters and returns a fence. Exclusi
   };
 
 = nvmemp =
-NVIDIA memory profiler (this service is not available on retail units).
-
+NVIDIA memory profiler (this service is not available on retail units). 
+/dev/nvhost-ctrl sends the ioctl NVHOST_IOCTL_CTRL_GET_CONFIG to check the config "nv!NV_MEMORY_PROFILER". If config_str returns "1", the applications attempts to talk to use nvmemp.
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

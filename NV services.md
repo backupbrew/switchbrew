@@ -1035,6 +1035,9 @@ Exclusive to the Switch.
 # nvmemp
 
 NVIDIA memory profiler (this service is not available on retail units).
+/dev/nvhost-ctrl sends the ioctl NVHOST\_IOCTL\_CTRL\_GET\_CONFIG to
+check the config "nv\!NV\_MEMORY\_PROFILER". If config\_str returns "1",
+the applications attempts to talk to use nvmemp.
 
 | Cmd | Name |
 | --- | ---- |
