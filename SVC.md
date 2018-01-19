@@ -1179,20 +1179,21 @@ Bitfield of one of more of these:
 
 ## CreateProcessInfo
 
-| Offset | Length | Bits   | Description                                        |
-| ------ | ------ | ------ | -------------------------------------------------- |
-| 0      | 12     |        | ProcessName (doesn't have to be null-terminated)   |
-| 0x10   | 8      |        | TitleId                                            |
-| 0x18   | 8      |        | CodeAddr                                           |
-| 0x20   | 4      |        | CodeNumPages                                       |
-| 0x24   | 4      |        | MmuFlags                                           |
-|        |        | Bit0   | IsAarch64                                          |
-|        |        | Bit3-1 | [\#AddressSpaceType](#AddressSpaceType "wikilink") |
-|        |        | Bit4   |                                                    |
-|        |        | Bit5   | EnableAslr                                         |
-|        |        | Bit6   | IsSystem                                           |
-| 0x28   | 4      |        | ResourceLimitHandle                                |
-| 0x2C   | 4      |        |                                                    |
+| Offset | Length | Bits   | Description                                            |
+| ------ | ------ | ------ | ------------------------------------------------------ |
+| 0      | 12     |        | ProcessName (doesn't have to be null-terminated)       |
+| 0      | 4      |        | ProcessCategory (0: regular title, 1: kernel built-in) |
+| 0x10   | 8      |        | TitleId                                                |
+| 0x18   | 8      |        | CodeAddr                                               |
+| 0x20   | 4      |        | CodeNumPages                                           |
+| 0x24   | 4      |        | MmuFlags                                               |
+|        |        | Bit0   | IsAarch64                                              |
+|        |        | Bit3-1 | [\#AddressSpaceType](#AddressSpaceType "wikilink")     |
+|        |        | Bit4   |                                                        |
+|        |        | Bit5   | EnableAslr                                             |
+|        |        | Bit6   | IsSystem                                               |
+| 0x28   | 4      |        | ResourceLimitHandle                                    |
+| 0x2C   | 4      |        |                                                        |
 
 ### AddressSpaceType
 
