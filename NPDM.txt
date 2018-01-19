@@ -56,7 +56,7 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |-
 | 0x18
 | 4
-| Process category (0: regular title, 1: kernel built-in). Should be 0 here.
+| ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.
 |-
 | 0x1C
 | 4
