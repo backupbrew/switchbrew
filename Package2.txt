@@ -182,7 +182,7 @@ Kernel internal process?
 |-
 | 0x18
 | u32
-| KProcess+0x280
+| Process category (0: regular title, 1: kernel built-in). Should be 1 here.
 |-
 | 0x1C
 | u8

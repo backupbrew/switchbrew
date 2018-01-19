@@ -89,7 +89,7 @@ process?
 | 0x0    | u32                                               | Magic "KIP1"                                                                                                                   |
 | 0x4    | char\[12\]                                        | Name                                                                                                                           |
 | 0x10   | u64                                               | TitleId                                                                                                                        |
-| 0x18   | u32                                               | KProcess+0x280                                                                                                                 |
+| 0x18   | u32                                               | Process category (0: regular title, 1: kernel built-in). Should be 1 here.                                                     |
 | 0x1C   | u8                                                | Main thread priority                                                                                                           |
 | 0x1D   | u8                                                | Default CPU core                                                                                                               |
 | 0x1E   | u8                                                | Reserved (unused)                                                                                                              |
