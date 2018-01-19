@@ -1,9 +1,14 @@
 = NAND structure =
-The Switch's eMMC storage features a large user area, two smaller boot partitions, and a replay-protected memory block which is unused (no authentication key is programmed).
+The Switch's eMMC storage features a large user area, two smaller boot partitions and a replay-protected memory block which is unused (no authentication key is programmed).
+
+All official partition names come from [[SystemInitializer]].
 
 == Boot Partitions ==
 
 '''Boot Partition 0 (0 of 1)'''
+
+The official name for this partition is "BootPartition1Root" and it has [[Filesystem_services|Bis]] Partition ID == 0.
+
 {| class="wikitable" border="1"
 |-
 !  Offset
@@ -12,19 +17,19 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |-
 |  0x000000
 |  0x4000
-|  Title 0100000000000819 [[BCT|BCT]]
+|  Normal Firmware [[BCT|BCT]] from [[Title_list#System_Data_Archives|Title 0100000000000819]]
 |-
 |  0x004000
 |  0x4000
-|  Title 010000000000081A [[BCT|BCT]]
+|  SafeMode Firmware [[BCT|BCT]] from [[Title_list#System_Data_Archives|Title 010000000000081A]]
 |-
 |  0x008000
 |  0x4000
-|  Title 0100000000000819 [[BCT|BCT]]
+|  Normal Firmware [[BCT|BCT]] from [[Title_list#System_Data_Archives|Title 0100000000000819]] (backup)
 |-
 |  0x00C000
 |  0x4000
-|  Title 010000000000081A [[BCT|BCT]]
+|  SafeMode Firmware [[BCT|BCT]] from [[Title_list#System_Data_Archives|Title 010000000000081A]] (backup)
 |-
 |  0x010000
 |  0xF0000
@@ -32,11 +37,11 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |-
 |  0x100000
 |  0x40000
-|  Title 0100000000000819 "package1"
+|  Normal Firmware [[Package1|package1]] from [[Title_list#System_Data_Archives|Title 0100000000000819]]
 |-
 |  0x140000
 |  0x40000
-|  Title 0100000000000819 "package1" (Backup)
+|  Normal Firmware [[Package1|package1]] from [[Title_list#System_Data_Archives|Title 0100000000000819]] (backup)
 |-
 |  0x180000
 |  0x4000
@@ -48,10 +53,13 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |-
 |  0x184020
 |  0x8?
-| Increments on every boot until hitting a certain number? Bottom 10 bits (0x3FF) are always zero. All zero on 1.0.
+|  Increments on every boot until hitting a certain number? Bottom 10 bits (0x3FF) are always zero. All zero on 1.0.
 |}
 
 '''Boot Partition 1 (1 of 1)'''
+
+The official name for this partition is "BootPartition2Root" and it has [[Filesystem_services|Bis]] Partition ID == 10.
+
 {| class="wikitable" border="1"
 |-
 !  Offset
@@ -60,23 +68,15 @@ The Switch's eMMC storage features a large user area, two smaller boot partition
 |-
 |  0x000000
 |  0x40000
-|  Title 010000000000081A "package1"
+|  SafeMode Firmware [[Package1|package1]] from [[Title_list#System_Data_Archives|Title 010000000000081A]]
 |-
 |  0x040000
 |  0x40000
-|  Title 010000000000081A "package1" (Backup)
-|-
-|  0x080000
-|  0x40000
-|
-|-
-|  0x0C0000
-|  0x40000
-|
+|  SafeMode Firmware [[Package1|package1]] from [[Title_list#System_Data_Archives|Title 010000000000081A]] (backup)
 |}
 
 === Keyblob ===
-Starting at offset 0x180000 is an array of 0x200-byte entries, for a total of 32 keyblobs. Each one is unique compared to the others and they are all console unique.
+Starting at offset 0x180000 is an array of 0x200-byte entries, for a total of 32 keyblobs. Each one is unique compared to the others and they are all console unique. This is officially known as the "EKS" (encryption key source) area.
 
 From each 0x200-byte entry only the first 0xB0 bytes effectively form the keyblob as below.
 
@@ -108,6 +108,8 @@ The active bootloader's version (offset 0x2330 in the BCT) acts as an index to c
 
 [[Boot]] also uses this index for repairing corrupt sectors.
 
+The currently active keyblob is officially known as "SecureInfo".
+
 == User Partitions ==
 {| class="wikitable" border="1"
 |-
@@ -123,77 +125,77 @@ The active bootloader's version (offset 0x2330 in the BCT) acts as an index to c
 |  
 |  20
 |  No
-|  GPT header, Bis-storage also allows raw access to the entire NAND eMMC sectors starting at sector0. The official name for this partitionID from [[SystemInitializer]] is "nn::fs::BisPartitionId::UserDataRoot".
+|  GPT header, Bis-storage also allows raw access to the entire NAND eMMC sectors starting at sector0. The official name for this partition is "UserDataRoot".
 |-
 |  PRODINFO
 |  0x00004400
 |  0x003FBC00
 |  27
 |  Yes
-|  "CAL0" raw partition containing set:cal data.
+|  "CAL0" raw partition containing set:cal data. The official name for this partition is "CalibrationBinary".
 |-
 |  PRODINFOF
 |  0x00400000
 |  0x00400000
 |  28
 |  Yes
-|  FAT12 filesystem, additional calibration.
+|  FAT12 filesystem, additional calibration. The official name for this partition is "CalibrationFile".
 |-
 |  BCPKG2-1-Normal-Main
 |  0x00800000
 |  0x00800000
 |  21
 |  No
-|  For all these packages, data starts at offset 0x4000 and is not console-unique. This is installed from "package2" in firmware package A (0100000000000819) by default. With the exFAT update installed, this is switched to firmware package C (010000000000081B). The data stored here matches the raw /nx/package2 file stored in the 81[9AB] data archives -- there is no additional encryption. "BCPKG2" is "BootConfigAndPackage2": for example, from [[Factory_Setup|SystemInitializer]]: "BootConfigAndPackage2Part1".
+|  Raw partition where the first 0x4000 bytes (usually empty) contain the "BootConfig" and the remaining space contains the [[Package2|package2]] image from [[Title_list#System_Data_Archives|Title 0100000000000819]] by default. With the exFAT update installed, the [[Package2|package2]] image is switched to the one from [[Title_list#System_Data_Archives|Title 010000000000081B]]. The official name for this partition is "BootConfigAndPackage2Part1".
 |-
 |  BCPKG2-2-Normal-Sub
 |  0x01000000
 |  0x00800000
 |  22
 |  No
-|  Identical to BCPKG2-1-Normal-Main, probably used as a backup partition.
+|  Backup partition for BCPKG2-1-Normal-Main. The official name for this partition is "BootConfigAndPackage2Part2".
 |-
 |  BCPKG2-3-SafeMode-Main
 |  0x01800000
 |  0x00800000
 |  23
 |  No
-|  This is installed from "package2" in firmware package B (010000000000081A).
+|  Raw partition where the first 0x4000 bytes (usually empty) contain the "BootConfig" and the remaining space contains the [[Package2|package2]] image from [[Title_list#System_Data_Archives|Title 010000000000081A]] by default. Starting with firmware version [[4.0.0|4.0.0]], the [[Package2|package2]] image is switched to the one from [[Title_list#System_Data_Archives|Title 010000000000081C]]. The official name for this partition is "BootConfigAndPackage2Part3".
 |-
 |  BCPKG2-4-SafeMode-Sub
 |  0x02000000
 |  0x00800000
 |  24
 |  No
-|  Identical to BCPKG2-3-SafeMode-Main.
+|  Backup partition for BCPKG2-3-SafeMode-Main. The official name for this partition is "BootConfigAndPackage2Part4".
 |-
 |  BCPKG2-5-Repair-Main
 |  0x02800000
 |  0x00800000
 |  25
 |  No
-|  Installed at the factory, never written afterwards on retail. In one case this is identical to normal [[1.0.0]] pkg2, except this has encrypted data at the end padded for 0x1000-byte alignment.
+|  Installed at the factory, never written afterwards on retail. In one case this is identical to normal [[1.0.0]] [[Package2|package2]], except this has encrypted data at the end padded for 0x1000-byte alignment. The official name for this partition is "BootConfigAndPackage2Part5".
 |-
 |  BCPKG2-6-Repair-Sub
 |  0x03000000
 |  0x00800000
 |  26
 |  No
-|  Identical to BCPKG2-5-Repair-Main.
+|  Backup partition for BCPKG2-5-Repair-Main. The official name for this partition is "BootConfigAndPackage2Part6".
 |-
 |  SAFE
 |  0x03800000
 |  0x04000000
 |  29
 |  Yes
-|  FAT32 filesystem.
+|  FAT32 filesystem. The official name for this partition is "SafeMode".
 |-
 |  SYSTEM
 |  0x07800000 
 |  0xA0000000
 |  31 and 32
 |  Yes
-|  FAT32 filesystem.
+|  FAT32 filesystem. The official name for this partition is "SystemProperEncryption".
 |-
 |  USER
 |  0xA7800000
@@ -207,7 +209,7 @@ The active bootloader's version (offset 0x2330 in the BCT) acts as an index to c
 | 0x200
 | 
 |  No
-| This is the backup GPT header specified by the main GPT header. This is also the last sector readable with Bis-storage paritionID 20.
+|  This is the backup GPT header specified by the main GPT header. This is also the last sector readable with Bis-storage paritionID 20.
 |}
 
 If the client process lacks the relevant permission for any of the above partition IDs, error 0x2EE202 is returned.
