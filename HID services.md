@@ -272,12 +272,12 @@ This is
 ## ActivateIrsensor
 
 Takes a PID-descriptor and an
-[AppletResourceUserId](AM%20services.md "wikilink").
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
 
 ## DeactivateIrsensor
 
 Takes a PID-descriptor and an
-[AppletResourceUserId](AM%20services.md "wikilink").
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
 
 ## GetIrsensorSharedMemoryHandle
 
@@ -291,7 +291,7 @@ The SharedMemory is mapped with permissions=read-only and size=0x8000.
 
 Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), and an
-[AppletResourceUserId](AM%20services.md "wikilink").
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
 
 ## RunMomentProcessor
 
@@ -299,6 +299,7 @@ Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), an
 [AppletResourceUserId](AM%20services.md "wikilink"), and a
 [\#PackedMomentProcessorConfig](#PackedMomentProcessorConfig "wikilink").
+No output.
 
 ## RunClusteringProcessor
 
@@ -306,6 +307,7 @@ Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), an
 [AppletResourceUserId](AM%20services.md "wikilink"), and a
 [\#PackedClusteringProcessorConfig](#PackedClusteringProcessorConfig "wikilink").
+No output.
 
 ## RunImageTransferProcessor
 
@@ -313,7 +315,7 @@ Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), an
 [AppletResourceUserId](AM%20services.md "wikilink"), a
 [\#PackedImageTransferProcessorConfig](#PackedImageTransferProcessorConfig "wikilink"),
-an u64, and a handle.
+an u64, and a handle. No output.
 
 ## GetImageTransferProcessorState
 
@@ -321,13 +323,15 @@ Takes a PID-descriptor, a type-0x6 output buffer, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), and an
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an
 [\#ImageTransferProcessorState](#ImageTransferProcessorState "wikilink").
+No output.
 
 ## RunTeraPluginProcessor
 
 Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), a
-[\#PackedTeraPluginProcessorConfig](#PackedTeraPluginProcessorConfig "wikilink"),
-and an [AppletResourceUserId](AM%20services.md "wikilink").
+[\#PackedTeraPluginProcessorConfig](#PackedTeraPluginProcessorConfig "wikilink")
+(immediately after the previous word), and an
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
 
 ## GetNpadIrCameraHandle
 
@@ -338,21 +342,22 @@ Takes an input u32. Returns an output
 
 Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), a
-[\#PackedDpdProcessorConfig](#PackedDpdProcessorConfig "wikilink"), and
-an [AppletResourceUserId](AM%20services.md "wikilink").
+[\#PackedDpdProcessorConfig](#PackedDpdProcessorConfig "wikilink")
+(immediately after the previous word), and an
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
 
 ## SuspendImageProcessor
 
 Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), and an
-[AppletResourceUserId](AM%20services.md "wikilink").
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
 
 ## CheckFirmwareVersion
 
 Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), a
 [\#PackedMcuVersion](#PackedMcuVersion "wikilink"), and an
-[AppletResourceUserId](AM%20services.md "wikilink").
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
 
 ## IrCameraHandle
 

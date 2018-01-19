@@ -456,10 +456,10 @@ This is "nn::irsensor::IIrSensorServer".
 |}
 
 ==ActivateIrsensor==
-Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]].
+Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]]. No output.
 
 ==DeactivateIrsensor==
-Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]].
+Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]]. No output.
 
 ==GetIrsensorSharedMemoryHandle==
 Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]]. Returns a SharedMemory handle.
@@ -467,34 +467,34 @@ Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]]. Returns a Sh
 The SharedMemory is mapped with permissions=read-only and size=0x8000.
 
 ==StopImageProcessor==
-Takes a PID-descriptor, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]].
+Takes a PID-descriptor, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]]. No output.
 
 ==RunMomentProcessor==
-Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], and a [[#PackedMomentProcessorConfig]].
+Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], and a [[#PackedMomentProcessorConfig]]. No output.
 
 ==RunClusteringProcessor==
-Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], and a [[#PackedClusteringProcessorConfig]].
+Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], and a [[#PackedClusteringProcessorConfig]]. No output.
 
 ==RunImageTransferProcessor==
-Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], a [[#PackedImageTransferProcessorConfig]], an u64, and a handle.
+Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], a [[#PackedImageTransferProcessorConfig]], an u64, and a handle. No output.
 
 ==GetImageTransferProcessorState==
-Takes a PID-descriptor, a type-0x6 output buffer, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]]. Returns an [[#ImageTransferProcessorState]].
+Takes a PID-descriptor, a type-0x6 output buffer, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]]. Returns an [[#ImageTransferProcessorState]]. No output.
 
 ==RunTeraPluginProcessor==
-Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedTeraPluginProcessorConfig]], and an [[AM_services|AppletResourceUserId]].
+Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedTeraPluginProcessorConfig]] (immediately after the previous word), and an [[AM_services|AppletResourceUserId]]. No output.
 
 ==GetNpadIrCameraHandle==
 Takes an input u32. Returns an output [[#IrCameraHandle]].
 
 ==RunDpdProcessor==
-Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedDpdProcessorConfig]], and an [[AM_services|AppletResourceUserId]].
+Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedDpdProcessorConfig]] (immediately after the previous word), and an [[AM_services|AppletResourceUserId]]. No output.
 
 ==SuspendImageProcessor==
-Takes a PID-descriptor, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]].
+Takes a PID-descriptor, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]]. No output.
 
 ==CheckFirmwareVersion==
-Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedMcuVersion]], and an [[AM_services|AppletResourceUserId]].
+Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedMcuVersion]], and an [[AM_services|AppletResourceUserId]]. No output.
 
 ==IrCameraHandle==
 This is an u32.
