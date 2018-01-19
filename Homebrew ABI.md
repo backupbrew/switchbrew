@@ -111,6 +111,10 @@ use `result_code = 346 | ((300 + key) << 9);`.
 
   - 10: [\#ProcessHandle](#ProcessHandle "wikilink")
 
+<!-- end list -->
+
+  - 11: [\#LastLoadResult](#LastLoadResult "wikilink")
+
 #### EndOfList
 
 EndOfList is the final entry in the LoaderConfig.
@@ -248,4 +252,13 @@ Handle to self process.
 
   - **Key:** 10
   - **Value\[0\]:** Process handle.
+  - **Value\[1\]:** Ignored.
+
+#### LastLoadResult
+
+This is used to feed the last NRO error code back to the Homebrew Menu
+so that an error dialog can be displayed.
+
+  - **Key:** 11
+  - **Value\[0\]:** Result.
   - **Value\[1\]:** Ignored.
