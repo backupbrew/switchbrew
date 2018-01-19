@@ -248,10 +248,20 @@ This is
 
 Takes an input 32bit float.
 
+# irs
+
+This is "nn::irsensor::IIrSensorServer". The SharedMemory is mapped with
+permissions=read-only and size=0x8000.
+
 # RomFS
 
 The hid-sysmodule RomFS only contains
-"/ftmFwUpdate/NTD\_4CD\_1801.fts256". Content doesn't seem to match
-[Joy-Con](Joy-Con.md "wikilink") FW.
+"/ftmFwUpdate/NTD\_4CD\_1801.fts256". It's unknown what hw this is for.
+
+# Firmware update
+
+Starting with [3.0.0](3.0.0.md "wikilink") HID-sysmodule now contains
+strings for data stored in title
+[0100000000000822](Title%20list.md "wikilink").
 
 [Category:Services](Category:Services "wikilink")
