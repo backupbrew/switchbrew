@@ -21,6 +21,13 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 | December 28, 2017
 | [[User:hexkyz|hexkyz]], [[User:SciresM|SciresM]] and [[User:qlutoo|qlutoo]]
 |-
+| Weak Security Engine context validation
+| The Tegra X1 supports a "deep sleep" feature, where everything but DRAM and the PMC registers lose their content (and the SoC loses power). Upon awaking, the bootrom re-executes, restoring system state. Among these stored states is the Security Engine's saved state, which uses AES-128-CBC with a random key and all-zeroes IV. However, the bootrom doesn't perform a MAC on this data, and only validates the last block. This allows one to control most of security engine's state upon wakeup, if one has a way to modify the encrypted state buffer.
+| With a way to modify the encrypted state buffer, security engine state control -- dumping of keys from "write-only" keyslots, etc.
+| HAC-001
+| December 2017
+| January 20, 2018
+| [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]]
 |}
 
 == System software ==
