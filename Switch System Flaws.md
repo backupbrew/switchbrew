@@ -6,10 +6,40 @@ Flaws.
 
 ## Hardware
 
-| Summary                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Fixed with hardware model/revision                                                                                                 | Newest hardware model/revision this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe | Discovered by                                                                                             |
-| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ----------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------- |
-| GMMU DMA attack                         | The Switch's GPU includes a separate MMU (GMMU) that is allowed to bypass the system's IOMMU (SMMU). By accessing the GPU's MMIO region and manipulating the page table entries in the GMMU, an attacker can read/write any portion of the DRAM (except memory carveouts).                                                                                                                                                                                                                                                                                        | None                                                                                                                               | HAC-001                                                  | Summer 2017                   | December 28, 2017           | [hexkyz](User:hexkyz "wikilink"), [SciresM](User:SciresM "wikilink") and [qlutoo](User:qlutoo "wikilink") |
-| Weak Security Engine context validation | The Tegra X1 supports a "deep sleep" feature, where everything but DRAM and the PMC registers lose their content (and the SoC loses power). Upon awaking, the bootrom re-executes, restoring system state. Among these stored states is the Security Engine's saved state, which uses AES-128-CBC with a random key and all-zeroes IV. However, the bootrom doesn't perform a MAC on this data, and only validates the last block. This allows one to control most of security engine's state upon wakeup, if one has a way to modify the encrypted state buffer. | With a way to modify the encrypted state buffer, security engine state control -- dumping of keys from "write-only" keyslots, etc. | HAC-001                                                  | December 2017                 | January 20, 2018            | [SciresM](User:SciresM "wikilink") and [motezazer](User:motezazer "wikilink")                             |
+<table>
+<thead>
+<tr class="header">
+<th><p>Summary</p></th>
+<th><p>Description</p></th>
+<th><p>Fixed with hardware model/revision</p></th>
+<th><p>Newest hardware model/revision this flaw was checked for</p></th>
+<th><p>Timeframe this was discovered</p></th>
+<th><p>Public disclosure timeframe</p></th>
+<th><p>Discovered by</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>GMMU DMA attack</p></td>
+<td><p>The Switch's GPU includes a separate MMU (GMMU) that is allowed to bypass the system's IOMMU (SMMU). By accessing the GPU's MMIO region and manipulating the page table entries in the GMMU, an attacker can read/write any portion of the DRAM (except memory carveouts).</p></td>
+<td><p>None</p></td>
+<td><p>HAC-001</p></td>
+<td><p>Summer 2017</p></td>
+<td><p>December 28, 2017</p></td>
+<td><p><a href="User:hexkyz" title="wikilink">hexkyz</a>, <a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:qlutoo" title="wikilink">qlutoo</a></p></td>
+</tr>
+<tr class="even">
+<td><p>Weak Security Engine context validation</p></td>
+<td><p>The Tegra X1 supports a &quot;deep sleep&quot; feature, where everything but DRAM and the PMC registers lose their content (and the SoC loses power). Upon awaking, the bootrom re-executes, restoring system state. Among these stored states is the Security Engine's saved state, which uses AES-128-CBC with a random key and all-zeroes IV. However, the bootrom doesn't perform a MAC on this data, and only validates the last block. This allows one to control most of security engine's state upon wakeup, if one has a way to modify the encrypted state buffer.</p>
+<p>With a way to modify the encrypted state buffer, one can thus dump keys from &quot;write-only&quot; keyslots, etc.</p></td>
+<td><p>None</p></td>
+<td><p>HAC-001</p></td>
+<td><p>December 2017</p></td>
+<td><p>January 20, 2018</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a></p></td>
+</tr>
+</tbody>
+</table>
 
 ## System software
 
