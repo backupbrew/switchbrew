@@ -20,8 +20,6 @@ and stores a copy of it in IRAM at address 0x40000000.
 
 # Structure
 
-## NAND
-
 Below is the BCT structure used by the Switch, which is a minimal
 variation of the Tegra 210 BCT format.
 
@@ -260,7 +258,7 @@ variation of the Tegra 210 BCT format.
 </tbody>
 </table>
 
-### customer\_data
+## customer\_data
 
 This data block is ignored by the boot ROM, therefore is available for
 the programmer to use freely. The Switch uses 0xB0 bytes of this area,
@@ -272,82 +270,29 @@ The first bootloader validates and decrypts this block for further key
 generation. The decrypted keyblob payload is as
 follows.
 
-| Offset | Size | Description                                              |
-| ------ | ---- | -------------------------------------------------------- |
-| 0x0    | 0x80 | Array of master static key encryption keys               |
-| 0x80   | 0x10 | [Stage 1](Package1#Stage%201.md##Stage_1 "wikilink") key |
+| Offset | Size | Description                                               |
+| ------ | ---- | --------------------------------------------------------- |
+| 0x0    | 0x80 | Array of master static key encryption keys                |
+| 0x80   | 0x10 | [PK11](Package1#PK11%20Blob.md##PK11_Blob "wikilink") key |
 
-### bootloader0\_info
+## bootloader0\_info
 
-#### 1.0.0 - 2.3.0
+### 1.0.0 - 2.3.0
 
 The version field is set to 0x01, meaning that the first keyblob is to
 be used.
 
-#### 3.0.0
+### 3.0.0
 
 The version field was changed to 0x02, meaning that the second keyblob
 is now used.
 
-#### 3.0.1
+### 3.0.1 - 3.0.2
 
 The version field was changed to 0x03, meaning that the third keyblob is
 now used.
 
-## IRAM
+### 4.0.0 - 4.1.0
 
-When copied to IRAM, the BCT has an additional header as follows.
-
-<table>
-<thead>
-<tr class="header">
-<th><p>Offset</p></th>
-<th><p>Size</p></th>
-<th><p>Field</p></th>
-<th><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>0x00</p></td>
-<td><p>0x50</p></td>
-<td><p>bct_global_header</p></td>
-<td><p>Contains pointers to actual BCT data.</p>
-<p><code>0x4C: bct_data_addr (address of the actual BCT)</code></p></td>
-</tr>
-<tr class="even">
-<td><p>0x50</p></td>
-<td><p>0x18</p></td>
-<td><p>bootloader0_header</p></td>
-<td><p>Unknown structure.</p>
-<p><code>0x00: is_active (if set to 0x01, bootloader0 is used) </code></p></td>
-</tr>
-<tr class="odd">
-<td><p>0x68</p></td>
-<td><p>0x18</p></td>
-<td><p>bootloader1_header</p></td>
-<td><p>Unknown structure.</p>
-<p><code>0x00: is_active (if set to 0x01, bootloader1 is used) </code></p></td>
-</tr>
-<tr class="even">
-<td><p>0x80</p></td>
-<td><p>0x18</p></td>
-<td><p>bootloader2_header</p></td>
-<td><p>Unknown structure.</p>
-<p><code>0x00: is_active (if set to 0x01, bootloader2 is used) </code></p></td>
-</tr>
-<tr class="odd">
-<td><p>0x98</p></td>
-<td><p>0x18</p></td>
-<td><p>bootloader3_header</p></td>
-<td><p>Unknown structure.</p>
-<p><code>0x00: is_active (if set to 0x01, bootloader3 is used) </code></p></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+The version field was changed to 0x04, meaning that the fourth keyblob
+is now used.
