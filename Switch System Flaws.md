@@ -79,9 +79,9 @@ Flaws.
 <p>Warning: one could irreparably brick one's console by playing with this.</p></td>
 <td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
 <td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
-<td><p>late summer/early fall 2017</p></td>
+<td><p>Late summer/early fall 2017</p></td>
 <td><p>December 31, 2017</p></td>
-<td><p>SciresM, Motezazer</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a>, <a href="User:motezazer" title="wikilink">motezazer</a></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -121,17 +121,17 @@ Flaws.
 <td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
 <td><p>December 2017 (Probably earlier by others)</p></td>
 <td><p>January 18, 2018</p></td>
-<td><p>SciresM, probably others.</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a>, probably others.</p></td>
 </tr>
 <tr class="even">
 <td><p>jamais vu (non-secure world access to PMC MMIO and pre-deep sleep firmware)</p></td>
-<td><p>On <a href="1.0.0.md" title="wikilink">1.0.0</a>, one could map in the PMC registers in userland. In addition, <a href="Am.md" title="wikilink">AM Services</a> ran a little-kernel based firmware on the BPMP at runtime. With code execution under am, one could modify the BPMP's little-kernel firmware to hook deep sleep entry, and modify TrustZone/Security engine state.</p>
+<td><p>On <a href="1.0.0.md" title="wikilink">1.0.0</a>, one could map in the PMC registers in userland. In addition, <a href="AM services.md" title="wikilink">am</a> ran a little-kernel based firmware on the BPMP at runtime. With code execution under am, one could modify the BPMP's little-kernel firmware to hook deep sleep entry, and modify TrustZone/Security engine state.</p>
 <p>This was fixed in <a href="2.0.0.md" title="wikilink">2.0.0</a> by making the PMC secure-world only, blacklisting the BPMP's exception vectors from being mapped, and thoroughly checking for malicious behavior on deep sleep entry.</p></td>
 <td><p>Arbitrary TrustZone code execution.</p></td>
 <td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
 <td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
 <td><p>December, 2017</p></td>
-<td><p>January 20, 2017</p></td>
+<td><p>January 20, 2018</p></td>
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a></p></td>
 </tr>
 <tr class="odd">
@@ -212,7 +212,7 @@ Flaws.
 <td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
 <td><p>January 2018</p></td>
 <td><p>January 2018</p></td>
-<td><p>SciresM, yellows8</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a>, <a href="User:Yellows8" title="wikilink">yellows8</a></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -292,6 +292,6 @@ Flaws.
 
 | Summary                                                                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                   | Successful exploitation result                          | Fixed in system version      | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe                      | Discovered by                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ---------------------------- | --------------------------------------------- | ----------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| Out-of-bounds array read for [BCAT\_Content\_Container](BCAT%20Content%20Container.md "wikilink") secret-data index | The [BCAT\_Content\_Container](BCAT%20Content%20Container.md "wikilink") secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed. This is not useful since the string loaded from this array is only involved with key-generation.                                                  |                                                         | Unknown                      | [2.0.0](2.0.0.md "wikilink")                  | August 4, 2017                | August 6, 2017                                   | [Shiny Quagsire](User:_shinyquagsire23 "wikilink"), [Yellows8](User:Yellows8 "wikilink") (independently) |
+| Out-of-bounds array read for [BCAT\_Content\_Container](BCAT%20Content%20Container.md "wikilink") secret-data index | The [BCAT\_Content\_Container](BCAT%20Content%20Container.md "wikilink") secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed. This is not useful since the string loaded from this array is only involved with key-generation.                                                  |                                                         | Unknown                      | [2.0.0](2.0.0.md "wikilink")                  | August 4, 2017                | August 6, 2017                                   | [Shiny Quagsire](User:_shinyquagsire23 "wikilink"), [yellows8](User:Yellows8 "wikilink") (independently) |
 | OOB Read in NS system module (pl:utoohax, pl:utonium, maybe other names)                                            | Prior to [3.0.0](3.0.0.md "wikilink"), pl:u (Shared Font services implemented in the NS sysmodule) service commands 1,2,3 took in a signed 32-bit index and returned that index of an array but did not check that index at all. This allowed for an arbitrary read within a 34-bit range (33-bit signed) from NS .bss. In [3.0.0](3.0.0.md "wikilink"), sending out of range indexes causes error code 0x60A to be returned. | Dumping full NS .text, .rodata and .data, infoleak, etc | [3.0.0](3.0.0.md "wikilink") | [3.0.0](3.0.0.md "wikilink")                  | April 2017                    | On exploit's fix in [3.0.0](3.0.0.md "wikilink") | [qlutoo](User:qlutoo "wikilink"), Reswitched team (independently)                                        |
 | Unchecked domain ID in common IPC code                                                                              | Prior to [2.0.0](2.0.0.md "wikilink"), object IDs in [domain messages](IPC%20Marshalling#Domain%20message.md##Domain_message "wikilink") are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.                                                                                                                             |                                                         | 2.0.0                        | 2.0.0                                         | ~July 2017                    | 20 July 2017‎                                    | [hthh](User:hthh "wikilink")                                                                             |

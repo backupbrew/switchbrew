@@ -69,9 +69,9 @@ This was fixed in 3.0.0 by writing to the register on cold boot (although the wr
 Warning: one could irreparably brick one's console by playing with this.
 |  [[3.0.0]]
 |  [[3.0.0]]
-|  late summer/early fall 2017
+|  Late summer/early fall 2017
 |  December 31, 2017
-|  SciresM, Motezazer
+|  [[User:SciresM|SciresM]], [[User:motezazer|motezazer]]
 |-
 |}
 
@@ -97,17 +97,17 @@ However, the SMC handler enforces that all SMCs must be called from core #3, unl
 | [[2.0.0]]
 | December 2017 (Probably earlier by others)
 | January 18, 2018
-| SciresM, probably others.
+| [[User:SciresM|SciresM]], probably others.
 |-
 | jamais vu (non-secure world access to PMC MMIO and pre-deep sleep firmware)
-|  On [[1.0.0]], one could map in the PMC registers in userland. In addition, [[am|AM Services]] ran a little-kernel based firmware on the BPMP at runtime. With code execution under am, one could modify the BPMP's little-kernel firmware to hook deep sleep entry, and modify TrustZone/Security engine state. 
+|  On [[1.0.0]], one could map in the PMC registers in userland. In addition, [[AM_services|am]] ran a little-kernel based firmware on the BPMP at runtime. With code execution under am, one could modify the BPMP's little-kernel firmware to hook deep sleep entry, and modify TrustZone/Security engine state. 
 
 This was fixed in [[2.0.0]] by making the PMC secure-world only, blacklisting the BPMP's exception vectors from being mapped, and thoroughly checking for malicious behavior on deep sleep entry.
 |  Arbitrary TrustZone code execution.
 |  [[2.0.0]]
 |  [[2.0.0]]
 |  December, 2017
-|  January 20, 2017
+|  January 20, 2018
 |  [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]]
 |-
 |}
@@ -170,7 +170,7 @@ This was fixed partially in [[2.0.0]] by blacklisting the memory controller from
 | [[4.0.0]]
 | January 2018
 | January 2018
-| SciresM, yellows8
+| [[User:SciresM|SciresM]], [[User:Yellows8|yellows8]]
 |-
 |}
 
@@ -240,7 +240,7 @@ This is not useful since the string loaded from this array is only involved with
 | [[2.0.0]]
 | August 4, 2017
 | August 6, 2017
-| [[User: shinyquagsire23|Shiny Quagsire]], [[User:Yellows8|Yellows8]] (independently)
+| [[User: shinyquagsire23|Shiny Quagsire]], [[User:Yellows8|yellows8]] (independently)
 |-
 |  OOB Read in NS system module (pl:utoohax, pl:utonium, maybe other names)
 |  Prior to [[3.0.0]], pl:u (Shared Font services implemented in the NS sysmodule) service commands 1,2,3 took in a signed 32-bit index and returned that index of an array but did not check that index at all. This allowed for an arbitrary read within a 34-bit range (33-bit signed) from NS .bss. In [[3.0.0]], sending out of range indexes causes error code 0x60A to be returned.
