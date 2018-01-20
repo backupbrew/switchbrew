@@ -169,9 +169,24 @@ used.
 
 | Cores | Virtual                               | Physical   | Size    | Attributes       | Permissions | Description                                 |
 | ----- | ------------------------------------- | ---------- | ------- | ---------------- | ----------- | ------------------------------------------- |
-| All   | 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC62FFF | 0x800A0000 | 0x4B000 | 0x78B            | R-X         | Kernel .text                                |
+| All   | 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC4AFFF | 0x800A0000 | 0x4B000 | 0x78B            | R-X         | Kernel .text                                |
 | All   | 0xFFFFFFF7FFC4B000-0xFFFFFFF7FFC4DFFF | 0x800EB000 | 0x3000  | 0x6000000000078B | R--         | Kernel .rodata                              |
 | All   | 0xFFFFFFF7FFC4E000-0xFFFFFFF7FFC5AFFF | 0x800EE000 | 0xD000  | 0x6000000000070B | RW-         | Kernel .data+.bss                           |
+| All   | 0xFFFFFFF7FFDAC000-0xFFFFFFF7FFDACFFF | 0x60006000 | 0x1000  | 0x60000000000607 | RW-         | Clock and Reset                             |
+| All   | 0xFFFFFFF7FFDAE000-0xFFFFFFF7FFDAEFFF | 0x7001D000 | 0x1000  | 0x60000000000607 | RW-         | MC1                                         |
+| All   | 0xFFFFFFF7FFDB0000-0xFFFFFFF7FFDB0FFF | 0x7001C000 | 0x1000  | 0x60000000000607 | RW-         | MC0                                         |
+| All   | 0xFFFFFFF7FFDB2000-0xFFFFFFF7FFDB2FFF | 0x70019000 | 0x1000  | 0x60000000000607 | RW-         | MC                                          |
+| All   | 0xFFFFFFF7FFDB4000-0xFFFFFFF7FFDB4FFF | 0x70006000 | 0x1000  | 0x60000000000607 | RW-         | UART-A                                      |
+| All   | 0xFFFFFFF7FFDFB000-0xFFFFFFF7FFDFBFFF | 0x50041000 | 0x1000  | 0x60000000000607 | RW-         | ARM Interrupt Distributor                   |
+| All   | 0xFFFFFFF7FFDFD000-0xFFFFFFF7FFDFDFFF | 0x50042000 | 0x1000  | 0x60000000000607 | RW-         | Interrupt Controller Physical CPU interface |
+
+## 4.0.0
+
+| Cores | Virtual                               | Physical   | Size    | Attributes       | Permissions | Description                                 |
+| ----- | ------------------------------------- | ---------- | ------- | ---------------- | ----------- | ------------------------------------------- |
+| All   | 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC50FFF | 0x800A0000 | 0x51000 | 0x4000000000078B | R-X         | Kernel .text                                |
+| All   | 0xFFFFFFF7FFC51000-0xFFFFFFF7FFC53FFF | 0x800F1000 | 0x3000  | 0x6000000000078B | R--         | Kernel .rodata                              |
+| All   | 0xFFFFFFF7FFC54000-0xFFFFFFF7FFC61FFF | 0x800F4000 | 0xE000  | 0x6000000000070B | RW-         | Kernel .data+.bss                           |
 | All   | 0xFFFFFFF7FFDAC000-0xFFFFFFF7FFDACFFF | 0x60006000 | 0x1000  | 0x60000000000607 | RW-         | Clock and Reset                             |
 | All   | 0xFFFFFFF7FFDAE000-0xFFFFFFF7FFDAEFFF | 0x7001D000 | 0x1000  | 0x60000000000607 | RW-         | MC1                                         |
 | All   | 0xFFFFFFF7FFDB0000-0xFFFFFFF7FFDB0FFF | 0x7001C000 | 0x1000  | 0x60000000000607 | RW-         | MC0                                         |
