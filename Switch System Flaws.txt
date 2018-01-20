@@ -127,7 +127,7 @@ This was fixed in [[2.0.0]] by making the PMC secure-world only, blacklisting th
 | Syscall Infoleaks
 | Many syscalls leaked kernel pointers on sad paths (for example svcSetHeapSize and svcQueryMemory), until they landed a bunch of fixes in 2.0.0.
 | Nothing really.
-| Unfixed
+| 2.0.0
 | 2.0.0
 | 
 | 

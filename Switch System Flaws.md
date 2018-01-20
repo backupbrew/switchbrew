@@ -167,7 +167,7 @@ Flaws.
 <td><p>Syscall Infoleaks</p></td>
 <td><p>Many syscalls leaked kernel pointers on sad paths (for example svcSetHeapSize and svcQueryMemory), until they landed a bunch of fixes in 2.0.0.</p></td>
 <td><p>Nothing really.</p></td>
-<td><p>Unfixed</p></td>
+<td><p>2.0.0</p></td>
 <td><p>2.0.0</p></td>
 <td></td>
 <td></td>
