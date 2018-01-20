@@ -262,7 +262,17 @@ This section is not present (CTR and SHA-256 hash in package2's header are NULL)
 | 0x4
 | 0x0205
 |-
-| [[4.1.0]]
+| [[3.0.0]]
+| 0x4
+| 0x5
+| 0x0306
+|-
+| [[3.0.2]]
+| 0x5
+| 0x6
+| 0x0407
+|-
+| [[4.0.0]]
 | 0x6
 | 0x7
 | 0x0508
