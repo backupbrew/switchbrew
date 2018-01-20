@@ -1,30 +1,80 @@
-TSEC (Tegra Security Engine Controller) is a NVIDIA Falcon
-microprocessor with crypto extensions. Therefore, all information in
-this page related to Falcon is identical for TSEC and vice versa.
+TSEC (Tegra Security Engine Controller) is a dedicated unit powered by a
+NVIDIA Falcon microprocessor with crypto extensions.
 
 # Driver
 
-A host driver for communicating with the TSEC/Falcon is mapped to
-physical address 0x54500000 with a total size of 0x40000 bytes and
-exposes several
-registers.
+A host driver for communicating with the TSEC is mapped to physical
+address 0x54500000 with a total size of 0x40000 bytes and exposes
+several registers.
 
 ## Registers
 
+Registers from 0x54501000 to 0x54502000 are a MMIO window for
+communicating with the Falcon microprocessor. From this range, the
+subset of registers from 0x54501400 to 0x54501FE8 are specific to the
+TSEC.
+
 | Name                                                    | Address    | Width |
 | ------------------------------------------------------- | ---------- | ----- |
+| FALCON\_IRQSSET                                         | 0x54501000 | 0x04  |
+| FALCON\_IRQSCLR                                         | 0x54501004 | 0x04  |
+| FALCON\_IRQSTAT                                         | 0x54501008 | 0x04  |
+| FALCON\_IRQMODE                                         | 0x5450100C | 0x04  |
 | [FALCON\_IRQMSET](#FALCON_IRQMSET "wikilink")           | 0x54501010 | 0x04  |
+| FALCON\_IRQMCLR                                         | 0x54501014 | 0x04  |
+| FALCON\_IRQMASK                                         | 0x54501018 | 0x04  |
 | [FALCON\_IRQDEST](#FALCON_IRQDEST "wikilink")           | 0x5450101C | 0x04  |
 | [FALCON\_SCRATCH0](#FALCON_SCRATCH0 "wikilink")         | 0x54501040 | 0x04  |
 | [FALCON\_SCRATCH1](#FALCON_SCRATCH1 "wikilink")         | 0x54501044 | 0x04  |
 | [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")               | 0x54501048 | 0x04  |
+| FALCON\_IDLESTATE                                       | 0x5450104C | 0x04  |
+| FALCON\_CURCTX                                          | 0x54501050 | 0x04  |
+| FALCON\_NXTCTX                                          | 0x54501054 | 0x04  |
+| FALCON\_SCRATCH2                                        | 0x54501080 | 0x04  |
+| FALCON\_SCRATCH3                                        | 0x54501084 | 0x04  |
+| FALCON\_ENGCTL                                          | 0x545010A4 | 0x04  |
 | [FALCON\_CPUCTL](#FALCON_CPUCTL "wikilink")             | 0x54501100 | 0x04  |
 | [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")           | 0x54501104 | 0x04  |
+| FALCON\_HWCFG                                           | 0x54501108 | 0x04  |
 | [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")             | 0x5450110C | 0x04  |
 | [FALCON\_DMATRFBASE](#FALCON_DMATRFBASE "wikilink")     | 0x54501110 | 0x04  |
 | [FALCON\_DMATRFMOFFS](#FALCON_DMATRFMOFFS "wikilink")   | 0x54501114 | 0x04  |
 | [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")       | 0x54501118 | 0x04  |
 | [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink") | 0x5450111C | 0x04  |
+| FALCON\_CPUCTL\_ALIAS                                   | 0x54501130 | 0x04  |
+| FALCON\_EXTERRADDR                                      | 0x54501168 | 0x04  |
+| FALCON\_EXTERRSTAT                                      | 0x5450116C | 0x04  |
+| FALCON\_CODE\_INDEX                                     | 0x54501180 | 0x04  |
+| FALCON\_CODE                                            | 0x54501184 | 0x04  |
+| FALCON\_CODE\_VIRT\_ADDR                                | 0x54501188 | 0x04  |
+| FALCON\_DATA\_INDEX0                                    | 0x545011C0 | 0x04  |
+| FALCON\_DATA0                                           | 0x545011C4 | 0x04  |
+| FALCON\_DATA\_INDEX1                                    | 0x545011C8 | 0x04  |
+| FALCON\_DATA1                                           | 0x545011CC | 0x04  |
+| FALCON\_DATA\_INDEX2                                    | 0x545011D0 | 0x04  |
+| FALCON\_DATA2                                           | 0x545011D4 | 0x04  |
+| FALCON\_DATA\_INDEX3                                    | 0x545011D8 | 0x04  |
+| FALCON\_DATA3                                           | 0x545011DC | 0x04  |
+| FALCON\_DATA\_INDEX4                                    | 0x545011E0 | 0x04  |
+| FALCON\_DATA4                                           | 0x545011E4 | 0x04  |
+| FALCON\_DATA\_INDEX5                                    | 0x545011E8 | 0x04  |
+| FALCON\_DATA5                                           | 0x545011EC | 0x04  |
+| FALCON\_DATA\_INDEX6                                    | 0x545011F0 | 0x04  |
+| FALCON\_DATA6                                           | 0x545011F4 | 0x04  |
+| FALCON\_DATA\_INDEX7                                    | 0x545011F8 | 0x04  |
+| FALCON\_DATA7                                           | 0x545011FC | 0x04  |
+| FALCON\_ICD\_CMD                                        | 0x54501200 | 0x04  |
+| FALCON\_ICD\_ADDR                                       | 0x54501204 | 0x04  |
+| FALCON\_ICD\_WDATA                                      | 0x54501208 | 0x04  |
+| FALCON\_ICD\_RDATA                                      | 0x5450120C | 0x04  |
+| FALCON\_SCTL                                            | 0x54501240 | 0x04  |
+| TSEC\_AUTH\_MODE                                        | 0x5450140C | 0x04  |
+| [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")   | 0x54501418 | 0x04  |
+| TSEC\_DMA\_CMD                                          | 0x54501700 | 0x04  |
+| TSEC\_DMA\_ADDR                                         | 0x54501704 | 0x04  |
+| TSEC\_DMA\_VAL                                          | 0x54501708 | 0x04  |
+| TSEC\_DMA\_UNK                                          | 0x5450170C | 0x04  |
+| [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")          | 0x54501838 | 0x04  |
 |                                                         |            |       |
 
 ### FALCON\_IRQMSET
@@ -99,6 +149,21 @@ Used for configuring DMA transfers.
 ### FALCON\_DMATRFFBOFFS
 
 Takes the offset for Falcon's target memory being transferred.
+
+### TSEC\_SCP\_CTL\_PKEY
+
+| Bits | Description                           |
+| ---- | ------------------------------------- |
+| 0    | TSEC\_SCP\_CTL\_PKEY\_REQUEST\_RELOAD |
+| 1    | TSEC\_SCP\_CTL\_PKEY\_LOADED          |
+|      |                                       |
+
+### TSEC\_TEGRA\_CTL
+
+| Bits | Description                   |
+| ---- | ----------------------------- |
+| 16   | TSEC\_TEGRA\_CTL\_TKFI\_KFUSE |
+|      |                               |
 
 # Boot Process
 
@@ -469,17 +534,19 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `cmov(c5, c0);`  
 `cmov(c7, c0);`  
   
-`// Update engine specific IO (crypto?)`  
-`*(u32 *)0x00020E00 &= 0xEFFFF;`  
+`// Clear TSEC_TEGRA_CTL_TKFI_KFUSE`  
+`// This is TSEC_MMIO + 0x1000 + (0x20E00 / 0x40)`  
+`*(u32 *)TSEC_TEGRA_CTL &= 0xEFFFF;`  
   
-`// Update engine specific IO (crypto?)`  
-`*(u32 *)0x00010600 |= 0x01;`  
+`// Set TSEC_SCP_CTL_PKEY_REQUEST_RELOAD`  
+`// This is TSEC_MMIO + 0x1000 + (0x10600 / 0x40)`  
+`*(u32 *)TSEC_SCP_CTL_PKEY |= 0x01;`  
   
-`u32 wait_10600 = 0;`  
+`u32 is_pkey_loaded = 0;`  
   
-`// Wait for some device`  
-`while (wait_10600 == 0)`  
-`   wait_10600 = (*(u32 *)0x00010600 & 0x02);`  
+`// Wait for TSEC_SCP_CTL_PKEY_LOADED`  
+`while (!is_pkey_loaded)`  
+`   is_pkey_loaded = (*(u32 *)TSEC_SCP_CTL_PKEY & 0x02);`  
   
 `// Read data segment size from IO space`  
 `u32 data_seg_size = *(u32 *)UC_CAPS;`  
@@ -509,7 +576,8 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `cxor(c7, c7);`  
   
 `// Exit Authenticated Mode`  
-`*(u32 *)0x00010300 = 0;`  
+`// This is TSEC_MMIO + 0x1000 + (0x10300 / 0x40)`  
+`*(u32 *)TSEC_AUTH_MODE = 0;`  
   
 `return;`
 
@@ -616,7 +684,7 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `  hovi_key_addr = key_buf + 0x50;`  
 `else if (key_version == 0x02)          // Use HOVI_COMMON_01`  
 `  hovi_key_addr = key_buf + 0x60;`  
-`else if (key_version == 0x03)          // Use device key`  
+`else if (key_version == 0x03)          // Use empty key`  
 `  hovi_key_addr = key_buf + 0x00;`  
 `else`  
 `  res = 0xD0D0D0D0`  
@@ -920,9 +988,7 @@ arguments.
 
 This stage is decrypted by Stage 1 using a key generated by encrypting a
 seed with an hardware secret (see
-[keygen](TSEC#keygen.md##keygen "wikilink")). The hardware secret is,
-presumably, a 16 bytes key located at offset 0x26 inside the KFUSE
-array.
+[keygen](TSEC#keygen.md##keygen "wikilink")).
 
 ## Key data
 
@@ -930,13 +996,13 @@ Small buffer stored after Stage 0's code and used across all stages.
 
 | Offset | Size | Description      |
 | ------ | ---- | ---------------- |
-| 0x00   | 0x10 | Device key       |
+| 0x00   | 0x10 | Empty            |
 | 0x10   | 0x10 | blob0 auth hash  |
 | 0x20   | 0x10 | blob1 auth hash  |
 | 0x30   | 0x10 | blob2 auth hash  |
 | 0x40   | 0x10 | blob2 AES IV     |
-| 0x50   | 0x10 | HOVI eks seed    |
-| 0x60   | 0x10 | HOVI common seed |
+| 0x50   | 0x10 | HOVI EKS seed    |
+| 0x60   | 0x10 | HOVI COMMON seed |
 | 0x70   | 0x04 | blob0 size       |
 | 0x74   | 0x04 | blob1 size       |
 | 0x78   | 0x04 | blob2 size       |
