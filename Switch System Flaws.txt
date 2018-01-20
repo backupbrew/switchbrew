@@ -99,6 +99,17 @@ However, the SMC handler enforces that all SMCs must be called from core #3, unl
 | January 18, 2018
 | SciresM, probably others.
 |-
+| jamais vu (non-secure world access to PMC MMIO and pre-deep sleep firmware)
+|  On [[1.0.0]], one could map in the PMC registers in userland. In addition, [[am|AM Services]] ran a little-kernel based firmware on the BPMP at runtime. With code execution under am, one could modify the BPMP's little-kernel firmware to hook deep sleep entry, and modify TrustZone/Security engine state. 
+
+This was fixed in [[2.0.0]] by making the PMC secure-world only, blacklisting the BPMP's exception vectors from being mapped, and thoroughly checking for malicious behavior on deep sleep entry.
+|  Arbitrary TrustZone code execution.
+|  [[2.0.0]]
+|  [[2.0.0]]
+|  December, 2017
+|  January 20, 2017
+|  [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]]
+|-
 |}
 
 === Kernel ===

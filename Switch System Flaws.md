@@ -124,6 +124,17 @@ Flaws.
 <td><p>SciresM, probably others.</p></td>
 </tr>
 <tr class="even">
+<td><p>jamais vu (non-secure world access to PMC MMIO and pre-deep sleep firmware)</p></td>
+<td><p>On <a href="1.0.0.md" title="wikilink">1.0.0</a>, one could map in the PMC registers in userland. In addition, <a href="Am.md" title="wikilink">AM Services</a> ran a little-kernel based firmware on the BPMP at runtime. With code execution under am, one could modify the BPMP's little-kernel firmware to hook deep sleep entry, and modify TrustZone/Security engine state.</p>
+<p>This was fixed in <a href="2.0.0.md" title="wikilink">2.0.0</a> by making the PMC secure-world only, blacklisting the BPMP's exception vectors from being mapped, and thoroughly checking for malicious behavior on deep sleep entry.</p></td>
+<td><p>Arbitrary TrustZone code execution.</p></td>
+<td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
+<td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
+<td><p>December, 2017</p></td>
+<td><p>January 20, 2017</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a></p></td>
+</tr>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>
