@@ -369,7 +369,21 @@ This is an u32.
 
 ## PackedMomentProcessorConfig
 
-This is a 0x20-byte struct.
+This is a 0x20-byte
+struct.
+
+| Offset | Size | Description            | DefaultConfig                  |
+| ------ | ---- | ---------------------- | ------------------------------ |
+| 0x0    | 0x8  | ?                      | 0x493E0                        |
+| 0x8    | 0x1  | ?                      | 0x0                            |
+| 0x9    | 0x1  | ?                      | 0x8                            |
+| 0xA    | 0x1  | ?                      | 0x0                            |
+| 0xB    | 0x5  | Padding                |                                |
+| 0x10   | 0x8  | u16, u32, u16          | {Not written}, 0x1400000, 0xF0 |
+| 0x18   | 0x4  | Hard-coded to 0xA0003. |                                |
+| 0x1C   | 0x1  | ?                      | 0x1                            |
+| 0x1D   | 0x1  | ?                      | 0x50                           |
+| 0x1E   | 0x2  | Padding                |                                |
 
 ## PackedClusteringProcessorConfig
 
