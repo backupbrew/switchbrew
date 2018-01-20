@@ -1,6 +1,3 @@
-**DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT
-DRAFT DRAFT DRAFT**
-
 ### Entrypoint
 
 Entrypoint is at binary\_ptr+0. At this offset, there is a branch
