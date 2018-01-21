@@ -114,9 +114,11 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 345 || libnx
 |-
-| 346 || Homebrew Menu
+| 346 || [[Homebrew ABI]]
 |-
 | 347 || Homebrew Loader
+|-
+| 348 || libnx Nvidia errors
 |-
 | 651 || TC
 |-
