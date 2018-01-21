@@ -1,4 +1,4 @@
-TSEC (Tegra Security Engine Controller) is a dedicated unit powered by a
+TSEC (Tegra Security Co-processor) is a dedicated unit powered by a
 NVIDIA Falcon microprocessor with crypto extensions.
 
 # Driver
@@ -9,6 +9,9 @@ several registers.
 
 ## Registers
 
+Registers from 0x54500000 to 0x54501000 are used to configure values for
+the host interface (HOST1X).
+
 Registers from 0x54501000 to 0x54502000 are a MMIO window for
 communicating with the Falcon microprocessor. From this range, the
 subset of registers from 0x54501400 to 0x54501FE8 are specific to the
@@ -16,6 +19,10 @@ TSEC.
 
 | Name                                                    | Address    | Width |
 | ------------------------------------------------------- | ---------- | ----- |
+| TSEC\_THI\_INT\_STATUS                                  | 0x54500078 | 0x04  |
+| TSEC\_THI\_SLCG\_OVERRIDE\_HIGH\_A                      | 0x54500088 | 0x04  |
+| TSEC\_THI\_SLCG\_OVERRIDE\_LOW\_A                       | 0x5450008C | 0x04  |
+| TSEC\_THI\_CLK\_OVERRIDE                                | 0x54500E00 | 0x04  |
 | FALCON\_IRQSSET                                         | 0x54501000 | 0x04  |
 | FALCON\_IRQSCLR                                         | 0x54501004 | 0x04  |
 | FALCON\_IRQSTAT                                         | 0x54501008 | 0x04  |
@@ -27,11 +34,12 @@ TSEC.
 | [FALCON\_SCRATCH0](#FALCON_SCRATCH0 "wikilink")         | 0x54501040 | 0x04  |
 | [FALCON\_SCRATCH1](#FALCON_SCRATCH1 "wikilink")         | 0x54501044 | 0x04  |
 | [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")               | 0x54501048 | 0x04  |
-| FALCON\_IDLESTATE                                       | 0x5450104C | 0x04  |
+| [FALCON\_IDLESTATE](#FALCON_IDLESTATE "wikilink")       | 0x5450104C | 0x04  |
 | FALCON\_CURCTX                                          | 0x54501050 | 0x04  |
 | FALCON\_NXTCTX                                          | 0x54501054 | 0x04  |
 | FALCON\_SCRATCH2                                        | 0x54501080 | 0x04  |
 | FALCON\_SCRATCH3                                        | 0x54501084 | 0x04  |
+| FALCON\_CGCTL                                           | 0x545010A0 | 0x04  |
 | FALCON\_ENGCTL                                          | 0x545010A4 | 0x04  |
 | [FALCON\_CPUCTL](#FALCON_CPUCTL "wikilink")             | 0x54501100 | 0x04  |
 | [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")           | 0x54501104 | 0x04  |
@@ -44,6 +52,7 @@ TSEC.
 | FALCON\_CPUCTL\_ALIAS                                   | 0x54501130 | 0x04  |
 | FALCON\_EXTERRADDR                                      | 0x54501168 | 0x04  |
 | FALCON\_EXTERRSTAT                                      | 0x5450116C | 0x04  |
+| FALCON\_CG2                                             | 0x5450117C | 0x04  |
 | FALCON\_CODE\_INDEX                                     | 0x54501180 | 0x04  |
 | FALCON\_CODE                                            | 0x54501184 | 0x04  |
 | FALCON\_CODE\_VIRT\_ADDR                                | 0x54501188 | 0x04  |
@@ -68,8 +77,10 @@ TSEC.
 | FALCON\_ICD\_WDATA                                      | 0x54501208 | 0x04  |
 | FALCON\_ICD\_RDATA                                      | 0x5450120C | 0x04  |
 | FALCON\_SCTL                                            | 0x54501240 | 0x04  |
-| TSEC\_AUTH\_MODE                                        | 0x5450140C | 0x04  |
+| [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")   | 0x54501408 | 0x04  |
+| TSEC\_SCP\_CTL\_AUTH\_MODE                              | 0x5450140C | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")   | 0x54501418 | 0x04  |
+| TSEC\_TFBIF\_MCCIF\_FIFOCTRL                            | 0x54501604 | 0x04  |
 | TSEC\_DMA\_CMD                                          | 0x54501700 | 0x04  |
 | TSEC\_DMA\_ADDR                                         | 0x54501704 | 0x04  |
 | TSEC\_DMA\_VAL                                          | 0x54501708 | 0x04  |
@@ -103,14 +114,28 @@ MMIO register for reading/writing data to Falcon.
 
 Used for enabling/disabling Falcon interfaces.
 
+### FALCON\_IDLESTATE
+
+| Bits | Description                     |
+| ---- | ------------------------------- |
+| 0    | FALCON\_IDLESTATE\_FALCON\_BUSY |
+|      |                                 |
+
+Used for detecting if Falcon is busy or not.
+
 ### FALCON\_CPUCTL
 
 | Bits | Description              |
 | ---- | ------------------------ |
-| 0    | FALCON\_CPUCTL\_STARTCPU |
+| 0    | FALCON\_CPUCTL\_IINVAL   |
+| 1    | FALCON\_CPUCTL\_STARTCPU |
+| 2    | FALCON\_CPUCTL\_SRESET   |
+| 3    | FALCON\_CPUCTL\_HRESET   |
+| 4    | FALCON\_CPUCTL\_HALTED   |
+| 5    | FALCON\_CPUCTL\_STOPPED  |
 |      |                          |
 
-Used for signaling Falcon's CPU.
+Used for signaling the Falcon CPU.
 
 ### FALCON\_BOOTVEC
 
@@ -120,8 +145,11 @@ Takes the Falcon's boot vector address.
 
 | Bits | Description                     |
 | ---- | ------------------------------- |
+| 0    | FALCON\_DMACTL\_REQUIRE\_CTX    |
 | 1    | FALCON\_DMACTL\_DMEM\_SCRUBBING |
 | 2    | FALCON\_DMACTL\_IMEM\_SCRUBBING |
+| 3-6  | FALCON\_DMACTL\_DMAQ\_NUM       |
+| 7    | FALCON\_DMACTL\_SECURE\_STAT    |
 |      |                                 |
 
 Used for configuring the Falcon's DMA engine.
@@ -137,18 +165,29 @@ Takes the offset for the host's source memory being transferred.
 
 ### FALCON\_DMATRFCMD
 
-| Bits | Description                                                 |
-| ---- | ----------------------------------------------------------- |
-| 1    | FALCON\_DMATRFCMD\_IDLE (this is set if the engine is idle) |
-| 4    | FALCON\_DMATRFCMD\_IMEM                                     |
-| 9-10 | FALCON\_DMATRFCMD\_SIZE\_256B                               |
-|      |                                                             |
+| Bits  | Description                                                 |
+| ----- | ----------------------------------------------------------- |
+| 0     | FALCON\_DMATRFCMD\_FULL                                     |
+| 1     | FALCON\_DMATRFCMD\_IDLE (this is set if the engine is idle) |
+| 2-3   | FALCON\_DMATRFCMD\_SEC                                      |
+| 4     | FALCON\_DMATRFCMD\_IMEM                                     |
+| 5     | FALCON\_DMATRFCMD\_WRITE                                    |
+| 8-10  | FALCON\_DMATRFCMD\_SIZE                                     |
+| 12-14 | FALCON\_DMATRFCMD\_CTXDMA                                   |
+|       |                                                             |
 
 Used for configuring DMA transfers.
 
 ### FALCON\_DMATRFFBOFFS
 
 Takes the offset for Falcon's target memory being transferred.
+
+### TSEC\_SCP\_CTL\_STAT
+
+| Bits | Description                       |
+| ---- | --------------------------------- |
+| 20   | TSEC\_SCP\_CTL\_STAT\_DEBUG\_MODE |
+|      |                                   |
 
 ### TSEC\_SCP\_CTL\_PKEY
 
@@ -160,10 +199,15 @@ Takes the offset for Falcon's target memory being transferred.
 
 ### TSEC\_TEGRA\_CTL
 
-| Bits | Description                   |
-| ---- | ----------------------------- |
-| 16   | TSEC\_TEGRA\_CTL\_TKFI\_KFUSE |
-|      |                               |
+| Bits | Description                                      |
+| ---- | ------------------------------------------------ |
+| 16   | TSEC\_TEGRA\_CTL\_TKFI\_KFUSE                    |
+| 17   | TSEC\_TEGRA\_CTL\_TKFI\_RESTART\_FSM\_KFUSE      |
+| 24   | TSEC\_TEGRA\_CTL\_TMPI\_FORCE\_IDLE\_INPUTS\_I2C |
+| 25   | TSEC\_TEGRA\_CTL\_TMPI\_RESTART\_FSM\_HOST1X     |
+| 26   | TSEC\_TEGRA\_CTL\_TMPI\_RESTART\_FSM\_APB        |
+| 27   | TSEC\_TEGRA\_CTL\_TMPI\_DISABLE\_OUTPUT\_I2C     |
+|      |                                                  |
 
 # Boot Process
 
@@ -243,7 +287,8 @@ segment in IMEM.
 Falcon is booted up and the first bootloader waits for it to
 finish.
 
-`// Set something in host channel 0 (host1x) MMIO region`  
+`// Set something in unknown host1x channel 0 sync register (HOST1X_SYNC_UNK_300)`  
+`// This appears to grant TSEC exclusive access to host1x`  
 `*(u32 *)0x50003300 = 0x34C2E1DA;`  
   
 `// Clear Falcon scratch1 MMIO`  
@@ -288,7 +333,8 @@ finish.
 The Falcon device key is generated by reading SOR registers modified by
 Falcon.
 
-`// Clear something in host channel 0 (host1x) MMIO region`  
+`// Clear something in unknown host1x channel 0 sync register (HOST1X_SYNC_UNK_300)`  
+`// This appears to revoke TSEC's exclusive access to host1x`  
 `*(u32 *)0x50003300 = 0;`  
   
 `// Generate Falcon device key`  
@@ -577,7 +623,7 @@ co-processor and loading, decrypting, authenticating and executing Stage
   
 `// Exit Authenticated Mode`  
 `// This is TSEC_MMIO + 0x1000 + (0x10300 / 0x40)`  
-`*(u32 *)TSEC_AUTH_MODE = 0;`  
+`*(u32 *)TSEC_SCP_CTL_AUTH_MODE = 0;`  
   
 `return;`
 
