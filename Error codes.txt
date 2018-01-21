@@ -221,9 +221,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1A4A02 || 3365 || Out of memory
 |-
-| 0x235E02 || 4527 || NCA-path used with the wrong titleID.
+| 0x235202 || 4521 || Invalid NCA Key index
 |-
-| 0x235202 || || Invalid NCA Key index
+| 0x235E02 || 4527 || NCA-path used with the wrong titleID.
 |-
 | 0x250E02 || 4743 || [[NAX0|Corrupted]] NAX0 header.
 |-
@@ -313,13 +313,13 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xDE09 || 111 || ACID/ACI0 don't match for descriptor "InterruptPair"
 |-
-| 0xE209 ||  || ACID/ACI0 don't match for descriptor "ApplicationType"
+| 0xE209 || 113 || ACID/ACI0 don't match for descriptor "ApplicationType"
 |-
-| 0xE409 ||  || ACID/ACI0 don't match for descriptor "KernelReleaseVersion"
+| 0xE409 || 114 || ACID/ACI0 don't match for descriptor "KernelReleaseVersion"
 |-
-| 0xE609 ||  || ACID/ACI0 don't match for descriptor "HandleTableSize"
+| 0xE609 || 115 || ACID/ACI0 don't match for descriptor "HandleTableSize"
 |-
-| 0xE809 ||  || ACID/ACI0 don't match for descriptor "DebugFlags"
+| 0xE809 || 116 || ACID/ACI0 don't match for descriptor "DebugFlags"
 |-
 | 0x1A80A || 212 || Bad magic (expected 'SFCO')
 |-
