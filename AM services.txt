@@ -786,8 +786,11 @@ Takes a [[IPC_Marshalling|reserved]] input u64(official user-processes use hard-
 On failure, official user-processes will retry using this command in a loop while the retval is 0x19280, with svcSleepThread(10000000) being called first.
 
 = idle:sys =
+This is "nn::idle::detail::IPolicyManagerSystem"
 
 = omm =
+This is "nn::omm::detail::IOperationModeManager"
+
 Operation Mode Manager (OMM) is a service responsible for arbitrating the operation changes between docked and handheld modes.
 Besides [[PTM_services]], this is the only service that interacts with the [[Dock]] through [[USB_services|usb:pd*]].
 
@@ -817,7 +820,7 @@ Besides [[PTM_services]], this is the only service that interacts with the [[Doc
 |}
 
 = spsm =
-This is "IPowerStateInterface".
+This is "nn::spsm::detail::IPowerStateInterface".
 
 
 {| class="wikitable" border="1"

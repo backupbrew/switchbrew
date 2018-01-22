@@ -584,7 +584,11 @@ called first.
 
 # idle:sys
 
+This is "nn::idle::detail::IPolicyManagerSystem"
+
 # omm
+
+This is "nn::omm::detail::IOperationModeManager"
 
 Operation Mode Manager (OMM) is a service responsible for arbitrating
 the operation changes between docked and handheld modes. Besides
@@ -607,7 +611,7 @@ that interacts with the [Dock](Dock.md "wikilink") through
 
 # spsm
 
-This is "IPowerStateInterface".
+This is "nn::spsm::detail::IPowerStateInterface".
 
 | Cmd | Name                    |
 | --- | ----------------------- |
