@@ -1,4 +1,6 @@
 = btdrv =
+This is "nn::bluetooth::IBluetoothDriver".
+
 The bluetooth driver implements the bluetooth protocol over h4/uart.
 
 It interfaces with the [[Bus_services#uart|uart]] service to actually talk with the bluetooth hardware.

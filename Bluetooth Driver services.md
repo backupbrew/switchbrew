@@ -1,5 +1,7 @@
 # btdrv
 
+This is "nn::bluetooth::IBluetoothDriver".
+
 The bluetooth driver implements the bluetooth protocol over h4/uart.
 
 It interfaces with the [uart](Bus%20services#uart.md##uart "wikilink")
