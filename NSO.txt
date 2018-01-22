@@ -23,7 +23,7 @@ It starts with the "NSO" header and mainly describes .text, .rodata, and .data s
 |-
 | 0xC
 | 4
-| Always 0x3f?
+| Flags, bit 0-2: section is compressed, bit 4-6: check section hash when loading
 |-
 | 0x10
 | 0x10 * 3
