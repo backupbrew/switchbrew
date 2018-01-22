@@ -107,12 +107,17 @@ sm, and pm.
 
 # pm:bm
 
+This is "nn::pm::detail::IBootModeInterface".
+
 | Cmd | Name               |
 | --- | ------------------ |
 | 0   | GetBootMode        |
 | 1   | SetMaintenanceBoot |
 
 # pm:dmnt
+
+This is
+"nn::pm::detail::IDebugMonitorInterface".
 
 | Cmd | Name                                                                 |
 | --- | -------------------------------------------------------------------- |
@@ -176,16 +181,20 @@ Returns an event handle that is triggered for application titles.
 
 # pm:info
 
+This is "nn::pm::detail::IInformationInterface".
+
 | Cmd | Name                                   |
 | --- | -------------------------------------- |
 | 0   | [\#GetTitleId](#GetTitleId "wikilink") |
 
 ## GetTitleId
 
-Takes a pid and returns the title-id associated with the
-process.
+Takes a pid and returns the title-id associated with the process.
 
 # pm:shell
+
+This is
+"nn::pm::detail::IShellInterface".
 
 | Cmd | Name                                                                       |
 | --- | -------------------------------------------------------------------------- |

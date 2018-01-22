@@ -71,6 +71,8 @@ The arguments for svcStartProcess are process_handle, *(u8*)info_output, *(u8*)(
 Thus at the point of launch, the pid is already registered in ldr, fs, sm, and pm.
 
 = pm:bm =
+This is "nn::pm::detail::IBootModeInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -81,6 +83,8 @@ Thus at the point of launch, the pid is already registered in ldr, fs, sm, and p
 |}
 
 = pm:dmnt =
+This is "nn::pm::detail::IDebugMonitorInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -136,6 +140,8 @@ Does *not* take a specific title-id as input.
 Returns an event handle that is triggered for application titles.
 
 = pm:info =
+This is "nn::pm::detail::IInformationInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -147,6 +153,8 @@ Returns an event handle that is triggered for application titles.
 Takes a pid and returns the title-id associated with the process.
 
 = pm:shell =
+This is "nn::pm::detail::IShellInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
