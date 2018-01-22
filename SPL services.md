@@ -1,5 +1,7 @@
 # csrng
 
+This is "nn::spl::detail::IRandomInterface".
+
 | Cmd | Name                                           |
 | --- | ---------------------------------------------- |
 | 0   | [\#GetRandomBytes](#GetRandomBytes "wikilink") |
@@ -10,6 +12,8 @@ Takes a type-6 buffer and fills it with random data. Same command for
 "spl:" and "csrng" services.
 
 # spl:
+
+This is "nn::spl::detail::IGeneralInterface".
 
 \[2.0.0+\] Where previously only one AES engine was utilized, there is
 now support for 4 of them.
