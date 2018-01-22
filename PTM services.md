@@ -1,5 +1,7 @@
 # fan
 
+This is "nn::fan::detail::IManager".
+
 | Cmd | Name |
 | --- | ---- |
 | 0   |      |
@@ -13,6 +15,8 @@
 |     |      |
 
 # psm
+
+This is "nn::psm::IPsmServer".
 
 | Cmd | Name                          |
 | --- | ----------------------------- |
@@ -38,6 +42,8 @@
 
 ## IPsmSession
 
+This is "nn::psm::IPsmSession".
+
 | Cmd | Name                                     |
 | --- | ---------------------------------------- |
 | 0   | BindStateChangeEvent                     |
@@ -47,6 +53,8 @@
 | 4   | SetBatteryVoltageStateChangeEventEnabled |
 
 # tc
+
+This is "nn::tc::IManager".
 
 | Cmd | Name             |
 | --- | ---------------- |
@@ -62,6 +70,8 @@
 |     |                  |
 
 # ts
+
+This is "nn::ts::server::IMeasurementServer".
 
 | Cmd | Name |
 | --- | ---- |

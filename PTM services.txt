@@ -1,4 +1,6 @@
 = fan =
+This is "nn::fan::detail::IManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -22,6 +24,8 @@
 |}
 
 = psm =
+This is "nn::psm::IPsmServer".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -65,6 +69,8 @@
 |}
 
 == IPsmSession ==
+This is "nn::psm::IPsmSession".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -81,6 +87,8 @@
 |}
 
 = tc =
+This is "nn::tc::IManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -106,6 +114,7 @@
 |}
 
 = ts =
+This is "nn::ts::server::IMeasurementServer".
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
