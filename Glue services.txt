@@ -1,4 +1,6 @@
 = arp:r =
+This is "nn::arp::detail::IReader".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -13,6 +15,8 @@
 |}
 
 = arp:w =
+This is "nn::arp::detail::IWriter".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -23,6 +27,8 @@
 |}
 
 == IRegistrar ==
+This is "nn::arp::detail::IRegistrar".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

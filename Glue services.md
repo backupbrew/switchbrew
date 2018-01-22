@@ -1,5 +1,7 @@
 # arp:r
 
+This is "nn::arp::detail::IReader".
+
 | Cmd | Name        |
 | --- | ----------- |
 | 0   | ReadHeader0 |
@@ -9,12 +11,16 @@
 
 # arp:w
 
+This is "nn::arp::detail::IWriter".
+
 | Cmd | Name          |
 | --- | ------------- |
 | 0   | GetIRegistrar |
 | 1   | SubmitWriter  |
 
 ## IRegistrar
+
+This is "nn::arp::detail::IRegistrar".
 
 | Cmd | Name          |
 | --- | ------------- |
