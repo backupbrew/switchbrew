@@ -1,4 +1,6 @@
 = pcie =
+This is "nn::pcie::detail::IManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -19,6 +21,8 @@ Takes a type-6 buffer.
 Returns a list of connected PCIe endpoint devices.
 
 == ISession ==
+This is "nn::pcie::detail::ISession".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes

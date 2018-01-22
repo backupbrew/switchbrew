@@ -1,5 +1,7 @@
 # pcie
 
+This is "nn::pcie::detail::IManager".
+
 | Cmd | Name                                         |
 | --- | -------------------------------------------- |
 | 0   | [\#GetISession](#GetISession "wikilink")     |
@@ -19,6 +21,8 @@ Takes a type-6 buffer.
 Returns a list of connected PCIe endpoint devices.
 
 ## ISession
+
+This is "nn::pcie::detail::ISession".
 
 | Cmd | Name | Notes                                         |
 | --- | ---- | --------------------------------------------- |
