@@ -560,7 +560,6 @@ s8 type: 0 = directory, 1 = file.
 | 3   | \[2.0.0+\] GetSdCardUserAreaSize                                               |
 | 4   | \[2.0.0+\] GetSdCardProtectedAreaSize                                          |
 | 5   | \[2.0.0+\] GetAndClearSdCardErrorInfo                                          |
-| 6   | \[2.0.0-\>3.0.0\]                                                              |
 | 100 | GetMmcCid                                                                      |
 | 101 | GetMmcSpeedMode                                                                |
 | 110 | EraseMmc                                                                       |
@@ -588,7 +587,7 @@ s8 type: 0 = directory, 1 = file.
 | 215 | \[2.0.0+\] ForceEraseGameCard                                                  |
 | 216 | \[2.0.0+\] GetGameCardErrorInfo                                                |
 | 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                          |
-| 218 | \[3.0.1+\]                                                                     |
+| 218 | \[3.0.0+\]                                                                     |
 | 300 | SetSpeedEmulationMode                                                          |
 | 301 | GetSpeedEmulationMode                                                          |
 

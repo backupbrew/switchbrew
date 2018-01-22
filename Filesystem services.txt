@@ -634,8 +634,6 @@ s8 type: 0 = directory, 1 = file.
 |-
 | 5 || [2.0.0+] GetAndClearSdCardErrorInfo
 |-
-| 6 || [2.0.0->3.0.0]
-|-
 | 100 || GetMmcCid
 |-
 | 101 || GetMmcSpeedMode
@@ -690,7 +688,7 @@ s8 type: 0 = directory, 1 = file.
 |-
 | 217 || [2.1.0+] GetGameCardErrorReportInfo
 |-
-| 218 || [3.0.1+]
+| 218 || [3.0.0+]
 |-
 | 300 || SetSpeedEmulationMode
 |-
