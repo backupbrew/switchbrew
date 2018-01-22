@@ -21,7 +21,7 @@ error code. If original LR is NULL, svcExitProcess should be used.
 X1=main\_thread\_handle.
 
 **NRO0:** the homebrew loader puts X0=loader\_config\_ptr,
-X1=0xFFFFFFFFFFFFFFFF \[INVALID\_HANDLE\].
+X1=0xFFFFFFFFFFFFFFFF.
 
 ### Loader Config
 

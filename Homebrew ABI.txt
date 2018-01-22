@@ -13,7 +13,7 @@ Original LR given to entrypoint should be returned to, X0 contains an error code
 === Entrypoint Arguments ===
 '''NSO0:''' the system executes binary_ptr+0 with X0=NULL, X1=main_thread_handle.
 
-'''NRO0:''' the homebrew loader puts X0=loader_config_ptr, X1=0xFFFFFFFFFFFFFFFF [INVALID_HANDLE].
+'''NRO0:''' the homebrew loader puts X0=loader_config_ptr, X1=0xFFFFFFFFFFFFFFFF.
 
 === Loader Config ===
 Loader config allows overriding functionality to workaround limitations in a limited homebrew environment.
