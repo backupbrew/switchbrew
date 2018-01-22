@@ -7,6 +7,8 @@ The only image data contained in this sysmodule is basically a saved display fra
 = cec-mgr =
 
 = mm:u =
+This is "nn::mmnv::IRequest".
+
 NVIDIA multimedia (NvMM) platform service.
 
 {| class="wikitable" border="1"
@@ -83,6 +85,8 @@ Returns an [[#IApplicationDisplayService]]. Same input as vi:u.
 Takes an input u64 and u32. Returns an [[#IApplicationDisplayService]].
 
 = IApplicationDisplayService =
+This is "nn::visrv::sf::IApplicationDisplayService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -211,6 +215,8 @@ Takes an input u64 DisplayId and returns a handle.
 Takes an input u64 DisplayId and returns a handle.
 
 == ISystemDisplayService ==
+This is "nn::visrv::sf::ISystemDisplayService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -284,6 +290,8 @@ Takes an input u64 DisplayId and returns a handle.
 |}
 
 == IManagerDisplayService ==
+This is "nn::visrv::sf::IManagerDisplayService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

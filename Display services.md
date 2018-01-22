@@ -10,6 +10,8 @@ layers/framebuffers.
 
 # mm:u
 
+This is "nn::mmnv::IRequest".
+
 NVIDIA multimedia (NvMM) platform service.
 
 | Cmd | Name                   |
@@ -85,6 +87,9 @@ Takes an input u64 and u32. Returns an
 [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").
 
 # IApplicationDisplayService
+
+This is
+"nn::visrv::sf::IApplicationDisplayService".
 
 | Cmd  | Name                                                                                                  |
 | ---- | ----------------------------------------------------------------------------------------------------- |
@@ -254,6 +259,8 @@ Takes an input u64 DisplayId and returns a handle.
 
 ## ISystemDisplayService
 
+This is "nn::visrv::sf::ISystemDisplayService".
+
 | Cmd  | Name                        |
 | ---- | --------------------------- |
 | 1200 | GetZOrderCountMin           |
@@ -292,6 +299,8 @@ Takes an input u64 DisplayId and returns a handle.
 |      |                             |
 
 ## IManagerDisplayService
+
+This is "nn::visrv::sf::IManagerDisplayService".
 
 | Cmd  | Name                               |
 | ---- | ---------------------------------- |
