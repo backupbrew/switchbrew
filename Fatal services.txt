@@ -1,4 +1,6 @@
 = fatal:u =
+This is "nn::fatalsrv::IService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
