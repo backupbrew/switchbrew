@@ -1,6 +1,8 @@
 The Switch uses a customized NVIDIA driver.
 
 = nvdrv, nvdrv:a, nvdrv:s, nvdrv:t =
+This is "nns::nvdrv::INvDrvServices".
+
 Main NVIDIA driver service.
 
 Each service is used by:
@@ -1103,6 +1105,8 @@ NVIDIA memory profiler (this service is not available on retail units).
 |}
 
 = nvdrvdbg =
+This is "nns::nvdrv::INvDrvDebugFSServices".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

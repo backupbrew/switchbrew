@@ -2,6 +2,8 @@ The Switch uses a customized NVIDIA driver.
 
 # nvdrv, nvdrv:a, nvdrv:s, nvdrv:t
 
+This is "nns::nvdrv::INvDrvServices".
+
 Main NVIDIA driver service.
 
 Each service is used by:
@@ -1045,6 +1047,8 @@ the applications attempts to talk to use nvmemp.
 | 1   | Cmd1 |
 
 # nvdrvdbg
+
+This is "nns::nvdrv::INvDrvDebugFSServices".
 
 | Cmd | Name                               |
 | --- | ---------------------------------- |
