@@ -1,12 +1,8 @@
 pctl handles all parental controls management.
 
-# pctl
+# pctl:s, pctl:r, pctl:a, pctl
 
-# pctl:a
-
-# pctl:r
-
-# pctl:s
+This is "nn::pctl::detail::ipc::IParentalControlServiceFactory".
 
 | Cmd | Name       |
 | --- | ---------- |
@@ -14,6 +10,8 @@ pctl handles all parental controls management.
 |     |            |
 
 ## IParentalControlService
+
+This is "nn::pctl::detail::ipc::IParentalControlService".
 
 | Cmd  | Name                                                     |
 | ---- | -------------------------------------------------------- |
