@@ -1,5 +1,8 @@
 # fsp-ldr
 
+This is
+"nn::fssrv::sf::IFileSystemProxyForLoader".
+
 | Cmd | Name                  | Arguments                                                           | Notes                                                |
 | --- | --------------------- | ------------------------------------------------------------------- | ---------------------------------------------------- |
 | 0   | MountCode             | u64 TitleId + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink"). |
@@ -7,6 +10,9 @@
 | 2   | \[4.0.0+\] Initialize | PID descriptor                                                      |                                                      |
 
 # fsp-pr
+
+This is
+"nn::fssrv::sf::IProgramRegistry".
 
 | Cmd | Name                                                                         | Notes |
 | --- | ---------------------------------------------------------------------------- | ----- |
@@ -40,10 +46,12 @@ signature in the [NPDM](NPDM.md "wikilink") ACID. It then skips
 verifying what seems to be the second signature in the [NCA
 header](NCA%20Format.md "wikilink"). Note that if verifying the NPDM(?)
 signature is successful, and verifying that second signature fails, it
-will throw an error and
-abort.
+will throw an error and abort.
 
 # fsp-srv
+
+This is
+"nn::fssrv::sf::IFileSystemProxy".
 
 | Cmd  | Name                                                                                   |
 | ---- | -------------------------------------------------------------------------------------- |
@@ -428,6 +436,8 @@ current end of the file(appended).
 
 # IStorage
 
+This is "nn::fssrv::sf::IStorage".
+
 This is the interface for a raw device, usually a block
 device.
 
@@ -441,6 +451,8 @@ device.
 | 5   | \[4.0.0+\] OperateRange |                                                |
 
 # IFileSystem
+
+This is "nn::fssrv::sf::IFileSystem".
 
 There are two main implementations of this interface:
 
@@ -498,6 +510,8 @@ byte-size u64 for the total space available with this FS(free+used).
 
 # IDirectory
 
+This is "nn::fssrv::sf::IDirectory".
+
 | Cmd | Name                                         |
 | --- | -------------------------------------------- |
 | 0   | [\#Read](#Read "wikilink")                   |
@@ -535,6 +549,8 @@ s8 type: 0 = directory, 1 = file.
 
 # IFile
 
+This is "nn::fssrv::sf::IFile".
+
 | Cmd | Name       |
 | --- | ---------- |
 | 0   | Read       |
@@ -546,11 +562,16 @@ s8 type: 0 = directory, 1 = file.
 
 # ISaveDataInfoReader
 
+This is "nn::fssrv::sf::ISaveDataInfoReader".
+
 | Cmd | Name |
 | --- | ---- |
 | 0   |      |
 
 # IDeviceOperator
+
+This is
+"nn::fssrv::sf::IDeviceOperator".
 
 | Cmd | Name                                                                           |
 | --- | ------------------------------------------------------------------------------ |
@@ -608,6 +629,8 @@ and
 with storageid=nandsys, for checking whether a sysupdate is required.
 
 # IEventNotifier
+
+This is "nn::fssrv::sf::IEventNotifier".
 
 | Cmd | Name      |
 | --- | --------- |

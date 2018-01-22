@@ -1,4 +1,6 @@
 = fsp-ldr =
+This is "nn::fssrv::sf::IFileSystemProxyForLoader".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Arguments || Notes
@@ -11,6 +13,8 @@
 |}
 
 = fsp-pr =
+This is "nn::fssrv::sf::IProgramRegistry".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -38,6 +42,8 @@ Seems to sets a global flag to inputval & 1.
 When the flag is zero, it will set ret=0 instead of ret={error} when verifying a RSA signature fails. This RSA signature seems to be the signature in the [[NPDM]] ACID. It then skips verifying what seems to be the second signature in the [[NCA_Format|NCA header]]. Note that if verifying the NPDM(?) signature is successful, and verifying that second signature fails, it will throw an error and abort.
 
 = fsp-srv =
+This is "nn::fssrv::sf::IFileSystemProxy".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -477,6 +483,8 @@ When bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for Outp
 The input buffer is written to the "$FsAccessLog:/FsAccessLog.txt" file, where "$FsAccessLog" is the SD-card mount-name. It's written to the current end of the file(appended).
 
 = IStorage =
+This is "nn::fssrv::sf::IStorage".
+
 This is the interface for a raw device, usually a block device.
 
 {| class="wikitable" border="1"
@@ -497,6 +505,8 @@ This is the interface for a raw device, usually a block device.
 |}
 
 = IFileSystem =
+This is "nn::fssrv::sf::IFileSystem".
+
 There are two main implementations of this interface:
 
 * '''RomFS''': Filesystem implementation statically linked in the binary. Uses an [[#IStorage]] interface as underlying raw device.
@@ -555,6 +565,8 @@ Takes a type-0x9 input buffer for the path and returns an output byte-size u64 f
 Takes a type-0x9 input buffer for the path and returns an output byte-size u64 for the total space available with this FS(free+used).
 
 = IDirectory =
+This is "nn::fssrv::sf::IDirectory".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -592,6 +604,8 @@ Returns an u64 for the total number of readable entries.
 s8 type: 0 = directory, 1 = file.
 
 = IFile =
+This is "nn::fssrv::sf::IFile".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -610,6 +624,8 @@ s8 type: 0 = directory, 1 = file.
 |}
 
 = ISaveDataInfoReader =
+This is "nn::fssrv::sf::ISaveDataInfoReader".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -618,6 +634,8 @@ s8 type: 0 = directory, 1 = file.
 |}
 
 = IDeviceOperator =
+This is "nn::fssrv::sf::IDeviceOperator".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -705,6 +723,8 @@ Returns a titleID and the title-version for it.
 [[NS_Services|NS]] appears to only use this with [[Content_Manager_services#GetTitleIdInfo]] and [[Content_Manager_services#GetUpdateTitleList]] with storageid=nandsys, for checking whether a sysupdate is required.
 
 = IEventNotifier =
+This is "nn::fssrv::sf::IEventNotifier".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
