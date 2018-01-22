@@ -1,5 +1,7 @@
 # audout:u
 
+This is "nn::audio::detail::IAudioOutManager".
+
 | Cmd | Name                                       |
 | --- | ------------------------------------------ |
 | 0   | ListAudioOuts                              |
@@ -26,6 +28,9 @@ and an unknown field.
 | 6     | ADPCM     |
 
 ## IAudioOut
+
+This is
+"nn::audio::detail::IAudioOut".
 
 | Cmd | Name                                                                                                         |
 | --- | ------------------------------------------------------------------------------------------------------------ |
@@ -76,12 +81,16 @@ doesn't contain the buffer)
 
 # audin:u
 
+This is "nn::audio::detail::IAudioInManagerForDebugger".
+
 | Cmd | Name         |
 | --- | ------------ |
 | 0   | ListAudioIns |
 | 1   | OpenAudioIn  |
 
 ## IAudioIn
+
+This is "nn::audio::detail::IAudioIn".
 
 | Cmd | Name                                             |
 | --- | ------------------------------------------------ |
@@ -99,11 +108,15 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 
 # audrec:u
 
+This is "nn::audio::detail::IFinalOutputRecorderManager".
+
 | Cmd | Name                    |
 | --- | ----------------------- |
 | 0   | OpenFinalOutputRecorder |
 
 ## IFinalOutputRecorder
+
+This is "nn::audio::detail::IFinalOutputRecorder".
 
 | Cmd | Name                                 |
 | --- | ------------------------------------ |
@@ -117,6 +130,8 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 
 # audren:u
 
+This is "nn::audio::detail::IAudioRendererManager".
+
 | Cmd | Name                                 |
 | --- | ------------------------------------ |
 | 0   | OpenAudioRenderer                    |
@@ -125,6 +140,9 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 | 3   | SetAudioRenderersProcessMasterVolume |
 
 ## IAudioRenderer
+
+This is
+"nn::audio::detail::IAudioRenderer".
 
 | Cmd | Name                                                                                   |
 | --- | -------------------------------------------------------------------------------------- |
@@ -165,12 +183,22 @@ Returns the upper limit of the rendering time in percent. (u32)
 
 # audout:a, audin:a, audrec:a and audren:a
 
+This is "nn::audio::detail::IAudioOutManagerForApplet",
+"nn::audio::detail::IAudioInManagerForApplet",
+"nn::audio::detail::IFinalOutputRecorderManagerForApplet",
+"nn::audio::detail::IAudioRendererManagerForApplet".
+
 | Cmd | Name           |
 | --- | -------------- |
 | 0   | RequestSuspend |
 | 1   | RequestResume  |
 
 # audout:d, audin:d, audrec:d and audren:d
+
+This is "nn::audio::detail::IAudioOutManagerForDebugger",
+"nn::audio::detail::IAudioInManagerForDebugger",
+"nn::audio::detail::IFinalOutputRecorderManagerForDebugger",
+"nn::audio::detail::IAudioRendererManagerForDebugger".
 
 | Cmd | Name                                                           |
 | --- | -------------------------------------------------------------- |
@@ -190,6 +218,8 @@ Takes an
 (u64)
 
 # codecctl
+
+This is "nn::audio::detail::ICodecController".
 
 | Cmd | Name                                           |
 | --- | ---------------------------------------------- |

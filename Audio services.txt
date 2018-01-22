@@ -1,4 +1,6 @@
 = audout:u =
+This is "nn::audio::detail::IAudioOutManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -34,6 +36,8 @@ Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle
 
 
 == IAudioOut ==
+This is "nn::audio::detail::IAudioOut".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -93,6 +97,7 @@ Takes a buffer, which it will fill with the identifiers passed from [[#AppendAud
 Takes a u64 (pointer to audio buffer?). Returns a bool. (u8) (0, if it doesn't contain the buffer)
 
 = audin:u =
+This is "nn::audio::detail::IAudioInManagerForDebugger".
 
 {| class="wikitable" border="1"
 |-
@@ -104,6 +109,8 @@ Takes a u64 (pointer to audio buffer?). Returns a bool. (u8) (0, if it doesn't c
 |}
 
 == IAudioIn ==
+This is "nn::audio::detail::IAudioIn".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -128,6 +135,7 @@ Takes a u64 (pointer to audio buffer?). Returns a bool. (u8) (0, if it doesn't c
 Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 
 = audrec:u =
+This is "nn::audio::detail::IFinalOutputRecorderManager".
 
 {| class="wikitable" border="1"
 |-
@@ -137,6 +145,8 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 |}
 
 == IFinalOutputRecorder ==
+This is "nn::audio::detail::IFinalOutputRecorder".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -157,6 +167,7 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 |}
 
 = audren:u =
+This is "nn::audio::detail::IAudioRendererManager".
 
 {| class="wikitable" border="1"
 |-
@@ -172,6 +183,8 @@ Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
 |}
 
 == IAudioRenderer ==
+This is "nn::audio::detail::IAudioRenderer".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -216,6 +229,7 @@ Takes a upper limit of the rendering time in percent. (u32)
 Returns the upper limit of the rendering time in percent. (u32)
 
 = audout:a, audin:a, audrec:a and audren:a =
+This is "nn::audio::detail::IAudioOutManagerForApplet", "nn::audio::detail::IAudioInManagerForApplet", "nn::audio::detail::IFinalOutputRecorderManagerForApplet", "nn::audio::detail::IAudioRendererManagerForApplet".
 
 {| class="wikitable" border="1"
 |-
@@ -227,6 +241,7 @@ Returns the upper limit of the rendering time in percent. (u32)
 |}
 
 = audout:d, audin:d, audrec:d and audren:d =
+This is "nn::audio::detail::IAudioOutManagerForDebugger", "nn::audio::detail::IAudioInManagerForDebugger", "nn::audio::detail::IFinalOutputRecorderManagerForDebugger", "nn::audio::detail::IAudioRendererManagerForDebugger".
 
 {| class="wikitable" border="1"
 |-
@@ -246,6 +261,7 @@ Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 
 = codecctl =
+This is "nn::audio::detail::ICodecController".
 
 {| class="wikitable" border="1"
 |-
