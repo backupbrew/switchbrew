@@ -1,5 +1,7 @@
 # nim
 
+This is "nn::nim::detail::INetworkInstallManager".
+
 | Cmd | Name |
 | --- | ---- |
 | 1   |      |
@@ -19,7 +21,11 @@ blocked.
 
 # nim:shp
 
+This is "nn::nim::detail::IShopServiceManager".
+
 # ntc
+
+This is "nn::ntc::detail::<service::IStaticService>".
 
 Presumably Network Time Sync?
 

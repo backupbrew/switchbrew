@@ -1,4 +1,6 @@
 =nim=
+This is "nn::nim::detail::INetworkInstallManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -17,8 +19,10 @@ Takes a type-0x6 output buffer, for an array of 0x10-byte entries. Returns an u3
 Doesn't return anything on a v2.1 system where sysupdate domains are blocked.
 
 =nim:shp=
+This is "nn::nim::detail::IShopServiceManager".
 
 =ntc=
+This is "nn::ntc::detail::service::IStaticService".
 
 Presumably Network Time Sync?
 
