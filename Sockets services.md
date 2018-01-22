@@ -1,5 +1,7 @@
 # bsd:u / bsd:s
 
+This is "nn::socket::sf::IClient".
+
 | Cmd | Name                        |
 | --- | --------------------------- |
 | 0   | RegisterClient (Initialize) |
@@ -54,6 +56,8 @@ latter.
 `} BsdConfig;`
 
 # sfdnsres
+
+This is "nn::socket::resolver::IResolver".
 
 | Cmd | Name                                     |
 | --- | ---------------------------------------- |
@@ -110,6 +114,8 @@ Otherwise, it's just read as `u8[ai_addrlen]`.
 The list should be terminated with a sentinel four-byte zero value.
 
 # nsd:u / nsd:a
+
+This is "nn::nsd::detail::IManager".
 
 | Cmd | Name                      |
 | --- | ------------------------- |

@@ -1,4 +1,6 @@
 = bsd:u / bsd:s =
+This is "nn::socket::sf::IClient".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -81,7 +83,10 @@ Takes a [[#BsdConfig]] (made-up name), the PID, the size of the transfer memory 
      u32 udpSendBufferSize;          ///< Size of the TCP send buffer (typically 0xA500 bytes).
      s32 socketBufferEffiency;       ///< Number of buffers for each socket (standard values range from 1 to 8).
  } BsdConfig;
+
 = sfdnsres =
+This is "nn::socket::resolver::IResolver".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -150,6 +155,8 @@ If <tt>ai_family</tt> is recognized as AF_INET6 (28) or AF_INET (2), <tt>ai_addr
 The list should be terminated with a sentinel four-byte zero value.
 
 = nsd:u / nsd:a =
+This is "nn::nsd::detail::IManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
