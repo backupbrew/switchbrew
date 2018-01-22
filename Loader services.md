@@ -1,5 +1,7 @@
 # ldr:dmnt
 
+This is "nn::ldr::detail::IDebugMonitorInterface".
+
 | Cmd | Name                         |
 | --- | ---------------------------- |
 | 0   | AddProcessToDebugLaunchQueue |
@@ -19,6 +21,8 @@ Same as
 but for processes marked as debug.
 
 # ldr:pm
+
+This is "nn::ldr::detail::IProcessManagerInterface".
 
 | Cmd | Name                                             |
 | --- | ------------------------------------------------ |
@@ -56,10 +60,12 @@ Takes a TitleId + StorageId, returns an index.
 
 ## UnregisterTitle
 
-Takes the index from
-[\#RegisterTitle](#RegisterTitle "wikilink").
+Takes the index from [\#RegisterTitle](#RegisterTitle "wikilink").
 
 # ldr:shel
+
+This is
+"nn::ldr::detail::IShellInterface".
 
 | Cmd | Name                                                             |
 | --- | ---------------------------------------------------------------- |
@@ -80,6 +86,10 @@ them. The maximum number of waiting processes in this list is 10.
 Clears the loaded processes waiting queue.
 
 # ldr:ro
+
+\[1.0.0-2.3.0\] This is "nn::ldr::detail::IRoInterface"
+
+\[3.0.0+\] This is "nn::ro::detail::IRoInterface".
 
 | Cmd | Name                                   |
 | --- | -------------------------------------- |

@@ -1,4 +1,6 @@
 = ldr:dmnt =
+This is "nn::ldr::detail::IDebugMonitorInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -17,6 +19,8 @@ Same as [[Loader_services#AddProcessToLaunchQueue|AddProcessToLaunchQueue]] but 
 Same as [[Loader_services#ClearLaunchQueue|ClearLaunchQueue]] but for processes marked as debug.
 
 = ldr:pm =
+This is "nn::ldr::detail::IProcessManagerInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -103,6 +107,8 @@ Takes a TitleId + StorageId, returns an index.
 Takes the index from [[#RegisterTitle]].
 
 = ldr:shel =
+This is "nn::ldr::detail::IShellInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -122,6 +128,10 @@ Loaded processes are kept in a queue waiting for PM to launch them. The maximum 
 Clears the loaded processes waiting queue.
 
 = ldr:ro =
+[1.0.0-2.3.0] This is "nn::ldr::detail::IRoInterface"
+
+[3.0.0+] This is "nn::ro::detail::IRoInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
