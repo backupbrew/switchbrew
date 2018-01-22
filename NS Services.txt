@@ -1,4 +1,6 @@
 = aoc:u =
+This is "nn::aocsrv::detail::IAddOnContentManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -322,6 +324,8 @@ Entry structure:
 |}
 
 = ns:su =
+This is "nn::ns::detail::ISystemUpdateInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -347,6 +351,8 @@ Entry structure:
 |}
 
 = ns:dev =
+This is "nn::ns::detail::IDevelopInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

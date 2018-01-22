@@ -1,5 +1,7 @@
 # aoc:u
 
+This is "nn::aocsrv::detail::IAddOnContentManager".
+
 | Cmd | Name                                 |
 | --- | ------------------------------------ |
 | 0   | CountAddOnContentByApplicationId     |
@@ -202,6 +204,8 @@ structure:
 
 # ns:su
 
+This is "nn::ns::detail::ISystemUpdateInterface".
+
 | Cmd | Name                    |
 | --- | ----------------------- |
 | 0   |                         |
@@ -216,6 +220,9 @@ structure:
 |     |                         |
 
 # ns:dev
+
+This is
+"nn::ns::detail::IDevelopInterface".
 
 | Cmd | Name                                                             |
 | --- | ---------------------------------------------------------------- |
