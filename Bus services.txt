@@ -1,4 +1,6 @@
 = gpio =
+This is "nn::gpio::IManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -112,6 +114,8 @@ Returns an [[#IPadSession]] session.
 Same as [[#OpenSession]] but panics on failure.
 
 == IPadSession ==
+This is "nn::gpio::IPadSession".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -162,6 +166,8 @@ Same as [[#OpenSession]] but panics on failure.
 |}
 
 = i2c =
+This is "nn::i2c::IManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -176,6 +182,8 @@ Same as [[#OpenSession]] but panics on failure.
 |}
 
 == II2cSession ==
+This is "nn::i2c::ISession".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -212,6 +220,8 @@ Same as [[#OpenSession]] but panics on failure.
 |}
 
 = uart =
+This is "nn::uart::IManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -237,6 +247,7 @@ Same as [[#OpenSession]] but panics on failure.
 |}
 
 == IPortSession ==
+This is "nn::uart::IPortSession".
 
 {| class="wikitable" border="1"
 |-
@@ -261,6 +272,8 @@ Same as [[#OpenSession]] but panics on failure.
 |}
 
 = pwm =
+This is "nn::pwm::IManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -271,6 +284,8 @@ Same as [[#OpenSession]] but panics on failure.
 |}
 
 == IChannelSession ==
+This is "nn::pwm::IChannelSession".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

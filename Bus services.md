@@ -1,5 +1,7 @@
 # gpio
 
+This is "nn::gpio::IManager".
+
 | Cmd | Name                                                   |
 | --- | ------------------------------------------------------ |
 | 0   | [\#OpenSessionForDev](#OpenSessionForDev "wikilink")   |
@@ -69,6 +71,8 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 
 ## IPadSession
 
+This is "nn::gpio::IPadSession".
+
 | Cmd | Name                 |
 | --- | -------------------- |
 | 0   | SetDirection         |
@@ -98,6 +102,8 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 
 # i2c
 
+This is "nn::i2c::IManager".
+
 | Cmd | Name              |
 | --- | ----------------- |
 | 0   | OpenSessionForDev |
@@ -106,6 +112,8 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 | 3   | HasDeviceForDev   |
 
 ## II2cSession
+
+This is "nn::i2c::ISession".
 
 | Cmd | Name               |
 | --- | ------------------ |
@@ -129,6 +137,8 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 
 # uart
 
+This is "nn::uart::IManager".
+
 | Cmd | Name            | Notes                       |
 | --- | --------------- | --------------------------- |
 | 0   |                 | Returns a u8/bool.          |
@@ -144,6 +154,8 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 
 ## IPortSession
 
+This is "nn::uart::IPortSession".
+
 | Cmd | Name | Notes                      |
 | --- | ---- | -------------------------- |
 | 0   |      | Takes marshalled arguments |
@@ -158,12 +170,16 @@ Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 
 # pwm
 
+This is "nn::pwm::IManager".
+
 | Cmd | Name              |
 | --- | ----------------- |
 | 0   | OpenSessionForDev |
 | 1   | OpenSession       |
 
 ## IChannelSession
+
+This is "nn::pwm::IChannelSession".
 
 | Cmd | Name       |
 | --- | ---------- |
