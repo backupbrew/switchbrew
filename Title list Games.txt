@@ -95,7 +95,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100125002060800 || バトルスポーツ めく〜る || JPN || || || || Update
 |-
-| 01001270012B6000 || SONIC FORCES™ || USA || || || || Game
+| 01001270012B6000 || SONIC FORCES™ || USA || [[2.3.0]] || || || Game
 |-
 | 01001270012B6800 || SONIC FORCES™ || USA || || || || Update
 |-
