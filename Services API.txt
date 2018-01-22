@@ -3,6 +3,8 @@ Services are system processes running in the background which wait for incoming 
 Handles for services are retrieved from the service manager port, "sm:", and are released via svcCloseHandle or when a process is terminated or crashes. Manager service "sm:m" also exists. Services are an abstraction of ports, they operate the same way except regular ports can have their handles retrieved directly from a SVC. Services are also able to limit the number of handles given to other processes.
 
 = sm: =
+This is "nn::sm::detail::IUserInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -29,6 +31,7 @@ Takes a zero-padded service name encoded as an u64 integer, an u8 bool, and an u
 Takes a zero-padded service name encoded as an u64 integer.
 
 = sm:m =
+This is "nn::sm::detail::IManagerInterface".
 
 {| class="wikitable" border="1"
 |-

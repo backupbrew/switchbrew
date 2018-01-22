@@ -13,6 +13,8 @@ the number of handles given to other processes.
 
 # sm:
 
+This is "nn::sm::detail::IUserInterface".
+
 | Cmd | Name                                                 |
 | --- | ---------------------------------------------------- |
 | 0   | [\#Initialize](#Initialize "wikilink")               |
@@ -39,6 +41,8 @@ and an u32 (session count) at the next word. Returns a handle.
 Takes a zero-padded service name encoded as an u64 integer.
 
 # sm:m
+
+This is "nn::sm::detail::IManagerInterface".
 
 | Cmd | Name                                                 |
 | --- | ---------------------------------------------------- |
