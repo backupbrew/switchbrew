@@ -1,5 +1,7 @@
 
 = pl:u (Shared Font Manager) =
+This is "nn::pl::detail::ISharedFontManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -64,6 +66,7 @@ Takes a [[#SharedFontType]] (uint32), returns the offset (uint32) to the Font Ad
 |}
 
 = mii:u, mii:e =
+This is "nn::mii::detail::IStaticService".
 
 {| class="wikitable" border="1"
 |-

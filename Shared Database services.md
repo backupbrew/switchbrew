@@ -1,5 +1,8 @@
 # pl:u (Shared Font Manager)
 
+This is
+"nn::pl::detail::ISharedFontManager".
+
 | Cmd | Name                                                                       |
 | --- | -------------------------------------------------------------------------- |
 | 0   | [\#RequestLoad](#RequestLoad "wikilink")                                   |
@@ -47,6 +50,8 @@ the offset (uint32) to the Font Address.
 | 0x05  | Nintendo Extended               |
 
 # mii:u, mii:e
+
+This is "nn::mii::detail::IStaticService".
 
 | Cmd | Name                            |
 | --- | ------------------------------- |
