@@ -3,6 +3,8 @@ nn::usb::detail::UsbComplexTegra21x".
 
 # usb:ds
 
+This is "nn::usb::ds::IDsService".
+
 Used for Switch\<\>PC USB comms, aka Switch-as-device. This seems to
 only be usable in handheld-mode with the Switch directly connected to a
 host via an USB cable, not(?) in docked-mode. This service is used
@@ -220,10 +222,12 @@ Takes a type-5 buffer with 0x66 bytes of USB descriptor data (see
 | 0x46   | 0x20 | SerialNumber    |
 
 The last 3 blocks are ASCII strings. The data following each string is
-all-zero, for padding to size
-0x20.
+all-zero, for padding to size 0x20.
 
 ## IDsInterface
+
+This is
+"nn::usb::ds::IDsInterface".
 
 | Cmd | Name                                                                 | Notes                                                                                                                        |
 | --- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -353,6 +357,9 @@ same function. From strings: "m\_pProtocol-\>Stall(0x80)"
 
 ### IDsEndpoint
 
+This is
+"nn::usb::ds::IDsEndpoint".
+
 | Cmd | Name                                                   | Notes                         |
 | --- | ------------------------------------------------------ | ----------------------------- |
 | 0   | [\#PostBufferAsync](#PostBufferAsync "wikilink")       |                               |
@@ -430,16 +437,22 @@ Stops in-progress data-transfer done by
 
 # usb:hs
 
+This is "nn::usb::hs::IClientRootSession".
+
 General USB devices usage, used by hid-sysmodule and
 bsdsockets-sysmodule.
 
 # usb:pd
+
+This is "nn::usb::pd::detail::IPdManager".
 
 Only system-titles with access to this are
 [PTM](PTM%20services.md "wikilink") and
 [AM](AM%20services.md "wikilink").
 
 # usb:pd:c
+
+This is "nn::usb::pd::detail::IPdCradleManager".
 
 USB-sysmodule symbols for this refer to "Cradle", which is the
 [Dock](Dock.md "wikilink").
@@ -449,6 +462,9 @@ USB-sysmodule symbols for this refer to "Cradle", which is the
 | 0   |      | Returns a session handle for the below. |
 
 ## Session
+
+This is
+"nn::usb::pd::detail::IPdCradleSession".
 
 | Cmd | Name | Notes                                                                                |
 | --- | ---- | ------------------------------------------------------------------------------------ |
@@ -461,6 +477,8 @@ USB-sysmodule symbols for this refer to "Cradle", which is the
 | 6   |      | No input. Returns an output u16.                                                     |
 
 # usb:pm
+
+This is "nn::usb::pm::IPmService".
 
 Presumably Power Management, only system-title using this is
 [PTM](PTM%20services.md "wikilink").

@@ -1,6 +1,8 @@
 One symbol in USB-sysmodule is: "vtable for nn::usb::detail::UsbComplexTegra21x".
 
 = usb:ds =
+This is "nn::usb::ds::IDsService".
+
 Used for Switch<>PC USB comms, aka Switch-as-device. This seems to only be usable in handheld-mode with the Switch directly connected to a host via an USB cable, not(?) in docked-mode.
 This service is used during [[Factory Setup|factory setup]] by [[Manu Services|manu]].
 
@@ -188,6 +190,8 @@ Takes a type-5 buffer with 0x66 bytes of USB descriptor data (see [[Manu_Service
 The last 3 blocks are ASCII strings. The data following each string is all-zero, for padding to size 0x20.
 
 == IDsInterface ==
+This is "nn::usb::ds::IDsInterface".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -278,6 +282,8 @@ No input/output.
 Calls a function with both control endpoints(0x80 and 0x00) with the same function. From strings: "m_pProtocol->Stall(0x80)" "m_pProtocol->Stall(0x00)".
 
 === IDsEndpoint ===
+This is "nn::usb::ds::IDsEndpoint".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -346,12 +352,18 @@ Calls the same function used by [[#StallCtrl]], except this uses the endpoint as
 Stops in-progress data-transfer done by [[#PostBufferAsync]].
 
 = usb:hs =
+This is "nn::usb::hs::IClientRootSession".
+
 General USB devices usage, used by hid-sysmodule and bsdsockets-sysmodule.
 
 = usb:pd =
+This is "nn::usb::pd::detail::IPdManager".
+
 Only system-titles with access to this are [[PTM_services|PTM]] and [[AM_services|AM]].
 
 = usb:pd:c =
+This is "nn::usb::pd::detail::IPdCradleManager".
+
 USB-sysmodule symbols for this refer to "Cradle", which is the [[Dock]].
 
 
@@ -363,6 +375,8 @@ USB-sysmodule symbols for this refer to "Cradle", which is the [[Dock]].
 |}
 
 == Session ==
+This is "nn::usb::pd::detail::IPdCradleSession".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -383,4 +397,6 @@ USB-sysmodule symbols for this refer to "Cradle", which is the [[Dock]].
 |}
 
 = usb:pm =
+This is "nn::usb::pm::IPmService".
+
 Presumably Power Management, only system-title using this is [[PTM_services|PTM]].
