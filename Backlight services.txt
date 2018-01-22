@@ -1,4 +1,6 @@
 = lbl =
+This is "nn::lbl::detail::ILblController".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

@@ -1,5 +1,7 @@
 # lbl
 
+This is "nn::lbl::detail::ILblController".
+
 | Cmd | Name                                                    |
 | --- | ------------------------------------------------------- |
 | 0   |                                                         |
