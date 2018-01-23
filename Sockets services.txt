@@ -72,19 +72,37 @@ Open: can open <code>/dev/bpf</code> (and most likely only that file, given bsds
 
 == Initalize ==
 
-Takes a [[#BsdConfig]] (made-up name), the PID, the size of the transfer memory and a copy-handle of the latter.
+Takes a [[#BsdBufferConfig]] (made-up name), the PID, the size of the transfer memory and a copy-handle of the latter.
 
-=== BsdConfig ===
+=== BsdBufferConfig ===
+
+ /// Configuration structure for bsdInitalize
  typedef struct  {
-     u32 version;                    ///< Observed 1 on 2.0 LibAppletWeb, 2 on 3.0.
-     u32 tcpSendBufferSize;          ///< Size of the TCP send buffer (initial or fixed).
-     u32 tcpReceiveBufferSize;       ///< Size of the TCP recieve buffer (initial or fixed).
-     u32 tcpSendBufferMaxSize;       ///< Maximum size of the TCP send buffer. If it is 0, the initial size of the buffer is actually fixed.
-     u32 tcpReceiveBufferMaxSize;    ///< Maximum size of the TCP receive buffer. If it is 0, the initial size of the buffer is actually fixed.
-     u32 udpSendBufferSize;          ///< Size of the TCP send buffer (typically 0x2400 bytes).
-     u32 udpSendBufferSize;          ///< Size of the TCP send buffer (typically 0xA500 bytes).
-     s32 socketBufferEffiency;       ///< Number of buffers for each socket (standard values range from 1 to 8).
- } BsdConfig;
+     u32 version;                ///< Observed 1 on 2.0 LibAppletWeb, 2 on 3.0.
+ 
+     u32 tcp_tx_buf_size;        ///< Size of the TCP transfer (send) buffer (initial or fixed).
+     u32 tcp_rx_buf_size;        ///< Size of the TCP recieve buffer (initial or fixed).
+     u32 tcp_tx_buf_max_size;    ///< Maximum size of the TCP transfer (send) buffer. If it is 0, the size of the buffer is fixed to its initial value.
+     u32 tcp_rx_buf_max_size;    ///< Maximum size of the TCP receive buffer. If it is 0, the size of the buffer is fixed to its initial value.
+ 
+     u32 udp_tx_buf_size;        ///< Size of the UDP transfer (send) buffer (typically 0x2400 bytes).
+     u32 udp_rx_buf_size;        ///< Size of the UDP receive buffer (typically 0xA500 bytes).
+ 
+     u32 sb_efficiency;          ///< Number of buffers for each socket (standard values range from 1 to 8).
+ } BsdBufferConfig;
+
+
+The transfer memory must be larger than a the computed size below. Should the transfer memory be smaller than that, the BSD sockets service would only send ZeroWindow packets (for TCP), resulting in a transfer rate not exceeding 1 byte/s.
+
+ static size_t _bsdGetTransferMemSizeForConfig(const BsdConfig *config)
+ {
+     u32 tcp_tx_buf_max_size = config->tcp_tx_buf_max_size != 0 ? config->tcp_tx_buf_max_size : config->tcp_tx_buf_size;
+     u32 tcp_rx_buf_max_size = config->tcp_rx_buf_max_size != 0 ? config->tcp_rx_buf_max_size : config->tcp_rx_buf_size;
+     u32 sum = tcp_tx_buf_max_size + tcp_rx_buf_max_size + config->udp_tx_buf_size + config->udp_rx_buf_size;
+ 
+     sum = ((sum + 0xFFF) >> 12) << 12; // page round-up
+     return (size_t)(config->sb_efficiency * sum);
+ }
 
 = sfdnsres =
 This is "nn::socket::resolver::IResolver".
