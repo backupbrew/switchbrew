@@ -31,6 +31,8 @@ This is "nn::psc::sf::IPmService".
 |}
 
 == IPmModule ==
+This is "nn::psc::sf::IPmModule".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

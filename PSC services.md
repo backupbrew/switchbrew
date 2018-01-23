@@ -22,6 +22,8 @@ This is "nn::psc::sf::IPmService".
 
 ## IPmModule
 
+This is "nn::psc::sf::IPmModule".
+
 | Cmd | Name        |
 | --- | ----------- |
 | 0   | Initialize  |
