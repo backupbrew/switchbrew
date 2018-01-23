@@ -68,6 +68,8 @@ This is "nn::socket::sf::IClient".
 | 30 || [3.0.0+] SendMMsg
 |}
 
+Open: can open <code>/dev/bpf</code> (and most likely only that file, given bsdservices' binary contents). This can be used, for example, to enable promiscuous mode, see FreeBSD's <code>/dev/bpf</code> for more details.
+
 == Initalize ==
 
 Takes a [[#BsdConfig]] (made-up name), the PID, the size of the transfer memory and a copy-handle of the latter.

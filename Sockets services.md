@@ -36,6 +36,10 @@ This is "nn::socket::sf::IClient".
 | 29  | \[3.0.0+\] RecvMMsg         |
 | 30  | \[3.0.0+\] SendMMsg         |
 
+Open: can open `/dev/bpf` (and most likely only that file, given
+bsdservices' binary contents). This can be used, for example, to enable
+promiscuous mode, see FreeBSD's `/dev/bpf` for more details.
+
 ## Initalize
 
 Takes a [\#BsdConfig](#BsdConfig "wikilink") (made-up name), the PID,
