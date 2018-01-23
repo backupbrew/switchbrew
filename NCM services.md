@@ -1,9 +1,11 @@
-NCM contains services for internal file path and content
-management.
+NCM contains services for internal file path and content management.
 
 # Location Resolver services
 
 ## lr
+
+This is
+"nn::lr::ILocationResolverManager".
 
 | Cmd | Name                            | Arguments                                                             | Notes |
 | --- | ------------------------------- | --------------------------------------------------------------------- | ----- |
@@ -16,10 +18,12 @@ The only sysmodules which use this service are
 [FS](Filesystem%20services.md "wikilink"),
 [Loader](Loader%20services.md "wikilink"), and
 [NS](NS%20Services.md "wikilink"). [boot2](Boot2.md "wikilink") has
-access but doesn't use
-it.
+access but doesn't use it.
 
 ### ILocationResolver
+
+This is
+"nn::lr::ILocationResolver".
 
 | Cmd | Name                  | Arguments                                                                                          | Notes                                                                                                           |
 | --- | --------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -44,10 +48,12 @@ more.
 
 The set commands always return 0. When the get-commands fail to find an
 entry for the specified titleID, 0x408 is returned for
-GetProgramNcaPath, while the rest of the commands return
-0xA08.
+GetProgramNcaPath, while the rest of the commands return 0xA08.
 
 ### IRegisteredLocationResolver
+
+This is
+"nn::lr::IRegisteredLocationResolver".
 
 | Cmd | Name                  | Arguments                                                                                          | Notes                                                                        |
 | --- | --------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
@@ -62,6 +68,9 @@ GetProgramNcaPath, while the rest of the commands return
 
 ### IAddOnContentLocationResolver
 
+This is
+"nn::lr::IAddOnContentLocationResolver".
+
 | Cmd | Name                              | Arguments                                                                       | Notes                              |
 | --- | --------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- |
 | 0   | GetAddOnContentNcaPath            | u64 TID + C descriptor                                                          |                                    |
@@ -71,6 +80,9 @@ GetProgramNcaPath, while the rest of the commands return
 # Content Manager services
 
 ## ncm
+
+This is
+"nn::ncm::IContentManager".
 
 | Cmd | Name                           | Notes                                                                          |
 | --- | ------------------------------ | ------------------------------------------------------------------------------ |
@@ -86,10 +98,12 @@ GetProgramNcaPath, while the rest of the commands return
 | 11  | InitializeDatabaseForMediaId   |                                                                                |
 | 12  | UninitializeDatabaseForMediaId |                                                                                |
 
-All of the above cmds takes a u8 as
-input.
+All of the above cmds takes a u8 as input.
 
 ### IContentStorage
+
+This is
+"nn::ncm::IContentStorage".
 
 | Cmd | Name                                                   | Notes                                                             |
 | --- | ------------------------------------------------------ | ----------------------------------------------------------------- |
@@ -196,6 +210,9 @@ be only usable with NcaIds which have [type](NCA.md "wikilink") 1 or 4.
 | 0x8    | 0x8  | Unknown. Usually zero? |
 
 ### IContentMetaDatabase
+
+This is
+"nn::ncm::IContentMetaDatabase".
 
 | Cmd | Name                                                   | Notes                                                                                                                         |
 | --- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |

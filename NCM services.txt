@@ -2,6 +2,8 @@ NCM contains services for internal file path and content management.
 
 = Location Resolver services =
 == lr ==
+This is "nn::lr::ILocationResolverManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Arguments || Notes
@@ -18,6 +20,8 @@ NCM contains services for internal file path and content management.
 The only sysmodules which use this service are [[Filesystem_services|FS]], [[Loader_services|Loader]], and [[NS_Services|NS]]. [[boot2]] has access but doesn't use it.
 
 === ILocationResolver ===
+This is "nn::lr::ILocationResolver".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Arguments || Notes
@@ -48,6 +52,8 @@ These get-commands load the [[Filesystem_services|ContentPath]] from linked-list
 The set commands always return 0. When the get-commands fail to find an entry for the specified titleID, 0x408 is returned for GetProgramNcaPath, while the rest of the commands return 0xA08.
 
 === IRegisteredLocationResolver ===
+This is "nn::lr::IRegisteredLocationResolver".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Arguments || Notes
@@ -70,6 +76,8 @@ The set commands always return 0. When the get-commands fail to find an entry fo
 |}
 
 === IAddOnContentLocationResolver ===
+This is "nn::lr::IAddOnContentLocationResolver".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Arguments || Notes
@@ -83,6 +91,8 @@ The set commands always return 0. When the get-commands fail to find an entry fo
 
 = Content Manager services =
 == ncm ==
+This is "nn::ncm::IContentManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -113,6 +123,8 @@ The set commands always return 0. When the get-commands fail to find an entry fo
 All of the above cmds takes a u8 as input.
 
 === IContentStorage ===
+This is "nn::ncm::IContentStorage".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -221,6 +233,8 @@ With some NcaIDs this may return 0 with an all-zero output entry. This seems to 
 |}
 
 === IContentMetaDatabase ===
+This is "nn::ncm::IContentMetaDatabase".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
