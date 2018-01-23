@@ -12,6 +12,8 @@ This is
 
 ## IMonitorService
 
+This is "nn::ldn::detail::IMonitorService".
+
 | Cmd | Name          |
 | --- | ------------- |
 | 0   | GetNifmStatus |
@@ -35,6 +37,8 @@ This is
 |     |                                    |                                                                                                |
 
 ## ISystemLocalCommunicationService
+
+This is "nn::ldn::detail::ISystemLocalCommunicationService".
 
 | Cmd | Name             |
 | --- | ---------------- |
@@ -78,6 +82,8 @@ This is
 |     |                                  |                                                                                            |
 
 ## IUserLocalCommunicationService
+
+This is "nn::ldn::detail::IUserLocalCommunicationService".
 
 Same as
 [\#ISystemLocalCommunicationService](#ISystemLocalCommunicationService "wikilink").

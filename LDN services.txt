@@ -12,6 +12,8 @@ This is "nn::ldn::detail::IMonitorServiceCreator".
 |}
 
 == IMonitorService ==
+This is "nn::ldn::detail::IMonitorService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -46,6 +48,8 @@ This is "nn::ldn::detail::ISystemServiceCreator".
 |}
 
 == ISystemLocalCommunicationService ==
+This is "nn::ldn::detail::ISystemLocalCommunicationService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -118,6 +122,8 @@ This is "nn::ldn::detail::IUserServiceCreator".
 |}
 
 == IUserLocalCommunicationService ==
+This is "nn::ldn::detail::IUserLocalCommunicationService".
+
 Same as [[#ISystemLocalCommunicationService]].
 
 [[Category:Services]]
