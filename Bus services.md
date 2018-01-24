@@ -25,12 +25,12 @@ session.
 
 | GpioPadName | GpioPadDescriptor | Tegra (port, pin) | Usage                          | Direction | Used by                                                                                    |
 | ----------- | ----------------- | ----------------- | ------------------------------ | --------- | ------------------------------------------------------------------------------------------ |
-| 1           | 0xCC              | Z, 4              |                                |           |                                                                                            |
+| 1           | 0xCC              | Z, 4              |                                | Out       | [Audio services](Audio%20services.md "wikilink")                                           |
 | 2           | 0x24              | E, 4              | SDCard Power                   | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                 |
 | 3           | 0x3C              | H, 4              |                                | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                   |
 | 4           | 0xDA              | BB, 2             |                                |           |                                                                                            |
 | 5           | 0xDB              | BB, 3             | GcAsic Power?                  | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                 |
-| 6           | 0xDC              | BB, 4             |                                |           |                                                                                            |
+| 6           | 0xDC              | BB, 4             |                                | In        | [Audio services](Audio%20services.md "wikilink")                                           |
 | 7           | 0x25              | E, 5              |                                |           |                                                                                            |
 | 8           | 0x90              | S, 0              |                                | In        | [HID services](HID%20services.md "wikilink")                                               |
 | 9           | 0x91              | S, 1              |                                |           |                                                                                            |
@@ -44,11 +44,11 @@ session.
 | 0x12        | 0x7B              | P, 3              |                                |           |                                                                                            |
 | 0x13        | 0x7A              | P, 2              |                                |           |                                                                                            |
 | 0x14        | 0xBC              | X, 4              |                                |           |                                                                                            |
-| 0x15        | 0xAE              | V, 6              |                                |           |                                                                                            |
+| 0x15        | 0xAE              | V, 6              |                                | In        | [Audio services](Audio%20services.md "wikilink")                                           |
 | 0x17        | 0xB9              | X, 1              |                                | In        | [HID services](HID%20services.md "wikilink")                                               |
 | 0x18        | 0xBD              | X, 5              |                                | Out       | [HID services](HID%20services.md "wikilink")                                               |
-| 0x19        | 0xBE              | X, 6              | Volume Up                      | In        | [Boot2](Boot2.md "wikilink")                                                               |
-| 0x1A        | 0xBF              | X, 7              | Volume Down                    | In        | [Boot2](Boot2.md "wikilink")                                                               |
+| 0x19        | 0xBE              | X, 6              | Volume Up                      | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")             |
+| 0x1A        | 0xBF              | X, 7              | Volume Down                    | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")             |
 | 0x1B        | 0xC0              | Y, 0              | Power supply monitor related.  | In        | [PTM services](PTM%20services.md "wikilink")                                               |
 | 0x1C        | 0xC1              | Y, 1              |                                |           |                                                                                            |
 | 0x1D        | 0xA9              | V, 1              |                                | Out       | [NV services](NV%20services.md "wikilink")                                                 |

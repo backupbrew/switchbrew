@@ -31,7 +31,7 @@ Returns an [[#IPadSession]] session.
 |-
 ! GpioPadName || GpioPadDescriptor || Tegra (port, pin) || Usage || Direction || Used by
 |-
-| 1 || 0xCC || Z, 4 || || || 
+| 1 || 0xCC || Z, 4 || || Out || [[Audio services]]
 |-
 | 2 || 0x24 || E, 4 || SDCard Power || Out || [[Filesystem services]]
 |-
@@ -41,7 +41,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 5 || 0xDB || BB, 3 || GcAsic Power? || Out || [[Filesystem services]]
 |-
-| 6 || 0xDC || BB, 4 || || || 
+| 6 || 0xDC || BB, 4 || || In || [[Audio services]]
 |-
 | 7 || 0x25 || E, 5 || || || 
 |-
@@ -69,15 +69,15 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x14 || 0xBC || X, 4 || || || 
 |-
-| 0x15 || 0xAE || V, 6 || || || 
+| 0x15 || 0xAE || V, 6 || || In || [[Audio services]]
 |-
 | 0x17 || 0xB9 || X, 1 || || In || [[HID services]]
 |-
 | 0x18 || 0xBD || X, 5 || || Out || [[HID services]]
 |-
-| 0x19 || 0xBE || X, 6 || Volume Up || In || [[Boot2]]
+| 0x19 || 0xBE || X, 6 || Volume Up || In || [[Boot2]], [[Audio services]]
 |-
-| 0x1A || 0xBF || X, 7 || Volume Down || In || [[Boot2]]
+| 0x1A || 0xBF || X, 7 || Volume Down || In || [[Boot2]], [[Audio services]]
 |-
 | 0x1B || 0xC0 || Y, 0 || Power supply monitor related. || In || [[PTM services]]
 |-
