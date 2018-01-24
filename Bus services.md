@@ -23,48 +23,48 @@ Same thing as OpenSessionForDev except the descriptor is looked up in
 the table below. Returns an [\#IPadSession](#IPadSession "wikilink")
 session.
 
-| GpioPadName | GpioPadDescriptor | Tegra (unit, pin) | Usage              | Direction | Used by                                      |
-| ----------- | ----------------- | ----------------- | ------------------ | --------- | -------------------------------------------- |
-| 1           | 0xCC              | Z, 4              |                    |           |                                              |
-| 2           | 0x24              | E, 4              | SDCard Power       |           |                                              |
-| 4           | 0xDA              | BB, 2             |                    |           |                                              |
-| 5           | 0xDB              | BB, 3             |                    |           |                                              |
-| 6           | 0xDC              | BB, 4             |                    |           |                                              |
-| 7           | 0x25              | E, 5              |                    |           |                                              |
-| 8           | 0x90              | S, 0              |                    | In        | [HID services](HID%20services.md "wikilink") |
-| 9           | 0x91              | S, 1              |                    |           |                                              |
-| 0xA         | 0x96              | S, 6              |                    |           |                                              |
-| 0xB         | 0x97              | S, 7              |                    |           |                                              |
-| 0xD         | 6                 | A, 6              |                    |           |                                              |
-| 0xE         | 0x78              | P, 0              |                    |           |                                              |
-| 0xF         | 0x93              | S, 3              |                    |           |                                              |
-| 0x10        | 0x7D              | P, 5              |                    |           |                                              |
-| 0x11        | 0x7C              | P, 4              |                    |           |                                              |
-| 0x12        | 0x7B              | P, 3              |                    |           |                                              |
-| 0x13        | 0x7A              | P, 2              |                    |           |                                              |
-| 0x14        | 0xBC              | X, 4              |                    |           |                                              |
-| 0x15        | 0xAE              | V, 6              |                    |           |                                              |
-| 0x17        | 0xB9              | X, 1              |                    | In        | [HID services](HID%20services.md "wikilink") |
-| 0x18        | 0xBD              | X, 5              |                    | Out       | [HID services](HID%20services.md "wikilink") |
-| 0x19        | 0xBE              | X, 6              | Volume key         | In        | [Boot2](Boot2.md "wikilink")                 |
-| 0x1A        | 0xBF              | X, 7              | Volume key         | In        | [Boot2](Boot2.md "wikilink")                 |
-| 0x1B        | 0xC0              | Y, 0              |                    |           |                                              |
-| 0x1C        | 0xC1              | Y, 1              |                    |           |                                              |
-| 0x1D        | 0xA9              | V, 1              |                    |           |                                              |
-| 0x1E        | 0xAA              | V, 2              |                    |           |                                              |
-| 0x20        | 0xAD              | V, 5              |                    |           |                                              |
-| 0x21        | 0xC8              | Z, 0              |                    |           |                                              |
-| 0x22        | 0xCA              | Z, 2              |                    |           |                                              |
-| 0x23        | 0xCB              | Z, 3              |                    |           |                                              |
-| 0x24        | 0x4F              | J, 7              |                    |           |                                              |
-| 0x25        | 0x50              | K, 0              |                    |           |                                              |
-| 0x26        | 0x51              | K, 1              |                    |           |                                              |
-| 0x27        | 0x52              | K, 2              |                    |           |                                              |
-| 0x28        | 0x54              | K, 4              |                    |           |                                              |
-| 0x29        | 0x56              | K, 6              |                    |           |                                              |
-| 0x2A        | 0x57              | K, 7              |                    |           |                                              |
-| ..          | ..                | ..                | ..                 | ..        | ..                                           |
-| 0x38        | ?                 | ?                 | SDCard Card Detect |           |                                              |
+| GpioPadName | GpioPadDescriptor | Tegra (unit, pin) | Usage              | Direction | Used by                                                    |
+| ----------- | ----------------- | ----------------- | ------------------ | --------- | ---------------------------------------------------------- |
+| 1           | 0xCC              | Z, 4              |                    |           |                                                            |
+| 2           | 0x24              | E, 4              | SDCard Power       | Out       | [Filesystem services](Filesystem%20services.md "wikilink") |
+| 4           | 0xDA              | BB, 2             |                    |           |                                                            |
+| 5           | 0xDB              | BB, 3             |                    |           |                                                            |
+| 6           | 0xDC              | BB, 4             |                    |           |                                                            |
+| 7           | 0x25              | E, 5              |                    |           |                                                            |
+| 8           | 0x90              | S, 0              |                    | In        | [HID services](HID%20services.md "wikilink")               |
+| 9           | 0x91              | S, 1              |                    |           |                                                            |
+| 0xA         | 0x96              | S, 6              |                    |           |                                                            |
+| 0xB         | 0x97              | S, 7              |                    |           |                                                            |
+| 0xD         | 6                 | A, 6              |                    |           |                                                            |
+| 0xE         | 0x78              | P, 0              |                    |           |                                                            |
+| 0xF         | 0x93              | S, 3              |                    |           |                                                            |
+| 0x10        | 0x7D              | P, 5              |                    |           |                                                            |
+| 0x11        | 0x7C              | P, 4              |                    |           |                                                            |
+| 0x12        | 0x7B              | P, 3              |                    |           |                                                            |
+| 0x13        | 0x7A              | P, 2              |                    |           |                                                            |
+| 0x14        | 0xBC              | X, 4              |                    |           |                                                            |
+| 0x15        | 0xAE              | V, 6              |                    |           |                                                            |
+| 0x17        | 0xB9              | X, 1              |                    | In        | [HID services](HID%20services.md "wikilink")               |
+| 0x18        | 0xBD              | X, 5              |                    | Out       | [HID services](HID%20services.md "wikilink")               |
+| 0x19        | 0xBE              | X, 6              | Volume key         | In        | [Boot2](Boot2.md "wikilink")                               |
+| 0x1A        | 0xBF              | X, 7              | Volume key         | In        | [Boot2](Boot2.md "wikilink")                               |
+| 0x1B        | 0xC0              | Y, 0              |                    |           |                                                            |
+| 0x1C        | 0xC1              | Y, 1              |                    |           |                                                            |
+| 0x1D        | 0xA9              | V, 1              |                    |           |                                                            |
+| 0x1E        | 0xAA              | V, 2              |                    |           |                                                            |
+| 0x20        | 0xAD              | V, 5              |                    |           |                                                            |
+| 0x21        | 0xC8              | Z, 0              |                    |           |                                                            |
+| 0x22        | 0xCA              | Z, 2              |                    |           |                                                            |
+| 0x23        | 0xCB              | Z, 3              |                    |           |                                                            |
+| 0x24        | 0x4F              | J, 7              |                    |           |                                                            |
+| 0x25        | 0x50              | K, 0              |                    |           |                                                            |
+| 0x26        | 0x51              | K, 1              |                    |           |                                                            |
+| 0x27        | 0x52              | K, 2              |                    |           |                                                            |
+| 0x28        | 0x54              | K, 4              |                    |           |                                                            |
+| 0x29        | 0x56              | K, 6              |                    |           |                                                            |
+| 0x2A        | 0x57              | K, 7              |                    |           |                                                            |
+| ..          | ..                | ..                | ..                 | ..        | ..                                                         |
+| 0x38        | ?                 | ?                 | SDCard Card Detect | In        | [Filesystem services](Filesystem%20services.md "wikilink") |
 
 ## OpenSessionForTest
 

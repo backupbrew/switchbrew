@@ -33,7 +33,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 1 || 0xCC || Z, 4 || || || 
 |-
-| 2 || 0x24 || E, 4 || SDCard Power || || 
+| 2 || 0x24 || E, 4 || SDCard Power || Out || [[Filesystem services]]
 |-
 | 4 || 0xDA || BB, 2 || || || 
 |-
@@ -109,7 +109,7 @@ Returns an [[#IPadSession]] session.
 |-
 | .. || .. || .. || .. || .. || ..
 |-
-| 0x38 || ? || ? || SDCard Card Detect || || 
+| 0x38 || ? || ? || SDCard Card Detect || In || [[Filesystem services]]
 |}
 
 == OpenSessionForTest ==
