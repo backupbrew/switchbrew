@@ -28,7 +28,7 @@ session.
 | 1           | 0xCC              | Z, 4              |                    |           |                                                            |
 | 2           | 0x24              | E, 4              | SDCard Power       | Out       | [Filesystem services](Filesystem%20services.md "wikilink") |
 | 4           | 0xDA              | BB, 2             |                    |           |                                                            |
-| 5           | 0xDB              | BB, 3             |                    |           |                                                            |
+| 5           | 0xDB              | BB, 3             | GcAsic Power?      | Out       | [Filesystem services](Filesystem%20services.md "wikilink") |
 | 6           | 0xDC              | BB, 4             |                    |           |                                                            |
 | 7           | 0x25              | E, 5              |                    |           |                                                            |
 | 8           | 0x90              | S, 0              |                    | In        | [HID services](HID%20services.md "wikilink")               |
@@ -37,7 +37,7 @@ session.
 | 0xB         | 0x97              | S, 7              |                    |           |                                                            |
 | 0xD         | 6                 | A, 6              |                    |           |                                                            |
 | 0xE         | 0x78              | P, 0              |                    |           |                                                            |
-| 0xF         | 0x93              | S, 3              |                    |           |                                                            |
+| 0xF         | 0x93              | S, 3              | GcAsic Irq?        | In        | [Filesystem services](Filesystem%20services.md "wikilink") |
 | 0x10        | 0x7D              | P, 5              |                    |           |                                                            |
 | 0x11        | 0x7C              | P, 4              |                    |           |                                                            |
 | 0x12        | 0x7B              | P, 3              |                    |           |                                                            |
