@@ -11,7 +11,7 @@ This is "nn::socket::sf::IClient".
 |-
 | 2  || [[#Socket]]
 |-
-| 3  || [[#Socket||#SocketExempt]]
+| 3  || [[#Socket|#SocketExempt]]
 |-
 | 4  || [[#Open]]
 |-
