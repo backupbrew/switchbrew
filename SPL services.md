@@ -51,21 +51,21 @@ unlocked.
 
 Takes a u32 (**ConfigItem**), and returns a u64 (**ConfigVal**).
 
-| ConfigItem | Name                             |
-| ---------- | -------------------------------- |
-| 1          | DisableProgramVerification       |
-| 2          | MemoryConfiguration              |
-| 3          | SecurityEngineIRQNumber          |
-| 4          | Returns 0x02?                    |
-| 5          | HardwareType (0=Icosa, 1=Copper) |
-| 6          | IsRetail                         |
-| 7          | IsRecoveryBoot                   |
-| 8          | DeviceId (byte7 clear)           |
-| 9          | BootReason                       |
-| 10         | MemoryArrange                    |
-| 11         | IsDebugMode                      |
-| 12         | KernelMemoryConfiguration        |
-| 13         | BatteryProfile                   |
+| ConfigItem | Name                                                  |
+| ---------- | ----------------------------------------------------- |
+| 1          | DisableProgramVerification                            |
+| 2          | MemoryConfiguration                                   |
+| 3          | SecurityEngineIRQNumber                               |
+| 4          | Returns 0x02?                                         |
+| 5          | HardwareType (0=Icosa (nx-abca2), 1=Copper (nx-abcb)) |
+| 6          | IsRetail                                              |
+| 7          | IsRecoveryBoot                                        |
+| 8          | DeviceId (byte7 clear)                                |
+| 9          | BootReason                                            |
+| 10         | MemoryArrange                                         |
+| 11         | IsDebugMode                                           |
+| 12         | KernelMemoryConfiguration                             |
+| 13         | BatteryProfile                                        |
 
 [PM](Process%20Manager%20services.md "wikilink") checks id1 and if
 non-zero, calls fsp-pr SetEnabledProgramVerification(false).
