@@ -58,7 +58,7 @@ session.
 | 0x21        | 0xC8              | Z, 0              | Power supply monitor related.  | In        | [PTM services](PTM%20services.md "wikilink")                                               |
 | 0x22        | 0xCA              | Z, 2              |                                |           |                                                                                            |
 | 0x23        | 0xCB              | Z, 3              |                                |           |                                                                                            |
-| 0x24        | 0x4F              | J, 7              |                                |           |                                                                                            |
+| 0x24        | 0x4F              | J, 7              |                                | Out       | [HID services](HID%20services.md "wikilink")                                               |
 | 0x25        | 0x50              | K, 0              |                                |           |                                                                                            |
 | 0x26        | 0x51              | K, 1              |                                |           |                                                                                            |
 | 0x27        | 0x52              | K, 2              |                                |           |                                                                                            |

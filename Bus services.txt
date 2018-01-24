@@ -97,7 +97,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x23 || 0xCB || Z, 3 || || || 
 |-
-| 0x24 || 0x4F || J, 7 || || || 
+| 0x24 || 0x4F || J, 7 || || Out || [[HID services]]
 |-
 | 0x25 || 0x50 || K, 0 || || || 
 |-
