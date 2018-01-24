@@ -9,9 +9,9 @@ This is "nn::socket::sf::IClient".
 |-
 | 1  || StartMonitoring
 |-
-| 2  || Socket
+| 2  || [[#Socket]]
 |-
-| 3  || [[#SocketExempt]]
+| 3  || [[#Socket||#SocketExempt]]
 |-
 | 4  || [[#Open]]
 |-
@@ -102,10 +102,13 @@ The transfer memory must be larger than a the computed size below. Should the tr
      return (size_t)(config->sb_efficiency * sum);
  }
 
-== SocketExempt ==
-This command is exclusive to <code>bsd:s</code> (FIXME: test whether this is actually the case).
+== Socket ==
+FreeBSD's <code>socket</code> command.
+<code>bsd:u</code> disallows the usage of the <code>SOCK_SEQPACKET</code> and <code>SOCK_RAW</code> types, with the exception of <code>(AF_INET, SOCK_RAW, IPPROTO_ICMP)</code> (IPv4 <code>ping</code>), <code>bsd:s</code> needs to be used for those.
 
-Performs a FIONBIO <code>ioctl</code> on the socket, making it non-blocking. POSIX-compliant code should use <code>fcntl</code> instead.
+The only implemented domains are <code>AF_INET</code> and <code>AF_INET6</code>.
+
+SocketExempt: same as socket but the socket is immediately shutdown (disconnected) on creation.
 
 == Open ==
 FreeBSD's <code>open</code> command, limited to opening <code>/dev/bpf</code>. This can be used, for example, to enable promiscuous mode, see FreeBSD's <code>/dev/bpf</code> for more details.

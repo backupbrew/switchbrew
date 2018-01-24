@@ -2,39 +2,39 @@
 
 This is "nn::socket::sf::IClient".
 
-| Cmd | Name                                       |
-| --- | ------------------------------------------ |
-| 0   | RegisterClient (Initialize)                |
-| 1   | StartMonitoring                            |
-| 2   | Socket                                     |
-| 3   | [\#SocketExempt](#SocketExempt "wikilink") |
-| 4   | [\#Open](#Open "wikilink")                 |
-| 5   | Select                                     |
-| 6   | Poll                                       |
-| 7   | [\#Sysctl](#Sysctl "wikilink")             |
-| 8   | Recv                                       |
-| 9   | RecvFrom                                   |
-| 10  | Send                                       |
-| 11  | SendTo                                     |
-| 12  | Accept                                     |
-| 13  | Bind                                       |
-| 14  | Connect                                    |
-| 15  | GetPeerName                                |
-| 16  | GetSockName                                |
-| 17  | GetSockOpt                                 |
-| 18  | Listen                                     |
-| 19  | [\#Ioctl](#Ioctl "wikilink")               |
-| 20  | [\#Fcntl](#Fcntl "wikilink")               |
-| 21  | SetSockOpt                                 |
-| 22  | Shutdown                                   |
-| 23  | ShutdownAllSockets                         |
-| 24  | Write                                      |
-| 25  | Read                                       |
-| 26  | Close                                      |
-| 27  | DuplicateSocket                            |
-| 28  | GetResourceStatistics                      |
-| 29  | \[3.0.0+\] RecvMMsg                        |
-| 30  | \[3.0.0+\] SendMMsg                        |
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   | RegisterClient (Initialize)    |
+| 1   | StartMonitoring                |
+| 2   | [\#Socket](#Socket "wikilink") |
+| 3   | \[\[\#Socket                   |
+| 4   | [\#Open](#Open "wikilink")     |
+| 5   | Select                         |
+| 6   | Poll                           |
+| 7   | [\#Sysctl](#Sysctl "wikilink") |
+| 8   | Recv                           |
+| 9   | RecvFrom                       |
+| 10  | Send                           |
+| 11  | SendTo                         |
+| 12  | Accept                         |
+| 13  | Bind                           |
+| 14  | Connect                        |
+| 15  | GetPeerName                    |
+| 16  | GetSockName                    |
+| 17  | GetSockOpt                     |
+| 18  | Listen                         |
+| 19  | [\#Ioctl](#Ioctl "wikilink")   |
+| 20  | [\#Fcntl](#Fcntl "wikilink")   |
+| 21  | SetSockOpt                     |
+| 22  | Shutdown                       |
+| 23  | ShutdownAllSockets             |
+| 24  | Write                          |
+| 25  | Read                           |
+| 26  | Close                          |
+| 27  | DuplicateSocket                |
+| 28  | GetResourceStatistics          |
+| 29  | \[3.0.0+\] RecvMMsg            |
+| 30  | \[3.0.0+\] SendMMsg            |
 
 ## Initalize
 
@@ -75,13 +75,17 @@ byte/s.
 `    return (size_t)(config->sb_efficiency * sum);`  
 `}`
 
-## SocketExempt
+## Socket
 
-This command is exclusive to `bsd:s` (FIXME: test whether this is
-actually the case).
+FreeBSD's `socket` command. `bsd:u` disallows the usage of the
+`SOCK_SEQPACKET` and `SOCK_RAW` types, with the exception of `(AF_INET,
+SOCK_RAW, IPPROTO_ICMP)` (IPv4 `ping`), `bsd:s` needs to be used for
+those.
 
-Performs a FIONBIO `ioctl` on the socket, making it non-blocking.
-POSIX-compliant code should use `fcntl` instead.
+The only implemented domains are `AF_INET` and `AF_INET6`.
+
+SocketExempt: same as socket but the socket is immediately shutdown
+(disconnected) on creation.
 
 ## Open
 
