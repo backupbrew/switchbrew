@@ -117,7 +117,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x2D || 0x38 || H, 0 || || ||
 |-
-| 0x2E || 0x39 || H, 1 || || ||
+| 0x2E || 0x39 || H, 1 || || Out || [[Wlan services]]
 |-
 | 0x2F || 0x3B || H, 3 || || Out || [[Bluetooth services]]
 |-

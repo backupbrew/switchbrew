@@ -68,7 +68,7 @@ session.
 | 0x2B        | 0x53              | K, 3              |                                |           |                                                                                            |
 | 0x2C        | 0xE3              | CC, 3             |                                |           |                                                                                            |
 | 0x2D        | 0x38              | H, 0              |                                |           |                                                                                            |
-| 0x2E        | 0x39              | H, 1              |                                |           |                                                                                            |
+| 0x2E        | 0x39              | H, 1              |                                | Out       | [Wlan services](Wlan%20services.md "wikilink")                                             |
 | 0x2F        | 0x3B              | H, 3              |                                | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                   |
 | 0x30        | 0x3D              | H, 5              |                                |           |                                                                                            |
 | 0x31        | 0x3F              | H, 7              |                                |           |                                                                                            |
