@@ -85,7 +85,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x1E || 0xAA || V, 2 || || Out || [[NV services]]
 |-
-| 0x1F || 0x55 || || Charger watchdog related. || Out || [[PTM services]] 
+| 0x1F || 0x55 || K, 5 || Charger watchdog related. || Out || [[PTM services]] 
 |-
 | 0x20 || 0xAD || V, 5 || || || 
 |-

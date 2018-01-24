@@ -52,7 +52,7 @@ session.
 | 0x1C        | 0xC1              | Y, 1              |                                |           |                                                            |
 | 0x1D        | 0xA9              | V, 1              |                                | Out       | [NV services](NV%20services.md "wikilink")                 |
 | 0x1E        | 0xAA              | V, 2              |                                | Out       | [NV services](NV%20services.md "wikilink")                 |
-| 0x1F        | 0x55              |                   | Charger watchdog related.      | Out       | [PTM services](PTM%20services.md "wikilink")               |
+| 0x1F        | 0x55              | K, 5              | Charger watchdog related.      | Out       | [PTM services](PTM%20services.md "wikilink")               |
 | 0x20        | 0xAD              | V, 5              |                                |           |                                                            |
 | 0x21        | 0xC8              | Z, 0              | Power supply monitor related.  | In        | [PTM services](PTM%20services.md "wikilink")               |
 | 0x22        | 0xCA              | Z, 2              |                                |           |                                                            |
