@@ -27,7 +27,7 @@ session.
 | ----------- | ----------------- | ----------------- | ------------------------------ | --------- | ------------------------------------------------------------------------------------------ |
 | 1           | 0xCC              | Z, 4              |                                |           |                                                                                            |
 | 2           | 0x24              | E, 4              | SDCard Power                   | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                 |
-| 3           | 0x3C              |                   |                                | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                   |
+| 3           | 0x3C              | H, 4              |                                | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                   |
 | 4           | 0xDA              | BB, 2             |                                |           |                                                                                            |
 | 5           | 0xDB              | BB, 3             | GcAsic Power?                  | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                 |
 | 6           | 0xDC              | BB, 4             |                                |           |                                                                                            |

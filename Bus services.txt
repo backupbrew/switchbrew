@@ -35,7 +35,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 2 || 0x24 || E, 4 || SDCard Power || Out || [[Filesystem services]]
 |-
-| 3 || 0x3C || || || Out || [[Bluetooth services]]
+| 3 || 0x3C || H, 4 || || Out || [[Bluetooth services]]
 |-
 | 4 || 0xDA || BB, 2 || || || 
 |-
