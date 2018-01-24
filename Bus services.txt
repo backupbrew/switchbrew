@@ -83,7 +83,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x1C || 0xC1 || Y, 1 || || || 
 |-
-| 0x1D || 0xA9 || V, 1 || || Out || [[NV services]]
+| 0x1D || 0xA9 || V, 1 || .. Backlight? || Out || [[NV services]], [[Backlight services]]
 |-
 | 0x1E || 0xAA || V, 2 || || Out || [[NV services]]
 |-
