@@ -27,26 +27,26 @@ the call sub-id and returning the result of the call.
 Functions exposed to user-mode processes using
 [svcCallSecureMonitor](SVC.md "wikilink").
 
-| Sub-ID     | Name                                                           | In | Out |
-| ---------- | -------------------------------------------------------------- | -- | --- |
-| 0xC3000401 | SetConfig                                                      |    |     |
-| 0xC3000002 | GetConfig (Same as ID 1, Sub-ID 4)                             |    |     |
-| 0xC3000003 | CheckStatus                                                    |    |     |
-| 0xC3000404 | GetResult                                                      |    |     |
-| 0xC3000E05 | ExpMod                                                         |    |     |
-| 0xC3000006 | GetRandomBytes (Same as ID 1, Sub-ID 5)                        |    |     |
-| 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                 |    |     |
-| 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                         |    |     |
-| 0xC3000009 | [\#CryptAes](#CryptAes "wikilink")                             |    |     |
-| 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink") |    |     |
-| 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                       |    |     |
-| 0xC300100C | [\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink")           |    |     |
-| 0xC300100D | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")     |    |     |
-| 0xC300100E | [\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink")             |    |     |
-| 0xC300060F | [\#PublicRsa](#PublicRsa "wikilink")                           |    |     |
-| 0xC3000610 | [\#UnwrapPreparedAesKey](#UnwrapPreparedAesKey "wikilink")     |    |     |
-| 0xC3000011 | [\#LoadPreparedAesKey](#LoadPreparedAesKey "wikilink")         |    |     |
-| 0xC3000012 | \[2.0.0+\] GeneratePreparedAesKek                              |    |     |
+| Sub-ID     | Name                                                               | In | Out |
+| ---------- | ------------------------------------------------------------------ | -- | --- |
+| 0xC3000401 | SetConfig                                                          |    |     |
+| 0xC3000002 | GetConfig (Same as ID 1, Sub-ID 4)                                 |    |     |
+| 0xC3000003 | CheckStatus                                                        |    |     |
+| 0xC3000404 | GetResult                                                          |    |     |
+| 0xC3000E05 | ExpMod                                                             |    |     |
+| 0xC3000006 | GetRandomBytes (Same as ID 1, Sub-ID 5)                            |    |     |
+| 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                     |    |     |
+| 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                             |    |     |
+| 0xC3000009 | [\#CryptAes](#CryptAes "wikilink")                                 |    |     |
+| 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")     |    |     |
+| 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                           |    |     |
+| 0xC300100C | [\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink")               |    |     |
+| 0xC300100D | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")         |    |     |
+| 0xC300100E | [\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink")                 |    |     |
+| 0xC300060F | [\#PublicRsa](#PublicRsa "wikilink")                               |    |     |
+| 0xC3000610 | [\#UnwrapRsaWrappedTitleKey](#UnwrapRsaWrappedTitleKey "wikilink") |    |     |
+| 0xC3000011 | [\#LoadTitleKey](#LoadTitleKey "wikilink")                         |    |     |
+| 0xC3000012 | \[2.0.0+\] UnwrapAesWrappedTitleKey                                |    |     |
 
 The overall concept here is the following:
 
@@ -66,7 +66,7 @@ The overall concept here is the following:
       - This means: Plaintext kek keys never leave TrustZone.
       - Further, this means: Actual AES/RSA keys never leave TrustZone.
 
-Note: The [CryptoUsecase\_PreparedAesKey](#CryptoUsecase "wikilink")
+Note: The [CryptoUsecase\_TitleKey](#CryptoUsecase "wikilink")
 represents a RSA wrapped AES key.
 
 ### GenerateAesKek
@@ -103,8 +103,7 @@ Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, and a
 wrapped RSA private key.
 
-The session kek must have been created with
-CryptoUsecase\_PreparedAesKey.
+The session kek must have been created with CryptoUsecase\_TitleKey.
 
 ### DecryptRsaPrivateKey
 
@@ -133,31 +132,30 @@ Encrypts using Rsa public key.
 Key must be set prior using the
 [\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink") command.
 
-### UnwrapPreparedAesKey
+### UnwrapRsaWrappedTitleKey
 
 Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA public
 key.
 
 Returns a session-unique AES key especially for use in
-[\#LoadPreparedAesKey](#LoadPreparedAesKey "wikilink").
+[\#LoadTitleKey](#LoadTitleKey "wikilink").
 
-The session kek must have been created with
-CryptoUsecase\_PreparedAesKey.
+The session kek must have been created with CryptoUsecase\_TitleKey.
 
-### LoadPreparedAesKey
+### LoadTitleKey
 
 Takes a session-unique AES key from
-[\#UnwrapPreparedAesKey](#UnwrapPreparedAesKey "wikilink").
+[\#UnwrapTitleKey](#UnwrapTitleKey "wikilink").
 
 ### enum CryptoUsecase
 
-| Value | Name                          |
-| ----- | ----------------------------- |
-| 0     | CryptoUsecase\_Aes            |
-| 1     | CryptoUsecase\_PrivateRsa     |
-| 2     | CryptoUsecase\_PublicRsa      |
-| 3     | CryptoUsecase\_PreparedAesKey |
+| Value | Name                      |
+| ----- | ------------------------- |
+| 0     | CryptoUsecase\_Aes        |
+| 1     | CryptoUsecase\_PrivateRsa |
+| 2     | CryptoUsecase\_PublicRsa  |
+| 3     | CryptoUsecase\_TitleKey   |
 
 ## ID 1
 

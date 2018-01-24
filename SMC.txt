@@ -59,11 +59,11 @@ Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
 |-
 | 0xC300060F || [[#PublicRsa]] || ||
 |-
-| 0xC3000610 || [[#UnwrapPreparedAesKey]] || ||
+| 0xC3000610 || [[#UnwrapRsaWrappedTitleKey]] || ||
 |-
-| 0xC3000011 || [[#LoadPreparedAesKey]] || ||
+| 0xC3000011 || [[#LoadTitleKey]] || ||
 |-
-| 0xC3000012 || [2.0.0+] GeneratePreparedAesKek || ||
+| 0xC3000012 || [2.0.0+] UnwrapAesWrappedTitleKey || ||
 |}
 
 The overall concept here is the following:
@@ -77,7 +77,7 @@ The overall concept here is the following:
 ** Further, this means: Actual AES/RSA keys never leave TrustZone.
 
 Note:
-The [[#CryptoUsecase|CryptoUsecase_PreparedAesKey]] represents a RSA wrapped AES key.
+The [[#CryptoUsecase|CryptoUsecase_TitleKey]] represents a RSA wrapped AES key.
 
 === GenerateAesKek ===
 Takes an "access key" as input, an [[#CryptoUsecase]].
@@ -100,7 +100,7 @@ Todo: This one seems unrelated to [[#CryptoUsecase]].
 === LoadRsaPrivateKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase_PreparedAesKey.
+The session kek must have been created with CryptoUsecase_TitleKey.
 
 === DecryptRsaPrivateKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
@@ -119,15 +119,15 @@ Encrypts using Rsa public key.
 
 Key must be set prior using the [[#LoadRsaPublicKey]] command.
 
-=== UnwrapPreparedAesKey ===
+=== UnwrapRsaWrappedTitleKey ===
 Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA public key.
 
-Returns a session-unique AES key especially for use in [[#LoadPreparedAesKey]].
+Returns a session-unique AES key especially for use in [[#LoadTitleKey]].
 
-The session kek must have been created with CryptoUsecase_PreparedAesKey.
+The session kek must have been created with CryptoUsecase_TitleKey.
 
-=== LoadPreparedAesKey ===
-Takes a session-unique AES key from [[#UnwrapPreparedAesKey]].
+=== LoadTitleKey ===
+Takes a session-unique AES key from [[#UnwrapTitleKey]].
 
 === enum CryptoUsecase ===
 {| class=wikitable
@@ -139,7 +139,7 @@ Takes a session-unique AES key from [[#UnwrapPreparedAesKey]].
 |-
 | 2 || CryptoUsecase_PublicRsa
 |-
-| 3 || CryptoUsecase_PreparedAesKey
+| 3 || CryptoUsecase_TitleKey
 |}
 
 == ID 1 ==
