@@ -294,25 +294,25 @@ This is "nn::uart::IManager".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || || Returns a u8/bool.
+| 0 || DoesUartExist
 |-
-| 1 || || Returns a u8/bool.
+| 1 || DoesUartExistForTest
 |-
-| 2 || || Returns a u8/bool.
+| 2 || SetUartBaudrate
 |-
-| 3 || || Returns a u8/bool.
+| 3 || SetUartBaudrateForTest
 |-
-| 4 || || Takes marshalled arguments.
+| 4 || IsSomethingUartValid
 |-
-| 5 || || Takes marshalled arguments.
+| 5 || IsSomethingUartValidForTest
 |-
-| 6 || GetIPortSession ||
+| 6 || GetSession
 |-
-| 7 || || 
+| 7 || IsSomethingUartValid2
 |-
-| 8 || || 
+| 8 || IsSomethingUartValid2ForTest
 |-
 |}
 

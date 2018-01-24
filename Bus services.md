@@ -174,18 +174,18 @@ This is "nn::i2c::ISession".
 
 This is "nn::uart::IManager".
 
-| Cmd | Name            | Notes                       |
-| --- | --------------- | --------------------------- |
-| 0   |                 | Returns a u8/bool.          |
-| 1   |                 | Returns a u8/bool.          |
-| 2   |                 | Returns a u8/bool.          |
-| 3   |                 | Returns a u8/bool.          |
-| 4   |                 | Takes marshalled arguments. |
-| 5   |                 | Takes marshalled arguments. |
-| 6   | GetIPortSession |                             |
-| 7   |                 |                             |
-| 8   |                 |                             |
-|     |                 |                             |
+| Cmd | Name                         |
+| --- | ---------------------------- |
+| 0   | DoesUartExist                |
+| 1   | DoesUartExistForTest         |
+| 2   | SetUartBaudrate              |
+| 3   | SetUartBaudrateForTest       |
+| 4   | IsSomethingUartValid         |
+| 5   | IsSomethingUartValidForTest  |
+| 6   | GetSession                   |
+| 7   | IsSomethingUartValid2        |
+| 8   | IsSomethingUartValid2ForTest |
+|     |                              |
 
 ## IPortSession
 
