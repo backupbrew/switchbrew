@@ -33,9 +33,9 @@ session.
 | 7           | 0x25              | E, 5              |                    |           |                                                            |
 | 8           | 0x90              | S, 0              |                    | In        | [HID services](HID%20services.md "wikilink")               |
 | 9           | 0x91              | S, 1              |                    |           |                                                            |
-| 0xA         | 0x96              | S, 6              |                    |           |                                                            |
+| 0xA         | 0x96              | S, 6              |                    | 1         | [PTM services](PTM%20services.md "wikilink")               |
 | 0xB         | 0x97              | S, 7              |                    |           |                                                            |
-| 0xD         | 6                 | A, 6              |                    |           |                                                            |
+| 0xD         | 6                 | A, 6              |                    | 1         | [PTM services](PTM%20services.md "wikilink")               |
 | 0xE         | 0x78              | P, 0              |                    |           |                                                            |
 | 0xF         | 0x93              | S, 3              | GcAsic Irq?        | In        | [Filesystem services](Filesystem%20services.md "wikilink") |
 | 0x10        | 0x7D              | P, 5              |                    |           |                                                            |
@@ -48,12 +48,13 @@ session.
 | 0x18        | 0xBD              | X, 5              |                    | Out       | [HID services](HID%20services.md "wikilink")               |
 | 0x19        | 0xBE              | X, 6              | Volume key         | In        | [Boot2](Boot2.md "wikilink")                               |
 | 0x1A        | 0xBF              | X, 7              | Volume key         | In        | [Boot2](Boot2.md "wikilink")                               |
-| 0x1B        | 0xC0              | Y, 0              |                    |           |                                                            |
+| 0x1B        | 0xC0              | Y, 0              |                    | 0         | [PTM services](PTM%20services.md "wikilink")               |
 | 0x1C        | 0xC1              | Y, 1              |                    |           |                                                            |
 | 0x1D        | 0xA9              | V, 1              |                    |           |                                                            |
 | 0x1E        | 0xAA              | V, 2              |                    |           |                                                            |
+| 0x1F        | 0x55              |                   |                    | 1         | [PTM services](PTM%20services.md "wikilink")               |
 | 0x20        | 0xAD              | V, 5              |                    |           |                                                            |
-| 0x21        | 0xC8              | Z, 0              |                    |           |                                                            |
+| 0x21        | 0xC8              | Z, 0              |                    | 0         | [PTM services](PTM%20services.md "wikilink")               |
 | 0x22        | 0xCA              | Z, 2              |                    |           |                                                            |
 | 0x23        | 0xCB              | Z, 3              |                    |           |                                                            |
 | 0x24        | 0x4F              | J, 7              |                    |           |                                                            |
@@ -74,11 +75,11 @@ session.
 | 0x33        | 0x41              | I, 1              |                    |           |                                                            |
 | 0x34        | 0x3E              | H, 6              |                    |           |                                                            |
 | 0x35        | 0xE2              | CC, 2             |                    |           |                                                            |
-| 0x36        | 0xE4              | CC, 4             |                    |           |                                                            |
+| 0x36        | 0xE4              | CC, 4             |                    | 1         | [PTM services](PTM%20services.md "wikilink")               |
 | 0x37        | 0x3A              | H, 2              |                    |           |                                                            |
 | 0x38        | 0xC9              | Z, 1              | SDCard Card Detect | In        | [Filesystem services](Filesystem%20services.md "wikilink") |
-| 0x39        | 0x4D              | J, 5              |                    |           |                                                            |
-| 0x3A        | 0x58              | L, 0              |                    |           |                                                            |
+| 0x39        | 0x4D              | J, 5              |                    | 1         | [PTM services](PTM%20services.md "wikilink")               |
+| 0x3A        | 0x58              | L, 0              |                    | 1         | [PTM services](PTM%20services.md "wikilink")               |
 | 0x3B        | 0x3E              | H, 6              |                    |           |                                                            |
 | 0x3C        | 0x26              | E, 6              |                    |           |                                                            |
 | 0x3D        | \-1               |                   |                    |           |                                                            |
