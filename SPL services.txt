@@ -54,11 +54,11 @@ This is "nn::spl::detail::IGeneralInterface".
 |-
 | 17 || [[#DecryptImportPrivkForExpMod1]] || Speculative name. Wrapper for [[SMC#LoadRsaPrivateKey|LoadRsaPrivateKey SMC]].
 |-
-| 18 || [[#UnwrapRsaWrappedPreparedAesKey ]] || Speculative name. Wrapper for [[SMC#UnwrapPreparedAesKey|UnwrapPreparedAesKey SMC]].
+| 18 || [[#UnwrapRsaWrappedTitleKey ]] || Speculative name. Wrapper for [[SMC#UnwrapRsaWrappedTitleKey|UnwrapRsaWrappedTitleKey SMC]].
 |-
-| 19 || [[#LoadPreparedAesKey]] || Wrapper for [[SMC#LoadPreparedAesKey|LoadPreparedAesKey SMC]].
+| 19 || [[#LoadTitleKey]] || Wrapper for [[SMC#LoadTitleKey|LoadTitleKey SMC]].
 |-
-| 20 || [2.0.0+] [[#UnwrapAesWrappedPreparedAesKey ]] || Wrapper for [[SMC#GeneratePreparedAesKek|GeneratePreparedAesKek SMC]].
+| 20 || [2.0.0+] [[#UnwrapAesWrappedTitleKey ]] || Wrapper for [[SMC#UnwrapAesWrappedTitleKey|UnwrapAesWrappedTitleKey SMC]].
 |-
 | 21 || [2.0.0+] [[#LockAesEngine]] ||
 |-
@@ -252,24 +252,24 @@ Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK (
 
 Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key_y''' and imports it for later usage.
 
-== UnwrapRsaWrappedPreparedAesKey ==
+== UnwrapRsaWrappedTitleKey ==
 Takes 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''param0_in_buf''').
 
 Decrypts '''data_in_buf''' using the private key imported with [[#DecryptImportPrivkForExpMod1]] and the supplied '''mod_in_buf''' and '''param0_in_buf'''.
 
-Generates and returns a 16-byte sealed prepared key ('''key_z''').
+Generates and returns a 16-byte sealed titlekey.
 
-== LoadPreparedAesKey ==
-Takes a u32 ('''keyslot''') and a 16-byte sealed prepared key ('''key_z''').
+== LoadTitleKey ==
+Takes a u32 ('''keyslot''') and a 16-byte sealed titlekey.
 
-Sets the specified '''keyslot''' with a key generated from '''key_z'''.
+Sets the specified '''keyslot''' with the titlekey.
 
 [2.0.0+] Verifies the engine is locked by current session.
 
-== UnwrapAesWrappedPreparedAesKey ==
+== UnwrapAesWrappedTitleKey ==
 Takes a 16-byte EKS ('''Encryption Key Source''').
 
-Returns a sealed prepared AES key.
+Returns a sealed titlekey.
 
 == LockAesEngine ==
 Returns the id of the engine that was locked, or 0xD01A if all engines are busy. You need to lock an engine before using AES functions.
