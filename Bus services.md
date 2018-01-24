@@ -46,8 +46,8 @@ session.
 | 0x15        | 0xAE              | V, 6              |                                |           |                                                            |
 | 0x17        | 0xB9              | X, 1              |                                | In        | [HID services](HID%20services.md "wikilink")               |
 | 0x18        | 0xBD              | X, 5              |                                | Out       | [HID services](HID%20services.md "wikilink")               |
-| 0x19        | 0xBE              | X, 6              | Volume key                     | In        | [Boot2](Boot2.md "wikilink")                               |
-| 0x1A        | 0xBF              | X, 7              | Volume key                     | In        | [Boot2](Boot2.md "wikilink")                               |
+| 0x19        | 0xBE              | X, 6              | Volume Up                      | In        | [Boot2](Boot2.md "wikilink")                               |
+| 0x1A        | 0xBF              | X, 7              | Volume Down                    | In        | [Boot2](Boot2.md "wikilink")                               |
 | 0x1B        | 0xC0              | Y, 0              | Power supply monitor related.  | In        | [PTM services](PTM%20services.md "wikilink")               |
 | 0x1C        | 0xC1              | Y, 1              |                                |           |                                                            |
 | 0x1D        | 0xA9              | V, 1              |                                | Out       | [NV services](NV%20services.md "wikilink")                 |
