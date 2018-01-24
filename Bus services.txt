@@ -35,6 +35,8 @@ Returns an [[#IPadSession]] session.
 |-
 | 2 || 0x24 || E, 4 || SDCard Power || Out || [[Filesystem services]]
 |-
+| 3 || 0x3C || || || Out || [[Bluetooth services]]
+|-
 | 4 || 0xDA || BB, 2 || || || 
 |-
 | 5 || 0xDB || BB, 3 || GcAsic Power? || Out || [[Filesystem services]]
@@ -117,7 +119,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x2E || 0x39 || H, 1 || || ||
 |-
-| 0x2F || 0x3B || H, 3 || || ||
+| 0x2F || 0x3B || H, 3 || || Out || [[Bluetooth services]]
 |-
 | 0x30 || 0x3D || H, 5 || || ||
 |-
