@@ -29,7 +29,7 @@ Returns an [[#IPadSession]] session.
 
 {| class="wikitable" border="1"
 |-
-! GpioPadName || GpioPadDescriptor || Tegra (unit, pin) || Usage || Direction || Used by
+! GpioPadName || GpioPadDescriptor || Tegra (port, pin) || Usage || Direction || Used by
 |-
 | 1 || 0xCC || Z, 4 || || || 
 |-

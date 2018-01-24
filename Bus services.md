@@ -23,7 +23,7 @@ Same thing as OpenSessionForDev except the descriptor is looked up in
 the table below. Returns an [\#IPadSession](#IPadSession "wikilink")
 session.
 
-| GpioPadName | GpioPadDescriptor | Tegra (unit, pin) | Usage              | Direction | Used by                                                    |
+| GpioPadName | GpioPadDescriptor | Tegra (port, pin) | Usage              | Direction | Used by                                                    |
 | ----------- | ----------------- | ----------------- | ------------------ | --------- | ---------------------------------------------------------- |
 | 1           | 0xCC              | Z, 4              |                    |           |                                                            |
 | 2           | 0x24              | E, 4              | SDCard Power       | Out       | [Filesystem services](Filesystem%20services.md "wikilink") |
