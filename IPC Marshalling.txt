@@ -181,6 +181,8 @@ This header is used to wrap up requests sent to domains instead of sessions.
 |-
 | 0 || 7-0 || Command. 1=send message, 2=close virtual handle
 |-
+| 0 || 8-15 || Input object count
+|-
 | 0 || 31-16 || Length of [[IPC_Marshalling#Data_payload|data payload]] in bytes.
 |-
 | 1 || || Object ID (from cmd 0 in [[IPC_Marshalling#Control|Control]]).
@@ -192,6 +194,8 @@ This header is used to wrap up requests sent to domains instead of sessions.
   | 3
 |-
 | 4... || || [[#Data payload|Data payload]]
+|-
+| ... || || Input object IDs (u32s, not aligned)
 |}
 
 === Data payload ===

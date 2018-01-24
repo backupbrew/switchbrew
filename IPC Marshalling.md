@@ -177,11 +177,13 @@ sessions.
 | Word | Bits  | Description                                                                                      |
 | ---- | ----- | ------------------------------------------------------------------------------------------------ |
 | 0    | 7-0   | Command. 1=send message, 2=close virtual handle                                                  |
+| 0    | 8-15  | Input object count                                                                               |
 | 0    | 31-16 | Length of [data payload](IPC%20Marshalling#Data%20payload.md##Data_payload "wikilink") in bytes. |
 | 1    |       | Object ID (from cmd 0 in [Control](IPC%20Marshalling#Control.md##Control "wikilink")).           |
 | 2    |       | Padding to align to u64                                                                          |
 | 3    |       |                                                                                                  |
 | 4... |       | [Data payload](#Data_payload "wikilink")                                                         |
+| ...  |       | Input object IDs (u32s, not aligned)                                                             |
 
 ### Data payload
 
