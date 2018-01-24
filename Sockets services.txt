@@ -11,15 +11,15 @@ This is "nn::socket::sf::IClient".
 |-
 | 2  || Socket
 |-
-| 3  || SocketExempt
+| 3  || [[#SocketExempt]]
 |-
-| 4  || Open
+| 4  || [[#Open]]
 |-
 | 5  || Select
 |-
 | 6  || Poll
 |-
-| 7  || Sysctl
+| 7  || [[#Sysctl]]
 |-
 | 8  || Recv
 |-
@@ -43,9 +43,9 @@ This is "nn::socket::sf::IClient".
 |-
 | 18 || Listen
 |-
-| 19 || Ioctl
+| 19 || [[#Ioctl]]
 |-
-| 20 || Fcntl
+| 20 || [[#Fcntl]]
 |-
 | 21 || SetSockOpt
 |-
@@ -67,8 +67,6 @@ This is "nn::socket::sf::IClient".
 |-
 | 30 || [3.0.0+] SendMMsg
 |}
-
-Open: can open <code>/dev/bpf</code> (and most likely only that file, given bsdservices' binary contents). This can be used, for example, to enable promiscuous mode, see FreeBSD's <code>/dev/bpf</code> for more details.
 
 == Initalize ==
 
@@ -94,7 +92,7 @@ Takes a [[#BsdBufferConfig]] (made-up name), the PID, the size of the transfer m
 
 The transfer memory must be larger than a the computed size below. Should the transfer memory be smaller than that, the BSD sockets service would only send ZeroWindow packets (for TCP), resulting in a transfer rate not exceeding 1 byte/s.
 
- static size_t _bsdGetTransferMemSizeForConfig(const BsdConfig *config)
+ static size_t _bsdGetTransferMemSizeForBufferConfig(const BsdBufferConfig *config)
  {
      u32 tcp_tx_buf_max_size = config->tcp_tx_buf_max_size != 0 ? config->tcp_tx_buf_max_size : config->tcp_tx_buf_size;
      u32 tcp_rx_buf_max_size = config->tcp_rx_buf_max_size != 0 ? config->tcp_rx_buf_max_size : config->tcp_rx_buf_size;
@@ -103,6 +101,25 @@ The transfer memory must be larger than a the computed size below. Should the tr
      sum = ((sum + 0xFFF) >> 12) << 12; // page round-up
      return (size_t)(config->sb_efficiency * sum);
  }
+
+== SocketExempt ==
+This command is exclusive to <code>bsd:s</code> (FIXME: test whether this is actually the case).
+
+Performs a FIONBIO <code>ioctl</code> on the socket, making it non-blocking. POSIX-compliant code should use <code>fcntl</code> instead.
+
+== Open ==
+FreeBSD's <code>open</code> command, limited to opening <code>/dev/bpf</code>. This can be used, for example, to enable promiscuous mode, see FreeBSD's <code>/dev/bpf</code> for more details.
+
+== Sysctl ==
+This command is exclusive to <code>bsd:s</code> (FIXME: test whether this is actually the case).
+
+FreeBSD's <code>sysctl</code> command, restricted to <code>CTL_NET</code> (?).
+
+== Ioctl ==
+FreeBSD's <code>ioctl</code> function. The following ioctls are implemented, refer to FreeBSD's headers for more details: SIOCATMARK, BIOCGBLEN, BIOCIMMEDIATE, BIOCSETIF, SIOCGETSGCNT, SIOCGIFMETRIC, SIOCSIFMETRIC SIOCDIFADDR, SIOCGIFINDEX, SIOCGIFADDR, SIOCGIFCONF, SIOCGIFNETMASK, SIOCGIFMTU, SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA.
+
+== Fcntl ==
+FreeBSD's <code>fcntl</code>, limited to <code>F_GETFL</code> and <code>F_SETFL</code> with <code>O_NONBLOCK</code>.
 
 = sfdnsres =
 This is "nn::socket::resolver::IResolver".

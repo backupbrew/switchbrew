@@ -2,43 +2,39 @@
 
 This is "nn::socket::sf::IClient".
 
-| Cmd | Name                        |
-| --- | --------------------------- |
-| 0   | RegisterClient (Initialize) |
-| 1   | StartMonitoring             |
-| 2   | Socket                      |
-| 3   | SocketExempt                |
-| 4   | Open                        |
-| 5   | Select                      |
-| 6   | Poll                        |
-| 7   | Sysctl                      |
-| 8   | Recv                        |
-| 9   | RecvFrom                    |
-| 10  | Send                        |
-| 11  | SendTo                      |
-| 12  | Accept                      |
-| 13  | Bind                        |
-| 14  | Connect                     |
-| 15  | GetPeerName                 |
-| 16  | GetSockName                 |
-| 17  | GetSockOpt                  |
-| 18  | Listen                      |
-| 19  | Ioctl                       |
-| 20  | Fcntl                       |
-| 21  | SetSockOpt                  |
-| 22  | Shutdown                    |
-| 23  | ShutdownAllSockets          |
-| 24  | Write                       |
-| 25  | Read                        |
-| 26  | Close                       |
-| 27  | DuplicateSocket             |
-| 28  | GetResourceStatistics       |
-| 29  | \[3.0.0+\] RecvMMsg         |
-| 30  | \[3.0.0+\] SendMMsg         |
-
-Open: can open `/dev/bpf` (and most likely only that file, given
-bsdservices' binary contents). This can be used, for example, to enable
-promiscuous mode, see FreeBSD's `/dev/bpf` for more details.
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | RegisterClient (Initialize)                |
+| 1   | StartMonitoring                            |
+| 2   | Socket                                     |
+| 3   | [\#SocketExempt](#SocketExempt "wikilink") |
+| 4   | [\#Open](#Open "wikilink")                 |
+| 5   | Select                                     |
+| 6   | Poll                                       |
+| 7   | [\#Sysctl](#Sysctl "wikilink")             |
+| 8   | Recv                                       |
+| 9   | RecvFrom                                   |
+| 10  | Send                                       |
+| 11  | SendTo                                     |
+| 12  | Accept                                     |
+| 13  | Bind                                       |
+| 14  | Connect                                    |
+| 15  | GetPeerName                                |
+| 16  | GetSockName                                |
+| 17  | GetSockOpt                                 |
+| 18  | Listen                                     |
+| 19  | [\#Ioctl](#Ioctl "wikilink")               |
+| 20  | [\#Fcntl](#Fcntl "wikilink")               |
+| 21  | SetSockOpt                                 |
+| 22  | Shutdown                                   |
+| 23  | ShutdownAllSockets                         |
+| 24  | Write                                      |
+| 25  | Read                                       |
+| 26  | Close                                      |
+| 27  | DuplicateSocket                            |
+| 28  | GetResourceStatistics                      |
+| 29  | \[3.0.0+\] RecvMMsg                        |
+| 30  | \[3.0.0+\] SendMMsg                        |
 
 ## Initalize
 
@@ -69,7 +65,7 @@ would only send ZeroWindow packets (for TCP), resulting in a transfer
 rate not exceeding 1
 byte/s.
 
-`static size_t _bsdGetTransferMemSizeForConfig(const BsdConfig *config)`  
+`static size_t _bsdGetTransferMemSizeForBufferConfig(const BsdBufferConfig *config)`  
 `{`  
 `    u32 tcp_tx_buf_max_size = config->tcp_tx_buf_max_size != 0 ? config->tcp_tx_buf_max_size : config->tcp_tx_buf_size;`  
 `    u32 tcp_rx_buf_max_size = config->tcp_rx_buf_max_size != 0 ? config->tcp_rx_buf_max_size : config->tcp_rx_buf_size;`  
@@ -78,6 +74,39 @@ byte/s.
 `    sum = ((sum + 0xFFF) >> 12) << 12; // page round-up`  
 `    return (size_t)(config->sb_efficiency * sum);`  
 `}`
+
+## SocketExempt
+
+This command is exclusive to `bsd:s` (FIXME: test whether this is
+actually the case).
+
+Performs a FIONBIO `ioctl` on the socket, making it non-blocking.
+POSIX-compliant code should use `fcntl` instead.
+
+## Open
+
+FreeBSD's `open` command, limited to opening `/dev/bpf`. This can be
+used, for example, to enable promiscuous mode, see FreeBSD's `/dev/bpf`
+for more details.
+
+## Sysctl
+
+This command is exclusive to `bsd:s` (FIXME: test whether this is
+actually the case).
+
+FreeBSD's `sysctl` command, restricted to `CTL_NET` (?).
+
+## Ioctl
+
+FreeBSD's `ioctl` function. The following ioctls are implemented, refer
+to FreeBSD's headers for more details: SIOCATMARK, BIOCGBLEN,
+BIOCIMMEDIATE, BIOCSETIF, SIOCGETSGCNT, SIOCGIFMETRIC, SIOCSIFMETRIC
+SIOCDIFADDR, SIOCGIFINDEX, SIOCGIFADDR, SIOCGIFCONF, SIOCGIFNETMASK,
+SIOCGIFMTU, SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA.
+
+## Fcntl
+
+FreeBSD's `fcntl`, limited to `F_GETFL` and `F_SETFL` with `O_NONBLOCK`.
 
 # sfdnsres
 
