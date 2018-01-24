@@ -25,7 +25,7 @@ session.
 
 | GpioPadName | GpioPadDescriptor | Tegra (port, pin) | Usage                          | Direction | Used by                                                                                              |
 | ----------- | ----------------- | ----------------- | ------------------------------ | --------- | ---------------------------------------------------------------------------------------------------- |
-| 1           | 0xCC              | Z, 4              |                                | Out       | [Audio services](Audio%20services.md "wikilink")                                                     |
+| 1           | 0xCC              | Z, 4              |                                | Out       | [Audio services](Audio%20services.md "wikilink"), [Fatal services](Fatal%20services.md "wikilink")   |
 | 2           | 0x24              | E, 4              | SDCard Power                   | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
 | 3           | 0x3C              | H, 4              |                                | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                             |
 | 4           | 0xDA              | BB, 2             |                                |           |                                                                                                      |
