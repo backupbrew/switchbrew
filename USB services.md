@@ -77,6 +77,9 @@ HID interface. This seems to be the main(?) restriction with using usbds
 for Switch-as-arbitrary-devices. The device class fields can't be
 configured, interface class fields are set instead.
 
+When usbds is in use where [\#SetVidPidBcd](#SetVidPidBcd "wikilink")
+wasn't used, the VID/PID is 057e:3000.
+
 ` Bus 003 Device 006: ID 057e:2000 Nintendo Co., Ltd `  
 ` Couldn't open device, some information will be missing`  
 ` Device Descriptor:`  
