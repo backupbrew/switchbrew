@@ -82,7 +82,7 @@ FreeBSD's `socket` command. `bsd:u` disallows the usage of the
 SOCK_RAW, IPPROTO_ICMP)` (IPv4 `ping`), `bsd:s` needs to be used for
 those.
 
-The only implemented domains are `AF_INET` and `AF_INET6`.
+The only registered domains are `AF_INET` and `AF_ROUTE`.
 
 SocketExempt: same as socket but the socket is immediately shutdown
 (disconnected) on creation.

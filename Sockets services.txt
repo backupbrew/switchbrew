@@ -106,7 +106,7 @@ The transfer memory must be larger than a the computed size below. Should the tr
 FreeBSD's <code>socket</code> command.
 <code>bsd:u</code> disallows the usage of the <code>SOCK_SEQPACKET</code> and <code>SOCK_RAW</code> types, with the exception of <code>(AF_INET, SOCK_RAW, IPPROTO_ICMP)</code> (IPv4 <code>ping</code>), <code>bsd:s</code> needs to be used for those.
 
-The only implemented domains are <code>AF_INET</code> and <code>AF_INET6</code>.
+The only registered domains are <code>AF_INET</code> and <code>AF_ROUTE</code>.
 
 SocketExempt: same as socket but the socket is immediately shutdown (disconnected) on creation.
 
