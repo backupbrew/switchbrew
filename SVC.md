@@ -41,7 +41,7 @@
 | 0x23 | svcSendAsyncRequestWithUserBuffer                                                  | X1=cmdbufptr, X2=size, X3=handle                                                                               | W0=result, W1=event\_handle                              |
 | 0x24 | svcGetProcessId                                                                    | W1=thread\_or\_process\_or\_debug\_handle                                                                      | W0=result, X1=pid                                        |
 | 0x25 | svcGetThreadId                                                                     | W0=thread\_handle                                                                                              | W0=result, X1=out                                        |
-| 0x26 | [\#svcBreak](#svcBreak "wikilink")                                                 | X0,X1,X2=info                                                                                                  | ?                                                        |
+| 0x26 | [\#svcBreak](#svcBreak "wikilink")                                                 | X0=break\_reason,X1,X2=info                                                                                    | ?                                                        |
 | 0x27 | svcOutputDebugString                                                               | X0=str, X1=size                                                                                                | W0=result                                                |
 | 0x28 | svcReturnFromException                                                             | X0=result                                                                                                      |                                                          |
 | 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                                             | X1=info\_id, X2=handle, X3=info\_sub\_id                                                                       | W0=result, X1=out                                        |
@@ -515,12 +515,12 @@ Size must be 0x1000-aligned.
 
 <div style="display: inline-block;">
 
-| Argument | Type | Name |
-| -------- | ---- | ---- |
-| (In) X0  | u64  |      |
-| (In) X1  | u64  |      |
-| (In) X2  | u64  | Info |
-| (Out) ?  | ?    | ?    |
+| Argument | Type | Name         |
+| -------- | ---- | ------------ |
+| (In) X0  | u64  | Break Reason |
+| (In) X1  | u64  |              |
+| (In) X2  | u64  | Info         |
+| (Out) ?  | ?    | ?            |
 
 </div>
 

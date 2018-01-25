@@ -78,7 +78,7 @@ __NOTOC__
 |-
 | 0x25 || svcGetThreadId || W0=thread_handle || W0=result, X1=out
 |-
-| 0x26 || [[#svcBreak]] || X0,X1,X2=info || ?
+| 0x26 || [[#svcBreak]] || X0=break_reason,X1,X2=info || ?
 |-
 | 0x27 || svcOutputDebugString || X0=str, X1=size || W0=result
 |-
@@ -675,7 +675,7 @@ Size must be 0x1000-aligned.
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 ||
+| (In) X0 || u64 || Break Reason
 |-
 | (In) X1 || u64 ||
 |-
