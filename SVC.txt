@@ -78,7 +78,7 @@ __NOTOC__
 |-
 | 0x25 || svcGetThreadId || W0=thread_handle || W0=result, X1=out
 |-
-| 0x26 || svcBreak || X0,X1,X2=info || ?
+| 0x26 || [[#svcBreak]] || X0,X1,X2=info || ?
 |-
 | 0x27 || svcOutputDebugString || X0=str, X1=size || W0=result
 |-
@@ -685,7 +685,7 @@ Size must be 0x1000-aligned.
 |}
 </div>
 
-When used on retail where inx0 bit31 is clear, the system will throw a [[Error_codes|fatal-error]]. Otherwise when bit31 is set, it will return 0.
+When used on retail where inx0 bit31 is clear, the system will throw a [[Error_codes|fatal-error]]. Otherwise when bit31 is set, it will return 0 and notify the debugger?
 
 == svcGetInfo ==
 
