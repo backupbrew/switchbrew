@@ -81,7 +81,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 12 || UnlockForeground || 
 |-
-| 20 || PopFromGeneralChannel || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 20 || PopFromGeneralChannel || Returns an [[#IStorage]].
 |-
 | 21 || GetPopFromGeneralChannelEvent ||
 |-
@@ -171,7 +171,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 120 || GetApplicationId || 
 |-
-| 121 || PushLaunchParameter || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 121 || PushLaunchParameter || Takes an [[#IStorage]].
 |-
 | 122 || GetApplicationControlProperty || 
 |-
@@ -226,13 +226,13 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || PopInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 0 || PopInData || Returns an [[#IStorage]].
 |-
-| 1 || PushOutData || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 1 || PushOutData || Takes an [[#IStorage]].
 |-
-| 2 || PopInteractiveInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 2 || PopInteractiveInData || Returns an [[#IStorage]].
 |-
-| 3 || PushInteractiveOutData || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 3 || PushInteractiveOutData || Takes an [[#IStorage]].
 |-
 | 5 || GetPopInDataEvent ||
 |-
@@ -254,13 +254,13 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 17 || [2.0.0+] GetCallerAppletIdentityInfoStack ||
 |-
-| 20 || PopExtraStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 20 || PopExtraStorage || Returns an [[#IStorage]].
 |-
 | 25 || GetPopExtraStorageEvent ||
 |-
-| 30 || UnpopInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 30 || UnpopInData || Takes an [[#IStorage]].
 |-
-| 31 || UnpopExtraStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 31 || UnpopExtraStorage || Takes an [[#IStorage]].
 |-
 | 40 || [2.0.0+] GetIndirectLayerProducerHandle ||
 |-
@@ -345,11 +345,11 @@ No input. Returns an u64 LibraryAppletInfo.
 |-
 ! Cmd || Name || Notes
 |-
-| 1 || PopLaunchParameter || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 1 || PopLaunchParameter || Returns an [[#IStorage]].
 |-
-| 10 || CreateApplicationAndPushAndRequestToStart || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 10 || CreateApplicationAndPushAndRequestToStart || Takes an [[#IStorage]].
 |-
-| 11 || [2.0.0+] CreateApplicationAndPushAndRequestToStartForQuest || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 11 || [2.0.0+] CreateApplicationAndPushAndRequestToStartForQuest || Takes an [[#IStorage]].
 |-
 | 20 || EnsureSaveData ||
 |-
@@ -422,11 +422,11 @@ Takes an input u32.
 |-
 | 2 || AreAnyLibraryAppletsLeft ||
 |-
-| 10 || CreateStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 10 || CreateStorage || Returns an [[#IStorage]].
 |-
-| 11 || CreateTransferMemoryStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 11 || CreateTransferMemoryStorage || Returns an [[#IStorage]].
 |-
-| 12 || [2.0.0+] CreateHandleStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 12 || [2.0.0+] CreateHandleStorage || Returns an [[#IStorage]].
 |-
 |}
 
@@ -449,15 +449,15 @@ Takes an input u32.
 |-
 | 50 || SetOutOfFocusApplicationSuspendingEnabled ||
 |-
-| 100 || PushInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 100 || PushInData || Takes an [[#IStorage]].
 |-
-| 101 || PopOutData || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 101 || PopOutData || Returns an [[#IStorage]].
 |-
-| 102 || PushExtraStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 102 || PushExtraStorage || Takes an [[#IStorage]].
 |-
-| 103 || PushInteractiveInData || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 103 || PushInteractiveInData || Takes an [[#IStorage]].
 |-
-| 104 || PopInteractiveOutData || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 104 || PopInteractiveOutData || Returns an [[#IStorage]].
 |-
 | 105 || GetPopOutDataEvent ||
 |-
@@ -505,7 +505,7 @@ Takes an input u32.
 |-
 | 13 || GetAcquiredSleepLockEvent ||
 |-
-| 20 || PushToGeneralChannel || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 20 || PushToGeneralChannel || Takes an [[#IStorage]].
 |-
 | 30 || GetHomeButtonReaderLockAccessor || Returns an [[#ILockAccessor]].
 |-
@@ -719,11 +719,11 @@ No input/output.
 |-
 | 2 || AreAnyLibraryAppletsLeft ||
 |-
-| 10 || CreateStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 10 || CreateStorage || Returns an [[#IStorage]].
 |-
-| 11 || CreateTransferMemoryStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 11 || CreateTransferMemoryStorage || Returns an [[#|IStorage]].
 |-
-| 12 || [2.0.0+] CreateHandleStorage || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 12 || [2.0.0+] CreateHandleStorage || Returns an [[#IStorage]].
 |}
 
 == IProcessWindingController ==
@@ -735,9 +735,9 @@ No input/output.
 |-
 | 11 || OpenCallingLibraryApplet || Returns an [[#ILibraryAppletAccessor]].
 |-
-| 21 || PushContext || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 21 || PushContext || Takes an [[#IStorage]].
 |-
-| 22 || PopContext || Returns an [[Filesystem_services#IStorage|IStorage]].
+| 22 || PopContext || Returns an [[#IStorage]].
 |-
 | 23 || CancelWindingReservation ||
 |-
@@ -763,6 +763,40 @@ Used by LibraryApplets.
 | 10 || EmulateButtonEvent ||
 |-
 | 20 || InvalidateTransitionLayer ||
+|}
+
+== IStorage ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || Open || No input. Returns an [[#IStorageAccessor]].
+|-
+| 1 || OpenTransferStorage || No input. Returns an [[#ITransferStorageAccessor]].
+|}
+
+Commands which take an IStorage as input use an unknown input u32 for that.
+
+== IStorageAccessor ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetSize || No input. Returns an s64.
+|-
+| 10 || Write || Takes an input s64 and a type-0x21 input buffer.
+|-
+| 11 || Read || Takes an input s64 and a type-0x22 output buffer.
+|}
+
+== ITransferStorageAccessor ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetSize || No input. Returns an output s64.
+|-
+| 1 || GetHandle || No input. Returns an output u64 and handle.
 |}
 
 = appletOE =
