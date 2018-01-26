@@ -57,7 +57,7 @@ fatal-errors, since the Description ends with bit21.
 | 137   | NIM                                                    |
 | 138   | PSC                                                    |
 | 140   | USB                                                    |
-| 141   | BSD                                                    |
+| 141   | NSD                                                    |
 | 143   | BTM                                                    |
 | 147   | ERPT                                                   |
 | 148   | APM                                                    |
