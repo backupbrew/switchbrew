@@ -128,6 +128,8 @@ This is "nn::socket::resolver::IResolver".
 | 7   | GetNameInfo                              |
 | 8   | RequestCancelHandle                      |
 | 9   | CancelSocketCall                         |
+| 10  | ?                                        |
+| 11  | ?                                        |
 
 ### GetAddrInfo
 
