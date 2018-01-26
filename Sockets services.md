@@ -176,22 +176,45 @@ The list should be terminated with a sentinel four-byte zero value.
 
 This is "nn::nsd::detail::IManager".
 
-| Cmd | Name                      |
-| --- | ------------------------- |
-| 10  | GetSettingName            |
-| 11  | GetEnvironmentIdentifier  |
-| 12  | GetDeviceId               |
-| 13  | DeleteSettings            |
-| 14  | ImportSettings            |
-| 20  | Resolve                   |
-| 21  | ResolveEx                 |
-| 30  | GetNasServiceSetting      |
-| 31  | GetNasServiceSettingEx    |
-| 40  | GetNasRequestFqdn         |
-| 41  | GetNasRequestFqdnEx       |
-| 42  | GetNasApiFqdn             |
-| 43  | GetNasApiFqdnEx           |
-| 50  | GetCurrentSetting         |
-| 60  | ReadSaveDataFromFsForTest |
-| 61  | WriteSaveDataToFsForTest  |
-| 62  | DeleteSaveDataOfFsForTest |
+| Cmd | Name                            |
+| --- | ------------------------------- |
+| 10  | GetSettingName                  |
+| 11  | GetEnvironmentIdentifier        |
+| 12  | GetDeviceId                     |
+| 13  | DeleteSettings                  |
+| 14  | ImportSettings                  |
+| 20  | Resolve                         |
+| 21  | ResolveEx                       |
+| 30  | GetNasServiceSetting            |
+| 31  | GetNasServiceSettingEx          |
+| 40  | GetNasRequestFqdn               |
+| 41  | GetNasRequestFqdnEx             |
+| 42  | GetNasApiFqdn                   |
+| 43  | GetNasApiFqdnEx                 |
+| 50  | GetCurrentSetting               |
+| 60  | \[\#ReadSaveDataFromFsForTest\] |
+| 61  | \[\#WriteSaveDataToFsForTest\]  |
+| 62  | \[\#DeleteSaveDataOfFsForTest\] |
+
+## ReadSaveDataFromFsForTest
+
+Requires the `nsd!test_mode` setting to be equal to 1.
+
+Mounts the system save data for bsdsockets as `nsdsave` and reads from
+`nsd:/file` to the specified buffer, at the specified size and offset
+with no checks whatsoever. `nsdsave` is then unmounted.
+
+## WriteSaveDataToFsForTest
+
+Requires the `nsd!test_mode` setting to be equal to 1.
+
+Mounts the system save data for bsdsockets as `nsdsave` and writes to
+`nsd:/file` (appending is allowed) using the specified buffer, at the
+specified size and offset, with no checks whatsoever. `nsdsave` is then
+commited and unmounted.
+
+## DeleteSaveDataOfFsForTest
+
+Requires the `nsd!test_mode` setting to be equal to 1.
+
+Deletes the system save data for bsdsockets.

@@ -233,9 +233,24 @@ This is "nn::nsd::detail::IManager".
 |-
 | 50 || GetCurrentSetting
 |-
-| 60 || ReadSaveDataFromFsForTest
+| 60 || [#ReadSaveDataFromFsForTest]
 |-
-| 61 || WriteSaveDataToFsForTest
+| 61 || [#WriteSaveDataToFsForTest]
 |-
-| 62 || DeleteSaveDataOfFsForTest
+| 62 || [#DeleteSaveDataOfFsForTest]
 |}
+
+== ReadSaveDataFromFsForTest ==
+Requires the <code>nsd!test_mode</code> setting to be equal to 1.
+
+Mounts the system save data for bsdsockets as <code>nsdsave</code> and reads from <code>nsd:/file</code> to the specified buffer, at the specified size and offset with no checks whatsoever. <code>nsdsave</code> is then unmounted.
+
+== WriteSaveDataToFsForTest ==
+Requires the <code>nsd!test_mode</code> setting to be equal to 1.
+
+Mounts the system save data for bsdsockets as <code>nsdsave</code> and writes to <code>nsd:/file</code> (appending is allowed) using the specified buffer, at the specified size and offset, with no checks whatsoever. <code>nsdsave</code> is then commited and unmounted.
+
+== DeleteSaveDataOfFsForTest ==
+Requires the <code>nsd!test_mode</code> setting to be equal to 1.
+
+Deletes the system save data for bsdsockets.
