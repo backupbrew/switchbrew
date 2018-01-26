@@ -233,11 +233,11 @@ This is "nn::nsd::detail::IManager".
 |-
 | 50 || GetCurrentSetting
 |-
-| 60 || [#ReadSaveDataFromFsForTest]
+| 60 || [[#ReadSaveDataFromFsForTest]]
 |-
-| 61 || [#WriteSaveDataToFsForTest]
+| 61 || [[#WriteSaveDataToFsForTest]]
 |-
-| 62 || [#DeleteSaveDataOfFsForTest]
+| 62 || [[#DeleteSaveDataOfFsForTest]]
 |}
 
 == ReadSaveDataFromFsForTest ==

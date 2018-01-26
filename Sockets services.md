@@ -174,27 +174,28 @@ The list should be terminated with a sentinel four-byte zero value.
 
 # nsd:u / nsd:a
 
-This is "nn::nsd::detail::IManager".
+This is
+"nn::nsd::detail::IManager".
 
-| Cmd | Name                            |
-| --- | ------------------------------- |
-| 10  | GetSettingName                  |
-| 11  | GetEnvironmentIdentifier        |
-| 12  | GetDeviceId                     |
-| 13  | DeleteSettings                  |
-| 14  | ImportSettings                  |
-| 20  | Resolve                         |
-| 21  | ResolveEx                       |
-| 30  | GetNasServiceSetting            |
-| 31  | GetNasServiceSettingEx          |
-| 40  | GetNasRequestFqdn               |
-| 41  | GetNasRequestFqdnEx             |
-| 42  | GetNasApiFqdn                   |
-| 43  | GetNasApiFqdnEx                 |
-| 50  | GetCurrentSetting               |
-| 60  | \[\#ReadSaveDataFromFsForTest\] |
-| 61  | \[\#WriteSaveDataToFsForTest\]  |
-| 62  | \[\#DeleteSaveDataOfFsForTest\] |
+| Cmd | Name                                                                 |
+| --- | -------------------------------------------------------------------- |
+| 10  | GetSettingName                                                       |
+| 11  | GetEnvironmentIdentifier                                             |
+| 12  | GetDeviceId                                                          |
+| 13  | DeleteSettings                                                       |
+| 14  | ImportSettings                                                       |
+| 20  | Resolve                                                              |
+| 21  | ResolveEx                                                            |
+| 30  | GetNasServiceSetting                                                 |
+| 31  | GetNasServiceSettingEx                                               |
+| 40  | GetNasRequestFqdn                                                    |
+| 41  | GetNasRequestFqdnEx                                                  |
+| 42  | GetNasApiFqdn                                                        |
+| 43  | GetNasApiFqdnEx                                                      |
+| 50  | GetCurrentSetting                                                    |
+| 60  | [\#ReadSaveDataFromFsForTest](#ReadSaveDataFromFsForTest "wikilink") |
+| 61  | [\#WriteSaveDataToFsForTest](#WriteSaveDataToFsForTest "wikilink")   |
+| 62  | [\#DeleteSaveDataOfFsForTest](#DeleteSaveDataOfFsForTest "wikilink") |
 
 ## ReadSaveDataFromFsForTest
 
