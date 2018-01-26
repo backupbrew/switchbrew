@@ -165,9 +165,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x45 || 0x92 || S, 2 || || ||
 |-
-| 0x46 || 0x95 || S, 5 || USB root port 3 power || Out || [[USB services]]
+| 0x46 || 0x95 || S, 5 || USB root port 4 power || Out || [[USB services]]
 |-
-| 0x47 || 0x98 || T, 0 || USB root port 4 power || Out || [[USB services]]
+| 0x47 || 0x98 || T, 0 || USB root port 3 power || Out || [[USB services]]
 |-
 | 0x48 || 0x10 || C, 0 || || ||
 |-

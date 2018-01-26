@@ -92,8 +92,8 @@ session.
 | 0x43        | 0x21              | E, 1              |                                | Out       | [USB services](USB%20services.md "wikilink")                                                         |
 | 0x44        | 0x27              | E, 7              |                                |           |                                                                                                      |
 | 0x45        | 0x92              | S, 2              |                                |           |                                                                                                      |
-| 0x46        | 0x95              | S, 5              | USB root port 3 power          | Out       | [USB services](USB%20services.md "wikilink")                                                         |
-| 0x47        | 0x98              | T, 0              | USB root port 4 power          | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x46        | 0x95              | S, 5              | USB root port 4 power          | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x47        | 0x98              | T, 0              | USB root port 3 power          | Out       | [USB services](USB%20services.md "wikilink")                                                         |
 | 0x48        | 0x10              | C, 0              |                                |           |                                                                                                      |
 | 0x49        | 0x11              | C, 1              | USB root port 2 power          | Out       | [NV services](NV%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")             |
 | 0x4A        | 0x12              | C, 2              |                                | Out       | [NV services](NV%20services.md "wikilink")                                                           |
