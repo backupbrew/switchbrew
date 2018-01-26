@@ -39,7 +39,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 4 || 0xDA || BB, 2 || || || 
 |-
-| 5 || 0xDB || BB, 3 || GcAsic Power? || Out || [[Filesystem services]]
+| 5 || 0xDB || BB, 3 || GcAsic Power || Out || [[Filesystem services]]
 |-
 | 6 || 0xDC || BB, 4 || || In || [[Audio services]]
 |-
@@ -57,7 +57,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0xE || 0x78 || P, 0 || || || 
 |-
-| 0xF || 0x93 || S, 3 || GcAsic Irq? || In || [[Filesystem services]]
+| 0xF || 0x93 || S, 3 || GcAsic irq || In || [[Filesystem services]]
 |-
 | 0x10 || 0x7D || P, 5 || || || 
 |-
@@ -89,7 +89,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x1F || 0x55 || K, 5 || Charger watchdog related. || Out || [[PTM services]], [[USB services]]
 |-
-| 0x20 || 0xAD || V, 5 || || Out || [[USB services]]
+| 0x20 || 0xAD || V, 5 || PD related || Out || [[USB services]]
 |-
 | 0x21 || 0xC8 || Z, 0 || Power supply monitor related. || In || [[PTM services]] 
 |-
@@ -105,7 +105,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x27 || 0x52 || K, 2 || || || 
 |-
-| 0x28 || 0x54 || K, 4 || || In || [[USB services]]
+| 0x28 || 0x54 || K, 4 || PD related, irq || In || [[USB services]]
 |-
 | 0x29 || 0x56 || K, 6 || || || 
 |-
@@ -159,7 +159,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x42 || 0x0D || B, 5 || || ||
 |-
-| 0x43 || 0x21 || E, 1 || || Out || [[USB services]]
+| 0x43 || 0x21 || E, 1 || USB power || Out || [[USB services]]
 |-
 | 0x44 || 0x27 || E, 7 || || ||
 |-

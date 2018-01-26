@@ -29,7 +29,7 @@ session.
 | 2           | 0x24              | E, 4              | SDCard Power                   | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
 | 3           | 0x3C              | H, 4              |                                | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                             |
 | 4           | 0xDA              | BB, 2             |                                |           |                                                                                                      |
-| 5           | 0xDB              | BB, 3             | GcAsic Power?                  | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 5           | 0xDB              | BB, 3             | GcAsic Power                   | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
 | 6           | 0xDC              | BB, 4             |                                | In        | [Audio services](Audio%20services.md "wikilink")                                                     |
 | 7           | 0x25              | E, 5              |                                |           |                                                                                                      |
 | 8           | 0x90              | S, 0              |                                | In        | [HID services](HID%20services.md "wikilink")                                                         |
@@ -38,7 +38,7 @@ session.
 | 0xB         | 0x97              | S, 7              |                                |           |                                                                                                      |
 | 0xD         | 6                 | A, 6              | Battery event monitor related. | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0xE         | 0x78              | P, 0              |                                |           |                                                                                                      |
-| 0xF         | 0x93              | S, 3              | GcAsic Irq?                    | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 0xF         | 0x93              | S, 3              | GcAsic irq                     | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
 | 0x10        | 0x7D              | P, 5              |                                |           |                                                                                                      |
 | 0x11        | 0x7C              | P, 4              |                                |           |                                                                                                      |
 | 0x12        | 0x7B              | P, 3              |                                |           |                                                                                                      |
@@ -54,7 +54,7 @@ session.
 | 0x1D        | 0xA9              | V, 1              | .. Backlight?                  | Out       | [NV services](NV%20services.md "wikilink"), [Backlight services](Backlight%20services.md "wikilink") |
 | 0x1E        | 0xAA              | V, 2              |                                | Out       | [NV services](NV%20services.md "wikilink")                                                           |
 | 0x1F        | 0x55              | K, 5              | Charger watchdog related.      | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
-| 0x20        | 0xAD              | V, 5              |                                | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x20        | 0xAD              | V, 5              | PD related                     | Out       | [USB services](USB%20services.md "wikilink")                                                         |
 | 0x21        | 0xC8              | Z, 0              | Power supply monitor related.  | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0x22        | 0xCA              | Z, 2              |                                |           |                                                                                                      |
 | 0x23        | 0xCB              | Z, 3              |                                |           |                                                                                                      |
@@ -62,7 +62,7 @@ session.
 | 0x25        | 0x50              | K, 0              |                                |           |                                                                                                      |
 | 0x26        | 0x51              | K, 1              |                                |           |                                                                                                      |
 | 0x27        | 0x52              | K, 2              |                                |           |                                                                                                      |
-| 0x28        | 0x54              | K, 4              |                                | In        | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x28        | 0x54              | K, 4              | PD related, irq                | In        | [USB services](USB%20services.md "wikilink")                                                         |
 | 0x29        | 0x56              | K, 6              |                                |           |                                                                                                      |
 | 0x2A        | 0x57              | K, 7              |                                |           |                                                                                                      |
 | 0x2B        | 0x53              | K, 3              |                                |           |                                                                                                      |
@@ -89,7 +89,7 @@ session.
 | 0x40        | 0xD9              | BB, 1             |                                |           |                                                                                                      |
 | 0x41        | 0x0C              | B, 4              |                                |           |                                                                                                      |
 | 0x42        | 0x0D              | B, 5              |                                |           |                                                                                                      |
-| 0x43        | 0x21              | E, 1              |                                | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x43        | 0x21              | E, 1              | USB power                      | Out       | [USB services](USB%20services.md "wikilink")                                                         |
 | 0x44        | 0x27              | E, 7              |                                |           |                                                                                                      |
 | 0x45        | 0x92              | S, 2              |                                |           |                                                                                                      |
 | 0x46        | 0x95              | S, 5              | USB root port 4 power          | Out       | [USB services](USB%20services.md "wikilink")                                                         |
