@@ -114,15 +114,17 @@ SocketExempt: same as socket but the socket is immediately shutdown (disconnecte
 FreeBSD's <code>open</code> command, limited to opening <code>/dev/bpf</code>. This can be used, for example, to enable promiscuous mode, see FreeBSD's <code>/dev/bpf</code> for more details.
 
 == Sysctl ==
-This command is exclusive to <code>bsd:s</code> (FIXME: test whether this is actually the case).
 
-FreeBSD's <code>sysctl</code> command, restricted to <code>CTL_NET</code> (?).
+FreeBSD's <code>sysctl</code> command, restricted to <code>CTL_NET</code> (?). Privileged operations are reserved for <code>bsd:s</code>.
 
 == Ioctl ==
-FreeBSD's <code>ioctl</code> function. The following ioctls are implemented, refer to FreeBSD's headers for more details: SIOCATMARK, BIOCGBLEN, BIOCIMMEDIATE, BIOCSETIF, SIOCGETSGCNT, SIOCGIFMETRIC, SIOCSIFMETRIC SIOCDIFADDR, SIOCGIFINDEX, SIOCGIFADDR, SIOCGIFCONF, SIOCGIFNETMASK, SIOCGIFMTU, SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA.
+FreeBSD's <code>ioctl</code> function. The following ioctls are implemented, refer to FreeBSD's headers for more details: SIOCATMARK, BIOCGBLEN, BIOCSETF, BIOCIMMEDIATE, BIOCSETIF, BIOCVERSION, FIONSPACE, FIONWRITE, FIONREAD, SIOCGETSGCNT, SIOCGIFMETRIC, SIOCSIFMETRIC, SIOCDIFADDR, SIOCGIFINDEX, SIOCGIFADDR, SIOCGIFCONF, SIOCGIFNETMASK, SIOCAIFADDR, SIOCGIFMTU, SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA.
 
 == Fcntl ==
 FreeBSD's <code>fcntl</code>, limited to <code>F_GETFL</code> and <code>F_SETFL</code> with <code>O_NONBLOCK</code>.
+
+== DuplicateSocket ==
+Takes a socket file descriptor and an unused u64. Duplicates the socket (FreeBSD's <code>dup</code>). Reserved to <code>bsd:s</code>.
 
 = sfdnsres =
 This is "nn::socket::resolver::IResolver".

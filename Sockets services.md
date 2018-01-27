@@ -95,22 +95,26 @@ for more details.
 
 ## Sysctl
 
-This command is exclusive to `bsd:s` (FIXME: test whether this is
-actually the case).
-
-FreeBSD's `sysctl` command, restricted to `CTL_NET` (?).
+FreeBSD's `sysctl` command, restricted to `CTL_NET` (?). Privileged
+operations are reserved for `bsd:s`.
 
 ## Ioctl
 
 FreeBSD's `ioctl` function. The following ioctls are implemented, refer
-to FreeBSD's headers for more details: SIOCATMARK, BIOCGBLEN,
-BIOCIMMEDIATE, BIOCSETIF, SIOCGETSGCNT, SIOCGIFMETRIC, SIOCSIFMETRIC
-SIOCDIFADDR, SIOCGIFINDEX, SIOCGIFADDR, SIOCGIFCONF, SIOCGIFNETMASK,
-SIOCGIFMTU, SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA.
+to FreeBSD's headers for more details: SIOCATMARK, BIOCGBLEN, BIOCSETF,
+BIOCIMMEDIATE, BIOCSETIF, BIOCVERSION, FIONSPACE, FIONWRITE, FIONREAD,
+SIOCGETSGCNT, SIOCGIFMETRIC, SIOCSIFMETRIC, SIOCDIFADDR, SIOCGIFINDEX,
+SIOCGIFADDR, SIOCGIFCONF, SIOCGIFNETMASK, SIOCAIFADDR, SIOCGIFMTU,
+SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA.
 
 ## Fcntl
 
 FreeBSD's `fcntl`, limited to `F_GETFL` and `F_SETFL` with `O_NONBLOCK`.
+
+## DuplicateSocket
+
+Takes a socket file descriptor and an unused u64. Duplicates the socket
+(FreeBSD's `dup`). Reserved to `bsd:s`.
 
 # sfdnsres
 
