@@ -277,7 +277,7 @@ This is "nn::i2c::IManager".
 |-
 |  9 || 0:6b || N || 100000 || 3 || 5000000 || ||
 |-
-| 10 || 0:36 || N || 100000 || 3 || 5000000 || ShutdownSystem, RebootSystem || [[PCV services]]
+| 10 || 0:36 || N || 100000 || 3 || 5000000 || Maxim Fuel Gauge || [[PCV services]]
 |-
 | 11 || 0:18 || N || 100000 || 3 || 5000000 || PD related || [[USB services]]
 |-
