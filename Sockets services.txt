@@ -139,9 +139,9 @@ This is "nn::socket::resolver::IResolver".
 |-
 ! Cmd || Name
 |-
-| 0 || SetDnsAddressesPrivate
+| 0 || SetDnsAddressesPrivate (stubbed, returns 0x7FE03)
 |-
-| 1 || GetDnsAddressPrivate
+| 1 || GetDnsAddressPrivate (stubbed, returns 0x7FE03)
 |-
 | 2 || GetHostByName
 |-

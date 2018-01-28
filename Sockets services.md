@@ -129,20 +129,20 @@ Takes a socket file descriptor and an unused u64. Duplicates the socket
 
 This is "nn::socket::resolver::IResolver".
 
-| Cmd | Name                                     |
-| --- | ---------------------------------------- |
-| 0   | SetDnsAddressesPrivate                   |
-| 1   | GetDnsAddressPrivate                     |
-| 2   | GetHostByName                            |
-| 3   | GetHostByAddr                            |
-| 4   | GetHostStringError                       |
-| 5   | GetGaiStringError                        |
-| 6   | [\#GetAddrInfo](#GetAddrInfo "wikilink") |
-| 7   | GetNameInfo                              |
-| 8   | RequestCancelHandle                      |
-| 9   | CancelSocketCall                         |
-| 10  | ?                                        |
-| 11  | ?                                        |
+| Cmd | Name                                              |
+| --- | ------------------------------------------------- |
+| 0   | SetDnsAddressesPrivate (stubbed, returns 0x7FE03) |
+| 1   | GetDnsAddressPrivate (stubbed, returns 0x7FE03)   |
+| 2   | GetHostByName                                     |
+| 3   | GetHostByAddr                                     |
+| 4   | GetHostStringError                                |
+| 5   | GetGaiStringError                                 |
+| 6   | [\#GetAddrInfo](#GetAddrInfo "wikilink")          |
+| 7   | GetNameInfo                                       |
+| 8   | RequestCancelHandle                               |
+| 9   | CancelSocketCall                                  |
+| 10  | ?                                                 |
+| 11  | ?                                                 |
 
 ### GetAddrInfo
 
