@@ -159,6 +159,8 @@ This is "nn::pcv::detail::IPcvService".
 |-
 | 23 || SDMMC4 || vdd_soc ||
 |-
+| 24 || - || - || Not actual block. Used for debug and stuff.
+|-
 | 25 || CSITE || vdd_soc ||
 |-
 | 26 || TSEC || vdd_soc ||
