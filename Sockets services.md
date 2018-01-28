@@ -2,39 +2,39 @@
 
 This is "nn::socket::sf::IClient".
 
-| Cmd | Name                                 |
-| --- | ------------------------------------ |
-| 0   | RegisterClient (Initialize)          |
-| 1   | StartMonitoring                      |
-| 2   | [\#Socket](#Socket "wikilink")       |
-| 3   | [\#SocketExempt](#Socket "wikilink") |
-| 4   | [\#Open](#Open "wikilink")           |
-| 5   | Select                               |
-| 6   | Poll                                 |
-| 7   | [\#Sysctl](#Sysctl "wikilink")       |
-| 8   | Recv                                 |
-| 9   | RecvFrom                             |
-| 10  | Send                                 |
-| 11  | SendTo                               |
-| 12  | Accept                               |
-| 13  | Bind                                 |
-| 14  | Connect                              |
-| 15  | GetPeerName                          |
-| 16  | GetSockName                          |
-| 17  | GetSockOpt                           |
-| 18  | Listen                               |
-| 19  | [\#Ioctl](#Ioctl "wikilink")         |
-| 20  | [\#Fcntl](#Fcntl "wikilink")         |
-| 21  | SetSockOpt                           |
-| 22  | Shutdown                             |
-| 23  | ShutdownAllSockets                   |
-| 24  | Write                                |
-| 25  | Read                                 |
-| 26  | Close                                |
-| 27  | DuplicateSocket                      |
-| 28  | GetResourceStatistics                |
-| 29  | \[3.0.0+\] RecvMMsg                  |
-| 30  | \[3.0.0+\] SendMMsg                  |
+| Cmd | Name                                             |
+| --- | ------------------------------------------------ |
+| 0   | RegisterClient (Initialize)                      |
+| 1   | StartMonitoring                                  |
+| 2   | [\#Socket](#Socket "wikilink")                   |
+| 3   | [\#SocketExempt](#Socket "wikilink")             |
+| 4   | [\#Open](#Open "wikilink")                       |
+| 5   | Select                                           |
+| 6   | Poll                                             |
+| 7   | [\#Sysctl](#Sysctl "wikilink")                   |
+| 8   | Recv                                             |
+| 9   | RecvFrom                                         |
+| 10  | Send                                             |
+| 11  | SendTo                                           |
+| 12  | Accept                                           |
+| 13  | Bind                                             |
+| 14  | Connect                                          |
+| 15  | GetPeerName                                      |
+| 16  | GetSockName                                      |
+| 17  | GetSockOpt                                       |
+| 18  | Listen                                           |
+| 19  | [\#Ioctl](#Ioctl "wikilink")                     |
+| 20  | [\#Fcntl](#Fcntl "wikilink")                     |
+| 21  | SetSockOpt                                       |
+| 22  | Shutdown                                         |
+| 23  | ShutdownAllSockets                               |
+| 24  | Write                                            |
+| 25  | Read                                             |
+| 26  | Close                                            |
+| 27  | [\#DuplicateSocket](#DuplicateSocket "wikilink") |
+| 28  | GetResourceStatistics                            |
+| 29  | \[3.0.0+\] RecvMMsg                              |
+| 30  | \[3.0.0+\] SendMMsg                              |
 
 ## Initalize
 
@@ -113,7 +113,7 @@ structure):
 
 `struct bpf_program {`  
 `   u_int bf_len;`  
-`   struct bpf_insn bf_insns[BPF_MAXINSNS]; // [512]. This is normally a pointer`  
+`   struct bpf_insn bf_insns[BPF_MAXINSNS]; // [512]. This is a pointer in the official structure`  
 `};`
 
 ## Fcntl
@@ -127,24 +127,25 @@ Takes a socket file descriptor and an unused u64. Duplicates the socket
 
 # sfdnsres
 
-This is "nn::socket::resolver::IResolver".
+This is
+"nn::socket::resolver::IResolver".
 
-| Cmd | Name                                              |
-| --- | ------------------------------------------------- |
-| 0   | SetDnsAddressesPrivate (stubbed, returns 0x7FE03) |
-| 1   | GetDnsAddressPrivate (stubbed, returns 0x7FE03)   |
-| 2   | GetHostByName                                     |
-| 3   | GetHostByAddr                                     |
-| 4   | GetHostStringError                                |
-| 5   | GetGaiStringError                                 |
-| 6   | [\#GetAddrInfo](#GetAddrInfo "wikilink")          |
-| 7   | GetNameInfo                                       |
-| 8   | RequestCancelHandle                               |
-| 9   | CancelSocketCall                                  |
-| 10  | ?                                                 |
-| 11  | ?                                                 |
+| Cmd | Name                                                                                      |
+| --- | ----------------------------------------------------------------------------------------- |
+| 0   | SetDnsAddressesPrivate (stubbed, returns 0x7FE03)                                         |
+| 1   | GetDnsAddressPrivate (stubbed, returns 0x7FE03)                                           |
+| 2   | GetHostByName                                                                             |
+| 3   | GetHostByAddr                                                                             |
+| 4   | GetHostStringError                                                                        |
+| 5   | GetGaiStringError                                                                         |
+| 6   | [\#GetAddrInfo](#GetAddrInfo "wikilink")                                                  |
+| 7   | GetNameInfo                                                                               |
+| 8   | RequestCancelHandle                                                                       |
+| 9   | CancelSocketCall                                                                          |
+| 10  | ?                                                                                         |
+| 11  | [\#ClearDnsIpServerAddressArray](#ClearDnsIpServerAddressArray "wikilink") (made-up name) |
 
-### GetAddrInfo
+## GetAddrInfo
 
 Takes three type 5 buffers (host, port, and hints), and a type 6 buffer
 (the output addrinfos). Also takes a u8 (padded to 4 bytes so the next
@@ -184,6 +185,14 @@ If `ai_family` is recognized as AF\_INET6 (28) or AF\_INET (2),
 Otherwise, it's just read as `u8[ai_addrlen]`.
 
 The list should be terminated with a sentinel four-byte zero value.
+
+## ClearDnsIpServerAddressArray
+
+This function clears `nn::socket::resolver::g_DnsIpServerAddressArray`,
+setting its length to 0 as well. The array initially contains IPs filled
+by `bsdconfig`, a privileged service handling DHCP and such.
+
+Takes no arguments, doesn't return anything, never fails.
 
 # nsd:u / nsd:a
 
