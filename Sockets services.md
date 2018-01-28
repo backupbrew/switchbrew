@@ -100,13 +100,21 @@ operations are reserved for `bsd:s`.
 
 ## Ioctl
 
-FreeBSD's `ioctl` function. The following ioctls are implemented, refer
-to FreeBSD's headers for more details: SIOCATMARK, BIOCGBLEN,
+FreeBSD's `ioctl` function. The following ioctls are whitelisted, refer
+to FreeBSD's headers for more details: SIOCATMARK, BIOCGBLEN, BIOCSETF
 BIOCIMMEDIATE, BIOCSETIF, BIOCVERSION, FIONSPACE, FIONWRITE, FIONREAD,
 SIOCGETSGCNT, SIOCGIFMETRIC, SIOCSIFMETRIC, SIOCDIFADDR, SIOCGIFINDEX,
 SIOCGIFADDR, SIOCGIFCONF, SIOCGIFNETMASK, SIOCAIFADDR, SIOCGIFMTU,
-SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA. (and
-0x90044267 ??)
+SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA.
+
+Nintendo use the following definition (hence changing all ioctls using
+this
+structure):
+
+`struct bpf_program {`  
+`   u_int bf_len;`  
+`   struct bpf_insn bf_insns[BPF_MAXINSNS]; // [512]. This is normally a pointer`  
+`};`
 
 ## Fcntl
 
