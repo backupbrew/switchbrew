@@ -172,6 +172,9 @@ This is "nn::pcv::detail::IPcvService".
 | 14   | max77621\_gpu  |       |
 |      |                |       |
 
+Note: max77620 GPIOs are only used internally by the driver during init,
+and not exposed via an API.
+
 # pcv:arb
 
 This is "nn::pcv::IArbitrationManager".
