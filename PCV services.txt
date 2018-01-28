@@ -107,6 +107,216 @@ This is "nn::pcv::detail::IPcvService".
 |-
 |}
 
+== User Name to Block Maps ==
+
+=== Power Switch / Clocking / Reset ===
+
+{| class="wikitable" border="1"
+|-
+! Name || Block || Rail || Notes
+|-
+|  0 || CpuBus || vdd_cpu ||
+|-
+|  1 || GPU || vdd_gpu ||
+|-
+|  2 || I2S1 || vdd_soc ||
+|-
+|  3 || I2S2 || vdd_soc ||
+|-
+|  4 || I2S3 || vdd_soc ||
+|-
+|  5 || PWM || vdd_soc ||
+|-
+|  6 || I2C1 || vdd_soc ||
+|-
+|  7 || I2C2 || vdd_soc ||
+|-
+|  8 || I2C3 || vdd_soc ||
+|-
+|  9 || I2C4 || vdd_soc ||
+|-
+| 10 || I2C5 || vdd_soc ||
+|-
+| 11 || I2C6 || vdd_soc ||
+|-
+| 12 || SPI1 || vdd_soc ||
+|-
+| 13 || SPI2 || vdd_soc ||
+|-
+| 14 || SPI3 || vdd_soc ||
+|-
+| 15 || SPI4 || vdd_soc ||
+|-
+| 16 || DISP1 || vdd_soc ||
+|-
+| 17 || DISP2 || vdd_soc ||
+|-
+| 20 || SDMMC1 || vdd_soc ||
+|-
+| 21 || SDMMC2 || vdd_soc ||
+|-
+| 22 || SDMMC3 || vdd_soc ||
+|-
+| 23 || SDMMC4 || vdd_soc ||
+|-
+| 25 || CSITE || vdd_soc ||
+|-
+| 26 || TSEC || vdd_soc ||
+|-
+| 27 || MSELECT || vdd_soc ||
+|-
+| 28 || HDA2CODEC_2X || vdd_soc ||
+|-
+| 29 || ACTMON || vdd_soc ||
+|-
+| 30 || I2C_SLOW || vdd_soc ||
+|-
+| 31 || SOR1 || vdd_soc ||
+|-
+| 33 || HDA || vdd_soc ||
+|-
+| 34 || XUSB_CORE_HOST || vdd_soc ||
+|-
+| 35 || XUSB_FALCON || vdd_soc ||
+|-
+| 36 || XUSB_FS || vdd_soc ||
+|-
+| 37 || XUSB_CORE_DEV || vdd_soc ||
+|-
+| 38 || XUSB_SS_HOSTDEV || vdd_soc ||
+|-
+| 39 || UARTA || vdd_soc ||
+|-
+| 40 || UARTB || vdd_soc ||
+|-
+| 41 || UARTC || vdd_soc ||
+|-
+| 42 || UARTD || vdd_soc ||
+|-
+| 43 || HOST1X || vdd_soc ||
+|-
+| 44 || ENTROPY || vdd_soc ||
+|-
+| 45 || SOC_THERM || vdd_soc ||
+|-
+| 46 || VIC || vdd_soc ||
+|-
+| 47 || NVENC || vdd_soc ||
+|-
+| 48 || NVJPG || vdd_soc ||
+|-
+| 49 || NVDEC || vdd_soc ||
+|-
+| 50 || QSPI || vdd_soc ||
+|-
+| 52 || TSECB || vdd_soc ||
+|-
+| 53 || APE || vdd_soc ||
+|-
+| 54 || ACLK || vdd_soc ||
+|-
+| 55 || UARTAPE || vdd_soc ||
+|-
+| 56 || EMC || vdd_soc ||
+|-
+| 57 || PLLE0 || vdd_soc ||
+|-
+| 58 || PLLE0 || vdd_soc ||
+|-
+| 59 || DSI || vdd_soc ||
+|-
+| 60 || MAUD || vdd_soc ||
+|-
+| 61 || DPAUX1 || vdd_soc ||
+|-
+| 62 || MIPI_CAL || vdd_soc ||
+|-
+| 63 || UART_FST_MIPI_CAL || vdd_soc ||
+|-
+| 64 || OSC || vdd_soc ||
+|-
+| 65 || SCLK || vdd_soc ||
+|-
+| 66 || SOR_SAFE || vdd_soc ||
+|-
+| 67 || XUSB_SS || vdd_soc ||
+|-
+| 68 || XUSB_HOST || vdd_soc ||
+|-
+| 69 || XUSB_DEV || vdd_soc ||
+|-
+| 70 || EXTPERIPH1 || vdd_soc ||
+|-
+| 71 || AHUB || vdd_soc ||
+|-
+| 72 || HDA2HDMICODEC || vdd_soc ||
+|-
+| 73 || PLLP5 || vdd_soc ||
+|-
+| 74 || USBD || vdd_soc ||
+|-
+| 75 || USB2 || vdd_soc ||
+|-
+| 76 || PCIE || vdd_soc ||
+|-
+| 77 || AFI || vdd_soc ||
+|-
+| 78 || PCIEXCLK || vdd_soc ||
+|-
+| 79 || PEX_USB_UPHY || vdd_soc ||
+|-
+| 80 || XUSB_PADCTL || vdd_soc ||
+|-
+| 81 || APBDMA || vdd_soc ||
+|-
+| 82 || USB2_TRK || vdd_soc ||
+|-
+| 83 || PLLE0 || vdd_soc ||
+|-
+| 84 || PLLE0 || vdd_soc ||
+|-
+| 85 || CEC || vdd_soc ||
+|-
+|}
+
+=== Voltage ===
+
+{| class="wikitable" border="1"
+|-
+! Name || Block || Notes
+|-
+|  0 || max77620_sd0 || 
+|-
+|  1 || max77620_sd1 || 
+|-
+|  2 || max77620_sd2 || 
+|-
+|  3 || max77620_sd3 || 
+|-
+|  4 || max77620_ldo0 || 
+|-
+|  5 || max77620_ldo1 || 
+|-
+|  6 || max77620_ldo2 || 
+|-
+|  7 || max77620_ldo3 || 
+|-
+|  8 || max77620_ldo4 || 
+|-
+|  9 || max77620_ldo5 || 
+|-
+| 10 || max77620_ldo6 || 
+|-
+| 11 || max77620_ldo7 || 
+|-
+| 12 || max77620_ldo8 || 
+|-
+| 13 || max77621_cpu || 
+|-
+| 14 || max77621_gpu || 
+|-
+|}
+
 = pcv:arb =
 This is "nn::pcv::IArbitrationManager".
 

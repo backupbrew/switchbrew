@@ -62,6 +62,116 @@ This is "nn::pcv::detail::IPcvService".
 | 26  | GetFuseInfo              |
 |     |                          |
 
+## User Name to Block Maps
+
+### Power Switch / Clocking / Reset
+
+| Name | Block                | Rail     | Notes |
+| ---- | -------------------- | -------- | ----- |
+| 0    | CpuBus               | vdd\_cpu |       |
+| 1    | GPU                  | vdd\_gpu |       |
+| 2    | I2S1                 | vdd\_soc |       |
+| 3    | I2S2                 | vdd\_soc |       |
+| 4    | I2S3                 | vdd\_soc |       |
+| 5    | PWM                  | vdd\_soc |       |
+| 6    | I2C1                 | vdd\_soc |       |
+| 7    | I2C2                 | vdd\_soc |       |
+| 8    | I2C3                 | vdd\_soc |       |
+| 9    | I2C4                 | vdd\_soc |       |
+| 10   | I2C5                 | vdd\_soc |       |
+| 11   | I2C6                 | vdd\_soc |       |
+| 12   | SPI1                 | vdd\_soc |       |
+| 13   | SPI2                 | vdd\_soc |       |
+| 14   | SPI3                 | vdd\_soc |       |
+| 15   | SPI4                 | vdd\_soc |       |
+| 16   | DISP1                | vdd\_soc |       |
+| 17   | DISP2                | vdd\_soc |       |
+| 20   | SDMMC1               | vdd\_soc |       |
+| 21   | SDMMC2               | vdd\_soc |       |
+| 22   | SDMMC3               | vdd\_soc |       |
+| 23   | SDMMC4               | vdd\_soc |       |
+| 25   | CSITE                | vdd\_soc |       |
+| 26   | TSEC                 | vdd\_soc |       |
+| 27   | MSELECT              | vdd\_soc |       |
+| 28   | HDA2CODEC\_2X        | vdd\_soc |       |
+| 29   | ACTMON               | vdd\_soc |       |
+| 30   | I2C\_SLOW            | vdd\_soc |       |
+| 31   | SOR1                 | vdd\_soc |       |
+| 33   | HDA                  | vdd\_soc |       |
+| 34   | XUSB\_CORE\_HOST     | vdd\_soc |       |
+| 35   | XUSB\_FALCON         | vdd\_soc |       |
+| 36   | XUSB\_FS             | vdd\_soc |       |
+| 37   | XUSB\_CORE\_DEV      | vdd\_soc |       |
+| 38   | XUSB\_SS\_HOSTDEV    | vdd\_soc |       |
+| 39   | UARTA                | vdd\_soc |       |
+| 40   | UARTB                | vdd\_soc |       |
+| 41   | UARTC                | vdd\_soc |       |
+| 42   | UARTD                | vdd\_soc |       |
+| 43   | HOST1X               | vdd\_soc |       |
+| 44   | ENTROPY              | vdd\_soc |       |
+| 45   | SOC\_THERM           | vdd\_soc |       |
+| 46   | VIC                  | vdd\_soc |       |
+| 47   | NVENC                | vdd\_soc |       |
+| 48   | NVJPG                | vdd\_soc |       |
+| 49   | NVDEC                | vdd\_soc |       |
+| 50   | QSPI                 | vdd\_soc |       |
+| 52   | TSECB                | vdd\_soc |       |
+| 53   | APE                  | vdd\_soc |       |
+| 54   | ACLK                 | vdd\_soc |       |
+| 55   | UARTAPE              | vdd\_soc |       |
+| 56   | EMC                  | vdd\_soc |       |
+| 57   | PLLE0                | vdd\_soc |       |
+| 58   | PLLE0                | vdd\_soc |       |
+| 59   | DSI                  | vdd\_soc |       |
+| 60   | MAUD                 | vdd\_soc |       |
+| 61   | DPAUX1               | vdd\_soc |       |
+| 62   | MIPI\_CAL            | vdd\_soc |       |
+| 63   | UART\_FST\_MIPI\_CAL | vdd\_soc |       |
+| 64   | OSC                  | vdd\_soc |       |
+| 65   | SCLK                 | vdd\_soc |       |
+| 66   | SOR\_SAFE            | vdd\_soc |       |
+| 67   | XUSB\_SS             | vdd\_soc |       |
+| 68   | XUSB\_HOST           | vdd\_soc |       |
+| 69   | XUSB\_DEV            | vdd\_soc |       |
+| 70   | EXTPERIPH1           | vdd\_soc |       |
+| 71   | AHUB                 | vdd\_soc |       |
+| 72   | HDA2HDMICODEC        | vdd\_soc |       |
+| 73   | PLLP5                | vdd\_soc |       |
+| 74   | USBD                 | vdd\_soc |       |
+| 75   | USB2                 | vdd\_soc |       |
+| 76   | PCIE                 | vdd\_soc |       |
+| 77   | AFI                  | vdd\_soc |       |
+| 78   | PCIEXCLK             | vdd\_soc |       |
+| 79   | PEX\_USB\_UPHY       | vdd\_soc |       |
+| 80   | XUSB\_PADCTL         | vdd\_soc |       |
+| 81   | APBDMA               | vdd\_soc |       |
+| 82   | USB2\_TRK            | vdd\_soc |       |
+| 83   | PLLE0                | vdd\_soc |       |
+| 84   | PLLE0                | vdd\_soc |       |
+| 85   | CEC                  | vdd\_soc |       |
+|      |                      |          |       |
+
+### Voltage
+
+| Name | Block          | Notes |
+| ---- | -------------- | ----- |
+| 0    | max77620\_sd0  |       |
+| 1    | max77620\_sd1  |       |
+| 2    | max77620\_sd2  |       |
+| 3    | max77620\_sd3  |       |
+| 4    | max77620\_ldo0 |       |
+| 5    | max77620\_ldo1 |       |
+| 6    | max77620\_ldo2 |       |
+| 7    | max77620\_ldo3 |       |
+| 8    | max77620\_ldo4 |       |
+| 9    | max77620\_ldo5 |       |
+| 10   | max77620\_ldo6 |       |
+| 11   | max77620\_ldo7 |       |
+| 12   | max77620\_ldo8 |       |
+| 13   | max77621\_cpu  |       |
+| 14   | max77621\_gpu  |       |
+|      |                |       |
+
 # pcv:arb
 
 This is "nn::pcv::IArbitrationManager".
