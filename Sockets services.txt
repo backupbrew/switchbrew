@@ -115,7 +115,8 @@ FreeBSD's <code>open</code> command, limited to opening <code>/dev/bpf</code>. T
 
 == Sysctl ==
 
-FreeBSD's <code>sysctl</code> command, restricted to <code>CTL_NET</code> (?). Privileged operations are reserved for <code>bsd:s</code>.
+FreeBSD's <code>sysctl</code> command. Privileged operations are reserved for <code>bsd:s</code>.
+<code>CTL_NET</code>, <code>CTL_VM</code>, <code>CTL_KERN</code> and <code>CTL_DEBUG</code> commands are implemented (?).
 
 == Ioctl ==
 FreeBSD's <code>ioctl</code> function. The following ioctls are whitelisted, refer to FreeBSD's headers for more details: SIOCATMARK, BIOCGBLEN, BIOCSETF BIOCIMMEDIATE, BIOCSETIF, BIOCVERSION, FIONSPACE, FIONWRITE, FIONREAD, SIOCGETSGCNT, SIOCGIFMETRIC, SIOCSIFMETRIC, SIOCDIFADDR, SIOCGIFINDEX, SIOCGIFADDR, SIOCGIFCONF, SIOCGIFNETMASK, SIOCAIFADDR, SIOCGIFMTU, SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA.

@@ -95,8 +95,9 @@ for more details.
 
 ## Sysctl
 
-FreeBSD's `sysctl` command, restricted to `CTL_NET` (?). Privileged
-operations are reserved for `bsd:s`.
+FreeBSD's `sysctl` command. Privileged operations are reserved for
+`bsd:s`. `CTL_NET`, `CTL_VM`, `CTL_KERN` and `CTL_DEBUG` commands are
+implemented (?).
 
 ## Ioctl
 
