@@ -532,6 +532,9 @@ This is a 0x20-byte struct. This is converted from another structure by the offi
 ==PackedClusteringProcessorConfig==
 This is a 0x28-byte struct.
 
+==PackedImageTransferProcessorConfig==
+This is a 0x18-byte struct. This is converted from another structure by the official user-process. The conversion is the same as PackedMomentProcessorConfig, except the code using out +0x1C/+0x1D was removed, and the constant is now located at out+0x10. The code which wrote to out u64 +0x10 from in+0x24 was replaced with code which writes an u8 to out+0x14.
+
 ==ImageTransferProcessorState==
 This is a 0x10-byte struct.
 
