@@ -369,8 +369,9 @@ This is an u32.
 
 ## PackedMomentProcessorConfig
 
-This is a 0x20-byte
-struct.
+This is a 0x20-byte struct. This is converted from another structure by
+the official
+user-process.
 
 | Offset | Size | Description            | DefaultConfig                  |
 | ------ | ---- | ---------------------- | ------------------------------ |

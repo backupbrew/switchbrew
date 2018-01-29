@@ -502,7 +502,7 @@ Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedMcuVersion]], and an 
 This is an u32.
 
 ==PackedMomentProcessorConfig==
-This is a 0x20-byte struct.
+This is a 0x20-byte struct. This is converted from another structure by the official user-process.
 
 {| class="wikitable" border="1"
 |-
