@@ -1325,7 +1325,7 @@ Bitfield of one of more of these:
 </tr>
 <tr class="even">
 <td><p>0x00482907</p></td>
-<td><p>[1.0.0] MemoryType_WeirdSharedMemory</p></td>
+<td><p>[1.0.0] MemoryType_WeirdMappedMemory</p></td>
 <td><p>Mapped using <a href="#svcMapMemory" class="uri" title="wikilink">#svcMapMemory</a>.</p></td>
 </tr>
 <tr class="odd">

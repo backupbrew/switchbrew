@@ -1615,7 +1615,7 @@ Bitfield of one of more of these:
 |-
 | 0x00402006 || MemoryType_SharedMemory || Mapped using [[#svcMapSharedMemory]].
 |-
-| 0x00482907 || [1.0.0] MemoryType_WeirdSharedMemory || Mapped using [[#svcMapMemory]].
+| 0x00482907 || [1.0.0] MemoryType_WeirdMappedMemory || Mapped using [[#svcMapMemory]].
 |-
 | 0x00DD7E08 || MemoryType_ModuleCodeStatic || Mapped using [[#svcMapProcessCodeMemory]].
 |-
