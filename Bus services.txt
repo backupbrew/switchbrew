@@ -53,6 +53,8 @@ Returns an [[#IPadSession]] session.
 |-
 | 0xB || 0x97 || S, 7 || || || 
 |-
+| 0xC || 0x26 || E, 6 || || || 
+|-
 | 0xD || 6 || A, 6 || Battery event monitor related. || Out || [[PTM services]]
 |-
 | 0xE || 0x78 || P, 0 || || || 
@@ -70,6 +72,8 @@ Returns an [[#IPadSession]] session.
 | 0x14 || 0xBC || X, 4 || || || 
 |-
 | 0x15 || 0xAE || V, 6 || || In || [[Audio services]]
+|-
+| 0x16 || 0xBA || X, 2 || || || 
 |-
 | 0x17 || 0xB9 || X, 1 || || In || [[HID services]]
 |-

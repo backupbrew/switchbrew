@@ -36,6 +36,7 @@ session.
 | 9           | 0x91              | S, 1              |                                |           |                                                                                                      |
 | 0xA         | 0x96              | S, 6              | Power supply monitor related.  | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0xB         | 0x97              | S, 7              |                                |           |                                                                                                      |
+| 0xC         | 0x26              | E, 6              |                                |           |                                                                                                      |
 | 0xD         | 6                 | A, 6              | Battery event monitor related. | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0xE         | 0x78              | P, 0              |                                |           |                                                                                                      |
 | 0xF         | 0x93              | S, 3              | GcAsic irq                     | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
@@ -45,6 +46,7 @@ session.
 | 0x13        | 0x7A              | P, 2              |                                |           |                                                                                                      |
 | 0x14        | 0xBC              | X, 4              |                                |           |                                                                                                      |
 | 0x15        | 0xAE              | V, 6              |                                | In        | [Audio services](Audio%20services.md "wikilink")                                                     |
+| 0x16        | 0xBA              | X, 2              |                                |           |                                                                                                      |
 | 0x17        | 0xB9              | X, 1              |                                | In        | [HID services](HID%20services.md "wikilink")                                                         |
 | 0x18        | 0xBD              | X, 5              |                                | Out       | [HID services](HID%20services.md "wikilink")                                                         |
 | 0x19        | 0xBE              | X, 6              | Volume Up                      | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")                       |
