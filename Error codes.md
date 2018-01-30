@@ -12,7 +12,7 @@ the additional MOVK).
 When a fatal-error is received the error code is outputted using the
 following formatter:
 
-` %04d-%04x`
+` %04d-%04d`
 
 .. where the first code is `2000 + Module`, and the other being
 `Description`. Bits \>=22 from the error-code are unused when displaying

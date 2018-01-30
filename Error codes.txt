@@ -10,7 +10,7 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 |}
 
 When a fatal-error is received the error code is outputted using the following formatter:
-  %04d-%04x
+  %04d-%04d
 
 .. where the first code is <code>2000 + Module</code>, and the other being <code>Description</code>. Bits >=22 from the error-code are unused when displaying fatal-errors, since the Description ends with bit21.
 
