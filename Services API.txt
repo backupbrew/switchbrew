@@ -93,6 +93,10 @@ Takes a pid.
 | [[BCAT services]]
 |
 |-
+| <nowiki>pcm</nowiki>
+| ?
+| Power consumption measurement? Not present on retail units.
+|-
 | bpc, bpc:r, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s
 | [[PCV services]]
 |
