@@ -133,11 +133,11 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x318 || u64 ||
 |-
-| 0x320 || u64 ||
+| 0x320 || u64 || CondVar_CondVarUserAddr
 |-
 | 0x328 || u64 || Entrypoint
 |-
-| 0x330 || u64 || ArbitrationUserPtr
+| 0x330 || u64 || CondVar_MutexUserAddr
 |-
 | 0x338 || [[#KProcess*]] || ProcessPtr
 |-
@@ -151,9 +151,9 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x360 || [[#KSynchronizationObject]]*[0x40] || SyncObjects
 |-
-| 0x560 || u64 ||
+| 0x560 || [[#KThread]]* || CondVar_NextThreadPtr
 |-
-| 0x568 || u64 ||
+| 0x568 || [[#KThread]]* || CondVar_PrevThreadPtr
 |-
 | 0x570 || [[#KSynchronizationObject]] || SignalledObjectPtr?
 |-
@@ -167,7 +167,7 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x5B8 || u64 ||
 |-
-| 0x5C0 || u64 ||
+| 0x5C0 || [[#KThread]]* || CondVar_SelfPtr
 |-
 | 0x5C8 || u64 ||
 |-
@@ -175,7 +175,7 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x5D8 || u64 ||
 |-
-| 0x5E0 || u32 || ArbitrationReqThreadHandle
+| 0x5E0 || u32 || CondVar_WaitThreadHandle
 |-
 | 0x5E4 || u32 || SchedulingFlags_Default
 |-

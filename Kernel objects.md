@@ -104,28 +104,28 @@ Inherits from:
 | 0x308        | u64                                                                      | TotalTimeRunning             |
 | 0x310        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")\*         | SignalledObjectPtr           |
 | 0x318        | u64                                                                      |                              |
-| 0x320        | u64                                                                      |                              |
+| 0x320        | u64                                                                      | CondVar\_CondVarUserAddr     |
 | 0x328        | u64                                                                      | Entrypoint                   |
-| 0x330        | u64                                                                      | ArbitrationUserPtr           |
+| 0x330        | u64                                                                      | CondVar\_MutexUserAddr       |
 | 0x338        | [\#KProcess\*](#KProcess* "wikilink")                                    | ProcessPtr                   |
 | 0x340        | void\*                                                                   | KernelThreadStack            |
 | 0x348        | u64                                                                      |                              |
 | 0x350        | void\*                                                                   | TlsKernelPtr                 |
 | 0x358        | void\*                                                                   | TlsPhysicalPtr               |
 | 0x360        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")\*\[0x40\] | SyncObjects                  |
-| 0x560        | u64                                                                      |                              |
-| 0x568        | u64                                                                      |                              |
+| 0x560        | [\#KThread](#KThread "wikilink")\*                                       | CondVar\_NextThreadPtr       |
+| 0x568        | [\#KThread](#KThread "wikilink")\*                                       | CondVar\_PrevThreadPtr       |
 | 0x570        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")           | SignalledObjectPtr?          |
 | 0x578        | KLinkedListNode                                                          |                              |
 | 0x588        | KLinkedListNode                                                          |                              |
 | 0x598        | KLinkedListNode                                                          | NodeFor\_\_ThreadList        |
 | 0x5A8        | KLinkedListNode                                                          | NodeFor\_\_ThreadsOnSameCore |
 | 0x5B8        | u64                                                                      |                              |
-| 0x5C0        | u64                                                                      |                              |
+| 0x5C0        | [\#KThread](#KThread "wikilink")\*                                       | CondVar\_SelfPtr             |
 | 0x5C8        | u64                                                                      |                              |
 | 0x5D0        | u64                                                                      |                              |
 | 0x5D8        | u64                                                                      |                              |
-| 0x5E0        | u32                                                                      | ArbitrationReqThreadHandle   |
+| 0x5E0        | u32                                                                      | CondVar\_WaitThreadHandle    |
 | 0x5E4        | u32                                                                      | SchedulingFlags\_Default     |
 | 0x5E8        | u32                                                                      | WaitSync\_RetVal             |
 | 0x5EC        | u32                                                                      |                              |
