@@ -13,8 +13,20 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 !  Address
 !  Width
 |-
+| TSEC_THI_UNK0
+| 0x54500020
+| 0x04
+|-
 | TSEC_THI_INT_STATUS
 | 0x54500078
+| 0x04
+|-
+| TSEC_THI_INT_STATUS2
+| 0x5450007C
+| 0x04
+|-
+| TSEC_THI_UNK1
+| 0x54500084
 | 0x04
 |-
 | TSEC_THI_SLCG_OVERRIDE_HIGH_A
@@ -245,6 +257,14 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501240
 | 0x04
 |-
+| TSEC_SCP_CTL_UNK0
+| 0x54501400
+| 0x04
+|-
+| TSEC_SCP_CTL_UNK1
+| 0x54501404
+| 0x04
+|-
 | [[#TSEC_SCP_CTL_STAT|TSEC_SCP_CTL_STAT]]
 | 0x54501408
 | 0x04
@@ -253,28 +273,140 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450140C
 | 0x04
 |-
+| TSEC_SCP_CTL_UNK2
+| 0x54501410
+| 0x04
+|-
 | [[#TSEC_SCP_CTL_PKEY|TSEC_SCP_CTL_PKEY]]
 | 0x54501418
+| 0x04
+|-
+| TSEC_SCP_CTL_UNK3
+| 0x54501420
+| 0x04
+|-
+| TSEC_SCP_CTL_UNK4
+| 0x54501428
+| 0x04
+|-
+| TSEC_SCP_CTL_UNK5
+| 0x54501430
+| 0x04
+|-
+| TSEC_SCP_UNK0
+| 0x54501454
+| 0x04
+|-
+| TSEC_SCP_UNK1
+| 0x54501458
+| 0x04
+|-
+| TSEC_SCP_UNK2
+| 0x54501470
+| 0x04
+|-
+| TSEC_SCP_UNK3
+| 0x54501480
+| 0x04
+|-
+| TSEC_SCP_UNK4
+| 0x54501490
+| 0x04
+|-
+| TSEC_UNK0
+| 0x54501500
+| 0x04
+|-
+| TSEC_UNK1
+| 0x54501504
+| 0x04
+|-
+| TSEC_UNK2
+| 0x5450150C
+| 0x04
+|-
+| TSEC_UNK3
+| 0x54501510
+| 0x04
+|-
+| TSEC_UNK4
+| 0x54501514
+| 0x04
+|-
+| TSEC_UNK5
+| 0x54501518
+| 0x04
+|-
+| TSEC_UNK6
+| 0x5450151C
+| 0x04
+|-
+| TSEC_UNK7
+| 0x54501528
+| 0x04
+|-
+| TSEC_UNK8
+| 0x5450152C
+| 0x04
+|-
+| TSEC_TFBIF_MCCIF_UNK0
+| 0x54501600
 | 0x04
 |-
 | TSEC_TFBIF_MCCIF_FIFOCTRL
 | 0x54501604
 | 0x04
 |-
-| TSEC_DMA_CMD
+| TSEC_TFBIF_MCCIF_UNK1
+| 0x54501608
+| 0x04
+|-
+| TSEC_TFBIF_MCCIF_UNK2
+| 0x5450160C
+| 0x04
+|-
+| TSEC_TFBIF_UNK0
+| 0x54501630
+| 0x04
+|-
+| TSEC_TFBIF_UNK1
+| 0x54501634
+| 0x04
+|-
+| TSEC_TFBIF_UNK2
+| 0x54501640
+| 0x04
+|-
+| [[#TSEC_DMA_CMD|TSEC_DMA_CMD]]
 | 0x54501700
 | 0x04
 |-
-| TSEC_DMA_ADDR
+| [[#TSEC_DMA_ADDR|TSEC_DMA_ADDR]]
 | 0x54501704
 | 0x04
 |-
-| TSEC_DMA_VAL
+| [[#TSEC_DMA_VAL|TSEC_DMA_VAL]]
 | 0x54501708
 | 0x04
 |-
-| TSEC_DMA_UNK
+| [[#TSEC_DMA_UNK|TSEC_DMA_UNK]]
 | 0x5450170C
+| 0x04
+|-
+| TSEC_TEGRA_UNK0
+| 0x54501800
+| 0x04
+|-
+| TSEC_TEGRA_UNK1
+| 0x54501824
+| 0x04
+|-
+| TSEC_TEGRA_UNK2
+| 0x54501828
+| 0x04
+|-
+| TSEC_TEGRA_UNK3
+| 0x5450182C
 | 0x04
 |-
 | [[#TSEC_TEGRA_CTL|TSEC_TEGRA_CTL]]
@@ -437,6 +569,41 @@ Takes the offset for Falcon's target memory being transferred.
 | TSEC_SCP_CTL_PKEY_LOADED
 |-
 |}
+
+=== TSEC_DMA_CMD ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| TSEC_DMA_CMD_READ
+|-
+| 1
+| TSEC_DMA_CMD_WRITE
+|-
+| 4-7
+| TSEC_DMA_CMD_UNK
+|-
+| 12
+| TSEC_DMA_CMD_BUSY
+|-
+| 31
+| TSEC_DMA_CMD_INIT
+|-
+|}
+
+A DMA read/write operation requires bits TSEC_DMA_CMD_INIT and TSEC_DMA_CMD_READ/TSEC_DMA_CMD_WRITE to be set in TSEC_DMA_CMD.
+
+During the transfer, the TSEC_DMA_CMD_BUSY bit is set.
+
+=== TSEC_DMA_ADDR ===
+Takes the address for DMA transfers between TSEC and HOST1X (master and clients).
+
+=== TSEC_DMA_VAL ===
+Takes the value for DMA transfers between TSEC and HOST1X (master and clients).
+
+=== TSEC_DMA_UNK ===
+Always 0xFFF.
 
 === TSEC_TEGRA_CTL ===
 {| class="wikitable" border="1"
@@ -901,7 +1068,7 @@ This stage is responsible for reconfiguring the Falcon's crypto co-processor and
  
  // Partially unknown fuc5 instruction
  // Likely forces a change of permissions
- acl_chmod(c0, c0);
+ cchmod(c0, c0);
  
  // Clear all crypto registers and propagate permissions
  cxor(c0, c0);
@@ -1387,6 +1554,10 @@ Unlisted values are unknown, but probably do something.
 |  0b000 || falcon data mem <-> falcon $cX register
 |-
 |  0b001 || external mem <-> crypto input/output stream
+|-
+|  0b011 || falcon data mem <-> crypto input/output stream
+|-
+|  0b100 || unknown, but can be combined with other types
 |}
 
 ==== DMA-Related Instructions ====
@@ -1403,4 +1574,12 @@ Falcon tracks permission metadata about each crypto reg. Permissions include rea
 
 Entry to Authenticated Mode always sets $pc to the address supplied in $cauth (ie the base of the signature-checked region). This takes effect when trying to branch to any address within the range covered by $cauth. Entry to Authenticated Mode (also called "Secure Mode") computes a MAC over the $cauth region and compares it to $c6 in order to perform the signature check.
 
-Exit from Authenticated Mode must poke a special register (this seems to be I[0x10300] = 0) before leaving authenticated code pages. Failure to do this would result in the Falcon core halting.
+Exit from Authenticated Mode must poke a special register before leaving authenticated code pages and a failure to do this would result in the Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map this register in their engine-specific subset of registers. In TSEC's case, the register is TSEC_SCP_CTL_AUTH_MODE.
+
+=== Unknown Instructions ===
+
+<code>00000000: f5 3c XY e0     cchmod $cY $cX</code> - likely forces a change of permissions.
+
+<code>00000000: f5 3c XY a8     c_unk $cY $cX</code> - unknown crypto operation.
+
+<code>00000000: f5 3c 0X 90     c_unk $cX</code> - unknown crypto operation.

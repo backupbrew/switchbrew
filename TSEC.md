@@ -19,7 +19,10 @@ TSEC.
 
 | Name                                                    | Address    | Width |
 | ------------------------------------------------------- | ---------- | ----- |
+| TSEC\_THI\_UNK0                                         | 0x54500020 | 0x04  |
 | TSEC\_THI\_INT\_STATUS                                  | 0x54500078 | 0x04  |
+| TSEC\_THI\_INT\_STATUS2                                 | 0x5450007C | 0x04  |
+| TSEC\_THI\_UNK1                                         | 0x54500084 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_HIGH\_A                      | 0x54500088 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_LOW\_A                       | 0x5450008C | 0x04  |
 | TSEC\_THI\_CLK\_OVERRIDE                                | 0x54500E00 | 0x04  |
@@ -77,14 +80,44 @@ TSEC.
 | FALCON\_ICD\_WDATA                                      | 0x54501208 | 0x04  |
 | FALCON\_ICD\_RDATA                                      | 0x5450120C | 0x04  |
 | FALCON\_SCTL                                            | 0x54501240 | 0x04  |
+| TSEC\_SCP\_CTL\_UNK0                                    | 0x54501400 | 0x04  |
+| TSEC\_SCP\_CTL\_UNK1                                    | 0x54501404 | 0x04  |
 | [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")   | 0x54501408 | 0x04  |
 | TSEC\_SCP\_CTL\_AUTH\_MODE                              | 0x5450140C | 0x04  |
+| TSEC\_SCP\_CTL\_UNK2                                    | 0x54501410 | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")   | 0x54501418 | 0x04  |
+| TSEC\_SCP\_CTL\_UNK3                                    | 0x54501420 | 0x04  |
+| TSEC\_SCP\_CTL\_UNK4                                    | 0x54501428 | 0x04  |
+| TSEC\_SCP\_CTL\_UNK5                                    | 0x54501430 | 0x04  |
+| TSEC\_SCP\_UNK0                                         | 0x54501454 | 0x04  |
+| TSEC\_SCP\_UNK1                                         | 0x54501458 | 0x04  |
+| TSEC\_SCP\_UNK2                                         | 0x54501470 | 0x04  |
+| TSEC\_SCP\_UNK3                                         | 0x54501480 | 0x04  |
+| TSEC\_SCP\_UNK4                                         | 0x54501490 | 0x04  |
+| TSEC\_UNK0                                              | 0x54501500 | 0x04  |
+| TSEC\_UNK1                                              | 0x54501504 | 0x04  |
+| TSEC\_UNK2                                              | 0x5450150C | 0x04  |
+| TSEC\_UNK3                                              | 0x54501510 | 0x04  |
+| TSEC\_UNK4                                              | 0x54501514 | 0x04  |
+| TSEC\_UNK5                                              | 0x54501518 | 0x04  |
+| TSEC\_UNK6                                              | 0x5450151C | 0x04  |
+| TSEC\_UNK7                                              | 0x54501528 | 0x04  |
+| TSEC\_UNK8                                              | 0x5450152C | 0x04  |
+| TSEC\_TFBIF\_MCCIF\_UNK0                                | 0x54501600 | 0x04  |
 | TSEC\_TFBIF\_MCCIF\_FIFOCTRL                            | 0x54501604 | 0x04  |
-| TSEC\_DMA\_CMD                                          | 0x54501700 | 0x04  |
-| TSEC\_DMA\_ADDR                                         | 0x54501704 | 0x04  |
-| TSEC\_DMA\_VAL                                          | 0x54501708 | 0x04  |
-| TSEC\_DMA\_UNK                                          | 0x5450170C | 0x04  |
+| TSEC\_TFBIF\_MCCIF\_UNK1                                | 0x54501608 | 0x04  |
+| TSEC\_TFBIF\_MCCIF\_UNK2                                | 0x5450160C | 0x04  |
+| TSEC\_TFBIF\_UNK0                                       | 0x54501630 | 0x04  |
+| TSEC\_TFBIF\_UNK1                                       | 0x54501634 | 0x04  |
+| TSEC\_TFBIF\_UNK2                                       | 0x54501640 | 0x04  |
+| [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")              | 0x54501700 | 0x04  |
+| [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")            | 0x54501704 | 0x04  |
+| [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")              | 0x54501708 | 0x04  |
+| [TSEC\_DMA\_UNK](#TSEC_DMA_UNK "wikilink")              | 0x5450170C | 0x04  |
+| TSEC\_TEGRA\_UNK0                                       | 0x54501800 | 0x04  |
+| TSEC\_TEGRA\_UNK1                                       | 0x54501824 | 0x04  |
+| TSEC\_TEGRA\_UNK2                                       | 0x54501828 | 0x04  |
+| TSEC\_TEGRA\_UNK3                                       | 0x5450182C | 0x04  |
 | [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")          | 0x54501838 | 0x04  |
 |                                                         |            |       |
 
@@ -196,6 +229,36 @@ Takes the offset for Falcon's target memory being transferred.
 | 0    | TSEC\_SCP\_CTL\_PKEY\_REQUEST\_RELOAD |
 | 1    | TSEC\_SCP\_CTL\_PKEY\_LOADED          |
 |      |                                       |
+
+### TSEC\_DMA\_CMD
+
+| Bits | Description           |
+| ---- | --------------------- |
+| 0    | TSEC\_DMA\_CMD\_READ  |
+| 1    | TSEC\_DMA\_CMD\_WRITE |
+| 4-7  | TSEC\_DMA\_CMD\_UNK   |
+| 12   | TSEC\_DMA\_CMD\_BUSY  |
+| 31   | TSEC\_DMA\_CMD\_INIT  |
+|      |                       |
+
+A DMA read/write operation requires bits TSEC\_DMA\_CMD\_INIT and
+TSEC\_DMA\_CMD\_READ/TSEC\_DMA\_CMD\_WRITE to be set in TSEC\_DMA\_CMD.
+
+During the transfer, the TSEC\_DMA\_CMD\_BUSY bit is set.
+
+### TSEC\_DMA\_ADDR
+
+Takes the address for DMA transfers between TSEC and HOST1X (master and
+clients).
+
+### TSEC\_DMA\_VAL
+
+Takes the value for DMA transfers between TSEC and HOST1X (master and
+clients).
+
+### TSEC\_DMA\_UNK
+
+Always 0xFFF.
 
 ### TSEC\_TEGRA\_CTL
 
@@ -692,7 +755,7 @@ co-processor and loading, decrypting, authenticating and executing Stage
   
 `// Partially unknown fuc5 instruction`  
 `// Likely forces a change of permissions`  
-`acl_chmod(c0, c0);`  
+`cchmod(c0, c0);`  
   
 `// Clear all crypto registers and propagate permissions`  
 `cxor(c0, c0);`  
@@ -1160,10 +1223,12 @@ the lower 5 bits.
 
 Unlisted values are unknown, but probably do something.
 
-| Value | Effect                                        |
-| ----- | --------------------------------------------- |
-| 0b000 | falcon data mem \<-\> falcon $cX register     |
-| 0b001 | external mem \<-\> crypto input/output stream |
+| Value | Effect                                           |
+| ----- | ------------------------------------------------ |
+| 0b000 | falcon data mem \<-\> falcon $cX register        |
+| 0b001 | external mem \<-\> crypto input/output stream    |
+| 0b011 | falcon data mem \<-\> crypto input/output stream |
+| 0b100 | unknown, but can be combined with other types    |
 
 #### DMA-Related Instructions
 
@@ -1191,6 +1256,17 @@ Entry to Authenticated Mode (also called "Secure Mode") computes a MAC
 over the $cauth region and compares it to $c6 in order to perform the
 signature check.
 
-Exit from Authenticated Mode must poke a special register (this seems to
-be I\[0x10300\] = 0) before leaving authenticated code pages. Failure to
-do this would result in the Falcon core halting.
+Exit from Authenticated Mode must poke a special register before leaving
+authenticated code pages and a failure to do this would result in the
+Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map
+this register in their engine-specific subset of registers. In TSEC's
+case, the register is TSEC\_SCP\_CTL\_AUTH\_MODE.
+
+### Unknown Instructions
+
+`00000000: f5 3c XY e0 cchmod $cY $cX` - likely forces a change of
+permissions.
+
+`00000000: f5 3c XY a8 c_unk $cY $cX` - unknown crypto operation.
+
+`00000000: f5 3c 0X 90 c_unk $cX` - unknown crypto operation.
