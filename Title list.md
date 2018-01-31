@@ -463,7 +463,7 @@ Decimal versions use the format:
 <tr class="odd">
 <td><p>0100000000000035</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)</p></td>
-<td><p><a href="[4.0.0.md" title="wikilink">4.0.0+</a>] grc</p></td>
+<td><p>[4.0.0+] grc</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000036</p></td>
@@ -481,7 +481,7 @@ Decimal versions use the format:
 <td><p><a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)</p></td>
-<td><p>ro</p></td>
+<td><p>[3.0.0+] ro</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000038</p></td>
@@ -493,22 +493,22 @@ Decimal versions use the format:
 <td><p><a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)</p></td>
-<td><p>sdb</p></td>
+<td><p>[3.0.0+] sdb</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000003A</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)</p></td>
-<td><p><a href="[4.0.0.md" title="wikilink">4.0.0+</a>] migration</p></td>
+<td><p>[4.0.0+] migration</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000003C</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)</p></td>
-<td><p><a href="[4.0.0.md" title="wikilink">4.0.0+</a>] jpegdec</p></td>
+<td><p>[4.0.0+] jpegdec</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000003D</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)</p></td>
-<td><p><a href="[4.0.0.md" title="wikilink">4.0.0+</a>] <a href="Safemode.md" title="wikilink">safemode</a></p></td>
+<td><p>[4.0.0+] <a href="Safemode.md" title="wikilink">safemode</a></p></td>
 </tr>
 </tbody>
 </table>
