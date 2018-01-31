@@ -1269,4 +1269,5 @@ permissions.
 
 `00000000: f5 3c XY a8 c_unk $cY $cX` - unknown crypto operation.
 
-`00000000: f5 3c 0X 90 c_unk $cX` - unknown crypto operation.
+`00000000: f5 3c 0X 90 crng $cX` - seems to initialize a crypto register
+with random data.
