@@ -2,6 +2,11 @@
 
 This is "nn::socket::sf::IClient".
 
+All the services commands but the first two return -1 on failure and set
+errno when that happens. Although Nintendo has the FreeBSD kernel's to
+socket stack, **the errno macro definitions being in use actually come
+from Linux (and not from FreeBSD as one would expect\!)**.
+
 | Cmd | Name                                             |
 | --- | ------------------------------------------------ |
 | 0   | RegisterClient (Initialize)                      |
