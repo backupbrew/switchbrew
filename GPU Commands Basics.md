@@ -53,12 +53,12 @@ pairs.
 
 #### Command Mode
 
-| Mode | Description                                                                                                                                                               |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | Sequential Mode - Reads "Argument Count" arguments, while automatically incrementing the Register Id. So, each argument is written to a different register.               |
-| 3    | Normal Mode - This is a Command with multiple arguments. Reads "Argument Count" arguments, all belonging to the same Command.                                             |
-| 4    | Inline Mode - Bits 28-16 of the Command Word (where Inline Data is located) contains the Value of the argument written to the register. The next Word is another Command. |
-| 5    | Unobserved, but is valid too.                                                                                                                                             |
+| Mode | Description                                                                                                                                                               | Offical name |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| 1    | Sequential Mode - Reads "Argument Count" arguments, while automatically incrementing the Register Id. So, each argument is written to a different register.               | INCR         |
+| 3    | Normal Mode - This is a Command with multiple arguments. Reads "Argument Count" arguments, all belonging to the same Command.                                             | NONINCR      |
+| 4    | Inline Mode - Bits 28-16 of the Command Word (where Inline Data is located) contains the Value of the argument written to the register. The next Word is another Command. | IMM          |
+| 5    | Unobserved, but is valid too.                                                                                                                                             |              |
 
 TODO: Find a better name for the "Normal Mode" and figure out what mode
 5 is.
