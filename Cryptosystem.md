@@ -70,7 +70,7 @@ to.
 | Keyslot | Name             | Set by                             | Per-console | Per-firmware |
 | ------- | ---------------- | ---------------------------------- | ----------- | ------------ |
 | 11      | Package1Key      | [Package1](Package1.md "wikilink") | No          | Yes          |
-| 14      | SecureBootKey    | Bootrom                            | No          | No           |
+| 14      | SecureBootKey    | Bootrom                            | Yes         | No           |
 | 15      | SecureStorageKey | Bootrom                            | Yes         | No           |
 
 ### \[1.0.0-3.0.2\] Key table after package1

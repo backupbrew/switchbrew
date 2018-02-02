@@ -73,7 +73,7 @@ This is presumably using data stored in fuses that only microcode authenticated 
 | 14
 | SecureBootKey
 | Bootrom
-| No
+| Yes
 | No
 |-
 | 15
