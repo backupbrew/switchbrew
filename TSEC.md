@@ -238,6 +238,7 @@ Takes the offset for Falcon's target memory being transferred.
 | 1    | TSEC\_DMA\_CMD\_WRITE |
 | 4-7  | TSEC\_DMA\_CMD\_UNK   |
 | 12   | TSEC\_DMA\_CMD\_BUSY  |
+| 13   | TSEC\_DMA\_CMD\_ERROR |
 | 31   | TSEC\_DMA\_CMD\_INIT  |
 |      |                       |
 
@@ -245,6 +246,8 @@ A DMA read/write operation requires bits TSEC\_DMA\_CMD\_INIT and
 TSEC\_DMA\_CMD\_READ/TSEC\_DMA\_CMD\_WRITE to be set in TSEC\_DMA\_CMD.
 
 During the transfer, the TSEC\_DMA\_CMD\_BUSY bit is set.
+
+Accessing an invalid address causes bit TSEC\_DMA\_CMD\_ERROR to be set.
 
 ### TSEC\_DMA\_ADDR
 
