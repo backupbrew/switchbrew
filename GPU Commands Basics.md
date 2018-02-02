@@ -33,69 +33,102 @@ like Textures, Command Lists (a.k.a. Push Buffers), Vertex/Index buffers
 and Shaders. They usually have their own mapping, but Command Lists can
 share the same mapping.
 
-## Commands Submission
+## FIFO Commands
 
-Commands are sent to the GPU through
+The GPU implements a variation of Tegra's push buffer format for it's
+PFIFO engine. PFIFO is a special engine responsible for receiving user
+command lists and routing them to the appropriate engines (2D, 3D, DMA).
+
+Commands are submitted to the GPU's PFIFO engine through
 [NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO](NV%20services#NVGPU%20IOCTL%20CHANNEL%20SUBMIT%20GPFIFO.md##NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO "wikilink").
-This IoCtl command accepts various GpFifo entries, and each GpFifo entry
-points to a Command List. The GPU Command List is composed of 32-bits
-words, which usually are Command/Argument
-pairs.
 
-#### Command Word Structure
+This ioctl takes an array of gpfifo entries where each entry points to a
+FIFO command list. This list is composed of alternating 32-bit words
+containing FIFO commands and their respective arguments.
 
-| Bits  | Description                                                   |
-| ----- | ------------------------------------------------------------- |
-| 12-0  | Command/Register Id                                           |
-| 15-13 | Sub Channel                                                   |
-| 28-16 | Arguments Count (in 32-bits Words) or Inline Data (see below) |
-| 31-29 | Mode                                                          |
+### Command Structure
 
-#### Command Mode
+| Bits  | Description                                                  |
+| ----- | ------------------------------------------------------------ |
+| 12-0  | Method                                                       |
+| 15-13 | Subchannel                                                   |
+| 28-16 | Argument count (in 32-bits Words) or inline data (see below) |
+| 31-29 | [Submission mode](#Submission_mode "wikilink")               |
 
-| Mode | Description                                                                                                                                                               | Offical name |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1    | Sequential Mode - Reads "Argument Count" arguments, while automatically incrementing the Register Id. So, each argument is written to a different register.               | INCR         |
-| 3    | Normal Mode - This is a Command with multiple arguments. Reads "Argument Count" arguments, all belonging to the same Command.                                             | NONINCR      |
-| 4    | Inline Mode - Bits 28-16 of the Command Word (where Inline Data is located) contains the Value of the argument written to the register. The next Word is another Command. | IMM          |
-| 5    | Unobserved, but is valid too.                                                                                                                                             |              |
+Note: Methods are treated as 4-byte addressable locations, and hence
+their numbers are written down multiplied by 4.
 
-TODO: Find a better name for the "Normal Mode" and figure out what mode
-5 is.
+Note: The command's arguments, when present, follow the command word
+immediately.
 
-Other mode values are unobserved.
+#### Submission mode
 
-Note: All Commands/Register Id values are multiples of 4, so they are
-divided by 4 when packing, and multiplied by 4 when unpacking.
+| Mode | Description                                                                                                                                                                                                                      | Offical name |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| 0    | Increasing mode (old)                                                                                                                                                                                                            |              |
+| 1    | Increasing mode - Tells PFIFO to read as much arguments as specified by **argument count**, while automatically incrementing the **method** value. This means that each argument will be written to a different method location. | INCR         |
+| 2    | Non-increasing mode (old)                                                                                                                                                                                                        |              |
+| 3    | Non-increasing mode - Tells PFIFO to read as much arguments as specified by **argument count**. However, all arguments will be written to the same method location.                                                              | NONINCR      |
+| 4    | Inline mode - Tells PFIFO to read **inline data** from bits 28-16 of the command word, thus eliminating the need to pass additional words for the arguments.                                                                     | IMM          |
+| 5    | Increase-once mode - Tells PFIFO to read as much arguments as specified by **argument count** and automatically increments the **method** value once only.                                                                       |              |
 
-## Sub Channel binding
+### Command List
 
-All Command Id values \< 0x100 are special and aren't fowarded to the
-engines. The command 0 is used to bind engines to Sub Channels, and
-needs to be used before commands are submited to the engines.
+All methods with values \< 0x100 are special and executed by the PFIFO's
+DMA puller. The others are forwarded to the engine object currently
+bound to a given
+subchannel.
 
-The command 0 only has one argument, the Engine Id.
+| Command    | Method | Subchannel | Arg Count | Mode | Name                                 |
+| ---------- | ------ | ---------- | --------- | ---- | ------------------------------------ |
+| 0x2001?000 | 0x000  | Variable   | 1         | 1    | [BindObject](#BindObject "wikilink") |
+| 0xA0020E00 | 0xE00  | 0          | 2         | 5    | BeginTransformFeedback               |
+| 0xA0030E30 | 0xE30  | 0          | 3         | 5    | DrawArrays                           |
+| 0xA0050E36 | 0xE36  | 0          | 5         | 5    | DrawElements                         |
+| 0xA0020E2E | 0xE2E  | 0          | 2         | 5    | PopDebugGroupId                      |
+| 0xA0040E2C | 0xE2C  | 0          | 4         | 5    | PushDebugGroup                       |
+| 0x2001054C | 0x54C  | 0          | 1         | 1    | ResetCounter                         |
+| 0x8001047F | 0x47F  | 0          | 1         | 4    | ResolveDepthBuffer                   |
+| 0x200104C4 | 0x4C4  | 0          | 1         | 1    | SetAlphaRef                          |
+| 0x200404C7 | 0x4C7  | 0          | 4         | 1    | SetBlendColor                        |
+| 0x2001064F | 0x6F4  | 0          | 1         | 1    | SetDepthClamp                        |
+| 0x200200CD | 0xCD   | 0          | 2         | 1    | SetInnerTessellationLevels           |
+| 0x200204EC | 0x4EC  | 0          | 2         | 1    | SetLineWidth                         |
+| 0x200400C9 | 0xC9   | 0          | 4         | 1    | SetOuterTessellationLevels           |
+| 0x8???0373 | 0x373  | 0          | Variable  | 4    | SetPatchSize                         |
+| 0x20010546 | 0x546  | 0          | 1         | 1    | SetPointSize                         |
+| 0x20030554 | 0x554  | 0          | 3         | 1    | SetRenderEnableConditional           |
+| 0x200403EF | 0x3EF  | 0          | 4         | 1    | SetSampleMask                        |
+| 0x200103D9 | 0x3D9  | 0          | 1         | 1    | SetTiledCacheTileSize                |
 
-#### Engine Ids
+Note: These still need to be heavily verified and *could* be wrong.
 
-| Id     | Engine  |
-| ------ | ------- |
-| 0x902d | 2D      |
-| 0xb197 | 3D      |
-| 0xb1c0 | Compute |
-| 0xa140 | Kepler  |
-| 0xb0b5 | DMA     |
+### BindObject
 
-The bits 15-13 of the Command Word contains the Sub Channel index that
-should be bound.
+In order to bind an engine object to a specific subchannel, method 0
+(BindObject) must be used first. The target subchannel is specified in
+bits 15-13 of the command word.
 
-After binding the required Sub Channels, then the respective values can
-be used on the "Sub Channel" field of the Command Word to talk with the
-respective Engines.
+After the engine object is bound to the desired subchannel, setting it's
+value in bits 15-13 of any subsequent command word will make PFIFO
+forward the command to the target engine.
 
-## Fences
+This method only takes one argument, an [engine
+ID](#Engine_IDs "wikilink").
 
-Command Lists can contain fences to ensure that commands are executed on
+#### Engine IDs
+
+| ID     | Engine                        |
+| ------ | ----------------------------- |
+| 0x902D | FERMI\_TWOD\_A (2D)           |
+| 0xB197 | MAXWELL\_B (3D)               |
+| 0xB1C0 | MAXWELL\_COMPUTE\_B           |
+| 0xA140 | KEPLER\_INLINE\_TO\_MEMORY\_B |
+| 0xB0B5 | MAXWELL\_DMA\_COPY\_A (DMA)   |
+
+### Fences
+
+Command lists can contain fences to ensure that commands are executed on
 the correct order, and subsequent commands are only sent when the
 previously sent commands were already processed by the GPU. Fences uses
 the QUERY\_\* commands, and works like this:
@@ -112,8 +145,9 @@ the QUERY\_\* commands, and works like this:
   - Finally, QUERY\_GET is added and contains the mode and other unknown
     data.
 
-The above commands are added using the Sequential Mode, since the Ids
-for all those 4 registers are sequential.
+The above commands are added using the [increasing
+mode](#Submission_mode "wikilink"), since the Ids for all those 4
+registers are sequential.
 
 #### QUERY\_GET Structure
 
@@ -167,42 +201,17 @@ textured squares to the GPU.
 8.  VERTEX\_END\_GL is used with value 0 (currently unknown what this
     value means).
 
-## Command List
-
-These still need to be heavily verified and *could* be
-wrong
-
-| Command    | ID/Register | Sub Channel | Arg Count | Mode | Command Name               |
-| ---------- | ----------- | ----------- | --------- | ---- | -------------------------- |
-| 0xA0020E00 | 0xE00       | 0           | 2         | 5    | BeginTransformFeedback     |
-| 0xA0030E30 | 0xE30       | 0           | 3         | 5    | DrawArrays                 |
-| 0xA0050E36 | 0xE36       | 0           | 5         | 5    | DrawElements               |
-| 0xA0020E2E | 0xE2E       | 0           | 2         | 5    | PopDebugGroupId            |
-| 0xA0040E2C | 0xE2C       | 0           | 4         | 5    | PushDebugGroup             |
-| 0x2001054C | 0x54C       | 0           | 1         | 1    | ResetCounter               |
-| 0x8001047F | 0x47F       | 0           | 1         | 4    | ResolveDepthBuffer         |
-| 0x200104C4 | 0x4C4       | 0           | 1         | 1    | SetAlphaRef                |
-| 0x200404C7 | 0x4C7       | 0           | 4         | 1    | SetBlendColor              |
-| 0x2001064F | 0x6F4       | 0           | 1         | 1    | SetDepthClamp              |
-| 0x200200CD | 0xCD        | 0           | 2         | 1    | SetInnerTessellationLevels |
-| 0x200204EC | 0x4EC       | 0           | 2         | 1    | SetLineWidth               |
-| 0x200400C9 | 0xC9        | 0           | 4         | 1    | SetOuterTessellationLevels |
-| 0x8???0373 | 0x373       | 0           | Variable  | 4    | SetPatchSize               |
-| 0x20010546 | 0x546       | 0           | 1         | 1    | SetPointSize               |
-| 0x20030554 | 0x554       | 0           | 3         | 1    | SetRenderEnableConditional |
-| 0x200403EF | 0x3EF       | 0           | 4         | 1    | SetSampleMask              |
-| 0x200103D9 | 0x3D9       | 0           | 1         | 1    | SetTiledCacheTileSize      |
-
 ## References
 
-Check out those pages for more useful data.
+FIFO engine overview:
+[1](https://envytools.readthedocs.io/en/latest/hw/fifo/intro.html)
 
-Register Id values from the Fermi family GPU (a bit older than the Tegra
-X1, but values seems to be mostly the same):
-[1](https://github.com/envytools/envytools/blob/master/rnndb/graph/gf100_3d.xml)
+Method values from the Fermi family GPU (a bit older than the Tegra X1,
+but values seems to be mostly the same):
+[2](https://github.com/envytools/envytools/blob/master/rnndb/graph/gf100_3d.xml)
 
 Values for some types used on the above XML:
-[2](https://github.com/envytools/envytools/blob/master/rnndb/graph/nv_3ddefs.xml)
+[3](https://github.com/envytools/envytools/blob/master/rnndb/graph/nv_3ddefs.xml)
 
-Command Word packing code used on Mesa3d:
-[3](https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers/nouveau/nvc0/nvc0_winsys.h)
+Command word packing code used on Mesa3d:
+[4](https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers/nouveau/nvc0/nvc0_winsys.h)
