@@ -167,6 +167,32 @@ textured squares to the GPU.
 8.  VERTEX\_END\_GL is used with value 0 (currently unknown what this
     value means).
 
+## Command List
+
+These still need to be heavily verified and *could* be
+wrong
+
+| Command    | ID/Register | Sub Channel | Arg Count | Mode | Command Name               |
+| ---------- | ----------- | ----------- | --------- | ---- | -------------------------- |
+| 0xA0020E00 | 0xE00       | 0           | 2         | 5    | BeginTransformFeedback     |
+| 0xA0030E30 | 0xE30       | 0           | 3         | 5    | DrawArrays                 |
+| 0xA0050E36 | 0xE36       | 0           | 5         | 5    | DrawElements               |
+| 0xA0020E2E | 0xE2E       | 0           | 2         | 5    | PopDebugGroupId            |
+| 0xA0040E2C | 0xE2C       | 0           | 4         | 5    | PushDebugGroup             |
+| 0x2001054C | 0x54C       | 0           | 1         | 1    | ResetCounter               |
+| 0x8001047F | 0x47F       | 0           | 1         | 4    | ResolveDepthBuffer         |
+| 0x200104C4 | 0x4C4       | 0           | 1         | 1    | SetAlphaRef                |
+| 0x200404C7 | 0x4C7       | 0           | 4         | 1    | SetBlendColor              |
+| 0x2001064F | 0x6F4       | 0           | 1         | 1    | SetDepthClamp              |
+| 0x200200CD | 0xCD        | 0           | 2         | 1    | SetInnerTessellationLevels |
+| 0x200204EC | 0x4EC       | 0           | 2         | 1    | SetLineWidth               |
+| 0x200400C9 | 0xC9        | 0           | 4         | 1    | SetOuterTessellationLevels |
+| 0x8???0373 | 0x373       | 0           | Variable  | 4    | SetPatchSize               |
+| 0x20010546 | 0x546       | 0           | 1         | 1    | SetPointSize               |
+| 0x20030554 | 0x554       | 0           | 3         | 1    | SetRenderEnableConditional |
+| 0x200403EF | 0x3EF       | 0           | 4         | 1    | SetSampleMask              |
+| 0x200103D9 | 0x3D9       | 0           | 1         | 1    | SetTiledCacheTileSize      |
+
 ## References
 
 Check out those pages for more useful data.
