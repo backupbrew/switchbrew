@@ -79,43 +79,47 @@ All methods with values < 0x100 are special and executed by the PFIFO's DMA pull
 |-
 ! Command || Method || Subchannel || Arg Count || Mode || Name
 |-
-| 0x2001?000 || 0x000 || Variable || 1 || 1 || [[#BindObject|BindObject]]
+| 0x2001?000 || 0x0000 || Variable || 1 || 1 || [[#BindObject|BindObject]]
 |-
-| 0xA0020E00 || 0xE00 || 0 || 2 || 5 || BeginTransformFeedback
+| 0xA0020E00 || 0x3800 || 0 || 2 || 5 || BeginTransformFeedback
 |-
-| 0xA0030E30 || 0xE30 || 0 || 3 || 5 || DrawArrays
+| 0xA0030E30 || 0x38C0 || 0 || 3 || 5 || DrawArrays
 |-
-| 0xA0050E36 || 0xE36 || 0 || 5 || 5 || DrawElements
+| 0xA0050E36 || 0x38D8 || 0 || 5 || 5 || DrawElements
 |-
-| 0xA0020E2E || 0xE2E || 0 || 2 || 5 || PopDebugGroupId
+| 0xA0020E2E || 0x38B8 || 0 || 2 || 5 || PopDebugGroupId
 |-
-| 0xA0040E2C || 0xE2C || 0 || 4 || 5 || PushDebugGroup
+| 0xA0040E2C || 0x38B0 || 0 || 4 || 5 || PushDebugGroup
 |-
-| 0x2001054C || 0x54C || 0 || 1 || 1 || ResetCounter
+| 0x2001054C || 0x1530 || 0 || 1 || 1 || ResetCounter
 |-
-| 0x8001047F || 0x47F || 0 || 1 || 4 || ResolveDepthBuffer
+| 0x8001047F || 0x11FC || 0 || 1 || 4 || ResolveDepthBuffer
 |-
-| 0x200104C4 || 0x4C4 || 0 || 1 || 1 || SetAlphaRef
+| 0x200104C4 || 0x1310 || 0 || 1 || 1 || SetAlphaRef
 |-
-| 0x200404C7 || 0x4C7 || 0 || 4 || 1 || SetBlendColor
+| 0x200404C7 || 0x131C || 0 || 4 || 1 || SetBlendColor
 |-
-| 0x2001064F || 0x6F4 || 0 || 1 || 1 || SetDepthClamp
+| 0x2001064F || 0x1BD0 || 0 || 1 || 1 || SetDepthClamp
 |-
-| 0x200200CD || 0xCD || 0 || 2 || 1 || SetInnerTessellationLevels
+| 0x200200CD || 0x0334 || 0 || 2 || 1 || SetInnerTessellationLevels
 |-
-| 0x200204EC || 0x4EC || 0 || 2 || 1 || SetLineWidth
+| 0x200204EC || 0x13B0 || 0 || 2 || 1 || SetLineWidth
 |-
-| 0x200400C9 || 0xC9 || 0 || 4 || 1 || SetOuterTessellationLevels
+| 0x200400C9 || 0x0324 || 0 || 4 || 1 || SetOuterTessellationLevels
 |-
-| 0x8???0373 || 0x373 || 0 || Variable || 4 || SetPatchSize
+| 0x8???0373 || 0x0DCC || 0 || Variable || 4 || SetPatchSize
 |-
-| 0x20010546 || 0x546 || 0 || 1 || 1 || SetPointSize
+| 0x20010546 || 0x1518 || 0 || 1 || 1 || SetPointSize
 |-
-| 0x20030554 || 0x554 || 0 || 3 || 1 || SetRenderEnableConditional
+| 0x20030554 || 0x1550 || 0 || 3 || 1 || SetRenderEnableConditional
 |-
-| 0x200403EF || 0x3EF || 0 || 4 || 1 || SetSampleMask
+| 0x200403EF || 0x0FBC || 0 || 4 || 1 || SetSampleMask
 |-
-| 0x200103D9 || 0x3D9 || 0 || 1 || 1 || SetTiledCacheTileSize
+| 0x200103D9 || 0x0F64 || 0 || 1 || 1 || SetTiledCacheTileSize
+|-
+| 0x20020047 || 0x011C || 0 || 2 || 1 || SetGraphMacroEntry
+|-
+| 0xA???0045 || 0x0114 || 0 || Variable || 5 || SetGraphMacroCode
 |}
 
 Note: These still need to be heavily verified and ''could'' be wrong.
