@@ -13,19 +13,27 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 !  Address
 !  Width
 |-
-| TSEC_THI_UNK0
+| TSEC_THI_CTXSW
 | 0x54500020
+| 0x04
+|-
+| TSEC_THI_METHOD0
+| 0x54500040
+| 0x04
+|-
+| TSEC_THI_METHOD1
+| 0x54500044
 | 0x04
 |-
 | TSEC_THI_INT_STATUS
 | 0x54500078
 | 0x04
 |-
-| TSEC_THI_INT_STATUS2
+| TSEC_THI_INT_MASK
 | 0x5450007C
 | 0x04
 |-
-| TSEC_THI_UNK1
+| TSEC_THI_UNK0
 | 0x54500084
 | 0x04
 |-
@@ -147,6 +155,14 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 |-
 | FALCON_CPUCTL_ALIAS
 | 0x54501130
+| 0x04
+|-
+| FALCON_IMFILLRNG1
+| 0x54501154
+| 0x04
+|-
+| FALCON_IMFILLCTL
+| 0x54501158
 | 0x04
 |-
 | FALCON_EXTERRADDR

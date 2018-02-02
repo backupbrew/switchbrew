@@ -19,10 +19,12 @@ TSEC.
 
 | Name                                                    | Address    | Width |
 | ------------------------------------------------------- | ---------- | ----- |
-| TSEC\_THI\_UNK0                                         | 0x54500020 | 0x04  |
+| TSEC\_THI\_CTXSW                                        | 0x54500020 | 0x04  |
+| TSEC\_THI\_METHOD0                                      | 0x54500040 | 0x04  |
+| TSEC\_THI\_METHOD1                                      | 0x54500044 | 0x04  |
 | TSEC\_THI\_INT\_STATUS                                  | 0x54500078 | 0x04  |
-| TSEC\_THI\_INT\_STATUS2                                 | 0x5450007C | 0x04  |
-| TSEC\_THI\_UNK1                                         | 0x54500084 | 0x04  |
+| TSEC\_THI\_INT\_MASK                                    | 0x5450007C | 0x04  |
+| TSEC\_THI\_UNK0                                         | 0x54500084 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_HIGH\_A                      | 0x54500088 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_LOW\_A                       | 0x5450008C | 0x04  |
 | TSEC\_THI\_CLK\_OVERRIDE                                | 0x54500E00 | 0x04  |
@@ -53,6 +55,8 @@ TSEC.
 | [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")       | 0x54501118 | 0x04  |
 | [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink") | 0x5450111C | 0x04  |
 | FALCON\_CPUCTL\_ALIAS                                   | 0x54501130 | 0x04  |
+| FALCON\_IMFILLRNG1                                      | 0x54501154 | 0x04  |
+| FALCON\_IMFILLCTL                                       | 0x54501158 | 0x04  |
 | FALCON\_EXTERRADDR                                      | 0x54501168 | 0x04  |
 | FALCON\_EXTERRSTAT                                      | 0x5450116C | 0x04  |
 | FALCON\_CG2                                             | 0x5450117C | 0x04  |
