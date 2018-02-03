@@ -138,6 +138,8 @@ Takes a socket file descriptor and an unused u64. Duplicates the socket (FreeBSD
 = sfdnsres =
 This is "nn::socket::resolver::IResolver".
 
+This service uses <code>bionic/libc/dns</code> to perform its tasks.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

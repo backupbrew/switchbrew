@@ -133,8 +133,10 @@ Takes a socket file descriptor and an unused u64. Duplicates the socket
 
 # sfdnsres
 
-This is
-"nn::socket::resolver::IResolver".
+This is "nn::socket::resolver::IResolver".
+
+This service uses `bionic/libc/dns` to perform its
+tasks.
 
 | Cmd | Name                                                                                      |
 | --- | ----------------------------------------------------------------------------------------- |
