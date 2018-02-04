@@ -3,7 +3,6 @@
 {| width="100%" bgcolor="#fff" border="0" cellpadding="2px" cellspacing="2px" style="margin:auto;"
 |- valign="top" align="left" style="background: #F5FAFF;"
 | {{:FirmwareNews}}
-| [[3.0.0]] or lower system version is recommended.
 |}
 </div>
 {{box-footer-empty}}
