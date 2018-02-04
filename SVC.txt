@@ -721,9 +721,9 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 5 || 0 || HeapRegionSize
 |-
-| Process || 6 || 0 || TotalMemoryUsage
+| Process || 6 || 0 || TotalMemoryAvailable. Total memory available(free+used).
 |-
-| Process || 7 || 0 || TotalHeapUsage
+| Process || 7 || 0 || TotalMemoryUsage. Total used size of codebin memory + main-thread stack + allocated heap.
 |-
 | Zero    || 8 || 0 || IsCurrentProcessBeingDebugged
 |-

@@ -550,8 +550,8 @@ it will return 0 and notify the debugger?
 | Process     | 3          | 0                     | MapRegionSize                                                                                               |
 | Process     | 4          | 0                     | HeapRegionBaseAddr                                                                                          |
 | Process     | 5          | 0                     | HeapRegionSize                                                                                              |
-| Process     | 6          | 0                     | TotalMemoryUsage                                                                                            |
-| Process     | 7          | 0                     | TotalHeapUsage                                                                                              |
+| Process     | 6          | 0                     | TotalMemoryAvailable. Total memory available(free+used).                                                    |
+| Process     | 7          | 0                     | TotalMemoryUsage. Total used size of codebin memory + main-thread stack + allocated heap.                   |
 | Zero        | 8          | 0                     | IsCurrentProcessBeingDebugged                                                                               |
 | Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink"). |
 | Zero        | 10         | \-1, {current coreid} | IdleTickCount                                                                                               |
