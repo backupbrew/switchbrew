@@ -39,7 +39,7 @@ When decrypted, package2's header is as follows.
 |-
 | 0x0
 | 0x10
-| Decrypted header's CTR. Also used to calculate the size of the entire package2 with the raw header: size = word2 ^ word3 ^ word0.
+| Header's CTR. Official code copies the pre-decryption CTR over the decrypted result. Used to calculate the size of the entire package2 with the raw header: size = word2 ^ word3 ^ word0, additionally validated by checking (word1 ^ (word1 >> 16)) & 0xFF == word1 >> 24.
 |-
 | 0x10
 | 0x10
