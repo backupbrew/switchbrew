@@ -203,6 +203,67 @@ textured squares to the GPU.
 8.  VERTEX\_END\_GL is used with value 0 (currently unknown what this
     value means).
 
+## Texture View
+
+Texture information such as address, format and size is sent to the GPU
+through a structure know as Texture View (a.k.a Texture Image Control,
+or TIC). Each texture that the game uses needs a separate TIC, and those
+TICs are written to a table, one after the other. Each [TIC
+entry](#TIC_Structure "wikilink") has 0x20 bytes, and is composed of 8
+32-bits words where the texture information is packed.
+
+The index of the TIC entries that should be used by the shader is sent
+to the GPU with the CB\_POS/CB\_DATA (0) methods. Games usually follows
+the following steps to write the TIC entry indexes:
+
+  - CB\_ADDRESS\_HIGH/LOW method is used to set the GPU Virtual Address
+    of the Const Buffer.
+  - CB\_POS is used to set the write offset of the Const Buffer to 0x20
+    + n \* 4, where *n* is the is the index of the active texture that
+    will be used by the shader (?).
+  - CB\_DATA (0) method is used to write the value into the Const
+    Buffer. The value is a word where the lower 20 bits is the TIC
+    index.
+
+The address of a given TIC entry can be calculates as:
+
+`tic_entry_address = tic_base_address + tic_index * 0x20`
+
+Where *tic\_base\_address* is the address written to
+TIC\_ADDRESS\_HIGH/LOW (methods 0x1574 and 0x1578), *tic\_index* is the
+lower 20 bits of the word written into the Const Buffer with CB\_DATA
+(0), and 0x20 is the size of each TIC entry in bytes.
+
+Note: More research still needs to be done on the Const Buffer and how
+it is used by the
+shader.
+
+### TIC Structure
+
+| Word | Bits  | Description                                                                                |
+| ---- | ----- | ------------------------------------------------------------------------------------------ |
+| 0    | 6-0   | [Texture Format](GPU%20Texture%20Formats#Texture%20Formats.md##Texture_Formats "wikilink") |
+| 0    | 9-7   | [R Channel Data Type](#Channel_Data_Type "wikilink")                                       |
+| 0    | 12-10 | [G Channel Data Type](#Channel_Data_Type "wikilink")                                       |
+| 0    | 15-13 | [B Channel Data Type](#Channel_Data_Type "wikilink")                                       |
+| 0    | 18-16 | [A Channel Data Type](#Channel_Data_Type "wikilink")                                       |
+| 1    | 31-0  | Lower 32-bits of the Texture GPU Virtual Address                                           |
+| 2    | 15-0  | Higher 16-bits of the Texture GPU Virtual Address                                          |
+| 4    | 15-0  | Texture Width minus 1                                                                      |
+| 5    | 15-0  | Texture Height minus 1                                                                     |
+
+#### Channel Data Type
+
+| Value | Type               |
+| ----- | ------------------ |
+| 1     | SNORM              |
+| 2     | UNORM              |
+| 3     | SINT               |
+| 4     | UINT               |
+| 5     | SNORM\_FORCE\_FP16 |
+| 6     | UNORM\_FORCE\_FP16 |
+| 7     | FLOAT              |
+
 ## References
 
 FIFO engine overview:
@@ -212,8 +273,14 @@ Method values from the Fermi family GPU (a bit older than the Tegra X1,
 but values seems to be mostly the same):
 [2](https://github.com/envytools/envytools/blob/master/rnndb/graph/gf100_3d.xml)
 
+TIC structure used on a Maxwell GPU:
+[3](https://github.com/envytools/envytools/blob/master/rnndb/graph/gm200_texture.xml)
+
 Values for some types used on the above XML:
-[3](https://github.com/envytools/envytools/blob/master/rnndb/graph/nv_3ddefs.xml)
+[4](https://github.com/envytools/envytools/blob/master/rnndb/graph/nv_3ddefs.xml)
 
 Command word packing code used on Mesa3d:
-[4](https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers/nouveau/nvc0/nvc0_winsys.h)
+[5](https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers/nouveau/nvc0/nvc0_winsys.h)
+
+TIC entry pack/write code used on Mesa3d:
+[6](https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers/nouveau/nvc0/nvc0_tex.c#n65)

@@ -222,6 +222,70 @@ Note: This is a observation on how the game Puyo Puyo Tetris sends textured squa
 # VERTEX_BUFFER_COUNT is set to 4, because the Vertex Buffer with the square has 4 vertices.
 # VERTEX_END_GL is used with value 0 (currently unknown what this value means).
 
+== Texture View ==
+
+Texture information such as address, format and size is sent to the GPU through a structure know as Texture View (a.k.a Texture Image Control, or TIC). Each texture that the game uses needs a separate TIC, and those TICs are written to a table, one after the other. Each [[#TIC_Structure|TIC entry]] has 0x20 bytes, and is composed of 8 32-bits words where the texture information is packed.
+
+The index of the TIC entries that should be used by the shader is sent to the GPU with the CB_POS/CB_DATA (0) methods. Games usually follows the following steps to write the TIC entry indexes:
+
+* CB_ADDRESS_HIGH/LOW method is used to set the GPU Virtual Address of the Const Buffer.
+* CB_POS is used to set the write offset of the Const Buffer to 0x20 + n * 4, where ''n'' is the is the index of the active texture that will be used by the shader (?).
+* CB_DATA (0) method is used to write the value into the Const Buffer. The value is a word where the lower 20 bits is the TIC index.
+
+The address of a given TIC entry can be calculates as:
+
+ tic_entry_address = tic_base_address + tic_index * 0x20
+
+Where ''tic_base_address'' is the address written to TIC_ADDRESS_HIGH/LOW (methods 0x1574 and 0x1578), ''tic_index'' is the lower 20 bits of the word written into the Const Buffer with CB_DATA (0), and 0x20 is the size of each TIC entry in bytes.
+
+Note: More research still needs to be done on the Const Buffer and how it is used by the shader.
+
+=== TIC Structure ===
+
+{| class="wikitable" border="1"
+|-
+! Word || Bits || Description
+|-
+| 0 || 6-0 || [[GPU_Texture_Formats#Texture_Formats|Texture Format]]
+|-
+| 0 || 9-7 || [[#Channel_Data_Type|R Channel Data Type]]
+|-
+| 0 || 12-10 || [[#Channel_Data_Type|G Channel Data Type]]
+|-
+| 0 || 15-13 || [[#Channel_Data_Type|B Channel Data Type]]
+|-
+| 0 || 18-16 || [[#Channel_Data_Type|A Channel Data Type]]
+|-
+| 1 || 31-0 || Lower 32-bits of the Texture GPU Virtual Address
+|-
+| 2 || 15-0 || Higher 16-bits of the Texture GPU Virtual Address
+|-
+| 4 || 15-0 || Texture Width minus 1
+|-
+| 5 || 15-0 || Texture Height minus 1
+|}
+
+==== Channel Data Type ====
+
+{| class="wikitable" border="1"
+|-
+! Value || Type
+|-
+| 1 || SNORM
+|-
+| 2 || UNORM
+|-
+| 3 || SINT
+|-
+| 4 || UINT
+|-
+| 5 || SNORM_FORCE_FP16
+|-
+| 6 || UNORM_FORCE_FP16
+|-
+| 7 || FLOAT
+|}
+
 == References ==
 
 FIFO engine overview:
@@ -230,8 +294,14 @@ FIFO engine overview:
 Method values from the Fermi family GPU (a bit older than the Tegra X1, but values seems to be mostly the same):
 [https://github.com/envytools/envytools/blob/master/rnndb/graph/gf100_3d.xml]
 
+TIC structure used on a Maxwell GPU:
+[https://github.com/envytools/envytools/blob/master/rnndb/graph/gm200_texture.xml]
+
 Values for some types used on the above XML:
 [https://github.com/envytools/envytools/blob/master/rnndb/graph/nv_3ddefs.xml]
 
 Command word packing code used on Mesa3d:
 [https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers/nouveau/nvc0/nvc0_winsys.h]
+
+TIC entry pack/write code used on Mesa3d:
+[https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers/nouveau/nvc0/nvc0_tex.c#n65]
