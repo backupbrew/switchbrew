@@ -39,7 +39,7 @@ When decrypted, package2's header is as follows.
 |-
 | 0x0
 | 0x10
-| Header's CTR. Official code copies the pre-decryption CTR over the decrypted result. Used to calculate the size of the entire package2 with the raw header: size = word2 ^ word3 ^ word0, additionally validated by checking (word1 ^ (word1 >> 16)) & 0xFF == word1 >> 24.
+| Header's CTR. Also used as metadata before decryption.
 |-
 | 0x10
 | 0x10
@@ -128,6 +128,12 @@ When decrypted, package2's header is as follows.
 
 Each section follows each other immediately and is encrypted with the same key used for encrypting the header.
 The section offsets are relative to a base, which is typically 0x80000000 pointing to the base of DRAM.
+
+Before being decrypted, the encrypted header's CTR additionally encodes metadata used to validate package2's contents as follows:
+* Size of the entire package2 with the raw header = ctr_word2 ^ ctr_word3 ^ ctr_word0
+* Metadata version field = ((ctr_word1 ^ (ctr_word1 >> 16)) & 0xFF) ^ (ctr_word1 >> 24)
+
+In [4.0.0], the metadata version field must be less or equal to 4.
 
 == Section 0 ==
 When decrypted, this section contains the plaintext Switch kernel binary.
