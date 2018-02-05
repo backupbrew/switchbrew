@@ -206,7 +206,7 @@ textured squares to the GPU.
 ## Texture View
 
 Texture information such as address, format and size is sent to the GPU
-through a structure know as Texture View (a.k.a Texture Image Control,
+through a structure know as Texture View (a.k.a. Texture Image Control,
 or TIC). Each texture that the game uses needs a separate TIC, and those
 TICs are written to a table, one after the other. Each [TIC
 entry](#TIC_Structure "wikilink") has 0x20 bytes, and is composed of 8

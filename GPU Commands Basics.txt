@@ -224,7 +224,7 @@ Note: This is a observation on how the game Puyo Puyo Tetris sends textured squa
 
 == Texture View ==
 
-Texture information such as address, format and size is sent to the GPU through a structure know as Texture View (a.k.a Texture Image Control, or TIC). Each texture that the game uses needs a separate TIC, and those TICs are written to a table, one after the other. Each [[#TIC_Structure|TIC entry]] has 0x20 bytes, and is composed of 8 32-bits words where the texture information is packed.
+Texture information such as address, format and size is sent to the GPU through a structure know as Texture View (a.k.a. Texture Image Control, or TIC). Each texture that the game uses needs a separate TIC, and those TICs are written to a table, one after the other. Each [[#TIC_Structure|TIC entry]] has 0x20 bytes, and is composed of 8 32-bits words where the texture information is packed.
 
 The index of the TIC entries that should be used by the shader is sent to the GPU with the CB_POS/CB_DATA (0) methods. Games usually follows the following steps to write the TIC entry indexes:
 
