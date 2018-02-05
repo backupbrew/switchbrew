@@ -32,7 +32,7 @@ follows.
 
 | Offset | Size | Description                                                                                                                                                  |
 | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0x0    | 0x10 | Header's CTR. Also used as metadata before decryption.                                                                                                       |
+| 0x0    | 0x10 | Header's CTR, official code copies the pre-decryption CTR over the decrypted result. Also used as metadata.                                                  |
 | 0x10   | 0x10 | Section 0 CTR                                                                                                                                                |
 | 0x20   | 0x10 | Section 1 CTR                                                                                                                                                |
 | 0x30   | 0x10 | Section 2 CTR                                                                                                                                                |

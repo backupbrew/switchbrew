@@ -39,7 +39,7 @@ When decrypted, package2's header is as follows.
 |-
 | 0x0
 | 0x10
-| Header's CTR. Also used as metadata before decryption.
+| Header's CTR, official code copies the pre-decryption CTR over the decrypted result. Also used as metadata.
 |-
 | 0x10
 | 0x10
