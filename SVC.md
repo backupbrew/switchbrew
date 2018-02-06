@@ -131,7 +131,7 @@
 **Description:** Set the process heap to a given Size. It can both
 extend and shrink the heap.
 
-Size must be a multiple of 0x2000000.
+Size must be a multiple of 0x200000.
 
 On success, the heap base-address (which is fixed by kernel, aslr'd) is
 written to OutAddr.
