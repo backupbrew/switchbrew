@@ -11,6 +11,7 @@ The code for this stage is stored in plaintext inside the package. By looking in
 === Initialization ===
 The stack pointer is set.
 
+<syntaxhighlight lang="c">
  // Set the stack pointer
  *(u32 *)sp = 0x40008000;
  
@@ -19,10 +20,12 @@ The stack pointer is set.
  
  // Infinite loop
  deadlock();
+</syntaxhighlight>
 
 === Main ===
 The bootloader poisons the exception vectors, cleans up memory (.bss and init_array), sets up hardware devices (including the security engine and fuses), does all the necessary checks, generates keys and finally decrypts and executes the next stage.
 
+<syntaxhighlight lang="c">
  // Poison all exception vectors
  *(u32 *)0x6000F200 = panic();
  *(u32 *)0x6000F204 = panic();
@@ -111,10 +114,12 @@ The bootloader poisons the exception vectors, cleans up memory (.bss and init_ar
  exec_nx_boot_stub(nx_boot_addr, nx_boot_stub_addr, nx_boot_sp);
  
  return;
+</syntaxhighlight>
 
 ==== Panic ====
 If a panic occurs, all sensitive memory contents are cleared, the security engine and fuse programming are disabled and the boot processor is left in a halted state.
 
+<syntaxhighlight lang="c">
  // Clear all stack contents
  clear_stack();
  
@@ -138,6 +143,7 @@ If a panic occurs, all sensitive memory contents are cleared, the security engin
  // Halt the boot processor
  while (true)
     *(u32 *)FLOW_CTLR_HALT_COP_EVENTS = (FLOW_MODE_STOP | HALT_COP_EVENT_JTAG);
+</syntaxhighlight>
 
 ==== Anti-downgrade ====
 See [[Fuses#Anti-downgrade|Anti-downgrade]].
@@ -145,6 +151,7 @@ See [[Fuses#Anti-downgrade|Anti-downgrade]].
 ==== Memory controllers ====
 After disabling fuse programming, the bootloader configures the EMC and MEM/MC. It additionally disables QSPI resets and programs a special aperture designed for AHB redirected access to IRAM.
 
+<syntaxhighlight lang="c">
  u32 PERIPH_CLK_SOURCE_EMC = 0x6000619C;
  u32 CLK_OUT_ENB_SET_H = 0x60006328;
  u32 CLK_OUT_ENB_SET_X = 0x60006284;
@@ -202,6 +209,7 @@ After disabling fuse programming, the bootloader configures the EMC and MEM/MC. 
  mc_iram_reg_ctrl_val = *(u32 *)MC_IRAM_REG_CTRL;
  	
  return mc_iram_reg_ctrl_val;
+</syntaxhighlight>
 
 ==== Key generation ====
 After the security engine is ready and before decrypting the next stage, the bootloader initializes and generates several keys into hardware keyslots.
@@ -210,6 +218,7 @@ For more details on the Switch's cryptosystem, please see [[Cryptosystem|this pa
 ===== Selection =====
 Depending on [[Fuses#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]] and [[Fuses#FUSE_SPARE_BIT_5|FUSE_SPARE_BIT_5]] different static seeds are selected for key generation.
 
+<syntaxhighlight lang="c">
  // Initialize keyslots 0x0C and 0x0D as readable
  init_keyslot(0x0C, 0x15);
  init_keyslot(0x0D, 0x15);
@@ -295,12 +304,14 @@ Depending on [[Fuses#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]] and [[Fuses#FUSE_SP
  init_keyslot(0x0D, 0xFF);
  
  return;
+</syntaxhighlight>
 
 ===== generate_retail_keys =====
 In order to generate retail keys, the bootloader starts by initializing TSEC and grabbing it's [[TSEC#Device_key_generation|device key]]. Using static seeds and the SBK, the keyblob injected into the BCT's [[BCT#customer_data|customer_data]] is validated and decrypted. The resulting keys will then be used to generate the master static key and the master device key.
 
 See the pseudocode bellow for the detailed process.
 
+<syntaxhighlight lang="c">
  u32 in_addr = 0;
  u32 in_size = 0;
  u32 out_addr = 0;
@@ -411,12 +422,14 @@ See the pseudocode bellow for the detailed process.
  decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
  
  return;
+</syntaxhighlight>
 
 ===== generate_debug_keys =====
 In order to generate debug keys, the bootloader only uses static seeds, the SBK and the SSK.
 
 See the pseudocode bellow for the detailed process.
 
+<syntaxhighlight lang="c">
  u32 in_addr = 0;
  u32 in_size = 0;
  u32 keyslot = 0;
@@ -477,6 +490,7 @@ See the pseudocode bellow for the detailed process.
  decrypt_keyslot(keyslot_dst, keyslot, in_addr, in_size);
  
  return;
+</syntaxhighlight>
 
 == PK11 Blob ==
 This blob is stored encrypted inside the package and is decrypted by the initial bootloader.
@@ -484,6 +498,7 @@ This blob is stored encrypted inside the package and is decrypted by the initial
 === Encryption ===
 The encrypted blob is prepended with it's CTR and total image size. After checking the image's size against an hardcoded value (can change on firmware updates), the image is AES-CTR decrypted and the keyslot used for decryption is immediately cleared.
 
+<syntaxhighlight lang="c">
  // Maximum encrypted blob's size on firmware version 1.0.0
  u32 max_pk11_enc_blob_size = 0x29000;
  
@@ -526,6 +541,7 @@ The encrypted blob is prepended with it's CTR and total image size. After checki
  u32 nx_boot_addr = (pk11_dec_blob_addr + pk11_header_size + pk11_sec1_offset + pk11_sec2_size);
  		
  return nx_boot_addr;
+</syntaxhighlight>
 
 === Header ===
 When decrypted, the blob is encapsulated in the following header.
