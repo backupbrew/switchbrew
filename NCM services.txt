@@ -133,23 +133,23 @@ This is "nn::ncm::IContentStorage".
 |-
 | 1 || || Takes two 0x10-sized entries, and a u64.
 |-
-| 2 || || Takes a 0x10-sized entry.
+| 2 || DeletePlaceholderEntry || Takes a 0x10-sized entry.
 |-
-| 3 || || Takes a 0x10-sized entry, returns a bool/u8.
+| 3 || GetEntryType || Takes a 0x10-sized entry, returns a bool/u8.
 |-
-| 4 || || Takes a 0x10-sized entry, a u64-offset, and type-5 array.
+| 4 || WritePlaceholderEntry || Takes a [[#NcaID]], a u64-offset, and type-5 array.
 |-
-| 5 || || Takes two 0x10-sized entries.
+| 5 || MovePlaceholderToRegistered || Takes two 0x10-sized entries.
 |-
 | 6 || DeleteContent? || Takes a 0x10-sized entry.
 |-
 | 7 || IsNcaEntryValid || Takes a [[#NcaID]], returns a bool.
 |-
-| 8 || MakeNcaRegisteredPath || Takes a [[#NcaID]]. Returns a type-0x1A string.
+| 8 || GetPath || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
 |-
-| 9 || MakeNcaPlaceholderPath || Takes a [[#NcaID]]. Returns a type-0x1A string.
+| 9 || GetPlaceholderPath || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
 |-
-| 10 || || Void.
+| 10 || CleanPlaceholderDirectory || Deletes the Placeholder directory.
 |-
 | 11 || || Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32.
 |-
@@ -159,19 +159,19 @@ This is "nn::ncm::IContentStorage".
 |-
 | 14 || [[#GetEntrySize]] ||
 |-
-| 15 || || Void.
+| 15 || CloseStorage || Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.
 |-
 | 16 || || Takes three 0x10-sized entries.
 |-
-| 17 || || Takes a 0x10-sized entry and a u64.
+| 17 || SetPlaceholderSize || Takes a [[#NcaID]], and a u64 size
 |-
 | 18 || [[#ReadEntryRaw]] ||
 |-
-| 19 || || Takes a 0x10-sized entry and returns another 0x10-sized entry.
+| 19 || GetPlaceholderRightsID || Gets the Rights ID for the [[#NcaID]]'s placeholder path.
 |-
-| 20 || [[#GetNcaTitleInfo]] || 
+| 20 || GetRegisteredRightsID || Gets the Rights ID for the [[#NcaID]]'s registered path
 |-
-| 21 || || Takes a 0x10-sized entry, a u64, and a type5 buffer.
+| 21 || WriteRegisteredPathForDebug || Takes a [[#NcaID]], a u64 size, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts.
 |-
 | 22 || GetFreeSpace ||
 |-
@@ -211,26 +211,6 @@ Overwriting the entire raw NAX0 content with zeros results in output data which 
 This implies that that an AES mode is being used which isn't CTR, where changing data in one block doesn't affect other blocks.
 
 See GetEntrySize for the total size readable with this.
-
-==== GetNcaTitleInfo ====
-Takes a [[#NcaID]] and returns the following 0x10-sized entry.
-
-With some NcaIDs this may return 0 with an all-zero output entry. This seems to be the case for most/all (?) NandSystem NcaIds? This seems to be only usable with NcaIds which have [[NCA|type]] 1 or 4.
-
-{| class="wikitable" border="1"
-|-
-! Offset
-! Size
-! Description
-|-
-| 0x0
-| 0x8
-| Big-endian titleID
-|-
-| 0x8
-| 0x8
-| Unknown. Usually zero?
-|}
 
 === IContentMetaDatabase ===
 This is "nn::ncm::IContentMetaDatabase".

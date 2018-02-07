@@ -105,32 +105,32 @@ All of the above cmds takes a u8 as input.
 This is
 "nn::ncm::IContentStorage".
 
-| Cmd | Name                                                   | Notes                                                             |
-| --- | ------------------------------------------------------ | ----------------------------------------------------------------- |
-| 0   | [\#GetRootEntry](#GetRootEntry "wikilink")             |                                                                   |
-| 1   |                                                        | Takes two 0x10-sized entries, and a u64.                          |
-| 2   |                                                        | Takes a 0x10-sized entry.                                         |
-| 3   |                                                        | Takes a 0x10-sized entry, returns a bool/u8.                      |
-| 4   |                                                        | Takes a 0x10-sized entry, a u64-offset, and type-5 array.         |
-| 5   |                                                        | Takes two 0x10-sized entries.                                     |
-| 6   | DeleteContent?                                         | Takes a 0x10-sized entry.                                         |
-| 7   | IsNcaEntryValid                                        | Takes a [\#NcaID](#NcaID "wikilink"), returns a bool.             |
-| 8   | MakeNcaRegisteredPath                                  | Takes a [\#NcaID](#NcaID "wikilink"). Returns a type-0x1A string. |
-| 9   | MakeNcaPlaceholderPath                                 | Takes a [\#NcaID](#NcaID "wikilink"). Returns a type-0x1A string. |
-| 10  |                                                        | Void.                                                             |
-| 11  |                                                        | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32.  |
-| 12  | [\#GetNumberOfEntries](#GetNumberOfEntries "wikilink") |                                                                   |
-| 13  | [\#GetEntries](#GetEntries "wikilink")                 |                                                                   |
-| 14  | [\#GetEntrySize](#GetEntrySize "wikilink")             |                                                                   |
-| 15  |                                                        | Void.                                                             |
-| 16  |                                                        | Takes three 0x10-sized entries.                                   |
-| 17  |                                                        | Takes a 0x10-sized entry and a u64.                               |
-| 18  | [\#ReadEntryRaw](#ReadEntryRaw "wikilink")             |                                                                   |
-| 19  |                                                        | Takes a 0x10-sized entry and returns another 0x10-sized entry.    |
-| 20  | [\#GetNcaTitleInfo](#GetNcaTitleInfo "wikilink")       |                                                                   |
-| 21  |                                                        | Takes a 0x10-sized entry, a u64, and a type5 buffer.              |
-| 22  | GetFreeSpace                                           |                                                                   |
-| 23  | GetTotalSpace                                          |                                                                   |
+| Cmd | Name                                                   | Notes                                                                                                                                                                     |
+| --- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | [\#GetRootEntry](#GetRootEntry "wikilink")             |                                                                                                                                                                           |
+| 1   |                                                        | Takes two 0x10-sized entries, and a u64.                                                                                                                                  |
+| 2   | DeletePlaceholderEntry                                 | Takes a 0x10-sized entry.                                                                                                                                                 |
+| 3   | GetEntryType                                           | Takes a 0x10-sized entry, returns a bool/u8.                                                                                                                              |
+| 4   | WritePlaceholderEntry                                  | Takes a [\#NcaID](#NcaID "wikilink"), a u64-offset, and type-5 array.                                                                                                     |
+| 5   | MovePlaceholderToRegistered                            | Takes two 0x10-sized entries.                                                                                                                                             |
+| 6   | DeleteContent?                                         | Takes a 0x10-sized entry.                                                                                                                                                 |
+| 7   | IsNcaEntryValid                                        | Takes a [\#NcaID](#NcaID "wikilink"), returns a bool.                                                                                                                     |
+| 8   | GetPath                                                | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                             |
+| 9   | GetPlaceholderPath                                     | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                             |
+| 10  | CleanPlaceholderDirectory                              | Deletes the Placeholder directory.                                                                                                                                        |
+| 11  |                                                        | Takes a type-6 buffer, each entry 0x10 bytes, and returns a u32.                                                                                                          |
+| 12  | [\#GetNumberOfEntries](#GetNumberOfEntries "wikilink") |                                                                                                                                                                           |
+| 13  | [\#GetEntries](#GetEntries "wikilink")                 |                                                                                                                                                                           |
+| 14  | [\#GetEntrySize](#GetEntrySize "wikilink")             |                                                                                                                                                                           |
+| 15  | CloseStorage                                           | Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.                                           |
+| 16  |                                                        | Takes three 0x10-sized entries.                                                                                                                                           |
+| 17  | SetPlaceholderSize                                     | Takes a [\#NcaID](#NcaID "wikilink"), and a u64 size                                                                                                                      |
+| 18  | [\#ReadEntryRaw](#ReadEntryRaw "wikilink")             |                                                                                                                                                                           |
+| 19  | GetPlaceholderRightsID                                 | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s placeholder path.                                                                                               |
+| 20  | GetRegisteredRightsID                                  | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s registered path                                                                                                 |
+| 21  | WriteRegisteredPathForDebug                            | Takes a [\#NcaID](#NcaID "wikilink"), a u64 size, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts. |
+| 22  | GetFreeSpace                                           |                                                                                                                                                                           |
+| 23  | GetTotalSpace                                          |                                                                                                                                                                           |
 
 #### GetRootEntry
 
@@ -194,20 +194,6 @@ This implies that that an AES mode is being used which isn't CTR, where
 changing data in one block doesn't affect other blocks.
 
 See GetEntrySize for the total size readable with this.
-
-#### GetNcaTitleInfo
-
-Takes a [\#NcaID](#NcaID "wikilink") and returns the following
-0x10-sized entry.
-
-With some NcaIDs this may return 0 with an all-zero output entry. This
-seems to be the case for most/all (?) NandSystem NcaIds? This seems to
-be only usable with NcaIds which have [type](NCA.md "wikilink") 1 or 4.
-
-| Offset | Size | Description            |
-| ------ | ---- | ---------------------- |
-| 0x0    | 0x8  | Big-endian titleID     |
-| 0x8    | 0x8  | Unknown. Usually zero? |
 
 ### IContentMetaDatabase
 
