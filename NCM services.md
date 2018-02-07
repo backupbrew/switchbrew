@@ -84,19 +84,19 @@ This is
 This is
 "nn::ncm::IContentManager".
 
-| Cmd | Name                           | Notes                                                                          |
-| --- | ------------------------------ | ------------------------------------------------------------------------------ |
-| 0   |                                |                                                                                |
-| 1   |                                |                                                                                |
-| 2   |                                |                                                                                |
-| 3   |                                |                                                                                |
-| 4   | GetIContentStorage             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
-| 5   | GetIContentMetaDatabase        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
-| 8   |                                |                                                                                |
-| 9   | InitializeStorageForMediaId    |                                                                                |
-| 10  | UninitializeStorageForMediaId  |                                                                                |
-| 11  | InitializeDatabaseForMediaId   |                                                                                |
-| 12  | UninitializeDatabaseForMediaId |                                                                                |
+| Cmd | Name                                | Notes                                                                          |
+| --- | ----------------------------------- | ------------------------------------------------------------------------------ |
+| 0   | MountOrInitializeStorageForMediaId  |                                                                                |
+| 1   | MountOrInitializeDatabaseForMediaId |                                                                                |
+| 2   | GetStorageEntryTypeForMediaId       |                                                                                |
+| 3   | GetDatabasEntryTypeForMediaId       |                                                                                |
+| 4   | GetIContentStorage                  | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
+| 5   | GetIContentMetaDatabase             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
+| 8   | DeleteDatabaseForMediaId            |                                                                                |
+| 9   | MountStorageForMediaId              |                                                                                |
+| 10  | UnmountStorageForMediaId            |                                                                                |
+| 11  | MountDatabaseForMediaId             |                                                                                |
+| 12  | UnmountDatabaseForMediaId           |                                                                                |
 
 All of the above cmds takes a u8 as input.
 

@@ -97,27 +97,27 @@ This is "nn::ncm::IContentManager".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || 
+| 0 || MountOrInitializeStorageForMediaId || 
 |-
-| 1 || || 
+| 1 || MountOrInitializeDatabaseForMediaId || 
 |-
-| 2 || || 
+| 2 || GetStorageEntryTypeForMediaId || 
 |-
-| 3 || || 
+| 3 || GetDatabasEntryTypeForMediaId || 
 |-
 | 4 || GetIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
 | 5 || GetIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
-| 8 || || 
+| 8 || DeleteDatabaseForMediaId || 
 |-
-| 9 || InitializeStorageForMediaId ||
+| 9 || MountStorageForMediaId ||
 |-
-| 10 || UninitializeStorageForMediaId ||
+| 10 || UnmountStorageForMediaId ||
 |-
-| 11 || InitializeDatabaseForMediaId ||
+| 11 || MountDatabaseForMediaId ||
 |-
-| 12 || UninitializeDatabaseForMediaId ||
+| 12 || UnmountDatabaseForMediaId ||
 |}
 
 All of the above cmds takes a u8 as input.
