@@ -3,6 +3,15 @@
 !  Acronyms
 !  Full Name
 |-
-| [[#AM_services|AM Service]]
+| [[#AM_services|AM Services]]
 | Applet Manager
+|-
+| [[#APM_services|APM Services]]
+| Applet Profile Manager
+|-
+| [[#BCAT_services|BCAT Services]]
+| Background Content Asymmetric synchronized delivery and Transmission
+|-
+| [[#BCT|BCT]]
+| Boot Configuration Table
 |}
