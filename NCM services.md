@@ -59,16 +59,16 @@ but only two types of NCA paths can be gotten/set. In addition, each
 type has a fallback path that can be set for a single title ID at a
 time.
 
-| Cmd | Name                             | Arguments                                                                                          | Notes                                                                                          |
-| --- | -------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| 0   | GetPatchType0NcaPath             | u64 TID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                   |
-| 1   | RegisterPatchType0FallbackPath   | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 0 fallback TID and path to the provided arguments.                               |
-| 2   | UnregisterPatchType0FallbackPath | u64 TID                                                                                            | If the Type 0 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
-| 3   | SetPatchType0NcaPath             | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
-| 4   | GetPatchType1NcaPath             | u64 TID + C descriptor                                                                             |                                                                                                |
-| 5   | RegisterPatchType1FallbackPath   | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 1 fallback TID and path to the provided arguments.                               |
-| 6   | UnregisterPatchType1FallbackPath | u64 TID                                                                                            | If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
-| 7   | SetPatchType1NcaPath             | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
+| Cmd                               | Name                             | Arguments                                                                                          | Notes                                                                                          |
+| --------------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| 0                                 | GetPatchType0NcaPath             | u64 TID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                   |
+| 1                                 | RegisterPatchType0FallbackPath   | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 0 fallback TID and path to the provided arguments.                               |
+| 2                                 | UnregisterPatchType0FallbackPath | u64 TID                                                                                            | If the Type 0 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
+| 3                                 | SetPatchType0NcaPath             | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
+| ([2.0.0](2.0.0.md "wikilink")+) 4 | GetPatchType1NcaPath             | u64 TID + C descriptor                                                                             |                                                                                                |
+| ([2.0.0](2.0.0.md "wikilink")+) 5 | RegisterPatchType1FallbackPath   | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 1 fallback TID and path to the provided arguments.                               |
+| ([2.0.0](2.0.0.md "wikilink")+) 6 | UnregisterPatchType1FallbackPath | u64 TID                                                                                            | If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
+| ([2.0.0](2.0.0.md "wikilink")+) 7 | SetPatchType1NcaPath             | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
 
 ### IAddOnContentLocationResolver
 

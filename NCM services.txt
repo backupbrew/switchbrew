@@ -68,13 +68,13 @@ This works like [[#ILocationResolver]], but only two types of NCA paths can be g
 |-
 | 3 || SetPatchType0NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |-
-| 4 || GetPatchType1NcaPath || u64 TID + C descriptor ||
+| ([[2.0.0]]+) 4 || GetPatchType1NcaPath || u64 TID + C descriptor ||
 |-
-| 5 || RegisterPatchType1FallbackPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Sets the Type 1 fallback TID and path to the provided arguments.
+| ([[2.0.0]]+) 5 || RegisterPatchType1FallbackPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Sets the Type 1 fallback TID and path to the provided arguments.
 |-
-| 6 || UnregisterPatchType1FallbackPath || u64 TID || If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop.
+| ([[2.0.0]]+) 6 || UnregisterPatchType1FallbackPath || u64 TID || If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop.
 |-
-| 7 || SetPatchType1NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+| ([[2.0.0]]+) 7 || SetPatchType1NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |}
 
 === IAddOnContentLocationResolver ===
