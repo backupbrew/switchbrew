@@ -54,25 +54,27 @@ The set commands always return 0. When the get-commands fail to find an entry fo
 === IRegisteredLocationResolver ===
 This is "nn::lr::IRegisteredLocationResolver".
 
+This works like [[#ILocationResolver]], but only two types of NCA paths can be gotten/set. In addition, each type has a fallback path that can be set for a single title ID at a time.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Arguments || Notes
 |-
 | 0 || GetPatchType0NcaPath || u64 TID + C descriptor || Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
 |-
-| 1 || SetPatchType0NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || 
+| 1 || RegisterPatchType0FallbackPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Sets the Type 0 fallback TID and path to the provided arguments.
 |-
-| 2 || RegisterPatchTitle0 || u64 TID ||
+| 2 || UnregisterPatchType0FallbackPath || u64 TID || If the Type 0 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop.
 |-
-| 3 || SetPatchTitle0NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+| 3 || SetPatchType0NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |-
 | 4 || GetPatchType1NcaPath || u64 TID + C descriptor ||
 |-
-| 5 || SetPatchType1NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+| 5 || RegisterPatchType1FallbackPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Sets the Type 1 fallback TID and path to the provided arguments.
 |-
-| 6 || RegisterPatchTitle1 || u64 TID ||
+| 6 || UnregisterPatchType1FallbackPath || u64 TID || If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop.
 |-
-| 7 || SetPatchTitle1NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+| 7 || SetPatchType1NcaPath || u64 TID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |}
 
 === IAddOnContentLocationResolver ===
