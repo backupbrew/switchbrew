@@ -89,7 +89,7 @@ This is
 | 0   | MountOrInitializeStorageForMediaId  |                                                                                |
 | 1   | MountOrInitializeDatabaseForMediaId |                                                                                |
 | 2   | GetStorageEntryTypeForMediaId       |                                                                                |
-| 3   | GetDatabasEntryTypeForMediaId       |                                                                                |
+| 3   | GetDatabaseEntryTypeForMediaId      |                                                                                |
 | 4   | GetIContentStorage                  | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
 | 5   | GetIContentMetaDatabase             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
 | 8   | DeleteDatabaseForMediaId            |                                                                                |

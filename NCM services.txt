@@ -103,7 +103,7 @@ This is "nn::ncm::IContentManager".
 |-
 | 2 || GetStorageEntryTypeForMediaId || 
 |-
-| 3 || GetDatabasEntryTypeForMediaId || 
+| 3 || GetDatabaseEntryTypeForMediaId || 
 |-
 | 4 || GetIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
