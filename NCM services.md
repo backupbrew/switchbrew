@@ -84,19 +84,21 @@ This is
 This is
 "nn::ncm::IContentManager".
 
-| Cmd | Name                                | Notes                                                                          |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------ |
-| 0   | MountOrInitializeStorageForMediaId  |                                                                                |
-| 1   | MountOrInitializeDatabaseForMediaId |                                                                                |
-| 2   | GetStorageEntryTypeForMediaId       |                                                                                |
-| 3   | GetDatabaseEntryTypeForMediaId      |                                                                                |
-| 4   | GetIContentStorage                  | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
-| 5   | GetIContentMetaDatabase             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). |
-| 8   | DeleteDatabaseForMediaId            |                                                                                |
-| 9   | MountStorageForMediaId              |                                                                                |
-| 10  | UnmountStorageForMediaId            |                                                                                |
-| 11  | MountDatabaseForMediaId             |                                                                                |
-| 12  | UnmountDatabaseForMediaId           |                                                                                |
+| Cmd                              | Name                                                   | Notes                                                                                                                            |
+| -------------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| 0                                | CreatePlaceholderAndRegisteredDirectoriesForMediaId    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
+| 1                                | CreateSaveDataDirectoryForMediaId                      | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
+| 2                                | GetExistsPlaceholderAndRegisteredDirectoriesForMediaId | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
+| 3                                | GetExistsSaveDataDirectoryForMediaId                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
+| 4                                | GetIContentStorage                                     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
+| 5                                | GetIContentMetaDatabase                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
+| ([1.0.0](1.0.0.md "wikilink")) 6 | CloseAndLockIContentStorage                            | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseStorage().           |
+| ([1.0.0](1.0.0.md "wikilink")) 7 | CloseAndLockIContentMetaDatabase                       | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase(). |
+| 8                                | DeleteSaveDataForMediaId                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.              |
+| (2.0.0+?) 9                      | MountStorageForMediaId                                 |                                                                                                                                  |
+| (2.0.0+?) 10                     | UnmountStorageForMediaId                               |                                                                                                                                  |
+| (2.0.0+?) 11                     | MountDatabaseForMediaId                                |                                                                                                                                  |
+| (2.0.0+?) 12                     | UnmountDatabaseForMediaId                              |                                                                                                                                  |
 
 All of the above cmds takes a u8 as input.
 
@@ -200,28 +202,28 @@ See GetEntrySize for the total size readable with this.
 This is
 "nn::ncm::IContentMetaDatabase".
 
-| Cmd | Name                                                   | Notes                                                                                                                         |
-| --- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| 0   | InsertContentEntry?                                    | Takes a 0x10-sized entry, a type-5 buffer and a u64.                                                                          |
-| 1   |                                                        | Takes a 0x10-sized entry, a type-6 buffer and a u64. Returns a u64.                                                           |
-| 2   |                                                        | Takes a 0x10-sized entry.                                                                                                     |
-| 3   | UpdateContentEntry                                     | Takes a [meta record entry](NCA#Meta%20records.md##Meta_records "wikilink") and a u8. Returns a [\#NcaID](#NcaID "wikilink"). |
-| 4   |                                                        | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.                                  |
-| 5   | Iterate                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.                               |
-| 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink")         |                                                                                                                               |
-| 7   | [\#GetTitleList](#GetTitleList "wikilink")             | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.                                           |
-| 8   |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                  |
-| 9   |                                                        | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                                                          |
-| 10  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                                                      |
-| 11  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                                                      |
-| 12  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                                                      |
-| 13  |                                                        | Void.                                                                                                                         |
-| 14  |                                                        | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                                               |
-| 15  | EndIteration                                           | Void.                                                                                                                         |
-| 16  |                                                        | Takes two 0x10-sized entries. Returns a bool/u8.                                                                              |
-| 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink") |                                                                                                                               |
-| 18  |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                  |
-| 19  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                                                      |
+| Cmd | Name                                                   | Notes                                                                                                                                 |
+| --- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | InsertContentEntry?                                    | Takes a 0x10-sized entry, a type-5 buffer and a u64.                                                                                  |
+| 1   |                                                        | Takes a 0x10-sized entry, a type-6 buffer and a u64. Returns a u64.                                                                   |
+| 2   |                                                        | Takes a 0x10-sized entry.                                                                                                             |
+| 3   | UpdateContentEntry                                     | Takes a [meta record entry](NCA#Meta%20records.md##Meta_records "wikilink") and a u8. Returns a [\#NcaID](#NcaID "wikilink").         |
+| 4   |                                                        | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.                                          |
+| 5   | Iterate                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.                                       |
+| 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink")         |                                                                                                                                       |
+| 7   | [\#GetTitleList](#GetTitleList "wikilink")             | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.                                                   |
+| 8   |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                          |
+| 9   |                                                        | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                                                                  |
+| 10  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                                                              |
+| 11  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                                                              |
+| 12  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                                                              |
+| 13  | CloseMetaDatabase                                      | Closes/Flushes all resources for the meta database, and causes all future IPC commands to the current session to return error 0xDC05. |
+| 14  |                                                        | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                                                       |
+| 15  | EndIteration                                           | Void.                                                                                                                                 |
+| 16  |                                                        | Takes two 0x10-sized entries. Returns a bool/u8.                                                                                      |
+| 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink") |                                                                                                                                       |
+| 18  |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                          |
+| 19  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                                                              |
 
 #### GetTitleIdInfo
 

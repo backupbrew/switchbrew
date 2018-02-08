@@ -97,27 +97,31 @@ This is "nn::ncm::IContentManager".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || MountOrInitializeStorageForMediaId || 
+| 0 || CreatePlaceholderAndRegisteredDirectoriesForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
-| 1 || MountOrInitializeDatabaseForMediaId || 
+| 1 || CreateSaveDataDirectoryForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
-| 2 || GetStorageEntryTypeForMediaId || 
+| 2 || GetExistsPlaceholderAndRegisteredDirectoriesForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
-| 3 || GetDatabaseEntryTypeForMediaId || 
+| 3 || GetExistsSaveDataDirectoryForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
 | 4 || GetIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
 | 5 || GetIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
-| 8 || DeleteDatabaseForMediaId || 
+| ([[1.0.0]]) 6 || CloseAndLockIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]]. Calls IContentStorage->CloseStorage().
 |-
-| 9 || MountStorageForMediaId ||
+| ([[1.0.0]]) 7 || CloseAndLockIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]].  Calls IContentMetaDatabase->CloseMetaDatabase().
 |-
-| 10 || UnmountStorageForMediaId ||
+| 8 || DeleteSaveDataForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]], and deletes the associated savedata.
 |-
-| 11 || MountDatabaseForMediaId ||
+| (2.0.0+?) 9 || MountStorageForMediaId ||
 |-
-| 12 || UnmountDatabaseForMediaId ||
+| (2.0.0+?) 10 || UnmountStorageForMediaId ||
+|-
+| (2.0.0+?) 11 || MountDatabaseForMediaId ||
+|-
+| (2.0.0+?) 12 || UnmountDatabaseForMediaId ||
 |}
 
 All of the above cmds takes a u8 as input.
@@ -245,7 +249,7 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 12 || || Takes a 0x10-sized entry. Returns a u64.
 |-
-| 13 || || Void.
+| 13 || CloseMetaDatabase ||  Closes/Flushes all resources for the meta database, and causes all future IPC commands to the current session to return error 0xDC05.
 |-
 | 14 || || Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.
 |-
