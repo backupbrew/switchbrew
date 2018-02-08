@@ -177,7 +177,7 @@ This is "nn::ncm::IContentStorage".
 |-
 | 20 || GetRegisteredEntryRightsID || Gets the Rights ID for the [[#NcaID]]'s registered path
 |-
-| 21 || WriteRegisteredPathForDebug || Takes a [[#NcaID]], a u64 size, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts.
+| 21 || WriteRegisteredPathForDebug || Takes a [[#NcaID]], a u64 offset, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts.
 |-
 | 22 || GetFreeSpace || Gets free space for the storage.
 |-
