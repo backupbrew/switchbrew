@@ -4,15 +4,15 @@
 !  Full Name
 !  Notes
 |-
-| [[AM_services|AM Services]]
+| [[AM_services|AM]]
 | Applet Manager
 |
 |-
-| [[APM_services|APM Services]]
+| [[APM_services|APM]]
 | Applet Profile Manager
 |
 |-
-| [[BCAT_services|BCAT Services]]
+| [[BCAT_services|BCAT]]
 | Background Content Asymmetric synchronized delivery and Transmission
 |
 |-
@@ -24,7 +24,7 @@
 | Binary NX Vibration
 |
 |-
-| [[BPC_services|BPC Services]]
+| [[BPC_services|BPC]]
 | Board Power Control Manager
 | This is related to the [[PCV_services#bpc|PCV Services]].
 |-
@@ -32,7 +32,7 @@
 | Embedded Multi-Media Controller pinout
 |
 |-
-| [[Eupld_services|Eupld Services]]
+| [[Eupld_services|Eupld]]
 | Error upload services
 |
 |-
@@ -41,8 +41,8 @@
 |
 |-
 | [[Falcon|Falcon]]
-| A microcontroller that acts as a frontend for the rest of the Tegra engine.
-| See [[TSEC|TSEC]] for more information.
+| A microprocessor used in various Tegra specific engines like TSEC, NVDEC, VIC, etc.
+| See [http://envytools.readthedocs.io/en/latest/hw/falcon/intro.html the manual] for more information.
 |-
 | [[Flog|Flog]]
 | NES Golf, spelled backwards.
