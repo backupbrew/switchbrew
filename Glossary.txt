@@ -2,16 +2,50 @@
 {| class="wikitable" border="1"
 !  Acronyms
 !  Full Name
+!  Notes
 |-
 | [[#AM_services|AM Services]]
 | Applet Manager
+|
 |-
 | [[#APM_services|APM Services]]
 | Applet Profile Manager
+|
 |-
 | [[#BCAT_services|BCAT Services]]
 | Background Content Asymmetric synchronized delivery and Transmission
+|
 |-
 | [[#BCT|BCT]]
 | Boot Configuration Table
+|
+|-
+| [[#BNVIB|BNVIB]]
+| Binary NX Vibration
+|
+|-
+| [[#BPC_services|BPC Services]]
+| Board Power Control Manager
+| This is related to the [[#PCV_services#bpc|PCV Services]].
+|-
+| [[#EMMC_pinout|EMMC pinout]]
+| Embedded Multi-Media Controller pinout
+|
+|-
+| [[#Eupld_services|Eupld Services]]
+| Error upload services
+|
+|-
+| [[#ExeFS|ExeFS]]
+| Executable File System
+|
+|-
+| [[#Falcon|Falcon]]
+| A microcontroller that acts as a frontend for the rest of the Tegra engine.
+| See [[#TSEC|TSEC]] for more information.
+|-
+| [[#Flog|Flog]]
+| NES Golf, spelled backwards.
+|
+|-
 |}
