@@ -143,7 +143,7 @@ This is "nn::ncm::IContentStorage".
 |-
 | 3 || DoesPlaceholderEntryExist ||  Takes a [[#NcaID]].
 |-
-| 4 || WritePlaceholderEntry || Takes a [[#NcaID]], a u64-offset, and type-5 array.
+| 4 || WritePlaceholderEntry || Takes a [[#NcaID]], a u64-offset, and type 5 buffer. Writes the buffer to the file for the NcaID's placeholder path at the specified offset.
 |-
 | 5 || MovePlaceholderToRegistered || Takes two [[#NcaID]]s, moves the Placeholder NCA content to the registered NCA path.
 |-
