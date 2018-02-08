@@ -135,12 +135,10 @@ This is
 | 23  | GetTotalSpace                                                              | Gets total space for the storage.                                                                                                                                         |
 | 24  | FlushStorage                                                               | Flushes resources for the storage without closing it.                                                                                                                     |
 
-#### GetRootEntry
+#### GetUUID
 
-Returns an entry of 16 completely random-looking bytes. It is not
-possible to read this entry.
-
-Changes on reboot?
+Calls nn::util::GenerateUuid(), which internally calls
+nn::os::GenerateRandomBytes(16);
 
 #### GetNumberOfRegisteredEntries
 

@@ -184,10 +184,8 @@ This is "nn::ncm::IContentStorage".
 | 24 || FlushStorage || Flushes resources for the storage without closing it.
 |}
 
-==== GetRootEntry ====
-Returns an entry of 16 completely random-looking bytes. It is not possible to read this entry.
-
-Changes on reboot?
+==== GetUUID ====
+Calls  nn::util::GenerateUuid(), which internally calls nn::os::GenerateRandomBytes(16);
 
 ==== GetNumberOfRegisteredEntries ====
 Writes the total number of entries which can be read by GetEntries, to cmdreply <SFCO_offset>+0x10.
