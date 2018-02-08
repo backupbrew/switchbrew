@@ -45,7 +45,31 @@
 | See [http://envytools.readthedocs.io/en/latest/hw/falcon/intro.html the manual] for more information.
 |-
 | [[Flog|Flog]]
-| NES Golf, spelled backwards.
+| NES Golf, spelled backwards
+|
+|-
+| [[GRC_services|GRC]]
+| Game Recording services
+|
+|-
+| [[HID_services|HID]]
+| Human Interface Device services
+|
+|-
+| [[Homebrew_ABI|Homebrew ABI]]
+| Homebrew Application Binary Interface
+|
+|-
+| [[IMKV|IMKV]]
+| IM Key Value databases found in FS and NCM savedata archives
+|
+|-
+| [[INI1|INI1]]
+| Part of the [[Package2|Package2]] section containing built-in system modules
+|
+|-
+| [[IPC_Marshalling|IPC Marshalling]]
+| Inter-Process Communication Marshalling
 |
 |-
 |}
