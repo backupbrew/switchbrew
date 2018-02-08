@@ -1,4 +1,4 @@
-=== Glossary ===
+=== (In Alphabetical Order, Descending) ===
 {| class="wikitable" border="1"
 !  Acronyms
 !  Full Name
@@ -70,6 +70,122 @@
 |-
 | [[IPC_Marshalling|IPC Marshalling]]
 | Inter-Process Communication Marshalling
+|
+|-
+| [[Jpegdec_services|Jpegdec]]
+| Refactored sysmodule for handling all JPEG decoding associated with capture services
+|
+|-
+| [[LAN_Adapter|LAN Adapter]]
+| Local access network adapter
+|
+|-
+| [[LDN_services|LDN]]
+| Local device network services
+|
+|-
+| [[NAX0|NAX0]]
+| Nintendo AES XTS file system / file format
+| Long form name is known as the Advanced Encryption Standard XEX-based tweaked-codebook mode with ciphertext stealing file system / file format
+|-
+| [[NCA_Format|NCA]]
+| The NCA file format. 
+| 
+|-
+| [[NCM_services|NCM]]
+| Nintendo content management services
+|
+|-
+| [[NIM_services|NIM]]
+| Network Install Manager services
+|
+|-
+| [[NPDM|NPDM]]
+| Nintendo Switch equivalent of the Nintendo 3DS ex-header
+| See the [https://3dbrew.org/wiki/NCCH/Extended_Header 3DS ex-header] for more information.
+|-
+| [[NSO|NSO]]
+| Main executable format
+|
+|-
+| [[NS_Services|NS]]
+| Nintendo Switch services
+|
+|-
+| [[Switch_System_Flaws|NS System Flaws]]
+| Flaws which are used to execute unofficial code (homebrew) on the Nintendo Switch
+| Alternate name is Switch System Flaws
+|-
+| [[NV_services|NV]]
+| Customized NVIDIA driver
+|
+|-
+| [[Nvnflinger_services|Nvnflinger]]
+| Responsible for mediating the communication between [[Display_services|vi]] and [[NV_services|nvservices]].
+|
+|-
+| [[AM_services#omm|OMM]]
+| Operation Mode Manager, responsible for arbitrating the operation changes between docked and handheld modes
+| See [[AM_services|AM Services]] for more information.
+|-
+| [[PCIe_services|PCIe]]
+| Peripheral Component Interconnect Express services
+|
+|-
+| [[PCV_services|PCV]]
+| Power Control / Voltage services
+|
+|-
+| [[Package1|PK11]]
+| Contains the first Nintendo Switch bootloader to run under the NVIDIA boot processor
+|
+|-
+| [[Package2|PK21]]
+| Contains the Switch kernel and the built-in system modules
+|
+|-
+| [[SD_Filesystem|SD File System]]
+| Secure Digital File System
+|
+|-
+| [[SMC|SMC]]
+| Secure Monitor Calls
+|
+|-
+| [[SPL_services|SPL]]
+| Secure pseudorandom number generator loader
+|
+|-
+| [[SSL_services|SSL]]
+| Secure Sockets Layer services
+|
+|-
+| [[SVC|SVC]]
+| Supervisor Call instruction
+|
+|-
+| [[Secure_RNG_services|Secure RNG]]
+| Also known as the [[SPL_services|SPL Services]]
+|
+|-
+| [[Services_API|Services API]]
+| Services application programming interface
+|
+|-
+| [[TMA_services|TMA]]
+| Target Manager
+|
+|-
+| [[TSEC|TSEC]]
+| Tegra Security Co-processor
+|
+|-
+| [[Joy-Con_Firmware|Ukyo]]
+| Internal name for the Joy-Con firmware. 
+|
+|-
+| [[XCI|XCI]]
+| Nintendo Switch Gamecard Format
 |
 |-
 |}
