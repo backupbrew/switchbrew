@@ -1,1 +1,5 @@
-Here be the glossary
+### Glossary
+
+| Acronyms                              | Full Name      |
+| ------------------------------------- | -------------- |
+| [AM Service](#AM_services "wikilink") | Applet Manager |

@@ -1,1 +1,8 @@
-Here be the glossary
+=== Glossary ===
+{| class="wikitable" border="1"
+!  Acronyms
+!  Full Name
+|-
+| [[#AM_services|AM Service]]
+| Applet Manager
+|}
