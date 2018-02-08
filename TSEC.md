@@ -1009,7 +1009,7 @@ arguments.
 `// Use key in c4`  
 `ckeyreg(c4);`  
   
-`// AES-128-ECB decrypt`  
+`// AES-128-CBC decrypt`  
 `if (mode == 0x00)`  
 `{`  
 `  // Create crypto script with 5 instructions`  
@@ -1021,7 +1021,7 @@ arguments.
 `  cxsout(c5);                  // Write 0x10 bytes into crypto stream from c5`  
 `  cmov(c5, c3);                // Move c3 into c5`  
 `}`  
-`else if (mode == 0x01)     // AES-128-ECB encrypt`  
+`else if (mode == 0x01)     // AES-128-CBC encrypt`  
 `{`  
 `  // Create crypto script with 4 instructions`  
 `  cs0begin(0x04);`  
@@ -1040,7 +1040,7 @@ arguments.
 `  cxor(c5, c3);                // XOR c5 with c3 and store in c3`  
 `  cenc(c5, c5);                // Encrypt from c5 into c5`  
 `}`  
-`else if (mode == 0x03)     // AES-128-ECB decrypt (no IV)`  
+`else if (mode == 0x03)     // AES-128-ECB decrypt`  
 `{`  
 `  // Create crypto script with 3 instructions`  
 `  cs0begin(0x03);`  
@@ -1049,7 +1049,7 @@ arguments.
 `  cdec(c5, c3);                // Decrypt from c3 into c5`  
 `  cxsout(c5);                  // Write 0x10 bytes into crypto stream from c5`  
 `}`  
-`else if (mode == 0x04)     // AES-128-ECB encrypt (no IV)`  
+`else if (mode == 0x04)     // AES-128-ECB encrypt`  
 `{`  
 `  // Create crypto script with 3 instructions`  
 `  cs0begin(0x03);`  
@@ -1274,7 +1274,9 @@ case, the register is TSEC\_SCP\_CTL\_AUTH\_MODE.
 `00000000: f5 3c XY e0 cchmod $cY $cX` - likely forces a change of
 permissions.
 
-`00000000: f5 3c XY a8 c_unk $cY $cX` - unknown crypto operation.
+`00000000: f5 3c XY a8 c_unk0 $cY $cX` - unknown crypto operation.
+
+`00000000: f5 3c XY a9 c_unk1 $cY $cX` - unknown crypto operation.
 
 `00000000: f5 3c 0X 90 crng $cX` - seems to initialize a crypto register
 with random data.
