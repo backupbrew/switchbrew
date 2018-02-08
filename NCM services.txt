@@ -109,7 +109,7 @@ This is "nn::ncm::IContentManager".
 |-
 | 5 || GetIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
-| ([[1.0.0]]) 6 || CloseAndLockIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]]. Calls IContentStorage->CloseStorage().
+| ([[1.0.0]]) 6 || CloseAndLockIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]]. Calls IContentStorage->CloseAndFlushStorage().
 |-
 | ([[1.0.0]]) 7 || CloseAndLockIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]].  Calls IContentMetaDatabase->CloseMetaDatabase().
 |-
@@ -133,53 +133,55 @@ This is "nn::ncm::IContentStorage".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || [[#GetRootEntry]] ||
+| 0 || [[#GetUUID]] || Returns a random UUID for the Content Storage.
 |-
-| 1 || || Takes two 0x10-sized entries, and a u64.
+| 1 || CreatePlaceholderEntryAndRegisteredDirectoryEntry || Takes two [[#NcaID]]s, and a u64 filesize.
 |-
-| 2 || DeletePlaceholderEntry || Takes a 0x10-sized entry.
+| 2 || DeletePlaceholderEntry || Takes a [[#NcaID]].
 |-
-| 3 || GetEntryType || Takes a 0x10-sized entry, returns a bool/u8.
+| 3 || DoesPlaceholderEntryExist ||  Takes a [[#NcaID]].
 |-
 | 4 || WritePlaceholderEntry || Takes a [[#NcaID]], a u64-offset, and type-5 array.
 |-
-| 5 || MovePlaceholderToRegistered || Takes two 0x10-sized entries.
+| 5 || MovePlaceholderToRegistered || Takes two [[#NcaID]]s, moves the Placeholder NCA content to the registered NCA path.
 |-
-| 6 || DeleteContent? || Takes a 0x10-sized entry.
+| 6 || DeleteRegisteredEntry || Takes a [[#NcaID]].
 |-
-| 7 || IsNcaEntryValid || Takes a [[#NcaID]], returns a bool.
+| 7 || DoesRegisteredEntryExist || Takes a [[#NcaID]].
 |-
-| 8 || GetPath || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
+| 8 || GetPathForRegisteredEntry || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
 |-
-| 9 || GetPlaceholderPath || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
+| 9 || GetPathForPlaceholderEntry || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
 |-
-| 10 || CleanPlaceholderDirectory || Deletes the Placeholder directory.
+| 10 || CleanPlaceholderDirectory || Deletes and re-creates the Placeholder directory.
 |-
-| 11 || GetPlaceholderEntries || This is like [[#GetEntries]], but for the Placeholder directory.
+| 11 || GetNumberOfRegisteredEntries || This is like [[#GetRegisteredEntries]], but for the Placeholder directory.
 |-
-| 12 || [[#GetNumberOfEntries]] ||
+| 12 || [[#GetNumberOfRegisteredEntries]] ||
 |-
-| 13 || [[#GetEntries]] ||
+| 13 || [[#GetRegisteredEntries]] ||
 |-
-| 14 || [[#GetEntrySize]] ||
+| 14 || [[#GetRegisteredEntrySize]] || 
 |-
-| 15 || CloseStorage || Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.
+| 15 || CloseAndFlushStorage || Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.
 |-
 | 16 || || Takes three 0x10-sized entries.
 |-
-| 17 || SetPlaceholderSize || Takes a [[#NcaID]], and a u64 size
+| 17 || SetPlaceholderEntrySize || Takes a [[#NcaID]], and a u64 size
 |-
-| 18 || [[#ReadEntryRaw]] ||
+| 18 || [[#ReadRegisteredEntryRaw]] ||
 |-
-| 19 || GetPlaceholderRightsID || Gets the Rights ID for the [[#NcaID]]'s placeholder path.
+| 19 || GetPlaceholderEntryRightsID || Gets the Rights ID for the [[#NcaID]]'s placeholder path.
 |-
-| 20 || GetRegisteredRightsID || Gets the Rights ID for the [[#NcaID]]'s registered path
+| 20 || GetRegisteredEntryRightsID || Gets the Rights ID for the [[#NcaID]]'s registered path
 |-
 | 21 || WriteRegisteredPathForDebug || Takes a [[#NcaID]], a u64 size, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts.
 |-
-| 22 || GetFreeSpace ||
+| 22 || GetFreeSpace || Gets free space for the storage.
 |-
-| 23 || GetTotalSpace ||
+| 23 || GetTotalSpace || Gets total space for the storage.
+|-
+| 24 || FlushStorage || Flushes resources for the storage without closing it.
 |}
 
 ==== GetRootEntry ====
@@ -187,10 +189,10 @@ Returns an entry of 16 completely random-looking bytes. It is not possible to re
 
 Changes on reboot?
 
-==== GetNumberOfEntries ====
+==== GetNumberOfRegisteredEntries ====
 Writes the total number of entries which can be read by GetEntries, to cmdreply <SFCO_offset>+0x10.
 
-==== GetEntries ====
+==== GetRegisteredEntries ====
 Takes an output buffer, u32 offset and gets all entries starting at that offset.
 Returns number of entries read.
 
@@ -198,12 +200,12 @@ Each entry is a [[#NcaID]].
 
 The total read entries is exactly the same as the number of "<hex>.nca" directories in the storage FS(or at least under the "registered" directory?).
 
-==== GetEntrySize ====
+==== GetRegisteredEntrySize ====
 Takes a [[#NcaID]] as input.
 
 Returns the total size readable by ReadEntryRaw. This is the same as the size-field in the [[NAX0]] "<NcaID>.nca/00" file.
 
-==== ReadEntryRaw ====
+==== ReadRegisteredEntryRaw ====
 Takes an output buffer, a [[#NcaID]] as input, and a u64 file offset.
 
 Returns encrypted looking data from the content in the [[NAX0]]. Doesn't match the encrypted raw data in the [[NAX0]] "<NcaID>.nca/00" file. Seems to be at least one crypto layer below the initial NAX0 layer, since the data doesn't change after NAX0 recreation.

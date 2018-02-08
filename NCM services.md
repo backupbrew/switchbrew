@@ -92,7 +92,7 @@ This is
 | 3                                | GetExistsSaveDataDirectoryForMediaId                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
 | 4                                | GetIContentStorage                                     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
 | 5                                | GetIContentMetaDatabase                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
-| ([1.0.0](1.0.0.md "wikilink")) 6 | CloseAndLockIContentStorage                            | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseStorage().           |
+| ([1.0.0](1.0.0.md "wikilink")) 6 | CloseAndLockIContentStorage                            | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().   |
 | ([1.0.0](1.0.0.md "wikilink")) 7 | CloseAndLockIContentMetaDatabase                       | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase(). |
 | 8                                | DeleteSaveDataForMediaId                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.              |
 | (2.0.0+?) 9                      | MountStorageForMediaId                                 |                                                                                                                                  |
@@ -107,32 +107,33 @@ All of the above cmds takes a u8 as input.
 This is
 "nn::ncm::IContentStorage".
 
-| Cmd | Name                                                   | Notes                                                                                                                                                                     |
-| --- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | [\#GetRootEntry](#GetRootEntry "wikilink")             |                                                                                                                                                                           |
-| 1   |                                                        | Takes two 0x10-sized entries, and a u64.                                                                                                                                  |
-| 2   | DeletePlaceholderEntry                                 | Takes a 0x10-sized entry.                                                                                                                                                 |
-| 3   | GetEntryType                                           | Takes a 0x10-sized entry, returns a bool/u8.                                                                                                                              |
-| 4   | WritePlaceholderEntry                                  | Takes a [\#NcaID](#NcaID "wikilink"), a u64-offset, and type-5 array.                                                                                                     |
-| 5   | MovePlaceholderToRegistered                            | Takes two 0x10-sized entries.                                                                                                                                             |
-| 6   | DeleteContent?                                         | Takes a 0x10-sized entry.                                                                                                                                                 |
-| 7   | IsNcaEntryValid                                        | Takes a [\#NcaID](#NcaID "wikilink"), returns a bool.                                                                                                                     |
-| 8   | GetPath                                                | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                             |
-| 9   | GetPlaceholderPath                                     | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                             |
-| 10  | CleanPlaceholderDirectory                              | Deletes the Placeholder directory.                                                                                                                                        |
-| 11  | GetPlaceholderEntries                                  | This is like [\#GetEntries](#GetEntries "wikilink"), but for the Placeholder directory.                                                                                   |
-| 12  | [\#GetNumberOfEntries](#GetNumberOfEntries "wikilink") |                                                                                                                                                                           |
-| 13  | [\#GetEntries](#GetEntries "wikilink")                 |                                                                                                                                                                           |
-| 14  | [\#GetEntrySize](#GetEntrySize "wikilink")             |                                                                                                                                                                           |
-| 15  | CloseStorage                                           | Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.                                           |
-| 16  |                                                        | Takes three 0x10-sized entries.                                                                                                                                           |
-| 17  | SetPlaceholderSize                                     | Takes a [\#NcaID](#NcaID "wikilink"), and a u64 size                                                                                                                      |
-| 18  | [\#ReadEntryRaw](#ReadEntryRaw "wikilink")             |                                                                                                                                                                           |
-| 19  | GetPlaceholderRightsID                                 | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s placeholder path.                                                                                               |
-| 20  | GetRegisteredRightsID                                  | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s registered path                                                                                                 |
-| 21  | WriteRegisteredPathForDebug                            | Takes a [\#NcaID](#NcaID "wikilink"), a u64 size, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts. |
-| 22  | GetFreeSpace                                           |                                                                                                                                                                           |
-| 23  | GetTotalSpace                                          |                                                                                                                                                                           |
+| Cmd | Name                                                                       | Notes                                                                                                                                                                     |
+| --- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | [\#GetUUID](#GetUUID "wikilink")                                           | Returns a random UUID for the Content Storage.                                                                                                                            |
+| 1   | CreatePlaceholderEntryAndRegisteredDirectoryEntry                          | Takes two [\#NcaIDs](#NcaID "wikilink"), and a u64 filesize.                                                                                                              |
+| 2   | DeletePlaceholderEntry                                                     | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                     |
+| 3   | DoesPlaceholderEntryExist                                                  | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                     |
+| 4   | WritePlaceholderEntry                                                      | Takes a [\#NcaID](#NcaID "wikilink"), a u64-offset, and type-5 array.                                                                                                     |
+| 5   | MovePlaceholderToRegistered                                                | Takes two [\#NcaIDs](#NcaID "wikilink"), moves the Placeholder NCA content to the registered NCA path.                                                                    |
+| 6   | DeleteRegisteredEntry                                                      | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                     |
+| 7   | DoesRegisteredEntryExist                                                   | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                     |
+| 8   | GetPathForRegisteredEntry                                                  | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                             |
+| 9   | GetPathForPlaceholderEntry                                                 | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                             |
+| 10  | CleanPlaceholderDirectory                                                  | Deletes and re-creates the Placeholder directory.                                                                                                                         |
+| 11  | GetNumberOfRegisteredEntries                                               | This is like [\#GetRegisteredEntries](#GetRegisteredEntries "wikilink"), but for the Placeholder directory.                                                               |
+| 12  | [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink") |                                                                                                                                                                           |
+| 13  | [\#GetRegisteredEntries](#GetRegisteredEntries "wikilink")                 |                                                                                                                                                                           |
+| 14  | [\#GetRegisteredEntrySize](#GetRegisteredEntrySize "wikilink")             |                                                                                                                                                                           |
+| 15  | CloseAndFlushStorage                                                       | Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.                                           |
+| 16  |                                                                            | Takes three 0x10-sized entries.                                                                                                                                           |
+| 17  | SetPlaceholderEntrySize                                                    | Takes a [\#NcaID](#NcaID "wikilink"), and a u64 size                                                                                                                      |
+| 18  | [\#ReadRegisteredEntryRaw](#ReadRegisteredEntryRaw "wikilink")             |                                                                                                                                                                           |
+| 19  | GetPlaceholderEntryRightsID                                                | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s placeholder path.                                                                                               |
+| 20  | GetRegisteredEntryRightsID                                                 | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s registered path                                                                                                 |
+| 21  | WriteRegisteredPathForDebug                                                | Takes a [\#NcaID](#NcaID "wikilink"), a u64 size, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts. |
+| 22  | GetFreeSpace                                                               | Gets free space for the storage.                                                                                                                                          |
+| 23  | GetTotalSpace                                                              | Gets total space for the storage.                                                                                                                                         |
+| 24  | FlushStorage                                                               | Flushes resources for the storage without closing it.                                                                                                                     |
 
 #### GetRootEntry
 
@@ -141,12 +142,12 @@ possible to read this entry.
 
 Changes on reboot?
 
-#### GetNumberOfEntries
+#### GetNumberOfRegisteredEntries
 
 Writes the total number of entries which can be read by GetEntries, to
 cmdreply <SFCO_offset>+0x10.
 
-#### GetEntries
+#### GetRegisteredEntries
 
 Takes an output buffer, u32 offset and gets all entries starting at that
 offset. Returns number of entries read.
@@ -157,14 +158,14 @@ The total read entries is exactly the same as the number of "<hex>.nca"
 directories in the storage FS(or at least under the "registered"
 directory?).
 
-#### GetEntrySize
+#### GetRegisteredEntrySize
 
 Takes a [\#NcaID](#NcaID "wikilink") as input.
 
 Returns the total size readable by ReadEntryRaw. This is the same as the
 size-field in the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
 
-#### ReadEntryRaw
+#### ReadRegisteredEntryRaw
 
 Takes an output buffer, a [\#NcaID](#NcaID "wikilink") as input, and a
 u64 file offset.
