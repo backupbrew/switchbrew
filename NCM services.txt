@@ -223,13 +223,13 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || InsertContentEntry || Takes a 0x10-sized [[NCA#Meta_records|MetaRecord]], a type-5 buffer [[NCA#Content_records|Content Records]] buffer and a u64 size.
+| 0 || InsertContentRecords || Takes a [[NCA#Meta_records|Meta Record]], a type-5 [[NCA#Content_records|Content Records]] buffer and a u64 size.
 |-
-| 1 || || Takes a 0x10-sized entry, a type-6 buffer and a u64. Returns a u64.
+| 1 || ReadContentRecords || Takes a [[NCA#Meta_records|Meta Record]], a type-6 buffer to write [[NCA#Content_records|Content Records]] to and a u64 size. Returns the actual Content Records size read.
 |-
-| 2 || || Takes a 0x10-sized entry.
+| 2 || RemoveContentRecords || Takes a [[NCA#Meta_records|Meta Record]], and removes the associated record.
 |-
-| 3 || UpdateContentEntry || Takes a [[NCA#Meta_records|meta record entry]] and a u8. Returns a [[#NcaID]].
+| 3 || GetContentNcaId || Takes a [[NCA#Meta_records|Meta Record]] and a u8 [[#Title_Types|Title Type]]. Returns a [[#NcaID]].
 |-
 | 4 || || Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.
 |-
