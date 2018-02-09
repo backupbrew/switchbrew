@@ -167,7 +167,7 @@ This is "nn::ncm::IContentStorage".
 |-
 | 15 || CloseAndFlushStorage || Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.
 |-
-| 16 || CreatePlaceholderEntryRegisteredEntryAndRegisteredDirectoryEntry || Takes three 0x10-sized [[#NcaID]]s. Creates the placeholder NCA path, renames it to the registered NCA path, and creates the registered directory NCA path.
+| 16 || CreatePlaceholderEntryRegisteredEntryAndRegisteredDirectoryEntry || Takes three 0x10-sized [[#NcaID]]s. Creates the registered directory NCA path, and renames the placeholder path to the registered NCA path.
 |-
 | 17 || SetPlaceholderEntrySize || Takes a [[#NcaID]], and a u64 size
 |-
