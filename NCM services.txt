@@ -243,7 +243,7 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 8 || IsMetaRecordPresent || Takes a [[NCA#Meta_records|Meta Record]] and returns whether that record is present in the database.
 |-
-| 9 || AreMetaRecordsPresent || Takes a type-5 buffer containing size/0x10 [[NCA#Meta_records|Meta Records]] and returns whether all of those records are present in the database.
+| 9 || AreMetaRecordsPresent || Takes a type-5 buffer containing [[NCA#Meta_records|Meta Records]] (code assumes there are size/sizeof(meta_record) records in the buffer), and returns whether all of those records are present in the database.
 |-
 | 10 || || Takes a 0x10-sized entry. Returns a u64.
 |-
