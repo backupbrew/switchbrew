@@ -694,6 +694,13 @@ This is "nn::spsm::detail::IPowerStateInterface".
 | 0x1A | 0100000000001013 | "myPage"                                                                                                         |
 |      |                  |                                                                                                                  |
 
+### LibraryAppletMode
+
+| ID  | Description   |
+| --- | ------------- |
+| 0x0 | AllForeground |
+|     |               |
+
 ### ShimKind
 
 This is from strings and code in the [

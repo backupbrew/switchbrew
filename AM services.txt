@@ -983,6 +983,17 @@ This is "nn::spsm::detail::IPowerStateInterface".
 |-
 |}
 
+=== LibraryAppletMode ===
+{| class="wikitable" border="1"
+|-
+!  ID
+!  Description
+|-
+| 0x0
+| AllForeground
+|-
+|}
+
 === ShimKind ===
 This is from strings and code in the [[Internet_Browser| web-applets]].
 
