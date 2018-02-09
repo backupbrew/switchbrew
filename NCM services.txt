@@ -253,7 +253,7 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 13 || CloseMetaDatabase ||  Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.
 |-
-| 14 || || Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.
+| 14 || [[#CheckNcaIDsPresent]] || Takes a type-6 byte buffer, and a type-5 buffer of [[#NcaID]]s.
 |-
 | 15 || SaveMetaDatabase || Flushes the in-memory database to savedata.
 |-
@@ -285,6 +285,23 @@ The input entry is the output entry from [[#GetTitleIdInfo]] starting at the TID
 See [[NCA#Meta_records]].
 
 This reads the titlelist stored in the specified title, normally a title with title-type 3, which is sysupdate-title 0100000000000816. Returns 0 with total_read_entries=0 when used with other title(s).
+
+==== CheckNcaIDsPresent ====
+Takes a type-6 byte buffer, and a type-5 buffer containing [[#NcaID]]s.
+
+This function was stubbed to return 0xDC05 in [[2.0.0]].
+
+On 1.0.0: Initialized the output buffer to all 1s. Then, for each [[#NcaID]] in the input buffer, it checks if that NcaID is present anywhere in the database, and if so writes 0 to the corresponding output byte.
+
+In pseudocode, the function basically does the following:
+
+for i in range(len(out_buf)):
+    out_buf[i] = 1
+
+for i, NcaID in NcaIDs:
+    if is_present_in_database(NcaID):
+        out_buf[i] = 0
+
 
 === NcaID ===
 This is a 0x10-byte entry. This is originally from the hex portion of "<hex>.nca" directory-names from this storage FS(like [[SD_Filesystem|SD]]).

@@ -221,7 +221,7 @@ This is
 | 11  | GetUnknownRecordSize                                         | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns u32 from ContentRecords + 16 (only if the Meta record has type Application or Patch).                                                                        |
 | 12  | GetUpdateTitleId                                             | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns the update title id for that record.                                                                                                                         |
 | 13  | CloseMetaDatabase                                            | Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.                                                                                                                                     |
-| 14  |                                                              | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                                                                                                                                                                 |
+| 14  | [\#CheckNcaIDsPresent](#CheckNcaIDsPresent "wikilink")       | Takes a type-6 byte buffer, and a type-5 buffer of [\#NcaIDs](#NcaID "wikilink").                                                                                                                                                               |
 | 15  | SaveMetaDatabase                                             | Flushes the in-memory database to savedata.                                                                                                                                                                                                     |
 | 16  |                                                              | Takes two 0x10-sized entries. Returns a bool/u8.                                                                                                                                                                                                |
 | 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink")       |                                                                                                                                                                                                                                                 |
@@ -265,6 +265,30 @@ See
 This reads the titlelist stored in the specified title, normally a title
 with title-type 3, which is sysupdate-title 0100000000000816. Returns 0
 with total\_read\_entries=0 when used with other title(s).
+
+#### CheckNcaIDsPresent
+
+Takes a type-6 byte buffer, and a type-5 buffer containing
+[\#NcaIDs](#NcaID "wikilink").
+
+This function was stubbed to return 0xDC05 in
+[2.0.0](2.0.0.md "wikilink").
+
+On 1.0.0: Initialized the output buffer to all 1s. Then, for each
+[\#NcaID](#NcaID "wikilink") in the input buffer, it checks if that
+NcaID is present anywhere in the database, and if so writes 0 to the
+corresponding output byte.
+
+In pseudocode, the function basically does the following:
+
+for i in range(len(out\_buf)):
+
+`   out_buf[i] = 1`
+
+for i, NcaID in NcaIDs:
+
+`   if is_present_in_database(NcaID):`  
+`       out_buf[i] = 0`
 
 ### NcaID
 
