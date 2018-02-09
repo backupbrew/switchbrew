@@ -221,6 +221,8 @@ See GetEntrySize for the total size readable with this.
 === IContentMetaDatabase ===
 This is "nn::ncm::IContentMetaDatabase".
 
+Note the official name for Meta Record is "ContentMetaKey".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -235,11 +237,11 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 4 || ReadEntryContentRecordEntries || Takes a type-6 buffer to write [[NCA#Content_records|Content Record]] entries to, a [[NCA#Meta_records|Meta Record]], and a u32 index into the Content Record entries to start copying from. Returns a u32 entries_read.
 |-
-| 5 || GetMetaRecords || Takes a type-6 buffer to write [[NCA#Meta_records|Meta Record]]s to, a u32 [[#Title_Types|Title Type]], a u64 TID, a u64 TID_LOW, and u64 TID_HIGH. Writes into the buffer all Meta Records with low <= record->title_id <= high, and record->type == type. Additionally requires record->title_id == TID, if record->type is Application, Patch, Add-On, or Delta.
+| 5 || List || Takes a type-6 buffer to write [[NCA#Meta_records|Meta Record]]s to, a u32 [[#Title_Types|Title Type]], a u64 TID, a u64 TID_LOW, and u64 TID_HIGH. Writes into the buffer all Meta Records with low <= record->title_id <= high, and record->type == type. Additionally requires record->title_id == TID, if record->type is Application, Patch, Add-On, or Delta.
 |-
 | 6 || GetMetaRecord || Takes a u64 title id, and returns the [[NCA#Meta_records|Meta Record]] with the highest version field for that title id.
 |-
-| 7 || [[#GetTitleUpdateRecords]] ||
+| 7 || [[#ListApplication]] ||
 |-
 | 8 || IsEntryPresent || Takes a [[NCA#Meta_records|Meta Record]] and returns whether that record is present in the database.
 |-
@@ -267,8 +269,8 @@ This is "nn::ncm::IContentMetaDatabase".
 |}
 
 
-==== GetTitleUpdateRecords ====
-Each 24-byte entry is as follows:
+==== ListApplication ====
+Each 24-byte entry (officially "ApplicationContentMetaKey") is as follows:
   [[NCA#Meta_records|meta_record]] meta_record;
   u64    base_title_id;
 
