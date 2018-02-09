@@ -425,9 +425,9 @@ flag={disable/enable}.
 | 14  | SetRestartMessageEnabled                                                                     |
 | 15  | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |
 | 16  | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |
-| 17  | \[2.0.0+\] SetControllerFirmwareUpdateSection                                                |
-| 18  | \[2.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
-| 19  | \[2.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
+| 17  | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |
+| 18  | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
+| 19  | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
 | 40  | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |
 | 50  | SetHandlesRequestToDisplay                                                                   |
 | 51  | ApproveToDisplay                                                                             |
@@ -437,8 +437,8 @@ flag={disable/enable}.
 | 63  | GetIdleTimeDetectionExtension                                                                |
 | 64  | SetInputDetectionSourceSet                                                                   |
 | 65  | \[2.0.0+\] ReportUserIsActive                                                                |
-| 66  | \[2.0.0+\] GetCurrentIlluminance                                                             |
-| 67  | \[2.0.0+\] IsIlluminanceAvailable                                                            |
+| 66  | \[3.0.0+\] GetCurrentIlluminance                                                             |
+| 67  | \[3.0.0+\] IsIlluminanceAvailable                                                            |
 
 ### SetScreenShotPermission
 
