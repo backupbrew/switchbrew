@@ -268,7 +268,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |}
 
 ====GetLibraryAppletInfo====
-No input. Returns an u64 LibraryAppletInfo, which contains [[#AppletId]].
+No input. Returns an u64 LibraryAppletInfo: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]].
 
 == IOverlayAppletProxy ==
 {| class="wikitable" border="1"
