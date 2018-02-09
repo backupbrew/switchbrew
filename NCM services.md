@@ -88,23 +88,21 @@ This is
 This is
 "nn::ncm::IContentManager".
 
-| Cmd                              | Name                                                   | Notes                                                                                                                            |
-| -------------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| 0                                | CreatePlaceholderAndRegisteredDirectoriesForMediaId    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
-| 1                                | CreateSaveDataDirectoryForMediaId                      | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
-| 2                                | GetExistsPlaceholderAndRegisteredDirectoriesForMediaId | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
-| 3                                | GetExistsSaveDataDirectoryForMediaId                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
-| 4                                | GetIContentStorage                                     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
-| 5                                | GetIContentMetaDatabase                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                   |
-| ([1.0.0](1.0.0.md "wikilink")) 6 | CloseAndLockIContentStorage                            | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().   |
-| ([1.0.0](1.0.0.md "wikilink")) 7 | CloseAndLockIContentMetaDatabase                       | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase(). |
-| 8                                | DeleteSaveDataForMediaId                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.              |
-| (2.0.0+?) 9                      | MountStorageForMediaId                                 |                                                                                                                                  |
-| (2.0.0+?) 10                     | UnmountStorageForMediaId                               |                                                                                                                                  |
-| (2.0.0+?) 11                     | MountDatabaseForMediaId                                |                                                                                                                                  |
-| (2.0.0+?) 12                     | UnmountDatabaseForMediaId                              |                                                                                                                                  |
-
-All of the above cmds takes a u8 as input.
+| Cmd                              | Name                                                   | Notes                                                                                                                                                                              |
+| -------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0                                | CreatePlaceholderAndRegisteredDirectoriesForMediaId    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                     |
+| 1                                | CreateSaveDataDirectoryForMediaId                      | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                     |
+| 2                                | GetExistsPlaceholderAndRegisteredDirectoriesForMediaId | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                     |
+| 3                                | GetExistsSaveDataDirectoryForMediaId                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                     |
+| 4                                | GetIContentStorage                                     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), (2.0.0+) Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
+| 5                                | GetIContentMetaDatabase                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), (2.0.0+) Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
+| ([1.0.0](1.0.0.md "wikilink")) 6 | CloseAndLockIContentStorage                            | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().                                                     |
+| ([1.0.0](1.0.0.md "wikilink")) 7 | CloseAndLockIContentMetaDatabase                       | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase().                                                   |
+| 8                                | DeleteSaveDataForMediaId                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.                                                                |
+| (2.0.0+) 9                       | OpenIContentStorage                                    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage.                |
+| (2.0.0+) 10                      | CloseIContentStorage                                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage.                                                          |
+| (2.0.0+) 11                      | MountDatabaseForMediaId                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.      |
+| (2.0.0+) 12                      | UnmountDatabaseForMediaId                              | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.      |
 
 ### IContentStorage
 

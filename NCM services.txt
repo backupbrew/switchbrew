@@ -107,9 +107,9 @@ This is "nn::ncm::IContentManager".
 |-
 | 3 || GetExistsSaveDataDirectoryForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]].
 |-
-| 4 || GetIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]].
+| 4 || GetIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]], (2.0.0+) Only returns a storage if one has previously been opened globally via OpenIContentStorage.
 |-
-| 5 || GetIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]].
+| 5 || GetIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]], (2.0.0+) Only returns a storage if one has previously been opened globally via OpenIContentStorage.
 |-
 | ([[1.0.0]]) 6 || CloseAndLockIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]]. Calls IContentStorage->CloseAndFlushStorage().
 |-
@@ -117,16 +117,15 @@ This is "nn::ncm::IContentManager".
 |-
 | 8 || DeleteSaveDataForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]], and deletes the associated savedata.
 |-
-| (2.0.0+?) 9 || MountStorageForMediaId ||
+| (2.0.0+) 9 || OpenIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]], and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage.
 |-
-| (2.0.0+?) 10 || UnmountStorageForMediaId ||
+| (2.0.0+) 10 || CloseIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]], and closes the associated IContentStorage.
 |-
-| (2.0.0+?) 11 || MountDatabaseForMediaId ||
+| (2.0.0+) 11 || MountDatabaseForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]], and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.
 |-
-| (2.0.0+?) 12 || UnmountDatabaseForMediaId ||
+| (2.0.0+) 12 || UnmountDatabaseForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]], and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.
 |}
 
-All of the above cmds takes a u8 as input.
 
 === IContentStorage ===
 This is "nn::ncm::IContentStorage".
