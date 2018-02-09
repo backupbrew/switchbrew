@@ -156,7 +156,7 @@ This is "nn::ncm::IContentStorage".
 |-
 | 10 || CleanPlaceholderDirectory || Deletes and re-creates the Placeholder directory.
 |-
-| 11 || GetNumberOfRegisteredEntries || This is like [[#GetRegisteredEntries]], but for the Placeholder directory.
+| 11 || GetNumberOfPlacholderEntries || This is like [[#GetNumberOfRegisteredEntries]], but for the Placeholder directory.
 |-
 | 12 || [[#GetNumberOfRegisteredEntries]] ||
 |-
