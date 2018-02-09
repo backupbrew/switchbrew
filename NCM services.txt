@@ -347,6 +347,6 @@ The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, f
 
 == ncm:v ==
 
-This services doesn't normally exist on retail.
+This service doesn't normally exist on retail.
 
 [[Category:Services]]
