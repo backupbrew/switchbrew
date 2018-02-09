@@ -418,16 +418,16 @@ flag={disable/enable}.
 | 3   | \[2.0.0+\] EnterFatalSection                                                                 |
 | 4   | \[2.0.0+\] LeaveFatalSection                                                                 |
 | 9   | GetLibraryAppletLaunchableEvent                                                              |
-| 10  | SetScreenShotPermission                                                                      |
+| 10  | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |
 | 11  | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |
 | 12  | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |
 | 13  | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |
 | 14  | SetRestartMessageEnabled                                                                     |
-| 15  | \[2.0.0+\] SetScreenShotAppletIdentityInfo                                                   |
+| 15  | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |
 | 16  | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |
 | 17  | \[2.0.0+\] SetControllerFirmwareUpdateSection                                                |
 | 18  | \[2.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
-| 19  | \[2.0.0+\] SetScreenShotImageOrientation                                                     |
+| 19  | \[2.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
 | 40  | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |
 | 50  | SetHandlesRequestToDisplay                                                                   |
 | 51  | ApproveToDisplay                                                                             |
@@ -439,6 +439,10 @@ flag={disable/enable}.
 | 65  | \[2.0.0+\] ReportUserIsActive                                                                |
 | 66  | \[2.0.0+\] GetCurrentIlluminance                                                             |
 | 67  | \[2.0.0+\] IsIlluminanceAvailable                                                            |
+
+### SetScreenShotPermission
+
+Takes an input s32. No output.
 
 ### SetOperationModeChangedNotification
 
@@ -453,9 +457,17 @@ Takes an input u8 bool flag. No output.
 Takes 3 input u8s with each field located immediately after the previous
 u8, these are bool flags. No output.
 
+### SetScreenShotAppletIdentityInfo
+
+Takes an input 0x10-byte struct AppletIdentityInfo. No output.
+
 ### SetOutOfFocusSuspendingEnabled
 
 Takes an input u8(bool flag). No output.
+
+### SetScreenShotImageOrientation
+
+Takes an input s32. No output.
 
 ### CreateManagedDisplayLayer
 
