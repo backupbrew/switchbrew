@@ -121,9 +121,9 @@ This is "nn::ncm::IContentManager".
 |-
 | (2.0.0+) 10 || CloseIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]], and closes the associated IContentStorage.
 |-
-| (2.0.0+) 11 || MountDatabaseForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]], and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.
+| (2.0.0+) 11 || OpenIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]], and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.
 |-
-| (2.0.0+) 12 || UnmountDatabaseForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]], and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.
+| (2.0.0+) 12 || CloseIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]], and closes the associated IContentMetaDatabase.
 |}
 
 

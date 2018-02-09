@@ -101,8 +101,8 @@ This is
 | 8                                | DeleteSaveDataForMediaId                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.                                                                |
 | (2.0.0+) 9                       | OpenIContentStorage                                    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage.                |
 | (2.0.0+) 10                      | CloseIContentStorage                                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage.                                                          |
-| (2.0.0+) 11                      | MountDatabaseForMediaId                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.      |
-| (2.0.0+) 12                      | UnmountDatabaseForMediaId                              | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.      |
+| (2.0.0+) 11                      | OpenIContentMetaDatabase                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.      |
+| (2.0.0+) 12                      | CloseIContentMetaDatabase                              | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentMetaDatabase.                                                     |
 
 ### IContentStorage
 
