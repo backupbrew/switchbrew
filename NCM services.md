@@ -213,7 +213,7 @@ This is
 | 3   | GetContentNcaId                                        | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and a u8 [Title Type](#Title_Types "wikilink"). Returns a [\#NcaID](#NcaID "wikilink").                                                                            |
 | 4   |                                                        | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.                                                                                                                                             |
 | 5   | Iterate                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.                                                                                                                                          |
-| 6   | [\#GetTitleIdInfo](#GetTitleIdInfo "wikilink")         |                                                                                                                                                                                                                                          |
+| 6   | GetMetaRecord                                          | Takes a u64 title id, and returns the [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") with the highest version field for that title id.                                                                                    |
 | 7   | [\#GetTitleList](#GetTitleList "wikilink")             | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.                                                                                                                                                      |
 | 8   |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                                                                                                                             |
 | 9   |                                                        | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                                                                                                                                                                     |
@@ -227,17 +227,6 @@ This is
 | 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink") |                                                                                                                                                                                                                                          |
 | 18  |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                                                                                                                             |
 | 19  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                                                                                                                                                                 |
-
-#### GetTitleIdInfo
-
-Takes a u64 title-id as input, returns same title-id together with info
-struct.
-
-`struct title_info {`  
-`  u32  version;`  
-`  u8   type;`  
-`  u8   pad[3];`  
-`};`
 
 #### GetTitleList
 

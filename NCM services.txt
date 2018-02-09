@@ -237,7 +237,7 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 5 || Iterate || Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.
 |-
-| 6 || [[#GetTitleIdInfo]] ||
+| 6 || GetMetaRecord || Takes a u64 title id, and returns the [[NCA#Meta_records|Meta Record]] with the highest version field for that title id.
 |-
 | 7 || [[#GetTitleList]] || Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's. 
 |-
@@ -266,14 +266,6 @@ This is "nn::ncm::IContentMetaDatabase".
 | 19 || || Takes a 0x10-sized entry. Returns a u32.
 |}
 
-==== GetTitleIdInfo ====
-Takes a u64 title-id as input, returns same title-id together with info struct.
-
- struct title_info {
-   u32  version;
-   u8   type;
-   u8   pad[3];
- };
 
 ==== GetTitleList ====
 Each 24-byte entries is as follows:
