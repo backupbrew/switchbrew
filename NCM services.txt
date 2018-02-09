@@ -257,7 +257,7 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 15 || SaveMetaDatabase || Flushes the in-memory database to savedata.
 |-
-| 16 || || Takes two 0x10-sized entries. Returns a bool/u8.
+| 16 || CheckMetaRecordHasNcaId || Takes a [[NCA#Meta_records|Meta Record]] and an [[#NcaID]]. Returns whether the content records for that meta record contain the NcaID.
 |-
 | 17 || [[#GetUpdateTitleList]] || 
 |-
