@@ -93,7 +93,7 @@
 | 
 |-
 | [[NCM_services|NCM]]
-| Nintendo content management services
+| Nintendo Content Management services
 |
 |-
 | [[NIM_services|NIM]]
