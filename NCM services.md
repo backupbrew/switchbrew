@@ -205,36 +205,45 @@ See GetEntrySize for the total size readable with this.
 This is
 "nn::ncm::IContentMetaDatabase".
 
-| Cmd | Name                                                   | Notes                                                                                                                                                                                                                                    |
-| --- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | InsertContentRecords                                   | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), a type-5 [Content Records](NCA#Content%20records.md##Content_records "wikilink") buffer and a u64 size.                                                           |
-| 1   | ReadContentRecords                                     | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), a type-6 buffer to write [Content Records](NCA#Content%20records.md##Content_records "wikilink") to and a u64 size. Returns the actual Content Records size read. |
-| 2   | RemoveContentRecords                                   | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and removes the associated record.                                                                                                                                |
-| 3   | GetContentNcaId                                        | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and a u8 [Title Type](#Title_Types "wikilink"). Returns a [\#NcaID](#NcaID "wikilink").                                                                            |
-| 4   |                                                        | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.                                                                                                                                             |
-| 5   | Iterate                                                | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.                                                                                                                                          |
-| 6   | GetMetaRecord                                          | Takes a u64 title id, and returns the [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") with the highest version field for that title id.                                                                                    |
-| 7   | [\#GetTitleList](#GetTitleList "wikilink")             | Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's.                                                                                                                                                      |
-| 8   |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                                                                                                                             |
-| 9   |                                                        | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                                                                                                                                                                     |
-| 10  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                                                                                                                                                                 |
-| 11  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                                                                                                                                                                 |
-| 12  |                                                        | Takes a 0x10-sized entry. Returns a u64.                                                                                                                                                                                                 |
-| 13  | CloseMetaDatabase                                      | Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.                                                                                                                              |
-| 14  |                                                        | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                                                                                                                                                          |
-| 15  | SaveMetaDatabase                                       | Flushes the in-memory database to savedata.                                                                                                                                                                                              |
-| 16  |                                                        | Takes two 0x10-sized entries. Returns a bool/u8.                                                                                                                                                                                         |
-| 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink") |                                                                                                                                                                                                                                          |
-| 18  |                                                        | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                                                                                                                             |
-| 19  |                                                        | Takes a 0x10-sized entry. Returns a u32.                                                                                                                                                                                                 |
+| Cmd | Name                                                         | Notes                                                                                                                                                                                                                                    |
+| --- | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | InsertContentRecords                                         | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), a type-5 [Content Records](NCA#Content%20records.md##Content_records "wikilink") buffer and a u64 size.                                                           |
+| 1   | ReadContentRecords                                           | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), a type-6 buffer to write [Content Records](NCA#Content%20records.md##Content_records "wikilink") to and a u64 size. Returns the actual Content Records size read. |
+| 2   | RemoveContentRecords                                         | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and removes the associated record.                                                                                                                                |
+| 3   | GetContentNcaId                                              | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and a u8 [Title Type](#Title_Types "wikilink"). Returns a [\#NcaID](#NcaID "wikilink").                                                                            |
+| 4   |                                                              | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.                                                                                                                                             |
+| 5   | Iterate                                                      | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.                                                                                                                                          |
+| 6   | GetMetaRecord                                                | Takes a u64 title id, and returns the [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") with the highest version field for that title id.                                                                                    |
+| 7   | [\#GetTitleUpdateRecords](#GetTitleUpdateRecords "wikilink") |                                                                                                                                                                                                                                          |
+| 8   |                                                              | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                                                                                                                             |
+| 9   |                                                              | Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.                                                                                                                                                                     |
+| 10  |                                                              | Takes a 0x10-sized entry. Returns a u64.                                                                                                                                                                                                 |
+| 11  |                                                              | Takes a 0x10-sized entry. Returns a u32.                                                                                                                                                                                                 |
+| 12  |                                                              | Takes a 0x10-sized entry. Returns a u64.                                                                                                                                                                                                 |
+| 13  | CloseMetaDatabase                                            | Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.                                                                                                                              |
+| 14  |                                                              | Takes a type-6 byte buffer, and a type-5 buffer with each entry being 16 bytes.                                                                                                                                                          |
+| 15  | SaveMetaDatabase                                             | Flushes the in-memory database to savedata.                                                                                                                                                                                              |
+| 16  |                                                              | Takes two 0x10-sized entries. Returns a bool/u8.                                                                                                                                                                                         |
+| 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink")       |                                                                                                                                                                                                                                          |
+| 18  |                                                              | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                                                                                                                             |
+| 19  |                                                              | Takes a 0x10-sized entry. Returns a u32.                                                                                                                                                                                                 |
 
-#### GetTitleList
+#### GetTitleUpdateRecords
 
-Each 24-byte entries is as follows:
+Each 24-byte entry is as
+follows:
 
-` u64    title_id_update;`  
-` struct title_info info;`  
-` u64    title_id;`
+` `[`meta_record`](NCA#Meta%20records.md##Meta_records "wikilink")` meta_record;`  
+` u64    update_title_id;`
+
+This function takes in a type 6 buffer to write entries to, and a u8
+"filter" [type](#Title_Types "wikilink"). If filter is zero, all update
+records will be copied to to the output buffer (space permitting).
+Otherwise, only titles with type == filter\_type will be copied to the
+output buffer.
+
+This func returns a u32 num\_entries\_written, and a u32
+num\_entries\_total.
 
 #### GetUpdateTitleList
 

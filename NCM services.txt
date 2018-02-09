@@ -239,7 +239,7 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 6 || GetMetaRecord || Takes a u64 title id, and returns the [[NCA#Meta_records|Meta Record]] with the highest version field for that title id.
 |-
-| 7 || [[#GetTitleList]] || Takes a type-6 buffer, each entry being 24 bytes, and a u8/bool. Returns two u32's. 
+| 7 || [[#GetTitleUpdateRecords]] ||
 |-
 | 8 || || Takes a 0x10-sized entry. Returns a bool/u8.
 |-
@@ -267,12 +267,14 @@ This is "nn::ncm::IContentMetaDatabase".
 |}
 
 
-==== GetTitleList ====
-Each 24-byte entries is as follows:
+==== GetTitleUpdateRecords ====
+Each 24-byte entry is as follows:
+  [[NCA#Meta_records|meta_record]] meta_record;
+  u64    update_title_id;
 
-  u64    title_id_update;
-  struct title_info info;
-  u64    title_id;
+This function takes in a type 6 buffer to write entries to, and a u8 "filter" [[#Title_Types|type]]. If filter is zero, all update records will be copied to to the output buffer (space permitting). Otherwise, only titles with type == filter_type will be copied to the output buffer.
+
+This func returns a u32 num_entries_written, and a u32 num_entries_total.
 
 
 ==== GetUpdateTitleList ====
