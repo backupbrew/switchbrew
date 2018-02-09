@@ -313,4 +313,6 @@ ReadEntryRaw.
 
 ## ncm:v
 
+This services doesn't normally exist on retail.
+
 [Category:Services](Category:Services "wikilink")
