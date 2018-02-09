@@ -170,33 +170,8 @@ size-field in the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
 Takes an output buffer, a [\#NcaID](#NcaID "wikilink") as input, and a
 u64 file offset.
 
-Returns encrypted looking data from the content in the
-[NAX0](NAX0.md "wikilink"). Doesn't match the encrypted raw data in the
-[NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file. Seems to be at least
-one crypto layer below the initial NAX0 layer, since the data doesn't
-change after NAX0 recreation.
-
-Manually modifying the content in the NAX0(starting at offset 0x4000)
-results in different output data being returned by this cmd. Changing
-any data within the first 0x10-bytes results in the entire 0x10-byte
-block changing. Likewise for offset 0x4010 size 0x1, entire 0x10-byte
-block at 0x4010 changes. Changing the first 0x20-bytes at 0x4000 to
-zeros has the same combined changed output, as when offset 0x4000 size
-0x10 and offset 0x4010 size 0x10 were changed to zeros separately.
-Output BlockA and BlockB are completely different, where the raw NAX0
-data for those blocks are all-zero.
-
-Overwriting the entire raw NAX0 content with zeros results in output
-data which doesn't seem to have any duplicate blocks/data. When changing
-the previously mentioned raw content for the first 8 blocks to
-last-block-byte = 1\<\<i, where i is 0-7, none of the changed output
-blocks match any output blocks from the previously mentioned
-output(all-zero raw content).
-
-This implies that that an AES mode is being used which isn't CTR, where
-changing data in one block doesn't affect other blocks.
-
-See GetEntrySize for the total size readable with this.
+Reads plaintext NCA file contents from the Registered path for the
+NcaID.
 
 ### IContentMetaDatabase
 
