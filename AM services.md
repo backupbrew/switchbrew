@@ -444,6 +444,8 @@ flag={disable/enable}.
 
 Takes an input s32. No output.
 
+Controls whether screenshot-capture is allowed. 0 = disable, 1 = enable.
+
 ### SetOperationModeChangedNotification
 
 Takes an input u8 bool flag. No output.
