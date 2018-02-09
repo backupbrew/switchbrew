@@ -89,7 +89,7 @@
 | Long form name is known as the Advanced Encryption Standard XEX-based tweaked-codebook mode with ciphertext stealing file system / file format
 |-
 | [[NCA_Format|NCA]]
-| The NCA file format. 
+| Nintendo Content Archive
 | 
 |-
 | [[NCM_services|NCM]]
@@ -109,7 +109,7 @@
 |
 |-
 | [[NS_Services|NS]]
-| Nintendo Switch services
+| Nintendo Shell services
 |
 |-
 | [[Switch_System_Flaws|NS System Flaws]]
@@ -153,7 +153,7 @@
 |
 |-
 | [[SPL_services|SPL]]
-| Secure pseudorandom number generator loader
+| Security Processor Liaison
 |
 |-
 | [[SSL_services|SSL]]
