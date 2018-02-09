@@ -263,9 +263,9 @@ Note the official name for Meta Record is "ContentMetaKey".
 |-
 | 17 || ReadEntryMetaRecords || Takes a type-6 [[NCA#Meta_records|Meta Record]] output buffer, a u32 eoffset into that buffer, and an input [[NCA#Meta_records|Meta Record]].
 |-
-| 18 || || Takes a 0x10-sized entry. Returns a bool/u8.
+| 18 || GetEntryUnknown6 || akes a [[NCA#Meta_records|Meta Record]], and returns u8 from ContentRecords + 6.
 |-
-| 19 || || Takes a 0x10-sized entry. Returns a u32.
+| 19 || GetAddOnContentEntryUnknownRecordSize || Does the same thing as GetEntryUnknownRecordSize, but for AddOnContents.
 |}
 
 
