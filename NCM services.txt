@@ -241,9 +241,9 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 7 || [[#GetTitleUpdateRecords]] ||
 |-
-| 8 || || Takes a 0x10-sized entry. Returns a bool/u8.
+| 8 || IsMetaRecordPresent || Takes a [[NCA#Meta_records|Meta Record]] and returns whether that record is present in the database.
 |-
-| 9 || || Takes a type-5 buffer, each entry being 16 bytes. Returns a bool/u8.
+| 9 || AreMetaRecordsPresent || Takes a type-5 buffer containing size/0x10 [[NCA#Meta_records|Meta Records]] and returns whether all of those records are present in the database.
 |-
 | 10 || || Takes a 0x10-sized entry. Returns a u64.
 |-
