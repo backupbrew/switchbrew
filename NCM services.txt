@@ -245,11 +245,11 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 9 || AreMetaRecordsPresent || Takes a type-5 buffer containing [[NCA#Meta_records|Meta Records]] (code assumes there are size/sizeof(meta_record) records in the buffer), and returns whether all of those records are present in the database.
 |-
-| 10 || GetBaseTitleId || Takes a [[NCA#Meta_records|Meta Record]], and returns the base title id for that record.
+| 10 || GetContentRecordsSize || Takes a [[NCA#Meta_records|Meta Record]], and returns the size of the associated [[NCA#Content_records|Content Records]].
 |-
-| 11 || || Takes a 0x10-sized entry. Returns a u32.
+| 11 || GetUnknownRecordSize || Takes a [[NCA#Meta_records|Meta Record]], and returns u32 from ContentRecords + 16 (only if the Meta record has type Application or Patch).
 |-
-| 12 || || Takes a 0x10-sized entry. Returns a u64.
+| 12 || GetUpdateTitleId || Takes a [[NCA#Meta_records|Meta Record]], and returns the update title id for that record.
 |-
 | 13 || CloseMetaDatabase ||  Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.
 |-
