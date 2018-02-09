@@ -40,7 +40,7 @@ This is the Switch equivalent of 3DS exheader. This is the file with extension "
 |-
 | 0xC
 | 1
-| MmuFlags
+| 
 |-
 | 0xE
 | 1

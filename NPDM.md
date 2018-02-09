@@ -14,7 +14,7 @@ extension ".npdm" in {Switch ExeFS}. The size of this file varies.
 | 0x0    | 0x4  | Magic "META".                                                             |
 | 0x4    |      |                                                                           |
 | 0x8    |      |                                                                           |
-| 0xC    | 1    | MmuFlags                                                                  |
+| 0xC    | 1    |                                                                           |
 | 0xE    | 1    | MainThreadPrio                                                            |
 | 0xF    | 1    | DefaultCpuId                                                              |
 | 0x10   |      |                                                                           |
