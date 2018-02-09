@@ -207,24 +207,24 @@ This is
 
 | Cmd | Name                                                         | Notes                                                                                                                                                                                                                                           |
 | --- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | InsertContentRecords                                         | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), a type-5 [Content Records](NCA#Content%20records.md##Content_records "wikilink") buffer and a u64 size.                                                                  |
-| 1   | ReadContentRecords                                           | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), a type-6 buffer to write [Content Records](NCA#Content%20records.md##Content_records "wikilink") to and a u64 size. Returns the actual Content Records size read.        |
-| 2   | RemoveContentRecords                                         | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and removes the associated record.                                                                                                                                       |
-| 3   | GetContentNcaId                                              | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and a u8 [Title Type](#Title_Types "wikilink"). Returns a [\#NcaID](#NcaID "wikilink").                                                                                   |
+| 0   | InsertEntryContentRecords                                    | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), a type-5 [Content Records](NCA#Content%20records.md##Content_records "wikilink") buffer and a u64 size.                                                                  |
+| 1   | ReadEntryContentRecords                                      | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), a type-6 buffer to write [Content Records](NCA#Content%20records.md##Content_records "wikilink") to and a u64 size. Returns the actual Content Records size read.        |
+| 2   | RemoveEntryContentRecords                                    | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and removes the associated record.                                                                                                                                       |
+| 3   | GetEntryContentNcaId                                         | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and a u8 [Title Type](#Title_Types "wikilink"). Returns a [\#NcaID](#NcaID "wikilink").                                                                                   |
 | 4   |                                                              | Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.                                                                                                                                                    |
 | 5   | Iterate                                                      | Takes a type-6 buffer, each entry being 16 bytes, a 0x10-sized entry, and a u32. Returns a u32.                                                                                                                                                 |
 | 6   | GetMetaRecord                                                | Takes a u64 title id, and returns the [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") with the highest version field for that title id.                                                                                           |
 | 7   | [\#GetTitleUpdateRecords](#GetTitleUpdateRecords "wikilink") |                                                                                                                                                                                                                                                 |
-| 8   | IsMetaRecordPresent                                          | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and returns whether that record is present in the database.                                                                                                               |
-| 9   | AreMetaRecordsPresent                                        | Takes a type-5 buffer containing [Meta Records](NCA#Meta%20records.md##Meta_records "wikilink") (code assumes there are size/sizeof(meta\_record) records in the buffer), and returns whether all of those records are present in the database. |
-| 10  | GetContentRecordsSize                                        | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns the size of the associated [Content Records](NCA#Content%20records.md##Content_records "wikilink").                                                          |
-| 11  | GetUnknownRecordSize                                         | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns u32 from ContentRecords + 16 (only if the Meta record has type Application or Patch).                                                                        |
-| 12  | GetUpdateTitleId                                             | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns the update title id for that record.                                                                                                                         |
+| 8   | IsEntryPresent                                               | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and returns whether that record is present in the database.                                                                                                               |
+| 9   | AreEntriesPresent                                            | Takes a type-5 buffer containing [Meta Records](NCA#Meta%20records.md##Meta_records "wikilink") (code assumes there are size/sizeof(meta\_record) records in the buffer), and returns whether all of those records are present in the database. |
+| 10  | GetEntryContentRecordsSize                                   | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns the size of the associated [Content Records](NCA#Content%20records.md##Content_records "wikilink").                                                          |
+| 11  | GetEntryUnknownRecordSize                                    | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns u32 from ContentRecords + 16 (only if the Meta record has type Application or Patch).                                                                        |
+| 12  | GetEntryUpdateTitleId                                        | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns the update title id for that record.                                                                                                                         |
 | 13  | CloseMetaDatabase                                            | Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.                                                                                                                                     |
 | 14  | [\#CheckNcaIDsPresent](#CheckNcaIDsPresent "wikilink")       | Takes a type-6 byte buffer, and a type-5 buffer of [\#NcaIDs](#NcaID "wikilink").                                                                                                                                                               |
 | 15  | SaveMetaDatabase                                             | Flushes the in-memory database to savedata.                                                                                                                                                                                                     |
-| 16  | CheckMetaRecordHasNcaId                                      | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and an [\#NcaID](#NcaID "wikilink"). Returns whether the content records for that meta record contain the NcaID.                                                          |
-| 17  | [\#GetUpdateTitleList](#GetUpdateTitleList "wikilink")       |                                                                                                                                                                                                                                                 |
+| 16  | CheckEntryHasNcaId                                           | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and an [\#NcaID](#NcaID "wikilink"). Returns whether the content records for that meta record contain the NcaID.                                                          |
+| 17  | ReadEntryMetaRecords                                         | Takes a type-6 [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") output buffer, a u32 eoffset into that buffer, and an input [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink").                                         |
 | 18  |                                                              | Takes a 0x10-sized entry. Returns a bool/u8.                                                                                                                                                                                                    |
 | 19  |                                                              | Takes a 0x10-sized entry. Returns a u32.                                                                                                                                                                                                        |
 
@@ -245,28 +245,22 @@ output buffer.
 This func returns a u32 num\_entries\_written, and a u32
 num\_entries\_total.
 
-#### GetUpdateTitleList
+#### ReadEntryMetaRecords
 
-Takes a type-6 output buffer, each entry being 0x10-byte bytes, a u32
-entryoffset and a 0x10-sized entry. Returns a u32 for
-total\_read\_entries.
+Takes a type-6 [Meta
+Record](NCA#Meta%20records.md##Meta_records "wikilink") output buffer, a
+u32 eoffset into that buffer, and an input [Meta
+Record](NCA#Meta%20records.md##Meta_records "wikilink") entry. Returns a
+u32 for total\_read\_entries.
 
-The input entry is the output entry from
-[\#GetTitleIdInfo](#GetTitleIdInfo "wikilink") starting at the TID. The
-output 0x10-bytes entries are the same as the output from
-[\#GetTitleIdInfo](#GetTitleIdInfo "wikilink") starting at the TID.
-However, "pad\[0\]" is used for something else it seems?(0 for
-everything except for TID
-[010000000000081B](Title%20list.md "wikilink"), where it's 1)
+Reads the meta records stored in the entry's content records into the
+output buffer.
 
-See
-[NCA\#Meta\_records](NCA#Meta%20records.md##Meta_records "wikilink").
+This is used, for example, with System Update title 0100000000000816,
+which contains Meta Records for all other systitles in its Content
+Records.
 
-This reads the titlelist stored in the specified title, normally a title
-with title-type 3, which is sysupdate-title 0100000000000816. Returns 0
-with total\_read\_entries=0 when used with other title(s).
-
-#### CheckNcaIDsPresent
+#### CheckEntryNcaIDsPresent
 
 Takes a type-6 byte buffer, and a type-5 buffer containing
 [\#NcaIDs](#NcaID "wikilink").

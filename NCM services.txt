@@ -225,13 +225,13 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || InsertContentRecords || Takes a [[NCA#Meta_records|Meta Record]], a type-5 [[NCA#Content_records|Content Records]] buffer and a u64 size.
+| 0 || InsertEntryContentRecords || Takes a [[NCA#Meta_records|Meta Record]], a type-5 [[NCA#Content_records|Content Records]] buffer and a u64 size.
 |-
-| 1 || ReadContentRecords || Takes a [[NCA#Meta_records|Meta Record]], a type-6 buffer to write [[NCA#Content_records|Content Records]] to and a u64 size. Returns the actual Content Records size read.
+| 1 || ReadEntryContentRecords || Takes a [[NCA#Meta_records|Meta Record]], a type-6 buffer to write [[NCA#Content_records|Content Records]] to and a u64 size. Returns the actual Content Records size read.
 |-
-| 2 || RemoveContentRecords || Takes a [[NCA#Meta_records|Meta Record]], and removes the associated record.
+| 2 || RemoveEntryContentRecords || Takes a [[NCA#Meta_records|Meta Record]], and removes the associated record.
 |-
-| 3 || GetContentNcaId || Takes a [[NCA#Meta_records|Meta Record]] and a u8 [[#Title_Types|Title Type]]. Returns a [[#NcaID]].
+| 3 || GetEntryContentNcaId || Takes a [[NCA#Meta_records|Meta Record]] and a u8 [[#Title_Types|Title Type]]. Returns a [[#NcaID]].
 |-
 | 4 || || Takes a type-6 buffer, each entry being 24 bytes, 0x10-sized entry and a u32. Returns a u32.
 |-
@@ -241,15 +241,15 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 7 || [[#GetTitleUpdateRecords]] ||
 |-
-| 8 || IsMetaRecordPresent || Takes a [[NCA#Meta_records|Meta Record]] and returns whether that record is present in the database.
+| 8 || IsEntryPresent || Takes a [[NCA#Meta_records|Meta Record]] and returns whether that record is present in the database.
 |-
-| 9 || AreMetaRecordsPresent || Takes a type-5 buffer containing [[NCA#Meta_records|Meta Records]] (code assumes there are size/sizeof(meta_record) records in the buffer), and returns whether all of those records are present in the database.
+| 9 || AreEntriesPresent || Takes a type-5 buffer containing [[NCA#Meta_records|Meta Records]] (code assumes there are size/sizeof(meta_record) records in the buffer), and returns whether all of those records are present in the database.
 |-
-| 10 || GetContentRecordsSize || Takes a [[NCA#Meta_records|Meta Record]], and returns the size of the associated [[NCA#Content_records|Content Records]].
+| 10 || GetEntryContentRecordsSize || Takes a [[NCA#Meta_records|Meta Record]], and returns the size of the associated [[NCA#Content_records|Content Records]].
 |-
-| 11 || GetUnknownRecordSize || Takes a [[NCA#Meta_records|Meta Record]], and returns u32 from ContentRecords + 16 (only if the Meta record has type Application or Patch).
+| 11 || GetEntryUnknownRecordSize || Takes a [[NCA#Meta_records|Meta Record]], and returns u32 from ContentRecords + 16 (only if the Meta record has type Application or Patch).
 |-
-| 12 || GetUpdateTitleId || Takes a [[NCA#Meta_records|Meta Record]], and returns the update title id for that record.
+| 12 || GetEntryUpdateTitleId || Takes a [[NCA#Meta_records|Meta Record]], and returns the update title id for that record.
 |-
 | 13 || CloseMetaDatabase ||  Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.
 |-
@@ -257,9 +257,9 @@ This is "nn::ncm::IContentMetaDatabase".
 |-
 | 15 || SaveMetaDatabase || Flushes the in-memory database to savedata.
 |-
-| 16 || CheckMetaRecordHasNcaId || Takes a [[NCA#Meta_records|Meta Record]] and an [[#NcaID]]. Returns whether the content records for that meta record contain the NcaID.
+| 16 || CheckEntryHasNcaId || Takes a [[NCA#Meta_records|Meta Record]] and an [[#NcaID]]. Returns whether the content records for that meta record contain the NcaID.
 |-
-| 17 || [[#GetUpdateTitleList]] || 
+| 17 || ReadEntryMetaRecords || Takes a type-6 [[NCA#Meta_records|Meta Record]] output buffer, a u32 eoffset into that buffer, and an input [[NCA#Meta_records|Meta Record]].
 |-
 | 18 || || Takes a 0x10-sized entry. Returns a bool/u8.
 |-
@@ -277,16 +277,15 @@ This function takes in a type 6 buffer to write entries to, and a u8 "filter" [[
 This func returns a u32 num_entries_written, and a u32 num_entries_total.
 
 
-==== GetUpdateTitleList ====
-Takes a type-6 output buffer, each entry being 0x10-byte bytes, a u32 entryoffset and a 0x10-sized entry. Returns a u32 for total_read_entries.
+==== ReadEntryMetaRecords ====
+Takes a type-6 [[NCA#Meta_records|Meta Record]] output buffer, a u32 eoffset into that buffer, and an input [[NCA#Meta_records|Meta Record]] entry. Returns a u32 for total_read_entries.
 
-The input entry is the output entry from [[#GetTitleIdInfo]] starting at the TID. The output 0x10-bytes entries are the same as the output from [[#GetTitleIdInfo]] starting at the TID. However, "pad[0]" is used for something else it seems?(0 for everything except for TID [[Title_list|010000000000081B]], where it's 1)
+Reads the meta records stored in the entry's content records into the output buffer.
 
-See [[NCA#Meta_records]].
+This is used, for example, with System Update title 0100000000000816, which contains Meta Records for all other systitles in its Content Records.
 
-This reads the titlelist stored in the specified title, normally a title with title-type 3, which is sysupdate-title 0100000000000816. Returns 0 with total_read_entries=0 when used with other title(s).
 
-==== CheckNcaIDsPresent ====
+==== CheckEntryNcaIDsPresent ====
 Takes a type-6 byte buffer, and a type-5 buffer containing [[#NcaID]]s.
 
 This function was stubbed to return 0xDC05 in [[2.0.0]].
