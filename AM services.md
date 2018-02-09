@@ -187,8 +187,8 @@ commands.
 
 #### GetLibraryAppletInfo
 
-No input. Returns an u64
-LibraryAppletInfo.
+No input. Returns an u64 LibraryAppletInfo, which contains
+[\#AppletId](#AppletId "wikilink").
 
 ## IOverlayAppletProxy
 
