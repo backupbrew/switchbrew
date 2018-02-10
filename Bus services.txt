@@ -45,7 +45,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 7 || 0x25 || E, 5 || || || 
 |-
-| 8 || 0x90 || S, 0 || || In || [[HID services]]
+| 8 || 0x90 || S, 0 || DebugPadDriver || In || [[HID services]]
 |-
 | 9 || 0x91 || S, 1 || || || 
 |-
@@ -101,7 +101,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x23 || 0xCB || Z, 3 || || || 
 |-
-| 0x24 || 0x4F || J, 7 || || Out || [[HID services]]
+| 0x24 || 0x4F || J, 7 || Touchscreen power || Out || [[HID services]]
 |-
 | 0x25 || 0x50 || K, 0 || || || 
 |-

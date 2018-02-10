@@ -32,7 +32,7 @@ session.
 | 5           | 0xDB              | BB, 3             | GcAsic Power                   | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
 | 6           | 0xDC              | BB, 4             |                                | In        | [Audio services](Audio%20services.md "wikilink")                                                     |
 | 7           | 0x25              | E, 5              |                                |           |                                                                                                      |
-| 8           | 0x90              | S, 0              |                                | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 8           | 0x90              | S, 0              | DebugPadDriver                 | In        | [HID services](HID%20services.md "wikilink")                                                         |
 | 9           | 0x91              | S, 1              |                                |           |                                                                                                      |
 | 0xA         | 0x96              | S, 6              | Power supply monitor related.  | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0xB         | 0x97              | S, 7              |                                |           |                                                                                                      |
@@ -60,7 +60,7 @@ session.
 | 0x21        | 0xC8              | Z, 0              | Power supply monitor related.  | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0x22        | 0xCA              | Z, 2              |                                |           |                                                                                                      |
 | 0x23        | 0xCB              | Z, 3              |                                |           |                                                                                                      |
-| 0x24        | 0x4F              | J, 7              |                                | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x24        | 0x4F              | J, 7              | Touchscreen power              | Out       | [HID services](HID%20services.md "wikilink")                                                         |
 | 0x25        | 0x50              | K, 0              |                                |           |                                                                                                      |
 | 0x26        | 0x51              | K, 1              |                                |           |                                                                                                      |
 | 0x27        | 0x52              | K, 2              |                                |           |                                                                                                      |
