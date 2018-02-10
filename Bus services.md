@@ -67,8 +67,8 @@ session.
 | 0x28        | 0x54              | K, 4              | PD related, irq                | In        | [USB services](USB%20services.md "wikilink")                                                         |
 | 0x29        | 0x56              | K, 6              |                                |           |                                                                                                      |
 | 0x2A        | 0x57              | K, 7              |                                |           |                                                                                                      |
-| 0x2B        | 0x53              | K, 3              |                                |           |                                                                                                      |
-| 0x2C        | 0xE3              | CC, 3             |                                |           |                                                                                                      |
+| 0x2B        | 0x53              | K, 3              | joycon charging?               | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x2C        | 0xE3              | CC, 3             | joycon charging?               | Out       | [HID services](HID%20services.md "wikilink")                                                         |
 | 0x2D        | 0x38              | H, 0              |                                |           |                                                                                                      |
 | 0x2E        | 0x39              | H, 1              |                                | Out       | [Wlan services](Wlan%20services.md "wikilink"), [PCIe services](PCIe%20services.md "wikilink")       |
 | 0x2F        | 0x3B              | H, 3              |                                | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                             |

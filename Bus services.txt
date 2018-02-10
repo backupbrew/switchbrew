@@ -115,9 +115,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x2A || 0x57 || K, 7 || || || 
 |-
-| 0x2B || 0x53 || K, 3 || || ||
+| 0x2B || 0x53 || K, 3 || joycon charging? || Out || [[HID services]]
 |-
-| 0x2C || 0xE3 || CC, 3 || || ||
+| 0x2C || 0xE3 || CC, 3 || joycon charging? || Out || [[HID services]]
 |-
 | 0x2D || 0x38 || H, 0 || || ||
 |-
