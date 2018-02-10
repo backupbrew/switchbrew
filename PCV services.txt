@@ -44,6 +44,8 @@ This is "nn::bpc::IRtcManager".
 | 3 || ClearExternalRtcResetFlag
 |}
 
+GetExternalRtcValue / SetExternalRtcValue directly accesses the max77620_rtc0 device.
+
 = pcv =
 This is "nn::pcv::detail::IPcvService".
 
