@@ -242,11 +242,11 @@ subchannel.
 | 0xA0040E2C  | 0xE2C          | 0          | 4         | 5    | PushDebugGroup                       |
 | 0xA0020E2E  | 0xE2E          | 0          | 2         | 5    | PopDebugGroupId                      |
 | 0xA0030E30  | 0xE30          | 0          | 3         | 5    | DrawArrays                           |
-| 0xA0050E32  | 0xE32          | 0          | 5         | 5    | ?                                    |
-| 0xA0050E34  | 0xE34          | 0          | 5         | 5    | ?                                    |
+| 0xA0050E32  | 0xE32          | 0          | 5         | 5    | DrawArraysIndirect?                  |
+| 0xA0050E34  | 0xE34          | 0          | 5         | 5    | DrawArraysInstanced?                 |
 | 0xA0050E36  | 0xE36          | 0          | 5         | 5    | DrawElements                         |
-| 0xA0060E38  | 0xE38          | 0          | 6         | 5    | ?                                    |
-| 0xA0060E3A  | 0xE3A          | 0          | 6         | 5    | ?                                    |
+| 0xA0060E38  | 0xE38          | 0          | 6         | 5    | DrawElementsIndirect?                |
+| 0xA0060E3A  | 0xE3A          | 0          | 6         | 5    | DrawElementsInstanced?               |
 | 0xA0050E42  | 0xE42          | 0          | 5         | 5    | ?                                    |
 | 0xA0060E44  | 0xE44          | 0          | 6         | 5    | ?                                    |
 
