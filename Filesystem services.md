@@ -396,14 +396,16 @@ The input u64 high-byte must be non-zero, otherwise an
 
 ## SetSdCardEncryptionSeed
 
-Takes 0x10-bytes of input.
+Takes in the 0x10 byte SD card encryption seed, and loads it into
+FS-module state.
 
-Appears to be used to load the seed into FS-module state, since
-FS-module itself doesn't seem to have file-reading code to handle this
-itself.
-
-[NS](NS%20Services.md "wikilink")-module uses this with data read from a
-file.
+[NS](NS%20Services.md "wikilink")-module reads the 0x10 bytes from
+SdCard:/Nintendo/Contents/private, and compares them to the first 0x10
+bytes of the ns\_appman:/private (in [system
+savedata](Flash%20Filesystem#System%20Savegames.md##System_Savegames "wikilink")
+0x8000000000000043). If they match, NS calls this command using bytes
+0x10-0x20 from ns\_appman:/private. The rest of this file (0x1F0 bytes
+total) is (usually/always?) all-zero.
 
 ## SetGlobalAccessLogMode
 
