@@ -1093,7 +1093,12 @@ return code.
 | 0x10    | CountMismatch        |
 | 0x1000  | SharedMemoryTooSmall |
 | 0x30003 | FileOperationFailed  |
+| 0x30004 |                      |
+| 0x3000E |                      |
 | 0x3000F | IoctlFailed          |
+| 0x30010 |                      |
+| 0x30013 |                      |
+| 0xA000E |                      |
 
 # Panic
 

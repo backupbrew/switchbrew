@@ -1170,7 +1170,17 @@ Most nvidia driver commands return an error code apart from the normal return co
 |-
 | 0x30003 || FileOperationFailed
 |-
+| 0x30004 || 
+|-
+| 0x3000E || 
+|-
 | 0x3000F || IoctlFailed                        
+|-
+| 0x30010 ||
+|-
+| 0x30013 ||
+|-
+| 0xA000E ||
 |}
 
 = Panic =
