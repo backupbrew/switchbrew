@@ -79,29 +79,68 @@ DMA puller. The others are forwarded to the engine object currently
 bound to a given
 subchannel.
 
-| Command    | Method | Subchannel | Arg Count | Mode | Name                                 |
-| ---------- | ------ | ---------- | --------- | ---- | ------------------------------------ |
-| 0x2001?000 | 0x0000 | Variable   | 1         | 1    | [BindObject](#BindObject "wikilink") |
-| 0xA0020E00 | 0x3800 | 0          | 2         | 5    | BeginTransformFeedback               |
-| 0xA0030E30 | 0x38C0 | 0          | 3         | 5    | DrawArrays                           |
-| 0xA0050E36 | 0x38D8 | 0          | 5         | 5    | DrawElements                         |
-| 0xA0020E2E | 0x38B8 | 0          | 2         | 5    | PopDebugGroupId                      |
-| 0xA0040E2C | 0x38B0 | 0          | 4         | 5    | PushDebugGroup                       |
-| 0x2001054C | 0x1530 | 0          | 1         | 1    | ResetCounter                         |
-| 0x8001047F | 0x11FC | 0          | 1         | 4    | ResolveDepthBuffer                   |
-| 0x200104C4 | 0x1310 | 0          | 1         | 1    | SetAlphaRef                          |
-| 0x200404C7 | 0x131C | 0          | 4         | 1    | SetBlendColor                        |
-| 0x2001064F | 0x1BD0 | 0          | 1         | 1    | SetDepthClamp                        |
-| 0x200200CD | 0x0334 | 0          | 2         | 1    | SetInnerTessellationLevels           |
-| 0x200204EC | 0x13B0 | 0          | 2         | 1    | SetLineWidth                         |
-| 0x200400C9 | 0x0324 | 0          | 4         | 1    | SetOuterTessellationLevels           |
-| 0x8???0373 | 0x0DCC | 0          | Variable  | 4    | SetPatchSize                         |
-| 0x20010546 | 0x1518 | 0          | 1         | 1    | SetPointSize                         |
-| 0x20030554 | 0x1550 | 0          | 3         | 1    | SetRenderEnableConditional           |
-| 0x200403EF | 0x0FBC | 0          | 4         | 1    | SetSampleMask                        |
-| 0x200103D9 | 0x0F64 | 0          | 1         | 1    | SetTiledCacheTileSize                |
-| 0x20020047 | 0x011C | 0          | 2         | 1    | SetGraphMacroEntry                   |
-| 0xA???0045 | 0x0114 | 0          | Variable  | 5    | SetGraphMacroCode                    |
+| Command     | Method | Subchannel | Arg Count | Mode | Name                                 |
+| ----------- | ------ | ---------- | --------- | ---- | ------------------------------------ |
+| 0x2001?000  | 0x0000 | Variable   | 1         | 1    | [BindObject](#BindObject "wikilink") |
+| 0xA0020E00  | 0x3800 | 0          | 2         | 5    | BeginTransformFeedback               |
+| 0xA0030E30  | 0x38C0 | 0          | 3         | 5    | DrawArrays                           |
+| 0xA0050E36  | 0x38D8 | 0          | 5         | 5    | DrawElements                         |
+| 0xA0020E2E  | 0x38B8 | 0          | 2         | 5    | PopDebugGroupId                      |
+| 0xA0040E2C  | 0x38B0 | 0          | 4         | 5    | PushDebugGroup                       |
+| 0x2001054C  | 0x1530 | 0          | 1         | 1    | ResetCounter                         |
+| 0x8001047F  | 0x11FC | 0          | 1         | 4    | ResolveDepthBuffer                   |
+| 0x200104C4  | 0x1310 | 0          | 1         | 1    | SetAlphaRef                          |
+| 0x200404C7  | 0x131C | 0          | 4         | 1    | SetBlendColor                        |
+| 0x2001064F  | 0x1BD0 | 0          | 1         | 1    | SetDepthClamp                        |
+| 0x200200CD  | 0x0334 | 0          | 2         | 1    | SetInnerTessellationLevels           |
+| 0x200204EC  | 0x13B0 | 0          | 2         | 1    | SetLineWidth                         |
+| 0x200400C9  | 0x0324 | 0          | 4         | 1    | SetOuterTessellationLevels           |
+| 0x8???0373  | 0x0DCC | 0          | Variable  | 4    | SetPatchSize                         |
+| 0x20010546  | 0x1518 | 0          | 1         | 1    | SetPointSize                         |
+| 0x20030554  | 0x1550 | 0          | 3         | 1    | SetRenderEnableConditional           |
+| 0x200403EF  | 0x0FBC | 0          | 4         | 1    | SetSampleMask                        |
+| 0x200103D9  | 0x0F64 | 0          | 1         | 1    | SetTiledCacheTileSize                |
+| 0x20020047  | 0x011C | 0          | 2         | 1    | SetGraphMacroEntry                   |
+| 0xA???0045  | 0x0114 | 0          | Variable  | 5    | SetGraphMacroCode                    |
+| 0x800104B9  | 0x4B9  | 0          | 1         | 4    | ?                                    |
+| 0x80000374  | 0x374  | 0          | 0         | 4    | ?                                    |
+| 0xA0040E12  | 0xE12  | 0          | 4         | 5    | ?                                    |
+| 0x20010E10  | 0xE10  | 0          | 1         | 1    | ?                                    |
+| 0x120020671 | 0x671  | 0          | 2         | 9    | ?                                    |
+| 0x800004BB  | 0x4BB  | 0          | 0         | 4    | ?                                    |
+| 0x2004040C  | 0x40C  | 0          | 4         | 1    | ?                                    |
+| 0x800103F6  | 0x3F6  | 0          | 1         | 4    | ?                                    |
+| 0x800?04BA  | 0x4BA  | 0          | Variable  | 4    | ?                                    |
+| 0x800?04B3  | 0x4B3  | 0          | Variable  | 4    | ?                                    |
+| 0x800?04C3  | 0x4C3  | 0          | Variable  | 4    | ?                                    |
+| 0x800004E0  | 0x4E0  | 0          | 0         | 4    | ?                                    |
+| 0x20010E1A  | 0xE1A  | 0          | 1         | 1    | ?                                    |
+| 0x8000068B  | 0x68B  | 0          | 0         | 4    | ?                                    |
+| 0x200308E3  | 0x8E3  | 0          | 3         | 1    | ?                                    |
+| 0x800?0E0E  | 0xE0E  | 0          | Variable  | 4    | ?                                    |
+| 0x20040478  | 0x478  | 0          | 4         | 1    | ?                                    |
+| 0x800003ED  | 0x3ED  | 0          | 0         | 4    | ?                                    |
+| 0x800203EE  | 0x3EE  | 0          | 2         | 4    | ?                                    |
+| 0x800003F5  | 0x3F5  | 0          | 0         | 4    | ?                                    |
+| 0x80000370  | 0x370  | 0          | 0         | 4    | ?                                    |
+| 0x80000371  | 0x371  | 0          | 0         | 4    | ?                                    |
+| 0x80000372  | 0x372  | 0          | 0         | 4    | ?                                    |
+| 0x80010646  | 0x646  | 0          | 1         | 4    | ?                                    |
+| 0x800?036B  | 0x36B  | 0          | Variable  | 4    | ?                                    |
+| 0x800?036C  | 0x36C  | 0          | Variable  | 4    | ?                                    |
+| 0x800?0648  | 0x648  | 0          | Variable  | 4    | ?                                    |
+| 0x80000D1E  | 0xD1E  | 0          | 0         | 4    | ?                                    |
+| 0x80300830  | 0x830  | 0          | 48        | 4    | ?                                    |
+| 0x80400840  | 0x840  | 0          | 64        | 4    | ?                                    |
+| 0x80500850  | 0x850  | 0          | 80        | 4    | ?                                    |
+| 0x8000047C  | 0x47C  | 0          | 0         | 4    | ?                                    |
+| 0x200308E4  | 0x8E4  | 0          | 3         | 1    | ?                                    |
+| 0x200308E0  | 0x8E0  | 0          | 3         | 1    | ?                                    |
+| 0x80??0924  | 0x924  | 0          | Variable  | 4    | ?                                    |
+| 0x80??0904  | 0x904  | 0          | Variable  | 4    | ?                                    |
+| 0x80??091C  | 0x91C  | 0          | Variable  | 4    | ?                                    |
+| 0x80??090C  | 0x90C  | 0          | Variable  | 4    | ?                                    |
+| 0x80??0914  | 0x914  | 0          | Variable  | 4    | ?                                    |
 
 Note: These still need to be heavily verified and *could* be wrong.
 
