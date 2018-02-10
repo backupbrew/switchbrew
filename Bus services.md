@@ -36,7 +36,7 @@ session.
 | 9           | 0x91              | S, 1              |                                |           |                                                                                                      |
 | 0xA         | 0x96              | S, 6              | Power supply monitor related.  | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0xB         | 0x97              | S, 7              |                                |           |                                                                                                      |
-| 0xC         | 0x26              | E, 6              |                                |           |                                                                                                      |
+| 0xC         | 0x26              | E, 6              | NwcpDriver0.GpioMonitorTask0   |           | [HID services](HID%20services.md "wikilink")                                                         |
 | 0xD         | 6                 | A, 6              | Battery event monitor related. | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0xE         | 0x78              | P, 0              |                                |           |                                                                                                      |
 | 0xF         | 0x93              | S, 3              | GcAsic irq                     | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
@@ -67,8 +67,8 @@ session.
 | 0x28        | 0x54              | K, 4              | PD related, irq                | In        | [USB services](USB%20services.md "wikilink")                                                         |
 | 0x29        | 0x56              | K, 6              |                                |           |                                                                                                      |
 | 0x2A        | 0x57              | K, 7              |                                |           |                                                                                                      |
-| 0x2B        | 0x53              | K, 3              | joycon charging?               | Out       | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x2C        | 0xE3              | CC, 3             | joycon charging?               | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x2B        | 0x53              | K, 3              | NwcpDriver1.NwcpCharger        | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x2C        | 0xE3              | CC, 3             | NwcpDriver0.NwcpCharger        | Out       | [HID services](HID%20services.md "wikilink")                                                         |
 | 0x2D        | 0x38              | H, 0              |                                |           |                                                                                                      |
 | 0x2E        | 0x39              | H, 1              |                                | Out       | [Wlan services](Wlan%20services.md "wikilink"), [PCIe services](PCIe%20services.md "wikilink")       |
 | 0x2F        | 0x3B              | H, 3              |                                | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                             |
@@ -76,7 +76,7 @@ session.
 | 0x31        | 0x3F              | H, 7              |                                |           |                                                                                                      |
 | 0x32        | 0x40              | I, 0              |                                | Out       | [NV services](NV%20services.md "wikilink")                                                           |
 | 0x33        | 0x41              | I, 1              |                                | Out       | [NV services](NV%20services.md "wikilink")                                                           |
-| 0x34        | 0x3E              | H, 6              |                                |           |                                                                                                      |
+| 0x34        | 0x3E              | H, 6              | NwcpDriver1.GpioMonitorTask0   |           | [HID services](HID%20services.md "wikilink")                                                         |
 | 0x35        | 0xE2              | CC, 2             |                                |           |                                                                                                      |
 | 0x36        | 0xE4              | CC, 4             | Battery event monitor related. | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0x37        | 0x3A              | H, 2              |                                |           |                                                                                                      |
@@ -86,8 +86,8 @@ session.
 | 0x3B        | 0x3E              | H, 6              |                                |           |                                                                                                      |
 | 0x3C        | 0x26              | E, 6              |                                |           |                                                                                                      |
 | 0x3D        | \-1               |                   |                                |           |                                                                                                      |
-| 0x3E        | 0x33              | G, 3              |                                |           |                                                                                                      |
-| 0x3F        | 0x1C              | D, 4              |                                |           |                                                                                                      |
+| 0x3E        | 0x33              | G, 3              | NwcpDriver1.GpioMonitorTask1   |           | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x3F        | 0x1C              | D, 4              | NwcpDriver0.GpioMonitorTask1   |           | [HID services](HID%20services.md "wikilink")                                                         |
 | 0x40        | 0xD9              | BB, 1             |                                |           |                                                                                                      |
 | 0x41        | 0x0C              | B, 4              |                                |           |                                                                                                      |
 | 0x42        | 0x0D              | B, 5              |                                |           |                                                                                                      |

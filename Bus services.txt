@@ -53,7 +53,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0xB || 0x97 || S, 7 || || || 
 |-
-| 0xC || 0x26 || E, 6 || || || 
+| 0xC || 0x26 || E, 6 || NwcpDriver0.GpioMonitorTask0 || || [[HID services]]
 |-
 | 0xD || 6 || A, 6 || Battery event monitor related. || Out || [[PTM services]]
 |-
@@ -115,9 +115,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x2A || 0x57 || K, 7 || || || 
 |-
-| 0x2B || 0x53 || K, 3 || joycon charging? || Out || [[HID services]]
+| 0x2B || 0x53 || K, 3 || NwcpDriver1.NwcpCharger || Out || [[HID services]]
 |-
-| 0x2C || 0xE3 || CC, 3 || joycon charging? || Out || [[HID services]]
+| 0x2C || 0xE3 || CC, 3 || NwcpDriver0.NwcpCharger || Out || [[HID services]]
 |-
 | 0x2D || 0x38 || H, 0 || || ||
 |-
@@ -133,7 +133,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x33 || 0x41 || I, 1 || || Out || [[NV services]]
 |-
-| 0x34 || 0x3E || H, 6 || || ||
+| 0x34 || 0x3E || H, 6 || NwcpDriver1.GpioMonitorTask0 || || [[HID services]]
 |-
 | 0x35 || 0xE2 || CC, 2 || || ||
 |-
@@ -153,9 +153,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x3D || -1 || || || ||
 |-
-| 0x3E || 0x33 || G, 3 || || ||
+| 0x3E || 0x33 || G, 3 || NwcpDriver1.GpioMonitorTask1 || || [[HID services]]
 |-
-| 0x3F || 0x1C || D, 4 || || ||
+| 0x3F || 0x1C || D, 4 || NwcpDriver0.GpioMonitorTask1 || || [[HID services]]
 |-
 | 0x40 || 0xD9 || BB, 1 || || ||
 |-
