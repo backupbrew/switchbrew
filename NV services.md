@@ -1094,7 +1094,6 @@ return code.
 | 0x1000  | SharedMemoryTooSmall |
 | 0x30003 | FileOperationFailed  |
 | 0x30004 | DirOperationFailed   |
-| 0x3000E | ?                    |
 | 0x3000F | IoctlFailed          |
 | 0x30010 | AccessDenied         |
 | 0x30013 | FileNotFound         |
