@@ -13,6 +13,10 @@ Contains the screenshots: "YYYY/MM/DD/<hex>.jpg". These contain some sort of MAC
 == save ==
 Contains system-only savedata "8000000000000000" and "8000000000000124".
 
+8000000000000000 is a [[Filesystem_services|FS module]] save describing the other system savedata on the SD card (normally only 8000000000000124).
+
+8000000000000124 is the [[NCM_services|NCM module]] save describing what contents are installed to the SD card.
+
 == Contents ==
 It seems this directory didn't exist until [[2.0.0]].
 

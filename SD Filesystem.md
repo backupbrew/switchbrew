@@ -19,6 +19,13 @@ invalid MACs.
 
 Contains system-only savedata "8000000000000000" and "8000000000000124".
 
+8000000000000000 is a [FS module](Filesystem%20services.md "wikilink")
+save describing the other system savedata on the SD card (normally only
+8000000000000124).
+
+8000000000000124 is the [NCM module](NCM%20services.md "wikilink") save
+describing what contents are installed to the SD card.
+
 ## Contents
 
 It seems this directory didn't exist until [2.0.0](2.0.0.md "wikilink").
