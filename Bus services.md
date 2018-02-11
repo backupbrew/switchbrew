@@ -246,11 +246,11 @@ This is "nn::pwm::IManager".
 
 ## Known Channels
 
-| Name | Interface     | Usage     | Used by                                                  |
-| ---- | ------------- | --------- | -------------------------------------------------------- |
-| 1    | PWM Channel 0 | Fan       |                                                          |
-| 2    | PWM Channel 1 | Backlight | [Backlight services](Backlight%20services.md "wikilink") |
-| 3    | PMC Blinker   |           |                                                          |
+| Name | Interface     | Usage     | Used by                                                                                              |
+| ---- | ------------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| 1    | PWM Channel 0 | Fan       | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 2    | PWM Channel 1 | Backlight | [Backlight services](Backlight%20services.md "wikilink"), [NV services](NV%20services.md "wikilink") |
+| 3    | PMC Blinker   |           |                                                                                                      |
 
 ## IChannelSession
 
