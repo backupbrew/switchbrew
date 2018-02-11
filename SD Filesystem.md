@@ -11,9 +11,9 @@ All files stored under the Contents sub-directories and save/ use the
 
 ## Album
 
-Contains the screenshots: "YYYY/MM/DD/<hex>.jpg". These contain some
-sort of MAC, the system will display an error for screenshots with
-invalid MACs.
+Contains the screenshots: "YYYY/MM/DD/<hex>.jpg". These are
+[MAC](Capture%20services#Notes.md##Notes "wikilink")'d, contents with an
+invalid MAC will display an error on view.
 
 ## save
 
@@ -32,9 +32,9 @@ It seems this directory didn't exist until [2.0.0](2.0.0.md "wikilink").
 
 Contains directories "placehld" and "registered".
 
-Also contains file "private", which stores the 0x10
-[\#SetSdCardEncryptionSeed|sd card seed verification
-vector](Filesystem%20services.md "wikilink").
+Also contains file "private", which stores the 0x10 [sd card seed
+verification
+vector](Filesystem%20services#SetSdCardEncryptionSeed.md##SetSdCardEncryptionSeed "wikilink").
 
 ### placehld and registered
 
