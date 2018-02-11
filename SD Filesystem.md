@@ -25,28 +25,38 @@ It seems this directory didn't exist until [2.0.0](2.0.0.md "wikilink").
 
 Contains directories "placehld" and "registered".
 
-Also contains file "private". Modifying this file results in the system
-throwing the <this microSD is for another system> error.
+Also contains file "private", which stores the 0x10
+[\#SetSdCardEncryptionSeed|sd card seed verification
+vector](Filesystem%20services.md "wikilink").
 
 ### placehld and registered
 
-"placehld" and "registered" are the same, except that the former stores
-the temp data during eShop title download, while the latter is for the
-final title data. The contents of the former for a
-title("placehld/<hex>/") are moved into the latter when title download
-finishes.
+"placehld" and "registered" store game contents; contents are initially
+downloaded temporarily into the "placehld" folder, and then [moved into
+the registered
+folder](NCM%20services#IContentStorage.md##IContentStorage "wikilink")
+when downloading is complete.
 
 Some of the "placehld/<hex>" directories are temp-only and don't get
-moved into "registered". These are deleted when the title is
-launched(?), at that point the directories are already empty.
+moved into "registered".
 
 No titleIDs are stored in any directories/filenames here.
 
-All hex IDs(below XXXXXXXX and NcaId) used here are unique per
-title/content, these are the same for different systems for the same
-title(s).
+All hex IDs(below 000000XX and NcaId) used here are unique per
+title/content. XX is calculated as the first byte from the output of
+SHA-256(NcaId).
+
+Game contents are stored inside [NAX0](NAX0.md "wikilink") archives; due
+to the 4 GB filesize limit on FAT32, contents that are bigger than 4 GB
+have additional file contents automatically split into separate files.
+This automatic file-splitting occurs even on exFAT SD cards where it is
+not
+necessary.
 
 <sub-directory under Contents>  
-`└── `<directories with upper-case hex: XXXXXXXX>  
+`└── <directories with upper-case hex: 000000XX>`  
 `    └── <lowercase hex `[`NcaId`](Content%20Manager%20services.md "wikilink")`>.nca`  
-`        └── 00 (Actual file for data storage)`
+`        └── 00 `[`actual`` ``file`` ``for`` ``data``
+``storage`](NAX0.md "wikilink")  
+`        └── 01 (storage for file data at +4GB in the actual NCA)`  
+`        └── {etc}`
