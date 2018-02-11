@@ -334,9 +334,9 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 1 || GetISystemUpdateControl
 |-
-| 2 || Stubbed, returns 0
+| 2 ||
 |-
-| 3 || Stubbed, returns 0
+| 3 ||
 |-
 | 4 ||
 |-
@@ -353,14 +353,6 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 12 ||
 |-
 | 13 ||
-|-
-| 14 ||
-|-
-| 15 ||
-|-
-| 16 ||
-|-
-| 17 ||
 |-
 |}
 

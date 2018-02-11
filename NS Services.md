@@ -210,8 +210,8 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | --- | ----------------------- |
 | 0   |                         |
 | 1   | GetISystemUpdateControl |
-| 2   | Stubbed, returns 0      |
-| 3   | Stubbed, returns 0      |
+| 2   |                         |
+| 3   |                         |
 | 4   |                         |
 | 5   |                         |
 | 6   |                         |
@@ -220,10 +220,6 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 11  |                         |
 | 12  |                         |
 | 13  |                         |
-| 14  |                         |
-| 15  |                         |
-| 16  |                         |
-| 17  |                         |
 |     |                         |
 
 # ns:dev
