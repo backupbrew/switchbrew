@@ -87,9 +87,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x1C || 0xC1 || Y, 1 || || || 
 |-
-| 0x1D || 0xA9 || V, 1 || .. Backlight? || Out || [[NV services]], [[Backlight services]]
+| 0x1D || 0xA9 || V, 1 || Backlight || Out || [[NV services]], [[Backlight services]]
 |-
-| 0x1E || 0xAA || V, 2 || || Out || [[NV services]]
+| 0x1E || 0xAA || V, 2 || Backlight || Out || [[NV services]]
 |-
 | 0x1F || 0x55 || K, 5 || Charger watchdog related. || Out || [[PTM services]], [[USB services]]
 |-
@@ -129,9 +129,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x31 || 0x3F || H, 7 || || ||
 |-
-| 0x32 || 0x40 || I, 0 || || Out || [[NV services]]
+| 0x32 || 0x40 || I, 0 || Backlight || Out || [[NV services]]
 |-
-| 0x33 || 0x41 || I, 1 || || Out || [[NV services]]
+| 0x33 || 0x41 || I, 1 || Backlight || Out || [[NV services]]
 |-
 | 0x34 || 0x3E || H, 6 || joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion) || || [[HID services]]
 |-
@@ -173,15 +173,17 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x47 || 0x98 || T, 0 || USB root port 3 power || Out || [[USB services]]
 |-
-| 0x48 || 0x10 || C, 0 || || ||
+| 0x48 || 0x10 || C, 0 || HdmiHotplug || Out || [[NV services]]
 |-
-| 0x49 || 0x11 || C, 1 || USB root port 2 power || Out || [[NV services]], [[USB services]]
+| 0x49 || 0x11 || C, 1 || USB root port 2 power || Out || [[USB services]]
 |-
-| 0x4A || 0x12 || C, 2 || || Out || [[NV services]]
+| 0x4A || 0x12 || C, 2 || HdmiHotplug || Out || [[NV services]]
 |-
 | 0x4B || 0x42 || I, 2 || || ||
 |-
 | 0x4C || 0xE6 || CC, 6 || || ||
+|-
+| -- || 0xE1 || CC, 1 || HdmiHotplug || In || [[NV services]]
 |}
 
 == OpenSessionForTest ==

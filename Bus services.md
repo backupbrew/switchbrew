@@ -53,8 +53,8 @@ session.
 | 0x1A        | 0xBF              | X, 7              | Volume Down                                        | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")                       |
 | 0x1B        | 0xC0              | Y, 0              | Power supply monitor related.                      | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
 | 0x1C        | 0xC1              | Y, 1              |                                                    |           |                                                                                                      |
-| 0x1D        | 0xA9              | V, 1              | .. Backlight?                                      | Out       | [NV services](NV%20services.md "wikilink"), [Backlight services](Backlight%20services.md "wikilink") |
-| 0x1E        | 0xAA              | V, 2              |                                                    | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x1D        | 0xA9              | V, 1              | Backlight                                          | Out       | [NV services](NV%20services.md "wikilink"), [Backlight services](Backlight%20services.md "wikilink") |
+| 0x1E        | 0xAA              | V, 2              | Backlight                                          | Out       | [NV services](NV%20services.md "wikilink")                                                           |
 | 0x1F        | 0x55              | K, 5              | Charger watchdog related.                          | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
 | 0x20        | 0xAD              | V, 5              | PD related                                         | Out       | [USB services](USB%20services.md "wikilink")                                                         |
 | 0x21        | 0xC8              | Z, 0              | Power supply monitor related.                      | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
@@ -74,8 +74,8 @@ session.
 | 0x2F        | 0x3B              | H, 3              |                                                    | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                             |
 | 0x30        | 0x3D              | H, 5              |                                                    |           |                                                                                                      |
 | 0x31        | 0x3F              | H, 7              |                                                    |           |                                                                                                      |
-| 0x32        | 0x40              | I, 0              |                                                    | Out       | [NV services](NV%20services.md "wikilink")                                                           |
-| 0x33        | 0x41              | I, 1              |                                                    | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x32        | 0x40              | I, 0              | Backlight                                          | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x33        | 0x41              | I, 1              | Backlight                                          | Out       | [NV services](NV%20services.md "wikilink")                                                           |
 | 0x34        | 0x3E              | H, 6              | joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion) |           | [HID services](HID%20services.md "wikilink")                                                         |
 | 0x35        | 0xE2              | CC, 2             |                                                    |           |                                                                                                      |
 | 0x36        | 0xE4              | CC, 4             | Battery event monitor related.                     | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
@@ -96,11 +96,12 @@ session.
 | 0x45        | 0x92              | S, 2              |                                                    |           |                                                                                                      |
 | 0x46        | 0x95              | S, 5              | USB root port 4 power                              | Out       | [USB services](USB%20services.md "wikilink")                                                         |
 | 0x47        | 0x98              | T, 0              | USB root port 3 power                              | Out       | [USB services](USB%20services.md "wikilink")                                                         |
-| 0x48        | 0x10              | C, 0              |                                                    |           |                                                                                                      |
-| 0x49        | 0x11              | C, 1              | USB root port 2 power                              | Out       | [NV services](NV%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")             |
-| 0x4A        | 0x12              | C, 2              |                                                    | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x48        | 0x10              | C, 0              | HdmiHotplug                                        | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x49        | 0x11              | C, 1              | USB root port 2 power                              | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x4A        | 0x12              | C, 2              | HdmiHotplug                                        | Out       | [NV services](NV%20services.md "wikilink")                                                           |
 | 0x4B        | 0x42              | I, 2              |                                                    |           |                                                                                                      |
 | 0x4C        | 0xE6              | CC, 6             |                                                    |           |                                                                                                      |
+| \--         | 0xE1              | CC, 1             | HdmiHotplug                                        | In        | [NV services](NV%20services.md "wikilink")                                                           |
 
 ## OpenSessionForTest
 
