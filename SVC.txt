@@ -1657,9 +1657,9 @@ Bitfield of one of more of these:
 {| class=wikitable
 ! Bit || Bitmask || Description
 |-
-| 0 || 1 || SwallowException
+| 0 || 1 || CancelSynchronization (only if ResumeAllThreads is set; cancels with error 0x6C01)
 |-
-| 1 || 2 ||
+| 1 || 2 || SwallowException
 |-
 | 2 || 4 || ResumeAllThreads
 |}

@@ -1406,11 +1406,11 @@ Bitfield of one of more of these:
 
 ## ContinueDebugFlags
 
-| Bit | Bitmask | Description      |
-| --- | ------- | ---------------- |
-| 0   | 1       | SwallowException |
-| 1   | 2       |                  |
-| 2   | 4       | ResumeAllThreads |
+| Bit | Bitmask | Description                                                                        |
+| --- | ------- | ---------------------------------------------------------------------------------- |
+| 0   | 1       | CancelSynchronization (only if ResumeAllThreads is set; cancels with error 0x6C01) |
+| 1   | 2       | SwallowException                                                                   |
+| 2   | 4       | ResumeAllThreads                                                                   |
 
 ## DebugEventInfo
 
