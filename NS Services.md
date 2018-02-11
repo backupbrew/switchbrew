@@ -217,7 +217,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 6   |                                |
 | 9   | GetEulaDataFileSizeIfNecessary |
 | 10  | ReadEulaDataFileIfNecessary    |
-| 11  |                                |
+| 11  | InstallUpdateFromGameCard (?)  |
 | 12  | GetEulaDataFileSize            |
 | 13  | ReadEulaDataFile               |
 |     |                                |
