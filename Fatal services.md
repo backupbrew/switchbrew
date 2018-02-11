@@ -4,7 +4,7 @@ This is "nn::fatalsrv::IService".
 
 | Cmd | Name                                                           |
 | --- | -------------------------------------------------------------- |
-| 0   | Initialize                                                     |
+| 0   |                                                                |
 | 1   | FatalSimple                                                    |
 | 2   | [\#TransitionToFatalError](#TransitionToFatalError "wikilink") |
 
