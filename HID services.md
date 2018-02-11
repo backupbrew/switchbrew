@@ -422,8 +422,13 @@ This is an u32.
 
 # RomFS
 
-The hid-sysmodule RomFS only contains
-"/ftmFwUpdate/NTD\_4CD\_1801.fts256". It's unknown what hw this is for.
+The hid-sysmodule RomFS contains:
+
+` ftmFwUpdate`  
+`   ├── NTD_4CD_1801.fts256`  
+`   └── NTD_4CD_2602.fts256`
+
+These are firmware files for the touchscreen controller.
 
 # Firmware update
 
