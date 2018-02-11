@@ -554,15 +554,15 @@ Updates internal AM state fields. If the new state doesn't match the previous st
 |-
 ! Cmd || Name
 |-
-| 0 || Exit
+| 0 || [[#Exit]]
 |-
-| 1 || LockExit
+| 1 || [[#LockExit]]
 |-
-| 2 || UnlockExit
+| 2 || [[#UnlockExit]]
 |-
-| 3 || [2.0.0+] EnterFatalSection
+| 3 || [2.0.0+] [[#EnterFatalSection]]
 |-
-| 4 || [2.0.0+] LeaveFatalSection
+| 4 || [2.0.0+] [[#LeaveFatalSection]]
 |-
 | 9 || GetLibraryAppletLaunchableEvent
 |-
@@ -608,6 +608,21 @@ Updates internal AM state fields. If the new state doesn't match the previous st
 |-
 | 67 || [3.0.0+] IsIlluminanceAvailable
 |}
+
+===Exit===
+No input/output.
+
+===LockExit===
+No input/output.
+
+===UnlockExit===
+No input/output.
+
+===EnterFatalSection===
+No input/output.
+
+===LeaveFatalSection===
+No input/output.
 
 ===SetScreenShotPermission===
 Takes an input s32. No output.

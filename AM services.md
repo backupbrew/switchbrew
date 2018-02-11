@@ -413,11 +413,11 @@ flag={disable/enable}.
 
 | Cmd | Name                                                                                         |
 | --- | -------------------------------------------------------------------------------------------- |
-| 0   | Exit                                                                                         |
-| 1   | LockExit                                                                                     |
-| 2   | UnlockExit                                                                                   |
-| 3   | \[2.0.0+\] EnterFatalSection                                                                 |
-| 4   | \[2.0.0+\] LeaveFatalSection                                                                 |
+| 0   | [\#Exit](#Exit "wikilink")                                                                   |
+| 1   | [\#LockExit](#LockExit "wikilink")                                                           |
+| 2   | [\#UnlockExit](#UnlockExit "wikilink")                                                       |
+| 3   | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |
+| 4   | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |
 | 9   | GetLibraryAppletLaunchableEvent                                                              |
 | 10  | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |
 | 11  | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |
@@ -440,6 +440,26 @@ flag={disable/enable}.
 | 65  | \[2.0.0+\] ReportUserIsActive                                                                |
 | 66  | \[3.0.0+\] GetCurrentIlluminance                                                             |
 | 67  | \[3.0.0+\] IsIlluminanceAvailable                                                            |
+
+### Exit
+
+No input/output.
+
+### LockExit
+
+No input/output.
+
+### UnlockExit
+
+No input/output.
+
+### EnterFatalSection
+
+No input/output.
+
+### LeaveFatalSection
+
+No input/output.
 
 ### SetScreenShotPermission
 
