@@ -332,17 +332,21 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 0 ||
 |-
-| 1 ||
+| 1 || LatestSystemUpdateAsync
 |-
-| 2 ||
+| 2 || DownloadLatestSystemUpdateAsync
 |-
-| 3 ||
+| 3 || GetNimCmd1Result
 |-
-| 4 ||
+| 4 || 
 |-
-| 5 ||
+| 5 || PrepareCardUpdateAsync
 |-
 | 6 ||
+|-
+| 7 ||
+|-
+| 8 ||
 |-
 | 9 || GetEulaDataFileSizeIfNecessary
 |-

@@ -206,21 +206,23 @@ structure:
 
 This is "nn::ns::detail::ISystemUpdateInterface".
 
-| Cmd | Name                           |
-| --- | ------------------------------ |
-| 0   |                                |
-| 1   |                                |
-| 2   |                                |
-| 3   |                                |
-| 4   |                                |
-| 5   |                                |
-| 6   |                                |
-| 9   | GetEulaDataFileSizeIfNecessary |
-| 10  | ReadEulaDataFileIfNecessary    |
-| 11  | InstallUpdateFromGameCard (?)  |
-| 12  | GetEulaDataFileSize            |
-| 13  | ReadEulaDataFile               |
-|     |                                |
+| Cmd | Name                            |
+| --- | ------------------------------- |
+| 0   |                                 |
+| 1   | LatestSystemUpdateAsync         |
+| 2   | DownloadLatestSystemUpdateAsync |
+| 3   | GetNimCmd1Result                |
+| 4   |                                 |
+| 5   | PrepareCardUpdateAsync          |
+| 6   |                                 |
+| 7   |                                 |
+| 8   |                                 |
+| 9   | GetEulaDataFileSizeIfNecessary  |
+| 10  | ReadEulaDataFileIfNecessary     |
+| 11  | InstallUpdateFromGameCard (?)   |
+| 12  | GetEulaDataFileSize             |
+| 13  | ReadEulaDataFile                |
+|     |                                 |
 
 GetEulaDataFileSizeIfNecessary, ReadEulaDataFileIfNecessary: like
 GetEulaFileSize and ReadEulaDataFile, but only if NIM cmd2 indicates
