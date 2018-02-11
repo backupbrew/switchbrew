@@ -208,7 +208,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 
 | Cmd | Name                            |
 | --- | ------------------------------- |
-| 0   |                                 |
+| 0   | IsSystemUpdateAvailable (?)     |
 | 1   | LatestSystemUpdateAsync         |
 | 2   | DownloadLatestSystemUpdateAsync |
 | 3   | GetNimCmd1Result                |
