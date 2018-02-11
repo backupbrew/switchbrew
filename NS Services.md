@@ -206,21 +206,26 @@ structure:
 
 This is "nn::ns::detail::ISystemUpdateInterface".
 
-| Cmd | Name                    |
-| --- | ----------------------- |
-| 0   |                         |
-| 1   | GetISystemUpdateControl |
-| 2   |                         |
-| 3   |                         |
-| 4   |                         |
-| 5   |                         |
-| 6   |                         |
-| 9   | GetNsSuWaitEvent        |
-| 10  |                         |
-| 11  |                         |
-| 12  |                         |
-| 13  |                         |
-|     |                         |
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   |                                |
+| 1   |                                |
+| 2   |                                |
+| 3   |                                |
+| 4   |                                |
+| 5   |                                |
+| 6   |                                |
+| 9   | GetEulaDataFileSizeIfNecessary |
+| 10  | ReadEulaDataFileIfNecessary    |
+| 11  |                                |
+| 12  | GetEulaDataFileSize            |
+| 13  | ReadEulaDataFile               |
+|     |                                |
+
+GetEulaDataFileSizeIfNecessary, ReadEulaDataFileIfNecessary: like
+GetEulaFileSize and ReadEulaDataFile, but only if NIM cmd2 indicates
+that there are at least one title to update, otherwise they return error
+code 0x1A410.
 
 # ns:dev
 

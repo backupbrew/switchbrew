@@ -332,7 +332,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 0 ||
 |-
-| 1 || GetISystemUpdateControl
+| 1 ||
 |-
 | 2 ||
 |-
@@ -344,17 +344,19 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 6 ||
 |-
-| 9 || GetNsSuWaitEvent
+| 9 || GetEulaDataFileSizeIfNecessary
 |-
-| 10 ||
+| 10 || ReadEulaDataFileIfNecessary
 |-
 | 11 ||
 |-
-| 12 ||
+| 12 || GetEulaDataFileSize
 |-
-| 13 ||
+| 13 || ReadEulaDataFile
 |-
 |}
+
+GetEulaDataFileSizeIfNecessary, ReadEulaDataFileIfNecessary: like GetEulaFileSize and ReadEulaDataFile, but only if NIM cmd2 indicates that there are at least one title to update, otherwise they return error code 0x1A410.
 
 = ns:dev =
 This is "nn::ns::detail::IDevelopInterface".
