@@ -77,7 +77,7 @@
 |
 |-
 | [[LAN_Adapter|LAN Adapter]]
-| Local access network adapter
+| Local area network adapter
 |
 |-
 | [[LDN_services|LDN]]
