@@ -151,33 +151,33 @@ This is "nn::i2c::IManager".
 
 ## Known Devices
 
-| Name | Port:Addr | 10bit? | Speed  | Max Retries | Retry Delay | Usage                                 | Used by                                      |
-| ---- | --------- | ------ | ------ | ----------- | ----------- | ------------------------------------- | -------------------------------------------- |
-| 0    | 0:52      | N      | 100000 | 0           | 0           | DebugPadDriver                        | [HID services](HID%20services.md "wikilink") |
-| 1    | 2:49      | N      | 400000 | 0           | 0           | STM touchscreen                       | [HID services](HID%20services.md "wikilink") |
-| 2    | 0:4c      | N      | 100000 | 0           | 0           | TI Temperature Sensor (tmp451)        | [PTM services](PTM%20services.md "wikilink") |
-| 3    | 0:4c      | N      | 100000 | 0           | 0           | \-- unknown why this is duplicated -- |                                              |
-| 4    | 0:1c      | N      | 100000 | 0           | 0           |                                       |                                              |
-| 5    | 4:68      | N      | 400000 | 3           | 5000000     | max77620\_rtc0, max77620\_irq0        | [PCV services](PCV%20services.md "wikilink") |
-| 6    | 4:3c      | N      | 400000 | 3           | 5000000     | PMIC (max77620), max77620\_irq0       | [PCV services](PCV%20services.md "wikilink") |
-| 7    | 4:1b      | N      | 400000 | 3           | 5000000     | max77621\_cpu                         | [PCV services](PCV%20services.md "wikilink") |
-| 8    | 4:1c      | N      | 400000 | 3           | 5000000     | max77621\_gpu                         | [PCV services](PCV%20services.md "wikilink") |
-| 9    | 0:6b      | N      | 100000 | 3           | 5000000     | TI Charger (bq2419x)                  | [PTM services](PTM%20services.md "wikilink") |
-| 10   | 0:36      | N      | 100000 | 3           | 5000000     | Maxim Fuel Gauge (max17050)           | [PCV services](PCV%20services.md "wikilink") |
-| 11   | 0:18      | N      | 100000 | 3           | 5000000     | PD related                            | [USB services](USB%20services.md "wikilink") |
-| 12   | 1:40      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 13   | 1:41      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 14   | 1:44      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 15   | 1:45      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 16   | 1:46      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 17   | 1:47      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 18   | 1:29      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 19   | 1:48      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 20   | 1:49      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 21   | 1:4a      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 22   | 1:4b      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 23   | 1:4d      | N      | 400000 | 3           | 5000000     |                                       |                                              |
-| 24   | 3:50      | N      | 100000 | 0           | 0           |                                       |                                              |
+| Name | Port:Addr | 10bit? | Speed  | Max Retries | Retry Delay | Usage                                 | Used by                                                                                    |
+| ---- | --------- | ------ | ------ | ----------- | ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 0    | 0:52      | N      | 100000 | 0           | 0           | DebugPadDriver                        | [HID services](HID%20services.md "wikilink")                                               |
+| 1    | 2:49      | N      | 400000 | 0           | 0           | STM touchscreen                       | [HID services](HID%20services.md "wikilink")                                               |
+| 2    | 0:4c      | N      | 100000 | 0           | 0           | TI Temperature Sensor (tmp451)        | [PTM services](PTM%20services.md "wikilink")                                               |
+| 3    | 0:4c      | N      | 100000 | 0           | 0           | \-- unknown why this is duplicated -- |                                                                                            |
+| 4    | 0:1c      | N      | 100000 | 0           | 0           |                                       |                                                                                            |
+| 5    | 4:68      | N      | 400000 | 3           | 5000000     | max77620\_rtc0, max77620\_irq0        | [PCV services](PCV%20services.md "wikilink")                                               |
+| 6    | 4:3c      | N      | 400000 | 3           | 5000000     | PMIC (max77620), max77620\_irq0       | [PCV services](PCV%20services.md "wikilink")                                               |
+| 7    | 4:1b      | N      | 400000 | 3           | 5000000     | max77621\_cpu                         | [PCV services](PCV%20services.md "wikilink")                                               |
+| 8    | 4:1c      | N      | 400000 | 3           | 5000000     | max77621\_gpu                         | [PCV services](PCV%20services.md "wikilink")                                               |
+| 9    | 0:6b      | N      | 100000 | 3           | 5000000     | TI Charger (bq2419x)                  | [PTM services](PTM%20services.md "wikilink")                                               |
+| 10   | 0:36      | N      | 100000 | 3           | 5000000     | Maxim Fuel Gauge (max17050)           | [PCV services](PCV%20services.md "wikilink"), [PTM services](PTM%20services.md "wikilink") |
+| 11   | 0:18      | N      | 100000 | 3           | 5000000     | PD related                            | [USB services](USB%20services.md "wikilink")                                               |
+| 12   | 1:40      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 13   | 1:41      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 14   | 1:44      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 15   | 1:45      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 16   | 1:46      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 17   | 1:47      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 18   | 1:29      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 19   | 1:48      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 20   | 1:49      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 21   | 1:4a      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 22   | 1:4b      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 23   | 1:4d      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
+| 24   | 3:50      | N      | 100000 | 0           | 0           |                                       |                                                                                            |
 
 ## II2cSession
 

@@ -283,7 +283,7 @@ This is "nn::i2c::IManager".
 |-
 |  9 || 0:6b || N || 100000 || 3 || 5000000 || TI Charger (bq2419x) || [[PTM services]]
 |-
-| 10 || 0:36 || N || 100000 || 3 || 5000000 || Maxim Fuel Gauge (max17050) || [[PCV services]]
+| 10 || 0:36 || N || 100000 || 3 || 5000000 || Maxim Fuel Gauge (max17050) || [[PCV services]], [[PTM services]]
 |-
 | 11 || 0:18 || N || 100000 || 3 || 5000000 || PD related || [[USB services]]
 |-
