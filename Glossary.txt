@@ -102,7 +102,7 @@
 |-
 | [[NPDM|NPDM]]
 | Nintendo Program Descriptor Metadata
-| See the [https://3dbrew.org/wiki/NCCH/Extended_Header 3DS ex-header] for more information. (NCCH = Nintendo Content Containers Header)
+| 
 |-
 | NRO
 | Nintendo Relocatable Object
