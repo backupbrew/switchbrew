@@ -116,10 +116,6 @@
 | Nintendo Shell services
 |
 |-
-| [[Switch_System_Flaws|NS System Flaws]]
-| Flaws which are used to execute unofficial code (homebrew) on the Nintendo Switch
-| Alternate name is Switch System Flaws
-|-
 | [[NV_services|NV]]
 | Customized NVIDIA driver
 |
