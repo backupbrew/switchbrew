@@ -104,6 +104,10 @@
 | Nintendo Switch equivalent of the Nintendo 3DS ex-header
 | See the [https://3dbrew.org/wiki/NCCH/Extended_Header 3DS ex-header] for more information.
 |-
+| NRO
+| Nintendo Relocatable Object
+|
+|-
 | [[NSO|NSO]]
 | Main executable format
 |
