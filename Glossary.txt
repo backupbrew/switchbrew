@@ -101,8 +101,8 @@
 |
 |-
 | [[NPDM|NPDM]]
-| Nintendo Switch equivalent of the Nintendo 3DS ex-header
-| See the [https://3dbrew.org/wiki/NCCH/Extended_Header 3DS ex-header] for more information.
+| Nintendo Program Descriptor Metadata
+| See the [https://3dbrew.org/wiki/NCCH/Extended_Header 3DS ex-header] for more information. (NCCH = Nintendo Content Containers Header)
 |-
 | NRO
 | Nintendo Relocatable Object
