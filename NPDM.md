@@ -1,7 +1,7 @@
-This is the Switch equivalent of 3DS exheader, [NCCH (Nintendo Content
-Containers Header)](https://www.3dbrew.org/wiki/NCCH/Extended_Header).
-This is the file with extension ".npdm" in {Switch ExeFS}. The size of
-this file varies.
+This is the Switch equivalent of 3DS
+[exheader](https://www.3dbrew.org/wiki/NCCH/Extended_Header). This is
+the file with extension ".npdm" in {Switch ExeFS}. The size of this file
+varies.
 
 | Offset     | Size       | Description |
 | ---------- | ---------- | ----------- |
