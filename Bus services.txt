@@ -281,7 +281,7 @@ This is "nn::i2c::IManager".
 |-
 |  8 || 4:1c || N || 400000 || 3 || 5000000 || max77621_gpu || [[PCV services]]
 |-
-|  9 || 0:6b || N || 100000 || 3 || 5000000 || TI Charger (bq2419x) || [[PTM services]]
+|  9 || 0:6b || N || 100000 || 3 || 5000000 || TI Charger (bq24192) || [[PTM services]]
 |-
 | 10 || 0:36 || N || 100000 || 3 || 5000000 || Maxim Fuel Gauge (max17050) || [[PCV services]], [[PTM services]]
 |-

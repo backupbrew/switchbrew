@@ -162,7 +162,7 @@ This is "nn::i2c::IManager".
 | 6    | 4:3c      | N      | 400000 | 3           | 5000000     | PMIC (max77620), max77620\_irq0       | [PCV services](PCV%20services.md "wikilink")                                               |
 | 7    | 4:1b      | N      | 400000 | 3           | 5000000     | max77621\_cpu                         | [PCV services](PCV%20services.md "wikilink")                                               |
 | 8    | 4:1c      | N      | 400000 | 3           | 5000000     | max77621\_gpu                         | [PCV services](PCV%20services.md "wikilink")                                               |
-| 9    | 0:6b      | N      | 100000 | 3           | 5000000     | TI Charger (bq2419x)                  | [PTM services](PTM%20services.md "wikilink")                                               |
+| 9    | 0:6b      | N      | 100000 | 3           | 5000000     | TI Charger (bq24192)                  | [PTM services](PTM%20services.md "wikilink")                                               |
 | 10   | 0:36      | N      | 100000 | 3           | 5000000     | Maxim Fuel Gauge (max17050)           | [PCV services](PCV%20services.md "wikilink"), [PTM services](PTM%20services.md "wikilink") |
 | 11   | 0:18      | N      | 100000 | 3           | 5000000     | PD related                            | [USB services](USB%20services.md "wikilink")                                               |
 | 12   | 1:40      | N      | 400000 | 3           | 5000000     |                                       |                                                                                            |
