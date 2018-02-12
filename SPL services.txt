@@ -65,6 +65,10 @@ This is "nn::spl::detail::IGeneralInterface".
 | 22 || [2.0.0+] [[#UnlockAesEngine]] ||
 |-
 | 23 || [2.0.0+] [[#GetSplWaitEvent]] ||
+|-
+| 24 || [3.0.0+] [[#SetSharedData]] ||
+|-
+| 25 || [3.0.0+] [[#GetSharedData]] ||
 |}
 
 == GetConfig ==
@@ -279,3 +283,13 @@ Takes a single u32 and unlocks the engine with that id. It must be owned by curr
 
 == GetSplWaitEvent ==
 Returns an event handle for synchronizing with the locked AES engine.
+
+== SetSharedData ==
+Sets a static dword in spl .bss to the user input u32.
+
+[4.0.0+] returns 0xD41A if a value has been previously set without being [[#GetSharedData|gotten]].
+
+== GetSharedData ==
+Returns the static dword in spl .bss that can be set via [[#SetSharedData]].
+
+[4.0.0+] returns 0xD61A if a value has not previously been set, and unsets the value after getting it.

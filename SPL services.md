@@ -46,6 +46,8 @@ unlocked.
 | 21  | \[2.0.0+\] [\#LockAesEngine](#LockAesEngine "wikilink")                       |                                                                                                                                     |
 | 22  | \[2.0.0+\] [\#UnlockAesEngine](#UnlockAesEngine "wikilink")                   |                                                                                                                                     |
 | 23  | \[2.0.0+\] [\#GetSplWaitEvent](#GetSplWaitEvent "wikilink")                   |                                                                                                                                     |
+| 24  | \[3.0.0+\] [\#SetSharedData](#SetSharedData "wikilink")                       |                                                                                                                                     |
+| 25  | \[3.0.0+\] [\#GetSharedData](#GetSharedData "wikilink")                       |                                                                                                                                     |
 
 ## GetConfig
 
@@ -286,3 +288,18 @@ by current session otherwise 0xD21A will be returned.
 ## GetSplWaitEvent
 
 Returns an event handle for synchronizing with the locked AES engine.
+
+## SetSharedData
+
+Sets a static dword in spl .bss to the user input u32.
+
+\[4.0.0+\] returns 0xD41A if a value has been previously set without
+being [gotten](#GetSharedData "wikilink").
+
+## GetSharedData
+
+Returns the static dword in spl .bss that can be set via
+[\#SetSharedData](#SetSharedData "wikilink").
+
+\[4.0.0+\] returns 0xD61A if a value has not previously been set, and
+unsets the value after getting it.
