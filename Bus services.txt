@@ -318,6 +318,8 @@ This is "nn::i2c::IManager".
 | 26 || 3:3a || N || 100000 || 0 ||       0 || DisplayHdmiHotplugHandler || [[NV services]]
 |}
 
+This table is believed to be complete - entries with empty "Used by" column haven't been seen being used (devices not present on switch?).
+
 == II2cSession ==
 This is "nn::i2c::ISession".
 
