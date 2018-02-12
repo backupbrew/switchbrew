@@ -141,7 +141,7 @@
 |
 |-
 | [[Package1|PK11]]
-| Contains the first Nintendo Switch bootloader to run under the NVIDIA boot processor
+| Encrypted binary stored in [[Package1]].
 |
 |-
 | [[Package2|PK21]]
