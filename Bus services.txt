@@ -285,7 +285,7 @@ This is "nn::i2c::IManager".
 |-
 | 10 || 0:36 || N || 100000 || 3 || 5000000 || Maxim Fuel Gauge (max17050) || [[PCV services]], [[PTM services]]
 |-
-| 11 || 0:18 || N || 100000 || 3 || 5000000 || PD related || [[USB services]]
+| 11 || 0:18 || N || 100000 || 3 || 5000000 || USB-PD controller (rohm bm92t36) || [[USB services]]
 |-
 | 12 || 1:40 || N || 400000 || 3 || 5000000 || ||
 |-
