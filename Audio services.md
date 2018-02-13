@@ -2,18 +2,26 @@
 
 This is "nn::audio::detail::IAudioOutManager".
 
-| Cmd | Name                                       |
-| --- | ------------------------------------------ |
-| 0   | ListAudioOuts                              |
-| 1   | [\#OpenAudioOut](#OpenAudioOut "wikilink") |
+| Cmd | Name                                         |
+| --- | -------------------------------------------- |
+| 0   | [\#ListAudioOuts](#ListAudioOuts "wikilink") |
+| 1   | [\#OpenAudioOut](#OpenAudioOut "wikilink")   |
+
+## ListAudioOuts
+
+Takes a type-6 output buffer. Populates the output buffer with the
+available audio output devices' names and returns an u32 with the number
+of device names written.
 
 ## OpenAudioOut
 
-Takes two u64s (an interface ID and a PID placeholder?), a PID, a
-process handle, and the name of the interface you want to connect to.
-Returns an [\#IAudioOut](#IAudioOut "wikilink") object and four u32s:
-the sample rate, channel count, [PCM format](#PCM_format "wikilink"),
-and an unknown field.
+Takes a type-5 input buffer (**DeviceNameIn**), a type-6 output buffer
+(**DeviceNameOut**), two u32s **SampleRate** (must be 48000) and
+**ChannelCount** (high u16 can't be 0, official apps pass 0xCAFE0000),
+one u64 **ClientPID**, a PID and a copy-handle. Returns an
+[\#IAudioOut](#IAudioOut "wikilink") object and four u32s: the sample
+rate, channel count, [PCM format](#PCM_format "wikilink"), and the
+initial AudioOutState.
 
 ### PCM format
 
@@ -32,52 +40,71 @@ and an unknown field.
 This is
 "nn::audio::detail::IAudioOut".
 
-| Cmd | Name                                                                                                         |
-| --- | ------------------------------------------------------------------------------------------------------------ |
-| 0   | [\#GetAudioOutState](#GetAudioOutState "wikilink")                                                           |
-| 1   | StartAudioOut                                                                                                |
-| 2   | StopAudioOut                                                                                                 |
-| 3   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") taking a type 0x5 (A descriptor) buffer           |
-| 4   | [\#RegisterBufferEvent](#RegisterBufferEvent "wikilink")                                                     |
-| 5   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink") taking a type 0x6 (B descriptor) buffer |
-| 6   | [\#ContainsAudioOutBuffer](#ContainsAudioOutBuffer "wikilink")                                               |
-| 7   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") taking a type 0x21 buffer                         |
-| 8   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink") taking a type 0x22 buffer               |
+| Cmd | Name                                                                     |
+| --- | ------------------------------------------------------------------------ |
+| 0   | [\#GetAudioOutState](#GetAudioOutState "wikilink")                       |
+| 1   | [\#StartAudioOut](#StartAudioOut "wikilink")                             |
+| 2   | [\#StopAudioOut](#StopAudioOut "wikilink")                               |
+| 3   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink")               |
+| 4   | [\#RegisterBufferEvent](#RegisterBufferEvent "wikilink")                 |
+| 5   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink")     |
+| 6   | [\#ContainsAudioOutBuffer](#ContainsAudioOutBuffer "wikilink")           |
+| 7   | [\#AppendAudioOutBufferEx](#AppendAudioOutBufferEx "wikilink")           |
+| 8   | [\#GetReleasedAudioOutBufferEx](#GetReleasedAudioOutBufferEx "wikilink") |
 
 ### GetAudioOutState
 
-Returns an AudioOutState, 0x00=Started 0x01=Stopped (u32)
+Returns an u32 **AudioOutState** (0x00=Started, 0x01=Stopped).
+
+### StartAudioOut
+
+Starts audio playback using data from appended buffers.
+
+### StopAudioOut
+
+Stops audio playback.
 
 ### AppendAudioOutBuffer
 
-Takes a u64 (not sure what this is, might act as some sort of identifier
-for the audio buffer? official applications seem to use the address of
-the audio buffer struct for this) and a buffer. The format of said
-buffer is as follows:
+Takes a type-5 input buffer for sample data and a u64 which acts as a
+tag for the supplied buffer (official apps use the buffer's address).
+
+The format of the input buffer is as follows:
 
 | Offset | Size | Description                         |
 | ------ | ---- | ----------------------------------- |
-| 0x00   | 8    | Pointer to the sample data pointer. |
-| 0x08   | 8    | Pointer to sample data.             |
+| 0x00   | 8    | Pointer to next buffer              |
+| 0x08   | 8    | Pointer to sample buffer            |
 | 0x10   | 8    | Capacity of sample buffer           |
-| 0x18   | 8    | Size of data in sample buffer       |
-| 0x20   | 8    | Unknown. Zero works.                |
+| 0x18   | 8    | Size of data in the sample buffer   |
+| 0x20   | 8    | Offset of data in the sample buffer |
 
 ### RegisterBufferEvent
 
-Returns an event handle that is signalled when a buffer is released
+Returns an event handle that is signalled when a buffer is released.
 
 ### GetReleasedAudioOutBuffer
 
-Takes a buffer, which it will fill with the identifiers passed from
-[\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") of audio
-buffers that have been released. Will return a u32 (may indicate how
-many buffers were released?)
+Takes a type-6 output buffer which will be filled with the identifiers
+from [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") of audio
+buffers that have been released. Returns an u32
+**ReleasedBuffersCount**.
 
 ### ContainsAudioOutBuffer
 
-Takes a u64 (pointer to audio buffer?). Returns a bool. (u8) (0, if it
-doesn't contain the buffer)
+Takes an u64 **tag** for the desired buffer. Returns 1 if the buffer was
+appended and not yet released.
+
+### AppendAudioOutBufferEx
+
+Same as [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") but
+takes a type-0x21 buffer instead.
+
+### GetReleasedAudioOutBufferEx
+
+Same as
+[\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink") but
+takes a type-0x22 buffer instead.
 
 # audin:u
 
@@ -181,7 +208,7 @@ Takes a upper limit of the rendering time in percent. (u32)
 
 Returns the upper limit of the rendering time in percent. (u32)
 
-# audout:a, audin:a, audrec:a and audren:a
+# audout:a, audin:a, audrec:a, audren:a
 
 This is "nn::audio::detail::IAudioOutManagerForApplet",
 "nn::audio::detail::IAudioInManagerForApplet",
@@ -193,7 +220,7 @@ This is "nn::audio::detail::IAudioOutManagerForApplet",
 | 0   | RequestSuspend |
 | 1   | RequestResume  |
 
-# audout:d, audin:d, audrec:d and audren:d
+# audout:d, audin:d, audrec:d, audren:d
 
 This is "nn::audio::detail::IAudioOutManagerForDebugger",
 "nn::audio::detail::IAudioInManagerForDebugger",

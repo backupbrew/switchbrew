@@ -5,16 +5,20 @@ This is "nn::audio::detail::IAudioOutManager".
 |-
 ! Cmd || Name
 |-
-| 0 || ListAudioOuts
+| 0 || [[#ListAudioOuts]]
 |-
 | 1 || [[#OpenAudioOut]]
 |}
 
+== ListAudioOuts ==
+Takes a type-6 output buffer.
+Populates the output buffer with the available audio output devices' names and returns an u32 with the number of device names written.
+
 == OpenAudioOut ==
-Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle, and the name of the interface you want to connect to. Returns an [[#IAudioOut]] object and four u32s: the sample rate, channel count, [[#PCM_format|PCM format]], and an unknown field.
+Takes a type-5 input buffer ('''DeviceNameIn'''), a type-6 output buffer ('''DeviceNameOut'''), two u32s '''SampleRate''' (must be 48000) and '''ChannelCount''' (high u16 can't be 0, official apps pass 0xCAFE0000), one u64 '''ClientPID''', a PID and a copy-handle.
+Returns an [[#IAudioOut]] object and four u32s: the sample rate, channel count, [[#PCM_format|PCM format]], and the initial AudioOutState.
 
 === PCM format ===
-
 {| class="wikitable" border="1"
 |-
 ! Value || Name
@@ -34,7 +38,6 @@ Takes two u64s (an interface ID and a PID placeholder?), a PID, a process handle
 | 6 || ADPCM
 |}
 
-
 == IAudioOut ==
 This is "nn::audio::detail::IAudioOut".
 
@@ -44,57 +47,66 @@ This is "nn::audio::detail::IAudioOut".
 |-
 | 0 || [[#GetAudioOutState]]
 |-
-| 1 || StartAudioOut
+| 1 || [[#StartAudioOut]]
 |-
-| 2 || StopAudioOut
+| 2 || [[#StopAudioOut]]
 |-
-| 3 || [[#AppendAudioOutBuffer]] taking a type 0x5 (A descriptor) buffer
+| 3 || [[#AppendAudioOutBuffer]]
 |-
 | 4 || [[#RegisterBufferEvent]]
 |-
-| 5 || [[#GetReleasedAudioOutBuffer]] taking a type 0x6 (B descriptor) buffer
+| 5 || [[#GetReleasedAudioOutBuffer]]
 |-
 | 6 || [[#ContainsAudioOutBuffer]]
 |-
-| 7 || [[#AppendAudioOutBuffer]] taking a type 0x21 buffer
+| 7 || [[#AppendAudioOutBufferEx]]
 |-
-| 8 || [[#GetReleasedAudioOutBuffer]] taking a type 0x22 buffer
+| 8 || [[#GetReleasedAudioOutBufferEx]]
 |}
 
 === GetAudioOutState ===
+Returns an u32 '''AudioOutState''' (0x00=Started, 0x01=Stopped).
 
-Returns an AudioOutState, 0x00=Started 0x01=Stopped (u32)
+=== StartAudioOut ===
+Starts audio playback using data from appended buffers.
+
+=== StopAudioOut ===
+Stops audio playback.
 
 === AppendAudioOutBuffer ===
+Takes a type-5 input buffer for sample data and a u64 which acts as a tag for the supplied buffer (official apps use the buffer's address).
 
-Takes a u64 (not sure what this is, might act as some sort of identifier for the audio buffer? official applications seem to use the address of the audio buffer struct for this) and a buffer.
-The format of said buffer is as follows:
-
+The format of the input buffer is as follows:
 {| class="wikitable" border="1"
 |-
 ! Offset || Size || Description
 |-
-| 0x00 || 8 || Pointer to the sample data pointer.
+| 0x00 || 8 || Pointer to next buffer
 |-
-| 0x08 || 8 || Pointer to sample data.
+| 0x08 || 8 || Pointer to sample buffer
 |-
 | 0x10 || 8 || Capacity of sample buffer
 |-
-| 0x18 || 8 || Size of data in sample buffer
+| 0x18 || 8 || Size of data in the sample buffer
 |-
-| 0x20 || 8 || Unknown. Zero works.
+| 0x20 || 8 || Offset of data in the sample buffer
 |}
 
 === RegisterBufferEvent ===
-
-Returns an event handle that is signalled when a buffer is released
+Returns an event handle that is signalled when a buffer is released.
 
 === GetReleasedAudioOutBuffer ===
-
-Takes a buffer, which it will fill with the identifiers passed from [[#AppendAudioOutBuffer]] of audio buffers that have been released. Will return a u32 (may indicate how many buffers were released?)
+Takes a type-6 output buffer which will be filled with the identifiers from [[#AppendAudioOutBuffer]] of audio buffers that have been released.
+Returns an u32 '''ReleasedBuffersCount'''.
 
 === ContainsAudioOutBuffer ===
-Takes a u64 (pointer to audio buffer?). Returns a bool. (u8) (0, if it doesn't contain the buffer)
+Takes an u64 '''tag''' for the desired buffer. Returns 1 if the buffer was appended and not yet released.
+
+=== AppendAudioOutBufferEx ===
+Same as [[#AppendAudioOutBuffer]] but takes a type-0x21 buffer instead.
+
+=== GetReleasedAudioOutBufferEx ===
+Same as [[#GetReleasedAudioOutBuffer]] but takes a type-0x22 buffer instead.
 
 = audin:u =
 This is "nn::audio::detail::IAudioInManagerForDebugger".
@@ -228,7 +240,7 @@ Takes a upper limit of the rendering time in percent. (u32)
 === GetAudioRendererRenderingTimeLimit ===
 Returns the upper limit of the rendering time in percent. (u32)
 
-= audout:a, audin:a, audrec:a and audren:a =
+= audout:a, audin:a, audrec:a, audren:a =
 This is "nn::audio::detail::IAudioOutManagerForApplet", "nn::audio::detail::IAudioInManagerForApplet", "nn::audio::detail::IFinalOutputRecorderManagerForApplet", "nn::audio::detail::IAudioRendererManagerForApplet".
 
 {| class="wikitable" border="1"
@@ -240,7 +252,7 @@ This is "nn::audio::detail::IAudioOutManagerForApplet", "nn::audio::detail::IAud
 | 1 || RequestResume
 |}
 
-= audout:d, audin:d, audrec:d and audren:d =
+= audout:d, audin:d, audrec:d, audren:d =
 This is "nn::audio::detail::IAudioOutManagerForDebugger", "nn::audio::detail::IAudioInManagerForDebugger", "nn::audio::detail::IFinalOutputRecorderManagerForDebugger", "nn::audio::detail::IAudioRendererManagerForDebugger".
 
 {| class="wikitable" border="1"
