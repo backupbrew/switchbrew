@@ -170,7 +170,7 @@ commands.
 | 3   | PushInteractiveOutData                                     | Takes an [\#IStorage](#IStorage "wikilink").   |
 | 5   | GetPopInDataEvent                                          |                                                |
 | 6   | GetPopInteractiveInDataEvent                               |                                                |
-| 10  | ExitProcessAndReturn                                       |                                                |
+| 10  | [\#ExitProcessAndReturn](#ExitProcessAndReturn "wikilink") |                                                |
 | 11  | [\#GetLibraryAppletInfo](#GetLibraryAppletInfo "wikilink") |                                                |
 | 12  | GetMainAppletIdentityInfo                                  |                                                |
 | 13  | CanUseApplicationCore                                      |                                                |
@@ -184,6 +184,13 @@ commands.
 | 31  | UnpopExtraStorage                                          | Takes an [\#IStorage](#IStorage "wikilink").   |
 | 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                  |                                                |
 | 50  | \[2.0.0+\] ReportVisibleError                              |                                                |
+
+#### ExitProcessAndReturn
+
+No input/output.
+
+Exits the LibraryApplet and returns to running the title which launched
+this LibraryApplet ([qlaunch](Qlaunch.md "wikilink") for example).
 
 #### GetLibraryAppletInfo
 

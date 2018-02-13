@@ -238,7 +238,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 6 || GetPopInteractiveInDataEvent ||
 |-
-| 10 || ExitProcessAndReturn ||
+| 10 || [[#ExitProcessAndReturn]] ||
 |-
 | 11 || [[#GetLibraryAppletInfo]] ||
 |-
@@ -266,6 +266,11 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 50 || [2.0.0+] ReportVisibleError ||
 |}
+
+====ExitProcessAndReturn====
+No input/output.
+
+Exits the LibraryApplet and returns to running the title which launched this LibraryApplet ([[qlaunch]] for example).
 
 ====GetLibraryAppletInfo====
 No input. Returns an u64 LibraryAppletInfo: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]].
