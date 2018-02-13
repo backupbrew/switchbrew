@@ -16,10 +16,10 @@ The Dock is internally called "Cradle"(strings/symbols in system-titles).
 |-
 | Macronix MX25V2006E 2Mb CMOS || [[:File:Dock.2M.bin|dump (fw-1.0.0)]]
 |-
-| rowspan="2" | Unknown
-| M92T17 623382 || rowspan="2" | Similar part on the console mainboard
+| rowspan="2" | USB-PD
+| ROHM BM92T17 || rowspan="2" | One at i2c addr 0x18, the other at 0x1a<br>[http://www.rohm.com/web/global/datasheet/BM92T10MWV/bm92t10mwv-e bm92t1x datasheet]<br>[http://www.rohm.com/web/global/datasheet/BM92T50MWV/bm92t50mwv-e bm92t5x datasheet]
 |-
-| M92T55 633416
+| ROHM BM92T55
 |}
 
 ==Other Resources==

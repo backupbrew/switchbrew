@@ -46,12 +46,14 @@ Dumps (fw-1.0.0):<br />
 <td></td>
 </tr>
 <tr class="even">
-<td><p>Unknown</p></td>
-<td><p>M92T17 623382</p></td>
-<td><p>Similar part on the console mainboard</p></td>
+<td><p>USB-PD</p></td>
+<td><p>ROHM BM92T17</p></td>
+<td><p>One at i2c addr 0x18, the other at 0x1a<br />
+<a href="http://www.rohm.com/web/global/datasheet/BM92T10MWV/bm92t10mwv-e">bm92t1x datasheet</a><br />
+<a href="http://www.rohm.com/web/global/datasheet/BM92T50MWV/bm92t50mwv-e">bm92t5x datasheet</a></p></td>
 </tr>
 <tr class="odd">
-<td><p>M92T55 633416</p></td>
+<td><p>ROHM BM92T55</p></td>
 <td></td>
 <td></td>
 </tr>
