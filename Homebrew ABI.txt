@@ -105,7 +105,7 @@ The NRO loader should be able to steal handles from more priliveged processes. I
 
 Homebrew should allow up to 32 service overrides.
 
-Note: Overridden service handles should not be converted to domains or closed.
+Note: Overridden service handles should not be converted to domains or closed. If they are domain, they should be converted to sessions before passed to the homebrew application.
 
 Note: For services that authenticate with pid, the app should not attempt re-authentication with an overridden handle.
 
@@ -113,7 +113,7 @@ Note: There needs be special handling for the file system service. If the origin
 
 * '''Key:''' 4
 * '''Value[0]:''' Name of service, same format as for sm.
-* '''Value[1]:''' Lower 32-bits: Service handle, bit32: Is domain
+* '''Value[1]:''' Lower 32-bits: Service handle
 * '''DefaultBehavior:''' Fetches service from "sm:" named port.
 
 ==== Argv ====
