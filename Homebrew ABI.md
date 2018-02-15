@@ -173,7 +173,7 @@ to the stolen one, etc etc.
 
   - **Key:** 4
   - **Value\[0\]:** Name of service, same format as for sm.
-  - **Value\[1\]:** Service handle.
+  - **Value\[1\]:** Lower 32-bits: Service handle, bit32: Is domain
   - **DefaultBehavior:** Fetches service from "sm:" named port.
 
 #### Argv
