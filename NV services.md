@@ -672,7 +672,7 @@ set.
 | 0x0000440D | None      | 0        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT (uses Ioctl3) |       |
 |            |           |          |                                                        |       |
 
-## /dev/nvhost-prof-gpu-open
+## /dev/nvhost-prof-gpu
 
 Returns [NotSupported](#Errors "wikilink") on Open unless
 nn::settings::detail::GetDebugModeFlag is set.

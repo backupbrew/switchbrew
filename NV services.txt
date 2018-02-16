@@ -711,7 +711,7 @@ Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugMo
 |-
 |}
 
-== /dev/nvhost-prof-gpu-open ==
+== /dev/nvhost-prof-gpu ==
 Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugModeFlag is set.
 
 {| class="wikitable" border="1"
