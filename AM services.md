@@ -41,7 +41,7 @@ following applet types(above Open{type}Proxy commands):
 
 ## OpenLibraryAppletProxy
 
-Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").
+Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").
 
 Takes a [reserved](IPC%20Marshalling.md "wikilink") input u64(official
 user-processes use hard-coded value 0), a PID,a process

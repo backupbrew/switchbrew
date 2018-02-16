@@ -35,7 +35,7 @@ The 01000000000010XX system [[Title_list|titles]] use the following applet types
 * All others: LibraryApplet
 
 == OpenLibraryAppletProxy ==
-Returns an [[#IApplicationProxy]].
+Returns an [[#ILibraryAppletProxy]].
 
 Takes a [[IPC_Marshalling|reserved]] input u64(official user-processes use hard-coded value 0), a PID,a process copy-handle(cur-proc handle alias), and an 0x80-byte type-0x15 input buffer '''AppletAttribute'''.
 
