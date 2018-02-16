@@ -680,7 +680,7 @@ Nintendo's custom implementation of address space remapping.
  };
 
 == /dev/nvhost-dbg-gpu ==
-Not accessible, but there is code to invoke it.
+Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugModeFlag is set.
 
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
@@ -709,6 +709,13 @@ Not accessible, but there is code to invoke it.
 |-
 | 0x0000440D || None || 0 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT (uses Ioctl3) ||
 |-
+|}
+
+== /dev/nvhost-prof-gpu-open ==
+Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugModeFlag is set.
+
+{| class="wikitable" border="1"
+! Value || Direction || Size || Description || Notes
 |}
 
 == /dev/nvhost-ctrl-gpu ==

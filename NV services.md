@@ -652,8 +652,9 @@ Nintendo's custom implementation of address space remapping.
 
 ## /dev/nvhost-dbg-gpu
 
-Not accessible, but there is code to invoke
-it.
+Returns [NotSupported](#Errors "wikilink") on Open unless
+nn::settings::detail::GetDebugModeFlag is
+set.
 
 | Value      | Direction | Size     | Description                                            | Notes |
 | ---------- | --------- | -------- | ------------------------------------------------------ | ----- |
@@ -670,6 +671,14 @@ it.
 | 0x8004440C | Out       | 4        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT\_SIZE         |       |
 | 0x0000440D | None      | 0        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT (uses Ioctl3) |       |
 |            |           |          |                                                        |       |
+
+## /dev/nvhost-prof-gpu-open
+
+Returns [NotSupported](#Errors "wikilink") on Open unless
+nn::settings::detail::GetDebugModeFlag is set.
+
+| Value | Direction | Size | Description | Notes |
+| ----- | --------- | ---- | ----------- | ----- |
 
 ## /dev/nvhost-ctrl-gpu
 
