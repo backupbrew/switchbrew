@@ -111,41 +111,49 @@ Takes a u32 ('''ConfigItem'''), and returns a u64 ('''ConfigVal''').
 {| class="wikitable" border="1"
 |-
 !  Platform
-!  Version
+!  Version @ 40800
 !  Revision
 !  id2
 |-
-|  "jetson-tx1"
-|  "11_40800_01_V9.8.3_V1.6"
+|  jetson-tx1
+|  11_40800_01_V9.8.3_V1.6
 |  N/A
 |  N/A
 |-
-|  "nx-abcb"
-|  "10_40800_NoCfgVersion_V9.8.4_V1.6"
+|  nx-abcb
+|  10_40800_NoCfgVersion_V9.8.4_V1.6
 |  0
 |  0
 |-
-|  "nx-abca2"
-|  "10_40800_NoCfgVersion_V9.8.7_V1.6"
+|  nx-abca2
+|  10_40800_NoCfgVersion_V9.8.7_V1.6
 |  0
 |  0 or 3
 |-
-|  "nx-abca2"
-|  "10_40800_NoCfgVersion_V9.8.7_V1.6"
+|  nx-abca2
+|  10_40800_NoCfgVersion_V9.8.7_V1.6
 |  1
 |  4
 |-
-|  "nx-abca2"
-|  "10_40800_NoCfgVersion_V9.8.7_V1.6"
+|  nx-abca2
+|  10_40800_NoCfgVersion_V9.8.7_V1.6
 |  2
 |  1
 |-
-|  "nx-abca2"
-|  "10_40800_NoCfgVersion_V9.8.7_V1.6"
+|  nx-abca2
+|  10_40800_NoCfgVersion_V9.8.7_V1.6
 |  3
 |  2
 |-
 |}
+
+=== Hardware Types ===
+
+nx-abcb is the SDEV unit. Among other differences, this has extra hardware to support HDMI output.
+
+nx-abca2 hardware types are variations of the retail form factor.
+
+=== Notes ===
 
 SPL uses id3 for setting up the security engine IRQ.
 

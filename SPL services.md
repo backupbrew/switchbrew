@@ -75,15 +75,24 @@ non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 [PCV](PCV%20services.md "wikilink") configures memory profiles based on
 id2.
 
-| Platform     | Version                                 | Revision | id2    |
-| ------------ | --------------------------------------- | -------- | ------ |
-| "jetson-tx1" | "11\_40800\_01\_V9.8.3\_V1.6"           | N/A      | N/A    |
-| "nx-abcb"    | "10\_40800\_NoCfgVersion\_V9.8.4\_V1.6" | 0        | 0      |
-| "nx-abca2"   | "10\_40800\_NoCfgVersion\_V9.8.7\_V1.6" | 0        | 0 or 3 |
-| "nx-abca2"   | "10\_40800\_NoCfgVersion\_V9.8.7\_V1.6" | 1        | 4      |
-| "nx-abca2"   | "10\_40800\_NoCfgVersion\_V9.8.7\_V1.6" | 2        | 1      |
-| "nx-abca2"   | "10\_40800\_NoCfgVersion\_V9.8.7\_V1.6" | 3        | 2      |
-|              |                                         |          |        |
+| Platform   | Version @ 40800                       | Revision | id2    |
+| ---------- | ------------------------------------- | -------- | ------ |
+| jetson-tx1 | 11\_40800\_01\_V9.8.3\_V1.6           | N/A      | N/A    |
+| nx-abcb    | 10\_40800\_NoCfgVersion\_V9.8.4\_V1.6 | 0        | 0      |
+| nx-abca2   | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6 | 0        | 0 or 3 |
+| nx-abca2   | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6 | 1        | 4      |
+| nx-abca2   | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6 | 2        | 1      |
+| nx-abca2   | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6 | 3        | 2      |
+|            |                                       |          |        |
+
+### Hardware Types
+
+nx-abcb is the SDEV unit. Among other differences, this has extra
+hardware to support HDMI output.
+
+nx-abca2 hardware types are variations of the retail form factor.
+
+### Notes
 
 SPL uses id3 for setting up the security engine IRQ.
 
