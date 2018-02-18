@@ -755,7 +755,7 @@ co-processor and loading, decrypting, authenticating and executing Stage
   
 `// Check stack bounds`  
 `if ((*(u32 *)sp >= data_seg_size) || (*(u32 *)sp < 0x800))`  
-`  return;`  
+`  exit();`  
   
 `// Decrypt and load Stage2`  
 `load_stage2(key_buf, key_version, is_blob_dec);`  
