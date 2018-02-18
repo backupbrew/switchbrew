@@ -31,19 +31,19 @@ It starts with the NRO-start structure then the "NRO" header and mainly describe
 ! Description
 |-
 | 0x0
-| 4
+| 0x4
 | Magic "NRO0"
 |-
 | 0x4
-| 4
+| 0x4
 | ?
 |-
 | 0x8
 | 4
-| Total NRO filesize
+| size (Total NRO filesize)
 |-
 | 0xC
-| 4
+| 0x4
 | ?
 |-
 | 0x10
@@ -79,10 +79,60 @@ It starts with the NRO-start structure then the "NRO" header and mainly describe
 ! Description
 |-
 | 0x0
-| 4
+| 0x4
 | FileOffset
 |-
 | 0x4
-| 4
+| 0x4
+| Size
+|}
+
+=Assets=
+This is an optional custom assets section for homebrew, this is located at file offset {NroHeader.size}. See also [https://github.com/switchbrew/switch-tools switch-tools] for implementation.
+
+The below offsets are relative to the beginning of the assets section (AssetHeader).
+
+== AssetHeader ==
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x4
+| Magic "ASET"
+|-
+| 0x4
+| 0x4
+| Format version, currently 0.
+|-
+| 0x8
+| 0x8
+| AssetSection icon. Used by the Homebrew Launcher. Like official icons, this is a 256x256 JPEG.
+|-
+| 0x10
+| 0x8
+| AssetSection [[Control.nacp|nacp]]. Used by the Homebrew Launcher.
+|-
+| 0x18
+| 0x8
+| AssetSection romfs. Can be used by the application.
+|-
+|}
+
+== AssetSection ==
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x4
+| Offset
+|-
+| 0x4
+| 0x4
 | Size
 |}
