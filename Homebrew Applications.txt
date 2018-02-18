@@ -4,6 +4,8 @@ Applications are installed by copying the necessary files directly to the <code>
 
 The Homebrew Launcher will scan the SD card for all <code>.nro</code> files, but will only display an icon for those who have one according to the format described above. You can also freely navigate the filesystem to select an application.
 
+Icon/metadata for each application is loaded from data embedded in the NRO (custom assets section), if available.
+
 == List ==
 
 === Launchers ===

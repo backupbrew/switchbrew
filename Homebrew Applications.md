@@ -14,6 +14,9 @@ will only display an icon for those who have one according to the format
 described above. You can also freely navigate the filesystem to select
 an application.
 
+Icon/metadata for each application is loaded from data embedded in the
+NRO (custom assets section), if available.
+
 ## List
 
 ### Launchers
