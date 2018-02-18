@@ -36,6 +36,8 @@ Different colors are used to represent panic events coming from different execut
 |-
 | <div style="width: 60px; height: 20px; background:#00FFFF;"></div> || 0x00FFFF || Secure Monitor (general errors)
 |-
+| <div style="width: 60px; height: 20px; background:#0077FF;"></div> || 0x0077FF || Secure Monitor (exception vectors)
+|-
 | <div style="width: 60px; height: 20px; background:#00AAFF;"></div> || 0x00AAFF || Secure Monitor (deep sleep) [1.0.0+]
 |-
 | <div style="width: 60px; height: 20px; background:#FF77FF;"></div> || 0xFF77FF || Secure Monitor (deep sleep) [4.0.0+]
