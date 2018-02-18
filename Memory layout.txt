@@ -314,7 +314,7 @@ The rest are are mapped to core-specific physaddrs, each one is 0x1000-bytes. De
 | 0x1000
 | 0x40000000000304
 | 
-| RTC
+| PMC
 |-
 | 0x1F000B000
 | 0x60005000
@@ -536,7 +536,7 @@ The rest are are mapped to core-specific physaddrs, each one is 0x1000-bytes. De
 | 0x1000
 | 0x40000000000304
 | 
-| RTC
+| PMC
 |-
 | 0x1F008B000
 | 0x60005000

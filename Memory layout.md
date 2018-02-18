@@ -218,7 +218,7 @@ The rest are are mapped to core-specific physaddrs, each one is
 | 0x1F0002000 | 0x50042000 | 0x1000  | 0x40000000000324     |             | Interrupt Controller Physical CPU Interface |
 | 0x1F0005000 | 0x70006000 | 0x1000  | 0x40000000000324     |             | UART-A                                      |
 | 0x1F0007000 | 0x60006000 | 0x1000  | 0x40000000000324     |             | Clock and Reset                             |
-| 0x1F0009000 | 0x7000E000 | 0x1000  | 0x40000000000304     |             | RTC                                         |
+| 0x1F0009000 | 0x7000E000 | 0x1000  | 0x40000000000304     |             | PMC                                         |
 | 0x1F000B000 | 0x60005000 | 0x1000  | 0x40000000000304     |             | TMR                                         |
 | 0x1F000D000 | 0x6000C000 | 0x1000  | 0x40000000000304     |             | System Registers                            |
 | 0x1F000F000 | 0x70012000 | 0x2000  | 0x40000000000304     |             | SE                                          |
@@ -253,7 +253,7 @@ The rest are are mapped to core-specific physaddrs, each one is
 | 0x1F0082000 | 0x50042000 | 0x2000  | 0x40000000000304     |             | Interrupt Controller Physical CPU interface |
 | 0x1F0085000 | 0x70006000 | 0x1000  | 0x40000000000324     |             | UART-A                                      |
 | 0x1F0087000 | 0x60006000 | 0x1000  | 0x40000000000324     |             | Clock and Reset                             |
-| 0x1F0089000 | 0x7000E000 | 0x1000  | 0x40000000000304     |             | RTC                                         |
+| 0x1F0089000 | 0x7000E000 | 0x1000  | 0x40000000000304     |             | PMC                                         |
 | 0x1F008B000 | 0x60005000 | 0x1000  | 0x40000000000304     |             | TMR                                         |
 | 0x1F008D000 | 0x6000C000 | 0x1000  | 0x40000000000304     |             | System Registers                            |
 | 0x1F008F000 | 0x70012000 | 0x2000  | 0x40000000000304     |             | SE                                          |
