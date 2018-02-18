@@ -135,17 +135,6 @@ Flaws.
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a></p></td>
 </tr>
 <tr class="odd">
-<td><p>Infoleak in TrustZone's unknown exception vector</p></td>
-<td><p>The unknown exception vector acts as a simple wrapper for TrustZone's panic function, but before calling the actual panic function, this vector loads the TMR MMIO region's virtual address (0x1F008B000 on [2.0.0+]) to X0 and stores the value 0x7F00010 in PMC_SCRATCH200's virtual address (0x1F0089C40 on [2.0.0+]).</p>
-<p>This is meant to set the panic color to 0x0077FF and the panic code to 0x10 (unknown exception). However, prior to <a href="4.0.0.md" title="wikilink">4.0.0</a>, instead of dereferencing a pointer to the 0x7F00010 value (stored as data inside the exception vectors' memory space) the actual pointer would be written to PMC_SCRATCH200.</p></td>
-<td><p>Nothing.</p></td>
-<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
-<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
-<td><p>January, 2018</p></td>
-<td><p>February 18, 2018</p></td>
-<td><p><a href="User:Hexkyz" title="wikilink">hexkyz</a></p></td>
-</tr>
-<tr class="even">
 <td></td>
 <td></td>
 <td></td>
