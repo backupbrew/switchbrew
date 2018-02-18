@@ -110,6 +110,17 @@ This was fixed in [[2.0.0]] by making the PMC secure-world only, blacklisting th
 |  January 20, 2018
 |  [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]]
 |-
+| Infoleak in TrustZone's unknown exception vector
+| The unknown exception vector acts as a simple wrapper for TrustZone's panic function, but before calling the actual panic function, this vector loads the TMR MMIO region's virtual address (0x1F008B000 on [2.0.0+]) to X0 and stores the value 0x7F00010 in PMC_SCRATCH200's virtual address (0x1F0089C40 on [2.0.0+]).
+
+This is meant to set the panic color to 0x0077FF and the panic code to 0x10 (unknown exception). However, prior to [[4.0.0]], instead of dereferencing a pointer to the 0x7F00010 value (stored as data inside the exception vectors' memory space) the actual pointer would be written to PMC_SCRATCH200.
+|  Nothing.
+|  [[4.0.0]]
+|  [[4.0.0]]
+|  January, 2018
+|  February 18, 2018
+|  [[User:Hexkyz|hexkyz]]
+|-
 |}
 
 === Kernel ===
