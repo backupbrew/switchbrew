@@ -89,3 +89,5 @@ argdata\_addr:
     processes to actual\_argdata\_string+actual\_argdata\_size.
   - argv\_ptrarray written by official processes is at
     (args\_copy+actual\_argdata\_size) + 0x9 & ~0x7.
+
+[Category:File formats](Category:File_formats "wikilink")
