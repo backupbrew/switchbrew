@@ -58,9 +58,9 @@ The below offsets are relative to the beginning of the assets section
 
 ## AssetSection
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x0    | 0x4  | Offset      |
-| 0x4    | 0x4  | Size        |
+| Offset | Size | Description                              |
+| ------ | ---- | ---------------------------------------- |
+| 0x0    | 0x4  | Offset                                   |
+| 0x4    | 0x4  | Size, 0 indicates this section is empty. |
 
 [Category:File formats](Category:File_formats "wikilink")

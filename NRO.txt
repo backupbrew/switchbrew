@@ -134,5 +134,5 @@ The below offsets are relative to the beginning of the assets section (AssetHead
 |-
 | 0x4
 | 0x4
-| Size
+| Size, 0 indicates this section is empty.
 |}
