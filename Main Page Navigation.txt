@@ -8,6 +8,7 @@
 |- valign="top" style="background: #F5FAFF;"
 | 
 |
+*[[Homebrew Exploits]]
 *[[Homebrew Applications]]
 *[[Switch System Flaws]]
 *[[Switch Userland Flaws]]
