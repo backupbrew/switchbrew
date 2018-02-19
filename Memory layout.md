@@ -141,13 +141,9 @@ used.
 
 | Cores | Virtual                               | Physical   | Size    | Attributes       | Permissions | Description                                 |
 | ----- | ------------------------------------- | ---------- | ------- | ---------------- | ----------- | ------------------------------------------- |
-| All   | 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC62FFF | 0x800A0000 | 0x63000 | 0x78B            | R-X         | \[2.0.0\] Kernel .text                      |
-| All   | 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC62FFF | 0x800A0000 | 0x4B000 | 0x78B            | R-X         | \[3.0.0\] Kernel .text                      |
-| All   | 0xFFFFFFF7FFC63000-0xFFFFFFF7FFC65FFF | 0x80103000 | 0x3000  | 0x6000000000078B | R--         | \[2.0.0\] Kernel .rodata                    |
-| All   | 0xFFFFFFF7FFC4B000-0xFFFFFFF7FFC4DFFF | 0x800EB000 | 0x3000  | 0x6000000000078B | R--         | \[3.0.0\] Kernel .rodata                    |
-| All   | 0xFFFFFFF7FFC66000-0xFFFFFFF7FFC6EFFF | 0x80106000 | 0x9000  | 0x6000000000070B | RW-         | \[2.0.0\] Kernel .data+.bss                 |
-| All   | 0xFFFFFFF7FFC4E000-0xFFFFFFF7FFC5AFFF | 0x800EE000 | 0xD000  | 0x6000000000070B | RW-         | \[3.0.0\] Kernel .data+.bss                 |
-| All   | 0xFFFFFFF7FFDC0000-0xFFFFFFF7FFDC0FFF | 0x60006000 | 0x1000  | 0x60000000000607 | RW-         | Clock and Reset                             |
+| All   | 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC62FFF | 0x800A0000 | 0x63000 | 0x78B            | R-X         | Kernel .text                                |
+| All   | 0xFFFFFFF7FFC63000-0xFFFFFFF7FFC65FFF | 0x80103000 | 0x3000  | 0x6000000000078B | R--         | Kernel .rodata                              |
+| All   | 0xFFFFFFF7FFC66000-0xFFFFFFF7FFC6EFFF | 0x80106000 | 0x9000  | 0x6000000000070B | RW-         | Kernel .data+.bss                           |
 | All   | 0xFFFFFFF7FFDC0000-0xFFFFFFF7FFDC0FFF | 0x60006000 | 0x1000  | 0x60000000000607 | RW-         | Clock and Reset                             |
 | All   | 0xFFFFFFF7FFDC2000-0xFFFFFFF7FFDC2FFF | 0x7001D000 | 0x1000  | 0x60000000000607 | RW-         | MC1                                         |
 | All   | 0xFFFFFFF7FFDC4000-0xFFFFFFF7FFDC4FFF | 0x7001C000 | 0x1000  | 0x60000000000607 | RW-         | MC0                                         |
@@ -171,15 +167,33 @@ used.
 
 ## 3.0.0
 
-| Cores | Virtual                               | Physical   | Size   | Attributes       | Permissions | Description                                 |
-| ----- | ------------------------------------- | ---------- | ------ | ---------------- | ----------- | ------------------------------------------- |
-| All   | 0xFFFFFFF7FFDAC000-0xFFFFFFF7FFDACFFF | 0x60006000 | 0x1000 | 0x60000000000607 | RW-         | Clock and Reset                             |
-| All   | 0xFFFFFFF7FFDAE000-0xFFFFFFF7FFDAEFFF | 0x7001D000 | 0x1000 | 0x60000000000607 | RW-         | MC1                                         |
-| All   | 0xFFFFFFF7FFDB0000-0xFFFFFFF7FFDB0FFF | 0x7001C000 | 0x1000 | 0x60000000000607 | RW-         | MC0                                         |
-| All   | 0xFFFFFFF7FFDB2000-0xFFFFFFF7FFDB2FFF | 0x70019000 | 0x1000 | 0x60000000000607 | RW-         | MC                                          |
-| All   | 0xFFFFFFF7FFDB4000-0xFFFFFFF7FFDB4FFF | 0x70006000 | 0x1000 | 0x60000000000607 | RW-         | UART-A                                      |
-| All   | 0xFFFFFFF7FFDFB000-0xFFFFFFF7FFDFBFFF | 0x50041000 | 0x1000 | 0x60000000000607 | RW-         | ARM Interrupt Distributor                   |
-| All   | 0xFFFFFFF7FFDFD000-0xFFFFFFF7FFDFDFFF | 0x50042000 | 0x1000 | 0x60000000000607 | RW-         | Interrupt Controller Physical CPU interface |
+| Cores | Virtual                               | Physical   | Size    | Attributes       | Permissions | Description                                 |
+| ----- | ------------------------------------- | ---------- | ------- | ---------------- | ----------- | ------------------------------------------- |
+| All   | 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC4AFFF | 0x800A0000 | 0x4B000 | 0x78B            | R-X         | Kernel .text                                |
+| All   | 0xFFFFFFF7FFC4B000-0xFFFFFFF7FFC4DFFF | 0x800EB000 | 0x3000  | 0x6000000000078B | R--         | Kernel .rodata                              |
+| All   | 0xFFFFFFF7FFC4E000-0xFFFFFFF7FFC5AFFF | 0x800EE000 | 0xD000  | 0x6000000000070B | RW-         | Kernel .data+.bss                           |
+| All   | 0xFFFFFFF7FFDAC000-0xFFFFFFF7FFDACFFF | 0x60006000 | 0x1000  | 0x60000000000607 | RW-         | Clock and Reset                             |
+| All   | 0xFFFFFFF7FFDAE000-0xFFFFFFF7FFDAEFFF | 0x7001D000 | 0x1000  | 0x60000000000607 | RW-         | MC1                                         |
+| All   | 0xFFFFFFF7FFDB0000-0xFFFFFFF7FFDB0FFF | 0x7001C000 | 0x1000  | 0x60000000000607 | RW-         | MC0                                         |
+| All   | 0xFFFFFFF7FFDB2000-0xFFFFFFF7FFDB2FFF | 0x70019000 | 0x1000  | 0x60000000000607 | RW-         | MC                                          |
+| All   | 0xFFFFFFF7FFDB4000-0xFFFFFFF7FFDB4FFF | 0x70006000 | 0x1000  | 0x60000000000607 | RW-         | UART-A                                      |
+| All   | 0xFFFFFFF7FFDFB000-0xFFFFFFF7FFDFBFFF | 0x50041000 | 0x1000  | 0x60000000000607 | RW-         | ARM Interrupt Distributor                   |
+| All   | 0xFFFFFFF7FFDFD000-0xFFFFFFF7FFDFDFFF | 0x50042000 | 0x1000  | 0x60000000000607 | RW-         | Interrupt Controller Physical CPU interface |
+
+## 4.0.0
+
+| Cores | Virtual                               | Physical   | Size    | Attributes       | Permissions | Description                                 |
+| ----- | ------------------------------------- | ---------- | ------- | ---------------- | ----------- | ------------------------------------------- |
+| All   | 0xFFFFFFF7FFC00000-0xFFFFFFF7FFC50FFF | 0x800A0000 | 0x51000 | 0x4000000000078B | R-X         | Kernel .text                                |
+| All   | 0xFFFFFFF7FFC51000-0xFFFFFFF7FFC53FFF | 0x800F1000 | 0x3000  | 0x6000000000078B | R--         | Kernel .rodata                              |
+| All   | 0xFFFFFFF7FFC54000-0xFFFFFFF7FFC61FFF | 0x800F4000 | 0xE000  | 0x6000000000070B | RW-         | Kernel .data+.bss                           |
+| All   | 0xFFFFFFF7FFDAC000-0xFFFFFFF7FFDACFFF | 0x60006000 | 0x1000  | 0x60000000000607 | RW-         | Clock and Reset                             |
+| All   | 0xFFFFFFF7FFDAE000-0xFFFFFFF7FFDAEFFF | 0x7001D000 | 0x1000  | 0x60000000000607 | RW-         | MC1                                         |
+| All   | 0xFFFFFFF7FFDB0000-0xFFFFFFF7FFDB0FFF | 0x7001C000 | 0x1000  | 0x60000000000607 | RW-         | MC0                                         |
+| All   | 0xFFFFFFF7FFDB2000-0xFFFFFFF7FFDB2FFF | 0x70019000 | 0x1000  | 0x60000000000607 | RW-         | MC                                          |
+| All   | 0xFFFFFFF7FFDB4000-0xFFFFFFF7FFDB4FFF | 0x70006000 | 0x1000  | 0x60000000000607 | RW-         | UART-A                                      |
+| All   | 0xFFFFFFF7FFDFB000-0xFFFFFFF7FFDFBFFF | 0x50041000 | 0x1000  | 0x60000000000607 | RW-         | ARM Interrupt Distributor                   |
+| All   | 0xFFFFFFF7FFDFD000-0xFFFFFFF7FFDFDFFF | 0x50042000 | 0x1000  | 0x60000000000607 | RW-         | Interrupt Controller Physical CPU interface |
 
 The rest are are mapped to core-specific physaddrs, each one is
 0x1000-bytes. Descriptor ORR-value =
@@ -204,7 +218,7 @@ The rest are are mapped to core-specific physaddrs, each one is
 | 0x1F0002000 | 0x50042000 | 0x1000  | 0x40000000000324     |             | Interrupt Controller Physical CPU Interface |
 | 0x1F0005000 | 0x70006000 | 0x1000  | 0x40000000000324     |             | UART-A                                      |
 | 0x1F0007000 | 0x60006000 | 0x1000  | 0x40000000000324     |             | Clock and Reset                             |
-| 0x1F0009000 | 0x7000E000 | 0x1000  | 0x40000000000304     |             | RTC                                         |
+| 0x1F0009000 | 0x7000E000 | 0x1000  | 0x40000000000304     |             | PMC                                         |
 | 0x1F000B000 | 0x60005000 | 0x1000  | 0x40000000000304     |             | TMR                                         |
 | 0x1F000D000 | 0x6000C000 | 0x1000  | 0x40000000000304     |             | System Registers                            |
 | 0x1F000F000 | 0x70012000 | 0x2000  | 0x40000000000304     |             | SE                                          |
@@ -221,11 +235,11 @@ The rest are are mapped to core-specific physaddrs, each one is
 | 0x1F01A0000 | 0x7C010000 | 0x10000 | 0x40000000000384     |             | TZRAM                                       |
 | 0x1F01C3000 | 0x80010000 | 0x10000 | 0x40000000000324     |             | EMEM                                        |
 | 0x1F01C2000 | 0x8000F000 | 0x1000  | 0x40000000000324     |             | EMEM                                        |
-| 0x1F01E0000 | 0x7C013000 | 0xB000  | 0x304                |             | TZRAM (TrustZone .text)                     |
-| 0x1F01F0000 | 0x7C01E000 | 0x2000  | 0x304                |             | TZRAM (Armv8Boot .text)                     |
+| 0x1F01E0000 | 0x7C013000 | 0xB000  | 0x304                |             | TZRAM (Secure Monitor)                      |
+| 0x1F01F0000 | 0x7C01E000 | 0x2000  | 0x304                |             | TZRAM (Secure Monitor and ARMv8 init)       |
 | 0x1F01F6000 | 0x7C01E000 | 0x1000  | 0x40000000000304     |             | TZRAM                                       |
 | 0x1F01F8000 | 0x7C01F000 | 0x1000  | 0x40000000000304     |             | TZRAM                                       |
-| 0x1F01FA000 | 0x7C010000 | 0x1000  | 0x304                |             | TZRAM (Exception vectors)                   |
+| 0x1F01FA000 | 0x7C010000 | 0x1000  | 0x304                |             | TZRAM (Secure Monitor exception vectors)    |
 | 0x1F01FC000 | 0x7C011000 | 0x1000  | 0x40000000000304     |             | TZRAM                                       |
 | 0x1F01FE000 | 0x7C012000 | 0x1000  | 0x40000000000304     |             | TZRAM                                       |
 
@@ -239,7 +253,7 @@ The rest are are mapped to core-specific physaddrs, each one is
 | 0x1F0082000 | 0x50042000 | 0x2000  | 0x40000000000304     |             | Interrupt Controller Physical CPU interface |
 | 0x1F0085000 | 0x70006000 | 0x1000  | 0x40000000000324     |             | UART-A                                      |
 | 0x1F0087000 | 0x60006000 | 0x1000  | 0x40000000000324     |             | Clock and Reset                             |
-| 0x1F0089000 | 0x7000E000 | 0x1000  | 0x40000000000304     |             | RTC                                         |
+| 0x1F0089000 | 0x7000E000 | 0x1000  | 0x40000000000304     |             | PMC                                         |
 | 0x1F008B000 | 0x60005000 | 0x1000  | 0x40000000000304     |             | TMR                                         |
 | 0x1F008D000 | 0x6000C000 | 0x1000  | 0x40000000000304     |             | System Registers                            |
 | 0x1F008F000 | 0x70012000 | 0x2000  | 0x40000000000304     |             | SE                                          |
@@ -259,12 +273,77 @@ The rest are are mapped to core-specific physaddrs, each one is
 | 0x1F01C3000 | 0x80010000 | 0x10000 | 0x40000000000324     |             | EMEM                                        |
 | 0x1F01C2000 | 0x8000F000 | 0x1000  | 0x40000000000324     |             | EMEM                                        |
 | 0x1F01E0000 | 0x7C013000 | 0xB000  | 0x300                |             | TZRAM (Secure Monitor)                      |
-| 0x1F01F0000 | 0x7C01E000 | 0x2000  | 0x300                |             | TZRAM (Secure Monitor init)                 |
+| 0x1F01F0000 | 0x7C01E000 | 0x2000  | 0x300                |             | TZRAM (Secure Monitor and ARMv8 init)       |
 | 0x1F01F6000 | 0x7C01E000 | 0x1000  | 0x40000000000300     |             | TZRAM                                       |
 | 0x1F01F8000 | 0x7C01F000 | 0x1000  | 0x40000000000300     |             | TZRAM                                       |
 | 0x1F01FA000 | 0x7C010000 | 0x1000  | 0x300                |             | TZRAM (Secure Monitor exception vectors)    |
 | 0x1F01FC000 | 0x7C011000 | 0x1000  | 0x40000000000300     |             | TZRAM                                       |
 | 0x1F01FE000 | 0x7C012000 | 0x1000  | 0x40000000000300     |             | TZRAM                                       |
+
+# IRAM
+
+## [BCT](BCT.md "wikilink")
+
+When copied to IRAM at address 0x40000000, the BCT has an additional
+header as follows.
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Offset</p></th>
+<th><p>Size</p></th>
+<th><p>Field</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x00</p></td>
+<td><p>0x50</p></td>
+<td><p>bct_global_header</p></td>
+<td><p><code>0x00: unk_version0 (0x00210001)</code><br />
+<code>0x04: unk_version1 (0x00210001)</code><br />
+<code>0x08: unk_version2 (0x00210001)</code><br />
+<code>0x4C: bct_data_addr (address of the actual BCT)</code></p></td>
+</tr>
+<tr class="even">
+<td><p>0x50</p></td>
+<td><p>0x18</p></td>
+<td><p>bootloader0_header</p></td>
+<td><p><code>0x00: is_active (if set to 0x01, bootloader0 is used) </code></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x68</p></td>
+<td><p>0x18</p></td>
+<td><p>bootloader1_header</p></td>
+<td><p><code>0x00: is_active (if set to 0x01, bootloader1 is used) </code></p></td>
+</tr>
+<tr class="even">
+<td><p>0x80</p></td>
+<td><p>0x18</p></td>
+<td><p>bootloader2_header</p></td>
+<td><p><code>0x00: is_active (if set to 0x01, bootloader2 is used) </code></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x98</p></td>
+<td><p>0x18</p></td>
+<td><p>bootloader3_header</p></td>
+<td><p><code>0x00: is_active (if set to 0x01, bootloader3 is used) </code></p></td>
+</tr>
+<tr class="even">
+<td><p>0xB0</p></td>
+<td><p>0x50</p></td>
+<td></td>
+<td><p><code> 0x40: bct_end_addr</code></p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 # Notes
 
