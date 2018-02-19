@@ -2,10 +2,12 @@
 
 This is "nn::audio::detail::IAudioOutManager".
 
-| Cmd | Name                                         |
-| --- | -------------------------------------------- |
-| 0   | [\#ListAudioOuts](#ListAudioOuts "wikilink") |
-| 1   | [\#OpenAudioOut](#OpenAudioOut "wikilink")   |
+| Cmd | Name                                             |
+| --- | ------------------------------------------------ |
+| 0   | [\#ListAudioOuts](#ListAudioOuts "wikilink")     |
+| 1   | [\#OpenAudioOut](#OpenAudioOut "wikilink")       |
+| 2   | [\#ListAudioOutsEx](#ListAudioOutsEx "wikilink") |
+| 3   | [\#OpenAudioOutEx](#OpenAudioOutEx "wikilink")   |
 
 ## ListAudioOuts
 
@@ -34,6 +36,16 @@ initial AudioOutState.
 | 4     | INT32     |
 | 5     | PCM Float |
 | 6     | ADPCM     |
+
+## ListAudioOutsEx
+
+Same as [\#ListAudioOuts](#ListAudioOuts "wikilink"), but takes a
+type-0x22 output buffer instead.
+
+## OpenAudioOutEx
+
+Same as [\#OpenAudioOut](#OpenAudioOut "wikilink"), but takes a
+type-0x21 input buffer instead.
 
 ## IAudioOut
 

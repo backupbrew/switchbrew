@@ -8,6 +8,10 @@ This is "nn::audio::detail::IAudioOutManager".
 | 0 || [[#ListAudioOuts]]
 |-
 | 1 || [[#OpenAudioOut]]
+|-
+| 2 || [[#ListAudioOutsEx]]
+|-
+| 3 || [[#OpenAudioOutEx]]
 |}
 
 == ListAudioOuts ==
@@ -37,6 +41,12 @@ Returns an [[#IAudioOut]] object and four u32s: the sample rate, channel count, 
 |-
 | 6 || ADPCM
 |}
+
+== ListAudioOutsEx ==
+Same as [[#ListAudioOuts]], but takes a type-0x22 output buffer instead.
+
+== OpenAudioOutEx ==
+Same as [[#OpenAudioOut]], but takes a type-0x21 input buffer instead.
 
 == IAudioOut ==
 This is "nn::audio::detail::IAudioOut".
