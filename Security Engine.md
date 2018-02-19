@@ -1,9 +1,7 @@
-# Security Engine
-
 The security engine (SE) is responsible for the crypto done on the
 switch. SE is mapped to physical address 0x70012000.
 
-## SE registers
+# SE registers
 
 | Register                           | Offset |
 | ---------------------------------- | ------ |
