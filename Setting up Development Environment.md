@@ -71,7 +71,7 @@ that Linux x86\_64 binaries are usable under WSL.
 
 <!-- end list -->
 
-    curl -L https://github.com/devkitPro/installer/blob/master/perl/devkitA64update.pl -o devkitA64update.pl
+    curl -L https://raw.githubusercontent.com/devkitPro/installer/master/perl/devkitA64update.pl -o devkitA64update.pl
     chmod +x ./devkitA64update.pl
     ./devkitA64update.pl
 
