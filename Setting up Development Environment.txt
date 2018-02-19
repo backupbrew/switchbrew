@@ -1,1 +1,2 @@
 = Setup =
+See [https://github.com/switchbrew/libnx here].
