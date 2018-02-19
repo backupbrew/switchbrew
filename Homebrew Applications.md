@@ -22,10 +22,10 @@ available.
 
 ### Launchers
 
-| Name                                                         | Description                   | Author                                                                 | Download                                                 | Open-Source |
-| ------------------------------------------------------------ | ----------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------- | ----------- |
-| [Homebrew Launcher](https://github.com/switchbrew/nx-hbmenu) | Run homebrew on your Switch\! | [Yellows8](User:Yellows8 "wikilink"), [qlutoo](User:qlutoo "wikilink") | [Here](https://github.com/switchbrew/nx-hbmenu/releases) | Yes         |
-|                                                              |                               |                                                                        |                                                          |             |
+| Name                                                         | Description                   | Author                                                                   | Download                                                 | Open-Source |
+| ------------------------------------------------------------ | ----------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------- | ----------- |
+| [Homebrew Launcher](https://github.com/switchbrew/nx-hbmenu) | Run homebrew on your Switch\! | [Yellows8](User:Yellows8 "wikilink"), [Plutooo](User:Plutooo "wikilink") | [Here](https://github.com/switchbrew/nx-hbmenu/releases) | Yes         |
+|                                                              |                               |                                                                          |                                                          |             |
 
 ### Applications
 

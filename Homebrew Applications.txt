@@ -19,7 +19,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 |-
 | [https://github.com/switchbrew/nx-hbmenu Homebrew Launcher]
 | Run homebrew on your Switch!
-| [[User:Yellows8|Yellows8]], [[User:qlutoo|qlutoo]]
+| [[User:Yellows8|Yellows8]], [[User:Plutooo|Plutooo]]
 | [https://github.com/switchbrew/nx-hbmenu/releases Here]
 | Yes
 |-
