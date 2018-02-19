@@ -33,8 +33,8 @@ can be run directly on Windows.
 ## Unix-like platforms
 
 Currently devkitPro provides precompiled versions of devkitARM for the
-following Unix-like platforms: Linux (x86/x64), macOS (universal
-binary). Note that Linux x64 binaries are usable under WSL.
+following Unix-like platforms: Linux (x86\_64), macOS (x86\_64). Note
+that Linux x86\_64 binaries are usable under WSL.
 
   - First, you need to install curl so the installer can download the
     devkitARM packages, and you should also install Git - you'll need it

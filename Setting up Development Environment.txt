@@ -13,7 +13,7 @@ devkitPro provides 64bit precompiled windows binaries of devkitA64 which can be 
 ** Windows 10 (post-Anniversary Update): Start -> devkitPro -> MSYS
 
 ==Unix-like platforms==
-Currently devkitPro provides precompiled versions of devkitARM for the following Unix-like platforms: Linux (x86/x64), macOS (universal binary). Note that Linux x64 binaries are usable under WSL.
+Currently devkitPro provides precompiled versions of devkitARM for the following Unix-like platforms: Linux (x86_64), macOS (x86_64). Note that Linux x86_64 binaries are usable under WSL.
 
 * First, you need to install curl so the installer can download the devkitARM packages, and you should also install Git - you'll need it to update libnx or share your code on GitHub, among many other things. If you are running Linux, you'll also need wget; it comes preinstalled on most distributions, but not all.
 
