@@ -20,6 +20,9 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **18 February 18** [nx-hbl](https://switchbrew.github.io/nx-hbl/)
+    and [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu) were
+    released.
   - **28 December 17** The 34c3 Switch
     [talk](https://events.ccc.de/congress/2017/Fahrplan/events/8941.html)
     took place, video available
@@ -28,5 +31,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     [4.1.0](4.1.0.md "wikilink").
   - **25 October 17** Nintendo released system update
     [4.0.1](4.0.1.md "wikilink").
-  - **18 October 17** Nintendo released system update
-    [4.0.0](4.0.0.md "wikilink").
