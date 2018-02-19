@@ -11,3 +11,43 @@ devkitPro provides 64bit precompiled windows binaries of devkitA64 which can be 
 ** Windows 8 and 8.1: Right click on the Start screen and select 'All Apps'. You should find MSYS there.
 ** Windows 10 (pre-Anniversary Update): Start -> All Apps -> devkitPro -> MSYS
 ** Windows 10 (post-Anniversary Update): Start -> devkitPro -> MSYS
+
+==Unix-like platforms==
+Currently devkitPro provides precompiled versions of devkitARM for the following Unix-like platforms: Linux (x86/x64), macOS (universal binary). Note that Linux x64 binaries are usable under WSL.
+
+* First, you need to install curl so the installer can download the devkitARM packages, and you should also install Git - you'll need it to update libctru or share your code on GitHub, among many other things. If you are running Linux, you'll also need wget; it comes preinstalled on most distributions, but not all.
+
+* Find your way into a shell (eg. by opening a Terminal window), and follow the instructions for your OS:
+** Debian/Ubuntu/Linux Mint/Ubuntu on WSL: <code>sudo apt-get install git curl</code>
+** Fedora/CentOS/RHEL: <code>sudo yum install git curl</code>
+** openSUSE: <code>sudo zypper install git curl</code>
+** Arch Linux/ALWSL: <code>sudo pacman -S git curl wget</code>
+** macOS: Download Git from [http://git-scm.com/download/mac] and install it. Curl is included with the OS.
+
+* We can set the DEVKITPRO environment variable first so the script knows where to install or we can set the variable later to the value the script tells us. The script will default this to ~/devkitPro
+<pre>
+echo "export DEVKITPRO=/opt/devkitpro" >> ~/.bashrc
+source ~/.bashrc
+</pre>
+
+* Next, we need to download, make executable and run the devkitARM updater (don't worry, the updater is also the installer.)
+<pre>
+curl -L https://github.com/devkitPro/installer/blob/master/perl/devkitA64update.pl -o devkitARMupdate.pl
+chmod +x ./devkitA64update.pl
+./devkitA64update.pl
+</pre>
+
+You may need to use sudo here of you set DEVKITPRO to a path not writable by your user.
+
+= Building the examples =
+Switch examples are still being created; however, there are a growing number of examples available from the [https://github.com/switchbrew/switch-examples switchbrew/switch-examples GitHub repository]. These are downloaded by the installer and can be found in $DEVKITPRO/examples/switch
+
+These can be built from the command line.
+
+To start a new homebrew project from the <code>bash</code> shell, simply type the following (replacing <code>'''~/projects/myswitchproject'''</code> with the place you would like your project to be stored, with <code>~</code> meaning your HOME directory):
+ cp -r $DEVKITPRO/examples/switch/templates/application '''~/projects/myswitchproject'''
+ cd '''~/projects/myswitchproject'''
+
+The standard Makefile will use the folder as the name of the .nro that will be built. You can keep that behaviour or simply change the <code>TARGET := $(notdir $(CURDIR))</code> line in the Makefile to explicitly name your project.
+
+To compile it, type <code>make</code> in the project directory.
