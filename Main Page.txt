@@ -1,5 +1,5 @@
 __NOTOC__
-{{:Main Page/Header}}
-{{:Main Page/Events}}
-{{:Main Page/Navigation}}
-{{:Main Page/OtherSites}}
+{{:Main_Page/Header}}
+{{:Main_Page/Events}}
+{{:Main_Page/Navigation}}
+{{:Main_Page/OtherSites}}
