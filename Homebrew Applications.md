@@ -35,9 +35,10 @@ available.
 
 ### Game Engines
 
-| Name | Description | Author | Download | Open-Source | Last Updated |
-| ---- | ----------- | ------ | -------- | ----------- | ------------ |
-|      |             |        |          |             |              |
+| Name       | Description                                      | Author  | Download | Open-Source                                              | Last Updated |
+| ---------- | ------------------------------------------------ | ------- | -------- | -------------------------------------------------------- | ------------ |
+| LovePotion | [Love2D](https://love2d.org) for Nintendo Switch | TurtleP |          | [Yes](https://github.com/TurtleP/LovePotion/tree/switch) | 2018-02-17   |
+|            |                                                  |         |          |                                                          |              |
 
 ### Games
 
