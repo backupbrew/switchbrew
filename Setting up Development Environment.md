@@ -75,7 +75,7 @@ that Linux x86\_64 binaries are usable under WSL.
     chmod +x ./devkitA64update.pl
     ./devkitA64update.pl
 
-You may need to use sudo here of you set DEVKITPRO to a path not
+You may need to use sudo here if you set DEVKITPRO to a path not
 writable by your user.
 
 # Building the examples

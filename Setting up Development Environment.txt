@@ -37,7 +37,7 @@ chmod +x ./devkitA64update.pl
 ./devkitA64update.pl
 </pre>
 
-You may need to use sudo here of you set DEVKITPRO to a path not writable by your user.
+You may need to use sudo here if you set DEVKITPRO to a path not writable by your user.
 
 = Building the examples =
 Switch examples are still being created; however, there are a growing number of examples available from the [https://github.com/switchbrew/switch-examples switchbrew/switch-examples GitHub repository]. These are downloaded by the installer and can be found in $DEVKITPRO/examples/switch
