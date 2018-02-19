@@ -1,5 +1,13 @@
 = Setup =
-* Install [http://devkitpro.org/ devkitA64]. If it's already installed, update it.
-** On Windows, there's a [https://github.com/devkitPro/installer/releases graphical installer].
-** On Unix-like platforms such as Linux/macOS, there's a [https://github.com/devkitPro/installer/blob/master/perl/devkitA64update.pl Perl script].
-** Make sure you also select libnx and the switch examples when installing.
+Install [http://devkitpro.org/ devkitA64]. If it's already installed, update it. On Windows, there's a [https://github.com/devkitPro/installer/releases graphical installer]. On Unix-like platforms such as Linux/macOS, there's a [https://github.com/devkitPro/installer/blob/master/perl/devkitA64update.pl Perl script]. Make sure you also select libnx and the switch examples when installing.
+
+==Windows==
+devkitPro provides 64bit precompiled windows binaries of devkitA64 which can be run directly on Windows.
+* [https://github.com/devkitPro/installer/releases download the latest version of the graphical installer] from github and run it, following the instructions as you go.
+* An Internet connection is required.
+* You will want to make sure devkitA64 is selected during the installation process to develop for the Switch - you can also install  devkitARM (for 3DS, DS and GBA) and devkitPPC (for GameCube/Wii development) if you wish.
+* Once the installer has finished, launch MSYS from:
+** Windows 7 and earlier: Start -> All Programs -> devkitPro -> MSYS
+** Windows 8 and 8.1: Right click on the Start screen and select 'All Apps'. You should find MSYS there.
+** Windows 10 (pre-Anniversary Update): Start -> All Apps -> devkitPro -> MSYS
+** Windows 10 (post-Anniversary Update): Start -> devkitPro -> MSYS
