@@ -221,6 +221,7 @@ applets.
 | 0x407C            | 32          | Invalid input buffer                                                                                                                                                                 |
 | 0x668C            | 51          | USB data-transfer in progress                                                                                                                                                        |
 | 0x299             | 1           | Invalid audio device                                                                                                                                                                 |
+| 0x499             | 2           | Invalid buffer address                                                                                                                                                               |
 | 0x699             | 3           | Invalid sample rate                                                                                                                                                                  |
 | 0x1499            | 10          | Invalid channel count                                                                                                                                                                |
 | 0xC0899           | 1540        | Audio output was already started                                                                                                                                                     |

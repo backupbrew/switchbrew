@@ -407,6 +407,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x299 || 1 || Invalid audio device
 |-
+| 0x499 || 2 || Invalid buffer address
+|-
 | 0x699 || 3 || Invalid sample rate
 |-
 | 0x1499 || 10 || Invalid channel count
