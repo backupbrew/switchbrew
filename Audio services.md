@@ -63,6 +63,9 @@ This is
 | 6   | [\#ContainsAudioOutBuffer](#ContainsAudioOutBuffer "wikilink")                      |
 | 7   | \[3.0.0+\] [\#AppendAudioOutBufferEx](#AppendAudioOutBufferEx "wikilink")           |
 | 8   | \[3.0.0+\] [\#GetReleasedAudioOutBufferEx](#GetReleasedAudioOutBufferEx "wikilink") |
+| 9   | \[4.0.0+\]                                                                          |
+| 10  | \[4.0.0+\]                                                                          |
+| 11  | \[4.0.0+\]                                                                          |
 
 ### GetAudioOutState
 
