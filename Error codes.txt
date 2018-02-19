@@ -405,6 +405,12 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x668C || 51 || USB data-transfer in progress
 |-
+| 0x299 || 1 || Invalid audio device
+|-
+| 0x699 || 3 || Invalid sample rate
+|-
+| 0x1499 || 10 || Invalid channel count
+|-
 | 0xC0899 || 1540 || Audio output was already started
 |-
 | 0x3C9D || 30 || Address is NULL
