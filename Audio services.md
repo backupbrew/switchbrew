@@ -2,12 +2,12 @@
 
 This is "nn::audio::detail::IAudioOutManager".
 
-| Cmd | Name                                             |
-| --- | ------------------------------------------------ |
-| 0   | [\#ListAudioOuts](#ListAudioOuts "wikilink")     |
-| 1   | [\#OpenAudioOut](#OpenAudioOut "wikilink")       |
-| 2   | [\#ListAudioOutsEx](#ListAudioOutsEx "wikilink") |
-| 3   | [\#OpenAudioOutEx](#OpenAudioOutEx "wikilink")   |
+| Cmd | Name                                                        |
+| --- | ----------------------------------------------------------- |
+| 0   | [\#ListAudioOuts](#ListAudioOuts "wikilink")                |
+| 1   | [\#OpenAudioOut](#OpenAudioOut "wikilink")                  |
+| 2   | \[3.0.0+\] [\#ListAudioOutsEx](#ListAudioOutsEx "wikilink") |
+| 3   | \[3.0.0+\] [\#OpenAudioOutEx](#OpenAudioOutEx "wikilink")   |
 
 ## ListAudioOuts
 
@@ -52,17 +52,17 @@ type-0x21 input buffer instead.
 This is
 "nn::audio::detail::IAudioOut".
 
-| Cmd | Name                                                                     |
-| --- | ------------------------------------------------------------------------ |
-| 0   | [\#GetAudioOutState](#GetAudioOutState "wikilink")                       |
-| 1   | [\#StartAudioOut](#StartAudioOut "wikilink")                             |
-| 2   | [\#StopAudioOut](#StopAudioOut "wikilink")                               |
-| 3   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink")               |
-| 4   | [\#RegisterBufferEvent](#RegisterBufferEvent "wikilink")                 |
-| 5   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink")     |
-| 6   | [\#ContainsAudioOutBuffer](#ContainsAudioOutBuffer "wikilink")           |
-| 7   | [\#AppendAudioOutBufferEx](#AppendAudioOutBufferEx "wikilink")           |
-| 8   | [\#GetReleasedAudioOutBufferEx](#GetReleasedAudioOutBufferEx "wikilink") |
+| Cmd | Name                                                                                |
+| --- | ----------------------------------------------------------------------------------- |
+| 0   | [\#GetAudioOutState](#GetAudioOutState "wikilink")                                  |
+| 1   | [\#StartAudioOut](#StartAudioOut "wikilink")                                        |
+| 2   | [\#StopAudioOut](#StopAudioOut "wikilink")                                          |
+| 3   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink")                          |
+| 4   | [\#RegisterBufferEvent](#RegisterBufferEvent "wikilink")                            |
+| 5   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink")                |
+| 6   | [\#ContainsAudioOutBuffer](#ContainsAudioOutBuffer "wikilink")                      |
+| 7   | \[3.0.0+\] [\#AppendAudioOutBufferEx](#AppendAudioOutBufferEx "wikilink")           |
+| 8   | \[3.0.0+\] [\#GetReleasedAudioOutBufferEx](#GetReleasedAudioOutBufferEx "wikilink") |
 
 ### GetAudioOutState
 
@@ -122,10 +122,12 @@ takes a type-0x22 buffer instead.
 
 This is "nn::audio::detail::IAudioInManagerForDebugger".
 
-| Cmd | Name         |
-| --- | ------------ |
-| 0   | ListAudioIns |
-| 1   | OpenAudioIn  |
+| Cmd | Name                      |
+| --- | ------------------------- |
+| 0   | ListAudioIns              |
+| 1   | OpenAudioIn               |
+| 2   | \[3.0.0+\] ListAudioInsEx |
+| 3   | \[3.0.0+\] OpenAudioInEx  |
 
 ## IAudioIn
 
@@ -140,6 +142,10 @@ This is "nn::audio::detail::IAudioIn".
 | 4   | RegisterBufferEvent                              |
 | 5   | GetReleasedAudioInBuffer                         |
 | 6   | ContainsAudioInBuffer                            |
+| 7   |                                                  |
+| 8   | \[3.0.0+\] AppendAudioInBufferEx                 |
+| 9   | \[3.0.0+\] GetReleasedAudioInBufferEx            |
+| 10  | \[3.0.0+\]                                       |
 
 ### GetAudioInState
 
