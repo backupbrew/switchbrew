@@ -1,2 +1,5 @@
 = Setup =
-See [https://github.com/switchbrew/libnx here].
+* Install [http://devkitpro.org/ devkitA64]. If it's already installed, update it.
+** On Windows, there's a [https://github.com/devkitPro/installer/releases graphical installer].
+** On Unix-like platforms such as Linux/macOS, there's a [https://github.com/devkitPro/installer/blob/master/perl/devkitA64update.pl Perl script].
+** Make sure you also select libnx and the switch examples when installing.
