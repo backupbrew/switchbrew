@@ -125,12 +125,13 @@ takes a type-0x22 buffer instead.
 
 This is "nn::audio::detail::IAudioInManagerForDebugger".
 
-| Cmd | Name                      |
-| --- | ------------------------- |
-| 0   | ListAudioIns              |
-| 1   | OpenAudioIn               |
-| 2   | \[3.0.0+\] ListAudioInsEx |
-| 3   | \[3.0.0+\] OpenAudioInEx  |
+| Cmd | Name                              |
+| --- | --------------------------------- |
+| 0   | ListAudioIns                      |
+| 1   | OpenAudioIn                       |
+| 2   | \[3.0.0+\] ListAudioInsEx         |
+| 3   | \[3.0.0+\] OpenAudioInEx          |
+| 4   | \[3.0.0+\] ListAudioInsExAndProbe |
 
 ## IAudioIn
 
@@ -145,10 +146,13 @@ This is "nn::audio::detail::IAudioIn".
 | 4   | RegisterBufferEvent                              |
 | 5   | GetReleasedAudioInBuffer                         |
 | 6   | ContainsAudioInBuffer                            |
-| 7   |                                                  |
+| 7   | \[3.0.0+\] AppendAudioInBufferWithUserEvent      |
 | 8   | \[3.0.0+\] AppendAudioInBufferEx                 |
 | 9   | \[3.0.0+\] GetReleasedAudioInBufferEx            |
-| 10  | \[3.0.0+\]                                       |
+| 10  | \[3.0.0+\] AppendAudioInBufferWithUserEventEx    |
+| 11  | \[4.0.0+\]                                       |
+| 12  | \[4.0.0+\]                                       |
+| 13  | \[4.0.0+\]                                       |
 
 ### GetAudioInState
 
