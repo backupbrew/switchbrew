@@ -15,15 +15,17 @@ described above. You can also freely navigate the filesystem to select
 an application.
 
 Icon/metadata for each application is loaded from data embedded in the
-NRO (custom assets section), if available.
+NRO (custom assets section), if
+available.
 
 ## List
 
 ### Launchers
 
-| Name | Description | Author | Download | Open-Source |
-| ---- | ----------- | ------ | -------- | ----------- |
-|      |             |        |          |             |
+| Name                                                         | Description                   | Author                                                                 | Download                                                 | Open-Source |
+| ------------------------------------------------------------ | ----------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------- | ----------- |
+| [Homebrew Launcher](https://github.com/switchbrew/nx-hbmenu) | Run homebrew on your Switch\! | [Yellows8](User:Yellows8 "wikilink"), [qlutoo](User:qlutoo "wikilink") | [Here](https://github.com/switchbrew/nx-hbmenu/releases) | Yes         |
+|                                                              |                               |                                                                        |                                                          |             |
 
 ### Applications
 
