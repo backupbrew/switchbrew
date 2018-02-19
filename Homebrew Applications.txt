@@ -111,4 +111,11 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 !  width="5%"  | Open-Source
 !  width="15%" | Last Updated
 |-
+| 34c3-demo
+| Demo from the 34c3 for Homebrew on the Switch.
+| [[User:plutoo|plutoo]]
+| [https://github.com/switchbrew/34c3-demo Here]
+| Yes
+| 2018-02-19
+|-
 |}

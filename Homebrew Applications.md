@@ -71,6 +71,7 @@ available.
 
 ### Demos
 
-| Name | Description | Author | Download | Open-Source | Last Updated |
-| ---- | ----------- | ------ | -------- | ----------- | ------------ |
-|      |             |        |          |             |              |
+| Name      | Description                                    | Author                           | Download                                        | Open-Source | Last Updated |
+| --------- | ---------------------------------------------- | -------------------------------- | ----------------------------------------------- | ----------- | ------------ |
+| 34c3-demo | Demo from the 34c3 for Homebrew on the Switch. | [plutoo](User:plutoo "wikilink") | [Here](https://github.com/switchbrew/34c3-demo) | Yes         | 2018-02-19   |
+|           |                                                |                                  |                                                 |             |              |
