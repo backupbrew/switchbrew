@@ -24,7 +24,7 @@ available.
 
 | Name                                                         | Description                   | Author                                                                   | Download                                                 | Open-Source |
 | ------------------------------------------------------------ | ----------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------- | ----------- |
-| [Homebrew Launcher](https://github.com/switchbrew/nx-hbmenu) | Run homebrew on your Switch\! | [Yellows8](User:Yellows8 "wikilink"), [Plutooo](User:Plutooo "wikilink") | [Here](https://github.com/switchbrew/nx-hbmenu/releases) | Yes         |
+| [Homebrew Launcher](https://github.com/switchbrew/nx-hbmenu) | Run homebrew on your Switch\! | [Yellows8](User:Yellows8 "wikilink"), [plutooo](User:plutooo "wikilink") | [Here](https://github.com/switchbrew/nx-hbmenu/releases) | Yes         |
 |                                                              |                               |                                                                          |                                                          |             |
 
 ### Applications
