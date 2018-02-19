@@ -38,7 +38,7 @@ binary). Note that Linux x64 binaries are usable under WSL.
 
   - First, you need to install curl so the installer can download the
     devkitARM packages, and you should also install Git - you'll need it
-    to update libctru or share your code on GitHub, among many other
+    to update libnx or share your code on GitHub, among many other
     things. If you are running Linux, you'll also need wget; it comes
     preinstalled on most distributions, but not all.
 
@@ -71,7 +71,7 @@ binary). Note that Linux x64 binaries are usable under WSL.
 
 <!-- end list -->
 
-    curl -L https://github.com/devkitPro/installer/blob/master/perl/devkitA64update.pl -o devkitARMupdate.pl
+    curl -L https://github.com/devkitPro/installer/blob/master/perl/devkitA64update.pl -o devkitA64update.pl
     chmod +x ./devkitA64update.pl
     ./devkitA64update.pl
 

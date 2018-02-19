@@ -15,7 +15,7 @@ devkitPro provides 64bit precompiled windows binaries of devkitA64 which can be 
 ==Unix-like platforms==
 Currently devkitPro provides precompiled versions of devkitARM for the following Unix-like platforms: Linux (x86/x64), macOS (universal binary). Note that Linux x64 binaries are usable under WSL.
 
-* First, you need to install curl so the installer can download the devkitARM packages, and you should also install Git - you'll need it to update libctru or share your code on GitHub, among many other things. If you are running Linux, you'll also need wget; it comes preinstalled on most distributions, but not all.
+* First, you need to install curl so the installer can download the devkitARM packages, and you should also install Git - you'll need it to update libnx or share your code on GitHub, among many other things. If you are running Linux, you'll also need wget; it comes preinstalled on most distributions, but not all.
 
 * Find your way into a shell (eg. by opening a Terminal window), and follow the instructions for your OS:
 ** Debian/Ubuntu/Linux Mint/Ubuntu on WSL: <code>sudo apt-get install git curl</code>
@@ -32,7 +32,7 @@ source ~/.bashrc
 
 * Next, we need to download, make executable and run the devkitARM updater (don't worry, the updater is also the installer.)
 <pre>
-curl -L https://github.com/devkitPro/installer/blob/master/perl/devkitA64update.pl -o devkitARMupdate.pl
+curl -L https://github.com/devkitPro/installer/blob/master/perl/devkitA64update.pl -o devkitA64update.pl
 chmod +x ./devkitA64update.pl
 ./devkitA64update.pl
 </pre>
