@@ -224,9 +224,9 @@ This is "nn::settings::ISystemSettingsServer".
 |-
 | 22 || SetEulaVersions
 |-
-| 23 || GetColorSetId
+| 23 || [[#GetColorSetId]]
 |-
-| 24 || SetColorSetId
+| 24 || [[#SetColorSetId]]
 |-
 | 25 || GetConsoleInformationUploadFlag
 |-
@@ -465,6 +465,17 @@ Takes a type-0x1A output buffer. User-processes use hard-coded size 0x100.
 If needed, reads the content of the [[System_Version_Title]] "/file" into state. This is only done once.
 
 Then the above 0x100-byte data is copied to the output buffer.
+
+== GetColorSetId ==
+No input, returns an output s32.
+
+This is the current Theme set by System Settings.
+
+* 0: "Basic White"
+* 1: "Basic Black"
+
+== SetColorSetId ==
+Takes an input s32, no output.
 
 == GetSettingsItemValue ==
 Takes two type-0x19 input buffers and a type-0x6 output buffer. Returns an output u64 for the actual size written to the outbuf.

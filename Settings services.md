@@ -173,8 +173,8 @@ This is
 | 20  | SetAudioVolume                                                                                    |
 | 21  | GetEulaVersions                                                                                   |
 | 22  | SetEulaVersions                                                                                   |
-| 23  | GetColorSetId                                                                                     |
-| 24  | SetColorSetId                                                                                     |
+| 23  | [\#GetColorSetId](#GetColorSetId "wikilink")                                                      |
+| 24  | [\#SetColorSetId](#SetColorSetId "wikilink")                                                      |
 | 25  | GetConsoleInformationUploadFlag                                                                   |
 | 26  | SetConsoleInformationUploadFlag                                                                   |
 | 27  | GetAutomaticApplicationDownloadFlag                                                               |
@@ -303,6 +303,19 @@ If needed, reads the content of the
 into state. This is only done once.
 
 Then the above 0x100-byte data is copied to the output buffer.
+
+## GetColorSetId
+
+No input, returns an output s32.
+
+This is the current Theme set by System Settings.
+
+  - 0: "Basic White"
+  - 1: "Basic Black"
+
+## SetColorSetId
+
+Takes an input s32, no output.
 
 ## GetSettingsItemValue
 
