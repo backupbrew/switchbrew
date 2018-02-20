@@ -135,11 +135,11 @@ Takes a session-unique AES key from [[#UnwrapTitleKey]].
 |-
 | 0 || CryptoUsecase_Aes
 |-
-| 1 || CryptoUsecase_PrivateRsa
+| 1 || CryptoUsecase_RsaPrivate
 |-
-| 2 || CryptoUsecase_PublicRsa
+| 2 || CryptoUsecase_RsaOaep
 |-
-| 3 || CryptoUsecase_3
+| 3 || CryptoUsecase_RsaTitlekey
 |}
 
 == ID 1 ==

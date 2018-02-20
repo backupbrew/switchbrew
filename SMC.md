@@ -150,12 +150,12 @@ Takes a session-unique AES key from
 
 ### enum CryptoUsecase
 
-| Value | Name                      |
-| ----- | ------------------------- |
-| 0     | CryptoUsecase\_Aes        |
-| 1     | CryptoUsecase\_PrivateRsa |
-| 2     | CryptoUsecase\_PublicRsa  |
-| 3     | CryptoUsecase\_3          |
+| Value | Name                       |
+| ----- | -------------------------- |
+| 0     | CryptoUsecase\_Aes         |
+| 1     | CryptoUsecase\_RsaPrivate  |
+| 2     | CryptoUsecase\_RsaOaep     |
+| 3     | CryptoUsecase\_RsaTitlekey |
 
 ## ID 1
 
