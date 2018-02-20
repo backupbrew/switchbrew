@@ -239,13 +239,22 @@ u64.
 
 ## ISystemClock
 
-| Cmd | Name                  | Notes                                                       |
-| --- | --------------------- | ----------------------------------------------------------- |
-| 0   | GetCurrentTime        | Returns an nn::time::PosixTime (time since epoch).          |
-| 1   | SetCurrentTime        | Takes an nn::time::PosixTime.                               |
-| 2   | GetSystemClockContext | Returns an 0x20 byte struct (nn::time::SystemClockContext). |
-| 3   | SetSystemClockContext | Takes an nn::time::SystemClockContext                       |
-|     |                       |                                                             |
+| Cmd | Name                  | Notes                                                                     |
+| --- | --------------------- | ------------------------------------------------------------------------- |
+| 0   | GetCurrentTime        | Returns an output [\#PosixTime](#PosixTime "wikilink").                   |
+| 1   | SetCurrentTime        | Takes an input [\#PosixTime](#PosixTime "wikilink").                      |
+| 2   | GetSystemClockContext | Returns an output [\#SystemClockContext](#SystemClockContext "wikilink"). |
+| 3   | SetSystemClockContext | Takes an input [\#SystemClockContext](#SystemClockContext "wikilink").    |
+|     |                       |                                                                           |
+
+### PosixTime
+
+This is an u64 for UTC POSIX time.
+
+### SystemClockContext
+
+This is an 0x20-byte
+struct.
 
 ## ITimeZoneService
 

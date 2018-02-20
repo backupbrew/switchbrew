@@ -404,15 +404,21 @@ This is an u64.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetCurrentTime || Returns an nn::time::PosixTime (time since epoch).
+| 0 || GetCurrentTime || Returns an output [[#PosixTime]].
 |-
-| 1 || SetCurrentTime || Takes an nn::time::PosixTime.
+| 1 || SetCurrentTime || Takes an input [[#PosixTime]].
 |-
-| 2 || GetSystemClockContext || Returns an 0x20 byte struct (nn::time::SystemClockContext).
+| 2 || GetSystemClockContext || Returns an output [[#SystemClockContext]].
 |-
-| 3 || SetSystemClockContext  || Takes an nn::time::SystemClockContext
+| 3 || SetSystemClockContext  || Takes an input [[#SystemClockContext]].
 |-
 |}
+
+=== PosixTime ===
+This is an u64 for UTC POSIX time.
+
+=== SystemClockContext ===
+This is an 0x20-byte struct.
 
 == ITimeZoneService ==
 {| class="wikitable" border="1"
