@@ -477,7 +477,7 @@ driver.
 
 ## /dev/nverpt-ctrl
 
-Added in firmware version 4.0.0.
+Added in firmware version 3.0.0.
 
 | Value      | Direction | Size | Description | Notes |
 | ---------- | --------- | ---- | ----------- | ----- |
