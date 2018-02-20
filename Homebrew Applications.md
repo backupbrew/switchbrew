@@ -42,9 +42,10 @@ available.
 
 ### Games
 
-| Name | Description | Author | Download | Open-Source | Last Updated |
-| ---- | ----------- | ------ | -------- | ----------- | ------------ |
-|      |             |        |          |             |              |
+| Name             | Description                                       | Author            | Download                                                                         | Open-Source | Last Updated |
+| ---------------- | ------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------- | ----------- | ------------ |
+| Useless Homebrew | A "useless machine"-like software, ported from DS | Tcm0, Rydian (DS) | [Here](https://gbatemp.net/threads/useless-homebrew-for-nintendo-switch.497041/) | Yes         | 2018-02-20   |
+|                  |                                                   |                   |                                                                                  |             |              |
 
 ### Emulators
 

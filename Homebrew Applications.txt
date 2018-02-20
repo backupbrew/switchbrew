@@ -63,6 +63,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 !  width="5%"  | Open-Source
 !  width="15%" | Last Updated
 |-
+| Useless Homebrew
+| A "useless machine"-like software, ported from DS
+| Tcm0, Rydian (DS)
+| [https://gbatemp.net/threads/useless-homebrew-for-nintendo-switch.497041/ Here]
+| Yes
+| 2018-02-20
+|-
 |}
 
 === Emulators ===
