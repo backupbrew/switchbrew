@@ -425,11 +425,11 @@ This is an 0x20-byte struct.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetDeviceLocationName || Returns an nn::time::LocationName (0x24 bytes).
+| 0 || GetDeviceLocationName || Returns an output [[#LocationName]].
 |-
-| 1 || SetDeviceLocationName || Takes an nn::time::LocationName.
+| 1 || SetDeviceLocationName || Takes an input [[#LocationName]].
 |-
-| 2 || GetTotalLocationNameCount || Returns an 0x20 byte struct (nn::time::SystemClockContext).
+| 2 || GetTotalLocationNameCount || No input, returns an output u32.
 |-
 | 3 || LoadLocationNameList || 
 |-
@@ -446,3 +446,6 @@ This is an 0x20-byte struct.
 | 201 || ToPosixTimeWithMyRule || 
 |-
 |}
+
+=== LocationName ===
+This is an 0x24-byte struct.

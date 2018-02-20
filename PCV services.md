@@ -258,16 +258,20 @@ struct.
 
 ## ITimeZoneService
 
-| Cmd | Name                      | Notes                                                       |
-| --- | ------------------------- | ----------------------------------------------------------- |
-| 0   | GetDeviceLocationName     | Returns an nn::time::LocationName (0x24 bytes).             |
-| 1   | SetDeviceLocationName     | Takes an nn::time::LocationName.                            |
-| 2   | GetTotalLocationNameCount | Returns an 0x20 byte struct (nn::time::SystemClockContext). |
-| 3   | LoadLocationNameList      |                                                             |
-| 4   | LoadTimeZoneRule          |                                                             |
-| 5   | GetTimeZoneRuleVersion    |                                                             |
-| 100 | ToCalendarTime            |                                                             |
-| 101 | ToCalendarTimeWithMyRule  |                                                             |
-| 200 | ToPosixTime               |                                                             |
-| 201 | ToPosixTimeWithMyRule     |                                                             |
-|     |                           |                                                             |
+| Cmd | Name                      | Notes                                                         |
+| --- | ------------------------- | ------------------------------------------------------------- |
+| 0   | GetDeviceLocationName     | Returns an output [\#LocationName](#LocationName "wikilink"). |
+| 1   | SetDeviceLocationName     | Takes an input [\#LocationName](#LocationName "wikilink").    |
+| 2   | GetTotalLocationNameCount | No input, returns an output u32.                              |
+| 3   | LoadLocationNameList      |                                                               |
+| 4   | LoadTimeZoneRule          |                                                               |
+| 5   | GetTimeZoneRuleVersion    |                                                               |
+| 100 | ToCalendarTime            |                                                               |
+| 101 | ToCalendarTimeWithMyRule  |                                                               |
+| 200 | ToPosixTime               |                                                               |
+| 201 | ToPosixTimeWithMyRule     |                                                               |
+|     |                           |                                                               |
+
+### LocationName
+
+This is an 0x24-byte struct.
