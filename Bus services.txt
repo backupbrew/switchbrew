@@ -55,7 +55,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0xC || 0x26 || E, 6 || joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion) || || [[HID services]]
 |-
-| 0xD || 6 || A, 6 || Battery event monitor related. || Out || [[PTM services]]
+| 0xD || 5 || A, 5 || Battery event monitor related. || Out || [[PTM services]]
 |-
 | 0xE || 0x78 || P, 0 || || || 
 |-
