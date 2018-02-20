@@ -34,6 +34,12 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 !  width="5%"  | Open-Source
 !  width="15%" | Last Updated
 |-
+| [https://github.com/yellows8/switch_sysmodule switch_sysmodule]
+| RPC over USB, etc. Should be usable as an application but not yet tested.
+| [[User:Yellows8|Yellows8]]
+| 
+| Yes
+| 
 |}
 
 === Game Engines ===
