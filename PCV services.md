@@ -216,17 +216,26 @@ This is
 
 ## ISteadyClock
 
-| Cmd | Name                |
-| --- | ------------------- |
-| 0   | GetCurrentTimePoint |
-| 2   | GetTestOffset       |
-| 3   | SetTestOffset       |
-| 100 | GetRtcValue         |
-| 101 | IsRtcResetDetected  |
-| 102 | GetSetupResultValue |
-| 200 | GetInternalOffset   |
-| 201 | SetInternalOffset   |
-|     |                     |
+| Cmd | Name                | Notes                                                                                   |
+| --- | ------------------- | --------------------------------------------------------------------------------------- |
+| 0   | GetCurrentTimePoint | No input, returns an output [\#SteadyClockTimePoint](#SteadyClockTimePoint "wikilink"). |
+| 2   | GetTestOffset       | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                 |
+| 3   | SetTestOffset       | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output.                   |
+| 100 | GetRtcValue         | No input, returns an output s64.                                                        |
+| 101 | IsRtcResetDetected  | No input, returns an output u8 bool.                                                    |
+| 102 | GetSetupResultValue | No input, returns an output u32.                                                        |
+| 200 | GetInternalOffset   | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                 |
+| 201 | SetInternalOffset   | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output.                   |
+|     |                     |                                                                                         |
+
+### SteadyClockTimePoint
+
+This is a 0x18-byte struct.
+
+### TimeSpanType
+
+This is an
+u64.
 
 ## ISystemClock
 

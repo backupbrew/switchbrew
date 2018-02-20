@@ -373,25 +373,31 @@ This is "nn::timesrv::detail::service::IStaticService".
 == ISteadyClock ==
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || GetCurrentTimePoint
+| 0 || GetCurrentTimePoint || No input, returns an output [[#SteadyClockTimePoint]].
 |-
-| 2 || GetTestOffset
+| 2 || GetTestOffset || No input, returns an output [[#TimeSpanType]].
 |-
-| 3 || SetTestOffset
+| 3 || SetTestOffset || Takes an input [[#TimeSpanType]], no output.
 |-
-| 100 || GetRtcValue
+| 100 || GetRtcValue || No input, returns an output s64.
 |-
-| 101 || IsRtcResetDetected
+| 101 || IsRtcResetDetected || No input, returns an output u8 bool.
 |-
-| 102 || GetSetupResultValue
+| 102 || GetSetupResultValue || No input, returns an output u32.
 |-
-| 200 || GetInternalOffset
+| 200 || GetInternalOffset || No input, returns an output [[#TimeSpanType]].
 |-
-| 201 || SetInternalOffset
+| 201 || SetInternalOffset || Takes an input [[#TimeSpanType]], no output.
 |-
 |}
+
+=== SteadyClockTimePoint ===
+This is a 0x18-byte struct.
+
+=== TimeSpanType ===
+This is an u64.
 
 == ISystemClock ==
 {| class="wikitable" border="1"
