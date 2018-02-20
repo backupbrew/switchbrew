@@ -770,7 +770,7 @@ Returns the GPU's ZCULL context size. Identical to Linux driver.
     __out u32 size;
   };
 
-=== NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE ===
+=== NVGPU_GPU_IOCTL_ZCULL_GET_INFO ===
 Returns GPU's ZCULL information. Identical to Linux driver.
 
  struct {
