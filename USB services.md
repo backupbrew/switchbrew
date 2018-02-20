@@ -469,15 +469,18 @@ USB-sysmodule symbols for this refer to "Cradle", which is the
 This is
 "nn::usb::pd::detail::IPdCradleSession".
 
-| Cmd | Name | Notes                                                                                |
-| --- | ---- | ------------------------------------------------------------------------------------ |
-| 0   |      | Takes two input u32s with the second u32 immediately after the first one. No output. |
-| 1   |      | Takes an input u32. Returns an output u32.                                           |
-| 2   |      | No input/output.                                                                     |
-| 3   |      | No input. Returns an output u16.                                                     |
-| 4   |      | No input. Returns an output u16.                                                     |
-| 5   |      | No input. Returns an output u16.                                                     |
-| 6   |      | No input. Returns an output u16.                                                     |
+| Cmd | Name              | Notes                                                                                                                             |
+| --- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | VdmUserWrite      | Input { u32 value; u32 VdmUserId; }. Output {}. If Cradle or RelayBox is connected, issues given VDM with value.                  |
+| 1   | VdmUserRead       | Input { u32 VdmUserId; }. Output { u32 value; }. If Cradle or RelayBox is connected, returns u32 response from issuing given VDM. |
+| 2   | Vdm20Init         | No input/output. If Cradle or RelayBox is connected, caches result of VDM 0x20.                                                   |
+| 3   | GetFwType         | No input. Returns an output u16.                                                                                                  |
+| 4   | GetFwRevision     | No input. Returns an output u16.                                                                                                  |
+| 5   | GetManufacturerId | No input. Returns an output u16.                                                                                                  |
+| 6   | GetDeviceId       | No input. Returns an output u16.                                                                                                  |
+
+Note: The VdmUserId given to VdmUserRead/VdmUserWrite is translated from
+the given (enum) value to the actual cmd to send.
 
 # usb:pm
 
