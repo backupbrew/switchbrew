@@ -49,13 +49,13 @@ Returns an [[#IPadSession]] session.
 |-
 | 9 || 0x91 || S, 1 || || || 
 |-
-| 0xA || 0x96 || S, 6 || Power supply monitor related. || Out || [[PTM services]]
+| 0xA || 0x96 || S, 6 || bq24192 Charge Enable || Out || [[PTM services]]
 |-
 | 0xB || 0x97 || S, 7 || || || 
 |-
 | 0xC || 0x26 || E, 6 || joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion) || || [[HID services]]
 |-
-| 0xD || 5 || A, 5 || Battery event monitor related. || Out || [[PTM services]]
+| 0xD || 5 || A, 5 || Fan enable (normal) || Out || [[PTM services]]
 |-
 | 0xE || 0x78 || P, 0 || || || 
 |-
@@ -83,7 +83,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x1A || 0xBF || X, 7 || Volume Down || In || [[Boot2]], [[Audio services]]
 |-
-| 0x1B || 0xC0 || Y, 0 || Power supply monitor related. || In || [[PTM services]]
+| 0x1B || 0xC0 || Y, 0 || max17050 irq || In || [[PTM services]]
 |-
 | 0x1C || 0xC1 || Y, 1 || || || 
 |-
@@ -91,11 +91,11 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x1E || 0xAA || V, 2 || Backlight || Out || [[NV services]]
 |-
-| 0x1F || 0x55 || K, 5 || Charger watchdog related. || Out || [[PTM services]], [[USB services]]
+| 0x1F || 0x55 || K, 5 || bq24192 OTG charge select || Out || [[PTM services]], [[USB services]]
 |-
 | 0x20 || 0xAD || V, 5 || PD related || Out || [[USB services]]
 |-
-| 0x21 || 0xC8 || Z, 0 || Power supply monitor related. || In || [[PTM services]] 
+| 0x21 || 0xC8 || Z, 0 || bq24192 irq || In || [[PTM services]] 
 |-
 | 0x22 || 0xCA || Z, 2 || || || 
 |-
@@ -109,7 +109,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x27 || 0x52 || K, 2 || || || 
 |-
-| 0x28 || 0x54 || K, 4 || PD related, irq || In || [[USB services]]
+| 0x28 || 0x54 || K, 4 || bm92t36 irq || In || [[USB services]]
 |-
 | 0x29 || 0x56 || K, 6 || || || 
 |-
@@ -137,15 +137,15 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x35 || 0xE2 || CC, 2 || || ||
 |-
-| 0x36 || 0xE4 || CC, 4 || Battery event monitor related. || Out || [[PTM services]]
+| 0x36 || 0xE4 || CC, 4 || Fan enable (high power) || Out || [[PTM services]]
 |-
 | 0x37 || 0x3A || H, 2 || || ||
 |-
 | 0x38 || 0xC9 || Z, 1 || SDCard Card Detect || In || [[Filesystem services]]
 |-
-| 0x39 || 0x4D || J, 5 || Charger watchdog related. || Out || [[PTM services]], [[USB services]]
+| 0x39 || 0x4D || J, 5 || bq24192 OTG charge select || Out || [[PTM services]], [[USB services]]
 |-
-| 0x3A || 0x58 || L, 0 || Charger watchdog related. || Out || [[PTM services]], [[USB services]]
+| 0x3A || 0x58 || L, 0 || bq24192 OTG charge select || Out || [[PTM services]], [[USB services]]
 |-
 | 0x3B || 0x3E || H, 6 || || ||
 |-
