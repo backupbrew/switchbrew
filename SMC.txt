@@ -139,7 +139,7 @@ Takes a session-unique AES key from [[#UnwrapTitleKey]].
 |-
 | 2 || CryptoUsecase_PublicRsa
 |-
-| 3 || CryptoUsecase_TitleKey
+| 3 || CryptoUsecase_3
 |}
 
 == ID 1 ==
