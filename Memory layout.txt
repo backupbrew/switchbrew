@@ -678,6 +678,13 @@ The rest are are mapped to core-specific physaddrs, each one is 0x1000-bytes. De
 | 
 | TZRAM (Secure Monitor and ARMv8 init)
 |-
+| 0x1F01F4000
+| <varies>
+| 0x1000
+| 0x40000000000723
+| 
+| DRAM (SPL .bss buffer visible to the Security Engine)
+|-
 | 0x1F01F6000
 | 0x7C01E000
 | 0x1000
