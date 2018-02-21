@@ -83,6 +83,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/vgmoose/spacenx/ Yes]
 | 2018-02-19
 |-
+| Pixel-Painter
+| A simple drawing homebrew
+| 8BitWonder
+| [https://github.com/16BitWonder/Pixel-Painter-Switch/releases Here]
+| [https://github.com/16BitWonder/Pixel-Painter-Switch Yes]
+| 2018-02-21
+|-
 |}
 
 === Emulators ===
