@@ -426,6 +426,32 @@ When a fatal-error is received the error code is outputted using the following f
 | 0x3CF089 || 7800 || Unknown/invalid libcurl error.
 |-
 | 0x3E8289-0x3F4089 || 8001-8096 || libcurl error 1-96. Some of the libcurl errors in the error-table map to the above unknown-libcurl-error however.
+|-
+| 0x35B || 1 || Failed to init SM.
+|-
+| 0x55B || 2 || Failed to init FS.
+|-
+| 0x95B || 4 || Failed to read NRO header.
+|-
+| 0xB5B || 5 || Invalid NRO magic.
+|-
+| 0xD5B || 6 || Invalid NRO segments.
+|-
+| 0xF5B || 7 || Failed to read NRO.
+|-
+| 0x135B || 9 || Failed to allocate heap.
+|-
+| 0x275B || 19 || Failed to map code memory (.text).
+|-
+| 0x295B || 20 || Failed to map code memory (.rodata).
+|-
+| 0x2B5B || 21 || Failed to map code memory (.data+.bss).
+|-
+| 0x315B || 24 || Failed to unmap code memory (.text).
+|-
+| 0x335B || 25 || Failed to unmap code memory (.rodata).
+|-
+| 0x355B || 26 || Failed to unmap code memory (.data+.bss).
 |}
 
 == FS Error Codes ==
