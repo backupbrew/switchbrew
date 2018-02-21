@@ -81,7 +81,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | vgmoose
 | [https://github.com/vgmoose/spacenx/releases Here]
 | [https://github.com/vgmoose/spacenx/ Yes]
-| 2018-02-21
+| 2018-02-19
 |-
 |}
 
