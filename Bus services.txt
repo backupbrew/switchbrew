@@ -392,9 +392,9 @@ This is "nn::uart::IPortSession".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || Takes marshalled arguments
+| 0 || OpenSession || Takes marshalled arguments
 |-
-| 1 || || Takes marshalled arguments
+| 1 || OpenSessionForTest || Takes marshalled arguments
 |-
 | 2 || || 
 |-
@@ -407,6 +407,23 @@ This is "nn::uart::IPortSession".
 | 6 || || 
 |-
 | 7 || || 
+|-
+|}
+
+=== Port Mapping ===
+OpenSession translates user IDs to to the uart port index.
+
+OpenSessionForTest takes the port index verbatim.
+
+{| class="wikitable" border="1"
+|-
+! Name || Port || Usage
+|-
+| 1 || UART-D || Bluetooth
+|-
+| 2 || UART-B || Joycon(R)
+|-
+| 3 || UART-C || Joycon(L)
 |-
 |}
 

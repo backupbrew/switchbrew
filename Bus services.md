@@ -229,17 +229,30 @@ This is "nn::uart::IManager".
 
 This is "nn::uart::IPortSession".
 
-| Cmd | Name | Notes                      |
-| --- | ---- | -------------------------- |
-| 0   |      | Takes marshalled arguments |
-| 1   |      | Takes marshalled arguments |
-| 2   |      |                            |
-| 3   |      | Takes marshalled arguments |
-| 4   |      | Returns 2x u64. Both zero. |
-| 5   |      |                            |
-| 6   |      |                            |
-| 7   |      |                            |
-|     |      |                            |
+| Cmd | Name               | Notes                      |
+| --- | ------------------ | -------------------------- |
+| 0   | OpenSession        | Takes marshalled arguments |
+| 1   | OpenSessionForTest | Takes marshalled arguments |
+| 2   |                    |                            |
+| 3   |                    | Takes marshalled arguments |
+| 4   |                    | Returns 2x u64. Both zero. |
+| 5   |                    |                            |
+| 6   |                    |                            |
+| 7   |                    |                            |
+|     |                    |                            |
+
+### Port Mapping
+
+OpenSession translates user IDs to to the uart port index.
+
+OpenSessionForTest takes the port index verbatim.
+
+| Name | Port   | Usage     |
+| ---- | ------ | --------- |
+| 1    | UART-D | Bluetooth |
+| 2    | UART-B | Joycon(R) |
+| 3    | UART-C | Joycon(L) |
+|      |        |           |
 
 # pwm
 
