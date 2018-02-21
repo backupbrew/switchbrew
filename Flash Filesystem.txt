@@ -146,7 +146,7 @@ The currently active keyblob is officially known as "SecureInfo".
 |  0x00800000
 |  21
 |  No
-|  Raw partition where the first 0x4000 bytes (usually empty) contain the "BootConfig" and the remaining space contains the [[Package2|package2]] image from [[Title_list#System_Data_Archives|Title 0100000000000819]] by default. With the exFAT update installed, the [[Package2|package2]] image is switched to the one from [[Title_list#System_Data_Archives|Title 010000000000081B]]. The official name for this partition is "BootConfigAndPackage2Part1".
+|  Raw partition where the first 0x4000 bytes (usually empty) contain the [[BootConfig]] and the remaining space contains the [[Package2|package2]] image from [[Title_list#System_Data_Archives|Title 0100000000000819]] by default. With the exFAT update installed, the [[Package2|package2]] image is switched to the one from [[Title_list#System_Data_Archives|Title 010000000000081B]]. The official name for this partition is "BootConfigAndPackage2Part1".
 |-
 |  BCPKG2-2-Normal-Sub
 |  0x01000000
@@ -160,7 +160,7 @@ The currently active keyblob is officially known as "SecureInfo".
 |  0x00800000
 |  23
 |  No
-|  Raw partition where the first 0x4000 bytes (usually empty) contain the "BootConfig" and the remaining space contains the [[Package2|package2]] image from [[Title_list#System_Data_Archives|Title 010000000000081A]] by default. On [4.0.0+] and with the exFAT update installed, the [[Package2|package2]] image is switched to the one from [[Title_list#System_Data_Archives|Title 010000000000081C]]. The official name for this partition is "BootConfigAndPackage2Part3".
+|  Raw partition where the first 0x4000 bytes (usually empty) contain the [[BootConfig]] and the remaining space contains the [[Package2|package2]] image from [[Title_list#System_Data_Archives|Title 010000000000081A]] by default. On [4.0.0+] and with the exFAT update installed, the [[Package2|package2]] image is switched to the one from [[Title_list#System_Data_Archives|Title 010000000000081C]]. The official name for this partition is "BootConfigAndPackage2Part3".
 |-
 |  BCPKG2-4-SafeMode-Sub
 |  0x02000000
