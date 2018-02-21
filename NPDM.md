@@ -16,7 +16,7 @@ varies.
 | 0x0    | 0x4  | Magic "META".                                                             |
 | 0x4    |      |                                                                           |
 | 0x8    |      |                                                                           |
-| 0xC    | 1    |                                                                           |
+| 0xC    | 1    | Needs to be \<= 0xF                                                       |
 | 0xE    | 1    | MainThreadPrio                                                            |
 | 0xF    | 1    | DefaultCpuId                                                              |
 | 0x10   |      |                                                                           |
