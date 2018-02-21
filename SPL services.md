@@ -22,32 +22,32 @@ now support for 4 of them.
 automatically
 unlocked.
 
-| Cmd | Name                                                                          | Notes                                                                                                                               |
-| --- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | [\#GetConfig](#GetConfig "wikilink")                                          | Wrapper for [GetConfig SMC](SMC#GetConfig.md##GetConfig "wikilink").                                                                |
-| 1   | [\#UserExpMod](#UserExpMod "wikilink")                                        | Speculative name. Wrapper for [ExpMod SMC](SMC#ExpMod.md##ExpMod "wikilink").                                                       |
-| 2   | [\#GenerateAesKek](#GenerateAesKek "wikilink")                                | Wrapper for [GenerateAesKek SMC](SMC#GenerateAesKek.md##GenerateAesKek "wikilink").                                                 |
-| 3   | [\#LoadAesKey](#LoadAesKey "wikilink")                                        | Wrapper for [LoadAesKey SMC](SMC#LoadAesKey.md##LoadAesKey "wikilink").                                                             |
-| 4   | [\#GenerateAesKey](#GenerateAesKey "wikilink")                                | Decrypts 0x10 bytes using AES ECB and uses [LoadAesKey SMC](SMC#LoadAesKey.md##LoadAesKey "wikilink") with a fixed Y.               |
-| 5   | [\#SetConfig](#SetConfig "wikilink")                                          | Wrapper for [SetConfig SMC](SMC#SetConfig.md##SetConfig "wikilink").                                                                |
-| 7   | [\#GetRandomBytes](#GetRandomBytes "wikilink")                                | Uses [GetRandomBytes SMC](SMC#GetRandomBytes.md##GetRandomBytes "wikilink").                                                        |
-| 9   | [\#DecryptImportPrivkForRsaOaep](#DecryptImportPrivkForRsaOaep "wikilink")    | Speculative name. Wrapper for [LoadRsaPublicKey SMC](SMC#LoadRsaPublicKey.md##LoadRsaPublicKey "wikilink").                         |
-| 10  | [\#DecryptRsaOaep](#DecryptRsaOaep "wikilink")                                | Speculative name. Uses [PublicRsa SMC](SMC#PublicRsa.md##PublicRsa "wikilink").                                                     |
-| 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                                  |                                                                                                                                     |
-| 12  | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")                | Wrapper for [GenerateSpecificAesKey SMC](SMC#GenerateSpecificAesKey.md##GenerateSpecificAesKey "wikilink").                         |
-| 13  | [\#DecryptPrivk](#DecryptPrivk "wikilink")                                    | Speculative name. Wrapper for [PrivateRsa SMC](SMC#PrivateRsa.md##PrivateRsa "wikilink").                                           |
-| 14  | [\#DecryptAesKey](#DecryptAesKey "wikilink")                                  | Decrypts 0x10 bytes using AES ECB and uses [LoadAesKey SMC](SMC#LoadAesKey.md##LoadAesKey "wikilink") with fixed X and Y.           |
-| 15  | [\#DecryptAesCtr](#DecryptAesCtr "wikilink")                                  | Wrapper for [CryptAes SMC](SMC#CryptAes.md##CryptAes "wikilink").                                                                   |
-| 16  | [\#ComputeCmac](#ComputeCmac "wikilink")                                      | Wrapper for [ComputeCmac SMC](SMC#ComputeCmac.md##ComputeCmac "wikilink").                                                          |
-| 17  | [\#DecryptImportPrivkForExpMod1](#DecryptImportPrivkForExpMod1 "wikilink")    | Speculative name. Wrapper for [LoadRsaPrivateKey SMC](SMC#LoadRsaPrivateKey.md##LoadRsaPrivateKey "wikilink").                      |
-| 18  | [\#UnwrapRsaWrappedTitleKey](#UnwrapRsaWrappedTitleKey "wikilink")            | Speculative name. Wrapper for [UnwrapRsaWrappedTitleKey SMC](SMC#UnwrapRsaWrappedTitleKey.md##UnwrapRsaWrappedTitleKey "wikilink"). |
-| 19  | [\#LoadTitleKey](#LoadTitleKey "wikilink")                                    | Wrapper for [LoadTitleKey SMC](SMC#LoadTitleKey.md##LoadTitleKey "wikilink").                                                       |
-| 20  | \[2.0.0+\] [\#UnwrapAesWrappedTitleKey](#UnwrapAesWrappedTitleKey "wikilink") | Wrapper for [UnwrapAesWrappedTitleKey SMC](SMC#UnwrapAesWrappedTitleKey.md##UnwrapAesWrappedTitleKey "wikilink").                   |
-| 21  | \[2.0.0+\] [\#LockAesEngine](#LockAesEngine "wikilink")                       |                                                                                                                                     |
-| 22  | \[2.0.0+\] [\#UnlockAesEngine](#UnlockAesEngine "wikilink")                   |                                                                                                                                     |
-| 23  | \[2.0.0+\] [\#GetSplWaitEvent](#GetSplWaitEvent "wikilink")                   |                                                                                                                                     |
-| 24  | \[3.0.0+\] [\#SetSharedData](#SetSharedData "wikilink")                       |                                                                                                                                     |
-| 25  | \[3.0.0+\] [\#GetSharedData](#GetSharedData "wikilink")                       |                                                                                                                                     |
+| Cmd | Name                                                                          | Notes                                                                                                                                           |
+| --- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | [\#GetConfig](#GetConfig "wikilink")                                          | Wrapper for [GetConfig SMC](SMC#GetConfig.md##GetConfig "wikilink").                                                                            |
+| 1   | [\#UserExpMod](#UserExpMod "wikilink")                                        | Speculative name. Wrapper for [ExpMod SMC](SMC#ExpMod.md##ExpMod "wikilink").                                                                   |
+| 2   | [\#GenerateAesKek](#GenerateAesKek "wikilink")                                | Wrapper for [GenerateAesKek SMC](SMC#GenerateAesKek.md##GenerateAesKek "wikilink").                                                             |
+| 3   | [\#LoadAesKey](#LoadAesKey "wikilink")                                        | Wrapper for [LoadAesKey SMC](SMC#LoadAesKey.md##LoadAesKey "wikilink").                                                                         |
+| 4   | [\#GenerateAesKey](#GenerateAesKey "wikilink")                                | Decrypts 0x10 bytes using AES ECB and uses [LoadAesKey SMC](SMC#LoadAesKey.md##LoadAesKey "wikilink") with a fixed Y.                           |
+| 5   | [\#SetConfig](#SetConfig "wikilink")                                          | Wrapper for [SetConfig SMC](SMC#SetConfig.md##SetConfig "wikilink").                                                                            |
+| 7   | [\#GetRandomBytes](#GetRandomBytes "wikilink")                                | Uses [GetRandomBytes SMC](SMC#GetRandomBytes.md##GetRandomBytes "wikilink").                                                                    |
+| 9   | [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink")                      | Speculative name. Wrapper for [LoadSecureExpModKey SMC](SMC#LoadSecureExpModKey.md##LoadSecureExpModKey "wikilink").                            |
+| 10  | [\#SecureExpMod](#SecureExpMod "wikilink")                                    | Speculative name. Uses [SecureExpModSMC](SMC#SecureExpMod.md##SecureExpMod "wikilink").                                                         |
+| 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                                  |                                                                                                                                                 |
+| 12  | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")                | Wrapper for [GenerateSpecificAesKey SMC](SMC#GenerateSpecificAesKey.md##GenerateSpecificAesKey "wikilink").                                     |
+| 13  | [\#DecryptPrivk](#DecryptPrivk "wikilink")                                    | Speculative name. Wrapper for [PrivateRsa SMC](SMC#PrivateRsa.md##PrivateRsa "wikilink").                                                       |
+| 14  | [\#DecryptAesKey](#DecryptAesKey "wikilink")                                  | Decrypts 0x10 bytes using AES ECB and uses [LoadAesKey SMC](SMC#LoadAesKey.md##LoadAesKey "wikilink") with fixed X and Y.                       |
+| 15  | [\#DecryptAesCtr](#DecryptAesCtr "wikilink")                                  | Wrapper for [CryptAes SMC](SMC#CryptAes.md##CryptAes "wikilink").                                                                               |
+| 16  | [\#ComputeCmac](#ComputeCmac "wikilink")                                      | Wrapper for [ComputeCmac SMC](SMC#ComputeCmac.md##ComputeCmac "wikilink").                                                                      |
+| 17  | [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink")                                | Speculative name. Wrapper for [LoadRsaOaepKey SMC](SMC#LoadRsaOaepKey.md##LoadRsaOaepKey "wikilink").                                           |
+| 18  | [\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink")    | Speculative name. Wrapper for [UnwrapRsaOaepWrappedTitleKey SMC](SMC#UnwrapRsaOaepWrappedTitleKey.md##UnwrapRsaOaepWrappedTitleKey "wikilink"). |
+| 19  | [\#LoadTitleKey](#LoadTitleKey "wikilink")                                    | Wrapper for [LoadTitleKey SMC](SMC#LoadTitleKey.md##LoadTitleKey "wikilink").                                                                   |
+| 20  | \[2.0.0+\] [\#UnwrapAesWrappedTitleKey](#UnwrapAesWrappedTitleKey "wikilink") | Wrapper for [UnwrapAesWrappedTitleKey SMC](SMC#UnwrapAesWrappedTitleKey.md##UnwrapAesWrappedTitleKey "wikilink").                               |
+| 21  | \[2.0.0+\] [\#LockAesEngine](#LockAesEngine "wikilink")                       |                                                                                                                                                 |
+| 22  | \[2.0.0+\] [\#UnlockAesEngine](#UnlockAesEngine "wikilink")                   |                                                                                                                                                 |
+| 23  | \[2.0.0+\] [\#GetSplWaitEvent](#GetSplWaitEvent "wikilink")                   |                                                                                                                                                 |
+| 24  | \[3.0.0+\] [\#SetSharedData](#SetSharedData "wikilink")                       |                                                                                                                                                 |
+| 25  | \[3.0.0+\] [\#GetSharedData](#GetSharedData "wikilink")                       |                                                                                                                                                 |
 
 ## GetConfig
 
@@ -165,7 +165,7 @@ Takes a u32 (**ConfigItem**) and a u64 (**ConfigVal**).
 
 Any other **ConfigItem**, besides 13, can't be set.
 
-## DecryptImportPrivkForRsaOaep
+## LoadRsaOaepKey
 
 Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 16-byte KEK (**key\_x**), a 16-byte key (**key\_y**) and a u32
@@ -174,7 +174,7 @@ Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 Decrypts **enc\_privk\_in\_buf** with a key generated from **key\_x**
 and **key\_y** and imports it for later usage.
 
-## DecryptRsaOaep
+## UnwrapRsaOaepWrappedTitleKey
 
 Takes one type-10 (C descriptor) buffer (**data\_out\_buf**) and 3
 type-9 (X descriptor) buffers (**data\_in\_buf**, **mod\_in\_buf** and
@@ -182,7 +182,7 @@ type-9 (X descriptor) buffers (**data\_in\_buf**, **mod\_in\_buf** and
 
 Decrypts **data\_in\_buf** into **data\_out\_buf** using the private key
 imported with
-[\#DecryptImportPrivkForRsaOaep](#DecryptImportPrivkForRsaOaep "wikilink")
+[\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink")
 and the supplied **mod\_in\_buf**. Afterwards, verifies RSA-OAEP
 encoding using **label\_hash\_in\_buf**.
 
@@ -250,7 +250,7 @@ Returns a 16-byte CMAC calculated over **data\_in\_buf**.
 
 \[2.0.0+\] Verifies the engine is locked by current session.
 
-## DecryptImportPrivkForExpMod1
+## LoadSecureExpModKey
 
 Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 16-byte KEK (**key\_x**), a 16-byte key (**key\_y**) and a u32
@@ -259,14 +259,14 @@ Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 Decrypts **enc\_privk\_in\_buf** with a key generated from **key\_x**
 and **key\_y** and imports it for later usage.
 
-## UnwrapRsaWrappedTitleKey
+## SecureExpMod
 
 Takes 3 type-9 (X descriptor) buffers (**data\_in\_buf**,
 **mod\_in\_buf** and **param0\_in\_buf**).
 
 Decrypts **data\_in\_buf** using the private key imported with
-[\#DecryptImportPrivkForExpMod1](#DecryptImportPrivkForExpMod1 "wikilink")
-and the supplied **mod\_in\_buf** and **param0\_in\_buf**.
+[\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink") and the
+supplied **mod\_in\_buf** and **param0\_in\_buf**.
 
 Generates and returns a 16-byte sealed titlekey.
 

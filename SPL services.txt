@@ -36,9 +36,9 @@ This is "nn::spl::detail::IGeneralInterface".
 |-
 | 7 || [[#GetRandomBytes]] || Uses [[SMC#GetRandomBytes|GetRandomBytes SMC]].
 |-
-| 9 || [[#DecryptImportPrivkForRsaOaep]] || Speculative name. Wrapper for [[SMC#LoadRsaPublicKey|LoadRsaPublicKey SMC]].
+| 9 || [[#LoadSecureExpModKey]] || Speculative name. Wrapper for [[SMC#LoadSecureExpModKey|LoadSecureExpModKey SMC]].
 |-
-| 10 || [[#DecryptRsaOaep]] || Speculative name. Uses [[SMC#PublicRsa|PublicRsa SMC]].
+| 10 || [[#SecureExpMod]] || Speculative name. Uses [[SMC#SecureExpMod|SecureExpModSMC]].
 |-
 | 11 || [[#IsDevelopment]] ||
 |-
@@ -52,9 +52,9 @@ This is "nn::spl::detail::IGeneralInterface".
 |-
 | 16 || [[#ComputeCmac]] || Wrapper for [[SMC#ComputeCmac|ComputeCmac SMC]].
 |-
-| 17 || [[#DecryptImportPrivkForExpMod1]] || Speculative name. Wrapper for [[SMC#LoadRsaPrivateKey|LoadRsaPrivateKey SMC]].
+| 17 || [[#LoadRsaOaepKey]] || Speculative name. Wrapper for [[SMC#LoadRsaOaepKey|LoadRsaOaepKey SMC]].
 |-
-| 18 || [[#UnwrapRsaWrappedTitleKey ]] || Speculative name. Wrapper for [[SMC#UnwrapRsaWrappedTitleKey|UnwrapRsaWrappedTitleKey SMC]].
+| 18 || [[#UnwrapRsaOaepWrappedTitleKey]] || Speculative name. Wrapper for [[SMC#UnwrapRsaOaepWrappedTitleKey|UnwrapRsaOaepWrappedTitleKey SMC]].
 |-
 | 19 || [[#LoadTitleKey]] || Wrapper for [[SMC#LoadTitleKey|LoadTitleKey SMC]].
 |-
@@ -202,16 +202,16 @@ Takes a u32 ('''ConfigItem''') and a u64 ('''ConfigVal''').
 
 Any other '''ConfigItem''', besides 13, can't be set.
 
-== DecryptImportPrivkForRsaOaep ==
+== LoadRsaOaepKey ==
 Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
 '''version''' is 0 for normal keys or 1 for extended keys.
 
 Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key_y''' and imports it for later usage.
 
-== DecryptRsaOaep ==
+== UnwrapRsaOaepWrappedTitleKey ==
 Takes one type-10 (C descriptor) buffer ('''data_out_buf''') and 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''label_hash_in_buf''').
 
-Decrypts '''data_in_buf''' into '''data_out_buf''' using the private key imported with [[#DecryptImportPrivkForRsaOaep]] and the supplied '''mod_in_buf'''. Afterwards, verifies RSA-OAEP encoding using '''label_hash_in_buf'''.
+Decrypts '''data_in_buf''' into '''data_out_buf''' using the private key imported with [[#UnwrapRsaOaepWrappedTitleKey]] and the supplied '''mod_in_buf'''. Afterwards, verifies RSA-OAEP encoding using '''label_hash_in_buf'''.
 
 Returns an u32 ('''dec_data_size''').
 
@@ -258,16 +258,16 @@ Returns a 16-byte CMAC calculated over '''data_in_buf'''.
 
 [2.0.0+] Verifies the engine is locked by current session.
 
-== DecryptImportPrivkForExpMod1 ==
+== LoadSecureExpModKey ==
 Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
 '''version''' is 0 for normal keys or 1 for extended keys.
 
 Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key_y''' and imports it for later usage.
 
-== UnwrapRsaWrappedTitleKey ==
+== SecureExpMod ==
 Takes 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''param0_in_buf''').
 
-Decrypts '''data_in_buf''' using the private key imported with [[#DecryptImportPrivkForExpMod1]] and the supplied '''mod_in_buf''' and '''param0_in_buf'''.
+Decrypts '''data_in_buf''' using the private key imported with [[#LoadSecureExpModKey]] and the supplied '''mod_in_buf''' and '''param0_in_buf'''.
 
 Generates and returns a 16-byte sealed titlekey.
 
