@@ -35,7 +35,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 2 || 0x24 || E, 4 || SDCard Power || Out || [[Filesystem services]]
 |-
-| 3 || 0x3C || H, 4 || || Out || [[Bluetooth services]]
+| 3 || 0x3C || H, 4 || BT reset || Out || [[Bluetooth services]]
 |-
 | 4 || 0xDA || BB, 2 || || || 
 |-
@@ -123,7 +123,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x2E || 0x39 || H, 1 || || Out || [[Wlan services]], [[PCIe services]]
 |-
-| 0x2F || 0x3B || H, 3 || || Out || [[Bluetooth services]]
+| 0x2F || 0x3B || H, 3 || BT wake || Out || [[Bluetooth services]]
 |-
 | 0x30 || 0x3D || H, 5 || || ||
 |-
