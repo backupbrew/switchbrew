@@ -42,10 +42,11 @@ available.
 
 ### Games
 
-| Name             | Description                                       | Author            | Download                                                                         | Open-Source | Last Updated |
-| ---------------- | ------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------- | ----------- | ------------ |
-| Useless Homebrew | A "useless machine"-like software, ported from DS | Tcm0, Rydian (DS) | [Here](https://gbatemp.net/threads/useless-homebrew-for-nintendo-switch.497041/) | Yes         | 2018-02-20   |
-|                  |                                                   |                   |                                                                                  |             |              |
+| Name             | Description                                                              | Author            | Download                                                                         | Open-Source                                | Last Updated |
+| ---------------- | ------------------------------------------------------------------------ | ----------------- | -------------------------------------------------------------------------------- | ------------------------------------------ | ------------ |
+| Useless Homebrew | A "useless machine"-like software, ported from DS                        | Tcm0, Rydian (DS) | [Here](https://gbatemp.net/threads/useless-homebrew-for-nintendo-switch.497041/) | Yes                                        | 2018-02-20   |
+| Space Game NX    | Space game is a graphical shooter game on the Switch ported from Wii U\! | vgmoose           | [Here](https://github.com/vgmoose/spacenx/releases)                              | [Yes](https://github.com/vgmoose/spacenx/) | 2018-02-21   |
+|                  |                                                                          |                   |                                                                                  |                                            |              |
 
 ### Emulators
 

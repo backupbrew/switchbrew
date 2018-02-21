@@ -76,6 +76,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Yes
 | 2018-02-20
 |-
+| Space Game NX
+| Space game is a graphical shooter game on the Switch ported from Wii U! 
+| vgmoose
+| [https://github.com/vgmoose/spacenx/releases Here]
+| [https://github.com/vgmoose/spacenx/ Yes]
+| 2018-02-21
+|-
 |}
 
 === Emulators ===
