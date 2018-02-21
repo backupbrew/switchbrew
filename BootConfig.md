@@ -1,0 +1,19 @@
+Installed into the first 0x4000 sector of the eMMC storage's [BCPKG2
+partitions](Flash%20Filesystem#User%20Partitions.md##User_Partitions "wikilink"),
+"BootConfig" contains data used to configure TrustZone/OS behaviors.
+
+BootConfig is normally all-zero for retail units, however TrustZone
+additionally sets the loaded configuration to all-zero when running on a
+retail unit anyway.
+
+# Format
+
+Despite having 0x4000 for storage, the actual loaded BootConfig is only
+0x640 bytes, with the following format:
+
+| Offset | Size  | Description            |
+| ------ | ----- | ---------------------- |
+| 0x0    | 0x200 | Unsigned Configuration |
+| 0x200  | 0x100 | RSA-PSS Signature      |
+| 0x300  | 0x100 | Signed Configuration   |
+| 0x400  | 0x240 | Reserved               |
