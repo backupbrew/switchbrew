@@ -158,12 +158,12 @@ is left in a halted state.
  clear_pk11_blob();
  
  u32 FLOW_CTLR_HALT_COP_EVENTS = 0x60007004;
- u32 FLOW_MODE_STOP = 0x40000000;
+ u32 FLOW_MODE_WAITEVENT = 0x40000000;
  u32 HALT_COP_EVENT_JTAG = 0x10000000;
  
  // Halt the boot processor
  while (true)
-    *(u32 *)FLOW_CTLR_HALT_COP_EVENTS = (FLOW_MODE_STOP | HALT_COP_EVENT_JTAG);
+    *(u32 *)FLOW_CTLR_HALT_COP_EVENTS = (FLOW_MODE_WAITEVENT | HALT_COP_EVENT_JTAG);
 ```
 
 #### Anti-downgrade
