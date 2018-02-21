@@ -41,11 +41,11 @@ Takes a pid. Removes registered FS permissions for that PID.
 Seems to sets a global flag to inputval & 1.
 
 When the flag is zero, it will set ret=0 instead of ret={error} when
-verifying the fixed-key [\#NCA](NCA%20Format.md "wikilink") header
-signature fails. This also skips verifying the signature in the
-[NPDM](NPDM.md "wikilink") ACID. Note that if verifying the fixed-key
-signature is successful, and verifying the ACID signature fails, it will
-throw an error and abort.
+verifying the fixed-key [NPDM](NPDM.md "wikilink") ACID signature fails.
+This also skips verifying the [NCA Header](NCA%20Format.md "wikilink")
+signature using the ACID key. Note that if verifying the fixed-key ACID
+signature is successful, and verifying the ACID-key NCA header signature
+fails, it will throw an error and abort.
 
 # fsp-srv
 
