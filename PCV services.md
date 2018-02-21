@@ -258,19 +258,19 @@ struct.
 
 ## ITimeZoneService
 
-| Cmd | Name                      | Notes                                                         |
-| --- | ------------------------- | ------------------------------------------------------------- |
-| 0   | GetDeviceLocationName     | Returns an output [\#LocationName](#LocationName "wikilink"). |
-| 1   | SetDeviceLocationName     | Takes an input [\#LocationName](#LocationName "wikilink").    |
-| 2   | GetTotalLocationNameCount | No input, returns an output u32.                              |
-| 3   | LoadLocationNameList      |                                                               |
-| 4   | LoadTimeZoneRule          |                                                               |
-| 5   | GetTimeZoneRuleVersion    |                                                               |
-| 100 | ToCalendarTime            |                                                               |
-| 101 | ToCalendarTimeWithMyRule  |                                                               |
-| 200 | ToPosixTime               |                                                               |
-| 201 | ToPosixTimeWithMyRule     |                                                               |
-|     |                           |                                                               |
+| Cmd | Name                      | Notes                                                                                                                                                                                                                                                             |
+| --- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | GetDeviceLocationName     | No input, returns an output [\#LocationName](#LocationName "wikilink").                                                                                                                                                                                           |
+| 1   | SetDeviceLocationName     | Takes an input [\#LocationName](#LocationName "wikilink"), no output.                                                                                                                                                                                             |
+| 2   | GetTotalLocationNameCount | No input, returns an output s32.                                                                                                                                                                                                                                  |
+| 3   | LoadLocationNameList      | Takes an input s32 and a type-0x6 output buffer for [\#LocationName](#LocationName "wikilink"), returns an output s32.                                                                                                                                            |
+| 4   | LoadTimeZoneRule          | Takes an input [\#LocationName](#LocationName "wikilink") and a type-0x16 output buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), no output.                                                                                                                |
+| 5   | GetTimeZoneRuleVersion    | No input, returns an output [\#TimeZoneRuleVersion](#TimeZoneRuleVersion "wikilink").                                                                                                                                                                             |
+| 100 | ToCalendarTime            | Takes an input [\#PosixTime](#PosixTime "wikilink") and a type-0x15 input buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), returns an output [\#CalendarTime](#CalendarTime "wikilink") and [\#CalendarAdditionalInfo](#CalendarAdditionalInfo "wikilink"). |
+| 101 | ToCalendarTimeWithMyRule  | Takes an input [\#PosixTime](#PosixTime "wikilink"), returns an output [\#CalendarTime](#CalendarTime "wikilink") and [\#CalendarAdditionalInfo](#CalendarAdditionalInfo "wikilink").                                                                             |
+| 200 | ToPosixTime               | Takes an input [\#CalendarTime](#CalendarTime "wikilink"), a type-0x15 input buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), an type-0xA output buffer for [\#PosixTime](#PosixTime "wikilink") array, and returns an output s32.                          |
+| 201 | ToPosixTimeWithMyRule     | Takes an input [\#CalendarTime](#CalendarTime "wikilink"), an type-0xA output buffer for [\#PosixTime](#PosixTime "wikilink") array, and returns an output s32.                                                                                                   |
+|     |                           |                                                                                                                                                                                                                                                                   |
 
 ### LocationName
 
@@ -282,3 +282,20 @@ struct.
 | 0x20   | ?    | ?                                        |
 
 This is an 0x24-byte struct.
+
+### TimeZoneRule
+
+This is an 0x4000-byte struct. Official sw uses fixed-size 0x4000 for
+the buffer size with the above commands.
+
+### TimeZoneRuleVersion
+
+This is an u128.
+
+### CalendarTime
+
+This is an u64.
+
+### CalendarAdditionalInfo
+
+This is an 0x18-byte struct.
