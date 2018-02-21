@@ -51,15 +51,15 @@ Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
 |-
 | 0xC300040B || [[#ComputeCmac]] || ||
 |-
-| 0xC300100C || [[#LoadRsaPrivateKey]] || ||
+| 0xC300100C || [[#LoadRsaOaepKey]] || ||
 |-
 | 0xC300100D || [[#DecryptRsaPrivateKey]] || ||
 |-
-| 0xC300100E || [[#LoadRsaPublicKey]] || ||
+| 0xC300100E || [[#LoadSecureExpModKey]] || ||
 |-
-| 0xC300060F || [[#PublicRsa]] || ||
+| 0xC300060F || [[#SecureExpMod]] || ||
 |-
-| 0xC3000610 || [[#UnwrapRsaWrappedTitleKey]] || ||
+| 0xC3000610 || [[#UnwrapRsaOaepWrappedTitleKey]] || ||
 |-
 | 0xC3000011 || [[#LoadTitleKey]] || ||
 |-
@@ -97,37 +97,35 @@ Key must be set prior using one of the [[#LoadAesKey]], [[#GenerateSpecificAesKe
 === GenerateSpecificAesKey ===
 Todo: This one seems unrelated to [[#CryptoUsecase]].
 
-=== LoadRsaPrivateKey ===
+=== LoadRsaOaepKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase_TitleKey.
+The session kek must have been created with CryptoUsecase_RsaOaep.
 
 === DecryptRsaPrivateKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase_PrivateRsa.
+The session kek must have been created with CryptoUsecase_RsaPrivate.
 
 [{Unknown version}+] The SMC handler when certain conditions pass and SMC_ID==0xC300100D now returns error 0x6 instead of calling the handler funcptr.
 
-=== LoadRsaPublicKey ===
-Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA public key.
+=== LoadSecureExpModKey ===
+Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA key.
 
-The session kek must have been created with CryptoUsecase_PublicRsa.
+The session kek must have been created with CryptoUsecase_RsaSecureExpMod.
 
-=== PublicRsa ===
-Encrypts using Rsa public key.
+=== SecureExpMod ===
+Performs an Exp Mod operation using an exponent previously loaded with the [[#LoadSecureExpModKey]] command.
 
-Key must be set prior using the [[#LoadRsaPublicKey]] command.
+=== UnwrapRsaOaepWrappedTitleKey ===
+Takes an Rsa-Oaep-wrapped TitleKey, an RSA Public Key, and a label hash.
 
-=== UnwrapRsaWrappedTitleKey ===
-Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA public key.
+Performs an Exp Mod operation using an exponent previously loaded with the [[#LoadRsaOaepKey]] command, and then validates/extracts a Titlekey from the resulting message.
 
 Returns a session-unique AES key especially for use in [[#LoadTitleKey]].
 
-The session kek must have been created with CryptoUsecase_TitleKey.
-
 === LoadTitleKey ===
-Takes a session-unique AES key from [[#UnwrapTitleKey]].
+Takes a session-unique AES key from [[#UnwrapAesWrappedTitleKey]] or [[#UnwrapRsaOaepWrappedTitleKey]].
 
 === enum CryptoUsecase ===
 {| class=wikitable
@@ -137,9 +135,9 @@ Takes a session-unique AES key from [[#UnwrapTitleKey]].
 |-
 | 1 || CryptoUsecase_RsaPrivate
 |-
-| 2 || CryptoUsecase_RsaOaep
+| 2 || CryptoUsecase_RsaSecureExpMod
 |-
-| 3 || CryptoUsecase_RsaTitlekey
+| 3 || CryptoUsecase_RsaOaep
 |}
 
 == ID 1 ==

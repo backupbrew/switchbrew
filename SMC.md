@@ -27,26 +27,26 @@ the call sub-id and returning the result of the call.
 Functions exposed to user-mode processes using
 [svcCallSecureMonitor](SVC.md "wikilink").
 
-| Sub-ID     | Name                                                               | In | Out |
-| ---------- | ------------------------------------------------------------------ | -- | --- |
-| 0xC3000401 | SetConfig                                                          |    |     |
-| 0xC3000002 | GetConfig (Same as ID 1, Sub-ID 4)                                 |    |     |
-| 0xC3000003 | CheckStatus                                                        |    |     |
-| 0xC3000404 | GetResult                                                          |    |     |
-| 0xC3000E05 | ExpMod                                                             |    |     |
-| 0xC3000006 | GetRandomBytes (Same as ID 1, Sub-ID 5)                            |    |     |
-| 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                     |    |     |
-| 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                             |    |     |
-| 0xC3000009 | [\#CryptAes](#CryptAes "wikilink")                                 |    |     |
-| 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")     |    |     |
-| 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                           |    |     |
-| 0xC300100C | [\#LoadRsaPrivateKey](#LoadRsaPrivateKey "wikilink")               |    |     |
-| 0xC300100D | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")         |    |     |
-| 0xC300100E | [\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink")                 |    |     |
-| 0xC300060F | [\#PublicRsa](#PublicRsa "wikilink")                               |    |     |
-| 0xC3000610 | [\#UnwrapRsaWrappedTitleKey](#UnwrapRsaWrappedTitleKey "wikilink") |    |     |
-| 0xC3000011 | [\#LoadTitleKey](#LoadTitleKey "wikilink")                         |    |     |
-| 0xC3000012 | \[2.0.0+\] UnwrapAesWrappedTitleKey                                |    |     |
+| Sub-ID     | Name                                                                       | In | Out |
+| ---------- | -------------------------------------------------------------------------- | -- | --- |
+| 0xC3000401 | SetConfig                                                                  |    |     |
+| 0xC3000002 | GetConfig (Same as ID 1, Sub-ID 4)                                         |    |     |
+| 0xC3000003 | CheckStatus                                                                |    |     |
+| 0xC3000404 | GetResult                                                                  |    |     |
+| 0xC3000E05 | ExpMod                                                                     |    |     |
+| 0xC3000006 | GetRandomBytes (Same as ID 1, Sub-ID 5)                                    |    |     |
+| 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                             |    |     |
+| 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                                     |    |     |
+| 0xC3000009 | [\#CryptAes](#CryptAes "wikilink")                                         |    |     |
+| 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")             |    |     |
+| 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                                   |    |     |
+| 0xC300100C | [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink")                             |    |     |
+| 0xC300100D | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")                 |    |     |
+| 0xC300100E | [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink")                   |    |     |
+| 0xC300060F | [\#SecureExpMod](#SecureExpMod "wikilink")                                 |    |     |
+| 0xC3000610 | [\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink") |    |     |
+| 0xC3000011 | [\#LoadTitleKey](#LoadTitleKey "wikilink")                                 |    |     |
+| 0xC3000012 | \[2.0.0+\] UnwrapAesWrappedTitleKey                                        |    |     |
 
 The overall concept here is the following:
 
@@ -97,13 +97,13 @@ Key must be set prior using one of the
 Todo: This one seems unrelated to
 [\#CryptoUsecase](#CryptoUsecase "wikilink").
 
-### LoadRsaPrivateKey
+### LoadRsaOaepKey
 
 Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, and a
 wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase\_TitleKey.
+The session kek must have been created with CryptoUsecase\_RsaOaep.
 
 ### DecryptRsaPrivateKey
 
@@ -111,51 +111,50 @@ Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, and a
 wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase\_PrivateRsa.
+The session kek must have been created with CryptoUsecase\_RsaPrivate.
 
 \[{Unknown version}+\] The SMC handler when certain conditions pass and
 SMC\_ID==0xC300100D now returns error 0x6 instead of calling the handler
 funcptr.
 
-### LoadRsaPublicKey
+### LoadSecureExpModKey
 
 Takes a session kek created with
-[\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA public
-key.
+[\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA key.
 
-The session kek must have been created with CryptoUsecase\_PublicRsa.
+The session kek must have been created with
+CryptoUsecase\_RsaSecureExpMod.
 
-### PublicRsa
+### SecureExpMod
 
-Encrypts using Rsa public key.
+Performs an Exp Mod operation using an exponent previously loaded with
+the [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink") command.
 
-Key must be set prior using the
-[\#LoadRsaPublicKey](#LoadRsaPublicKey "wikilink") command.
+### UnwrapRsaOaepWrappedTitleKey
 
-### UnwrapRsaWrappedTitleKey
+Takes an Rsa-Oaep-wrapped TitleKey, an RSA Public Key, and a label hash.
 
-Takes a session kek created with
-[\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA public
-key.
+Performs an Exp Mod operation using an exponent previously loaded with
+the [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink") command, and then
+validates/extracts a Titlekey from the resulting message.
 
 Returns a session-unique AES key especially for use in
 [\#LoadTitleKey](#LoadTitleKey "wikilink").
 
-The session kek must have been created with CryptoUsecase\_TitleKey.
-
 ### LoadTitleKey
 
 Takes a session-unique AES key from
-[\#UnwrapTitleKey](#UnwrapTitleKey "wikilink").
+[\#UnwrapAesWrappedTitleKey](#UnwrapAesWrappedTitleKey "wikilink") or
+[\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink").
 
 ### enum CryptoUsecase
 
-| Value | Name                       |
-| ----- | -------------------------- |
-| 0     | CryptoUsecase\_Aes         |
-| 1     | CryptoUsecase\_RsaPrivate  |
-| 2     | CryptoUsecase\_RsaOaep     |
-| 3     | CryptoUsecase\_RsaTitlekey |
+| Value | Name                           |
+| ----- | ------------------------------ |
+| 0     | CryptoUsecase\_Aes             |
+| 1     | CryptoUsecase\_RsaPrivate      |
+| 2     | CryptoUsecase\_RsaSecureExpMod |
+| 3     | CryptoUsecase\_RsaOaep         |
 
 ## ID 1
 
