@@ -300,7 +300,17 @@ This is an u128.
 
 ### CalendarTime
 
-This is an u64.
+| Offset | Size | Description        |
+| ------ | ---- | ------------------ |
+| 0x0    | 0x2  | Year               |
+| 0x2    | 0x1  | Month              |
+| 0x3    | 0x1  | Day                |
+| 0x4    | 0x1  | Hour               |
+| 0x5    | 0x1  | Minute             |
+| 0x6    | 0x1  | Second             |
+| 0x7    | 0x1  | Padding / unknown? |
+
+This is an 0x8-byte struct.
 
 ### CalendarAdditionalInfo
 
