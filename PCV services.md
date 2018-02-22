@@ -316,7 +316,8 @@ This is an 0x8-byte struct.
 
 | Offset | Size | Description                                    |
 | ------ | ---- | ---------------------------------------------- |
-| 0x0    | ?    | ?                                              |
+| 0x0    | 0x4  | 0-based day-of-week.                           |
+| 0x4    | 0x4  | 0-based day-of-year.                           |
 | 0x8    | ?    | Timezone name string.                          |
 | 0x10   | 0x4  | 0 = no DST, 1 = DST.                           |
 | 0x14   | 0x4  | s32 seconds relative to UTC for this timezone. |
