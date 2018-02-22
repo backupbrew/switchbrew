@@ -49,16 +49,16 @@ different execution levels within the system.
 <td><p>Default</p></td>
 </tr>
 <tr class="even">
-<td><div style="width: 60px; height: 20px; background:#FFAA00;">
-</div></td>
-<td><p>0xFFAA00</p></td>
-<td><p>GPU</p></td>
-</tr>
-<tr class="odd">
 <td><div style="width: 60px; height: 20px; background:#0000FF;">
 </div></td>
 <td><p>0x0000FF</p></td>
 <td><p>Kernel</p></td>
+</tr>
+<tr class="odd">
+<td><div style="width: 60px; height: 20px; background:#FF7700;">
+</div></td>
+<td><p>0xFF7700</p></td>
+<td><p>Secure Monitor (exception vectors)</p></td>
 </tr>
 <tr class="even">
 <td><div style="width: 60px; height: 20px; background:#00FFFF;">
@@ -67,34 +67,28 @@ different execution levels within the system.
 <td><p>Secure Monitor (general errors)</p></td>
 </tr>
 <tr class="odd">
-<td><div style="width: 60px; height: 20px; background:#0077FF;">
-</div></td>
-<td><p>0x0077FF</p></td>
-<td><p>Secure Monitor (exception vectors)</p></td>
-</tr>
-<tr class="even">
 <td><div style="width: 60px; height: 20px; background:#00AAFF;">
 </div></td>
 <td><p>0x00AAFF</p></td>
 <td><p>Secure Monitor (deep sleep) [1.0.0+]</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><div style="width: 60px; height: 20px; background:#FF77FF;">
 </div></td>
 <td><p>0xFF77FF</p></td>
 <td><p>Secure Monitor (deep sleep) [4.0.0+]</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><div style="width: 60px; height: 20px; background:#AA00FF;">
 </div></td>
 <td><p>0xAA00FF</p></td>
 <td><p>Bootloader (general errors)</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><div style="width: 60px; height: 20px; background:#FFFFAA;">
 </div></td>
 <td><p>0xFFFFAA</p></td>
-<td><p>Bootloader (wrong bootloader)</p></td>
+<td><p>Bootloader (wrong bootloader) [1.0.0-3.0.0]</p></td>
 </tr>
 </tbody>
 </table>
