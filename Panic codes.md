@@ -174,7 +174,7 @@ panic codes are specifically tied to a certain color.
 </tr>
 <tr class="odd">
 <td><p>0x10</p></td>
-<td><div style="width: 60px; height: 20px; background:#0077FF;">
+<td><div style="width: 60px; height: 20px; background:#FF7700;">
 </div></td>
 <td><p>Unknown exception</p></td>
 </tr>

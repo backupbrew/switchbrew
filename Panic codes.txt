@@ -73,7 +73,7 @@ While any combination of panic colors and codes is possible, several panic codes
 |-
 | 0x9 || <div style="width: 60px; height: 20px; background:#FF77FF;"></div> || CPU is already awake [2.0.0+]
 |-
-| 0x10 || <div style="width: 60px; height: 20px; background:#0077FF;"></div> || Unknown exception
+| 0x10 || <div style="width: 60px; height: 20px; background:#FF7700;"></div> || Unknown exception
 |-
 | 0x20 || <div style="width: 60px; height: 20px; background:#000000;"></div> || Rebooting into SafeMode
 |-
