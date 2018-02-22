@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **22 February 18** [devkitPro](http://devkitpro.org) released
+    [devkitA64 alpha7](https://devkitpro.org/viewtopic.php?f=13&t=8693)
   - **18 February 18** [nx-hbl](https://switchbrew.github.io/nx-hbl/)
     and [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu) were
     released.
@@ -29,5 +31,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     [here](https://media.ccc.de/v/34c3-8941-console_security_-_switch).
   - **4 December 17** Nintendo released system update
     [4.1.0](4.1.0.md "wikilink").
-  - **25 October 17** Nintendo released system update
-    [4.0.1](4.0.1.md "wikilink").
