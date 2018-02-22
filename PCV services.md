@@ -318,6 +318,7 @@ This is an 0x8-byte struct.
 | ------ | ---- | ---------------------------------------------- |
 | 0x0    | ?    | ?                                              |
 | 0x8    | ?    | Timezone name string.                          |
+| 0x10   | 0x4  | ?                                              |
 | 0x14   | 0x4  | s32 seconds relative to UTC for this timezone. |
 
 This is an 0x18-byte struct.
