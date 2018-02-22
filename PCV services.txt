@@ -431,7 +431,7 @@ This is an 0x20-byte struct.
 |-
 | 2 || GetTotalLocationNameCount || No input, returns an output s32.
 |-
-| 3 || LoadLocationNameList || Takes an input s32 and a type-0x6 output buffer for [[#LocationName]], returns an output s32.
+| 3 || LoadLocationNameList || 
 |-
 | 4 || LoadTimeZoneRule || Takes an input [[#LocationName]] and a type-0x16 output buffer for [[#TimeZoneRule]], no output.
 |-
@@ -446,6 +446,9 @@ This is an 0x20-byte struct.
 | 201 || ToPosixTimeWithMyRule || Takes an input [[#CalendarTime]], an type-0xA output buffer for [[#PosixTime]] array, and returns an output s32.
 |-
 |}
+
+=== LoadLocationNameList ===
+Takes an input s32 LocationName_index and a type-0x6 output buffer for [[#LocationName]], returns an output s32 for total output entries.
 
 === LocationName ===
 {| class="wikitable" border="1"
