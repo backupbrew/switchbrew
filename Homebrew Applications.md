@@ -3,9 +3,10 @@
 Applications are installed by copying the necessary files directly to
 the `switch/` folder in the root of the SD card, or in a subdirectory of
 `switch/`, in which case said subfolder must be named identically to its
-executable. Normally the former should be used, unless you want a
-dedicated directory for the application FS current-working-directory.
-Applications come with the following:
+executable. Normally the former should be used. The latter should be
+used if the application uses anything from FS current-working-directory
+(directory where the NRO is located). Applications come with the
+following:
 
   - `[appname].nro`: The executable.
 
