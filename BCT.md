@@ -151,31 +151,31 @@ variation of the Tegra 210 BCT format.
 <td><p>0x0588</p></td>
 <td><p>0x04</p></td>
 <td><p>num_sdram_sets</p></td>
-<td><p>Number of SDRAM parameter sets. Always set to 0 (parameters unused).</p></td>
+<td><p>Number of SDRAM parameter sets. Always set to 0, but parameters are used despite this.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x058C</p></td>
 <td><p>0x768</p></td>
 <td><p>sdram_params0</p></td>
-<td><p>Default values filled in, but not used</p></td>
+<td><p>Default values filled in.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x0CF4</p></td>
 <td><p>0x768</p></td>
 <td><p>sdram_params1</p></td>
-<td><p>Default values filled in, but not used</p></td>
+<td><p>Default values filled in.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x145C</p></td>
 <td><p>0x768</p></td>
 <td><p>sdram_params2</p></td>
-<td><p>Default values filled in, but not used</p></td>
+<td><p>Default values filled in.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x1BC4</p></td>
 <td><p>0x768</p></td>
 <td><p>sdram_params3</p></td>
-<td><p>Default values filled in, but not used</p></td>
+<td><p>Default values filled in.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x232C</p></td>
