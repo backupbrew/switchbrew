@@ -136,6 +136,7 @@ driver registers.
 | FUSE\_OPT\_PRIV\_SEC\_DIS                              | 0x7000FA64 |
 | [FUSE\_PKC\_DISABLE](#FUSE_PKC_DISABLE "wikilink")     | 0x7000FA68 |
 | FUSE\_TSENSOR\_COMMON                                  | 0x7000FA80 |
+| FUSE\_DEBUG\_AUTH\_OVERRIDE                            | 0x7000FA9C |
 | FUSE\_TSENSOR\_8                                       | 0x7000FAD4 |
 | FUSE\_RESERVED\_CALIB                                  | 0x7000FB04 |
 | FUSE\_TSENSOR\_9                                       | 0x7000FB1C |

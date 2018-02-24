@@ -277,6 +277,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_TSENSOR_COMMON
 | 0x7000FA80
 |-
+| FUSE_DEBUG_AUTH_OVERRIDE
+| 0x7000FA9C
+|-
 | FUSE_TSENSOR_8
 | 0x7000FAD4
 |-
