@@ -70,6 +70,10 @@ If there is some error encountered while validating an entry's values, use <code
 
 * 11: [[#LastLoadResult]]
 
+* 12: [[#AllocPages]]
+
+* 13: [[#LockRegion]]: If present, must not be ignored
+
 ==== EndOfList ====
 EndOfList is the final entry in the LoaderConfig.
 
@@ -93,7 +97,7 @@ Homebrew menu uses this pointer to write the path of next NRO to load, before re
 * '''Value[1]:''' Pointer to buffer of size 2048. Argv string to boot NRO with.
 
 ==== OverrideHeap ====
-If the NRO loader has reserved some space in the heap for itself, the application must not manipulate the heap.
+If the NRO loader has reserved some space in the heap for itself, the application must not manipulate the heap. If an [[#AllocPages]] key is present, the region this points to should be accepted by <code>free_pages</code>.
 
 * '''Key:''' 3
 * '''Value[0]:''' Base address of heap. Must be MemoryType 4, 5, or 9 with all reference counts being zero.
@@ -181,3 +185,31 @@ This is used to feed the last NRO error code back to the Homebrew Menu so that a
 * '''Key:''' 11
 * '''Value[0]:''' Result.
 * '''Value[1]:''' Ignored.
+
+==== AllocPages ====
+This key is used to provide function pointers for a memory allocator. If an [[#OverrideHeap]] key is present and this key is recognized, <code>free_pages</code> may be called with the address of the overridden heap as an argument. There may not be more than one [[#AllocPages]] key.
+
+If this key is recognized, applications should not attempt to use heap regions without first obtaining them through <code>alloc_pages</code>.
+If applications should not manage the heap themselves, an [[#OverrideHeap]] key should be passed in case this key is not recognized.
+If an [[#OverrideHeap]] key is not present, applications may attempt to manage the heap themselves. Any regions of memory within the heap that would be unsafe for an application to overwrite (such as the application's own stack) must be specified by a [[#LockRegion]] key.
+
+:<code>void *alloc_pages(size_t min, size_t max, size_t *actual)</code>:
+
+::This function shall allocate a page-aligned region of memory with a page-aligned size between <code>min</code> and <code>max</code> bytes (inclusive). If a failure is encountered, it shall return NULL. If <code>actual</code> is not NULL, the value it points to shall be overwritten with the actual size of the allocated region. Regions of memory allocated by this function may be passed to <code>free_pages</code> to mark them as eligible to be allocated again.
+
+::Regions of memory returned from this function must be read/write type-5 (HEAP) pages with no memory attributes set.
+
+:<code>bool free_pages(void *pages)</code>:
+
+::This function shall mark a region of memory either previously returned by <code>alloc_pages</code> or passed by the [[#OverrideHeap]] key as being eligible for future allocations. If any failure is encountered, a value of <code>TRUE</code> shall be returned. Otherwise, a value of <code>FALSE</code> is returned.
+
+* '''Key''': 12
+* '''Value[0]:''' <code>void *(*alloc_pages)(size_t min, size_t max, size_t *actual)</code>
+* '''Value[1]:''' <code>bool (*free_pages)(void *pages)</code>
+
+==== LockRegion ====
+This key is used to hint to the application that a certain region of the heap is unsafe to overwrite. There is no limit on the number of [[#LockRegion]] keys that may be passed. If an application is unable to process the number of regions that are locked, it must exit before overwriting any heap memory. It is an error for this key to be present in the same configuration as an [[#OverrideHeap]] or [[#AllocPages]] key.
+
+* '''Key''': 13
+* '''Value[0]:''' Pointer to region to lock
+* '''Value[1]:''' Size of region to lock

@@ -112,6 +112,15 @@ use `result_code = 346 | ((300 + key) << 9);`.
 
   - 11: [\#LastLoadResult](#LastLoadResult "wikilink")
 
+<!-- end list -->
+
+  - 12: [\#AllocPages](#AllocPages "wikilink")
+
+<!-- end list -->
+
+  - 13: [\#LockRegion](#LockRegion "wikilink"): If present, must not be
+    ignored
+
 #### EndOfList
 
 EndOfList is the final entry in the LoaderConfig.
@@ -145,7 +154,9 @@ before returning back to Homebrew loader.
 #### OverrideHeap
 
 If the NRO loader has reserved some space in the heap for itself, the
-application must not manipulate the heap.
+application must not manipulate the heap. If an
+[\#AllocPages](#AllocPages "wikilink") key is present, the region this
+points to should be accepted by `free_pages`.
 
   - **Key:** 3
   - **Value\[0\]:** Base address of heap. Must be MemoryType 4, 5, or 9
@@ -260,3 +271,85 @@ so that an error dialog can be displayed.
   - **Key:** 11
   - **Value\[0\]:** Result.
   - **Value\[1\]:** Ignored.
+
+#### AllocPages
+
+This key is used to provide function pointers for a memory allocator. If
+an [\#OverrideHeap](#OverrideHeap "wikilink") key is present and this
+key is recognized, `free_pages` may be called with the address of the
+overridden heap as an argument. There may not be more than one
+[\#AllocPages](#AllocPages "wikilink") key.
+
+If this key is recognized, applications should not attempt to use heap
+regions without first obtaining them through `alloc_pages`. If
+applications should not manage the heap themselves, an
+[\#OverrideHeap](#OverrideHeap "wikilink") key should be passed in case
+this key is not recognized. If an
+[\#OverrideHeap](#OverrideHeap "wikilink") key is not present,
+applications may attempt to manage the heap themselves. Any regions of
+memory within the heap that would be unsafe for an application to
+overwrite (such as the application's own stack) must be specified by a
+[\#LockRegion](#LockRegion "wikilink") key.
+
+  -   
+    `void *alloc_pages(size_t min, size_t max, size_t *actual)`:
+
+<!-- end list -->
+
+  - 
+    
+      -   
+        This function shall allocate a page-aligned region of memory
+        with a page-aligned size between `min` and `max` bytes
+        (inclusive). If a failure is encountered, it shall return NULL.
+        If `actual` is not NULL, the value it points to shall be
+        overwritten with the actual size of the allocated region.
+        Regions of memory allocated by this function may be passed to
+        `free_pages` to mark them as eligible to be allocated again.
+
+<!-- end list -->
+
+  - 
+    
+      -   
+        Regions of memory returned from this function must be read/write
+        type-5 (HEAP) pages with no memory attributes set.
+
+<!-- end list -->
+
+  -   
+    `bool free_pages(void *pages)`:
+
+<!-- end list -->
+
+  - 
+    
+      -   
+        This function shall mark a region of memory either previously
+        returned by `alloc_pages` or passed by the
+        [\#OverrideHeap](#OverrideHeap "wikilink") key as being eligible
+        for future allocations. If any failure is encountered, a value
+        of `TRUE` shall be returned. Otherwise, a value of `FALSE` is
+        returned.
+
+<!-- end list -->
+
+  - **Key**: 12
+  - **Value\[0\]:** `void *(*alloc_pages)(size_t min, size_t max, size_t
+    *actual)`
+  - **Value\[1\]:** `bool (*free_pages)(void *pages)`
+
+#### LockRegion
+
+This key is used to hint to the application that a certain region of the
+heap is unsafe to overwrite. There is no limit on the number of
+[\#LockRegion](#LockRegion "wikilink") keys that may be passed. If an
+application is unable to process the number of regions that are locked,
+it must exit before overwriting any heap memory. It is an error for this
+key to be present in the same configuration as an
+[\#OverrideHeap](#OverrideHeap "wikilink") or
+[\#AllocPages](#AllocPages "wikilink") key.
+
+  - **Key**: 13
+  - **Value\[0\]:** Pointer to region to lock
+  - **Value\[1\]:** Size of region to lock
