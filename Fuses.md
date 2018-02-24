@@ -75,6 +75,7 @@ driver registers.
 
 | Name                                                   | Address    |
 | ------------------------------------------------------ | ---------- |
+| FUSE\_PRODUCTION\_MODE                                 | 0x7000F900 |
 | [FUSE\_SKU\_INFO](#FUSE_SKU_INFO "wikilink")           | 0x7000F910 |
 | FUSE\_CPU\_SPEEDO\_0                                   | 0x7000F914 |
 | FUSE\_CPU\_IDDQ                                        | 0x7000F918 |
@@ -99,11 +100,13 @@ driver registers.
 | FUSE\_CP\_REV                                          | 0x7000F990 |
 | FUSE\_TSENSOR\_0                                       | 0x7000F998 |
 | FUSE\_FIRST\_BOOTROM\_PATCH\_SIZE\_REG                 | 0x7000F99C |
+| FUSE\_SECURITY\_MODE                                   | 0x7000F9A0 |
 | [FUSE\_PRIVATE\_KEY0](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9A4 |
 | [FUSE\_PRIVATE\_KEY1](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9A8 |
 | [FUSE\_PRIVATE\_KEY2](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9AC |
 | [FUSE\_PRIVATE\_KEY3](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B0 |
 | [FUSE\_PRIVATE\_KEY4](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B4 |
+| [FUSE\_RESERVED\_SW](#FUSE_RESERVED_SW "wikilink")     | 0x7000F9C0 |
 | FUSE\_VP8\_ENABLE                                      | 0x7000F9C4 |
 | FUSE\_RESERVED\_ODM0                                   | 0x7000F9C8 |
 | FUSE\_RESERVED\_ODM1                                   | 0x7000F9CC |
@@ -223,6 +226,17 @@ output.
 
 This stores the SHA256 hash of the 2048-bit RSA key expected at
 BCT+0x210.
+
+#### FUSE\_RESERVED\_SW
+
+| Bits | Description                                                             |
+| ---- | ----------------------------------------------------------------------- |
+| 5    | ENABLE\_WATCHDOG                                                        |
+| 6    | Forced RCM two button mode (0 = Only VOLUME\_UP; 1 = VOLUME\_UP + HOME) |
+| 7    | RCM USB controller mode (0 = USB 2.0; 1 = XUSB)                         |
+|      |                                                                         |
+
+This caches the value of the sw\_reserved fuse from the hardware array.
 
 ## eFuses
 

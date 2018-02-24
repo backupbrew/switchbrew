@@ -94,6 +94,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 !  Name
 !  Address
 |-
+| FUSE_PRODUCTION_MODE
+| 0x7000F900
+|-
 | [[#FUSE_SKU_INFO|FUSE_SKU_INFO]]
 | 0x7000F910
 |-
@@ -166,6 +169,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_FIRST_BOOTROM_PATCH_SIZE_REG
 | 0x7000F99C
 |-
+| FUSE_SECURITY_MODE
+| 0x7000F9A0
+|-
 | [[#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY0]]
 | 0x7000F9A4
 |-
@@ -180,6 +186,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 |-
 | [[#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY4]]
 | 0x7000F9B4
+|-
+| [[#FUSE_RESERVED_SW|FUSE_RESERVED_SW]]
+| 0x7000F9C0
 |-
 | FUSE_VP8_ENABLE
 | 0x7000F9C4
@@ -424,6 +433,24 @@ Reads to these registers after the SBK is locked out produce all-FF output.
 
 ==== FUSE_PUBLIC_KEY ====
 This stores the SHA256 hash of the 2048-bit RSA key expected at BCT+0x210.
+
+==== FUSE_RESERVED_SW ====
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 5
+| ENABLE_WATCHDOG
+|-
+| 6
+| Forced RCM two button mode (0 = Only VOLUME_UP; 1 = VOLUME_UP + HOME)
+|-
+| 7
+| RCM USB controller mode (0 = USB 2.0; 1 = XUSB)
+|-
+|}
+
+This caches the value of the sw_reserved fuse from the hardware array.
 
 == eFuses ==
 The actual hardware fuses can be programmed through the fuse driver after enabling fuse programming.
