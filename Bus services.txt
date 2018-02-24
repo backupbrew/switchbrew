@@ -75,7 +75,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x16 || 0xBA || X, 2 || || || 
 |-
-| 0x17 || 0xB9 || X, 1 || || In || [[HID services]]
+| 0x17 || 0xB9 || X, 1 || Touchscreen irq (unused - polled instead) || In || [[HID services]]
 |-
 | 0x18 || 0xBD || X, 5 || || ||
 |-
