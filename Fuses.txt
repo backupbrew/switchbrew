@@ -271,6 +271,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_OPT_PRIV_SEC_DIS
 | 0x7000FA64
 |-
+| [[#FUSE_PKC_DISABLE|FUSE_PKC_DISABLE]]
+| 0x7000FA68
+|-
 | FUSE_TSENSOR_COMMON
 | 0x7000FA80
 |-
@@ -451,6 +454,9 @@ This stores the SHA256 hash of the 2048-bit RSA key expected at BCT+0x210.
 |}
 
 This caches the value of the sw_reserved fuse from the hardware array.
+
+==== FUSE_PKC_DISABLE ====
+This caches the value of the pkc_disable fuse from the hardware array.
 
 == eFuses ==
 The actual hardware fuses can be programmed through the fuse driver after enabling fuse programming.

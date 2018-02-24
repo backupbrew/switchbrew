@@ -134,6 +134,7 @@ driver registers.
 | FUSE\_TSENSOR\_6                                       | 0x7000FA5C |
 | FUSE\_TSENSOR\_7                                       | 0x7000FA60 |
 | FUSE\_OPT\_PRIV\_SEC\_DIS                              | 0x7000FA64 |
+| [FUSE\_PKC\_DISABLE](#FUSE_PKC_DISABLE "wikilink")     | 0x7000FA68 |
 | FUSE\_TSENSOR\_COMMON                                  | 0x7000FA80 |
 | FUSE\_TSENSOR\_8                                       | 0x7000FAD4 |
 | FUSE\_RESERVED\_CALIB                                  | 0x7000FB04 |
@@ -237,6 +238,10 @@ BCT+0x210.
 |      |                                                                         |
 
 This caches the value of the sw\_reserved fuse from the hardware array.
+
+#### FUSE\_PKC\_DISABLE
+
+This caches the value of the pkc\_disable fuse from the hardware array.
 
 ## eFuses
 
