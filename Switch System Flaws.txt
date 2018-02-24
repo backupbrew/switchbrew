@@ -99,7 +99,7 @@ However, the SMC handler enforces that all SMCs must be called from core #3, unl
 | January 18, 2018
 | [[User:SciresM|SciresM]], probably others.
 |-
-| jamais vu (non-secure world access to PMC MMIO and pre-deep sleep firmware)
+|  jamais vu (non-secure world access to PMC MMIO and pre-deep sleep firmware)
 |  On [[1.0.0]], one could map in the PMC registers in userland. In addition, [[AM_services|am]] ran a little-kernel based firmware on the BPMP at runtime. With code execution under am, one could modify the BPMP's little-kernel firmware to hook deep sleep entry, and modify TrustZone/Security engine state. 
 
 This was fixed in [[2.0.0]] by making the PMC secure-world only, blacklisting the BPMP's exception vectors from being mapped, and thoroughly checking for malicious behavior on deep sleep entry.
@@ -109,6 +109,19 @@ This was fixed in [[2.0.0]] by making the PMC secure-world only, blacklisting th
 |  December, 2017
 |  January 20, 2018
 |  [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]]
+|-
+|  Missed BPMP Exception Vector Writes
+|  Starting in [[2.0.0]], the BPMP is asleep at runtime, and is turned on by TrustZone during [[SMC|smcCpuSuspend]] in order to initiate the deep sleep process. When it does so, it is held in RESET, and TrustZone attempts to write to the BPMP exception vectors at 0x6000F200 to register EVP_RESET = lp0_entry_fw_crt0, and all other EVPs to a function that simply reboots. However, while they successfully write EVP_RESET, they miss all the other vectors, accidentally writing to the 0x6000F004-0x6000F020 region instead of the 0x6000F204-0x6000F220 region they want to write to. This results in all the exception vectors for the BPMP other than RESET being "undefined" (attacker controlled).
+
+With some way of causing an exception vector to be taken at the right time, this would give pre-sleep code execution (and thus arbitrary TrustZone code execution, via the security engine flaw). However, none of the abort vectors are really triggerable, and interrupts are disabled for the BPMP when it is taken out of reset. Thus, this is useless in practice.
+
+This was fixed in [[4.0.0]] by writing to the correct registers.
+|  Theoretically: Arbitrary TrustZone code execution. In practice: Useless.
+|  [[4.0.0]]
+|  [[4.0.0]]
+|  January, 2018
+|  February 23, 2018
+|  [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]], Naehrwert, probably others, independently.
 |-
 |}
 

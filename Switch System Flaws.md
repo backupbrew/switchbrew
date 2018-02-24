@@ -135,6 +135,18 @@ Flaws.
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a></p></td>
 </tr>
 <tr class="odd">
+<td><p>Missed BPMP Exception Vector Writes</p></td>
+<td><p>Starting in <a href="2.0.0.md" title="wikilink">2.0.0</a>, the BPMP is asleep at runtime, and is turned on by TrustZone during <a href="SMC.md" title="wikilink">smcCpuSuspend</a> in order to initiate the deep sleep process. When it does so, it is held in RESET, and TrustZone attempts to write to the BPMP exception vectors at 0x6000F200 to register EVP_RESET = lp0_entry_fw_crt0, and all other EVPs to a function that simply reboots. However, while they successfully write EVP_RESET, they miss all the other vectors, accidentally writing to the 0x6000F004-0x6000F020 region instead of the 0x6000F204-0x6000F220 region they want to write to. This results in all the exception vectors for the BPMP other than RESET being &quot;undefined&quot; (attacker controlled).</p>
+<p>With some way of causing an exception vector to be taken at the right time, this would give pre-sleep code execution (and thus arbitrary TrustZone code execution, via the security engine flaw). However, none of the abort vectors are really triggerable, and interrupts are disabled for the BPMP when it is taken out of reset. Thus, this is useless in practice.</p>
+<p>This was fixed in <a href="4.0.0.md" title="wikilink">4.0.0</a> by writing to the correct registers.</p></td>
+<td><p>Theoretically: Arbitrary TrustZone code execution. In practice: Useless.</p></td>
+<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
+<td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
+<td><p>January, 2018</p></td>
+<td><p>February 23, 2018</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a>, Naehrwert, probably others, independently.</p></td>
+</tr>
+<tr class="even">
 <td></td>
 <td></td>
 <td></td>
