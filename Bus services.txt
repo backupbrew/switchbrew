@@ -27,7 +27,7 @@ Takes a raw GpioPadDescriptor and returns a [[#IPadSession]] session for it.
 Same thing as OpenSessionForDev except the descriptor is looked up in the table below.
 Returns an [[#IPadSession]] session.
 
-{| class="wikitable" border="1"
+{| class="wikitable sortable" border="1"
 |-
 ! GpioPadName || GpioPadDescriptor || Tegra (port, pin) || Usage || Direction || Used by
 |-
@@ -259,7 +259,7 @@ This is "nn::i2c::IManager".
 
 == Known Devices ==
 
-{| class="wikitable" border="1"
+{| class="wikitable sortable" border="1"
 |-
 ! Name || Port:Addr || 10bit? || Speed || Max Retries || Retry Delay || Usage || Used by
 |-
@@ -415,7 +415,7 @@ OpenSession translates user IDs to to the uart port index.
 
 OpenSessionForTest takes the port index verbatim.
 
-{| class="wikitable" border="1"
+{| class="wikitable sortable" border="1"
 |-
 ! Name || Port || Usage
 |-
@@ -441,7 +441,7 @@ This is "nn::pwm::IManager".
 
 == Known Channels ==
 
-{| class="wikitable" border="1"
+{| class="wikitable sortable" border="1"
 |-
 ! Name || Interface || Usage || Used by
 |-
