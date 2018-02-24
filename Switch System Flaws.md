@@ -144,7 +144,7 @@ Flaws.
 <td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
 <td><p>January, 2018</p></td>
 <td><p>February 23, 2018</p></td>
-<td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a>, Naehrwert, probably others, independently.</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a>, <a href="User:Naehrwert" title="wikilink">naehrwert</a>, <a href="User:Hexkyz" title="wikilink">hexkyz</a>, probably others, independently.</p></td>
 </tr>
 <tr class="even">
 <td></td>
