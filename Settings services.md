@@ -14,7 +14,12 @@ This is
 | 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 |                                                                                                                        |
 | 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
 
+"nn::settings::Language" is basically array indices in the output array
+from GetAvailableLanguageCodes.
+
 ## LanguageCode
+
+This is "nn::settings::LanguageCode".
 
 This is an u64, which is a NUL-terminated string. For example: "en-US".
 
