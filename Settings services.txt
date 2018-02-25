@@ -5,7 +5,7 @@ This is "nn::settings::ISettingsServer".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetLanguageCode || No input, returns an output [[#LanguageCode]].
+| 0 || GetLanguageCode || No input, returns an output [[#LanguageCode]]. This is the current system language.
 |-
 | 1 || GetAvailableLanguageCodes || Takes a type-0xA buffer containing the [[#LanguageCode]] output array, returns an output s32.
 |-

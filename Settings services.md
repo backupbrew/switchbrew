@@ -5,7 +5,7 @@ This is
 
 | Cmd | Name                                      | Notes                                                                                                                  |
 | --- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 0   | GetLanguageCode                           | No input, returns an output [\#LanguageCode](#LanguageCode "wikilink").                                                |
+| 0   | GetLanguageCode                           | No input, returns an output [\#LanguageCode](#LanguageCode "wikilink"). This is the current system language.           |
 | 1   | GetAvailableLanguageCodes                 | Takes a type-0xA buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
 | 2   | \[4.0.0+\] MakeLanguageCode               |                                                                                                                        |
 | 3   | GetAvailableLanguageCodeCount             | No input, returns an output s32.                                                                                       |
