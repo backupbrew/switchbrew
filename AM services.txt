@@ -265,6 +265,8 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 | 40 || [2.0.0+] GetIndirectLayerProducerHandle ||
 |-
 | 50 || [2.0.0+] ReportVisibleError ||
+|-
+| 60 || [4.0.0+] [[#GetMainAppletApplicationDesiredLanguage]] || 
 |}
 
 ====ExitProcessAndReturn====
@@ -274,6 +276,9 @@ Exits the LibraryApplet and returns to running the title which launched this Lib
 
 ====GetLibraryAppletInfo====
 No input. Returns an u64 LibraryAppletInfo: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]].
+
+====GetMainAppletApplicationDesiredLanguage====
+No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 
 == IOverlayAppletProxy ==
 {| class="wikitable" border="1"
