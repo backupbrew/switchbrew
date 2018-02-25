@@ -112,7 +112,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |-
 | 0x20C
 | 0x4
-| Retail flag. Must be 1 on retail, on devunit 0 is also allowed.
+| Flags. Bit0 must be 1 on retail, on devunit 0 is also allowed. Bit1 is unknown, set 1 for ARMS?
 |-
 | 0x210
 | 0x8

@@ -37,7 +37,7 @@ varies.
 | 0x200  | 0x4   | Magic "ACID".                                                                                     |
 | 0x204  | 0x4   | s32 Size field used with the above signature(?).                                                  |
 | 0x208  | 0x4   | Zeroes                                                                                            |
-| 0x20C  | 0x4   | Retail flag. Must be 1 on retail, on devunit 0 is also allowed.                                   |
+| 0x20C  | 0x4   | Flags. Bit0 must be 1 on retail, on devunit 0 is also allowed. Bit1 is unknown, set 1 for ARMS?   |
 | 0x210  | 0x8   | TitleIdRange\_Min                                                                                 |
 | 0x218  | 0x8   | TitleIdRange\_Max                                                                                 |
 | 0x220  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") offset                                       |
