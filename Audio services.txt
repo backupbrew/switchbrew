@@ -311,39 +311,76 @@ Takes an [[AM_services#AppletResourceUserId|AppletResourceUserId]]. (u64)
 = codecctl =
 This is "nn::audio::detail::ICodecController".
 
+This service no longer exists in [3.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || InitializeCodecController
+| 0 || [[#InitializeCodecController]]
 |-
-| 1 || FinalizeCodecController
+| 1 || [[#FinalizeCodecController]]
 |-
-| 2 || SleepCodecController
+| 2 || [[#SleepCodecController]]
 |-
-| 3 || WakeCodecController
+| 3 || [[#WakeCodecController]]
 |-
 | 4 || [[#SetCodecVolume]]
 |-
-| 5 || GetCodecVolumeMax
+| 5 || [[#GetCodecVolumeMax]]
 |-
-| 6 || GetCodecVolumeMin
+| 6 || [[#GetCodecVolumeMin]]
 |-
-| 7 || SetCodecActiveTarget
+| 7 || [[#SetCodecActiveTarget]]
 |-
-| 8 || Unknown
+| 8 || [[#GetCodecActiveTarget]]
 |-
-| 9 || BindCodecHeadphoneMicJackInterrupt
+| 9 || [[#BindCodecHeadphoneMicJackInterrupt]]
 |-
-| 10 || IsCodecHeadphoneMicJackInserted
+| 10 || [[#IsCodecHeadphoneMicJackInserted]]
 |-
-| 11 || ClearCodecHeadphoneMicJackInterrupt
+| 11 || [[#ClearCodecHeadphoneMicJackInterrupt]]
 |-
-| 12 || IsCodecDeviceRequested
+| 12 || [[#IsCodecDeviceRequested]]
 |}
 
-== SetCodecVolume ==
+== InitializeCodecController ==
+Takes no input.
 
-Takes a Volume (uint32)
+== FinalizeCodecController ==
+Takes no input.
+
+== SleepCodecController ==
+Takes no input.
+
+== WakeCodecController ==
+Takes no input.
+
+== SetCodecVolume ==
+Takes an u32 '''Volume'''.
+
+== GetCodecVolumeMax ==
+Returns an u32 '''VolumeMax'''.
+
+== GetCodecVolumeMin ==
+Returns an u32 '''VolumeMin'''.
+
+== SetCodecActiveTarget ==
+Takes an u32 '''Target'''.
+
+== GetCodecActiveTarget ==
+Returns an u32 '''Target'''.
+
+== BindCodecHeadphoneMicJackInterrupt ==
+Returns an event handle.
+
+== IsCodecHeadphoneMicJackInserted ==
+Returns a bool.
+
+== ClearCodecHeadphoneMicJackInterrupt ==
+Takes no input.
+
+== IsCodecDeviceRequested ==
+Returns a bool.
 
 [[Category:Services]]

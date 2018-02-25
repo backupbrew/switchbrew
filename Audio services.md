@@ -273,24 +273,75 @@ Takes an
 
 This is "nn::audio::detail::ICodecController".
 
-| Cmd | Name                                           |
-| --- | ---------------------------------------------- |
-| 0   | InitializeCodecController                      |
-| 1   | FinalizeCodecController                        |
-| 2   | SleepCodecController                           |
-| 3   | WakeCodecController                            |
-| 4   | [\#SetCodecVolume](#SetCodecVolume "wikilink") |
-| 5   | GetCodecVolumeMax                              |
-| 6   | GetCodecVolumeMin                              |
-| 7   | SetCodecActiveTarget                           |
-| 8   | Unknown                                        |
-| 9   | BindCodecHeadphoneMicJackInterrupt             |
-| 10  | IsCodecHeadphoneMicJackInserted                |
-| 11  | ClearCodecHeadphoneMicJackInterrupt            |
-| 12  | IsCodecDeviceRequested                         |
+This service no longer exists in
+\[3.0.0+\].
+
+| Cmd | Name                                                                                     |
+| --- | ---------------------------------------------------------------------------------------- |
+| 0   | [\#InitializeCodecController](#InitializeCodecController "wikilink")                     |
+| 1   | [\#FinalizeCodecController](#FinalizeCodecController "wikilink")                         |
+| 2   | [\#SleepCodecController](#SleepCodecController "wikilink")                               |
+| 3   | [\#WakeCodecController](#WakeCodecController "wikilink")                                 |
+| 4   | [\#SetCodecVolume](#SetCodecVolume "wikilink")                                           |
+| 5   | [\#GetCodecVolumeMax](#GetCodecVolumeMax "wikilink")                                     |
+| 6   | [\#GetCodecVolumeMin](#GetCodecVolumeMin "wikilink")                                     |
+| 7   | [\#SetCodecActiveTarget](#SetCodecActiveTarget "wikilink")                               |
+| 8   | [\#GetCodecActiveTarget](#GetCodecActiveTarget "wikilink")                               |
+| 9   | [\#BindCodecHeadphoneMicJackInterrupt](#BindCodecHeadphoneMicJackInterrupt "wikilink")   |
+| 10  | [\#IsCodecHeadphoneMicJackInserted](#IsCodecHeadphoneMicJackInserted "wikilink")         |
+| 11  | [\#ClearCodecHeadphoneMicJackInterrupt](#ClearCodecHeadphoneMicJackInterrupt "wikilink") |
+| 12  | [\#IsCodecDeviceRequested](#IsCodecDeviceRequested "wikilink")                           |
+
+## InitializeCodecController
+
+Takes no input.
+
+## FinalizeCodecController
+
+Takes no input.
+
+## SleepCodecController
+
+Takes no input.
+
+## WakeCodecController
+
+Takes no input.
 
 ## SetCodecVolume
 
-Takes a Volume (uint32)
+Takes an u32 **Volume**.
+
+## GetCodecVolumeMax
+
+Returns an u32 **VolumeMax**.
+
+## GetCodecVolumeMin
+
+Returns an u32 **VolumeMin**.
+
+## SetCodecActiveTarget
+
+Takes an u32 **Target**.
+
+## GetCodecActiveTarget
+
+Returns an u32 **Target**.
+
+## BindCodecHeadphoneMicJackInterrupt
+
+Returns an event handle.
+
+## IsCodecHeadphoneMicJackInserted
+
+Returns a bool.
+
+## ClearCodecHeadphoneMicJackInterrupt
+
+Takes no input.
+
+## IsCodecDeviceRequested
+
+Returns a bool.
 
 [Category:Services](Category:Services "wikilink")
