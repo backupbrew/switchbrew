@@ -3,24 +3,27 @@ This is "nn::settings::ISettingsServer".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || GetLanguageCode
+| 0 || GetLanguageCode || No input, returns an output [[#LanguageCode]].
 |-
-| 1 || GetAvailableLanguageCodes
+| 1 || GetAvailableLanguageCodes || Takes a type-0xA buffer containing the [[#LanguageCode]] output array, returns an output s32.
 |-
-| 2 || [4.0.0+] MakeLanguageCode
+| 2 || [4.0.0+] MakeLanguageCode || 
 |-
-| 3 || GetAvailableLanguageCodeCount
+| 3 || GetAvailableLanguageCodeCount || No input, returns an output s32.
 |-
-| 4 || GetRegionCode
+| 4 || GetRegionCode || No input, returns an output s32.
 |-
-| 5 || [4.0.0+] GetAvailableLanguageCodes2
+| 5 || [4.0.0+] GetAvailableLanguageCodes2 || 
 |-
-| 6 || [4.0.0+] GetAvailableLanguageCodeCount2
+| 6 || [4.0.0+] GetAvailableLanguageCodeCount2 || 
 |-
-| 7 || [4.0.0+] GetKeyCodeMap
+| 7 || [4.0.0+] GetKeyCodeMap || 
 |}
+
+== LanguageCode ==
+This is an u64, which is a NUL-terminated string. For example: "en-US".
 
 = set:fd =
 This is "nn::settings::IFirmwareDebugSettingsServer".

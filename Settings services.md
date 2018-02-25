@@ -1,17 +1,22 @@
 # set
 
-This is "nn::settings::ISettingsServer".
+This is
+"nn::settings::ISettingsServer".
 
-| Cmd | Name                                      |
-| --- | ----------------------------------------- |
-| 0   | GetLanguageCode                           |
-| 1   | GetAvailableLanguageCodes                 |
-| 2   | \[4.0.0+\] MakeLanguageCode               |
-| 3   | GetAvailableLanguageCodeCount             |
-| 4   | GetRegionCode                             |
-| 5   | \[4.0.0+\] GetAvailableLanguageCodes2     |
-| 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 |
-| 7   | \[4.0.0+\] GetKeyCodeMap                  |
+| Cmd | Name                                      | Notes                                                                                                                  |
+| --- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 0   | GetLanguageCode                           | No input, returns an output [\#LanguageCode](#LanguageCode "wikilink").                                                |
+| 1   | GetAvailableLanguageCodes                 | Takes a type-0xA buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
+| 2   | \[4.0.0+\] MakeLanguageCode               |                                                                                                                        |
+| 3   | GetAvailableLanguageCodeCount             | No input, returns an output s32.                                                                                       |
+| 4   | GetRegionCode                             | No input, returns an output s32.                                                                                       |
+| 5   | \[4.0.0+\] GetAvailableLanguageCodes2     |                                                                                                                        |
+| 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 |                                                                                                                        |
+| 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
+
+## LanguageCode
+
+This is an u64, which is a NUL-terminated string. For example: "en-US".
 
 # set:fd
 
