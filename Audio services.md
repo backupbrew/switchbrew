@@ -170,15 +170,18 @@ This is "nn::audio::detail::IFinalOutputRecorderManager".
 
 This is "nn::audio::detail::IFinalOutputRecorder".
 
-| Cmd | Name                                 |
-| --- | ------------------------------------ |
-| 0   | GetFinalOutputRecorderState          |
-| 1   | StartFinalOutputRecorder             |
-| 2   | StopFinalOutputRecorder              |
-| 3   | AppendFinalOutputRecorderBuffer      |
-| 4   | RegisterBufferEvent                  |
-| 5   | GetReleasedFinalOutputRecorderBuffer |
-| 6   | ContainsFinalOutputRecorderBuffer    |
+| Cmd | Name                                              |
+| --- | ------------------------------------------------- |
+| 0   | GetFinalOutputRecorderState                       |
+| 1   | StartFinalOutputRecorder                          |
+| 2   | StopFinalOutputRecorder                           |
+| 3   | AppendFinalOutputRecorderBuffer                   |
+| 4   | RegisterBufferEvent                               |
+| 5   | GetReleasedFinalOutputRecorderBuffer              |
+| 6   | ContainsFinalOutputRecorderBuffer                 |
+| 7   |                                                   |
+| 8   | \[3.0.0+\] AppendFinalOutputRecorderBufferEx      |
+| 9   | \[3.0.0+\] GetReleasedFinalOutputRecorderBufferEx |
 
 # audren:u
 

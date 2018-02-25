@@ -212,6 +212,12 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 | 5 || GetReleasedFinalOutputRecorderBuffer
 |-
 | 6 || ContainsFinalOutputRecorderBuffer
+|-
+| 7 ||
+|-
+| 8 || [3.0.0+] AppendFinalOutputRecorderBufferEx
+|-
+| 9 || [3.0.0+] GetReleasedFinalOutputRecorderBufferEx
 |}
 
 = audren:u =
