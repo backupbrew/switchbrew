@@ -19,11 +19,10 @@ of device names written.
 
 Takes a type-5 input buffer (**DeviceNameIn**), a type-6 output buffer
 (**DeviceNameOut**), two u32s **SampleRate** (must be 48000) and
-**ChannelCount** (high u16 can't be 0, official apps pass 0xCAFE0000),
-one u64 **ClientPID**, a PID and a copy-handle. Returns an
-[\#IAudioOut](#IAudioOut "wikilink") object and four u32s: the sample
-rate, channel count, [PCM format](#PCM_format "wikilink"), and the
-initial AudioOutState.
+**ChannelCount** (only the higher u16 is used), one u64 **ClientPID**, a
+PID and a copy-handle. Returns an [\#IAudioOut](#IAudioOut "wikilink")
+object and four u32s: the sample rate, channel count, [PCM
+format](#PCM_format "wikilink"), and the initial AudioOutState.
 
 ### PCM format
 
@@ -156,7 +155,7 @@ This is "nn::audio::detail::IAudioIn".
 
 ### GetAudioInState
 
-Returns an AudioInState, 0x00=Started 0x01=Stopped (u32)
+Returns an u32 **AudioInState** (0x00=Started, 0x01=Stopped).
 
 # audrec:u
 
@@ -187,12 +186,13 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 
 This is "nn::audio::detail::IAudioRendererManager".
 
-| Cmd | Name                                 |
-| --- | ------------------------------------ |
-| 0   | OpenAudioRenderer                    |
-| 1   | GetAudioRendererWorkBufferSize       |
-| 2   | GetAudioRenderersProcessMasterVolume |
-| 3   | SetAudioRenderersProcessMasterVolume |
+| Cmd | Name                                            |
+| --- | ----------------------------------------------- |
+| 0   | OpenAudioRenderer                               |
+| 1   | GetAudioRendererWorkBufferSize                  |
+| 2   | GetAudioRenderersProcessMasterVolume            |
+| 3   | \[3.0.0+\] SetAudioRenderersProcessMasterVolume |
+| 4   | \[4.0.0+\]                                      |
 
 ## IAudioRenderer
 
@@ -211,6 +211,8 @@ This is
 | 7   | QuerySystemEvent                                                                       |
 | 8   | [\#SetAudioRendererRenderingTimeLimit](#SetAudioRendererRenderingTimeLimit "wikilink") |
 | 9   | [\#GetAudioRendererRenderingTimeLimit](#GetAudioRendererRenderingTimeLimit "wikilink") |
+| 10  | \[3.0.0+\] RequestUpdateAudioRendererEx                                                |
+| 11  | \[3.0.0+\]                                                                             |
 
 ### GetAudioRendererSampleRate
 
@@ -262,15 +264,47 @@ This is "nn::audio::detail::IAudioOutManagerForDebugger",
 
 ## RequestSuspendForDebug
 
-Takes an
+Takes an u64
 [AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
-(u64)
 
 ## RequestResumeForDebug
 
-Takes an
+Takes an u64
 [AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
-(u64)
+
+# audctl
+
+This is "nn::audioctrl::detail::IAudioController".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   |            |
+| 4   |            |
+| 5   |            |
+| 6   |            |
+| 7   |            |
+| 8   |            |
+| 9   |            |
+| 10  |            |
+| 11  |            |
+| 12  |            |
+| 13  |            |
+| 14  |            |
+| 15  |            |
+| 16  |            |
+| 17  | \[3.0.0+\] |
+| 18  | \[3.0.0+\] |
+| 19  | \[3.0.0+\] |
+| 20  | \[3.0.0+\] |
+| 21  | \[3.0.0+\] |
+| 22  | \[3.0.0+\] |
+| 23  | \[4.0.0+\] |
+| 24  | \[4.0.0+\] |
+| 25  | \[4.0.0+\] |
+| 26  | \[4.0.0+\] |
 
 # codecctl
 
@@ -346,5 +380,56 @@ Takes no input.
 ## IsCodecDeviceRequested
 
 Returns a bool.
+
+# hwopus
+
+This is
+"nn::codec::detail::IHardwareOpusDecoderManager".
+
+| Cmd | Name                                                                                       |
+| --- | ------------------------------------------------------------------------------------------ |
+| 0   | [\#OpenHardwareOpusDecoder](#OpenHardwareOpusDecoder "wikilink")                           |
+| 1   | [\#GetHardwareOpusDecoderWorkBufferSize](#GetHardwareOpusDecoderWorkBufferSize "wikilink") |
+| 2   | \[3.0.0+\] OpenHardwareOpusDecoderEx                                                       |
+| 3   | \[3.0.0+\] GetHardwareOpusDecoderWorkBufferSizeEx                                          |
+
+## OpenHardwareOpusDecoder
+
+Takes two u32s **SampleRate** and **ChannelCount** packed as an u64, an
+u32 **WorkBufferSize** and an unknown handle. Returns an
+[\#IHardwareOpusDecoder](#IHardwareOpusDecoder "wikilink") object.
+
+## GetHardwareOpusDecoderWorkBufferSize
+
+Takes two u32s **SampleRate** and **ChannelCount** packed as an u64.
+Returns the required size for the decoder's work buffer.
+
+## IHardwareOpusDecoder
+
+This is "nn::codec::detail::IHardwareOpusDecoder".
+
+| Cmd | Name                                                   |
+| --- | ------------------------------------------------------ |
+| 0   | [\#Decode](#Decode "wikilink")                         |
+| 1   | [\#SendDecoderContext](#SendDecoderContext "wikilink") |
+| 2   | \[3.0.0+\] DecodeEx                                    |
+| 3   | \[3.0.0+\] SendDecoderContextEx                        |
+| 4   | \[4.0.0+\]                                             |
+| 5   | \[4.0.0+\]                                             |
+
+### Decode
+
+Takes a type-5 input buffer (**OpusDataIn**) and a type-6 output buffer
+(**PcmDataOut**). Decodes the Opus source data to PCM and returns two
+u32s **DecodedSampleCount** and **DecodedDataSize**.
+
+### SendDecoderContext
+
+Takes a type-5 input buffer (**DecoderContextIn**). Sends the unknown
+context data to the hardware decoder.
+
+# auddebug
+
+This service doesn't exist in retail units.
 
 [Category:Services](Category:Services "wikilink")
