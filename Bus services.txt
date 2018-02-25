@@ -445,9 +445,9 @@ This is "nn::pwm::IManager".
 |-
 ! Name || Interface || Usage || Used by
 |-
-| 1 || PWM Channel 0 || Fan || [[PTM services]]
+| 1 || PWM Channel 1 || Fan || [[PTM services]]
 |-
-| 2 || PWM Channel 1 || Backlight || [[Backlight services]], [[NV services]]
+| 2 || PWM Channel 0 || Backlight || [[Backlight services]], [[NV services]]
 |-
 | 3 || PMC Blinker || ||
 |}

@@ -267,8 +267,8 @@ This is "nn::pwm::IManager".
 
 | Name | Interface     | Usage     | Used by                                                                                              |
 | ---- | ------------- | --------- | ---------------------------------------------------------------------------------------------------- |
-| 1    | PWM Channel 0 | Fan       | [PTM services](PTM%20services.md "wikilink")                                                         |
-| 2    | PWM Channel 1 | Backlight | [Backlight services](Backlight%20services.md "wikilink"), [NV services](NV%20services.md "wikilink") |
+| 1    | PWM Channel 1 | Fan       | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 2    | PWM Channel 0 | Backlight | [Backlight services](Backlight%20services.md "wikilink"), [NV services](NV%20services.md "wikilink") |
 | 3    | PMC Blinker   |           |                                                                                                      |
 
 ## IChannelSession
