@@ -11,22 +11,22 @@ varies.
 
 # META
 
-| Offset | Size | Description                                                               |
-| ------ | ---- | ------------------------------------------------------------------------- |
-| 0x0    | 0x4  | Magic "META".                                                             |
-| 0x4    |      |                                                                           |
-| 0x8    |      |                                                                           |
-| 0xC    | 1    | Needs to be \<= 0xF                                                       |
-| 0xE    | 1    | MainThreadPrio                                                            |
-| 0xF    | 1    | DefaultCpuId                                                              |
-| 0x10   |      |                                                                           |
-| 0x18   | 4    | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here. |
-| 0x1C   | 4    | MainStackSize                                                             |
-| 0x20   | ?    | Title name                                                                |
-| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                         |
-| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                           |
-| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset                                         |
-| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size                                           |
+| Offset | Size | Description                                                                                              |
+| ------ | ---- | -------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Magic "META".                                                                                            |
+| 0x4    |      |                                                                                                          |
+| 0x8    |      |                                                                                                          |
+| 0xC    | 1    | Flags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be \<= 0xF |
+| 0xE    | 1    | MainThreadPrio                                                                                           |
+| 0xF    | 1    | DefaultCpuId                                                                                             |
+| 0x10   |      |                                                                                                          |
+| 0x18   | 4    | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.                                |
+| 0x1C   | 4    | MainStackSize                                                                                            |
+| 0x20   | ?    | Title name                                                                                               |
+| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                        |
+| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                                                          |
+| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset                                                                        |
+| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size                                                                          |
 
 # ACID
 
