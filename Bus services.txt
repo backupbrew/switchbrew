@@ -31,35 +31,35 @@ Returns an [[#IPadSession]] session.
 |-
 ! GpioPadName || GpioPadDescriptor || Tegra (port, pin) || Usage || Direction || Used by
 |-
-| 1 || 0xCC || Z, 4 || || Out || [[Audio services]], [[Fatal services]]
+| 0x01 || 0xCC || Z, 4 || || Out || [[Audio services]], [[Fatal services]]
 |-
-| 2 || 0x24 || E, 4 || SDCard Power || Out || [[Filesystem services]]
+| 0x02 || 0x24 || E, 4 || SDCard Power || Out || [[Filesystem services]]
 |-
-| 3 || 0x3C || H, 4 || BT reset || Out || [[Bluetooth services]]
+| 0x03 || 0x3C || H, 4 || BT reset || Out || [[Bluetooth services]]
 |-
-| 4 || 0xDA || BB, 2 || || || 
+| 0x04 || 0xDA || BB, 2 || || || 
 |-
-| 5 || 0xDB || BB, 3 || GcAsic Power || Out || [[Filesystem services]]
+| 0x05 || 0xDB || BB, 3 || GcAsic Power || Out || [[Filesystem services]]
 |-
-| 6 || 0xDC || BB, 4 || || In || [[Audio services]]
+| 0x06 || 0xDC || BB, 4 || || In || [[Audio services]]
 |-
-| 7 || 0x25 || E, 5 || || || 
+| 0x07 || 0x25 || E, 5 || || || 
 |-
-| 8 || 0x90 || S, 0 || DebugPadDriver || In || [[HID services]]
+| 0x08 || 0x90 || S, 0 || DebugPadDriver || In || [[HID services]]
 |-
-| 9 || 0x91 || S, 1 || || || 
+| 0x09 || 0x91 || S, 1 || || || 
 |-
-| 0xA || 0x96 || S, 6 || bq24192 Charge Enable || Out || [[PTM services]]
+| 0x0A || 0x96 || S, 6 || bq24192 Charge Enable || Out || [[PTM services]]
 |-
-| 0xB || 0x97 || S, 7 || || || 
+| 0x0B || 0x97 || S, 7 || || || 
 |-
-| 0xC || 0x26 || E, 6 || joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion) || In || [[HID services]]
+| 0x0C || 0x26 || E, 6 || joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion) || In || [[HID services]]
 |-
-| 0xD || 5 || A, 5 || Fan enable (normal) || Out || [[PTM services]]
+| 0x0D || 0x05 || A, 5 || Fan enable (normal) || Out || [[PTM services]]
 |-
-| 0xE || 0x78 || P, 0 || || || 
+| 0x0E || 0x78 || P, 0 || || || 
 |-
-| 0xF || 0x93 || S, 3 || GcAsic irq || In || [[Filesystem services]]
+| 0x0F || 0x93 || S, 3 || GcAsic irq || In || [[Filesystem services]]
 |-
 | 0x10 || 0x7D || P, 5 || || || 
 |-
