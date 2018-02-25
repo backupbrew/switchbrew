@@ -270,6 +270,8 @@ The rest are are mapped to core-specific physaddrs, each one is 0x1000-bytes. De
 
 = Secure Monitor =
 
+Unless otherwise mentionned, block descriptors (in our case, the one uses for the DRAM identity mapping) are all ORRed by 0x401 and page descriptors by 0x403.
+  
 == [[1.0.0]] ==
 
 {| class="wikitable" border="1"
@@ -681,7 +683,7 @@ The rest are are mapped to core-specific physaddrs, each one is 0x1000-bytes. De
 | 0x1F01F4000
 | <varies>
 | 0x1000
-| 0x40000000000723
+| 0x40000000000320
 | 
 | DRAM (SPL .bss buffer visible to the Security Engine)
 |-

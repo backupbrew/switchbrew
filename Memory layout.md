@@ -210,6 +210,11 @@ The rest are are mapped to core-specific physaddrs, each one is
 
 # Secure Monitor
 
+Unless otherwise mentionned, block descriptors (in our case, the one
+uses for the DRAM identity mapping) are all ORRed by 0x401 and page
+descriptors by
+0x403.
+
 ## [1.0.0](1.0.0.md "wikilink")
 
 | Vmem        | Physmem    | Size    | Descriptor ORR-value | Permissions | Description                                 |
@@ -274,7 +279,7 @@ The rest are are mapped to core-specific physaddrs, each one is
 | 0x1F01C2000 | 0x8000F000 | 0x1000  | 0x40000000000324     |             | EMEM                                                  |
 | 0x1F01E0000 | 0x7C013000 | 0xB000  | 0x300                |             | TZRAM (Secure Monitor)                                |
 | 0x1F01F0000 | 0x7C01E000 | 0x2000  | 0x300                |             | TZRAM (Secure Monitor and ARMv8 init)                 |
-| 0x1F01F4000 | <varies>   | 0x1000  | 0x40000000000723     |             | DRAM (SPL .bss buffer visible to the Security Engine) |
+| 0x1F01F4000 | <varies>   | 0x1000  | 0x40000000000320     |             | DRAM (SPL .bss buffer visible to the Security Engine) |
 | 0x1F01F6000 | 0x7C01E000 | 0x1000  | 0x40000000000300     |             | TZRAM                                                 |
 | 0x1F01F8000 | 0x7C01F000 | 0x1000  | 0x40000000000300     |             | TZRAM                                                 |
 | 0x1F01FA000 | 0x7C010000 | 0x1000  | 0x300                |             | TZRAM (Secure Monitor exception vectors)              |
