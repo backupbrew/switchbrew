@@ -358,7 +358,7 @@ No input. Returns an u64 LibraryAppletInfo: +0 u32 is [[#AppletId]], +4 u32 is [
 |-
 | 20 || EnsureSaveData ||
 |-
-| 21 || GetDesiredLanguage ||
+| 21 || [[#GetDesiredLanguage]] ||
 |-
 | 22 || [[#SetTerminateResult]] ||
 |-
@@ -401,6 +401,9 @@ The BOTW game uses this GamePlayRecording functionality from the main-nso "nnini
 * Closes the TransferMemory handle, + TransferMemory cleanup.
 * Uses [[#SetGamePlayRecordingState]] with value 0x1.
 This GamePlayRecording functionality presumably enables the video-recording usable starting with [[4.0.0]].
+
+==== GetDesiredLanguage ====
+No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 
 ==== SetTerminateResult ====
 Takes an input u32 '''Result''', no output.

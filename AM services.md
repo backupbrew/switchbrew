@@ -248,7 +248,7 @@ No input. Returns an u64 LibraryAppletInfo: +0 u32 is
 | 10  | CreateApplicationAndPushAndRequestToStart                                           | Takes an [\#IStorage](#IStorage "wikilink").   |
 | 11  | \[2.0.0+\] CreateApplicationAndPushAndRequestToStartForQuest                        | Takes an [\#IStorage](#IStorage "wikilink").   |
 | 20  | EnsureSaveData                                                                      |                                                |
-| 21  | GetDesiredLanguage                                                                  |                                                |
+| 21  | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                              |                                                |
 | 22  | [\#SetTerminateResult](#SetTerminateResult "wikilink")                              |                                                |
 | 23  | GetDisplayVersion                                                                   |                                                |
 | 24  | \[2.0.0+\] GetLaunchStorageInfoForDebug                                             |                                                |
@@ -284,6 +284,11 @@ panic on any failure):
 
 This GamePlayRecording functionality presumably enables the
 video-recording usable starting with [4.0.0](4.0.0.md "wikilink").
+
+#### GetDesiredLanguage
+
+No input, returns an output
+[LanguageCode](Settings%20services#LanguageCode.md##LanguageCode "wikilink").
 
 #### SetTerminateResult
 
