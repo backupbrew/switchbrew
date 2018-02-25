@@ -42,6 +42,7 @@ fatal-errors, since the Description ends with bit21.
 | 101   | I2C                                                    |
 | 105   | Settings                                               |
 | 110   | NIFM                                                   |
+| 111   | HwOpus                                                 |
 | 114   | Display                                                |
 | 116   | NTC                                                    |
 | 117   | FGM                                                    |

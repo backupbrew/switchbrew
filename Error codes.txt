@@ -58,6 +58,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 110 || NIFM
 |-
+| 111 || HwOpus
+|-
 | 114 || Display
 |-
 | 116 || NTC
