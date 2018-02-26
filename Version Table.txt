@@ -21,4 +21,4 @@
 |-
 |}
 
-With all of the above you need to block updates, except with the nx-hbl default DNS-server since this is already handled.
+With all of the above you need to [[block updates]], except with the nx-hbl default DNS-server since this is already handled.
