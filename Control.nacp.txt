@@ -10,12 +10,12 @@ Total size is 0x4000-bytes.
 ! Description
 |-
 | 0x0
-| 0x2400
+| 0x2D00 (0x300*15)
 | Language entries
 |-
-| 0x2400
-| 0xC00
-| Normally all-zero? Maybe more language entries?
+| 0x2D00
+| 0x300
+| Normally all-zero?
 |-
 | 0x3000
 | 0x24
@@ -161,4 +161,4 @@ Entry index for each [[Settings_services#LanguageCode|language]]:
 | 14 || "Chinese"
 |}
 
-Official apps tend to have the language entries' strings set to only English. Some apps don't have certain language entries set at all.
+Official apps tend to have the language entries' strings set to only English. Some apps don't have certain language entries set at all. In addition, official apps usually (?) don't have the following language entries set: Korean, Taiwanese, and Chinese.
