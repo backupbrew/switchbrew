@@ -1,0 +1,29 @@
+==Why update to [[3.0.0]]==
+First, if you are on [[1.0.0]] stay on it, it will be possible to install [[Custom Firmware]].<br />
+Then, [[3.0.0]] system version is the most vulnerable for Homebrews and lower system version are not compatible with [[PegaSwitch]].
+
+See [https://switchbrew.github.io/nx-hbl/ nx-hbl]
+
+==Requirement==
+An original game card of Pokkén Tournament DX (With a [[Game card serial]] ending with 000).<br />
+Why ? Because a revision of this game exist with [[3.0.1]] console update instead of [[3.0.0]] version.
+
+==Instructions==
+We need to disconnect our Switch from internet a be sure there is no pre-installed (cached) update and then install our [[3.0.0]] update from game.
+
+* Fist step (Disconnect from internet our switch) :
+*# Go to System Settings.
+*# Find and enable Airplane Mode.
+
+* Second step (Remove all cached updates) :
+*# Power off your switch then Power on it by pressing this combo : (Power) + (Volume Up) + (Volume Down).
+*# Do nothing here, entering this menu will delete update data, now we just have to leave.
+*# Power off your switch by pressing Power button.
+
+* Third step (Update our switch to [[3.0.0]])
+*: Insert and try to launch the game, then accept update when it's prompted.
+
+* Last step (Disable Airplane Mode)
+
+==Sources==
+[https://switch.hacks.guide/ Switch Hack Guide]
