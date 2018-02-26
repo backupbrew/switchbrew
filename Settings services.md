@@ -7,59 +7,64 @@ This is
 | --- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | 0   | GetLanguageCode                           | No input, returns an output [\#LanguageCode](#LanguageCode "wikilink"). This is the current system language.           |
 | 1   | GetAvailableLanguageCodes                 | Takes a type-0xA buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
-| 2   | \[4.0.0+\] MakeLanguageCode               | Takes an input Language, returns an output [\#LanguageCode](#LanguageCode "wikilink").                                 |
+| 2   | \[4.0.0+\] MakeLanguageCode               | Takes an input [\#Language](#Language "wikilink"), returns an output [\#LanguageCode](#LanguageCode "wikilink").       |
 | 3   | GetAvailableLanguageCodeCount             | No input, returns an output s32.                                                                                       |
 | 4   | GetRegionCode                             | No input, returns an output s32.                                                                                       |
 | 5   | \[4.0.0+\] GetAvailableLanguageCodes2     | Takes a type-0x6 buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
 | 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 | No input, returns an output s32.                                                                                       |
 | 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
 
-"nn::settings::Language" (s32) is basically array indices in the output
-array from GetAvailableLanguageCodes.
-
 \[4.0.0+\] Official user-processes now use
 GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of
 {original commands}.
 
-In official user-processes in the Language-\>LanguageCode conversion
-function:
+In official user-processes in the
+[\#Language](#Language "wikilink")-\>[\#LanguageCode](#LanguageCode "wikilink")
+conversion function (MakeLanguageCode):
 
   - During one-time init, GetAvailableLanguageCodes is used to
     initialize the LanguageCodes array cache, with max\_entries=0xF
     (buffer size in u64s). \[4.0.0+\] GetAvailableLanguageCodes2 is now
     used with max\_entries 0x40.
-  - \[4.0.0+\] When the input Language is larger than the cached
-    total\_entries from the above command output, or Language is
-    negative, command MakeLanguageCode is used instead of the array.
+  - \[4.0.0+\] When the input [\#Language](#Language "wikilink") is
+    larger than the cached total\_entries from the above command output,
+    or [\#Language](#Language "wikilink") is negative, command
+    MakeLanguageCode is used instead of the array.
 
 ## GetKeyCodeMap
 
 Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses
 fixed size 0x1000. This is probably related to HID keyboard.
 
+## Language
+
+"nn::settings::Language" (s32) is basically array indices in the output
+array from GetAvailableLanguageCodes.
+
 ## LanguageCode
 
 This is "nn::settings::LanguageCode".
 
-This is an u64, which is a NUL-terminated string. For example: "en-US".
+This is an u64, which is a NUL-terminated
+string.
 
-| Array-index / "nn::settings::Language" | LanguageCode |
-| -------------------------------------- | ------------ |
-| 0                                      | ja           |
-| 1                                      | en-US        |
-| 2                                      | fr           |
-| 3                                      | de           |
-| 4                                      | it           |
-| 5                                      | es           |
-| 6                                      | zh-CN        |
-| 7                                      | ko           |
-| 8                                      | nl           |
-| 9                                      | pt           |
-| 10                                     | ru           |
-| 11                                     | zh-TW        |
-| 12                                     | en-GB        |
-| 13                                     | fr-CA        |
-| 14                                     | es-419       |
+| Array-index / [\#Language](#Language "wikilink") | [\#LanguageCode](#LanguageCode "wikilink") |
+| ------------------------------------------------ | ------------------------------------------ |
+| 0                                                | ja                                         |
+| 1                                                | en-US                                      |
+| 2                                                | fr                                         |
+| 3                                                | de                                         |
+| 4                                                | it                                         |
+| 5                                                | es                                         |
+| 6                                                | zh-CN                                      |
+| 7                                                | ko                                         |
+| 8                                                | nl                                         |
+| 9                                                | pt                                         |
+| 10                                               | ru                                         |
+| 11                                               | zh-TW                                      |
+| 12                                               | en-GB                                      |
+| 13                                               | fr-CA                                      |
+| 14                                               | es-419                                     |
 
 # set:fd
 

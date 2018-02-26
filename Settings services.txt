@@ -9,7 +9,7 @@ This is "nn::settings::ISettingsServer".
 |-
 | 1 || GetAvailableLanguageCodes || Takes a type-0xA buffer containing the [[#LanguageCode]] output array, returns an output s32.
 |-
-| 2 || [4.0.0+] MakeLanguageCode || Takes an input Language, returns an output [[#LanguageCode]].
+| 2 || [4.0.0+] MakeLanguageCode || Takes an input [[#Language]], returns an output [[#LanguageCode]].
 |-
 | 3 || GetAvailableLanguageCodeCount || No input, returns an output s32.
 |-
@@ -22,26 +22,28 @@ This is "nn::settings::ISettingsServer".
 | 7 || [4.0.0+] GetKeyCodeMap || 
 |}
 
-"nn::settings::Language" (s32) is basically array indices in the output array from GetAvailableLanguageCodes.
 
 [4.0.0+] Official user-processes now use GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of {original commands}.
 
-In official user-processes in the Language->LanguageCode conversion function:
+In official user-processes in the [[#Language]]->[[#LanguageCode]] conversion function (MakeLanguageCode):
 * During one-time init, GetAvailableLanguageCodes is used to initialize the LanguageCodes array cache, with max_entries=0xF (buffer size in u64s). [4.0.0+] GetAvailableLanguageCodes2 is now used with max_entries 0x40.
-* [4.0.0+] When the input Language is larger than the cached total_entries from the above command output, or Language is negative, command MakeLanguageCode is used instead of the array.
+* [4.0.0+] When the input [[#Language]] is larger than the cached total_entries from the above command output, or [[#Language]] is negative, command MakeLanguageCode is used instead of the array.
 
 == GetKeyCodeMap ==
 Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses fixed size 0x1000. This is probably related to HID keyboard.
 
+== Language ==
+"nn::settings::Language" (s32) is basically array indices in the output array from GetAvailableLanguageCodes.
+
 == LanguageCode ==
 This is "nn::settings::LanguageCode".
 
-This is an u64, which is a NUL-terminated string. For example: "en-US".
+This is an u64, which is a NUL-terminated string.
 
 
 {| class="wikitable" border="1"
 |-
-! Array-index / "nn::settings::Language" || LanguageCode
+! Array-index / [[#Language]] || [[#LanguageCode]]
 |-
 | 0 || ja
 |-
