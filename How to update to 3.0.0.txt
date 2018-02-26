@@ -25,5 +25,5 @@ We need to disconnect our Switch from internet and be sure there is no pre-insta
 
 * Last step (Disable Airplane Mode)
 
-==Sources==
+==Source==
 [https://switch.hacks.guide/ Switch Hack Guide]

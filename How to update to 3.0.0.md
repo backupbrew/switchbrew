@@ -47,6 +47,6 @@ pre-installed (cached) update and then install our
 
   - Last step (Disable Airplane Mode)
 
-## Sources
+## Source
 
 [Switch Hack Guide](https://switch.hacks.guide/)
