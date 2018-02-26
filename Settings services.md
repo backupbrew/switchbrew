@@ -48,23 +48,23 @@ This is "nn::settings::LanguageCode".
 This is an u64, which is a NUL-terminated
 string.
 
-| Array-index / [\#Language](#Language "wikilink") | [\#LanguageCode](#LanguageCode "wikilink") |
-| ------------------------------------------------ | ------------------------------------------ |
-| 0                                                | ja                                         |
-| 1                                                | en-US                                      |
-| 2                                                | fr                                         |
-| 3                                                | de                                         |
-| 4                                                | it                                         |
-| 5                                                | es                                         |
-| 6                                                | zh-CN                                      |
-| 7                                                | ko                                         |
-| 8                                                | nl                                         |
-| 9                                                | pt                                         |
-| 10                                               | ru                                         |
-| 11                                               | zh-TW                                      |
-| 12                                               | en-GB                                      |
-| 13                                               | fr-CA                                      |
-| 14                                               | es-419                                     |
+| Array-index / [\#Language](#Language "wikilink") | [\#LanguageCode](#LanguageCode "wikilink") | Icon [language](NCA%20Content%20FS#FS-type3.md##FS-type3 "wikilink") filename |
+| ------------------------------------------------ | ------------------------------------------ | ----------------------------------------------------------------------------- |
+| 0                                                | ja                                         | "Japanese"                                                                    |
+| 1                                                | en-US                                      | "AmericanEnglish"                                                             |
+| 2                                                | fr                                         | "French"                                                                      |
+| 3                                                | de                                         | "German"                                                                      |
+| 4                                                | it                                         | "Italian"                                                                     |
+| 5                                                | es                                         | "Spanish"                                                                     |
+| 6                                                | zh-CN                                      | "Chinese"                                                                     |
+| 7                                                | ko                                         | "Korean"                                                                      |
+| 8                                                | nl                                         | "Dutch"                                                                       |
+| 9                                                | pt                                         | "Portuguese"                                                                  |
+| 10                                               | ru                                         | "Russian"                                                                     |
+| 11                                               | zh-TW                                      | "Taiwanese"                                                                   |
+| 12                                               | en-GB                                      | "BritishEnglish"                                                              |
+| 13                                               | fr-CA                                      | "CanadianFrench"                                                              |
+| 14                                               | es-419                                     | "LatinAmericanSpanish"                                                        |
 
 # set:fd
 

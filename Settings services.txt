@@ -43,37 +43,37 @@ This is an u64, which is a NUL-terminated string.
 
 {| class="wikitable" border="1"
 |-
-! Array-index / [[#Language]] || [[#LanguageCode]]
+! Array-index / [[#Language]] || [[#LanguageCode]] || Icon [[NCA_Content_FS#FS-type3|language]] filename
 |-
-| 0 || ja
+| 0 || ja || "Japanese"
 |-
-| 1 || en-US
+| 1 || en-US || "AmericanEnglish"
 |-
-| 2 || fr
+| 2 || fr || "French"
 |-
-| 3 || de
+| 3 || de || "German"
 |-
-| 4 || it
+| 4 || it || "Italian"
 |-
-| 5 || es
+| 5 || es || "Spanish"
 |-
-| 6 || zh-CN
+| 6 || zh-CN || "Chinese"
 |-
-| 7 || ko
+| 7 || ko || "Korean"
 |-
-| 8 || nl
+| 8 || nl || "Dutch"
 |-
-| 9 || pt
+| 9 || pt || "Portuguese"
 |-
-| 10 || ru
+| 10 || ru || "Russian"
 |-
-| 11 || zh-TW
+| 11 || zh-TW || "Taiwanese"
 |-
-| 12 || en-GB
+| 12 || en-GB || "BritishEnglish"
 |-
-| 13 || fr-CA
+| 13 || fr-CA || "CanadianFrench"
 |-
-| 14 || es-419
+| 14 || es-419 || "LatinAmericanSpanish"
 |}
 
 = set:fd =
