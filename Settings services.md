@@ -10,8 +10,8 @@ This is
 | 2   | \[4.0.0+\] MakeLanguageCode               |                                                                                                                        |
 | 3   | GetAvailableLanguageCodeCount             | No input, returns an output s32.                                                                                       |
 | 4   | GetRegionCode                             | No input, returns an output s32.                                                                                       |
-| 5   | \[4.0.0+\] GetAvailableLanguageCodes2     |                                                                                                                        |
-| 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 |                                                                                                                        |
+| 5   | \[4.0.0+\] GetAvailableLanguageCodes2     | Takes a type-0x6 buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
+| 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 | No input, returns an output s32.                                                                                       |
 | 7   | \[4.0.0+\] GetKeyCodeMap                  | Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses fixed size 0x1000.                             |
 
 "nn::settings::Language" is basically array indices in the output array
