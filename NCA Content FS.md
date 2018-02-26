@@ -25,7 +25,8 @@ include the "Licensed" gfx.
 
 # NCA-type2
 
-What the nandsys 8XX SystemData titles use.
+What the nandsys 8XX SystemData titles
+    use.
 
 ## FS-type6
 
@@ -34,10 +35,11 @@ What the nandsys 8XX SystemData titles use.
 ## FS-type3
 
   - "/[control.nacp](Control.nacp.md "wikilink")".
-  - "/icon\_{Language}.dat", for every icon with an included language.
-    Just a 256x256 JPEG, no MAC which [Album](Album.md "wikilink")
-    screenshots use. EXIF info: "Camera Brand" = "Nintendo co., ltd",
-    "Software" = "Nintendo AuthoringTool".
+  - "/icon\_{[Language](Settings%20services#LanguageCode.md##LanguageCode "wikilink")}.dat",
+    for every icon with an included language. Just a 256x256 JPEG, no
+    MAC which [Album](Album.md "wikilink") screenshots use. EXIF info:
+    "Camera Brand" = "Nintendo co., ltd", "Software" = "Nintendo
+    AuthoringTool".
 
 # NCA-type4
 

@@ -20,7 +20,7 @@ What the nandsys 8XX SystemData titles use.
 =NCA-type3=
 ==FS-type3==
 * "/[[control.nacp]]".
-* "/icon_{Language}.dat", for every icon with an included language. Just a 256x256 JPEG, no MAC which [[Album]] screenshots use. EXIF info: "Camera Brand" = "Nintendo co., ltd", "Software" = "Nintendo AuthoringTool".
+* "/icon_{[[Settings_services#LanguageCode|Language]]}.dat", for every icon with an included language. Just a 256x256 JPEG, no MAC which [[Album]] screenshots use. EXIF info: "Camera Brand" = "Nintendo co., ltd", "Software" = "Nintendo AuthoringTool".
 
 =NCA-type4=
 ==FS-type4==
