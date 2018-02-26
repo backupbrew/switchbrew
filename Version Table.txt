@@ -17,7 +17,7 @@
 |-
 |[[3.0.1]]
 |[[4.1.0]]
-|Wait for a while for a compatible [[Homebrew launcher]] or [[Custom Firmware]].
+|Wait for a while for a compatible [[Homebrew launcher]] or [[Custom Firmware]].<br/> Feels free to update to [[4.1.0]] from [[3.0.1]] or up.
 |- 
 |colspan="3"|In any cases you need to [[Block updates]]
 |}
