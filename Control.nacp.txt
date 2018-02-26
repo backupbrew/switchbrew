@@ -124,9 +124,41 @@ Total size is 0x300-bytes.
 | Application developer string
 |}
 
-Entry index for each language:
-* ...
-* 2: Japanese
-* ...
+Entry index for each [[Settings_services#LanguageCode|language]]:
+
+{| class="wikitable" border="1"
+|-
+! Entry-index || Icon [[NCA_Content_FS#FS-type3|language]] filename
+|-
+| 0 || "AmericanEnglish"
+|-
+| 1 || "BritishEnglish"
+|-
+| 2 || "Japanese"
+|-
+| 3 || "French"
+|-
+| 4 || "German"
+|-
+| 5 || "LatinAmericanSpanish"
+|-
+| 6 || "Spanish"
+|-
+| 7 || "Italian"
+|-
+| 8 || "Dutch"
+|-
+| 9 || "CanadianFrench"
+|-
+| 10 || "Portuguese"
+|-
+| 11 || "Russian"
+|-
+| 12 || "Korean"
+|-
+| 13 || "Taiwanese"
+|-
+| 14 || "Chinese"
+|}
 
 Official apps tend to have the language entries' strings set to only English. Some apps don't have certain language entries set at all.

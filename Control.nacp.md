@@ -42,11 +42,26 @@ Total size is 0x300-bytes.
 | 0x0    | 0x200 | Application name string      |
 | 0x200  | 0x100 | Application developer string |
 
-Entry index for each language:
+Entry index for each
+[language](Settings%20services#LanguageCode.md##LanguageCode "wikilink"):
 
-  - ...
-  - 2: Japanese
-  - ...
+| Entry-index | Icon [language](NCA%20Content%20FS#FS-type3.md##FS-type3 "wikilink") filename |
+| ----------- | ----------------------------------------------------------------------------- |
+| 0           | "AmericanEnglish"                                                             |
+| 1           | "BritishEnglish"                                                              |
+| 2           | "Japanese"                                                                    |
+| 3           | "French"                                                                      |
+| 4           | "German"                                                                      |
+| 5           | "LatinAmericanSpanish"                                                        |
+| 6           | "Spanish"                                                                     |
+| 7           | "Italian"                                                                     |
+| 8           | "Dutch"                                                                       |
+| 9           | "CanadianFrench"                                                              |
+| 10          | "Portuguese"                                                                  |
+| 11          | "Russian"                                                                     |
+| 12          | "Korean"                                                                      |
+| 13          | "Taiwanese"                                                                   |
+| 14          | "Chinese"                                                                     |
 
 Official apps tend to have the language entries' strings set to only
 English. Some apps don't have certain language entries set at all.
