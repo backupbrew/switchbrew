@@ -13,7 +13,7 @@
 |-
 |[[3.0.0]]
 |[[3.0.0]]
-|You can run homebrew. See [https://switchbrew.github.io/nx-hbl/ nx-hbl] or [https://github.com/switchbrew/nx-hbmenu nx-hbmenu].
+|You can run homebrew. See [https://switchbrew.github.io/nx-hbl/ nx-hbl].
 |-
 |[[3.0.1]]
 |[[4.1.0]]
