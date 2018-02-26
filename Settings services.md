@@ -17,6 +17,21 @@ This is
 "nn::settings::Language" is basically array indices in the output array
 from GetAvailableLanguageCodes.
 
+\[4.0.0+\] Official user-processes now use
+GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of
+{original commands}.
+
+In official user-processes in the Language-\>LanguageCode conversion
+function:
+
+  - During one-time init, GetAvailableLanguageCodes is used to
+    initialize the LanguageCodes array cache, with max\_entries=0xF
+    (buffer size in u64s). \[4.0.0+\] GetAvailableLanguageCodes2 is now
+    used with max\_entries 0x40.
+  - \[4.0.0+\] When the input Language is larger than the cached
+    total\_entries from the above command output, or Language is
+    negative, command MakeLanguageCode is used instead of the array.
+
 ## LanguageCode
 
 This is "nn::settings::LanguageCode".
