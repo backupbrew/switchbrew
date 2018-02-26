@@ -29,4 +29,6 @@ V0.1.2 :
 ## NOTE
 
 To admin, if this is not allowed, my apologies for that, you can delete
-it. If it's allowed, you can delete this note.
+it. If it's allowed, you can delete this note. PS : I will made a full
+theme that will be necessary to include into website, how can i write to
+you for website updates.
