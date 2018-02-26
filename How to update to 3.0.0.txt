@@ -9,7 +9,7 @@ An original game card of Pokkén Tournament DX (With a [[Game card serial]] endi
 Why ? Because a revision of this game exist with [[3.0.1]] console update instead of [[3.0.0]] version.
 
 ==Instructions==
-We need to disconnect our Switch from internet a be sure there is no pre-installed (cached) update and then install our [[3.0.0]] update from game.
+We need to disconnect our Switch from internet and be sure there is no pre-installed (cached) update and then install our [[3.0.0]] update from game.
 
 * Fist step (Disconnect from internet our switch) :
 *# Go to System Settings.

@@ -19,7 +19,7 @@ Why ? Because a revision of this game exist with
 
 ## Instructions
 
-We need to disconnect our Switch from internet a be sure there is no
+We need to disconnect our Switch from internet and be sure there is no
 pre-installed (cached) update and then install our
 [3.0.0](3.0.0.md "wikilink") update from game.
 
