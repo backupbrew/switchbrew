@@ -1,0 +1,25 @@
+I was thinking that the default MediaWiki theme was a little bit boring so, i have made this awesome blue theme for it.
+
+==Download (Stylish extention)==
+[https://userstyles.org/styles/156293/switchbrew-org-blue-theme-wip Blue style for switchbrew.org on userstyles.org]
+
+==Changelogs==
+V0.1.2 :
+* Add blue everywhere.
+* Add new svg logo.
+* Customized usermenu and navigation bar.
+
+==Future relases==
+* Make animated version of background with waves.
+* So few version of this theme will be avalible :
+** Animated waves theme.
+** Static waves theme.
+** Simple blue theme.
+** MediaWiki default theme.
+* Balanced colors.
+* Rounded tabs.
+* And many new things.
+
+==NOTE==
+To admin, if this is not allowed, my apologies for that, you can delete it.
+If it's allowed, you can delete this note.
