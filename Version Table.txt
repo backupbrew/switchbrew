@@ -1,0 +1,23 @@
+{| class="wikitable" style="text-align: center;
+!From
+!To
+!Instructions
+|-
+|[[1.0.0]]
+|[[1.0.0]]
+|Wait for [[Custom Firmware]].
+|-
+|[[2.0.0]]
+|[[2.3.0]]
+|Update to version [[3.0.0]]. See [[How to update to 3.0.0]].
+|-
+|[[3.0.0]]
+|[[3.0.0]]
+|You can run homebrews. See [https://switchbrew.github.io/nx-hbl/ nx-hbl] or [https://github.com/switchbrew/nx-hbmenu nx-hbmenu].
+|-
+|[[3.0.1]]
+|[[4.1.0]]
+|Wait for a while for an [[Homebrew launcher]] or [[Custom Firmware]].
+|- 
+|colspan="3"|In any cases you need to [[Block updates]]
+|}
