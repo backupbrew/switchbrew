@@ -12,7 +12,7 @@ This is
 | 4   | GetRegionCode                             | No input, returns an output s32.                                                                                       |
 | 5   | \[4.0.0+\] GetAvailableLanguageCodes2     | Takes a type-0x6 buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
 | 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 | No input, returns an output s32.                                                                                       |
-| 7   | \[4.0.0+\] GetKeyCodeMap                  | Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses fixed size 0x1000.                             |
+| 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
 
 "nn::settings::Language" (s32) is basically array indices in the output
 array from GetAvailableLanguageCodes.
@@ -31,6 +31,11 @@ function:
   - \[4.0.0+\] When the input Language is larger than the cached
     total\_entries from the above command output, or Language is
     negative, command MakeLanguageCode is used instead of the array.
+
+## GetKeyCodeMap
+
+Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses
+fixed size 0x1000. This is probably related to HID keyboard.
 
 ## LanguageCode
 

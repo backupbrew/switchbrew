@@ -19,7 +19,7 @@ This is "nn::settings::ISettingsServer".
 |-
 | 6 || [4.0.0+] GetAvailableLanguageCodeCount2 || No input, returns an output s32.
 |-
-| 7 || [4.0.0+] GetKeyCodeMap || Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses fixed size 0x1000.
+| 7 || [4.0.0+] GetKeyCodeMap || 
 |}
 
 "nn::settings::Language" (s32) is basically array indices in the output array from GetAvailableLanguageCodes.
@@ -29,6 +29,9 @@ This is "nn::settings::ISettingsServer".
 In official user-processes in the Language->LanguageCode conversion function:
 * During one-time init, GetAvailableLanguageCodes is used to initialize the LanguageCodes array cache, with max_entries=0xF (buffer size in u64s). [4.0.0+] GetAvailableLanguageCodes2 is now used with max_entries 0x40.
 * [4.0.0+] When the input Language is larger than the cached total_entries from the above command output, or Language is negative, command MakeLanguageCode is used instead of the array.
+
+== GetKeyCodeMap ==
+Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses fixed size 0x1000. This is probably related to HID keyboard.
 
 == LanguageCode ==
 This is "nn::settings::LanguageCode".
