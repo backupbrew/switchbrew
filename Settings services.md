@@ -65,6 +65,8 @@ string.
 | 12                                               | en-GB                                      | "BritishEnglish"                                                              |
 | 13                                               | fr-CA                                      | "CanadianFrench"                                                              |
 | 14                                               | es-419                                     | "LatinAmericanSpanish"                                                        |
+| \[4.0.0+\] 15                                    | zh-Hans                                    | ?                                                                             |
+| \[4.0.0+\] 16                                    | zh-Hant                                    | ?                                                                             |
 
 # set:fd
 
