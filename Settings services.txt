@@ -75,9 +75,9 @@ This is an u64, which is a NUL-terminated string.
 |-
 | 14 || es-419 || "LatinAmericanSpanish"
 |-
-| [4.0.0+] 15 || zh-Hans || ?
+| [4.0.0+] 15 || zh-Hans || "SimplifiedChinese"
 |-
-| [4.0.0+] 16 || zh-Hant || ?
+| [4.0.0+] 16 || zh-Hant || "TraditionalChinese"
 |}
 
 = set:fd =
