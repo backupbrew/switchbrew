@@ -342,7 +342,7 @@ This is
 | 136 | \[4.0.0+\] GetKeyboardLayout                                                                      |
 | 137 | \[4.0.0+\] SetKeyboardLayout                                                                      |
 | 138 | \[4.0.0+\] GetWebInspectorFlag                                                                    |
-| 139 | \[4.0.0+\] GetAllowedSslHosts                                                                     |
+| 139 | \[4.0.0+\] [\#GetAllowedSslHosts](#GetAllowedSslHosts "wikilink")                                 |
 | 140 | \[4.0.0+\] GetHostFsMountPoint                                                                    |
 
 Official user-processes get a new service session handle each time a
@@ -402,5 +402,11 @@ Returns the 0x18-byte SerialNumber string.
 ## GetServiceDiscoveryControlSettings
 
 Returns 0x01 if [safemode](Safemode.md "wikilink") needs to be launched.
+
+## GetAllowedSslHosts
+
+Takes a type-0x6 output buffer, returns an output s32. This buffer
+contains an array of 0x8-byte "nn::settings::system::AllowedSslHost"
+entries.
 
 [Category:Services](Category:Services "wikilink")
