@@ -10,8 +10,8 @@ following:
 
   - `[appname].nro`: The executable.
 
-The Homebrew Launcher will scan the SD card for all `.nro` files, but
-will only display an icon for those who have one according to the format
+The Homebrew Menu will scan the SD card for all `.nro` files, but will
+only display an icon for those who have one according to the format
 described above. You can also freely navigate the filesystem to select
 an application.
 
@@ -23,10 +23,10 @@ available.
 
 ### Launchers
 
-| Name                                                         | Description                   | Author                                                                   | Download                                                 | Open-Source |
-| ------------------------------------------------------------ | ----------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------- | ----------- |
-| [Homebrew Launcher](https://github.com/switchbrew/nx-hbmenu) | Run homebrew on your Switch\! | [Yellows8](User:Yellows8 "wikilink"), [plutooo](User:plutooo "wikilink") | [Here](https://github.com/switchbrew/nx-hbmenu/releases) | Yes         |
-|                                                              |                               |                                                                          |                                                          |             |
+| Name                                                     | Description                   | Author                                                                   | Download                                                 | Open-Source |
+| -------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------- | ----------- |
+| [Homebrew Menu](https://github.com/switchbrew/nx-hbmenu) | Run homebrew on your Switch\! | [Yellows8](User:Yellows8 "wikilink"), [plutooo](User:plutooo "wikilink") | [Here](https://github.com/switchbrew/nx-hbmenu/releases) | Yes         |
+|                                                          |                               |                                                                          |                                                          |             |
 
 ### Applications
 
