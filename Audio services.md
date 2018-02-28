@@ -84,15 +84,16 @@ returning.
 Takes a type-5 input buffer for sample data and a u64 which acts as a
 tag for the supplied buffer (official apps use the buffer's address).
 
-The format of the input buffer is as follows:
+The format of the input buffer is as
+follows:
 
-| Offset | Size | Description                         |
-| ------ | ---- | ----------------------------------- |
-| 0x00   | 8    | Pointer to next buffer (unused)     |
-| 0x08   | 8    | Pointer to sample buffer            |
-| 0x10   | 8    | Capacity of sample buffer           |
-| 0x18   | 8    | Size of data in the sample buffer   |
-| 0x20   | 8    | Offset of data in the sample buffer |
+| Offset | Size | Description                                           |
+| ------ | ---- | ----------------------------------------------------- |
+| 0x00   | 8    | Pointer to next buffer (unused)                       |
+| 0x08   | 8    | Pointer to sample buffer                              |
+| 0x10   | 8    | Capacity of sample buffer                             |
+| 0x18   | 8    | Size of data in the sample buffer                     |
+| 0x20   | 8    | Offset of data in the sample buffer (unused/ignored?) |
 
 ### RegisterBufferEvent
 

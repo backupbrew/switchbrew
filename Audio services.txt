@@ -105,7 +105,7 @@ The format of the input buffer is as follows:
 |-
 | 0x18 || 8 || Size of data in the sample buffer
 |-
-| 0x20 || 8 || Offset of data in the sample buffer
+| 0x20 || 8 || Offset of data in the sample buffer (unused/ignored?)
 |}
 
 === RegisterBufferEvent ===
