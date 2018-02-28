@@ -1,44 +1,46 @@
-= nsd:u =
+= nsd:u, nsd:a =
+This is "nn::nsd::detail::IManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 10 ||
+| 10 || GetSettingName
 |-
-| 11 ||
+| 11 || GetEnvironmentIdentifier
 |-
-| 12 ||
+| 12 || GetDeviceId
 |-
-| 13 ||
+| 13 || DeleteSettings
 |-
-| 14 ||
+| 14 || ImportSettings
 |-
 | 20 || Resolve
 |-
 | 21 || ResolveEx
 |-
-| 30 || GetToken
+| 30 || GetNasServiceSetting
 |-
-| 31 || GetTokenEx
+| 31 || GetNasServiceSettingEx
 |-
-| 40 || GetAccountsLink
+| 40 || GetNasRequestFqdn
 |-
-| 41 || GetAccountsLinkEx
+| 41 || GetNasRequestFqdnEx
 |-
-| 42 || GetApiAccountsLink
+| 42 || GetNasApiFqdn
 |-
-| 43 || GetApiAccountsLinkEx
+| 43 || GetNasApiFqdnEx
 |-
-| 50 ||
+| 50 || GetCurrentSetting
 |-
-| 60 ||
+| 60 || ReadSaveDataFromFsForTest
 |-
-| 61 ||
+| 61 || WriteSaveDataToFsForTest
 |-
-| 62 ||
+| 62 || DeleteSaveDataOfFsForTest
 |}
 
-== Cmd11 ==
+== GetEnvironmentIdentifier ==
 Takes a type-0x16 buffer with size 8. Returns a string.
 
 The output string is used by [[NIM_services|NIM]] for the "eid:%s" in the User-Agent strings.

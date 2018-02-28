@@ -1,26 +1,28 @@
-# nsd:u
+# nsd:u, nsd:a
 
-| Cmd | Name                 |
-| --- | -------------------- |
-| 10  |                      |
-| 11  |                      |
-| 12  |                      |
-| 13  |                      |
-| 14  |                      |
-| 20  | Resolve              |
-| 21  | ResolveEx            |
-| 30  | GetToken             |
-| 31  | GetTokenEx           |
-| 40  | GetAccountsLink      |
-| 41  | GetAccountsLinkEx    |
-| 42  | GetApiAccountsLink   |
-| 43  | GetApiAccountsLinkEx |
-| 50  |                      |
-| 60  |                      |
-| 61  |                      |
-| 62  |                      |
+This is "nn::nsd::detail::IManager".
 
-## Cmd11
+| Cmd | Name                      |
+| --- | ------------------------- |
+| 10  | GetSettingName            |
+| 11  | GetEnvironmentIdentifier  |
+| 12  | GetDeviceId               |
+| 13  | DeleteSettings            |
+| 14  | ImportSettings            |
+| 20  | Resolve                   |
+| 21  | ResolveEx                 |
+| 30  | GetNasServiceSetting      |
+| 31  | GetNasServiceSettingEx    |
+| 40  | GetNasRequestFqdn         |
+| 41  | GetNasRequestFqdnEx       |
+| 42  | GetNasApiFqdn             |
+| 43  | GetNasApiFqdnEx           |
+| 50  | GetCurrentSetting         |
+| 60  | ReadSaveDataFromFsForTest |
+| 61  | WriteSaveDataToFsForTest  |
+| 62  | DeleteSaveDataOfFsForTest |
+
+## GetEnvironmentIdentifier
 
 Takes a type-0x16 buffer with size 8. Returns a string.
 
