@@ -396,8 +396,9 @@ This is
 ## OpenHardwareOpusDecoder
 
 Takes two u32s **SampleRate** and **ChannelCount** packed as an u64, an
-u32 **WorkBufferSize** and an unknown handle. Returns an
-[\#IHardwareOpusDecoder](#IHardwareOpusDecoder "wikilink") object.
+u32 **WorkBufferSize** and a TransferMemory handle. Returns an
+[\#IHardwareOpusDecoder](#IHardwareOpusDecoder "wikilink") object. The
+TransferMemory is created by the user-process with permissions=0.
 
 ## GetHardwareOpusDecoderWorkBufferSize
 
