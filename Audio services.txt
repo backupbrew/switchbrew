@@ -97,7 +97,7 @@ The format of the input buffer is as follows:
 |-
 ! Offset || Size || Description
 |-
-| 0x00 || 8 || Pointer to next buffer
+| 0x00 || 8 || Pointer to next buffer (unused)
 |-
 | 0x08 || 8 || Pointer to sample buffer
 |-
@@ -287,16 +287,68 @@ Takes a upper limit of the rendering time in percent. (u32)
 === GetAudioRendererRenderingTimeLimit ===
 Returns the upper limit of the rendering time in percent. (u32)
 
-= audout:a, audin:a, audrec:a, audren:a =
-This is "nn::audio::detail::IAudioOutManagerForApplet", "nn::audio::detail::IAudioInManagerForApplet", "nn::audio::detail::IFinalOutputRecorderManagerForApplet", "nn::audio::detail::IAudioRendererManagerForApplet".
+= audout:a =
+This is "nn::audio::detail::IAudioOutManagerForApplet".
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || RequestSuspend
+| 0 || RequestSuspendAudioOuts
 |-
-| 1 || RequestResume
+| 1 || RequestResumeAudioOuts
+|-
+| 2 || GetAudioOutsProcessMasterVolume
+|-
+| 3 || SetAudioOutsProcessMasterVolume
+|}
+
+= audin:a =
+This is "nn::audio::detail::IAudioInManagerForApplet".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RequestSuspendAudioIns
+|-
+| 1 || RequestResumeAudioIns
+|-
+| 2 || GetAudioInsProcessMasterVolume
+|-
+| 3 || SetAudioInsProcessMasterVolume
+|}
+
+= audrec:a =
+This is "nn::audio::detail::IFinalOutputRecorderManagerForApplet".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RequestSuspendFinalOutputRecorders
+|-
+| 1 || RequestResumeFinalOutputRecorders
+|}
+
+= audren:a =
+This is "nn::audio::detail::IAudioRendererManagerForApplet".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RequestSuspendAudioRenderers
+|-
+| 1 || RequestResumeAudioRenderers
+|-
+| 2 || GetAudioRenderersProcessMasterVolume
+|-
+| 3 || SetAudioRenderersProcessMasterVolume
+|-
+| 4 || RegisterAppletResourceUserId
+|-
+| 5 || UnregisterAppletResourceUserId
 |}
 
 = audout:d, audin:d, audrec:d, audren:d =
@@ -461,19 +513,19 @@ This is "nn::codec::detail::IHardwareOpusDecoderManager".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#OpenHardwareOpusDecoder]]
+| 0 || [[#Initialize]]
 |-
-| 1 || [[#GetHardwareOpusDecoderWorkBufferSize]]
+| 1 || [[#GetWorkBufferSize]]
 |-
-| 2 || [3.0.0+] OpenHardwareOpusDecoderEx
+| 2 || [3.0.0+] InitializeEx
 |-
-| 3 || [3.0.0+] GetHardwareOpusDecoderWorkBufferSizeEx
+| 3 || [3.0.0+] GetWorkBufferSizeEx
 |}
 
-== OpenHardwareOpusDecoder ==
-Takes two u32s '''SampleRate''' and '''ChannelCount''' packed as an u64, an u32 '''WorkBufferSize''' and a TransferMemory handle. Returns an [[#IHardwareOpusDecoder]] object. The TransferMemory is created by the user-process with permissions=0.
+== Initialize ==
+Takes two u32s '''SampleRate''' and '''ChannelCount''' packed as an u64, an u32 '''WorkBufferSize''' and a TransferMemory handle for '''WorkBuffer'''. Returns an [[#IHardwareOpusDecoder]] object. The TransferMemory is created by the user-process with permissions=0.
 
-== GetHardwareOpusDecoderWorkBufferSize ==
+== GetWorkBufferSize==
 Takes two u32s '''SampleRate''' and '''ChannelCount''' packed as an u64. Returns the required size for the decoder's work buffer.
 
 == IHardwareOpusDecoder ==
@@ -483,26 +535,41 @@ This is "nn::codec::detail::IHardwareOpusDecoder".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#Decode]]
+| 0 || [[#DecodeInterleaved]]
 |-
-| 1 || [[#SendDecoderContext]]
+| 1 || [[#SetContext]]
 |-
-| 2 || [3.0.0+] DecodeEx
+| 2 || [3.0.0+] DecodeInterleavedEx
 |-
-| 3 || [3.0.0+] SendDecoderContextEx
+| 3 || [3.0.0+] SetContextEx
 |-
 | 4 || [4.0.0+]
 |-
 | 5 || [4.0.0+]
 |}
 
-=== Decode ===
+=== DecodeInterleaved ===
 Takes a type-5 input buffer ('''OpusDataIn''') and a type-6 output buffer ('''PcmDataOut'''). Decodes the Opus source data to PCM and returns two u32s '''DecodedSampleCount''' and '''DecodedDataSize'''.
 
-=== SendDecoderContext ===
+=== SetContext ===
 Takes a type-5 input buffer ('''DecoderContextIn'''). Sends the unknown context data to the hardware decoder.
 
 = auddebug =
+This is "nn::audio::detail::IAudioDebugManager".
+
 This service doesn't exist in retail units.
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 ||
+|-
+| 3 ||
+|}
 
 [[Category:Services]]

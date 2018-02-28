@@ -87,7 +87,7 @@ The format of the input buffer is as follows:
 
 | Offset | Size | Description                         |
 | ------ | ---- | ----------------------------------- |
-| 0x00   | 8    | Pointer to next buffer              |
+| 0x00   | 8    | Pointer to next buffer (unused)     |
 | 0x08   | 8    | Pointer to sample buffer            |
 | 0x10   | 8    | Capacity of sample buffer           |
 | 0x18   | 8    | Size of data in the sample buffer   |
@@ -238,17 +238,49 @@ Takes a upper limit of the rendering time in percent. (u32)
 
 Returns the upper limit of the rendering time in percent. (u32)
 
-# audout:a, audin:a, audrec:a, audren:a
+# audout:a
 
-This is "nn::audio::detail::IAudioOutManagerForApplet",
-"nn::audio::detail::IAudioInManagerForApplet",
-"nn::audio::detail::IFinalOutputRecorderManagerForApplet",
-"nn::audio::detail::IAudioRendererManagerForApplet".
+This is "nn::audio::detail::IAudioOutManagerForApplet".
 
-| Cmd | Name           |
-| --- | -------------- |
-| 0   | RequestSuspend |
-| 1   | RequestResume  |
+| Cmd | Name                            |
+| --- | ------------------------------- |
+| 0   | RequestSuspendAudioOuts         |
+| 1   | RequestResumeAudioOuts          |
+| 2   | GetAudioOutsProcessMasterVolume |
+| 3   | SetAudioOutsProcessMasterVolume |
+
+# audin:a
+
+This is "nn::audio::detail::IAudioInManagerForApplet".
+
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   | RequestSuspendAudioIns         |
+| 1   | RequestResumeAudioIns          |
+| 2   | GetAudioInsProcessMasterVolume |
+| 3   | SetAudioInsProcessMasterVolume |
+
+# audrec:a
+
+This is "nn::audio::detail::IFinalOutputRecorderManagerForApplet".
+
+| Cmd | Name                               |
+| --- | ---------------------------------- |
+| 0   | RequestSuspendFinalOutputRecorders |
+| 1   | RequestResumeFinalOutputRecorders  |
+
+# audren:a
+
+This is "nn::audio::detail::IAudioRendererManagerForApplet".
+
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   | RequestSuspendAudioRenderers         |
+| 1   | RequestResumeAudioRenderers          |
+| 2   | GetAudioRenderersProcessMasterVolume |
+| 3   | SetAudioRenderersProcessMasterVolume |
+| 4   | RegisterAppletResourceUserId         |
+| 5   | UnregisterAppletResourceUserId       |
 
 # audout:d, audin:d, audrec:d, audren:d
 
@@ -383,24 +415,24 @@ Returns a bool.
 
 # hwopus
 
-This is
-"nn::codec::detail::IHardwareOpusDecoderManager".
+This is "nn::codec::detail::IHardwareOpusDecoderManager".
 
-| Cmd | Name                                                                                       |
-| --- | ------------------------------------------------------------------------------------------ |
-| 0   | [\#OpenHardwareOpusDecoder](#OpenHardwareOpusDecoder "wikilink")                           |
-| 1   | [\#GetHardwareOpusDecoderWorkBufferSize](#GetHardwareOpusDecoderWorkBufferSize "wikilink") |
-| 2   | \[3.0.0+\] OpenHardwareOpusDecoderEx                                                       |
-| 3   | \[3.0.0+\] GetHardwareOpusDecoderWorkBufferSizeEx                                          |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | [\#Initialize](#Initialize "wikilink")               |
+| 1   | [\#GetWorkBufferSize](#GetWorkBufferSize "wikilink") |
+| 2   | \[3.0.0+\] InitializeEx                              |
+| 3   | \[3.0.0+\] GetWorkBufferSizeEx                       |
 
-## OpenHardwareOpusDecoder
+## Initialize
 
 Takes two u32s **SampleRate** and **ChannelCount** packed as an u64, an
-u32 **WorkBufferSize** and a TransferMemory handle. Returns an
-[\#IHardwareOpusDecoder](#IHardwareOpusDecoder "wikilink") object. The
-TransferMemory is created by the user-process with permissions=0.
+u32 **WorkBufferSize** and a TransferMemory handle for **WorkBuffer**.
+Returns an [\#IHardwareOpusDecoder](#IHardwareOpusDecoder "wikilink")
+object. The TransferMemory is created by the user-process with
+permissions=0.
 
-## GetHardwareOpusDecoderWorkBufferSize
+## GetWorkBufferSize
 
 Takes two u32s **SampleRate** and **ChannelCount** packed as an u64.
 Returns the required size for the decoder's work buffer.
@@ -409,28 +441,37 @@ Returns the required size for the decoder's work buffer.
 
 This is "nn::codec::detail::IHardwareOpusDecoder".
 
-| Cmd | Name                                                   |
-| --- | ------------------------------------------------------ |
-| 0   | [\#Decode](#Decode "wikilink")                         |
-| 1   | [\#SendDecoderContext](#SendDecoderContext "wikilink") |
-| 2   | \[3.0.0+\] DecodeEx                                    |
-| 3   | \[3.0.0+\] SendDecoderContextEx                        |
-| 4   | \[4.0.0+\]                                             |
-| 5   | \[4.0.0+\]                                             |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | [\#DecodeInterleaved](#DecodeInterleaved "wikilink") |
+| 1   | [\#SetContext](#SetContext "wikilink")               |
+| 2   | \[3.0.0+\] DecodeInterleavedEx                       |
+| 3   | \[3.0.0+\] SetContextEx                              |
+| 4   | \[4.0.0+\]                                           |
+| 5   | \[4.0.0+\]                                           |
 
-### Decode
+### DecodeInterleaved
 
 Takes a type-5 input buffer (**OpusDataIn**) and a type-6 output buffer
 (**PcmDataOut**). Decodes the Opus source data to PCM and returns two
 u32s **DecodedSampleCount** and **DecodedDataSize**.
 
-### SendDecoderContext
+### SetContext
 
 Takes a type-5 input buffer (**DecoderContextIn**). Sends the unknown
 context data to the hardware decoder.
 
 # auddebug
 
+This is "nn::audio::detail::IAudioDebugManager".
+
 This service doesn't exist in retail units.
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
 
 [Category:Services](Category:Services "wikilink")
