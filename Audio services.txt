@@ -87,7 +87,7 @@ Returns an u32 '''AudioOutState''' (0x00=Started, 0x01=Stopped).
 Starts audio playback using data from appended buffers.
 
 === StopAudioOut ===
-Stops audio playback.
+Stops audio playback. This waits for audio playback to finish before returning.
 
 === AppendAudioOutBuffer ===
 Takes a type-5 input buffer for sample data and a u64 which acts as a tag for the supplied buffer (official apps use the buffer's address).

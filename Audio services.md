@@ -76,7 +76,8 @@ Starts audio playback using data from appended buffers.
 
 ### StopAudioOut
 
-Stops audio playback.
+Stops audio playback. This waits for audio playback to finish before
+returning.
 
 ### AppendAudioOutBuffer
 
