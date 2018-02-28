@@ -1,3 +1,5 @@
+  - **4 December 17** Nintendo released system update
+    [4.1.0](4.1.0.md "wikilink").
   - **25 October 17** Nintendo released system update
     [4.0.1](4.0.1.md "wikilink").
   - **18 October 17** Nintendo released system update
