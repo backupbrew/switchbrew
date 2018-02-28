@@ -52,9 +52,10 @@ available.
 
 ### Emulators
 
-| Name | Description | Author | Download | Open-Source | Last Updated |
-| ---- | ----------- | ------ | -------- | ----------- | ------------ |
-|      |             |        |          |             |              |
+| Name | Description                                      | Author    | Download                                           | Open-Source                              | Last Updated |
+| ---- | ------------------------------------------------ | --------- | -------------------------------------------------- | ---------------------------------------- | ------------ |
+| pFBA | A port of final burn alpha to multiple platforms | cpasjuste | [Here](https://github.com/Cpasjuste/pfba/releases) | [Yes](https://github.com/Cpasjuste/pfba) | 2018-02-20   |
+|      |                                                  |           |                                                    |                                          |              |
 
 ### Title managers
 

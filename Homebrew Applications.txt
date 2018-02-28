@@ -101,6 +101,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 !  width="5%"  | Open-Source
 !  width="15%" | Last Updated
 |-
+| pFBA
+| A port of final burn alpha to multiple platforms
+| cpasjuste
+| [https://github.com/Cpasjuste/pfba/releases Here]
+| [https://github.com/Cpasjuste/pfba Yes]
+| 2018-02-20
+|-
 |}
 
 ===Title managers===
