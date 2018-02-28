@@ -8,11 +8,15 @@ userstyles.org](https://userstyles.org/styles/156293/switchbrew-org-blue-theme-w
 
 ## Changelogs
 
-V0.1.2 :
+### V 0.1.2
 
   - Add blue everywhere.
   - Add new svg logo.
   - Customized usermenu and navigation bar.
+
+### V 0.1.3
+
+  - Remove white bar on some pages.
 
 ## Future relases
 
