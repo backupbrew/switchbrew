@@ -444,13 +444,13 @@ driver.
 
 ## /dev/nvdcutil-disp0, /dev/nvdcutil-disp1
 
-| Value      | Direction | Size | Description                               | Notes |
-| ---------- | --------- | ---- | ----------------------------------------- | ----- |
-| 0x40010501 | In        | 1    |                                           |       |
-| 0x40010502 | In        | 1    |                                           |       |
-| 0x42040503 | In        | 1056 |                                           |       |
-| 0x803C0504 | Out       | 60   | NVDCUTIL\_DISP\_IOCTL\_GET\_DISPLAY\_INFO |       |
-|            |           |      |                                           |       |
+| Value      | Direction | Size | Description                              | Notes |
+| ---------- | --------- | ---- | ---------------------------------------- | ----- |
+| 0x40010501 | In        | 1    | NVDCUTIL\_CRC\_ENABLE\_DISABLE           |       |
+| 0x40010502 | In        | 1    | NVDCUTIL\_VIRTUAL\_EDID\_ENABLE\_DISABLE |       |
+| 0x42040503 | In        | 1056 | NVDCUTIL\_VIRTUAL\_EDID\_SET\_DATA       |       |
+| 0x803C0504 | Out       | 60   | NVDCUTIL\_GET\_MODE                      |       |
+|            |           |      |                                          |       |
 
 ## /dev/nvsched-ctrl
 

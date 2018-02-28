@@ -466,13 +466,13 @@ Returns an id for a nvmap object. Identical to Linux driver.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0x40010501 || In || 1 || ||
+| 0x40010501 || In || 1 || NVDCUTIL_CRC_ENABLE_DISABLE ||
 |-
-| 0x40010502 || In || 1 || ||
+| 0x40010502 || In || 1 || NVDCUTIL_VIRTUAL_EDID_ENABLE_DISABLE ||
 |-
-| 0x42040503 || In || 1056 || ||
+| 0x42040503 || In || 1056 || NVDCUTIL_VIRTUAL_EDID_SET_DATA ||
 |-
-| 0x803C0504 || Out || 60 || NVDCUTIL_DISP_IOCTL_GET_DISPLAY_INFO ||
+| 0x803C0504 || Out || 60 || NVDCUTIL_GET_MODE ||
 |-
 |}
 
