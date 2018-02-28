@@ -5,11 +5,14 @@ This is "nn::ldn::detail::IMonitorServiceCreator".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || GetMonitorService || Returns an [[#IMonitorService]].
+| 0 || [[#CreateMonitorService]]
 |-
 |}
+
+== CreateMonitorService ==
+Returns an [[#IMonitorService]].
 
 == IMonitorService ==
 This is "nn::ldn::detail::IMonitorService".
@@ -18,21 +21,21 @@ This is "nn::ldn::detail::IMonitorService".
 |-
 ! Cmd || Name
 |-
-| 0 || GetNifmStatus
+| 0 || GetStateForMonitor
 |-
-| 1 ||
+| 1 || GetNetworkInfoForMonitor
 |-
-| 2 ||
+| 2 || GetIpv4AddressForMonitor
 |-
-| 3 ||
+| 3 || GetDisconnectReasonForMonitor
 |-
-| 4 ||
+| 4 || GetSecurityParameterForMonitor
 |-
-| 5 ||
+| 5 || GetNetworkConfigForMonitor
 |-
-| 100 || StartMonitor
+| 100 || InitializeMonitor
 |-
-| 101 || StopMonitor
+| 101 || FinalizeMonitor
 |-
 |}
 
@@ -41,11 +44,14 @@ This is "nn::ldn::detail::ISystemServiceCreator".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || GetSystemLocalCommunicationService || Returns an [[#ISystemLocalCommunicationService]].
+| 0 || [[#CreateSystemLocalCommunicationService]]
 |-
 |}
+
+== CreateSystemLocalCommunicationService ==
+Returns an [[#ISystemLocalCommunicationService]].
 
 == ISystemLocalCommunicationService ==
 This is "nn::ldn::detail::ISystemLocalCommunicationService".
@@ -54,59 +60,59 @@ This is "nn::ldn::detail::ISystemLocalCommunicationService".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetState
 |-
 | 1 || GetNetworkInfo
 |-
-| 2 ||
+| 2 || GetIpv4Address
 |-
-| 3 ||
+| 3 || GetDisconnectReason
 |-
-| 4 ||
+| 4 || GetSecurityParameter
 |-
-| 5 ||
+| 5 || GetNetworkConfig
 |-
-| 100 || GetUnkWaitEvent
+| 100 || AttachStateChangeEvent
 |-
-| 101 ||
+| 101 || GetNetworkInfoLatestUpdate
 |-
-| 102 ||
+| 102 || Scan
 |-
-| 103 ||
+| 103 || ScanPrivate
 |-
 | 200 || OpenAccessPoint
 |-
 | 201 || CloseAccessPoint
 |-
-| 202 ||
+| 202 || CreateNetwork
 |-
-| 203 ||
+| 203 || CreateNetworkPrivate
 |-
 | 204 || DestroyNetwork
 |-
-| 205 ||
+| 205 || Reject
 |-
-| 206 ||
+| 206 || SetAdvertiseData
 |-
-| 207 ||
+| 207 || SetStationAcceptPolicy
 |-
-| 208 ||
+| 208 || AddAcceptFilterEntry
 |-
-| 209 ||
+| 209 || ClearAcceptFilter
 |-
 | 300 || OpenStation
 |-
 | 301 || CloseStation
 |-
-| 302 ||
+| 302 || Connect
 |-
-| 303 ||
+| 303 || ConnectPrivate
 |-
 | 304 || Disconnect
 |-
 | 400 || InitializeSystem
 |-
-| 401 || TerminateSystem
+| 401 || FinalizeSystem
 |-
 |}
 
@@ -115,15 +121,76 @@ This is "nn::ldn::detail::IUserServiceCreator".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || GetUserLocalCommunicationService || Returns an [[#IUserLocalCommunicationService]].
+| 0 || [[#CreateUserLocalCommunicationService]]
 |-
 |}
+
+== CreateUserLocalCommunicationService==
+Returns an [[#IUserLocalCommunicationService]].
 
 == IUserLocalCommunicationService ==
 This is "nn::ldn::detail::IUserLocalCommunicationService".
 
-Same as [[#ISystemLocalCommunicationService]].
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetState
+|-
+| 1 || GetNetworkInfo
+|-
+| 2 || GetIpv4Address
+|-
+| 3 || GetDisconnectReason
+|-
+| 4 || GetSecurityParameter
+|-
+| 5 || GetNetworkConfig
+|-
+| 100 || AttachStateChangeEvent
+|-
+| 101 || GetNetworkInfoLatestUpdate
+|-
+| 102 || Scan
+|-
+| 103 || ScanPrivate
+|-
+| 200 || OpenAccessPoint
+|-
+| 201 || CloseAccessPoint
+|-
+| 202 || CreateNetwork
+|-
+| 203 || CreateNetworkPrivate
+|-
+| 204 || DestroyNetwork
+|-
+| 205 || Reject
+|-
+| 206 || SetAdvertiseData
+|-
+| 207 || SetStationAcceptPolicy
+|-
+| 208 || AddAcceptFilterEntry
+|-
+| 209 || ClearAcceptFilter
+|-
+| 300 || OpenStation
+|-
+| 301 || CloseStation
+|-
+| 302 || Connect
+|-
+| 303 || ConnectPrivate
+|-
+| 304 || Disconnect
+|-
+| 400 || Initialize
+|-
+| 401 || Finalize
+|-
+|}
 
 [[Category:Services]]
