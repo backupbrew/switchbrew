@@ -4,26 +4,34 @@ I was thinking that the default MediaWiki theme was a little bit boring so, i ha
 [https://userstyles.org/styles/156293/switchbrew-org-blue-theme-wip Blue style for switchbrew.org on userstyles.org]
 
 ==Changelogs==
-===Version 0.1.2===
+===Version 0.1.3===
 * Add blue everywhere.
 * Add new svg logo.
 * Customized usermenu and navigation bar.
 
-===Version 0.1.3===
+===Version 0.1.4===
 * Remove white bar on some pages.
+
+===Version 0.2.0===
+* Balanced colors (Maybe Navigation menu is too dark ?).
+* Rounded menus (footer and content zone).
+* Add margin right from content.
+* Tab spacers update (2 px with css linear-gradient instead of crappy img).
+* Remove useless -1px top margin from content and remove border from top instead).
+* Fix some issues with "More" tab.
 
 ==Future relases==
 * Make animated version of background with waves.
-* So few version of this theme will be avalible :
-** Animated waves theme.
-** Static waves theme.
-** Simple blue theme.
-** MediaWiki default theme.
-* Balanced colors.
+* So four version of this skin will be avalible :
+** Animated waves skin.
+** Static waves skin.
+** Simple blue skin.
+** MediaWiki default skin.
 * Rounded tabs.
+* Optimize search bar.
 * And many new things.
 
 ==NOTE==
-To admin, if this is not allowed, my apologies for that, you can delete it.
-If it's allowed, you can delete this note.
-PS : I will made a full theme that will be necessary to include into website, how can i write to you for website updates.
+This skin is compatible with 3dbrew.org.
+
+PS : I will made a full skin that will be necessary to include into website, how can i write to admins for website update.
