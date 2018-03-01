@@ -1,10 +1,10 @@
-I was thinking that the default MediaWiki theme was a little bit boring
-so, i have made this awesome blue theme for it.
+I was thinking that the default MediaWiki skin was a little bit boring
+so, i have made this awesome blue skin for it.
 
 ## Download (Stylish extention)
 
 [Blue style for switchbrew.org on
-userstyles.org](https://userstyles.org/styles/156293/switchbrew-org-blue-theme-wip)
+userstyles.org](https://userstyles.org/styles/156293/switchbrew-org-blue-skin-wip)
 
 ## Changelogs
 
