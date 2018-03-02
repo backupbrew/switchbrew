@@ -16,12 +16,12 @@ varies.
 | 0x0    | 0x4  | Magic "META".                                                                                            |
 | 0x4    |      |                                                                                                          |
 | 0x8    |      |                                                                                                          |
-| 0xC    | 1    | Flags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be \<= 0xF |
-| 0xE    | 1    | MainThreadPrio                                                                                           |
-| 0xF    | 1    | DefaultCpuId                                                                                             |
+| 0xC    | 0x1  | Flags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be \<= 0xF |
+| 0xE    | 0x1  | MainThreadPrio                                                                                           |
+| 0xF    | 0x1  | DefaultCpuId                                                                                             |
 | 0x10   |      |                                                                                                          |
-| 0x18   | 4    | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.                                |
-| 0x1C   | 4    | MainStackSize                                                                                            |
+| 0x18   | 0x4  | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.                                |
+| 0x1C   | 0x4  | MainStackSize                                                                                            |
 | 0x20   | ?    | Title name                                                                                               |
 | 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                        |
 | 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                                                          |
@@ -32,7 +32,7 @@ varies.
 
 | Offset | Size  | Description                                                                                       |
 | ------ | ----- | ------------------------------------------------------------------------------------------------- |
-| 0      | 0x100 | RSA-2048 signature, seems to verify the data starting at 0x100 with the size field from 0x204.    |
+| 0x0    | 0x100 | RSA-2048 signature, seems to verify the data starting at 0x100 with the size field from 0x204.    |
 | 0x100  | 0x100 | RSA-2048 public key, seems to be used for the second [NCA](NCA%20Format.md "wikilink") signature. |
 | 0x200  | 0x4   | Magic "ACID".                                                                                     |
 | 0x204  | 0x4   | s32 Size field used with the above signature(?).                                                  |
@@ -44,8 +44,8 @@ varies.
 | 0x224  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") size                                         |
 | 0x228  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") offset                             |
 | 0x22C  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") size                               |
-| 0x230  | 4     | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset                               |
-| 0x234  | 4     | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size                                 |
+| 0x230  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset                               |
+| 0x234  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size                                 |
 | 0x238  | 0x8   | Padding                                                                                           |
 
 # ACI0
@@ -60,8 +60,8 @@ varies.
 | 0x24   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") size               |
 | 0x28   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") offset |
 | 0x2C   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") size   |
-| 0x30   | 4    | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset   |
-| 0x34   | 4    | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size     |
+| 0x30   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset   |
+| 0x34   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size     |
 | 0x38   | 0x8  | Padding                                                               |
 
 # FS Access Header

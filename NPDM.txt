@@ -39,15 +39,15 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |
 |-
 | 0xC
-| 1
+| 0x1
 | Flags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be <= 0xF
 |-
 | 0xE
-| 1
+| 0x1
 | MainThreadPrio
 |-
 | 0xF
-| 1
+| 0x1
 | DefaultCpuId
 |-
 | 0x10
@@ -55,11 +55,11 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |
 |-
 | 0x18
-| 4
+| 0x4
 | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.
 |-
 | 0x1C
-| 4
+| 0x4
 | MainStackSize
 |-
 | 0x20
@@ -90,7 +90,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 ! Size
 ! Description
 |-
-| 0
+| 0x0
 | 0x100
 | RSA-2048 signature, seems to verify the data starting at 0x100 with the size field from 0x204.
 |-
@@ -139,11 +139,11 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | [[#Service Access Control]] size
 |-
 | 0x230
-| 4
+| 0x4
 | [[#Kernel Access Control]] offset
 |-
 | 0x234
-| 4
+| 0x4
 | [[#Kernel Access Control]] size
 |-
 | 0x238
@@ -191,11 +191,11 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | [[#Service Access Control]] size
 |-
 | 0x30
-| 4
+| 0x4
 | [[#Kernel Access Control]] offset
 |-
 | 0x34
-| 4
+| 0x4
 | [[#Kernel Access Control]] size
 |-
 | 0x38
