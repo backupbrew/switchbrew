@@ -160,6 +160,7 @@ applets.
 | 0x209             | 1           | Args too long.                                                                                                                                                                       |
 | 0x409             | 2           | Maximum processes loaded.                                                                                                                                                            |
 | 0x609             | 3           | NPDM too big.                                                                                                                                                                        |
+| 0x19009           |             | Invalid access control sizes in NPDM.                                                                                                                                                |
 | 0x809             | 4           | Invalid NPDM.                                                                                                                                                                        |
 | 0xA09             | 5           | Invalid files.                                                                                                                                                                       |
 | 0xE09             | 7           | Already registered.                                                                                                                                                                  |
