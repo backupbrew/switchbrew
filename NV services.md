@@ -882,6 +882,8 @@ interface.
 
 Binds a nvmap object to this channel. Identical to Linux driver.
 
+This ioctl is a no-op in the Linux driver, not sure about Switch?
+
 ` struct {`  
 `   __in u32 nvmap_fd;`  
 ` };`
