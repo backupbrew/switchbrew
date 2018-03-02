@@ -930,7 +930,7 @@ this.
 
 ` struct {`  
 `   __in  u32 class_num;    // 0x902D=2d, 0xB197=3d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo`  
-`   __in  u32 flags;`  
+`   __in  u32 flags;        // bit0: LOCKBOOST_ZERO`  
 `   __out u64 obj_id;       // (ignored) used for FREE_OBJ_CTX ioctl, which is not supported`  
 ` };`
 
