@@ -44,7 +44,7 @@ follows:
 | 0x2      | 0x1      | ApplicationType, see [here](Process%20Manager%20services.md "wikilink").                                       |
 | 0x3      | 0x1      | Padding                                                                                                        |
 | 0x4      | 0x4      | MainThreadStackSize. Arg3 to svcStartProcess                                                                   |
-| 0x8      | 0x8      | Title id                                                                                                       |
+| 0x8      | 0x8      | TitleIdRange\_Min                                                                                              |
 | 0x10     | 0x4      | ACID [Service Access Control](NPDM#Service%20Access%20Control.md##Service_Access_Control "wikilink") list size |
 | 0x14     | 0x4      | ACI0 [Service Access Control](NPDM#Service%20Access%20Control.md##Service_Access_Control "wikilink") list size |
 | 0x18     | 0x4      | ACID [FS Access Control](NPDM#FS%20Access%20Control.md##FS_Access_Control "wikilink") buffer size              |

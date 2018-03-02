@@ -65,7 +65,7 @@ Takes a TitleId + StorageId, parses the NPDM, and writes output to a C descripto
 |-
 | 0x8
 | 0x8
-| Title id
+| TitleIdRange_Min
 |-
 | 0x10
 | 0x4
