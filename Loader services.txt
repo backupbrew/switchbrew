@@ -16,7 +16,7 @@ This is "nn::ldr::detail::IDebugMonitorInterface".
 Same as [[Loader_services#AddProcessToLaunchQueue|AddProcessToLaunchQueue]] but for processes marked as debug.
 
 == ClearDebugLaunchQueue ==
-Same as [[Loader_services#ClearLaunchQueue|ClearLaunchQueue]] but for processes marked as debug.
+Same as [[Loader_services#ClearLaunchQueue|ClearLaunchQueue]].
 
 = ldr:pm =
 This is "nn::ldr::detail::IProcessManagerInterface".

@@ -17,8 +17,7 @@ but for processes marked as debug.
 ## ClearDebugLaunchQueue
 
 Same as
-[ClearLaunchQueue](Loader%20services#ClearLaunchQueue.md##ClearLaunchQueue "wikilink")
-but for processes marked as debug.
+[ClearLaunchQueue](Loader%20services#ClearLaunchQueue.md##ClearLaunchQueue "wikilink").
 
 # ldr:pm
 
