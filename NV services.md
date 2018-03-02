@@ -921,8 +921,11 @@ pointer.
 
 ### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX
 
-Allocates a graphics context object. Modified to ignore object's
-ID.
+Allocates a graphics context object. Modified to ignore object's ID.
+
+You can only have one object context allocated at a time. You must have
+bound an address space before using
+this.
 
 ` struct {`  
 `   __in  u32 class_num;    // 0x902D=2d, 0xB197=3d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo`  
