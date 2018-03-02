@@ -74,7 +74,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Tcm0, Rydian (DS)
 | [https://gbatemp.net/threads/useless-homebrew-for-nintendo-switch.497041/ Here]
 | Yes
-| 2018-02-20
+| 2018-03-03
 |-
 | Space Game NX
 | Space game is a graphical shooter game on the Switch ported from Wii U! 
