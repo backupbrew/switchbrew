@@ -38,7 +38,7 @@ available.
 
 | Name       | Description                                      | Author  | Download | Open-Source                                              | Last Updated |
 | ---------- | ------------------------------------------------ | ------- | -------- | -------------------------------------------------------- | ------------ |
-| LovePotion | [Love2D](https://love2d.org) for Nintendo Switch | TurtleP |          | [Yes](https://github.com/TurtleP/LovePotion/tree/switch) | 2018-02-17   |
+| LovePotion | [Love2D](https://love2d.org) for Nintendo Switch | TurtleP |          | [Yes](https://github.com/TurtleP/LovePotion/tree/switch) | 2018-03-02   |
 |            |                                                  |         |          |                                                          |              |
 
 ### Games
