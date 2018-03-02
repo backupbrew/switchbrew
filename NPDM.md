@@ -55,7 +55,7 @@ varies.
 | 0x0    | 0x4  | Magic "ACI0".                                                         |
 | 0x4    | 0xC  | Zeroes                                                                |
 | 0x10   | 0x8  | Title id                                                              |
-| 0x18   | 0x8  | Padding                                                               |
+| 0x18   | 0x8  | Lowest allowed title id? Always 0?                                    |
 | 0x20   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") offset             |
 | 0x24   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") size               |
 | 0x28   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") offset |

@@ -172,7 +172,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |-
 | 0x18
 | 0x8
-| Padding
+| Lowest allowed title id? Always 0?
 |-
 | 0x20
 | 0x4
