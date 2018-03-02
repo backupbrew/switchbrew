@@ -904,13 +904,12 @@ of a
 pointer.
 
 ` struct fence {`  
-`   u32 id;`  
-`   u32 value;`  
+`   u32 syncpt_id;`  
+`   u32 syncpt_value;`  
 ` };`  
 ` `  
 ` struct gpfifo_entry {`  
-`   u32 entry0;                           // gpu_va_lo`  
-`   u32 entry1;                           // gpu_va_hi | (unk_0x02 << 0x08) | (size << 0x0A) | (unk_0x01 << 0x1F)`  
+`   u64 entry;                            // gpu_iova | (unk_0x02 << 0x08) | (size << 0x0A) | (unk_0x01 << 0x1F)`  
 ` };`  
 ` `  
 ` struct {`  
