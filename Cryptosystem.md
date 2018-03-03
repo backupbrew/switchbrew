@@ -63,39 +63,39 @@ This is presumably using data stored in fuses that only microcode
 authenticated by NVidia has access
 to.
 
-## Package1
+## Package1ldr
 
-### Key table during package1
+### Key table during package1ldr
 
-| Keyslot | Name             | Set by                             | Per-console | Per-firmware |
-| ------- | ---------------- | ---------------------------------- | ----------- | ------------ |
-| 11      | Package1Key      | [Package1](Package1.md "wikilink") | No          | Yes          |
-| 14      | SecureBootKey    | Bootrom                            | Yes         | No           |
-| 15      | SecureStorageKey | Bootrom                            | Yes         | No           |
+| Keyslot | Name             | Set by                                                         | Per-console | Per-firmware |
+| ------- | ---------------- | -------------------------------------------------------------- | ----------- | ------------ |
+| 11      | Package1Key      | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes          |
+| 14      | SecureBootKey    | Bootrom                                                        | Yes         | No           |
+| 15      | SecureStorageKey | Bootrom                                                        | Yes         | No           |
 
-### \[1.0.0-3.0.2\] Key table after package1
+### \[1.0.0-3.0.2\] Key table after package1ldr
 
-| Keyslot | Name          | Set by                             | Per-console | Per-firmware             |
-| ------- | ------------- | ---------------------------------- | ----------- | ------------------------ |
-| 12      | MasterKey     | [Package1](Package1.md "wikilink") | No          | Yes, on security updates |
-| 13      | PerConsoleKey | [Package1](Package1.md "wikilink") | Yes         | No                       |
+| Keyslot | Name          | Set by                                                         | Per-console | Per-firmware             |
+| ------- | ------------- | -------------------------------------------------------------- | ----------- | ------------------------ |
+| 12      | MasterKey     | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
+| 13      | PerConsoleKey | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
 
-### \[4.0.0\]+ Key table after package1 (Secure Monitor boot)
+### \[4.0.0\]+ Key table after package1ldr (Secure Monitor boot)
 
-| Keyslot | Name                                | Set by                             | Per-console | Per-firmware             |
-| ------- | ----------------------------------- | ---------------------------------- | ----------- | ------------------------ |
-| 12      | MasterKey                           | [Package1](Package1.md "wikilink") | No          | Yes, on security updates |
-| 13      | PerConsoleKeyForNewPerConsoleKeyGen | [Package1](Package1.md "wikilink") | Yes         | No                       |
-| 14      | StaticKeyForNewPerConsoleKeyGen     | [Package1](Package1.md "wikilink") | No          | Yes, on security updates |
-| 15      | PerConsoleKey                       | [Package1](Package1.md "wikilink") | Yes         | No                       |
+| Keyslot | Name                                | Set by                                                         | Per-console | Per-firmware             |
+| ------- | ----------------------------------- | -------------------------------------------------------------- | ----------- | ------------------------ |
+| 12      | MasterKey                           | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
+| 13      | PerConsoleKeyForNewPerConsoleKeyGen | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
+| 14      | StaticKeyForNewPerConsoleKeyGen     | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
+| 15      | PerConsoleKey                       | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
 
-### \[4.0.0\]+ Key table after package1 (Secure Monitor runtime)
+### \[4.0.0\]+ Key table after package1ldr (Secure Monitor runtime)
 
-| Keyslot | Name             | Set by                             | Per-console | Per-firmware             |
-| ------- | ---------------- | ---------------------------------- | ----------- | ------------------------ |
-| 12      | MasterKey        | [Package1](Package1.md "wikilink") | No          | Yes, on security updates |
-| 13      | NewPerConsoleKey | Secure Monitor init                | Yes         | Yes, on security updates |
-| 15      | PerConsoleKey    | [Package1](Package1.md "wikilink") | Yes         | No                       |
+| Keyslot | Name             | Set by                                                         | Per-console | Per-firmware             |
+| ------- | ---------------- | -------------------------------------------------------------- | ----------- | ------------------------ |
+| 12      | MasterKey        | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
+| 13      | NewPerConsoleKey | Secure Monitor init                                            | Yes         | Yes, on security updates |
+| 15      | PerConsoleKey    | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
 
 ### Key generation
 
