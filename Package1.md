@@ -2,19 +2,22 @@ Present in the firmware package titles (0100000000000819,
 010000000000081A, 010000000000081B and 010000000000081C) and installed
 into eMMC storage's [boot partitions 0 and
 1](Flash%20Filesystem#Boot%20Partitions.md##Boot_Partitions "wikilink"),
-"package1" contains the first Switch bootloader to run under the NVIDIA
-boot processor (an ARM7TDMI called "BPMP", "BPMP-Lite", "AVP" or "COP").
+"package1" contains the first Switch bootloader ("Package1ldr") to run
+under the NVIDIA boot processor (an ARM7TDMI called "BPMP", "BPMP-Lite",
+"AVP" or "COP"), as well as the actual encrypted package1 ("PK11") blob
+containing the second Switch Bootloader and TrustZone code.
 
 The boot ROM validates, copies to IRAM and executes this package by
 parsing it's information block from the [BCT](BCT.md "wikilink").
 
 # Format
 
-Package1 is distributed as a plaintext initial bootloader and a
-secondary encrypted blob. Execution starts at the plaintext bootloader
-which will set up hardware, generate keys and decrypt the next stage.
+This package is distributed as a plaintext initial bootloader
+(package1ldr) and a secondary encrypted blob ("PK11"). Execution starts
+at plaintext package1ldr which will set up hardware, generate keys and
+decrypt the next stage.
 
-## Bootloader
+## Package1ldr
 
 The code for this stage is stored in plaintext inside the package. By
 looking into the BCT's bootloader0\_info (normal) or bootloader1\_info
@@ -535,10 +538,10 @@ See the pseudocode bellow for the detailed process.
  return;
 ```
 
-## PK11 Blob
+## Package1 (PK11)
 
-This blob is stored encrypted inside the package and is decrypted by the
-initial bootloader.
+This blob is stored encrypted inside the package and is decrypted by
+package1ldr.
 
 ### Encryption
 
