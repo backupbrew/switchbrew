@@ -138,7 +138,7 @@ And also:
   the Nintendo Switch Online Lounge app.
 
 == ShopN ==
-The initial page loaded by ShopN seems to be the following: <nowiki>"https://bugyo.hac.lp1.eshop.nintendo.net/ashigaru/"</nowiki>.
+The initial page loaded by ShopN is : <nowiki>"https://bugyo.hac.lp1.eshop.nintendo.net/ashigaru/"</nowiki>.
 This can be accessed via computer possesed the certificat ShopN.
 
 The file at "data:/whitelist/WhitelistEc.txt", which doesn't exist in WifiWebAuthApplet, contains the following:
