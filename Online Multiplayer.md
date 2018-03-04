@@ -4,6 +4,7 @@ This page is for the Switch equivalent of online/local protocol
 Note: the wifi protocol used for local-WLAN is different from UDS, which
 3DS and Wii U used.
 
-The Switch still uses UDP with a different/updated protocol for peer to
-peer communication (packets starting with 0x32AB9864). For Nintendo
-server comms, a bunch of https requests are made instead of using PRUDP.
+The Switch still uses UDP for peer to peer communication (packets
+starting with 0x32AB9864). For Nintendo server comms, WebSockets are
+used instead of UDP ([more
+information](https://github.com/Kinnay/NintendoClients/wiki/Game-Server-Overview)).
