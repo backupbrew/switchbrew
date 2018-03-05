@@ -99,9 +99,9 @@ This is "nn::hid::IHidServer".
 |-
 | 121 || GetNpadJoyHoldType
 |-
-| 122 || SetNpadJoyAssignmentModeSingleByDefault
+| 122 || [[#SetNpadJoyAssignmentModeSingleByDefault]]
 |-
-| 123 || SetNpadJoyAssignmentModeSingle
+| 123 || [[#SetNpadJoyAssignmentModeSingle]]
 |-
 | 124 || [[#SetNpadJoyAssignmentModeDual]]
 |-
@@ -155,7 +155,13 @@ This is "nn::hid::IHidServer".
 == CreateAppletResource ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an [[#IAppletResource]].
 
-==SetNpadJoyAssignmentModeDual==
+== SetNpadJoyAssignmentModeSingleByDefault ==
+Takes a PID-descriptor, an u32, and an [[AM_services|AppletResourceUserId]]. No output.
+
+== SetNpadJoyAssignmentModeSingle ==
+Takes a PID-descriptor, an u32, [[AM_services|AppletResourceUserId]], and s64 '''NpadJoyDeviceType'''. No output.
+
+== SetNpadJoyAssignmentModeDual ==
 Takes a PID-descriptor, an u32, and an [[AM_services|AppletResourceUserId]]. No output.
 
 == GetNpadHandheldActivationMode ==

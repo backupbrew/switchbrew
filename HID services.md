@@ -6,86 +6,97 @@ shared-memory.
 This is
 "nn::hid::IHidServer".
 
-| Cmd  | Name                                                                         |
-| ---- | ---------------------------------------------------------------------------- |
-| 0    | [\#CreateAppletResource](#CreateAppletResource "wikilink")                   |
-| 1    | ActivateDebugPad                                                             |
-| 11   | ActivateTouchScreen                                                          |
-| 21   | ActivateMouse                                                                |
-| 31   | ActivateKeyboard                                                             |
-| 40   | AcquireXpadIdEventHandle                                                     |
-| 41   | ReleaseXpadIdEventHandle                                                     |
-| 51   | ActivateXpad                                                                 |
-| 55   | GetXpadIds                                                                   |
-| 56   | ActivateJoyXpad                                                              |
-| 58   | GetJoyXpadLifoHandle                                                         |
-| 59   | GetJoyXpadIds                                                                |
-| 60   | ActivateSixAxisSensor                                                        |
-| 61   | DeactivateSixAxisSensor                                                      |
-| 62   | GetSixAxisSensorLifoHandle                                                   |
-| 63   | ActivateJoySixAxisSensor                                                     |
-| 64   | DeactivateJoySixAxisSensor                                                   |
-| 65   | GetJoySixAxisSensorLifoHandle                                                |
-| 66   | StartSixAxisSensor                                                           |
-| 67   | StopSixAxisSensor                                                            |
-| 68   | IsSixAxisSensorFusionEnabled                                                 |
-| 69   | EnableSixAxisSensorFusion                                                    |
-| 70   | SetSixAxisSensorFusionParameters                                             |
-| 71   | GetSixAxisSensorFusionParameters                                             |
-| 72   | ResetSixAxisSensorFusionParameters                                           |
-| 73   | SetAccelerometerParameters                                                   |
-| 74   | GetAccelerometerParameters                                                   |
-| 75   | ResetAccelerometerParameters                                                 |
-| 76   | SetAccelerometerPlayMode                                                     |
-| 77   | GetAccelerometerPlayMode                                                     |
-| 78   | ResetAccelerometerPlayMode                                                   |
-| 79   | SetGyroscopeZeroDriftMode                                                    |
-| 80   | GetGyroscopeZeroDriftMode                                                    |
-| 81   | ResetGyroscopeZeroDriftMode                                                  |
-| 82   | IsSixAxisSensorAtRest                                                        |
-| 91   | ActivateGesture                                                              |
-| 100  | SetSupportedNpadStyleSet                                                     |
-| 101  | GetSupportedNpadStyleSet                                                     |
-| 102  | SetSupportedNpadIdType                                                       |
-| 103  | ActivateNpad                                                                 |
-| 104  | DeactivateNpad                                                               |
-| 106  | AcquireNpadStyleSetUpdateEventHandle                                         |
-| 107  | DisconnectNpad                                                               |
-| 108  | GetPlayerLedPattern                                                          |
-| 120  | SetNpadJoyHoldType                                                           |
-| 121  | GetNpadJoyHoldType                                                           |
-| 122  | SetNpadJoyAssignmentModeSingleByDefault                                      |
-| 123  | SetNpadJoyAssignmentModeSingle                                               |
-| 124  | [\#SetNpadJoyAssignmentModeDual](#SetNpadJoyAssignmentModeDual "wikilink")   |
-| 125  | MergeSingleJoyAsDualJoy                                                      |
-| 126  | StartLrAssignmentMode                                                        |
-| 127  | StopLrAssignmentMode                                                         |
-| 128  | SetNpadHandheldActivationMode                                                |
-| 129  | [\#GetNpadHandheldActivationMode](#GetNpadHandheldActivationMode "wikilink") |
-| 130  | SwapNpadAssignment                                                           |
-| 131  | IsUnintendedHomeButtonInputProtectionEnabled                                 |
-| 132  | EnableUnintendedHomeButtonInputProtection                                    |
-| 200  | GetVibrationDeviceInfo                                                       |
-| 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                       |
-| 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")             |
-| 203  | CreateActiveVibrationDeviceList                                              |
-| 204  | PermitVibration                                                              |
-| 205  | IsVibrationPermitted                                                         |
-| 206  | SendVibrationValues                                                          |
-| 300  | ActivateConsoleSixAxisSensor                                                 |
-| 301  | StartConsoleSixAxisSensor                                                    |
-| 302  | StopConsoleSixAxisSensor                                                     |
-| 400  | IsUsbFullKeyControllerEnabled                                                |
-| 401  | EnableUsbFullKeyController                                                   |
-| 402  | IsUsbFullKeyControllerConnected                                              |
-| 1000 | SetNpadCommunicationMode                                                     |
-| 1001 | GetNpadCommunicationMode                                                     |
+| Cmd  | Name                                                                                             |
+| ---- | ------------------------------------------------------------------------------------------------ |
+| 0    | [\#CreateAppletResource](#CreateAppletResource "wikilink")                                       |
+| 1    | ActivateDebugPad                                                                                 |
+| 11   | ActivateTouchScreen                                                                              |
+| 21   | ActivateMouse                                                                                    |
+| 31   | ActivateKeyboard                                                                                 |
+| 40   | AcquireXpadIdEventHandle                                                                         |
+| 41   | ReleaseXpadIdEventHandle                                                                         |
+| 51   | ActivateXpad                                                                                     |
+| 55   | GetXpadIds                                                                                       |
+| 56   | ActivateJoyXpad                                                                                  |
+| 58   | GetJoyXpadLifoHandle                                                                             |
+| 59   | GetJoyXpadIds                                                                                    |
+| 60   | ActivateSixAxisSensor                                                                            |
+| 61   | DeactivateSixAxisSensor                                                                          |
+| 62   | GetSixAxisSensorLifoHandle                                                                       |
+| 63   | ActivateJoySixAxisSensor                                                                         |
+| 64   | DeactivateJoySixAxisSensor                                                                       |
+| 65   | GetJoySixAxisSensorLifoHandle                                                                    |
+| 66   | StartSixAxisSensor                                                                               |
+| 67   | StopSixAxisSensor                                                                                |
+| 68   | IsSixAxisSensorFusionEnabled                                                                     |
+| 69   | EnableSixAxisSensorFusion                                                                        |
+| 70   | SetSixAxisSensorFusionParameters                                                                 |
+| 71   | GetSixAxisSensorFusionParameters                                                                 |
+| 72   | ResetSixAxisSensorFusionParameters                                                               |
+| 73   | SetAccelerometerParameters                                                                       |
+| 74   | GetAccelerometerParameters                                                                       |
+| 75   | ResetAccelerometerParameters                                                                     |
+| 76   | SetAccelerometerPlayMode                                                                         |
+| 77   | GetAccelerometerPlayMode                                                                         |
+| 78   | ResetAccelerometerPlayMode                                                                       |
+| 79   | SetGyroscopeZeroDriftMode                                                                        |
+| 80   | GetGyroscopeZeroDriftMode                                                                        |
+| 81   | ResetGyroscopeZeroDriftMode                                                                      |
+| 82   | IsSixAxisSensorAtRest                                                                            |
+| 91   | ActivateGesture                                                                                  |
+| 100  | SetSupportedNpadStyleSet                                                                         |
+| 101  | GetSupportedNpadStyleSet                                                                         |
+| 102  | SetSupportedNpadIdType                                                                           |
+| 103  | ActivateNpad                                                                                     |
+| 104  | DeactivateNpad                                                                                   |
+| 106  | AcquireNpadStyleSetUpdateEventHandle                                                             |
+| 107  | DisconnectNpad                                                                                   |
+| 108  | GetPlayerLedPattern                                                                              |
+| 120  | SetNpadJoyHoldType                                                                               |
+| 121  | GetNpadJoyHoldType                                                                               |
+| 122  | [\#SetNpadJoyAssignmentModeSingleByDefault](#SetNpadJoyAssignmentModeSingleByDefault "wikilink") |
+| 123  | [\#SetNpadJoyAssignmentModeSingle](#SetNpadJoyAssignmentModeSingle "wikilink")                   |
+| 124  | [\#SetNpadJoyAssignmentModeDual](#SetNpadJoyAssignmentModeDual "wikilink")                       |
+| 125  | MergeSingleJoyAsDualJoy                                                                          |
+| 126  | StartLrAssignmentMode                                                                            |
+| 127  | StopLrAssignmentMode                                                                             |
+| 128  | SetNpadHandheldActivationMode                                                                    |
+| 129  | [\#GetNpadHandheldActivationMode](#GetNpadHandheldActivationMode "wikilink")                     |
+| 130  | SwapNpadAssignment                                                                               |
+| 131  | IsUnintendedHomeButtonInputProtectionEnabled                                                     |
+| 132  | EnableUnintendedHomeButtonInputProtection                                                        |
+| 200  | GetVibrationDeviceInfo                                                                           |
+| 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
+| 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
+| 203  | CreateActiveVibrationDeviceList                                                                  |
+| 204  | PermitVibration                                                                                  |
+| 205  | IsVibrationPermitted                                                                             |
+| 206  | SendVibrationValues                                                                              |
+| 300  | ActivateConsoleSixAxisSensor                                                                     |
+| 301  | StartConsoleSixAxisSensor                                                                        |
+| 302  | StopConsoleSixAxisSensor                                                                         |
+| 400  | IsUsbFullKeyControllerEnabled                                                                    |
+| 401  | EnableUsbFullKeyController                                                                       |
+| 402  | IsUsbFullKeyControllerConnected                                                                  |
+| 1000 | SetNpadCommunicationMode                                                                         |
+| 1001 | GetNpadCommunicationMode                                                                         |
 
 ## CreateAppletResource
 
 Takes a PID and an u64
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an
 [\#IAppletResource](#IAppletResource "wikilink").
+
+## SetNpadJoyAssignmentModeSingleByDefault
+
+Takes a PID-descriptor, an u32, and an
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
+
+## SetNpadJoyAssignmentModeSingle
+
+Takes a PID-descriptor, an u32,
+[AppletResourceUserId](AM%20services.md "wikilink"), and s64
+**NpadJoyDeviceType**. No output.
 
 ## SetNpadJoyAssignmentModeDual
 
