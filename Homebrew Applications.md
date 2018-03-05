@@ -48,6 +48,7 @@ available.
 | Useless Homebrew | A "useless machine"-like software, ported from DS                        | Tcm0, Rydian (DS) | [Here](https://gbatemp.net/threads/useless-homebrew-for-nintendo-switch.497041/) | Yes                                                        | 2018-03-03   |
 | Space Game NX    | Space game is a graphical shooter game on the Switch ported from Wii U\! | vgmoose           | [Here](https://github.com/vgmoose/spacenx/releases)                              | [Yes](https://github.com/vgmoose/spacenx/)                 | 2018-02-19   |
 | Pixel-Painter    | A simple drawing homebrew                                                | 8BitWonder        | [Here](https://github.com/16BitWonder/Pixel-Painter-Switch/releases)             | [Yes](https://github.com/16BitWonder/Pixel-Painter-Switch) | 2018-02-21   |
+| Hamsters NX      | A breeding of Hamsters game in text mode.                                | Cid2mizard        | [Here](https://github.com/Cid2mizard/Hamsters_NX/releases)                       | [Yes](https://github.com/Cid2mizard/Hamsters_NX)           | 2018-02-28   |
 |                  |                                                                          |                   |                                                                                  |                                                            |              |
 
 ### Emulators

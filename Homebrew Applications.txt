@@ -90,6 +90,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/16BitWonder/Pixel-Painter-Switch Yes]
 | 2018-02-21
 |-
+| Hamsters NX
+| A breeding of Hamsters game in text mode.
+| Cid2mizard
+| [https://github.com/Cid2mizard/Hamsters_NX/releases Here]
+| [https://github.com/Cid2mizard/Hamsters_NX Yes]
+| 2018-02-28
+|-
 |}
 
 === Emulators ===
