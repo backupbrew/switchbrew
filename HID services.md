@@ -57,7 +57,7 @@ This is
 | 122  | [\#SetNpadJoyAssignmentModeSingleByDefault](#SetNpadJoyAssignmentModeSingleByDefault "wikilink") |
 | 123  | [\#SetNpadJoyAssignmentModeSingle](#SetNpadJoyAssignmentModeSingle "wikilink")                   |
 | 124  | [\#SetNpadJoyAssignmentModeDual](#SetNpadJoyAssignmentModeDual "wikilink")                       |
-| 125  | MergeSingleJoyAsDualJoy                                                                          |
+| 125  | [\#MergeSingleJoyAsDualJoy](#MergeSingleJoyAsDualJoy "wikilink")                                 |
 | 126  | StartLrAssignmentMode                                                                            |
 | 127  | StopLrAssignmentMode                                                                             |
 | 128  | SetNpadHandheldActivationMode                                                                    |
@@ -101,6 +101,11 @@ Takes a PID-descriptor, an u32,
 ## SetNpadJoyAssignmentModeDual
 
 Takes a PID-descriptor, an u32, and an
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
+
+## MergeSingleJoyAsDualJoy
+
+Takes a PID-descriptor, two u32s, and an
 [AppletResourceUserId](AM%20services.md "wikilink"). No output.
 
 ## GetNpadHandheldActivationMode

@@ -105,7 +105,7 @@ This is "nn::hid::IHidServer".
 |-
 | 124 || [[#SetNpadJoyAssignmentModeDual]]
 |-
-| 125 || MergeSingleJoyAsDualJoy
+| 125 || [[#MergeSingleJoyAsDualJoy]]
 |-
 | 126 || StartLrAssignmentMode
 |-
@@ -163,6 +163,9 @@ Takes a PID-descriptor, an u32, [[AM_services|AppletResourceUserId]], and s64 ''
 
 == SetNpadJoyAssignmentModeDual ==
 Takes a PID-descriptor, an u32, and an [[AM_services|AppletResourceUserId]]. No output.
+
+== MergeSingleJoyAsDualJoy ==
+Takes a PID-descriptor, two u32s, and an [[AM_services|AppletResourceUserId]]. No output.
 
 == GetNpadHandheldActivationMode ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64. Official user-processes panic if the output u64 is not 0-2.
