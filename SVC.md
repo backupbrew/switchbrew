@@ -33,7 +33,7 @@
 | 0x1B | svcArbitrateUnlock                                                                 | X0=ptr                                                                                                         |                                                          |
 | 0x1C | svcWaitProcessWideKeyAtomic                                                        | X0=ptr0, X1=ptr, W2=thread\_handle, X3=timeout                                                                 | W0=result                                                |
 | 0x1D | svcSignalProcessWideKey                                                            | X0=ptr, W1=value                                                                                               | W0=result                                                |
-| 0x1E | svcGetSystemTick                                                                   | None                                                                                                           | X0={value of cntpct\_el0}                                |
+| 0x1E | [\#svcGetSystemTick](#svcGetSystemTick "wikilink")                                 | None                                                                                                           | X0={value of cntpct\_el0}                                |
 | 0x1F | svcConnectToNamedPort                                                              | X1=port\_name\_str                                                                                             | W0=result, W1=handle                                     |
 | 0x20 | svcSendSyncRequestLight                                                            | W0=light\_session\_handle, X1=?                                                                                | W0=result                                                |
 | 0x21 | svcSendSyncRequest                                                                 | X0=normal\_session\_handle                                                                                     | W0=result                                                |
@@ -495,6 +495,20 @@ invalid. Handle index is not updated.
 
 **0xea01:** Timeout. Returned when no objects have been signalled within
 the timeout. Handle index is not updated.
+
+## svcGetSystemTick
+
+<div style="display: inline-block;">
+
+| Argument | Type | Name  |
+| -------- | ---- | ----- |
+| (Out) X0 | u64  | Ticks |
+
+</div>
+
+Returns the value of cntpct\_el0.
+
+The frequency is 19200000.
 
 ## svcSendSyncRequestWithUserBuffer
 
