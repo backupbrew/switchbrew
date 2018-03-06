@@ -1,3 +1,7 @@
+  - **28 December 17** The 34c3 Switch
+    [talk](https://events.ccc.de/congress/2017/Fahrplan/events/8941.html)
+    took place, video available
+    [here](https://media.ccc.de/v/34c3-8941-console_security_-_switch).
   - **4 December 17** Nintendo released system update
     [4.1.0](4.1.0.md "wikilink").
   - **25 October 17** Nintendo released system update
