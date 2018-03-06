@@ -65,7 +65,7 @@ This is
 | 130  | SwapNpadAssignment                                                                               |
 | 131  | IsUnintendedHomeButtonInputProtectionEnabled                                                     |
 | 132  | EnableUnintendedHomeButtonInputProtection                                                        |
-| 200  | GetVibrationDeviceInfo                                                                           |
+| 200  | [\#GetVibrationDeviceInfo](#GetVibrationDeviceInfo "wikilink")                                   |
 | 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
 | 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
 | 203  | CreateActiveVibrationDeviceList                                                                  |
@@ -114,6 +114,11 @@ Takes a PID and an u64
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an output
 u64. Official user-processes panic if the output u64 is not 0-2.
 
+## GetVibrationDeviceInfo
+
+Takes an u32 VibrationDeviceHandle. Returns an output
+[\#VibrationDeviceInfo](#VibrationDeviceInfo "wikilink").
+
 ## SendVibrationValue
 
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, 0x10-byte
@@ -125,6 +130,10 @@ VibrationValue immediately after that, and an u64
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, and an u64
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns the
 0x10-byte VibrationValue.
+
+## VibrationDeviceInfo
+
+This is a 0x8-byte struct.
 
 ## IAppletResource
 

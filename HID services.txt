@@ -121,7 +121,7 @@ This is "nn::hid::IHidServer".
 |-
 | 132 || EnableUnintendedHomeButtonInputProtection
 |-
-| 200 || GetVibrationDeviceInfo
+| 200 || [[#GetVibrationDeviceInfo]]
 |-
 | 201 || [[#SendVibrationValue]]
 |-
@@ -170,11 +170,17 @@ Takes a PID-descriptor, two u32s, and an [[AM_services|AppletResourceUserId]]. N
 == GetNpadHandheldActivationMode ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64. Official user-processes panic if the output u64 is not 0-2.
 
+== GetVibrationDeviceInfo ==
+Takes an u32 VibrationDeviceHandle. Returns an output [[#VibrationDeviceInfo]].
+
 == SendVibrationValue ==
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, 0x10-byte VibrationValue immediately after that, and an u64 [[AM_services|AppletResourceUserId]].
 
 == GetActualVibrationValue ==
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, and an u64 [[AM_services|AppletResourceUserId]]. Returns the 0x10-byte VibrationValue.
+
+== VibrationDeviceInfo ==
+This is a 0x8-byte struct.
 
 == IAppletResource ==
 
