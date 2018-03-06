@@ -68,7 +68,7 @@ This is
 | 200  | [\#GetVibrationDeviceInfo](#GetVibrationDeviceInfo "wikilink")                                   |
 | 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
 | 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
-| 203  | CreateActiveVibrationDeviceList                                                                  |
+| 203  | [\#CreateActiveVibrationDeviceList](#CreateActiveVibrationDeviceList "wikilink")                 |
 | 204  | [\#PermitVibration](#PermitVibration "wikilink")                                                 |
 | 205  | [\#IsVibrationPermitted](#IsVibrationPermitted "wikilink")                                       |
 | 206  | [\#SendVibrationValues](#SendVibrationValues "wikilink")                                         |
@@ -135,6 +135,11 @@ Takes a PID-descriptor, a
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an output
 [\#VibrationValue](#VibrationValue "wikilink").
 
+## CreateActiveVibrationDeviceList
+
+No input. Returns an
+[\#IActiveVibrationDeviceList](#IActiveVibrationDeviceList "wikilink").
+
 ## PermitVibration
 
 Takes an input u8 bool. No output.
@@ -175,6 +180,20 @@ This is a 0x10-byte struct.
 
 No input. Returned a [sharedmem](HID%20Shared%20Memory.md "wikilink")
 handle.
+
+## IActiveVibrationDeviceList
+
+This is
+"nn::hid::IActiveVibrationDeviceList".
+
+| Cmd | Name                                                             |
+| --- | ---------------------------------------------------------------- |
+| 0   | [\#ActivateVibrationDevice](#ActivateVibrationDevice "wikilink") |
+
+### ActivateVibrationDevice
+
+Takes an input
+[\#VibrationDeviceHandle](#VibrationDeviceHandle "wikilink"). No output.
 
 # hid:dbg
 

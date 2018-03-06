@@ -127,7 +127,7 @@ This is "nn::hid::IHidServer".
 |-
 | 202 || [[#GetActualVibrationValue]]
 |-
-| 203 || CreateActiveVibrationDeviceList
+| 203 || [[#CreateActiveVibrationDeviceList]]
 |-
 | 204 || [[#PermitVibration]]
 |-
@@ -179,6 +179,9 @@ Takes a PID-descriptor, a [[#VibrationDeviceHandle]], a [[#VibrationValue]] imme
 == GetActualVibrationValue ==
 Takes a PID-descriptor, a [[#VibrationDeviceHandle]], and an u64 [[AM_services|AppletResourceUserId]]. Returns an output [[#VibrationValue]].
 
+== CreateActiveVibrationDeviceList ==
+No input. Returns an [[#IActiveVibrationDeviceList]].
+
 == PermitVibration ==
 Takes an input u8 bool. No output.
 
@@ -210,6 +213,19 @@ This is a 0x10-byte struct.
 
 === GetSharedMemoryHandle ===
 No input. Returned a [[HID_Shared_Memory|sharedmem]] handle.
+
+== IActiveVibrationDeviceList ==
+This is "nn::hid::IActiveVibrationDeviceList".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#ActivateVibrationDevice]]
+|}
+
+=== ActivateVibrationDevice ===
+Takes an input [[#VibrationDeviceHandle]]. No output.
 
 = hid:dbg =
 This is "nn::hid::IHidDebugServer".
