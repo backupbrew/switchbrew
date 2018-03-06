@@ -20,6 +20,9 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **2 March 18**
+    [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.1.0)
+    v1.1.0 was released.
   - **28 February 18**
     [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
     v2.0.0 was released.
@@ -28,7 +31,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
   - **18 February 18** [nx-hbl](https://switchbrew.github.io/nx-hbl/)
     and [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu) were
     released.
-  - **28 December 17** The 34c3 Switch
-    [talk](https://events.ccc.de/congress/2017/Fahrplan/events/8941.html)
-    took place, video available
-    [here](https://media.ccc.de/v/34c3-8941-console_security_-_switch).
