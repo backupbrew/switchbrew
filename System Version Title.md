@@ -11,7 +11,7 @@ The FS for the system-version title(TID 0100000000000809) contains
 | 0x5    | 0x3  | Normally all-zero. Padding?                                                                                                                                                                     |
 | 0x8    | 0x20 | Platform string ("NX" with zeros afterwards)                                                                                                                                                    |
 | 0x28   | 0x40 | Hex ASCII string. 0x28-bytes(not including NUL-terminator) normally with zeros afterwards. The value of this string differs from [2.0.0](2.0.0.md "wikilink") and [2.1.0](2.1.0.md "wikilink"). |
-| 0x68   | 0x18 | System-version in string form with zeros afterwards. For example: "2.1.0"                                                                                                                       |
+| 0x68   | 0x18 | System-version in string form with zeros afterwards. For example: "2.1.0". This is what is displayed in System settings.                                                                        |
 | 0x80   | 0x80 | ASCII string with zeros / padding afterwards. For example: "NintendoSDK Firmware for NX 2.0.0-15"                                                                                               |
 
 ## Known Versions
