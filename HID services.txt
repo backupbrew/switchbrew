@@ -133,7 +133,7 @@ This is "nn::hid::IHidServer".
 |-
 | 205 || [[#IsVibrationPermitted]]
 |-
-| 206 || SendVibrationValues
+| 206 || [[#SendVibrationValues]]
 |-
 | 300 || ActivateConsoleSixAxisSensor
 |-
@@ -171,13 +171,13 @@ Takes a PID-descriptor, two u32s, and an [[AM_services|AppletResourceUserId]]. N
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an output u64. Official user-processes panic if the output u64 is not 0-2.
 
 == GetVibrationDeviceInfo ==
-Takes an u32 VibrationDeviceHandle. Returns an output [[#VibrationDeviceInfo]].
+Takes a [[#VibrationDeviceHandle]]. Returns an output [[#VibrationDeviceInfo]].
 
 == SendVibrationValue ==
-Takes a PID-descriptor, an u32 VibrationDeviceHandle, 0x10-byte VibrationValue immediately after that, and an u64 [[AM_services|AppletResourceUserId]].
+Takes a PID-descriptor, a [[#VibrationDeviceHandle]], a [[#VibrationValue]] immediately after that, and an u64 [[AM_services|AppletResourceUserId]]. No output.
 
 == GetActualVibrationValue ==
-Takes a PID-descriptor, an u32 VibrationDeviceHandle, and an u64 [[AM_services|AppletResourceUserId]]. Returns the 0x10-byte VibrationValue.
+Takes a PID-descriptor, a [[#VibrationDeviceHandle]], and an u64 [[AM_services|AppletResourceUserId]]. Returns an output [[#VibrationValue]].
 
 == PermitVibration ==
 Takes an input u8 bool. No output.
@@ -185,8 +185,19 @@ Takes an input u8 bool. No output.
 == IsVibrationPermitted ==
 No input. Returns an output u8 bool.
 
+== SendVibrationValues ==
+Takes an u64 [[AM_services|AppletResourceUserId]], and two type-0x9 input buffers containing an array of: [[#VibrationDeviceHandle]] for first buffer, and [[#VibrationValue]] for the second buffer.
+
+Official sw uses the same entry-count for each array.
+
+== VibrationDeviceHandle ==
+This is an u32.
+
 == VibrationDeviceInfo ==
 This is a 0x8-byte struct.
+
+== VibrationValue ==
+This is a 0x10-byte struct.
 
 == IAppletResource ==
 

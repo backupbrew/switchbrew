@@ -71,7 +71,7 @@ This is
 | 203  | CreateActiveVibrationDeviceList                                                                  |
 | 204  | [\#PermitVibration](#PermitVibration "wikilink")                                                 |
 | 205  | [\#IsVibrationPermitted](#IsVibrationPermitted "wikilink")                                       |
-| 206  | SendVibrationValues                                                                              |
+| 206  | [\#SendVibrationValues](#SendVibrationValues "wikilink")                                         |
 | 300  | ActivateConsoleSixAxisSensor                                                                     |
 | 301  | StartConsoleSixAxisSensor                                                                        |
 | 302  | StopConsoleSixAxisSensor                                                                         |
@@ -116,20 +116,24 @@ u64. Official user-processes panic if the output u64 is not 0-2.
 
 ## GetVibrationDeviceInfo
 
-Takes an u32 VibrationDeviceHandle. Returns an output
+Takes a [\#VibrationDeviceHandle](#VibrationDeviceHandle "wikilink").
+Returns an output
 [\#VibrationDeviceInfo](#VibrationDeviceInfo "wikilink").
 
 ## SendVibrationValue
 
-Takes a PID-descriptor, an u32 VibrationDeviceHandle, 0x10-byte
-VibrationValue immediately after that, and an u64
-[AppletResourceUserId](AM%20services.md "wikilink").
+Takes a PID-descriptor, a
+[\#VibrationDeviceHandle](#VibrationDeviceHandle "wikilink"), a
+[\#VibrationValue](#VibrationValue "wikilink") immediately after that,
+and an u64 [AppletResourceUserId](AM%20services.md "wikilink"). No
+output.
 
 ## GetActualVibrationValue
 
-Takes a PID-descriptor, an u32 VibrationDeviceHandle, and an u64
-[AppletResourceUserId](AM%20services.md "wikilink"). Returns the
-0x10-byte VibrationValue.
+Takes a PID-descriptor, a
+[\#VibrationDeviceHandle](#VibrationDeviceHandle "wikilink"), and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"). Returns an output
+[\#VibrationValue](#VibrationValue "wikilink").
 
 ## PermitVibration
 
@@ -139,9 +143,27 @@ Takes an input u8 bool. No output.
 
 No input. Returns an output u8 bool.
 
+## SendVibrationValues
+
+Takes an u64 [AppletResourceUserId](AM%20services.md "wikilink"), and
+two type-0x9 input buffers containing an array of:
+[\#VibrationDeviceHandle](#VibrationDeviceHandle "wikilink") for first
+buffer, and [\#VibrationValue](#VibrationValue "wikilink") for the
+second buffer.
+
+Official sw uses the same entry-count for each array.
+
+## VibrationDeviceHandle
+
+This is an u32.
+
 ## VibrationDeviceInfo
 
 This is a 0x8-byte struct.
+
+## VibrationValue
+
+This is a 0x10-byte struct.
 
 ## IAppletResource
 
