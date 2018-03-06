@@ -69,8 +69,8 @@ This is
 | 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
 | 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
 | 203  | CreateActiveVibrationDeviceList                                                                  |
-| 204  | PermitVibration                                                                                  |
-| 205  | IsVibrationPermitted                                                                             |
+| 204  | [\#PermitVibration](#PermitVibration "wikilink")                                                 |
+| 205  | [\#IsVibrationPermitted](#IsVibrationPermitted "wikilink")                                       |
 | 206  | SendVibrationValues                                                                              |
 | 300  | ActivateConsoleSixAxisSensor                                                                     |
 | 301  | StartConsoleSixAxisSensor                                                                        |
@@ -130,6 +130,14 @@ VibrationValue immediately after that, and an u64
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, and an u64
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns the
 0x10-byte VibrationValue.
+
+## PermitVibration
+
+Takes an input u8 bool. No output.
+
+## IsVibrationPermitted
+
+No input. Returns an output u8 bool.
 
 ## VibrationDeviceInfo
 

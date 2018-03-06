@@ -129,9 +129,9 @@ This is "nn::hid::IHidServer".
 |-
 | 203 || CreateActiveVibrationDeviceList
 |-
-| 204 || PermitVibration
+| 204 || [[#PermitVibration]]
 |-
-| 205 || IsVibrationPermitted
+| 205 || [[#IsVibrationPermitted]]
 |-
 | 206 || SendVibrationValues
 |-
@@ -178,6 +178,12 @@ Takes a PID-descriptor, an u32 VibrationDeviceHandle, 0x10-byte VibrationValue i
 
 == GetActualVibrationValue ==
 Takes a PID-descriptor, an u32 VibrationDeviceHandle, and an u64 [[AM_services|AppletResourceUserId]]. Returns the 0x10-byte VibrationValue.
+
+== PermitVibration ==
+Takes an input u8 bool. No output.
+
+== IsVibrationPermitted ==
+No input. Returns an output u8 bool.
 
 == VibrationDeviceInfo ==
 This is a 0x8-byte struct.
