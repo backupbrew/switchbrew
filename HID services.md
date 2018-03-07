@@ -144,6 +144,8 @@ No input. Returns an
 
 Takes an input u8 bool. No output.
 
+This affects the config displayed by System Settings.
+
 ## IsVibrationPermitted
 
 No input. Returns an output u8 bool.
