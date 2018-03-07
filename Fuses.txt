@@ -419,6 +419,11 @@ Stores the bootrom patch version.
 | 9
 | Unit type mask (0 = debug; 1 = retail)
 |-
+| 10
+| [4.0.0+] Unknown, returned by smcGetConfig(14)
+|-
+| 16-19
+| [4.0.0+] Unknown config (hardware-type-related)
 |}
 
 This stores some device configuration parameters.
