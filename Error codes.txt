@@ -435,6 +435,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x55B || 347 || 2 || Failed to init FS.
 |-
+| 0x75B || 347 || 3 || Failed to to open NRO file. May also happen when SD card isn't inserted / SD mounting failed earlier.
+|-
 | 0x95B || 347 || 4 || Failed to read NRO header.
 |-
 | 0xB5B || 347 || 5 || Invalid NRO magic.
@@ -444,6 +446,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 0xF5B || 347 || 7 || Failed to read NRO.
 |-
 | 0x135B || 347 || 9 || Failed to allocate heap.
+|-
+| 0x255B || 347 || 18 || Failed to map code-binary memory.
 |-
 | 0x275B || 347 || 19 || Failed to map code memory (.text).
 |-
