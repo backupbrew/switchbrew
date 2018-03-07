@@ -170,7 +170,7 @@ This is a 0x8-byte struct.
 
 ## VibrationValue
 
-This is a 0x10-byte struct.
+This is a 0x10-byte struct, which contains 4 float values.
 
 ## IAppletResource
 
