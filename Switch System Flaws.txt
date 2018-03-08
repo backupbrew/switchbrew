@@ -272,4 +272,13 @@ This is not useful since the string loaded from this array is only involved with
 | ~July 2017
 | 20 July 2017‎
 | [[User:hthh|hthh]]
+|-
+| expLDR (sysmodule handle table exhaustion)
+| Due to limited handle table space, it's possible to cause most sysmodules to abort by sending a number of DuplicateSession control commands (type 5 command 2) to a given service.  Once it runs out of handles, it kills the service and releases all handles cleanly.
+| Sysmodule crashes.  Most usefully, crashing ldr allows access to fsp-ldr and crashing pm allows access to fsp-pr.
+| Unfixed
+| 4.1.0
+| 24 June 2017
+| 8 March 2018
+| [[User:daeken|daeken]]
 |}
