@@ -224,7 +224,7 @@ This was fixed in [[4.0.0]] by splitting spl: into spl:, spl:mig, spl:ssl, spl:e
 | Several "critical" services (like fsp-ldr, fsp-pr, sm:m, etc) are meant to only ever hold a single session with a specific sysmodule. However, when a sysmodule dies, all its service session handles are released -- and thus killing the holder of a single session handle would allow one (via sm:hax etc) to get access to that service. 
 
 This was fixed in [[4.0.0]] by adding a semaphore to these critical single-session services, so that even if one gets access to them an error code will be returned when attempting to use any of their commands.
-| With some way to access these services and kill their session holders: dumping sysmodule code, arbitrary service access, elevated filesystem permissions, etc.
+| With some way to access these services and kill their session holders (like expLDR): dumping sysmodule code, arbitrary service access, elevated filesystem permissions, etc.
 | [[4.0.0]]
 | [[4.0.0]]
 | May/June 2017 (basically immediately after smhax was discovered)
@@ -274,8 +274,8 @@ This is not useful since the string loaded from this array is only involved with
 | [[User:hthh|hthh]]
 |-
 | expLDR (sysmodule handle table exhaustion)
-| Due to limited handle table space, it's possible to cause most sysmodules to abort by sending a number of DuplicateSession control commands (type 5 command 2) to a given service.  Once it runs out of handles, it kills the service and releases all handles cleanly.
-| Sysmodule crashes.  Most usefully, crashing ldr allows access to fsp-ldr and crashing pm allows access to fsp-pr.
+| Most sysmodules share common template code to handle IPC control messages. The command DuplicateSession (type 5 command 2)'s template code will abort() if it fails to duplicate a session's handle for the requester. Because many sysmodules have limited handle table size (smaller than the browser/other entrypoints), repeatedly requesting to duplicate one's session will cause the sysmodule to run out of handle table space and abort, causing the service to release all its handles cleanly.
+| Sysmodule crashes.  Most usefully, crashing ldr allows access to fsp-ldr and crashing pm allows access to fsp-pr. Useless after [[4.0.0]], which mitigated a number of single-session service access issues.
 | Unfixed
 | 4.1.0
 | 24 June 2017
