@@ -127,7 +127,7 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>bsd:u, bsd:s, bsdcfg, ethc:c, ethc:i, nsd:u, nsd:a, sfdnsres</p></td>
-<td><p><a href="Sockets services.md" title="wikilink">Sockets services</a>, <a href="NSD services.md" title="wikilink">NSD services</a></p></td>
+<td><p><a href="Sockets services.md" title="wikilink">Sockets services</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">

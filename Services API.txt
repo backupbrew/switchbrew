@@ -102,7 +102,7 @@ Takes a pid.
 |
 |-
 | bsd:u, bsd:s, bsdcfg, ethc:c, ethc:i, nsd:u, nsd:a, sfdnsres
-| [[Sockets services]], [[NSD services]]
+| [[Sockets services]]
 |
 |-
 | btdrv
