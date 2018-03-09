@@ -1,4 +1,4 @@
-= bsd:u / bsd:s =
+= bsd:u, bsd:s =
 This is "nn::socket::sf::IClient".
 
 All the services commands but the first two return -1 on failure and set errno when that happens. Although Nintendo has the FreeBSD kernel's to socket stack, '''the errno macro definitions being in use actually come from Linux (and not from FreeBSD as one would expect!)'''.
@@ -71,11 +71,9 @@ All the services commands but the first two return -1 on failure and set errno w
 |}
 
 == Initalize ==
-
 Takes a [[#BsdBufferConfig]] (made-up name), the PID, the size of the transfer memory and a copy-handle of the latter.
 
 === BsdBufferConfig ===
-
  /// Configuration structure for bsdInitalize
  typedef struct  {
      u32 version;                ///< Observed 1 on 2.0 LibAppletWeb, 2 on 3.0.
@@ -116,7 +114,6 @@ SocketExempt: same as socket but the socket is immediately shutdown (disconnecte
 FreeBSD's <code>open</code> command, limited to opening <code>/dev/bpf</code>. This can be used, for example, to enable promiscuous mode, see FreeBSD's <code>/dev/bpf</code> for more details.
 
 == Sysctl ==
-
 FreeBSD's <code>sysctl</code> command. Privileged operations are reserved for <code>bsd:s</code>.
 <code>CTL_NET</code>, <code>CTL_VM</code>, <code>CTL_KERN</code> and <code>CTL_DEBUG</code> commands are implemented (?).
 
@@ -170,11 +167,9 @@ This service uses <code>bionic/libc/dns</code> to perform its tasks.
 |}
 
 == GetAddrInfo ==
-
 Takes three type 5 buffers (host, port, and hints), and a type 6 buffer (the output addrinfos). Also takes a u8 (padded to 4 bytes so the next raw parameter can align), a u32, and a u64. The u8 is a boolean for whether to enable "nsd resolve" (1) or not (0). Not sure what the u32 is. It seems to either come from a parameter to <tt>GetAddrInfo</tt> or be zero. The u64 is most likely a placeholder for the server to copy the PID into and should be zero. Both hints and the output buffer contain serialized addrinfo chains. The hints buffer is sized 0x400 bytes long by default, and the output buffer 0x1000 bytes.
 
 === Addrinfo Serialization Format ===
-
 Each struct addrinfo in the linked list is serialized according to this format and then written to the buffer. All numbers are in network byte order.
 
 {| class="wikitable" border="1"
@@ -216,7 +211,7 @@ This function clears <code>nn::socket::resolver::g_DnsIpServerAddressArray</code
 
 Takes no arguments, doesn't return anything, never fails.
 
-= nsd:u / nsd:a =
+= nsd:u, nsd:a =
 This is "nn::nsd::detail::IManager".
 
 {| class="wikitable" border="1"
@@ -225,7 +220,7 @@ This is "nn::nsd::detail::IManager".
 |-
 | 10 || GetSettingName
 |-
-| 11 || GetEnvironmentIdentifier
+| 11 || [[#GetEnvironmentIdentifier]]
 |-
 | 12 || GetDeviceId
 |-
@@ -258,6 +253,13 @@ This is "nn::nsd::detail::IManager".
 | 62 || [[#DeleteSaveDataOfFsForTest]]
 |}
 
+== GetEnvironmentIdentifier ==
+Takes a type-0x16 buffer with size 8. Returns a string.
+
+The output string is used by [[NIM_services|NIM]] for the "eid:%s" in the User-Agent strings.
+
+This is the "lp1" string also used in domains.
+
 == ReadSaveDataFromFsForTest ==
 Requires the <code>nsd!test_mode</code> setting to be equal to 1.
 
@@ -272,3 +274,5 @@ Mounts the system save data for bsdsockets as <code>nsdsave</code> and writes to
 Requires the <code>nsd!test_mode</code> setting to be equal to 1.
 
 Deletes the system save data for bsdsockets.
+
+[[Category:Services]]

@@ -1,4 +1,4 @@
-# bsd:u / bsd:s
+# bsd:u, bsd:s
 
 This is "nn::socket::sf::IClient".
 
@@ -202,7 +202,7 @@ by `bsdconfig`, a privileged service handling DHCP and such.
 
 Takes no arguments, doesn't return anything, never fails.
 
-# nsd:u / nsd:a
+# nsd:u, nsd:a
 
 This is
 "nn::nsd::detail::IManager".
@@ -210,7 +210,7 @@ This is
 | Cmd | Name                                                                 |
 | --- | -------------------------------------------------------------------- |
 | 10  | GetSettingName                                                       |
-| 11  | GetEnvironmentIdentifier                                             |
+| 11  | [\#GetEnvironmentIdentifier](#GetEnvironmentIdentifier "wikilink")   |
 | 12  | GetDeviceId                                                          |
 | 13  | DeleteSettings                                                       |
 | 14  | ImportSettings                                                       |
@@ -226,6 +226,15 @@ This is
 | 60  | [\#ReadSaveDataFromFsForTest](#ReadSaveDataFromFsForTest "wikilink") |
 | 61  | [\#WriteSaveDataToFsForTest](#WriteSaveDataToFsForTest "wikilink")   |
 | 62  | [\#DeleteSaveDataOfFsForTest](#DeleteSaveDataOfFsForTest "wikilink") |
+
+## GetEnvironmentIdentifier
+
+Takes a type-0x16 buffer with size 8. Returns a string.
+
+The output string is used by [NIM](NIM%20services.md "wikilink") for the
+"eid:%s" in the User-Agent strings.
+
+This is the "lp1" string also used in domains.
 
 ## ReadSaveDataFromFsForTest
 
@@ -249,3 +258,5 @@ commited and unmounted.
 Requires the `nsd!test_mode` setting to be equal to 1.
 
 Deletes the system save data for bsdsockets.
+
+[Category:Services](Category:Services "wikilink")
