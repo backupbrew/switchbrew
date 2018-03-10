@@ -564,6 +564,8 @@ set.
 Map a memory region in the device address space. Identical to Linux
 driver pretty much.
 
+Unaligned size will cause a white-screen hang.
+
 On success, the mapped memory region is locked by having
 [SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
 set.
