@@ -1024,7 +1024,7 @@ Exclusive to the Switch.
 Despite being marked as inout this is all output.
 
 ` struct {`  
-`   __out u64 timestamp;    // nanoseconds since Jan. 1, 1970`  
+`   __out u64 timestamp;    // fetched straight from armGetSystemTick`  
 `   __out u32 info32;       // error code`  
 `   __out u16 info16;       // additional error info`  
 `   __out u16 status;       // always 0xFFFF`  
