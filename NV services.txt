@@ -910,7 +910,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC0??000A || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_BUFFER || Seen on 1.0.0.
 |-
-| 0x00000013 || 0 || || Seen. This one sets a u32, and bool based on input.
+| 0x00000013 || 0 || || Seen on 1.0.0. This one sets a u32, and bool based on input.
 |-
 | 0xC0080014 || || NVHOST_IOCTL_CHANNEL_SET_CLK_RATE || Seen on 1.0.0.
 |- style="border-top: double"
