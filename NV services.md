@@ -65,9 +65,9 @@ and a copy-handle (**event\_handle**).
 QueryEvent is only supported on (and implemented differently on):
 
   - /dev/nvhost-gpu
-      - 1: Unknown
-      - 2: Unknown
-      - 3: Unknown
+      - 1: SmException\_BptIntReport
+      - 2: SmException\_BptPauseReport
+      - 3: ErrorNotifierEvent
   - /dev/nvhost-ctrl: Used to get events for SyncPts.
       - If bit31-28 is 1, then lower 16-bits contain event\_slot,
         bit27-16 contain syncpt\_number.
@@ -77,7 +77,7 @@ QueryEvent is only supported on (and implemented differently on):
       - 1: Returns error\_event\_handle.
       - 2: Returns unknown event.
   - /dev/nvhost-dbg-gpu
-      - Ignored event-id.
+      - Ignores event\_id.
 
 ## MapSharedMem
 

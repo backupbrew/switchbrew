@@ -65,9 +65,9 @@ Takes two input u32s ('''fd''' and '''event_id'''), with the second word immedia
 
 QueryEvent is only supported on (and implemented differently on):
 * /dev/nvhost-gpu
-** 1: Unknown
-** 2: Unknown
-** 3: Unknown
+** 1: SmException_BptIntReport
+** 2: SmException_BptPauseReport
+** 3: ErrorNotifierEvent
 * /dev/nvhost-ctrl: Used to get events for SyncPts.
 ** If bit31-28 is 1, then lower 16-bits contain event_slot, bit27-16 contain syncpt_number. 
 ** If bit31-28 is 0, then lower 4-bits contain event_slot, bit31-4 contains syncpt_number.
@@ -75,7 +75,7 @@ QueryEvent is only supported on (and implemented differently on):
 ** 1: Returns error_event_handle.
 ** 2: Returns unknown event.
 * /dev/nvhost-dbg-gpu
-** Ignored event-id.
+** Ignores event_id.
 
 == MapSharedMem ==
 Takes a copy-handle ('''transfer_memory''') and two input u32s ('''fd''' and '''nvmap_handle'''). Returns an output u32 ('''error_code''').
