@@ -65,7 +65,9 @@ Takes two input u32s ('''fd''' and '''event_id'''), with the second word immedia
 
 QueryEvent is only supported on (and implemented differently on):
 * /dev/nvhost-gpu
-** Unknown
+** 1: Unknown
+** 2: Unknown
+** 3: Unknown
 * /dev/nvhost-ctrl: Used to get events for SyncPts.
 ** If bit31-28 is 1, then lower 16-bits contain event_slot, bit27-16 contain syncpt_number. 
 ** If bit31-28 is 0, then lower 4-bits contain event_slot, bit31-4 contains syncpt_number.

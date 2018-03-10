@@ -65,7 +65,9 @@ and a copy-handle (**event\_handle**).
 QueryEvent is only supported on (and implemented differently on):
 
   - /dev/nvhost-gpu
-      - Unknown
+      - 1: Unknown
+      - 2: Unknown
+      - 3: Unknown
   - /dev/nvhost-ctrl: Used to get events for SyncPts.
       - If bit31-28 is 1, then lower 16-bits contain event\_slot,
         bit27-16 contain syncpt\_number.
