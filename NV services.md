@@ -1018,11 +1018,13 @@ Controls event notifications.
 Returns the current error notification caught by the error notifier.
 Exclusive to the Switch.
 
+Despite being marked as inout this is all output.
+
 ` struct {`  
-`   __out   u64 timestamp;    // nanoseconds since Jan. 1, 1970`  
-`   __out   u32 info32;       // error code`  
-`   __out   u16 info16;       // additional error info`  
-`   __inout u16 status;       // always 0xFFFF`  
+`   __out u64 timestamp;    // nanoseconds since Jan. 1, 1970`  
+`   __out u32 info32;       // error code`  
+`   __out u16 info16;       // additional error info`  
+`   __out u16 status;       // always 0xFFFF`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY
