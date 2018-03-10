@@ -1073,7 +1073,7 @@ Controls event notifications.
 
   struct {
     __in u32 cmd;    // 0=disable, 1=enable, 2=clear
-    __in u32 id;
+    __in u32 id;     // same id's as for [[#QueryEvent]]
   };
 
 === NVGPU_IOCTL_CHANNEL_GET_ERROR_NOTIFICATION ===

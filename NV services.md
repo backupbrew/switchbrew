@@ -1009,11 +1009,12 @@ Forces the channel to reset. Identical to Linux driver.
 
 ### NVGPU\_IOCTL\_CHANNEL\_EVENT\_ID\_CONTROL
 
-Controls event notifications.
+Controls event
+notifications.
 
 ` struct {`  
 `   __in u32 cmd;    // 0=disable, 1=enable, 2=clear`  
-`   __in u32 id;`  
+`   __in u32 id;     // same id's as for `[`#QueryEvent`](#QueryEvent "wikilink")  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_GET\_ERROR\_NOTIFICATION
