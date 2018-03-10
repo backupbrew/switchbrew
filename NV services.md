@@ -62,6 +62,13 @@ Takes two input u32s (**fd** and **event\_id**), with the second word
 immediately after the first one. Returns an output u32 (**error\_code**)
 and a copy-handle (**event\_handle**).
 
+QueryEvent is only supported on (and implemented differently on):
+
+  - /dev/nvhost-gpu
+  - /dev/nvhost-ctrl
+  - /dev/nvhost-ctrl-gpu
+  - /dev/nvhost-dbg-gpu
+
 ## MapSharedMem
 
 Takes a copy-handle (**transfer\_memory**) and two input u32s (**fd**

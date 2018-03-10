@@ -63,6 +63,12 @@ Webkit applet creates the transfer-memory with perm = 0 and size 0x300000.
 == QueryEvent ==
 Takes two input u32s ('''fd''' and '''event_id'''), with the second word immediately after the first one. Returns an output u32 ('''error_code''') and a copy-handle ('''event_handle''').
 
+QueryEvent is only supported on (and implemented differently on):
+* /dev/nvhost-gpu
+* /dev/nvhost-ctrl
+* /dev/nvhost-ctrl-gpu
+* /dev/nvhost-dbg-gpu
+
 == MapSharedMem ==
 Takes a copy-handle ('''transfer_memory''') and two input u32s ('''fd''' and '''nvmap_handle'''). Returns an output u32 ('''error_code''').
 
