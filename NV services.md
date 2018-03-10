@@ -970,13 +970,14 @@ driver.
 Initializes the error notifier for this channel. Unlike for the Linux
 kernel, the Switch driver cannot write to an arbitrary userspace buffer.
 Thus new ioctls have been introduced to fetch the error information
-rather than using a shared memory buffer.
+rather than using a shared memory
+buffer.
 
 ` struct {`  
-`   __in u64 offset;`  
-`   __in u64 size;`  
-`   __in u32 mem;       // not used?`  
-`   __in u32 padding;`  
+`   __in u64 offset;  // ignored`  
+`   __in u64 size;    // ignored`  
+`   __in u32 mem;     // must be non-zero to initialize, zero to de-initialize`  
+`   __in u32 padding; // ignored`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY
