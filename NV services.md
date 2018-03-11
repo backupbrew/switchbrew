@@ -935,11 +935,11 @@ pointer.
 ` };`  
 ` `  
 ` struct {`  
-`   __in u64 gpfifo;                      // (ignored) pointer to gpfifo fence structs`  
-`   __in u32 num_entries;                 // number of fence objects being submitted`  
-`   __in u32 flags;`  
-`   __out struct fence fence_out;         // returned new fence object for others to wait on`  
-`   __in  struct gpfifo_entry entries[];  // depends on num_entries`  
+`   __in    u64 gpfifo;                      // (ignored) pointer to gpfifo fence structs`  
+`   __in    u32 num_entries;                 // number of fence objects being submitted`  
+`   __in    u32 flags;`  
+`   __inout struct fence fence_out;         // returned new fence object for others to wait on`  
+`   __in    struct gpfifo_entry entries[];  // depends on num_entries`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_OBJ\_CTX
