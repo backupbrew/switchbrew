@@ -931,7 +931,7 @@ pointer.
 ` };`  
 ` `  
 ` struct gpfifo_entry {`  
-`   u64 entry;                            // gpu_iova | (unk_0x02 << 0x08) | (size << 0x0A) | (unk_0x01 << 0x1F)`  
+`   u64 entry;                            // gpu_iova | (unk_2bits << 40) | (size << 42) | (unk_flag << 63)`  
 ` };`  
 ` `  
 ` struct {`  
