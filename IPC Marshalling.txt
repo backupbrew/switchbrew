@@ -4,7 +4,7 @@ This is an array of u32's, usually located in [[Thread Local Storage]].
 {| class="wikitable" border="1"
 ! Word || Bits || Description
 |-
-| 0 || 15-0 || Type. 4=Request, 5=Control
+| 0 || 15-0 || Type. 0=?, 1=?, 2=Close, 3=? 4=Request, 5=Control
 |-
 | 0 || 19-16 || Number of buf X descriptors (each: 2 words).
 |-
