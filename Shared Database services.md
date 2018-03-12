@@ -47,7 +47,7 @@ User-processes map this SharedMemory with size=0x1100000 and
 permissions=R--.
 
 Font data is TTF, located at the offset returned by
-\#GetSharedMemoryAddressOffset.
+[\#GetSharedMemoryAddressOffset](#GetSharedMemoryAddressOffset "wikilink").
 
 ## GetSharedFontInOrderOfPriority
 
