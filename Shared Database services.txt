@@ -51,6 +51,8 @@ No input, returns an output SharedMemory handle.
 
 User-processes map this SharedMemory with size=0x1100000 and permissions=R--.
 
+Font data is TTF, located at the offset returned by #GetSharedMemoryAddressOffset.
+
 == GetSharedFontInOrderOfPriority ==
 Takes an input u64 [[Settings_services#LanguageCode|LanguageCode]] and 3 type-0x6 output buffers, returns an output u8 and u32.
 
