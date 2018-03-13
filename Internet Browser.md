@@ -34,7 +34,7 @@ NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>"
 | WebApplet            | General web-applet for use by applications(online manuals, ...).                    | Displays an error dialog without an option to ignore it. | Yes            | 010000000000100A |       |
 | ShopN                | Actual eShop client                                                                 | Just displays an error-code.                             | Yes            | 010000000000100B |       |
 | WebApplet            | Offline HTML display                                                                |                                                          |                | 010000000000100F |       |
-| LoginApplet          | Nintendo Account linking                                                            | Just displays an error-code.                             | Yes            | 0100000000001010 |       |
+| LoginApplet          | Nintendo Account linking, and for linking Facebook and Twitter to suggest friends   | Just displays an error-code.                             | Yes            | 0100000000001010 |       |
 | ShareApplet          | Posting screenshots to social media, and (optionally) linking social media accounts | Just displays an error-code.                             | Yes            | 0100000000001010 |       |
 | LobbyApplet          | Related to online-multiplayer lobbies                                               | Just displays an error-code.                             | Yes            | 0100000000001010 |       |
 | WifiWebAuthApplet    | Captive-portal                                                                      | Displays an error dialog with an option to ignore it.    | No             | 0100000000001011 |       |

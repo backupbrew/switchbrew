@@ -59,7 +59,7 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 | 
 |-
 | LoginApplet
-| Nintendo Account linking
+| Nintendo Account linking, and for linking Facebook and Twitter to suggest friends
 | Just displays an error-code.
 | Yes
 | 0100000000001010
