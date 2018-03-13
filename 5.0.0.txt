@@ -58,6 +58,8 @@ In addition, there were changes to the SMC interface:
 
 ==Kernel==
 * Kernel Address Space Layout Randomization was added.
+** Instead of using a hardcoded address for per-CPU region, they now use x18 to point to the per-CPU region.
+* 6 new syscalls
 
 ==Keys==
 [[Flash_Filesystem|Keyblob]] 5 is now used, instead of 4. New NCA keydata is now used as well.
