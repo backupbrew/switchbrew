@@ -33,7 +33,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ===FIRM===
 Everything under RomFS was updated.
 
-A new folder "a" was added, in addition to the existing "nx" folder, containing a separate "bct" and "package1". These seem encrypted/meant for the new "Mariko" hardware that support was added for.
+A new folder "a" was added, in addition to the existing "nx" folder, containing a separate "bct" and "package1". Both of these seem encrypted/meant for the new "Mariko" hardware that support was added for.
 
 The following firm-sysmodules was added to both safemode-firm, which were originally in separate sysmodule-titles: [[Bus_services|Bus]], [[PCV_services|PCV]], and [[PSC_services|psc]].
 
