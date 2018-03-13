@@ -63,7 +63,7 @@ In addition, there were changes to the [[SMC]] interface:
 ====Kernel====
 * Kernel Address Space Layout Randomization was added.
 ** Instead of using a hardcoded address for per-CPU region, they now use x18 to point to the per-CPU region.
-* 5 new syscalls
+* 5 new syscalls. SVCs 0x48/0x49 are accessible by [[AM_services|AM]]-sysmodule.
 
 ===[[Internet Browser]]===
 OSS/WebKit was updated.
