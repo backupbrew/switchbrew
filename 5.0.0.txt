@@ -70,6 +70,8 @@ OSS/WebKit was updated.
 
 In the [[NPDM]], besides the RSA region the only changes were the kernel-release-version descriptor + {new ACID flag is set}.
 
+In the "shareddata:/" title, the NROs are now compressed: "{name}.nro.lz4" instead of "{name}.nro".
+
 ===[[qlaunch]]===
 RomFS changes:
 * "/common/shader/VarietyOceanShader_Nx.arc.szs" updated
