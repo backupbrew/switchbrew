@@ -85,7 +85,8 @@ In addition, there were changes to the [[SMC]] interface:
 * Kernel Address Space Layout Randomization was added.
 ** Instead of using a hardcoded address for per-CPU region, they now use x18 to point to the per-CPU region.
 * 5 new syscalls.
-** Syscalls 0x48/0x49 are used by [[AM_services|AM]]-sysmodule.
+** Syscalls 0x48+0x49 are used by [[AM_services|AM]]-sysmodule.
+** Syscalls 0x4A+0x6F are used by [[Process_Manager_services|PM]]-sysmodule.
 ** Syscall 0x6F is used by FS.
 * NPDM irq_id's are no longer checked to be < 0x100, instead max-value is loaded from per-cpu state.
 * The order slabheaps are laid out in memory is now randomized.
