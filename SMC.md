@@ -43,6 +43,7 @@ Functions exposed to user-mode processes using
 | \[1.0.0-4.1.0\] 0xC300100C | [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink")                             |    |     |
 | \[5.0.0+\] 0xC300D60C      | [\#EncryptRsaKeyForImport](#EncryptRsaKeyForImport "wikilink")             |    |     |
 | \[1.0.0-4.1.0\] 0xC300100D | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")                 |    |     |
+| \[5.0.0\] 0xC300100D       | [\#DecryptOrImportRsaKey](#DecryptOrImportRsaKey "wikilink")               |    |     |
 | \[1.0.0-4.1.0\] 0xC300100E | [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink")                   |    |     |
 | 0xC300060F                 | [\#SecureExpMod](#SecureExpMod "wikilink")                                 |    |     |
 | 0xC3000610                 | [\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink") |    |     |
@@ -119,7 +120,7 @@ Decrypts and validates the wrapped RSA private key with the first
 kek/wrapped key, and re-encrypts it with the second if valid.
 
 The re-encrypted key is then passed to the user, for use with
-[\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink").
+[\#DecryptOrImportRsaKey](#DecryptOrImportRsaKey "wikilink").
 
 ### DecryptRsaPrivateKey
 
@@ -133,9 +134,15 @@ The session kek must have been created with CryptoUsecase\_RsaPrivate.
 SMC\_ID==0xC300100D now returns error 0x6 instead of calling the handler
 funcptr.
 
-\[5.0.0+\] This SMC was extended to import private keys into the
-security engine instead of decrypting them, when certain enum members
-are passed.
+### DecryptOrImportRsaKey
+
+This function replaced
+[\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink") in
+[5.0.0](5.0.0.md "wikilink"), adding an additional enum member argument.
+
+This SMC extends DecryptRsaPrivateKey's original functionality to enable
+importing private keys into the security engine instead of decrypting
+them, when certain enum members are passed.
 
 ### LoadSecureExpModKey
 

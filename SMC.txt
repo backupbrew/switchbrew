@@ -57,6 +57,8 @@ Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
 |-
 | [1.0.0-4.1.0] 0xC300100D || [[#DecryptRsaPrivateKey]] || ||
 |-
+| [5.0.0] 0xC300100D || [[#DecryptOrImportRsaKey]] || ||
+|-
 | [1.0.0-4.1.0] 0xC300100E || [[#LoadSecureExpModKey]] || ||
 |-
 | 0xC300060F || [[#SecureExpMod]] || ||
@@ -111,7 +113,7 @@ Takes in two session keks created with [[#GenerateAesKek]], two wrapped AES keys
 
 Decrypts and validates the wrapped RSA private key with the first kek/wrapped key, and re-encrypts it with the second if valid.
 
-The re-encrypted key is then passed to the user, for use with [[#DecryptRsaPrivateKey]].
+The re-encrypted key is then passed to the user, for use with [[#DecryptOrImportRsaKey]].
 
 === DecryptRsaPrivateKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, an enum member, and a wrapped RSA private key.
@@ -120,7 +122,11 @@ The session kek must have been created with CryptoUsecase_RsaPrivate.
 
 [4.0.0+] The SMC handler when certain conditions pass and SMC_ID==0xC300100D now returns error 0x6 instead of calling the handler funcptr.
 
-[5.0.0+] This SMC was extended to import private keys into the security engine instead of decrypting them, when certain enum members are passed.
+=== DecryptOrImportRsaKey ===
+
+This function replaced [[#DecryptRsaPrivateKey]] in [[5.0.0]], adding an additional enum member argument.
+
+This SMC extends DecryptRsaPrivateKey's original functionality to enable importing private keys into the security engine instead of decrypting them, when certain enum members are passed.
 
 === LoadSecureExpModKey ===
 Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA key.
