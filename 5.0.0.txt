@@ -27,7 +27,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 <fill this in (manually) later>
 
 ==Keys==
-[[Flash_Filesystem|Keyblob]] 5 is now used, instead of 4.
+[[Flash_Filesystem|Keyblob]] 5 is now used, instead of 4. New NCA keydata is now used as well.
 
 ==See Also==
 System update report(s):
