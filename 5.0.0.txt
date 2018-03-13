@@ -26,6 +26,9 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+==Keys==
+[[Flash_Filesystem|Keyblob]] 5 is now used, instead of 4.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=03-12-18_08-05-11&sys=hac]
