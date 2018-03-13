@@ -28,7 +28,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 
 * 0100000000000824(Mariko Config), 0100000000000825, 0100000000000826 were added.
 ** 0100000000000824 provides configuration for the new "T214" SoC.
-
+** 0100000000000825 contains an empty "/blacklist.dat" file.
 
 ===FIRM===
 Everything under RomFS was updated.
