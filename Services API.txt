@@ -63,9 +63,9 @@ Takes a pid.
 | [[HID services]]
 |
 |-
-| appletAE, appletOE, idle:sys, omm, spsm
+| appletAE, appletOE, idle:sys, omm, spsm, [5.0.0+] tcap 
 | [[AM services]]
-|
+| tcap: Thermal-related?
 |-
 | [1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry
 
