@@ -143,9 +143,9 @@ The physaddr range 0x80060000-0x2000000000 is not allowed to be mapped
 as IO. The physaddr range 0x80000000-0x2000000000 is not allowed to be
 mapped as Normal.
 
-\[2.0.0+\] The range for IO was changed into 0x80060000-0x81D3FFFF.
+\[2.0.0-4.1.0\] The range for IO was changed into 0x80060000-0x81D3FFFF.
 
-\[2.0.0+\] A blacklist was added for IO and Normal mappings:
+\[2.0.0-4.1.0\] A blacklist was added for IO and Normal mappings:
 
   - 0x50040000-0x50060000 (ARM, Interrupt Controller)
   - 0x6000F000 (Exception Vectors)
@@ -154,6 +154,9 @@ mapped as Normal.
   - 0x70019000 (MC)
   - 0x7001C000 (MC0)
   - 0x7001D000 (MC1)
+
+\[5.0.0+\] This whitelist was abandoned and instead two range checks
+were added.
 
 ## Kernel versions
 
