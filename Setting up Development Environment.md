@@ -73,7 +73,7 @@ that Linux x86\_64 binaries are usable under WSL.
 
     curl -L https://raw.githubusercontent.com/devkitPro/installer/master/perl/devkitA64update.pl -o devkitA64update.pl
     chmod +x ./devkitA64update.pl
-    ./devkitA64update.pl
+    ./devkitA64update.pl /opt/devkitpro
 
 You may need to use sudo here if you set DEVKITPRO to a path not
 writable by your user.
