@@ -26,6 +26,22 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+==Secure Monitor==
+The [[Memory_layout|Memory layout]] was changed significantly:
+* .text, .rodata, and .data are now separate sections, instead of being mapped RWX.
+* Physical layout in TZRAM changed significantly, with pk2ldr being in low TZRAM instead of high TZRAM.
+
+In addition, there were changes to the SMC interface:
+
+* smcLoadSecureExpModKey no longer exists.
+* smcLoadRsaOaepKey has been replaced with a new SMC (0xC300D60C) that loads two keys into TrustZone.
+* smcGetConfig was extended with two new config items:
+* -GetConfig(16) now does the following, which seems to check whether the Switch is running on a Tegra 210:
+    return (FUSE_RESERVED_ODM4 & 0x800) &&  FUSE_RESERVED_ODM0 == 0x8E61ECAE &&  FUSE_RESERVED_ODM1  == 0xF2BA3BB2 ?  (FUSE_RESERVED_ODM2 & 0x1F) : 0
+* Getconfig(17) now checks whether package2 is plaintext or encrypted.
+
+<fill in the rest later>
+
 ==Keys==
 [[Flash_Filesystem|Keyblob]] 5 is now used, instead of 4. New NCA keydata is now used as well.
 
