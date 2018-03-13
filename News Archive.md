@@ -1,3 +1,6 @@
+  - **18 February 18** [nx-hbl](https://switchbrew.github.io/nx-hbl/)
+    and [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu) were
+    released.
   - **28 December 17** The 34c3 Switch
     [talk](https://events.ccc.de/congress/2017/Fahrplan/events/8941.html)
     took place, video available
