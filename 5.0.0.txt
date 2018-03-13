@@ -51,6 +51,9 @@ In addition, there were changes to the SMC interface:
 
 <fill in the rest later>
 
+==Kernel==
+* Kernel Address Space Layout Randomization was added.
+
 ==Keys==
 [[Flash_Filesystem|Keyblob]] 5 is now used, instead of 4. New NCA keydata is now used as well.
 
