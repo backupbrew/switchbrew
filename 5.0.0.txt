@@ -40,7 +40,7 @@ The following firm-sysmodules was added to both safemode-firm, which were origin
 
 All firm-sysmodules were updated (might be due to updated (?) rtld).
 
-==Secure Monitor==
+====Secure Monitor====
 The [[Memory_layout|Memory layout]] was changed significantly:
 * .text, .rodata, and .data are now separate sections, instead of being mapped RWX.
 * Physical layout in TZRAM changed significantly, with pk2ldr being in low TZRAM instead of high TZRAM.
@@ -56,10 +56,15 @@ In addition, there were changes to the SMC interface:
 
 <fill in the rest later>
 
-==Kernel==
+====Kernel====
 * Kernel Address Space Layout Randomization was added.
 ** Instead of using a hardcoded address for per-CPU region, they now use x18 to point to the per-CPU region.
 * 6 new syscalls
+
+===[[Internet Browser]]===
+OSS/WebKit was updated.
+
+In the [[NPDM]], besides the RSA region the only changes were the kernel-release-version descriptor + bit2 for the flags at ACID+0xC is now set.
 
 ==Keys==
 [[Flash_Filesystem|Keyblob]] 5 is now used, instead of 4. New NCA keydata is now used as well.
