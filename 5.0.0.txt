@@ -86,7 +86,7 @@ RomFS changes:
 * "/message/" Everything under here was updated.
 * "/message/Ocean.msbp.szs" added
 * "/sound/qlaunch_action.bksnd" and "/sound/qlaunch.bfsar" were updated.
-* "/texture" Directory was added, which contains:
+* "/texture" Directory was added, which contains images for Nintendo Switch Parental Controls:
 ** "IcoPctl.bntx"
 ** "LogoMoon{region/language-text}.bntx", for every region/language.
 
