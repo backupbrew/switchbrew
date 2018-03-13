@@ -99,3 +99,7 @@ New flags bit2/bit3 were added to the flags at ACID+0xC.
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=03-12-18_08-05-11&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
