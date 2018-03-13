@@ -780,6 +780,8 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Zero    || 19 || 1 || [4.0.0+] PrivilegedProcessId_UpperBound
 |-
+| Process || 20 || 0 || [5.0.0+]
+|-
 | Thread  || 0xF0000002 || 0 || Performance counter related.
 |}
 
