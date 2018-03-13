@@ -82,20 +82,20 @@ to.
 
 ### \[4.0.0\]+ Key table after package1ldr (Secure Monitor boot)
 
-| Keyslot | Name                                | Set by                                                         | Per-console | Per-firmware             |
-| ------- | ----------------------------------- | -------------------------------------------------------------- | ----------- | ------------------------ |
-| 12      | MasterKey                           | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
-| 13      | PerConsoleKeyForNewPerConsoleKeyGen | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
-| 14      | StaticKeyForNewPerConsoleKeyGen     | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
-| 15      | PerConsoleKey                       | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
+| Keyslot | Name                                             | Set by                                                         | Per-console | Per-firmware             |
+| ------- | ------------------------------------------------ | -------------------------------------------------------------- | ----------- | ------------------------ |
+| 12      | MasterKey                                        | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
+| 13      | PerConsoleKeyForFirmwareSpecificPerConsoleKeyGen | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
+| 14      | StaticKeyForFirmwareSpecificPerConsoleKeyGen     | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
+| 15      | PerConsoleKey                                    | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
 
 ### \[4.0.0\]+ Key table after package1ldr (Secure Monitor runtime)
 
-| Keyslot | Name             | Set by                                                         | Per-console | Per-firmware             |
-| ------- | ---------------- | -------------------------------------------------------------- | ----------- | ------------------------ |
-| 12      | MasterKey        | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
-| 13      | NewPerConsoleKey | Secure Monitor init                                            | Yes         | Yes, on security updates |
-| 15      | PerConsoleKey    | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
+| Keyslot | Name                          | Set by                                                         | Per-console | Per-firmware             |
+| ------- | ----------------------------- | -------------------------------------------------------------- | ----------- | ------------------------ |
+| 12      | MasterKey                     | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes, on security updates |
+| 13      | FirmwareSpecificPerConsoleKey | Secure Monitor init                                            | Yes         | Yes, on security updates |
+| 15      | PerConsoleKey                 | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
 
 ### Key generation
 
@@ -225,7 +225,8 @@ consoles.
 | 1.0.0-2.3.0    | 1            | 1                                                |
 | 3.0.0          | 2            | 1                                                |
 | 3.0.1-3.0.2    | 3            | 1                                                |
-| 4.0.0          | 4            | 1                                                |
+| 4.0.0-4.1.0    | 4            | 1                                                |
+| 5.0.0          | 5            | 1                                                |
 
 ## Secure Monitor Init
 
@@ -235,9 +236,9 @@ is erased after use.
 
 Additionally, starting from 4.0.0, the Secure Monitor init will decrypt
 another constant seed successively with a special per console key and a
-special static key passed by package1loader, to generate a new
-per-console key. The operation will erase these special keys passed by
-package1loader.
+special static key passed by package1loader, to generate the firmware
+specific per-console key. The operation will erase these special keys
+passed by package1loader.
 
 ## Secure Monitor
 
