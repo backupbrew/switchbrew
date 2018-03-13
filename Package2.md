@@ -147,6 +147,7 @@ expansion.
 | [3.0.0](3.0.0.md "wikilink") | 0x4                      | 0x5                      | 0x0306                 |
 | [3.0.2](3.0.2.md "wikilink") | 0x5                      | 0x6                      | 0x0407                 |
 | [4.0.0](4.0.0.md "wikilink") | 0x6                      | 0x7                      | 0x0508                 |
+| [5.0.0](5.0.0.md "wikilink") | 0x7                      | 0x8                      | 0x0609                 |
 
 # Public Keys
 

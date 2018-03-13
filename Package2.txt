@@ -282,6 +282,11 @@ This section is not present (CTR and SHA-256 hash in package2's header are NULL)
 | 0x6
 | 0x7
 | 0x0508
+|-
+| [[5.0.0]]
+| 0x7
+| 0x8
+| 0x0609
 |}
 
 = Public Keys =
