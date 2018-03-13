@@ -155,8 +155,8 @@ mapped as Normal.
   - 0x7001C000 (MC0)
   - 0x7001D000 (MC1)
 
-\[5.0.0+\] This whitelist was abandoned and instead two range checks
-were added.
+\[5.0.0+\] For IO, this blacklist was abandoned and instead two range
+checks were added. For Normal mappings it is still applied
 
 ## Kernel versions
 
