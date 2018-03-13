@@ -30,23 +30,23 @@ varies.
 
 # ACID
 
-| Offset | Size  | Description                                                                                                                                                     |
-| ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x100 | RSA-2048 signature, seems to verify the data starting at 0x100 with the size field from 0x204.                                                                  |
-| 0x100  | 0x100 | RSA-2048 public key, seems to be used for the second [NCA](NCA%20Format.md "wikilink") signature.                                                               |
-| 0x200  | 0x4   | Magic "ACID".                                                                                                                                                   |
-| 0x204  | 0x4   | s32 Size field used with the above signature(?).                                                                                                                |
-| 0x208  | 0x4   | Zeroes                                                                                                                                                          |
-| 0x20C  | 0x4   | Flags. Bit0 must be 1 on retail, on devunit 0 is also allowed. Bit1 is unknown, set 1 for ARMS? Bit2 is set with web-applet with [5.0.0](5.0.0.md "wikilink")+. |
-| 0x210  | 0x8   | TitleIdRange\_Min                                                                                                                                               |
-| 0x218  | 0x8   | TitleIdRange\_Max                                                                                                                                               |
-| 0x220  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") offset                                                                                                     |
-| 0x224  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") size                                                                                                       |
-| 0x228  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") offset                                                                                           |
-| 0x22C  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") size                                                                                             |
-| 0x230  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset                                                                                             |
-| 0x234  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size                                                                                               |
-| 0x238  | 0x8   | Padding                                                                                                                                                         |
+| Offset | Size  | Description                                                                                                                                                                             |
+| ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x100 | RSA-2048 signature, seems to verify the data starting at 0x100 with the size field from 0x204.                                                                                          |
+| 0x100  | 0x100 | RSA-2048 public key, seems to be used for the second [NCA](NCA%20Format.md "wikilink") signature.                                                                                       |
+| 0x200  | 0x4   | Magic "ACID".                                                                                                                                                                           |
+| 0x204  | 0x4   | s32 Size field used with the above signature(?).                                                                                                                                        |
+| 0x208  | 0x4   | Zeroes                                                                                                                                                                                  |
+| 0x20C  | 0x4   | Flags. Bit0 must be 1 on retail, on devunit 0 is also allowed. Bit1 is unknown, set to 1 for ARMS? Bit2 is set for applets with \[5.0.0+\], bit3 is set for sysmodules with \[5.0.0+\]. |
+| 0x210  | 0x8   | TitleIdRange\_Min                                                                                                                                                                       |
+| 0x218  | 0x8   | TitleIdRange\_Max                                                                                                                                                                       |
+| 0x220  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") offset                                                                                                                             |
+| 0x224  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") size                                                                                                                               |
+| 0x228  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") offset                                                                                                                   |
+| 0x22C  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") size                                                                                                                     |
+| 0x230  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset                                                                                                                     |
+| 0x234  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size                                                                                                                       |
+| 0x238  | 0x8   | Padding                                                                                                                                                                                 |
 
 # ACI0
 
