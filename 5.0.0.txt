@@ -87,6 +87,7 @@ In addition, there were changes to the [[SMC]] interface:
 * 5 new syscalls.
 ** SVCs 0x48/0x49 are accessible by [[AM_services|AM]]-sysmodule.
 * NPDM irq_id's are no longer checked to be < 0x100, instead max-value is loaded from per-cpu state.
+* The order slabheaps are laid out in memory is now randomized.
 
 ===[[Internet Browser]]===
 OSS/WebKit was updated.
