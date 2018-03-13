@@ -69,6 +69,10 @@ Takes a u32 (**ConfigItem**), and returns a u64
 | 11         | IsDebugMode                                                                                              |
 | 12         | KernelMemoryConfiguration                                                                                |
 | 13         | BatteryProfile                                                                                           |
+| 14         | \[4.0.0+\] FUSE\_RESERVED\_ODM4 bit 10                                                                   |
+| 15         | \[5.0.0+\] Always 0                                                                                      |
+| 16         | \[5.0.0+\] IsNewSoc?                                                                                     |
+| 17         | \[5.0.0+\] Package2Meta                                                                                  |
 
 [PM](Process%20Manager%20services.md "wikilink") checks id1 and if
 non-zero, calls fsp-pr SetEnabledProgramVerification(false).
