@@ -94,7 +94,7 @@ __NOTOC__
 |-
 | 0x2D || [3.0.0+] svcUnmapPhysicalMemory|| X0=addr, X1=size || W0=result
 |-
-| 0x2E || [5.0.0+] svcDevUnitOnlyMeasureScheduling? || ||
+| 0x2E || [5.0.0+] || svcDevUnitOnlyMeasureScheduling? ||
 |-
 | 0x2F || svcGetLastThreadInfo || None || W0=result, W1,W2,W3,W4=unk, W5=truncated_u64, W6=bool
 |-
@@ -126,11 +126,13 @@ __NOTOC__
 |-
 | 0x45 || svcCreateEvent || None || W0=result, W1=client_handle ?, W2=server_handle ?
 |- style="border-top: double"
-| 0x48 || [5.0.0+] svcMapPhysicalMemoryNew? || X0=addr, X1=size || W0=result
+| 0x47 || [5.0.0+] svcMapPhysicalMemoryNew? || X0=addr, X1=size || W0=result
 |-
-| 0x49 || [5.0.0+] svcUnmapPhysicalMemoryNew? || X0=addr, X1=size || W0=result
+| 0x48 || [5.0.0+] svcUnmapPhysicalMemoryNew? || ||
 |-
-| 0x4A || [5.0.0+] svcSetWeirdSize? || X0=size || W0=result
+| 0x49 || [5.0.0+] svcSetWeirdSize? || X0=size || W0=result
+|-
+| 0x4A || [5.0.0+] svcCreateUnknownObject? || X1=addr, X2=size || W0=result, W1=handle
 |-
 | 0x4B || [4.0.0+] [[#svcCreateJitMemory]] || X1=addr, X2=size || W0=result, W1=jit_handle
 |-
@@ -774,9 +776,9 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 18 || 0 || [3.0.0+] TitleId
 |-
-| Zero    || 19 || 0 || [4.0.0] PrivilegedProcessId_LowerBound
+| Zero    || 19 || 0 || [4.0.0-4.1.0] PrivilegedProcessId_LowerBound
 |-
-| Zero    || 19 || 1 || [4.0.0] PrivilegedProcessId_UpperBound
+| Zero    || 19 || 1 || [4.0.0-4.1.0] PrivilegedProcessId_UpperBound
 |-
 | Process || 20 || 0 || [5.0.0+]
 |-
