@@ -70,8 +70,9 @@ vulns it will display an error dialog instead.
 With v3.0 WifiWebAuthApplet video-playback was disabled, it now throws
 the following error when attempting to play a video: "Support Code:
 2809-1212" "This feature is not available." On past system-versions it
-would just trigger a fatal-error(see above). Video-playback which
-already worked fine under whitelisted-applet, still works fine on v3.0.
+would just trigger a fatal-error(see above). Video playback still works
+on the whitelisted applets following v3.0.0, which allows video playback
+through Facebook and embedded into Google Sites.
 
 ## Trusted RootCAs
 
