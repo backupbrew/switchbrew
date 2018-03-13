@@ -20,6 +20,7 @@ captive-portal).
 | [2.1.0](2.1.0.md "wikilink")-[2.3.0](2.3.0.md "wikilink") | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.10 NintendoBrowser/5.1.0.13343 |
 | [3.0.0](3.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.6.9 NintendoBrowser/5.1.0.14936  |
 | [4.0.0](4.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.7.9 NintendoBrowser/5.1.0.15785  |
+| [5.0.0](5.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.8.9 NintendoBrowser/5.1.0.16739  |
 
 The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>)
 AppleWebKit/<webkitver> (KHTML, like Gecko)
