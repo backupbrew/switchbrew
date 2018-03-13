@@ -38,6 +38,8 @@ A new folder "a" was added, in addition to the existing "nx" folder, containing 
 
 The following firm-sysmodules was added to both safemode-firm, which were originally in separate sysmodule-titles: [[Bus_services|Bus]], [[PCV_services|PCV]], and [[PSC_services|psc]].
 
+All firm-sysmodules were updated (might be due to updated (?) rtld).
+
 ==Secure Monitor==
 The [[Memory_layout|Memory layout]] was changed significantly:
 * .text, .rodata, and .data are now separate sections, instead of being mapped RWX.
