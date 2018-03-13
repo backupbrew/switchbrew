@@ -26,6 +26,15 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+* 0100000000000824(Mariko Config), 0100000000000825, 0100000000000826 were added.
+** 0100000000000824 provides configuration for the new "T214" SoC.
+
+
+===FIRM===
+Everything under RomFS was updated.
+
+A new folder "a" was added, in addition to the existing "nx" folder, containing a separate "bct" and "package1". These seem encrypted/meant for the new "Mariko" hardware that support was added for.
+
 ==Secure Monitor==
 The [[Memory_layout|Memory layout]] was changed significantly:
 * .text, .rodata, and .data are now separate sections, instead of being mapped RWX.
