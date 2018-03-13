@@ -51,11 +51,13 @@ Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
 |-
 | 0xC300040B || [[#ComputeCmac]] || ||
 |-
-| 0xC300100C || [[#LoadRsaOaepKey]] || ||
+| [1.0.0-4.1.0] 0xC300100C || [[#LoadRsaOaepKey]] || ||
 |-
-| 0xC300100D || [[#DecryptRsaPrivateKey]] || ||
+| [5.0.0+] 0xC300D60C || [[#EncryptRsaKeyForImport]] || ||
 |-
-| 0xC300100E || [[#LoadSecureExpModKey]] || ||
+| [1.0.0-4.1.0] 0xC300100D || [[#DecryptRsaPrivateKey]] || ||
+|-
+| [1.0.0-4.1.0] 0xC300100E || [[#LoadSecureExpModKey]] || ||
 |-
 | 0xC300060F || [[#SecureExpMod]] || ||
 |-
@@ -102,17 +104,30 @@ Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a w
 
 The session kek must have been created with CryptoUsecase_RsaOaep.
 
+This function was removed in [[5.0.0]], and replaced with [[#EncryptRsaKeyForImport]].
+
+=== EncryptRsaKeyForImport ===
+Takes in two session keks created with [[#GenerateAesKek]], two wrapped AES keys, an enum member, and a wrapped RSA private key.
+
+Decrypts and validates the wrapped RSA private key with the first kek/wrapped key, and re-encrypts it with the second if valid.
+
+The re-encrypted key is then passed to the user, for use with [[#DecryptRsaPrivateKey]].
+
 === DecryptRsaPrivateKey ===
-Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
+Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, an enum member, and a wrapped RSA private key.
 
 The session kek must have been created with CryptoUsecase_RsaPrivate.
 
-[{Unknown version}+] The SMC handler when certain conditions pass and SMC_ID==0xC300100D now returns error 0x6 instead of calling the handler funcptr.
+[4.0.0+] The SMC handler when certain conditions pass and SMC_ID==0xC300100D now returns error 0x6 instead of calling the handler funcptr.
+
+[5.0.0+] This SMC was extended to import private keys into the security engine instead of decrypting them, when certain enum members are passed.
 
 === LoadSecureExpModKey ===
 Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA key.
 
 The session kek must have been created with CryptoUsecase_RsaSecureExpMod.
+
+This function was removed in [[5.0.0]], and replaced with [[#EncryptRsaKeyForImport]].
 
 === SecureExpMod ===
 Performs an Exp Mod operation using an exponent previously loaded with the [[#LoadSecureExpModKey]] command.

@@ -27,26 +27,27 @@ the call sub-id and returning the result of the call.
 Functions exposed to user-mode processes using
 [svcCallSecureMonitor](SVC.md "wikilink").
 
-| Sub-ID     | Name                                                                       | In | Out |
-| ---------- | -------------------------------------------------------------------------- | -- | --- |
-| 0xC3000401 | SetConfig                                                                  |    |     |
-| 0xC3000002 | GetConfig (Same as ID 1, Sub-ID 4)                                         |    |     |
-| 0xC3000003 | CheckStatus                                                                |    |     |
-| 0xC3000404 | GetResult                                                                  |    |     |
-| 0xC3000E05 | ExpMod                                                                     |    |     |
-| 0xC3000006 | GetRandomBytes (Same as ID 1, Sub-ID 5)                                    |    |     |
-| 0xC3000007 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                             |    |     |
-| 0xC3000008 | [\#LoadAesKey](#LoadAesKey "wikilink")                                     |    |     |
-| 0xC3000009 | [\#CryptAes](#CryptAes "wikilink")                                         |    |     |
-| 0xC300000A | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")             |    |     |
-| 0xC300040B | [\#ComputeCmac](#ComputeCmac "wikilink")                                   |    |     |
-| 0xC300100C | [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink")                             |    |     |
-| 0xC300100D | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")                 |    |     |
-| 0xC300100E | [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink")                   |    |     |
-| 0xC300060F | [\#SecureExpMod](#SecureExpMod "wikilink")                                 |    |     |
-| 0xC3000610 | [\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink") |    |     |
-| 0xC3000011 | [\#LoadTitleKey](#LoadTitleKey "wikilink")                                 |    |     |
-| 0xC3000012 | \[2.0.0+\] UnwrapAesWrappedTitleKey                                        |    |     |
+| Sub-ID                     | Name                                                                       | In | Out |
+| -------------------------- | -------------------------------------------------------------------------- | -- | --- |
+| 0xC3000401                 | SetConfig                                                                  |    |     |
+| 0xC3000002                 | GetConfig (Same as ID 1, Sub-ID 4)                                         |    |     |
+| 0xC3000003                 | CheckStatus                                                                |    |     |
+| 0xC3000404                 | GetResult                                                                  |    |     |
+| 0xC3000E05                 | ExpMod                                                                     |    |     |
+| 0xC3000006                 | GetRandomBytes (Same as ID 1, Sub-ID 5)                                    |    |     |
+| 0xC3000007                 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                             |    |     |
+| 0xC3000008                 | [\#LoadAesKey](#LoadAesKey "wikilink")                                     |    |     |
+| 0xC3000009                 | [\#CryptAes](#CryptAes "wikilink")                                         |    |     |
+| 0xC300000A                 | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")             |    |     |
+| 0xC300040B                 | [\#ComputeCmac](#ComputeCmac "wikilink")                                   |    |     |
+| \[1.0.0-4.1.0\] 0xC300100C | [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink")                             |    |     |
+| \[5.0.0+\] 0xC300D60C      | [\#EncryptRsaKeyForImport](#EncryptRsaKeyForImport "wikilink")             |    |     |
+| \[1.0.0-4.1.0\] 0xC300100D | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")                 |    |     |
+| \[1.0.0-4.1.0\] 0xC300100E | [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink")                   |    |     |
+| 0xC300060F                 | [\#SecureExpMod](#SecureExpMod "wikilink")                                 |    |     |
+| 0xC3000610                 | [\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink") |    |     |
+| 0xC3000011                 | [\#LoadTitleKey](#LoadTitleKey "wikilink")                                 |    |     |
+| 0xC3000012                 | \[2.0.0+\] UnwrapAesWrappedTitleKey                                        |    |     |
 
 The overall concept here is the following:
 
@@ -105,17 +106,36 @@ wrapped RSA private key.
 
 The session kek must have been created with CryptoUsecase\_RsaOaep.
 
+This function was removed in [5.0.0](5.0.0.md "wikilink"), and replaced
+with [\#EncryptRsaKeyForImport](#EncryptRsaKeyForImport "wikilink").
+
+### EncryptRsaKeyForImport
+
+Takes in two session keks created with
+[\#GenerateAesKek](#GenerateAesKek "wikilink"), two wrapped AES keys, an
+enum member, and a wrapped RSA private key.
+
+Decrypts and validates the wrapped RSA private key with the first
+kek/wrapped key, and re-encrypts it with the second if valid.
+
+The re-encrypted key is then passed to the user, for use with
+[\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink").
+
 ### DecryptRsaPrivateKey
 
 Takes a session kek created with
-[\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, and a
-wrapped RSA private key.
+[\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, an
+enum member, and a wrapped RSA private key.
 
 The session kek must have been created with CryptoUsecase\_RsaPrivate.
 
-\[{Unknown version}+\] The SMC handler when certain conditions pass and
+\[4.0.0+\] The SMC handler when certain conditions pass and
 SMC\_ID==0xC300100D now returns error 0x6 instead of calling the handler
 funcptr.
+
+\[5.0.0+\] This SMC was extended to import private keys into the
+security engine instead of decrypting them, when certain enum members
+are passed.
 
 ### LoadSecureExpModKey
 
@@ -124,6 +144,9 @@ Takes a session kek created with
 
 The session kek must have been created with
 CryptoUsecase\_RsaSecureExpMod.
+
+This function was removed in [5.0.0](5.0.0.md "wikilink"), and replaced
+with [\#EncryptRsaKeyForImport](#EncryptRsaKeyForImport "wikilink").
 
 ### SecureExpMod
 
