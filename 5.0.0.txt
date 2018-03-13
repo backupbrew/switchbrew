@@ -66,7 +66,10 @@ In addition, there were changes to the SMC interface:
 ===[[Internet Browser]]===
 OSS/WebKit was updated.
 
-In the [[NPDM]], besides the RSA region the only changes were the kernel-release-version descriptor + bit2 for the flags at ACID+0xC is now set.
+In the [[NPDM]], besides the RSA region the only changes were the kernel-release-version descriptor + {new ACID flag is set}.
+
+===[[NPDM]]===
+New flags bit2/bit3 were added to the flags at ACID+0xC.
 
 ==Keys==
 [[Flash_Filesystem|Keyblob]] 5 is now used, instead of 4. New NCA keydata is now used as well.
