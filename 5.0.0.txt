@@ -68,7 +68,29 @@ OSS/WebKit was updated.
 
 In the [[NPDM]], besides the RSA region the only changes were the kernel-release-version descriptor + {new ACID flag is set}.
 
-===[[NPDM]]===
+===[[qlaunch]]===
+RomFS changes:
+* "/common/shader/VarietyOceanShader_Nx.arc.szs" updated
+* "/lyt/common.szs" updated
+* "/lyt/DummyGameA.szs" and "/lyt/DummyGame.szs" were removed.
+* "/lyt/Entrance.szs" updated
+* "/lyt/Eula.szs" added
+* "/lyt/Flaunch.szs" updated
+* "/lyt/Gift.szs" updated
+* "/lyt/Interrupt.szs" updated
+* "/lyt/Migration.szs" updated
+* "/lyt/Notification.szs" updated
+* "/lyt/Option.szs"
+* "/lyt/ResidentMenu.szs"
+* "/lyt/Set.szs"
+* "/message/" Everything under here was updated.
+* "/message/Ocean.msbp.szs" added
+* "/sound/qlaunch_action.bksnd" and "/sound/qlaunch.bfsar" were updated.
+* "/texture" Directory was added, which contains:
+** "IcoPctl.bntx"
+** "LogoMoon{region/language-text}.bntx", for every region/language.
+
+==[[NPDM]]==
 New flags bit2/bit3 were added to the flags at ACID+0xC.
 
 ==Keys==
