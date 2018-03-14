@@ -40,7 +40,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |-
 | 0xC
 | 0x1
-| Flags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be <= 0xF
+| MmuFlags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be <= 0xF
 |-
 | 0xE
 | 0x1
