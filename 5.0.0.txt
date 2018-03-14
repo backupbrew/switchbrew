@@ -39,6 +39,8 @@ The only 8XX titles with actual changes are (besides sysver-title):
 ** "/legallines.htdocs/index.html" was updated with a Twitter mention, and a license section for "Software License for The Fraunhofer FDK AAC Codec Library for Android" was added.
 ** "/safe.htdocs/html/EU{XX}/index.html" was updated.
 * 806 (Bad words)
+* 807 ([[Hotspot List]])
+** This was updated with more hotspots: "nintendoappdebug1", "Nintendo App Debug2", "Nintendo App Debug3", and "NCL-NZSERVICE1-5GHZ".
 * ...
 
 The built codebins now have padding in .text after every function for 0x10-byte alignment.
