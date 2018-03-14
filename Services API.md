@@ -70,12 +70,12 @@ Takes a pid.
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>acc:u0, acc:u1, acc:aa, acc:su</p></td>
+<td><p>acc:u0, acc:u1, acc:aa, acc:su, [5.0.0+] dauth:0</p></td>
 <td><p><a href="Account services.md" title="wikilink">Account services</a></p></td>
 <td><p>u0: System, u1: User, su: Admin, aa: Baas</p></td>
 </tr>
 <tr class="even">
-<td><p>ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, irs, irs:sys, xcd:sys</p></td>
+<td><p>ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, irs, irs:sys, xcd:sys, [4.0.0+] hid:tmp, [5.0.0+] hidbus</p></td>
 <td><p><a href="HID services.md" title="wikilink">HID services</a></p></td>
 <td></td>
 </tr>
@@ -131,22 +131,22 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>btdrv</p></td>
+<td><p>btdrv, [5.0.0+] bt</p></td>
 <td><p><a href="Bluetooth Driver services.md" title="wikilink">Bluetooth Driver services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><p>btm, btm:dbg, btm:sys</p></td>
+<td><p>btm, btm:dbg, btm:sys, [5.0.0+] btm:u</p></td>
 <td><p>Battery services</p></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>caps:a, caps:c</p></td>
+<td><p>caps:a, caps:c, [5.0.0+] caps:u</p></td>
 <td><p><a href="Capture services.md" title="wikilink">Capture services</a></p></td>
 <td><p>a: AlbumAccessor, c: AlbumControl</p></td>
 </tr>
 <tr class="even">
-<td><p>caps:sc, caps:ss, mm:u, vi:m, vi:s, vi:u, cec-mgr</p></td>
+<td><p>caps:sc, caps:ss, mm:u, vi:m, vi:s, vi:u, cec-mgr, [4.0.0+] caps:su</p></td>
 <td><p><a href="Display services.md" title="wikilink">Display services</a></p></td>
 <td></td>
 </tr>
@@ -176,7 +176,7 @@ Takes a pid.
 <td><p>u: User, p: Privileged</p></td>
 </tr>
 <tr class="even">
-<td><p>friend:u, friend:v, friend:m, friend:s, friend:a</p></td>
+<td><p>friend:u, friend:v, friend:m, friend:s, friend:a, [5.0.0+] nd:app, nd:sys</p></td>
 <td><p>Friend services</p></td>
 <td></td>
 </tr>
@@ -201,7 +201,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>ldn:m, ldn:s, ldn:u</p></td>
+<td><p>ldn:m, ldn:s, ldn:u, [5.0.0+] ndd</p></td>
 <td><p><a href="LDN services.md" title="wikilink">LDN services</a></p></td>
 <td></td>
 </tr>
@@ -237,7 +237,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>nim, nim:shp, ntc, [5.0.0]+ nim:eca</p></td>
+<td><p>nim, nim:shp, ntc, [5.0.0+] nim:eca</p></td>
 <td><p><a href="NIM services.md" title="wikilink">NIM services</a></p></td>
 <td><p>shp: eShop</p></td>
 </tr>
@@ -282,7 +282,7 @@ Takes a pid.
 <td><p>cal: calibration, sys: System Settings</p></td>
 </tr>
 <tr class="odd">
-<td><p>[3.0.0+] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u</p></td>
+<td><p>[3.0.0+] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u, [5.0.0+] miiimg</p></td>
 <td><p><a href="Shared Database services.md" title="wikilink">Shared Database services</a></p></td>
 <td></td>
 </tr>
