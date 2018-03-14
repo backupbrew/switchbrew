@@ -1530,7 +1530,7 @@ Bitfield of one of more of these:
 |-
 | || || Bit7 || [4.0.0] ?
 |-
-| || || Bit10-7 || [5.0.0+] PoolPartition (0=User, 1=System, 2=?, 3=?)
+| || || Bit10-7 || [5.0.0+] PoolPartition (0=User, 1=Applet?, 2=Sysmodule?, 3=?)
 |-
 | 0x28 || 4 || || ResourceLimitHandle
 |-
