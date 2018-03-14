@@ -24,15 +24,14 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * Resolved an issue that caused Play Activity to display incorrectly in the Profile section of your User Page
 
 ==System Titles==
-All 01000000000010XX titles and most 01000000000008XX titles were updated. Most (?) 8XX titles were just rebuilt with the new NCA crypto.
+All 01000000000010XX titles and most 01000000000008XX titles were updated. Some 8XX titles were just rebuilt with the new NCA crypto without actual RomFS-content changes.
 
 * 0100000000000824(Mariko Config), 0100000000000825, 0100000000000826 were added.
 ** 0100000000000824 provides configuration for the new "T214" SoC.
 ** 0100000000000825 contains an empty "/blacklist.dat" file.
 ** 0100000000000826 contains a 0x40-byte "/version" file, this is all-zero except for '0' at offset 0x20.
 
-The only 8XX titles with actual changes are (besides sysver-title):
-* 818 (System-config)
+The only 8XX titles with actual changes are (besides sysver-title, see below for FIRM):
 * 801 (Support Error Codes)
 * 803 (web-applet "shareddata:/")
 * 804 (HTML resources for "Intellectual Property Notices" / "Health & Safety Information")
@@ -40,8 +39,19 @@ The only 8XX titles with actual changes are (besides sysver-title):
 ** "/safe.htdocs/html/EU{XX}/index.html" was updated.
 * 806 (Bad words)
 * 807 ([[Hotspot List]])
-** This was updated with more hotspots: "nintendoappdebug1", "Nintendo App Debug2", "Nintendo App Debug3", and "NCL-NZSERVICE1-5GHZ".
-* ...
+** This was updated with more hotspots (these networks use encryption): "nintendoappdebug1", "Nintendo App Debug2", "Nintendo App Debug3", and "NCL-NZSERVICE1-5GHZ".
+* 80A (Chara)
+* 80B (Offline news)
+* 80E (Geo Zoneinfo)
+* 810-814 (All fonts)
+* 818 (System-config)
+* 81E
+* 81F (Icosa system config)
+* 820 (Copper system config)
+* 821 (Hoag system config)
+* 822 (Firmware binaries for peripherals)
+** The following was updated: "FirmwareInfo.csv", "tera_ota.bin", "tera_ota_iap.bin", and "ukyosakyo_ep2_ota.bin".
+* 823
 
 The built codebins now have padding in .text after every function for 0x10-byte alignment.
 
@@ -67,7 +77,7 @@ Current version:
   000000c0: 4750 3130 3647 4c2d 42                   GP106GL-B
 
 ===FIRM===
-Everything under RomFS was updated.
+All FIRM titles were updated, and everything under RomFS was updated.
 
 A new folder "a" was added, in addition to the existing "nx" folder, containing a separate "bct" and "package1". Both of these seem encrypted/meant for the new "Mariko" hardware that support was added for.
 
