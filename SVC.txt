@@ -94,7 +94,7 @@ __NOTOC__
 |-
 | 0x2D || [3.0.0+] svcFreeHeapMemory || X0=addr, X1=size || W0=result
 |-
-| 0x2E || [5.0.0+] svcDevUnitOnlyMeasureScheduling? || ||
+| 0x2E || [5.0.0+] svcGetNextThreadInfo || X3=timeout || W0=result, bunch of crap
 |-
 | 0x2F || svcGetLastThreadInfo || None || W0=result, W1,W2,W3,W4=unk, W5=truncated_u64, W6=bool
 |-
