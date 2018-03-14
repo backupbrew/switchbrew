@@ -209,15 +209,22 @@ nn::ns::detail::IServiceGetterInterface.
 
 |      |                                                                            |
 | ---- | -------------------------------------------------------------------------- |
-| 7992 | [IECommerceInterface](#GetECommerceInterface "wikilink")                   |
-| 7993 | [IApplicationVersionInterface](#GetApplicationVersionInterface "wikilink") |
-| 7994 | [IFactoryResetInterface](#GetFactoryResetInterface "wikilink")             |
-| 7995 | [IAccountProxyInterface](#GetAccountProxyInterface "wikilink")             |
-| 7996 | [IApplicationManagerInterface](#GetApplicationManagerInterface "wikilink") |
-| 7997 | [IDownloadTaskInterface](#GetDownloadTaskInterface "wikilink")             |
-| 7998 | [IContentManagementInterface](#GetContentManagementInterface "wikilink")   |
-| 7999 | [IDocumentInterface](#GetDocumentInterface "wikilink")                     |
+| 7992 | [GetECommerceInterface](#IECommerceInterface "wikilink")                   |
+| 7993 | [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink") |
+| 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")             |
+| 7995 | [GetAccountProxyInterface](#IAccountProxyInterface "wikilink")             |
+| 7996 | [GetApplicationManagerInterface](#IApplicationManagerInterface "wikilink") |
+| 7997 | [GetDownloadTaskInterface](#IDownloadTaskInterface "wikilink")             |
+| 7998 | [GetContentManagementInterface](#IContentManagementInterface "wikilink")   |
+| 7999 | [GetDocumentInterface](#IDocumentInterface "wikilink")                     |
 |      |                                                                            |
+
+### IAccountProxyInterface
+
+|   |                   |
+| - | ----------------- |
+| 0 | CreateUserAccount |
+|   |                   |
 
 ### IApplicationManagerInterface
 
@@ -412,13 +419,6 @@ nn::ns::detail::IServiceGetterInterface.
 | 1000 | PerformAutoUpdate            |
 |      |                              |
 
-### IAccountProxyInterface
-
-|   |                   |
-| - | ----------------- |
-| 0 | CreateUserAccount |
-|   |                   |
-
 ### IContentManagerInterface
 
 |     |                                                 |
@@ -440,6 +440,21 @@ nn::ns::detail::IServiceGetterInterface.
 | 21 | GetApplicationContentPath     |
 | 23 | ResolveApplicationContentPath |
 |    |                               |
+
+### IDownloadTaskInterface
+
+|     |                                         |
+| --- | --------------------------------------- |
+| 701 | ClearTaskStatusList                     |
+| 702 | RequestDownloadTaskList                 |
+| 703 | RequestEnsureDownloadTask               |
+| 704 | ListDownloadTaskStatus                  |
+| 705 | RequestDownloadTaskListData             |
+| 706 | TryCommitCurrentApplicationDownloadTask |
+| 707 | EnableAutoCommit                        |
+| 708 | DisableAutoCommit                       |
+| 709 | TriggerDynamicCommitEvent               |
+|     |                                         |
 
 ### IECommerceInterface
 

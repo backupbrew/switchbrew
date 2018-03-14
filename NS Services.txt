@@ -330,21 +330,29 @@ These services are all, at the top level, nn::ns::detail::IServiceGetterInterfac
 
 {| class="wikitable" border="1"
 |-
-| 7992 || [[#GetECommerceInterface|IECommerceInterface]]
+| 7992 || [[#IECommerceInterface|GetECommerceInterface]]
 |-
-| 7993 || [[#GetApplicationVersionInterface|IApplicationVersionInterface]]
+| 7993 || [[#IApplicationVersionInterface|GetApplicationVersionInterface]]
 |-
-| 7994 || [[#GetFactoryResetInterface|IFactoryResetInterface]]
+| 7994 || [[#IFactoryResetInterface|GetFactoryResetInterface]]
 |-
-| 7995 || [[#GetAccountProxyInterface|IAccountProxyInterface]]
+| 7995 || [[#IAccountProxyInterface|GetAccountProxyInterface]]
 |-
-| 7996 || [[#GetApplicationManagerInterface|IApplicationManagerInterface]]
+| 7996 || [[#IApplicationManagerInterface|GetApplicationManagerInterface]]
 |-
-| 7997 || [[#GetDownloadTaskInterface|IDownloadTaskInterface]]
+| 7997 || [[#IDownloadTaskInterface|GetDownloadTaskInterface]]
 |-
-| 7998 || [[#GetContentManagementInterface|IContentManagementInterface]]
+| 7998 || [[#IContentManagementInterface|GetContentManagementInterface]]
 |-
-| 7999 || [[#GetDocumentInterface|IDocumentInterface]]
+| 7999 || [[#IDocumentInterface|GetDocumentInterface]]
+|-
+|}
+
+=== IAccountProxyInterface ===
+
+{| class="wikitable" border="1"
+|-
+| 0 || CreateUserAccount
 |-
 |}
 
@@ -722,14 +730,6 @@ These services are all, at the top level, nn::ns::detail::IServiceGetterInterfac
 |-
 |}
 
-=== IAccountProxyInterface ===
-
-{| class="wikitable" border="1"
-|-
-| 0 || CreateUserAccount
-|-
-|}
-
 === IContentManagerInterface ===
 
 {| class="wikitable" border="1"
@@ -761,6 +761,31 @@ These services are all, at the top level, nn::ns::detail::IServiceGetterInterfac
 | 23 || ResolveApplicationContentPath
 |-
 |}
+
+=== IDownloadTaskInterface ===
+
+{| class="wikitable" border="1"
+|-
+| 701 || ClearTaskStatusList
+|-
+| 702 || RequestDownloadTaskList
+|-
+| 703 || RequestEnsureDownloadTask
+|-
+| 704 || ListDownloadTaskStatus
+|-
+| 705 || RequestDownloadTaskListData
+|-
+| 706 || TryCommitCurrentApplicationDownloadTask
+|-
+| 707 || EnableAutoCommit
+|-
+| 708 || DisableAutoCommit
+|-
+| 709 || TriggerDynamicCommitEvent
+|-
+|}
+
 
 === IECommerceInterface===
 
