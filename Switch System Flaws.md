@@ -21,7 +21,8 @@ Flaws.
 <tbody>
 <tr class="odd">
 <td><p>GMMU DMA attack</p></td>
-<td><p>The Switch's GPU includes a separate MMU (GMMU) that is allowed to bypass the system's IOMMU (SMMU). By accessing the GPU's MMIO region and manipulating the page table entries in the GMMU, an attacker can read/write any portion of the DRAM (except memory carveouts).</p></td>
+<td><p>The Switch's GPU includes a separate MMU (GMMU) that is allowed to bypass the system's IOMMU (SMMU). By accessing the GPU's MMIO region and manipulating the page table entries in the GMMU, an attacker can read/write any portion of the DRAM (except memory carveouts).</p>
+<p>[5.0.0+] Works around this hardware flaw by using memory pool partitioning. You can no longer escalate into sysmodules with GPU DMA because all their memory is allocated using heap that's carved out.</p></td>
 <td><p>None</p></td>
 <td><p>HAC-001</p></td>
 <td><p>Summer 2017</p></td>
