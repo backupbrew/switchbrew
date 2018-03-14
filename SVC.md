@@ -1237,23 +1237,23 @@ Bitfield of one of more of these:
 
 ## CreateProcessInfo
 
-| Offset | Length | Bits    | Description                                                     |
-| ------ | ------ | ------- | --------------------------------------------------------------- |
-| 0      | 12     |         | ProcessName (doesn't have to be null-terminated)                |
-| 0      | 4      |         | ProcessCategory (0: regular title, 1: kernel built-in)          |
-| 0x10   | 8      |         | TitleId                                                         |
-| 0x18   | 8      |         | CodeAddr                                                        |
-| 0x20   | 4      |         | CodeNumPages                                                    |
-| 0x24   | 4      |         | MmuFlags                                                        |
-|        |        | Bit0    | IsAarch64                                                       |
-|        |        | Bit3-1  | [\#AddressSpaceType](#AddressSpaceType "wikilink")              |
-|        |        | Bit4    |                                                                 |
-|        |        | Bit5    | EnableAslr                                                      |
-|        |        | Bit6    | UseSystemMemBlocks                                              |
-|        |        | Bit7    | \[4.0.0\] ?                                                     |
-|        |        | Bit10-7 | \[5.0.0+\] PoolPartition (0=User, 1=Applet?, 2=Sysmodule?, 3=?) |
-| 0x28   | 4      |         | ResourceLimitHandle                                             |
-| 0x2C   | 4      |         | \[3.0.0+\] UnknownNumPages                                      |
+| Offset | Length | Bits    | Description                                                                   |
+| ------ | ------ | ------- | ----------------------------------------------------------------------------- |
+| 0      | 12     |         | ProcessName (doesn't have to be null-terminated)                              |
+| 0      | 4      |         | ProcessCategory (0: regular title, 1: kernel built-in)                        |
+| 0x10   | 8      |         | TitleId                                                                       |
+| 0x18   | 8      |         | CodeAddr                                                                      |
+| 0x20   | 4      |         | CodeNumPages                                                                  |
+| 0x24   | 4      |         | MmuFlags                                                                      |
+|        |        | Bit0    | IsAarch64                                                                     |
+|        |        | Bit3-1  | [\#AddressSpaceType](#AddressSpaceType "wikilink")                            |
+|        |        | Bit4    |                                                                               |
+|        |        | Bit5    | EnableAslr                                                                    |
+|        |        | Bit6    | UseSystemMemBlocks                                                            |
+|        |        | Bit7    | \[4.0.0\] ?                                                                   |
+|        |        | Bit10-7 | \[5.0.0+\] PoolPartition (0=Application, 1=Applet, 2=Sysmodule, 3=Nvservices) |
+| 0x28   | 4      |         | ResourceLimitHandle                                                           |
+| 0x2C   | 4      |         | \[3.0.0+\] UnknownNumPages                                                    |
 
 On \[1.0.0\] there's only one pool.
 
