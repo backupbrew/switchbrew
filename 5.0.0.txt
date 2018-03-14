@@ -93,7 +93,7 @@ The [[Memory_layout|Memory layout]] was changed significantly:
 
 In addition, there were changes to the [[SMC]] interface:
 
-* smcGenerateSpecificAesKey now uses keyslot 9 when the <code>mkey_revision</code> arguement is equal to 5.
+* smcGenerateSpecificAesKey now uses keyslot 9 when the <code>mkey_revision</code> argument is equal to 5.
 * smcLoadSecureExpModKey/smcLoadRsaOaepKey/smcDecryptRsaPrivateKey no longer exist.
 * smcLoadRsaOaepKey was replaced with smcEncryptRsaPrivateKeyForImport.
 * smcDecryptRsaPrivateKey was replaced with smcDecryptOrImportRsaPrivateKey.
