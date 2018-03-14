@@ -90,9 +90,9 @@ __NOTOC__
 |-
 | 0x2B || svcFlushDataCache || X0=addr, X1=size || W0=result
 |-
-| 0x2C || [3.0.0+] [[#svcMapPhysicalMemory]] || X0=addr, X1=size || W0=result
+| 0x2C || [3.0.0+] [[#svcAllocateHeapMemory]] || X0=addr, X1=size || W0=result
 |-
-| 0x2D || [3.0.0+] svcUnmapPhysicalMemory|| X0=addr, X1=size || W0=result
+| 0x2D || [3.0.0+] svcFreeHeapMemory || X0=addr, X1=size || W0=result
 |-
 | 0x2E || [5.0.0+] svcDevUnitOnlyMeasureScheduling? || ||
 |-
@@ -126,11 +126,11 @@ __NOTOC__
 |-
 | 0x45 || svcCreateEvent || None || W0=result, W1=client_handle ?, W2=server_handle ?
 |- style="border-top: double"
-| 0x48 || [5.0.0+] svcMapPhysicalMemoryNew? || X0=addr, X1=size || W0=result
+| 0x48 || [5.0.0+] svcAllocateUserHeapMemory || X0=addr, X1=size || W0=result
 |-
-| 0x49 || [5.0.0+] svcUnmapPhysicalMemoryNew? || X0=addr, X1=size || W0=result
+| 0x49 || [5.0.0+] svcFreeUserHeapMemory || X0=addr, X1=size || W0=result
 |-
-| 0x4A || [5.0.0+] svcSetWeirdSize? || X0=size || W0=result
+| 0x4A || [5.0.0+] svcSetUserHeapMemoryAllocationMax || X0=size || W0=result
 |-
 | 0x4B || [4.0.0+] [[#svcCreateJitMemory]] || X1=addr, X2=size || W0=result, W1=jit_handle
 |-
@@ -256,6 +256,8 @@ __NOTOC__
 Size must be a multiple of 0x200000.
 
 On success, the heap base-address (which is fixed by kernel, aslr'd) is written to OutAddr.
+
+Uses current process pool partition.
 
 [2.0.0+] Size must be less than 0x18000000.
 
@@ -783,8 +785,10 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 | Thread  || 0xF0000002 || 0 || Performance counter related.
 |}
 
-== svcMapPhysicalMemory ==
+== svcAllocateHeapMemory ==
 This is like svcSetHeapSize except you can allocate heap at any address you'd like.
+
+Uses current process pool partition.
 
 == svcDumpInfo ==
 
@@ -854,6 +858,9 @@ After being validated, passed handles will be enumerated in order; even if a ses
 '''0xea01:''' Timeout. No handles were signalled before the timeout expired. HandleIndex is not updated.
 
 '''0xf601:''' Port remote dead. One of the sessions has been closed. HandleIndex is set appropriately.
+
+== svcAllocateUserHeapMemory ==
+Same as [[#svcAllocateHeapMemory]] except it always uses pool partition 0.
 
 == svcCreateJitMemory ==
 Takes an address range with backing memory to create the JIT memory object.
@@ -1519,12 +1526,22 @@ Bitfield of one of more of these:
 |-
 | || || Bit5 || EnableAslr
 |-
-| || || Bit6 || IsSystem
+| || || Bit6 || UseSystemMemBlocks
+|-
+| || || Bit7 || [4.0.0] ?
+|-
+| || || Bit10-7 || [5.0.0+] PoolPartition (0=User, 1=System, 2=?, 3=?)
 |-
 | 0x28 || 4 || || ResourceLimitHandle
 |-
-| 0x2C || 4 ||
+| 0x2C || 4 || || [3.0.0+] UnknownNumPages
 |}
+
+On [1.0.0] there's only one pool.
+
+On [2.0.0-4.0.0] PoolPartition is 1 for built-ins and 0 for rest.
+
+On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool partitions.
 
 === AddressSpaceType ===
 {| class=wikitable

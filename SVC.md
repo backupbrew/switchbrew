@@ -47,8 +47,8 @@
 | 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                                             | X1=info\_id, X2=handle, X3=info\_sub\_id                                                                       | W0=result, X1=out                                        |
 | 0x2A | svcFlushEntireDataCache                                                            | None                                                                                                           | None                                                     |
 | 0x2B | svcFlushDataCache                                                                  | X0=addr, X1=size                                                                                               | W0=result                                                |
-| 0x2C | \[3.0.0+\] [\#svcMapPhysicalMemory](#svcMapPhysicalMemory "wikilink")              | X0=addr, X1=size                                                                                               | W0=result                                                |
-| 0x2D | \[3.0.0+\] svcUnmapPhysicalMemory                                                  | X0=addr, X1=size                                                                                               | W0=result                                                |
+| 0x2C | \[3.0.0+\] [\#svcAllocateHeapMemory](#svcAllocateHeapMemory "wikilink")            | X0=addr, X1=size                                                                                               | W0=result                                                |
+| 0x2D | \[3.0.0+\] svcFreeHeapMemory                                                       | X0=addr, X1=size                                                                                               | W0=result                                                |
 | 0x2E | \[5.0.0+\] svcDevUnitOnlyMeasureScheduling?                                        |                                                                                                                |                                                          |
 | 0x2F | svcGetLastThreadInfo                                                               | None                                                                                                           | W0=result, W1,W2,W3,W4=unk, W5=truncated\_u64, W6=bool   |
 | 0x30 | svcGetResourceLimitLimitValue                                                      | W1=reslimit\_handle, W2=[\#LimitableResource](#LimitableResource "wikilink")                                   | W0=result, X1=value                                      |
@@ -65,9 +65,9 @@
 | 0x43 | [\#svcReplyAndReceive](#svcReplyAndReceive "wikilink")                             | X1=ptr\_handles, W2=num\_handles, X3=replytarget\_handle(0=none), X4=timeout                                   | W0=result, W1=handle\_idx                                |
 | 0x44 | svcReplyAndReceiveWithUserBuffer                                                   | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=replytarget\_handle(0=none), X6=timeout                    | W0=result, W1=handle\_idx                                |
 | 0x45 | svcCreateEvent                                                                     | None                                                                                                           | W0=result, W1=client\_handle ?, W2=server\_handle ?      |
-| 0x48 | \[5.0.0+\] svcMapPhysicalMemoryNew?                                                | X0=addr, X1=size                                                                                               | W0=result                                                |
-| 0x49 | \[5.0.0+\] svcUnmapPhysicalMemoryNew?                                              | X0=addr, X1=size                                                                                               | W0=result                                                |
-| 0x4A | \[5.0.0+\] svcSetWeirdSize?                                                        | X0=size                                                                                                        | W0=result                                                |
+| 0x48 | \[5.0.0+\] svcAllocateUserHeapMemory                                               | X0=addr, X1=size                                                                                               | W0=result                                                |
+| 0x49 | \[5.0.0+\] svcFreeUserHeapMemory                                                   | X0=addr, X1=size                                                                                               | W0=result                                                |
+| 0x4A | \[5.0.0+\] svcSetUserHeapMemoryAllocationMax                                       | X0=size                                                                                                        | W0=result                                                |
 | 0x4B | \[4.0.0+\] [\#svcCreateJitMemory](#svcCreateJitMemory "wikilink")                  | X1=addr, X2=size                                                                                               | W0=result, W1=jit\_handle                                |
 | 0x4C | \[4.0.0+\] [\#svcMapJitMemory](#svcMapJitMemory "wikilink")                        | W0=jit\_handle, W1=[\#MapJitOperation](#MapJitOperation "wikilink"), X2=dstaddr, X3=size, W4=perm              | W0=result                                                |
 | 0x4D | svcSleepSystem                                                                     | None                                                                                                           | None                                                     |
@@ -140,6 +140,8 @@ Size must be a multiple of 0x200000.
 
 On success, the heap base-address (which is fixed by kernel, aslr'd) is
 written to OutAddr.
+
+Uses current process pool partition.
 
 \[2.0.0+\] Size must be less than 0x18000000.
 
@@ -591,10 +593,12 @@ it will return 0 and notify the debugger?
 | Process     | 20         | 0                     | \[5.0.0+\]                                                                                                  |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
-## svcMapPhysicalMemory
+## svcAllocateHeapMemory
 
 This is like svcSetHeapSize except you can allocate heap at any address
 you'd like.
+
+Uses current process pool partition.
 
 ## svcDumpInfo
 
@@ -661,6 +665,11 @@ expired. HandleIndex is not updated.
 
 **0xf601:** Port remote dead. One of the sessions has been closed.
 HandleIndex is set appropriately.
+
+## svcAllocateUserHeapMemory
+
+Same as [\#svcAllocateHeapMemory](#svcAllocateHeapMemory "wikilink")
+except it always uses pool partition 0.
 
 ## svcCreateJitMemory
 
@@ -1228,21 +1237,31 @@ Bitfield of one of more of these:
 
 ## CreateProcessInfo
 
-| Offset | Length | Bits   | Description                                            |
-| ------ | ------ | ------ | ------------------------------------------------------ |
-| 0      | 12     |        | ProcessName (doesn't have to be null-terminated)       |
-| 0      | 4      |        | ProcessCategory (0: regular title, 1: kernel built-in) |
-| 0x10   | 8      |        | TitleId                                                |
-| 0x18   | 8      |        | CodeAddr                                               |
-| 0x20   | 4      |        | CodeNumPages                                           |
-| 0x24   | 4      |        | MmuFlags                                               |
-|        |        | Bit0   | IsAarch64                                              |
-|        |        | Bit3-1 | [\#AddressSpaceType](#AddressSpaceType "wikilink")     |
-|        |        | Bit4   |                                                        |
-|        |        | Bit5   | EnableAslr                                             |
-|        |        | Bit6   | IsSystem                                               |
-| 0x28   | 4      |        | ResourceLimitHandle                                    |
-| 0x2C   | 4      |        |                                                        |
+| Offset | Length | Bits    | Description                                            |
+| ------ | ------ | ------- | ------------------------------------------------------ |
+| 0      | 12     |         | ProcessName (doesn't have to be null-terminated)       |
+| 0      | 4      |         | ProcessCategory (0: regular title, 1: kernel built-in) |
+| 0x10   | 8      |         | TitleId                                                |
+| 0x18   | 8      |         | CodeAddr                                               |
+| 0x20   | 4      |         | CodeNumPages                                           |
+| 0x24   | 4      |         | MmuFlags                                               |
+|        |        | Bit0    | IsAarch64                                              |
+|        |        | Bit3-1  | [\#AddressSpaceType](#AddressSpaceType "wikilink")     |
+|        |        | Bit4    |                                                        |
+|        |        | Bit5    | EnableAslr                                             |
+|        |        | Bit6    | UseSystemMemBlocks                                     |
+|        |        | Bit7    | \[4.0.0\] ?                                            |
+|        |        | Bit10-7 | \[5.0.0+\] PoolPartition (0=User, 1=System, 2=?, 3=?)  |
+| 0x28   | 4      |         | ResourceLimitHandle                                    |
+| 0x2C   | 4      |         | \[3.0.0+\] UnknownNumPages                             |
+
+On \[1.0.0\] there's only one pool.
+
+On \[2.0.0-4.0.0\] PoolPartition is 1 for built-ins and 0 for rest.
+
+On \[5.0.0\] PoolPartition is specified in CreateProcessArgs. There are
+now 4 pool
+partitions.
 
 ### AddressSpaceType
 
