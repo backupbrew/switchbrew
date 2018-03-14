@@ -112,7 +112,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |-
 | 0x20C
 | 0x4
-| Flags. Bit0 must be 1 on retail, on devunit 0 is also allowed. Bit1 is unknown, set to 1 for ARMS? Bit2 is set for applets with [5.0.0+], bit3 is set for sysmodules with [5.0.0+].
+| Flags. Bit0 must be 1 on retail, on devunit 0 is also allowed. Bit1 is unknown, set to 1 for ARMS? [5.0.0+] Bit3-2: PoolPartition? For applets set to 0b01, for sysmodules set to 0b10.
 |-
 | 0x210
 | 0x8
