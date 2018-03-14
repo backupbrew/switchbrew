@@ -205,7 +205,7 @@ structure:
 # ns:am2, ns:ec, ns:rid, ns:rt, ns:web
 
 These services are all, at the top level,
-nn::ns::detail::IServiceGetterInterface.
+"nn::ns::detail::IServiceGetterInterface".
 
 |      |                                                                            |
 | ---- | -------------------------------------------------------------------------- |
