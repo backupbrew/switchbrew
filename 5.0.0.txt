@@ -24,12 +24,16 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * Resolved an issue that caused Play Activity to display incorrectly in the Profile section of your User Page
 
 ==System Titles==
-All 01000000000010XX titles and most 01000000000008XX titles were updated.
+All 01000000000010XX titles and most 01000000000008XX titles were updated. Most (?) 8XX titles were just rebuilt with the new NCA crypto.
 
 * 0100000000000824(Mariko Config), 0100000000000825, 0100000000000826 were added.
 ** 0100000000000824 provides configuration for the new "T214" SoC.
 ** 0100000000000825 contains an empty "/blacklist.dat" file.
 ** 0100000000000826 contains a 0x40-byte "/version" file, this is all-zero except for '0' at offset 0x20.
+
+The only 8XX titles with actual changes are (besides sysver-title):
+* 818 (System-config)
+* ...
 
 The built codebins now have padding in .text after every function for 0x10-byte alignment.
 
