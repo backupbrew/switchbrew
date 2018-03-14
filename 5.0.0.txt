@@ -106,6 +106,7 @@ In addition, there were changes to the [[SMC]] interface:
 ====Kernel====
 * Kernel Address Space Layout Randomization was added.
 ** Instead of using a hardcoded address for per-CPU region, they now use x18 to point to the per-CPU region.
+* When using most [[SMC]]s, IRQs are now disabled first then restored to original state afterwards. x18 is also reinitialized right after most SMCs (see above).
 * 5 new syscalls.
 ** Syscalls 0x48+0x49 are used by [[AM_services|AM]]-sysmodule.
 ** Syscall 0x4A is used by [[Process_Manager_services|PM]]-sysmodule.
