@@ -77,6 +77,11 @@ Network section. This just returns an UTC Unix time
   - https://ias-%.hac.shop.nintendo.net/ias/services/rest/AccountTransfer
   - https://ias-%.hac.shop.nintendo.net/ias/services/rest/SyncRegistration
 
+<!-- end list -->
+
+  - \[5.0.0\]+ https://pearljam.hac.%.eshop.nintendo.net/sugar
+  - \[5.0.0\]+ https://pearljam.hac.%.eshop.nintendo.net/civil
+
 These are not accessible without the required TLS client cert+privk,
 minus the time URL which can be accessed without any client cert+privk
 at all.
