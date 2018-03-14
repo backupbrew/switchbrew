@@ -24,7 +24,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * Resolved an issue that caused Play Activity to display incorrectly in the Profile section of your User Page
 
 ==System Titles==
-<fill this in (manually) later>
+All 01000000000010XX titles and most 01000000000008XX titles were updated.
 
 * 0100000000000824(Mariko Config), 0100000000000825, 0100000000000826 were added.
 ** 0100000000000824 provides configuration for the new "T214" SoC.
