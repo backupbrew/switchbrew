@@ -858,7 +858,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Dummy file</p></td>
+<td><p>Controller gfx/icon data + dummy file</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000081F</p></td>
