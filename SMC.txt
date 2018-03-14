@@ -179,7 +179,7 @@ Functions exposed to the kernel internally.
 |-
 | 0xC3000006 || [[#Panic]] || W1=panic_color, X2,X3,X4,X5,X6,X7=0 || X0=result
 |-
-| 0xC3000007 || [2.0.0+] [[#ProtectKernelRegion]] || X1=carveout_index, X2=region_phys_addr, X3=region_size, X4,X5,X6,X7=0 || X0=result
+| 0xC3000007 || [2.0.0+] [[#ConfigureCarveout]] || X1=carveout_index, X2=region_phys_addr, X3=region_size, X4,X5,X6,X7=0 || X0=result
 |-
 | 0xC3000008 || [2.0.0+] [[#ReadWriteRegister]] || X1=reg_addr, W2=rw_mask, W3=in_val, X4,X5,X6,X7=0 || X0=result, W1=out_val
 |}
@@ -208,7 +208,7 @@ Issues a system panic.
 
 The kernel always calls this with '''panic_color''' set to 0xF00.
 
-=== ProtectKernelRegion ===
+=== ConfigureCarveout ===
 Configures memory controller carveout regions.
 
 If '''carveout_index''' is 0, '''region_phys_addr''' and '''region_size''' are used to configure '''MC_SECURITY_CARVEOUT4'''.
