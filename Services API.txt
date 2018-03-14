@@ -191,7 +191,7 @@ Takes a pid.
 | [[Network Interface services]]
 | 
 |-
-| nim, nim:shp, ntc
+| nim, nim:shp, ntc, [5.0.0]+ nim:eca
 | [[NIM services]]
 | shp: eShop
 |-

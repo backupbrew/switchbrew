@@ -237,7 +237,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>nim, nim:shp, ntc</p></td>
+<td><p>nim, nim:shp, ntc, [5.0.0]+ nim:eca</p></td>
 <td><p><a href="NIM services.md" title="wikilink">NIM services</a></p></td>
 <td><p>shp: eShop</p></td>
 </tr>
