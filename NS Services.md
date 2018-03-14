@@ -133,7 +133,24 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 | 1801 |                                                                          |
 | 1802 |                                                                          |
 
-# ns:am2
+# ns:am2, ns:ec, ns:rid, ns:rt, ns:web
+
+These services are all, at the top level,
+nn::ns::detail::IServiceGetterInterface.
+
+|      |                                                                            |
+| ---- | -------------------------------------------------------------------------- |
+| 7992 | [IECommerceInterface](#GetECommerceInterface "wikilink")                   |
+| 7993 | [IApplicationVersionInterface](#GetApplicationVersionInterface "wikilink") |
+| 7994 | [IFactoryResetInterface](#GetFactoryResetInterface "wikilink")             |
+| 7995 | [IAccountProxyInterface](#GetAccountProxyInterface "wikilink")             |
+| 7996 | [IApplicationManagerInterface](#GetApplicationManagerInterface "wikilink") |
+| 7997 | [IDownloadTaskInterface](#GetDownloadTaskInterface "wikilink")             |
+| 7998 | [IContentManagementInterface](#GetContentManagementInterface "wikilink")   |
+| 7999 | [IDocumentInterface](#GetDocumentInterface "wikilink")                     |
+|      |                                                                            |
+
+### IApplicationManagerInterface
 
 |      |                                                        |
 | ---- | ------------------------------------------------------ |
@@ -310,6 +327,66 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 | 2016 | ListNotCommittedContentMeta                            |
 | 2017 | CreateDownloadTask                                     |
 |      |                                                        |
+
+### IApplicationVersionInterface
+
+|      |                              |
+| ---- | ---------------------------- |
+| 0    | GetLaunchRequiredVersion     |
+| 1    | UpgradeLaunchRequiredVersion |
+| 35   | UpdateVersionList            |
+| 36   | PushLaunchVersion            |
+| 37   | ListRequiredVersion          |
+| 800  | RequestVersionList           |
+| 801  | ListVersionList              |
+| 802  | RequestVersionListData       |
+| 1000 | PerformAutoUpdate            |
+|      |                              |
+
+### IAccountProxyInterface
+
+|   |                   |
+| - | ----------------- |
+| 0 | CreateUserAccount |
+|   |                   |
+
+### IContentManagerInterface
+
+|     |                                                 |
+| --- | ----------------------------------------------- |
+| 11  | CalculateApplicationOccupiedSize                |
+| 43  | CheckSdCardMountStatus                          |
+| 47  | GetTotalSpaceSize                               |
+| 48  | GetFreeSpaceSize                                |
+| 600 | CountApplicationContentMeta                     |
+| 601 | ListApplicationContentMetaStatus                |
+| 605 | ListApplicationContentMetaStatusWithRightsCheck |
+| 607 | IsAnyApplicationRunning                         |
+|     |                                                 |
+
+### IDocumentInterface
+
+|    |                               |
+| -- | ----------------------------- |
+| 21 | GetApplicationContentPath     |
+| 23 | ResolveApplicationContentPath |
+|    |                               |
+
+### IECommerceInterface
+
+|   |                   |
+| - | ----------------- |
+| 0 | RequestLinkDevice |
+|   |                   |
+
+### IFactoryResetInterface
+
+|     |                                           |
+| --- | ----------------------------------------- |
+| 100 | ResetToFactorySettings                    |
+| 101 | ResetToFactorySettingsWithoutUserSaveData |
+| 102 | ResetToFactorySettingsForRefurbishment    |
+|     |                                           |
 
 # ns:vm
 

@@ -257,7 +257,32 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 | 1802 ||
 |}
 
-= ns:am2 =
+= ns:am2, ns:ec, ns:rid, ns:rt, ns:web =
+
+These services are all, at the top level, nn::ns::detail::IServiceGetterInterface.
+
+{| class="wikitable" border="1"
+|-
+| 7992 || [[#GetECommerceInterface|IECommerceInterface]]
+|-
+| 7993 || [[#GetApplicationVersionInterface|IApplicationVersionInterface]]
+|-
+| 7994 || [[#GetFactoryResetInterface|IFactoryResetInterface]]
+|-
+| 7995 || [[#GetAccountProxyInterface|IAccountProxyInterface]]
+|-
+| 7996 || [[#GetApplicationManagerInterface|IApplicationManagerInterface]]
+|-
+| 7997 || [[#GetDownloadTaskInterface|IDownloadTaskInterface]]
+|-
+| 7998 || [[#GetContentManagementInterface|IContentManagementInterface]]
+|-
+| 7999 || [[#GetDocumentInterface|IDocumentInterface]]
+|-
+|}
+
+=== IApplicationManagerInterface ===
+
 {| class="wikitable" border="1"
 |-
 | 0 || ListApplicationRecord
@@ -606,6 +631,91 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 |-
 |}
 
+=== IApplicationVersionInterface ===
+
+{| class="wikitable" border="1"
+|-
+| 0 || GetLaunchRequiredVersion
+|-
+| 1 || UpgradeLaunchRequiredVersion
+|-
+| 35 || UpdateVersionList
+|-
+| 36 || PushLaunchVersion
+|-
+| 37 || ListRequiredVersion
+|-
+| 800 || RequestVersionList
+|-
+| 801 || ListVersionList
+|-
+| 802 || RequestVersionListData
+|-
+| 1000 || PerformAutoUpdate
+|-
+|}
+
+=== IAccountProxyInterface ===
+
+{| class="wikitable" border="1"
+|-
+| 0 || CreateUserAccount
+|-
+|}
+
+=== IContentManagerInterface ===
+
+{| class="wikitable" border="1"
+|-
+| 11 || CalculateApplicationOccupiedSize
+|-
+| 43 || CheckSdCardMountStatus
+|-
+| 47 || GetTotalSpaceSize
+|-
+| 48 || GetFreeSpaceSize
+|-
+| 600 || CountApplicationContentMeta
+|-
+| 601 || ListApplicationContentMetaStatus
+|-
+| 605 || ListApplicationContentMetaStatusWithRightsCheck
+|-
+| 607 || IsAnyApplicationRunning
+|-
+|}
+
+=== IDocumentInterface ===
+
+{| class="wikitable" border="1"
+|-
+| 21 || GetApplicationContentPath
+|-
+| 23 || ResolveApplicationContentPath
+|-
+|}
+
+=== IECommerceInterface===
+
+{| class="wikitable" border="1"
+|-
+| 0 || RequestLinkDevice
+|-
+|}
+
+
+=== IFactoryResetInterface ===
+
+{| class="wikitable" border="1"
+|-
+| 100 || ResetToFactorySettings
+|-
+| 101 || ResetToFactorySettingsWithoutUserSaveData
+|-
+| 102 || ResetToFactorySettingsForRefurbishment
+|-
+|}
+
 = ns:vm =
 {| class="wikitable" border="1"
 |-
@@ -616,7 +726,6 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 | 1202 || GetSafeSystemVersion
 |-
 |}
-
 
 == GetTitlePatchContentNcaPath ==
 Takes a 0x16-type output buffer, an u8 [[NCA|type]], and an u64 titleID.
