@@ -72,56 +72,60 @@ This is "nn::spl::detail::IGeneralInterface".
 |}
 
 == GetConfig ==
-Takes a u32 ('''ConfigItem'''), and returns a u64 ('''ConfigVal''').
+Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 
 {| class="wikitable" border="1"
 |-
 ! ConfigItem || Name
 |-
-| 1 || DisableProgramVerification
+| 1 || [[#DisableProgramVerification]]
 |-
-| 2 || MemoryConfiguration
+| 2 || [[#DRAMId]]
 |-
-| 3 || SecurityEngineIRQNumber
+| 3 || [[#SecurityEngineIRQNumber]]
 |-
-| 4 || Version (returns the current [[Package2#Versions|Package1 Maxver Constant]] - 1).
+| 4 || [[#Version]]
 |-
-| 5 || HardwareType (0=Icosa (nx-abca2), 1=Copper (nx-abcb))
+| 5 || [[#HardwareType]]
 |-
-| 6 || IsRetail
+| 6 || [[#IsRetail]]
 |-
-| 7 || IsRecoveryBoot
+| 7 || [[#IsRecoveryBoot]]
 |-
-| 8 || DeviceId (byte7 clear)
+| 8 || [[#DeviceId]]
 |-
-| 9 || BootReason
+| 9 || [1.0.0-4.0.0] BootReason
 |-
 | 10 || MemoryArrange
 |-
-| 11 || IsDebugMode
+| 11 || [[#IsDebugMode]]
 |-
-| 12 || KernelMemoryConfiguration
+| 12 || [[#KernelMemoryConfiguration]]
 |-
-| 13 || BatteryProfile
+| 13 || [[#BatteryProfile]]
 |-
-| 14 || [4.0.0+] FUSE_RESERVED_ODM4 bit 10
+| 14 || [4.0.0+] [[#Unknown0]]
 |-
-| 15 || [5.0.0+] Always 0
+| 15 || [5.0.0+] Unknown1
 |-
-| 16 || [5.0.0+] IsNewSoc?
+| 16 || [5.0.0+] [[#IsT214]]
 |-
-| 17 || [5.0.0+] Package2Meta
+| 17 || [5.0.0+] [[#Package2Hash]]
 |}
 
-[[Process Manager services|PM]] checks id1 and if non-zero, calls fsp-pr SetEnabledProgramVerification(false).
+=== DisableProgramVerification ===
+[[Process Manager services|PM]] checks this item and if non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 
-[[PCV_services|PCV]] configures memory profiles based on id2.
+=== DRAMId ===
+This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
+
+[[PCV_services|PCV]] configures memory profiles based on DRAMId.
 {| class="wikitable" border="1"
 |-
 !  Platform
 !  Version @ 40800
 !  Revision
-!  id2
+!  DRAMId
 |-
 |  jetson-tx1
 |  11_40800_01_V9.8.3_V1.6
@@ -155,23 +159,55 @@ Takes a u32 ('''ConfigItem'''), and returns a u64 ('''ConfigVal''').
 |-
 |}
 
-=== Hardware Types ===
+nx-abcb (Copper) is the SDEV unit. Among other differences, this has extra hardware to support HDMI output.
 
-nx-abcb is the SDEV unit. Among other differences, this has extra hardware to support HDMI output.
+nx-abca2 (Icosa) hardware types are variations of the retail form factor.
 
-nx-abca2 hardware types are variations of the retail form factor.
+=== SecurityEngineIRQNumber ===
+SPL uses this for setting up the security engine IRQ.
 
-=== Notes ===
+=== Version ===
+The current [[Package2#Versions|Package1 Maxver Constant]] - 1.
 
-SPL uses id3 for setting up the security engine IRQ.
+=== HardwareType ===
+[1.0.0+] This item is obtained by checking bits 8 and 2 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
 
-[[NIM_services|NIM]] checks that id8 output must match the [[Settings_services|set:cal]] DeviceId with byte7 cleared, otherwise panic.
+[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 3 (Unknown) or 4 (Invalid).
 
-[3.0.0+] [[Loader services|RO]] checks id11, if set then skipping NRR rsa signatures is allowed.
+A value of 2 (Hoag?) is always mapped to 4 (Invalid).
 
-Kernel uses id11 to determine behavior of svcBreak positive arguments. It will break instead of just force-exiting the process which is what happens on retail. [2.0.0+] This is also used with certain debug [[SVC|SVCs]].
+=== IsRetail ===
+This item is obtained by checking bits 9 and 0-1 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Debug), 1 (Retail) or 2 (Invalid).
 
-Kernel reads id12 when setting up memory-related code. If bit0 is set, it will memset various allocated memory-regions with 0x58, 0x59, 0x5A ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB of DRAM instead of 4GB.
+=== IsRecoveryBoot ===
+Used to determine if the system is booting from SafeMode firmware.
+
+=== DeviceId ===
+[[NIM_services|NIM]] checks if this item matches the [[Settings_services|set:cal]] DeviceId with byte7 cleared. If they don't match, a panic is thrown.
+
+=== IsDebugMode ===
+Kernel uses this to determine behavior of svcBreak positive arguments. It will break instead of just force-exiting the process which is what happens on retail.
+
+[2.0.0+] This is also used with certain debug [[SVC|SVCs]].
+
+[3.0.0+] [[Loader services|RO]] checks this and if set then skipping NRR rsa signatures is allowed.
+
+=== KernelMemoryConfiguration ===
+Kernel reads this when setting up memory-related code. If bit0 is set, it will memset various allocated memory-regions with 0x58, 0x59, 0x5A ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB of DRAM instead of 4GB.
+
+=== BatteryProfile ===
+This tells if the TI Charger (bq24192) is active.
+
+=== IsT214 ===
+This item is obtained from [[Fuse_registers#FUSE_RESERVED_ODM2|FUSE_RESERVED_ODM2]] if bit 11 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]] is set, [[Fuse_registers#FUSE_RESERVED_ODM0|FUSE_RESERVED_ODM0]] matches 0x8E61ECAE and [[Fuse_registers#FUSE_RESERVED_ODM1|FUSE_RESERVED_ODM1]] matches 0xF2BA3BB2.
+
+This is speculated to be related to the new SoC T214.
+
+=== Unknown0 ===
+This item is bit 10 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
+
+=== Package2Hash ===
+This is a SHA-256 hash calculated over the [[Package2|package2]] image. Since the hash calculation is an optional step in pkg2ldr, this item is only valid in recovery mode. Otherwise, an error is returned instead.
 
 == UserExpMod ==
 Takes one type-10 (C descriptor) buffer ('''data_out_buf''') and 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''exp_in_buf''' and '''mod_in_buf''').

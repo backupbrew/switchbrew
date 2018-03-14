@@ -51,36 +51,43 @@ unlocked.
 
 ## GetConfig
 
-Takes a u32 (**ConfigItem**), and returns a u64
+Takes a u32 (**ConfigItem**), and returns one or more u64s
 (**ConfigVal**).
 
-| ConfigItem | Name                                                                                                     |
-| ---------- | -------------------------------------------------------------------------------------------------------- |
-| 1          | DisableProgramVerification                                                                               |
-| 2          | MemoryConfiguration                                                                                      |
-| 3          | SecurityEngineIRQNumber                                                                                  |
-| 4          | Version (returns the current [Package1 Maxver Constant](Package2#Versions.md##Versions "wikilink") - 1). |
-| 5          | HardwareType (0=Icosa (nx-abca2), 1=Copper (nx-abcb))                                                    |
-| 6          | IsRetail                                                                                                 |
-| 7          | IsRecoveryBoot                                                                                           |
-| 8          | DeviceId (byte7 clear)                                                                                   |
-| 9          | BootReason                                                                                               |
-| 10         | MemoryArrange                                                                                            |
-| 11         | IsDebugMode                                                                                              |
-| 12         | KernelMemoryConfiguration                                                                                |
-| 13         | BatteryProfile                                                                                           |
-| 14         | \[4.0.0+\] FUSE\_RESERVED\_ODM4 bit 10                                                                   |
-| 15         | \[5.0.0+\] Always 0                                                                                      |
-| 16         | \[5.0.0+\] IsNewSoc?                                                                                     |
-| 17         | \[5.0.0+\] Package2Meta                                                                                  |
+| ConfigItem | Name                                                                   |
+| ---------- | ---------------------------------------------------------------------- |
+| 1          | [\#DisableProgramVerification](#DisableProgramVerification "wikilink") |
+| 2          | [\#DRAMId](#DRAMId "wikilink")                                         |
+| 3          | [\#SecurityEngineIRQNumber](#SecurityEngineIRQNumber "wikilink")       |
+| 4          | [\#Version](#Version "wikilink")                                       |
+| 5          | [\#HardwareType](#HardwareType "wikilink")                             |
+| 6          | [\#IsRetail](#IsRetail "wikilink")                                     |
+| 7          | [\#IsRecoveryBoot](#IsRecoveryBoot "wikilink")                         |
+| 8          | [\#DeviceId](#DeviceId "wikilink")                                     |
+| 9          | \[1.0.0-4.0.0\] BootReason                                             |
+| 10         | MemoryArrange                                                          |
+| 11         | [\#IsDebugMode](#IsDebugMode "wikilink")                               |
+| 12         | [\#KernelMemoryConfiguration](#KernelMemoryConfiguration "wikilink")   |
+| 13         | [\#BatteryProfile](#BatteryProfile "wikilink")                         |
+| 14         | \[4.0.0+\] [\#Unknown0](#Unknown0 "wikilink")                          |
+| 15         | \[5.0.0+\] Unknown1                                                    |
+| 16         | \[5.0.0+\] [\#IsT214](#IsT214 "wikilink")                              |
+| 17         | \[5.0.0+\] [\#Package2Hash](#Package2Hash "wikilink")                  |
 
-[PM](Process%20Manager%20services.md "wikilink") checks id1 and if
+### DisableProgramVerification
+
+[PM](Process%20Manager%20services.md "wikilink") checks this item and if
 non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 
-[PCV](PCV%20services.md "wikilink") configures memory profiles based on
-id2.
+### DRAMId
 
-| Platform   | Version @ 40800                       | Revision | id2    |
+This is extracted directly from
+[FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
+
+[PCV](PCV%20services.md "wikilink") configures memory profiles based on
+DRAMId.
+
+| Platform   | Version @ 40800                       | Revision | DRAMId |
 | ---------- | ------------------------------------- | -------- | ------ |
 | jetson-tx1 | 11\_40800\_01\_V9.8.3\_V1.6           | N/A      | N/A    |
 | nx-abcb    | 10\_40800\_NoCfgVersion\_V9.8.4\_V1.6 | 0        | 0      |
@@ -90,34 +97,98 @@ id2.
 | nx-abca2   | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6 | 3        | 2      |
 |            |                                       |          |        |
 
-### Hardware Types
+nx-abcb (Copper) is the SDEV unit. Among other differences, this has
+extra hardware to support HDMI output.
 
-nx-abcb is the SDEV unit. Among other differences, this has extra
-hardware to support HDMI output.
+nx-abca2 (Icosa) hardware types are variations of the retail form
+factor.
 
-nx-abca2 hardware types are variations of the retail form factor.
+### SecurityEngineIRQNumber
 
-### Notes
+SPL uses this for setting up the security engine IRQ.
 
-SPL uses id3 for setting up the security engine IRQ.
+### Version
 
-[NIM](NIM%20services.md "wikilink") checks that id8 output must match
-the [set:cal](Settings%20services.md "wikilink") DeviceId with byte7
-cleared, otherwise panic.
+The current [Package1 Maxver
+Constant](Package2#Versions.md##Versions "wikilink") - 1.
 
-\[3.0.0+\] [RO](Loader%20services.md "wikilink") checks id11, if set
-then skipping NRR rsa signatures is allowed.
+### HardwareType
 
-Kernel uses id11 to determine behavior of svcBreak positive arguments.
+\[1.0.0+\] This item is obtained by checking bits 8 and 2 from
+[FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
+It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
+
+\[4.0.0+\] This item is obtained by checking bits 8, 2 and 16-19 from
+[FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
+It can be 0 (Icosa), 1 (Copper), 3 (Unknown) or 4 (Invalid).
+
+A value of 2 (Hoag?) is always mapped to 4 (Invalid).
+
+### IsRetail
+
+This item is obtained by checking bits 9 and 0-1 from
+[FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
+It can be 0 (Debug), 1 (Retail) or 2 (Invalid).
+
+### IsRecoveryBoot
+
+Used to determine if the system is booting from SafeMode firmware.
+
+### DeviceId
+
+[NIM](NIM%20services.md "wikilink") checks if this item matches the
+[set:cal](Settings%20services.md "wikilink") DeviceId with byte7
+cleared. If they don't match, a panic is thrown.
+
+### IsDebugMode
+
+Kernel uses this to determine behavior of svcBreak positive arguments.
 It will break instead of just force-exiting the process which is what
-happens on retail. \[2.0.0+\] This is also used with certain debug
+happens on retail.
+
+\[2.0.0+\] This is also used with certain debug
 [SVCs](SVC.md "wikilink").
 
-Kernel reads id12 when setting up memory-related code. If bit0 is set,
+\[3.0.0+\] [RO](Loader%20services.md "wikilink") checks this and if set
+then skipping NRR rsa signatures is allowed.
+
+### KernelMemoryConfiguration
+
+Kernel reads this when setting up memory-related code. If bit0 is set,
 it will memset various allocated memory-regions with 0x58, 0x59, 0x5A
 ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find
 uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB
 of DRAM instead of 4GB.
+
+### BatteryProfile
+
+This tells if the TI Charger (bq24192) is active.
+
+### IsT214
+
+This item is obtained from
+[FUSE\_RESERVED\_ODM2](Fuse%20registers#FUSE%20RESERVED%20ODM2.md##FUSE_RESERVED_ODM2 "wikilink")
+if bit 11 from
+[FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink")
+is set,
+[FUSE\_RESERVED\_ODM0](Fuse%20registers#FUSE%20RESERVED%20ODM0.md##FUSE_RESERVED_ODM0 "wikilink")
+matches 0x8E61ECAE and
+[FUSE\_RESERVED\_ODM1](Fuse%20registers#FUSE%20RESERVED%20ODM1.md##FUSE_RESERVED_ODM1 "wikilink")
+matches 0xF2BA3BB2.
+
+This is speculated to be related to the new SoC T214.
+
+### Unknown0
+
+This item is bit 10 from
+[FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
+
+### Package2Hash
+
+This is a SHA-256 hash calculated over the
+[package2](Package2.md "wikilink") image. Since the hash calculation is
+an optional step in pkg2ldr, this item is only valid in recovery mode.
+Otherwise, an error is returned instead.
 
 ## UserExpMod
 
