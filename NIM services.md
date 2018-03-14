@@ -23,6 +23,32 @@ blocked.
 
 This is "nn::nim::detail::IShopServiceManager".
 
+| Cmd | Name                                         |
+| --- | -------------------------------------------- |
+| 0   | RequestDeviceAuthenticationToken             |
+| 1   | RequestCachedDeviceAuthenticationToken       |
+| 400 | GetAccountByVirtualAccount                   |
+| 300 | RequestUnlinkDevice                          |
+| 301 | RequestUnlinkDeviceIntegrated                |
+| 302 | RequestLinkDevice                            |
+| 303 | HasDeviceLink                                |
+| 304 | RequestUnlinkDeviceAll                       |
+| 305 | RequestCreateVirtualAccount                  |
+| 306 | RequestDeviceLinkStatus                      |
+| 200 | RequestRegisterNotificationToken             |
+| 100 | RequestRegisterDeviceAccount                 |
+| 101 | RequestUnregisterDeviceAccount               |
+| 102 | RequestDeviceAccountStatus                   |
+| 103 | GetDeviceAccountInfo                         |
+| 104 | RequestDeviceRegistrationInfo                |
+| 105 | RequestTransferDeviceAccount                 |
+| 106 | RequestSyncRegistration                      |
+| 107 | IsOwnDeviceId                                |
+| 500 | RequestSyncTicket                            |
+| 501 | RequestDownloadTicket                        |
+| 502 | RequestDownloadTicketForPrepurchasedContents |
+|     |                                              |
+
 # ntc
 
 This is "nn::ntc::detail::<service::IStaticService>".
