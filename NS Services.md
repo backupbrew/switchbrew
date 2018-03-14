@@ -133,6 +133,75 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 | 1801 |                                                                          |
 | 1802 |                                                                          |
 
+## GetTitlePatchContentNcaPath
+
+Takes a 0x16-type output buffer, an u8 [type](NCA.md "wikilink"), and an
+u64 titleID.
+
+The input titleID is used with the application-title table like various
+other cmds, anything not in that table can't be used with this.
+
+Returns a string path for the specified type of patch content with this
+titleID, otherwise returns regular-application paths when update-title
+not installed. Returns an error when the specified type of content
+doesn't exist for this title. Starts with
+"@{SdCardContent,UserContent}://" and ends in ".nca".
+
+For gamecard content, the output path is: "@GcSXXXXXXXX:/<NcaId>.nca".
+NCA-type0 with gamecard returns 0 with an empty output string.
+
+The output string is then used by the user-process with
+[FS](Filesystem%20services.md "wikilink") to mount the content.
+
+## GetFreeSpace
+
+Takes an input media-id that must be 5.
+
+Returns the u64 from
+[Content\_Manager\_services\#IContentStorage](Content%20Manager%20services#IContentStorage.md##IContentStorage "wikilink")
+cmd22.
+
+## GetTotalSpace
+
+Takes an input media-id that must be 5.
+
+Returns the u64 from
+[Content\_Manager\_services\#IContentStorage](Content%20Manager%20services#IContentStorage.md##IContentStorage "wikilink")
+cmd23.
+
+## GetLanguageIdFromString
+
+Takes an input u8 pointer for the resulting Id to be written to and a
+string represented as a u64 (i.e 0x53552D6E65 for 'en-US').
+
+Returns 0 if an ID was successfully found, otherwise returns 0x25810.
+
+## ListApplicationRecord
+
+Takes a type-6 output buffer and an u64.
+
+Returns an array of title-info entries using the specified offset and
+size. No input titleID is passed to this.
+
+## GetTitleInfo1
+
+Returns 0x10-byte entries using the specified titleID starting at the
+specified u32 entryindex. Can only return game titles. The second entry
+if any is the update-title usually. When the input entryindex is \>=
+totalentries, this will return 0 with out\_entrycount=0.
+
+Entry
+structure:
+
+| Offset | Size | Description                                                                                          |
+| ------ | ---- | ---------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | u8 "type". [Title type](Content%20Manager%20services.md "wikilink") (String is from web-applet)      |
+| 0x1    | 0x1  | u8 "installedStorage" / [StorageId](Filesystem%20services.md "wikilink") (String is from web-applet) |
+| 0x2    | 0x1  | Unknown. Non-zero with output from cmd 605, differs for app/update titles.                           |
+| 0x3    | 0x1  | Padding                                                                                              |
+| 0x4    | 0x4  | u32 Title-version                                                                                    |
+| 0x8    | 0x8  | u64 titleID                                                                                          |
+
 # ns:am2, ns:ec, ns:rid, ns:rt, ns:web
 
 These services are all, at the top level,
@@ -396,75 +465,6 @@ nn::ns::detail::IServiceGetterInterface.
 | 1201 | UpdateSafeSystemVersionForDebug |
 | 1202 | GetSafeSystemVersion            |
 |      |                                 |
-
-## GetTitlePatchContentNcaPath
-
-Takes a 0x16-type output buffer, an u8 [type](NCA.md "wikilink"), and an
-u64 titleID.
-
-The input titleID is used with the application-title table like various
-other cmds, anything not in that table can't be used with this.
-
-Returns a string path for the specified type of patch content with this
-titleID, otherwise returns regular-application paths when update-title
-not installed. Returns an error when the specified type of content
-doesn't exist for this title. Starts with
-"@{SdCardContent,UserContent}://" and ends in ".nca".
-
-For gamecard content, the output path is: "@GcSXXXXXXXX:/<NcaId>.nca".
-NCA-type0 with gamecard returns 0 with an empty output string.
-
-The output string is then used by the user-process with
-[FS](Filesystem%20services.md "wikilink") to mount the content.
-
-## GetFreeSpace
-
-Takes an input media-id that must be 5.
-
-Returns the u64 from
-[Content\_Manager\_services\#IContentStorage](Content%20Manager%20services#IContentStorage.md##IContentStorage "wikilink")
-cmd22.
-
-## GetTotalSpace
-
-Takes an input media-id that must be 5.
-
-Returns the u64 from
-[Content\_Manager\_services\#IContentStorage](Content%20Manager%20services#IContentStorage.md##IContentStorage "wikilink")
-cmd23.
-
-## GetLanguageIdFromString
-
-Takes an input u8 pointer for the resulting Id to be written to and a
-string represented as a u64 (i.e 0x53552D6E65 for 'en-US').
-
-Returns 0 if an ID was successfully found, otherwise returns 0x25810.
-
-## ListApplicationRecord
-
-Takes a type-6 output buffer and an u64.
-
-Returns an array of title-info entries using the specified offset and
-size. No input titleID is passed to this.
-
-## GetTitleInfo1
-
-Returns 0x10-byte entries using the specified titleID starting at the
-specified u32 entryindex. Can only return game titles. The second entry
-if any is the update-title usually. When the input entryindex is \>=
-totalentries, this will return 0 with out\_entrycount=0.
-
-Entry
-structure:
-
-| Offset | Size | Description                                                                                          |
-| ------ | ---- | ---------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x1  | u8 "type". [Title type](Content%20Manager%20services.md "wikilink") (String is from web-applet)      |
-| 0x1    | 0x1  | u8 "installedStorage" / [StorageId](Filesystem%20services.md "wikilink") (String is from web-applet) |
-| 0x2    | 0x1  | Unknown. Non-zero with output from cmd 605, differs for app/update titles.                           |
-| 0x3    | 0x1  | Padding                                                                                              |
-| 0x4    | 0x4  | u32 Title-version                                                                                    |
-| 0x8    | 0x8  | u64 titleID                                                                                          |
 
 # ns:su
 
