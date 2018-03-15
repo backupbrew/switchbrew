@@ -47,16 +47,16 @@
 | 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                                             | X1=info\_id, X2=handle, X3=info\_sub\_id                                                                       | W0=result, X1=out                                        |
 | 0x2A | svcFlushEntireDataCache                                                            | None                                                                                                           | None                                                     |
 | 0x2B | svcFlushDataCache                                                                  | X0=addr, X1=size                                                                                               | W0=result                                                |
-| 0x2C | \[3.0.0+\] [\#svcAllocateHeapMemory](#svcAllocateHeapMemory "wikilink")            | X0=addr, X1=size                                                                                               | W0=result                                                |
-| 0x2D | \[3.0.0+\] svcFreeHeapMemory                                                       | X0=addr, X1=size                                                                                               | W0=result                                                |
+| 0x2C | \[3.0.0+\] [\#svcMapPhysicalMemory](#svcMapPhysicalMemory "wikilink")              | X0=addr, X1=size                                                                                               | W0=result                                                |
+| 0x2D | \[3.0.0+\] svcUnmapPhysicalMemory                                                  | X0=addr, X1=size                                                                                               | W0=result                                                |
 | 0x2E | \[5.0.0+\] svcGetNextThreadInfo                                                    | X3=timeout                                                                                                     | W0=result, bunch of crap                                 |
 | 0x2F | svcGetLastThreadInfo                                                               | None                                                                                                           | W0=result, W1,W2,W3,W4=unk, W5=truncated\_u64, W6=bool   |
 | 0x30 | svcGetResourceLimitLimitValue                                                      | W1=reslimit\_handle, W2=[\#LimitableResource](#LimitableResource "wikilink")                                   | W0=result, X1=value                                      |
 | 0x31 | svcGetResourceLimitCurrentValue                                                    | W1=reslimit\_handle, W2=[\#LimitableResource](#LimitableResource "wikilink")                                   | W0=result, X1=value                                      |
 | 0x32 | svcSetThreadActivity                                                               | W0=thread\_handle, W1=bool                                                                                     | W0=result                                                |
 | 0x33 | svcGetThreadContext3                                                               | W0=thread\_handle, W1=[\#ThreadContext](#ThreadContext "wikilink")\*                                           | W0=result                                                |
-| 0x34 | \[4.0.0+\]                                                                         | X0=ptr, W1=type, X2=? X3=timeout                                                                               |                                                          |
-| 0x35 | \[4.0.0+\]                                                                         | X0=ptr, W1=type, X2=? W3=?                                                                                     |                                                          |
+| 0x34 | \[4.0.0+\] svcWaitForAddress                                                       | X0=ptr, W1=ArbitrationType, X2=? X3=timeout                                                                    |                                                          |
+| 0x35 | \[4.0.0+\] svcSignalToAddress                                                      | X0=ptr, W1=SignalType, X2=? W3=?                                                                               |                                                          |
 | 0x3C | [\#svcDumpInfo](#svcDumpInfo "wikilink")                                           |                                                                                                                |                                                          |
 | 0x3D | \[4.0.0+\] svcDumpInfoNew                                                          |                                                                                                                |                                                          |
 | 0x40 | svcCreateSession                                                                   | W2=is\_light, X3=?                                                                                             | W0=result, W1=server\_handle, W2=client\_handle          |
@@ -68,8 +68,8 @@
 | 0x48 | \[5.0.0+\] svcAllocateUserHeapMemory                                               | X0=addr, X1=size                                                                                               | W0=result                                                |
 | 0x49 | \[5.0.0+\] svcFreeUserHeapMemory                                                   | X0=addr, X1=size                                                                                               | W0=result                                                |
 | 0x4A | \[5.0.0+\] svcSetUserHeapMemoryAllocationMax                                       | X0=size                                                                                                        | W0=result                                                |
-| 0x4B | \[4.0.0+\] [\#svcCreateJitMemory](#svcCreateJitMemory "wikilink")                  | X1=addr, X2=size                                                                                               | W0=result, W1=jit\_handle                                |
-| 0x4C | \[4.0.0+\] [\#svcMapJitMemory](#svcMapJitMemory "wikilink")                        | W0=jit\_handle, W1=[\#MapJitOperation](#MapJitOperation "wikilink"), X2=dstaddr, X3=size, W4=perm              | W0=result                                                |
+| 0x4B | \[4.0.0+\] [\#svcCreateCodeMemory](#svcCreateCodeMemory "wikilink")                | X1=addr, X2=size                                                                                               | W0=result, W1=jit\_handle                                |
+| 0x4C | \[4.0.0+\] [\#svcControlCodeMemory](#svcControlCodeMemory "wikilink")              | W0=jit\_handle, W1=[\#CodeMemoryOperation](#CodeMemoryOperation "wikilink"), X2=dstaddr, X3=size, W4=perm      | W0=result                                                |
 | 0x4D | svcSleepSystem                                                                     | None                                                                                                           | None                                                     |
 | 0x4E | [\#svcReadWriteRegister](#svcReadWriteRegister "wikilink")                         | X1=reg\_addr, W2=rw\_mask, W3=in\_val                                                                          | W0=result, W1=out\_val                                   |
 | 0x4F | svcSetProcessActivity                                                              | W0=process\_handle, W1=bool                                                                                    | W0=result                                                |
@@ -593,7 +593,7 @@ it will return 0 and notify the debugger?
 | Process     | 20         | 0                     | \[5.0.0+\] UserExceptionContextAddr                                                                         |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
-## svcAllocateHeapMemory
+## svcMapPhysicalMemory
 
 This is like svcSetHeapSize except you can allocate heap at any address
 you'd like.
@@ -671,26 +671,26 @@ HandleIndex is set appropriately.
 Same as [\#svcAllocateHeapMemory](#svcAllocateHeapMemory "wikilink")
 except it always uses pool partition 0.
 
-## svcCreateJitMemory
+## svcCreateCodeMemory
 
 Takes an address range with backing memory to create the JIT memory
 object.
 
 The memory is initially memset to 0xFF after being locked.
 
-## svcMapJitMemory
+## svcControlMemory
 
-Maps the backing memory for a JIT memory object into the current
+Maps the backing memory for a Code memory object into the current
 process.
 
-For [MapJitOperation\_MapOwner](#MapJitOperation "wikilink"), memory
-permission must be RW-.
+For [CodeMemoryOperation\_MapOwner](#CodeMemoryOperation "wikilink"),
+memory permission must be RW-.
 
-For [MapJitOperation\_MapSlave](#MapJitOperation "wikilink"), memory
-permission must be R-- or R-X.
+For [CodeMemoryOperation\_MapSlave](#CodeMemoryOperation "wikilink"),
+memory permission must be R-- or R-X.
 
 Operations
-[MapJitOperation\_UnmapOwner/MapJitOperation\_UnmapSlave](#MapJitOperation "wikilink")
+[CodeMemoryOperation\_UnmapOwner/CodeMemoryOperation\_UnmapSlave](#CodeMemoryOperation "wikilink")
 unmap memory that was previously mapped this way.
 
 This allows one "secure JIT" process to map the memory as RW-, and the
@@ -1438,13 +1438,13 @@ partitions.
 </tr>
 <tr class="odd">
 <td><p>0x00402214</p></td>
-<td><p>[4.0.0+] MemoryType_JitReadOnly</p></td>
-<td><p>Mapped in kernel during <a href="#svcMapJitMemory" class="uri" title="wikilink">#svcMapJitMemory</a>.</p></td>
+<td><p>[4.0.0+] MemoryType_CodeReadOnly</p></td>
+<td><p>Mapped in kernel during <a href="#svcControlCodeMemory" class="uri" title="wikilink">#svcControlCodeMemory</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x00402015</p></td>
-<td><p>[4.0.0+] MemoryType_JitWritable</p></td>
-<td><p>Mapped in kernel during <a href="#svcMapJitMemory" class="uri" title="wikilink">#svcMapJitMemory</a>.</p></td>
+<td><p>[4.0.0+] MemoryType_CodeWritable</p></td>
+<td><p>Mapped in kernel during <a href="#svcControlCodeMemory" class="uri" title="wikilink">#svcControlCodeMemory</a>.</p></td>
 </tr>
 </tbody>
 </table>

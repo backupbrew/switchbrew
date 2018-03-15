@@ -90,9 +90,9 @@ __NOTOC__
 |-
 | 0x2B || svcFlushDataCache || X0=addr, X1=size || W0=result
 |-
-| 0x2C || [3.0.0+] [[#svcAllocateHeapMemory]] || X0=addr, X1=size || W0=result
+| 0x2C || [3.0.0+] [[#svcMapPhysicalMemory]] || X0=addr, X1=size || W0=result
 |-
-| 0x2D || [3.0.0+] svcFreeHeapMemory || X0=addr, X1=size || W0=result
+| 0x2D || [3.0.0+] svcUnmapPhysicalMemory || X0=addr, X1=size || W0=result
 |-
 | 0x2E || [5.0.0+] svcGetNextThreadInfo || X3=timeout || W0=result, bunch of crap
 |-
@@ -106,9 +106,9 @@ __NOTOC__
 |-
 | 0x33 || svcGetThreadContext3 || W0=thread_handle, W1=[[#ThreadContext]]* || W0=result
 |-
-| 0x34 || [4.0.0+] || X0=ptr, W1=type, X2=? X3=timeout ||
+| 0x34 || [4.0.0+] svcWaitForAddress || X0=ptr, W1=ArbitrationType, X2=? X3=timeout ||
 |-
-| 0x35 || [4.0.0+] || X0=ptr, W1=type, X2=? W3=? ||
+| 0x35 || [4.0.0+] svcSignalToAddress || X0=ptr, W1=SignalType, X2=? W3=? ||
 |- style="border-top: double"
 | 0x3C || [[#svcDumpInfo]] || ||
 |-
@@ -132,9 +132,9 @@ __NOTOC__
 |-
 | 0x4A || [5.0.0+] svcSetUserHeapMemoryAllocationMax || X0=size || W0=result
 |-
-| 0x4B || [4.0.0+] [[#svcCreateJitMemory]] || X1=addr, X2=size || W0=result, W1=jit_handle
+| 0x4B || [4.0.0+] [[#svcCreateCodeMemory]] || X1=addr, X2=size || W0=result, W1=jit_handle
 |-
-| 0x4C || [4.0.0+] [[#svcMapJitMemory]] || W0=jit_handle, W1=[[#MapJitOperation]], X2=dstaddr, X3=size, W4=perm || W0=result
+| 0x4C || [4.0.0+] [[#svcControlCodeMemory]] || W0=jit_handle, W1=[[#CodeMemoryOperation]], X2=dstaddr, X3=size, W4=perm || W0=result
 |-
 | 0x4D || svcSleepSystem || None || None
 |-
@@ -785,7 +785,7 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 | Thread  || 0xF0000002 || 0 || Performance counter related.
 |}
 
-== svcAllocateHeapMemory ==
+== svcMapPhysicalMemory ==
 This is like svcSetHeapSize except you can allocate heap at any address you'd like.
 
 Uses current process pool partition.
@@ -862,19 +862,19 @@ After being validated, passed handles will be enumerated in order; even if a ses
 == svcAllocateUserHeapMemory ==
 Same as [[#svcAllocateHeapMemory]] except it always uses pool partition 0.
 
-== svcCreateJitMemory ==
+== svcCreateCodeMemory ==
 Takes an address range with backing memory to create the JIT memory object.
 
 The memory is initially memset to 0xFF after being locked.
 
-== svcMapJitMemory ==
-Maps the backing memory for a JIT memory object into the current process.
+== svcControlMemory ==
+Maps the backing memory for a Code memory object into the current process.
 
-For [[#MapJitOperation|MapJitOperation_MapOwner]], memory permission must be RW-.
+For [[#CodeMemoryOperation|CodeMemoryOperation_MapOwner]], memory permission must be RW-.
 
-For [[#MapJitOperation|MapJitOperation_MapSlave]], memory permission must be R-- or R-X.
+For [[#CodeMemoryOperation|CodeMemoryOperation_MapSlave]], memory permission must be R-- or R-X.
 
-Operations [[#MapJitOperation|MapJitOperation_UnmapOwner/MapJitOperation_UnmapSlave]] unmap memory that was previously mapped this way.
+Operations [[#CodeMemoryOperation|CodeMemoryOperation_UnmapOwner/CodeMemoryOperation_UnmapSlave]] unmap memory that was previously mapped this way.
 
 This allows one "secure JIT" process to map the memory as RW-, and the other "slave" process to map it R-X.
 
@@ -1696,9 +1696,9 @@ On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool
 |-
 | 0x00002013 || MemoryType_KernelStack || Mapped in kernel during [[#svcCreateThread]].
 |-
-| 0x00402214 || [4.0.0+] MemoryType_JitReadOnly || Mapped in kernel during [[#svcMapJitMemory]].
+| 0x00402214 || [4.0.0+] MemoryType_CodeReadOnly || Mapped in kernel during [[#svcControlCodeMemory]].
 |-
-| 0x00402015 || [4.0.0+] MemoryType_JitWritable || Mapped in kernel during [[#svcMapJitMemory]].
+| 0x00402015 || [4.0.0+] MemoryType_CodeWritable || Mapped in kernel during [[#svcControlCodeMemory]].
 |}
 
 == ContinueDebugFlags ==
