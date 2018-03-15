@@ -590,7 +590,7 @@ it will return 0 and notify the debugger?
 | Process     | 18         | 0                     | \[3.0.0+\] TitleId                                                                                          |
 | Zero        | 19         | 0                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_LowerBound                                                             |
 | Zero        | 19         | 1                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_UpperBound                                                             |
-| Process     | 20         | 0                     | \[5.0.0+\]                                                                                                  |
+| Process     | 20         | 0                     | \[5.0.0+\] UserExceptionContextAddr                                                                         |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
 ## svcAllocateHeapMemory
