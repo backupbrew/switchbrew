@@ -28,6 +28,10 @@
 | Board Power Control Manager
 | This is related to the [[PCV_services#bpc|PCV Services]].
 |-
+| DMA
+| Direct Memory Access
+|
+|-
 | [[EMMC_pinout|EMMC pinout]]
 | Embedded Multi-Media Controller pinout
 |
@@ -46,6 +50,10 @@
 |-
 | [[Flog|Flog]]
 | NES Golf, spelled backwards
+|
+|-
+| GMMU
+| Graphics Memory Management Unit
 |
 |-
 | [[GRC_services|GRC]]
@@ -142,6 +150,10 @@
 |-
 | [[Package2|PK21]]
 | Contains the Switch kernel and the built-in system modules
+|
+|-
+| PMC
+| Power Management Controller
 |
 |-
 | [[SD_Filesystem|SD File System]]
