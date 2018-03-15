@@ -794,6 +794,8 @@ start of the MC registers:
 Other perm can be used to enforce permission 1, 3, or 0x10000000 if
 don't care.
 
+Allocates memory from the current process' pool partition.
+
 ## svcMapTransferMemory
 
 <div style="display: inline-block;">
