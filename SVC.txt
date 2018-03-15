@@ -867,7 +867,7 @@ Takes an address range with backing memory to create the JIT memory object.
 
 The memory is initially memset to 0xFF after being locked.
 
-== svcControlMemory ==
+== svcControlCodeMemory ==
 Maps the backing memory for a Code memory object into the current process.
 
 For [[#CodeMemoryOperation|CodeMemoryOperation_MapOwner]], memory permission must be RW-.
@@ -1439,17 +1439,17 @@ Bitfield of one of more of these:
 | 38 || DeviceName_NVDEC1
 |}
 
-== MapJitOperation ==
+== CodeMemoryOperation ==
 {| class=wikitable
 ! Value || Name
 |-
-| 0 || MapJitOperation_MapOwner
+| 0 || CodeMemoryOperation_MapOwner
 |-
-| 1 || MapJitOperation_MapSlave
+| 1 || CodeMemoryOperation_MapSlave
 |-
-| 2 || MapJitOperation_UnmapOwner
+| 2 || CodeMemoryOperation_UnmapOwner
 |-
-| 3 || MapJitOperation_UnmapSlave
+| 3 || CodeMemoryOperation_UnmapSlave
 |}
 
 

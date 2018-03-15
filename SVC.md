@@ -678,7 +678,7 @@ object.
 
 The memory is initially memset to 0xFF after being locked.
 
-## svcControlMemory
+## svcControlCodeMemory
 
 Maps the backing memory for a Code memory object into the current
 process.
@@ -1195,14 +1195,14 @@ Bitfield of one of more of these:
 | 37    | DeviceName\_TSECB1     |
 | 38    | DeviceName\_NVDEC1     |
 
-## MapJitOperation
+## CodeMemoryOperation
 
-| Value | Name                        |
-| ----- | --------------------------- |
-| 0     | MapJitOperation\_MapOwner   |
-| 1     | MapJitOperation\_MapSlave   |
-| 2     | MapJitOperation\_UnmapOwner |
-| 3     | MapJitOperation\_UnmapSlave |
+| Value | Name                            |
+| ----- | ------------------------------- |
+| 0     | CodeMemoryOperation\_MapOwner   |
+| 1     | CodeMemoryOperation\_MapSlave   |
+| 2     | CodeMemoryOperation\_UnmapOwner |
+| 3     | CodeMemoryOperation\_UnmapSlave |
 
 ## LimitableResource
 
