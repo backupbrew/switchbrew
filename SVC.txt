@@ -90,9 +90,9 @@ __NOTOC__
 |-
 | 0x2B || svcFlushDataCache || X0=addr, X1=size || W0=result
 |-
-| 0x2C || [3.0.0+] [[#svcAllocateHeapMemory]] || X0=addr, X1=size || W0=result
+| 0x2C || [3.0.0+] [[#svcMapPhysicalMemory]] || X0=addr, X1=size || W0=result
 |-
-| 0x2D || [3.0.0+] svcFreeHeapMemory || X0=addr, X1=size || W0=result
+| 0x2D || [3.0.0+] svcUnmapPhysicalMemory || X0=addr, X1=size || W0=result
 |-
 | 0x2E || [5.0.0+] svcGetNextThreadInfo || X3=timeout || W0=result, bunch of crap
 |-
@@ -785,10 +785,8 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 | Thread  || 0xF0000002 || 0 || Performance counter related.
 |}
 
-== svcAllocateHeapMemory ==
+== svcMapPhysicalMemory ==
 This is like svcSetHeapSize except you can allocate heap at any address you'd like.
-
-This is officially called MapPhysicalMemory, but that makes no sense.
 
 Uses current process pool partition.
 
