@@ -692,7 +692,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Chara?</p></td>
+<td><p>Background and Character images for user avatars (RGBA format &amp; Yaz0 compression)</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000080B</p></td>
