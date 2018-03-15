@@ -330,6 +330,8 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 
 {| class="wikitable" border="1"
 |-
+! Cmd || Name
+|-
 | 7992 || [[#IECommerceInterface|GetECommerceInterface]]
 |-
 | 7993 || [[#IApplicationVersionInterface|GetApplicationVersionInterface]]
@@ -350,7 +352,11 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 
 === IAccountProxyInterface ===
 
+This is "nn::ns::detail::IAccountProxyInterface".
+
 {| class="wikitable" border="1"
+|-
+! Cmd || Name
 |-
 | 0 || CreateUserAccount
 |-
@@ -358,7 +364,11 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 
 === IApplicationManagerInterface ===
 
+This is "nn::ns::detail::IApplicationManagerInterface".
+
 {| class="wikitable" border="1"
+|-
+! Cmd || Name
 |-
 | 0 || ListApplicationRecord
 |-
@@ -710,6 +720,8 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 
 {| class="wikitable" border="1"
 |-
+! Cmd || Name
+|-
 | 0 || GetLaunchRequiredVersion
 |-
 | 1 || UpgradeLaunchRequiredVersion
@@ -732,7 +744,11 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 
 === IContentManagerInterface ===
 
+This is "nn::ns::detail::IContentManagementInterface".
+
 {| class="wikitable" border="1"
+|-
+! Cmd || Name
 |-
 | 11 || CalculateApplicationOccupiedSize
 |-
@@ -754,7 +770,11 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 
 === IDocumentInterface ===
 
+This is "nn::ns::detail::IDocumentInterface".
+
 {| class="wikitable" border="1"
+|-
+! Cmd || Name
 |-
 | 21 || GetApplicationContentPath
 |-
@@ -764,7 +784,11 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 
 === IDownloadTaskInterface ===
 
+This is "nn::ns::detail::IDownloadTaskInterface".
+
 {| class="wikitable" border="1"
+|-
+! Cmd || Name
 |-
 | 701 || ClearTaskStatusList
 |-
@@ -791,6 +815,8 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 
 {| class="wikitable" border="1"
 |-
+! Cmd || Name
+|-
 | 0 || RequestLinkDevice
 |-
 |}
@@ -798,7 +824,11 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 
 === IFactoryResetInterface ===
 
+This is "nn::ns::detail::IFactoryResetInterface".
+
 {| class="wikitable" border="1"
+|-
+! Cmd || Name
 |-
 | 100 || ResetToFactorySettings
 |-
@@ -809,7 +839,12 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 |}
 
 = ns:vm =
+
+This is "nn::ns::detail::IVulnerabilityManagerInterface".
+
 {| class="wikitable" border="1"
+|-
+! Cmd || Name
 |-
 | 1200 || NeedsUpdateVulnerability
 |-

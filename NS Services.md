@@ -207,7 +207,7 @@ structure:
 These services are all, at the top level,
 "nn::ns::detail::IServiceGetterInterface".
 
-|      |                                                                            |
+| Cmd  | Name                                                                       |
 | ---- | -------------------------------------------------------------------------- |
 | 7992 | [GetECommerceInterface](#IECommerceInterface "wikilink")                   |
 | 7993 | [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink") |
@@ -221,14 +221,18 @@ These services are all, at the top level,
 
 ### IAccountProxyInterface
 
-|   |                   |
-| - | ----------------- |
-| 0 | CreateUserAccount |
-|   |                   |
+This is "nn::ns::detail::IAccountProxyInterface".
+
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | CreateUserAccount |
+|     |                   |
 
 ### IApplicationManagerInterface
 
-|      |                                                        |
+This is "nn::ns::detail::IApplicationManagerInterface".
+
+| Cmd  | Name                                                   |
 | ---- | ------------------------------------------------------ |
 | 0    | ListApplicationRecord                                  |
 | 1    | GenerateApplicationRecordCount                         |
@@ -406,7 +410,7 @@ These services are all, at the top level,
 
 ### IApplicationVersionInterface
 
-|      |                              |
+| Cmd  | Name                         |
 | ---- | ---------------------------- |
 | 0    | GetLaunchRequiredVersion     |
 | 1    | UpgradeLaunchRequiredVersion |
@@ -421,7 +425,9 @@ These services are all, at the top level,
 
 ### IContentManagerInterface
 
-|     |                                                 |
+This is "nn::ns::detail::IContentManagementInterface".
+
+| Cmd | Name                                            |
 | --- | ----------------------------------------------- |
 | 11  | CalculateApplicationOccupiedSize                |
 | 43  | CheckSdCardMountStatus                          |
@@ -435,15 +441,19 @@ These services are all, at the top level,
 
 ### IDocumentInterface
 
-|    |                               |
-| -- | ----------------------------- |
-| 21 | GetApplicationContentPath     |
-| 23 | ResolveApplicationContentPath |
-|    |                               |
+This is "nn::ns::detail::IDocumentInterface".
+
+| Cmd | Name                          |
+| --- | ----------------------------- |
+| 21  | GetApplicationContentPath     |
+| 23  | ResolveApplicationContentPath |
+|     |                               |
 
 ### IDownloadTaskInterface
 
-|     |                                         |
+This is "nn::ns::detail::IDownloadTaskInterface".
+
+| Cmd | Name                                    |
 | --- | --------------------------------------- |
 | 701 | ClearTaskStatusList                     |
 | 702 | RequestDownloadTaskList                 |
@@ -458,14 +468,16 @@ These services are all, at the top level,
 
 ### IECommerceInterface
 
-|   |                   |
-| - | ----------------- |
-| 0 | RequestLinkDevice |
-|   |                   |
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | RequestLinkDevice |
+|     |                   |
 
 ### IFactoryResetInterface
 
-|     |                                           |
+This is "nn::ns::detail::IFactoryResetInterface".
+
+| Cmd | Name                                      |
 | --- | ----------------------------------------- |
 | 100 | ResetToFactorySettings                    |
 | 101 | ResetToFactorySettingsWithoutUserSaveData |
@@ -474,7 +486,9 @@ These services are all, at the top level,
 
 # ns:vm
 
-|      |                                 |
+This is "nn::ns::detail::IVulnerabilityManagerInterface".
+
+| Cmd  | Name                            |
 | ---- | ------------------------------- |
 | 1200 | NeedsUpdateVulnerability        |
 | 1201 | UpdateSafeSystemVersionForDebug |
