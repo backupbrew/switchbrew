@@ -10,8 +10,12 @@ The first 0xC00 bytes are encrypted with AES-XTS with sector size 0x200
 with a non-standard "tweak" (endianness is reversed, see
 [here](https://gist.github.com/SciresM/fe8a631d13c069bd66e9c656ab5b3f7f)),
 this encrypted data is an 0x400 NCA header + an 0x200 header for each
-section in the section
-table.
+section in the section table.
+
+For pre-1.0.0 "NCA2" NCAs, the first 0x400 byte are encrypted the same
+way as in NCA3. However, each section header is individually encrypted
+as though it were sector 0, instead of the appropriate sector as in
+NCA3.
 
 # Header
 
@@ -19,7 +23,7 @@ table.
 | ------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 0x0    | 0x100           | RSA-2048 signature over the 0x200-bytes starting at offset 0x200 using fixed key.                                                                                                    |
 | 0x100  | 0x100           | RSA-2048 signature over the 0x200-bytes starting at offset 0x200 using key from [NPDM](NPDM.md "wikilink"), or zeroes if not a program.                                              |
-| 0x200  | 0x4             | Magicnum "NCA3"                                                                                                                                                                      |
+| 0x200  | 0x4             | Magicnum (Normally "NCA3", "NCA2" for some pre-1.0.0 NCAs)                                                                                                                           |
 | 0x204  | 0x1             | 0 for system NCAs. 1 for a NCA from gamecard.                                                                                                                                        |
 | 0x205  | 0x1             | Content Type (0=Program, 1=Meta, 2=Control, 3=Manual, 4=Data)                                                                                                                        |
 | 0x206  | 0x1             | Crypto Type. Only used stating with [3.0.0](3.0.0.md "wikilink"). Normally 0. 2 = Crypto supported starting with [3.0.0](3.0.0.md "wikilink").                                       |
