@@ -47,8 +47,8 @@
 | 0x29 | [\#svcGetInfo](#svcGetInfo "wikilink")                                             | X1=info\_id, X2=handle, X3=info\_sub\_id                                                                       | W0=result, X1=out                                        |
 | 0x2A | svcFlushEntireDataCache                                                            | None                                                                                                           | None                                                     |
 | 0x2B | svcFlushDataCache                                                                  | X0=addr, X1=size                                                                                               | W0=result                                                |
-| 0x2C | \[3.0.0+\] [\#svcAllocateHeapMemory](#svcAllocateHeapMemory "wikilink")            | X0=addr, X1=size                                                                                               | W0=result                                                |
-| 0x2D | \[3.0.0+\] svcFreeHeapMemory                                                       | X0=addr, X1=size                                                                                               | W0=result                                                |
+| 0x2C | \[3.0.0+\] [\#svcMapPhysicalMemory](#svcMapPhysicalMemory "wikilink")              | X0=addr, X1=size                                                                                               | W0=result                                                |
+| 0x2D | \[3.0.0+\] svcUnmapPhysicalMemory                                                  | X0=addr, X1=size                                                                                               | W0=result                                                |
 | 0x2E | \[5.0.0+\] svcGetNextThreadInfo                                                    | X3=timeout                                                                                                     | W0=result, bunch of crap                                 |
 | 0x2F | svcGetLastThreadInfo                                                               | None                                                                                                           | W0=result, W1,W2,W3,W4=unk, W5=truncated\_u64, W6=bool   |
 | 0x30 | svcGetResourceLimitLimitValue                                                      | W1=reslimit\_handle, W2=[\#LimitableResource](#LimitableResource "wikilink")                                   | W0=result, X1=value                                      |
@@ -593,12 +593,10 @@ it will return 0 and notify the debugger?
 | Process     | 20         | 0                     | \[5.0.0+\] UserExceptionContextAddr                                                                         |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
-## svcAllocateHeapMemory
+## svcMapPhysicalMemory
 
 This is like svcSetHeapSize except you can allocate heap at any address
 you'd like.
-
-This is officially called MapPhysicalMemory, but that makes no sense.
 
 Uses current process pool partition.
 
