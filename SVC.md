@@ -1468,12 +1468,13 @@ partitions.
 
 AttachProcess specific:
 
-| Offset | Length     | Description |
-| ------ | ---------- | ----------- |
-| 0x10   | u64        | TitleId     |
-| 0x18   | u64        | ProcessId   |
-| 0x20   | char\[12\] | ProcessName |
-| 0x2C   | u32        | MmuFlags    |
+| Offset | Length     | Description                         |
+| ------ | ---------- | ----------------------------------- |
+| 0x10   | u64        | TitleId                             |
+| 0x18   | u64        | ProcessId                           |
+| 0x20   | char\[12\] | ProcessName                         |
+| 0x2C   | u32        | MmuFlags                            |
+| 0x30   | u64        | \[5.0.0+\] UserExceptionContextAddr |
 
 AttachThread specific:
 
