@@ -132,9 +132,9 @@ __NOTOC__
 |-
 | 0x4A || [5.0.0+] svcSetUserHeapMemoryAllocationMax || X0=size || W0=result
 |-
-| 0x4B || [4.0.0+] [[#svcCreateCodeMemory]] || X1=addr, X2=size || W0=result, W1=jit_handle
+| 0x4B || [4.0.0+] [[#svcCreateCodeMemory]] || X1=addr, X2=size || W0=result, W1=code_memory_handle
 |-
-| 0x4C || [4.0.0+] [[#svcControlCodeMemory]] || W0=jit_handle, W1=[[#CodeMemoryOperation]], X2=dstaddr, X3=size, W4=perm || W0=result
+| 0x4C || [4.0.0+] [[#svcControlCodeMemory]] || W0=code_memory_handle, W1=[[#CodeMemoryOperation]], X2=dstaddr, X3=size, W4=perm || W0=result
 |-
 | 0x4D || svcSleepSystem || None || None
 |-
@@ -860,10 +860,10 @@ After being validated, passed handles will be enumerated in order; even if a ses
 '''0xf601:''' Port remote dead. One of the sessions has been closed. HandleIndex is set appropriately.
 
 == svcAllocateUserHeapMemory ==
-Same as [[#svcAllocateHeapMemory]] except it always uses pool partition 0.
+Same as [[#svcMapPhysicalMemory]] except it always uses pool partition 0.
 
 == svcCreateCodeMemory ==
-Takes an address range with backing memory to create the JIT memory object.
+Takes an address range with backing memory to create the code memory object.
 
 The memory is initially memset to 0xFF after being locked.
 
@@ -876,7 +876,7 @@ For [[#CodeMemoryOperation|CodeMemoryOperation_MapSlave]], memory permission mus
 
 Operations [[#CodeMemoryOperation|CodeMemoryOperation_UnmapOwner/CodeMemoryOperation_UnmapSlave]] unmap memory that was previously mapped this way.
 
-This allows one "secure JIT" process to map the memory as RW-, and the other "slave" process to map it R-X.
+This allows one "secure JIT" process to map the code memory as RW-, and the other "slave" process to map it R-X.
 
 == svcReadWriteRegister ==
 
@@ -1630,7 +1630,7 @@ On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool
 |-
 | 24 || [[#svcSetMemoryAttribute|AttributeChangeAllowed]]
 |-
-| 25 || [4.0.0+] JitMemoryAllowed
+| 25 || [4.0.0+] CodeMemoryAllowed
 |}
 
 {| class=wikitable
