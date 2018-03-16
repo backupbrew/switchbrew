@@ -52,81 +52,81 @@ fails, it will throw an error and abort.
 This is
 "nn::fssrv::sf::IFileSystemProxy".
 
-| Cmd  | Name                                                                                   |
-| ---- | -------------------------------------------------------------------------------------- |
-| 0    | \[1.0.0\] [\#MountContent](#MountContent "wikilink")                                   |
-| 1    | [\#Initialize](#Initialize "wikilink")                                                 |
-| 2    | OpenDataFileSystemByCurrentProcess                                                     |
-| 7    | \[2.0.0+\] [\#MountContent7](#MountContent7 "wikilink")                                |
-| 8    | \[2.0.0+\] [\#MountContent](#MountContent "wikilink")                                  |
-| 9    | \[3.0.0+\] OpenDataFileSystemByApplicationId                                           |
-| 11   | [\#MountBis](#MountBis "wikilink")                                                     |
-| 12   | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                     |
-| 13   | InvalidateBisCache                                                                     |
-| 17   | OpenHostFileSystemImpl                                                                 |
-| 18   | MountSdCard                                                                            |
-| 19   | \[2.0.0+\] FormatSdCard                                                                |
-| 21   | [\#DeleteSaveData](#DeleteSaveData "wikilink")                                         |
-| 22   | [\#CreateSaveData](#CreateSaveData "wikilink")                                         |
-| 23   | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                             |
-| 24   | RegisterSaveDataAtomicDeletion                                                         |
-| 25   | \[2.0.0+\] DeleteSaveDataWithSpaceId                                                   |
-| 26   | \[2.0.0+\] FormatSdCardDryRun                                                          |
-| 27   | \[2.0.0+\] IsExFatSupported                                                            |
-| 28   | \[4.0.0+\] DeleteSystemSaveData                                                        |
-| 30   | [\#OpenGameCardPartition](#OpenGameCardPartition "wikilink")                           |
-| 31   | [\#MountGameCardPartition](#MountGameCardPartition "wikilink")                         |
-| 32   | \[3.0.0+\] ExtendSaveData                                                              |
-| 51   | [\#MountSaveData](#MountSaveData "wikilink")                                           |
-| 52   | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                               |
-| 53   | \[2.0.0+\] MountSaveDataReadOnly                                                       |
-| 57   | \[3.0.0+\] ReadSaveDataFileSystemExtraDataWithSpaceId                                  |
-| 58   | ReadSaveDataFileSystemExtraData                                                        |
-| 59   | \[2.0.0+\] WriteSaveDataFileSystemExtraData                                            |
-| 60   | OpenSaveDataInfoReader                                                                 |
-| 61   | OpenSaveDataIterator                                                                   |
-| 80   | OpenSaveDataThumbnailFile                                                              |
-| 81   | \[4.0.0+\] OpenSaveDataTransferManager                                                 |
-| 100  | MountImageDirectory                                                                    |
-| 110  | [\#MountContentStorage](#MountContentStorage "wikilink")                               |
-| 200  | OpenDataStorageByCurrentProcess                                                        |
-| 201  | \[3.0.0+\] OpenDataStorageByApplicationId                                              |
-| 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                       |
-| 203  | Returns an [\#IStorage](#IStorage "wikilink")                                          |
-| 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                 |
-| 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")     |
-| 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink") |
-| 600  | \[1.0.0-3.0.2\] SetCurrentPosixTime                                                    |
-| 601  | QuerySaveDataTotalSize                                                                 |
-| 602  | [\#VerifySaveData](#VerifySaveData "wikilink")                                         |
-| 603  | CorruptSaveDataForDebug                                                                |
-| 604  | CreatePaddingFile                                                                      |
-| 605  | DeleteAllPaddingFiles                                                                  |
-| 606  | \[2.0.0+\] GetRightsId                                                                 |
-| 607  | \[2.0.0+\] RegisterExternalKey                                                         |
-| 608  | \[2.0.0+\] UnregisterExternalKey                                                       |
-| 609  | \[2.0.0+\] GetRightsIdByPath                                                           |
-| 610  | \[3.0.0+\] GetRightsIdByPath2 (returns extra byte)                                     |
-| 611  | \[4.0.0+\] SetCurrentPosixTime                                                         |
-| 612  | \[4.0.0+\] GetFreeSpaceSize                                                            |
-| 613  | \[4.0.0+\]                                                                             |
-| 614  | \[4.0.0+\]                                                                             |
-| 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")            |
-| 630  | \[4.0.0+\] SetSdCardAccessibility                                                      |
-| 631  | \[4.0.0+\] IsSdCardAccessible                                                          |
-| 640  | \[4.0.0+\] IsSignedSystemPartitionOnSdCardValid                                        |
-| 800  | \[2.0.0+\] GetAndClearFileSystemProxyErrorInfo                                         |
-| 1000 | SetBisRootForHost                                                                      |
-| 1001 | SetSaveDataSize                                                                        |
-| 1002 | SetSaveDataRootPath                                                                    |
-| 1003 | DisableAutoSaveDataCreation                                                            |
-| 1004 | [\#SetGlobalAccessLogMode](#SetGlobalAccessLogMode "wikilink")                         |
-| 1005 | [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink")                         |
-| 1006 | [\#OutputAccessLogToSdCard](#OutputAccessLogToSdCard "wikilink")                       |
-| 1007 | \[4.0.0+\] RegisterUpdatePartition                                                     |
-| 1008 | \[4.0.0+\] MountRegisteredUpdatePartition                                              |
-| 1009 | \[4.0.0+\]                                                                             |
-| 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                            |
+| Cmd  | Name                                                                                                   |
+| ---- | ------------------------------------------------------------------------------------------------------ |
+| 0    | \[1.0.0\] [\#MountContent](#MountContent "wikilink")                                                   |
+| 1    | [\#SetCurrentProcess](#SetCurrentProcess "wikilink")                                                   |
+| 2    | OpenDataFileSystemByCurrentProcess                                                                     |
+| 7    | \[2.0.0+\] [\#OpenFileSystemWithPatch](#OpenFileSystemWithPatch "wikilink")                            |
+| 8    | \[2.0.0+\] [\#OpenFileSystemWithId](#OpenFileSystemWithId "wikilink")                                  |
+| 9    | \[3.0.0+\] OpenDataFileSystemByApplicationId                                                           |
+| 11   | [\#OpenBisFileSystem](#OpenBisFileSystem "wikilink")                                                   |
+| 12   | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                         |
+| 13   | InvalidateBisCache                                                                                     |
+| 17   | OpenHostFileSystem                                                                                     |
+| 18   | OpenSdCardFileSystem                                                                                   |
+| 19   | \[2.0.0+\] FormatSdCardFileSystem                                                                      |
+| 21   | [\#DeleteSaveDataFileSystem](#DeleteSaveDataFileSystem "wikilink")                                     |
+| 22   | [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink")                                     |
+| 23   | [\#CreateSaveDataFileSystemBySystemSaveDataId](#CreateSaveDataFileSystemBySystemSaveDataId "wikilink") |
+| 24   | RegisterSaveDataFileSystemAtomicDeletion                                                               |
+| 25   | \[2.0.0+\] DeleteSaveDataFileSystemBySaveDataSpaceId                                                   |
+| 26   | \[2.0.0+\] FormatSdCardDryRun                                                                          |
+| 27   | \[2.0.0+\] IsExFatSupported                                                                            |
+| 28   | \[4.0.0+\] DeleteSaveDataFileSystemBySaveDataAttribute                                                 |
+| 30   | [\#OpenGameCardStorage](#OpenGameCardStorage "wikilink")                                               |
+| 31   | [\#OpenGameCardFileSystem](#OpenGameCardFileSystem "wikilink")                                         |
+| 32   | \[3.0.0+\] ExtendSaveDataFileSystem                                                                    |
+| 51   | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                         |
+| 52   | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")     |
+| 53   | \[2.0.0+\] OpenReadOnlySaveDataFileSystem                                                              |
+| 57   | \[3.0.0+\] ReadSaveDataFileSystemExtraDataBySaveDataSpaceId                                            |
+| 58   | ReadSaveDataFileSystemExtraData                                                                        |
+| 59   | \[2.0.0+\] WriteSaveDataFileSystemExtraData                                                            |
+| 60   | OpenSaveDataInfoReader                                                                                 |
+| 61   | OpenSaveDataInfoReaderBySaveDataSpaceId                                                                |
+| 80   | OpenSaveDataMetaFile                                                                                   |
+| 81   | \[4.0.0+\] OpenSaveDataTransferManager                                                                 |
+| 100  | OpenImageDirectoryFileSystem                                                                           |
+| 110  | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                             |
+| 200  | OpenDataStorageByCurrentProcess                                                                        |
+| 201  | \[3.0.0+\] OpenDataStorageByProgramId                                                                  |
+| 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                       |
+| 203  | OpenPatchDataStorageByCurrentProcess                                                                   |
+| 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                                 |
+| 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")                     |
+| 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink")                 |
+| 600  | \[1.0.0-3.0.2\] SetCurrentPosixTime                                                                    |
+| 601  | QuerySaveDataTotalSize                                                                                 |
+| 602  | [\#VerifySaveDataFileSystem](#VerifySaveDataFileSystem "wikilink")                                     |
+| 603  | CorruptSaveDataFileSystem                                                                              |
+| 604  | CreatePaddingFile                                                                                      |
+| 605  | DeleteAllPaddingFiles                                                                                  |
+| 606  | \[2.0.0+\] GetRightsId                                                                                 |
+| 607  | \[2.0.0+\] RegisterExternalKey                                                                         |
+| 608  | \[2.0.0+\] UnregisterAllExternalKey                                                                    |
+| 609  | \[2.0.0+\] GetRightsIdByPath                                                                           |
+| 610  | \[3.0.0+\] GetRightsIdAndKeyGenerationByPath                                                           |
+| 611  | \[4.0.0+\] SetCurrentPosixTimeWithTimeDifference                                                       |
+| 612  | \[4.0.0+\] GetFreeSpaceSizeForSaveData                                                                 |
+| 613  | \[4.0.0+\] VerifySaveDataFileSystemBySaveDataSpaceId                                                   |
+| 614  | \[4.0.0+\] CorruptSaveDataFileSystemBySaveDataSpaceId                                                  |
+| 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                            |
+| 630  | \[4.0.0+\] SetSdCardAccessibility                                                                      |
+| 631  | \[4.0.0+\] IsSdCardAccessible                                                                          |
+| 640  | \[4.0.0+\] IsSignedSystemPartitionOnSdCardValid                                                        |
+| 800  | \[2.0.0+\] GetAndClearFileSystemProxyErrorInfo                                                         |
+| 1000 | SetBisRootForHost                                                                                      |
+| 1001 | SetSaveDataSize                                                                                        |
+| 1002 | SetSaveDataRootPath                                                                                    |
+| 1003 | DisableAutoSaveDataCreation                                                                            |
+| 1004 | [\#SetGlobalAccessLogMode](#SetGlobalAccessLogMode "wikilink")                                         |
+| 1005 | [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink")                                         |
+| 1006 | [\#OutputAccessLogToSdCard](#OutputAccessLogToSdCard "wikilink")                                       |
+| 1007 | \[4.0.0+\] RegisterUpdatePartition                                                                     |
+| 1008 | \[4.0.0+\] OpenRegisteredUpdatePartition                                                               |
+| 1009 | \[4.0.0+\] GetAndClearMemoryReportInfo                                                                 |
+| 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                                            |
 
 ## Permissions
 
@@ -148,85 +148,85 @@ happens.
 
 ### RwPermissions
 
-| Type(s) | Mask               | Name                  | Value | Used by                                                                                                                                                                    |
-| ------- | ------------------ | --------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0     | 0x8000000000000801 | MountContentType2     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
-| 0x1     | 0x8000000000000801 | MountContentType5     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
-| 0x2     | 0x8000000000000801 | MountContentType3     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
-| 0x3     | 0x8000000000000801 | MountContentType4     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
-| 0x4     | 0x8000000000000801 | MountContentType6     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
-| 0x5     | 0x8000000000000801 | MountContentType7     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                                 |
-| 0x6     | 0x8000000000000000 |                       | 3     |                                                                                                                                                                            |
-| 0x7     | 0x8000000000000800 | ContentStorageAccess  | 3     | [\#MountContentStorage](#MountContentStorage "wikilink")                                                                                                                   |
-| 0x8     | 0x8000000000001000 | ImageDirectoryAccess  | 3     | [\#MountImageDirectory](#MountImageDirectory "wikilink")                                                                                                                   |
-| 0x9     | 0x8000000000000084 | MountBisType28        | 3     | [\#MountBis](#MountBis "wikilink")                                                                                                                                         |
-| 0xA     | 0x8000000000000080 | MountBisType29        | 3     | [\#MountBis](#MountBis "wikilink")                                                                                                                                         |
-| 0xB     | 0x8000000000008080 | MountBisType30        | 3     | [\#MountBis](#MountBis "wikilink")                                                                                                                                         |
-| 0xC     | 0x8000000000008080 | MountBisType31        | 3     | [\#MountBis](#MountBis "wikilink")                                                                                                                                         |
-| 0xD     | 0x8000000000000080 |                       | 3     |                                                                                                                                                                            |
-| 0xE     | 0xC000000000200000 | SdCardAccess          | 3     | [\#MountSdCard](#MountSdCard "wikilink")                                                                                                                                   |
-| 0xF     | 0x8000000000000010 | GameCardUser          | 3     | [\#MountGameCardPartition](#MountGameCardPartition "wikilink")                                                                                                             |
-| 0x10    | 0x8000000000040020 | SaveDataAccess0       | 3     | [\#MountSaveData](#MountSaveData "wikilink")                                                                                                                               |
-| 0x11    | 0x8000000000000028 | SystemSaveDataAccess0 | 3     | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                                                                                                                   |
-| 0x12    | 0x8000000000000020 | SaveDataAccess1       | 3     | [\#MountSaveData](#MountSaveData "wikilink")                                                                                                                               |
-| 0x13    | 0x8000000000000020 | SystemSaveDataAccess1 | 3     | [\#MountSystemSaveData](#MountSystemSaveData "wikilink")                                                                                                                   |
-| 0x14    | 0x8000000000010082 | BisPartition0         | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x15    | 0x8000000000010080 | BisPartition10        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x17    | 0x8000000000010080 | BisPartition20        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x18    | 0x8000000000010080 | BisPartition21        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x19    | 0x8000000000010080 | BisPartition22        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x1A    | 0x8000000000010080 | BisPartition23        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x1B    | 0x8000000000010080 | BisPartition24        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x1C    | 0x8000000000010080 | BisPartition25        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x16    | 0x8000000000000080 | BisPartition26        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x1D    | 0x8000000000000084 | BisPartition27        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x1E    | 0x8000000000000084 | BisPartition28        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x1F    | 0x8000000000000080 | BisPartition29        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x20    | 0x8000000000000080 | BisPartition30        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x21    | 0x8000000000000080 | BisPartition31        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x22    | 0x8000000000000080 | BisPartition32        | 3     | [\#OpenBisPartition](#OpenBisPartition "wikilink")                                                                                                                         |
-| 0x23    | 0xC000000000200000 |                       | 3     |                                                                                                                                                                            |
-| 0x24    | 0x8000000000000100 | GameCard\_System      | 3     | [\#OpenGameCardPartition](#OpenGameCardPartition "wikilink"), [\#EraseGameCard](#EraseGameCard "wikilink") (bit1), [\#WriteToGameCard](#WriteToGameCard "wikilink") (bit1) |
-| 0x25    | 0x8000000000100008 | MountContent\_System  | 1     | [\#MountContent](#MountContent "wikilink"), [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                               |
-| 0x26    | 0xC000000000400000 | HostAccess            | 3     | [\#OpenHostFileSystemImpl](#OpenHostFileSystemImpl "wikilink")                                                                                                             |
+| Type(s) | Mask               | Name                  | Value | Used by                                                                                                                                                                |
+| ------- | ------------------ | --------------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0     | 0x8000000000000801 | MountContentType2     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                             |
+| 0x1     | 0x8000000000000801 | MountContentType5     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                             |
+| 0x2     | 0x8000000000000801 | MountContentType3     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                             |
+| 0x3     | 0x8000000000000801 | MountContentType4     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                             |
+| 0x4     | 0x8000000000000801 | MountContentType6     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                             |
+| 0x5     | 0x8000000000000801 | MountContentType7     | 1     | [\#MountContent](#MountContent "wikilink")                                                                                                                             |
+| 0x6     | 0x8000000000000000 |                       | 3     |                                                                                                                                                                        |
+| 0x7     | 0x8000000000000800 | ContentStorageAccess  | 3     | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                                                                                             |
+| 0x8     | 0x8000000000001000 | ImageDirectoryAccess  | 3     | [\#MountImageDirectory](#MountImageDirectory "wikilink")                                                                                                               |
+| 0x9     | 0x8000000000000084 | BisFileSystemType28   | 3     | [\#BisFileSystem](#BisFileSystem "wikilink")                                                                                                                           |
+| 0xA     | 0x8000000000000080 | BisFileSystemType29   | 3     | [\#BisFileSystem](#BisFileSystem "wikilink")                                                                                                                           |
+| 0xB     | 0x8000000000008080 | BisFileSystemType30   | 3     | [\#BisFileSystem](#BisFileSystem "wikilink")                                                                                                                           |
+| 0xC     | 0x8000000000008080 | BisFileSystemType31   | 3     | [\#BisFileSystem](#BisFileSystem "wikilink")                                                                                                                           |
+| 0xD     | 0x8000000000000080 |                       | 3     |                                                                                                                                                                        |
+| 0xE     | 0xC000000000200000 | SdCardAccess          | 3     | [\#OpenSdCardFileSystem](#OpenSdCardFileSystem "wikilink")                                                                                                             |
+| 0xF     | 0x8000000000000010 | GameCardUser          | 3     | [\#OpenGameCardFileSystem](#OpenGameCardFileSystem "wikilink")                                                                                                         |
+| 0x10    | 0x8000000000040020 | SaveDataAccess0       | 3     | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                                                                                         |
+| 0x11    | 0x8000000000000028 | SystemSaveDataAccess0 | 3     | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                     |
+| 0x12    | 0x8000000000000020 | SaveDataAccess1       | 3     | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                                                                                         |
+| 0x13    | 0x8000000000000020 | SystemSaveDataAccess1 | 3     | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                     |
+| 0x14    | 0x8000000000010082 | BisPartition0         | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x15    | 0x8000000000010080 | BisPartition10        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x17    | 0x8000000000010080 | BisPartition20        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x18    | 0x8000000000010080 | BisPartition21        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x19    | 0x8000000000010080 | BisPartition22        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x1A    | 0x8000000000010080 | BisPartition23        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x1B    | 0x8000000000010080 | BisPartition24        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x1C    | 0x8000000000010080 | BisPartition25        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x16    | 0x8000000000000080 | BisPartition26        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x1D    | 0x8000000000000084 | BisPartition27        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x1E    | 0x8000000000000084 | BisPartition28        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x1F    | 0x8000000000000080 | BisPartition29        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x20    | 0x8000000000000080 | BisPartition30        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x21    | 0x8000000000000080 | BisPartition31        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x22    | 0x8000000000000080 | BisPartition32        | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                         |
+| 0x23    | 0xC000000000200000 |                       | 3     |                                                                                                                                                                        |
+| 0x24    | 0x8000000000000100 | GameCard\_System      | 3     | [\#OpenGameCardStorage](#OpenGameCardStorage "wikilink"), [\#EraseGameCard](#EraseGameCard "wikilink") (bit1), [\#WriteToGameCard](#WriteToGameCard "wikilink") (bit1) |
+| 0x25    | 0x8000000000100008 | MountContent\_System  | 1     | [\#MountContent](#MountContent "wikilink"), [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                           |
+| 0x26    | 0xC000000000400000 | HostAccess            | 3     | [\#OpenHostFileSystemImpl](#OpenHostFileSystemImpl "wikilink")                                                                                                         |
 
 ### BoolPermissions
 
-| Type(s)         | Mask               | Name                       | Used by                                                                                                                                                |
-| --------------- | ------------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0x0             | 0x8000000000000080 | BisCache                   | [\#InvalidateBisCache](#InvalidateBisCache "wikilink")                                                                                                 |
-| 0x1             | 0x8000000000000080 | EraseMmc                   | [\#EraseMmc](#EraseMmc "wikilink")                                                                                                                     |
-| 0x2             | 0x8000000000000010 | GameCardCertificate        | [\#GetGameCardDeviceCertificate](#GetGameCardDeviceCertificate "wikilink")                                                                             |
-| 0x3             | 0x8000000000000010 | GameCardIdSet              | [\#GetGameCardIdSet](#GetGameCardIdSet "wikilink")                                                                                                     |
-| 0x4             | 0x8000000000000200 | GameCardDriver             | [\#FinalizeGameCardDriver](#FinalizeGameCardDriver "wikilink")                                                                                         |
-| 0x5             | 0x8000000000000200 | GameCardAsic               | [\#GetGameCardAsicInfo](#GetGameCardAsicInfo "wikilink")                                                                                               |
-| 0x6             | 0x8000000000002020 | SaveDataCreate             | [\#CreateSaveData](#CreateSaveData "wikilink")                                                                                                         |
-| 0x7             | 0x8000000000000060 | SaveDataDelete0            | [\#DeleteSaveData](#DeleteSaveData "wikilink"), [\#RegisterSaveDataAtomicDeletion](#RegisterSaveDataAtomicDeletion "wikilink")                         |
-| 0x8             | 0x8000000000000028 | SystemSaveDataCreate0      | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                                                                                             |
-| 0x9             | 0x8000000000000020 | SystemSaveDataCreate1      | [\#CreateSystemSaveData](#CreateSystemSaveData "wikilink")                                                                                             |
-| 0xA             | 0x8000000000004028 | SaveDataDelete1            | [\#DeleteSaveData](#DeleteSaveData "wikilink"), [\#RegisterSaveDataAtomicDeletion](#RegisterSaveDataAtomicDeletion "wikilink")                         |
-| 0xB             | 0x8000000000000060 | SaveDataIterators0         | [\#OpenSaveDataIterator](#OpenSaveDataIterator "wikilink"), [\#OpenSaveDataInfoIterator](#OpenSaveDataInfoIterator "wikilink")                         |
-| 0xC             | 0x8000000000004020 | SaveDataIterators1         | [\#OpenSaveDataIterator](#OpenSaveDataIterator "wikilink"), [\#OpenSaveDataInfoIterator](#OpenSaveDataInfoIterator "wikilink")                         |
-| 0xD             | 0x8000000000020000 | SaveThumbnails             | [\#OpenSaveDataThumbnailFile](#OpenSaveDataThumbnailFile "wikilink")                                                                                   |
-| 0xE             | 0x8000000000000400 | PosixTime                  | [\#SetCurrentPosixTime](#SetCurrentPosixTime "wikilink")                                                                                               |
-| 0xF             | 0x8000000000004060 | SaveDataExtraData          | [\#ReadSaveDataFileSystemExtraData](#ReadSaveDataFileSystemExtraData "wikilink")                                                                       |
-| 0x10            | 0x8000000000080000 | GlobalMode                 | [\#SetGlobalAccessMode](#SetGlobalAccessMode "wikilink")                                                                                               |
-| 0x11            | 0x8000000000080000 | SpeedEmulation             | [\#SetSpeedEmulationMode](#SetSpeedEmulationMode "wikilink")                                                                                           |
-| 0x12            | Invalid            |                            |                                                                                                                                                        |
-| 0x13            | 0xC000000000800000 | PaddingFiles               | [\#CreatePaddingFile](#CreatePaddingFile "wikilink"), [\#DeletePaddingFiles](#DeletePaddingFiles "wikilink")                                           |
-| 0x14            | 0xC000000001000000 | SaveData\_Debug            | [\#CorruptSaveDataForDebug](#CorruptSaveDataForDebug "wikilink")                                                                                       |
-| 0x15            | 0xC000000002000000 | SaveData\_SystemManagement | [\#CreateSaveData](#CreateSaveData "wikilink"), [\#MountSaveData](#MountSaveData "wikilink"), [\#SetSaveDataRootPath](#SetSaveDataRootPath "wikilink") |
-| \[2.0.0+\] 0x16 | 0x8000000004000000 |                            |                                                                                                                                                        |
-| \[2.0.0+\] 0x17 | 0x8000000008000000 |                            |                                                                                                                                                        |
-| \[2.0.0+\] 0x18 | 0x8000000010000000 |                            |                                                                                                                                                        |
-| \[2.0.0+\] 0x19 | 0x8000000000000800 |                            |                                                                                                                                                        |
-| \[2.0.0+\] 0x1A | 0x8000000000004020 |                            |                                                                                                                                                        |
+| Type(s)         | Mask               | Name                       | Used by                                                                                                                                                                                      |
+| --------------- | ------------------ | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0             | 0x8000000000000080 | BisCache                   | [\#InvalidateBisCache](#InvalidateBisCache "wikilink")                                                                                                                                       |
+| 0x1             | 0x8000000000000080 | EraseMmc                   | [\#EraseMmc](#EraseMmc "wikilink")                                                                                                                                                           |
+| 0x2             | 0x8000000000000010 | GameCardCertificate        | [\#GetGameCardDeviceCertificate](#GetGameCardDeviceCertificate "wikilink")                                                                                                                   |
+| 0x3             | 0x8000000000000010 | GameCardIdSet              | [\#GetGameCardIdSet](#GetGameCardIdSet "wikilink")                                                                                                                                           |
+| 0x4             | 0x8000000000000200 | GameCardDriver             | [\#FinalizeGameCardDriver](#FinalizeGameCardDriver "wikilink")                                                                                                                               |
+| 0x5             | 0x8000000000000200 | GameCardAsic               | [\#GetGameCardAsicInfo](#GetGameCardAsicInfo "wikilink")                                                                                                                                     |
+| 0x6             | 0x8000000000002020 | SaveDataCreate             | [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink")                                                                                                                           |
+| 0x7             | 0x8000000000000060 | SaveDataDelete0            | [\#DeleteSaveDataFileSystem](#DeleteSaveDataFileSystem "wikilink"), [\#RegisterSaveDataFileSystemAtomicDeletion](#RegisterSaveDataFileSystemAtomicDeletion "wikilink")                       |
+| 0x8             | 0x8000000000000028 | SystemSaveDataCreate0      | [\#CreateSaveDataFileSystemBySystemSaveDataId](#CreateSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                                       |
+| 0x9             | 0x8000000000000020 | SystemSaveDataCreate1      | [\#CreateSaveDataFileSystemBySystemSaveDataId](#CreateSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                                       |
+| 0xA             | 0x8000000000004028 | SaveDataDelete1            | [\#DeleteSaveDataFileSystem](#DeleteSaveDataFileSystem "wikilink"), [\#RegisterSaveDataFileSystemAtomicDeletion](#RegisterSaveDataFileSystemAtomicDeletion "wikilink")                       |
+| 0xB             | 0x8000000000000060 | SaveDataIterators0         | [\#OpenSaveDataIterator](#OpenSaveDataIterator "wikilink"), [\#OpenSaveDataInfoIterator](#OpenSaveDataInfoIterator "wikilink")                                                               |
+| 0xC             | 0x8000000000004020 | SaveDataIterators1         | [\#OpenSaveDataIterator](#OpenSaveDataIterator "wikilink"), [\#OpenSaveDataInfoIterator](#OpenSaveDataInfoIterator "wikilink")                                                               |
+| 0xD             | 0x8000000000020000 | SaveThumbnails             | [\#OpenSaveDataThumbnailFile](#OpenSaveDataThumbnailFile "wikilink")                                                                                                                         |
+| 0xE             | 0x8000000000000400 | PosixTime                  | [\#SetCurrentPosixTime](#SetCurrentPosixTime "wikilink")                                                                                                                                     |
+| 0xF             | 0x8000000000004060 | SaveDataExtraData          | [\#ReadSaveDataFileSystemExtraData](#ReadSaveDataFileSystemExtraData "wikilink")                                                                                                             |
+| 0x10            | 0x8000000000080000 | GlobalMode                 | [\#SetGlobalAccessMode](#SetGlobalAccessMode "wikilink")                                                                                                                                     |
+| 0x11            | 0x8000000000080000 | SpeedEmulation             | [\#SetSpeedEmulationMode](#SetSpeedEmulationMode "wikilink")                                                                                                                                 |
+| 0x12            | Invalid            |                            |                                                                                                                                                                                              |
+| 0x13            | 0xC000000000800000 | PaddingFiles               | [\#CreatePaddingFile](#CreatePaddingFile "wikilink"), [\#DeletePaddingFiles](#DeletePaddingFiles "wikilink")                                                                                 |
+| 0x14            | 0xC000000001000000 | SaveData\_Debug            | [\#CorruptSaveDataForDebug](#CorruptSaveDataForDebug "wikilink")                                                                                                                             |
+| 0x15            | 0xC000000002000000 | SaveData\_SystemManagement | [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink"), [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink"), [\#SetSaveDataRootPath](#SetSaveDataRootPath "wikilink") |
+| \[2.0.0+\] 0x16 | 0x8000000004000000 |                            |                                                                                                                                                                                              |
+| \[2.0.0+\] 0x17 | 0x8000000008000000 |                            |                                                                                                                                                                                              |
+| \[2.0.0+\] 0x18 | 0x8000000010000000 |                            |                                                                                                                                                                                              |
+| \[2.0.0+\] 0x19 | 0x8000000000000800 |                            |                                                                                                                                                                                              |
+| \[2.0.0+\] 0x1A | 0x8000000000004020 |                            |                                                                                                                                                                                              |
 
-## Initialize
+## SetCurrentProcess
 
 Takes a pid-descriptor.
 
-## MountContent7
+## OpenFileSystemWithPatch
 
 Takes an input u32 (same as [\#MountContent](#MountContent "wikilink"))
 and an u64 title-id. Web-applet loads the u32 from
@@ -235,9 +235,10 @@ u32\_table\[inparam\]. The in32 must be 4.
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 Note: web-applet strings refer to both this cmd and the below
-"MountContent" as "MountContent".
+"MountContent" as "MountContent", but official nn\_sf\_sync symbols use
+"OpenXX" names.
 
-## MountContent
+## OpenFileSystemWithId
 
 Takes a type-0x19 input buffer, an in32, and an input title-id.
 
@@ -266,7 +267,7 @@ checks if in64 is set to 0xffffffffffffffff then throws an error if so.
 When the in64 used internally is not 0xffffffffffffffff, it's compared
 with the NCA titleID, then an error is thrown on mismatch.
 
-## MountBis
+## OpenBisFileSystem
 
 Takes a type-0x19 input buffer string and a u32 Bis partitionID(see
 below). Official user-process code sets instr\[0\] = 0 normally.
@@ -275,11 +276,11 @@ Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 Only partitionIDs for FAT partitions are usable with this, otherwise
 error 0x2EE202 is returned. Seems to be about the same as
-[\#OpenBisPartition](#OpenBisPartition "wikilink") except this mounts
-the partition filesystem instead of allowing direct access to the
-partition sectors.
+[\#OpenBisStorage](#OpenBisStorage "wikilink") except this mounts the
+partition filesystem instead of allowing direct access to the partition
+sectors.
 
-## OpenBisPartition
+## OpenBisStorage
 
 Takes a u32 partition ID, returns 0x2EE202 for partitions which do not
 exist, 0x320002 for partitions which cannot be opened and a valid
@@ -288,14 +289,14 @@ exist, 0x320002 for partitions which cannot be opened and a valid
 ## InvalidateBisCache
 
 Seems to invalidate the Bis cache for MBR/GPT after overwriting that
-data via the OpenBisPartition IStorage. Used by
+data via the OpenBisStorage IStorage. Used by
 [SystemInitializer](SystemInitializer.md "wikilink").
 
-## DeleteSaveData
+## DeleteSaveDataFileSystem
 
 Takes an input u64.
 
-## CreateSaveData
+## CreateSaveDataFileSystem
 
 Takes a 0x40-byte Save-struct entry, a 0x40-byte SaveCreate-struct
 entry, and a 0x10-byte input struct.
@@ -307,7 +308,7 @@ user-processes: +0 u32 = 0x40060, +4 u8 = 1.
 
 Creates regular savedata.
 
-## CreateSystemSaveData
+## CreateSaveDataFileSystemBySystemSaveDataId
 
 Takes a 0x40-byte Save-struct entry and a 0x40-byte SaveCreate-struct
 entry.
@@ -315,13 +316,13 @@ entry.
 Creates savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
 partition.
 
-## OpenGameCardPartition
+## OpenGameCardStorage
 
 Takes an input u32 (partition ID), and returns an
 [\#IStorage](#IStorage "wikilink") for the
 [partition](Gamecard%20Format.md "wikilink").
 
-## MountGameCardPartition
+## OpenGameCardFileSystem
 
 Takes two input u32s, with the second u32 located at +4 in rawdata after
 the first u32.
@@ -330,7 +331,7 @@ Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 Mounts a gamecard [partition](Gamecard%20Partition.md "wikilink").
 
-## MountSaveData
+## OpenSaveDataFileSystem
 
 Takes an input u8 and a 0x40-byte Save-struct entry. Official
 user-process code is only known to use value 1 for the u8.
@@ -343,7 +344,7 @@ found.
 Only one process can mount a given savedata at any given time (this
 includes systemsavedata).
 
-## MountSystemSaveData
+## OpenSaveDataFileSystemBySystemSaveDataId
 
 Takes an input u8 and a 0x40-byte Save-struct entry. Web-applet only
 uses value0 for the input u8.
@@ -353,7 +354,7 @@ Returns an [\#IFileSystem](#IFileSystem "wikilink").
 Mounts savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
 partition.
 
-## MountContentStorage
+## OpenContentStorageFileSystem
 
 Takes a [\#ContentStorageId](#ContentStorageId "wikilink"). Invalid
 values return 0x2EE202.
@@ -386,7 +387,7 @@ This command returns a session to a port implementing the
 This command returns a session to a port implementing the
 [\#IEventNotifier](#IEventNotifier "wikilink") interface.
 
-## VerifySaveData
+## VerifySaveDataFileSystem
 
 Takes an unknown input u64 and a type-0x6 output buffer.
 
@@ -730,7 +731,7 @@ titleID field is set to <input titleID>. See above regarding
 SaveCreate-struct.
 
 The 0x10-byte struct passed to
-[\#CreateSaveData](#CreateSaveData "wikilink") has the first 0x5-bytes
-set to all-zero.
+[\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink") has
+the first 0x5-bytes set to all-zero.
 
 [Category:Services](Category:Services "wikilink")
