@@ -111,9 +111,9 @@ This is "nn::ncm::IContentManager".
 |-
 | 5 || GetIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]], (2.0.0+) Only returns a storage if one has previously been opened globally via OpenIContentStorage.
 |-
-| ([[1.0.0]]) 6 || CloseAndLockIContentStorage || Takes a [[Filesystem_services#StorageId|StorageID]]. Calls IContentStorage->CloseAndFlushStorage().
+| ([[1.0.0]]) 6 || CloseContentStorageForcibly || Takes a [[Filesystem_services#StorageId|StorageID]]. Calls IContentStorage->CloseAndFlushStorage().
 |-
-| ([[1.0.0]]) 7 || CloseAndLockIContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]].  Calls IContentMetaDatabase->CloseMetaDatabase().
+| ([[1.0.0]]) 7 || CloseContentMetaDatabaseForcibly || Takes a [[Filesystem_services#StorageId|StorageID]].  Calls IContentMetaDatabase->CloseMetaDatabase().
 |-
 | 8 || DeleteSaveDataForMediaId || Takes a [[Filesystem_services#StorageId|StorageID]], and deletes the associated savedata.
 |-
@@ -134,7 +134,7 @@ This is "nn::ncm::IContentStorage".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || [[#GetUUID]] || Returns a random UUID for the Content Storage.
+| 0 || [[#GeneratePlaceHolderId]] || Returns a random UUID for the Content Storage.
 |-
 | 1 || CreatePlaceholderEntryAndRegisteredDirectoryEntry || Takes two [[#NcaID]]s, and a u64 filesize.
 |-
@@ -150,9 +150,9 @@ This is "nn::ncm::IContentStorage".
 |-
 | 7 || DoesRegisteredEntryExist || Takes a [[#NcaID]].
 |-
-| 8 || GetPathForRegisteredEntry || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
+| 8 || GetPath || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
 |-
-| 9 || GetPathForPlaceholderEntry || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
+| 9 || GetPlaceholderPath || Takes a [[#NcaID]]. Returns a [[Filesystem_services#ContentPath|Content Path]].
 |-
 | 10 || CleanPlaceholderDirectory || Deletes and re-creates the Placeholder directory.
 |-
@@ -185,8 +185,10 @@ This is "nn::ncm::IContentStorage".
 | 24 || FlushStorage || Flushes resources for the storage without closing it.
 |}
 
-==== GetUUID ====
-Calls  nn::util::GenerateUuid(), which internally calls nn::os::GenerateRandomBytes(16);
+==== GeneratePlaceHolderId ====
+Generates a random [[#NcaID]] for use as a placeholder.
+
+Calls nn::util::GenerateUuid(), which internally calls nn::os::GenerateRandomBytes(16);
 
 ==== GetNumberOfRegisteredEntries ====
 Writes the total number of entries which can be read by GetEntries, to cmdreply <SFCO_offset>+0x10.

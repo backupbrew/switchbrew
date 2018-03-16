@@ -96,8 +96,8 @@ This is
 | 3                                | GetExistsSaveDataDirectoryForMediaId                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                     |
 | 4                                | GetIContentStorage                                     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), (2.0.0+) Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
 | 5                                | GetIContentMetaDatabase                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), (2.0.0+) Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
-| ([1.0.0](1.0.0.md "wikilink")) 6 | CloseAndLockIContentStorage                            | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().                                                     |
-| ([1.0.0](1.0.0.md "wikilink")) 7 | CloseAndLockIContentMetaDatabase                       | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase().                                                   |
+| ([1.0.0](1.0.0.md "wikilink")) 6 | CloseContentStorageForcibly                            | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().                                                     |
+| ([1.0.0](1.0.0.md "wikilink")) 7 | CloseContentMetaDatabaseForcibly                       | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase().                                                   |
 | 8                                | DeleteSaveDataForMediaId                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.                                                                |
 | (2.0.0+) 9                       | OpenIContentStorage                                    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage.                |
 | (2.0.0+) 10                      | CloseIContentStorage                                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage.                                                          |
@@ -111,7 +111,7 @@ This is
 
 | Cmd | Name                                                                       | Notes                                                                                                                                                                       |
 | --- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | [\#GetUUID](#GetUUID "wikilink")                                           | Returns a random UUID for the Content Storage.                                                                                                                              |
+| 0   | [\#GeneratePlaceHolderId](#GeneratePlaceHolderId "wikilink")               | Returns a random UUID for the Content Storage.                                                                                                                              |
 | 1   | CreatePlaceholderEntryAndRegisteredDirectoryEntry                          | Takes two [\#NcaIDs](#NcaID "wikilink"), and a u64 filesize.                                                                                                                |
 | 2   | DeletePlaceholderEntry                                                     | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
 | 3   | DoesPlaceholderEntryExist                                                  | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
@@ -119,8 +119,8 @@ This is
 | 5   | MovePlaceholderToRegistered                                                | Takes two [\#NcaIDs](#NcaID "wikilink"), moves the Placeholder NCA content to the registered NCA path.                                                                      |
 | 6   | DeleteRegisteredEntry                                                      | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
 | 7   | DoesRegisteredEntryExist                                                   | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
-| 8   | GetPathForRegisteredEntry                                                  | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
-| 9   | GetPathForPlaceholderEntry                                                 | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
+| 8   | GetPath                                                                    | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
+| 9   | GetPlaceholderPath                                                         | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
 | 10  | CleanPlaceholderDirectory                                                  | Deletes and re-creates the Placeholder directory.                                                                                                                           |
 | 11  | GetNumberOfPlacholderEntries                                               | This is like [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink"), but for the Placeholder directory.                                                 |
 | 12  | [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink") |                                                                                                                                                                             |
@@ -137,7 +137,10 @@ This is
 | 23  | GetTotalSpace                                                              | Gets total space for the storage.                                                                                                                                           |
 | 24  | FlushStorage                                                               | Flushes resources for the storage without closing it.                                                                                                                       |
 
-#### GetUUID
+#### GeneratePlaceHolderId
+
+Generates a random [\#NcaID](#NcaID "wikilink") for use as a
+placeholder.
 
 Calls nn::util::GenerateUuid(), which internally calls
 nn::os::GenerateRandomBytes(16);
