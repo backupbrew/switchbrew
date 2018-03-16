@@ -227,13 +227,13 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | 0x8 || 0x8000000000001000 || ImageDirectoryAccess || 3 || [[#MountImageDirectory]]
 |-
-| 0x9 || 0x8000000000000084 || BisFileSystemType28 || 3 || [[#BisFileSystem]]
+| 0x9 || 0x8000000000000084 || OpenBisFileSystemType28 || 3 || [[#OpenBisFileSystem]]
 |-
-| 0xA || 0x8000000000000080 || BisFileSystemType29 || 3 || [[#BisFileSystem]]
+| 0xA || 0x8000000000000080 || OpenBisFileSystemType29 || 3 || [[#OpenBisFileSystem]]
 |-
-| 0xB || 0x8000000000008080 || BisFileSystemType30 || 3 || [[#BisFileSystem]]
+| 0xB || 0x8000000000008080 || OpenBisFileSystemType30 || 3 || [[#OpenBisFileSystem]]
 |-
-| 0xC || 0x8000000000008080 || BisFileSystemType31 || 3 || [[#BisFileSystem]]
+| 0xC || 0x8000000000008080 || OpenBisFileSystemType31 || 3 || [[#OpenBisFileSystem]]
 |-
 | 0xD || 0x8000000000000080 || || 3 ||
 |-
