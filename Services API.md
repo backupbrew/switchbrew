@@ -293,7 +293,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>[1.0.0+] csrng, spl:</p>
-<p>[4.0.0+] csrng, spl:, spl:mig, spl:fs, spl:ssl, spl:es</p></td>
+<p>[4.0.0+] csrng, spl:, spl:mig, spl:fs, spl:ssl, spl:es, [5.0.0+] spl:manu</p></td>
 <td><p><a href="SPL services.md" title="wikilink">SPL services</a></p></td>
 <td></td>
 </tr>
