@@ -409,4 +409,27 @@ Takes a type-0x6 output buffer, returns an output s32. This buffer
 contains an array of 0x8-byte "nn::settings::system::AllowedSslHost"
 entries.
 
+# System Config
+
+There's a common config title (\*818), and a config title for each
+[HardwareType](SPL%20services.md "wikilink").
+
+\[5.0.0+\] New config fields were added to the HardwareType-specific
+config:
+
+  - "systeminitializer\!eks\_enabled" 1 for non-Mariko, 0 otherwise.
+  - "systeminitializer\!bct\_eks\_offset" Offset within the
+    [BCT](BCT.md "wikilink") where the
+    [keyblob](Flash%20Filesystem.md "wikilink")/"EKS" is stored.
+  - "systeminitializer\!bct\_version\_offset" Offset within the
+    [BCT](BCT.md "wikilink") where the keyblob version is stored
+    (bootloader0\_info.version).
+  - "systeminitializer\!boot\_image\_update\_type" 0 for non-Mariko, 1
+    otherwise.
+
+"bct\_eks\_offset" and "bct\_version\_offset" are only present in
+non-Mariko config, since (?) Mariko "eks\_enabled" is 0. This presumably
+means the [keyblob](Flash%20Filesystem.md "wikilink")/"EKS" is not
+embedded in [BCT](BCT.md "wikilink") with Mariko?
+
 [Category:Services](Category:Services "wikilink")

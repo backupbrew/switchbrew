@@ -558,4 +558,16 @@ Returns 0x01 if [[Safemode|safemode]] needs to be launched.
 == GetAllowedSslHosts ==
 Takes a type-0x6 output buffer, returns an output s32. This buffer contains an array of 0x8-byte "nn::settings::system::AllowedSslHost" entries.
 
+=System Config=
+There's a common config title (*818), and a config title for each [[SPL_services|HardwareType]].
+
+[5.0.0+] New config fields were added to the HardwareType-specific config:
+
+* "systeminitializer!eks_enabled" 1 for non-Mariko, 0 otherwise.
+* "systeminitializer!bct_eks_offset" Offset within the [[BCT]] where the [[Flash_Filesystem|keyblob]]/"EKS" is stored.
+* "systeminitializer!bct_version_offset" Offset within the [[BCT]] where the keyblob version is stored (bootloader0_info.version).
+* "systeminitializer!boot_image_update_type" 0 for non-Mariko, 1 otherwise.
+
+"bct_eks_offset" and "bct_version_offset" are only present in non-Mariko config, since (?) Mariko "eks_enabled" is 0. This presumably means the [[Flash_Filesystem|keyblob]]/"EKS" is not embedded in [[BCT]] with Mariko?
+
 [[Category:Services]]
