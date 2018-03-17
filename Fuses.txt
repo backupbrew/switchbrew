@@ -193,16 +193,16 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_VP8_ENABLE
 | 0x7000F9C4
 |-
-| FUSE_RESERVED_ODM0
+| [[#FUSE_RESERVED_ODM0|FUSE_RESERVED_ODM0]]
 | 0x7000F9C8
 |-
-| FUSE_RESERVED_ODM1
+| [[#FUSE_RESERVED_ODM1|FUSE_RESERVED_ODM1]]
 | 0x7000F9CC
 |-
-| FUSE_RESERVED_ODM2
+| [[#FUSE_RESERVED_ODM2|FUSE_RESERVED_ODM2]]
 | 0x7000F9D0
 |-
-| FUSE_RESERVED_ODM3
+| [[#FUSE_RESERVED_ODM3|FUSE_RESERVED_ODM3]]
 | 0x7000F9D4
 |-
 | [[#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]
@@ -399,6 +399,26 @@ Stores failure analysis mode.
 ==== FUSE_SOC_SPEEDO_1 ====
 Stores the bootrom patch version.
 
+==== FUSE_RESERVED_ODM0 ====
+This appears to store an hardware ID.
+
+==== FUSE_RESERVED_ODM1 ====
+This appears to store an hardware ID.
+
+==== FUSE_RESERVED_ODM2 ====
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-4
+| [5.0.0+] Used as key generation
+|}
+
+This appears to store an hardware ID.
+
+==== FUSE_RESERVED_ODM3 ====
+This appears to store an hardware ID.
+
 ==== FUSE_RESERVED_ODM4 ====
 {| class="wikitable" border="1"
 !  Bits
@@ -421,6 +441,9 @@ Stores the bootrom patch version.
 |-
 | 10
 | [4.0.0+] Unknown, returned by smcGetConfig(14)
+|-
+| 11
+| [5.0.0+] SoC variant (0 = T210; 1 = T214)
 |-
 | 16-19
 | [4.0.0+] Unknown config (hardware-type-related)

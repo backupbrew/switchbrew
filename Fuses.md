@@ -108,10 +108,10 @@ driver registers.
 | [FUSE\_PRIVATE\_KEY4](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B4 |
 | [FUSE\_RESERVED\_SW](#FUSE_RESERVED_SW "wikilink")     | 0x7000F9C0 |
 | FUSE\_VP8\_ENABLE                                      | 0x7000F9C4 |
-| FUSE\_RESERVED\_ODM0                                   | 0x7000F9C8 |
-| FUSE\_RESERVED\_ODM1                                   | 0x7000F9CC |
-| FUSE\_RESERVED\_ODM2                                   | 0x7000F9D0 |
-| FUSE\_RESERVED\_ODM3                                   | 0x7000F9D4 |
+| [FUSE\_RESERVED\_ODM0](#FUSE_RESERVED_ODM0 "wikilink") | 0x7000F9C8 |
+| [FUSE\_RESERVED\_ODM1](#FUSE_RESERVED_ODM1 "wikilink") | 0x7000F9CC |
+| [FUSE\_RESERVED\_ODM2](#FUSE_RESERVED_ODM2 "wikilink") | 0x7000F9D0 |
+| [FUSE\_RESERVED\_ODM3](#FUSE_RESERVED_ODM3 "wikilink") | 0x7000F9D4 |
 | [FUSE\_RESERVED\_ODM4](#FUSE_RESERVED_ODM4 "wikilink") | 0x7000F9D8 |
 | FUSE\_RESERVED\_ODM5                                   | 0x7000F9DC |
 | [FUSE\_RESERVED\_ODM6](#FUSE_RESERVED_ODM6 "wikilink") | 0x7000F9E0 |
@@ -187,6 +187,26 @@ Stores failure analysis mode.
 
 Stores the bootrom patch version.
 
+#### FUSE\_RESERVED\_ODM0
+
+This appears to store an hardware ID.
+
+#### FUSE\_RESERVED\_ODM1
+
+This appears to store an hardware ID.
+
+#### FUSE\_RESERVED\_ODM2
+
+| Bits | Description                       |
+| ---- | --------------------------------- |
+| 0-4  | \[5.0.0+\] Used as key generation |
+
+This appears to store an hardware ID.
+
+#### FUSE\_RESERVED\_ODM3
+
+This appears to store an hardware ID.
+
 #### FUSE\_RESERVED\_ODM4
 
 | Bits  | Description                                       |
@@ -197,6 +217,7 @@ Stores the bootrom patch version.
 | 8     | Unknown config mask (must be 0 on retail)         |
 | 9     | Unit type mask (0 = debug; 1 = retail)            |
 | 10    | \[4.0.0+\] Unknown, returned by smcGetConfig(14)  |
+| 11    | \[5.0.0+\] SoC variant (0 = T210; 1 = T214)       |
 | 16-19 | \[4.0.0+\] Unknown config (hardware-type-related) |
 
 This stores some device configuration parameters.
