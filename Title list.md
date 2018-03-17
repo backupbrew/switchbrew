@@ -599,7 +599,7 @@ systems.
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>SSL trusted certificates</p></td>
+<td><p>SSL trusted certificates.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000801</p></td>
@@ -645,7 +645,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <tr class="even">
 <td><p>0100000000000805</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)</p></td>
-<td><p>Chinese and Korean dictionaries</p></td>
+<td><p>Chinese and Korean dictionaries.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000806</p></td>
@@ -655,7 +655,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.2.md" title="wikilink">v201457684</a> (3.0.2.20)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Bad words</p></td>
+<td><p>Bad words.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000807</p></td>
@@ -668,7 +668,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <tr class="odd">
 <td><p>0100000000000808</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)</p></td>
-<td><p>European, English, and Japanese dictionaries</p></td>
+<td><p>European, English, and Japanese dictionaries.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000809</p></td>
@@ -692,7 +692,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Background and Character images for user avatars (RGBA format &amp; Yaz0 compression)</p></td>
+<td><p>Background and Character images for user avatars (RGBA format &amp; Yaz0 compression).</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000080B</p></td>
@@ -714,7 +714,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Blacklist URL</p></td>
+<td><p>URL blacklist.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000080E</p></td>
@@ -723,7 +723,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Geo Zoneinfo</p></td>
+<td><p>Geo Zoneinfo.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000810</p></td>
@@ -732,7 +732,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Extended font</p></td>
+<td><p>Extended font.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000811</p></td>
@@ -741,7 +741,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Standard font</p></td>
+<td><p>Standard font.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000812</p></td>
@@ -750,7 +750,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Korean font</p></td>
+<td><p>Korean font.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000813</p></td>
@@ -759,7 +759,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Taiwanese font</p></td>
+<td><p>Taiwanese font.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000814</p></td>
@@ -768,7 +768,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Chinese font</p></td>
+<td><p>Chinese font.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000816</p></td>
@@ -795,7 +795,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="4.1.0.md" title="wikilink">v269484082</a> (4.1.0.50)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>System config</p></td>
+<td><p>System config.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000819</p></td>
@@ -850,7 +850,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Errdisp strings</p></td>
+<td><p>Errdisp strings.</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000081E</p></td>
@@ -858,7 +858,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Controller gfx/icon data + dummy file</p></td>
+<td><p>Controller gfx/icon data + dummy file.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000081F</p></td>
@@ -866,7 +866,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Icosa system config</p></td>
+<td><p>Icosa system config.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000820</p></td>
@@ -874,7 +874,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Copper system config</p></td>
+<td><p>Copper system config.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000821</p></td>
@@ -882,7 +882,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Hoag system config</p></td>
+<td><p>Hoag system config.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000822</p></td>
@@ -902,12 +902,12 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <tr class="even">
 <td><p>0100000000000824</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>IcosaMariko system config</p></td>
+<td><p>IcosaMariko system config.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000825</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Contains &quot;blacklist.dat&quot; file.</p></td>
+<td><p>Application blacklist. Used by <a href="NS Services.md" title="wikilink">NS</a> for restricting application installation and updates.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000826</p></td>
