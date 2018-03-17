@@ -65,7 +65,7 @@ Takes a u32 (**ConfigItem**), and returns one or more u64s
 | 7          | [\#IsRecoveryBoot](#IsRecoveryBoot "wikilink")                         |
 | 8          | [\#DeviceId](#DeviceId "wikilink")                                     |
 | 9          | \[1.0.0-4.0.0\] BootReason                                             |
-| 10         | MemoryArrange                                                          |
+| 10         | [\#MemoryArrange](#MemoryArrange "wikilink")                           |
 | 11         | [\#IsDebugMode](#IsDebugMode "wikilink")                               |
 | 12         | [\#KernelMemoryConfiguration](#KernelMemoryConfiguration "wikilink")   |
 | 13         | [\#BatteryProfile](#BatteryProfile "wikilink")                         |
@@ -139,6 +139,12 @@ Used to determine if the system is booting from SafeMode firmware.
 [NIM](NIM%20services.md "wikilink") checks if this item matches the
 [set:cal](Settings%20services.md "wikilink") DeviceId with byte7
 cleared. If they don't match, a panic is thrown.
+
+### MemoryArrange
+
+[PM](Process%20Manager%20services.md "wikilink") uses this item for
+selecting the appropriate size for each
+[LimitableResource\_Memory](SVC#LimitableResource.md##LimitableResource "wikilink").
 
 ### IsDebugMode
 
