@@ -80,7 +80,7 @@ Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 |-
 | 1 || [[#DisableProgramVerification]]
 |-
-| 2 || [[#DRAMId]]
+| 2 || [[#DramId]]
 |-
 | 3 || [[#SecurityEngineIRQNumber]]
 |-
@@ -116,16 +116,16 @@ Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 === DisableProgramVerification ===
 [[Process Manager services|PM]] checks this item and if non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 
-=== DRAMId ===
+=== DramId ===
 This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
 
-[[PCV_services|PCV]] configures memory profiles based on DRAMId.
+[[PCV_services|PCV]] configures memory profiles based on DramId.
 {| class="wikitable" border="1"
 |-
 !  Platform
 !  Version @ 40800
 !  Revision
-!  DRAMId
+!  DramId
 |-
 |  jetson-tx1
 |  11_40800_01_V9.8.3_V1.6

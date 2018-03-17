@@ -57,7 +57,7 @@ Takes a u32 (**ConfigItem**), and returns one or more u64s
 | ConfigItem | Name                                                                   |
 | ---------- | ---------------------------------------------------------------------- |
 | 1          | [\#DisableProgramVerification](#DisableProgramVerification "wikilink") |
-| 2          | [\#DRAMId](#DRAMId "wikilink")                                         |
+| 2          | [\#DramId](#DramId "wikilink")                                         |
 | 3          | [\#SecurityEngineIRQNumber](#SecurityEngineIRQNumber "wikilink")       |
 | 4          | [\#Version](#Version "wikilink")                                       |
 | 5          | [\#HardwareType](#HardwareType "wikilink")                             |
@@ -79,15 +79,15 @@ Takes a u32 (**ConfigItem**), and returns one or more u64s
 [PM](Process%20Manager%20services.md "wikilink") checks this item and if
 non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 
-### DRAMId
+### DramId
 
 This is extracted directly from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
 
 [PCV](PCV%20services.md "wikilink") configures memory profiles based on
-DRAMId.
+DramId.
 
-| Platform   | Version @ 40800                       | Revision | DRAMId |
+| Platform   | Version @ 40800                       | Revision | DramId |
 | ---------- | ------------------------------------- | -------- | ------ |
 | jetson-tx1 | 11\_40800\_01\_V9.8.3\_V1.6           | N/A      | N/A    |
 | nx-abcb    | 10\_40800\_NoCfgVersion\_V9.8.4\_V1.6 | 0        | 0      |
