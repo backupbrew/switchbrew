@@ -71,7 +71,7 @@ Takes a u32 (**ConfigItem**), and returns one or more u64s
 | 13         | [\#BatteryProfile](#BatteryProfile "wikilink")                         |
 | 14         | \[4.0.0+\] [\#Unknown0](#Unknown0 "wikilink")                          |
 | 15         | \[5.0.0+\] Unknown1                                                    |
-| 16         | \[5.0.0+\] [\#IsT214](#IsT214 "wikilink")                              |
+| 16         | \[5.0.0+\] [\#NewKeyGeneration](#NewKeyGeneration "wikilink")          |
 | 17         | \[5.0.0+\] [\#Package2Hash](#Package2Hash "wikilink")                  |
 
 ### DisableProgramVerification
@@ -164,7 +164,7 @@ of DRAM instead of 4GB.
 
 This tells if the TI Charger (bq24192) is active.
 
-### IsT214
+### NewKeyGeneration
 
 This item is obtained from
 [FUSE\_RESERVED\_ODM2](Fuse%20registers#FUSE%20RESERVED%20ODM2.md##FUSE_RESERVED_ODM2 "wikilink")
@@ -176,7 +176,10 @@ matches 0x8E61ECAE and
 [FUSE\_RESERVED\_ODM1](Fuse%20registers#FUSE%20RESERVED%20ODM1.md##FUSE_RESERVED_ODM1 "wikilink")
 matches 0xF2BA3BB2.
 
-This is speculated to be related to the new SoC T214.
+\[5.0.0+\] [FS](Filesystem%20services.md "wikilink") can now use this
+value for the **KeyGeneration** parameter when calling
+[GenerateAesKek](#GenerateAesKek "wikilink") during
+"GetBisEncryptionKey".
 
 ### Unknown0
 

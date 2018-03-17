@@ -108,7 +108,7 @@ Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 |-
 | 15 || [5.0.0+] Unknown1
 |-
-| 16 || [5.0.0+] [[#IsT214]]
+| 16 || [5.0.0+] [[#NewKeyGeneration]]
 |-
 | 17 || [5.0.0+] [[#Package2Hash]]
 |}
@@ -198,10 +198,10 @@ Kernel reads this when setting up memory-related code. If bit0 is set, it will m
 === BatteryProfile ===
 This tells if the TI Charger (bq24192) is active.
 
-=== IsT214 ===
+=== NewKeyGeneration ===
 This item is obtained from [[Fuse_registers#FUSE_RESERVED_ODM2|FUSE_RESERVED_ODM2]] if bit 11 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]] is set, [[Fuse_registers#FUSE_RESERVED_ODM0|FUSE_RESERVED_ODM0]] matches 0x8E61ECAE and [[Fuse_registers#FUSE_RESERVED_ODM1|FUSE_RESERVED_ODM1]] matches 0xF2BA3BB2.
 
-This is speculated to be related to the new SoC T214.
+[5.0.0+] [[Filesystem services|FS]] can now use this value for the '''KeyGeneration''' parameter when calling [[#GenerateAesKek|GenerateAesKek]] during "GetBisEncryptionKey".
 
 === Unknown0 ===
 This item is bit 10 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
