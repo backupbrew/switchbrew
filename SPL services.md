@@ -58,7 +58,7 @@ Takes a u32 (**ConfigItem**), and returns one or more u64s
 | ---------- | ---------------------------------------------------------------------- |
 | 1          | [\#DisableProgramVerification](#DisableProgramVerification "wikilink") |
 | 2          | [\#DramId](#DramId "wikilink")                                         |
-| 3          | [\#SecurityEngineIRQNumber](#SecurityEngineIRQNumber "wikilink")       |
+| 3          | [\#SecurityEngineIrqNumber](#SecurityEngineIrqNumber "wikilink")       |
 | 4          | [\#Version](#Version "wikilink")                                       |
 | 5          | [\#HardwareType](#HardwareType "wikilink")                             |
 | 6          | [\#IsRetail](#IsRetail "wikilink")                                     |
@@ -103,7 +103,7 @@ extra hardware to support HDMI output.
 nx-abca2 (Icosa) hardware types are variations of the retail form
 factor.
 
-### SecurityEngineIRQNumber
+### SecurityEngineIrqNumber
 
 SPL uses this for setting up the security engine IRQ.
 

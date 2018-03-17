@@ -82,7 +82,7 @@ Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 |-
 | 2 || [[#DramId]]
 |-
-| 3 || [[#SecurityEngineIRQNumber]]
+| 3 || [[#SecurityEngineIrqNumber]]
 |-
 | 4 || [[#Version]]
 |-
@@ -163,7 +163,7 @@ nx-abcb (Copper) is the SDEV unit. Among other differences, this has extra hardw
 
 nx-abca2 (Icosa) hardware types are variations of the retail form factor.
 
-=== SecurityEngineIRQNumber ===
+=== SecurityEngineIrqNumber ===
 SPL uses this for setting up the security engine IRQ.
 
 === Version ===
