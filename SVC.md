@@ -515,7 +515,7 @@ the timeout. Handle index is not updated.
 
 Returns the value of cntpct\_el0.
 
-The frequency is 19200000 (constant from official sw).
+The frequency is 19200000 Hz (constant from official sw).
 
 Official sw reads cntpct\_el0 directly from usermode without using this
 SVC. [sdk-nso](ExeFS.md "wikilink") has this SVC, but it's not known to

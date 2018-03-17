@@ -674,7 +674,7 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 Returns the value of cntpct_el0.
 
-The frequency is 19200000 (constant from official sw).
+The frequency is 19200000 Hz (constant from official sw).
 
 Official sw reads cntpct_el0 directly from usermode without using this SVC. [[ExeFS|sdk-nso]] has this SVC, but it's not known to be called anywhere.
 
