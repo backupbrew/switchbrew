@@ -149,6 +149,9 @@ RomFS changes:
 ** "IcoPctl.bntx"
 ** "LogoMoon{region/language-text}.bntx", for every region/language.
 
+===System Config===
+New fields were added to [[Settings_services#System_Config|System Config]].
+
 ==[[NPDM]]==
 New flags bit2/bit3 were added to the flags at ACID+0xC.
 
