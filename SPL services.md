@@ -120,7 +120,7 @@ It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
 
 \[4.0.0+\] This item is obtained by checking bits 8, 2 and 16-19 from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
-It can be 0 (Icosa), 1 (Copper), 3 (Unknown) or 4 (Invalid).
+It can be 0 (Icosa), 1 (Copper), 3 (IcosaMariko) or 4 (Invalid).
 
 A value of 2 (Hoag?) is always mapped to 4 (Invalid).
 

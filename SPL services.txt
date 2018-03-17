@@ -172,7 +172,7 @@ The current [[Package2#Versions|Package1 Maxver Constant]] - 1.
 === HardwareType ===
 [1.0.0+] This item is obtained by checking bits 8 and 2 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
 
-[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 3 (Unknown) or 4 (Invalid).
+[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 3 (IcosaMariko) or 4 (Invalid).
 
 A value of 2 (Hoag?) is always mapped to 4 (Invalid).
 
