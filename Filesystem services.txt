@@ -790,6 +790,8 @@ These are the 0x300 paths to NCA files for the various filesystems FS can access
 | @GcS00000001 || Gamecard Contents.
 |-
 | @upp || Gamecard update partition (Partition 0)
+|-
+| [4.0.0+] @RegUpdate || Registered update partition
 |}
 
 =BisPartitionID=
