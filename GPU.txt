@@ -199,6 +199,10 @@ Subchannels:
 |-
 | 0x6C3 || Poke_Control || || Big bitfield. After write, the result of query is written to 4 bytes at Poke_Addr.
 |-
+| (0x701,0x702)+2*N || VertexBufferStartAddr || iova_t ||
+|-
+| (0x7C0,0x7C1)+2*N || VertexBufferEndAddr || iova_t ||
+|-
 | 0x781+8*N || BlendState_N || || TODO, N = {0, ..., 7}
 |-
 | 0x782+8*N || BlendState_N || || TODO
@@ -221,6 +225,10 @@ Subchannels:
 |-
 | 0x850 || || || BindProgram writes here.
 |-
+| 0x8E0 || BindUniformBuffer_Size? || || BindUniformBuffer writes here.
+|-
+| 0x8E1,0x8E2 || BindUniformBuffer_Addr || iova_t ||
+|-
 | 0x8E3 || BindImage_Config || || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32.
 |-
 | 0x8E4 || BindImage_ValueLo || || This might be an addr but it's swapped opposite to other addrs. BindSeparateSampler/BindSeparateTexture writes something here. BindStorageBuffer writes something here.
@@ -230,6 +238,16 @@ Subchannels:
 | 0x8E6 || || || BindStorageBuffer writes something here.
 |-
 | 0x8E4,0x8EB || Multisample_ConfigX || || What? Overlap.
+|-
+| 0x904 || UniformBuffer0_Control || ||
+|-
+| 0x90C || UniformBuffer3_Control || ||
+|-
+| 0x914 || UniformBuffer4_Control || ||
+|-
+| 0x91C || UniformBuffer2_Control || ||
+|-
+| 0x924 || UniformBuffer1_Control || ||
 |-
 | 0xD1E || || || BindProgram writes 0 here, trigger?
 |-
@@ -270,7 +288,7 @@ Subchannels:
 | 0xE2F || DebugGroupPop_GroupId || || This is written once after DebugGroupPop_Control.
 |}
 
-TODO: SetRenderTargets, SetSubpixelPrecisionBias, SetTiledCacheAction, SetTiledCacheTileSize, SetViewports, UpdateUniformBuffer, TiledDownSample
+TODO: SetRenderTargets, SetSubpixelPrecisionBias, SetTiledCacheAction, SetTiledCacheTileSize, SetViewports, UpdateUniformBuffer, TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
 
 = DMA =
 {| class=wikitable
