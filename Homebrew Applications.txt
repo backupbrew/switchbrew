@@ -58,6 +58,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/TurtleP/LovePotion/tree/switch Yes]
 | 2018-03-02
 |-
+| [https://blog.easyrpg.org/2018/03/easyrpg-player-now-available-as-nintendo-switch-homebrew/ EasyRPG Player]
+| RPG Maker 2000/2003 game interpreter
+| Rinnegatamante & EasyRPG team
+| [https://easyrpg.org/player/downloads/ here]
+| [https://github.com/EasyRPG/Player Yes]
+| 2018-03-09
+|-
 |}
 
 === Games ===

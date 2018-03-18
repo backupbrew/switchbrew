@@ -36,10 +36,11 @@ available.
 
 ### Game Engines
 
-| Name       | Description                                      | Author  | Download | Open-Source                                              | Last Updated |
-| ---------- | ------------------------------------------------ | ------- | -------- | -------------------------------------------------------- | ------------ |
-| LovePotion | [Love2D](https://love2d.org) for Nintendo Switch | TurtleP |          | [Yes](https://github.com/TurtleP/LovePotion/tree/switch) | 2018-03-02   |
-|            |                                                  |         |          |                                                          |              |
+| Name                                                                                                         | Description                                      | Author                        | Download                                      | Open-Source                                              | Last Updated |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ | ----------------------------- | --------------------------------------------- | -------------------------------------------------------- | ------------ |
+| LovePotion                                                                                                   | [Love2D](https://love2d.org) for Nintendo Switch | TurtleP                       |                                               | [Yes](https://github.com/TurtleP/LovePotion/tree/switch) | 2018-03-02   |
+| [EasyRPG Player](https://blog.easyrpg.org/2018/03/easyrpg-player-now-available-as-nintendo-switch-homebrew/) | RPG Maker 2000/2003 game interpreter             | Rinnegatamante & EasyRPG team | [here](https://easyrpg.org/player/downloads/) | [Yes](https://github.com/EasyRPG/Player)                 | 2018-03-09   |
+|                                                                                                              |                                                  |                               |                                               |                                                          |              |
 
 ### Games
 
