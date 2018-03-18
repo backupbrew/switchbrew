@@ -52,7 +52,8 @@ containing FIFO commands and their respective arguments.
 | ----- | ------------------------------------------------------------ |
 | 12-0  | Method                                                       |
 | 15-13 | Subchannel                                                   |
-| 28-16 | Argument count (in 32-bits Words) or inline data (see below) |
+| 27-16 | Argument count (in 32-bits Words) or inline data (see below) |
+| 28?   | Hmm?                                                         |
 | 31-29 | [Submission mode](#Submission_mode "wikilink")               |
 
 Note: Methods are treated as 4-byte addressable locations, and hence

@@ -27,8 +27,11 @@ This ioctl takes an array of gpfifo entries where each entry points to a FIFO co
 |15-13
 |Subchannel
 |-
-|28-16
+|27-16
 |Argument count (in 32-bits Words) or inline data (see below)
+|-
+|28?
+|Hmm?
 |-
 |31-29
 |[[#Submission_mode|Submission mode]]
