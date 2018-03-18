@@ -177,11 +177,11 @@ Subchannels:
 |-
 | 0xE10 || || || Sometimes used by BindColorState.
 |-
-| 0xE12 || || BindChannelMaskState_Unk0 ||
+| 0xE12 || BindChannelMaskState_Unk0 || ||
 |-
-| 0xE13 || || BindChannelMaskState_Unk1 ||
+| 0xE13 || BindChannelMaskState_Unk1 || ||
 |-
-| 0xE1A || || DepthStencil_Config3 ||
+| 0xE1A || DepthStencil_Config3 || ||
 |-
 | 0xE20 || || || Another barrier? Used by SetConservativeRasterDilate.
 |-
