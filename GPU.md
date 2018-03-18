@@ -12,6 +12,7 @@ Subchannels:
 
 | Register | Name                          | Notes                                                                                                  |
 | -------- | ----------------------------- | ------------------------------------------------------------------------------------------------------ |
+| 0x1D1    | PauseTransform                |                                                                                                        |
 | 0x6C0    | PauseTransformFeedbackAddrHi  |                                                                                                        |
 | 0x6C1    | PauseTransformFeedbackAddrLo  |                                                                                                        |
 | 0x6C2    | ?                             | 0 is written here during transform pause.                                                              |
