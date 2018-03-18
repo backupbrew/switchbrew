@@ -17,41 +17,41 @@ Subchannels:
 {| class=wikitable
 ! Register || Name || Size || Type || Notes
 |-
-| 0xC9 || Tesselation_OuterLevels || 4 || ||
+| 0xC9 || TesselationOuterLevels || 4 || float[4] ||
 |-
-| 0xCD || Tesselation_InnerLevels || 2 || ||
+| 0xCD || TesselationInnerLevels || 2 || float[2] ||
 |-
-| 0xDF || RasterizerDiscard_Enable || 1 || bool ||
+| 0xDF || RasterizerEnable || 1 || bool ||
 |-
 | 0xE0+8*N || TransformFeedbackBuffer_Enable || 1 || bool ||
 |-
-| 0xE1+8*N || TransformFeedbackBuffer_Addr || 2 || iova_t ||
+| 0xE1+8*N || TransformFeedbackBuffer_Addr || 2 || gpuva ||
 |-
 | 0xE3+8*N || TransformFeedbackBuffer_Flags || 1 || ||
 |-
-| 0x1D1 || TransformFeedback_Pause || 1 || ||
+| 0x1D1 || TransformFeedback_Enable || 1 || ||
 |-
-| 0x1FA || ZCullCtx_Addr0 || 2 || iova_t ||
+| 0x1FA || ZCullContext_StartAddr || 2 || gpuva ||
 |-
-| 0x1FC || ZCullCtx_Addr1 || 2 || iova_t ||
+| 0x1FC || ZCullContext_EndAddr || 2 || gpuva ||
 |-
-| 0x285+8*N || DepthRange_Unk0_N || 1 || ||
+| 0x285+8*N || DepthRange_Unk0_N || 1 || || ?
 |-
-| 0x302+4*N || DepthRange_Unk1_N || 1 || ||
+| 0x302+4*N || DepthRangeNear || 1 || float ||
 |-
-| 0x303+4*N || DepthRange_Unk2_N || 1 || ||
+| 0x303+4*N || DepthRangeFar || 1 || float ||
 |-
-| 0x36B || PolygonMode0 || 1 || bitfield || 0x1B00/0x1B01/0x1B02
+| 0x36B || PolygonModeFront || 1 || bitfield || 0x1B00/0x1B01/0x1B02
 |-
-| 0x36C || PolygonMode1 || 1 || bitfield || 0x1B00/0x1B01/0x1B02
+| 0x36C || PolygonModeBack || 1 || bitfield || 0x1B00/0x1B01/0x1B02
 |-
-| 0x370 || PolygonOffsetEnableX || 1 || bool ||
+| 0x370 || PolygonOffsetPointEnable || 1 || bool ||
 |-
-| 0x371 || PolygonOffsetEnableY || 1 || bool ||
+| 0x371 || PolygonOffsetLineEnable || 1 || bool ||
 |-
-| 0x372 || PolygonOffsetEnableZ || 1 || bool ||
+| 0x372 || PolygonOffsetFillEnable || 1 || bool ||
 |-
-| 0x373 || PatchSize || 1 || || Small value, always fits in 12 bits.
+| 0x373 || PatchSize || 1 || || Small value, always fits in 12 bits. In number of vertices.
 |-
 | 0x374 || || 1 || || 0 written here for "simple" BlendState.
 |-
@@ -149,7 +149,7 @@ Subchannels:
 |-
 | 0x546 || PointSize || 1 || float ||
 |-
-| 0x554 || RendererEnableConditionAddr || 2 || iova_t ||
+| 0x554 || RendererEnableConditionAddr || 2 || gpuva ||
 |-
 | 0x556 || RendererEnable || 1 || || 0=disabled unconditional, 1=enabled unconditional, 3=unknown conditional, 4=unknown conditional, 
 |-
@@ -183,15 +183,15 @@ Subchannels:
 |-
 | 0x68B || Barrier? || 1 || trigger || Always 0 is written here. During zcull ctx-save, spammed when enabling raster, ...
 |-
-| 0x6C0 || Poke_Addr || 2 || iova_t ||
+| 0x6C0 || Poke_Addr || 2 || gpuva ||
 |-
 | 0x6C2 || Poke_WriteVal || 1 || || 0 is written here during most queries.
 |-
 | 0x6C3 || Poke_Control || 1 || || Big bitfield. After write, the result of query is written to 4 bytes at Poke_Addr.
 |-
-| 0x701+2*N || VertexBufferStartAddr || 2 || iova_t ||
+| 0x701+2*N || VertexBufferStartAddr || 2 || gpuva ||
 |-
-| 0x7C0+2*N || VertexBufferEndAddr || 2 || iova_t ||
+| 0x7C0+2*N || VertexBufferEndAddr || 2 || gpuva ||
 |-
 | 0x781+8*N || SimpleBlend0_BlendEquation0 || 1 || bitfield || Bit0-2: BlendEquation0
 |-
@@ -217,7 +217,7 @@ Subchannels:
 |-
 | 0x8E0 || BindUniformBuffer_Size? || 1 || || BindUniformBuffer writes here.
 |-
-| 0x8E1 || BindUniformBuffer_Addr || 2 || iova_t ||
+| 0x8E1 || BindUniformBuffer_Addr || 2 || gpuva ||
 |-
 | 0x8E3 || BindImage_Config || 1 || || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32.
 |-
