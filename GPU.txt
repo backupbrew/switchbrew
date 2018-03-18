@@ -83,15 +83,9 @@ Subchannels:
 |-
 | 0x3F5 || Multisample_Related2 || 1 || ||
 |-
-| 0x3F6 || CoverageModulation_Enable || 1 || bool ||
+| 0x3F6 || CoverageModulationEnable || 1 || bool ||
 |-
-| 0x40C || CoverageModulation_Table0 || 1 || float ||
-|-
-| 0x40D || CoverageModulation_Table1 || 1 || float ||
-|-
-| 0x40E || CoverageModulation_Table2 || 1 || float ||
-|-
-| 0x40F || CoverageModulation_Table3 || 1 || float ||
+| 0x40C || CoverageModulationTable || 1 || float[4] ||
 |-
 | 0x452 || Raster_Enable || 1 || bool ||
 |-
