@@ -119,7 +119,7 @@ Subchannels:
 |-
 | 0x4C5 || AlphaTestType || 1 || bitfield || Bit0-3: AlphaTestType
 |-
-| 0x4E0 || || 1 || || 0 is sometimes written here during BindDepthStencil.
+| 0x4E0 || StencilEnable || 1 || bool ||
 |-
 | 0x4E5 || StencilMask0_Ref || 1 || bool ||
 |-
@@ -263,7 +263,7 @@ Subchannels:
 |-
 | 0xE13 || BindChannelMaskState_Unk1 || 1 || ||
 |-
-| 0xE1A || DepthStencil_Config3 || 1 || ||
+| 0xE1A || StencilConfig || 1 || bitfield || Bit0-3: StencilFunc0, bit4-7: StencilOp0_A, bit8-11: StencilOp0_B, bit12-15: StencilFunc1, bit16-19: StencilOp1_A, bit20-23: StencilOp1_B
 |-
 | 0xE1E || Multisample_Config7 || 1 || || Also written to by BindStorageBuffer 
 |-
