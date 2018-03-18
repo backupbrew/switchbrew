@@ -61,6 +61,8 @@ Subchannels:
 |-
 | 0x36C || PolygonModeBack || 1 || bitfield || 0x1B00/0x1B01/0x1B02
 |-
+| 0x36F || ? || 1 || bitfield || Bit0:?, bit16:?. Used by ClearDepthStencil.
+|-
 | 0x370 || PolygonOffsetPointEnable || 1 || bool ||
 |-
 | 0x371 || PolygonOffsetLineEnable || 1 || bool ||
