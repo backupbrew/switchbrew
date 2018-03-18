@@ -34,17 +34,26 @@ Subchannels:
 | 0x3D7       | StencilMask1\_ValueMask        | bool    |                                                                                                  |
 | 0x3E7       | DepthBounds\_Bound0            | float   |                                                                                                  |
 | 0x3E8       | DepthBounds\_Bound1            | float   |                                                                                                  |
+| 0x3ED       | Multisample\_Related0          |         |                                                                                                  |
+| 0x3EE       | Multisample\_Related1          |         |                                                                                                  |
 | 0x3EF       | SampleMask0                    |         |                                                                                                  |
 | 0x3F0       | SampleMask1                    |         |                                                                                                  |
 | 0x3F1       | SampleMask2                    |         |                                                                                                  |
 | 0x3F2       | SampleMask3                    |         |                                                                                                  |
+| 0x3F5       | Multisample\_Related2          |         |                                                                                                  |
 | 0x3F6       | CoverageModulation\_Enable     | bool    |                                                                                                  |
 | 0x40C       | CoverageModulation\_Table0     | float   |                                                                                                  |
 | 0x40D       | CoverageModulation\_Table1     | float   |                                                                                                  |
 | 0x40E       | CoverageModulation\_Table2     | float   |                                                                                                  |
 | 0x40F       | CoverageModulation\_Table3     | float   |                                                                                                  |
 | 0x452       | Raster\_Enable                 | bool    |                                                                                                  |
+| 0x478       | Multisample\_Config3           |         |                                                                                                  |
+| 0x479       | Multisample\_Config4           |         |                                                                                                  |
+| 0x47A       | Multisample\_Config5           |         |                                                                                                  |
+| 0x47B       | Multisample\_Config6           |         |                                                                                                  |
+| 0x47E       | Multisample\_Related3          |         |                                                                                                  |
 | 0x4B3       | DepthStencil\_Config0          | bool    | If set to 1, it enables DepthStencil\_Config1 and DepthStencil\_Config2.                         |
+| 0x4B8       | Multisample\_Config2           | bool    |                                                                                                  |
 | 0x4BA       | DepthStencil\_Config1          |         |                                                                                                  |
 | 0x4C3       | DepthStencil\_Config2          |         | 0-15 is written here.                                                                            |
 | 0x4B9       |                                |         | 1 written here for "simple" BlendState.                                                          |
@@ -69,6 +78,8 @@ Subchannels:
 | 0x554-0x555 | RendererEnableConditionAddr    | iova\_t |                                                                                                  |
 | 0x556       | RendererEnable                 |         | 0=disabled unconditional, 1=enabled unconditional, 3=unknown conditional, 4=unknown conditional, |
 | 0x54C       | Counter\_Reset                 |         | Value written decides which counter to reset.                                                    |
+| 0x54D       | Multisample\_Config1           |         |                                                                                                  |
+| 0x54F       | Multisample\_Config0           | bool    |                                                                                                  |
 | 0x55B       | PolygonOffsetClamp1            | float   |                                                                                                  |
 | 0x56F       | PolygonOffsetClamp2            | float   | Float multiplied by 2 is written here.                                                           |
 | 0x591       | PrimitiveRestart\_Enable       | bool    |                                                                                                  |
@@ -86,15 +97,21 @@ Subchannels:
 | 0x784+8\*N  | BlendState\_N                  |         | TODO                                                                                             |
 | 0x785+8\*N  | BlendState\_N                  |         | TODO                                                                                             |
 | 0x786+8\*N  | BlendState\_N                  |         | TODO                                                                                             |
+| 0x8E3       | BindImage\_Config              |         | BindImage writes "8\*i + 0x120" here.                                                            |
+| 0x8E4       | BindImage\_ValueLo             |         | This might be an addr but it's swapped opposite to other addrs.                                  |
+| 0x8E5       | BindImage\_ValueHi             |         |                                                                                                  |
+| 0x8E4-0x8EB | Multisample\_ConfigX           |         | What? Overlap.                                                                                   |
 | 0xD34       |                                |         | Used by SetConservativeRasterDilate.                                                             |
 | 0xD35       | BlendState                     |         | TODO: Bitfield                                                                                   |
 | 0xE00-0xE01 | TransformFeedback\_Addr        | iova\_t |                                                                                                  |
 | 0xE0A       |                                |         | Used by SetConservativeRasterDilate.                                                             |
 | 0xE0B       |                                |         | Used by SetConservativeRasterDilate.                                                             |
+| 0xE0E       |                                |         | BindImage writes 0-4 here.                                                                       |
 | 0xE10       |                                |         | Sometimes used by BindColorState.                                                                |
 | 0xE12       | BindChannelMaskState\_Unk0     |         |                                                                                                  |
 | 0xE13       | BindChannelMaskState\_Unk1     |         |                                                                                                  |
 | 0xE1A       | DepthStencil\_Config3          |         |                                                                                                  |
+| 0xE1E       | Multisample\_Config7           |         |                                                                                                  |
 | 0xE20       |                                |         | Another barrier? Used by SetConservativeRasterDilate.                                            |
 | 0xE2A       | DebugGroupPush\_DynamicControl |         |                                                                                                  |
 | 0xE2B       | DebugGroupPush\_DynamicValue   |         | This one can be written a variable number of times.                                              |
