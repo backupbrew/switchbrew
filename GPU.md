@@ -21,10 +21,15 @@ Subchannels:
 | 0x1D1      | TransformFeedbackEnable           | 1    | bool          |                                                                                                                                                                                         |
 | 0x1FA      | ZCullContextStartAddr             | 2    | gpuva         |                                                                                                                                                                                         |
 | 0x1FC      | ZCullContextEndAddr               | 2    | gpuva         |                                                                                                                                                                                         |
-| 0x285+8\*N | DepthRange\_Unk0\_N               | 1    |               | ?                                                                                                                                                                                       |
-| 0x287+8\*N | SubpixelPrecisionBiasN            | 1    | bitfield      | Bit0-4: ?, bit8-bit11: ?                                                                                                                                                                |
-| 0x302+4\*N | DepthRangeNear                    | 1    | float         |                                                                                                                                                                                         |
-| 0x303+4\*N | DepthRangeFar                     | 1    | float         |                                                                                                                                                                                         |
+| 0x280+8\*N | ViewportNConfig0                  | 1    | float         | ?                                                                                                                                                                                       |
+| 0x281+8\*N | ViewportNConfig1                  | 1    | float         | ?                                                                                                                                                                                       |
+| 0x285+8\*N | ViewportNDepthRangeUnk            | 1    |               | ?                                                                                                                                                                                       |
+| 0x286+8\*N | ViewportNSwizzles                 | 1    | bitfield      |                                                                                                                                                                                         |
+| 0x287+8\*N | ViewportNSubpixelPrecisionBias    | 1    | bitfield      | Bit0-4: ?, bit8-bit11: ?                                                                                                                                                                |
+| 0x300+4\*N | ViewportNConfig2                  | 1    | float         |                                                                                                                                                                                         |
+| 0x301+4\*N | ViewportNConfig3                  | 1    | float         |                                                                                                                                                                                         |
+| 0x302+4\*N | ViewportNDepthRangeNear           | 1    | float         |                                                                                                                                                                                         |
+| 0x303+4\*N | ViewportNDepthRangeFar            | 1    | float         |                                                                                                                                                                                         |
 | 0x36B      | PolygonModeFront                  | 1    | bitfield      | 0x1B00/0x1B01/0x1B02                                                                                                                                                                    |
 | 0x36C      | PolygonModeBack                   | 1    | bitfield      | 0x1B00/0x1B01/0x1B02                                                                                                                                                                    |
 | 0x370      | PolygonOffsetPointEnable          | 1    | bool          |                                                                                                                                                                                         |
@@ -138,10 +143,9 @@ Subchannels:
 | 0xE2E      | DebugGroupPop\_Control            | 1    |               |                                                                                                                                                                                         |
 | 0xE2F      | DebugGroupPop\_GroupId            | 1    |               | This is written once after DebugGroupPop\_Control.                                                                                                                                      |
 
-TODO: SetRenderTargets, SetTiledCacheTileSize, SetViewports,
-UpdateUniformBuffer, TiledDownSample, BindVertexAttribState,
-BindVertexStreamState, Clear\*, Copy\*, Discard\*, Dispatch\*,
-Downsample, Draw\*
+TODO: SetRenderTargets, SetViewports, UpdateUniformBuffer,
+TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear\*,
+Copy\*, Discard\*, Dispatch\*, Downsample, Draw\*
 
 # DMA
 

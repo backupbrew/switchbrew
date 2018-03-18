@@ -35,13 +35,23 @@ Subchannels:
 |-
 | 0x1FC || ZCullContextEndAddr || 2 || gpuva ||
 |-
-| 0x285+8*N || DepthRange_Unk0_N || 1 || || ?
+| 0x280+8*N || ViewportNConfig0 || 1 || float || ?
 |-
-| 0x287+8*N || SubpixelPrecisionBiasN || 1 || bitfield || Bit0-4: ?, bit8-bit11: ?
+| 0x281+8*N || ViewportNConfig1 || 1 || float || ?
 |-
-| 0x302+4*N || DepthRangeNear || 1 || float ||
+| 0x285+8*N || ViewportNDepthRangeUnk || 1 || || ?
 |-
-| 0x303+4*N || DepthRangeFar || 1 || float ||
+| 0x286+8*N || ViewportNSwizzles || 1 || bitfield || 
+|-
+| 0x287+8*N || ViewportNSubpixelPrecisionBias || 1 || bitfield || Bit0-4: ?, bit8-bit11: ?
+|-
+| 0x300+4*N || ViewportNConfig2 || 1 || float ||
+|-
+| 0x301+4*N || ViewportNConfig3 || 1 || float ||
+|-
+| 0x302+4*N || ViewportNDepthRangeNear || 1 || float ||
+|-
+| 0x303+4*N || ViewportNDepthRangeFar || 1 || float ||
 |-
 | 0x36B || PolygonModeFront || 1 || bitfield || 0x1B00/0x1B01/0x1B02
 |-
@@ -268,7 +278,7 @@ Subchannels:
 | 0xE2F || DebugGroupPop_GroupId || 1 || || This is written once after DebugGroupPop_Control.
 |}
 
-TODO: SetRenderTargets, SetTiledCacheTileSize, SetViewports, UpdateUniformBuffer, TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
+TODO: SetRenderTargets, SetViewports, UpdateUniformBuffer, TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
 
 = DMA =
 {| class=wikitable
