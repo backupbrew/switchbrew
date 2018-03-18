@@ -85,9 +85,9 @@ Subchannels:
 |-
 | 0x40C || CoverageModulationTable || 1 || float[4] ||
 |-
-| 0x452 || Raster_Enable || 1 || bool ||
+| 0x452 || RasterEnable || 1 || bool ||
 |-
-| 0x478 || MultisampleGrid? || 3 || ||
+| 0x478 || MultisampleGrid || 3 || bitfield[3] || Bit0-3: x0, bit4-7: y0, bit8-11: x1, etc..
 |-
 | 0x47E || MultisampleCoverageToColor || 1 || bitfield || Bit0: Enable, bit4-6: ?
 |-
