@@ -17,12 +17,6 @@ Subchannels:
 {| class=wikitable
 ! Register || Name || Type || Notes
 |-
-| 0xE0+8*N || TransformFeedbackBuffer_Enable || bool ||
-|-
-| (0xE1,0xE2)+8*N || TransformFeedbackBuffer_Addr || iova_t ||
-|-
-| 0xE3+8*N || TransformFeedbackBuffer_Flags || ||
-|-
 | 0xC9 || Tesselation_OuterLevel0 || ||
 |-
 | 0xCA || Tesselation_OuterLevel1 || ||
@@ -36,6 +30,12 @@ Subchannels:
 | 0xCE || Tesselation_InnerLevel1 || ||
 |-
 | 0xDF || RasterizerDiscard_Enable || bool ||
+|-
+| 0xE0+8*N || TransformFeedbackBuffer_Enable || bool ||
+|-
+| (0xE1,0xE2)+8*N || TransformFeedbackBuffer_Addr || iova_t ||
+|-
+| 0xE3+8*N || TransformFeedbackBuffer_Flags || ||
 |-
 | 0x1D1 || TransformFeedback_Pause || ||
 |-
