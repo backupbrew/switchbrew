@@ -239,7 +239,7 @@ Subchannels:
 |-
 | 0xD35 || BlendStateAdvanced || 1 || bitfield || Bit0: NormalizedDst, bit1: PremultipliedSrc, bit2-3: BlendTarget, Bit4-9: Mode
 |-
-| 0xE00 || TransformFeedback_Addr || 2 || iova_t ||
+| 0xE00 || TransformFeedback_Addr || 2 || gpuaddr ||
 |-
 | 0xE0A || || 1 || || Used by SetConservativeRasterDilate.
 |-
