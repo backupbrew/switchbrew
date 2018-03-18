@@ -294,7 +294,7 @@ TODO: SetRenderTargets, TiledDownSample, Clear*, Copy*, Discard*, Dispatch*, Dow
 {| class=wikitable
 ! Register || Name || Notes
 |-
-| 0x0C0 || CopyControl || With 0x186 Src/DstStride is not used.
+| 0x0C0 || CopyControl || With 0x186 Src/DstStride is not used. With 0x586 memset-functionality is used.
 |-
 | 0x100 || CopySrcAddrHi ||
 |-
@@ -309,4 +309,12 @@ TODO: SetRenderTargets, TiledDownSample, Clear*, Copy*, Discard*, Dispatch*, Dow
 | 0x105 || CopyDstStride? ||
 |-
 | 0x106 || CopyCount || At most 0x3FFFFF.
+|-
+| 0x1C0 || CopyMemsetValue? ||
+|-
+| 0x1C2 || CopyMemsetControl? || Seen: 0x34444
+|-
+| 0x1C4 || CopyMemsetLength? || In units of 4 bytes.
+|-
+| 0x1C5 || ? || Seen: 1
 |}

@@ -149,17 +149,22 @@ Subchannels:
 | 0xE2F      | DebugGroupPop\_GroupId            | 1    |                | This is written once after DebugGroupPop\_Control.                                                                                                                                                           |
 
 TODO: SetRenderTargets, TiledDownSample, Clear\*, Copy\*, Discard\*,
-Dispatch\*, Downsample, Draw\*
+Dispatch\*, Downsample,
+Draw\*
 
 # DMA
 
-| Register | Name           | Notes                                 |
-| -------- | -------------- | ------------------------------------- |
-| 0x0C0    | CopyControl    | With 0x186 Src/DstStride is not used. |
-| 0x100    | CopySrcAddrHi  |                                       |
-| 0x101    | CopySrcAddrLo  |                                       |
-| 0x102    | CopyDstAddrHi  |                                       |
-| 0x103    | CopyDstAddrLo  |                                       |
-| 0x104    | CopySrcStride? |                                       |
-| 0x105    | CopyDstStride? |                                       |
-| 0x106    | CopyCount      | At most 0x3FFFFF.                     |
+| Register | Name               | Notes                                                                          |
+| -------- | ------------------ | ------------------------------------------------------------------------------ |
+| 0x0C0    | CopyControl        | With 0x186 Src/DstStride is not used. With 0x586 memset-functionality is used. |
+| 0x100    | CopySrcAddrHi      |                                                                                |
+| 0x101    | CopySrcAddrLo      |                                                                                |
+| 0x102    | CopyDstAddrHi      |                                                                                |
+| 0x103    | CopyDstAddrLo      |                                                                                |
+| 0x104    | CopySrcStride?     |                                                                                |
+| 0x105    | CopyDstStride?     |                                                                                |
+| 0x106    | CopyCount          | At most 0x3FFFFF.                                                              |
+| 0x1C0    | CopyMemsetValue?   |                                                                                |
+| 0x1C2    | CopyMemsetControl? | Seen: 0x34444                                                                  |
+| 0x1C4    | CopyMemsetLength?  | In units of 4 bytes.                                                           |
+| 0x1C5    | ?                  | Seen: 1                                                                        |
