@@ -29,11 +29,11 @@ Subchannels:
 |-
 | 0xE3+8*N || TransformFeedbackBufferFlags || 1 || ||
 |-
-| 0x1D1 || TransformFeedback_Enable || 1 || ||
+| 0x1D1 || TransformFeedbackEnable || 1 || bool ||
 |-
-| 0x1FA || ZCullContext_StartAddr || 2 || gpuva ||
+| 0x1FA || ZCullContextStartAddr || 2 || gpuva ||
 |-
-| 0x1FC || ZCullContext_EndAddr || 2 || gpuva ||
+| 0x1FC || ZCullContextEndAddr || 2 || gpuva ||
 |-
 | 0x285+8*N || DepthRange_Unk0_N || 1 || || ?
 |-
