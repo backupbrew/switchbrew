@@ -235,7 +235,7 @@ Subchannels:
 |-
 | 0xE0E || || 1 || || BindImage/BindSeparateSampler/BindSeparateTexture writes 0-4 here.
 |-
-| 0xE10 || ColorStateLogicOp3 || 1 || bitfield || Bit8: BlendEnable, bit16-23: LogicOp, bit28-31: AlphaTest. BindColorState writes this when LogicOp == 3.
+| 0xE10 || ColorLogicOp3 || 1 || bitfield || Bit8: BlendEnable, bit16-23: LogicOp, bit28-31: AlphaTest. BindColorState writes this when LogicOp == 3.
 |-
 | 0xE12 || BindChannelMaskState_Unk0 || 1 || ||
 |-
