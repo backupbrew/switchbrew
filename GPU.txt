@@ -69,11 +69,11 @@ Subchannels:
 |-
 | 0x3E8 || DepthBounds_Bound1 || 1 || float ||
 |-
-| 0x3ED || Multisample_Related0 || 1 || ||
+| 0x3ED || MultisampleRasterEnable || 1 || bool ||
 |-
-| 0x3EE || Multisample_Related1 || 1 || ||
+| 0x3EE || MultisampleRasterSamples || 1 || bitfield || 2=Four, 4=Eight, 5=?, 6=Sixteen
 |-
-| 0x3EF || SampleMask0 || 1 || ||
+| 0x3EF || MultisampleCoverageModulationMode || 1 || ||
 |-
 | 0x3F0 || SampleMask1 || 1 || ||
 |-
@@ -95,15 +95,9 @@ Subchannels:
 |-
 | 0x452 || Raster_Enable || 1 || bool ||
 |-
-| 0x478 || Multisample_Config3 || 1 || ||
+| 0x478 || MultisampleGrid? || 3 || ||
 |-
-| 0x479 || Multisample_Config4 || 1 || ||
-|-
-| 0x47A || Multisample_Config5 || 1 || ||
-|-
-| 0x47B || Multisample_Config6 || 1 || ||
-|-
-| 0x47E || Multisample_Related3 || 1 || ||
+| 0x47E || MultisampleCoverageToColor || 1 || bitfield || Bit0: Enable, bit4-6: ?
 |-
 | 0x4B3 || DepthTestEnable || 1 || bool || Enables DepthWriteEnable and DepthFunc.
 |-
@@ -112,6 +106,8 @@ Subchannels:
 | 0x4BA || DepthWriteEnable || 1 || bool ||
 |-
 | 0x4C3 || DepthFunc || 1 || bitfield || Bit0-3: DepthFunc
+|-
+| 0x4B8 || MultisampleAlphaToCoverageDither || 1 || bool ||
 |-
 | 0x4B9 || || 1 || || 1 written here for "simple" BlendState.
 |-
@@ -159,9 +155,9 @@ Subchannels:
 |-
 | 0x54C || Counter_Reset || 1 || || Value written decides which counter to reset.
 |-
-| 0x54D || Multisample_Config1 || 1 || ||
+| 0x54D || MultisampleEnable || 1 || ||
 |-
-| 0x54F || Multisample_Config0 || 1 || bool ||
+| 0x54F || MultisampleAlphaToCoverageEnable || 1 || bool ||
 |-
 | 0x55B || PolygonOffsetClamp1 || 1 || float ||
 |-
