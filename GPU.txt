@@ -195,7 +195,7 @@ Subchannels:
 |-
 | 0x6C3 || QueryControl || 1 || bitfield || After write, the result of query is written to 4 bytes at QueryAddr.
 |-
-| 0x700+4*N || VertexStreamNStride || uint || Bit0-11: Stride
+| 0x700+4*N || VertexStreamNStride || 1 || uint || Bit0-11: Stride
 |-
 | 0x701+2*N || VertexBufferStartAddr || 2 || gpuva || TODO: Incorrecto
 |-
