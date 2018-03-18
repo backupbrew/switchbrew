@@ -253,7 +253,7 @@ Subchannels:
 |-
 | 0xD34 || || || Used by SetConservativeRasterDilate.
 |-
-| 0xD35 || BlendState || || TODO: Bitfield
+| 0xD35 || BlendStateAdvanced || bitfield || Bit0: NormalizedDst, bit1: PremultipliedSrc, bit2-3: BlendTarget, Bit4-9: Mode
 |-
 | 0xE00,0xE01 || TransformFeedback_Addr || iova_t ||
 |-
