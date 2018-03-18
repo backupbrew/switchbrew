@@ -10,11 +10,12 @@ Subchannels:
 
 # 3D
 
-| Register | Name                          | Notes                                                                                                  | 0x6C0 | PauseTransformFeedbackAddrHi |  |
-| -------- | ----------------------------- | ------------------------------------------------------------------------------------------------------ | ----- | ---------------------------- |  |
-| 0x6C1    | PauseTransformFeedbackAddrLo  |                                                                                                        |       |                              |  |
-| 0x6C2    | ?                             | 0 is written here during transform pause.                                                              |       |                              |  |
-| 0x6C3    | PauseTransformFeedbackControl | Writing here accesses 4 bytes at PauseTransformFeedbackAddr. Seen values: 0x1D005002 + {0,1,2,3}\*0x20 |       |                              |  |
+| Register | Name                          | Notes                                                                                                  |
+| -------- | ----------------------------- | ------------------------------------------------------------------------------------------------------ |
+| 0x6C0    | PauseTransformFeedbackAddrHi  |                                                                                                        |
+| 0x6C1    | PauseTransformFeedbackAddrLo  |                                                                                                        |
+| 0x6C2    | ?                             | 0 is written here during transform pause.                                                              |
+| 0x6C3    | PauseTransformFeedbackControl | Writing here accesses 4 bytes at PauseTransformFeedbackAddr. Seen values: 0x1D005002 + {0,1,2,3}\*0x20 |
 
 # DMA
 

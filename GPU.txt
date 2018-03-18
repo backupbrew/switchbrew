@@ -16,6 +16,7 @@ Subchannels:
 = 3D =
 {| class=wikitable
 ! Register || Name || Notes
+|-
 | 0x6C0 || PauseTransformFeedbackAddrHi ||
 |-
 | 0x6C1 || PauseTransformFeedbackAddrLo ||
