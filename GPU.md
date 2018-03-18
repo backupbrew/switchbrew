@@ -37,6 +37,9 @@ Subchannels:
 | 0x3D5      | StencilBackRefValue               | 1    |               |                                                                                                                                                                                         |
 | 0x3D6      | StencilBackEnable                 | 1    | bool          |                                                                                                                                                                                         |
 | 0x3D7      | StencilBackValueMask              | 1    |               |                                                                                                                                                                                         |
+| 0x3D8      | TiledCacheAction0                 | 1    | bool          | Trigger?                                                                                                                                                                                |
+| 0x3D9      | TiledCacheTileSize                | 1    | bitfield      | Bit0-15: ?, bit16-31: ?                                                                                                                                                                 |
+| 0x3E0      | TiledCacheAction1                 | 1    | bool          | Trigger?                                                                                                                                                                                |
 | 0x3E7      | DepthBounds                       | 2    | float\[2\]    |                                                                                                                                                                                         |
 | 0x3ED      | MultisampleRasterEnable           | 1    | bool          |                                                                                                                                                                                         |
 | 0x3EE      | MultisampleRasterSamples          | 1    | bitfield      | 2=Four, 4=Eight, 5=?, 6=Sixteen                                                                                                                                                         |
@@ -47,6 +50,7 @@ Subchannels:
 | 0x3F5      | Multisample\_Related2             | 1    |               | TODO                                                                                                                                                                                    |
 | 0x3F6      | CoverageModulationEnable          | 1    | bool          |                                                                                                                                                                                         |
 | 0x40C      | CoverageModulationTable           | 1    | float\[4\]    |                                                                                                                                                                                         |
+| 0x44D      | TiledCacheAction2                 | 1    | bool          | Trigger?                                                                                                                                                                                |
 | 0x452      | RasterEnable                      | 1    | bool          |                                                                                                                                                                                         |
 | 0x47C      |                                   | 1    | trigger       | BindProgram writes 0 here sometimes.                                                                                                                                                    |
 | 0x47F      | DepthBufferResolve                | 1    | trigger       | 1 is written here to trigger.                                                                                                                                                           |
@@ -134,10 +138,10 @@ Subchannels:
 | 0xE2E      | DebugGroupPop\_Control            | 1    |               |                                                                                                                                                                                         |
 | 0xE2F      | DebugGroupPop\_GroupId            | 1    |               | This is written once after DebugGroupPop\_Control.                                                                                                                                      |
 
-TODO: SetRenderTargets, SetTiledCacheAction, SetTiledCacheTileSize,
-SetViewports, UpdateUniformBuffer, TiledDownSample,
-BindVertexAttribState, BindVertexStreamState, Clear\*, Copy\*,
-Discard\*, Dispatch\*, Downsample, Draw\*
+TODO: SetRenderTargets, SetTiledCacheTileSize, SetViewports,
+UpdateUniformBuffer, TiledDownSample, BindVertexAttribState,
+BindVertexStreamState, Clear\*, Copy\*, Discard\*, Dispatch\*,
+Downsample, Draw\*
 
 # DMA
 
