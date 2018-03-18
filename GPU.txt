@@ -37,6 +37,8 @@ Subchannels:
 |-
 | 0x285+8*N || DepthRange_Unk0_N || 1 || || ?
 |-
+| 0x287+8*N || SubpixelPrecisionBiasN || 1 || bitfield || Bit0-4: ?, bit8-bit11: ?
+|-
 | 0x302+4*N || DepthRangeNear || 1 || float ||
 |-
 | 0x303+4*N || DepthRangeFar || 1 || float ||
@@ -258,7 +260,7 @@ Subchannels:
 | 0xE2F || DebugGroupPop_GroupId || 1 || || This is written once after DebugGroupPop_Control.
 |}
 
-TODO: SetRenderTargets, SetSubpixelPrecisionBias, SetTiledCacheAction, SetTiledCacheTileSize, SetViewports, UpdateUniformBuffer, TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
+TODO: SetRenderTargets, SetTiledCacheAction, SetTiledCacheTileSize, SetViewports, UpdateUniformBuffer, TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
 
 = DMA =
 {| class=wikitable

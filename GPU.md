@@ -22,6 +22,7 @@ Subchannels:
 | 0x1FA      | ZCullContextStartAddr             | 2    | gpuva         |                                                                                                                                                                                         |
 | 0x1FC      | ZCullContextEndAddr               | 2    | gpuva         |                                                                                                                                                                                         |
 | 0x285+8\*N | DepthRange\_Unk0\_N               | 1    |               | ?                                                                                                                                                                                       |
+| 0x287+8\*N | SubpixelPrecisionBiasN            | 1    | bitfield      | Bit0-4: ?, bit8-bit11: ?                                                                                                                                                                |
 | 0x302+4\*N | DepthRangeNear                    | 1    | float         |                                                                                                                                                                                         |
 | 0x303+4\*N | DepthRangeFar                     | 1    | float         |                                                                                                                                                                                         |
 | 0x36B      | PolygonModeFront                  | 1    | bitfield      | 0x1B00/0x1B01/0x1B02                                                                                                                                                                    |
@@ -133,10 +134,10 @@ Subchannels:
 | 0xE2E      | DebugGroupPop\_Control            | 1    |               |                                                                                                                                                                                         |
 | 0xE2F      | DebugGroupPop\_GroupId            | 1    |               | This is written once after DebugGroupPop\_Control.                                                                                                                                      |
 
-TODO: SetRenderTargets, SetSubpixelPrecisionBias, SetTiledCacheAction,
-SetTiledCacheTileSize, SetViewports, UpdateUniformBuffer,
-TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear\*,
-Copy\*, Discard\*, Dispatch\*, Downsample, Draw\*
+TODO: SetRenderTargets, SetTiledCacheAction, SetTiledCacheTileSize,
+SetViewports, UpdateUniformBuffer, TiledDownSample,
+BindVertexAttribState, BindVertexStreamState, Clear\*, Copy\*,
+Discard\*, Dispatch\*, Downsample, Draw\*
 
 # DMA
 
