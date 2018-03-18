@@ -29,6 +29,8 @@ Subchannels:
 |-
 | 0xCE || Tesselation_InnerLevel1 ||
 |-
+| 0xDF || RasterizerDiscard_Enable || 1 means enabled, 0 means disabled.
+|-
 | 0x1D1 || Transform_Pause ||
 |-
 | 0x1FA || ZCullCtx_Addr0Hi ||
@@ -43,13 +45,39 @@ Subchannels:
 |-
 | 0x302+4*N || DepthRange_Unk1_N
 |-
+| 0x303+4*N || DepthRange_Unk2_N
+|-
 | 0x373 || PatchSize || Small value, always fits in 12 bits.
+|-
+| 0x381+4*N || Scissor0_N
+|-
+| 0x382+4*N || Scissor1_N
+|-
+| 0x3D5 || StencilMask1_Ref || 1 means enabled, 0 means disabled.
+|-
+| 0x3D6 || StencilMask1_Enable || 1 means enabled, 0 means disabled.
+|-
+| 0x3D7 || StencilMask1_ValueMask || 1 means enabled, 0 means disabled.
 |-
 | 0x3E7 || DepthBounds_Bound0 || Float is written here.
 |-
 | 0x3E8 || DepthBounds_Bound1 || Float is written here.
 |-
+| 0x3EF || SampleMask0 ||
+|-
+| 0x3F0 || SampleMask1 ||
+|-
+| 0x3F1 || SampleMask2 ||
+|-
+| 0x3F2 || SampleMask3 ||
+|-
 | 0x452 || Raster_Enable || 1 means enabled, 0 means disabled.
+|-
+| 0x4E5 || StencilMask0_Ref || 1 means enabled, 0 means disabled.
+|-
+| 0x4E6 || StencilMask0_ValueMask || 1 means enabled, 0 means disabled.
+|-
+| 0x4E7 || StencilMask0_Enable || 1 means enabled, 0 means disabled.
 |-
 | 0x4EC || LineWidth0 ||
 |-
@@ -69,11 +97,27 @@ Subchannels:
 |-
 | 0x519 || ZCullCtx_Save || 0 is written here to trigger ctx-save, uses both ZCullCtx_Addr0/1.
 |-
+| 0x51F || PolygonOffsetClamp0 || Float is written here.
+|-
 | 0x540 || ZCullCtx_Restore || 0 is written here to trigger ctx-restore, uses both ZCullCtx_Addr0/1.
 |-
 | 0x546 || PointSize || Float is written here.
 |-
+| 0x554 || RendererEnableConditionAddrHi ||
+|-
+| 0x555 || RendererEnableConditionAddrLo ||
+|-
+| 0x556 || RendererEnable || 0=disabled unconditional, 1=enabled unconditional, 3=unknown conditional, 4=unknown conditional, 
+|-
 | 0x54C || Counter_Reset || Value written decides which counter to reset.
+|-
+| 0x55B || PolygonOffsetClamp1 || Float is written here.
+|-
+| 0x56F || PolygonOffsetClamp2 || Float multiplied by 2 is written here.
+|-
+| 0x591 || PrimitiveRestart_Enable || 1 means enabled, 0 means disabled.
+|-
+| 0x592 || PrimitiveRestart_Value ||
 |-
 | 0x64F || DepthClamp || 0x101A is written when enabled, 0x181D when disabled.
 |-
@@ -110,6 +154,7 @@ Subchannels:
 | 0xE2F || DebugGroupPop_GroupId || This is written once after DebugGroupPop_Control.
 |}
 
+TODO: SetRenderTargets, SetSubpixelPrecisionBias, SetTiledCacheAction, SetTiledCacheTileSize, SetViewports, UpdateUniformBuffer, TiledDownSample
 
 = DMA =
 {| class=wikitable
