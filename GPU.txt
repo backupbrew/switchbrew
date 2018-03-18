@@ -17,6 +17,12 @@ Subchannels:
 {| class=wikitable
 ! Register || Name || Type || Notes
 |-
+| 0xE0+8*N || TransformFeedbackBuffer_Enable || bool ||
+|-
+| (0xE1,0xE2)+8*N || TransformFeedbackBuffer_Addr || iova_t ||
+|-
+| 0xE3+8*N || TransformFeedbackBuffer_Flags || ||
+|-
 | 0xC9 || Tesselation_OuterLevel0 || ||
 |-
 | 0xCA || Tesselation_OuterLevel1 || ||
@@ -33,9 +39,9 @@ Subchannels:
 |-
 | 0x1D1 || TransformFeedback_Pause || ||
 |-
-| 0x1FA-0x1FB || ZCullCtx_Addr0 || iova_t ||
+| 0x1FA,0x1FB || ZCullCtx_Addr0 || iova_t ||
 |-
-| 0x1FC-0x1FD || ZCullCtx_Addr1 || iova_t ||
+| 0x1FC,0x1FD || ZCullCtx_Addr1 || iova_t ||
 |-
 | 0x285+8*N || DepthRange_Unk0_N ||
 |-
@@ -143,6 +149,8 @@ Subchannels:
 |-
 | 0x4CA || BlendColor3 || ||
 |-
+| 0x47C || || || BindProgram writes 0 here sometimes.
+|-
 | 0x47F || DepthBuffer_Resolve || || 1 is written here to trigger.
 |-
 | 0x519 || ZCullCtx_Save || || 0 is written here to trigger ctx-save, uses both ZCullCtx_Addr0/1.
@@ -153,7 +161,7 @@ Subchannels:
 |-
 | 0x546 || PointSize || float ||
 |-
-| 0x554-0x555 || RendererEnableConditionAddr || iova_t ||
+| 0x554,0x555 || RendererEnableConditionAddr || iova_t ||
 |-
 | 0x556 || RendererEnable || || 0=disabled unconditional, 1=enabled unconditional, 3=unknown conditional, 4=unknown conditional, 
 |-
@@ -185,7 +193,7 @@ Subchannels:
 |-
 | 0x68B || Barrier? || || Always 0 is written here. During zcull ctx-save, spammed when enabling raster, ...
 |-
-| 0x6C0-0x6C1 || Poke_Addr || iova_t ||
+| 0x6C0,0x6C1 || Poke_Addr || iova_t ||
 |-
 | 0x6C2 || Poke_WriteVal || || 0 is written here during most queries.
 |-
@@ -203,25 +211,39 @@ Subchannels:
 |-
 | 0x786+8*N || BlendState_N || || TODO
 |-
-| 0x8E3 || BindImage_Config || || BindImage writes "8*i + 0x120" here.
+| 0x820 || || || BindProgram writes here.
 |-
-| 0x8E4 || BindImage_ValueLo || || This might be an addr but it's swapped opposite to other addrs.
+| 0x821 || || || BindProgram writes here.
 |-
-| 0x8E5 || BindImage_ValueHi || ||
+| 0x830 || || || BindProgram writes here.
 |-
-| 0x8E4-0x8EB || Multisample_ConfigX || || What? Overlap.
+| 0x840 || || || BindProgram writes here.
+|-
+| 0x850 || || || BindProgram writes here.
+|-
+| 0x8E3 || BindImage_Config || || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32.
+|-
+| 0x8E4 || BindImage_ValueLo || || This might be an addr but it's swapped opposite to other addrs. BindSeparateSampler/BindSeparateTexture writes something here. BindStorageBuffer writes something here.
+|-
+| 0x8E5 || BindImage_ValueHi || || BindStorageBuffer writes something here.
+|-
+| 0x8E6 || || || BindStorageBuffer writes something here.
+|-
+| 0x8E4,0x8EB || Multisample_ConfigX || || What? Overlap.
+|-
+| 0xD1E || || || BindProgram writes 0 here, trigger?
 |-
 | 0xD34 || || || Used by SetConservativeRasterDilate.
 |-
 | 0xD35 || BlendState || || TODO: Bitfield
 |-
-| 0xE00-0xE01 || TransformFeedback_Addr || iova_t ||
+| 0xE00,0xE01 || TransformFeedback_Addr || iova_t ||
 |-
 | 0xE0A || || || Used by SetConservativeRasterDilate.
 |-
 | 0xE0B || || || Used by SetConservativeRasterDilate.
 |-
-| 0xE0E || || || BindImage writes 0-4 here.
+| 0xE0E || || || BindImage/BindSeparateSampler/BindSeparateTexture writes 0-4 here.
 |-
 | 0xE10 || || || Sometimes used by BindColorState.
 |-
@@ -231,7 +253,7 @@ Subchannels:
 |-
 | 0xE1A || DepthStencil_Config3 || ||
 |-
-| 0xE1E || Multisample_Config7 || ||
+| 0xE1E || Multisample_Config7 || || Also written to by BindStorageBuffer 
 |-
 | 0xE20 || || || Another barrier? Used by SetConservativeRasterDilate.
 |-
