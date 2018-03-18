@@ -47,6 +47,7 @@ Subchannels:
 | 0x3D7      | StencilBackValueMask              | 1    |                |                                                                                                                                                                                                              |
 | 0x3D8      | TiledCacheAction0                 | 1    | bool           | Trigger?                                                                                                                                                                                                     |
 | 0x3D9      | TiledCacheTileSize                | 1    | bitfield       | Bit0-15: ?, bit16-31: ?                                                                                                                                                                                      |
+| 0x3DE      | DiscardTrigger                    | 1    | bitfield       | Bit4-6: DiscardColorIndex, bit0: DiscardDepthStencil                                                                                                                                                         |
 | 0x3E0      | TiledCacheAction1                 | 1    | bool           | Trigger?                                                                                                                                                                                                     |
 | 0x3E7      | DepthBounds                       | 2    | float\[2\]     |                                                                                                                                                                                                              |
 | 0x3ED      | MultisampleRasterEnable           | 1    | bool           | Also written 0 when clearing all colors.                                                                                                                                                                     |
@@ -152,8 +153,7 @@ Subchannels:
 | 0xE2E      | DebugGroupPop\_Control            | 1    |                |                                                                                                                                                                                                              |
 | 0xE2F      | DebugGroupPop\_GroupId            | 1    |                | This is written once after DebugGroupPop\_Control.                                                                                                                                                           |
 
-TODO: SetRenderTargets, TiledDownSample, Copy\*, Discard\*, Dispatch\*,
-Downsample,
+TODO: SetRenderTargets, TiledDownSample, Copy\*, Dispatch\*, Downsample,
 Draw\*
 
 # DMA
