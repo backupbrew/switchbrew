@@ -201,21 +201,17 @@ Subchannels:
 |-
 | 0x850 || || 1 || || BindProgram writes here.
 |-
-| 0x8E0 || BindUniformBuffer_Size? || 1 || || BindUniformBuffer writes here.
+| 0x8E0 || ConstBufferRequestSize || 1 || uint ||
 |-
-| 0x8E1 || BindUniformBuffer_Addr || 2 || gpuva ||
+| 0x8E1 || ConstBufferRequestAddr || 2 || gpuva ||
 |-
-| 0x8E3 || BindImage_Config || 1 || || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32.
+| 0x8E3 || ConstBufferRequestOffset || 1 || uint || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32. TODO: BindStorageBuffer, etc
 |-
-| 0x8E4 || BindImage_ValueLo || 1 || || This might be an addr but it's swapped opposite to other addrs. BindSeparateSampler/BindSeparateTexture writes something here. BindStorageBuffer writes something here.
+| 0x8E4 || ConstBufferRequestData || 1 || uint[4] ||
 |-
-| 0x8E5 || BindImage_ValueHi || 1 || || BindStorageBuffer writes something here.
+| 0x8EB || Multisample_ConfigX || 1 ||  ||
 |-
-| 0x8E6 || || 1 || || BindStorageBuffer writes something here.
-|-
-| 0x8E4,0x8EB || Multisample_ConfigX || 1 ||  || What? Overlap.
-|-
-| 0x904 || UniformBuffer0_Control || 1 ||  ||
+| 0x904 || UniformBuffer0_Control || 1 || ||
 |-
 | 0x90C || UniformBuffer3_Control || 1 || ||
 |-
@@ -229,9 +225,9 @@ Subchannels:
 |-
 | 0xD34 || || 1 || || Used by SetConservativeRasterDilate.
 |-
-| 0xD35 || BlendStateAdvanced || 1 || bitfield || Bit0: NormalizedDst, bit1: PremultipliedSrc, bit2-3: BlendTarget, Bit4-9: Mode
+| 0xD35 || AdvancedBlend || 1 || bitfield || Bit0: NormalizedDst, bit1: PremultipliedSrc, bit2-3: BlendTarget, Bit4-9: Mode
 |-
-| 0xE00 || TransformFeedback_Addr || 2 || gpuaddr ||
+| 0xE00 || TransformFeedbackAddr || 2 || gpuva ||
 |-
 | 0xE0A || || 1 || || Used by SetConservativeRasterDilate.
 |-
@@ -239,7 +235,7 @@ Subchannels:
 |-
 | 0xE0E || || 1 || || BindImage/BindSeparateSampler/BindSeparateTexture writes 0-4 here.
 |-
-| 0xE10 || ColorStateLogicOp3 || 1 || bitfield || Bit8: BlendEnable, bit16-23: LogicOp, bit28-31: AlphaTest. BindColorState this when LogicOp == 3.
+| 0xE10 || ColorStateLogicOp3 || 1 || bitfield || Bit8: BlendEnable, bit16-23: LogicOp, bit28-31: AlphaTest. BindColorState writes this when LogicOp == 3.
 |-
 | 0xE12 || BindChannelMaskState_Unk0 || 1 || ||
 |-
