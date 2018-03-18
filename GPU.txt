@@ -73,11 +73,11 @@ Subchannels:
 |-
 | 0x3EF || MultisampleCoverageModulationMode || 1 || ||
 |-
-| 0x3F0 || SampleMask1 || 1 || ||
+| 0x3F0 || SampleMask0 || 1 || ||
 |-
-| 0x3F1 || SampleMask2 || 1 || ||
+| 0x3F1 || SampleMask1 || 1 || ||
 |-
-| 0x3F2 || SampleMask3 || 1 || ||
+| 0x3F2 || SampleMask2 || 1 || ||
 |-
 | 0x3F5 || Multisample_Related2 || 1 || ||
 |-
