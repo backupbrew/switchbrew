@@ -43,6 +43,16 @@ Subchannels:
 |-
 | 0x303+4*N || DepthRange_Unk2_N ||
 |-
+| 0x36B || || || BindPolygonState writes here.
+|-
+| 0x36C || || || BindPolygonState writes here.
+|-
+| 0x370 || || bool || BindPolygonState writes here.
+|-
+| 0x371 || || bool || BindPolygonState writes here.
+|-
+| 0x372 || || bool || BindPolygonState writes here.
+|-
 | 0x373 || PatchSize || || Small value, always fits in 12 bits.
 |-
 | 0x374 || || || 0 written here for "simple" BlendState.
@@ -160,6 +170,12 @@ Subchannels:
 | 0x591 || PrimitiveRestart_Enable || bool ||
 |-
 | 0x592 || PrimitiveRestart_Value || ||
+|-
+| 0x646 || || ||  BindPolygonState writes here.
+|-
+| 0x647 || || ||  BindPolygonState writes here.
+|-
+| 0x648 || || ||  BindPolygonState writes here.
 |-
 | 0x64F || DepthClamp || || 0x101A is written when enabled, 0x181D when disabled.
 |-
