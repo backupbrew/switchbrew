@@ -223,7 +223,7 @@ Subchannels:
 |-
 | 0x8E1 || ConstBufferRequestAddr || 2 || gpuva ||
 |-
-| 0x8E3 || ConstBufferRequestOffset || 1 || uint || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32. TODO: BindStorageBuffer, etc
+| 0x8E3 || ConstBufferRequestOffset || 1 || uint || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32. TODO: BindStorageBuffer, UpdateUniformBuffer, etc
 |-
 | 0x8E4 || ConstBufferRequestData || 1 || uint[4] ||
 |-
@@ -278,7 +278,7 @@ Subchannels:
 | 0xE2F || DebugGroupPop_GroupId || 1 || || This is written once after DebugGroupPop_Control.
 |}
 
-TODO: SetRenderTargets, SetViewports, UpdateUniformBuffer, TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
+TODO: SetRenderTargets, TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
 
 = DMA =
 {| class=wikitable
