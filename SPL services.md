@@ -64,13 +64,13 @@ Takes a u32 (**ConfigItem**), and returns one or more u64s
 | 6          | [\#IsRetail](#IsRetail "wikilink")                                     |
 | 7          | [\#IsRecoveryBoot](#IsRecoveryBoot "wikilink")                         |
 | 8          | [\#DeviceId](#DeviceId "wikilink")                                     |
-| 9          | \[1.0.0-4.0.0\] BootReason                                             |
+| 9          | \[1.0.0-4.0.0\] [\#BootReason](#BootReason "wikilink")                 |
 | 10         | [\#MemoryArrange](#MemoryArrange "wikilink")                           |
 | 11         | [\#IsDebugMode](#IsDebugMode "wikilink")                               |
 | 12         | [\#KernelMemoryConfiguration](#KernelMemoryConfiguration "wikilink")   |
 | 13         | [\#BatteryProfile](#BatteryProfile "wikilink")                         |
 | 14         | \[4.0.0+\] [\#Unknown0](#Unknown0 "wikilink")                          |
-| 15         | \[5.0.0+\] Unknown1                                                    |
+| 15         | \[5.0.0+\] [\#NewHardwareType](#NewHardwareType "wikilink")            |
 | 16         | \[5.0.0+\] [\#NewKeyGeneration](#NewKeyGeneration "wikilink")          |
 | 17         | \[5.0.0+\] [\#Package2Hash](#Package2Hash "wikilink")                  |
 
@@ -84,18 +84,38 @@ non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 This is extracted directly from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
 
+| Value | Description                                 |
+| ----- | ------------------------------------------- |
+| 0     | DramId\_EristaIcosaSamsung4gb               |
+| 1     | DramId\_EristaIcosaHynix4gb                 |
+| 2     | DramId\_EristaIcosaMicron4gb                |
+| 3     | Reserved                                    |
+| 4     | DramId\_EristaIcosaSamsung6gb               |
+| 5     | \[5.0.0+\] Reserved                         |
+| 6     | \[5.0.0+\] Reserved                         |
+| 7     | \[5.0.0+\] DramId\_MarikoIowax1x2Samsung4gb |
+| 8     | \[5.0.0+\] DramId\_MarikoIowaSamsung4gb     |
+| 9     | \[5.0.0+\] DramId\_MarikoIowaSamsung8gb     |
+| 10    | \[5.0.0+\] Reserved                         |
+| 11    | \[5.0.0+\] Reserved                         |
+| 12    | \[5.0.0+\] DramId\_MarikoHoagSamsung4gb     |
+| 13    | \[5.0.0+\] DramId\_MarikoHoagSamsung8gb     |
+
 [PCV](PCV%20services.md "wikilink") configures memory profiles based on
 DramId.
 
-| Platform   | Version @ 40800                       | Revision | DramId |
-| ---------- | ------------------------------------- | -------- | ------ |
-| jetson-tx1 | 11\_40800\_01\_V9.8.3\_V1.6           | N/A      | N/A    |
-| nx-abcb    | 10\_40800\_NoCfgVersion\_V9.8.4\_V1.6 | 0        | 0      |
-| nx-abca2   | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6 | 0        | 0 or 3 |
-| nx-abca2   | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6 | 1        | 4      |
-| nx-abca2   | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6 | 2        | 1      |
-| nx-abca2   | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6 | 3        | 2      |
-|            |                                       |          |        |
+| Platform   | DramId                                        | Version                                |
+| ---------- | --------------------------------------------- | -------------------------------------- |
+| jetson-tx1 | N/A                                           | 11\_40800\_01\_V9.8.3\_V1.6            |
+| nx-abcb    | EristaIcosaSamsung4gb                         | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6  |
+| nx-abcb    | EristaIcosaMicron4gb                          | 10\_40800\_NoCfgVersion\_V9.8.4\_V1.6  |
+| nx-abcb    | EristaIcosaHynix4gb                           | 10\_40800\_NoCfgVersion\_V9.8.4\_V1.6  |
+| nx-abca2   | EristaIcosaSamsung4gb or EristaIcosaMicron4gb | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6  |
+| nx-abca2   | EristaIcosaHynix4gb                           | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6  |
+| nx-abca2   | EristaIcosaSamsung6gb                         | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6  |
+| nx-abca2   | MarikoIowax1x2Samsung4gb                      | 01\_204000\_NoCfgVersion\_V0.3.1\_V2.0 |
+| nx-abca2   | MarikoIowaSamsung4gb or MarikoHoagSamsung4gb  | 01\_204000\_NoCfgVersion\_V0.3.1\_V2.0 |
+| nx-abca2   | MarikoIowaSamsung8gb or MarikoHoagSamsung8gb  | 01\_204000\_NoCfgVersion\_V0.4.2\_V2.0 |
 
 nx-abcb (Copper) is the SDEV unit. Among other differences, this has
 extra hardware to support HDMI output.
@@ -120,7 +140,7 @@ It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
 
 \[4.0.0+\] This item is obtained by checking bits 8, 2 and 16-19 from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
-It can be 0 (Icosa), 1 (Copper), 3 (IcosaMariko) or 4 (Invalid).
+It can be 0 (Icosa), 1 (Copper), 3 (Mariko) or 4 (Invalid).
 
 A value of 2 (Hoag?) is always mapped to 4 (Invalid).
 
@@ -139,6 +159,10 @@ Used to determine if the system is booting from SafeMode firmware.
 [NIM](NIM%20services.md "wikilink") checks if this item matches the
 [set:cal](Settings%20services.md "wikilink") DeviceId with byte7
 cleared. If they don't match, a panic is thrown.
+
+### BootReason
+
+Used to determine how the system booted.
 
 ### MemoryArrange
 
@@ -191,6 +215,20 @@ value for the **KeyGeneration** parameter when calling
 
 This item is bit 10 from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
+
+### NewHardwareType
+
+This item is currently hardcoded to 0.
+
+\[5.0.0+\] [PCV](PCV%20services.md "wikilink") overrides the value from
+[HardwareType](#HardwareType "wikilink") and configures PMIC devices
+with this item.
+
+| Value | Devices                                        |
+| ----- | ---------------------------------------------- |
+| 0     | max77620\_sd0, max77621\_cpu and max77621\_gpu |
+| 1     | max77620\_sd0, max77812\_cpu and max77812\_gpu |
+| 2     | max77620\_sd0, max77812\_cpu and max77812\_gpu |
 
 ### Package2Hash
 

@@ -94,7 +94,7 @@ Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 |-
 | 8 || [[#DeviceId]]
 |-
-| 9 || [1.0.0-4.0.0] BootReason
+| 9 || [1.0.0-4.0.0] [[#BootReason]]
 |-
 | 10 || [[#MemoryArrange]]
 |-
@@ -106,7 +106,7 @@ Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 |-
 | 14 || [4.0.0+] [[#Unknown0]]
 |-
-| 15 || [5.0.0+] Unknown1
+| 15 || [5.0.0+] [[#NewHardwareType]]
 |-
 | 16 || [5.0.0+] [[#NewKeyGeneration]]
 |-
@@ -119,44 +119,100 @@ Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 === DramId ===
 This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
 
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Description
+|-
+|  0
+|  DramId_EristaIcosaSamsung4gb
+|-
+|  1
+|  DramId_EristaIcosaHynix4gb
+|-
+|  2
+|  DramId_EristaIcosaMicron4gb
+|-
+|  3
+|  Reserved
+|-
+|  4
+|  DramId_EristaIcosaSamsung6gb
+|-
+|  5
+|  [5.0.0+] Reserved
+|-
+|  6
+|  [5.0.0+] Reserved
+|-
+|  7
+|  [5.0.0+] DramId_MarikoIowax1x2Samsung4gb
+|-
+|  8
+|  [5.0.0+] DramId_MarikoIowaSamsung4gb
+|-
+|  9
+|  [5.0.0+] DramId_MarikoIowaSamsung8gb
+|-
+|  10
+|  [5.0.0+] Reserved
+|-
+|  11
+|  [5.0.0+] Reserved
+|-
+|  12
+|  [5.0.0+] DramId_MarikoHoagSamsung4gb
+|-
+|  13
+|  [5.0.0+] DramId_MarikoHoagSamsung8gb
+|}
+
 [[PCV_services|PCV]] configures memory profiles based on DramId.
 {| class="wikitable" border="1"
 |-
 !  Platform
-!  Version @ 40800
-!  Revision
 !  DramId
+!  Version
 |-
 |  jetson-tx1
+|  N/A
 |  11_40800_01_V9.8.3_V1.6
-|  N/A
-|  N/A
 |-
 |  nx-abcb
+|  EristaIcosaSamsung4gb
+|  10_40800_NoCfgVersion_V9.8.7_V1.6
+|-
+|  nx-abcb
+|  EristaIcosaMicron4gb
 |  10_40800_NoCfgVersion_V9.8.4_V1.6
-|  0
-|  0
+|-
+|  nx-abcb
+|  EristaIcosaHynix4gb
+|  10_40800_NoCfgVersion_V9.8.4_V1.6
 |-
 |  nx-abca2
+|  EristaIcosaSamsung4gb or EristaIcosaMicron4gb
 |  10_40800_NoCfgVersion_V9.8.7_V1.6
-|  0
-|  0 or 3
 |-
 |  nx-abca2
+|  EristaIcosaHynix4gb
 |  10_40800_NoCfgVersion_V9.8.7_V1.6
-|  1
-|  4
 |-
 |  nx-abca2
+|  EristaIcosaSamsung6gb
 |  10_40800_NoCfgVersion_V9.8.7_V1.6
-|  2
-|  1
 |-
 |  nx-abca2
-|  10_40800_NoCfgVersion_V9.8.7_V1.6
-|  3
-|  2
+|  MarikoIowax1x2Samsung4gb
+|  01_204000_NoCfgVersion_V0.3.1_V2.0
 |-
+|  nx-abca2
+|  MarikoIowaSamsung4gb or MarikoHoagSamsung4gb
+|  01_204000_NoCfgVersion_V0.3.1_V2.0
+|-
+|  nx-abca2
+|  MarikoIowaSamsung8gb or MarikoHoagSamsung8gb
+|  01_204000_NoCfgVersion_V0.4.2_V2.0
 |}
 
 nx-abcb (Copper) is the SDEV unit. Among other differences, this has extra hardware to support HDMI output.
@@ -172,7 +228,7 @@ The current [[Package2#Versions|Package1 Maxver Constant]] - 1.
 === HardwareType ===
 [1.0.0+] This item is obtained by checking bits 8 and 2 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
 
-[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 3 (IcosaMariko) or 4 (Invalid).
+[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 3 (Mariko) or 4 (Invalid).
 
 A value of 2 (Hoag?) is always mapped to 4 (Invalid).
 
@@ -184,6 +240,9 @@ Used to determine if the system is booting from SafeMode firmware.
 
 === DeviceId ===
 [[NIM_services|NIM]] checks if this item matches the [[Settings_services|set:cal]] DeviceId with byte7 cleared. If they don't match, a panic is thrown.
+
+=== BootReason ===
+Used to determine how the system booted.
 
 === MemoryArrange ===
 [[Process Manager services|PM]] uses this item for selecting the appropriate size for each [[SVC#LimitableResource|LimitableResource_Memory]].
@@ -208,6 +267,25 @@ This item is obtained from [[Fuse_registers#FUSE_RESERVED_ODM2|FUSE_RESERVED_ODM
 
 === Unknown0 ===
 This item is bit 10 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
+
+=== NewHardwareType ===
+This item is currently hardcoded to 0.
+
+[5.0.0+] [[PCV_services|PCV]] overrides the value from [[#HardwareType|HardwareType]] and configures PMIC devices with this item.
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Devices
+|-
+|  0
+|  max77620_sd0, max77621_cpu and max77621_gpu
+|-
+|  1
+|  max77620_sd0, max77812_cpu and max77812_gpu
+|-
+|  2
+|  max77620_sd0, max77812_cpu and max77812_gpu
+|}
 
 === Package2Hash ===
 This is a SHA-256 hash calculated over the [[Package2|package2]] image. Since the hash calculation is an optional step in pkg2ldr, this item is only valid in recovery mode. Otherwise, an error is returned instead.
