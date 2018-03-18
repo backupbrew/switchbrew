@@ -296,7 +296,7 @@ Subchannels:
 | 0xE2F || DebugGroupPop_GroupId || 1 || || This is written once after DebugGroupPop_Control.
 |}
 
-TODO: SetRenderTargets, TiledDownSample, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
+TODO: SetRenderTargets, TiledDownSample, Copy*, Discard*, Dispatch*, Downsample, Draw*
 
 = DMA =
 {| class=wikitable

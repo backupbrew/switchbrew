@@ -152,8 +152,8 @@ Subchannels:
 | 0xE2E      | DebugGroupPop\_Control            | 1    |                |                                                                                                                                                                                                              |
 | 0xE2F      | DebugGroupPop\_GroupId            | 1    |                | This is written once after DebugGroupPop\_Control.                                                                                                                                                           |
 
-TODO: SetRenderTargets, TiledDownSample, Clear\*, Copy\*, Discard\*,
-Dispatch\*, Downsample,
+TODO: SetRenderTargets, TiledDownSample, Copy\*, Discard\*, Dispatch\*,
+Downsample,
 Draw\*
 
 # DMA
