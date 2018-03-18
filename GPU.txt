@@ -171,6 +171,8 @@ Subchannels:
 |-
 | 0x592 || PrimitiveRestartIndex || 1 || uint ||
 |-
+| 0x620+N || VertexStreamNEnableDivisor || bool ||
+|-
 | 0x646 || PolygonCullFaceEnable || 1 || bool ||
 |-
 | 0x647 || PolygonFrontFace || 1 || bitfield || Bit0: Enable. Always ORR'd with 0x9000.
@@ -193,9 +195,15 @@ Subchannels:
 |-
 | 0x6C3 || QueryControl || 1 || bitfield || After write, the result of query is written to 4 bytes at QueryAddr.
 |-
-| 0x701+2*N || VertexBufferStartAddr || 2 || gpuva || TODO: Doesn't match nouveau
+| 0x700+4*N || VertexStreamNStride || uint || Bit0-11: Stride
 |-
-| 0x7C0+2*N || VertexBufferEndAddr || 2 || gpuva ||
+| 0x701+2*N || VertexBufferStartAddr || 2 || gpuva || TODO: Incorrecto
+|-
+| 0x703+4*N || VertexStreamNDivisor || ||
+|-
+| 0x704+4*N || VertexStreamNUnknown? || || 0 is written here when disabling?
+|-
+| 0x7C0+2*N || VertexBufferEndAddr || 2 || gpuva || TODO: Incorrecto
 |-
 | 0x781+8*N || BlendNRgbEquation || 1 || bitfield || Bit0-2: BlendEquation
 |-
@@ -278,7 +286,7 @@ Subchannels:
 | 0xE2F || DebugGroupPop_GroupId || 1 || || This is written once after DebugGroupPop_Control.
 |}
 
-TODO: SetRenderTargets, TiledDownSample, BindVertexAttribState, BindVertexStreamState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
+TODO: SetRenderTargets, TiledDownSample, BindVertexAttribState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
 
 = DMA =
 {| class=wikitable
