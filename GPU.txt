@@ -31,7 +31,7 @@ Subchannels:
 |-
 | 0xDF || RasterizerDiscard_Enable || 1 means enabled, 0 means disabled.
 |-
-| 0x1D1 || Transform_Pause ||
+| 0x1D1 || TransformFeedback_Pause ||
 |-
 | 0x1FA || ZCullCtx_Addr0Hi ||
 |-

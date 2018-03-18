@@ -19,7 +19,7 @@ Subchannels:
 | 0xCD       | Tesselation\_InnerLevel0       |                                                                                                  |
 | 0xCE       | Tesselation\_InnerLevel1       |                                                                                                  |
 | 0xDF       | RasterizerDiscard\_Enable      | 1 means enabled, 0 means disabled.                                                               |
-| 0x1D1      | Transform\_Pause               |                                                                                                  |
+| 0x1D1      | TransformFeedback\_Pause       |                                                                                                  |
 | 0x1FA      | ZCullCtx\_Addr0Hi              |                                                                                                  |
 | 0x1FB      | ZCullCtx\_Addr0Lo              |                                                                                                  |
 | 0x1FC      | ZCullCtx\_Addr1Hi              |                                                                                                  |
