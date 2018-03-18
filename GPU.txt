@@ -199,9 +199,9 @@ Subchannels:
 |-
 | 0x701+2*N || VertexBufferStartAddr || 2 || gpuva || TODO: Incorrecto
 |-
-| 0x703+4*N || VertexStreamNDivisor || ||
+| 0x703+4*N || VertexStreamNDivisor || || ||
 |-
-| 0x704+4*N || VertexStreamNUnknown? || || 0 is written here when disabling?
+| 0x704+4*N || VertexStreamNUnknown? || || || 0 is written here when disabling?
 |-
 | 0x7C0+2*N || VertexBufferEndAddr || 2 || gpuva || TODO: Incorrecto
 |-
