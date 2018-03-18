@@ -101,11 +101,13 @@ Subchannels:
 |-
 | 0x3F6 || CoverageModulationEnable || 1 || bool ||
 |-
-| 0x40C || CoverageModulationTable || 1 || float[4] ||
+| 0x40C || CoverageModulationTable || 4 || float[4] ||
 |-
 | 0x44D || TiledCacheAction2 || 1 || bool || Trigger?
 |-
 | 0x452 || RasterEnable || 1 || bool ||
+|-
+| 0x458 || VertexAttribTable || 4 || bitfield[16] || Bit0-4: StreamIndex, bit7-20: Format0, bit21-30: Format1
 |-
 | 0x47C || || 1 || trigger || BindProgram writes 0 here sometimes.
 |-
@@ -286,7 +288,7 @@ Subchannels:
 | 0xE2F || DebugGroupPop_GroupId || 1 || || This is written once after DebugGroupPop_Control.
 |}
 
-TODO: SetRenderTargets, TiledDownSample, BindVertexAttribState, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
+TODO: SetRenderTargets, TiledDownSample, Clear*, Copy*, Discard*, Dispatch*, Downsample, Draw*
 
 = DMA =
 {| class=wikitable
