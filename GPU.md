@@ -10,11 +10,13 @@ Subchannels:
 
 # DMA
 
-| Register | Name         | Notes             |
-| -------- | ------------ | ----------------- |
-| 0x0C0    | DmaControl   | Seen 0x186.       |
-| 0x100    | DmaSrcAddrHi |                   |
-| 0x101    | DmaSrcAddrLo |                   |
-| 0x102    | DmaDstAddrHi |                   |
-| 0x103    | DmaDstAddrLo |                   |
-| 0x106    | DmaLength    | At most 0x3FFFFF. |
+| Register | Name          | Notes                                 |
+| -------- | ------------- | ------------------------------------- |
+| 0x0C0    | DmaControl    | With 0x186 Src/DstStride is not used. |
+| 0x100    | DmaSrcAddrHi  |                                       |
+| 0x101    | DmaSrcAddrLo  |                                       |
+| 0x102    | DmaDstAddrHi  |                                       |
+| 0x103    | DmaDstAddrLo  |                                       |
+| 0x104    | DmaSrcStride? |                                       |
+| 0x105    | DmaDstStride? |                                       |
+| 0x106    | DmaCount      | At most 0x3FFFFF.                     |
