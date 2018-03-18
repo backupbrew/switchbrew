@@ -150,13 +150,13 @@ Copy\*, Discard\*, Dispatch\*, Downsample, Draw\*
 
 # DMA
 
-| Register | Name            | Notes                                 |
-| -------- | --------------- | ------------------------------------- |
-| 0x0C0    | Dma\_Control    | With 0x186 Src/DstStride is not used. |
-| 0x100    | Dma\_SrcAddrHi  |                                       |
-| 0x101    | Dma\_SrcAddrLo  |                                       |
-| 0x102    | Dma\_DstAddrHi  |                                       |
-| 0x103    | Dma\_DstAddrLo  |                                       |
-| 0x104    | Dma\_SrcStride? |                                       |
-| 0x105    | Dma\_DstStride? |                                       |
-| 0x106    | Dma\_Count      | At most 0x3FFFFF.                     |
+| Register | Name           | Notes                                 |
+| -------- | -------------- | ------------------------------------- |
+| 0x0C0    | CopyControl    | With 0x186 Src/DstStride is not used. |
+| 0x100    | CopySrcAddrHi  |                                       |
+| 0x101    | CopySrcAddrLo  |                                       |
+| 0x102    | CopyDstAddrHi  |                                       |
+| 0x103    | CopyDstAddrLo  |                                       |
+| 0x104    | CopySrcStride? |                                       |
+| 0x105    | CopyDstStride? |                                       |
+| 0x106    | CopyCount      | At most 0x3FFFFF.                     |

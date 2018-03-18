@@ -284,19 +284,19 @@ TODO: SetRenderTargets, SetSubpixelPrecisionBias, SetTiledCacheAction, SetTiledC
 {| class=wikitable
 ! Register || Name || Notes
 |-
-| 0x0C0 || Dma_Control || With 0x186 Src/DstStride is not used.
+| 0x0C0 || CopyControl || With 0x186 Src/DstStride is not used.
 |-
-| 0x100 || Dma_SrcAddrHi ||
+| 0x100 || CopySrcAddrHi ||
 |-
-| 0x101 || Dma_SrcAddrLo ||
+| 0x101 || CopySrcAddrLo ||
 |-
-| 0x102 || Dma_DstAddrHi ||
+| 0x102 || CopyDstAddrHi ||
 |-
-| 0x103 || Dma_DstAddrLo ||
+| 0x103 || CopyDstAddrLo ||
 |-
-| 0x104 || Dma_SrcStride? ||
+| 0x104 || CopySrcStride? ||
 |-
-| 0x105 || Dma_DstStride? ||
+| 0x105 || CopyDstStride? ||
 |-
-| 0x106 || Dma_Count || At most 0x3FFFFF.
+| 0x106 || CopyCount || At most 0x3FFFFF.
 |}
