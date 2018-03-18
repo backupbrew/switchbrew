@@ -17,34 +17,121 @@ Subchannels:
 {| class=wikitable
 ! Register || Name || Notes
 |-
-| 0x1D1 || PauseTransform ||
+| 0xC9 || Tesselation_OuterLevel0 ||
 |-
-| 0x6C0 || PauseTransformFeedbackAddrHi ||
+| 0xCA || Tesselation_OuterLevel1 ||
 |-
-| 0x6C1 || PauseTransformFeedbackAddrLo ||
+| 0xCB || Tesselation_OuterLevel2 ||
 |-
-| 0x6C2 || ? || 0 is written here during transform pause.
+| 0xCC || Tesselation_OuterLevel3 ||
 |-
-| 0x6C3 || PauseTransformFeedbackControl || Writing here accesses 4 bytes at PauseTransformFeedbackAddr. Seen values: 0x1D005002 + {0,1,2,3}*0x20
+| 0xCD || Tesselation_InnerLevel0 ||
+|-
+| 0xCE || Tesselation_InnerLevel1 ||
+|-
+| 0x1D1 || Transform_Pause ||
+|-
+| 0x1FA || ZCullCtx_Addr0Hi ||
+|-
+| 0x1FB || ZCullCtx_Addr0Lo ||
+|-
+| 0x1FC || ZCullCtx_Addr1Hi ||
+|-
+| 0x1FD || ZCullCtx_Addr1Lo ||
+|-
+| 0x285+8*N || DepthRange_Unk0_N
+|-
+| 0x302+4*N || DepthRange_Unk1_N
+|-
+| 0x373 || PatchSize || Small value, always fits in 12 bits.
+|-
+| 0x3E7 || DepthBounds_Bound0 || Float is written here.
+|-
+| 0x3E8 || DepthBounds_Bound1 || Float is written here.
+|-
+| 0x452 || Raster_Enable || 1 means enabled, 0 means disabled.
+|-
+| 0x4EC || LineWidth0 ||
+|-
+| 0x4ED || LineWidth1 ||
+|-
+| 0x4C4 || AlphaRef || Float is written here.
+|-
+| 0x4C7 || BlendColor0 ||
+|-
+| 0x4C8 || BlendColor1 ||
+|-
+| 0x4C9 || BlendColor2 ||
+|-
+| 0x4CA || BlendColor3 ||
+|-
+| 0x47F || DepthBuffer_Resolve || 1 is written here to trigger.
+|-
+| 0x519 || ZCullCtx_Save || 0 is written here to trigger ctx-save, uses both ZCullCtx_Addr0/1.
+|-
+| 0x540 || ZCullCtx_Restore || 0 is written here to trigger ctx-restore, uses both ZCullCtx_Addr0/1.
+|-
+| 0x546 || PointSize || Float is written here.
+|-
+| 0x54C || Counter_Reset || Value written decides which counter to reset.
+|-
+| 0x64F || DepthClamp || 0x101A is written when enabled, 0x181D when disabled.
+|-
+| 0x66F || DepthBounds_Enable || 1 means enabled, 0 means disabled.
+|-
+| 0x68B || Barrier? || Always 0 is written here. During zcull ctx-save, spammed when enabling raster, ...
+|-
+| 0x6C0 || Poke_AddrHi ||
+|-
+| 0x6C1 || Poke_AddrLo ||
+|-
+| 0x6C2 || Poke_WriteVal || 0 is written here during most queries.
+|-
+| 0x6C3 || Poke_Control || Big bitfield. After write, the result of query is written to 4 bytes at Poke_Addr.
+|-
+| 0xD34 || || Used by SetConservativeRasterDilate.
+|-
+| 0xE0A || || Used by SetConservativeRasterDilate.
+|-
+| 0xE0B || || Used by SetConservativeRasterDilate.
+|-
+| 0xE20 || || Another barrier? Used by SetConservativeRasterDilate.
+|}
+
+= Compute =
+{| class=wikitable
+! Register || Name || Notes
+|-
+| 0xE2A || DebugGroupPush_DynamicControl ||
+|-
+| 0xE2B || DebugGroupPush_DynamicValue || This one can be written a variable number of times.
+|-
+| 0xE2C || DebugGroupPush_StaticControl ||
+|-
+| 0xE2D || DebugGroupPush_StaticValue || This is written 3 times after DebugGroupPush_StaticControl.
+|-
+| 0xE2E || DebugGroupPop_Control ||
+|-
+| 0xE2F || DebugGroupPop_GroupId || This is written once after DebugGroupPop_Control.
 |}
 
 = DMA =
 {| class=wikitable
 ! Register || Name || Notes
 |-
-| 0x0C0 || DmaControl || With 0x186 Src/DstStride is not used.
+| 0x0C0 || Dma_Control || With 0x186 Src/DstStride is not used.
 |-
-| 0x100 || DmaSrcAddrHi ||
+| 0x100 || Dma_SrcAddrHi ||
 |-
-| 0x101 || DmaSrcAddrLo ||
+| 0x101 || Dma_SrcAddrLo ||
 |-
-| 0x102 || DmaDstAddrHi ||
+| 0x102 || Dma_DstAddrHi ||
 |-
-| 0x103 || DmaDstAddrLo ||
+| 0x103 || Dma_DstAddrLo ||
 |-
-| 0x104 || DmaSrcStride? ||
+| 0x104 || Dma_SrcStride? ||
 |-
-| 0x105 || DmaDstStride? ||
+| 0x105 || Dma_DstStride? ||
 |-
-| 0x106 || DmaCount || At most 0x3FFFFF.
+| 0x106 || Dma_Count || At most 0x3FFFFF.
 |}
