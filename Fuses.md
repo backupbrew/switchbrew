@@ -205,20 +205,21 @@ This appears to store an hardware ID.
 
 #### FUSE\_RESERVED\_ODM3
 
-This appears to store an hardware ID.
+This appears to store an hardware
+ID.
 
 #### FUSE\_RESERVED\_ODM4
 
-| Bits  | Description                                       |
-| ----- | ------------------------------------------------- |
-| 0-1   | Unit type (3 = debug; 0 = retail)                 |
-| 2     | Unknown config (must be 1 on retail)              |
-| 3-5   | DRAM id                                           |
-| 8     | Unknown config mask (must be 0 on retail)         |
-| 9     | Unit type mask (0 = debug; 1 = retail)            |
-| 10    | \[4.0.0+\] Unknown, returned by smcGetConfig(14)  |
-| 11    | \[5.0.0+\] SoC variant (0 = T210; 1 = T214)       |
-| 16-19 | \[4.0.0+\] Unknown config (hardware-type-related) |
+| Bits                               | Description                                       |
+| ---------------------------------- | ------------------------------------------------- |
+| 0-1                                | Unit type (3 = debug; 0 = retail)                 |
+| 2                                  | Unknown config (must be 1 on retail)              |
+| \[1.0.0-3.0.2\] 3-5 \[4.0.0+\] 3-7 | DRAM id                                           |
+| 8                                  | Unknown config mask (must be 0 on retail)         |
+| 9                                  | Unit type mask (0 = debug; 1 = retail)            |
+| 10                                 | \[4.0.0+\] Unknown, returned by smcGetConfig(14)  |
+| 11                                 | \[5.0.0+\] SoC variant (0 = T210; 1 = T214)       |
+| 16-19                              | \[4.0.0+\] Unknown config (hardware-type-related) |
 
 This stores some device configuration parameters.
 

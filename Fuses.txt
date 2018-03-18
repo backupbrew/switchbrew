@@ -430,7 +430,8 @@ This appears to store an hardware ID.
 | 2
 | Unknown config (must be 1 on retail)
 |-
-| 3-5
+| [1.0.0-3.0.2] 3-5
+[4.0.0+] 3-7
 | DRAM id
 |-
 | 8
