@@ -203,17 +203,17 @@ Subchannels:
 |-
 | (0x7C0,0x7C1)+2*N || VertexBufferEndAddr || iova_t ||
 |-
-| 0x781+8*N || BlendState_N || || TODO, N = {0, ..., 7}
+| 0x781+8*N || SimpleBlend0_BlendEquationX || bitfield || Bit0-2: BlendEquationX
 |-
-| 0x782+8*N || BlendState_N || || TODO
+| 0x782+8*N || SimpleBlend0_BlendFunctionA || bitfield || Bit0-4: ?, bit14-15: ?
 |-
-| 0x783+8*N || BlendState_N || || TODO
+| 0x783+8*N || SimpleBlend0_BlendFunctionB || bitfield || Bit0-4: ?, bit14-15: ?
 |-
-| 0x784+8*N || BlendState_N || || TODO
+| 0x784+8*N || SimpleBlend0_BlendEquationY || bitfield || Bit0-2: BlendEquationY
 |-
-| 0x785+8*N || BlendState_N || || TODO
+| 0x785+8*N || SimpleBlend0_BlendFunctionC || bitfield || Bit0-4: ?, bit14-15: ?
 |-
-| 0x786+8*N || BlendState_N || || TODO
+| 0x786+8*N || SimpleBlend0_BlendFunctionD || bitfield || Bit0-4: ?, bit14-15: ?
 |-
 | 0x820 || || || BindProgram writes here.
 |-
