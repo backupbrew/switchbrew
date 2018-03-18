@@ -41,15 +41,15 @@ Subchannels:
 |-
 | 0x303+4*N || DepthRange_Unk2_N || 1 || ||
 |-
-| 0x36B || || 1 || || BindPolygonState writes here.
+| 0x36B || PolygonMode0 || 1 || bitfield || 0x1B00/0x1B01/0x1B02
 |-
-| 0x36C || || 1 || || BindPolygonState writes here.
+| 0x36C || PolygonMode1 || 1 || bitfield || 0x1B00/0x1B01/0x1B02
 |-
-| 0x370 || || 1 || bool || BindPolygonState writes here.
+| 0x370 || PolygonOffsetEnableX || 1 || bool ||
 |-
-| 0x371 || || 1 || bool || BindPolygonState writes here.
+| 0x371 || PolygonOffsetEnableY || 1 || bool ||
 |-
-| 0x372 || || 1 || bool || BindPolygonState writes here.
+| 0x372 || PolygonOffsetEnableZ || 1 || bool ||
 |-
 | 0x373 || PatchSize || 1 || || Small value, always fits in 12 bits.
 |-
@@ -167,11 +167,11 @@ Subchannels:
 |-
 | 0x592 || PrimitiveRestart_Value || 1 || ||
 |-
-| 0x646 || || 1 || || BindPolygonState writes here.
+| 0x646 || PolygonCullFaceEnable || 1 || bool ||
 |-
-| 0x647 || || 1 || ||  BindPolygonState writes here.
+| 0x647 || PolygonFrontFace || 1 || bitfield || Bit0: Enable. Always ORR'd with 0x9000.
 |-
-| 0x648 || || 1 || ||  BindPolygonState writes here.
+| 0x648 || PolygonCullFaceConfig || 1 || bitfield || 0x404/0x405/0x408
 |-
 | 0x64F || DepthClamp || 1 || || 0x101A is written when enabled, 0x181D when disabled.
 |-
@@ -193,13 +193,13 @@ Subchannels:
 |-
 | 0x7C0+2*N || VertexBufferEndAddr || 2 || iova_t ||
 |-
-| 0x781+8*N || SimpleBlend0_BlendEquationX || 1 || bitfield || Bit0-2: BlendEquationX
+| 0x781+8*N || SimpleBlend0_BlendEquation0 || 1 || bitfield || Bit0-2: BlendEquation0
 |-
 | 0x782+8*N || SimpleBlend0_BlendFunctionA || 1 || bitfield || Bit0-4: ?, bit14-15: ?
 |-
 | 0x783+8*N || SimpleBlend0_BlendFunctionB || 1 || bitfield || Bit0-4: ?, bit14-15: ?
 |-
-| 0x784+8*N || SimpleBlend0_BlendEquationY || 1 || bitfield || Bit0-2: BlendEquationY
+| 0x784+8*N || SimpleBlend0_BlendEquation1 || 1 || bitfield || Bit0-2: BlendEquation1
 |-
 | 0x785+8*N || SimpleBlend0_BlendFunctionC || 1 || bitfield || Bit0-4: ?, bit14-15: ?
 |-
