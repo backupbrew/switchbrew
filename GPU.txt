@@ -87,23 +87,25 @@ Subchannels:
 |-
 | 0x452 || RasterEnable || 1 || bool ||
 |-
+| 0x47C || || 1 || trigger || BindProgram writes 0 here sometimes.
+|-
+| 0x47F || DepthBufferResolve || 1 || trigger || 1 is written here to trigger.
+|-
 | 0x478 || MultisampleGrid || 3 || bitfield[3] || Bit0-3: x0, bit4-7: y0, bit8-11: x1, etc..
 |-
 | 0x47E || MultisampleCoverageToColor || 1 || bitfield || Bit0: Enable, bit4-6: ?
 |-
 | 0x4B3 || DepthTestEnable || 1 || bool || Enables DepthWriteEnable and DepthFunc.
 |-
-| 0x4B8 || Multisample_Config2 || 1 || bool || TODO
-|-
-| 0x4BA || DepthWriteEnable || 1 || bool ||
-|-
-| 0x4C3 || DepthFunc || 1 || bitfield || Bit0-3: DepthFunc
-|-
 | 0x4B8 || MultisampleAlphaToCoverageDither || 1 || bool ||
 |-
 | 0x4B9 || BlendIndependent || 1 || bool || 1 written here for "simple" BlendState.
 |-
 | 0x4BB || AlphaTestEnable || 1 || bool ||
+|-
+| 0x4BA || DepthWriteEnable || 1 || bool ||
+|-
+| 0x4C3 || DepthFunc || 1 || bitfield || Bit0-3: DepthFunc
 |-
 | 0x4C5 || AlphaTestFunc || 1 || bitfield || Bit0-3: AlphaTestFunc
 |-
@@ -122,10 +124,6 @@ Subchannels:
 | 0x4C4 || AlphaTestRefValue || 1 || float ||
 |-
 | 0x4C7 || BlendColor || 4 || float[4] ||
-|-
-| 0x47C || || 1 || trigger || BindProgram writes 0 here sometimes.
-|-
-| 0x47F || DepthBufferResolve || 1 || trigger || 1 is written here to trigger.
 |-
 | 0x519 || ZCullContextSave || 1 || trigger || 0 is written here to trigger ctx-save, uses ZCullContextStartAddr.
 |-
