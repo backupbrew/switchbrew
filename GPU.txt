@@ -23,11 +23,11 @@ Subchannels:
 |-
 | 0xDF || RasterizerEnable || 1 || bool ||
 |-
-| 0xE0+8*N || TransformFeedbackBuffer_Enable || 1 || bool ||
+| 0xE0+8*N || TransformFeedbackBufferEnable || 1 || bool ||
 |-
-| 0xE1+8*N || TransformFeedbackBuffer_Addr || 2 || gpuva ||
+| 0xE1+8*N || TransformFeedbackBufferAddr || 2 || gpuva ||
 |-
-| 0xE3+8*N || TransformFeedbackBuffer_Flags || 1 || ||
+| 0xE3+8*N || TransformFeedbackBufferFlags || 1 || ||
 |-
 | 0x1D1 || TransformFeedback_Enable || 1 || ||
 |-
