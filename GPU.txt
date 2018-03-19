@@ -37,25 +37,31 @@ Subchannels:
 |-
 | 0x1FC || ZCullContextEndAddr || 2 || gpuva ||
 |-
-| 0x280+8*N || ViewportNConfig0 || 1 || float || ?
+| 0x280+8*N || ViewportNScaleX || 1 || float ||
 |-
-| 0x281+8*N || ViewportNConfig1 || 1 || float || ?
+| 0x281+8*N || ViewportNScaleY || 1 || float ||
 |-
-| 0x285+8*N || ViewportNDepthRangeUnk || 1 || || ?
+| 0x282+8*N || ViewportNScaleZ || 1 || float ||
+|-
+| 0x283+8*N || ViewportNTranslateX || 1 || float ||
+|-
+| 0x284+8*N || ViewportNTranslateY || 1 || float ||
+|-
+| 0x285+8*N || ViewportNTranslateZ || 1 || float ||
 |-
 | 0x286+8*N || ViewportNSwizzles || 1 || bitfield || 
 |-
 | 0x287+8*N || ViewportNSubpixelPrecisionBias || 1 || bitfield || Bit0-4: ?, bit8-bit11: ?
 |-
-| 0x300+4*N || ViewportNConfig2 || 1 || float ||
+| 0x300+4*N || ViewportNHorizontal || 1 || bitfield || Bit0-15: X, bit16-31: Width
 |-
-| 0x301+4*N || ViewportNConfig3 || 1 || float ||
+| 0x301+4*N || ViewportNVertical || 1 || bitfield || Bit0-15: Y, bit16-31: Height
 |-
 | 0x302+4*N || ViewportNDepthRangeNear || 1 || float ||
 |-
 | 0x303+4*N || ViewportNDepthRangeFar || 1 || float ||
 |-
-| 0x360 || ClearColor || 4 || ? ||
+| 0x360 || ClearColor || 4 || float ||
 |-
 | 0x36B || PolygonModeFront || 1 || bitfield || 0x1B00/0x1B01/0x1B02
 |-
@@ -157,7 +163,7 @@ Subchannels:
 |-
 | 0x4C7 || BlendColor || 4 || float[4] || TODO
 |-
-| 0x50D || DrawElementsEnableBaseVertex? || 1 || bool || TODO
+| 0x50D || VertexBufferElementBase || 1 || uint ||
 |-
 | 0x519 || ZCullContextSave || 1 || trigger || 0 is written here to trigger ctx-save, uses ZCullContextStartAddr.
 |-
@@ -213,15 +219,13 @@ Subchannels:
 |-
 | 0x6C3 || QueryControl || 1 || bitfield || After write, the result of query is written to 4 bytes at QueryAddr.
 |-
-| 0x700+4*N || VertexStreamNStride || 1 || uint || Bit0-11: Stride
+| 0x700+4*N || VertexStreamNStride || 1 || uint || Bit0-11: Stride. TODO: This has more stuff according to nouveau
 |-
-| 0x701+2*N || VertexBufferStartAddr || 2 || gpuva || TODO: Incorrecto
+| 0x701+4*N || VertexBufferStartAddr || 2 || gpuva || TODO: Incorrecto
 |-
 | 0x703+4*N || VertexStreamNDivisor || || ||
 |-
-| 0x704+4*N || VertexStreamNUnknown? || || || 0 is written here when disabling?
-|-
-| 0x7C0+2*N || VertexBufferEndAddr || 2 || gpuva || TODO: Incorrecto
+| 0x7C0+2*N || VertexBufferEndAddr || 2 || gpuva ||
 |-
 | 0x781+8*N || BlendNRgbEquation || 1 || bitfield || Bit0-2: BlendEquation
 |-
@@ -317,23 +321,23 @@ Subchannels:
 |-
 | 0xE36 || DrawElementsConfig || 1 || ||
 |-
-| 0xE37 || DrawElementsPipe || || ||
+| 0xE37 || DrawElementsPipe || 1 || ||
 |-
 | 0xE38 || DrawElementsIndirectConfig || 1 || ||
 |-
-| 0xE39 || DrawElementsIndirectPipe || || ||
+| 0xE39 || DrawElementsIndirectPipe || 1 || ||
 |-
-| 0xE3A || DrawElementsInstanced0Config || || ||
+| 0xE3A || DrawElementsInstanced0Config || 1 || ||
 |-
-| 0xE3B || DrawElementsInstanced0Pipe || || ||
+| 0xE3B || DrawElementsInstanced0Pipe || 1 || ||
 |-
 | 0xE42 || DrawArraysInstanced1Config || 1 || ||
 |-
 | 0xE43 || DrawArraysInstanced1Pipe || 1 || ||
 |-
-| 0xE44 || DrawElementsInstanced1Config || || ||
+| 0xE44 || DrawElementsInstanced1Config || 1 || ||
 |-
-| 0xE45 || DrawElementsInstanced1Pipe || || ||
+| 0xE45 || DrawElementsInstanced1Pipe || 1 || ||
 |}
 
 TODO: SetRenderTargets, TiledDownSample, Copy*, Dispatch*, Downsample, DrawTexture/DrawTransformFeedback, Bind*
