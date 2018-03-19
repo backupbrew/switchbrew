@@ -336,7 +336,7 @@ Subchannels:
 | 0xE45 || DrawElementsInstanced1Pipe || || ||
 |}
 
-TODO: SetRenderTargets, TiledDownSample, Copy*, Dispatch*, Downsample, DrawTexture/DrawTransformFeedback
+TODO: SetRenderTargets, TiledDownSample, Copy*, Dispatch*, Downsample, DrawTexture/DrawTransformFeedback, Bind*
 
 = DMA =
 {| class=wikitable
