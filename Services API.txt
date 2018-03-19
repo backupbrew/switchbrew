@@ -110,7 +110,7 @@ Takes a pid.
 | 
 |-
 | btm, btm:dbg, btm:sys, [5.0.0+] btm:u
-| Battery services
+| [[BTM services]]
 | 
 |-
 | caps:a, caps:c, [5.0.0+] caps:u

@@ -137,7 +137,7 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>btm, btm:dbg, btm:sys, [5.0.0+] btm:u</p></td>
-<td><p>Battery services</p></td>
+<td><p><a href="BTM services.md" title="wikilink">BTM services</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">
