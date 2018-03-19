@@ -111,6 +111,8 @@ Subchannels:
 |-
 | 0x40C || CoverageModulationTable || 4 || float[4] ||
 |-
+| 0x446 || DrawElementsEnableBaseVertex? || 1 || bool || TODO
+|-
 | 0x44D || TiledCacheAction2 || 1 || bool || Trigger?
 |-
 | 0x452 || RasterEnable || 1 || bool ||
@@ -153,7 +155,9 @@ Subchannels:
 |-
 | 0x4C4 || AlphaTestRefValue || 1 || float ||
 |-
-| 0x4C7 || BlendColor || 4 || float[4] ||
+| 0x4C7 || BlendColor || 4 || float[4] || TODO
+|-
+| 0x50D || DrawElementsEnableBaseVertex? || 1 || bool || TODO
 |-
 | 0x519 || ZCullContextSave || 1 || trigger || 0 is written here to trigger ctx-save, uses ZCullContextStartAddr.
 |-
@@ -180,6 +184,10 @@ Subchannels:
 | 0x591 || PrimitiveRestartEnable || 1 || bool ||
 |-
 | 0x592 || PrimitiveRestartIndex || 1 || uint ||
+|-
+| 0x5F2 || DrawElementsIndirectAddr || 2 || gpuva || TODO
+|-
+| 0x5F6 || DrawElementsIndirectFlag? || 1 || bool || TODO
 |-
 | 0x620+N || VertexStreamNEnableDivisor || bool ||
 |-
@@ -281,7 +289,7 @@ Subchannels:
 |-
 | 0xE1A || StencilConfig || 1 || bitfield || Bit0-3: StencilFunc0, bit4-7: StencilOp0_A, bit8-11: StencilOp0_B, bit12-15: StencilFunc1, bit16-19: StencilOp1_A, bit20-23: StencilOp1_B
 |-
-| 0xE1E || Multisample_Config7 || 1 || || Also written to by BindStorageBuffer 
+| 0xE1E || Barrier? || 1 || || Also written to by BindStorageBuffer, and DrawArraysIndirect. 
 |-
 | 0xE20 || || 1 || || Another barrier? Used by SetConservativeRasterDilate.
 |-
@@ -296,6 +304,36 @@ Subchannels:
 | 0xE2E || DebugGroupPop_Control || 1 || ||
 |-
 | 0xE2F || DebugGroupPop_GroupId || 1 || || This is written once after DebugGroupPop_Control.
+|-
+| 0xE30 || DrawArraysControl || 1 || ||
+|-
+| 0xE31 || DrawArraysMulti || 1 || ||
+|-
+| 0xE32 || DrawArraysIndirect || 1 || ||
+|-
+| 0xE34 || DrawArraysInstanced0Config || 1 || ||
+|-
+| 0xE35 || DrawArraysInstanced0Pipe || 1 || ||
+|-
+| 0xE36 || DrawElementsConfig || 1 || ||
+|-
+| 0xE37 || DrawElementsPipe || || ||
+|-
+| 0xE38 || DrawElementsIndirectConfig || 1 || ||
+|-
+| 0xE39 || DrawElementsIndirectPipe || || ||
+|-
+| 0xE3A || DrawElementsInstanced0Config || || ||
+|-
+| 0xE3B || DrawElementsInstanced0Pipe || || ||
+|-
+| 0xE42 || DrawArraysInstanced1Config || 1 || ||
+|-
+| 0xE43 || DrawArraysInstanced1Pipe || 1 || ||
+|-
+| 0xE44 || DrawElementsInstanced1Config || || ||
+|-
+| 0xE45 || DrawElementsInstanced1Pipe || || ||
 |}
 
 TODO: SetRenderTargets, TiledDownSample, Copy*, Dispatch*, Downsample, Draw*
