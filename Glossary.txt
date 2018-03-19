@@ -80,6 +80,10 @@
 | Inter-Process Communication Marshalling
 |
 |-
+| [https://en.wikipedia.org/wiki/Interrupt_request_(PC_architecture) IRQ]
+| Interrupt Request
+|
+|-
 | [[Jpegdec_services|Jpegdec]]
 | Refactored sysmodule for handling all JPEG decoding associated with capture services
 |
