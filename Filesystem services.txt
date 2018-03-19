@@ -94,6 +94,10 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 32 || [3.0.0+] ExtendSaveDataFileSystem
 |-
+| 33 || [5.0.0+]
+|-
+| 34 || [5.0.0+]
+|-
 | 51 || [[#OpenSaveDataFileSystem]]
 |-
 | 52 || [[#OpenSaveDataFileSystemBySystemSaveDataId]]
@@ -110,9 +114,19 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 61 || OpenSaveDataInfoReaderBySaveDataSpaceId
 |-
+| 62 || [5.0.0+]
+|-
+| 64 || [5.0.0+]
+|-
+| 65 || [5.0.0+]
+|-
+| 66 || [5.0.0+]
+|-
 | 80 || OpenSaveDataMetaFile
 |-
 | 81 || [4.0.0+] OpenSaveDataTransferManager
+|-
+| 82 || [5.0.0+]
 |-
 | 100 || OpenImageDirectoryFileSystem
 |-
@@ -131,6 +145,10 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 500 || [[#OpenSdCardDetectionEventNotifier]]
 |-
 | 501 || [[#OpenGameCardDetectionEventNotifier]]
+|-
+| 510 || [5.0.0+] OpenSystemDataUpdateEventNotifier
+|-
+| 511 || [5.0.0+] NotifySystemDataUpdateEvent
 |-
 | 600 || [1.0.0-3.0.2] SetCurrentPosixTime
 |-
@@ -162,6 +180,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 614 || [4.0.0+] CorruptSaveDataFileSystemBySaveDataSpaceId
 |-
+| 615 || [5.0.0+] 
+|-
 | 620 || [2.0.0+] [[#SetSdCardEncryptionSeed]]
 |-
 | 630 || [4.0.0+] SetSdCardAccessibility
@@ -169,6 +189,16 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 631 || [4.0.0+] IsSdCardAccessible
 |-
 | 640 || [4.0.0+] IsSignedSystemPartitionOnSdCardValid
+|-
+| 700 || [5.0.0+]
+|-
+| 701 || [5.0.0+]
+|-
+| 702 || [5.0.0+]
+|-
+| 710 || [5.0.0+]
+|-
+| 720 || [5.0.0+]
 |-
 | 800 || [2.0.0+] GetAndClearFileSystemProxyErrorInfo
 |-

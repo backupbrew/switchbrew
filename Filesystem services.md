@@ -77,6 +77,8 @@ This is
 | 30   | [\#OpenGameCardStorage](#OpenGameCardStorage "wikilink")                                               |
 | 31   | [\#OpenGameCardFileSystem](#OpenGameCardFileSystem "wikilink")                                         |
 | 32   | \[3.0.0+\] ExtendSaveDataFileSystem                                                                    |
+| 33   | \[5.0.0+\]                                                                                             |
+| 34   | \[5.0.0+\]                                                                                             |
 | 51   | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                         |
 | 52   | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")     |
 | 53   | \[2.0.0+\] OpenReadOnlySaveDataFileSystem                                                              |
@@ -85,8 +87,13 @@ This is
 | 59   | \[2.0.0+\] WriteSaveDataFileSystemExtraData                                                            |
 | 60   | OpenSaveDataInfoReader                                                                                 |
 | 61   | OpenSaveDataInfoReaderBySaveDataSpaceId                                                                |
+| 62   | \[5.0.0+\]                                                                                             |
+| 64   | \[5.0.0+\]                                                                                             |
+| 65   | \[5.0.0+\]                                                                                             |
+| 66   | \[5.0.0+\]                                                                                             |
 | 80   | OpenSaveDataMetaFile                                                                                   |
 | 81   | \[4.0.0+\] OpenSaveDataTransferManager                                                                 |
+| 82   | \[5.0.0+\]                                                                                             |
 | 100  | OpenImageDirectoryFileSystem                                                                           |
 | 110  | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                             |
 | 200  | OpenDataStorageByCurrentProcess                                                                        |
@@ -96,6 +103,8 @@ This is
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                                 |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")                     |
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink")                 |
+| 510  | \[5.0.0+\] OpenSystemDataUpdateEventNotifier                                                           |
+| 511  | \[5.0.0+\] NotifySystemDataUpdateEvent                                                                 |
 | 600  | \[1.0.0-3.0.2\] SetCurrentPosixTime                                                                    |
 | 601  | QuerySaveDataTotalSize                                                                                 |
 | 602  | [\#VerifySaveDataFileSystem](#VerifySaveDataFileSystem "wikilink")                                     |
@@ -111,10 +120,16 @@ This is
 | 612  | \[4.0.0+\] GetFreeSpaceSizeForSaveData                                                                 |
 | 613  | \[4.0.0+\] VerifySaveDataFileSystemBySaveDataSpaceId                                                   |
 | 614  | \[4.0.0+\] CorruptSaveDataFileSystemBySaveDataSpaceId                                                  |
+| 615  | \[5.0.0+\]                                                                                             |
 | 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                            |
 | 630  | \[4.0.0+\] SetSdCardAccessibility                                                                      |
 | 631  | \[4.0.0+\] IsSdCardAccessible                                                                          |
 | 640  | \[4.0.0+\] IsSignedSystemPartitionOnSdCardValid                                                        |
+| 700  | \[5.0.0+\]                                                                                             |
+| 701  | \[5.0.0+\]                                                                                             |
+| 702  | \[5.0.0+\]                                                                                             |
+| 710  | \[5.0.0+\]                                                                                             |
+| 720  | \[5.0.0+\]                                                                                             |
 | 800  | \[2.0.0+\] GetAndClearFileSystemProxyErrorInfo                                                         |
 | 1000 | SetBisRootForHost                                                                                      |
 | 1001 | SetSaveDataSize                                                                                        |
