@@ -206,19 +206,20 @@ Bitmask 0x10 seems to indicate null-terminated strings, but that flag is
 ignored by the marshalling
 code.
 
-| Type Mask    | Description                                                                 | Direction |
-| ------------ | --------------------------------------------------------------------------- | --------- |
-| 4 + 1        | Creates a A descriptor with flags=0.                                        | In        |
-| 0x40 + 4 + 1 | Creates a A descriptor with flags=1.                                        | In        |
-| 0x80 + 4 + 1 | Creates a A descriptor with flags=3.                                        | In        |
-| 4 + 2        | Creates a B descriptor with flags=0.                                        | Out       |
-| 0x40 + 4 + 2 | Creates a B descriptor with flags=1.                                        | Out       |
-| 0x80 + 4 + 2 | Creates a B descriptor with flags=3.                                        | Out       |
-| 8 + 1        | Creates an X descriptor                                                     | In        |
-| 8 + 2        | Creates a C descriptor, and writes the u16 size to an offset into raw data. | Out       |
-| 0x10 + 8 + 2 | Creates a C descriptor                                                      | Out       |
-| 0x20 + 1     | Creates both an A and X descriptor                                          | In        |
-| 0x20 + 2     | Creates both an B and C descriptor                                          | Out       |
+| Type Mask       | Description                                                                 | Direction |
+| --------------- | --------------------------------------------------------------------------- | --------- |
+| 4 + 1           | Creates a A descriptor with flags=0.                                        | In        |
+| 0x40 + 4 + 1    | Creates a A descriptor with flags=1.                                        | In        |
+| 0x80 + 4 + 1    | Creates a A descriptor with flags=3.                                        | In        |
+| 4 + 2           | Creates a B descriptor with flags=0.                                        | Out       |
+| 0x40 + 4 + 2    | Creates a B descriptor with flags=1.                                        | Out       |
+| 0x80 + 4 + 2    | Creates a B descriptor with flags=3.                                        | Out       |
+| 8 + 1           | Creates an X descriptor                                                     | In        |
+| 8 + 2           | Creates a C descriptor, and writes the u16 size to an offset into raw data. | Out       |
+| 0x10 + 8 + 2    | Creates a C descriptor                                                      | Out       |
+| 0x20 + 1        | Creates both an A and X descriptor                                          | In        |
+| 0x20 + 2        | Creates both an B and C descriptor                                          | Out       |
+| 0x20 + 2 + 0x40 | Same as 0x20 + 2, except a certain value is set to hard-coded 0x1 instead.  | Out       |
 
 C and X (Pointer and ReceiveList) descriptors are backed by the "pointer
 buffer", a buffer in the service process. Its size is a u16, which is

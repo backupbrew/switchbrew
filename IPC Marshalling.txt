@@ -241,6 +241,8 @@ Bitmask 0x10 seems to indicate null-terminated strings, but that flag is ignored
 | 0x20 + 1 || Creates both an A and X descriptor || In
 |-
 | 0x20 + 2 || Creates both an B and C descriptor || Out
+|-
+| 0x20 + 2 + 0x40 || Same as 0x20 + 2, except a certain value is set to hard-coded 0x1 instead. || Out
 |}
 
 C and X (Pointer and ReceiveList) descriptors are backed by the "pointer buffer", a buffer in the service process. Its size is a u16, which is retrieved using the "QueryPointerBufferSize" control message. If the client code determines all buffers with flag 8 do not fit in the pointer buffer, it returns error 0x11A0B.
