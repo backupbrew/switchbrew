@@ -122,7 +122,15 @@ This is
 | 21  | [\#GetEticketDeviceKey](#GetEticketDeviceKey "wikilink")                 |
 | 22  | GetSpeakerParameter                                                      |
 | 23  | \[4.0.0+\] GetLcdVendorId                                                |
-|     |                                                                          |
+| 24  | \[5.0.0+\]                                                               |
+| 25  | \[5.0.0+\]                                                               |
+| 26  | \[5.0.0+\]                                                               |
+| 27  | \[5.0.0+\]                                                               |
+| 28  | \[5.0.0+\]                                                               |
+| 29  | \[5.0.0+\]                                                               |
+| 30  | \[5.0.0+\]                                                               |
+| 31  | \[5.0.0+\]                                                               |
+| 32  | \[5.0.0+\]                                                               |
 
 Used for accessing data calibrated at the factory.
 
@@ -344,6 +352,15 @@ This is
 | 138 | \[4.0.0+\] GetWebInspectorFlag                                                                    |
 | 139 | \[4.0.0+\] [\#GetAllowedSslHosts](#GetAllowedSslHosts "wikilink")                                 |
 | 140 | \[4.0.0+\] GetHostFsMountPoint                                                                    |
+| 141 | \[5.0.0+\]                                                                                        |
+| 142 | \[5.0.0+\]                                                                                        |
+| 143 | \[5.0.0+\]                                                                                        |
+| 144 | \[5.0.0+\]                                                                                        |
+| 145 | \[5.0.0+\]                                                                                        |
+| 146 | \[5.0.0+\]                                                                                        |
+| 147 | \[5.0.0+\]                                                                                        |
+| 148 | \[5.0.0+\]                                                                                        |
+| 149 | \[5.0.0+\]                                                                                        |
 
 Official user-processes get a new service session handle each time a
 set:sys cmd is used, with the session being closed aftewards.
