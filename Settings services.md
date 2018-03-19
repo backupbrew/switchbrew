@@ -13,6 +13,7 @@ This is
 | 5   | \[4.0.0+\] GetAvailableLanguageCodes2     | Takes a type-0x6 buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
 | 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 | No input, returns an output s32.                                                                                       |
 | 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
+| 8   | \[5.0.0+\] GetQuestFlag2                  | Identical to [set:sys GetQuestFlag](#set:sys "wikilink").                                                              |
 
 \[4.0.0+\] Official user-processes now use
 GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of

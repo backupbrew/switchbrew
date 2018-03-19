@@ -20,8 +20,9 @@ This is "nn::settings::ISettingsServer".
 | 6 || [4.0.0+] GetAvailableLanguageCodeCount2 || No input, returns an output s32.
 |-
 | 7 || [4.0.0+] GetKeyCodeMap || 
+|-
+| 8 || [5.0.0+] GetQuestFlag2 || Identical to [[#set:sys|set:sys GetQuestFlag]].
 |}
-
 
 [4.0.0+] Official user-processes now use GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of {original commands}.
 
@@ -39,7 +40,6 @@ Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses fixed si
 This is "nn::settings::LanguageCode".
 
 This is an u64, which is a NUL-terminated string.
-
 
 {| class="wikitable" border="1"
 |-
