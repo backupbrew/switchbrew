@@ -294,6 +294,21 @@ This is the raw data stored under the PRODINFO partition.
 |  lcd_vendor_id
 |  
 |-
+|  0x3D70
+|  0x240
+|  [5.0.0+] unk_key0
+|  
+|-
+|  0x3FC0
+|  0x240
+|  [5.0.0+] unk_key1
+|  
+|-
+|  0x4210
+|  0x04
+|  [5.0.0+] unk_id
+|  
+|-
 |}
 
 == Error detection ==

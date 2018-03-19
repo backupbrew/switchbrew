@@ -73,6 +73,9 @@ partition.
 | 0x3AE0 | 0x130  | ssl\_ext\_key                       | Extended SSL key (active).                                                            |
 | 0x3C20 | 0x130  | gamecard\_ext\_key                  | Extended GameCard key (active).                                                       |
 | 0x3D60 | 0x04   | lcd\_vendor\_id                     |                                                                                       |
+| 0x3D70 | 0x240  | \[5.0.0+\] unk\_key0                |                                                                                       |
+| 0x3FC0 | 0x240  | \[5.0.0+\] unk\_key1                |                                                                                       |
+| 0x4210 | 0x04   | \[5.0.0+\] unk\_id                  |                                                                                       |
 |        |        |                                     |                                                                                       |
 
 ## Error detection
