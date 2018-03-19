@@ -173,7 +173,7 @@ Subchannels:
 | 0xE45      | DrawElementsInstanced1Pipe        |      |                |                                                                                                                                                                                                              |
 
 TODO: SetRenderTargets, TiledDownSample, Copy\*, Dispatch\*, Downsample,
-Draw\*
+DrawTexture/DrawTransformFeedback
 
 # DMA
 
