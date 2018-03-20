@@ -871,7 +871,7 @@ interface.
 | 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER                                                                         | Seen on 1.0.0.                                               |
 | 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER                                                                       | Seen on 1.0.0.                                               |
 | 0x00000013 | 0        |                                                                                                             | Seen on 1.0.0. This one sets a u32, and bool based on input. |
-| 0xC0080014 |          | NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE                                                                      | Seen on 1.0.0.                                               |
+| 0xC0080014 |          | NVHOST\_IOCTL\_CHANNEL\_GET\_CLK\_RATE                                                                      | Seen on 1.0.0.                                               |
 | 0x40044801 | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD](#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD "wikilink")                     | Seen on 1.0.0.                                               |
 | 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_TIMEOUT                                                                         | Seen on 1.0.0.                                               |
 | 0x40084805 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO "wikilink")                      | Seen on 1.0.0.                                               |
@@ -1031,7 +1031,7 @@ Despite being marked as inout this is all output.
 `   __out u16 status;       // always 0xFFFF`  
 ` };`
 
-### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY
+### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX
 
 Allocates gpfifo entries with additional parameters. Exclusive to the
 Switch.
@@ -1047,7 +1047,7 @@ Switch.
 `   __in u32 unk5;`  
 ` };`
 
-### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_EX
+### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY
 
 Submits a gpfifo object (async version). Exclusive to the
 Switch.

@@ -926,7 +926,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0x00000013 || 0 || || Seen on 1.0.0. This one sets a u32, and bool based on input.
 |-
-| 0xC0080014 || || NVHOST_IOCTL_CHANNEL_SET_CLK_RATE || Seen on 1.0.0.
+| 0xC0080014 || || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE || Seen on 1.0.0.
 |- style="border-top: double"
 | 0x40044801 || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD]] || Seen on 1.0.0.
 |-
@@ -1088,7 +1088,7 @@ Despite being marked as inout this is all output.
     __out u16 status;       // always 0xFFFF
   };
 
-=== NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY ===
+=== NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX ===
 Allocates gpfifo entries with additional parameters. Exclusive to the Switch.
 
   struct {
@@ -1102,7 +1102,7 @@ Allocates gpfifo entries with additional parameters. Exclusive to the Switch.
     __in u32 unk5;
   };
 
-=== NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX ===
+=== NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY ===
 Submits a gpfifo object (async version). Exclusive to the Switch.
 
   struct {
