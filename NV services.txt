@@ -491,44 +491,156 @@ Returns an id for a nvmap object. Identical to Linux driver.
 |}
 
 == /dev/nvsched-ctrl ==
+This is a customized scheduler device.
+
+The way this device is exposed and configured is exclusive to the Switch, since other sources don't have an actual interface for the scheduler.
+
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0x00000601 || - || 0 || NVSCHED_CTRL_ENABLE ||
+| 0x00000601 || - || 0 || [[#NVSCHED_CTRL_ENABLE]] ||
 |-
-| 0x00000602 || - || 0 || NVSCHED_CTRL_DISABLE ||
+| 0x00000602 || - || 0 || [[#NVSCHED_CTRL_DISABLE]] ||
 |-
-| 0x40180603 || In || 24 || NVSCHED_CTRL_ADD_APPLICATION ||
+| 0x40180603 || In || 24 || [[#NVSCHED_CTRL_ADD_APPLICATION]] ||
 |-
-| 0x40180604 || In || 24 || NVSCHED_CTRL_UPDATE_APPLICATION ||
+| 0x40180604 || In || 24 || [[#NVSCHED_CTRL_UPDATE_APPLICATION]] ||
 |-
-| 0x40080605 || In || 8 || NVSCHED_CTRL_REMOVE_APPLICATION ||
+| 0x40080605 || In || 8 || [[#NVSCHED_CTRL_REMOVE_APPLICATION]] ||
 |-
-| 0x80080606 || Out || 8 || NVSCHED_CTRL_GET_ID ||
+| 0x80080606 || Out || 8 || [[#NVSCHED_CTRL_GET_ID]] ||
 |-
-| 0x80080607 || Out || 8 || NVSCHED_CTRL_ADD_RUNLIST ||
+| 0x80080607 || Out || 8 || [[#NVSCHED_CTRL_ADD_RUNLIST]] ||
 |-
-| 0x40180608 || In || 24 || NVSCHED_CTRL_UPDATE_RUNLIST ||
+| 0x40180608 || In || 24 || [[#NVSCHED_CTRL_UPDATE_RUNLIST]] ||
 |-
-| 0x40100609 || In || 16 || NVSCHED_CTRL_LINK_RUNLIST ||
+| 0x40100609 || In || 16 || [[#NVSCHED_CTRL_LINK_RUNLIST]] ||
 |-
-| 0x4010060A || In || 16 || NVSCHED_CTRL_UNLINK_RUNLIST ||
+| 0x4010060A || In || 16 || [[#NVSCHED_CTRL_UNLINK_RUNLIST]] ||
 |-
-| 0x4008060B || In || 8 || NVSCHED_CTRL_REMOVE_RUNLIST ||
+| 0x4008060B || In || 8 || [[#NVSCHED_CTRL_REMOVE_RUNLIST]] ||
 |-
-| 0x8001060C || Out || 1 || NVSCHED_CTRL_HAS_OVERRUN_EVENT ||
+| 0x8001060C || Out || 1 || [[#NVSCHED_CTRL_HAS_OVERRUN_EVENT]] ||
 |-
-| 0x8010060D || Out || 16 || NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT ||
+| 0x8010060D || Out || 16 || [[#NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT]] ||
 |-
-| 0x400C060E || In || 12 || NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE ||
+| 0x400C060E || In || 12 || [[#NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE]] ||
 |-
-| 0x4008060F || In || 8 || NVSCHED_CTRL_DETACH_APPLICATION ||
+| 0x4008060F || In || 8 || [[#NVSCHED_CTRL_DETACH_APPLICATION]] ||
 |-
 | 0x40100610 || In || 16 || ||
 |-
 | 0x40100611 || In || 16 || ||
 |-
 |}
+
+=== NVSCHED_CTRL_ENABLE ===
+Enables the scheduler.
+
+=== NVSCHED_CTRL_DISABLE ===
+Disables the scheduler.
+
+=== NVSCHED_CTRL_ADD_APPLICATION ===
+Adds a new application to the scheduler.
+
+  struct {
+    __in u64 application_id;
+    __in u64 priority;
+    __in u64 timeslice;
+  };
+
+=== NVSCHED_CTRL_UPDATE_APPLICATION ===
+Updates the application parameters in the scheduler.
+
+  struct {
+    __in u64 application_id;
+    __in u64 priority;
+    __in u64 timeslice;
+  };
+
+=== NVSCHED_CTRL_REMOVE_APPLICATION ===
+Removes the application from the scheduler.
+
+  struct {
+    __in u64 application_id;
+  };
+
+=== NVSCHED_CTRL_GET_ID ===
+Returns the ID of the last scheduled object.
+
+  struct {
+    __out u64 id;
+  };
+
+=== NVSCHED_CTRL_ADD_RUNLIST ===
+Creates a new runlist and returns it's ID.
+
+  struct {
+    __out u64 runlist_id;
+  };
+
+=== NVSCHED_CTRL_UPDATE_RUNLIST ===
+Updates the runlist parameters in the scheduler.
+
+  struct {
+    __in u64 runlist_id;
+    __in u64 priority;
+    __in u64 timeslice;
+  };
+
+=== NVSCHED_CTRL_LINK_RUNLIST ===
+Links a runlist to a given application in the scheduler.
+
+  struct {
+    __in u64 runlist_id;
+    __in u64 application_id;
+  };
+
+=== NVSCHED_CTRL_UNLINK_RUNLIST ===
+Unlinks a runlist from a given application in the scheduler.
+
+  struct {
+    __in u64 runlist_id;
+    __in u64 application_id;
+  };
+
+=== NVSCHED_CTRL_REMOVE_RUNLIST ===
+Removes the runlist from the scheduler.
+
+  struct {
+    __in u64 runlist_id;
+  };
+
+=== NVSCHED_CTRL_HAS_OVERRUN_EVENT ===
+Returns a boolean to tell if the scheduler has an overrun event or not.
+
+  struct {
+    __out u8 has_overrun;
+  };
+
+=== NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT ===
+Returns the overrun event's data from the scheduler.
+
+  struct {
+    __out u64 runlist_id;
+    __out u64 debt;
+  };
+
+=== NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE ===
+Installs a fence swap event?
+
+  struct {
+    __in u32 fence_id;
+    __in u32 fence_value;
+    __in u32 swap_interval;
+  };
+
+=== NVSCHED_CTRL_DETACH_APPLICATION ===
+Places the given application in detached state.
+
+  struct {
+    __in u64 application_id;
+  };
 
 == /dev/nverpt-ctrl ==
 Added in firmware version 3.0.0.
@@ -593,6 +705,8 @@ This one reserves pages in the device address space.
   };
 
 === NVGPU_AS_IOCTL_FREE_SPACE ===
+This one frees pages from the device address space.
+
   struct {
     __in u64 offset;
     __in u32 pages;
@@ -732,9 +846,7 @@ Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugMo
 == /dev/nvhost-prof-gpu ==
 Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugModeFlag is set.
 
-{| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
-|}
+This device is identical to [[#/dev/nvhost-dbg-gpu|/dev/nvhost-dbg-gpu]].
 
 == /dev/nvhost-ctrl-gpu ==
 This device is for global (context independent) operations on the gpu.  
