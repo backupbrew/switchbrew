@@ -1242,6 +1242,31 @@ Takes fd and closes it.
 
 Takes fd and reads log into a type-6 buffer.
 
+# nvgem:c
+
+This is "nv::gemcontrol::INvGemControl".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
+| 6   |      |
+| 7   |      |
+
+# nvgem:cd
+
+This is "nv::gemcoredump::INvGemCoreDump".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+
 # Errors
 
 Most nvidia driver commands return an error code apart from the normal

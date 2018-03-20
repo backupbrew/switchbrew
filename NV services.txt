@@ -1245,6 +1245,7 @@ Allocates gpfifo entries with additional parameters and returns a fence. Exclusi
 = nvmemp =
 NVIDIA memory profiler (this service is not available on retail units). 
 /dev/nvhost-ctrl sends the ioctl NVHOST_IOCTL_CTRL_GET_CONFIG to check the config "nv!NV_MEMORY_PROFILER". If config_str returns "1", the applications attempts to talk to use nvmemp.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -1276,6 +1277,44 @@ Takes fd and closes it.
 
 == ReadLog ==
 Takes fd and reads log into a type-6 buffer.
+
+= nvgem:c =
+This is "nv::gemcontrol::INvGemControl".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 ||
+|-
+| 3 ||
+|-
+| 4 ||
+|-
+| 5 ||
+|-
+| 6 ||
+|-
+| 7 ||
+|}
+
+= nvgem:cd =
+This is "nv::gemcoredump::INvGemCoreDump".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 ||
+|}
 
 = Errors =
 Most nvidia driver commands return an error code apart from the normal return code.
