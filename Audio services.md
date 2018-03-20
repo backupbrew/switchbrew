@@ -310,35 +310,35 @@ Takes an u64
 
 This is "nn::audioctrl::detail::IAudioController".
 
-| Cmd | Name             |
-| --- | ---------------- |
-| 0   |                  |
-| 1   |                  |
-| 2   |                  |
-| 3   |                  |
-| 4   |                  |
-| 5   |                  |
-| 6   |                  |
-| 7   | SetDefaultTarget |
-| 8   |                  |
-| 9   |                  |
-| 10  |                  |
-| 11  |                  |
-| 12  |                  |
-| 13  |                  |
-| 14  |                  |
-| 15  |                  |
-| 16  |                  |
-| 17  | \[3.0.0+\]       |
-| 18  | \[3.0.0+\]       |
-| 19  | \[3.0.0+\]       |
-| 20  | \[3.0.0+\]       |
-| 21  | \[3.0.0+\]       |
-| 22  | \[3.0.0+\]       |
-| 23  | \[4.0.0+\]       |
-| 24  | \[4.0.0+\]       |
-| 25  | \[4.0.0+\]       |
-| 26  | \[4.0.0+\]       |
+| Cmd | Name                                                        |
+| --- | ----------------------------------------------------------- |
+| 0   | GetTargetVolume                                             |
+| 1   | SetTargetVolume                                             |
+| 2   | GetTargetVolumeMin                                          |
+| 3   | GetTargetVolumeMax                                          |
+| 4   | IsTargetMute                                                |
+| 5   | SetTargetMute                                               |
+| 6   | IsTargetConnected                                           |
+| 7   | SetDefaultTarget                                            |
+| 8   | GetDefaultTarget                                            |
+| 9   | GetAudioOutputMode                                          |
+| 10  | SetAudioOutputMode                                          |
+| 11  | SetForceMutePolicy                                          |
+| 12  | GetForceMutePolicy                                          |
+| 13  | GetOutputModeSetting                                        |
+| 14  | SetOutputModeSetting                                        |
+| 15  | SetOutputTarget                                             |
+| 16  | SetInputTargetForceEnabled                                  |
+| 17  | \[3.0.0+\] SetHeadphoneOutputLevelMode                      |
+| 18  | \[3.0.0+\] GetHeadphoneOutputLevelMode                      |
+| 19  | \[3.0.0+\] AcquireAudioVolumeUpdateEventForPlayReport       |
+| 20  | \[3.0.0+\] AcquireAudioOutputDeviceUpdateEventForPlayReport |
+| 21  | \[3.0.0+\] GetAudioOutputTargetForPlayReport                |
+| 22  | \[3.0.0+\] NotifyHeadphoneVolumeWarningDisplayedEvent       |
+| 23  | \[4.0.0+\] SetSystemOutputMasterVolume                      |
+| 24  | \[4.0.0+\] GetSystemOutputMasterVolume                      |
+| 25  | \[4.0.0+\] GetAudioVolumeDataForPlayReport                  |
+| 26  | \[4.0.0+\] UpdateHeadphoneSettings                          |
 
 # codecctl
 
