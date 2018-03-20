@@ -17,3 +17,9 @@ errorbuffer+0x240 and the addresses are stored at errorbuffer+0x130+i\*8
 where i = 0-\>address count
 
 # fatal:p
+
+This is "nn::fatalsrv::IPrivateService".
+
+| Cmd | Name          |
+| --- | ------------- |
+| 0   | GetFatalEvent |
