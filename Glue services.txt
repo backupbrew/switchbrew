@@ -23,7 +23,7 @@ This is "nn::arp::detail::IWriter".
 |-
 | 0 || GetIRegistrar
 |-
-| 1 || SubmitWriter
+| 1 || DeleteProperties
 |}
 
 == IRegistrar ==

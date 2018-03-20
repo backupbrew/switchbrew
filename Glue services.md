@@ -13,10 +13,10 @@ This is "nn::arp::detail::IReader".
 
 This is "nn::arp::detail::IWriter".
 
-| Cmd | Name          |
-| --- | ------------- |
-| 0   | GetIRegistrar |
-| 1   | SubmitWriter  |
+| Cmd | Name             |
+| --- | ---------------- |
+| 0   | GetIRegistrar    |
+| 1   | DeleteProperties |
 
 ## IRegistrar
 
