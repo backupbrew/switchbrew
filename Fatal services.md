@@ -1,14 +1,15 @@
 # fatal:u
 
-This is "nn::fatalsrv::IService".
+This is
+"nn::fatalsrv::IService".
 
-| Cmd | Name                                                           |
-| --- | -------------------------------------------------------------- |
-| 0   |                                                                |
-| 1   | FatalSimple                                                    |
-| 2   | [\#TransitionToFatalError](#TransitionToFatalError "wikilink") |
+| Cmd | Name                                                               |
+| --- | ------------------------------------------------------------------ |
+| 0   | ThrowFatal                                                         |
+| 1   | ThrowFatalWithPolicy                                               |
+| 2   | [\#ThrowFatalWithCpuContext](#ThrowFatalWithCpuContext "wikilink") |
 
-## TransitionToFatalError
+## ThrowFatalWithCpuContext
 
 Takes an input u64 errorcode and an unknown u64(TID maybe?). It also
 takes a type-0x15 error buffer and a pid-descriptor. The error buffer
@@ -23,5 +24,3 @@ This is "nn::fatalsrv::IPrivateService".
 | Cmd | Name          |
 | --- | ------------- |
 | 0   | GetFatalEvent |
-
-[Category:Services](Category:Services "wikilink")
