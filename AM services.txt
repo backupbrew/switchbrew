@@ -861,6 +861,23 @@ On failure, official user-processes will retry using this command in a loop whil
 = idle:sys =
 This is "nn::idle::detail::IPolicyManagerSystem"
 
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetAutoPowerDownEvent
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 || 
+|-
+| 5 || 
+|}
+
 = omm =
 This is "nn::omm::detail::IOperationModeManager"
 

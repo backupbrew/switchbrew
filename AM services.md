@@ -665,6 +665,15 @@ called first.
 
 This is "nn::idle::detail::IPolicyManagerSystem"
 
+| Cmd | Name                  |
+| --- | --------------------- |
+| 0   | GetAutoPowerDownEvent |
+| 1   |                       |
+| 2   |                       |
+| 3   |                       |
+| 4   |                       |
+| 5   |                       |
+
 # omm
 
 This is "nn::omm::detail::IOperationModeManager"
