@@ -692,18 +692,20 @@ that interacts with the [Dock](Dock.md "wikilink") through
 
 This is "nn::spsm::detail::IPowerStateInterface".
 
-| Cmd | Name                    |
-| --- | ----------------------- |
-| 0   | GetState                |
-| 1   | SleepSystemAndWaitAwake |
-| 2   |                         |
-| 3   |                         |
-| 4   |                         |
-| 5   |                         |
-| 6   |                         |
-| 7   |                         |
-| 8   |                         |
-| 9   |                         |
+| Cmd | Name                                          |
+| --- | --------------------------------------------- |
+| 0   | GetState                                      |
+| 1   | SleepSystemAndWaitAwake                       |
+| 2   |                                               |
+| 3   |                                               |
+| 4   | GetNotificationMessageEventHandle             |
+| 5   |                                               |
+| 6   |                                               |
+| 7   |                                               |
+| 8   | AnalyzePerformanceLogForLastSleepWakeSequence |
+| 9   | ChangeHomeButtonLongPressingTime              |
+| 10  |                                               |
+| 11  |                                               |
 
 # Enums
 

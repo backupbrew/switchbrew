@@ -895,7 +895,6 @@ Besides [[PTM_services]], this is the only service that interacts with the [[Doc
 = spsm =
 This is "nn::spsm::detail::IPowerStateInterface".
 
-
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -908,7 +907,7 @@ This is "nn::spsm::detail::IPowerStateInterface".
 |-
 | 3 || 
 |-
-| 4 || 
+| 4 || GetNotificationMessageEventHandle
 |-
 | 5 || 
 |-
@@ -916,9 +915,13 @@ This is "nn::spsm::detail::IPowerStateInterface".
 |-
 | 7 || 
 |-
-| 8 || 
+| 8 || AnalyzePerformanceLogForLastSleepWakeSequence
 |-
-| 9 || 
+| 9 || ChangeHomeButtonLongPressingTime
+|-
+| 10 || 
+|-
+| 11 || 
 |}
 
 = Enums =
