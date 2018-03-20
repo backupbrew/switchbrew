@@ -754,6 +754,8 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0x40084707 || In || 8 || [[#NVGPU_GPU_IOCTL_FLUSH_L2]] ||
 |-
+| 0x4008470D || In || 8 || NVGPU_GPU_IOCTL_INVAL_ICACHE ||
+|-
 | 0x4008470E || In || 8 || NVGPU_GPU_IOCTL_SET_MMUDEBUG_MODE ||
 |-
 | 0x4010470F || In || 16 || NVGPU_GPU_IOCTL_SET_SM_DEBUG_MODE ||
