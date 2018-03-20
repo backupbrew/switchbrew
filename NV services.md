@@ -485,7 +485,7 @@ driver.
 | 0x4010060A | In        | 16   | NVSCHED\_CTRL\_UNLINK\_RUNLIST             |       |
 | 0x4008060B | In        | 8    | NVSCHED\_CTRL\_REMOVE\_RUNLIST             |       |
 | 0x8001060C | Out       | 1    | NVSCHED\_CTRL\_HAS\_OVERRUN\_EVENT         |       |
-| 0x8010060D | Out       | 16   |                                            |       |
+| 0x8010060D | Out       | 16   | NVSCHED\_CTRL\_GET\_NEXT\_OVERRUN\_EVENT   |       |
 | 0x400C060E | In        | 12   | NVSCHED\_CTRL\_PUT\_CONDUCTOR\_FLIP\_FENCE |       |
 | 0x4008060F | In        | 8    | NVSCHED\_CTRL\_DETACH\_APPLICATION         |       |
 | 0x40100610 | In        | 16   |                                            |       |
