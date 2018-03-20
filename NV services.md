@@ -475,11 +475,11 @@ driver.
 | ---------- | --------- | ---- | ------------------------------------------ | ----- |
 | 0x00000601 | \-        | 0    | NVSCHED\_CTRL\_ENABLE                      |       |
 | 0x00000602 | \-        | 0    | NVSCHED\_CTRL\_DISABLE                     |       |
-| 0x40180603 | In        | 1056 | NVSCHED\_CTRL\_ADD\_APPLICATION            |       |
-| 0x40180604 | In        | 60   | NVSCHED\_CTRL\_UPDATE\_APPLICATION         |       |
-| 0x40080605 | In        | 60   | NVSCHED\_CTRL\_REMOVE\_APPLICATION         |       |
-| 0x80080606 | Out       | 60   | NVSCHED\_CTRL\_GET\_ID                     |       |
-| 0x80080607 | Out       | 60   | NVSCHED\_CTRL\_ADD\_RUNLIST                |       |
+| 0x40180603 | In        | 24   | NVSCHED\_CTRL\_ADD\_APPLICATION            |       |
+| 0x40180604 | In        | 24   | NVSCHED\_CTRL\_UPDATE\_APPLICATION         |       |
+| 0x40080605 | In        | 8    | NVSCHED\_CTRL\_REMOVE\_APPLICATION         |       |
+| 0x80080606 | Out       | 8    | NVSCHED\_CTRL\_GET\_ID                     |       |
+| 0x80080607 | Out       | 8    | NVSCHED\_CTRL\_ADD\_RUNLIST                |       |
 | 0x40180608 | In        | 24   | NVSCHED\_CTRL\_UPDATE\_RUNLIST             |       |
 | 0x40100609 | In        | 16   | NVSCHED\_CTRL\_LINK\_RUNLIST               |       |
 | 0x4010060A | In        | 16   | NVSCHED\_CTRL\_UNLINK\_RUNLIST             |       |
