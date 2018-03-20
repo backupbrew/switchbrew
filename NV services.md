@@ -682,6 +682,7 @@ set.
 | 0x40084403 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL                   |       |
 | 0x40044404 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE                      |       |
 | 0x40044405 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE              |       |
+| 0x40044406 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SUSPEND\_RESUME\_SM            |       |
 | 0xC0184407 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP                   |       |
 | 0x40084408 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP                 |       |
 | 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING                   |       |

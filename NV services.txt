@@ -711,6 +711,8 @@ Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugMo
 |-
 | 0x40044405 || In || 4 || NVGPU_DBG_GPU_IOCTL_SMPC_CTXSW_MODE ||
 |-
+| 0x40044406 || In || 4 || NVGPU_DBG_GPU_IOCTL_SUSPEND_RESUME_SM ||
+|-
 | 0xC0184407 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_PERFBUF_MAP ||
 |-
 | 0x40084408 || In || 8 || NVGPU_DBG_GPU_IOCTL_PERFBUF_UNMAP ||
