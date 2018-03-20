@@ -18,27 +18,27 @@ This is "nn::fan::detail::IManager".
 
 This is "nn::psm::IPsmServer".
 
-| Cmd | Name                          |
-| --- | ----------------------------- |
-| 0   |                               |
-| 1   |                               |
-| 2   |                               |
-| 3   |                               |
-| 4   |                               |
-| 5   |                               |
-| 6   |                               |
-| 7   | OpenSession                   |
-| 8   |                               |
-| 9   |                               |
-| 10  |                               |
-| 11  |                               |
-| 12  | GetBatteryVoltageState        |
-| 13  | GetRawBatteryChargePercentage |
-| 14  |                               |
-| 15  |                               |
-| 16  |                               |
-| 17  |                               |
-|     |                               |
+| Cmd | Name                              |
+| --- | --------------------------------- |
+| 0   | GetBatteryChargePercentage        |
+| 1   | GetChargerType                    |
+| 2   | EnableBatteryCharging             |
+| 3   | DisableBatteryCharging            |
+| 4   | IsBatteryChargingEnabled          |
+| 5   | AcquireControllerPowerSupply      |
+| 6   | ReleaseControllerPowerSupply      |
+| 7   | OpenSession                       |
+| 8   | EnableEnoughPowerChargeEmulation  |
+| 9   | DisableEnoughPowerChargeEmulation |
+| 10  | EnableFastBatteryCharging         |
+| 11  | DisableFastBatteryCharging        |
+| 12  | GetBatteryVoltageState            |
+| 13  | GetRawBatteryChargePercentage     |
+| 14  | IsEnoughPowerSupplied             |
+| 15  | GetBatteryAgePercentage           |
+| 16  | GetBatteryChargeInfoEvent         |
+| 17  | GetBatteryChargeInfoFields        |
+|     |                                   |
 
 ## IPsmSession
 

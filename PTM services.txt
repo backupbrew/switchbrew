@@ -30,41 +30,41 @@ This is "nn::psm::IPsmServer".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetBatteryChargePercentage
 |-
-| 1 ||
+| 1 || GetChargerType
 |-
-| 2 ||
+| 2 || EnableBatteryCharging
 |-
-| 3 ||
+| 3 || DisableBatteryCharging
 |-
-| 4 ||
+| 4 || IsBatteryChargingEnabled
 |-
-| 5 ||
+| 5 || AcquireControllerPowerSupply
 |-
-| 6 ||
+| 6 || ReleaseControllerPowerSupply
 |-
 | 7 || OpenSession
 |-
-| 8 ||
+| 8 || EnableEnoughPowerChargeEmulation
 |-
-| 9 ||
+| 9 || DisableEnoughPowerChargeEmulation
 |-
-| 10 ||
+| 10 || EnableFastBatteryCharging
 |-
-| 11 ||
+| 11 || DisableFastBatteryCharging
 |-
 | 12 || GetBatteryVoltageState
 |-
 | 13 || GetRawBatteryChargePercentage
 |-
-| 14 ||
+| 14 || IsEnoughPowerSupplied
 |-
-| 15 ||
+| 15 || GetBatteryAgePercentage
 |-
-| 16 ||
+| 16 || GetBatteryChargeInfoEvent
 |-
-| 17 ||
+| 17 || GetBatteryChargeInfoFields
 |-
 |}
 
