@@ -23,3 +23,5 @@ This is "nn::fatalsrv::IPrivateService".
 | Cmd | Name          |
 | --- | ------------- |
 | 0   | GetFatalEvent |
+
+[Category:Services](Category:Services "wikilink")
