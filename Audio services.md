@@ -188,13 +188,13 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 
 This is "nn::audio::detail::IAudioRendererManager".
 
-| Cmd | Name                                            |
-| --- | ----------------------------------------------- |
-| 0   | OpenAudioRenderer                               |
-| 1   | GetAudioRendererWorkBufferSize                  |
-| 2   | GetAudioRenderersProcessMasterVolume            |
-| 3   | \[3.0.0+\] SetAudioRenderersProcessMasterVolume |
-| 4   | \[4.0.0+\]                                      |
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   | OpenAudioRenderer              |
+| 1   | GetAudioRendererWorkBufferSize |
+| 2   |                                |
+| 3   | \[3.0.0+\]                     |
+| 4   | \[4.0.0+\]                     |
 
 ## IAudioRenderer
 
@@ -310,35 +310,35 @@ Takes an u64
 
 This is "nn::audioctrl::detail::IAudioController".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   |            |
-| 3   |            |
-| 4   |            |
-| 5   |            |
-| 6   |            |
-| 7   |            |
-| 8   |            |
-| 9   |            |
-| 10  |            |
-| 11  |            |
-| 12  |            |
-| 13  |            |
-| 14  |            |
-| 15  |            |
-| 16  |            |
-| 17  | \[3.0.0+\] |
-| 18  | \[3.0.0+\] |
-| 19  | \[3.0.0+\] |
-| 20  | \[3.0.0+\] |
-| 21  | \[3.0.0+\] |
-| 22  | \[3.0.0+\] |
-| 23  | \[4.0.0+\] |
-| 24  | \[4.0.0+\] |
-| 25  | \[4.0.0+\] |
-| 26  | \[4.0.0+\] |
+| Cmd | Name             |
+| --- | ---------------- |
+| 0   |                  |
+| 1   |                  |
+| 2   |                  |
+| 3   |                  |
+| 4   |                  |
+| 5   |                  |
+| 6   |                  |
+| 7   | SetDefaultTarget |
+| 8   |                  |
+| 9   |                  |
+| 10  |                  |
+| 11  |                  |
+| 12  |                  |
+| 13  |                  |
+| 14  |                  |
+| 15  |                  |
+| 16  |                  |
+| 17  | \[3.0.0+\]       |
+| 18  | \[3.0.0+\]       |
+| 19  | \[3.0.0+\]       |
+| 20  | \[3.0.0+\]       |
+| 21  | \[3.0.0+\]       |
+| 22  | \[3.0.0+\]       |
+| 23  | \[4.0.0+\]       |
+| 24  | \[4.0.0+\]       |
+| 25  | \[4.0.0+\]       |
+| 26  | \[4.0.0+\]       |
 
 # codecctl
 

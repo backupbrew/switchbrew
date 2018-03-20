@@ -230,9 +230,9 @@ This is "nn::audio::detail::IAudioRendererManager".
 |-
 | 1 || GetAudioRendererWorkBufferSize
 |-
-| 2 || GetAudioRenderersProcessMasterVolume
+| 2 || 
 |-
-| 3 || [3.0.0+] SetAudioRenderersProcessMasterVolume
+| 3 || [3.0.0+]
 |-
 | 4 || [4.0.0+]
 |}
@@ -390,7 +390,7 @@ This is "nn::audioctrl::detail::IAudioController".
 |-
 | 6 ||
 |-
-| 7 ||
+| 7 || SetDefaultTarget
 |-
 | 8 ||
 |-
