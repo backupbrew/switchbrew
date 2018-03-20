@@ -3,11 +3,11 @@
 This is
 "nn::fssrv::sf::IFileSystemProxyForLoader".
 
-| Cmd | Name                  | Arguments                                                           | Notes                                                |
-| --- | --------------------- | ------------------------------------------------------------------- | ---------------------------------------------------- |
-| 0   | MountCode             | u64 TitleId + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink"). |
-| 1   | IsCodeMounted         | u64 ProcessId                                                       | Returns a bool (1 if code is mounted).               |
-| 2   | \[4.0.0+\] Initialize | PID descriptor                                                      |                                                      |
+| Cmd | Name                         | Arguments                                                           | Notes                                                |
+| --- | ---------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------- |
+| 0   | OpenCodeFileSystem           | u64 TitleId + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink"). |
+| 1   | IsArchivedProgram            | u64 ProcessId                                                       | Returns a bool (1 if code is mounted).               |
+| 2   | \[4.0.0+\] SetCurrentProcess | PID descriptor                                                      |                                                      |
 
 # fsp-pr
 
@@ -16,12 +16,12 @@ This is
 
 | Cmd | Name                                                                         | Notes |
 | --- | ---------------------------------------------------------------------------- | ----- |
-| 0   | [\#SetFsPermissions](#SetFsPermissions "wikilink")                           |       |
-| 1   | [\#ClearFsPermissions](#ClearFsPermissions "wikilink")                       |       |
-| 2   | \[4.0.0+\] Initialize                                                        |       |
+| 0   | [\#RegisterProgram](#RegisterProgram "wikilink")                             |       |
+| 1   | [\#UnregisterProgram](#UnregisterProgram "wikilink")                         |       |
+| 2   | \[4.0.0+\] SetCurrentProcess                                                 |       |
 | 256 | [\#SetEnabledProgramVerification](#SetEnabledProgramVerification "wikilink") |       |
 
-## SetFsPermissions
+## RegisterProgram
 
 Takes a storageID, a pid, a titleID, a 0x1C type-A buffer for the [ FS
 Access
@@ -32,7 +32,7 @@ Control](NPDM#FS%20Access%20Control.md##FS_Access_Control "wikilink")
 Final FS permissions are stored as (ACI0\_perms & ACID\_perms). Will
 panic(svcBreak) when buffer sizes from ipc-rawdata are invalid.
 
-## ClearFsPermissions
+## UnregisterProgram
 
 Takes a pid. Removes registered FS permissions for that PID.
 
