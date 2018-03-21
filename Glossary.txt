@@ -96,6 +96,10 @@
 | Local device network services
 |
 |-
+| [[Manu_Services|Manu]]
+| Manufacturing Services
+|
+|-
 | [[NAX0|NAX0]]
 | Nintendo AES XTS file system / file format
 | Long form name is known as the Advanced Encryption Standard XEX-based tweaked-codebook mode with ciphertext stealing file system / file format
