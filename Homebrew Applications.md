@@ -30,9 +30,9 @@ available.
 
 ### Applications
 
-| Name                                                              | Description                                                               | Author                               | Download | Open-Source | Last Updated |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------ | -------- | ----------- | ------------ |
-| [switch\_sysmodule](https://github.com/yellows8/switch_sysmodule) | RPC over USB, etc. Should be usable as an application but not yet tested. | [Yellows8](User:Yellows8 "wikilink") |          | Yes         |              |
+| Name                                                              | Description                                                                                        | Author                               | Download | Open-Source | Last Updated |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------ | -------- | ----------- | ------------ |
+| [switch\_sysmodule](https://github.com/yellows8/switch_sysmodule) | RPC over USB, etc. Originally a sysmodule, however this can also be used as a regular application. | [Yellows8](User:Yellows8 "wikilink") |          | Yes         |              |
 
 ### Game Engines
 
