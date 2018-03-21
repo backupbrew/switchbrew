@@ -333,7 +333,7 @@ partition.
 
 ## OpenGameCardStorage
 
-Takes an input u32 (partition ID), and returns an
+Takes two input u32s (gamecard handle, partition ID), and returns an
 [\#IStorage](#IStorage "wikilink") for the
 [partition](Gamecard%20Format.md "wikilink").
 

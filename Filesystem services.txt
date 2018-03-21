@@ -437,7 +437,7 @@ Creates savedata in the SYSTEM [[Flash_Filesystem|NAND]] partition.
 
 == OpenGameCardStorage ==
 
-Takes an input u32 (partition ID), and returns an [[#IStorage]] for the [[Gamecard_Format|partition]].
+Takes two input u32s (gamecard handle, partition ID), and returns an [[#IStorage]] for the [[Gamecard_Format|partition]].
 
 == OpenGameCardFileSystem ==
 Takes two input u32s, with the second u32 located at +4 in rawdata after the first u32.
