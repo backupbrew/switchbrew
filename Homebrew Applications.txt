@@ -136,6 +136,75 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 
 | 2018-03-08
 |-
+| FCEUMM (NES)
+| Nintendo Entertainment System (NES) Emulator
+| 
+| [https://gbatemp.net/attachments/libretro-fceumm-rar.116907/ Here]
+| 
+| 2018-03-08
+|-
+| Virtual Jaguar
+| Atari Jaguar Emulator
+| 
+| [https://gbatemp.net/attachments/virtual_jaguar-nro-zip.117971/ Here]
+| 
+| 2018-01-18
+|-
+| mGBA (GB, GBC, GBA)
+| Gameboy, Gameboy Color, and Gameboy Advance Emulator
+| 
+| [https://gbatemp.net/attachments/mgba-nro-zip.116720/ Here]
+| 
+| 2018-03-19
+|-
+| VBA Next (GB, GBC, GBA)
+| Gameboy, Gameboy Color, and Gameboy Advance Emulator
+| 
+| [https://gbatemp.net/attachments/vba-next-rar.116908/ Here]
+| 
+| 2018-01-09
+|-
+| GearBoy (GB, GBC)
+| Gameboy and Gameboy Color Emulator
+| 
+| [https://gbatemp.net/attachments/gearboy-nro-zip.116723/ Here]
+| 
+| 2018-01-18
+|-
+| Gambattle (GB, GBC)
+| Gameboy and Gameboy Color Emulator
+| 
+| [https://gbatemp.net/attachments/gambatte_fix-nro-zip.117249/ Here]
+| 
+| 2018-01-18
+|-
+| Picodrive
+| Genesis, MegaDrive, Master System, 32x, and Sega CD Emulator
+| 
+| [https://gbatemp.net/attachments/picodrive-nro-zip.117920/ Here]
+| 
+| 2018-03-19
+|-
+| Genesis Plus GX
+| Genesis, MegaDrive, Master System, Game Gear, and Sega CD Emulator
+| 
+| [https://gbatemp.net/attachments/genesisgx-nro-zip.116038/ Here]
+| 
+| 2018-03-19
+|-
+| MAME 2003
+| Multi-purpose emulation framework, Arcade game Emulator
+| 
+| [https://gbatemp.net/attachments/mame2003-nro-zip.117945/ Here]
+| 
+| 2018-03-19
+|-
+| Beetle PSX 
+| Playstation Emulator
+| 
+| [https://gbatemp.net/attachments/beetlepsx-nro-zip.116708/ Here]
+| 
+| 2018-03-19
 |}
 
 ===Title managers===
