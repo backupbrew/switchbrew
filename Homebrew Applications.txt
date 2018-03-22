@@ -193,65 +193,65 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 
 | 2018-03-08
 |-
-| FCEUMM (NES)
+| FCEUmm RetroArch
 | Nintendo Entertainment System (NES) Emulator
 | 
 | [https://gbatemp.net/attachments/libretro-fceumm-rar.116907/ Here]
 | 
 | 2018-03-08
 |-
-| Virtual Jaguar
+| Virtual Jaguar RetroArch
 | Atari Jaguar Emulator
 | 
 | [https://gbatemp.net/attachments/virtual_jaguar-nro-zip.117971/ Here]
 | 
 | 2018-03-19
 |-
-| mGBA (GB, GBC, GBA)
-| Gameboy, Gameboy Color, and Gameboy Advance Emulator
-| [[User:Endrift|Endrift]]
+| mGBA RetroArch
+| Gameboy, Gameboy Color, and Gameboy Advance Emulator. Unofficial build.
+| [[User:Endrift|endrift]]
 | [https://gbatemp.net/attachments/mgba-nro-zip.116720/ Here]
 | 
 | 2018-03-19
 |-
-| GearBoy (GB, GBC)
+| GearBoy RetroArch
 | Gameboy and Gameboy Color Emulator
 | 
 | [https://gbatemp.net/attachments/gearboy-nro-zip.116723/ Here]
 | 
 | 2018-01-18
 |-
-| Gambattle (GB, GBC)
+| gambatte RetroArch
 | Gameboy and Gameboy Color Emulator
-| GDKChan
+| sinamas
 | [https://gbatemp.net/attachments/gambatte_fix-nro-zip.117249/ Here]
 | 
 | 2018-01-18
 |-
-| Picodrive
+| Picodrive RetroArch
 | Genesis, MegaDrive, Master System, 32x, and Sega CD Emulator
 | 
 | [https://gbatemp.net/attachments/picodrive-nro-zip.117920/ Here]
 | 
 | 2018-03-19
 |-
-| Genesis Plus GX
+| Genesis Plus GX RetroArch
 | Genesis, MegaDrive, Master System, Game Gear, and Sega CD Emulator
-| 
+| eke-eke
 | [https://gbatemp.net/attachments/genesisgx-nro-zip.116038/ Here]
 | 
 | 2018-03-19
 |-
-| MAME 2003
+| MAME 2003 RetroArch
 | Multi-purpose emulation framework, Arcade game Emulator
 | 
 | [https://gbatemp.net/attachments/mame2003-nro-zip.117945/ Here]
 | 
 | 2018-03-19
 |-
-| Beetle PSX 
+| Beetle PSX RetroArch
 | Playstation Emulator
-| 
+| Ryphecha
 | [https://gbatemp.net/attachments/beetlepsx-nro-zip.116708/ Here]
 | 
 | 2018-03-19
