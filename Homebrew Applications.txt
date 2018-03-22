@@ -139,6 +139,20 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 
 | 2018-03-10
 |-
+| Meritous
+| Top View Dungeon Game
+| nop90
+| [https://github.com/Nop90-Switch/Meritous-Switch/releases Here]
+| [https://github.com/Nop90-Switch/Meritous-Switch Yes]
+| 2018-03-17
+|-
+| HCL-switch
+| A port of Hydra Castle Labyrinth for PSVITA.
+| Rinnegatamante
+| [https://www.switchbru.com/appstore/zips/HCL-switch.zip Here]
+| [https://github.com/Rinnegatamante/HCL-Switch Yes]
+| 2018-03-03
+|-
 |}
 
 === Emulators ===
