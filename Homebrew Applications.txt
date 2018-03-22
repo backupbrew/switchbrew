@@ -209,7 +209,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 |-
 | mGBA (GB, GBC, GBA)
 | Gameboy, Gameboy Color, and Gameboy Advance Emulator
-| 
+| [[User:Endrift|Endrift]]
 | [https://gbatemp.net/attachments/mgba-nro-zip.116720/ Here]
 | 
 | 2018-03-19
