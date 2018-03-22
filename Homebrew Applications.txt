@@ -39,6 +39,22 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [[User:Yellows8|Yellows8]]
 | 
 | Yes
+|
+|-
+| [https://www.switchbru.com/appstore/ AppStore NX]
+| Download and manage homebrew apps
+| vgmoose
+| [https://github.com/vgmoose/appstorenx/releases Here]
+| [https://github.com/vgmoose/appstorenx/ Yes]
+| 2018-03-05
+|-
+| Pynx
+| An ecosystem for developing and running Python homebrew applications on the Nintendo Switch.
+| AileenLumina
+| [https://github.com/nx-python/Pynx/releases Here]
+| [https://github.com/nx-python/Pynx/ Yes]
+| 2018-03-19
+|-
 |}
 
 === Game Engines ===

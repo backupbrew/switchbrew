@@ -30,9 +30,12 @@ available.
 
 ### Applications
 
-| Name                                                              | Description                                                                                        | Author                               | Download | Open-Source | Last Updated |
-| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------ | -------- | ----------- | ------------ |
-| [switch\_sysmodule](https://github.com/yellows8/switch_sysmodule) | RPC over USB, etc. Originally a sysmodule, however this can also be used as a regular application. | [Yellows8](User:Yellows8 "wikilink") |          | Yes         |              |
+| Name                                                              | Description                                                                                        | Author                               | Download                                               | Open-Source                                   | Last Updated |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------ | --------------------------------------------- | ------------ |
+| [switch\_sysmodule](https://github.com/yellows8/switch_sysmodule) | RPC over USB, etc. Originally a sysmodule, however this can also be used as a regular application. | [Yellows8](User:Yellows8 "wikilink") |                                                        | Yes                                           |              |
+| [AppStore NX](https://www.switchbru.com/appstore/)                | Download and manage homebrew apps                                                                  | vgmoose                              | [Here](https://github.com/vgmoose/appstorenx/releases) | [Yes](https://github.com/vgmoose/appstorenx/) | 2018-03-05   |
+| Pynx                                                              | An ecosystem for developing and running Python homebrew applications on the Nintendo Switch.       | AileenLumina                         | [Here](https://github.com/nx-python/Pynx/releases)     | [Yes](https://github.com/nx-python/Pynx/)     | 2018-03-19   |
+|                                                                   |                                                                                                    |                                      |                                                        |                                               |              |
 
 ### Game Engines
 
