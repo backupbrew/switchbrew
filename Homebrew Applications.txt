@@ -129,11 +129,11 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Cpasjuste/pfba Yes]
 | 2018-02-20
 |-
-| Snes2x 2010
+| Snes9x 2010
 | Super Nintendo Entertainment System (SNES) Emulator
-| plutoo
+| 
 | [https://gbatemp.net/attachments/snes2x2010-rar.116906/ Here]
-| [https://github.com/switchbrew/libnx Yes]
+| 
 | 2018-03-08
 |-
 |}

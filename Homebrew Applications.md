@@ -55,11 +55,11 @@ available.
 
 ### Emulators
 
-| Name        | Description                                         | Author    | Download                                                       | Open-Source                                | Last Updated |
-| ----------- | --------------------------------------------------- | --------- | -------------------------------------------------------------- | ------------------------------------------ | ------------ |
-| pFBA        | A port of final burn alpha to multiple platforms    | cpasjuste | [Here](https://github.com/Cpasjuste/pfba/releases)             | [Yes](https://github.com/Cpasjuste/pfba)   | 2018-02-20   |
-| Snes2x 2010 | Super Nintendo Entertainment System (SNES) Emulator | plutoo    | [Here](https://gbatemp.net/attachments/snes2x2010-rar.116906/) | [Yes](https://github.com/switchbrew/libnx) | 2018-03-08   |
-|             |                                                     |           |                                                                |                                            |              |
+| Name        | Description                                         | Author    | Download                                                       | Open-Source                              | Last Updated |
+| ----------- | --------------------------------------------------- | --------- | -------------------------------------------------------------- | ---------------------------------------- | ------------ |
+| pFBA        | A port of final burn alpha to multiple platforms    | cpasjuste | [Here](https://github.com/Cpasjuste/pfba/releases)             | [Yes](https://github.com/Cpasjuste/pfba) | 2018-02-20   |
+| Snes9x 2010 | Super Nintendo Entertainment System (SNES) Emulator |           | [Here](https://gbatemp.net/attachments/snes2x2010-rar.116906/) |                                          | 2018-03-08   |
+|             |                                                     |           |                                                                |                                          |              |
 
 ### Title managers
 
