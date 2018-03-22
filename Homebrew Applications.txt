@@ -207,12 +207,12 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 
 | 2018-03-19
 |-
-| VBA Next (GB, GBC, GBA)
+| mGBA (GB, GBC, GBA)
 | Gameboy, Gameboy Color, and Gameboy Advance Emulator
+| [[User:Endrift|Endrift]]
+| [https://gbatemp.net/attachments/mgba-nro-zip.116720/ Here]
 | 
-| [https://gbatemp.net/attachments/vba-next-rar.116908/ Here]
-| 
-| 2018-01-09
+| 2018-03-19
 |-
 | GearBoy (GB, GBC)
 | Gameboy and Gameboy Color Emulator
