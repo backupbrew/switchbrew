@@ -39,7 +39,14 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [[User:Yellows8|Yellows8]]
 | 
 | Yes
-| 
+|
+| -
+| AppStore NX
+| Homebrew Appstore for the Switch.
+| vgmoose
+| [https://github.com/vgmoose/appstorenx/releases Here]
+| [https://github.com/vgmoose/appstorenx Yes]
+| -
 |}
 
 === Game Engines ===
