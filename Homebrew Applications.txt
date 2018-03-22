@@ -205,13 +205,6 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 
 | [https://gbatemp.net/attachments/virtual_jaguar-nro-zip.117971/ Here]
 | 
-| 2018-01-18
-|-
-| mGBA (GB, GBC, GBA)
-| Gameboy, Gameboy Color, and Gameboy Advance Emulator
-| [[User:Endrift|Endrift]]
-| [https://gbatemp.net/attachments/mgba-nro-zip.116720/ Here]
-| 
 | 2018-03-19
 |-
 | VBA Next (GB, GBC, GBA)
@@ -230,7 +223,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 |-
 | Gambattle (GB, GBC)
 | Gameboy and Gameboy Color Emulator
-| 
+| GDKChan
 | [https://gbatemp.net/attachments/gambatte_fix-nro-zip.117249/ Here]
 | 
 | 2018-01-18
