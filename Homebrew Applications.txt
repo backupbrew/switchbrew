@@ -111,6 +111,34 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Cpasjuste/openbor Yes]
 | 2018-03-18
 |-
+| TicTacToe
+| A Tic Tac Toe implementation for Switch.
+| SH3RLOCK
+| [https://sh3rlock.ch/ttt.nro Here]
+| [https://sh3rlock.ch/ttt.zip Yes]
+| 2018-02-23
+|-
+| SDLLopan
+| A classic remake of Linux Lopan (a Mahjong solitaire clone) by Dave Ashley.
+| nop90
+| [https://github.com/Nop90-Switch/SDLLopan-SWITCH/releases Here]
+| [https://github.com/Nop90-Switch/SDLLopan-SWITCH Yes]
+| 2018-03-02
+|-
+| Tetriswitch
+| A Tetris clone for Nintendo Switch.
+| Ryuzaki_MrL
+| [https://github.com/Ryuzaki-MrL/tetriswitch/releases Here]
+| [https://github.com/Ryuzaki-MrL/tetriswitch Yes]
+| 2018-03-13
+|-
+| Snake
+| A minimalistic Snake clone for Switch made with LovePotion.
+| Shrike
+| [https://github.com/Ryuzaki-MrL/tetriswitch/releases Here]
+| 
+| 2018-03-10
+|-
 |}
 
 === Emulators ===
