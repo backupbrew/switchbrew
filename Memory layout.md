@@ -97,8 +97,10 @@ are read-only or both are read-write). It does not have SMAP. The
 previous rule has one exception: pages that are mapped unreadable in
 usermode are still forced readable from kernelmode.
 
-As of [2.0.0](2.0.0.md "wikilink") KASLR is not
-used.
+KASLR is being used since [5.0.0](5.0.0.md "wikilink"), but not before,
+with
+
+`kaslrBase = (rand64ViaSmc() % 0x3FFF0 << 21) + DRAM_VA(_start);`
 
 ## 1.0.0
 

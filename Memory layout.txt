@@ -65,7 +65,9 @@ PXN bit is set in the MMU descriptor for userland code pages. This means that us
 
 For userland pages, the kernel has same access as userland (either both are read-only or both are read-write). It does not have SMAP. The previous rule has one exception: pages that are mapped unreadable in usermode are still forced readable from kernelmode.
 
-As of [[2.0.0]] KASLR is not used.
+KASLR is being used since [[5.0.0]], but not before, with
+
+ kaslrBase = (rand64ViaSmc() % 0x3FFF0 << 21) + DRAM_VA(_start);
 
 == 1.0.0 ==
 {| class="wikitable" border="1"
