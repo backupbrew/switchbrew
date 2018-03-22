@@ -295,6 +295,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 !  width="5%"  | Open-Source
 !  width="15%" | Last Updated
 |-
+| Ftpd
+| A port of ftpd for 3DS.
+| mtheall, TuxSH
+| [https://www.switchbru.com/appstore/zips/ftpd.zip Here]
+| [https://github.com/TuxSH/ftpd/tree/switch_pr Yes]
+| 2018-02-27
+|-
 |}
 
 === Demos ===

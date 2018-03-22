@@ -93,9 +93,10 @@ available.
 
 ### File servers
 
-| Name | Description | Author | Download | Open-Source | Last Updated |
-| ---- | ----------- | ------ | -------- | ----------- | ------------ |
-|      |             |        |          |             |              |
+| Name | Description             | Author         | Download                                                 | Open-Source                                         | Last Updated |
+| ---- | ----------------------- | -------------- | -------------------------------------------------------- | --------------------------------------------------- | ------------ |
+| Ftpd | A port of ftpd for 3DS. | mtheall, TuxSH | [Here](https://www.switchbru.com/appstore/zips/ftpd.zip) | [Yes](https://github.com/TuxSH/ftpd/tree/switch_pr) | 2018-02-27   |
+|      |                         |                |                                                          |                                                     |              |
 
 ### Demos
 
