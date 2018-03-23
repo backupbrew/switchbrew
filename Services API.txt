@@ -73,13 +73,13 @@ Takes a pid.
 | [[NS Services]]
 | am: Application Manager, su: System Update
 |-
-| apm, apm:p, apm:sys, fgm, fgm:0, fgm:9, (fgm:dbg?)
+| apm, apm:p, apm:dbg, apm:sys, fgm, fgm:0, fgm:9, fgm:dbg
 | [[APM services]]
-|
+| fgm:1, fgm:2, fgm:3, fgm:4, fgm:5, fgm:6 and fgm:7 used to exist, but are now deprecated.
 |-
 | arp:r, arp:w, bgtc:t, bgtc:sc
 | [[Glue services]]
-| r: Reader, w: Writer
+| 
 |-
 | audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus, auddebug
 | [[Audio services]]
@@ -97,7 +97,8 @@ Takes a pid.
 | ?
 | Power consumption measurement? Not present on retail units.
 |-
-| bpc, bpc:r, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s
+| [1.0.0] bpc:c, bpc:b, bpc:r, bpc:w, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s
+[2.0.0+] bpc, bpc:r, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s
 | [[PCV services]]
 |
 |-
@@ -113,11 +114,11 @@ Takes a pid.
 | [[BTM services]]
 | 
 |-
-| caps:a, caps:c, [5.0.0+] caps:u
+| caps:a, caps:c, [1.0.0] mm:u, [5.0.0+] caps:u
 | [[Capture services]]
 | a: AlbumAccessor, c: AlbumControl
 |-
-| caps:sc, caps:ss, mm:u, vi:m, vi:s, vi:u, cec-mgr, [4.0.0+] caps:su
+| caps:sc, caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0+] caps:su
 | [[Display services]]
 | 
 |-
@@ -127,6 +128,10 @@ Takes a pid.
 |-
 | erpt:c, erpt:r
 | [[Error Report services]]
+|
+|-
+| eupld:c, eupld:r
+| [[Error Upload services]]
 |
 |-
 | es
@@ -139,7 +144,7 @@ Takes a pid.
 |-
 | fatal:u, fatal:p
 | [[Fatal services]]
-| u: User, p: Privileged
+| 
 |-
 | friend:u, friend:v, friend:m, friend:s, friend:a, [5.0.0+] nd:app, nd:sys
 | Friend services
@@ -193,7 +198,7 @@ Takes a pid.
 |-
 | nim, nim:shp, ntc, [5.0.0+] nim:eca
 | [[NIM services]]
-| shp: eShop
+| 
 |-
 | npns:u, npns:s
 | NPNS services
@@ -241,7 +246,11 @@ Takes a pid.
 | [[SPL services]]
 | 
 |-
-| usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pm
+| tspm
+| ?
+| Applications on [1.0.0] used to have access to this service, but it doesn't appear to be present on retail devices.
+|-
+| usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pd:m, usb:pm
 | [[USB services]]
 | 
 |-
