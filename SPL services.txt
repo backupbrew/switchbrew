@@ -1,3 +1,7 @@
+SPL is responsible for handling all cryptographic operations within the system and relaying them to the [[#SMC|Secure Monitor]] when necessary.
+
+During [1.0.0-3.0.2], the only existing services were "csrng" and "spl:". However, in [4.0.0+] the "spl:" service was refactored and split into new services with different permission levels. Each service exposes the IPC command list differently in order to prevent cryptographic operations to take place in the wrong context.
+
 = csrng =
 This is "nn::spl::detail::IRandomInterface".
 
@@ -9,10 +13,10 @@ This is "nn::spl::detail::IRandomInterface".
 |}
 
 == GetRandomBytes ==
-Takes a type-6 buffer and fills it with random data. Same command for "spl:" and "csrng" services.
+Takes a type-6 buffer and fills it with random data from [[SMC#GetRandomBytes|GetRandomBytes SMC]]. Same command for "spl:" and "csrng" services.
 
-= spl: =
-This is "nn::spl::detail::IGeneralInterface".
+= spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu =
+These are "nn::spl::detail::IGeneralInterface", "nn::spl::detail::ICryptoInterface", "nn::spl::detail::IFsInterface", "nn::spl::detail::ISslInterface", "nn::spl::detail::IEsInterface" and "nn::spl::detail::IManuInterface"(?).
 
 [2.0.0+] Where previously only one AES engine was utilized, there is now support for 4 of them.
 
@@ -20,58 +24,72 @@ This is "nn::spl::detail::IGeneralInterface".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name || Permissions
 |-
-| 0 || [[#GetConfig]] || Wrapper for [[SMC#GetConfig|GetConfig SMC]].
+| 0 || [[#GetConfig]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 1 || [[#UserExpMod]] || Speculative name. Wrapper for [[SMC#ExpMod|ExpMod SMC]].
+| 1 || [[#UserExpMod]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
 |-
-| 2 || [[#GenerateAesKek]] || Wrapper for [[SMC#GenerateAesKek|GenerateAesKek SMC]].
+| 2 || [[#GenerateAesKek]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
 |-
-| 3 || [[#LoadAesKey]] || Wrapper for [[SMC#LoadAesKey|LoadAesKey SMC]].
+| 3 || [[#LoadAesKey]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 4 || [[#GenerateAesKey]] || Decrypts 0x10 bytes using AES ECB and uses [[SMC#LoadAesKey|LoadAesKey SMC]] with a fixed Y.
+| 4 || [[#GenerateAesKey]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
 |-
-| 5 || [[#SetConfig]] || Wrapper for [[SMC#SetConfig|SetConfig SMC]].
+| 5 || [[#SetConfig]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
 |-
-| 7 || [[#GetRandomBytes]] || Uses [[SMC#GetRandomBytes|GetRandomBytes SMC]].
+| 7 || [[#GetRandomBytes]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 9 || [[#LoadSecureExpModKey]] || Speculative name. Wrapper for [[SMC#LoadSecureExpModKey|LoadSecureExpModKey SMC]].
+| 9 || [[#LoadSecureExpModKey]] || spl:fs
 |-
-| 10 || [[#SecureExpMod]] || Speculative name. Uses [[SMC#SecureExpMod|SecureExpModSMC]].
+| 10 || [[#SecureExpMod]] || spl:fs
 |-
-| 11 || [[#IsDevelopment]] ||
+| 11 || [[#IsDevelopment]] || spl:, spl:mig, spl:fs, spl:ssl spl:es, spl:manu
 |-
-| 12 || [[#GenerateSpecificAesKey]] || Wrapper for [[SMC#GenerateSpecificAesKey|GenerateSpecificAesKey SMC]].
+| 12 || [[#GenerateSpecificAesKey]] || spl:fs
 |-
-| 13 || [[#DecryptPrivk]] || Speculative name. Wrapper for [[SMC#PrivateRsa|PrivateRsa SMC]].
+| 13 || [[#DecryptRsaPrivateKey]] || spl:ssl, spl:es, spl:manu
 |-
-| 14 || [[#DecryptAesKey]] || Decrypts 0x10 bytes using AES ECB and uses [[SMC#LoadAesKey|LoadAesKey SMC]] with fixed X and Y.
+| 14 || [[#DecryptAesKey]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 15 || [[#DecryptAesCtr]] || Wrapper for [[SMC#CryptAes|CryptAes SMC]].
+| 15 || [[#DecryptAesCtr]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 16 || [[#ComputeCmac]] || Wrapper for [[SMC#ComputeCmac|ComputeCmac SMC]].
+| 16 || [[#ComputeCmac]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
 |-
-| 17 || [[#LoadRsaOaepKey]] || Speculative name. Wrapper for [[SMC#LoadRsaOaepKey|LoadRsaOaepKey SMC]].
+| 17 || [[#LoadRsaOaepKey]] || spl:es
 |-
-| 18 || [[#UnwrapRsaOaepWrappedTitleKey]] || Speculative name. Wrapper for [[SMC#UnwrapRsaOaepWrappedTitleKey|UnwrapRsaOaepWrappedTitleKey SMC]].
+| 18 || [[#UnwrapRsaOaepWrappedTitleKey]] || spl:es
 |-
-| 19 || [[#LoadTitleKey]] || Wrapper for [[SMC#LoadTitleKey|LoadTitleKey SMC]].
+| 19 || [[#LoadTitleKey]] || spl:fs
 |-
-| 20 || [2.0.0+] [[#UnwrapAesWrappedTitleKey ]] || Wrapper for [[SMC#UnwrapAesWrappedTitleKey|UnwrapAesWrappedTitleKey SMC]].
+| 20 || [2.0.0+] [[#UnwrapAesWrappedTitleKey ]] || spl:es
 |-
-| 21 || [2.0.0+] [[#LockAesEngine]] ||
+| 21 || [2.0.0+] [[#LockAesEngine]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 22 || [2.0.0+] [[#UnlockAesEngine]] ||
+| 22 || [2.0.0+] [[#UnlockAesEngine]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 23 || [2.0.0+] [[#GetSplWaitEvent]] ||
+| 23 || [2.0.0+] [[#GetSplWaitEvent]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 24 || [3.0.0+] [[#SetSharedData]] ||
+| 24 || [3.0.0+] [[#SetSharedData]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 25 || [3.0.0+] [[#GetSharedData]] ||
+| 25 || [3.0.0+] [[#GetSharedData]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
+|-
+| 26 || [5.0.0+] ImportSslRsaKey || spl:ssl
+|-
+| 27 || [5.0.0+] SecureExpModWithSslKey || spl:ssl
+|-
+| 28 || [5.0.0+] ImportEsRsaKey || spl:es
+|-
+| 29 || [5.0.0+] SecureExpModWithEsKey || spl:es
+|-
+| 30 || [5.0.0+] EncryptManuRsaKeyForImport || spl:manu
+|-
+| 31 || [5.0.0+] GetPackage2Hash || spl:fs
 |}
 
 == GetConfig ==
+Wrapper for [[SMC#GetConfig|GetConfig SMC]].
+
 Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 
 {| class="wikitable" border="1"
@@ -291,17 +309,22 @@ This item is currently hardcoded to 0.
 This is a SHA-256 hash calculated over the [[Package2|package2]] image. Since the hash calculation is an optional step in pkg2ldr, this item is only valid in recovery mode. Otherwise, an error is returned instead.
 
 == UserExpMod ==
+Wrapper for [[SMC#ExpMod|ExpMod SMC]].
+
 Takes one type-10 (C descriptor) buffer ('''data_out_buf''') and 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''exp_in_buf''' and '''mod_in_buf''').
 
 Performs asymmetric crypto with user supplied modulus and exponent.
 
 == GenerateAesKek ==
+Wrapper for [[SMC#GenerateAesKek|GenerateAesKek SMC]].
+
 Takes a 16-byte EKS ('''Encryption Key Source''') and two words ('''KeyGeneration''' and '''option''') as input.
-'''KeyGeneration''' ranges from 0 to 2.
 
 Returns a scrambled sealed KEK ('''Key Encryption Key''' used as '''key_x''').
 
 == LoadAesKey ==
+Wrapper for [[SMC#LoadAesKey|LoadAesKey SMC]].
+
 Takes a u32 ('''keyslot''') and two 16-byte keys ('''key_x''' and '''key_y''').
 
 Sets the specified '''keyslot''' with a key generated from '''key_x''' and '''key_y'''.
@@ -311,11 +334,13 @@ Sets the specified '''keyslot''' with a key generated from '''key_x''' and '''ke
 == GenerateAesKey ==
 Takes a 16-byte KEK ('''key_x''') and a 16-byte encrypted key ('''enc_key''').
 
-Generates a new key by decrypting '''enc_key''' with a key generated from the supplied '''key_x''' and a fixed '''key_y'''.
+Generates a new key by decrypting (AES-ECB) '''enc_key''' with a key generated from the supplied '''key_x''' and a fixed '''key_y''' set with [[SMC#LoadAesKey|LoadAesKey SMC]].
 
 [2.0.0+] Previously, it always used engine 0. Now it tries to allocate an engine to be used and returns 0xD01A if they're all busy. When the command is done, the engine is released.
 
 == SetConfig ==
+Wrapper for [[SMC#SetConfig|SetConfig SMC]].
+
 Takes a u32 ('''ConfigItem''') and a u64 ('''ConfigVal''').
 
 {| class="wikitable" border="1"
@@ -327,18 +352,22 @@ Takes a u32 ('''ConfigItem''') and a u64 ('''ConfigVal''').
 
 Any other '''ConfigItem''', besides 13, can't be set.
 
-== LoadRsaOaepKey ==
+== LoadSecureExpModKey ==
+Wrapper for [[SMC#LoadSecureExpModKey|LoadSecureExpModKey SMC]].
+
 Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
 '''version''' is 0 for normal keys or 1 for extended keys.
 
 Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key_y''' and imports it for later usage.
 
-== UnwrapRsaOaepWrappedTitleKey ==
-Takes one type-10 (C descriptor) buffer ('''data_out_buf''') and 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''label_hash_in_buf''').
+[5.0.0+] This now calls [[SMC#EncryptRsaKeyForImport|EncryptRsaKeyForImport SMC]] instead.
 
-Decrypts '''data_in_buf''' into '''data_out_buf''' using the private key imported with [[#UnwrapRsaOaepWrappedTitleKey]] and the supplied '''mod_in_buf'''. Afterwards, verifies RSA-OAEP encoding using '''label_hash_in_buf'''.
+== SecureExpMod ==
+Takes 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''param0_in_buf''').
 
-Returns an u32 ('''dec_data_size''').
+Uses [[SMC#SecureExpMod|SecureExpMod SMC]] to decrypt '''data_in_buf''' using the private key imported with [[#LoadSecureExpModKey]] and the supplied '''mod_in_buf''' and '''param0_in_buf'''.
+
+Generates and returns a 16-byte sealed titlekey.
 
 == IsDevelopment ==
 No input params.
@@ -348,12 +377,15 @@ Uses [[#GetConfig]] internally with id=6. Returns true if output from that is 0,
 Returns an u8 flag for whether the system is devunit. Output flag is 0 on retail.
 
 == GenerateSpecificAesKey ==
+Wrapper for [[SMC#GenerateSpecificAesKey|GenerateSpecificAesKey SMC]].
+
 Takes a 16-byte seed ('''key_seed''') and two words ('''KeyGeneration''' and '''option''') as input.
-'''KeyGeneration''' ranges from 0 to 2.
 
 Returns a scrambled key ('''key_a''').
 
-== DecryptPrivk ==
+== DecryptRsaPrivateKey ==
+Wrapper for [[SMC#DecryptRsaPrivateKey|DecryptRsaPrivateKey SMC]].
+
 Takes one type-10 (C descriptor) buffer ('''dec_privk_out_buf'''), one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
 '''version''' is 0 for normal keys or 1 for extended keys.
 
@@ -361,42 +393,50 @@ Decrypts '''enc_privk_in_buf''' into '''dec_privk_out_buf''' with a key generate
 
 Used by [[SSL_services|SSL]]-sysmodule for TLS client-privk.
 
+[5.0.0+] This now calls [[SMC#DecryptOrImportRsaKey|DecryptOrImportRsaKey SMC]] instead.
+
 == DecryptAesKey ==
 Takes a 16-byte encrypted key ('''enc_key''') and two words ('''KeyGeneration''' and '''option''') as input.
-'''KeyGeneration''' ranges from 0 to 2.
 
-Decrypts '''enc_key''' with a key generated from fixed '''key_x''' and '''key_y''' and returns a 16-byte decrypted key ('''dec_key''').
+Decrypts (AES-ECB) '''enc_key''' with a key generated from fixed '''key_x''' and '''key_y''' set with [[SMC#LoadAesKey|LoadAesKey SMC]] and returns a 16-byte decrypted key ('''dec_key''').
 
 [2.0.0+] Introduced same engine allocation code as for [[#GenerateAesKey]].
 
 == DecryptAesCtr ==
 Takes a type-0x46 (B descriptor) buffer ('''data_out_buf'''), a u32 ('''keyslot'''), a type-0x45 (A descriptor) buffer ('''data_in_buf''') and a 16-byte CTR ('''aes_ctr''').
 
-Decrypts '''data_in_buf''' into '''data_out_buf''' using the key set in the specified '''keyslot'''.
+Uses [[SMC#CryptAes|CryptAes SMC]] to decrypt '''data_in_buf''' into '''data_out_buf''', using the key set in the specified '''keyslot'''.
 
 [2.0.0+] Verifies the engine is locked by current session.
 
 == ComputeCmac ==
+Wrapper for [[SMC#ComputeCmac|ComputeCmac SMC]].
+
 Takes one type-9 (X descriptor) buffer ('''data_in_buf''') and a u32 ('''type?''').
 
 Returns a 16-byte CMAC calculated over '''data_in_buf'''.
 
 [2.0.0+] Verifies the engine is locked by current session.
 
-== LoadSecureExpModKey ==
-Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
-'''version''' is 0 for normal keys or 1 for extended keys.
+== LoadRsaOaepKey ==
+Wrapper for [[SMC#LoadRsaOaepKey|LoadRsaOaepKey SMC]].
 
-Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key_y''' and imports it for later usage.
+Takes one type-9 (X descriptor) buffer (enc_privk_in_buf), a 16-byte KEK (key_x), a 16-byte key (key_y) and a u32 (version). version is 0 for normal keys or 1 for extended keys.
 
-== SecureExpMod ==
-Takes 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''param0_in_buf''').
+Decrypts enc_privk_in_buf with a key generated from key_x and key_y and imports it for later usage.
 
-Decrypts '''data_in_buf''' using the private key imported with [[#LoadSecureExpModKey]] and the supplied '''mod_in_buf''' and '''param0_in_buf'''.
+== UnwrapRsaOaepWrappedTitleKey ==
+Wrapper for [[SMC#UnwrapRsaOaepWrappedTitleKey|UnwrapRsaOaepWrappedTitleKey SMC]].
 
-Generates and returns a 16-byte sealed titlekey.
+Takes one type-10 (C descriptor) buffer ('''data_out_buf''') and 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''label_hash_in_buf''').
+
+Decrypts '''data_in_buf''' into '''data_out_buf''' using the private key imported with [[#LoadRsaOaepKey]] and the supplied '''mod_in_buf'''. Afterwards, verifies RSA-OAEP encoding using '''label_hash_in_buf'''.
+
+Returns an u32 ('''dec_data_size''').
 
 == LoadTitleKey ==
+Wrapper for [[SMC#LoadTitleKey|LoadTitleKey SMC]].
+
 Takes a u32 ('''keyslot''') and a 16-byte sealed titlekey.
 
 Sets the specified '''keyslot''' with the titlekey.
@@ -404,6 +444,8 @@ Sets the specified '''keyslot''' with the titlekey.
 [2.0.0+] Verifies the engine is locked by current session.
 
 == UnwrapAesWrappedTitleKey ==
+Wrapper for [[SMC#UnwrapAesWrappedTitleKey|UnwrapAesWrappedTitleKey SMC]].
+
 Takes a 16-byte EKS ('''Encryption Key Source''').
 
 Returns a sealed titlekey.
