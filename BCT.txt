@@ -236,3 +236,6 @@ The version field was changed to 0x03, meaning that the third keyblob is now use
 
 === 4.0.0 - 4.1.0 ===
 The version field was changed to 0x04, meaning that the fourth keyblob is now used.
+
+=== 5.0.0 ===
+The version field was changed to 0x05, meaning that the fifth keyblob is now used.

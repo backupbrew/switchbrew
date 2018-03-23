@@ -296,3 +296,8 @@ now used.
 
 The version field was changed to 0x04, meaning that the fourth keyblob
 is now used.
+
+### 5.0.0
+
+The version field was changed to 0x05, meaning that the fifth keyblob is
+now used.
