@@ -466,7 +466,8 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>glue</p></td>
+<td><p>[1.0.0] arp<br />
+[2.0.0+] glue</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000032</p></td>
