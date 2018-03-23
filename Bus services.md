@@ -138,7 +138,7 @@ This is "nn::gpio::IPadSession".
 | 4-3  | Port index       |
 | 2-0  | Pin number       |
 
-# i2c
+# i2c, i2c:pcv
 
 This is "nn::i2c::IManager".
 
@@ -148,6 +148,19 @@ This is "nn::i2c::IManager".
 | 1   | OpenSession       |
 | 2   | HasDevice         |
 | 3   | HasDeviceForDev   |
+
+## II2cSession
+
+This is "nn::i2c::ISession".
+
+| Cmd | Name                   |
+| --- | ---------------------- |
+| 0   | Send                   |
+| 1   | Receive                |
+| 2   | ExecuteCommandList     |
+| 10  | SendAuto               |
+| 11  | ReceiveAuto            |
+| 12  | ExecuteCommandListAuto |
 
 ## Known Devices
 
@@ -183,30 +196,6 @@ This is "nn::i2c::IManager".
 
 This table is believed to be complete - entries with empty "Used by"
 column haven't been seen being used (devices not present on switch?).
-
-## II2cSession
-
-This is "nn::i2c::ISession".
-
-| Cmd | Name               |
-| --- | ------------------ |
-| 0   |                    |
-| 1   |                    |
-| 2   |                    |
-| 3   | Send               |
-| 4   | Receive            |
-| 5   | ExecuteCommandList |
-
-# i2c:pcv
-
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 10  |      |
-| 11  |      |
-| 12  |      |
 
 # uart
 
