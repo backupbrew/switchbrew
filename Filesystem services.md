@@ -579,11 +579,12 @@ This is "nn::fssrv::sf::IFile".
 
 # ISaveDataInfoReader
 
-This is "nn::fssrv::sf::ISaveDataInfoReader".
+This is
+"nn::fssrv::sf::ISaveDataInfoReader".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
+| Cmd | Name | Notes                                                       |
+| --- | ---- | ----------------------------------------------------------- |
+| 0   |      | Takes an input u64 and a type-0x6 output buffer. No output. |
 
 # IDeviceOperator
 
