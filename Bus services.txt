@@ -257,26 +257,6 @@ This is "nn::i2c::IManager".
 | 3 || HasDeviceForDev
 |}
 
-== II2cSession ==
-This is "nn::i2c::ISession".
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || Send
-|-
-| 1 || Receive
-|-
-| 2 || ExecuteCommandList
-|-
-| 10 || SendAuto
-|-
-| 11 || ReceiveAuto
-|-
-| 12 || ExecuteCommandListAuto
-|}
-
 == Known Devices ==
 {| class="wikitable sortable" border="1"
 |-
@@ -338,6 +318,26 @@ This is "nn::i2c::ISession".
 |}
 
 This table is believed to be complete - entries with empty "Used by" column haven't been seen being used (devices not present on switch?).
+
+== II2cSession ==
+This is "nn::i2c::ISession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Send
+|-
+| 1 || Receive
+|-
+| 2 || ExecuteCommandList
+|-
+| 10 || SendAuto
+|-
+| 11 || ReceiveAuto
+|-
+| 12 || ExecuteCommandListAuto
+|}
 
 = uart =
 This is "nn::uart::IManager".

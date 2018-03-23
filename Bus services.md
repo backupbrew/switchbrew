@@ -149,19 +149,6 @@ This is "nn::i2c::IManager".
 | 2   | HasDevice         |
 | 3   | HasDeviceForDev   |
 
-## II2cSession
-
-This is "nn::i2c::ISession".
-
-| Cmd | Name                   |
-| --- | ---------------------- |
-| 0   | Send                   |
-| 1   | Receive                |
-| 2   | ExecuteCommandList     |
-| 10  | SendAuto               |
-| 11  | ReceiveAuto            |
-| 12  | ExecuteCommandListAuto |
-
 ## Known Devices
 
 | Name | Port:Addr | 10bit? | Speed  | Max Retries | Retry Delay | Usage                                 | Used by                                                                                            |
@@ -196,6 +183,19 @@ This is "nn::i2c::ISession".
 
 This table is believed to be complete - entries with empty "Used by"
 column haven't been seen being used (devices not present on switch?).
+
+## II2cSession
+
+This is "nn::i2c::ISession".
+
+| Cmd | Name                   |
+| --- | ---------------------- |
+| 0   | Send                   |
+| 1   | Receive                |
+| 2   | ExecuteCommandList     |
+| 10  | SendAuto               |
+| 11  | ReceiveAuto            |
+| 12  | ExecuteCommandListAuto |
 
 # uart
 
