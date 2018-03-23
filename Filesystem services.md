@@ -85,7 +85,7 @@ This is
 | 57   | \[3.0.0+\] ReadSaveDataFileSystemExtraDataBySaveDataSpaceId                                            |
 | 58   | ReadSaveDataFileSystemExtraData                                                                        |
 | 59   | \[2.0.0+\] WriteSaveDataFileSystemExtraData                                                            |
-| 60   | OpenSaveDataInfoReader                                                                                 |
+| 60   | [\#OpenSaveDataInfoReader](#OpenSaveDataInfoReader "wikilink")                                         |
 | 61   | OpenSaveDataInfoReaderBySaveDataSpaceId                                                                |
 | 62   | \[5.0.0+\]                                                                                             |
 | 64   | \[5.0.0+\]                                                                                             |
@@ -368,6 +368,11 @@ Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 Mounts savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
 partition.
+
+## OpenSaveDataInfoReader
+
+No input, returns an output
+[\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink").
 
 ## OpenContentStorageFileSystem
 

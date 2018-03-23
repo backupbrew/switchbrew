@@ -110,7 +110,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 59 || [2.0.0+] WriteSaveDataFileSystemExtraData
 |-
-| 60 || OpenSaveDataInfoReader
+| 60 || [[#OpenSaveDataInfoReader]]
 |-
 | 61 || OpenSaveDataInfoReaderBySaveDataSpaceId
 |-
@@ -461,6 +461,9 @@ Takes an input u8 and a 0x40-byte Save-struct entry. Web-applet only uses value0
 Returns an [[#IFileSystem]].
 
 Mounts savedata in the SYSTEM [[Flash_Filesystem|NAND]] partition.
+
+== OpenSaveDataInfoReader ==
+No input, returns an output [[#ISaveDataInfoReader]].
 
 == OpenContentStorageFileSystem ==
 Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.
