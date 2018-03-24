@@ -1,7 +1,6 @@
 Migration is a sysmodule designed for handling the new Switch to Switch transfer system.
 
 = mig:usr =
-
 This is "nn::migration::user::IService"
 
 {| class="wikitable" border="1"
@@ -21,8 +20,7 @@ This is "nn::migration::user::IService"
 |}
 
 == IServer ==
-
-"nn::migration::user::IServer"
+This is "nn::migration::user::IServer"
 
 {| class="wikitable" border="1"
 |-
@@ -53,8 +51,7 @@ This is "nn::migration::user::IService"
 |}
 
 == IClient ==
-
-"nn::migration::user::IClient"
+This is "nn::migration::user::IClient"
 
 {| class="wikitable" border="1"
 |-
@@ -103,8 +100,7 @@ This is "nn::migration::user::IService"
 |}
 
 == IAsyncContext ==
-
-"nn::migration::user::IAsyncContext"
+This is "nn::migration::user::IAsyncContext"
 
 {| class="wikitable" border="1"
 |-
@@ -119,3 +115,5 @@ This is "nn::migration::user::IService"
 | 3 || GetResult
 |-
 |}
+
+[[Category:Services]]

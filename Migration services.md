@@ -16,7 +16,7 @@ This is "nn::migration::user::IService"
 
 ## IServer
 
-"nn::migration::user::IServer"
+This is "nn::migration::user::IServer"
 
 | Cmd | Name                     |
 | --- | ------------------------ |
@@ -35,7 +35,7 @@ This is "nn::migration::user::IService"
 
 ## IClient
 
-"nn::migration::user::IClient"
+This is "nn::migration::user::IClient"
 
 | Cmd | Name                                     |
 | --- | ---------------------------------------- |
@@ -63,7 +63,7 @@ This is "nn::migration::user::IService"
 
 ## IAsyncContext
 
-"nn::migration::user::IAsyncContext"
+This is "nn::migration::user::IAsyncContext"
 
 | Cmd | Name           |
 | --- | -------------- |
@@ -72,3 +72,5 @@ This is "nn::migration::user::IService"
 | 2   | HasDone        |
 | 3   | GetResult      |
 |     |                |
+
+[Category:Services](Category:Services "wikilink")
