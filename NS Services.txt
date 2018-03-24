@@ -24,73 +24,77 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 |}
 
 = ns:am =
+This is "nn::ns::detail::IApplicationManagerInterface".
+
+[3.0.0+] This service was replaced by [[#ns:am2, ns:ec, ns:rid, ns:rt, ns:web|ns:am2]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
 | 0 || [[#ListApplicationRecord]]
 |-
-| 1 ||
+| 1 || GenerateApplicationRecordCount
 |-
 | 2 || GetApplicationRecordUpdateSystemEvent
 |-
-| 3 || SubmitArpData
+| 3 || GetApplicationViewDeprecated
 |-
-| 4 ||
+| 4 || DeleteApplicationEntity
 |-
-| 5 ||
+| 5 || DeleteApplicationCompletely
 |-
-| 6 ||
+| 6 || IsAnyApplicationEntityRedundant
 |-
-| 7 ||
+| 7 || DeleteRedundantApplicationEntity
 |-
 | 8 || IsApplicationEntityMovable
 |-
-| 9 ||
+| 9 || MoveApplicationEntity
 |-
-| 11 ||
+| 11 || CalculateApplicationOccupiedSize
 |-
 | 13 ||
 |-
-| 16 ||
+| 16 || PushApplicationRecord
 |-
-| 17 ||
+| 17 || ListApplicationRecordContentMeta
 |-
-| 19 ||
+| 19 || LaunchApplication
 |-
-| 21 || [[#GetTitlePatchContentNcaPath]]
+| 21 || [[#GetApplicationContentPath]]
 |-
-| 22 ||
+| 22 || TerminateApplication
 |-
-| 23 ||
+| 23 || ResolveApplicationContentPath
 |-
 | 25 ||
 |-
-| 27 ||
+| 27 || DeleteApplicationRecord
 |-
-| 30 || GetIAsyncValue
+| 30 || RequestApplicationUpdateInfo
 |-
-| 31 || GetIAsyncResult
+| 31 || 
 |-
-| 33 ||
+| 33 || ResumeApplicationDownload
 |-
-| 35 ||
+| 35 || UpdateVersionList
 |-
-| 36 ||
+| 36 || PushLaunchVersion
 |-
-| 37 ||
+| 37 || ListRequiredVersion
 |-
-| 38 ||
+| 38 || CheckApplicationLaunchVersion
 |-
-| 39 ||
+| 39 || CheckApplicationLaunchRights
 |-
-| 40 ||
+| 40 || GetApplicationLogoData
 |-
-| 41 ||
+| 41 || CalculateApplicationDownloadRequiredSize
 |-
-| 42 ||
+| 42 || CleanupSdCard
 |-
-| 43 ||
+| 43 || CheckSdCardMountStatus
 |-
 | 44 || GetSdCardMountStatusChangedEvent
 |-
@@ -98,166 +102,171 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 |-
 | 46 || GetGameCardAttachmentInfo
 |-
-| 47 || [[#GetFreeSpace]]
+| 47 || [[#GetTotalSpaceSize]]
 |-
-| 48 || [[#GetTotalSpace]]
+| 48 || [[#GetFreeSpaceSize]]
 |-
 | 49 || GetSdCardRemovedEvent
 |-
 | 52 || GetGameCardUpdateDetectionEvent
 |-
-| 53 ||
+| 53 || DisableApplicationAutoDelete
 |-
-| 54 ||
+| 54 || EnableApplicationAutoDelete
 |-
 | 55 || GetApplicationDesiredLanguage
 |-
-| 56 ||
+| 56 || SetApplicationTerminateResult
 |-
-| 57 ||
+| 57 || ClearApplicationTerminateResult
 |-
-| 58 ||
+| 58 || GetLastSdCardMountUnexpectedResult
 |-
 | 59 || ConvertApplicationLanguageToLanguageCode
 |-
-| 60 || [[#GetLanguageIdFromString]]
+| 60 || [[#ConvertLanguageCodeToApplicationLanguage]]
 |-
-| 61 ||
+| 61 || GetBackgroundDownloadStressTaskInfo
 |-
-| 62 || GetIGameCardStopper
+| 62 || GetGameCardStopper
 |-
 | 63 || IsSystemProgramInstalled
 |-
-| 64 ||
+| 64 || StartApplyDeltaTask
 |-
-| 65 || GetIRequestServerStopper
+| 65 || GetRequestServerStopper
 |-
 | 100 || ResetToFactorySettings
 |-
 | 101 || ResetToFactorySettingsWithoutUserSaveData
 |-
-| 102 || DeleteUserContent2
+| 102 || ResetToFactorySettingsForRefurbishment
 |-
-| 200 ||
+| 200 || CalculateUserSaveDataStatistics
 |-
-| 201 ||
+| 201 || DeleteUserSaveDataAll
 |-
-| 210 ||
+| 210 || DeleteUserSystemSaveData
 |-
-| 220 ||
+| 220 || UnregisterNetworkServiceAccount
 |-
 | 300 || GetApplicationShellEvent
 |-
 | 301 || PopApplicationShellEventInfo
 |-
-| 302 ||
+| 302 || LaunchLibraryApplet
 |-
-| 303 ||
+| 303 || TerminateLibraryApplet
 |-
-| 304 ||
+| 304 || LaunchSystemApplet
 |-
-| 305 ||
+| 305 || TerminateSystemApplet
 |-
-| 306 ||
+| 306 || LaunchOverlayApplet
 |-
-| 307 ||
+| 307 || TerminateOverlayApplet
 |-
-| 401 ||
+| 401 || InvalidateAllApplicationControlCache
 |-
-| 402 ||
+| 402 || RequestDownloadApplicationControlData
 |-
-| 403 ||
+| 403 || GetMaxApplicationControlCacheCount
 |-
-| 404 ||
+| 404 || InvalidateApplicationControlCache
 |-
-| 405 ||
+| 405 || ListApplicationControlCacheEntryInfo
 |-
-| 502 ||
+| 502 || RequestCheckGameCardRegistration
 |-
-| 503 ||
+| 503 || RequestGameCardRegistrationGoldPoint
 |-
-| 504 ||
+| 504 || RequestRegisterGameCard
 |-
-| 600 ||
+| 600 || CountApplicationContentMeta
 |-
-| 601 || [[#GetTitleInfo1]]
+| 601 || [[#ListApplicationContentMetaStatus]]
 |-
-| 602 ||
+| 602 || ListAvailableAddOnContent
 |-
-| 603 ||
+| 603 || GetOwnedApplicationContentMetaStatus
 |-
-| 604 ||
+| 604 || RegisterContentsExternalKey
 |-
-| 605 || Used same way as [[#GetTitleInfo1]].
+| 605 || ListApplicationContentMetaStatusWithRightsCheck
 |-
-| 700 ||
+| 700 || PushDownloadTaskList
 |-
-| 701 ||
+| 701 || ClearTaskStatusList
 |-
-| 702 ||
+| 702 || RequestDownloadTaskList
 |-
-| 703 ||
+| 703 || RequestEnsureDownloadTask
 |-
-| 704 ||
+| 704 || ListDownloadTaskStatus
 |-
-| 705 ||
+| 705 || RequestDownloadTaskListData
 |-
-| 800 ||
+| 800 || RequestVersionList
 |-
-| 801 ||
+| 801 || ListVersionList
 |-
-| 900 ||
+| 900 || GetApplicationRecord
 |-
-| 901 ||
+| 901 || GetApplicationRecordProperty
 |-
-| 902 ||
+| 902 || EnableApplicationAutoUpdate
 |-
-| 903 ||
+| 903 || DisableApplicationAutoUpdate
 |-
-| 904 ||
+| 904 || TouchApplication
 |-
-| 905 ||
+| 905 || RequestApplicationUpdate
 |-
-| 906 ||
+| 906 || IsApplicationUpdateRequested
 |-
-| 907 ||
+| 907 || WithdrawApplicationUpdateRequest
 |-
-| 908 ||
+| 908 || ListApplicationRecordInstalledContentMeta
 |-
-| 1000 ||
+| 1000 || RequestVerifyApplicationDeprecated
 |-
-| 1001 ||
+| 1001 || CorruptApplicationForDebug
 |-
-| 1200 ||
+| 1200 || NeedsUpdateVulnerability
 |-
-| 1300 ||
+| 1300 || IsAnyApplicationEntityInstalled
 |-
-| 1301 ||
+| 1301 || DeleteApplicationContentEntities
 |-
-| 1302 ||
+| 1302 || CleanupUnrecordedApplicationEntity
 |-
-| 1400 ||
+| 1400 || PrepareShutdown
 |-
-| 1500 ||
+| 1500 || FormatSdCard
 |-
-| 1501 ||
+| 1501 || NeedsSystemUpdateToFormatSdCard
 |-
-| 1502 ||
+| 1502 || GetLastSdCardFormatUnexpectedResult
 |-
 | 1503 ||
 |-
-| 1600 ||
+| 1600 || GetSystemSeedForPseudoDeviceId
 |-
-| 1700 ||
+| 1700 || ListApplicationDownloadingContentMeta
 |-
-| 1800 ||
+| 1800 || IsNotificationSetupCompleted
 |-
-| 1801 ||
+| 1801 || GetLastNotificationInfoCount
 |-
-| 1802 ||
+| 1802 || ListLastNotificationInfo
 |}
 
-== GetTitlePatchContentNcaPath ==
+== ListApplicationRecord ==
+Takes a type-6 output buffer and an u64.
+
+Returns an array of title-info entries using the specified offset and size. No input titleID is passed to this.
+
+== GetApplicationContentPath ==
 Takes a 0x16-type output buffer, an u8 [[NCA|type]], and an u64 titleID.
 
 The input titleID is used with the application-title table like various other cmds, anything not in that table can't be used with this.
@@ -268,27 +277,22 @@ For gamecard content, the output path is: "@GcSXXXXXXXX:/<NcaId>.nca". NCA-type0
 
 The output string is then used by the user-process with [[Filesystem_services|FS]] to mount the content.
 
-== GetFreeSpace ==
+== GetTotalSpaceSize ==
 Takes an input media-id that must be 5.
 
 Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd22.
 
-== GetTotalSpace ==
+== GetFreeSpaceSize ==
 Takes an input media-id that must be 5.
 
 Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd23.
 
-== GetLanguageIdFromString ==
+== ConvertLanguageCodeToApplicationLanguage ==
 Takes an input u8 pointer for the resulting Id to be written to and a string represented as a u64 (i.e 0x53552D6E65 for 'en-US').
 
 Returns 0 if an ID was successfully found, otherwise returns 0x25810.
 
-== ListApplicationRecord ==
-Takes a type-6 output buffer and an u64.
-
-Returns an array of title-info entries using the specified offset and size. No input titleID is passed to this.
-
-== GetTitleInfo1 ==
+== ListApplicationContentMetaStatus ==
 Returns 0x10-byte entries using the specified titleID starting at the specified u32 entryindex. Can only return game titles. The second entry if any is the update-title usually. When the input entryindex is >= totalentries, this will return 0 with out_entrycount=0.
 
 Entry structure:
@@ -323,9 +327,7 @@ Entry structure:
 | u64 titleID
 |}
 
-
 = ns:am2, ns:ec, ns:rid, ns:rt, ns:web =
-
 These services are all, at the top level, "nn::ns::detail::IServiceGetterInterface".
 
 {| class="wikitable" border="1"
@@ -351,7 +353,6 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 |}
 
 === IAccountProxyInterface ===
-
 This is "nn::ns::detail::IAccountProxyInterface".
 
 {| class="wikitable" border="1"
@@ -363,14 +364,13 @@ This is "nn::ns::detail::IAccountProxyInterface".
 |}
 
 === IApplicationManagerInterface ===
-
 This is "nn::ns::detail::IApplicationManagerInterface".
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || ListApplicationRecord
+| 0 || [[#ListApplicationRecord]]
 |-
 | 1 || GenerateApplicationRecordCount
 |-
@@ -398,7 +398,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 19 || LaunchApplication
 |-
-| 21 || GetApplicationContentPath
+| 21 || [[#GetApplicationContentPath]]
 |-
 | 22 || TerminateApplication
 |-
@@ -438,9 +438,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 46 || GetGameCardAttachmentInfo
 |-
-| 47 || GetTotalSpaceSize
+| 47 || [[#GetTotalSpaceSize]]
 |-
-| 48 || GetFreeSpaceSize
+| 48 || [[#GetFreeSpaceSize]]
 |-
 | 49 || GetSdCardRemovedEvent
 |-
@@ -460,7 +460,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 59 || ConvertApplicationLanguageToLanguageCode
 |-
-| 60 || ConvertLanguageCodeToApplicationLanguage
+| 60 || [[#ConvertLanguageCodeToApplicationLanguage]]
 |-
 | 61 || GetBackgroundDownloadStressTaskInfo
 |-
@@ -562,7 +562,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 600 || CountApplicationContentMeta
 |-
-| 601 || ListApplicationContentMetaStatus
+| 601 || [[#ListApplicationContentMetaStatus]]
 |-
 | 602 || ListAvailableAddOnContent
 |-
@@ -717,7 +717,6 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |}
 
 === IApplicationVersionInterface ===
-
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -743,7 +742,6 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |}
 
 === IContentManagerInterface ===
-
 This is "nn::ns::detail::IContentManagementInterface".
 
 {| class="wikitable" border="1"
@@ -769,7 +767,6 @@ This is "nn::ns::detail::IContentManagementInterface".
 |}
 
 === IDocumentInterface ===
-
 This is "nn::ns::detail::IDocumentInterface".
 
 {| class="wikitable" border="1"
@@ -783,7 +780,6 @@ This is "nn::ns::detail::IDocumentInterface".
 |}
 
 === IDownloadTaskInterface ===
-
 This is "nn::ns::detail::IDownloadTaskInterface".
 
 {| class="wikitable" border="1"
@@ -810,9 +806,7 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 |-
 |}
 
-
 === IECommerceInterface===
-
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -821,9 +815,7 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 |-
 |}
 
-
 === IFactoryResetInterface ===
-
 This is "nn::ns::detail::IFactoryResetInterface".
 
 {| class="wikitable" border="1"
@@ -839,7 +831,6 @@ This is "nn::ns::detail::IFactoryResetInterface".
 |}
 
 = ns:vm =
-
 This is "nn::ns::detail::IVulnerabilityManagerInterface".
 
 {| class="wikitable" border="1"
@@ -853,7 +844,6 @@ This is "nn::ns::detail::IVulnerabilityManagerInterface".
 | 1202 || GetSafeSystemVersion
 |-
 |}
-
 
 = ns:su =
 This is "nn::ns::detail::ISystemUpdateInterface".
@@ -891,7 +881,6 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |}
 
 == ISystemUpdateControl ==
-
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -941,8 +930,6 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 21 || SetupToReceiveSystemUpdate
 |-
 |}
-
-GetEulaDataFileSizeIfNecessary, ReadEulaDataFileIfNecessary: like GetEulaFileSize and ReadEulaDataFile, but only if NIM cmd2 indicates that there are at least one title to update, otherwise they return error code 0x1A410.
 
 = ns:dev =
 This is "nn::ns::detail::IDevelopInterface".

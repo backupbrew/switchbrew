@@ -16,124 +16,136 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 
 # ns:am
 
-| Cmd  | Name                                                                     |
-| ---- | ------------------------------------------------------------------------ |
-| 0    | [\#ListApplicationRecord](#ListApplicationRecord "wikilink")             |
-| 1    |                                                                          |
-| 2    | GetApplicationRecordUpdateSystemEvent                                    |
-| 3    | SubmitArpData                                                            |
-| 4    |                                                                          |
-| 5    |                                                                          |
-| 6    |                                                                          |
-| 7    |                                                                          |
-| 8    | IsApplicationEntityMovable                                               |
-| 9    |                                                                          |
-| 11   |                                                                          |
-| 13   |                                                                          |
-| 16   |                                                                          |
-| 17   |                                                                          |
-| 19   |                                                                          |
-| 21   | [\#GetTitlePatchContentNcaPath](#GetTitlePatchContentNcaPath "wikilink") |
-| 22   |                                                                          |
-| 23   |                                                                          |
-| 25   |                                                                          |
-| 27   |                                                                          |
-| 30   | GetIAsyncValue                                                           |
-| 31   | GetIAsyncResult                                                          |
-| 33   |                                                                          |
-| 35   |                                                                          |
-| 36   |                                                                          |
-| 37   |                                                                          |
-| 38   |                                                                          |
-| 39   |                                                                          |
-| 40   |                                                                          |
-| 41   |                                                                          |
-| 42   |                                                                          |
-| 43   |                                                                          |
-| 44   | GetSdCardMountStatusChangedEvent                                         |
-| 45   | GetGameCardAttachmentEvent                                               |
-| 46   | GetGameCardAttachmentInfo                                                |
-| 47   | [\#GetFreeSpace](#GetFreeSpace "wikilink")                               |
-| 48   | [\#GetTotalSpace](#GetTotalSpace "wikilink")                             |
-| 49   | GetSdCardRemovedEvent                                                    |
-| 52   | GetGameCardUpdateDetectionEvent                                          |
-| 53   |                                                                          |
-| 54   |                                                                          |
-| 55   | GetApplicationDesiredLanguage                                            |
-| 56   |                                                                          |
-| 57   |                                                                          |
-| 58   |                                                                          |
-| 59   | ConvertApplicationLanguageToLanguageCode                                 |
-| 60   | [\#GetLanguageIdFromString](#GetLanguageIdFromString "wikilink")         |
-| 61   |                                                                          |
-| 62   | GetIGameCardStopper                                                      |
-| 63   | IsSystemProgramInstalled                                                 |
-| 64   |                                                                          |
-| 65   | GetIRequestServerStopper                                                 |
-| 100  | ResetToFactorySettings                                                   |
-| 101  | ResetToFactorySettingsWithoutUserSaveData                                |
-| 102  | DeleteUserContent2                                                       |
-| 200  |                                                                          |
-| 201  |                                                                          |
-| 210  |                                                                          |
-| 220  |                                                                          |
-| 300  | GetApplicationShellEvent                                                 |
-| 301  | PopApplicationShellEventInfo                                             |
-| 302  |                                                                          |
-| 303  |                                                                          |
-| 304  |                                                                          |
-| 305  |                                                                          |
-| 306  |                                                                          |
-| 307  |                                                                          |
-| 401  |                                                                          |
-| 402  |                                                                          |
-| 403  |                                                                          |
-| 404  |                                                                          |
-| 405  |                                                                          |
-| 502  |                                                                          |
-| 503  |                                                                          |
-| 504  |                                                                          |
-| 600  |                                                                          |
-| 601  | [\#GetTitleInfo1](#GetTitleInfo1 "wikilink")                             |
-| 602  |                                                                          |
-| 603  |                                                                          |
-| 604  |                                                                          |
-| 605  | Used same way as [\#GetTitleInfo1](#GetTitleInfo1 "wikilink").           |
-| 700  |                                                                          |
-| 701  |                                                                          |
-| 702  |                                                                          |
-| 703  |                                                                          |
-| 704  |                                                                          |
-| 705  |                                                                          |
-| 800  |                                                                          |
-| 801  |                                                                          |
-| 900  |                                                                          |
-| 901  |                                                                          |
-| 902  |                                                                          |
-| 903  |                                                                          |
-| 904  |                                                                          |
-| 905  |                                                                          |
-| 906  |                                                                          |
-| 907  |                                                                          |
-| 908  |                                                                          |
-| 1000 |                                                                          |
-| 1001 |                                                                          |
-| 1200 |                                                                          |
-| 1300 |                                                                          |
-| 1301 |                                                                          |
-| 1302 |                                                                          |
-| 1400 |                                                                          |
-| 1500 |                                                                          |
-| 1501 |                                                                          |
-| 1502 |                                                                          |
-| 1503 |                                                                          |
-| 1600 |                                                                          |
-| 1700 |                                                                          |
-| 1800 |                                                                          |
-| 1801 |                                                                          |
-| 1802 |                                                                          |
+This is "nn::ns::detail::IApplicationManagerInterface".
 
-## GetTitlePatchContentNcaPath
+\[3.0.0+\] This service was replaced by
+[ns:am2](#ns:am2,_ns:ec,_ns:rid,_ns:rt,_ns:web "wikilink").
+
+| Cmd  | Name                                                                                               |
+| ---- | -------------------------------------------------------------------------------------------------- |
+| 0    | [\#ListApplicationRecord](#ListApplicationRecord "wikilink")                                       |
+| 1    | GenerateApplicationRecordCount                                                                     |
+| 2    | GetApplicationRecordUpdateSystemEvent                                                              |
+| 3    | GetApplicationViewDeprecated                                                                       |
+| 4    | DeleteApplicationEntity                                                                            |
+| 5    | DeleteApplicationCompletely                                                                        |
+| 6    | IsAnyApplicationEntityRedundant                                                                    |
+| 7    | DeleteRedundantApplicationEntity                                                                   |
+| 8    | IsApplicationEntityMovable                                                                         |
+| 9    | MoveApplicationEntity                                                                              |
+| 11   | CalculateApplicationOccupiedSize                                                                   |
+| 13   |                                                                                                    |
+| 16   | PushApplicationRecord                                                                              |
+| 17   | ListApplicationRecordContentMeta                                                                   |
+| 19   | LaunchApplication                                                                                  |
+| 21   | [\#GetApplicationContentPath](#GetApplicationContentPath "wikilink")                               |
+| 22   | TerminateApplication                                                                               |
+| 23   | ResolveApplicationContentPath                                                                      |
+| 25   |                                                                                                    |
+| 27   | DeleteApplicationRecord                                                                            |
+| 30   | RequestApplicationUpdateInfo                                                                       |
+| 31   |                                                                                                    |
+| 33   | ResumeApplicationDownload                                                                          |
+| 35   | UpdateVersionList                                                                                  |
+| 36   | PushLaunchVersion                                                                                  |
+| 37   | ListRequiredVersion                                                                                |
+| 38   | CheckApplicationLaunchVersion                                                                      |
+| 39   | CheckApplicationLaunchRights                                                                       |
+| 40   | GetApplicationLogoData                                                                             |
+| 41   | CalculateApplicationDownloadRequiredSize                                                           |
+| 42   | CleanupSdCard                                                                                      |
+| 43   | CheckSdCardMountStatus                                                                             |
+| 44   | GetSdCardMountStatusChangedEvent                                                                   |
+| 45   | GetGameCardAttachmentEvent                                                                         |
+| 46   | GetGameCardAttachmentInfo                                                                          |
+| 47   | [\#GetTotalSpaceSize](#GetTotalSpaceSize "wikilink")                                               |
+| 48   | [\#GetFreeSpaceSize](#GetFreeSpaceSize "wikilink")                                                 |
+| 49   | GetSdCardRemovedEvent                                                                              |
+| 52   | GetGameCardUpdateDetectionEvent                                                                    |
+| 53   | DisableApplicationAutoDelete                                                                       |
+| 54   | EnableApplicationAutoDelete                                                                        |
+| 55   | GetApplicationDesiredLanguage                                                                      |
+| 56   | SetApplicationTerminateResult                                                                      |
+| 57   | ClearApplicationTerminateResult                                                                    |
+| 58   | GetLastSdCardMountUnexpectedResult                                                                 |
+| 59   | ConvertApplicationLanguageToLanguageCode                                                           |
+| 60   | [\#ConvertLanguageCodeToApplicationLanguage](#ConvertLanguageCodeToApplicationLanguage "wikilink") |
+| 61   | GetBackgroundDownloadStressTaskInfo                                                                |
+| 62   | GetGameCardStopper                                                                                 |
+| 63   | IsSystemProgramInstalled                                                                           |
+| 64   | StartApplyDeltaTask                                                                                |
+| 65   | GetRequestServerStopper                                                                            |
+| 100  | ResetToFactorySettings                                                                             |
+| 101  | ResetToFactorySettingsWithoutUserSaveData                                                          |
+| 102  | ResetToFactorySettingsForRefurbishment                                                             |
+| 200  | CalculateUserSaveDataStatistics                                                                    |
+| 201  | DeleteUserSaveDataAll                                                                              |
+| 210  | DeleteUserSystemSaveData                                                                           |
+| 220  | UnregisterNetworkServiceAccount                                                                    |
+| 300  | GetApplicationShellEvent                                                                           |
+| 301  | PopApplicationShellEventInfo                                                                       |
+| 302  | LaunchLibraryApplet                                                                                |
+| 303  | TerminateLibraryApplet                                                                             |
+| 304  | LaunchSystemApplet                                                                                 |
+| 305  | TerminateSystemApplet                                                                              |
+| 306  | LaunchOverlayApplet                                                                                |
+| 307  | TerminateOverlayApplet                                                                             |
+| 401  | InvalidateAllApplicationControlCache                                                               |
+| 402  | RequestDownloadApplicationControlData                                                              |
+| 403  | GetMaxApplicationControlCacheCount                                                                 |
+| 404  | InvalidateApplicationControlCache                                                                  |
+| 405  | ListApplicationControlCacheEntryInfo                                                               |
+| 502  | RequestCheckGameCardRegistration                                                                   |
+| 503  | RequestGameCardRegistrationGoldPoint                                                               |
+| 504  | RequestRegisterGameCard                                                                            |
+| 600  | CountApplicationContentMeta                                                                        |
+| 601  | [\#ListApplicationContentMetaStatus](#ListApplicationContentMetaStatus "wikilink")                 |
+| 602  | ListAvailableAddOnContent                                                                          |
+| 603  | GetOwnedApplicationContentMetaStatus                                                               |
+| 604  | RegisterContentsExternalKey                                                                        |
+| 605  | ListApplicationContentMetaStatusWithRightsCheck                                                    |
+| 700  | PushDownloadTaskList                                                                               |
+| 701  | ClearTaskStatusList                                                                                |
+| 702  | RequestDownloadTaskList                                                                            |
+| 703  | RequestEnsureDownloadTask                                                                          |
+| 704  | ListDownloadTaskStatus                                                                             |
+| 705  | RequestDownloadTaskListData                                                                        |
+| 800  | RequestVersionList                                                                                 |
+| 801  | ListVersionList                                                                                    |
+| 900  | GetApplicationRecord                                                                               |
+| 901  | GetApplicationRecordProperty                                                                       |
+| 902  | EnableApplicationAutoUpdate                                                                        |
+| 903  | DisableApplicationAutoUpdate                                                                       |
+| 904  | TouchApplication                                                                                   |
+| 905  | RequestApplicationUpdate                                                                           |
+| 906  | IsApplicationUpdateRequested                                                                       |
+| 907  | WithdrawApplicationUpdateRequest                                                                   |
+| 908  | ListApplicationRecordInstalledContentMeta                                                          |
+| 1000 | RequestVerifyApplicationDeprecated                                                                 |
+| 1001 | CorruptApplicationForDebug                                                                         |
+| 1200 | NeedsUpdateVulnerability                                                                           |
+| 1300 | IsAnyApplicationEntityInstalled                                                                    |
+| 1301 | DeleteApplicationContentEntities                                                                   |
+| 1302 | CleanupUnrecordedApplicationEntity                                                                 |
+| 1400 | PrepareShutdown                                                                                    |
+| 1500 | FormatSdCard                                                                                       |
+| 1501 | NeedsSystemUpdateToFormatSdCard                                                                    |
+| 1502 | GetLastSdCardFormatUnexpectedResult                                                                |
+| 1503 |                                                                                                    |
+| 1600 | GetSystemSeedForPseudoDeviceId                                                                     |
+| 1700 | ListApplicationDownloadingContentMeta                                                              |
+| 1800 | IsNotificationSetupCompleted                                                                       |
+| 1801 | GetLastNotificationInfoCount                                                                       |
+| 1802 | ListLastNotificationInfo                                                                           |
+
+## ListApplicationRecord
+
+Takes a type-6 output buffer and an u64.
+
+Returns an array of title-info entries using the specified offset and
+size. No input titleID is passed to this.
+
+## GetApplicationContentPath
 
 Takes a 0x16-type output buffer, an u8 [type](NCA.md "wikilink"), and an
 u64 titleID.
@@ -153,7 +165,7 @@ NCA-type0 with gamecard returns 0 with an empty output string.
 The output string is then used by the user-process with
 [FS](Filesystem%20services.md "wikilink") to mount the content.
 
-## GetFreeSpace
+## GetTotalSpaceSize
 
 Takes an input media-id that must be 5.
 
@@ -161,7 +173,7 @@ Returns the u64 from
 [Content\_Manager\_services\#IContentStorage](Content%20Manager%20services#IContentStorage.md##IContentStorage "wikilink")
 cmd22.
 
-## GetTotalSpace
+## GetFreeSpaceSize
 
 Takes an input media-id that must be 5.
 
@@ -169,21 +181,14 @@ Returns the u64 from
 [Content\_Manager\_services\#IContentStorage](Content%20Manager%20services#IContentStorage.md##IContentStorage "wikilink")
 cmd23.
 
-## GetLanguageIdFromString
+## ConvertLanguageCodeToApplicationLanguage
 
 Takes an input u8 pointer for the resulting Id to be written to and a
 string represented as a u64 (i.e 0x53552D6E65 for 'en-US').
 
 Returns 0 if an ID was successfully found, otherwise returns 0x25810.
 
-## ListApplicationRecord
-
-Takes a type-6 output buffer and an u64.
-
-Returns an array of title-info entries using the specified offset and
-size. No input titleID is passed to this.
-
-## GetTitleInfo1
+## ListApplicationContentMetaStatus
 
 Returns 0x10-byte entries using the specified titleID starting at the
 specified u32 entryindex. Can only return game titles. The second entry
@@ -230,183 +235,184 @@ This is "nn::ns::detail::IAccountProxyInterface".
 
 ### IApplicationManagerInterface
 
-This is "nn::ns::detail::IApplicationManagerInterface".
+This is
+"nn::ns::detail::IApplicationManagerInterface".
 
-| Cmd  | Name                                                   |
-| ---- | ------------------------------------------------------ |
-| 0    | ListApplicationRecord                                  |
-| 1    | GenerateApplicationRecordCount                         |
-| 2    | GetApplicationRecordUpdateSystemEvent                  |
-| 3    | GetApplicationViewDeprecated                           |
-| 4    | DeleteApplicationEntity                                |
-| 5    | DeleteApplicationCompletely                            |
-| 6    | IsAnyApplicationEntityRedundant                        |
-| 7    | DeleteRedundantApplicationEntity                       |
-| 8    | IsApplicationEntityMovable                             |
-| 9    | MoveApplicationEntity                                  |
-| 11   | CalculateApplicationOccupiedSize                       |
-| 16   | PushApplicationRecord                                  |
-| 17   | ListApplicationRecordContentMeta                       |
-| 19   | LaunchApplication                                      |
-| 21   | GetApplicationContentPath                              |
-| 22   | TerminateApplication                                   |
-| 23   | ResolveApplicationContentPath                          |
-| 26   | BeginInstallApplication                                |
-| 27   | DeleteApplicationRecord                                |
-| 30   | RequestApplicationUpdateInfo                           |
-| 32   | CancelApplicationDownload                              |
-| 33   | ResumeApplicationDownload                              |
-| 35   | UpdateVersionList                                      |
-| 36   | PushLaunchVersion                                      |
-| 37   | ListRequiredVersion                                    |
-| 38   | CheckApplicationLaunchVersion                          |
-| 39   | CheckApplicationLaunchRights                           |
-| 40   | GetApplicationLogoData                                 |
-| 41   | CalculateApplicationDownloadRequiredSize               |
-| 42   | CleanupSdCard                                          |
-| 43   | CheckSdCardMountStatus                                 |
-| 44   | GetSdCardMountStatusChangedEvent                       |
-| 45   | GetGameCardAttachmentEvent                             |
-| 46   | GetGameCardAttachmentInfo                              |
-| 47   | GetTotalSpaceSize                                      |
-| 48   | GetFreeSpaceSize                                       |
-| 49   | GetSdCardRemovedEvent                                  |
-| 52   | GetGameCardUpdateDetectionEvent                        |
-| 53   | DisableApplicationAutoDelete                           |
-| 54   | EnableApplicationAutoDelete                            |
-| 55   | GetApplicationDesiredLanguage                          |
-| 56   | SetApplicationTerminateResult                          |
-| 57   | ClearApplicationTerminateResult                        |
-| 58   | GetLastSdCardMountUnexpectedResult                     |
-| 59   | ConvertApplicationLanguageToLanguageCode               |
-| 60   | ConvertLanguageCodeToApplicationLanguage               |
-| 61   | GetBackgroundDownloadStressTaskInfo                    |
-| 62   | GetGameCardStopper                                     |
-| 63   | IsSystemProgramInstalled                               |
-| 64   | StartApplyDeltaTask                                    |
-| 65   | GetRequestServerStopper                                |
-| 66   | GetBackgroundApplyDeltaStressTaskInfo                  |
-| 67   | CancelApplicationApplyDelta                            |
-| 68   | ResumeApplicationApplyDelta                            |
-| 69   | CalculateApplicationApplyDeltaRequiredSize             |
-| 70   | ResumeAll                                              |
-| 71   | GetStorageSize                                         |
-| 80   | RequestDownloadApplication                             |
-| 81   | RequestDownloadAddOnContent                            |
-| 82   | DownloadApplication                                    |
-| 83   | CheckApplicationResumeRights                           |
-| 84   | GetDynamicCommitEvent                                  |
-| 85   | RequestUpdateApplication2                              |
-| 86   | EnableApplicationCrashReport                           |
-| 87   | IsApplicationCrashReportEnabled                        |
-| 90   | BoostSystemMemoryResourceLimit                         |
-| 100  | ResetToFactorySettings                                 |
-| 101  | ResetToFactorySettingsWithoutUserSaveData              |
-| 102  | ResetToFactorySettingsForRefurbishment                 |
-| 200  | CalculateUserSaveDataStatistics                        |
-| 201  | DeleteUserSaveDataAll                                  |
-| 210  | DeleteUserSystemSaveData                               |
-| 220  | UnregisterNetworkServiceAccount                        |
-| 300  | GetApplicationShellEvent                               |
-| 301  | PopApplicationShellEventInfo                           |
-| 302  | LaunchLibraryApplet                                    |
-| 303  | TerminateLibraryApplet                                 |
-| 304  | LaunchSystemApplet                                     |
-| 305  | TerminateSystemApplet                                  |
-| 306  | LaunchOverlayApplet                                    |
-| 307  | TerminateOverlayApplet                                 |
-| 400  | GetApplicationControlData                              |
-| 401  | InvalidateAllApplicationControlCache                   |
-| 402  | RequestDownloadApplicationControlData                  |
-| 403  | GetMaxApplicationControlCacheCount                     |
-| 404  | InvalidateApplicationControlCache                      |
-| 405  | ListApplicationControlCacheEntryInfo                   |
-| 502  | RequestCheckGameCardRegistration                       |
-| 503  | RequestGameCardRegistrationGoldPoint                   |
-| 504  | RequestRegisterGameCard                                |
-| 505  | GetGameCardMountFailureEvent                           |
-| 506  | IsGameCardInserted                                     |
-| 507  | EnsureGameCardAccess                                   |
-| 508  | GetLastGameCardMountFailureResult                      |
-| 509  | ListApplicationIdOnGameCard                            |
-| 600  | CountApplicationContentMeta                            |
-| 601  | ListApplicationContentMetaStatus                       |
-| 602  | ListAvailableAddOnContent                              |
-| 603  | GetOwnedApplicationContentMetaStatus                   |
-| 604  | RegisterContentsExternalKey                            |
-| 605  | ListApplicationContentMetaStatusWithRightsCheck        |
-| 606  | GetContentMetaStorage                                  |
-| 700  | PushDownloadTaskList                                   |
-| 701  | ClearTaskStatusList                                    |
-| 702  | RequestDownloadTaskList                                |
-| 703  | RequestEnsureDownloadTask                              |
-| 704  | ListDownloadTaskStatus                                 |
-| 705  | RequestDownloadTaskListData                            |
-| 800  | RequestVersionList                                     |
-| 801  | ListVersionList                                        |
-| 802  | RequestVersionListData                                 |
-| 900  | GetApplicationRecord                                   |
-| 901  | GetApplicationRecordProperty                           |
-| 902  | EnableApplicationAutoUpdate                            |
-| 903  | DisableApplicationAutoUpdate                           |
-| 904  | TouchApplication                                       |
-| 905  | RequestApplicationUpdate                               |
-| 906  | IsApplicationUpdateRequested                           |
-| 907  | WithdrawApplicationUpdateRequest                       |
-| 908  | ListApplicationRecordInstalledContentMeta              |
-| 909  | WithdrawCleanupAddOnContentsWithNoRightsRecommendation |
-| 1000 | RequestVerifyApplicationDeprecated                     |
-| 1001 | CorruptApplicationForDebug                             |
-| 1002 | RequestVerifyAddOnContentsRights                       |
-| 1003 | RequestVerifyApplication                               |
-| 1004 | CorruptContentForDebug                                 |
-| 1200 | NeedsUpdateVulnerability                               |
-| 1300 | IsAnyApplicationEntityInstalled                        |
-| 1301 | DeleteApplicationContentEntities                       |
-| 1302 | CleanupUnrecordedApplicationEntity                     |
-| 1303 | CleanupAddOnContentsWithNoRights                       |
-| 1304 | DeleteApplicationContentEntity                         |
-| 1305 | TryDeleteRunningApplicationEntity                      |
-| 1306 | TryDeleteRunningApplicationCompletely                  |
-| 1307 | TryDeleteRunningApplicationContentEntities             |
-| 1400 | PrepareShutdown                                        |
-| 1500 | FormatSdCard                                           |
-| 1501 | NeedsSystemUpdateToFormatSdCard                        |
-| 1502 | GetLastSdCardFormatUnexpectedResult                    |
-| 1504 | InsertSdCard                                           |
-| 1505 | RemoveSdCard                                           |
-| 1600 | GetSystemSeedForPseudoDeviceId                         |
-| 1601 | ResetSystemSeedForPseudoDeviceId                       |
-| 1700 | ListApplicationDownloadingContentMeta                  |
-| 1701 | GetApplicationView                                     |
-| 1702 | GetApplicationDownloadTaskStatus                       |
-| 1703 | GetApplicationViewDownloadErrorContext                 |
-| 1800 | IsNotificationSetupCompleted                           |
-| 1801 | GetLastNotificationInfoCount                           |
-| 1802 | ListLastNotificationInfo                               |
-| 1803 | ListNotificationTask                                   |
-| 1900 | IsActiveAccount                                        |
-| 1901 | RequestDownloadApplicationPrepurchasedRights           |
-| 1902 | GetApplicationTicketInfo                               |
-| 2000 | GetSystemDeliveryInfo                                  |
-| 2001 | SelectLatestSystemDeliveryInfo                         |
-| 2002 | VerifyDeliveryProtocolVersion                          |
-| 2003 | GetApplicationDeliveryInfo                             |
-| 2004 | HasAllContentsToDeliver                                |
-| 2005 | CompareApplicationDeliveryInfo                         |
-| 2006 | CanDeliverApplication                                  |
-| 2007 | ListContentMetaKeyToDeliverApplication                 |
-| 2008 | NeedsSystemUpdateToDeliverApplication                  |
-| 2009 | EstimateRequiredSize                                   |
-| 2010 | RequestReceiveApplication                              |
-| 2011 | CommitReceiveApplication                               |
-| 2012 | GetReceiveApplicationProgress                          |
-| 2013 | RequestSendApplication                                 |
-| 2014 | GetSendApplicationProgress                             |
-| 2015 | CompareSystemDeliveryInfo                              |
-| 2016 | ListNotCommittedContentMeta                            |
-| 2017 | CreateDownloadTask                                     |
-|      |                                                        |
+| Cmd  | Name                                                                                               |
+| ---- | -------------------------------------------------------------------------------------------------- |
+| 0    | [\#ListApplicationRecord](#ListApplicationRecord "wikilink")                                       |
+| 1    | GenerateApplicationRecordCount                                                                     |
+| 2    | GetApplicationRecordUpdateSystemEvent                                                              |
+| 3    | GetApplicationViewDeprecated                                                                       |
+| 4    | DeleteApplicationEntity                                                                            |
+| 5    | DeleteApplicationCompletely                                                                        |
+| 6    | IsAnyApplicationEntityRedundant                                                                    |
+| 7    | DeleteRedundantApplicationEntity                                                                   |
+| 8    | IsApplicationEntityMovable                                                                         |
+| 9    | MoveApplicationEntity                                                                              |
+| 11   | CalculateApplicationOccupiedSize                                                                   |
+| 16   | PushApplicationRecord                                                                              |
+| 17   | ListApplicationRecordContentMeta                                                                   |
+| 19   | LaunchApplication                                                                                  |
+| 21   | [\#GetApplicationContentPath](#GetApplicationContentPath "wikilink")                               |
+| 22   | TerminateApplication                                                                               |
+| 23   | ResolveApplicationContentPath                                                                      |
+| 26   | BeginInstallApplication                                                                            |
+| 27   | DeleteApplicationRecord                                                                            |
+| 30   | RequestApplicationUpdateInfo                                                                       |
+| 32   | CancelApplicationDownload                                                                          |
+| 33   | ResumeApplicationDownload                                                                          |
+| 35   | UpdateVersionList                                                                                  |
+| 36   | PushLaunchVersion                                                                                  |
+| 37   | ListRequiredVersion                                                                                |
+| 38   | CheckApplicationLaunchVersion                                                                      |
+| 39   | CheckApplicationLaunchRights                                                                       |
+| 40   | GetApplicationLogoData                                                                             |
+| 41   | CalculateApplicationDownloadRequiredSize                                                           |
+| 42   | CleanupSdCard                                                                                      |
+| 43   | CheckSdCardMountStatus                                                                             |
+| 44   | GetSdCardMountStatusChangedEvent                                                                   |
+| 45   | GetGameCardAttachmentEvent                                                                         |
+| 46   | GetGameCardAttachmentInfo                                                                          |
+| 47   | [\#GetTotalSpaceSize](#GetTotalSpaceSize "wikilink")                                               |
+| 48   | [\#GetFreeSpaceSize](#GetFreeSpaceSize "wikilink")                                                 |
+| 49   | GetSdCardRemovedEvent                                                                              |
+| 52   | GetGameCardUpdateDetectionEvent                                                                    |
+| 53   | DisableApplicationAutoDelete                                                                       |
+| 54   | EnableApplicationAutoDelete                                                                        |
+| 55   | GetApplicationDesiredLanguage                                                                      |
+| 56   | SetApplicationTerminateResult                                                                      |
+| 57   | ClearApplicationTerminateResult                                                                    |
+| 58   | GetLastSdCardMountUnexpectedResult                                                                 |
+| 59   | ConvertApplicationLanguageToLanguageCode                                                           |
+| 60   | [\#ConvertLanguageCodeToApplicationLanguage](#ConvertLanguageCodeToApplicationLanguage "wikilink") |
+| 61   | GetBackgroundDownloadStressTaskInfo                                                                |
+| 62   | GetGameCardStopper                                                                                 |
+| 63   | IsSystemProgramInstalled                                                                           |
+| 64   | StartApplyDeltaTask                                                                                |
+| 65   | GetRequestServerStopper                                                                            |
+| 66   | GetBackgroundApplyDeltaStressTaskInfo                                                              |
+| 67   | CancelApplicationApplyDelta                                                                        |
+| 68   | ResumeApplicationApplyDelta                                                                        |
+| 69   | CalculateApplicationApplyDeltaRequiredSize                                                         |
+| 70   | ResumeAll                                                                                          |
+| 71   | GetStorageSize                                                                                     |
+| 80   | RequestDownloadApplication                                                                         |
+| 81   | RequestDownloadAddOnContent                                                                        |
+| 82   | DownloadApplication                                                                                |
+| 83   | CheckApplicationResumeRights                                                                       |
+| 84   | GetDynamicCommitEvent                                                                              |
+| 85   | RequestUpdateApplication2                                                                          |
+| 86   | EnableApplicationCrashReport                                                                       |
+| 87   | IsApplicationCrashReportEnabled                                                                    |
+| 90   | BoostSystemMemoryResourceLimit                                                                     |
+| 100  | ResetToFactorySettings                                                                             |
+| 101  | ResetToFactorySettingsWithoutUserSaveData                                                          |
+| 102  | ResetToFactorySettingsForRefurbishment                                                             |
+| 200  | CalculateUserSaveDataStatistics                                                                    |
+| 201  | DeleteUserSaveDataAll                                                                              |
+| 210  | DeleteUserSystemSaveData                                                                           |
+| 220  | UnregisterNetworkServiceAccount                                                                    |
+| 300  | GetApplicationShellEvent                                                                           |
+| 301  | PopApplicationShellEventInfo                                                                       |
+| 302  | LaunchLibraryApplet                                                                                |
+| 303  | TerminateLibraryApplet                                                                             |
+| 304  | LaunchSystemApplet                                                                                 |
+| 305  | TerminateSystemApplet                                                                              |
+| 306  | LaunchOverlayApplet                                                                                |
+| 307  | TerminateOverlayApplet                                                                             |
+| 400  | GetApplicationControlData                                                                          |
+| 401  | InvalidateAllApplicationControlCache                                                               |
+| 402  | RequestDownloadApplicationControlData                                                              |
+| 403  | GetMaxApplicationControlCacheCount                                                                 |
+| 404  | InvalidateApplicationControlCache                                                                  |
+| 405  | ListApplicationControlCacheEntryInfo                                                               |
+| 502  | RequestCheckGameCardRegistration                                                                   |
+| 503  | RequestGameCardRegistrationGoldPoint                                                               |
+| 504  | RequestRegisterGameCard                                                                            |
+| 505  | GetGameCardMountFailureEvent                                                                       |
+| 506  | IsGameCardInserted                                                                                 |
+| 507  | EnsureGameCardAccess                                                                               |
+| 508  | GetLastGameCardMountFailureResult                                                                  |
+| 509  | ListApplicationIdOnGameCard                                                                        |
+| 600  | CountApplicationContentMeta                                                                        |
+| 601  | [\#ListApplicationContentMetaStatus](#ListApplicationContentMetaStatus "wikilink")                 |
+| 602  | ListAvailableAddOnContent                                                                          |
+| 603  | GetOwnedApplicationContentMetaStatus                                                               |
+| 604  | RegisterContentsExternalKey                                                                        |
+| 605  | ListApplicationContentMetaStatusWithRightsCheck                                                    |
+| 606  | GetContentMetaStorage                                                                              |
+| 700  | PushDownloadTaskList                                                                               |
+| 701  | ClearTaskStatusList                                                                                |
+| 702  | RequestDownloadTaskList                                                                            |
+| 703  | RequestEnsureDownloadTask                                                                          |
+| 704  | ListDownloadTaskStatus                                                                             |
+| 705  | RequestDownloadTaskListData                                                                        |
+| 800  | RequestVersionList                                                                                 |
+| 801  | ListVersionList                                                                                    |
+| 802  | RequestVersionListData                                                                             |
+| 900  | GetApplicationRecord                                                                               |
+| 901  | GetApplicationRecordProperty                                                                       |
+| 902  | EnableApplicationAutoUpdate                                                                        |
+| 903  | DisableApplicationAutoUpdate                                                                       |
+| 904  | TouchApplication                                                                                   |
+| 905  | RequestApplicationUpdate                                                                           |
+| 906  | IsApplicationUpdateRequested                                                                       |
+| 907  | WithdrawApplicationUpdateRequest                                                                   |
+| 908  | ListApplicationRecordInstalledContentMeta                                                          |
+| 909  | WithdrawCleanupAddOnContentsWithNoRightsRecommendation                                             |
+| 1000 | RequestVerifyApplicationDeprecated                                                                 |
+| 1001 | CorruptApplicationForDebug                                                                         |
+| 1002 | RequestVerifyAddOnContentsRights                                                                   |
+| 1003 | RequestVerifyApplication                                                                           |
+| 1004 | CorruptContentForDebug                                                                             |
+| 1200 | NeedsUpdateVulnerability                                                                           |
+| 1300 | IsAnyApplicationEntityInstalled                                                                    |
+| 1301 | DeleteApplicationContentEntities                                                                   |
+| 1302 | CleanupUnrecordedApplicationEntity                                                                 |
+| 1303 | CleanupAddOnContentsWithNoRights                                                                   |
+| 1304 | DeleteApplicationContentEntity                                                                     |
+| 1305 | TryDeleteRunningApplicationEntity                                                                  |
+| 1306 | TryDeleteRunningApplicationCompletely                                                              |
+| 1307 | TryDeleteRunningApplicationContentEntities                                                         |
+| 1400 | PrepareShutdown                                                                                    |
+| 1500 | FormatSdCard                                                                                       |
+| 1501 | NeedsSystemUpdateToFormatSdCard                                                                    |
+| 1502 | GetLastSdCardFormatUnexpectedResult                                                                |
+| 1504 | InsertSdCard                                                                                       |
+| 1505 | RemoveSdCard                                                                                       |
+| 1600 | GetSystemSeedForPseudoDeviceId                                                                     |
+| 1601 | ResetSystemSeedForPseudoDeviceId                                                                   |
+| 1700 | ListApplicationDownloadingContentMeta                                                              |
+| 1701 | GetApplicationView                                                                                 |
+| 1702 | GetApplicationDownloadTaskStatus                                                                   |
+| 1703 | GetApplicationViewDownloadErrorContext                                                             |
+| 1800 | IsNotificationSetupCompleted                                                                       |
+| 1801 | GetLastNotificationInfoCount                                                                       |
+| 1802 | ListLastNotificationInfo                                                                           |
+| 1803 | ListNotificationTask                                                                               |
+| 1900 | IsActiveAccount                                                                                    |
+| 1901 | RequestDownloadApplicationPrepurchasedRights                                                       |
+| 1902 | GetApplicationTicketInfo                                                                           |
+| 2000 | GetSystemDeliveryInfo                                                                              |
+| 2001 | SelectLatestSystemDeliveryInfo                                                                     |
+| 2002 | VerifyDeliveryProtocolVersion                                                                      |
+| 2003 | GetApplicationDeliveryInfo                                                                         |
+| 2004 | HasAllContentsToDeliver                                                                            |
+| 2005 | CompareApplicationDeliveryInfo                                                                     |
+| 2006 | CanDeliverApplication                                                                              |
+| 2007 | ListContentMetaKeyToDeliverApplication                                                             |
+| 2008 | NeedsSystemUpdateToDeliverApplication                                                              |
+| 2009 | EstimateRequiredSize                                                                               |
+| 2010 | RequestReceiveApplication                                                                          |
+| 2011 | CommitReceiveApplication                                                                           |
+| 2012 | GetReceiveApplicationProgress                                                                      |
+| 2013 | RequestSendApplication                                                                             |
+| 2014 | GetSendApplicationProgress                                                                         |
+| 2015 | CompareSystemDeliveryInfo                                                                          |
+| 2016 | ListNotCommittedContentMeta                                                                        |
+| 2017 | CreateDownloadTask                                                                                 |
+|      |                                                                                                    |
 
 ### IApplicationVersionInterface
 
@@ -543,11 +549,6 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 20  | GetReceivedEulaData               |
 | 21  | SetupToReceiveSystemUpdate        |
 |     |                                   |
-
-GetEulaDataFileSizeIfNecessary, ReadEulaDataFileIfNecessary: like
-GetEulaFileSize and ReadEulaDataFile, but only if NIM cmd2 indicates
-that there are at least one title to update, otherwise they return error
-code 0x1A410.
 
 # ns:dev
 
