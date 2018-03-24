@@ -1,4 +1,4 @@
-pctl handles all parental controls management.
+PCTL handles all parental controls management.
 
 # pctl:s, pctl:r, pctl:a, pctl
 
@@ -121,3 +121,5 @@ this matches, 1 is returned, otherwise 0 is returned.
 On [3.0.1](3.0.1.md "wikilink") this was changed to use different
 hardcoded keydata, and to pass 11 as the snprintf argument instead of
 10.
+
+[Category:Services](Category:Services "wikilink")
