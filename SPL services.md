@@ -500,3 +500,5 @@ Returns the static dword in spl .bss that can be set via
 
 \[4.0.0+\] returns 0xD61A if a value has not previously been set, and
 unsets the value after getting it.
+
+[Category:Services](Category:Services "wikilink")
