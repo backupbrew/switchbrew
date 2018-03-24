@@ -80,3 +80,5 @@ This is "nn::ts::server::IMeasurementServer".
 | 2   |      |
 | 3   |      |
 |     |      |
+
+[Category:Services](Category:Services "wikilink")

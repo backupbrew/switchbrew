@@ -128,3 +128,5 @@ This is "nn::ts::server::IMeasurementServer".
 | 3 ||
 |-
 |}
+
+[[Category:Services]]
