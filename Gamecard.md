@@ -1,14 +1,14 @@
 For the Gamecard partitions that can be
-[mounted](#Filesystem_services "wikilink"), see
-[here](#Gamecard_Partition "wikilink").
+[mounted](Filesystem%20services.md "wikilink"), see
+[here](Gamecard%20Partition.md "wikilink").
 
 For the format of the Gamecard image, see
-[here](#Gamecard_Format "wikilink").
+[here](Gamecard%20Format.md "wikilink").
 
 # Firmware
 
-[FS](#Filesystem_services "wikilink") is responsible for setting up the
-communication with the Gamecard. During this process, firmware blobs
+[FS](Filesystem%20services.md "wikilink") is responsible for setting up
+the communication with the Gamecard. During this process, firmware blobs
 (with a fixed size of 0x7800 bytes) are loaded into some sort of
 programmable logic on the Gamecard.
 
