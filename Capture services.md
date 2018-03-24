@@ -28,3 +28,5 @@ much larger: the MakerNote is 0x498-bytes, with random-looking data for
 all of it starting at offset +0x8.
 
 Note: the Album process itself uses libstagefright for video playback.
+
+[Category:Services](Category:Services "wikilink")
