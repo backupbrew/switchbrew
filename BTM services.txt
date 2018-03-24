@@ -116,3 +116,5 @@ This is "nn::btm::IBtmSystemCore".
 | 9 || IsGamepadPairingStartedImpl
 |-
 |}
+
+[[Category:Services]]

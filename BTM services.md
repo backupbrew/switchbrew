@@ -68,3 +68,5 @@ This is "nn::btm::IBtmSystemCore".
 | 8   | AcquireGamepadPairingEventImpl  |
 | 9   | IsGamepadPairingStartedImpl     |
 |     |                                 |
+
+[Category:Services](Category:Services "wikilink")
