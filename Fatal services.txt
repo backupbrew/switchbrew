@@ -25,3 +25,5 @@ This is "nn::fatalsrv::IPrivateService".
 |-
 | 0 || GetFatalEvent
 |}
+
+[[Category:Services]]
