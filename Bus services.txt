@@ -451,3 +451,5 @@ This is "nn::pwm::IChannelSession".
 |-
 | 5 || GetEnabled
 |}
+
+[[Category:Services]]

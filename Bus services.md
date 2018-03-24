@@ -272,3 +272,5 @@ This is "nn::pwm::IChannelSession".
 | 3   | GetDuty    |
 | 4   | SetEnabled |
 | 5   | GetEnabled |
+
+[Category:Services](Category:Services "wikilink")
