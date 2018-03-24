@@ -272,7 +272,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>psc:c, psc:m</p></td>
+<td><p>psc:c, psc:m, [5.0.0+] srepo:u, srepo:a</p></td>
 <td><p><a href="PSC services.md" title="wikilink">PSC services</a></p></td>
 <td></td>
 </tr>

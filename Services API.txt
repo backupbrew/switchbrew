@@ -220,7 +220,7 @@ Takes a pid.
 | [[Process Manager services]]
 |
 |-
-| psc:c, psc:m
+| psc:c, psc:m, [5.0.0+] srepo:u, srepo:a
 | [[PSC services]]
 | 
 |-
