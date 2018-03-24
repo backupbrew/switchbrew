@@ -1,4 +1,15 @@
 = lm =
+This is "nn::lm::ILogService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || OpenLogger
+|}
+
+== ILogger ==
+This is "nn::lm::ILogger".
 
 {| class="wikitable" border="1"
 |-
@@ -7,50 +18,6 @@
 | 0 || 
 |-
 | 1 || 
-|-
-| 2 || 
-|-
-| 3 || 
-|-
-| 4 || 
-|-
 |}
 
-== Cmd0 ==
-Unknown, domain related?
-
-== Cmd1 ==
-Returns a session handle.
-
-== Cmd2 ==
-Returns a session handle.
-
-== Cmd3 ==
-Returns an output u16.
-
-== Cmd4 ==
-Similar to cmd2.
-
-= Domain =
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || 
-|}
-
-= ILogService =
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || 
-|}
-
-= ILogger =
-{| class="wikitable" border="1"
-|-
-! Cmd || Name
-|-
-| 0 || 
-|}
+[[Category:Services]]
