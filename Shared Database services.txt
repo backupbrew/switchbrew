@@ -1,5 +1,5 @@
 
-= pl:u (Shared Font Manager) =
+= pl:u =
 This is "nn::pl::detail::ISharedFontManager".
 
 {| class="wikitable" border="1"
@@ -20,15 +20,12 @@ This is "nn::pl::detail::ISharedFontManager".
 |}
 
 == RequestLoad ==
-
 Takes a [[#SharedFontType]] (uint32), no output.
 
 == GetLoadState ==
-
 Takes a [[#SharedFontType]] (uint32), returns the [[#LoadState]] (uint32).
 
 === LoadState ===
-
 {| class="wikitable" border="1"
 |-
 ! Value || Description
@@ -39,11 +36,9 @@ Takes a [[#SharedFontType]] (uint32), returns the [[#LoadState]] (uint32).
 |}
 
 == GetSize ==
-
 Takes a [[#SharedFontType]] (uint32), returns the Font Size (uint32).
 
 == GetSharedMemoryAddressOffset ==
-
 Takes a [[#SharedFontType]] (uint32), returns the offset (uint32) to the Font Address.
 
 == GetSharedMemoryNativeHandle ==
@@ -57,7 +52,6 @@ Font data is TTF, located at the offset returned by [[#GetSharedMemoryAddressOff
 Takes an input u64 [[Settings_services#LanguageCode|LanguageCode]] and 3 type-0x6 output buffers, returns an output u8 and u32.
 
 == SharedFontType ==
-
 {| class="wikitable" border="1"
 |-
 ! Value || Description
@@ -84,3 +78,5 @@ This is "nn::mii::detail::IStaticService".
 |-
 | 0 || GetDatabaseServiceSharedPointer
 |}
+
+[[Category:Services]]

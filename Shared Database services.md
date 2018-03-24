@@ -1,4 +1,4 @@
-# pl:u (Shared Font Manager)
+# pl:u
 
 This is
 "nn::pl::detail::ISharedFontManager".
@@ -73,3 +73,5 @@ This is "nn::mii::detail::IStaticService".
 | Cmd | Name                            |
 | --- | ------------------------------- |
 | 0   | GetDatabaseServiceSharedPointer |
+
+[Category:Services](Category:Services "wikilink")
