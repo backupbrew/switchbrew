@@ -469,3 +469,5 @@ This is "nn::account::IBaasAccessTokenAccessor".
 |-
 | 51 || UnregisterNotificationTokenAsync || Returns an [[#IAsyncContext]].
 |}
+
+[[Category:Services]]

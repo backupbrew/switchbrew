@@ -277,3 +277,5 @@ This is
 | 2   | GetDeviceAccountId               |                                                          |
 | 50  | RegisterNotificationTokenAsync   | Returns an [\#IAsyncContext](#IAsyncContext "wikilink"). |
 | 51  | UnregisterNotificationTokenAsync | Returns an [\#IAsyncContext](#IAsyncContext "wikilink"). |
+
+[Category:Services](Category:Services "wikilink")
