@@ -7,3 +7,9 @@ It periodically uploads them to the following URL:
 https://receive-%.er.srv.nintendo.net/post
 
 The functionality can be disabled from <code>set:sys</code> by setting ("eupld", "upload_enabled") to anything but 1.
+
+= eupld:c =
+
+= eupld:r =
+
+[[Category:Services]]

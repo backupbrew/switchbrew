@@ -10,3 +10,9 @@ It periodically uploads them to the following URL:
 
 The functionality can be disabled from `set:sys` by setting ("eupld",
 "upload\_enabled") to anything but 1.
+
+# eupld:c
+
+# eupld:r
+
+[Category:Services](Category:Services "wikilink")
