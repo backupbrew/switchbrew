@@ -30,3 +30,15 @@ This is "nn::psc::sf::IPmModule".
 | 1   | GetRequest  |
 | 2   | Acknowledge |
 | 3   |             |
+
+# srepo:u, srepo:a
+
+These are "nn::srepo::detail::ipc::ISrepoService".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+
+[Category:Services](Category:Services "wikilink")

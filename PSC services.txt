@@ -45,3 +45,19 @@ This is "nn::psc::sf::IPmModule".
 |-
 | 3 ||
 |}
+
+= srepo:u, srepo:a =
+These are "nn::srepo::detail::ipc::ISrepoService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 ||
+|}
+
+[[Category:Services]]
