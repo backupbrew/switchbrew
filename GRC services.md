@@ -33,3 +33,5 @@ This is "nn::grcsrv::IGrcService"
 | 2   |      |
 | 10  |      |
 | 20  |      |
+
+[Category:Services](Category:Services "wikilink")

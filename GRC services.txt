@@ -48,3 +48,5 @@ This is "nn::grcsrv::IGrcService"
 |-
 | 20 ||
 |}
+
+[[Category:Services]]
