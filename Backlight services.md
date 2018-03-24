@@ -52,3 +52,5 @@ Sets the global state field used by
 ## GetVrMode
 
 No input. Returns an output u8 bool set by the above commands.
+
+[Category:Services](Category:Services "wikilink")
