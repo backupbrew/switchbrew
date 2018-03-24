@@ -10,7 +10,7 @@ Gamecard+0.
 | 0x104  | 0x4   | Offset of Secure partition (Size of non-secure data?), in Media Units (0x200 bytes for switch gamecarts) |
 | 0x108  | 0x4   | 0xFFFFFFFF                                                                                               |
 | 0x10C  | 0x1   | ?                                                                                                        |
-| 0x10D  | 0x1   | Cartridge Size. 0xF8 = 2 GB, 0xF0 = 4 GB, 0xE0 = 8 GB, 0xE1 = 16 GB                                      |
+| 0x10D  | 0x1   | Cartridge Size. 0xF8 = 2 GB, 0xF0 = 4 GB, 0xE0 = 8 GB, 0xE1 = 16 GB, 0xE2 = 32 GB                        |
 | 0x10E  | 0x1   | ?                                                                                                        |
 | 0x10F  | 0x1   | ?                                                                                                        |
 | 0x110  | 0x8   | ?                                                                                                        |

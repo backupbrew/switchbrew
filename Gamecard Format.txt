@@ -29,7 +29,7 @@ The header is 0x200-bytes, at Gamecard+0.
 |-
 | 0x10D
 | 0x1
-| Cartridge Size. 0xF8 = 2 GB, 0xF0 = 4 GB, 0xE0 = 8 GB, 0xE1 = 16 GB
+| Cartridge Size. 0xF8 = 2 GB, 0xF0 = 4 GB, 0xE0 = 8 GB, 0xE1 = 16 GB, 0xE2 = 32 GB
 |-
 | 0x10E
 | 0x1
@@ -87,7 +87,6 @@ The header is 0x200-bytes, at Gamecard+0.
 | 0x70
 | Encrypted data/hashes of some kind
 |}
-
 
 = Cert =
 
