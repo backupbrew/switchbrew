@@ -1,24 +1,112 @@
-=nim=
+= nim =
 This is "nn::nim::detail::INetworkInstallManager".
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
+| 0 || 
+|-
 | 1 || 
 |-
 | 2 || 
+|-
+| 3 ||
+|-
+| 4 ||
+|-
+| 5 ||
+|-
+| 6 ||
+|-
+| 7 ||
+|-
+| 8 ||
+|-
+| 9 ||
+|-
+| 10 ||
+|-
+| 11 ||
+|-
+| 12 ||
+|-
+| 14 ||
+|-
+| 15 ||
+|-
+| 16 ||
+|-
+| 17 ||
+|-
+| 18 ||
+|-
+| 19 ||
+|-
+| 20 ||
+|-
+| 21 ||
+|-
+| 22 ||
+|-
+| 23 ||
+|-
+| 24 ||
+|-
+| 25 ||
+|-
+| 26 ||
+|-
+| 27 ||
+|-
+| 28 ||
+|-
+| 29 ||
+|-
+| 30 ||
+|-
+| 31 ||
+|-
+| 32 ||
+|-
+| 33 ||
+|-
+| 34 ||
+|-
+| 35 ||
+|-
+| 36 ||
+|-
+| 37 ||
+|-
+| 38 ||
+|-
+| 39 ||
+|-
+| 40 ||
+|-
+| 41 ||
+|-
+| 42 ||
+|-
+| 43 ||
+|-
+| 44 ||
+|-
+| 45 ||
+|-
+| 46 ||
 |}
 
-==Cmd1==
+== Cmd1 ==
 Takes a 0x10-byte input struct, from the output of cmd2.
 
-==Cmd2==
+== Cmd2 ==
 Takes a type-0x6 output buffer, for an array of 0x10-byte entries. Returns an u32 for total output entries.
 
 Doesn't return anything on a v2.1 system where sysupdate domains are blocked.
 
-=nim:shp=
+= nim:shp =
 This is "nn::nim::detail::IShopServiceManager".
 
 {| class="wikitable" border="1"
@@ -67,19 +155,27 @@ This is "nn::nim::detail::IShopServiceManager".
 |-
 | 501 || RequestDownloadTicket
 |-
-| 502 || RequestDownloadTicketForPrepurchasedContents
+| 502 || [4.0.0+] RequestDownloadTicketForPrepurchasedContents
 |-
 |}
 
-
-=ntc=
+= ntc =
 This is "nn::ntc::detail::service::IStaticService".
 
-Presumably Network Time Sync?
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 100 || 
+|-
+| 101 ||
+|}
 
 Network-time-sync uses the "<...>/time" HTTPS URL listed in the below Network section. This just returns an UTC Unix time string.
 
-=Network=
+= Network =
 * <nowiki>https://sun.hac.%%.d4c.nintendo.net/v1/system_update_meta?device_id=%016llx</nowiki>
 * <nowiki>https://aqua.hac.%%.d4c.nintendo.net/required_system_update_meta?device_id=%016llx</nowiki>
 * <nowiki>https://%s.hac.%%.d4c.nintendo.net/t/%c/%016llx/%u?device_id=%016llx</nowiki> Returns content like the below URL. This is the content for [[NCA]]-type0. See below for %c. %016llx is titleID, %u is title-version.
@@ -144,3 +240,5 @@ The following response is json from accessing the above aqua URL:
 }</code>
 
 A while after [[3.0.0]] release, the above title-version was changed to the one for v3.0("Last-Modified: Thu, 29 Jun 2017 00:00:04 GMT").
+
+[[Category:Services]]

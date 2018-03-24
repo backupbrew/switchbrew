@@ -4,8 +4,52 @@ This is "nn::nim::detail::INetworkInstallManager".
 
 | Cmd | Name |
 | --- | ---- |
+| 0   |      |
 | 1   |      |
 | 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
+| 6   |      |
+| 7   |      |
+| 8   |      |
+| 9   |      |
+| 10  |      |
+| 11  |      |
+| 12  |      |
+| 14  |      |
+| 15  |      |
+| 16  |      |
+| 17  |      |
+| 18  |      |
+| 19  |      |
+| 20  |      |
+| 21  |      |
+| 22  |      |
+| 23  |      |
+| 24  |      |
+| 25  |      |
+| 26  |      |
+| 27  |      |
+| 28  |      |
+| 29  |      |
+| 30  |      |
+| 31  |      |
+| 32  |      |
+| 33  |      |
+| 34  |      |
+| 35  |      |
+| 36  |      |
+| 37  |      |
+| 38  |      |
+| 39  |      |
+| 40  |      |
+| 41  |      |
+| 42  |      |
+| 43  |      |
+| 44  |      |
+| 45  |      |
+| 46  |      |
 
 ## Cmd1
 
@@ -23,37 +67,41 @@ blocked.
 
 This is "nn::nim::detail::IShopServiceManager".
 
-| Cmd | Name                                         |
-| --- | -------------------------------------------- |
-| 0   | RequestDeviceAuthenticationToken             |
-| 1   | RequestCachedDeviceAuthenticationToken       |
-| 400 | GetAccountByVirtualAccount                   |
-| 300 | RequestUnlinkDevice                          |
-| 301 | RequestUnlinkDeviceIntegrated                |
-| 302 | RequestLinkDevice                            |
-| 303 | HasDeviceLink                                |
-| 304 | RequestUnlinkDeviceAll                       |
-| 305 | RequestCreateVirtualAccount                  |
-| 306 | RequestDeviceLinkStatus                      |
-| 200 | RequestRegisterNotificationToken             |
-| 100 | RequestRegisterDeviceAccount                 |
-| 101 | RequestUnregisterDeviceAccount               |
-| 102 | RequestDeviceAccountStatus                   |
-| 103 | GetDeviceAccountInfo                         |
-| 104 | RequestDeviceRegistrationInfo                |
-| 105 | RequestTransferDeviceAccount                 |
-| 106 | RequestSyncRegistration                      |
-| 107 | IsOwnDeviceId                                |
-| 500 | RequestSyncTicket                            |
-| 501 | RequestDownloadTicket                        |
-| 502 | RequestDownloadTicketForPrepurchasedContents |
-|     |                                              |
+| Cmd | Name                                                    |
+| --- | ------------------------------------------------------- |
+| 0   | RequestDeviceAuthenticationToken                        |
+| 1   | RequestCachedDeviceAuthenticationToken                  |
+| 400 | GetAccountByVirtualAccount                              |
+| 300 | RequestUnlinkDevice                                     |
+| 301 | RequestUnlinkDeviceIntegrated                           |
+| 302 | RequestLinkDevice                                       |
+| 303 | HasDeviceLink                                           |
+| 304 | RequestUnlinkDeviceAll                                  |
+| 305 | RequestCreateVirtualAccount                             |
+| 306 | RequestDeviceLinkStatus                                 |
+| 200 | RequestRegisterNotificationToken                        |
+| 100 | RequestRegisterDeviceAccount                            |
+| 101 | RequestUnregisterDeviceAccount                          |
+| 102 | RequestDeviceAccountStatus                              |
+| 103 | GetDeviceAccountInfo                                    |
+| 104 | RequestDeviceRegistrationInfo                           |
+| 105 | RequestTransferDeviceAccount                            |
+| 106 | RequestSyncRegistration                                 |
+| 107 | IsOwnDeviceId                                           |
+| 500 | RequestSyncTicket                                       |
+| 501 | RequestDownloadTicket                                   |
+| 502 | \[4.0.0+\] RequestDownloadTicketForPrepurchasedContents |
+|     |                                                         |
 
 # ntc
 
 This is "nn::ntc::detail::<service::IStaticService>".
 
-Presumably Network Time Sync?
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 100 |      |
+| 101 |      |
 
 Network-time-sync uses the "\<...\>/time" HTTPS URL listed in the below
 Network section. This just returns an UTC Unix time
@@ -171,3 +219,5 @@ The following response is json from accessing the above aqua URL:
 A while after [3.0.0](3.0.0.md "wikilink") release, the above
 title-version was changed to the one for v3.0("Last-Modified: Thu, 29
 Jun 2017 00:00:04 GMT").
+
+[Category:Services](Category:Services "wikilink")
