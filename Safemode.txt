@@ -46,7 +46,7 @@ While this thread is running, safemode proceeds with the actual update process.
 == System update ==
 Safemode sets up service sessions for [[NS_Services|ns:su]] and [[Network_Interface_services#nifm:u|nifm:u]].
 
-It calls [[Network_Interface_services#nifm:u|CreateRequest ]] with '''request_id''' 0x02.
+It calls [[Network_Interface_services#nifm:u|CreateRequest]] with '''request_id''' 0x02.
 
 Then calls [[Network_Interface_services#nifm:u|GetSystemEventReadableHandles]] on the returned [[Network_Interface_services#IRequest|IRequest]] and creates an event object.
 
@@ -54,13 +54,13 @@ It uses [[Network_Interface_services#nifm:u|GetRequestState]] and [[Network_Inte
 
 After submitting the first request, safemode repeats the request process again and waits for it to finish. If the request fails to finish at this point, [[PCV_services#bpc|RebootSystem]] is called.
 
-It calls [[NS_Services#ns:su|GetISystemUpdateControl]] and creates a system update event by calling:
+It calls [[NS_Services#ns:su|OpenSystemUpdateControl]] and creates a system update event by calling:
 * [[Network_Interface_services#nifm:u|GetClientId]] to obtain the current client's ID;
 * [[Network_Interface_services#nifm:u|IsAnyInternetRequestAccepted]] with the returned client ID (if no request was accepted, error 0x2A810 is returned);
-* [[NS_Services#ns:su|ISystemUpdateControl cmd2]].
+* [[NS_Services#ISystemUpdateControl|RequestDownloadLatestUpdate]].
 
-After this, an event object is created and safemode loops waiting on it while calling [[NS_Services#ns:su|ISystemUpdateControl cmd3]] (update event?).
+After this, an event object is created and safemode loops waiting on it while calling [[NS_Services#ns:su|GetDownloadProgress]].
 
-When the system update event is signalled, safemode calls [[NS_Services#ns:su|ns:su cmd0]] (get update status?) and if this fails, [[PCV_services#bpc|RebootSystem]] is called.
+When the system update event is signalled, safemode calls [[NS_Services#ns:su|GetBackgroundNetworkUpdateState]] and if this fails, [[PCV_services#bpc|RebootSystem]] is called.
 
-Finally, [[NS_Services#ns:su|ISystemUpdateControl cmd4]] is called and the process exits.
+Finally, [[NS_Services#ISystemUpdateControl|ApplyDownloadedUpdate]] is called and the process exits.

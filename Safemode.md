@@ -61,9 +61,9 @@ Safemode sets up service sessions for
 [ns:su](NS%20Services.md "wikilink") and
 [nifm:u](Network%20Interface%20services#nifm:u.md##nifm:u "wikilink").
 
-It calls [CreateRequest
-](Network%20Interface%20services#nifm:u.md##nifm:u "wikilink") with
-**request\_id** 0x02.
+It calls
+[CreateRequest](Network%20Interface%20services#nifm:u.md##nifm:u "wikilink")
+with **request\_id** 0x02.
 
 Then calls
 [GetSystemEventReadableHandles](Network%20Interface%20services#nifm:u.md##nifm:u "wikilink")
@@ -84,7 +84,7 @@ again and waits for it to finish. If the request fails to finish at this
 point, [RebootSystem](PCV%20services#bpc.md##bpc "wikilink") is called.
 
 It calls
-[GetISystemUpdateControl](NS%20Services#ns:su.md##ns:su "wikilink") and
+[OpenSystemUpdateControl](NS%20Services#ns:su.md##ns:su "wikilink") and
 creates a system update event by
     calling:
 
@@ -93,19 +93,19 @@ creates a system update event by
     ID;
   - [IsAnyInternetRequestAccepted](Network%20Interface%20services#nifm:u.md##nifm:u "wikilink")
     with the returned client ID (if no request was accepted, error
-    0x2A810 is returned);
-  - [ISystemUpdateControl
-    cmd2](NS%20Services#ns:su.md##ns:su "wikilink").
+    0x2A810 is
+    returned);
+  - [RequestDownloadLatestUpdate](NS%20Services#ISystemUpdateControl.md##ISystemUpdateControl "wikilink").
 
 After this, an event object is created and safemode loops waiting on it
-while calling [ISystemUpdateControl
-cmd3](NS%20Services#ns:su.md##ns:su "wikilink") (update event?).
+while calling
+[GetDownloadProgress](NS%20Services#ns:su.md##ns:su "wikilink").
 
-When the system update event is signalled, safemode calls [ns:su
-cmd0](NS%20Services#ns:su.md##ns:su "wikilink") (get update status?) and
-if this fails, [RebootSystem](PCV%20services#bpc.md##bpc "wikilink") is
-called.
+When the system update event is signalled, safemode calls
+[GetBackgroundNetworkUpdateState](NS%20Services#ns:su.md##ns:su "wikilink")
+and if this fails, [RebootSystem](PCV%20services#bpc.md##bpc "wikilink")
+is called.
 
-Finally, [ISystemUpdateControl
-cmd4](NS%20Services#ns:su.md##ns:su "wikilink") is called and the
-process exits.
+Finally,
+[ApplyDownloadedUpdate](NS%20Services#ISystemUpdateControl.md##ISystemUpdateControl "wikilink")
+is called and the process exits.
