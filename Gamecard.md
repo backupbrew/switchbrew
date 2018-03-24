@@ -5,14 +5,17 @@ For the Gamecard partitions that can be
 For the format of the Gamecard image, see
 [here](Gamecard%20Format.md "wikilink").
 
-# Firmware
+# Gamecard controller
 
-[FS](Filesystem%20services.md "wikilink") is responsible for setting up
-the communication with the Gamecard. During this process, firmware blobs
-(with a fixed size of 0x7800 bytes) are loaded into some sort of
-programmable logic on the Gamecard.
+The gamecard controller (a separate chip on the gamecard reader board)
+is responsible for communicating with the Gamecard.
+[FS](Filesystem%20services.md "wikilink"), to access the gamecard data,
+will communicate with the gamecard controller. At each boot, firmware
+blobs (with a fixed size of 0x7800 bytes) are sent by FS to the gamecard
+controller.
 
-The Gamecard firmware is encrypted, signed and follows the format below.
+The gamecard controller firmware is encrypted, signed and follows the
+format below.
 
 | Offset | Size   | Description                                    |
 | ------ | ------ | ---------------------------------------------- |
@@ -26,7 +29,7 @@ The Gamecard firmware is encrypted, signed and follows the format below.
 | 0x118  | 0x4    | Data size                                      |
 | 0x11C  | 0x4    |                                                |
 | 0x120  | 0x10   | Data hash                                      |
-| 0x130  | 0x10   | Unknown string ("IDIDIDIDIDIDIDID")            |
+| 0x130  | 0x10   | Placeholder string ("IDIDIDIDIDIDIDID")        |
 | 0x140  | 0x40   | Empty                                          |
 | 0x180  | 0x7680 | Encrypted data                                 |
 
