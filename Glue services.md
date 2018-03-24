@@ -27,3 +27,5 @@ This is "nn::arp::detail::IRegistrar".
 | 0   | BindRegistrar |
 | 1   | WriteHeader   |
 | 2   | WriteData     |
+
+[Category:Services](Category:Services "wikilink")
