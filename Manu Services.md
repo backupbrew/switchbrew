@@ -76,3 +76,5 @@ Reads raw data from the device.
 Takes a type-0x5 input buffer and 2 u64s: **offset** and **size**.
 
 Writes raw data to the device.
+
+[Category:Services](Category:Services "wikilink")
