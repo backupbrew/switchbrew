@@ -60,3 +60,5 @@ match btdrv.
 | 42  | GetIsBluetoothBoostEnabled           |
 | 43  | SetIsBluetoothAfhEnabled             |
 | 44  | GetIsBluetoothAfhEnabled             |
+
+[Category:Services](Category:Services "wikilink")

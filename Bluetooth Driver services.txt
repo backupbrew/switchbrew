@@ -101,3 +101,5 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 44 || GetIsBluetoothAfhEnabled
 |}
+
+[[Category:Services]]
