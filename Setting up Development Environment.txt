@@ -24,20 +24,14 @@ Currently devkitPro provides precompiled versions of devkitARM for the following
 ** Arch Linux/ALWSL: <code>sudo pacman -S git curl wget</code>
 ** macOS: Download Git from [http://git-scm.com/download/mac] and install it. Curl is included with the OS.
 
-* We can set the DEVKITPRO environment variable first so the script knows where to install or we can set the variable later to the value the script tells us. The script will default this to ~/devkitPro
-<pre>
-echo "export DEVKITPRO=/opt/devkitpro" >> ~/.bashrc
-source ~/.bashrc
-</pre>
-
 * Next, we need to download, make executable and run the devkitARM updater (don't worry, the updater is also the installer.)
 <pre>
 curl -L https://raw.githubusercontent.com/devkitPro/installer/master/perl/devkitA64update.pl -o devkitA64update.pl
 chmod +x ./devkitA64update.pl
-./devkitA64update.pl /opt/devkitpro
+./devkitA64update.pl
 </pre>
 
-You may need to use sudo here if you set DEVKITPRO to a path not writable by your user.
+You can either use sudo here or chown /opt/devkitpro to be writable by your user before running the script.
 
 = Building the examples =
 Switch examples are still being created; however, there are a growing number of examples available from the [https://github.com/switchbrew/switch-examples switchbrew/switch-examples GitHub repository]. These are downloaded by the installer and can be found in $DEVKITPRO/examples/switch

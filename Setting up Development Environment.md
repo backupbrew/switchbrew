@@ -56,15 +56,6 @@ that Linux x86\_64 binaries are usable under WSL.
 
 <!-- end list -->
 
-  - We can set the DEVKITPRO environment variable first so the script
-    knows where to install or we can set the variable later to the value
-    the script tells us. The script will default this to ~/devkitPro
-
-<!-- end list -->
-
-    echo "export DEVKITPRO=/opt/devkitpro" >> ~/.bashrc
-    source ~/.bashrc
-
   - Next, we need to download, make executable and run the devkitARM
     updater (don't worry, the updater is also the
     installer.)
@@ -73,10 +64,10 @@ that Linux x86\_64 binaries are usable under WSL.
 
     curl -L https://raw.githubusercontent.com/devkitPro/installer/master/perl/devkitA64update.pl -o devkitA64update.pl
     chmod +x ./devkitA64update.pl
-    ./devkitA64update.pl /opt/devkitpro
+    ./devkitA64update.pl
 
-You may need to use sudo here if you set DEVKITPRO to a path not
-writable by your user.
+You can either use sudo here or chown /opt/devkitpro to be writable by
+your user before running the script.
 
 # Building the examples
 
