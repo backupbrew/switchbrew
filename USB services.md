@@ -488,3 +488,5 @@ This is "nn::usb::pm::IPmService".
 
 Presumably Power Management, only system-title using this is
 [PTM](PTM%20services.md "wikilink").
+
+[Category:Services](Category:Services "wikilink")

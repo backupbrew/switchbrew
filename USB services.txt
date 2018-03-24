@@ -406,3 +406,5 @@ Note: The VdmUserId given to VdmUserRead/VdmUserWrite is translated from the giv
 This is "nn::usb::pm::IPmService".
 
 Presumably Power Management, only system-title using this is [[PTM_services|PTM]].
+
+[[Category:Services]]
