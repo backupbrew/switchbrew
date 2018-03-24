@@ -1,3 +1,5 @@
 Jpegdec is a refactored sysmodule for handling all JPEG decoding associated with [[Capture_services|capture services]].
 
 = caps:dc =
+
+[[Category:Services]]
