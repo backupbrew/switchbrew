@@ -55,3 +55,5 @@ Takes an input s32 ('''ID''') and u32, with the latter immediately following the
 
 == TransactParcelAuto ==
 Takes a s32 ('''ID'''), an u32 ('''code'''), a type-0x21 input buffer ('''parcel_data'''), a type-0x22 output buffer ('''parcel_reply''') and an input u32 ('''flags'''). Each word is placed immediately after the previous word.
+
+[[Category:Services]]

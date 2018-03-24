@@ -64,3 +64,5 @@ Takes a s32 (**ID**), an u32 (**code**), a type-0x21 input buffer
 (**parcel\_data**), a type-0x22 output buffer (**parcel\_reply**) and an
 input u32 (**flags**). Each word is placed immediately after the
 previous word.
+
+[Category:Services](Category:Services "wikilink")
