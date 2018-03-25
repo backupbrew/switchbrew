@@ -943,11 +943,11 @@ The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-b
 |-
 | 0x20
 | 0x8
-| saveID, 0 for non-SystemSaveData.
+| saveID, 0 for regular SaveData.
 |-
 | 0x28
 | 0x8
-| ?
+| Application titleID, for regular SaveData.
 |-
 | 0x30
 | 0x8
