@@ -259,7 +259,7 @@ This is
 | 44  | SetAudioOutputMode                                                                                |
 | 45  | IsForceMuteOnHeadphoneRemoved                                                                     |
 | 46  | SetForceMuteOnHeadphoneRemoved                                                                    |
-| 47  | GetQuestFlag                                                                                      |
+| 47  | [\#GetQuestFlag](#GetQuestFlag "wikilink")                                                        |
 | 48  | SetQuestFlag                                                                                      |
 | 49  | GetDataDeletionSettings                                                                           |
 | 50  | SetDataDeletionSettings                                                                           |
@@ -426,6 +426,12 @@ Returns 0x01 if [safemode](Safemode.md "wikilink") needs to be launched.
 Takes a type-0x6 output buffer, returns an output s32. This buffer
 contains an array of 0x8-byte "nn::settings::system::AllowedSslHost"
 entries.
+
+## GetQuestFlag
+
+Gets a flag determining whether the console is a kiosk unit (codenamed
+"Quest"). Used by qlaunch to determine whether to launch Retail
+Interactive Display Menu.
 
 # System Config
 
