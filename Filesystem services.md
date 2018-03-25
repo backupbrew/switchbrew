@@ -587,13 +587,13 @@ This is "nn::fssrv::sf::IFile".
 This is
 "nn::fssrv::sf::ISaveDataInfoReader".
 
-| Cmd | Name | Notes                                                                                                                                |
-| --- | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| 0   |      | Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of 0x120-byte entries. |
+| Cmd | Name | Notes                                                                                                                                                        |
+| --- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0   |      | Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of [\#SaveDataInfo](#SaveDataInfo "wikilink"). |
 
-The above is used to get SaveDataInfo for all savedata on the system.
-When used multiple times, it will resume reading where it left off,
-until no more entries are available.
+The above is used to get [\#SaveDataInfo](#SaveDataInfo "wikilink") for
+all savedata on the system. When used multiple times, it will resume
+reading where it left off, until no more entries are available.
 
 # IDeviceOperator
 
@@ -759,5 +759,9 @@ SaveCreate-struct.
 The 0x10-byte struct passed to
 [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink") has
 the first 0x5-bytes set to all-zero.
+
+# SaveDataInfo
+
+This is a 0x120-byte struct.
 
 [Category:Services](Category:Services "wikilink")

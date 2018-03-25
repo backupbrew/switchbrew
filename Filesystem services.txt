@@ -661,10 +661,10 @@ This is "nn::fssrv::sf::ISaveDataInfoReader".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of 0x120-byte entries.
+| 0 || || Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of [[#SaveDataInfo]].
 |}
 
-The above is used to get SaveDataInfo for all savedata on the system. When used multiple times, it will resume reading where it left off, until no more entries are available.
+The above is used to get [[#SaveDataInfo]] for all savedata on the system. When used multiple times, it will resume reading where it left off, until no more entries are available.
 
 = IDeviceOperator =
 This is "nn::fssrv::sf::IDeviceOperator".
@@ -921,5 +921,8 @@ This is accessed using the same commands for SaveData with the same input u8, th
 This is accessed using the same commands for SaveData with the same input u8. The Save-struct is the same as DeviceSaveData, except that the titleID field is set to <input titleID>. See above regarding SaveCreate-struct.
 
 The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-bytes set to all-zero.
+
+=SaveDataInfo=
+This is a 0x120-byte struct.
 
 [[Category:Services]]
