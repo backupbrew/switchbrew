@@ -587,9 +587,9 @@ This is "nn::fssrv::sf::IFile".
 This is
 "nn::fssrv::sf::ISaveDataInfoReader".
 
-| Cmd | Name | Notes                                                       |
-| --- | ---- | ----------------------------------------------------------- |
-| 0   |      | Takes an input u64 and a type-0x6 output buffer. No output. |
+| Cmd | Name | Notes                                                                                                       |
+| --- | ---- | ----------------------------------------------------------------------------------------------------------- |
+| 0   |      | Takes a type-0x6 output buffer. Returns an output u64. This buffer contains an array of 0x120-byte entries. |
 
 # IDeviceOperator
 
