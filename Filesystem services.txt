@@ -923,6 +923,6 @@ This is accessed using the same commands for SaveData with the same input u8. Th
 The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-bytes set to all-zero.
 
 =SaveDataInfo=
-This is a 0x120-byte struct.
+This is a 0x60-byte struct.
 
 [[Category:Services]]

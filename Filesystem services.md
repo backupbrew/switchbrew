@@ -762,6 +762,6 @@ the first 0x5-bytes set to all-zero.
 
 # SaveDataInfo
 
-This is a 0x120-byte struct.
+This is a 0x60-byte struct.
 
 [Category:Services](Category:Services "wikilink")
