@@ -934,8 +934,16 @@ The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-b
 | Unknown saveID
 |-
 | 0x8
-| 0x8
-| Type field(s)?
+| 0x1
+| ?
+|-
+| 0x9
+| 0x1
+| SaveDataType
+|-
+| 0xA
+| 0x6
+| Padding?
 |-
 | 0x10
 | 0x10

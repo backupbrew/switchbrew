@@ -765,7 +765,9 @@ the first 0x5-bytes set to all-zero.
 | Offset | Size | Description                                |
 | ------ | ---- | ------------------------------------------ |
 | 0x0    | 0x8  | Unknown saveID                             |
-| 0x8    | 0x8  | Type field(s)?                             |
+| 0x8    | 0x1  | ?                                          |
+| 0x9    | 0x1  | SaveDataType                               |
+| 0xA    | 0x6  | Padding?                                   |
 | 0x10   | 0x10 | userID                                     |
 | 0x20   | 0x8  | saveID, 0 for regular SaveData.            |
 | 0x28   | 0x8  | Application titleID, for regular SaveData. |
