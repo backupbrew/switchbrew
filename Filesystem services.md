@@ -758,20 +758,19 @@ SaveCreate-struct.
 
 The 0x10-byte struct passed to
 [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink") has
-the first 0x5-bytes set to
-all-zero.
+the first 0x5-bytes set to all-zero.
 
 # SaveDataInfo
 
-| Offset | Size | Description                                               |
-| ------ | ---- | --------------------------------------------------------- |
-| 0x0    | 0x8  | Internal saveID, same as below saveID for SystemSaveData. |
-| 0x8    | 0x8  | Type field(s)?                                            |
-| 0x10   | 0x10 | userID                                                    |
-| 0x20   | 0x8  | saveID, 0 for non-SystemSaveData.                         |
-| 0x28   | 0x8  | ?                                                         |
-| 0x30   | 0x8  | Raw saveimage size                                        |
-| 0x38   | 0x28 | ?                                                         |
+| Offset | Size | Description                       |
+| ------ | ---- | --------------------------------- |
+| 0x0    | 0x8  | Unknown saveID                    |
+| 0x8    | 0x8  | Type field(s)?                    |
+| 0x10   | 0x10 | userID                            |
+| 0x20   | 0x8  | saveID, 0 for non-SystemSaveData. |
+| 0x28   | 0x8  | ?                                 |
+| 0x30   | 0x8  | Raw saveimage size                |
+| 0x38   | 0x28 | ?                                 |
 
 This is a 0x60-byte struct.
 

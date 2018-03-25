@@ -931,7 +931,7 @@ The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-b
 |-
 | 0x0
 | 0x8
-| Internal saveID, same as below saveID for SystemSaveData.
+| Unknown saveID
 |-
 | 0x8
 | 0x8
