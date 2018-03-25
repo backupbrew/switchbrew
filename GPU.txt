@@ -33,6 +33,8 @@ Subchannels:
 |-
 | 0x1D1 || TransformFeedbackEnable || 1 || bool ||
 |-
+| 0x1D3 || || 1 || || GpuInit writes 0x3f here.
+|-
 | 0x1FA || ZCullContextStartAddr || 2 || gpuva ||
 |-
 | 0x1FC || ZCullContextEndAddr || 2 || gpuva ||
@@ -61,6 +63,10 @@ Subchannels:
 |-
 | 0x303+4*N || ViewportNDepthRangeFar || 1 || float ||
 |-
+| 0x340+2*N || ClipRectNHorizontal || 1 || || TODO
+|-
+| 0x341+2*N || ClipRectNVertical || 1 || || TODO
+|-
 | 0x360 || ClearColor || 4 || float ||
 |-
 | 0x36B || PolygonModeFront || 1 || bitfield || 0x1B00/0x1B01/0x1B02
@@ -79,9 +85,13 @@ Subchannels:
 |-
 | 0x374 || || 1 || || 0 written here for "simple" BlendState.
 |-
+| 0x380 || ScissorEnable || 1 || bool || GpuInit writes 1 here.
+|-
 | 0x381+4*N || ScissorNHorizontal || 1 || bitfield || Bit0-15: min, bit16-31: max
 |-
 | 0x382+4*N || ScissorNVertical || 1 || bitfield || Bit0-15: min, bit16-31: max
+|-
+| 0x384+4*N || ScissorNEnable? || 1 || bool? ||
 |-
 | 0x3D5 || StencilBackRefValue || 1 || ||
 |-
@@ -116,6 +126,18 @@ Subchannels:
 | 0x3F6 || CoverageModulationEnable || 1 || bool ||
 |-
 | 0x40C || CoverageModulationTable || 4 || float[4] ||
+|-
+| 0x433 || || 1 || || GpuInit writes 4 here.
+|-
+| 0x438 || || 1 || || GpuInit writes 0xFF here.
+|-
+| 0x439 || || 1 || || GpuInit writes 0xFF here.
+|-
+| 0x43B || || 1 || || GpuInit writes 0xFF here.
+|-
+| 0x43C || || 1 || || GpuInit writes 4 here.
+|-
+| 0x43E || ClearFlags? || 1 || || GpuInit writes 0x101 here.
 |-
 | 0x446 || DrawElementsEnableBaseVertex? || 1 || bool || TODO
 |-
@@ -181,11 +203,15 @@ Subchannels:
 |-
 | 0x54D || MultisampleEnable || 1 || ||
 |-
-| 0x54F || MultisampleAlphaToCoverageEnable || 1 || bool || TODO: Has more fields?
+| 0x54F || MultisampleControl || 1 || bool || bit0: AlphaToCoverageEnable, bit1+: ?
 |-
 | 0x55B || PolygonOffsetFactor || 1 || float ||
 |-
+| 0x56d || CsaaEnable || 1 || bool ||
+|-
 | 0x56F || PolygonOffsetOffset || 1 || float || Float multiplied by 2 is written here.
+|-
+| 0x574 || MultisampleMode || 1 || ||
 |-
 | 0x591 || PrimitiveRestartEnable || 1 || bool ||
 |-
@@ -268,6 +294,12 @@ Subchannels:
 | 0x91C || UniformBuffer2_Control || 1 || ||
 |-
 | 0x924 || UniformBuffer1_Control || 1 || ||
+|-
+| 0xD19 || || 1 || || GpuInit writes 0 here.
+|-
+| 0xD1A || || 1 || || GpuInit writes 0 here.
+|-
+| 0xD1B || || 1 || || GpuInit writes 0xffffffff here.
 |-
 | 0xD1E || || 1 || || BindProgram writes 0 here, trigger?
 |-
