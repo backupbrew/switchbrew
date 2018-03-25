@@ -591,6 +591,10 @@ This is
 | --- | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | 0   |      | Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of 0x120-byte entries. |
 
+The above is used to get SaveDataInfo for all savedata on the system.
+When used multiple times, it will resume reading where it left off,
+until no more entries are available.
+
 # IDeviceOperator
 
 This is
