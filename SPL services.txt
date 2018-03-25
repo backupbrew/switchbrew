@@ -286,7 +286,7 @@ This item is obtained from [[Fuse_registers#FUSE_RESERVED_ODM2|FUSE_RESERVED_ODM
 === Unknown0 ===
 This item is bit 10 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
 
-[4.0.0+] [[Settings_services|Settings]] uses this value overwrite the quest flag in [[Settings_services#set:sys|GetQuestFlag]] and [[Settings_services#set|GetQuestFlag2]].
+[4.0.0+] [[Settings_services|Settings]] uses this value overwrite the quest flag in [[Settings_services#set:sys|GetQuestFlag]] and [[Settings_services#set|GetQuestFlag2]]. This is used to detect if a Switch is a kiosk unit for display at retail stores.
 
 === NewHardwareType ===
 This item is currently hardcoded to 0.

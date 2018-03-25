@@ -241,7 +241,8 @@ This item is bit 10 from
 \[4.0.0+\] [Settings](Settings%20services.md "wikilink") uses this value
 overwrite the quest flag in
 [GetQuestFlag](Settings%20services#set:sys.md##set:sys "wikilink") and
-[GetQuestFlag2](Settings%20services#set.md##set "wikilink").
+[GetQuestFlag2](Settings%20services#set.md##set "wikilink"). This is
+used to detect if a Switch is a kiosk unit for display at retail stores.
 
 ### NewHardwareType
 
