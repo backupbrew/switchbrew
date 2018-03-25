@@ -34,18 +34,20 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 8    | IsApplicationEntityMovable                                                                         |
 | 9    | MoveApplicationEntity                                                                              |
 | 11   | CalculateApplicationOccupiedSize                                                                   |
-| 13   |                                                                                                    |
 | 16   | PushApplicationRecord                                                                              |
 | 17   | ListApplicationRecordContentMeta                                                                   |
+| 18   |                                                                                                    |
 | 19   | LaunchApplication                                                                                  |
 | 21   | [\#GetApplicationContentPath](#GetApplicationContentPath "wikilink")                               |
 | 22   | TerminateApplication                                                                               |
-| 23   | ResolveApplicationContentPath                                                                      |
-| 25   |                                                                                                    |
+| 23   | \[2.0.0+\] ResolveApplicationContentPath                                                           |
+| 26   | BeginInstallApplication                                                                            |
 | 27   | DeleteApplicationRecord                                                                            |
 | 30   | RequestApplicationUpdateInfo                                                                       |
-| 31   |                                                                                                    |
+| 31   | RequestUpdateApplication                                                                           |
+| 32   | CancelApplicationDownload                                                                          |
 | 33   | ResumeApplicationDownload                                                                          |
+| 34   |                                                                                                    |
 | 35   | UpdateVersionList                                                                                  |
 | 36   | PushLaunchVersion                                                                                  |
 | 37   | ListRequiredVersion                                                                                |
@@ -73,11 +75,11 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 61   | GetBackgroundDownloadStressTaskInfo                                                                |
 | 62   | GetGameCardStopper                                                                                 |
 | 63   | IsSystemProgramInstalled                                                                           |
-| 64   | StartApplyDeltaTask                                                                                |
-| 65   | GetRequestServerStopper                                                                            |
+| 64   | \[2.0.0+\] StartApplyDeltaTask                                                                     |
+| 65   | \[2.0.0+\] GetRequestServerStopper                                                                 |
 | 100  | ResetToFactorySettings                                                                             |
 | 101  | ResetToFactorySettingsWithoutUserSaveData                                                          |
-| 102  | ResetToFactorySettingsForRefurbishment                                                             |
+| 102  | \[2.0.0+\] ResetToFactorySettingsForRefurbishment                                                  |
 | 200  | CalculateUserSaveDataStatistics                                                                    |
 | 201  | DeleteUserSaveDataAll                                                                              |
 | 210  | DeleteUserSystemSaveData                                                                           |
@@ -90,53 +92,54 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 305  | TerminateSystemApplet                                                                              |
 | 306  | LaunchOverlayApplet                                                                                |
 | 307  | TerminateOverlayApplet                                                                             |
+| 400  | GetApplicationControlData                                                                          |
 | 401  | InvalidateAllApplicationControlCache                                                               |
 | 402  | RequestDownloadApplicationControlData                                                              |
 | 403  | GetMaxApplicationControlCacheCount                                                                 |
-| 404  | InvalidateApplicationControlCache                                                                  |
-| 405  | ListApplicationControlCacheEntryInfo                                                               |
-| 502  | RequestCheckGameCardRegistration                                                                   |
-| 503  | RequestGameCardRegistrationGoldPoint                                                               |
-| 504  | RequestRegisterGameCard                                                                            |
-| 600  | CountApplicationContentMeta                                                                        |
-| 601  | [\#ListApplicationContentMetaStatus](#ListApplicationContentMetaStatus "wikilink")                 |
-| 602  | ListAvailableAddOnContent                                                                          |
-| 603  | GetOwnedApplicationContentMetaStatus                                                               |
-| 604  | RegisterContentsExternalKey                                                                        |
-| 605  | ListApplicationContentMetaStatusWithRightsCheck                                                    |
-| 700  | PushDownloadTaskList                                                                               |
-| 701  | ClearTaskStatusList                                                                                |
-| 702  | RequestDownloadTaskList                                                                            |
-| 703  | RequestEnsureDownloadTask                                                                          |
-| 704  | ListDownloadTaskStatus                                                                             |
-| 705  | RequestDownloadTaskListData                                                                        |
-| 800  | RequestVersionList                                                                                 |
-| 801  | ListVersionList                                                                                    |
-| 900  | GetApplicationRecord                                                                               |
-| 901  | GetApplicationRecordProperty                                                                       |
-| 902  | EnableApplicationAutoUpdate                                                                        |
-| 903  | DisableApplicationAutoUpdate                                                                       |
-| 904  | TouchApplication                                                                                   |
-| 905  | RequestApplicationUpdate                                                                           |
-| 906  | IsApplicationUpdateRequested                                                                       |
-| 907  | WithdrawApplicationUpdateRequest                                                                   |
-| 908  | ListApplicationRecordInstalledContentMeta                                                          |
-| 1000 | RequestVerifyApplicationDeprecated                                                                 |
-| 1001 | CorruptApplicationForDebug                                                                         |
-| 1200 | NeedsUpdateVulnerability                                                                           |
-| 1300 | IsAnyApplicationEntityInstalled                                                                    |
-| 1301 | DeleteApplicationContentEntities                                                                   |
-| 1302 | CleanupUnrecordedApplicationEntity                                                                 |
-| 1400 | PrepareShutdown                                                                                    |
-| 1500 | FormatSdCard                                                                                       |
-| 1501 | NeedsSystemUpdateToFormatSdCard                                                                    |
-| 1502 | GetLastSdCardFormatUnexpectedResult                                                                |
-| 1503 |                                                                                                    |
-| 1600 | GetSystemSeedForPseudoDeviceId                                                                     |
-| 1700 | ListApplicationDownloadingContentMeta                                                              |
-| 1800 | IsNotificationSetupCompleted                                                                       |
-| 1801 | GetLastNotificationInfoCount                                                                       |
-| 1802 | ListLastNotificationInfo                                                                           |
+| 404  | \[2.0.0+\] InvalidateApplicationControlCache                                                       |
+| 405  | \[2.0.0+\] ListApplicationControlCacheEntryInfo                                                    |
+| 502  | \[2.0.0+\] RequestCheckGameCardRegistration                                                        |
+| 503  | \[2.0.0+\] RequestGameCardRegistrationGoldPoint                                                    |
+| 504  | \[2.0.0+\] RequestRegisterGameCard                                                                 |
+| 600  | \[2.0.0+\] CountApplicationContentMeta                                                             |
+| 601  | \[2.0.0+\] [\#ListApplicationContentMetaStatus](#ListApplicationContentMetaStatus "wikilink")      |
+| 602  | \[2.0.0+\] ListAvailableAddOnContent                                                               |
+| 603  | \[2.0.0+\] GetOwnedApplicationContentMetaStatus                                                    |
+| 604  | \[2.0.0+\] RegisterContentsExternalKey                                                             |
+| 605  | \[2.0.0+\] ListApplicationContentMetaStatusWithRightsCheck                                         |
+| 700  | \[2.0.0+\] PushDownloadTaskList                                                                    |
+| 701  | \[2.0.0+\] ClearTaskStatusList                                                                     |
+| 702  | \[2.0.0+\] RequestDownloadTaskList                                                                 |
+| 703  | \[2.0.0+\] RequestEnsureDownloadTask                                                               |
+| 704  | \[2.0.0+\] ListDownloadTaskStatus                                                                  |
+| 705  | \[2.0.0+\] RequestDownloadTaskListData                                                             |
+| 800  | \[2.0.0+\] RequestVersionList                                                                      |
+| 801  | \[2.0.0+\] ListVersionList                                                                         |
+| 900  | \[2.0.0+\] GetApplicationRecord                                                                    |
+| 901  | \[2.0.0+\] GetApplicationRecordProperty                                                            |
+| 902  | \[2.0.0+\] EnableApplicationAutoUpdate                                                             |
+| 903  | \[2.0.0+\] DisableApplicationAutoUpdate                                                            |
+| 904  | \[2.0.0+\] TouchApplication                                                                        |
+| 905  | \[2.0.0+\] RequestApplicationUpdate                                                                |
+| 906  | \[2.0.0+\] IsApplicationUpdateRequested                                                            |
+| 907  | \[2.0.0+\] WithdrawApplicationUpdateRequest                                                        |
+| 908  | \[2.0.0+\] ListApplicationRecordInstalledContentMeta                                               |
+| 1000 | \[2.0.0+\] RequestVerifyApplicationDeprecated                                                      |
+| 1001 | \[2.0.0+\] CorruptApplicationForDebug                                                              |
+| 1200 | \[2.0.0+\] NeedsUpdateVulnerability                                                                |
+| 1300 | \[2.0.0+\] IsAnyApplicationEntityInstalled                                                         |
+| 1301 | \[2.0.0+\] DeleteApplicationContentEntities                                                        |
+| 1302 | \[2.0.0+\] CleanupUnrecordedApplicationEntity                                                      |
+| 1400 | \[2.0.0+\] PrepareShutdown                                                                         |
+| 1500 | \[2.0.0+\] FormatSdCard                                                                            |
+| 1501 | \[2.0.0+\] NeedsSystemUpdateToFormatSdCard                                                         |
+| 1502 | \[2.0.0+\] GetLastSdCardFormatUnexpectedResult                                                     |
+| 1503 | \[2.0.0+\]                                                                                         |
+| 1600 | \[2.0.0+\] GetSystemSeedForPseudoDeviceId                                                          |
+| 1700 | \[2.0.0+\] ListApplicationDownloadingContentMeta                                                   |
+| 1800 | \[2.0.0+\] IsNotificationSetupCompleted                                                            |
+| 1801 | \[2.0.0+\] GetLastNotificationInfoCount                                                            |
+| 1802 | \[2.0.0+\] ListLastNotificationInfo                                                                |
 
 ## ListApplicationRecord
 
