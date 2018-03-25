@@ -376,7 +376,8 @@ No input, returns an output
 
 ## OpenSaveDataInfoReaderBySaveDataSpaceId
 
-Takes an input u8, returns an output
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"),
+returns an output
 [\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink").
 
 ## OpenContentStorageFileSystem
@@ -597,8 +598,10 @@ This is
 | 0   |      | Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of [\#SaveDataInfo](#SaveDataInfo "wikilink"). |
 
 The above is used to get [\#SaveDataInfo](#SaveDataInfo "wikilink") for
-all savedata on the system. When used multiple times, it will resume
-reading where it left off, until no more entries are available.
+all savedata on the system (or all savedata for the current
+[\#SaveDataSpaceId](#SaveDataSpaceId "wikilink")). When used multiple
+times, it will resume reading where it left off, until no more entries
+are available.
 
 # IDeviceOperator
 
@@ -686,6 +689,11 @@ This is "nn::fssrv::sf::IEventNotifier".
 | 0     | NandSystem |
 | 1     | NandUser   |
 | 2     | SdCard     |
+
+# SaveDataSpaceId
+
+Only values 0-2 are valid. This is the same as
+[\#ContentStorageId](#ContentStorageId "wikilink").
 
 # ContentPath
 

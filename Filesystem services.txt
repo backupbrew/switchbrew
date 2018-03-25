@@ -466,7 +466,7 @@ Mounts savedata in the SYSTEM [[Flash_Filesystem|NAND]] partition.
 No input, returns an output [[#ISaveDataInfoReader]].
 
 == OpenSaveDataInfoReaderBySaveDataSpaceId ==
-Takes an input u8, returns an output [[#ISaveDataInfoReader]].
+Takes an input u8 [[#SaveDataSpaceId]], returns an output [[#ISaveDataInfoReader]].
 
 == OpenContentStorageFileSystem ==
 Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.
@@ -667,7 +667,7 @@ This is "nn::fssrv::sf::ISaveDataInfoReader".
 | 0 || || Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of [[#SaveDataInfo]].
 |}
 
-The above is used to get [[#SaveDataInfo]] for all savedata on the system. When used multiple times, it will resume reading where it left off, until no more entries are available.
+The above is used to get [[#SaveDataInfo]] for all savedata on the system (or all savedata for the current [[#SaveDataSpaceId]]). When used multiple times, it will resume reading where it left off, until no more entries are available.
 
 = IDeviceOperator =
 This is "nn::fssrv::sf::IDeviceOperator".
@@ -797,6 +797,9 @@ This is "nn::fssrv::sf::IEventNotifier".
 |-
 | 2 || SdCard
 |}
+
+= SaveDataSpaceId =
+Only values 0-2 are valid. This is the same as [[#ContentStorageId]].
 
 = ContentPath =
 These are the 0x300 paths to NCA files for the various filesystems FS can access, beginning with @. They're passed via X descriptors, and returned via various [[Location Resolver services|ncm/lr]] commands.
