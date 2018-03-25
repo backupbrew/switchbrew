@@ -935,7 +935,7 @@ The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-b
 |-
 | 0x8
 | 0x8
-| ?
+| Type field(s)?
 |-
 | 0x10
 | 0x10
