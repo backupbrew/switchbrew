@@ -238,6 +238,11 @@ value for the **KeyGeneration** parameter when calling
 This item is bit 10 from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
 
+\[4.0.0+\] [Settings](Settings%20services.md "wikilink") uses this value
+overwrite the quest flag in
+[GetQuestFlag](Settings%20services#set:sys.md##set:sys "wikilink") and
+[GetQuestFlag2](Settings%20services#set.md##set "wikilink").
+
 ### NewHardwareType
 
 This item is currently hardcoded to 0.
