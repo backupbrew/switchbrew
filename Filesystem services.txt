@@ -112,7 +112,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 60 || [[#OpenSaveDataInfoReader]]
 |-
-| 61 || OpenSaveDataInfoReaderBySaveDataSpaceId
+| 61 || [[#OpenSaveDataInfoReaderBySaveDataSpaceId]]
 |-
 | 62 || [5.0.0+]
 |-
@@ -464,6 +464,9 @@ Mounts savedata in the SYSTEM [[Flash_Filesystem|NAND]] partition.
 
 == OpenSaveDataInfoReader ==
 No input, returns an output [[#ISaveDataInfoReader]].
+
+== OpenSaveDataInfoReaderBySaveDataSpaceId ==
+Takes an input u8, returns an output [[#ISaveDataInfoReader]].
 
 == OpenContentStorageFileSystem ==
 Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.

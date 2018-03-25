@@ -86,7 +86,7 @@ This is
 | 58   | ReadSaveDataFileSystemExtraData                                                                        |
 | 59   | \[2.0.0+\] WriteSaveDataFileSystemExtraData                                                            |
 | 60   | [\#OpenSaveDataInfoReader](#OpenSaveDataInfoReader "wikilink")                                         |
-| 61   | OpenSaveDataInfoReaderBySaveDataSpaceId                                                                |
+| 61   | [\#OpenSaveDataInfoReaderBySaveDataSpaceId](#OpenSaveDataInfoReaderBySaveDataSpaceId "wikilink")       |
 | 62   | \[5.0.0+\]                                                                                             |
 | 64   | \[5.0.0+\]                                                                                             |
 | 65   | \[5.0.0+\]                                                                                             |
@@ -372,6 +372,11 @@ partition.
 ## OpenSaveDataInfoReader
 
 No input, returns an output
+[\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink").
+
+## OpenSaveDataInfoReaderBySaveDataSpaceId
+
+Takes an input u8, returns an output
 [\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink").
 
 ## OpenContentStorageFileSystem
