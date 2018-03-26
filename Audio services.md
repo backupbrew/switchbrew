@@ -1,13 +1,14 @@
 # audout:u
 
-This is "nn::audio::detail::IAudioOutManager".
+This is
+"nn::audio::detail::IAudioOutManager".
 
-| Cmd | Name                                                        |
-| --- | ----------------------------------------------------------- |
-| 0   | [\#ListAudioOuts](#ListAudioOuts "wikilink")                |
-| 1   | [\#OpenAudioOut](#OpenAudioOut "wikilink")                  |
-| 2   | \[3.0.0+\] [\#ListAudioOutsEx](#ListAudioOutsEx "wikilink") |
-| 3   | \[3.0.0+\] [\#OpenAudioOutEx](#OpenAudioOutEx "wikilink")   |
+| Cmd | Name                                                            |
+| --- | --------------------------------------------------------------- |
+| 0   | [\#ListAudioOuts](#ListAudioOuts "wikilink")                    |
+| 1   | [\#OpenAudioOut](#OpenAudioOut "wikilink")                      |
+| 2   | \[3.0.0+\] [\#ListAudioOutsAuto](#ListAudioOutsAuto "wikilink") |
+| 3   | \[3.0.0+\] [\#OpenAudioOutAuto](#OpenAudioOutAuto "wikilink")   |
 
 ## ListAudioOuts
 
@@ -36,12 +37,12 @@ format](#PCM_format "wikilink"), and the initial AudioOutState.
 | 5     | PCM Float |
 | 6     | ADPCM     |
 
-## ListAudioOutsEx
+## ListAudioOutsAuto
 
 Same as [\#ListAudioOuts](#ListAudioOuts "wikilink"), but takes a
 type-0x22 output buffer instead.
 
-## OpenAudioOutEx
+## OpenAudioOutAuto
 
 Same as [\#OpenAudioOut](#OpenAudioOut "wikilink"), but takes a
 type-0x21 input buffer instead.
@@ -51,20 +52,20 @@ type-0x21 input buffer instead.
 This is
 "nn::audio::detail::IAudioOut".
 
-| Cmd | Name                                                                                |
-| --- | ----------------------------------------------------------------------------------- |
-| 0   | [\#GetAudioOutState](#GetAudioOutState "wikilink")                                  |
-| 1   | [\#StartAudioOut](#StartAudioOut "wikilink")                                        |
-| 2   | [\#StopAudioOut](#StopAudioOut "wikilink")                                          |
-| 3   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink")                          |
-| 4   | [\#RegisterBufferEvent](#RegisterBufferEvent "wikilink")                            |
-| 5   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink")                |
-| 6   | [\#ContainsAudioOutBuffer](#ContainsAudioOutBuffer "wikilink")                      |
-| 7   | \[3.0.0+\] [\#AppendAudioOutBufferEx](#AppendAudioOutBufferEx "wikilink")           |
-| 8   | \[3.0.0+\] [\#GetReleasedAudioOutBufferEx](#GetReleasedAudioOutBufferEx "wikilink") |
-| 9   | \[4.0.0+\]                                                                          |
-| 10  | \[4.0.0+\]                                                                          |
-| 11  | \[4.0.0+\]                                                                          |
+| Cmd | Name                                                                                    |
+| --- | --------------------------------------------------------------------------------------- |
+| 0   | [\#GetAudioOutState](#GetAudioOutState "wikilink")                                      |
+| 1   | [\#StartAudioOut](#StartAudioOut "wikilink")                                            |
+| 2   | [\#StopAudioOut](#StopAudioOut "wikilink")                                              |
+| 3   | [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink")                              |
+| 4   | [\#RegisterBufferEvent](#RegisterBufferEvent "wikilink")                                |
+| 5   | [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink")                    |
+| 6   | [\#ContainsAudioOutBuffer](#ContainsAudioOutBuffer "wikilink")                          |
+| 7   | \[3.0.0+\] [\#AppendAudioOutBufferAuto](#AppendAudioOutBufferAuto "wikilink")           |
+| 8   | \[3.0.0+\] [\#GetReleasedAudioOutBufferAuto](#GetReleasedAudioOutBufferAuto "wikilink") |
+| 9   | \[4.0.0+\] GetAudioOutBufferCount                                                       |
+| 10  | \[4.0.0+\] GetAudioOutPlayedSampleCount                                                 |
+| 11  | \[4.0.0+\] FlushAudioOutBuffers                                                         |
 
 ### GetAudioOutState
 
@@ -111,12 +112,12 @@ buffers that have been released. Returns an u32
 Takes an u64 **tag** for the desired buffer. Returns 1 if the buffer was
 appended and not yet released.
 
-### AppendAudioOutBufferEx
+### AppendAudioOutBufferAuto
 
 Same as [\#AppendAudioOutBuffer](#AppendAudioOutBuffer "wikilink") but
 takes a type-0x21 buffer instead.
 
-### GetReleasedAudioOutBufferEx
+### GetReleasedAudioOutBufferAuto
 
 Same as
 [\#GetReleasedAudioOutBuffer](#GetReleasedAudioOutBuffer "wikilink") but
@@ -124,15 +125,15 @@ takes a type-0x22 buffer instead.
 
 # audin:u
 
-This is "nn::audio::detail::IAudioInManagerForDebugger".
+This is "nn::audio::detail::IAudioInManager".
 
-| Cmd | Name                              |
-| --- | --------------------------------- |
-| 0   | ListAudioIns                      |
-| 1   | OpenAudioIn                       |
-| 2   | \[3.0.0+\] ListAudioInsEx         |
-| 3   | \[3.0.0+\] OpenAudioInEx          |
-| 4   | \[3.0.0+\] ListAudioInsExAndProbe |
+| Cmd | Name                        |
+| --- | --------------------------- |
+| 0   | ListAudioIns                |
+| 1   | OpenAudioIn                 |
+| 2   | \[3.0.0+\]                  |
+| 3   | \[3.0.0+\] OpenAudioInAuto  |
+| 4   | \[3.0.0+\] ListAudioInsAuto |
 
 ## IAudioIn
 
@@ -148,12 +149,12 @@ This is "nn::audio::detail::IAudioIn".
 | 5   | GetReleasedAudioInBuffer                         |
 | 6   | ContainsAudioInBuffer                            |
 | 7   | \[3.0.0+\] AppendAudioInBufferWithUserEvent      |
-| 8   | \[3.0.0+\] AppendAudioInBufferEx                 |
-| 9   | \[3.0.0+\] GetReleasedAudioInBufferEx            |
-| 10  | \[3.0.0+\] AppendAudioInBufferWithUserEventEx    |
-| 11  | \[4.0.0+\]                                       |
-| 12  | \[4.0.0+\]                                       |
-| 13  | \[4.0.0+\]                                       |
+| 8   | \[3.0.0+\] AppendAudioInBufferAuto               |
+| 9   | \[3.0.0+\] GetReleasedAudioInBufferAuto          |
+| 10  | \[3.0.0+\] AppendAudioInBufferWithUserEventAuto  |
+| 11  | \[4.0.0+\] GetAudioInBufferCount                 |
+| 12  | \[4.0.0+\] SetAudioInDeviceGain                  |
+| 13  | \[4.0.0+\] GetAudioInDeviceGain                  |
 
 ### GetAudioInState
 
@@ -171,30 +172,30 @@ This is "nn::audio::detail::IFinalOutputRecorderManager".
 
 This is "nn::audio::detail::IFinalOutputRecorder".
 
-| Cmd | Name                                              |
-| --- | ------------------------------------------------- |
-| 0   | GetFinalOutputRecorderState                       |
-| 1   | StartFinalOutputRecorder                          |
-| 2   | StopFinalOutputRecorder                           |
-| 3   | AppendFinalOutputRecorderBuffer                   |
-| 4   | RegisterBufferEvent                               |
-| 5   | GetReleasedFinalOutputRecorderBuffer              |
-| 6   | ContainsFinalOutputRecorderBuffer                 |
-| 7   |                                                   |
-| 8   | \[3.0.0+\] AppendFinalOutputRecorderBufferEx      |
-| 9   | \[3.0.0+\] GetReleasedFinalOutputRecorderBufferEx |
+| Cmd | Name                                                |
+| --- | --------------------------------------------------- |
+| 0   | GetFinalOutputRecorderState                         |
+| 1   | StartFinalOutputRecorder                            |
+| 2   | StopFinalOutputRecorder                             |
+| 3   | AppendFinalOutputRecorderBuffer                     |
+| 4   | RegisterBufferEvent                                 |
+| 5   | GetReleasedFinalOutputRecorderBuffer                |
+| 6   | ContainsFinalOutputRecorderBuffer                   |
+| 7   |                                                     |
+| 8   | \[3.0.0+\] AppendFinalOutputRecorderBufferAuto      |
+| 9   | \[3.0.0+\] GetReleasedFinalOutputRecorderBufferAuto |
 
 # audren:u
 
 This is "nn::audio::detail::IAudioRendererManager".
 
-| Cmd | Name                           |
-| --- | ------------------------------ |
-| 0   | OpenAudioRenderer              |
-| 1   | GetAudioRendererWorkBufferSize |
-| 2   |                                |
-| 3   | \[3.0.0+\]                     |
-| 4   | \[4.0.0+\]                     |
+| Cmd | Name                                             |
+| --- | ------------------------------------------------ |
+| 0   | OpenAudioRenderer                                |
+| 1   | GetAudioRendererWorkBufferSize                   |
+| 2   | GetAudioDeviceService                            |
+| 3   | \[3.0.0+\] OpenAudioRendererAuto                 |
+| 4   | \[4.0.0+\] GetAudioDeviceServiceWithRevisionInfo |
 
 ## IAudioRenderer
 
@@ -213,8 +214,8 @@ This is
 | 7   | QuerySystemEvent                                                                       |
 | 8   | [\#SetAudioRendererRenderingTimeLimit](#SetAudioRendererRenderingTimeLimit "wikilink") |
 | 9   | [\#GetAudioRendererRenderingTimeLimit](#GetAudioRendererRenderingTimeLimit "wikilink") |
-| 10  | \[3.0.0+\] RequestUpdateAudioRendererEx                                                |
-| 11  | \[3.0.0+\]                                                                             |
+| 10  | \[3.0.0+\] RequestUpdateAudioRendererAuto                                              |
+| 11  | \[3.0.0+\] ExecuteAudioRendererRendering                                               |
 
 ### GetAudioRendererSampleRate
 
@@ -240,16 +241,37 @@ Takes a upper limit of the rendering time in percent. (u32)
 
 Returns the upper limit of the rendering time in percent. (u32)
 
+## IAudioDevice
+
+This is "nn::audio::detail::IAudioDevice".
+
+| Cmd | Name                                      |
+| --- | ----------------------------------------- |
+| 0   | ListAudioDeviceName                       |
+| 1   | SetAudioDeviceOutputVolume                |
+| 2   | GetAudioDeviceOutputVolume                |
+| 3   | GetActiveAudioDeviceName                  |
+| 4   | QueryAudioDeviceSystemEvent               |
+| 5   | GetActiveChannelCount                     |
+| 6   | \[3.0.0+\] ListAudioDeviceNameAuto        |
+| 7   | \[3.0.0+\] SetAudioDeviceOutputVolumeAuto |
+| 8   | \[3.0.0+\] GetAudioDeviceOutputVolumeAuto |
+| 10  | \[3.0.0+\] GetActiveAudioDeviceNameAuto   |
+| 11  | \[3.0.0+\] QueryAudioDeviceInputEvent     |
+| 12  | \[3.0.0+\] QueryAudioDeviceOutputEvent    |
+
 # audout:a
 
 This is "nn::audio::detail::IAudioOutManagerForApplet".
 
-| Cmd | Name                            |
-| --- | ------------------------------- |
-| 0   | RequestSuspendAudioOuts         |
-| 1   | RequestResumeAudioOuts          |
-| 2   | GetAudioOutsProcessMasterVolume |
-| 3   | SetAudioOutsProcessMasterVolume |
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | RequestSuspendAudioOuts                    |
+| 1   | RequestResumeAudioOuts                     |
+| 2   | GetAudioOutsProcessMasterVolume            |
+| 3   | SetAudioOutsProcessMasterVolume            |
+| 4   | \[4.0.0+\] GetAudioOutsProcessRecordVolume |
+| 5   | \[4.0.0+\] SetAudioOutsProcessRecordVolume |
 
 # audin:a
 
@@ -275,14 +297,16 @@ This is "nn::audio::detail::IFinalOutputRecorderManagerForApplet".
 
 This is "nn::audio::detail::IAudioRendererManagerForApplet".
 
-| Cmd | Name                                 |
-| --- | ------------------------------------ |
-| 0   | RequestSuspendAudioRenderers         |
-| 1   | RequestResumeAudioRenderers          |
-| 2   | GetAudioRenderersProcessMasterVolume |
-| 3   | SetAudioRenderersProcessMasterVolume |
-| 4   | RegisterAppletResourceUserId         |
-| 5   | UnregisterAppletResourceUserId       |
+| Cmd | Name                                            |
+| --- | ----------------------------------------------- |
+| 0   | RequestSuspendAudioRenderers                    |
+| 1   | RequestResumeAudioRenderers                     |
+| 2   | GetAudioRenderersProcessMasterVolume            |
+| 3   | SetAudioRenderersProcessMasterVolume            |
+| 4   | RegisterAppletResourceUserId                    |
+| 5   | UnregisterAppletResourceUserId                  |
+| 6   | \[4.0.0+\] GetAudioRenderersProcessRecordVolume |
+| 7   | \[4.0.0+\] SetAudioRenderersProcessRecordVolume |
 
 # audout:d, audin:d, audrec:d, audren:d
 
@@ -423,8 +447,8 @@ This is "nn::codec::detail::IHardwareOpusDecoderManager".
 | --- | ---------------------------------------------------- |
 | 0   | [\#Initialize](#Initialize "wikilink")               |
 | 1   | [\#GetWorkBufferSize](#GetWorkBufferSize "wikilink") |
-| 2   | \[3.0.0+\] InitializeEx                              |
-| 3   | \[3.0.0+\] GetWorkBufferSizeEx                       |
+| 2   | \[3.0.0+\] InitializeMultiStream                     |
+| 3   | \[3.0.0+\] GetWorkBufferSizeMultiStream              |
 
 ## Initialize
 
@@ -447,8 +471,8 @@ This is "nn::codec::detail::IHardwareOpusDecoder".
 | --- | ---------------------------------------------------- |
 | 0   | [\#DecodeInterleaved](#DecodeInterleaved "wikilink") |
 | 1   | [\#SetContext](#SetContext "wikilink")               |
-| 2   | \[3.0.0+\] DecodeInterleavedEx                       |
-| 3   | \[3.0.0+\] SetContextEx                              |
+| 2   | \[3.0.0+\]                                           |
+| 3   | \[3.0.0+\]                                           |
 | 4   | \[4.0.0+\]                                           |
 | 5   | \[4.0.0+\]                                           |
 

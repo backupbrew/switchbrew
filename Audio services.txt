@@ -9,9 +9,9 @@ This is "nn::audio::detail::IAudioOutManager".
 |-
 | 1 || [[#OpenAudioOut]]
 |-
-| 2 || [3.0.0+] [[#ListAudioOutsEx]]
+| 2 || [3.0.0+] [[#ListAudioOutsAuto]]
 |-
-| 3 || [3.0.0+] [[#OpenAudioOutEx]]
+| 3 || [3.0.0+] [[#OpenAudioOutAuto]]
 |}
 
 == ListAudioOuts ==
@@ -42,10 +42,10 @@ Returns an [[#IAudioOut]] object and four u32s: the sample rate, channel count, 
 | 6 || ADPCM
 |}
 
-== ListAudioOutsEx ==
+== ListAudioOutsAuto ==
 Same as [[#ListAudioOuts]], but takes a type-0x22 output buffer instead.
 
-== OpenAudioOutEx ==
+== OpenAudioOutAuto ==
 Same as [[#OpenAudioOut]], but takes a type-0x21 input buffer instead.
 
 == IAudioOut ==
@@ -69,15 +69,15 @@ This is "nn::audio::detail::IAudioOut".
 |-
 | 6 || [[#ContainsAudioOutBuffer]]
 |-
-| 7 || [3.0.0+] [[#AppendAudioOutBufferEx]]
+| 7 || [3.0.0+] [[#AppendAudioOutBufferAuto]]
 |-
-| 8 || [3.0.0+] [[#GetReleasedAudioOutBufferEx]]
+| 8 || [3.0.0+] [[#GetReleasedAudioOutBufferAuto]]
 |-
-| 9 || [4.0.0+]
+| 9 || [4.0.0+] GetAudioOutBufferCount
 |-
-| 10 || [4.0.0+]
+| 10 || [4.0.0+] GetAudioOutPlayedSampleCount
 |-
-| 11 || [4.0.0+]
+| 11 || [4.0.0+] FlushAudioOutBuffers
 |}
 
 === GetAudioOutState ===
@@ -118,14 +118,14 @@ Returns an u32 '''ReleasedBuffersCount'''.
 === ContainsAudioOutBuffer ===
 Takes an u64 '''tag''' for the desired buffer. Returns 1 if the buffer was appended and not yet released.
 
-=== AppendAudioOutBufferEx ===
+=== AppendAudioOutBufferAuto ===
 Same as [[#AppendAudioOutBuffer]] but takes a type-0x21 buffer instead.
 
-=== GetReleasedAudioOutBufferEx ===
+=== GetReleasedAudioOutBufferAuto ===
 Same as [[#GetReleasedAudioOutBuffer]] but takes a type-0x22 buffer instead.
 
 = audin:u =
-This is "nn::audio::detail::IAudioInManagerForDebugger".
+This is "nn::audio::detail::IAudioInManager".
 
 {| class="wikitable" border="1"
 |-
@@ -135,11 +135,11 @@ This is "nn::audio::detail::IAudioInManagerForDebugger".
 |-
 | 1 || OpenAudioIn
 |-
-| 2 || [3.0.0+] ListAudioInsEx
+| 2 || [3.0.0+] 
 |-
-| 3 || [3.0.0+] OpenAudioInEx
+| 3 || [3.0.0+] OpenAudioInAuto
 |-
-| 4 || [3.0.0+] ListAudioInsExAndProbe
+| 4 || [3.0.0+] ListAudioInsAuto
 |}
 
 == IAudioIn ==
@@ -165,17 +165,17 @@ This is "nn::audio::detail::IAudioIn".
 |-
 | 7 || [3.0.0+] AppendAudioInBufferWithUserEvent
 |-
-| 8 || [3.0.0+] AppendAudioInBufferEx
+| 8 || [3.0.0+] AppendAudioInBufferAuto
 |-
-| 9 || [3.0.0+] GetReleasedAudioInBufferEx
+| 9 || [3.0.0+] GetReleasedAudioInBufferAuto
 |-
-| 10 || [3.0.0+] AppendAudioInBufferWithUserEventEx
+| 10 || [3.0.0+] AppendAudioInBufferWithUserEventAuto
 |-
-| 11 || [4.0.0+]
+| 11 || [4.0.0+] GetAudioInBufferCount
 |-
-| 12 || [4.0.0+]
+| 12 || [4.0.0+] SetAudioInDeviceGain
 |-
-| 13 || [4.0.0+]
+| 13 || [4.0.0+] GetAudioInDeviceGain
 |}
 
 === GetAudioInState ===
@@ -214,9 +214,9 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 |-
 | 7 ||
 |-
-| 8 || [3.0.0+] AppendFinalOutputRecorderBufferEx
+| 8 || [3.0.0+] AppendFinalOutputRecorderBufferAuto
 |-
-| 9 || [3.0.0+] GetReleasedFinalOutputRecorderBufferEx
+| 9 || [3.0.0+] GetReleasedFinalOutputRecorderBufferAuto
 |}
 
 = audren:u =
@@ -230,11 +230,11 @@ This is "nn::audio::detail::IAudioRendererManager".
 |-
 | 1 || GetAudioRendererWorkBufferSize
 |-
-| 2 || 
+| 2 || GetAudioDeviceService
 |-
-| 3 || [3.0.0+]
+| 3 || [3.0.0+] OpenAudioRendererAuto
 |-
-| 4 || [4.0.0+]
+| 4 || [4.0.0+] GetAudioDeviceServiceWithRevisionInfo
 |}
 
 == IAudioRenderer ==
@@ -264,9 +264,9 @@ This is "nn::audio::detail::IAudioRenderer".
 |-
 | 9 || [[#GetAudioRendererRenderingTimeLimit]]
 |-
-| 10 || [3.0.0+] RequestUpdateAudioRendererEx
+| 10 || [3.0.0+] RequestUpdateAudioRendererAuto
 |-
-| 11 || [3.0.0+]
+| 11 || [3.0.0+] ExecuteAudioRendererRendering
 |}
 
 === GetAudioRendererSampleRate ===
@@ -287,6 +287,38 @@ Takes a upper limit of the rendering time in percent. (u32)
 === GetAudioRendererRenderingTimeLimit ===
 Returns the upper limit of the rendering time in percent. (u32)
 
+== IAudioDevice ==
+This is "nn::audio::detail::IAudioDevice".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || ListAudioDeviceName
+|-
+| 1 || SetAudioDeviceOutputVolume
+|-
+| 2 || GetAudioDeviceOutputVolume
+|-
+| 3 || GetActiveAudioDeviceName
+|-
+| 4 || QueryAudioDeviceSystemEvent
+|-
+| 5 || GetActiveChannelCount
+|-
+| 6 || [3.0.0+] ListAudioDeviceNameAuto
+|-
+| 7 || [3.0.0+] SetAudioDeviceOutputVolumeAuto
+|-
+| 8 || [3.0.0+] GetAudioDeviceOutputVolumeAuto
+|-
+| 10 || [3.0.0+] GetActiveAudioDeviceNameAuto
+|-
+| 11 || [3.0.0+] QueryAudioDeviceInputEvent
+|-
+| 12 || [3.0.0+] QueryAudioDeviceOutputEvent
+|}
+
 = audout:a =
 This is "nn::audio::detail::IAudioOutManagerForApplet".
 
@@ -301,6 +333,10 @@ This is "nn::audio::detail::IAudioOutManagerForApplet".
 | 2 || GetAudioOutsProcessMasterVolume
 |-
 | 3 || SetAudioOutsProcessMasterVolume
+|-
+| 4 || [4.0.0+] GetAudioOutsProcessRecordVolume
+|-
+| 5 || [4.0.0+] SetAudioOutsProcessRecordVolume
 |}
 
 = audin:a =
@@ -349,6 +385,10 @@ This is "nn::audio::detail::IAudioRendererManagerForApplet".
 | 4 || RegisterAppletResourceUserId
 |-
 | 5 || UnregisterAppletResourceUserId
+|-
+| 6 || [4.0.0+] GetAudioRenderersProcessRecordVolume
+|-
+| 7 || [4.0.0+] SetAudioRenderersProcessRecordVolume
 |}
 
 = audout:d, audin:d, audrec:d, audren:d =
@@ -517,9 +557,9 @@ This is "nn::codec::detail::IHardwareOpusDecoderManager".
 |-
 | 1 || [[#GetWorkBufferSize]]
 |-
-| 2 || [3.0.0+] InitializeEx
+| 2 || [3.0.0+] InitializeMultiStream
 |-
-| 3 || [3.0.0+] GetWorkBufferSizeEx
+| 3 || [3.0.0+] GetWorkBufferSizeMultiStream
 |}
 
 == Initialize ==
@@ -539,9 +579,9 @@ This is "nn::codec::detail::IHardwareOpusDecoder".
 |-
 | 1 || [[#SetContext]]
 |-
-| 2 || [3.0.0+] DecodeInterleavedEx
+| 2 || [3.0.0+]
 |-
-| 3 || [3.0.0+] SetContextEx
+| 3 || [3.0.0+]
 |-
 | 4 || [4.0.0+]
 |-
