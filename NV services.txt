@@ -847,7 +847,7 @@ Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugMo
 |-
 | 0x8004440C || Out || 4 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT_SIZE ||
 |-
-| 0x0000440D || None || 0 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT (uses Ioctl3) ||
+| 0x0000440D || None || 0 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT || Uses Ioctl3.
 |-
 |}
 
