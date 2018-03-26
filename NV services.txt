@@ -35,7 +35,7 @@ Each service is used by:
 |-
 | 9 || [[#DumpGraphicsMemoryInfo]]
 |-
-| 10 || [3.0.0+]
+| 10 || [3.0.0+] InitializeDevtools
 |-
 | 11 || [3.0.0+] [[#Ioctl2]]
 |-

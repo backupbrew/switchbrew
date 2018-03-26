@@ -25,7 +25,7 @@ Each service is used by:
 | 7   | [\#ForceSetClientPID](#ForceSetClientPID "wikilink")           |
 | 8   | [\#SetClientPID](#SetClientPID "wikilink")                     |
 | 9   | [\#DumpGraphicsMemoryInfo](#DumpGraphicsMemoryInfo "wikilink") |
-| 10  | \[3.0.0+\]                                                     |
+| 10  | \[3.0.0+\] InitializeDevtools                                  |
 | 11  | \[3.0.0+\] [\#Ioctl2](#Ioctl2 "wikilink")                      |
 | 12  | \[3.0.0+\] [\#Ioctl3](#Ioctl3 "wikilink")                      |
 | 13  | \[3.0.0+\]                                                     |
