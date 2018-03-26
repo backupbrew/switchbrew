@@ -585,8 +585,8 @@ it will return 0 and notify the debugger?
 | Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize                                                                                 |
 | Process     | 14         | 0                     | \[2.0.0+\] NewMapRegionBaseAddr                                                                             |
 | Process     | 15         | 0                     | \[2.0.0+\] NewMapRegionSize                                                                                 |
-| Process     | 16         | 0                     | \[3.0.0+\] IsVirtualAddressMemoryEnabled                                                                    |
-| Process     | 17         | 0                     | \[3.0.0+\] Some size in bytes.                                                                              |
+| Process     | 16         | 0                     | \[3.0.0+\] PersonalMmHeapSize                                                                               |
+| Process     | 17         | 0                     | \[3.0.0+\] PersonalMmHeapUsage                                                                              |
 | Process     | 18         | 0                     | \[3.0.0+\] TitleId                                                                                          |
 | Zero        | 19         | 0                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_LowerBound                                                             |
 | Zero        | 19         | 1                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_UpperBound                                                             |
@@ -1255,7 +1255,7 @@ Bitfield of one of more of these:
 |        |        | Bit7    | \[4.0.0\] ?                                                                   |
 |        |        | Bit10-7 | \[5.0.0+\] PoolPartition (0=Application, 1=Applet, 2=Sysmodule, 3=Nvservices) |
 | 0x28   | 4      |         | ResourceLimitHandle                                                           |
-| 0x2C   | 4      |         | \[3.0.0+\] UnknownNumPages                                                    |
+| 0x2C   | 4      |         | \[3.0.0+\] PersonalMmHeapNumPages                                             |
 
 On \[1.0.0\] there's only one pool.
 

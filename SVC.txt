@@ -770,9 +770,9 @@ When used on retail where inx0 bit31 is clear, the system will throw a [[Error_c
 |-
 | Process || 15 || 0 || [2.0.0+] NewMapRegionSize
 |-
-| Process || 16 || 0 || [3.0.0+] IsVirtualAddressMemoryEnabled
+| Process || 16 || 0 || [3.0.0+] PersonalMmHeapSize
 |-
-| Process || 17 || 0 || [3.0.0+] Some size in bytes.
+| Process || 17 || 0 || [3.0.0+] PersonalMmHeapUsage
 |-
 | Process || 18 || 0 || [3.0.0+] TitleId
 |-
@@ -1536,7 +1536,7 @@ Bitfield of one of more of these:
 |-
 | 0x28 || 4 || || ResourceLimitHandle
 |-
-| 0x2C || 4 || || [3.0.0+] UnknownNumPages
+| 0x2C || 4 || || [3.0.0+] PersonalMmHeapNumPages
 |}
 
 On [1.0.0] there's only one pool.
