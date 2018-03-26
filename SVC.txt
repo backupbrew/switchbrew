@@ -126,7 +126,7 @@ __NOTOC__
 |-
 | 0x45 || svcCreateEvent || None || W0=result, W1=client_handle ?, W2=server_handle ?
 |- style="border-top: double"
-| 0x48 || [5.0.0+] [[svcAllocateUnsafeMemory]] || X0=addr, X1=size || W0=result
+| 0x48 || [5.0.0+] [[#svcAllocateUnsafeMemory]] || X0=addr, X1=size || W0=result
 |-
 | 0x49 || [5.0.0+] svcFreeUnsafeMemory || X0=addr, X1=size || W0=result
 |-
