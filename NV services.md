@@ -11,24 +11,25 @@ Each service is used by:
   - "nvdrv": regular applications
   - "nvdrv:a": applets
   - "nvdrv:s": sysmodules
-  - "nvdrv:t": factory titles
+  - "nvdrv:t": factory
+titles
 
-| Cmd | Name                                                           |
-| --- | -------------------------------------------------------------- |
-| 0   | [\#Open](#Open "wikilink")                                     |
-| 1   | [\#Ioctl](#Ioctl "wikilink")                                   |
-| 2   | [\#Close](#Close "wikilink")                                   |
-| 3   | [\#Initialize](#Initialize "wikilink")                         |
-| 4   | [\#QueryEvent](#QueryEvent "wikilink")                         |
-| 5   | [\#MapSharedMem](#MapSharedMem "wikilink")                     |
-| 6   | [\#GetStatus](#GetStatus "wikilink")                           |
-| 7   | [\#ForceSetClientPID](#ForceSetClientPID "wikilink")           |
-| 8   | [\#SetClientPID](#SetClientPID "wikilink")                     |
-| 9   | [\#DumpGraphicsMemoryInfo](#DumpGraphicsMemoryInfo "wikilink") |
-| 10  | \[3.0.0+\] InitializeDevtools                                  |
-| 11  | \[3.0.0+\] [\#Ioctl2](#Ioctl2 "wikilink")                      |
-| 12  | \[3.0.0+\] [\#Ioctl3](#Ioctl3 "wikilink")                      |
-| 13  | \[3.0.0+\]                                                     |
+| Cmd | Name                                                              |
+| --- | ----------------------------------------------------------------- |
+| 0   | [\#Open](#Open "wikilink")                                        |
+| 1   | [\#Ioctl](#Ioctl "wikilink")                                      |
+| 2   | [\#Close](#Close "wikilink")                                      |
+| 3   | [\#Initialize](#Initialize "wikilink")                            |
+| 4   | [\#QueryEvent](#QueryEvent "wikilink")                            |
+| 5   | [\#MapSharedMem](#MapSharedMem "wikilink")                        |
+| 6   | [\#GetStatus](#GetStatus "wikilink")                              |
+| 7   | [\#ForceSetClientPID](#ForceSetClientPID "wikilink")              |
+| 8   | [\#SetClientPID](#SetClientPID "wikilink")                        |
+| 9   | [\#DumpGraphicsMemoryInfo](#DumpGraphicsMemoryInfo "wikilink")    |
+| 10  | \[3.0.0+\] [\#InitializeDevtools](#InitializeDevtools "wikilink") |
+| 11  | \[3.0.0+\] [\#Ioctl2](#Ioctl2 "wikilink")                         |
+| 12  | \[3.0.0+\] [\#Ioctl3](#Ioctl3 "wikilink")                         |
+| 13  | \[3.0.0+\]                                                        |
 
 ## Open
 
@@ -106,7 +107,7 @@ u32 (**error\_code**).
 
 No input or output. Does nothing.
 
-## Cmd10
+## InitializeDevtools
 
 Takes a copy-handle and an input u32. Returns an output u32
 (**error\_code**).

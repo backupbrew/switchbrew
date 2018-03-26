@@ -35,7 +35,7 @@ Each service is used by:
 |-
 | 9 || [[#DumpGraphicsMemoryInfo]]
 |-
-| 10 || [3.0.0+] InitializeDevtools
+| 10 || [3.0.0+] [[#InitializeDevtools]]
 |-
 | 11 || [3.0.0+] [[#Ioctl2]]
 |-
@@ -92,7 +92,7 @@ Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-
 == DumpGraphicsMemoryInfo ==
 No input or output. Does nothing.
 
-== Cmd10 ==
+== InitializeDevtools ==
 Takes a copy-handle and an input u32. Returns an output u32 ('''error_code''').
 
 == Ioctl2 ==
