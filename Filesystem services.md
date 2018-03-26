@@ -692,17 +692,24 @@ This is "nn::fssrv::sf::IEventNotifier".
 
 # SaveDataSpaceId
 
-Only values 0-2 are valid. This is the same as
-[\#ContentStorageId](#ContentStorageId "wikilink"). Determines the
-storage where the savedata is stored.
+| Value | Name                        |
+| ----- | --------------------------- |
+| 0     | NandSystem                  |
+| 1     | NandUser                    |
+| 2     | SdCard                      |
+| 3     | \[3.0.0+\] TemporaryStorage |
+
+Determines the storage where the savedata is stored.
 
 # SaveDataType
 
-| Value | Name           |
-| ----- | -------------- |
-| 0     | SystemSaveData |
-| 1     | SaveData       |
-| 3     | DeviceSaveData |
+| Value | Name                        |
+| ----- | --------------------------- |
+| 0     | SystemSaveData              |
+| 1     | SaveData                    |
+| 3     | DeviceSaveData              |
+| 4     | \[3.0.0+\] TemporaryStorage |
+| 5     | \[3.0.0+\] CacheStorage     |
 
 # ContentPath
 
