@@ -3,19 +3,19 @@ GRC (Game Recording) uses libstagefright and the NvMMLite TVMR library for writi
 Error reporting is done using the new [[NV_services#/dev/nverpt-ctrl|/dev/nverpt-ctrl]] ioctls.
 
 = grc:c =
-
 This is "nn::grcsrv::IGrcService"
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 1 || GetContinuousRecorder
+| 1 || OpenContinuousRecorder
 |-
-| 2 || GetGameMovieTrimmer
+| 2 || OpenGameMovieTrimmer
 |}
 
-= nn::grcsrv::IContinuousRecorder =
+= IContinuousRecorder =
+This is "nn::grcsrv::IContinuousRecorder".
 
 {| class="wikitable" border="1"
 |-
@@ -34,19 +34,20 @@ This is "nn::grcsrv::IGrcService"
 | 13 ||
 |}
 
-= nn::grcsrv::IGameMovieTrimmer =
+= IGameMovieTrimmer =
+This is "nn::grcsrv::IGameMovieTrimmer".
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 1 ||
+| 1 || BeginTrim
 |-
-| 2 ||
+| 2 || EndTrim
 |-
-| 10 ||
+| 10 || GetNotTrimmingEvent
 |-
-| 20 ||
+| 20 || SetThumbnailRgba
 |}
 
 [[Category:Services]]

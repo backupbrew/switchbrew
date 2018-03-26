@@ -9,12 +9,14 @@ ioctls.
 
 This is "nn::grcsrv::IGrcService"
 
-| Cmd | Name                  |
-| --- | --------------------- |
-| 1   | GetContinuousRecorder |
-| 2   | GetGameMovieTrimmer   |
+| Cmd | Name                   |
+| --- | ---------------------- |
+| 1   | OpenContinuousRecorder |
+| 2   | OpenGameMovieTrimmer   |
 
-# nn::grcsrv::IContinuousRecorder
+# IContinuousRecorder
+
+This is "nn::grcsrv::IContinuousRecorder".
 
 | Cmd | Name |
 | --- | ---- |
@@ -25,13 +27,15 @@ This is "nn::grcsrv::IGrcService"
 | 12  |      |
 | 13  |      |
 
-# nn::grcsrv::IGameMovieTrimmer
+# IGameMovieTrimmer
 
-| Cmd | Name |
-| --- | ---- |
-| 1   |      |
-| 2   |      |
-| 10  |      |
-| 20  |      |
+This is "nn::grcsrv::IGameMovieTrimmer".
+
+| Cmd | Name                |
+| --- | ------------------- |
+| 1   | BeginTrim           |
+| 2   | EndTrim             |
+| 10  | GetNotTrimmingEvent |
+| 20  | SetThumbnailRgba    |
 
 [Category:Services](Category:Services "wikilink")
