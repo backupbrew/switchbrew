@@ -799,7 +799,7 @@ This is "nn::fssrv::sf::IEventNotifier".
 |}
 
 = SaveDataSpaceId =
-Only values 0-2 are valid. This is the same as [[#ContentStorageId]].
+Only values 0-2 are valid. This is the same as [[#ContentStorageId]]. Determines the storage where the savedata is stored.
 
 = ContentPath =
 These are the 0x300 paths to NCA files for the various filesystems FS can access, beginning with @. They're passed via X descriptors, and returned via various [[Location Resolver services|ncm/lr]] commands.
@@ -861,7 +861,7 @@ These are the 0x300 paths to NCA files for the various filesystems FS can access
 |-
 | 0x20
 | 0x8
-| ContentStorageId? 0 for SystemSaveData. 1 for SaveData. 2 for DeviceSaveData(with official user-processes all other fields are 0 for DeviceSaveData).
+| [[#SaveDataSpaceId]]. 0 for SystemSaveData. 1 for SaveData. 2 for DeviceSaveData(with official user-processes all other fields are 0 for DeviceSaveData).
 |-
 | 0x28
 | 0x8
@@ -941,7 +941,7 @@ The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-b
 |-
 | 0x8
 | 0x1
-| [[#SaveDataSpaceId]]?
+| [[#SaveDataSpaceId]]
 |-
 | 0x9
 | 0x1

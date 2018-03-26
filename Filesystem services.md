@@ -693,7 +693,8 @@ This is "nn::fssrv::sf::IEventNotifier".
 # SaveDataSpaceId
 
 Only values 0-2 are valid. This is the same as
-[\#ContentStorageId](#ContentStorageId "wikilink").
+[\#ContentStorageId](#ContentStorageId "wikilink"). Determines the
+storage where the savedata is stored.
 
 # ContentPath
 
@@ -734,7 +735,7 @@ returned via various
 | 0x0    | 0x8  | 0 for SystemSaveData. SaveData: 0 can be used for accessing the savedata associated with the current FS session titleID, otherwise when set this is the titleID associated with the savedata to access. |
 | 0x8    | 0x10 | userID for user-specific savedata(saveuser) when set, otherwise when zero this indicates the common savedata(savecommon). This is loaded from [Account\_services](Account%20services.md "wikilink").    |
 | 0x18   | 0x8  | u64 [saveID](Flash%20Filesystem.md "wikilink"). 0 for SaveData.                                                                                                                                         |
-| 0x20   | 0x8  | ContentStorageId? 0 for SystemSaveData. 1 for SaveData. 2 for DeviceSaveData(with official user-processes all other fields are 0 for DeviceSaveData).                                                   |
+| 0x20   | 0x8  | [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"). 0 for SystemSaveData. 1 for SaveData. 2 for DeviceSaveData(with official user-processes all other fields are 0 for DeviceSaveData).                   |
 | 0x28   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
 | 0x30   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
 | 0x38   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
@@ -775,17 +776,17 @@ the first 0x5-bytes set to all-zero.
 
 # SaveDataInfo
 
-| Offset | Size | Description                                       |
-| ------ | ---- | ------------------------------------------------- |
-| 0x0    | 0x8  | Unknown saveID                                    |
-| 0x8    | 0x1  | [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink")? |
-| 0x9    | 0x1  | SaveDataType                                      |
-| 0xA    | 0x6  | Padding?                                          |
-| 0x10   | 0x10 | userID                                            |
-| 0x20   | 0x8  | saveID, 0 for regular SaveData.                   |
-| 0x28   | 0x8  | Application titleID, for regular SaveData.        |
-| 0x30   | 0x8  | Raw saveimage size                                |
-| 0x38   | 0x28 | ?                                                 |
+| Offset | Size | Description                                      |
+| ------ | ---- | ------------------------------------------------ |
+| 0x0    | 0x8  | Unknown saveID                                   |
+| 0x8    | 0x1  | [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") |
+| 0x9    | 0x1  | SaveDataType                                     |
+| 0xA    | 0x6  | Padding?                                         |
+| 0x10   | 0x10 | userID                                           |
+| 0x20   | 0x8  | saveID, 0 for regular SaveData.                  |
+| 0x28   | 0x8  | Application titleID, for regular SaveData.       |
+| 0x30   | 0x8  | Raw saveimage size                               |
+| 0x38   | 0x28 | ?                                                |
 
 This is a 0x60-byte struct.
 
