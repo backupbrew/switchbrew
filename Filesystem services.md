@@ -508,8 +508,8 @@ There are two main implementations of this interface:
 | 10  | [\#Commit](#Commit "wikilink")                       |
 | 11  | [\#GetFreeSpaceSize](#GetFreeSpaceSize "wikilink")   |
 | 12  | [\#GetTotalSpaceSize](#GetTotalSpaceSize "wikilink") |
-| 13  | CleanDirectoryRecursively \[3.0.0+\]                 |
-| 14  | GetFileTimeStampRaw \[3.0.0+\]                       |
+| 13  | \[3.0.0+\] CleanDirectoryRecursively                 |
+| 14  | \[3.0.0+\] GetFileTimeStampRaw                       |
 | 15  | \[4.0.0+\] QueryEntry                                |
 
 ## GetEntryType

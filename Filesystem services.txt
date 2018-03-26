@@ -576,9 +576,9 @@ There are two main implementations of this interface:
 |-
 | 12 || [[#GetTotalSpaceSize]]
 |-
-| 13 || CleanDirectoryRecursively [3.0.0+]
+| 13 || [3.0.0+] CleanDirectoryRecursively
 |-
-| 14 || GetFileTimeStampRaw [3.0.0+]
+| 14 || [3.0.0+] GetFileTimeStampRaw
 |-
 | 15 || [4.0.0+] QueryEntry
 |}
