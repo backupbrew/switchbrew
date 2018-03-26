@@ -801,6 +801,18 @@ This is "nn::fssrv::sf::IEventNotifier".
 = SaveDataSpaceId =
 Only values 0-2 are valid. This is the same as [[#ContentStorageId]]. Determines the storage where the savedata is stored.
 
+= SaveDataType =
+{| class="wikitable" border="1"
+|-
+! Value || Name
+|-
+| 0 || SystemSaveData
+|-
+| 1 || SaveData
+|-
+| 3 || DeviceSaveData
+|}
+
 = ContentPath =
 These are the 0x300 paths to NCA files for the various filesystems FS can access, beginning with @. They're passed via X descriptors, and returned via various [[Location Resolver services|ncm/lr]] commands.
 
@@ -860,8 +872,12 @@ These are the 0x300 paths to NCA files for the various filesystems FS can access
 | u64 [[Flash_Filesystem|saveID]]. 0 for SaveData.
 |-
 | 0x20
-| 0x8
-| [[#SaveDataSpaceId]]. 0 for SystemSaveData. 1 for SaveData. 2 for DeviceSaveData(with official user-processes all other fields are 0 for DeviceSaveData).
+| 0x1
+| [[#SaveDataType]]
+|-
+| 0x21
+| 0x7
+| Padding
 |-
 | 0x28
 | 0x8
@@ -877,6 +893,8 @@ These are the 0x300 paths to NCA files for the various filesystems FS can access
 |}
 
 Total size is 0x40-bytes.
+
+For DeviceSaveData, this struct is all-zero except for the [[#SaveDataType]] field.
 
 =SaveCreate Struct=
 {| class="wikitable" border="1"
@@ -945,7 +963,7 @@ The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-b
 |-
 | 0x9
 | 0x1
-| SaveDataType
+| [[#SaveDataType]]
 |-
 | 0xA
 | 0x6

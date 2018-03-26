@@ -696,6 +696,14 @@ Only values 0-2 are valid. This is the same as
 [\#ContentStorageId](#ContentStorageId "wikilink"). Determines the
 storage where the savedata is stored.
 
+# SaveDataType
+
+| Value | Name           |
+| ----- | -------------- |
+| 0     | SystemSaveData |
+| 1     | SaveData       |
+| 3     | DeviceSaveData |
+
 # ContentPath
 
 These are the 0x300 paths to NCA files for the various filesystems FS
@@ -735,13 +743,17 @@ returned via various
 | 0x0    | 0x8  | 0 for SystemSaveData. SaveData: 0 can be used for accessing the savedata associated with the current FS session titleID, otherwise when set this is the titleID associated with the savedata to access. |
 | 0x8    | 0x10 | userID for user-specific savedata(saveuser) when set, otherwise when zero this indicates the common savedata(savecommon). This is loaded from [Account\_services](Account%20services.md "wikilink").    |
 | 0x18   | 0x8  | u64 [saveID](Flash%20Filesystem.md "wikilink"). 0 for SaveData.                                                                                                                                         |
-| 0x20   | 0x8  | [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"). 0 for SystemSaveData. 1 for SaveData. 2 for DeviceSaveData(with official user-processes all other fields are 0 for DeviceSaveData).                   |
+| 0x20   | 0x1  | [\#SaveDataType](#SaveDataType "wikilink")                                                                                                                                                              |
+| 0x21   | 0x7  | Padding                                                                                                                                                                                                 |
 | 0x28   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
 | 0x30   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
 | 0x38   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
 
-Total size is
-0x40-bytes.
+Total size is 0x40-bytes.
+
+For DeviceSaveData, this struct is all-zero except for the
+[\#SaveDataType](#SaveDataType "wikilink")
+field.
 
 # SaveCreate Struct
 
@@ -780,7 +792,7 @@ the first 0x5-bytes set to all-zero.
 | ------ | ---- | ------------------------------------------------ |
 | 0x0    | 0x8  | Unknown saveID                                   |
 | 0x8    | 0x1  | [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") |
-| 0x9    | 0x1  | SaveDataType                                     |
+| 0x9    | 0x1  | [\#SaveDataType](#SaveDataType "wikilink")       |
 | 0xA    | 0x6  | Padding?                                         |
 | 0x10   | 0x10 | userID                                           |
 | 0x20   | 0x8  | saveID, 0 for regular SaveData.                  |
