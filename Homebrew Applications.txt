@@ -49,8 +49,8 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 2018-03-05
 |-
 | Pynx
-| An ecosystem for developing and running Python homebrew applications on the Nintendo Switch.
-| AileenLumina
+| Allows you to run homebrew applications written in Python on the Switch.
+| [[User:AileenLumina|AileenLumina]]
 | [https://github.com/nx-python/Pynx/releases Here]
 | [https://github.com/nx-python/Pynx/ Yes]
 | 2018-03-19
