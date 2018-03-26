@@ -324,6 +324,9 @@ Switch.
 | 0xC004010F | Inout     | 4    |                                                         | Returns NotSupported |
 | 0x40040110 | In        | 4    |                                                         | Returns NotSupported |
 | 0x00000111 | \-        | 0    |                                                         | Returns NotSupported |
+| 0x40100112 | In        | 16   | NVMAP\_IOC\_EXPORT\_FOR\_ARUID                          |                      |
+| 0x40100113 | In        | 16   | NVMAP\_IOC\_IS\_OWNED\_BY\_ARUID                        |                      |
+| 0x40100114 | In        | 16   | NVMAP\_IOC\_REMOVE\_EXPORT\_FOR\_ARUID                  |                      |
 
 ### NVMAP\_IOC\_CREATE
 
@@ -462,13 +465,14 @@ driver.
 
 ## /dev/nvdcutil-disp0, /dev/nvdcutil-disp1
 
-| Value      | Direction | Size | Description                              | Notes |
-| ---------- | --------- | ---- | ---------------------------------------- | ----- |
-| 0x40010501 | In        | 1    | NVDCUTIL\_CRC\_ENABLE\_DISABLE           |       |
-| 0x40010502 | In        | 1    | NVDCUTIL\_VIRTUAL\_EDID\_ENABLE\_DISABLE |       |
-| 0x42040503 | In        | 1056 | NVDCUTIL\_VIRTUAL\_EDID\_SET\_DATA       |       |
-| 0x803C0504 | Out       | 60   | NVDCUTIL\_GET\_MODE                      |       |
-|            |           |      |                                          |       |
+| Value      | Direction | Size | Description                        | Notes |
+| ---------- | --------- | ---- | ---------------------------------- | ----- |
+| 0x40010501 | In        | 1    | NVDCUTIL\_SW\_HOTPLUG\_IN\_OUT     |       |
+| 0x40010502 | In        | 1    | NVDCUTIL\_VIRTUAL\_EDID\_ON\_OFF   |       |
+| 0x42040503 | In        | 1056 | NVDCUTIL\_VIRTUAL\_EDID\_SET\_DATA |       |
+| 0x803C0504 | Out       | 60   | NVDCUTIL\_GET\_MODE                |       |
+| 0x40010505 | In        | 1    | NVDCUTIL\_TELEMETRY\_TEST\_ON\_OFF |       |
+|            |           |      |                                    |       |
 
 ## /dev/nvsched-ctrl
 
@@ -624,13 +628,14 @@ Places the given application in detached state.
 
 ## /dev/nverpt-ctrl
 
-Added in firmware version 3.0.0.
+Added in firmware version
+3.0.0.
 
-| Value      | Direction | Size | Description | Notes |
-| ---------- | --------- | ---- | ----------- | ----- |
-| 0xC1280701 | Inout     | 296  |             |       |
-| 0xCF580702 | Inout     | 3928 |             |       |
-|            |           |      |             |       |
+| Value      | Direction | Size | Description                         | Notes |
+| ---------- | --------- | ---- | ----------------------------------- | ----- |
+| 0xC1280701 | Inout     | 296  | NVERPT\_TELEMETRY\_SUBMIT\_DATA     |       |
+| 0xCF580702 | Inout     | 3928 | NVERPT\_TELEMETRY\_SUBMIT\_DATA\_EX |       |
+|            |           |      |                                     |       |
 
 ## /dev/nvhost-as-gpu
 
@@ -1000,7 +1005,7 @@ interface.
 | 0xC0080002 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT                                                                      | Seen on 1.0.0.                                               |
 | 0xC0080003 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE                                                                       | Seen on 1.0.0.                                               |
 | 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                                    | Seen on 1.0.0. Stubbed; does a debug print and returns 0.    |
-| 0x40040007 | 4        |                                                                                                             | Seen on 1.0.0. Sets a u32 based on input.                    |
+| 0x40040007 | 4        | NVHOST\_IOCTL\_CHANNEL\_SET\_SUBMIT\_TIMEOUT                                                                | Seen on 1.0.0.                                               |
 | 0x40080008 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE                                                                      | Seen on 1.0.0.                                               |
 | 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER                                                                         | Seen on 1.0.0.                                               |
 | 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER                                                                       | Seen on 1.0.0.                                               |

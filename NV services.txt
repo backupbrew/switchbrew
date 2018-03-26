@@ -307,6 +307,12 @@ Kills user events. Exclusive to the Switch.
 | 0x40040110 || In || 4 || || Returns NotSupported
 |-
 | 0x00000111 || - || 0 || || Returns NotSupported
+|-
+| 0x40100112 || In || 16 || NVMAP_IOC_EXPORT_FOR_ARUID ||
+|-
+| 0x40100113 || In || 16 || NVMAP_IOC_IS_OWNED_BY_ARUID ||
+|-
+| 0x40100114 || In || 16 || NVMAP_IOC_REMOVE_EXPORT_FOR_ARUID ||
 |}
 
 === NVMAP_IOC_CREATE ===
@@ -434,7 +440,7 @@ Returns an id for a nvmap object. Identical to Linux driver.
 |-
 | 0x403C021C || In || 60 || TEGRA_DC_EXT_SET_MODE2 ||
 |-
-| 0xC03C021D || Inout || 60  || TEGRA_DC_EXT_VALIDATE_MODE2 ||
+| 0xC03C021D || Inout || 60 || TEGRA_DC_EXT_VALIDATE_MODE2 ||
 |-
 | 0xEF20021E || Inout || 12064 || TEGRA_DC_EXT_GET_MODE_DB2 ||
 |-
@@ -480,13 +486,15 @@ Returns an id for a nvmap object. Identical to Linux driver.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0x40010501 || In || 1 || NVDCUTIL_CRC_ENABLE_DISABLE ||
+| 0x40010501 || In || 1 || NVDCUTIL_SW_HOTPLUG_IN_OUT ||
 |-
-| 0x40010502 || In || 1 || NVDCUTIL_VIRTUAL_EDID_ENABLE_DISABLE ||
+| 0x40010502 || In || 1 || NVDCUTIL_VIRTUAL_EDID_ON_OFF ||
 |-
 | 0x42040503 || In || 1056 || NVDCUTIL_VIRTUAL_EDID_SET_DATA ||
 |-
 | 0x803C0504 || Out || 60 || NVDCUTIL_GET_MODE ||
+|-
+| 0x40010505 || In || 1 || NVDCUTIL_TELEMETRY_TEST_ON_OFF ||
 |-
 |}
 
@@ -648,9 +656,9 @@ Added in firmware version 3.0.0.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0xC1280701 || Inout || 296 || ||
+| 0xC1280701 || Inout || 296 || NVERPT_TELEMETRY_SUBMIT_DATA ||
 |-
-| 0xCF580702 || Inout || 3928 || ||
+| 0xCF580702 || Inout || 3928 || NVERPT_TELEMETRY_SUBMIT_DATA_EX ||
 |-
 |}
 
@@ -1032,7 +1040,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC0080004 || 8 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX || Seen on 1.0.0. Stubbed; does a debug print and returns 0.
 |-
-| 0x40040007 || 4 || || Seen on 1.0.0. Sets a u32 based on input.
+| 0x40040007 || 4 || NVHOST_IOCTL_CHANNEL_SET_SUBMIT_TIMEOUT || Seen on 1.0.0.
 |-
 | 0x40080008 || 8 || NVHOST_IOCTL_CHANNEL_SET_CLK_RATE || Seen on 1.0.0.
 |-
