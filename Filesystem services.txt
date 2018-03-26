@@ -94,9 +94,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 32 || [3.0.0+] ExtendSaveDataFileSystem
 |-
-| 33 || [5.0.0+]
+| 33 || [5.0.0+] DeleteCacheStorage
 |-
-| 34 || [5.0.0+]
+| 34 || [5.0.0+] GetCacheStorageSize
 |-
 | 51 || [[#OpenSaveDataFileSystem]]
 |-
@@ -114,19 +114,19 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 61 || [[#OpenSaveDataInfoReaderBySaveDataSpaceId]]
 |-
-| 62 || [5.0.0+]
+| 62 || [5.0.0+] OpenCacheStorageList
 |-
-| 64 || [5.0.0+]
+| 64 || [5.0.0+] OpenSaveDataInternalStorageFileSystem
 |-
-| 65 || [5.0.0+]
+| 65 || [5.0.0+] UpdateSaveDataMacForDebug
 |-
-| 66 || [5.0.0+]
+| 66 || [5.0.0+] WriteSaveDataFileSystemExtraData2
 |-
 | 80 || OpenSaveDataMetaFile
 |-
 | 81 || [4.0.0+] OpenSaveDataTransferManager
 |-
-| 82 || [5.0.0+]
+| 82 || [5.0.0+] OpenSaveDataTransferManagerVersion2
 |-
 | 100 || OpenImageDirectoryFileSystem
 |-
@@ -180,7 +180,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 614 || [4.0.0+] CorruptSaveDataFileSystemBySaveDataSpaceId
 |-
-| 615 || [5.0.0+] 
+| 615 || [5.0.0+] QuerySaveDataInternalStorageTotalSize
 |-
 | 620 || [2.0.0+] [[#SetSdCardEncryptionSeed]]
 |-
@@ -190,15 +190,15 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 640 || [4.0.0+] IsSignedSystemPartitionOnSdCardValid
 |-
-| 700 || [5.0.0+]
+| 700 || [5.0.0+] OpenAccessFailureResolver
 |-
-| 701 || [5.0.0+]
+| 701 || [5.0.0+] GetAccessFailureDetectionEvent
 |-
-| 702 || [5.0.0+]
+| 702 || [5.0.0+] IsAccessFailureDetected
 |-
-| 710 || [5.0.0+]
+| 710 || [5.0.0+] ResolveAccessFailure
 |-
-| 720 || [5.0.0+]
+| 720 || [5.0.0+] AbandonAccessFailure
 |-
 | 800 || [2.0.0+] GetAndClearFileSystemProxyErrorInfo
 |-
