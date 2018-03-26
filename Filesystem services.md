@@ -809,7 +809,7 @@ the first 0x5-bytes set to all-zero.
 | 0x20   | 0x8  | saveID, 0 for regular SaveData.                  |
 | 0x28   | 0x8  | Application titleID, for regular SaveData.       |
 | 0x30   | 0x8  | Raw saveimage size                               |
-| 0x38   | 0x28 | ?                                                |
+| 0x38   | 0x28 | Unknown. Usually zeros?                          |
 
 This is a 0x60-byte struct.
 
