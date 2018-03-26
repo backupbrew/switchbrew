@@ -166,14 +166,34 @@ This is "nn::ntc::detail::service::IStaticService".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || OpenEnsureNetworkClockAvailabilityService
 |-
-| 100 || 
+| 100 || SuspendAutonomicTimeCorrection
 |-
-| 101 ||
+| 101 || ResumeAutonomicTimeCorrection
 |}
 
 Network-time-sync uses the "<...>/time" HTTPS URL listed in the below Network section. This just returns an UTC Unix time string.
+
+== IEnsureNetworkClockAvailabilityService ==
+This is "nn::ntc::detail::service::IEnsureNetworkClockAvailabilityService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || StartTask
+|-
+| 1 || GetFinishNotificationEvent
+|-
+| 2 || GetResult
+|-
+| 3 || Cancel
+|-
+| 4 || IsProcessing
+|-
+| 5 || GetServerTime
+|}
 
 = Network =
 * <nowiki>https://sun.hac.%%.d4c.nintendo.net/v1/system_update_meta?device_id=%016llx</nowiki>

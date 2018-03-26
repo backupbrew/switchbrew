@@ -97,15 +97,28 @@ This is "nn::nim::detail::IShopServiceManager".
 
 This is "nn::ntc::detail::<service::IStaticService>".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 100 |      |
-| 101 |      |
+| Cmd | Name                                      |
+| --- | ----------------------------------------- |
+| 0   | OpenEnsureNetworkClockAvailabilityService |
+| 100 | SuspendAutonomicTimeCorrection            |
+| 101 | ResumeAutonomicTimeCorrection             |
 
 Network-time-sync uses the "\<...\>/time" HTTPS URL listed in the below
-Network section. This just returns an UTC Unix time
-    string.
+Network section. This just returns an UTC Unix time string.
+
+## IEnsureNetworkClockAvailabilityService
+
+This is
+"nn::ntc::detail::<service::IEnsureNetworkClockAvailabilityService>".
+
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | StartTask                  |
+| 1   | GetFinishNotificationEvent |
+| 2   | GetResult                  |
+| 3   | Cancel                     |
+| 4   | IsProcessing               |
+| 5   | GetServerTime              |
 
 # Network
 
