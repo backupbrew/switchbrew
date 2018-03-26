@@ -65,9 +65,9 @@
 | 0x43 | [\#svcReplyAndReceive](#svcReplyAndReceive "wikilink")                             | X1=ptr\_handles, W2=num\_handles, X3=replytarget\_handle(0=none), X4=timeout                                       | W0=result, W1=handle\_idx                                |
 | 0x44 | svcReplyAndReceiveWithUserBuffer                                                   | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=replytarget\_handle(0=none), X6=timeout                        | W0=result, W1=handle\_idx                                |
 | 0x45 | svcCreateEvent                                                                     | None                                                                                                               | W0=result, W1=client\_handle ?, W2=server\_handle ?      |
-| 0x48 | \[5.0.0+\] svcAllocateUnsafeMemory                                                 | X0=addr, X1=size                                                                                                   | W0=result                                                |
+| 0x48 | \[5.0.0+\] [svcAllocateUnsafeMemory](SvcAllocateUnsafeMemory.md "wikilink")        | X0=addr, X1=size                                                                                                   | W0=result                                                |
 | 0x49 | \[5.0.0+\] svcFreeUnsafeMemory                                                     | X0=addr, X1=size                                                                                                   | W0=result                                                |
-| 0x4A | \[5.0.0+\] setUnsafeAllocationLimit                                                | X0=size                                                                                                            | W0=result                                                |
+| 0x4A | \[5.0.0+\] svcSetUnsafeAllocationLimit                                             | X0=size                                                                                                            | W0=result                                                |
 | 0x4B | \[4.0.0+\] [\#svcCreateCodeMemory](#svcCreateCodeMemory "wikilink")                | X1=addr, X2=size                                                                                                   | W0=result, W1=code\_memory\_handle                       |
 | 0x4C | \[4.0.0+\] [\#svcControlCodeMemory](#svcControlCodeMemory "wikilink")              | W0=code\_memory\_handle, W1=[\#CodeMemoryOperation](#CodeMemoryOperation "wikilink"), X2=dstaddr, X3=size, W4=perm | W0=result                                                |
 | 0x4D | svcSleepSystem                                                                     | None                                                                                                               | None                                                     |
@@ -666,7 +666,7 @@ expired. HandleIndex is not updated.
 **0xf601:** Port remote dead. One of the sessions has been closed.
 HandleIndex is set appropriately.
 
-## svcAllocateUserHeapMemory
+## svcAllocateUnsafeMemory
 
 Same as [\#svcMapPhysicalMemory](#svcMapPhysicalMemory "wikilink")
 except it always uses pool partition 0.
