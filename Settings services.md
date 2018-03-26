@@ -13,7 +13,7 @@ This is
 | 5   | \[4.0.0+\] GetAvailableLanguageCodes2     | Takes a type-0x6 buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
 | 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 | No input, returns an output s32.                                                                                       |
 | 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
-| 8   | \[5.0.0+\] GetQuestFlag2                  | Identical to [set:sys GetQuestFlag](#set:sys "wikilink").                                                              |
+| 8   | \[5.0.0+\] GetQuestFlag                   | Identical to "set:sys" [GetQuestFlag](#set:sys "wikilink").                                                            |
 
 \[4.0.0+\] Official user-processes now use
 GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of
@@ -123,14 +123,14 @@ This is
 | 21  | [\#GetEticketDeviceKey](#GetEticketDeviceKey "wikilink")                 |
 | 22  | GetSpeakerParameter                                                      |
 | 23  | \[4.0.0+\] GetLcdVendorId                                                |
-| 24  | \[5.0.0+\] GetUnknownKey1                                                |
-| 25  | \[5.0.0+\] GetUnknownKey0                                                |
+| 24  | \[5.0.0+\] GetEciDeviceCertificate2                                      |
+| 25  | \[5.0.0+\] GetEciDeviceKey2                                              |
 | 26  | \[5.0.0+\] GetAmiiboKey                                                  |
-| 27  | \[5.0.0+\] GetAmiiboECQVCertificate                                      |
-| 28  | \[5.0.0+\] GetAmiiboECDSACertificate                                     |
-| 29  | \[5.0.0+\] GetAmiiboECQVBLSKey                                           |
-| 30  | \[5.0.0+\] GetAmiiboECQVBLSCertificate                                   |
-| 31  | \[5.0.0+\] GetAmiiboECQVBLSRootCertificate                               |
+| 27  | \[5.0.0+\] GetAmiiboEcqvCertificate                                      |
+| 28  | \[5.0.0+\] GetAmiiboEcdsaCertificate                                     |
+| 29  | \[5.0.0+\] GetAmiiboEcqvBlsKey                                           |
+| 30  | \[5.0.0+\] GetAmiiboEcqvBlsCertificate                                   |
+| 31  | \[5.0.0+\] GetAmiiboEcqvBlsRootCertificate                               |
 | 32  | \[5.0.0+\] GetUnknownId                                                  |
 
 Used for accessing data calibrated at the factory.
@@ -221,6 +221,7 @@ This is
 | 2   | GetNetworkSettings                                                                                |
 | 3   | [\#GetFirmwareVersion](#GetFirmwareVersion "wikilink")                                            |
 | 4   | \[3.0.0+\] GetFirmwareVersion2                                                                    |
+| 5   | \[5.0.0+\] GetFirmwareVersionDigest                                                               |
 | 7   | GetLockScreenFlag                                                                                 |
 | 8   | SetLockScreenFlag                                                                                 |
 | 9   | GetBacklightSettings                                                                              |
@@ -353,15 +354,15 @@ This is
 | 138 | \[4.0.0+\] GetWebInspectorFlag                                                                    |
 | 139 | \[4.0.0+\] [\#GetAllowedSslHosts](#GetAllowedSslHosts "wikilink")                                 |
 | 140 | \[4.0.0+\] GetHostFsMountPoint                                                                    |
-| 141 | \[5.0.0+\]                                                                                        |
-| 142 | \[5.0.0+\]                                                                                        |
-| 143 | \[5.0.0+\]                                                                                        |
-| 144 | \[5.0.0+\]                                                                                        |
-| 145 | \[5.0.0+\]                                                                                        |
-| 146 | \[5.0.0+\]                                                                                        |
-| 147 | \[5.0.0+\]                                                                                        |
-| 148 | \[5.0.0+\]                                                                                        |
-| 149 | \[5.0.0+\]                                                                                        |
+| 141 | \[5.0.0+\] GetRequiresRunRepairTimeReviser                                                        |
+| 142 | \[5.0.0+\] SetRequiresRunRepairTimeReviser                                                        |
+| 143 | \[5.0.0+\] SetBlePairingSettings                                                                  |
+| 144 | \[5.0.0+\] GetBlePairingSettings                                                                  |
+| 145 | \[5.0.0+\] GetConsoleSixAxisSensorAngularVelocityTimeBias                                         |
+| 146 | \[5.0.0+\] SetConsoleSixAxisSensorAngularVelocityTimeBias                                         |
+| 147 | \[5.0.0+\] GetConsoleSixAxisSensorAngularAcceleration                                             |
+| 148 | \[5.0.0+\] SetConsoleSixAxisSensorAngularAcceleration                                             |
+| 149 | \[5.0.0+\] GetRebootlessSystemUpdateVersion                                                       |
 
 Official user-processes get a new service session handle each time a
 set:sys cmd is used, with the session being closed aftewards.
