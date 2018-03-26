@@ -582,14 +582,14 @@ s8 type: 0 = directory, 1 = file.
 
 This is "nn::fssrv::sf::IFile".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   | Read       |
-| 1   | Write      |
-| 2   | Flush      |
-| 3   | SetSize    |
-| 4   | GetSize    |
-| 5   | \[4.0.0+\] |
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 0   | Read                    |
+| 1   | Write                   |
+| 2   | Flush                   |
+| 3   | SetSize                 |
+| 4   | GetSize                 |
+| 5   | \[4.0.0+\] OperateRange |
 
 # ISaveDataInfoReader
 

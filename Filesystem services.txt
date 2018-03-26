@@ -654,7 +654,7 @@ This is "nn::fssrv::sf::IFile".
 |-
 | 4 || GetSize
 |-
-| 5 || [4.0.0+]
+| 5 || [4.0.0+] OperateRange
 |}
 
 = ISaveDataInfoReader =
