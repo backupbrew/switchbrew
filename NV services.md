@@ -1033,8 +1033,8 @@ interface.
 | 0x40204818 | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX "wikilink")               | Seen on 1.0.0.                                               |
 | 0xC0??4819 | Variable | [\#NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY "wikilink")       | Seen on 1.0.0.                                               |
 | 0xC020481A | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 "wikilink")             | Seen on 1.0.0.                                               |
-| 0xC018481B | 24       | (uses Ioctl2)                                                                                               |                                                              |
-| 0xC018481C | 24       | (uses Ioctl2)                                                                                               |                                                              |
+| 0xC018481B | 24       |                                                                                                             | Uses Ioctl2.                                                 |
+| 0xC018481C | 24       |                                                                                                             | Uses Ioctl2.                                                 |
 |            |          |                                                                                                             |                                                              |
 | 0x40084714 | 8        | NVGPU\_IOCTL\_CHANNEL\_SET\_USER\_DATA                                                                      | Sets an unknown user context address. Seen on 1.0.0.         |
 | 0x80084715 | 8        | NVGPU\_IOCTL\_CHANNEL\_GET\_USER\_DATA                                                                      | Gets an unknown user context address. Seen on 1.0.0.         |
