@@ -710,6 +710,7 @@ Determines the storage where the savedata is stored.
 | ----- | --------------------------- |
 | 0     | SystemSaveData              |
 | 1     | SaveData                    |
+| 2     | BcatDeliveryCacheStorage    |
 | 3     | DeviceSaveData              |
 | 4     | \[3.0.0+\] TemporaryStorage |
 | 5     | \[3.0.0+\] CacheStorage     |

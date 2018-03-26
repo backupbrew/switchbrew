@@ -823,6 +823,8 @@ Determines the storage where the savedata is stored.
 |-
 | 1 || SaveData
 |-
+| 2 || BcatDeliveryCacheStorage
+|-
 | 3 || DeviceSaveData
 |-
 | 4 || [3.0.0+] TemporaryStorage
