@@ -19,9 +19,17 @@ Subchannels:
 |-
 | 0x49 || ClearColorStateMachine? || 1 || uint || 1=Normal, 2=LoadColors?, 3=StoreColors?
 |-
+| 0xBA || || 1 || || SetRenderTargets writes 1/0 here an optional buffer != NULL, and depending on type.
+|-
+| 0xBE || || 1 || pipe || SetRenderTargets writes here repeatedly 16 times, if an optional buffer != NULL and is a given type.
+|-
+| 0xBF || || 1 || bool || SetRenderTargets writes 1 here after 0xBE has been written 16 times, and 0xDC been written.
+|-
 | 0xC9 || TesselationOuterLevels || 4 || float[4] ||
 |-
 | 0xCD || TesselationInnerLevels || 2 || float[2] ||
+|-
+| 0xDC || || 1 || bool || SetRenderTargets writes 1 here, if an optional buffer != NULL and is a given type.
 |-
 | 0xDF || RasterizerEnable || 1 || bool ||
 |-
@@ -35,9 +43,37 @@ Subchannels:
 |-
 | 0x1D3 || || 1 || || GpuInit writes 0x3f here.
 |-
+| 0x1F0 || || 1 || || SetRenderTargets optionally uses this.
+|-
+| 0x1F1 || || 1 || || SetRenderTargets optionally uses this.
+|-
+| 0x1F2 || || 1 || || SetRenderTargets optionally uses this.
+|-
+| 0x1F3 || || 1 || || SetRenderTargets optionally writes 0 here.
+|-
+| 0x1F8 || || 1 || || SetRenderTargets optionally uses this.
+|-
+| 0x1F9 || || 1 || || SetRenderTargets optionally uses this.
+|-
 | 0x1FA || ZCullContextStartAddr || 2 || gpuva ||
 |-
 | 0x1FC || ZCullContextEndAddr || 2 || gpuva ||
+|-
+| 0x200+16*N || RenderTargetNAddr || 2 || gpuva ||
+|-
+| 0x202+16*N || RenderTargetNHorizontal || 1 || ||
+|-
+| 0x203+16*N || RenderTargetNVertical || 1 || ||
+|-
+| 0x204+16*N || RenderTargetNFormat || 1 || ||
+|-
+| 0x205+16*N || RenderTargetNTileMode || 1 || ||
+|-
+| 0x206+16*N || RenderTargetNArrayMode || 1 || ||
+|-
+| 0x207+16*N || RenderTargetNLayerStride || 1 || ||
+|-
+| 0x208+16*N || RenderTargetNBaseLayer || 1 || ||
 |-
 | 0x280+8*N || ViewportNScaleX || 1 || float ||
 |-
@@ -125,6 +161,16 @@ Subchannels:
 |-
 | 0x3F6 || CoverageModulationEnable || 1 || bool ||
 |-
+| 0x3F8 || Unknown?Addr || 2 || gpuva || SetRenderTargets writes the address of an optional buffer here.
+|-
+| 0x3FA || Unknown?TileMode || 1 ||  || SetRenderTargets writes here optionally.
+|-
+| 0x3FB || Unknown?ArrayMode || 1 ||  || SetRenderTargets writes here optionally.
+|-
+| 0x3FC || Unknown?BaseLayer || 1 ||  || SetRenderTargets writes here optionally.
+|-
+| 0x3FD || || 1 || bitfield?[2] || SetRenderTargets writes here
+|-
 | 0x40C || CoverageModulationTable || 4 || float[4] ||
 |-
 | 0x433 || || 1 || || GpuInit writes 4 here.
@@ -154,6 +200,14 @@ Subchannels:
 | 0x478 || MultisampleGrid || 3 || bitfield[3] || Bit0-3: x0, bit4-7: y0, bit8-11: x1, etc..
 |-
 | 0x47E || MultisampleCoverageToColor || 1 || bitfield || Bit0: Enable, bit4-6: ?
+|-
+| 0x487 || RenderTargetControl || 1 || bitfield || Bit0-3: NumberOfRenderTargets, bunch of other flags. Used by SetRenderTargets.
+|-
+| 0x48A || || 1 || || Optionally used by SetRenderTargets.
+|-
+| 0x48B || || 1 || || Optionally used by SetRenderTargets.
+|-
+| 0x48C || || 1 || || Optionally used by SetRenderTargets.
 |-
 | 0x4B3 || DepthTestEnable || 1 || bool || Enables DepthWriteEnable and DepthFunc.
 |-
@@ -195,23 +249,29 @@ Subchannels:
 |-
 | 0x546 || PointSize || 1 || float ||
 |-
-| 0x554 || RendererConditionAddr || 2 || gpuva ||
-|-
-| 0x556 || RendererConditionMode || 1 || || 0=disabled unconditional, 1=enabled unconditional, 3=unknown conditional, 4=unknown conditional, 
-|-
 | 0x54C || CounterReset || 1 || || Value written decides which counter to reset.
 |-
 | 0x54D || MultisampleEnable || 1 || ||
 |-
+| 0x54E || || 1 || bool || SetRenderTargets writes 0 here if an optional buffer is NULL.
+|-
 | 0x54F || MultisampleControl || 1 || bool || bit0: AlphaToCoverageEnable, bit1+: ?
+|-
+| 0x554 || RendererConditionAddr || 2 || gpuva ||
+|-
+| 0x556 || RendererConditionMode || 1 || || 0=disabled unconditional, 1=enabled unconditional, 3=unknown conditional, 4=unknown conditional, 
 |-
 | 0x55B || PolygonOffsetFactor || 1 || float ||
 |-
-| 0x56d || CsaaEnable || 1 || bool ||
+| 0x56D || CsaaEnable || 1 || bool ||
 |-
 | 0x56F || PolygonOffsetOffset || 1 || float || Float multiplied by 2 is written here.
 |-
-| 0x574 || MultisampleMode || 1 || ||
+| 0x574 || MultisampleMode || 1 || || Written by SetRenderTargets, possible values: 0, 2, 4, 5, 6.
+|-
+| 0x57F || || 1 || || SetRenderTargets optionally writes 0 here.
+|-
+| 0x580 || || 1 || || SetRenderTargets optionally writes 0 here.
 |-
 | 0x591 || PrimitiveRestartEnable || 1 || bool ||
 |-
@@ -303,6 +363,10 @@ Subchannels:
 |-
 | 0xD1E || || 1 || || BindProgram writes 0 here, trigger?
 |-
+| 0xD28 || || 1 || || SetRenderTargets writes 0 here if an optional buffer is NULL.
+|-
+| 0xD29 || || 1 || || SetRenderTargets writes 0xFFFFFFFF here if an optional buffer != NULL, and of a certain type.
+|-
 | 0xD34 || || 1 || || Used by SetConservativeRasterDilate.
 |-
 | 0xD35 || AdvancedBlend || 1 || bitfield || Bit0: NormalizedDst, bit1: PremultipliedSrc, bit2-3: BlendTarget, Bit4-9: Mode
@@ -310,6 +374,8 @@ Subchannels:
 | 0xE00 || TransformFeedbackAddr || 2 || gpuva ||
 |-
 | 0xE02 || ClearColorConfig? || 1 || bitfield || Bit2-5: ?, bit6-9: ?
+|-
+| 0xE06 || || 1 || bitfield || Written by SetRenderTargets if optional buffer is given but not of a given type.
 |-
 | 0xE0A || || 1 || || Used by SetConservativeRasterDilate.
 |-
@@ -372,7 +438,7 @@ Subchannels:
 | 0xE45 || DrawElementsInstanced1Pipe || 1 || ||
 |}
 
-TODO: SetRenderTargets, TiledDownSample, Copy*, Dispatch*, Downsample, DrawTexture/DrawTransformFeedback, Bind*
+TODO: TiledDownSample, Copy*, Dispatch*, Downsample, DrawTexture/DrawTransformFeedback, Bind*
 
 = DMA =
 {| class=wikitable
