@@ -130,7 +130,7 @@ __NOTOC__
 |-
 | 0x49 || [5.0.0+] svcFreeUnsafeMemory || X0=addr, X1=size || W0=result
 |-
-| 0x4A || [5.0.0+] svcSetUserHeapMemoryAllocationMax || X0=size || W0=result
+| 0x4A || [5.0.0+] setUnsafeAllocationLimit || X0=size || W0=result
 |-
 | 0x4B || [4.0.0+] [[#svcCreateCodeMemory]] || X1=addr, X2=size || W0=result, W1=code_memory_handle
 |-
