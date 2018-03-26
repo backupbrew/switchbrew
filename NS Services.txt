@@ -170,7 +170,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 307 || TerminateOverlayApplet
 |-
-| 400 || GetApplicationControlData
+| 400 || [[#GetApplicationControlData]]
 |-
 | 401 || InvalidateAllApplicationControlCache
 |-
@@ -297,6 +297,11 @@ Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd23.
 Takes an input u8 pointer for the resulting Id to be written to and a string represented as a u64 (i.e 0x53552D6E65 for 'en-US').
 
 Returns 0 if an ID was successfully found, otherwise returns 0x25810.
+
+== GetApplicationControlData ==
+Takes an input u8 [[Filesystem_services|StorageId]], an u64 titleID, and a type-0x6 output buffer. Returns an output u64(?).
+
+Reads [[control.nacp]] from the specified title content.
 
 == ListApplicationContentMetaStatus ==
 Returns 0x10-byte entries using the specified titleID starting at the specified u32 entryindex. Can only return game titles. The second entry if any is the update-title usually. When the input entryindex is >= totalentries, this will return 0 with out_entrycount=0.

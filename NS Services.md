@@ -92,7 +92,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 305  | TerminateSystemApplet                                                                              |
 | 306  | LaunchOverlayApplet                                                                                |
 | 307  | TerminateOverlayApplet                                                                             |
-| 400  | GetApplicationControlData                                                                          |
+| 400  | [\#GetApplicationControlData](#GetApplicationControlData "wikilink")                               |
 | 401  | InvalidateAllApplicationControlCache                                                               |
 | 402  | RequestDownloadApplicationControlData                                                              |
 | 403  | GetMaxApplicationControlCacheCount                                                                 |
@@ -190,6 +190,14 @@ Takes an input u8 pointer for the resulting Id to be written to and a
 string represented as a u64 (i.e 0x53552D6E65 for 'en-US').
 
 Returns 0 if an ID was successfully found, otherwise returns 0x25810.
+
+## GetApplicationControlData
+
+Takes an input u8 [StorageId](Filesystem%20services.md "wikilink"), an
+u64 titleID, and a type-0x6 output buffer. Returns an output u64(?).
+
+Reads [control.nacp](Control.nacp.md "wikilink") from the specified
+title content.
 
 ## ListApplicationContentMetaStatus
 
