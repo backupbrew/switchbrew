@@ -662,12 +662,15 @@ This is "nn::fssrv::sf::ISaveDataInfoReader".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || || Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of [[#SaveDataInfo]].
+| 0 || [[#ReadSaveDataInfo]]
 |}
 
-The above is used to get [[#SaveDataInfo]] for all savedata on the system (or all savedata for the current [[#SaveDataSpaceId]]). When used multiple times, it will resume reading where it left off, until no more entries are available.
+== ReadSaveDataInfo ==
+Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of [[#SaveDataInfo]].
+
+This is used to get [[#SaveDataInfo]] for all savedata on the system (or all savedata for the current [[#SaveDataSpaceId]]). When used multiple times, it will resume reading where it left off, until no more entries are available (in that case the out u64 is value 0).
 
 = IDeviceOperator =
 This is "nn::fssrv::sf::IDeviceOperator".

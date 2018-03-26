@@ -593,18 +593,23 @@ This is "nn::fssrv::sf::IFile".
 
 # ISaveDataInfoReader
 
-This is
-"nn::fssrv::sf::ISaveDataInfoReader".
+This is "nn::fssrv::sf::ISaveDataInfoReader".
 
-| Cmd | Name | Notes                                                                                                                                                        |
-| --- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0   |      | Takes a type-0x6 output buffer. Returns an output u64 for total output entries. This buffer contains an array of [\#SaveDataInfo](#SaveDataInfo "wikilink"). |
+| Cmd | Name                                               |
+| --- | -------------------------------------------------- |
+| 0   | [\#ReadSaveDataInfo](#ReadSaveDataInfo "wikilink") |
 
-The above is used to get [\#SaveDataInfo](#SaveDataInfo "wikilink") for
-all savedata on the system (or all savedata for the current
+## ReadSaveDataInfo
+
+Takes a type-0x6 output buffer. Returns an output u64 for total output
+entries. This buffer contains an array of
+[\#SaveDataInfo](#SaveDataInfo "wikilink").
+
+This is used to get [\#SaveDataInfo](#SaveDataInfo "wikilink") for all
+savedata on the system (or all savedata for the current
 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink")). When used multiple
 times, it will resume reading where it left off, until no more entries
-are available.
+are available (in that case the out u64 is value 0).
 
 # IDeviceOperator
 
