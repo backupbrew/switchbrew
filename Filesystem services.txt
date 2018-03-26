@@ -745,7 +745,7 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 217 || [2.1.0+] GetGameCardErrorReportInfo
 |-
-| 218 || [3.0.0+]
+| 218 || [3.0.0+] GetGameCardDeviceId
 |-
 | 300 || SetSpeedEmulationMode
 |-

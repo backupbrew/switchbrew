@@ -651,7 +651,7 @@ This is
 | 215 | \[2.0.0+\] ForceEraseGameCard                                                  |
 | 216 | \[2.0.0+\] GetGameCardErrorInfo                                                |
 | 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                          |
-| 218 | \[3.0.0+\]                                                                     |
+| 218 | \[3.0.0+\] GetGameCardDeviceId                                                 |
 | 300 | SetSpeedEmulationMode                                                          |
 | 301 | GetSpeedEmulationMode                                                          |
 
