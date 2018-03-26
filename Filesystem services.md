@@ -348,21 +348,24 @@ Mounts a gamecard [partition](Gamecard%20Partition.md "wikilink").
 
 ## OpenSaveDataFileSystem
 
-Takes an input u8 and a 0x40-byte Save-struct entry. Official
-user-process code is only known to use value 1 for the u8.
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and a
+0x40-byte Save-struct entry. Official user-process code is only known to
+use value 1 for the u8.
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 Permissions aren't checked until the specified save is successfully
 found.
 
-Only one process can mount a given savedata at any given time (this
-includes systemsavedata).
+Only one process (specifically only one
+[\#IFileSystem](#IFileSystem "wikilink") session) can mount a given
+savedata at any given time (this includes SystemSaveData).
 
 ## OpenSaveDataFileSystemBySystemSaveDataId
 
-Takes an input u8 and a 0x40-byte Save-struct entry. Web-applet only
-uses value0 for the input u8.
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and a
+0x40-byte Save-struct entry. Web-applet only uses value0 for the input
+u8.
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
