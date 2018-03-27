@@ -335,12 +335,23 @@ This is "nn::account::profile::IProfile".
 |-
 | 0 || Get
 |-
-| 1 || GetBase
+| 1 || [[#GetBase]]
 |-
-| 10 || GetImageSize
+| 10 || [[#GetImageSize]]
 |-
-| 11 || LoadImage
+| 11 || [[#LoadImage]]
 |}
+
+=== GetBase ===
+No input, returns an output [[#ProfileBase]] struct.
+
+=== GetImageSize ===
+No input, returns an output u32 for the size of the image buffer.
+
+=== LoadImage === 
+Takes an output type-0x6 buffer, returns the same output u32 as [[#GetImageSize]].
+
+The output buffer contains the JPEG profile image icon.
 
 == IProfileEditor ==
 This is "nn::account::profile::IProfileEditor".

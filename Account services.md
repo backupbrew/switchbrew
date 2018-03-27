@@ -201,12 +201,28 @@ This is "nn::account::detail::INotifier".
 
 This is "nn::account::profile::IProfile".
 
-| Cmd | Name         |
-| --- | ------------ |
-| 0   | Get          |
-| 1   | GetBase      |
-| 10  | GetImageSize |
-| 11  | LoadImage    |
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | Get                                        |
+| 1   | [\#GetBase](#GetBase "wikilink")           |
+| 10  | [\#GetImageSize](#GetImageSize "wikilink") |
+| 11  | [\#LoadImage](#LoadImage "wikilink")       |
+
+### GetBase
+
+No input, returns an output [\#ProfileBase](#ProfileBase "wikilink")
+struct.
+
+### GetImageSize
+
+No input, returns an output u32 for the size of the image buffer.
+
+### LoadImage
+
+Takes an output type-0x6 buffer, returns the same output u32 as
+[\#GetImageSize](#GetImageSize "wikilink").
+
+The output buffer contains the JPEG profile image icon.
 
 ## IProfileEditor
 
