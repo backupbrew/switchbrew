@@ -203,15 +203,19 @@ This is "nn::account::profile::IProfile".
 
 | Cmd | Name                                       |
 | --- | ------------------------------------------ |
-| 0   | Get                                        |
+| 0   | [\#Get](#Get "wikilink")                   |
 | 1   | [\#GetBase](#GetBase "wikilink")           |
 | 10  | [\#GetImageSize](#GetImageSize "wikilink") |
 | 11  | [\#LoadImage](#LoadImage "wikilink")       |
 
+### Get
+
+Takes an output type-0x1A buffer for [\#UserData](#UserData "wikilink"),
+no output.
+
 ### GetBase
 
-No input, returns an output [\#ProfileBase](#ProfileBase "wikilink")
-struct.
+No input, returns an output [\#ProfileBase](#ProfileBase "wikilink").
 
 ### GetImageSize
 
@@ -357,5 +361,13 @@ This is
 | 2   | GetDeviceAccountId               |                                                          |
 | 50  | RegisterNotificationTokenAsync   | Returns an [\#IAsyncContext](#IAsyncContext "wikilink"). |
 | 51  | UnregisterNotificationTokenAsync | Returns an [\#IAsyncContext](#IAsyncContext "wikilink"). |
+
+# UserData
+
+This is a 0x80-byte struct.
+
+# ProfileBase
+
+This is a 0x38-byte struct.
 
 [Category:Services](Category:Services "wikilink")

@@ -333,7 +333,7 @@ This is "nn::account::profile::IProfile".
 |-
 ! Cmd || Name
 |-
-| 0 || Get
+| 0 || [[#Get]]
 |-
 | 1 || [[#GetBase]]
 |-
@@ -342,8 +342,11 @@ This is "nn::account::profile::IProfile".
 | 11 || [[#LoadImage]]
 |}
 
+=== Get ===
+Takes an output type-0x1A buffer for [[#UserData]], no output.
+
 === GetBase ===
-No input, returns an output [[#ProfileBase]] struct.
+No input, returns an output [[#ProfileBase]].
 
 === GetImageSize ===
 No input, returns an output u32 for the size of the image buffer.
@@ -562,5 +565,11 @@ This is "nn::account::IBaasAccessTokenAccessor".
 |-
 | 51 || UnregisterNotificationTokenAsync || Returns an [[#IAsyncContext]].
 |}
+
+= UserData =
+This is a 0x80-byte struct.
+
+= ProfileBase =
+This is a 0x38-byte struct.
 
 [[Category:Services]]
