@@ -372,7 +372,7 @@ This is a 0x80-byte struct.
 | ------ | ---- | ------------------------------------------- |
 | 0x0    | 0x10 | userID                                      |
 | 0x10   | 0x8  | POSIX UTC timestamp, for last account edit. |
-| 0x18   | ?    | UTF-8 Username                              |
+| 0x18   | 0x20 | UTF-8 Username                              |
 |        |      |                                             |
 
 This is a 0x38-byte struct.
