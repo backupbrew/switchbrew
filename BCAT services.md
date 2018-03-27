@@ -2,33 +2,54 @@ BCAT (Background Content Asymmetric synchronized delivery and
 Transmission) encompasses a set of content download/upload related
 services.
 
-# BCAT services
+# bcat:a, bcat:m, bcat:u, bcat:s
+
+These are "nn::bcat::detail::ipc::IServiceCreator".
+
+| Cmd | Name                                               |
+| --- | -------------------------------------------------- |
+| 0   | CreateBcatService                                  |
+| 1   | CreateDeliveryCacheStorageService                  |
+| 2   | CreateDeliveryCacheStorageServiceWithApplicationId |
 
 Equivalent to 3DS BOSS(SpotPass). See
 [here](BCAT%20Content%20Container.md "wikilink") for
 BCAT-content-container.
 
-## bcat:u
+# news:a, news:c, news:m, news:p, news:v
 
-## bcat:s
+These are "nn::news::detail::ipc::IServiceCreator".
 
-## bcat:m
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
 
-## bcat:a
+# prepo:a, prepo:m, prepo:u, prepo:s
 
-# News services
+These are "nn::prepo::detail::ipc::IPrepoService".
 
-## news:p
+| Cmd   | Name                            |
+| ----- | ------------------------------- |
+| 10100 | SaveReport                      |
+| 10101 | SaveReportWithUser              |
+| 10200 | RequestImmediateTransmission    |
+| 10300 | GetTransmissionStatus           |
+| 20100 | SaveSystemReport                |
+| 20200 | \[4.0.0+\] SetOperationMode     |
+| 20101 | SaveSystemReportWithUser        |
+| 30100 | ClearStorage                    |
+| 40100 | IsUserAgreementCheckEnabled     |
+| 40101 | SetUserAgreementCheckEnabled    |
+| 90100 | GetStorageUsage                 |
+| 90200 | \[5.0.0+\] GetStatistics        |
+| 90201 | \[5.0.0+\] GetThroughputHistory |
+| 90300 | \[5.0.0+\] GetLastUploadError   |
 
-## news:v
-
-## news:m
-
-## news:c
-
-## news:a
-
-# Play Report services
+## Data reporting
 
 The "Play Report" (prepo) service uploads system and user information to
 a cloud server. This includes the following fields:
@@ -53,26 +74,5 @@ All the information is periodically uploaded to the following URL:
 It also checks the validity of the device's authentication token using
 the following URL:  
 \* https://dauth-%.ndas.srv.nintendo.net/v1/device\_auth\_token
-
-## prepo:u
-
-## prepo:s
-
-| Cmd   | Name |
-| ----- | ---- |
-| 10100 |      |
-| 10101 |      |
-| 10200 |      |
-| 10300 |      |
-| 20100 |      |
-| 20101 |      |
-| 30100 |      |
-| 40100 |      |
-| 40101 |      |
-| 90100 |      |
-
-## prepo:m
-
-## prepo:a
 
 [Category:Services](Category:Services "wikilink")
