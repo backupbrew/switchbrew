@@ -141,9 +141,9 @@ This is "nn::account::baas::IFloatingRegistrationRequest".
 |-
 | 21 || LoadIdTokenCache ||
 |-
-| 100 || RegisterUser || [1.0.0-3.0.2] Used to return an [[#IAsyncContext]].
+| 100 || RegisterUser ([1.0.0-3.0.2] RegisterAsync) || [1.0.0-3.0.2] Used to return an [[#IAsyncContext]].
 |-
-| 101 || RegisterUserWithUid || [1.0.0-3.0.2] Used to return an [[#IAsyncContext]].
+| 101 || RegisterUserWithUid ([1.0.0-3.0.2] RegisterWithUidAsync) || [1.0.0-3.0.2] Used to return an [[#IAsyncContext]].
 |-
 | 102 || [4.0.0+] RegisterNetworkServiceAccountAsync || Returns an [[#IAsyncContext]].
 |-

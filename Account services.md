@@ -73,20 +73,20 @@ This is
 This is
 "nn::account::baas::IFloatingRegistrationRequest".
 
-| Cmd | Name                                                 | Notes                                                                           |
-| --- | ---------------------------------------------------- | ------------------------------------------------------------------------------- |
-| 0   | GetSessionId                                         |                                                                                 |
-| 12  | GetAccountId                                         |                                                                                 |
-| 13  | GetLinkedNintendoAccountId                           |                                                                                 |
-| 14  | GetNickname                                          |                                                                                 |
-| 15  | GetProfileImage                                      |                                                                                 |
-| 21  | LoadIdTokenCache                                     |                                                                                 |
-| 100 | RegisterUser                                         | \[1.0.0-3.0.2\] Used to return an [\#IAsyncContext](#IAsyncContext "wikilink"). |
-| 101 | RegisterUserWithUid                                  | \[1.0.0-3.0.2\] Used to return an [\#IAsyncContext](#IAsyncContext "wikilink"). |
-| 102 | \[4.0.0+\] RegisterNetworkServiceAccountAsync        | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                        |
-| 103 | \[4.0.0+\] RegisterNetworkServiceAccountWithUidAsync | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                        |
-| 110 | SetSystemProgramIdentification                       |                                                                                 |
-| 111 | EnsureIdTokenCacheAsync                              | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                        |
+| Cmd | Name                                                       | Notes                                                                           |
+| --- | ---------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| 0   | GetSessionId                                               |                                                                                 |
+| 12  | GetAccountId                                               |                                                                                 |
+| 13  | GetLinkedNintendoAccountId                                 |                                                                                 |
+| 14  | GetNickname                                                |                                                                                 |
+| 15  | GetProfileImage                                            |                                                                                 |
+| 21  | LoadIdTokenCache                                           |                                                                                 |
+| 100 | RegisterUser (\[1.0.0-3.0.2\] RegisterAsync)               | \[1.0.0-3.0.2\] Used to return an [\#IAsyncContext](#IAsyncContext "wikilink"). |
+| 101 | RegisterUserWithUid (\[1.0.0-3.0.2\] RegisterWithUidAsync) | \[1.0.0-3.0.2\] Used to return an [\#IAsyncContext](#IAsyncContext "wikilink"). |
+| 102 | \[4.0.0+\] RegisterNetworkServiceAccountAsync              | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                        |
+| 103 | \[4.0.0+\] RegisterNetworkServiceAccountWithUidAsync       | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                        |
+| 110 | SetSystemProgramIdentification                             |                                                                                 |
+| 111 | EnsureIdTokenCacheAsync                                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                        |
 
 ## IAdministrator
 
