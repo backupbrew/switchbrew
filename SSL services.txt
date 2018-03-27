@@ -16,9 +16,13 @@ This is "nn::ssl::sf::ISslService".
 | 4 || DebugIoctl
 |-
 | 5 || SetInterfaceVersion
+|-
+| 6 || [5.0.0+] FlushSessionCache
 |}
 
 == ISslContext ==
+This is "nn::ssl::sf::ISslContext".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -49,6 +53,8 @@ This is "nn::ssl::sf::ISslService".
 |}
 
 === ISslConnection ===
+This is "nn::ssl::sf::ISslConnection".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -102,6 +108,8 @@ This is "nn::ssl::sf::ISslService".
 | 23 || GetOption
 |-
 | 24 || GetVerifyCertErrors
+|-
+| 25 || [4.0.0+] GetCipherInfo
 |}
 
 = Client cert+privk =

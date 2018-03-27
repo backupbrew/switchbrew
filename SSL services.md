@@ -2,16 +2,19 @@
 
 This is "nn::ssl::sf::ISslService".
 
-| Cmd | Name                  |
-| --- | --------------------- |
-| 0   | CreateContext         |
-| 1   | GetContextCount       |
-| 2   | GetCertificates       |
-| 3   | GetCertificateBufSize |
-| 4   | DebugIoctl            |
-| 5   | SetInterfaceVersion   |
+| Cmd | Name                         |
+| --- | ---------------------------- |
+| 0   | CreateContext                |
+| 1   | GetContextCount              |
+| 2   | GetCertificates              |
+| 3   | GetCertificateBufSize        |
+| 4   | DebugIoctl                   |
+| 5   | SetInterfaceVersion          |
+| 6   | \[5.0.0+\] FlushSessionCache |
 
 ## ISslContext
+
+This is "nn::ssl::sf::ISslContext".
 
 | Cmd | Name                |
 | --- | ------------------- |
@@ -29,6 +32,8 @@ This is "nn::ssl::sf::ISslService".
 | 11  | RemoveCrl           |
 
 ### ISslConnection
+
+This is "nn::ssl::sf::ISslConnection".
 
 | Cmd | Name                          |
 | --- | ----------------------------- |
@@ -57,6 +62,7 @@ This is "nn::ssl::sf::ISslService".
 | 22  | SetOption                     |
 | 23  | GetOption                     |
 | 24  | GetVerifyCertErrors           |
+| 25  | \[4.0.0+\] GetCipherInfo      |
 
 # Client cert+privk
 
