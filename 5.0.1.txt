@@ -1,6 +1,6 @@
 The Switch 5.0.1 system update was released on March 26, 2018. This Switch update was released for the following regions: ALL.
 
-Security flaws fixed: <fill this in manually later, see the updatedetails page from the ninupdates-report page(s) once available for now>.
+Security flaws fixed: no.
 
 ==Change-log==
 [http://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
@@ -16,6 +16,22 @@ Only the following tiles were updated, besides sysver-title:
 The *818 config title was updated, the values of the following fields were updated:
 * account.daemon!profile_sync_interval (18000 -> 172800)
 * account.daemon!na_info_refresh_interval (46800 -> 72000)
+
+===[[qlaunch]]===
+The code changes are minor, basically related to the below it seems.
+
+RomFS:
+* "/lyt/Option.szs" updated
+* All "/message/{dirname}/option.msbt.szs" files were updated.
+
+The following message strings were added to option.msbt.szs:
+  Gold Points for physical Nintendo Switch software can only be claimed within one year of the game's original release date. Gold Points will be issued automatically for eligible digital purchases and redemption of eligible download codes.
+  
+  Gold Points for physical Nintendo Switch software can only be claimed within one year of the game's original release date. Gold Points will be issued automatically for eligible digital purchases and redemption of eligible download codes.
+  
+  Registration of a game card is possible for two years from the official release date of the game. For software purchases on Nintendo eShop and download code redemptions, you will receive points automatically.
+  
+  Gold Points for physical Nintendo Switch software can only be claimed within one year of the game's original release date. Gold Points will be issued automatically for eligible digital purchases and redemption of eligible download codes.
 
 ==See Also==
 System update report(s):
