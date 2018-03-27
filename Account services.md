@@ -372,7 +372,8 @@ This is a 0x80-byte struct.
 | ------ | ---- | ------------------------------------------ |
 | 0x0    | 0x10 | userID                                     |
 | 0x10   | 0x8  | POSIX UTC timestamp, for account creation. |
-| 0x18   | ?    | Username                                   |
+| 0x18   | 0xA  | Username                                   |
+| 0x22   | 0x16 | Usually zeros?                             |
 
 This is a 0x38-byte struct.
 
