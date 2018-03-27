@@ -269,12 +269,13 @@ All offsets are given is in number of u32 words.
 ## Control
 
 When type == 5 you are talking to the IPC manager. These are processed
-by the sysmodule.
+by the
+sysmodule.
 
-| Cmd | Name                   | Arguments   | Output          |
-| --- | ---------------------- | ----------- | --------------- |
-| 0   | ConvertSessionToDomain | None        |                 |
-| 1   | ConvertDomainToSession | u32 domain  |                 |
-| 2   | DuplicateSession       | None        |                 |
-| 3   | QueryPointerBufferSize | None        | u32 as u16-size |
-| 4   | DuplicateSessionEx     | u32 unknown |                 |
+| Cmd | Name                         | Arguments              | Output                 |
+| --- | ---------------------------- | ---------------------- | ---------------------- |
+| 0   | ConvertCurrentObjectToDomain | None                   | u32 CmifDomainObjectId |
+| 1   | CopyFromCurrentDomain        | u32 CmifDomainObjectId | u32 NativeHandle       |
+| 2   | CloneCurrentObject           | None                   | u32 NativeHandle       |
+| 3   | QueryPointerBufferSize       | None                   | u16 size               |
+| 4   | CloneCurrentObjectEx         | u32 unknown            | u32 NativeHandle       |

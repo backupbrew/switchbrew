@@ -283,13 +283,13 @@ When type == 5 you are talking to the IPC manager. These are processed by the sy
 |-
 ! Cmd || Name || Arguments || Output
 |-
-| 0 || ConvertSessionToDomain || None || 
+| 0 || ConvertCurrentObjectToDomain || None || u32 CmifDomainObjectId
 |-
-| 1 || ConvertDomainToSession || u32 domain || 
+| 1 || CopyFromCurrentDomain || u32 CmifDomainObjectId || u32 NativeHandle
 |-
-| 2 || DuplicateSession || None || 
+| 2 || CloneCurrentObject || None || u32 NativeHandle
 |-
-| 3 || QueryPointerBufferSize || None || u32 as u16-size
+| 3 || QueryPointerBufferSize || None || u16 size
 |-
-| 4 || DuplicateSessionEx || u32 unknown || 
+| 4 || CloneCurrentObjectEx || u32 unknown || u32 NativeHandle
 |}
