@@ -1,18 +1,18 @@
-= nifm:a =
-This is "nn::nifm::detail::IStaticService".
+= nifm:a, nifm:s, nifm:u =
+These are "nn::nifm::detail::IStaticService".
 
-== IStaticService ==
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
 |- 
-| 4 || CreateGeneralService ([3.0.0+] CreateGeneralServiceOld) || Returns an [[#IGeneralService]].
+| 4 || CreateGeneralServiceOld ([1.0.0-2.3.0] CreateGeneralService) || Returns an [[#IGeneralService]].
 |-
 | 5 || [3.0.0+] CreateGeneralService || Returns an [[#IGeneralService]].
-|-
 |}
 
-=== IGeneralService ===
+== IGeneralService ==
+This is "nn::nifm::detail::IGeneralService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -35,17 +35,11 @@ This is "nn::nifm::detail::IStaticService".
 |-
 | 10 || RemoveNetworkProfile ||
 |-
-| 11
-| [1.0.0-3.0.2] GetScanData
-[4.0.0+] GetScanDataOld
-|
+| 11 || GetScanDataOld ([1.0.0-3.0.2] GetScanData) ||
 |-
 | 12 || GetCurrentIpAddress ||
 |-
-| 13
-| [1.0.0-3.0.2] GetCurrentAccessPoint
-[4.0.0+] GetCurrentAccessPointOld
-|
+| 13 || GetCurrentAccessPointOld ([1.0.0-3.0.2] GetCurrentAccessPoint) ||
 |-
 | 14 || CreateTemporaryNetworkProfile || Returns an [[#INetworkProfile]].
 |-
@@ -94,10 +88,11 @@ This is "nn::nifm::detail::IStaticService".
 | 36 || [4.0.0+] GetCurrentAccessPoint ||
 |-
 | 37 || [4.0.0+] Shutdown ||
-|-
 |}
 
-==== IScanRequest ====
+=== IScanRequest ===
+This is "nn::nifm::detail::IScanRequest".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -109,10 +104,11 @@ This is "nn::nifm::detail::IStaticService".
 | 2 || GetResult
 |-
 | 3 || GetSystemEventReadableHandle
-|-
 |}
 
-==== IRequest ====
+=== IRequest ===
+This is "nn::nifm::detail::IRequest".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -169,23 +165,18 @@ This is "nn::nifm::detail::IStaticService".
 |-
 |}
 
-==== INetworkProfile ====
+=== INetworkProfile ===
+This is "nn::nifm::detail::INetworkProfile".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |- 
 | 0 || Update
 |-
-| 1 || Persist ([3.0.0+] PersistOld)
+| 1 || PersistOld ([1.0.0-2.3.0] Persist)
 |-
 | 2 || [3.0.0+] Persist
-|-
 |}
-
-= nifm:s =
-Same as [[#nifm:a|nifm:a]].
-
-= nifm:u =
-Same as [[#nifm:a|nifm:a]].
 
 [[Category:Services]]
