@@ -1,4 +1,4 @@
-The FS for the system-version title(TID 0100000000000809) contains "/file" (and, after [[5.0.0]], "/digest"):
+The FS for the system-version title(TID 0100000000000809) contains "/file" (and, with [5.0.0+], "/digest"):
 
 {| class=wikitable
 ! Offset

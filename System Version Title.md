@@ -1,5 +1,5 @@
 The FS for the system-version title(TID 0100000000000809) contains
-"/file" (and, after [5.0.0](5.0.0.md "wikilink"),
+"/file" (and, with \[5.0.0+\],
 "/digest"):
 
 | Offset | Size | Description                                                                                                                                                                                     |
