@@ -2,12 +2,12 @@ PCTL handles all parental controls management.
 
 # pctl:s, pctl:r, pctl:a, pctl
 
-This is "nn::pctl::detail::ipc::IParentalControlServiceFactory".
+These are "nn::pctl::detail::ipc::IParentalControlServiceFactory".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   | GetService |
-|     |            |
+| Cmd | Name                                      |
+| --- | ----------------------------------------- |
+| 0   | CreateService                             |
+| 1   | \[4.0.0+\] CreateServiceWithoutInitialize |
 
 ## IParentalControlService
 
@@ -15,6 +15,7 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 
 | Cmd  | Name                                                     |
 | ---- | -------------------------------------------------------- |
+| 1    | \[4.0.0+\] Initialize                                    |
 | 1001 | CheckFreeCommunicationPermission                         |
 | 1002 | ConfirmLaunchApplicationPermission                       |
 | 1003 | ConfirmResumeApplicationPermission                       |
@@ -27,6 +28,9 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1010 | IsRestrictedSystemSettingsEntered                        |
 | 1011 | RevertRestrictedSystemSettingsEntered                    |
 | 1012 | GetRestrictedFeatures                                    |
+| 1013 | \[4.0.0+\] ConfirmStereoVisionPermission                 |
+| 1014 | \[5.0.0+\] ConfirmPlayableApplicationVideoOld            |
+| 1015 | \[5.0.0+\] ConfirmPlayableApplicationVideo               |
 | 1031 | IsRestrictionEnabled                                     |
 | 1032 | GetSafetyLevel                                           |
 | 1033 | SetSafetyLevel                                           |
@@ -42,6 +46,11 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1045 | UpdateFreeCommunicationApplicationList                   |
 | 1046 | DisableFeaturesForReset                                  |
 | 1047 | NotifyApplicationDownloadStarted                         |
+| 1061 | \[4.0.0+\] ConfirmStereoVisionRestrictionConfigurable    |
+| 1062 | \[4.0.0+\] GetStereoVisionRestriction                    |
+| 1063 | \[4.0.0+\] SetStereoVisionRestriction                    |
+| 1064 | \[5.0.0+\] ResetConfirmedStereoVisionPermission          |
+| 1065 | \[5.0.0+\] IsStereoVisionPermitted                       |
 | 1201 | UnlockRestrictionTemporarily                             |
 | 1202 | UnlockSystemSettingsRestriction                          |
 | 1203 | SetPinCode                                               |
@@ -49,6 +58,7 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1205 | [\#CheckMasterKey](#CheckMasterKey "wikilink")           |
 | 1206 | GetPinCodeLength                                         |
 | 1207 | GetPinCodeChangedEvent                                   |
+| 1208 | \[4.0.0+\] GetPinCode                                    |
 | 1403 | IsPairingActive                                          |
 | 1406 | GetSettingsLastUpdated                                   |
 | 1411 | GetPairingAccountInfo                                    |
@@ -62,6 +72,7 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1455 | IsRestrictedByPlayTimer                                  |
 | 1456 | GetPlayTimerSettings                                     |
 | 1457 | GetPlayTimerEventToRequestSuspension                     |
+| 1458 | \[4.0.0+\] IsPlayTimerAlarmDisabled                      |
 | 1471 | NotifyWrongPinCodeInputManyTimes                         |
 | 1472 | CancelNetworkRequest                                     |
 | 1473 | GetUnlinkedEvent                                         |
@@ -71,9 +82,16 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1603 | IsAllFeaturesDisabled                                    |
 | 1901 | DeleteFromFreeCommunicationApplicationListForDebug       |
 | 1902 | ClearFreeCommunicationApplicationListForDebug            |
+| 1903 | \[5.0.0+\] GetExemptApplicationListCountForDebug         |
+| 1904 | \[5.0.0+\] GetExemptApplicationListForDebug              |
+| 1905 | \[5.0.0+\] UpdateExemptApplicationListForDebug           |
+| 1906 | \[5.0.0+\] AddToExemptApplicationListForDebug            |
+| 1907 | \[5.0.0+\] DeleteFromExemptApplicationListForDebug       |
+| 1908 | \[5.0.0+\] ClearExemptApplicationListForDebug            |
 | 1941 | DeletePairing                                            |
 | 1951 | SetPlayTimerSettingsForDebug                             |
 | 1952 | GetPlayTimerSpentTimeForTest                             |
+| 1953 | \[4.0.0+\] SetPlayTimerAlarmDisabledForDebug             |
 | 2001 | RequestPairingAsync                                      |
 | 2002 | FinishRequestPairing                                     |
 | 2003 | AuthorizePairingAsync                                    |
@@ -89,7 +107,7 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 2013 | SynchronizeParentalControlSettingsAsync                  |
 | 2014 | FinishSynchronizeParentalControlSettings                 |
 | 2015 | FinishSynchronizeParentalControlSettingsWithLastUpdated  |
-|      |                                                          |
+| 2016 | \[5.0.0+\] RequestUpdateExemptionListAsync               |
 
 ## GenerateInquiryCode
 
