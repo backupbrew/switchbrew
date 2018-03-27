@@ -71,15 +71,6 @@ This is "nn::nim::detail::IShopServiceManager".
 | --- | ------------------------------------------------------- |
 | 0   | RequestDeviceAuthenticationToken                        |
 | 1   | RequestCachedDeviceAuthenticationToken                  |
-| 400 | GetAccountByVirtualAccount                              |
-| 300 | RequestUnlinkDevice                                     |
-| 301 | RequestUnlinkDeviceIntegrated                           |
-| 302 | RequestLinkDevice                                       |
-| 303 | HasDeviceLink                                           |
-| 304 | RequestUnlinkDeviceAll                                  |
-| 305 | RequestCreateVirtualAccount                             |
-| 306 | RequestDeviceLinkStatus                                 |
-| 200 | RequestRegisterNotificationToken                        |
 | 100 | RequestRegisterDeviceAccount                            |
 | 101 | RequestUnregisterDeviceAccount                          |
 | 102 | RequestDeviceAccountStatus                              |
@@ -88,6 +79,15 @@ This is "nn::nim::detail::IShopServiceManager".
 | 105 | RequestTransferDeviceAccount                            |
 | 106 | RequestSyncRegistration                                 |
 | 107 | IsOwnDeviceId                                           |
+| 200 | RequestRegisterNotificationToken                        |
+| 300 | RequestUnlinkDevice                                     |
+| 301 | RequestUnlinkDeviceIntegrated                           |
+| 302 | RequestLinkDevice                                       |
+| 303 | HasDeviceLink                                           |
+| 304 | RequestUnlinkDeviceAll                                  |
+| 305 | RequestCreateVirtualAccount                             |
+| 306 | RequestDeviceLinkStatus                                 |
+| 400 | GetAccountByVirtualAccount                              |
 | 500 | RequestSyncTicket                                       |
 | 501 | RequestDownloadTicket                                   |
 | 502 | \[4.0.0+\] RequestDownloadTicketForPrepurchasedContents |
