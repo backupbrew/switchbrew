@@ -153,6 +153,7 @@ This is
 | 2030 | [\#CreateStrayLayer](#CreateStrayLayer "wikilink")                                                    |
 | 2031 | [\#DestroyStrayLayer](#DestroyStrayLayer "wikilink")                                                  |
 | 2101 | [\#SetLayerScalingMode](#SetLayerScalingMode "wikilink")                                              |
+| 2102 | \[5.0.0+\] ConvertScalingMode                                                                         |
 | 2450 | [\#GetIndirectLayerImageMap](#GetIndirectLayerImageMap "wikilink")                                    |
 | 2451 | [\#GetIndirectLayerImageCropMap](#GetIndirectLayerImageCropMap "wikilink")                            |
 | 2460 | [\#GetIndirectLayerImageRequiredMemoryInfo](#GetIndirectLayerImageRequiredMemoryInfo "wikilink")      |
@@ -306,71 +307,123 @@ Takes an input u64 DisplayId and returns a handle.
 
 This is "nn::visrv::sf::ISystemDisplayService".
 
-| Cmd  | Name                        |
-| ---- | --------------------------- |
-| 1200 | GetZOrderCountMin           |
-| 1202 | GetZOrderCountMax           |
-| 1203 | GetDisplayLogicalResolution |
-| 1204 | SetDisplayMagnification     |
-| 2201 | SetLayerPosition            |
-| 2203 | SetLayerSize                |
-| 2204 | GetLayerZ                   |
-| 2205 | SetLayerZ                   |
-| 2207 | SetLayerVisibility          |
-| 2209 | SetLayerAlpha               |
-| 2312 | CreateStrayLayer            |
-| 2400 | OpenIndirectLayer           |
-| 2401 | CloseIndirectLayer          |
-| 2402 | FlipIndirectLayer           |
-| 3000 | ListDisplayModes            |
-| 3001 | ListDisplayRgbRanges        |
-| 3002 | ListDisplayContentTypes     |
-| 3200 | GetDisplayMode              |
-| 3201 | SetDisplayMode              |
-| 3202 | GetDisplayUnderscan         |
-| 3203 | SetDisplayUnderscan         |
-| 3204 | GetDisplayContentType       |
-| 3205 | SetDisplayContentType       |
-| 3206 | GetDisplayRgbRange          |
-| 3207 | SetDisplayRgbRange          |
-| 3208 | GetDisplayCmuMode           |
-| 3209 | SetDisplayCmuMode           |
-| 3210 | GetDisplayContrastRatio     |
-| 3211 | SetDisplayContrastRatio     |
-| 3214 | GetDisplayGamma             |
-| 3215 | SetDisplayGamma             |
-| 3216 | GetDisplayCmuLuma           |
-| 3217 | SetDisplayCmuLuma           |
-|      |                             |
+| Cmd  | Name                                           |
+| ---- | ---------------------------------------------- |
+| 1200 | GetZOrderCountMin                              |
+| 1202 | GetZOrderCountMax                              |
+| 1203 | GetDisplayLogicalResolution                    |
+| 1204 | SetDisplayMagnification                        |
+| 2201 | SetLayerPosition                               |
+| 2203 | SetLayerSize                                   |
+| 2204 | GetLayerZ                                      |
+| 2205 | SetLayerZ                                      |
+| 2207 | SetLayerVisibility                             |
+| 2209 | SetLayerAlpha                                  |
+| 2312 | CreateStrayLayer                               |
+| 2400 | OpenIndirectLayer                              |
+| 2401 | CloseIndirectLayer                             |
+| 2402 | FlipIndirectLayer                              |
+| 3000 | ListDisplayModes                               |
+| 3001 | ListDisplayRgbRanges                           |
+| 3002 | ListDisplayContentTypes                        |
+| 3200 | GetDisplayMode                                 |
+| 3201 | SetDisplayMode                                 |
+| 3202 | GetDisplayUnderscan                            |
+| 3203 | SetDisplayUnderscan                            |
+| 3204 | GetDisplayContentType                          |
+| 3205 | SetDisplayContentType                          |
+| 3206 | GetDisplayRgbRange                             |
+| 3207 | SetDisplayRgbRange                             |
+| 3208 | GetDisplayCmuMode                              |
+| 3209 | SetDisplayCmuMode                              |
+| 3210 | GetDisplayContrastRatio                        |
+| 3211 | SetDisplayContrastRatio                        |
+| 3214 | GetDisplayGamma                                |
+| 3215 | SetDisplayGamma                                |
+| 3216 | GetDisplayCmuLuma                              |
+| 3217 | SetDisplayCmuLuma                              |
+| 8225 | \[4.0.0+\] GetSharedBufferMemoryHandleId       |
+| 8250 | \[4.0.0+\] OpenSharedLayer                     |
+| 8251 | \[4.0.0+\] CloseSharedLayer                    |
+| 8252 | \[4.0.0+\] ConnectSharedLayer                  |
+| 8253 | \[4.0.0+\] DisconnectSharedLayer               |
+| 8254 | \[4.0.0+\] AcquireSharedFrameBuffer            |
+| 8255 | \[4.0.0+\] PresentSharedFrameBuffer            |
+| 8256 | \[4.0.0+\] GetSharedFrameBufferAcquirableEvent |
+| 8257 | \[4.0.0+\] FillSharedFrameBufferColor          |
+| 8258 | \[5.0.0+\] CancelSharedFrameBuffer             |
 
 ## IManagerDisplayService
 
 This is "nn::visrv::sf::IManagerDisplayService".
 
-| Cmd  | Name                               |
-| ---- | ---------------------------------- |
-| 1102 | GetDisplayResolution               |
-| 2010 | CreateManagedLayer                 |
-| 2011 | DestroyManagedLayer                |
-| 2050 | CreateIndirectLayer                |
-| 2051 | DestroyIndirectLayer               |
-| 2052 | CreateIndirectProducerEndPoint     |
-| 2053 | DestroyIndirectProducerEndPoint    |
-| 2054 | CreateIndirectConsumerEndPoint     |
-| 2055 | DestroyIndirectConsumerEndPoint    |
-| 2300 | AcquireLayerTexturePresentingEvent |
-| 2301 | ReleaseLayerTexturePresentingEvent |
-| 2302 | GetDisplayHotplugEvent             |
-| 2402 | GetDisplayHotplugState             |
-| 4201 | SetDisplayAlpha                    |
-| 4203 | SetDisplayLayerStack               |
-| 4205 | SetDisplayPowerState               |
-| 6000 | AddToLayerStack                    |
-| 6001 | RemoveFromLayerStack               |
-| 6002 | SetLayerVisibility                 |
-| 7000 | SetContentVisibility               |
-| 8000 | SetConductorLayer                  |
-| 8100 | SetIndirectProducerFlipOffset      |
+| Cmd  | Name                                                       |
+| ---- | ---------------------------------------------------------- |
+| 200  | \[4.0.0+\] AllocateProcessHeapBlock                        |
+| 201  | \[4.0.0+\] FreeProcessHeapBlock                            |
+| 1102 | GetDisplayResolution                                       |
+| 2010 | CreateManagedLayer                                         |
+| 2011 | DestroyManagedLayer                                        |
+| 2050 | CreateIndirectLayer                                        |
+| 2051 | DestroyIndirectLayer                                       |
+| 2052 | CreateIndirectProducerEndPoint                             |
+| 2053 | DestroyIndirectProducerEndPoint                            |
+| 2054 | CreateIndirectConsumerEndPoint                             |
+| 2055 | DestroyIndirectConsumerEndPoint                            |
+| 2300 | AcquireLayerTexturePresentingEvent                         |
+| 2301 | ReleaseLayerTexturePresentingEvent                         |
+| 2302 | GetDisplayHotplugEvent                                     |
+| 2402 | GetDisplayHotplugState                                     |
+| 2501 | \[4.0.0+\] GetCompositorErrorInfo                          |
+| 2601 | \[4.0.0+\] GetDisplayErrorEvent                            |
+| 4201 | SetDisplayAlpha                                            |
+| 4203 | SetDisplayLayerStack                                       |
+| 4205 | SetDisplayPowerState                                       |
+| 4206 | \[4.0.0+\] SetDefaultDisplay                               |
+| 6000 | AddToLayerStack                                            |
+| 6001 | RemoveFromLayerStack                                       |
+| 6002 | SetLayerVisibility                                         |
+| 6003 | \[5.0.0+\] SetLayerConfig                                  |
+| 6004 | \[5.0.0+\] AttachLayerPresentationTracer                   |
+| 6005 | \[5.0.0+\] DetachLayerPresentationTracer                   |
+| 6006 | \[5.0.0+\] StartLayerPresentationRecording                 |
+| 6007 | \[5.0.0+\] StopLayerPresentationRecording                  |
+| 6008 | \[5.0.0+\] StartLayerPresentationFenceWait                 |
+| 6009 | \[5.0.0+\] StopLayerPresentationFenceWait                  |
+| 6010 | \[5.0.0+\] GetLayerPresentationAllFencesExpiredEvent       |
+| 7000 | SetContentVisibility                                       |
+| 8000 | SetConductorLayer                                          |
+| 8100 | SetIndirectProducerFlipOffset                              |
+| 8200 | \[4.0.0+\] CreateSharedBufferStaticStorage                 |
+| 8201 | \[4.0.0+\] CreateSharedBufferTransferMemory                |
+| 8202 | \[4.0.0+\] DestroySharedBuffer                             |
+| 8203 | \[4.0.0+\] BindSharedLowLevelLayerToManagedLayer           |
+| 8204 | \[4.0.0+\] BindSharedLowLevelLayerToIndirectLayer          |
+| 8207 | \[4.0.0+\] UnbindSharedLowLevelLayer                       |
+| 8208 | \[4.0.0+\] ConnectSharedLowLevelLayerToSharedBuffer        |
+| 8209 | \[4.0.0+\] DisconnectSharedLowLevelLayerFromSharedBuffer   |
+| 8210 | \[4.0.0+\] CreateSharedLayer                               |
+| 8211 | \[4.0.0+\] DestroySharedLayer                              |
+| 8216 | \[4.0.0+\] AttachSharedLayerToLowLevelLayer                |
+| 8217 | \[4.0.0+\] ForceDetachSharedLayerFromLowLevelLayer         |
+| 8218 | \[4.0.0+\] StartDetachSharedLayerFromLowLevelLayer         |
+| 8219 | \[4.0.0+\] FinishDetachSharedLayerFromLowLevelLayer        |
+| 8220 | \[4.0.0+\] GetSharedLayerDetachReadyEvent                  |
+| 8221 | \[4.0.0+\] GetSharedLowLevelLayerSynchronizedEvent         |
+| 8222 | \[4.0.0+\] CheckSharedLowLevelLayerSynchronized            |
+| 8223 | \[4.0.0+\] RegisterSharedBufferImporterAruid               |
+| 8224 | \[4.0.0+\] UnregisterSharedBufferImporterAruid             |
+| 8227 | \[4.0.0+\] CreateSharedBufferProcessHeap                   |
+| 8228 | \[4.0.0+\] GetSharedLayerLayerStacks                       |
+| 8229 | \[4.0.0+\] SetSharedLayerLayerStacks                       |
+| 8291 | \[4.0.0+\] PresentDetachedSharedFrameBufferToLowLevelLayer |
+| 8292 | \[4.0.0+\] FillDetachedSharedFrameBufferColor              |
+| 8293 | \[4.0.0+\] GetDetachedSharedFrameBufferImage               |
+| 8294 | \[4.0.0+\] SetDetachedSharedFrameBufferImage               |
+| 8295 | \[4.0.0+\] CopyDetachedSharedFrameBufferImage              |
+| 8296 | \[4.0.0+\] SetDetachedSharedFrameBufferSubImage            |
+| 8297 | \[4.0.0+\] GetSharedFrameBufferContentParameter            |
+| 8298 | \[5.0.0+\] ExpandStartupLogoOnSharedFrameBuffer            |
 
 # DisplayInfo
 
