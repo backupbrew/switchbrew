@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **26 March 18** Nintendo released system update
+    [5.0.1](5.0.1.md "wikilink").
   - **12 March 18** Nintendo released system update
     [5.0.0](5.0.0.md "wikilink").
   - **2 March 18**
@@ -28,5 +30,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
   - **28 February 18**
     [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
     v2.0.0 was released.
-  - **22 February 18** [devkitPro](http://devkitpro.org) released
-    [devkitA64 alpha7](https://devkitpro.org/viewtopic.php?f=13&t=8693)
