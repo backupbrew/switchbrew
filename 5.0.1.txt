@@ -9,6 +9,11 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+===[[Settings_services|System Config]]===
+The *818 config title was updated, the values of the following fields were updated:
+* account.daemon!profile_sync_interval
+* account.daemon!na_info_refresh_interval
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=03-26-18_08-05-11&sys=hac]
