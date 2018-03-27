@@ -21,6 +21,7 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 |-
 | 7 || PrepareAddOnContent
 |-
+| 8 || [4.0.0+] GetAddOnContentListChangedEvent
 |}
 
 = ns:am =

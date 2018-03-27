@@ -2,17 +2,17 @@
 
 This is "nn::aocsrv::detail::IAddOnContentManager".
 
-| Cmd | Name                                 |
-| --- | ------------------------------------ |
-| 0   | CountAddOnContentByApplicationId     |
-| 1   | ListAddOnContentByApplicationId      |
-| 2   | CountAddOnContent                    |
-| 3   | ListAddOnContent                     |
-| 4   | GetAddOnContentBaseIdByApplicationId |
-| 5   | GetAddOnContentBaseId                |
-| 6   | PrepareAddOnContentByApplicationId   |
-| 7   | PrepareAddOnContent                  |
-|     |                                      |
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | CountAddOnContentByApplicationId           |
+| 1   | ListAddOnContentByApplicationId            |
+| 2   | CountAddOnContent                          |
+| 3   | ListAddOnContent                           |
+| 4   | GetAddOnContentBaseIdByApplicationId       |
+| 5   | GetAddOnContentBaseId                      |
+| 6   | PrepareAddOnContentByApplicationId         |
+| 7   | PrepareAddOnContent                        |
+| 8   | \[4.0.0+\] GetAddOnContentListChangedEvent |
 
 # ns:am
 
