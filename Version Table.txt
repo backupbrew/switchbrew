@@ -20,7 +20,7 @@
 |Wait for a compatible Homebrew Launcher or customized firmware.<br/>Feel free to update to [[4.1.0]] from [[3.0.1]] or up.
 |-
 |[[4.1.0]]
-|[[5.0.0]]
+|[[5.0.0]]+
 |Do not update (for now) ! Stay on [[4.1.0]]. 
 |-
 |}
