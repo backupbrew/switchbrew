@@ -202,31 +202,40 @@ This is "nn::pcv::IImmediateManager".
 This is
 "nn::timesrv::detail::<service::IStaticService>".
 
-| Cmd | Name                                                 | Notes                                                          |
-| --- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| 0   | GetStandardUserSystemClock                           | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
-| 1   | GetStandardNetworkSystemClock                        | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
-| 2   | GetStandardSteadyClock                               | Returns an [\#ISteadyClock](#ISteadyClock "wikilink").         |
-| 3   | GetTimeZoneService                                   | Returns an [\#ITimeZoneService](#ITimeZoneService "wikilink"). |
-| 4   | GetStandardLocalSystemClock                          | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
-| 100 | IsStandardUserSystemClockAutomaticCorrectionEnabled  |                                                                |
-| 101 | SetStandardUserSystemClockAutomaticCorrectionEnabled |                                                                |
-| 200 | IsStandardNetworkSystemClockAccuracySufficient       |                                                                |
-|     |                                                      |                                                                |
+| Cmd | Name                                                        | Notes                                                          |
+| --- | ----------------------------------------------------------- | -------------------------------------------------------------- |
+| 0   | GetStandardUserSystemClock                                  | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 1   | GetStandardNetworkSystemClock                               | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 2   | GetStandardSteadyClock                                      | Returns an [\#ISteadyClock](#ISteadyClock "wikilink").         |
+| 3   | GetTimeZoneService                                          | Returns an [\#ITimeZoneService](#ITimeZoneService "wikilink"). |
+| 4   | GetStandardLocalSystemClock                                 | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 5   | \[4.0.0+\] GetEphemeralNetworkSystemClock                   | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 50  | \[4.0.0+\] SetStandardSteadyClockInternalOffset             |                                                                |
+| 100 | IsStandardUserSystemClockAutomaticCorrectionEnabled         |                                                                |
+| 101 | SetStandardUserSystemClockAutomaticCorrectionEnabled        |                                                                |
+| 102 | \[5.0.0+\] GetStandardUserSystemClockInitialYear            |                                                                |
+| 200 | IsStandardNetworkSystemClockAccuracySufficient              |                                                                |
+| 300 | \[4.0.0+\] CalculateMonotonicSystemClockBaseTimePoint       |                                                                |
+| 400 | \[4.0.0+\] GetClockSnapshot                                 |                                                                |
+| 401 | \[4.0.0+\] GetClockSnapshotFromSystemClockContext           |                                                                |
+| 500 | \[4.0.0+\] CalculateStandardUserSystemClockDifferenceByUser |                                                                |
+| 501 | \[4.0.0+\] CalculateSpanBetween                             |                                                                |
 
 ## ISteadyClock
 
-| Cmd | Name                | Notes                                                                                   |
-| --- | ------------------- | --------------------------------------------------------------------------------------- |
-| 0   | GetCurrentTimePoint | No input, returns an output [\#SteadyClockTimePoint](#SteadyClockTimePoint "wikilink"). |
-| 2   | GetTestOffset       | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                 |
-| 3   | SetTestOffset       | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output.                   |
-| 100 | GetRtcValue         | No input, returns an output s64.                                                        |
-| 101 | IsRtcResetDetected  | No input, returns an output u8 bool.                                                    |
-| 102 | GetSetupResultValue | No input, returns an output u32.                                                        |
-| 200 | GetInternalOffset   | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                 |
-| 201 | SetInternalOffset   | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output.                   |
-|     |                     |                                                                                         |
+This is
+"nn::timesrv::detail::<service::ISteadyClock>".
+
+| Cmd | Name                | Notes                                                                                        |
+| --- | ------------------- | -------------------------------------------------------------------------------------------- |
+| 0   | GetCurrentTimePoint | No input, returns an output [\#SteadyClockTimePoint](#SteadyClockTimePoint "wikilink").      |
+| 2   | GetTestOffset       | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                      |
+| 3   | SetTestOffset       | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output.                        |
+| 100 | GetRtcValue         | No input, returns an output s64.                                                             |
+| 101 | IsRtcResetDetected  | No input, returns an output u8 bool.                                                         |
+| 102 | GetSetupResultValue | No input, returns an output u32.                                                             |
+| 200 | GetInternalOffset   | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                      |
+| 201 | SetInternalOffset   | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output. Removed in \[4.0.0+\]. |
 
 ### SteadyClockTimePoint
 
@@ -234,10 +243,12 @@ This is a 0x18-byte struct.
 
 ### TimeSpanType
 
-This is an
-u64.
+This is an u64.
 
 ## ISystemClock
+
+This is
+"nn::timesrv::detail::<service::ISystemClock>".
 
 | Cmd | Name                  | Notes                                                                     |
 | --- | --------------------- | ------------------------------------------------------------------------- |
@@ -253,10 +264,12 @@ This is an u64 for UTC POSIX time.
 
 ### SystemClockContext
 
-This is an 0x20-byte
-struct.
+This is an 0x20-byte struct.
 
 ## ITimeZoneService
+
+This is
+"nn::timesrv::detail::<service::ITimeZoneService>".
 
 | Cmd | Name                      | Notes                                                                                                                                                                                                                                                             |
 | --- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
