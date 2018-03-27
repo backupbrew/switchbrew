@@ -14,16 +14,16 @@ This is "nn::mmnv::IRequest".
 
 NVIDIA multimedia (NvMM) platform service.
 
-| Cmd | Name                   |
-| --- | ---------------------- |
-| 0   | ?                      |
-| 1   | ?                      |
-| 2   | ?                      |
-| 3   | ?                      |
-| 4   | module\_init\_clk      |
-| 5   | module\_deinit\_clk    |
-| 6   | module\_set\_clk\_rate |
-| 7   | module\_get\_clk\_rate |
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   |            |
+| 4   | Initialize |
+| 5   | Finalize   |
+| 6   | SetAndWait |
+| 7   | Get        |
 
 # vi:u
 

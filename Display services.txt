@@ -15,21 +15,21 @@ NVIDIA multimedia (NvMM) platform service.
 |-
 ! Cmd || Name
 |-
-| 0 || ?
+| 0 || 
 |-
-| 1 || ?
+| 1 || 
 |-
-| 2 || ?
+| 2 || 
 |-
-| 3 || ?
+| 3 || 
 |-
-| 4 || module_init_clk
+| 4 || Initialize
 |-
-| 5 || module_deinit_clk
+| 5 || Finalize
 |-
-| 6 || module_set_clk_rate
+| 6 || SetAndWait
 |-
-| 7 || module_get_clk_rate
+| 7 || Get
 |}
 
 = vi:u =
