@@ -50,6 +50,29 @@ This is "nn::capsrv::sf::IAlbumControlService".
 
 # caps:u
 
+This is "nn::capsrv::sf::IAlbumApplicationService".
+
+| Cmd   | Name                                     |
+| ----- | ---------------------------------------- |
+| 102   | GetAlbumFileListByAruid                  |
+| 103   | DeleteAlbumFileByAruid                   |
+| 104   | GetAlbumFileSizeByAruid                  |
+| 110   | LoadAlbumScreenShotImageByAruid          |
+| 120   | LoadAlbumScreenShotThumbnailImageByAruid |
+| 60002 | OpenAccessorSessionForApplication        |
+
+## IAlbumAccessorApplicationSession
+
+This is "nn::capsrv::sf::IAlbumAccessorApplicationSession".
+
+| Cmd  | Name                                  |
+| ---- | ------------------------------------- |
+| 2001 | OpenAlbumMovieReadStream              |
+| 2002 | CloseAlbumMovieReadStream             |
+| 2003 | GetAlbumMovieReadStreamMovieDataSize  |
+| 2004 | ReadMovieDataFromAlbumMovieReadStream |
+| 2005 | GetAlbumMovieReadStreamBrokenReason   |
+
 # Notes
 
 capsrv is responsible for validating the MACs for screenshots stored on
