@@ -1,10 +1,70 @@
 The only image data contained in this sysmodule is basically a saved display framebuffer, no image data for actively-used layers/framebuffers.
 
 = caps:sc =
+This is "nn::capsrv::sf::IScreenShotControlService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 1 ||
+|-
+| 2 ||
+|-
+| 1001 ||
+|-
+| 1002 ||
+|-
+| 1003 ||
+|-
+| 1011 ||
+|-
+| 1012 ||
+|-
+| 1201 ||
+|-
+| 1202 ||
+|-
+| 1203 ||
+|}
 
 = caps:ss =
+This is "nn::capsrv::sf::IScreenShotService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 201 ||
+|-
+| 202 ||
+|-
+| 203 ||
+|-
+| 204 ||
+|}
 
 = cec-mgr =
+This is "nn::cec::ICecManager".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 ||
+|-
+| 3 ||
+|-
+| 4 ||
+|-
+| 5 ||
+|-
+| 6 ||
+|}
 
 = mm:u =
 This is "nn::mmnv::IRequest".
@@ -413,7 +473,7 @@ The above ID is used for the ID param for the binder commands with [[#GetRelaySe
 == ParcelObjects ==
 This normally contains an u32 with value 0?
 
-=Resolution handling=
+= Resolution handling =
 There doesn't seem to be a way to get the actual TV resolution while using the "Default" Display. Official apps just hard-code what resolution to use depending on the current [[AM_services|OperationMode]].
 
 [[Category:Services]]

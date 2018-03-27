@@ -4,9 +4,45 @@ layers/framebuffers.
 
 # caps:sc
 
+This is "nn::capsrv::sf::IScreenShotControlService".
+
+| Cmd  | Name |
+| ---- | ---- |
+| 1    |      |
+| 2    |      |
+| 1001 |      |
+| 1002 |      |
+| 1003 |      |
+| 1011 |      |
+| 1012 |      |
+| 1201 |      |
+| 1202 |      |
+| 1203 |      |
+
 # caps:ss
 
+This is "nn::capsrv::sf::IScreenShotService".
+
+| Cmd | Name |
+| --- | ---- |
+| 201 |      |
+| 202 |      |
+| 203 |      |
+| 204 |      |
+
 # cec-mgr
+
+This is "nn::cec::ICecManager".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
+| 6   |      |
 
 # mm:u
 
