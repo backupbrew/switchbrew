@@ -30,6 +30,15 @@ This is "nn::capsrv::sf::IScreenShotService".
 | 203 |      |
 | 204 |      |
 
+# caps:su
+
+This is "nn::capsrv::sf::IScreenShotApplicationService".
+
+| Cmd | Name              |
+| --- | ----------------- |
+| 201 | SaveScreenShot    |
+| 203 | SaveScreenShotEx0 |
+
 # cec-mgr
 
 This is "nn::cec::ICecManager".

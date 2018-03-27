@@ -44,6 +44,18 @@ This is "nn::capsrv::sf::IScreenShotService".
 | 204 ||
 |}
 
+= caps:su =
+This is "nn::capsrv::sf::IScreenShotApplicationService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 201 || SaveScreenShot
+|-
+| 203 || SaveScreenShotEx0
+|}
+
 = cec-mgr =
 This is "nn::cec::ICecManager".
 
