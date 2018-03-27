@@ -14,8 +14,8 @@ Only the following tiles were updated, besides sysver-title:
 
 ===[[Settings_services|System Config]]===
 The *818 config title was updated, the values of the following fields were updated:
-* account.daemon!profile_sync_interval
-* account.daemon!na_info_refresh_interval
+* account.daemon!profile_sync_interval (18000 -> 172800)
+* account.daemon!na_info_refresh_interval (46800 -> 72000)
 
 ==See Also==
 System update report(s):
