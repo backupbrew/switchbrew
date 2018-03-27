@@ -368,12 +368,12 @@ This is a 0x80-byte struct.
 
 # ProfileBase
 
-| Offset | Size | Description                                |
-| ------ | ---- | ------------------------------------------ |
-| 0x0    | 0x10 | userID                                     |
-| 0x10   | 0x8  | POSIX UTC timestamp, for account creation. |
-| 0x18   | 0xA  | Username                                   |
-| 0x22   | 0x16 | Usually zeros?                             |
+| Offset | Size | Description                                 |
+| ------ | ---- | ------------------------------------------- |
+| 0x0    | 0x10 | userID                                      |
+| 0x10   | 0x8  | POSIX UTC timestamp, for last account edit. |
+| 0x18   | ?    | UTF-8 Username                              |
+|        |      |                                             |
 
 This is a 0x38-byte struct.
 
