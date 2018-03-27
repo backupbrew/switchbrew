@@ -405,7 +405,7 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 4 || GetLastOpenedUser ||
 |-
-| 5 || GetProfile || Returns an [[#IProfile]].
+| 5 || GetProfile || Takes an input userID, returns an [[#IProfile]].
 |-
 | 6 || GetProfileDigest ||
 |-

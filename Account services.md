@@ -252,7 +252,7 @@ This is
 | 2   | ListAllUsers                                    |                                                                            |
 | 3   | ListOpenUsers                                   |                                                                            |
 | 4   | GetLastOpenedUser                               |                                                                            |
-| 5   | GetProfile                                      | Returns an [\#IProfile](#IProfile "wikilink").                             |
+| 5   | GetProfile                                      | Takes an input userID, returns an [\#IProfile](#IProfile "wikilink").      |
 | 6   | GetProfileDigest                                |                                                                            |
 | 50  | IsUserRegistrationRequestPermitted              |                                                                            |
 | 51  | TrySelectUserWithoutInteraction                 |                                                                            |
