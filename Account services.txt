@@ -23,6 +23,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 51 || TrySelectUserWithoutInteraction ||
 |-
+| 60 || [5.0.0+] ListOpenContextStoredUsers ||
+|-
 | 100 || GetUserRegistrationNotifier || Returns an [[#INotifier]].
 |-
 | 101 || GetUserStateChangeNotifier || Returns an [[#INotifier]].
@@ -33,13 +35,19 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 104 || GetProfileUpdateNotifier || Returns an [[#INotifier]].
 |-
+| 105 || [4.0.0+] CheckNetworkServiceAvailabilityAsync || Returns an [[#IAsyncContext]].
+|-
 | 110 || StoreSaveDataThumbnail ||
 |-
 | 111 || ClearSaveDataThumbnail ||
 |-
 | 112 || LoadSaveDataThumbnail ||
 |-
+| 113 || GetSaveDataThumbnailExistence ||
+|-
 | 190 || GetUserLastOpenedApplication ||
+|-
+| 191 || [5.0.0+] ActivateOpenContextHolder ||
 |-
 | 200 || BeginUserRegistration ||
 |-
@@ -75,6 +83,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == IManagerForSystemService ==
+This is "nn::account::baas::IManagerForSystemService".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -89,6 +99,12 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 100 || SetSystemProgramIdentification ||
 |-
+| 110 || [4.0.0+] GetServiceEntryRequirementCache ||
+|-
+| 111 || [4.0.0+] InvalidateServiceEntryRequirementCache ||
+|-
+| 112 || [4.0.0+] InvalidateTokenCache ||
+|-
 | 120 || GetNintendoAccountId ||
 |-
 | 130 || GetNintendoAccountUserResourceCache ||
@@ -97,10 +113,18 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 132 || RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed || Returns an [[#IAsyncContext]].
 |-
+| 140 || [5.0.0+] GetNetworkServiceLicenseCache || 
+|-
+| 141 || [5.0.0+] RefreshNetworkServiceLicenseCacheAsync || Returns an [[#IAsyncContext]].
+|-
+| 142 || [5.0.0+] RefreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed || Returns an [[#IAsyncContext]].
+|-
 | 150 || CreateAuthorizationRequest || Returns an [[#IAuthorizationRequest]].
 |}
 
 == IFloatingRegistrationRequest ==
+This is "nn::account::baas::IFloatingRegistrationRequest".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -117,9 +141,13 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 21 || LoadIdTokenCache ||
 |-
-| 100 || RegisterAsync || Returns an [[#IAsyncContext]].
+| 100 || RegisterUser || [1.0.0-3.0.2] Used to return an [[#IAsyncContext]].
 |-
-| 101 || RegisterWithUidAsync || Returns an [[#IAsyncContext]].
+| 101 || RegisterUserWithUid || [1.0.0-3.0.2] Used to return an [[#IAsyncContext]].
+|-
+| 102 || [4.0.0+] RegisterNetworkServiceAccountAsync || Returns an [[#IAsyncContext]].
+|-
+| 103 || [4.0.0+] RegisterNetworkServiceAccountWithUidAsync || Returns an [[#IAsyncContext]].
 |-
 | 110 || SetSystemProgramIdentification ||
 |-
@@ -127,6 +155,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == IAdministrator ==
+This is "nn::account::baas::IAdministrator".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -141,6 +171,12 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 100 || SetSystemProgramIdentification ||
 |-
+| 110 || [4.0.0+] GetServiceEntryRequirementCache ||
+|-
+| 111 || [4.0.0+] InvalidateServiceEntryRequirementCache ||
+|-
+| 112 || [4.0.0+] InvalidateTokenCache ||
+|-
 | 120 || GetNintendoAccountId ||
 |-
 | 130 || GetNintendoAccountUserResourceCache ||
@@ -148,6 +184,12 @@ This is "nn::account::IAccountServiceForAdministrator".
 | 131 || RefreshNintendoAccountUserResourceCacheAsync || Returns an [[#IAsyncContext]].
 |-
 | 132 || RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed || Returns an [[#IAsyncContext]].
+|-
+| 140 || [5.0.0+] GetNetworkServiceLicenseCache ||
+|-
+| 141 || [5.0.0+] RefreshNetworkServiceLicenseCacheAsync ||
+|-
+| 142 || [5.0.0+] RefreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed ||
 |-
 | 150 || CreateAuthorizationRequest || Returns an [[#IAuthorizationRequest]].
 |-
@@ -187,6 +229,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == IAuthorizationRequest ==
+This is "nn::account::nas::IAuthorizationRequest".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -205,6 +249,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == IOAuthProcedure ==
+This is "nn::account::http::IOAuthProcedure".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -221,6 +267,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == IOAuthProcedureForExternalNsa ==
+This is "nn::account::nas::IOAuthProcedureForExternalNsa".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -245,6 +293,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == IOAuthProcedureForNintendoAccountLinkage ==
+This is "nn::account::nas::IOAuthProcedureForNintendoAccountLinkage".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -267,6 +317,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == INotifier ==
+This is "nn::account::detail::INotifier".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -275,6 +327,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == IProfile ==
+This is "nn::account::profile::IProfile".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -289,6 +343,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == IProfileEditor ==
+This is "nn::account::profile::IProfileEditor".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -307,6 +363,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == IAsyncContext ==
+This is "nn::account::detail::IAsyncContext".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -321,6 +379,8 @@ This is "nn::account::IAccountServiceForAdministrator".
 |}
 
 == ISessionObject ==
+This is "nn::account::detail::ISessionObject".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -353,20 +413,29 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 51 || TrySelectUserWithoutInteraction ||
 |-
+| 60 || [5.0.0+] ListOpenContextStoredUsers ||
+|-
 | 100 || InitializeApplicationInfo ||
 |-
 | 101 || GetBaasAccountManagerForApplication || Returns an [[#IManagerForApplication]].
 |-
 | 102 || AuthenticateApplicationAsync || Returns an [[#IAsyncContext]].
 |-
+| 103 || [4.0.0+] CheckNetworkServiceAvailabilityAsync || Returns an [[#IAsyncContext]].
+|-
 | 110 || StoreSaveDataThumbnail ||
 |-
 | 111 || ClearSaveDataThumbnail ||
 |-
 | 120 || CreateGuestLoginRequest || Returns an [[#IGuestLoginRequest]].
+|-
+| 130 || [5.0.0+] LoadOpenContext ||
+|-
 |}
 
 == IGuestLoginRequest ==
+This is "nn::account::baas::IGuestLoginRequest".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -385,6 +454,8 @@ This is "nn::account::IAccountServiceForApplication".
 |}
 
 == IManagerForApplication ==
+This is "nn::account::baas::IManagerForApplication".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -400,6 +471,9 @@ This is "nn::account::IAccountServiceForApplication".
 | 130 || GetNintendoAccountUserResourceCacheForApplication ||
 |-
 | 150 || CreateAuthorizationRequest || Returns an [[#IAuthorizationRequest]].
+|-
+| 160 || [5.0.0+] StoreOpenContext ||
+|-
 |}
 
 = acc:u1 =
@@ -427,6 +501,8 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 51 || TrySelectUserWithoutInteraction ||
 |-
+| 60 || [5.0.0+] ListOpenContextStoredUsers ||
+|-
 | 100 || GetUserRegistrationNotifier || Returns an [[#INotifier]].
 |-
 | 101 || GetUserStateChangeNotifier || Returns an [[#INotifier]].
@@ -437,13 +513,19 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 104 || GetProfileUpdateNotifier || Returns an [[#INotifier]].
 |-
+| 105 || CheckNetworkServiceAvailabilityAsync || Returns an [[#IAsyncContext]].
+|-
 | 110 || StoreSaveDataThumbnail ||
 |-
 | 111 || ClearSaveDataThumbnail ||
 |-
 | 112 || LoadSaveDataThumbnail ||
 |-
+| 113 || [5.0.0+] GetSaveDataThumbnailExistence ||
+|-
 | 190 || GetUserLastOpenedApplication ||
+|-
+| 191 || [5.0.0+] ActivateOpenContextHolder ||
 |-
 | 997 || DebugInvalidateTokenCacheForUser ||
 |-
