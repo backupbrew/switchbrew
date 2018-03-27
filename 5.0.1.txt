@@ -7,7 +7,10 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * General system stability improvements to enhance the user's experience
 
 ==System Titles==
-<fill this in (manually) later>
+Only the following tiles were updated, besides sysver-title:
+* System Config (see below)
+* [[qlaunch]]
+* myPage applet
 
 ===[[Settings_services|System Config]]===
 The *818 config title was updated, the values of the following fields were updated:
