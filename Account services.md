@@ -364,6 +364,11 @@ This is
 
 # UserData
 
+| Offset | Size | Description                      |
+| ------ | ---- | -------------------------------- |
+| 0x8    | 0x1? | Profile icon background color ID |
+| 0x10   | 0x10 | Some ID related to the Mii?      |
+
 This is a 0x80-byte struct.
 
 # ProfileBase
