@@ -368,6 +368,12 @@ This is a 0x80-byte struct.
 
 # ProfileBase
 
+| Offset | Size | Description                                |
+| ------ | ---- | ------------------------------------------ |
+| 0x0    | 0x10 | userID                                     |
+| 0x10   | 0x8  | POSIX UTC timestamp, for account creation. |
+| 0x18   | ?    | Username                                   |
+
 This is a 0x38-byte struct.
 
 [Category:Services](Category:Services "wikilink")
