@@ -32,8 +32,8 @@ The FS for the system-version title(TID 0100000000000809) contains
 | 4.0.0    | NintendoSDK Firmware for NX 4.0.0-4.0  | 875be0f6edc29b23938b7aea50764421b9f217e5 | N/A                                                            |
 | 4.0.1    | NintendoSDK Firmware for NX 4.0.1-0.0  | 826588c45cecab1672c46f5de87d83ea6008d583 | N/A                                                            |
 | 4.1.0    | NintendoSDK Firmware for NX 4.1.0-0.0  | 314f9468b704e84e1ffed449dfa6108ba4be221d | N/A                                                            |
-| 5.0.0    | NintendoSDK Firmware for NX 5.0.1-0.0  | 66790aa646927601523df36a6750205cd944b3de | gW93A\#00050000\#QRnTiv2kqQV-KO9DAn1Wzz4S2-SDH4Zd10y8Jx5KalI=  |
-| 5.0.1    | NintendoSDK Firmware for NX 5.0.0-3.0  | 4b51b56242cc388ef487e148048e2c80e25994ad | gW93A\#00050001\#wBt05i54vmIPr7cs44Vvod3M9s5M2Yl2ZVd\_pd036MY= |
+| 5.0.0    | NintendoSDK Firmware for NX 5.0.0-3.0  | 66790aa646927601523df36a6750205cd944b3de | gW93A\#00050000\#QRnTiv2kqQV-KO9DAn1Wzz4S2-SDH4Zd10y8Jx5KalI=  |
+| 5.0.1    | NintendoSDK Firmware for NX 5.0.1-0.0  | 4b51b56242cc388ef487e148048e2c80e25994ad | gW93A\#00050001\#wBt05i54vmIPr7cs44Vvod3M9s5M2Yl2ZVd\_pd036MY= |
 
 ### Other
 
