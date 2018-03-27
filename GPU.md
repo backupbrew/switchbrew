@@ -223,9 +223,10 @@ Subchannels:
 | 0xE44       | DrawElementsInstanced1Config      | 1    |                |                                                                                                                                                                                                              |
 | 0xE45       | DrawElementsInstanced1Pipe        | 1    |                |                                                                                                                                                                                                              |
 
-TODO: TiledDownSample, Copy\*, Dispatch\*, Downsample,
-DrawTexture/DrawTransformFeedback,
-Bind\*
+TODO: (Tiled)Downsample, Copy\*, Dispatch\*,
+DrawTexture/DrawTransformFeedback, BindImages, BindProgram,
+BindSeprarateSamplers, BindSeprarateTextures,
+BindTextures.
 
 # DMA
 
