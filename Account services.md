@@ -211,7 +211,7 @@ This is "nn::account::profile::IProfile".
 ### Get
 
 Takes an output type-0x1A buffer for [\#UserData](#UserData "wikilink"),
-no output.
+returns an output [\#ProfileBase](#ProfileBase "wikilink").
 
 ### GetBase
 
