@@ -24,13 +24,14 @@ This is "nn::apm::IManagerPrivileged".
 This is
 "nn::apm::ISystemManager".
 
-| Cmd | Name                     | Notes                                          |
-| --- | ------------------------ | ---------------------------------------------- |
-| 0   | RequestPerformanceMode   |                                                |
-| 1   | GetPerformanceEvent      | Returns an [\#ISession](#ISession "wikilink"). |
-| 2   | GetThrottlingState       |                                                |
-| 3   | GetLastThrottlingState   |                                                |
-| 4   | ClearLastThrottlingState |                                                |
+| Cmd | Name                            | Notes                                          |
+| --- | ------------------------------- | ---------------------------------------------- |
+| 0   | RequestPerformanceMode          |                                                |
+| 1   | GetPerformanceEvent             | Returns an [\#ISession](#ISession "wikilink"). |
+| 2   | GetThrottlingState              |                                                |
+| 3   | GetLastThrottlingState          |                                                |
+| 4   | ClearLastThrottlingState        |                                                |
+| 5   | \[5.0.0+\] LoadAndApplySettings |                                                |
 
 ## ISession
 
