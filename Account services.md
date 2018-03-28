@@ -365,10 +365,14 @@ This is
 
 # UserData
 
-| Offset | Size | Description                      |
-| ------ | ---- | -------------------------------- |
-| 0x8    | 0x1? | Profile icon background color ID |
-| 0x10   | 0x10 | Some ID related to the Mii?      |
+| Offset | Size | Description                                                          |
+| ------ | ---- | -------------------------------------------------------------------- |
+| 0x0    | 0x4? | ?                                                                    |
+| 0x4    | 0x4? | Icon ID. 0 = Mii, the rest are character icon IDs.                   |
+| 0x8    | 0x1? | Profile icon background color ID                                     |
+| 0x9    | 0x7  | ?                                                                    |
+| 0x10   | 0x10 | Some ID related to the Mii? All zeros when a character icon is used. |
+| 0x20   | 0x60 | Usually zeros?                                                       |
 
 This is a 0x80-byte struct.
 
