@@ -226,7 +226,8 @@ No input, returns an output u32 for the size of the image buffer.
 Takes an output type-0x6 buffer, returns the same output u32 as
 [\#GetImageSize](#GetImageSize "wikilink").
 
-The output buffer contains the JPEG profile image icon.
+The output buffer contains the JPEG profile image icon. This is valid
+for both Miis and character icons.
 
 ## IProfileEditor
 
