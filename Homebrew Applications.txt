@@ -168,6 +168,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Rinnegatamante/HCL-Switch Yes]
 | 2018-03-03
 |-
+| REminiscence
+| REminiscence is a re-implementation of the engine used in the game Flashback made by Delphine Software and released in 1992.
+| Cpasjuste
+| [https://github.com/Cpasjuste/REminiscence/releases Here]
+| [https://github.com/Cpasjuste/REminiscence Yes]
+| 2018-03-28
+|-
 |}
 
 === Emulators ===
