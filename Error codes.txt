@@ -413,6 +413,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x668C || 140 || 51 || USB data-transfer in progress
 |-
+| 0x1928C || 140 || 201 || USB device not bound
+|-
 | 0x299 || 153 || 1 || Invalid audio device
 |-
 | 0x499 || 153 || 2 || Invalid buffer address
