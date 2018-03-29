@@ -224,6 +224,7 @@ applets.
 | 0x3CF089          | 137    | 7800        | Unknown/invalid libcurl error.                                                                                                                                                       |
 | 0x3E8289-0x3F4089 | 137    | 8001-8096   | libcurl error 1-96. Some of the libcurl errors in the error-table map to the above unknown-libcurl-error however.                                                                    |
 | 0x668C            | 140    | 51          | USB data-transfer in progress                                                                                                                                                        |
+| 0xD48C            | 140    | 106         | Invalid bDescriptorType                                                                                                                                                              |
 | 0x1928C           | 140    | 201         | USB device not bound                                                                                                                                                                 |
 | 0x299             | 153    | 1           | Invalid audio device                                                                                                                                                                 |
 | 0x499             | 153    | 2           | Invalid buffer address                                                                                                                                                               |
@@ -304,9 +305,9 @@ titles:
 
 # Support Errors
 
-| Error | Module                     | Description | Notes               |
-| ----- | -------------------------- | ----------- | ------------------- |
-|       | {web-applets listed above} | 2750        | MP4 parsing failed. |
+| Error \! Module \! Description \! Notes |
+| --------------------------------------- |
+|                                         |
 
 Normal error-codes displayed by the system also use the same format as
 fatal-errors.
