@@ -413,7 +413,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x668C || 140 || 51 || USB data-transfer in progress
 |-
-| 0xD48C || 140 || 106 || Invalid bDescriptorType
+| 0xD48C || 140 || 106 || Invalid descriptor
 |-
 | 0x1928C || 140 || 201 || USB device not bound
 |-
