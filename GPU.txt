@@ -351,15 +351,13 @@ Subchannels:
 |-
 | 0x850 || || 1 || || BindProgram writes here.
 |-
-| 0x8E0 || ConstBufferRequestSize || 1 || uint ||
+| 0x8E0 || SetConstantBufferSelectorSize || 1 || uint || Bit0-16: size
 |-
-| 0x8E1 || ConstBufferRequestAddr || 2 || gpuva ||
+| 0x8E1 || SetConstantBufferSelectorAddr || 2 || gpuva ||
 |-
-| 0x8E3 || ConstBufferRequestOffset || 1 || uint || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32. TODO: BindStorageBuffer, UpdateUniformBuffer, etc
+| 0x8E3 || LoadConstantBufferOffset || 1 || uint || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32. TODO: BindStorageBuffer, UpdateUniformBuffer, etc
 |-
-| 0x8E4 || ConstBufferRequestData || 1 || uint[4] ||
-|-
-| 0x8EB || Multisample_ConfigX || 1 ||  ||
+| 0x8E4 || LoadConstantBuffer || 1 || uint[16] ||
 |-
 | 0x904 || UniformBuffer0_Control || 1 || ||
 |-
