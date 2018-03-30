@@ -287,7 +287,7 @@ Subchannels:
 |-
 | 0x5F6 || DrawElementsIndirectFlag? || 1 || bool || TODO
 |-
-| 0x620+N || VertexStreamNEnableDivisor || bool ||
+| 0x620+N || VertexStreamNEnableDivisor || bool || n=0...15.
 |-
 | 0x646 || PolygonCullFaceEnable || 1 || bool ||
 |-
