@@ -276,6 +276,31 @@ ID](#Engine_IDs "wikilink").
 | 0xA140 | KEPLER\_INLINE\_TO\_MEMORY\_B |
 | 0xB0B5 | MAXWELL\_DMA\_COPY\_A (DMA)   |
 
+### Macro
+
+Macros are small programs that can be uploaded to the gpu and are
+capable of reading and writing to the 3D engine registers on the GPU.
+Those macro programs can be executed by calling methods from address
+0xe00 onwards on the 3D engine. The macros also accepts parameters,
+stored on a FIFO that can be read on the macro using a instruction
+called parm, this instruction pops the FIFO and reads the next
+parameter. Macros can be called using methods starting at 0xe00, where
+the first method triggers the macro execution, and the second one is
+used to push parameters to the FIFO, that can be read from the macro
+program using parm. This also allows programs to use a variable number
+of parameters if desired.
+
+The first parameter is written to 0xe00 + n \* 2 (where n is the macro
+index), and all subsequent parameters should be pushed to the FIFO using
+0xe01 + n \* 2. The first parameter is placed the general purpose
+register R1 in the shader program when execution starts.
+
+Official games uses those macros to conditionally write registers, one
+example of such uses it the macro at 0xe24, that is used to set shader
+registers (including shader address and binding the c1 Constant Buffer
+to the shader). In some cases, it's also used to set registers
+unconditionally.
+
 ### Fences
 
 Command lists can contain fences to ensure that commands are executed on
@@ -364,13 +389,16 @@ The index of the TIC entries that should be used by the shader is sent
 to the GPU with the CB\_POS/CB\_DATA (0) methods. Games usually follows
 the following steps to write the TIC entry indexes:
 
-  - CB\_ADDRESS\_HIGH/LOW method is used to set the GPU Virtual Address
-    of the Const Buffer.
-  - CB\_POS is used to set the write offset of the Const Buffer to 0x20
-    + n \* 4, where *n* is the is the index of the active texture that
-    will be used by the shader (?).
-  - CB\_DATA (0) method is used to write the value into the Const
-    Buffer. The value is a word where the lower 20 bits is the TIC
+  - Macro 0xe1a is used to set CB\_ADDRESS\_HIGH/LOW registers to the
+    GPU Virtual Address of the Constant Buffer set on the register 0x982
+    (the *Texture Constant Buffer* index register), and also sets
+    CB\_SIZE.
+  - CB\_POS is used to set the write offset of the Constant Buffer to
+    0x20 + n \* 4, where *n* is the index of the handle being used on
+    the shader sampler.
+  - CB\_DATA (0) method is used to write the value into the Constant
+    Buffer. The value is a *Handle* where the lower 20 bits is the TIC
+    index, and the higher 12 bits is the TSC (Texture Sampler Control)
     index.
 
 The address of a given TIC entry can be calculates as:
@@ -382,9 +410,14 @@ TIC\_ADDRESS\_HIGH/LOW (methods 0x1574 and 0x1578), *tic\_index* is the
 lower 20 bits of the word written into the Const Buffer with CB\_DATA
 (0), and 0x20 is the size of each TIC entry in bytes.
 
-Note: More research still needs to be done on the Const Buffer and how
-it is used by the
-shader.
+The texture is accessed on the shader using one of the texture sampling
+instructions (usually the TEXS instruction). One of the parameters for
+this instruction is the *Handle* index. This index start at 8, so the
+index 8 will access the handle at 8 \* 4 = 0x20 on the *Texture Constant
+Buffer*. Each shader stage has a separate Constant Buffer, so for
+fragment shaders, this is located at CB\_ADDRESS + 4 \* CB\_SIZE +
+TEXS\_index \* 4 (where 4 is the index of the fragment shader
+stage).
 
 ### TIC Structure
 
