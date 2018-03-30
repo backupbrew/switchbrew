@@ -415,7 +415,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xD48C || 140 || 106 || Invalid descriptor
 |-
-| 0x1928C || 140 || 201 || USB device not bound
+| 0x1928C || 140 || 201 || USB device not bound / interface already enabled
 |-
 | 0x299 || 153 || 1 || Invalid audio device
 |-
