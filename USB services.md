@@ -380,7 +380,8 @@ of [\#GetReportData](#GetReportData "wikilink"), after waiting for the
 CompletionEvent to be signalled.
 
 The buffer address must be 0x1000-byte aligned. The input size doesn't
-matter.
+matter. It helps to use svcSetMemoryAttribute to turn off caching on the
+buffer.
 
 Used for data-transfer with input/output endpoints.
 
