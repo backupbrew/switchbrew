@@ -369,6 +369,8 @@ Subchannels:
 |-
 | 0x924 || UniformBuffer1_Control || 1 || ||
 |-
+| 0xD00 || SetMmeShadowScratch || uint[0x80] || 128 ||
+|-
 | 0xD19 || || 1 || || GpuInit writes 0 here.
 |-
 | 0xD1A || || 1 || || GpuInit writes 0 here.
