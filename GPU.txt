@@ -17,15 +17,25 @@ Subchannels:
 {| class=wikitable
 ! Register || Name || Size || Type || Notes
 |-
-| 0x45 || MacroUploadAddr || 1 || uint ||
+| 0 || SetObject || 1 || bitfield || Bit0-15: ClassId, bit16-20: EngineId
 |-
-| 0x46 || MacroUpload || 1 || pipe || Each write increments addr by 1.
+| 0x40 || NoOperation || 1 || ||
 |-
-| 0x47 || ? || 1 || ||
+| 0x41 || SetNotify || 2 || gpuva ||
 |-
-| 0x48 || ? || 1 || ||
+| 0x43 || NotifyType || 1 || || 0=WriteOnly, 1=WriteThenAwaken
 |-
-| 0x49 || ClearColorStateMachine? || 1 || uint || 1=Normal, 2=LoadColors?, 3=StoreColors?
+| 0x44 || WaitForIdle || 1 || ||
+|-
+| 0x45 || LoadMmeInstructionRamPointer || 1 || uint ||
+|-
+| 0x46 || LoadMmeInstructionRam || 1 || pipe || Writes to and increments LoadMmeInstructionRamPointer by 1.
+|-
+| 0x47 || LoadMmeStartAddressRamPointer || 1 || uint ||
+|-
+| 0x48 || LoadMmeStartAddressRam || 1 || pipe ||
+|-
+| 0x49 || SetMmeShadowRamControl || 1 || uint || 0=MethodTrack, 1=MethodTrackWithFilter, 2=MethodPassthrough, 3=MethodReplay. Used during ClearColor.
 |-
 | 0x80+16*N || RenderTargetNAddr || 2 || gpuva ||
 |-
