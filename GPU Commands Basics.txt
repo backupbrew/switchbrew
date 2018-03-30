@@ -456,9 +456,9 @@ This method only takes one argument, an [[#Engine_IDs|engine ID]].
 
 Macros are small programs that can be uploaded to the gpu and are capable of reading and writing to the 3D engine registers on the GPU. The macros also accepts parameters, stored on a FIFO. Macros can be called using methods starting at 0xe00, where the first method triggers the macro execution, and the second one is used to push parameters to the FIFO, that can be read from the macro program using a instruction called ''parm''. This instruction pops the FIFO and reads the next parameter, while also allowing programs to use a variable number of parameters if desired.
 
-The first parameter is written to 0xe00 + n * 2 (where n is the macro index), and all subsequent parameters should be pushed to the FIFO using 0xe01 + n * 2. The first parameter is placed the general purpose register R1 in the shader program when execution starts.
+The first parameter is written to 0xe00 + n * 2 (where n is the macro index), and all subsequent parameters should be pushed to the FIFO using 0xe01 + n * 2. The first parameter is placed at the general purpose register R1 in the shader program when execution starts.
 
-Official games uses those macros to conditionally write registers, one example of such uses it the macro at 0xe24, that is used to set shader registers (including shader address and binding the c1 Constant Buffer to the shader). In some cases, it's also used to set registers unconditionally.
+Official games uses those macros to conditionally write registers, one example of such uses is the macro at 0xe24, that is used to set shader registers (including shader address and binding the c1 Constant Buffer to the shader). In some cases, it's also used to set registers unconditionally.
 
 === Fences ===
 

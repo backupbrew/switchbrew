@@ -290,11 +290,11 @@ parameters if desired.
 
 The first parameter is written to 0xe00 + n \* 2 (where n is the macro
 index), and all subsequent parameters should be pushed to the FIFO using
-0xe01 + n \* 2. The first parameter is placed the general purpose
+0xe01 + n \* 2. The first parameter is placed at the general purpose
 register R1 in the shader program when execution starts.
 
 Official games uses those macros to conditionally write registers, one
-example of such uses it the macro at 0xe24, that is used to set shader
+example of such uses is the macro at 0xe24, that is used to set shader
 registers (including shader address and binding the c1 Constant Buffer
 to the shader). In some cases, it's also used to set registers
 unconditionally.
