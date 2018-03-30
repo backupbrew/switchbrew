@@ -377,7 +377,7 @@ Subchannels:
 |-
 | 0xD35 || AdvancedBlend || 1 || bitfield || Bit0: NormalizedDst, bit1: PremultipliedSrc, bit2-3: BlendTarget, Bit4-9: Mode
 |-
-| 0xE00+N*8 || MacroInvoke || 1 || || ?
+| 0xE00+N*2 || MacroNInvoke || 1 || || ?
 |-
 | 0xE00 || TransformFeedbackAddr || 2 || gpuva ||
 |-
