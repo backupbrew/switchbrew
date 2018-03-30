@@ -543,7 +543,7 @@ The address of a given TIC entry can be calculates as:
 
 Where ''tic_base_address'' is the address written to TIC_ADDRESS_HIGH/LOW (methods 0x1574 and 0x1578), ''tic_index'' is the lower 20 bits of the word written into the Const Buffer with CB_DATA (0), and 0x20 is the size of each TIC entry in bytes.
 
-The texture is accessed on the shader using one of the texture sampling instructions (usually the TEXS instruction). One of the parameters for this instruction is the ''Handle'' index. This index start at 8, so the index 8 will access the handle at 8 * 4 = 0x20 on the ''Texture Constant Buffer''. Each shader stage has a separate Constant Buffer, so for fragment shaders, this is located at CB_ADDRESS + 4 * CB_SIZE + TEXS_index * 4 (where 4 is the index of the fragment shader stage).
+The texture is accessed on the shader using one of the texture sampling instructions (usually the TEXS instruction). One of the parameters for this instruction is the ''Handle'' index. This index start at 8, so the index 8 will access the handle at 8 * 4 = 0x20 on the ''Texture Constant Buffer''. Each shader stage has a separate Constant Buffer, so for fragment shaders, this is located at CB_ADDRESS + 4 * CB_SIZE + TEXS_index * 4 (where the first 4 is the index of the fragment shader stage, and the second 4 is the size of a word, 4 bytes).
 
 === TIC Structure ===
 

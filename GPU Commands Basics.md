@@ -414,8 +414,9 @@ this instruction is the *Handle* index. This index start at 8, so the
 index 8 will access the handle at 8 \* 4 = 0x20 on the *Texture Constant
 Buffer*. Each shader stage has a separate Constant Buffer, so for
 fragment shaders, this is located at CB\_ADDRESS + 4 \* CB\_SIZE +
-TEXS\_index \* 4 (where 4 is the index of the fragment shader
-stage).
+TEXS\_index \* 4 (where the first 4 is the index of the fragment shader
+stage, and the second 4 is the size of a word, 4
+bytes).
 
 ### TIC Structure
 
