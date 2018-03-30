@@ -27,6 +27,22 @@ Subchannels:
 |-
 | 0x49 || ClearColorStateMachine? || 1 || uint || 1=Normal, 2=LoadColors?, 3=StoreColors?
 |-
+| 0x80+16*N || RenderTargetNAddr || 2 || gpuva ||
+|-
+| 0x82+16*N || RenderTargetNHorizontal || 1 || ||
+|-
+| 0x83+16*N || RenderTargetNVertical || 1 || ||
+|-
+| 0x84+16*N || RenderTargetNFormat || 1 || ||
+|-
+| 0x85+16*N || RenderTargetNTileMode || 1 || ||
+|-
+| 0x86+16*N || RenderTargetNArrayMode || 1 || ||
+|-
+| 0x87+16*N || RenderTargetNLayerStride || 1 || ||
+|-
+| 0x88+16*N || RenderTargetNBaseLayer || 1 || ||
+|-
 | 0xBA || || 1 || || SetRenderTargets writes 1/0 here an optional buffer != NULL, and depending on type.
 |-
 | 0xBE || || 1 || pipe || SetRenderTargets writes here repeatedly 16 times, if an optional buffer != NULL and is a given type.
@@ -66,22 +82,6 @@ Subchannels:
 | 0x1FA || ZCullContextStartAddr || 2 || gpuva ||
 |-
 | 0x1FC || ZCullContextEndAddr || 2 || gpuva ||
-|-
-| 0x200+16*N || RenderTargetNAddr || 2 || gpuva ||
-|-
-| 0x202+16*N || RenderTargetNHorizontal || 1 || ||
-|-
-| 0x203+16*N || RenderTargetNVertical || 1 || ||
-|-
-| 0x204+16*N || RenderTargetNFormat || 1 || ||
-|-
-| 0x205+16*N || RenderTargetNTileMode || 1 || ||
-|-
-| 0x206+16*N || RenderTargetNArrayMode || 1 || ||
-|-
-| 0x207+16*N || RenderTargetNLayerStride || 1 || ||
-|-
-| 0x208+16*N || RenderTargetNBaseLayer || 1 || ||
 |-
 | 0x280+8*N || ViewportNScaleX || 1 || float ||
 |-
