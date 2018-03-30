@@ -107,7 +107,7 @@ Subchannels:
 |-
 | 0x303+4*N || ViewportNDepthRangeFar || 1 || float ||
 |-
-| 0x340+2*N || ClipRectNHorizontal || 1 || || TODO
+| 0x340+2*N || ClipRectNHorizontal || 1 || || N=0..7, TODO
 |-
 | 0x341+2*N || ClipRectNVertical || 1 || || TODO
 |-
