@@ -115,6 +115,15 @@ following:
 ` ^https://([0-9A-Za-z\-]+\.)*facebook\.com(/|$)`  
 ` ^https://([0-9A-Za-z\-]+\.)*twitter\.com(/|$)`
 
+\[3.0.0+\]: The "google\\.(com" line now starts with "^https://" instead
+of "https?://", hence plain HTTP is no longer allowed. The following
+line was added right after the original goggle line: "----
+^https?://(\[0-9A-Za-z\\-\]+\\.)\*google(\\.\[A-Za-z\]+)\*/(search|translate)\\?"
+
+\[4.0.0+\]: Lines 2-4 ("...nintendo\\.(co...", "nintendo-europe", and
+"nintendoservicecentre") now starts with "^https://" instead of
+"https?://". Hence, plain HTTP for these are no longer allowed.
+
 ### ShareApplet
 
 The initial page loaded by this applet depends on a flag. non-val1:
