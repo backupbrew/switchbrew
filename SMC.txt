@@ -81,17 +81,17 @@ The overall concept here is the following:
 ** Further, this means: Actual AES/RSA keys never leave TrustZone.
 
 Note:
-The [[#CryptoUsecase|CryptoUsecase_TitleKey]] represents a RSA wrapped AES key.
+The [[#enum_CryptoUsecase|CryptoUsecase_TitleKey]] represents a RSA wrapped AES key.
 
 === GenerateAesKek ===
-Takes an "access key" as input, an [[#CryptoUsecase]].
+Takes an "access key" as input, an [[#enum_CryptoUsecase]].
 
 Returns a session-unique kek for said usecase.
 
 === LoadAesKey ===
 Takes a session kek created with [[#GenerateAesKek]], and a wrapped AES key.
 
-The session kek must have been created with CryptoUsecase_Aes.
+The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_Aes]].
 
 === CryptAes ===
 Encrypts/decrypts using Aes (CTR and CBC).
@@ -99,12 +99,12 @@ Encrypts/decrypts using Aes (CTR and CBC).
 Key must be set prior using one of the [[#LoadAesKey]], [[#GenerateSpecificAesKey]] or [[#LoadRsaWrappedAesKey]] commands.
 
 === GenerateSpecificAesKey ===
-Todo: This one seems unrelated to [[#CryptoUsecase]].
+Todo: This one seems unrelated to [[#enum_CryptoUsecase]].
 
 === LoadRsaOaepKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase_RsaOaep.
+The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_RsaOaep]].
 
 This function was removed in [[5.0.0]], and replaced with [[#EncryptRsaKeyForImport]].
 
@@ -118,7 +118,7 @@ The re-encrypted key is then passed to the user, for use with [[#DecryptOrImport
 === DecryptRsaPrivateKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, an enum member, and a wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase_RsaPrivate.
+The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_RsaPrivate]].
 
 [4.0.0+] The SMC handler when certain conditions pass and SMC_ID==0xC300100D now returns error 0x6 instead of calling the handler funcptr.
 
@@ -131,7 +131,7 @@ This SMC extends DecryptRsaPrivateKey's original functionality to enable importi
 === LoadSecureExpModKey ===
 Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA key.
 
-The session kek must have been created with CryptoUsecase_RsaSecureExpMod.
+The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_RsaSecureExpMod]].
 
 This function was removed in [[5.0.0]], and replaced with [[#EncryptRsaKeyForImport]].
 

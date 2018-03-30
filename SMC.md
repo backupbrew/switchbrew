@@ -68,13 +68,13 @@ The overall concept here is the following:
       - This means: Plaintext kek keys never leave TrustZone.
       - Further, this means: Actual AES/RSA keys never leave TrustZone.
 
-Note: The [CryptoUsecase\_TitleKey](#CryptoUsecase "wikilink")
+Note: The [CryptoUsecase\_TitleKey](#enum_CryptoUsecase "wikilink")
 represents a RSA wrapped AES key.
 
 ### GenerateAesKek
 
 Takes an "access key" as input, an
-[\#CryptoUsecase](#CryptoUsecase "wikilink").
+[\#enum\_CryptoUsecase](#enum_CryptoUsecase "wikilink").
 
 Returns a session-unique kek for said usecase.
 
@@ -83,7 +83,8 @@ Returns a session-unique kek for said usecase.
 Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped AES key.
 
-The session kek must have been created with CryptoUsecase\_Aes.
+The session kek must have been created with
+[CryptoUsecase\_Aes](#enum_CryptoUsecase "wikilink").
 
 ### CryptAes
 
@@ -97,7 +98,7 @@ Key must be set prior using one of the
 ### GenerateSpecificAesKey
 
 Todo: This one seems unrelated to
-[\#CryptoUsecase](#CryptoUsecase "wikilink").
+[\#enum\_CryptoUsecase](#enum_CryptoUsecase "wikilink").
 
 ### LoadRsaOaepKey
 
@@ -105,7 +106,8 @@ Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, and a
 wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase\_RsaOaep.
+The session kek must have been created with
+[CryptoUsecase\_RsaOaep](#enum_CryptoUsecase "wikilink").
 
 This function was removed in [5.0.0](5.0.0.md "wikilink"), and replaced
 with [\#EncryptRsaKeyForImport](#EncryptRsaKeyForImport "wikilink").
@@ -128,7 +130,8 @@ Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, an
 enum member, and a wrapped RSA private key.
 
-The session kek must have been created with CryptoUsecase\_RsaPrivate.
+The session kek must have been created with
+[CryptoUsecase\_RsaPrivate](#enum_CryptoUsecase "wikilink").
 
 \[4.0.0+\] The SMC handler when certain conditions pass and
 SMC\_ID==0xC300100D now returns error 0x6 instead of calling the handler
@@ -150,7 +153,7 @@ Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA key.
 
 The session kek must have been created with
-CryptoUsecase\_RsaSecureExpMod.
+[CryptoUsecase\_RsaSecureExpMod](#enum_CryptoUsecase "wikilink").
 
 This function was removed in [5.0.0](5.0.0.md "wikilink"), and replaced
 with [\#EncryptRsaKeyForImport](#EncryptRsaKeyForImport "wikilink").
