@@ -35,7 +35,7 @@ Subchannels:
 |-
 | 0x48 || LoadMmeStartAddressRam || 1 || pipe ||
 |-
-| 0x49 || SetMmeShadowRamControl || 1 || uint || 0=MethodTrack, 1=MethodTrackWithFilter, 2=MethodPassthrough, 3=MethodReplay. Used during ClearColor.
+| 0x49 || MmeShadowRamControl || 1 || uint || 0=MethodTrack, 1=MethodTrackWithFilter, 2=MethodPassthrough, 3=MethodReplay. Used during ClearColor.
 |-
 | 0x80+16*N || RenderTargetNAddr || 2 || gpuva ||
 |-
@@ -351,9 +351,9 @@ Subchannels:
 |-
 | 0x850 || || 1 || || BindProgram writes here.
 |-
-| 0x8E0 || SetConstantBufferSelectorSize || 1 || uint || Bit0-16: size
+| 0x8E0 || ConstantBufferSelectorSize || 1 || uint || Bit0-16: size
 |-
-| 0x8E1 || SetConstantBufferSelectorAddr || 2 || gpuva ||
+| 0x8E1 || ConstantBufferSelectorAddr || 2 || gpuva ||
 |-
 | 0x8E3 || LoadConstantBufferOffset || 1 || uint || BindImage writes "8*i + 0x120" here. BindSeparateSampler writes "8*i + 0x568" here. BindSeparateTexture uses "8*i + 0x168". BindTexture uses 8*i + 32. TODO: BindStorageBuffer, UpdateUniformBuffer, etc
 |-
