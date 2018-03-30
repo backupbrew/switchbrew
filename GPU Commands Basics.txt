@@ -454,7 +454,7 @@ This method only takes one argument, an [[#Engine_IDs|engine ID]].
 
 === Macro ===
 
-Macros are small programs that can be uploaded to the gpu and are capable of reading and writing to the 3D engine registers on the GPU. Those macro programs can be executed by calling methods from address 0xe00 onwards on the 3D engine. The macros also accepts parameters, stored on a FIFO that can be read on the macro using a instruction called parm, this instruction pops the FIFO and reads the next parameter. Macros can be called using methods starting at 0xe00, where the first method triggers the macro execution, and the second one is used to push parameters to the FIFO, that can be read from the macro program using parm. This also allows programs to use a variable number of parameters if desired.
+Macros are small programs that can be uploaded to the gpu and are capable of reading and writing to the 3D engine registers on the GPU. The macros also accepts parameters, stored on a FIFO. Macros can be called using methods starting at 0xe00, where the first method triggers the macro execution, and the second one is used to push parameters to the FIFO, that can be read from the macro program using a instruction called ''parm''. This instruction pops the FIFO and reads the next parameter, while also allowing programs to use a variable number of parameters if desired.
 
 The first parameter is written to 0xe00 + n * 2 (where n is the macro index), and all subsequent parameters should be pushed to the FIFO using 0xe01 + n * 2. The first parameter is placed the general purpose register R1 in the shader program when execution starts.
 
@@ -534,7 +534,7 @@ Texture information such as address, format and size is sent to the GPU through 
 The index of the TIC entries that should be used by the shader is sent to the GPU with the CB_POS/CB_DATA (0) methods. Games usually follows the following steps to write the TIC entry indexes:
 
 * Macro 0xe1a is used to set CB_ADDRESS_HIGH/LOW registers to the GPU Virtual Address of the Constant Buffer set on the register 0x982 (the ''Texture Constant Buffer'' index register), and also sets CB_SIZE.
-* CB_POS is used to set the write offset of the Constant Buffer to 0x20 + n * 4, where ''n'' is the index of the handle being used on the shader sampler.
+* CB_POS is used to set the write offset of the Constant Buffer to 0x20 + n * 4, where ''n'' is the index of the ''Handle'' being used on the shader sampler.
 * CB_DATA (0) method is used to write the value into the Constant Buffer. The value is a ''Handle'' where the lower 20 bits is the TIC index, and the higher 12 bits is the TSC (Texture Sampler Control) index.
 
 The address of a given TIC entry can be calculates as:

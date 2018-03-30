@@ -280,15 +280,13 @@ ID](#Engine_IDs "wikilink").
 
 Macros are small programs that can be uploaded to the gpu and are
 capable of reading and writing to the 3D engine registers on the GPU.
-Those macro programs can be executed by calling methods from address
-0xe00 onwards on the 3D engine. The macros also accepts parameters,
-stored on a FIFO that can be read on the macro using a instruction
-called parm, this instruction pops the FIFO and reads the next
-parameter. Macros can be called using methods starting at 0xe00, where
-the first method triggers the macro execution, and the second one is
-used to push parameters to the FIFO, that can be read from the macro
-program using parm. This also allows programs to use a variable number
-of parameters if desired.
+The macros also accepts parameters, stored on a FIFO. Macros can be
+called using methods starting at 0xe00, where the first method triggers
+the macro execution, and the second one is used to push parameters to
+the FIFO, that can be read from the macro program using a instruction
+called *parm*. This instruction pops the FIFO and reads the next
+parameter, while also allowing programs to use a variable number of
+parameters if desired.
 
 The first parameter is written to 0xe00 + n \* 2 (where n is the macro
 index), and all subsequent parameters should be pushed to the FIFO using
@@ -394,7 +392,7 @@ the following steps to write the TIC entry indexes:
     (the *Texture Constant Buffer* index register), and also sets
     CB\_SIZE.
   - CB\_POS is used to set the write offset of the Constant Buffer to
-    0x20 + n \* 4, where *n* is the index of the handle being used on
+    0x20 + n \* 4, where *n* is the index of the *Handle* being used on
     the shader sampler.
   - CB\_DATA (0) method is used to write the value into the Constant
     Buffer. The value is a *Handle* where the lower 20 bits is the TIC
