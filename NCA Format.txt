@@ -360,6 +360,7 @@ This documents the structure of Section Header Block +0 for RomFS.
 |}
 
 == BKTR ==
+
 {| class="wikitable"
 |-
 ! Start
@@ -422,15 +423,32 @@ The first BKTR entry describes how to map regions of the two RomFS images to cre
 ! Length
 ! Description
 |-
-| 0x0
-| 0x4004
-| Padding/Unused?
+| 0x0 || 0x4 || Padding/Unused?
 |-
-| 0x4004 || 0x4 || Number of Entries
+| 0x4 || 0x4 || Number of Buckets
 |-
-| 0x4008 || 0x8 || Patched RomFS Size
+| 0x8 || 0x8 || Total Size of the Virtual RomFS Image
 |-
-| 0x4010 || 0x14*X || Relocation Entries
+| 0x10 || 0x3FF0 || Base Virtual Offset for each Bucket (u64s, padded with 0s until end)
+|-
+| 0x4000 || 0x4000*X || Relocation Buckets
+|}
+
+Where relocation buckets are as follows:
+
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0x0 || 0x4 || Padding/Unused?
+|-
+| 0x4 || 0x4 || Number of Entries
+|-
+| 0x8 || 0x8 || End offset for this Bucket
+|-
+| 0x10 || 0x3FF0 || Relocation Entries
 |}
 
 Where relocation entries are as follows:
@@ -456,15 +474,33 @@ The second BKTR entry describes the subsections within the Patch RomFS. It has t
 ! Length
 ! Description
 |-
-| 0x0
-| 0x4004
-| Padding/Unused?
+| 0x0 || 0x4 || Padding/Unused?
 |-
-| 0x4004 || 0x4 || Number of Entries
+| 0x4 || 0x4 || Number of Buckets
 |-
-| 0x4008 || 0x8 || Patch RomFS Size - BKTR entries
+| 0x8 || 0x8 || Total Size of the Physical Patch Image
 |-
-| 0x4010 || 0x10*X || Subsection Entries
+| 0x10 || 0x3FF0 || Base Physical Offset for each Bucket (u64s, padded with 0s until end)
+|-
+| 0x4000 || 0x4000*X || Subsection Buckets
+|}
+
+
+Where subsection buckets are as follows:
+
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0x0 || 0x4 || Padding/Unused?
+|-
+| 0x4 || 0x4 || Number of Entries
+|-
+| 0x8 || 0x8 || End offset for this Bucket
+|-
+| 0x10 || 0x3FF0 || Subsection Entries
 |}
 
 Where subsection entries are as follows:

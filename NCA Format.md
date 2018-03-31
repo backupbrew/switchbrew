@@ -212,14 +212,25 @@ The BKTR section enables combining data from an update NCA with the
 RomFS from a base NCA to create a single patched RomFS image.
 
 The first BKTR entry describes how to map regions of the two RomFS
-images to create the patched RomFS. It has the following format:
+images to create the patched RomFS. It has the following
+format:
 
-| Start  | Length  | Description        |
-| ------ | ------- | ------------------ |
-| 0x0    | 0x4004  | Padding/Unused?    |
-| 0x4004 | 0x4     | Number of Entries  |
-| 0x4008 | 0x8     | Patched RomFS Size |
-| 0x4010 | 0x14\*X | Relocation Entries |
+| Start  | Length    | Description                                                          |
+| ------ | --------- | -------------------------------------------------------------------- |
+| 0x0    | 0x4       | Padding/Unused?                                                      |
+| 0x4    | 0x4       | Number of Buckets                                                    |
+| 0x8    | 0x8       | Total Size of the Virtual RomFS Image                                |
+| 0x10   | 0x3FF0    | Base Virtual Offset for each Bucket (u64s, padded with 0s until end) |
+| 0x4000 | 0x4000\*X | Relocation Buckets                                                   |
+
+Where relocation buckets are as follows:
+
+| Start | Length | Description                |
+| ----- | ------ | -------------------------- |
+| 0x0   | 0x4    | Padding/Unused?            |
+| 0x4   | 0x4    | Number of Entries          |
+| 0x8   | 0x8    | End offset for this Bucket |
+| 0x10  | 0x3FF0 | Relocation Entries         |
 
 Where relocation entries are as follows:
 
@@ -230,14 +241,25 @@ Where relocation entries are as follows:
 | 0x10  | 0x4    | 1=Is from Patch RomFS, 0=Is from Base RomFS |
 
 The second BKTR entry describes the subsections within the Patch RomFS.
-It has the following format:
+It has the following
+format:
 
-| Start  | Length  | Description                     |
-| ------ | ------- | ------------------------------- |
-| 0x0    | 0x4004  | Padding/Unused?                 |
-| 0x4004 | 0x4     | Number of Entries               |
-| 0x4008 | 0x8     | Patch RomFS Size - BKTR entries |
-| 0x4010 | 0x10\*X | Subsection Entries              |
+| Start  | Length    | Description                                                           |
+| ------ | --------- | --------------------------------------------------------------------- |
+| 0x0    | 0x4       | Padding/Unused?                                                       |
+| 0x4    | 0x4       | Number of Buckets                                                     |
+| 0x8    | 0x8       | Total Size of the Physical Patch Image                                |
+| 0x10   | 0x3FF0    | Base Physical Offset for each Bucket (u64s, padded with 0s until end) |
+| 0x4000 | 0x4000\*X | Subsection Buckets                                                    |
+
+Where subsection buckets are as follows:
+
+| Start | Length | Description                |
+| ----- | ------ | -------------------------- |
+| 0x0   | 0x4    | Padding/Unused?            |
+| 0x4   | 0x4    | Number of Entries          |
+| 0x8   | 0x8    | End offset for this Bucket |
+| 0x10  | 0x3FF0 | Subsection Entries         |
 
 Where subsection entries are as follows:
 
