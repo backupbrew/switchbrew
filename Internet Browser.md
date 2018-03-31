@@ -117,7 +117,7 @@ following:
 
 \[3.0.0+\]: The "google\\.(com" line now starts with "^https://" instead
 of "https?://", hence plain HTTP is no longer allowed. The following
-line was added right after the original goggle line: "----
+line was added right after the original google line: "----
 ^https?://(\[0-9A-Za-z\\-\]+\\.)\*google(\\.\[A-Za-z\]+)\*/(search|translate)\\?"
 
 \[4.0.0+\]: Lines 2-4 ("...nintendo\\.(co...", "nintendo-europe", and
