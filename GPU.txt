@@ -37,11 +37,21 @@ Subchannels:
 |-
 | 0x49 || MmeShadowRamControl || 1 || uint || 0=MethodTrack, 1=MethodTrackWithFilter, 2=MethodPassthrough, 3=MethodReplay. Used during ClearColor.
 |-
+| 0x83 || LineWidthSeparate || 1 || bool ||
+|-
+| 0x84 || ForceEarlyFragmentTests || 1 || bool ||
+|-
+| 0x87 || Barrier || 1 || bitfield ||
+|-
 | 0xBA || || 1 || || SetRenderTargets writes 1/0 here an optional buffer != NULL, and depending on type.
 |-
 | 0xBE || || 1 || pipe || SetRenderTargets writes here repeatedly 16 times, if an optional buffer != NULL and is a given type.
 |-
 | 0xBF || || 1 || bool || SetRenderTargets writes 1 here after 0xBE has been written 16 times, and 0xDC been written.
+|-
+| 0xC2 || CacheSplit || 1 || enum ||
+|-
+| 0xC8 || TesselationMode || 1 || bitfield || Bit0-1: PrimitiveType (0=Isolines, 1=Triangles, 2=Quads), bit4-5: Spacing (0=Equal, 1=FractionalOdd, 2=FractionalEven), bit8: Cw, bit9: Connected
 |-
 | 0xC9 || TesselationOuterLevels || 4 || float[4] ||
 |-
@@ -51,19 +61,29 @@ Subchannels:
 |-
 | 0xDF || RasterizerEnable || 1 || bool ||
 |-
-| 0xE0+8*N || TransformFeedbackBufferEnable || 1 || bool ||
+| 0xE0+8*N || TransformFeedbackBufferEnable || 1 || bool || n=0..3
 |-
 | 0xE1+8*N || TransformFeedbackBufferAddr || 2 || gpuva ||
 |-
 | 0xE3+8*N || TransformFeedbackBufferFlags || 1 || ||
 |-
+| 0x1C0+4*N || TransformFeedbackBufferStream || 1 || bitfield ||
+|-
+| 0x1C1+4*N || TransformFeedbackVaryingCount || 1 || uint ||
+|-
+| 0x1C2+4*N || TransformFeedbackStride || 1 || uint ||
+|-
 | 0x1D1 || TransformFeedbackEnable || 1 || bool ||
 |-
 | 0x1D3 || || 1 || || GpuInit writes 0x3f here.
 |-
-| 0x1F0 || || 1 || || SetRenderTargets optionally uses this.
+| 0x1D5 || SampleShading || 1 || bitfield || Bit0-3: ?, bit4: Enable
 |-
-| 0x1F1 || || 1 || || SetRenderTargets optionally uses this.
+| 0x1DF || LocalBase || 1 || uint || TODO
+|-
+| 0x1F0 || ZCullWidth || 1 || || SetRenderTargets optionally uses this.
+|-
+| 0x1F1 || ZCullHeight || 1 || || SetRenderTargets optionally uses this.
 |-
 | 0x1F2 || || 1 || || SetRenderTargets optionally uses this.
 |-
@@ -85,11 +105,11 @@ Subchannels:
 |-
 | 0x204+16*N || RenderTargetNFormat || 1 || ||
 |-
-| 0x205+16*N || RenderTargetNTileMode || 1 || ||
+| 0x205+16*N || RenderTargetNTileMode || 1 || bitfield || Bit0-3: Width, bit4-7: Height, bit8-10: Depth, bit12: Layout, bit16: ?
 |-
-| 0x206+16*N || RenderTargetNArrayMode || 1 || ||
+| 0x206+16*N || RenderTargetNArrayMode || 1 || bitfield || Bit0-15: Layers, bit16: Volume
 |-
-| 0x207+16*N || RenderTargetNLayerStride || 1 || ||
+| 0x207+16*N || RenderTargetNLayerStride || 1 || uint || In units of 4 bytes.
 |-
 | 0x208+16*N || RenderTargetNBaseLayer || 1 || ||
 |-
