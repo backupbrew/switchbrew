@@ -27,13 +27,13 @@ Subchannels:
 |-
 | 0x44 || WaitForIdle || 1 || ||
 |-
-| 0x45 || LoadMmeInstructionRamPointer || 1 || uint ||
+| 0x45 || MmeInstructionRamPointer || 1 || uint ||
 |-
-| 0x46 || LoadMmeInstructionRam || 1 || pipe || Writes to and increments LoadMmeInstructionRamPointer by 1.
+| 0x46 || MmeInstructionRamLoad || 1 || pipe || Writes to and increments MmeInstructionRamPointer by 1.
 |-
-| 0x47 || LoadMmeStartAddressRamPointer || 1 || uint ||
+| 0x47 || MmeStartAddressRamPointer || 1 || uint ||
 |-
-| 0x48 || LoadMmeStartAddressRam || 1 || pipe ||
+| 0x48 || MmeStartAddressRamLoad || 1 || pipe ||
 |-
 | 0x49 || MmeShadowRamControl || 1 || uint || 0=MethodTrack, 1=MethodTrackWithFilter, 2=MethodPassthrough, 3=MethodReplay. Used during ClearColor.
 |-
