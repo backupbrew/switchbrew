@@ -407,93 +407,11 @@ Subchannels:
 |-
 | 0x924 || UniformBuffer1_Control || 1 || ||
 |-
-| 0xD00 || SetMmeShadowScratch || uint[0x80] || 128 ||
-|-
-| 0xD19 || || 1 || || GpuInit writes 0 here.
-|-
-| 0xD1A || || 1 || || GpuInit writes 0 here.
-|-
-| 0xD1B || || 1 || || GpuInit writes 0xffffffff here.
-|-
-| 0xD1E || || 1 || || BindProgram writes 0 here, trigger?
-|-
-| 0xD28 || || 1 || || SetRenderTargets writes 0 here if an optional buffer is NULL.
-|-
-| 0xD29 || || 1 || || SetRenderTargets writes 0xFFFFFFFF here if an optional buffer != NULL, and of a certain type.
-|-
-| 0xD34 || || 1 || || Used by SetConservativeRasterDilate.
-|-
-| 0xD35 || AdvancedBlend || 1 || bitfield || Bit0: NormalizedDst, bit1: PremultipliedSrc, bit2-3: BlendTarget, Bit4-9: Mode
+| 0xD00 || MmeShadowScratch || uint[0x80] || 128 ||
 |-
 | 0xE00+N*2 || MmeMacroNCall || 1 || ? || n=0..0x7f
 |-
 | 0xE01+N*2 || MmeMacroNData || 1 || pipe || ?
-|-
-| 0xE00 || TransformFeedbackAddr || 2 || gpuva ||
-|-
-| 0xE02 || ClearColorConfig? || 1 || bitfield || Bit2-5: ?, bit6-9: ?
-|-
-| 0xE06 || || 1 || bitfield || Written by SetRenderTargets if optional buffer is given but not of a given type.
-|-
-| 0xE0A || || 1 || || Used by SetConservativeRasterDilate.
-|-
-| 0xE0B || || 1 || || Used by SetConservativeRasterDilate.
-|-
-| 0xE0E || || 1 || || BindImage/BindSeparateSampler/BindSeparateTexture writes 0-4 here.
-|-
-| 0xE10 || ColorLogicOp3 || 1 || bitfield || Bit8: BlendEnable, bit16-23: LogicOp, bit28-31: AlphaTest. BindColorState writes this when LogicOp == 3.
-|-
-| 0xE12 || BindChannelMaskState_Unk0 || 1 || ||
-|-
-| 0xE13 || BindChannelMaskState_Unk1 || 1 || ||
-|-
-| 0xE1A || StencilConfig || 1 || bitfield || Bit0-3: StencilFunc0, bit4-7: StencilOp0_A, bit8-11: StencilOp0_B, bit12-15: StencilFunc1, bit16-19: StencilOp1_A, bit20-23: StencilOp1_B
-|-
-| 0xE1E || Barrier? || 1 || || Also written to by BindStorageBuffer, and DrawArraysIndirect. 
-|-
-| 0xE20 || || 1 || || Another barrier? Used by SetConservativeRasterDilate.
-|-
-| 0xE2A || DebugGroupPush_DynamicControl || 1 || ||
-|-
-| 0xE2B || DebugGroupPush_DynamicValue || 1 || || This one can be written a variable number of times.
-|-
-| 0xE2C || DebugGroupPush_StaticControl || 1 || ||
-|-
-| 0xE2D || DebugGroupPush_StaticValue || 1 || || This is written 3 times after DebugGroupPush_StaticControl.
-|-
-| 0xE2E || DebugGroupPop_Control || 1 || ||
-|-
-| 0xE2F || DebugGroupPop_GroupId || 1 || || This is written once after DebugGroupPop_Control.
-|-
-| 0xE30 || DrawArraysControl || 1 || ||
-|-
-| 0xE31 || DrawArraysMulti || 1 || ||
-|-
-| 0xE32 || DrawArraysIndirect || 1 || ||
-|-
-| 0xE34 || DrawArraysInstanced0Config || 1 || ||
-|-
-| 0xE35 || DrawArraysInstanced0Pipe || 1 || ||
-|-
-| 0xE36 || DrawElementsConfig || 1 || ||
-|-
-| 0xE37 || DrawElementsPipe || 1 || ||
-|-
-| 0xE38 || DrawElementsIndirectConfig || 1 || ||
-|-
-| 0xE39 || DrawElementsIndirectPipe || 1 || ||
-|-
-| 0xE3A || DrawElementsInstanced0Config || 1 || ||
-|-
-| 0xE3B || DrawElementsInstanced0Pipe || 1 || ||
-|-
-| 0xE42 || DrawArraysInstanced1Config || 1 || ||
-|-
-| 0xE43 || DrawArraysInstanced1Pipe || 1 || ||
-|-
-| 0xE44 || DrawElementsInstanced1Config || 1 || ||
-|-
-| 0xE45 || DrawElementsInstanced1Pipe || 1 || ||
 |}
 
 TODO: (Tiled)Downsample, Copy*, Dispatch*, DrawTexture/DrawTransformFeedback, BindImages, BindProgram, BindSeprarateSamplers, BindSeprarateTextures, BindTextures.
