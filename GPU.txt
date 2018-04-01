@@ -417,16 +417,8 @@ Subchannels:
 |-
 | 0x8E4 || LoadConstantBuffer || 1 || uint[16] ||
 |- style="border-top: double"
-| 0x904 || UniformBuffer0_Control || 1 || ||
-|- style="border-top: double"
-| 0x90C || UniformBuffer3_Control || 1 || ||
-|- style="border-top: double"
-| 0x914 || UniformBuffer4_Control || 1 || ||
-|- style="border-top: double"
-| 0x91C || UniformBuffer2_Control || 1 || ||
-|- style="border-top: double"
-| 0x924 || UniformBuffer1_Control || 1 || ||
-|- style="border-top: double"
+| 0x904+8*N || ConstBufferNBind || 1 || bitfield || n=0..4. Bit0: Valid, bit4-8: Index
+|-
 | 0xD00 || MmeShadowScratch || uint[0x80] || 128 ||
 |- style="border-top: double"
 | 0xE00+N*2 || MmeMacroNCall || 1 || ? || n=0..0x7f
