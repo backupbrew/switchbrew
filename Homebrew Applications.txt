@@ -186,9 +186,16 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 !  width="5%"  | Open-Source
 !  width="15%" | Last Updated
 |-
+| ScummVM
+| ScummVM is a program which allows you to run certain classic graphical point-and-click adventure games...
+| Cpasjuste
+| [https://github.com/Cpasjuste/scummvm/releases Here]
+| [https://github.com/Cpasjuste/scummvm/tree/switch Yes]
+| 2018-03-01
+|-
 | pFBA
 | A port of final burn alpha to multiple platforms
-| cpasjuste
+| Cpasjuste
 | [https://github.com/Cpasjuste/pfba/releases Here]
 | [https://github.com/Cpasjuste/pfba Yes]
 | 2018-02-20
