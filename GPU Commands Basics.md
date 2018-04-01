@@ -127,7 +127,7 @@ unconditionally.
 Command lists can contain fences to ensure that commands are executed on
 the correct order, and subsequent commands are only sent when the
 previously sent commands were already processed by the GPU. Fences uses
-the QUERY\_\* commands, and works like this:
+the ReportSemaphore\* registers, and works like this:
 
   - First, register ReportSemaphoreOffset is set to High/Low 32 bits
     part of the 64-bits GPU Virtual Address where the fence is located.

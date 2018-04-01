@@ -117,7 +117,7 @@ Official games uses those macros to conditionally write registers, one example o
 
 === Fences ===
 
-Command lists can contain fences to ensure that commands are executed on the correct order, and subsequent commands are only sent when the previously sent commands were already processed by the GPU. Fences uses the QUERY_* commands, and works like this:
+Command lists can contain fences to ensure that commands are executed on the correct order, and subsequent commands are only sent when the previously sent commands were already processed by the GPU. Fences uses the ReportSemaphore* registers, and works like this:
 
 * First, register ReportSemaphoreOffset is set to High/Low 32 bits part of the 64-bits GPU Virtual Address where the fence is located. This GPU Virtual Address needs to be mapped to the process Virtual Address beforehand.
 * Then, ReportSemaphorePayload is set with a sequential number. This number is basically a incrementing counter, so the first Command List can set ReportSemaphorePayload = 1, the next one to 2, then 3, 4... and so on.
