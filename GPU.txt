@@ -113,7 +113,7 @@ Subchannels:
 |-
 | 0x208+16*N || RenderTargetNBaseLayer || 1 || ||
 |-
-| 0x280+8*N || ViewportNScaleX || 1 || float ||
+| 0x280+8*N || ViewportNScaleX || 1 || float || n=0..15
 |-
 | 0x281+8*N || ViewportNScaleY || 1 || float ||
 |-
