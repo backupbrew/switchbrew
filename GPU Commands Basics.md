@@ -291,7 +291,7 @@ parameters if desired.
 The first parameter is written to 0xe00 + n \* 2 (where n is the macro
 index), and all subsequent parameters should be pushed to the FIFO using
 0xe01 + n \* 2. The first parameter is placed at the general purpose
-register R1 in the shader program when execution starts.
+register R1 in the macro program when execution starts.
 
 Official games uses those macros to conditionally write registers, one
 example of such uses is the macro at 0xe24, that is used to set shader
@@ -391,9 +391,10 @@ the following steps to write the TIC entry indexes:
     GPU Virtual Address of the Constant Buffer set on the register 0x982
     (the *Texture Constant Buffer* index register), and also sets
     CB\_SIZE.
-  - CB\_POS is used to set the write offset of the Constant Buffer to
-    0x20 + n \* 4, where *n* is the index of the *Handle* being used on
-    the shader sampler.
+  - CB\_POS is used to set the write offset of the Constant Buffer to n
+    \* 4, where *n* is the index of the *Handle* being used on the
+    shader program (this index starts at 8, so CB\_POS should be at
+    least 8 \* 4 = 0x20).
   - CB\_DATA (0) method is used to write the value into the Constant
     Buffer. The value is a *Handle* where the lower 20 bits is the TIC
     index, and the higher 12 bits is the TSC (Texture Sampler Control)
