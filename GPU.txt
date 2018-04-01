@@ -433,6 +433,8 @@ Subchannels:
 |- style="border-top: double"
 | 0x850 || || 1 || || BindProgram writes here.
 |- style="border-top: double"
+| 0x8C0+N || FirmwareCallN || 8 || uint || Invokes GPU microcode firmware blob.
+|- style="border-top: double"
 | 0x8E0 || ConstantBufferSelectorSize || 1 || uint || Bit0-16: Size
 |-
 | 0x8E1 || ConstantBufferSelectorAddr || 2 || gpuva ||
@@ -443,11 +445,11 @@ Subchannels:
 |- style="border-top: double"
 | 0x904+8*N || ConstBufferNBind || 1 || bitfield || n=0..4. Bit0: Valid, bit4-8: Index
 |- style="border-top: double"
-| 0xD00 || MmeShadowScratch || uint[0x80] || 128 ||
+| 0xD00 || MmeShadowScratch || uint[0x80] || 128 || Mostly general purpose, sometimes accessed by FirmwareCall.
 |- style="border-top: double"
-| 0xE00+N*2 || MmeMacroNCall || 1 || ? || n=0..0x7f
+| 0xE00+N*2 || MmeMacroNCall || 1 || uint || n=0..0x7f. Writing here calls a bound macro with value written put in r1.
 |-
-| 0xE01+N*2 || MmeMacroNData || 1 || pipe || ?
+| 0xE01+N*2 || MmeMacroNData || 1 || pipe || Used to send variable number of arguments to macro via the "parm" instruction.
 |}
 
 TODO: (Tiled)Downsample, Copy*, Dispatch*, DrawTexture/DrawTransformFeedback, BindImages, BindProgram, BindSeprarateSamplers, BindSeprarateTextures, BindTextures.
