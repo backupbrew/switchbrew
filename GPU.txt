@@ -149,7 +149,13 @@ Subchannels:
 |-
 | 0x35E || VertexBufferCount || 1 || ||
 |-
+| 0x35F || DepthClipAllowNegativeZ || 1 || bool ||
+|-
 | 0x360 || ClearColor || 4 || float ||
+|-
+| 0x364 || ClearDepth || 1 || float ||
+|- style="border-top: double"
+| 0x368 || ClearStencil || 1 || ||
 |- style="border-top: double"
 | 0x36B || PolygonModeFront || 1 || bitfield || 0x1B00/0x1B01/0x1B02
 |-
