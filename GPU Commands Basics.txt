@@ -125,7 +125,7 @@ Command lists can contain fences to ensure that commands are executed on the cor
 
 The above commands are added using the [[#Submission_mode|increasing mode]], since all those 4 registers are sequential.
 
-Official games will sets Operation to 0 (Release), bit 4 to 1, bits 15-12 (Unit) to 0xF, and bit 28 to 1 (OneWord). The ReportSemaphorePayload value is then written by the GPU to the address pointed to by ReportSemaphoreOffset.
+Official games sets Operation to 0 (Release), bit 4 to 1, bits 15-12 (Unit) to 0xF, and bit 28 to 1 (OneWord). The ReportSemaphorePayload value is then written by the GPU to the address pointed to by ReportSemaphoreOffset.
 On the CPU side, the game code should wait until the value at the address pointed to by ReportSemaphoreOffset is >= to the last written value. Official code waits for this condition to be true on a loop, and won't send any further commands before that.
 
 == Vertex Data Submission ==
