@@ -228,15 +228,15 @@ BindTextures.
 
 # DMA
 
-| Register | Name               | Size | Type     | Notes                                                                          |
-| -------- | ------------------ | ---- | -------- | ------------------------------------------------------------------------------ |
-| 0x0C0    | CopyControl        | 1    | bitfield | With 0x186 Src/DstStride is not used. With 0x586 memset-functionality is used. |
-| 0x100    | CopySourceAddr     | 2    | gpuva    |                                                                                |
-| 0x102    | CopyDstinationAddr | 2    | gpuva    |                                                                                |
-| 0x104    | CopySrcStride?     | 1    | uint     |                                                                                |
-| 0x105    | CopyDstStride?     | 1    | uint     |                                                                                |
-| 0x106    | CopyCount          | 1    | uint     | At most 0x3FFFFF.                                                              |
-| 0x1C0    | CopyMemsetValue?   | 1    | uint     |                                                                                |
-| 0x1C2    | CopyMemsetControl? | 1    | bitfield | Seen: 0x34444                                                                  |
-| 0x1C4    | CopyMemsetLength?  | 1    | uint     | In units of 4 bytes.                                                           |
-| 0x1C5    | ?                  | 1    |          | Seen: 1                                                                        |
+| Register | Name                   | Size | Type     | Notes                                                                          |
+| -------- | ---------------------- | ---- | -------- | ------------------------------------------------------------------------------ |
+| 0x0C0    | CopyControl            | 1    | bitfield | With 0x186 Src/DstStride is not used. With 0x586 memset-functionality is used. |
+| 0x100    | CopySourceAddr         | 2    | gpuva    |                                                                                |
+| 0x102    | CopyDestinationAddr    | 2    | gpuva    |                                                                                |
+| 0x104    | CopySourceStride?      | 1    | uint     |                                                                                |
+| 0x105    | CopyDestinationStride? | 1    | uint     |                                                                                |
+| 0x106    | CopyCount              | 1    | uint     | At most 0x3FFFFF.                                                              |
+| 0x1C0    | CopyMemsetValue?       | 1    | uint     |                                                                                |
+| 0x1C2    | CopyMemsetControl?     | 1    | bitfield | Seen: 0x34444                                                                  |
+| 0x1C4    | CopyMemsetLength?      | 1    | uint     | In units of 4 bytes.                                                           |
+| 0x1C5    | ?                      | 1    |          | Seen: 1                                                                        |

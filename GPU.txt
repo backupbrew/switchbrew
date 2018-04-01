@@ -444,11 +444,11 @@ TODO: (Tiled)Downsample, Copy*, Dispatch*, DrawTexture/DrawTransformFeedback, Bi
 |-
 | 0x100 || CopySourceAddr || 2 || gpuva ||
 |-
-| 0x102 || CopyDstinationAddr || 2 || gpuva ||
+| 0x102 || CopyDestinationAddr || 2 || gpuva ||
 |-
-| 0x104 || CopySrcStride? || 1 || uint ||
+| 0x104 || CopySourceStride? || 1 || uint ||
 |-
-| 0x105 || CopyDstStride? || 1 || uint ||
+| 0x105 || CopyDestinationStride? || 1 || uint ||
 |-
 | 0x106 || CopyCount || 1 || uint || At most 0x3FFFFF.
 |-
