@@ -229,7 +229,7 @@ Subchannels:
 |- style="border-top: double"
 | 0x452 || RasterEnable || 1 || bool ||
 |- style="border-top: double"
-| 0x458 || VertexAttribTable || 4 || bitfield[16] || Bit0-4: StreamIndex, bit7-20: Format0, bit21-30: Format1
+| 0x458 || VertexStreamNAttrib || 4 || bitfield[16] || Bit0-4: StreamIndex, bit7-20: Format0, bit21-30: Format1
 |- style="border-top: double"
 | 0x478 || MultisampleGrid || 3 || bitfield[3] || Bit0-3: x0, bit4-7: y0, bit8-11: x1, etc..
 |- style="border-top: double"
@@ -349,7 +349,7 @@ Subchannels:
 |- style="border-top: double"
 | 0x5F6 || DrawElementsIndirectFlag? || 1 || bool || TODO
 |- style="border-top: double"
-| 0x620+N || VertexStreamNEnableDivisor || bool || n=0...15.
+| 0x620+N || VertexStreamNEnableDivisor || 1 || bool || n=0...15.
 |- style="border-top: double"
 | 0x646 || PolygonCullFaceEnable || 1 || bool ||
 |-
