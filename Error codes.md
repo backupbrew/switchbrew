@@ -60,6 +60,7 @@ fatal-errors, since the Description ends with bit21.
 | 140   | USB                                                    |
 | 141   | NSD                                                    |
 | 143   | BTM                                                    |
+| 144   |                                                        |
 | 147   | ERPT                                                   |
 | 148   | APM                                                    |
 | 153   | Audio                                                  |
