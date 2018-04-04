@@ -74,8 +74,12 @@ Total size is 0x4000-bytes.
 | ?
 |-
 | 0x308C
-| 0x24
+| 0x1C
 | Zeros?
+|-
+| 0x30A8
+| 0x8
+| Product Code (this field is sometimes zeroes, unknown why)
 |-
 | 0x30B0
 | 0x8

@@ -24,7 +24,8 @@ Total size is
 | 0x3080 | 0x4                | ?                                                                                                      |
 | 0x3084 | 0x4                | ?                                                                                                      |
 | 0x3088 | 0x4                | ?                                                                                                      |
-| 0x308C | 0x24               | Zeros?                                                                                                 |
+| 0x308C | 0x1C               | Zeros?                                                                                                 |
+| 0x30A8 | 0x8                | Product Code (this field is sometimes zeroes, unknown why)                                             |
 | 0x30B0 | 0x8                | Application titleID                                                                                    |
 | 0x30B8 | 0x38 (0x8\*0x7)    | Array of application titleIDs, normally the same as the above app-titleIDs. Only set for game-updates? |
 | 0x30F0 | 0x4                | ?                                                                                                      |
