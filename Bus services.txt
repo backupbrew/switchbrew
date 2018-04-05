@@ -35,13 +35,13 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x02 || 0x24 || E, 4 || SDCard Power || Out || [[Filesystem services]]
 |-
-| 0x03 || 0x3C || H, 4 || BT reset || Out || [[Bluetooth services]]
+| 0x03 || 0x3C || H, 4 || BT_RST_PH4 || Out || [[Bluetooth services]]
 |-
 | 0x04 || 0xDA || BB, 2 || || || 
 |-
 | 0x05 || 0xDB || BB, 3 || GcAsic Power || Out || [[Filesystem services]]
 |-
-| 0x06 || 0xDC || BB, 4 || || In || [[Audio services]]
+| 0x06 || 0xDC || BB, 4 || GPIO_X3_AUD_PBB4? || In || [[Audio services]]
 |-
 | 0x07 || 0x25 || E, 5 || || || 
 |-
@@ -57,39 +57,39 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x0D || 0x05 || A, 5 || Fan enable (normal) || Out || [[PTM services]]
 |-
-| 0x0E || 0x78 || P, 0 || || || 
+| 0x0E || 0x78 || P, 0 || SDMMC3_CLK_PP0? || || 
 |-
 | 0x0F || 0x93 || S, 3 || GcAsic irq || In || [[Filesystem services]]
 |-
-| 0x10 || 0x7D || P, 5 || || || 
+| 0x10 || 0x7D || P, 5 || SDMMC3_DAT0_PP5? || || 
 |-
-| 0x11 || 0x7C || P, 4 || || || 
+| 0x11 || 0x7C || P, 4 || SDMMC3_DAT1_PP4? || || 
 |-
-| 0x12 || 0x7B || P, 3 || || || 
+| 0x12 || 0x7B || P, 3 || SDMMC3_DAT2_PP3? || || 
 |-
-| 0x13 || 0x7A || P, 2 || || || 
+| 0x13 || 0x7A || P, 2 || SDMMC3_DAT3_PP2? || || 
 |-
 | 0x14 || 0xBC || X, 4 || || || 
 |-
 | 0x15 || 0xAE || V, 6 || || In || [[Audio services]]
 |-
-| 0x16 || 0xBA || X, 2 || || || 
+| 0x16 || 0xBA || X, 2 || MOTION_INT_PX2? || || 
 |-
-| 0x17 || 0xB9 || X, 1 || Touchscreen irq (unused - polled instead) || In || [[HID services]]
+| 0x17 || 0xB9 || X, 1 || Touchscreen irq (TOUCH_INT_PX1) (unused - polled instead) || In || [[HID services]]
 |-
-| 0x18 || 0xBD || X, 5 || || ||
+| 0x18 || 0xBD || X, 5 || Power Button (BUTTON_POWER_ON_PX5) || ||
 |-
-| 0x19 || 0xBE || X, 6 || Volume Up || In || [[Boot2]], [[Audio services]]
+| 0x19 || 0xBE || X, 6 || Volume Up (BUTTON_VOL_UP_PX6) || In || [[Boot2]], [[Audio services]]
 |-
-| 0x1A || 0xBF || X, 7 || Volume Down || In || [[Boot2]], [[Audio services]]
+| 0x1A || 0xBF || X, 7 || Volume Down (BUTTON_VOL_DOWN_PX7) || In || [[Boot2]], [[Audio services]]
 |-
-| 0x1B || 0xC0 || Y, 0 || max17050 irq || In || [[PTM services]]
+| 0x1B || 0xC0 || Y, 0 || max17050 irq (BUTTON_SLIDE_SW_PY0...?) || In || [[PTM services]]
 |-
-| 0x1C || 0xC1 || Y, 1 || || || 
+| 0x1C || 0xC1 || Y, 1 || BUTTON_HOME_PY1? || || 
 |-
-| 0x1D || 0xA9 || V, 1 || Backlight || Out || [[NV services]], [[Backlight services]]
+| 0x1D || 0xA9 || V, 1 || Backlight (LCD_BL_EN_PV1?) || Out || [[NV services]], [[Backlight services]]
 |-
-| 0x1E || 0xAA || V, 2 || Backlight || Out || [[NV services]]
+| 0x1E || 0xAA || V, 2 || Backlight (LCD_RST_PV2?) || Out || [[NV services]]
 |-
 | 0x1F || 0x55 || K, 5 || bq24192 OTG charge select || Out || [[PTM services]], [[USB services]]
 |-
@@ -119,11 +119,11 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x2C || 0xE3 || CC, 3 || joycon(L) NwcpDriver0.NwcpCharger || Out || [[HID services]]
 |-
-| 0x2D || 0x38 || H, 0 || || ||
+| 0x2D || 0x38 || H, 0 || WIFI_EN_PH0? || ||
 |-
-| 0x2E || 0x39 || H, 1 || || Out || [[Wlan services]], [[PCIe services]]
+| 0x2E || 0x39 || H, 1 || WIFI_RST_PH1? || Out || [[Wlan services]], [[PCIe services]]
 |-
-| 0x2F || 0x3B || H, 3 || BT wake || Out || [[Bluetooth services]]
+| 0x2F || 0x3B || H, 3 || AP_WAKE_BT_PH3 || Out || [[Bluetooth services]]
 |-
 | 0x30 || 0x3D || H, 5 || || ||
 |-
@@ -183,7 +183,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x4C || 0xE6 || CC, 6 || || ||
 |-
-| -- || 0xE1 || CC, 1 || HdmiHotplug || In || [[NV services]]
+| -- || 0xE1 || CC, 1 || HdmiHotplug (HDMI_INT_DP_HPD_PCC1?) || In || [[NV services]]
 |}
 
 == OpenSessionForTest ==
