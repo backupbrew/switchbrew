@@ -51,7 +51,7 @@ Subchannels:
 |- style="border-top: double"
 | 0xC2 || CacheSplit || 1 || enum ||
 |- style="border-top: double"
-| 0xC8 || TesselationMode || 1 || bitfield || Bit0-1: PrimitiveType (0=Isolines, 1=Triangles, 2=Quads), bit4-5: Spacing (0=Equal, 1=FractionalOdd, 2=FractionalEven), bit8-9: WindingAndConnectednessFlags (0=CcwAndNotConnected, 1=IsolineConnected, 1=TriangleCcw, 2=TriangleConnected, 3=TriangleConnectedCcw)
+| 0xC8 || TesselationMode || 1 || bitfield || Bit0-1: PrimitiveType (0=Isolines, 1=Triangles, 2=Quads), bit4-5: Spacing (0=Equal, 1=FractionalOdd, 2=FractionalEven), bit8-9: WindingAndConnectednessFlags (0=CcwAndNotConnected, 1=IsolineConnected, 1=TriangleCw, 2=TriangleConnected, 3=TriangleConnectedCw)
 |-
 | 0xC9 || TesselationOuterLevels || 4 || float[4] ||
 |- style="border-top: double"
