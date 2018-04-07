@@ -196,17 +196,18 @@ Takes a pid and returns the title-id associated with the process.
 This is
 "nn::pm::detail::IShellInterface".
 
-| Cmd | Name                                                                       |
-| --- | -------------------------------------------------------------------------- |
-| 0   | [\#LaunchProcess](#LaunchProcess "wikilink")                               |
-| 1   | TerminateProcessByPid                                                      |
-| 2   | TerminateProcessByTitleId                                                  |
-| 3   | GetProcessEventWaiter                                                      |
-| 4   | [\#GetProcessEventType](#GetProcessEventType "wikilink")                   |
-| 5   | [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")                   |
-| 6   | [\#ClearProcessNotificationFlag](#ClearProcessNotificationFlag "wikilink") |
-| 7   | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                     |
-| 8   | [\#GetApplicationPid](#GetApplicationPid "wikilink")                       |
+| Cmd | Name                                                                                      |
+| --- | ----------------------------------------------------------------------------------------- |
+| 0   | [\#LaunchProcess](#LaunchProcess "wikilink")                                              |
+| 1   | TerminateProcessByPid                                                                     |
+| 2   | TerminateProcessByTitleId                                                                 |
+| 3   | GetProcessEventWaiter                                                                     |
+| 4   | [\#GetProcessEventType](#GetProcessEventType "wikilink")                                  |
+| 5   | [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")                                  |
+| 6   | [\#ClearProcessNotificationFlag](#ClearProcessNotificationFlag "wikilink")                |
+| 7   | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                                    |
+| 8   | [\#GetApplicationPid](#GetApplicationPid "wikilink")                                      |
+| 9   | \[4.0.0+\] [\#BoostSystemMemoryResourceLimit](#BoostSystemMemoryResourceLimit "wikilink") |
 
 ## LaunchProcess
 
@@ -249,5 +250,17 @@ Launches a process with hardcoded [boot2](Boot2.md "wikilink") title-id.
 
 Loops through the internal linked-list of processes, looks for mask 0x40
 set in process flags. Returns pid of first such entry.
+
+## BoostSystemMemoryResourceLimit
+
+Takes an u64 **mem\_size** as input. If the desired memory size doesn't
+exceed an internal limit (imposed by PM by looking at the
+[MemoryArrange](SPL%20services#MemoryArrange.md##MemoryArrange "wikilink")
+ConfigItem), PM calls svcSetResourceLimitLimitValue to set the new
+[LimitableResource\_Memory](SVC#LimitableResource.md##LimitableResource "wikilink")
+value.
+
+This is used directly by [ns:am2
+BoostSystemMemoryResourceLimit](NS%20Services#IApplicationManagerInterface.md##IApplicationManagerInterface "wikilink").
 
 [Category:Services](Category:Services "wikilink")

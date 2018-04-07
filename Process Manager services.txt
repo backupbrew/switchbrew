@@ -176,6 +176,8 @@ This is "nn::pm::detail::IShellInterface".
 | 7 || [[#NotifyBootFinished]]
 |-
 | 8 || [[#GetApplicationPid]]
+|-
+| 9 || [4.0.0+] [[#BoostSystemMemoryResourceLimit]]
 |}
 
 == LaunchProcess ==
@@ -209,5 +211,10 @@ Launches a process with hardcoded [[boot2]] title-id.
 
 == GetApplicationPid ==
 Loops through the internal linked-list of processes, looks for mask 0x40 set in process flags. Returns pid of first such entry.
+
+== BoostSystemMemoryResourceLimit ==
+Takes an u64 '''mem_size''' as input. If the desired memory size doesn't exceed an internal limit (imposed by PM by looking at the [[SPL_services#MemoryArrange|MemoryArrange]] ConfigItem), PM calls svcSetResourceLimitLimitValue to set the new [[SVC#LimitableResource|LimitableResource_Memory]] value.
+
+This is used directly by [[NS_Services#IApplicationManagerInterface|ns:am2 BoostSystemMemoryResourceLimit]].
 
 [[Category:Services]]
