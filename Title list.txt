@@ -241,7 +241,7 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000000825 || [[5.0.0|v335544750]] (5.0.0.430) || Application blacklist. Used by [[NS_Services|NS]] for restricting application installation and updates.
 |-
-| 0100000000000826 || [[5.0.0|v335544750]] (5.0.0.430) || Contains "version" file.
+| 0100000000000826 || [[5.0.0|v335544750]] (5.0.0.430) || Rebootless system update version file.
 |}
 
 == System Applets ==

@@ -918,7 +918,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <tr class="even">
 <td><p>0100000000000826</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Contains &quot;version&quot; file.</p></td>
+<td><p>Rebootless system update version file.</p></td>
 </tr>
 </tbody>
 </table>
