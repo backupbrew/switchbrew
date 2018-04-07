@@ -196,18 +196,18 @@ Takes a pid and returns the title-id associated with the process.
 This is
 "nn::pm::detail::IShellInterface".
 
-| Cmd | Name                                                                                      |
-| --- | ----------------------------------------------------------------------------------------- |
-| 0   | [\#LaunchProcess](#LaunchProcess "wikilink")                                              |
-| 1   | TerminateProcessByPid                                                                     |
-| 2   | TerminateProcessByTitleId                                                                 |
-| 3   | GetProcessEventWaiter                                                                     |
-| 4   | [\#GetProcessEventType](#GetProcessEventType "wikilink")                                  |
-| 5   | [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")                                  |
-| 6   | [\#ClearProcessNotificationFlag](#ClearProcessNotificationFlag "wikilink")                |
-| 7   | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                                    |
-| 8   | [\#GetApplicationPid](#GetApplicationPid "wikilink")                                      |
-| 9   | \[4.0.0+\] [\#BoostSystemMemoryResourceLimit](#BoostSystemMemoryResourceLimit "wikilink") |
+| Cmd | Name                                                                                       |
+| --- | ------------------------------------------------------------------------------------------ |
+| 0   | [\#LaunchProcess](#LaunchProcess "wikilink")                                               |
+| 1   | TerminateProcessByPid                                                                      |
+| 2   | TerminateProcessByTitleId                                                                  |
+| 3   | GetProcessEventWaiter                                                                      |
+| 4   | [\#GetProcessEventType](#GetProcessEventType "wikilink")                                   |
+| 5   | \[1.0.0-4.1.0\] [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")                   |
+| 6   | \[1.0.0-4.1.0\] [\#ClearProcessNotificationFlag](#ClearProcessNotificationFlag "wikilink") |
+| 7   | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                                     |
+| 8   | [\#GetApplicationPid](#GetApplicationPid "wikilink")                                       |
+| 9   | \[4.0.0+\] [\#BoostSystemMemoryResourceLimit](#BoostSystemMemoryResourceLimit "wikilink")  |
 
 ## LaunchProcess
 
@@ -238,13 +238,18 @@ unregisters the pid in fsp:pr, sm:m, and ldr:pm.
 Then it removes the process from PMs internal linked-list of active
 processes.
 
+\[5.0.0+\] This command was removed.
+
 ## ClearProcessNotificationFlag
 
 Takes a pid as input. Clears 0x10 from process flags.
 
+\[5.0.0+\] This command was removed.
+
 ## NotifyBootFinished
 
-Launches a process with hardcoded [boot2](Boot2.md "wikilink") title-id.
+Launches a process with hardcoded [boot2](Boot2.md "wikilink") title-id
+(0100000000000008 in normal mode or 0100000000000009 in safe mode).
 
 ## GetApplicationPid
 

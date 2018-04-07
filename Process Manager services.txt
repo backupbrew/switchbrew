@@ -169,9 +169,9 @@ This is "nn::pm::detail::IShellInterface".
 |-
 | 4 || [[#GetProcessEventType]]
 |-
-| 5 || [[#FinalizeDeadProcess]]
+| 5 || [1.0.0-4.1.0] [[#FinalizeDeadProcess]]
 |-
-| 6 || [[#ClearProcessNotificationFlag]]
+| 6 || [1.0.0-4.1.0] [[#ClearProcessNotificationFlag]]
 |-
 | 7 || [[#NotifyBootFinished]]
 |-
@@ -203,11 +203,15 @@ Takes a pid as input. If the process with pid has the state "dead", it unregiste
 
 Then it removes the process from PMs internal linked-list of active processes.
 
+[5.0.0+] This command was removed.
+
 == ClearProcessNotificationFlag ==
-Takes a pid as input. Clears 0x10 from process flags. 
+Takes a pid as input. Clears 0x10 from process flags.
+
+[5.0.0+] This command was removed.
 
 == NotifyBootFinished ==
-Launches a process with hardcoded [[boot2]] title-id.
+Launches a process with hardcoded [[boot2]] title-id (0100000000000008 in normal mode or 0100000000000009 in safe mode).
 
 == GetApplicationPid ==
 Loops through the internal linked-list of processes, looks for mask 0x40 set in process flags. Returns pid of first such entry.
