@@ -19,7 +19,6 @@ This is
 | 300 | OpenOverlayAppletProxy                                                    | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").     |
 | 350 | OpenSystemApplicationProxy                                                | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").         |
 | 400 | CreateSelfLibraryAppletCreatorForDevelop                                  | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink"). |
-|     |                                                                           |                                                                          |
 
 All of these commands except
 [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") take the
@@ -104,7 +103,7 @@ commands.
 | 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime |
 | 13  | \[2.0.0+\] UpdateDefaultDisplayResolution    |
 | 14  | \[2.0.0+\] ShouldSleepOnBoot                 |
-|     |                                              |
+| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent  |
 
 ### IApplicationCreator
 
@@ -178,13 +177,17 @@ commands.
 | 15  | \[2.0.0+\] GetMainAppletApplicationControlProperty                                                          |                                                |
 | 16  | \[2.0.0+\] GetMainAppletStorageId                                                                           |                                                |
 | 17  | \[2.0.0+\] GetCallerAppletIdentityInfoStack                                                                 |                                                |
+| 18  | \[4.0.0+\] GetNextReturnDestinationAppletIdentityInfo                                                       |                                                |
+| 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                       |                                                |
 | 20  | PopExtraStorage                                                                                             | Returns an [\#IStorage](#IStorage "wikilink"). |
 | 25  | GetPopExtraStorageEvent                                                                                     |                                                |
 | 30  | UnpopInData                                                                                                 | Takes an [\#IStorage](#IStorage "wikilink").   |
 | 31  | UnpopExtraStorage                                                                                           | Takes an [\#IStorage](#IStorage "wikilink").   |
 | 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                                                                   |                                                |
 | 50  | \[2.0.0+\] ReportVisibleError                                                                               |                                                |
+| 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                               |                                                |
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |                                                |
+| 100 | \[4.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |                                                |
 
 #### ExitProcessAndReturn
 
@@ -217,7 +220,6 @@ No input, returns an output
 | 11   | GetLibraryAppletCreator     | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").         |
 | 20   | GetOverlayFunctions         | Returns an [\#IOverlayFunctions](#IOverlayFunctions "wikilink").                 |
 | 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
-|      |                             |                                                                                  |
 
 ### IOverlayFunctions
 
@@ -244,34 +246,48 @@ No input, returns an output
 | 11   | GetLibraryAppletCreator     | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").         |
 | 20   | GetApplicationFunctions     | Returns an [\#IApplicationFunctions](#IApplicationFunctions "wikilink").         |
 | 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
-|      |                             |                                                                                  |
 
 ### IApplicationFunctions
 
-| Cmd | Name                                                                                | Notes                                          |
-| --- | ----------------------------------------------------------------------------------- | ---------------------------------------------- |
-| 1   | PopLaunchParameter                                                                  | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 10  | CreateApplicationAndPushAndRequestToStart                                           | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 11  | \[2.0.0+\] CreateApplicationAndPushAndRequestToStartForQuest                        | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 20  | EnsureSaveData                                                                      |                                                |
-| 21  | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                              |                                                |
-| 22  | [\#SetTerminateResult](#SetTerminateResult "wikilink")                              |                                                |
-| 23  | GetDisplayVersion                                                                   |                                                |
-| 24  | \[2.0.0+\] GetLaunchStorageInfoForDebug                                             |                                                |
-| 25  | \[2.0.0+\] ExtendSaveData                                                           |                                                |
-| 26  | \[2.0.0+\] GetSaveDataSize                                                          |                                                |
-| 30  | BeginBlockingHomeButtonShortAndLongPressed                                          |                                                |
-| 31  | EndBlockingHomeButtonShortAndLongPressed                                            |                                                |
-| 32  | BeginBlockingHomeButton                                                             |                                                |
-| 33  | EndBlockingHomeButton                                                               |                                                |
-| 40  | [\#NotifyRunning](#NotifyRunning "wikilink")                                        |                                                |
-| 50  | \[2.0.0+\] GetPseudoDeviceId                                                        |                                                |
-| 60  | \[2.0.0+\] SetMediaPlaybackStateForApplication                                      |                                                |
-| 65  | \[3.0.0+\] IsGamePlayRecordingSupported                                             |                                                |
-| 66  | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink") |                                                |
-| 67  | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")     |                                                |
-| 70  | \[3.0.0+\] RequestToShutdown                                                        |                                                |
-| 71  | \[3.0.0+\] RequestToReboot                                                          |                                                |
+| Cmd  | Name                                                                                | Notes                                          |
+| ---- | ----------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1    | PopLaunchParameter                                                                  | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 10   | CreateApplicationAndPushAndRequestToStart                                           | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 11   | \[2.0.0+\] CreateApplicationAndPushAndRequestToStartForQuest                        | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 12   | \[4.0.0+\] CreateApplicationAndRequestToStart                                       |                                                |
+| 13   | \[4.0.0+\] CreateApplicationAndRequestToStartForQuest                               |                                                |
+| 20   | EnsureSaveData                                                                      |                                                |
+| 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                              |                                                |
+| 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                              |                                                |
+| 23   | GetDisplayVersion                                                                   |                                                |
+| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                             |                                                |
+| 25   | \[2.0.0+\] ExtendSaveData                                                           |                                                |
+| 26   | \[2.0.0+\] GetSaveDataSize                                                          |                                                |
+| 30   | BeginBlockingHomeButtonShortAndLongPressed                                          |                                                |
+| 31   | EndBlockingHomeButtonShortAndLongPressed                                            |                                                |
+| 32   | BeginBlockingHomeButton                                                             |                                                |
+| 33   | EndBlockingHomeButton                                                               |                                                |
+| 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                        |                                                |
+| 50   | \[2.0.0+\] GetPseudoDeviceId                                                        |                                                |
+| 60   | \[2.0.0+\] SetMediaPlaybackStateForApplication                                      |                                                |
+| 65   | \[3.0.0+\] IsGamePlayRecordingSupported                                             |                                                |
+| 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink") |                                                |
+| 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")     |                                                |
+| 68   | \[4.0.0+\] RequestFlushGamePlayingMovieForDebug                                     |                                                |
+| 70   | \[3.0.0+\] RequestToShutdown                                                        |                                                |
+| 71   | \[3.0.0+\] RequestToReboot                                                          |                                                |
+| 80   | \[4.0.0+\] ExitAndRequestToShowThanksMessage                                        |                                                |
+| 90   | \[4.0.0+\] EnableApplicationCrashReport                                             |                                                |
+| 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                |                                                |
+| 101  | \[5.0.0+\] SetApplicationCopyrightImage                                             |                                                |
+| 102  | \[5.0.0+\] SetApplicationCopyrightVisibility                                        |                                                |
+| 110  | \[5.0.0+\] QueryApplicationPlayStatistics                                           |                                                |
+| 120  | \[5.0.0+\] ExecuteProgram                                                           |                                                |
+| 121  | \[5.0.0+\] ClearUserChannel                                                         |                                                |
+| 122  | \[5.0.0+\] UnpopToUserChannel                                                       |                                                |
+| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                    |                                                |
+| 1000 | \[5.0.0+\] CreateMovieMaker                                                         |                                                |
+| 1001 | \[5.0.0+\] PrepareForJit                                                            |                                                |
 
 The BOTW game uses this GamePlayRecording functionality from the
 main-nso "nninitStartup" function, with size 0x6000000(96MiB). The
@@ -328,7 +344,6 @@ u32.
 | 10  | CreateStorage                  | Returns an [\#IStorage](#IStorage "wikilink").                             |
 | 11  | CreateTransferMemoryStorage    | Returns an [\#IStorage](#IStorage "wikilink").                             |
 | 12  | \[2.0.0+\] CreateHandleStorage | Returns an [\#IStorage](#IStorage "wikilink").                             |
-|     |                                |                                                                            |
 
 ### ILibraryAppletAccessor
 
@@ -377,9 +392,12 @@ u32.
 | 40  | \[2.0.0+\] GetCradleFwVersion                                 |                                                          |
 | 50  | \[3.0.0+\] IsVrModeEnabled                                    |                                                          |
 | 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink") |                                                          |
+| 52  | \[4.0.0+\] SwitchLcdBacklight                                 |                                                          |
 | 55  | \[3.0.0+\] IsInControllerFirmwareUpdateSection                |                                                          |
 | 60  | \[3.0.0+\] GetDefaultDisplayResolution                        |                                                          |
 | 61  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent             |                                                          |
+| 62  | \[4.0.0+\] GetHdcpAuthenticationState                         |                                                          |
+| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent              |                                                          |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -447,7 +465,10 @@ flag={disable/enable}.
 | 17  | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |
 | 18  | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
 | 19  | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
+| 20  | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |
 | 40  | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |
+| 41  | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |
+| 42  | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |
 | 50  | SetHandlesRequestToDisplay                                                                   |
 | 51  | ApproveToDisplay                                                                             |
 | 60  | OverrideAutoSleepTimeAndDimmingTime                                                          |
@@ -458,6 +479,10 @@ flag={disable/enable}.
 | 65  | \[2.0.0+\] ReportUserIsActive                                                                |
 | 66  | \[3.0.0+\] GetCurrentIlluminance                                                             |
 | 67  | \[3.0.0+\] IsIlluminanceAvailable                                                            |
+| 68  | \[4.0.0+\] SetAutoSleepDisabled                                                              |
+| 69  | \[4.0.0+\] IsAutoSleepDisabled                                                               |
+| 70  | \[5.0.0+\] ReportMultimediaError                                                             |
+| 80  | \[5.0.0+\] SetWirelessPriorityMode                                                           |
 
 ### Exit
 
@@ -548,28 +573,34 @@ No input/output.
 
 ## IDisplayController
 
-| Cmd | Name                                   |
-| --- | -------------------------------------- |
-| 0   | GetLastForegroundCaptureImage          |
-| 1   | UpdateLastForegroundCaptureImage       |
-| 2   | GetLastApplicationCaptureImage         |
-| 3   | GetCallerAppletCaptureImage            |
-| 4   | UpdateCallerAppletCaptureImage         |
-| 5   | GetLastForegroundCaptureImageEx        |
-| 6   | GetLastApplicationCaptureImageEx       |
-| 7   | GetCallerAppletCaptureImageEx          |
-| 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer    |
-| 10  | AcquireLastApplicationCaptureBuffer    |
-| 11  | ReleaseLastApplicationCaptureBuffer    |
-| 12  | AcquireLastForegroundCaptureBuffer     |
-| 13  | ReleaseLastForegroundCaptureBuffer     |
-| 14  | AcquireCallerAppletCaptureBuffer       |
-| 15  | ReleaseCallerAppletCaptureBuffer       |
-| 16  | AcquireLastApplicationCaptureBufferEx  |
-| 17  | AcquireLastForegroundCaptureBufferEx   |
-| 18  | AcquireCallerAppletCaptureBufferEx     |
-| 20  | \[2.0.0+\] ClearCaptureBuffer          |
-| 21  | \[2.0.0+\] ClearAppletTransitionBuffer |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | GetLastForegroundCaptureImage                        |
+| 1   | UpdateLastForegroundCaptureImage                     |
+| 2   | GetLastApplicationCaptureImage                       |
+| 3   | GetCallerAppletCaptureImage                          |
+| 4   | UpdateCallerAppletCaptureImage                       |
+| 5   | GetLastForegroundCaptureImageEx                      |
+| 6   | GetLastApplicationCaptureImageEx                     |
+| 7   | GetCallerAppletCaptureImageEx                        |
+| 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                  |
+| 10  | AcquireLastApplicationCaptureBuffer                  |
+| 11  | ReleaseLastApplicationCaptureBuffer                  |
+| 12  | AcquireLastForegroundCaptureBuffer                   |
+| 13  | ReleaseLastForegroundCaptureBuffer                   |
+| 14  | AcquireCallerAppletCaptureBuffer                     |
+| 15  | ReleaseCallerAppletCaptureBuffer                     |
+| 16  | AcquireLastApplicationCaptureBufferEx                |
+| 17  | AcquireLastForegroundCaptureBufferEx                 |
+| 18  | AcquireCallerAppletCaptureBufferEx                   |
+| 20  | \[2.0.0+\] ClearCaptureBuffer                        |
+| 21  | \[2.0.0+\] ClearAppletTransitionBuffer               |
+| 22  | \[4.0.0+\] AcquireLastApplicationCaptureSharedBuffer |
+| 23  | \[4.0.0+\] ReleaseLastApplicationCaptureSharedBuffer |
+| 24  | \[4.0.0+\] AcquireLastForegroundCaptureSharedBuffer  |
+| 25  | \[4.0.0+\] ReleaseLastForegroundCaptureSharedBuffer  |
+| 26  | \[4.0.0+\] AcquireCallerAppletCaptureSharedBuffer    |
+| 27  | \[4.0.0+\] ReleaseCallerAppletCaptureSharedBuffer    |
 
 ## ILibraryAppletCreator
 
@@ -593,6 +624,7 @@ No input/output.
 | 23  | CancelWindingReservation                         |                                                                            |
 | 30  | WindAndDoReserved                                |                                                                            |
 | 40  | ReserveToStartAndWaitAndUnwindThis               | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"). |
+| 41  | \[4.0.0+\] ReserveToStartAndWait                 |                                                                            |
 
 ### GetLaunchReason
 
@@ -643,7 +675,6 @@ This is
 | Cmd | Name                                                       | Notes |
 | --- | ---------------------------------------------------------- | ----- |
 | 0   | [\#OpenApplicationProxy](#OpenApplicationProxy "wikilink") |       |
-|     |                                                            |       |
 
 This seems to be used by all(?) regular-applications, even
 [flog](Flog.md "wikilink").
@@ -668,8 +699,8 @@ This is "nn::idle::detail::IPolicyManagerSystem"
 | Cmd | Name                  |
 | --- | --------------------- |
 | 0   | GetAutoPowerDownEvent |
-| 1   |                       |
-| 2   |                       |
+| 1   | \[1.0.0-3.0.2\]       |
+| 2   | \[1.0.0-3.0.2\]       |
 | 3   |                       |
 | 4   |                       |
 | 5   |                       |
@@ -696,6 +727,20 @@ that interacts with the [Dock](Dock.md "wikilink") through
 | 7   | FadeOutDisplay              |
 | 8   | \[2.0.0+\]                  |
 | 9   | \[2.0.0+\]                  |
+| 10  | \[3.0.0+\]                  |
+| 11  | \[3.0.0+\]                  |
+| 12  | \[3.0.0+\]                  |
+| 13  | \[3.0.0+\]                  |
+| 14  | \[3.0.0+\]                  |
+| 15  | \[4.0.0+\]                  |
+| 16  | \[4.0.0+\]                  |
+| 17  | \[4.0.0+\]                  |
+| 18  | \[4.0.0+\]                  |
+| 19  | \[4.0.0+\]                  |
+| 20  | \[4.0.0+\]                  |
+| 21  | \[4.0.0+\]                  |
+| 22  | \[4.0.0+\]                  |
+| 23  | \[4.0.0+\]                  |
 
 # spsm
 
@@ -714,7 +759,7 @@ This is "nn::spsm::detail::IPowerStateInterface".
 | 8   | AnalyzePerformanceLogForLastSleepWakeSequence |
 | 9   | ChangeHomeButtonLongPressingTime              |
 | 10  |                                               |
-| 11  |                                               |
+| 11  | \[1.0.0-3.0.2\]                               |
 
 # Enums
 
