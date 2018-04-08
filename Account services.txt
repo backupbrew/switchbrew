@@ -527,7 +527,7 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 104 || GetProfileUpdateNotifier || Returns an [[#INotifier]].
 |-
-| 105 || CheckNetworkServiceAvailabilityAsync || Returns an [[#IAsyncContext]].
+| 105 || [4.0.0+] CheckNetworkServiceAvailabilityAsync || Returns an [[#IAsyncContext]].
 |-
 | 110 || StoreSaveDataThumbnail ||
 |-

@@ -322,33 +322,33 @@ This is
 This is
 "nn::account::IAccountServiceForSystemService".
 
-| Cmd | Name                                     | Notes                                                                          |
-| --- | ---------------------------------------- | ------------------------------------------------------------------------------ |
-| 0   | GetUserCount                             |                                                                                |
-| 1   | GetUserExistence                         |                                                                                |
-| 2   | ListAllUsers                             |                                                                                |
-| 3   | ListOpenUsers                            |                                                                                |
-| 4   | GetLastOpenedUser                        |                                                                                |
-| 5   | GetProfile                               | Returns an [\#IProfile](#IProfile "wikilink").                                 |
-| 6   | GetProfileDigest                         |                                                                                |
-| 50  | IsUserRegistrationRequestPermitted       |                                                                                |
-| 51  | TrySelectUserWithoutInteraction          |                                                                                |
-| 60  | \[5.0.0+\] ListOpenContextStoredUsers    |                                                                                |
-| 100 | GetUserRegistrationNotifier              | Returns an [\#INotifier](#INotifier "wikilink").                               |
-| 101 | GetUserStateChangeNotifier               | Returns an [\#INotifier](#INotifier "wikilink").                               |
-| 102 | GetBaasAccountManagerForSystemService    | Returns an [\#IManagerForSystemService](#IManagerForSystemService "wikilink"). |
-| 103 | GetBaasUserAvailabilityChangeNotifier    | Returns an [\#INotifier](#INotifier "wikilink").                               |
-| 104 | GetProfileUpdateNotifier                 | Returns an [\#INotifier](#INotifier "wikilink").                               |
-| 105 | CheckNetworkServiceAvailabilityAsync     | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                       |
-| 110 | StoreSaveDataThumbnail                   |                                                                                |
-| 111 | ClearSaveDataThumbnail                   |                                                                                |
-| 112 | LoadSaveDataThumbnail                    |                                                                                |
-| 113 | \[5.0.0+\] GetSaveDataThumbnailExistence |                                                                                |
-| 190 | GetUserLastOpenedApplication             |                                                                                |
-| 191 | \[5.0.0+\] ActivateOpenContextHolder     |                                                                                |
-| 997 | DebugInvalidateTokenCacheForUser         |                                                                                |
-| 998 | DebugSetUserStateClose                   |                                                                                |
-| 999 | DebugSetUserStateOpen                    |                                                                                |
+| Cmd | Name                                            | Notes                                                                          |
+| --- | ----------------------------------------------- | ------------------------------------------------------------------------------ |
+| 0   | GetUserCount                                    |                                                                                |
+| 1   | GetUserExistence                                |                                                                                |
+| 2   | ListAllUsers                                    |                                                                                |
+| 3   | ListOpenUsers                                   |                                                                                |
+| 4   | GetLastOpenedUser                               |                                                                                |
+| 5   | GetProfile                                      | Returns an [\#IProfile](#IProfile "wikilink").                                 |
+| 6   | GetProfileDigest                                |                                                                                |
+| 50  | IsUserRegistrationRequestPermitted              |                                                                                |
+| 51  | TrySelectUserWithoutInteraction                 |                                                                                |
+| 60  | \[5.0.0+\] ListOpenContextStoredUsers           |                                                                                |
+| 100 | GetUserRegistrationNotifier                     | Returns an [\#INotifier](#INotifier "wikilink").                               |
+| 101 | GetUserStateChangeNotifier                      | Returns an [\#INotifier](#INotifier "wikilink").                               |
+| 102 | GetBaasAccountManagerForSystemService           | Returns an [\#IManagerForSystemService](#IManagerForSystemService "wikilink"). |
+| 103 | GetBaasUserAvailabilityChangeNotifier           | Returns an [\#INotifier](#INotifier "wikilink").                               |
+| 104 | GetProfileUpdateNotifier                        | Returns an [\#INotifier](#INotifier "wikilink").                               |
+| 105 | \[4.0.0+\] CheckNetworkServiceAvailabilityAsync | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                       |
+| 110 | StoreSaveDataThumbnail                          |                                                                                |
+| 111 | ClearSaveDataThumbnail                          |                                                                                |
+| 112 | LoadSaveDataThumbnail                           |                                                                                |
+| 113 | \[5.0.0+\] GetSaveDataThumbnailExistence        |                                                                                |
+| 190 | GetUserLastOpenedApplication                    |                                                                                |
+| 191 | \[5.0.0+\] ActivateOpenContextHolder            |                                                                                |
+| 997 | DebugInvalidateTokenCacheForUser                |                                                                                |
+| 998 | DebugSetUserStateClose                          |                                                                                |
+| 999 | DebugSetUserStateOpen                           |                                                                                |
 
 # acc:aa
 
