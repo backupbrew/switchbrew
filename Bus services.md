@@ -10,7 +10,10 @@ This is "nn::gpio::IManager".
 | 3   | IsWakeEventActive                                      |
 | 4   | GetWakeEventActiveFlagSet                              |
 | 5   | SetWakeEventActiveFlagSetForDebug                      |
-| 6   |                                                        |
+| 6   | SetWakePinDebugMode                                    |
+| 7   | \[5.0.0+\] [\#OpenSession2](#OpenSession2 "wikilink")  |
+| 8   | \[5.0.0+\] IsWakeEventActive2                          |
+| 9   | \[5.0.0+\] SetWakeEventActiveFlagSetForDebug2          |
 
 ## OpenSessionForDev
 
@@ -107,28 +110,34 @@ session.
 
 Same as [\#OpenSession](#OpenSession "wikilink") but panics on failure.
 
+## OpenSession2
+
+Same as [\#OpenSession](#OpenSession "wikilink") but takes a
+**DeviceCode** instead of a **GpioPadName**.
+
 ## IPadSession
 
 This is "nn::gpio::IPadSession".
 
-| Cmd | Name                 |
-| --- | -------------------- |
-| 0   | SetDirection         |
-| 1   | GetDirection         |
-| 2   | SetInterruptMode     |
-| 3   | GetInterruptMode     |
-| 4   | SetInterruptEnable   |
-| 5   | GetInterruptEnable   |
-| 6   | GetInterruptStatus   |
-| 7   | ClearInterruptStatus |
-| 8   | SetValue             |
-| 9   | GetValue             |
-| 10  | BindInterrupt        |
-| 11  | UnbindInterrupt      |
-| 12  | SetDebounceEnabled   |
-| 13  | GetDebounceEnabled   |
-| 14  | SetDebounceTime      |
-| 15  | GetDebounceTime      |
+| Cmd | Name                             |
+| --- | -------------------------------- |
+| 0   | SetDirection                     |
+| 1   | GetDirection                     |
+| 2   | SetInterruptMode                 |
+| 3   | GetInterruptMode                 |
+| 4   | SetInterruptEnable               |
+| 5   | GetInterruptEnable               |
+| 6   | GetInterruptStatus               |
+| 7   | ClearInterruptStatus             |
+| 8   | SetValue                         |
+| 9   | GetValue                         |
+| 10  | BindInterrupt                    |
+| 11  | UnbindInterrupt                  |
+| 12  | SetDebounceEnabled               |
+| 13  | GetDebounceEnabled               |
+| 14  | SetDebounceTime                  |
+| 15  | GetDebounceTime                  |
+| 16  | \[4.0.0+\] SetValueForSleepState |
 
 ## GpioPadDescriptor
 
@@ -212,7 +221,6 @@ This is "nn::uart::IManager".
 | 6   | GetSession                   |
 | 7   | IsSomethingUartValid2        |
 | 8   | IsSomethingUartValid2ForTest |
-|     |                              |
 
 ## IPortSession
 
@@ -272,5 +280,42 @@ This is "nn::pwm::IChannelSession".
 | 3   | GetDuty    |
 | 4   | SetEnabled |
 | 5   | GetEnabled |
+
+# pinmux
+
+This is "nn::pinmux::IManager".
+
+| Cmd | Name        |
+| --- | ----------- |
+| 0   | OpenSession |
+
+## ISession
+
+This is "nn::pinmux::ISession".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+
+# sasbus
+
+This is "nn::sasbus::IManager".
+
+| Cmd | Name        |
+| --- | ----------- |
+| 0   | OpenSession |
+
+## ISession
+
+This is "nn::sasbus::ISession".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
 
 [Category:Services](Category:Services "wikilink")

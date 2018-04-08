@@ -17,7 +17,13 @@ This is "nn::gpio::IManager".
 |-
 | 5 || SetWakeEventActiveFlagSetForDebug
 |-
-| 6 ||
+| 6 || SetWakePinDebugMode
+|-
+| 7 || [5.0.0+] [[#OpenSession2]]
+|-
+| 8 || [5.0.0+] IsWakeEventActive2
+|-
+| 9 || [5.0.0+] SetWakeEventActiveFlagSetForDebug2
 |}
 
 == OpenSessionForDev ==
@@ -189,6 +195,9 @@ Returns an [[#IPadSession]] session.
 == OpenSessionForTest ==
 Same as [[#OpenSession]] but panics on failure.
 
+== OpenSession2 ==
+Same as [[#OpenSession]] but takes a '''DeviceCode''' instead of a '''GpioPadName'''.
+
 == IPadSession ==
 This is "nn::gpio::IPadSession".
 
@@ -227,6 +236,8 @@ This is "nn::gpio::IPadSession".
 | 14 || SetDebounceTime
 |-
 | 15 || GetDebounceTime
+|-
+| 16 || [4.0.0+] SetValueForSleepState
 |}
 
 == GpioPadDescriptor ==
@@ -363,7 +374,6 @@ This is "nn::uart::IManager".
 | 7 || IsSomethingUartValid2
 |-
 | 8 || IsSomethingUartValid2ForTest
-|-
 |}
 
 == IPortSession ==
@@ -450,6 +460,56 @@ This is "nn::pwm::IChannelSession".
 | 4 || SetEnabled
 |-
 | 5 || GetEnabled
+|}
+
+= pinmux =
+This is "nn::pinmux::IManager".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || OpenSession
+|}
+
+== ISession ==
+This is "nn::pinmux::ISession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|}
+
+= sasbus =
+This is "nn::sasbus::IManager".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || OpenSession
+|}
+
+== ISession ==
+This is "nn::sasbus::ISession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
 |}
 
 [[Category:Services]]
