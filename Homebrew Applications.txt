@@ -175,6 +175,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Cpasjuste/REminiscence Yes]
 | 2018-03-28
 |-
+| Super Methane Brothers
+| An elimination platformer remake similar to Bubble Bobble (originally released for AMIGA in 1993). Blast baddies with your methane gun and survive 100 floors in the tower of time.
+| [[User:carstene1ns|carstene1ns]]
+| [https://f4ke.de/dev/switch/ Here]
+| [https://github.com/carstene1ns/super-methane-brothers Yes]
+| 2018-04-07
+|-
 |}
 
 === Emulators ===
