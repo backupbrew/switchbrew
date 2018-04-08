@@ -31,7 +31,7 @@ Returns an [[#IPadSession]] session.
 |-
 ! GpioPadName || GpioPadDescriptor || Tegra (port, pin) || Usage || Direction || Used by
 |-
-| 0x01 || 0xCC || Z, 4 || || Out || [[Audio services]], [[Fatal services]]
+| 0x01 || 0xCC || Z, 4 || rt5639 power || Out || [[Audio services]], [[Fatal services]]
 |-
 | 0x02 || 0x24 || E, 4 || SDCard Power || Out || [[Filesystem services]]
 |-
@@ -41,7 +41,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x05 || 0xDB || BB, 3 || GcAsic Power || Out || [[Filesystem services]]
 |-
-| 0x06 || 0xDC || BB, 4 || GPIO_X3_AUD_PBB4? || In || [[Audio services]]
+| 0x06 || 0xDC || BB, 4 || Headphone Detect || In || [[Audio services]]
 |-
 | 0x07 || 0x25 || E, 5 || || || 
 |-
@@ -77,19 +77,19 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x17 || 0xB9 || X, 1 || Touchscreen irq (TOUCH_INT_PX1) (unused - polled instead) || In || [[HID services]]
 |-
-| 0x18 || 0xBD || X, 5 || Power Button (BUTTON_POWER_ON_PX5) || ||
+| 0x18 || 0xBD || X, 5 || Power Button (BUTTON_POWER_ON_PX5) || In ||
 |-
 | 0x19 || 0xBE || X, 6 || Volume Up (BUTTON_VOL_UP_PX6) || In || [[Boot2]], [[Audio services]]
 |-
 | 0x1A || 0xBF || X, 7 || Volume Down (BUTTON_VOL_DOWN_PX7) || In || [[Boot2]], [[Audio services]]
 |-
-| 0x1B || 0xC0 || Y, 0 || max17050 irq (BUTTON_SLIDE_SW_PY0...?) || In || [[PTM services]]
+| 0x1B || 0xC0 || Y, 0 || max17050 irq || In || [[PTM services]]
 |-
-| 0x1C || 0xC1 || Y, 1 || BUTTON_HOME_PY1? || || 
+| 0x1C || 0xC1 || Y, 1 || BUTTON_HOME_PY1 || In || 
 |-
-| 0x1D || 0xA9 || V, 1 || Backlight (LCD_BL_EN_PV1?) || Out || [[NV services]], [[Backlight services]]
+| 0x1D || 0xA9 || V, 1 || Backlight (LCD_BL_EN_PV1) || Out || [[NV services]], [[Backlight services]]
 |-
-| 0x1E || 0xAA || V, 2 || Backlight (LCD_RST_PV2?) || Out || [[NV services]]
+| 0x1E || 0xAA || V, 2 || Backlight (LCD_RST_PV2) || Out || [[NV services]]
 |-
 | 0x1F || 0x55 || K, 5 || bq24192 OTG charge select || Out || [[PTM services]], [[USB services]]
 |-
@@ -101,7 +101,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x23 || 0xCB || Z, 3 || || || 
 |-
-| 0x24 || 0x4F || J, 7 || Touchscreen power || Out || [[HID services]]
+| 0x24 || 0x4F || J, 7 || Touchscreen reset || Out || [[HID services]]
 |-
 | 0x25 || 0x50 || K, 0 || || || 
 |-
@@ -121,7 +121,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x2D || 0x38 || H, 0 || WIFI_EN_PH0? || ||
 |-
-| 0x2E || 0x39 || H, 1 || WIFI_RST_PH1? || Out || [[Wlan services]], [[PCIe services]]
+| 0x2E || 0x39 || H, 1 || WIFI_RST_PH1 || Out || [[Wlan services]], [[PCIe services]]
 |-
 | 0x2F || 0x3B || H, 3 || AP_WAKE_BT_PH3 || Out || [[Bluetooth services]]
 |-
@@ -129,9 +129,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x31 || 0x3F || H, 7 || || ||
 |-
-| 0x32 || 0x40 || I, 0 || Backlight || Out || [[NV services]]
+| 0x32 || 0x40 || I, 0 || Backlight +5V || Out || [[NV services]]
 |-
-| 0x33 || 0x41 || I, 1 || Backlight || Out || [[NV services]]
+| 0x33 || 0x41 || I, 1 || Backlight -5V || Out || [[NV services]]
 |-
 | 0x34 || 0x3E || H, 6 || joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion) || In || [[HID services]]
 |-
@@ -159,7 +159,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x40 || 0xD9 || BB, 1 || || ||
 |-
-| 0x41 || 0x0C || B, 4 || || ||
+| 0x41 || 0x0C || B, 4 || Lid Closed (unused) || ||
 |-
 | 0x42 || 0x0D || B, 5 || || ||
 |-
@@ -183,7 +183,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x4C || 0xE6 || CC, 6 || || ||
 |-
-| -- || 0xE1 || CC, 1 || HdmiHotplug (HDMI_INT_DP_HPD_PCC1?) || In || [[NV services]]
+| -- || 0xE1 || CC, 1 || HdmiHotplug (HDMI_INT_DP_HPD_PCC1) || In || [[NV services]]
 |}
 
 == OpenSessionForTest ==
