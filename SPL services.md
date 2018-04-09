@@ -204,6 +204,10 @@ happens on retail.
 \[3.0.0+\] [RO](Loader%20services.md "wikilink") checks this and if set
 then skipping NRR rsa signatures is allowed.
 
+The value of this field is determined by
+[BootConfig](BootConfig.md "wikilink") fields, and if a certain
+BootConfig field is set, [\#DramId](#DramId "wikilink").
+
 ### KernelMemoryConfiguration
 
 Kernel reads this when setting up memory-related code. If bit0 is set,
