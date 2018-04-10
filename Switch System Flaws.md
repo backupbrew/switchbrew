@@ -45,7 +45,7 @@ Flaws.
 <p>SECURITY_ENGINE-&gt;AES_KEYTABLE_ADDR = (keyslot &lt;&lt; 24) | (dword_index_in_keyslot);</p>
 <p>SECURITY_ENGINE-&gt;AES_KEYTABLE_DATA = readle32(key, dword_index_in_keyslot * 4);</p>
 <p>However, the Security Engine flushes writes to the internal key tables immediately when AES_KEYTABLE_DATA is written -- this allows one to overwrite a single dword of a key at a time, and thus brute force the contents of keyslots in time (2^32 * 8) = 2^35 instead of 2^256.</p></td>
-<td><p>With access to the Security Engine MMIO: disclosure of contents of &quot;write-only&quot; security engine AES keyslots.</p></td>
+<td><p>None</p></td>
 <td><p>HAC-001</p></td>
 <td><p>Theorized Summer 2017 due to suggestive syntax, confirmed April 9, 2018</p></td>
 <td><p>April 9, 2018</p></td>
