@@ -16,6 +16,98 @@ These are "nn::bcat::detail::ipc::IServiceCreator".
 
 Equivalent to 3DS BOSS(SpotPass). See [[BCAT_Content_Container|here]] for BCAT-content-container.
 
+== IBcatService ==
+This is "nn::bcat::detail::ipc::IBcatService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 10100 || RequestSyncDeliveryCache
+|-
+| 10101 || [5.0.0+] RequestSyncDeliveryCacheWithDirectoryName
+|-
+| 10200 || [5.0.0+] CancelSyncDeliveryCacheRequest
+|-
+| 20100 || RequestSyncDeliveryCacheWithApplicationId
+|-
+| 20101 || [5.0.0+] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName
+|-
+| 30100 || SetPassphrase
+|-
+| 30200 || RegisterBackgroundDeliveryTask
+|-
+| 30201 || UnregisterBackgroundDeliveryTask
+|-
+| 30202 || BlockDeliveryTask
+|-
+| 30203 || UnblockDeliveryTask
+|-
+| 90100 || EnumerateBackgroundDeliveryTask
+|-
+| 90200 || GetDeliveryList
+|-
+| 90201 || ClearDeliveryCacheStorage
+|-
+| 90300 || GetPushNotificationLog
+|}
+
+=== IDeliveryCacheProgressService ===
+This is "nn::bcat::detail::ipc::IDeliveryCacheProgressService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetEvent
+|-
+| 1 || GetImpl
+|}
+
+== IDeliveryCacheStorageService ==
+This is "nn::bcat::detail::ipc::IDeliveryCacheStorageService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || CreateFileService
+|-
+| 1 || CreateDirectoryService
+|-
+| 10 || EnumerateDeliveryCacheDirectory
+|}
+
+=== IDeliveryCacheFileService ===
+This is "nn::bcat::detail::ipc::IDeliveryCacheFileService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Open
+|-
+| 1 || Read
+|-
+| 2 || GetSize
+|-
+| 3 || GetDigest
+|}
+
+=== IDeliveryCacheDirectoryService ===
+This is "nn::bcat::detail::ipc::IDeliveryCacheDirectoryService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Open
+|-
+| 1 || Read
+|-
+| 2 || GetCount
+|}
+
 = <nowiki>news:a, news:c, news:m, news:p, news:v</nowiki> =
 These are <nowiki>"nn::news::detail::ipc::IServiceCreator"</nowiki>.
 
