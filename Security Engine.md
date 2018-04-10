@@ -1,52 +1,52 @@
-The security engine (SE) is responsible for the crypto done on the
-switch. SE is mapped to physical address 0x70012000.
+The Nintendo Switch uses Tegra's Security Engine (SE) for handling
+cryptographic opearations at the system's lowest level.
 
-# SE registers
+The SE driver is mapped to physical address 0x70012000 with a total size
+of 0x2000 bytes and exposes several registers for programming the
+Security Engine.
 
-| Register                           | Offset |
-| ---------------------------------- | ------ |
-| OPERATION\_REG\_OFFSET             | 0x008  |
-| INT\_ENABLE\_REG\_OFFSET           | 0x00C  |
-| INT\_STATUS\_REG\_OFFSET           | 0x010  |
-| CONFIG\_REG\_OFFSET                | 0x014  |
-| IN\_LL\_ADDR\_REG\_OFFSET          | 0x018  |
-| OUT\_LL\_ADDR\_REG\_OFFSET         | 0x024  |
-| HASH\_RESULT\_REG\_OFFSET          | 0x030  |
-| CONTEXT\_SAVE\_CONFIG\_REG\_OFFSET | 0x070  |
-| SHA\_CONFIG\_REG                   | 0x200  |
-| SHA\_MSG\_LENGTH\_REG              | 0x204  |
-| SHA\_MSG\_LEFT\_REG                | 0x214  |
-| KEYSLOT\_1                         | 0x284  |
-| KEYSLOT\_2                         | 0x288  |
-| KEYSLOT\_3                         | 0x28C  |
-| KEYSLOT\_4                         | 0x290  |
-| KEYSLOT\_5                         | 0x294  |
-| KEYSLOT\_6                         | 0x298  |
-| KEYSLOT\_7                         | 0x29C  |
-| KEYSLOT\_8                         | 0x2A0  |
-| KEYSLOT\_9                         | 0x2A4  |
-| KEYSLOT\_10                        | 0x2A8  |
-| KEYSLOT\_11                        | 0x2AC  |
-| KEYSLOT\_12                        | 0x2B0  |
-| KEYSLOT\_13                        | 0x2B4  |
-| KEYSLOT\_14                        | 0x2B8  |
-| KEYSLOT\_15                        | 0x2BC  |
-| KEYSLOT\_16                        | 0x2C0  |
-| CRYPTO\_REG                        | 0x304  |
-| CRYPTO\_CTR\_REG                   | 0x308  |
-| BLOCK\_COUNT\_REG                  | 0x318  |
-| KEYTABLE\_REG                      | 0x31C  |
-| KEYTABLE\_DATA0\_REG               | 0x320  |
-| CRYPTO\_KEYTABLE\_DST\_REG         | 0x330  |
-| RNG\_CONFIG\_REG                   | 0x340  |
-| RNG\_SRC\_CONFIG\_REG              | 0x344  |
-| RNG\_RESEED\_INTERVAL\_REG         | 0x348  |
-| RSA\_CONFIG                        | 0x400  |
-| RSA\_KEY\_SIZE\_REG\_OFFSET        | 0x404  |
-| RSA\_EXP\_SIZE\_REG\_OFFSET        | 0x408  |
-| RSA\_KEYSLOT\_1                    | 0x410  |
-| RSA\_KEYSLOT\_2                    | 0x414  |
-| RSA\_KEYTABLE\_ADDR                | 0x420  |
-| RSA\_KEYTABLE\_DATA                | 0x424  |
-| RSA\_OUTPUT                        | 0x428  |
-| SPARE\_0\_REG\_OFFSET              | 0x80C  |
+# Registers
+
+| Name                        | Address    |
+| --------------------------- | ---------- |
+| SE\_OPERATION\_UNK0         | 0x70012000 |
+| SE\_OPERATION\_UNK1         | 0x70012004 |
+| SE\_OPERATION               | 0x70012008 |
+| SE\_INT\_ENABLE             | 0x7001200C |
+| SE\_INT\_STATUS             | 0x70012010 |
+| SE\_CONFIG                  | 0x70012014 |
+| SE\_IN\_LL\_ADDR            | 0x70012018 |
+| SE\_OUT\_LL\_ADDR           | 0x70012024 |
+| SE\_HASH\_RESULT            | 0x70012030 |
+| SE\_CONTEXT\_SAVE\_CONFIG   | 0x70012070 |
+| SE\_SHA\_CONFIG             | 0x70012200 |
+| SE\_SHA\_MSG\_LENGTH        | 0x70012204 |
+| SE\_SHA\_MSG\_UNK0          | 0x70012208 |
+| SE\_SHA\_MSG\_UNK1          | 0x7001220C |
+| SE\_SHA\_MSG\_UNK2          | 0x70012210 |
+| SE\_SHA\_MSG\_LEFT          | 0x70012214 |
+| SE\_SHA\_MSG\_UNK3          | 0x70012218 |
+| SE\_SHA\_MSG\_UNK4          | 0x7001221C |
+| SE\_SHA\_MSG\_UNK5          | 0x70012220 |
+| SE\_AES\_KEY\_READ\_DISABLE | 0x70012280 |
+| SE\_AES\_KEYTABLE\_ACCESS   | 0x70012284 |
+| SE\_CRYPTO                  | 0x70012304 |
+| SE\_CRYPTO\_CTR             | 0x70012308 |
+| SE\_BLOCK\_COUNT            | 0x70012318 |
+| SE\_AES\_KEYTABLE\_ADDR     | 0x7001231C |
+| SE\_AES\_KEYTABLE\_DATA     | 0x70012320 |
+| SE\_CRYPTO\_KEYTABLE\_DST   | 0x70012330 |
+| SE\_RNG\_CONFIG             | 0x70012340 |
+| SE\_RNG\_SRC\_CONFIG        | 0x70012344 |
+| SE\_RNG\_RESEED\_INTERVAL   | 0x70012348 |
+| SE\_RSA\_CONFIG             | 0x70012400 |
+| SE\_RSA\_KEY\_SIZE          | 0x70012404 |
+| SE\_RSA\_EXP\_SIZE          | 0x70012408 |
+| SE\_RSA\_KEY\_READ\_DISABLE | 0x7001240C |
+| SE\_RSA\_KEYTABLE\_ACCESS   | 0x70012410 |
+| SE\_RSA\_KEYTABLE\_ADDR     | 0x70012420 |
+| SE\_RSA\_KEYTABLE\_DATA     | 0x70012424 |
+| SE\_RSA\_OUTPUT             | 0x70012428 |
+| SE\_STATUS\_FLAGS           | 0x70012800 |
+| SE\_ERR\_STATUS             | 0x70012804 |
+| SE\_SPARE\_0                | 0x7001280C |
