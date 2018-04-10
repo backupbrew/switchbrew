@@ -106,6 +106,7 @@ driver registers.
 | [FUSE\_PRIVATE\_KEY2](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9AC |
 | [FUSE\_PRIVATE\_KEY3](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B0 |
 | [FUSE\_PRIVATE\_KEY4](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B4 |
+| FUSE\_BOOT\_DEVICE\_INFO                               | 0x7000F9BC |
 | [FUSE\_RESERVED\_SW](#FUSE_RESERVED_SW "wikilink")     | 0x7000F9C0 |
 | FUSE\_VP8\_ENABLE                                      | 0x7000F9C4 |
 | [FUSE\_RESERVED\_ODM0](#FUSE_RESERVED_ODM0 "wikilink") | 0x7000F9C8 |
@@ -138,6 +139,7 @@ driver registers.
 | FUSE\_TSENSOR\_COMMON                                  | 0x7000FA80 |
 | FUSE\_DEBUG\_AUTH\_OVERRIDE                            | 0x7000FA9C |
 | FUSE\_TSENSOR\_8                                       | 0x7000FAD4 |
+| FUSE\_SECURE\_PROVISION\_INDEX                         | 0x7000FAE8 |
 | FUSE\_RESERVED\_CALIB                                  | 0x7000FB04 |
 | FUSE\_TSENSOR\_9                                       | 0x7000FB1C |
 | FUSE\_USB\_CALIB\_EXT                                  | 0x7000FB50 |
@@ -256,10 +258,12 @@ BCT+0x210.
 
 | Bits | Description                                                             |
 | ---- | ----------------------------------------------------------------------- |
+| 0-2  | Boot device                                                             |
+| 3    | Skip device selection straps (0 = don't skip; 1 = skip)                 |
+| 4    | ENABLE\_CHARGER\_DETECT                                                 |
 | 5    | ENABLE\_WATCHDOG                                                        |
 | 6    | Forced RCM two button mode (0 = Only VOLUME\_UP; 1 = VOLUME\_UP + HOME) |
 | 7    | RCM USB controller mode (0 = USB 2.0; 1 = XUSB)                         |
-|      |                                                                         |
 
 This caches the value of the sw\_reserved fuse from the hardware array.
 

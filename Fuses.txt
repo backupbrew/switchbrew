@@ -187,6 +187,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | [[#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY4]]
 | 0x7000F9B4
 |-
+| FUSE_BOOT_DEVICE_INFO
+| 0x7000F9BC
+|-
 | [[#FUSE_RESERVED_SW|FUSE_RESERVED_SW]]
 | 0x7000F9C0
 |-
@@ -282,6 +285,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 |-
 | FUSE_TSENSOR_8
 | 0x7000FAD4
+|-
+| FUSE_SECURE_PROVISION_INDEX
+| 0x7000FAE8
 |-
 | FUSE_RESERVED_CALIB
 | 0x7000FB04
@@ -474,6 +480,15 @@ This stores the SHA256 hash of the 2048-bit RSA key expected at BCT+0x210.
 !  Bits
 !  Description
 |-
+| 0-2
+| Boot device
+|-
+| 3
+| Skip device selection straps (0 = don't skip; 1 = skip)
+|-
+| 4
+| ENABLE_CHARGER_DETECT
+|-
 | 5
 | ENABLE_WATCHDOG
 |-
@@ -482,7 +497,6 @@ This stores the SHA256 hash of the 2048-bit RSA key expected at BCT+0x210.
 |-
 | 7
 | RCM USB controller mode (0 = USB 2.0; 1 = XUSB)
-|-
 |}
 
 This caches the value of the sw_reserved fuse from the hardware array.
