@@ -39,6 +39,16 @@ Flaws.
 <td><p>January 20, 2018</p></td>
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a></p></td>
 </tr>
+<tr class="odd">
+<td><p>Security Engine keyslots vulnerable to partial overwrite attack</p></td>
+<td><p>The Tegra X1 security engine supports writing keyslot data to the engine with syntax as follows: SECURITY_ENGINE-&gt;AES_KEYTABLE_ADDR = (keyslot &lt;&lt; 24) | (dword_index_in_keyslot); SECURITY_ENGINE-&gt;AES_KEYTABLE_DATA = readle32(key, dword_index_in_keyslot * 4);</p>
+<p>However, the Security Engine flushes writes to the internal key tables immediately when AES_KEYTABLE_DATA is written -- this allows one to overwrite a single dword of a key at a time, and thus brute force the contents of keyslots in time (2^32 * 8) = 2^35 instead of 2^256.</p></td>
+<td><p>Disclosure of contents of &quot;write-only&quot; security engine AES keyslots.</p></td>
+<td><p>HAC-001</p></td>
+<td><p>Theorized Summer 2017 due to suggestive syntax, confirmed April 9, 2018</p></td>
+<td><p>April 9, 2018</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a>, almost surely others (independently).</p></td>
+</tr>
 </tbody>
 </table>
 

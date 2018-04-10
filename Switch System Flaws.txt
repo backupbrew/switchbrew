@@ -32,6 +32,16 @@ With a way to modify the encrypted state buffer, one can thus dump keys from "wr
 | December 2017
 | January 20, 2018
 | [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]]
+|-
+| Security Engine keyslots vulnerable to partial overwrite attack
+| The Tegra X1 security engine supports writing keyslot data to the engine with syntax as follows: SECURITY_ENGINE->AES_KEYTABLE_ADDR = (keyslot << 24) | (dword_index_in_keyslot); SECURITY_ENGINE->AES_KEYTABLE_DATA = readle32(key, dword_index_in_keyslot * 4); 
+
+However, the Security Engine flushes writes to the internal key tables immediately when AES_KEYTABLE_DATA is written -- this allows one to overwrite a single dword of a key at a time, and thus brute force the contents of keyslots in time (2^32 * 8) = 2^35 instead of 2^256.
+| Disclosure of contents of "write-only" security engine AES keyslots.
+| HAC-001
+| Theorized Summer 2017 due to suggestive syntax, confirmed April 9, 2018
+| April 9, 2018
+| [[User:SciresM|SciresM]], almost surely others (independently).
 |}
 
 == System software ==
