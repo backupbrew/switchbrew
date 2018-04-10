@@ -202,7 +202,7 @@ __NOTOC__
 |-
 | 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=[[#DebugThreadParam]] || W0=result, X1=out0, W2=out1
 |- style="border-top: double"
-| 0x6F || [5.0.0+] svcGetMemoryInfo || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
+| 0x6F || [5.0.0+] [[#svcGetMemoryInfo]] || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
 |-
 | 0x70 || svcCreatePort || W2=max_sessions, W3=unk_bool, X4=name_ptr || W0=result, W1=clientport_handle, W2=serverport_handle
 |-
@@ -1160,6 +1160,34 @@ Same as [[#svcMapDeviceAddressSpaceByForce]], but the userspace destination addr
 </div>
 
 '''Description:''' Unmaps an attached device address space from an userspace address.
+
+== svcGetMemoryInfo ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || InfoId
+|-
+| (In) W2 || Handle || Handle
+|-
+| (In) X3 || u64 || InfoSubId
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) X1 || u64 || Out
+|}
+</div>
+
+{| class=wikitable
+! Handle type || Id0 || Id1 || Description
+|-
+| Zero    || 2 || 0 || PrivilegedProcessId_LowerBound
+|-
+| Zero    || 2 || 1 || PrivilegedProcessId_UpperBound
+|-
+|}
 
 == svcSetProcessMemoryPermission ==
 

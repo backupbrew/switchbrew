@@ -103,7 +103,7 @@
 | 0x6B | svcWriteDebugProcessMemory                                                         | X0=debug\_handle, X1=buffer\*, X2=dst\_addr, X3=size                                                               | W0=result                                                |
 | 0x6C | svcSetHardwareBreakPoint                                                           | W0=HardwareBreakpointId, X1=watchpoint\_flags, X2=watchpoint\_value/debug\_handle?                                 |                                                          |
 | 0x6D | svcGetDebugThreadParam                                                             | X2=debug\_handle, X3=thread\_id, W4=[\#DebugThreadParam](#DebugThreadParam "wikilink")                             | W0=result, X1=out0, W2=out1                              |
-| 0x6F | \[5.0.0+\] svcGetMemoryInfo                                                        | X1=info\_id, X2=handle, X3=info\_sub\_id                                                                           | W0=result, X1=out                                        |
+| 0x6F | \[5.0.0+\] [\#svcGetMemoryInfo](#svcGetMemoryInfo "wikilink")                      | X1=info\_id, X2=handle, X3=info\_sub\_id                                                                           | W0=result, X1=out                                        |
 | 0x70 | svcCreatePort                                                                      | W2=max\_sessions, W3=unk\_bool, X4=name\_ptr                                                                       | W0=result, W1=clientport\_handle, W2=serverport\_handle  |
 | 0x71 | svcManageNamedPort                                                                 | X1=name\_ptr, W2=max\_sessions                                                                                     | W0=result, W1=serverport\_handle                         |
 | 0x72 | svcConnectToPort                                                                   | W1=clientport\_handle                                                                                              | W0=result, W1=session\_handle                            |
@@ -981,6 +981,26 @@ bit set instead.
 
 **Description:** Unmaps an attached device address space from an
 userspace address.
+
+## svcGetMemoryInfo
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name      |
+| -------- | ------------------------------ | --------- |
+| (In) X1  | u64                            | InfoId    |
+| (In) W2  | Handle                         | Handle    |
+| (In) X3  | u64                            | InfoSubId |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret       |
+| (Out) X1 | u64                            | Out       |
+
+</div>
+
+| Handle type | Id0 | Id1 | Description                     |
+| ----------- | --- | --- | ------------------------------- |
+| Zero        | 2   | 0   | PrivilegedProcessId\_LowerBound |
+| Zero        | 2   | 1   | PrivilegedProcessId\_UpperBound |
+|             |     |     |                                 |
 
 ## svcSetProcessMemoryPermission
 
