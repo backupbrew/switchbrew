@@ -42,7 +42,7 @@ Flaws.
 <tr class="odd">
 <td><p>Security Engine keyslots vulnerable to partial overwrite attack</p></td>
 <td><p>The Tegra X1 security engine supports writing keyslot data to the engine with syntax as follows:</p>
-<p>SECURITY_ENGINE-&gt;AES_KEYTABLE_ADDR = (keyslot &lt;&lt; 24) | (dword_index_in_keyslot);</p>
+<p>SECURITY_ENGINE-&gt;AES_KEYTABLE_ADDR = (keyslot &lt;&lt; 4) | (dword_index_in_keyslot);</p>
 <p>SECURITY_ENGINE-&gt;AES_KEYTABLE_DATA = readle32(key, dword_index_in_keyslot * 4);</p>
 <p>However, the Security Engine flushes writes to the internal key tables immediately when AES_KEYTABLE_DATA is written -- this allows one to overwrite a single dword of a key at a time, and thus brute force the contents of keyslots in time (2^32 * 8) = 2^35 instead of 2^256.</p></td>
 <td><p>None</p></td>

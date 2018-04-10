@@ -37,7 +37,7 @@ With a way to modify the encrypted state buffer, one can thus dump keys from "wr
 | 
 The Tegra X1 security engine supports writing keyslot data to the engine with syntax as follows: 
 
-SECURITY_ENGINE->AES_KEYTABLE_ADDR = (keyslot << 24) | (dword_index_in_keyslot); 
+SECURITY_ENGINE->AES_KEYTABLE_ADDR = (keyslot << 4) | (dword_index_in_keyslot); 
 
 SECURITY_ENGINE->AES_KEYTABLE_DATA = readle32(key, dword_index_in_keyslot * 4); 
 
