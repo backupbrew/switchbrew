@@ -14,7 +14,7 @@ This is
 | Cmd | Name                                                                      | Notes                                                                    |
 | --- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | 100 | OpenSystemAppletProxy                                                     | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").       |
-| 200 | OpenLibraryAppletProxy ( \[3.0.0+\] OpenLibraryAppletProxyOld)            | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
+| 200 | OpenLibraryAppletProxyOld (\[1.0.0-2.3.0\] OpenLibraryAppletProxy)        | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
 | 201 | \[3.0.0+\] [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
 | 300 | OpenOverlayAppletProxy                                                    | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").     |
 | 350 | OpenSystemApplicationProxy                                                | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").         |
@@ -187,7 +187,8 @@ commands.
 | 50  | \[2.0.0+\] ReportVisibleError                                                                               |                                                |
 | 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                               |                                                |
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |                                                |
-| 100 | \[4.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |                                                |
+| 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |                                                |
+| 100 | \[4.0.0+\] CreateGameMovieTrimmer                                                                           |                                                |
 
 #### ExitProcessAndReturn
 
@@ -263,6 +264,7 @@ No input, returns an output
 | 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                             |                                                |
 | 25   | \[2.0.0+\] ExtendSaveData                                                           |                                                |
 | 26   | \[2.0.0+\] GetSaveDataSize                                                          |                                                |
+| 27   | \[5.0.0+\] CreateCacheStorage                                                       |                                                |
 | 30   | BeginBlockingHomeButtonShortAndLongPressed                                          |                                                |
 | 31   | EndBlockingHomeButtonShortAndLongPressed                                            |                                                |
 | 32   | BeginBlockingHomeButton                                                             |                                                |
@@ -287,7 +289,7 @@ No input, returns an output
 | 122  | \[5.0.0+\] UnpopToUserChannel                                                       |                                                |
 | 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                    |                                                |
 | 1000 | \[5.0.0+\] CreateMovieMaker                                                         |                                                |
-| 1001 | \[5.0.0+\] PrepareForJit                                                            |                                                |
+| 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                             |                                                |
 
 The BOTW game uses this GamePlayRecording functionality from the
 main-nso "nninitStartup" function, with size 0x6000000(96MiB). The
@@ -331,8 +333,13 @@ TransferMemory.
 
 #### SetGamePlayRecordingState
 
-Takes an input
-u32.
+Takes an input u32.
+
+#### PrepareForJit
+
+Takes no input. Launches title 010000000000003B (currently not present
+on retail systems) if some context variable is
+set.
 
 ## ILibraryAppletCreator
 
@@ -392,12 +399,13 @@ u32.
 | 40  | \[2.0.0+\] GetCradleFwVersion                                 |                                                          |
 | 50  | \[3.0.0+\] IsVrModeEnabled                                    |                                                          |
 | 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink") |                                                          |
-| 52  | \[4.0.0+\] SwitchLcdBacklight                                 |                                                          |
+| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                           |                                                          |
 | 55  | \[3.0.0+\] IsInControllerFirmwareUpdateSection                |                                                          |
 | 60  | \[3.0.0+\] GetDefaultDisplayResolution                        |                                                          |
 | 61  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent             |                                                          |
 | 62  | \[4.0.0+\] GetHdcpAuthenticationState                         |                                                          |
 | 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent              |                                                          |
+| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                        |                                                          |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -584,6 +592,7 @@ No input/output.
 | 6   | GetLastApplicationCaptureImageEx                     |
 | 7   | GetCallerAppletCaptureImageEx                        |
 | 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                  |
+| 9   | \[5.0.0+\] CopyBetweenCaptureBuffers                 |
 | 10  | AcquireLastApplicationCaptureBuffer                  |
 | 11  | ReleaseLastApplicationCaptureBuffer                  |
 | 12  | AcquireLastForegroundCaptureBuffer                   |

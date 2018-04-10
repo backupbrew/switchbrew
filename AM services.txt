@@ -11,7 +11,7 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 |-
 | 100 || OpenSystemAppletProxy || Returns an [[#ISystemAppletProxy]].
 |-
-| 200 || OpenLibraryAppletProxy ( [3.0.0+] OpenLibraryAppletProxyOld) || Returns an [[#ILibraryAppletProxy]].
+| 200 || OpenLibraryAppletProxyOld ([1.0.0-2.3.0] OpenLibraryAppletProxy) || Returns an [[#ILibraryAppletProxy]].
 |-
 | 201 || [3.0.0+] [[#OpenLibraryAppletProxy]] || Returns an [[#ILibraryAppletProxy]].
 |-
@@ -274,7 +274,9 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 60 || [4.0.0+] [[#GetMainAppletApplicationDesiredLanguage]] ||
 |-
-| 100 || [4.0.0+] CreateApplicationAndPushAndRequestToLaunch ||
+| 90 || [5.0.0+] CreateApplicationAndPushAndRequestToLaunch ||
+|-
+| 100 || [4.0.0+] CreateGameMovieTrimmer ||
 |}
 
 ==== ExitProcessAndReturn ====
@@ -385,6 +387,8 @@ No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 |-
 | 26 || [2.0.0+] GetSaveDataSize ||
 |-
+| 27 || [5.0.0+] CreateCacheStorage ||
+|-
 | 30 || BeginBlockingHomeButtonShortAndLongPressed ||
 |-
 | 31 || EndBlockingHomeButtonShortAndLongPressed ||
@@ -433,7 +437,7 @@ No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 |-
 | 1000 || [5.0.0+] CreateMovieMaker || 
 |-
-| 1001 || [5.0.0+] PrepareForJit ||
+| 1001 || [5.0.0+] [[#PrepareForJit]] ||
 |}
 
 The BOTW game uses this GamePlayRecording functionality from the main-nso "nninitStartup" function, with size 0x6000000(96MiB). The official GamePlayRecording-enable code does the following(this will panic on any failure):
@@ -459,6 +463,9 @@ Takes a TransferMemory handle and an u64 for the size of the TransferMemory.
 
 ==== SetGamePlayRecordingState ====
 Takes an input u32.
+
+==== PrepareForJit ====
+Takes no input. Launches title 010000000000003B (currently not present on retail systems) if some context variable is set.
 
 == ILibraryAppletCreator ==
 {| class="wikitable" border="1"
@@ -565,7 +572,7 @@ Takes an input u32.
 |-
 | 51 || [3.0.0+] [[#SetVrModeEnabled]] ||
 |-
-| 52 || [4.0.0+] SwitchLcdBacklight ||
+| 52 || [4.0.0+] SetLcdBacklighOffEnabled ||
 |-
 | 55 || [3.0.0+] IsInControllerFirmwareUpdateSection ||
 |-
@@ -576,6 +583,8 @@ Takes an input u32.
 | 62 || [4.0.0+] GetHdcpAuthenticationState || 
 |-
 | 63 || [4.0.0+] GetHdcpAuthenticationStateChangeEvent ||
+|-
+| 64 || [5.0.0+] SetTvPowerStateMatchingMode ||
 |}
 
 Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#NotificationMessage]]).
@@ -778,6 +787,8 @@ No input/output.
 | 7 || GetCallerAppletCaptureImageEx
 |-
 | 8 || [2.0.0+] TakeScreenShotOfOwnLayer
+|-
+| 9 || [5.0.0+] CopyBetweenCaptureBuffers
 |-
 | 10 || AcquireLastApplicationCaptureBuffer
 |-
