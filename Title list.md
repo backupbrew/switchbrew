@@ -549,7 +549,7 @@ Decimal versions use the format:
 <tr class="odd">
 <td><p>010000000000003B</p></td>
 <td></td>
-<td><p>This title is referenced by <a href="5.0.0.md" title="wikilink">5.0.0</a> am, but does not exist on retail systems.</p></td>
+<td><p>This title is launched by [5.0.0+] <a href="AM services#PrepareForJit.md##PrepareForJit" title="wikilink">AM_services#PrepareForJit</a>, but does not exist on retail systems currently.</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000003C</p></td>
