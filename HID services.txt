@@ -121,6 +121,8 @@ This is "nn::hid::IHidServer".
 |-
 | 132 || EnableUnintendedHomeButtonInputProtection
 |-
+| 133 || [5.0.0+] SetNpadJoyAssignmentModeSingleWithDestination
+|-
 | 200 || [[#GetVibrationDeviceInfo]]
 |-
 | 201 || [[#SendVibrationValue]]
@@ -135,17 +137,75 @@ This is "nn::hid::IHidServer".
 |-
 | 206 || [[#SendVibrationValues]]
 |-
+| 207 || [4.0.0+] SendVibrationGcErmCommand
+|-
+| 208 || [4.0.0+] GetActualVibrationGcErmCommand
+|-
+| 209 || [4.0.0+] BeginPermitVibrationSession
+|-
+| 210 || [4.0.0+] EndPermitVibrationSession
+|-
 | 300 || ActivateConsoleSixAxisSensor
 |-
 | 301 || StartConsoleSixAxisSensor
 |-
 | 302 || StopConsoleSixAxisSensor
 |-
+| 303 || [5.0.0+] ActivateSevenSixAxisSensor
+|-
+| 304 || [5.0.0+] StartSevenSixAxisSensor
+|-
+| 305 || [5.0.0+] StopSevenSixAxisSensor
+|-
+| 306 || [5.0.0+] InitializeSevenSixAxisSensor
+|-
+| 307 || [5.0.0+] FinalizeSevenSixAxisSensor
+|-
+| 308 || [5.0.0+] SetSevenSixAxisSensorFusionStrength
+|-
+| 309 || [5.0.0+] GetSevenSixAxisSensorFusionStrength
+|-
 | 400 || IsUsbFullKeyControllerEnabled
 |-
 | 401 || EnableUsbFullKeyController
 |-
 | 402 || IsUsbFullKeyControllerConnected
+|-
+| 403 || [4.0.0+] HasBattery
+|-
+| 404 || [4.0.0+] HasLeftRightBattery
+|-
+| 405 || [4.0.0+] GetNpadInterfaceType
+|-
+| 406 || [4.0.0+] GetNpadLeftRightInterfaceType
+|-
+| 500 || [5.0.0+] GetPalmaConnectionHandle
+|-
+| 501 || [5.0.0+] InitializePalma
+|-
+| 502 || [5.0.0+] AcquirePalmaOperationCompleteEvent
+|-
+| 503 || [5.0.0+] GetPalmaOperationInfo
+|-
+| 504 || [5.0.0+] PlayPalmaActivity
+|-
+| 505 || [5.0.0+] SetPalmaFrModeType
+|-
+| 506 || [5.0.0+] ReadPalmaStep
+|-
+| 507 || [5.0.0+] EnablePalmaStep
+|-
+| 508 || [5.0.0+] SuspendPalmaStep
+|-
+| 509 || [5.0.0+] ResetPalmaStep
+|-
+| 510 || [5.0.0+] ReadPalmaApplicationSection
+|-
+| 511 || [5.0.0+] WritePalmaApplicationSection
+|-
+| 512 || [5.0.0+] ReadPalmaUniqueCode
+|-
+| 513 || [5.0.0+] SetPalmaUniqueCodeInvalid
 |-
 | 1000 || SetNpadCommunicationMode
 |-
@@ -300,6 +360,10 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 140 || DeactivateConsoleSixAxisSensor
 |-
+| 141 || [5.0.0+] GetConsoleSixAxisSensorSamplingFrequency
+|-
+| 142 || [5.0.0+] DeactivateSevenSixAxisSensor
+|-
 | 201 || ActivateFirmwareUpdate
 |-
 | 202 || DeactivateFirmwareUpdate
@@ -318,7 +382,33 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 209 || GetAvailableFirmwareVersionForRevert
 |-
-| 211 || UpdateControllerColor
+| 210 || [4.0.0+] IsFirmwareUpdatingDevice
+|-
+| 221 || UpdateControllerColor
+|-
+| 222 || [4.0.0+] ConnectUsbPadsAsync
+|-
+| 223 || [4.0.0+] DisconnectUsbPadsAsync
+|-
+| 224 || [5.0.0+] UpdateDesignInfo
+|-
+| 225 || [5.0.0+] GetUniquePadDriverState
+|-
+| 226 || [5.0.0+] GetSixAxisSensorDriverStates
+|-
+| 301 || [5.0.0+] GetAbstractedPadHandles
+|-
+| 302 || [5.0.0+] GetAbstractedPadState
+|-
+| 303 || [5.0.0+] GetAbstractedPadsState
+|-
+| 321 || [5.0.0+] SetAutoPilotVirtualPadState
+|-
+| 322 || [5.0.0+] UnsetAutoPilotVirtualPadState
+|-
+| 323 || [5.0.0+] UnsetAllAutoPilotVirtualPadState
+|-
+| 350 || [5.0.0+] AddRegisteredDevice
 |}
 
 = hid:sys =
@@ -350,6 +440,10 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 213 || ActivateNfc
 |-
+| 214 || [4.0.0+] GetXcdHandleForNpadWithNfc
+|-
+| 215 || [4.0.0+] IsNfcActivated
+|-
 | 230 || AcquireIrSensorEventHandle
 |-
 | 231 || ActivateIrSensor
@@ -365,6 +459,10 @@ This is "nn::hid::IHidSystemServer".
 | 306 || GetLastActiveNpad
 |-
 | 307 || GetNpadSystemExtStyle
+|-
+| 308 || [5.0.0+] ApplyNpadSystemCommonPolicyFull
+|-
+| 309 || [5.0.0+] GetNpadFullKeyGripColor
 |-
 | 311 || SetNpadPlayerLedBlinkingDevice
 |-
@@ -404,7 +502,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 542 || AcquirePlayReportRegisteredDeviceUpdateEvent
 |-
-| 543 || GetRegisteredDevices
+| 543 || GetRegisteredDevicesOld ([1.0.0-4.1.0] GetRegisteredDevices)
 |-
 | 544 || AcquireConnectionTriggerTimeoutEvent
 |-
@@ -413,6 +511,8 @@ This is "nn::hid::IHidSystemServer".
 | 546 || AcquireDeviceRegisteredEventForControllerSupport
 |-
 | 547 || GetAllowedBluetoothLinksCount
+|-
+| 548 || [5.0.0+] GetRegisteredDevices
 |-
 | 700 || ActivateUniquePad
 |-
@@ -436,6 +536,16 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 806 || DisconnectUniquePad
 |-
+| 807 || [5.0.0+] GetUniquePadType
+|-
+| 808 || [5.0.0+] GetUniquePadInterface
+|-
+| 809 || [5.0.0+] GetUniquePadSerialNumber
+|-
+| 810 || [5.0.0+] GetUniquePadControllerNumber
+|-
+| 811 || [5.0.0+] GetSixAxisSensorUserCalibrationStage
+|-
 | 821 || StartAnalogStickManualCalibration
 |-
 | 822 || RetryCurrentAnalogStickManualCalibrationStage
@@ -443,6 +553,16 @@ This is "nn::hid::IHidSystemServer".
 | 823 || CancelAnalogStickManualCalibration
 |-
 | 824 || ResetAnalogStickManualCalibration
+|-
+| 825 || [5.0.0+] GetAnalogStickState
+|-
+| 826 || [5.0.0+] GetAnalogStickManualCalibrationStage
+|-
+| 827 || [5.0.0+] IsAnalogStickButtonPressed
+|-
+| 828 || [5.0.0+] IsAnalogStickInReleasePosition
+|-
+| 829 || [5.0.0+] IsAnalogStickInCircumference
 |-
 | 850 || IsUsbFullKeyControllerEnabled
 |-
@@ -469,12 +589,40 @@ This is "nn::hid::IHidSystemServer".
 | 1006 || AbortFirmwareUpdate
 |-
 | 1007 || GetFirmwareUpdateState
+|-
+| 1008 || [4.0.0+] ActivateAudioControl
+|-
+| 1009 || [4.0.0+] AcquireAudioControlEventHandle
+|-
+| 1010 || [4.0.0+] GetAudioControlStates
+|-
+| 1011 || [4.0.0+] DeactivateAudioControl
+|-
+| 1050 || [5.0.0+] IsSixAxisSensorAccurateUserCalibrationSupported
+|-
+| 1051 || [5.0.0+] StartSixAxisSensorAccurateUserCalibration
+|-
+| 1052 || [5.0.0+] CancelSixAxisSensorAccurateUserCalibration
+|-
+| 1053 || [5.0.0+] GetSixAxisSensorAccurateUserCalibrationState
+|-
+| 1100 || [5.0.0+] GetHidbusSystemServiceObject
 |}
 
 == SetVibrationMasterVolume ==
 Takes an input 32bit float.
 
-=irs=
+= hid:tmp =
+This is "nn::hid::IHidTemporaryServer".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || GetConsoleSixAxisSensorCalibrationValues
+|}
+
+= irs =
 This is "nn::irsensor::IIrSensorServer".
 
 {| class="wikitable" border="1"
@@ -501,60 +649,70 @@ This is "nn::irsensor::IIrSensorServer".
 |-
 | 311 || [[#GetNpadIrCameraHandle]]
 |-
-| 312 || [[#RunDpdProcessor]]
+| 312 || [[#RunPointingProcessor]]
 |-
 | 313 || [[#SuspendImageProcessor]]
 |-
 | 314 || [3.0.0+] [[#CheckFirmwareVersion]]
+|-
+| 315 || [5.0.0+] SetFunctionLevel
+|-
+| 316 || [5.0.0+] RunImageTransferExProcessor
+|-
+| 317 || [5.0.0+] RunIrLedProcessor
+|-
+| 318 || [5.0.0+] StopImageProcessorAsync
+|-
+| 319 || [5.0.0+] ActivateIrsensorWithFunctionLevel
 |}
 
-==ActivateIrsensor==
+== ActivateIrsensor ==
 Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]]. No output.
 
-==DeactivateIrsensor==
+== DeactivateIrsensor ==
 Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]]. No output.
 
-==GetIrsensorSharedMemoryHandle==
+== GetIrsensorSharedMemoryHandle ==
 Takes a PID-descriptor and an [[AM_services|AppletResourceUserId]]. Returns a SharedMemory handle.
 
 The SharedMemory is mapped with permissions=read-only and size=0x8000.
 
-==StopImageProcessor==
+== StopImageProcessor ==
 Takes a PID-descriptor, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]]. No output.
 
-==RunMomentProcessor==
+== RunMomentProcessor ==
 Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], and a [[#PackedMomentProcessorConfig]]. No output.
 
-==RunClusteringProcessor==
+== RunClusteringProcessor ==
 Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], and a [[#PackedClusteringProcessorConfig]]. No output.
 
-==RunImageTransferProcessor==
+== RunImageTransferProcessor ==
 Takes a PID-descriptor, an [[#IrCameraHandle]], an [[AM_services|AppletResourceUserId]], a [[#PackedImageTransferProcessorConfig]], an u64 for the TransferMemory_size, and a TransferMemory handle. No output.
 
 Official sw creates the TransferMemory with an user-specified buffer and permissions=0.
 
-==GetImageTransferProcessorState==
+== GetImageTransferProcessorState ==
 Takes a PID-descriptor, a type-0x6 output buffer, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]]. Returns an [[#ImageTransferProcessorState]]. No output.
 
-==RunTeraPluginProcessor==
+== RunTeraPluginProcessor==
 Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedTeraPluginProcessorConfig]] (immediately after the previous word), and an [[AM_services|AppletResourceUserId]]. No output.
 
-==GetNpadIrCameraHandle==
+== GetNpadIrCameraHandle ==
 Takes an input u32. Returns an output [[#IrCameraHandle]].
 
-==RunDpdProcessor==
+== RunPointingProcessor ==
 Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedDpdProcessorConfig]] (immediately after the previous word), and an [[AM_services|AppletResourceUserId]]. No output.
 
-==SuspendImageProcessor==
+== SuspendImageProcessor ==
 Takes a PID-descriptor, an [[#IrCameraHandle]], and an [[AM_services|AppletResourceUserId]]. No output.
 
-==CheckFirmwareVersion==
+== CheckFirmwareVersion ==
 Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedMcuVersion]], and an [[AM_services|AppletResourceUserId]]. No output.
 
-==IrCameraHandle==
+== IrCameraHandle ==
 This is an u32.
 
-==PackedMomentProcessorConfig==
+== PackedMomentProcessorConfig ==
 This is a 0x20-byte struct. This is converted from another structure by the official user-process.
 
 {| class="wikitable" border="1"
@@ -582,25 +740,155 @@ This is a 0x20-byte struct. This is converted from another structure by the offi
 | 0x1E || 0x2 || Padding || 
 |}
 
-==PackedClusteringProcessorConfig==
+== PackedClusteringProcessorConfig ==
 This is a 0x28-byte struct.
 
-==PackedImageTransferProcessorConfig==
+== PackedImageTransferProcessorConfig ==
 This is a 0x18-byte struct. This is converted from another structure by the official user-process. The conversion is the same as PackedMomentProcessorConfig, except the code using out +0x1C/+0x1D was removed, and the constant is now located at out+0x10. The code which wrote to out u64 +0x10 from in+0x24 was replaced with code which writes an u8 to out+0x14.
 
-==ImageTransferProcessorState==
+== ImageTransferProcessorState ==
 This is a 0x10-byte struct.
 
-==PackedTeraPluginProcessorConfig==
+== PackedTeraPluginProcessorConfig ==
 This is an u64.
 
-==PackedDpdProcessorConfig==
+== PackedDpdProcessorConfig ==
 This is a 0x10-byte struct.
 
-==PackedMcuVersion==
+== PackedMcuVersion ==
 This is an u32.
 
-=RomFS=
+= irs:sys =
+This is "nn::irsensor::IIrSensorSystemServer".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 500 || SetAppletResourceUserId
+|-
+| 501 || RegisterAppletResourceUserId
+|-
+| 502 || UnregisterAppletResourceUserId
+|-
+| 503 || EnableAppletToGetInput
+|}
+
+= ahid:cd =
+This is "nn::ahid::IServerSession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|}
+
+= ahid:hdr =
+This is "nn::ahid::hdr::ISession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 ||
+|}
+
+= xcd:sys =
+This is "nn::xcd::detail::ISystemServer".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 || 
+|-
+| 5 || 
+|-
+| 10 || 
+|-
+| 11 || 
+|-
+| 12 || 
+|-
+| 13 || 
+|-
+| 14 || 
+|-
+| 15 || 
+|-
+| 16 || 
+|-
+| 17 || 
+|-
+| 18 || 
+|-
+| 19 || 
+|-
+| 20 || 
+|-
+| 101 || 
+|-
+| 102 || 
+|}
+
+= hidbus =
+This is "nn::hidbus::IHidbusServer".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 1 || GetBusHandle
+|-
+| 2 || IsExternalDeviceConnected
+|-
+| 3 || Initialize
+|-
+| 4 || Finalize
+|-
+| 5 || EnableExternalDevice
+|-
+| 6 || GetExternalDeviceId
+|-
+| 7 || SendCommandAsync
+|-
+| 8 || GetSendCommandAsynceResult
+|-
+| 9 || SetEventForSendCommandAsycResult
+|-
+| 10 || GetSharedMemoryHandle
+|-
+| 11 || EnableJoyPollingReceiveMode
+|-
+| 12 || DisableJoyPollingReceiveMode
+|-
+| 13 || GetPollingData
+|}
+
+= RomFS =
 The hid-sysmodule RomFS contains:
   ftmFwUpdate
     ├── NTD_4CD_1801.fts256
@@ -608,7 +896,7 @@ The hid-sysmodule RomFS contains:
 
 These are firmware files for the touchscreen controller.
 
-=Firmware update=
+= Firmware update =
 Starting with [[3.0.0]] HID-sysmodule now contains strings for data stored in title [[Title_list|0100000000000822]].
 
 [[Category:Services]]

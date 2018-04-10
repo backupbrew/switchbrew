@@ -65,6 +65,7 @@ This is
 | 130  | SwapNpadAssignment                                                                               |
 | 131  | IsUnintendedHomeButtonInputProtectionEnabled                                                     |
 | 132  | EnableUnintendedHomeButtonInputProtection                                                        |
+| 133  | \[5.0.0+\] SetNpadJoyAssignmentModeSingleWithDestination                                         |
 | 200  | [\#GetVibrationDeviceInfo](#GetVibrationDeviceInfo "wikilink")                                   |
 | 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
 | 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
@@ -72,12 +73,41 @@ This is
 | 204  | [\#PermitVibration](#PermitVibration "wikilink")                                                 |
 | 205  | [\#IsVibrationPermitted](#IsVibrationPermitted "wikilink")                                       |
 | 206  | [\#SendVibrationValues](#SendVibrationValues "wikilink")                                         |
+| 207  | \[4.0.0+\] SendVibrationGcErmCommand                                                             |
+| 208  | \[4.0.0+\] GetActualVibrationGcErmCommand                                                        |
+| 209  | \[4.0.0+\] BeginPermitVibrationSession                                                           |
+| 210  | \[4.0.0+\] EndPermitVibrationSession                                                             |
 | 300  | ActivateConsoleSixAxisSensor                                                                     |
 | 301  | StartConsoleSixAxisSensor                                                                        |
 | 302  | StopConsoleSixAxisSensor                                                                         |
+| 303  | \[5.0.0+\] ActivateSevenSixAxisSensor                                                            |
+| 304  | \[5.0.0+\] StartSevenSixAxisSensor                                                               |
+| 305  | \[5.0.0+\] StopSevenSixAxisSensor                                                                |
+| 306  | \[5.0.0+\] InitializeSevenSixAxisSensor                                                          |
+| 307  | \[5.0.0+\] FinalizeSevenSixAxisSensor                                                            |
+| 308  | \[5.0.0+\] SetSevenSixAxisSensorFusionStrength                                                   |
+| 309  | \[5.0.0+\] GetSevenSixAxisSensorFusionStrength                                                   |
 | 400  | IsUsbFullKeyControllerEnabled                                                                    |
 | 401  | EnableUsbFullKeyController                                                                       |
 | 402  | IsUsbFullKeyControllerConnected                                                                  |
+| 403  | \[4.0.0+\] HasBattery                                                                            |
+| 404  | \[4.0.0+\] HasLeftRightBattery                                                                   |
+| 405  | \[4.0.0+\] GetNpadInterfaceType                                                                  |
+| 406  | \[4.0.0+\] GetNpadLeftRightInterfaceType                                                         |
+| 500  | \[5.0.0+\] GetPalmaConnectionHandle                                                              |
+| 501  | \[5.0.0+\] InitializePalma                                                                       |
+| 502  | \[5.0.0+\] AcquirePalmaOperationCompleteEvent                                                    |
+| 503  | \[5.0.0+\] GetPalmaOperationInfo                                                                 |
+| 504  | \[5.0.0+\] PlayPalmaActivity                                                                     |
+| 505  | \[5.0.0+\] SetPalmaFrModeType                                                                    |
+| 506  | \[5.0.0+\] ReadPalmaStep                                                                         |
+| 507  | \[5.0.0+\] EnablePalmaStep                                                                       |
+| 508  | \[5.0.0+\] SuspendPalmaStep                                                                      |
+| 509  | \[5.0.0+\] ResetPalmaStep                                                                        |
+| 510  | \[5.0.0+\] ReadPalmaApplicationSection                                                           |
+| 511  | \[5.0.0+\] WritePalmaApplicationSection                                                          |
+| 512  | \[5.0.0+\] ReadPalmaUniqueCode                                                                   |
+| 513  | \[5.0.0+\] SetPalmaUniqueCodeInvalid                                                             |
 | 1000 | SetNpadCommunicationMode                                                                         |
 | 1001 | GetNpadCommunicationMode                                                                         |
 
@@ -201,50 +231,65 @@ Takes an input
 
 This is "nn::hid::IHidDebugServer".
 
-| Cmd | Name                                  |
-| --- | ------------------------------------- |
-| 0   | DeactivateDebugPad                    |
-| 1   | SetDebugPadAutoPilotState             |
-| 2   | UnsetDebugPadAutoPilotState           |
-| 10  | DeactivateTouchScreen                 |
-| 11  | SetTouchScreenAutoPilotState          |
-| 12  | UnsetTouchScreenAutoPilotState        |
-| 20  | DeactivateMouse                       |
-| 21  | SetMouseAutoPilotState                |
-| 22  | UnsetMouseAutoPilotState              |
-| 30  | DeactivateKeyboard                    |
-| 31  | SetKeyboardAutoPilotState             |
-| 32  | UnsetKeyboardAutoPilotState           |
-| 50  | DeactivateXpad                        |
-| 51  | SetXpadAutoPilotState                 |
-| 52  | UnsetXpadAutoPilotState               |
-| 60  | DeactivateJoyXpad                     |
-| 91  | DeactivateGesture                     |
-| 110 | DeactivateHomeButton                  |
-| 111 | SetHomeButtonAutoPilotState           |
-| 112 | UnsetHomeButtonAutoPilotState         |
-| 120 | DeactivateSleepButton                 |
-| 121 | SetSleepButtonAutoPilotState          |
-| 122 | UnsetSleepButtonAutoPilotState        |
-| 123 | DeactivateInputDetector               |
-| 130 | DeactivateCaptureButton               |
-| 131 | SetCaptureButtonAutoPilotState        |
-| 132 | UnsetCaptureButtonAutoPilotState      |
-| 133 | SetShiftAccelerometerCalibrationValue |
-| 134 | GetShiftAccelerometerCalibrationValue |
-| 135 | SetShiftGyroscopeCalibrationValue     |
-| 136 | GetShiftGyroscopeCalibrationValue     |
-| 140 | DeactivateConsoleSixAxisSensor        |
-| 201 | ActivateFirmwareUpdate                |
-| 202 | DeactivateFirmwareUpdate              |
-| 203 | StartFirmwareUpdate                   |
-| 204 | GetFirmwareUpdateStage                |
-| 205 | GetFirmwareVersion                    |
-| 206 | GetDestinationFirmwareVersion         |
-| 207 | DiscardFirmwareInfoCacheForRevert     |
-| 208 | StartFirmwareUpdateForRevert          |
-| 209 | GetAvailableFirmwareVersionForRevert  |
-| 211 | UpdateControllerColor                 |
+| Cmd | Name                                                |
+| --- | --------------------------------------------------- |
+| 0   | DeactivateDebugPad                                  |
+| 1   | SetDebugPadAutoPilotState                           |
+| 2   | UnsetDebugPadAutoPilotState                         |
+| 10  | DeactivateTouchScreen                               |
+| 11  | SetTouchScreenAutoPilotState                        |
+| 12  | UnsetTouchScreenAutoPilotState                      |
+| 20  | DeactivateMouse                                     |
+| 21  | SetMouseAutoPilotState                              |
+| 22  | UnsetMouseAutoPilotState                            |
+| 30  | DeactivateKeyboard                                  |
+| 31  | SetKeyboardAutoPilotState                           |
+| 32  | UnsetKeyboardAutoPilotState                         |
+| 50  | DeactivateXpad                                      |
+| 51  | SetXpadAutoPilotState                               |
+| 52  | UnsetXpadAutoPilotState                             |
+| 60  | DeactivateJoyXpad                                   |
+| 91  | DeactivateGesture                                   |
+| 110 | DeactivateHomeButton                                |
+| 111 | SetHomeButtonAutoPilotState                         |
+| 112 | UnsetHomeButtonAutoPilotState                       |
+| 120 | DeactivateSleepButton                               |
+| 121 | SetSleepButtonAutoPilotState                        |
+| 122 | UnsetSleepButtonAutoPilotState                      |
+| 123 | DeactivateInputDetector                             |
+| 130 | DeactivateCaptureButton                             |
+| 131 | SetCaptureButtonAutoPilotState                      |
+| 132 | UnsetCaptureButtonAutoPilotState                    |
+| 133 | SetShiftAccelerometerCalibrationValue               |
+| 134 | GetShiftAccelerometerCalibrationValue               |
+| 135 | SetShiftGyroscopeCalibrationValue                   |
+| 136 | GetShiftGyroscopeCalibrationValue                   |
+| 140 | DeactivateConsoleSixAxisSensor                      |
+| 141 | \[5.0.0+\] GetConsoleSixAxisSensorSamplingFrequency |
+| 142 | \[5.0.0+\] DeactivateSevenSixAxisSensor             |
+| 201 | ActivateFirmwareUpdate                              |
+| 202 | DeactivateFirmwareUpdate                            |
+| 203 | StartFirmwareUpdate                                 |
+| 204 | GetFirmwareUpdateStage                              |
+| 205 | GetFirmwareVersion                                  |
+| 206 | GetDestinationFirmwareVersion                       |
+| 207 | DiscardFirmwareInfoCacheForRevert                   |
+| 208 | StartFirmwareUpdateForRevert                        |
+| 209 | GetAvailableFirmwareVersionForRevert                |
+| 210 | \[4.0.0+\] IsFirmwareUpdatingDevice                 |
+| 221 | UpdateControllerColor                               |
+| 222 | \[4.0.0+\] ConnectUsbPadsAsync                      |
+| 223 | \[4.0.0+\] DisconnectUsbPadsAsync                   |
+| 224 | \[5.0.0+\] UpdateDesignInfo                         |
+| 225 | \[5.0.0+\] GetUniquePadDriverState                  |
+| 226 | \[5.0.0+\] GetSixAxisSensorDriverStates             |
+| 301 | \[5.0.0+\] GetAbstractedPadHandles                  |
+| 302 | \[5.0.0+\] GetAbstractedPadState                    |
+| 303 | \[5.0.0+\] GetAbstractedPadsState                   |
+| 321 | \[5.0.0+\] SetAutoPilotVirtualPadState              |
+| 322 | \[5.0.0+\] UnsetAutoPilotVirtualPadState            |
+| 323 | \[5.0.0+\] UnsetAllAutoPilotVirtualPadState         |
+| 350 | \[5.0.0+\] AddRegisteredDevice                      |
 
 # hid:sys
 
@@ -264,6 +309,8 @@ This is
 | 211  | GetNpadsWithNfc                                                    |
 | 212  | AcquireNfcActivateEventHandle                                      |
 | 213  | ActivateNfc                                                        |
+| 214  | \[4.0.0+\] GetXcdHandleForNpadWithNfc                              |
+| 215  | \[4.0.0+\] IsNfcActivated                                          |
 | 230  | AcquireIrSensorEventHandle                                         |
 | 231  | ActivateIrSensor                                                   |
 | 301  | ActivateNpadSystem                                                 |
@@ -272,6 +319,8 @@ This is
 | 305  | DisableAssigningSingleOnSlSrPress                                  |
 | 306  | GetLastActiveNpad                                                  |
 | 307  | GetNpadSystemExtStyle                                              |
+| 308  | \[5.0.0+\] ApplyNpadSystemCommonPolicyFull                         |
+| 309  | \[5.0.0+\] GetNpadFullKeyGripColor                                 |
 | 311  | SetNpadPlayerLedBlinkingDevice                                     |
 | 321  | GetUniquePadsFromNpad                                              |
 | 322  | GetIrSensorState                                                   |
@@ -291,11 +340,12 @@ This is
 | 540  | AcquirePlayReportControllerUsageUpdateEvent                        |
 | 541  | GetPlayReportControllerUsages                                      |
 | 542  | AcquirePlayReportRegisteredDeviceUpdateEvent                       |
-| 543  | GetRegisteredDevices                                               |
+| 543  | GetRegisteredDevicesOld (\[1.0.0-4.1.0\] GetRegisteredDevices)     |
 | 544  | AcquireConnectionTriggerTimeoutEvent                               |
 | 545  | SendConnectionTrigger                                              |
 | 546  | AcquireDeviceRegisteredEventForControllerSupport                   |
 | 547  | GetAllowedBluetoothLinksCount                                      |
+| 548  | \[5.0.0+\] GetRegisteredDevices                                    |
 | 700  | ActivateUniquePad                                                  |
 | 702  | AcquireUniquePadConnectionEventHandle                              |
 | 703  | GetUniquePadIds                                                    |
@@ -307,10 +357,20 @@ This is
 | 804  | CancelSixAxisSensorUserCalibration                                 |
 | 805  | GetUniquePadBluetoothAddress                                       |
 | 806  | DisconnectUniquePad                                                |
+| 807  | \[5.0.0+\] GetUniquePadType                                        |
+| 808  | \[5.0.0+\] GetUniquePadInterface                                   |
+| 809  | \[5.0.0+\] GetUniquePadSerialNumber                                |
+| 810  | \[5.0.0+\] GetUniquePadControllerNumber                            |
+| 811  | \[5.0.0+\] GetSixAxisSensorUserCalibrationStage                    |
 | 821  | StartAnalogStickManualCalibration                                  |
 | 822  | RetryCurrentAnalogStickManualCalibrationStage                      |
 | 823  | CancelAnalogStickManualCalibration                                 |
 | 824  | ResetAnalogStickManualCalibration                                  |
+| 825  | \[5.0.0+\] GetAnalogStickState                                     |
+| 826  | \[5.0.0+\] GetAnalogStickManualCalibrationStage                    |
+| 827  | \[5.0.0+\] IsAnalogStickButtonPressed                              |
+| 828  | \[5.0.0+\] IsAnalogStickInReleasePosition                          |
+| 829  | \[5.0.0+\] IsAnalogStickInCircumference                            |
 | 850  | IsUsbFullKeyControllerEnabled                                      |
 | 851  | EnableUsbFullKeyController                                         |
 | 852  | IsUsbConnected                                                     |
@@ -324,10 +384,27 @@ This is
 | 1005 | StartFirmwareUpdate                                                |
 | 1006 | AbortFirmwareUpdate                                                |
 | 1007 | GetFirmwareUpdateState                                             |
+| 1008 | \[4.0.0+\] ActivateAudioControl                                    |
+| 1009 | \[4.0.0+\] AcquireAudioControlEventHandle                          |
+| 1010 | \[4.0.0+\] GetAudioControlStates                                   |
+| 1011 | \[4.0.0+\] DeactivateAudioControl                                  |
+| 1050 | \[5.0.0+\] IsSixAxisSensorAccurateUserCalibrationSupported         |
+| 1051 | \[5.0.0+\] StartSixAxisSensorAccurateUserCalibration               |
+| 1052 | \[5.0.0+\] CancelSixAxisSensorAccurateUserCalibration              |
+| 1053 | \[5.0.0+\] GetSixAxisSensorAccurateUserCalibrationState            |
+| 1100 | \[5.0.0+\] GetHidbusSystemServiceObject                            |
 
 ## SetVibrationMasterVolume
 
 Takes an input 32bit float.
+
+# hid:tmp
+
+This is "nn::hid::IHidTemporaryServer".
+
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | GetConsoleSixAxisSensorCalibrationValues |
 
 # irs
 
@@ -346,9 +423,14 @@ This is
 | 309 | [\#GetImageTransferProcessorState](#GetImageTransferProcessorState "wikilink") |
 | 310 | [\#RunTeraPluginProcessor](#RunTeraPluginProcessor "wikilink")                 |
 | 311 | [\#GetNpadIrCameraHandle](#GetNpadIrCameraHandle "wikilink")                   |
-| 312 | [\#RunDpdProcessor](#RunDpdProcessor "wikilink")                               |
+| 312 | [\#RunPointingProcessor](#RunPointingProcessor "wikilink")                     |
 | 313 | [\#SuspendImageProcessor](#SuspendImageProcessor "wikilink")                   |
 | 314 | \[3.0.0+\] [\#CheckFirmwareVersion](#CheckFirmwareVersion "wikilink")          |
+| 315 | \[5.0.0+\] SetFunctionLevel                                                    |
+| 316 | \[5.0.0+\] RunImageTransferExProcessor                                         |
+| 317 | \[5.0.0+\] RunIrLedProcessor                                                   |
+| 318 | \[5.0.0+\] StopImageProcessorAsync                                             |
+| 319 | \[5.0.0+\] ActivateIrsensorWithFunctionLevel                                   |
 
 ## ActivateIrsensor
 
@@ -423,7 +505,7 @@ Takes a PID-descriptor, an
 Takes an input u32. Returns an output
 [\#IrCameraHandle](#IrCameraHandle "wikilink").
 
-## RunDpdProcessor
+## RunPointingProcessor
 
 Takes a PID-descriptor, an
 [\#IrCameraHandle](#IrCameraHandle "wikilink"), a
@@ -495,6 +577,86 @@ This is a 0x10-byte struct.
 ## PackedMcuVersion
 
 This is an u32.
+
+# irs:sys
+
+This is "nn::irsensor::IIrSensorSystemServer".
+
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 500 | SetAppletResourceUserId        |
+| 501 | RegisterAppletResourceUserId   |
+| 502 | UnregisterAppletResourceUserId |
+| 503 | EnableAppletToGetInput         |
+
+# ahid:cd
+
+This is "nn::ahid::IServerSession".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+
+# ahid:hdr
+
+This is "nn::ahid::hdr::ISession".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+
+# xcd:sys
+
+This is "nn::xcd::detail::ISystemServer".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
+| 10  |      |
+| 11  |      |
+| 12  |      |
+| 13  |      |
+| 14  |      |
+| 15  |      |
+| 16  |      |
+| 17  |      |
+| 18  |      |
+| 19  |      |
+| 20  |      |
+| 101 |      |
+| 102 |      |
+
+# hidbus
+
+This is "nn::hidbus::IHidbusServer".
+
+| Cmd | Name                             |
+| --- | -------------------------------- |
+| 1   | GetBusHandle                     |
+| 2   | IsExternalDeviceConnected        |
+| 3   | Initialize                       |
+| 4   | Finalize                         |
+| 5   | EnableExternalDevice             |
+| 6   | GetExternalDeviceId              |
+| 7   | SendCommandAsync                 |
+| 8   | GetSendCommandAsynceResult       |
+| 9   | SetEventForSendCommandAsycResult |
+| 10  | GetSharedMemoryHandle            |
+| 11  | EnableJoyPollingReceiveMode      |
+| 12  | DisableJoyPollingReceiveMode     |
+| 13  | GetPollingData                   |
 
 # RomFS
 
