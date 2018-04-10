@@ -70,8 +70,60 @@ and 3 type-0x6 output buffers, returns an output u8 and u32.
 
 This is "nn::mii::detail::IStaticService".
 
-| Cmd | Name                            |
-| --- | ------------------------------- |
-| 0   | GetDatabaseServiceSharedPointer |
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   | GetDatabaseService |
+
+## IDatabaseService
+
+This is "nn::mii::detail::IDatabaseService".
+
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   | IsUpdated                      |
+| 1   | IsFullDatabase                 |
+| 2   | GetCount                       |
+| 3   | Get                            |
+| 4   | Get1                           |
+| 5   | UpdateLatest                   |
+| 6   | BuildRandom                    |
+| 7   | BuildDefault                   |
+| 8   | Get2                           |
+| 9   | Get3                           |
+| 10  | UpdateLatest1                  |
+| 11  | FindIndex                      |
+| 12  | Move                           |
+| 13  | AddOrReplace                   |
+| 14  | Delete                         |
+| 15  | DestroyFile                    |
+| 16  | DeleteFile                     |
+| 17  | Format                         |
+| 18  | Import                         |
+| 19  | Export                         |
+| 20  | IsBrokenDatabaseWithClearFlag  |
+| 21  | GetIndex                       |
+| 22  | \[5.0.0+\] SetInterfaceVersion |
+| 23  | \[5.0.0+\] Convert             |
+
+# miiimg
+
+This is "nn::mii::detail::IImageDatabaseService".
+
+| Cmd | Name             |
+| --- | ---------------- |
+| 0   | Initialize       |
+| 10  | Reload           |
+| 11  | GetCount         |
+| 12  | IsEmpty          |
+| 13  | IsFull           |
+| 14  | GetAttribute     |
+| 15  | LoadImage        |
+| 16  | AddOrUpdateImage |
+| 17  | DeleteImages     |
+| 100 | DeleteFile       |
+| 101 | DestroyFile      |
+| 102 | ImportFile       |
+| 103 | ExportFile       |
+| 104 | ForceInitialize  |
 
 [Category:Services](Category:Services "wikilink")
