@@ -8,6 +8,8 @@ This service is used during [[Factory Setup|factory setup]] by [[Manu Services|m
 
 This service session is used as an IPC [[IPC_Marshalling|domain]] by [[Manu Services|manu]]. All of these {get-session} commands also return an output u8 and the u32 <[[IPC_Marshalling|domainID]]>, for using those sessions as domains.
 
+This service can be used by multiple processes at the same time, with separate interfaces.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes

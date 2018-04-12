@@ -16,8 +16,11 @@ This service session is used as an IPC
 [manu](Manu%20Services.md "wikilink"). All of these {get-session}
 commands also return an output u8 and the u32
 \<[domainID](IPC%20Marshalling.md "wikilink")\>, for using those
-sessions as
-domains.
+sessions as domains.
+
+This service can be used by multiple processes at the same time, with
+separate
+interfaces.
 
 | Cmd | Name                                                     | Notes |
 | --- | -------------------------------------------------------- | ----- |
