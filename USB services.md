@@ -26,6 +26,7 @@ it.
 | Cmd | Name                                                     | Notes |
 | --- | -------------------------------------------------------- | ----- |
 | 0   | [\#BindDevice](#BindDevice "wikilink")                   |       |
+| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |       |
 | 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |       |
 | 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |       |
 | 4   | [\#GetState](#GetState "wikilink")                       |       |
