@@ -19,13 +19,13 @@ commands also return an output u8 and the u32
 sessions as domains.
 
 This service can be used by multiple processes at the same time, with
-separate
-interfaces.
+separate interfaces. However, if one process does usbds shutdown, usbds
+will reset to defaults even if there's a process still using
+it.
 
 | Cmd | Name                                                     | Notes |
 | --- | -------------------------------------------------------- | ----- |
 | 0   | [\#BindDevice](#BindDevice "wikilink")                   |       |
-| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |       |
 | 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |       |
 | 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |       |
 | 4   | [\#GetState](#GetState "wikilink")                       |       |
