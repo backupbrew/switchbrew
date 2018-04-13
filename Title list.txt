@@ -286,7 +286,7 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000001013 || [[1.0.0|v450]] (0.0.0.450)<br/> [[2.0.0|v65796]] (0.0.1.260)<br/> [[3.0.0|v201327002]] (3.0.0.410)<br/> [[4.0.0|v268435656]] (4.0.0.200)<br/> [[5.0.0|v335544750]] (5.0.0.430) || "myPage"
 |-
-| 0100000000001015 || [[1.0.0|v450]] (0.0.0.450)<br/> [[2.0.0|v65796]] (0.0.1.260)<br/> [[3.0.0|v201327002]] (3.0.0.410)<br/> [[4.0.0|v268435656]] (4.0.0.200)<br/> [[5.0.0|v335544750]] (5.0.0.430) || "maintenance" Initial applet displayed when booting into [[Recovery_Mode]]. This title is launched by [[NS_Services|NS]] when a state flag is val1 indicating that this title should be launched instead of the above "System applet" title.
+| 0100000000001015 || [[1.0.0|v450]] (0.0.0.450)<br/> [[2.0.0|v65796]] (0.0.1.260)<br/> [[3.0.0|v201327002]] (3.0.0.410)<br/> [[4.0.0|v268435656]] (4.0.0.200)<br/> [[5.0.0|v335544750]] (5.0.0.430) || "maintenance" Initial applet displayed when booting into [[Recovery_Mode|Recovery Mode]]. This title is launched by [[NS_Services|NS]] when a state flag is val1 indicating that this title should be launched instead of the above "System applet" title.
 |-
 | 0100000000001016 || || TitleID used by [[NS_Services|NS]] when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.
 |}
