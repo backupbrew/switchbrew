@@ -248,8 +248,26 @@ Takes a pid as input. Clears 0x10 from process flags.
 
 ## NotifyBootFinished
 
-Launches a process with hardcoded [boot2](Boot2.md "wikilink") title-id
-(0100000000000008 in normal mode or 0100000000000009 in safe mode).
+This launches the [boot2](Boot2.md "wikilink") title.
+
+\[4.0.0+\] When booting from SafeMode Firmware, instead of
+[boot2](Boot2.md "wikilink"), this launches the following titles in
+order:
+
+  - 0100000000000009 (settings)
+  - 0100000000000006 (usb)
+  - 010000000000001D (pcie)
+  - 0100000000000007 (tma)
+  - 010000000000001F (ns)
+  - 0100000000000015 (lm)
+  - 0100000000000010 (ptm)
+  - 0100000000000016 (wlan)
+  - 0100000000000012 (bsdsockets)
+  - 010000000000000F (nifm)
+  - 0100000000000024 (ssl)
+  - 0100000000000025 (nim)
+  - 0100000000000031 (glue)
+  - 010000000000003D (safemode)
 
 ## GetApplicationPid
 

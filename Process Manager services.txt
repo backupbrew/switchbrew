@@ -211,7 +211,23 @@ Takes a pid as input. Clears 0x10 from process flags.
 [5.0.0+] This command was removed.
 
 == NotifyBootFinished ==
-Launches a process with hardcoded [[boot2]] title-id (0100000000000008 in normal mode or 0100000000000009 in safe mode).
+This launches the [[boot2]] title.
+
+[4.0.0+] When booting from SafeMode Firmware, instead of [[boot2]], this launches the following titles in order:
+* 0100000000000009 (settings)
+* 0100000000000006 (usb)
+* 010000000000001D (pcie)
+* 0100000000000007 (tma)
+* 010000000000001F (ns)
+* 0100000000000015 (lm)
+* 0100000000000010 (ptm)
+* 0100000000000016 (wlan)
+* 0100000000000012 (bsdsockets)
+* 010000000000000F (nifm)
+* 0100000000000024 (ssl)
+* 0100000000000025 (nim)
+* 0100000000000031 (glue)
+* 010000000000003D (safemode)
 
 == GetApplicationPid ==
 Loops through the internal linked-list of processes, looks for mask 0x40 set in process flags. Returns pid of first such entry.
