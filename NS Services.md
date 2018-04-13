@@ -194,7 +194,7 @@ Returns 0 if an ID was successfully found, otherwise returns 0x25810.
 ## GetApplicationControlData
 
 Takes an input u8, an u64 titleID, and a type-0x6 output buffer. Returns
-an output u32.
+an output u32. Official user-processes use buffer size 0x24000.
 
 Reads [control.nacp](Control.nacp.md "wikilink") from the specified
 title content.
