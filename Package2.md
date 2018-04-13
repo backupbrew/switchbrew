@@ -82,12 +82,12 @@ encapsulated in a custom format.
 
 ### INI1
 
-| Offset | Type | Description     |
-| ------ | ---- | --------------- |
-| 0x0    | u32  | Magic "INI1"    |
-| 0x4    | u32  | Size            |
-| 0x8    | u32  | NumberProcesses |
-| 0xC    | u32  | Padding (zero)  |
+| Offset | Type | Description                      |
+| ------ | ---- | -------------------------------- |
+| 0x0    | u32  | Magic "INI1"                     |
+| 0x4    | u32  | Size                             |
+| 0x8    | u32  | NumberProcesses (Must be \<0x51) |
+| 0xC    | u32  | Padding (zero)                   |
 
 #### KIP1
 

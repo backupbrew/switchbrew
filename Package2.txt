@@ -158,7 +158,7 @@ When decrypted, this section contains the built-in system modules encapsulated i
 |-
 | 0x8
 | u32
-| NumberProcesses
+| NumberProcesses (Must be <0x51)
 |-
 | 0xC
 | u32
