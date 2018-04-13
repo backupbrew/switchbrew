@@ -52,6 +52,7 @@ titles in this order:
   - 010000000000001E (account)
   - 010000000000000E (friends) \[skipped in maintenance\]
   - 0100000000000020 (nfc)
+  - 010000000000003C (jpegdec) \[4.0.0+\]
   - 0100000000000022 (capsrv)
   - 0100000000000024 (ssl)
   - 0100000000000025 (nim)
@@ -68,6 +69,8 @@ titles in this order:
   - 0100000000000037 (ro) \[3.0.0+\]
   - 0100000000000038 (doesn't exist on retail systems) \[3.0.0+\]
   - 0100000000000039 (sdb) \[3.0.0+\]
+  - 010000000000003A (migration) \[4.0.0+\]
+  - 0100000000000035 (grc) \[4.0.0+\]
 
 This list is probably optimized for boot-time. It launches
 display-related things first presumably to make sure it displays
