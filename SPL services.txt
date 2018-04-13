@@ -122,7 +122,7 @@ Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 |-
 | 13 || [[#BatteryProfile]]
 |-
-| 14 || [4.0.0+] [[#Unknown0]]
+| 14 || [4.0.0+] [[#IsKiosk]]
 |-
 | 15 || [5.0.0+] [[#NewHardwareType]]
 |-
@@ -285,10 +285,10 @@ This item is obtained from [[Fuse_registers#FUSE_RESERVED_ODM2|FUSE_RESERVED_ODM
 
 [5.0.0+] [[Filesystem services|FS]] can now use this value for the '''KeyGeneration''' parameter when calling [[#GenerateAesKek|GenerateAesKek]] during "GetBisEncryptionKey".
 
-=== Unknown0 ===
+=== IsKiosk ===
 This item is bit 10 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
 
-[4.0.0+] [[Settings_services|Settings]] uses this value overwrite the quest flag in [[Settings_services#set:sys|GetQuestFlag]] and [[Settings_services#set|GetQuestFlag2]]. This is used to detect if a Switch is a kiosk unit for display at retail stores.
+[4.0.0+] [[Settings_services|Settings]] uses this value to overwrite the quest flag from [[Settings_services#set:sys|GetQuestFlag]]. This is used to detect if a Switch is a kiosk unit for display at retail stores.
 
 === NewHardwareType ===
 This item is currently hardcoded to 0.

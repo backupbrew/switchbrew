@@ -91,7 +91,7 @@ Takes a u32 (**ConfigItem**), and returns one or more u64s
 | 11         | [\#IsDebugMode](#IsDebugMode "wikilink")                               |
 | 12         | [\#KernelMemoryConfiguration](#KernelMemoryConfiguration "wikilink")   |
 | 13         | [\#BatteryProfile](#BatteryProfile "wikilink")                         |
-| 14         | \[4.0.0+\] [\#Unknown0](#Unknown0 "wikilink")                          |
+| 14         | \[4.0.0+\] [\#IsKiosk](#IsKiosk "wikilink")                            |
 | 15         | \[5.0.0+\] [\#NewHardwareType](#NewHardwareType "wikilink")            |
 | 16         | \[5.0.0+\] [\#NewKeyGeneration](#NewKeyGeneration "wikilink")          |
 | 17         | \[5.0.0+\] [\#Package2Hash](#Package2Hash "wikilink")                  |
@@ -236,16 +236,16 @@ value for the **KeyGeneration** parameter when calling
 [GenerateAesKek](#GenerateAesKek "wikilink") during
 "GetBisEncryptionKey".
 
-### Unknown0
+### IsKiosk
 
 This item is bit 10 from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
 
 \[4.0.0+\] [Settings](Settings%20services.md "wikilink") uses this value
-overwrite the quest flag in
-[GetQuestFlag](Settings%20services#set:sys.md##set:sys "wikilink") and
-[GetQuestFlag2](Settings%20services#set.md##set "wikilink"). This is
-used to detect if a Switch is a kiosk unit for display at retail stores.
+to overwrite the quest flag from
+[GetQuestFlag](Settings%20services#set:sys.md##set:sys "wikilink"). This
+is used to detect if a Switch is a kiosk unit for display at retail
+stores.
 
 ### NewHardwareType
 
