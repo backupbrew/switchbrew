@@ -300,7 +300,7 @@ Takes an input u8 pointer for the resulting Id to be written to and a string rep
 Returns 0 if an ID was successfully found, otherwise returns 0x25810.
 
 == GetApplicationControlData ==
-Takes an input u8 [[Filesystem_services|StorageId]], an u64 titleID, and a type-0x6 output buffer. Returns an output u32.
+Takes an input u8, an u64 titleID, and a type-0x6 output buffer. Returns an output u32.
 
 Reads [[control.nacp]] from the specified title content.
 

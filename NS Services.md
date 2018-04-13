@@ -193,8 +193,8 @@ Returns 0 if an ID was successfully found, otherwise returns 0x25810.
 
 ## GetApplicationControlData
 
-Takes an input u8 [StorageId](Filesystem%20services.md "wikilink"), an
-u64 titleID, and a type-0x6 output buffer. Returns an output u32.
+Takes an input u8, an u64 titleID, and a type-0x6 output buffer. Returns
+an output u32.
 
 Reads [control.nacp](Control.nacp.md "wikilink") from the specified
 title content.
