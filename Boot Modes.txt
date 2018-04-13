@@ -1,9 +1,26 @@
-The recovery mode (also known as Maintenance Mode on version 1.0.0) can be accessed when turning on the Nintendo Switch while holding + & - (volume buttons). This menu is made to update your Nintendo Switch through internet, if an update previously failed. It also includes the ability to format/initialize the console with or without keeping user info, screenshots, and saves
+The Recovery Mode (also known as Maintenance Mode in firmware version 1.0.0) can be accessed when turning on the Nintendo Switch while performing a button combo.
 
+= Description =
+After [[Package1#Package1ldr|package1ldr]] decrypts and validates [[Package1#Package1_.28PK11.29|package1]], execution carries over into the [[Package1#Section_1|NX bootloader]].
 
-However it is possible to use this menu to delete the nagging update message if your console downloaded an update. It is believed that this menu simply erases all update data, as it should normally be accessed when the update files are corrupted.
+Among various tasks, this bootloader checks for a button combination to determine if the system should enter Recovery Mode. If the combination is performed, the bootloader reads the [[Flash_Filesystem#Boot_Partitions|SafeMode Firmware BCT]] from the eMMC, swaps the normal [[BCT]] with it and performs a Watchdog reset after writing [[Panic_codes|panic code 0x20]] to '''PMC_SCRATCH200'''.
 
+= Button combination =
+In order to enter Recovery Mode, the following combination must be performed:
 
-'''Other Notes:'''
+[1.0.0-3.0.2]
+* With the system powered off, press and hold Volume Down + Volume Up;
+* Press the Power button while still holding Volume Down + Volume Up;
+* Let go of the Power button and keep holding Volume Down + Volume Up until the [[Title_list#System_Applets|maintenance]] applet shows up.
 
-Maintenance Mode (the 1.0.0 menu) does not have the system update option. However, downloaded update data is still deleted when this menu is accessed.
+This results in the system booting into a menu that allows to update your Nintendo Switch through the internet and format/initialize the console with or without keeping user info, screenshots and saves. It is possible to use this menu to delete the nagging update message if your console downloaded an update.
+
+The [1.0.0] variant (known as Maintenance Mode) does not have the system update option. However, downloaded update data is still deleted when this menu is accessed.
+
+[4.0.0+]
+* With the system powered off, press and hold Volume Down;
+* Press the Power button while still holding Volume Down;
+* Keep pressing the Power button, but let go of Volume Down and press and hold Volume Up;
+* Let go of the Power button and keep holding Volume Up until the [[Safemode|safemode]] system module starts.
+
+This results in the system booting into [[Safemode|safemode]] and automatically finding and installing new updates from the internet.
