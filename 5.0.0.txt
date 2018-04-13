@@ -82,8 +82,6 @@ All FIRM titles were updated, and everything under RomFS was updated.
 
 A new folder "a" was added, in addition to the existing "nx" folder, containing a separate "bct" and "package1". Both of these seem encrypted/meant for the new "Mariko" hardware that support was added for.
 
-The following firm-sysmodules was added to both safemode-firm, which were originally in separate sysmodule-titles: [[Bus_services|Bus]], [[PCV_services|PCV]], and [[PSC_services|psc]].
-
 ====Secure Monitor====
 The [[Memory_layout|Memory layout]] was changed significantly:
 * .text, .rodata, and .data are now separate sections, mapped with correct permissions (RX, RO, RW, respectively), instead of being mapped RWX.
