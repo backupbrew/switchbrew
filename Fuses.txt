@@ -447,13 +447,13 @@ This appears to store an hardware ID.
 | Unit type mask (0 = debug; 1 = retail)
 |-
 | 10
-| [4.0.0+] Unknown, returned by smcGetConfig(14)
+| [4.0.0+] Kiosk mode (0 = retail; 1 = kiosk)
 |-
 | 11
 | [5.0.0+] SoC variant (0 = T210; 1 = T214)
 |-
 | 16-19
-| [4.0.0+] Unknown config (hardware-type-related)
+| [4.0.0+] New unit type
 |}
 
 This stores some device configuration parameters.
