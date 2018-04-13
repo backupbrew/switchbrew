@@ -63,6 +63,8 @@ Everything under RomFS was updated.
 
 The package1 entrypoint address specified by BCT was increased by 0x20-bytes, since there's now an additional 0x20-bytes at the start of package1. The additional data is identical to the 0x20-byte block before it.
 
+In SafeMode Firmware the [[Bus_services|Bus]], [[PCV_services|PCV]] and [[PSC_services|psc]] sysmodules are now bundled with the kernel.
+
 Sysmodules:
 * spl was updated to split the [[SPL services#spl:|IGeneralService]] ("spl:") into many usage-case specific services.
 ** spl: no longer contains commands for doing AES/RSA cryptographic operations
@@ -70,7 +72,6 @@ Sysmodules:
 ** spl:ssl was added, supporting crypto commands used by the [[SSL services|ssl]] sysmodule
 ** spl:es was added, supporting crypto commands used by the es sysmodule.
 ** spl:fs was added, supporting crypto commands used by the [[Filesystem services|fs]] FIRM sysmodule.
-
 
 ====Package1====
   setKeyslotFlags (LT_4001011a)
