@@ -24,7 +24,7 @@ fatal-errors, since the Description ends with bit21.
 | ----- | ------------------------------------------------------ |
 | 1     | Kernel                                                 |
 | 2     | FS                                                     |
-| 3     | NVIDIA, TransferMemory                                 |
+| 3     | Memory (also used for NVIDIA)                          |
 | 5     | NCM                                                    |
 | 6     | DD                                                     |
 | 8     | LR                                                     |
@@ -33,6 +33,7 @@ fatal-errors, since the Description ends with bit21.
 | 11    | HIPC (IPC)                                             |
 | 15    | PM                                                     |
 | 16    | NS                                                     |
+| 17    | Sockets                                                |
 | 18    | HTC                                                    |
 | 21    | SM                                                     |
 | 22    | RO userland                                            |
@@ -40,43 +41,60 @@ fatal-errors, since the Description ends with bit21.
 | 26    | SPL                                                    |
 | 100   | ETHC                                                   |
 | 101   | I2C                                                    |
+| 102   | GPIO                                                   |
+| 103   | UART                                                   |
 | 105   | Settings                                               |
+| 107   | WLAN                                                   |
 | 110   | NIFM                                                   |
-| 111   | HwOpus                                                 |
-| 114   | Display                                                |
-| 116   | NTC                                                    |
+| 111   | Hwopus                                                 |
+| 113   | Bluetooth                                              |
+| 114   | VI                                                     |
+| 116   | Time                                                   |
 | 117   | FGM                                                    |
-| 120   | PCIE                                                   |
+| 120   | PCIe                                                   |
 | 121   | Friends                                                |
+| 122   | BCAT                                                   |
 | 123   | SSL                                                    |
 | 124   | Account                                                |
+| 125   | News                                                   |
 | 126   | Mii                                                    |
 | 128   | AM                                                     |
 | 129   | Play Report                                            |
 | 133   | PCV                                                    |
 | 134   | OMM                                                    |
+| 135   | BPC                                                    |
+| 136   | PSM                                                    |
 | 137   | NIM                                                    |
 | 138   | PSC                                                    |
+| 139   | TC                                                     |
 | 140   | USB                                                    |
 | 141   | NSD                                                    |
+| 142   | PCTL                                                   |
 | 143   | BTM                                                    |
 | 144   |                                                        |
-| 147   | ERPT                                                   |
+| 145   | ETicket                                                |
+| 147   | Error Report                                           |
 | 148   | APM                                                    |
+| 151   | Error Upload                                           |
 | 153   | Audio                                                  |
 | 154   | NPNS                                                   |
 | 157   | ARP                                                    |
-| 158   | BOOT                                                   |
+| 158   | Boot                                                   |
 | 161   | NFC                                                    |
 | 162   | Userland assert                                        |
+| 167   | BGTC                                                   |
 | 168   | Userland crash                                         |
-| 203   | HID                                                    |
+| 202   | HID                                                    |
+| 203   | LDN                                                    |
+| 205   | Irsensor                                               |
 | 206   | Capture                                                |
+| 208   | Manu                                                   |
+| 212   | GRC                                                    |
+| 216   | Migration                                              |
 | 345   | libnx                                                  |
 | 346   | [Homebrew ABI](Homebrew%20ABI.md "wikilink")           |
 | 347   | Homebrew Loader                                        |
 | 348   | libnx Nvidia errors                                    |
-| 651   | TC                                                     |
 | 800   | [General web-applet](Internet%20Browser.md "wikilink") |
 | 809   | [WifiWebAuthApplet](Internet%20Browser.md "wikilink")  |
 | 810   | [Whitelisted-applet](Internet%20Browser.md "wikilink") |

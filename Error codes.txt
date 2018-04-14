@@ -22,7 +22,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 2 || FS
 |-
-| 3 || NVIDIA, TransferMemory
+| 3 || Memory (also used for NVIDIA)
 |-
 | 5 || NCM
 |-
@@ -40,6 +40,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 16 || NS
 |-
+| 17 || Sockets
+|-
 | 18 || HTC
 |-
 | 21 || SM
@@ -54,25 +56,37 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 101 || I2C
 |-
+| 102 || GPIO
+|-
+| 103 || UART
+|-
 | 105 || Settings
+|-
+| 107 || WLAN
 |-
 | 110 || NIFM
 |-
-| 111 || HwOpus
+| 111 || Hwopus
 |-
-| 114 || Display
+| 113 || Bluetooth
 |-
-| 116 || NTC
+| 114 || VI
+|-
+| 116 || Time
 |-
 | 117 || FGM
 |-
-| 120 || PCIE
+| 120 || PCIe
 |-
 | 121 || Friends
+|-
+| 122 || BCAT
 |-
 | 123 || SSL
 |-
 | 124 || Account
+|-
+| 125 || News
 |-
 | 126 || Mii
 |-
@@ -84,21 +98,33 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 134 || OMM
 |-
+| 135 || BPC
+|-
+| 136 || PSM
+|-
 | 137 || NIM
 |-
 | 138 || PSC
+|-
+| 139 || TC
 |-
 | 140 || USB
 |-
 | 141 || NSD
 |-
+| 142 || PCTL
+|-
 | 143 || BTM
 |-
 | 144 || 
 |-
-| 147 || ERPT
+| 145 || ETicket
+|-
+| 147 || Error Report
 |-
 | 148 || APM
+|-
+| 151 || Error Upload
 |-
 | 153 || Audio
 |-
@@ -106,17 +132,29 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 157 || ARP
 |-
-| 158 || BOOT
+| 158 || Boot
 |-
 | 161 || NFC
 |-
 | 162 || Userland assert
 |-
+| 167 || BGTC
+|-
 | 168 || Userland crash
 |-
-| 203 || HID
+| 202 || HID
+|-
+| 203 || LDN
+|-
+| 205 || Irsensor
 |-
 | 206 || Capture
+|-
+| 208 || Manu
+|-
+| 212 || GRC
+|-
+| 216 || Migration
 |-
 | 345 || libnx
 |-
@@ -125,8 +163,6 @@ When a fatal-error is received the error code is outputted using the following f
 | 347 || Homebrew Loader
 |-
 | 348 || libnx Nvidia errors
-|-
-| 651 || TC
 |-
 | 800 || [[Internet_Browser|General web-applet]]
 |-
