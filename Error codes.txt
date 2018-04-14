@@ -289,6 +289,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x3EE03 || 3 || 503 || Invalid memory mirror
 |-
+| 0x7FE03 || 3 || 1023 || TLS slot is not allocated
+|-
 | 0xA05 || 5 || 5 || [[Content_Manager_services|NcaID]] not found. Returned when attempting to mount titles which exist that aren't *8XX titles, the same way *8XX titles are mounted.
 |-
 | 0xE05 || 5 || 7 || TitleId not found
