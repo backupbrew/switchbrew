@@ -1124,7 +1124,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>&quot;maintenance&quot; Initial applet displayed when booting into <a href="Recovery Mode.md" title="wikilink">Recovery Mode</a>. This title is launched by <a href="NS Services.md" title="wikilink">NS</a> when a state flag is val1 indicating that this title should be launched instead of the above &quot;System applet&quot; title.</p></td>
+<td><p>&quot;maintenance&quot; Initial applet displayed when booting into <a href="Recovery Mode.md" title="wikilink">Recovery_Mode</a>. This title is launched by <a href="NS Services.md" title="wikilink">NS</a> when a state flag is val1 indicating that this title should be launched instead of the above &quot;System applet&quot; title.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001016</p></td>
