@@ -193,11 +193,13 @@ Returns 0 if an ID was successfully found, otherwise returns 0x25810.
 
 ## GetApplicationControlData
 
-Takes an input u8, an u64 titleID, and a type-0x6 output buffer. Returns
-an output u32. Official user-processes use buffer size 0x24000.
+Takes an input u8 flag, an u64 titleID, and a type-0x6 output buffer.
+Returns an output u32 for actual\_size. Official user-processes use
+buffer size 0x24000. [qlaunch](Qlaunch.md "wikilink") only uses flag
+value 0x1.
 
-Reads [control.nacp](Control.nacp.md "wikilink") from the specified
-title content.
+Loads cached [control.nacp](Control.nacp.md "wikilink") to buf+0 and the
+cached icon to buf+0x4000. Returns an error if the buffer is too small.
 
 ## ListApplicationContentMetaStatus
 
