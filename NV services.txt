@@ -1275,6 +1275,10 @@ This is "nns::nvdrv::INvDrvDebugFSServices".
 | 1 || [[#CloseLog]]
 |-
 | 2 || [[#ReadLog]]
+|-
+| 3 ||
+|-
+| 4 ||
 |}
 
 == OpenLog ==

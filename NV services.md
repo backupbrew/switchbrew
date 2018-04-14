@@ -1235,6 +1235,8 @@ This is "nns::nvdrv::INvDrvDebugFSServices".
 | 0   | [\#OpenLog](#OpenLog "wikilink")   |
 | 1   | [\#CloseLog](#CloseLog "wikilink") |
 | 2   | [\#ReadLog](#ReadLog "wikilink")   |
+| 3   |                                    |
+| 4   |                                    |
 
 ## OpenLog
 
