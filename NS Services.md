@@ -223,7 +223,10 @@ structure:
 # ns:am2, ns:ec, ns:rid, ns:rt, ns:web
 
 These services are all, at the top level,
-"nn::ns::detail::IServiceGetterInterface".
+"nn::ns::detail::IServiceGetterInterface". These commands check a state
+field for a command-specific bit and returns an error if not set, this
+is likely a permissions check for
+service+command.
 
 | Cmd  | Name                                                                       |
 | ---- | -------------------------------------------------------------------------- |
