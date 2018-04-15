@@ -80,6 +80,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/EasyRPG/Player Yes]
 | 2018-03-09
 |-
+| Solarus Engine
+| Zelda-like Action-RPG game engine
+| [[User:carstene1ns|carstene1ns]]
+| [https://f4ke.de/dev/switch/ here]
+| [https://github.com/carstene1ns/solarus-engine Yes]
+| 2018-04-08
+|-
 |}
 
 === Games ===
