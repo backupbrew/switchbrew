@@ -101,10 +101,12 @@ SYSTEM-partition saveIDs are specified by
 saveIDs are determined by FS-module internally. The high u32 of the
 saveID is normally either 0x00000000 or 0x80000000.
 
-Encrypted partitions use AES-XTS using the same non-standard
-(endian-swapped) tweak as other Nintendo AES-XTS code, initial\_sector =
-0, and sector size 0x4000. All encrypted partitions use console unique
-keydata.
+Encrypted partitions use AES-XTS using the same non-standard tweak
+(tweak\[0\] = sectorIdx\[MSB\] .. tweak\[15\] = sectorIdx\[LSB\], if
+using 32bit sectorIdx that means tweak\[0\]..tweak\[11\] are 0, with
+tweak\[12\]..tweak\[15\] containing big-endian sectorIdx) as other
+Nintendo AES-XTS code, initial\_sector = 0, and sector size 0x4000. All
+encrypted partitions use console unique keydata.
 
 ### PRODINFOF
 
