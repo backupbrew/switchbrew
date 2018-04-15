@@ -131,14 +131,14 @@ The currently active keyblob is officially known as "SecureInfo".
 |  0x00004400
 |  0x003FBC00
 |  27
-|  Yes
+|  Yes (Bis key 0)
 |  "CAL0" raw partition containing set:cal data. The official name for this partition is "CalibrationBinary".
 |-
 |  PRODINFOF
 |  0x00400000
 |  0x00400000
 |  28
-|  Yes
+|  Yes (Bis key 0)
 |  FAT12 filesystem, additional calibration. The official name for this partition is "CalibrationFile".
 |-
 |  BCPKG2-1-Normal-Main
@@ -187,21 +187,21 @@ The currently active keyblob is officially known as "SecureInfo".
 |  0x03800000
 |  0x04000000
 |  29
-|  Yes
+|  Yes (Bis key 1)
 |  FAT32 filesystem. The official name for this partition is "SafeMode".
 |-
 |  SYSTEM
 |  0x07800000 
 |  0xA0000000
 |  31 and 32
-|  Yes
+|  Yes (Bis key 2)
 |  FAT32 filesystem. The official name for this partition is "SystemProperEncryption".
 |-
 |  USER
 |  0xA7800000
 |  0x680000000
 |  30
-|  Yes
+|  Yes (Bis key 3)
 |  FAT32 filesystem.
 |-
 | 
