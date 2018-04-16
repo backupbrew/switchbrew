@@ -3,27 +3,92 @@
 This is an array of u32's, usually located in [Thread Local
 Storage](Thread%20Local%20Storage.md "wikilink").
 
-| Word | Bits  | Description                                                                                                                   |
-| ---- | ----- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 0    | 15-0  | Type. 0=LegacyRequest?, 1=LegacyControl?, 2=Close, 3=? 4=Request, 5=Control, 6=\[5.0.0+\] NewRequest, 7=\[5.0.0+\] NewControl |
-| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                                                                                  |
-| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                                  |
-| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                                  |
-| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed.                                                                   |
-| 1    | 9-0   | Size of raw data section in u32s.                                                                                             |
-| 1    | 13-10 | Flags for buf C descriptor.                                                                                                   |
-| 1    | 30-20 | ?                                                                                                                             |
-| 1    | 31    | Enable handle descriptor.                                                                                                     |
-| ...  |       | [Handle descriptor](#Handle_descriptor "wikilink"), if enabled.                                                               |
-| ...  |       | [Buf X descriptors](#Buffer_descriptor_X_"Pointer" "wikilink"), each one 2 words.                                             |
-| ...  |       | [Buf A descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.                       |
-| ...  |       | [Buf B descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.                       |
-| ...  |       | [Type W descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.                      |
-| ...  |       | [Raw data section](#Raw_data_section "wikilink") (including padding before and after aligned data section).                   |
-| ...  |       | [Buf C descriptors](#Buffer_descriptor_C_"ReceiveList" "wikilink"), each one 2 words.                                         |
+| Word | Bits  | Description                                                                                                 |
+| ---- | ----- | ----------------------------------------------------------------------------------------------------------- |
+| 0    | 15-0  | [Type](#Type "wikilink").                                                                                   |
+| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                                                                |
+| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                |
+| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                |
+| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed.                                                 |
+| 1    | 9-0   | Size of raw data section in u32s.                                                                           |
+| 1    | 13-10 | Flags for buf C descriptor.                                                                                 |
+| 1    | 30-20 | ?                                                                                                           |
+| 1    | 31    | Enable handle descriptor.                                                                                   |
+| ...  |       | [Handle descriptor](#Handle_descriptor "wikilink"), if enabled.                                             |
+| ...  |       | [Buf X descriptors](#Buffer_descriptor_X_"Pointer" "wikilink"), each one 2 words.                           |
+| ...  |       | [Buf A descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.     |
+| ...  |       | [Buf B descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.     |
+| ...  |       | [Type W descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.    |
+| ...  |       | [Raw data section](#Raw_data_section "wikilink") (including padding before and after aligned data section). |
+| ...  |       | [Buf C descriptors](#Buffer_descriptor_C_"ReceiveList" "wikilink"), each one 2 words.                       |
 
 First two header u32's and handle descriptor (if enabled) are copied
 as-is from one process to the other.
+
+### Type
+
+IPC commands can have different types which influence how the IPC server
+processes requests in
+"nn::sf::hipc::server::HipcServerSessionManagerBase::ProcessRequest".
+
+| Value | Name                                                                                |
+| ----- | ----------------------------------------------------------------------------------- |
+| 0     | Invalid                                                                             |
+| 1     | [LegacyRequest](#LegacyRequest,_LegacyControl "wikilink")                           |
+| 2     | [Close](#Close "wikilink")                                                          |
+| 3     | [LegacyControl](#LegacyRequest,_LegacyControl "wikilink")                           |
+| 4     | [Request](#Request,_Control "wikilink")                                             |
+| 5     | [Control](#Request,_Control "wikilink")                                             |
+| 6     | \[5.0.0+\] [RequestWithContext](#RequestWithContext,_ControlWithContext "wikilink") |
+| 7     | \[5.0.0+\] [ControlWithContext](#RequestWithContext,_ControlWithContext "wikilink") |
+
+#### Close
+
+When processing a request of this type, the IPC server
+    calls:
+
+  - "nn::sf::hipc::server::HipcServerSessionManager::DestroyServerSession"
+  - "nn::sf::hipc::CloseServerSessionHandle"
+
+This ensures that the server session is destroyed internally and
+properly closed.
+
+#### LegacyRequest, LegacyControl
+
+These types are handled by
+    calling:
+
+  - "nn::sf::hipc::detail::HipcMessageBufferAccessor::ParseHeader"
+  - "nn::sf::hipc::server::HipcServerSessionManager::ProcessMessage"
+  - "nn::sf::hipc::Reply"
+  - "nn::sf::hipc::server::HipcServerSessionManager::RegisterServerSessionToWaitBase"
+
+It is speculated that these are part of an older message processing
+system where headers were further partitioned.
+
+#### Request, Control
+
+These types are handled by
+    calling:
+
+  - "nn::sf::hipc::server::HipcServerSessionManager::ProcessMessage2"
+  - "nn::sf::hipc::server::HipcServerSessionManager::RegisterServerSessionToWaitBase"
+
+This represents a more modern message handling system where contents
+follow the general marshalling structure.
+
+#### RequestWithContext, ControlWithContext
+
+These are identical to normal Request and Control types, but with the
+additional requirement of suppling a token in their [data
+payload](#Data_payload "wikilink").
+
+This token is used by "nn::sf::cmif::SetInlineContext" which has the
+sole purpose of saving it into the TLS in order for it to be distributed
+to any IPC commands that are made while processing the current command.
+It's unknown if this token serves any purpose or if it's just a
+debug-tool to figure out what IPC command caused a particular chain of
+commands.
 
 ### Handle descriptor
 
@@ -199,12 +264,7 @@ u64's.
 | 4... | Input parameters or return values                                                               |
 
 \[5.0.0+\] A token value was introduced into raw\_data+12 (regardless of
-domain or not, in either case it overlaps with padding). When a service
-processes an incoming IPC cmd, the token value gets saved into TLS and
-is distributed to any IPC cmds that are made during processing of the
-IPC cmd. It's unknown if this token serves any purpose or if it's just a
-debug-tool to figure out what IPC cmd caused a particular chain of IPC
-cmds.
+domain or not, in either case it overlaps with padding).
 
 ## Official marshalling code
 
