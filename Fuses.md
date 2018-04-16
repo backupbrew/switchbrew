@@ -320,22 +320,240 @@ fetches done by BPMP.
 The revision stored in FUSE\_CP\_REV indicates the unique set of values
 stored in ipatch fuses.
 
-The following represents the patch data dumped from a 2.0.0 Switch
-console:
+The following represents the patch data dumped from a Switch
+    console:
 
-`Patch address       Patch data `  
-`0x001016AE          0xDF00    // svc #0x00 (offset 0x48)`  
-`0x00103040          0xDF22    // svc #0x22 (offset 0x8c)`  
-`0x00106F2E          0xDF26    // svc #0x26 (offset 0x94)`  
-`0x0010FB3C          0x2000    // movs r0, #0x00`  
-`0x00100856          0xDF2C    // svc #0x2c (offset 0xa0)`  
-`0x00106F54          0xDF42    // svc #0x42 (offset 0xcc)`  
-`0x001012E4          0xDF4B    // svc #0x4b (offset 0xde)`  
-`0x00104526          0xDF54    // svc #0x54 (offset 0xf0)`  
-`0x001043F4          0xDF5D    // svc #0x5d (offset 0x102)`  
-`0x00117744          0xAC57    // data`  
-`0x00117758          0x3D19    // data`  
-`0x00103D2A          0x2001    // movs r0, #0x01`
+    RAM:00000000 ; =============== S U B R O U T I N E =======================================
+    RAM:00000000
+    RAM:00000000
+    RAM:00000000 irom_svc_dispatch
+    RAM:00000000   STMFD   SP!, {R0-R2}                  ; ipatches:
+    RAM:00000000                                         ;  0  b57df00     16ae     df00 : svc #0x00 (offset 0x48)
+    RAM:00000000                                         ;  1 1820df22     3040     df22 : svc #0x22 (offset 0x8c)
+    RAM:00000000                                         ;  2 3797df26     6f2e     df26 : svc #0x26 (offset 0x94)
+    RAM:00000000                                         ;  3 7d9e2000     fb3c     2000 : movs r0, #0x00
+    RAM:00000000                                         ;  4  42bdf2c      856     df2c : svc #0x2c (offset 0xa0)
+    RAM:00000000                                         ;  5 37aadf42     6f54     df42 : svc #0x42 (offset 0xcc)
+    RAM:00000000                                         ;  6  972df4b     12e4     df4b : svc #0x4b (offset 0xde)
+    RAM:00000000                                         ;  7 2293df54     4526     df54 : svc #0x54 (offset 0xf0)
+    RAM:00000000                                         ;  8 21fadf5d     43f4     df5d : svc #0x5d (offset 0x102)
+    RAM:00000000                                         ;  9 bba2ac57    17744     ac57 : data
+    RAM:00000000                                         ; 10 bbac3d19    17758     3d19 : data
+    RAM:00000000                                         ; 11 1e952001     3d2a     2001 : movs r0, #0x01
+    RAM:00000004   MOV     R2, LR
+    RAM:00000008   SUB     R2, R2, #2
+    RAM:0000000C   LDR     R2, [R2]
+    RAM:00000010   AND     R2, R2, #0xFF
+    RAM:00000014   MOV     R2, R2,LSL#1
+    RAM:00000018   LDR     R0, =0x1007B0
+    RAM:0000001C   LDR     R1, =0x1007F8
+    RAM:00000020   SUB     R1, R1, R0
+    RAM:00000024   LDR     R0, =0x40004C30
+    RAM:00000028   ADD     R0, R0, R1
+    RAM:0000002C   ADD     R2, R2, R0
+    RAM:00000030   ORR     R2, R2, #1
+    RAM:00000034   LDMFD   SP!, {R0,R1}
+    RAM:00000038   BX      R2
+    RAM:00000038 ; End of function irom_svc_dispatch
+    RAM:00000038
+    RAM:00000038 ; ---------------------------------------------------------------------------
+    RAM:0000003C dword_3C DCD 0x1007B0                   ; DATA XREF: irom_svc_dispatch+18↑r
+    RAM:00000040 dword_40 DCD 0x1007F8                   ; DATA XREF: irom_svc_dispatch+1C↑r
+    RAM:00000044 dword_44 DCD 0x40004C30                 ; DATA XREF: irom_svc_dispatch+24↑r
+    RAM:00000048   CODE16
+    RAM:00000048
+    RAM:00000048 ; =============== S U B R O U T I N E =======================================
+    RAM:00000048
+    RAM:00000048
+    RAM:00000048 sub_48
+    RAM:00000048   MOVS    R2, #0                        ; 0  b57df00     16ae     df00 : svc #0x00 (offset 0x48)
+    RAM:0000004A   MVNS    R2, R2
+    RAM:0000004C   LDR     R1, =0x60006410
+    RAM:0000004E   STR     R2, [R1,#0x30]
+    RAM:00000050   STR     R2, [R1,#0x38]
+    RAM:00000052   LDR     R1, =0x600060F8
+    RAM:00000054   STR     R2, [R1]
+    RAM:00000056   STR     R2, [R1,#4]
+    RAM:00000058   LDR     R1, =0x60006284
+    RAM:0000005A   STR     R2, [R1]
+    RAM:0000005C   STR     R2, [R1,#0x18]
+    RAM:0000005E   ADDS    R1, #0x80
+    RAM:00000060   ADDS    R1, #0x1C
+    RAM:00000062   STR     R2, [R1]
+    RAM:00000064   STR     R2, [R1,#8]
+    RAM:00000066   STR     R2, [R1,#0x10]
+    RAM:00000068   ADDS    R1, #0x80
+    RAM:0000006A   STR     R2, [R1]
+    RAM:0000006C   STR     R2, [R1,#4]
+    RAM:0000006E   LDR     R1, =0x60006554
+    RAM:00000070   STR     R2, [R1]
+    RAM:00000072   MOVS    R2, #0xA0000000
+    RAM:00000076   LDR     R1, =0x60006148
+    RAM:00000078   STR     R2, [R1]
+    RAM:0000007A   ADDS    R1, #0x38 ; '8'
+    RAM:0000007C   STR     R2, [R1]
+    RAM:0000007E   MOVS    R2, #0xE0000000
+    RAM:00000082   LDR     R1, =0x600066A0
+    RAM:00000084   STR     R2, [R1]
+    RAM:00000086   MOVS    R1, #0
+    RAM:00000088   MOVS    R0, #0xE
+    RAM:0000008A   B       pop_r2_mov_pc_lr
+    RAM:0000008A ; End of function sub_48
+    RAM:0000008A
+    RAM:0000008C
+    RAM:0000008C ; =============== S U B R O U T I N E =======================================
+    RAM:0000008C
+    RAM:0000008C
+    RAM:0000008C sub_8C
+    RAM:0000008C   LDR     R0, [R1,#0x18]                ; 1 1820df22     3040     df22 : svc #0x22 (offset 0x8c)
+    RAM:0000008E   MOVS    R2, #1
+    RAM:00000090   ORRS    R0, R2
+    RAM:00000092   B       pop_r2_mov_pc_lr
+    RAM:00000092 ; End of function sub_8C
+    RAM:00000092
+    RAM:00000094
+    RAM:00000094 ; =============== S U B R O U T I N E =======================================
+    RAM:00000094
+    RAM:00000094
+    RAM:00000094 sub_94
+    RAM:00000094   LDR     R2, [R4,#0x50]                ; 2 3797df26     6f2e     df26 : svc #0x26 (offset 0x94)
+    RAM:00000096   ADDS    R2, R2, #2
+    RAM:00000098   STR     R2, [R4,#0x50]
+    RAM:0000009A   SUBS    R1, #0x80
+    RAM:0000009C   STR     R1, [R4,#0x34]
+    RAM:0000009E   B       pop_r2_mov_pc_lr
+    RAM:0000009E ; End of function sub_94
+    RAM:0000009E
+    RAM:000000A0
+    RAM:000000A0 ; =============== S U B R O U T I N E =======================================
+    RAM:000000A0
+    RAM:000000A0
+    RAM:000000A0 sub_A0
+    RAM:000000A0
+    RAM:000000A0 ; FUNCTION CHUNK AT RAM:00000148 SIZE 00000004 BYTES
+    RAM:000000A0
+    RAM:000000A0   MOVS    R0, #0x70000000               ; 4  42bdf2c      856     df2c : svc #0x2c (offset 0xa0)
+    RAM:000000A4   LDR     R6, =dword_7000EF14
+    RAM:000000A6   LDR     R2, =dword_7000E5B4
+    RAM:000000A8   LDR     R2, [R2]
+    RAM:000000AA   CMP     R2, #0
+    RAM:000000AC   BEQ     loc_B4
+    RAM:000000AE   LDR     R2, [R6]
+    RAM:000000B0   STR     R2, [R0,#8]
+    RAM:000000B2   B       loc_BC
+    RAM:000000B4 ; ---------------------------------------------------------------------------
+    RAM:000000B4
+    RAM:000000B4 loc_B4                                  ; CODE XREF: sub_A0+C↑j
+    RAM:000000B4   LDR     R2, [R0,#8]
+    RAM:000000B6   LSRS    R0, R0, #0x12
+    RAM:000000B8   ORRS    R2, R0
+    RAM:000000BA   STR     R2, [R6]
+    RAM:000000BC
+    RAM:000000BC loc_BC                                  ; CODE XREF: sub_A0+12↑j
+    RAM:000000BC   LDR     R6, =dword_7000E9C0
+    RAM:000000BE   LDR     R0, [R6]
+    RAM:000000C0   MOVS    R2, #0x4000
+    RAM:000000C4   ORRS    R2, R0
+    RAM:000000C6   STR     R2, [R6]
+    RAM:000000C8   LDR     R0, [R5,#0x10]
+    RAM:000000CA   B       pop_r2_mov_pc_lr
+    RAM:000000CA ; End of function sub_A0
+    RAM:000000CA
+    RAM:000000CC
+    RAM:000000CC ; =============== S U B R O U T I N E =======================================
+    RAM:000000CC
+    RAM:000000CC
+    RAM:000000CC sub_CC
+    RAM:000000CC   MOVS    R2, #0xF000000                ; 5 37aadf42     6f54     df42 : svc #0x42 (offset 0xcc)
+    RAM:000000D0   BICS    R1, R2
+    RAM:000000D2   STR     R1, [R4,#0x10]
+    RAM:000000D4   LDR     R1, [R4,#0x50]
+    RAM:000000D6   MOVS    R2, #7
+    RAM:000000D8   BICS    R1, R2
+    RAM:000000DA   STR     R1, [R4,#0x50]
+    RAM:000000DC   B       pop_r2_mov_pc_lr
+    RAM:000000DC ; End of function sub_CC
+    RAM:000000DC
+    RAM:000000DE
+    RAM:000000DE ; =============== S U B R O U T I N E =======================================
+    RAM:000000DE
+    RAM:000000DE
+    RAM:000000DE sub_DE
+    RAM:000000DE   LDR     R2, =dword_7000FA9C           ; 6  972df4b     12e4     df4b : svc #0x4b (offset 0xde)
+    RAM:000000E0   LDR     R2, [R2]
+    RAM:000000E2   LSRS    R2, R2, #8
+    RAM:000000E4   LSLS    R2, R2, #1
+    RAM:000000E6   LDR     R1, [R4]
+    RAM:000000E8   BICS    R1, R2
+    RAM:000000EA   STR     R1, [R4]
+    RAM:000000EC   CMP     R0, #0
+    RAM:000000EE   B       pop_r2_mov_pc_lr
+    RAM:000000EE ; End of function sub_DE
+    RAM:000000EE
+    RAM:000000F0
+    RAM:000000F0 ; =============== S U B R O U T I N E =======================================
+    RAM:000000F0
+    RAM:000000F0
+    RAM:000000F0 sub_F0
+    RAM:000000F0
+    RAM:000000F0 arg_0=  0
+    RAM:000000F0
+    RAM:000000F0   LDR     R0, =0x400049F0               ; 7 2293df54     4526     df54 : svc #0x54 (offset 0xf0)
+    RAM:000000F2   LDR     R2, [R0]
+    RAM:000000F4   STR     R2, [SP,#arg_0]
+    RAM:000000F6   LDR     R0, =0x40010000
+    RAM:000000F8   LSRS    R2, R2, #17
+    RAM:000000FA   BEQ     pop_r2_mov_pc_lr              ; if ([0x400049F0] >> 17) == 0) {
+    RAM:000000FA                                         ;   r2 = [0x400049F0];
+    RAM:000000FA                                         ; } else {
+    RAM:000000FC   LDR     R0, =APBDEV_PMC_CNTRL_0
+    RAM:000000FE   STR     R4, [R0]                      ;  write APBDEV_PMC_CNTRL
+    RAM:00000100
+    RAM:00000100 loc_100                                 ; CODE XREF: sub_F0:loc_100↓j
+    RAM:00000100   B       loc_100                       ;  hang
+    RAM:00000100 ; End of function sub_F0                ; }
+    RAM:00000100
+    RAM:00000102
+    RAM:00000102 ; =============== S U B R O U T I N E =======================================
+    RAM:00000102
+    RAM:00000102
+    RAM:00000102 sub_102
+    RAM:00000102
+    RAM:00000102 arg_0=  0
+    RAM:00000102
+    RAM:00000102   LDR     R2, =0x40010220               ; 8 21fadf5d     43f4     df5d : svc #0x5d (offset 0x102)
+    RAM:00000104   STR     R2, [SP,#arg_0]               ; set r2 retval = [0x40010220]
+    RAM:00000106   LDR     R2, [R2,#0x18]
+    RAM:00000108   ADDS    R0, #0xFC
+    RAM:0000010A   STR     R2, [R0,#0x1C]                ; [r0+0x118] = [0x40010220 + 0x18]
+    RAM:0000010C   B       pop_r2_mov_pc_lr
+    RAM:0000010C ; End of function sub_102
+    RAM:0000010C
+    RAM:0000010C ; ---------------------------------------------------------------------------
+    RAM:0000010E   DCB    0
+    RAM:0000010F   DCB    0
+    RAM:00000110 off_110 DCD 0x60006410                  ; DATA XREF: sub_48+4↑r
+    RAM:00000114 off_114 DCD 0x600060F8                  ; DATA XREF: sub_48+A↑r
+    RAM:00000118 off_118 DCD 0x60006284                  ; DATA XREF: sub_48+10↑r
+    RAM:0000011C off_11C DCD 0x60006554                  ; DATA XREF: sub_48+26↑r
+    RAM:00000120 off_120 DCD 0x60006148                  ; DATA XREF: sub_48+2E↑r
+    RAM:00000124 off_124 DCD 0x600066A0                  ; DATA XREF: sub_48+3A↑r
+    RAM:00000128 off_128 DCD dword_7000EF14              ; DATA XREF: sub_A0+4↑r
+    RAM:0000012C off_12C DCD dword_7000E5B4              ; DATA XREF: sub_A0+6↑r
+    RAM:00000130 off_130 DCD dword_7000E9C0              ; DATA XREF: sub_A0:loc_BC↑r
+    RAM:00000134 off_134 DCD dword_7000FA9C              ; DATA XREF: sub_DE↑r
+    RAM:00000138 off_138 DCD 0x400049F0                  ; DATA XREF: sub_F0↑r
+    RAM:0000013C dword_13C DCD 0x40010000                ; DATA XREF: sub_F0+6↑r
+    RAM:00000140 off_140 DCD APBDEV_PMC_CNTRL_0          ; DATA XREF: sub_F0+C↑r
+    RAM:00000144 off_144 DCD 0x40010220                  ; DATA XREF: sub_102↑r
+    RAM:00000148 ; ---------------------------------------------------------------------------
+    RAM:00000148 ; START OF FUNCTION CHUNK FOR sub_A0
+    RAM:00000148
+    RAM:00000148 pop_r2_mov_pc_lr                        ; CODE XREF: sub_48+42↑j
+    RAM:00000148                                         ; sub_8C+6↑j ...
+    RAM:00000148   POP     {R2}
+    RAM:0000014A   MOV     PC, LR
+    RAM:0000014A ; END OF FUNCTION CHUNK FOR sub_A0
 
 The last 4 patches are exclusive to the Switch, while the remaining ones
 are often included in most Tegra210 based devices.
