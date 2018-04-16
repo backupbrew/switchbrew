@@ -187,11 +187,9 @@ This header is used to wrap up requests sent to domains instead of sessions.
 |-
 | 1 || || Object ID (from cmd 0 in [[IPC_Marshalling#Control|Control]]).
 |-
-  | 2
-  |rowspan="2"|
-  |rowspan="2"| Padding to align to u64
+| 2 || || Padding
 |-
-  | 3
+| 3 || || [5.0.0+] Token
 |-
 | 4... || || [[#Data payload|Data payload]]
 |-
