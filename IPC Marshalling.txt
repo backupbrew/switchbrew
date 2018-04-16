@@ -209,7 +209,7 @@ This is an array of u32's, but individual parameters are generally stored as u64
 |-
 | 2 || Command id as u64 for requests, [[Error_codes|error code]] as u64 for responses.
 |-
-| 3 || [5.0.0+] Token is placed here (for NewRequest/NewControl only).
+| 3 || [5.0.0+] Token is placed here (for NewRequest/NewControl only, non-domain messages).
 |-
 | 4... || Input parameters or return values
 |}

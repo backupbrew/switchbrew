@@ -195,7 +195,7 @@ u64's.
 | ---- | ----------------------------------------------------------------------------------------------- |
 | 0    | Magic ("SFCI" for requests, "SFCO" for responses) as u64.                                       |
 | 2    | Command id as u64 for requests, [error code](Error%20codes.md "wikilink") as u64 for responses. |
-| 3    | \[5.0.0+\] Token is placed here (for NewRequest/NewControl only).                               |
+| 3    | \[5.0.0+\] Token is placed here (for NewRequest/NewControl only, non-domain messages).          |
 | 4... | Input parameters or return values                                                               |
 
 \[5.0.0+\] When a service processes an incoming IPC cmd, the token value
