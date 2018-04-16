@@ -3,24 +3,24 @@
 This is an array of u32's, usually located in [Thread Local
 Storage](Thread%20Local%20Storage.md "wikilink").
 
-| Word | Bits  | Description                                                                                                 |
-| ---- | ----- | ----------------------------------------------------------------------------------------------------------- |
-| 0    | 15-0  | Type. 0=?, 1=?, 2=Close, 3=? 4=Request, 5=Control                                                           |
-| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                                                                |
-| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                |
-| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                |
-| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed.                                                 |
-| 1    | 9-0   | Size of raw data section in u32s.                                                                           |
-| 1    | 13-10 | Flags for buf C descriptor.                                                                                 |
-| 1    | 30-20 | ?                                                                                                           |
-| 1    | 31    | Enable handle descriptor.                                                                                   |
-| ...  |       | [Handle descriptor](#Handle_descriptor "wikilink"), if enabled.                                             |
-| ...  |       | [Buf X descriptors](#Buffer_descriptor_X_"Pointer" "wikilink"), each one 2 words.                           |
-| ...  |       | [Buf A descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.     |
-| ...  |       | [Buf B descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.     |
-| ...  |       | [Type W descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.    |
-| ...  |       | [Raw data section](#Raw_data_section "wikilink") (including padding before and after aligned data section). |
-| ...  |       | [Buf C descriptors](#Buffer_descriptor_C_"ReceiveList" "wikilink"), each one 2 words.                       |
+| Word | Bits  | Description                                                                                                                   |
+| ---- | ----- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 0    | 15-0  | Type. 0=LegacyRequest?, 1=LegacyControl?, 2=Close, 3=? 4=Request, 5=Control, 6=\[5.0.0+\] NewRequest, 7=\[5.0.0+\] NewControl |
+| 0    | 19-16 | Number of buf X descriptors (each: 2 words).                                                                                  |
+| 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                                  |
+| 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                                  |
+| 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed.                                                                   |
+| 1    | 9-0   | Size of raw data section in u32s.                                                                                             |
+| 1    | 13-10 | Flags for buf C descriptor.                                                                                                   |
+| 1    | 30-20 | ?                                                                                                                             |
+| 1    | 31    | Enable handle descriptor.                                                                                                     |
+| ...  |       | [Handle descriptor](#Handle_descriptor "wikilink"), if enabled.                                                               |
+| ...  |       | [Buf X descriptors](#Buffer_descriptor_X_"Pointer" "wikilink"), each one 2 words.                                             |
+| ...  |       | [Buf A descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.                       |
+| ...  |       | [Buf B descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.                       |
+| ...  |       | [Type W descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.                      |
+| ...  |       | [Raw data section](#Raw_data_section "wikilink") (including padding before and after aligned data section).                   |
+| ...  |       | [Buf C descriptors](#Buffer_descriptor_C_"ReceiveList" "wikilink"), each one 2 words.                                         |
 
 First two header u32's and handle descriptor (if enabled) are copied
 as-is from one process to the other.
