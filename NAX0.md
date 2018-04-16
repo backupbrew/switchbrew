@@ -31,7 +31,7 @@ The actual content uses AES-XTS with the same non-standard tweak
 Key derivation is as follows:
 
 First, FS retrieves the 16-byte console-unique seed that NS registered
-(data originates from the ns\_systemseed:/ [system
+(data originates from the ns\_appman:/private [system
 savegame](Flash%20Filesystem#System%20Savegames.md##System_Savegames "wikilink")).
 Next, FS calculates encryptedSeedKeys = \<0x20 hardcoded keydata
 depending on if this NAX0 is a save or an NCA\> XORed with the system
