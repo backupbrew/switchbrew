@@ -189,7 +189,7 @@ This header is used to wrap up requests sent to domains instead of sessions.
 |-
 | 2 || || Padding
 |-
-| 3 || || [5.0.0+] Token
+| 3 || || [5.0.0+] Token for (NewRequest only)
 |-
 | 4... || || [[#Data payload|Data payload]]
 |-
