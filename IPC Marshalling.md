@@ -195,14 +195,16 @@ u64's.
 | ---- | ----------------------------------------------------------------------------------------------- |
 | 0    | Magic ("SFCI" for requests, "SFCO" for responses) as u64.                                       |
 | 2    | Command id as u64 for requests, [error code](Error%20codes.md "wikilink") as u64 for responses. |
-| 3    | \[5.0.0+\] Token is placed here (for NewRequest/NewControl only, non-domain messages).          |
+| 3    | \[5.0.0+\] Token (for NewRequest only, non-domain messages).                                    |
 | 4... | Input parameters or return values                                                               |
 
-\[5.0.0+\] When a service processes an incoming IPC cmd, the token value
-gets saved into TLS and is distributed to any IPC cmds that are made
-during processing of the IPC cmd. It's unknown if this token serves any
-purpose or if it's just a debug-tool to figure out what IPC cmd caused a
-particular chain of IPC cmds.
+\[5.0.0+\] A token value was introduced into raw\_data+12 (regardless of
+domain or not, in either case it overlaps with padding). When a service
+processes an incoming IPC cmd, the token value gets saved into TLS and
+is distributed to any IPC cmds that are made during processing of the
+IPC cmd. It's unknown if this token serves any purpose or if it's just a
+debug-tool to figure out what IPC cmd caused a particular chain of IPC
+cmds.
 
 ## Official marshalling code
 
