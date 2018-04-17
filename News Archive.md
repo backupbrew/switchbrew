@@ -1,3 +1,6 @@
+  - **28 February 18**
+    [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
+    v2.0.0 was released.
   - **22 February 18** [devkitPro](http://devkitpro.org) released
     [devkitA64 alpha7](https://devkitpro.org/viewtopic.php?f=13&t=8693)
   - **18 February 18** [nx-hbl](https://switchbrew.github.io/nx-hbl/)
