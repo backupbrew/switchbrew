@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **16 April 18** Nintendo released system update
+    [5.0.2](5.0.2.md "wikilink").
   - **26 March 18** Nintendo released system update
     [5.0.1](5.0.1.md "wikilink").
   - **12 March 18** Nintendo released system update
@@ -27,6 +29,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
   - **2 March 18**
     [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.1.0)
     v1.1.0 was released.
-  - **28 February 18**
-    [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
-    v2.0.0 was released.
