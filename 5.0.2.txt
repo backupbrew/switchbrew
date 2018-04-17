@@ -1,0 +1,16 @@
+The Switch 5.0.2 system update was released on April 16, 2018. This Switch update was released for the following regions: ALL.
+
+Security flaws fixed: <fill this in manually later, see the updatedetails page from the ninupdates-report page(s) once available for now>.
+
+==Change-log==
+[http://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
+* General system stability improvements to enhance the user's experience, including:
+* Resolved an issue that caused motion controls to respond incorrectly when playing games that use the feature
+* Resolved an issue that caused user icons for recommended friends to not display correctly
+
+==System Titles==
+<fill this in (manually) later>
+
+==See Also==
+System update report(s):
+* [https://yls8.mtheall.com/ninupdates/reports.php?date=04-16-18_08-05-10&sys=hac]
