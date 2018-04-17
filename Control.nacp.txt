@@ -10,7 +10,7 @@ Total size is 0x4000-bytes.
 ! Description
 |-
 | 0x0
-| 0x30000 (0x300*16)
+| 0x3000 (0x300*16)
 | Language entries
 |-
 | 0x3000
