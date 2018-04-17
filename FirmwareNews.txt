@@ -1,3 +1,3 @@
-As of this writing, the latest firmware is '''[[5.0.1]]'''.
+As of this writing, the latest firmware is '''[[5.0.2]]'''.
 
 [[3.0.0]] or lower system version is recommended. Users on [[1.0.0]] should remain there for future CFW. See [[Version Table]].
