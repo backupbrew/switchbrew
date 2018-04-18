@@ -1,12 +1,13 @@
 # ldr:dmnt
 
-This is "nn::ldr::detail::IDebugMonitorInterface".
+This is
+"nn::ldr::detail::IDebugMonitorInterface".
 
-| Cmd | Name                         |
-| --- | ---------------------------- |
-| 0   | AddProcessToDebugLaunchQueue |
-| 1   | ClearDebugLaunchQueue        |
-| 2   |                              |
+| Cmd | Name                                                                                                                       |
+| --- | -------------------------------------------------------------------------------------------------------------------------- |
+| 0   | [AddProcessToDebugLaunchQueue](Loader%20services#AddProcessToDebugLaunchQueue.md##AddProcessToDebugLaunchQueue "wikilink") |
+| 1   | [ClearDebugLaunchQueue](Loader%20services#ClearDebugLaunchQueue.md##ClearDebugLaunchQueue "wikilink")                      |
+| 2   | [GetNsoInfos](Loader%20services#GetNsoInfos.md##GetNsoInfos "wikilink")                                                    |
 
 ## AddProcessToDebugLaunchQueue
 
@@ -18,6 +19,20 @@ but for processes marked as debug.
 
 Same as
 [ClearLaunchQueue](Loader%20services#ClearLaunchQueue.md##ClearLaunchQueue "wikilink").
+
+## GetNsoInfos
+
+Takes in a u64 ProcessID, and a C descriptor. Returns the number of
+NsoInfos copied to output.
+
+NsoInfo has the following layout:
+
+| Offset | Size | Description                       |
+| ------ | ---- | --------------------------------- |
+| 0x0    | 0x20 | "Build ID", from NSO header+0x40. |
+| 0x20   | 0x8  | Mapped address for this NSO       |
+| 0x28   | 0x8  | Mapped size for this NSO          |
+|        |      |                                   |
 
 # ldr:pm
 

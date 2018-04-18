@@ -5,11 +5,11 @@ This is "nn::ldr::detail::IDebugMonitorInterface".
 |-
 ! Cmd || Name
 |-
-| 0 || AddProcessToDebugLaunchQueue
+| 0 || [[Loader_services#AddProcessToDebugLaunchQueue|AddProcessToDebugLaunchQueue]]
 |-
-| 1 || ClearDebugLaunchQueue
+| 1 || [[Loader_services#ClearDebugLaunchQueue|ClearDebugLaunchQueue]]
 |-
-| 2 ||
+| 2 || [[Loader_services#GetNsoInfos|GetNsoInfos]]
 |}
 
 == AddProcessToDebugLaunchQueue ==
@@ -17,6 +17,32 @@ Same as [[Loader_services#AddProcessToLaunchQueue|AddProcessToLaunchQueue]] but 
 
 == ClearDebugLaunchQueue ==
 Same as [[Loader_services#ClearLaunchQueue|ClearLaunchQueue]].
+
+== GetNsoInfos ==
+Takes in a u64 ProcessID, and a C descriptor. Returns the number of NsoInfos copied to output.
+
+NsoInfo has the following layout:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x20
+| "Build ID", from NSO header+0x40.
+|-
+| 0x20
+| 0x8
+| Mapped address for this NSO
+|-
+| 0x28
+| 0x8
+| Mapped size for this NSO
+|-
+|}
+
 
 = ldr:pm =
 This is "nn::ldr::detail::IProcessManagerInterface".
