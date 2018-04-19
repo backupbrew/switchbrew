@@ -305,19 +305,25 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x20805 || 5 || 260 || Storage not mounted
 |-
-| 0x806 || 6 || 4 || Converted from error 0xD401.
+| 0x806 || 6 || 4 || Converted from error 0xD401
 |-
-| 0x1006 || 6 || 8 || Converted from error 0xE401.
+| 0x1006 || 6 || 8 || Converted from error 0xE401
 |-
-| 0x408 || 8 || 2 || Not initialized.
+| 0x408 || 8 || 2 || Program location entry not found
 |-
-| 0x608 || 8 || 3 || Invalid control StorageID.
+| 0x608 || 8 || 3 || Invalid context for control location
 |-
-| 0x808 || 8 || 4 || Storage not found.
+| 0x808 || 8 || 4 || Storage not found
 |-
-| 0xA08 || 8 || 5 || Access denied.
+| 0xA08 || 8 || 5 || Access denied
 |-
-| 0xE08 || 8 || 7 || Title is not registered.
+| 0xC08 || 8 || 6 || Offline manual HTML location entry not found
+|-
+| 0xE08 || 8 || 7 || Title is not registered
+|-
+| 0x1008 || 8 || 8 || Control location entry for host not found
+|-
+| 0x1208 || 8 || 9 || Legal info HTML location entry not found
 |-
 | 0x209 || 9 || 1 || Args too long.
 |-
