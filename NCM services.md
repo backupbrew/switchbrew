@@ -7,12 +7,12 @@ NCM contains services for internal file path and content management.
 This is
 "nn::lr::ILocationResolverManager".
 
-| Cmd | Name                            | Arguments                                                             | Notes |
-| --- | ------------------------------- | --------------------------------------------------------------------- | ----- |
-| 0   | GetLocationResolver             | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
-| 1   | GetRegisteredLocationResolver   | None                                                                  |       |
-| 2   | CheckStorage                    | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
-| 3   | GetAddOnContentLocationResolver | None                                                                  |       |
+| Cmd | Name                                       | Arguments                                                             | Notes |
+| --- | ------------------------------------------ | --------------------------------------------------------------------- | ----- |
+| 0   | GetLocationResolver                        | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 1   | GetRegisteredLocationResolver              | None                                                                  |       |
+| 2   | CheckStorage                               | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 3   | \[2.0.0+\] GetAddOnContentLocationResolver | None                                                                  |       |
 
 The only sysmodules which use this service are
 [FS](Filesystem%20services.md "wikilink"),
@@ -25,30 +25,120 @@ access but doesn't use it.
 This is
 "nn::lr::ILocationResolver".
 
-| Cmd | Name                  | Arguments                                                                                          | Notes                                                                                                           |
-| --- | --------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| 0   | GetProgramNcaPath     | u64 TID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                                    |
-| 1   | SetProgramNcaPath     | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                                    |
-| 2   | GetUserControlNcaPath | u64 TID + C descriptor                                                                             | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink") (gamecard only?).                   |
-| 3   | GetDocHtmlNcaPath     | u64 TID + C descriptor                                                                             | Used for [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").                                    |
-| 4   | GetControlNcaPath     | u64 TID + C descriptor                                                                             | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink"). Stubbed, only returns error 0x608. |
-| 5   | SetControlNcaPath     | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").                                    |
-| 6   | SetDocHtmlNcaPath     | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").                                    |
-| 7   | GetInfoHtmlNcaPath    | u64 TID + C descriptor                                                                             | Used for [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").                                    |
-| 8   | SetInfoHtmlNcaPath    | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Used for [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").                                    |
-| 9   | ClearLocationResolver | None                                                                                               | Clears all NCA paths set.                                                                                       |
+| Cmd | Name                                                                      |
+| --- | ------------------------------------------------------------------------- |
+| 0   | [\#GetProgramNcaPath](#GetProgramNcaPath "wikilink")                      |
+| 1   | [\#SetProgramNcaPath](#SetProgramNcaPath "wikilink")                      |
+| 2   | [\#GetUserControlNcaPath](#GetUserControlNcaPath "wikilink")              |
+| 3   | [\#GetDocHtmlNcaPath](#GetDocHtmlNcaPath "wikilink")                      |
+| 4   | [\#GetControlNcaPath](#GetControlNcaPath "wikilink")                      |
+| 5   | [\#SetControlNcaPath](#SetControlNcaPath "wikilink")                      |
+| 6   | [\#SetDocHtmlNcaPath](#SetDocHtmlNcaPath "wikilink")                      |
+| 7   | [\#GetInfoHtmlNcaPath](#GetInfoHtmlNcaPath "wikilink")                    |
+| 8   | [\#SetInfoHtmlNcaPath](#SetInfoHtmlNcaPath "wikilink")                    |
+| 9   | [\#ClearLocationResolver](#ClearLocationResolver "wikilink")              |
+| 10  | \[5.0.0+\] [\#SetProgramNcaPath2](#SetProgramNcaPath2 "wikilink")         |
+| 11  | \[5.0.0+\] [\#ClearLocationResolver2](#ClearLocationResolver2 "wikilink") |
+| 12  | \[5.0.0+\]                                                                |
+| 13  | \[5.0.0+\]                                                                |
+| 14  | \[5.0.0+\]                                                                |
+| 15  | \[5.0.0+\]                                                                |
 
-These get-commands load the
-[ContentPath](Filesystem%20services.md "wikilink") from linked-lists in
-memory using the input titleID. The set-commands add a new entry to the
-list, if a matching entry is found it's removed first.
-ClearLocationResolver frees all entries in all of these linked-lists.
-The ContentPath is only used with memcpy() here with size=0x300, nothing
-more.
+If the supplied
+[StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") is
+1 (Host), a different set of internal functions is used to handle these
+commands. In this more restricted set of functions, GetControlNcaPath is
+stubbed and only returns error 0x608.
 
-The set commands always return 0. When the get-commands fail to find an
-entry for the specified titleID, 0x408 is returned for
-GetProgramNcaPath, while the rest of the commands return 0xA08.
+The Get\* commands load the
+[ContentPath](Filesystem%20services.md "wikilink") from linked-lists'
+[entries](#Location_List_Entry "wikilink") in memory using the input
+TitleID. When the command fails to find an entry for the specified
+TitleID, 0x408 is returned for GetProgramNcaPath and 0xA08 is returned
+for the rest.
+
+The Set\* commands always return 0 and add a new entry to the list. If a
+matching entry is found, it's removed first.
+
+#### GetProgramNcaPath
+
+Takes an u64 **TitleID** and a C descriptor. Used for
+[NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").
+
+#### SetProgramNcaPath
+
+Takes an u64 **TitleID** and a X descriptor with a
+[ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink").
+Used for
+[NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").
+
+Inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
+to 0.
+
+#### GetUserControlNcaPath
+
+Takes an u64 **TitleID** and a C descriptor. Used for
+[NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").
+
+#### GetDocHtmlNcaPath
+
+Takes an u64 **TitleID** and a C descriptor. Used for
+[NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").
+
+#### GetControlNcaPath
+
+Takes an u64 **TitleID** and a C descriptor. Used for
+[NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").
+
+#### SetControlNcaPath
+
+Takes an u64 **TitleID** and a X descriptor with a
+[ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink").
+Used for
+[NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").
+
+Inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
+to 1.
+
+#### SetDocHtmlNcaPath
+
+Takes an u64 **TitleID** and a X descriptor with a
+[ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink").
+Used for
+[NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").
+
+Inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
+to 1.
+
+#### GetInfoHtmlNcaPath
+
+Takes an u64 **TitleID** and a C descriptor. Used for
+[NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").
+
+#### SetInfoHtmlNcaPath
+
+Takes an u64 **TitleID** and a X descriptor with a
+[ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink").
+Used for
+[NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").
+
+Inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
+to 1.
+
+#### ClearLocationResolver
+
+Takes no input. Frees all linked-lists' entries that have **flag** set
+to 0.
+
+#### SetProgramNcaPath2
+
+Same as [SetProgramNcaPath](#SetProgramNcaPath "wikilink"), but inserts
+a new [entry](#Location_List_Entry "wikilink") with **flag** set to 1.
+
+#### ClearLocationResolver2
+
+Takes no input. Frees all linked-lists' entries that have **flag** set
+to 1.
 
 ### IRegisteredLocationResolver
 
@@ -59,27 +149,40 @@ but only two types of NCA paths can be gotten/set. In addition, each
 type has a fallback path that can be set for a single title ID at a
 time.
 
-| Cmd                               | Name                             | Arguments                                                                                          | Notes                                                                                          |
-| --------------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| 0                                 | GetPatchType0NcaPath             | u64 TID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                   |
-| 1                                 | RegisterPatchType0FallbackPath   | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 0 fallback TID and path to the provided arguments.                               |
-| 2                                 | UnregisterPatchType0FallbackPath | u64 TID                                                                                            | If the Type 0 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
-| 3                                 | SetPatchType0NcaPath             | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
-| ([2.0.0](2.0.0.md "wikilink")+) 4 | GetPatchType1NcaPath             | u64 TID + C descriptor                                                                             |                                                                                                |
-| ([2.0.0](2.0.0.md "wikilink")+) 5 | RegisterPatchType1FallbackPath   | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 1 fallback TID and path to the provided arguments.                               |
-| ([2.0.0](2.0.0.md "wikilink")+) 6 | UnregisterPatchType1FallbackPath | u64 TID                                                                                            | If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
-| ([2.0.0](2.0.0.md "wikilink")+) 7 | SetPatchType1NcaPath             | u64 TID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
+| Cmd | Name                                        | Arguments                                                                                              | Notes                                                                                          |
+| --- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| 0   | GetPatchType0NcaPath                        | u64 TitleID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                   |
+| 1   | RegisterPatchType0FallbackPath              | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 0 fallback TID and path to the provided arguments.                               |
+| 2   | UnregisterPatchType0FallbackPath            | u64 TitleID                                                                                            | If the Type 0 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
+| 3   | SetPatchType0NcaPath                        | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
+| 4   | \[2.0.0+\] GetPatchType1NcaPath             | u64 TitleID + C descriptor                                                                             |                                                                                                |
+| 5   | \[2.0.0+\] RegisterPatchType1FallbackPath   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 1 fallback TID and path to the provided arguments.                               |
+| 6   | \[2.0.0+\] UnregisterPatchType1FallbackPath | u64 TitleID                                                                                            | If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
+| 7   | \[2.0.0+\] SetPatchType1NcaPath             | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
 
 ### IAddOnContentLocationResolver
 
 This is
 "nn::lr::IAddOnContentLocationResolver".
 
-| Cmd | Name                              | Arguments                                                                       | Notes                              |
-| --- | --------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- |
-| 0   | GetAddOnContentNcaPath            | u64 TID + C descriptor                                                          |                                    |
-| 1   | RegisterAddOnContent              | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TID |                                    |
-| 2   | ClearAddOnContentLocationResolver | None                                                                            | Clears all registered titles here. |
+| Cmd | Name                              | Arguments                                                                           | Notes                              |
+| --- | --------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------- |
+| 0   | GetAddOnContentNcaPath            | u64 TitleID + C descriptor                                                          |                                    |
+| 1   | RegisterAddOnContent              | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TitleID |                                    |
+| 2   | ClearAddOnContentLocationResolver | None                                                                                | Clears all registered titles here. |
+
+### Location List Entry
+
+Total size is 0x320 bytes.
+
+| Offset | Size  | Description                                        |
+| ------ | ----- | -------------------------------------------------- |
+| 0x0    | 0x8   | Pointer to previous entry                          |
+| 0x8    | 0x8   | Pointer to next entry                              |
+| 0x10   | 0x8   | TitleID                                            |
+| 0x18   | 0x300 | [ContentPath](Filesystem%20services.md "wikilink") |
+| 0x318  | 0x4   | Flag                                               |
+| 0x31C  | 0x4   | Padding                                            |
 
 # Content Manager services
 
@@ -88,54 +191,56 @@ This is
 This is
 "nn::ncm::IContentManager".
 
-| Cmd                              | Name                                                   | Notes                                                                                                                                                                              |
-| -------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0                                | CreatePlaceholderAndRegisteredDirectoriesForMediaId    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                     |
-| 1                                | CreateSaveDataDirectoryForMediaId                      | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                     |
-| 2                                | GetExistsPlaceholderAndRegisteredDirectoriesForMediaId | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                     |
-| 3                                | GetExistsSaveDataDirectoryForMediaId                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                     |
-| 4                                | GetIContentStorage                                     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), (2.0.0+) Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
-| 5                                | GetIContentMetaDatabase                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), (2.0.0+) Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
-| ([1.0.0](1.0.0.md "wikilink")) 6 | CloseContentStorageForcibly                            | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().                                                     |
-| ([1.0.0](1.0.0.md "wikilink")) 7 | CloseContentMetaDatabaseForcibly                       | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase().                                                   |
-| 8                                | DeleteSaveDataForMediaId                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.                                                                |
-| (2.0.0+) 9                       | OpenIContentStorage                                    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage.                |
-| (2.0.0+) 10                      | CloseIContentStorage                                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage.                                                          |
-| (2.0.0+) 11                      | OpenIContentMetaDatabase                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.      |
-| (2.0.0+) 12                      | CloseIContentMetaDatabase                              | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentMetaDatabase.                                                     |
+| Cmd | Name                                                   | Notes                                                                                                                                                                                |
+| --- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0   | CreatePlaceholderAndRegisteredDirectoriesForMediaId    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                       |
+| 1   | CreateSaveDataDirectoryForMediaId                      | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                       |
+| 2   | GetExistsPlaceholderAndRegisteredDirectoriesForMediaId | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                       |
+| 3   | GetExistsSaveDataDirectoryForMediaId                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                       |
+| 4   | GetIContentStorage                                     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), \[2.0.0+\] Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
+| 5   | GetIContentMetaDatabase                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), \[2.0.0+\] Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
+| 6   | \[1.0.0\] CloseContentStorageForcibly                  | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().                                                       |
+| 7   | \[1.0.0\] CloseContentMetaDatabaseForcibly             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase().                                                     |
+| 8   | DeleteSaveDataForMediaId                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.                                                                  |
+| 9   | \[2.0.0+\] OpenIContentStorage                         | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage.                  |
+| 10  | \[2.0.0+\] CloseIContentStorage                        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage.                                                            |
+| 11  | \[2.0.0+\] OpenIContentMetaDatabase                    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.        |
+| 12  | \[2.0.0+\] CloseIContentMetaDatabase                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentMetaDatabase.                                                       |
 
 ### IContentStorage
 
 This is
 "nn::ncm::IContentStorage".
 
-| Cmd | Name                                                                       | Notes                                                                                                                                                                       |
-| --- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | [\#GeneratePlaceHolderId](#GeneratePlaceHolderId "wikilink")               | Returns a random UUID for the Content Storage.                                                                                                                              |
-| 1   | CreatePlaceholderEntryAndRegisteredDirectoryEntry                          | Takes two [\#NcaIDs](#NcaID "wikilink"), and a u64 filesize.                                                                                                                |
-| 2   | DeletePlaceholderEntry                                                     | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
-| 3   | DoesPlaceholderEntryExist                                                  | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
-| 4   | WritePlaceholderEntry                                                      | Takes a [\#NcaID](#NcaID "wikilink"), a u64-offset, and type 5 buffer. Writes the buffer to the file for the NcaID's placeholder path at the specified offset.              |
-| 5   | MovePlaceholderToRegistered                                                | Takes two [\#NcaIDs](#NcaID "wikilink"), moves the Placeholder NCA content to the registered NCA path.                                                                      |
-| 6   | DeleteRegisteredEntry                                                      | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
-| 7   | DoesRegisteredEntryExist                                                   | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
-| 8   | GetPath                                                                    | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
-| 9   | GetPlaceholderPath                                                         | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
-| 10  | CleanPlaceholderDirectory                                                  | Deletes and re-creates the Placeholder directory.                                                                                                                           |
-| 11  | GetNumberOfPlacholderEntries                                               | This is like [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink"), but for the Placeholder directory.                                                 |
-| 12  | [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink") |                                                                                                                                                                             |
-| 13  | [\#GetRegisteredEntries](#GetRegisteredEntries "wikilink")                 |                                                                                                                                                                             |
-| 14  | [\#GetRegisteredEntrySize](#GetRegisteredEntrySize "wikilink")             |                                                                                                                                                                             |
-| 15  | CloseAndFlushStorage                                                       | Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.                                             |
-| 16  | CreatePlaceholderEntryRegisteredEntryAndRegisteredDirectoryEntry           | Takes three 0x10-sized [\#NcaIDs](#NcaID "wikilink"). Creates the registered directory NCA path, and renames the placeholder path to the registered NCA path.               |
-| 17  | SetPlaceholderEntrySize                                                    | Takes a [\#NcaID](#NcaID "wikilink"), and a u64 size                                                                                                                        |
-| 18  | [\#ReadRegisteredEntryRaw](#ReadRegisteredEntryRaw "wikilink")             |                                                                                                                                                                             |
-| 19  | GetPlaceholderEntryRightsID                                                | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s placeholder path.                                                                                                 |
-| 20  | GetRegisteredEntryRightsID                                                 | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s registered path                                                                                                   |
-| 21  | WriteRegisteredPathForDebug                                                | Takes a [\#NcaID](#NcaID "wikilink"), a u64 offset, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts. |
-| 22  | GetFreeSpace                                                               | Gets free space for the storage.                                                                                                                                            |
-| 23  | GetTotalSpace                                                              | Gets total space for the storage.                                                                                                                                           |
-| 24  | FlushStorage                                                               | Flushes resources for the storage without closing it.                                                                                                                       |
+| Cmd | Name                                                                        | Notes                                                                                                                                                                       |
+| --- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | [\#GeneratePlaceHolderId](#GeneratePlaceHolderId "wikilink")                | Returns a random UUID for the Content Storage.                                                                                                                              |
+| 1   | CreatePlaceholderEntryAndRegisteredDirectoryEntry                           | Takes two [\#NcaIDs](#NcaID "wikilink"), and a u64 filesize.                                                                                                                |
+| 2   | DeletePlaceholderEntry                                                      | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
+| 3   | DoesPlaceholderEntryExist                                                   | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
+| 4   | WritePlaceholderEntry                                                       | Takes a [\#NcaID](#NcaID "wikilink"), a u64-offset, and type 5 buffer. Writes the buffer to the file for the NcaID's placeholder path at the specified offset.              |
+| 5   | MovePlaceholderToRegistered                                                 | Takes two [\#NcaIDs](#NcaID "wikilink"), moves the Placeholder NCA content to the registered NCA path.                                                                      |
+| 6   | DeleteRegisteredEntry                                                       | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
+| 7   | DoesRegisteredEntryExist                                                    | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
+| 8   | GetPath                                                                     | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
+| 9   | GetPlaceholderPath                                                          | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
+| 10  | CleanPlaceholderDirectory                                                   | Deletes and re-creates the Placeholder directory.                                                                                                                           |
+| 11  | GetNumberOfPlacholderEntries                                                | This is like [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink"), but for the Placeholder directory.                                                 |
+| 12  | [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink")  |                                                                                                                                                                             |
+| 13  | [\#GetRegisteredEntries](#GetRegisteredEntries "wikilink")                  |                                                                                                                                                                             |
+| 14  | [\#GetRegisteredEntrySize](#GetRegisteredEntrySize "wikilink")              |                                                                                                                                                                             |
+| 15  | CloseAndFlushStorage                                                        | Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.                                             |
+| 16  | \[2.0.0+\] CreatePlaceholderEntryRegisteredEntryAndRegisteredDirectoryEntry | Takes three 0x10-sized [\#NcaIDs](#NcaID "wikilink"). Creates the registered directory NCA path, and renames the placeholder path to the registered NCA path.               |
+| 17  | \[2.0.0+\] SetPlaceholderEntrySize                                          | Takes a [\#NcaID](#NcaID "wikilink"), and a u64 size                                                                                                                        |
+| 18  | \[2.0.0+\] [\#ReadRegisteredEntryRaw](#ReadRegisteredEntryRaw "wikilink")   |                                                                                                                                                                             |
+| 19  | \[2.0.0+\] GetPlaceholderEntryRightsID                                      | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s placeholder path.                                                                                                 |
+| 20  | \[2.0.0+\] GetRegisteredEntryRightsID                                       | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s registered path                                                                                                   |
+| 21  | \[2.0.0+\] WriteRegisteredPathForDebug                                      | Takes a [\#NcaID](#NcaID "wikilink"), a u64 offset, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts. |
+| 22  | \[2.0.0+\] GetFreeSpace                                                     | Gets free space for the storage.                                                                                                                                            |
+| 23  | \[2.0.0+\] GetTotalSpace                                                    | Gets total space for the storage.                                                                                                                                           |
+| 24  | \[3.0.0+\] FlushStorage                                                     | Flushes resources for the storage without closing it.                                                                                                                       |
+| 25  | \[4.0.0+\]                                                                  |                                                                                                                                                                             |
+| 26  | \[4.0.0+\]                                                                  |                                                                                                                                                                             |
 
 #### GeneratePlaceHolderId
 
@@ -204,7 +309,8 @@ Note the official name for Meta Record is
 | 16  | CheckEntryHasNcaId                                     | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") and an [\#NcaID](#NcaID "wikilink"). Returns whether the content records for that meta record contain the NcaID.                                                                                                                                                                                                                               |
 | 17  | ReadEntryMetaRecords                                   | Takes a type-6 [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") output buffer, a u32 eoffset into that buffer, and an input [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink").                                                                                                                                                                                                              |
 | 18  | GetEntryUnknown6                                       | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns u8 from ContentRecords + 6.                                                                                                                                                                                                                                                                                                       |
-| 19  | GetAddOnContentEntryUnknownRecordSize                  | Does the same thing as GetEntryUnknownRecordSize, but for AddOnContents.                                                                                                                                                                                                                                                                                                                                             |
+| 19  | \[2.0.0+\] GetAddOnContentEntryUnknownRecordSize       | Does the same thing as GetEntryUnknownRecordSize, but for AddOnContents.                                                                                                                                                                                                                                                                                                                                             |
+| 20  | \[5.0.0+\]                                             |                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 #### ListApplication
 
@@ -287,7 +393,6 @@ ReadEntryRaw.
 | 0x81  | Update title                                                                                                                                                                     |
 | 0x82  | Add-on content                                                                                                                                                                   |
 | 0x83  | Delta title                                                                                                                                                                      |
-|       |                                                                                                                                                                                  |
 
 ## ncm:v
 
