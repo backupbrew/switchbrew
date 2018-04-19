@@ -50,13 +50,13 @@ This is "nn::lr::ILocationResolver".
 |-
 | 11 || [5.0.0+] [[#ClearLocationResolver2]]
 |-
-| 12 || [5.0.0+]
+| 12 || [5.0.0+] [[#DeleteProgramNcaPath]]
 |-
-| 13 || [5.0.0+]
+| 13 || [5.0.0+] [[#DeleteControlNcaPath]]
 |-
-| 14 || [5.0.0+]
+| 14 || [5.0.0+] [[#DeleteDocHtmlNcaPath]]
 |-
-| 15 || [5.0.0+]
+| 15 || [5.0.0+] [[#DeleteInfoHtmlNcaPath]]
 |}
 
 If the supplied [[Filesystem_services#StorageId|StorageID]] is 1 (Host), a different set of internal functions is used to handle these commands. In this more restricted set of functions, GetControlNcaPath is stubbed and only returns error 0x608.
@@ -108,6 +108,26 @@ Same as [[#SetProgramNcaPath|SetProgramNcaPath]], but inserts a new [[#Location_
 
 ==== ClearLocationResolver2 ====
 Takes no input. Frees all linked-lists' entries that have '''flag''' set to 1.
+
+==== DeleteProgramNcaPath ====
+Takes an u64 '''TitleID'''. Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
+
+Removes the [[#Location_List_Entry|entry]] that matches the input TitleID.
+
+==== DeleteControlNcaPath ====
+Takes an u64 '''TitleID'''. Used for [[NCA_Content_FS#NCA-type3|NCA-type3]].
+
+Removes the [[#Location_List_Entry|entry]] that matches the input TitleID.
+
+==== DeleteDocHtmlNcaPath ====
+Takes an u64 '''TitleID'''. Used for [[NCA_Content_FS#NCA-type4|NCA-type4]].
+
+Removes the [[#Location_List_Entry|entry]] that matches the input TitleID.
+
+==== DeleteInfoHtmlNcaPath ====
+Takes an u64 '''TitleID'''. Used for [[NCA_Content_FS#NCA-type5|NCA-type5]].
+
+Removes the [[#Location_List_Entry|entry]] that matches the input TitleID.
 
 === IRegisteredLocationResolver ===
 This is "nn::lr::IRegisteredLocationResolver".

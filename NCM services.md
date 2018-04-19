@@ -39,10 +39,10 @@ This is
 | 9   | [\#ClearLocationResolver](#ClearLocationResolver "wikilink")              |
 | 10  | \[5.0.0+\] [\#SetProgramNcaPath2](#SetProgramNcaPath2 "wikilink")         |
 | 11  | \[5.0.0+\] [\#ClearLocationResolver2](#ClearLocationResolver2 "wikilink") |
-| 12  | \[5.0.0+\]                                                                |
-| 13  | \[5.0.0+\]                                                                |
-| 14  | \[5.0.0+\]                                                                |
-| 15  | \[5.0.0+\]                                                                |
+| 12  | \[5.0.0+\] [\#DeleteProgramNcaPath](#DeleteProgramNcaPath "wikilink")     |
+| 13  | \[5.0.0+\] [\#DeleteControlNcaPath](#DeleteControlNcaPath "wikilink")     |
+| 14  | \[5.0.0+\] [\#DeleteDocHtmlNcaPath](#DeleteDocHtmlNcaPath "wikilink")     |
+| 15  | \[5.0.0+\] [\#DeleteInfoHtmlNcaPath](#DeleteInfoHtmlNcaPath "wikilink")   |
 
 If the supplied
 [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") is
@@ -139,6 +139,38 @@ a new [entry](#Location_List_Entry "wikilink") with **flag** set to 1.
 
 Takes no input. Frees all linked-lists' entries that have **flag** set
 to 1.
+
+#### DeleteProgramNcaPath
+
+Takes an u64 **TitleID**. Used for
+[NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").
+
+Removes the [entry](#Location_List_Entry "wikilink") that matches the
+input TitleID.
+
+#### DeleteControlNcaPath
+
+Takes an u64 **TitleID**. Used for
+[NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").
+
+Removes the [entry](#Location_List_Entry "wikilink") that matches the
+input TitleID.
+
+#### DeleteDocHtmlNcaPath
+
+Takes an u64 **TitleID**. Used for
+[NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").
+
+Removes the [entry](#Location_List_Entry "wikilink") that matches the
+input TitleID.
+
+#### DeleteInfoHtmlNcaPath
+
+Takes an u64 **TitleID**. Used for
+[NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").
+
+Removes the [entry](#Location_List_Entry "wikilink") that matches the
+input TitleID.
 
 ### IRegisteredLocationResolver
 
