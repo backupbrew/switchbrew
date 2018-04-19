@@ -119,7 +119,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 54 || EnableApplicationAutoDelete
 |-
-| 55 || GetApplicationDesiredLanguage
+| 55 || [[#GetApplicationDesiredLanguage]]
 |-
 | 56 || SetApplicationTerminateResult
 |-
@@ -293,6 +293,11 @@ Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd22.
 Takes an input media-id that must be 5.
 
 Returns the u64 from [[Content_Manager_services#IContentStorage]] cmd23.
+
+== GetApplicationDesiredLanguage ==
+Takes an input u8 language-bitmask, returns an output u8 [[control.nacp]] langentry index.
+
+User-processes generate the language-bitmask with the following for all 16 lang-entries: <code>if(<either string in langentry[i] is non-empty>)bitmask |= 1<<i</code>
 
 == ConvertLanguageCodeToApplicationLanguage ==
 Takes an input u8 pointer for the resulting Id to be written to and a string represented as a u64 (i.e 0x53552D6E65 for 'en-US').

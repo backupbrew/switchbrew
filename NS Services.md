@@ -66,7 +66,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 52   | GetGameCardUpdateDetectionEvent                                                                    |
 | 53   | DisableApplicationAutoDelete                                                                       |
 | 54   | EnableApplicationAutoDelete                                                                        |
-| 55   | GetApplicationDesiredLanguage                                                                      |
+| 55   | [\#GetApplicationDesiredLanguage](#GetApplicationDesiredLanguage "wikilink")                       |
 | 56   | SetApplicationTerminateResult                                                                      |
 | 57   | ClearApplicationTerminateResult                                                                    |
 | 58   | GetLastSdCardMountUnexpectedResult                                                                 |
@@ -183,6 +183,15 @@ Takes an input media-id that must be 5.
 Returns the u64 from
 [Content\_Manager\_services\#IContentStorage](Content%20Manager%20services#IContentStorage.md##IContentStorage "wikilink")
 cmd23.
+
+## GetApplicationDesiredLanguage
+
+Takes an input u8 language-bitmask, returns an output u8
+[control.nacp](Control.nacp.md "wikilink") langentry index.
+
+User-processes generate the language-bitmask with the following for all
+16 lang-entries: `if(<either string in langentry[i] is
+non-empty>)bitmask |= 1<<i`
 
 ## ConvertLanguageCodeToApplicationLanguage
 
