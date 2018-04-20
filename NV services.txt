@@ -341,7 +341,7 @@ Allocate memory for the nvmap object. Nintendo extended this one with 16 bytes, 
     __in u32 align;
     __in u8  kind;
     u8       pad[7];
-    __in u64 addr;
+    __inout u64 addr;
   };
 
 === NVMAP_IOC_FREE ===

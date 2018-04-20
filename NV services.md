@@ -358,7 +358,7 @@ bytes, and changed it from in to inout.
 `   __in u32 align;`  
 `   __in u8  kind;`  
 `   u8       pad[7];`  
-`   __in u64 addr;`  
+`   __inout u64 addr;`  
 ` };`
 
 ### NVMAP\_IOC\_FREE
