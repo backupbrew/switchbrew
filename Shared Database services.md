@@ -55,11 +55,12 @@ Takes an input u64
 [LanguageCode](Settings%20services#LanguageCode.md##LanguageCode "wikilink")
 and 3 type-0x6 output buffers, returns an output u8 and u32. The u8 is a
 bool to specify if the fonts are loaded or not and the u32 is the font
-count. The first buffer the font indexes, the second buffer contains the
-font offsets and the final buffer contains the font sizes. The buffers
-are arrays of u32 which give information about a specific font.
-Buffer1\[n\] is related to Buffer2\[n\] and Buffer3\[n\]. Example: Font
-index 0s offset is at Buffer2\[0\], size is at Buffer3\[0\].
+count. The first buffer contains the font indexes, the second buffer
+contains the font offsets and the final buffer contains the font sizes.
+The buffers are an array of u32s which specify information about a
+specific font. Buffer1\[n\] is related to Buffer2\[n\] and Buffer3\[n\].
+Example: Font index 0s offset is at Buffer2\[0\], size is at
+Buffer3\[0\].
 
 ## SharedFontType
 
