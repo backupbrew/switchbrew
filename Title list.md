@@ -827,7 +827,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="4.1.0.md" title="wikilink">v269484082</a> (4.1.0.50)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Firmware Package B: SafeMode Firmware. While all data under RomFS differs from Normal, the only actual difference code-wise is that the FS and boot sysmodules .text differ.</p></td>
+<td><p>Firmware Package B: SafeMode Firmware. See <a href="Boot Modes#Safe Mode.md##Safe_Mode" title="wikilink">Safe Mode</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000081B</p></td>
@@ -840,14 +840,14 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="4.1.0.md" title="wikilink">v269484082</a> (4.1.0.50)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Firmware Package C: Normal Firmware (exFAT variant). Identical to 0100000000000819 with different package2. Requires a device ID to download from CDN.</p></td>
+<td><p>Firmware Package C: Normal Firmware (exFAT variant). Identical to 0100000000000819 with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000081C</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="4.1.0.md" title="wikilink">v269484082</a> (4.1.0.50)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>Firmware Package D: SafeMode Firmware (exFAT variant). Identical to 010000000000081A with different package2.</p></td>
+<td><p>Firmware Package D: SafeMode Firmware (exFAT variant). Identical to 010000000000081A with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000081D</p></td>
