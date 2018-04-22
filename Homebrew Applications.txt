@@ -41,13 +41,6 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Yes
 |
 |-
-| [https://www.switchbru.com/appstore/ AppStore NX]
-| Download and manage homebrew apps
-| vgmoose
-| [https://github.com/vgmoose/appstorenx/releases Here]
-| [https://github.com/vgmoose/appstorenx/ Yes]
-| 2018-03-05
-|-
 | Pynx
 | Allows you to run homebrew applications written in Python on the Switch.
 | [[User:AileenLumina|AileenLumina]]
