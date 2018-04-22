@@ -88,7 +88,7 @@ different execution levels within the system.
 <td><div style="width: 60px; height: 20px; background:#FFFFAA;">
 </div></td>
 <td><p>0xFFFFAA</p></td>
-<td><p>Bootloader (wrong bootloader) [1.0.0-3.0.0]</p></td>
+<td><p>Bootloader (booting SafeMode) [1.0.0-3.0.2]</p></td>
 </tr>
 </tbody>
 </table>

@@ -42,7 +42,7 @@ Different colors are used to represent panic events coming from different execut
 |-
 | <div style="width: 60px; height: 20px; background:#AA00FF;"></div> || 0xAA00FF || Bootloader (general errors)
 |-
-| <div style="width: 60px; height: 20px; background:#FFFFAA;"></div> || 0xFFFFAA || Bootloader (wrong bootloader) [1.0.0-3.0.0]
+| <div style="width: 60px; height: 20px; background:#FFFFAA;"></div> || 0xFFFFAA || Bootloader (booting SafeMode) [1.0.0-3.0.2]
 |}
 
 == Panic codes ==
