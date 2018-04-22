@@ -55,6 +55,12 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/nx-python/Pynx/ Yes]
 | 2018-03-19
 |-
+| Switch Brainfuck
+| A brainfuck interpreter for the Nintendo Switch.
+| TheKgg
+| [https://github.com/TheKgg/switch-brainfuck/releases Here]
+| [https://github.com/TheKgg/switch-brainfuck Yes]
+| 2018-04-21
 |}
 
 === Game Engines ===
