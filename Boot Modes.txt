@@ -1,14 +1,13 @@
+The Nintendo Switch's Horizon OS supports different boot modes to allow system recovery and general maintenance.
+
+= Recovery Mode =
 The Recovery Mode (also known as Maintenance Mode in firmware version 1.0.0) can be accessed when turning on the Nintendo Switch while performing a button combo.
 
-= Description =
-After [[Package1#Package1ldr|package1ldr]] decrypts and validates [[Package1#Package1_.28PK11.29|package1]], execution carries over into the [[Package1#Section_1|NX bootloader]].
+== Description ==
+The [[boot2]] sysmodule is responsible for checking whether the system should go into Recovery Mode or not. This is done by looking for a particular system setting ("force_maintenance") or by checking the GPIOs for a specific button combination.
 
-Among various tasks, this bootloader checks for a button combination to determine if the system should enter Recovery Mode. If the combination is performed, the bootloader reads the [[Flash_Filesystem#Boot_Partitions|SafeMode Firmware BCT]] from the eMMC, swaps the normal [[BCT]] with it and performs a Watchdog reset after writing [[Panic_codes|panic code 0x20]] to '''PMC_SCRATCH200'''.
-
-= Button combination =
+== Button combination ==
 In order to enter Recovery Mode, the following combination must be performed:
-
-[1.0.0-3.0.2]
 * With the system powered off, press and hold Volume Down + Volume Up;
 * Press the Power button while still holding Volume Down + Volume Up;
 * Let go of the Power button and keep holding Volume Down + Volume Up until the [[Title_list#System_Applets|maintenance]] applet shows up.
@@ -17,10 +16,35 @@ This results in the system booting into a menu that allows to update your Ninten
 
 The [1.0.0] variant (known as Maintenance Mode) does not have the system update option. However, downloaded update data is still deleted when this menu is accessed.
 
+= Safe Mode =
+The Safe Mode can be accessed when turning on the Nintendo Switch while performing a button combo.
+
+== Description ==
+After [[Package1#Package1ldr|package1ldr]] decrypts and validates [[Package1#Package1_.28PK11.29|package1]], execution carries over into the [[Package1#Section_1|NX bootloader]].
+
+Among various tasks, this bootloader checks for a button combination to determine if the system should enter Safe Mode. If the combination is performed, the bootloader reads the [[Flash_Filesystem#Boot_Partitions|SafeMode Firmware BCT]] from the eMMC, swaps the normal [[BCT]] with it and performs a Watchdog reset after writing [[Panic_codes|panic code 0x20]] to '''PMC_SCRATCH200'''.
+
+
+[1.0.0-3.0.2] Entering Safe Mode forces the system to use [[Title_list#System_Data_Archives|Firmware Package B]], which is nearly identical to [[Title_list#System_Data_Archives|Firmware Package A]], with the exception of containing different code for the built-in sysmodules [[Filesystem_services|FS]] and [[boot]].
+
+When coming from the Watchdog reset, the [[Package1#Section_1|NX bootloader]] checks if the system is running in Safe Mode by looking at the current bootloader's index. If the index is not 0, the screen is briefly painted with the [[Panic_codes|panic color 0xFFFFAA]] and execution continues into the [[Recovery Mode]].
+
+
+[4.0.0+] Entering Safe Mode forces the system to use [[Title_list#System_Data_Archives|Firmware Package B]] or [[Title_list#System_Data_Archives|Firmware Package D]], but these now differ significantly from their normal counterparts. In addition to containing different code for the [[Filesystem_services|FS]] and [[boot]] built-in  sysmodules, [[NCM_services|NCM]] and [[Process_Manager_services|PM]] are now changed to allow content database reconstruction and booting the new [[Safemode|safemode]] sysmodule. Due to the additional dependencies of this process [[PCV_services|PCV]], [[PSC_services|psc]] and [[Bus_services|bus]] sysmodules are now bundled with the kernel (only in Safe Mode firmware).
+
+The screen painting routine when coming from the Watchdog reset was removed.
+
+== Button combination ==
+In order to enter Safe Mode, the following combination must be performed:
+
+[1.0.0-3.0.2]
+
+Same combination used for [[Recovery Mode]].
+
 [4.0.0+]
 * With the system powered off, press and hold Volume Down;
 * Press the Power button while still holding Volume Down;
 * Keep pressing the Power button, but let go of Volume Down and press and hold Volume Up;
 * Let go of the Power button and keep holding Volume Up until the [[Safemode|safemode]] system module starts.
 
-This results in the system booting into [[Safemode|safemode]] and automatically finding and installing new updates from the internet.
+This results in the system booting the [[Safemode|safemode]] sysmodule and automatically finding and installing new updates from the internet.
