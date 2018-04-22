@@ -112,7 +112,7 @@ which the title has access to, with the following structure:
 ` +0: control_byte`  
 ` +1: {service-name without nul-terminator}`
 
-Bitmask 0x0F in control\_byte is the {length of the service-name without
+Bitmask 0x07 in control\_byte is the {length of the service-name without
 nul-terminator} - 1.
 
 Bitmask 0x80 in control\_byte means service is allowed to be registered.
