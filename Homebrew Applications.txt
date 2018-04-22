@@ -246,8 +246,8 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 |-
 | Ftpd
 | A port of ftpd for 3DS.
-| mtheall, TuxSH
-| [https://www.switchbru.com/appstore/zips/ftpd.zip Here]
+| mtheall, TuxSH, WinterMute
+| [https://github.com/WinterMute/ftpd/releases/tag/v2.2.0-f11e7ab2-switch Here]
 | [https://github.com/TuxSH/ftpd/tree/switch_pr Yes]
 | 2018-02-27
 |-
