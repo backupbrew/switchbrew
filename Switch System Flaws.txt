@@ -257,6 +257,20 @@ This was fixed in [[4.0.0]] by adding a semaphore to these critical single-sessi
 | December 30, 2017
 | Everyone
 |-
+|-
+| nspwn
+| fsp-ldr command 0 "MountCode" takes in a Content Path (retrieved from NCM by Loader), and returns an IFileSystem for the resulting ExeFS. These content paths, are normally NCAs, but MountCode also supports a number of other formats, including ".nsp" -- which is just a PFS0.
+
+When a path ending in ".nsp" is parsed by MountCode, the PFS0 is treated as a raw ExeFS. Because there is no NCA header, the ACID signatures are not validated -- and because there are no other signatures in a PFS0, this results in no signature checking happening at all.
+
+Thus, by placing an ExeFS (NSOs + "main.npdm") and setting one's desired title ID to "@Sdcard:/some_title.nsp" or "@User:/some_title.nsp" etc one can launch arbitrary unsigned code, with arbitrary unsigned NPDMs.
+| With access to "lr": Arbitrary code execution with full system privileges.
+| [[5.0.0]]
+| [[5.0.0]]
+| Late 2017
+| April 23, 2017
+| Everyone
+|-
 |}
 
 === System Modules ===
