@@ -32,7 +32,8 @@ Flaws.
 <tr class="even">
 <td><p>Weak Security Engine context validation</p></td>
 <td><p>The Tegra X1 supports a &quot;deep sleep&quot; feature, where everything but DRAM and the PMC registers lose their content (and the SoC loses power). Upon awaking, the bootrom re-executes, restoring system state. Among these stored states is the Security Engine's saved state, which uses AES-128-CBC with a random key and all-zeroes IV. However, the bootrom doesn't perform a MAC on this data, and only validates the last block. This allows one to control most of security engine's state upon wakeup, if one has a way to modify the encrypted state buffer.</p>
-<p>With a way to modify the encrypted state buffer, one can thus dump keys from &quot;write-only&quot; keyslots, etc.</p></td>
+<p>With a way to modify the encrypted state buffer, one can thus dump keys from &quot;write-only&quot; keyslots, etc.</p>
+<p>This also bypasses the SBK protection of the bootROM: indeed, at warmboot, bootROM will always clear keyslot 0xE to prevent malicious code from saving the SBK. Moving the SBK to another keyslot in the saved context renders this protection moot.</p></td>
 <td><p>None</p></td>
 <td><p>HAC-001</p></td>
 <td><p>December 2017</p></td>

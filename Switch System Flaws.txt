@@ -27,6 +27,8 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 | The Tegra X1 supports a "deep sleep" feature, where everything but DRAM and the PMC registers lose their content (and the SoC loses power). Upon awaking, the bootrom re-executes, restoring system state. Among these stored states is the Security Engine's saved state, which uses AES-128-CBC with a random key and all-zeroes IV. However, the bootrom doesn't perform a MAC on this data, and only validates the last block. This allows one to control most of security engine's state upon wakeup, if one has a way to modify the encrypted state buffer.
 
 With a way to modify the encrypted state buffer, one can thus dump keys from "write-only" keyslots, etc.
+
+This also bypasses the SBK protection of the bootROM: indeed, at warmboot, bootROM will always clear keyslot 0xE to prevent malicious code from saving the SBK. Moving the SBK to another keyslot in the saved context renders this protection moot.
 | None
 | HAC-001
 | December 2017
