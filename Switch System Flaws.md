@@ -199,6 +199,16 @@ Flaws.
 <td><p>?</p></td>
 </tr>
 <tr class="even">
+<td><p>svcWaitSynchronization/svcReplyAndReceive bad cleanup on error</p></td>
+<td><p>If there is a page fault when fetching handles from the userspace array, it cleans up by dereferencing all objects despite having only loaded first N. Allows the attacker to make arbitrary decrefs on any kernel synchronization object, and thus can be used to get UAF. Haven't actually been tried on real HW though, but should work (tm).</p></td>
+<td><p>Kernel code execution</p></td>
+<td><p>2.0.0</p></td>
+<td><p>2.0.0</p></td>
+<td></td>
+<td><p>24 April</p></td>
+<td><p><a href="User:qlutoo" title="wikilink">qlutoo</a></p></td>
+</tr>
+<tr class="odd">
 <td><p>GetLastThreadInfo UAF</p></td>
 <td><p>GetLastThreadInfo syscall gets last-scheduled-KThread pointer from KScheduler object. This pointer is not reference counted, and can be pointing to a freed KThread.</p></td>
 <td><p>Nothing. There is a theoretical race that might leak from a KThread from a different process, but it's impossible to trigger practically.</p></td>
@@ -208,7 +218,7 @@ Flaws.
 <td><p>17 October</p></td>
 <td><p><a href="User:qlutoo" title="wikilink">qlutoo</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>Bad irq_id check in CreateInterruptEvent</p></td>
 <td><p>CreateInterruptEvent syscall is designed to work only for irq_id &gt;= 32. All irq_ids &lt; 32 are &quot;per-core&quot; and reserved for kernel use (watchdog/scheduling/core communications). On 1.0.0 you could supply irq_id &lt; 32 and it would write outside the SharedIrqs table.</p></td>
 <td><p>You can register irq's in the Core3Irqs table, and thus register per-core irqs for core3, that are normally reserved for kernel. Useless.</p></td>
@@ -218,7 +228,7 @@ Flaws.
 <td><p>17 October</p></td>
 <td><p><a href="User:qlutoo" title="wikilink">qlutoo</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>Kernel .text mapped executable in usermode</p></td>
 <td><p>Prior to <a href="3.0.2.md" title="wikilink">3.0.2</a> the kernel .text was <a href="Memory layout.md" title="wikilink">mapped</a> in usermode as executable. This can be used for usermode ROP for bypassing ASLR, but SVCs/IPC are not usable by running kernel .text in usermode.</p></td>
 <td><p>Executing kernel .text in usermode</p></td>
@@ -228,7 +238,7 @@ Flaws.
 <td><p>34c3 (December 28, 2017)</p></td>
 <td><p><a href="User:qlutoo" title="wikilink">qlutoo</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>Memory Controller not properly secured</p></td>
 <td><p>The Switch OS originally had the memory controller not set to be accessible only by the secure-world, which was problematic because insecure access can compromise the kernel.</p>
 <p>This was fixed partially in <a href="2.0.0.md" title="wikilink">2.0.0</a> by blacklisting the memory controller from being mapped by user-processes, and was fixed entirely in <a href="4.0.0.md" title="wikilink">4.0.0</a> by making the memory controller TZ-only and making all kernel accesses go through <a href="SMC.md" title="wikilink">smcReadWriteRegister</a>.</p></td>
@@ -239,7 +249,7 @@ Flaws.
 <td><p>January 2018</p></td>
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a>, <a href="User:Yellows8" title="wikilink">yellows8</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>

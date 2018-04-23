@@ -163,6 +163,15 @@ This was fixed in [[4.0.0]] by writing to the correct registers.
 | 
 | ?
 |-
+| svcWaitSynchronization/svcReplyAndReceive bad cleanup on error
+| If there is a page fault when fetching handles from the userspace array, it cleans up by dereferencing all objects despite having only loaded first N. Allows the attacker to make arbitrary decrefs on any kernel synchronization object, and thus can be used to get UAF. Haven't actually been tried on real HW though, but should work (tm).
+| Kernel code execution
+| 2.0.0
+| 2.0.0
+| 
+| 24 April
+| [[User:qlutoo|qlutoo]]
+|-
 | GetLastThreadInfo UAF
 | GetLastThreadInfo syscall gets last-scheduled-KThread pointer from KScheduler object. This pointer is not reference counted, and can be pointing to a freed KThread.
 | Nothing. There is a theoretical race that might leak from a KThread from a different process, but it's impossible to trigger practically.
