@@ -75,9 +75,9 @@ Flaws.
 <tbody>
 <tr class="odd">
 <td><p>Null-dereference in panic()</p></td>
-<td><p>The Switch's stage 1 bootloader, on panic(), clears the stack and then attempts to clear the Security Engine. However, it does so by dereferencing a pointer to the SE in .bss (initially NULL), and this pointer doesn't get initialized until partway into the bootloader's main() after several functions that might panic() are called. Thus, a panic() caused prior to SE initialization would result in the SE pointer still being NULL when dereferenced. This would cause a data abort, causing the bootloader to clear the stack and then try to clear the security engine...dereferencing NULL again, over and over in a loop.</p>
+<td><p>The Switch's stage 1 bootloader, on panic(), clears the stack and then attempts to clear the Security Engine. However, it does so by dereferencing a pointer to the SE in .bss (initially NULL), and this pointer doesn't get initialized until partway into the bootloader's main() after several functions that might panic() are called. Thus, a panic() caused prior to SE initialization would result in the SE pointer still being NULL when dereferenced. The BPMP doesn't have an active MPU and the bus won't data abort on an invalid address, so no exception will be entered: it'll end up overwriting some exception vectors with NULL before halting.</p>
 <p>In 3.0.0, this was fixed by moving the security engine initialization earlier in main(), before the first function that could potentially panic().</p></td>
-<td><p>Infinite clear-the-stack-then-data-abort loop very early in boot, before SBK/other keyslots are cleared. Probably useless for anything more interesting.</p></td>
+<td><p>Some exception vectors overwritten with NULL, before SBK/other keyslots are cleared. Probably useless for anything more interesting.</p></td>
 <td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
 <td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
 <td><p>Early July, 2017</p></td>

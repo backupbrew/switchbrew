@@ -67,10 +67,11 @@ However, the Security Engine flushes writes to the internal key tables immediate
 !  Discovered by
 |-
 |  Null-dereference in panic()
-|  The Switch's stage 1 bootloader, on panic(), clears the stack and then attempts to clear the Security Engine. However, it does so by dereferencing a pointer to the SE in .bss (initially NULL), and this pointer doesn't get initialized until partway into the bootloader's main() after several functions that might panic() are called. Thus, a panic() caused prior to SE initialization would result in the SE pointer still being NULL when dereferenced. This would cause a data abort, causing the bootloader to clear the stack and then try to clear the security engine...dereferencing NULL again, over and over in a loop.
+|  The Switch's stage 1 bootloader, on panic(), clears the stack and then attempts to clear the Security Engine. However, it does so by dereferencing a pointer to the SE in .bss (initially NULL), and this pointer doesn't get initialized until partway into the bootloader's main() after several functions that might panic() are called. Thus, a panic() caused prior to SE initialization would result in the SE pointer still being NULL when dereferenced. 
+The BPMP doesn't have an active MPU and the bus won't data abort on an invalid address, so no exception will be entered: it'll end up overwriting some exception vectors with NULL before halting.
 
 In 3.0.0, this was fixed by moving the security engine initialization earlier in main(), before the first function that could potentially panic().
-|  Infinite clear-the-stack-then-data-abort loop very early in boot, before SBK/other keyslots are cleared. Probably useless for anything more interesting.
+|  Some exception vectors overwritten with NULL, before SBK/other keyslots are cleared. Probably useless for anything more interesting.
 |  [[3.0.0]]
 |  [[3.0.0]]
 |  Early July, 2017
@@ -93,7 +94,6 @@ Warning: one could irreparably brick one's console by playing with this.
 |  [[User:SciresM|SciresM]], [[User:motezazer|motezazer]]
 |-
 |}
-
 
 === TrustZone ===
 {| class="wikitable" border="1"
