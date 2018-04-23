@@ -263,6 +263,8 @@ This was fixed in [[4.0.0]] by adding a semaphore to these critical single-sessi
 
 When a path ending in ".nsp" is parsed by MountCode, the PFS0 is treated as a raw ExeFS. Because there is no NCA header, the ACID signatures are not validated -- and because there are no other signatures in a PFS0, this results in no signature checking happening at all.
 
+The actual .nsp handling is eventually done by {content mounting function} called by MountCode and other FS commands.
+
 Thus, by placing an ExeFS (NSOs + "main.npdm") and setting one's desired title ID to "@Sdcard:/some_title.nsp" or "@User:/some_title.nsp" etc one can launch arbitrary unsigned code, with arbitrary unsigned NPDMs.
 | With access to "lr": Arbitrary code execution with full system privileges.
 | [[5.0.0]]
