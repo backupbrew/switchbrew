@@ -320,9 +320,8 @@ fetches done by BPMP.
 The revision stored in FUSE\_CP\_REV indicates the unique set of values
 stored in ipatch fuses.
 
-The following represents the patch data dumped from a Switch console
-([IDC script with the same
-    content](https://pastebin.com/yzVyA2vX)):
+The following represents the patch data dumped from a Switch
+    console:
 
     RAM:00000000 ; =============== S U B R O U T I N E =======================================
     RAM:00000000

@@ -578,7 +578,7 @@ Tegra210 based hardware such as the Switch provides support for bootrom patches.
 
 The revision stored in FUSE_CP_REV indicates the unique set of values stored in ipatch fuses.
 
-The following represents the patch data dumped from a Switch console ([https://pastebin.com/yzVyA2vX IDC script with the same content]):
+The following represents the patch data dumped from a Switch console:
 <syntaxhighlight>
 RAM:00000000 ; =============== S U B R O U T I N E =======================================
 RAM:00000000
