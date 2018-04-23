@@ -330,7 +330,7 @@ Flaws.
 <td><p><a href="5.0.0.md" title="wikilink">5.0.0</a></p></td>
 <td><p><a href="5.0.0.md" title="wikilink">5.0.0</a></p></td>
 <td><p>Late 2017</p></td>
-<td><p>April 23, 2017</p></td>
+<td><p>April 23, 2018</p></td>
 <td><p>Everyone</p></td>
 </tr>
 <tr class="even">
