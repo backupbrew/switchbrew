@@ -315,10 +315,8 @@ specific format (see [shuffle2's ipatch
 decoder](https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af)).
 The bootrom reads these fuses in order to initialize the IPATCH
 hardware, which allows overriding data returned for code and data
-fetches done by BPMP.
-
-The revision stored in FUSE\_CP\_REV indicates the unique set of values
-stored in ipatch fuses.
+fetches done by BPMP. The revision stored in FUSE\_CP\_REV indicates the
+unique set of values stored in ipatch fuses.
 
 The following represents the patch data dumped from a Switch
     console:
@@ -557,6 +555,236 @@ The following represents the patch data dumped from a Switch
 
 The last 4 patches are exclusive to the Switch, while the remaining ones
 are often included in most Tegra210 based devices.
+
+#### ipatch 0
+
+This patch configures clock enables and clock gate overrides for new
+hardware.
+
+``` c
+ u32 CLK_ENB_H_SET = 0x60006328;
+ u32 CLK_ENB_L_SET = 0x60006320;
+ u32 CLK_ENB_U_SET = 0x60006330; 
+ u32 CLK_ENB_V_SET = 0x60006440;
+ u32 CLK_ENB_W_SET = 0x60006448;
+ u32 CLK_ENB_X_SET = 0x60006284;
+ u32 CLK_ENB_Y_SET = 0x6000629C;
+ u32 LVL2_CLK_GATE_OVRA = 0x600060F8;
+ u32 LVL2_CLK_GATE_OVRB = 0x600060FC;
+ u32 LVL2_CLK_GATE_OVRC = 0x600063A0;
+ u32 LVL2_CLK_GATE_OVRD = 0x600063A4;
+ u32 LVL2_CLK_GATE_OVRE = 0x60006554;
+ u32 CLK_SOURCE_VI = 0x60006148;
+ u32 CLK_SOURCE_HOST1X = 0x60006180;
+ u32 CLK_SOURCE_NVENC = 0x600066A0; 
+
+ // Set all clock enables and overrides
+ *(u32 *)CLK_ENB_V_SET = 0xFFFFFFFF;
+ *(u32 *)CLK_ENB_W_SET = 0xFFFFFFFF;
+ *(u32 *)LVL2_CLK_GATE_OVRA = 0xFFFFFFFF;
+ *(u32 *)LVL2_CLK_GATE_OVRB = 0xFFFFFFFF;
+ *(u32 *)CLK_ENB_X_SET = 0xFFFFFFFF;
+ *(u32 *)CLK_ENB_Y_SET = 0xFFFFFFFF;
+ *(u32 *)CLK_ENB_L_SET = 0xFFFFFFFF;
+ *(u32 *)CLK_ENB_H_SET = 0xFFFFFFFF;
+ *(u32 *)CLK_ENB_U_SET = 0xFFFFFFFF;
+ *(u32 *)LVL2_CLK_GATE_OVRC = 0xFFFFFFFF;
+ *(u32 *)LVL2_CLK_GATE_OVRD = 0xFFFFFFFF;
+ *(u32 *)LVL2_CLK_GATE_OVRE = 0xFFFFFFFF;
+
+ // Set VI, HOST1X and NVENC clock sources to CLK_M
+ *(u32 *)CLK_SOURCE_VI = 0xA0000000;
+ *(u32 *)CLK_SOURCE_HOST1X = 0xA0000000;
+ *(u32 *)CLK_SOURCE_NVENC = 0xE0000000;
+
+ /*
+     Untranslated instructions:
+
+     MOVS    R1, #0
+     MOVS    R0, #0xE
+ */
+ 
+ return;
+```
+
+#### ipatch 1
+
+This patch is a bugfix.
+
+LP0 resume code expects APBDEV\_PMC\_SCRATCH190\_0 to be set to 0x01,
+but the bootrom didn't set it.
+
+``` c
+ u32 APBDEV_PMC_SCRATCH190_0 = 0x7000EC18;
+ u32 pmc_scratch190_val = *(u32 *)APBDEV_PMC_SCRATCH190_0;
+ 
+ return (pmc_scratch190_val | 0x01);
+```
+
+#### ipatch 2
+
+This patch adjusts USB configurations.
+
+``` c
+ u32 USB1_UTMIP_SPARE_CFG0_0 = 0x7D000834;
+ u32 USB1_UTMIP_BIAS_CFG2_0 = 0x7D000850;
+ 
+ // Increase UTMIP_HSSQUELCH_LEVEL_NEW by 0x02
+ *(u32 *)USB1_UTMIP_BIAS_CFG2_0 += 0x02;
+
+ // Clear FUSE_HS_IREF_CAP_CFG
+ *(u32 *)USB1_UTMIP_SPARE_CFG0_0 = ((*(u32 *)USB1_UTMIP_SPARE_CFG0_0 & ~(0x118)) - 0x80);
+ 
+ return;
+```
+
+#### ipatch 3
+
+This patch pertains to XHCI IRQ clearing checks and forces a result code
+to be 0.
+
+#### ipatch 4
+
+This patch allows backing up and restoring strapping options for
+warmboot.
+
+``` c
+ u32 APBDEV_PMC_SCRATCH0_0 = 0x7000E450;
+ u32 APBDEV_PMC_RST_STATUS_0 = 0x7000E5B4;
+ u32 APBDEV_PMC_SEC_DISABLE8_0 = 0x7000E9C0;
+ u32 APBDEV_PMC_SECURE_SCRATCH111_0 = 0x7000EF14;
+ u32 APB_MISC_PP_STRAPPING_OPT_A_0 = 0x70000008; 
+
+ u32 reset_status = *(u32 *)APBDEV_PMC_RST_STATUS_0;
+
+ // Check for regular power on
+ if (reset_status == 0)
+ {    
+     // Set all buttons in RCM_STRAPS and backup to PMC scratch
+     *(u32 *)APBDEV_PMC_SECURE_SCRATCH111_0 = (*(u32 *)APB_MISC_PP_STRAPPING_OPT_A_0 | 0x1C00);
+ }
+ else
+ {
+     // Restore strapping options from PMC scratch
+     *(u32 *)APB_MISC_PP_STRAPPING_OPT_A_0 = *(u32 *)APBDEV_PMC_SECURE_SCRATCH111_0;
+ }
+
+ // Disable write access to APBDEV_PMC_SECURE_SCRATCH111_0
+ *(u32 *)APBDEV_PMC_SEC_DISABLE8_0 |= 0x4000;
+ 
+ return *(u32 *)APBDEV_PMC_SCRATCH0_0;
+```
+
+#### ipatch 5
+
+This patch adjusts USB configurations.
+
+``` c
+ u32 USB1_UTMIP_HSRX_CFG0_0 = 0x7D000810;
+ u32 USB1_UTMIP_BIAS_CFG2_0 = 0x7D000850;
+
+ // Clear UTMIP_IDLE_WAIT, UTMIP_ELASTIC_LIMIT and UTMIP_PCOUNT_UPDN_DIV,
+ // and set UTMIP_IDLE_WAIT to 0x11 and UTMIP_ELASTIC_LIMIT to 0x10 
+ *(u32 *)USB1_UTMIP_HSRX_CFG0_0 = ((*(u32 *)USB1_UTMIP_HSRX_CFG0_0 & ~(0xF8000) + 0x88000 & ~(0x7C00) + 0x4000) & ~(0xF000000));
+ 
+ // Clear UTMIP_HSSQUELCH_LEVEL_NEW
+ *(u32 *)USB1_UTMIP_BIAS_CFG2_0 &= ~(0x07);
+ 
+ return;
+```
+
+#### ipatch 6
+
+This patch is a factory backdoor.
+
+It allows controlling the debug authentication configuration using a
+fuse.
+
+``` c
+ u32 FUSE_DEBUG_AUTH_OVERRIDE = 0x7000FA9C;
+
+ u32 debug_auth_override_val = *(u32 *)FUSE_DEBUG_AUTH_OVERRIDE;
+ debug_auth_override_val = ((debug_auth_override_val >> 0x08) << 0x01);
+
+ // Override debug authentication value stored in IRAM
+ *(u32 *)0x400028E4 &= ~(debug_auth_override_val);
+
+ /*
+     Untranslated instructions:
+ 
+     CMP     R0, #0
+ */
+ 
+ return;
+```
+
+#### ipatch 7
+
+This patch is a bugfix.
+
+It prevents overflowing IRAM (0x40010000) when copying the warmboot
+binary from DRAM.
+
+``` c
+ u32 APBDEV_PMC_CNTRL_0 = 0x7000E400;
+ 
+ u32 warmboot_header_addr = 0x400049F0;
+ u32 warmboot_bin_size = *(u32 *)warmboot_bin_header_addr;
+ 
+ // Invalid warmboot binary size
+ if (warmboot_size >> 0x11)
+ {
+     // Assert MAIN_RST
+     // 0x40004BF0 comes from R4 and the bootrom doesn't bother to change it
+     *(u32 *)APBDEV_PMC_CNTRL_0 = 0x40004BF0;
+
+     // Deadlock
+     while(1);
+ }
+ 
+ /*
+     Untranslated instructions:
+ 
+     LDR     R0, =0x40010000
+     LDR     R2, [warmboot_bin_header_addr]
+ */
+
+ return;
+```
+
+#### ipatch 8
+
+This patch is a bugfix.
+
+It sets the correct warmboot binary entrypoint address for RSA signature
+verification, which would be done in DRAM instead of IRAM without this
+patch.
+
+``` c
+ u32 warmboot_addr_ptr = 0x40010238;
+ u32 warmboot_entry_addr_ptr = 0x40004C28;
+
+ *(u32 *)warmboot_entry_addr_ptr = *(u32 *)warmboot_addr_ptr;
+
+ /*
+     Untranslated instructions:
+ 
+     LDR     R2, [warmboot_addr_ptr]
+ */
+ 
+ return;
+```
+
+#### ipatches 9 and 10
+
+These patches modify the 256-bit Secure Provisioning AES key with index
+0x3A.
+
+#### ipatch 11
+
+This patch pertains to the [Security
+Engine](Security%20Engine.md "wikilink") context restore process and
+forces SE\_OPERATION\_UNK1 to be 0x01.
 
 ## Anti-downgrade
 
