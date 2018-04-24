@@ -20,17 +20,22 @@ sessions as domains.
 
 This service can be used by multiple processes at the same time, with
 separate interfaces. However, if one process does usbds shutdown, usbds
-will reset to defaults even if there's a process still using
-it.
+will reset to defaults even if there's a process still using it.
 
-| Cmd | Name                                                     | Notes |
-| --- | -------------------------------------------------------- | ----- |
-| 0   | [\#BindDevice](#BindDevice "wikilink")                   |       |
-| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |       |
-| 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |       |
-| 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |       |
-| 4   | [\#GetState](#GetState "wikilink")                       |       |
-| 5   | \[2.0.0+\] [\#SetVidPidBcd](#SetVidPidBcd "wikilink")    |       |
+| Cmd | Name                                                     |
+| --- | -------------------------------------------------------- |
+| 0   | [\#BindDevice](#BindDevice "wikilink")                   |
+| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |
+| 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |
+| 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |
+| 4   | [\#GetState](#GetState "wikilink")                       |
+| 5   | \[2.0.0+\] [\#SetVidPidBcd](#SetVidPidBcd "wikilink")    |
+| 6   | \[5.0.0+\]                                               |
+| 7   | \[5.0.0+\]                                               |
+| 8   | \[5.0.0+\] SetUsbDeviceDescriptor                        |
+| 9   | \[5.0.0+\]                                               |
+| 10  | \[5.0.0+\]                                               |
+| 11  | \[5.0.0+\]                                               |
 
 Initialization done by [manu](Manu%20Services.md "wikilink"):
 
@@ -250,6 +255,7 @@ This is
 | 9   | [\#GetCtrlOutCompletionEvent](#GetCtrlOutCompletionEvent "wikilink") |                                                                                                                              |
 | 10  | [\#GetCtrlOutReportData](#GetCtrlOutReportData "wikilink")           |                                                                                                                              |
 | 11  | [\#StallCtrl](#StallCtrl "wikilink")                                 |                                                                                                                              |
+| 12  | \[5.0.0+\] AppendConfigurationData                                   |                                                                                                                              |
 
 Commands cmd2,
 [\#CtrlInPostBufferAsync](#CtrlInPostBufferAsync "wikilink"),
@@ -447,29 +453,91 @@ Stops in-progress data-transfer done by
 
 This is "nn::usb::hs::IClientRootSession".
 
-General USB devices usage, used by hid-sysmodule and
-bsdsockets-sysmodule.
+| Cmd | Name                         |
+| --- | ---------------------------- |
+| 0   | BindClientProcess            |
+| 1   |                              |
+| 2   |                              |
+| 3   |                              |
+| 4   |                              |
+| 5   |                              |
+| 6   | GetInterfaceStateChangeEvent |
+| 7   | GetClientIfSession           |
+
+General USB devices usage, used by [hid](HID%20services.md "wikilink")
+and [bsdsockets](Sockets%20services.md "wikilink").
+
+## IClientIfSession
+
+This is "nn::usb::hs::IClientIfSession".
+
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   |                    |
+| 1   |                    |
+| 2   |                    |
+| 3   |                    |
+| 4   |                    |
+| 5   | CtrlXferAsync      |
+| 6   |                    |
+| 7   | GetCtrlXferReport  |
+| 8   |                    |
+| 9   | GetClientEpSession |
+
+### IClientEpSession
+
+This is "nn::usb::hs::IClientEpSession".
+
+| Cmd | Name            |
+| --- | --------------- |
+| 0   |                 |
+| 1   |                 |
+| 2   |                 |
+| 3   |                 |
+| 4   | PostBufferAsync |
+| 5   |                 |
+| 6   |                 |
+| 7   | \[4.0.0+\]      |
+| 8   | \[4.0.0+\]      |
 
 # usb:pd
 
 This is "nn::usb::pd::detail::IPdManager".
 
+| Cmd | Name         |
+| --- | ------------ |
+| 0   | GetPdSession |
+
 Only system-titles with access to this are
-[PTM](PTM%20services.md "wikilink") and
-[AM](AM%20services.md "wikilink").
+[ptm](PTM%20services.md "wikilink") and
+[am](AM%20services.md "wikilink").
+
+## IPdSession
+
+This is "nn::usb::pd::detail::IPdSession".
+
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | BindNoticeEvent   |
+| 1   |                   |
+| 2   | GetStatus         |
+| 3   | GetNotice         |
+| 4   |                   |
+| 5   |                   |
+| 6   | ReplyPowerRequest |
 
 # usb:pd:c
 
 This is "nn::usb::pd::detail::IPdCradleManager".
 
+| Cmd | Name               | Notes                                   |
+| --- | ------------------ | --------------------------------------- |
+| 0   | GetPdCradleSession | Returns a session handle for the below. |
+
 USB-sysmodule symbols for this refer to "Cradle", which is the
 [Dock](Dock.md "wikilink").
 
-| Cmd | Name | Notes                                   |
-| --- | ---- | --------------------------------------- |
-| 0   |      | Returns a session handle for the below. |
-
-## Session
+## IPdCradleSession
 
 This is
 "nn::usb::pd::detail::IPdCradleSession".
@@ -483,6 +551,8 @@ This is
 | 4   | GetFwRevision     | No input. Returns an output u16.                                                                                                  |
 | 5   | GetManufacturerId | No input. Returns an output u16.                                                                                                  |
 | 6   | GetDeviceId       | No input. Returns an output u16.                                                                                                  |
+| 7   | \[3.0.0+\]        |                                                                                                                                   |
+| 8   | \[3.0.0+\]        |                                                                                                                                   |
 
 Note: The VdmUserId given to VdmUserRead/VdmUserWrite is translated from
 the given (enum) value to the actual cmd to send.
@@ -491,7 +561,16 @@ the given (enum) value to the actual cmd to send.
 
 This is "nn::usb::pm::IPmService".
 
-Presumably Power Management, only system-title using this is
-[PTM](PTM%20services.md "wikilink").
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
+
+USB Port Manager, only system-title using this is
+[ptm](PTM%20services.md "wikilink").
 
 [Category:Services](Category:Services "wikilink")
