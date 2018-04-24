@@ -1047,8 +1047,8 @@ This allows mapping code and rodata with RW- permission.
 
 | Argument | Type                           | Name          |
 | -------- | ------------------------------ | ------------- |
-| (In) W0  | Handle<Process>                | ProcessHandle |
-| (In) X1  | void\*                         | DstAddr       |
+| (In) X0  | void\*                         | DstAddr       |
+| (In) W1  | Handle<Process>                | ProcessHandle |
 | (In) X2  | u64                            | SrcAddr       |
 | (In) X3  | u64                            | Size          |
 | (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
