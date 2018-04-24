@@ -94,6 +94,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 129 || Play Report
 |-
+| 130 || AHID
+|-
 | 133 || PCV
 |-
 | 134 || OMM

@@ -60,6 +60,7 @@ fatal-errors, since the Description ends with bit21.
 | 126   | Mii                                                    |
 | 128   | AM                                                     |
 | 129   | Play Report                                            |
+| 130   | AHID                                                   |
 | 133   | PCV                                                    |
 | 134   | OMM                                                    |
 | 135   | BPC                                                    |
