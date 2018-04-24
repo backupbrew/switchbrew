@@ -45,6 +45,7 @@ fatal-errors, since the Description ends with bit21.
 | 103   | UART                                                   |
 | 105   | Settings                                               |
 | 107   | WLAN                                                   |
+| 108   | XCD                                                    |
 | 110   | NIFM                                                   |
 | 111   | Hwopus                                                 |
 | 113   | Bluetooth                                              |

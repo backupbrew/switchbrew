@@ -64,6 +64,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 107 || WLAN
 |-
+| 108 || XCD
+|-
 | 110 || NIFM
 |-
 | 111 || Hwopus
