@@ -1028,9 +1028,9 @@ RWX are not allowed.
 
 | Argument | Type                           | Name          |
 | -------- | ------------------------------ | ------------- |
-| (In) X0  | u64                            | SrcAddr       |
+| (In) X0  | u64                            | DstAddr       |
 | (In) W1  | Handle<Process>                | ProcessHandle |
-| (In) X2  | void\*                         | DstAddr       |
+| (In) X2  | void\*                         | SrcAddr       |
 | (In) X3  | u64                            | Size          |
 | (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
 

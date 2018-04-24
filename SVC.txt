@@ -1219,11 +1219,11 @@ This throws an error(0xD801) when the input perm is >0x5, hence -WX and RWX are 
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || SrcAddr
+| (In) X0 || u64 || DstAddr
 |-
 | (In) W1 || Handle<Process> || ProcessHandle
 |-
-| (In) X2 || void* || DstAddr
+| (In) X2 || void* || SrcAddr
 |-
 | (In) X3 || u64 || Size
 |-
