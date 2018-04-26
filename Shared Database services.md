@@ -75,6 +75,9 @@ are relative to the shared memory created by
 | 0x04  | Korean (Hangul)                 |
 | 0x05  | Nintendo Extended               |
 
+  - Nintendo Extended: Contains Nintendo-specific characters, including
+    HID buttons, HID controller styles, applet icons, Wii(U) icons, etc.
+
 # mii:u, mii:e
 
 This is "nn::mii::detail::IStaticService".
