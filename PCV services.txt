@@ -297,23 +297,23 @@ This is "nn::pcv::detail::IPcvService".
 |-
 |  3 || max77620_sd3 || 
 |-
-|  4 || max77620_ldo0 || 
+|  4 || max77620_ldo0 || 1.2v
 |-
 |  5 || max77620_ldo1 || 
 |-
-|  6 || max77620_ldo2 || 
+|  6 || max77620_ldo2 || SDcard power, 3.3v - 1.8v
 |-
 |  7 || max77620_ldo3 || 
 |-
-|  8 || max77620_ldo4 || 
+|  8 || max77620_ldo4 || RTC power, 0.85v
 |-
 |  9 || max77620_ldo5 || 
 |-
-| 10 || max77620_ldo6 || 
+| 10 || max77620_ldo6 || AVDD touchscreen, 2.9v
 |-
 | 11 || max77620_ldo7 || 
 |-
-| 12 || max77620_ldo8 || 
+| 12 || max77620_ldo8 || DisplayPort, 1.05v
 |-
 | 13 || max77621_cpu || 
 |-

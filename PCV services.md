@@ -157,24 +157,24 @@ This is "nn::pcv::detail::IPcvService".
 
 ### Voltage
 
-| Name | Block          | Notes |
-| ---- | -------------- | ----- |
-| 0    | max77620\_sd0  |       |
-| 1    | max77620\_sd1  |       |
-| 2    | max77620\_sd2  |       |
-| 3    | max77620\_sd3  |       |
-| 4    | max77620\_ldo0 |       |
-| 5    | max77620\_ldo1 |       |
-| 6    | max77620\_ldo2 |       |
-| 7    | max77620\_ldo3 |       |
-| 8    | max77620\_ldo4 |       |
-| 9    | max77620\_ldo5 |       |
-| 10   | max77620\_ldo6 |       |
-| 11   | max77620\_ldo7 |       |
-| 12   | max77620\_ldo8 |       |
-| 13   | max77621\_cpu  |       |
-| 14   | max77621\_gpu  |       |
-|      |                |       |
+| Name | Block          | Notes                     |
+| ---- | -------------- | ------------------------- |
+| 0    | max77620\_sd0  |                           |
+| 1    | max77620\_sd1  |                           |
+| 2    | max77620\_sd2  |                           |
+| 3    | max77620\_sd3  |                           |
+| 4    | max77620\_ldo0 | 1.2v                      |
+| 5    | max77620\_ldo1 |                           |
+| 6    | max77620\_ldo2 | SDcard power, 3.3v - 1.8v |
+| 7    | max77620\_ldo3 |                           |
+| 8    | max77620\_ldo4 | RTC power, 0.85v          |
+| 9    | max77620\_ldo5 |                           |
+| 10   | max77620\_ldo6 | AVDD touchscreen, 2.9v    |
+| 11   | max77620\_ldo7 |                           |
+| 12   | max77620\_ldo8 | DisplayPort, 1.05v        |
+| 13   | max77621\_cpu  |                           |
+| 14   | max77621\_gpu  |                           |
+|      |                |                           |
 
 Note: max77620 GPIOs are only used internally by the driver during init,
 and not exposed via an API.
