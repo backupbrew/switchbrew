@@ -1269,7 +1269,7 @@ Bitfield of one of more of these:
 | 0x24   | 4      |         | MmuFlags                                                                      |
 |        |        | Bit0    | IsAarch64                                                                     |
 |        |        | Bit3-1  | [\#AddressSpaceType](#AddressSpaceType "wikilink")                            |
-|        |        | Bit4    | AllowDebug                                                                    |
+|        |        | Bit4    | \[2.0.0+\] AllowDebug                                                         |
 |        |        | Bit5    | EnableAslr                                                                    |
 |        |        | Bit6    | UseSystemMemBlocks                                                            |
 |        |        | Bit7    | \[4.0.0\] ?                                                                   |

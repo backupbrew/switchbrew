@@ -1552,7 +1552,7 @@ Bitfield of one of more of these:
 |-
 | || || Bit3-1 || [[#AddressSpaceType]]
 |-
-| || || Bit4 || AllowDebug
+| || || Bit4 || [2.0.0+] AllowDebug
 |-
 | || || Bit5 || EnableAslr
 |-
