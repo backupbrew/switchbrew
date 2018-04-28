@@ -59,7 +59,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x0B || 0x97 || S, 7 || || || 
 |-
-| 0x0C || 0x26 || E, 6 || joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion) || In || [[HID services]]
+| 0x0C || 0x26 || E, 6 || joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || [[HID services]]
 |-
 | 0x0D || 0x05 || A, 5 || Fan enable (normal) || Out || [[PTM services]]
 |-
@@ -139,7 +139,7 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x33 || 0x41 || I, 1 || Backlight -5V || Out || [[NV services]]
 |-
-| 0x34 || 0x3E || H, 6 || joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion) || In || [[HID services]]
+| 0x34 || 0x3E || H, 6 || joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || [[HID services]]
 |-
 | 0x35 || 0xE2 || CC, 2 || || ||
 |-
