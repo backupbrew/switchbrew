@@ -153,9 +153,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x3A || 0x58 || L, 0 || bq24192 OTG charge select || Out || [[PTM services]], [[USB services]]
 |-
-| 0x3B || 0x3E || H, 6 || || ||
+| 0x3B || 0x3E || H, 6 || joycon(R) NwcpDriver1.GpioMonitorTask0 duplicate? || ||
 |-
-| 0x3C || 0x26 || E, 6 || || ||
+| 0x3C || 0x26 || E, 6 || joycon(L) NwcpDriver1.GpioMonitorTask0 duplicate? || ||
 |-
 | 0x3D || -1 || || || ||
 |-
