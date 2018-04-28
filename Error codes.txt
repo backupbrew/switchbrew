@@ -187,6 +187,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x4201 || 1 || 33 || [[SPL_services#GetConfig|IsDebugMode]] isn't set.
 |-
+| 0x8C01 || 1 || 70 || No more debug events
+|-
 | 0xCA01 || 1 || 101 || Invalid size
 |-
 | 0xCC01 || 1 || 102 || Invalid address
