@@ -1506,7 +1506,7 @@ Bitfield of one of more of these:
 |-
 | 2 || ProcessEvent_DebugDetached ||
 |-
-| 3 || ProcessEvent_Crashed || Processes will not enter this state unless they were created with [[#CreateProcessInfo|AllowDebug]].
+| 3 || ProcessEvent_Crashed || Processes will not enter this state unless they were created with [[#CreateProcessInfo|EnableDebug]].
 |-
 | 4 || ProcessEvent_Running ||
 |-
@@ -1552,7 +1552,7 @@ Bitfield of one of more of these:
 |-
 | || || Bit3-1 || [[#AddressSpaceType]]
 |-
-| || || Bit4 || [2.0.0+] AllowDebug
+| || || Bit4 || [2.0.0+] EnableDebug
 |-
 | || || Bit5 || EnableAslr
 |-

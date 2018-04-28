@@ -1236,16 +1236,16 @@ Bitfield of one of more of these:
 
 ## ProcessEvent
 
-| Value | Name                         | Notes                                                                                                          |
-| ----- | ---------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| 0     | ProcessEvent\_Created        |                                                                                                                |
-| 1     | ProcessEvent\_DebugAttached  |                                                                                                                |
-| 2     | ProcessEvent\_DebugDetached  |                                                                                                                |
-| 3     | ProcessEvent\_Crashed        | Processes will not enter this state unless they were created with [AllowDebug](#CreateProcessInfo "wikilink"). |
-| 4     | ProcessEvent\_Running        |                                                                                                                |
-| 5     | ProcessEvent\_Exiting        |                                                                                                                |
-| 6     | ProcessEvent\_Exited         |                                                                                                                |
-| 7     | ProcessEvent\_DebugSuspended |                                                                                                                |
+| Value | Name                         | Notes                                                                                                           |
+| ----- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 0     | ProcessEvent\_Created        |                                                                                                                 |
+| 1     | ProcessEvent\_DebugAttached  |                                                                                                                 |
+| 2     | ProcessEvent\_DebugDetached  |                                                                                                                 |
+| 3     | ProcessEvent\_Crashed        | Processes will not enter this state unless they were created with [EnableDebug](#CreateProcessInfo "wikilink"). |
+| 4     | ProcessEvent\_Running        |                                                                                                                 |
+| 5     | ProcessEvent\_Exiting        |                                                                                                                 |
+| 6     | ProcessEvent\_Exited         |                                                                                                                 |
+| 7     | ProcessEvent\_DebugSuspended |                                                                                                                 |
 
 ## DebugThreadParam
 
@@ -1269,7 +1269,7 @@ Bitfield of one of more of these:
 | 0x24   | 4      |         | MmuFlags                                                                      |
 |        |        | Bit0    | IsAarch64                                                                     |
 |        |        | Bit3-1  | [\#AddressSpaceType](#AddressSpaceType "wikilink")                            |
-|        |        | Bit4    | \[2.0.0+\] AllowDebug                                                         |
+|        |        | Bit4    | \[2.0.0+\] EnableDebug                                                        |
 |        |        | Bit5    | EnableAslr                                                                    |
 |        |        | Bit6    | UseSystemMemBlocks                                                            |
 |        |        | Bit7    | \[4.0.0\] ?                                                                   |
