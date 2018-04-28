@@ -1498,23 +1498,23 @@ Bitfield of one of more of these:
 
 == ProcessEvent ==
 {| class=wikitable
-! Value || Name
+! Value || Name || Notes
 |-
-| 0 || ProcessEvent_Created
+| 0 || ProcessEvent_Created ||
 |-
-| 1 || ProcessEvent_DebugAttached
+| 1 || ProcessEvent_DebugAttached ||
 |-
-| 2 || ProcessEvent_DebugDetached
+| 2 || ProcessEvent_DebugDetached ||
 |-
-| 3 || ProcessEvent_Crashed
+| 3 || ProcessEvent_Crashed || Processes will not enter this state unless they were created with [[#CreateProcessInfo|AllowDebug]].
 |-
-| 4 || ProcessEvent_Running
+| 4 || ProcessEvent_Running ||
 |-
-| 5 || ProcessEvent_Exiting
+| 5 || ProcessEvent_Exiting ||
 |-
-| 6 || ProcessEvent_Exited
+| 6 || ProcessEvent_Exited ||
 |-
-| 7 || ProcessEvent_DebugSuspended
+| 7 || ProcessEvent_DebugSuspended ||
 |}
 
 == DebugThreadParam ==

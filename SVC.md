@@ -1236,16 +1236,16 @@ Bitfield of one of more of these:
 
 ## ProcessEvent
 
-| Value | Name                         |
-| ----- | ---------------------------- |
-| 0     | ProcessEvent\_Created        |
-| 1     | ProcessEvent\_DebugAttached  |
-| 2     | ProcessEvent\_DebugDetached  |
-| 3     | ProcessEvent\_Crashed        |
-| 4     | ProcessEvent\_Running        |
-| 5     | ProcessEvent\_Exiting        |
-| 6     | ProcessEvent\_Exited         |
-| 7     | ProcessEvent\_DebugSuspended |
+| Value | Name                         | Notes                                                                                                          |
+| ----- | ---------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 0     | ProcessEvent\_Created        |                                                                                                                |
+| 1     | ProcessEvent\_DebugAttached  |                                                                                                                |
+| 2     | ProcessEvent\_DebugDetached  |                                                                                                                |
+| 3     | ProcessEvent\_Crashed        | Processes will not enter this state unless they were created with [AllowDebug](#CreateProcessInfo "wikilink"). |
+| 4     | ProcessEvent\_Running        |                                                                                                                |
+| 5     | ProcessEvent\_Exiting        |                                                                                                                |
+| 6     | ProcessEvent\_Exited         |                                                                                                                |
+| 7     | ProcessEvent\_DebugSuspended |                                                                                                                |
 
 ## DebugThreadParam
 
