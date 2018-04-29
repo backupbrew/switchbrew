@@ -240,7 +240,7 @@ NIM generates two User-Agent strings:
   snprintf(..., "User-Agent: NintendoSDK Firmware/%s-%u (platform:%s; did:%016llx; eid:%s)", <string at [[System_Version_Title|sysver]]+0x68>, {u32 from [[System_Version_Title|sysver]]+4}, "NX", DeviceId, {[[NSD_services|NSD]] cmd11 output});
   snprintf(..., "User-Agent: NintendoSDK Firmware/%s-%u (platform:%s; eid:%s)", <string at [[System_Version_Title|sysver]]+0x68>, {u32 from [[System_Version_Title|sysver]]+4}, "NX", DeviceId, {[[NSD_services|NSD]] cmd11 output});
 
-Where the 64bit DeviceId is parsed from the 0x10-bytes at outbuf+0xC6 from [[Settings_services|set:cal]] GetDeviceCert(DeviceCert_certname+2, aka where the hex string for the DeviceId is).
+Where the 64bit DeviceId is parsed from the 0x10-bytes at outbuf+0xC6 from [[Settings_services|set:cal]] GetEciDeviceCertificate (DeviceCert_certname+2, aka where the hex string for the DeviceId is).
 
 == sun ==
 NIM sends a HTTP GET with the sun URL listed above to get the title-listing of the latest system-titles, as .json. The deviceid in the URL is the same one in the above User-Agent section. HTTP header "Accept:application/json" is sent in the request.
