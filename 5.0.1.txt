@@ -36,3 +36,8 @@ The following message strings were added to option.msbt.szs:
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=03-26-18_08-05-11&sys=hac]
+
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
