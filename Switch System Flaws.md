@@ -1,10 +1,20 @@
-System Flaws are used to execute unofficial code (homebrew) on the
-Nintendo Switch. This page is a list of known and public Switch System
-Flaws.
+Exploits are used to execute unofficial code (homebrew) on the Nintendo
+Switch. This page is a list of publicly known Switch system flaws.
 
-# List of Switch System Flaws
+For userland applications/applets flaws see
+[here](Switch%20Userland%20Flaws.md "wikilink").
+
+# System flaws
 
 ## Hardware
+
+Flaws in this category pertain to the underlying hardware that powers
+the Switch.
+
+This includes components shared across Tegra based devices such as the
+[TSEC](TSEC.md "wikilink"), the [Security
+Engine](Security%20Engine.md "wikilink"), the [GPU](GPU.md "wikilink")
+and so on.
 
 <table>
 <thead>
@@ -20,34 +30,48 @@ Flaws.
 </thead>
 <tbody>
 <tr class="odd">
+<td><p>CVE-2018-6242 (leveraged by the ShofEL2 and Fusée Gelée exploits)</p></td>
+<td><p>The USB software stack provided inside the boot instruction rom (IROM/bootROM) contains a copy operation whose length can be controlled by an attacker. By carefully constructing a USB control request, an attacker can leverage this vulnerability to copy the contents of an attacker-controlled buffer over the active execution stack, gaining control of the Boot and Power Management processor (BPMP) before any lock-outs or privilege reductions occur. This execution can then be used to exfiltrate secrets and to load arbitrary code onto the main CPU Complex (CCPLEX) &quot;application processors&quot; at the highest possible level of privilege (typically as the TrustZone Secure Monitor at PL3/EL3).</p></td>
+<td><p>Unknown (Tegra186 and Tegra214)</p></td>
+<td><p>HAC-001 (Tegra210)</p></td>
+<td><p>January 2018</p></td>
+<td><p>April 23, 2018</p></td>
+<td><p><a href="User:Shuffle2" title="wikilink">shuffle2</a> and fail0verflow (originally),<br />
+<a href="User:Ktemkin" title="wikilink">ktemkin</a> and ReSwitched Team (independently),<br />
+<a href="User:Naehrwert" title="wikilink">naehrwert</a> (independently),<br />
+<a href="User:Hexkyz" title="wikilink">hexkyz</a> (independently),<br />
+st4rk with <a href="User:Shinyquagsire23" title="wikilink">Shiny Quagsire</a> and Dazzozo (independently),<br />
+and many others (independently).</p></td>
+</tr>
+<tr class="even">
 <td><p>GMMU DMA attack</p></td>
 <td><p>The Switch's GPU includes a separate MMU (GMMU) that is allowed to bypass the system's IOMMU (SMMU). By accessing the GPU's MMIO region and manipulating the page table entries in the GMMU, an attacker can read/write any portion of the DRAM (except memory carveouts).</p>
 <p>[5.0.0+] Works around this hardware flaw by using memory pool partitioning. You can no longer escalate into sysmodules with GPU DMA because all their memory is allocated using heap that's carved out.</p></td>
 <td><p>None</p></td>
-<td><p>HAC-001</p></td>
+<td><p>HAC-001 (Tegra210)</p></td>
 <td><p>Summer 2017</p></td>
 <td><p>December 28, 2017</p></td>
 <td><p><a href="User:hexkyz" title="wikilink">hexkyz</a>, <a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:qlutoo" title="wikilink">qlutoo</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>Weak Security Engine context validation</p></td>
 <td><p>The Tegra X1 supports a &quot;deep sleep&quot; feature, where everything but DRAM and the PMC registers lose their content (and the SoC loses power). Upon awaking, the bootrom re-executes, restoring system state. Among these stored states is the Security Engine's saved state, which uses AES-128-CBC with a random key and all-zeroes IV. However, the bootrom doesn't perform a MAC on this data, and only validates the last block. This allows one to control most of security engine's state upon wakeup, if one has a way to modify the encrypted state buffer.</p>
 <p>With a way to modify the encrypted state buffer, one can thus dump keys from &quot;write-only&quot; keyslots, etc.</p>
 <p>This also bypasses the SBK protection of the bootROM: indeed, at warmboot, bootROM will always clear keyslot 0xE to prevent malicious code from saving the SBK. Moving the SBK to another keyslot in the saved context renders this protection moot.</p></td>
 <td><p>None</p></td>
-<td><p>HAC-001</p></td>
+<td><p>HAC-001 (Tegra210)</p></td>
 <td><p>December 2017</p></td>
 <td><p>January 20, 2018</p></td>
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>Security Engine keyslots vulnerable to partial overwrite attack</p></td>
 <td><p>The Tegra X1 security engine supports writing keyslot data to the engine with syntax as follows:</p>
 <p>SECURITY_ENGINE-&gt;AES_KEYTABLE_ADDR = (keyslot &lt;&lt; 4) | (dword_index_in_keyslot);</p>
 <p>SECURITY_ENGINE-&gt;AES_KEYTABLE_DATA = readle32(key, dword_index_in_keyslot * 4);</p>
 <p>However, the Security Engine flushes writes to the internal key tables immediately when AES_KEYTABLE_DATA is written -- this allows one to overwrite a single dword of a key at a time, and thus brute force the contents of keyslots in time (2^32 * 8) = 2^35 instead of 2^256.</p></td>
 <td><p>None</p></td>
-<td><p>HAC-001</p></td>
+<td><p>HAC-001 (Tegra210)</p></td>
 <td><p>Theorized Summer 2017 due to suggestive syntax, confirmed April 9, 2018</p></td>
 <td><p>April 9, 2018</p></td>
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a>, almost surely others (independently).</p></td>
@@ -55,9 +79,14 @@ Flaws.
 </tbody>
 </table>
 
-## System software
+## Software
 
-### Stage 1 Bootloader
+### Bootloader
+
+Flaws in this category pertain to any bootloader component such as the
+[package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink"), the [NX
+bootloader](Package1#Section%201.md##Section_1 "wikilink") or the
+[warmboot binary](Package1#Section%200.md##Section_0 "wikilink").
 
 <table>
 <thead>
@@ -111,6 +140,9 @@ Flaws.
 </table>
 
 ### TrustZone
+
+Flaws in this category pertain exclusively to the [Secure
+Monitor](Package1#Section%202.md##Section_2 "wikilink").
 
 <table>
 <thead>
@@ -174,6 +206,9 @@ Flaws.
 </table>
 
 ### Kernel
+
+Flaws in this category pertain exclusively to the [HorizonOS
+Kernel](Package2#Section%200.md##Section_0 "wikilink").
 
 <table>
 <thead>
@@ -265,6 +300,9 @@ Flaws.
 
 ### FIRM-package System Modules
 
+Flaws in this category pertain to any of the [built-in system
+modules](Package2#Section%201.md##Section_1 "wikilink").
+
 <table>
 <thead>
 <tr class="header">
@@ -312,16 +350,6 @@ Flaws.
 <td><p>Everyone</p></td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
 <td><p>nspwn</p></td>
 <td><p>fsp-ldr command 0 &quot;MountCode&quot; takes in a Content Path (retrieved from NCM by Loader), and returns an IFileSystem for the resulting ExeFS. These content paths, are normally NCAs, but MountCode also supports a number of other formats, including &quot;.nsp&quot; -- which is just a PFS0.</p>
 <p>When a path ending in &quot;.nsp&quot; is parsed by MountCode, the PFS0 is treated as a raw ExeFS. Because there is no NCA header, the ACID signatures are not validated -- and because there are no other signatures in a PFS0, this results in no signature checking happening at all.</p>
@@ -334,7 +362,7 @@ Flaws.
 <td><p>April 23, 2018</p></td>
 <td><p>Everyone</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>
@@ -349,9 +377,12 @@ Flaws.
 
 ### System Modules
 
+Flaws in this category pertain to any non-built-in system
+module.
+
 | Summary                                                                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Successful exploitation result                                                                                                                                                                                                 | Fixed in system version      | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe                      | Discovered by                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- | --------------------------------------------- | ----------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
 | Out-of-bounds array read for [BCAT\_Content\_Container](BCAT%20Content%20Container.md "wikilink") secret-data index | The [BCAT\_Content\_Container](BCAT%20Content%20Container.md "wikilink") secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed. This is not useful since the string loaded from this array is only involved with key-generation.                                                                                                                              |                                                                                                                                                                                                                                | Unknown                      | [2.0.0](2.0.0.md "wikilink")                  | August 4, 2017                | August 6, 2017                                   | [Shiny Quagsire](User:_shinyquagsire23 "wikilink"), [yellows8](User:Yellows8 "wikilink") (independently) |
-| OOB Read in NS system module (pl:utoohax, pl:utonium, maybe other names)                                            | Prior to [3.0.0](3.0.0.md "wikilink"), pl:u (Shared Font services implemented in the NS sysmodule) service commands 1,2,3 took in a signed 32-bit index and returned that index of an array but did not check that index at all. This allowed for an arbitrary read within a 34-bit range (33-bit signed) from NS .bss. In [3.0.0](3.0.0.md "wikilink"), sending out of range indexes causes error code 0x60A to be returned.                                                                             | Dumping full NS .text, .rodata and .data, infoleak, etc                                                                                                                                                                        | [3.0.0](3.0.0.md "wikilink") | [3.0.0](3.0.0.md "wikilink")                  | April 2017                    | On exploit's fix in [3.0.0](3.0.0.md "wikilink") | [qlutoo](User:qlutoo "wikilink"), Reswitched team (independently)                                        |
+| OOB Read in NS system module (pl:utoohax, pl:utonium, maybe other names)                                            | Prior to [3.0.0](3.0.0.md "wikilink"), pl:u (Shared Font services implemented in the NS sysmodule) service commands 1,2,3 took in a signed 32-bit index and returned that index of an array but did not check that index at all. This allowed for an arbitrary read within a 34-bit range (33-bit signed) from NS .bss. In [3.0.0](3.0.0.md "wikilink"), sending out of range indexes causes error code 0x60A to be returned.                                                                             | Dumping full NS .text, .rodata and .data, infoleak, etc                                                                                                                                                                        | [3.0.0](3.0.0.md "wikilink") | [3.0.0](3.0.0.md "wikilink")                  | April 2017                    | On exploit's fix in [3.0.0](3.0.0.md "wikilink") | [qlutoo](User:qlutoo "wikilink"), ReSwitched Team (independently)                                        |
 | Unchecked domain ID in common IPC code                                                                              | Prior to [2.0.0](2.0.0.md "wikilink"), object IDs in [domain messages](IPC%20Marshalling#Domain%20message.md##Domain_message "wikilink") are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.                                                                                                                                                                                                         |                                                                                                                                                                                                                                | 2.0.0                        | 2.0.0                                         | ~July 2017                    | 20 July 2017‎                                    | [hthh](User:hthh "wikilink")                                                                             |
 | expLDR (sysmodule handle table exhaustion)                                                                          | Most sysmodules share common template code to handle IPC control messages. The command DuplicateSession (type 5 command 2)'s template code will abort() if it fails to duplicate a session's handle for the requester. Because many sysmodules have limited handle table size (smaller than the browser/other entrypoints), repeatedly requesting to duplicate one's session will cause the sysmodule to run out of handle table space and abort, causing the service to release all its handles cleanly. | Sysmodule crashes. Most usefully, crashing ldr allows access to fsp-ldr and crashing pm allows access to fsp-pr. Useless after [4.0.0](4.0.0.md "wikilink"), which mitigated a number of single-session service access issues. | Unfixed                      | 4.1.0                                         | 24 June 2017                  | 8 March 2018                                     | [daeken](User:daeken "wikilink")                                                                         |

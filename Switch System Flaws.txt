@@ -1,9 +1,13 @@
+Exploits are used to execute unofficial code (homebrew) on the Nintendo Switch. This page is a list of publicly known Switch system flaws.
 
-System Flaws are used to execute unofficial code (homebrew) on the Nintendo Switch. This page is a list of known and public Switch System Flaws.
+For userland applications/applets flaws see [[Switch_Userland_Flaws|here]]. 
 
-=List of Switch System Flaws=
-
+= System flaws =
 == Hardware == 
+Flaws in this category pertain to the underlying hardware that powers the Switch.
+
+This includes components shared across Tegra based devices such as the [[TSEC]], the [[Security_Engine|Security Engine]], the [[GPU]] and so on.
+
 {| class="wikitable" border="1"
 !  Summary
 !  Description
@@ -13,12 +17,20 @@ System Flaws are used to execute unofficial code (homebrew) on the Nintendo Swit
 !  Public disclosure timeframe
 !  Discovered by
 |-
+| CVE-2018-6242 (leveraged by the ShofEL2 and Fusée Gelée exploits)
+| The USB software stack provided inside the boot instruction rom (IROM/bootROM) contains a copy operation whose length can be controlled by an attacker. By carefully constructing a USB control request, an attacker can leverage this vulnerability to copy the contents of an attacker-controlled buffer over the active execution stack, gaining control of the Boot and Power Management processor (BPMP) before any lock-outs or privilege reductions occur. This execution can then be used to exfiltrate secrets and to load arbitrary code onto the main CPU Complex (CCPLEX) "application processors" at the highest possible level of privilege (typically as the TrustZone Secure Monitor at PL3/EL3).
+| Unknown (Tegra186 and Tegra214)
+| HAC-001 (Tegra210)
+| January 2018
+| April 23, 2018
+| [[User:Shuffle2|shuffle2]] and fail0verflow (originally),<br> [[User:Ktemkin|ktemkin]] and ReSwitched Team (independently),<br> [[User:Naehrwert|naehrwert]] (independently),<br> [[User:Hexkyz|hexkyz]] (independently),<br> st4rk with [[User:Shinyquagsire23|Shiny Quagsire]] and Dazzozo (independently),<br> and many others (independently).
+|-
 | GMMU DMA attack
 | The Switch's GPU includes a separate MMU (GMMU) that is allowed to bypass the system's IOMMU (SMMU). By accessing the GPU's MMIO region and manipulating the page table entries in the GMMU, an attacker can read/write any portion of the DRAM (except memory carveouts).
 
 [5.0.0+] Works around this hardware flaw by using memory pool partitioning. You can no longer escalate into sysmodules with GPU DMA because all their memory is allocated using heap that's carved out.
 | None
-| HAC-001
+| HAC-001 (Tegra210)
 | Summer 2017
 | December 28, 2017
 | [[User:hexkyz|hexkyz]], [[User:SciresM|SciresM]] and [[User:qlutoo|qlutoo]]
@@ -30,7 +42,7 @@ With a way to modify the encrypted state buffer, one can thus dump keys from "wr
 
 This also bypasses the SBK protection of the bootROM: indeed, at warmboot, bootROM will always clear keyslot 0xE to prevent malicious code from saving the SBK. Moving the SBK to another keyslot in the saved context renders this protection moot.
 | None
-| HAC-001
+| HAC-001 (Tegra210)
 | December 2017
 | January 20, 2018
 | [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]]
@@ -45,16 +57,16 @@ SECURITY_ENGINE->AES_KEYTABLE_DATA = readle32(key, dword_index_in_keyslot * 4);
 
 However, the Security Engine flushes writes to the internal key tables immediately when AES_KEYTABLE_DATA is written -- this allows one to overwrite a single dword of a key at a time, and thus brute force the contents of keyslots in time (2^32 * 8) = 2^35 instead of 2^256.
 | None
-| HAC-001
+| HAC-001 (Tegra210)
 | Theorized Summer 2017 due to suggestive syntax, confirmed April 9, 2018
 | April 9, 2018
 | [[User:SciresM|SciresM]], almost surely others (independently).
 |}
 
-== System software ==
+== Software ==
+=== Bootloader ===
+Flaws in this category pertain to any bootloader component such as the [[Package1#Package1ldr|package1ldr]], the [[Package1#Section_1|NX bootloader]] or the [[Package1#Section_0|warmboot binary]].
 
-
-=== Stage 1 Bootloader ===
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -96,6 +108,8 @@ Warning: one could irreparably brick one's console by playing with this.
 |}
 
 === TrustZone ===
+Flaws in this category pertain exclusively to the [[Package1#Section_2|Secure Monitor]].
+
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -145,6 +159,8 @@ This was fixed in [[4.0.0]] by writing to the correct registers.
 |}
 
 === Kernel ===
+Flaws in this category pertain exclusively to the [[Package2#Section_0|HorizonOS Kernel]].
+
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -216,6 +232,8 @@ This was fixed partially in [[2.0.0]] by blacklisting the memory controller from
 |}
 
 === FIRM-package System Modules ===
+Flaws in this category pertain to any of the [[Package2#Section_1|built-in system modules]].
+
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -259,7 +277,6 @@ This was fixed in [[4.0.0]] by adding a semaphore to these critical single-sessi
 | December 30, 2017
 | Everyone
 |-
-|-
 | nspwn
 | fsp-ldr command 0 "MountCode" takes in a Content Path (retrieved from NCM by Loader), and returns an IFileSystem for the resulting ExeFS. These content paths, are normally NCAs, but MountCode also supports a number of other formats, including ".nsp" -- which is just a PFS0.
 
@@ -278,6 +295,8 @@ Thus, by placing an ExeFS (NSOs + "main.npdm") and setting one's desired title I
 |}
 
 === System Modules ===
+Flaws in this category pertain to any non-built-in system module.
+
 {| class="wikitable" border="1"
 |-
 !  Summary
@@ -306,7 +325,7 @@ This is not useful since the string loaded from this array is only involved with
 |  [[3.0.0]]
 |  April 2017
 |  On exploit's fix in [[3.0.0]]
-|  [[User:qlutoo|qlutoo]], Reswitched team (independently)
+|  [[User:qlutoo|qlutoo]], ReSwitched Team (independently)
 |-
 | Unchecked domain ID in common IPC code
 | Prior to [[2.0.0]], object IDs in [[IPC_Marshalling#Domain_message|domain messages]] are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.
