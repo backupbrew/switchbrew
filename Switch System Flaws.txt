@@ -105,6 +105,25 @@ Warning: one could irreparably brick one's console by playing with this.
 |  December 31, 2017
 |  [[User:SciresM|SciresM]], [[User:motezazer|motezazer]]
 |-
+|  TSEC firmware compromises itself
+|  Package1ldr loads a firmware blob into TSEC early on boot. This piece of code runs on the TSEC in Authenticated Mode and has the sole purpose of generating the per-console TSEC key (see [[Cryptosystem]]).
+
+As a way to mitigate attacks, the TSEC firmware blob is split into 3 stages: [[TSEC#Stage_0|Stage 0]] which is unencrypted and unsigned, [[TSEC#Stage_1|Stage 1]] which is unencrypted but signed and [[TSEC#Stage_2|Stage 2]] which is encrypted and signed.
+Stage 0 loads a static pre-generated signature into the Falcon's CPU crypto registers, loads Stage 1 into the Falcon's CODE region and jumps to it. Execution will proceed into Stage 1 in Authenticated Mode if, and only if, the loaded signature matches the one Falcon calculates internally for Stage 1.
+
+Among various things, Stage 1 will attempt to do a "backwards" security check by calculating a CMAC over Stage 0 and comparing it with a known hash stored in the TSEC firmware's key data (a small buffer stored after Stage 0's code). If the hashes don't match, execution aborts.
+
+Stage 1 stores the calculated Stage 0's CMAC in the stack, but forgets to clear it. Since the stack is located in Falcon's DATA region, loading the TSEC firmware blob and dumping the DATA region afterwards (via MMIO) will reveal the calculated hash.
+This allows using Stage 1 as an oracle to generate a valid CMAC for arbitrary Stage 0 code. Replacing the CMAC in the TSEC firmware's key data region results in Stage 1 accepting any Stage 0 code, thus rendering this security measure useless.
+
+Additionally, since signed Falcon code can't be revoked without an hardware revision, an attacker can always reuse the flawed Stage 1 code even if a fix is issued.
+|  Running TSEC firmware's Stage 1 in a user controlled environment. Mostly useless, but may aid in side-channel attacks.
+|  None
+|  [[5.0.2]]
+|  January 2018
+|  April 29, 2018
+|  [[User:Hexkyz|hexkyz]]
+|-
 |}
 
 === TrustZone ===

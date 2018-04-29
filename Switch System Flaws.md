@@ -127,6 +127,20 @@ bootloader](Package1#Section%201.md##Section_1 "wikilink") or the
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a>, <a href="User:motezazer" title="wikilink">motezazer</a></p></td>
 </tr>
 <tr class="odd">
+<td><p>TSEC firmware compromises itself</p></td>
+<td><p>Package1ldr loads a firmware blob into TSEC early on boot. This piece of code runs on the TSEC in Authenticated Mode and has the sole purpose of generating the per-console TSEC key (see <a href="Cryptosystem.md" title="wikilink">Cryptosystem</a>).</p>
+<p>As a way to mitigate attacks, the TSEC firmware blob is split into 3 stages: <a href="TSEC#Stage 0.md##Stage_0" title="wikilink">Stage 0</a> which is unencrypted and unsigned, <a href="TSEC#Stage 1.md##Stage_1" title="wikilink">Stage 1</a> which is unencrypted but signed and <a href="TSEC#Stage 2.md##Stage_2" title="wikilink">Stage 2</a> which is encrypted and signed. Stage 0 loads a static pre-generated signature into the Falcon's CPU crypto registers, loads Stage 1 into the Falcon's CODE region and jumps to it. Execution will proceed into Stage 1 in Authenticated Mode if, and only if, the loaded signature matches the one Falcon calculates internally for Stage 1.</p>
+<p>Among various things, Stage 1 will attempt to do a &quot;backwards&quot; security check by calculating a CMAC over Stage 0 and comparing it with a known hash stored in the TSEC firmware's key data (a small buffer stored after Stage 0's code). If the hashes don't match, execution aborts.</p>
+<p>Stage 1 stores the calculated Stage 0's CMAC in the stack, but forgets to clear it. Since the stack is located in Falcon's DATA region, loading the TSEC firmware blob and dumping the DATA region afterwards (via MMIO) will reveal the calculated hash. This allows using Stage 1 as an oracle to generate a valid CMAC for arbitrary Stage 0 code. Replacing the CMAC in the TSEC firmware's key data region results in Stage 1 accepting any Stage 0 code, thus rendering this security measure useless.</p>
+<p>Additionally, since signed Falcon code can't be revoked without an hardware revision, an attacker can always reuse the flawed Stage 1 code even if a fix is issued.</p></td>
+<td><p>Running TSEC firmware's Stage 1 in a user controlled environment. Mostly useless, but may aid in side-channel attacks.</p></td>
+<td><p>None</p></td>
+<td><p><a href="5.0.2.md" title="wikilink">5.0.2</a></p></td>
+<td><p>January 2018</p></td>
+<td><p>April 29, 2018</p></td>
+<td><p><a href="User:Hexkyz" title="wikilink">hexkyz</a></p></td>
+</tr>
+<tr class="even">
 <td></td>
 <td></td>
 <td></td>
