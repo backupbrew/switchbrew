@@ -2,7 +2,7 @@
 <div style="margin: -.3em -1em -1em -1em;">
 {| width="100%" bgcolor="#fff" border="0" cellpadding="2px" cellspacing="2px" style="margin:auto;"
 |- valign="top" align="left" style="background: #F5FAFF;"
-| [https://www.3dbrew.org 3DBrew] [http://dsibrew.org DSiBrew] [http://wiibrew.org WiiBrew] [http://wiiubrew.org WiiUBrew]
+| [https://www.3dbrew.org 3DBrew] [http://dsibrew.org DSiBrew] [http://wiibrew.org WiiBrew] [http://wiiubrew.org WiiUBrew] [http://iquebrew.org iQueBrew]
 |}
 </div>
 {{box-footer-empty}}
