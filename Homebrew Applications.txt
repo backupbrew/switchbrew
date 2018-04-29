@@ -65,6 +65,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 !  width="5%"  | Open-Source 
 !  width="15%" | Last Updated 
 |-
+| Duke Nukem 3D
+| EDuke32 is an awesome, free homebrew game engine and source port of the classic PC first person shooter Duke Nukem 3D
+| Cpasjuste
+| [https://github.com/Cpasjuste/eduke32/releases here]
+| [https://github.com/Cpasjuste/eduke32 Yes]
+| 2018-04-29
+|-
 | LovePotion
 | [https://love2d.org Love2D] for Nintendo Switch
 | TurtleP
