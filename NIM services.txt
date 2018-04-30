@@ -7,9 +7,9 @@ This is "nn::nim::detail::INetworkInstallManager".
 |-
 | 0 || CreateSystemUpdateTask
 |-
-| 1 || DestroySystemUpdateTask
+| 1 || [[#DestroySystemUpdateTask]]
 |-
-| 2 || ListSystemUpdateTask
+| 2 || [[#ListSystemUpdateTask]]
 |-
 | 3 || RequestSystemUpdateTaskRun
 |-
@@ -98,10 +98,10 @@ This is "nn::nim::detail::INetworkInstallManager".
 | 46 || [3.0.0+]
 |}
 
-== Cmd1 ==
-Takes a 0x10-byte input struct, from the output of cmd2.
+== DestroySystemUpdateTask ==
+Takes a 0x10-byte input struct, from the output of ListSystemUpdateTask.
 
-== Cmd2 ==
+== ListSystemUpdateTask ==
 Takes a type-0x6 output buffer, for an array of 0x10-byte entries. Returns an u32 for total output entries.
 
 Doesn't return anything on a v2.1 system where sysupdate domains are blocked.
@@ -156,7 +156,6 @@ This is "nn::nim::detail::IShopServiceManager".
 | 501 || RequestDownloadTicket
 |-
 | 502 || [4.0.0+] RequestDownloadTicketForPrepurchasedContents
-|-
 |}
 
 = ntc =
