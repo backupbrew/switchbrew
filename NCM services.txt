@@ -8,13 +8,13 @@ This is "nn::lr::ILocationResolverManager".
 |-
 ! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetLocationResolver || [[Filesystem_services#StorageId|StorageID]] ||
+| 0 || OpenLocationResolver || [[Filesystem_services#StorageId|StorageID]] ||
 |-
-| 1 || GetRegisteredLocationResolver || None || 
+| 1 || OpenRegisteredLocationResolver || None || 
 |-
-| 2 || CheckStorage || [[Filesystem_services#StorageId|StorageID]] ||
+| 2 || RefreshLocationResolver || [[Filesystem_services#StorageId|StorageID]] ||
 |-
-| 3 || [2.0.0+] GetAddOnContentLocationResolver || None  ||
+| 3 || [2.0.0+] OpenAddOnContentLocationResolver || None  ||
 |}
 
 The only sysmodules which use this service are [[Filesystem_services|FS]], [[Loader_services|Loader]], and [[NS_Services|NS]]. [[boot2]] has access but doesn't use it.
@@ -26,25 +26,25 @@ This is "nn::lr::ILocationResolver".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetProgramNcaPath]]
+| 0 || [[#ResolveProgramPath]]
 |-
-| 1 || [[#SetProgramNcaPath]]
+| 1 || [[#RedirectProgramPath]]
 |-
-| 2 || [[#GetUserControlNcaPath]]
+| 2 || [[#ResolveApplicationControlPath]]
 |-
-| 3 || [[#GetDocHtmlNcaPath]]
+| 3 || [[#ResolveApplicationHtmlDocumentPath]]
 |-
-| 4 || [[#GetControlNcaPath]]
+| 4 || [[#ResolveDataPath]]
 |-
-| 5 || [[#SetControlNcaPath]]
+| 5 || [[#RedirectApplicationControlPath]]
 |-
-| 6 || [[#SetDocHtmlNcaPath]]
+| 6 || [[#RedirectApplicationHtmlDocumentPath]]
 |-
-| 7 || [[#GetInfoHtmlNcaPath]]
+| 7 || [[#ResolveApplicationLegalInformationPath]]
 |-
-| 8 || [[#SetInfoHtmlNcaPath]]
+| 8 || [[#RedirectApplicationLegalInformationPath]]
 |-
-| 9 || [[#ClearLocationResolver]]
+| 9 || [[#Refresh]]
 |-
 | 10 || [5.0.0+] [[#SetProgramNcaPath2]]
 |-
@@ -65,42 +65,42 @@ The Get* commands load the [[Filesystem_services|ContentPath]] from linked-lists
 
 The Set* commands always return 0 and add a new entry to the list. If a matching entry is found, it's removed first.
 
-==== GetProgramNcaPath ====
+==== ResolveProgramPath ====
 Takes an u64 '''TitleID''' and a C descriptor. Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
 
-==== SetProgramNcaPath ====
+==== RedirectProgramPath ====
 Takes an u64 '''TitleID''' and a X descriptor with a [[Filesystem_services#ContentPath|ContentPath]]. Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
 
 Inserts a new [[#Location_List_Entry|entry]] with '''flag''' set to 0.
 
-==== GetUserControlNcaPath ====
+==== ResolveApplicationControlPath ====
 Takes an u64 '''TitleID''' and a C descriptor. Used for [[NCA_Content_FS#NCA-type3|NCA-type3]].
 
-==== GetDocHtmlNcaPath ====
+==== ResolveApplicationHtmlDocumentPath====
 Takes an u64 '''TitleID''' and a C descriptor. Used for [[NCA_Content_FS#NCA-type4|NCA-type4]].
 
-==== GetControlNcaPath ====
+==== ResolveDataPath ====
 Takes an u64 '''TitleID''' and a C descriptor. Used for [[NCA_Content_FS#NCA-type3|NCA-type3]].
 
-==== SetControlNcaPath ====
+==== RedirectApplicationControlPath ====
 Takes an u64 '''TitleID''' and a X descriptor with a [[Filesystem_services#ContentPath|ContentPath]]. Used for [[NCA_Content_FS#NCA-type3|NCA-type3]].
 
 Inserts a new [[#Location_List_Entry|entry]] with '''flag''' set to 1.
 
-==== SetDocHtmlNcaPath ====
+==== RedirectApplicationHtmlDocumentPath ====
 Takes an u64 '''TitleID''' and a X descriptor with a [[Filesystem_services#ContentPath|ContentPath]]. Used for [[NCA_Content_FS#NCA-type4|NCA-type4]].
 
 Inserts a new [[#Location_List_Entry|entry]] with '''flag''' set to 1.
 
-==== GetInfoHtmlNcaPath ====
+==== ResolveApplicationLegalInformationPath ====
 Takes an u64 '''TitleID''' and a C descriptor. Used for [[NCA_Content_FS#NCA-type5|NCA-type5]].
 
-==== SetInfoHtmlNcaPath ====
+==== RedirectApplicationLegalInformationPath ====
 Takes an u64 '''TitleID''' and a X descriptor with a [[Filesystem_services#ContentPath|ContentPath]]. Used for [[NCA_Content_FS#NCA-type5|NCA-type5]].
 
 Inserts a new [[#Location_List_Entry|entry]] with '''flag''' set to 1.
 
-==== ClearLocationResolver ====
+==== Refresh ====
 Takes no input. Frees all linked-lists' entries that have '''flag''' set to 0.
 
 ==== SetProgramNcaPath2 ====
@@ -138,21 +138,21 @@ This works like [[#ILocationResolver]], but only two types of NCA paths can be g
 |-
 ! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetPatchType0NcaPath || u64 TitleID + C descriptor || Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
+| 0 || ResolveProgramPath || u64 TitleID + C descriptor || Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
 |-
-| 1 || RegisterPatchType0FallbackPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Sets the Type 0 fallback TID and path to the provided arguments.
+| 1 || RegisterProgramPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Sets the Type 0 fallback TID and path to the provided arguments.
 |-
-| 2 || UnregisterPatchType0FallbackPath || u64 TitleID || If the Type 0 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop.
+| 2 || UnregisterProgramPath || u64 TitleID || If the Type 0 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop.
 |-
-| 3 || SetPatchType0NcaPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+| 3 || RedirectProgramPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |-
-| 4 || [2.0.0+] GetPatchType1NcaPath || u64 TitleID + C descriptor ||
+| 4 || [2.0.0+] ResolveHtmlDocumentPath || u64 TitleID + C descriptor ||
 |-
-| 5 || [2.0.0+] RegisterPatchType1FallbackPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Sets the Type 1 fallback TID and path to the provided arguments.
+| 5 || [2.0.0+] RegisterHtmlDocumentPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] || Sets the Type 1 fallback TID and path to the provided arguments.
 |-
-| 6 || [2.0.0+] UnregisterPatchType1FallbackPath || u64 TitleID || If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop.
+| 6 || [2.0.0+] UnregisterHtmlDocumentPath || u64 TitleID || If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop.
 |-
-| 7 || [2.0.0+] SetPatchType1NcaPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+| 7 || [2.0.0+] RedirectHtmlDocumentPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |}
 
 === IAddOnContentLocationResolver ===
@@ -162,11 +162,11 @@ This is "nn::lr::IAddOnContentLocationResolver".
 |-
 ! Cmd || Name || Arguments || Notes
 |-
-| 0 || GetAddOnContentNcaPath || u64 TitleID + C descriptor || 
+| 0 || ResolveAddOnContentPath || u64 TitleID + C descriptor || 
 |-
-| 1 || RegisterAddOnContent || [[Filesystem_services#StorageId|StorageID]] + u64 TitleID || 
+| 1 || RegisterAddOnContentStorage || [[Filesystem_services#StorageId|StorageID]] + u64 TitleID || 
 |-
-| 2 || ClearAddOnContentLocationResolver || None || Clears all registered titles here.
+| 2 || UnregisterAllAddOnContentPath || None || Clears all registered titles here.
 |}
 
 === Location List Entry ===

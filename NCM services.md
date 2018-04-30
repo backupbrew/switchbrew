@@ -7,12 +7,12 @@ NCM contains services for internal file path and content management.
 This is
 "nn::lr::ILocationResolverManager".
 
-| Cmd | Name                                       | Arguments                                                             | Notes |
-| --- | ------------------------------------------ | --------------------------------------------------------------------- | ----- |
-| 0   | GetLocationResolver                        | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
-| 1   | GetRegisteredLocationResolver              | None                                                                  |       |
-| 2   | CheckStorage                               | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
-| 3   | \[2.0.0+\] GetAddOnContentLocationResolver | None                                                                  |       |
+| Cmd | Name                                        | Arguments                                                             | Notes |
+| --- | ------------------------------------------- | --------------------------------------------------------------------- | ----- |
+| 0   | OpenLocationResolver                        | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 1   | OpenRegisteredLocationResolver              | None                                                                  |       |
+| 2   | RefreshLocationResolver                     | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") |       |
+| 3   | \[2.0.0+\] OpenAddOnContentLocationResolver | None                                                                  |       |
 
 The only sysmodules which use this service are
 [FS](Filesystem%20services.md "wikilink"),
@@ -25,24 +25,24 @@ access but doesn't use it.
 This is
 "nn::lr::ILocationResolver".
 
-| Cmd | Name                                                                      |
-| --- | ------------------------------------------------------------------------- |
-| 0   | [\#GetProgramNcaPath](#GetProgramNcaPath "wikilink")                      |
-| 1   | [\#SetProgramNcaPath](#SetProgramNcaPath "wikilink")                      |
-| 2   | [\#GetUserControlNcaPath](#GetUserControlNcaPath "wikilink")              |
-| 3   | [\#GetDocHtmlNcaPath](#GetDocHtmlNcaPath "wikilink")                      |
-| 4   | [\#GetControlNcaPath](#GetControlNcaPath "wikilink")                      |
-| 5   | [\#SetControlNcaPath](#SetControlNcaPath "wikilink")                      |
-| 6   | [\#SetDocHtmlNcaPath](#SetDocHtmlNcaPath "wikilink")                      |
-| 7   | [\#GetInfoHtmlNcaPath](#GetInfoHtmlNcaPath "wikilink")                    |
-| 8   | [\#SetInfoHtmlNcaPath](#SetInfoHtmlNcaPath "wikilink")                    |
-| 9   | [\#ClearLocationResolver](#ClearLocationResolver "wikilink")              |
-| 10  | \[5.0.0+\] [\#SetProgramNcaPath2](#SetProgramNcaPath2 "wikilink")         |
-| 11  | \[5.0.0+\] [\#ClearLocationResolver2](#ClearLocationResolver2 "wikilink") |
-| 12  | \[5.0.0+\] [\#DeleteProgramNcaPath](#DeleteProgramNcaPath "wikilink")     |
-| 13  | \[5.0.0+\] [\#DeleteControlNcaPath](#DeleteControlNcaPath "wikilink")     |
-| 14  | \[5.0.0+\] [\#DeleteDocHtmlNcaPath](#DeleteDocHtmlNcaPath "wikilink")     |
-| 15  | \[5.0.0+\] [\#DeleteInfoHtmlNcaPath](#DeleteInfoHtmlNcaPath "wikilink")   |
+| Cmd | Name                                                                                             |
+| --- | ------------------------------------------------------------------------------------------------ |
+| 0   | [\#ResolveProgramPath](#ResolveProgramPath "wikilink")                                           |
+| 1   | [\#RedirectProgramPath](#RedirectProgramPath "wikilink")                                         |
+| 2   | [\#ResolveApplicationControlPath](#ResolveApplicationControlPath "wikilink")                     |
+| 3   | [\#ResolveApplicationHtmlDocumentPath](#ResolveApplicationHtmlDocumentPath "wikilink")           |
+| 4   | [\#ResolveDataPath](#ResolveDataPath "wikilink")                                                 |
+| 5   | [\#RedirectApplicationControlPath](#RedirectApplicationControlPath "wikilink")                   |
+| 6   | [\#RedirectApplicationHtmlDocumentPath](#RedirectApplicationHtmlDocumentPath "wikilink")         |
+| 7   | [\#ResolveApplicationLegalInformationPath](#ResolveApplicationLegalInformationPath "wikilink")   |
+| 8   | [\#RedirectApplicationLegalInformationPath](#RedirectApplicationLegalInformationPath "wikilink") |
+| 9   | [\#Refresh](#Refresh "wikilink")                                                                 |
+| 10  | \[5.0.0+\] [\#SetProgramNcaPath2](#SetProgramNcaPath2 "wikilink")                                |
+| 11  | \[5.0.0+\] [\#ClearLocationResolver2](#ClearLocationResolver2 "wikilink")                        |
+| 12  | \[5.0.0+\] [\#DeleteProgramNcaPath](#DeleteProgramNcaPath "wikilink")                            |
+| 13  | \[5.0.0+\] [\#DeleteControlNcaPath](#DeleteControlNcaPath "wikilink")                            |
+| 14  | \[5.0.0+\] [\#DeleteDocHtmlNcaPath](#DeleteDocHtmlNcaPath "wikilink")                            |
+| 15  | \[5.0.0+\] [\#DeleteInfoHtmlNcaPath](#DeleteInfoHtmlNcaPath "wikilink")                          |
 
 If the supplied
 [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") is
@@ -60,12 +60,12 @@ for the rest.
 The Set\* commands always return 0 and add a new entry to the list. If a
 matching entry is found, it's removed first.
 
-#### GetProgramNcaPath
+#### ResolveProgramPath
 
 Takes an u64 **TitleID** and a C descriptor. Used for
 [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").
 
-#### SetProgramNcaPath
+#### RedirectProgramPath
 
 Takes an u64 **TitleID** and a X descriptor with a
 [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink").
@@ -75,22 +75,22 @@ Used for
 Inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
 to 0.
 
-#### GetUserControlNcaPath
+#### ResolveApplicationControlPath
 
 Takes an u64 **TitleID** and a C descriptor. Used for
 [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").
 
-#### GetDocHtmlNcaPath
+#### ResolveApplicationHtmlDocumentPath
 
 Takes an u64 **TitleID** and a C descriptor. Used for
 [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").
 
-#### GetControlNcaPath
+#### ResolveDataPath
 
 Takes an u64 **TitleID** and a C descriptor. Used for
 [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").
 
-#### SetControlNcaPath
+#### RedirectApplicationControlPath
 
 Takes an u64 **TitleID** and a X descriptor with a
 [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink").
@@ -100,7 +100,7 @@ Used for
 Inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
 to 1.
 
-#### SetDocHtmlNcaPath
+#### RedirectApplicationHtmlDocumentPath
 
 Takes an u64 **TitleID** and a X descriptor with a
 [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink").
@@ -110,12 +110,12 @@ Used for
 Inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
 to 1.
 
-#### GetInfoHtmlNcaPath
+#### ResolveApplicationLegalInformationPath
 
 Takes an u64 **TitleID** and a C descriptor. Used for
 [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").
 
-#### SetInfoHtmlNcaPath
+#### RedirectApplicationLegalInformationPath
 
 Takes an u64 **TitleID** and a X descriptor with a
 [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink").
@@ -125,7 +125,7 @@ Used for
 Inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
 to 1.
 
-#### ClearLocationResolver
+#### Refresh
 
 Takes no input. Frees all linked-lists' entries that have **flag** set
 to 0.
@@ -181,27 +181,27 @@ but only two types of NCA paths can be gotten/set. In addition, each
 type has a fallback path that can be set for a single title ID at a
 time.
 
-| Cmd | Name                                        | Arguments                                                                                              | Notes                                                                                          |
-| --- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
-| 0   | GetPatchType0NcaPath                        | u64 TitleID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                   |
-| 1   | RegisterPatchType0FallbackPath              | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 0 fallback TID and path to the provided arguments.                               |
-| 2   | UnregisterPatchType0FallbackPath            | u64 TitleID                                                                                            | If the Type 0 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
-| 3   | SetPatchType0NcaPath                        | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
-| 4   | \[2.0.0+\] GetPatchType1NcaPath             | u64 TitleID + C descriptor                                                                             |                                                                                                |
-| 5   | \[2.0.0+\] RegisterPatchType1FallbackPath   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 1 fallback TID and path to the provided arguments.                               |
-| 6   | \[2.0.0+\] UnregisterPatchType1FallbackPath | u64 TitleID                                                                                            | If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
-| 7   | \[2.0.0+\] SetPatchType1NcaPath             | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
+| Cmd | Name                                  | Arguments                                                                                              | Notes                                                                                          |
+| --- | ------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| 0   | ResolveProgramPath                    | u64 TitleID + C descriptor                                                                             | Used for [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").                   |
+| 1   | RegisterProgramPath                   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 0 fallback TID and path to the provided arguments.                               |
+| 2   | UnregisterProgramPath                 | u64 TitleID                                                                                            | If the Type 0 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
+| 3   | RedirectProgramPath                   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
+| 4   | \[2.0.0+\] ResolveHtmlDocumentPath    | u64 TitleID + C descriptor                                                                             |                                                                                                |
+| 5   | \[2.0.0+\] RegisterHtmlDocumentPath   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 1 fallback TID and path to the provided arguments.                               |
+| 6   | \[2.0.0+\] UnregisterHtmlDocumentPath | u64 TitleID                                                                                            | If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
+| 7   | \[2.0.0+\] RedirectHtmlDocumentPath   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
 
 ### IAddOnContentLocationResolver
 
 This is
 "nn::lr::IAddOnContentLocationResolver".
 
-| Cmd | Name                              | Arguments                                                                           | Notes                              |
-| --- | --------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------- |
-| 0   | GetAddOnContentNcaPath            | u64 TitleID + C descriptor                                                          |                                    |
-| 1   | RegisterAddOnContent              | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TitleID |                                    |
-| 2   | ClearAddOnContentLocationResolver | None                                                                                | Clears all registered titles here. |
+| Cmd | Name                          | Arguments                                                                           | Notes                              |
+| --- | ----------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------- |
+| 0   | ResolveAddOnContentPath       | u64 TitleID + C descriptor                                                          |                                    |
+| 1   | RegisterAddOnContentStorage   | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TitleID |                                    |
+| 2   | UnregisterAllAddOnContentPath | None                                                                                | Clears all registered titles here. |
 
 ### Location List Entry
 
