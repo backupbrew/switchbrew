@@ -580,52 +580,52 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 This is
 "nn::ns::detail::IDevelopInterface".
 
-| Cmd | Name                                                             |
-| --- | ---------------------------------------------------------------- |
-| 0   | [\#LaunchTitle](#LaunchTitle "wikilink")                         |
-| 1   | [\#TerminateTitleByPid](#TerminateTitleByPid "wikilink")         |
-| 2   | [\#TerminateTitleByTitleId](#TerminateTitleByTitleId "wikilink") |
-| 3   | [\#GetNsDevWaitEvent](#GetNsDevWaitEvent "wikilink")             |
-| 4   | [\#GetNsDevEventType](#GetNsDevEventType "wikilink")             |
-| 5   | [\#TerminateCrashingTitle](#TerminateCrashingTitle "wikilink")   |
-| 6   | [\#InstallTitle](#InstallTitle "wikilink")                       |
-| 7   | SetEventState6                                                   |
-| 8   | SetEventState                                                    |
-|     |                                                                  |
+| Cmd | Name                                                                       |
+| --- | -------------------------------------------------------------------------- |
+| 0   | [\#LaunchProgram](#LaunchProgram "wikilink")                               |
+| 1   | [\#TerminateProcess](#TerminateProcess "wikilink")                         |
+| 2   | [\#TerminateProgram](#TerminateProgram "wikilink")                         |
+| 3   | [\#GetShellEventHandle](#GetShellEventHandle "wikilink")                   |
+| 4   | [\#GetShellEventInfo](#GetShellEventInfo "wikilink")                       |
+| 5   | [\#TerminateApplication](#TerminateApplication "wikilink")                 |
+| 6   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink") |
+| 7   | LaunchApplication                                                          |
+| 8   | LaunchApplicationWithStorageId                                             |
+|     |                                                                            |
 
-## LaunchTitle
+## LaunchProgram
 
 Wrapper for "pm:shell"
 [LaunchProcess](Process%20Manager%20services#LaunchProcess.md##LaunchProcess "wikilink").
 
-## TerminateTitleByPid
+## TerminateProcess
 
 Wrapper for "pm:shell"
 [TerminateTitleByPid](Process%20Manager%20services#TerminateTitleByPid.md##TerminateTitleByPid "wikilink").
 
-## TerminateTitleByTitleId
+## TerminateProgram
 
 Wrapper for "pm:shell"
 [TerminateTitleByTitleId](Process%20Manager%20services#TerminateTitleByTitleId.md##TerminateTitleByTitleId "wikilink").
 
-## GetNsDevWaitEvent
+## GetShellEventHandle
 
 Wrapper for "pm:shell"
 [GetProcessEventWaiter](Process%20Manager%20services#GetProcessEventWaiter.md##GetProcessEventWaiter "wikilink").
 
-## GetNsDevEventType
+## GetShellEventInfo
 
 Wrapper for "pm:shell"
 [GetProcessEventType](Process%20Manager%20services#GetProcessEventType.md##GetProcessEventType "wikilink").
 
-## TerminateCrashingTitle
+## TerminateApplication
 
 Calls "pm:shell"
 [GetCrashingProcessPid](Process%20Manager%20services#GetCrashingProcessPid.md##GetCrashingProcessPid "wikilink")
 and sends PID to
 [TerminateTitleByPid](Process%20Manager%20services#TerminateTitleByPid.md##TerminateTitleByPid "wikilink").
 
-## InstallTitle
+## PrepareLaunchProgramFromHost
 
 Calls
 [IPathResolverForStorage](NCM%20services#IPathResolverForStorage.md##IPathResolverForStorage "wikilink")

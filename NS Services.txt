@@ -955,45 +955,45 @@ This is "nn::ns::detail::IDevelopInterface".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#LaunchTitle]]
+| 0 || [[#LaunchProgram]]
 |-
-| 1 || [[#TerminateTitleByPid]]
+| 1 || [[#TerminateProcess]]
 |-
-| 2 || [[#TerminateTitleByTitleId]]
+| 2 || [[#TerminateProgram]]
 |-
-| 3 || [[#GetNsDevWaitEvent]]
+| 3 || [[#GetShellEventHandle]]
 |-
-| 4 || [[#GetNsDevEventType]]
+| 4 || [[#GetShellEventInfo]]
 |-
-| 5 || [[#TerminateCrashingTitle]]
+| 5 || [[#TerminateApplication]]
 |-
-| 6 || [[#InstallTitle]]
+| 6 || [[#PrepareLaunchProgramFromHost]]
 |-
-| 7 || SetEventState6
+| 7 || LaunchApplication
 |-
-| 8 || SetEventState
+| 8 || LaunchApplicationWithStorageId
 |-
 |}
 
-== LaunchTitle ==
+== LaunchProgram ==
 Wrapper for "pm:shell" [[Process_Manager_services#LaunchProcess|LaunchProcess]].
 
-== TerminateTitleByPid ==
+== TerminateProcess ==
 Wrapper for "pm:shell" [[Process_Manager_services#TerminateTitleByPid|TerminateTitleByPid]].
 
-== TerminateTitleByTitleId ==
+== TerminateProgram ==
 Wrapper for "pm:shell" [[Process_Manager_services#TerminateTitleByTitleId|TerminateTitleByTitleId]].
 
-== GetNsDevWaitEvent ==
+== GetShellEventHandle==
 Wrapper for "pm:shell" [[Process_Manager_services#GetProcessEventWaiter|GetProcessEventWaiter]].
 
-== GetNsDevEventType ==
+== GetShellEventInfo ==
 Wrapper for "pm:shell" [[Process_Manager_services#GetProcessEventType|GetProcessEventType]].
 
-== TerminateCrashingTitle ==
+== TerminateApplication ==
 Calls "pm:shell" [[Process_Manager_services#GetCrashingProcessPid|GetCrashingProcessPid]] and sends PID to [[Process_Manager_services#TerminateTitleByPid|TerminateTitleByPid]].
 
-== InstallTitle ==
+== PrepareLaunchProgramFromHost ==
 Calls [[NCM_services#IPathResolverForStorage|IPathResolverForStorage]] Set...NcaPath functions.
 
 [[Category:Services]]
