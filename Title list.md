@@ -414,7 +414,7 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>erpt</p></td>
+<td><p><a href="Error Report services.md" title="wikilink">erpt</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000002D</p></td>
@@ -456,7 +456,7 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p><a href="Eupld services.md" title="wikilink">eupld</a></p></td>
+<td><p><a href="Error Upload services.md" title="wikilink">eupld</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000031</p></td>
