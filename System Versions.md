@@ -12,3 +12,5 @@
 | [4.0.1](4.0.1.md "wikilink") | October 25, 2017       |                     |
 | [4.1.0](4.1.0.md "wikilink") | December 4, 2017       |                     |
 | [5.0.0](5.0.0.md "wikilink") | March 12, 2018         | 2018-02-20 16:37:47 |
+| [5.0.1](5.0.1.md "wikilink") | March 26, 2018         |                     |
+| [5.0.2](5.0.2.md "wikilink") | April 16, 2018         |                     |
