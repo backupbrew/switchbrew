@@ -321,45 +321,45 @@ Note the official name for Meta Record is "ContentMetaKey".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || InsertEntryContentRecords || Takes a [[NCA#Meta_records|Meta Record]], a type-5 [[NCA#Content_records|Content Records]] buffer and a u64 size.
+| 0 || Set || Takes a [[NCA#Meta_records|Meta Record]], a type-5 [[NCA#Content_records|Content Records]] buffer and a u64 size.
 |-
-| 1 || ReadEntryContentRecords || Takes a [[NCA#Meta_records|Meta Record]], a type-6 buffer to write [[NCA#Content_records|Content Records]] to and a u64 size. Returns the actual Content Records size read.
+| 1 || Get || Takes a [[NCA#Meta_records|Meta Record]], a type-6 buffer to write [[NCA#Content_records|Content Records]] to and a u64 size. Returns the actual Content Records size read.
 |-
-| 2 || RemoveEntryContentRecords || Takes a [[NCA#Meta_records|Meta Record]], and removes the associated record.
+| 2 || Remove || Takes a [[NCA#Meta_records|Meta Record]], and removes the associated record.
 |-
-| 3 || GetEntryContentNcaId || Takes a [[NCA#Meta_records|Meta Record]] and a u8 [[#Title_Types|Title Type]]. Returns a [[#NcaID]].
+| 3 || GetContentIdByType || Takes a [[NCA#Meta_records|Meta Record]] and a u8 [[#Title_Types|Title Type]]. Returns a [[#NcaID]].
 |-
-| 4 || ReadEntryContentRecordEntries || Takes a type-6 buffer to write [[NCA#Content_records|Content Record]] entries to, a [[NCA#Meta_records|Meta Record]], and a u32 index into the Content Record entries to start copying from. Returns a u32 entries_read.
+| 4 || ListContentInfo || Takes a type-6 buffer to write [[NCA#Content_records|Content Record]] entries to, a [[NCA#Meta_records|Meta Record]], and a u32 index into the Content Record entries to start copying from. Returns a u32 entries_read.
 |-
 | 5 || List || Takes a type-6 buffer to write [[NCA#Meta_records|Meta Record]]s to, a u32 [[#Title_Types|Title Type]], a u64 TID, a u64 TID_LOW, and u64 TID_HIGH. Writes into the buffer all Meta Records with low <= record->title_id <= high, and record->type == type. Additionally requires record->title_id == TID, if record->type is Application, Patch, Add-On, or Delta.
 |-
-| 6 || GetMetaRecord || Takes a u64 title id, and returns the [[NCA#Meta_records|Meta Record]] with the highest version field for that title id.
+| 6 || GetLatestContentMetaKey || Takes a u64 title id, and returns the [[NCA#Meta_records|Meta Record]] with the highest version field for that title id.
 |-
 | 7 || [[#ListApplication]] ||
 |-
-| 8 || IsEntryPresent || Takes a [[NCA#Meta_records|Meta Record]] and returns whether that record is present in the database.
+| 8 || Has || Takes a [[NCA#Meta_records|Meta Record]] and returns whether that record is present in the database.
 |-
-| 9 || AreEntriesPresent || Takes a type-5 buffer containing [[NCA#Meta_records|Meta Records]] (code assumes there are size/sizeof(meta_record) records in the buffer), and returns whether all of those records are present in the database.
+| 9 || HasAll || Takes a type-5 buffer containing [[NCA#Meta_records|Meta Records]] (code assumes there are size/sizeof(meta_record) records in the buffer), and returns whether all of those records are present in the database.
 |-
-| 10 || GetEntryContentRecordsSize || Takes a [[NCA#Meta_records|Meta Record]], and returns the size of the associated [[NCA#Content_records|Content Records]].
+| 10 || GetSize || Takes a [[NCA#Meta_records|Meta Record]], and returns the size of the associated [[NCA#Content_records|Content Records]].
 |-
-| 11 || GetEntryUnknownRecordSize || Takes a [[NCA#Meta_records|Meta Record]], and returns u32 from ContentRecords + 16 (only if the Meta record has type Application or Patch).
+| 11 || GetRequiredSystemVersion || Takes a [[NCA#Meta_records|Meta Record]], and returns u32 from ContentRecords + 16 (only if the Meta record has type Application or Patch).
 |-
-| 12 || GetEntryUpdateTitleId || Takes a [[NCA#Meta_records|Meta Record]], and returns the update title id for that record.
+| 12 || GetPatchId || Takes a [[NCA#Meta_records|Meta Record]], and returns the update title id for that record.
 |-
-| 13 || CloseMetaDatabase ||  Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.
+| 13 || DisableForcibly ||  Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.
 |-
-| 14 || [[#CheckNcaIDsPresent]] || Takes a type-6 byte buffer, and a type-5 buffer of [[#NcaID]]s.
+| 14 || [[#LookupOrphanContent]] || Takes a type-6 byte buffer, and a type-5 buffer of [[#NcaID]]s.
 |-
-| 15 || SaveMetaDatabase || Flushes the in-memory database to savedata.
+| 15 || Commit || Flushes the in-memory database to savedata.
 |-
-| 16 || CheckEntryHasNcaId || Takes a [[NCA#Meta_records|Meta Record]] and an [[#NcaID]]. Returns whether the content records for that meta record contain the NcaID.
+| 16 || HasContent || Takes a [[NCA#Meta_records|Meta Record]] and an [[#NcaID]]. Returns whether the content records for that meta record contain the NcaID.
 |-
-| 17 || ReadEntryMetaRecords || Takes a type-6 [[NCA#Meta_records|Meta Record]] output buffer, a u32 eoffset into that buffer, and an input [[NCA#Meta_records|Meta Record]].
+| 17 || ListContentMetaInfo || Takes a type-6 [[NCA#Meta_records|Meta Record]] output buffer, a u32 eoffset into that buffer, and an input [[NCA#Meta_records|Meta Record]].
 |-
-| 18 || GetEntryUnknown6 || Takes a [[NCA#Meta_records|Meta Record]], and returns u8 from ContentRecords + 6.
+| 18 || GetAttributes || Takes a [[NCA#Meta_records|Meta Record]], and returns u8 from ContentRecords + 6.
 |-
-| 19 || [2.0.0+] GetAddOnContentEntryUnknownRecordSize || Does the same thing as GetEntryUnknownRecordSize, but for AddOnContents.
+| 19 || [2.0.0+] GetRequiredApplicationVersion || Does the same thing as GetEntryUnknownRecordSize, but for AddOnContents.
 |-
 | 20 || [5.0.0+] ||
 |}
@@ -380,7 +380,7 @@ Reads the meta records stored in the entry's content records into the output buf
 
 This is used, for example, with System Update title 0100000000000816, which contains Meta Records for all other systitles in its Content Records.
 
-==== CheckEntryNcaIDsPresent ====
+==== LookupOrphanContent ====
 Takes a type-6 byte buffer, and a type-5 buffer containing [[#NcaID]]s.
 
 This function was stubbed to return 0xDC05 in [[2.0.0]].
