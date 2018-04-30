@@ -2,14 +2,15 @@
 
 This is "nn::erpt::sf::IContext".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   |            |
+| 4   |            |
+| 5   |            |
+| 6   | \[5.0.0+\] |
 
 # erpt:r
 
@@ -17,18 +18,8 @@ This is "nn::erpt::sf::ISession".
 
 | Cmd | Name        |
 | --- | ----------- |
-| 0   | OpenManager |
-| 1   | OpenReport  |
-
-## IManager
-
-This is "nn::erpt::sf::IManager".
-
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   | \[4.0.0+\] |
+| 0   | OpenReport  |
+| 1   | OpenManager |
 
 ## IReport
 
@@ -42,6 +33,18 @@ This is "nn::erpt::sf::IReport".
 | 3   |      |
 | 4   |      |
 | 5   |      |
+
+## IManager
+
+This is "nn::erpt::sf::IManager".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   | \[4.0.0+\] |
+| 3   | \[5.0.0+\] |
+| 4   | \[5.0.0+\] |
 
 # Reports
 
