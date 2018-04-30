@@ -40,6 +40,8 @@ This is "nn::erpt::sf::IManager".
 | 0 ||
 |-
 | 1 ||
+|-
+| 2 || [4.0.0+]
 |}
 
 == IReport ==

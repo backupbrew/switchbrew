@@ -24,10 +24,11 @@ This is "nn::erpt::sf::ISession".
 
 This is "nn::erpt::sf::IManager".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   | \[4.0.0+\] |
 
 ## IReport
 
