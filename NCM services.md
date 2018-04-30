@@ -223,56 +223,56 @@ Total size is 0x320 bytes.
 This is
 "nn::ncm::IContentManager".
 
-| Cmd | Name                                                   | Notes                                                                                                                                                                                |
-| --- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0   | CreatePlaceholderAndRegisteredDirectoriesForMediaId    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                       |
-| 1   | CreateSaveDataDirectoryForMediaId                      | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                       |
-| 2   | GetExistsPlaceholderAndRegisteredDirectoriesForMediaId | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                       |
-| 3   | GetExistsSaveDataDirectoryForMediaId                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                       |
-| 4   | GetIContentStorage                                     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), \[2.0.0+\] Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
-| 5   | GetIContentMetaDatabase                                | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), \[2.0.0+\] Only returns a storage if one has previously been opened globally via OpenIContentStorage. |
-| 6   | \[1.0.0\] CloseContentStorageForcibly                  | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().                                                       |
-| 7   | \[1.0.0\] CloseContentMetaDatabaseForcibly             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase().                                                     |
-| 8   | DeleteSaveDataForMediaId                               | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.                                                                  |
-| 9   | \[2.0.0+\] OpenIContentStorage                         | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage.                  |
-| 10  | \[2.0.0+\] CloseIContentStorage                        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage.                                                            |
-| 11  | \[2.0.0+\] OpenIContentMetaDatabase                    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase.        |
-| 12  | \[2.0.0+\] CloseIContentMetaDatabase                   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentMetaDatabase.                                                       |
+| Cmd | Name                                       | Notes                                                                                                                                                                                                     |
+| --- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | CreateContentStorage                       | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                                            |
+| 1   | CreateContentMetaDatabase                  | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                                            |
+| 2   | VerifyContentStorage                       | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                                            |
+| 3   | VerifyContentMetaDatabase                  | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink").                                                                                                                            |
+| 4   | OpenContentStorage                         | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), \[2.0.0+\] Only returns a storage if one has previously been opened globally via OpenIContentStorage.                      |
+| 5   | OpenContentMetaDatabase                    | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), \[2.0.0+\] Only returns a storage if one has previously been opened globally via OpenIContentStorage.                      |
+| 6   | \[1.0.0\] CloseContentStorageForcibly      | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().                                                                            |
+| 7   | \[1.0.0\] CloseContentMetaDatabaseForcibly | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase().                                                                          |
+| 8   | CleanupContentMetaDatabase                 | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.                                                                                       |
+| 9   | \[2.0.0+\] OpenContentStorage2             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage. Note: Name is not official.           |
+| 10  | \[2.0.0+\] CloseContentStorage             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage. Note: Name is not official.                                                     |
+| 11  | \[2.0.0+\] OpenContentMetaDatabase2        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase. Note: Name is not official. |
+| 12  | \[2.0.0+\] CloseContentMetaDatabase        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentMetaDatabase. Note: Name is not official.                                                |
 
 ### IContentStorage
 
 This is
 "nn::ncm::IContentStorage".
 
-| Cmd | Name                                                                        | Notes                                                                                                                                                                       |
-| --- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | [\#GeneratePlaceHolderId](#GeneratePlaceHolderId "wikilink")                | Returns a random UUID for the Content Storage.                                                                                                                              |
-| 1   | CreatePlaceholderEntryAndRegisteredDirectoryEntry                           | Takes two [\#NcaIDs](#NcaID "wikilink"), and a u64 filesize.                                                                                                                |
-| 2   | DeletePlaceholderEntry                                                      | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
-| 3   | DoesPlaceholderEntryExist                                                   | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
-| 4   | WritePlaceholderEntry                                                       | Takes a [\#NcaID](#NcaID "wikilink"), a u64-offset, and type 5 buffer. Writes the buffer to the file for the NcaID's placeholder path at the specified offset.              |
-| 5   | MovePlaceholderToRegistered                                                 | Takes two [\#NcaIDs](#NcaID "wikilink"), moves the Placeholder NCA content to the registered NCA path.                                                                      |
-| 6   | DeleteRegisteredEntry                                                       | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
-| 7   | DoesRegisteredEntryExist                                                    | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
-| 8   | GetPath                                                                     | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
-| 9   | GetPlaceholderPath                                                          | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
-| 10  | CleanPlaceholderDirectory                                                   | Deletes and re-creates the Placeholder directory.                                                                                                                           |
-| 11  | GetNumberOfPlacholderEntries                                                | This is like [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink"), but for the Placeholder directory.                                                 |
-| 12  | [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink")  |                                                                                                                                                                             |
-| 13  | [\#GetRegisteredEntries](#GetRegisteredEntries "wikilink")                  |                                                                                                                                                                             |
-| 14  | [\#GetRegisteredEntrySize](#GetRegisteredEntrySize "wikilink")              |                                                                                                                                                                             |
-| 15  | CloseAndFlushStorage                                                        | Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.                                             |
-| 16  | \[2.0.0+\] CreatePlaceholderEntryRegisteredEntryAndRegisteredDirectoryEntry | Takes three 0x10-sized [\#NcaIDs](#NcaID "wikilink"). Creates the registered directory NCA path, and renames the placeholder path to the registered NCA path.               |
-| 17  | \[2.0.0+\] SetPlaceholderEntrySize                                          | Takes a [\#NcaID](#NcaID "wikilink"), and a u64 size                                                                                                                        |
-| 18  | \[2.0.0+\] [\#ReadRegisteredEntryRaw](#ReadRegisteredEntryRaw "wikilink")   |                                                                                                                                                                             |
-| 19  | \[2.0.0+\] GetPlaceholderEntryRightsID                                      | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s placeholder path.                                                                                                 |
-| 20  | \[2.0.0+\] GetRegisteredEntryRightsID                                       | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s registered path                                                                                                   |
-| 21  | \[2.0.0+\] WriteRegisteredPathForDebug                                      | Takes a [\#NcaID](#NcaID "wikilink"), a u64 offset, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts. |
-| 22  | \[2.0.0+\] GetFreeSpace                                                     | Gets free space for the storage.                                                                                                                                            |
-| 23  | \[2.0.0+\] GetTotalSpace                                                    | Gets total space for the storage.                                                                                                                                           |
-| 24  | \[3.0.0+\] FlushStorage                                                     | Flushes resources for the storage without closing it.                                                                                                                       |
-| 25  | \[4.0.0+\]                                                                  |                                                                                                                                                                             |
-| 26  | \[4.0.0+\]                                                                  |                                                                                                                                                                             |
+| Cmd | Name                                                            | Notes                                                                                                                                                                       |
+| --- | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | [\#GeneratePlaceHolderId](#GeneratePlaceHolderId "wikilink")    | Returns a random UUID for the Content Storage.                                                                                                                              |
+| 1   | CreatePlaceHolder                                               | Takes two [\#NcaIDs](#NcaID "wikilink"), and a u64 filesize.                                                                                                                |
+| 2   | DeletePlaceHolder                                               | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
+| 3   | HasPlaceHolder                                                  | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
+| 4   | WritePlaceHolder                                                | Takes a [\#NcaID](#NcaID "wikilink"), a u64-offset, and type 5 buffer. Writes the buffer to the file for the NcaID's placeholder path at the specified offset.              |
+| 5   | Register                                                        | Takes two [\#NcaIDs](#NcaID "wikilink"), moves the Placeholder NCA content to the registered NCA path.                                                                      |
+| 6   | Delete                                                          | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
+| 7   | Has                                                             | Takes a [\#NcaID](#NcaID "wikilink").                                                                                                                                       |
+| 8   | GetPath                                                         | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
+| 9   | GetPlaceHolderPath                                              | Takes a [\#NcaID](#NcaID "wikilink"). Returns a [Content Path](Filesystem%20services#ContentPath.md##ContentPath "wikilink").                                               |
+| 10  | CleanupAllPlaceHolder                                           | Deletes and re-creates the Placeholder directory.                                                                                                                           |
+| 11  | ListPlaceHolder                                                 | This is like [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink"), but for the Placeholder directory.                                                 |
+| 12  | [\#GetContentCount](#GetContentCount "wikilink")                |                                                                                                                                                                             |
+| 13  | [\#ListContentId](#ListContentId "wikilink")                    |                                                                                                                                                                             |
+| 14  | [\#GetSize](#GetSize "wikilink")                                |                                                                                                                                                                             |
+| 15  | DisableForcibly                                                 | Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.                                             |
+| 16  | \[2.0.0+\] RevertToPlaceHolder                                  | Takes three 0x10-sized [\#NcaIDs](#NcaID "wikilink"). Creates the registered directory NCA path, and renames the placeholder path to the registered NCA path.               |
+| 17  | \[2.0.0+\] SetPlaceHolderSize                                   | Takes a [\#NcaID](#NcaID "wikilink"), and a u64 size                                                                                                                        |
+| 18  | \[2.0.0+\] [\#ReadContentIdFile](#ReadContentIdFile "wikilink") |                                                                                                                                                                             |
+| 19  | \[2.0.0+\] GetRightsIdFromPlaceHolderId                         | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s placeholder path.                                                                                                 |
+| 20  | \[2.0.0+\] GetRightsIdFromContentId                             | Gets the Rights ID for the [\#NcaID](#NcaID "wikilink")'s registered path                                                                                                   |
+| 21  | \[2.0.0+\] WriteContentForDebug                                 | Takes a [\#NcaID](#NcaID "wikilink"), a u64 offset, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts. |
+| 22  | \[2.0.0+\] GetFreeSpaceSize                                     | Gets free space for the storage.                                                                                                                                            |
+| 23  | \[2.0.0+\] GetTotalSpaceSize                                    | Gets total space for the storage.                                                                                                                                           |
+| 24  | \[3.0.0+\] FlushStorage                                         | Flushes resources for the storage without closing it.                                                                                                                       |
+| 25  | \[4.0.0+\]                                                      |                                                                                                                                                                             |
+| 26  | \[4.0.0+\]                                                      |                                                                                                                                                                             |
 
 #### GeneratePlaceHolderId
 
@@ -282,12 +282,12 @@ placeholder.
 Calls nn::util::GenerateUuid(), which internally calls
 nn::os::GenerateRandomBytes(16);
 
-#### GetNumberOfRegisteredEntries
+#### GetContentCount
 
 Writes the total number of entries which can be read by GetEntries, to
 cmdreply <SFCO_offset>+0x10.
 
-#### GetRegisteredEntries
+#### ListContentId
 
 Takes an output buffer, u32 offset and gets all entries starting at that
 offset. Returns number of entries read.
@@ -298,14 +298,14 @@ The total read entries is exactly the same as the number of "<hex>.nca"
 directories in the storage FS(or at least under the "registered"
 directory?).
 
-#### GetRegisteredEntrySize
+#### GetSize
 
 Takes a [\#NcaID](#NcaID "wikilink") as input.
 
 Returns the total size readable by ReadEntryRaw. This is the same as the
 size-field in the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
 
-#### ReadRegisteredEntryRaw
+#### ReadContentIdFile
 
 Takes an output buffer, a [\#NcaID](#NcaID "wikilink") as input, and a
 u64 file offset.
