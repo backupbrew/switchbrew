@@ -9,7 +9,39 @@ https://receive-%.er.srv.nintendo.net/post
 The functionality can be disabled from <code>set:sys</code> by setting ("eupld", "upload_enabled") to anything but 1.
 
 = eupld:c =
+This is "nn::eupld::sf::IControl".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|}
 
 = eupld:r =
+This is "nn::eupld::sf::IRequest".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 || 
+|-
+| 5 || 
+|}
 
 [[Category:Services]]

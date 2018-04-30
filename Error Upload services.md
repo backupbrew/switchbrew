@@ -13,6 +13,26 @@ The functionality can be disabled from `set:sys` by setting ("eupld",
 
 # eupld:c
 
+This is "nn::eupld::sf::IControl".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+
 # eupld:r
+
+This is "nn::eupld::sf::IRequest".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
 
 [Category:Services](Category:Services "wikilink")
