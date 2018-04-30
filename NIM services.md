@@ -2,54 +2,54 @@
 
 This is "nn::nim::detail::INetworkInstallManager".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   |            |
-| 3   |            |
-| 4   |            |
-| 5   |            |
-| 6   |            |
-| 7   |            |
-| 8   |            |
-| 9   |            |
-| 10  |            |
-| 11  |            |
-| 12  |            |
-| 14  |            |
-| 15  |            |
-| 16  |            |
-| 17  |            |
-| 18  |            |
-| 19  |            |
-| 20  |            |
-| 21  |            |
-| 22  |            |
-| 23  | \[2.0.0+\] |
-| 24  | \[2.0.0+\] |
-| 25  | \[2.0.0+\] |
-| 26  | \[2.0.0+\] |
-| 27  | \[2.0.0+\] |
-| 28  | \[2.0.0+\] |
-| 29  | \[2.0.0+\] |
-| 30  | \[2.0.0+\] |
-| 31  | \[2.0.0+\] |
-| 32  | \[2.0.0+\] |
-| 33  | \[2.0.0+\] |
-| 34  | \[2.0.0+\] |
-| 35  | \[2.0.0+\] |
-| 36  | \[2.0.0+\] |
-| 37  | \[2.0.0+\] |
-| 38  | \[2.0.0+\] |
-| 39  | \[2.0.0+\] |
-| 40  | \[2.0.0+\] |
-| 41  | \[2.0.0+\] |
-| 42  | \[3.0.0+\] |
-| 43  | \[3.0.0+\] |
-| 44  | \[3.0.0+\] |
-| 45  | \[3.0.0+\] |
-| 46  | \[3.0.0+\] |
+| Cmd | Name                                                |
+| --- | --------------------------------------------------- |
+| 0   | CreateSystemUpdateTask                              |
+| 1   | DestroySystemUpdateTask                             |
+| 2   | ListSystemUpdateTask                                |
+| 3   | RequestSystemUpdateTaskRun                          |
+| 4   | GetSystemUpdateTaskInfo                             |
+| 5   | CommitSystemUpdateTask                              |
+| 6   | CreateNetworkInstallTask                            |
+| 7   | DestroyNetworkInstallTask                           |
+| 8   | ListNetworkInstallTask                              |
+| 9   | RequestNetworkInstallTaskRun                        |
+| 10  | GetNetworkInstallTaskInfo                           |
+| 11  | CommitNetworkInstallTask                            |
+| 12  | RequestLatestSystemUpdateMeta                       |
+| 14  | ListApplicationNetworkInstallTask                   |
+| 15  | ListNetworkInstallTaskContentMeta                   |
+| 16  | RequestLatestVersion                                |
+| 17  | SetNetworkInstallTaskAttribute                      |
+| 18  | AddNetworkInstallTaskContentMeta                    |
+| 19  | GetDownloadedSystemDataPath                         |
+| 20  | CalculateNetworkInstallTaskRequiredSize             |
+| 21  | IsExFatDriverIncluded                               |
+| 22  | GetBackgroundDownloadStressTaskInfo                 |
+| 23  | \[2.0.0+\] RequestDeviceAuthenticationToken         |
+| 24  | \[2.0.0+\] RequestGameCardRegistrationStatus        |
+| 25  | \[2.0.0+\] RequestRegisterGameCard                  |
+| 26  | \[2.0.0+\] RequestRegisterNotificationToken         |
+| 27  | \[2.0.0+\] RequestDownloadTaskList                  |
+| 28  | \[2.0.0+\] RequestApplicationControl                |
+| 29  | \[2.0.0+\] RequestLatestApplicationControl          |
+| 30  | \[2.0.0+\] RequestVersionList                       |
+| 31  | \[2.0.0+\] CreateApplyDeltaTask                     |
+| 32  | \[2.0.0+\] DestroyApplyDeltaTask                    |
+| 33  | \[2.0.0+\] ListApplicationApplyDeltaTask            |
+| 34  | \[2.0.0+\] RequestApplyDeltaTaskRun                 |
+| 35  | \[2.0.0+\] GetApplyDeltaTaskInfo                    |
+| 36  | \[2.0.0+\] ListApplyDeltaTask                       |
+| 37  | \[2.0.0+\] CommitApplyDeltaTask                     |
+| 38  | \[2.0.0+\] CalculateApplyDeltaTaskRequiredSize      |
+| 39  | \[2.0.0+\] PrepareShutdown                          |
+| 40  | \[2.0.0+\] ListApplyDeltaTask                       |
+| 41  | \[2.0.0+\] ClearNotEnoughSpaceStateOfApplyDeltaTask |
+| 42  | \[3.0.0+\]                                          |
+| 43  | \[3.0.0+\]                                          |
+| 44  | \[3.0.0+\]                                          |
+| 45  | \[3.0.0+\]                                          |
+| 46  | \[3.0.0+\]                                          |
 
 ## Cmd1
 
