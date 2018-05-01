@@ -274,7 +274,7 @@ Takes an input u64: LayerId from
 
 ## SetLayerScalingMode
 
-Takes an input u32("ScalingMode") and u64.
+Takes an input u64("ScalingMode") and u64 ("LayerId").
 
 ## GetIndirectLayerImageMap
 

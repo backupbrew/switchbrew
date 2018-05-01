@@ -271,7 +271,7 @@ Takes a type-0x6 buffer for the output [[#NativeWindow]], an u32(LayerFlags bitm
 Takes an input u64: LayerId from [[#CreateStrayLayer]].
 
 == SetLayerScalingMode ==
-Takes an input u32("ScalingMode") and u64.
+Takes an input u64("ScalingMode") and u64 ("LayerId").
 
 == GetIndirectLayerImageMap ==
 Takes a PID-descriptor, an type-0x46 buffer, and four u64s: width(s32), height(s32), <output from [[AM_services|AM]] GetIndirectLayerConsumerHandle>, and [[AM_services|AppletResourceUserId]]. Returns two output u64s.
