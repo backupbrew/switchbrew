@@ -15,24 +15,24 @@ The functionality can be disabled from `set:sys` by setting ("eupld",
 
 This is "nn::eupld::sf::IControl".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
+| Cmd | Name          |
+| --- | ------------- |
+| 0   | SetUrl        |
+| 1   | ImportCrt     |
+| 2   | ImportPki     |
+| 3   | SetAutoUpload |
 
 # eupld:r
 
 This is "nn::eupld::sf::IRequest".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
+| Cmd | Name            |
+| --- | --------------- |
+| 0   | Initialize      |
+| 1   | UploadAll       |
+| 2   | UploadSelected  |
+| 3   | GetUploadStatus |
+| 4   | CancelUpload    |
+| 5   | GetResult       |
 
 [Category:Services](Category:Services "wikilink")

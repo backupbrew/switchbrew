@@ -15,13 +15,13 @@ This is "nn::eupld::sf::IControl".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || SetUrl
 |-
-| 1 || 
+| 1 || ImportCrt
 |-
-| 2 || 
+| 2 || ImportPki
 |-
-| 3 || 
+| 3 || SetAutoUpload
 |}
 
 = eupld:r =
@@ -31,17 +31,17 @@ This is "nn::eupld::sf::IRequest".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Initialize
 |-
-| 1 || 
+| 1 || UploadAll
 |-
-| 2 || 
+| 2 || UploadSelected
 |-
-| 3 || 
+| 3 || GetUploadStatus
 |-
-| 4 || 
+| 4 || CancelUpload
 |-
-| 5 || 
+| 5 || GetResult
 |}
 
 [[Category:Services]]
