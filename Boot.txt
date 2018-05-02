@@ -33,7 +33,7 @@ Finally, the process is repeated once more for the "bip:/nx/package2". Error 0xC
 If this function returns 0xC9E, it calls a function to repair the NAND.
 
 == Done ==
-When done it calls the [[Process_Manager_services|pm:shell]] NotifyBootCompleted (which launches [[boot2]]), and exits itself.
+When done it calls the [[Process_Manager_services#pm:shell|pm:shell]] [[Process_Manager_services#NotifyBootFinished|NotifyBootCompleted]] (which launches [[boot2]]), and exits itself.
 
 = Changelog =
 == 2.0.0 ==
