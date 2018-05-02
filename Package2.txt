@@ -166,7 +166,7 @@ When decrypted, this section contains the built-in system modules encapsulated i
 |}
 
 ==== KIP1 ====
-Kernel internal process?
+Kernel Initial Process.
 
 {| class="wikitable" border="1"
 |-
