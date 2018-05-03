@@ -1,7 +1,5 @@
 The Joy-Con use bluetooth or a wired connection to communicate with the
-console, depending if they are physically connected to it or not.  
-dekuNukem has started RE on the protocols used
-[1](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering).
+console, depending if they are physically connected to it or not.
 
 ## Firmware
 
@@ -19,7 +17,7 @@ Controller as well.
 | Joy-Con Right (Red) | [flash dump](:File:pad.R.bin.md "wikilink") |
 
 The flash is in a patch-ram format. Tools for dealing with it are
-available [2](https://github.com/shuffle2/nxpad). A dump of the ROM
+available [1](https://github.com/shuffle2/nxpad). A dump of the ROM
 region (taken while firmware was running) can be found
 [here](:File:bcm20734%20rom.bin.md "wikilink"). Note this is the same
 SoC used on the other controller models, as well.
@@ -148,3 +146,8 @@ of official HEX colors recovered from SPI dumps.
 | Neon Pink            | \#FF3278             | \#28001E   |
 | Mario Red            | \#E10F00             | \#280A0A   |
 | Black Pro Controller | \#323232 or \#323231 | ?          |
+
+## Additional Links
+
+[Reverse Engineering of the Joy-Con by Github user
+dekuNukem](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering)

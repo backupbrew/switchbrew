@@ -1,5 +1,4 @@
-The Joy-Con use bluetooth or a wired connection to communicate with the console, depending if they are physically connected to it or not.<br>
-dekuNukem has started RE on the protocols used [https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering].
+The Joy-Con use bluetooth or a wired connection to communicate with the console, depending if they are physically connected to it or not.
 
 ==Firmware==
 ''See also: [[Joy-Con Firmware]]''
@@ -221,3 +220,6 @@ HEX codes for the colors shown in the "Controllers" menu of the Switch UI can be
 |-
 | Black Pro Controller || #323232 or #323231 || ?
 |}
+
+==Additional Links==
+[https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering Reverse Engineering of the Joy-Con by Github user dekuNukem]
