@@ -2,6 +2,21 @@ Joy-Con is the name for the Switch's primary game controllers. The
 controllers communicate to the console through bluetooth and can be
 disconnected from the main unit.
 
+## Hardware
+
+The controllers themselves are simple to disassemble and identify. ![The
+front of the Joy-Con
+internal[1](https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263)](JoyconFront.jpg
+"The front of the Joy-Con internal1") ![The rear of the Joy-Con
+internal[2](https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263)](JoyconRear.jpg
+"The rear of the Joy-Con internal2")
+
+| Color  | Item                                                |
+| ------ | --------------------------------------------------- |
+| Red    | Broadcom BCM20734 Bluetooth 4.1/2.4 GHz Transceiver |
+| Orange | Samsung K4F6E304HB-MGCH 2 GB LPDDR4 DRAM            |
+| Yellow | Macronix International MX25U4033E 4 Mb CMOS Flash   |
+
 ## Firmware
 
 *See also: [Joy-Con Firmware](Joy-Con%20Firmware.md "wikilink")*
@@ -18,7 +33,7 @@ Controller as well.
 | Joy-Con Right (Red) | [flash dump](:File:pad.R.bin.md "wikilink") |
 
 The flash is in a patch-ram format. Tools for dealing with it are
-available [1](https://github.com/shuffle2/nxpad). A dump of the ROM
+available [3](https://github.com/shuffle2/nxpad). A dump of the ROM
 region (taken while firmware was running) can be found
 [here](:File:bcm20734%20rom.bin.md "wikilink"). Note this is the same
 SoC used on the other controller models, as well.
