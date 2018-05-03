@@ -90,7 +90,7 @@ Takes a u32 (**ConfigItem**), and returns one or more u64s
 | 10         | [\#MemoryArrange](#MemoryArrange "wikilink")                           |
 | 11         | [\#IsDebugMode](#IsDebugMode "wikilink")                               |
 | 12         | [\#KernelMemoryConfiguration](#KernelMemoryConfiguration "wikilink")   |
-| 13         | [\#BatteryProfile](#BatteryProfile "wikilink")                         |
+| 13         | [\#IsChargerHiZModeEnabled](#IsChargerHiZModeEnabled "wikilink")       |
 | 14         | \[4.0.0+\] [\#IsKiosk](#IsKiosk "wikilink")                            |
 | 15         | \[5.0.0+\] [\#NewHardwareType](#NewHardwareType "wikilink")            |
 | 16         | \[5.0.0+\] [\#NewKeyGeneration](#NewKeyGeneration "wikilink")          |
@@ -215,7 +215,7 @@ it will memset various allocated memory-regions with 0x58, 0x59, 0x5A
 uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB
 of DRAM instead of 4GB.
 
-### BatteryProfile
+### IsChargerHiZModeEnabled
 
 This tells if the TI Charger (bq24192) is active.
 

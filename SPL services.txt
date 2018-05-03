@@ -120,7 +120,7 @@ Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 |-
 | 12 || [[#KernelMemoryConfiguration]]
 |-
-| 13 || [[#BatteryProfile]]
+| 13 || [[#IsChargerHiZModeEnabled]]
 |-
 | 14 || [4.0.0+] [[#IsKiosk]]
 |-
@@ -277,7 +277,7 @@ The value of this field is loaded from [[BootConfig]] unsigned-config+0x10 u8 bi
 === KernelMemoryConfiguration ===
 Kernel reads this when setting up memory-related code. If bit0 is set, it will memset various allocated memory-regions with 0x58, 0x59, 0x5A ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB of DRAM instead of 4GB.
 
-=== BatteryProfile ===
+=== IsChargerHiZModeEnabled ===
 This tells if the TI Charger (bq24192) is active.
 
 === NewKeyGeneration ===
