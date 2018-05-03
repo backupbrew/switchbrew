@@ -1,0 +1,6 @@
+The rear of the JoyCon.
+
+Courtesy of Jeff Suovanen at iFixit
+(https://www.ifixit.com/User/668072/Jeff+Suovanen)
+
+Creative Commons BY-NC-SA
