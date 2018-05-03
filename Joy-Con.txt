@@ -1,4 +1,4 @@
-The Joy-Con use bluetooth or a wired connection to communicate with the console, depending if they are physically connected to it or not.
+Joy-Con is the name for the Switch's primary game controllers. The controllers communicate to the console through bluetooth and can be disconnected from the main unit.
 
 ==Firmware==
 ''See also: [[Joy-Con Firmware]]''
