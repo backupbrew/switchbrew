@@ -169,15 +169,15 @@ This is "nn::pm::detail::IShellInterface".
 |-
 | 4 || [[#GetProcessEventType]]
 |-
-| 5 || [1.0.0-4.1.0] [[#FinalizeDeadProcess]]
+| ([1.0.0-4.1.0] 5) || [[#FinalizeDeadProcess]]
 |-
-| 6 || [1.0.0-4.1.0] [[#ClearProcessNotificationFlag]]
+| ([1.0.0-4.1.0] 6) || [[#ClearProcessNotificationFlag]]
 |-
-| 7 || [[#NotifyBootFinished]]
+| 5 ([1.0.0-4.1.0] 7) || [[#NotifyBootFinished]]
 |-
-| 8 || [[#GetApplicationPid]]
+| 6 ([1.0.0-4.1.0] 8) || [[#GetApplicationPid]]
 |-
-| 9 || [4.0.0+] [[#BoostSystemMemoryResourceLimit]]
+| 7 ([1.0.0-4.1.0] 9) || [4.0.0+] [[#BoostSystemMemoryResourceLimit]]
 |}
 
 == LaunchProcess ==
