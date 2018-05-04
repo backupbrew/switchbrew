@@ -97,7 +97,7 @@ This is "nn::gpio::IManager".
 | 0x4C            | 0xE6              | CC, 6             |                                                                                                     | In        |                                                                                                      |
 | \[2.0.0+\] 0x4D | 0xAC              | V, 4              |                                                                                                     | Out       |                                                                                                      |
 | \[2.0.0+\] 0x4E | 0xE1              | CC, 1             | HdmiHotplug (HDMI\_INT\_DP\_HPD\_PCC1)                                                              | In        | [NV services](NV%20services.md "wikilink")                                                           |
-| \[2.0.0+\] 0x4F | 0x56              | K, 6              |                                                                                                     |           |                                                                                                      |
+| \[5.0.0+\] 0x4F | 0x56              | K, 6              |                                                                                                     |           |                                                                                                      |
 
 ## GpioPadDescriptor
 

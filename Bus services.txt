@@ -187,7 +187,7 @@ This is "nn::gpio::IManager".
 |-
 | [2.0.0+] 0x4E || 0xE1 || CC, 1 || HdmiHotplug (HDMI_INT_DP_HPD_PCC1) || In || [[NV services]]
 |-
-| [2.0.0+] 0x4F || 0x56 || K, 6 || || ||
+| [5.0.0+] 0x4F || 0x56 || K, 6 || || ||
 |}
 
 == GpioPadDescriptor ==
