@@ -26,13 +26,7 @@ This is "nn::gpio::IManager".
 | 9 || [5.0.0+] SetWakeEventActiveFlagSetForDebug2
 |}
 
-== OpenSessionForDev ==
-Takes a raw GpioPadDescriptor and returns a [[#IPadSession]] session for it.
-
-== OpenSession ==
-Same thing as OpenSessionForDev except the descriptor is looked up in the table below.
-Returns an [[#IPadSession]] session.
-
+== Known Devices ==
 {| class="wikitable sortable" border="1"
 |-
 ! GpioPadName || GpioPadDescriptor || Tegra (port, pin) || Usage || Direction || Used by
@@ -43,43 +37,43 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x03 || 0x3C || H, 4 || BT_RST_PH4 || Out || [[Bluetooth services]]
 |-
-| 0x04 || 0xDA || BB, 2 || || || 
+| 0x04 || 0xDA || BB, 2 || || In || 
 |-
 | 0x05 || 0xDB || BB, 3 || GcAsic Power || Out || [[Filesystem services]]
 |-
 | 0x06 || 0xDC || BB, 4 || Headphone Detect || In || [[Audio services]]
 |-
-| 0x07 || 0x25 || E, 5 || || || 
+| 0x07 || 0x25 || E, 5 || || Out || 
 |-
 | 0x08 || 0x90 || S, 0 || DebugPadDriver || In || [[HID services]]
 |-
-| 0x09 || 0x91 || S, 1 || || || 
+| 0x09 || 0x91 || S, 1 || || In || 
 |-
 | 0x0A || 0x96 || S, 6 || bq24192 Charge Enable || Out || [[PTM services]]
 |-
-| 0x0B || 0x97 || S, 7 || || || 
+| 0x0B || 0x97 || S, 7 || || In || 
 |-
 | 0x0C || 0x26 || E, 6 || joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || [[HID services]]
 |-
 | 0x0D || 0x05 || A, 5 || Fan enable (normal) || Out || [[PTM services]]
 |-
-| 0x0E || 0x78 || P, 0 || SDMMC3_CLK_PP0? || || 
+| 0x0E || 0x78 || P, 0 || SDMMC3_CLK_PP0? || In || 
 |-
 | 0x0F || 0x93 || S, 3 || GcAsic irq || In || [[Filesystem services]]
 |-
-| 0x10 || 0x7D || P, 5 || SDMMC3_DAT0_PP5? || || 
+| 0x10 || 0x7D || P, 5 || SDMMC3_DAT0_PP5? || In || 
 |-
-| 0x11 || 0x7C || P, 4 || SDMMC3_DAT1_PP4? || || 
+| 0x11 || 0x7C || P, 4 || SDMMC3_DAT1_PP4? || In || 
 |-
-| 0x12 || 0x7B || P, 3 || SDMMC3_DAT2_PP3? || || 
+| 0x12 || 0x7B || P, 3 || SDMMC3_DAT2_PP3? || In || 
 |-
-| 0x13 || 0x7A || P, 2 || SDMMC3_DAT3_PP2? || || 
+| 0x13 || 0x7A || P, 2 || SDMMC3_DAT3_PP2? || In || 
 |-
-| 0x14 || 0xBC || X, 4 || || || 
+| 0x14 || 0xBC || X, 4 || || In || 
 |-
 | 0x15 || 0xAE || V, 6 || || In || [[Audio services]]
 |-
-| 0x16 || 0xBA || X, 2 || MOTION_INT_PX2? || || 
+| 0x16 || 0xBA || X, 2 || MOTION_INT_PX2? || In || 
 |-
 | 0x17 || 0xB9 || X, 1 || Touchscreen irq (TOUCH_INT_PX1) (unused - polled instead) || In || [[HID services]]
 |-
@@ -103,37 +97,37 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x21 || 0xC8 || Z, 0 || bq24192 irq || In || [[PTM services]] 
 |-
-| 0x22 || 0xCA || Z, 2 || || || 
+| 0x22 || 0xCA || Z, 2 || || In || 
 |-
-| 0x23 || 0xCB || Z, 3 || || || 
+| 0x23 || 0xCB || Z, 3 || || In || 
 |-
 | 0x24 || 0x4F || J, 7 || Touchscreen reset || Out || [[HID services]]
 |-
-| 0x25 || 0x50 || K, 0 || || || 
+| 0x25 || 0x50 || K, 0 || || In || 
 |-
-| 0x26 || 0x51 || K, 1 || || || 
+| 0x26 || 0x51 || K, 1 || || In || 
 |-
-| 0x27 || 0x52 || K, 2 || || || 
+| 0x27 || 0x52 || K, 2 || || In || 
 |-
 | 0x28 || 0x54 || K, 4 || bm92t36 irq || In || [[USB services]]
 |-
-| 0x29 || 0x56 || K, 6 || || || 
+| 0x29 || 0x56 || K, 6 || || In || 
 |-
-| 0x2A || 0x57 || K, 7 || || || 
+| 0x2A || 0x57 || K, 7 || || In || 
 |-
 | 0x2B || 0x53 || K, 3 || joycon(R) NwcpDriver1.NwcpCharger || Out || [[HID services]]
 |-
 | 0x2C || 0xE3 || CC, 3 || joycon(L) NwcpDriver0.NwcpCharger || Out || [[HID services]]
 |-
-| 0x2D || 0x38 || H, 0 || WIFI_EN_PH0? || ||
+| 0x2D || 0x38 || H, 0 || WIFI_EN_PH0? || Out ||
 |-
 | 0x2E || 0x39 || H, 1 || WIFI_RST_PH1 || Out || [[Wlan services]], [[PCIe services]]
 |-
 | 0x2F || 0x3B || H, 3 || AP_WAKE_BT_PH3 || Out || [[Bluetooth services]]
 |-
-| 0x30 || 0x3D || H, 5 || || ||
+| 0x30 || 0x3D || H, 5 || || In ||
 |-
-| 0x31 || 0x3F || H, 7 || || ||
+| 0x31 || 0x3F || H, 7 || || Out ||
 |-
 | 0x32 || 0x40 || I, 0 || Backlight +5V || Out || [[NV services]]
 |-
@@ -141,11 +135,11 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x34 || 0x3E || H, 6 || joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || [[HID services]]
 |-
-| 0x35 || 0xE2 || CC, 2 || || ||
+| 0x35 || 0xE2 || CC, 2 || || In ||
 |-
 | 0x36 || 0xE4 || CC, 4 || Fan enable (high power) || Out || [[PTM services]]
 |-
-| 0x37 || 0x3A || H, 2 || || ||
+| 0x37 || 0x3A || H, 2 || || In ||
 |-
 | 0x38 || 0xC9 || Z, 1 || SDCard Card Detect || In || [[Filesystem services]]
 |-
@@ -153,9 +147,9 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x3A || 0x58 || L, 0 || bq24192 OTG charge select || Out || [[PTM services]], [[USB services]]
 |-
-| 0x3B || 0x3E || H, 6 || joycon(R) NwcpDriver1.GpioMonitorTask0 duplicate? || ||
+| 0x3B || 0x3E || H, 6 || joycon(R) NwcpDriver1.GpioMonitorTask0 duplicate? || In ||
 |-
-| 0x3C || 0x26 || E, 6 || joycon(L) NwcpDriver1.GpioMonitorTask0 duplicate? || ||
+| 0x3C || 0x26 || E, 6 || joycon(L) NwcpDriver1.GpioMonitorTask0 duplicate? || In ||
 |-
 | 0x3D || -1 || || || ||
 |-
@@ -163,17 +157,17 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x3F || 0x1C || D, 4 || joycon(L) NwcpDriver0.GpioMonitorTask1 (CTS, checked low) || In || [[HID services]]
 |-
-| 0x40 || 0xD9 || BB, 1 || || ||
+| 0x40 || 0xD9 || BB, 1 || || Out ||
 |-
-| 0x41 || 0x0C || B, 4 || Lid Closed (unused) || ||
+| 0x41 || 0x0C || B, 4 || Lid Closed (unused) || In ||
 |-
-| 0x42 || 0x0D || B, 5 || || ||
+| 0x42 || 0x0D || B, 5 || || In ||
 |-
 | 0x43 || 0x21 || E, 1 || USB power || Out || [[USB services]]
 |-
-| 0x44 || 0x27 || E, 7 || || ||
+| 0x44 || 0x27 || E, 7 || || In ||
 |-
-| 0x45 || 0x92 || S, 2 || || ||
+| 0x45 || 0x92 || S, 2 || || In ||
 |-
 | 0x46 || 0x95 || S, 5 || USB root port 4 power || Out || [[USB services]]
 |-
@@ -185,12 +179,34 @@ Returns an [[#IPadSession]] session.
 |-
 | 0x4A || 0x12 || C, 2 || HdmiHotplug || Out || [[NV services]]
 |-
-| 0x4B || 0x42 || I, 2 || || ||
+| 0x4B || 0x42 || I, 2 || || Out ||
 |-
-| 0x4C || 0xE6 || CC, 6 || || ||
+| 0x4C || 0xE6 || CC, 6 || || In ||
 |-
-| -- || 0xE1 || CC, 1 || HdmiHotplug (HDMI_INT_DP_HPD_PCC1) || In || [[NV services]]
+| [2.0.0+] 0x4D || 0xAC || V, 4 || || Out ||
+|-
+| [2.0.0+] 0x4E || 0xE1 || CC, 1 || HdmiHotplug (HDMI_INT_DP_HPD_PCC1) || In || [[NV services]]
+|-
+| [2.0.0+] 0x4F || 0x56 || K, 6 || || ||
 |}
+
+== GpioPadDescriptor ==
+{| class="wikitable" border="1"
+|-
+! Bits || Description
+|-
+| 7-5 || Controller index
+|-
+| 4-3 || Port index
+|-
+| 2-0 || Pin number
+|}
+
+== OpenSessionForDev ==
+Takes a raw [[#GpioPadDescriptor]] and returns a [[#IPadSession]] session for it.
+
+== OpenSession ==
+Same thing as [[#OpenSessionForDev]] except it takes a '''GpioPadName''' which is then converted to a [[#GpioPadDescriptor]]. Returns an [[#IPadSession]] session.
 
 == OpenSessionForTest ==
 Same as [[#OpenSession]] but panics on failure.
@@ -238,18 +254,6 @@ This is "nn::gpio::IPadSession".
 | 15 || GetDebounceTime
 |-
 | 16 || [4.0.0+] SetValueForSleepState
-|}
-
-== GpioPadDescriptor ==
-{| class="wikitable" border="1"
-|-
-! Bits || Description
-|-
-| 7-5 || Controller index
-|-
-| 4-3 || Port index
-|-
-| 2-0 || Pin number
 |}
 
 = i2c, i2c:pcv =
@@ -381,23 +385,23 @@ This is "nn::uart::IPortSession".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || OpenSession || Takes marshalled arguments
+| 0 || OpenSession
 |-
-| 1 || OpenSessionForTest || Takes marshalled arguments
+| 1 || OpenSessionForTest
 |-
-| 2 || || 
+| 2 ||
 |-
-| 3 || || Takes marshalled arguments
+| 3 ||
 |-
-| 4 || || Returns 2x u64. Both zero.
+| 4 ||
 |-
-| 5 || || 
+| 5 ||
 |-
-| 6 || || 
+| 6 ||
 |-
-| 7 || || 
+| 7 ||
 |-
 |}
 

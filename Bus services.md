@@ -15,96 +15,109 @@ This is "nn::gpio::IManager".
 | 8   | \[5.0.0+\] IsWakeEventActive2                          |
 | 9   | \[5.0.0+\] SetWakeEventActiveFlagSetForDebug2          |
 
+## Known Devices
+
+| GpioPadName     | GpioPadDescriptor | Tegra (port, pin) | Usage                                                                                               | Direction | Used by                                                                                              |
+| --------------- | ----------------- | ----------------- | --------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| 0x01            | 0xCC              | Z, 4              | rt5639 power                                                                                        | Out       | [Audio services](Audio%20services.md "wikilink"), [Fatal services](Fatal%20services.md "wikilink")   |
+| 0x02            | 0x24              | E, 4              | SDCard Power                                                                                        | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 0x03            | 0x3C              | H, 4              | BT\_RST\_PH4                                                                                        | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                             |
+| 0x04            | 0xDA              | BB, 2             |                                                                                                     | In        |                                                                                                      |
+| 0x05            | 0xDB              | BB, 3             | GcAsic Power                                                                                        | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 0x06            | 0xDC              | BB, 4             | Headphone Detect                                                                                    | In        | [Audio services](Audio%20services.md "wikilink")                                                     |
+| 0x07            | 0x25              | E, 5              |                                                                                                     | Out       |                                                                                                      |
+| 0x08            | 0x90              | S, 0              | DebugPadDriver                                                                                      | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x09            | 0x91              | S, 1              |                                                                                                     | In        |                                                                                                      |
+| 0x0A            | 0x96              | S, 6              | bq24192 Charge Enable                                                                               | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x0B            | 0x97              | S, 7              |                                                                                                     | In        |                                                                                                      |
+| 0x0C            | 0x26              | E, 6              | joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x0D            | 0x05              | A, 5              | Fan enable (normal)                                                                                 | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x0E            | 0x78              | P, 0              | SDMMC3\_CLK\_PP0?                                                                                   | In        |                                                                                                      |
+| 0x0F            | 0x93              | S, 3              | GcAsic irq                                                                                          | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 0x10            | 0x7D              | P, 5              | SDMMC3\_DAT0\_PP5?                                                                                  | In        |                                                                                                      |
+| 0x11            | 0x7C              | P, 4              | SDMMC3\_DAT1\_PP4?                                                                                  | In        |                                                                                                      |
+| 0x12            | 0x7B              | P, 3              | SDMMC3\_DAT2\_PP3?                                                                                  | In        |                                                                                                      |
+| 0x13            | 0x7A              | P, 2              | SDMMC3\_DAT3\_PP2?                                                                                  | In        |                                                                                                      |
+| 0x14            | 0xBC              | X, 4              |                                                                                                     | In        |                                                                                                      |
+| 0x15            | 0xAE              | V, 6              |                                                                                                     | In        | [Audio services](Audio%20services.md "wikilink")                                                     |
+| 0x16            | 0xBA              | X, 2              | MOTION\_INT\_PX2?                                                                                   | In        |                                                                                                      |
+| 0x17            | 0xB9              | X, 1              | Touchscreen irq (TOUCH\_INT\_PX1) (unused - polled instead)                                         | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x18            | 0xBD              | X, 5              | Power Button (BUTTON\_POWER\_ON\_PX5)                                                               | In        |                                                                                                      |
+| 0x19            | 0xBE              | X, 6              | Volume Up (BUTTON\_VOL\_UP\_PX6)                                                                    | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")                       |
+| 0x1A            | 0xBF              | X, 7              | Volume Down (BUTTON\_VOL\_DOWN\_PX7)                                                                | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")                       |
+| 0x1B            | 0xC0              | Y, 0              | max17050 irq                                                                                        | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x1C            | 0xC1              | Y, 1              | BUTTON\_HOME\_PY1                                                                                   | In        |                                                                                                      |
+| 0x1D            | 0xA9              | V, 1              | Backlight (LCD\_BL\_EN\_PV1)                                                                        | Out       | [NV services](NV%20services.md "wikilink"), [Backlight services](Backlight%20services.md "wikilink") |
+| 0x1E            | 0xAA              | V, 2              | Backlight (LCD\_RST\_PV2)                                                                           | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x1F            | 0x55              | K, 5              | bq24192 OTG charge select                                                                           | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
+| 0x20            | 0xAD              | V, 5              | PD related                                                                                          | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x21            | 0xC8              | Z, 0              | bq24192 irq                                                                                         | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x22            | 0xCA              | Z, 2              |                                                                                                     | In        |                                                                                                      |
+| 0x23            | 0xCB              | Z, 3              |                                                                                                     | In        |                                                                                                      |
+| 0x24            | 0x4F              | J, 7              | Touchscreen reset                                                                                   | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x25            | 0x50              | K, 0              |                                                                                                     | In        |                                                                                                      |
+| 0x26            | 0x51              | K, 1              |                                                                                                     | In        |                                                                                                      |
+| 0x27            | 0x52              | K, 2              |                                                                                                     | In        |                                                                                                      |
+| 0x28            | 0x54              | K, 4              | bm92t36 irq                                                                                         | In        | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x29            | 0x56              | K, 6              |                                                                                                     | In        |                                                                                                      |
+| 0x2A            | 0x57              | K, 7              |                                                                                                     | In        |                                                                                                      |
+| 0x2B            | 0x53              | K, 3              | joycon(R) NwcpDriver1.NwcpCharger                                                                   | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x2C            | 0xE3              | CC, 3             | joycon(L) NwcpDriver0.NwcpCharger                                                                   | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x2D            | 0x38              | H, 0              | WIFI\_EN\_PH0?                                                                                      | Out       |                                                                                                      |
+| 0x2E            | 0x39              | H, 1              | WIFI\_RST\_PH1                                                                                      | Out       | [Wlan services](Wlan%20services.md "wikilink"), [PCIe services](PCIe%20services.md "wikilink")       |
+| 0x2F            | 0x3B              | H, 3              | AP\_WAKE\_BT\_PH3                                                                                   | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                             |
+| 0x30            | 0x3D              | H, 5              |                                                                                                     | In        |                                                                                                      |
+| 0x31            | 0x3F              | H, 7              |                                                                                                     | Out       |                                                                                                      |
+| 0x32            | 0x40              | I, 0              | Backlight +5V                                                                                       | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x33            | 0x41              | I, 1              | Backlight -5V                                                                                       | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x34            | 0x3E              | H, 6              | joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x35            | 0xE2              | CC, 2             |                                                                                                     | In        |                                                                                                      |
+| 0x36            | 0xE4              | CC, 4             | Fan enable (high power)                                                                             | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x37            | 0x3A              | H, 2              |                                                                                                     | In        |                                                                                                      |
+| 0x38            | 0xC9              | Z, 1              | SDCard Card Detect                                                                                  | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 0x39            | 0x4D              | J, 5              | bq24192 OTG charge select                                                                           | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
+| 0x3A            | 0x58              | L, 0              | bq24192 OTG charge select                                                                           | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
+| 0x3B            | 0x3E              | H, 6              | joycon(R) NwcpDriver1.GpioMonitorTask0 duplicate?                                                   | In        |                                                                                                      |
+| 0x3C            | 0x26              | E, 6              | joycon(L) NwcpDriver1.GpioMonitorTask0 duplicate?                                                   | In        |                                                                                                      |
+| 0x3D            | \-1               |                   |                                                                                                     |           |                                                                                                      |
+| 0x3E            | 0x33              | G, 3              | joycon(R) NwcpDriver1.GpioMonitorTask1 (CTS, checked low)                                           | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x3F            | 0x1C              | D, 4              | joycon(L) NwcpDriver0.GpioMonitorTask1 (CTS, checked low)                                           | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x40            | 0xD9              | BB, 1             |                                                                                                     | Out       |                                                                                                      |
+| 0x41            | 0x0C              | B, 4              | Lid Closed (unused)                                                                                 | In        |                                                                                                      |
+| 0x42            | 0x0D              | B, 5              |                                                                                                     | In        |                                                                                                      |
+| 0x43            | 0x21              | E, 1              | USB power                                                                                           | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x44            | 0x27              | E, 7              |                                                                                                     | In        |                                                                                                      |
+| 0x45            | 0x92              | S, 2              |                                                                                                     | In        |                                                                                                      |
+| 0x46            | 0x95              | S, 5              | USB root port 4 power                                                                               | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x47            | 0x98              | T, 0              | USB root port 3 power                                                                               | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x48            | 0x10              | C, 0              | HdmiHotplug                                                                                         | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x49            | 0x11              | C, 1              | USB root port 2 power                                                                               | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x4A            | 0x12              | C, 2              | HdmiHotplug                                                                                         | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x4B            | 0x42              | I, 2              |                                                                                                     | Out       |                                                                                                      |
+| 0x4C            | 0xE6              | CC, 6             |                                                                                                     | In        |                                                                                                      |
+| \[2.0.0+\] 0x4D | 0xAC              | V, 4              |                                                                                                     | Out       |                                                                                                      |
+| \[2.0.0+\] 0x4E | 0xE1              | CC, 1             | HdmiHotplug (HDMI\_INT\_DP\_HPD\_PCC1)                                                              | In        | [NV services](NV%20services.md "wikilink")                                                           |
+| \[2.0.0+\] 0x4F | 0x56              | K, 6              |                                                                                                     |           |                                                                                                      |
+
+## GpioPadDescriptor
+
+| Bits | Description      |
+| ---- | ---------------- |
+| 7-5  | Controller index |
+| 4-3  | Port index       |
+| 2-0  | Pin number       |
+
 ## OpenSessionForDev
 
-Takes a raw GpioPadDescriptor and returns a
-[\#IPadSession](#IPadSession "wikilink") session for it.
+Takes a raw [\#GpioPadDescriptor](#GpioPadDescriptor "wikilink") and
+returns a [\#IPadSession](#IPadSession "wikilink") session for it.
 
 ## OpenSession
 
-Same thing as OpenSessionForDev except the descriptor is looked up in
-the table below. Returns an [\#IPadSession](#IPadSession "wikilink")
-session.
-
-| GpioPadName | GpioPadDescriptor | Tegra (port, pin) | Usage                                                                                               | Direction | Used by                                                                                              |
-| ----------- | ----------------- | ----------------- | --------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------- |
-| 0x01        | 0xCC              | Z, 4              | rt5639 power                                                                                        | Out       | [Audio services](Audio%20services.md "wikilink"), [Fatal services](Fatal%20services.md "wikilink")   |
-| 0x02        | 0x24              | E, 4              | SDCard Power                                                                                        | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
-| 0x03        | 0x3C              | H, 4              | BT\_RST\_PH4                                                                                        | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                             |
-| 0x04        | 0xDA              | BB, 2             |                                                                                                     |           |                                                                                                      |
-| 0x05        | 0xDB              | BB, 3             | GcAsic Power                                                                                        | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
-| 0x06        | 0xDC              | BB, 4             | Headphone Detect                                                                                    | In        | [Audio services](Audio%20services.md "wikilink")                                                     |
-| 0x07        | 0x25              | E, 5              |                                                                                                     |           |                                                                                                      |
-| 0x08        | 0x90              | S, 0              | DebugPadDriver                                                                                      | In        | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x09        | 0x91              | S, 1              |                                                                                                     |           |                                                                                                      |
-| 0x0A        | 0x96              | S, 6              | bq24192 Charge Enable                                                                               | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
-| 0x0B        | 0x97              | S, 7              |                                                                                                     |           |                                                                                                      |
-| 0x0C        | 0x26              | E, 6              | joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) | In        | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x0D        | 0x05              | A, 5              | Fan enable (normal)                                                                                 | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
-| 0x0E        | 0x78              | P, 0              | SDMMC3\_CLK\_PP0?                                                                                   |           |                                                                                                      |
-| 0x0F        | 0x93              | S, 3              | GcAsic irq                                                                                          | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
-| 0x10        | 0x7D              | P, 5              | SDMMC3\_DAT0\_PP5?                                                                                  |           |                                                                                                      |
-| 0x11        | 0x7C              | P, 4              | SDMMC3\_DAT1\_PP4?                                                                                  |           |                                                                                                      |
-| 0x12        | 0x7B              | P, 3              | SDMMC3\_DAT2\_PP3?                                                                                  |           |                                                                                                      |
-| 0x13        | 0x7A              | P, 2              | SDMMC3\_DAT3\_PP2?                                                                                  |           |                                                                                                      |
-| 0x14        | 0xBC              | X, 4              |                                                                                                     |           |                                                                                                      |
-| 0x15        | 0xAE              | V, 6              |                                                                                                     | In        | [Audio services](Audio%20services.md "wikilink")                                                     |
-| 0x16        | 0xBA              | X, 2              | MOTION\_INT\_PX2?                                                                                   |           |                                                                                                      |
-| 0x17        | 0xB9              | X, 1              | Touchscreen irq (TOUCH\_INT\_PX1) (unused - polled instead)                                         | In        | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x18        | 0xBD              | X, 5              | Power Button (BUTTON\_POWER\_ON\_PX5)                                                               | In        |                                                                                                      |
-| 0x19        | 0xBE              | X, 6              | Volume Up (BUTTON\_VOL\_UP\_PX6)                                                                    | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")                       |
-| 0x1A        | 0xBF              | X, 7              | Volume Down (BUTTON\_VOL\_DOWN\_PX7)                                                                | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")                       |
-| 0x1B        | 0xC0              | Y, 0              | max17050 irq                                                                                        | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
-| 0x1C        | 0xC1              | Y, 1              | BUTTON\_HOME\_PY1                                                                                   | In        |                                                                                                      |
-| 0x1D        | 0xA9              | V, 1              | Backlight (LCD\_BL\_EN\_PV1)                                                                        | Out       | [NV services](NV%20services.md "wikilink"), [Backlight services](Backlight%20services.md "wikilink") |
-| 0x1E        | 0xAA              | V, 2              | Backlight (LCD\_RST\_PV2)                                                                           | Out       | [NV services](NV%20services.md "wikilink")                                                           |
-| 0x1F        | 0x55              | K, 5              | bq24192 OTG charge select                                                                           | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
-| 0x20        | 0xAD              | V, 5              | PD related                                                                                          | Out       | [USB services](USB%20services.md "wikilink")                                                         |
-| 0x21        | 0xC8              | Z, 0              | bq24192 irq                                                                                         | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
-| 0x22        | 0xCA              | Z, 2              |                                                                                                     |           |                                                                                                      |
-| 0x23        | 0xCB              | Z, 3              |                                                                                                     |           |                                                                                                      |
-| 0x24        | 0x4F              | J, 7              | Touchscreen reset                                                                                   | Out       | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x25        | 0x50              | K, 0              |                                                                                                     |           |                                                                                                      |
-| 0x26        | 0x51              | K, 1              |                                                                                                     |           |                                                                                                      |
-| 0x27        | 0x52              | K, 2              |                                                                                                     |           |                                                                                                      |
-| 0x28        | 0x54              | K, 4              | bm92t36 irq                                                                                         | In        | [USB services](USB%20services.md "wikilink")                                                         |
-| 0x29        | 0x56              | K, 6              |                                                                                                     |           |                                                                                                      |
-| 0x2A        | 0x57              | K, 7              |                                                                                                     |           |                                                                                                      |
-| 0x2B        | 0x53              | K, 3              | joycon(R) NwcpDriver1.NwcpCharger                                                                   | Out       | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x2C        | 0xE3              | CC, 3             | joycon(L) NwcpDriver0.NwcpCharger                                                                   | Out       | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x2D        | 0x38              | H, 0              | WIFI\_EN\_PH0?                                                                                      |           |                                                                                                      |
-| 0x2E        | 0x39              | H, 1              | WIFI\_RST\_PH1                                                                                      | Out       | [Wlan services](Wlan%20services.md "wikilink"), [PCIe services](PCIe%20services.md "wikilink")       |
-| 0x2F        | 0x3B              | H, 3              | AP\_WAKE\_BT\_PH3                                                                                   | Out       | [Bluetooth services](Bluetooth%20services.md "wikilink")                                             |
-| 0x30        | 0x3D              | H, 5              |                                                                                                     |           |                                                                                                      |
-| 0x31        | 0x3F              | H, 7              |                                                                                                     |           |                                                                                                      |
-| 0x32        | 0x40              | I, 0              | Backlight +5V                                                                                       | Out       | [NV services](NV%20services.md "wikilink")                                                           |
-| 0x33        | 0x41              | I, 1              | Backlight -5V                                                                                       | Out       | [NV services](NV%20services.md "wikilink")                                                           |
-| 0x34        | 0x3E              | H, 6              | joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) | In        | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x35        | 0xE2              | CC, 2             |                                                                                                     |           |                                                                                                      |
-| 0x36        | 0xE4              | CC, 4             | Fan enable (high power)                                                                             | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
-| 0x37        | 0x3A              | H, 2              |                                                                                                     |           |                                                                                                      |
-| 0x38        | 0xC9              | Z, 1              | SDCard Card Detect                                                                                  | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
-| 0x39        | 0x4D              | J, 5              | bq24192 OTG charge select                                                                           | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
-| 0x3A        | 0x58              | L, 0              | bq24192 OTG charge select                                                                           | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
-| 0x3B        | 0x3E              | H, 6              | joycon(R) NwcpDriver1.GpioMonitorTask0 duplicate?                                                   |           |                                                                                                      |
-| 0x3C        | 0x26              | E, 6              | joycon(L) NwcpDriver1.GpioMonitorTask0 duplicate?                                                   |           |                                                                                                      |
-| 0x3D        | \-1               |                   |                                                                                                     |           |                                                                                                      |
-| 0x3E        | 0x33              | G, 3              | joycon(R) NwcpDriver1.GpioMonitorTask1 (CTS, checked low)                                           | In        | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x3F        | 0x1C              | D, 4              | joycon(L) NwcpDriver0.GpioMonitorTask1 (CTS, checked low)                                           | In        | [HID services](HID%20services.md "wikilink")                                                         |
-| 0x40        | 0xD9              | BB, 1             |                                                                                                     |           |                                                                                                      |
-| 0x41        | 0x0C              | B, 4              | Lid Closed (unused)                                                                                 |           |                                                                                                      |
-| 0x42        | 0x0D              | B, 5              |                                                                                                     |           |                                                                                                      |
-| 0x43        | 0x21              | E, 1              | USB power                                                                                           | Out       | [USB services](USB%20services.md "wikilink")                                                         |
-| 0x44        | 0x27              | E, 7              |                                                                                                     |           |                                                                                                      |
-| 0x45        | 0x92              | S, 2              |                                                                                                     |           |                                                                                                      |
-| 0x46        | 0x95              | S, 5              | USB root port 4 power                                                                               | Out       | [USB services](USB%20services.md "wikilink")                                                         |
-| 0x47        | 0x98              | T, 0              | USB root port 3 power                                                                               | Out       | [USB services](USB%20services.md "wikilink")                                                         |
-| 0x48        | 0x10              | C, 0              | HdmiHotplug                                                                                         | Out       | [NV services](NV%20services.md "wikilink")                                                           |
-| 0x49        | 0x11              | C, 1              | USB root port 2 power                                                                               | Out       | [USB services](USB%20services.md "wikilink")                                                         |
-| 0x4A        | 0x12              | C, 2              | HdmiHotplug                                                                                         | Out       | [NV services](NV%20services.md "wikilink")                                                           |
-| 0x4B        | 0x42              | I, 2              |                                                                                                     |           |                                                                                                      |
-| 0x4C        | 0xE6              | CC, 6             |                                                                                                     |           |                                                                                                      |
-| \--         | 0xE1              | CC, 1             | HdmiHotplug (HDMI\_INT\_DP\_HPD\_PCC1)                                                              | In        | [NV services](NV%20services.md "wikilink")                                                           |
+Same thing as [\#OpenSessionForDev](#OpenSessionForDev "wikilink")
+except it takes a **GpioPadName** which is then converted to a
+[\#GpioPadDescriptor](#GpioPadDescriptor "wikilink"). Returns an
+[\#IPadSession](#IPadSession "wikilink") session.
 
 ## OpenSessionForTest
 
@@ -138,14 +151,6 @@ This is "nn::gpio::IPadSession".
 | 14  | SetDebounceTime                  |
 | 15  | GetDebounceTime                  |
 | 16  | \[4.0.0+\] SetValueForSleepState |
-
-## GpioPadDescriptor
-
-| Bits | Description      |
-| ---- | ---------------- |
-| 7-5  | Controller index |
-| 4-3  | Port index       |
-| 2-0  | Pin number       |
 
 # i2c, i2c:pcv
 
@@ -226,17 +231,17 @@ This is "nn::uart::IManager".
 
 This is "nn::uart::IPortSession".
 
-| Cmd | Name               | Notes                      |
-| --- | ------------------ | -------------------------- |
-| 0   | OpenSession        | Takes marshalled arguments |
-| 1   | OpenSessionForTest | Takes marshalled arguments |
-| 2   |                    |                            |
-| 3   |                    | Takes marshalled arguments |
-| 4   |                    | Returns 2x u64. Both zero. |
-| 5   |                    |                            |
-| 6   |                    |                            |
-| 7   |                    |                            |
-|     |                    |                            |
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   | OpenSession        |
+| 1   | OpenSessionForTest |
+| 2   |                    |
+| 3   |                    |
+| 4   |                    |
+| 5   |                    |
+| 6   |                    |
+| 7   |                    |
+|     |                    |
 
 ### Port Mapping
 
