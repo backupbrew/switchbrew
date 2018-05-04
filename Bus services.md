@@ -33,7 +33,7 @@ This is "nn::gpio::IManager".
 <td><p>0x01</p></td>
 <td><p>0xCC</p></td>
 <td><p>Z, 4</p></td>
-<td><p>rt5639 power</p></td>
+<td><p>rt5639 power (CODEC_LDO_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="Audio services.md" title="wikilink">Audio services</a>, <a href="Fatal services.md" title="wikilink">Fatal services</a>)</p></td>
@@ -120,7 +120,7 @@ This is "nn::gpio::IManager".
 <td><p>0x0B</p></td>
 <td><p>0x97</p></td>
 <td><p>S, 7</p></td>
-<td></td>
+<td><p>CPU fan sampling</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -128,7 +128,7 @@ This is "nn::gpio::IManager".
 <td><p>0x0C</p></td>
 <td><p>0x26</p></td>
 <td><p>E, 6</p></td>
-<td><p>joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
+<td><p>Joycon(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -195,7 +195,7 @@ This is "nn::gpio::IManager".
 <td><p>0x14</p></td>
 <td><p>0xBC</p></td>
 <td><p>X, 4</p></td>
-<td></td>
+<td><p>Temperature sensor</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -220,7 +220,7 @@ This is "nn::gpio::IManager".
 <td><p>0x17</p></td>
 <td><p>0xB9</p></td>
 <td><p>X, 1</p></td>
-<td><p>Touchscreen irq (TOUCH_INT_PX1) (unused - polled instead)</p></td>
+<td><p>Touchscreen IRQ (TOUCH_INT_PX1) (unused - polled instead)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -469,7 +469,7 @@ This is "nn::gpio::IManager".
 <td><p>0x34</p></td>
 <td><p>0x3E</p></td>
 <td><p>H, 6</p></td>
-<td><p>joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
+<td><p>Joycon(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>

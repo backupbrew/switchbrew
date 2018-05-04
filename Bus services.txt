@@ -31,7 +31,7 @@ This is "nn::gpio::IManager".
 |-
 ! GpioPadName || GpioPadDescriptor || Tegra (port, pin) || Usage || Direction || Used by
 |-
-| 0x01 || 0xCC || Z, 4 || rt5639 power || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[Audio services]], [[Fatal services]])
+| 0x01 || 0xCC || Z, 4 || rt5639 power (CODEC_LDO_EN) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[Audio services]], [[Fatal services]])
 |-
 | 0x02 || 0x24 || E, 4 || SDCard Power || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Filesystem services]])
 |-
@@ -51,9 +51,9 @@ This is "nn::gpio::IManager".
 |-
 | 0x0A || 0x96 || S, 6 || bq24192 Charge Enable || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
 |-
-| 0x0B || 0x97 || S, 7 || || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x0B || 0x97 || S, 7 || CPU fan sampling || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x0C || 0x26 || E, 6 || joycon(L) NwcpDriver0.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x0C || 0x26 || E, 6 || Joycon(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
 | 0x0D || 0x05 || A, 5 || Fan enable (normal) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
 |-
@@ -69,13 +69,13 @@ This is "nn::gpio::IManager".
 |-
 | 0x13 || 0x7A || P, 2 || SDMMC3_DAT3_PP2? || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x14 || 0xBC || X, 4 || || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x14 || 0xBC || X, 4 || Temperature sensor || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
 | 0x15 || 0xAE || V, 6 || || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[Audio services]])
 |-
 | 0x16 || 0xBA || X, 2 || MOTION_INT_PX2? || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x17 || 0xB9 || X, 1 || Touchscreen irq (TOUCH_INT_PX1) (unused - polled instead) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x17 || 0xB9 || X, 1 || Touchscreen IRQ (TOUCH_INT_PX1) (unused - polled instead) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
 | 0x18 || 0xBD || X, 5 || Power Button (BUTTON_POWER_ON_PX5) || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
@@ -133,7 +133,7 @@ This is "nn::gpio::IManager".
 |-
 | 0x33 || 0x41 || I, 1 || Backlight -5V || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[NV services]])
 |-
-| 0x34 || 0x3E || H, 6 || joycon(R) NwcpDriver1.GpioMonitorTask0 (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x34 || 0x3E || H, 6 || Joycon(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
 | 0x35 || 0xE2 || CC, 2 || || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
