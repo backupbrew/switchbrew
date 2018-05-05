@@ -107,7 +107,7 @@ Inherits from:
 | 0x320        | u64                                                                      | CondVar\_CondVarUserAddr     |
 | 0x328        | u64                                                                      | Entrypoint                   |
 | 0x330        | u64                                                                      | CondVar\_MutexUserAddr       |
-| 0x338        | [\#KProcess\*](#KProcess* "wikilink")                                    | ProcessPtr                   |
+| 0x338        | [\#KProcess](#KProcess "wikilink")\*                                     | ProcessPtr                   |
 | 0x340        | void\*                                                                   | KernelThreadStack            |
 | 0x348        | u64                                                                      |                              |
 | 0x350        | void\*                                                                   | TlsKernelPtr                 |

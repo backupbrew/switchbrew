@@ -139,7 +139,7 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x330 || u64 || CondVar_MutexUserAddr
 |-
-| 0x338 || [[#KProcess*]] || ProcessPtr
+| 0x338 || [[#KProcess]]* || ProcessPtr
 |-
 | 0x340 || void* || KernelThreadStack
 |-
