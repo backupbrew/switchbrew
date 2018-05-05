@@ -115,7 +115,7 @@ Inherits from:
 | 0x360        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")\*\[0x40\] | SyncObjects                  |
 | 0x560        | [\#KThread](#KThread "wikilink")\*                                       | CondVar\_NextThreadPtr       |
 | 0x568        | [\#KThread](#KThread "wikilink")\*                                       | CondVar\_PrevThreadPtr       |
-| 0x570        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")           | SignalledObjectPtr?          |
+| 0x570        | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")\*         | SignalledObjectPtr?          |
 | 0x578        | KLinkedListNode                                                          |                              |
 | 0x588        | KLinkedListNode                                                          |                              |
 | 0x598        | KLinkedListNode                                                          | NodeFor\_\_ThreadList        |

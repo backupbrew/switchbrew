@@ -155,7 +155,7 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x568 || [[#KThread]]* || CondVar_PrevThreadPtr
 |-
-| 0x570 || [[#KSynchronizationObject]] || SignalledObjectPtr?
+| 0x570 || [[#KSynchronizationObject]]* || SignalledObjectPtr?
 |-
 | 0x578 || KLinkedListNode ||
 |-
