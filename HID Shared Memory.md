@@ -18,7 +18,7 @@ applications.
 | 0x4C00  | 0x200         | Unknown, header which says it has 17 entries, but the max entry index is 0 |
 | 0x4E00  | 0x200         | Unknown, header which says it has 17 entries, but the max entry index is 0 |
 | 0x5000  | 0x200         | Unknown, header which says it has 17 entries, but the max entry index is 0 |
-| 0x5200  | 0x800         | Unknown                                                                    |
+| 0x5200  | 0x80\*0x10    | Unknown, 16 structures with a header and 2 entries each                    |
 | 0x5A00  | 0x4000        | Controller Serials?                                                        |
 | 0x9A00  | 0x32000       | Controllers                                                                |
 | 0x3BA00 | 0x4600        | Unknown                                                                    |
