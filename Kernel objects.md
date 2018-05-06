@@ -11,14 +11,12 @@ Size: 0x10
 
 Size: 0x28
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
-| Offset | Type                                             | Description    |
-| ------ | ------------------------------------------------ | -------------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink")         | Inheritance    |
-| 0x10   | u64                                              | ThreadSyncNum  |
-| 0x18   | [\#KLinkedListNode](#KLinkedListNode "wikilink") | ThreadSyncList |
+| Offset | Type                                     | Description    |
+| ------ | ---------------------------------------- | -------------- |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance    |
+| 0x10   | [\#KLinkedList](#KLinkedList "wikilink") | ThreadSyncList |
 
 # KMutex
 

@@ -21,9 +21,7 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0 || [[#KAutoObject]] || Inheritance
 |-
-| 0x10 || u64 || ThreadSyncNum
-|-
-| 0x18 || [[#KLinkedListNode]] || ThreadSyncList
+| 0x10 || [[#KLinkedList]] || ThreadSyncList
 |}
 
 = KMutex =
