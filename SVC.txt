@@ -124,7 +124,7 @@ __NOTOC__
 |-
 | 0x44 || svcReplyAndReceiveWithUserBuffer|| X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=replytarget_handle(0=none), X6=timeout || W0=result, W1=handle_idx
 |-
-| 0x45 || svcCreateEvent || None || W0=result, W1=client_handle ?, W2=server_handle ?
+| 0x45 || svcCreateEvent || None || W0=result, W1=server_handle, W2=client_handle
 |- style="border-top: double"
 | 0x48 || [5.0.0+] [[#svcMapPhysicalMemoryUnsafe]] || X0=addr, X1=size || W0=result
 |-
