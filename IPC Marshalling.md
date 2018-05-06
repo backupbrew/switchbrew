@@ -271,9 +271,8 @@ domain or not, in either case it overlaps with padding).
 The official marshalling function takes an array of (buf\_ptr, size)
 pairs and a type-field for each such pair.
 
-Bitmask 0x10 seems to indicate null-terminated strings, but that flag is
-ignored by the marshalling
-code.
+Bitmask 0x10 seems to indicate null-terminated
+strings.
 
 | Type Mask       | Description                                                                 | Direction |
 | --------------- | --------------------------------------------------------------------------- | --------- |
