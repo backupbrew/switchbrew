@@ -1,27 +1,28 @@
 HID shared memory is a 0x40000 byte read-only segment of memory shared
 between applications for input. The segment contains structures for most
-if not all input methods available to applications.
+if not all input methods available to
+applications.
 
 # Memory Map
 
-| Offset  | Size in bytes | Description                    |
-| ------- | ------------- | ------------------------------ |
-| 0x0     | 0x400         | Unknown, Header?               |
-| 0x400   | 0x3000        | Capacitive Touchscreen         |
-| 0x3400  | 0x400         | Mouse                          |
-| 0x3800  | 0x400         | Keyboard                       |
-| 0x3C00  | 0x400         | Unknown, header and 17 entries |
-| 0x4000  | 0x400         | Unknown, header and 17 entries |
-| 0x4400  | 0x400         | Unknown, header and 17 entries |
-| 0x4800  | 0x400         | Unknown, header and 17 entries |
-| 0x4C00  | 0x200         | Unknown                        |
-| 0x4E00  | 0x200         | Unknown                        |
-| 0x5000  | 0x200         | Unknown                        |
-| 0x5200  | 0x800         | Unknown                        |
-| 0x5A00  | 0x4000        | Controller Serials?            |
-| 0x9A00  | 0x32000       | Controllers                    |
-| 0x3BA00 | 0x4600        | Unknown                        |
-|         |               |                                |
+| Offset  | Size in bytes | Description                                                                |
+| ------- | ------------- | -------------------------------------------------------------------------- |
+| 0x0     | 0x400         | Unknown, Header?                                                           |
+| 0x400   | 0x3000        | Capacitive Touchscreen                                                     |
+| 0x3400  | 0x400         | Mouse                                                                      |
+| 0x3800  | 0x400         | Keyboard                                                                   |
+| 0x3C00  | 0x400         | Unknown, header and 17 entries                                             |
+| 0x4000  | 0x400         | Unknown, header and 17 entries                                             |
+| 0x4400  | 0x400         | Unknown, header and 17 entries                                             |
+| 0x4800  | 0x400         | Unknown, header and 17 entries                                             |
+| 0x4C00  | 0x200         | Unknown, header which says it has 17 entries, but the max entry index is 0 |
+| 0x4E00  | 0x200         | Unknown, header which says it has 17 entries, but the max entry index is 0 |
+| 0x5000  | 0x200         | Unknown, header which says it has 17 entries, but the max entry index is 0 |
+| 0x5200  | 0x800         | Unknown                                                                    |
+| 0x5A00  | 0x4000        | Controller Serials?                                                        |
+| 0x9A00  | 0x32000       | Controllers                                                                |
+| 0x3BA00 | 0x4600        | Unknown                                                                    |
+|         |               |                                                                            |
 
 ## Capacitive Touchscreen
 
