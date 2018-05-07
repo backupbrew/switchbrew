@@ -1,8 +1,5 @@
 ==Why update to [[3.0.0]]==
-First, if you are on [[1.0.0]] stay on it, it will be possible to install customized firmware.<br />
-Then, [[3.0.0]] system version is the most vulnerable for Homebrew and lower system version are not compatible with [[PegaSwitch]].
-
-See [https://switchbrew.github.io/nx-hbl/ nx-hbl]
+Update to [[3.0.0]] if you want to use [https://switchbrew.github.io/nx-hbl/ nx-hbl].
 
 ==Requirement==
 An original game card of Pokkén Tournament DX (With a [[Game card serial]] ending with 000).<br />

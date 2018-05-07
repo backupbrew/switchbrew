@@ -1,12 +1,7 @@
 ## Why update to [3.0.0](3.0.0.md "wikilink")
 
-First, if you are on [1.0.0](1.0.0.md "wikilink") stay on it, it will be
-possible to install customized firmware.  
-Then, [3.0.0](3.0.0.md "wikilink") system version is the most vulnerable
-for Homebrew and lower system version are not compatible with
-[PegaSwitch](PegaSwitch.md "wikilink").
-
-See [nx-hbl](https://switchbrew.github.io/nx-hbl/)
+Update to [3.0.0](3.0.0.md "wikilink") if you want to use
+[nx-hbl](https://switchbrew.github.io/nx-hbl/).
 
 ## Requirement
 
