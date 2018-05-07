@@ -128,7 +128,7 @@ This is "nn::gpio::IManager".
 <td><p>0x0C</p></td>
 <td><p>0x26</p></td>
 <td><p>E, 6</p></td>
-<td><p>Joycon(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
+<td><p>Joy-Con(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -391,7 +391,7 @@ This is "nn::gpio::IManager".
 <td><p>0x2B</p></td>
 <td><p>0x53</p></td>
 <td><p>K, 3</p></td>
-<td><p>Joycon(R) NwcpDriver1.NwcpCharger</p></td>
+<td><p>Joy-Con(R) NwcpDriver1.NwcpCharger</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -400,7 +400,7 @@ This is "nn::gpio::IManager".
 <td><p>0x2C</p></td>
 <td><p>0xE3</p></td>
 <td><p>CC, 3</p></td>
-<td><p>Joycon(L) NwcpDriver0.NwcpCharger</p></td>
+<td><p>Joy-Con(L) NwcpDriver0.NwcpCharger</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -469,7 +469,7 @@ This is "nn::gpio::IManager".
 <td><p>0x34</p></td>
 <td><p>0x3E</p></td>
 <td><p>H, 6</p></td>
-<td><p>Joycon(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
+<td><p>Joy-Con(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -530,7 +530,7 @@ This is "nn::gpio::IManager".
 <td><p>0x3B</p></td>
 <td><p>0x3E</p></td>
 <td><p>H, 6</p></td>
-<td><p>Joycon(R) NwcpDriver1.GpioMonitorTask0 duplicate?</p></td>
+<td><p>Joy-Con(R) NwcpDriver1.GpioMonitorTask0 duplicate?</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -538,7 +538,7 @@ This is "nn::gpio::IManager".
 <td><p>0x3C</p></td>
 <td><p>0x26</p></td>
 <td><p>E, 6</p></td>
-<td><p>Joycon(L) NwcpDriver1.GpioMonitorTask0 duplicate?</p></td>
+<td><p>Joy-Con(L) NwcpDriver1.GpioMonitorTask0 duplicate?</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -554,7 +554,7 @@ This is "nn::gpio::IManager".
 <td><p>0x3E</p></td>
 <td><p>0x33</p></td>
 <td><p>G, 3</p></td>
-<td><p>Joycon(R) CTS (checked low)</p></td>
+<td><p>Joy-Con(R) CTS (checked low)</p></td>
 <td><p>In</p></td>
 <td><p>None<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -563,7 +563,7 @@ This is "nn::gpio::IManager".
 <td><p>0x3F</p></td>
 <td><p>0x1C</p></td>
 <td><p>D, 4</p></td>
-<td><p>Joycon(L) CTS (checked low)</p></td>
+<td><p>Joy-Con(L) CTS (checked low)</p></td>
 <td><p>In</p></td>
 <td><p>None<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -707,7 +707,7 @@ This is "nn::gpio::IManager".
 <td><p>-</p></td>
 <td><p>0x32</p></td>
 <td><p>G, 2</p></td>
-<td><p>Joycon(R) RTS</p></td>
+<td><p>Joy-Con(R) RTS</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>
@@ -715,7 +715,7 @@ This is "nn::gpio::IManager".
 <td><p>-</p></td>
 <td><p>0x1B</p></td>
 <td><p>D, 3</p></td>
-<td><p>Joycon(L) RTS</p></td>
+<td><p>Joy-Con(L) RTS</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>
@@ -890,11 +890,11 @@ OpenSession translates user IDs to to the uart port index.
 
 OpenSessionForTest takes the port index verbatim.
 
-| Name | Port   | Usage     |
-| ---- | ------ | --------- |
-| 1    | UART-D | Bluetooth |
-| 2    | UART-B | Joycon(R) |
-| 3    | UART-C | Joycon(L) |
+| Name | Port   | Usage      |
+| ---- | ------ | ---------- |
+| 1    | UART-D | Bluetooth  |
+| 2    | UART-B | Joy-Con(R) |
+| 3    | UART-C | Joy-Con(L) |
 
 # pwm
 

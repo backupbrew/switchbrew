@@ -53,7 +53,7 @@ This is "nn::gpio::IManager".
 |-
 | 0x0B || 0x97 || S, 7 || CPU fan sampling || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x0C || 0x26 || E, 6 || Joycon(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x0C || 0x26 || E, 6 || Joy-Con(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
 | 0x0D || 0x05 || A, 5 || Fan enable (normal) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
 |-
@@ -115,9 +115,9 @@ This is "nn::gpio::IManager".
 |-
 | 0x2A || 0x57 || K, 7 || || In || Icosa, Copper, Hoag
 |-
-| 0x2B || 0x53 || K, 3 || Joycon(R) NwcpDriver1.NwcpCharger || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x2B || 0x53 || K, 3 || Joy-Con(R) NwcpDriver1.NwcpCharger || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
-| 0x2C || 0xE3 || CC, 3 || Joycon(L) NwcpDriver0.NwcpCharger || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x2C || 0xE3 || CC, 3 || Joy-Con(L) NwcpDriver0.NwcpCharger || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
 | 0x2D || 0x38 || H, 0 || WIFI_EN_PH0? || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
@@ -133,7 +133,7 @@ This is "nn::gpio::IManager".
 |-
 | 0x33 || 0x41 || I, 1 || Backlight -5V || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[NV services]])
 |-
-| 0x34 || 0x3E || H, 6 || Joycon(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x34 || 0x3E || H, 6 || Joy-Con(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
 | 0x35 || 0xE2 || CC, 2 || || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
@@ -147,15 +147,15 @@ This is "nn::gpio::IManager".
 |-
 | 0x3A || 0x58 || L, 0 || Charger IC (BQ24193) OTG charge select || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]], [[USB services]])
 |-
-| 0x3B || 0x3E || H, 6 || Joycon(R) NwcpDriver1.GpioMonitorTask0 duplicate? || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x3B || 0x3E || H, 6 || Joy-Con(R) NwcpDriver1.GpioMonitorTask0 duplicate? || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x3C || 0x26 || E, 6 || Joycon(L) NwcpDriver1.GpioMonitorTask0 duplicate? || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x3C || 0x26 || E, 6 || Joy-Con(L) NwcpDriver1.GpioMonitorTask0 duplicate? || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
 | 0x3D || -1 || || || ||
 |-
-| 0x3E || 0x33 || G, 3 || Joycon(R) CTS (checked low) || In || None <br>([[HID services]])
+| 0x3E || 0x33 || G, 3 || Joy-Con(R) CTS (checked low) || In || None <br>([[HID services]])
 |-
-| 0x3F || 0x1C || D, 4 || Joycon(L) CTS (checked low) || In || None <br>([[HID services]])
+| 0x3F || 0x1C || D, 4 || Joy-Con(L) CTS (checked low) || In || None <br>([[HID services]])
 |-
 | 0x40 || 0xD9 || BB, 1 || || Out || [2.0.0+] Copper
 |-
@@ -189,9 +189,9 @@ This is "nn::gpio::IManager".
 |-
 | [5.0.0+] 0x4F || 0x56 || K, 6 || || || None
 |-
-| - || 0x32 || G, 2 || Joycon(R) RTS || || None
+| - || 0x32 || G, 2 || Joy-Con(R) RTS || || None
 |-
-| - || 0x1B || D, 3 || Joycon(L) RTS || || None
+| - || 0x1B || D, 3 || Joy-Con(L) RTS || || None
 |}
 
 == GpioPadDescriptor ==
@@ -429,9 +429,9 @@ OpenSessionForTest takes the port index verbatim.
 |-
 | 1 || UART-D || Bluetooth
 |-
-| 2 || UART-B || Joycon(R)
+| 2 || UART-B || Joy-Con(R)
 |-
-| 3 || UART-C || Joycon(L)
+| 3 || UART-C || Joy-Con(L)
 |}
 
 = pwm =
