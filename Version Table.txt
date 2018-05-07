@@ -1,28 +1,24 @@
 {| class="wikitable" style="text-align: center;
-!From
-!To
-!Instructions
+! From
+! To
+! Instructions
 |-
-|[[1.0.0]]
-|[[1.0.0]]
-|Wait for customized firmware.
+| [[1.0.0]]
+| [[1.0.0]]
+| Wait for [https://github.com/Atmosphere-NX/Atmosphere Atmosphère], or see below for updating to 3.0.0.
 |-
-|[[2.0.0]]
-|[[2.3.0]]
-|Update to version [[3.0.0]]. See [[How to update to 3.0.0]].
+| [[2.0.0]]
+| [[2.3.0]]
+| Update to version [[3.0.0]]. See [[How to update to 3.0.0]].
 |-
-|[[3.0.0]]
-|[[3.0.0]]
-|You can run homebrew. See [https://switchbrew.github.io/nx-hbl/ nx-hbl].
+| [[3.0.0]]
+| [[3.0.0]]
+| You can run homebrew. See [https://switchbrew.github.io/nx-hbl/ nx-hbl].
 |-
-|[[3.0.1]]
-|[[4.1.0]]
-|Wait for a compatible Homebrew Launcher or customized firmware.<br/>Feel free to update to [[4.1.0]] from [[3.0.1]] or up.
-|-
-|[[4.1.0]]
-|[[5.0.0]]+
-|Do not update (for now) ! Stay on [[4.1.0]]. 
+| [[3.0.1]]
+| {latest}
+| Feel free to update to latest version if not already. Wait for [https://github.com/Atmosphere-NX/Atmosphere Atmosphère].
 |-
 |}
 
-With all of the above you need to [[block updates]], except with the nx-hbl default DNS-server since this is already handled.
+Once ready, [https://github.com/Atmosphere-NX/Atmosphere Atmosphère] will be usable on ''all'' system versions, for all Switch systems with the original hardware revision (via bootromhax).
