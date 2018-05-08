@@ -675,9 +675,9 @@ with storageid=nandsys, for checking whether a sysupdate is required.
 
 This is "nn::fssrv::sf::IEventNotifier".
 
-| Cmd | Name      |
-| --- | --------- |
-| 0   | BindEvent |
+| Cmd | Name           |
+| --- | -------------- |
+| 0   | GetEventHandle |
 
 # StorageId
 

@@ -768,7 +768,7 @@ This is "nn::fssrv::sf::IEventNotifier".
 |-
 ! Cmd || Name
 |-
-| 0 || BindEvent
+| 0 || GetEventHandle
 |}
 
 = StorageId =
