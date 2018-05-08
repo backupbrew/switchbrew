@@ -186,7 +186,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [[User:carstene1ns|carstene1ns]]
 | [https://f4ke.de/dev/switch/ Here]
 | [https://github.com/carstene1ns/super-methane-brothers Yes]
-| 2018-04-07
+| 2018-05-08
 |-
 | Switch Pong
 | A port of pong for the Nintendo Switch
@@ -194,6 +194,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/TheKgg/switch-pong/releases Here]
 | [https://github.com/TheKgg/switch-pong Yes]
 | 2018-04-20
+|-
+| NXEngine
+| Reimplementation of Cave Story / Doukutsu Monogatari, a Japanese freeware PC side-scrolling platformer game from 2004.
+| [[User:carstene1ns|carstene1ns]]
+| [https://f4ke.de/dev/switch/ Here]
+| [https://github.com/carstene1ns/nxengine-evo/tree/switch-port Yes]
+| 2018-05-09
 |}
 
 === Emulators ===
