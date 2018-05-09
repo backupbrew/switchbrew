@@ -201,6 +201,21 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://f4ke.de/dev/switch/ Here]
 | [https://github.com/carstene1ns/nxengine-evo/tree/switch-port Yes]
 | 2018-05-09
+|-
+| 2048
+| 2048 port for Switch homebrew
+| Bernardo Giordano
+| [https://github.com/BernardoGiordano/2048/releases Here]
+| [https://github.com/BernardoGiordano/2048 Yes]
+| 2018-04-21
+|-
+| Pickr
+| Pickr webgame port for Switch homebrew
+| Bernardo Giordano
+| [https://github.com/BernardoGiordano/Pickr/releases Here]
+| [https://github.com/BernardoGiordano/Pickr Yes]
+| 2018-04-16
+|-
 |}
 
 === Emulators ===
