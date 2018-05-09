@@ -35,9 +35,11 @@ fatal-errors, since the Description ends with bit21.
 | 16    | NS                                                     |
 | 17    | Sockets                                                |
 | 18    | HTC                                                    |
+| 20    | NCM Content                                            |
 | 21    | SM                                                     |
 | 22    | RO userland                                            |
 | 24    | SDMMC                                                  |
+| 25    | OVLN                                                   |
 | 26    | SPL                                                    |
 | 100   | ETHC                                                   |
 | 101   | I2C                                                    |
@@ -50,6 +52,7 @@ fatal-errors, since the Description ends with bit21.
 | 111   | Hwopus                                                 |
 | 113   | Bluetooth                                              |
 | 114   | VI                                                     |
+| 115   | NFP                                                    |
 | 116   | Time                                                   |
 | 117   | FGM                                                    |
 | 120   | PCIe                                                   |
@@ -59,9 +62,11 @@ fatal-errors, since the Description ends with bit21.
 | 124   | Account                                                |
 | 125   | News                                                   |
 | 126   | Mii                                                    |
+| 127   | NFC                                                    |
 | 128   | AM                                                     |
 | 129   | Play Report                                            |
 | 130   | AHID                                                   |
+| 132   | Home Menu (Qlaunch)                                    |
 | 133   | PCV                                                    |
 | 134   | OMM                                                    |
 | 135   | BPC                                                    |
@@ -75,24 +80,32 @@ fatal-errors, since the Description ends with bit21.
 | 143   | BTM                                                    |
 | 144   |                                                        |
 | 145   | ETicket                                                |
+| 146   | NGC (Bad Words)                                        |
 | 147   | Error Report                                           |
 | 148   | APM                                                    |
 | 151   | Error Upload                                           |
 | 153   | Audio                                                  |
 | 154   | NPNS                                                   |
+| 155   | NPNS HTTP Stream                                       |
 | 157   | ARP                                                    |
 | 158   | Boot                                                   |
-| 161   | NFC                                                    |
+| 161   | NFC Mifare                                             |
 | 162   | Userland assert                                        |
+| 163   | Fatal                                                  |
+| 164   | NIM Shop                                               |
+| 165   | SPSM                                                   |
 | 167   | BGTC                                                   |
 | 168   | Userland crash                                         |
+| 180   | SREPO                                                  |
 | 202   | HID                                                    |
 | 203   | LDN                                                    |
 | 205   | Irsensor                                               |
 | 206   | Capture                                                |
 | 208   | Manu                                                   |
+| 211   |                                                        |
 | 212   | GRC                                                    |
 | 216   | Migration                                              |
+| 217   | Migration Idc Server                                   |
 | 345   | libnx                                                  |
 | 346   | [Homebrew ABI](Homebrew%20ABI.md "wikilink")           |
 | 347   | Homebrew Loader                                        |
@@ -107,7 +120,7 @@ applets.
 
 # Error codes
 
-| Value             | Module | Description | Description                                                                                                                                                                          |
+| Value             | Module | Description | Notes                                                                                                                                                                                |
 | ----------------- | ------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 0x1C01            | 1      | 14          | Invalid kernel capability descriptor                                                                                                                                                 |
 | 0x4201            | 1      | 33          | [IsDebugMode](SPL%20services#GetConfig.md##GetConfig "wikilink") isn't set.                                                                                                          |
@@ -284,7 +297,7 @@ nn::fs::detail::LogErrorMessage found in some
 [factory](Factory%20Setup.md "wikilink")
 titles:
 
-| Error Code          | Description                                               | Message                                                                                      |
+| Value               | Description                                               | Message                                                                                      |
 | ------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | 0x7802              | 60                                                        | Error: Specified mount name already exists.                                                  |
 | 0xD401              | 106                                                       | Error: Passed buffer is not usable for fs library.                                           |
@@ -331,9 +344,9 @@ titles:
 
 # Support Errors
 
-| Error \! Module \! Description \! Notes |
-| --------------------------------------- |
-|                                         |
+| Error | Module                     | Description | Notes               |
+| ----- | -------------------------- | ----------- | ------------------- |
+|       | {web-applets listed above} | 2750        | MP4 parsing failed. |
 
 Normal error-codes displayed by the system also use the same format as
 fatal-errors.

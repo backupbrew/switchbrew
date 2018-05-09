@@ -4,9 +4,9 @@ These have been redesigned from the 3DS so that they fit within a Aarch64 MOV in
 {| class=wikitable
 ! Bits || Field
 |-
-| 8-0  || Module
+| 8-0 || Module
 |-
-| 21-9  || Description
+| 21-9 || Description
 |}
 
 When a fatal-error is received the error code is outputted using the following formatter:
@@ -44,11 +44,15 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 18 || HTC
 |-
+| 20 || NCM Content
+|-
 | 21 || SM
 |-
 | 22 || RO userland
 |-
 | 24 || SDMMC
+|-
+| 25 || OVLN
 |-
 | 26 || SPL
 |-
@@ -74,6 +78,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 114 || VI
 |-
+| 115 || NFP
+|-
 | 116 || Time
 |-
 | 117 || FGM
@@ -92,11 +98,15 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 126 || Mii
 |-
+| 127 || NFC
+|-
 | 128 || AM
 |-
 | 129 || Play Report
 |-
 | 130 || AHID
+|-
+| 132 || Home Menu (Qlaunch)
 |-
 | 133 || PCV
 |-
@@ -124,6 +134,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 145 || ETicket
 |-
+| 146 || NGC (Bad Words)
+|-
 | 147 || Error Report
 |-
 | 148 || APM
@@ -134,17 +146,27 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 154 || NPNS
 |-
+| 155 || NPNS HTTP Stream
+|-
 | 157 || ARP
 |-
 | 158 || Boot
 |-
-| 161 || NFC
+| 161 || NFC Mifare
 |-
 | 162 || Userland assert
+|-
+| 163 || Fatal
+|-
+| 164 || NIM Shop
+|-
+| 165 || SPSM
 |-
 | 167 || BGTC
 |-
 | 168 || Userland crash
+|-
+| 180 || SREPO
 |-
 | 202 || HID
 |-
@@ -156,9 +178,13 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 208 || Manu
 |-
+| 211 ||
+|-
 | 212 || GRC
 |-
 | 216 || Migration
+|-
+| 217 || Migration Idc Server
 |-
 | 345 || libnx
 |-
@@ -181,7 +207,7 @@ When a fatal-error is received the error code is outputted using the following f
 
 = Error codes =
 {| class=wikitable
-! Value || Module || Description || Description
+! Value || Module || Description || Notes
 |-
 | 0x1C01 || 1 || 14 || Invalid kernel capability descriptor
 |-
@@ -519,11 +545,10 @@ When a fatal-error is received the error code is outputted using the following f
 |}
 
 == FS Error Codes ==
-
 The following are the error codes recognized by nn::fs::detail::LogErrorMessage found in some [[Factory Setup|factory]] titles:
 
 {| class=wikitable
-! Error Code || Description || Message
+! Value || Description || Message
 |-
 | 0x7802 || 60 || Error: Specified mount name already exists.
 |-
@@ -613,11 +638,12 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 
 = Support Errors =
 {| class=wikitable
-! Error ! Module ! Description ! Notes
+! Error || Module || Description || Notes
 |-
 | 
 | {web-applets listed above}
 | 2750
 | MP4 parsing failed.
 |}
+
 Normal error-codes displayed by the system also use the same format as fatal-errors.
