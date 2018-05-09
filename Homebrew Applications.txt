@@ -247,6 +247,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 !  width="5%"  | Open-Source
 !  width="15%" | Last Updated
 |-
+| Checkpoint
+| Fast and simple save manager for 3DS and Switch written in C++. Compatible with <= 3.0.0.
+| Bernardo Giordano
+| [https://github.com/BernardoGiordano/Checkpoint/releases Here]
+| [https://github.com/BernardoGiordano/Checkpoint Yes]
+| 2018-05-09
+|-
 |}
 
 === File servers ===
