@@ -36,7 +36,7 @@ It starts with the NRO-start structure then the "NRO" header and mainly describe
 |-
 | 0x4
 | 0x4
-| ?
+| NRO Format Version (Always 0)
 |-
 | 0x8
 | 4
@@ -44,7 +44,7 @@ It starts with the NRO-start structure then the "NRO" header and mainly describe
 |-
 | 0xC
 | 0x4
-| ?
+| Flags (Unused)
 |-
 | 0x10
 | 0x8 * 3
@@ -56,7 +56,7 @@ It starts with the NRO-start structure then the "NRO" header and mainly describe
 |-
 | 0x2C
 | 0x4
-| ?
+| Reserved (Unused)
 |-
 | 0x30
 | 0x20
