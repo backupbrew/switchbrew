@@ -16,11 +16,11 @@ It starts with the "NSO" header and mainly describes .text, .rodata, and .data s
 |-
 | 0x4
 | 4
-| 
+| NSO Version (Always 0)
 |-
 | 0x8
 | 4
-| 
+| Reserved (Unused)
 |-
 | 0xC
 | 4

@@ -9,8 +9,8 @@ headers):
 | Offset | Size      | Description                                                                                         |
 | ------ | --------- | --------------------------------------------------------------------------------------------------- |
 | 0x0    | 4         | Magic "NSO0"                                                                                        |
-| 0x4    | 4         |                                                                                                     |
-| 0x8    | 4         |                                                                                                     |
+| 0x4    | 4         | NSO Version (Always 0)                                                                              |
+| 0x8    | 4         | Reserved (Unused)                                                                                   |
 | 0xC    | 4         | Flags, bit 0-2: section is compressed, bit 3-5: check section hash when loading                     |
 | 0x10   | 0x10 \* 3 | SegmentHeader\[3\]                                                                                  |
 | 0x40   | 0x20      | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes.    |
