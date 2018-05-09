@@ -998,6 +998,14 @@ userspace address.
 
 | Handle type | Id0 | Id1 | Description                     |
 | ----------- | --- | --- | ------------------------------- |
+| Zero        | 0   | 0   | TotalMemorySize\_Application    |
+| Zero        | 0   | 1   | TotalMemorySize\_Applet         |
+| Zero        | 0   | 2   | TotalMemorySize\_System         |
+| Zero        | 0   | 3   | TotalMemorySize\_SystemUnsafe   |
+| Zero        | 1   | 0   | CurrentMemorySize\_Application  |
+| Zero        | 1   | 1   | CurrentMemorySize\_Applet       |
+| Zero        | 1   | 2   | CurrentMemorySize\_System       |
+| Zero        | 1   | 3   | CurrentMemorySize\_SystemUnsafe |
 | Zero        | 2   | 0   | PrivilegedProcessId\_LowerBound |
 | Zero        | 2   | 1   | PrivilegedProcessId\_UpperBound |
 |             |     |     |                                 |

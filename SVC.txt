@@ -1183,6 +1183,22 @@ Same as [[#svcMapDeviceAddressSpaceByForce]], but the userspace destination addr
 {| class=wikitable
 ! Handle type || Id0 || Id1 || Description
 |-
+| Zero    || 0 || 0 || TotalMemorySize_Application
+|-
+| Zero    || 0 || 1 || TotalMemorySize_Applet
+|-
+| Zero    || 0 || 2 || TotalMemorySize_System
+|-
+| Zero    || 0 || 3 || TotalMemorySize_SystemUnsafe
+|-
+| Zero    || 1 || 0 || CurrentMemorySize_Application
+|-
+| Zero    || 1 || 1 || CurrentMemorySize_Applet
+|-
+| Zero    || 1 || 2 || CurrentMemorySize_System
+|-
+| Zero    || 1 || 3 || CurrentMemorySize_SystemUnsafe
+|-
 | Zero    || 2 || 0 || PrivilegedProcessId_LowerBound
 |-
 | Zero    || 2 || 1 || PrivilegedProcessId_UpperBound
