@@ -11,11 +11,11 @@ internal[1](https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263)](Joy
 internal[2](https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263)](JoyconRear.jpg
 "The rear of the Joy-Con internal2")
 
-| Color  | Item                                                |
-| ------ | --------------------------------------------------- |
-| Red    | Broadcom BCM20734 Bluetooth 4.1/2.4 GHz Transceiver |
-| Orange | Samsung K4F6E304HB-MGCH 2 GB LPDDR4 DRAM            |
-| Yellow | Macronix International MX25U4033E 4 Mb CMOS Flash   |
+| Color  | Item                                                       |
+| ------ | ---------------------------------------------------------- |
+| Red    | Broadcom BCM20734 Bluetooth 4.1/2.4 GHz Transceiver        |
+| Orange | STMicroelectronics NFCBEA 812006 33 (Likely NFC reader IC) |
+| Yellow | Macronix International MX25U4033E 4 Mb CMOS Flash          |
 
 ## Firmware
 

@@ -9,7 +9,7 @@ The controllers themselves are simple to disassemble and identify.
 |-
 | Red || Broadcom BCM20734 Bluetooth 4.1/2.4 GHz Transceiver
 |-
-| Orange || Samsung K4F6E304HB-MGCH 2 GB LPDDR4 DRAM
+| Orange || STMicroelectronics NFCBEA 812006 33 (Likely NFC reader IC)
 |-
 | Yellow|| Macronix International MX25U4033E 4 Mb CMOS Flash
 |}
