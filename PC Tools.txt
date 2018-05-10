@@ -1,0 +1,56 @@
+= Emulators =
+{| class="wikitable"
+|-
+! width="25%" | Title
+! Description
+! width="20%" | Author
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/yuzu-emu/yuzu Yuzu]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | An experimental open-source emulator for the Nintendo Switch from the creators of Citra, written in C/++
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/yuzu-emu Yuzu Team]
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/gdkchan/Ryujinx Ryujinx]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Experimental Switch emulator written in C#
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/gdkchan gdkchan]
+|-
+|}
+= File Readers =
+{| class="wikitable"
+|-
+! width="25%" | Title
+! Description
+! width="20%" | Author
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/SciresM/hactool hactool]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | A tool to view information about, decrypt, and extract common file formats for the Nintendo Switch, especially Nintendo Content Archives.
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/SciresM SciresM]
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/RedDuckss/NXReader NXReader]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Node module for parsing several Switch (NX) file types.
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/RedDuckss RedDucks]
+|-
+|}
+= Homebrew Toolkits =
+{| class="wikitable"
+|-
+! width="25%" | Title
+! Description
+! width="20%" | Author
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/nx-python/PyNX PyNX]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Entry point for nx-python, the Python ecosystem for the Switch (write homebrew in Python)
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/AileenLumina AileenLumina]
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns/physfs-switch Switch PhysicsFS]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | PhysicsFS 3.0.1 for Nintendo Switch homebrew (using libnx).
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns carstene1ns]
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns/lua51-switch Lua 5.1.5]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Lua 5.1.5 for Nintendo Switch homebrew
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns carstene1ns]
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/Slashcash/Snitch Snitch]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | A high level library to develop homebrew software for Nintendo Switch (based on libnx)
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/Slashcash Slashcash]
+|-
+|}
