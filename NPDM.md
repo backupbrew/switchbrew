@@ -14,15 +14,16 @@ varies.
 | Offset | Size | Description                                                                                                 |
 | ------ | ---- | ----------------------------------------------------------------------------------------------------------- |
 | 0x0    | 0x4  | Magic "META".                                                                                               |
-| 0x4    |      |                                                                                                             |
-| 0x8    |      |                                                                                                             |
+| 0x4    | 0x8  | Reserved (Padding / Unused)                                                                                 |
 | 0xC    | 0x1  | MmuFlags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be \<= 0xF |
-| 0xE    | 0x1  | MainThreadPrio                                                                                              |
+| 0xE    | 0x1  | Main thread priority (0-63)                                                                                 |
 | 0xF    | 0x1  | DefaultCpuId                                                                                                |
-| 0x10   |      |                                                                                                             |
+| 0x10   | 0x4  | Reserved                                                                                                    |
+| 0x14   | 0x4  | System resource size (max size as of 5.x: 534773760). Unknown usage.                                        |
 | 0x18   | 0x4  | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.                                   |
 | 0x1C   | 0x4  | MainStackSize                                                                                               |
-| 0x20   | ?    | Title name                                                                                                  |
+| 0x20   | 0x10 | Title name                                                                                                  |
+| 0x30   | 0x10 | Product code                                                                                                |
 | 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                           |
 | 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                                                             |
 | 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset                                                                           |
@@ -50,19 +51,19 @@ varies.
 
 # ACI0
 
-| Offset | Size | Description                                                           |
-| ------ | ---- | --------------------------------------------------------------------- |
-| 0x0    | 0x4  | Magic "ACI0".                                                         |
-| 0x4    | 0xC  | Zeroes                                                                |
-| 0x10   | 0x8  | Title id                                                              |
-| 0x18   | 0x8  | Lowest allowed title id? Always 0?                                    |
-| 0x20   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") offset             |
-| 0x24   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") size               |
-| 0x28   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") offset |
-| 0x2C   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") size   |
-| 0x30   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset   |
-| 0x34   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size     |
-| 0x38   | 0x8  | Padding                                                               |
+| Offset | Size | Description                                                                          |
+| ------ | ---- | ------------------------------------------------------------------------------------ |
+| 0x0    | 0x4  | Magic "ACI0".                                                                        |
+| 0x4    | 0xC  | Zeroes                                                                               |
+| 0x10   | 0x8  | Title id                                                                             |
+| 0x18   | 0x8  | Reserved (Not currently used, potentially to be used for lowest title ID in future.) |
+| 0x20   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") offset                            |
+| 0x24   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") size                              |
+| 0x28   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") offset                |
+| 0x2C   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") size                  |
+| 0x30   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset                  |
+| 0x34   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size                    |
+| 0x38   | 0x8  | Padding                                                                              |
 
 # FS Access Header
 

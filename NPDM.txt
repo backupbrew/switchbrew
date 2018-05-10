@@ -31,12 +31,8 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | Magic "META".
 |-
 | 0x4
-|
-|
-|-
 | 0x8
-|
-|
+| Reserved (Padding / Unused)
 |-
 | 0xC
 | 0x1
@@ -44,15 +40,19 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |-
 | 0xE
 | 0x1
-| MainThreadPrio
+| Main thread priority (0-63)
 |-
 | 0xF
 | 0x1
 | DefaultCpuId
 |-
 | 0x10
-|
-|
+| 0x4
+| Reserved
+|-
+| 0x14
+| 0x4
+| System resource size (max size as of 5.x: 534773760). Unknown usage.
 |-
 | 0x18
 | 0x4
@@ -63,8 +63,12 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | MainStackSize
 |-
 | 0x20
-| ?
+| 0x10
 | Title name
+|-
+| 0x30
+| 0x10
+| Product code
 |-
 | 0x70
 | 0x4
@@ -172,7 +176,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |-
 | 0x18
 | 0x8
-| Lowest allowed title id? Always 0?
+| Reserved (Not currently used, potentially to be used for lowest title ID in future.)
 |-
 | 0x20
 | 0x4
