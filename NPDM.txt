@@ -60,7 +60,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |-
 | 0x1C
 | 0x4
-| Main entrypoint stack size (This is ignored by the OS so far, not sure what purpose this serves. Values over 4095 can break the OS. In non-nspwn scenarios, values of 0 can also rarely break in Horizon. This might be something auto-adapting or a security feature of some sort?)
+| Main entrypoint stack size (Should(?) be page-aligned. In non-nspwn scenarios, values of 0 can also rarely break in Horizon. This might be something auto-adapting or a security feature of some sort?)
 |-
 | 0x20
 | 0x10
