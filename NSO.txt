@@ -24,7 +24,7 @@ It starts with the "NSO" header and mainly describes .text, .rodata, and .data s
 |-
 | 0xC
 | 4
-| Flags, bit 0-2: (.data, .text, .ro) section is compressed, bit 3-5: check section hash when loading
+| Flags, bit 0-2: (.text, .rodata and .data) section is compressed, bit 3-5: check section hash when loading
 |-
 | 0x10
 | 0xC
