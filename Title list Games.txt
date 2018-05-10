@@ -253,9 +253,9 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01003A5001DBA000 || ACA NEOGEO OVER TOP || ALL || || v0 || || VC
 |-
-| 01003BC0000A0000 || Splatoon™ 2 || EUR USA || || || Gamecard: 2.3.0 Gamecard Front: LA-H-AAB6B-USA || Game
+| 01003BC0000A0000 || Splatoon™ 2 || USA || || || Gamecard: 2.3.0 Gamecard Front: LA-H-AAB6B-USA || Game
 |-
-| 01003BC0000A0800 || Splatoon™ 2 || EUR USA || [[3.0.1]] NCA crypto([[NCA|nca-type0]]) || v262144 (1.2.0) || || Update
+| 01003BC0000A0800 || Splatoon™ 2 || USA || [[3.0.1]] NCA crypto([[NCA|nca-type0]]) || v262144 (1.2.0) || || Update
 |-
 | 01003C700009C000 || スプラトゥーン2 || JPN || || || || Game
 |-
