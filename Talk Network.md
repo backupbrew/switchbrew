@@ -39,3 +39,9 @@ what each of these environments are.
 --[FrasierCrane](User:FrasierCrane "wikilink")
 ([talk](User%20talk:FrasierCrane.md "wikilink")) 15:53, 10 May 2018
 (CDT)
+
+  -   
+    Just added some of these to the Network page. Is "dp1" accurate or
+    did you mean "dd1"? Code mentions "dd1" only.
+    --[Hexkyz](User:Hexkyz "wikilink")
+    ([talk](User%20talk:Hexkyz.md "wikilink")) 16:07, 10 May 2018 (CDT)

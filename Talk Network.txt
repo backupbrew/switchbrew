@@ -34,3 +34,5 @@ if __name__ == '__main__':
 
 Which in turn gives us the following:
 dp1, sp1, lp1, td1, jd1. At some point we should try and see if we can find any references anywhere as to what each of these environments are. --[[User:FrasierCrane|FrasierCrane]] ([[User talk:FrasierCrane|talk]]) 15:53, 10 May 2018 (CDT)
+
+:Just added some of these to the Network page. Is "dp1" accurate or did you mean "dd1"? Code mentions "dd1" only. --[[User:Hexkyz|Hexkyz]] ([[User talk:Hexkyz|talk]]) 16:07, 10 May 2018 (CDT)
