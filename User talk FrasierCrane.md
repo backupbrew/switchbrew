@@ -32,3 +32,11 @@ look for yourself?
         that's fine. --[Yellows8](User:Yellows8 "wikilink")
         ([talk](User%20talk:Yellows8.md "wikilink")) 12:33, 10 May 2018
         (CDT)
+        Good to know. Working out those last pieces were very difficult
+        so that might be the last of my contributions. I hope it saves
+        you all some time with your future work. Thank you for
+        everything you've contributed and paving the way for third
+        parties like myself to assist where possible.
+        --[FrasierCrane](User:FrasierCrane "wikilink")
+        ([talk](User%20talk:FrasierCrane.md "wikilink")) 15:00, 10 May
+        2018 (CDT)
