@@ -27,3 +27,8 @@ look for yourself?
     --[FrasierCrane](User:FrasierCrane "wikilink")
     ([talk](User%20talk:FrasierCrane.md "wikilink")) 12:26, 10 May 2018
     (CDT)
+      -   
+        "Are reversing officially released titles are fair game?" Yeah
+        that's fine. --[Yellows8](User:Yellows8 "wikilink")
+        ([talk](User%20talk:Yellows8.md "wikilink")) 12:33, 10 May 2018
+        (CDT)
