@@ -21,7 +21,7 @@ varies.
 | 0x10   | 0x4  | Reserved                                                                                                    |
 | 0x14   | 0x4  | System resource size (max size as of 5.x: 534773760). Unknown usage.                                        |
 | 0x18   | 0x4  | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.                                   |
-| 0x1C   | 0x4  | MainStackSize                                                                                               |
+| 0x1C   | 0x4  | Main entrypoint stack size (This is ignored by the OS so far, not sure what purpose this serves.)           |
 | 0x20   | 0x10 | Title name                                                                                                  |
 | 0x30   | 0x10 | Product code                                                                                                |
 | 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                           |

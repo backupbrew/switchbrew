@@ -60,7 +60,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |-
 | 0x1C
 | 0x4
-| MainStackSize
+| Main entrypoint stack size (This is ignored by the OS so far, not sure what purpose this serves.)
 |-
 | 0x20
 | 0x10
