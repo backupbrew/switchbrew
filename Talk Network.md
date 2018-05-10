@@ -63,3 +63,7 @@ SciresM reddit post does mention an s domain for lotcheck though. l =
 Live (Retail) --[FrasierCrane](User:FrasierCrane "wikilink")
 ([talk](User%20talk:FrasierCrane.md "wikilink")) 17:12, 10 May 2018
 (CDT)
+
+  -   
+    Small second note, if the code mentions dd1, by the previous running
+    theory, that would mean it's third-party dev using developer unit.
