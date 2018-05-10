@@ -48,7 +48,7 @@ It starts with the NRO-start structure then the "NRO" header and mainly describe
 |-
 | 0x10
 | 0x8 * 3
-| SegmentHeader[3]
+| SegmentHeader[3] {.text, .ro, .data}
 |-
 | 0x28
 | 0x4
@@ -63,12 +63,13 @@ It starts with the NRO-start structure then the "NRO" header and mainly describe
 | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes.
 |-
 | 0x50
-| 0x10
-| Padding
+| 0x08
+| Reserved (Unused)
 |-
-| 0x60
-| 0x10
-| ?
+| 0x58
+| 0x8 * 3
+| SegmentHeader[3] {.apiInfo, .dynstr, .dynsym}
+|-
 |}
 
 == SegmentHeader ==

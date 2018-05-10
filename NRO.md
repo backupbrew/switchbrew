@@ -21,12 +21,13 @@ program headers):
 | 0x4    | 0x4      | NRO Format Version (Always 0)                                                                    |
 | 0x8    | 4        | size (Total NRO filesize)                                                                        |
 | 0xC    | 0x4      | Flags (Unused)                                                                                   |
-| 0x10   | 0x8 \* 3 | SegmentHeader\[3\]                                                                               |
+| 0x10   | 0x8 \* 3 | SegmentHeader\[3\] {.text, .ro, .data}                                                           |
 | 0x28   | 0x4      | bssSize                                                                                          |
 | 0x2C   | 0x4      | Reserved (Unused)                                                                                |
 | 0x30   | 0x20     | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes. |
-| 0x50   | 0x10     | Padding                                                                                          |
-| 0x60   | 0x10     | ?                                                                                                |
+| 0x50   | 0x08     | Reserved (Unused)                                                                                |
+| 0x58   | 0x8 \* 3 | SegmentHeader\[3\] {.apiInfo, .dynstr, .dynsym}                                                  |
+|        |          |                                                                                                  |
 
 ## SegmentHeader
 
