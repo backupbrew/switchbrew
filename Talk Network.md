@@ -1,0 +1,41 @@
+lp1 refers to what environment is to be used, lp1 being retail (?).
+Using the following code we can perform a DNS enumeration to see what
+environments there are:
+
+    #!/usr/bin/python
+    # -*- coding: utf-8 -*-
+    import socket
+    import string
+    import itertools
+    from multiprocessing import Pool
+    
+    
+    def check_env(env):
+        try:
+            socket.gethostbyname('sun.hac.{0}1.d4c.nintendo.net'.format(env[0]
+                                 + env[1]))
+            return '{0}{1}1'.format(env[0], env[1])
+        except:
+            pass
+    
+    
+    def main():
+        pool = Pool()
+        potential_environments = itertools.product(string.lowercase,
+                string.lowercase)
+    
+        results = pool.map(check_env, potential_environments)
+        pool.close()
+        pool.join()
+        print set(results)
+    
+    
+    if __name__ == '__main__':
+        main()
+
+Which in turn gives us the following: dp1, sp1, lp1, td1, jd1. At some
+point we should try and see if we can find any references anywhere as to
+what each of these environments are.
+--[FrasierCrane](User:FrasierCrane "wikilink")
+([talk](User%20talk:FrasierCrane.md "wikilink")) 15:53, 10 May 2018
+(CDT)
