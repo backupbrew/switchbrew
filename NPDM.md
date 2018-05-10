@@ -11,23 +11,23 @@ varies.
 
 # META
 
-| Offset | Size | Description                                                                                                 |
-| ------ | ---- | ----------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4  | Magic "META".                                                                                               |
-| 0x4    | 0x8  | Reserved (Padding / Unused)                                                                                 |
-| 0xC    | 0x1  | MmuFlags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be \<= 0xF |
-| 0xE    | 0x1  | Main thread priority (0-63)                                                                                 |
-| 0xF    | 0x1  | DefaultCpuId                                                                                                |
-| 0x10   | 0x4  | Reserved                                                                                                    |
-| 0x14   | 0x4  | System resource size (max size as of 5.x: 534773760). Unknown usage.                                        |
-| 0x18   | 0x4  | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.                                   |
-| 0x1C   | 0x4  | Main entrypoint stack size (This is ignored by the OS so far, not sure what purpose this serves.)           |
-| 0x20   | 0x10 | Title name                                                                                                  |
-| 0x30   | 0x10 | Product code                                                                                                |
-| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                           |
-| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                                                             |
-| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset                                                                           |
-| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size                                                                             |
+| Offset | Size | Description                                                                                                                                                                                                                                                                          |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x4  | Magic "META".                                                                                                                                                                                                                                                                        |
+| 0x4    | 0x8  | Reserved (Padding / Unused)                                                                                                                                                                                                                                                          |
+| 0xC    | 0x1  | MmuFlags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be \<= 0xF                                                                                                                                                                          |
+| 0xE    | 0x1  | Main thread priority (0-63)                                                                                                                                                                                                                                                          |
+| 0xF    | 0x1  | DefaultCpuId                                                                                                                                                                                                                                                                         |
+| 0x10   | 0x4  | Reserved                                                                                                                                                                                                                                                                             |
+| 0x14   | 0x4  | System resource size (max size as of 5.x: 534773760). Unknown usage.                                                                                                                                                                                                                 |
+| 0x18   | 0x4  | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.                                                                                                                                                                                                            |
+| 0x1C   | 0x4  | Main entrypoint stack size (This is ignored by the OS so far, not sure what purpose this serves. Values over 4095 can break the OS. In non-nspwn scenarios, values of 0 can also rarely break in Horizon. This might be something auto-adapting or a security feature of some sort?) |
+| 0x20   | 0x10 | Title name                                                                                                                                                                                                                                                                           |
+| 0x30   | 0x10 | Product code                                                                                                                                                                                                                                                                         |
+| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                                                                                                                                                                                                    |
+| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                                                                                                                                                                                                                                      |
+| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset                                                                                                                                                                                                                                                    |
+| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size                                                                                                                                                                                                                                                      |
 
 # ACID
 
