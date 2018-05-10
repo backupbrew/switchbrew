@@ -55,8 +55,16 @@ It starts with the "NSO" header and mainly describes .text, .rodata, and .data s
 | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes.
 |-
 | 0x60
-| 0x4 * 3
-| CompressedSize[3]
+| 0x4
+| .text compressed size
+|-
+| 0x64
+| 0x4
+| .rodata compressed size
+|-
+| 0x68
+| 0x4
+| .data compressed size
 |-
 | 0x6C
 | 0x1C

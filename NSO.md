@@ -19,7 +19,9 @@ headers):
 | 0x30   | 0xC       | .data SegmentHeader                                                                                        |
 | 0x3C   | 0x4       | bssSize                                                                                                    |
 | 0x40   | 0x20      | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes.           |
-| 0x60   | 0x4 \* 3  | CompressedSize\[3\]                                                                                        |
+| 0x60   | 0x4       | .text compressed size                                                                                      |
+| 0x64   | 0x4       | .rodata compressed size                                                                                    |
+| 0x68   | 0x4       | .data compressed size                                                                                      |
 | 0x6C   | 0x1C      | Reserved (Padding)                                                                                         |
 | 0x88   | 0x8       | .rodata-relative extents of .api\_info                                                                     |
 | 0x90   | 0x8       | .rodata-relative extents of .dynstr                                                                        |
