@@ -36,7 +36,7 @@ It starts with the "NSO" header and mainly describes .text, .rodata, and .data s
 |-
 | 0x20
 | 0xC
-| .ro SegmentHeader
+| .rodata SegmentHeader
 |-
 | 0x2C
 | 0x4

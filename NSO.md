@@ -14,7 +14,7 @@ headers):
 | 0xC    | 4         | Flags, bit 0-2: (.text, .rodata and .data) section is compressed, bit 3-5: check section hash when loading |
 | 0x10   | 0xC       | .text SegmentHeader                                                                                        |
 | 0x1C   | 0x4       | Module offset (calculated by sizeof(header))                                                               |
-| 0x20   | 0xC       | .ro SegmentHeader                                                                                          |
+| 0x20   | 0xC       | .rodata SegmentHeader                                                                                      |
 | 0x2C   | 0x4       | Module file size                                                                                           |
 | 0x30   | 0xC       | .data SegmentHeader                                                                                        |
 | 0x3C   | 0x4       | bssSize                                                                                                    |
