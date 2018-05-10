@@ -45,3 +45,21 @@ what each of these environments are.
     did you mean "dd1"? Code mentions "dd1" only.
     --[Hexkyz](User:Hexkyz "wikilink")
     ([talk](User%20talk:Hexkyz.md "wikilink")) 16:07, 10 May 2018 (CDT)
+
+<!-- end list -->
+
+  -   
+    dp1 is correct. My theory is that the second character refers to
+    either (p)roduction (retail unit) or (d)evelopment (SDEV units?).
+    dp1 might be an internal retail unit testing backend for Nintendo. I
+    can't work out the first characters meaning though, SciresM did a
+    big post on reddit that explains some of it and gives other
+    potential domains but, the first character is still a mystery.
+    Here's all I can think for the first character:
+
+d = Development (Third party developers?) t = Testing (Nintendo Internal
+rather than third party?) s = Lotcheck (How s = lotcheck, I don't know,
+SciresM reddit post does mention an s domain for lotcheck though. l =
+Live (Retail) --[FrasierCrane](User:FrasierCrane "wikilink")
+([talk](User%20talk:FrasierCrane.md "wikilink")) 17:12, 10 May 2018
+(CDT)
