@@ -11,13 +11,19 @@ headers):
 | 0x0    | 4         | Magic "NSO0"                                                                                        |
 | 0x4    | 4         | NSO Version (Always 0)                                                                              |
 | 0x8    | 4         | Reserved (Unused)                                                                                   |
-| 0xC    | 4         | Flags, bit 0-2: section is compressed, bit 3-5: check section hash when loading                     |
-| 0x10   | 0x10 \* 3 | SegmentHeader\[3\]                                                                                  |
+| 0xC    | 4         | Flags, bit 0-2: (.data, .text, .ro) section is compressed, bit 3-5: check section hash when loading |
+| 0x10   | 0xC       | .text SegmentHeader                                                                                 |
+| 0x1C   | 0x4       | Module offset (calculated by sizeof(header))                                                        |
+| 0x20   | 0xC       | .ro SegmentHeader                                                                                   |
+| 0x2C   | 0x4       | Module file size                                                                                    |
+| 0x30   | 0xC       | .data SegmentHeader                                                                                 |
+| 0x3C   | 0x4       | bssSize                                                                                             |
 | 0x40   | 0x20      | Value of "build id" from ELF's GNU .note section. Contains variable sized digest, up to 32bytes.    |
 | 0x60   | 0x4 \* 3  | CompressedSize\[3\]                                                                                 |
-| 0x6c   | 0x24      | Padding                                                                                             |
-| 0x90   | 8         | .rodata-relative extents of .dynstr                                                                 |
-| 0x98   | 8         | .rodata-relative extents of .dynsym                                                                 |
+| 0x6C   | 0x1C      | Reserved (Padding)                                                                                  |
+| 0x88   | 0x8       | .rodata-relative extents of .api\_info                                                              |
+| 0x90   | 0x8       | .rodata-relative extents of .dynstr                                                                 |
+| 0x98   | 0x8       | .rodata-relative extents of .dynsym                                                                 |
 | 0xA0   | 0x20 \* 3 | SHA256 hashes over the decompressed sections using the above byte-sizes: .text, .rodata, and .data. |
 | 0x100  |           | Compressed sections                                                                                 |
 
@@ -27,12 +33,11 @@ a PT\_DYNAMIC program header.
 
 ## SegmentHeader
 
-| Offset | Size | Description               |
-| ------ | ---- | ------------------------- |
-| 0x0    | 4    | FileOffset                |
-| 0x4    | 4    | MemoryOffset              |
-| 0x8    | 4    | DecompressedSize          |
-| 0xC    | 4    | UnkOffset/UnkSize/BssSize |
+| Offset | Size | Description      |
+| ------ | ---- | ---------------- |
+| 0x0    | 0x4  | FileOffset       |
+| 0x4    | 0x4  | MemoryOffset     |
+| 0x8    | 0x4  | DecompressedSize |
 
 ## .rodata-relative extent
 
