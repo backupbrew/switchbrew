@@ -201,7 +201,7 @@ Takes a pid.
 | 
 |-
 | npns:u, npns:s
-| NPNS services
+| [[NPNS services]]
 |
 |-
 | nvdrv:a, nvdrv:s, nvdrv:t, nvdrv, nvdrvdbg, nvgem:c, nvgem:cd, nvmemp

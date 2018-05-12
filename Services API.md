@@ -248,7 +248,7 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>npns:u, npns:s</p></td>
-<td><p>NPNS services</p></td>
+<td><p><a href="NPNS services.md" title="wikilink">NPNS services</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">
