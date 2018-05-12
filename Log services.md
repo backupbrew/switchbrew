@@ -10,9 +10,9 @@ This is "nn::lm::ILogService".
 
 This is "nn::lm::ILogger".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
+| Cmd | Name           |
+| --- | -------------- |
+| 0   | Initialize     |
+| 1   | SetDestination |
 
 [Category:Services](Category:Services "wikilink")
