@@ -1,7 +1,7 @@
 APM is utilized for setting system performance profiles including clocks
 for CPU, GPU, and memory.
 
-## apm
+# apm
 
 This is
 "nn::apm::IManager".
@@ -11,7 +11,7 @@ This is
 | 0   | OpenSession        | Returns an [\#ISession](#ISession "wikilink"). |
 | 1   | GetPerformanceMode |                                                |
 
-## apm:p
+# apm:p
 
 This is "nn::apm::IManagerPrivileged".
 
@@ -19,7 +19,7 @@ This is "nn::apm::IManagerPrivileged".
 | --- | ----------- | ---------------------------------------------- |
 | 0   | OpenSession | Returns an [\#ISession](#ISession "wikilink"). |
 
-## apm:sys
+# apm:sys
 
 This is
 "nn::apm::ISystemManager".
@@ -33,21 +33,24 @@ This is
 | 4   | ClearLastThrottlingState        |                                                |
 | 5   | \[5.0.0+\] LoadAndApplySettings |                                                |
 
-## ISession
+# ISession
+
+This is
+"nn::apm::ISession".
 
 | Cmd | Name                        | Notes                                                                   |
 | --- | --------------------------- | ----------------------------------------------------------------------- |
 | 0   | SetPerformanceConfiguration | Takes u32 PerformanceMode and u32 PerformanceConfiguration.             |
 | 1   | GetPerformanceConfiguration | Takes u32 PerformanceMode, returns output u32 PerformanceConfiguration. |
 
-### PerformanceMode
+## PerformanceMode
 
 | Value | Name     |
 | ----- | -------- |
 | 0     | Handheld |
 | 1     | Docked   |
 
-### PerformanceConfiguration
+## PerformanceConfiguration
 
 | Value      | CPU clock | GPU clock | Memory clock |
 | ---------- | --------- | --------- | ------------ |
@@ -70,10 +73,38 @@ Configurations 0x10001 and 0x20000 are only available while docked.
 Configurations 0x10002 and 0x20002 do not seem to be available at all
 (dependent on apm settings?).
 
-Some of these require
-apm:p.
+Some of these require apm:p.
 
-## Settings
+# fgm, fgm:0, fgm:9
+
+This is "nn::fgm::sf::ISession".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   | Initialize |
+
+## IRequest
+
+This is "nn::fgm::sf::IRequest".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   | Initialize |
+| 1   | Set        |
+| 2   | Get        |
+| 3   | Cancel     |
+
+# fgm:dbg
+
+This is "nn::fgm::sf::IDebugger".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   | Initialize |
+| 1   | Read       |
+| 2   | Cancel     |
+
+# Settings
 
 | Key                                          | Size   | Notes                                                                                                             |
 | -------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------- |

@@ -1,6 +1,6 @@
 APM is utilized for setting system performance profiles including clocks for CPU, GPU, and memory.
 
-== apm ==
+= apm =
 This is "nn::apm::IManager".
 
 {| class="wikitable" border="1"
@@ -12,7 +12,7 @@ This is "nn::apm::IManager".
 | 1 || GetPerformanceMode || 
 |}
 
-== apm:p ==
+= apm:p =
 This is "nn::apm::IManagerPrivileged".
 
 {| class="wikitable" border="1"
@@ -22,7 +22,7 @@ This is "nn::apm::IManagerPrivileged".
 | 0 || OpenSession || Returns an [[#ISession]].
 |}
 
-== apm:sys ==
+= apm:sys =
 This is "nn::apm::ISystemManager".
 
 {| class="wikitable" border="1"
@@ -42,7 +42,9 @@ This is "nn::apm::ISystemManager".
 | 5 || [5.0.0+] LoadAndApplySettings || 
 |}
 
-== ISession ==
+= ISession =
+This is "nn::apm::ISession".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -52,7 +54,7 @@ This is "nn::apm::ISystemManager".
 | 1 || GetPerformanceConfiguration  || Takes u32 PerformanceMode, returns output u32 PerformanceConfiguration.
 |}
 
-=== PerformanceMode ===
+== PerformanceMode ==
 {| class="wikitable" border="1"
 |-
 ! Value || Name
@@ -62,7 +64,7 @@ This is "nn::apm::ISystemManager".
 | 1 || Docked
 |}
 
-=== PerformanceConfiguration ===
+== PerformanceConfiguration ==
 {| class="wikitable" border="1"
 |-
 ! Value || CPU clock || GPU clock || Memory clock
@@ -97,7 +99,47 @@ Configurations 0x10001 and 0x20000 are only available while docked. Configuratio
 
 Some of these require apm:p.
 
-== Settings ==
+= fgm, fgm:0, fgm:9 =
+This is "nn::fgm::sf::ISession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Initialize
+|}
+
+== IRequest ==
+This is "nn::fgm::sf::IRequest".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Initialize
+|-
+| 1 || Set
+|-
+| 2 || Get
+|-
+| 3 || Cancel
+|}
+
+= fgm:dbg =
+This is "nn::fgm::sf::IDebugger".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Initialize
+|-
+| 1 || Read
+|-
+| 2 || Cancel
+|}
+
+= Settings =
 {| class="wikitable" border="1"
 |-
 ! Key || Size || Notes
