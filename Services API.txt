@@ -176,7 +176,7 @@ Takes a pid.
 | [[Loader services]]
 |
 |-
-| lm
+| lm, lm:get
 | [[Log services]]
 |
 |-

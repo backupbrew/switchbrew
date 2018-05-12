@@ -217,7 +217,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>lm</p></td>
+<td><p>lm, lm:get</p></td>
 <td><p><a href="Log services.md" title="wikilink">Log services</a></p></td>
 <td></td>
 </tr>
