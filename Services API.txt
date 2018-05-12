@@ -147,7 +147,7 @@ Takes a pid.
 | 
 |-
 | friend:u, friend:v, friend:m, friend:s, friend:a, [5.0.0+] nd:app, nd:sys
-| Friend services
+| [[Friend services]]
 |
 |-
 | fsp-srv, fsp-ldr, fsp-pr

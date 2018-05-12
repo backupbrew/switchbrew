@@ -182,7 +182,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>friend:u, friend:v, friend:m, friend:s, friend:a, [5.0.0+] nd:app, nd:sys</p></td>
-<td><p>Friend services</p></td>
+<td><p><a href="Friend services.md" title="wikilink">Friend services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
