@@ -15,4 +15,16 @@ This is "nn::lm::ILogger".
 | 0   | Initialize     |
 | 1   | SetDestination |
 
+# lm:get
+
+This is "nn::lm::ILogGetter".
+
+| Cmd | Name         |
+| --- | ------------ |
+| 0   | StartLogging |
+| 1   | StopLogging  |
+| 2   | GetLog       |
+
+This service doesn't normally exist on retail.
+
 [Category:Services](Category:Services "wikilink")
