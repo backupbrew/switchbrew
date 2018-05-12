@@ -1,6 +1,4 @@
-
 = btm =
-
 This is "nn::btm::IBtm".
 
 {| class="wikitable" border="1"
@@ -11,7 +9,7 @@ This is "nn::btm::IBtm".
 |-
 | 1 ||
 |-
-| 2 ||
+| 2 || RegisterSystemEventForConnectedDeviceConditionImpl
 |-
 | 3 ||
 |-
@@ -23,7 +21,7 @@ This is "nn::btm::IBtm".
 |-
 | 7 ||
 |-
-| 8 ||
+| 8 || RegisterSystemEventForRegisteredDeviceInfoImpl
 |-
 | 9 ||
 |-
@@ -35,29 +33,33 @@ This is "nn::btm::IBtm".
 |-
 | 13 ||
 |-
-| 14 ||
+| 14 || EnableRadioImpl
 |-
-| 15 ||
+| 15 || DisableRadioImpl
 |-
 | 16 ||
 |-
 | 17 ||
 |-
-| 18 ||
+| 18 || [2.0.0+]
 |-
+| 19 || [4.0.0+]
+|-
+| 20 || [4.0.0+]
+|-
+| 21 || [4.0.0+]
 |}
 
 = btm:dbg =
-
 This is "nn::btm::IBtmDebug".
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || RegisterSystemEventForDiscoveryImpl
 |-
-| 1 ||
+| 1 || 
 |-
 | 2 ||
 |-
@@ -72,11 +74,9 @@ This is "nn::btm::IBtmDebug".
 | 7 ||
 |-
 | 8 ||
-|-
 |}
 
 = btm:sys =
-
 This is "nn::btm::IBtmSystem".
 
 {| class="wikitable" border="1"
@@ -84,11 +84,9 @@ This is "nn::btm::IBtmSystem".
 ! Cmd || Name
 |-
 | 0 || GetCoreImpl
-|-
 |}
 
 == IBtmSystemCore ==
-
 This is "nn::btm::IBtmSystemCore".
 
 {| class="wikitable" border="1"
@@ -109,12 +107,13 @@ This is "nn::btm::IBtmSystemCore".
 |-
 | 6 || GetRadioOnOffImpl
 |-
-| 7 || AcquireRadioEventImpl
+| 7 || [2.0.0+] AcquireRadioEventImpl
 |-
-| 8 || AcquireGamepadPairingEventImpl
+| 8 || [2.0.0+] AcquireGamepadPairingEventImpl
 |-
-| 9 || IsGamepadPairingStartedImpl
-|-
+| 9 || [2.0.0+] IsGamepadPairingStartedImpl
 |}
+
+= btm:u =
 
 [[Category:Services]]
