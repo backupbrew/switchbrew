@@ -136,7 +136,7 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>friends</p></td>
+<td><p><a href="Friend services.md" title="wikilink">friends</a></p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000000F</p></td>
@@ -220,7 +220,7 @@ Decimal versions use the format:
 <a href="3.0.2.md" title="wikilink">v201457684</a> (3.0.2.20)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>wlan</p></td>
+<td><p><a href="WLAN services.md" title="wikilink">wlan</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000017</p></td>
@@ -270,7 +270,7 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>ppc</p></td>
+<td><p><a href="PPC services.md" title="wikilink">ppc</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000001C</p></td>
@@ -325,7 +325,7 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>nfc</p></td>
+<td><p><a href="NFC services.md" title="wikilink">nfc</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000021</p></td>
@@ -445,7 +445,7 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>npns</p></td>
+<td><p><a href="NPNS services.md" title="wikilink">npns</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000030</p></td>
@@ -487,7 +487,7 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>es</p></td>
+<td><p><a href="ETicket services.md" title="wikilink">es</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000034</p></td>
@@ -538,7 +538,7 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>[3.0.0+] sdb</p></td>
+<td><p>[3.0.0+] <a href="Shared Database services.md" title="wikilink">sdb</a></p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000003A</p></td>
