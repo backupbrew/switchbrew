@@ -92,7 +92,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>apm, apm:p, apm:dbg, apm:sys, fgm, fgm:0, fgm:9, fgm:dbg</p></td>
-<td><p><a href="APM services.md" title="wikilink">APM services</a></p></td>
+<td><p><a href="PPC services.md" title="wikilink">PPC services</a></p></td>
 <td><p>fgm:1, fgm:2, fgm:3, fgm:4, fgm:5, fgm:6 and fgm:7 used to exist, but are now deprecated.</p></td>
 </tr>
 <tr class="even">
@@ -314,7 +314,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc</p></td>
-<td><p>WLAN services</p></td>
+<td><p><a href="WLAN services.md" title="wikilink">WLAN services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
