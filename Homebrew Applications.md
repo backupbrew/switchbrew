@@ -83,10 +83,10 @@ available.
 
 ### Save managers
 
-| Name       | Description                                                                                | Author            | Download                                                        | Open-Source                                           | Last Updated |
-| ---------- | ------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------- | ----------------------------------------------------- | ------------ |
-| Checkpoint | Fast and simple save manager for 3DS and Switch written in C++. Compatible with \<= 3.0.0. | Bernardo Giordano | [Here](https://github.com/BernardoGiordano/Checkpoint/releases) | [Yes](https://github.com/BernardoGiordano/Checkpoint) | 2018-05-09   |
-|            |                                                                                            |                   |                                                                 |                                                       |              |
+| Name       | Description                                                     | Author            | Download                                                               | Open-Source                                           | Last Updated |
+| ---------- | --------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------- | ----------------------------------------------------- | ------------ |
+| Checkpoint | Fast and simple save manager for 3DS and Switch written in C++. | Bernardo Giordano | [Here](https://github.com/BernardoGiordano/Checkpoint/releases/latest) | [Yes](https://github.com/BernardoGiordano/Checkpoint) | 2018-05-14   |
+|            |                                                                 |                   |                                                                        |                                                       |              |
 
 ### File servers
 
