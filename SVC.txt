@@ -180,7 +180,7 @@ __NOTOC__
 |-
 | 0x62 || svcTerminateDebugProcess || W0=debug_handle || W0=result
 |-
-| 0x63 || svcGetDebugEvent || X0=DebugEventInfo*, W1=debug_handle || W0=result
+| 0x63 || svcGetDebugEvent || X0=[[#DebugEventInfo]]*, W1=debug_handle || W0=result
 |-
 | 0x64 || svcContinueDebugEvent || W0=debug_handle, W1=[[#ContinueDebugFlags]], X2=thread_id || W0=result
 |-
