@@ -1757,6 +1757,9 @@ On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool
 |}
 
 == DebugEventInfo ==
+
+Size: 0x40
+
 {| class=wikitable
 ! Offset || Length || Description
 |-

@@ -1487,6 +1487,8 @@ partitions.
 
 ## DebugEventInfo
 
+Size: 0x40
+
 | Offset | Length | Description                 |
 | ------ | ------ | --------------------------- |
 | 0      | u32    | EventType                   |
