@@ -51,8 +51,12 @@ that Linux x86\_64 binaries are usable under WSL.
       - Fedora/CentOS/RHEL: `sudo yum install git curl`
       - openSUSE: `sudo zypper install git curl`
       - Arch Linux/ALWSL: `sudo pacman -S git curl wget`
-      - macOS: Download Git from [1](http://git-scm.com/download/mac)
-        and install it. Curl is included with the OS.
+      - macOS: [Download Git](http://git-scm.com/download/mac) and
+        install it. Curl is included with the OS, but it might be too
+        old to accept the newer TLS. If the third command below fails,
+        [follow these
+        instructions.](https://stackoverflow.com/questions/38131012/why-does-a-new-user-account-fix-my-pod-install)
+        and try again.
 
 <!-- end list -->
 

@@ -22,7 +22,7 @@ Currently devkitPro provides precompiled versions of devkitARM for the following
 ** Fedora/CentOS/RHEL: <code>sudo yum install git curl</code>
 ** openSUSE: <code>sudo zypper install git curl</code>
 ** Arch Linux/ALWSL: <code>sudo pacman -S git curl wget</code>
-** macOS: Download Git from [http://git-scm.com/download/mac] and install it. Curl is included with the OS.
+** macOS: [http://git-scm.com/download/mac Download Git] and install it. Curl is included with the OS, but it might be too old to accept the newer TLS. If the third command below fails,  [https://stackoverflow.com/questions/38131012/why-does-a-new-user-account-fix-my-pod-install follow these instructions.] and try again.
 
 * Next, we need to download, make executable and run the devkitARM updater (don't worry, the updater is also the installer.)
 <pre>
