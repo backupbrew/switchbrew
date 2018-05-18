@@ -41,7 +41,7 @@ Each service is used by:
 |-
 | 12 || [3.0.0+] [[#Ioctl3]]
 |-
-| 13 || [3.0.0+]
+| 13 || [3.0.0+] FinishInitialize
 |}
 
 == Open ==

@@ -29,7 +29,7 @@ titles
 | 10  | \[3.0.0+\] [\#InitializeDevtools](#InitializeDevtools "wikilink") |
 | 11  | \[3.0.0+\] [\#Ioctl2](#Ioctl2 "wikilink")                         |
 | 12  | \[3.0.0+\] [\#Ioctl3](#Ioctl3 "wikilink")                         |
-| 13  | \[3.0.0+\]                                                        |
+| 13  | \[3.0.0+\] FinishInitialize                                       |
 
 ## Open
 
