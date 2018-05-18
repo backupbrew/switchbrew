@@ -304,6 +304,8 @@ When a path ending in ".nsp" is parsed by MountCode, the PFS0 is treated as a ra
 The actual .nsp handling is eventually done by {content mounting function} called by MountCode and other FS commands.
 
 Thus, by placing an ExeFS (NSOs + "main.npdm") and setting one's desired title ID to "@Sdcard:/some_title.nsp" or "@User:/some_title.nsp" etc one can launch arbitrary unsigned code, with arbitrary unsigned NPDMs.
+
+This appears to have been fixed by only allowing .nsp when the input fstype==7 for the internal content-mounting function, returning 0x2EE202 otherwise.
 | With access to "lr": Arbitrary code execution with full system privileges.
 | [[5.0.0]]
 | [[5.0.0]]

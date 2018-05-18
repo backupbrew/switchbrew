@@ -368,7 +368,8 @@ modules](Package2#Section%201.md##Section_1 "wikilink").
 <td><p>fsp-ldr command 0 &quot;MountCode&quot; takes in a Content Path (retrieved from NCM by Loader), and returns an IFileSystem for the resulting ExeFS. These content paths, are normally NCAs, but MountCode also supports a number of other formats, including &quot;.nsp&quot; -- which is just a PFS0.</p>
 <p>When a path ending in &quot;.nsp&quot; is parsed by MountCode, the PFS0 is treated as a raw ExeFS. Because there is no NCA header, the ACID signatures are not validated -- and because there are no other signatures in a PFS0, this results in no signature checking happening at all.</p>
 <p>The actual .nsp handling is eventually done by {content mounting function} called by MountCode and other FS commands.</p>
-<p>Thus, by placing an ExeFS (NSOs + &quot;main.npdm&quot;) and setting one's desired title ID to &quot;@Sdcard:/some_title.nsp&quot; or &quot;@User:/some_title.nsp&quot; etc one can launch arbitrary unsigned code, with arbitrary unsigned NPDMs.</p></td>
+<p>Thus, by placing an ExeFS (NSOs + &quot;main.npdm&quot;) and setting one's desired title ID to &quot;@Sdcard:/some_title.nsp&quot; or &quot;@User:/some_title.nsp&quot; etc one can launch arbitrary unsigned code, with arbitrary unsigned NPDMs.</p>
+<p>This appears to have been fixed by only allowing .nsp when the input fstype==7 for the internal content-mounting function, returning 0x2EE202 otherwise.</p></td>
 <td><p>With access to &quot;lr&quot;: Arbitrary code execution with full system privileges.</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">5.0.0</a></p></td>
 <td><p><a href="5.0.0.md" title="wikilink">5.0.0</a></p></td>
