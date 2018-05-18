@@ -72,7 +72,7 @@ __NOTOC__
 |-
 | 0x22 || [[#svcSendSyncRequestWithUserBuffer]] || X0=cmdbufptr, X1=size, X2=handle || W0=result
 |-
-| 0x23 || svcSendAsyncRequestWithUserBuffer || X1=cmdbufptr, X2=size, X3=handle || W0=result, W1=event_handle
+| 0x23 || svcSendAsyncRequestWithUserBuffer || X1=cmdbufptr, X2=size, X3=handle || W0=result, W1=revent_handle
 |-
 | 0x24 || svcGetProcessId || W1=thread_or_process_or_debug_handle || W0=result, X1=pid
 |-
