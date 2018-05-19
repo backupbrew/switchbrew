@@ -610,6 +610,8 @@ When decrypted, the blob is encapsulated in the following header.
 | 0x18   | 4    | Section 2 size   |
 | 0x1C   | 4    | Section 2 offset |
 
+What each section is used for may vary per system-version.
+
 ### Section 0
 
 This section contains the warmboot binary.
