@@ -31,13 +31,13 @@ Some of the "placehld/<hex>" directories are temp-only and don't get moved into 
 
 No titleIDs are stored in any directories/filenames here.
 
-All hex IDs(below 000000XX and NcaId) used here are unique per title/content. XX is calculated as the first byte from the output of SHA-256(NcaId).
+All hex IDs (shown below as 000000XX and [[NCM_services#NcaID|NcaId]]) used here are unique per title/content. XX is calculated as the first byte from the output of the binary SHA-256(Nca directory).
 
 Game contents are stored inside [[NAX0]] archives; due to the 4 GB filesize limit on FAT32, contents that are bigger than 4 GB have additional file contents automatically split into separate files. This automatic file-splitting occurs even on exFAT SD cards where it is not necessary.
 
  <sub-directory under Contents>
  └── <directories with upper-case hex: 000000XX>
-     └── <lowercase hex [[Content_Manager_services|NcaId]]>.nca
+     └── <lower-case hex Nca directory>.nca
          └── 00 [[NAX0|actual file for data storage]]
          └── 01 (storage for file data at +4GB in the actual NCA)
          └── {etc}

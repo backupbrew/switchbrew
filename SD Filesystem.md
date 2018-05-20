@@ -49,20 +49,20 @@ moved into "registered".
 
 No titleIDs are stored in any directories/filenames here.
 
-All hex IDs(below 000000XX and NcaId) used here are unique per
-title/content. XX is calculated as the first byte from the output of
-SHA-256(NcaId).
+All hex IDs (shown below as 000000XX and
+[NcaId](NCM%20services#NcaID.md##NcaID "wikilink")) used here are unique
+per title/content. XX is calculated as the first byte from the output of
+the binary SHA-256(Nca directory).
 
 Game contents are stored inside [NAX0](NAX0.md "wikilink") archives; due
 to the 4 GB filesize limit on FAT32, contents that are bigger than 4 GB
 have additional file contents automatically split into separate files.
 This automatic file-splitting occurs even on exFAT SD cards where it is
-not
-necessary.
+not necessary.
 
 <sub-directory under Contents>  
 `└── <directories with upper-case hex: 000000XX>`  
-`    └── <lowercase hex `[`NcaId`](Content%20Manager%20services.md "wikilink")`>.nca`  
+`    └── `<lower-case hex Nca directory>`.nca`  
 `        └── 00 `[`actual`` ``file`` ``for`` ``data``
 ``storage`](NAX0.md "wikilink")  
 `        └── 01 (storage for file data at +4GB in the actual NCA)`  
