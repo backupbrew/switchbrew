@@ -13,25 +13,9 @@ devkitPro provides 64bit precompiled windows binaries of devkitA64 which can be 
 ** Windows 10 (post-Anniversary Update): Start -> devkitPro -> MSYS
 
 ==Unix-like platforms==
-Currently devkitPro provides precompiled versions of devkitARM for the following Unix-like platforms: Linux (x86_64), macOS (x86_64). Note that Linux x86_64 binaries are usable under WSL.
+Currently devkitPro provides precompiled versions of devkitA64 for the following Unix-like platforms: Linux (x86_64), macOS (x86_64). Note that Linux x86_64 binaries are usable under WSL.
 
-* First, you need to install curl so the installer can download the devkitARM packages, and you should also install Git - you'll need it to update libnx or share your code on GitHub, among many other things. If you are running Linux, you'll also need wget; it comes preinstalled on most distributions, but not all.
-
-* Find your way into a shell (eg. by opening a Terminal window), and follow the instructions for your OS:
-** Debian/Ubuntu/Linux Mint/Ubuntu on WSL: <code>sudo apt-get install git curl</code>
-** Fedora/CentOS/RHEL: <code>sudo yum install git curl</code>
-** openSUSE: <code>sudo zypper install git curl</code>
-** Arch Linux/ALWSL: <code>sudo pacman -S git curl wget</code>
-** macOS: [http://git-scm.com/download/mac Download Git] and install it. Curl is included with the OS, but it might be too old to accept the newer TLS. If the third command below fails,  [https://stackoverflow.com/questions/38131012/why-does-a-new-user-account-fix-my-pod-install follow these instructions.] and try again.
-
-* Next, we need to download, make executable and run the devkitARM updater (don't worry, the updater is also the installer.)
-<pre>
-curl -L https://raw.githubusercontent.com/devkitPro/installer/master/perl/devkitA64update.pl -o devkitA64update.pl
-chmod +x ./devkitA64update.pl
-./devkitA64update.pl
-</pre>
-
-You can either use sudo here or chown /opt/devkitpro to be writable by your user before running the script.
+* Follow the instructions to install pacman found at https://github.com/devkitPro/pacman/releases/latest
 
 = Building the examples =
 Switch examples are still being created; however, there are a growing number of examples available from the [https://github.com/switchbrew/switch-examples switchbrew/switch-examples GitHub repository]. These are downloaded by the installer and can be found in $DEVKITPRO/examples/switch

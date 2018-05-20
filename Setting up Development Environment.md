@@ -32,46 +32,12 @@ can be run directly on Windows.
 
 ## Unix-like platforms
 
-Currently devkitPro provides precompiled versions of devkitARM for the
+Currently devkitPro provides precompiled versions of devkitA64 for the
 following Unix-like platforms: Linux (x86\_64), macOS (x86\_64). Note
 that Linux x86\_64 binaries are usable under WSL.
 
-  - First, you need to install curl so the installer can download the
-    devkitARM packages, and you should also install Git - you'll need it
-    to update libnx or share your code on GitHub, among many other
-    things. If you are running Linux, you'll also need wget; it comes
-    preinstalled on most distributions, but not all.
-
-<!-- end list -->
-
-  - Find your way into a shell (eg. by opening a Terminal window), and
-    follow the instructions for your OS:
-      - Debian/Ubuntu/Linux Mint/Ubuntu on WSL: `sudo apt-get install
-        git curl`
-      - Fedora/CentOS/RHEL: `sudo yum install git curl`
-      - openSUSE: `sudo zypper install git curl`
-      - Arch Linux/ALWSL: `sudo pacman -S git curl wget`
-      - macOS: [Download Git](http://git-scm.com/download/mac) and
-        install it. Curl is included with the OS, but it might be too
-        old to accept the newer TLS. If the third command below fails,
-        [follow these
-        instructions.](https://stackoverflow.com/questions/38131012/why-does-a-new-user-account-fix-my-pod-install)
-        and try again.
-
-<!-- end list -->
-
-  - Next, we need to download, make executable and run the devkitARM
-    updater (don't worry, the updater is also the
-    installer.)
-
-<!-- end list -->
-
-    curl -L https://raw.githubusercontent.com/devkitPro/installer/master/perl/devkitA64update.pl -o devkitA64update.pl
-    chmod +x ./devkitA64update.pl
-    ./devkitA64update.pl
-
-You can either use sudo here or chown /opt/devkitpro to be writable by
-your user before running the script.
+  - Follow the instructions to install pacman found at
+    <https://github.com/devkitPro/pacman/releases/latest>
 
 # Building the examples
 
