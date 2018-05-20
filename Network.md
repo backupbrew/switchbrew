@@ -219,7 +219,7 @@ URLs:
 `Replaces previous device_auth_token URL.`  
   
 `[5.0.0+] "https://dauth-%.ndas.srv.nintendo.net/v3-59ed5fa1c25bb2aea8c4d73d74b919a94d89ed48d6865b728f63547943b17404/challenge"`  
-`CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "key_generation=%u", "5");`
+`CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "key_generation=%u", 5);`
 
 #### znc
 
