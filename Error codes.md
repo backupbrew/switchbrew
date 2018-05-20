@@ -24,7 +24,8 @@ fatal-errors, since the Description ends with bit21.
 | ----- | ------------------------------------------------------ |
 | 1     | Kernel                                                 |
 | 2     | FS                                                     |
-| 3     | Memory (also used for NVIDIA)                          |
+| 3     | OS (Memory, Thread, Mutex, NVIDIA)                     |
+| 4     | HTCS                                                   |
 | 5     | NCM                                                    |
 | 6     | DD                                                     |
 | 8     | LR                                                     |
@@ -55,6 +56,7 @@ fatal-errors, since the Description ends with bit21.
 | 115   | NFP                                                    |
 | 116   | Time                                                   |
 | 117   | FGM                                                    |
+| 118   | OE                                                     |
 | 120   | PCIe                                                   |
 | 121   | Friends                                                |
 | 122   | BCAT                                                   |
@@ -83,12 +85,14 @@ fatal-errors, since the Description ends with bit21.
 | 146   | NGC (Bad Words)                                        |
 | 147   | Error Report                                           |
 | 148   | APM                                                    |
+| 150   | Profiler                                               |
 | 151   | Error Upload                                           |
 | 153   | Audio                                                  |
 | 154   | NPNS                                                   |
 | 155   | NPNS HTTP Stream                                       |
 | 157   | ARP                                                    |
-| 158   | Boot                                                   |
+| 158   | SWKBD                                                  |
+| 159   | Boot                                                   |
 | 161   | NFC Mifare                                             |
 | 162   | Userland assert                                        |
 | 163   | Fatal                                                  |
@@ -97,11 +101,13 @@ fatal-errors, since the Description ends with bit21.
 | 167   | BGTC                                                   |
 | 168   | Userland crash                                         |
 | 180   | SREPO                                                  |
+| 181   | Dauth                                                  |
 | 202   | HID                                                    |
 | 203   | LDN                                                    |
 | 205   | Irsensor                                               |
 | 206   | Capture                                                |
 | 208   | Manu                                                   |
+| 209   | ATK                                                    |
 | 211   |                                                        |
 | 212   | GRC                                                    |
 | 216   | Migration                                              |

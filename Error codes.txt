@@ -22,7 +22,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 2 || FS
 |-
-| 3 || Memory (also used for NVIDIA)
+| 3 || OS (Memory, Thread, Mutex, NVIDIA)
+|-
+| 4 || HTCS
 |-
 | 5 || NCM
 |-
@@ -84,6 +86,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 117 || FGM
 |-
+| 118 || OE
+|-
 | 120 || PCIe
 |-
 | 121 || Friends
@@ -140,6 +144,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 148 || APM
 |-
+| 150 || Profiler
+|-
 | 151 || Error Upload
 |-
 | 153 || Audio
@@ -150,7 +156,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 157 || ARP
 |-
-| 158 || Boot
+| 158 || SWKBD
+|-
+| 159 || Boot
 |-
 | 161 || NFC Mifare
 |-
@@ -168,6 +176,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 180 || SREPO
 |-
+| 181 || Dauth
+|-
 | 202 || HID
 |-
 | 203 || LDN
@@ -177,6 +187,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 206 || Capture
 |-
 | 208 || Manu
+|-
+| 209 || ATK
 |-
 | 211 ||
 |-
