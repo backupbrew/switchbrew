@@ -143,6 +143,9 @@ Application authentication.
 URLs:
  "<nowiki>https://aauth-%.ndas.srv.nintendo.net/v1/application_auth_token</nowiki>"
  "<nowiki>https://aauth-%.ndas.srv.nintendo.net/v1/time</nowiki>"
+ 
+ [5.0.0+] "<nowiki>https://aauth-%.ndas.srv.nintendo.net/v2-44cd4221f90742b5f37a4948b37dacf024d0bb14dde86db0af20ec300a36a0fe/application_auth_token</nowiki>"
+ Replaces previous application_auth_token URL.
 
 ==== dauth ====
 Device authentication.
@@ -150,6 +153,15 @@ Device authentication.
 URLs:
  "<nowiki>https://dauth-%.ndas.srv.nintendo.net/v1/device_auth_token</nowiki>"
  CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "system_version=%08x&client_id=%s", <byte-swapped first 3 bytes from [[System_Version_Title]] loaded via [[Settings_services|settings]] cmd>, "<hard-coded hex string>");
+ 
+ [4.0.0+] "<nowiki>https://dauth-%.ndas.srv.nintendo.net/439528b578b74475d24ec19264097f17d2cc578c8584816b644e7b7fa93044d7/device_auth_token</nowiki>"
+ Replaces previous device_auth_token URL. 
+ 
+ [5.0.0+] "<nowiki>https://dauth-%.ndas.srv.nintendo.net/v3-59ed5fa1c25bb2aea8c4d73d74b919a94d89ed48d6865b728f63547943b17404/device_auth_token</nowiki>"
+ Replaces previous device_auth_token URL.
+ 
+ [5.0.0+] "<nowiki>https://dauth-%.ndas.srv.nintendo.net/v3-59ed5fa1c25bb2aea8c4d73d74b919a94d89ed48d6865b728f63547943b17404/challenge</nowiki>"
+ CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "key_generation=%u", <5>);
 
 ==== znc ====
 Used by the Switch Online app to get app data, like the list of game-specific services to display.

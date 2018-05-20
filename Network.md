@@ -191,12 +191,16 @@ Where:
 
 #### aauth
 
-Application authentication.
+Application
+authentication.
 
 URLs:
 
 `"https://aauth-%.ndas.srv.nintendo.net/v1/application_auth_token"`  
-`"https://aauth-%.ndas.srv.nintendo.net/v1/time"`
+`"https://aauth-%.ndas.srv.nintendo.net/v1/time"`  
+  
+`[5.0.0+] "https://aauth-%.ndas.srv.nintendo.net/v2-44cd4221f90742b5f37a4948b37dacf024d0bb14dde86db0af20ec300a36a0fe/application_auth_token"`  
+`Replaces previous application_auth_token URL.`
 
 #### dauth
 
@@ -206,7 +210,16 @@ authentication.
 URLs:
 
 `"https://dauth-%.ndas.srv.nintendo.net/v1/device_auth_token"`  
-`CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "system_version=%08x&client_id=%s", <byte-swapped first 3 bytes from `[`System_Version_Title`](System%20Version%20Title.md "wikilink")` loaded via `[`settings`](Settings%20services.md "wikilink")` cmd>, "`<hard-coded hex string>`");`
+`CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "system_version=%08x&client_id=%s", <byte-swapped first 3 bytes from `[`System_Version_Title`](System%20Version%20Title.md "wikilink")` loaded via `[`settings`](Settings%20services.md "wikilink")` cmd>, "`<hard-coded hex string>`");`  
+  
+`[4.0.0+] "https://dauth-%.ndas.srv.nintendo.net/439528b578b74475d24ec19264097f17d2cc578c8584816b644e7b7fa93044d7/device_auth_token"`  
+`Replaces previous device_auth_token URL. `  
+  
+`[5.0.0+] "https://dauth-%.ndas.srv.nintendo.net/v3-59ed5fa1c25bb2aea8c4d73d74b919a94d89ed48d6865b728f63547943b17404/device_auth_token"`  
+`Replaces previous device_auth_token URL.`  
+  
+`[5.0.0+] "https://dauth-%.ndas.srv.nintendo.net/v3-59ed5fa1c25bb2aea8c4d73d74b919a94d89ed48d6865b728f63547943b17404/challenge"`  
+`CURLOPT_POSTFIELDS is set to the output from: snprintf(..., "key_generation=%u", <5>);`
 
 #### znc
 
