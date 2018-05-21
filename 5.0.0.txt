@@ -113,6 +113,7 @@ In addition, there were changes to the [[SMC]] interface:
 ** Syscall 0x6F (svcGetMemoryInfo) is used by FS, SM, and PM.
 ** Syscall 0x2E (svcGetNextThreadInfo) was added, but it only works on dev units.
 *** Allows fetching how many bytes free/occupied by the different pools.
+** svcControlCodeMemory was [[SVC#svcControlCodeMemory|updated]].
 * NPDM irq_id's are no longer checked to be < 0x100, instead max-value is loaded from per-cpu state.
 * The order slabheaps are laid out in memory is now randomized.
 * There are now 4 memory pool partitions.
