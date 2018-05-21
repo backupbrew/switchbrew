@@ -22,10 +22,8 @@ Otherwise
     installer](https://github.com/devkitPro/installer/releases) from
     github and run it, following the instructions as you go.
   - An Internet connection is required.
-  - You will want to make sure devkitA64 is selected during the
-    installation process to develop for the Switch - you can also
-    install devkitARM (for 3DS, DS and GBA) and devkitPPC (for
-    GameCube/Wii development) if you wish.
+  - Ensure at least "Switch Development" is ticked - you can also leave
+    the other options ticked if you wish.
   - Once the installer has finished, launch MSYS from:
       - Windows 7 and earlier: Start -\> All Programs -\> devkitPro -\>
         MSYS
