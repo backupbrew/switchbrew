@@ -696,6 +696,9 @@ unmap memory that was previously mapped this way.
 This allows one "secure JIT" process to map the code memory as RW-, and
 the other "slave" process to map it R-X.
 
+\[5.0.0+\] Error 0xE401 is now returned when the process owner of the
+Code memory object is the same as the current process.
+
 ## svcReadWriteRegister
 
 <div style="display: inline-block;">
