@@ -99,14 +99,12 @@ spl::LoadAesKey(screenshot\_kek, <hardcoded screenshot_key_source>); MAC
 ## Videos
 
 [4.0.0](4.0.0.md "wikilink") includes video playback etc support in
-Album via mp4. These include a JPEG thumbnail, which is presumably used
-for video "validation". The EXIF from this JPEG doesn't seem to contain
-the same HMAC data as the original Album JPEGs. The EXIF is also now
-much larger: the MakerNote is 0x498-bytes, with encrypted data starting
-at offset +0x8. This encryption uses AES-CTR with hardcoded key/ctr. MAC
-calculation works the same way as the [3.0.0](3.0.0.md "wikilink")+ JPEG
-MAC calculation, except with a different
-movie\_kek\_source/movie\_key\_source.
+Album via mp4. These include a JPEG thumbnail, which is used for video
+"validation". The EXIF is also much larger: the MakerNote is
+0x498-bytes, with encrypted data starting at offset +0x8. This
+encryption uses AES-CTR with hardcoded key/ctr. MAC calculation works
+the same way as the [3.0.0](3.0.0.md "wikilink")+ JPEG MAC calculation,
+except with a different movie\_kek\_source/movie\_key\_source.
 
 Note: the Album process itself uses libstagefright for video playback.
 
