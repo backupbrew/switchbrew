@@ -89,14 +89,24 @@ zeroes. Then, an HMAC-SHA256 is computed over the entire JPEG using a
 hardcoded secret key. if (memcmp(calculated\_hmac, stored\_hmac, 0x10)
 == 0), the screenshot is valid, else 0xA3ACE is returned.
 
+In [3.0.0](3.0.0.md "wikilink"), MAC calculation was changed: now,
+instead of calculating an HMAC, a plain SHA256 hash is calculated.
+capsrv basically does screenshot\_kek =
+spl::GenerateAesKek(<hardcoded screenshot_kek_source>);
+spl::LoadAesKey(screenshot\_kek, <hardcoded screenshot_key_source>); MAC
+= spl::ComputeCmac(hash);
+
 ## Videos
 
 [4.0.0](4.0.0.md "wikilink") includes video playback etc support in
 Album via mp4. These include a JPEG thumbnail, which is presumably used
 for video "validation". The EXIF from this JPEG doesn't seem to contain
 the same HMAC data as the original Album JPEGs. The EXIF is also now
-much larger: the MakerNote is 0x498-bytes, with random-looking data for
-all of it starting at offset +0x8.
+much larger: the MakerNote is 0x498-bytes, with encrypted data starting
+at offset +0x8. This encryption uses AES-CTR with hardcoded key/ctr. MAC
+calculation works the same way as the [3.0.0](3.0.0.md "wikilink")+ JPEG
+MAC calculation, except with a different
+movie\_kek\_source/movie\_key\_source.
 
 Note: the Album process itself uses libstagefright for video playback.
 
