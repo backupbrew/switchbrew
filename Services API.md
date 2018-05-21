@@ -201,133 +201,138 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
+<td><p>jit:u</p></td>
+<td><p><a href="JIT services.md" title="wikilink">JIT services</a></p></td>
+<td><p>Not currently available on retail units.</p></td>
+</tr>
+<tr class="even">
 <td><p>lbl</p></td>
 <td><p><a href="Backlight services.md" title="wikilink">Backlight services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>ldn:m, ldn:s, ldn:u, [5.0.0+] ndd</p></td>
 <td><p><a href="LDN services.md" title="wikilink">LDN services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>[1.0.0+] ldr:pm, ldr:ro, ldr:shel, ldr:dmnt</p>
 <p>[3.0.0+] ldr:pm, ldr:shel, ldr:dmnt</p></td>
 <td><p><a href="Loader services.md" title="wikilink">Loader services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>lm, lm:get</p></td>
 <td><p><a href="Log services.md" title="wikilink">Log services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>manu</p></td>
 <td><p><a href="Manu Services.md" title="wikilink">Manu Services</a></p></td>
 <td><p>&quot;Manufacturing&quot;, present in factory firmware but not installed on retail systems.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>lr, ncm, ncm:v</p></td>
 <td><p><a href="NCM services.md" title="wikilink">NCM services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>nfc:am, nfc:mf:u, nfc:user, nfc:sys, nfp:user, nfp:dbg, nfp:sys</p></td>
 <td><p><a href="NFC services.md" title="wikilink">NFC services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>nifm:u, nifm:a, nifm:s</p></td>
 <td><p><a href="Network Interface services.md" title="wikilink">Network Interface services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>nim, nim:shp, ntc, [5.0.0+] nim:eca</p></td>
 <td><p><a href="NIM services.md" title="wikilink">NIM services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>npns:u, npns:s</p></td>
 <td><p><a href="NPNS services.md" title="wikilink">NPNS services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>nvdrv:a, nvdrv:s, nvdrv:t, nvdrv, nvdrvdbg, nvgem:c, nvgem:cd, nvmemp</p></td>
 <td><p><a href="NV services.md" title="wikilink">NV services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>pcie</p></td>
 <td><p><a href="PCIe services.md" title="wikilink">PCIe services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>pctl, pctl:a, pctl:s, pctl:r</p></td>
 <td><p><a href="Parental Control services.md" title="wikilink">Parental Control services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>pm:bm, pm:info, pm:shell</p></td>
 <td><p><a href="Process Manager services.md" title="wikilink">Process Manager services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>psc:c, psc:m, [5.0.0+] srepo:u, srepo:a</p></td>
 <td><p><a href="PSC services.md" title="wikilink">PSC services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>[3.0.0+] ldr:ro, ro:dmnt</p></td>
 <td><p><a href="Loader services.md" title="wikilink">RO services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>set, set:fd, set:cal, set:sys</p></td>
 <td><p><a href="Settings services.md" title="wikilink">Settings services</a></p></td>
 <td><p>cal: calibration, sys: System Settings</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>[3.0.0+] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u, [5.0.0+] miiimg</p></td>
 <td><p><a href="Shared Database services.md" title="wikilink">Shared Database services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>ssl</p></td>
 <td><p><a href="SSL services.md" title="wikilink">SSL services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>[1.0.0+] csrng, spl:</p>
 <p>[4.0.0+] csrng, spl:, spl:mig, spl:fs, spl:ssl, spl:es, [5.0.0+] spl:manu</p></td>
 <td><p><a href="SPL services.md" title="wikilink">SPL services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>tspm</p></td>
 <td><p>?</p></td>
 <td><p>Applications on [1.0.0] used to have access to this service, but it doesn't appear to be present on retail devices.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pd:m, usb:pm</p></td>
 <td><p><a href="USB services.md" title="wikilink">USB services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc</p></td>
 <td><p><a href="WLAN services.md" title="wikilink">WLAN services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>[4.0.0+] grc:c</p></td>
 <td><p><a href="GRC services.md" title="wikilink">GRC services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>[4.0.0+] mig:usr</p></td>
 <td><p><a href="Migration services.md" title="wikilink">Migration services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>[4.0.0+] caps:dc</p></td>
 <td><p><a href="Jpegdec services.md" title="wikilink">Jpegdec services</a></p></td>
 <td></td>

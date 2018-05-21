@@ -162,6 +162,10 @@ Takes a pid.
 | [[TMA services]]
 |
 |-
+| jit:u
+| [[JIT services]]
+| Not currently available on retail units.
+|-
 | lbl
 | [[Backlight services]]
 | 
