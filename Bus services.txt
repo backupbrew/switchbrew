@@ -495,9 +495,9 @@ This is "nn::pinmux::ISession".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || SetPinAssignment
 |-
-| 1 || 
+| 1 || GetPinAssignment
 |-
 | 2 || 
 |}

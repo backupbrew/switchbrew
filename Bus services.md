@@ -938,11 +938,11 @@ This is "nn::pinmux::IManager".
 
 This is "nn::pinmux::ISession".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
+| Cmd | Name             |
+| --- | ---------------- |
+| 0   | SetPinAssignment |
+| 1   | GetPinAssignment |
+| 2   |                  |
 
 # sasbus
 
