@@ -38,6 +38,8 @@ that Linux x86\_64 binaries are usable under WSL.
 
   - Follow the instructions to install pacman found at
     <https://github.com/devkitPro/pacman/releases/latest>
+  - run sudo (dkp-)pacman -S switch-dev to install the tools and
+    libraries for switch development
 
 # Building the examples
 

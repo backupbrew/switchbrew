@@ -16,6 +16,7 @@ devkitPro provides 64bit precompiled windows binaries of devkitA64 which can be 
 Currently devkitPro provides precompiled versions of devkitA64 for the following Unix-like platforms: Linux (x86_64), macOS (x86_64). Note that Linux x86_64 binaries are usable under WSL.
 
 * Follow the instructions to install pacman found at https://github.com/devkitPro/pacman/releases/latest
+* run sudo (dkp-)pacman -S switch-dev to install the tools and libraries for switch development
 
 = Building the examples =
 Switch examples are still being created; however, there are a growing number of examples available from the [https://github.com/switchbrew/switch-examples switchbrew/switch-examples GitHub repository]. These are downloaded by the installer and can be found in $DEVKITPRO/examples/switch
