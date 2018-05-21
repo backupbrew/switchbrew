@@ -124,7 +124,7 @@ Decimal versions use the format:
 |-
 | 010000000000003A || [[4.0.0|v268435656]] (4.0.0.200)<br/> [[5.0.0|v335544750]] (5.0.0.430) || [4.0.0+] [[Migration_services|migration]]
 |-
-| 010000000000003B || || jit (currently not present on retail devices)
+| 010000000000003B || || [[JIT_services|jit]] (currently not present on retail devices)
 |-
 | 010000000000003C || [[4.0.0|v268435656]] (4.0.0.200)<br/> [[5.0.0|v335544750]] (5.0.0.430) || [4.0.0+] [[Jpegdec_services|jpegdec]]
 |-

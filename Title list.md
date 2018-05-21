@@ -549,7 +549,7 @@ Decimal versions use the format:
 <tr class="odd">
 <td><p>010000000000003B</p></td>
 <td></td>
-<td><p>jit (currently not present on retail devices)</p></td>
+<td><p><a href="JIT services.md" title="wikilink">jit</a> (currently not present on retail devices)</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000003C</p></td>
