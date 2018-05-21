@@ -17,6 +17,7 @@ Currently devkitPro provides precompiled versions of devkitA64 for the following
 
 * Follow the instructions to install pacman found at https://github.com/devkitPro/pacman/releases/latest
 * run sudo (dkp-)pacman -S switch-dev to install the tools and libraries for switch development
+* logout and login again to get the environment settings needed.
 
 = Building the examples =
 Switch examples are still being created; however, there are a growing number of examples available from the [https://github.com/switchbrew/switch-examples switchbrew/switch-examples GitHub repository]. These are downloaded by the installer and can be found in $DEVKITPRO/examples/switch

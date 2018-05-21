@@ -40,6 +40,7 @@ that Linux x86\_64 binaries are usable under WSL.
     <https://github.com/devkitPro/pacman/releases/latest>
   - run sudo (dkp-)pacman -S switch-dev to install the tools and
     libraries for switch development
+  - logout and login again to get the environment settings needed.
 
 # Building the examples
 
