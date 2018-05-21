@@ -12,6 +12,12 @@ Make sure you also select libnx and the switch examples when installing.
 devkitPro provides 64bit precompiled windows binaries of devkitA64 which
 can be run directly on Windows.
 
+  - If you already use msys2 then you can follow the instructions at
+    <https://github.com/devkitPro/pacman/releases/latest> to add the
+    devkitPro repositories.
+
+Otherwise
+
   - [download the latest version of the graphical
     installer](https://github.com/devkitPro/installer/releases) from
     github and run it, following the instructions as you go.
