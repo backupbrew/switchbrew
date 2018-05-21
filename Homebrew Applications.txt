@@ -84,14 +84,14 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Rinnegatamante & EasyRPG team
 | [https://easyrpg.org/player/downloads/ here]
 | [https://github.com/EasyRPG/Player Yes]
-| 2018-03-09
+| 2018-05-15
 |-
 | Solarus Engine
 | Zelda-like Action-RPG game engine
 | [[User:carstene1ns|carstene1ns]]
 | [https://f4ke.de/dev/switch/ here]
 | [https://github.com/carstene1ns/solarus-engine Yes]
-| 2018-04-08
+| 2018-05-20
 |-
 |}
 
@@ -200,7 +200,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [[User:carstene1ns|carstene1ns]]
 | [https://f4ke.de/dev/switch/ Here]
 | [https://github.com/carstene1ns/nxengine-evo/tree/switch-port Yes]
-| 2018-05-09
+| 2018-05-20
 |-
 | 2048
 | 2048 port for Switch homebrew
