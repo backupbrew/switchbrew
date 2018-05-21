@@ -1,0 +1,29 @@
+JIT is a sysmodule for run-time code generation on development kits (allowing for overlapping R-X and RW- views of memory). This system module is not present in retail units.
+
+= jit:u =
+This is "nn::jitsrv::IJitService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || CreateJitEnvironment || Returns an [[#IJitEnvironment]]
+|-
+|}
+
+= IJitEnvironment =
+This is "nn::jitsrv::IJitEnvironment".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Control
+|-
+| 1 || GenerateCode
+|-
+| 1000 || LoadPlugin
+|-
+| 1001 || GetCodeAddress
+|-
+|}
