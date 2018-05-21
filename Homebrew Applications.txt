@@ -54,6 +54,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/TheKgg/switch-brainfuck/releases Here]
 | [https://github.com/TheKgg/switch-brainfuck Yes]
 | 2018-04-21
+|-
+| ScreenTester-NX
+| Detect and repair dead/stuck pixels
+| Marice
+| [https://github.com/Marice/ScreenTester-NX/releases Here]
+| [https://github.com/Marice/ScreenTester-NX/ Yes]
+| 2018-05-19
 |}
 
 === Game Engines ===
@@ -216,6 +223,19 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/BernardoGiordano/Pickr Yes]
 | 2018-04-16
 |-
+| OpenTyrian
+| OpenTyrian is a port of the DOS shoot-em-up Tyrian, which is an arcade-style vertical scrolling shooter.
+| felixrg
+| [https://github.com/felixrg/opentyrian/releases Here]
+| [https://github.com/felixrg/opentyrian Yes]
+| 2018-05-19
+|-
+| SDLPoP
+| An open-source port of Prince of Persia, based on the disassembly of the DOS version.
+| usineur
+| [https://github.com/usineur/SDLPoP/releases Here]
+| [https://github.com/usineur/SDLPoP Yes]
+| 2018-05-14
 |}
 
 === Emulators ===
