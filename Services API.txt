@@ -86,7 +86,7 @@ Takes a pid.
 |
 |-
 | <nowiki>banana</nowiki>
-| [[Profiler Services]]
+| [[Profiler services]]
 | Not currently available on retail units.
 |-
 | <nowiki>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, prepo:a</nowiki>

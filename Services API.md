@@ -107,7 +107,7 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>banana</p></td>
-<td><p><a href="Profiler Services.md" title="wikilink">Profiler Services</a></p></td>
+<td><p><a href="Profiler services.md" title="wikilink">Profiler services</a></p></td>
 <td><p>Not currently available on retail units.</p></td>
 </tr>
 <tr class="odd">
