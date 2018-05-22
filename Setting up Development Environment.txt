@@ -1,5 +1,5 @@
 = Setup =
-Install [http://devkitpro.org/ devkitA64]. If it's already installed, update it. On Windows, there's a [https://github.com/devkitPro/installer/releases/latest graphical installer]. On Unix-like platforms such as Linux/macOS, there's a [https://raw.githubusercontent.com/devkitPro/installer/master/perl/devkitA64update.pl Perl script]. Make sure you also select libnx and the switch examples when installing.
+Install [http://devkitpro.org/ devkitA64]. If it's already installed, update it using sudo (dkp-)pacman -Syu. On Windows, there's a [https://github.com/devkitPro/installer/releases/latest graphical installer]. On Unix-like platforms such as Linux/macOS, there's [https://github.com/devkitPro/pacman/releases/latest pacman].
 
 ==Windows==
 devkitPro provides 64bit precompiled windows binaries of devkitA64 which can be run directly on Windows.
