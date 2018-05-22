@@ -107,8 +107,8 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>banana</p></td>
-<td><p>?</p></td>
-<td><p>Some games on [3.0.0+] have access to this service, but it doesn't appear to be present on retail devices.</p></td>
+<td><p><a href="Profiler Services.md" title="wikilink">Profiler Services</a></p></td>
+<td><p>Not currently available on retail units.</p></td>
 </tr>
 <tr class="odd">
 <td><p>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, prepo:a</p></td>
