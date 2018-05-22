@@ -118,7 +118,7 @@ Decimal versions use the format:
 |-
 | 0100000000000037 || [[3.0.0|v201327002]] (3.0.0.410)<br/> [[3.0.1|v201392178]] (3.0.1.50)<br/> [[4.0.0|v268435656]] (4.0.0.200)<br/> [[5.0.0|v335544750]] (5.0.0.430) || [3.0.0+] [[Loader_services#ldr:ro|ro]]
 |-
-| 0100000000000038 || || profiler (currently not present on retail devices)
+| 0100000000000038 || || [[Profiler services|profiler]] (currently not present on retail devices)
 |-
 | 0100000000000039 || [[3.0.0|v201327002]] (3.0.0.410)<br/> [[3.0.1|v201392178]] (3.0.1.50)<br/> [[4.0.0|v268435656]] (4.0.0.200)<br/> [[5.0.0|v335544750]] (5.0.0.430) || [3.0.0+] [[Shared_Database_services|sdb]]
 |-

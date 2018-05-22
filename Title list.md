@@ -530,7 +530,7 @@ Decimal versions use the format:
 <tr class="even">
 <td><p>0100000000000038</p></td>
 <td></td>
-<td><p>profiler (currently not present on retail devices)</p></td>
+<td><p><a href="Profiler services.md" title="wikilink">profiler</a> (currently not present on retail devices)</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000039</p></td>
