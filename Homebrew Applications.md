@@ -72,10 +72,11 @@ available.
 
 ### Emulators
 
-| Name    | Description                                                                                               | Author    | Download                                              | Open-Source                                             | Last Updated |
-| ------- | --------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------- | ------------------------------------------------------- | ------------ |
-| ScummVM | ScummVM is a program which allows you to run certain classic graphical point-and-click adventure games... | Cpasjuste | [Here](https://github.com/Cpasjuste/scummvm/releases) | [Yes](https://github.com/Cpasjuste/scummvm/tree/switch) | 2018-03-01   |
-| pFBA    | A port of final burn alpha to multiple platforms                                                          | Cpasjuste | [Here](https://github.com/Cpasjuste/pfba/releases)    | [Yes](https://github.com/Cpasjuste/pfba)                | 2018-02-20   |
+| Name            | Description                                                                                               | Author    | Download                                                   | Open-Source                                             | Last Updated |
+| --------------- | --------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------- | ------------------------------------------------------- | ------------ |
+| ScummVM         | ScummVM is a program which allows you to run certain classic graphical point-and-click adventure games... | Cpasjuste | [Here](https://github.com/Cpasjuste/scummvm/releases)      | [Yes](https://github.com/Cpasjuste/scummvm/tree/switch) | 2018-03-01   |
+| pFBA            | A port of final burn alpha to multiple platforms                                                          | Cpasjuste | [Here](https://github.com/Cpasjuste/pfba/releases)         | [Yes](https://github.com/Cpasjuste/pfba)                | 2018-02-20   |
+| VBA Next Switch | A port of VBA Next, the retroarch version of [VBA-M](https://github.com/libretro/vba-next)                | RSDuck    | [Here](https://github.com/RSDuck/vba-next-switch/releases) | [Yes](https://github.com/RSDuck/vba-next-switch)        | 2018-05-22   |
 
 ### Title managers
 
