@@ -2,12 +2,12 @@
 
 This is "nn::arp::detail::IReader".
 
-| Cmd | Name        |
-| --- | ----------- |
-| 0   | ReadHeader0 |
-| 1   | ReadHeader1 |
-| 2   | ReadData0   |
-| 3   | ReadData1   |
+| Cmd | Name                                           |
+| --- | ---------------------------------------------- |
+| 0   | GetApplicationLaunchProperty                   |
+| 1   | GetApplicationLaunchPropertyWithApplicationId  |
+| 2   | GetApplicationControlProperty                  |
+| 3   | GetApplicationControlPropertyWithApplicationId |
 
 # arp:w
 
@@ -15,17 +15,17 @@ This is "nn::arp::detail::IWriter".
 
 | Cmd | Name             |
 | --- | ---------------- |
-| 0   | GetIRegistrar    |
+| 0   | AcquireRegistrar |
 | 1   | DeleteProperties |
 
 ## IRegistrar
 
 This is "nn::arp::detail::IRegistrar".
 
-| Cmd | Name          |
-| --- | ------------- |
-| 0   | BindRegistrar |
-| 1   | WriteHeader   |
-| 2   | WriteData     |
+| Cmd | Name                          |
+| --- | ----------------------------- |
+| 0   | Issue                         |
+| 1   | SetApplicationLaunchProperty  |
+| 2   | SetApplicationControlProperty |
 
 [Category:Services](Category:Services "wikilink")

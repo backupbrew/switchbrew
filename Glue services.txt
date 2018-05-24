@@ -5,13 +5,13 @@ This is "nn::arp::detail::IReader".
 |-
 ! Cmd || Name
 |-
-| 0 || ReadHeader0
+| 0 || GetApplicationLaunchProperty
 |-
-| 1 || ReadHeader1
+| 1 || GetApplicationLaunchPropertyWithApplicationId
 |-
-| 2 || ReadData0
+| 2 || GetApplicationControlProperty
 |-
-| 3 || ReadData1
+| 3 || GetApplicationControlPropertyWithApplicationId
 |}
 
 = arp:w =
@@ -21,7 +21,7 @@ This is "nn::arp::detail::IWriter".
 |-
 ! Cmd || Name
 |-
-| 0 || GetIRegistrar
+| 0 || AcquireRegistrar
 |-
 | 1 || DeleteProperties
 |}
@@ -33,11 +33,11 @@ This is "nn::arp::detail::IRegistrar".
 |-
 ! Cmd || Name
 |-
-| 0 || BindRegistrar
+| 0 || Issue
 |-
-| 1 || WriteHeader
+| 1 || SetApplicationLaunchProperty
 |-
-| 2 || WriteData
+| 2 || SetApplicationControlProperty
 |}
 
 [[Category:Services]]
