@@ -53,7 +53,7 @@ This is "nn::tma::IHtcsManager".
 |-
 | 11 || GetDefaultHostName
 |-
-| 12 || 
+| 12 || CreateSocketOld
 |-
 | 13 || CreateSocket
 |-
@@ -95,7 +95,7 @@ This is "nn::htc::tenv::IServiceManager".
 |-
 ! Cmd || Name
 |-
-| 0 || OpenService
+| 0 || GetServiceInterface
 |}
 
 == IService ==
@@ -105,11 +105,11 @@ This is "nn::htc::tenv::IService".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetVariable
 |-
-| 1 ||
+| 1 || GetVariableLength
 |-
-| 2 ||
+| 2 || WaitUntilVariableAvailable
 |}
 
 [[Category:Services]]

@@ -37,7 +37,7 @@ This is "nn::tma::IHtcsManager".
 | 9   |                    |
 | 10  | GetPeerNameAny     |
 | 11  | GetDefaultHostName |
-| 12  |                    |
+| 12  | CreateSocketOld    |
 | 13  | CreateSocket       |
 | 100 | RegisterProcessId  |
 | 101 | MonitorManager     |
@@ -62,18 +62,18 @@ This is "nn::tma::ISocket".
 
 This is "nn::htc::tenv::IServiceManager".
 
-| Cmd | Name        |
-| --- | ----------- |
-| 0   | OpenService |
+| Cmd | Name                |
+| --- | ------------------- |
+| 0   | GetServiceInterface |
 
 ## IService
 
 This is "nn::htc::tenv::IService".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | GetVariable                |
+| 1   | GetVariableLength          |
+| 2   | WaitUntilVariableAvailable |
 
 [Category:Services](Category:Services "wikilink")
