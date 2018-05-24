@@ -2,15 +2,15 @@
 
 This is "nn::erpt::sf::IContext".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   |            |
-| 3   |            |
-| 4   |            |
-| 5   |            |
-| 6   | \[5.0.0+\] |
+| Cmd | Name          |
+| --- | ------------- |
+| 0   | SubmitContext |
+| 1   | CreateReport  |
+| 2   |               |
+| 3   |               |
+| 4   |               |
+| 5   |               |
+| 6   | \[5.0.0+\]    |
 
 # erpt:r
 
@@ -25,26 +25,26 @@ This is "nn::erpt::sf::ISession".
 
 This is "nn::erpt::sf::IReport".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
+| Cmd | Name     |
+| --- | -------- |
+| 0   | Open     |
+| 1   | Read     |
+| 2   | SetFlags |
+| 3   | GetFlags |
+| 4   | Close    |
+| 5   | GetSize  |
 
 ## IManager
 
 This is "nn::erpt::sf::IManager".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   | \[4.0.0+\] |
-| 3   | \[5.0.0+\] |
-| 4   | \[5.0.0+\] |
+| Cmd | Name          |
+| --- | ------------- |
+| 0   | GetReportList |
+| 1   | GetEvent      |
+| 2   | \[4.0.0+\]    |
+| 3   | \[5.0.0+\]    |
+| 4   | \[5.0.0+\]    |
 
 # Reports
 

@@ -5,9 +5,9 @@ This is "nn::erpt::sf::IContext".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || SubmitContext
 |-
-| 1 ||
+| 1 || CreateReport
 |-
 | 2 ||
 |-
@@ -39,17 +39,17 @@ This is "nn::erpt::sf::IReport".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || Open
 |-
-| 1 ||
+| 1 || Read
 |-
-| 2 ||
+| 2 || SetFlags
 |-
-| 3 ||
+| 3 || GetFlags
 |-
-| 4 ||
+| 4 || Close
 |-
-| 5 ||
+| 5 || GetSize
 |}
 
 == IManager ==
@@ -59,9 +59,9 @@ This is "nn::erpt::sf::IManager".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetReportList
 |-
-| 1 ||
+| 1 || GetEvent
 |-
 | 2 || [4.0.0+]
 |-
