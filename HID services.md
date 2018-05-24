@@ -616,27 +616,27 @@ This is "nn::ahid::hdr::ISession".
 
 This is "nn::xcd::detail::ISystemServer".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
-| 10  |      |
-| 11  |      |
-| 12  |      |
-| 13  |      |
-| 14  |      |
-| 15  |      |
-| 16  |      |
-| 17  |      |
-| 18  |      |
-| 19  |      |
-| 20  |      |
-| 101 |      |
-| 102 |      |
+| Cmd | Name                              |
+| --- | --------------------------------- |
+| 0   | GetDataFormat                     |
+| 1   | SetDataFormat                     |
+| 2   | GetMcuState                       |
+| 3   | SetMcuState                       |
+| 4   | GetMcuVersionForNfc               |
+| 5   | CheckNfcDevicePower               |
+| 10  | SetNfcEvent                       |
+| 11  | GetNfcInfo                        |
+| 12  | StartNfcDiscovery                 |
+| 13  | StopNfcDiscovery                  |
+| 14  | StartNtagRead                     |
+| 15  | StartNtagWrite                    |
+| 16  | SendNfcRawData                    |
+| 17  | RegisterMifareKey                 |
+| 18  | ClearMifareKey                    |
+| 19  | StartMifareRead                   |
+| 20  | StartMifareWrite                  |
+| 101 | GetAwakeTriggerReasonForLeftRail  |
+| 102 | GetAwakeTriggerReasonForRightRail |
 
 # hidbus
 

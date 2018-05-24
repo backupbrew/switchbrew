@@ -815,43 +815,43 @@ This is "nn::xcd::detail::ISystemServer".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || GetDataFormat
 |-
-| 1 || 
+| 1 || SetDataFormat
 |-
-| 2 || 
+| 2 || GetMcuState
 |-
-| 3 || 
+| 3 || SetMcuState
 |-
-| 4 || 
+| 4 || GetMcuVersionForNfc
 |-
-| 5 || 
+| 5 || CheckNfcDevicePower
 |-
-| 10 || 
+| 10 || SetNfcEvent
 |-
-| 11 || 
+| 11 || GetNfcInfo
 |-
-| 12 || 
+| 12 || StartNfcDiscovery
 |-
-| 13 || 
+| 13 || StopNfcDiscovery
 |-
-| 14 || 
+| 14 || StartNtagRead
 |-
-| 15 || 
+| 15 || StartNtagWrite
 |-
-| 16 || 
+| 16 || SendNfcRawData
 |-
-| 17 || 
+| 17 || RegisterMifareKey
 |-
-| 18 || 
+| 18 || ClearMifareKey
 |-
-| 19 || 
+| 19 || StartMifareRead
 |-
-| 20 || 
+| 20 || StartMifareWrite
 |-
-| 101 || 
+| 101 || GetAwakeTriggerReasonForLeftRail
 |-
-| 102 || 
+| 102 || GetAwakeTriggerReasonForRightRail
 |}
 
 = hidbus =
