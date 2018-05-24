@@ -87,13 +87,13 @@ NVIDIA multimedia (NvMM) platform service.
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || InitializeOld
 |-
-| 1 || 
+| 1 || FinalizeOld
 |-
-| 2 || 
+| 2 || SetAndWaitOld
 |-
-| 3 || 
+| 3 || GetOld
 |-
 | 4 || Initialize
 |-

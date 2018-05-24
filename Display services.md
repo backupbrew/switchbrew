@@ -59,16 +59,16 @@ This is "nn::mmnv::IRequest".
 
 NVIDIA multimedia (NvMM) platform service.
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   |            |
-| 3   |            |
-| 4   | Initialize |
-| 5   | Finalize   |
-| 6   | SetAndWait |
-| 7   | Get        |
+| Cmd | Name          |
+| --- | ------------- |
+| 0   | InitializeOld |
+| 1   | FinalizeOld   |
+| 2   | SetAndWaitOld |
+| 3   | GetOld        |
+| 4   | Initialize    |
+| 5   | Finalize      |
+| 6   | SetAndWait    |
+| 7   | Get           |
 
 # vi:u
 
