@@ -423,15 +423,15 @@ Subchannels:
 |-
 | 0x786+8*N || BlendNAlphaFunctionDst || 1 || bitfield || Bit0-4: ?, bit14-15: ?
 |- style="border-top: double"
-| 0x820 || || 1 || || BindProgram writes here.
+| 0x820 || || 1 || || Select tessellation control program.
 |-
-| 0x821 || || 1 || || BindProgram writes here.
+| 0x821 || || 1 || || Specify tessellation control program entry point.
 |- style="border-top: double"
-| 0x830 || || 1 || || BindProgram writes here.
+| 0x830 || || 1 || || Select tessellation evaluation program.
 |- style="border-top: double"
-| 0x840 || || 1 || || BindProgram writes here.
+| 0x840 || || 1 || || Select geometry program.
 |- style="border-top: double"
-| 0x850 || || 1 || || BindProgram writes here.
+| 0x850 || || 1 || || Select fragment program.
 |- style="border-top: double"
 | 0x8C0+N || FirmwareCallN || 8 || uint || Invokes GPU microcode firmware blob.
 |- style="border-top: double"
