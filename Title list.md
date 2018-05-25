@@ -1166,6 +1166,7 @@ systems.
 | 1000000000000005 |          | DevMenuCommand                                   |
 | 1000000000000006 |          | SettingsManager                                  |
 | 1000000000000007 |          | "ApplicationLauncer"                             |
+| 100000000000000C |          | SystemUpdater                                    |
 | 100000000000000E |          | ControllerFirmw - "ControllerFirmwareUpdater".   |
 
 ## Factory System Modules

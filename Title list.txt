@@ -318,6 +318,8 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 1000000000000007 || || "ApplicationLauncer"
 |-
+| 100000000000000C || || SystemUpdater
+|-
 | 100000000000000E || || ControllerFirmw - "ControllerFirmwareUpdater".
 |}
 
