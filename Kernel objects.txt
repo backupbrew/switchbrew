@@ -300,7 +300,11 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x55C || u32 || UnusedZero
 |-
-| 0x560 || u64[8] || UnusedZeroes
+| 0x560 || u64[2] || UnusedZeroes
+|-
+| 0x570 || u64 || TotalTimeRunning
+|-
+| 0x578 || u64[5] || UnusedZeroes
 |-
 | 0x5A0 || u64 || UnusedZero
 |-

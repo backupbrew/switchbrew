@@ -195,7 +195,9 @@ Inherits from:
 | 0x548        | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KThread](#KThread "wikilink") \*\>          | ThreadList                                             |
 | 0x558        | bool                                                                                             | HasStarted                                             |
 | 0x55C        | u32                                                                                              | UnusedZero                                             |
-| 0x560        | u64\[8\]                                                                                         | UnusedZeroes                                           |
+| 0x560        | u64\[2\]                                                                                         | UnusedZeroes                                           |
+| 0x570        | u64                                                                                              | TotalTimeRunning                                       |
+| 0x578        | u64\[5\]                                                                                         | UnusedZeroes                                           |
 | 0x5A0        | u64                                                                                              | UnusedZero                                             |
 | 0x5A8        | u64                                                                                              | UnusedZero                                             |
 
