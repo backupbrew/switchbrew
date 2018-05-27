@@ -61,6 +61,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Marice/ScreenTester-NX/releases Here]
 | [https://github.com/Marice/ScreenTester-NX/ Yes]
 | 2018-05-19
+|-
+| NX-Shell
+| Multipurpose File Manager
+| joel16
+| [https://github.com/joel16/NX-Shell/releases Here]
+| [https://github.com/joel16/NX-Shell/ Yes]
+| 2018-05-26
 |}
 
 === Game Engines ===
@@ -236,6 +243,20 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/usineur/SDLPoP/releases Here]
 | [https://github.com/usineur/SDLPoP Yes]
 | 2018-05-14
+|-
+| Cannonball-NX
+| An Enhanced OutRun Engine
+| lantus/MVG
+| [https://github.com/lantus/cannonball-nx/releases Here]
+| [https://github.com/lantus/cannonball-nx Yes]
+| 2018-05-23
+|-
+| Postal-NX
+| An isometric top-down shooter video game from 1997
+| lantus/MVG
+| [https://github.com/lantus/postal-nx/releases Here]
+| [https://github.com/lantus/postal-nx Yes]
+| 2018-05-25
 |}
 
 === Emulators ===
@@ -267,6 +288,20 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/RSDuck/vba-next-switch/releases Here]
 | [https://github.com/RSDuck/vba-next-switch Yes]
 | 2018-05-22
+|-
+| CHIP8-NX
+| CHIP8 emulator
+| Marice
+| [https://github.com/Marice/CHIP8-NX/releases Here]
+| [https://github.com/Marice/CHIP8-NX Yes]
+| 2018-05-
+|-
+| LaiNESwitch
+| Compact, cycle-accurate NES emulator in ~1000 lines of C++.
+| Kevoot
+| [https://github.com/Kevoot/LaiNESwitch/releases Here]
+| [https://github.com/Kevoot/LaiNESwitch Yes]
+| 2018-05-24
 |}
 
 ===Title managers===
