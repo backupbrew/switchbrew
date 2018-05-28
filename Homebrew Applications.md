@@ -36,7 +36,7 @@ available.
 | Pynx                                                              | Allows you to run homebrew applications written in Python on the Switch.                           | [AileenLumina](User:AileenLumina "wikilink") | [Here](https://github.com/nx-python/Pynx/releases)          | [Yes](https://github.com/nx-python/Pynx/)         | 2018-03-19   |
 | Switch Brainfuck                                                  | A brainfuck interpreter for the Nintendo Switch.                                                   | TheKgg                                       | [Here](https://github.com/TheKgg/switch-brainfuck/releases) | [Yes](https://github.com/TheKgg/switch-brainfuck) | 2018-04-21   |
 | ScreenTester-NX                                                   | Detect and repair dead/stuck pixels                                                                | Marice                                       | [Here](https://github.com/Marice/ScreenTester-NX/releases)  | [Yes](https://github.com/Marice/ScreenTester-NX/) | 2018-05-19   |
-| NX-Shell                                                          | Multipurpose File Manager                                                                          | joel16                                       | [Here](https://github.com/joel16/NX-Shell/releases)         | [Yes](https://github.com/joel16/NX-Shell/)        | 2018-05-26   |
+| NX-Shell                                                          | Multipurpose File Manager                                                                          | Joel16                                       | [Here](https://github.com/joel16/NX-Shell/releases)         | [Yes](https://github.com/joel16/NX-Shell/)        | 2018-05-26   |
 
 ### Game Engines
 

@@ -64,7 +64,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 |-
 | NX-Shell
 | Multipurpose File Manager
-| joel16
+| Joel16
 | [https://github.com/joel16/NX-Shell/releases Here]
 | [https://github.com/joel16/NX-Shell/ Yes]
 | 2018-05-26
