@@ -37,6 +37,7 @@ available.
 | Switch Brainfuck                                                  | A brainfuck interpreter for the Nintendo Switch.                                                   | TheKgg                                       | [Here](https://github.com/TheKgg/switch-brainfuck/releases) | [Yes](https://github.com/TheKgg/switch-brainfuck) | 2018-04-21   |
 | ScreenTester-NX                                                   | Detect and repair dead/stuck pixels                                                                | Marice                                       | [Here](https://github.com/Marice/ScreenTester-NX/releases)  | [Yes](https://github.com/Marice/ScreenTester-NX/) | 2018-05-19   |
 | NX-Shell                                                          | Multipurpose File Manager                                                                          | Joel16                                       | [Here](https://github.com/joel16/NX-Shell/releases)         | [Yes](https://github.com/joel16/NX-Shell/)        | 2018-05-26   |
+| Gag Order                                                         | SuperNag remover                                                                                   | Adubbz                                       | [Here](https://github.com/Adubbz/Gag-Order/releases)        | [Yes](https://github.com/Adubbz/Gag-Order)        | 2018-05-30   |
 
 ### Game Engines
 
