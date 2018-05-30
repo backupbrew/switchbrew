@@ -1,7 +1,8 @@
 boot2 is the first non-built-in sysmodule. It's hardcoded to be the
 first sysmodule launched by PM.
 
-On retail systems, the boot2 title installed is named "boot2.prodBoot".
+On retail systems, the boot2 title installed is named "boot2.prodBoot"
+while on debug systems, the boot2 title installed is named "boot2".
 During [the factory setup process](Factory%20Setup.md "wikilink"), the
 installed boot2 title is "boot2.manuBoot".
 
@@ -67,7 +68,8 @@ titles in this order:
   - 010000000000002F (npns) \[skipped in maintenance\]
   - 0100000000000034 (fatal)
   - 0100000000000037 (ro) \[3.0.0+\]
-  - 0100000000000038 (doesn't exist on retail systems) \[3.0.0+\]
+  - 0100000000000038 (profiler) (doesn't exist on retail systems)
+    \[3.0.0+\]
   - 0100000000000039 (sdb) \[3.0.0+\]
   - 010000000000003A (migration) \[4.0.0+\]
   - 0100000000000035 (grc) \[4.0.0+\]
@@ -77,6 +79,55 @@ display-related things first presumably to make sure it displays
 something as soon as possible.
 
 After that, the process exits itself.
+
+# boot2
+
+Depending on maintenance mode, boot2 boots titles in the following
+order:
+
+  - 0100000000000021 (psc)
+  - 0100000000000009 (settings)
+  - 0100000000000006 (usb)
+  - 010000000000001D (pcie)
+  - 010000000000000A (bus)
+  - 0100000000000007 (tma)
+  - 010000000000001A (pcv)
+  - 0100000000000023 (am)
+  - 0100000000000019 (nvservices)
+  - 010000000000001C (nvnflinger)
+  - 010000000000002D (vi)
+  - 010000000000001F (ns)
+  - 0100000000003003 (???)
+  - 010000000000000D (dmnt)
+  - 0100000000000015 (lm)
+  - 010000000000001B (ppc)
+  - 0100000000000010 (ptm)
+  - 0100000000000017 (cs)
+  - 0100000000000011 (shell)
+  - 0100000000000013 (hid)
+  - 0100000000000014 (audio)
+  - 0100000000000029 (lbl)
+  - 0100000000000016 (wlan)
+  - 010000000000000B (bluetooth)
+  - 0100000000000012 (bsdsockets)
+  - 010000000000000F (nifm)
+  - 0100000000000018 (ldn)
+  - 010000000000001E (account)
+  - 010000000000000E (friends) \[skipped in maintenance\]
+  - 0100000000000020 (nfc)
+  - 0100000000000022 (capsrv)
+  - 0100000000000024 (ssl)
+  - 0100000000000025 (nim)
+  - 010000000000000C (bcat) \[skipped in maintenance\]
+  - 010000000000002B (erpt)
+  - 0100000000000033 (es)
+  - 010000000000002E (pctl)
+  - 010000000000002A (btm)
+  - 0100000000000030 (eupld) \[skipped in maintenance\]
+  - 0100000000000031 (glue)
+  - 0100000000000032 (eclct)
+  - 010000000000002F (npns) \[skipped in maintenance\]
+  - 0100000000000034 (fatal)
 
 # boot2.manuBoot
 
@@ -98,11 +149,11 @@ order:
   - 0100000000000019 (nvservices)
   - 010000000000001C (nvnflinger)
   - 010000000000002D (vi)
-  - 010000000000000D (???)
+  - 010000000000000D (dmnt)
   - 010000000000001F (ns)
   - 0100000000000015 (lm)
-  - 0100000000000017 (???)
-  - 0100000000000011 (???)
+  - 0100000000000017 (cs)
+  - 0100000000000011 (shell)
   - 0100000000000013 (hid)
   - 0100000000000014 (audio)
   - 0100000000000029 (lbl)
