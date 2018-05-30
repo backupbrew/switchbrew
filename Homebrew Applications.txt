@@ -68,6 +68,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/joel16/NX-Shell/releases Here]
 | [https://github.com/joel16/NX-Shell/ Yes]
 | 2018-05-26
+| -
+| Gag Order
+| SuperNag remover
+| Adubbz
+| [https://github.com/Adubbz/Gag-Order/releases Here]
+| [https://github.com/Adubbz/Gag-Order Yes]
+| 2018-05-30
 |}
 
 === Game Engines ===
