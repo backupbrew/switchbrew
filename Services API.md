@@ -116,44 +116,44 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>pcm</p></td>
-<td><p>?</p></td>
-<td><p>Power consumption measurement? Not present on retail units.</p></td>
-</tr>
-<tr class="odd">
 <td><p>[1.0.0] bpc:c, bpc:b, bpc:r, bpc:w, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s [2.0.0+] bpc, bpc:r, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s</p></td>
 <td><p><a href="PCV services.md" title="wikilink">PCV services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>bsd:u, bsd:s, bsdcfg, ethc:c, ethc:i, nsd:u, nsd:a, sfdnsres</p></td>
 <td><p><a href="Sockets services.md" title="wikilink">Sockets services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>btdrv, [5.0.0+] bt</p></td>
 <td><p><a href="Bluetooth Driver services.md" title="wikilink">Bluetooth Driver services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>btm, btm:dbg, btm:sys, [5.0.0+] btm:u</p></td>
 <td><p><a href="BTM services.md" title="wikilink">BTM services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>caps:a, caps:c, [1.0.0] mm:u, [5.0.0+] caps:u</p></td>
 <td><p><a href="Capture services.md" title="wikilink">Capture services</a></p></td>
 <td><p>a: AlbumAccessor, c: AlbumControl</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>caps:sc, caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0+] caps:su</p></td>
 <td><p><a href="Display services.md" title="wikilink">Display services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>dispdrv</p></td>
 <td><p><a href="Nvnflinger services.md" title="wikilink">Nvnflinger services</a></p></td>
 <td></td>
+</tr>
+<tr class="odd">
+<td><p>dmnt:-</p></td>
+<td><p>Debug Monitor services</p></td>
+<td><p>Not currently available on retail units.</p></td>
 </tr>
 <tr class="even">
 <td><p>erpt:c, erpt:r</p></td>
@@ -171,9 +171,9 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>fan, psm, tc, ts</p></td>
+<td><p>fan, psm, tc, ts, pcm</p></td>
 <td><p><a href="PTM services.md" title="wikilink">PTM services</a></p></td>
-<td></td>
+<td><p>pcm is not available on retail units.</p></td>
 </tr>
 <tr class="even">
 <td><p>fatal:u, fatal:p</p></td>
@@ -196,7 +196,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>htc, htcs, htc:tenv</p></td>
+<td><p>htc, htcs, htc:tenv, file_io, gds, tma_log, tmagent</p></td>
 <td><p><a href="TMA services.md" title="wikilink">TMA services</a></p></td>
 <td></td>
 </tr>
@@ -308,31 +308,36 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
+<td><p>sf-uds</p></td>
+<td><p>?</p></td>
+<td><p>System debug applet &quot;recovery&quot; has access to this service, but it doesn't appear to exist.</p></td>
+</tr>
+<tr class="odd">
 <td><p>tspm</p></td>
 <td><p>?</p></td>
 <td><p>Applications on [1.0.0] used to have access to this service, but it doesn't appear to be present on retail devices.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pd:m, usb:pm</p></td>
 <td><p><a href="USB services.md" title="wikilink">USB services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc</p></td>
 <td><p><a href="WLAN services.md" title="wikilink">WLAN services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>[4.0.0+] grc:c</p></td>
 <td><p><a href="GRC services.md" title="wikilink">GRC services</a></p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>[4.0.0+] mig:usr</p></td>
 <td><p><a href="Migration services.md" title="wikilink">Migration services</a></p></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>[4.0.0+] caps:dc</p></td>
 <td><p><a href="Jpegdec services.md" title="wikilink">Jpegdec services</a></p></td>
 <td></td>

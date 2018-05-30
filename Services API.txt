@@ -93,10 +93,6 @@ Takes a pid.
 | [[BCAT services]]
 |
 |-
-| <nowiki>pcm</nowiki>
-| ?
-| Power consumption measurement? Not present on retail units.
-|-
 | [1.0.0] bpc:c, bpc:b, bpc:r, bpc:w, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s
 [2.0.0+] bpc, bpc:r, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s
 | [[PCV services]]
@@ -126,6 +122,10 @@ Takes a pid.
 | [[Nvnflinger services]]
 |
 |-
+| dmnt:-
+| Debug Monitor services
+| Not currently available on retail units.
+|-
 | erpt:c, erpt:r
 | [[Error Report services]]
 |
@@ -138,9 +138,9 @@ Takes a pid.
 | [[ETicket services]]
 |
 |-
-| fan, psm, tc, ts
+| fan, psm, tc, ts, <nowiki>pcm</nowiki>
 | [[PTM services]]
-|
+| pcm is not available on retail units.
 |-
 | fatal:u, fatal:p
 | [[Fatal services]]
@@ -158,9 +158,9 @@ Takes a pid.
 | [[Bus services]]
 |
 |-
-| htc, htcs, htc:tenv
+| htc, htcs, htc:tenv, file_io, gds, tma_log, tmagent
 | [[TMA services]]
-|
+| 
 |-
 | jit:u
 | [[JIT services]]
@@ -249,6 +249,10 @@ Takes a pid.
 [4.0.0+] csrng, spl:, spl:mig, spl:fs, spl:ssl, spl:es, [5.0.0+] spl:manu
 | [[SPL services]]
 | 
+|-
+| sf-uds
+| ?
+| System debug applet "recovery" has access to this service, but it doesn't appear to exist.
 |-
 | tspm
 | ?
