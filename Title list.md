@@ -80,7 +80,9 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p><a href="Boot2.md" title="wikilink">boot2</a></p></td>
+<td><p><a href="Boot2.md" title="wikilink">boot2</a> (debug)<br />
+<a href="Boot2.md" title="wikilink">boot2.prodBoot</a> (retail)<br />
+<a href="Boot2.md" title="wikilink">boot2.manuBoot</a> (factory)</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000009</p></td>
@@ -207,7 +209,8 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p><a href="Log services.md" title="wikilink">LogManager.Prod</a></p></td>
+<td><p><a href="Log services.md" title="wikilink">LogManager</a> (debug)<br />
+<a href="Log services.md" title="wikilink">LogManager.Prod</a> (retail)</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000016</p></td>
@@ -292,7 +295,8 @@ Decimal versions use the format:
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p><a href="PCIe services.md" title="wikilink">pcie.withoutHb</a></p></td>
+<td><p><a href="PCIe services.md" title="wikilink">pcie</a> (debug)<br />
+<a href="PCIe services.md" title="wikilink">pcie.withoutHb</a> (retail)</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000001E</p></td>
@@ -1147,11 +1151,13 @@ systems.
 | 0100000000002005 |          | C4SixAxis - "6axisTest". Sixaxis (controller peripheral) testing.                                     |
 | 0100000000002006 |          | C5Wireless - "AssembledWireless". Wireless testing.                                                   |
 | 0100000000002007 |          | "FinalCheck"                                                                                          |
+| 0100000000002041 |          | recovery                                                                                              |
 | 0100000000002044 |          | "HB-TBIntegrationTest"                                                                                |
 | 010000000000204D |          | BackupSaveData                                                                                        |
 | 010000000000204E |          | A4BoardCalWriti - "BoardCalWriting". Writes calibration data to NAND.                                 |
 | 0100000000002055 |          | GameCardWriter                                                                                        |
 | 0100000000002054 |          | RepairSslCertif - "RepairSslCertificate".                                                             |
+| 0100000000002064 |          | DevMenu                                                                                               |
 | 0100000000002071 |          | "snap\_shot\_dump" - Used by [NS](NS%20Services.md "wikilink").                                       |
 | 010000000000209B |          | "am.debug" - Used by [AM](AM%20services.md "wikilink").                                               |
 | 010000000000209C |          | TestApplication - "TestApplicationLauncher". Factory qlaunch replacement, used to launch other tests. |
@@ -1166,6 +1172,7 @@ systems.
 | 1000000000000005 |          | DevMenuCommand                                   |
 | 1000000000000006 |          | SettingsManager                                  |
 | 1000000000000007 |          | "ApplicationLauncer"                             |
+| 100000000000000B |          | SnapShotDumper                                   |
 | 100000000000000C |          | SystemUpdater                                    |
 | 100000000000000E |          | ControllerFirmw - "ControllerFirmwareUpdater".   |
 
