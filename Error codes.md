@@ -28,6 +28,7 @@ fatal-errors, since the Description ends with bit21.
 | 4     | HTCS                                                   |
 | 5     | NCM                                                    |
 | 6     | DD                                                     |
+| 7     | Debug Monitor                                          |
 | 8     | LR                                                     |
 | 9     | Loader                                                 |
 | 10    | CMIF (IPC command interface)                           |

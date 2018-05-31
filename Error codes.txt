@@ -30,6 +30,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 6 || DD
 |-
+| 7 || Debug Monitor
+|-
 | 8 || LR
 |-
 | 9 || Loader
