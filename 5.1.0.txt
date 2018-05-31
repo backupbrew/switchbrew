@@ -9,6 +9,18 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+===[[qlaunch]]===
+The following files were updated in RomFS:
+
+  /lyt/common.szs
+  /lyt/Interrupt.szs
+  /lyt/Set.szs
+  /message/<regionlanguage-dirname>/common.msbt.szs
+  /message/<regionlanguage-dirname>/interrupt.msbt.szs
+  /message/<regionlanguage-dirname>/option.msbt.szs
+  /message/<regionlanguage-dirname>/setting.msbt.szs
+  /sound/qlaunch_action.bksnd
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=05-30-18_08-05-10&sys=hac]
