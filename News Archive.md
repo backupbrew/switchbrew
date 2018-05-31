@@ -1,3 +1,6 @@
+  - **2 March 18**
+    [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.1.0)
+    v1.1.0 was released.
   - **28 February 18**
     [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
     v2.0.0 was released.

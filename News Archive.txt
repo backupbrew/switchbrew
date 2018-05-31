@@ -1,3 +1,4 @@
+*'''2 March 18''' [https://github.com/switchbrew/libnx/releases/tag/v1.1.0 libnx] v1.1.0 was released.
 *'''28 February 18''' [https://github.com/switchbrew/nx-hbmenu/releases/latest nx-hbmenu] v2.0.0 was released.
 *'''22 February 18''' [http://devkitpro.org devkitPro] released [https://devkitpro.org/viewtopic.php?f=13&t=8693 devkitA64 alpha7]
 *'''18 February 18''' [https://switchbrew.github.io/nx-hbl/ nx-hbl] and [https://github.com/switchbrew/nx-hbmenu nx-hbmenu] were released.
