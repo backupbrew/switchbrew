@@ -26,3 +26,7 @@ The following files were updated in RomFS:
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=05-30-18_08-05-10&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
