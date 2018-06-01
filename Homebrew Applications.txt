@@ -374,4 +374,11 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Yes
 | 2018-02-19
 |-
+| Dokkaebi Hack
+| Animated Demo using SDL on the Switch.
+| [[User:StevenMattera|StevenMattera]]
+| [https://github.com/StevenMattera/DokkaebiHack Here]
+| Yes
+| 2018-05-26
+|-
 |}
