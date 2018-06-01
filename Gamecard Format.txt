@@ -1,5 +1,7 @@
-= Header =
-The header is 0x200-bytes at offset 0 in the Gamecard.
+Known internally as "XCI" (NX Card Image), this is the format used for storing the contents of a Nintendo Switch Gamecard. 
+
+= Gamecard Header =
+This header is 0x200 bytes and is located at offset 0 in the Gamecard.
 
 {| class="wikitable" border="1"
 |-
@@ -9,7 +11,7 @@ The header is 0x200-bytes at offset 0 in the Gamecard.
 |-
 | 0x0
 | 0x100
-| RSA-2048 PKCS #1 signature over the XCI header (data from 0x100 to 0x200)
+| RSA-2048 PKCS #1 signature over the header (data from 0x100 to 0x200)
 |-
 | 0x100
 | 0x4
@@ -25,7 +27,7 @@ The header is 0x200-bytes at offset 0 in the Gamecard.
 |-
 | 0x10C
 | 0x1
-| ?
+| KEK Index
 |-
 | 0x10D
 | 0x1
@@ -41,7 +43,7 @@ The header is 0x200-bytes at offset 0 in the Gamecard.
 |-
 | 0x110
 | 0x8
-| ?
+| Random value for challenge–response authentication
 |-
 | 0x118
 | 0x8
@@ -49,7 +51,7 @@ The header is 0x200-bytes at offset 0 in the Gamecard.
 |-
 | 0x120
 | 0x10
-| Gamecard Initial Data IV (reversed)
+| Gamecard Info IV (reversed)
 |-
 | 0x130
 | 0x8
@@ -61,15 +63,15 @@ The header is 0x200-bytes at offset 0 in the Gamecard.
 |-
 | 0x140
 | 0x20
-| SHA256 hash of the HFS0 Header
+| SHA-256 hash of the [[#HFS0 Header|HFS0 Header]]
 |-
 | 0x160
 | 0x20
-| SHA256 hash of the crypto header
+| SHA-256 hash of the [[#Initial Data|Initial Data]]
 |-
 | 0x180
 | 0x4
-| 1?
+| Secure Mode Flag (0x01 means Secure Mode is available)
 |-
 | 0x184
 | 0x4
@@ -85,11 +87,67 @@ The header is 0x200-bytes at offset 0 in the Gamecard.
 |-
 | 0x190
 | 0x70
-| Gamecard Initial Data (AES-128-CBC encrypted)
+| [[#Gamecard Info|Gamecard Info]] (AES-128-CBC encrypted)
 |}
 
-= Cert =
-This is for the CERT, located at Gamecard + 0x7000 (always?). This matches exactly the output from fsp-srv IDeviceOperator cmd 206 "GetGameCardDeviceCertificate".
+== Gamecard Info ==
+When decrypted, this 0x70 byte region is as follows:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x4
+| Version (0x01 for old Gamecards, 0x02 for new Gamecards with the "logo" partition)
+|-
+| 0x4
+| 0x4
+| Empty
+|-
+| 0x8
+| 0x4
+| Always 0x00A10010 (unfinalized Gamecard) or 0x00A10011 (finalized Gamecard)
+|-
+| 0xC
+| 0x4
+| Always 0x1388
+|-
+| 0x10
+| 0xC
+| Empty
+|-
+| 0x1C
+| 0x4
+| ?
+|-
+| 0x20
+| 0x4
+| ?
+|-
+| 0x24
+| 0x4
+| Empty
+|-
+| 0x28
+| 0x8
+| Random ID?
+|-
+| 0x30
+| 0x8
+| Always 0x0100000000000816 (title-listing data archive's title ID)
+|-
+| 0x38
+| 0x38
+| Empty
+|}
+
+= Gamecard Certificate =
+This is the Gamecard's unique certificate and is located at offset 0x7000.
+
+[[Filesystem_services|FS]] IDeviceOperator cmd 206 "GetGameCardDeviceCertificate" retrieves this data.
 
 {| class="wikitable" border="1"
 |-
@@ -99,7 +157,7 @@ This is for the CERT, located at Gamecard + 0x7000 (always?). This matches exact
 |-
 | 0x0
 | 0x100
-| RSA-2048 PKCS #1 signature over the data from 0x100 - 0x200.
+| RSA-2048 PKCS #1 signature over the data from 0x100 to 0x200
 |-
 | 0x100
 | 0x4
@@ -109,15 +167,55 @@ This is for the CERT, located at Gamecard + 0x7000 (always?). This matches exact
 | 0x10
 | ?
 |-
+| 0x120
+| 0xA
+| ?
+|-
 | 0x12A
 | 0xD6
 | Encrypted data. Some kind of key?
 |}
 
-The data between the CERT and the start of the HFS0 is all 0xFF.
+The data between the Gamecard Certificate and the start of the HFS0 region is all 0xFF.
+
+= Initial Data =
+This data is used for challenge–response authentication when changing to the Gamecard's secure mode.
+
+[[Filesystem_services|FS]] calculates a SHA-256 hash over the whole 0x200 bytes and compares it with the hash stored at offset 0x160 in the [[#Gamecard Header|Gamecard Header]].
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x8
+| Random value from [[#Gamecard Header|Gamecard Header]] at offset 0x110
+|-
+| 0x8
+| 0x8
+| Empty
+|-
+| 0x10
+| 0x2C
+| Challenge–response authentication data
+|-
+| 0x3C
+| 0x1C4
+| Reserved (must be empty)
+|}
 
 = HFS0 =
-This is the FS which has magicnum "HFS0" at header+0.
+This is the Gamecard file system which starts with magicnum "HFS0".
+
+== Header ==
+The "SHA-256 File System" or "HFS0" starts at offset 0xF000 in the Gamecard. The first 0x200 bytes act as a global header and represent the root partition which points to the other partitions ("normal", "logo", "update" and "secure).
+
+A hash for this header is stored at offset 0x140 in the [[#Gamecard Header|Gamecard Header]].
+
+== File System ==
+The actual file system is as follows (also valid for the root partition):
 
 {| class="wikitable" border="1"
 |-
@@ -127,7 +225,7 @@ This is the FS which has magicnum "HFS0" at header+0.
 |-
 | 0x0
 | 0x4
-| HFS0 Magic
+| Magicnum "HFS0"
 |-
 | 0x4
 | 0x4
@@ -176,7 +274,7 @@ Where File Entry Table consists of Number of Files FileEntries:
 |-
 | 0x14
 | 0x4
-| Size of Hashed region of file (for HFS0s, this is the size of the pre-filedata portion, for NCAs this is usually 0x200).
+| Size of Hashed region of file (for HFS0s, this is the size of the pre-filedata portion, for NCAs this is usually 0x200)
 |-
 | 0x18
 | 8
@@ -184,12 +282,12 @@ Where File Entry Table consists of Number of Files FileEntries:
 |-
 | 0x20
 | 0x20
-| SHA256 hash of the first (size of hashed region) bytes of filedata.
+| SHA-256 hash of the first (size of hashed region) bytes of filedata
 |}
 
 The string table is 00-padded to align the start of raw filedata with a sector/media unit boundary (usually?).
 
-= Typical Cartridge Layout =
+= Cartridge Layout =
 Observed gamecards contain three partitions: "update", "normal", and "secure".
 
 The update partition (Gamecard partition 0 for fsp-srv cmd 31) contains .cnmt.nca + .nca files for the entire system update required to play the game. Launch day carts contain a full copy of 1.0 ncas, newer carts contain newer sysupdate NCAs etc.
@@ -198,6 +296,6 @@ The normal partition contains the .cnmt.nca and the game icondata nca. This is p
 
 The secure partition contains an identical copy of the .cnmt.nca and game icondata nca, as well as all other ncas required for the game.
 
-The entire rest of the gamecard after the secure partition ends is all FF padding.
+The entire rest of the Gamecard after the secure partition ends is all FF padding.
 
 [4.0.0+] The "normal" partition is now empty and a new partition "logo" was added.
