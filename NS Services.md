@@ -519,12 +519,12 @@ This is "nn::ns::detail::IFactoryResetInterface".
 
 This is "nn::ns::detail::IVulnerabilityManagerInterface".
 
-| Cmd  | Name                            |
-| ---- | ------------------------------- |
-| 1200 | NeedsUpdateVulnerability        |
-| 1201 | UpdateSafeSystemVersionForDebug |
-| 1202 | GetSafeSystemVersion            |
-|      |                                 |
+| Cmd  | Name                                       |
+| ---- | ------------------------------------------ |
+| 1200 | \[3.0.0+\] NeedsUpdateVulnerability        |
+| 1201 | \[4.0.0+\] UpdateSafeSystemVersionForDebug |
+| 1202 | \[4.0.0+\] GetSafeSystemVersion            |
+|      |                                            |
 
 # ns:su
 
