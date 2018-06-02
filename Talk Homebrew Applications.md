@@ -1,0 +1,7 @@
+## Move ports to Emulators/separate category
+
+I believe that the ports (Cannonball, Postal, etc) should be moved to a
+separate category or the emulators section
+
+\--[TheLMGN](User:TheLMGN "wikilink")
+([talk](User%20talk:TheLMGN.md "wikilink")) 12:00, 2 June 2018 (CDT)
