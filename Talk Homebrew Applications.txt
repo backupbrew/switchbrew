@@ -2,3 +2,7 @@
 I believe that the ports (Cannonball, Postal, etc) should be moved to a separate category or the emulators section
 
 --[[User:TheLMGN|TheLMGN]] ([[User talk:TheLMGN|talk]]) 12:00, 2 June 2018 (CDT)
+
+Hmm, I think you might be right about cannonball at least. However, a ported game is still a game, same as a ported emulator is still an emulator. Otherwise we would need to have the same logic for these, too.
+
+--[[User:Carstene1ns|Carstene1ns]] ([[User talk:Carstene1ns|talk]]) 12:34, 2 June 2018 (CDT)
