@@ -171,5 +171,6 @@ checks were added. For Normal mappings it is still applied
 | 2.0.0    | 6.1.0          | 3.0.0           |
 | 3.0.0    | 7.4.0          | 3.0.0           |
 | 3.0.2    | 7.4.0          | 3.0.0           |
+| 5.0.0    | 10.3.0         | 3.0.0           |
 
 Bit31-19: Major version Bit18-15: Minor version Bit14-0: Zeroes
