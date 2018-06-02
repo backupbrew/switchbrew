@@ -13,7 +13,12 @@
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Experimental Switch emulator written in C#
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/gdkchan gdkchan]
 |-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/reswitched/Mephisto Mephisto]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Debugging/emulating environment for Switch code 
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/reswitched ReSwitched Team]
+|-
 |}
+
 = File Readers =
 {| class="wikitable"
 |-
@@ -30,6 +35,7 @@
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/RedDuckss RedDucks]
 |-
 |}
+
 = Homebrew Toolkits =
 {| class="wikitable"
 |-
@@ -41,16 +47,28 @@
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Entry point for nx-python, the Python ecosystem for the Switch (write homebrew in Python)
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/AileenLumina AileenLumina]
 |-
-! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns/physfs-switch Switch PhysicsFS]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns/physfs-switch PhysicsFS]
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | PhysicsFS 3.0.1 for Nintendo Switch homebrew (using libnx).
-! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns carstene1ns]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [[User:Carstene1ns|Carstene1ns]]
 |-
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns/lua51-switch Lua 5.1.5]
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Lua 5.1.5 for Nintendo Switch homebrew
-! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns carstene1ns]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [[User:Carstene1ns|Carstene1ns]]
 |-
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/Slashcash/Snitch Snitch]
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | A high level library to develop homebrew software for Nintendo Switch (based on libnx)
 ! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/Slashcash Slashcash]
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/carstene1ns/libmikmod libmikmod]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Tracker module playback library with software mixer
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [[User:Carstene1ns|Carstene1ns]]
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/devkitPro/pacman-packages/tree/master/switch pacman-packages]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Repository of ported libraries
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/devkitPro devkitPro]
+|-
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/devkitPro/SDL Simple DirectMedia Layer]
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | Cross-platform development library for low level access to audio, joystick and graphics hardware
+! align="left" style="background-color: #f9f9f9; font-weight: normal;" | [https://github.com/devkitPro devkitPro]
 |-
 |}
