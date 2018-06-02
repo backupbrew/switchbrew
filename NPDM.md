@@ -67,16 +67,20 @@ varies.
 
 # FS Access Header
 
-| Offset | Size | Description                          |
-| ------ | ---- | ------------------------------------ |
-| 0x0    | 0x1  | Version? Always 1. Must be non-zero. |
-| 0x1    | 0x3  | Padding                              |
-| 0x4    | 0x8  | Permissions bitmask                  |
-| 0xC    | 0x4  | Usually 0x1C                         |
-| 0x10   | 0x4  | Usually 0x0                          |
-| 0x14   | 0x4  | Usually 0x1C                         |
-| 0x18   | 0x4  | Usually 0x0                          |
-|        |      |                                      |
+| Offset                            | Size                                       | Description                                                                       |
+| --------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------- |
+| 0x0                               | 0x1                                        | Version? Always 1. Must be non-zero.                                              |
+| 0x1                               | 0x3                                        | Padding                                                                           |
+| 0x4                               | 0x8                                        | Permissions bitmask                                                               |
+| 0xC                               | 0x4                                        | Data Size (Always 0x1C)                                                           |
+| 0x10                              | 0x4                                        | Size of Content Owner ID section.                                                 |
+| 0x14                              | 0x4                                        | Data size (0x1C) plus Content Owner size                                          |
+| 0x18                              | 0x4                                        | Size of Save Data owners section (for applications that wish to share save data?) |
+| 0x1C                              | 0x4                                        | (OPTIONAL) Amount of content owner id's                                           |
+| 0x1C                              | 0x8 \* Content Owner ID's                  | Content owner ID's as uint64's.                                                   |
+| VARIABLE                          | 0x4                                        | Amount of save owner id's                                                         |
+| VARIABLE                          | 0x1 \* Save data owner accessibilities (?) | Sets flags for what save data owners can do with other applications save data (?) |
+| VARIABLE (Pad to nearest 4 bytes) | 0x8 \* Amount of save owner ID's           | Save data owner ID's                                                              |
 
 # FS Access Control
 
