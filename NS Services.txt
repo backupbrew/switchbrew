@@ -291,7 +291,7 @@ Returns an array of title-info entries using the specified offset and size. No i
 |-
 | 0x9
 | 0x1
-| Unknown
+| Unknown, usually 0x02
 |-
 | 0xA
 | 0x6
@@ -299,7 +299,7 @@ Returns an array of title-info entries using the specified offset and size. No i
 |-
 | 0x10
 | 0x1
-| Unknown
+| Unknown, seems to change between reboots and removing/reinserting gamecards
 |-
 | 0x11
 | 0x7

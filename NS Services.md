@@ -151,14 +151,14 @@ this.
 
 ### Application Record Format
 
-| Offset | Size | Description                                                    |
-| ------ | ---- | -------------------------------------------------------------- |
-| 0x0    | 0x8  | Title ID                                                       |
-| 0x8    | 0x1  | Type? (Known values: 2=Installing?, 3=Gamecard?, 4=Installed?) |
-| 0x9    | 0x1  | Unknown                                                        |
-| 0xA    | 0x6  | Unknown, usually zeros?                                        |
-| 0x10   | 0x1  | Unknown                                                        |
-| 0x11   | 0x7  | Unknown, usually zeros?                                        |
+| Offset | Size | Description                                                                 |
+| ------ | ---- | --------------------------------------------------------------------------- |
+| 0x0    | 0x8  | Title ID                                                                    |
+| 0x8    | 0x1  | Type? (Known values: 2=Installing?, 3=Gamecard?, 4=Installed?)              |
+| 0x9    | 0x1  | Unknown, usually 0x02                                                       |
+| 0xA    | 0x6  | Unknown, usually zeros?                                                     |
+| 0x10   | 0x1  | Unknown, seems to change between reboots and removing/reinserting gamecards |
+| 0x11   | 0x7  | Unknown, usually zeros?                                                     |
 
 ## GetApplicationContentPath
 
