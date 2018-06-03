@@ -146,7 +146,19 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 Takes a type-6 output buffer and an u64.
 
 Returns an array of title-info entries using the specified offset and
-size. No input titleID is passed to this.
+size. No input titleID is passed to
+this.
+
+### Application Record Format
+
+| Offset | Size | Description                                                    |
+| ------ | ---- | -------------------------------------------------------------- |
+| 0x0    | 0x8  | Title ID                                                       |
+| 0x8    | 0x1  | Type? (Known values: 2=Installing?, 3=Gamecard?, 4=Installed?) |
+| 0x9    | 0x1  | Unknown                                                        |
+| 0xA    | 0x6  | Unknown, usually zeros?                                        |
+| 0x10   | 0x1  | Unknown                                                        |
+| 0x11   | 0x7  | Unknown, usually zeros?                                        |
 
 ## GetApplicationContentPath
 
