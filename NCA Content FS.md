@@ -1,19 +1,21 @@
 This page is for the FS which can be mounted for
 [NCAs](NCA.md "wikilink") with
-[MountContent\*](Filesystem%20services.md "wikilink"). FS-type below is
-the in32 for "MountContent". MountContent throws errors when trying to
-access a NCA-type with a FS-type not listed below.
+[OpenFileSystem\*](Filesystem%20services.md "wikilink").
+Filesystem\_services\#OpenFileSystem|OpenFileSystem\]\] throws errors
+when trying to access a NCA-type with a
+[FileSystemType](Filesystem%20services#FileSystemType.md##FileSystemType "wikilink")
+not listed below.
 
 # NCA-type0
 
-## FS-type5
+## ContentMeta
 
 Only contains the [.cnmt](NCA.md "wikilink") file. This also how the
 0100000000000816 title is mounted.
 
 # NCA-type1
 
-## FS-type2
+## Logo
 
 Contains the logo gfx displayed when an application is booted. Doesn't
 include the "Licensed" gfx.
@@ -25,14 +27,14 @@ include the "Licensed" gfx.
 
 # NCA-type2
 
+## ContentData
+
 What the nandsys 8XX SystemData titles
     use.
 
-## FS-type6
-
 # NCA-type3
 
-## FS-type3
+## ContentControl
 
   - "/[control.nacp](Control.nacp.md "wikilink")".
   - "/icon\_{[Language](Settings%20services#LanguageCode.md##LanguageCode "wikilink")}.dat",
@@ -43,8 +45,8 @@ What the nandsys 8XX SystemData titles
 
 # NCA-type4
 
-## FS-type4
+## ContentManual
 
 # NCA-type5
 
-## FS-type4
+## ContentManual

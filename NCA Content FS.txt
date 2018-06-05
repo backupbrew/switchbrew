@@ -1,29 +1,27 @@
-This page is for the FS which can be mounted for [[NCA|NCAs]] with [[Filesystem_services|MountContent*]]. FS-type below is the in32 for "MountContent". MountContent throws errors when trying to access a NCA-type with a FS-type not listed below.
+This page is for the FS which can be mounted for [[NCA|NCAs]] with [[Filesystem_services|OpenFileSystem*]]. Filesystem_services#OpenFileSystem|OpenFileSystem]] throws errors when trying to access a NCA-type with a [[Filesystem_services#FileSystemType|FileSystemType]] not listed below.
 
-=NCA-type0=
-==FS-type5==
-
+= NCA-type0 =
+== ContentMeta ==
 Only contains the [[NCA|.cnmt]] file. This also how the 0100000000000816 title is mounted.
 
-=NCA-type1=
-==FS-type2==
+= NCA-type1 =
+== Logo ==
 Contains the logo gfx displayed when an application is booted. Doesn't include the "Licensed" gfx.
 
 * "/NintendoLogo.png" Nintendo logo displayed in the top-left of the screen.
 * "/StartupMovie.gif" Nintendo Switch animation displayed in the bottom-right of the screen.
 
-=NCA-type2=
+= NCA-type2 =
+== ContentData ==
 What the nandsys 8XX SystemData titles use.
 
-==FS-type6==
-
-=NCA-type3=
-==FS-type3==
+= NCA-type3 =
+== ContentControl ==
 * "/[[control.nacp]]".
 * "/icon_{[[Settings_services#LanguageCode|Language]]}.dat", for every icon with an included language. Just a 256x256 JPEG, no MAC which [[Album]] screenshots use. EXIF info: "Camera Brand" = "Nintendo co., ltd", "Software" = "Nintendo AuthoringTool".
 
-=NCA-type4=
-==FS-type4==
+= NCA-type4 =
+== ContentManual ==
 
-=NCA-type5=
-==FS-type4==
+= NCA-type5 =
+== ContentManual ==
