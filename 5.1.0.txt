@@ -11,6 +11,9 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 
 System-config / IcosaMariko system-config was updated, however this was just a rebuild (nothing in NCA header changed besides signature+keyarea).
 
+===FIRM===
+Only FIRM titles that use FS ([[Filesystem_services|FS]], [[NCM_services|NCM]], [[Boot]], [[Loader_services|Loader]] and [[Process_Manager_services|PM]]) were updated. This was solely due to the new cmd 1010 in FS.
+
 ===[[qlaunch]]===
 The following files were updated in RomFS:
 
