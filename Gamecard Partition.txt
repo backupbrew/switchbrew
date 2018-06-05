@@ -1,9 +1,16 @@
-This page documents the partitions that can mounted by [[Filesystem_services#MountGameCardPartition]].
+This page documents the partitions that can mounted by [[Filesystem_services#OpenGameCardFileSystem|OpenGameCardFileSystem]].
 
 The below sections are for each partitionID.
 
-=0=
+= 0 =
+Used for Gamecard '''NormalMode'''.
+
 Contains the gamecard sysupdate, see [[Gamecard_Format|here]].
 
-=2=
+= 1 =
+Used for Gamecard '''SecureMode'''.
+
+= 2 =
+Used for Gamecard '''WriteMode'''.
+
 See [[Gamecard_Format|here]].
