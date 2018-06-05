@@ -48,7 +48,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 ! Cmd || Name
 |-
-| 0 || [1.0.0] [[#MountContent]]
+| 0 || [1.0.0] [[#OpenFileSystem]]
 |-
 | 1 || [[#SetCurrentProcess]]
 |-
@@ -228,7 +228,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |}
 
 == Permissions ==
-Every time permissions are checked, the process registration [[#fsp-pr]] is loaded using the session processID. The permission data is populated with data from the [[NPDM]],
+Every time permissions are checked, the process registration [[#fsp-pr]] is loaded using the session processID. The permission data is populated with data from the [[NPDM]].
 
 If the processID is <= 6 (which happens only for built-in sysmodules), it will use a hardcoded registration data. The default mask in this case is 0x8000000000000000.
 
@@ -241,17 +241,17 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 ! Type(s) || Mask || Name || Value || Used by
 |-
-| 0x0 || 0x8000000000000801 || MountContentType2 || 1 || [[#MountContent]]
+| 0x0 || 0x8000000000000801 || MountLogo || 1 || [[#OpenFileSystem]], [[#OpenFileSystemWithPatch]], [[#OpenFileSystemWithId]]
 |-
-| 0x1 || 0x8000000000000801 || MountContentType5 || 1 || [[#MountContent]]
+| 0x1 || 0x8000000000000801 || MountContentMeta || 1 || [[#OpenFileSystem]], [[#OpenFileSystemWithPatch]], [[#OpenFileSystemWithId]]
 |-
-| 0x2 || 0x8000000000000801 || MountContentType3 || 1 || [[#MountContent]]
+| 0x2 || 0x8000000000000801 || MountContentControl || 1 || [[#OpenFileSystem]], [[#OpenFileSystemWithPatch]], [[#OpenFileSystemWithId]]
 |-
-| 0x3 || 0x8000000000000801 || MountContentType4 || 1 || [[#MountContent]]
+| 0x3 || 0x8000000000000801 || MountContentManual || 1 || [[#OpenFileSystem]], [[#OpenFileSystemWithPatch]], [[#OpenFileSystemWithId]]
 |-
-| 0x4 || 0x8000000000000801 || MountContentType6 || 1 || [[#MountContent]]
+| 0x4 || 0x8000000000000801 || MountContentData || 1 || [[#OpenFileSystem]], [[#OpenFileSystemWithPatch]], [[#OpenFileSystemWithId]]
 |-
-| 0x5 || 0x8000000000000801 || MountContentType7 || 1 || [[#MountContent]]
+| 0x5 || 0x8000000000000801 || MountApplicationPackage || 1 || [[#OpenFileSystem]], [[#OpenFileSystemWithPatch]], [[#OpenFileSystemWithId]]
 |-
 | 0x6 || 0x8000000000000000 || || 3 ||
 |-
@@ -380,39 +380,38 @@ If the code were to request an invalid input type, panic. But this never happens
 | [2.0.0+] 0x1A || 0x8000000000004020 || || 
 |}
 
+== OpenFileSystem ==
+Takes an input [[#FileSystemType]] and an u64 title-id. Returns an [[#IFileSystem]].
+
+[2.0.0+] This function was removed.
+
 == SetCurrentProcess ==
 Takes a pid-descriptor.
 
 == OpenFileSystemWithPatch ==
-Takes an input u32 (same as [[#MountContent]]) and an u64 title-id. Web-applet loads the u32 from u32_table[inparam]. The in32 must be 4.
+Takes an input [[#FileSystemType]] and an u64 title-id. Returns an [[#IFileSystem]].
 
-Returns an [[#IFileSystem]].
+Web-applet loads the [[#FileSystemType]] (which must be '''ContentManual''') from u32_table[inparam].
 
-Note: web-applet strings refer to both this cmd and the below "MountContent" as "MountContent", but official nn_sf_sync symbols use "OpenXX" names.
+Note: web-applet strings refer to both this cmd and [[#OpenFileSystemWithId]] as "MountContent", but official nn_sf_sync symbols use "OpenXX" names.
 
 == OpenFileSystemWithId ==
-Takes a type-0x19 input buffer, an in32, and an input title-id.
+Takes a type-0x19 input buffer, an [[#FileSystemType]] and an u64 title-id. Returns an [[#IFileSystem]].
 
-The in32 must be 5 if the NCA type is 0 (control).
+The [[#IFileSystem]] must be '''ContentMeta''' if the NCA type is 0 (control).
 
-The in32 must be 2..7.
-
-The input buffer is the output string path from nsam [[NS_Services#GetContentNcaPath|GetContentNcaPath]].
-
-Returns an [[#IFileSystem]].
+The input buffer is the output string path from [[NS_Services#GetApplicationContentPath|GetApplicationContentPath]].
 
 May return errors when attempting to access NCA-paths for an update-title with a gamecard, when the gamecard isn't inserted. May return error 0x7D402 in some cases with update-titles. Non-val2 in32 values with NCA-type1 are unusable, even for normal titles.
 
-The official "MountApplicationPackage" func uses this with in64=0 and in32=7.
+The official "MountApplicationPackage" func uses this with in64=0 and [[#FileSystemType]] '''ApplicationPackage'''.
 
-After the in32-specific permissions are checked, it then gets the func retval for permissions-type 0x25 and func0.
+After the [[#FileSystemType]] specific permissions are checked, it then gets the func retval for permissions-type 0x25 and func0.
 
-When in32=5, it uses in64=0xffffffffffffffff internally, otherwise it checks if in64 is set to 0xffffffffffffffff then throws an error if so. When the in64 used internally is not 0xffffffffffffffff, it's compared with the NCA titleID, then an error is thrown on mismatch.
+When [[#FileSystemType]] is '''ContentMeta''', it uses in64=0xffffffffffffffff internally, otherwise it checks if in64 is set to 0xffffffffffffffff then throws an error if so. When the in64 used internally is not 0xffffffffffffffff, it's compared with the NCA titleID, then an error is thrown on mismatch.
 
 == OpenBisFileSystem ==
-Takes a type-0x19 input buffer string and a u32 Bis partitionID(see below). Official user-process code sets instr[0] = 0 normally.
-
-Returns an [[#IFileSystem]].
+Takes a type-0x19 input buffer string and a u32 [[Flash_Filesystem|Bis partitionID]]. Official user-process code sets instr[0] = 0 normally. Returns an [[#IFileSystem]].
 
 Only partitionIDs for FAT partitions are usable with this, otherwise error 0x2EE202 is returned. Seems to be about the same as [[#OpenBisStorage]] except this mounts the partition filesystem instead of allowing direct access to the partition sectors.
 
@@ -438,15 +437,12 @@ Takes a 0x40-byte Save-struct entry and a 0x40-byte SaveCreate-struct entry.
 Creates savedata in the SYSTEM [[Flash_Filesystem|NAND]] partition.
 
 == OpenGameCardStorage ==
-
 Takes two input u32s (gamecard handle, partition ID), and returns an [[#IStorage]] for the [[Gamecard_Format|partition]].
 
 == OpenGameCardFileSystem ==
-Takes two input u32s, with the second u32 located at +4 in rawdata after the first u32.
+Takes two input u32s, with the second u32 located at +4 in rawdata after the first u32. Returns an [[#IFileSystem]].
 
-Returns an [[#IFileSystem]].
-
-Mounts a gamecard [[Gamecard_Partition|partition]].
+Mounts a [[Gamecard_Partition|gamecard partition]].
 
 == OpenSaveDataFileSystem ==
 Takes an input u8 [[#SaveDataSpaceId]] and a 0x40-byte Save-struct entry. Official user-process code is only known to use value 1 for the u8.
@@ -588,7 +584,7 @@ There are two main implementations of this interface:
 == GetEntryType ==
 Takes a type-0x9 input buffer for the path and returns [[#DirectoryEntryType]] as an output u32.
 
-==OpenDirectory==
+== OpenDirectory ==
 Takes a type-0x9 input buffer for the path and an u64 '''filter_flags'''. '''filter_flags''' controls what type of entries are read by the [[#IDirectory]]: bitmask 0x1 = directories, bitmask 0x2 = files.
 
 == Commit ==
@@ -755,7 +751,6 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |}
 
 == GetGameCardUpdatePartitionInfo ==
-
 Returns a titleID and the title-version for it.
 
 * Output u32 with ARMS-gamecard: title-version v131162. This is the title-version for [[2.1.0]], which is the sysupdate included with this gamecard. Launch-day gamecards return title-version v450.
@@ -771,6 +766,28 @@ This is "nn::fssrv::sf::IEventNotifier".
 ! Cmd || Name
 |-
 | 0 || GetEventHandle
+|}
+
+= FileSystemType =
+{| class="wikitable" border="1"
+|-
+! Value || Name
+|-
+| 0 || Invalid
+|-
+| 1 || Invalid
+|-
+| 2 || Logo
+|-
+| 3 || ContentControl
+|-
+| 4 || ContentManual
+|-
+| 5 || ContentMeta
+|-
+| 6 || ContentData
+|-
+| 7 || ApplicationPackage
 |}
 
 = StorageId =
@@ -871,12 +888,7 @@ These are the 0x300 paths to NCA files for the various filesystems FS can access
 | [4.0.0+] @RegUpdate || Registered update partition
 |}
 
-=BisPartitionID=
-* 0: Raw NAND sectors access for MMC [[Flash_Filesystem|boot]] partition 0.
-* 10: Raw NAND sectors access for MMC [[Flash_Filesystem|boot]] partition 1.
-* Rest: see [[Flash_Filesystem|here]].
-
-=Save Struct=
+= Save Struct =
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -920,7 +932,7 @@ Total size is 0x40-bytes.
 
 For DeviceSaveData, this struct is all-zero except for the [[#SaveDataType]] field.
 
-=SaveCreate Struct=
+= SaveCreate Struct =
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -962,15 +974,15 @@ For DeviceSaveData, this struct is all-zero except for the [[#SaveDataType]] fie
 
 Total size is 0x40-bytes.
 
-=DeviceSaveData=
+= DeviceSaveData =
 This is accessed using the same commands for SaveData with the same input u8, the only difference compared to SaveData is the Save-struct.
 
-=BcatSaveData=
+= BcatSaveData =
 This is accessed using the same commands for SaveData with the same input u8. The Save-struct is the same as DeviceSaveData, except that the titleID field is set to <input titleID>. See above regarding SaveCreate-struct.
 
 The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-bytes set to all-zero.
 
-=SaveDataInfo=
+= SaveDataInfo =
 {| class="wikitable" border="1"
 |-
 ! Offset
