@@ -141,6 +141,7 @@ This is
 | 1007 | \[4.0.0+\] RegisterUpdatePartition                                                                     |
 | 1008 | \[4.0.0+\] OpenRegisteredUpdatePartition                                                               |
 | 1009 | \[4.0.0+\] GetAndClearMemoryReportInfo                                                                 |
+| 1010 | \[5.1.0+\]                                                                                             |
 | 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                                            |
 
 ## Permissions

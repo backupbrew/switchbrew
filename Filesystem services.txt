@@ -222,6 +222,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 1009 || [4.0.0+] GetAndClearMemoryReportInfo
 |-
+| 1010 || [5.1.0+]
+|-
 | 1100 || [4.0.0+] OverrideSaveDataTransferTokenSignVerificationKey
 |}
 
