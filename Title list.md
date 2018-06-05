@@ -1001,7 +1001,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <tr class="odd">
 <td><p>0100000000000827</p></td>
 <td><p><a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)</p></td>
-<td></td>
+<td><p>CAction (content action). Used by <a href="AM services.md" title="wikilink">AM</a>.</p></td>
 </tr>
 </tbody>
 </table>

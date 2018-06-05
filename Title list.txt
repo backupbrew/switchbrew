@@ -211,7 +211,7 @@ Decimal versions use the format:
 |-
 | 0100000000000826 || [[5.0.0|v335544750]] (5.0.0.430)<br/> [[5.1.0|v336592976]] (5.1.0.80) || Rebootless system update version file.
 |-
-| 0100000000000827 || [[5.1.0|v336592976]] (5.1.0.80) ||
+| 0100000000000827 || [[5.1.0|v336592976]] (5.1.0.80) || CAction (content action). Used by [[AM_services|AM]].
 |}
 
 == System Applets ==
