@@ -375,11 +375,11 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | 0x14 || 0xC000000001000000 || SaveData_Debug || [[#CorruptSaveDataForDebug]]
 |-
-| 0x15 || 0x8000000001000060 ([1.0.0-4.1.0] 0xC000000002000000) || SaveData_SystemManagement || [[#CreateSaveDataFileSystem]], [[#OpenSaveDataFileSystem]], [[#SetSaveDataRootPath]]
+| 0x15 || 0x8000000001000060 ([1.0.0-4.1.0] 0xC000000002000000) || ||
 |-
 | [2.0.0+] 0x16 || 0x8000000000000060 ([1.0.0-4.1.0] 0x8000000004000000) || || 
 |-
-| [2.0.0+] 0x17 || 0xC000000002000000 ([1.0.0-4.1.0] 0x8000000008000000) || || 
+| [2.0.0+] 0x17 || 0xC000000002000000 ([1.0.0-4.1.0] 0x8000000008000000) || SaveData_SystemManagement || [[#CreateSaveDataFileSystem]], [[#OpenSaveDataFileSystem]], [[#SetSaveDataRootPath]]
 |-
 | [2.0.0+] 0x18 || 0x8000000004000000 ([1.0.0-4.1.0] 0x8000000010000000) || || 
 |-
