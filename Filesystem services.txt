@@ -283,7 +283,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | 0x14 || 0x8000000000000020 ([1.0.0-2.3.0] 0x8000000000010082) || SystemSaveDataAccess1 || 3 || [[#OpenSaveDataFileSystemBySystemSaveDataId]]
 |-
-| 0x15 || 0x8000000000010082 ([1.0.0-2.3.0] 0x8000000000010080) || BisPartition0_9, BisPartition11_19 || 3 || [[#OpenBisStorage]]
+| 0x15 || 0x8000000000010082 ([1.0.0-2.3.0] 0x8000000000010080) || BisPartition0 || 3 || [[#OpenBisStorage]]
 |-
 | 0x16 || 0x8000000000010080 || BisPartition10 || 3 || [[#OpenBisStorage]]
 |-
