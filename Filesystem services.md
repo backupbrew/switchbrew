@@ -687,6 +687,8 @@ This is
 | 218 | \[3.0.0+\] GetGameCardDeviceId                                                 |
 | 300 | SetSpeedEmulationMode                                                          |
 | 301 | GetSpeedEmulationMode                                                          |
+| 400 | \[5.0.0+\] SuspendSdmmcControl                                                 |
+| 401 | \[5.0.0+\] ResumeSdmmcControl                                                  |
 
 ## GetGameCardUpdatePartitionInfo
 

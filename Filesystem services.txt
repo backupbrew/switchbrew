@@ -800,6 +800,10 @@ This is "nn::fssrv::sf::IDeviceOperator".
 | 300 || SetSpeedEmulationMode
 |-
 | 301 || GetSpeedEmulationMode
+|-
+| 400 || [5.0.0+] SuspendSdmmcControl
+|-
+| 401 || [5.0.0+] ResumeSdmmcControl
 |}
 
 == GetGameCardUpdatePartitionInfo ==
