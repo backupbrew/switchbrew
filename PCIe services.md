@@ -2,19 +2,19 @@
 
 This is "nn::pcie::detail::IManager".
 
-| Cmd | Name                                         |
-| --- | -------------------------------------------- |
-| 0   | [\#GetISession](#GetISession "wikilink")     |
-| 1   | [\#ListEndpoints](#ListEndpoints "wikilink") |
+| Cmd | Name                                                     |
+| --- | -------------------------------------------------------- |
+| 0   | [\#RegisterClassDriver](#RegisterClassDriver "wikilink") |
+| 1   | [\#QueryFunctions](#QueryFunctions "wikilink")           |
 
-## Initialize
+## RegisterClassDriver
 
 Takes the current process handle (0xFFFF8001).
 
 Returns an event handle and session handle to a
 [\#ISession](#ISession "wikilink").
 
-## ListEndpoints
+## QueryFunctions
 
 Takes a type-6 buffer.
 
@@ -24,28 +24,28 @@ Returns a list of connected PCIe endpoint devices.
 
 This is "nn::pcie::detail::ISession".
 
-| Cmd | Name | Notes                                         |
-| --- | ---- | --------------------------------------------- |
-| 0   |      | Takes a type-6 buffer. Returns all zeroes.    |
-| 1   |      | Always returns 0x1278?                        |
-| 2   |      | Always returns 0x1278?                        |
-| 3   |      | Takes a type-6 buffer. Always returns 0x1278? |
-| 4   |      |                                               |
-| 5   |      |                                               |
-| 6   |      |                                               |
-| 7   |      |                                               |
-| 8   |      |                                               |
-| 9   |      |                                               |
-| 10  |      |                                               |
-| 11  |      |                                               |
-| 12  |      |                                               |
-| 13  |      |                                               |
-| 14  |      |                                               |
-| 15  |      |                                               |
-| 16  |      |                                               |
-| 17  |      |                                               |
-| 18  |      |                                               |
-| 19  |      |                                               |
-| 20  |      |                                               |
+| Cmd | Name                   |
+| --- | ---------------------- |
+| 0   | QueryFunctions         |
+| 1   | AcquireFunction        |
+| 2   | ReleaseFunction        |
+| 3   | GetFunctionState       |
+| 4   | GetBarProfile          |
+| 5   | ReadConfig             |
+| 6   | WriteConfig            |
+| 7   | ReadBarRegion          |
+| 8   | WriteBarRegion         |
+| 9   | FindCapability         |
+| 10  | FindExtendedCapability |
+| 11  | MapDma                 |
+| 12  | UnmapDma               |
+| 13  | UnmapDma2              |
+| 14  | GetDmaBusAddress       |
+| 15  | GetDmaBusAddressRange  |
+| 16  | SetDmaEnable           |
+| 17  | AcquireIrq             |
+| 18  | ReleaseIrq             |
+| 19  | SetIrqEnable           |
+| 20  | SetAspmEnable          |
 
 [Category:Services](Category:Services "wikilink")

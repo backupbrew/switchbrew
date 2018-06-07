@@ -5,17 +5,17 @@ This is "nn::pcie::detail::IManager".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetISession]]
+| 0 || [[#RegisterClassDriver]]
 |-
-| 1 || [[#ListEndpoints]]
+| 1 || [[#QueryFunctions]]
 |}
 
-== Initialize ==
+== RegisterClassDriver ==
 Takes the current process handle (0xFFFF8001).
 
 Returns an event handle and session handle to a [[#ISession]].
 
-== ListEndpoints ==
+== QueryFunctions ==
 Takes a type-6 buffer.
 
 Returns a list of connected PCIe endpoint devices.
@@ -25,49 +25,49 @@ This is "nn::pcie::detail::ISession".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || || Takes a type-6 buffer. Returns all zeroes.
+| 0 || QueryFunctions
 |-
-| 1 || || Always returns 0x1278?
+| 1 || AcquireFunction
 |-
-| 2 || || Always returns 0x1278?
+| 2 || ReleaseFunction
 |-
-| 3 || || Takes a type-6 buffer. Always returns 0x1278?
+| 3 || GetFunctionState
 |-
-| 4 || ||
+| 4 || GetBarProfile
 |-
-| 5 || ||
+| 5 || ReadConfig
 |-
-| 6 || ||
+| 6 || WriteConfig
 |-
-| 7 || ||
+| 7 || ReadBarRegion
 |-
-| 8 || ||
+| 8 || WriteBarRegion
 |-
-| 9 || ||
+| 9 || FindCapability
 |-
-| 10 || ||
+| 10 || FindExtendedCapability
 |-
-| 11 || ||
+| 11 || MapDma
 |-
-| 12 || ||
+| 12 || UnmapDma
 |-
-| 13 || ||
+| 13 || UnmapDma2
 |-
-| 14 || ||
+| 14 || GetDmaBusAddress
 |-
-| 15 || ||
+| 15 || GetDmaBusAddressRange
 |-
-| 16 || ||
+| 16 || SetDmaEnable
 |-
-| 17 || ||
+| 17 || AcquireIrq
 |-
-| 18 || ||
+| 18 || ReleaseIrq
 |-
-| 19 || ||
+| 19 || SetIrqEnable
 |-
-| 20 || ||
+| 20 || SetAspmEnable
 |}
 
 [[Category:Services]]
