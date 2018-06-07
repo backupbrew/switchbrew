@@ -81,7 +81,7 @@ fatal-errors, since the Description ends with bit21.
 | 141   | NSD                                                    |
 | 142   | PCTL                                                   |
 | 143   | BTM                                                    |
-| 144   |                                                        |
+| 144   | EC (Shop)                                              |
 | 145   | ETicket                                                |
 | 146   | NGC (Bad Words)                                        |
 | 147   | Error Report                                           |
@@ -109,6 +109,7 @@ fatal-errors, since the Description ends with bit21.
 | 206   | Capture                                                |
 | 208   | Manu                                                   |
 | 209   | ATK                                                    |
+| 210   | Web                                                    |
 | 211   |                                                        |
 | 212   | GRC                                                    |
 | 216   | Migration                                              |

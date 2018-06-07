@@ -136,7 +136,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 143 || BTM
 |-
-| 144 || 
+| 144 || EC (Shop)
 |-
 | 145 || ETicket
 |-
@@ -191,6 +191,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 208 || Manu
 |-
 | 209 || ATK
+|-
+| 210 || Web
 |-
 | 211 ||
 |-
