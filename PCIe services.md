@@ -1,11 +1,12 @@
 # pcie
 
-This is "nn::pcie::detail::IManager".
+This is
+"nn::pcie::detail::IManager".
 
-| Cmd | Name                                                     |
-| --- | -------------------------------------------------------- |
-| 0   | [\#RegisterClassDriver](#RegisterClassDriver "wikilink") |
-| 1   | [\#QueryFunctions](#QueryFunctions "wikilink")           |
+| Cmd | Name                                                                   |
+| --- | ---------------------------------------------------------------------- |
+| 0   | [\#RegisterClassDriver](#RegisterClassDriver "wikilink")               |
+| 1   | [\#QueryFunctionsUnregistered](#QueryFunctionsUnregistered "wikilink") |
 
 ## RegisterClassDriver
 
@@ -14,7 +15,7 @@ Takes the current process handle (0xFFFF8001).
 Returns an event handle and session handle to a
 [\#ISession](#ISession "wikilink").
 
-## QueryFunctions
+## QueryFunctionsUnregistered
 
 Takes a type-6 buffer.
 
@@ -39,7 +40,7 @@ This is "nn::pcie::detail::ISession".
 | 10  | FindExtendedCapability |
 | 11  | MapDma                 |
 | 12  | UnmapDma               |
-| 13  | UnmapDma2              |
+| 13  | UnmapDmaBusAddress     |
 | 14  | GetDmaBusAddress       |
 | 15  | GetDmaBusAddressRange  |
 | 16  | SetDmaEnable           |

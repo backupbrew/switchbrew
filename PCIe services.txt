@@ -7,7 +7,7 @@ This is "nn::pcie::detail::IManager".
 |-
 | 0 || [[#RegisterClassDriver]]
 |-
-| 1 || [[#QueryFunctions]]
+| 1 || [[#QueryFunctionsUnregistered]]
 |}
 
 == RegisterClassDriver ==
@@ -15,7 +15,7 @@ Takes the current process handle (0xFFFF8001).
 
 Returns an event handle and session handle to a [[#ISession]].
 
-== QueryFunctions ==
+== QueryFunctionsUnregistered ==
 Takes a type-6 buffer.
 
 Returns a list of connected PCIe endpoint devices.
@@ -53,7 +53,7 @@ This is "nn::pcie::detail::ISession".
 |-
 | 12 || UnmapDma
 |-
-| 13 || UnmapDma2
+| 13 || UnmapDmaBusAddress
 |-
 | 14 || GetDmaBusAddress
 |-
