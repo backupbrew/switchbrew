@@ -131,6 +131,26 @@ FreeBSD's `fcntl`, limited to `F_GETFL` and `F_SETFL` with `O_NONBLOCK`.
 Takes a socket file descriptor and an unused u64. Duplicates the socket
 (FreeBSD's `dup`). Reserved to `bsd:s`.
 
+# bsdcfg
+
+This is "nn::bsdsocket::cfg::ServerInterface".
+
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | SetIfUp           |
+| 1   | SetIfUpWithEvent  |
+| 2   | CancelIf          |
+| 3   | SetIfDown         |
+| 4   | GetIfState        |
+| 5   | DhcpRenew         |
+| 6   | AddStaticArpEntry |
+| 7   | RemoveArpEntry    |
+| 8   | LookupArpEntry    |
+| 9   | LookupArpEntry2   |
+| 10  | ClearArpEntries   |
+| 11  | ClearArpEntries2  |
+| 12  | PrintArpEntries   |
+
 # sfdnsres
 
 This is "nn::socket::resolver::IResolver".
