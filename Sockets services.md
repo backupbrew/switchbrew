@@ -151,6 +151,31 @@ This is "nn::bsdsocket::cfg::ServerInterface".
 | 11  | ClearArpEntries2  |
 | 12  | PrintArpEntries   |
 
+# ethc:c
+
+This is "nn::eth::sf::IEthInterface".
+
+| Cmd | Name         |
+| --- | ------------ |
+| 0   | Initialize   |
+| 1   | Cancel       |
+| 2   | GetResult    |
+| 3   | GetMediaList |
+| 4   | SetMediaType |
+| 5   | GetMediaType |
+
+# ethc:i
+
+This is "nn::eth::sf::IEthInterfaceGroup".
+
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | GetReadableHandle |
+| 1   | Cancel            |
+| 2   | GetResult         |
+| 3   | GetInterfaceList  |
+| 4   | GetInterfaceCount |
+
 # sfdnsres
 
 This is "nn::socket::resolver::IResolver".
