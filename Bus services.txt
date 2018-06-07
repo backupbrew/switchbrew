@@ -499,7 +499,7 @@ This is "nn::pinmux::ISession".
 |-
 | 1 || GetPinAssignment
 |-
-| 2 || 
+| 2 || SetPinAssignmentForHardwareTest
 |}
 
 = sasbus =
