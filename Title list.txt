@@ -262,6 +262,8 @@ Decimal versions use the format:
 |-
 | 0100000000001016 || || TitleID used by [[NS_Services|NS]] when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.
 |-
+| 010000000000101B || || "DummyAppletShop" (currently not present on retail devices)
+|-
 | 010000000000101E || || This title is referenced by [5.0.0+] [[NIM_services|NIM]] when it accesses the [[Network#pearljam|pearljam]] server, but does not exist on retail systems currently.
 |}
 
@@ -273,7 +275,7 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000002000 || || "BoardTest"
 |-
-| 0100000000002001 || || "BoardWireless"
+| 0100000000002001 || || A3Wireless
 |-
 | 0100000000002002 || || C1LcdAndKey - "LcdAndKey". LCD/Keyboard testing.
 |-
@@ -301,9 +303,13 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000002064 || || DevMenu
 |-
-| 0100000000002071 || || "snap_shot_dump" - Used by [[NS_Services|NS]].
+| 0100000000002065 || || DevMenuApp
 |-
-| 010000000000209B || || "am.debug" - Used by [[AM_services|AM]].
+| 0100000000002071 || || SnapShotDumper - Used by [[NS_Services|NS]].
+|-
+| 0100000000002099 || || DevOverlayDisp
+|-
+| 010000000000209B || || GpuCoreDumper - Used by [[AM_services|AM]].
 |-
 | 010000000000209C || || TestApplication - "TestApplicationLauncher". Factory qlaunch replacement, used to launch other tests.
 |-
@@ -335,7 +341,7 @@ Note: No 01000000000020XX titles exist on retail systems.
 {| class=wikitable
 ! Title-id || Versions || Description
 |-
-| 100000000000B120 || || Launched by maintenance mode [[Boot2|boot2.manuBoot]], but not present in retail or [[Factory Setup|factory firmware]].
+| 100000000000B120 || || nvdbgsvc - Launched by maintenance mode [[Boot2|boot2.manuBoot]], but not present in retail or [[Factory Setup|factory firmware]].
 |-
 | 100000000000B14A || || [[Manu Services|manu]] - installed in [[Factory Setup|factory firmware]].
 |}

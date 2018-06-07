@@ -1235,6 +1235,11 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p>TitleID used by <a href="NS Services.md" title="wikilink">NS</a> when a certain flag is non-zero, in multiple places including around code using string &quot;application_install&quot;. This title doesn't seem to exist for retail.</p></td>
 </tr>
 <tr class="odd">
+<td><p>010000000000101B</p></td>
+<td></td>
+<td><p>&quot;DummyAppletShop&quot; (currently not present on retail devices)</p></td>
+</tr>
+<tr class="even">
 <td><p>010000000000101E</p></td>
 <td></td>
 <td><p>This title is referenced by [5.0.0+] <a href="NIM services.md" title="wikilink">NIM</a> when it accesses the <a href="Network#pearljam.md##pearljam" title="wikilink">pearljam</a> server, but does not exist on retail systems currently.</p></td>
@@ -1250,7 +1255,7 @@ systems.
 | Title-id         | Versions | Description                                                                                           |
 | ---------------- | -------- | ----------------------------------------------------------------------------------------------------- |
 | 0100000000002000 |          | "BoardTest"                                                                                           |
-| 0100000000002001 |          | "BoardWireless"                                                                                       |
+| 0100000000002001 |          | A3Wireless                                                                                            |
 | 0100000000002002 |          | C1LcdAndKey - "LcdAndKey". LCD/Keyboard testing.                                                      |
 | 0100000000002003 |          | C2UsbHpmic - "UsbAndHPMicTest". USB and audio testing.                                                |
 | 0100000000002004 |          | C3Aging - "Aging". Graphics/Framerate testing.                                                        |
@@ -1264,8 +1269,10 @@ systems.
 | 0100000000002055 |          | GameCardWriter                                                                                        |
 | 0100000000002054 |          | RepairSslCertif - "RepairSslCertificate".                                                             |
 | 0100000000002064 |          | DevMenu                                                                                               |
-| 0100000000002071 |          | "snap\_shot\_dump" - Used by [NS](NS%20Services.md "wikilink").                                       |
-| 010000000000209B |          | "am.debug" - Used by [AM](AM%20services.md "wikilink").                                               |
+| 0100000000002065 |          | DevMenuApp                                                                                            |
+| 0100000000002071 |          | SnapShotDumper - Used by [NS](NS%20Services.md "wikilink").                                           |
+| 0100000000002099 |          | DevOverlayDisp                                                                                        |
+| 010000000000209B |          | GpuCoreDumper - Used by [AM](AM%20services.md "wikilink").                                            |
 | 010000000000209C |          | TestApplication - "TestApplicationLauncher". Factory qlaunch replacement, used to launch other tests. |
 | 01000000000020F0 |          | "devmenuapp\_installer" - Launched by [boot2](Boot2.md "wikilink").                                   |
 
@@ -1284,10 +1291,10 @@ systems.
 
 ## Factory System Modules
 
-| Title-id         | Versions | Description                                                                                                                                         |
-| ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 100000000000B120 |          | Launched by maintenance mode [boot2.manuBoot](Boot2.md "wikilink"), but not present in retail or [factory firmware](Factory%20Setup.md "wikilink"). |
-| 100000000000B14A |          | [manu](Manu%20Services.md "wikilink") - installed in [factory firmware](Factory%20Setup.md "wikilink").                                             |
+| Title-id         | Versions | Description                                                                                                                                                    |
+| ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 100000000000B120 |          | nvdbgsvc - Launched by maintenance mode [boot2.manuBoot](Boot2.md "wikilink"), but not present in retail or [factory firmware](Factory%20Setup.md "wikilink"). |
+| 100000000000B14A |          | [manu](Manu%20Services.md "wikilink") - installed in [factory firmware](Factory%20Setup.md "wikilink").                                                        |
 
 ## System Applications
 
