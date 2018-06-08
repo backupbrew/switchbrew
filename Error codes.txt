@@ -501,6 +501,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x407C || 124 || 32 || Invalid input buffer
 |-
+| 0x7A880 || 128 || 500 || <code>am.debug!dev_function</code> setting needs to be set
+|-
 | 0x3CF089 || 137 || 7800 || Unknown/invalid libcurl error.
 |-
 | 0x3E8289-0x3F4089 || 137 || 8001-8096 || libcurl error 1-96. Some of the libcurl errors in the error-table map to the above unknown-libcurl-error however.
