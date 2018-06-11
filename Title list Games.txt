@@ -289,6 +289,8 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01004210041AE000 || レイジングループ || JPN || || || || Game
 |-
+| 010043500A17A000 || Fallout Shelter || EUR USA || || || || Game
+|-
 | 01004360045C8000 || Lichtspeer: Double Speer Edition || EUR USA || || || || Game
 |-
 | 01004360045C8800 || Lichtspeer: Double Speer Edition || EUR USA || || || || Update
