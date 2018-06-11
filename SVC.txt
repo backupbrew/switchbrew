@@ -104,7 +104,7 @@ __NOTOC__
 |-
 | 0x32 || svcSetThreadActivity || W0=thread_handle, W1=bool || W0=result
 |-
-| 0x33 || svcGetThreadContext3 || W0=thread_handle, W1=[[#ThreadContext]]* || W0=result
+| 0x33 || svcGetThreadContext3 || X0=[[#ThreadContext]]*, W1=thread_handle || W0=result
 |-
 | 0x34 || [4.0.0+] svcWaitForAddress || X0=ptr, W1=ArbitrationType, X2=? X3=timeout ||
 |-
