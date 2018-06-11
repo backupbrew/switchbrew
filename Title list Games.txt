@@ -175,6 +175,8 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010024D0032F2800 || PHOTON³（フォトン・キューブ） || JPN || || || || Update
 |-
+| 010025400AECE000 || Fortnite || ALL || || || || Game
+|-
 | 01002580038DE000 || ACA NEOGEO GALAXY FIGHT: UNIVERSAL WARRIORS || ALL || || v0 || || VC
 |-
 | 01002580038DE800 || ACA NEOGEO GALAXY FIGHT: UNIVERSAL WARRIORS || ALL || || || || Update
