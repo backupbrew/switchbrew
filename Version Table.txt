@@ -16,6 +16,11 @@
 | You can run homebrew. See [https://switchbrew.github.io/nx-hbl/ nx-hbl].
 |-
 | [[3.0.1]]
+| [[4.1.0]]
+| You can update to or stay on 4.1.0. 
+If you are beyond 4.1.0 you won't be able to have a non-tethered exploit
+|-
+| [[5.0.0]]
 | {latest}
 | Feel free to update to latest version if not already. Wait for [https://github.com/Atmosphere-NX/Atmosphere Atmosphère].
 |-
