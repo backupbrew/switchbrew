@@ -1,10 +1,14 @@
 # Setup
 
-Install [devkitA64](http://devkitpro.org/). If it's already installed,
+Install [devkitA64](https://devkitpro.org/). If it's already installed,
 update it using sudo (dkp-)pacman -Syu. On Windows, there's a [graphical
 installer](https://github.com/devkitPro/installer/releases/latest). On
 Unix-like platforms such as Linux/macOS, there's
 [pacman](https://github.com/devkitPro/pacman/releases/latest).
+
+[devkitPro](https://devkitpro.org) also provides a set of [Docker
+images](https://hub.docker.com/u/devkitpro/) which come pre-installed
+with all the portlibs packages.
 
 ## Windows
 
