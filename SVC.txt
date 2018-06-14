@@ -198,7 +198,7 @@ __NOTOC__
 |-
 | 0x6B || svcWriteDebugProcessMemory || X0=debug_handle, X1=buffer*, X2=dst_addr, X3=size || W0=result
 |-
-| 0x6C || svcSetHardwareBreakPoint || W0=HardwareBreakpointId, X1=watchpoint_flags, X2=watchpoint_value/debug_handle? || 
+| 0x6C || [[#svcSetHardwareBreakPoint]] || W0=HardwareBreakpointId, X1=watchpoint_flags/breakpoint_flags, X2=watchpoint_value/debug_handle || 
 |-
 | 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=[[#DebugThreadParam]] || W0=result, X1=out0, W2=out1
 |- style="border-top: double"
@@ -1385,6 +1385,32 @@ Returns an enum with value 0-7.
 * svcSetHardwareBreakPoint
 
 svcDebugActiveProcess stops execution of the target process, the normal method for resuming it requires svcContinueDebugEvent(see above). Closing the debug handle also results in execution being resumed.
+
+== svcSetHardwareBreakPoint ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || u32 || hardware_breakpoint_id
+|-
+| (In) W1 || u64 || flags
+|-
+| (In) W2 || u64 || value
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+Sets one of the AArch64 hardware breakpoints. Has two behaviors depending on the value of hardware_breakpoint_id:
+
+If hardware_breakpoint_id < 0x10, then it sets one of the AArch64 hardware breakpoints. Flags will go to DBGBCRn_EL1, and value to DBGBVRn_EL1. The only flags the user is allowed to set are those in the bitmask 0x7F01E1. Furthermore, the kernel will or it with 0x4004, in order to set various security flags to guarantee the watchpoints only triggers for code in EL0. If the user asks for a Breakpoint Type of ContextIDR match, the kernel shall use the given debug_handle to set DBGBVRn_EL1 to the ContextID of the debugged process.
+
+
+If hardware_breakpoint_id is between 0x10 and 0x20 (exclusive), then it sets one of the AArch64 hardware watchpoints. Flags will go to DBGWCRn_EL1, and the value to DBGWVRn_EL1. The only flags the user is allowed to set are those in the bitmask 0xFF0F1FF9. Furthermore, the kernel will or it with 0x104004. This will set various security flags, and set the watchpoint type to be a Linked Watchpoint. This means that you need to link it to a Linked ContextIDR breakpoint. Check the ARM documentation for more information.
+
+For more documentation for hardware breakpoints, check out the AArch64 documentation for the [http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0488h/way1382455558968.html DBGBCRn_EL1 register] and the [http://infocenter.arm.com/help/topic/com.arm.doc.ddi0488h/way1382455560629.html DBGWCRn_EL1 register]
 
 = Enum/Structures =
 == ThreadContextRequestFlags ==

@@ -101,7 +101,7 @@
 | 0x69 | svcQueryDebugProcessMemory                                                         | X0=[\#MemoryInfo](#MemoryInfo "wikilink")\*, X2=debug\_handle, X3=addr                                             | W0=result, W1=PageInfo                                   |
 | 0x6A | svcReadDebugProcessMemory                                                          | X0=buffer\*, X1=debug\_handle, X2=src\_addr, X3=size                                                               | W0=result                                                |
 | 0x6B | svcWriteDebugProcessMemory                                                         | X0=debug\_handle, X1=buffer\*, X2=dst\_addr, X3=size                                                               | W0=result                                                |
-| 0x6C | svcSetHardwareBreakPoint                                                           | W0=HardwareBreakpointId, X1=watchpoint\_flags, X2=watchpoint\_value/debug\_handle?                                 |                                                          |
+| 0x6C | [\#svcSetHardwareBreakPoint](#svcSetHardwareBreakPoint "wikilink")                 | W0=HardwareBreakpointId, X1=watchpoint\_flags/breakpoint\_flags, X2=watchpoint\_value/debug\_handle                |                                                          |
 | 0x6D | svcGetDebugThreadParam                                                             | X2=debug\_handle, X3=thread\_id, W4=[\#DebugThreadParam](#DebugThreadParam "wikilink")                             | W0=result, X1=out0, W2=out1                              |
 | 0x6F | \[5.0.0+\] [\#svcGetSystemInfo](#svcGetSystemInfo "wikilink")                      | X1=info\_id, X2=handle, X3=info\_sub\_id                                                                           | W0=result, X1=out                                        |
 | 0x70 | svcCreatePort                                                                      | W2=max\_sessions, W3=unk\_bool, X4=name\_ptr                                                                       | W0=result, W1=clientport\_handle, W2=serverport\_handle  |
@@ -1168,6 +1168,46 @@ non-zero. Error 0x4201 is returned otherwise.
 svcDebugActiveProcess stops execution of the target process, the normal
 method for resuming it requires svcContinueDebugEvent(see above).
 Closing the debug handle also results in execution being resumed.
+
+## svcSetHardwareBreakPoint
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name                     |
+| -------- | ------------------------------ | ------------------------ |
+| (In) W0  | u32                            | hardware\_breakpoint\_id |
+| (In) W1  | u64                            | flags                    |
+| (In) W2  | u64                            | value                    |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret                      |
+
+</div>
+
+Sets one of the AArch64 hardware breakpoints. Has two behaviors
+depending on the value of hardware\_breakpoint\_id:
+
+If hardware\_breakpoint\_id \< 0x10, then it sets one of the AArch64
+hardware breakpoints. Flags will go to DBGBCRn\_EL1, and value to
+DBGBVRn\_EL1. The only flags the user is allowed to set are those in the
+bitmask 0x7F01E1. Furthermore, the kernel will or it with 0x4004, in
+order to set various security flags to guarantee the watchpoints only
+triggers for code in EL0. If the user asks for a Breakpoint Type of
+ContextIDR match, the kernel shall use the given debug\_handle to set
+DBGBVRn\_EL1 to the ContextID of the debugged process.
+
+If hardware\_breakpoint\_id is between 0x10 and 0x20 (exclusive), then
+it sets one of the AArch64 hardware watchpoints. Flags will go to
+DBGWCRn\_EL1, and the value to DBGWVRn\_EL1. The only flags the user is
+allowed to set are those in the bitmask 0xFF0F1FF9. Furthermore, the
+kernel will or it with 0x104004. This will set various security flags,
+and set the watchpoint type to be a Linked Watchpoint. This means that
+you need to link it to a Linked ContextIDR breakpoint. Check the ARM
+documentation for more information.
+
+For more documentation for hardware breakpoints, check out the AArch64
+documentation for the [DBGBCRn\_EL1
+register](http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0488h/way1382455558968.html)
+and the [DBGWCRn\_EL1
+register](http://infocenter.arm.com/help/topic/com.arm.doc.ddi0488h/way1382455560629.html)
 
 # Enum/Structures
 
