@@ -77,7 +77,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010010F004022800 || Touhou Kobuto V: Burst Battle || EUR USA || || || || Update
 |-
-| 0100111004460000 || SONIC FORCES™ Digital Bonus Edition || EUR || || || || Game
+| 0100111004460000 || SONIC FORCES™ Digital Bonus Edition || EUR || || || Gamecard Front: LA-H-ABQLB-{region} Back: ABQLB41A000 || Game
 |-
 | 0100111004460800 || SONIC FORCES™ Digital Bonus Edition || EUR || || || || Update
 |-
@@ -1039,7 +1039,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100F0D004CAE000 || PAN-PAN A tiny big adventure || EUR USA || || || || Game
 |-
-| 0100F15003E64000 || Fire Emblem Warriors || EUR USA || || || || Game
+| 0100F15003E64000 || Fire Emblem Warriors || EUR USA || || || Gamecard Front: LA-H-ADXHB-{region} Back: ADXHB08X000|| Game
 |-
 | 0100F15003E64800 || Fire Emblem Warriors || EUR USA || || || || Update
 |-
