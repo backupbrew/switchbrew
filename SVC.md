@@ -1182,8 +1182,9 @@ Closing the debug handle also results in execution being resumed.
 
 </div>
 
-Sets one of the AArch64 hardware breakpoints. Has two behaviors
-depending on the value of hardware\_breakpoint\_id:
+Sets one of the AArch64 hardware breakpoints. The nintendo switch has 6
+hardware breakpoints, and 4 hardware watchpoints. The syscall has two
+behaviors depending on the value of hardware\_breakpoint\_id:
 
 If hardware\_breakpoint\_id \< 0x10, then it sets one of the AArch64
 hardware breakpoints. Flags will go to DBGBCRn\_EL1, and value to
@@ -1202,6 +1203,12 @@ kernel will or it with 0x104004. This will set various security flags,
 and set the watchpoint type to be a Linked Watchpoint. This means that
 you need to link it to a Linked ContextIDR breakpoint. Check the ARM
 documentation for more information.
+
+Note that hardware\_breakpoint\_id 0 to 4 match only to Virtual Address,
+while hardware\_breakpoint\_id 5 and 6 match against either Virtual
+Address, ContextID, or VMID. As such, if you are configuring a
+breakpoint to link for a watchpoint, make sure you use
+hardware\_breakpoint\_id 5 or 6.
 
 For more documentation for hardware breakpoints, check out the AArch64
 documentation for the [DBGBCRn\_EL1

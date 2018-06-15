@@ -1403,12 +1403,15 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 |}
 </div>
 
-Sets one of the AArch64 hardware breakpoints. Has two behaviors depending on the value of hardware_breakpoint_id:
+Sets one of the AArch64 hardware breakpoints. The nintendo switch has 6 hardware breakpoints, and 4 hardware watchpoints. The syscall has two behaviors depending on the value of hardware_breakpoint_id:
 
 If hardware_breakpoint_id < 0x10, then it sets one of the AArch64 hardware breakpoints. Flags will go to DBGBCRn_EL1, and value to DBGBVRn_EL1. The only flags the user is allowed to set are those in the bitmask 0x7F01E1. Furthermore, the kernel will or it with 0x4004, in order to set various security flags to guarantee the watchpoints only triggers for code in EL0. If the user asks for a Breakpoint Type of ContextIDR match, the kernel shall use the given debug_handle to set DBGBVRn_EL1 to the ContextID of the debugged process.
 
 
 If hardware_breakpoint_id is between 0x10 and 0x20 (exclusive), then it sets one of the AArch64 hardware watchpoints. Flags will go to DBGWCRn_EL1, and the value to DBGWVRn_EL1. The only flags the user is allowed to set are those in the bitmask 0xFF0F1FF9. Furthermore, the kernel will or it with 0x104004. This will set various security flags, and set the watchpoint type to be a Linked Watchpoint. This means that you need to link it to a Linked ContextIDR breakpoint. Check the ARM documentation for more information.
+
+Note that hardware_breakpoint_id 0 to 4 match only to Virtual Address, while hardware_breakpoint_id 5 and 6 match against either Virtual Address, ContextID, or VMID. As such, if you are configuring a breakpoint to link for a watchpoint, make sure you use hardware_breakpoint_id 5 or 6.
+
 
 For more documentation for hardware breakpoints, check out the AArch64 documentation for the [http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0488h/way1382455558968.html DBGBCRn_EL1 register] and the [http://infocenter.arm.com/help/topic/com.arm.doc.ddi0488h/way1382455560629.html DBGWCRn_EL1 register]
 
