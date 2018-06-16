@@ -959,6 +959,8 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100D170038EA000 || ACA NEOGEO SENGOKU || ALL || || v0 || || VC
 |-
+| 0100D1B006744000 || Crash Bandicoot™ N. Sane Trilogy || ALL || || || || Game
+|-
 | 0100D3A00409E000 || LEGO® Marvel Super Heroes 2 || USA || || || || Game
 |-
 | 0100D51006AAC000 || Knight Terrors || EUR USA || || || || Game
