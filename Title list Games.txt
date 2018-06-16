@@ -267,6 +267,8 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01003D60012BE800 || 信長の野望・創造 with パワーアップキット || JPN || || v65536 (0.1.0.0) || || Update
 |-
+| 01003EF007ABA000 || Minecraft: Story Mode - Season Two || ALL || || || || Game
+|-
 | 0100404002F52000 || 銀星将棋 強天怒闘風雷神 || JPN || || v0 || || Game
 |-
 | 01004040033CE000 || niconico || JPN || || || || Application
@@ -386,6 +388,8 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 01005C8005F34000 || Teslagrad || USA || || || || Game
 |-
 | 01005C9002B42000 || ACA NEOGEO SAMURAI SHODOWN || ALL || || || || VC
+|-
+| 01005D100807A000 || Pokémon™ Quest || ALL || || || || Game
 |-
 | 01005EC0039E4000 || Poi: Explorer Edition || USA || || || || Game
 |-
