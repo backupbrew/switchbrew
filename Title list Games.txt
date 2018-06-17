@@ -1087,9 +1087,9 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100FF9003F10000 || Splasher || EUR USA || || || || Game
 |-
-| 01007E3006DDA000 || Kirby Star Allies || EUR ALL?  || || || || Game
+| 01007E3006DDA000 || Kirby Star Allies || EUR || || || || Game
 |-
-| 01005A70096FA000 || Kirby Star Allies || EUR ALL?  || || || || Demo
+| 01005A70096FA000 || Kirby Star Allies || EUR || || || || Demo
 |}
 
 =VersionList=
