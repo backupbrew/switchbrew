@@ -34,7 +34,7 @@ header.
 
 #### DPFS
 
-  - This is located @ 0x200 in the image, following DISF.
+  - This is located @ 0x300 in the image, following DISF.
   - Block sizes are log2
 
 | Start | Length | Description            |
