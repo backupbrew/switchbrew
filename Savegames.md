@@ -1,14 +1,18 @@
 This page describes the format of savegames contained in NAND. NAND
 savegames do not use an container with the entire file encrypted.
 Various areas of the saveimage is uninitialized data, resulting in
-encrypted data in those areas(like 3DS did).
+encrypted data in those areas (like 3DS did).
 
 ### AES CMAC header
 
-| Image offset | Length | Description  |
-| ------------ | ------ | ------------ |
-| 0x00         | 0x10   | AES-CMAC     |
-| 0x10         | 0xF0   | Zero padding |
+| Image offset | Length | Description                            |
+| ------------ | ------ | -------------------------------------- |
+| 0x00         | 0x10   | AES-CMAC over DISF header (size 0x200) |
+| 0x10         | 0xF0   | Zero padding                           |
+
+The final CMAC key used for this is generated using GenerateAesKek with
+a kek source and the device key, along with and LoadAesKey and a set key
+seed.
 
 #### DISF
 
