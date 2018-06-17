@@ -1086,6 +1086,10 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 0100FF5005B76800 || STRIKERS1945 for Nintendo Switch || ALL || || || || Update
 |-
 | 0100FF9003F10000 || Splasher || EUR USA || || || || Game
+|-
+| 01007E3006DDA000 || Kirby Star Allies || EUR ALL? || || || || Game
+|-
+| 01005A70096FA000 || Kirby Star Allies || EUR ALL? || || || || Demo
 |}
 
 =VersionList=
