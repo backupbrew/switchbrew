@@ -238,23 +238,6 @@ This flag means that AM services is broken, and must not be used.
   - **Value\[0\]:** AppletResourceUserId
   - **Value\[1\]:** Ignored.
 
-#### StdioSockets
-
-Use these sockets for standard input/output/error. There must be an
-[\#OverrideService](#OverrideService "wikilink") key present for either
-`bsd:u` or `bsd:s`, depending on which is indicated.
-
-  - **Key:** 9
-  - **Value\[0\]:** First word: stdout file descriptor, second word:
-    stdin file descriptor
-  - **Value\[1\]:** Third word: stderr file descriptor, fourth word:
-    SocketService
-
-`enum LoaderConfigSocketService {`  
-`  LoaderConfigSocketService_BsdU = 0,`  
-`  LoaderConfigSocketService_BsdS = 1,`  
-`};`
-
 #### ProcessHandle
 
 Handle to self process.
