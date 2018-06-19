@@ -5,3 +5,7 @@ Currently, there's a broken link in the [[Homebrew_ABI#Loader_Config_Keys|Loader
 Mentioning [[User:WinterMute|WinterMute]].
 
 --[[User:Misson20000|Misson20000]] ([[User talk:Misson20000|talk]]) 17:50, 18 June 2018 (CDT)
+
+Probably better to just reserve it for future use I guess. Had someone interrogate me about why nxlink didn't use the homebrew ABI "properly" so it seemed better to remove it rather than leave it there confusing people.
+
+[[User:WinterMute|WinterMute]] ([[User talk:WinterMute|talk]]) 04:26, 19 June 2018 (CDT)

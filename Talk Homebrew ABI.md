@@ -21,3 +21,11 @@ Mentioning [WinterMute](User:WinterMute "wikilink").
 \--[Misson20000](User:Misson20000 "wikilink")
 ([talk](User%20talk:Misson20000.md "wikilink")) 17:50, 18 June 2018
 (CDT)
+
+Probably better to just reserve it for future use I guess. Had someone
+interrogate me about why nxlink didn't use the homebrew ABI "properly"
+so it seemed better to remove it rather than leave it there confusing
+people.
+
+[WinterMute](User:WinterMute "wikilink")
+([talk](User%20talk:WinterMute.md "wikilink")) 04:26, 19 June 2018 (CDT)
