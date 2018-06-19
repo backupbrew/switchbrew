@@ -64,7 +64,7 @@ If there is some error encountered while validating an entry's values, use <code
 
 * 8: [[#AppletWorkaround]]: If present, must not be ignored
 
-* 9: [[#StdioSockets]]
+* 9: [[#Reserved9]]
 
 * 10: [[#ProcessHandle]]
 
@@ -159,6 +159,9 @@ This flag means that AM services is broken, and must not be used.
 * '''Key:''' 8
 * '''Value[0]:''' AppletResourceUserId
 * '''Value[1]:''' Ignored.
+
+==== Reserved9 ====
+This was originally stdiosockets which couldn't work long term the way this was designed. Now reserved for future use.
 
 ==== ProcessHandle ====
 Handle to self process.

@@ -102,7 +102,7 @@ use `result_code = 346 | ((300 + key) << 9);`.
 
 <!-- end list -->
 
-  - 9: [\#StdioSockets](#StdioSockets "wikilink")
+  - 9: [\#Reserved9](#Reserved9 "wikilink")
 
 <!-- end list -->
 
@@ -237,6 +237,11 @@ This flag means that AM services is broken, and must not be used.
   - **Key:** 8
   - **Value\[0\]:** AppletResourceUserId
   - **Value\[1\]:** Ignored.
+
+#### Reserved9
+
+This was originally stdiosockets which couldn't work long term the way
+this was designed. Now reserved for future use.
 
 #### ProcessHandle
 
