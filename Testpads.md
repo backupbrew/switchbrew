@@ -32,38 +32,42 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 ### Cluster C
 
-| Pad \# | Name      | Type | Levels | Continuity | Frequency                                                                                                   | Comment |
-| ------ | --------- | ---- | ------ | ---------- | ----------------------------------------------------------------------------------------------------------- | ------- |
-| 1      | ??        |      | 0-1.8V |            | No clue. This is definitely important, we just have no idea how. May need to interface with dock for comms. |         |
-| 2      | UART-A RX |      | 0-1.8V |            |                                                                                                             |         |
-| 3      | UART-A TX |      | 0-1.8V |            |                                                                                                             |         |
-| 4      | ??        |      | 0-1.8V |            |                                                                                                             |         |
-| 5      | ??        |      | 0-1.8V |            |                                                                                                             |         |
-| 6      | ??        |      | 0-1.8V |            |                                                                                                             |         |
-| 7      | ??        |      | 0-1.8V |            |                                                                                                             |         |
-| 8      | ??        |      | 0-1.8V |            |                                                                                                             |         |
-| 9      | ??        |      | 0-1.8V |            |                                                                                                             |         |
-| 10     | ??        |      | 0-1.8V |            |                                                                                                             |         |
-| 11     | ??        |      | 0-1.8V |            |                                                                                                             |         |
+| Pad \# | Name      | Type | Levels | Continuity | Frequency | Comment                                                                                                     |
+| ------ | --------- | ---- | ------ | ---------- | --------- | ----------------------------------------------------------------------------------------------------------- |
+| 1      | ??        |      | 0-1.8V |            |           | No clue. This is definitely important, we just have no idea how. May need to interface with dock for comms. |
+| 2      | UART-A RX |      | 0-1.8V |            |           |                                                                                                             |
+| 3      | UART-A TX |      | 0-1.8V |            |           |                                                                                                             |
+| 4      | ??        |      | 0-1.8V |            |           |                                                                                                             |
+| 5      | ??        |      | 0-1.8V |            |           |                                                                                                             |
+| 6      | ??        |      | 0-1.8V |            |           |                                                                                                             |
+| 7      | ??        |      | 0-1.8V |            |           |                                                                                                             |
+| 8      | ??        |      | 0-1.8V |            |           |                                                                                                             |
+| 9      | ??        |      | 0-1.8V |            |           |                                                                                                             |
+| 10     | ??        |      | 0-1.8V |            |           |                                                                                                             |
+| 11     | ??        |      | 0-1.8V |            |           |                                                                                                             |
 
 ### Cluster E
-
-DON'T FUCK WITH CLUSTER E.
 
 | Pad \# | Name  | Type | Levels | Continuity | Frequency | Comment |
 | ------ | ----- | ---- | ------ | ---------- | --------- | ------- |
 | 10     | Reset |      |        |            |           |         |
 
+### Cluster G
+
+| Pad \# | Name         | Type | Levels | Continuity | Frequency | Comment   |
+| ------ | ------------ | ---- | ------ | ---------- | --------- | --------- |
+| 9      | BUTTON\_HOME |      |        |            |           | RCM strap |
+
 ### Cluster I
 
-| Pad \# | Name       | Type         | Levels | Continuity | Frequency | Comment                                                                                              |
-| ------ | ---------- | ------------ | ------ | ---------- | --------- | ---------------------------------------------------------------------------------------------------- |
-| 1      | GND        |              |        |            |           |                                                                                                      |
-| 2      | Screen\_on | On/Off       | 0-1.8V |            |           | Screen power state, active high                                                                      |
-| 3      |            | UART         | 0-1.8V |            | 1.5MBaud? | needs testing with screen plugged in. Sends string ‘Nintendo Switch’ + some stuff. long string of 00 |
-| 4      |            | UART         | 0-1.8V |            | 1.5MBaud? | needs testing with screen plugged in. some kind of call/response for pad I-3                         |
-| 5      |            | Flow control | 0-1.8V |            |           | Flow control for pad I-4?                                                                            |
-| 6      |            |              | 0-1.8V |            |           | Needs testing with chip/touch screen interface board plugged in                                      |
+| Pad \# | Name       | Type         | Levels | Continuity | Frequency | Comment                                                         |
+| ------ | ---------- | ------------ | ------ | ---------- | --------- | --------------------------------------------------------------- |
+| 1      | GND        |              |        |            |           |                                                                 |
+| 2      | Screen\_on | On/Off       | 0-1.8V |            |           | Screen power state, active high                                 |
+| 3      |            | UART         | 0-1.8V |            | 1.5MBaud? |                                                                 |
+| 4      |            | UART         | 0-1.8V |            | 1.5MBaud? |                                                                 |
+| 5      |            | Flow control | 0-1.8V |            |           | Flow control for pad I-4?                                       |
+| 6      |            |              | 0-1.8V |            |           | Needs testing with chip/touch screen interface board plugged in |
 
 ### Cluster J
 
