@@ -32,19 +32,19 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 ### Cluster C
 
-| Pad \# | Name      | Type | Levels | Continuity | Frequency                                                                                                   | Comment            |
-| ------ | --------- | ---- | ------ | ---------- | ----------------------------------------------------------------------------------------------------------- | ------------------ |
-| 1      | ??        |      | 0-1.8V |            | No clue. This is definitely important, we just have no idea how. May need to interface with dock for comms. |                    |
-| 2      | UART-A RX |      | 0-1.8V |            |                                                                                                             | thanks to shuffle2 |
-| 3      | UART-B RX |      | 0-1.8V |            |                                                                                                             | thanks to shuffle2 |
-| 4      | ??        |      | 0-1.8V |            |                                                                                                             |                    |
-| 5      | ??        |      | 0-1.8V |            |                                                                                                             |                    |
-| 6      | ??        |      | 0-1.8V |            |                                                                                                             |                    |
-| 7      | ??        |      | 0-1.8V |            |                                                                                                             |                    |
-| 8      | ??        |      | 0-1.8V |            |                                                                                                             |                    |
-| 9      | ??        |      | 0-1.8V |            |                                                                                                             |                    |
-| 10     | ??        |      | 0-1.8V |            |                                                                                                             |                    |
-| 11     | ??        |      | 0-1.8V |            |                                                                                                             |                    |
+| Pad \# | Name      | Type | Levels | Continuity | Frequency                                                                                                   | Comment |
+| ------ | --------- | ---- | ------ | ---------- | ----------------------------------------------------------------------------------------------------------- | ------- |
+| 1      | ??        |      | 0-1.8V |            | No clue. This is definitely important, we just have no idea how. May need to interface with dock for comms. |         |
+| 2      | UART-A RX |      | 0-1.8V |            |                                                                                                             |         |
+| 3      | UART-A TX |      | 0-1.8V |            |                                                                                                             |         |
+| 4      | ??        |      | 0-1.8V |            |                                                                                                             |         |
+| 5      | ??        |      | 0-1.8V |            |                                                                                                             |         |
+| 6      | ??        |      | 0-1.8V |            |                                                                                                             |         |
+| 7      | ??        |      | 0-1.8V |            |                                                                                                             |         |
+| 8      | ??        |      | 0-1.8V |            |                                                                                                             |         |
+| 9      | ??        |      | 0-1.8V |            |                                                                                                             |         |
+| 10     | ??        |      | 0-1.8V |            |                                                                                                             |         |
+| 11     | ??        |      | 0-1.8V |            |                                                                                                             |         |
 
 ### Cluster E
 

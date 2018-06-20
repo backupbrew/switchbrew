@@ -44,9 +44,9 @@ These are reference materials, taken from poking at I/O on various testpads. htt
 |-
 | 1 || ?? || || 0-1.8V || || No clue. This is definitely important, we just have no idea how. May need to interface with dock for comms.
 |-
-| 2 || UART-A RX || || 0-1.8V || || || thanks to shuffle2 
+| 2 || UART-A RX || || 0-1.8V || || ||
 |-
-| 3 || UART-B RX || || 0-1.8V || || || thanks to shuffle2 
+| 3 || UART-A TX || || 0-1.8V || || ||
 |-
 | 4 || ?? || || 0-1.8V || || || 
 |-
