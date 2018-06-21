@@ -1090,6 +1090,8 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 01007E3006DDA000 || Kirby Star Allies || EUR || || || || Game
 |-
 | 01005A70096FA000 || Kirby Star Allies || EUR || || || || Demo
+|-
+| 0100A5400AC86000 || ARMS Demo || USA/(ALL?) || || || || Demo
 |}
 
 =VersionList=
