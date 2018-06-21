@@ -55,8 +55,8 @@
 | 0x31 | svcGetResourceLimitCurrentValue                                                    | W1=reslimit\_handle, W2=[\#LimitableResource](#LimitableResource "wikilink")                                       | W0=result, X1=value                                      |
 | 0x32 | svcSetThreadActivity                                                               | W0=thread\_handle, W1=bool                                                                                         | W0=result                                                |
 | 0x33 | svcGetThreadContext3                                                               | X0=[\#ThreadContext](#ThreadContext "wikilink")\*, W1=thread\_handle                                               | W0=result                                                |
-| 0x34 | \[4.0.0+\] svcWaitForAddress                                                       | X0=ptr, W1=ArbitrationType, X2=? X3=timeout                                                                        |                                                          |
-| 0x35 | \[4.0.0+\] svcSignalToAddress                                                      | X0=ptr, W1=SignalType, X2=? W3=?                                                                                   |                                                          |
+| 0x34 | \[4.0.0+\] svcWaitForAddress                                                       | X0=ptr, W1=[\#ArbitrationType](#ArbitrationType "wikilink"), X2=value X3=timeout                                   |                                                          |
+| 0x35 | \[4.0.0+\] svcSignalToAddress                                                      | X0=ptr, W1=[\#SignalType](#SignalType "wikilink"), X2=value W3=num\_to\_signal                                     |                                                          |
 | 0x3C | [\#svcDumpInfo](#svcDumpInfo "wikilink")                                           |                                                                                                                    |                                                          |
 | 0x3D | \[4.0.0+\] svcDumpInfoNew                                                          |                                                                                                                    |                                                          |
 | 0x40 | svcCreateSession                                                                   | W2=is\_light, X3=?                                                                                                 | W0=result, W1=server\_handle, W2=client\_handle          |
@@ -1526,6 +1526,24 @@ partitions.
 </tr>
 </tbody>
 </table>
+
+## ArbitrationType
+
+| Value | Type                       |
+| ----- | -------------------------- |
+| 0x0   | WaitIfLessThan             |
+| 0x1   | DecrementAndWaitIfLessThan |
+| 0x2   | WaitIfEqual                |
+|       |                            |
+
+## SignalType
+
+| Value | Type                                            |
+| ----- | ----------------------------------------------- |
+| 0x0   | Signal                                          |
+| 0x1   | SignalAndIncrementIfEqual                       |
+| 0x2   | SignalAndModifyBasedOnWaitingThreadCountIfEqual |
+|       |                                                 |
 
 ## ContinueDebugFlags
 

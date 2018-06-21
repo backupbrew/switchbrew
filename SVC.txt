@@ -106,9 +106,9 @@ __NOTOC__
 |-
 | 0x33 || svcGetThreadContext3 || X0=[[#ThreadContext]]*, W1=thread_handle || W0=result
 |-
-| 0x34 || [4.0.0+] svcWaitForAddress || X0=ptr, W1=ArbitrationType, X2=? X3=timeout ||
+| 0x34 || [4.0.0+] svcWaitForAddress || X0=ptr, W1=[[#ArbitrationType]], X2=value X3=timeout ||
 |-
-| 0x35 || [4.0.0+] svcSignalToAddress || X0=ptr, W1=SignalType, X2=? W3=? ||
+| 0x35 || [4.0.0+] svcSignalToAddress || X0=ptr, W1=[[#SignalType]], X2=value W3=num_to_signal ||
 |- style="border-top: double"
 | 0x3C || [[#svcDumpInfo]] || ||
 |-
@@ -1774,6 +1774,32 @@ On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool
 | 0x00402214 || [4.0.0+] MemoryType_CodeReadOnly || Mapped in kernel during [[#svcControlCodeMemory]].
 |-
 | 0x00402015 || [4.0.0+] MemoryType_CodeWritable || Mapped in kernel during [[#svcControlCodeMemory]].
+|}
+
+== ArbitrationType ==
+
+{| class=wikitable
+! Value || Type
+|-
+| 0x0 || WaitIfLessThan
+|-
+| 0x1 || DecrementAndWaitIfLessThan
+|-
+| 0x2 || WaitIfEqual
+|-
+|}
+
+== SignalType ==
+
+{| class=wikitable
+! Value || Type
+|-
+| 0x0 || Signal
+|-
+| 0x1 || SignalAndIncrementIfEqual
+|-
+| 0x2 || SignalAndModifyBasedOnWaitingThreadCountIfEqual
+|-
 |}
 
 == ContinueDebugFlags ==
