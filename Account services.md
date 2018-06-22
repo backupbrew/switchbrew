@@ -32,7 +32,7 @@ This is
 | 202 | CancelUserRegistration                                   |                                                                                          |
 | 203 | DeleteUser                                               |                                                                                          |
 | 204 | SetUserPosition                                          |                                                                                          |
-| 205 | GetProfileEditor                                         | Returns an [\#IProfileEditor](#IProfileEditor "wikilink").                               |
+| 205 | GetProfileEditor                                         | Takes an input userID and returns an [\#IProfileEditor](#IProfileEditor "wikilink").     |
 | 206 | CompleteUserRegistrationForcibly                         |                                                                                          |
 | 210 | CreateFloatingRegistrationRequest                        | Returns an [\#IFloatingRegistrationRequest](#IFloatingRegistrationRequest "wikilink").   |
 | 230 | AuthenticateServiceAsync                                 | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                 |

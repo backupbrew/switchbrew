@@ -59,7 +59,7 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 204 || SetUserPosition ||
 |-
-| 205 || GetProfileEditor || Returns an [[#IProfileEditor]].
+| 205 || GetProfileEditor || Takes an input userID and returns an [[#IProfileEditor]].
 |-
 | 206 || CompleteUserRegistrationForcibly ||
 |-
