@@ -233,14 +233,25 @@ for both Miis and character icons.
 
 This is "nn::account::profile::IProfileEditor".
 
-| Cmd | Name           |
-| --- | -------------- |
-| 0   | Get            |
-| 1   | GetBase        |
-| 10  | GetImageSize   |
-| 11  | LoadImage      |
-| 100 | Store          |
-| 101 | StoreWithImage |
+| Cmd | Name                                           |
+| --- | ---------------------------------------------- |
+| 0   | [\#Get](#Get "wikilink")                       |
+| 1   | [\#GetBase](#GetBase "wikilink")               |
+| 10  | [\#GetImageSize](#GetImageSize "wikilink")     |
+| 11  | [\#LoadImage](#LoadImage "wikilink")           |
+| 100 | [\#Store](#Store "wikilink")                   |
+| 101 | [\#StoreWithImage](#StoreWithImage "wikilink") |
+
+### Store
+
+Takes a [\#ProfileBase](#ProfileBase "wikilink") and an input type-0x19
+buffer for [\#UserData](#UserData "wikilink").
+
+### StoreWithImage
+
+Takes a [\#ProfileBase](#ProfileBase "wikilink"), an input type-0x19
+buffer for [\#UserData](#UserData "wikilink"), and an input type-0x5
+buffer.
 
 ## IAsyncContext
 

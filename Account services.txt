@@ -363,18 +363,24 @@ This is "nn::account::profile::IProfileEditor".
 |-
 ! Cmd || Name
 |-
-| 0 || Get
+| 0 || [[#Get]]
 |-
-| 1 || GetBase
+| 1 || [[#GetBase]]
 |-
-| 10 || GetImageSize
+| 10 || [[#GetImageSize]]
 |-
-| 11 || LoadImage
+| 11 || [[#LoadImage]]
 |-
-| 100 || Store
+| 100 || [[#Store]]
 |-
-| 101 || StoreWithImage
+| 101 || [[#StoreWithImage]]
 |}
+
+=== Store ===
+Takes a [[#ProfileBase]] and an input type-0x19 buffer for [[#UserData]].
+
+=== StoreWithImage ===
+Takes a [[#ProfileBase]], an input type-0x19 buffer for [[#UserData]], and an input type-0x5 buffer.
 
 == IAsyncContext ==
 This is "nn::account::detail::IAsyncContext".
