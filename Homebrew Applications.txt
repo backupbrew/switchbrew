@@ -139,6 +139,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/lantus/cannonball-nx Yes]
 | 2018-05-23
 |-
+| Chocolate Doom
+| Chocolate Doom port for Switch
+| WinterMute
+| [https://github.com/WinterMute/chocolate-doom/releases/latest Here]
+| [https://github.com/WinterMute/chocolate-doom Yes]
+| 2018-06-22
+|-
 | Hamsters NX
 | A breeding of Hamsters game in text mode.
 | Cid2mizard
