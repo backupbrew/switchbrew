@@ -405,7 +405,7 @@ for i, NcaID in NcaIDs:
 This is a 0x10-byte entry. This is originally from the hex portion of
 "<hex>.nca" directory-names from this storage FS(like
 [SD](SD%20Filesystem.md "wikilink")). This is also referred to as
-"ContentId" in the offical SDK.
+"ContentId" in the official SDK.
 
 The NcaID is the same as the first 0x10-bytes from the calculated SHA256
 hash, from hashing the entire output from
