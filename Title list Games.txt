@@ -601,6 +601,10 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010086300486E000 || ACA NEOGEO METAL SLUG 2 || ALL || || || || VC
 |-
+| 010086F0040FC000 || Splatoon™ 2: Splatfest World Premiere || EUR || || || || Game
+|-
+| 010086F0040FC800 || Splatoon™ 2: Splatfest World Premiere || EUR || || || || Update
+|-
 | 0100880004CB2000 || PAN-PAN～ちっちゃな大冒険～ || JPN || || || || Game
 |-
 | 0100882001380000 || 三國志13 with パワーアップキット || JPN || || v0 || || Game
