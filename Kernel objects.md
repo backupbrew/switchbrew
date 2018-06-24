@@ -89,7 +89,7 @@ Size:
 
 # KThread
 
-\[1.0.0\] Size: 0x620
+\[1.0.0\] Size: 0x620 \[5.0.0\]? Size: 0x6C0
 
 Inherits from:
 [\#KSynchronizationObject](#KSynchronizationObject "wikilink"),

@@ -116,6 +116,7 @@ Size: 0x18
 
 = KThread =
 [1.0.0] Size: 0x620
+[5.0.0]? Size: 0x6C0
 
 Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedulerObject1]], [[#KSchedulerObject2]]
 
