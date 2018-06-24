@@ -161,6 +161,8 @@ Inherits from:
 
 \[3.0.0\] Size: 0x2580
 
+\[5.0.0\] Size: 0x4600
+
 Inherits from:
 [\#KSynchronizationObject](#KSynchronizationObject "wikilink")
 
