@@ -314,6 +314,8 @@ Note: No 01000000000020XX titles exist on retail systems.
 | 010000000000209C || || TestApplication - "TestApplicationLauncher". Factory qlaunch replacement, used to launch other tests.
 |-
 | 01000000000020F0 || || "devmenuapp_installer" - Launched by [[Boot2|boot2]].
+|-
+| 0100000000002101 || || DevMenuCommand
 |}
 
 == Target Tools ==
