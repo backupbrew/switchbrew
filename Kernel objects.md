@@ -37,8 +37,10 @@ Size: 0x18
 
 # KLockedList
 
-Size:
-0x28
+Size: 0x28
+
+\[5.0.0\]? Size:
+0x20
 
 | Offset | Type                                             | Description |
 | ------ | ------------------------------------------------ | ----------- |
@@ -46,6 +48,14 @@ Size:
 | 8      | [\#KLinkedListNode](#KLinkedListNode "wikilink") | List        |
 | 0x18   | [\#KMutex](#KMutex "wikilink")                   | Mutex       |
 | 0x20   | u64                                              | MaxCount    |
+
+\[5.0.0\]?:
+
+| Offset | Type                                             | Description |
+| ------ | ------------------------------------------------ | ----------- |
+| 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink") | List        |
+| 0x10   | [\#KMutex](#KMutex "wikilink")                   | Mutex       |
+| 0x18   | u64                                              | MaxCount    |
 
 # KLinkedListNode
 
@@ -986,7 +996,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 # KObjectAllocator
 
-Size: 0x50
+Size: 0x50 \[5.0.0\]? Size: 0x48
 
 | Offset | Type                                     | Description |
 | ------ | ---------------------------------------- | ----------- |
