@@ -1,11 +1,19 @@
 # KAutoObject
 
-Size: 0x10
+Size: 0x10 \[5.0.0\] Size: 0x20
 
 | Offset | Type | Description    |
 | ------ | ---- | -------------- |
 | 0      | \*   | Vtable         |
 | 8      | u32  | ReferenceCount |
+
+\[5.0.0\]:
+
+| Offset | Type            | Description                                                 |
+| ------ | --------------- | ----------------------------------------------------------- |
+| 0      | \*              | Vtable                                                      |
+| 8      | u32             | ReferenceCount                                              |
+| 0x10   | KLinkedListNode | List, not always initialized (e.g. not when a sync object?) |
 
 # KSynchronizationObject
 
