@@ -1005,6 +1005,16 @@ Size: 0x28
 | 0x18   | u64    | TotalHeapSize    |
 | 0x20   | u64    | SingleObjectSize |
 
+5.0.0 (?):
+
+| Offset | Type   | Description                      |
+| ------ | ------ | -------------------------------- |
+| 0      | void\* | FreeListHead                     |
+| 0x8    | u64    | SingleObjectSize                 |
+| 0x10   | void\* | HeapPtr                          |
+| 0x18   | void\* | Start (equal to HeapPtr on init) |
+| 0x20   | void\* | End                              |
+
 # KPageTableAllocator
 
 Size: 0x30
