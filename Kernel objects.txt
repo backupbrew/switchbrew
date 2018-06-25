@@ -22,7 +22,7 @@ Size: 0x10
 |-
 | 8 || u32 || ReferenceCount
 |-
-| 0x10 || KLinkedListNode || List, not always initialized (e.g. not when a sync object?)
+| 0x10 || KLinkedListNode || Intrusive list, links to other instances of the same class (managed by a KObjectAllocator).
 |}
 
 = KSynchronizationObject =
