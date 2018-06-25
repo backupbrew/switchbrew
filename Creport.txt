@@ -106,3 +106,13 @@ nnMain:
 Exactly the following code was changed:
 
 Only change was adding a titleID to the above whitelist.
+
+== [[5.0.0]] ==
+Many changes were made to add more detail to reports. In particular:
+
+* The second input flag is no longer actually used, instead whether the process is an application is parsed from the ATTACH_PROCESS debug info.
+* Support was added for reading a custom user error code from process memory in the UserBdsak case.
+* Support was added for reading a custom user "Dying Message" of up to 0x1000 bytes from process memory if the crashes process was an application.
+* All reports now have additional info in their crash reports:
+** A list of up to 0x60 threads is retrieved via svcGetThreadList, and each thread has a full register dump + stacktrace added to the report.
+** The crashing thread's PC and LR are used to try to locate the base executable region that caused the crash -- if found, it and up to 15 code regions with higher virtual addresses have their start and end addresses saved, and their executable name and GNU build IDs read out of .rodata and added to the report. This fixes the problem of crash reports in previous versions not including information on ASLR.
