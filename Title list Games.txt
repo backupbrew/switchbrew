@@ -211,7 +211,9 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01002CC0062B8000 || DEEMO || ALL || || || || Game
 |-
-| 01002C400B6B6000 || Captain Toad: Treasure Tracker || ALL || || || || Game
+| 01002C400B6B6000 || Captain Toad: Treasure Tracker Demo || ALL || || || || Game
+|-
+| 01009BF0072D4000|| Captain Toad: Treasure Tracker || ALL || || || || Game
 |-
 | 01002E70032E8000 || ACA NEOGEO NEO TURF MASTERS || ALL || || v0 || || VC
 |-
