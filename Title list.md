@@ -9,9 +9,9 @@ As of [2.0.0](2.0.0.md "wikilink"), the only sysmodule with a RomFS is
 Decimal versions use the format:
 
   - Bit31-Bit26: Major
-  - Bit25-Bit20: Middle
-  - Bit19-Bit16: Minor
-  - Bit15-Bit0: Build?
+  - Bit25-Bit20: Minor
+  - Bit19-Bit16: Micro
+  - Bit15-Bit0: Bugfix
 
 <table>
 <thead>
