@@ -410,6 +410,14 @@ This is "nn::timesrv::detail::service::ISteadyClock".
 |}
 
 === SteadyClockTimePoint ===
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8|| a [[#PosixTime]] representing a point in time.
+|-
+| 0x8 || 0x10 || ?
+|}
 This is a 0x18-byte struct.
 
 === TimeSpanType ===
@@ -437,6 +445,15 @@ This is an u64 for UTC POSIX time.
 
 === SystemClockContext ===
 This is an 0x20-byte struct.
+
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8|| a [[#PosixTime]] representing the system clock epoch.
+|-
+| 0x8 || 0x18 || a [[#SteadyClockTimePoint]]
+|}
 
 == ITimeZoneService ==
 This is "nn::timesrv::detail::service::ITimeZoneService".

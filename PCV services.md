@@ -239,6 +239,11 @@ This is
 
 ### SteadyClockTimePoint
 
+| Offset | Size | Description                                                          |
+| ------ | ---- | -------------------------------------------------------------------- |
+| 0x0    | 0x8  | a [\#PosixTime](#PosixTime "wikilink") representing a point in time. |
+| 0x8    | 0x10 | ?                                                                    |
+
 This is a 0x18-byte struct.
 
 ### TimeSpanType
@@ -264,7 +269,13 @@ This is an u64 for UTC POSIX time.
 
 ### SystemClockContext
 
-This is an 0x20-byte struct.
+This is an 0x20-byte
+struct.
+
+| Offset | Size | Description                                                                 |
+| ------ | ---- | --------------------------------------------------------------------------- |
+| 0x0    | 0x8  | a [\#PosixTime](#PosixTime "wikilink") representing the system clock epoch. |
+| 0x8    | 0x18 | a [\#SteadyClockTimePoint](#SteadyClockTimePoint "wikilink")                |
 
 ## ITimeZoneService
 
