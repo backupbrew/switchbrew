@@ -239,10 +239,10 @@ This is
 
 ### SteadyClockTimePoint
 
-| Offset | Size | Description                                                          |
-| ------ | ---- | -------------------------------------------------------------------- |
-| 0x0    | 0x8  | a [\#PosixTime](#PosixTime "wikilink") representing a point in time. |
-| 0x8    | 0x10 | ?                                                                    |
+| Offset | Size | Description                         |
+| ------ | ---- | ----------------------------------- |
+| 0x0    | 0x8  | a u64 representing a point in time. |
+| 0x8    | 0x10 | ?                                   |
 
 This is a 0x18-byte struct.
 

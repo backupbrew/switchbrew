@@ -414,7 +414,7 @@ This is "nn::timesrv::detail::service::ISteadyClock".
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x8|| a [[#PosixTime]] representing a point in time.
+| 0x0 || 0x8|| a u64 representing a point in time.
 |-
 | 0x8 || 0x10 || ?
 |}
