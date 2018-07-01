@@ -48,24 +48,24 @@ specified in the header and before the ending hash.
 
 ## Application header
 
-| Offset | Size | Description    |
-| ------ | ---- | -------------- |
-| 0x20   | 8    | Patch title ID |
-| 0x28   | 8    |                |
+| Offset | Size | Description            |
+| ------ | ---- | ---------------------- |
+| 0x20   | 8    | Patch title ID         |
+| 0x28   | 8    | Minimum system version |
 
 ## Patch header
 
-| Offset | Size | Description       |
-| ------ | ---- | ----------------- |
-| 0x20   | 8    | Original title ID |
-| 0x28   | 8    |                   |
+| Offset | Size | Description            |
+| ------ | ---- | ---------------------- |
+| 0x20   | 8    | Original title ID      |
+| 0x28   | 8    | Minimum system version |
 
 ## Add-on content header
 
-| Offset | Size | Description          |
-| ------ | ---- | -------------------- |
-| 0x20   | 8    | Application title ID |
-| 0x28   | 8    |                      |
+| Offset | Size | Description                 |
+| ------ | ---- | --------------------------- |
+| 0x20   | 8    | Application title ID        |
+| 0x28   | 8    | Minimum application version |
 
 ## Content records
 
