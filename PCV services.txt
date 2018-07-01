@@ -372,7 +372,7 @@ This is "nn::timesrv::detail::service::IStaticService".
 |-
 | 102 || [5.0.0+] GetStandardUserSystemClockInitialYear || 
 |-
-| 200 || IsStandardNetworkSystemClockAccuracySufficient || 
+| 200 || [3.0.0+] IsStandardNetworkSystemClockAccuracySufficient || 
 |-
 | 300 || [4.0.0+] CalculateMonotonicSystemClockBaseTimePoint || 
 |-
@@ -398,15 +398,15 @@ This is "nn::timesrv::detail::service::ISteadyClock".
 |-
 | 3 || SetTestOffset || Takes an input [[#TimeSpanType]], no output.
 |-
-| 100 || GetRtcValue || No input, returns an output s64.
+| 100 || [2.0.0+] GetRtcValue || No input, returns an output s64.
 |-
-| 101 || IsRtcResetDetected || No input, returns an output u8 bool.
+| 101 || [2.0.0+] IsRtcResetDetected || No input, returns an output u8 bool.
 |-
-| 102 || GetSetupResultValue || No input, returns an output u32.
+| 102 || [2.0.0+] GetSetupResultValue || No input, returns an output u32.
 |-
-| 200 || GetInternalOffset || No input, returns an output [[#TimeSpanType]].
+| 200 || [3.0.0+] GetInternalOffset || No input, returns an output [[#TimeSpanType]].
 |-
-| 201 || SetInternalOffset || Takes an input [[#TimeSpanType]], no output. Removed in [4.0.0+].
+| 201 || [3.0.0-3.0.2] SetInternalOffset || Takes an input [[#TimeSpanType]], no output.
 |}
 
 === SteadyClockTimePoint ===
@@ -472,7 +472,7 @@ This is "nn::timesrv::detail::service::ITimeZoneService".
 |-
 | 4 || LoadTimeZoneRule || Takes an input [[#LocationName]] and a type-0x16 output buffer for [[#TimeZoneRule]], no output.
 |-
-| 5 || GetTimeZoneRuleVersion ||  No input, returns an output [[#TimeZoneRuleVersion]].
+| 5 || [2.0.0+] GetTimeZoneRuleVersion ||  No input, returns an output [[#TimeZoneRuleVersion]].
 |-
 | 100 || ToCalendarTime || Takes an input [[#PosixTime]] and a type-0x15 input buffer for [[#TimeZoneRule]], returns an output [[#CalendarTime]] and [[#CalendarAdditionalInfo]].
 |-
@@ -481,6 +481,8 @@ This is "nn::timesrv::detail::service::ITimeZoneService".
 | 200 || ToPosixTime || Takes an input [[#CalendarTime]], a type-0x15 input buffer for [[#TimeZoneRule]], an type-0xA output buffer for [[#PosixTime]] array, and returns an output s32.
 |-
 | 201 || ToPosixTimeWithMyRule || Takes an input [[#CalendarTime]], an type-0xA output buffer for [[#PosixTime]] array, and returns an output s32.
+|-
+| 202 || ||
 |-
 |}
 

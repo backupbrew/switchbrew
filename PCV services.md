@@ -214,7 +214,7 @@ This is
 | 100 | IsStandardUserSystemClockAutomaticCorrectionEnabled         |                                                                |
 | 101 | SetStandardUserSystemClockAutomaticCorrectionEnabled        |                                                                |
 | 102 | \[5.0.0+\] GetStandardUserSystemClockInitialYear            |                                                                |
-| 200 | IsStandardNetworkSystemClockAccuracySufficient              |                                                                |
+| 200 | \[3.0.0+\] IsStandardNetworkSystemClockAccuracySufficient   |                                                                |
 | 300 | \[4.0.0+\] CalculateMonotonicSystemClockBaseTimePoint       |                                                                |
 | 400 | \[4.0.0+\] GetClockSnapshot                                 |                                                                |
 | 401 | \[4.0.0+\] GetClockSnapshotFromSystemClockContext           |                                                                |
@@ -226,16 +226,16 @@ This is
 This is
 "nn::timesrv::detail::<service::ISteadyClock>".
 
-| Cmd | Name                | Notes                                                                                        |
-| --- | ------------------- | -------------------------------------------------------------------------------------------- |
-| 0   | GetCurrentTimePoint | No input, returns an output [\#SteadyClockTimePoint](#SteadyClockTimePoint "wikilink").      |
-| 2   | GetTestOffset       | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                      |
-| 3   | SetTestOffset       | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output.                        |
-| 100 | GetRtcValue         | No input, returns an output s64.                                                             |
-| 101 | IsRtcResetDetected  | No input, returns an output u8 bool.                                                         |
-| 102 | GetSetupResultValue | No input, returns an output u32.                                                             |
-| 200 | GetInternalOffset   | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                      |
-| 201 | SetInternalOffset   | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output. Removed in \[4.0.0+\]. |
+| Cmd | Name                              | Notes                                                                                   |
+| --- | --------------------------------- | --------------------------------------------------------------------------------------- |
+| 0   | GetCurrentTimePoint               | No input, returns an output [\#SteadyClockTimePoint](#SteadyClockTimePoint "wikilink"). |
+| 2   | GetTestOffset                     | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                 |
+| 3   | SetTestOffset                     | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output.                   |
+| 100 | \[2.0.0+\] GetRtcValue            | No input, returns an output s64.                                                        |
+| 101 | \[2.0.0+\] IsRtcResetDetected     | No input, returns an output u8 bool.                                                    |
+| 102 | \[2.0.0+\] GetSetupResultValue    | No input, returns an output u32.                                                        |
+| 200 | \[3.0.0+\] GetInternalOffset      | No input, returns an output [\#TimeSpanType](#TimeSpanType "wikilink").                 |
+| 201 | \[3.0.0-3.0.2\] SetInternalOffset | Takes an input [\#TimeSpanType](#TimeSpanType "wikilink"), no output.                   |
 
 ### SteadyClockTimePoint
 
@@ -282,19 +282,20 @@ struct.
 This is
 "nn::timesrv::detail::<service::ITimeZoneService>".
 
-| Cmd | Name                      | Notes                                                                                                                                                                                                                                                             |
-| --- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | GetDeviceLocationName     | No input, returns an output [\#LocationName](#LocationName "wikilink").                                                                                                                                                                                           |
-| 1   | SetDeviceLocationName     | Takes an input [\#LocationName](#LocationName "wikilink"), no output.                                                                                                                                                                                             |
-| 2   | GetTotalLocationNameCount | No input, returns an output s32.                                                                                                                                                                                                                                  |
-| 3   | LoadLocationNameList      |                                                                                                                                                                                                                                                                   |
-| 4   | LoadTimeZoneRule          | Takes an input [\#LocationName](#LocationName "wikilink") and a type-0x16 output buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), no output.                                                                                                                |
-| 5   | GetTimeZoneRuleVersion    | No input, returns an output [\#TimeZoneRuleVersion](#TimeZoneRuleVersion "wikilink").                                                                                                                                                                             |
-| 100 | ToCalendarTime            | Takes an input [\#PosixTime](#PosixTime "wikilink") and a type-0x15 input buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), returns an output [\#CalendarTime](#CalendarTime "wikilink") and [\#CalendarAdditionalInfo](#CalendarAdditionalInfo "wikilink"). |
-| 101 | ToCalendarTimeWithMyRule  | Takes an input [\#PosixTime](#PosixTime "wikilink"), returns an output [\#CalendarTime](#CalendarTime "wikilink") and [\#CalendarAdditionalInfo](#CalendarAdditionalInfo "wikilink").                                                                             |
-| 200 | ToPosixTime               | Takes an input [\#CalendarTime](#CalendarTime "wikilink"), a type-0x15 input buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), an type-0xA output buffer for [\#PosixTime](#PosixTime "wikilink") array, and returns an output s32.                          |
-| 201 | ToPosixTimeWithMyRule     | Takes an input [\#CalendarTime](#CalendarTime "wikilink"), an type-0xA output buffer for [\#PosixTime](#PosixTime "wikilink") array, and returns an output s32.                                                                                                   |
-|     |                           |                                                                                                                                                                                                                                                                   |
+| Cmd | Name                              | Notes                                                                                                                                                                                                                                                             |
+| --- | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | GetDeviceLocationName             | No input, returns an output [\#LocationName](#LocationName "wikilink").                                                                                                                                                                                           |
+| 1   | SetDeviceLocationName             | Takes an input [\#LocationName](#LocationName "wikilink"), no output.                                                                                                                                                                                             |
+| 2   | GetTotalLocationNameCount         | No input, returns an output s32.                                                                                                                                                                                                                                  |
+| 3   | LoadLocationNameList              |                                                                                                                                                                                                                                                                   |
+| 4   | LoadTimeZoneRule                  | Takes an input [\#LocationName](#LocationName "wikilink") and a type-0x16 output buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), no output.                                                                                                                |
+| 5   | \[2.0.0+\] GetTimeZoneRuleVersion | No input, returns an output [\#TimeZoneRuleVersion](#TimeZoneRuleVersion "wikilink").                                                                                                                                                                             |
+| 100 | ToCalendarTime                    | Takes an input [\#PosixTime](#PosixTime "wikilink") and a type-0x15 input buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), returns an output [\#CalendarTime](#CalendarTime "wikilink") and [\#CalendarAdditionalInfo](#CalendarAdditionalInfo "wikilink"). |
+| 101 | ToCalendarTimeWithMyRule          | Takes an input [\#PosixTime](#PosixTime "wikilink"), returns an output [\#CalendarTime](#CalendarTime "wikilink") and [\#CalendarAdditionalInfo](#CalendarAdditionalInfo "wikilink").                                                                             |
+| 200 | ToPosixTime                       | Takes an input [\#CalendarTime](#CalendarTime "wikilink"), a type-0x15 input buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), an type-0xA output buffer for [\#PosixTime](#PosixTime "wikilink") array, and returns an output s32.                          |
+| 201 | ToPosixTimeWithMyRule             | Takes an input [\#CalendarTime](#CalendarTime "wikilink"), an type-0xA output buffer for [\#PosixTime](#PosixTime "wikilink") array, and returns an output s32.                                                                                                   |
+| 202 |                                   |                                                                                                                                                                                                                                                                   |
+|     |                                   |                                                                                                                                                                                                                                                                   |
 
 ### LoadLocationNameList
 
