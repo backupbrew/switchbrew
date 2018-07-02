@@ -578,6 +578,8 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01003C200A232000 || Animated Jigsaws: Beautiful Japanese Scenery || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
+| 01003C300AAAE000 || Another World || EUR || 4.0.0 || Digital || 0 || || Application / Game
+|-
 | 01003C400871E000 || ACA NEOGEO 2020 SUPER BASEBALL || EUR JPN USA || 3.0.1 || Digital || 0 || || Virtual Console
 |-
 | 01003C6008940000 || GUNBIRD for Nintendo Switch || EUR JPN USA || 3.0.1 || Digital || 0 131072 || || Application / Game
