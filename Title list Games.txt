@@ -1,6 +1,6 @@
 Note: Game updates have the same titleID as the main application, except with bitmask 0x800 set.
 
-== Applications / Games ==
+= Applications / Games =
 {| class=wikitable sortable
 ! TitleID || Description || Region || Minimum Required OS || Distribution Method || Title Versions || Cartridge Description || Type
 |-
