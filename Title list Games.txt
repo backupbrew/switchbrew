@@ -1,7 +1,7 @@
 Note: Game updates have the same titleID as the main application, except with bitmask 0x800 set.
 
 = Applications / Games =
-{| class=wikitable sortable
+{| class="wikitable sortable"
 ! TitleID || Description || Region || Minimum Required OS || Distribution Method || Title Versions || Cartridge Description || Type
 |-
 | 0100000000010000 || Super Mario Odyssey™ || CHN EUR JPN KOR USA || 3.0.1 || Digital / Cartridge || 0 65536 131072 196608 || || Application / Game
@@ -334,7 +334,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01002310064B4000 || OF MICE AND SAND -REVISED- || EUR JPN USA || 4.0.0 || Digital || 0 131072 || || Application / Game
 |-
-| 010023900AEE0000 || Paladins - Founder's Pack || EUR JPN USA || Unkno || Digital || 0 65536 131072 196608 262144 || || Application / Game
+| 010023900AEE0000 || Paladins - Founder's Pack || EUR JPN USA || Unknown || Digital || 0 65536 131072 196608 262144 || || Application / Game
 |-
 | 010023E008702000 || Spiral Splatter || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -348,7 +348,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010024F008742000 || Chameleon Run Deluxe Edition || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 010025400AECE000 || Fortnite || EUR JPN USA || Unkno || Digital || 0 65536 131072 196608 262144 327680 || || Application / Game
+| 010025400AECE000 || Fortnite || EUR JPN USA || Unknown || Digital || 0 65536 131072 196608 262144 327680 || || Application / Game
 |-
 | || Wonder Boy: The Dragon's Trap || || 3.0.1 || Cartridge || 0 || || Application / Game
 |-
@@ -468,7 +468,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010031B00A4E8000 || West of Loathing || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 010031D00A604000 || Songbringer || EUR JPN USA || Unkno || Digital || 0 || || Application / Game
+| 010031D00A604000 || Songbringer || EUR JPN USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 010031E00846A000 || タンブルストーン || JPN || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -566,7 +566,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01003B400A00A000 || The Adventures of Bertram Fiddle: Episode 1: A Dreadly Business || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 01003B700B036000 || グレコからの挑戦状！計算の城とオバケたち　ひき算 || JPN || Unkno || Digital || 0 65536 || || Application / Game
+| 01003B700B036000 || グレコからの挑戦状！計算の城とオバケたち　ひき算 || JPN || Unknown || Digital || 0 65536 || || Application / Game
 |-
 | 01003B9007E86000 || Hammerwatch || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -642,7 +642,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100429006A06000 || I, Zombie || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
-| 010042900A8CC000 || Robonauts ロボノーツ || JPN || Unkno || Digital || 0 || || Application / Game
+| 010042900A8CC000 || Robonauts ロボノーツ || JPN || Unknown || Digital || 0 || || Application / Game
 |-
 | 010042C006490000 || Bleed || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -670,7 +670,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010045300516E000 || Snow Moto Racing Freedom || EUR USA || 3.0.1 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
-| 010045500B212000 || Calculation Castle : Greco's Ghostly Challenge "Division" || EUR USA || Unkno || Digital || 0 || || Application / Game
+| 010045500B212000 || Calculation Castle : Greco's Ghostly Challenge "Division" || EUR USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 01004560063CA000 || ママにゲーム隠された || JPN || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -722,7 +722,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01004B4002B6A000 || Runner3 || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 01004B500AB88000 || Calculation Castle : Greco's Ghostly Challenge "Addition" || EUR USA || Unkno || Digital || 0 || || Application / Game
+| 01004B500AB88000 || Calculation Castle : Greco's Ghostly Challenge "Addition" || EUR USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 01004B600A2FC000 || ACA NEOGEO STAKES WINNER || EUR JPN USA || 4.0.0 || Digital || 0 || || Virtual Console
 |-
@@ -808,7 +808,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010052B00871C000 || ACA NEOGEO SAMURAI SHODOWN II || EUR JPN USA || 3.0.1 || Digital || 0 || || Virtual Console
 |-
-| 010052C00B184000 || The Journey Down: Chapter One || EUR USA || Unkno || Digital || 0 || || Application / Game
+| 010052C00B184000 || The Journey Down: Chapter One || EUR USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 0100534009FF2000 || Yonder: The Cloud Catcher Chronicles || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -996,11 +996,11 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01006AA0084FE000 || Damascus Gear Operation Tokyo || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 01006B700AB3E000 || Buddy Collection if －宿命の赤い糸－ || JPN || Unkno || Digital || 0 65536 || || Application / Game
+| 01006B700AB3E000 || Buddy Collection if －宿命の赤い糸－ || JPN || Unknown || Digital || 0 65536 || || Application / Game
 |-
 | 01006BB00800A000 || NARUTO SHIPPUDEN: Ultimate Ninja STORM 3 Full Burst HD || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 01006BC00B188000 || The Journey Down: Chapter Three || EUR USA || Unkno || Digital || 0 || || Application / Game
+| 01006BC00B188000 || The Journey Down: Chapter Three || EUR USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 01006BD001E06000 || Minecraft: Nintendo Switch Edition || EUR JPN USA || 1.0.0 || Digital || 0 65536 131072 196608 262144 327680 393216 458752 524288 589824 655360 720896 786432 851968 917504 983040 1048576 || || Application / Game
 |-
@@ -1160,7 +1160,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01007A4008486000 || Enchanting Mahjong Match || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 01007A400AD2C000 || アルケミックジョスト || JPN || Unkno || Digital || 0 || || Application / Game
+| 01007A400AD2C000 || アルケミックジョスト || JPN || Unknown || Digital || 0 || || Application / Game
 |-
 | 01007A400B3F8000 || Anima: Gate of Memories - The Nameless Chronicles || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -1284,7 +1284,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010087E006E6E000 || Tachyon Project || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
-| 010087E00AA8E000 || マンティス・バーン・レーシング || JPN || Unkno || Digital || 0 || || Application / Game
+| 010087E00AA8E000 || マンティス・バーン・レーシング || JPN || Unknown || Digital || 0 || || Application / Game
 |-
 | 010087F005DFE000 || ESCAPE TRICK: 35 Fateful Enigmas || EUR JPN USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -1454,7 +1454,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01009AB0034E0000 || Nintendo Labo Toy-Con 02: Robot Kit || EUR JPN USA || 4.0.0 || Cartridge || 0 65536 || || Application / Game
 |-
-| 01009AB00B186000 || The Journey Down: Chapter Two || EUR USA || Unkno || Digital || 0 || || Application / Game
+| 01009AB00B186000 || The Journey Down: Chapter Two || EUR USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 01009B300872A000 || ACA NEOGEO SENGOKU 2 || EUR JPN USA || 4.0.0 || Digital || 0 || || Virtual Console
 |-
@@ -1570,7 +1570,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100A6300150C000 || Wonder Boy: The Dragon's Trap || EUR JPN USA || 1.0.0 || Digital || 0 131072 || || Application / Game
 |-
-| 0100A6500B176000 || Calculation Castle : Greco's Ghostly Challenge "Subtraction" || EUR USA || Unkno || Digital || 0 || || Application / Game
+| 0100A6500B176000 || Calculation Castle : Greco's Ghostly Challenge "Subtraction" || EUR USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 0100A66003384000 || Hulu || USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -1686,7 +1686,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100B42001DB4000 || アケアカNEOGEO ザ・キング・オブ・ファイターズ '98 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 0100B4900AD3E000 || NEKOPARA Vol.1 || JPN USA || Unkno || Digital || 0 || || Application / Game
+| 0100B4900AD3E000 || NEKOPARA Vol.1 || JPN USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 0100B52006E8C000 || Tiny Troopers Joint Ops XL || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -1698,7 +1698,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100B5A004302000 || R.B.I. Baseball 17 || EUR USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 0100B5C00AB3C000 || グレコからの挑戦状！計算の城とオバケたち　たし算 || JPN || Unkno || Digital || 0 65536 || || Application / Game
+| 0100B5C00AB3C000 || グレコからの挑戦状！計算の城とオバケたち　たし算 || JPN || Unknown || Digital || 0 65536 || || Application / Game
 |-
 | 0100B60003A06000 || よるのないくに２ ～新月の花嫁～ || JPN || 1.0.0 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
@@ -1716,9 +1716,9 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100B7F00B4E6000 || Destiny's Princess: A War Story, A Love Story || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100B8000B12C000 || グレコからの挑戦状！計算の城とオバケたち　わり算 || JPN || Unkno || Digital || 0 65536 || || Application / Game
+| 0100B8000B12C000 || グレコからの挑戦状！計算の城とオバケたち　わり算 || JPN || Unknown || Digital || 0 65536 || || Application / Game
 |-
-| 0100B8400A1C6000 || Bloons TD 5 || EUR USA || Unkno || Digital || 0 || || Application / Game
+| 0100B8400A1C6000 || Bloons TD 5 || EUR USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 0100B8E00359E000 || Party Golf || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
@@ -1750,7 +1750,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100BC2004FF4000 || Owlboy || EUR JPN USA || 4.0.0 || Digital || 0 65536 131072 196608 262144 327680 || || Application / Game
 |-
-| 0100BCB00AE98000 || GUNBIRD2 for Nintendo Switch || EUR JPN USA || Unkno || Digital || 0 || || Application / Game
+| 0100BCB00AE98000 || GUNBIRD2 for Nintendo Switch || EUR JPN USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 0100BCE000598000 || Just Dance 2017® || EUR USA || 1.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
@@ -1824,7 +1824,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100C5E003B40000 || ARMS™ Global Testpunch || EUR JPN USA || 1.0.0 || Digital || 0 131072 || || Application / Game
 |-
-| 0100C6200A0AA000 || Enigmatis 2: The Mists of Ravenwood || EUR USA || Unkno || Digital || 0 || || Application / Game
+| 0100C6200A0AA000 || Enigmatis 2: The Mists of Ravenwood || EUR USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 0100C6E0047C8000 || Bit Dungeon+ || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -2158,7 +2158,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100EC9004736000 || Bulb Boy || EUR || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 0100ECE00B210000 || Calculation Castle : Greco's Ghostly Challenge "Multiplication" || EUR USA || Unkno || Digital || 0 || || Application / Game
+| 0100ECE00B210000 || Calculation Castle : Greco's Ghostly Challenge "Multiplication" || EUR USA || Unknown || Digital || 0 || || Application / Game
 |-
 | 0100ECF008474000 || 6180 the moon || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -2220,7 +2220,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100F4E006B32000 || The Men of Yoshiwara: Ohgiya || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100F5400AB6C000 || Alchemic Jousts || EUR USA || Unkno || Digital || 0 131072 || || Application / Game
+| 0100F5400AB6C000 || Alchemic Jousts || EUR USA || Unknown || Digital || 0 131072 || || Application / Game
 |-
 | 0100F55004AB8000 || Uurnog Uurnlimited || EUR JPN USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -2276,7 +2276,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100FA100620C000 || 蒼の彼方のフォーリズム for Nintendo Switch || JPN || 3.0.1 || Digital / Cartridge || 0 || || Application / Game
 |-
-| 0100FA500B124000 || グレコからの挑戦状！計算の城とオバケたち　かけ算 || JPN || Unkno || Digital || 0 65536 || || Application / Game
+| 0100FA500B124000 || グレコからの挑戦状！計算の城とオバケたち　かけ算 || JPN || Unknown || Digital || 0 65536 || || Application / Game
 |-
 | 0100DDD0085A4000 || Sushi Striker™: The Way of Sushido || CHN EUR KOR USA || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
@@ -2310,6 +2310,127 @@ Note: Game updates have the same titleID as the main application, except with bi
 |}
 
 = Demos =
+{| class="wikitable sortable"
+! TitleID || Description || Region || Minimum Required OS || Distribution Method || Title Versions || Cartridge Description || Type
+|-
+| 0100618004096000 || Robonauts Demo || EUR USA || 3.0.1 || Digital || 0 65536 || || Demo
+|-
+| 010021F004270000 || Spelunker Party! Demo Version || EUR USA || 3.0.1 || Digital || 0 || || Demo
+|-
+| 010073C001D5E000 || Puyo Puyo Tetris Demo || USA || 1.0.0 || Digital / Cartridge || 0 131072 || || Demo
+|-
+| 0100047009742000 || Twin Robots: Ultimate Edition Demo || EUR USA || 3.0.1 || Digital || 0 131072 || || Demo
+|-
+| 0100559004BB4000 || すみっコぐらし　すみっコパークへようこそ　体験版 || JPN || 3.0.1 || Digital / Cartridge || 0 131072 || || Demo
+|-
+| 010053D0001BE000 || ぷよぷよ™テトリス®Ｓ 体験版 || CHN JPN || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 || || Demo
+|-
+| 0100225000FEE000 || Blaster Master Zero Demo || EUR JPN USA || 1.0.0 || Digital || 0 65536 131072 196608 262144 327680 || || Demo
+|-
+| 0100A6200851E000 || 超回転 寿司ストライカー The Way of Sushido 体験版 || CHN JPN || 4.0.0 || Digital / Cartridge || 0 65536 || || Demo
+|-
+| 01009BF0072D4000 || 進め！キノピオ隊長　体験版 || EUR JPN KOR USA || 4.0.0 || Digital / Cartridge || 0 || || Demo
+|-
+| 01008DC004CBA000 || 王だぁランド！ 体験版 || JPN || 3.0.1 || Digital || 0 65536 131072 196608 262144 || || Demo
+|-
+| 0100B3F000BE2000 || ポッ拳　POKKÉN TOURNAMENT DX 体験版 || CHN EUR JPN USA || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 || || Demo
+|-
+| 01005AA00372A000 || UNO Demo || EUR JPN USA || 3.0.1 || Digital || 0 65536 131072 196608 || || Demo
+|-
+| 010082600A234000 || アーバントライアル プレイグラウンド 体験版 || JPN || 4.0.0 || Digital / Cartridge || 0 65536 || || Demo
+|-
+| 01000E2003FA0000 || MIGHTY GUNVOLT BURST Demo || EUR JPN USA || 1.0.0 || Digital || 0 65536 131072 196608 262144 327680 || || Demo
+|-
+| 01001FA0034E2000 || Dark Witch Music Episode: Rudymical Demo || EUR JPN USA || 1.0.0 || Digital || 0 || || Demo
+|-
+| 0100E4D00A690000 || PixelJunk® Monsters 2 Demo || EUR USA || 4.0.0 || Digital || 0 || || Demo
+|-
+| 0100F3D001DEE000 || Puyo Puyo™ Tetris® Demo || EUR || 1.0.0 || Digital / Cartridge || 0 131072 || || Demo
+|-
+| 0100E5F0000C0000 || 魔界戦記ディスガイア5 体験版 || JPN || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 || || Demo
+|-
+| 010077B0038B2000 || LOST SPHEAR Demo || EUR JPN USA || 3.0.1 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 || || Demo
+|-
+| 01007E3006DDA000 || Kirby™ Star Allies Demo || CHN EUR JPN KOR USA || 4.0.0 || Digital / Cartridge || 0 65536 131072 196608 || || Demo
+|-
+| 0100737003190000 || IMPLOSION 体験版 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Demo
+|-
+| 0100112003B8A000 || Slime-san Demo || EUR USA || 1.0.0 || Digital || 0 65536 131072 196608 || || Demo
+|-
+| 0100AED003A60000 || プランテラ ガーデンライフ DXエディション 体験版 || JPN || 1.0.0 || Digital || 0 65536 || || Demo
+|-
+| 010083600AE9E000 || Happy Birthdays Demo || EUR USA || 4.0.0 || Digital / Cartridge || 0 || || Demo
+|-
+| 0100F8D0091F0000 || 迷宮の塔　トレジャーダンジョン　体験版 || JPN || 3.0.1 || Digital || 0 || || Demo
+|-
+| 01005F900416E000 || Pic-a-Pix Deluxe Demo || EUR USA || 3.0.1 || Digital || 0 65536 || || Demo
+|-
+| 0100837006AF0000 || forma.8 体験版 || JPN || 3.0.1 || Digital || 0 65536 || || Demo
+|-
+| 01009A5009A9E000 || Shining Resonance Refrain Demo || EUR USA || 4.0.0 || Digital / Cartridge || 0 || || Demo
+|-
+| 0100D0B0093D8000 || トルクル(TorqueL) 物理調整版 デモ || EUR JPN USA || 3.0.1 || Digital || 0 65536 || || Demo
+|-
+| 0100ACD009B6E000 || ポータルナイツ 体験版 || JPN || 4.0.0 || Digital / Cartridge || 0 65536 || || Demo
+|-
+| 0100437004170000 || Portal Knights Demo || EUR USA || 3.0.1 || Digital / Cartridge || 0 131072 || || Demo
+|-
+| 010016C009374000 || Lode Runner Legacy Demo Version || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Demo
+|-
+| 0100322004844000 || Embers of Mirrim Demo || EUR USA || 3.0.1 || Digital || 0 || || Demo
+|-
+| 0100A7F002830000 || VOEZ 体験版 || EUR JPN KOR USA || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 393216 || || Demo
+|-
+| 01007D7001D0E000 || オーシャンホーン　体験版 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Demo
+|-
+| 0100D06003056000 || Piczle Lines DX Demo || EUR JPN USA || 1.0.0 || Digital || 0 65536 131072 196608 262144 327680 || || Demo
+|-
+| 0100CD3000BDC000 || ドラゴンクエストヒーローズI・II for Nintendo Switch 体験版 || JPN || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 || || Demo
+|-
+| 0100C0A004C2C000 || Kid Tripp Demo || EUR USA || 3.0.1 || Digital || 0 65536 || || Demo
+|-
+| 0100C88008BA6000 || Happy Birthdays 体験版 || JPN || 3.0.1 || Digital / Cartridge || 0 65536 || || Demo
+|-
+| 01005FF002E2A000 || RAYMAN® LEGENDS: DEFINITIVE EDITION DEMO || CHN EUR KOR USA || 1.0.0 || Digital / Cartridge || 0 131072 || || Demo
+|-
+| 01000E10094D0000 || クリプト・オブ・ネクロダンサー体験版 || JPN || 3.0.1 || Digital || 0 65536 || || Demo
+|-
+| 0100F9A008AD6000 || Word Search by POWGI Demo || EUR USA || 4.0.0 || Digital || 0 || || Demo
+|-
+| 01009B500007C000 || ARMS Demo || CHN EUR JPN KOR USA || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 393216 458752 524288 589824 655360 720896 786432 851968 917504 983040 || || Demo
+|-
+| 0100191006B98000 || ロロロロ　体験版 || JPN || 3.0.1 || Digital || 0 || || Demo
+|-
+| 01001C9007614000 || Max: The Curse of Brotherhood (Demo) || EUR USA || 3.0.1 || Digital || 0 65536 || || Demo
+|-
+| 0100C3800049C000 || モンスターハンターダブルクロス™ Nintendo Switch Ver. 体験版 || JPN || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 || || Demo
+|-
+| 0100D03003F0E000 || Nine Parchments Demo || EUR JPN USA || 3.0.1 || Digital || 0 65536 131072 196608 || || Demo
+|-
+| 010072E00AAA2000 || モザイクアート Fill-a-Pix DELUXE 体験版 || JPN || 4.0.0 || Digital || 0 || || Demo
+|-
+| 010040A0065D2000 || 体験版デス！がるメタる！ || JPN || 3.0.1 || Digital / Cartridge || 0 65536 || || Demo
+|-
+| 01007B5002F56000 || ドラゴンクエストビルダーズ　アレフガルドを復活せよ　体験版 || JPN || 3.0.1 || Digital / Cartridge || 0 || || Demo
+|-
+| 0100704000B3A000 || いっしょにチョキッと スニッパーズ 体験版 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Demo
+|-
+| 01002CC0062B8000 || DEEMO 体験版 || EUR JPN USA || 3.0.1 || Digital || 0 65536 131072 196608 262144 327680 || || Demo
+|-
+| 0100E8C004616000 || お絵かきパズル Pic-a-Pix Deluxe 体験版 || JPN || 3.0.1 || Digital || 0 65536 || || Demo
+|-
+| 01002A2004530000 || ザ・ブリッジ・デモ || EUR JPN USA || 1.0.0 || Digital || 0 || || Demo
+|-
+| 010079B0045C2000 || ソニックフォース体験版 || JPN KOR || 1.0.0 || Digital / Cartridge || 0 131072 || || Demo
+|-
+| 01005700031AE000 || Disgaea 5 Complete Demo || EUR USA || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 || || Demo
+|-
+| 0100C3F000BD8000 || みんなでワイワイ！スペランカー 体験版 || JPN || 1.0.0 || Digital / Cartridge || 0 65536 || || Demo
+|-
+| 0100352006A10000 || Heroes of the Monkey Tavern Demo || EUR USA || 3.0.1 || Digital || 0 65536 || || Demo
+|-
+| 010077B0038B2000 || LOST SPHEAR Demo || EUR JPN USA || 3.0.1 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 || || Demo
+|}
 
 = VersionList =
 See [[VersionList]] for Nintendo Switch VersionList details.
