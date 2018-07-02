@@ -112,7 +112,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01000B6007A3C000 || The Deer God || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
-| 01000C800AFD6000 || ACA NEOGEO SAMURAI SHODOWN V || USA || 4.0.0 || Digital || 0 || || Virtual Console
+| 01000C800AFD6000 || ACA NEOGEO SAMURAI SHODOWN V || EUR USA || 4.0.0 || Digital || 0 || || Virtual Console
 |-
 | 01000C9004FA2000 || ACA NEOGEO ROBO ARMY || EUR JPN USA || 3.0.1 || Digital || 0 || || Virtual Console
 |-
