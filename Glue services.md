@@ -9,6 +9,11 @@ This is "nn::arp::detail::IReader".
 | 2   | GetApplicationControlProperty                  |
 | 3   | GetApplicationControlPropertyWithApplicationId |
 
+## GetApplicationControlPropertyWithApplicationId
+
+Takes in a title id and a type-0x16 buffer. This is filled with the
+contents of control.nacp for that application.
+
 # arp:w
 
 This is "nn::arp::detail::IWriter".
