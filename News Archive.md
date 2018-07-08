@@ -1,3 +1,5 @@
+  - **12 March 18** Nintendo released system update
+    [5.0.0](5.0.0.md "wikilink").
   - **2 March 18**
     [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.1.0)
     v1.1.0 was released.
