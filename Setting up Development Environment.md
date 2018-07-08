@@ -10,10 +10,15 @@ Unix-like platforms such as Linux/macOS, there's
 images](https://hub.docker.com/u/devkitpro/) which come pre-installed
 with all the portlibs packages.
 
+**Please note: devkitPro is the organisation that provides the tools.
+They are not a software package, they don't have version numbers and the
+only way to have them compile your code is to pay them (or maybe if you
+ask nicely when you need help figuring out an issue)**
+
 ## Windows
 
-devkitPro provides 64bit precompiled windows binaries of devkitA64 which
-can be run directly on Windows.
+devkitPro provides 64-bit precompiled Windows binaries of devkitA64
+which can be run directly on Windows.
 
   - If you already use msys2 then you can follow the instructions at
     <https://github.com/devkitPro/pacman/releases/latest> to add the
