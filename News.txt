@@ -9,7 +9,7 @@ For older news, see the [[:News/Archive|news archive]].
 
 === News ===
 <!-- Add news below --></noinclude>
+*'''8 July 18''' [https://github.com/switchbrew/libnx/releases/tag/v1.3.0 libnx] v1.3.0 was released.
 *'''30 May 18''' Nintendo released system update [[5.1.0]].
 *'''16 April 18''' Nintendo released system update [[5.0.2]].
 *'''26 March 18''' Nintendo released system update [[5.0.1]].
-*'''12 March 18''' Nintendo released system update [[5.0.0]].
