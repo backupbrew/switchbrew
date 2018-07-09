@@ -212,7 +212,7 @@ __NOTOC__
 |-
 | 0x73 || [[#svcSetProcessMemoryPermission]] || W0=process_handle, X1=addr, X2=size, W3=perm || W0=result
 |-
-| 0x74 || [[#svcMapProcessMemory]] || X0=srcaddr, W1=process_handle, X2=dstaddr, X3=size || W0=result
+| 0x74 || [[#svcMapProcessMemory]] || X0=dstaddr, W1=process_handle, X2=srcaddr, X3=size || W0=result
 |-
 | 0x75 || [[#svcUnmapProcessMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
 |-
