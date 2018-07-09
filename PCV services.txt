@@ -490,20 +490,7 @@ This is "nn::timesrv::detail::service::ITimeZoneService".
 Takes an input s32 LocationName_index and a type-0x6 output buffer for [[#LocationName]], returns an output s32 for total output entries.
 
 === LocationName ===
-{| class="wikitable" border="1"
-|-
-! Offset || Size || Description
-|-
-| 0x0 || 0x10 || Location name string, no NUL-terminator.
-|-
-| 0x10 || ? || 
-|-
-| 0x18 || 0x8? || ?
-|-
-| 0x20 || ? || ?
-|}
-
-This is an 0x24-byte struct.
+This contains a TimeZone location string with a max size of 0x24 bytes.
 
 === TimeZoneRule ===
 This is an 0x4000-byte struct. Official sw uses fixed-size 0x4000 for the buffer size with the above commands.

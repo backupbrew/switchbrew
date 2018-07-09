@@ -305,14 +305,7 @@ total output entries.
 
 ### LocationName
 
-| Offset | Size | Description                              |
-| ------ | ---- | ---------------------------------------- |
-| 0x0    | 0x10 | Location name string, no NUL-terminator. |
-| 0x10   | ?    |                                          |
-| 0x18   | 0x8? | ?                                        |
-| 0x20   | ?    | ?                                        |
-
-This is an 0x24-byte struct.
+This contains a TimeZone location string with a max size of 0x24 bytes.
 
 ### TimeZoneRule
 
