@@ -83,15 +83,17 @@ The hash for the signature is calculated over the ticket data.
 |-
 | 0x141 || 0x1 || Title key type
 |-
-| 0x142 || 0xE || Unknown
+| 0x142 || 0x3 || Unknown
+|-
+| 0x145 || 0x1 || Master key revision
+|-
+| 0x146 || 0xA || Unknown
 |-
 | 0x150 || 0x8 || Ticket ID
 |-
 | 0x158 || 0x8 || Device ID
 |-
-| 0x160 || 0x8 || Title ID
-|-
-| 0x168 || 0x8 || Unknown
+| 0x160 || 0x10 || Rights ID
 |-
 | 0x170 || 0x4 || Account ID
 |-

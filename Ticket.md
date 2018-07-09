@@ -34,20 +34,21 @@ The hash for the signature is calculated over the ticket data.
 
 ### Ticket data
 
-| Offset | Size  | Description     |
-| ------ | ----- | --------------- |
-| 0x0    | 0x40  | Issuer          |
-| 0x40   | 0x100 | Title key block |
-| 0x140  | 0x1   | Unknown         |
-| 0x141  | 0x1   | Title key type  |
-| 0x142  | 0xE   | Unknown         |
-| 0x150  | 0x8   | Ticket ID       |
-| 0x158  | 0x8   | Device ID       |
-| 0x160  | 0x8   | Title ID        |
-| 0x168  | 0x8   | Unknown         |
-| 0x170  | 0x4   | Account ID      |
-| 0x174  | 0xC   | Unknown         |
-| 0x180  | 0x140 | Unknown         |
+| Offset | Size  | Description         |
+| ------ | ----- | ------------------- |
+| 0x0    | 0x40  | Issuer              |
+| 0x40   | 0x100 | Title key block     |
+| 0x140  | 0x1   | Unknown             |
+| 0x141  | 0x1   | Title key type      |
+| 0x142  | 0x3   | Unknown             |
+| 0x145  | 0x1   | Master key revision |
+| 0x146  | 0xA   | Unknown             |
+| 0x150  | 0x8   | Ticket ID           |
+| 0x158  | 0x8   | Device ID           |
+| 0x160  | 0x10  | Rights ID           |
+| 0x170  | 0x4   | Account ID          |
+| 0x174  | 0xC   | Unknown             |
+| 0x180  | 0x140 | Unknown             |
 
 The title key can be stored as a 16-byte block when tickets are "common"
 \[2.0.0+\] with title key type 0, or as a "personalized" RSA-2048
