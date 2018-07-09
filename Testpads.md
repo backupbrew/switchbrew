@@ -106,3 +106,4 @@ diagram
 | 3      | Li-Ion Batt Vdd        | Battery Input | Std. Li-Ion |            |           |                                                          |
 | 4      | Mirrored Ground?       |               |             |            |           | Holds steady @ 0, looks like a decoupled isolated ground |
 | 5      | Battery pulse?         |               |             |            | \<1 Hz    | Duty cycle ~0%                                           |
+| 6      | GND                    |               |             |            |           |                                                          |
