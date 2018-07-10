@@ -316,6 +316,12 @@ Note: No 01000000000020XX titles exist on retail systems.
 | 01000000000020F0 || || "devmenuapp_installer" - Launched by [[Boot2|boot2]].
 |-
 | 0100000000002101 || || DevMenuCommand
+|-
+| 0100000000002103 || || [[Factory Setup|SystemInitializ]]
+|-
+| 0100000000002106 || || [[Factory Setup|CalWriterManu]]
+|-
+| 0100000000002111 || || C9LcdSpker
 |}
 
 == Target Tools ==

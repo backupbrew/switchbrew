@@ -1276,6 +1276,9 @@ systems.
 | 010000000000209C |          | TestApplication - "TestApplicationLauncher". Factory qlaunch replacement, used to launch other tests. |
 | 01000000000020F0 |          | "devmenuapp\_installer" - Launched by [boot2](Boot2.md "wikilink").                                   |
 | 0100000000002101 |          | DevMenuCommand                                                                                        |
+| 0100000000002103 |          | [SystemInitializ](Factory%20Setup.md "wikilink")                                                      |
+| 0100000000002106 |          | [CalWriterManu](Factory%20Setup.md "wikilink")                                                        |
+| 0100000000002111 |          | C9LcdSpker                                                                                            |
 
 ## Target Tools
 
