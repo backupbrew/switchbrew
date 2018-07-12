@@ -33,4 +33,14 @@ This is "nn::arp::detail::IRegistrar".
 | 1   | SetApplicationLaunchProperty  |
 | 2   | SetApplicationControlProperty |
 
+### Launch Property Format
+
+| Offset | Size | Description          |
+| ------ | ---- | -------------------- |
+| 0x0    | 0x8  | Title ID             |
+| 0x8    | 0x4  | Version              |
+| 0xC    | 0x1  | Base Game Storage ID |
+| 0xD    | 0x1  | Update Storage ID    |
+| 0xE    | 0x2  | Padding              |
+
 [Category:Services](Category:Services "wikilink")
