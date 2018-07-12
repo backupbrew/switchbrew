@@ -6,7 +6,41 @@ The boot ROM validates, copies to IRAM and executes this package by parsing it's
 This package is distributed as a plaintext initial bootloader (package1ldr) and a secondary encrypted blob ("PK11"). Execution starts at plaintext package1ldr which will set up hardware, generate keys and decrypt the next stage.
 
 == Package1ldr ==
-The code for this stage is stored in plaintext inside the package. By looking into the BCT's bootloader0_info (normal) or bootloader1_info (safe mode), the boot ROM starts executing this stage at address 0x40010020 in IRAM.
+The code for this stage is stored in plaintext inside the package. By looking into the BCT's bootloader0_info (normal) or bootloader1_info (safe mode), the boot ROM starts executing this stage at address 0x40010020 in IRAM (0x40010040 for 4.0.0+).
+
+=== Header ===
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x4
+| Package1ldr hash (first four bytes of SHA256(package1ldr)).
+|-
+| 0x4
+| 0x4
+| Secure Monitor hash (first four bytes of SHA256(secure_monitor)).
+|-
+| 0x8
+| 0x4
+| NX Bootloader hash (first four bytes of SHA256(nx_bootloader)).
+|-
+| 0xC
+| 0x4
+| Unknown hash
+|-
+| 0x10
+| 0xE
+| Build Timestamp (yyyyMMddHHmmss)
+|-
+| 0x1E
+| 0x2
+| Unknown (version?)
+|-
+|}
 
 === Initialization ===
 The stack pointer is set.
