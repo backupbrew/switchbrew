@@ -371,7 +371,7 @@ Each 24-byte entry (officially "ApplicationContentMetaKey") is as follows:
 
 This function takes in a type 6 buffer to write entries to, and a u8 "filter" [[#Title_Types|type]]. If filter is zero, all update records will be copied to to the output buffer (space permitting). Otherwise, only titles with type == filter_type will be copied to the output buffer.
 
-This func returns a u32 num_entries_written, and a u32 num_entries_total.
+This func returns a u32 num_entries_total, and a u32 num_entries_written.
 
 ==== ReadEntryMetaRecords ====
 Takes a type-6 [[NCA#Meta_records|Meta Record]] output buffer, a u32 eoffset into that buffer, and an input [[NCA#Meta_records|Meta Record]] entry. Returns a u32 for total_read_entries.

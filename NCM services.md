@@ -358,8 +358,8 @@ records will be copied to to the output buffer (space permitting).
 Otherwise, only titles with type == filter\_type will be copied to the
 output buffer.
 
-This func returns a u32 num\_entries\_written, and a u32
-num\_entries\_total.
+This func returns a u32 num\_entries\_total, and a u32
+num\_entries\_written.
 
 #### ReadEntryMetaRecords
 
