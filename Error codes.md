@@ -333,6 +333,7 @@ titles:
 | 0x2F5E02            | 6063                                                      | Error: Null pointer argument was specified.                                                  |
 | 0x2EE002            | 6000                                                      | Error: Precondition violation.                                                               |
 | 0x2EE202 - 0x306E02 | 6001-6199                                                 | Error: Invalid argument was specified.                                                       |
+| 0x2EEA02            | 6005                                                      | Directory/file(?) already exists.                                                            |
 | 0x307202            | 6201                                                      | Error: OpenMode\_AllowAppend is required for implicit extension of file size by WriteFile(). |
 | 0x307002 - 0x313602 | 6200, 6202 - 6299                                         | Error: Invalid operation for the open mode.                                                  |
 | 0x313802 - 0x31FE02 | 6300-6399                                                 | Error: Unsupported operation.                                                                |
