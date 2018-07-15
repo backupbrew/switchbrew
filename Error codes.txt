@@ -327,6 +327,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x2EE602 || 2 || 6003 || Path too long
 |-
+| 0x2EEA02 || 2 || 6005 || Directory/file(?) already exists.
+|-
 | 0x2F5A02 || 2 || 6061 || Offset outside storage
 |-
 | 0x313802 || 2 || 6300 || Operation not supported
