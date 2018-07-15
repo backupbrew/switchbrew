@@ -174,6 +174,7 @@ applets.
 | 0x196002          | 2      | 3248        | Out of memory                                                                                                                                                                        |
 | 0x196202          | 2      | 3249        | Out of memory                                                                                                                                                                        |
 | 0x1A4A02          | 2      | 3365        | Out of memory                                                                                                                                                                        |
+| 0x2EEA02          | 1      | 6005        | Directory/file(?) already exists.                                                                                                                                                    |
 | 0x235202          | 2      | 4521        | Invalid NCA Key index                                                                                                                                                                |
 | 0x235E02          | 2      | 4527        | NCA-path used with the wrong titleID.                                                                                                                                                |
 | 0x250E02          | 2      | 4743        | [Corrupted](NAX0.md "wikilink") NAX0 header.                                                                                                                                         |
@@ -333,7 +334,6 @@ titles:
 | 0x2F5E02            | 6063                                                      | Error: Null pointer argument was specified.                                                  |
 | 0x2EE002            | 6000                                                      | Error: Precondition violation.                                                               |
 | 0x2EE202 - 0x306E02 | 6001-6199                                                 | Error: Invalid argument was specified.                                                       |
-| 0x2EEA02            | 6005                                                      | Directory/file(?) already exists.                                                            |
 | 0x307202            | 6201                                                      | Error: OpenMode\_AllowAppend is required for implicit extension of file size by WriteFile(). |
 | 0x307002 - 0x313602 | 6200, 6202 - 6299                                         | Error: Invalid operation for the open mode.                                                  |
 | 0x313802 - 0x31FE02 | 6300-6399                                                 | Error: Unsupported operation.                                                                |
