@@ -291,6 +291,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x41001 || 1 || 520 || Process not being debugged
 |-
+| 0x402 || 2 || 2 || Directory/file(?) already exists.
+|-
 | 0xE02 || 2 || 7 || Savedata [[Filesystem_services|already]] mounted
 |-
 | 0x7802 || 2 || 60 || The specified [[NCA]]-type doesn't exist for this title.
@@ -313,8 +315,6 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1A4A02 || 2 || 3365 || Out of memory
 |-
-| 0x2EEA02 || 1 || 6005 || Directory/file(?) already exists.
-|-
 | 0x235202 || 2 || 4521 || Invalid NCA Key index
 |-
 | 0x235E02 || 2 || 4527 || NCA-path used with the wrong titleID.
@@ -327,7 +327,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x2EE602 || 2 || 6003 || Path too long
 |-
-| 0x2EEA02 || 2 || 6005 || Directory/file(?) already exists.
+| 0x2EEA02 || 2 || 6005 || Invalid directory path.
 |-
 | 0x2F5A02 || 2 || 6061 || Offset outside storage
 |-
