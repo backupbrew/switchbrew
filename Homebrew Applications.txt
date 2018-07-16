@@ -352,7 +352,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/BernardoGiordano/Checkpoint Yes]
 | 2018-05-14
 |-
-|}
+| JKSV
+| WIP save manager for more advanced users
+| JK_
+| [https://github.com/J-D-K/JKSV/releases Here]
+| [https://github.com/J-D-K/JKSV Yes]
+| 2018-06-25
+|-}
 
 === File servers ===
 {| class="wikitable" border="1"
