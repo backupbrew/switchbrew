@@ -626,7 +626,7 @@ There are two main implementations of this interface:
 |-
 | 12 || [[#GetTotalSpaceSize]]
 |-
-| 13 || [3.0.0+] CleanDirectoryRecursively
+| 13 || [3.0.0+] [[#CleanDirectoryRecursively]]
 |-
 | 14 || [3.0.0+] GetFileTimeStampRaw
 |-
@@ -647,6 +647,9 @@ Takes a type-0x9 input buffer for the path and returns an output byte-size u64 f
 
 == GetTotalSpaceSize ==
 Takes a type-0x9 input buffer for the path and returns an output byte-size u64 for the total space available with this FS(free+used).
+
+== CleanDirectoryRecursively ==
+Takes a type-0x9 input buffer for the path and clears the contents of the directory specified in the path.
 
 = IDirectory =
 This is "nn::fssrv::sf::IDirectory".

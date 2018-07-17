@@ -524,26 +524,27 @@ There are two main implementations of this interface:
     binary. Uses an [\#IStorage](#IStorage "wikilink") interface as
     underlying raw device.
   - **IPC proxy**: Used for all non-RomFS filesystems. In this case,
-    actual filesystem implementation is in the FS process.
+    actual filesystem implementation is in the FS
+process.
 
-| Cmd | Name                                                 |
-| --- | ---------------------------------------------------- |
-| 0   | CreateFile                                           |
-| 1   | DeleteFile                                           |
-| 2   | CreateDirectory                                      |
-| 3   | DeleteDirectory                                      |
-| 4   | DeleteDirectoryRecursively                           |
-| 5   | RenameFile                                           |
-| 6   | RenameDirectory                                      |
-| 7   | [\#GetEntryType](#GetEntryType "wikilink")           |
-| 8   | OpenFile                                             |
-| 9   | [\#OpenDirectory](#OpenDirectory "wikilink")         |
-| 10  | [\#Commit](#Commit "wikilink")                       |
-| 11  | [\#GetFreeSpaceSize](#GetFreeSpaceSize "wikilink")   |
-| 12  | [\#GetTotalSpaceSize](#GetTotalSpaceSize "wikilink") |
-| 13  | \[3.0.0+\] CleanDirectoryRecursively                 |
-| 14  | \[3.0.0+\] GetFileTimeStampRaw                       |
-| 15  | \[4.0.0+\] QueryEntry                                |
+| Cmd | Name                                                                            |
+| --- | ------------------------------------------------------------------------------- |
+| 0   | CreateFile                                                                      |
+| 1   | DeleteFile                                                                      |
+| 2   | CreateDirectory                                                                 |
+| 3   | DeleteDirectory                                                                 |
+| 4   | DeleteDirectoryRecursively                                                      |
+| 5   | RenameFile                                                                      |
+| 6   | RenameDirectory                                                                 |
+| 7   | [\#GetEntryType](#GetEntryType "wikilink")                                      |
+| 8   | OpenFile                                                                        |
+| 9   | [\#OpenDirectory](#OpenDirectory "wikilink")                                    |
+| 10  | [\#Commit](#Commit "wikilink")                                                  |
+| 11  | [\#GetFreeSpaceSize](#GetFreeSpaceSize "wikilink")                              |
+| 12  | [\#GetTotalSpaceSize](#GetTotalSpaceSize "wikilink")                            |
+| 13  | \[3.0.0+\] [\#CleanDirectoryRecursively](#CleanDirectoryRecursively "wikilink") |
+| 14  | \[3.0.0+\] GetFileTimeStampRaw                                                  |
+| 15  | \[4.0.0+\] QueryEntry                                                           |
 
 ## GetEntryType
 
@@ -571,6 +572,11 @@ byte-size u64 for the total free space with this FS.
 
 Takes a type-0x9 input buffer for the path and returns an output
 byte-size u64 for the total space available with this FS(free+used).
+
+## CleanDirectoryRecursively
+
+Takes a type-0x9 input buffer for the path and clears the contents of
+the directory specified in the path.
 
 # IDirectory
 
