@@ -2,48 +2,48 @@
 
 This is "nn::nfc::am::detail::IAmManager".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
+| Cmd | Name              |
+| --- | ----------------- |
+| 0   | CreateAmInterface |
 
 ## IAm
 
 This is "nn::nfc::am::detail::IAm".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
+| Cmd | Name                   |
+| --- | ---------------------- |
+| 0   | Initialize             |
+| 1   | Finalize               |
+| 2   | NotifyForegroundApplet |
 
 # nfc:mf:u
 
 This is "nn::nfc::mifare::detail::IUserManager".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
+| Cmd | Name                |
+| --- | ------------------- |
+| 0   | CreateUserInterface |
 
 ## IUser
 
 This is "nn::nfc::mifare::detail::IUser".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
-| 6   |      |
-| 7   |      |
-| 8   |      |
-| 9   |      |
-| 10  |      |
-| 11  |      |
-| 12  |      |
-| 13  |      |
+| Cmd | Name                             |
+| --- | -------------------------------- |
+| 0   | Initialize                       |
+| 1   | Finalize                         |
+| 2   | ListDevices                      |
+| 3   | StartDetection                   |
+| 4   | StopDetection                    |
+| 5   | Read                             |
+| 6   | Write                            |
+| 7   | GetTagInfo                       |
+| 8   | GetActivateEventHandle           |
+| 9   | GetDeactivateEventHandle         |
+| 10  | GetState                         |
+| 11  | GetDeviceState                   |
+| 12  | GetNpadId                        |
+| 13  | GetAvailabilityChangeEventHandle |
 
 # nfc:user
 
@@ -59,10 +59,10 @@ This is "nn::nfc::detail::IUser".
 
 | Cmd  | Name                                     |
 | ---- | ---------------------------------------- |
-| 0    |                                          |
-| 1    |                                          |
-| 2    |                                          |
-| 3    |                                          |
+| 0    | Initialize                               |
+| 1    | Finalize                                 |
+| 2    | GetState                                 |
+| 3    | IsNfcEnabled                             |
 | 400  | \[4.0.0+\] Initialize                    |
 | 401  | \[4.0.0+\] Finalize                      |
 | 402  | \[4.0.0+\] GetState                      |
@@ -96,11 +96,11 @@ This is "nn::nfc::detail::ISystem".
 
 | Cmd  | Name                                     |
 | ---- | ---------------------------------------- |
-| 0    |                                          |
-| 1    |                                          |
-| 2    |                                          |
-| 3    |                                          |
-| 100  |                                          |
+| 0    | Initialize                               |
+| 1    | Finalize                                 |
+| 2    | GetState                                 |
+| 3    | IsNfcEnabled                             |
+| 100  | SetNfcEnabled                            |
 | 400  | \[4.0.0+\] InitializeSystem              |
 | 401  | \[4.0.0+\] FinalizeSystem                |
 | 402  | \[4.0.0+\] GetState                      |

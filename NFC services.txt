@@ -5,7 +5,7 @@ This is "nn::nfc::am::detail::IAmManager".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || CreateAmInterface
 |}
 
 == IAm ==
@@ -15,11 +15,11 @@ This is "nn::nfc::am::detail::IAm".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Initialize
 |-
-| 1 || 
+| 1 || Finalize
 |-
-| 2 || 
+| 2 || NotifyForegroundApplet
 |}
 
 = nfc:mf:u =
@@ -29,7 +29,7 @@ This is "nn::nfc::mifare::detail::IUserManager".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || CreateUserInterface
 |}
 
 == IUser ==
@@ -39,33 +39,33 @@ This is "nn::nfc::mifare::detail::IUser".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Initialize
 |-
-| 1 || 
+| 1 || Finalize
 |-
-| 2 || 
+| 2 || ListDevices
 |-
-| 3 || 
+| 3 || StartDetection
 |-
-| 4 || 
+| 4 || StopDetection
 |-
-| 5 || 
+| 5 || Read
 |-
-| 6 || 
+| 6 || Write
 |-
-| 7 || 
+| 7 || GetTagInfo
 |-
-| 8 || 
+| 8 || GetActivateEventHandle
 |-
-| 9 || 
+| 9 || GetDeactivateEventHandle
 |-
-| 10 || 
+| 10 || GetState
 |-
-| 11 || 
+| 11 || GetDeviceState
 |-
-| 12 || 
+| 12 || GetNpadId
 |-
-| 13 || 
+| 13 || GetAvailabilityChangeEventHandle
 |}
 
 = nfc:user =
@@ -85,13 +85,13 @@ This is "nn::nfc::detail::IUser".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Initialize
 |-
-| 1 || 
+| 1 || Finalize
 |-
-| 2 || 
+| 2 || GetState
 |-
-| 3 || 
+| 3 || IsNfcEnabled
 |-
 | 400 || [4.0.0+] Initialize
 |-
@@ -147,15 +147,15 @@ This is "nn::nfc::detail::ISystem".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Initialize
 |-
-| 1 || 
+| 1 || Finalize
 |-
-| 2 || 
+| 2 || GetState
 |-
-| 3 || 
+| 3 || IsNfcEnabled
 |-
-| 100 ||
+| 100 || SetNfcEnabled
 |-
 | 400 || [4.0.0+] InitializeSystem
 |-
