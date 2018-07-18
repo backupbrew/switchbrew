@@ -331,7 +331,7 @@ Note the official name for Meta Record is "ContentMetaKey".
 |-
 | 4 || ListContentInfo || Takes a type-6 buffer to write [[NCA#Content_records|Content Record]] entries to, a [[NCA#Meta_records|Meta Record]], and a u32 index into the Content Record entries to start copying from. Returns a u32 entries_read.
 |-
-| 5 || List || Takes a type-6 buffer to write [[NCA#Meta_records|Meta Record]]s to, a u32 [[#Title_Types|Title Type]], a u64 TID, a u64 TID_LOW, and u64 TID_HIGH. Writes into the buffer all Meta Records with low <= record->title_id <= high, and record->type == type. Additionally requires record->title_id == TID, if record->type is Application, Patch, Add-On, or Delta.
+| 5 || List || Takes a type-6 buffer to write [[NCA#Meta_records|Meta Record]]s to, a u32 [[#Title_Types|Title Type]], a u64 TID, a u64 TID_LOW, and u64 TID_HIGH. Writes into the buffer all Meta Records with low <= record->title_id <= high, and record->type == type. Returns u32 numEntriesTotal, numEntriesWritten. Additionally requires record->title_id == TID, if record->type is Application, Patch, Add-On, or Delta, otherwise, you can pass 0 for type to ignore the type and list them all in the range.
 |-
 | 6 || GetLatestContentMetaKey || Takes a u64 title id, and returns the [[NCA#Meta_records|Meta Record]] with the highest version field for that title id.
 |-
