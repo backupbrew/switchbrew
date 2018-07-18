@@ -323,7 +323,7 @@ Note the official name for Meta Record is "ContentMetaKey".
 |-
 | 0 || Set || Takes a [[NCA#Meta_records|Meta Record]], a type-5 [[NCA#Content_records|Content Records]] buffer and a u64 size.
 |-
-| 1 || Get || Takes a [[NCA#Meta_records|Meta Record]], a type-6 buffer to write [[NCA#Content_records|Content Records]] to and a u64 size. Returns the actual number of bytes read into the buffer. Content Records start at offset 0x8 of the buffer, at 0x2 is how many there are.
+| 1 || Get || Takes a [[NCA#Meta_records|Meta Record]], a type-6 buffer to write [[NCA#Content_records|Content Records]] to and a u64 size. Returns the actual number of bytes read into the buffer. First 8 bytes of the data is header (u16 numExtraDataBytes, numContentRecords, numMetaRecords, padding). After the header is numExtraDataBytes of additional data, after which follow content records and meta records. Set takes this same data as input.
 |-
 | 2 || Remove || Takes a [[NCA#Meta_records|Meta Record]], and removes the associated record.
 |-
