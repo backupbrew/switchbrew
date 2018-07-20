@@ -214,7 +214,7 @@ __NOTOC__
 |-
 | 0x74 || [[#svcMapProcessMemory]] || X0=dstaddr, W1=process_handle, X2=srcaddr, X3=size || W0=result
 |-
-| 0x75 || [[#svcUnmapProcessMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
+| 0x75 || [[#svcUnmapProcessMemory]] || X0=dstaddr, W1=process_handle, X2=srcaddr, X3=size || W0=result
 |-
 | 0x76 || [[#svcQueryProcessMemory]] || X0=meminfo_ptr, W2=process_handle, X3=addr || W0=result, W1=pageinfo
 |-
