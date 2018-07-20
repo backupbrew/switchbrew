@@ -52,6 +52,7 @@ This is
 | 106  | AcquireNpadStyleSetUpdateEventHandle                                                             |
 | 107  | DisconnectNpad                                                                                   |
 | 108  | GetPlayerLedPattern                                                                              |
+| 109  | \[5.0.0+\] ActivateNpadWithRevision                                                              |
 | 120  | SetNpadJoyHoldType                                                                               |
 | 121  | GetNpadJoyHoldType                                                                               |
 | 122  | [\#SetNpadJoyAssignmentModeSingleByDefault](#SetNpadJoyAssignmentModeSingleByDefault "wikilink") |

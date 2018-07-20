@@ -95,6 +95,8 @@ This is "nn::hid::IHidServer".
 |-
 | 108 || GetPlayerLedPattern
 |-
+| 109 || [5.0.0+] ActivateNpadWithRevision
+|-
 | 120 || SetNpadJoyHoldType
 |-
 | 121 || GetNpadJoyHoldType
