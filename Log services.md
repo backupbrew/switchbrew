@@ -10,10 +10,10 @@ This is "nn::lm::ILogService".
 
 This is "nn::lm::ILogger".
 
-| Cmd | Name           |
-| --- | -------------- |
-| 0   | Initialize     |
-| 1   | SetDestination |
+| Cmd | Name                      |
+| --- | ------------------------- |
+| 0   | Initialize                |
+| 1   | \[3.0.0+\] SetDestination |
 
 # lm:get
 
