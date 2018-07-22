@@ -261,7 +261,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0 || [[#KSynchronizationObject]] || Inheritance
 |-
-| 0x28 || KProcessScheduler || Scheduler
+| 0x28 || KProcessTerminationMessage || Sent to mailbox 0 when self-terminating.
 |-
 | 0x38 || [[#KMemoryManager]] || MemoryManager
 |-
@@ -352,7 +352,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0 || [[#KSynchronizationObject]] || Inheritance
 |-
-| 0x28 || KProcessScheduler || Scheduler
+| 0x28 || KProcessTerminationMessage || Sent to mailbox 0 when self-terminating.
 |-
 | 0x38 || [[#KMemoryManager]] || MemoryManager
 |-

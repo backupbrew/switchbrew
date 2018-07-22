@@ -179,7 +179,7 @@ Inherits from:
 | 1.0.0 Offset | Type                                                                                             | Description                                            |
 | ------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------ |
 | 0            | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")                                   | Inheritance                                            |
-| 0x28         | KProcessScheduler                                                                                | Scheduler                                              |
+| 0x28         | KProcessTerminationMessage                                                                       | Sent to mailbox 0 when self-terminating.               |
 | 0x38         | [\#KMemoryManager](#KMemoryManager "wikilink")                                                   | MemoryManager                                          |
 | 0xF0         | u64                                                                                              | TotalMemUsage                                          |
 | 0xF8         | [\#KLinkedList](#KLinkedList "wikilink")\<[\#KTlsPageManager](#KTlsPageManager "wikilink")\*\>\> | TlsPagesList                                           |
@@ -228,7 +228,7 @@ Inherits from:
 | 2.0.0 Offset | Type                                                                                                      | Description                                            |
 | ------------ | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
 | 0            | [\#KSynchronizationObject](#KSynchronizationObject "wikilink")                                            | Inheritance                                            |
-| 0x28         | KProcessScheduler                                                                                         | Scheduler                                              |
+| 0x28         | KProcessTerminationMessage                                                                                | Sent to mailbox 0 when self-terminating.               |
 | 0x38         | [\#KMemoryManager](#KMemoryManager "wikilink")                                                            | MemoryManager                                          |
 | 0x100        | u64                                                                                                       | TotalMemUsage                                          |
 | 0x108        | [\#KLinkedList](#KLinkedList "wikilink")\<[\#KTlsPageManager](#KTlsPageManager "wikilink")\*\>            | TlsPagesList                                           |
