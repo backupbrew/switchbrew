@@ -153,6 +153,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Cid2mizard/Hamsters_NX Yes]
 | 2018-02-28
 |-
+| HEXGEM
+| A match 3 (or more) board game
+| [[User:carstene1ns|carstene1ns]]
+| [https://f4ke.de/dev/switch/ Here]
+| [https://github.com/carstene1ns/hexgem/tree/switch-port Yes]
+| 2018-07-25
+|-
 | Meritous
 | Top View Dungeon Game
 | nop90
