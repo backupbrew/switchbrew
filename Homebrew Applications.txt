@@ -165,14 +165,14 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | MaesterRowen
 | [https://github.com/MaesterRowen/InvadersNX/releases/latest Here]
 | [https://github.com/MaesterRowen/InvadersNX Yes]
-| 2018-03-17
+| 2018-07-09
 |-
 | Meritous
 | Top View Dungeon Game
 | nop90
 | [https://github.com/Nop90-Switch/Meritous-Switch/releases Here]
 | [https://github.com/Nop90-Switch/Meritous-Switch Yes]
-| 2018-07-09
+| 2018-03-17
 |-
 | NXEngine
 | Reimplementation of Cave Story / Doukutsu Monogatari, a Japanese freeware PC side-scrolling platformer game from 2004.
