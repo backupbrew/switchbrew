@@ -152,7 +152,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>dmnt:-</p></td>
-<td><p>Debug Monitor services</p></td>
+<td><p><a href="Debug Monitor services.md" title="wikilink">Debug Monitor services</a></p></td>
 <td><p>Not currently available on retail units.</p></td>
 </tr>
 <tr class="even">
