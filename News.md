@@ -20,6 +20,10 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **28 July 18**
+    [devkitA64](https://devkitpro.org/viewtopic.php?f=13&t=8761) r12 and
+    [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.3.1)
+    v1.3.1 were released.
   - **8 July 18**
     [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.3.0)
     v1.3.0 was released.
@@ -27,5 +31,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     [5.1.0](5.1.0.md "wikilink").
   - **16 April 18** Nintendo released system update
     [5.0.2](5.0.2.md "wikilink").
-  - **26 March 18** Nintendo released system update
-    [5.0.1](5.0.1.md "wikilink").
