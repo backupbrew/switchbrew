@@ -1,0 +1,112 @@
+dmnt (Debug Monitor) is a sysmodule used to debug Horizon OS processes. This system module is not present in retail units.
+
+= dmnt:- =
+This is "nn::dmnt::IInterface".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name 
+|-
+| 0 || BreakDebugProcess
+|-
+| 1 || TerminateDebugProcess
+|-
+| 2 || CloseHandle
+|-
+| 3 || LoadImage
+|-
+| 4 || GetProcessId
+|-
+| 5 || GetProcessHandle
+|-
+| 6 || WaitSynchronization
+|-
+| 7 || GetDebugEvent
+|-
+| 8 || GetProcessModuleInfo
+|-
+| 9 || GetProcessList
+|-
+| 10 || GetThreadList
+|-
+| 11 || GetDebugThreadContext
+|-
+| 12 || ContinueDebugEvent
+|-
+| 13 || ReadDebugProcessMemory
+|-
+| 14 || WriteDebugProcessMemory
+|-
+| 15 || SetDebugThreadContext
+|-
+| 16 || GetDebugThreadParam
+|-
+| 17 || InitializeThreadInfo
+|-
+| 18 || SetHardwareBreakPoint
+|-
+| 19 || QueryDebugProcessMemory
+|-
+| 20 || GetProcessMemoryDetails
+|-
+| 21 || AttachByProgramId
+|-
+| 22 || AttachOnLaunch
+|-
+| 23 || GetDebugMonitorProcessId
+|-
+| 25 || GetJitDebugProcessList
+|-
+| 26 || CreateCoreDump
+|-
+| 27 || GetAllDebugThreadInfo
+|-
+| 29 || TargetIO_FileOpen
+|-
+| 30 || TargetIO_FileClose
+|-
+| 31 || TargetIO_FileRead
+|-
+| 32 || TargetIO_FileWrite
+|-
+| 33 || TargetIO_FileSetAttributes
+|-
+| 34 || TargetIO_FileGetInformation
+|-
+| 35 || TargetIO_FileSetTime
+|-
+| 36 || TargetIO_FileSetSize
+|-
+| 37 || TargetIO_FileDelete
+|-
+| 38 || TargetIO_FileMove
+|-
+| 39 || TargetIO_DirectoryCreate
+|-
+| 40 || TargetIO_DirectoryDelete
+|-
+| 41 || TargetIO_DirectoryRename
+|-
+| 42 || TargetIO_DirectoryGetCount
+|-
+| 43 || TargetIO_DirectoryOpen
+|-
+| 44 || TargetIO_DirectoryGetNext
+|-
+| 45 || TargetIO_DirectoryClose
+|-
+| 46 || TargetIO_GetFreeSpace
+|-
+| 47 || TargetIO_GetVolumeInformation
+|-
+| 48 || InitiateCoreDump
+|-
+| 49 || ContinueCoreDump
+|-
+| 50 || AddTTYToCoreDump
+|-
+| 51 || AddImageToCoreDump
+|-
+| 52 || CloseCoreDump
+|-
+|}
