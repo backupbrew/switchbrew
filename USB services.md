@@ -20,22 +20,24 @@ sessions as domains.
 
 This service can be used by multiple processes at the same time, with
 separate interfaces. However, if one process does usbds shutdown, usbds
-will reset to defaults even if there's a process still using it.
+will reset to defaults even if there's a process still using
+it.
 
-| Cmd | Name                                                     |
-| --- | -------------------------------------------------------- |
-| 0   | [\#BindDevice](#BindDevice "wikilink")                   |
-| 1   | [\#BindClientProcess](#BindClientProcess "wikilink")     |
-| 2   | [\#GetDsInterface](#GetDsInterface "wikilink")           |
-| 3   | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |
-| 4   | [\#GetState](#GetState "wikilink")                       |
-| 5   | \[2.0.0+\] [\#SetVidPidBcd](#SetVidPidBcd "wikilink")    |
-| 6   | \[5.0.0+\]                                               |
-| 7   | \[5.0.0+\]                                               |
-| 8   | \[5.0.0+\] SetUsbDeviceDescriptor                        |
-| 9   | \[5.0.0+\]                                               |
-| 10  | \[5.0.0+\]                                               |
-| 11  | \[5.0.0+\]                                               |
+| Cmd               | Name                                                     |
+| ----------------- | -------------------------------------------------------- |
+| 0                 | [\#BindDevice](#BindDevice "wikilink")                   |
+| 1                 | [\#BindClientProcess](#BindClientProcess "wikilink")     |
+| 2                 | [\#GetDsInterface](#GetDsInterface "wikilink")           |
+| 3                 | [\#GetStateChangeEvent](#GetStateChangeEvent "wikilink") |
+| 4                 | [\#GetState](#GetState "wikilink")                       |
+| \[2.0.0-4.1.0\] 5 | [\#SetVidPidBcd](#SetVidPidBcd "wikilink")               |
+| \[5.0.0+\] 5      | ClearDeviceData                                          |
+| 6                 | \[5.0.0+\] AddUsbStringDescriptor                        |
+| 7                 | \[5.0.0+\] DeleteUsbStringDescriptor                     |
+| 8                 | \[5.0.0+\] SetUsbDeviceDescriptor                        |
+| 9                 | \[5.0.0+\] SetBinaryObjectStore                          |
+| 10                | \[5.0.0+\] Enable                                        |
+| 11                | \[5.0.0+\] Disable                                       |
 
 Initialization done by [manu](Manu%20Services.md "wikilink"):
 

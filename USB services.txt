@@ -24,19 +24,21 @@ This service can be used by multiple processes at the same time, with separate i
 |-
 | 4 || [[#GetState]]
 |-
-| 5 || [2.0.0+] [[#SetVidPidBcd]]
+| [2.0.0-4.1.0] 5 || [[#SetVidPidBcd]]
 |-
-| 6 || [5.0.0+]
+| [5.0.0+] 5 || ClearDeviceData
 |-
-| 7 || [5.0.0+]
+| 6 || [5.0.0+] AddUsbStringDescriptor
+|-
+| 7 || [5.0.0+] DeleteUsbStringDescriptor
 |-
 | 8 || [5.0.0+] SetUsbDeviceDescriptor
 |-
-| 9 || [5.0.0+]
+| 9 || [5.0.0+] SetBinaryObjectStore
 |-
-| 10 || [5.0.0+]
+| 10 || [5.0.0+] Enable
 |-
-| 11 || [5.0.0+]
+| 11 || [5.0.0+] Disable
 |}
 
 Initialization done by [[Manu Services|manu]]:
