@@ -1,0 +1,17 @@
+The [https://github.com/switchbrew/nx-hbmenu Homebrew Menu] (hbmenu) is the menu for launching homebrew applications. Applications are launched using the Homebrew ABI, hence normally [https://github.com/switchbrew/nx-hbloader nx-hbloader] will do the actual launching.
+
+= Usage =
+See [[Homebrew Applications]] for SD layout etc.
+
+= Controls =
+Use the D-Pad/joystick to select the app/directory, up/down can be used for faster scrolling. Press A to launch the app. Navigating directories is supported, press A to enter a directory and press B to leave the current directory. Press Y to activate netloader and press B to deactivate netloader.
+
+== Touch controls ==
+NOTE: This is not yet available with the latest hbmenu release.
+
+To navigate through the list of folders and applications you can swipe left and right on the bottom list. To open an item you can tap on it in the list or with it highlighted tap the <code>Open</code> or <code>Launch</code> button prompt in the bottom right. To go back a folder you can swipe up or tap the <code>Back</code> button prompt in the bottom right. To activate the netloader you can swipe down on the screen.
+
+= Netloader =
+NOTE: This is not yet available with the latest hbmenu release.
+
+With netloader activated as described above you can load apps over the network with nxlink. With the [[Setting_up_Development_Environment|toolchain]] setup run <code>nxlink <nrofile></code> if your network can handle UDP broadcast messages. If nxlink fails with "No response from Switch!" you can use <code>-a <ip address></code> before <code><nrofile></code> for the address to send the app to. See nxlink help for more options.
