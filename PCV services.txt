@@ -478,11 +478,9 @@ This is "nn::timesrv::detail::service::ITimeZoneService".
 |-
 | 101 || ToCalendarTimeWithMyRule || Takes an input [[#PosixTime]], returns an output [[#CalendarTime]] and [[#CalendarAdditionalInfo]].
 |-
-| 200 || ToPosixTime || Takes an input [[#CalendarTime]], a type-0x15 input buffer for [[#TimeZoneRule]], an type-0xA output buffer for [[#PosixTime]] array, and returns an output s32.
+| 201 || ToPosixTime || Takes an input [[#CalendarTime]], a type-0x15 input buffer for [[#TimeZoneRule]], an type-0xA output buffer for [[#PosixTime]] array, and returns an output s32.
 |-
-| 201 || ToPosixTimeWithMyRule || Takes an input [[#CalendarTime]], an type-0xA output buffer for [[#PosixTime]] array, and returns an output s32.
-|-
-| 202 || ||
+| 202 || ToPosixTimeWithMyRule || Takes an input [[#CalendarTime]], an type-0xA output buffer for [[#PosixTime]] array, and returns an output s32.
 |-
 |}
 
