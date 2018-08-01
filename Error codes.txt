@@ -323,6 +323,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x251002 || 2 || 4744 || Invalid [[NAX0]] magicnum.
 |-
+| 0x296A02 || 2 || 5301 || Mountpoint not found
+|-
 | 0x2EE202 || 2 || 6001 || Invalid input
 |-
 | 0x2EE602 || 2 || 6003 || Path too long
@@ -492,6 +494,18 @@ When a fatal-error is received the error code is outputted using the following f
 | 0xD01A || 26 || 104 || All AES engines busy
 |-
 | 0xD21A || 26 || 105 || Invalid AES engine-id
+|-
+| 0x19669 || 105 || 203 || Setting value cannot be NULL
+|-
+| 0x1BA69 || 105 || 221 || Setting group name has zero length
+|-
+| 0x1E269 || 105 || 241 || Setting group name is too long (64 character limit?)
+|-
+| 0x1E469 || 105 || 242 || Setting name is too long (64 character limit?)
+|-
+| 0x20A69 || 105 || 261 || Setting group name ends with '.' or contains invalid characters (allowed: [a-z0-9_\-.])
+|-
+| 0x20C69 || 105 || 262 || Setting name ends with '.' or contains invalid characters (allowed: [a-z0-9_\-.])
 |-
 | 0x272 || 114 || 1 || Generic error
 |-
