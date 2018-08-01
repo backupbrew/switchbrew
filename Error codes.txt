@@ -505,7 +505,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x407C || 124 || 32 || Invalid input buffer
 |-
-| 0x7A880 || 128 || 500 || <code>am.debug!dev_function</code> setting needs to be set
+| 0x3EC80 || 128 || 502 || must close IStorageAccessor before pushing IStorage
+|-
+| 0x7A880 || 128 || 980 || <code>am.debug!dev_function</code> setting needs to be set
 |-
 | 0x3CF089 || 137 || 7800 || Unknown/invalid libcurl error.
 |-
