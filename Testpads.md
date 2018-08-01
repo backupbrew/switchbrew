@@ -30,6 +30,13 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 | 9      | USB-PWR-WAVE?  | Square wave | 0-3.3V | K-4, K-5?  | ~11 Hz                  |                                                              |
 | 10     | USB-PWR-WAVE?  | Square wave | 0-3.3V | K-4, K-5?  | ~11 Hz                  |                                                              |
 
+### Cluster B
+
+| Pad \# | Name | Type  | Levels | Continuity | Frequency | Comment       |
+| ------ | ---- | ----- | ------ | ---------- | --------- | ------------- |
+| 2      | D+   | USB-C |        |            |           | Cluster B - 3 |
+| 3      | D-   | USB-C |        |            |           | Cluster B - 2 |
+
 ### Cluster C
 
 | Pad \# | Name      | Type | Levels | Continuity | Frequency | Comment                                                                                                     |
@@ -87,8 +94,8 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 | Pad \# | Name          | Type          | Levels  | Continuity | Frequency | Comment                                                                                                 |
 | ------ | ------------- | ------------- | ------- | ---------- | --------- | ------------------------------------------------------------------------------------------------------- |
 | 1      | GND           |               |         |            |           |                                                                                                         |
-| 2      | Unknown       | ??            | 3.3V-0V | None known | N/A?      | Falls around same time pad K-7 falls, but immediately. No data observed as of yet.                      |
-| 3      | Unknown       |               |         |            |           |                                                                                                         |
+| 2      | D-            | USB-C         |         |            |           | Cluster B - 3                                                                                           |
+| 3      | D+            | USB-C         |         |            |           | Cluster B - 2                                                                                           |
 | 4      | USB-PWR-WAVE? | Square wave   | 0V-3.3V | A-9, A-10? | ~11 Hz    |                                                                                                         |
 | 5      | USB-PWR-WAVE? | Square wave   | 0V-3.3V | A-9, A-10? | ~11 Hz    | Appears to mirror K4. Duty cycle 66.67%. Low on screen lock. Off until first interaction.               |
 | 6      | USB-C V+      | Supply power  |         |            |           |                                                                                                         |
