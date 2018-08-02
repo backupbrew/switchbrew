@@ -62,9 +62,10 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 ### Cluster G
 
-| Pad \# | Name         | Type | Levels | Continuity | Frequency | Comment   |
-| ------ | ------------ | ---- | ------ | ---------- | --------- | --------- |
-| 9      | BUTTON\_HOME |      |        |            |           | RCM strap |
+| Pad \# | Name         | Type | Levels | Continuity | Frequency | Comment        |
+| ------ | ------------ | ---- | ------ | ---------- | --------- | -------------- |
+| 4      | Vol(+)       |      |        |            |           | Button Vol (+) |
+| 9      | BUTTON\_HOME |      |        |            |           | RCM strap      |
 
 ### Cluster I
 

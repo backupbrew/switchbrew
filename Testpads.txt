@@ -91,6 +91,8 @@ These are reference materials, taken from poking at I/O on various testpads. htt
 {| class=wikitable
 ! Pad # || Name || Type || Levels || Continuity || Frequency || Comment
 |-
+| 4 || Vol(+) || || || || || Button Vol (+)
+|-
 | 9 || BUTTON_HOME || || || || || RCM strap
 |}
 
