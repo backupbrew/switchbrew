@@ -99,6 +99,8 @@ These are reference materials, taken from poking at I/O on various testpads. htt
 | 1 || Vol (-)  || || || || || Button Vol (-)
 |-
 | 10 || Reset || || || || ||
+|-
+| 11 || Vdd Referance|| || || || || 
 |}
 
 === Cluster G ===

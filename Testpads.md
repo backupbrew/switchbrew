@@ -65,10 +65,11 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 ### Cluster E
 
-| Pad \# | Name    | Type | Levels | Continuity | Frequency | Comment        |
-| ------ | ------- | ---- | ------ | ---------- | --------- | -------------- |
-| 1      | Vol (-) |      |        |            |           | Button Vol (-) |
-| 10     | Reset   |      |        |            |           |                |
+| Pad \# | Name          | Type | Levels | Continuity | Frequency | Comment        |
+| ------ | ------------- | ---- | ------ | ---------- | --------- | -------------- |
+| 1      | Vol (-)       |      |        |            |           | Button Vol (-) |
+| 10     | Reset         |      |        |            |           |                |
+| 11     | Vdd Referance |      |        |            |           |                |
 
 ### Cluster G
 
