@@ -45,8 +45,11 @@ These are reference materials, taken from poking at I/O on various testpads. htt
 | 2 || D+ || USB-C || || || || Cluster B - 3
 |-
 | 3 || D- || USB-C || || || || Cluster B - 2
+|-
+| 4 || +3.3V || ?? || || || || from M92T36
+|-
+| 5 || +3.3V || ?? || || || || from M92T36
 |}
-
 
 === Cluster C ===
 

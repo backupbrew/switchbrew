@@ -32,10 +32,12 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 ### Cluster B
 
-| Pad \# | Name | Type  | Levels | Continuity | Frequency | Comment       |
-| ------ | ---- | ----- | ------ | ---------- | --------- | ------------- |
-| 2      | D+   | USB-C |        |            |           | Cluster B - 3 |
-| 3      | D-   | USB-C |        |            |           | Cluster B - 2 |
+| Pad \# | Name   | Type  | Levels | Continuity | Frequency | Comment       |
+| ------ | ------ | ----- | ------ | ---------- | --------- | ------------- |
+| 2      | D+     | USB-C |        |            |           | Cluster B - 3 |
+| 3      | D-     | USB-C |        |            |           | Cluster B - 2 |
+| 4      | \+3.3V | ??    |        |            |           | from M92T36   |
+| 5      | \+3.3V | ??    |        |            |           | from M92T36   |
 
 ### Cluster C
 
