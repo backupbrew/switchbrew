@@ -57,6 +57,7 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 | Pad \# | Name       | Type | Levels | Continuity | Frequency | Comment        |
 | ------ | ---------- | ---- | ------ | ---------- | --------- | -------------- |
+| 1      | GND        |      |        |            |           |                |
 | 4      | Seaker L + |      |        |            |           | Speaker Left + |
 | 5      | Seaker L - |      |        |            |           | Speaker Left - |
 
