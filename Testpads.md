@@ -71,6 +71,7 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 | Pad \# | Name         | Type | Levels | Continuity | Frequency | Comment        |
 | ------ | ------------ | ---- | ------ | ---------- | --------- | -------------- |
+| 2      | GND          |      |        |            |           |                |
 | 4      | Vol(+)       |      |        |            |           | Button Vol (+) |
 | 9      | BUTTON\_HOME |      |        |            |           | RCM strap      |
 
