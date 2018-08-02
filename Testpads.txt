@@ -76,6 +76,16 @@ These are reference materials, taken from poking at I/O on various testpads. htt
 | 11 || ?? || || 0-1.8V || || || 
 |}
 
+=== Cluster D ===
+
+{| class=wikitable
+! Pad # || Name || Type || Levels || Continuity || Frequency || Comment
+|-
+| 4 || Seaker L + || || || || || Speaker Left +
+|-
+| 5 || Seaker L - || || || || || Speaker Left - 
+|}
+
 === Cluster E ===
 
 {| class=wikitable

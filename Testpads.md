@@ -53,6 +53,13 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 | 10     | ??        |      | 0-1.8V |            |           |                                                                                                             |
 | 11     | ??        |      | 0-1.8V |            |           |                                                                                                             |
 
+### Cluster D
+
+| Pad \# | Name       | Type | Levels | Continuity | Frequency | Comment        |
+| ------ | ---------- | ---- | ------ | ---------- | --------- | -------------- |
+| 4      | Seaker L + |      |        |            |           | Speaker Left + |
+| 5      | Seaker L - |      |        |            |           | Speaker Left - |
+
 ### Cluster E
 
 | Pad \# | Name    | Type | Levels | Continuity | Frequency | Comment        |
