@@ -70,11 +70,12 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 ### Cluster G
 
-| Pad \# | Name         | Type | Levels | Continuity | Frequency | Comment        |
-| ------ | ------------ | ---- | ------ | ---------- | --------- | -------------- |
-| 2      | GND          |      |        |            |           |                |
-| 4      | Vol(+)       |      |        |            |           | Button Vol (+) |
-| 9      | BUTTON\_HOME |      |        |            |           | RCM strap      |
+| Pad \# | Name                   | Type | Levels | Continuity | Frequency | Comment        |
+| ------ | ---------------------- | ---- | ------ | ---------- | --------- | -------------- |
+| 2      | GND                    |      |        |            |           |                |
+| 4      | Vol(+)                 |      |        |            |           | Button Vol (+) |
+| 5      | Li-Ion Batt Vdd Mirror |      |        |            |           | Power Supply   |
+| 9      | BUTTON\_HOME           |      |        |            |           | RCM strap      |
 
 ### Cluster I
 
