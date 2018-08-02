@@ -81,7 +81,7 @@ These are reference materials, taken from poking at I/O on various testpads. htt
 {| class=wikitable
 ! Pad # || Name || Type || Levels || Continuity || Frequency || Comment
 |-
-| 1 || VOL (-)  || || || || || Button Vol -
+| 1 || Vol (-)  || || || || || Button Vol (-)
 |-
 | 10 || Reset || || || || ||
 |}
