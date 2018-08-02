@@ -53,6 +53,13 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 | 10     | ??        |      | 0-1.8V |            |           |                                                                                                             |
 | 11     | ??        |      | 0-1.8V |            |           |                                                                                                             |
 
+### Cluster D
+
+| Pad \# | Name       | Type | Levels | Continuity | Frequency | Comment      |
+| ------ | ---------- | ---- | ------ | ---------- | --------- | ------------ |
+| 4      | Wire Red   |      |        |            |           | Speaker left |
+| 5      | Wire Black |      |        |            |           | Speaker left |
+
 ### Cluster E
 
 | Pad \# | Name  | Type | Levels | Continuity | Frequency | Comment |
@@ -61,9 +68,9 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 ### Cluster G
 
-| Pad \# | Name         | Type | Levels | Continuity | Frequency | Comment   |
-| ------ | ------------ | ---- | ------ | ---------- | --------- | --------- |
-| 9      | BUTTON\_HOME |      |        |            |           | RCM strap |
+| Pad \# | Name    | Type | Levels | Continuity | Frequency | Comment                  |
+| ------ | ------- | ---- | ------ | ---------- | --------- | ------------------------ |
+| 9      | RCM\_EN |      |        |            |           | RCM strap to connect GND |
 
 ### Cluster I
 
