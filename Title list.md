@@ -1103,7 +1103,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)</p></td>
-<td><p>&quot;LibraryAppletSwkbd&quot;</p></td>
+<td><p><a href="Software Keyboard.md" title="wikilink">&quot;LibraryAppletSwkbd&quot;</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000001009</p></td>
