@@ -8,15 +8,15 @@ The first IStorage passed to this applet should contain the common library apple
 |-
 ! Offset || Size || Typical Value || Notes 
 |-
-| 0x0 || 4 || 1 || Version field?
+| 0x0 || 4 || 1 || Common Arguments version
 |-
-| 0x4 || 4 || 0x20 || Size field?
+| 0x4 || 4 || 0x20 || Common Arguments size
 |-
-| 0x8 || 4 || 5 || Unknown
+| 0x8 || 4 || 5 || Library applet version (some kind of API version?)
 |-
 | 0xC || 4 || 0 || Theme color
 |-
-| 0x10 || 1 || 0 || Unknown
+| 0x10 || 1 || 0 || Play startup sound
 |-
 | 0x18 || 8 || N/A || System tick (see [[SVC#svcGetSystemTick|svcGetSystemTick]])
 |-
