@@ -113,7 +113,7 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 | 3      | D+            | USB-C         |         |            |           | Cluster B - 2                                                                                           |
 | 4      | USB-PWR-WAVE? | Square wave   | 0V-3.3V | A-9, A-10? | ~11 Hz    |                                                                                                         |
 | 5      | USB-PWR-WAVE? | Square wave   | 0V-3.3V | A-9, A-10? | ~11 Hz    | Appears to mirror K4. Duty cycle 66.67%. Low on screen lock. Off until first interaction.               |
-| 6      | USB-C V+      | Supply power  |         |            |           |                                                                                                         |
+| 6      | USB-C V+      | Supply power  |         |            |           | support fast charger 5V+ & 12V+                                                                         |
 | 7      | Unknown       | Power supply? | ~3V-0V  | None known | N/A       | 0 when usb-c not plugged in, falls slowly on first interaction if USB-C plugged in. Power draw related? |
 
 ### Cluster L
