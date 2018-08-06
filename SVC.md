@@ -1587,7 +1587,7 @@ specific:
 
 | Offset | Length | Description                                                 |
 | ------ | ------ | ----------------------------------------------------------- |
-| 0x10   | u64    | Type (0=PausedThread, 1=RunningThread, 2=TerminatedProcess) |
+| 0x10   | u32    | Type (0=PausedThread, 1=RunningThread, 2=TerminatedProcess) |
 
 Exception specific:
 
