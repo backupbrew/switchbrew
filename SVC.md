@@ -1593,7 +1593,7 @@ Exception specific:
 
 | Offset | Length | Description           |
 | ------ | ------ | --------------------- |
-| 0x10   | u64    | ExceptionType         |
+| 0x10   | u32    | ExceptionType         |
 | 0x18   | u64    | FaultRegister         |
 | 0x20   |        | PerExceptionSpecifics |
 
