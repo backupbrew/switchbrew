@@ -209,15 +209,6 @@ Flaws in this category pertain exclusively to the [[Package2#Section_0|HorizonOS
 | 24 April
 | [[User:qlutoo|qlutoo]]
 |-
-| GetLastThreadInfo UAF
-| GetLastThreadInfo syscall gets last-scheduled-KThread pointer from KScheduler object. This pointer is not reference counted, and can be pointing to a freed KThread.
-| Nothing. There is a theoretical race that might leak from a KThread from a different process, but it's impossible to trigger practically.
-| Unfixed
-| 
-| 15 October
-| 17 October
-| [[User:qlutoo|qlutoo]]
-|-
 | Bad irq_id check in CreateInterruptEvent
 | CreateInterruptEvent syscall is designed to work only for irq_id >= 32. All irq_ids < 32 are "per-core" and reserved for kernel use (watchdog/scheduling/core communications).
 On 1.0.0 you could supply irq_id < 32 and it would write outside the SharedIrqs table.
