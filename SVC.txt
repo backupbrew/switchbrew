@@ -1570,16 +1570,27 @@ Bitfield of one of more of these:
 {| class=wikitable
 ! Value || Name
 |-
-| 0 || DebugThreadParam_ActualPriority
+| 0 || DebugThreadParam_DynamicPriority
 |-
-| 1 ||
+| 1 || DebugThreadParam_SchedulingStatus
 |-
-| 2 || DebugThreadParam_CpuCore
+| 2 || DebugThreadParam_PreferredCpuCore
 |-
-| 3 ||
+| 3 || DebugThreadParam_CurrentCpuCore
 |-
-| 4 || DebugThreadParam_CoreMask
+| 4 || DebugThreadParam_AffinityMask
 |}
+
+Dynamic priority: output in out2
+
+Scheduling status: out1 contains bit0: is debug-suspended, bit1: is user-suspended (svcSetThreadActivity 1 or svcSetProcessActivity 1).
+Out2 contains {suspended, idle, running, terminating} => {5, 0, 1, 4}
+
+DebugThreadParam_PreferredCpuCore: output in out2
+
+DebugThreadParam_CurrentCpuCore: output in out2
+
+DebugThreadParam_AffinityMask: output in out1
 
 == CreateProcessInfo ==
 {| class=wikitable

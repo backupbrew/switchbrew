@@ -1307,13 +1307,26 @@ Bitfield of one of more of these:
 
 ## DebugThreadParam
 
-| Value | Name                             |
-| ----- | -------------------------------- |
-| 0     | DebugThreadParam\_ActualPriority |
-| 1     |                                  |
-| 2     | DebugThreadParam\_CpuCore        |
-| 3     |                                  |
-| 4     | DebugThreadParam\_CoreMask       |
+| Value | Name                               |
+| ----- | ---------------------------------- |
+| 0     | DebugThreadParam\_DynamicPriority  |
+| 1     | DebugThreadParam\_SchedulingStatus |
+| 2     | DebugThreadParam\_PreferredCpuCore |
+| 3     | DebugThreadParam\_CurrentCpuCore   |
+| 4     | DebugThreadParam\_AffinityMask     |
+
+Dynamic priority: output in out2
+
+Scheduling status: out1 contains bit0: is debug-suspended, bit1: is
+user-suspended (svcSetThreadActivity 1 or svcSetProcessActivity 1). Out2
+contains {suspended, idle, running, terminating} =\> {5, 0, 1, 4}
+
+DebugThreadParam\_PreferredCpuCore: output in out2
+
+DebugThreadParam\_CurrentCpuCore: output in out2
+
+DebugThreadParam\_AffinityMask: output in
+out1
 
 ## CreateProcessInfo
 
