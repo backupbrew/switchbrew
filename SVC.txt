@@ -192,7 +192,7 @@ __NOTOC__
 |-
 | 0x67 || svcGetDebugThreadContext || X0=ThreadContext*, X1=debug_handle, X2=thread_id, W3=[[#ThreadContextFlags]] || W0=result
 |-
-| 0x68 || svcSetDebugThreadContext || W0=debug_handle, W1=[[#ThreadContextFlags]], X2=ThreadContext* || W0=result
+| 0x68 || svcSetDebugThreadContext || W0=debug_handle, W1=[[#ThreadContextFlags]], X2=ThreadContext*, X3=thread_id || W0=result
 |-
 | 0x69 || svcQueryDebugProcessMemory || X0=[[#MemoryInfo]]*, X2=debug_handle, X3=addr || W0=result, W1=PageInfo
 |-
