@@ -616,7 +616,7 @@ There are two main implementations of this interface:
 |-
 | 7 || [[#GetEntryType]]
 |-
-| 8 || OpenFile
+| 8 || [[#OpenFile]]
 |-
 | 9 || [[#OpenDirectory]]
 |-
@@ -635,6 +635,13 @@ There are two main implementations of this interface:
 
 == GetEntryType ==
 Takes a type-0x9 input buffer for the path and returns [[#DirectoryEntryType]] as an output u32.
+
+== OpenFile ==
+Takes a type-0x19 input buffer for the path, and an u32 '''mode'''. '''mode''' controls how the file is opened, based on which bits are set:
+
+* When bit 0 is set, the file is Readable: you can use the Read operation.
+* When bit 1 is set, the file is Writable: you can use the Write operation.
+* When bit 2 is set, the file is Appendable: unless this bit is set, you will not be able to write beyond the end of a file (such writes will result in an error 0x307202)
 
 == OpenDirectory ==
 Takes a type-0x9 input buffer for the path and an u64 '''filter_flags'''. '''filter_flags''' controls what type of entries are read by the [[#IDirectory]]: bitmask 0x1 = directories, bitmask 0x2 = files.

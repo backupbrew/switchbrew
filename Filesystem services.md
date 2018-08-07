@@ -537,7 +537,7 @@ process.
 | 5   | RenameFile                                                                      |
 | 6   | RenameDirectory                                                                 |
 | 7   | [\#GetEntryType](#GetEntryType "wikilink")                                      |
-| 8   | OpenFile                                                                        |
+| 8   | [\#OpenFile](#OpenFile "wikilink")                                              |
 | 9   | [\#OpenDirectory](#OpenDirectory "wikilink")                                    |
 | 10  | [\#Commit](#Commit "wikilink")                                                  |
 | 11  | [\#GetFreeSpaceSize](#GetFreeSpaceSize "wikilink")                              |
@@ -550,6 +550,19 @@ process.
 
 Takes a type-0x9 input buffer for the path and returns
 [\#DirectoryEntryType](#DirectoryEntryType "wikilink") as an output u32.
+
+## OpenFile
+
+Takes a type-0x19 input buffer for the path, and an u32 **mode**.
+**mode** controls how the file is opened, based on which bits are set:
+
+  - When bit 0 is set, the file is Readable: you can use the Read
+    operation.
+  - When bit 1 is set, the file is Writable: you can use the Write
+    operation.
+  - When bit 2 is set, the file is Appendable: unless this bit is set,
+    you will not be able to write beyond the end of a file (such writes
+    will result in an error 0x307202)
 
 ## OpenDirectory
 
