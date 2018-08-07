@@ -182,7 +182,9 @@ __NOTOC__
 |-
 | 0x63 || svcGetDebugEvent || X0=[[#DebugEventInfo]]*, W1=debug_handle || W0=result
 |-
-| 0x64 || svcContinueDebugEvent || W0=debug_handle, W1=[[#ContinueDebugFlags]], X2=thread_id || W0=result
+| 0x64 || svcContinueDebugEvent || [Until 3.0.0] W0=debug_handle, W1=[[#ContinueDebugFlagsOld]], X2=thread_id 
+[3.0.0 +] W0=debug_handle, W1=[[#ContinueDebugFlags]], X2=thread_id_list(u64 *), W3=num_tids (max 64, 0 means "all threads")
+|| W0=result
 |-
 | 0x65 || svcGetProcessList || X1=pids_out_ptr, W2=max_out || W0=result, W1=num_out 
 |-
@@ -1802,16 +1804,37 @@ On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool
 |-
 |}
 
-== ContinueDebugFlags ==
+== ContinueDebugFlagsOld ==
+Until [[3.0.0]]:
+
 {| class=wikitable
 ! Bit || Bitmask || Description
 |-
-| 0 || 1 || CancelSynchronization (only if ResumeAllThreads is set; cancels with error 0x6C01)
+| 0 || 1 || CancelSynchronization (cancels with error 0x6C01)
 |-
 | 1 || 2 || SwallowException
 |-
 | 2 || 4 || ResumeAllThreads
 |}
+
+== ContinueDebugFlags ==
+Starting from [[3.0.0]]:
+
+{| class=wikitable
+! Bit || Bitmask || Description
+|-
+| 0 || 1 || CancelSynchronization (cancels with error 0x6C01)
+|-
+| 1 || 2 || SwallowException
+|-
+| 2 || 4 || Resume
+|-
+| 3 || 8 || CancelSynchronizationInverted
+|}
+
+CancelSynchronizationInverted is like CancelSynchronization but acts on all threads that aren't in the input list.
+
+If the input number of threads is 0, this means "all threads".
 
 == DebugEventInfo ==
 
