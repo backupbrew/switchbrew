@@ -527,6 +527,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x3E8289-0x3F4089 || 137 || 8001-8096 || libcurl error 1-96. Some of the libcurl errors in the error-table map to the above unknown-libcurl-error however.
 |-
+| 0x68A || 138 || 3 || Not initialized.
+|-
 | 0x668C || 140 || 51 || USB data-transfer in progress
 |-
 | 0xD48C || 140 || 106 || Invalid descriptor
