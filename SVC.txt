@@ -1943,6 +1943,8 @@ Exception specific:
 | 7 || Exception_DebuggerBreak
 |-
 | 8 || Exception_BadSvcId
+|-
+| 9 || Exception_SError
 |}
 
 UndefinedInstruction specifics:
