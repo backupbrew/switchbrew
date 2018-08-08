@@ -61,7 +61,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 18 || 
 |-
-| 19 || LaunchApplication
+| 19 || [[#LaunchApplication]]
 |-
 | 21 || [[#GetApplicationContentPath]]
 |-
@@ -306,6 +306,9 @@ Returns an array of title-info entries using the specified offset and size. No i
 | Unknown, usually zeros?
 |}
 
+== LaunchApplication  ==
+Takes an input u64, returns an output u64.
+
 == GetApplicationContentPath ==
 Takes a 0x16-type output buffer, an u8 [[NCA|type]], and an u64 titleID.
 
@@ -446,7 +449,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 17 || ListApplicationRecordContentMeta
 |-
-| 19 || LaunchApplication
+| 19 || [[#LaunchApplication]]
 |-
 | 21 || [[#GetApplicationContentPath]]
 |-

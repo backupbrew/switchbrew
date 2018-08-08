@@ -37,7 +37,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 16   | PushApplicationRecord                                                                              |
 | 17   | ListApplicationRecordContentMeta                                                                   |
 | 18   |                                                                                                    |
-| 19   | LaunchApplication                                                                                  |
+| 19   | [\#LaunchApplication](#LaunchApplication "wikilink")                                               |
 | 21   | [\#GetApplicationContentPath](#GetApplicationContentPath "wikilink")                               |
 | 22   | TerminateApplication                                                                               |
 | 23   | \[2.0.0+\] ResolveApplicationContentPath                                                           |
@@ -159,6 +159,10 @@ this.
 | 0xA    | 0x6  | Unknown, usually zeros?                                                     |
 | 0x10   | 0x1  | Unknown, seems to change between reboots and removing/reinserting gamecards |
 | 0x11   | 0x7  | Unknown, usually zeros?                                                     |
+
+## LaunchApplication
+
+Takes an input u64, returns an output u64.
 
 ## GetApplicationContentPath
 
@@ -290,7 +294,7 @@ This is
 | 11   | CalculateApplicationOccupiedSize                                                                   |
 | 16   | PushApplicationRecord                                                                              |
 | 17   | ListApplicationRecordContentMeta                                                                   |
-| 19   | LaunchApplication                                                                                  |
+| 19   | [\#LaunchApplication](#LaunchApplication "wikilink")                                               |
 | 21   | [\#GetApplicationContentPath](#GetApplicationContentPath "wikilink")                               |
 | 22   | TerminateApplication                                                                               |
 | 23   | ResolveApplicationContentPath                                                                      |
