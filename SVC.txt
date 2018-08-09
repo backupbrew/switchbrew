@@ -1980,11 +1980,91 @@ BadSvcId specifics:
 |}
 
 = Exception handling =
-There is userland code for handling exceptions, however this doesn't seem to be executed on retail mode.
+= Exception handling =
+First of all, a function that might be called by synchronous exception handler and that is called by the SError handler fetches the exception info, adjusts PC, panics on exceptions taken from EL1, then dispatches the exception.
 
-When a usermode exception occurs, it jumps to the main code binary entrypoint (main_binary_address + 0 == '''_start''').
+The dispatcher has two mutually exclusive exception reporting methods:
+* by storing information at the start of the process's TLS memregion (TPIDRRO_EL0) and jumping back to the crt0
+* by using KDebug
 
-During normal boot '''_start''' is invoked with X0=0 and X1=main_thread_handle (triggering normal crt0 setup).
-During an usermode exception '''_start''' is invoked with X0=exception_info0_ptr and X1=exception_info1_ptr instead.
+KDebug dispatching is used when at least one of the following conditions are met:
+* SMC ConfigItem KernelMemConfig bit 1 is NOT set (it isn't on retail), unless: this is a software or hardware breakpoint, or a watchpoint, or [4.0.0+?] the process is attached and this is a Google PNaCl trap instruction (see LLVM source)
+* PC doesn't point to a valid address in mapped-readable CodeStatic memory (i.e. this is the case for NRO and JIT memory) or this one of the following exceptions (it particular, that doesn't include FP exceptions occuring in CodeStatic memory):
+** Uncategorized
+** IllegalState
+** SupervisorCallA32
+** SupervisorCallA64
+** PCAlignment
+** SPAlignment
+** SError
+** BreakpointLowerEl
+** SoftwareStepLowerEl (note: no way set single-step flag; not parsed)
+** WatchpointLowerEl
+** SoftwareBreakpointA32 (note: not parsed)
+** SoftwareBreakpointA64 (note: not parsed)
+    
+In all other cases the userland-handled exception path is taken.
 
-The '''_start''' method determines whether to boot normally or handle an exception if X0 is set to 0 or not.
+KDebug path:
+
+If the process is attached, the exception is reported to the KDebug. If the thread was continued using flag IgnoreExceptions, it returns from the exception as if nothing happened.
+
+If the latter is not the case, or if the process isn't attached, process to [2.0.0+] crash reporting (or in [1.0.0] just terminate the process): 
+if EnableDebug is set, and depending on the process state (more than one crash isn't permitted) it may signal itself with ProcessEvent_Crashed so that PM asks NS to start creport so that creports attaches to it and reports the crashes. Otherwise, just terminate.
+
+Userland reporting path and svcReturnFromException:
+
+TLS region start (A64):
+
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x0 || 0x148 || Exception stack
+|-
+| 0x148 || 0x78 || Frame: x0..x30, sp, elr_el1=unadjusted PC, pstate & 0xFF0FFE20,
+afsr0, afsr1, esr, pc (stored using the regs' own size)
+|}
+
+TLS region start (A32):
+
+{| class=wikitable
+! Offset || Length || Description
+|-
+| 0x0 || 0x178 || Exception stack
+|-
+| 0x148 || 0x30 || Frame: r0..r14, elr_el1=unadjusted PC, tpidr_el0 = 1, cpsr & 0xFF0FFE20,
+afsr0, afsr1, esr, pc (stored using the regs' own size)
+|}
+
+
+In that case, after storing the regs in the TLS, the exception handler returns to the application's crt0 (entrypoint), with X0=<error description code> (see below) and X1=SP=frame=<stack top> (see above)
+
+
+{| class=wikitable
+! Desc. code || Meaning
+|-
+| 0x100 || Instruction abort
+|-
+| 0x102 || Misaligned PC
+|-
+| 0x103 || Misaligned SP
+|-
+| 0x106 || SError [not in 1.0.0?]
+|-
+| 0x301 || Bad SVC
+|-
+| 0x104 || Uncategorized, CP15RTTrap, CP15RRTTrap, CP14RTTrap, CP14RRTTrap, IllegalState, SystemRegisterTrap
+|-
+| 0x101 || None of the above, EC <= 0x34 and not a breakpoint
+|-
+|}
+
+(During normal app boot the process is invoked with X0=0 and X1=main_thread_handle. The crt0 of retail apps determines whether to boot normally or handle an exception if X0 is set to 0 or not)
+
+The application is supposed to promptly update the contents of elr_el1 to a user handler (and any other regs it sees fit) and call svcReturnFromException (error code) to call that handler. The latter is then expected to promptly abort the program.
+
+svcReturnFromException updates the contents of the kernel stack frame with what the user provided in the TLS structure, sets TPIDR_EL0 to 1, then:
+* if the provided error code is 0, gracefully pivots and returns from exception
+* if it is not, replays the exception and pass it to the KDebug (see above). One can pass 0x10001 to prevent process termination
+
+Note that if a thread that wasn't faulting calls svcReturnFromException, it signals an "invalid syscall" exception
