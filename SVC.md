@@ -1292,18 +1292,18 @@ Bitfield of one of more of these:
 | 3     | LimitableResource\_TransferMemories |
 | 4     | LimitableResource\_Sessions         |
 
-## ProcessEvent
+## ProcessState
 
 | Value | Name                         | Notes                                                                                                           |
 | ----- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| 0     | ProcessEvent\_Created        |                                                                                                                 |
-| 1     | ProcessEvent\_DebugAttached  |                                                                                                                 |
-| 2     | ProcessEvent\_DebugDetached  |                                                                                                                 |
-| 3     | ProcessEvent\_Crashed        | Processes will not enter this state unless they were created with [EnableDebug](#CreateProcessInfo "wikilink"). |
-| 4     | ProcessEvent\_Running        |                                                                                                                 |
-| 5     | ProcessEvent\_Exiting        |                                                                                                                 |
-| 6     | ProcessEvent\_Exited         |                                                                                                                 |
-| 7     | ProcessEvent\_DebugSuspended |                                                                                                                 |
+| 0     | ProcessState\_Created        |                                                                                                                 |
+| 1     | ProcessState\_DebugAttached  |                                                                                                                 |
+| 2     | ProcessState\_DebugDetached  |                                                                                                                 |
+| 3     | ProcessState\_Crashed        | Processes will not enter this state unless they were created with [EnableDebug](#CreateProcessInfo "wikilink"). |
+| 4     | ProcessState\_Running        |                                                                                                                 |
+| 5     | ProcessState\_Exiting        |                                                                                                                 |
+| 6     | ProcessState\_Exited         |                                                                                                                 |
+| 7     | ProcessState\_DebugSuspended |                                                                                                                 |
 
 ## DebugThreadParam
 
