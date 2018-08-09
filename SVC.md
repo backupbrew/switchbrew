@@ -1560,27 +1560,29 @@ partitions.
 
 ## ContinueDebugFlagsOld
 
-Until [3.0.0](3.0.0.md "wikilink"):
+Until
+[3.0.0](3.0.0.md "wikilink"):
 
-| Bit | Bitmask | Description                                       |
-| --- | ------- | ------------------------------------------------- |
-| 0   | 1       | CancelSynchronization (cancels with error 0x6C01) |
-| 1   | 2       | SwallowException                                  |
-| 2   | 4       | ResumeAllThreads                                  |
+| Bit | Bitmask | Description                                                                  |
+| --- | ------- | ---------------------------------------------------------------------------- |
+| 0   | 1       | IgnoreException (note: ResumeAllThreads or debug-suspended-thread-id needed) |
+| 1   | 2       | SwallowException                                                             |
+| 2   | 4       | ResumeAllThreads                                                             |
 
 ## ContinueDebugFlags
 
-Starting from [3.0.0](3.0.0.md "wikilink"):
+Starting from
+[3.0.0](3.0.0.md "wikilink"):
 
-| Bit | Bitmask | Description                                       |
-| --- | ------- | ------------------------------------------------- |
-| 0   | 1       | CancelSynchronization (cancels with error 0x6C01) |
-| 1   | 2       | SwallowException                                  |
-| 2   | 4       | Resume                                            |
-| 3   | 8       | CancelSynchronizationInverted                     |
+| Bit | Bitmask | Description                                                                 |
+| --- | ------- | --------------------------------------------------------------------------- |
+| 0   | 1       | IgnoreException (note: doesn't need to be set in the same call than Resume) |
+| 1   | 2       | SwallowException                                                            |
+| 2   | 4       | Resume                                                                      |
+| 3   | 8       | IgnoreExceptionInverted                                                     |
 
-CancelSynchronizationInverted is like CancelSynchronization but acts on
-all threads that aren't in the input list.
+IgnoreExceptionInverted is like CancelSynchronization but acts on all
+threads that aren't in the input list.
 
 If the input number of threads is 0, this means "all threads".
 
