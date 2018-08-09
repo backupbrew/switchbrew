@@ -1944,7 +1944,7 @@ Exception specific:
 |-
 | 8 || Exception_BadSvcId
 |-
-| 9 || [?] Exception_SError
+| 9 || Exception_SError (not in 1.0)
 |}
 
 UndefinedInstruction specifics:

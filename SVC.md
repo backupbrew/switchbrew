@@ -1653,7 +1653,7 @@ Exception specific:
 | 6     | Exception\_UserBreak            |
 | 7     | Exception\_DebuggerBreak        |
 | 8     | Exception\_BadSvcId             |
-| 9     | \[?\] Exception\_SError         |
+| 9     | Exception\_SError (not in 1.0)  |
 
 UndefinedInstruction specifics:
 
