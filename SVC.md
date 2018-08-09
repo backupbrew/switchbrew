@@ -1730,8 +1730,8 @@ the exception as if nothing happened.
 If the latter is not the case, or if the process isn't attached, process
 to \[2.0.0+\] crash reporting (or in \[1.0.0\] just terminate the
 process): if EnableDebug is set, and depending on the process state
-(more than one crash isn't permitted) it may signal itself with
-ProcessEvent\_Crashed so that PM asks NS to start creport so that
+(more than one crash per process isn't permitted) it may signal itself
+with ProcessState\_Crashed so that PM asks NS to start creport so that
 creports attaches to it and reports the crashes. Otherwise, just
 terminate.
 
