@@ -1551,13 +1551,13 @@ Bitfield of one of more of these:
 |-
 | 0 || ProcessState_Created ||
 |-
-| 1 || ProcessState_DebugAttached ||
+| 1 || ProcessState_CreatedAttached ||
 |-
-| 2 || ProcessState_DebugDetached ||
+| 2 || ProcessState_Started ||
 |-
 | 3 || ProcessState_Crashed || Processes will not enter this state unless they were created with [[#CreateProcessInfo|EnableDebug]].
 |-
-| 4 || ProcessState_Running ||
+| 4 || ProcessState_StartedAttached ||
 |-
 | 5 || ProcessState_Exiting ||
 |-

@@ -1294,16 +1294,16 @@ Bitfield of one of more of these:
 
 ## ProcessState
 
-| Value | Name                         | Notes                                                                                                           |
-| ----- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| 0     | ProcessState\_Created        |                                                                                                                 |
-| 1     | ProcessState\_DebugAttached  |                                                                                                                 |
-| 2     | ProcessState\_DebugDetached  |                                                                                                                 |
-| 3     | ProcessState\_Crashed        | Processes will not enter this state unless they were created with [EnableDebug](#CreateProcessInfo "wikilink"). |
-| 4     | ProcessState\_Running        |                                                                                                                 |
-| 5     | ProcessState\_Exiting        |                                                                                                                 |
-| 6     | ProcessState\_Exited         |                                                                                                                 |
-| 7     | ProcessState\_DebugSuspended |                                                                                                                 |
+| Value | Name                          | Notes                                                                                                           |
+| ----- | ----------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 0     | ProcessState\_Created         |                                                                                                                 |
+| 1     | ProcessState\_CreatedAttached |                                                                                                                 |
+| 2     | ProcessState\_Started         |                                                                                                                 |
+| 3     | ProcessState\_Crashed         | Processes will not enter this state unless they were created with [EnableDebug](#CreateProcessInfo "wikilink"). |
+| 4     | ProcessState\_StartedAttached |                                                                                                                 |
+| 5     | ProcessState\_Exiting         |                                                                                                                 |
+| 6     | ProcessState\_Exited          |                                                                                                                 |
+| 7     | ProcessState\_DebugSuspended  |                                                                                                                 |
 
 ## DebugThreadParam
 
