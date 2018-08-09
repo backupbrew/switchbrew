@@ -1980,7 +1980,6 @@ BadSvcId specifics:
 |}
 
 = Exception handling =
-= Exception handling =
 First of all, a function that might be called by synchronous exception handler and that is called by the SError handler fetches the exception info, adjusts PC, panics on exceptions taken from EL1, then dispatches the exception.
 
 The dispatcher has two mutually exclusive exception reporting methods:
