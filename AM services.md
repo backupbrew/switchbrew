@@ -453,6 +453,11 @@ previous state, this uses the
 {Disable/Enable}VrMode command depending on whether
 flag={disable/enable}.
 
+When the VrMode is set to true, the console shows a screen rendered like
+vr asking the user to move his face away and hit the 'close' button.
+When this button is pressed, the console resets the vrMode to
+false.
+
 ## ISelfController
 
 | Cmd | Name                                                                                         |
