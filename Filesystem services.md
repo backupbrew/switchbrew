@@ -602,10 +602,8 @@ This is "nn::fssrv::sf::IDirectory".
 
 ## Read
 
-Takes a type-0x6 output buffer and an input u64. Unknown what the u64 is
-for, doesn't(?) seem to affect output. Returns an output u64(?) for the
-total number of read entries, this is 0 when no more entries are
-available.
+Takes a type-0x6 output buffer. Returns an output u64(?) for the total
+number of read entries, this is 0 when no more entries are available.
 
 The output buffer contains the read array of
 [\#DirectoryEntry](#DirectoryEntry "wikilink"). This doesn't include
