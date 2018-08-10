@@ -554,9 +554,15 @@ throw a [fatal-error](Error%20codes.md "wikilink"). Otherwise when bit31
 is set, it will return 0 and notify the debugger?
 
 \[Maybe 2.0.0+\] If the process is attached, report the Break event.
+Then, if svcContinueDebugEvent didn't apply IgnoreException on the
+thread: if TPIDR\_EL0 is 0, adjust ELR\_EL1 to retry to svc instruction
+(and set TPIDR\_EL0 to 1).
+
 Otherwise, if bit31 in reason isn't set, perform crash reporting (see
-Exception Handling section below). When Break returns, it returns 0 and
-TPIDR\_EL0 is set to 1.
+Exception Handling section below), if it doesn't terminate the process
+adjust ELR\_EL1 as well.
+
+Otherwise just return 0.
 
 ## svcGetInfo
 
