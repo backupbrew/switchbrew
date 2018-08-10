@@ -27,7 +27,7 @@ same input as
 same user-process retry-loop as
 [\#OpenApplicationProxy](#OpenApplicationProxy "wikilink").
 
-This service seems to be used by all system non-regular-applications.
+This service is used by all system non-regular-applications.
 
 The 01000000000010XX system [titles](Title%20list.md "wikilink") use the
 following applet types(above Open{type}Proxy commands):
@@ -690,8 +690,9 @@ This is
 | --- | ---------------------------------------------------------- | ----- |
 | 0   | [\#OpenApplicationProxy](#OpenApplicationProxy "wikilink") |       |
 
-This seems to be used by all(?) regular-applications, even
-[flog](Flog.md "wikilink").
+This is used by all regular-applications, even
+[flog](Flog.md "wikilink"). Only one session can be open for this
+service at a time.
 
 ## OpenApplicationProxy
 
