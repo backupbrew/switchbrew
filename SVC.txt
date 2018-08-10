@@ -230,7 +230,7 @@ __NOTOC__
 |-
 | 0x7B || svcTerminateProcess || W0=process_handle || W0=result
 |-
-| 0x7C || [[#svcGetProcessInfo]] || W0=process_handle || W0=result, X1=[[#ProcessState]]
+| 0x7C || [[#svcGetProcessInfo]] || W0=process_handle, W1=[[#ProcessInfoType]] || W0=result, X1=[[#ProcessState]]
 |-
 | 0x7D || svcCreateResourceLimit || None || W0=result, W1=reslimit_handle 
 |-
@@ -1543,6 +1543,15 @@ Bitfield of one of more of these:
 | 3 || LimitableResource_TransferMemories
 |-
 | 4 || LimitableResource_Sessions
+|}
+
+== ProcessInfoType ==
+
+{| class=wikitable
+! Value || Name
+|-
+| 0 || [[#ProcessState|ProcessInfoType_ProcessState]]
+|-
 |}
 
 == ProcessState ==

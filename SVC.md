@@ -116,7 +116,7 @@
 | 0x79 | [\#svcCreateProcess](#svcCreateProcess "wikilink")                                 | X1=procinfo\_ptr, X2=caps\_ptr, W3=cap\_num                                                                                                                                                                                                                                         | W0=result, W1=process\_handle                            |
 | 0x7A | svcStartProcess                                                                    | W0=process\_handle, W1=main\_thread\_prio, W2=default\_cpuid, W3=main\_thread\_stacksz                                                                                                                                                                                              | W0=result                                                |
 | 0x7B | svcTerminateProcess                                                                | W0=process\_handle                                                                                                                                                                                                                                                                  | W0=result                                                |
-| 0x7C | [\#svcGetProcessInfo](#svcGetProcessInfo "wikilink")                               | W0=process\_handle                                                                                                                                                                                                                                                                  | W0=result, X1=[\#ProcessState](#ProcessState "wikilink") |
+| 0x7C | [\#svcGetProcessInfo](#svcGetProcessInfo "wikilink")                               | W0=process\_handle, W1=[\#ProcessInfoType](#ProcessInfoType "wikilink")                                                                                                                                                                                                             | W0=result, X1=[\#ProcessState](#ProcessState "wikilink") |
 | 0x7D | svcCreateResourceLimit                                                             | None                                                                                                                                                                                                                                                                                | W0=result, W1=reslimit\_handle                           |
 | 0x7E | svcSetResourceLimitLimitValue                                                      | W0=reslimit\_handle, W1=[\#LimitableResource](#LimitableResource "wikilink"), X2=value                                                                                                                                                                                              | W0=result                                                |
 | 0x7F | svcCallSecureMonitor                                                               | X0=smc\_sub\_id, X1,X2,X3,X4,X5,X6,X7=smc\_args                                                                                                                                                                                                                                     | X0,X1,X2,X3,X4,X5,X6,X7=result                           |
@@ -1291,6 +1291,13 @@ Bitfield of one of more of these:
 | 2     | LimitableResource\_Events           |
 | 3     | LimitableResource\_TransferMemories |
 | 4     | LimitableResource\_Sessions         |
+
+## ProcessInfoType
+
+| Value | Name                                                      |
+| ----- | --------------------------------------------------------- |
+| 0     | [ProcessInfoType\_ProcessState](#ProcessState "wikilink") |
+|       |                                                           |
 
 ## ProcessState
 
