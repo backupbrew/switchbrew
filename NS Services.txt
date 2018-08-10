@@ -307,7 +307,9 @@ Returns an array of title-info entries using the specified offset and size. No i
 |}
 
 == LaunchApplication  ==
-Takes an input u64, returns an output u64.
+Takes an input u64 titleID, returns an output u64 PID.
+
+Launches an application title which is registered with NS.
 
 == GetApplicationContentPath ==
 Takes a 0x16-type output buffer, an u8 [[NCA|type]], and an u64 titleID.

@@ -162,7 +162,9 @@ this.
 
 ## LaunchApplication
 
-Takes an input u64, returns an output u64.
+Takes an input u64 titleID, returns an output u64 PID.
+
+Launches an application title which is registered with NS.
 
 ## GetApplicationContentPath
 
