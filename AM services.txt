@@ -22,7 +22,7 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 | 400 || CreateSelfLibraryAppletCreatorForDevelop || Returns an [[#ILibraryAppletCreator]].
 |}
 
-All of these commands except [[#OpenLibraryAppletProxy]] take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]].
+All of these commands except [[#OpenLibraryAppletProxy]] take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]]. These Open*Proxy commands (including appletOE) doesn't seem to usable from processes which aren't actual applets (such as sysmodules), at least for applet-types which aren't already in use.
 
 This service is used by all system non-regular-applications.
 

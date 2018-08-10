@@ -25,7 +25,10 @@ All of these commands except
 same input as
 [\#OpenApplicationProxy](#OpenApplicationProxy "wikilink"), with the
 same user-process retry-loop as
-[\#OpenApplicationProxy](#OpenApplicationProxy "wikilink").
+[\#OpenApplicationProxy](#OpenApplicationProxy "wikilink"). These
+Open\*Proxy commands (including appletOE) doesn't seem to usable from
+processes which aren't actual applets (such as sysmodules), at least for
+applet-types which aren't already in use.
 
 This service is used by all system non-regular-applications.
 
