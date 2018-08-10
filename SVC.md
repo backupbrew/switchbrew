@@ -549,14 +549,10 @@ Size must be 0x1000-aligned.
 
 </div>
 
-\[1.0.0\] When used on retail where inx0 bit31 is clear, the system will
-throw a [fatal-error](Error%20codes.md "wikilink"). Otherwise when bit31
-is set, it will return 0 and notify the debugger?
-
-\[Maybe 2.0.0+\] If the process is attached, report the Break event.
-Then, if svcContinueDebugEvent didn't apply IgnoreException on the
-thread: if TPIDR\_EL0 is 0, adjust ELR\_EL1 to retry to svc instruction
-(and set TPIDR\_EL0 to 1).
+If the process is attached, report the Break event. Then, if
+svcContinueDebugEvent didn't apply IgnoreException on the thread: if
+TPIDR\_EL0 is 0, adjust ELR\_EL1 to retry to svc instruction (and set
+TPIDR\_EL0 to 1).
 
 Otherwise, if bit31 in reason isn't set, perform crash reporting (see
 Exception Handling section below), if it doesn't terminate the process

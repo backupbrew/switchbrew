@@ -716,9 +716,7 @@ Size must be 0x1000-aligned.
 |}
 </div>
 
-[1.0.0] When used on retail where inx0 bit31 is clear, the system will throw a [[Error_codes|fatal-error]]. Otherwise when bit31 is set, it will return 0 and notify the debugger?
-
-[Maybe 2.0.0+] If the process is attached, report the Break event. Then, if svcContinueDebugEvent didn't apply IgnoreException on the thread: if TPIDR_EL0 is 0, adjust ELR_EL1 to retry to svc instruction (and set TPIDR_EL0 to 1).
+If the process is attached, report the Break event. Then, if svcContinueDebugEvent didn't apply IgnoreException on the thread: if TPIDR_EL0 is 0, adjust ELR_EL1 to retry to svc instruction (and set TPIDR_EL0 to 1).
 
 Otherwise, if bit31 in reason isn't set, perform crash reporting (see Exception Handling section below), if it doesn't terminate the process adjust ELR_EL1 as well.
 
