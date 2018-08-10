@@ -1792,7 +1792,9 @@ then:
   - if the provided error code is 0, gracefully pivots and returns from
     exception
   - if it is not, replays the exception and pass it to the KDebug (see
-    above). One can pass 0x10001 to prevent process termination
+    above). One can pass 0x10001 to prevent process termination. If the
+    process is attached, this also prevents crash-collection/termination
+    (different from the exception handler behavior)
 
 Note that if a thread that wasn't faulting calls svcReturnFromException,
 it signals an "invalid syscall" exception

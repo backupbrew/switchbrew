@@ -2073,6 +2073,6 @@ The application is supposed to promptly update the contents of elr_el1 to a user
 
 svcReturnFromException updates the contents of the kernel stack frame with what the user provided in the TLS structure, sets TPIDR_EL0 to 1, then:
 * if the provided error code is 0, gracefully pivots and returns from exception
-* if it is not, replays the exception and pass it to the KDebug (see above). One can pass 0x10001 to prevent process termination
+* if it is not, replays the exception and pass it to the KDebug (see above). One can pass 0x10001 to prevent process termination. If the process is attached, this also prevents crash-collection/termination (different from the exception handler behavior)
 
 Note that if a thread that wasn't faulting calls svcReturnFromException, it signals an "invalid syscall" exception
