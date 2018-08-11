@@ -81,6 +81,8 @@ This is an u64, which is a NUL-terminated string.
 |}
 
 = set:fd =
+[4.0.0+] Only exposed if in [[SPL_services#IsDebugMode|debug mode]].
+
 This is "nn::settings::IFirmwareDebugSettingsServer".
 
 {| class="wikitable" border="1"
