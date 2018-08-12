@@ -1254,7 +1254,7 @@ systems.
 
 | Title-id         | Versions | Description                                                                                           |
 | ---------------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| 0100000000002000 |          | "BoardTest"                                                                                           |
+| 0100000000002000 |          | A2BoardFunction                                                                                       |
 | 0100000000002001 |          | A3Wireless                                                                                            |
 | 0100000000002002 |          | C1LcdAndKey - "LcdAndKey". LCD/Keyboard testing.                                                      |
 | 0100000000002003 |          | C2UsbHpmic - "UsbAndHPMicTest". USB and audio testing.                                                |

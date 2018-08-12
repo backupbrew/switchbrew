@@ -273,7 +273,7 @@ Note: No 01000000000020XX titles exist on retail systems.
 {| class=wikitable
 ! Title-id || Versions || Description
 |-
-| 0100000000002000 || || "BoardTest"
+| 0100000000002000 || || A2BoardFunction
 |-
 | 0100000000002001 || || A3Wireless
 |-
