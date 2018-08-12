@@ -598,18 +598,19 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 This is
 "nn::ns::detail::IDevelopInterface".
 
-| Cmd | Name                                                                       |
-| --- | -------------------------------------------------------------------------- |
-| 0   | [\#LaunchProgram](#LaunchProgram "wikilink")                               |
-| 1   | [\#TerminateProcess](#TerminateProcess "wikilink")                         |
-| 2   | [\#TerminateProgram](#TerminateProgram "wikilink")                         |
-| 3   | [\#GetShellEventHandle](#GetShellEventHandle "wikilink")                   |
-| 4   | [\#GetShellEventInfo](#GetShellEventInfo "wikilink")                       |
-| 5   | [\#TerminateApplication](#TerminateApplication "wikilink")                 |
-| 6   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink") |
-| 7   | LaunchApplication                                                          |
-| 8   | LaunchApplicationWithStorageId                                             |
-|     |                                                                            |
+| Cmd | Name                                                                           | Notes                                                         |
+| --- | ------------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| 0   | [\#LaunchProgram](#LaunchProgram "wikilink")                                   |                                                               |
+| 1   | [\#TerminateProcess](#TerminateProcess "wikilink")                             |                                                               |
+| 2   | [\#TerminateProgram](#TerminateProgram "wikilink")                             |                                                               |
+| 3   | [\#GetShellEventHandle](#GetShellEventHandle "wikilink")                       |                                                               |
+| 4   | [\#GetShellEventInfo](#GetShellEventInfo "wikilink")                           |                                                               |
+| 5   | [\#TerminateApplication](#TerminateApplication "wikilink")                     |                                                               |
+| 6   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")     |                                                               |
+| 7   | [\#LaunchApplication](#LaunchApplication_2 "wikilink")                         |                                                               |
+| 8   | [\#LaunchApplicationWithStorageId](#LaunchApplicationWithStorageId "wikilink") |                                                               |
+| 9   | ?                                                                              | Takes 2 input u8s, an u32, and an u64. Returns an output u64. |
+|     |                                                                                |                                                               |
 
 ## LaunchProgram
 
@@ -648,5 +649,15 @@ and sends PID to
 Calls
 [IPathResolverForStorage](NCM%20services#IPathResolverForStorage.md##IPathResolverForStorage "wikilink")
 Set...NcaPath functions.
+
+## LaunchApplication
+
+Takes a type-0x5 input buffer containing the
+[ContentPath](Filesystem%20services.md "wikilink"), returns an output
+0x10-byte struct.
+
+## LaunchApplicationWithStorageId
+
+Takes an input u32 and u64, returns an output u64.
 
 [Category:Services](Category:Services "wikilink")
