@@ -598,19 +598,18 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 This is
 "nn::ns::detail::IDevelopInterface".
 
-| Cmd | Name                                                                           | Notes                                                         |
-| --- | ------------------------------------------------------------------------------ | ------------------------------------------------------------- |
-| 0   | [\#LaunchProgram](#LaunchProgram "wikilink")                                   |                                                               |
-| 1   | [\#TerminateProcess](#TerminateProcess "wikilink")                             |                                                               |
-| 2   | [\#TerminateProgram](#TerminateProgram "wikilink")                             |                                                               |
-| 3   | [\#GetShellEventHandle](#GetShellEventHandle "wikilink")                       |                                                               |
-| 4   | [\#GetShellEventInfo](#GetShellEventInfo "wikilink")                           |                                                               |
-| 5   | [\#TerminateApplication](#TerminateApplication "wikilink")                     |                                                               |
-| 6   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")     |                                                               |
-| 7   | [\#LaunchApplication](#LaunchApplication_2 "wikilink")                         |                                                               |
-| 8   | [\#LaunchApplicationWithStorageId](#LaunchApplicationWithStorageId "wikilink") |                                                               |
-| 9   | ?                                                                              | Takes 2 input u8s, an u32, and an u64. Returns an output u64. |
-|     |                                                                                |                                                               |
+| Cmd | Name                                                                           |
+| --- | ------------------------------------------------------------------------------ |
+| 0   | [\#LaunchProgram](#LaunchProgram "wikilink")                                   |
+| 1   | [\#TerminateProcess](#TerminateProcess "wikilink")                             |
+| 2   | [\#TerminateProgram](#TerminateProgram "wikilink")                             |
+| 4   | [\#GetShellEventHandle](#GetShellEventHandle "wikilink")                       |
+| 5   | [\#GetShellEventInfo](#GetShellEventInfo "wikilink")                           |
+| 6   | [\#TerminateApplication](#TerminateApplication "wikilink")                     |
+| 7   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")     |
+| 8   | [\#LaunchApplication](#LaunchApplication_2 "wikilink")                         |
+| 9   | [\#LaunchApplicationWithStorageId](#LaunchApplicationWithStorageId "wikilink") |
+|     |                                                                                |
 
 ## LaunchProgram
 
@@ -646,21 +645,24 @@ and sends PID to
 
 ## PrepareLaunchProgramFromHost
 
+Takes a type-0x5 input buffer containing the
+[ContentPath](Filesystem%20services.md "wikilink"), returns an output
+0x10-byte struct.
+
 Calls
 [IPathResolverForStorage](NCM%20services#IPathResolverForStorage.md##IPathResolverForStorage "wikilink")
 Set...NcaPath functions.
 
 ## LaunchApplication
 
-Takes a type-0x5 input buffer containing the
-[ContentPath](Filesystem%20services.md "wikilink"), returns an output
-0x10-byte struct.
+Takes an input u32 and u64, returns an output u64.
+
+Same as LaunchApplicationWithStorageId except the last two params passed
+to the internal vtable funcptr call are value 0x6, instead of from the
+command input.
 
 ## LaunchApplicationWithStorageId
 
-Takes an input u32 and u64, returns an output u64.
-
-Same as cmd9 except the last two params passed to the internal vtable
-funcptr call are value 0x6, instead of from the command input.
+Takes 2 input u8s, an u32, and an u64. Returns an output u64.
 
 [Category:Services](Category:Services "wikilink")

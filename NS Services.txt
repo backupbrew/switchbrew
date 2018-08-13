@@ -991,27 +991,25 @@ This is "nn::ns::detail::IDevelopInterface".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || [[#LaunchProgram]] || 
+| 0 || [[#LaunchProgram]]
 |-
-| 1 || [[#TerminateProcess]] || 
+| 1 || [[#TerminateProcess]]
 |-
-| 2 || [[#TerminateProgram]] || 
+| 2 || [[#TerminateProgram]]
 |-
-| 3 || [[#GetShellEventHandle]] || 
+| 4 || [[#GetShellEventHandle]]
 |-
-| 4 || [[#GetShellEventInfo]] || 
+| 5 || [[#GetShellEventInfo]]
 |-
-| 5 || [[#TerminateApplication]] || 
+| 6 || [[#TerminateApplication]]
 |-
-| 6 || [[#PrepareLaunchProgramFromHost]] || 
+| 7 || [[#PrepareLaunchProgramFromHost]]
 |-
-| 7 || [[#LaunchApplication_2|#LaunchApplication]] || 
+| 8 || [[#LaunchApplication_2|#LaunchApplication]]
 |-
-| 8 || [[#LaunchApplicationWithStorageId]] || 
-|-
-| 9 || ? || Takes 2 input u8s, an u32, and an u64. Returns an output u64.
+| 9 || [[#LaunchApplicationWithStorageId]]
 |-
 |}
 
@@ -1034,14 +1032,16 @@ Wrapper for "pm:shell" [[Process_Manager_services#GetProcessEventType|GetProcess
 Calls "pm:shell" [[Process_Manager_services#GetCrashingProcessPid|GetCrashingProcessPid]] and sends PID to [[Process_Manager_services#TerminateTitleByPid|TerminateTitleByPid]].
 
 == PrepareLaunchProgramFromHost ==
+Takes a type-0x5 input buffer containing the [[Filesystem_services|ContentPath]], returns an output 0x10-byte struct.
+
 Calls [[NCM_services#IPathResolverForStorage|IPathResolverForStorage]] Set...NcaPath functions.
 
 == LaunchApplication ==
-Takes a type-0x5 input buffer containing the [[Filesystem_services|ContentPath]], returns an output 0x10-byte struct.
-
-== LaunchApplicationWithStorageId ==
 Takes an input u32 and u64, returns an output u64.
 
-Same as cmd9 except the last two params passed to the internal vtable funcptr call are value 0x6, instead of from the command input.
+Same as LaunchApplicationWithStorageId except the last two params passed to the internal vtable funcptr call are value 0x6, instead of from the command input.
+
+== LaunchApplicationWithStorageId ==
+Takes 2 input u8s, an u32, and an u64. Returns an output u64.
 
 [[Category:Services]]
