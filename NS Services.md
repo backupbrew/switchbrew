@@ -665,6 +665,8 @@ command input.
 
 ## LaunchApplicationWithStorageId
 
-Takes 2 input u8s, an u32, and an u64. Returns an output u64.
+Takes 2 input u8s, an u32
+[launch\_flags](Process%20Manager%20services.md "wikilink"), and an u64
+titleID. Returns an output u64.
 
 [Category:Services](Category:Services "wikilink")

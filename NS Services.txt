@@ -1042,6 +1042,6 @@ Takes an input u32 [[Process_Manager_services|launch_flags]] and u64 titleID, re
 Same as LaunchApplicationWithStorageId except the last two params passed to the internal vtable funcptr call are value 0x6, instead of from the command input.
 
 == LaunchApplicationWithStorageId ==
-Takes 2 input u8s, an u32, and an u64. Returns an output u64.
+Takes 2 input u8s, an u32 [[Process_Manager_services|launch_flags]], and an u64 titleID. Returns an output u64.
 
 [[Category:Services]]
