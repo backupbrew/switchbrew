@@ -660,4 +660,7 @@ Takes a type-0x5 input buffer containing the
 
 Takes an input u32 and u64, returns an output u64.
 
+Same as cmd9 except the last two params passed to the internal vtable
+funcptr call are value 0x6, instead of from the command input.
+
 [Category:Services](Category:Services "wikilink")
