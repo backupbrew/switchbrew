@@ -1037,11 +1037,13 @@ Takes a type-0x5 input buffer containing the [[Filesystem_services|ContentPath]]
 Calls [[NCM_services#IPathResolverForStorage|IPathResolverForStorage]] Set...NcaPath functions.
 
 == LaunchApplication ==
-Takes an input u32 [[Process_Manager_services|launch_flags]] and u64 titleID, returns an output u64.
+Takes an input u32 [[Process_Manager_services|launch_flags]] and u64 titleID, returns an output u64 PID.
 
 Same as LaunchApplicationWithStorageId except the last two params passed to the internal vtable funcptr call are value 0x6, instead of from the command input.
 
 == LaunchApplicationWithStorageId ==
-Takes 2 input u8s, an u32 [[Process_Manager_services|launch_flags]], and an u64 titleID. Returns an output u64.
+Takes 2 input u8s, an u32 [[Process_Manager_services|launch_flags]], and an u64 titleID. Returns an output u64 PID.
+
+Launches an application title which is registered with NS. 
 
 [[Category:Services]]

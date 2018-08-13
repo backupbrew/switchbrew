@@ -657,7 +657,7 @@ Set...NcaPath functions.
 
 Takes an input u32
 [launch\_flags](Process%20Manager%20services.md "wikilink") and u64
-titleID, returns an output u64.
+titleID, returns an output u64 PID.
 
 Same as LaunchApplicationWithStorageId except the last two params passed
 to the internal vtable funcptr call are value 0x6, instead of from the
@@ -667,6 +667,8 @@ command input.
 
 Takes 2 input u8s, an u32
 [launch\_flags](Process%20Manager%20services.md "wikilink"), and an u64
-titleID. Returns an output u64.
+titleID. Returns an output u64 PID.
+
+Launches an application title which is registered with NS.
 
 [Category:Services](Category:Services "wikilink")
