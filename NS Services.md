@@ -655,7 +655,9 @@ Set...NcaPath functions.
 
 ## LaunchApplication
 
-Takes an input u32 and u64, returns an output u64.
+Takes an input u32
+[launch\_flags](Process%20Manager%20services.md "wikilink") and u64
+titleID, returns an output u64.
 
 Same as LaunchApplicationWithStorageId except the last two params passed
 to the internal vtable funcptr call are value 0x6, instead of from the
