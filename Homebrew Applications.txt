@@ -75,6 +75,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Adubbz/Gag-Order/releases Here]
 | [https://github.com/Adubbz/Gag-Order Yes]
 | 2018-05-30
+|-
+| gcdumptool
+| Game card dumper
+| DarkMatterCore
+| [https://github.com/DarkMatterCore/gcdumptool/releases Here]
+| [https://github.com/DarkMatterCore/gcdumptool Yes]
+| 2018-06-30
 |}
 
 === Game Engines ===
