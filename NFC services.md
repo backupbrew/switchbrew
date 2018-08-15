@@ -59,10 +59,10 @@ This is "nn::nfc::detail::IUser".
 
 | Cmd  | Name                                     |
 | ---- | ---------------------------------------- |
-| 0    | Initialize                               |
-| 1    | Finalize                                 |
-| 2    | GetState                                 |
-| 3    | IsNfcEnabled                             |
+| 0    | InitializeOld                            |
+| 1    | FinalizeOld                              |
+| 2    | GetStateOld                              |
+| 3    | IsNfcEnabledOld                          |
 | 400  | \[4.0.0+\] Initialize                    |
 | 401  | \[4.0.0+\] Finalize                      |
 | 402  | \[4.0.0+\] GetState                      |
@@ -98,9 +98,9 @@ This is "nn::nfc::detail::ISystem".
 | ---- | ---------------------------------------- |
 | 0    | Initialize                               |
 | 1    | Finalize                                 |
-| 2    | GetState                                 |
-| 3    | IsNfcEnabled                             |
-| 100  | SetNfcEnabled                            |
+| 2    | GetStateOld                              |
+| 3    | IsNfcEnabledOld                          |
+| 100  | SetNfcEnabledOld                         |
 | 400  | \[4.0.0+\] InitializeSystem              |
 | 401  | \[4.0.0+\] FinalizeSystem                |
 | 402  | \[4.0.0+\] GetState                      |

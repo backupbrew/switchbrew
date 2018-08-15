@@ -85,13 +85,13 @@ This is "nn::nfc::detail::IUser".
 |-
 ! Cmd || Name
 |-
-| 0 || Initialize
+| 0 || InitializeOld
 |-
-| 1 || Finalize
+| 1 || FinalizeOld
 |-
-| 2 || GetState
+| 2 || GetStateOld
 |-
-| 3 || IsNfcEnabled
+| 3 || IsNfcEnabledOld
 |-
 | 400 || [4.0.0+] Initialize
 |-
@@ -151,11 +151,11 @@ This is "nn::nfc::detail::ISystem".
 |-
 | 1 || Finalize
 |-
-| 2 || GetState
+| 2 || GetStateOld
 |-
-| 3 || IsNfcEnabled
+| 3 || IsNfcEnabledOld
 |-
-| 100 || SetNfcEnabled
+| 100 || SetNfcEnabledOld
 |-
 | 400 || [4.0.0+] InitializeSystem
 |-
