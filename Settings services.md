@@ -71,11 +71,10 @@ string.
 
 # set:fd
 
+This is "nn::settings::IFirmwareDebugSettingsServer".
+
 \[4.0.0+\] Only exposed if in [debug
 mode](SPL%20services#IsDebugMode.md##IsDebugMode "wikilink").
-
-This is
-"nn::settings::IFirmwareDebugSettingsServer".
 
 | Cmd | Name                           | Notes                                                                          |
 | --- | ------------------------------ | ------------------------------------------------------------------------------ |
