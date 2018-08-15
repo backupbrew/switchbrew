@@ -164,6 +164,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/carstene1ns/hexgem/tree/switch-port Yes]
 | 2018-07-25
 |-
+| Hot Pocolate
+| Alternative music visualizer
+| [[User:illteteka|illteteka]]
+| [https://illteteka.itch.io/hot-pocolate Here]
+| [https://github.com/illteteka/hot-pocolate Yes]
+| 2018-08-15
+|-
 | InvadersNX
 | Space Invaders type game
 | MaesterRowen
