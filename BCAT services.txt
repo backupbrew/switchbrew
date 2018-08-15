@@ -109,7 +109,7 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheDirectoryService".
 |}
 
 = <nowiki>news:a, news:c, news:m, news:p, news:v</nowiki> =
-These are <nowiki>"nn::news::detail::ipc::IServiceCreator"</nowiki>.
+These are "nn::news::detail::ipc::IServiceCreator".
 
 {| class="wikitable" border="1"
 |-
