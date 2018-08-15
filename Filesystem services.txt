@@ -801,7 +801,7 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 215 || [2.0.0+] ForceEraseGameCard
 |-
-| 216 || [2.0.0+] GetGameCardErrorInfo
+| 216 || [2.0.0+] GetGameCardErrorInfo2
 |-
 | 217 || [2.1.0+] GetGameCardErrorReportInfo
 |-

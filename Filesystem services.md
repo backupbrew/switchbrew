@@ -699,7 +699,7 @@ This is
 | 213 | \[2.0.0+\] EraseAndWriteParamDirectly                                          |
 | 214 | \[2.0.0+\] ReadParamDirectly                                                   |
 | 215 | \[2.0.0+\] ForceEraseGameCard                                                  |
-| 216 | \[2.0.0+\] GetGameCardErrorInfo                                                |
+| 216 | \[2.0.0+\] GetGameCardErrorInfo2                                               |
 | 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                          |
 | 218 | \[3.0.0+\] GetGameCardDeviceId                                                 |
 | 300 | SetSpeedEmulationMode                                                          |
