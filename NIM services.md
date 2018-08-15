@@ -44,7 +44,7 @@ This is
 | 37  | \[2.0.0+\] CommitApplyDeltaTask                                  |
 | 38  | \[2.0.0+\] CalculateApplyDeltaTaskRequiredSize                   |
 | 39  | \[2.0.0+\] PrepareShutdown                                       |
-| 40  | \[2.0.0+\] ListApplyDeltaTask                                    |
+| 40  | \[2.0.0+\] ListApplyDeltaTask2                                   |
 | 41  | \[2.0.0+\] ClearNotEnoughSpaceStateOfApplyDeltaTask              |
 | 42  | \[3.0.0+\]                                                       |
 | 43  | \[3.0.0+\]                                                       |

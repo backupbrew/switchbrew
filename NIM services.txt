@@ -83,7 +83,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 |-
 | 39 || [2.0.0+] PrepareShutdown
 |-
-| 40 || [2.0.0+] ListApplyDeltaTask
+| 40 || [2.0.0+] ListApplyDeltaTask2
 |-
 | 41 || [2.0.0+] ClearNotEnoughSpaceStateOfApplyDeltaTask
 |-
