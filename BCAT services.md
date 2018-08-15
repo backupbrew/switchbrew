@@ -80,7 +80,7 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheDirectoryService".
 
 # news:a, news:c, news:m, news:p, news:v
 
-These are "nn::<news::detail>::ipc::IServiceCreator".
+These are "nn::news::detail::ipc::IServiceCreator".
 
 | Cmd | Name |
 | --- | ---- |
