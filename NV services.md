@@ -119,8 +119,9 @@ two input u32s. Returns an output u32 (**error\_code**).
 
 ## Ioctl3
 
-Same input/output as Ioctl2, except cmdhdr\_word1 is 0x100B instead of
-0xC0B.
+Takes a type-0x21 buffer, a type-0x22 buffer, another type-0x22 buffer,
+and two input u32s. Returns an output u32 (error\_code). Cmdhdr\_word1
+is 0x100B instead of 0xC0B.
 
 ## Cmd13
 
