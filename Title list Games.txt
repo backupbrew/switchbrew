@@ -2098,7 +2098,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100E570051F0000 || PixelJunk™ モンスターズ2 || JPN || 4.0.0 || Digital || 0 131072 || || Application / Game
 |-
-| || Owlboy (retail only) || || 3.0.1 || Cartridge || 0 || || Application / Game
+| 0100E570094E8000 || Owlboy (retail only) || || 3.0.1 || Cartridge || 0 65536 131072 196608 || || Application / Game
 |-
 | 0100E5700A3BA000 || Vesta || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
