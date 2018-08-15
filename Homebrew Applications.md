@@ -19,6 +19,10 @@ Icon/metadata for each application is loaded from data embedded in the
 NRO (custom assets section), if
 available.
 
+## Notes
+
+`Distribution and promotion of tools to create or work with commercial game dumps is illegal under DMCA and EUCD provisions. Such tools risk legal repercussions and should not be linked or promoted here.`
+
 ## List
 
 ### Launchers
