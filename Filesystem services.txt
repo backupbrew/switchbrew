@@ -433,7 +433,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |}
 
 == OpenFileSystem ==
-Takes an input [[#FileSystemType]] and an u64 title-id. Returns an [[#IFileSystem]].
+Takes a type-0x19 input buffer (ContentPath) and a [[#FileSystemType]] as parameters. Returns an [[#IFileSystem]].
 
 [2.0.0+] This function was removed.
 

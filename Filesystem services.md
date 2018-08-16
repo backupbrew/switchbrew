@@ -266,8 +266,9 @@ happens.
 
 ## OpenFileSystem
 
-Takes an input [\#FileSystemType](#FileSystemType "wikilink") and an u64
-title-id. Returns an [\#IFileSystem](#IFileSystem "wikilink").
+Takes a type-0x19 input buffer (ContentPath) and a
+[\#FileSystemType](#FileSystemType "wikilink") as parameters. Returns an
+[\#IFileSystem](#IFileSystem "wikilink").
 
 \[2.0.0+\] This function was removed.
 
