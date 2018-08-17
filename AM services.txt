@@ -930,7 +930,7 @@ This is "nn::am::service::IApplicationProxyService".
 | 0 || [[#OpenApplicationProxy]] || 
 |}
 
-This is used by all regular-applications, even [[flog]]. Only one session can be open for this service at a time.
+This is used by all regular-applications, including [[flog]] and "Retail Interactive Display Menu". Only one session can be open for this service at a time.
 
 == OpenApplicationProxy ==
 Returns an [[#IApplicationProxy]]. See [[#appletAE]].

@@ -693,9 +693,9 @@ This is
 | --- | ---------------------------------------------------------- | ----- |
 | 0   | [\#OpenApplicationProxy](#OpenApplicationProxy "wikilink") |       |
 
-This is used by all regular-applications, even
-[flog](Flog.md "wikilink"). Only one session can be open for this
-service at a time.
+This is used by all regular-applications, including
+[flog](Flog.md "wikilink") and "Retail Interactive Display Menu". Only
+one session can be open for this service at a time.
 
 ## OpenApplicationProxy
 
