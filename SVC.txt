@@ -1862,6 +1862,8 @@ If the input number of threads is 0, this means "all threads".
 
 == DebugEventInfo ==
 
+The below table is for the Aarch64 version of the system call. For A32, all u64 fields but title/process/thread id are actually u32, making the structure 0x28-byte-big (0x40 for a64).
+
 Size: 0x40
 
 {| class=wikitable
