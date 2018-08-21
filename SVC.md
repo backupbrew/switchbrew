@@ -1636,9 +1636,9 @@ AttachThread specific:
 Exit
 specific:
 
-| Offset | Length | Description                                                 |
-| ------ | ------ | ----------------------------------------------------------- |
-| 0x10   | u32    | Type (0=PausedThread, 1=RunningThread, 2=TerminatedProcess) |
+| Offset | Length | Description                                                                  |
+| ------ | ------ | ---------------------------------------------------------------------------- |
+| 0x10   | u32    | Type (0=PausedThread, 1=RunningThread, 2=ExitedProcess, 3=TerminatedProcess) |
 
 Exception specific:
 
