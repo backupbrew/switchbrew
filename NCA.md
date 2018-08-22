@@ -50,7 +50,7 @@ specified in the header and before the ending hash.
 
 | Offset | Size | Description            |
 | ------ | ---- | ---------------------- |
-| 0x20   | 8    | Application ID         |
+| 0x20   | 8    | Application Title ID   |
 | 0x28   | 8    | Minimum system version |
 
 ## Patch header
