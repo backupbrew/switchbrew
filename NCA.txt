@@ -71,7 +71,7 @@ With Patch-format, there's additional data after the end of the entries specifie
 |-
 | 0x20
 | 8
-| Application Title ID
+| Patch Title ID
 |-
 | 0x28
 | 8
