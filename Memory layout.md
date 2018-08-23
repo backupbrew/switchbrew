@@ -118,7 +118,7 @@ with the following pseudocode (might contains some
         may be done from the start again (maybe ?).
     */
     
-    /* Core0 executes this big KASL function, then powers on the other CPUs (?). */
+    /* Core0 executes this big KASLR function, then powers on the other CPUs (?). */
     MapPartially(RandomizeL1Boundary(DRAM, sizeof(DRAM)) -> DRAM_FROM_SECTION1: offsetof DRAM_FROM_SECTION1,
     
     /* Randomize */
