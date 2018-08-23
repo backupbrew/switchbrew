@@ -98,9 +98,55 @@ previous rule has one exception: pages that are mapped unreadable in
 usermode are still forced readable from kernelmode.
 
 KASLR is being used since [5.0.0](5.0.0.md "wikilink"), but not before,
-with
+with the following pseudocode (might contains some
+    errors):
 
-`kaslrBase = (rand64ViaSmc() % 0x3FFF0 << 21) + DRAM_VA(_start);`
+<code>
+
+    DRAM crt0 mapping (ttbr1): offsets DRAM with (rand64ViaSmc() % 0x3FFF0 << 21), allocates exactly (end - _start) + 1GB.
+    This is a "linear" mapping. Permissions are set properly.
+    
+    KERN_ADDRSPACE       := [VA(_start) : min(0xFFFFFFFFFFE00000 - VA(_start), 0x40000000)]
+    DRAM_FROM_SECTION1   := DRAM[0x808cd000:] // 0x808cd000 corresponds to start of section1 (loaded INI1) data, reused later
+    
+    /* Global Randomize range: 0xFFFFFF8000000000 to 0xFFFFFFFFFFE00000. */
+    /*
+        Randomize picks a random integer in ranges, clears as many low bits required,
+        then checks if the address is acceptable, if not it attempts to iterate through page table entries.
+        
+        If it doesn't find anything, it picks another integer. In case of general failure, the whole operation
+        may be done from the start again (maybe ?).
+    */
+    
+    /* Core0 executes this big KASL function, then powers on the other CPUs (?). */
+    MapPartially(RandomizeL1Boundary(DRAM, sizeof(DRAM)) -> DRAM_FROM_SECTION1: offsetof DRAM_FROM_SECTION1,
+    
+    /* Randomize */
+    KERN_ADDRSPACE {
+        Randomize(IOAndInitialStacks, 0x2000000) {
+            Map(Randomize(UartA, 0x1000)) -> UartA,
+            GuardPage,
+            Map(Randomize(Gicd, 0x1000)) -> Gicd,
+            GuardPage,
+            Map(Randomize(Gicc, 0x1000)) -> Gicc,
+            ForEachCore {
+                GuardPage,
+                Map(Randomize(EntryThreadStack, 0x1000)) -> NextFreePage(),
+                GuardPage,
+                Map(Randomize(IdleSchedulerThreadStack, 0x1000)) -> NextFreePage(),
+                GuardPage,
+                Map(Randomize(EL1AbortStack, 0x1000)) -> NextFreePage(),
+            }
+        },
+        
+        Randomize(KernelStacks, 0xE00000),
+        Map(Randomize(SlabHeaps, 0x7E9000, AFTER(VA(_end)) -> PA(_end)),
+        Randomize(Kip1DecompressionBuffer, 0x8000000), /* 128 MB VA range */
+    },
+    
+    Map(RandomizePageBoundary(GuardPage + KCoreContext * 4)) -> NextFreePages(4)
+
+</code>
 
 ## 1.0.0
 
