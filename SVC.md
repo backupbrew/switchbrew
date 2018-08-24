@@ -1654,17 +1654,17 @@ Exception specific:
 | ----- | ------------------------- |
 | 0     | DebugEvent\_AttachProcess |
 | 1     | DebugEvent\_AttachThread  |
-| 2     |                           |
-| 3     | DebugEvent\_Exit          |
+| 2     | DebugEvent\_ExitProcess   |
+| 3     | DebugEvent\_ExitThread    |
 | 4     | DebugEvent\_Exception     |
 
 ### DebugExceptionType
 
 | Value | Name                            |
 | ----- | ------------------------------- |
-| 0     | Exception\_UndefinedInstruction |
+| 0     | Exception\_Trap (\*)            |
 | 1     | Exception\_InstructionAbort     |
-| 2     | Exception\_DataAbortMisc        |
+| 2     | Exception\_DataAbortMisc (\*\*) |
 | 3     | Exception\_PcSpAlignmentFault   |
 | 4     | Exception\_DebuggerAttached     |
 | 5     | Exception\_BreakPoint           |
@@ -1673,7 +1673,11 @@ Exception specific:
 | 8     | Exception\_BadSvcId             |
 | 9     | Exception\_SError (not in 1.0)  |
 
-UndefinedInstruction specifics:
+  - Undefined instructions, software breakpoints, some other traps.
+      - Data aborts, FP traps, and everything else that doesn't belong
+        to any of the above.
+
+Trap specifics:
 
 | Offset | Length | Description |
 | ------ | ------ | ----------- |

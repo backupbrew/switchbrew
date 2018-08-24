@@ -1930,9 +1930,9 @@ Exception specific:
 |-
 | 1 || DebugEvent_AttachThread
 |-
-| 2 ||
+| 2 || DebugEvent_ExitProcess
 |-
-| 3 || DebugEvent_Exit
+| 3 || DebugEvent_ExitThread
 |-
 | 4 || DebugEvent_Exception
 |}
@@ -1941,11 +1941,11 @@ Exception specific:
 {| class=wikitable
 ! Value || Name
 |-
-| 0 || Exception_UndefinedInstruction
+| 0 || Exception_Trap (*)
 |-
 | 1 || Exception_InstructionAbort
 |-
-| 2 || Exception_DataAbortMisc
+| 2 || Exception_DataAbortMisc (**)
 |-
 | 3 || Exception_PcSpAlignmentFault
 |-
@@ -1962,7 +1962,10 @@ Exception specific:
 | 9 || Exception_SError (not in 1.0)
 |}
 
-UndefinedInstruction specifics:
+* Undefined instructions, software breakpoints, some other traps.
+** Data aborts, FP traps, and everything else that doesn't belong to any of the above.
+
+Trap specifics:
 {| class=wikitable
 ! Offset || Length || Description
 |-
