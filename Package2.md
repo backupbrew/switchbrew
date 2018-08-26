@@ -94,18 +94,18 @@ encapsulated in a custom format.
 Kernel Initial
 Process.
 
-| Offset | Type                                              | Description                                                                                                                                                          |
-| ------ | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | u32                                               | Magic "KIP1"                                                                                                                                                         |
-| 0x4    | char\[12\]                                        | Name                                                                                                                                                                 |
-| 0x10   | u64                                               | TitleId                                                                                                                                                              |
-| 0x18   | u32                                               | Process category (0: regular title, 1: kernel built-in). Should be 1 here.                                                                                           |
-| 0x1C   | u8                                                | Main thread priority                                                                                                                                                 |
-| 0x1D   | u8                                                | Default CPU core                                                                                                                                                     |
-| 0x1E   | u8                                                | Reserved (unused)                                                                                                                                                    |
-| 0x1F   | u8                                                | Flags: bit0-2: compression-enable for each section, when set. Bit3: Is64Bit. Bit4: IsAddrSpace36Bit. Bit5: \[2.0.0+\] PoolPartitionId. Bit6, Bit7: reserved (unused) |
-| 0x20   | [\#SectionHeader](#SectionHeader "wikilink")\[6\] | Sections: .text, .rodata, .data, .bss and two reserved (ignored) sections.                                                                                           |
-| 0x80   | u32\[0x20\]                                       | KernelCaps                                                                                                                                                           |
+| Offset | Type                                              | Description                                                                                                                                                                                             |
+| ------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | u32                                               | Magic "KIP1"                                                                                                                                                                                            |
+| 0x4    | char\[12\]                                        | Name                                                                                                                                                                                                    |
+| 0x10   | u64                                               | TitleId                                                                                                                                                                                                 |
+| 0x18   | u32                                               | Process category (0: regular title, 1: kernel built-in). Should be 1 here.                                                                                                                              |
+| 0x1C   | u8                                                | Main thread priority                                                                                                                                                                                    |
+| 0x1D   | u8                                                | Default CPU core                                                                                                                                                                                        |
+| 0x1E   | u8                                                | Reserved (unused)                                                                                                                                                                                       |
+| 0x1F   | u8                                                | Flags: bit0-2: compression-enable for each section, when set. Bit3: Is64Bit. Bit4: IsAddrSpace36Bit. Bit5: \[2.0.0+\] UseSystemPoolPartition (1: System, 0: Application). Bit6, Bit7: reserved (unused) |
+| 0x20   | [\#SectionHeader](#SectionHeader "wikilink")\[6\] | Sections: .text, .rodata, .data, .bss and two reserved (ignored) sections.                                                                                                                              |
+| 0x80   | u32\[0x20\]                                       | KernelCaps                                                                                                                                                                                              |
 
 ##### SectionHeader
 

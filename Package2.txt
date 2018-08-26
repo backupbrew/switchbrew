@@ -204,7 +204,7 @@ Kernel Initial Process.
 |-
 | 0x1F
 | u8
-| Flags: bit0-2: compression-enable for each section, when set. Bit3: Is64Bit. Bit4: IsAddrSpace36Bit. Bit5: [2.0.0+] PoolPartitionId. Bit6, Bit7: reserved (unused)
+| Flags: bit0-2: compression-enable for each section, when set. Bit3: Is64Bit. Bit4: IsAddrSpace36Bit. Bit5: [2.0.0+] UseSystemPoolPartition (1: System, 0: Application). Bit6, Bit7: reserved (unused)
 |-
 | 0x20
 | [[#SectionHeader]][6]
