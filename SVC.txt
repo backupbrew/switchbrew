@@ -255,13 +255,13 @@ __NOTOC__
 
 '''Description:''' Set the process heap to a given Size. It can both extend and shrink the heap.
 
-Size must be a multiple of 0x200000.
+Size must be a multiple of 0x200000 (2MB).
 
 On success, the heap base-address (which is fixed by kernel, aslr'd) is written to OutAddr.
 
 Uses current process pool partition.
 
-[2.0.0+] Size must be less than 0x18000000.
+[2.0.0+] Size must be less than or equal to 4GB.
 
 == svcSetMemoryPermission ==
 
