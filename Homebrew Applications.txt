@@ -384,6 +384,12 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/J-D-K/JKSV Yes]
 | 2018-06-25
 |-
+| EdiZon
+| Save file manager and editor with JSON+Lua plugin support for easy creation of new save editors for any game.
+| WerWolv
+| [https://github.com/thomasnet-mc/EdiZon/releases/latest Here]
+| [https://github.com/thomasnet-mc/EdiZon Yes]
+| 2018-08-19
 |}
 
 === File servers ===

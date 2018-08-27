@@ -101,11 +101,11 @@ available.
 
 ### Save managers
 
-| Name       | Description                                                     | Author            | Download                                                               | Open-Source                                           | Last Updated |
-| ---------- | --------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------- | ----------------------------------------------------- | ------------ |
-| Checkpoint | Fast and simple save manager for 3DS and Switch written in C++. | Bernardo Giordano | [Here](https://github.com/BernardoGiordano/Checkpoint/releases/latest) | [Yes](https://github.com/BernardoGiordano/Checkpoint) | 2018-05-14   |
-| JKSV       | WIP save manager for more advanced users                        | JK\_              | [Here](https://github.com/J-D-K/JKSV/releases)                         | [Yes](https://github.com/J-D-K/JKSV)                  | 2018-06-25   |
-|            |                                                                 |                   |                                                                        |                                                       |              |
+| Name       | Description                                                                                                   | Author            | Download                                                               | Open-Source                                           | Last Updated |
+| ---------- | ------------------------------------------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------- | ----------------------------------------------------- | ------------ |
+| Checkpoint | Fast and simple save manager for 3DS and Switch written in C++.                                               | Bernardo Giordano | [Here](https://github.com/BernardoGiordano/Checkpoint/releases/latest) | [Yes](https://github.com/BernardoGiordano/Checkpoint) | 2018-05-14   |
+| JKSV       | WIP save manager for more advanced users                                                                      | JK\_              | [Here](https://github.com/J-D-K/JKSV/releases)                         | [Yes](https://github.com/J-D-K/JKSV)                  | 2018-06-25   |
+| EdiZon     | Save file manager and editor with JSON+Lua plugin support for easy creation of new save editors for any game. | WerWolv           | [Here](https://github.com/thomasnet-mc/EdiZon/releases/latest)         | [Yes](https://github.com/thomasnet-mc/EdiZon)         | 2018-08-19   |
 
 ### File servers
 
