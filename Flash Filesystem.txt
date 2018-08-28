@@ -127,14 +127,14 @@ The currently active keyblob is officially known as "SecureInfo".
 |  No
 |  GPT header, Bis-storage also allows raw access to the entire NAND eMMC sectors starting at sector0. The official name for this partition is "UserDataRoot".
 |-
-|  PRODINFO
+|  [[Calibration|PRODINFO]]
 |  0x00004400
 |  0x003FBC00
 |  27
 |  Yes (Bis key 0)
 |  "CAL0" raw partition containing set:cal data. The official name for this partition is "CalibrationBinary".
 |-
-|  PRODINFOF
+|  [[Calibration|PRODINFOF]]
 |  0x00400000
 |  0x00400000
 |  28
