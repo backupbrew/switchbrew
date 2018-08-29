@@ -17,26 +17,25 @@ internal[2](https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263)](Joy
 | Orange | STMicroelectronics NFCBEA 812006 33 (Likely NFC reader IC) |
 | Yellow | Macronix International MX25U4033E 4 Mb CMOS Flash          |
 
-## Firmware
+## Joy-Con Connector Pinout
 
-*See also: [Joy-Con Firmware](Joy-Con%20Firmware.md "wikilink")*
+| Logic analyzer channel | Joy-Con Connector Pin | Function                        | Remark                                                                                                              |
+| ---------------------- | --------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| \-                     | 1                     | GND                             | \-                                                                                                                  |
+| \-                     | 2                     | GND                             | \-                                                                                                                  |
+| 0                      | 3                     | BT status?                      | Only high when connected to console via Bluetooth, low when unpaired, sleeping, or attached to the console directly |
+| 1                      | 4                     | 5V                              | Joy-Con power and charging                                                                                          |
+| 2                      | 5                     | Serial data, console to Joy-Con | Inverted level (idle at GND)                                                                                        |
+| 3                      | 6                     | Attach status?                  | GND only when directly attached to console and not sleeping, 1.8V.                                                  |
+| \-                     | 7                     | GND                             | \-                                                                                                                  |
+| 4                      | 8                     | Serial data, Joy-Con to console | Standard level (idle at 1.8V)                                                                                       |
+| 5                      | 9                     | ?                               | Always at GND                                                                                                       |
+| 6                      | 10                    | Flow control                    | Looks like RTS line, Joy-Con will only send data when this line is high.                                            |
 
-The firmware of the Joy-Cons seems to be generic across all instances.
-Details such as the handedness of the controller and the color is just
-indicated in a configuration part of the flash. Judging by quick glance
-at the firmware, it's probably identical to that used on the Pro
-Controller as well.
-
-| Controller          | 1.0.0                                       |
-| ------------------- | ------------------------------------------- |
-| Joy-Con Left (Blue) | [flash dump](:File:pad.L.bin.md "wikilink") |
-| Joy-Con Right (Red) | [flash dump](:File:pad.R.bin.md "wikilink") |
-
-The flash is in a patch-ram format. Tools for dealing with it are
-available [3](https://github.com/shuffle2/nxpad). A dump of the ROM
-region (taken while firmware was running) can be found
-[here](:File:bcm20734%20rom.bin.md "wikilink"). Note this is the same
-SoC used on the other controller models, as well.
+When first connected the baud rate is at 1000000bps(\!), after the
+initial handshake the speed is then switched to 3125000bps(\!\!). The
+handshake probably exchanges information about the side of the Joy-Con,
+the color, and Bluetooth address etc.
 
 ## Left & Right Separate Joy-con
 
