@@ -349,9 +349,9 @@ This is
 | 86   | EnableApplicationCrashReport                                                                       |
 | 87   | IsApplicationCrashReportEnabled                                                                    |
 | 90   | BoostSystemMemoryResourceLimit                                                                     |
-| 91   | \[6.0.0+\]                                                                                         |
-| 92   | \[6.0.0+\]                                                                                         |
-| 93   | \[6.0.0+\]                                                                                         |
+| 91   | \[5.0.0+\]                                                                                         |
+| 92   | \[5.0.0+\]                                                                                         |
+| 93   | \[5.0.0+\]                                                                                         |
 | 94   | \[6.0.0+\] LaunchApplication2                                                                      |
 | 95   | \[6.0.0+\]                                                                                         |
 | 96   | \[6.0.0+\]                                                                                         |

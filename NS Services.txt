@@ -557,11 +557,11 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 90 || BoostSystemMemoryResourceLimit
 |-
-| 91 || [6.0.0+]
+| 91 || [5.0.0+]
 |-
-| 92 || [6.0.0+]
+| 92 || [5.0.0+]
 |-
-| 93 || [6.0.0+]
+| 93 || [5.0.0+]
 |-
 | 94 || [6.0.0+] LaunchApplication2
 |-
