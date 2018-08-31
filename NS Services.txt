@@ -563,7 +563,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 93 || [6.0.0+]
 |-
-| 94 || [6.0.0+]
+| 94 || [6.0.0+] LaunchApplication2
 |-
 | 95 || [6.0.0+]
 |-
