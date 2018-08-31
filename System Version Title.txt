@@ -118,6 +118,16 @@ The FS for the system-version title(TID 0100000000000809) contains "/file" (and,
 | NintendoSDK Firmware for NX 5.0.1-0.0
 | 4b51b56242cc388ef487e148048e2c80e25994ad
 | gW93A#00050001#wBt05i54vmIPr7cs44Vvod3M9s5M2Yl2ZVd_pd036MY=
+|-
+| 5.1.0
+| NintendoSDK Firmware for NX 5.1.0-3.0
+| 23f9df53e25709d756e0c76effcb2473bd3447dd
+| gW93A#00050100#29uVhARHOdeTZmfdPnP785egrfRbPUW5n3IAACuHoPw=
+|-
+| 6.0.0
+| NintendoSDK Firmware for NX 6.0.0-4.0
+| 5dc1909aea612d7a444884faca584fa8ae895b5c
+| gW93A#00060000#9k9lgdev3glK0ltQTdWmdK7jU1BL9oWNJRAFkQpHUYI=
 |}
 
 === Other ===
