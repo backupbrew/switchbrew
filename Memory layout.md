@@ -336,8 +336,11 @@ descriptors by
 
 ## [5.0.0](5.0.0.md "wikilink")
 
-5.0.0 modified the address map to have R-X, R--, and RW- segments,
-instead of a single RWX segment.
+5.0.0 modified the address map to have separate .text, .rodata, and
+.rwdata segments, instead of a single RWX segment.
+
+However, the .rodata and .rwdata segments are both (mistakenly?) mapped
+R-W.
 
 Because the same L3 page is shared for all mappings, this required
 modifying segment layout significantly to prevent
@@ -370,7 +373,7 @@ clashes.
 | 0x1F00AB000 | 0x7001D000 | 0x1000  | 0x40000000000304     | MC1                                                    |
 | 0x1F0100000 | 0x7C010000 | 0x10000 | 0x40000000000380     | TZRAM (R-- for context save)                           |
 | 0x1F0140000 | 0x7C012000 | 0x9000  | 0x300                | TZRAM (R-X .text)                                      |
-| 0x1F0149000 | 0x7C01B000 | 0x1000  | 0x40000000000300     | TZRAM (R-- .rodata)                                    |
+| 0x1F0149000 | 0x7C01B000 | 0x1000  | 0x40000000000300     | TZRAM (RW- .rodata)                                    |
 | 0x1F014A000 | 0x7C01C000 | 0x2000  | 0x40000000000300     | TZRAM (RW- .rwdata)                                    |
 | 0x1F01A0000 | 0x40020000 | 0x10000 | 0x40000000000324     | IRAM (RW- for context save)                            |
 | 0x1F01B0000 | 0x40003000 | 0x1000  | 0x40000000000324     | IRAM (BPMP firmware destination)                       |

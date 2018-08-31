@@ -769,7 +769,9 @@ Unless otherwise mentionned, block descriptors (in our case, the one uses for th
 |}
 
 == [[5.0.0]] ==
-5.0.0 modified the address map to have R-X, R--, and RW- segments, instead of a single RWX segment.
+5.0.0 modified the address map to have separate .text, .rodata, and .rwdata segments, instead of a single RWX segment.
+
+However, the .rodata and .rwdata segments are both (mistakenly?) mapped R-W.
 
 Because the same L3 page is shared for all mappings, this required modifying segment layout significantly to prevent clashes.
 
@@ -935,7 +937,7 @@ Because the same L3 page is shared for all mappings, this required modifying seg
 | 0x7C01B000
 | 0x1000
 | 0x40000000000300
-| TZRAM (R-- .rodata)
+| TZRAM (RW- .rodata)
 |-
 | 0x1F014A000
 | 0x7C01C000
