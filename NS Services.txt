@@ -451,7 +451,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 17 || ListApplicationRecordContentMeta
 |-
-| 19 || [?.?.?-5.1.0] [[#LaunchApplication]]
+| 19 || [1.0.0-5.1.0] [[#LaunchApplication]]
 |-
 | 21 || [[#GetApplicationContentPath]]
 |-
@@ -641,7 +641,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 601 || [[#ListApplicationContentMetaStatus]]
 |-
-| 602 || [?.?.?-5.1.0] ListAvailableAddOnContent
+| 602 || [2.0.0-5.1.0] ListAvailableAddOnContent
 |-
 | 603 || GetOwnedApplicationContentMetaStatus
 |-

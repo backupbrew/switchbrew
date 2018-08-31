@@ -296,7 +296,7 @@ This is
 | 11   | CalculateApplicationOccupiedSize                                                                   |
 | 16   | PushApplicationRecord                                                                              |
 | 17   | ListApplicationRecordContentMeta                                                                   |
-| 19   | \[?.?.?-5.1.0\] [\#LaunchApplication](#LaunchApplication "wikilink")                               |
+| 19   | \[1.0.0-5.1.0\] [\#LaunchApplication](#LaunchApplication "wikilink")                               |
 | 21   | [\#GetApplicationContentPath](#GetApplicationContentPath "wikilink")                               |
 | 22   | TerminateApplication                                                                               |
 | 23   | ResolveApplicationContentPath                                                                      |
@@ -391,7 +391,7 @@ This is
 | 509  | ListApplicationIdOnGameCard                                                                        |
 | 600  | CountApplicationContentMeta                                                                        |
 | 601  | [\#ListApplicationContentMetaStatus](#ListApplicationContentMetaStatus "wikilink")                 |
-| 602  | \[?.?.?-5.1.0\] ListAvailableAddOnContent                                                          |
+| 602  | \[2.0.0-5.1.0\] ListAvailableAddOnContent                                                          |
 | 603  | GetOwnedApplicationContentMetaStatus                                                               |
 | 604  | RegisterContentsExternalKey                                                                        |
 | 605  | ListApplicationContentMetaStatusWithRightsCheck                                                    |
