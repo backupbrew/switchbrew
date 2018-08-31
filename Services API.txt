@@ -212,7 +212,7 @@ Takes a pid.
 | [[NV services]]
 |
 |-
-| pcie
+| pcie, [6.0.0+] pcie:log
 | [[PCIe services]]
 |
 |-
@@ -276,6 +276,10 @@ Takes a pid.
 |-
 | [4.0.0+] caps:dc
 | [[Jpegdec services]]
+| 
+|-
+| [6.0.0+] olsc:s
+| OLSC services
 | 
 |}
 

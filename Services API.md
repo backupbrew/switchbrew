@@ -262,7 +262,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>pcie</p></td>
+<td><p>pcie, [6.0.0+] pcie:log</p></td>
 <td><p><a href="PCIe services.md" title="wikilink">PCIe services</a></p></td>
 <td></td>
 </tr>
@@ -340,6 +340,11 @@ Takes a pid.
 <tr class="even">
 <td><p>[4.0.0+] caps:dc</p></td>
 <td><p><a href="Jpegdec services.md" title="wikilink">Jpegdec services</a></p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] olsc:s</p></td>
+<td><p>OLSC services</p></td>
 <td></td>
 </tr>
 </tbody>
