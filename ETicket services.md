@@ -2,40 +2,71 @@
 
 This is "nn::es::IETicketService".
 
-| Cmd | Name                                         |
-| --- | -------------------------------------------- |
-| 1   | ImportTicket                                 |
-| 2   | ImportTicketCertificateSet                   |
-| 3   | DeleteTicket                                 |
-| 4   | DeletePersonalizedTicket                     |
-| 5   | DeleteAllCommonTicket                        |
-| 6   | DeleteAllPersonalizedTicket                  |
-| 7   | DeleteAllPersonalizedTicketEx                |
-| 8   | GetTitleKey                                  |
-| 9   | CountCommonTicket                            |
-| 10  | CountPersonalizedTicket                      |
-| 11  | ListCommonTicket                             |
-| 12  | ListPersonalizedTicket                       |
-| 13  | ListMissingPersonalizedTicket                |
-| 14  | GetCommonTicketSize                          |
-| 15  | GetPersonalizedTicketSize                    |
-| 16  | GetCommonTicketData                          |
-| 17  | GetPersonalizedTicketData                    |
-| 18  | OwnTicket                                    |
-| 19  | GetTicketInfo                                |
-| 20  | ListLightTicketInfo                          |
-| 21  | \[2.0.0+\] SignData                          |
-| 22  | \[4.0.0+\] GetCommonTicketAndCertificateSize |
-| 23  | \[4.0.0+\] GetCommonTicketAndCertificateData |
-| 24  | \[4.0.0+\] ImportPrepurchaseRecord           |
-| 25  | \[4.0.0+\] DeletePrepurchaseRecord           |
-| 26  | \[4.0.0+\] DeleteAllPrepurchaseRecord        |
-| 27  | \[4.0.0+\] CountPrepurchaseRecord            |
-| 28  | \[4.0.0+\] ListPrepurchaseRecord             |
-| 29  | \[4.0.0+\] ListPrepurchaseRecordInfo         |
-| 30  | \[5.0.0+\]                                   |
-| 31  | \[5.0.0+\]                                   |
-| 32  | \[5.0.0+\]                                   |
-| 33  | \[5.0.0+\]                                   |
-| 34  | \[5.0.0+\]                                   |
-| 35  | \[5.0.0+\]                                   |
+| Cmd  | Name                                         |
+| ---- | -------------------------------------------- |
+| 1    | ImportTicket                                 |
+| 2    | ImportTicketCertificateSet                   |
+| 3    | DeleteTicket                                 |
+| 4    | DeletePersonalizedTicket                     |
+| 5    | DeleteAllCommonTicket                        |
+| 6    | DeleteAllPersonalizedTicket                  |
+| 7    | DeleteAllPersonalizedTicketEx                |
+| 8    | \[1.0.0-5.1.0\] GetTitleKey                  |
+| 9    | CountCommonTicket                            |
+| 10   | CountPersonalizedTicket                      |
+| 11   | ListCommonTicket                             |
+| 12   | ListPersonalizedTicket                       |
+| 13   | ListMissingPersonalizedTicket                |
+| 14   | GetCommonTicketSize                          |
+| 15   | \[1.0.0-5.1.0\] GetPersonalizedTicketSize    |
+| 16   | GetCommonTicketData                          |
+| 17   | \[1.0.0-5.1.0\] GetPersonalizedTicketData    |
+| 18   | OwnTicket                                    |
+| 19   | GetTicketInfo                                |
+| 20   | ListLightTicketInfo                          |
+| 21   | \[2.0.0+\] SignData                          |
+| 22   | \[4.0.0+\] GetCommonTicketAndCertificateSize |
+| 23   | \[4.0.0+\] GetCommonTicketAndCertificateData |
+| 24   | \[4.0.0+\] ImportPrepurchaseRecord           |
+| 25   | \[4.0.0+\] DeletePrepurchaseRecord           |
+| 26   | \[4.0.0+\] DeleteAllPrepurchaseRecord        |
+| 27   | \[4.0.0+\] CountPrepurchaseRecord            |
+| 28   | \[4.0.0+\] ListPrepurchaseRecord             |
+| 29   | \[4.0.0+\] ListPrepurchaseRecordInfo         |
+| 30   | \[5.0.0+\]                                   |
+| 31   | \[5.0.0+\]                                   |
+| 32   | \[5.0.0+\]                                   |
+| 33   | \[5.0.0+\]                                   |
+| 34   | \[5.0.0+\]                                   |
+| 35   | \[5.0.0+\]                                   |
+| 36   | \[6.0.0+\]                                   |
+| 501  | \[6.0.0+\]                                   |
+| 502  | \[6.0.0+\]                                   |
+| 503  | \[6.0.0+\]                                   |
+| 504  | \[6.0.0+\]                                   |
+| 508  | \[6.0.0+\]                                   |
+| 509  | \[6.0.0+\]                                   |
+| 510  | \[6.0.0+\]                                   |
+| 1001 | \[6.0.0+\]                                   |
+| 1002 | \[6.0.0+\]                                   |
+| 1003 | \[6.0.0+\]                                   |
+| 1004 | \[6.0.0+\]                                   |
+| 1005 | \[6.0.0+\]                                   |
+| 1006 | \[6.0.0+\]                                   |
+| 1007 | \[6.0.0+\]                                   |
+| 1009 | \[6.0.0+\]                                   |
+| 1010 | \[6.0.0+\]                                   |
+| 1011 | \[6.0.0+\]                                   |
+| 1012 | \[6.0.0+\]                                   |
+| 1013 | \[6.0.0+\]                                   |
+| 1014 | \[6.0.0+\]                                   |
+| 1015 | \[6.0.0+\]                                   |
+| 1016 | \[6.0.0+\]                                   |
+| 1501 | \[6.0.0+\]                                   |
+| 1502 | \[6.0.0+\]                                   |
+| 1503 | \[6.0.0+\]                                   |
+| 1504 | \[6.0.0+\]                                   |
+| 1505 | \[6.0.0+\]                                   |
+| 2000 | \[6.0.0+\]                                   |
+| 2501 | \[6.0.0+\]                                   |
+| 2502 | \[6.0.0+\]                                   |
