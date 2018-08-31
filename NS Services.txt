@@ -61,7 +61,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 18 || 
 |-
-| 19 || [1.0.0-5.1.0] [[#LaunchApplication]]
+| 19 || [[#LaunchApplication]]
 |-
 | 21 || [[#GetApplicationContentPath]]
 |-
@@ -451,7 +451,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 17 || ListApplicationRecordContentMeta
 |-
-| 19 || [[#LaunchApplication]]
+| 19 || [?.?.?-5.1.0] [[#LaunchApplication]]
 |-
 | 21 || [[#GetApplicationContentPath]]
 |-
@@ -557,6 +557,22 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 90 || BoostSystemMemoryResourceLimit
 |-
+| 91 || [6.0.0+]
+|-
+| 92 || [6.0.0+]
+|-
+| 93 || [6.0.0+]
+|-
+| 94 || [6.0.0+]
+|-
+| 95 || [6.0.0+]
+|-
+| 96 || [6.0.0+]
+|-
+| 97 || [6.0.0+]
+|-
+| 98 || [6.0.0+]
+|-
 | 100 || ResetToFactorySettings
 |-
 | 101 || ResetToFactorySettingsWithoutUserSaveData
@@ -569,7 +585,11 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 210 || DeleteUserSystemSaveData
 |-
+| 211 || [6.0.0+]
+|-
 | 220 || UnregisterNetworkServiceAccount
+|-
+| 221 || [6.0.0+]
 |-
 | 300 || GetApplicationShellEvent
 |-
@@ -599,6 +619,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 405 || ListApplicationControlCacheEntryInfo
 |-
+| 406 || [6.0.0+]
+|-
 | 502 || RequestCheckGameCardRegistration
 |-
 | 503 || RequestGameCardRegistrationGoldPoint
@@ -619,7 +641,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 601 || [[#ListApplicationContentMetaStatus]]
 |-
-| 602 || ListAvailableAddOnContent
+| 602 || [?.?.?-5.1.0] ListAvailableAddOnContent
 |-
 | 603 || GetOwnedApplicationContentMetaStatus
 |-
@@ -628,6 +650,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 605 || ListApplicationContentMetaStatusWithRightsCheck
 |-
 | 606 || GetContentMetaStorage
+|-
+| 607 || [6.0.0+]
 |-
 | 700 || PushDownloadTaskList
 |-
@@ -667,6 +691,12 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 909 || WithdrawCleanupAddOnContentsWithNoRightsRecommendation
 |-
+| 910 || [6.0.0+]
+|-
+| 911 || [6.0.0+]
+|-
+| 912 || [6.0.0+]
+|-
 | 1000 || RequestVerifyApplicationDeprecated
 |-
 | 1001 || CorruptApplicationForDebug
@@ -689,11 +719,15 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1304 || DeleteApplicationContentEntity
 |-
-| 1305 || TryDeleteRunningApplicationEntity
+| 1305 || [?.?.?-5.1.0] TryDeleteRunningApplicationEntity
 |-
-| 1306 || TryDeleteRunningApplicationCompletely
+| 1306 || [?.?.?-5.1.0] TryDeleteRunningApplicationCompletely
 |-
-| 1307 || TryDeleteRunningApplicationContentEntities
+| 1307 || [?.?.?-5.1.0] TryDeleteRunningApplicationContentEntities
+|-
+| 1308 || [6.0.0+]
+|-
+| 1309 || [6.0.0+]
 |-
 | 1400 || PrepareShutdown
 |-
@@ -768,6 +802,50 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2016 || ListNotCommittedContentMeta
 |-
 | 2017 || CreateDownloadTask
+|-
+| 2018 || [6.0.0+]
+|-
+| 2050 || [6.0.0+]
+|-
+| 2100 || [6.0.0+]
+|-
+| 2101 || [6.0.0+]
+|-
+| 2150 || [6.0.0+]
+|-
+| 2151 || [6.0.0+]
+|-
+| 2152 || [6.0.0+]
+|-
+| 2153 || [6.0.0+]
+|-
+| 2154 || [6.0.0+]
+|-
+| 2160 || [6.0.0+]
+|-
+| 2161 || [6.0.0+]
+|-
+| 2170 || [6.0.0+]
+|-
+| 2171 || [6.0.0+]
+|-
+| 2180 || [6.0.0+]
+|-
+| 2181 || [6.0.0+]
+|-
+| 2182 || [6.0.0+]
+|-
+| 2190 || [6.0.0+]
+|-
+| 2199 || [6.0.0+]
+|-
+| 2200 || [6.0.0+]
+|-
+| 2201 || [6.0.0+]
+|-
+| 2250 || [6.0.0+]
+|-
+| 2300 || [6.0.0+] 
 |-
 |}
 
