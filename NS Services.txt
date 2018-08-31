@@ -61,7 +61,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 18 || 
 |-
-| 19 || [[#LaunchApplication]]
+| 19 || [1.0.0-5.1.0] [[#LaunchApplication]]
 |-
 | 21 || [[#GetApplicationContentPath]]
 |-

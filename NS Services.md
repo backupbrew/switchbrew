@@ -37,7 +37,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 16   | PushApplicationRecord                                                                              |
 | 17   | ListApplicationRecordContentMeta                                                                   |
 | 18   |                                                                                                    |
-| 19   | [\#LaunchApplication](#LaunchApplication "wikilink")                                               |
+| 19   | \[1.0.0-5.1.0\] [\#LaunchApplication](#LaunchApplication "wikilink")                               |
 | 21   | [\#GetApplicationContentPath](#GetApplicationContentPath "wikilink")                               |
 | 22   | TerminateApplication                                                                               |
 | 23   | \[2.0.0+\] ResolveApplicationContentPath                                                           |
