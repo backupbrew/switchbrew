@@ -19,7 +19,7 @@ This is "nn::es::IETicketService".
 |-
 | 7 || DeleteAllPersonalizedTicketEx
 |-
-| 8 || [1.0.0-5.1.0] GetTitleKey
+| 8 || [2.0.0-5.1.0] GetTitleKey
 |-
 | 9 || CountCommonTicket
 |-
@@ -33,11 +33,11 @@ This is "nn::es::IETicketService".
 |-
 | 14 || GetCommonTicketSize
 |-
-| 15 || [1.0.0-5.1.0] GetPersonalizedTicketSize
+| 15 || [2.0.0-5.1.0] GetPersonalizedTicketSize
 |-
 | 16 || GetCommonTicketData
 |-
-| 17 || [1.0.0-5.1.0] GetPersonalizedTicketData
+| 17 || [2.0.0-5.1.0] GetPersonalizedTicketData
 |-
 | 18 || OwnTicket
 |-

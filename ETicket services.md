@@ -11,16 +11,16 @@ This is "nn::es::IETicketService".
 | 5    | DeleteAllCommonTicket                        |
 | 6    | DeleteAllPersonalizedTicket                  |
 | 7    | DeleteAllPersonalizedTicketEx                |
-| 8    | \[1.0.0-5.1.0\] GetTitleKey                  |
+| 8    | \[2.0.0-5.1.0\] GetTitleKey                  |
 | 9    | CountCommonTicket                            |
 | 10   | CountPersonalizedTicket                      |
 | 11   | ListCommonTicket                             |
 | 12   | ListPersonalizedTicket                       |
 | 13   | ListMissingPersonalizedTicket                |
 | 14   | GetCommonTicketSize                          |
-| 15   | \[1.0.0-5.1.0\] GetPersonalizedTicketSize    |
+| 15   | \[2.0.0-5.1.0\] GetPersonalizedTicketSize    |
 | 16   | GetCommonTicketData                          |
-| 17   | \[1.0.0-5.1.0\] GetPersonalizedTicketData    |
+| 17   | \[2.0.0-5.1.0\] GetPersonalizedTicketData    |
 | 18   | OwnTicket                                    |
 | 19   | GetTicketInfo                                |
 | 20   | ListLightTicketInfo                          |
