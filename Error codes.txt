@@ -313,6 +313,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x196202 || 2 || 3249 || Out of memory
 |-
+| 0x1A3E02 || 2 || 3359 || Out of memory
+|-
+| 0x1A4002 || 2 || 3360 || Out of memory
+|-
 | 0x1A4A02 || 2 || 3365 || Out of memory
 |-
 | 0x235202 || 2 || 4521 || Invalid NCA Key index
