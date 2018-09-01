@@ -37,7 +37,7 @@ follows:
 | Offset | Size | Description                                                                                 |
 | ------ | ---- | ------------------------------------------------------------------------------------------- |
 | 0x0    | 0x8  | Firmware Version (0x01 for old Gamecards, 0x02 for new Gamecards with the "logo" partition) |
-| 0x8    | 0x4  | Access Control Flags (0x00A10010 for 25MHz access or 0x00A10011 for 50MHz access)           |
+| 0x8    | 0x4  | Access Control Flags (0x00A10011 for 25MHz access or 0x00A10010 for 50MHz access)           |
 | 0xC    | 0x4  | Read Wait Time (always 0x1388)                                                              |
 | 0x10   | 0x4  | Read Wait Time2 (always 0)                                                                  |
 | 0x14   | 0x4  | Write Wait Time (always 0)                                                                  |
