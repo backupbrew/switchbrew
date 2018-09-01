@@ -1591,12 +1591,15 @@ Starting from
 | Bit | Bitmask | Description                                                                 |
 | --- | ------- | --------------------------------------------------------------------------- |
 | 0   | 1       | IgnoreException (note: doesn't need to be set in the same call than Resume) |
-| 1   | 2       | SwallowException                                                            |
+| 1   | 2       | DontCatchExceptions                                                         |
 | 2   | 4       | Resume                                                                      |
-| 3   | 8       | IgnoreExceptionInverted                                                     |
+| 3   | 8       | IgnoreOtherThreadsExceptions                                                |
 
-IgnoreExceptionInverted is like CancelSynchronization but acts on all
-threads that aren't in the input list.
+IgnoreExceptionsOfOthers is like IgnoreException but acts on all threads
+that aren't in the input list. The affected threads are resumed.
+
+Only one of of Resume and IgnoreOtherThreadsExceptions can be set at a
+time.
 
 If the input number of threads is 0, this means "all threads".
 
