@@ -81,7 +81,7 @@ This is "nn::es::IETicketService".
 |-
 | 502 || [6.0.0+]
 |-
-| 503 || [6.0.0+] GetTitleKey2
+| 503 || [6.0.0+] GetTitleKey
 |-
 | 504 || [6.0.0+]
 |-
