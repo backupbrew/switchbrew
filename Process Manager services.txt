@@ -89,20 +89,23 @@ This is "nn::pm::detail::IDebugMonitorInterface".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#IsDebugMode]]
+| [1.0.0-4.1.0] 0 || [[#IsDebugMode]]
 |-
-| 1 || [[#GetDebugProcesses]]
+| 0 ([1.0.0-4.1.0] 1) || [[#GetDebugProcesses]]
 |-
-| 2 || [[#StartDebugProcess]]
+| 1 ([1.0.0-4.1.0] 2)  || [[#StartDebugProcess]]
 |-
-| 3 || [[#GetTitlePid]]
+| 2 ([1.0.0-4.1.0] 3)  || [[#GetTitlePid]]
 |-
-| 4 || [[#EnableDebugForTitleId]]
+| 3 ([1.0.0-4.1.0] 4)  || [[#EnableDebugForTitleId]]
 |-
-| 5 || [[#GetApplicationPid]]
+| 4 ([1.0.0-4.1.0] 5)  || [[#GetApplicationPid]]
 |-
-| 6 || [[#EnableDebugForApplication]]
+| 5 ([1.0.0-4.1.0] 6)  || [[#EnableDebugForApplication]]
+|-
+| [6.0.0+] 6  || [[#DisableDebug]]
 |}
+
 
 == IsDebugMode ==
 Always returns u32 0 on retail.
@@ -138,6 +141,11 @@ Returns the pid of the application process.
 Does *not* take a specific title-id as input.
 
 Returns an event handle that is triggered for application titles.
+
+== DisableDebug ==
+Takes in a u32 of bitflags.
+
+Disables debugging/clears the globally specified tid if bit 0 is set, disables debugging/clears the next application if bit 1 is set.
 
 = pm:info =
 This is "nn::pm::detail::IInformationInterface".

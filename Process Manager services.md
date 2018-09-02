@@ -119,15 +119,16 @@ This is "nn::pm::detail::IBootModeInterface".
 This is
 "nn::pm::detail::IDebugMonitorInterface".
 
-| Cmd | Name                                                                 |
-| --- | -------------------------------------------------------------------- |
-| 0   | [\#IsDebugMode](#IsDebugMode "wikilink")                             |
-| 1   | [\#GetDebugProcesses](#GetDebugProcesses "wikilink")                 |
-| 2   | [\#StartDebugProcess](#StartDebugProcess "wikilink")                 |
-| 3   | [\#GetTitlePid](#GetTitlePid "wikilink")                             |
-| 4   | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink")         |
-| 5   | [\#GetApplicationPid](#GetApplicationPid "wikilink")                 |
-| 6   | [\#EnableDebugForApplication](#EnableDebugForApplication "wikilink") |
+| Cmd                   | Name                                                                 |
+| --------------------- | -------------------------------------------------------------------- |
+| \[1.0.0-4.1.0\] 0     | [\#IsDebugMode](#IsDebugMode "wikilink")                             |
+| 0 (\[1.0.0-4.1.0\] 1) | [\#GetDebugProcesses](#GetDebugProcesses "wikilink")                 |
+| 1 (\[1.0.0-4.1.0\] 2) | [\#StartDebugProcess](#StartDebugProcess "wikilink")                 |
+| 2 (\[1.0.0-4.1.0\] 3) | [\#GetTitlePid](#GetTitlePid "wikilink")                             |
+| 3 (\[1.0.0-4.1.0\] 4) | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink")         |
+| 4 (\[1.0.0-4.1.0\] 5) | [\#GetApplicationPid](#GetApplicationPid "wikilink")                 |
+| 5 (\[1.0.0-4.1.0\] 6) | [\#EnableDebugForApplication](#EnableDebugForApplication "wikilink") |
+| \[6.0.0+\] 6          | [\#DisableDebug](#DisableDebug "wikilink")                           |
 
 ## IsDebugMode
 
@@ -178,6 +179,13 @@ Returns the pid of the application process.
 Does \*not\* take a specific title-id as input.
 
 Returns an event handle that is triggered for application titles.
+
+## DisableDebug
+
+Takes in a u32 of bitflags.
+
+Disables debugging/clears the globally specified tid if bit 0 is set,
+disables debugging/clears the next application if bit 1 is set.
 
 # pm:info
 
