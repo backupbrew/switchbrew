@@ -618,6 +618,11 @@ Decimal versions use the format:
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)</p></td>
 <td><p>[4.0.0+] <a href="Safemode.md" title="wikilink">safemode</a></p></td>
 </tr>
+<tr class="even">
+<td><p>010000000000003E</p></td>
+<td></td>
+<td><p>[6.0.0+] olsc</p></td>
+</tr>
 </tbody>
 </table>
 
