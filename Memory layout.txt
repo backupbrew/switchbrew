@@ -1243,8 +1243,8 @@ Because the same L3 page is shared for all mappings, this required modifying seg
 |}
 
 = IRAM =
-== [[BCT|BCT]] ==
-When copied to IRAM at address 0x40000000, the BCT has an additional header as follows.
+== [[BIT|BIT]] ==
+When copied to IRAM at address 0x40000000, the BCT has an additional header called Boot Info Table as follows.
 
 {| class="wikitable" border="1"
 |-
@@ -1254,46 +1254,95 @@ When copied to IRAM at address 0x40000000, the BCT has an additional header as f
 !  Description
 |-
 |  0x00
-|  0x50
-|  bct_global_header
+|  0x04
+|  unk_version0 
 |
- 0x00: unk_version0 (0x00210001)
- 0x04: unk_version1 (0x00210001)
- 0x08: unk_version2 (0x00210001)
- 0x0C: boot_type (1 (COLD) PK11 panics if it's not)
+ 0x00210001
+|-
+|  0x04
+|  0x04
+|  unk_version1 
+|
+ 0x00210001
+|-
+|  0x08
+|  0x04
+|  unk_version2 
+|
+ 0x00210001
+|-
+|  0x0C
+|  0x04
+|  boot_type
+|
+ BOOT_TYPE_COLD = 1
+ BOOT_TYPE_RECOVERY = 2
+ BOOT_TYPE_UART = 3
+ BOOT_TYPE_EXIT_RCM = 4
+|-
  0x4C: bct_data_addr (address of the actual BCT)
 |-
 |  0x50
-|  0x18
-|  bootloader0_header
+|  0x18*4
+|  bootloader_headers[4]
 |
- 0x00: is_active (if set to 0x01, bootloader0 is used) 
-|-
-|  0x68
-|  0x18
-|  bootloader1_header
-|
- 0x00: is_active (if set to 0x01, bootloader1 is used) 
-|-
-|  0x80
-|  0x18
-|  bootloader2_header
-|
- 0x00: is_active (if set to 0x01, bootloader2 is used) 
-|-
-|  0x98
-|  0x18
-|  bootloader3_header
-|
- 0x00: is_active (if set to 0x01, bootloader3 is used) 
+ {| class="wikitable" border="1"
+ |-
+ !  Offset
+ !  Size
+ !  Field
+ |-
+ |  0x00
+ |  0x04
+ |  is_active
+ |-
+ |  0x04
+ |  0x04
+ |  start_block
+ |-
+ |  0x08
+ |  0x04
+ |  start_page
+ |-
+ |  0x0C
+ |  0x04
+ |  length
+ |-
+ |  0x10
+ |  0x04
+ |  signed_start
+ |-
+ |  0x14
+ |  0x04
+ |  signature
+ |-
+ |}
 |-
 |  0xB0
-|  0x50
+|  0x40
 |  
 |
-  0x40: bct_end_addr
+|-
+|  0xF0
+|  0x04
+|  
+|
+  bct_end_addr
+|-
+|  0xF4
+|  0x0C
+|  
+|
 |-
 |}
+
+bct_data_addr should pint to a bct that contains the keyblob.
+
+It's used in key generation in PK1.
+
+PK11 checks boot_type to be cold, if it's not it panics.
+
+bootloader_headers[0] or bootloader_headers[1] should be set to active. It is also checked by PK11.
 
 = Notes =
 == 2.0.0 ==
