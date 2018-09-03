@@ -155,7 +155,7 @@ Media offset is absoluteoffset/{mediasize}, where mediasize is hard-coded to 0x2
 | Padding?
 |-
 | 0x8
-| 
+| 0xF8
 | FS-specific superblock.
 |-
 | 0x100

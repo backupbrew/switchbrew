@@ -111,7 +111,7 @@ hard-coded to
 | 0x3    | 0x1  | Filesystem type. 0x2 = PFS0, 0x3 = RomFS, everything else is invalid.                                                    |
 | 0x4    | 0x1  | Crypto type. 0 and \>4 are invalid. 1 = none(plaintext from raw NCA). 2 = other crypto. 3 = regular crypto. 4 = unknown. |
 | 0x5    | 0x1  | Padding?                                                                                                                 |
-| 0x8    |      | FS-specific superblock.                                                                                                  |
+| 0x8    | 0xF8 | FS-specific superblock.                                                                                                  |
 | 0x100  | ?    | Optional BKTR header. Can be used with any section, but only known to be used with game-updates RomFS.                   |
 
 The Section Header Block for each section is at
