@@ -457,6 +457,7 @@ header as follows.
 <td><p><code>0x00: unk_version0 (0x00210001)</code><br />
 <code>0x04: unk_version1 (0x00210001)</code><br />
 <code>0x08: unk_version2 (0x00210001)</code><br />
+<code>0x0C: boot_type (1 (COLD) PK11 panics if it's not)</code><br />
 <code>0x4C: bct_data_addr (address of the actual BCT)</code></p></td>
 </tr>
 <tr class="even">
