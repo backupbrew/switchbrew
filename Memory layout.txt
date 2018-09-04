@@ -1243,8 +1243,8 @@ Because the same L3 page is shared for all mappings, this required modifying seg
 |}
 
 = IRAM =
-== [[BIT|BIT]] ==
-When copied to IRAM at address 0x40000000, the BCT has an additional header called Boot Info Table as follows.
+== BIT ==
+During boot, the BootROM saves the BCT in IRAM at address 0x40000100. The preceding 0x100 bytes (IRAM memory range from 0x40000000 to 0x40000100) contain a structure called BIT (Boot Info Table) which encapsulates the BCT in IRAM and is initialized by the BootROM as follows:
 
 {| class="wikitable" border="1"
 |-
@@ -1255,21 +1255,18 @@ When copied to IRAM at address 0x40000000, the BCT has an additional header call
 |-
 |  0x00
 |  0x04
-|  unk_version0 
-|
- 0x00210001
+|  br_version
+|  Set to 0x00210001 (BOOTDATA_VERSION_T210). 
 |-
 |  0x04
 |  0x04
-|  unk_version1 
-|
- 0x00210001
+|  bd_version
+|  Set to 0x00210001 (BOOTDATA_VERSION_T210). 
 |-
 |  0x08
 |  0x04
-|  unk_version2 
-|
- 0x00210001
+|  rcm_version
+|  Set to 0x00210001 (BOOTDATA_VERSION_T210). 
 |-
 |  0x0C
 |  0x04
@@ -1280,7 +1277,105 @@ When copied to IRAM at address 0x40000000, the BCT has an additional header call
  BOOT_TYPE_UART = 3
  BOOT_TYPE_EXIT_RCM = 4
 |-
- 0x4C: bct_data_addr (address of the actual BCT)
+|  0x10
+|  0x04
+|  unk0
+|  Set to 0x05 on coldboot. 
+|-
+|  0x14
+|  0x04
+|  boot_device_type
+|
+|-
+|  0x18
+|  0x04
+|  boot_start_time
+|  Value from TIMERUS_CNTR_1US when the BootROM enters its main function.
+|-
+|  0x1C
+|  0x04
+|  unk1
+|  
+|-
+|  0x20
+|  0x04
+|  boot_read_bct_time
+|  Time spent reading the BCT.
+|-
+|  0x24
+|  0x04
+|  boot_parse_bootloader_time
+|  Time spent parsing the bootloader info from the BCT.
+|-
+|  0x28
+|  0x04
+|  osc_freq
+|  Value from CLK_RST_CONTROLLER_OSC_CTRL. 
+|-
+|  0x2C
+|  0x01
+|  is_boot_device_loaded
+|  Set to 1 after the boot device is initialized.
+|-
+|  0x2D
+|  0x01
+|  is_sdram_configured
+|  Set to 1 after the SDRAM parameters are parsed.
+|-
+|  0x2E
+|  0x01
+|  is_forced_rcm_pmc
+|  Set to 1 if bit 2 was set in APBDEV_PMC_SCRATCH0.
+|-
+|  0x2F
+|  0x01
+|  is_enable_fail_back_pmc
+|  Set to 1 if bit 4 was set in APBDEV_PMC_SCRATCH0.
+|-
+|  0x30
+|  0x02
+|  is_bootloader_version_mismatch
+|  Set to 1 if the bootloaders have different versions in the BCT.
+|-
+|  0x32
+|  0x02
+|  is_bct_valid
+|  Set to 1 if the BCT was parsed successfully.
+|-
+|  0x34
+|  0x04
+|  unk2
+|  
+|-
+|  0x38
+|  0x04
+|  unk3
+|  
+|-
+|  0x3C
+|  0x04
+|  active_bootloader_idx
+|  Value from 0 to 3 that represents which bootloader is active.
+|-
+|  0x40
+|  0x04
+|  bct_start_block
+|  Block number where the BCT was found.
+|-
+|  0x44
+|  0x04
+|  bct_start_page
+|  Page number where the BCT was found.
+|-
+|  0x48
+|  0x04
+|  bct_size
+|  Size of the BCT in IRAM (0x2800). 
+|-
+|  0x4C
+|  0x04
+|  bct_ptr
+|  Pointer to the BCT in IRAM (0x40000100). 
 |-
 |  0x50
 |  0x18*4
@@ -1294,55 +1389,44 @@ When copied to IRAM at address 0x40000000, the BCT has an additional header call
  |-
  |  0x00
  |  0x04
- |  is_active
+ |  bootloader_idx
  |-
  |  0x04
  |  0x04
- |  start_block
+ |  bootloader_start_block
  |-
  |  0x08
  |  0x04
- |  start_page
+ |  bootloader_start_page
  |-
  |  0x0C
  |  0x04
- |  length
+ |  bootloader_length
  |-
  |  0x10
  |  0x04
- |  signed_start
+ |  bootloader_signed_start
  |-
  |  0x14
  |  0x04
- |  signature
- |-
+ |  bootloader_signature
  |}
 |-
 |  0xB0
 |  0x40
-|  
-|
+|  boot_device_info
+|  Structure to hold boot device parameters.
 |-
 |  0xF0
 |  0x04
-|  
-|
-  bct_end_addr
+|  bct_end_ptr
+|  Pointer to the end of the BCT in IRAM (0x40002900).
 |-
 |  0xF4
 |  0x0C
-|  
-|
-|-
+|  padding
+|  Must be empty.
 |}
-
-bct_data_addr should pint to a bct that contains the keyblob.
-
-It's used in key generation in PK1.
-
-PK11 checks boot_type to be cold, if it's not it panics.
-
-bootloader_headers[0] or bootloader_headers[1] should be set to active. It is also checked by PK11.
 
 = Notes =
 == 2.0.0 ==
