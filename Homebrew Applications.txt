@@ -333,7 +333,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Marice
 | [https://github.com/Marice/CHIP8-NX/releases Here]
 | [https://github.com/Marice/CHIP8-NX Yes]
-| 2018-05-
+| 2018-05-25
 |-
 | LaiNESwitch
 | Compact, cycle-accurate NES emulator in ~1000 lines of C++.
