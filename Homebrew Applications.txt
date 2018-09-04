@@ -340,7 +340,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Kevoot
 | [https://github.com/Kevoot/LaiNESwitch/releases Here]
 | [https://github.com/Kevoot/LaiNESwitch Yes]
-| 2018-05-24
+| 2018-07-26
 |-
 | pSNES
 | snes9x 1.56.2
