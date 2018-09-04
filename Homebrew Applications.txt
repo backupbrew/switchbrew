@@ -312,7 +312,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Cpasjuste
 | [https://github.com/Cpasjuste/scummvm/releases Here]
 | [https://github.com/Cpasjuste/scummvm/tree/switch Yes]
-| 2018-03-01
+| 2018-05-18
 |-
 | pFBA
 | A port of final burn alpha to multiple platforms
