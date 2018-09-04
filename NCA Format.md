@@ -134,9 +134,6 @@ The total size is
 | 0x40   | 0x8  | Actual byte-size of the PFS0 filesystem relative to the PFS0 header.               |
 | 0x48   | 0xB0 | Normally zeros.                                                                    |
 
-This documents the structure of Section Header Block +0 for
-PFS0.
-
 ## RomFS superblock
 
 | Offset | Size | Description                                                                                                                              |
