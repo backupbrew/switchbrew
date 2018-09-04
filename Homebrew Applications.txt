@@ -326,7 +326,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | RSDuck
 | [https://github.com/RSDuck/vba-next-switch/releases Here]
 | [https://github.com/RSDuck/vba-next-switch Yes]
-| 2018-05-22
+| 2018-07-14
 |-
 | CHIP8-NX
 | CHIP8 emulator
