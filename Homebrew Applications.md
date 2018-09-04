@@ -91,7 +91,7 @@ available.
 | VBA Next Switch | A port of VBA Next, the retroarch version of [VBA-M](https://github.com/libretro/vba-next)                | RSDuck    | [Here](https://github.com/RSDuck/vba-next-switch/releases) | [Yes](https://github.com/RSDuck/vba-next-switch)        | 2018-05-22   |
 | CHIP8-NX        | CHIP8 emulator                                                                                            | Marice    | [Here](https://github.com/Marice/CHIP8-NX/releases)        | [Yes](https://github.com/Marice/CHIP8-NX)               | 2018-05-     |
 | LaiNESwitch     | Compact, cycle-accurate NES emulator in ~1000 lines of C++.                                               | Kevoot    | [Here](https://github.com/Kevoot/LaiNESwitch/releases)     | [Yes](https://github.com/Kevoot/LaiNESwitch)            | 2018-05-24   |
-| pSNES           | snes9x 1.55                                                                                               | Cpasjuste | [Here](https://github.com/Cpasjuste/psnes/releases)        | [Yes](https://github.com/Cpasjuste/psnes)               | 2018-06-21   |
+| pSNES           | snes9x 1.56.2                                                                                             | Cpasjuste | [Here](https://github.com/Cpasjuste/psnes/releases)        | [Yes](https://github.com/Cpasjuste/psnes)               | 2018-08-24   |
 
 ### Title managers
 

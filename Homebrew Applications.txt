@@ -343,11 +343,11 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 2018-05-24
 |-
 | pSNES
-| snes9x 1.55
+| snes9x 1.56.2
 | Cpasjuste
 | [https://github.com/Cpasjuste/psnes/releases Here]
 | [https://github.com/Cpasjuste/psnes Yes]
-| 2018-06-21
+| 2018-08-24
 |}
 
 ===Title managers===
