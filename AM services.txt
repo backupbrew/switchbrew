@@ -393,7 +393,7 @@ No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 |-
 | 31 || EndBlockingHomeButtonShortAndLongPressed ||
 |-
-| 32 || BeginBlockingHomeButton ||
+| 32 || [[#BeginBlockingHomeButton]] ||
 |-
 | 33 || EndBlockingHomeButton ||
 |-
@@ -454,6 +454,9 @@ No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 Takes an input u32 '''Result''', no output.
 
 For example, in some cases official apps use this with [[Error_codes|error]] 0x2A2 then uses svcBreak.
+
+==== BeginBlockingHomeButton ====
+Takes an input s64 nanoseconds, no output. The input nanoseconds can be zero.
 
 ==== NotifyRunning ====
 Takes no input. Returns an output u8, which is ignored by official user-processes.

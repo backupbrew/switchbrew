@@ -270,7 +270,7 @@ No input, returns an output
 | 27   | \[5.0.0+\] CreateCacheStorage                                                       |                                                |
 | 30   | BeginBlockingHomeButtonShortAndLongPressed                                          |                                                |
 | 31   | EndBlockingHomeButtonShortAndLongPressed                                            |                                                |
-| 32   | BeginBlockingHomeButton                                                             |                                                |
+| 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                    |                                                |
 | 33   | EndBlockingHomeButton                                                               |                                                |
 | 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                        |                                                |
 | 50   | \[2.0.0+\] GetPseudoDeviceId                                                        |                                                |
@@ -323,6 +323,11 @@ Takes an input u32 **Result**, no output.
 
 For example, in some cases official apps use this with
 [error](Error%20codes.md "wikilink") 0x2A2 then uses svcBreak.
+
+#### BeginBlockingHomeButton
+
+Takes an input s64 nanoseconds, no output. The input nanoseconds can be
+zero.
 
 #### NotifyRunning
 
