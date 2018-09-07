@@ -143,7 +143,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 
 ## ListApplicationRecord
 
-Takes a type-6 output buffer and an u64.
+Takes a type-6 output buffer and an u32 entry\_offset.
 
 Returns an array of title-info entries using the specified offset and
 size. No input titleID is passed to
