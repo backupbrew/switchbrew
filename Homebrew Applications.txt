@@ -218,7 +218,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 8BitWonder
 | [https://github.com/16BitWonder/Pixel-Painter-Switch/releases Here]
 | [https://github.com/16BitWonder/Pixel-Painter-Switch Yes]
-| 2018-02-21
+| 2018-09-06
 |-
 | Postal-NX
 | An isometric top-down shooter video game from 1997
