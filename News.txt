@@ -9,7 +9,7 @@ For older news, see the [[:News/Archive|news archive]].
 
 === News ===
 <!-- Add news below --></noinclude>
+*'''9 September 18''' [https://devkitpro.org/viewtopic.php?f=13&t=8780 libnx v1.4.0] was released alongside a Switch port of mesa/nouveau (GPU library).
 *'''28 July 18''' [https://devkitpro.org/viewtopic.php?f=13&t=8761 devkitA64] r12 and [https://github.com/switchbrew/libnx/releases/tag/v1.3.1 libnx] v1.3.1 were released.
 *'''8 July 18''' [https://github.com/switchbrew/libnx/releases/tag/v1.3.0 libnx] v1.3.0 was released.
 *'''30 May 18''' Nintendo released system update [[5.1.0]].
-*'''16 April 18''' Nintendo released system update [[5.0.2]].
