@@ -1,3 +1,5 @@
+  - **16 April 18** Nintendo released system update
+    [5.0.2](5.0.2.md "wikilink").
   - **26 March 18** Nintendo released system update
     [5.0.1](5.0.1.md "wikilink").
   - **12 March 18** Nintendo released system update
