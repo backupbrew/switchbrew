@@ -1294,8 +1294,8 @@ During boot, the BootROM saves the BCT in IRAM at address 0x40000100. The preced
 |-
 |  0x1C
 |  0x04
-|  unk1
-|  
+|  bootrom_lockdown_value
+|  This is the value that gets written into SB_CSR before nvboot. (0x10)
 |-
 |  0x20
 |  0x04
@@ -1389,7 +1389,7 @@ During boot, the BootROM saves the BCT in IRAM at address 0x40000100. The preced
  |-
  |  0x00
  |  0x04
- |  bootloader_idx
+ |  is_active
  |-
  |  0x04
  |  0x04

@@ -501,8 +501,8 @@ follows:
 <tr class="even">
 <td><p>0x1C</p></td>
 <td><p>0x04</p></td>
-<td><p>unk1</p></td>
-<td></td>
+<td><p>bootrom_lockdown_value</p></td>
+<td><p>This is the value that gets written into SB_CSR before nvboot. (0x10)</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x20</p></td>
@@ -616,7 +616,7 @@ follows:
 <tr class="odd">
 <td><p>0x00</p></td>
 <td><p>0x04</p></td>
-<td><p>bootloader_idx</p></td>
+<td><p>is_active</p></td>
 </tr>
 <tr class="even">
 <td><p>0x04</p></td>
