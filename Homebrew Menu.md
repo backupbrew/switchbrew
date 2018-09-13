@@ -39,3 +39,42 @@ setup run `nxlink `<nrofile> if your network can handle UDP broadcast
 messages. If nxlink fails with "No response from Switch\!" you can use
 `-a `<ip address> before <nrofile> for the address to send the app to.
 See nxlink help for more options.
+
+# Themes
+
+NOTE: This is not yet available with the latest hbmenu release.
+
+A theme can be optionally loaded from SD
+"/config/nx-hbmenu/themes/theme.cfg". This uses
+[libconfig](https://hyperrealm.github.io/libconfig/libconfig_manual.html).
+Default settings will be used for any settings not specified in the
+theme.
+
+The string used for displaying the A/B button can be set with
+buttonAText/buttonBText, but normally this can be left at the defaults.
+Remove/comment the sample enableWaveBlending line to enable wave
+blending.
+
+Sample theme file:
+
+`lightTheme={`  
+`    textColor=(0,0,0,255);`  
+`    frontWaveColor=(255,102,204,255);`  
+`    middleWaveColor=(255,51,153,255);`  
+`    backWaveColor=(204,0,153,255);`  
+`    backgroundColor=(233,236,241,255);`  
+`    highlightColor=(255,77,166,255);`  
+`    separatorColor=(128,0,128,255);`  
+`    enableWaveBlending=0;`  
+`};`  
+  
+`darkTheme={`  
+`    textColor=(255,255,255,255);`  
+`    frontWaveColor=(255,51,153,255);`  
+`    middleWaveColor=(255,102,204,255);`  
+`    backWaveColor=(204,0,153,255);`  
+`    backgroundColor=(0,0,0,255);`  
+`    highlightColor=(255,77,166,255);`  
+`    separatorColor=(255,255,255,255);`  
+`    enableWaveBlending=0;`  
+`};`
