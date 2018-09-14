@@ -21,7 +21,7 @@ NOTE: This is not yet available with the latest hbmenu release.
 
 A theme can be optionally loaded from SD "/config/nx-hbmenu/themes/theme.cfg". This uses [https://hyperrealm.github.io/libconfig/libconfig_manual.html libconfig]. Default settings will be used for any settings not specified in the theme.
 
-The string used for displaying the A/B button can be set with buttonAText/buttonBText, but normally this can be left at the defaults. Remove/comment the sample enableWaveBlending line to enable wave blending.
+The string used for displaying the A/B button can be set with buttonAText/buttonBText, but normally this can be left at the defaults. Change the value of the enableWaveBlending field to 1 to enable wave blending.
 
 Sample theme file:
 

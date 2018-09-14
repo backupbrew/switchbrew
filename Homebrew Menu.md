@@ -52,7 +52,7 @@ theme.
 
 The string used for displaying the A/B button can be set with
 buttonAText/buttonBText, but normally this can be left at the defaults.
-Remove/comment the sample enableWaveBlending line to enable wave
+Change the value of the enableWaveBlending field to 1 to enable wave
 blending.
 
 Sample theme file:
