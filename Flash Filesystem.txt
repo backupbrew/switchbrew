@@ -404,9 +404,9 @@ This is a listing of known System Savedata and what titles they correspond to.
 |-
 | 0x8000000000001050 || || || Contains database.dat. Possibly Mii data and Mii texture data?
 |-
-| 0x8000000000001070 || || || 
-|-
 | 0x8000000000001060 || || || 
+|-
+| 0x8000000000001070 || || || 
 |-
 | 0x80000000000010B0 || || || 
 |-
