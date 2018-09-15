@@ -182,8 +182,8 @@ __NOTOC__
 |-
 | 0x63 || svcGetDebugEvent || X0=[[#DebugEventInfo]]*, W1=debug_handle || W0=result
 |-
-| 0x64 || svcContinueDebugEvent || [Until 3.0.0] W0=debug_handle, W1=[[#ContinueDebugFlagsOld]], X2=thread_id 
-[3.0.0 +] W0=debug_handle, W1=[[#ContinueDebugFlags]], X2=thread_id_list(u64 *), W3=num_tids (max 64, 0 means "all threads")
+| 0x64 || svcContinueDebugEvent || [1.0.0-2.3.0] W0=debug_handle, W1=[[#ContinueDebugFlagsOld]], X2=thread_id 
+[3.0.0+] W0=debug_handle, W1=[[#ContinueDebugFlags]], X2=thread_id_list(u64 *), W3=num_tids (max 64, 0 means "all threads")
 || W0=result
 |-
 | 0x65 || svcGetProcessList || X1=pids_out_ptr, W2=max_out || W0=result, W1=num_out 
@@ -1829,7 +1829,7 @@ On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool
 |}
 
 == ContinueDebugFlagsOld ==
-Until [[3.0.0]]:
+[1.0.0-2.3.0]
 
 {| class=wikitable
 ! Bit || Bitmask || Description
@@ -1842,7 +1842,7 @@ Until [[3.0.0]]:
 |}
 
 == ContinueDebugFlags ==
-Starting from [[3.0.0]]:
+[3.0.0+]
 
 {| class=wikitable
 ! Bit || Bitmask || Description
@@ -1961,7 +1961,7 @@ Exception specific:
 |-
 | 8 || Exception_BadSvcId
 |-
-| 9 || Exception_SError (not in 1.0)
+| 9 || Exception_SError [not in 1.0.0]
 |}
 
 * Undefined instructions, software breakpoints, some other traps.
