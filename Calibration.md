@@ -76,6 +76,7 @@ partition.
 | 0x3D70 | 0x240  | \[5.0.0+\] unk\_key0                |                                                                                       |
 | 0x3FC0 | 0x240  | \[5.0.0+\] unk\_key1                |                                                                                       |
 | 0x4210 | 0x04   | \[5.0.0+\] unk\_id                  |                                                                                       |
+| 0x4310 | 0x04   | \[6.0.0+\] unk\_id2                 |                                                                                       |
 |        |        |                                     |                                                                                       |
 
 ## Error detection

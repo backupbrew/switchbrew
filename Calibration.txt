@@ -309,6 +309,11 @@ This is the raw data stored under the PRODINFO partition.
 |  [5.0.0+] unk_id
 |  
 |-
+|  0x4310
+|  0x04
+|  [6.0.0+] unk_id2
+|  
+|-
 |}
 
 == Error detection ==
