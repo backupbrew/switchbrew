@@ -198,6 +198,226 @@ Standard ARM PCSI SMC. Turns on the CPU (CPU1, CPU2 or CPU3).
 === GetConfig ===
 Takes a '''config_item''' and returns an associated '''config_val'''.
 
+{| class="wikitable" border="1"
+|-
+! ConfigItem || Name
+|-
+| 1 || [[#DisableProgramVerification]]
+|-
+| 2 || [[#DramId]]
+|-
+| 3 || [[#SecurityEngineIrqNumber]]
+|-
+| 4 || [[#Version]]
+|-
+| 5 || [[#HardwareType]]
+|-
+| 6 || [[#IsRetail]]
+|-
+| 7 || [[#IsRecoveryBoot]]
+|-
+| 8 || [[#DeviceId]]
+|-
+| 9 || [1.0.0-4.0.0] [[#BootReason]]
+|-
+| 10 || [[#MemoryArrange]]
+|-
+| 11 || [[#IsDebugMode]]
+|-
+| 12 || [[#KernelMemoryConfiguration]]
+|-
+| 13 || [[#IsChargerHiZModeEnabled]]
+|-
+| 14 || [4.0.0+] [[#IsKiosk]]
+|-
+| 15 || [5.0.0+] [[#NewHardwareType]]
+|-
+| 16 || [5.0.0+] [[#NewKeyGeneration]]
+|-
+| 17 || [5.0.0+] [[#Package2Hash]]
+|}
+
+==== DisableProgramVerification ====
+[[Process Manager services|PM]] checks this item and if non-zero, calls fsp-pr SetEnabledProgramVerification(false).
+
+==== DramId ====
+This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
+
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Description
+|-
+|  0
+|  DramId_EristaIcosaSamsung4gb
+|-
+|  1
+|  DramId_EristaIcosaHynix4gb
+|-
+|  2
+|  DramId_EristaIcosaMicron4gb
+|-
+|  3
+|  Reserved
+|-
+|  4
+|  DramId_EristaIcosaSamsung6gb
+|-
+|  5
+|  [5.0.0+] Reserved
+|-
+|  6
+|  [5.0.0+] Reserved
+|-
+|  7
+|  [5.0.0+] DramId_MarikoIowax1x2Samsung4gb
+|-
+|  8
+|  [5.0.0+] DramId_MarikoIowaSamsung4gb
+|-
+|  9
+|  [5.0.0+] DramId_MarikoIowaSamsung8gb
+|-
+|  10
+|  [5.0.0+] Reserved
+|-
+|  11
+|  [5.0.0+] Reserved
+|-
+|  12
+|  [5.0.0+] DramId_MarikoHoagSamsung4gb
+|-
+|  13
+|  [5.0.0+] DramId_MarikoHoagSamsung8gb
+|}
+
+[[PCV_services|PCV]] configures memory profiles based on DramId.
+{| class="wikitable" border="1"
+|-
+!  Platform
+!  DramId
+!  Version
+|-
+|  jetson-tx1
+|  N/A
+|  11_40800_01_V9.8.3_V1.6
+|-
+|  nx-abcb
+|  EristaIcosaSamsung4gb
+|  10_40800_NoCfgVersion_V9.8.7_V1.6
+|-
+|  nx-abcb
+|  EristaIcosaMicron4gb
+|  10_40800_NoCfgVersion_V9.8.4_V1.6
+|-
+|  nx-abcb
+|  EristaIcosaHynix4gb
+|  10_40800_NoCfgVersion_V9.8.4_V1.6
+|-
+|  nx-abca2
+|  EristaIcosaSamsung4gb or EristaIcosaMicron4gb
+|  10_40800_NoCfgVersion_V9.8.7_V1.6
+|-
+|  nx-abca2
+|  EristaIcosaHynix4gb
+|  10_40800_NoCfgVersion_V9.8.7_V1.6
+|-
+|  nx-abca2
+|  EristaIcosaSamsung6gb
+|  10_40800_NoCfgVersion_V9.8.7_V1.6
+|-
+|  nx-abca2
+|  MarikoIowax1x2Samsung4gb
+|  01_204000_NoCfgVersion_V0.3.1_V2.0
+|-
+|  nx-abca2
+|  MarikoIowaSamsung4gb or MarikoHoagSamsung4gb
+|  01_204000_NoCfgVersion_V0.3.1_V2.0
+|-
+|  nx-abca2
+|  MarikoIowaSamsung8gb or MarikoHoagSamsung8gb
+|  01_204000_NoCfgVersion_V0.4.2_V2.0
+|}
+
+nx-abcb (Copper) is the SDEV unit. Among other differences, this has extra hardware to support HDMI output.
+
+nx-abca2 (Icosa) hardware types are variations of the retail form factor.
+
+==== SecurityEngineIrqNumber ====
+SPL uses this for setting up the security engine IRQ.
+
+==== Version ====
+The current [[Package2#Versions|Package1 Maxver Constant]] - 1.
+
+==== HardwareType ====
+[1.0.0+] This item is obtained by checking bits 8 and 2 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
+
+[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 3 (Mariko) or 4 (Invalid).
+
+A value of 2 (Hoag?) is always mapped to 4 (Invalid).
+
+==== IsRetail ====
+This item is obtained by checking bits 9 and 0-1 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Debug), 1 (Retail) or 2 (Invalid).
+
+==== IsRecoveryBoot ====
+Used to determine if the system is booting from SafeMode firmware.
+
+==== DeviceId ====
+[[NIM_services|NIM]] checks if this item matches the [[Settings_services|set:cal]] DeviceId with byte7 cleared. If they don't match, a panic is thrown.
+
+==== BootReason ====
+Used to determine how the system booted.
+
+==== MemoryArrange ====
+[[Process Manager services|PM]] uses this item for selecting the appropriate size for each [[SVC#LimitableResource|LimitableResource_Memory]].
+
+==== IsDebugMode ====
+Kernel uses this to determine behavior of svcBreak positive arguments. It will break instead of just force-exiting the process which is what happens on retail.
+
+[2.0.0+] This is also used with certain debug [[SVC|SVCs]].
+
+[3.0.0+] [[Loader services|RO]] checks this and if set then skipping NRR rsa signatures is allowed.
+
+The value of this field is loaded from [[BootConfig]] unsigned-config+0x10 u8 bit1.
+
+==== KernelMemoryConfiguration ====
+Kernel reads this when setting up memory-related code. If bit0 is set, it will memset various allocated memory-regions with 0x58, 0x59, 0x5A ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB of DRAM instead of 4GB.
+
+==== IsChargerHiZModeEnabled ====
+This tells if the TI Charger (bq24192) is active.
+
+==== NewKeyGeneration ====
+This item is obtained from [[Fuse_registers#FUSE_RESERVED_ODM2|FUSE_RESERVED_ODM2]] if bit 11 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]] is set, [[Fuse_registers#FUSE_RESERVED_ODM0|FUSE_RESERVED_ODM0]] matches 0x8E61ECAE and [[Fuse_registers#FUSE_RESERVED_ODM1|FUSE_RESERVED_ODM1]] matches 0xF2BA3BB2.
+
+[5.0.0+] [[Filesystem services|FS]] can now use this value for the '''KeyGeneration''' parameter when calling [[#GenerateAesKek|GenerateAesKek]] during "GetBisEncryptionKey".
+
+==== IsKiosk ====
+This item is bit 10 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]].
+
+[4.0.0+] [[Settings_services|Settings]] uses this value to overwrite the quest flag from [[Settings_services#set:sys|GetQuestFlag]]. This is used to detect if a Switch is a kiosk unit for display at retail stores.
+
+==== NewHardwareType ====
+This item is currently hardcoded to 0.
+
+[5.0.0+] [[PCV_services|PCV]] overrides the value from [[#HardwareType|HardwareType]] and configures PMIC devices with this item.
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Devices
+|-
+|  0
+|  max77620_sd0, max77621_cpu and max77621_gpu
+|-
+|  1
+|  max77620_sd0, max77812_cpu and max77812_gpu
+|-
+|  2
+|  max77620_sd0, max77812_cpu and max77812_gpu
+|}
+
+==== Package2Hash ====
+This is a SHA-256 hash calculated over the [[Package2|package2]] image. Since the hash calculation is an optional step in pkg2ldr, this item is only valid in recovery mode. Otherwise, an error is returned instead.
+
 === GetRandomBytes ===
 Takes a '''size''' and returns '''rand_bytes'''.
 
