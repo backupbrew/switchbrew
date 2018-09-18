@@ -367,9 +367,10 @@ instead of zero. This allows Nintendo devs to find uninitialized memory
 bugs.
 
 Bit 1 is a boolean determining whether kernel should forcefully enable
-usermode exception handlers (when false, only data aborts/prefetch
-aborts that occur when the faulting address is in a readable region with
-MemoryType\_CodeStatic will trigger usermode exception handlers).
+usermode exception handlers (when false, only certain aborts (((1LL \<\<
+(esr \>\> 26)) & 0x1115804400224001) == 0, typically data/prefetch
+aborts) that occur when the faulting address is in a readable region
+with MemoryType\_CodeStatic will trigger usermode exception handlers).
 
 Bit 2 is a boolean determining whether kernel should enable usermode
 access to the Performance Monitors (whether PMUSERENR\_EL0 should be 1

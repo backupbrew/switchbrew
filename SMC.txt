@@ -385,7 +385,7 @@ Kernel reads this when setting up memory-related code.
 
 Bit 0 is a boolean determining whether kernel should it will memset various allocated memory-regions with 0x58, 0x59, 0x5A ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find uninitialized memory bugs.
 
-Bit 1 is a boolean determining whether kernel should forcefully enable usermode exception handlers (when false, only data aborts/prefetch aborts that occur when the faulting address is in a readable region with MemoryType_CodeStatic will trigger usermode exception handlers).
+Bit 1 is a boolean determining whether kernel should forcefully enable usermode exception handlers (when false, only certain aborts (((1LL << (esr >> 26)) & 0x1115804400224001) == 0, typically data/prefetch aborts) that occur when the faulting address is in a readable region with MemoryType_CodeStatic will trigger usermode exception handlers).
 
 Bit 2 is a boolean determining whether kernel should enable usermode access to the Performance Monitors (whether PMUSERENR_EL0 should be 1 or 0).
 
