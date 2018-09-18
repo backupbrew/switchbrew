@@ -239,7 +239,7 @@ Takes a **config\_item** and returns an associated
 | 9          | \[1.0.0-4.0.0\] [\#BootReason](#BootReason "wikilink")                 |
 | 10         | [\#MemoryArrange](#MemoryArrange "wikilink")                           |
 | 11         | [\#IsDebugMode](#IsDebugMode "wikilink")                               |
-| 12         | [\#KernelFlags](#KernelFlags "wikilink")                               |
+| 12         | [\#KernelConfiguration](#KernelConfiguration "wikilink")               |
 | 13         | [\#IsChargerHiZModeEnabled](#IsChargerHiZModeEnabled "wikilink")       |
 | 14         | \[4.0.0+\] [\#IsKiosk](#IsKiosk "wikilink")                            |
 | 15         | \[5.0.0+\] [\#NewHardwareType](#NewHardwareType "wikilink")            |
@@ -357,7 +357,7 @@ then skipping NRR rsa signatures is allowed.
 The value of this field is loaded from
 [BootConfig](BootConfig.md "wikilink") unsigned-config+0x10 u8 bit1.
 
-#### KernelFlags
+#### KernelConfiguration
 
 Kernel reads this when setting up memory-related code.
 

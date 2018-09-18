@@ -224,7 +224,7 @@ Takes a '''config_item''' and returns an associated '''config_val'''.
 |-
 | 11 || [[#IsDebugMode]]
 |-
-| 12 || [[#KernelFlags]]
+| 12 || [[#KernelConfiguration]]
 |-
 | 13 || [[#IsChargerHiZModeEnabled]]
 |-
@@ -380,7 +380,7 @@ Kernel uses this to determine behavior of svcBreak positive arguments. It will b
 
 The value of this field is loaded from [[BootConfig]] unsigned-config+0x10 u8 bit1.
 
-==== KernelFlags ====
+==== KernelConfiguration ====
 Kernel reads this when setting up memory-related code. 
 
 Bit 0 is a boolean determining whether kernel should it will memset various allocated memory-regions with 0x58, 0x59, 0x5A ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find uninitialized memory bugs.
