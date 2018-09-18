@@ -1,7 +1,7 @@
 Note: Game updates have the same titleID as the main application, except with bitmask 0x800 set.
 
 = Applications / Games =
-{| class=wikitable sortable
+{| class="wikitable sortable"
 ! TitleID || Description || Region || Minimum Required OS || Distribution Method || Title Versions || Cartridge Description || Type
 |-
 | 0100000000010000 || Super Mario Odyssey™ || CHN EUR JPN KOR USA || 3.0.1 || Digital / Cartridge || 0 65536 131072 196608 || || Application / Game
@@ -3253,7 +3253,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |}
 
 = Demos =
-{| class=wikitable sortable
+{| class="wikitable sortable"
 ! TitleID || Description || Region || Minimum Required OS || Distribution Method || Title Versions || Cartridge Description || Type
 |-
 | 0100618004096000 || Robonauts Demo || EUR USA || 3.0.1 || Digital || 0 65536 || || Demo
