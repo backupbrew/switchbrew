@@ -239,7 +239,7 @@ Takes a **config\_item** and returns an associated
 | 9          | \[1.0.0-4.0.0\] [\#BootReason](#BootReason "wikilink")                 |
 | 10         | [\#MemoryArrange](#MemoryArrange "wikilink")                           |
 | 11         | [\#IsDebugMode](#IsDebugMode "wikilink")                               |
-| 12         | [\#KernelMemoryConfiguration](#KernelMemoryConfiguration "wikilink")   |
+| 12         | [\#UnitConfiguration](#UnitConfiguration "wikilink")                   |
 | 13         | [\#IsChargerHiZModeEnabled](#IsChargerHiZModeEnabled "wikilink")       |
 | 14         | \[4.0.0+\] [\#IsKiosk](#IsKiosk "wikilink")                            |
 | 15         | \[5.0.0+\] [\#NewHardwareType](#NewHardwareType "wikilink")            |
@@ -357,13 +357,17 @@ then skipping NRR rsa signatures is allowed.
 The value of this field is loaded from
 [BootConfig](BootConfig.md "wikilink") unsigned-config+0x10 u8 bit1.
 
-#### KernelMemoryConfiguration
+#### UnitConfiguration
 
 Kernel reads this when setting up memory-related code. If bit0 is set,
 it will memset various allocated memory-regions with 0x58, 0x59, 0x5A
 ('X', 'Y', 'Z') instead of zero. This allows Nintendo devs to find
 uninitialized memory bugs. If bit17-16 is 0b01, the kernel assumes 6GB
 of DRAM instead of 4GB.
+
+bit1 and bit2 are boolean values. If bit15-8 is zero, kernel will loop
+forever without calling smcPanic, nonzero smcPanics with 0xf00 and then
+loops.
 
 #### IsChargerHiZModeEnabled
 
