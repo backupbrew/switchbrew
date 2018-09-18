@@ -20,7 +20,7 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
-  - **18 September 18** [switch-mesa v18.2β and
+  - **18 September 18** [libnx 1.4.1, switch-mesa v18.2β and
     switch-examples 20180918](https://devkitpro.org/viewtopic.php?f=13&t=8784)
     were released.
   - **9 September 18** [libnx
