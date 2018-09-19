@@ -46,10 +46,17 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 *  Compatibility improvements have been made for a controller licensed by Nintendo
 
 ==System Titles==
-<fill this in (manually) later>
+* All sysmodules were updated.
+* Most 8XX titles were updated.
+* All applets except "error" and "cabinet" were updated.
+* 1 new title was added: olsc-sysmodule.
+* New services were added, see [[Services_API|here]].
 
 ===[[USB_services|USB-sysmodule]]===
 The only sysmodule with any changes for accessible IO in the [[NPDM]] was USB-sysmodule. The IO page for the [[Fuses|fuse registers]] is now accessible by this sysmodule.
+
+===olsc-sysmodule===
+This new sysmodule handles cloud saves.
 
 ==See Also==
 System update report(s):
