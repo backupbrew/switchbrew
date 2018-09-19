@@ -368,6 +368,28 @@ modules](Package2#Section%201.md##Section_1 "wikilink").
 <td><p>Everyone</p></td>
 </tr>
 <tr class="odd">
+<td><p>Single null-byte stack overflow in Loader ContentPath parsing</p></td>
+<td><p>Previously, loader content path parsing looked like this, where path_from_lr was up to 0x300 bytes and not necessarily null-terminated:</p>
+<p><code> char nca_path[0x300] = {0};</code><br />
+<code> strcat(nca_path, path_from_lr);</code><br />
+<code> for (int i = 0; nca_path[i]; i++) {</code><br />
+<code>     if (nca_path[i] == '\\') { nca_path[i] = '/'); }</code><br />
+<code> }</code></p>
+<p>Thus, a content path of the maximum length (0x300 bytes) would result in strcat writing a NULL terminator past the end of the nca_path buffer.</p>
+<p>This was fixed in <a href="6.0.0.md" title="wikilink">6.0.0</a>, the new code looks like this:</p>
+<p><code> char nca_path[0x300];</code><br />
+<code> strncpy(nca_path, path_from_lr, sizeof(nca_path));</code><br />
+<code> for (int i = 0; i  &lt; sizeof(nca_path) &amp;&amp; nca_path[i]; i++) {</code><br />
+<code>     if (nca_path[i] == '\\') { nca_path[i] = '/'); }</code><br />
+<code> }</code></p></td>
+<td><p>With access to &quot;lr&quot;: single null-byte stack overflow in Loader. Maybe (but probably not) loader code execution.</p></td>
+<td><p><a href="6.0.0.md" title="wikilink">6.0.0</a></p></td>
+<td><p><a href="6.0.0.md" title="wikilink">6.0.0</a></p></td>
+<td><p>September 2, 2018</p></td>
+<td><p>September 19, 2018</p></td>
+<td><p>SciresM</p></td>
+</tr>
+<tr class="even">
 <td></td>
 <td></td>
 <td></td>

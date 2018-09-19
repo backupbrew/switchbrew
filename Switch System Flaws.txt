@@ -304,6 +304,33 @@ This appears to have been fixed by only allowing .nsp when the input fstype==7 f
 | April 23, 2018
 | Everyone
 |-
+| Single null-byte stack overflow in Loader ContentPath parsing
+| Previously, loader content path parsing looked like this, where path_from_lr was up to 0x300 bytes and not necessarily null-terminated:
+
+  char nca_path[0x300] = {0};
+  strcat(nca_path, path_from_lr);
+  for (int i = 0; nca_path[i]; i++) {
+      if (nca_path[i] == '\\') { nca_path[i] = '/'); }
+  }
+
+Thus, a content path of the maximum length (0x300 bytes) would result in strcat writing a NULL terminator past the end of the nca_path buffer.
+
+This was fixed in [[6.0.0]], the new code looks like this:
+
+  char nca_path[0x300];
+  strncpy(nca_path, path_from_lr, sizeof(nca_path));
+  for (int i = 0; i  < sizeof(nca_path) && nca_path[i]; i++) {
+      if (nca_path[i] == '\\') { nca_path[i] = '/'); }
+  }
+
+
+| With access to "lr": single null-byte stack overflow in Loader. Maybe (but probably not) loader code execution.
+| [[6.0.0]]
+| [[6.0.0]]
+| September 2, 2018
+| September 19, 2018
+| SciresM
+|-
 |}
 
 === System Modules ===
