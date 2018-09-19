@@ -98,6 +98,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 34 || [5.0.0+] GetCacheStorageSize
 |-
+| 35 || [6.0.0+] ? (Takes a total of 0xB0-bytes of input, no output)
+|-
 | 51 || [[#OpenSaveDataFileSystem]]
 |-
 | 52 || [[#OpenSaveDataFileSystemBySystemSaveDataId]]
@@ -122,15 +124,25 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 66 || [5.0.0+] WriteSaveDataFileSystemExtraData2
 |-
+| 67 || [6.0.0+] ? (Takes a total of 0x50-bytes of input, returns 8-bytes of output, and a type-0x6 output buffer)
+|-
+| 68 || [6.0.0+] ? (Takes a total of 0x50-bytes of input, returns an [[#ISaveDataInfoReader]])
+|-
 | 80 || OpenSaveDataMetaFile
 |-
 | 81 || [4.0.0+] OpenSaveDataTransferManager
 |-
 | 82 || [5.0.0+] OpenSaveDataTransferManagerVersion2
 |-
+| 83 || [6.0.0+] ? (Takes a total of 0x8-bytes of input, returns an [[#IUnknown0]])
+|-
+| 84 || [6.0.0+] ? (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)
+|-
 | 100 || OpenImageDirectoryFileSystem
 |-
 | 110 || [[#OpenContentStorageFileSystem]]
+|-
+| 120 || [6.0.0+] ? (Takes 4-bytes of input, returns an [[#IFileSystem]])
 |-
 | 200 || OpenDataStorageByCurrentProcess
 |-
@@ -149,6 +161,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 510 || [5.0.0+] OpenSystemDataUpdateEventNotifier
 |-
 | 511 || [5.0.0+] NotifySystemDataUpdateEvent
+|-
+| 520 || [6.0.0+] ? (Takes a total of 0xC-bytes of input, no output)
 |-
 | 600 || [1.0.0-3.0.2] SetCurrentPosixTime
 |-
@@ -225,6 +239,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 1010 || [5.1.0+]
 |-
 | 1100 || [4.0.0+] OverrideSaveDataTransferTokenSignVerificationKey
+|-
+| 1200 || [6.0.0+] ? (No input, returns an output [[#IUnknown1]])
 |}
 
 == Permissions ==
