@@ -85,8 +85,8 @@ Takes a pid.
 <td><p>tcap: Thermal-related?</p></td>
 </tr>
 <tr class="even">
-<td><p>[1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry, [6.0.0+] avm</p>
-<p>[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd</p></td>
+<td><p>[1.0.0-2.3.0] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry</p>
+<p>[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd, [6.0.0+] avm</p></td>
 <td><p><a href="NS Services.md" title="wikilink">NS Services</a></p></td>
 <td><p>am: Application Manager, su: System Update</p></td>
 </tr>
@@ -267,7 +267,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>pctl, pctl:a, pctl:s, pctl:r, [6.0.0+] srepo:u</p></td>
+<td><p>pctl, pctl:a, pctl:s, pctl:r</p></td>
 <td><p><a href="Parental Control services.md" title="wikilink">Parental Control services</a></p></td>
 <td></td>
 </tr>

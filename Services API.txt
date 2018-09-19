@@ -67,9 +67,9 @@ Takes a pid.
 | [[AM services]]
 | tcap: Thermal-related?
 |-
-| [1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry, [6.0.0+] avm
+| [1.0.0-2.3.0] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry
 
-[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd
+[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd, [6.0.0+] avm
 | [[NS Services]]
 | am: Application Manager, su: System Update
 |-
@@ -216,7 +216,7 @@ Takes a pid.
 | [[PCIe services]]
 |
 |-
-| pctl, pctl:a, pctl:s, pctl:r, [6.0.0+] srepo:u
+| pctl, pctl:a, pctl:s, pctl:r
 | [[Parental Control services]]
 |
 |-
