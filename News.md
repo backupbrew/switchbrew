@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **18 September 18** Nintendo released system update
+    [6.0.0](6.0.0.md "wikilink").
   - **18 September 18** [libnx 1.4.1, switch-mesa v18.2β and
     switch-examples 20180918](https://devkitpro.org/viewtopic.php?f=13&t=8784)
     were released.
@@ -30,6 +32,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     [devkitA64](https://devkitpro.org/viewtopic.php?f=13&t=8761) r12 and
     [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.3.1)
     v1.3.1 were released.
-  - **8 July 18**
-    [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.3.0)
-    v1.3.0 was released.
