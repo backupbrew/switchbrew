@@ -62,6 +62,8 @@ This new sysmodule handles cloud saves.
 
 ====Secure Monitor====
 
+.rwdata was reduced in size from two pages to one page. Additionally:
+
 Changes were made relating to security engine usage:
 * Many functions which previously used an inline GetSecurityEngine() call to get the security engine register address now take in a register base as an argument. This is presumably to facilitate moved Security Engine MMIO on the Mariko SoC.
 * Keyslots 0-8, 0xA, 0xC-0xE now have flags 0x1FF set, and keyslot 0xB now additionally has flags 0x17F set.
