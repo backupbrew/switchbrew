@@ -675,46 +675,49 @@ are available (in that case the out u64 is value 0).
 This is
 "nn::fssrv::sf::IDeviceOperator".
 
-| Cmd | Name                                                                           |
-| --- | ------------------------------------------------------------------------------ |
-| 0   | IsSdCardInserted                                                               |
-| 1   | GetSdCardSpeedMode                                                             |
-| 2   | \[2.0.0+\] GetSdCardCid                                                        |
-| 3   | \[2.0.0+\] GetSdCardUserAreaSize                                               |
-| 4   | \[2.0.0+\] GetSdCardProtectedAreaSize                                          |
-| 5   | \[2.0.0+\] GetAndClearSdCardErrorInfo                                          |
-| 100 | GetMmcCid                                                                      |
-| 101 | GetMmcSpeedMode                                                                |
-| 110 | EraseMmc                                                                       |
-| 111 | GetMmcPartitionSize                                                            |
-| 112 | \[2.0.0+\] GetMmcPatrolCount                                                   |
-| 113 | \[2.0.0+\] GetAndClearMmcErrorInfo                                             |
-| 114 | \[2.0.0+\] GetMmcExtendedCsd                                                   |
-| 115 | \[4.0.0+\] SuspendMmcPatrol                                                    |
-| 116 | \[4.0.0+\] ResumeMmcPatrol                                                     |
-| 200 | IsGameCardInserted                                                             |
-| 201 | EraseGameCard                                                                  |
-| 202 | GetGameCardHandle                                                              |
-| 203 | [\#GetGameCardUpdatePartitionInfo](#GetGameCardUpdatePartitionInfo "wikilink") |
-| 204 | FinalizeGameCardDriver                                                         |
-| 205 | GetGameCardAttribute                                                           |
-| 206 | GetGameCardDeviceCertificate                                                   |
-| 207 | GetGameCardAsicInfo                                                            |
-| 208 | GetGameCardIdSet                                                               |
-| 209 | WriteToGameCard                                                                |
-| 210 | SetVerifyWriteEnalbleFlag                                                      |
-| 211 | GetGameCardImageHash                                                           |
-| 212 | \[2.0.0+\] GetGameCardErrorInfo                                                |
-| 213 | \[2.0.0+\] EraseAndWriteParamDirectly                                          |
-| 214 | \[2.0.0+\] ReadParamDirectly                                                   |
-| 215 | \[2.0.0+\] ForceEraseGameCard                                                  |
-| 216 | \[2.0.0+\] GetGameCardErrorInfo2                                               |
-| 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                          |
-| 218 | \[3.0.0+\] GetGameCardDeviceId                                                 |
-| 300 | SetSpeedEmulationMode                                                          |
-| 301 | GetSpeedEmulationMode                                                          |
-| 400 | \[5.0.0+\] SuspendSdmmcControl                                                 |
-| 401 | \[5.0.0+\] ResumeSdmmcControl                                                  |
+| Cmd | Name                                                                                   |
+| --- | -------------------------------------------------------------------------------------- |
+| 0   | IsSdCardInserted                                                                       |
+| 1   | GetSdCardSpeedMode                                                                     |
+| 2   | \[2.0.0+\] GetSdCardCid                                                                |
+| 3   | \[2.0.0+\] GetSdCardUserAreaSize                                                       |
+| 4   | \[2.0.0+\] GetSdCardProtectedAreaSize                                                  |
+| 5   | \[2.0.0+\] GetAndClearSdCardErrorInfo                                                  |
+| 100 | GetMmcCid                                                                              |
+| 101 | GetMmcSpeedMode                                                                        |
+| 110 | EraseMmc                                                                               |
+| 111 | GetMmcPartitionSize                                                                    |
+| 112 | \[2.0.0+\] GetMmcPatrolCount                                                           |
+| 113 | \[2.0.0+\] GetAndClearMmcErrorInfo                                                     |
+| 114 | \[2.0.0+\] GetMmcExtendedCsd                                                           |
+| 115 | \[4.0.0+\] SuspendMmcPatrol                                                            |
+| 116 | \[4.0.0+\] ResumeMmcPatrol                                                             |
+| 200 | IsGameCardInserted                                                                     |
+| 201 | EraseGameCard                                                                          |
+| 202 | GetGameCardHandle                                                                      |
+| 203 | [\#GetGameCardUpdatePartitionInfo](#GetGameCardUpdatePartitionInfo "wikilink")         |
+| 204 | FinalizeGameCardDriver                                                                 |
+| 205 | GetGameCardAttribute                                                                   |
+| 206 | GetGameCardDeviceCertificate                                                           |
+| 207 | GetGameCardAsicInfo                                                                    |
+| 208 | GetGameCardIdSet                                                                       |
+| 209 | WriteToGameCard                                                                        |
+| 210 | SetVerifyWriteEnalbleFlag                                                              |
+| 211 | GetGameCardImageHash                                                                   |
+| 212 | \[2.0.0+\] GetGameCardErrorInfo                                                        |
+| 213 | \[2.0.0+\] EraseAndWriteParamDirectly                                                  |
+| 214 | \[2.0.0+\] ReadParamDirectly                                                           |
+| 215 | \[2.0.0+\] ForceEraseGameCard                                                          |
+| 216 | \[2.0.0+\] GetGameCardErrorInfo2                                                       |
+| 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                                  |
+| 218 | \[3.0.0+\] GetGameCardDeviceId                                                         |
+| 300 | SetSpeedEmulationMode                                                                  |
+| 301 | GetSpeedEmulationMode                                                                  |
+| 400 | \[5.0.0+\] SuspendSdmmcControl                                                         |
+| 401 | \[5.0.0+\] ResumeSdmmcControl                                                          |
+| 402 | \[6.0.0+\] ? (Takes a total of 4-bytes of input, returns a total of 8-bytes of output) |
+| 500 | \[6.0.0+\] ? (Takes a total of 0x14-bytes of input, no output)                         |
+| 501 | \[6.0.0+\] ? (Takes a total of 4-bytes of input, no output)                            |
 
 ## GetGameCardUpdatePartitionInfo
 
