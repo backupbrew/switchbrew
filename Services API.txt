@@ -63,11 +63,11 @@ Takes a pid.
 | [[HID services]]
 |
 |-
-| appletAE, appletOE, idle:sys, omm, spsm, [5.0.0+] tcap 
+| appletAE, appletOE, idle:sys, omm, spsm, [5.0.0+] tcap, [6.0.0+] caps:su 
 | [[AM services]]
 | tcap: Thermal-related?
 |-
-| [1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry
+| [1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry, [6.0.0+] avm
 
 [3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd
 | [[NS Services]]
@@ -81,7 +81,7 @@ Takes a pid.
 | [[Glue services]]
 | 
 |-
-| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus, auddebug
+| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus, auddebug, [6.0.0+] auddev
 | [[Audio services]]
 |
 |-
@@ -114,7 +114,7 @@ Takes a pid.
 | [[Capture services]]
 | a: AlbumAccessor, c: AlbumControl
 |-
-| caps:sc, caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0+] caps:su
+| caps:sc, caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0-6.0.0] caps:su
 | [[Display services]]
 | 
 |-
@@ -216,7 +216,7 @@ Takes a pid.
 | [[PCIe services]]
 |
 |-
-| pctl, pctl:a, pctl:s, pctl:r
+| pctl, pctl:a, pctl:s, pctl:r, [6.0.0+] srepo:u
 | [[Parental Control services]]
 |
 |-
@@ -262,11 +262,11 @@ Takes a pid.
 | [[USB services]]
 | 
 |-
-| wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc
+| wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc, [6.0.0+] wlan:dtc
 | [[WLAN services]]
 |
 |-
-| [4.0.0+] grc:c
+| [4.0.0+] grc:c, [6.0.0+] grc:d
 | [[GRC services]]
 | 
 |-

@@ -80,12 +80,12 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>appletAE, appletOE, idle:sys, omm, spsm, [5.0.0+] tcap</p></td>
+<td><p>appletAE, appletOE, idle:sys, omm, spsm, [5.0.0+] tcap, [6.0.0+] caps:su</p></td>
 <td><p><a href="AM services.md" title="wikilink">AM services</a></p></td>
 <td><p>tcap: Thermal-related?</p></td>
 </tr>
 <tr class="even">
-<td><p>[1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry</p>
+<td><p>[1.0.0+] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry, [6.0.0+] avm</p>
 <p>[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd</p></td>
 <td><p><a href="NS Services.md" title="wikilink">NS Services</a></p></td>
 <td><p>am: Application Manager, su: System Update</p></td>
@@ -101,7 +101,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus, auddebug</p></td>
+<td><p>audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus, auddebug, [6.0.0+] auddev</p></td>
 <td><p><a href="Audio services.md" title="wikilink">Audio services</a></p></td>
 <td></td>
 </tr>
@@ -141,7 +141,7 @@ Takes a pid.
 <td><p>a: AlbumAccessor, c: AlbumControl</p></td>
 </tr>
 <tr class="odd">
-<td><p>caps:sc, caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0+] caps:su</p></td>
+<td><p>caps:sc, caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0-6.0.0] caps:su</p></td>
 <td><p><a href="Display services.md" title="wikilink">Display services</a></p></td>
 <td></td>
 </tr>
@@ -267,7 +267,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>pctl, pctl:a, pctl:s, pctl:r</p></td>
+<td><p>pctl, pctl:a, pctl:s, pctl:r, [6.0.0+] srepo:u</p></td>
 <td><p><a href="Parental Control services.md" title="wikilink">Parental Control services</a></p></td>
 <td></td>
 </tr>
@@ -323,12 +323,12 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc</p></td>
+<td><p>wlan:inf, wlan:lcl, wlan:lg, wlan:lga, wlan:sg, wlan:soc, [6.0.0+] wlan:dtc</p></td>
 <td><p><a href="WLAN services.md" title="wikilink">WLAN services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><p>[4.0.0+] grc:c</p></td>
+<td><p>[4.0.0+] grc:c, [6.0.0+] grc:d</p></td>
 <td><p><a href="GRC services.md" title="wikilink">GRC services</a></p></td>
 <td></td>
 </tr>
