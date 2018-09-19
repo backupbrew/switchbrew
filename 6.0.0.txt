@@ -1,6 +1,6 @@
 The Switch 6.0.0 system update was released on September 18, 2018. This Switch update was released for the following regions: ALL.
 
-Security flaws fixed: <fill this in manually later, see the updatedetails page from the ninupdates-report page(s) once available for now>.
+Security flaws fixed: Yes.
 
 ==Change-log==
 [https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
@@ -59,6 +59,40 @@ The only sysmodule with any changes for accessible IO in the [[NPDM]] was USB-sy
 This new sysmodule handles cloud saves.
 
 ===FIRM===
+
+====Secure Monitor====
+
+Changes were made relating to security engine usage:
+* Many functions which previously used an inline GetSecurityEngine() call to get the security engine register address now take in a register base as an argument. This is presumably to facilitate moved Security Engine MMIO on the Mariko SoC.
+* Keyslots 0-8, 0xA, 0xC-0xE now have flags 0x1FF set, and keyslot 0xB now additionally has flags 0x17F set.
+* The Test Vector used to ensure keyslot contents do not change during wake-from-sleep now uses 256-bit AES instead of 128-bit AES (thus the high parts of the keyslot contents are now verified).
+
+Some changes were made to initial SoC setup:
+* Additional magic numbers (0x83 = SKU ID, 0x2 = ?, 0x210 = Tegra 210) are now written into the GPU microcode in DRAM for runtime configuration.
+* The warmboot firmware's firmware revision magic was changed from 0x6 to 0x87.
+* The GPU microcode carveout setup was moved to later during initialization (after package2 has been fully loaded and verified).
+* The IRAM addresses from which [[BootConfig]] warmboot firmware are loaded were changed.
+
+In addition, there were changes to the [[SMC]] interface:
+
+* SMCs which take in a keyslot parameter have been changed to allow use of up to 6 keyslots instead of 4.
+* smcUnwrapRsaOaepWrappedTitleKey now takes in a "type" parameter, and the kek used in key generation is now selected from an array based on this parameter. (smcUnwrapAesWrappedTitlekey hardcodes type 0.)
+* GetConfig(HardwareType) now returns 4 when it previously would have returned 3.
+
+Additionally, security flaws were addressed in smcCpuSuspend (aiming to further mitigate jamais vu/deja vu):
+
+* The number of devices checked to be held in reset at the time of smcCpuSuspend is called is now greatly increased.
+* BPMP SC7 Entry Firmware is now only started ''after'' the following have been done, instead of before:
+** TZRAM contents have been encrypted and MAC'd with a random AES-256 key
+** The PMC scratch registers where the MAC are stored have been verified not to be read or write-locked.
+** The MAC is written into the PMC scratch registers, which are then write-locked.
+** The PMC scratch registers are verified to have been write-locked.
+** The PMC scratch registers are verified to contain the MAC TZ has written into them.
+** The PMC scratch registers are read-locked.
+** The PMC scratch registers are verified to be both read and write-locked.
+** The BPMP's firmware is copied from TZRAM into IRAM
+** memcmp(BPMP firmware in IRAM, BPMP firmware in TZRAM, sizeof(BPMP firmware)) is verified to be zero.
+
 
 ====Kernel====
 * Accidentially exported symbols have been renamed:
