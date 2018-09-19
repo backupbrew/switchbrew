@@ -48,6 +48,9 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+===[[USB_services|USB-sysmodule]]===
+The only sysmodule with any changes for accessible IO in the [[NPDM]] was USB-sysmodule. The IO page for the [[Fuses|fuse registers]] is now accessible by this sysmodule.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=09-18-18_08-35-09&sys=hac]
