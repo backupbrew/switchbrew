@@ -144,3 +144,5 @@ Memory management initialization was greatly changed:
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=09-18-18_08-35-09&sys=hac]
+
+[[Category:System versions]]
