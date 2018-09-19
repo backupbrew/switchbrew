@@ -301,3 +301,8 @@ is now used.
 
 The version field was changed to 0x05, meaning that the fifth keyblob is
 now used.
+
+### 6.0.0
+
+The version field was changed to 0x06, meaning that the sixth keyblob is
+now used.
