@@ -244,9 +244,7 @@ Takes a pid.
 | [[SSL services]]
 |
 |-
-| [1.0.0+] csrng, spl:
-
-[4.0.0+] csrng, spl:, spl:mig, spl:fs, spl:ssl, spl:es, [5.0.0+] spl:manu
+| csrng, spl:, [4.0.0+] spl:mig, spl:fs, spl:ssl, spl:es, [5.0.0+] spl:manu
 | [[SPL services]]
 | 
 |-
