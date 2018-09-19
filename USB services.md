@@ -15,8 +15,8 @@ This service session is used as an IPC
 [domain](IPC%20Marshalling.md "wikilink") by
 [manu](Manu%20Services.md "wikilink"). All of these {get-session}
 commands also return an output u8 and the u32
-\<[domainID](IPC%20Marshalling.md "wikilink")\>, for using those
-sessions as domains.
+[domainID](IPC%20Marshalling.md "wikilink"), for using those sessions as
+domains.
 
 This service can be used by multiple processes at the same time, with
 separate interfaces. However, if one process does usbds shutdown, usbds
