@@ -743,6 +743,15 @@ This is "nn::fssrv::sf::IEventNotifier".
 | --- | -------------- |
 | 0   | GetEventHandle |
 
+# IUnknown1
+
+| Cmd | Name                                                                   |
+| --- | ---------------------------------------------------------------------- |
+| 1   | ? (Takes an input [\#IFilesystem](#IFilesystem "wikilink"), no output) |
+| 2   | ? (No input/output)                                                    |
+
+This was added with [6.0.0](6.0.0.md "wikilink").
+
 # FileSystemType
 
 | Value | Name               |
