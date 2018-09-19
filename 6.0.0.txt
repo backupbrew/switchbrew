@@ -58,6 +58,41 @@ The only sysmodule with any changes for accessible IO in the [[NPDM]] was USB-sy
 ===olsc-sysmodule===
 This new sysmodule handles cloud saves.
 
+===FIRM===
+
+====Kernel====
+* Accidentially exported symbols have been renamed:
+** Namespace <code>nn::kern::ARM64</code> is now <code>nn::kern::arch::ARM64</code>
+** Namespace <code>nn::kern::NX</code> is now <code>nn::kern::board::NX</code> and now contains the class <code>KSystemControl</code>
+** <code>ResumeEntry</code> is now a non-static method of <code>KSystemControl</code>
+* Kernel now reserves 1024 pages (1MB) of memory in SYSTEM memregion/pool for use by applets (1 at a time) for personal mmheap.
+* Memory regions arrange changed, APPLET has 6MB less in all memory arranges.
+* Maximum number of sessions and events both increased by 100.
+* Kernel mmheap size decreased to 0x10DF000 bytes (was 0x1117000), the both KMemoryBlock pools' capacity is unchanged, but less page tables can be allocated.
+* Kernel now properly reports DRAM size in default reslimit.
+* Two new svcGetInfoTypes: types 21 and 22. These are like type 6 and 7, but without the contiguous, in-security-carveout, personalmmheap allocation.
+* KASLR was changed to invoke smcGetRandomBytes(8) each time, instead of using Mersenne Twister.
+* Another layer of randomization has been added to slabheaps (before, it was just the order of slabheaps): an array of N (= 21 = number of slabheaps) random integers, in range (0, 0x200000) is now constructed, sorted via bubble sort; at each slabheap construction the heap offset is further incremented by <code>array[id+1]-array[id]</code> , then page rounded.
+* With the exception of KSessionRequest which is not in any KObjectAllocator, all KAutoObject types now use an intrusive rbtree instead of an intrusive list for their KObjectAllocator membership. Comparison key is PID for processes, thread ID for threads, address for others (using a new virtual method).
+* A new anonymous KAutoObject type, which sole purpose is to hold a comparison key, is now used for thread lookup by ID.
+* Breaking changes in svcGetFutureThreadInfo, which has potentially been renamed. Signature and use case have radically changed, it is now: <code>Result svcGetFutureThreadInfo(ThreadInfo *outThreadInfo, u64 *outTid, Handle debugHandle, s64 timeout)</code>.
+* Huge scheduler force-pause and last thread reporting refactor:
+** Scheduling flags are now u16 and force-pause flags are 3-nibble-long instead of 1.
+** The requirements and mechanism for force-pausing (activity svc, debug, etc.) threads have been considerably simplified:
+*** It used to delay the force-pause after end-of-svc, and used some convoluted mechanism.
+*** The condition is now &quot;a thread is force-pausable iff no thread is waiting for a kernel mutex it is holding&quot;, mechanism is just ORRing scheduling status with force-pause flags now. Appropriate changes have been made to accomodate for this change.
+*** Abovementionned convoluted mechanism has been refactored, too, but remains unused.
+** When the scheduler selects a process's thread, it now stored the selected thread in an array in the KProcess, for information. It also stores in itself and in array in the selected KProcess the number of times it detected a core being idle before load balancing. Used by BreakDebugProcess.<br />
+
+* All threads created and started in kernel main() are started force-paused with flags=0x100. This fixes the hypotetical case where a compromised KIP would perform gmmuhax and dump the INI1 (which is stored in APPLICATION -- KIPs are only started after all of them have been loaded). They are unpaused after all KIPs have been created.
+* GetThreadContext3 (unprivileged SVC) now dumps TPIDR_EL0.
+* DebugActiveProcess now returns 0xFA01 if an attempt to debug the current process is made -- instead of possibly deadlocking
+* GetDebugThreadContext and SetDebugThreadContext now return 0xF001 if flags &gt; 15. Additionally, their functionality is now restricted to threads that have been force-paused for debug, not just any kind of force-paused threads anymore.
+* ContinueDebugEvent now returns 0xF001 if flags &gt; 15 as well.
+* svcSleepSystem has been refactored. Instead of the initiator thread manually starting the sleep handler threads then storing a weak reference to itself, the handler threads are started in kernel init in main() immediately after their creation, and two mutexes are used: one for the initiator/covering svcSleepSystem, another for the handler threads. This likely fixes an UaF or race condition.
+* If svcReturnFromException passes the exception the KDebug, ie. if the argument errorCode is not 0, and if the latter has DontCatchExceptions set, the process is terminated (unless errorCode is 0x10001).
+* Performance improvements to svcInvalidateProcessDataCache.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=09-18-18_08-35-09&sys=hac]
