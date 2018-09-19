@@ -802,6 +802,7 @@ below.
 | 3.0.1-3.0.2    | 4                                       | 1                                           |
 | 4.0.0-4.1.0    | 5                                       | 1                                           |
 | 5.0.0-5.1.0    | 6                                       | 1                                           |
+| 6.0.0          | 7                                       |                                             |
 
 If too many fuses are burnt the bootloader will panic immediately.
 

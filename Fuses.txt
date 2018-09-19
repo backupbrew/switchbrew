@@ -1053,6 +1053,10 @@ How many fuses are expected to be burnt depends the device's unit type as below.
 | 5.0.0-5.1.0
 | 6
 | 1
+|-
+| 6.0.0
+| 7
+| 
 |}
 
 If too many fuses are burnt the bootloader will panic immediately.
