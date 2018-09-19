@@ -129,6 +129,18 @@ Additionally, security flaws were addressed in smcCpuSuspend (aiming to further 
 * If svcReturnFromException passes the exception the KDebug, ie. if the argument errorCode is not 0, and if the latter has DontCatchExceptions set, the process is terminated (unless errorCode is 0x10001).
 * Performance improvements to svcInvalidateProcessDataCache.
 
+====FIRM Sysmodules====
+All FIRM sysmodules were updated. Specific diffs for a few sysmodules are below:
+
+=====[[Loader services|Loader]]=====
+* A single null byte stack overflow due to strcat usage was fixed in content path parsing. See [[Switch System Flaws]] for details.
+* System Resource Size ([[NPDM]] +0x14) is now allowed to be non-zero for applets in addition to applications.
+
+=====[[Process Manager services|PM]]=====
+Memory management initialization was greatly changed:
+* PM no longer hardcodes five memory profiles, and no longer calls smcGetConfig to determine which profile to use.
+* Instead, PM now uses [[SVC|svcGetResourceLimitLimitValue]] to determine how much space the kernel has allotted for Application + Applet regions and [[SVC|svcGetSystemInfo]] to determine the total physical memory available, and sets the System region size to (Total Memory Size - Application region size - Applet region size - 5 MiB).
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=09-18-18_08-35-09&sys=hac]
