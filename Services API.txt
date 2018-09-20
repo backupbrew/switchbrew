@@ -69,7 +69,7 @@ Takes a pid.
 |-
 | [1.0.0-2.3.0] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry
 
-[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd, [6.0.0+] avm
+[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd
 | [[NS Services]]
 | am: Application Manager, su: System Update
 |-
@@ -236,7 +236,7 @@ Takes a pid.
 | [[Settings services]]
 | cal: calibration, sys: System Settings
 |-
-| [3.0.0+] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u, [5.0.0+] miiimg
+| [3.0.0+] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u, [5.0.0+] miiimg, [6.0.0+] avm
 | [[Shared Database services]]
 |
 |-
