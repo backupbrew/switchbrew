@@ -128,6 +128,7 @@ Additionally, security flaws were addressed in smcCpuSuspend (aiming to further 
 * svcSleepSystem has been refactored. Instead of the initiator thread manually starting the sleep handler threads then storing a weak reference to itself, the handler threads are started in kernel init in main() immediately after their creation, and two mutexes are used: one for the initiator/covering svcSleepSystem, another for the handler threads. This likely fixes an UaF or race condition.
 * If svcReturnFromException passes the exception the KDebug, ie. if the argument errorCode is not 0, and if the latter has DontCatchExceptions set, the process is terminated (unless errorCode is 0x10001).
 * Performance improvements to svcInvalidateProcessDataCache.
+* Redundant calls to smcGetConfig(12) have been reduced (12 calls -> 4 calls) during memory setup
 
 ====FIRM Sysmodules====
 All FIRM sysmodules were updated. Specific diffs for a few sysmodules are below:
