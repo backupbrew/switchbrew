@@ -277,32 +277,6 @@ follows.
 
 ## bootloader0\_info
 
-### 1.0.0 - 2.3.0
-
-The version field is set to 0x01, meaning that the first keyblob is to
-be used.
-
-### 3.0.0
-
-The version field was changed to 0x02, meaning that the second keyblob
-is now used.
-
-### 3.0.1 - 3.0.2
-
-The version field was changed to 0x03, meaning that the third keyblob is
-now used.
-
-### 4.0.0 - 4.1.0
-
-The version field was changed to 0x04, meaning that the fourth keyblob
-is now used.
-
-### 5.0.0 - 5.1.0
-
-The version field was changed to 0x05, meaning that the fifth keyblob is
-now used.
-
-### 6.0.0
-
-The version field was changed to 0x06, meaning that the sixth keyblob is
-now used.
+The version field controls which keyblob is used, where 0x01 is the
+first one. See [Cryptosystem](Cryptosystem.md "wikilink") for the
+keyblobs used by each system-version.
