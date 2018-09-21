@@ -171,6 +171,8 @@ each available controller.
 | 0x1408 | 0x20 header + 0x30 \* 17 | Controller Main State                                      |
 | 0x1758 | ?                        | SixAxisSensor State0                                       |
 | 0x1E60 | ?                        | SixAxisSensor State1                                       |
+| 0x2578 | ?                        | SixAxisSensor Left State                                   |
+| 0x2C80 | ?                        | SixAxisSensor Right State                                  |
 | 0x3378 | ?                        | SixAxisSensor State2                                       |
 | 0x3A80 | ?                        | SixAxisSensor State3                                       |
 | 0x41D0 | 0x10                     | Controller MAC                                             |

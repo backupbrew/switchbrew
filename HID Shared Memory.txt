@@ -446,6 +446,14 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 | ?
 | SixAxisSensor State1
 |-
+| 0x2578
+| ?
+| SixAxisSensor Left State
+|-
+| 0x2C80
+| ?
+| SixAxisSensor Right State
+|-
 | 0x3378
 | ?
 | SixAxisSensor State2
@@ -454,13 +462,13 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 | ?
 | SixAxisSensor State3
 |-
-| 0x41D0	
-| 0x10	
-| Controller MAC	
+| 0x41D0
+| 0x10
+| Controller MAC
 |-
-| 0x41F0	
-| 0x10	
-| Controller MAC	
+| 0x41F0
+| 0x10
+| Controller MAC
 |-
 |}
 
