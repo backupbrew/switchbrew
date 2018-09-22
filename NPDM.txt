@@ -38,6 +38,10 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | 0x1
 | MmuFlags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be <= 0xF
 |-
+| 0xD
+| 0x1
+| Reserved (Padding / Unused)
+|-
 | 0xE
 | 0x1
 | Main thread priority (0-63)
@@ -69,6 +73,10 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | 0x30
 | 0x10
 | Product code
+|-
+| 0x40
+| 0x30
+| Reserved (Padding / Unused)
 |-
 | 0x70
 | 0x4
