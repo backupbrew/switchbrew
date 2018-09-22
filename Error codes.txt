@@ -291,6 +291,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x41001 || 1 || 520 || Process not being debugged
 |-
+| 0x202 || 2 || 1 || File/Directory does not exist.
+|-
 | 0x402 || 2 || 2 || Directory/file(?) already exists.
 |-
 | 0xE02 || 2 || 7 || Savedata [[Filesystem_services|already]] mounted
