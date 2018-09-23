@@ -724,10 +724,6 @@ This is
 | 500 | \[6.0.0+\] ? (Takes a total of 0x14-bytes of input, no output)                         |
 | 501 | \[6.0.0+\] ? (Takes a total of 4-bytes of input, no output)                            |
 
-# ISaveDataTransferProhibiter
-
-This doesn't seem to handle any commands (?).
-
 ## GetGameCardUpdatePartitionInfo
 
 Returns a titleID and the title-version for it.
@@ -752,7 +748,14 @@ This is "nn::fssrv::sf::IEventNotifier".
 | --- | -------------- |
 | 0   | GetEventHandle |
 
-# IUnknown1
+# ISaveDataTransferProhibiter
+
+This was added with [6.0.0](6.0.0.md "wikilink").
+
+This doesn't seem to handle any commands
+(?).
+
+# IMultiCommitManager
 
 | Cmd | Name                                                                   |
 | --- | ---------------------------------------------------------------------- |
