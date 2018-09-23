@@ -134,7 +134,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 82 || [5.0.0+] OpenSaveDataTransferManagerVersion2
 |-
-| 83 || [6.0.0+] OpenSaveDataTransferProhibiterForCloudBackUp (Takes an input u64, returns an [[#IUnknown0]])
+| 83 || [6.0.0+] OpenSaveDataTransferProhibiterForCloudBackUp (Takes an input u64, returns an [[#ISaveDataTransferProhibiter]])
 |-
 | 84 || [6.0.0+] ? (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)
 |-
