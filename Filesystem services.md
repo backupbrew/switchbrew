@@ -95,8 +95,8 @@ This is
 | 67   | \[6.0.0+\] ? (Takes a total of 0x50-bytes of input, returns 8-bytes of output, and a type-0x6 output buffer)                                                      |
 | 68   | \[6.0.0+\] ? (Takes a total of 0x50-bytes of input, returns an [\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink"))                                          |
 | 80   | OpenSaveDataMetaFile                                                                                                                                              |
-| 81   | \[4.0.0+\] OpenSaveDataTransferManager                                                                                                                            |
-| 82   | \[5.0.0+\] OpenSaveDataTransferManagerVersion2                                                                                                                    |
+| 81   | \[4.0.0+\] OpenSaveDataTransferManager (No input, returns an [\#ISaveDataTransferManager](#ISaveDataTransferManager "wikilink"))                                  |
+| 82   | \[5.0.0+\] OpenSaveDataTransferManagerVersion2 (No input, returns an [\#ISaveDataTransferManagerWithDivision](#ISaveDataTransferManagerWithDivision "wikilink"))  |
 | 83   | \[6.0.0+\] OpenSaveDataTransferProhibiterForCloudBackUp (Takes an input u64, returns an [\#ISaveDataTransferProhibiter](#ISaveDataTransferProhibiter "wikilink")) |
 | 84   | \[6.0.0+\] ? (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)                                                      |
 | 100  | OpenImageDirectoryFileSystem                                                                                                                                      |

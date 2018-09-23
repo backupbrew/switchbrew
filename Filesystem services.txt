@@ -130,9 +130,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 80 || OpenSaveDataMetaFile
 |-
-| 81 || [4.0.0+] OpenSaveDataTransferManager
+| 81 || [4.0.0+] OpenSaveDataTransferManager (No input, returns an [[#ISaveDataTransferManager]])
 |-
-| 82 || [5.0.0+] OpenSaveDataTransferManagerVersion2
+| 82 || [5.0.0+] OpenSaveDataTransferManagerVersion2 (No input, returns an [[#ISaveDataTransferManagerWithDivision]])
 |-
 | 83 || [6.0.0+] OpenSaveDataTransferProhibiterForCloudBackUp (Takes an input u64, returns an [[#ISaveDataTransferProhibiter]])
 |-
