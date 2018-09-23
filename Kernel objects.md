@@ -2,7 +2,9 @@
 
 Size: 0x10
 
-\[5.0.0\] Size: 0x20 \[6.0.0\] Size: 0x30
+\[5.0.0\] Size: 0x20
+
+\[6.0.0\] Size: 0x30
 
 | Offset | Type | Description    |
 | ------ | ---- | -------------- |
@@ -32,7 +34,9 @@ Size: 0x10
 
 Size: 0x28
 
-\[5.0.0\] Size: 0x38 \[6.0.0\] Size: 0x48
+\[5.0.0\] Size: 0x38
+
+\[6.0.0\] Size: 0x48
 
 Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 

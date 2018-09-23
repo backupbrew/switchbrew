@@ -2,6 +2,7 @@
 Size: 0x10
 
 [5.0.0] Size: 0x20
+
 [6.0.0] Size: 0x30
 
 {| class="wikitable" border="1"
@@ -47,6 +48,7 @@ Size: 0x10
 Size: 0x28
 
 [5.0.0] Size: 0x38
+
 [6.0.0] Size: 0x48
 
 Inherits from: [[#KAutoObject]]
