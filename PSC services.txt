@@ -53,11 +53,11 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 10100 ||
 |-
-| 1 ||
+| 20100 ||
 |-
-| 2 ||
+| 20200 ||
 |}
 
 [[Category:Services]]

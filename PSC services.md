@@ -35,10 +35,10 @@ This is "nn::psc::sf::IPmModule".
 
 These are "nn::srepo::detail::ipc::ISrepoService".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
+| Cmd   | Name |
+| ----- | ---- |
+| 10100 |      |
+| 20100 |      |
+| 20200 |      |
 
 [Category:Services](Category:Services "wikilink")
