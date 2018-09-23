@@ -151,7 +151,7 @@ This is
 | 1009 | \[4.0.0+\] GetAndClearMemoryReportInfo                                                                                                                            |
 | 1010 | \[5.1.0+\]                                                                                                                                                        |
 | 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                                                                                                       |
-| 1200 | \[6.0.0+\] ? (No input, returns an output [\#IUnknown1](#IUnknown1 "wikilink"))                                                                                   |
+| 1200 | \[6.0.0+\] ? (No input, returns an output [\#IMultiCommitManager](#IMultiCommitManager "wikilink"))                                                               |
 
 ## Permissions
 

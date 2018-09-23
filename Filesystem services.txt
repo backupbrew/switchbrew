@@ -242,7 +242,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 1100 || [4.0.0+] OverrideSaveDataTransferTokenSignVerificationKey
 |-
-| 1200 || [6.0.0+] ? (No input, returns an output [[#IUnknown1]])
+| 1200 || [6.0.0+] ? (No input, returns an output [[#IMultiCommitManager]])
 |}
 
 == Permissions ==
