@@ -1,6 +1,8 @@
 = KAutoObject =
 Size: 0x10
+
 [5.0.0] Size: 0x20
+[6.0.0] Size: 0x30
 
 {| class="wikitable" border="1"
 |-
@@ -12,8 +14,6 @@ Size: 0x10
 |}
 
 [5.0.0]:
-
-
 {| class="wikitable" border="1"
 |-
 ! Offset || Type || Description
@@ -23,6 +23,24 @@ Size: 0x10
 | 8 || u32 || ReferenceCount
 |-
 | 0x10 || KLinkedListNode || Intrusive list, links to other instances of the same class (managed by a KObjectAllocator).
+|}
+
+[6.0.0]:
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || * || Vtable
+|-
+| 8 || u32 || ReferenceCount
+|-
+| 0x10 || u64 || ?
+|-
+| 0x18 || ptr || ?
+|-
+| 0x20 || u64 || ?
+|-
+| 0x28 || u64 || ?
 |}
 
 = KSynchronizationObject =
