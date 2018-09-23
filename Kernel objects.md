@@ -409,8 +409,10 @@ Size: 0xB0
 
 \[1.0.0\] Size: 0xB8
 
-\[2.0.0\] Size:
-0xC8
+\[2.0.0\] Size: 0xC8
+
+\[5.0.0\] Size:
+0xF8?
 
 <div style="display: inline-block">
 
@@ -475,6 +477,40 @@ Size: 0xB0
 | 0xB0         | u64                                                      | TranslationTableBaseRegister0       |
 | 0xB8         | u64                                                      | TranslationControlRegister          |
 | 0xC0         | u32                                                      | AsidTagValue                        |
+
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+
+| 5.0.0 Offset | Type                                                     | Description                       |
+| ------------ | -------------------------------------------------------- | --------------------------------- |
+| 0            | \*                                                       | Vtable                            |
+| 8            | u64                                                      | AddrSpaceMinAddr                  |
+| 0x10         | u64                                                      | AddrSpaceMaxAddr                  |
+| 0x18         | u64                                                      | HeapRegionBaseAddr                |
+| 0x20         | u64                                                      | HeapRegionEndAddr                 |
+| 0x28         | u64                                                      | HeapCurAddr                       |
+| 0x30         | u64                                                      | MapRegionBaseAddr                 |
+| 0x38         | u64                                                      | MapRegionEndAddr                  |
+| 0x40         | u64                                                      | NewMapRegionBaseAddr              |
+| 0x48         | u64                                                      | NewMapRegionEndAddr               |
+| 0x50         | u64                                                      | TlsIoRegionBaseAddr               |
+| 0x58         | u64                                                      | TlsIoRegionEndAddr                |
+| 0x60         | u64                                                      | HeapMaxAllocation                 |
+| 0x68         |                                                          |                                   |
+| 0x70         |                                                          |                                   |
+| 0x78         | [\#KMutex](#KMutex "wikilink")                           | Mutex                             |
+| 0x80         | [\#KPageTable](#KPageTable "wikilink")                   | PageTable                         |
+| 0x90         | [\#KMemoryBlockManager](#KMemoryBlockManager "wikilink") | MemoryBlockManager                |
+| 0xA8         | u32                                                      | ?                                 |
+| 0xAC         | u32                                                      | AddressSpaceWidth (32/36/39)      |
+| 0xB0         | [\#KLinkedList](#KLinkedList "wikilink")?                |                                   |
+| 0xC8         |                                                          |                                   |
+| 0xD0         |                                                          |                                   |
+| 0xD8         | ptr                                                      |                                   |
+| 0xE0         | u64                                                      | TranslationTableBaseRegister0 val |
+| 0xE8         | u64                                                      | TranslationControlRegister val    |
+| 0xF0         | u32                                                      | AsidTagValue                      |
 
 </div>
 
