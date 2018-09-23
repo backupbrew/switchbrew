@@ -843,6 +843,9 @@ This is "nn::fssrv::sf::IDeviceOperator".
 | 501 || [6.0.0+] ? (Takes a total of 4-bytes of input, no output)
 |}
 
+= ISaveDataTransferProhibiter =
+This doesn't seem to handle any commands (?).
+
 == GetGameCardUpdatePartitionInfo ==
 Returns a titleID and the title-version for it.
 

@@ -724,6 +724,10 @@ This is
 | 500 | \[6.0.0+\] ? (Takes a total of 0x14-bytes of input, no output)                         |
 | 501 | \[6.0.0+\] ? (Takes a total of 4-bytes of input, no output)                            |
 
+# ISaveDataTransferProhibiter
+
+This doesn't seem to handle any commands (?).
+
 ## GetGameCardUpdatePartitionInfo
 
 Returns a titleID and the title-version for it.
