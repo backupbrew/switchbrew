@@ -577,6 +577,8 @@ Size: 0xB0
 
 [2.0.0] Size: 8
 
+[6.0.0]? Size: 0x10
+
 <div style="display: inline-block">
 {| class="wikitable" border="1"
 |-
@@ -600,6 +602,21 @@ Size: 0xB0
 | 2 || u8 || ObjectType
 |-
 | 4 || u32 || ObjectCompressedPtr
+|}
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! 6.0.0 Offset || Type || Description
+|-
+| 0 || u16 || HandleId
+|-
+| 2 || u8 || ObjectType
+|-
+| 4 || u32 || ObjectCompressedPtr
+|-
+| 8 || ptr || ?
 |}
 </div>
 

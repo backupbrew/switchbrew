@@ -367,8 +367,10 @@ Size: 0xB0
 
 \[1.0.0\] Size: 0x10
 
-\[2.0.0\] Size:
-8
+\[2.0.0\] Size: 8
+
+\[6.0.0\]? Size:
+0x10
 
 <div style="display: inline-block">
 
@@ -387,6 +389,17 @@ Size: 0xB0
 | 0            | u16  | HandleId            |
 | 2            | u8   | ObjectType          |
 | 4            | u32  | ObjectCompressedPtr |
+
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+
+| 6.0.0 Offset | Type | Description         |
+| ------------ | ---- | ------------------- |
+| 0            | u16  | HandleId            |
+| 2            | u8   | ObjectType          |
+| 4            | u32  | ObjectCompressedPtr |
+| 8            | ptr  | ?                   |
 
 </div>
 
