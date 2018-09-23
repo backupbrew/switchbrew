@@ -196,6 +196,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 615 || [5.0.0+] QuerySaveDataInternalStorageTotalSize
 |-
+| 616 || [6.0.0+] [[#GetSaveDataCommitId]]
+|-
 | 620 || [2.0.0+] [[#SetSdCardEncryptionSeed]]
 |-
 | 630 || [4.0.0+] SetSdCardAccessibility
@@ -557,6 +559,9 @@ This command returns a session to a port implementing the [[#IEventNotifier]] in
 Takes an unknown input u64 and a type-0x6 output buffer.
 
 The input u64 high-byte must be non-zero, otherwise an [[Error_codes|error]] is returned(0xE02).
+
+== GetSaveDataCommitId ==
+Takes an input u8 and u64, returns an output u64.
 
 == SetSdCardEncryptionSeed ==
 Takes in the 0x10 byte SD card encryption seed, and loads it into FS-module state.

@@ -128,6 +128,7 @@ This is
 | 613  | \[4.0.0+\] VerifySaveDataFileSystemBySaveDataSpaceId                                                                                           |
 | 614  | \[4.0.0+\] CorruptSaveDataFileSystemBySaveDataSpaceId                                                                                          |
 | 615  | \[5.0.0+\] QuerySaveDataInternalStorageTotalSize                                                                                               |
+| 616  | \[6.0.0+\] [\#GetSaveDataCommitId](#GetSaveDataCommitId "wikilink")                                                                            |
 | 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                                                                    |
 | 630  | \[4.0.0+\] SetSdCardAccessibility                                                                                                              |
 | 631  | \[4.0.0+\] IsSdCardAccessible                                                                                                                  |
@@ -464,6 +465,10 @@ Takes an unknown input u64 and a type-0x6 output buffer.
 
 The input u64 high-byte must be non-zero, otherwise an
 [error](Error%20codes.md "wikilink") is returned(0xE02).
+
+## GetSaveDataCommitId
+
+Takes an input u8 and u64, returns an output u64.
 
 ## SetSdCardEncryptionSeed
 
