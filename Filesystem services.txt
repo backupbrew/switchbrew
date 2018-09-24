@@ -887,7 +887,7 @@ No input/output, takes a type-0x5 input buffer.
 Takes an input u8 [[#SaveDataSpaceId]] and u64, returns an [[#ISaveDataExporter]].
 
 == OpenSaveDataImporter ==
-Takes an input u8 and a 0x10-byte struct, and a type-0x5 input buffer. Returns 8-bytes of output and an [[#ISaveDataImporter]].
+Takes an input u8 [[#SaveDataSpaceId]] and a 0x10-byte userID, and a type-0x5 input buffer. Returns an output u64 and an [[#ISaveDataImporter]].
 
 = ISaveDataTransferManagerWithDivision =
 {| class="wikitable" border="1"

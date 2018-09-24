@@ -774,8 +774,9 @@ u64, returns an [\#ISaveDataExporter](#ISaveDataExporter "wikilink").
 
 ## OpenSaveDataImporter
 
-Takes an input u8 and a 0x10-byte struct, and a type-0x5 input buffer.
-Returns 8-bytes of output and an
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and a
+0x10-byte userID, and a type-0x5 input buffer. Returns an output u64 and
+an
 [\#ISaveDataImporter](#ISaveDataImporter "wikilink").
 
 # ISaveDataTransferManagerWithDivision
