@@ -503,6 +503,10 @@ invalid. Handle index is not updated.
 **0xea01:** Timeout. Returned when no objects have been signalled within
 the timeout. Handle index is not updated.
 
+**0xec01:** Interrupted. Returns when another thread uses
+[\#svcCancelSynchronization](#svcCancelSynchronization "wikilink") to
+cancel this thread.
+
 ## svcGetSystemTick
 
 <div style="display: inline-block;">
