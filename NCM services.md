@@ -302,8 +302,10 @@ directory?).
 
 Takes a [\#NcaID](#NcaID "wikilink") as input.
 
-Returns the total size readable by ReadEntryRaw. This is the same as the
-size-field in the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00" file.
+Returns the total size readable by
+[\#ReadContentIdFile](#ReadContentIdFile "wikilink"). This is the same
+as the size-field in the [NAX0](NAX0.md "wikilink") "<NcaID>.nca/00"
+file.
 
 #### ReadContentIdFile
 
@@ -409,7 +411,7 @@ This is a 0x10-byte entry. This is originally from the hex portion of
 
 The NcaID is the same as the first 0x10-bytes from the calculated SHA256
 hash, from hashing the entire output from
-ReadEntryRaw.
+[\#ReadContentIdFile](#ReadContentIdFile "wikilink").
 
 ### Enums
 

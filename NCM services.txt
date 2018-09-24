@@ -305,7 +305,7 @@ The total read entries is exactly the same as the number of "<hex>.nca" director
 ==== GetSize ====
 Takes a [[#NcaID]] as input.
 
-Returns the total size readable by ReadEntryRaw. This is the same as the size-field in the [[NAX0]] "<NcaID>.nca/00" file.
+Returns the total size readable by [[#ReadContentIdFile]]. This is the same as the size-field in the [[NAX0]] "<NcaID>.nca/00" file.
 
 ==== ReadContentIdFile ====
 Takes an output buffer, a [[#NcaID]] as input, and a u64 file offset.
@@ -399,7 +399,7 @@ for i, NcaID in NcaIDs:
 === NcaID ===
 This is a 0x10-byte entry. This is originally from the hex portion of "<hex>.nca" directory-names from this storage FS(like [[SD_Filesystem|SD]]). This is also referred to as "ContentId" in the official SDK.
 
-The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, from hashing the entire output from ReadEntryRaw.
+The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, from hashing the entire output from [[#ReadContentIdFile]].
 
 === Enums ===
 ==== Title Types ====
