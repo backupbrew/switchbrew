@@ -93,7 +93,7 @@ partition IDs, error 0x2EE202 is returned.
 
 [NCAs](NCA.md "wikilink") stored in NAND are raw, identical to the data
 readable with
-[Content\_Manager\_services\#ReadEntryRaw](Content%20Manager%20services#ReadEntryRaw.md##ReadEntryRaw "wikilink").
+[NCM\_services\#ReadContentIdFile](NCM%20services#ReadContentIdFile.md##ReadContentIdFile "wikilink").
 
 The filenames for saveimages is just "<lower-case hex u64 saveID>".
 SYSTEM-partition saveIDs are specified by
