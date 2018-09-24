@@ -168,7 +168,8 @@ Launches an application title which is registered with NS.
 
 ## GetApplicationContentPath
 
-Takes a 0x16-type output buffer, an u8 [type](NCA.md "wikilink"), and an
+Takes a 0x16-type output buffer, an u8 [title
+type](NCM%20services#Title%20Types.md##Title_Types "wikilink"), and an
 u64 titleID.
 
 The input titleID is used with the application-title table like various
