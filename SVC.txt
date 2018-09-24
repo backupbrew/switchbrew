@@ -52,7 +52,7 @@ __NOTOC__
 |-
 | 0x18 || [[#svcWaitSynchronization]] || X1=handles_ptr, W2=num_handles. X3=timeout || W0=result, W1=handle_idx
 |-
-| 0x19 || svcCancelSynchronization || W0=thread_handle || W0=result
+| 0x19 || [[#svcCancelSynchronization]] || W0=thread_handle || W0=result
 |-
 | 0x1A || svcArbitrateLock || W0=cur_thread_handle, X1=ptr, W2=req_thread_handle ||                                     
 |-
@@ -664,6 +664,28 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 '''0xea01:''' Timeout. Returned when no objects have been signalled within the timeout. Handle index is not updated.
 
 '''0xec01:''' Interrupted. Returns when another thread uses [[#svcCancelSynchronization]] to cancel this thread.
+
+== svcCancelSynchronization ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<Thread> || Handle
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+If the referenced thread is currently in an [[#svcWaitSynchronization]] call, that call will be interrupted and return 0xec01.
+If that thread is not currently executing [[#svcWaitSynchronization]], the next call to [[#svcWaitSynchronization]] will return 0xec01.
+
+=== Result codes ===
+
+'''0x0:''' Success. The thread was either interrupted or has had its flag set.
+
+'''0xe401:''' Invalid handle. The handle given was either invalid or not a thread handle.
 
 == svcGetSystemTick ==
 

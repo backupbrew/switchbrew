@@ -28,7 +28,7 @@
 | 0x16 | svcCloseHandle                                                                     | W0=handle                                                                                                                                                                                                                                                                          | W0=result                                                |
 | 0x17 | svcResetSignal                                                                     | W0=revent\_or\_process\_handle                                                                                                                                                                                                                                                     | W0=result                                                |
 | 0x18 | [\#svcWaitSynchronization](#svcWaitSynchronization "wikilink")                     | X1=handles\_ptr, W2=num\_handles. X3=timeout                                                                                                                                                                                                                                       | W0=result, W1=handle\_idx                                |
-| 0x19 | svcCancelSynchronization                                                           | W0=thread\_handle                                                                                                                                                                                                                                                                  | W0=result                                                |
+| 0x19 | [\#svcCancelSynchronization](#svcCancelSynchronization "wikilink")                 | W0=thread\_handle                                                                                                                                                                                                                                                                  | W0=result                                                |
 | 0x1A | svcArbitrateLock                                                                   | W0=cur\_thread\_handle, X1=ptr, W2=req\_thread\_handle                                                                                                                                                                                                                             |                                                          |
 | 0x1B | svcArbitrateUnlock                                                                 | X0=ptr                                                                                                                                                                                                                                                                             |                                                          |
 | 0x1C | svcWaitProcessWideKeyAtomic                                                        | X0=ptr0, X1=ptr, W2=thread\_handle, X3=timeout                                                                                                                                                                                                                                     | W0=result                                                |
@@ -506,6 +506,33 @@ the timeout. Handle index is not updated.
 **0xec01:** Interrupted. Returns when another thread uses
 [\#svcCancelSynchronization](#svcCancelSynchronization "wikilink") to
 cancel this thread.
+
+## svcCancelSynchronization
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) W0  | Handle<Thread>                 | Handle |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret    |
+
+</div>
+
+If the referenced thread is currently in an
+[\#svcWaitSynchronization](#svcWaitSynchronization "wikilink") call,
+that call will be interrupted and return 0xec01. If that thread is not
+currently executing
+[\#svcWaitSynchronization](#svcWaitSynchronization "wikilink"), the next
+call to [\#svcWaitSynchronization](#svcWaitSynchronization "wikilink")
+will return 0xec01.
+
+### Result codes
+
+**0x0:** Success. The thread was either interrupted or has had its flag
+set.
+
+**0xe401:** Invalid handle. The handle given was either invalid or not a
+thread handle.
 
 ## svcGetSystemTick
 
