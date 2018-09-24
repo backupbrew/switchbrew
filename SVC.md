@@ -518,13 +518,15 @@ cancel this thread.
 
 </div>
 
-If the referenced thread is currently in an
-[\#svcWaitSynchronization](#svcWaitSynchronization "wikilink") call,
-that call will be interrupted and return 0xec01. If that thread is not
-currently executing
-[\#svcWaitSynchronization](#svcWaitSynchronization "wikilink"), the next
-call to [\#svcWaitSynchronization](#svcWaitSynchronization "wikilink")
-will return 0xec01.
+If the referenced thread is currently in a synchronization call
+([\#svcWaitSynchronization](#svcWaitSynchronization "wikilink"),
+[\#svcReplyAndReceive](#svcReplyAndReceive "wikilink") or
+[\#svcReplyAndReceiveLight](#svcReplyAndReceiveLight "wikilink")), that
+call will be interrupted and return 0xec01. If that thread is not
+currently executing such a synchronization call, the next call to a
+synchronization call will return 0xec01.
+
+This doesn't take force-pause (activity/debug pause) into account.
 
 ### Result codes
 

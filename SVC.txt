@@ -678,8 +678,10 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 |}
 </div>
 
-If the referenced thread is currently in an [[#svcWaitSynchronization]] call, that call will be interrupted and return 0xec01.
-If that thread is not currently executing [[#svcWaitSynchronization]], the next call to [[#svcWaitSynchronization]] will return 0xec01.
+If the referenced thread is currently in a synchronization call ([[#svcWaitSynchronization]], [[#svcReplyAndReceive]] or [[#svcReplyAndReceiveLight]]), that call will be interrupted and return 0xec01.
+If that thread is not currently executing such a synchronization call, the next call to a synchronization call will return 0xec01.
+
+This doesn't take force-pause (activity/debug pause) into account.
 
 === Result codes ===
 
