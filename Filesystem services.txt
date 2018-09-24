@@ -539,7 +539,7 @@ Takes an input u8 [[#SaveDataSpaceId]], returns an output [[#ISaveDataInfoReader
 == OpenContentStorageFileSystem ==
 Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.
 
-Returns an [[#IFileSystem]] with NCA files. The read data from these files is identical to the data read by [[Content_Manager_services#ReadEntryRaw]].
+Returns an [[#IFileSystem]] with NCA files. The read data from these files is identical to the data read by [[NCM_services#ReadContentIdFile]].
 
 == OpenDataStorageByDataId ==
 Takes a [[#StorageId]] and a TitleID.

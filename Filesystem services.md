@@ -433,7 +433,7 @@ values return 0x2EE202.
 
 Returns an [\#IFileSystem](#IFileSystem "wikilink") with NCA files. The
 read data from these files is identical to the data read by
-[Content\_Manager\_services\#ReadEntryRaw](Content%20Manager%20services#ReadEntryRaw.md##ReadEntryRaw "wikilink").
+[NCM\_services\#ReadContentIdFile](NCM%20services#ReadContentIdFile.md##ReadContentIdFile "wikilink").
 
 ## OpenDataStorageByDataId
 
