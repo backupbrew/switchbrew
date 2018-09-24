@@ -769,8 +769,8 @@ No input/output, takes a type-0x5 input buffer.
 
 ## OpenSaveDataExporter
 
-Takes an input u8 and u64, returns an
-[\#ISaveDataExporter](#ISaveDataExporter "wikilink").
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and
+u64, returns an [\#ISaveDataExporter](#ISaveDataExporter "wikilink").
 
 ## OpenSaveDataImporter
 
