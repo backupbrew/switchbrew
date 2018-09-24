@@ -748,6 +748,36 @@ This is "nn::fssrv::sf::IEventNotifier".
 | --- | -------------- |
 | 0   | GetEventHandle |
 
+# ISaveDataTransferManager
+
+| Cmd | Name                                                       |
+| --- | ---------------------------------------------------------- |
+| 0   | [\#GetChallenge](#GetChallenge "wikilink")                 |
+| 16  | [\#SetToken](#SetToken "wikilink")                         |
+| 32  | [\#OpenSaveDataExporter](#OpenSaveDataExporter "wikilink") |
+| 64  | [\#OpenSaveDataImporter](#OpenSaveDataImporter "wikilink") |
+
+This was added with [4.0.0](4.0.0.md "wikilink").
+
+## GetChallenge
+
+No input/output, takes a type-0x6 output buffer.
+
+## SetToken
+
+No input/output, takes a type-0x5 input buffer.
+
+## OpenSaveDataExporter
+
+Takes an input u8 and u64, returns an
+[\#ISaveDataExporter](#ISaveDataExporter "wikilink").
+
+## OpenSaveDataImporter
+
+Takes an input u8 and a 0x10-byte struct, and a type-0x5 input buffer.
+Returns 8-bytes of output and an
+[\#ISaveDataImporter](#ISaveDataImporter "wikilink").
+
 # ISaveDataTransferManagerWithDivision
 
 | Cmd | Name                                                                                                                 |
