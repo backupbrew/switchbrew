@@ -111,10 +111,10 @@ available.
 
 ### File servers
 
-| Name | Description             | Author                     | Download                                                   | Open-Source                                         | Last Updated |
-| ---- | ----------------------- | -------------------------- | ---------------------------------------------------------- | --------------------------------------------------- | ------------ |
-| Ftpd | A port of ftpd for 3DS. | mtheall, TuxSH, WinterMute | [Here](https://github.com/WinterMute/ftpd/releases/latest) | [Yes](https://github.com/TuxSH/ftpd/tree/switch_pr) | 2018-02-27   |
-|      |                         |                            |                                                            |                                                     |              |
+| Name | Description             | Author                     | Download                                                | Open-Source                            | Last Updated |
+| ---- | ----------------------- | -------------------------- | ------------------------------------------------------- | -------------------------------------- | ------------ |
+| Ftpd | A port of ftpd for 3DS. | mtheall, TuxSH, WinterMute | [Here](https://github.com/mtheall/ftpd/releases/latest) | [Yes](https://github.com/mtheall/ftpd) | 2018-09-24   |
+|      |                         |                            |                                                         |                                        |              |
 
 ### Demos
 

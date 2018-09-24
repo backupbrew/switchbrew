@@ -418,9 +418,9 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Ftpd
 | A port of ftpd for 3DS.
 | mtheall, TuxSH, WinterMute
-| [https://github.com/WinterMute/ftpd/releases/latest Here]
-| [https://github.com/TuxSH/ftpd/tree/switch_pr Yes]
-| 2018-02-27
+| [https://github.com/mtheall/ftpd/releases/latest Here]
+| [https://github.com/mtheall/ftpd Yes]
+| 2018-09-24
 |-
 |}
 
