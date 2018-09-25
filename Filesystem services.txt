@@ -979,6 +979,10 @@ No input/output.
 
 This was added with [[5.0.0]].
 
+= ISaveDataDivisionExporter =
+
+= ISaveDataDivisionImporter =
+
 = ISaveDataTransferProhibiter =
 This was added with [[6.0.0]].
 
