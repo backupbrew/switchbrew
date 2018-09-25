@@ -776,8 +776,74 @@ u64, returns an [\#ISaveDataExporter](#ISaveDataExporter "wikilink").
 
 Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and a
 0x10-byte userID, and a type-0x5 input buffer. Returns an output u64 and
-an
-[\#ISaveDataImporter](#ISaveDataImporter "wikilink").
+an [\#ISaveDataImporter](#ISaveDataImporter "wikilink").
+
+# ISaveDataExporter
+
+| Cmd | Name                                             |
+| --- | ------------------------------------------------ |
+| 0   | [\#Initialize](#Initialize "wikilink")           |
+| 1   | [\#GetRestSize](#GetRestSize "wikilink")         |
+| 16  | [\#Pull](#Pull "wikilink")                       |
+| 17  | [\#PullInitialData](#PullInitialData "wikilink") |
+
+This was added with [4.0.0](4.0.0.md "wikilink").
+
+## Initialize
+
+No input/output, takes a type-0x1A
+[\#SaveDataInfo](#SaveDataInfo "wikilink") output buffer.
+
+The actual name for this is the SaveDataExporter constructor. This is
+used automatically after
+[\#OpenSaveDataExporter](#OpenSaveDataExporter "wikilink") by official
+sw.
+
+## GetRestSize
+
+No input, returns an output u64.
+
+## Pull
+
+Takes a type-0x6 output buffer, returns an output u64.
+
+## PullInitialData
+
+No input/output, takes a type-0x6 output buffer.
+
+# ISaveDataImporter
+
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | [\#Initialize](#Initialize "wikilink")   |
+| 1   | [\#GetRestSize](#GetRestSize "wikilink") |
+| 16  | [\#Push](#Push "wikilink")               |
+| 17  | [\#Finalize](#Finalize "wikilink")       |
+
+This was added with [4.0.0](4.0.0.md "wikilink").
+
+## Initialize
+
+No input/output, takes a type-0x1A
+[\#SaveDataInfo](#SaveDataInfo "wikilink") output buffer.
+
+The actual name for this is the SaveDataImporter constructor. This is
+used automatically after
+[\#OpenSaveDataImporter](#OpenSaveDataImporter "wikilink") by official
+sw.
+
+## GetRestSize
+
+No input, returns an output u64.
+
+## Push
+
+No input/output, takes a type-0x5 input buffer.
+
+## Finalize
+
+No
+input/output.
 
 # ISaveDataTransferManagerWithDivision
 

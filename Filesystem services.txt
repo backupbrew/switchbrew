@@ -889,6 +889,66 @@ Takes an input u8 [[#SaveDataSpaceId]] and u64, returns an [[#ISaveDataExporter]
 == OpenSaveDataImporter ==
 Takes an input u8 [[#SaveDataSpaceId]] and a 0x10-byte userID, and a type-0x5 input buffer. Returns an output u64 and an [[#ISaveDataImporter]].
 
+= ISaveDataExporter =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#Initialize]]
+|-
+| 1 || [[#GetRestSize]]
+|-
+| 16 || [[#Pull]]
+|-
+| 17 || [[#PullInitialData]]
+|}
+
+This was added with [[4.0.0]].
+
+== Initialize ==
+No input/output, takes a type-0x1A [[#SaveDataInfo]] output buffer.
+
+The actual name for this is the SaveDataExporter constructor. This is used automatically after [[#OpenSaveDataExporter]] by official sw.
+
+== GetRestSize ==
+No input, returns an output u64.
+
+== Pull ==
+Takes a type-0x6 output buffer, returns an output u64.
+
+== PullInitialData ==
+No input/output, takes a type-0x6 output buffer.
+
+= ISaveDataImporter =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#Initialize]]
+|-
+| 1 || [[#GetRestSize]]
+|-
+| 16 || [[#Push]]
+|-
+| 17 || [[#Finalize]]
+|}
+
+This was added with [[4.0.0]].
+
+== Initialize ==
+No input/output, takes a type-0x1A [[#SaveDataInfo]] output buffer.
+
+The actual name for this is the SaveDataImporter constructor. This is used automatically after [[#OpenSaveDataImporter]] by official sw.
+
+== GetRestSize ==
+No input, returns an output u64.
+
+== Push ==
+No input/output, takes a type-0x5 input buffer.
+
+== Finalize ==
+No input/output.
+
 = ISaveDataTransferManagerWithDivision =
 {| class="wikitable" border="1"
 |-
