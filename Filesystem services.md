@@ -893,14 +893,14 @@ This was added with
 | --- | --------------------------------------------------------------------------------------- |
 | 0   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
 | 16  | ? (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink")) |
-| 32  | ? (No input, returns 8-bytes of output)                                                 |
+| 32  | ? (No input, returns an output u64)                                                     |
 | 33  | ? (No input/output)                                                                     |
 | 34  | \[6.0.0+\] ? (No input/output)                                                          |
 | 35  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
 | 36  | \[6.0.0+\] ? (No input/output)                                                          |
-| 48  | ? (Takes 4-bytes of input, returns an unknown output interface)                         |
-| 64  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output)                        |
-| 80  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output)                        |
+| 48  | ? (Takes an input u32, returns an unknown output interface)                             |
+| 64  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                             |
+| 80  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                             |
 
 This was added with [5.0.0](5.0.0.md "wikilink").
 
