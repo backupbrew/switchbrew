@@ -958,28 +958,26 @@ No input/output.
 |-
 | 16 || ? (No input/output, takes a type-0x5 input buffer)
 |-
-| 32 || ? (Takes a total of 0x10-bytes of input, returns an unknown output interface)
+| 32 || ? (Takes a total of 0x10-bytes of input, returns an [[#ISaveDataDivisionExporter]])
 |-
-| 33 || ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an unknown output interface)
+| 33 || ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionExporter]])
 |-
-| 34 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an unknown output interface)
+| 34 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an unknown [[#ISaveDataDivisionExporter]])
 |-
-| 64 || ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an unknown output interface)
+| 64 || ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
-| 65 || ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an unknown output interface)
+| 65 || ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
-| 66 || [6.0.0+] ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an unknown output interface)
+| 66 || [6.0.0+] ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
-| 67 || [6.0.0+] ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an unknown output interface)
+| 67 || [6.0.0+] ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
-| 68 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an unknown output interface)
+| 68 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
 | 69 || [6.0.0+] ? (Takes a total of 0x18-bytes of input, no output)
 |}
 
 This was added with [[5.0.0]].
-
-Cmd32-34 return the same interface. Cmd64-69 return the same interface.
 
 = ISaveDataTransferProhibiter =
 This was added with [[6.0.0]].

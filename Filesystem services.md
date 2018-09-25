@@ -847,23 +847,21 @@ input/output.
 
 # ISaveDataTransferManagerWithDivision
 
-| Cmd | Name                                                                                                                 |
-| --- | -------------------------------------------------------------------------------------------------------------------- |
-| 0   | ? (No input/output, takes a type-0x6 output buffer)                                                                  |
-| 16  | ? (No input/output, takes a type-0x5 input buffer)                                                                   |
-| 32  | ? (Takes a total of 0x10-bytes of input, returns an unknown output interface)                                        |
-| 33  | ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an unknown output interface)            |
-| 34  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an unknown output interface)                   |
-| 64  | ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an unknown output interface)            |
-| 65  | ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an unknown output interface)            |
-| 66  | \[6.0.0+\] ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an unknown output interface) |
-| 67  | \[6.0.0+\] ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an unknown output interface) |
-| 68  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an unknown output interface)                   |
-| 69  | \[6.0.0+\] ? (Takes a total of 0x18-bytes of input, no output)                                                       |
+| Cmd | Name                                                                                                                                                             |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | ? (No input/output, takes a type-0x6 output buffer)                                                                                                              |
+| 16  | ? (No input/output, takes a type-0x5 input buffer)                                                                                                               |
+| 32  | ? (Takes a total of 0x10-bytes of input, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink"))                                        |
+| 33  | ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink"))            |
+| 34  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an unknown [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink"))           |
+| 64  | ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))            |
+| 65  | ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))            |
+| 66  | \[6.0.0+\] ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink")) |
+| 67  | \[6.0.0+\] ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink")) |
+| 68  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))                   |
+| 69  | \[6.0.0+\] ? (Takes a total of 0x18-bytes of input, no output)                                                                                                   |
 
 This was added with [5.0.0](5.0.0.md "wikilink").
-
-Cmd32-34 return the same interface. Cmd64-69 return the same interface.
 
 # ISaveDataTransferProhibiter
 
