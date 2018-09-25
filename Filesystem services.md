@@ -849,20 +849,62 @@ input/output.
 
 | Cmd | Name                                                                                                                                                                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | ? (No input/output, takes a type-0x6 output buffer)                                                                                                                             |
-| 16  | ? (No input/output, takes a type-0x5 input buffer)                                                                                                                              |
-| 32  | ? (Takes an input u8 and u64, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink"))                                                                  |
-| 33  | ? (Takes an input u8 and u64, and a type-0x5 input buffer, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink"))                                     |
+| 0   | [\#GetChallenge](#GetChallenge "wikilink")                                                                                                                                      |
+| 16  | [\#SetToken](#SetToken "wikilink")                                                                                                                                              |
+| 32  | [\#OpenSaveDataExporter](#OpenSaveDataExporter "wikilink")                                                                                                                      |
+| 33  | [\#OpenSaveDataExporter2](#OpenSaveDataExporter2 "wikilink")                                                                                                                    |
 | 34  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink"))                                  |
-| 64  | ? (Takes an input u8 and a 0x10-byte struct, and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))                      |
-| 65  | ? (Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))                                  |
+| 64  | [\#OpenSaveDataImporter](#OpenSaveDataImporter "wikilink")                                                                                                                      |
+| 65  | [\#OpenSaveDataImporter2](#OpenSaveDataImporter2 "wikilink")                                                                                                                    |
 | 66  | \[6.0.0+\] ? (Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))                       |
 | 67  | \[6.0.0+\] ? (Takes an input u8, an u8(bool), a 0x10-byte struct, and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink")) |
 | 68  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))                                  |
 | 69  | \[6.0.0+\] ? (Takes an input u64 and a 0x10-byte struct, no output)                                                                                                             |
 
-This was added with
-[5.0.0](5.0.0.md "wikilink").
+This was added with [5.0.0](5.0.0.md "wikilink").
+
+## GetChallenge
+
+No input/output, takes a type-0x6 output buffer containing the
+**Challenge**.
+
+## SetToken
+
+No input/output, takes a type-0x5 input buffer containing the **Token**.
+
+## OpenSaveDataExporter
+
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and
+u64. Returns an
+[\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").
+
+## OpenSaveDataExporter2
+
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"), an
+u64, and a type-0x5 input buffer
+[\#InitialDataVersion2](#InitialDataVersion2 "wikilink"). Returns an
+[\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").
+
+Officially this has the same name as OpenSaveDataExporter except with
+different parameters.
+
+## OpenSaveDataImporter
+
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"), a
+0x10-byte userID, and a type-0x5 input buffer
+[\#InitialDataVersion2](#InitialDataVersion2 "wikilink"). Returns an
+[\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
+
+## OpenSaveDataImporter2
+
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"), an
+u64, and a type-0x5 input buffer
+[\#InitialDataVersion2](#InitialDataVersion2 "wikilink"), returns an
+[\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
+
+Officially this has the same name as OpenSaveDataImporter except with
+different
+parameters.
 
 # ISaveDataDivisionExporter
 

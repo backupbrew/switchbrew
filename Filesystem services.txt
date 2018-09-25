@@ -954,19 +954,19 @@ No input/output.
 |-
 ! Cmd || Name
 |-
-| 0 || ? (No input/output, takes a type-0x6 output buffer)
+| 0 || [[#GetChallenge]]
 |-
-| 16 || ? (No input/output, takes a type-0x5 input buffer)
+| 16 || [[#SetToken]]
 |-
-| 32 || ? (Takes an input u8 and u64, returns an [[#ISaveDataDivisionExporter]])
+| 32 || [[#OpenSaveDataExporter]]
 |-
-| 33 || ? (Takes an input u8 and u64, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionExporter]])
+| 33 || [[#OpenSaveDataExporter2]]
 |-
 | 34 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an [[#ISaveDataDivisionExporter]])
 |-
-| 64 || ? (Takes an input u8 and a 0x10-byte struct, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
+| 64 || [[#OpenSaveDataImporter]]
 |-
-| 65 || ? (Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
+| 65 || [[#OpenSaveDataImporter2]]
 |-
 | 66 || [6.0.0+] ? (Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
@@ -978,6 +978,28 @@ No input/output.
 |}
 
 This was added with [[5.0.0]].
+
+== GetChallenge ==
+No input/output, takes a type-0x6 output buffer containing the '''Challenge'''.
+
+== SetToken ==
+No input/output, takes a type-0x5 input buffer containing the '''Token'''.
+
+== OpenSaveDataExporter ==
+Takes an input u8 [[#SaveDataSpaceId]] and u64. Returns an [[#ISaveDataDivisionExporter]].
+
+== OpenSaveDataExporter2 ==
+Takes an input u8 [[#SaveDataSpaceId]], an u64, and a type-0x5 input buffer [[#InitialDataVersion2]]. Returns an [[#ISaveDataDivisionExporter]].
+
+Officially this has the same name as OpenSaveDataExporter except with different parameters.
+
+== OpenSaveDataImporter ==
+Takes an input u8 [[#SaveDataSpaceId]], a 0x10-byte userID, and a type-0x5 input buffer [[#InitialDataVersion2]]. Returns an [[#ISaveDataDivisionImporter]].
+
+== OpenSaveDataImporter2 ==
+Takes an input u8 [[#SaveDataSpaceId]], an u64, and a type-0x5 input buffer [[#InitialDataVersion2]], returns an [[#ISaveDataDivisionImporter]].
+
+Officially this has the same name as OpenSaveDataImporter except with different parameters.
 
 = ISaveDataDivisionExporter =
 {| class="wikitable" border="1"
