@@ -980,8 +980,36 @@ No input/output.
 This was added with [[5.0.0]].
 
 = ISaveDataDivisionExporter =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || ? (Takes 4-bytes of input, no output)
+|-
+| 16 || ? (No input, returns an unknown output interface)
+|-
+| 48 || ? (Takes 4-bytes of input, returns an unknown output interface)
+|}
+
+This was added with [[5.0.0]].
 
 = ISaveDataDivisionImporter =
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 16 || ? (No input, returns an unknown output interface)
+|-
+| 32 || ? (No input, returns 8-bytes of output)
+|-
+| 33 || ? (No input/output)
+|-
+| 48 || ? (Takes 4-bytes of input, returns an unknown output interface)
+|}
+
+This was added with [[5.0.0]].
+
+Cmd16 returns the same interface as ISaveDataDivisionExporter cmd16.
 
 = ISaveDataTransferProhibiter =
 This was added with [[6.0.0]].

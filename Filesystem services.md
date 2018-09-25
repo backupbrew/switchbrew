@@ -861,11 +861,32 @@ input/output.
 | 68  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))                   |
 | 69  | \[6.0.0+\] ? (Takes a total of 0x18-bytes of input, no output)                                                                                                   |
 
-This was added with [5.0.0](5.0.0.md "wikilink").
+This was added with
+[5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataDivisionExporter
 
+| Cmd | Name                                                            |
+| --- | --------------------------------------------------------------- |
+| 0   | ? (Takes 4-bytes of input, no output)                           |
+| 16  | ? (No input, returns an unknown output interface)               |
+| 48  | ? (Takes 4-bytes of input, returns an unknown output interface) |
+
+This was added with
+[5.0.0](5.0.0.md "wikilink").
+
 # ISaveDataDivisionImporter
+
+| Cmd | Name                                                            |
+| --- | --------------------------------------------------------------- |
+| 16  | ? (No input, returns an unknown output interface)               |
+| 32  | ? (No input, returns 8-bytes of output)                         |
+| 33  | ? (No input/output)                                             |
+| 48  | ? (Takes 4-bytes of input, returns an unknown output interface) |
+
+This was added with [5.0.0](5.0.0.md "wikilink").
+
+Cmd16 returns the same interface as ISaveDataDivisionExporter cmd16.
 
 # ISaveDataTransferProhibiter
 
