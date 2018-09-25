@@ -206,12 +206,12 @@ bytes).
 ## GetEciDeviceCertificate2
 
 Same as
-[GetEciDeviceCertificate](GetEciDeviceCertificate.md "wikilink"), but
+[\#GetEciDeviceCertificate](#GetEciDeviceCertificate "wikilink"), but
 returns a RSA-2048 variant of the device certificate.
 
 ## GetEciDeviceKey2
 
-Same as [GetEciDeviceKey](GetEciDeviceKey.md "wikilink"), but returns a
+Same as [\#GetEciDeviceKey](#GetEciDeviceKey "wikilink"), but returns a
 RSA-2048 variant of the device
 key.
 

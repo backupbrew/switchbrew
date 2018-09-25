@@ -237,10 +237,10 @@ Takes a type-0x16 output buffer with fixed size 0x244.
 Returns the extended ETicket RSA-2048 key (0x240 bytes) from [[Calibration#CAL0|CAL0]]. If the extended key is not programmed then it falls back to the normal ETicket RSA-2048 key (0x220 bytes).
 
 == GetEciDeviceCertificate2 ==
-Same as [[GetEciDeviceCertificate]], but returns a RSA-2048 variant of the device certificate.
+Same as [[#GetEciDeviceCertificate]], but returns a RSA-2048 variant of the device certificate.
 
 == GetEciDeviceKey2 ==
-Same as [[GetEciDeviceKey]], but returns a RSA-2048 variant of the device key.
+Same as [[#GetEciDeviceKey]], but returns a RSA-2048 variant of the device key.
 
 == setcal Container Structure ==
 {| class="wikitable" border="1"
