@@ -1381,4 +1381,7 @@ The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-b
 
 This is a 0x60-byte struct.
 
+= InitialDataVersion2 =
+This is a 0x8210-byte struct used by [[#ISaveDataTransferManagerWithDivision]].
+
 [[Category:Services]]

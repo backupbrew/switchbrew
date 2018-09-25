@@ -1135,4 +1135,9 @@ the first 0x5-bytes set to all-zero.
 
 This is a 0x60-byte struct.
 
+# InitialDataVersion2
+
+This is a 0x8210-byte struct used by
+[\#ISaveDataTransferManagerWithDivision](#ISaveDataTransferManagerWithDivision "wikilink").
+
 [Category:Services](Category:Services "wikilink")
