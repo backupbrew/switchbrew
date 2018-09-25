@@ -100,41 +100,41 @@ mode](SPL%20services#IsDebugMode.md##IsDebugMode "wikilink").
 This is
 "nn::settings::IFactorySettingsServer".
 
-| Cmd | Name                                                                     |
-| --- | ------------------------------------------------------------------------ |
-| 0   | GetBluetoothBdAddress                                                    |
-| 1   | GetConfigurationId1                                                      |
-| 2   | GetAccelerometerOffset                                                   |
-| 3   | GetAccelerometerScale                                                    |
-| 4   | GetGyroscopeOffset                                                       |
-| 5   | GetGyroscopeScale                                                        |
-| 6   | GetWirelessLanMacAddress                                                 |
-| 7   | GetWirelessLanCountryCodeCount                                           |
-| 8   | GetWirelessLanCountryCodes                                               |
-| 9   | GetSerialNumber                                                          |
-| 10  | SetInitialSystemAppletProgramId                                          |
-| 11  | SetOverlayDispProgramId                                                  |
-| 12  | GetBatteryLot                                                            |
-| 14  | [\#GetEciDeviceCertificate](#GetEciDeviceCertificate "wikilink")         |
-| 15  | [\#GetEticketDeviceCertificate](#GetEticketDeviceCertificate "wikilink") |
-| 16  | [\#GetSslKey](#GetSslKey "wikilink")                                     |
-| 17  | [\#GetSslCertificate](#GetSslCertificate "wikilink")                     |
-| 18  | [\#GetGameCardKey](#GetGameCardKey "wikilink")                           |
-| 19  | [\#GetGameCardCertificate](#GetGameCardCertificate "wikilink")           |
-| 20  | [\#GetEciDeviceKey](#GetEciDeviceKey "wikilink")                         |
-| 21  | [\#GetEticketDeviceKey](#GetEticketDeviceKey "wikilink")                 |
-| 22  | GetSpeakerParameter                                                      |
-| 23  | \[4.0.0+\] GetLcdVendorId                                                |
-| 24  | \[5.0.0+\] GetEciDeviceCertificate2                                      |
-| 25  | \[5.0.0+\] GetEciDeviceKey2                                              |
-| 26  | \[5.0.0+\] GetAmiiboKey                                                  |
-| 27  | \[5.0.0+\] GetAmiiboEcqvCertificate                                      |
-| 28  | \[5.0.0+\] GetAmiiboEcdsaCertificate                                     |
-| 29  | \[5.0.0+\] GetAmiiboEcqvBlsKey                                           |
-| 30  | \[5.0.0+\] GetAmiiboEcqvBlsCertificate                                   |
-| 31  | \[5.0.0+\] GetAmiiboEcqvBlsRootCertificate                               |
-| 32  | \[5.0.0+\] GetUnknownId                                                  |
-| 33  | \[6.0.0+\] GetUnknownId2                                                 |
+| Cmd | Name                                                                          |
+| --- | ----------------------------------------------------------------------------- |
+| 0   | GetBluetoothBdAddress                                                         |
+| 1   | GetConfigurationId1                                                           |
+| 2   | GetAccelerometerOffset                                                        |
+| 3   | GetAccelerometerScale                                                         |
+| 4   | GetGyroscopeOffset                                                            |
+| 5   | GetGyroscopeScale                                                             |
+| 6   | GetWirelessLanMacAddress                                                      |
+| 7   | GetWirelessLanCountryCodeCount                                                |
+| 8   | GetWirelessLanCountryCodes                                                    |
+| 9   | GetSerialNumber                                                               |
+| 10  | SetInitialSystemAppletProgramId                                               |
+| 11  | SetOverlayDispProgramId                                                       |
+| 12  | GetBatteryLot                                                                 |
+| 14  | [\#GetEciDeviceCertificate](#GetEciDeviceCertificate "wikilink")              |
+| 15  | [\#GetEticketDeviceCertificate](#GetEticketDeviceCertificate "wikilink")      |
+| 16  | [\#GetSslKey](#GetSslKey "wikilink")                                          |
+| 17  | [\#GetSslCertificate](#GetSslCertificate "wikilink")                          |
+| 18  | [\#GetGameCardKey](#GetGameCardKey "wikilink")                                |
+| 19  | [\#GetGameCardCertificate](#GetGameCardCertificate "wikilink")                |
+| 20  | [\#GetEciDeviceKey](#GetEciDeviceKey "wikilink")                              |
+| 21  | [\#GetEticketDeviceKey](#GetEticketDeviceKey "wikilink")                      |
+| 22  | GetSpeakerParameter                                                           |
+| 23  | \[4.0.0+\] GetLcdVendorId                                                     |
+| 24  | \[5.0.0+\] [GetEciDeviceCertificate2](GetEciDeviceCertificate2.md "wikilink") |
+| 25  | \[5.0.0+\] [GetEciDeviceKey2](GetEciDeviceKey2.md "wikilink")                 |
+| 26  | \[5.0.0+\] GetAmiiboKey                                                       |
+| 27  | \[5.0.0+\] GetAmiiboEcqvCertificate                                           |
+| 28  | \[5.0.0+\] GetAmiiboEcdsaCertificate                                          |
+| 29  | \[5.0.0+\] GetAmiiboEcqvBlsKey                                                |
+| 30  | \[5.0.0+\] GetAmiiboEcqvBlsCertificate                                        |
+| 31  | \[5.0.0+\] GetAmiiboEcqvBlsRootCertificate                                    |
+| 32  | \[5.0.0+\] GetUsbTypeCPowerSourceCircuitVersion                               |
+| 33  | \[6.0.0+\] GetUnknownId2                                                      |
 
 Used for accessing data calibrated at the factory.
 
@@ -202,6 +202,18 @@ Returns the extended ETicket RSA-2048 key (0x240 bytes) from
 [CAL0](Calibration#CAL0.md##CAL0 "wikilink"). If the extended key is not
 programmed then it falls back to the normal ETicket RSA-2048 key (0x220
 bytes).
+
+## GetEciDeviceCertificate2
+
+Same as
+[GetEciDeviceCertificate](GetEciDeviceCertificate.md "wikilink"), but
+returns a RSA-2048 variant of the device certificate.
+
+## GetEciDeviceKey2
+
+Same as [GetEciDeviceKey](GetEciDeviceKey.md "wikilink"), but returns a
+RSA-2048 variant of the device
+key.
 
 ## setcal Container Structure
 
