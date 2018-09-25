@@ -958,23 +958,23 @@ No input/output.
 |-
 | 16 || ? (No input/output, takes a type-0x5 input buffer)
 |-
-| 32 || ? (Takes a total of 0x10-bytes of input, returns an [[#ISaveDataDivisionExporter]])
+| 32 || ? (Takes an input u8 and u64, returns an [[#ISaveDataDivisionExporter]])
 |-
-| 33 || ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionExporter]])
+| 33 || ? (Takes an input u8 and u64, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionExporter]])
 |-
-| 34 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an unknown [[#ISaveDataDivisionExporter]])
+| 34 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an [[#ISaveDataDivisionExporter]])
 |-
-| 64 || ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
+| 64 || ? (Takes an input u8 and a 0x10-byte struct, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
-| 65 || ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
+| 65 || ? (Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
-| 66 || [6.0.0+] ? (Takes a total of 0x10-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
+| 66 || [6.0.0+] ? (Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
-| 67 || [6.0.0+] ? (Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
+| 67 || [6.0.0+] ? (Takes an input u8, an u8(bool), a 0x10-byte struct, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
 | 68 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
 |-
-| 69 || [6.0.0+] ? (Takes a total of 0x18-bytes of input, no output)
+| 69 || [6.0.0+] ? (Takes an input u64 and a 0x10-byte struct, no output)
 |}
 
 This was added with [[5.0.0]].
