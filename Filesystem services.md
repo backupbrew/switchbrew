@@ -866,45 +866,54 @@ This was added with
 
 # ISaveDataDivisionExporter
 
-| Cmd | Name                                                             |
-| --- | ---------------------------------------------------------------- |
-| 0   | ? (Takes 4-bytes of input, no output)                            |
-| 1   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)   |
-| 16  | ? (No input, returns an unknown output interface)                |
-| 48  | ? (Takes 4-bytes of input, returns an unknown output interface)  |
-| 64  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output) |
-| 65  | \[6.0.0+\] ? (No input, returns a total of 0x10-bytes of output) |
-| 66  | \[6.0.0+\] ? (No input/output)                                   |
-| 67  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)   |
-| 70  | \[6.0.0+\] ? (No input, returns a total of 0x10-bytes of output) |
-| 71  | \[6.0.0+\] ? (No input, returns a total of 0x10-bytes of output) |
-| 72  | \[6.0.0+\] ? (No input/output)                                   |
-| 80  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output) |
-| 81  | \[6.0.0+\] ? (Takes a total of 0x20-bytes of input, no output)   |
-| 96  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output) |
-|     |                                                                  |
+| Cmd | Name                                                                                    |
+| --- | --------------------------------------------------------------------------------------- |
+| 0   | ? (Takes 4-bytes of input, no output)                                                   |
+| 1   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
+| 16  | ? (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink")) |
+| 48  | ? (Takes 4-bytes of input, returns an unknown output interface)                         |
+| 64  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output)                        |
+| 65  | \[6.0.0+\] ? (No input, returns a total of 0x10-bytes of output)                        |
+| 66  | \[6.0.0+\] ? (No input/output)                                                          |
+| 67  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
+| 70  | \[6.0.0+\] ? (No input, returns a total of 0x10-bytes of output)                        |
+| 71  | \[6.0.0+\] ? (No input, returns a total of 0x10-bytes of output)                        |
+| 72  | \[6.0.0+\] ? (No input/output)                                                          |
+| 80  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output)                        |
+| 81  | \[6.0.0+\] ? (Takes a total of 0x20-bytes of input, no output)                          |
+| 96  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output)                        |
+|     |                                                                                         |
 
 This was added with
 [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataDivisionImporter
 
-| Cmd | Name                                                             |
-| --- | ---------------------------------------------------------------- |
-| 0   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)   |
-| 16  | ? (No input, returns an unknown output interface)                |
-| 32  | ? (No input, returns 8-bytes of output)                          |
-| 33  | ? (No input/output)                                              |
-| 34  | \[6.0.0+\] ? (No input/output)                                   |
-| 35  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)   |
-| 36  | \[6.0.0+\] ? (No input/output)                                   |
-| 48  | ? (Takes 4-bytes of input, returns an unknown output interface)  |
-| 64  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output) |
-| 80  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output) |
+| Cmd | Name                                                                                    |
+| --- | --------------------------------------------------------------------------------------- |
+| 0   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
+| 16  | ? (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink")) |
+| 32  | ? (No input, returns 8-bytes of output)                                                 |
+| 33  | ? (No input/output)                                                                     |
+| 34  | \[6.0.0+\] ? (No input/output)                                                          |
+| 35  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
+| 36  | \[6.0.0+\] ? (No input/output)                                                          |
+| 48  | ? (Takes 4-bytes of input, returns an unknown output interface)                         |
+| 64  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output)                        |
+| 80  | \[6.0.0+\] ? (No input, returns a total of 0x20-bytes of output)                        |
 
 This was added with [5.0.0](5.0.0.md "wikilink").
 
-Cmd16 returns the same interface as ISaveDataDivisionExporter cmd16.
+# ISaveDataChunkIterator
+
+| Cmd | Name                                |
+| --- | ----------------------------------- |
+| 0   | ? (No input/output)                 |
+| 1   | ? (No input, returns an output u8)  |
+| 16  | ? (No input, returns an output u32) |
+|     |                                     |
+
+This was added with [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataTransferProhibiter
 
