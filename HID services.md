@@ -109,8 +109,8 @@ This is
 | 511  | \[5.0.0+\] WritePalmaApplicationSection                                                          |
 | 512  | \[5.0.0+\] ReadPalmaUniqueCode                                                                   |
 | 513  | \[5.0.0+\] SetPalmaUniqueCodeInvalid                                                             |
-| 520  | \[5.1.0+\] ?                                                                                     |
-| 521  | \[5.1.0+\] ?                                                                                     |
+| 520  | \[5.1.0+\] WritePalmaActivityEntry                                                               |
+| 521  | \[5.1.0+\] WritePalmaRgbLedPatternEntry                                                          |
 | 1000 | SetNpadCommunicationMode                                                                         |
 | 1001 | GetNpadCommunicationMode                                                                         |
 
