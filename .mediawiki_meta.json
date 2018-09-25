@@ -1,0 +1,619 @@
+{
+    "general": {
+        "mainpage": "Main Page",
+        "base": "https://switchbrew.org/wiki/Main_Page",
+        "sitename": "Nintendo Switch Brew",
+        "logo": "https://switchbrew.org/w/images/logo_nintendo_switch.jpg",
+        "generator": "MediaWiki 1.31.0",
+        "phpversion": "7.0.32-0ubuntu0.16.04.1",
+        "phpsapi": "fpm-fcgi",
+        "dbtype": "mysql",
+        "dbversion": "10.0.36-MariaDB-0ubuntu0.16.04.1",
+        "imagewhitelistenabled": "",
+        "langconversion": "",
+        "titleconversion": "",
+        "linkprefixcharset": "",
+        "linkprefix": "",
+        "linktrail": "/^([a-z]+)(.*)$/sD",
+        "legaltitlechars": " %!\"$&'()*,\\-.\\/0-9:;=?@A-Z\\\\^_`a-z~\\x80-\\xFF+",
+        "invalidusernamechars": "@:",
+        "fixarabicunicode": "",
+        "fixmalayalamunicode": "",
+        "case": "first-letter",
+        "lang": "en",
+        "fallback": [],
+        "fallback8bitEncoding": "windows-1252",
+        "writeapi": "",
+        "maxarticlesize": 2097152,
+        "timezone": "UTC",
+        "timeoffset": 0,
+        "articlepath": "/wiki/$1",
+        "scriptpath": "/w",
+        "script": "/w/index.php",
+        "variantarticlepath": false,
+        "server": "https://switchbrew.org",
+        "servername": "switchbrew.org",
+        "wikiid": "switchbrew",
+        "time": "2018-09-25T17:21:07Z",
+        "uploadsenabled": "",
+        "maxuploadsize": 104857600,
+        "minuploadchunksize": 1024,
+        "galleryoptions": {
+            "imagesPerRow": 0,
+            "imageWidth": 120,
+            "imageHeight": 120,
+            "captionLength": "",
+            "showBytes": "",
+            "showDimensions": "",
+            "mode": "traditional"
+        },
+        "thumblimits": [
+            120,
+            150,
+            180,
+            200,
+            250,
+            300
+        ],
+        "imagelimits": [
+            {
+                "width": 320,
+                "height": 240
+            },
+            {
+                "width": 640,
+                "height": 480
+            },
+            {
+                "width": 800,
+                "height": 600
+            },
+            {
+                "width": 1024,
+                "height": 768
+            },
+            {
+                "width": 1280,
+                "height": 1024
+            }
+        ],
+        "favicon": "https://switchbrew.org/favicon.ico",
+        "centralidlookupprovider": "local",
+        "allcentralidlookupproviders": [
+            "local"
+        ],
+        "interwikimagic": "",
+        "magiclinks": [],
+        "categorycollation": "uppercase",
+        "mobileserver": "https://switchbrew.org"
+    },
+    "namespaces": {
+        "0": {
+            "id": 0,
+            "case": "first-letter",
+            "subpages": "",
+            "content": "",
+            "*": ""
+        },
+        "1": {
+            "id": 1,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "Talk",
+            "*": "Talk"
+        },
+        "2": {
+            "id": 2,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "User",
+            "*": "User"
+        },
+        "3": {
+            "id": 3,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "User talk",
+            "*": "User talk"
+        },
+        "4": {
+            "id": 4,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "Project",
+            "*": "Nintendo Switch Brew"
+        },
+        "5": {
+            "id": 5,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "Project talk",
+            "*": "Nintendo Switch Brew talk"
+        },
+        "6": {
+            "id": 6,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "File",
+            "*": "File"
+        },
+        "7": {
+            "id": 7,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "File talk",
+            "*": "File talk"
+        },
+        "8": {
+            "id": 8,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "MediaWiki",
+            "*": "MediaWiki"
+        },
+        "9": {
+            "id": 9,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "MediaWiki talk",
+            "*": "MediaWiki talk"
+        },
+        "10": {
+            "id": 10,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "Template",
+            "*": "Template"
+        },
+        "11": {
+            "id": 11,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "Template talk",
+            "*": "Template talk"
+        },
+        "12": {
+            "id": 12,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "Help",
+            "*": "Help"
+        },
+        "13": {
+            "id": 13,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "Help talk",
+            "*": "Help talk"
+        },
+        "14": {
+            "id": 14,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "Category",
+            "*": "Category"
+        },
+        "15": {
+            "id": 15,
+            "case": "first-letter",
+            "subpages": "",
+            "canonical": "Category talk",
+            "*": "Category talk"
+        },
+        "-2": {
+            "id": -2,
+            "case": "first-letter",
+            "canonical": "Media",
+            "*": "Media"
+        },
+        "-1": {
+            "id": -1,
+            "case": "first-letter",
+            "canonical": "Special",
+            "*": "Special"
+        }
+    },
+    "namespacealiases": [
+        {
+            "id": 6,
+            "*": "Image"
+        },
+        {
+            "id": 7,
+            "*": "Image talk"
+        }
+    ],
+    "libraries": [
+        {
+            "name": "composer/semver",
+            "version": "1.4.2"
+        },
+        {
+            "name": "cssjanus/cssjanus",
+            "version": "1.2.0"
+        },
+        {
+            "name": "liuggio/statsd-php-client",
+            "version": "1.0.18"
+        },
+        {
+            "name": "oojs/oojs-ui",
+            "version": "0.26.4"
+        },
+        {
+            "name": "oyejorge/less.php",
+            "version": "1.7.0.14"
+        },
+        {
+            "name": "pear/console_getopt",
+            "version": "1.4.1"
+        },
+        {
+            "name": "pear/mail",
+            "version": "1.4.1"
+        },
+        {
+            "name": "pear/mail_mime",
+            "version": "1.10.2"
+        },
+        {
+            "name": "pear/mail_mime-decode",
+            "version": "1.5.5.2"
+        },
+        {
+            "name": "pear/net_smtp",
+            "version": "1.7.3"
+        },
+        {
+            "name": "pear/net_socket",
+            "version": "1.2.1"
+        },
+        {
+            "name": "pear/pear-core-minimal",
+            "version": "1.10.3"
+        },
+        {
+            "name": "pear/pear_exception",
+            "version": "1.0.0"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.2"
+        },
+        {
+            "name": "wikimedia/assert",
+            "version": "0.2.2"
+        },
+        {
+            "name": "wikimedia/at-ease",
+            "version": "1.2.0"
+        },
+        {
+            "name": "wikimedia/base-convert",
+            "version": "1.0.1"
+        },
+        {
+            "name": "wikimedia/cdb",
+            "version": "1.4.1"
+        },
+        {
+            "name": "wikimedia/cldr-plural-rule-parser",
+            "version": "1.0.0"
+        },
+        {
+            "name": "wikimedia/composer-merge-plugin",
+            "version": "1.4.1"
+        },
+        {
+            "name": "wikimedia/html-formatter",
+            "version": "1.0.2"
+        },
+        {
+            "name": "wikimedia/ip-set",
+            "version": "1.2.0"
+        },
+        {
+            "name": "wikimedia/object-factory",
+            "version": "1.0.0"
+        },
+        {
+            "name": "wikimedia/php-session-serializer",
+            "version": "1.0.6"
+        },
+        {
+            "name": "wikimedia/purtle",
+            "version": "1.0.7"
+        },
+        {
+            "name": "wikimedia/relpath",
+            "version": "2.1.1"
+        },
+        {
+            "name": "wikimedia/remex-html",
+            "version": "1.0.3"
+        },
+        {
+            "name": "wikimedia/running-stat",
+            "version": "1.2.1"
+        },
+        {
+            "name": "wikimedia/scoped-callback",
+            "version": "1.0.0"
+        },
+        {
+            "name": "wikimedia/testing-access-wrapper",
+            "version": "1.0.0"
+        },
+        {
+            "name": "wikimedia/timestamp",
+            "version": "1.0.0"
+        },
+        {
+            "name": "wikimedia/utfnormal",
+            "version": "2.0.0"
+        },
+        {
+            "name": "wikimedia/wait-condition-loop",
+            "version": "1.0.1"
+        },
+        {
+            "name": "wikimedia/wrappedstring",
+            "version": "2.3.0"
+        },
+        {
+            "name": "zordius/lightncandy",
+            "version": "0.23"
+        }
+    ],
+    "extensions": [
+        {
+            "type": "antispam",
+            "name": "Antispam by CleanTalk",
+            "descriptionmsg": "cleantalk-desc",
+            "author": "Denis Shagimuratov",
+            "url": "https://www.mediawiki.org/wiki/Extension:Antispam",
+            "version": "1.7"
+        },
+        {
+            "type": "antispam",
+            "name": "SpamBlacklist",
+            "descriptionmsg": "spam-blacklist-desc",
+            "author": "Tim Starling, John Du Hart, Daniel Kinzler",
+            "url": "https://www.mediawiki.org/wiki/Extension:SpamBlacklist",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/SpamBlacklist"
+        },
+        {
+            "type": "antispam",
+            "name": "ConfirmEdit",
+            "descriptionmsg": "captcha-desc",
+            "author": "Brion Vibber, Florian Schmidt, Sam Reed, ...",
+            "url": "https://www.mediawiki.org/wiki/Extension:ConfirmEdit",
+            "version": "1.5.1",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/ConfirmEdit",
+            "credits": "/wiki/Special:Version/Credits/ConfirmEdit"
+        },
+        {
+            "type": "antispam",
+            "name": "TitleBlacklist",
+            "descriptionmsg": "titleblacklist-desc",
+            "author": "Victor Vasiliev, Fran Rogers",
+            "url": "https://www.mediawiki.org/wiki/Extension:TitleBlacklist",
+            "version": "1.5.0",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/TitleBlacklist"
+        },
+        {
+            "type": "parserhook",
+            "name": "Multilang",
+            "description": "adds <nowiki><multilang></nowiki> tag, for selective display of translated texts",
+            "author": "Daniel Arnold, after an idea of Eric David",
+            "url": "http://download.pakanto.org/software/"
+        },
+        {
+            "type": "parserhook",
+            "name": "Loops",
+            "descriptionmsg": "loops-desc",
+            "author": "David M. Sledge, [http://www.mediawiki.org/wiki/User:Danwe Daniel Werner]",
+            "url": "https://www.mediawiki.org/wiki/Extension:Loops",
+            "version": "0.5.1",
+            "vcs-system": "git",
+            "vcs-version": "56162f2cb79f5c8d25622134d4088bf163601a47\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/extensions/Loops/+/56162f2cb79f5c8d25622134d4088bf163601a47\n",
+            "vcs-date": "2018-03-14T13:00:10Z",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/Loops"
+        },
+        {
+            "type": "parserhook",
+            "name": "ParserFunctions",
+            "descriptionmsg": "pfunc_desc",
+            "author": "Tim Starling, Robert Rohde, Ross McClure, Juraj Simlovic",
+            "url": "https://www.mediawiki.org/wiki/Extension:ParserFunctions",
+            "version": "1.6.0",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/ParserFunctions"
+        },
+        {
+            "type": "parserhook",
+            "name": "YouTube",
+            "descriptionmsg": "youtube-desc",
+            "author": "Przemek Piotrowski",
+            "url": "https://www.mediawiki.org/wiki/Extension:YouTube",
+            "version": "1.9.2",
+            "vcs-system": "git",
+            "vcs-version": "f6252db5a6cad6c0b6f22043586274d87b4dee91\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/extensions/YouTube/+/f6252db5a6cad6c0b6f22043586274d87b4dee91\n",
+            "vcs-date": "2018-03-15T21:52:25Z"
+        },
+        {
+            "type": "parserhook",
+            "name": "ImageMap",
+            "descriptionmsg": "imagemap_desc",
+            "author": "Tim Starling",
+            "url": "https://www.mediawiki.org/wiki/Extension:ImageMap",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/ImageMap"
+        },
+        {
+            "type": "parserhook",
+            "name": "SyntaxHighlight",
+            "descriptionmsg": "syntaxhighlight-desc",
+            "author": "Brion Vibber, Tim Starling, Rob Church, Niklas Laxström, Ori Livneh, Ed Sanders",
+            "url": "https://www.mediawiki.org/wiki/Extension:SyntaxHighlight",
+            "version": "2.0",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/SyntaxHighlight"
+        },
+        {
+            "type": "parserhook",
+            "name": "Variables",
+            "descriptionmsg": "variables-desc",
+            "author": "Rob Adams, Tom Hempel, Xiloynaha, [https://www.mediawiki.org/wiki/User:Danwe Daniel Werner], [https://www.mediawiki.org/wiki/User:MGChecker MGChecker], ...",
+            "url": "https://www.mediawiki.org/wiki/Extension:Variables",
+            "version": "2.4.0",
+            "vcs-system": "git",
+            "vcs-version": "872663b8a3075c2bdec36a16c04838f944bfa679\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/extensions/Variables/+/872663b8a3075c2bdec36a16c04838f944bfa679\n",
+            "vcs-date": "2018-04-25T15:59:57Z",
+            "license-name": "ISC",
+            "license": "/wiki/Special:Version/License/Variables"
+        },
+        {
+            "type": "other",
+            "name": "ReCaptchaNoCaptcha"
+        },
+        {
+            "type": "other",
+            "name": "MobileFrontend",
+            "descriptionmsg": "mobile-frontend-desc",
+            "author": "Patrick Reilly, Max Semenik, Jon Robson, Arthur Richards, Brion Vibber, Juliusz Gonera, Ryan Kaldari, Florian Schmidt, Rob Moen, Sam Smith",
+            "url": "https://www.mediawiki.org/wiki/Extension:MobileFrontend",
+            "version": "2.1.0",
+            "vcs-system": "git",
+            "vcs-version": "7f6684912a3e9a76e6720c84aa61a5535b76fdf3\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/extensions/MobileFrontend/+/7f6684912a3e9a76e6720c84aa61a5535b76fdf3\n",
+            "vcs-date": "2018-04-17T20:25:14Z",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/MobileFrontend",
+            "credits": "/wiki/Special:Version/Credits/MobileFrontend"
+        },
+        {
+            "type": "other",
+            "name": "DismissableSiteNotice",
+            "descriptionmsg": "sitenotice-desc",
+            "author": "Brion Vibber, Kevin Israel, Dror S.",
+            "url": "https://www.mediawiki.org/wiki/Extension:DismissableSiteNotice",
+            "version": "1.0.1",
+            "vcs-system": "git",
+            "vcs-version": "73a6b7220b85ead337df741cd1ecfe5268dfb1c6\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/extensions/DismissableSiteNotice/+/73a6b7220b85ead337df741cd1ecfe5268dfb1c6\n",
+            "vcs-date": "2018-04-14T00:17:07Z",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/DismissableSiteNotice"
+        },
+        {
+            "type": "skin",
+            "name": "MinervaNeue",
+            "namemsg": "skinname-minerva",
+            "descriptionmsg": "minerva-skin-desc",
+            "author": "",
+            "url": "https://www.mediawiki.org/wiki/Skin:MinervaNeue",
+            "vcs-system": "git",
+            "vcs-version": "2e70e792c78877153a7fcc892aa7ea75564ba219\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/skins/MinervaNeue/+/2e70e792c78877153a7fcc892aa7ea75564ba219\n",
+            "vcs-date": "2018-05-27T05:04:10Z",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/MinervaNeue"
+        },
+        {
+            "type": "skin",
+            "name": "Vector",
+            "namemsg": "skinname-vector",
+            "descriptionmsg": "vector-skin-desc",
+            "author": "Trevor Parscal, Roan Kattouw, ...",
+            "url": "https://www.mediawiki.org/wiki/Skin:Vector",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/Vector"
+        },
+        {
+            "type": "specialpage",
+            "name": "UserMerge",
+            "descriptionmsg": "usermerge-desc",
+            "author": "Tim Laqua, Thomas Gries, Matthew April",
+            "url": "https://www.mediawiki.org/wiki/Extension:UserMerge",
+            "version": "1.10.1",
+            "vcs-system": "git",
+            "vcs-version": "a641f0ce9bea6da5c9cbb79679fb6f0f6814dbb3\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/extensions/UserMerge/+/a641f0ce9bea6da5c9cbb79679fb6f0f6814dbb3\n",
+            "vcs-date": "2018-05-18T07:23:56Z",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/UserMerge"
+        },
+        {
+            "type": "specialpage",
+            "name": "CheckUser",
+            "descriptionmsg": "checkuser-desc",
+            "author": "Tim Starling, Aaron Schulz",
+            "url": "https://www.mediawiki.org/wiki/Extension:CheckUser",
+            "version": "2.4",
+            "vcs-system": "git",
+            "vcs-version": "b98e6a483c3840b52ffb79eda666496a48ae5dfc\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/extensions/CheckUser/+/b98e6a483c3840b52ffb79eda666496a48ae5dfc\n",
+            "vcs-date": "2018-04-13T22:20:52Z",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/CheckUser"
+        },
+        {
+            "type": "specialpage",
+            "name": "Nuke",
+            "descriptionmsg": "nuke-desc",
+            "author": "Brion Vibber, Jeroen De Dauw",
+            "url": "https://www.mediawiki.org/wiki/Extension:Nuke",
+            "version": "1.3.0",
+            "vcs-system": "git",
+            "vcs-version": "c6ec842cc2abed2be7a83abd03781517072d3e67\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/extensions/Nuke/+/c6ec842cc2abed2be7a83abd03781517072d3e67\n",
+            "vcs-date": "2018-05-05T04:37:59Z",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/Nuke"
+        },
+        {
+            "type": "specialpage",
+            "name": "DeleteBatch",
+            "namemsg": "deletebatch-extensionname",
+            "descriptionmsg": "deletebatch-desc",
+            "author": "Bartek Łapiński, ...",
+            "url": "https://www.mediawiki.org/wiki/Extension:DeleteBatch",
+            "version": "1.7.1",
+            "vcs-system": "git",
+            "vcs-version": "d2391414fb8af3944503ded4241d7c2973da6cff\n",
+            "vcs-url": "https://gerrit.wikimedia.org/g/mediawiki/extensions/DeleteBatch/+/d2391414fb8af3944503ded4241d7c2973da6cff\n",
+            "vcs-date": "2018-03-22T21:08:50Z",
+            "license-name": "GPL-2.0-or-later",
+            "license": "/wiki/Special:Version/License/DeleteBatch"
+        }
+    ],
+    "skins": [
+        {
+            "code": "minerva",
+            "*": "MinervaNeue"
+        },
+        {
+            "code": "vector",
+            "default": "",
+            "*": "Vector"
+        },
+        {
+            "code": "fallback",
+            "unusable": "",
+            "*": "Fallback"
+        },
+        {
+            "code": "apioutput",
+            "unusable": "",
+            "*": "ApiOutput"
+        }
+    ]
+}
