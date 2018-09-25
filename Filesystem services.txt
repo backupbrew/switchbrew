@@ -986,9 +986,32 @@ This was added with [[5.0.0]].
 |-
 | 0 || ? (Takes 4-bytes of input, no output)
 |-
+| 1 || [6.0.0+] ? (No input/output, takes a type-0x6 output buffer)
+|-
 | 16 || ? (No input, returns an unknown output interface)
 |-
 | 48 || ? (Takes 4-bytes of input, returns an unknown output interface)
+|-
+| 64 || [6.0.0+] ? (No input, returns a total of 0x20-bytes of output)
+|-
+| 65 || [6.0.0+] ? (No input, returns a total of 0x10-bytes of output)
+|-
+| 66 || [6.0.0+] ? (No input/output)
+|-
+| 67 || [6.0.0+] ? (No input/output, takes a type-0x6 output buffer)
+|-
+| 70 || [6.0.0+] ? (No input, returns a total of 0x10-bytes of output)
+|-
+| 71 || [6.0.0+] ? (No input, returns a total of 0x10-bytes of output)
+|-
+| 72 || [6.0.0+] ? (No input/output)
+|-
+| 80 || [6.0.0+] ? (No input, returns a total of 0x20-bytes of output)
+|-
+| 81 || [6.0.0+] ? (Takes a total of 0x20-bytes of input, no output)
+|-
+| 96 || [6.0.0+] ? (No input, returns a total of 0x20-bytes of output)
+|-
 |}
 
 This was added with [[5.0.0]].
