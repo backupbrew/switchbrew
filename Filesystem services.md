@@ -866,41 +866,41 @@ This was added with
 
 # ISaveDataDivisionExporter
 
-| Cmd | Name                                                                                    |
-| --- | --------------------------------------------------------------------------------------- |
-| 0   | ? (Takes an input u32, no output)                                                       |
-| 1   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
-| 16  | ? (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink")) |
-| 48  | ? (Takes an input u32, returns an unknown output interface)                             |
-| 64  | \[6.0.0+\] ? (No input, returns two 0x10-byte output structs)                           |
-| 65  | \[6.0.0+\] ? (No input, returns an output 0x10-byte struct)                             |
-| 66  | \[6.0.0+\] ? (No input/output)                                                          |
-| 67  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
-| 70  | \[6.0.0+\] ? (No input, returns an output 0x10-byte struct)                             |
-| 71  | \[6.0.0+\] ? (No input, returns an output 0x10-byte struct)                             |
-| 72  | \[6.0.0+\] ? (No input/output)                                                          |
-| 80  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                             |
-| 81  | \[6.0.0+\] ? (Takes an input 0x20-byte struct, no output)                               |
-| 96  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                             |
-|     |                                                                                         |
+| Cmd | Name                                                                                              |
+| --- | ------------------------------------------------------------------------------------------------- |
+| 0   | ? (Takes an input u32, no output)                                                                 |
+| 1   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                                    |
+| 16  | ? (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink"))           |
+| 48  | ? (Takes an input u32, returns an [\#ISaveDataChunkExporter](#ISaveDataChunkExporter "wikilink")) |
+| 64  | \[6.0.0+\] ? (No input, returns two 0x10-byte output structs)                                     |
+| 65  | \[6.0.0+\] ? (No input, returns an output 0x10-byte struct)                                       |
+| 66  | \[6.0.0+\] ? (No input/output)                                                                    |
+| 67  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                                    |
+| 70  | \[6.0.0+\] ? (No input, returns an output 0x10-byte struct)                                       |
+| 71  | \[6.0.0+\] ? (No input, returns an output 0x10-byte struct)                                       |
+| 72  | \[6.0.0+\] ? (No input/output)                                                                    |
+| 80  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                                       |
+| 81  | \[6.0.0+\] ? (Takes an input 0x20-byte struct, no output)                                         |
+| 96  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                                       |
+|     |                                                                                                   |
 
 This was added with
 [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataDivisionImporter
 
-| Cmd | Name                                                                                    |
-| --- | --------------------------------------------------------------------------------------- |
-| 0   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
-| 16  | ? (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink")) |
-| 32  | ? (No input, returns an output u64)                                                     |
-| 33  | ? (No input/output)                                                                     |
-| 34  | \[6.0.0+\] ? (No input/output)                                                          |
-| 35  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                          |
-| 36  | \[6.0.0+\] ? (No input/output)                                                          |
-| 48  | ? (Takes an input u32, returns an unknown output interface)                             |
-| 64  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                             |
-| 80  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                             |
+| Cmd | Name                                                                                              |
+| --- | ------------------------------------------------------------------------------------------------- |
+| 0   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                                    |
+| 16  | ? (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink"))           |
+| 32  | ? (No input, returns an output u64)                                                               |
+| 33  | ? (No input/output)                                                                               |
+| 34  | \[6.0.0+\] ? (No input/output)                                                                    |
+| 35  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                                    |
+| 36  | \[6.0.0+\] ? (No input/output)                                                                    |
+| 48  | ? (Takes an input u32, returns an [\#ISaveDataChunkImporter](#ISaveDataChunkImporter "wikilink")) |
+| 64  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                                       |
+| 80  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                                       |
 
 This was added with [5.0.0](5.0.0.md "wikilink").
 
@@ -912,6 +912,25 @@ This was added with [5.0.0](5.0.0.md "wikilink").
 | 1   | ? (No input, returns an output u8)  |
 | 16  | ? (No input, returns an output u32) |
 |     |                                     |
+
+This was added with
+[5.0.0](5.0.0.md "wikilink").
+
+# ISaveDataChunkExporter
+
+| Cmd | Name                                                                       |
+| --- | -------------------------------------------------------------------------- |
+| 0   | ? (Takes an input u64 and a type-0x6 output buffer, returns an output u64) |
+| 16  | \[6.0.0+\] ? (No input, returns an output u64)                             |
+|     |                                                                            |
+
+This was added with [5.0.0](5.0.0.md "wikilink").
+
+# ISaveDataChunkImporter
+
+| Cmd | Name                                                          |
+| --- | ------------------------------------------------------------- |
+| 0   | ? (Takes an input u64 and a type-0x5 input buffer, no output) |
 
 This was added with [5.0.0](5.0.0.md "wikilink").
 
