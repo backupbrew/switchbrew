@@ -171,9 +171,9 @@ This is "nn::settings::IFactorySettingsServer".
 |-
 | 23 || [4.0.0+] GetLcdVendorId
 |-
-| 24 || [5.0.0+] [[GetEciDeviceCertificate2]]
+| 24 || [5.0.0+] [[#GetEciDeviceCertificate2]]
 |-
-| 25 || [5.0.0+] [[GetEciDeviceKey2]]
+| 25 || [5.0.0+] [[#GetEciDeviceKey2]]
 |-
 | 26 || [5.0.0+] GetAmiiboKey
 |-

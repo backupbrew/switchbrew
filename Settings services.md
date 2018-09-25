@@ -125,8 +125,8 @@ This is
 | 21  | [\#GetEticketDeviceKey](#GetEticketDeviceKey "wikilink")                      |
 | 22  | GetSpeakerParameter                                                           |
 | 23  | \[4.0.0+\] GetLcdVendorId                                                     |
-| 24  | \[5.0.0+\] [GetEciDeviceCertificate2](GetEciDeviceCertificate2.md "wikilink") |
-| 25  | \[5.0.0+\] [GetEciDeviceKey2](GetEciDeviceKey2.md "wikilink")                 |
+| 24  | \[5.0.0+\] [\#GetEciDeviceCertificate2](#GetEciDeviceCertificate2 "wikilink") |
+| 25  | \[5.0.0+\] [\#GetEciDeviceKey2](#GetEciDeviceKey2 "wikilink")                 |
 | 26  | \[5.0.0+\] GetAmiiboKey                                                       |
 | 27  | \[5.0.0+\] GetAmiiboEcqvCertificate                                           |
 | 28  | \[5.0.0+\] GetAmiiboEcdsaCertificate                                          |
