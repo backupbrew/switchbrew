@@ -296,22 +296,22 @@ This is the raw data stored under the PRODINFO partition.
 |-
 |  0x3D70
 |  0x240
-|  [5.0.0+] unk_key0
-|  
+|  [5.0.0+] device_cert_rsa
+|  Device certificate (RSA-2048 version).
 |-
 |  0x3FC0
 |  0x240
-|  [5.0.0+] unk_key1
-|  
+|  [5.0.0+] device_ext_key_rsa
+|  Extended device key (RSA-2048 version).
 |-
 |  0x4210
 |  0x04
-|  [5.0.0+] unk_id
+|  [5.0.0+] usb_type_c_power_source_circuit_version
 |  
 |-
 |  0x4310
 |  0x04
-|  [6.0.0+] unk_id2
+|  [6.0.0+] unk_id
 |  
 |-
 |}
