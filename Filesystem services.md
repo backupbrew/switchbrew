@@ -851,10 +851,10 @@ input/output.
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0   | [\#GetChallenge](#GetChallenge "wikilink")                                                                                                                                      |
 | 16  | [\#SetToken](#SetToken "wikilink")                                                                                                                                              |
-| 32  | [\#OpenSaveDataExporter](#OpenSaveDataExporter "wikilink")                                                                                                                      |
+| 32  | [\#OpenSaveDataExporter](#OpenSaveDataExporter_2 "wikilink")                                                                                                                    |
 | 33  | [\#OpenSaveDataExporter2](#OpenSaveDataExporter2 "wikilink")                                                                                                                    |
 | 34  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink"))                                  |
-| 64  | [\#OpenSaveDataImporter](#OpenSaveDataImporter "wikilink")                                                                                                                      |
+| 64  | [\#OpenSaveDataImporter](#OpenSaveDataImporter_2 "wikilink")                                                                                                                    |
 | 65  | [\#OpenSaveDataImporter2](#OpenSaveDataImporter2 "wikilink")                                                                                                                    |
 | 66  | \[6.0.0+\] ? (Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))                       |
 | 67  | \[6.0.0+\] ? (Takes an input u8, an u8(bool), a 0x10-byte struct, and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink")) |
