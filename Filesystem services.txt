@@ -1070,12 +1070,11 @@ This was added with [[5.0.0]].
 |-
 ! Cmd || Name
 |-
-| 0 || ? (No input/output)
+| 0 || Next (No input/output)
 |-
-| 1 || ? (No input, returns an output u8)
+| 1 || IsEnd (No input, returns an output u8)
 |-
-| 16 || ? (No input, returns an output u32)
-|-
+| 16 || GetId (No input, returns an output u32)
 |}
 
 This was added with [[5.0.0]].

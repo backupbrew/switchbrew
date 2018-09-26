@@ -947,12 +947,11 @@ This was added with [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataChunkIterator
 
-| Cmd | Name                                |
-| --- | ----------------------------------- |
-| 0   | ? (No input/output)                 |
-| 1   | ? (No input, returns an output u8)  |
-| 16  | ? (No input, returns an output u32) |
-|     |                                     |
+| Cmd | Name                                    |
+| --- | --------------------------------------- |
+| 0   | Next (No input/output)                  |
+| 1   | IsEnd (No input, returns an output u8)  |
+| 16  | GetId (No input, returns an output u32) |
 
 This was added with
 [5.0.0](5.0.0.md "wikilink").
