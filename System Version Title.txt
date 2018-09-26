@@ -124,12 +124,7 @@ The FS for the system-version title(TID 0100000000000809) contains "/file" (and,
 | 23f9df53e25709d756e0c76effcb2473bd3447dd
 | gW93A#00050100#29uVhARHOdeTZmfdPnP785egrfRbPUW5n3IAACuHoPw=
 |-
-| 6.0.0-4.0
-| NintendoSDK Firmware for NX 6.0.0-4.0
-| 5dc1909aea612d7a444884faca584fa8ae895b5c
-| gW93A#00060000#9k9lgdev3glK0ltQTdWmdK7jU1BL9oWNJRAFkQpHUYI=
-|-
-| 6.0.0-5.0
+| 6.0.0
 | NintendoSDK Firmware for NX 6.0.0-5.0
 | ef435c4fcf83831d535424f6fc28e6c91f7669d1
 | gW93A#00060000#9k9lgdev3glK0ltQTdWmdK7jU1BL9oWNJRAFkQpHUYI=
@@ -157,4 +152,8 @@ The FS for the system-version title(TID 0100000000000809) contains "/file" (and,
 | 83480e96a810a6c7cd3a8fb58dfb5b53961ac781
 | Revision of [[Factory Setup|factory firmware]].
 |-
+| 6.0.0-4.0
+| NintendoSDK Firmware for NX 6.0.0-4.0
+| 5dc1909aea612d7a444884faca584fa8ae895b5c
+| Pre-release version of firmware 6.0.0.
 |}
