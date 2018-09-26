@@ -343,7 +343,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>[6.0.0+] olsc:s</p></td>
-<td><p>OLSC services</p></td>
+<td><p><a href="OLSC services.md" title="wikilink">OLSC services</a></p></td>
 <td></td>
 </tr>
 </tbody>

@@ -277,7 +277,7 @@ Takes a pid.
 | 
 |-
 | [6.0.0+] olsc:s
-| OLSC services
+| [[OLSC services]]
 | 
 |}
 
