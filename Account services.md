@@ -374,6 +374,19 @@ This is
 | 50  | RegisterNotificationTokenAsync   | Returns an [\#IAsyncContext](#IAsyncContext "wikilink"). |
 | 51  | UnregisterNotificationTokenAsync | Returns an [\#IAsyncContext](#IAsyncContext "wikilink"). |
 
+# dauth:0
+
+This is "nn::dauth::detail::IService".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   | \[6.0.0+\] |
+| 2   | \[6.0.0+\] |
+| 10  | \[6.0.0+\] |
+| 11  | \[6.0.0+\] |
+| 12  | \[6.0.0+\] |
+
 # UserData
 
 | Offset | Size | Description                                                          |

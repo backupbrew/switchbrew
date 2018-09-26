@@ -572,6 +572,26 @@ This is "nn::account::IBaasAccessTokenAccessor".
 | 51 || UnregisterNotificationTokenAsync || Returns an [[#IAsyncContext]].
 |}
 
+= dauth:0 =
+This is "nn::dauth::detail::IService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 || [6.0.0+]
+|-
+| 2 || [6.0.0+]
+|-
+| 10 || [6.0.0+]
+|-
+| 11 || [6.0.0+]
+|-
+| 12 || [6.0.0+]
+|}
+
 = UserData =
 {| class="wikitable" border="1"
 |-
