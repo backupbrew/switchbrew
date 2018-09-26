@@ -440,27 +440,27 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 0x1758
 | ?
-| SixAxisSensor State0
+| SixAxisSensor Pro Controller State
 |-
 | 0x1E60
 | ?
-| SixAxisSensor State1
+| SixAxisSensor Handheld State
 |-
 | 0x2578
 | ?
-| SixAxisSensor Left State
+| SixAxisSensor Pair Left State
 |-
 | 0x2C80
 | ?
-| SixAxisSensor Right State
+| SixAxisSensor Pair Right State
 |-
 | 0x3378
 | ?
-| SixAxisSensor State2
+| SixAxisSensor Single Left State
 |-
 | 0x3A80
 | ?
-| SixAxisSensor State3
+| SixAxisSensor Single Right State
 |-
 | 0x41D0
 | 0x10

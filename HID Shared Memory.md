@@ -169,12 +169,12 @@ each available controller.
 | 0xD68  | 0x20 header + 0x30 \* 17 | Controller Right State (Vertical Controls w/ Joy-Con Half) |
 | 0x10B8 | 0x20 header + 0x30 \* 17 | Controller Main State (No Analog Sticks)                   |
 | 0x1408 | 0x20 header + 0x30 \* 17 | Controller Main State                                      |
-| 0x1758 | ?                        | SixAxisSensor State0                                       |
-| 0x1E60 | ?                        | SixAxisSensor State1                                       |
-| 0x2578 | ?                        | SixAxisSensor Left State                                   |
-| 0x2C80 | ?                        | SixAxisSensor Right State                                  |
-| 0x3378 | ?                        | SixAxisSensor State2                                       |
-| 0x3A80 | ?                        | SixAxisSensor State3                                       |
+| 0x1758 | ?                        | SixAxisSensor Pro Controller State                         |
+| 0x1E60 | ?                        | SixAxisSensor Handheld State                               |
+| 0x2578 | ?                        | SixAxisSensor Pair Left State                              |
+| 0x2C80 | ?                        | SixAxisSensor Pair Right State                             |
+| 0x3378 | ?                        | SixAxisSensor Single Left State                            |
+| 0x3A80 | ?                        | SixAxisSensor Single Right State                           |
 | 0x41D0 | 0x10                     | Controller MAC                                             |
 | 0x41F0 | 0x10                     | Controller MAC                                             |
 |        |                          |                                                            |
