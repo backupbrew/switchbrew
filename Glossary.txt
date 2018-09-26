@@ -184,6 +184,10 @@
 | Supervisor Call instruction
 |
 |-
+| Secmon
+| Secure Monitor
+|
+|-
 | [[Secure_RNG_services|Secure RNG]]
 | Also known as the [[SPL_services|SPL Services]]
 |
