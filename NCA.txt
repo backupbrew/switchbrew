@@ -173,3 +173,281 @@ Each entry is 0x10 bytes:
 |}
 
 This is used for SystemUpdate, see here: [[Content_Manager_services#GetUpdateTitleList]].
+
+== Extended data ==
+
+Patch-type cnmt files include an extended data section. 
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 4
+| Number of previous cnmt entries.
+|-
+| 0x4
+| 4
+| Number of previous delta entries.
+|-
+| 0x8
+| 4
+| Number of delta info entries.
+|-
+| 0xC
+| 4
+| Number of delta application info entries.
+|-
+| 0x10
+| 4
+| Number of previous content entries.
+|-
+| 0x14
+| 4
+| Number of delta content entries.
+|-
+| 0x18
+| 4
+| Unused?
+|-
+| 0x1C
+| 0x38*X
+| Previous cnmt entries
+|-
+| 
+| 0x28*X
+| Previous delta entries
+|-
+| 
+| 0x28*X
+| Delta info entries
+|-
+| 
+| 0x34*X
+| Delta application info entries
+|-
+| 
+| 0x18*X
+| Previous content entries
+|-
+| 
+| 0x38*X
+| Delta content entries. (Standard content records)
+|-
+| 
+| 4
+| Unknown
+|-
+| 
+| 4
+| Unknown
+|-
+| 
+| 4
+| Unknown
+|-
+|}
+
+== Previous cnmt records ==
+
+Each entry is 0x38 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 8
+| Title ID
+|-
+| 0x8
+| 4
+| Title version
+|-
+| 0xC
+| 1
+| Type (see [[Content_Manager_services#Title_Types|Title Types]])
+|-
+| 0xD
+| 3
+| Unused?
+|-
+| 0x10
+| 32
+| Hash
+|-
+| 0x30
+| 2
+| Unknown
+|-
+| 0x32
+| 2
+| Unused?
+|-
+| 0x34
+| 4
+| Unused?
+|-
+|}
+
+This contains information on previous metadata files.
+
+== Previous delta records ==
+
+Each entry is 0x28 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 8
+| Old title ID
+|-
+| 0x8
+| 8
+| New title ID
+|-
+| 0x10
+| 4
+| Old title version
+|-
+| 0x14
+| 4
+| New title version
+|-
+| 0x18
+| 8
+| Size
+|-
+| 0x20
+| 8
+| Unused?
+|-
+|}
+
+This contains information on previous delta patches.
+
+== Delta info records ==
+
+Each entry is 0x28 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 8
+| Old title ID
+|-
+| 0x8
+| 8
+| New title ID
+|-
+| 0x10
+| 4
+| Old title version
+|-
+| 0x14
+| 4
+| New title version
+|-
+| 0x18
+| 8
+| Some sort of index?
+|-
+| 0x20
+| 8
+| Some sort of index?
+|-
+|}
+
+This contains information on the current delta patch.
+
+== Delta application info records ==
+
+Each entry is 0x34 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 16
+| Old NcaId
+|-
+| 0x10
+| 16
+| New NcaId
+|-
+| 0x20
+| 6
+| Old size
+|-
+| 0x26
+| 2
+| Upper 2 bytes of the new size
+|-
+| 0x28
+| 4
+| Lower 4 bytes of the new size
+|-
+| 0x2C
+| 2
+| Unknown
+|-
+| 0x2E
+| 1
+| Type (see [[Content_Manager_services#Title_Types|Title Types]])
+|-
+| 0x2F
+| 1
+| ? bit0 set = don't install?
+|-
+| 0x30
+| 4
+| Unused?
+|-
+|}
+
+This contains information on how to apply deltas to the previous patch.
+
+== Previous content records ==
+
+Each entry is 0x18 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 16
+| NcaId
+|-
+| 0x10
+| 6
+| Size
+|-
+| 0x16
+| 1
+| Type (see [[Content_Manager_services#Title_Types|Title Types]])
+|-
+| 0x17
+| 1
+| 
+|-
+|}
+
+This contains information on previous title content from earlier patches.
