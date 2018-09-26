@@ -202,7 +202,7 @@ to.
 
 | SaveID             | Owner      | Mount             | Notes                                                                                                                                                        |
 | ------------------ | ---------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0x8000000000000000 | ncm        | ?                 | Contains [imkvdb.arc](IMKV.md "wikilink") and "lastPublishedId".                                                                                             |
+| 0x8000000000000000 | fs         | ?                 | Contains [imkvdb.arc](IMKV.md "wikilink") and "lastPublishedId".                                                                                             |
 | 0x8000000000000010 | account    | account:/         | Account database.                                                                                                                                            |
 | 0x8000000000000011 | account    | idgen:/           |                                                                                                                                                              |
 | 0x8000000000000020 | nfc        | data:/            | NFC data and backups.                                                                                                                                        |
