@@ -958,11 +958,11 @@ This was added with
 
 # ISaveDataChunkExporter
 
-| Cmd | Name                                                                       |
-| --- | -------------------------------------------------------------------------- |
-| 0   | ? (Takes an input u64 and a type-0x6 output buffer, returns an output u64) |
-| 16  | \[6.0.0+\] ? (No input, returns an output u64)                             |
-|     |                                                                            |
+| Cmd | Name                                                                          |
+| --- | ----------------------------------------------------------------------------- |
+| 0   | Pull (Takes an input u64 and a type-0x6 output buffer, returns an output u64) |
+| 16  | \[6.0.0+\] GetRestRawDataSize (No input, returns an output u64)               |
+|     |                                                                               |
 
 This was added with [5.0.0](5.0.0.md "wikilink").
 
