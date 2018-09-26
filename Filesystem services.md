@@ -930,18 +930,18 @@ This was added with
 
 # ISaveDataDivisionImporter
 
-| Cmd | Name                                                                                              |
-| --- | ------------------------------------------------------------------------------------------------- |
-| 0   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                                    |
-| 16  | ? (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink"))           |
-| 32  | ? (No input, returns an output u64)                                                               |
-| 33  | ? (No input/output)                                                                               |
-| 34  | \[6.0.0+\] ? (No input/output)                                                                    |
-| 35  | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                                    |
-| 36  | \[6.0.0+\] ? (No input/output)                                                                    |
-| 48  | ? (Takes an input u32, returns an [\#ISaveDataChunkImporter](#ISaveDataChunkImporter "wikilink")) |
-| 64  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                                       |
-| 80  | \[6.0.0+\] ? (No input, returns an output 0x20-byte struct)                                       |
+| Cmd | Name                                                                                                                      |
+| --- | ------------------------------------------------------------------------------------------------------------------------- |
+| 0   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                                                            |
+| 16  | OpenSaveDataDiffChunkIterator (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink"))       |
+| 32  | InitializeImport (No input, returns an output u64)                                                                        |
+| 33  | FinalizeImport (No input/output)                                                                                          |
+| 34  | \[6.0.0+\] CancelImport (No input/output)                                                                                 |
+| 35  | \[6.0.0+\] GetImportContext (No input/output, takes a type-0x6 output buffer)                                             |
+| 36  | \[6.0.0+\] SuspendImport (No input/output)                                                                                |
+| 48  | OpenSaveDataChunkImporter (Takes an input u32, returns an [\#ISaveDataChunkImporter](#ISaveDataChunkImporter "wikilink")) |
+| 64  | \[6.0.0+\] GetImportInitialDataAad (No input, returns an output 0x20-byte struct)                                         |
+| 80  | \[6.0.0+\] GetReportInfo (No input, returns an output 0x20-byte struct)                                                   |
 
 This was added with [5.0.0](5.0.0.md "wikilink").
 
