@@ -176,6 +176,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 168 || Userland crash
 |-
+| 179 || OLSC
+|-
 | 180 || SREPO
 |-
 | 181 || Dauth

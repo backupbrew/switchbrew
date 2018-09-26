@@ -101,6 +101,7 @@ fatal-errors, since the Description ends with bit21.
 | 165   | SPSM                                                   |
 | 167   | BGTC                                                   |
 | 168   | Userland crash                                         |
+| 179   | OLSC                                                   |
 | 180   | SREPO                                                  |
 | 181   | Dauth                                                  |
 | 202   | HID                                                    |
