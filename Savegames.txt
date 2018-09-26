@@ -1,5 +1,68 @@
 This page describes the format of savegames contained in NAND. NAND savegames do not use an container with the entire file encrypted. Various areas of the saveimage is uninitialized data, resulting in encrypted data in those areas (like 3DS did).
 
+== Main header ==
+
+The header is 0x4000 bytes long.
+
+There are 2 headers stored at 0x0 and 0x4000, presumably for commit and rollback purposes.
+
+{| class="wikitable"
+|-
+! Image offset
+! Length
+! Description
+|-
+| 0x000
+| 0x100
+| AES-CMAC header
+|-
+| 0x100
+| 0x200
+| DISF header
+|-
+| 0x300
+| 0x44
+| Duplex header
+|-
+| 0x344
+| 0xC4
+| Integrity verification header
+|-
+| 0x408
+| 0x200
+| Journal header
+|-
+| 0x608
+| 0x48
+| Save header
+|-
+| 0x650
+| 0x40
+| Main data remap header
+|-
+| 0x690
+| 0x40
+| Meta data remap header
+|-
+| 0x6D0
+| 0x8
+| Unknown
+|-
+| 0x6D8
+| 0x200
+| Extra data A
+|-
+| 0x8D8
+| 0x200
+| Extra data B
+|-
+| 0xAD8
+| 0x3528
+| Additional storage
+|}
+
+The additional storage at the end of the header is used to store any extra header data. This data's structure is determined by offsets stored in the main part of the header.
+
 === AES CMAC header ===
 {| class="wikitable"
 |-
@@ -326,13 +389,13 @@ The final CMAC key used for this is generated using GenerateAesKek with a kek so
 |-
 |}
 
-=== Files ===
+== Files ==
 
-==== File Offset Table ====
+=== File Offset Table ===
 
 * Indexes 0 and 1 are reserved to point towards the folder and file tables.
 
-===== File Offset Table Entry =====
+==== File Offset Table Entry ====
 
 {| class="wikitable"
 |-
@@ -353,7 +416,7 @@ The final CMAC key used for this is generated using GenerateAesKek with a kek so
 | Unknown, 0
 |}
 
-==== File/Folder Table Entry ====
+=== File/Folder Table Entry ===
 
 * The root file/folder index is generally 2
 
