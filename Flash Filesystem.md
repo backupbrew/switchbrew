@@ -202,7 +202,7 @@ to.
 
 | SaveID             | Owner      | Mount             | Notes                                                                                                                                                        |
 | ------------------ | ---------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0x8000000000000000 |            |                   |                                                                                                                                                              |
+| 0x8000000000000000 | ncm        | ?                 | Contains [imkvdb.arc](IMKV.md "wikilink") and "lastPublishedId".                                                                                             |
 | 0x8000000000000010 | account    | account:/         | Account database.                                                                                                                                            |
 | 0x8000000000000011 | account    | idgen:/           |                                                                                                                                                              |
 | 0x8000000000000020 | nfc        | data:/            | NFC data and backups.                                                                                                                                        |
@@ -229,6 +229,9 @@ to.
 | 0x8000000000000073 | nim        | nim\_dac:/        |                                                                                                                                                              |
 | 0x8000000000000074 | nim        | nim\_delta:/      |                                                                                                                                                              |
 | 0x8000000000000075 | nim        | nim\_vac:/        |                                                                                                                                                              |
+| 0x8000000000000076 | nim        | nim\_local:/      |                                                                                                                                                              |
+| 0x8000000000000077 | nim        | nim\_lsys:/       |                                                                                                                                                              |
+| 0x8000000000000078 | nim        | nim\_eca\_dbg:/   |                                                                                                                                                              |
 | 0x8000000000000080 | friends    | friends:/         |                                                                                                                                                              |
 | 0x8000000000000081 | friends    | friends-sys:/     |                                                                                                                                                              |
 | 0x8000000000000082 | friends    | friends-image:/   |                                                                                                                                                              |
@@ -237,6 +240,7 @@ to.
 | 0x8000000000000092 | bcat       | news-dl:/         | Storage for newly(?) downloaded news list/data.                                                                                                              |
 | 0x80000000000000A0 | bcat       | prepo-sys:/       | Play Report system information.                                                                                                                              |
 | 0x80000000000000A1 | bcat       | prepo:/           | Play Report msgpack archives.                                                                                                                                |
+| 0x80000000000000A2 | bcat       | prepo-ap:/        |                                                                                                                                                              |
 | 0x80000000000000B0 | bsdsockets | nsdsave:/         | Socket configuration saved data.                                                                                                                             |
 | 0x80000000000000C1 | bcat       | bcat-sys:/        |                                                                                                                                                              |
 | 0x80000000000000C2 | bcat       | bcat-dl:/         |                                                                                                                                                              |
@@ -244,18 +248,20 @@ to.
 | 0x80000000000000E0 | es         | escertificate:/   |                                                                                                                                                              |
 | 0x80000000000000E1 | es         | escommon:/        |                                                                                                                                                              |
 | 0x80000000000000E2 | es         | espersonalized:/  |                                                                                                                                                              |
+| 0x80000000000000E3 | es         | esmetarecord:/    |                                                                                                                                                              |
+| 0x80000000000000E4 | es         | eselicense:/      |                                                                                                                                                              |
 | 0x80000000000000F0 | ns         | pdm:/             | Play Data log.                                                                                                                                               |
 | 0x8000000000000100 | pctl       | pctlss:/          | Parental Control settings.                                                                                                                                   |
 | 0x8000000000000110 | npns       | npns\_save:/      | Push notifications persistent storage.                                                                                                                       |
 | 0x8000000000000120 | ncm        | ?                 | meta/[imkvdb.arc](IMKV.md "wikilink") for system partition. Cache of data extracted from the [.cnmt](NCA.md "wikilink") for installed titles?(Including 816) |
 | 0x8000000000000121 | ncm        | ?                 | meta/[imkvdb.arc](IMKV.md "wikilink") for sd partition. In some cases this save only contains a "meta/" directory without any file.                          |
 | 0x8000000000000122 |            |                   |                                                                                                                                                              |
-| 0x8000000000001010 |            |                   |                                                                                                                                                              |
+| 0x8000000000001010 |            |                   | Contains "savedata.dat".                                                                                                                                     |
 | 0x8000000000001040 |            |                   |                                                                                                                                                              |
-| 0x8000000000001050 |            |                   | Contains database.dat. Possibly Mii data and Mii texture data?                                                                                               |
+| 0x8000000000001050 |            |                   | Contains "database.dat". Possibly Mii data and Mii texture data?                                                                                             |
 | 0x8000000000001060 |            |                   |                                                                                                                                                              |
 | 0x8000000000001070 |            |                   |                                                                                                                                                              |
-| 0x80000000000010B0 |            |                   |                                                                                                                                                              |
+| 0x80000000000010B0 |            |                   | Contains "savedata.dat".                                                                                                                                     |
 | 0x0000000000000001 |            |                   |                                                                                                                                                              |
 | 0x0000000000000003 |            |                   |                                                                                                                                                              |
 | 0x0000000000000004 |            |                   |                                                                                                                                                              |
@@ -267,4 +273,5 @@ to.
 | 0x000000000000000A |            |                   |                                                                                                                                                              |
 | 0x000000000000000C |            |                   |                                                                                                                                                              |
 | 0x000000000000000D |            |                   |                                                                                                                                                              |
-|                    |            |                   |                                                                                                                                                              |
+| 0x000000000000000F |            |                   |                                                                                                                                                              |
+| 0x0000000000000010 |            |                   |                                                                                                                                                              |
