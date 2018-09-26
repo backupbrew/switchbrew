@@ -964,13 +964,14 @@ This was added with
 | 16  | \[6.0.0+\] GetRestRawDataSize (No input, returns an output u64)               |
 |     |                                                                               |
 
-This was added with [5.0.0](5.0.0.md "wikilink").
+This was added with
+[5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataChunkImporter
 
-| Cmd | Name                                                          |
-| --- | ------------------------------------------------------------- |
-| 0   | ? (Takes an input u64 and a type-0x5 input buffer, no output) |
+| Cmd | Name                                                             |
+| --- | ---------------------------------------------------------------- |
+| 0   | Push (Takes an input u64 and a type-0x5 input buffer, no output) |
 
 This was added with [5.0.0](5.0.0.md "wikilink").
 
