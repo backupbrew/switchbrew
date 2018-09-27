@@ -250,3 +250,23 @@ each available controller.
 | 24  | SL                  |
 | 25  | SR                  |
 |     |                     |
+
+##### SixAxisSensor State Header
+
+| Offset | Size in bytes | Description                  |
+| ------ | ------------- | ---------------------------- |
+| 0x0    | 0x8           | Timestamp in ticks?          |
+| 0x8    | 0x8           | Number of entries, always 17 |
+| 0x10   | 0x8           | Latest Entry Index           |
+| 0x18   | 0x8           | ?                            |
+|        |               |                              |
+
+##### SixAxisSensor State Entry
+
+| Offset | Size in bytes | Description            |
+| ------ | ------------- | ---------------------- |
+| 0x0    | 0x8           | Timestamp in samples   |
+| 0x8    | 0x60          | The actual state data. |
+
+Official sw copies the data from offset 0x8 size 0x60 to the final
+output state.
