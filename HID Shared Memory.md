@@ -169,12 +169,12 @@ each available controller.
 | 0xD68  | 0x20 header + 0x30 \* 17 | Controller Right State (Vertical Controls w/ Joy-Con Half) |
 | 0x10B8 | 0x20 header + 0x30 \* 17 | Controller Main State (No Analog Sticks)                   |
 | 0x1408 | 0x20 header + 0x30 \* 17 | Controller Main State                                      |
-| 0x1758 | ?                        | SixAxisSensor Pro Controller State                         |
-| 0x1E60 | ?                        | SixAxisSensor Handheld State                               |
-| 0x2578 | ?                        | SixAxisSensor Pair Left State                              |
-| 0x2C80 | ?                        | SixAxisSensor Pair Right State                             |
-| 0x3378 | ?                        | SixAxisSensor Single Left State                            |
-| 0x3A80 | ?                        | SixAxisSensor Single Right State                           |
+| 0x1758 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pro Controller State                         |
+| 0x1E60 | 0x20 header + 0x68 \* 17 | SixAxisSensor Handheld State                               |
+| 0x2568 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pair Left State                              |
+| 0x2C70 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pair Right State                             |
+| 0x3378 | 0x20 header + 0x68 \* 17 | SixAxisSensor Single Left State                            |
+| 0x3A80 | 0x20 header + 0x68 \* 17 | SixAxisSensor Single Right State                           |
 | 0x41D0 | 0x10                     | Controller MAC                                             |
 | 0x41F0 | 0x10                     | Controller MAC                                             |
 |        |                          |                                                            |
@@ -253,20 +253,26 @@ each available controller.
 
 ##### SixAxisSensor State Header
 
-| Offset | Size in bytes | Description                        |
-| ------ | ------------- | ---------------------------------- |
-| 0x0    | 0x8           | Timestamp in ticks?                |
-| 0x8    | 0x8           | Number of entries, always 17       |
-| 0x10   | 0x8           | Latest Entry Index                 |
-| 0x18   | 0x8           | Total available entries, always 16 |
-|        |               |                                    |
+| Offset | Size in bytes | Description                       |
+| ------ | ------------- | --------------------------------- |
+| 0x0    | 0x8           | Timestamp in ticks?               |
+| 0x8    | 0x8           | Number of entries, always 17      |
+| 0x10   | 0x8           | Latest Entry Index                |
+| 0x18   | 0x8           | Total available entries, up to 16 |
+|        |               |                                   |
 
 ##### SixAxisSensor State Entry
 
-| Offset | Size in bytes | Description            |
-| ------ | ------------- | ---------------------- |
-| 0x0    | 0x8           | Timestamp in samples   |
-| 0x8    | 0x60          | The actual state data. |
+| Offset | Size in bytes | Description                                                  |
+| ------ | ------------- | ------------------------------------------------------------ |
+| 0x0    | 0x8           | Timestamp in samples                                         |
+| 0x8    | 0x8           | Unknown                                                      |
+| 0x16   | 0x8           | Timestamp in samples, always the same as the first timestamp |
+| 0x1C   | 0xC           | Accelerometer data as 3 floats                               |
+| 0x24   | 0xC           | Gyroscope data as 3 floats                                   |
+| 0x30   | 0xC           | Unknown sensor data as 3 floats                              |
+| 0x3C   | 0x24          | Orientation basis as 3x3 matrix of floats                    |
+| 0x60   | 0x8           | Unknown, always 1                                            |
 
 Official sw copies the data from offset 0x8 size 0x60 to the final
 output state.
