@@ -267,7 +267,7 @@ each available controller.
 | ------ | ------------- | ------------------------------------------------------------ |
 | 0x0    | 0x8           | Timestamp in samples                                         |
 | 0x8    | 0x8           | Unknown                                                      |
-| 0x16   | 0x8           | Timestamp in samples, always the same as the first timestamp |
+| 0x10   | 0x8           | Timestamp in samples, always the same as the first timestamp |
 | 0x1C   | 0xC           | Accelerometer data as 3 floats                               |
 | 0x24   | 0xC           | Gyroscope data as 3 floats                                   |
 | 0x30   | 0xC           | Unknown sensor data as 3 floats                              |
