@@ -699,10 +699,9 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 0x18
 | 0x8
-| ?
+| Total available entries, always 16
 |-
 |}
-
 
 ===== SixAxisSensor State Entry =====
 {| class="wikitable" border="1"
