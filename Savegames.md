@@ -42,21 +42,54 @@ seed.
 
 #### DISF
 
-  - This is located @ 0x100 in the image, following the CMAC
-header.
+This section contains information about the structure of the save
+file.
 
-| Start | Length | Description                                                                 |
-| ----- | ------ | --------------------------------------------------------------------------- |
-| 0x000 | 4      | Magic ("DISF")                                                              |
-| 0x004 | 4      | Magic Number (0x40000)                                                      |
-| 0x008 | 32     | Hash of start of DPFS to end of 0x4000 block (usually/always? 0x300-0x3FFF) |
-| 0x028 | 8      | Primary Partition Table Offset                                              |
-| 0x030 | 8      | Primary Partition Table Size                                                |
-| 0x038 | 8      | Secondary Partition Table Offset                                            |
-| 0x040 | 8      | Secondary Partition Table Size                                              |
-| 0x048 | 8      | Save Partition Offset                                                       |
-| 0x050 | 8      | Save Partition Size                                                         |
-| 0x258 |        | End                                                                         |
+| Start | Length | Description                                                  |
+| ----- | ------ | ------------------------------------------------------------ |
+| 0x000 | 4      | Magic ("DISF")                                               |
+| 0x004 | 4      | Magic Number (0x40000)                                       |
+| 0x008 | 32     | Hash of start of DPFS to end of 0x4000 block (0x300-0x3FFF)  |
+| 0x028 | 8      | Main data remap mapping table offset                         |
+| 0x030 | 8      | Main data remap mapping table size                           |
+| 0x038 | 8      | Meta data remap mapping table offset                         |
+| 0x040 | 8      | Meta data remap mapping table size                           |
+| 0x048 | 8      | Main data remap offset                                       |
+| 0x050 | 8      | Main data remap size                                         |
+| 0x058 | 8      | Duplex level 1 virtual offset A                              |
+| 0x060 | 8      | Duplex level 1 virtual offset B                              |
+| 0x068 | 8      | Duplex level 1 size                                          |
+| 0x070 | 8      | Duplex level 2 virtual offset A                              |
+| 0x078 | 8      | Duplex level 2 virtual offset B                              |
+| 0x080 | 8      | Duplex level 2 size                                          |
+| 0x088 | 8      | Journal storage virtual offset                               |
+| 0x090 | 8      | Journal storage data size A                                  |
+| 0x098 | 8      | Journal storage data size B                                  |
+| 0x0A0 | 8      | Journal storage journal size                                 |
+| 0x0A8 | 8      | Duplex master bitmap offset A                                |
+| 0x0B0 | 8      | Duplex master bitmap offset B                                |
+| 0x0B8 | 8      | Duplex master bitmap size                                    |
+| 0x0C0 | 8      | IVFC master hash offset A                                    |
+| 0x0C8 | 8      | IVFC master hash offset B                                    |
+| 0x0D0 | 8      | IVFC master hash size                                        |
+| 0x0D8 | 8      | Journal block table virtual offset                           |
+| 0x0E0 | 8      | Journal block table size                                     |
+| 0x0E8 | 8      | Virtual offset of bitmap of modified physical journal blocks |
+| 0x0F0 | 8      | Size of bitmap of modified physical journal blocks           |
+| 0x0F8 | 8      | Virtual offset of bitmap of modified virtual journal blocks  |
+| 0x100 | 8      | Size of bitmap of modified virtual journal blocks            |
+| 0x108 | 8      | Virtual offset of bitmap of free journal blocks              |
+| 0x110 | 8      | Size of bitmap of free journal blocks                        |
+| 0x118 | 8      | IVFC level 1 virtual offset                                  |
+| 0x120 | 8      | IVFC level 1 size                                            |
+| 0x128 | 8      | IVFC level 2 virtual offset                                  |
+| 0x130 | 8      | IVFC level 2 size                                            |
+| 0x138 | 8      | IVFC level 3 virtual offset                                  |
+| 0x140 | 8      | IVFC level 3 size                                            |
+| 0x148 | 8      | File allocation table virtual offset                         |
+| 0x150 | 8      | File allocation table size                                   |
+| 0x158 | 1      | Index of the active duplex master bitmap                     |
+| 0x200 |        | End                                                          |
 
 #### DPFS
 
