@@ -263,16 +263,16 @@ each available controller.
 
 ##### SixAxisSensor State Entry
 
-| Offset | Size in bytes | Description                                                  |
-| ------ | ------------- | ------------------------------------------------------------ |
-| 0x0    | 0x8           | Timestamp in samples                                         |
-| 0x8    | 0x8           | Unknown                                                      |
-| 0x10   | 0x8           | Timestamp in samples, always the same as the first timestamp |
-| 0x1C   | 0x4 \* 3      | Accelerometer data as 3 floats                               |
-| 0x24   | 0x4 \* 3      | Gyroscope data as 3 floats                                   |
-| 0x30   | 0x4 \* 3      | Unknown sensor data as 3 floats                              |
-| 0x3C   | 0x4 \* 9      | Orientation basis as 3x3 matrix of floats                    |
-| 0x60   | 0x8           | Unknown, always 1                                            |
+| Offset | Size in bytes | Description                               |
+| ------ | ------------- | ----------------------------------------- |
+| 0x0    | 0x8           | Timestamp in samples                      |
+| 0x8    | 0x8           | Unknown                                   |
+| 0x10   | 0x8           | Timestamp in samples again                |
+| 0x1C   | 0x4 \* 3      | Accelerometer data as 3 floats            |
+| 0x24   | 0x4 \* 3      | Gyroscope data as 3 floats                |
+| 0x30   | 0x4 \* 3      | Unknown sensor data as 3 floats           |
+| 0x3C   | 0x4 \* 9      | Orientation basis as 3x3 matrix of floats |
+| 0x60   | 0x8           | Unknown, always 1                         |
 
 Official sw copies the data from offset 0x8 size 0x60 to the final
 output state.

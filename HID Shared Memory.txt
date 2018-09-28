@@ -720,7 +720,7 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 0x10
 | 0x8
-| Timestamp in samples, always the same as the first timestamp
+| Timestamp in samples again
 |-
 | 0x1C
 | 0x4 * 3
