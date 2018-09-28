@@ -253,13 +253,13 @@ each available controller.
 
 ##### SixAxisSensor State Header
 
-| Offset | Size in bytes | Description                       |
-| ------ | ------------- | --------------------------------- |
-| 0x0    | 0x8           | Timestamp in ticks?               |
-| 0x8    | 0x8           | Number of entries, always 17      |
-| 0x10   | 0x8           | Latest Entry Index                |
-| 0x18   | 0x8           | Total available entries, up to 16 |
-|        |               |                                   |
+| Offset | Size in bytes | Description                   |
+| ------ | ------------- | ----------------------------- |
+| 0x0    | 0x8           | Timestamp in ticks?           |
+| 0x8    | 0x8           | Number of entries, always 17  |
+| 0x10   | 0x8           | Latest Entry Index            |
+| 0x18   | 0x8           | Maximum Entry Index, up to 16 |
+|        |               |                               |
 
 ##### SixAxisSensor State Entry
 
