@@ -21,12 +21,13 @@ The official name for this partition is "BootPartition1Root" and it has
 | 0x004000 | 0x4000  | SafeMode Firmware [BCT](BCT.md "wikilink") from [Title 010000000000081A](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink")                  |
 | 0x008000 | 0x4000  | Normal Firmware [BCT](BCT.md "wikilink") from [Title 0100000000000819](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink") (backup)           |
 | 0x00C000 | 0x4000  | SafeMode Firmware [BCT](BCT.md "wikilink") from [Title 010000000000081A](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink") (backup)         |
-| 0x010000 | 0xF0000 | 60 additional BCTs, normally unused/empty on retail systems.                                                                                                         |
+| 0x010000 | 0xEC000 | 59 additional BCTs, normally unused/empty on retail systems.                                                                                                         |
+| 0x0FC000 | 0x4000  | [System Update Control area](#System_Update_Control "wikilink")                                                                                                      |
 | 0x100000 | 0x40000 | Normal Firmware [package1](Package1.md "wikilink") from [Title 0100000000000819](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink")          |
 | 0x140000 | 0x40000 | Normal Firmware [package1](Package1.md "wikilink") from [Title 0100000000000819](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink") (backup) |
 | 0x180000 | 0x4000  | [Keyblob area](#Keyblob "wikilink")                                                                                                                                  |
-| 0x184000 | 0x20    | Unknown pseudorandom data, often changes on reboot. All zero on 1.0.                                                                                                 |
-| 0x184020 | 0x8?    | Increments on every boot until hitting a certain number? Bottom 10 bits (0x3FF) are always zero. All zero on 1.0.                                                    |
+| 0x184000 | 0x20    | \[2.0.0+\] Unknown SHA-256 hash. Changes every boot when the main menu is loaded.                                                                                    |
+| 0x184020 | 0x8?    | \[2.0.0+\] Unknown counter. Increments by 0x400 on every boot when the main menu is loaded.                                                                          |
 
 **Boot Partition 1 (1 of 1)**
 
@@ -38,6 +39,22 @@ The official name for this partition is "BootPartition2Root" and it has
 | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x000000 | 0x40000 | SafeMode Firmware [package1](Package1.md "wikilink") from [Title 010000000000081A](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink")          |
 | 0x040000 | 0x40000 | SafeMode Firmware [package1](Package1.md "wikilink") from [Title 010000000000081A](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink") (backup) |
+| 0x080000 | 0x40000 | Reserved                                                                                                                                                               |
+| 0x0C0000 | 0x40000 | Reserved                                                                                                                                                               |
+
+### System Update Control
+
+The 0x4000 bytes at offset 0xFC000 are used by
+[NS](NS%20Services.md "wikilink") for keeping track of the status of a
+system update. This area is used by the
+[ISystemUpdateControl](NS%20Services#ns:su.md##ns:su "wikilink")
+commands "ApplyDownloadedUpdate", "ApplyCardUpdate" and
+"ApplyReceivedUpdate".
+
+| Offset | Size | Description                                                                                                      |
+| ------ | ---- | ---------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | Set to 1 during a system update. Cleared after [NCM](NCM%20services.md "wikilink") finishes updating all titles. |
+| 0x1    | 0x1  | Set to 1 during a system update. Cleared after [NCM](NCM%20services.md "wikilink") finishes updating all titles. |
 
 ### Keyblob
 

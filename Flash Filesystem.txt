@@ -32,8 +32,12 @@ The official name for this partition is "BootPartition1Root" and it has [[Filesy
 |  SafeMode Firmware [[BCT|BCT]] from [[Title_list#System_Data_Archives|Title 010000000000081A]] (backup)
 |-
 |  0x010000
-|  0xF0000
-|  60 additional BCTs, normally unused/empty on retail systems.
+|  0xEC000
+|  59 additional BCTs, normally unused/empty on retail systems.
+|-
+|  0x0FC000
+|  0x4000
+|  [[#System Update Control|System Update Control area]]
 |-
 |  0x100000
 |  0x40000
@@ -49,11 +53,11 @@ The official name for this partition is "BootPartition1Root" and it has [[Filesy
 |-
 |  0x184000
 |  0x20
-|  Unknown pseudorandom data, often changes on reboot. All zero on 1.0.
+|  [2.0.0+] Unknown SHA-256 hash. Changes every boot when the main menu is loaded.
 |-
 |  0x184020
 |  0x8?
-|  Increments on every boot until hitting a certain number? Bottom 10 bits (0x3FF) are always zero. All zero on 1.0.
+|  [2.0.0+] Unknown counter. Increments by 0x400 on every boot when the main menu is loaded.
 |}
 
 '''Boot Partition 1 (1 of 1)'''
@@ -73,6 +77,32 @@ The official name for this partition is "BootPartition2Root" and it has [[Filesy
 |  0x040000
 |  0x40000
 |  SafeMode Firmware [[Package1|package1]] from [[Title_list#System_Data_Archives|Title 010000000000081A]] (backup)
+|-
+|  0x080000
+|  0x40000
+|  Reserved
+|-
+|  0x0C0000
+|  0x40000
+|  Reserved
+|}
+
+=== System Update Control ===
+The 0x4000 bytes at offset 0xFC000 are used by [[NS_Services|NS]] for keeping track of the status of a system update. This area is used by the [[NS_Services#ns:su|ISystemUpdateControl]] commands "ApplyDownloadedUpdate", "ApplyCardUpdate" and "ApplyReceivedUpdate".
+
+{| class="wikitable" border="1"
+|-
+!  Offset
+!  Size
+!  Description
+|-
+| 0x0
+| 0x1
+| Set to 1 during a system update. Cleared after [[NCM_services|NCM]] finishes updating all titles.
+|-
+| 0x1
+| 0x1
+| Set to 1 during a system update. Cleared after [[NCM_services|NCM]] finishes updating all titles.
 |}
 
 === Keyblob ===
