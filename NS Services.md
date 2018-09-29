@@ -607,31 +607,31 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 
 ## ISystemUpdateControl
 
-| Cmd | Name                              |
-| --- | --------------------------------- |
-| 0   | HasDownloaded                     |
-| 1   | RequestCheckLatestUpdate          |
-| 2   | RequestDownloadLatestUpdate       |
-| 3   | GetDownloadProgress               |
-| 4   | ApplyDownloadedUpdate             |
-| 5   | RequestPrepareCardUpdate          |
-| 6   | GetPrepareCardUpdateProgress      |
-| 7   | HasPreparedCardUpdate             |
-| 8   | ApplyCardUpdate                   |
-| 9   | GetDownloadedEulaDataSize         |
-| 10  | GetDownloadedEulaData             |
-| 11  | SetupCardUpdate                   |
-| 12  | GetPreparedCardUpdateEulaDataSize |
-| 13  | GetPreparedCardUpdateEulaData     |
-| 14  | SetupCardUpdateViaSystemUpdater   |
-| 15  | HasReceived                       |
-| 16  | RequestReceiveSystemUpdate        |
-| 17  | GetReceiveProgress                |
-| 18  | ApplyReceivedUpdate               |
-| 19  | GetReceivedEulaDataSize           |
-| 20  | GetReceivedEulaData               |
-| 21  | SetupToReceiveSystemUpdate        |
-|     |                                   |
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | HasDownloaded                              |
+| 1   | RequestCheckLatestUpdate                   |
+| 2   | RequestDownloadLatestUpdate                |
+| 3   | GetDownloadProgress                        |
+| 4   | ApplyDownloadedUpdate                      |
+| 5   | RequestPrepareCardUpdate                   |
+| 6   | GetPrepareCardUpdateProgress               |
+| 7   | HasPreparedCardUpdate                      |
+| 8   | ApplyCardUpdate                            |
+| 9   | GetDownloadedEulaDataSize                  |
+| 10  | GetDownloadedEulaData                      |
+| 11  | SetupCardUpdate                            |
+| 12  | GetPreparedCardUpdateEulaDataSize          |
+| 13  | GetPreparedCardUpdateEulaData              |
+| 14  | \[4.0.0+\] SetupCardUpdateViaSystemUpdater |
+| 15  | \[4.0.0+\] HasReceived                     |
+| 16  | \[4.0.0+\] RequestReceiveSystemUpdate      |
+| 17  | \[4.0.0+\] GetReceiveProgress              |
+| 18  | \[4.0.0+\] ApplyReceivedUpdate             |
+| 19  | \[4.0.0+\] GetReceivedEulaDataSize         |
+| 20  | \[4.0.0+\] GetReceivedEulaData             |
+| 21  | \[4.0.0+\] SetupToReceiveSystemUpdate      |
+| 22  | \[6.0.0+\]                                 |
 
 # ns:dev
 

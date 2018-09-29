@@ -1046,22 +1046,23 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 13 || GetPreparedCardUpdateEulaData
 |-
-| 14 || SetupCardUpdateViaSystemUpdater
+| 14 || [4.0.0+] SetupCardUpdateViaSystemUpdater
 |-
-| 15 || HasReceived
+| 15 || [4.0.0+] HasReceived
 |-
-| 16 || RequestReceiveSystemUpdate
+| 16 || [4.0.0+] RequestReceiveSystemUpdate
 |-
-| 17 || GetReceiveProgress
+| 17 || [4.0.0+] GetReceiveProgress
 |-
-| 18 || ApplyReceivedUpdate
+| 18 || [4.0.0+] ApplyReceivedUpdate
 |-
-| 19 || GetReceivedEulaDataSize
+| 19 || [4.0.0+] GetReceivedEulaDataSize
 |-
-| 20 || GetReceivedEulaData
+| 20 || [4.0.0+] GetReceivedEulaData
 |-
-| 21 || SetupToReceiveSystemUpdate
+| 21 || [4.0.0+] SetupToReceiveSystemUpdate
 |-
+| 22 || [6.0.0+]
 |}
 
 = ns:dev =
