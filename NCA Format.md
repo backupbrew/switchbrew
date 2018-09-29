@@ -25,7 +25,7 @@ NCA3.
 | 0x100  | 0x100           | RSA-2048 signature over the 0x200-bytes starting at offset 0x200 using key from [NPDM](NPDM.md "wikilink"), or zeroes if not a program.                                              |
 | 0x200  | 0x4             | Magicnum (Normally "NCA3", "NCA2" for some pre-1.0.0 NCAs)                                                                                                                           |
 | 0x204  | 0x1             | 0 for system NCAs. 1 for a NCA from gamecard.                                                                                                                                        |
-| 0x205  | 0x1             | Content Type (0=Program, 1=Meta, 2=Control, 3=Manual, 4=Data)                                                                                                                        |
+| 0x205  | 0x1             | Content Type (0=Program, 1=Meta, 2=Control, 3=Manual, 4=Data, 5=PublicData)                                                                                                          |
 | 0x206  | 0x1             | Crypto Type. Only used stating with [3.0.0](3.0.0.md "wikilink"). Normally 0. 2 = Crypto supported starting with [3.0.0](3.0.0.md "wikilink").                                       |
 | 0x207  | 0x1             | Key index, must be 0-2.                                                                                                                                                              |
 | 0x208  | 0x8             | Size of the entire NCA.                                                                                                                                                              |
