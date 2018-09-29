@@ -233,6 +233,8 @@ HEX codes for the colors shown in the "Controllers" menu of the Switch UI can be
 |-
 | Mario Red || #E10F00 || #280A0A
 |-
+| Nintendo Labo "creators contest" || #D7AA73 || #1E1914
+|-
 | Black Pro Controller || #323232 or #323231 || ?
 |}
 
