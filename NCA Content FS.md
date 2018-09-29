@@ -1,8 +1,8 @@
 This page is for the FS which can be mounted for
 [NCAs](NCA.md "wikilink") with
-[OpenFileSystem\*](Filesystem%20services.md "wikilink").
-Filesystem\_services\#OpenFileSystem|OpenFileSystem\]\] throws errors
-when trying to access a NCA-type with a
+[OpenFileSystem](Filesystem%20services#OpenFileSystem.md##OpenFileSystem "wikilink").
+[OpenFileSystem](Filesystem%20services#OpenFileSystem.md##OpenFileSystem "wikilink")
+throws errors when trying to access a NCA-type with a
 [FileSystemType](Filesystem%20services#FileSystemType.md##FileSystemType "wikilink")
 not listed below.
 

@@ -1,4 +1,4 @@
-This page is for the FS which can be mounted for [[NCA|NCAs]] with [[Filesystem_services|OpenFileSystem*]]. Filesystem_services#OpenFileSystem|OpenFileSystem]] throws errors when trying to access a NCA-type with a [[Filesystem_services#FileSystemType|FileSystemType]] not listed below.
+This page is for the FS which can be mounted for [[NCA|NCAs]] with [[Filesystem_services#OpenFileSystem|OpenFileSystem]]. [[Filesystem_services#OpenFileSystem|OpenFileSystem]] throws errors when trying to access a NCA-type with a [[Filesystem_services#FileSystemType|FileSystemType]] not listed below.
 
 = NCA-type0 =
 == ContentMeta ==
