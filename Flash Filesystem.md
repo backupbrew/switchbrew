@@ -45,16 +45,16 @@ The official name for this partition is "BootPartition2Root" and it has
 ### System Update Control
 
 The 0x4000 bytes at offset 0xFC000 are used by
-[NS](NS%20Services.md "wikilink") for keeping track of the status of a
-system update. This area is used by the
+[NS](NS%20Services.md "wikilink") and [boot](Boot.md "wikilink") for
+keeping track of the status of a system update. This area is used by the
 [ISystemUpdateControl](NS%20Services#ns:su.md##ns:su "wikilink")
 commands "ApplyDownloadedUpdate", "ApplyCardUpdate" and
 "ApplyReceivedUpdate".
 
-| Offset | Size | Description                                                                                                      |
-| ------ | ---- | ---------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x1  | Set to 1 during a system update. Cleared after [NCM](NCM%20services.md "wikilink") finishes updating all titles. |
-| 0x1    | 0x1  | Set to 1 during a system update. Cleared after [NCM](NCM%20services.md "wikilink") finishes updating all titles. |
+| Offset | Size | Description                                                                                                                                             |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | BootImages status. Set to 1 by [NS](NS%20Services.md "wikilink") during a system update and cleared by [boot](Boot.md "wikilink") after restarting.     |
+| 0x1    | 0x1  | BootImagesSafe status. Set to 1 by [NS](NS%20Services.md "wikilink") during a system update and cleared by [boot](Boot.md "wikilink") after restarting. |
 
 ### Keyblob
 

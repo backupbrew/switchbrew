@@ -88,7 +88,7 @@ The official name for this partition is "BootPartition2Root" and it has [[Filesy
 |}
 
 === System Update Control ===
-The 0x4000 bytes at offset 0xFC000 are used by [[NS_Services|NS]] for keeping track of the status of a system update. This area is used by the [[NS_Services#ns:su|ISystemUpdateControl]] commands "ApplyDownloadedUpdate", "ApplyCardUpdate" and "ApplyReceivedUpdate".
+The 0x4000 bytes at offset 0xFC000 are used by [[NS_Services|NS]] and [[Boot|boot]] for keeping track of the status of a system update. This area is used by the [[NS_Services#ns:su|ISystemUpdateControl]] commands "ApplyDownloadedUpdate", "ApplyCardUpdate" and "ApplyReceivedUpdate".
 
 {| class="wikitable" border="1"
 |-
@@ -98,11 +98,11 @@ The 0x4000 bytes at offset 0xFC000 are used by [[NS_Services|NS]] for keeping tr
 |-
 | 0x0
 | 0x1
-| Set to 1 during a system update. Cleared after [[NCM_services|NCM]] finishes updating all titles.
+| BootImages status. Set to 1 by [[NS_Services|NS]] during a system update and cleared by [[Boot|boot]] after restarting.
 |-
 | 0x1
 | 0x1
-| Set to 1 during a system update. Cleared after [[NCM_services|NCM]] finishes updating all titles.
+| BootImagesSafe status. Set to 1 by [[NS_Services|NS]] during a system update and cleared by [[Boot|boot]] after restarting.
 |}
 
 === Keyblob ===
