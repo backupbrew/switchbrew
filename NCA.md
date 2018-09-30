@@ -23,16 +23,16 @@ There's at least 7 different filenames used for ".cnmt":
 It starts with a
 header:
 
-| Offset | Size | Description                                                                                     |
-| ------ | ---- | ----------------------------------------------------------------------------------------------- |
-| 0x0    | 8    | Title ID                                                                                        |
-| 0x8    | 4    | u32 [title-version](Title%20list.md "wikilink")                                                 |
-| 0xC    | 1    | Type (see [Title Types](Content%20Manager%20services#Title%20Types.md##Title_Types "wikilink")) |
-| 0xD    | 1    |                                                                                                 |
-| 0xE    | 2    | Offset to table relative to the end of this 0x20-byte header.                                   |
-| 0x10   | 2    | Number of content entries                                                                       |
-| 0x12   | 2    | Number of meta entries                                                                          |
-| 0x14   | 12   |                                                                                                 |
+| Offset | Size | Description                                                                       |
+| ------ | ---- | --------------------------------------------------------------------------------- |
+| 0x0    | 8    | Title ID                                                                          |
+| 0x8    | 4    | u32 [title-version](Title%20list.md "wikilink")                                   |
+| 0xC    | 1    | Type (see [Title Types](NCM%20services#Title%20Types.md##Title_Types "wikilink")) |
+| 0xD    | 1    |                                                                                   |
+| 0xE    | 2    | Offset to table relative to the end of this 0x20-byte header.                     |
+| 0x10   | 2    | Number of content entries                                                         |
+| 0x12   | 2    | Number of meta entries                                                            |
+| 0x14   | 12   |                                                                                   |
 
 With SystemUpdate, the 4-bytes at offset 0xE are zero, with the
 entry-count field located at offset 0x12 instead(header size is the
