@@ -869,6 +869,34 @@ This is "nn::uart::IManager".
 | 7   | IsSomethingUartValid2        |
 | 8   | IsSomethingUartValid2ForTest |
 
+## DoesUartExist
+
+Takes a u32 [\#UartPort](#UartPort "wikilink") and returns boolean
+success value
+
+## SetUartBaudrate
+
+Takes a u32 [\#UartPort](#UartPort "wikilink") and a u32 baudrate and
+returns boolean success value
+
+## IsSomethingUartValid
+
+Takes a u32 [\#UartPort](#UartPort "wikilink") and returns boolean
+success value
+
+## GetSession
+
+Takes a u32 [\#UartPort](#UartPort "wikilink") and returns an
+[\#IPortSession](#IPortSession "wikilink")
+
+## UartPort
+
+| Name | Port   | Usage      |
+| ---- | ------ | ---------- |
+| 1    | UART-D | Bluetooth  |
+| 2    | UART-B | Joy-Con(R) |
+| 3    | UART-C | Joy-Con(L) |
+
 ## IPortSession
 
 This is "nn::uart::IPortSession".
@@ -886,15 +914,10 @@ This is "nn::uart::IPortSession".
 
 ### Port Mapping
 
-OpenSession translates user IDs to to the uart port index.
+OpenSession translates user IDs to to the
+[\#UartPort](#UartPort "wikilink") index.
 
 OpenSessionForTest takes the port index verbatim.
-
-| Name | Port   | Usage      |
-| ---- | ------ | ---------- |
-| 1    | UART-D | Bluetooth  |
-| 2    | UART-B | Joy-Con(R) |
-| 3    | UART-C | Joy-Con(L) |
 
 # pwm
 
