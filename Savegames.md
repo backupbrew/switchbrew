@@ -40,7 +40,7 @@ The final CMAC key used for this is generated using GenerateAesKek with
 a kek source and the device key, along with and LoadAesKey and a set key
 seed.
 
-#### DISF
+### DISF
 
 This section contains information about the structure of the save
 file.
@@ -91,87 +91,93 @@ file.
 | 0x158 | 1      | Index of the active duplex master bitmap                     |
 | 0x200 |        | End                                                          |
 
-#### DPFS
+### Duplex header
 
-  - This is located @ 0x300 in the image, following DISF.
-  - Block sizes are log2
+  - Block sizes are stored as powers of 2
 
-| Start | Length | Description            |
-| ----- | ------ | ---------------------- |
-| 0x00  | 4      | Magic ("DPFS")         |
-| 0x04  | 4      | Magic Number (0x10000) |
-| 0x08  | 8      | Offset 0               |
-| 0x10  | 8      | Size 0                 |
-| 0x18  | 4      | Block Size 0, in log 2 |
-| 0x1C  | 8      | Offset 1               |
-| 0x24  | 8      | Size 1                 |
-| 0x2C  | 4      | Block Size 1, in log 2 |
-| 0x30  | 8      | Offset 2               |
-| 0x38  | 8      | Size 2                 |
-| 0x40  | 4      | Block Size 2, in log 2 |
-|       |        |                        |
+| Start | Length | Description                    |
+| ----- | ------ | ------------------------------ |
+| 0x00  | 4      | Magic ("DPFS")                 |
+| 0x04  | 4      | Magic Number (0x10000)         |
+| 0x08  | 8      | Master bitmap offset           |
+| 0x10  | 8      | Master bitmap size             |
+| 0x18  | 4      | Master bitmap block size power |
+| 0x1C  | 8      | Level 1 offset                 |
+| 0x24  | 8      | Level 1 size                   |
+| 0x2C  | 4      | Level 1 block size power       |
+| 0x30  | 8      | Level 2 offset                 |
+| 0x38  | 8      | Level 2 size                   |
+| 0x40  | 4      | Level 2 block size power       |
+|       |        |                                |
 
-#### IVFC
+### Integrity verification header
 
-  - Generally follows DPFS, similar to 3DS.
+  - Offsets for levels 1-3 come from the metadata remap storage
+  - Offsets for level 4 comes from the main data remap storage
+  - This is the same header used in NCA files
 
-| Start | Length | Description                  |
-| ----- | ------ | ---------------------------- |
-| 0x00  | 4      | Magic ("IVFC")               |
-| 0x04  | 4      | Magic Number (0x20000)       |
-| 0x08  | 8      | Master hash size?            |
-| 0x10  | 8      | Level 1 offset               |
-| 0x18  | 8      | Level 1 size                 |
-| 0x20  | 4      | Level 1 block size, in log2  |
-| 0x24  | 4      | Reserved                     |
-| 0x28  | 8      | Level 2 offset               |
-| 0x30  | 8      | Level 2 size                 |
-| 0x38  | 4      | Level 2 block size, in log2. |
-| 0x3C  | 4      | Reserved                     |
-| 0x40  | 8      | Level 3 offset               |
-| 0x48  | 8      | Level 3 size                 |
-| 0x50  | 4      | Level 3 block size, in log2. |
-| 0x54  | 4      | Reserved                     |
-| 0x58  | 8      | Level 4 offset               |
-| 0x60  | 8      | Level 4 size                 |
-| 0x68  | 4      | Level 4 block size, in log2. |
-| 0x6C  | 4      | Reserved                     |
-| 0x70  | 48     | Unknown, reserved?           |
-| 0xA0  | 32     | Hash                         |
-|       |        |                              |
+| Start | Length  | Description                             |
+| ----- | ------- | --------------------------------------- |
+| 0x00  | 4       | Magic ("IVFC")                          |
+| 0x04  | 4       | Magic Number (0x20000)                  |
+| 0x08  | 4       | Master hash size                        |
+| 0xC   | 4       | Number of levels (Unused in save files) |
+| 0x10  | 0x18\*6 | Level information for up to 6 levels    |
+| 0xA0  | 32      | Salt seed                               |
+|       |         |                                         |
 
-#### JNGL
+#### Level information
 
-  - Generally follows IVFC
+  - 0x18 bytes long
+  - Block sizes are stored as powers of 2
 
-| Start | Length | Description            |
-| ----- | ------ | ---------------------- |
-| 0x00  | 4      | Magic ("JNGL")         |
-| 0x04  | 4      | Magic Number (0x10000) |
-| 0x08  | 8      | Savedata Size          |
-| 0x10  | 8      | Unknown, Size          |
-| 0x18  | 8      | Savedata Blocksize?    |
-| 0x20  | 4      | Unknown                |
-| 0x24  | 4      | Unknown                |
-| 0x28  | 8      | Unknown                |
-| 0x30  | 464    | Padding?               |
-|       |        |                        |
+| Start | Length | Description      |
+| ----- | ------ | ---------------- |
+| 0x00  | 8      | Offset           |
+| 0x08  | 8      | Size             |
+| 0x10  | 4      | Block size power |
+| 0x14  | 4      | Reserved         |
+|       |        |                  |
 
-#### SAVE
+### Journal header
 
-  - Generally follows JNGL, structure is different from 3DS.
+| Start | Length | Description                    |
+| ----- | ------ | ------------------------------ |
+| 0x00  | 4      | Magic ("JNGL")                 |
+| 0x04  | 4      | Magic Number (0x10000 or less) |
+| 0x08  | 8      | Total size (Incl. journal)     |
+| 0x10  | 8      | Journal size                   |
+| 0x18  | 8      | Block size                     |
+| 0x20  | 4      | Unknown (Must be 0 or 1)       |
+| 0x24  | 4      | Main data block count          |
+| 0x28  | 8      | Journal block count            |
+| 0x200 |        | End                            |
+|       |        |                                |
 
-| Start | Length | Description            |
-| ----- | ------ | ---------------------- |
-| 0x00  | 4      | Magic ("SAVE")         |
-| 0x04  | 4      | Magic Number (0x60000) |
-| 0x08  | 8      | Unknown, number        |
-| 0x10  | 8      | Unknown, block size    |
-| 0x18  | 8      | Unknown, block size    |
-| 0x20  | 8      | Unknown                |
-|       |        |                        |
+### Save FS header
 
-#### RMAP
+  - Structure is different than
+3DS.
+
+| Start | Length | Description                                                |
+| ----- | ------ | ---------------------------------------------------------- |
+| 0x00  | 4      | Magic ("SAVE")                                             |
+| 0x04  | 4      | Magic Number (0x60000)                                     |
+| 0x08  | 8      | Number of blocks. Does not change if save file is resized. |
+| 0x10  | 8      | Block Size                                                 |
+|       |        | The below fields are read separately from the above fields |
+| 0x18  | 8      | Block size                                                 |
+| 0x20  | 8      | FAT offset                                                 |
+| 0x28  | 4      | FAT entry count                                            |
+| 0x2C  | 4      | Padding                                                    |
+| 0x30  | 8      | Data offset                                                |
+| 0x38  | 4      | Data block count                                           |
+| 0x3C  | 4      | Padding                                                    |
+| 0x40  | 8      | Directory table block index                                |
+| 0x48  | 8      | File table block index                                     |
+|       |        |                                                            |
+
+### RMAP
 
   - There are generally two RMAP blocks in sequence.
 
