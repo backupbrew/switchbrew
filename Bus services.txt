@@ -375,19 +375,19 @@ This is "nn::uart::IManager".
 |-
 ! Cmd || Name
 |-
-| 0 || DoesUartExist
+| 0 || [[#DoesUartExist]]
 |-
 | 1 || DoesUartExistForTest
 |-
-| 2 || SetUartBaudrate
+| 2 || [[#SetUartBaudrate]]
 |-
 | 3 || SetUartBaudrateForTest
 |-
-| 4 || IsSomethingUartValid
+| 4 || [[#IsSomethingUartValid]]
 |-
 | 5 || IsSomethingUartValidForTest
 |-
-| 6 || GetSession
+| 6 || [[#GetSession]]
 |-
 | 7 || IsSomethingUartValid2
 |-
@@ -405,7 +405,6 @@ Takes a u32 [[#UartPort]] and returns boolean success value
 
 == GetSession ==
 Takes a u32 [[#UartPort]] and returns an [[#IPortSession]]
-
 
 == UartPort ==
 {| class="wikitable sortable" border="1"

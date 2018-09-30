@@ -857,17 +857,17 @@ This is "nn::i2c::ISession".
 
 This is "nn::uart::IManager".
 
-| Cmd | Name                         |
-| --- | ---------------------------- |
-| 0   | DoesUartExist                |
-| 1   | DoesUartExistForTest         |
-| 2   | SetUartBaudrate              |
-| 3   | SetUartBaudrateForTest       |
-| 4   | IsSomethingUartValid         |
-| 5   | IsSomethingUartValidForTest  |
-| 6   | GetSession                   |
-| 7   | IsSomethingUartValid2        |
-| 8   | IsSomethingUartValid2ForTest |
+| Cmd | Name                                                       |
+| --- | ---------------------------------------------------------- |
+| 0   | [\#DoesUartExist](#DoesUartExist "wikilink")               |
+| 1   | DoesUartExistForTest                                       |
+| 2   | [\#SetUartBaudrate](#SetUartBaudrate "wikilink")           |
+| 3   | SetUartBaudrateForTest                                     |
+| 4   | [\#IsSomethingUartValid](#IsSomethingUartValid "wikilink") |
+| 5   | IsSomethingUartValidForTest                                |
+| 6   | [\#GetSession](#GetSession "wikilink")                     |
+| 7   | IsSomethingUartValid2                                      |
+| 8   | IsSomethingUartValid2ForTest                               |
 
 ## DoesUartExist
 
