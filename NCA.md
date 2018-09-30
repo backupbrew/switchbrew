@@ -85,13 +85,13 @@ bytes:
 Each entry is 0x10
 bytes:
 
-| Offset | Size | Description                                                                                     |
-| ------ | ---- | ----------------------------------------------------------------------------------------------- |
-| 0x0    | 8    | Title ID                                                                                        |
-| 0x8    | 4    | Title version                                                                                   |
-| 0xC    | 1    | Type (see [Title Types](Content%20Manager%20services#Title%20Types.md##Title_Types "wikilink")) |
-| 0xD    | 1    | ? bit0 set = don't install?                                                                     |
-| 0xE    | 2    | Unused?                                                                                         |
+| Offset | Size | Description                                                                       |
+| ------ | ---- | --------------------------------------------------------------------------------- |
+| 0x0    | 8    | Title ID                                                                          |
+| 0x8    | 4    | Title version                                                                     |
+| 0xC    | 1    | Type (see [Title Types](NCM%20services#Title%20Types.md##Title_Types "wikilink")) |
+| 0xD    | 1    | ? bit0 set = don't install?                                                       |
+| 0xE    | 2    | Unused?                                                                           |
 
 This is used for SystemUpdate, see here:
 [Content\_Manager\_services\#GetUpdateTitleList](Content%20Manager%20services#GetUpdateTitleList.md##GetUpdateTitleList "wikilink").
@@ -125,17 +125,17 @@ Patch-type cnmt files include an extended data section.
 Each entry is 0x38
 bytes:
 
-| Offset | Size | Description                                                                                     |
-| ------ | ---- | ----------------------------------------------------------------------------------------------- |
-| 0x0    | 8    | Title ID                                                                                        |
-| 0x8    | 4    | Title version                                                                                   |
-| 0xC    | 1    | Type (see [Title Types](Content%20Manager%20services#Title%20Types.md##Title_Types "wikilink")) |
-| 0xD    | 3    | Unused?                                                                                         |
-| 0x10   | 32   | Hash                                                                                            |
-| 0x30   | 2    | Unknown                                                                                         |
-| 0x32   | 2    | Unused?                                                                                         |
-| 0x34   | 4    | Unused?                                                                                         |
-|        |      |                                                                                                 |
+| Offset | Size | Description                                                                       |
+| ------ | ---- | --------------------------------------------------------------------------------- |
+| 0x0    | 8    | Title ID                                                                          |
+| 0x8    | 4    | Title version                                                                     |
+| 0xC    | 1    | Type (see [Title Types](NCM%20services#Title%20Types.md##Title_Types "wikilink")) |
+| 0xD    | 3    | Unused?                                                                           |
+| 0x10   | 32   | Hash                                                                              |
+| 0x30   | 2    | Unknown                                                                           |
+| 0x32   | 2    | Unused?                                                                           |
+| 0x34   | 4    | Unused?                                                                           |
+|        |      |                                                                                   |
 
 This contains information on previous metadata files.
 
@@ -176,18 +176,18 @@ This contains information on the current delta patch.
 Each entry is 0x34
 bytes:
 
-| Offset | Size | Description                                                                                     |
-| ------ | ---- | ----------------------------------------------------------------------------------------------- |
-| 0x0    | 16   | Old NcaId                                                                                       |
-| 0x10   | 16   | New NcaId                                                                                       |
-| 0x20   | 6    | Old size                                                                                        |
-| 0x26   | 2    | Upper 2 bytes of the new size                                                                   |
-| 0x28   | 4    | Lower 4 bytes of the new size                                                                   |
-| 0x2C   | 2    | Unknown                                                                                         |
-| 0x2E   | 1    | Type (see [Title Types](Content%20Manager%20services#Title%20Types.md##Title_Types "wikilink")) |
-| 0x2F   | 1    | ? bit0 set = don't install?                                                                     |
-| 0x30   | 4    | Unused?                                                                                         |
-|        |      |                                                                                                 |
+| Offset | Size | Description                                                                       |
+| ------ | ---- | --------------------------------------------------------------------------------- |
+| 0x0    | 16   | Old NcaId                                                                         |
+| 0x10   | 16   | New NcaId                                                                         |
+| 0x20   | 6    | Old size                                                                          |
+| 0x26   | 2    | Upper 2 bytes of the new size                                                     |
+| 0x28   | 4    | Lower 4 bytes of the new size                                                     |
+| 0x2C   | 2    | Unknown                                                                           |
+| 0x2E   | 1    | Type (see [Title Types](NCM%20services#Title%20Types.md##Title_Types "wikilink")) |
+| 0x2F   | 1    | ? bit0 set = don't install?                                                       |
+| 0x30   | 4    | Unused?                                                                           |
+|        |      |                                                                                   |
 
 This contains information on how to apply deltas to the previous patch.
 
@@ -196,13 +196,13 @@ This contains information on how to apply deltas to the previous patch.
 Each entry is 0x18
 bytes:
 
-| Offset | Size | Description                                                                                     |
-| ------ | ---- | ----------------------------------------------------------------------------------------------- |
-| 0x0    | 16   | NcaId                                                                                           |
-| 0x10   | 6    | Size                                                                                            |
-| 0x16   | 1    | Type (see [Title Types](Content%20Manager%20services#Title%20Types.md##Title_Types "wikilink")) |
-| 0x17   | 1    |                                                                                                 |
-|        |      |                                                                                                 |
+| Offset | Size | Description                                                                       |
+| ------ | ---- | --------------------------------------------------------------------------------- |
+| 0x0    | 16   | NcaId                                                                             |
+| 0x10   | 6    | Size                                                                              |
+| 0x16   | 1    | Type (see [Title Types](NCM%20services#Title%20Types.md##Title_Types "wikilink")) |
+| 0x17   | 1    |                                                                                   |
+|        |      |                                                                                   |
 
 This contains information on previous title content from earlier
 patches.

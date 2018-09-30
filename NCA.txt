@@ -161,7 +161,7 @@ Each entry is 0x10 bytes:
 |-
 | 0xC
 | 1
-| Type (see [[Content_Manager_services#Title_Types|Title Types]])
+| Type (see [[NCM_services#Title_Types|Title Types]])
 |-
 | 0xD
 | 1
@@ -270,7 +270,7 @@ Each entry is 0x38 bytes:
 |-
 | 0xC
 | 1
-| Type (see [[Content_Manager_services#Title_Types|Title Types]])
+| Type (see [[NCM_services#Title_Types|Title Types]])
 |-
 | 0xD
 | 3
@@ -408,7 +408,7 @@ Each entry is 0x34 bytes:
 |-
 | 0x2E
 | 1
-| Type (see [[Content_Manager_services#Title_Types|Title Types]])
+| Type (see [[NCM_services#Title_Types|Title Types]])
 |-
 | 0x2F
 | 1
@@ -442,7 +442,7 @@ Each entry is 0x18 bytes:
 |-
 | 0x16
 | 1
-| Type (see [[Content_Manager_services#Title_Types|Title Types]])
+| Type (see [[NCM_services#Title_Types|Title Types]])
 |-
 | 0x17
 | 1
