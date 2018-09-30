@@ -114,7 +114,7 @@ Takes a pid.
 | [[Capture services]]
 | a: AlbumAccessor, c: AlbumControl
 |-
-| caps:sc, caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0-6.0.0] caps:su
+| caps:sc, caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0-5.1.0] caps:su
 | [[Display services]]
 | 
 |-
