@@ -177,15 +177,19 @@ file.
 | 0x48  | 8      | File table block index                                     |
 |       |        |                                                            |
 
-### RMAP
+### Remap storage header
 
-  - There are generally two RMAP blocks in sequence.
+  - There are generally two RMAP blocks in
+sequence.
 
-| Start | Length | Description            |
-| ----- | ------ | ---------------------- |
-| 0x00  | 4      | Magic ("RMAP")         |
-| 0x04  | 4      | Magic Number (0x10000) |
-|       |        |                        |
+| Start | Length | Description                                                      |
+| ----- | ------ | ---------------------------------------------------------------- |
+| 0x00  | 4      | Magic ("RMAP")                                                   |
+| 0x04  | 4      | Magic Number (0x10000 or less)                                   |
+| 0x08  | 4      | Number of remapping entries                                      |
+| 0x0C  | 4      | Number of remapping segments                                     |
+| 0x0C  | 4      | Number of bits reserved for the segment index in virtual offsets |
+| 0x40  |        | End                                                              |
 
 ## Files
 
