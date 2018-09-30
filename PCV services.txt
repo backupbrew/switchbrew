@@ -301,13 +301,13 @@ This is "nn::pcv::detail::IPcvService".
 |-
 |  5 || max77620_ldo1 || 
 |-
-|  6 || max77620_ldo2 || SDcard power, 3.3v - 1.8v
+|  6 || max77620_ldo2 || SDcard power, 1.8v - 3.3v
 |-
-|  7 || max77620_ldo3 || 
+|  7 || max77620_ldo3 || GC ASIC 3.1v
 |-
 |  8 || max77620_ldo4 || RTC power, 0.85v
 |-
-|  9 || max77620_ldo5 || 
+|  9 || max77620_ldo5 || GC ASIC 1.8v
 |-
 | 10 || max77620_ldo6 || AVDD touchscreen, 2.9v
 |-

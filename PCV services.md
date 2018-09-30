@@ -165,10 +165,10 @@ This is "nn::pcv::detail::IPcvService".
 | 3    | max77620\_sd3  |                           |
 | 4    | max77620\_ldo0 | 1.2v                      |
 | 5    | max77620\_ldo1 |                           |
-| 6    | max77620\_ldo2 | SDcard power, 3.3v - 1.8v |
-| 7    | max77620\_ldo3 |                           |
+| 6    | max77620\_ldo2 | SDcard power, 1.8v - 3.3v |
+| 7    | max77620\_ldo3 | GC ASIC 3.1v              |
 | 8    | max77620\_ldo4 | RTC power, 0.85v          |
-| 9    | max77620\_ldo5 |                           |
+| 9    | max77620\_ldo5 | GC ASIC 1.8v              |
 | 10   | max77620\_ldo6 | AVDD touchscreen, 2.9v    |
 | 11   | max77620\_ldo7 |                           |
 | 12   | max77620\_ldo8 | DisplayPort, 1.05v        |
