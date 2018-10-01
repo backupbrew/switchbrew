@@ -361,12 +361,16 @@ This is "nn::i2c::ISession".
 |-
 | 2 || ExecuteCommandList
 |-
-| 10 || SendAuto
+| 10 || [[#SendAuto]]
 |-
 | 11 || ReceiveAuto
 |-
 | 12 || ExecuteCommandListAuto
 |}
+
+== SendAuto ==
+
+Takes bytes to write in either a static buffer or a receive buffer, returns an error code for success
 
 = uart =
 This is "nn::uart::IManager".
