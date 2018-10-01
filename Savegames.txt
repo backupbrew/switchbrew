@@ -1,4 +1,4 @@
-This page describes the format of savegames contained in NAND. NAND savegames do not use an container with the entire file encrypted. Various areas of the saveimage is uninitialized data, resulting in encrypted data in those areas (like 3DS did).
+This page describes the format of save files contained in NAND. These files are stored as completely unencrypted, plaintext data. Save files are not cleared upon creation, resulting in possible garbage data in unused portions of the container.
 
 == Main header ==
 
@@ -415,9 +415,13 @@ This section contains information about the structure of the save file.
 | 8
 | Block size
 |-
+| 
+| 
+| The below fields are treated as a separate subheader
+|-
 | 0x20
 | 4
-| Unknown (Must be 0 or 1)
+| Version? (Must be 0 or 1)
 |-
 | 0x24
 | 4
@@ -461,7 +465,7 @@ This section contains information about the structure of the save file.
 |-
 | 
 | 
-| The below fields are read separately from the above fields
+| The below fields are treated as a separate subheader
 |-
 | 0x18
 | 8
@@ -577,34 +581,11 @@ This section contains information about the structure of the save file.
 
 == Files ==
 
-=== File Offset Table ===
+=== Directory Table Entry ===
 
-* Indexes 0 and 1 are reserved to point towards the folder and file tables.
-
-==== File Offset Table Entry ====
-
-{| class="wikitable"
-|-
-! Start
-! Length
-! Description
-|-
-| 0x00
-| 3
-| Data offset, in blocks
-|-
-| 0x03
-| 1
-| Unknown, 80
-|-
-| 0x04
-| 4
-| Unknown, 0
-|}
-
-=== File/Folder Table Entry ===
-
-* The root file/folder index is generally 2
+* Index 0 is the start of a linked list that contains all invalid/inactive directories.
+* Index 1 is the start of a linked list that contains all valid/active directories.
+* Index 2 is the root directory.
 
 {| class="wikitable"
 |-
@@ -614,7 +595,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x00
 | 4
-| Parent Folder Index
+| Parent directory node index
 |-
 | 0x04
 | 64
@@ -622,22 +603,63 @@ This section contains information about the structure of the save file.
 |-
 | 0x44
 | 4
-| File/Folder Index?
+| Next sibling directory node index
 |-
 | 0x48
 | 4
-| File offset index in offset table, 0 for folders
+| First child directory node index
 |-
 | 0x4c
 | 8
-| File size, or number of files for folders
+| First child file node index
 |-
 | 0x54
 | 8
-| Unknown
+| Unused?
 |-
 | 0x5c
 | 4
-| Next File Index, same as folder index for folders
+| Next directory node index in the chain of invalid or valid directories. If this is the first block in a list of length 0, this value will contain the number total number of directory nodes.
+|-
+|}
+
+=== File Table Entry ===
+
+* Index 0 is the start of a linked list that contains all invalid/inactive files.
+* Index 1 is the start of a linked list that contains all valid/active files.
+
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0x00
+| 4
+| Parent directory node index
+|-
+| 0x04
+| 64
+| Filename
+|-
+| 0x44
+| 4
+| Next sibling file node index
+|-
+| 0x48
+| 4
+| Index of the block that the file starts at
+|-
+| 0x4c
+| 8
+| File size in bytes
+|-
+| 0x54
+| 8
+| Unused?
+|-
+| 0x5c
+| 4
+| Next file node index in the chain of invalid or valid file. If this is the first block in a list of length 0, this value will contain the number total number of file nodes.
 |-
 |}

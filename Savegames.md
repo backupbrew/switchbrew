@@ -1,7 +1,7 @@
-This page describes the format of savegames contained in NAND. NAND
-savegames do not use an container with the entire file encrypted.
-Various areas of the saveimage is uninitialized data, resulting in
-encrypted data in those areas (like 3DS did).
+This page describes the format of save files contained in NAND. These
+files are stored as completely unencrypted, plaintext data. Save files
+are not cleared upon creation, resulting in possible garbage data in
+unused portions of the container.
 
 ## Main header
 
@@ -141,18 +141,19 @@ file.
 
 ### Journal header
 
-| Start | Length | Description                        |
-| ----- | ------ | ---------------------------------- |
-| 0x00  | 4      | Magic ("JNGL")                     |
-| 0x04  | 4      | Version? (Must be 0x10000 or less) |
-| 0x08  | 8      | Total size (Incl. journal)         |
-| 0x10  | 8      | Journal size                       |
-| 0x18  | 8      | Block size                         |
-| 0x20  | 4      | Unknown (Must be 0 or 1)           |
-| 0x24  | 4      | Main data block count              |
-| 0x28  | 8      | Journal block count                |
-| 0x200 |        | End                                |
-|       |        |                                    |
+| Start | Length | Description                                          |
+| ----- | ------ | ---------------------------------------------------- |
+| 0x00  | 4      | Magic ("JNGL")                                       |
+| 0x04  | 4      | Version? (Must be 0x10000 or less)                   |
+| 0x08  | 8      | Total size (Incl. journal)                           |
+| 0x10  | 8      | Journal size                                         |
+| 0x18  | 8      | Block size                                           |
+|       |        | The below fields are treated as a separate subheader |
+| 0x20  | 4      | Version? (Must be 0 or 1)                            |
+| 0x24  | 4      | Main data block count                                |
+| 0x28  | 8      | Journal block count                                  |
+| 0x200 |        | End                                                  |
+|       |        |                                                      |
 
 ### Save FS header
 
@@ -165,7 +166,7 @@ file.
 | 0x04  | 4      | Version? (Upper 2 bytes must be 0x0006)                    |
 | 0x08  | 8      | Number of blocks. Does not change if save file is resized. |
 | 0x10  | 8      | Block Size                                                 |
-|       |        | The below fields are read separately from the above fields |
+|       |        | The below fields are treated as a separate subheader       |
 | 0x18  | 8      | Block size                                                 |
 | 0x20  | 8      | FAT offset                                                 |
 | 0x28  | 4      | FAT entry count                                            |
@@ -203,30 +204,40 @@ file.
 
 ## Files
 
-### File Offset Table
+### Directory Table Entry
 
-  - Indexes 0 and 1 are reserved to point towards the folder and file
-    tables.
+  - Index 0 is the start of a linked list that contains all
+    invalid/inactive directories.
+  - Index 1 is the start of a linked list that contains all valid/active
+    directories.
+  - Index 2 is the root
+directory.
 
-#### File Offset Table Entry
+| Start | Length | Description                                                                                                                                                                                   |
+| ----- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x00  | 4      | Parent directory node index                                                                                                                                                                   |
+| 0x04  | 64     | Filename                                                                                                                                                                                      |
+| 0x44  | 4      | Next sibling directory node index                                                                                                                                                             |
+| 0x48  | 4      | First child directory node index                                                                                                                                                              |
+| 0x4c  | 8      | First child file node index                                                                                                                                                                   |
+| 0x54  | 8      | Unused?                                                                                                                                                                                       |
+| 0x5c  | 4      | Next directory node index in the chain of invalid or valid directories. If this is the first block in a list of length 0, this value will contain the number total number of directory nodes. |
+|       |        |                                                                                                                                                                                               |
 
-| Start | Length | Description            |
-| ----- | ------ | ---------------------- |
-| 0x00  | 3      | Data offset, in blocks |
-| 0x03  | 1      | Unknown, 80            |
-| 0x04  | 4      | Unknown, 0             |
+### File Table Entry
 
-### File/Folder Table Entry
+  - Index 0 is the start of a linked list that contains all
+    invalid/inactive files.
+  - Index 1 is the start of a linked list that contains all valid/active
+    files.
 
-  - The root file/folder index is generally 2
-
-| Start | Length | Description                                       |
-| ----- | ------ | ------------------------------------------------- |
-| 0x00  | 4      | Parent Folder Index                               |
-| 0x04  | 64     | Filename                                          |
-| 0x44  | 4      | File/Folder Index?                                |
-| 0x48  | 4      | File offset index in offset table, 0 for folders  |
-| 0x4c  | 8      | File size, or number of files for folders         |
-| 0x54  | 8      | Unknown                                           |
-| 0x5c  | 4      | Next File Index, same as folder index for folders |
-|       |        |                                                   |
+| Start | Length | Description                                                                                                                                                                  |
+| ----- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x00  | 4      | Parent directory node index                                                                                                                                                  |
+| 0x04  | 64     | Filename                                                                                                                                                                     |
+| 0x44  | 4      | Next sibling file node index                                                                                                                                                 |
+| 0x48  | 4      | Index of the block that the file starts at                                                                                                                                   |
+| 0x4c  | 8      | File size in bytes                                                                                                                                                           |
+| 0x54  | 8      | Unused?                                                                                                                                                                      |
+| 0x5c  | 4      | Next file node index in the chain of invalid or valid file. If this is the first block in a list of length 0, this value will contain the number total number of file nodes. |
+|       |        |                                                                                                                                                                              |
