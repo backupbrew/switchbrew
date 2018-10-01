@@ -26,8 +26,7 @@ The official name for this partition is "BootPartition1Root" and it has
 | 0x100000 | 0x40000 | Normal Firmware [package1](Package1.md "wikilink") from [Title 0100000000000819](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink")          |
 | 0x140000 | 0x40000 | Normal Firmware [package1](Package1.md "wikilink") from [Title 0100000000000819](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink") (backup) |
 | 0x180000 | 0x4000  | [Keyblob area](#Keyblob "wikilink")                                                                                                                                  |
-| 0x184000 | 0x20    | \[2.0.0+\] Unknown SHA-256 hash. Changes every boot when the main menu is loaded.                                                                                    |
-| 0x184020 | 0x8?    | \[2.0.0+\] Unknown counter. Increments by 0x400 on every boot when the main menu is loaded.                                                                          |
+| 0x184000 | 0x200   | \[2.0.0+\] [NAND Patrol area](#NAND_Patrol "wikilink")                                                                                                               |
 
 **Boot Partition 1 (1 of 1)**
 
@@ -84,8 +83,20 @@ data](BCT#customer%20data.md##customer_data "wikilink") section in BCTs
 [Boot](Boot.md "wikilink") also uses this index for repairing corrupt
 sectors.
 
-The currently active keyblob is officially known as
-"SecureInfo".
+The currently active keyblob is officially known as "SecureInfo".
+
+### NAND Patrol
+
+The 0x200 bytes at offset 0x184000 are used by
+[FS](Filesystem%20services.md "wikilink") for keeping track of NAND
+patrolling.
+
+| Offset | Size  | Description                            |
+| ------ | ----- | -------------------------------------- |
+| 0x0    | 0x20  | HMAC-SHA-256 over the next 0x1E0 bytes |
+| 0x20   | 0x4   | Last patrolled NAND block's offset     |
+| 0x24   | 0x4   | NAND patrol count                      |
+| 0x28   | 0x1D8 | Unused, all-zero.                      |
 
 ## User Partitions
 
