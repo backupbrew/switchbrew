@@ -97,7 +97,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x004
 | 4
-| Magic Number (0x40000)
+| Version? (Upper 2 bytes must be 0x0004)
 |-
 | 0x008
 | 32
@@ -280,7 +280,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Magic Number (0x10000)
+| Version? (Upper 2 bytes must be 0x0001)
 |-
 | 0x08
 | 8
@@ -338,7 +338,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Magic Number (0x20000)
+| Version? (Upper 2 bytes must be 0x0002)
 |-
 | 0x08
 | 4
@@ -401,7 +401,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Magic Number (0x10000 or less)
+| Version? (Must be 0x10000 or less)
 |-
 | 0x08
 | 8
@@ -449,7 +449,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Magic Number (0x60000)
+| Version? (Upper 2 bytes must be 0x0006)
 |-
 | 0x08
 | 8
@@ -503,8 +503,6 @@ This section contains information about the structure of the save file.
 
 === Remap storage header ===
 
-* There are generally two RMAP blocks in sequence.
-
 {| class="wikitable"
 |-
 ! Start
@@ -517,7 +515,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Magic Number (0x10000 or less)
+| Version? (Must be 0x10000 or less)
 |-
 | 0x08
 | 4
@@ -532,6 +530,47 @@ This section contains information about the structure of the save file.
 | Number of bits reserved for the segment index in virtual offsets
 |-
 | 0x40
+| 
+| End
+|}
+
+=== Extra data ===
+
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0x00
+| 0x40
+| [[Filesystem_services#Save_Struct|Save Struct]]
+|-
+| 0x40
+| 8
+| Save owner ID
+|-
+| 0x48
+| 8
+| Timestamp
+|-
+| 0x50
+| 4
+| Unknown
+|-
+| 0x54
+| 4
+| Unused?
+|-
+| 0x58
+| 8
+| Size of usable save data
+|-
+| 0x60
+| 8
+| Journal size
+|-
+| 0x200
 | 
 | End
 |}
