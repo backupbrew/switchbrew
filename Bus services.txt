@@ -365,12 +365,21 @@ This is "nn::i2c::ISession".
 |-
 | 11 || ReceiveAuto
 |-
-| 12 || ExecuteCommandListAuto
+| 12 || [[#ExecuteCommandListAuto]]
 |}
 
 == SendAuto ==
 
 Takes bytes to write in either a static buffer or a receive buffer, returns an error code for success
+
+== ExecuteCommandListAuto ==
+
+Takes a command list from either a static buffer or a receive buffer, returns data in either a static (or recieve?) buffer.
+
+=== Commands ===
+
+* 0x40 [u8 len] <bytes> - Write bytes to device
+* 0xC1 [u8 len] - Receive bytes from device
 
 = uart =
 This is "nn::uart::IManager".

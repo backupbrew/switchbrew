@@ -844,19 +844,29 @@ true if the device exists or false otherwise.
 
 This is "nn::i2c::ISession".
 
-| Cmd | Name                               |
-| --- | ---------------------------------- |
-| 0   | Send                               |
-| 1   | Receive                            |
-| 2   | ExecuteCommandList                 |
-| 10  | [\#SendAuto](#SendAuto "wikilink") |
-| 11  | ReceiveAuto                        |
-| 12  | ExecuteCommandListAuto             |
+| Cmd | Name                                                           |
+| --- | -------------------------------------------------------------- |
+| 0   | Send                                                           |
+| 1   | Receive                                                        |
+| 2   | ExecuteCommandList                                             |
+| 10  | [\#SendAuto](#SendAuto "wikilink")                             |
+| 11  | ReceiveAuto                                                    |
+| 12  | [\#ExecuteCommandListAuto](#ExecuteCommandListAuto "wikilink") |
 
 ## SendAuto
 
 Takes bytes to write in either a static buffer or a receive buffer,
 returns an error code for success
+
+## ExecuteCommandListAuto
+
+Takes a command list from either a static buffer or a receive buffer,
+returns data in either a static (or recieve?) buffer.
+
+### Commands
+
+  - 0x40 \[u8 len\] <bytes> - Write bytes to device
+  - 0xC1 \[u8 len\] - Receive bytes from device
 
 # uart
 
