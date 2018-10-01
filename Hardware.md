@@ -1,3 +1,13 @@
+## Motherboard
+
+There are 3 known revisions of the motherboard:
+
+  - HAC-CPU-01 (Launch)
+  - HAC-CPU-10
+  - HAC-CPU-20 (Earliest manifacture date seen: 26/10 2017)
+
+What actually changed between different revisions is unknown.
+
 ## Specifications
 
 <table>
