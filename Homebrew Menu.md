@@ -44,19 +44,31 @@ See nxlink help for more options.
 
 NOTE: This is not yet available with the latest hbmenu release.
 
-A theme can be optionally loaded from SD
-"/config/nx-hbmenu/themes/theme.cfg". This uses
+Themes can be optionally loaded from SD "/config/nx-hbmenu/themes/". The
+theme (or the default) can be selected using the Theme Menu via the -
+button. This uses
 [libconfig](https://hyperrealm.github.io/libconfig/libconfig_manual.html).
 Default settings will be used for any settings not specified in the
-theme.
+theme (including themeInfo).
 
-The string used for displaying the A/B button can be set with
-buttonAText/buttonBText, but normally this can be left at the defaults.
-Change the value of the enableWaveBlending field to 1 to enable wave
-blending.
+The string used for displaying the buttons can be set with buttonAText,
+buttonBText, and buttonMText, but normally this can be left at the
+defaults. Change the value of the enableWaveBlending field to 1 to
+enable wave blending.
+
+There's also borderColor and borderTextColor fields which can be set
+like the other color fields.
+
+The color fields are RGBA.
 
 Sample theme file:
 
+`themeInfo={`  
+`    name="Theme Name";`  
+`    author="Theme Author Name";`  
+`    version="1.0.0";`  
+`};`  
+  
 `lightTheme={`  
 `    textColor=(0,0,0,255);`  
 `    frontWaveColor=(255,102,204,255);`  
