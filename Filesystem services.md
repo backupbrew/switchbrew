@@ -173,105 +173,766 @@ happens.
 
 ### RwPermissions
 
-| Type(s)         | Mask                                                    | Name                                             | Value | Used by                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| --------------- | ------------------------------------------------------- | ------------------------------------------------ | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0             | 0x8000000000000801                                      | MountLogo                                        | 1     | [\#OpenFileSystem](#OpenFileSystem "wikilink"), [\#OpenFileSystemWithPatch](#OpenFileSystemWithPatch "wikilink"), [\#OpenFileSystemWithId](#OpenFileSystemWithId "wikilink")                                                                                                                                                                                                                                                                         |
-| 0x1             | 0x8000000000000801                                      | MountContentMeta                                 | 1     | [\#OpenFileSystem](#OpenFileSystem "wikilink"), [\#OpenFileSystemWithPatch](#OpenFileSystemWithPatch "wikilink"), [\#OpenFileSystemWithId](#OpenFileSystemWithId "wikilink")                                                                                                                                                                                                                                                                         |
-| 0x2             | 0x8000000000000801                                      | MountContentControl                              | 1     | [\#OpenFileSystem](#OpenFileSystem "wikilink"), [\#OpenFileSystemWithPatch](#OpenFileSystemWithPatch "wikilink"), [\#OpenFileSystemWithId](#OpenFileSystemWithId "wikilink")                                                                                                                                                                                                                                                                         |
-| 0x3             | 0x8000000000000801                                      | MountContentManual                               | 1     | [\#OpenFileSystem](#OpenFileSystem "wikilink"), [\#OpenFileSystemWithPatch](#OpenFileSystemWithPatch "wikilink"), [\#OpenFileSystemWithId](#OpenFileSystemWithId "wikilink")                                                                                                                                                                                                                                                                         |
-| 0x4             | 0x8000000000000801                                      | MountContentData                                 | 1     | [\#OpenFileSystem](#OpenFileSystem "wikilink"), [\#OpenFileSystemWithPatch](#OpenFileSystemWithPatch "wikilink"), [\#OpenFileSystemWithId](#OpenFileSystemWithId "wikilink")                                                                                                                                                                                                                                                                         |
-| 0x5             | 0x8000000000000801                                      | MountApplicationPackage                          | 1     | [\#OpenFileSystem](#OpenFileSystem "wikilink"), [\#OpenFileSystemWithPatch](#OpenFileSystemWithPatch "wikilink"), [\#OpenFileSystemWithId](#OpenFileSystemWithId "wikilink")                                                                                                                                                                                                                                                                         |
-| 0x6             | 0x8000000000000000                                      |                                                  | 3     |                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| 0x7             | 0x8000000000000800                                      | ContentStorageAccess                             | 3     | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                           |
-| 0x8             | 0x8000000000001000                                      | ImageDirectoryAccess                             | 3     | [\#OpenImageDirectoryFileSystem](#OpenImageDirectoryFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                           |
-| 0x9             | 0x8000000000000084                                      | OpenBisFileSystemType28, OpenBisFileSystemType32 | 3     | [\#OpenBisFileSystem](#OpenBisFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                 |
-| 0xA             | 0x8000000000000080                                      | OpenBisFileSystemType29                          | 3     | [\#OpenBisFileSystem](#OpenBisFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                 |
-| 0xB             | 0x8000000000008080                                      | OpenBisFileSystemType30                          | 3     | [\#OpenBisFileSystem](#OpenBisFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                 |
-| 0xC             | 0x8000000000008080                                      | OpenBisFileSystemType31                          | 3     | [\#OpenBisFileSystem](#OpenBisFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                 |
-| 0xD             | 0x8000000000000080                                      |                                                  | 3     |                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| 0xE             | 0x8000000000000080 (\[1.0.0-2.3.0\] 0xC000000000200000) | OpenBisFileSystemType33                          | 3     | [\#OpenBisFileSystem](#OpenBisFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                 |
-| 0xF             | 0xC000000000200000 (\[1.0.0-2.3.0\] 0x8000000000000010) | SdCardAccess                                     | 3     | [\#OpenSdCardFileSystem](#OpenSdCardFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                           |
-| 0x10            | 0x8000000000000010 (\[1.0.0-2.3.0\] 0x8000000000040020) | GameCardUser                                     | 3     | [\#OpenGameCardFileSystem](#OpenGameCardFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x11            | 0x8000000000040020 (\[1.0.0-2.3.0\] 0x8000000000000028) | SaveDataAccess0                                  | 3     | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x12            | 0x8000000000000028 (\[1.0.0-2.3.0\] 0x8000000000000020) | SystemSaveDataAccess0                            | 3     | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                                                                                                                                                                                                                                                                                                   |
-| 0x13            | 0x8000000000000020                                      | SaveDataAccess1                                  | 3     | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x14            | 0x8000000000000020 (\[1.0.0-2.3.0\] 0x8000000000010082) | SystemSaveDataAccess1                            | 3     | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                                                                                                                                                                                                                                                                                                   |
-| 0x15            | 0x8000000000010082 (\[1.0.0-2.3.0\] 0x8000000000010080) | BisPartition0                                    | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x16            | 0x8000000000010080                                      | BisPartition10                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x17            | 0x8000000000000080 (\[1.0.0-2.3.0\] 0x8000000000010080) | BisPartition20                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x18            | 0x8000000000010080                                      | BisPartition21                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x19            | 0x8000000000010080                                      | BisPartition22                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x1A            | 0x8000000000010080                                      | BisPartition23                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x1B            | 0x8000000000010080                                      | BisPartition24                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x1C            | 0x8000000000010080                                      | BisPartition25                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x1D            | 0x8000000000010080 (\[1.0.0-2.3.0\] 0x8000000000000084) | BisPartition26                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x1E            | 0x8000000000000084                                      | BisPartition27                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x1F            | 0x8000000000000084 (\[1.0.0-2.3.0\] 0x8000000000000080) | BisPartition28                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x20            | 0x8000000000000080                                      | BisPartition29                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x21            | 0x8000000000000080                                      | BisPartition30                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x22            | 0x8000000000000080                                      | BisPartition31                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x23            | 0x8000000000000080 (\[1.0.0-2.3.0\] 0xC000000000200000) | BisPartition32                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x24            | 0x8000000000000080 (\[1.0.0-2.3.0\] 0x8000000000000100) | BisPartition33                                   | 3     | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x25            | 0xC000000000200000 (\[1.0.0-2.3.0\] 0x8000000000100008) |                                                  |       |                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| 0x26            | 0x8000000000000100 (\[1.0.0-2.3.0\] 0xC000000000400000) | GameCard\_System                                 | 3     | [\#OpenGameCardStorage](#OpenGameCardStorage "wikilink"), [\#EraseGameCard](#EraseGameCard "wikilink") (bit1), [\#WriteToGameCard](#WriteToGameCard "wikilink") (bit1), [\#GetGameCardErrorInfo](#GetGameCardErrorInfo "wikilink") (bit1), [\#EraseAndWriteParamDirectly](#EraseAndWriteParamDirectly "wikilink") (bit1), [\#ReadParamDirectly](#ReadParamDirectly "wikilink") (bit1), [\#ForceEraseGameCard](#ForceEraseGameCard "wikilink") (bit1) |
-| \[3.0.0+\] 0x27 | 0x8000000000100008                                      | MountContent\_System                             | 1     | [\#OpenFileSystem](#OpenFileSystem "wikilink"), [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                                                                                                                                                                                                                                                                                                     |
-| \[3.0.0+\] 0x28 | 0xC000000000400000                                      | HostAccess                                       | 3     | [\#OpenHostFileSystem](#OpenHostFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                                                               |
-| \[4.0.0+\] 0x29 | 0x8000000000010000                                      | RegisteredUpdatePartitionAccess                  | 1     | [\#OpenRegisteredUpdatePartition](#OpenRegisteredUpdatePartition "wikilink")                                                                                                                                                                                                                                                                                                                                                                         |
-| \[5.0.0+\] 0x2A | 0x8000000000000000                                      | SaveDataInternalStorageAccess                    | 3     | [\#OpenSaveDataInternalStorageFileSystem](#OpenSaveDataInternalStorageFileSystem "wikilink")                                                                                                                                                                                                                                                                                                                                                         |
+<table>
+<thead>
+<tr class="header">
+<th><p>Type(s)</p></th>
+<th><p>Mask</p></th>
+<th><p>Name</p></th>
+<th><p>Value</p></th>
+<th><p>Used by</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x0</p></td>
+<td><p>0x8000000000000801</p></td>
+<td><p>MountLogo</p></td>
+<td><p>1</p></td>
+<td><p><a href="#OpenFileSystem" class="uri" title="wikilink">#OpenFileSystem</a>, <a href="#OpenFileSystemWithPatch" class="uri" title="wikilink">#OpenFileSystemWithPatch</a>, <a href="#OpenFileSystemWithId" class="uri" title="wikilink">#OpenFileSystemWithId</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x1</p></td>
+<td><p>0x8000000000000801</p></td>
+<td><p>MountContentMeta</p></td>
+<td><p>1</p></td>
+<td><p><a href="#OpenFileSystem" class="uri" title="wikilink">#OpenFileSystem</a>, <a href="#OpenFileSystemWithPatch" class="uri" title="wikilink">#OpenFileSystemWithPatch</a>, <a href="#OpenFileSystemWithId" class="uri" title="wikilink">#OpenFileSystemWithId</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2</p></td>
+<td><p>0x8000000000000801</p></td>
+<td><p>MountContentControl</p></td>
+<td><p>1</p></td>
+<td><p><a href="#OpenFileSystem" class="uri" title="wikilink">#OpenFileSystem</a>, <a href="#OpenFileSystemWithPatch" class="uri" title="wikilink">#OpenFileSystemWithPatch</a>, <a href="#OpenFileSystemWithId" class="uri" title="wikilink">#OpenFileSystemWithId</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x3</p></td>
+<td><p>0x8000000000000801</p></td>
+<td><p>MountContentManual</p></td>
+<td><p>1</p></td>
+<td><p><a href="#OpenFileSystem" class="uri" title="wikilink">#OpenFileSystem</a>, <a href="#OpenFileSystemWithPatch" class="uri" title="wikilink">#OpenFileSystemWithPatch</a>, <a href="#OpenFileSystemWithId" class="uri" title="wikilink">#OpenFileSystemWithId</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x4</p></td>
+<td><p>0x8000000000000801</p></td>
+<td><p>MountContentData</p></td>
+<td><p>1</p></td>
+<td><p><a href="#OpenFileSystem" class="uri" title="wikilink">#OpenFileSystem</a>, <a href="#OpenFileSystemWithPatch" class="uri" title="wikilink">#OpenFileSystemWithPatch</a>, <a href="#OpenFileSystemWithId" class="uri" title="wikilink">#OpenFileSystemWithId</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x5</p></td>
+<td><p>0x8000000000000801</p></td>
+<td><p>MountApplicationPackage</p></td>
+<td><p>1</p></td>
+<td><p><a href="#OpenFileSystem" class="uri" title="wikilink">#OpenFileSystem</a>, <a href="#OpenFileSystemWithPatch" class="uri" title="wikilink">#OpenFileSystemWithPatch</a>, <a href="#OpenFileSystemWithId" class="uri" title="wikilink">#OpenFileSystemWithId</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x6</p></td>
+<td><p>0x8000000000000000</p></td>
+<td></td>
+<td><p>3</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x7</p></td>
+<td><p>0x8000000000000800</p></td>
+<td><p>ContentStorageAccess</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenContentStorageFileSystem" class="uri" title="wikilink">#OpenContentStorageFileSystem</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x8</p></td>
+<td><p>0x8000000000001000</p></td>
+<td><p>ImageDirectoryAccess</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenImageDirectoryFileSystem" class="uri" title="wikilink">#OpenImageDirectoryFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x9</p></td>
+<td><p>0x0000000080000002<br />
+([1.0.0-5.1.0] 0x8000000000000084)</p></td>
+<td></td>
+<td><p>3</p></td>
+<td><p>cmd120</p></td>
+</tr>
+<tr class="odd">
+<td><p>0xA</p></td>
+<td><p>0x8000000000000084<br />
+([1.0.0-5.1.0] 0x8000000000000080)</p></td>
+<td><p>OpenBisFileSystemType28, OpenBisFileSystemType32</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisFileSystem" class="uri" title="wikilink">#OpenBisFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0xB</p></td>
+<td><p>0x8000000000000080<br />
+([1.0.0-5.1.0] 0x8000000000008080)</p></td>
+<td><p>OpenBisFileSystemType29</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisFileSystem" class="uri" title="wikilink">#OpenBisFileSystem</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0xC</p></td>
+<td><p>0x8000000000008080</p></td>
+<td><p>OpenBisFileSystemType30</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisFileSystem" class="uri" title="wikilink">#OpenBisFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0xD</p></td>
+<td><p>0x8000000000008080<br />
+([1.0.0-5.1.0] 0x8000000000000080)</p></td>
+<td><p>OpenBisFileSystemType31</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisFileSystem" class="uri" title="wikilink">#OpenBisFileSystem</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0xE</p></td>
+<td><p>0x8000000000000080<br />
+([1.0.0-2.3.0] 0xC000000000200000)</p></td>
+<td></td>
+<td><p>3</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0xF</p></td>
+<td><p>0x8000000000000080<br />
+([3.0.0-5.1.0] 0xC000000000200000)<br />
+([1.0.0-2.3.0] 0x8000000000000010)</p></td>
+<td><p>OpenBisFileSystemType33</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisFileSystem" class="uri" title="wikilink">#OpenBisFileSystem</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x10</p></td>
+<td><p>0xC000000000200000<br />
+([3.0.0-5.1.0] 0x8000000000000010)<br />
+([1.0.0-2.3.0] 0x8000000000040020)</p></td>
+<td><p>SdCardAccess</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenSdCardFileSystem" class="uri" title="wikilink">#OpenSdCardFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x11</p></td>
+<td><p>0x8000000000000010<br />
+([3.0.0-5.1.0] 0x8000000000040020)<br />
+([1.0.0-2.3.0] 0x8000000000000028)</p></td>
+<td><p>GameCardUser</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenGameCardFileSystem" class="uri" title="wikilink">#OpenGameCardFileSystem</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x12</p></td>
+<td><p>0x8000000000040020<br />
+([3.0.0-5.1.0] 0x8000000000000028)<br />
+([1.0.0-2.3.0] 0x8000000000000020)</p></td>
+<td><p>SaveDataAccess0</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenSaveDataFileSystem" class="uri" title="wikilink">#OpenSaveDataFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x13</p></td>
+<td><p>0x8000000000000028<br />
+([1.0.0-5.1.0] 0x8000000000000020)</p></td>
+<td><p>SystemSaveDataAccess0</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenSaveDataFileSystemBySystemSaveDataId" class="uri" title="wikilink">#OpenSaveDataFileSystemBySystemSaveDataId</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x14</p></td>
+<td><p>0x8000000000000020<br />
+([1.0.0-2.3.0] 0x8000000000010082)</p></td>
+<td><p>SaveDataAccess1</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenSaveDataFileSystem" class="uri" title="wikilink">#OpenSaveDataFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x15</p></td>
+<td><p>0x8000000000000020<br />
+([3.0.0-5.1.0] 0x8000000000010082)<br />
+([1.0.0-2.3.0] 0x8000000000010080)</p></td>
+<td><p>SystemSaveDataAccess1</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenSaveDataFileSystemBySystemSaveDataId" class="uri" title="wikilink">#OpenSaveDataFileSystemBySystemSaveDataId</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x16</p></td>
+<td><p>0x8000000000010082<br />
+([1.0.0-5.1.0] 0x8000000000010080)</p></td>
+<td><p>BisPartition0</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x17</p></td>
+<td><p>0x8000000000010080<br />
+([3.0.0-5.1.0] 0x8000000000000080)<br />
+([1.0.0-2.3.0] 0x8000000000010080)</p></td>
+<td><p>BisPartition10</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x18</p></td>
+<td><p>0x8000000000000080<br />
+([1.0.0-5.1.0] 0x8000000000010080)</p></td>
+<td><p>BisPartition20</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x19</p></td>
+<td><p>0x8000000000010080</p></td>
+<td><p>BisPartition21</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x1A</p></td>
+<td><p>0x8000000000010080</p></td>
+<td><p>BisPartition22</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x1B</p></td>
+<td><p>0x8000000000010080</p></td>
+<td><p>BisPartition23</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x1C</p></td>
+<td><p>0x8000000000010080</p></td>
+<td><p>BisPartition24</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x1D</p></td>
+<td><p>0x8000000000010080<br />
+([1.0.0-2.3.0] 0x8000000000000084)</p></td>
+<td><p>BisPartition25</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x1E</p></td>
+<td><p>0x8000000000010080<br />
+([1.0.0-5.1.0] 0x8000000000000084)</p></td>
+<td><p>BisPartition26</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x1F</p></td>
+<td><p>0x8000000000000084<br />
+([1.0.0-2.3.0] 0x8000000000000080)</p></td>
+<td><p>BisPartition27</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x20</p></td>
+<td><p>0x8000000000000084<br />
+([1.0.0-5.1.0] 0x8000000000000080)</p></td>
+<td><p>BisPartition28</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x21</p></td>
+<td><p>0x8000000000000080</p></td>
+<td><p>BisPartition29</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x22</p></td>
+<td><p>0x8000000000000080</p></td>
+<td><p>BisPartition30</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x23</p></td>
+<td><p>0x8000000000000080<br />
+([1.0.0-2.3.0] 0xC000000000200000)</p></td>
+<td><p>BisPartition31</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x24</p></td>
+<td><p>0x8000000000000080<br />
+([1.0.0-2.3.0] 0x8000000000000100)</p></td>
+<td><p>BisPartition32</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x25</p></td>
+<td><p>0x8000000000000080<br />
+([3.0.0-5.1.0] 0xC000000000200000)<br />
+([1.0.0-2.3.0] 0x8000000000100008)</p></td>
+<td><p>BisPartition33</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" class="uri" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x26</p></td>
+<td><p>0xC000000000200000<br />
+([3.0.0-5.1.0] 0x8000000000000100)<br />
+([1.0.0-2.3.0] 0xC000000000400000)</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>[3.0.0+] 0x27</p></td>
+<td><p>0x8000000000000100<br />
+([1.0.0-5.1.0] 0x8000000000100008)</p></td>
+<td><p>GameCard_System</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenGameCardStorage" class="uri" title="wikilink">#OpenGameCardStorage</a>, <a href="#EraseGameCard" class="uri" title="wikilink">#EraseGameCard</a> (bit1), <a href="#WriteToGameCard" class="uri" title="wikilink">#WriteToGameCard</a> (bit1), <a href="#GetGameCardErrorInfo" class="uri" title="wikilink">#GetGameCardErrorInfo</a> (bit1), <a href="#EraseAndWriteParamDirectly" class="uri" title="wikilink">#EraseAndWriteParamDirectly</a> (bit1), <a href="#ReadParamDirectly" class="uri" title="wikilink">#ReadParamDirectly</a> (bit1), <a href="#ForceEraseGameCard" class="uri" title="wikilink">#ForceEraseGameCard</a> (bit1)</p></td>
+</tr>
+<tr class="odd">
+<td><p>[3.0.0+] 0x28</p></td>
+<td><p>0x8000000000100008<br />
+([1.0.0-5.1.0] 0xC000000000400000)</p></td>
+<td><p>MountContent_System</p></td>
+<td><p>1</p></td>
+<td><p><a href="#OpenFileSystem" class="uri" title="wikilink">#OpenFileSystem</a>, <a href="#OpenDataStorageByDataId" class="uri" title="wikilink">#OpenDataStorageByDataId</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[4.0.0+] 0x29</p></td>
+<td><p>0xC000000000400000<br />
+([1.0.0-5.1.0] 0x8000000000010000)</p></td>
+<td><p>HostAccess</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenHostFileSystem" class="uri" title="wikilink">#OpenHostFileSystem</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[5.0.0+] 0x2A</p></td>
+<td><p>0x8000000000010000<br />
+([1.0.0-5.1.0] 0x8000000000000000)</p></td>
+<td><p>RegisteredUpdatePartitionAccess</p></td>
+<td><p>1</p></td>
+<td><p><a href="#OpenRegisteredUpdatePartition" class="uri" title="wikilink">#OpenRegisteredUpdatePartition</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x2B</p></td>
+<td><p>0x8000000000000000</p></td>
+<td><p>SaveDataInternalStorageAccess</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenSaveDataInternalStorageFileSystem" class="uri" title="wikilink">#OpenSaveDataInternalStorageFileSystem</a></p></td>
+</tr>
+</tbody>
+</table>
 
 ### BoolPermissions
 
-| Type(s)         | Mask                                                    | Name                             | Used by                                                                                                                                                                                      |
-| --------------- | ------------------------------------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0             | 0x8000000000000080                                      | BisCache                         | [\#InvalidateBisCache](#InvalidateBisCache "wikilink")                                                                                                                                       |
-| 0x1             | 0x8000000000000080                                      | EraseMmc                         | [\#EraseMmc](#EraseMmc "wikilink")                                                                                                                                                           |
-| 0x2             | 0x8000000000000010                                      | GameCardCertificate              | [\#GetGameCardDeviceCertificate](#GetGameCardDeviceCertificate "wikilink")                                                                                                                   |
-| 0x3             | 0x8000000000000010                                      | GameCardIdSet                    | [\#GetGameCardIdSet](#GetGameCardIdSet "wikilink")                                                                                                                                           |
-| 0x4             | 0x8000000000000200                                      | GameCardDriver                   | [\#FinalizeGameCardDriver](#FinalizeGameCardDriver "wikilink")                                                                                                                               |
-| 0x5             | 0x8000000000000200                                      | GameCardAsic                     | [\#GetGameCardAsicInfo](#GetGameCardAsicInfo "wikilink")                                                                                                                                     |
-| 0x6             | 0x8000000000002020                                      | SaveDataCreate                   | [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink")                                                                                                                           |
-| 0x7             | 0x8000000000000060                                      | SaveDataDelete0                  | [\#DeleteSaveDataFileSystem](#DeleteSaveDataFileSystem "wikilink"), [\#RegisterSaveDataFileSystemAtomicDeletion](#RegisterSaveDataFileSystemAtomicDeletion "wikilink")                       |
-| 0x8             | 0x8000000000000028                                      | SystemSaveDataCreate0            | [\#CreateSaveDataFileSystemBySystemSaveDataId](#CreateSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                                       |
-| 0x9             | 0x8000000000000020                                      | SystemSaveDataCreate1            | [\#CreateSaveDataFileSystemBySystemSaveDataId](#CreateSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                                       |
-| 0xA             | 0x8000000000004028                                      | SaveDataDelete1                  | [\#DeleteSaveDataFileSystem](#DeleteSaveDataFileSystem "wikilink"), [\#RegisterSaveDataFileSystemAtomicDeletion](#RegisterSaveDataFileSystemAtomicDeletion "wikilink")                       |
-| 0xB             | 0x8000000000000060                                      | SaveDataInfoReader0              | [\#OpenSaveDataInfoReaderBySaveDataSpaceId](#OpenSaveDataInfoReaderBySaveDataSpaceId "wikilink"), [\#OpenSaveDataInfoReader](#OpenSaveDataInfoReader "wikilink")                             |
-| 0xC             | 0x8000000000004020                                      | SaveDataInfoReader1              | [\#OpenSaveDataInfoReaderBySaveDataSpaceId](#OpenSaveDataInfoReaderBySaveDataSpaceId "wikilink"), [\#OpenSaveDataInfoReader](#OpenSaveDataInfoReader "wikilink")                             |
-| 0xD             | 0x8000000000020000                                      | SaveDataMeta                     | [\#OpenSaveDataMetaFile](#OpenSaveDataMetaFile "wikilink")                                                                                                                                   |
-| 0xE             | 0x8000000000000400                                      | PosixTime                        | [\#SetCurrentPosixTime](#SetCurrentPosixTime "wikilink"), [\#SetCurrentPosixTimeWithTimeDifference](#SetCurrentPosixTimeWithTimeDifference "wikilink")                                       |
-| 0xF             | 0x8000000000004060                                      | SaveDataExtraData\_Read          | [\#ReadSaveDataFileSystemExtraData](#ReadSaveDataFileSystemExtraData "wikilink")                                                                                                             |
-| 0x10            | 0x8000000000080000                                      | GlobalAccessMode                 | [\#SetGlobalAccessMode](#SetGlobalAccessMode "wikilink")                                                                                                                                     |
-| 0x11            | 0x8000000000080000                                      | SpeedEmulationMode               | [\#SetSpeedEmulationMode](#SetSpeedEmulationMode "wikilink")                                                                                                                                 |
-| 0x12            | Invalid                                                 |                                  |                                                                                                                                                                                              |
-| 0x13            | 0xC000000000800000                                      | PaddingFiles                     | [\#CreatePaddingFile](#CreatePaddingFile "wikilink"), [\#DeleteAllPaddingFiles](#DeleteAllPaddingFiles "wikilink")                                                                           |
-| 0x14            | 0xC000000001000000                                      | SaveDataCorrupt0                 | [\#CorruptSaveDataFileSystem](#CorruptSaveDataFileSystem "wikilink"), [\#CorruptSaveDataFileSystemBySaveDataSpaceId](#CorruptSaveDataFileSystemBySaveDataSpaceId "wikilink")                 |
-| 0x15            | 0x8000000001000060 (\[1.0.0-4.1.0\] 0xC000000002000000) | SaveDataCorrupt1                 | [\#CorruptSaveDataFileSystem](#CorruptSaveDataFileSystem "wikilink"), [\#CorruptSaveDataFileSystemBySaveDataSpaceId](#CorruptSaveDataFileSystemBySaveDataSpaceId "wikilink")                 |
-| \[2.0.0+\] 0x16 | 0x8000000000000060 (\[1.0.0-4.1.0\] 0x8000000004000000) | SaveDataVerify                   | [\#VerifySaveDataFileSystem](#VerifySaveDataFileSystem "wikilink"), [\#VerifySaveDataFileSystemBySaveDataSpaceId](#VerifySaveDataFileSystemBySaveDataSpaceId "wikilink")                     |
-| \[2.0.0+\] 0x17 | 0xC000000002000000 (\[1.0.0-4.1.0\] 0x8000000008000000) | SaveData\_SystemManagement       | [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink"), [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink"), [\#SetSaveDataRootPath](#SetSaveDataRootPath "wikilink") |
-| \[2.0.0+\] 0x18 | 0x8000000004000000 (\[1.0.0-4.1.0\] 0x8000000010000000) | SdCardFormat                     | [\#FormatSdCardFileSystem](#FormatSdCardFileSystem "wikilink")                                                                                                                               |
-| \[2.0.0+\] 0x19 | 0x8000000008000000 (\[1.0.0-4.1.0\] 0x8000000000000800) | RightsId                         | [\#GetRightsId](#GetRightsId "wikilink"), [\#GetRightsIdAndKeyGenerationByPath](#GetRightsIdAndKeyGenerationByPath "wikilink"), [\#GetRightsIdByPath](#GetRightsIdByPath "wikilink")         |
-| \[2.0.0+\] 0x1A | 0x8000000010000000 (\[1.0.0-4.1.0\] 0x8000000000004020) | ExternalKey                      | [\#RegisterExternalKey](#RegisterExternalKey "wikilink"), [\#UnregisterAllExternalKey](#UnregisterAllExternalKey "wikilink")                                                                 |
-| \[3.0.0+\] 0x1B | 0x8000000000000800 (\[1.0.0-4.1.0\] 0x8000000000002020) | SdCardEncryptionSeed             | [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                                                                                                                             |
-| \[3.0.0+\] 0x1C | 0x8000000000004020 (\[1.0.0-4.1.0\] 0x8000000000000028) | SaveDataExtraData\_Write0        | [\#WriteSaveDataFileSystemExtraData](#WriteSaveDataFileSystemExtraData "wikilink"), [\#WriteSaveDataFileSystemExtraData2](#WriteSaveDataFileSystemExtraData2 "wikilink")                     |
-| \[4.0.0+\] 0x1D | 0x8000000000000000 (\[1.0.0-4.1.0\] 0x8000000020000000) | SaveDataExtraData\_Write1        | [\#WriteSaveDataFileSystemExtraData](#WriteSaveDataFileSystemExtraData "wikilink"), [\#WriteSaveDataFileSystemExtraData2](#WriteSaveDataFileSystemExtraData2 "wikilink")                     |
-| \[4.0.0+\] 0x1E | 0x8000000000002020 (\[1.0.0-4.1.0\] 0x8000000040000000) | SaveDataExtend0                  | [\#ExtendSaveDataFileSystem](#ExtendSaveDataFileSystem "wikilink")                                                                                                                           |
-| \[4.0.0+\] 0x1F | 0x8000000000000028 (\[1.0.0-4.1.0\] 0x8000000000000000) | SaveDataExtend1                  | [\#ExtendSaveDataFileSystem](#ExtendSaveDataFileSystem "wikilink")                                                                                                                           |
-| \[4.0.0+\] 0x20 | 0x8000000020000000 (\[1.0.0-4.1.0\] 0x8000000000000000) | UpdatePartitionRegister          | [\#RegisterUpdatePartition](#RegisterUpdatePartition "wikilink")                                                                                                                             |
-| \[5.0.0+\] 0x21 | 0x8000000040000000                                      | SaveDataTransfer                 | [\#OpenSaveDataTransferManager](#OpenSaveDataTransferManager "wikilink")                                                                                                                     |
-| \[5.0.0+\] 0x22 | 0x0000000080000002                                      | SaveDataTransferVersion2         | [\#OpenSaveDataTransferManagerVersion2](#OpenSaveDataTransferManagerVersion2 "wikilink")                                                                                                     |
-| \[5.0.0+\] 0x23 | 0x8000000000000000                                      | MmcPatrol                        | [\#SuspendMmcPatrol](#SuspendMmcPatrol "wikilink"), [\#ResumeMmcPatrol](#ResumeMmcPatrol "wikilink")                                                                                         |
-| \[5.0.0+\] 0x24 | 0x8000000000000000                                      | SaveDataTransferKey              | [\#OverrideSaveDataTransferTokenSignVerificationKey](#OverrideSaveDataTransferTokenSignVerificationKey "wikilink")                                                                           |
-| \[5.0.0+\] 0x25 | 0x8000000080200000                                      | SdCardDetectionEventNotifier     | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")                                                                                                           |
-| \[5.0.0+\] 0x26 | 0x8000000080000110                                      | GameCardDetectionEventNotifier   | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink")                                                                                                       |
-| \[5.0.0+\] 0x27 | 0x8000000000100008                                      | SystemDataUpdateEventNotifier    | [\#OpenSystemDataUpdateEventNotifier](#OpenSystemDataUpdateEventNotifier "wikilink")                                                                                                         |
-| \[5.0.0+\] 0x28 | 0x8000000080010000                                      | SystemDataUpdateEventNotify      | [\#NotifySystemDataUpdateEvent](#NotifySystemDataUpdateEvent "wikilink")                                                                                                                     |
-| \[5.0.0+\] 0x29 | 0x0000000080000001                                      | AccessFailureResolver            | [\#OpenAccessFailureResolver](#OpenAccessFailureResolver "wikilink")                                                                                                                         |
-| \[5.0.0+\] 0x2A | 0x0000000080000001                                      | AccessFailureDetectionEvent      | [\#GetAccessFailureDetectionEvent](#GetAccessFailureDetectionEvent "wikilink")                                                                                                               |
-| \[5.0.0+\] 0x2B | 0x0000000080000001                                      | AccessFailureDetected            | [\#IsAccessFailureDetected](#IsAccessFailureDetected "wikilink")                                                                                                                             |
-| \[5.0.0+\] 0x2C | 0x0000000080000001                                      | AccessFailureResolve             | [\#ResolveAccessFailure](#ResolveAccessFailure "wikilink")                                                                                                                                   |
-| \[5.0.0+\] 0x2D | 0x0000000080000001                                      | AccessFailureAbandon             | [\#AbandonAccessFailure](#AbandonAccessFailure "wikilink")                                                                                                                                   |
-| \[5.0.0+\] 0x2E | 0x8000000040000000                                      | SaveDataInternalStorageTotalSize | [\#QuerySaveDataInternalStorageTotalSize](#QuerySaveDataInternalStorageTotalSize "wikilink")                                                                                                 |
-| \[5.0.0+\] 0x2F | 0x8000000080200000                                      | SdCardAccessibility              | [\#SetSdCardAccessibility](#SetSdCardAccessibility "wikilink")                                                                                                                               |
-| \[5.1.0+\] 0x30 | 0x8000000080080000                                      |                                  |                                                                                                                                                                                              |
+<table>
+<thead>
+<tr class="header">
+<th><p>Type(s)</p></th>
+<th><p>Mask</p></th>
+<th><p>Name</p></th>
+<th><p>Used by</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x0</p></td>
+<td><p>0x8000000000000080</p></td>
+<td><p>BisCache</p></td>
+<td><p><a href="#InvalidateBisCache" class="uri" title="wikilink">#InvalidateBisCache</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x1</p></td>
+<td><p>0x8000000000000080</p></td>
+<td><p>EraseMmc</p></td>
+<td><p><a href="#EraseMmc" class="uri" title="wikilink">#EraseMmc</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2</p></td>
+<td><p>0x8000000000000010</p></td>
+<td><p>GameCardCertificate</p></td>
+<td><p><a href="#GetGameCardDeviceCertificate" class="uri" title="wikilink">#GetGameCardDeviceCertificate</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x3</p></td>
+<td><p>0x8000000000000010</p></td>
+<td><p>GameCardIdSet</p></td>
+<td><p><a href="#GetGameCardIdSet" class="uri" title="wikilink">#GetGameCardIdSet</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x4</p></td>
+<td><p>0x8000000000000200</p></td>
+<td><p>GameCardDriver</p></td>
+<td><p><a href="#FinalizeGameCardDriver" class="uri" title="wikilink">#FinalizeGameCardDriver</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x5</p></td>
+<td><p>0x8000000000000200</p></td>
+<td><p>GameCardAsic</p></td>
+<td><p><a href="#GetGameCardAsicInfo" class="uri" title="wikilink">#GetGameCardAsicInfo</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x6</p></td>
+<td><p>0x8000000000002020</p></td>
+<td><p>SaveDataCreate</p></td>
+<td><p><a href="#CreateSaveDataFileSystem" class="uri" title="wikilink">#CreateSaveDataFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x7</p></td>
+<td><p>0x8000000000000060</p></td>
+<td><p>SaveDataDelete0</p></td>
+<td><p><a href="#DeleteSaveDataFileSystem" class="uri" title="wikilink">#DeleteSaveDataFileSystem</a>, <a href="#RegisterSaveDataFileSystemAtomicDeletion" class="uri" title="wikilink">#RegisterSaveDataFileSystemAtomicDeletion</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x8</p></td>
+<td><p>0x8000000000000028</p></td>
+<td><p>SystemSaveDataCreate0</p></td>
+<td><p><a href="#CreateSaveDataFileSystemBySystemSaveDataId" class="uri" title="wikilink">#CreateSaveDataFileSystemBySystemSaveDataId</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x9</p></td>
+<td><p>0x8000000000000020</p></td>
+<td><p>SystemSaveDataCreate1</p></td>
+<td><p><a href="#CreateSaveDataFileSystemBySystemSaveDataId" class="uri" title="wikilink">#CreateSaveDataFileSystemBySystemSaveDataId</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0xA</p></td>
+<td><p>0x8000000000004028</p></td>
+<td><p>SaveDataDelete1</p></td>
+<td><p><a href="#DeleteSaveDataFileSystem" class="uri" title="wikilink">#DeleteSaveDataFileSystem</a>, <a href="#RegisterSaveDataFileSystemAtomicDeletion" class="uri" title="wikilink">#RegisterSaveDataFileSystemAtomicDeletion</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0xB</p></td>
+<td><p>0x8000000000000060</p></td>
+<td><p>SaveDataInfoReader0</p></td>
+<td><p><a href="#OpenSaveDataInfoReaderBySaveDataSpaceId" class="uri" title="wikilink">#OpenSaveDataInfoReaderBySaveDataSpaceId</a>, <a href="#OpenSaveDataInfoReader" class="uri" title="wikilink">#OpenSaveDataInfoReader</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0xC</p></td>
+<td><p>0x8000000000004020</p></td>
+<td><p>SaveDataInfoReader1</p></td>
+<td><p><a href="#OpenSaveDataInfoReaderBySaveDataSpaceId" class="uri" title="wikilink">#OpenSaveDataInfoReaderBySaveDataSpaceId</a>, <a href="#OpenSaveDataInfoReader" class="uri" title="wikilink">#OpenSaveDataInfoReader</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0xD</p></td>
+<td><p>0x8000000000000040<br />
+([1.0.0-5.1.0] 0x8000000000020000)</p></td>
+<td></td>
+<td><p>cmd68</p></td>
+</tr>
+<tr class="odd">
+<td><p>0xE</p></td>
+<td><p>0x8000000000020000<br />
+([1.0.0-5.1.0] 0x8000000000000400)</p></td>
+<td><p>SaveDataMeta</p></td>
+<td><p><a href="#OpenSaveDataMetaFile" class="uri" title="wikilink">#OpenSaveDataMetaFile</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0xF</p></td>
+<td><p>0x8000000000000400<br />
+([1.0.0-5.1.0] 0x8000000000004060)</p></td>
+<td><p>PosixTime</p></td>
+<td><p><a href="#SetCurrentPosixTime" class="uri" title="wikilink">#SetCurrentPosixTime</a>, <a href="#SetCurrentPosixTimeWithTimeDifference" class="uri" title="wikilink">#SetCurrentPosixTimeWithTimeDifference</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x10</p></td>
+<td><p>0x8000000000004060<br />
+([1.0.0-5.1.0] 0x8000000000080000)</p></td>
+<td><p>SaveDataExtraData_Read</p></td>
+<td><p><a href="#ReadSaveDataFileSystemExtraData" class="uri" title="wikilink">#ReadSaveDataFileSystemExtraData</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x11</p></td>
+<td><p>0x8000000000080000</p></td>
+<td><p>GlobalAccessMode</p></td>
+<td><p><a href="#SetGlobalAccessMode" class="uri" title="wikilink">#SetGlobalAccessMode</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x12</p></td>
+<td><p>0x8000000000080000<br />
+([1.0.0-5.1.0] Invalid)</p></td>
+<td><p>SpeedEmulationMode</p></td>
+<td><p><a href="#SetSpeedEmulationMode" class="uri" title="wikilink">#SetSpeedEmulationMode</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x13</p></td>
+<td><p>Invalid<br />
+([1.0.0-5.1.0] 0xC000000000800000)</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0x14</p></td>
+<td><p>0xC000000000800000<br />
+([1.0.0-5.1.0] 0xC000000001000000)</p></td>
+<td><p>PaddingFiles</p></td>
+<td><p><a href="#CreatePaddingFile" class="uri" title="wikilink">#CreatePaddingFile</a>, <a href="#DeleteAllPaddingFiles" class="uri" title="wikilink">#DeleteAllPaddingFiles</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x15</p></td>
+<td><p>0xC000000001000000<br />
+([5.0.0-5.1.0] 0x8000000001000060)<br />
+([1.0.0-4.1.0] 0xC000000002000000)</p></td>
+<td><p>SaveDataCorrupt0</p></td>
+<td><p><a href="#CorruptSaveDataFileSystem" class="uri" title="wikilink">#CorruptSaveDataFileSystem</a>, <a href="#CorruptSaveDataFileSystemBySaveDataSpaceId" class="uri" title="wikilink">#CorruptSaveDataFileSystemBySaveDataSpaceId</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[2.0.0+] 0x16</p></td>
+<td><p>0x8000000001000060<br />
+([5.0.0-5.1.0] 0x8000000000000060)<br />
+([1.0.0-4.1.0] 0x8000000004000000)</p></td>
+<td><p>SaveDataCorrupt1</p></td>
+<td><p><a href="#CorruptSaveDataFileSystem" class="uri" title="wikilink">#CorruptSaveDataFileSystem</a>, <a href="#CorruptSaveDataFileSystemBySaveDataSpaceId" class="uri" title="wikilink">#CorruptSaveDataFileSystemBySaveDataSpaceId</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[2.0.0+] 0x17</p></td>
+<td><p>0x8000000000000060<br />
+([5.0.0-5.1.0] 0xC000000002000000)<br />
+([1.0.0-4.1.0] 0x8000000008000000)</p></td>
+<td><p>SaveDataVerify</p></td>
+<td><p><a href="#VerifySaveDataFileSystem" class="uri" title="wikilink">#VerifySaveDataFileSystem</a>, <a href="#VerifySaveDataFileSystemBySaveDataSpaceId" class="uri" title="wikilink">#VerifySaveDataFileSystemBySaveDataSpaceId</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[2.0.0+] 0x18</p></td>
+<td><p>0xC000000002000000<br />
+([5.0.0-5.1.0] 0x8000000004000000)<br />
+([1.0.0-4.1.0] 0x8000000010000000)</p></td>
+<td><p>SaveData_SystemManagement</p></td>
+<td><p><a href="#CreateSaveDataFileSystem" class="uri" title="wikilink">#CreateSaveDataFileSystem</a>, <a href="#OpenSaveDataFileSystem" class="uri" title="wikilink">#OpenSaveDataFileSystem</a>, <a href="#SetSaveDataRootPath" class="uri" title="wikilink">#SetSaveDataRootPath</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[2.0.0+] 0x19</p></td>
+<td><p>0x8000000004000000<br />
+([5.0.0-5.1.0] 0x8000000008000000)<br />
+([1.0.0-4.1.0] 0x8000000000000800)</p></td>
+<td><p>SdCardFormat</p></td>
+<td><p><a href="#FormatSdCardFileSystem" class="uri" title="wikilink">#FormatSdCardFileSystem</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[2.0.0+] 0x1A</p></td>
+<td><p>0x8000000008000000<br />
+([5.0.0-5.1.0] 0x8000000010000000)<br />
+([1.0.0-4.1.0] 0x8000000000004020)</p></td>
+<td><p>RightsId</p></td>
+<td><p><a href="#GetRightsId" class="uri" title="wikilink">#GetRightsId</a>, <a href="#GetRightsIdAndKeyGenerationByPath" class="uri" title="wikilink">#GetRightsIdAndKeyGenerationByPath</a>, <a href="#GetRightsIdByPath" class="uri" title="wikilink">#GetRightsIdByPath</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[3.0.0+] 0x1B</p></td>
+<td><p>0x8000000010000000<br />
+([5.0.0-5.1.0] 0x8000000000000800)<br />
+([1.0.0-4.1.0] 0x8000000000002020)</p></td>
+<td><p>ExternalKey</p></td>
+<td><p><a href="#RegisterExternalKey" class="uri" title="wikilink">#RegisterExternalKey</a>, <a href="#UnregisterAllExternalKey" class="uri" title="wikilink">#UnregisterAllExternalKey</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[3.0.0+] 0x1C</p></td>
+<td><p>0x8000000000000800<br />
+([5.0.0-5.1.0] 0x8000000000004020)<br />
+([1.0.0-4.1.0] 0x8000000000000028)</p></td>
+<td><p>SdCardEncryptionSeed</p></td>
+<td><p><a href="#SetSdCardEncryptionSeed" class="uri" title="wikilink">#SetSdCardEncryptionSeed</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[4.0.0+] 0x1D</p></td>
+<td><p>0x8000000000000020<br />
+([5.0.0-5.1.0] 0x8000000000000000)<br />
+([1.0.0-4.1.0] 0x8000000020000000)</p></td>
+<td><p>SaveDataExtraData_Write0</p></td>
+<td><p><a href="#WriteSaveDataFileSystemExtraData" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData</a>, <a href="#WriteSaveDataFileSystemExtraData2" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData2</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[4.0.0+] 0x1E</p></td>
+<td><p>0x8000000000004020<br />
+([5.0.0-5.1.0] 0x8000000000002020)<br />
+([1.0.0-4.1.0] 0x8000000040000000)</p></td>
+<td><p>SaveDataExtraData_Write1</p></td>
+<td><p><a href="#WriteSaveDataFileSystemExtraData" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData</a>, <a href="#WriteSaveDataFileSystemExtraData2" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData2</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[4.0.0+] 0x1F</p></td>
+<td><p>0x8000000000000020<br />
+([5.0.0-5.1.0] 0x8000000000000028)<br />
+([1.0.0-4.1.0] 0x8000000000000000)</p></td>
+<td><p>SaveDataExtraData_Write2</p></td>
+<td><p><a href="#WriteSaveDataFileSystemExtraData" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData</a>, <a href="#WriteSaveDataFileSystemExtraData2" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData2</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[4.0.0+] 0x20</p></td>
+<td><p>0x8000000000000000<br />
+([5.0.0-5.1.0] 0x8000000020000000)<br />
+([1.0.0-4.1.0] 0x8000000000000000)</p></td>
+<td><p>SaveDataExtraData_Write3</p></td>
+<td><p><a href="#WriteSaveDataFileSystemExtraData" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData</a>, <a href="#WriteSaveDataFileSystemExtraData2" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData2</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[5.0.0+] 0x21</p></td>
+<td><p>0x8000000000002020<br />
+([1.0.0-5.1.0] 0x8000000040000000)</p></td>
+<td><p>SaveDataExtend0</p></td>
+<td><p><a href="#ExtendSaveDataFileSystem" class="uri" title="wikilink">#ExtendSaveDataFileSystem</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[5.0.0+] 0x22</p></td>
+<td><p>0x8000000000000028<br />
+([1.0.0-5.1.0] 0x0000000080000002)</p></td>
+<td><p>SaveDataExtend1</p></td>
+<td><p><a href="#ExtendSaveDataFileSystem" class="uri" title="wikilink">#ExtendSaveDataFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[5.0.0+] 0x23</p></td>
+<td><p>0x8000000020000000<br />
+([1.0.0-5.1.0] 0x8000000000000000)</p></td>
+<td><p>UpdatePartitionRegister</p></td>
+<td><p><a href="#RegisterUpdatePartition" class="uri" title="wikilink">#RegisterUpdatePartition</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[5.0.0+] 0x24</p></td>
+<td><p>0x8000000040000000<br />
+([1.0.0-5.1.0] 0x8000000000000000)</p></td>
+<td><p>SaveDataTransfer</p></td>
+<td><p><a href="#OpenSaveDataTransferManager" class="uri" title="wikilink">#OpenSaveDataTransferManager</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[5.0.0+] 0x25</p></td>
+<td><p>0x8000000200000000<br />
+([1.0.0-5.1.0] 0x8000000080200000)</p></td>
+<td><p>SaveDataTransferVersion2</p></td>
+<td><p><a href="#OpenSaveDataTransferManagerVersion2" class="uri" title="wikilink">#OpenSaveDataTransferManagerVersion2</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[5.0.0+] 0x26</p></td>
+<td><p>0x8000000200002000<br />
+([1.0.0-5.1.0] 0x8000000080000110)</p></td>
+<td><p>SaveDataTransferProhibiter</p></td>
+<td><p><a href="#OpenSaveDataTransferProhibiterForCloudBackUp" class="uri" title="wikilink">#OpenSaveDataTransferProhibiterForCloudBackUp</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[5.0.0+] 0x27</p></td>
+<td><p>0x8000000200002000<br />
+([1.0.0-5.1.0] 0x8000000000100008)</p></td>
+<td></td>
+<td><p>cmd84</p></td>
+</tr>
+<tr class="odd">
+<td><p>[5.0.0+] 0x28</p></td>
+<td><p>0x8000000000000000<br />
+([1.0.0-5.1.0] 0x8000000080010000)</p></td>
+<td><p>MmcPatrol</p></td>
+<td><p><a href="#SuspendMmcPatrol" class="uri" title="wikilink">#SuspendMmcPatrol</a>, <a href="#ResumeMmcPatrol" class="uri" title="wikilink">#ResumeMmcPatrol</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[5.0.0+] 0x29</p></td>
+<td><p>0x8000000000000000<br />
+([1.0.0-5.1.0] 0x0000000080000001)</p></td>
+<td><p>SaveDataTransferKey</p></td>
+<td><p><a href="#OverrideSaveDataTransferTokenSignVerificationKey" class="uri" title="wikilink">#OverrideSaveDataTransferTokenSignVerificationKey</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[5.0.0+] 0x2A</p></td>
+<td><p>0x8000000080200000<br />
+([1.0.0-5.1.0] 0x0000000080000001)</p></td>
+<td><p>SdCardDetectionEventNotifier</p></td>
+<td><p><a href="#OpenSdCardDetectionEventNotifier" class="uri" title="wikilink">#OpenSdCardDetectionEventNotifier</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[5.0.0+] 0x2B</p></td>
+<td><p>0x8000000080000110<br />
+([1.0.0-5.1.0] 0x0000000080000001)</p></td>
+<td><p>GameCardDetectionEventNotifier</p></td>
+<td><p><a href="#OpenGameCardDetectionEventNotifier" class="uri" title="wikilink">#OpenGameCardDetectionEventNotifier</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[5.0.0+] 0x2C</p></td>
+<td><p>0x8000000000100008<br />
+([1.0.0-5.1.0] 0x0000000080000001)</p></td>
+<td><p>SystemDataUpdateEventNotifier</p></td>
+<td><p><a href="#OpenSystemDataUpdateEventNotifier" class="uri" title="wikilink">#OpenSystemDataUpdateEventNotifier</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[5.0.0+] 0x2D</p></td>
+<td><p>0x8000000000010000<br />
+([1.0.0-5.1.0] 0x0000000080000001)</p></td>
+<td><p>SystemDataUpdateEventNotify</p></td>
+<td><p><a href="#NotifySystemDataUpdateEvent" class="uri" title="wikilink">#NotifySystemDataUpdateEvent</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[5.0.0+] 0x2E</p></td>
+<td><p>0x0000000080000001<br />
+([1.0.0-5.1.0] 0x8000000040000000)</p></td>
+<td><p>AccessFailureResolver</p></td>
+<td><p><a href="#OpenAccessFailureResolver" class="uri" title="wikilink">#OpenAccessFailureResolver</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[5.0.0+] 0x2F</p></td>
+<td><p>0x0000000080000001<br />
+([1.0.0-5.1.0] 0x8000000080200000)</p></td>
+<td><p>AccessFailureDetectionEvent</p></td>
+<td><p><a href="#GetAccessFailureDetectionEvent" class="uri" title="wikilink">#GetAccessFailureDetectionEvent</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[5.1.0+] 0x30</p></td>
+<td><p>0x0000000080000001<br />
+([1.0.0-5.1.0] 0x8000000080080000)</p></td>
+<td><p>AccessFailureDetected</p></td>
+<td><p><a href="#IsAccessFailureDetected" class="uri" title="wikilink">#IsAccessFailureDetected</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x31</p></td>
+<td><p>0x0000000080000001</p></td>
+<td><p>AccessFailureResolve</p></td>
+<td><p><a href="#ResolveAccessFailure" class="uri" title="wikilink">#ResolveAccessFailure</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x32</p></td>
+<td><p>0x0000000080000001</p></td>
+<td><p>AccessFailureAbandon</p></td>
+<td><p><a href="#AbandonAccessFailure" class="uri" title="wikilink">#AbandonAccessFailure</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x33</p></td>
+<td><p>0x8000000040000000</p></td>
+<td><p>SaveDataInternalStorageTotalSize</p></td>
+<td><p><a href="#QuerySaveDataInternalStorageTotalSize" class="uri" title="wikilink">#QuerySaveDataInternalStorageTotalSize</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x34</p></td>
+<td><p>0x8000000200000020</p></td>
+<td><p>SaveDataCommitId</p></td>
+<td><p><a href="#GetSaveDataCommitId" class="uri" title="wikilink">#GetSaveDataCommitId</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x35</p></td>
+<td><p>0x8000000000200000</p></td>
+<td><p>SdCardAccessibility</p></td>
+<td><p><a href="#SetSdCardAccessibility" class="uri" title="wikilink">#SetSdCardAccessibility</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x36</p></td>
+<td><p>0x4000000000000000</p></td>
+<td></td>
+<td><p>cmd520, IDeviceOperator cmd500, IDeviceOperator cmd501</p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x37</p></td>
+<td><p>0x8000000000080000</p></td>
+<td></td>
+<td><p>cmd1010</p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x38</p></td>
+<td><p>0x8000000000000000</p></td>
+<td></td>
+<td><p><a href="#CreateSaveDataFileSystem" class="uri" title="wikilink">#CreateSaveDataFileSystem</a>, cmd35</p></td>
+</tr>
+</tbody>
+</table>
 
 ## OpenFileSystem
 

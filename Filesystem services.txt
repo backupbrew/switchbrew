@@ -277,73 +277,75 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | 0x8 || 0x8000000000001000 || ImageDirectoryAccess || 3 || [[#OpenImageDirectoryFileSystem]]
 |-
-| 0x9 || 0x8000000000000084 || OpenBisFileSystemType28, OpenBisFileSystemType32 || 3 || [[#OpenBisFileSystem]]
+| 0x9 || 0x0000000080000002<br/>([1.0.0-5.1.0] 0x8000000000000084) || || 3 || cmd120
 |-
-| 0xA || 0x8000000000000080 || OpenBisFileSystemType29 || 3 || [[#OpenBisFileSystem]]
+| 0xA || 0x8000000000000084<br/>([1.0.0-5.1.0] 0x8000000000000080) || OpenBisFileSystemType28, OpenBisFileSystemType32 || 3 || [[#OpenBisFileSystem]]
 |-
-| 0xB || 0x8000000000008080 || OpenBisFileSystemType30 || 3 || [[#OpenBisFileSystem]]
+| 0xB || 0x8000000000000080<br/>([1.0.0-5.1.0] 0x8000000000008080) || OpenBisFileSystemType29 || 3 || [[#OpenBisFileSystem]]
 |-
-| 0xC || 0x8000000000008080 || OpenBisFileSystemType31 || 3 || [[#OpenBisFileSystem]]
+| 0xC || 0x8000000000008080 || OpenBisFileSystemType30 || 3 || [[#OpenBisFileSystem]]
 |-
-| 0xD || 0x8000000000000080 || || 3 ||
+| 0xD || 0x8000000000008080<br/>([1.0.0-5.1.0] 0x8000000000000080) || OpenBisFileSystemType31 || 3 || [[#OpenBisFileSystem]]
 |-
-| 0xE || 0x8000000000000080 ([1.0.0-2.3.0] 0xC000000000200000) || OpenBisFileSystemType33 || 3 || [[#OpenBisFileSystem]]
+| 0xE || 0x8000000000000080<br/>([1.0.0-2.3.0] 0xC000000000200000) || || 3 ||
 |-
-| 0xF || 0xC000000000200000 ([1.0.0-2.3.0] 0x8000000000000010) || SdCardAccess || 3 || [[#OpenSdCardFileSystem]]
+| 0xF || 0x8000000000000080<br/>([3.0.0-5.1.0] 0xC000000000200000)<br/>([1.0.0-2.3.0] 0x8000000000000010) || OpenBisFileSystemType33 || 3 || [[#OpenBisFileSystem]]
 |-
-| 0x10 || 0x8000000000000010 ([1.0.0-2.3.0] 0x8000000000040020) || GameCardUser || 3 || [[#OpenGameCardFileSystem]]
+| 0x10 || 0xC000000000200000<br/>([3.0.0-5.1.0] 0x8000000000000010)<br/>([1.0.0-2.3.0] 0x8000000000040020) || SdCardAccess || 3 || [[#OpenSdCardFileSystem]]
 |-
-| 0x11 || 0x8000000000040020 ([1.0.0-2.3.0] 0x8000000000000028) || SaveDataAccess0 || 3 || [[#OpenSaveDataFileSystem]]
+| 0x11 || 0x8000000000000010<br/>([3.0.0-5.1.0] 0x8000000000040020)<br/>([1.0.0-2.3.0] 0x8000000000000028) || GameCardUser || 3 || [[#OpenGameCardFileSystem]]
 |-
-| 0x12 || 0x8000000000000028 ([1.0.0-2.3.0] 0x8000000000000020) || SystemSaveDataAccess0 || 3 || [[#OpenSaveDataFileSystemBySystemSaveDataId]]
+| 0x12 || 0x8000000000040020<br/>([3.0.0-5.1.0] 0x8000000000000028)<br/>([1.0.0-2.3.0] 0x8000000000000020) || SaveDataAccess0 || 3 || [[#OpenSaveDataFileSystem]]
 |-
-| 0x13 || 0x8000000000000020 || SaveDataAccess1 || 3 || [[#OpenSaveDataFileSystem]]
+| 0x13 || 0x8000000000000028<br/>([1.0.0-5.1.0] 0x8000000000000020) || SystemSaveDataAccess0 || 3 || [[#OpenSaveDataFileSystemBySystemSaveDataId]]
 |-
-| 0x14 || 0x8000000000000020 ([1.0.0-2.3.0] 0x8000000000010082) || SystemSaveDataAccess1 || 3 || [[#OpenSaveDataFileSystemBySystemSaveDataId]]
+| 0x14 || 0x8000000000000020<br/>([1.0.0-2.3.0] 0x8000000000010082) || SaveDataAccess1 || 3 || [[#OpenSaveDataFileSystem]]
 |-
-| 0x15 || 0x8000000000010082 ([1.0.0-2.3.0] 0x8000000000010080) || BisPartition0 || 3 || [[#OpenBisStorage]]
+| 0x15 || 0x8000000000000020<br/>([3.0.0-5.1.0] 0x8000000000010082)<br/>([1.0.0-2.3.0] 0x8000000000010080) || SystemSaveDataAccess1 || 3 || [[#OpenSaveDataFileSystemBySystemSaveDataId]]
 |-
-| 0x16 || 0x8000000000010080 || BisPartition10 || 3 || [[#OpenBisStorage]]
+| 0x16 || 0x8000000000010082<br/>([1.0.0-5.1.0] 0x8000000000010080) || BisPartition0 || 3 || [[#OpenBisStorage]]
 |-
-| 0x17 || 0x8000000000000080 ([1.0.0-2.3.0] 0x8000000000010080) || BisPartition20 || 3 || [[#OpenBisStorage]]
+| 0x17 || 0x8000000000010080<br/>([3.0.0-5.1.0] 0x8000000000000080)<br/>([1.0.0-2.3.0] 0x8000000000010080) || BisPartition10 || 3 || [[#OpenBisStorage]]
 |-
-| 0x18 || 0x8000000000010080 || BisPartition21 || 3 || [[#OpenBisStorage]]
+| 0x18 || 0x8000000000000080<br/>([1.0.0-5.1.0] 0x8000000000010080) || BisPartition20 || 3 || [[#OpenBisStorage]]
 |-
-| 0x19 || 0x8000000000010080 || BisPartition22 || 3 || [[#OpenBisStorage]]
+| 0x19 || 0x8000000000010080 || BisPartition21 || 3 || [[#OpenBisStorage]]
 |-
-| 0x1A || 0x8000000000010080 || BisPartition23 || 3 || [[#OpenBisStorage]]
+| 0x1A || 0x8000000000010080 || BisPartition22 || 3 || [[#OpenBisStorage]]
 |-
-| 0x1B || 0x8000000000010080 || BisPartition24 || 3 || [[#OpenBisStorage]]
+| 0x1B || 0x8000000000010080 || BisPartition23 || 3 || [[#OpenBisStorage]]
 |-
-| 0x1C || 0x8000000000010080 || BisPartition25 || 3 || [[#OpenBisStorage]]
+| 0x1C || 0x8000000000010080 || BisPartition24 || 3 || [[#OpenBisStorage]]
 |-
-| 0x1D || 0x8000000000010080 ([1.0.0-2.3.0] 0x8000000000000084) || BisPartition26 || 3 || [[#OpenBisStorage]]
+| 0x1D || 0x8000000000010080<br/>([1.0.0-2.3.0] 0x8000000000000084) || BisPartition25 || 3 || [[#OpenBisStorage]]
 |-
-| 0x1E || 0x8000000000000084 || BisPartition27 || 3 || [[#OpenBisStorage]]
+| 0x1E || 0x8000000000010080<br/>([1.0.0-5.1.0] 0x8000000000000084) || BisPartition26 || 3 || [[#OpenBisStorage]]
 |-
-| 0x1F || 0x8000000000000084 ([1.0.0-2.3.0] 0x8000000000000080) || BisPartition28 || 3 || [[#OpenBisStorage]]
+| 0x1F || 0x8000000000000084<br/>([1.0.0-2.3.0] 0x8000000000000080) || BisPartition27 || 3 || [[#OpenBisStorage]]
 |-
-| 0x20 || 0x8000000000000080 || BisPartition29 || 3 || [[#OpenBisStorage]]
+| 0x20 || 0x8000000000000084<br/>([1.0.0-5.1.0] 0x8000000000000080) || BisPartition28 || 3 || [[#OpenBisStorage]]
 |-
-| 0x21 || 0x8000000000000080 || BisPartition30 || 3 || [[#OpenBisStorage]]
+| 0x21 || 0x8000000000000080 || BisPartition29 || 3 || [[#OpenBisStorage]]
 |-
-| 0x22 || 0x8000000000000080 || BisPartition31 || 3 || [[#OpenBisStorage]]
+| 0x22 || 0x8000000000000080 || BisPartition30 || 3 || [[#OpenBisStorage]]
 |-
-| 0x23 || 0x8000000000000080 ([1.0.0-2.3.0] 0xC000000000200000) || BisPartition32 || 3 || [[#OpenBisStorage]]
+| 0x23 || 0x8000000000000080<br/>([1.0.0-2.3.0] 0xC000000000200000) || BisPartition31 || 3 || [[#OpenBisStorage]]
 |-
-| 0x24 || 0x8000000000000080 ([1.0.0-2.3.0] 0x8000000000000100) || BisPartition33 || 3 || [[#OpenBisStorage]]
+| 0x24 || 0x8000000000000080<br/>([1.0.0-2.3.0] 0x8000000000000100) || BisPartition32 || 3 || [[#OpenBisStorage]]
 |-
-| 0x25 || 0xC000000000200000 ([1.0.0-2.3.0] 0x8000000000100008) || || ||
+| 0x25 || 0x8000000000000080<br/>([3.0.0-5.1.0] 0xC000000000200000)<br/>([1.0.0-2.3.0] 0x8000000000100008) || BisPartition33 || 3 || [[#OpenBisStorage]]
 |-
-| 0x26 || 0x8000000000000100 ([1.0.0-2.3.0] 0xC000000000400000) || GameCard_System || 3 || [[#OpenGameCardStorage]],  [[#EraseGameCard]] (bit1), [[#WriteToGameCard]] (bit1), [[#GetGameCardErrorInfo]] (bit1), [[#EraseAndWriteParamDirectly]] (bit1), [[#ReadParamDirectly]] (bit1), [[#ForceEraseGameCard]] (bit1)
+| 0x26 || 0xC000000000200000<br/>([3.0.0-5.1.0] 0x8000000000000100)<br/>([1.0.0-2.3.0] 0xC000000000400000) || || ||
 |-
-| [3.0.0+] 0x27 || 0x8000000000100008 || MountContent_System || 1 || [[#OpenFileSystem]], [[#OpenDataStorageByDataId]]
+| [3.0.0+] 0x27 || 0x8000000000000100<br/>([1.0.0-5.1.0] 0x8000000000100008) || GameCard_System || 3 || [[#OpenGameCardStorage]],  [[#EraseGameCard]] (bit1), [[#WriteToGameCard]] (bit1), [[#GetGameCardErrorInfo]] (bit1), [[#EraseAndWriteParamDirectly]] (bit1), [[#ReadParamDirectly]] (bit1), [[#ForceEraseGameCard]] (bit1)
 |-
-| [3.0.0+] 0x28 || 0xC000000000400000 || HostAccess || 3 || [[#OpenHostFileSystem]]
+| [3.0.0+] 0x28 || 0x8000000000100008<br/>([1.0.0-5.1.0] 0xC000000000400000) || MountContent_System || 1 || [[#OpenFileSystem]], [[#OpenDataStorageByDataId]]
 |-
-| [4.0.0+] 0x29 || 0x8000000000010000 || RegisteredUpdatePartitionAccess || 1 || [[#OpenRegisteredUpdatePartition]]
+| [4.0.0+] 0x29 || 0xC000000000400000<br/>([1.0.0-5.1.0] 0x8000000000010000) || HostAccess || 3 || [[#OpenHostFileSystem]]
 |-
-| [5.0.0+] 0x2A || 0x8000000000000000 || SaveDataInternalStorageAccess || 3 || [[#OpenSaveDataInternalStorageFileSystem]]
+| [5.0.0+] 0x2A || 0x8000000000010000<br/>([1.0.0-5.1.0] 0x8000000000000000) || RegisteredUpdatePartitionAccess || 1 || [[#OpenRegisteredUpdatePartition]]
+|-
+| [6.0.0+] 0x2B || 0x8000000000000000 || SaveDataInternalStorageAccess || 3 || [[#OpenSaveDataInternalStorageFileSystem]]
 |}
 
 === BoolPermissions ===
@@ -377,77 +379,93 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | 0xC || 0x8000000000004020 || SaveDataInfoReader1 || [[#OpenSaveDataInfoReaderBySaveDataSpaceId]], [[#OpenSaveDataInfoReader]]
 |-
-| 0xD || 0x8000000000020000 || SaveDataMeta || [[#OpenSaveDataMetaFile]]
+| 0xD || 0x8000000000000040<br/>([1.0.0-5.1.0] 0x8000000000020000) || || cmd68
 |-
-| 0xE || 0x8000000000000400 || PosixTime || [[#SetCurrentPosixTime]], [[#SetCurrentPosixTimeWithTimeDifference]]
+| 0xE || 0x8000000000020000<br/>([1.0.0-5.1.0] 0x8000000000000400) || SaveDataMeta || [[#OpenSaveDataMetaFile]]
 |-
-| 0xF || 0x8000000000004060 || SaveDataExtraData_Read || [[#ReadSaveDataFileSystemExtraData]]
+| 0xF || 0x8000000000000400<br/>([1.0.0-5.1.0] 0x8000000000004060) || PosixTime || [[#SetCurrentPosixTime]], [[#SetCurrentPosixTimeWithTimeDifference]]
 |-
-| 0x10 || 0x8000000000080000 || GlobalAccessMode || [[#SetGlobalAccessMode]]
+| 0x10 || 0x8000000000004060<br/>([1.0.0-5.1.0] 0x8000000000080000) || SaveDataExtraData_Read || [[#ReadSaveDataFileSystemExtraData]]
 |-
-| 0x11 || 0x8000000000080000 || SpeedEmulationMode || [[#SetSpeedEmulationMode]]
+| 0x11 || 0x8000000000080000 || GlobalAccessMode || [[#SetGlobalAccessMode]]
 |-
-| 0x12 || Invalid || || 
+| 0x12 || 0x8000000000080000<br/>([1.0.0-5.1.0] Invalid) || SpeedEmulationMode || [[#SetSpeedEmulationMode]]
 |-
-| 0x13 || 0xC000000000800000 || PaddingFiles || [[#CreatePaddingFile]], [[#DeleteAllPaddingFiles]] 
+| 0x13 || Invalid<br/>([1.0.0-5.1.0] 0xC000000000800000) || || 
 |-
-| 0x14 || 0xC000000001000000 || SaveDataCorrupt0 || [[#CorruptSaveDataFileSystem]], [[#CorruptSaveDataFileSystemBySaveDataSpaceId]]
+| 0x14 || 0xC000000000800000<br/>([1.0.0-5.1.0] 0xC000000001000000) || PaddingFiles || [[#CreatePaddingFile]], [[#DeleteAllPaddingFiles]] 
 |-
-| 0x15 || 0x8000000001000060 ([1.0.0-4.1.0] 0xC000000002000000) || SaveDataCorrupt1 || [[#CorruptSaveDataFileSystem]], [[#CorruptSaveDataFileSystemBySaveDataSpaceId]]
+| 0x15 || 0xC000000001000000<br/>([5.0.0-5.1.0] 0x8000000001000060)<br/>([1.0.0-4.1.0] 0xC000000002000000) || SaveDataCorrupt0 || [[#CorruptSaveDataFileSystem]], [[#CorruptSaveDataFileSystemBySaveDataSpaceId]]
 |-
-| [2.0.0+] 0x16 || 0x8000000000000060 ([1.0.0-4.1.0] 0x8000000004000000) || SaveDataVerify || [[#VerifySaveDataFileSystem]], [[#VerifySaveDataFileSystemBySaveDataSpaceId]]
+| [2.0.0+] 0x16 || 0x8000000001000060<br/>([5.0.0-5.1.0] 0x8000000000000060)<br/>([1.0.0-4.1.0] 0x8000000004000000) || SaveDataCorrupt1 || [[#CorruptSaveDataFileSystem]], [[#CorruptSaveDataFileSystemBySaveDataSpaceId]]
 |-
-| [2.0.0+] 0x17 || 0xC000000002000000 ([1.0.0-4.1.0] 0x8000000008000000) || SaveData_SystemManagement || [[#CreateSaveDataFileSystem]], [[#OpenSaveDataFileSystem]], [[#SetSaveDataRootPath]]
+| [2.0.0+] 0x17 || 0x8000000000000060<br/>([5.0.0-5.1.0] 0xC000000002000000)<br/>([1.0.0-4.1.0] 0x8000000008000000) || SaveDataVerify || [[#VerifySaveDataFileSystem]], [[#VerifySaveDataFileSystemBySaveDataSpaceId]]
 |-
-| [2.0.0+] 0x18 || 0x8000000004000000 ([1.0.0-4.1.0] 0x8000000010000000) || SdCardFormat || [[#FormatSdCardFileSystem]]
+| [2.0.0+] 0x18 || 0xC000000002000000<br/>([5.0.0-5.1.0] 0x8000000004000000)<br/>([1.0.0-4.1.0] 0x8000000010000000) || SaveData_SystemManagement || [[#CreateSaveDataFileSystem]], [[#OpenSaveDataFileSystem]], [[#SetSaveDataRootPath]]
 |-
-| [2.0.0+] 0x19 || 0x8000000008000000 ([1.0.0-4.1.0] 0x8000000000000800) || RightsId || [[#GetRightsId]], [[#GetRightsIdAndKeyGenerationByPath]], [[#GetRightsIdByPath]]
+| [2.0.0+] 0x19 || 0x8000000004000000<br/>([5.0.0-5.1.0] 0x8000000008000000)<br/>([1.0.0-4.1.0] 0x8000000000000800) || SdCardFormat || [[#FormatSdCardFileSystem]]
 |-
-| [2.0.0+] 0x1A || 0x8000000010000000 ([1.0.0-4.1.0] 0x8000000000004020) || ExternalKey || [[#RegisterExternalKey]], [[#UnregisterAllExternalKey]]
+| [2.0.0+] 0x1A || 0x8000000008000000<br/>([5.0.0-5.1.0] 0x8000000010000000)<br/>([1.0.0-4.1.0] 0x8000000000004020) || RightsId || [[#GetRightsId]], [[#GetRightsIdAndKeyGenerationByPath]], [[#GetRightsIdByPath]]
 |-
-| [3.0.0+] 0x1B || 0x8000000000000800 ([1.0.0-4.1.0] 0x8000000000002020) || SdCardEncryptionSeed || [[#SetSdCardEncryptionSeed]]
+| [3.0.0+] 0x1B || 0x8000000010000000<br/>([5.0.0-5.1.0] 0x8000000000000800)<br/>([1.0.0-4.1.0] 0x8000000000002020) || ExternalKey || [[#RegisterExternalKey]], [[#UnregisterAllExternalKey]]
 |-
-| [3.0.0+] 0x1C || 0x8000000000004020 ([1.0.0-4.1.0] 0x8000000000000028) || SaveDataExtraData_Write0 || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraData2]]
+| [3.0.0+] 0x1C || 0x8000000000000800<br/>([5.0.0-5.1.0] 0x8000000000004020)<br/>([1.0.0-4.1.0] 0x8000000000000028) || SdCardEncryptionSeed || [[#SetSdCardEncryptionSeed]]
 |-
-| [4.0.0+] 0x1D || 0x8000000000000000 ([1.0.0-4.1.0] 0x8000000020000000) || SaveDataExtraData_Write1 || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraData2]]
+| [4.0.0+] 0x1D || 0x8000000000000020<br/>([5.0.0-5.1.0] 0x8000000000000000)<br/>([1.0.0-4.1.0] 0x8000000020000000) || SaveDataExtraData_Write0 || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraData2]]
 |-
-| [4.0.0+] 0x1E || 0x8000000000002020 ([1.0.0-4.1.0] 0x8000000040000000) || SaveDataExtend0 || [[#ExtendSaveDataFileSystem]]
+| [4.0.0+] 0x1E || 0x8000000000004020<br/>([5.0.0-5.1.0] 0x8000000000002020)<br/>([1.0.0-4.1.0] 0x8000000040000000) || SaveDataExtraData_Write1 || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraData2]]
 |-
-| [4.0.0+] 0x1F || 0x8000000000000028 ([1.0.0-4.1.0] 0x8000000000000000) || SaveDataExtend1 || [[#ExtendSaveDataFileSystem]]
+| [4.0.0+] 0x1F || 0x8000000000000020<br/>([5.0.0-5.1.0] 0x8000000000000028)<br/>([1.0.0-4.1.0] 0x8000000000000000) || SaveDataExtraData_Write2 || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraData2]]
 |-
-| [4.0.0+] 0x20 || 0x8000000020000000 ([1.0.0-4.1.0] 0x8000000000000000) || UpdatePartitionRegister || [[#RegisterUpdatePartition]]
+| [4.0.0+] 0x20 || 0x8000000000000000<br/>([5.0.0-5.1.0] 0x8000000020000000)<br/>([1.0.0-4.1.0] 0x8000000000000000) || SaveDataExtraData_Write3 || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraData2]]
 |-
-| [5.0.0+] 0x21 || 0x8000000040000000 || SaveDataTransfer || [[#OpenSaveDataTransferManager]]
+| [5.0.0+] 0x21 || 0x8000000000002020<br/>([1.0.0-5.1.0] 0x8000000040000000) || SaveDataExtend0 || [[#ExtendSaveDataFileSystem]]
 |-
-| [5.0.0+] 0x22 || 0x0000000080000002 || SaveDataTransferVersion2 || [[#OpenSaveDataTransferManagerVersion2]]
+| [5.0.0+] 0x22 || 0x8000000000000028<br/>([1.0.0-5.1.0] 0x0000000080000002) || SaveDataExtend1 || [[#ExtendSaveDataFileSystem]]
 |-
-| [5.0.0+] 0x23 || 0x8000000000000000 || MmcPatrol || [[#SuspendMmcPatrol]], [[#ResumeMmcPatrol]]
+| [5.0.0+] 0x23 || 0x8000000020000000<br/>([1.0.0-5.1.0] 0x8000000000000000) || UpdatePartitionRegister || [[#RegisterUpdatePartition]]
 |-
-| [5.0.0+] 0x24 || 0x8000000000000000 || SaveDataTransferKey || [[#OverrideSaveDataTransferTokenSignVerificationKey]]
+| [5.0.0+] 0x24 || 0x8000000040000000<br/>([1.0.0-5.1.0] 0x8000000000000000) || SaveDataTransfer || [[#OpenSaveDataTransferManager]]
 |-
-| [5.0.0+] 0x25 || 0x8000000080200000 || SdCardDetectionEventNotifier || [[#OpenSdCardDetectionEventNotifier]]
+| [5.0.0+] 0x25 || 0x8000000200000000<br/>([1.0.0-5.1.0] 0x8000000080200000) || SaveDataTransferVersion2 || [[#OpenSaveDataTransferManagerVersion2]]
 |-
-| [5.0.0+] 0x26 || 0x8000000080000110 || GameCardDetectionEventNotifier || [[#OpenGameCardDetectionEventNotifier]]
+| [5.0.0+] 0x26 || 0x8000000200002000<br/>([1.0.0-5.1.0] 0x8000000080000110) || SaveDataTransferProhibiter || [[#OpenSaveDataTransferProhibiterForCloudBackUp]]
 |-
-| [5.0.0+] 0x27 || 0x8000000000100008 || SystemDataUpdateEventNotifier || [[#OpenSystemDataUpdateEventNotifier]]
+| [5.0.0+] 0x27 || 0x8000000200002000<br/>([1.0.0-5.1.0] 0x8000000000100008) || || cmd84
 |-
-| [5.0.0+] 0x28 || 0x8000000080010000 || SystemDataUpdateEventNotify || [[#NotifySystemDataUpdateEvent]]
+| [5.0.0+] 0x28 || 0x8000000000000000<br/>([1.0.0-5.1.0] 0x8000000080010000) || MmcPatrol || [[#SuspendMmcPatrol]], [[#ResumeMmcPatrol]]
 |-
-| [5.0.0+] 0x29 || 0x0000000080000001 || AccessFailureResolver || [[#OpenAccessFailureResolver]]
+| [5.0.0+] 0x29 || 0x8000000000000000<br/>([1.0.0-5.1.0] 0x0000000080000001) || SaveDataTransferKey || [[#OverrideSaveDataTransferTokenSignVerificationKey]]
 |-
-| [5.0.0+] 0x2A || 0x0000000080000001 || AccessFailureDetectionEvent || [[#GetAccessFailureDetectionEvent]]
+| [5.0.0+] 0x2A || 0x8000000080200000<br/>([1.0.0-5.1.0] 0x0000000080000001) || SdCardDetectionEventNotifier || [[#OpenSdCardDetectionEventNotifier]]
 |-
-| [5.0.0+] 0x2B || 0x0000000080000001 || AccessFailureDetected || [[#IsAccessFailureDetected]]
+| [5.0.0+] 0x2B || 0x8000000080000110<br/>([1.0.0-5.1.0] 0x0000000080000001) || GameCardDetectionEventNotifier || [[#OpenGameCardDetectionEventNotifier]]
 |-
-| [5.0.0+] 0x2C || 0x0000000080000001 || AccessFailureResolve || [[#ResolveAccessFailure]]
+| [5.0.0+] 0x2C || 0x8000000000100008<br/>([1.0.0-5.1.0] 0x0000000080000001) || SystemDataUpdateEventNotifier || [[#OpenSystemDataUpdateEventNotifier]]
 |-
-| [5.0.0+] 0x2D || 0x0000000080000001 || AccessFailureAbandon || [[#AbandonAccessFailure]]
+| [5.0.0+] 0x2D || 0x8000000000010000<br/>([1.0.0-5.1.0] 0x0000000080000001) || SystemDataUpdateEventNotify || [[#NotifySystemDataUpdateEvent]]
 |-
-| [5.0.0+] 0x2E || 0x8000000040000000 || SaveDataInternalStorageTotalSize || [[#QuerySaveDataInternalStorageTotalSize]] 
+| [5.0.0+] 0x2E || 0x0000000080000001<br/>([1.0.0-5.1.0] 0x8000000040000000) || AccessFailureResolver || [[#OpenAccessFailureResolver]]
 |-
-| [5.0.0+] 0x2F || 0x8000000080200000 || SdCardAccessibility || [[#SetSdCardAccessibility]]
+| [5.0.0+] 0x2F || 0x0000000080000001<br/>([1.0.0-5.1.0] 0x8000000080200000) || AccessFailureDetectionEvent || [[#GetAccessFailureDetectionEvent]]
 |-
-| [5.1.0+] 0x30 || 0x8000000080080000 || ||  
+| [5.1.0+] 0x30 || 0x0000000080000001<br/>([1.0.0-5.1.0] 0x8000000080080000) || AccessFailureDetected || [[#IsAccessFailureDetected]] 
+|-
+| [6.0.0+] 0x31 || 0x0000000080000001 || AccessFailureResolve || [[#ResolveAccessFailure]]
+|-
+| [6.0.0+] 0x32 || 0x0000000080000001 || AccessFailureAbandon || [[#AbandonAccessFailure]]
+|-
+| [6.0.0+] 0x33 || 0x8000000040000000 || SaveDataInternalStorageTotalSize || [[#QuerySaveDataInternalStorageTotalSize]]
+|-
+| [6.0.0+] 0x34 || 0x8000000200000020 || SaveDataCommitId || [[#GetSaveDataCommitId]]
+|-
+| [6.0.0+] 0x35 || 0x8000000000200000 || SdCardAccessibility || [[#SetSdCardAccessibility]]
+|-
+| [6.0.0+] 0x36 || 0x4000000000000000 || || cmd520, IDeviceOperator cmd500, IDeviceOperator cmd501 
+|-
+| [6.0.0+] 0x37 || 0x8000000000080000 || || cmd1010
+|-
+| [6.0.0+] 0x38 || 0x8000000000000000 || || [[#CreateSaveDataFileSystem]], cmd35
 |}
 
 == OpenFileSystem ==
