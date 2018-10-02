@@ -619,7 +619,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x5c
 | 4
-| Next directory node index in the chain of invalid or valid directories. If this is the first block in a list of length 0, this value will contain the number total number of directory nodes.
+| Next directory node index in the chain of invalid or valid directories. If this is the first block in a list of length 0, this value will contain the total number of directory nodes.
 |-
 |}
 
@@ -660,6 +660,6 @@ This section contains information about the structure of the save file.
 |-
 | 0x5c
 | 4
-| Next file node index in the chain of invalid or valid file. If this is the first block in a list of length 0, this value will contain the number total number of file nodes.
+| Next file node index in the chain of invalid or valid files. If this is the first block in a list of length 0, this value will contain the total number of file nodes.
 |-
 |}

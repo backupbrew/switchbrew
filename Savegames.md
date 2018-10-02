@@ -213,16 +213,16 @@ file.
   - Index 2 is the root
 directory.
 
-| Start | Length | Description                                                                                                                                                                                   |
-| ----- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x00  | 4      | Parent directory node index                                                                                                                                                                   |
-| 0x04  | 64     | Filename                                                                                                                                                                                      |
-| 0x44  | 4      | Next sibling directory node index                                                                                                                                                             |
-| 0x48  | 4      | First child directory node index                                                                                                                                                              |
-| 0x4c  | 8      | First child file node index                                                                                                                                                                   |
-| 0x54  | 8      | Unused?                                                                                                                                                                                       |
-| 0x5c  | 4      | Next directory node index in the chain of invalid or valid directories. If this is the first block in a list of length 0, this value will contain the number total number of directory nodes. |
-|       |        |                                                                                                                                                                                               |
+| Start | Length | Description                                                                                                                                                                            |
+| ----- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x00  | 4      | Parent directory node index                                                                                                                                                            |
+| 0x04  | 64     | Filename                                                                                                                                                                               |
+| 0x44  | 4      | Next sibling directory node index                                                                                                                                                      |
+| 0x48  | 4      | First child directory node index                                                                                                                                                       |
+| 0x4c  | 8      | First child file node index                                                                                                                                                            |
+| 0x54  | 8      | Unused?                                                                                                                                                                                |
+| 0x5c  | 4      | Next directory node index in the chain of invalid or valid directories. If this is the first block in a list of length 0, this value will contain the total number of directory nodes. |
+|       |        |                                                                                                                                                                                        |
 
 ### File Table Entry
 
@@ -231,13 +231,13 @@ directory.
   - Index 1 is the start of a linked list that contains all valid/active
     files.
 
-| Start | Length | Description                                                                                                                                                                  |
-| ----- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x00  | 4      | Parent directory node index                                                                                                                                                  |
-| 0x04  | 64     | Filename                                                                                                                                                                     |
-| 0x44  | 4      | Next sibling file node index                                                                                                                                                 |
-| 0x48  | 4      | Index of the block that the file starts at                                                                                                                                   |
-| 0x4c  | 8      | File size in bytes                                                                                                                                                           |
-| 0x54  | 8      | Unused?                                                                                                                                                                      |
-| 0x5c  | 4      | Next file node index in the chain of invalid or valid file. If this is the first block in a list of length 0, this value will contain the number total number of file nodes. |
-|       |        |                                                                                                                                                                              |
+| Start | Length | Description                                                                                                                                                            |
+| ----- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x00  | 4      | Parent directory node index                                                                                                                                            |
+| 0x04  | 64     | Filename                                                                                                                                                               |
+| 0x44  | 4      | Next sibling file node index                                                                                                                                           |
+| 0x48  | 4      | Index of the block that the file starts at                                                                                                                             |
+| 0x4c  | 8      | File size in bytes                                                                                                                                                     |
+| 0x54  | 8      | Unused?                                                                                                                                                                |
+| 0x5c  | 4      | Next file node index in the chain of invalid or valid files. If this is the first block in a list of length 0, this value will contain the total number of file nodes. |
+|       |        |                                                                                                                                                                        |
