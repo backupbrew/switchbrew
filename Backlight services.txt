@@ -11,11 +11,11 @@ This is "nn::lbl::detail::ILblController".
 |-
 | 2 ||
 |-
-| 3 ||
+| 3 || GetCurrentBacklightLevel
 |-
 | 4 ||
 |-
-| 5 ||
+| 5 || GetAlsComputedBacklightLevel
 |-
 | 6 || TurnOnBacklight
 |-
@@ -35,7 +35,7 @@ This is "nn::lbl::detail::ILblController".
 |-
 | 14 ||
 |-
-| 15 ||
+| 15 || GetAutoBrightnessSetting
 |-
 | 16 || ReadRawLightSensor
 |-
@@ -63,6 +63,15 @@ This is "nn::lbl::detail::ILblController".
 |-
 | 28 || [3.0.0+] [[#GetVrMode]]
 |}
+
+==GetCurrentBacklightLevel==
+No input. Returns an output u32 int of the current backlight level.
+
+==GetAlsComputedBacklightLevel==
+No input. Returns an output u32 int of the backlight level computed from the AL sensor. 
+
+==GetAutoBrightnessSetting==
+No input. Returns an output u8 bool indicating whether auto brightness is enabled. 
 
 ==EnableVrMode==
 No input/output. Used by [[AM_services#SetVrModeEnabled]].
