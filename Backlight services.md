@@ -41,7 +41,7 @@ No input. Returns an output u32 int of the current backlight level.
 ## GetAlsComputedBacklightLevel
 
 No input. Returns an output u32 int of the backlight level computed from
-the AL sensor.
+the ambient light sensor.
 
 ## GetAutoBrightnessSetting
 
