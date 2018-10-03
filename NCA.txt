@@ -134,7 +134,7 @@ Each entry is 0x38 bytes:
 |-
 | 0x36
 | 1
-| Type (0=meta, 1=program, 2=data, 3=control, 4=offline-manual [[Internet_Browser|html]], 5=legal [[Internet_Browser|html]], 6=[[NCA_Format|game-update]] RomFS patches?)
+| Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[[Internet_Browser|HtmlDocument]], 5=[[Internet_Browser|LegalInformation]], 6=[[NCA_Format|DeltaFragment]])
 |-
 | 0x37
 | 1
