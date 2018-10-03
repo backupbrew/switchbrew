@@ -417,17 +417,17 @@ hash, from hashing the entire output from
 
 #### Title Types
 
-| Value | Description                                                                                                                                                                      |
-| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x01  | System Programs ([System Modules](Title%20list#System%20Modules.md##System_Modules "wikilink") or [System Applets](Title%20list#System%20Applets.md##System_Applets "wikilink")) |
-| 0x02  | [System Data Archives](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink")                                                                                |
-| 0x03  | System Update                                                                                                                                                                    |
-| 0x04  | [Firmware package A](Title%20list.md "wikilink")                                                                                                                                 |
-| 0x05  | [Firmware package B](Title%20list.md "wikilink")                                                                                                                                 |
-| 0x80  | Regular application                                                                                                                                                              |
-| 0x81  | Update title                                                                                                                                                                     |
-| 0x82  | Add-on content                                                                                                                                                                   |
-| 0x83  | Delta title                                                                                                                                                                      |
+| Value | Description                                                                                                                                                                    |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0x01  | SystemProgram ([System Modules](Title%20list#System%20Modules.md##System_Modules "wikilink") or [System Applets](Title%20list#System%20Applets.md##System_Applets "wikilink")) |
+| 0x02  | SystemData ([System Data Archives](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink"))                                                                 |
+| 0x03  | SystemUpdate                                                                                                                                                                   |
+| 0x04  | BootImagePackage ([Firmware package A or C](Title%20list.md "wikilink"))                                                                                                       |
+| 0x05  | BootImagePackageSafe ([Firmware package B or D](Title%20list.md "wikilink"))                                                                                                   |
+| 0x80  | Application                                                                                                                                                                    |
+| 0x81  | Patch                                                                                                                                                                          |
+| 0x82  | AddOnContent                                                                                                                                                                   |
+| 0x83  | Delta                                                                                                                                                                          |
 
 ## ncm:v
 

@@ -410,31 +410,31 @@ The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, f
 ! Description
 |-
 | 0x01
-| System Programs ([[Title_list#System_Modules|System Modules]] or [[Title_list#System_Applets|System Applets]])
+| SystemProgram ([[Title_list#System_Modules|System Modules]] or [[Title_list#System_Applets|System Applets]])
 |-
 | 0x02
-| [[Title_list#System_Data_Archives|System Data Archives]]
+| SystemData ([[Title_list#System_Data_Archives|System Data Archives]])
 |-
 | 0x03
-| System Update
+| SystemUpdate
 |-
 | 0x04
-| [[Title_list|Firmware package A]]
+| BootImagePackage ([[Title_list|Firmware package A or C]])
 |-
 | 0x05
-| [[Title_list|Firmware package B]]
+| BootImagePackageSafe ([[Title_list|Firmware package B or D]])
 |-
 | 0x80
-| Regular application
+| Application
 |-
 | 0x81
-| Update title
+| Patch
 |-
 | 0x82
-| Add-on content
+| AddOnContent
 |-
 | 0x83
-| Delta title
+| Delta
 |}
 
 == ncm:v ==
