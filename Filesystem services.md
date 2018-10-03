@@ -545,79 +545,79 @@ happens.
 <tr class="odd">
 <td><p>0x0</p></td>
 <td><p>0x8000000000000080</p></td>
-<td><p>BisCache</p></td>
+<td><p>CanInvalidateBisCache</p></td>
 <td><p><a href="#InvalidateBisCache" class="uri" title="wikilink">#InvalidateBisCache</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x1</p></td>
 <td><p>0x8000000000000080</p></td>
-<td><p>EraseMmc</p></td>
+<td><p>CanEraseMmc</p></td>
 <td><p><a href="#EraseMmc" class="uri" title="wikilink">#EraseMmc</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x2</p></td>
 <td><p>0x8000000000000010</p></td>
-<td><p>GameCardCertificate</p></td>
+<td><p>CanGetGameCardDeviceCertificate</p></td>
 <td><p><a href="#GetGameCardDeviceCertificate" class="uri" title="wikilink">#GetGameCardDeviceCertificate</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x3</p></td>
 <td><p>0x8000000000000010</p></td>
-<td><p>GameCardIdSet</p></td>
+<td><p>CanGetGameCardIdSet</p></td>
 <td><p><a href="#GetGameCardIdSet" class="uri" title="wikilink">#GetGameCardIdSet</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x4</p></td>
 <td><p>0x8000000000000200</p></td>
-<td><p>GameCardDriver</p></td>
+<td><p>CanFinalizeGameCardDriver</p></td>
 <td><p><a href="#FinalizeGameCardDriver" class="uri" title="wikilink">#FinalizeGameCardDriver</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x5</p></td>
 <td><p>0x8000000000000200</p></td>
-<td><p>GameCardAsic</p></td>
+<td><p>CanGetGameCardAsicInfo</p></td>
 <td><p><a href="#GetGameCardAsicInfo" class="uri" title="wikilink">#GetGameCardAsicInfo</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x6</p></td>
 <td><p>0x8000000000002020</p></td>
-<td><p>SaveDataCreate</p></td>
+<td><p>CanCreateSaveData</p></td>
 <td><p><a href="#CreateSaveDataFileSystem" class="uri" title="wikilink">#CreateSaveDataFileSystem</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x7</p></td>
 <td><p>0x8000000000000060</p></td>
-<td><p>SaveDataDelete0</p></td>
+<td><p>CanDeleteSaveData</p></td>
 <td><p><a href="#DeleteSaveDataFileSystem" class="uri" title="wikilink">#DeleteSaveDataFileSystem</a>, <a href="#RegisterSaveDataFileSystemAtomicDeletion" class="uri" title="wikilink">#RegisterSaveDataFileSystemAtomicDeletion</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x8</p></td>
 <td><p>0x8000000000000028</p></td>
-<td><p>SystemSaveDataCreate0</p></td>
+<td><p>CanCreateSystemSaveData</p></td>
 <td><p><a href="#CreateSaveDataFileSystemBySystemSaveDataId" class="uri" title="wikilink">#CreateSaveDataFileSystemBySystemSaveDataId</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x9</p></td>
 <td><p>0x8000000000000020</p></td>
-<td><p>SystemSaveDataCreate1</p></td>
+<td><p>CanCreateOthersSystemSaveData</p></td>
 <td><p><a href="#CreateSaveDataFileSystemBySystemSaveDataId" class="uri" title="wikilink">#CreateSaveDataFileSystemBySystemSaveDataId</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0xA</p></td>
 <td><p>0x8000000000004028</p></td>
-<td><p>SaveDataDelete1</p></td>
+<td><p>CanDeleteSystemSaveData</p></td>
 <td><p><a href="#DeleteSaveDataFileSystem" class="uri" title="wikilink">#DeleteSaveDataFileSystem</a>, <a href="#RegisterSaveDataFileSystemAtomicDeletion" class="uri" title="wikilink">#RegisterSaveDataFileSystemAtomicDeletion</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0xB</p></td>
 <td><p>0x8000000000000060</p></td>
-<td><p>SaveDataInfoReader0</p></td>
+<td><p>CanOpenSaveDataInfoReader</p></td>
 <td><p><a href="#OpenSaveDataInfoReaderBySaveDataSpaceId" class="uri" title="wikilink">#OpenSaveDataInfoReaderBySaveDataSpaceId</a>, <a href="#OpenSaveDataInfoReader" class="uri" title="wikilink">#OpenSaveDataInfoReader</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0xC</p></td>
 <td><p>0x8000000000004020</p></td>
-<td><p>SaveDataInfoReader1</p></td>
+<td><p>CanOpenSaveDataInfoReaderForSystem</p></td>
 <td><p><a href="#OpenSaveDataInfoReaderBySaveDataSpaceId" class="uri" title="wikilink">#OpenSaveDataInfoReaderBySaveDataSpaceId</a>, <a href="#OpenSaveDataInfoReader" class="uri" title="wikilink">#OpenSaveDataInfoReader</a></p></td>
 </tr>
 <tr class="even">
@@ -631,34 +631,34 @@ happens.
 <td><p>0xE</p></td>
 <td><p>0x8000000000020000<br />
 ([1.0.0-5.1.0] 0x8000000000000400)</p></td>
-<td><p>SaveDataMeta</p></td>
+<td><p>CanOpenSaveDataMetaFile</p></td>
 <td><p><a href="#OpenSaveDataMetaFile" class="uri" title="wikilink">#OpenSaveDataMetaFile</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0xF</p></td>
 <td><p>0x8000000000000400<br />
 ([1.0.0-5.1.0] 0x8000000000004060)</p></td>
-<td><p>PosixTime</p></td>
+<td><p>CanSetCurrentPosixTime</p></td>
 <td><p><a href="#SetCurrentPosixTime" class="uri" title="wikilink">#SetCurrentPosixTime</a>, <a href="#SetCurrentPosixTimeWithTimeDifference" class="uri" title="wikilink">#SetCurrentPosixTimeWithTimeDifference</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x10</p></td>
 <td><p>0x8000000000004060<br />
 ([1.0.0-5.1.0] 0x8000000000080000)</p></td>
-<td><p>SaveDataExtraData_Read</p></td>
+<td><p>CanReadSaveDataFileSystemExtraData</p></td>
 <td><p><a href="#ReadSaveDataFileSystemExtraData" class="uri" title="wikilink">#ReadSaveDataFileSystemExtraData</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x11</p></td>
 <td><p>0x8000000000080000</p></td>
-<td><p>GlobalAccessMode</p></td>
+<td><p>CanSetGlobalAccessLogMode</p></td>
 <td><p><a href="#SetGlobalAccessMode" class="uri" title="wikilink">#SetGlobalAccessMode</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x12</p></td>
 <td><p>0x8000000000080000<br />
 ([1.0.0-5.1.0] Invalid)</p></td>
-<td><p>SpeedEmulationMode</p></td>
+<td><p>CanSetSpeedEmulationMode</p></td>
 <td><p><a href="#SetSpeedEmulationMode" class="uri" title="wikilink">#SetSpeedEmulationMode</a></p></td>
 </tr>
 <tr class="even">
@@ -672,7 +672,7 @@ happens.
 <td><p>0x14</p></td>
 <td><p>0xC000000000800000<br />
 ([1.0.0-5.1.0] 0xC000000001000000)</p></td>
-<td><p>PaddingFiles</p></td>
+<td><p>CanFillBis</p></td>
 <td><p><a href="#CreatePaddingFile" class="uri" title="wikilink">#CreatePaddingFile</a>, <a href="#DeleteAllPaddingFiles" class="uri" title="wikilink">#DeleteAllPaddingFiles</a></p></td>
 </tr>
 <tr class="even">
@@ -680,7 +680,7 @@ happens.
 <td><p>0xC000000001000000<br />
 ([5.0.0-5.1.0] 0x8000000001000060)<br />
 ([1.0.0-4.1.0] 0xC000000002000000)</p></td>
-<td><p>SaveDataCorrupt0</p></td>
+<td><p>CanCorruptSaveData</p></td>
 <td><p><a href="#CorruptSaveDataFileSystem" class="uri" title="wikilink">#CorruptSaveDataFileSystem</a>, <a href="#CorruptSaveDataFileSystemBySaveDataSpaceId" class="uri" title="wikilink">#CorruptSaveDataFileSystemBySaveDataSpaceId</a></p></td>
 </tr>
 <tr class="odd">
@@ -688,7 +688,7 @@ happens.
 <td><p>0x8000000001000060<br />
 ([5.0.0-5.1.0] 0x8000000000000060)<br />
 ([1.0.0-4.1.0] 0x8000000004000000)</p></td>
-<td><p>SaveDataCorrupt1</p></td>
+<td><p>CanCorruptSystemSaveData</p></td>
 <td><p><a href="#CorruptSaveDataFileSystem" class="uri" title="wikilink">#CorruptSaveDataFileSystem</a>, <a href="#CorruptSaveDataFileSystemBySaveDataSpaceId" class="uri" title="wikilink">#CorruptSaveDataFileSystemBySaveDataSpaceId</a></p></td>
 </tr>
 <tr class="even">
@@ -696,7 +696,7 @@ happens.
 <td><p>0x8000000000000060<br />
 ([5.0.0-5.1.0] 0xC000000002000000)<br />
 ([1.0.0-4.1.0] 0x8000000008000000)</p></td>
-<td><p>SaveDataVerify</p></td>
+<td><p>CanVerifySaveData</p></td>
 <td><p><a href="#VerifySaveDataFileSystem" class="uri" title="wikilink">#VerifySaveDataFileSystem</a>, <a href="#VerifySaveDataFileSystemBySaveDataSpaceId" class="uri" title="wikilink">#VerifySaveDataFileSystemBySaveDataSpaceId</a></p></td>
 </tr>
 <tr class="odd">
@@ -704,7 +704,7 @@ happens.
 <td><p>0xC000000002000000<br />
 ([5.0.0-5.1.0] 0x8000000004000000)<br />
 ([1.0.0-4.1.0] 0x8000000010000000)</p></td>
-<td><p>SaveData_SystemManagement</p></td>
+<td><p>CanDebugSaveData</p></td>
 <td><p><a href="#CreateSaveDataFileSystem" class="uri" title="wikilink">#CreateSaveDataFileSystem</a>, <a href="#OpenSaveDataFileSystem" class="uri" title="wikilink">#OpenSaveDataFileSystem</a>, <a href="#SetSaveDataRootPath" class="uri" title="wikilink">#SetSaveDataRootPath</a></p></td>
 </tr>
 <tr class="even">
@@ -712,7 +712,7 @@ happens.
 <td><p>0x8000000004000000<br />
 ([5.0.0-5.1.0] 0x8000000008000000)<br />
 ([1.0.0-4.1.0] 0x8000000000000800)</p></td>
-<td><p>SdCardFormat</p></td>
+<td><p>CanFormatSdCard</p></td>
 <td><p><a href="#FormatSdCardFileSystem" class="uri" title="wikilink">#FormatSdCardFileSystem</a></p></td>
 </tr>
 <tr class="odd">
@@ -720,7 +720,7 @@ happens.
 <td><p>0x8000000008000000<br />
 ([5.0.0-5.1.0] 0x8000000010000000)<br />
 ([1.0.0-4.1.0] 0x8000000000004020)</p></td>
-<td><p>RightsId</p></td>
+<td><p>CanGetRightsId</p></td>
 <td><p><a href="#GetRightsId" class="uri" title="wikilink">#GetRightsId</a>, <a href="#GetRightsIdAndKeyGenerationByPath" class="uri" title="wikilink">#GetRightsIdAndKeyGenerationByPath</a>, <a href="#GetRightsIdByPath" class="uri" title="wikilink">#GetRightsIdByPath</a></p></td>
 </tr>
 <tr class="even">
@@ -728,7 +728,7 @@ happens.
 <td><p>0x8000000010000000<br />
 ([5.0.0-5.1.0] 0x8000000000000800)<br />
 ([1.0.0-4.1.0] 0x8000000000002020)</p></td>
-<td><p>ExternalKey</p></td>
+<td><p>CanRegisterExternalKey</p></td>
 <td><p><a href="#RegisterExternalKey" class="uri" title="wikilink">#RegisterExternalKey</a>, <a href="#UnregisterAllExternalKey" class="uri" title="wikilink">#UnregisterAllExternalKey</a></p></td>
 </tr>
 <tr class="odd">
@@ -736,7 +736,7 @@ happens.
 <td><p>0x8000000000000800<br />
 ([5.0.0-5.1.0] 0x8000000000004020)<br />
 ([1.0.0-4.1.0] 0x8000000000000028)</p></td>
-<td><p>SdCardEncryptionSeed</p></td>
+<td><p>CanSetEncryptionSeed</p></td>
 <td><p><a href="#SetSdCardEncryptionSeed" class="uri" title="wikilink">#SetSdCardEncryptionSeed</a></p></td>
 </tr>
 <tr class="even">
@@ -752,7 +752,7 @@ happens.
 <td><p>0x8000000000004020<br />
 ([5.0.0-5.1.0] 0x8000000000002020)<br />
 ([1.0.0-4.1.0] 0x8000000040000000)</p></td>
-<td><p>SaveDataExtraData_Write1</p></td>
+<td><p>CanWriteSaveDataFileSystemExtraDataFlags</p></td>
 <td><p><a href="#WriteSaveDataFileSystemExtraData" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData</a>, <a href="#WriteSaveDataFileSystemExtraData2" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData2</a></p></td>
 </tr>
 <tr class="even">
@@ -760,7 +760,7 @@ happens.
 <td><p>0x8000000000000020<br />
 ([5.0.0-5.1.0] 0x8000000000000028)<br />
 ([1.0.0-4.1.0] 0x8000000000000000)</p></td>
-<td><p>SaveDataExtraData_Write2</p></td>
+<td><p>SaveDataExtraData_Write1</p></td>
 <td><p><a href="#WriteSaveDataFileSystemExtraData" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData</a>, <a href="#WriteSaveDataFileSystemExtraData2" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData2</a></p></td>
 </tr>
 <tr class="odd">
@@ -768,49 +768,49 @@ happens.
 <td><p>0x8000000000000000<br />
 ([5.0.0-5.1.0] 0x8000000020000000)<br />
 ([1.0.0-4.1.0] 0x8000000000000000)</p></td>
-<td><p>SaveDataExtraData_Write3</p></td>
+<td><p>CanWriteSaveDataFileSystemExtraDataAll</p></td>
 <td><p><a href="#WriteSaveDataFileSystemExtraData" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData</a>, <a href="#WriteSaveDataFileSystemExtraData2" class="uri" title="wikilink">#WriteSaveDataFileSystemExtraData2</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[5.0.0+] 0x21</p></td>
 <td><p>0x8000000000002020<br />
 ([1.0.0-5.1.0] 0x8000000040000000)</p></td>
-<td><p>SaveDataExtend0</p></td>
+<td><p>CanExtendSaveData</p></td>
 <td><p><a href="#ExtendSaveDataFileSystem" class="uri" title="wikilink">#ExtendSaveDataFileSystem</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[5.0.0+] 0x22</p></td>
 <td><p>0x8000000000000028<br />
 ([1.0.0-5.1.0] 0x0000000080000002)</p></td>
-<td><p>SaveDataExtend1</p></td>
+<td><p>CanExtendSystemSaveData</p></td>
 <td><p><a href="#ExtendSaveDataFileSystem" class="uri" title="wikilink">#ExtendSaveDataFileSystem</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[5.0.0+] 0x23</p></td>
 <td><p>0x8000000020000000<br />
 ([1.0.0-5.1.0] 0x8000000000000000)</p></td>
-<td><p>UpdatePartitionRegister</p></td>
+<td><p>CanRegisterUpdatePartition</p></td>
 <td><p><a href="#RegisterUpdatePartition" class="uri" title="wikilink">#RegisterUpdatePartition</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[5.0.0+] 0x24</p></td>
 <td><p>0x8000000040000000<br />
 ([1.0.0-5.1.0] 0x8000000000000000)</p></td>
-<td><p>SaveDataTransfer</p></td>
+<td><p>CanOpenSaveDataTransferManager</p></td>
 <td><p><a href="#OpenSaveDataTransferManager" class="uri" title="wikilink">#OpenSaveDataTransferManager</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[5.0.0+] 0x25</p></td>
 <td><p>0x8000000200000000<br />
 ([1.0.0-5.1.0] 0x8000000080200000)</p></td>
-<td><p>SaveDataTransferVersion2</p></td>
+<td><p>CanOpenSaveDataTransferManagerVersion2</p></td>
 <td><p><a href="#OpenSaveDataTransferManagerVersion2" class="uri" title="wikilink">#OpenSaveDataTransferManagerVersion2</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[5.0.0+] 0x26</p></td>
 <td><p>0x8000000200002000<br />
 ([1.0.0-5.1.0] 0x8000000080000110)</p></td>
-<td><p>SaveDataTransferProhibiter</p></td>
+<td><p>CanOpenSaveDataTransferProhibiterForCloudBackUp</p></td>
 <td><p><a href="#OpenSaveDataTransferProhibiterForCloudBackUp" class="uri" title="wikilink">#OpenSaveDataTransferProhibiterForCloudBackUp</a></p></td>
 </tr>
 <tr class="even">
@@ -824,93 +824,93 @@ happens.
 <td><p>[5.0.0+] 0x28</p></td>
 <td><p>0x8000000000000000<br />
 ([1.0.0-5.1.0] 0x8000000080010000)</p></td>
-<td><p>MmcPatrol</p></td>
+<td><p>CanControlMmcPatrol</p></td>
 <td><p><a href="#SuspendMmcPatrol" class="uri" title="wikilink">#SuspendMmcPatrol</a>, <a href="#ResumeMmcPatrol" class="uri" title="wikilink">#ResumeMmcPatrol</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[5.0.0+] 0x29</p></td>
 <td><p>0x8000000000000000<br />
 ([1.0.0-5.1.0] 0x0000000080000001)</p></td>
-<td><p>SaveDataTransferKey</p></td>
+<td><p>CanOverrideSaveDataTransferTokenSignVerificationKey</p></td>
 <td><p><a href="#OverrideSaveDataTransferTokenSignVerificationKey" class="uri" title="wikilink">#OverrideSaveDataTransferTokenSignVerificationKey</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[5.0.0+] 0x2A</p></td>
 <td><p>0x8000000080200000<br />
 ([1.0.0-5.1.0] 0x0000000080000001)</p></td>
-<td><p>SdCardDetectionEventNotifier</p></td>
+<td><p>CanOpenSdCardDetectionEventNotifier</p></td>
 <td><p><a href="#OpenSdCardDetectionEventNotifier" class="uri" title="wikilink">#OpenSdCardDetectionEventNotifier</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[5.0.0+] 0x2B</p></td>
 <td><p>0x8000000080000110<br />
 ([1.0.0-5.1.0] 0x0000000080000001)</p></td>
-<td><p>GameCardDetectionEventNotifier</p></td>
+<td><p>CanOpenGameCardDetectionEventNotifier</p></td>
 <td><p><a href="#OpenGameCardDetectionEventNotifier" class="uri" title="wikilink">#OpenGameCardDetectionEventNotifier</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[5.0.0+] 0x2C</p></td>
 <td><p>0x8000000000100008<br />
 ([1.0.0-5.1.0] 0x0000000080000001)</p></td>
-<td><p>SystemDataUpdateEventNotifier</p></td>
+<td><p>CanOpenSystemDataUpdateEventNotifier</p></td>
 <td><p><a href="#OpenSystemDataUpdateEventNotifier" class="uri" title="wikilink">#OpenSystemDataUpdateEventNotifier</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[5.0.0+] 0x2D</p></td>
 <td><p>0x8000000000010000<br />
 ([1.0.0-5.1.0] 0x0000000080000001)</p></td>
-<td><p>SystemDataUpdateEventNotify</p></td>
+<td><p>CanNotifySystemDataUpdateEvent</p></td>
 <td><p><a href="#NotifySystemDataUpdateEvent" class="uri" title="wikilink">#NotifySystemDataUpdateEvent</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[5.0.0+] 0x2E</p></td>
-<td><p>0x0000000080000001<br />
+<td><p>0x8000000100000000<br />
 ([1.0.0-5.1.0] 0x8000000040000000)</p></td>
-<td><p>AccessFailureResolver</p></td>
+<td><p>CanOpenAccessFailureDetectionEventNotifier</p></td>
 <td><p><a href="#OpenAccessFailureResolver" class="uri" title="wikilink">#OpenAccessFailureResolver</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[5.0.0+] 0x2F</p></td>
-<td><p>0x0000000080000001<br />
+<td><p>0x8000000100000000<br />
 ([1.0.0-5.1.0] 0x8000000080200000)</p></td>
-<td><p>AccessFailureDetectionEvent</p></td>
+<td><p>CanGetAccessFailureDetectionEvent</p></td>
 <td><p><a href="#GetAccessFailureDetectionEvent" class="uri" title="wikilink">#GetAccessFailureDetectionEvent</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[5.1.0+] 0x30</p></td>
-<td><p>0x0000000080000001<br />
+<td><p>0x8000000100000000<br />
 ([1.0.0-5.1.0] 0x8000000080080000)</p></td>
-<td><p>AccessFailureDetected</p></td>
+<td><p>CanIsAccessFailureDetected</p></td>
 <td><p><a href="#IsAccessFailureDetected" class="uri" title="wikilink">#IsAccessFailureDetected</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[6.0.0+] 0x31</p></td>
-<td><p>0x0000000080000001</p></td>
-<td><p>AccessFailureResolve</p></td>
+<td><p>0x8000000100000000</p></td>
+<td><p>CanResolveAccessFailure</p></td>
 <td><p><a href="#ResolveAccessFailure" class="uri" title="wikilink">#ResolveAccessFailure</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[6.0.0+] 0x32</p></td>
-<td><p>0x0000000080000001</p></td>
-<td><p>AccessFailureAbandon</p></td>
+<td><p>0x8000000100000000</p></td>
+<td><p>CanAbandonAccessFailure</p></td>
 <td><p><a href="#AbandonAccessFailure" class="uri" title="wikilink">#AbandonAccessFailure</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[6.0.0+] 0x33</p></td>
 <td><p>0x8000000040000000</p></td>
-<td><p>SaveDataInternalStorageTotalSize</p></td>
+<td><p>CanQuerySaveDataInternalStorageTotalSize</p></td>
 <td><p><a href="#QuerySaveDataInternalStorageTotalSize" class="uri" title="wikilink">#QuerySaveDataInternalStorageTotalSize</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[6.0.0+] 0x34</p></td>
 <td><p>0x8000000200000020</p></td>
-<td><p>SaveDataCommitId</p></td>
+<td><p>CanGetSaveDataCommitId</p></td>
 <td><p><a href="#GetSaveDataCommitId" class="uri" title="wikilink">#GetSaveDataCommitId</a></p></td>
 </tr>
 <tr class="even">
 <td><p>[6.0.0+] 0x35</p></td>
 <td><p>0x8000000000200000</p></td>
-<td><p>SdCardAccessibility</p></td>
+<td><p>CanSetSdCardAccessibility</p></td>
 <td><p><a href="#SetSdCardAccessibility" class="uri" title="wikilink">#SetSdCardAccessibility</a></p></td>
 </tr>
 <tr class="odd">
