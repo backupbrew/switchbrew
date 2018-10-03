@@ -191,11 +191,11 @@ Stores the bootrom patch version.
 
 #### FUSE\_RESERVED\_ODM0
 
-This appears to store an hardware ID.
+This appears to store a hardware ID.
 
 #### FUSE\_RESERVED\_ODM1
 
-This appears to store an hardware ID.
+This appears to store a hardware ID.
 
 #### FUSE\_RESERVED\_ODM2
 
@@ -203,11 +203,11 @@ This appears to store an hardware ID.
 | ---- | --------------------------------- |
 | 0-4  | \[5.0.0+\] Used as key generation |
 
-This appears to store an hardware ID.
+This appears to store a hardware ID.
 
 #### FUSE\_RESERVED\_ODM3
 
-This appears to store an hardware
+This appears to store a hardware
 ID.
 
 #### FUSE\_RESERVED\_ODM4
