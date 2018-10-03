@@ -446,7 +446,7 @@ This appears to store a hardware ID.
 | Unit type mask (0 = debug; 1 = retail)
 |-
 | 10
-| [4.0.0+] Kiosk mode (0 = retail; 1 = kiosk)
+| [3.0.0+] Kiosk mode (0 = retail; 1 = kiosk)
 |-
 | 11
 | [5.0.0+] SoC variant (0 = T210; 1 = T214)
