@@ -9,7 +9,7 @@ This is "nn::btm::IBtm".
 |-
 | 1 ||
 |-
-| 2 || RegisterSystemEventForConnectedDeviceConditionImpl
+| 2 || RegisterSystemEventForConnectedDeviceCondition
 |-
 | 3 ||
 |-
@@ -21,7 +21,7 @@ This is "nn::btm::IBtm".
 |-
 | 7 ||
 |-
-| 8 || RegisterSystemEventForRegisteredDeviceInfoImpl
+| 8 || RegisterSystemEventForRegisteredDeviceInfo
 |-
 | 9 ||
 |-
@@ -33,9 +33,9 @@ This is "nn::btm::IBtm".
 |-
 | 13 ||
 |-
-| 14 || EnableRadioImpl
+| 14 || EnableRadio
 |-
-| 15 || DisableRadioImpl
+| 15 || DisableRadio
 |-
 | 16 ||
 |-
@@ -57,7 +57,7 @@ This is "nn::btm::IBtmDebug".
 |-
 ! Cmd || Name
 |-
-| 0 || RegisterSystemEventForDiscoveryImpl
+| 0 || RegisterSystemEventForDiscovery
 |-
 | 1 || 
 |-
@@ -83,7 +83,7 @@ This is "nn::btm::IBtmSystem".
 |-
 ! Cmd || Name
 |-
-| 0 || GetCoreImpl
+| 0 || GetCore
 |}
 
 == IBtmSystemCore ==
@@ -93,25 +93,25 @@ This is "nn::btm::IBtmSystemCore".
 |-
 ! Cmd || Name
 |-
-| 0 || StartGamepadPairingImpl
+| 0 || StartGamepadPairing
 |-
-| 1 || CancelGamepadPairingImpl
+| 1 || CancelGamepadPairing
 |-
-| 2 || ClearGamepadPairingDatabaseImpl
+| 2 || ClearGamepadPairingDatabase
 |-
-| 3 || GetPairedGamepadCountImpl
+| 3 || GetPairedGamepadCount
 |-
-| 4 || EnableRadioImpl
+| 4 || EnableRadio
 |-
-| 5 || DisableRadioImpl
+| 5 || DisableRadio
 |-
-| 6 || GetRadioOnOffImpl
+| 6 || GetRadioOnOff
 |-
-| 7 || [2.0.0+] AcquireRadioEventImpl
+| 7 || [2.0.0+] AcquireRadioEvent
 |-
-| 8 || [2.0.0+] AcquireGamepadPairingEventImpl
+| 8 || [2.0.0+] AcquireGamepadPairingEvent
 |-
-| 9 || [2.0.0+] IsGamepadPairingStartedImpl
+| 9 || [2.0.0+] IsGamepadPairingStarted
 |}
 
 = btm:u =
