@@ -81,4 +81,13 @@ This is "nn::ts::server::IMeasurementServer".
 | 3   |      |
 |     |      |
 
+# pcm
+
+This is "nn::pcm::IManager".
+
+| Cmd | Name             |
+| --- | ---------------- |
+| 0   | IsSupported      |
+| 1   | ReadCurrentPower |
+
 [Category:Services](Category:Services "wikilink")

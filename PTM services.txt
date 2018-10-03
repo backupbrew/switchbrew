@@ -115,6 +115,7 @@ This is "nn::tc::IManager".
 
 = ts =
 This is "nn::ts::server::IMeasurementServer".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -127,6 +128,18 @@ This is "nn::ts::server::IMeasurementServer".
 |-
 | 3 ||
 |-
+|}
+
+= pcm =
+This is "nn::pcm::IManager".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || IsSupported
+|-
+| 1 || ReadCurrentPower
 |}
 
 [[Category:Services]]
