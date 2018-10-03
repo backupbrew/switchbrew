@@ -426,7 +426,7 @@ See the pseudocode bellow for the detailed process.
  // CMAC over bct_customer_data_addr + 0x10
  aes_cmac(out_addr, out_size, keyslot, in_addr, in_size);
  
- // Comapre the generated hash with the first
+ // Compare the generated hash with the first
  // 0x10 bytes of bct_customer_data
  bool match = safe_memcmp(mac_addr, bct_customer_data_addr, 0x10);
  
