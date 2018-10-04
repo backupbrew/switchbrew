@@ -220,7 +220,16 @@ selecting which Open\*Proxy command to use.
 
   - **Key:** 7
   - **Value\[0\]:** AppletType
-  - **Value\[1\]:** Ignored.
+  - **Value\[1\]:** AppletFlags
+
+AppletFlags ApplicationOverride: Use AppletType\_Application instead of
+AppletType\_SystemApplication, only when AppletType is
+SystemApplication. This should only be handled when
+AppletType\_Application is properly supported where applet may have been
+previously initialized in the context of the current process, for
+AppletType\_Application. This avoids breaking backwards-compatibility
+with apps which don't support AppletType\_Application as previously
+described.
 
 `enum LoaderConfigAppletType {`  
 `  LoaderConfigAppletType_Application = 0,`  
@@ -228,6 +237,10 @@ selecting which Open\*Proxy command to use.
 `  LoaderConfigAppletType_LibraryApplet = 2,`  
 `  LoaderConfigAppletType_OverlayApplet = 3,`  
 `  LoaderConfigAppletType_SystemApplication = 4,`  
+`};`
+
+`enum LoaderConfigAppletFlags {`  
+`  LoaderConfigAppletFlags_ApplicationOverride = BIT(0),`  
 `};`
 
 #### AppletWorkaround

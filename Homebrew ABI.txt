@@ -143,7 +143,9 @@ Specifies the [[AM_services|AM]] AppletType, used for selecting which Open*Proxy
 
 * '''Key:''' 7
 * '''Value[0]:''' AppletType
-* '''Value[1]:''' Ignored.
+* '''Value[1]:''' AppletFlags
+
+AppletFlags ApplicationOverride: Use AppletType_Application instead of AppletType_SystemApplication, only when AppletType is SystemApplication. This should only be handled when AppletType_Application is properly supported where applet may have been previously initialized in the context of the current process, for AppletType_Application. This avoids breaking backwards-compatibility with apps which don't support AppletType_Application as previously described.
 
  enum LoaderConfigAppletType {
    LoaderConfigAppletType_Application = 0,
@@ -151,6 +153,10 @@ Specifies the [[AM_services|AM]] AppletType, used for selecting which Open*Proxy
    LoaderConfigAppletType_LibraryApplet = 2,
    LoaderConfigAppletType_OverlayApplet = 3,
    LoaderConfigAppletType_SystemApplication = 4,
+ };
+
+ enum LoaderConfigAppletFlags {
+   LoaderConfigAppletFlags_ApplicationOverride = BIT(0),
  };
 
 ==== AppletWorkaround ====
