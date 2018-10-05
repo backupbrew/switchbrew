@@ -94,6 +94,8 @@ available.
 | CHIP8-NX        | CHIP8 emulator                                                                                            | Marice    | [Here](https://github.com/Marice/CHIP8-NX/releases)        | [Yes](https://github.com/Marice/CHIP8-NX)               | 2018-05-25   |
 | LaiNESwitch     | Compact, cycle-accurate NES emulator in \~1000 lines of C++.                                              | Kevoot    | [Here](https://github.com/Kevoot/LaiNESwitch/releases)     | [Yes](https://github.com/Kevoot/LaiNESwitch)            | 2018-07-26   |
 | pSNES           | snes9x 1.56.2                                                                                             | Cpasjuste | [Here](https://github.com/Cpasjuste/psnes/releases)        | [Yes](https://github.com/Cpasjuste/psnes)               | 2018-08-24   |
+| RetroArch 1.75  | RetroArch has advanced features like shaders, netplay, rewinding, and next-frame response times.          | Kevoot    | [Here](https://github.com/libretro/RetroArch/releases)     | [Yes](https://github.com/libretro/RetroArch)            | 2018-10-01   |
+|                 |                                                                                                           |           |                                                            |                                                         |              |
 
 ### Title managers
 

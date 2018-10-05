@@ -362,6 +362,14 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Cpasjuste/psnes/releases Here]
 | [https://github.com/Cpasjuste/psnes Yes]
 | 2018-08-24
+|-
+| RetroArch 1.75
+| RetroArch has advanced features like shaders, netplay, rewinding, and next-frame response times.
+| Kevoot
+| [https://github.com/libretro/RetroArch/releases Here]
+| [https://github.com/libretro/RetroArch Yes]
+| 2018-10-01
+|-
 |}
 
 ===Title managers===
