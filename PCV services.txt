@@ -493,6 +493,8 @@ This contains a TimeZone location string with a max size of 0x24 bytes.
 === TimeZoneRule ===
 This is an 0x4000-byte struct. Official sw uses fixed-size 0x4000 for the buffer size with the above commands.
 
+This is loaded from the [[Title_list|TimeZoneBinary]] title with the specified LocationName under the zoneinfo/ directory, the content is then converted into this TimeZoneRule structure.
+
 === TimeZoneRuleVersion ===
 This is an u128.
 
