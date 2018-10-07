@@ -10,7 +10,7 @@ Storage](Thread%20Local%20Storage.md "wikilink").
 | 0    | 23-20 | Number of buf A descriptors (each: 3 words).                                                                |
 | 0    | 27-24 | Number of buf B descriptors (each: 3 words).                                                                |
 | 0    | 31-28 | Number of buf W desciptors (each: 3 words), never observed.                                                 |
-| 1    | 9-0   | Size of raw data section in u32s.                                                                           |
+| 1    | 9-0   | Size of IPC packet in u32s.                                                                                 |
 | 1    | 13-10 | Flags for buf C descriptor.                                                                                 |
 | 1    | 30-20 | ?                                                                                                           |
 | 1    | 31    | Enable handle descriptor.                                                                                   |
@@ -208,7 +208,7 @@ cmdreply, the sysmodule doesn't need to specify anything in the cmdreply
 to trigger this.
 
 This memory is mapped in the sysmodule to the same vaddr from the
-original user-process cmd-request, except with with bits \>=(~28(?))
+original user-process cmd-request, except with with bits \>=(\~28(?))
 changed to a different ASLR'd region.
 
 No user-process-\>sysmodule memcpy is done for outbufs, only
