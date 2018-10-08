@@ -7,15 +7,12 @@ For the format of the Gamecard image, see
 
 # Gamecard controller
 
-The gamecard controller (a separate chip on the motherboard) is
-responsible for communicating with the Gamecard.
-[FS](Filesystem%20services.md "wikilink"), to access the gamecard data,
-will communicate with the gamecard controller. At each boot, firmware
-blobs (with a fixed size of 0x7800 bytes) are sent by FS to the gamecard
-controller.
+The gamecard controller (known internally as the LOTUS3) is a separate
+chip on the motherboard responsible for communicating with the gamecard.
 
-The gamecard controller firmware is encrypted, signed and follows the
-format below.
+[FS](Filesystem%20services.md "wikilink") flashes the appropriate
+gamecard controller's firmware (Lotus ASIC Firmware or LAFW) which is
+encrypted, signed and follows the format below.
 
 | Offset | Size   | Description                                    |
 | ------ | ------ | ---------------------------------------------- |
