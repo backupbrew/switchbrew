@@ -14,7 +14,7 @@ This is an array of u32's, usually located in [[Thread Local Storage]].
 |-
 | 0 || 31-28 || Number of buf W desciptors (each: 3 words), not observed
 |-
-| 1 || 9-0 || Size of IPC packet in u32s.
+| 1 || 9-0 || Size of raw data in u32s, plus 4
 |-
 | 1 || 13-10 || Flags for buf C descriptor.
 |-
