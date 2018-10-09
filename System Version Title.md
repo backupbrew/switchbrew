@@ -36,6 +36,7 @@ The FS for the system-version title(TID 0100000000000809) contains
 | 5.0.1    | NintendoSDK Firmware for NX 5.0.1-0.0  | 4b51b56242cc388ef487e148048e2c80e25994ad | gW93A\#00050001\#wBt05i54vmIPr7cs44Vvod3M9s5M2Yl2ZVd\_pd036MY= |
 | 5.1.0    | NintendoSDK Firmware for NX 5.1.0-3.0  | 23f9df53e25709d756e0c76effcb2473bd3447dd | gW93A\#00050100\#29uVhARHOdeTZmfdPnP785egrfRbPUW5n3IAACuHoPw=  |
 | 6.0.0    | NintendoSDK Firmware for NX 6.0.0-5.0  | ef435c4fcf83831d535424f6fc28e6c91f7669d1 | gW93A\#00060000\#9k9lgdev3glK0ltQTdWmdK7jU1BL9oWNJRAFkQpHUYI=  |
+| 6.0.1    | NintendoSDK Firmware for NX 6.0.1-1.0  | 880a0ba230a9b9225a87abe1de6c8ab8d832551e | gW93A\#00060001\#a4EXpeev\_mWNw7Dk0vkOsCMIxlosx2JuXPiOa5hEMd0= |
 
 ### Other
 
