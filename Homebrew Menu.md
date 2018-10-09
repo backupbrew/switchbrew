@@ -28,6 +28,13 @@ in the bottom right. To go back a folder you can swipe up or tap the
 `Back` button prompt in the bottom right. To activate the netloader you
 can swipe down on the screen.
 
+# Battery
+
+NOTE: This is not yet available with the latest hbmenu release.
+
+The battery/charge status is displayed, however this is only displayed
+when the required service is available/accessible.
+
 # Netloader
 
 NOTE: This is not yet available with the latest hbmenu release.

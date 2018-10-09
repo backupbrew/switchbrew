@@ -11,6 +11,11 @@ NOTE: This is not yet available with the latest hbmenu release.
 
 To navigate through the list of folders and applications you can swipe left and right on the bottom list. To open an item you can tap on it in the list or with it highlighted tap the <code>Open</code> or <code>Launch</code> button prompt in the bottom right. To go back a folder you can swipe up or tap the <code>Back</code> button prompt in the bottom right. To activate the netloader you can swipe down on the screen.
 
+= Battery =
+NOTE: This is not yet available with the latest hbmenu release.
+
+The battery/charge status is displayed, however this is only displayed when the required service is available/accessible.
+
 = Netloader =
 NOTE: This is not yet available with the latest hbmenu release.
 
