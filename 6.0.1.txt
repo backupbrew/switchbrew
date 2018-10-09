@@ -18,7 +18,9 @@ Besides [[System Version Title]], the following titles were updated:
 Nothing changed in the content of the updated titles' RomFS besides [[System Version Title]]. Nothing changed sysmodule-side with IPC. No actual changes in [[NPDM]]s.
 
 === [[Audio_services|audio-sysmodule]] ===
-There was exactly 1 code change: in L_1bf50, code was added for setting a certain variable to 0x1, located immediately before the following already existing code: <code>if(someval)aforementioned_variable |= somefunc(...);</code>
+There was exactly 1 code change: in L_1bf50 (nn::audio::server::InfoUpdater::UpdateMixes), code was added for setting a certain variable to 0x1, located immediately before the following already existing code: <code>if(someval)aforementioned_variable |= somefunc(...);</code>
+
+This appears to be a simple bugfix to correct changes introduced in 6.0.0 to the value of IsSplitterSupported.
 
 ==See Also==
 System update report(s):
