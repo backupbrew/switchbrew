@@ -32,8 +32,8 @@ can swipe down on the screen.
 
 NOTE: This is not yet available with the latest hbmenu release.
 
-The battery/charge status is displayed, however this is only displayed
-when the required service is available/accessible.
+The battery/charge status can be displayed, however this is only
+displayed when the required service is available/accessible.
 
 # Netloader
 
