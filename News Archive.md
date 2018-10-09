@@ -1,3 +1,7 @@
+  - **28 July 18**
+    [devkitA64](https://devkitpro.org/viewtopic.php?f=13&t=8761) r12 and
+    [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.3.1)
+    v1.3.1 were released.
   - **8 July 18**
     [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.3.0)
     v1.3.0 was released.
