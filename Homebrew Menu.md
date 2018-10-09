@@ -61,7 +61,7 @@ like the other color fields.
 
 The color fields are RGBA.
 
-Sample theme file:
+Sample theme file (.cfg file extension):
 
 `themeInfo={`  
 `    name="Theme Name";`  
@@ -89,4 +89,56 @@ Sample theme file:
 `    highlightColor=(255,77,166,255);`  
 `    separatorColor=(255,255,255,255);`  
 `    enableWaveBlending=0;`  
+`};`
+
+# File Associations
+
+NOTE: This is not yet available with the latest hbmenu release. This is
+not yet implemented.
+
+File-association cfg files can optionally be loaded from SD
+"/config/nx-hbmenu/fileassoc/" during startup. There's 1 .cfg file for
+each app. During normal menu scanning, hbmenu will check for
+file\_extensions/filenames from fileassoc cfg with the dir-list
+filename, when the file is not recognized otherwise (likewise for
+directories). This is processed in the same order that the cfg was
+loaded from SD / same order specified in the cfg file.
+
+The generated menu entry launches the specified app\_path where the
+first passed argument (argv\[1\] in the launched app) is the absolute
+filepath for the associated file. See below regarding the icon used for
+the menu entry. The author and version fields for the menu entry are
+loaded from app\_path, while the name is the filename (unless a
+directory is being processed, in this case the directory name is used).
+
+The only optional setting is icon\_path. All paths are absolute. Icon
+will attempted to be loaded from the following: {$FILEPATH with
+extension changed to .jpg} -\> icon\_path setting if it exists (target
+setting -\> main file\_assoc setting) -\> icon from app\_path.
+
+If you have targets where file\_extension and filename both have the
+same extension, the filename target should be located before that
+file\_extension target in the cfg. Targets which have both
+file\_extension and filename settings are ignored.
+
+Sample fileassoc file:
+
+`fileassoc={`  
+`  app_path="/switch/myapp/app.nro";`  
+`  icon_path="/switch/myapp/myicon.jpg";`  
+  
+`  targets=(`  
+`    {`  
+`      file_extension=".ext3";`  
+`      icon_path="/switch/myapp/myicon2.jpg";`  
+`    },`  
+`    {`  
+`      file_extension=".ext4";`  
+`      icon_path="/switch/myapp/myicon3.jpg";`  
+`    },`  
+`    {`  
+`      filename="main.py";`  
+`      icon_path="/switch/myapp/myicon4.jpg";`  
+`    }`  
+`  );`  
 `};`
