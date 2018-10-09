@@ -18,7 +18,7 @@ Besides [[System Version Title]], the following titles were updated:
 Nothing changed in the content of the updated titles' RomFS besides [[System Version Title]]. Nothing changed sysmodule-side with IPC. No actual changes in [[NPDM]]s.
 
 === [[Audio_services|audio-sysmodule]] ===
-There was exactly 1 code change: in L_1bf50, code was added for setting a certain variable to 0x1, immediately before: <code>if(someval)aforementioned_variable |= somefunc(...);</code>
+There was exactly 1 code change: in L_1bf50, code was added for setting a certain variable to 0x1, located immediately before the following already existing code: <code>if(someval)aforementioned_variable |= somefunc(...);</code>
 
 ==See Also==
 System update report(s):
