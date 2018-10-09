@@ -9,7 +9,13 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * 	Resolved an issue where some licensed controllers' motion controls such as tilt function respond incorrectly
 
 ==System Titles==
-<fill this in (manually) later>
+Besides [[System Version Title]], the following titles were updated:
+
+* [[HID_services|hid-sysmodule]]
+* [[Audio_services|audio-sysmodule]]
+* [[qlaunch]]
+
+Nothing changed in the content of the updated titles' RomFS besides [[System Version Title]]. Nothing changed sysmodule-side with IPC. No actual changes in [[NPDM]]s.
 
 ==See Also==
 System update report(s):
