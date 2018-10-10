@@ -79,6 +79,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Adubbz/Gag-Order/releases Here]
 | [https://github.com/Adubbz/Gag-Order Yes]
 | 2018-05-30
+|-
+| Homebrew App Store
+| Download and manage installed homebrew apps
+| VGMoose
+| [https://github.com/vgmoose/hb-appstore/releases Here]
+| [https://github.com/vgmoose/hb-appstore Yes]
+| 2018-10-02
 |}
 
 === Game Engines ===

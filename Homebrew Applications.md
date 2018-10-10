@@ -42,6 +42,7 @@ available.
 | ScreenTester-NX                                                   | Detect and repair dead/stuck pixels                                                                | Marice                                       | [Here](https://github.com/Marice/ScreenTester-NX/releases)  | [Yes](https://github.com/Marice/ScreenTester-NX/) | 2018-05-19   |
 | NX-Shell                                                          | Multipurpose File Manager                                                                          | Joel16                                       | [Here](https://github.com/joel16/NX-Shell/releases)         | [Yes](https://github.com/joel16/NX-Shell/)        | 2018-05-26   |
 | Gag Order                                                         | SuperNag remover                                                                                   | Adubbz                                       | [Here](https://github.com/Adubbz/Gag-Order/releases)        | [Yes](https://github.com/Adubbz/Gag-Order)        | 2018-05-30   |
+| Homebrew App Store                                                | Download and manage installed homebrew apps                                                        | VGMoose                                      | [Here](https://github.com/vgmoose/hb-appstore/releases)     | [Yes](https://github.com/vgmoose/hb-appstore)     | 2018-10-02   |
 
 ### Game Engines
 
