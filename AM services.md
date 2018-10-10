@@ -513,9 +513,15 @@ No input/output.
 
 No input/output.
 
+Locks exit process of pressing X to close in HOME Menu for an
+application or HOME button for an applet. When locked, it will show the
+"waiting for software to be closed dialog" until UnlockExit is called.
+
 ### UnlockExit
 
 No input/output.
+
+Unlocks exit process, if LockExit was previously used.
 
 ### EnterFatalSection
 
