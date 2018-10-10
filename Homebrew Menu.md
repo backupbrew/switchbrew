@@ -131,7 +131,8 @@ setting -\> main file\_assoc setting) -\> icon from app\_path.
 If you have targets where file\_extension and filename both have the
 same extension, the filename target should be located before that
 file\_extension target in the cfg. Targets which have both
-file\_extension and filename settings are ignored.
+file\_extension and filename settings are ignored. Each target must have
+either a file\_extension or filename setting.
 
 Sample fileassoc file:
 

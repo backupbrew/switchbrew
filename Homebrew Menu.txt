@@ -73,7 +73,7 @@ The generated menu entry launches the specified app_path where the first passed 
 
 The only optional setting is icon_path. All paths are absolute. Icon will attempted to be loaded from the following: {$FILEPATH with extension changed to .jpg} -> icon_path setting if it exists (target setting -> main file_assoc setting) -> icon from app_path.
 
-If you have targets where file_extension and filename both have the same extension, the filename target should be located before that file_extension target in the cfg. Targets which have both file_extension and filename settings are ignored.
+If you have targets where file_extension and filename both have the same extension, the filename target should be located before that file_extension target in the cfg. Targets which have both file_extension and filename settings are ignored. Each target must have either a file_extension or filename setting.
 
 Sample fileassoc file:
 
