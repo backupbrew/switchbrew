@@ -111,6 +111,11 @@ filename, when the file is not recognized otherwise (likewise for
 directories). This is processed in the same order that the cfg was
 loaded from SD / same order specified in the cfg file.
 
+When processing directories where no NRO was detected, hbmenu will go
+through the dir-listing and use the first entry where the filename
+matches a fileassoc entry where `filename` is specified (file\_extension
+entries are skipped).
+
 The generated menu entry launches the specified app\_path where the
 first passed argument (argv\[1\] in the launched app) is the absolute
 filepath for the associated file. See below regarding the icon used for
