@@ -25,4 +25,12 @@ This is "nn::fatalsrv::IPrivateService".
 | --- | ------------- |
 | 0   | GetFatalEvent |
 
+## FatalType
+
+| Value | Name                      |
+| ----- | ------------------------- |
+| 0     | ErrorReportAndErrorScreen |
+| 1     | ErrorReport               |
+| 2     | \[3.0.0+\] ErrorScreen    |
+
 [Category:Services](Category:Services "wikilink")

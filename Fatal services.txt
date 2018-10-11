@@ -26,4 +26,16 @@ This is "nn::fatalsrv::IPrivateService".
 | 0 || GetFatalEvent
 |}
 
+== FatalType ==
+{| class="wikitable" border="1"
+|-
+! Value || Name
+|-
+| 0 || ErrorReportAndErrorScreen
+|-
+| 1 || ErrorReport
+|-
+| 2 || [3.0.0+] ErrorScreen
+|}
+
 [[Category:Services]]
