@@ -1190,6 +1190,8 @@ This indicates the type of web-applet.
 !  ID
 !  Description
 |-
+| 0x4 || Exit requested
+|-
 | 0xF || [[#GetCurrentFocusState|FocusState]] changed
 |-
 | 0x10 || ?

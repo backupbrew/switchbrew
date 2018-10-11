@@ -844,6 +844,7 @@ This indicates the type of web-applet.
 
 | ID   | Description                                            |
 | ---- | ------------------------------------------------------ |
+| 0x4  | Exit requested                                         |
 | 0xF  | [FocusState](#GetCurrentFocusState "wikilink") changed |
 | 0x10 | ?                                                      |
 | 0x1E | OperationMode changed                                  |
