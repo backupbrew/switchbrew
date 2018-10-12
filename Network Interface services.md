@@ -65,36 +65,87 @@ This is "nn::nifm::detail::IScanRequest".
 
 ### IRequest
 
-This is "nn::nifm::detail::IRequest".
+This is "nn::nifm::detail::IRequest". This represents an application or
+sysmodule's request to bring a network
+up.
 
-| Cmd | Name                            |
-| --- | ------------------------------- |
-| 0   | GetRequestState                 |
-| 1   | GetResult                       |
-| 2   | GetSystemEventReadableHandles   |
-| 3   | Cancel                          |
-| 4   | Submit                          |
-| 5   | SetRequirement                  |
-| 6   | SetRequirementPreset            |
-| 8   | SetPriority                     |
-| 9   | SetNetworkProfileId             |
-| 10  | SetRejectable                   |
-| 11  | SetConnectionConfirmationOption |
-| 12  | SetPersistent                   |
-| 13  | SetInstant                      |
-| 14  | SetSustainable                  |
-| 15  | SetRawPriority                  |
-| 16  | SetGreedy                       |
-| 17  | SetSharable                     |
-| 18  | SetRequirementByRevision        |
-| 19  | GetRequirement                  |
-| 20  | GetRevision                     |
-| 21  | GetAppletInfo                   |
-| 22  | GetAdditionalInfo               |
-| 23  | SetKeptInSleep                  |
-| 24  | RegisterSocketDescriptor        |
-| 25  | UnregisterSocketDescriptor      |
-|     |                                 |
+| Cmd | Name                                                                             |
+| --- | -------------------------------------------------------------------------------- |
+| 0   | [\#GetRequestState](#GetRequestState "wikilink")                                 |
+| 1   | [\#GetResult](#GetResult "wikilink")                                             |
+| 2   | [\#GetSystemEventReadableHandles](#GetSystemEventReadableHandles "wikilink")     |
+| 3   | [\#Cancel](#Cancel "wikilink")                                                   |
+| 4   | [\#Submit](#Submit "wikilink")                                                   |
+| 5   | SetRequirement                                                                   |
+| 6   | SetRequirementPreset                                                             |
+| 8   | SetPriority                                                                      |
+| 9   | SetNetworkProfileId                                                              |
+| 10  | SetRejectable                                                                    |
+| 11  | [\#SetConnectionConfirmationOption](#SetConnectionConfirmationOption "wikilink") |
+| 12  | [\#SetPersistent](#SetPersistent "wikilink")                                     |
+| 13  | SetInstant                                                                       |
+| 14  | SetSustainable                                                                   |
+| 15  | SetRawPriority                                                                   |
+| 16  | SetGreedy                                                                        |
+| 17  | SetSharable                                                                      |
+| 18  | SetRequirementByRevision                                                         |
+| 19  | GetRequirement                                                                   |
+| 20  | GetRevision                                                                      |
+| 21  | GetAppletInfo                                                                    |
+| 22  | GetAdditionalInfo                                                                |
+| 23  | SetKeptInSleep                                                                   |
+| 24  | RegisterSocketDescriptor                                                         |
+| 25  | UnregisterSocketDescriptor                                                       |
+|     |                                                                                  |
+
+#### GetRequestState
+
+| Number | Description                     |
+| ------ | ------------------------------- |
+| 1      | Not yet submitted or error      |
+| 2      | Pending (sdk calls this OnHold) |
+| 3      | Connected                       |
+|        |                                 |
+
+#### GetResult
+
+If the request enters state 1, this command can be used to determine
+why. It responds with the nice networking error codes that there are
+support pages for.
+
+#### GetSystemEventReadableHandles
+
+Returns two event handles. The first one signals when the RequestState
+changes.
+
+#### Cancel
+
+Cancels the request to bring the network up.
+
+#### Submit
+
+Submits the request to bring the network up. Call this after configuring
+the request.
+
+#### SetConnectionConfirmationOption
+
+Set how to verify the internet connection.
+
+| Option | Description                                      |
+| ------ | ------------------------------------------------ |
+| 0      |                                                  |
+| 1      |                                                  |
+| 2      | "Local" network (does not check for working DNS) |
+| 3      |                                                  |
+| 4      | Default                                          |
+| 5      |                                                  |
+|        |                                                  |
+
+#### SetPersistent
+
+If this is set, when the network connection is lost, rather than causing
+the request to enter state 1, it will instead enter state 2 and attempt
+to bring the network back up again.
 
 ### INetworkProfile
 

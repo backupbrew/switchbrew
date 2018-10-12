@@ -107,21 +107,21 @@ This is "nn::nifm::detail::IScanRequest".
 |}
 
 === IRequest ===
-This is "nn::nifm::detail::IRequest".
+This is "nn::nifm::detail::IRequest". This represents an application or sysmodule's request to bring a network up.
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |- 
-| 0 || GetRequestState
+| 0 || [[#GetRequestState]]
 |-
-| 1 || GetResult
+| 1 || [[#GetResult]]
 |-
-| 2 || GetSystemEventReadableHandles
+| 2 || [[#GetSystemEventReadableHandles]]
 |-
-| 3 || Cancel
+| 3 || [[#Cancel]]
 |-
-| 4 || Submit
+| 4 || [[#Submit]]
 |-
 | 5 || SetRequirement
 |-
@@ -133,9 +133,9 @@ This is "nn::nifm::detail::IRequest".
 |-
 | 10 || SetRejectable
 |-
-| 11 || SetConnectionConfirmationOption
+| 11 || [[#SetConnectionConfirmationOption]]
 |-
-| 12 || SetPersistent
+| 12 || [[#SetPersistent]]
 |-
 | 13 || SetInstant
 |-
@@ -164,6 +164,62 @@ This is "nn::nifm::detail::IRequest".
 | 25 || UnregisterSocketDescriptor
 |-
 |}
+
+==== GetRequestState ====
+
+{| class="wikitable" border="1"
+|-
+! Number || Description
+|- 
+| 1 || Not yet submitted or error
+|-
+| 2 || Pending (sdk calls this OnHold)
+|-
+| 3 || Connected
+|-
+|}
+
+==== GetResult ====
+
+If the request enters state 1, this command can be used to determine why. It responds with the nice networking error codes that there are support pages for.
+
+==== GetSystemEventReadableHandles ====
+
+Returns two event handles. The first one signals when the RequestState changes.
+
+==== Cancel ====
+
+Cancels the request to bring the network up.
+
+==== Submit ====
+
+Submits the request to bring the network up. Call this after configuring the request.
+
+==== SetConnectionConfirmationOption ====
+
+Set how to verify the internet connection.
+
+{| class="wikitable" border="1"
+|-
+! Option || Description
+|- 
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 || "Local" network (does not check for working DNS)
+|-
+| 3 ||
+|-
+| 4 || Default
+|-
+| 5 ||
+|-
+|}
+
+==== SetPersistent ====
+
+If this is set, when the network connection is lost, rather than causing the request to enter state 1, it will instead enter state 2 and attempt to bring the network back up again.
 
 === INetworkProfile ===
 This is "nn::nifm::detail::INetworkProfile".
