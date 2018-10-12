@@ -16,7 +16,7 @@ format:
 Where:
 
 `{server_name}: One of the registered server names.`  
-`{environment}: "lp1" (production), "dd1" (development) or "sp1" (production lottest staging).`  
+`{environment}: "dp1", "lp1", "sp1", "dd1", "jd1", "sd1", "td1" or "xd1".`  
 `{serverset}: "eshop" (online shop) or "d4c" (content delivery).`
 
 ### Servers
