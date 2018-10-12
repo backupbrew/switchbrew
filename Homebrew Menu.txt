@@ -63,7 +63,7 @@ Sample theme file (.cfg file extension):
  };
 
 = File Associations =
-NOTE: This is not yet available with the latest hbmenu release. This is not yet implemented.
+NOTE: This is not yet available with the latest hbmenu release.
 
 File-association cfg files can optionally be loaded from SD "/config/nx-hbmenu/fileassoc/" during startup. There's 1 .cfg file for each app. During normal menu scanning, hbmenu will check for file_extensions/filenames from fileassoc cfg with the dir-list filename, when the file is not recognized otherwise (likewise for directories). This is processed in the same order that the cfg was loaded from SD / same order specified in the cfg file.
 

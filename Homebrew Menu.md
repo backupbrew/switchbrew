@@ -100,8 +100,7 @@ Sample theme file (.cfg file extension):
 
 # File Associations
 
-NOTE: This is not yet available with the latest hbmenu release. This is
-not yet implemented.
+NOTE: This is not yet available with the latest hbmenu release.
 
 File-association cfg files can optionally be loaded from SD
 "/config/nx-hbmenu/fileassoc/" during startup. There's 1 .cfg file for
