@@ -1,45 +1,22 @@
-For the Gamecard partitions that can be
-[mounted](Filesystem%20services.md "wikilink"), see
-[here](Gamecard%20Partition.md "wikilink").
-
-For the format of the Gamecard image, see
-[here](Gamecard%20Format.md "wikilink").
-
-# Gamecard controller
-
-The gamecard controller (known internally as the LOTUS3) is a separate
-chip on the motherboard responsible for communicating with the gamecard.
-
-[FS](Filesystem%20services.md "wikilink") flashes the appropriate
-gamecard controller's firmware (Lotus ASIC Firmware or LAFW) which is
-encrypted, signed and follows the format below.
-
-| Offset | Size   | Description                                    |
-| ------ | ------ | ---------------------------------------------- |
-| 0x0    | 0x100  | RSA-PKCS\#1 signature                          |
-| 0x100  | 0x4    | Magic ("LAFW")                                 |
-| 0x104  | 0x4    | Unknown (0xFF000000, 0xFFFF0000 or 0xFFFFFF00) |
-| 0x108  | 0x4    |                                                |
-| 0x10C  | 0x4    |                                                |
-| 0x110  | 0x4    | Version (0, 1 or 3)                            |
-| 0x114  | 0x4    | Unknown (0x80000000)                           |
-| 0x118  | 0x4    | Data size                                      |
-| 0x11C  | 0x4    |                                                |
-| 0x120  | 0x10   | Data hash                                      |
-| 0x130  | 0x10   | Placeholder string ("IDIDIDIDIDIDIDID")        |
-| 0x140  | 0x40   | Empty                                          |
-| 0x180  | 0x7680 | Encrypted data                                 |
-
-# Hardware
+This page documents the Nintendo Switch
+Gamecard.
 
 |                                                                                                     |                                                                                         |
 | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | ![A Switch game cartridge, frontside](ZeldaFront.jpg "A Switch game cartridge, frontside")          | ![A Switch game cartridge, backside](ZeldaBack.jpg "A Switch game cartridge, backside") |
 | ![Close-up of frontside PCB](CartridgeFront.jpeg "Close-up of frontside PCB")                       | ![Close-up of backside PCB](CartridgeBack.jpeg "Close-up of backside PCB")              |
 | ![Close-up of stripped frontside PCB](CartridgeFrontBare.jpeg "Close-up of stripped frontside PCB") |                                                                                         |
-|                                                                                                     |                                                                                         |
 
-## Pinout
+For the Gamecard partitions that can be
+[mounted](Filesystem%20services.md "wikilink"), see
+[here](Gamecard%20Partition.md "wikilink").
+
+For the Gamecard image format, see
+[here](Gamecard%20Format.md "wikilink").
+
+For the Gamecard ASIC, see [here](Gamecard%20ASIC.md "wikilink").
+
+# Pinout
 
 ![Gamecard-pinout.png](Gamecard-pinout.png
 "Gamecard-pinout.png")
@@ -66,7 +43,7 @@ encrypted, signed and follows the format below.
 
 All IO use 1.8V for logic HIGH and 0V for logic LOW.
 
-## Protocol
+# Protocol
 
 Switch game cartridges use a simple (but Nintendo proprietery) SPI-like
 bus with 8-bit width (DAT7..0). It is very similar to the bus interface
@@ -97,8 +74,6 @@ After this, the game cartridge will send the actual data response bytes.
 The actual response bytes are also followed immediately by a 4-byte
 CRC-32 over the actual data response bytes.
 
-## Commands
-
 A typical boot up sequence of a game cartridge (in this case, the game
 "1,2 Switch") looks like
 this:
@@ -122,34 +97,7 @@ this:
 | `7B97F7DF07240AA9870E1C974336FA8A` | 0x4   | Encrypted mode2 command                                                      |
 |                                    |       |                                                                              |
 
-The meaning of some these commands are currently unknown.
-
-## Observations
-
-  - The "update" and "normal" partitions can be dumped using the
-    plaintext 5B commands
-  - The "secure" partition can only be read from encrypted mode.
-
-## Encryption
-
-After a few initial plaintext commands, the Switch instructs the game
-cartridge to enter into encrypted mode. From that point on, commands and
-responses are sent encrypted over the bus. The encryption algorithm used
-is currently unknown.
-
-There appear to be 2 kinds of crypto mode.
-
-Crypto mode1 is initiated solely by the HOST-RANDOM as random session
-seed. In that mode, the Switch host requests for the game cartridge
-random seed, and then sends a command to enter crypto mode2.
-
-Crypto mode2 takes into account the CART-RANDOM seed generated by the
-cartridge, and possibly the previous HOST-RANDOM. The game cartridge
-will always send a different CART-RANDOM even if the exact same command
-sequence is replayed and thus with this scheme replay attacks are not
-possible.
-
-## Manufacturers
+# Manufacturers
 
   - Macronix (MX)  
     Uses package: LGA
