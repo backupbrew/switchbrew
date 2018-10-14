@@ -167,13 +167,25 @@ This is the Gamecard's unique certificate and is located at offset 0x7000.
 | 0x4
 | Magicnum "CERT"
 |-
+| 0x104
+| 0x4
+|
+|-
+| 0x108
+| 0x1
+| KEK Index
+|-
+| 0x109
+| 0x7
+|
+|-
 | 0x110
 | 0x10
-| ?
+| Device ID
 |-
 | 0x120
 | 0xA
-| ?
+| 
 |-
 | 0x12A
 | 0xD6

@@ -62,8 +62,11 @@ data.
 | ------ | ----- | ------------------------------------------------------------- |
 | 0x0    | 0x100 | RSA-2048 PKCS \#1 signature over the data from 0x100 to 0x200 |
 | 0x100  | 0x4   | Magicnum "CERT"                                               |
-| 0x110  | 0x10  | ?                                                             |
-| 0x120  | 0xA   | ?                                                             |
+| 0x104  | 0x4   |                                                               |
+| 0x108  | 0x1   | KEK Index                                                     |
+| 0x109  | 0x7   |                                                               |
+| 0x110  | 0x10  | Device ID                                                     |
+| 0x120  | 0xA   |                                                               |
 | 0x12A  | 0xD6  | Encrypted data. Some kind of key?                             |
 
 The data between the Gamecard Certificate and the start of the HFS0
