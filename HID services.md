@@ -238,6 +238,12 @@ This is
 Takes an input
 [\#VibrationDeviceHandle](#VibrationDeviceHandle "wikilink"). No output.
 
+## NpadIdType
+
+This is an u32. This is the controller index used in
+[sharedmem](HID%20Shared%20Memory#Controllers.md##Controllers "wikilink").
+0x20 is handheld.
+
 # hid:dbg
 
 This is "nn::hid::IHidDebugServer".

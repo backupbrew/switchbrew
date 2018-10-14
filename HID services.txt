@@ -300,6 +300,9 @@ This is "nn::hid::IActiveVibrationDeviceList".
 === ActivateVibrationDevice ===
 Takes an input [[#VibrationDeviceHandle]]. No output.
 
+== NpadIdType ==
+This is an u32. This is the controller index used in [[HID_Shared_Memory#Controllers|sharedmem]]. 0x20 is handheld.
+
 = hid:dbg =
 This is "nn::hid::IHidDebugServer".
 
