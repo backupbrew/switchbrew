@@ -46,7 +46,7 @@ This is
 | 91   | ActivateGesture                                                                                  |
 | 100  | SetSupportedNpadStyleSet                                                                         |
 | 101  | GetSupportedNpadStyleSet                                                                         |
-| 102  | SetSupportedNpadIdType                                                                           |
+| 102  | [\#SetSupportedNpadIdType](#SetSupportedNpadIdType "wikilink")                                   |
 | 103  | ActivateNpad                                                                                     |
 | 104  | DeactivateNpad                                                                                   |
 | 106  | AcquireNpadStyleSetUpdateEventHandle                                                             |
@@ -119,6 +119,14 @@ This is
 Takes a PID and an u64
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an
 [\#IAppletResource](#IAppletResource "wikilink").
+
+## SetSupportedNpadIdType
+
+Takes a PID-descriptor, a type-0x9 input buffer, and an
+[AppletResourceUserId](AM%20services.md "wikilink"). No output.
+
+The input buffer contains an array of u32
+[\#NpadIdType](#NpadIdType "wikilink").
 
 ## SetNpadJoyAssignmentModeSingleByDefault
 

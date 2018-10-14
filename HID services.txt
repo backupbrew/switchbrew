@@ -83,7 +83,7 @@ This is "nn::hid::IHidServer".
 |-
 | 101 || GetSupportedNpadStyleSet
 |-
-| 102 || SetSupportedNpadIdType
+| 102 || [[#SetSupportedNpadIdType]]
 |-
 | 103 || ActivateNpad
 |-
@@ -220,6 +220,11 @@ This is "nn::hid::IHidServer".
 
 == CreateAppletResource ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an [[#IAppletResource]].
+
+== SetSupportedNpadIdType ==
+Takes a PID-descriptor, a type-0x9 input buffer, and an [[AM_services|AppletResourceUserId]]. No output.
+
+The input buffer contains an array of u32 [[#NpadIdType]].
 
 == SetNpadJoyAssignmentModeSingleByDefault ==
 Takes a PID-descriptor, an u32, and an [[AM_services|AppletResourceUserId]]. No output.
