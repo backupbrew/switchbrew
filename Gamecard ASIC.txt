@@ -1,6 +1,384 @@
 The Gamecard ASIC (known internally as the LOTUS3) is a separate chip on the motherboard responsible for communicating with the [[Gamecard]].
 
-= Firmware =
+It is the Tegra's SDMMC2 device on the Switch and [[Filesystem_services|FS]] communicates with it using a custom protocol based on vendor specific MMC commands.
+
+= Protocol =
+All communication is done using the following MMC_SEND_MANUFACTURER commands.
+
+{| class="wikitable" border="1"
+|-
+! Command
+! Name
+|-
+| 60
+| [[#WriteOperation]]
+|-
+| 61
+| [[#GetOperationStatus]]
+|-
+| 62
+| [[#PutToSleep]]
+|-
+| 63
+| [[#ResetKeyData]]
+|}
+
+== WriteOperation ==
+Submits a Gamecard ASIC [[#ASIC commands|operation]] using a 0x40 byte sized buffer as follows.
+
+=== OperationBuffer ===
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x1
+| Gamecard ASIC [[#ASIC commands|operation command]]
+|-
+| 0x1
+| 0x1F
+| Operation specific data
+|-
+| 0x20
+| 0x20
+| Command verification value (secure mode only)
+|}
+
+== GetOperationStatus ==
+Returns the status of a completed operation.
+
+== PutToSleep ==
+Puts the Gamecard ASIC in sleep mode.
+
+== ResetKeyData ==
+Tells the Gamecard ASIC to generate new random key data.
+
+= ASIC commands =
+The Gamecard ASIC supports a total of 19 operation commands. These commands are passed to the ASIC using the [[#WriteOperation]] MMC command.
+
+Additional data buffers are then read/written using standard MMC read/write commands.
+
+{| class="wikitable" border="1"
+|-
+! Command
+! Name
+|-
+| 0x01
+| [[#SetUserAsicFirmware]]
+|-
+| 0x02
+| [[#GetAsicCert]]
+|-
+| 0x03
+| [[#SetEmmcEmbeddedSocCertificate]]
+|-
+| 0x04
+| [[#GetAsicEncryptedMessage]]
+|-
+| 0x05
+| [[#SetLibraryEncryptedMessage]]
+|-
+| 0x06
+| [[#GetAsicAuthenticationData]]
+|-
+| 0x07
+| [[#SetAsicAuthenticationDataHash]]
+|-
+| 0x08
+| [[#SetLibraryAuthenticationData]]
+|-
+| 0x09
+| [[#GetLibraryAuthenticationDataHash]]
+|-
+| 0x0A
+| [[#EnterSecureAsicMode]]
+|-
+| 0x0B
+| [[#WriteAsicRegister]]
+|-
+| 0x0C
+| [[#ReadAsicRegister]]
+|-
+| 0x0D
+| [[#ChangeDebugMode]]
+|-
+| 0x0E
+| [[#GetCardHeader]]
+|-
+| 0x0F
+| [[#GetCardKeyArea]]
+|-
+| 0x10
+| [[#SendCardCommand]]
+|-
+| 0x11
+| [[#EnableCardBus]]
+|-
+| 0x12
+| [[#ExchangeRandomValuesInSecureMode]]
+|-
+| 0x13
+| [[#GetRmaInformation]]
+|}
+
+== SetUserAsicFirmware ==
+Signals the Gamecard ASIC to receive a 0x7800 byte sized buffer containing the [[#User firmware|ASIC's user firmware]].
+
+== GetAsicCert ==
+Signals the Gamecard ASIC to send a 0x400 byte sized buffer containing the ASIC's certificate.
+
+== SetEmmcEmbeddedSocCertificate ==
+Signals the Gamecard ASIC to receive a 0x400 byte sized buffer containing the certificate from [[Settings_services#GetGameCardCertificate|GetGameCardCertificate]].
+
+== GetAsicEncryptedMessage ==
+Signals the Gamecard ASIC to send a 0x100 byte sized buffer containing a RSA-OAEP encrypted message to be decrypted by the host library. The decrypted message will be used to generate a common AES-128 (CBC and CTR) key and IV/CTR shared between the ASIC and the host library.
+
+== SetLibraryEncryptedMessage ==
+Signals the Gamecard ASIC to receive a 0x100 byte sized buffer containing a RSA-OAEP encrypted message to be decrypted by the ASIC. The decrypted message will be used to generate a common AES-128 (CBC and CTR) key and IV/CTR shared between the ASIC and the host library.
+
+== GetAsicAuthenticationData ==
+Signals the Gamecard ASIC to send a 0x20 byte sized buffer containing AES-128-CBC encrypted authentication data to be decrypted and hashed by the host library.
+
+== SetAsicAuthenticationDataHash ==
+Signals the Gamecard ASIC to receive a 0x20 byte sized buffer containing the AES-128-CBC encrypted hash of the ASIC authentication data.
+
+== SetLibraryAuthenticationData ==
+Signals the Gamecard ASIC to receive a 0x20 byte sized buffer containing AES-128-CBC encrypted authentication data to be decrypted and hashed by the ASIC.
+
+== GetLibraryAuthenticationDataHash ==
+Signals the Gamecard ASIC to send a 0x20 byte sized buffer containing the AES-128-CBC encrypted hash of the library authentication data.
+
+== EnterSecureAsicMode ==
+Signals the Gamecard ASIC to enter secure mode. In secure mode, all communication with the Gamecard ASIC must be AES-128-CTR encrypted.
+
+== WriteAsicRegister ==
+Signals the Gamecard ASIC to write an internal register. The register value is passed in the first word of a 0x200 byte sized buffer while the register index is passed in the actual [[#OperationBuffer]] as follows.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x1
+| Gamecard ASIC operation command (0x0B)
+|-
+| 0x1
+| 0x3
+| Padding
+|-
+| 0x4
+| 0x4
+| Gamecard ASIC register index
+|-
+| 0x8
+| 0x18
+| Empty
+|-
+| 0x20
+| 0x20
+| Command verification value
+|}
+
+== ReadAsicRegister ==
+Signals the Gamecard ASIC to send a 0x30 byte sized buffer containing the values of all ASIC registers.
+
+== ChangeDebugMode ==
+Signals the Gamecard ASIC to change into debug mode and send a 0x200 byte sized buffer containing information on the current Gamecard.
+
+== GetCardHeader ==
+Signals the Gamecard ASIC to send a 0x108 byte sized buffer containing the current Gamecard's header data as follows.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x8
+| Unknown
+|-
+| 0x8
+| 0x100
+| [[Gamecard_Format#Gamecard_Header|Gamecard header]] (without the signature)
+|}
+
+== GetCardKeyArea ==
+Signals the Gamecard ASIC to send a 0x800 byte sized buffer containing the current Gamecard's key area sectors.
+
+== SendCardCommand ==
+Signals the Gamecard ASIC to relay a specific [[#Gamecard commands|command]] to the Gamecard. The command is sent to the Gamecard using the [[#OperationBuffer]] as follows.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x1
+| Gamecard ASIC operation command (0x10)
+|-
+| 0x1
+| 0x7
+| Unknown
+|-
+| 0x8
+| 0x1
+| Gamecard command
+|-
+| 0x9
+| 0x17
+| Command specific data
+|-
+| 0x20
+| 0x20
+| Command verification value
+|}
+
+== EnableCardBus ==
+Signals the Gamecard ASIC to enable the current Gamecard's bus line.
+
+== ExchangeRandomValuesInSecureMode ==
+Signals the Gamecard ASIC to exchange random authentication values with the current Gamecard. The Gamecard response values are returned in a 0x20 sized buffer while the host values are passed in the actual [[#OperationBuffer]] as follows.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x1
+| Gamecard ASIC operation command (0x12)
+|-
+| 0x1
+| 0x1F
+| Random value from host
+|-
+| 0x20
+| 0x20
+| Command verification value
+|}
+
+== GetRmaInformation ==
+Signals the Gamecard ASIC to send a 0x200 byte sized buffer containing information on the Gamecard ASIC. This is called by [[Filesystem_services#IDeviceOperator|GetGameCardAsicInfo]].
+
+= Gamecard commands =
+These commands are issued by the Gamecard ASIC to the actual Gamecard using the [[#OperationBuffer]] passed to [[#SendCardCommand]].
+
+{| class="wikitable" border="1"
+|-
+! Command
+! Name
+|-
+| 0x10
+| ReadId1Writer
+|-
+| 0x11
+| ReadId2Writer
+|-
+| 0x12
+| ReadId3Writer
+|-
+| 0x15
+| ReadCrc
+|-
+| 0x16
+| WritePage
+|-
+| 0x18
+| Erase
+|-
+| 0x19
+| ReadDevParam
+|-
+| 0x20
+| WriteDevParam
+|-
+| 0x21
+| ReadPageSecure
+|-
+| 0x28
+| ReadId2Normal
+|-
+| 0x2E
+| 
+|-
+| 0x30
+| ReadId3Secure
+|-
+| 0x39
+| 
+|-
+| 0x56
+| ReadId1Normal
+|-
+| 0x83
+| WritePageSecure
+|-
+| 0x5B
+| ReadPage
+|-
+| 0x67
+| ReadId1Secure
+|-
+| 0xA5
+| ReadId3Normal
+|-
+| 0xB8
+| 
+|-
+| 0xC4
+| ReadId2Secure
+|-
+| 0xE0
+| 
+|-
+| 0xE2
+| 
+|}
+
+= Modes =
+Both the Gamecard ASIC and the actual Gamecard can operate in different modes.
+
+== ASIC modes ==
+{| class="wikitable" border="1"
+|-
+! Mode
+! Name
+|-
+| 0x00
+| Initial
+|-
+| 0x01
+| Secure
+|}
+
+== Gamecard modes ==
+{| class="wikitable" border="1"
+|-
+! Mode
+! Name
+|-
+| 0x00
+| Initial
+|-
+| 0x01
+| Normal
+|-
+| 0x02
+| Secure
+|-
+| 0x03
+| Write
+|}
+
+= User firmware =
 [[Filesystem_services|FS]] provides the appropriate Gamecard ASIC's user firmware (Lotus ASIC Firmware or LAFW) which is encrypted, signed and follows the format below.
 
 {| class="wikitable" border="1"
@@ -61,3 +439,33 @@ The Gamecard ASIC (known internally as the LOTUS3) is a separate chip on the mot
 | 0x7680
 | Encrypted data
 |}
+
+== Types ==
+Depending on it's purpose, multiple user firmware blobs exist.
+
+=== FwRead ===
+Code for reading retail Gamecards. Only the normal and secure [[#Gamecard modes|Gamecard modes]] are supported.
+
+Found inside [[Filesystem_services|FS]].
+
+[4.0.0+] This firmware blob was updated to provide support for new Gamecards.
+
+=== FwWriter ===
+Code for writing development Gamecards. Only the normal and write [[#Gamecard modes|Gamecard modes]] are supported.
+
+Found inside [[Filesystem_services|FS]].
+
+=== FwReadDev ===
+Code for reading development Gamecards. Development Gamecards use common [[Gamecard_Format#Initial_Data|initial data]] which justifies the need for a specialized read firmware.
+
+Found inside [[Filesystem_services|FS]].
+
+=== FwDebug ===
+Code for calling [[#GetRmaInformation]]. Must be passed as an argument for [[Filesystem_services#IDeviceOperator|GetGameCardAsicInfo]].
+
+Never observed (possibly factory only).
+
+== Anti-downgrade ==
+Loading an user firmware blob with a certain version field will lock the Gamecard ASIC to only allow running firmware blobs with the same or higher version number. Therefore, it is speculated that the Gamecard ASIC contains some sort of non-volatile memory bank which could be used for this purpose (among others).
+
+The [[#FwWriter|FwWriter]] and [[#FwReadDev|FwReadDev]] blobs' version is always 0, but [[#FwRead|FwRead]] blob's version is either 1 or 3 ([4.0.0+]). This effectively locks retail consoles from using the development firmware blobs.
