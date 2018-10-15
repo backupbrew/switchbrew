@@ -236,13 +236,13 @@ commands.
 | 0x28    | [\#ReadId2Normal](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
 | 0x2E    |                                                                            |
 | 0x30    | [\#ReadId3Secure](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
-| 0x39    |                                                                            |
+| 0x39    | [\#Refresh](#Refresh "wikilink")                                           |
 | 0x56    | [\#ReadId1Normal](#ReadId1Normal,_ReadId1Secure,_ReadId1Writer "wikilink") |
 | 0x83    | [\#WritePageSecure](#WritePage,_WritePageSecure "wikilink")                |
 | 0x5B    | [\#ReadPage](#ReadPage,_ReadPageSecure "wikilink")                         |
 | 0x67    | [\#ReadId1Secure](#ReadId1Normal,_ReadId1Secure,_ReadId1Writer "wikilink") |
 | 0xA5    | [\#ReadId3Normal](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
-| 0xB8    |                                                                            |
+| 0xB8    | [\#GetStatus](#GetStatus "wikilink")                                       |
 | 0xC4    | [\#ReadId2Secure](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
 | 0xE0    |                                                                            |
 | 0xE2    |                                                                            |
@@ -429,6 +429,48 @@ The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
 | 0x3    | 0x1  | Padding                                |
 | 0x4    | 0x4  | Set to 1                               |
 | 0x8    | 0x1  | Gamecard command (0x20)                |
+| 0x9    | 0x4  | Set to 0                               |
+| 0xD    | 0x2  | Set to 0                               |
+| 0xF    | 0x1  | Set to 0                               |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## Refresh
+
+Resets the Gamecard's internal error status. This command is only
+available in [Secure](#Gamecard_modes "wikilink") mode.
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 0                               |
+| 0x2    | 0x1  | Set to 0                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Set to 0                               |
+| 0x8    | 0x1  | Gamecard command (0x39)                |
+| 0x9    | 0x4  | Set to 0                               |
+| 0xD    | 0x2  | Set to 0                               |
+| 0xF    | 0x1  | Set to 0                               |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## GetStatus
+
+Retrieves the Gamecard's internal error status. This command is only
+available in [Secure](#Gamecard_modes "wikilink") mode.
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 2                               |
+| 0x2    | 0x1  | Set to 0                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Set to 0                               |
+| 0x8    | 0x1  | Gamecard command (0xB8)                |
 | 0x9    | 0x4  | Set to 0                               |
 | 0xD    | 0x2  | Set to 0                               |
 | 0xF    | 0x1  | Set to 0                               |

@@ -315,7 +315,7 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | [[#ReadId3Normal, ReadId3Secure, ReadId3Writer|#ReadId3Secure]]
 |-
 | 0x39
-| 
+| [[#Refresh]]
 |-
 | 0x56
 | [[#ReadId1Normal, ReadId1Secure, ReadId1Writer|#ReadId1Normal]]
@@ -333,7 +333,7 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | [[#ReadId3Normal, ReadId3Secure, ReadId3Writer|#ReadId3Normal]]
 |-
 | 0xB8
-| 
+| [[#GetStatus]]
 |-
 | 0xC4
 | [[#ReadId2Normal, ReadId2Secure, ReadId2Writer|#ReadId2Secure]]
@@ -815,6 +815,118 @@ The [[#OperationBuffer]] is as follows.
 | 0x8
 | 0x1
 | Gamecard command (0x20)
+|-
+| 0x9
+| 0x4
+| Set to 0
+|-
+| 0xD
+| 0x2
+| Set to 0
+|-
+| 0xF
+| 0x1
+| Set to 0
+|-
+| 0x10
+| 0x10
+| Empty
+|-
+| 0x20
+| 0x20
+| Command verification value
+|}
+
+== Refresh ==
+Resets the Gamecard's internal error status. This command is only available in [[#Gamecard modes|Secure]] mode.
+
+The [[#OperationBuffer]] is as follows.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x1
+| Gamecard ASIC operation command (0x10)
+|-
+| 0x1
+| 0x1
+| Set to 0
+|-
+| 0x2
+| 0x1
+| Set to 0
+|-
+| 0x3
+| 0x1
+| Padding
+|-
+| 0x4
+| 0x4
+| Set to 0
+|-
+| 0x8
+| 0x1
+| Gamecard command (0x39)
+|-
+| 0x9
+| 0x4
+| Set to 0
+|-
+| 0xD
+| 0x2
+| Set to 0
+|-
+| 0xF
+| 0x1
+| Set to 0
+|-
+| 0x10
+| 0x10
+| Empty
+|-
+| 0x20
+| 0x20
+| Command verification value
+|}
+
+== GetStatus ==
+Retrieves the Gamecard's internal error status. This command is only available in [[#Gamecard modes|Secure]] mode.
+
+The [[#OperationBuffer]] is as follows.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x1
+| Gamecard ASIC operation command (0x10)
+|-
+| 0x1
+| 0x1
+| Set to 2
+|-
+| 0x2
+| 0x1
+| Set to 0
+|-
+| 0x3
+| 0x1
+| Padding
+|-
+| 0x4
+| 0x4
+| Set to 0
+|-
+| 0x8
+| 0x1
+| Gamecard command (0xB8)
 |-
 | 0x9
 | 0x4
