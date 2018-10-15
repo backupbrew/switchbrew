@@ -919,7 +919,7 @@ Both the Gamecard ASIC and the actual Gamecard can operate in different modes.
 |-
 | 0x120
 | 0x10
-| Data hash
+| Encrypted data IV/CTR
 |-
 | 0x130
 | 0x10

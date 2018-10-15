@@ -473,7 +473,7 @@ encrypted, signed and follows the format below.
 | 0x114  | 0x4    | Unknown (0x80000000)                           |
 | 0x118  | 0x4    | Data size                                      |
 | 0x11C  | 0x4    |                                                |
-| 0x120  | 0x10   | Data hash                                      |
+| 0x120  | 0x10   | Encrypted data IV/CTR                          |
 | 0x130  | 0x10   | Placeholder string ("IDIDIDIDIDIDIDID")        |
 | 0x140  | 0x40   | Empty                                          |
 | 0x180  | 0x7680 | Encrypted data                                 |
