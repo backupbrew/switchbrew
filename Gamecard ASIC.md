@@ -502,23 +502,24 @@ modes.
 
 [FS](Filesystem%20services.md "wikilink") provides the appropriate
 Gamecard ASIC's user firmware (Lotus ASIC Firmware or LAFW) which is
-encrypted, signed and follows the format below.
+encrypted, signed and follows the format
+below.
 
-| Offset | Size   | Description                                    |
-| ------ | ------ | ---------------------------------------------- |
-| 0x0    | 0x100  | RSA-PKCS\#1 signature                          |
-| 0x100  | 0x4    | Magic ("LAFW")                                 |
-| 0x104  | 0x4    | Unknown (0xFF000000, 0xFFFF0000 or 0xFFFFFF00) |
-| 0x108  | 0x4    |                                                |
-| 0x10C  | 0x4    |                                                |
-| 0x110  | 0x4    | Version (0, 1 or 3)                            |
-| 0x114  | 0x4    | Unknown (0x80000000)                           |
-| 0x118  | 0x4    | Data size                                      |
-| 0x11C  | 0x4    |                                                |
-| 0x120  | 0x10   | Encrypted data IV/CTR                          |
-| 0x130  | 0x10   | Placeholder string ("IDIDIDIDIDIDIDID")        |
-| 0x140  | 0x40   | Empty                                          |
-| 0x180  | 0x7680 | Encrypted data                                 |
+| Offset | Size   | Description                                                               |
+| ------ | ------ | ------------------------------------------------------------------------- |
+| 0x0    | 0x100  | RSA-2048 PKCS \#1 signature over the firmware (data from 0x100 to 0x7800) |
+| 0x100  | 0x4    | Magic ("LAFW")                                                            |
+| 0x104  | 0x4    | Unknown (0xFF000000, 0xFFFF0000 or 0xFFFFFF00)                            |
+| 0x108  | 0x4    |                                                                           |
+| 0x10C  | 0x4    |                                                                           |
+| 0x110  | 0x4    | Version (0, 1 or 3)                                                       |
+| 0x114  | 0x4    | Unknown (0x80000000)                                                      |
+| 0x118  | 0x4    | Data size                                                                 |
+| 0x11C  | 0x4    |                                                                           |
+| 0x120  | 0x10   | Encrypted data IV/CTR                                                     |
+| 0x130  | 0x10   | Placeholder string ("IDIDIDIDIDIDIDID")                                   |
+| 0x140  | 0x40   | Empty                                                                     |
+| 0x180  | 0x7680 | Encrypted data                                                            |
 
 ## Types
 
