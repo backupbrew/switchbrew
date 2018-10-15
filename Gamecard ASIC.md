@@ -234,7 +234,7 @@ commands.
 | 0x20    | [\#WriteDevParam](#WriteDevParam "wikilink")                               |
 | 0x21    | [\#ReadPageSecure](#ReadPage,_ReadPageSecure "wikilink")                   |
 | 0x28    | [\#ReadId2Normal](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
-| 0x2E    |                                                                            |
+| 0x2E    | [\#Unk0](#Unk0 "wikilink")                                                 |
 | 0x30    | [\#ReadId3Secure](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
 | 0x39    | [\#Refresh](#Refresh "wikilink")                                           |
 | 0x56    | [\#ReadId1Normal](#ReadId1Normal,_ReadId1Secure,_ReadId1Writer "wikilink") |
@@ -476,6 +476,28 @@ The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
 | 0xF    | 0x1  | Set to 0                               |
 | 0x10   | 0x10 | Empty                                  |
 | 0x20   | 0x20 | Command verification value             |
+
+## Unk0
+
+Used by
+[OpenGameCardStorage](Filesystem%20services#OpenGameCardStorage.md##OpenGameCardStorage "wikilink").
+This command is only available in [Normal](#Gamecard_modes "wikilink")
+mode.
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as
+follows.
+
+| Offset | Size | Description                                                       |
+| ------ | ---- | ----------------------------------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10)                            |
+| 0x1    | 0x1  | Set to 1                                                          |
+| 0x2    | 0x1  | Set to 0                                                          |
+| 0x3    | 0x1  | Padding                                                           |
+| 0x4    | 0x4  | Set to 0                                                          |
+| 0x8    | 0x1  | Gamecard command (0x2E)                                           |
+| 0x9    | 0xF  | Static random data from [FS](Filesystem%20services.md "wikilink") |
+| 0x18   | 0x8  | Empty                                                             |
+| 0x20   | 0x20 | Command verification value                                        |
 
 # Modes
 

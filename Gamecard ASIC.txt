@@ -309,7 +309,7 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | [[#ReadId2Normal, ReadId2Secure, ReadId2Writer|#ReadId2Normal]]
 |-
 | 0x2E
-| 
+| [[#Unk0]]
 |-
 | 0x30
 | [[#ReadId3Normal, ReadId3Secure, ReadId3Writer|#ReadId3Secure]]
@@ -942,6 +942,54 @@ The [[#OperationBuffer]] is as follows.
 |-
 | 0x10
 | 0x10
+| Empty
+|-
+| 0x20
+| 0x20
+| Command verification value
+|}
+
+== Unk0 ==
+Used by [[Filesystem_services#OpenGameCardStorage|OpenGameCardStorage]]. This command is only available in [[#Gamecard modes|Normal]] mode.
+
+The [[#OperationBuffer]] is as follows.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x1
+| Gamecard ASIC operation command (0x10)
+|-
+| 0x1
+| 0x1
+| Set to 1
+|-
+| 0x2
+| 0x1
+| Set to 0
+|-
+| 0x3
+| 0x1
+| Padding
+|-
+| 0x4
+| 0x4
+| Set to 0
+|-
+| 0x8
+| 0x1
+| Gamecard command (0x2E)
+|-
+| 0x9
+| 0xF
+| Static random data from [[Filesystem_services|FS]]
+|-
+| 0x18
+| 0x8
 | Empty
 |-
 | 0x20
