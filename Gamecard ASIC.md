@@ -218,30 +218,222 @@ These commands are issued by the Gamecard ASIC to the actual Gamecard
 using the [\#OperationBuffer](#OperationBuffer "wikilink") passed to
 [\#SendCardCommand](#SendCardCommand "wikilink").
 
-| Command | Name            |
-| ------- | --------------- |
-| 0x10    | ReadId1Writer   |
-| 0x11    | ReadId2Writer   |
-| 0x12    | ReadId3Writer   |
-| 0x15    | ReadCrc         |
-| 0x16    | WritePage       |
-| 0x18    | Erase           |
-| 0x19    | ReadDevParam    |
-| 0x20    | WriteDevParam   |
-| 0x21    | ReadPageSecure  |
-| 0x28    | ReadId2Normal   |
-| 0x2E    |                 |
-| 0x30    | ReadId3Secure   |
-| 0x39    |                 |
-| 0x56    | ReadId1Normal   |
-| 0x83    | WritePageSecure |
-| 0x5B    | ReadPage        |
-| 0x67    | ReadId1Secure   |
-| 0xA5    | ReadId3Normal   |
-| 0xB8    |                 |
-| 0xC4    | ReadId2Secure   |
-| 0xE0    |                 |
-| 0xE2    |                 |
+Additional data buffers are then read/written using standard MMC
+read/write
+commands.
+
+| Command | Name                                                                       |
+| ------- | -------------------------------------------------------------------------- |
+| 0x10    | [\#ReadId1Writer](#ReadId1Normal,_ReadId1Secure,_ReadId1Writer "wikilink") |
+| 0x11    | [\#ReadId2Writer](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
+| 0x12    | [\#ReadId3Writer](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
+| 0x15    | [\#ReadCrc](#ReadCrc "wikilink")                                           |
+| 0x16    | [\#WritePage](#WritePage,_WritePageSecure "wikilink")                      |
+| 0x18    | [\#Erase](#Erase "wikilink")                                               |
+| 0x19    | [\#ReadDevParam](#ReadDevParam "wikilink")                                 |
+| 0x20    | [\#WriteDevParam](#WriteDevParam "wikilink")                               |
+| 0x21    | [\#ReadPageSecure](#ReadPage,_ReadPageSecure "wikilink")                   |
+| 0x28    | [\#ReadId2Normal](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
+| 0x2E    |                                                                            |
+| 0x30    | [\#ReadId3Secure](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
+| 0x39    |                                                                            |
+| 0x56    | [\#ReadId1Normal](#ReadId1Normal,_ReadId1Secure,_ReadId1Writer "wikilink") |
+| 0x83    | [\#WritePageSecure](#WritePage,_WritePageSecure "wikilink")                |
+| 0x5B    | [\#ReadPage](#ReadPage,_ReadPageSecure "wikilink")                         |
+| 0x67    | [\#ReadId1Secure](#ReadId1Normal,_ReadId1Secure,_ReadId1Writer "wikilink") |
+| 0xA5    | [\#ReadId3Normal](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
+| 0xB8    |                                                                            |
+| 0xC4    | [\#ReadId2Secure](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
+| 0xE0    |                                                                            |
+| 0xE2    |                                                                            |
+
+## ReadId1Normal, ReadId1Secure, ReadId1Writer
+
+Returns the Gamecard ID1 under one of the valid [Gamecard
+modes](#Gamecard_modes "wikilink").
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 1                               |
+| 0x2    | 0x1  | Set to 0                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Set to 0                               |
+| 0x8    | 0x1  | Gamecard command (0x10, 0x56 or 0x67)  |
+| 0x9    | 0x4  | Set to 0                               |
+| 0xD    | 0x2  | Set to 0                               |
+| 0xF    | 0x1  | Set to 0                               |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## ReadId2Normal, ReadId2Secure, ReadId2Writer
+
+Returns the Gamecard ID2 under one of the valid [Gamecard
+modes](#Gamecard_modes "wikilink").
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 1                               |
+| 0x2    | 0x1  | Set to 0                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Set to 0                               |
+| 0x8    | 0x1  | Gamecard command (0x11, 0x28 or 0xC4)  |
+| 0x9    | 0x4  | Set to 0                               |
+| 0xD    | 0x2  | Set to 0                               |
+| 0xF    | 0x1  | Set to 0                               |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## ReadId3Normal, ReadId3Secure, ReadId3Writer
+
+Returns the Gamecard ID3 under one of the valid [Gamecard
+modes](#Gamecard_modes "wikilink").
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 1                               |
+| 0x2    | 0x1  | Set to 0                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Set to 0                               |
+| 0x8    | 0x1  | Gamecard command (0x12, 0x30 or 0xA5)  |
+| 0x9    | 0x4  | Set to 0                               |
+| 0xD    | 0x2  | Set to 0                               |
+| 0xF    | 0x1  | Set to 0                               |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## ReadCrc
+
+Reads pages from the Gamecard, calculates their CRC and returns it. This
+command is only available in [Write](#Gamecard_modes "wikilink") mode.
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 1                               |
+| 0x2    | 0x1  | Set to 0                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Set to 0                               |
+| 0x8    | 0x1  | Gamecard command (0x15)                |
+| 0x9    | 0x4  | Gamecard page offset                   |
+| 0xD    | 0x3  | Gamecard page count                    |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## WritePage, WritePageSecure
+
+Writes Gamecard pages. This command is only available in
+[Write](#Gamecard_modes "wikilink") and
+[Secure](#Gamecard_modes "wikilink") modes.
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 3                               |
+| 0x2    | 0x1  | Set to 1                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Gamecard page count (duplicate)        |
+| 0x8    | 0x1  | Gamecard command (0x16 or 0x83)        |
+| 0x9    | 0x4  | Gamecard page offset                   |
+| 0xD    | 0x3  | Gamecard page count                    |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## ReadPage, ReadPageSecure
+
+Reads Gamecard pages. This command is only available in
+[Normal](#Gamecard_modes "wikilink") and
+[Secure](#Gamecard_modes "wikilink") modes.
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 3                               |
+| 0x2    | 0x1  | Set to 0                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Gamecard page count (duplicate)        |
+| 0x8    | 0x1  | Gamecard command (0x21 or 0x5B)        |
+| 0x9    | 0x4  | Gamecard page offset                   |
+| 0xD    | 0x3  | Gamecard page count                    |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## Erase
+
+Fully erases a Gamecard's contents. This command is only available in
+[Write](#Gamecard_modes "wikilink") mode.
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 1                               |
+| 0x2    | 0x1  | Set to 0                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Set to 0                               |
+| 0x8    | 0x1  | Gamecard command (0x18)                |
+| 0x9    | 0x4  | Set to 0                               |
+| 0xD    | 0x2  | Set to 0                               |
+| 0xF    | 0x1  | Set to 0                               |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## ReadDevParam
+
+Reads a development Gamecard's parameters. This command is only
+available in [Write](#Gamecard_modes "wikilink") mode.
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 3                               |
+| 0x2    | 0x1  | Set to 0                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Set to 1                               |
+| 0x8    | 0x1  | Gamecard command (0x19)                |
+| 0x9    | 0x4  | Set to 0                               |
+| 0xD    | 0x2  | Set to 0                               |
+| 0xF    | 0x1  | Set to 0                               |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
+
+## WriteDevParam
+
+Writes a development Gamecard's parameters. This command is only
+available in [Write](#Gamecard_modes "wikilink") mode.
+
+The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
+| 0x1    | 0x1  | Set to 3                               |
+| 0x2    | 0x1  | Set to 1                               |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Set to 1                               |
+| 0x8    | 0x1  | Gamecard command (0x20)                |
+| 0x9    | 0x4  | Set to 0                               |
+| 0xD    | 0x2  | Set to 0                               |
+| 0xF    | 0x1  | Set to 0                               |
+| 0x10   | 0x10 | Empty                                  |
+| 0x20   | 0x20 | Command verification value             |
 
 # Modes
 
