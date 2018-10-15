@@ -41,7 +41,7 @@ Each service is used by:
 |-
 | 12 || [3.0.0+] [[#Ioctl3]]
 |-
-| 13 || [3.0.0+] FinishInitialize
+| 13 || [3.0.0+] [[#FinishInitialize]]
 |}
 
 == Open ==
@@ -102,7 +102,7 @@ Takes a type-0x21 buffer, a type-0x22 buffer, a type-0x21 buffer, and two input 
 Takes a type-0x21 buffer, a type-0x22 buffer, another type-0x22 buffer, and two input u32s. Returns an output u32 (error_code). 
 Cmdhdr_word1 is 0x100B instead of 0xC0B.
 
-== Cmd13 ==
+== FinishInitialize ==
 Takes an input u64. No output.
 
 Official user-processes starting with 3.0.0 now use this at the end of nvdrv service init with value 0x1.

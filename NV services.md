@@ -29,7 +29,7 @@ titles
 | 10  | \[3.0.0+\] [\#InitializeDevtools](#InitializeDevtools "wikilink") |
 | 11  | \[3.0.0+\] [\#Ioctl2](#Ioctl2 "wikilink")                         |
 | 12  | \[3.0.0+\] [\#Ioctl3](#Ioctl3 "wikilink")                         |
-| 13  | \[3.0.0+\] FinishInitialize                                       |
+| 13  | \[3.0.0+\] [\#FinishInitialize](#FinishInitialize "wikilink")     |
 
 ## Open
 
@@ -123,7 +123,7 @@ Takes a type-0x21 buffer, a type-0x22 buffer, another type-0x22 buffer,
 and two input u32s. Returns an output u32 (error\_code). Cmdhdr\_word1
 is 0x100B instead of 0xC0B.
 
-## Cmd13
+## FinishInitialize
 
 Takes an input u64. No output.
 
