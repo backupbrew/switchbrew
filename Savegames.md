@@ -186,7 +186,7 @@ file.
 | 0x04  | 4      | Version? (Must be 0x10000 or less)                               |
 | 0x08  | 4      | Number of remapping entries                                      |
 | 0x0C  | 4      | Number of remapping segments                                     |
-| 0x0C  | 4      | Number of bits reserved for the segment index in virtual offsets |
+| 0x10  | 4      | Number of bits reserved for the segment index in virtual offsets |
 | 0x40  |        | End                                                              |
 
 ### Extra data

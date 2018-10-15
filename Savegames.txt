@@ -529,7 +529,7 @@ This section contains information about the structure of the save file.
 | 4
 | Number of remapping segments
 |-
-| 0x0C
+| 0x10
 | 4
 | Number of bits reserved for the segment index in virtual offsets
 |-
