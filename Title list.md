@@ -668,7 +668,7 @@ Decimal versions use the format:
 <tr class="even">
 <td><p>010000000000003E</p></td>
 <td><p><a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>[6.0.0+] olsc</p></td>
+<td><p>[6.0.0+] <a href="OLSC services.md" title="wikilink">olsc</a></p></td>
 </tr>
 </tbody>
 </table>
