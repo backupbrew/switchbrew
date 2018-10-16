@@ -309,7 +309,7 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | [[#ReadId2Normal, ReadId2Secure, ReadId2Writer|#ReadId2Normal]]
 |-
 | 0x2E
-| [[#Unk0]]
+| [[#UnlockForceErase]]
 |-
 | 0x30
 | [[#ReadId3Normal, ReadId3Secure, ReadId3Writer|#ReadId3Secure]]
@@ -949,7 +949,7 @@ The [[#OperationBuffer]] is as follows.
 | Command verification value
 |}
 
-== Unk0 ==
+== UnlockForceErase ==
 Used by [[Filesystem_services#OpenGameCardStorage|OpenGameCardStorage]]. This command is only available in [[#Gamecard modes|Normal]] mode.
 
 The [[#OperationBuffer]] is as follows.
@@ -986,7 +986,7 @@ The [[#OperationBuffer]] is as follows.
 |-
 | 0x9
 | 0xF
-| Static random data from [[Filesystem_services|FS]]
+| Unlock password
 |-
 | 0x18
 | 0x8
