@@ -253,8 +253,8 @@ This flag means that AM services is broken, and must not be used.
 
 #### Reserved9
 
-This was originally stdiosockets which couldn't work long term the way
-this was designed. Now reserved for future use.
+This was originally stdiosockets which couldn't work long term in clean
+environments the way this was designed. Now reserved for future use.
 
 #### ProcessHandle
 
