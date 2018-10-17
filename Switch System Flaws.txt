@@ -386,7 +386,7 @@ This is not useful since the string loaded from this array is only involved with
 |-
 | Transfer Memory leak in nvservices system module
 | The nvservices sysmodule does not clear most of its transfer memory prior to release.
-| The calling process can read key bits of memory, including breaking ASLR (by revealing the image base) and exposing the address of other transfer memory to set up attacks.
+| The calling process can read key bits of memory, including breaking ASLR (by revealing the image base) and exposing the address of other transfer memory to set up attacks. More details here: [https://daeken.svbtle.com/nintendo-switch-nvservices-info-leak transfermeme (nvservices info leak)] by [[User:daeken|daeken]]
 | [[6.0.0]]
 | [[6.0.0]]
 | June 2017
