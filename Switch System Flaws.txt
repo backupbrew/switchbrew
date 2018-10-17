@@ -194,8 +194,8 @@ Flaws in this category pertain exclusively to the [[Package2#Section_0|HorizonOS
 | Syscall Infoleaks
 | Many syscalls leaked kernel pointers on sad paths (for example svcSetHeapSize and svcQueryMemory), until they landed a bunch of fixes in 2.0.0.
 | Nothing really.
-| 2.0.0
-| 2.0.0
+| [[2.0.0]]
+| [[2.0.0]]
 | 
 | 
 | ?
@@ -203,8 +203,8 @@ Flaws in this category pertain exclusively to the [[Package2#Section_0|HorizonOS
 | svcWaitSynchronization/svcReplyAndReceive bad cleanup on error
 | If there is a page fault when fetching handles from the userspace array, it cleans up by dereferencing all objects despite having only loaded first N. Allows the attacker to make arbitrary decrefs on any kernel synchronization object, and thus can be used to get UAF. Haven't actually been tried on real HW though, but should work (tm).
 | Kernel code execution
-| 2.0.0
-| 2.0.0
+| [[2.0.0]]
+| [[2.0.0]]
 | 
 | 24 April
 | [[User:qlutoo|qlutoo]]
@@ -213,8 +213,8 @@ Flaws in this category pertain exclusively to the [[Package2#Section_0|HorizonOS
 | CreateInterruptEvent syscall is designed to work only for irq_id >= 32. All irq_ids < 32 are "per-core" and reserved for kernel use (watchdog/scheduling/core communications).
 On 1.0.0 you could supply irq_id < 32 and it would write outside the SharedIrqs table.
 | You can register irq's in the Core3Irqs table, and thus register per-core irqs for core3, that are normally reserved for kernel. Useless.
-| 2.0.0
-| 2.0.0
+| [[2.0.0]]
+| [[2.0.0]]
 | ~October
 | 17 October
 | [[User:qlutoo|qlutoo]]
@@ -369,8 +369,8 @@ This is not useful since the string loaded from this array is only involved with
 | Unchecked domain ID in common IPC code
 | Prior to [[2.0.0]], object IDs in [[IPC_Marshalling#Domain_message|domain messages]] are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.
 |
-| 2.0.0
-| 2.0.0
+| [[2.0.0]]
+| [[2.0.0]]
 | ~July 2017
 | 20 July 2017‎
 | [[User:hthh|hthh]]
@@ -379,17 +379,18 @@ This is not useful since the string loaded from this array is only involved with
 | Most sysmodules share common template code to handle IPC control messages. The command DuplicateSession (type 5 command 2)'s template code will abort() if it fails to duplicate a session's handle for the requester. Because many sysmodules have limited handle table size (smaller than the browser/other entrypoints), repeatedly requesting to duplicate one's session will cause the sysmodule to run out of handle table space and abort, causing the service to release all its handles cleanly.
 | Sysmodule crashes.  Most usefully, crashing ldr allows access to fsp-ldr and crashing pm allows access to fsp-pr. Useless after [[4.0.0]], which mitigated a number of single-session service access issues.
 | Unfixed
-| 4.1.0
+| [[4.1.0]]
 | 24 June 2017
 | 8 March 2018
 | [[User:daeken|daeken]]
 |-
-| [https://daeken.svbtle.com/nintendo-switch-nvservices-info-leak transfermeme (nvservices info leak)]
-| The nvservices sysmodule does not clear its transfer memory prior to release.
+| Transfer Memory leak in nvservices system module
+| The nvservices sysmodule does not clear most of its transfer memory prior to release.
 | The calling process can read key bits of memory, including breaking ASLR (by revealing the image base) and exposing the address of other transfer memory to set up attacks.
-| 6.0.0
-| 4.1.0
-| 7 September 2017
+| [[6.0.0]]
+| [[6.0.0]]
+| June 2017
 | 16 October 2018
-| [[User:daeken|daeken]]
+| [[User:qlutoo|qlutoo]] and [[User:hexkyz|hexkyz]],
+[[User:daeken|daeken]] (independently)
 |}
