@@ -697,7 +697,7 @@ No input/output.
 === LockExit ===
 No input/output.
 
-Locks exit process of pressing X to close in HOME Menu for an application or HOME button for an applet. When locked, it will show the "waiting for software to be closed dialog" until UnlockExit is called.
+Locks exit process of pressing X to close in HOME Menu for an application or HOME button for an applet. When locked, it will show the "waiting for software to be closed dialog" until UnlockExit is called or a 15 seconds timeout.
 
 === UnlockExit ===
 No input/output.
