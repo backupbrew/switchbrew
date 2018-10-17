@@ -383,4 +383,13 @@ This is not useful since the string loaded from this array is only involved with
 | 24 June 2017
 | 8 March 2018
 | [[User:daeken|daeken]]
+|-
+| transfermeme (nvservices info leak)
+| The nvservices sysmodule does not clear its transfer memory prior to release.
+| The calling process can read key bits of memory, including breaking ASLR (by revealing the image base) and exposing the address of other transfer memory to set up attacks.
+| 6.0.0
+| 4.1.0
+| 7 September 2017
+| 16 October 2018
+| [[User:daeken|daeken]]
 |}
