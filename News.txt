@@ -9,7 +9,7 @@ For older news, see the [[:News/Archive|news archive]].
 
 === News ===
 <!-- Add news below --></noinclude>
+*'''17 October 18''' [https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.7.0 Atmosphère v0.7.0] and [https://github.com/switchbrew/nx-hbloader/releases/tag/v2.0.0 nx-hbloader v2.0.0] were released.
 *'''8 October 18''' Nintendo released system update [[6.0.1]].
 *'''18 September 18''' Nintendo released system update [[6.0.0]].
 *'''18 September 18''' [https://devkitpro.org/viewtopic.php?f=13&t=8784  libnx 1.4.1, switch-mesa v18.2β and switch-examples 20180918] were released.
-*'''9 September 18''' [https://devkitpro.org/viewtopic.php?f=13&t=8780 libnx v1.4.0] was released alongside a Switch port of mesa/nouveau (GPU library).
