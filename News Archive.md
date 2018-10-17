@@ -1,3 +1,6 @@
+  - **9 September 18** [libnx
+    v1.4.0](https://devkitpro.org/viewtopic.php?f=13&t=8780) was
+    released alongside a Switch port of mesa/nouveau (GPU library).
   - **28 July 18**
     [devkitA64](https://devkitpro.org/viewtopic.php?f=13&t=8761) r12 and
     [libnx](https://github.com/switchbrew/libnx/releases/tag/v1.3.1)
