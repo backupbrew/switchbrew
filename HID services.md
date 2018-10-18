@@ -365,7 +365,9 @@ This is
 | 307  | GetNpadSystemExtStyle                                              |
 | 308  | \[5.0.0+\] ApplyNpadSystemCommonPolicyFull                         |
 | 309  | \[5.0.0+\] GetNpadFullKeyGripColor                                 |
+| 310  | \[6.0.0+\] GetMaskedSupportedNpadStyleSet                          |
 | 311  | SetNpadPlayerLedBlinkingDevice                                     |
+| 312  | \[6.0.0+\] SetSupportedNpadStyleSetAll                             |
 | 321  | GetUniquePadsFromNpad                                              |
 | 322  | GetIrSensorState                                                   |
 | 323  | GetXcdHandleForNpadWithIrSensor                                    |
@@ -390,6 +392,7 @@ This is
 | 546  | AcquireDeviceRegisteredEventForControllerSupport                   |
 | 547  | GetAllowedBluetoothLinksCount                                      |
 | 548  | \[5.0.0+\] GetRegisteredDevices                                    |
+| 549  | \[6.0.0+\] GetConnectableRegisteredDevices                         |
 | 700  | ActivateUniquePad                                                  |
 | 702  | AcquireUniquePadConnectionEventHandle                              |
 | 703  | GetUniquePadIds                                                    |
@@ -418,6 +421,7 @@ This is
 | 850  | IsUsbFullKeyControllerEnabled                                      |
 | 851  | EnableUsbFullKeyController                                         |
 | 852  | IsUsbConnected                                                     |
+| 870  | \[6.0.0+\] IsHandheldButtonPressedOnConsoleMode                    |
 | 900  | ActivateInputDetector                                              |
 | 901  | NotifyInputDetector                                                |
 | 1000 | InitializeFirmwareUpdate                                           |
@@ -437,6 +441,12 @@ This is
 | 1052 | \[5.0.0+\] CancelSixAxisSensorAccurateUserCalibration              |
 | 1053 | \[5.0.0+\] GetSixAxisSensorAccurateUserCalibrationState            |
 | 1100 | \[5.0.0+\] GetHidbusSystemServiceObject                            |
+| 1120 | \[6.0.0+\] SetFirmwareHotfixUpdateSkipEnabled                      |
+| 1130 | \[6.0.0+\] InitializeUsbFirmwareUpdate                             |
+| 1131 | \[6.0.0+\] FinalizeUsbFirmwareUpdate                               |
+| 1132 | \[6.0.0+\] CheckUsbFirmwareUpdateRequired                          |
+| 1133 | \[6.0.0+\] StartUsbFirmwareUpdate                                  |
+| 1134 | \[6.0.0+\] GetUsbFirmwareUpdateState                               |
 
 ## SetVibrationMasterVolume
 
