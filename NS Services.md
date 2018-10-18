@@ -649,9 +649,9 @@ This is
 | 7   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")     |
 | 8   | [\#LaunchApplication](#LaunchApplication_2 "wikilink")                         |
 | 9   | [\#LaunchApplicationWithStorageId](#LaunchApplicationWithStorageId "wikilink") |
-| 10  | TerminateApplication2                                                          |
-| 11  | GetRunningApplicationProcessId                                                 |
-| 12  | SetCurrentApplicationRightsEnvironmentCanBeActive                              |
+| 10  | \[6.0.0+\] TerminateApplication2                                               |
+| 11  | \[6.0.0+\] GetRunningApplicationProcessId                                      |
+| 12  | \[6.0.0+\] SetCurrentApplicationRightsEnvironmentCanBeActive                   |
 
 ## LaunchProgram
 
