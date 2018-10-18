@@ -244,47 +244,47 @@ This is "nn::audio::detail::IAudioRenderer".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetAudioRendererSampleRate]]
+| 0 || [[#GetSampleRate]]
 |-
-| 1 || [[#GetAudioRendererSampleCount]]
+| 1 || [[#GetSampleCount]]
 |-
-| 2 || [[#GetAudioRendererMixBufferCount]]
+| 2 || [[#GetMixBufferCount]]
 |-
-| 3 || [[#GetAudioRendererState]]
+| 3 || [[#GetState]]
 |-
-| 4 || RequestUpdateAudioRenderer
+| 4 || RequestUpdate
 |-
-| 5 || StartAudioRenderer
+| 5 || Start
 |-
-| 6 || StopAudioRenderer
+| 6 || Stop
 |-
 | 7 || QuerySystemEvent
 |-
-| 8 || [[#SetAudioRendererRenderingTimeLimit]]
+| 8 || [[#SetRenderingTimeLimit]]
 |-
-| 9 || [[#GetAudioRendererRenderingTimeLimit]]
+| 9 || [[#GetRenderingTimeLimit]]
 |-
-| 10 || [3.0.0+] RequestUpdateAudioRendererAuto
+| 10 || [3.0.0+] RequestUpdateAuto
 |-
 | 11 || [3.0.0+] ExecuteAudioRendererRendering
 |}
 
-=== GetAudioRendererSampleRate ===
+=== GetSampleRate ===
 Returns the Sample Rate. (u32)
 
-=== GetAudioRendererSampleCount ===
+=== GetSampleCount ===
 Returns the Sample Count. (u32)
 
-=== GetAudioRendererMixBufferCount ===
+=== GetMixBufferCount ===
 Returns the number of Mix Buffers. (u32)
 
 === GetAudioRendererState ===
 Returns an AudioRenderState, 0x00=Started 0x01=Stopped (u32)
 
-=== SetAudioRendererRenderingTimeLimit ===
+=== SetRenderingTimeLimit ===
 Takes a upper limit of the rendering time in percent. (u32)
 
-=== GetAudioRendererRenderingTimeLimit ===
+=== GetRenderingTimeLimit ===
 Returns the upper limit of the rendering time in percent. (u32)
 
 == IAudioDevice ==
@@ -317,6 +317,8 @@ This is "nn::audio::detail::IAudioDevice".
 | 11 || [3.0.0+] QueryAudioDeviceInputEvent
 |-
 | 12 || [3.0.0+] QueryAudioDeviceOutputEvent
+|-
+| 13 || [5.0.0+] GetAudioSystemMasterVolumeSetting
 |}
 
 = audout:a =

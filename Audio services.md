@@ -199,33 +199,32 @@ This is "nn::audio::detail::IAudioRendererManager".
 
 ## IAudioRenderer
 
-This is
-"nn::audio::detail::IAudioRenderer".
+This is "nn::audio::detail::IAudioRenderer".
 
-| Cmd | Name                                                                                   |
-| --- | -------------------------------------------------------------------------------------- |
-| 0   | [\#GetAudioRendererSampleRate](#GetAudioRendererSampleRate "wikilink")                 |
-| 1   | [\#GetAudioRendererSampleCount](#GetAudioRendererSampleCount "wikilink")               |
-| 2   | [\#GetAudioRendererMixBufferCount](#GetAudioRendererMixBufferCount "wikilink")         |
-| 3   | [\#GetAudioRendererState](#GetAudioRendererState "wikilink")                           |
-| 4   | RequestUpdateAudioRenderer                                                             |
-| 5   | StartAudioRenderer                                                                     |
-| 6   | StopAudioRenderer                                                                      |
-| 7   | QuerySystemEvent                                                                       |
-| 8   | [\#SetAudioRendererRenderingTimeLimit](#SetAudioRendererRenderingTimeLimit "wikilink") |
-| 9   | [\#GetAudioRendererRenderingTimeLimit](#GetAudioRendererRenderingTimeLimit "wikilink") |
-| 10  | \[3.0.0+\] RequestUpdateAudioRendererAuto                                              |
-| 11  | \[3.0.0+\] ExecuteAudioRendererRendering                                               |
+| Cmd | Name                                                         |
+| --- | ------------------------------------------------------------ |
+| 0   | [\#GetSampleRate](#GetSampleRate "wikilink")                 |
+| 1   | [\#GetSampleCount](#GetSampleCount "wikilink")               |
+| 2   | [\#GetMixBufferCount](#GetMixBufferCount "wikilink")         |
+| 3   | [\#GetState](#GetState "wikilink")                           |
+| 4   | RequestUpdate                                                |
+| 5   | Start                                                        |
+| 6   | Stop                                                         |
+| 7   | QuerySystemEvent                                             |
+| 8   | [\#SetRenderingTimeLimit](#SetRenderingTimeLimit "wikilink") |
+| 9   | [\#GetRenderingTimeLimit](#GetRenderingTimeLimit "wikilink") |
+| 10  | \[3.0.0+\] RequestUpdateAuto                                 |
+| 11  | \[3.0.0+\] ExecuteAudioRendererRendering                     |
 
-### GetAudioRendererSampleRate
+### GetSampleRate
 
 Returns the Sample Rate. (u32)
 
-### GetAudioRendererSampleCount
+### GetSampleCount
 
 Returns the Sample Count. (u32)
 
-### GetAudioRendererMixBufferCount
+### GetMixBufferCount
 
 Returns the number of Mix Buffers. (u32)
 
@@ -233,11 +232,11 @@ Returns the number of Mix Buffers. (u32)
 
 Returns an AudioRenderState, 0x00=Started 0x01=Stopped (u32)
 
-### SetAudioRendererRenderingTimeLimit
+### SetRenderingTimeLimit
 
 Takes a upper limit of the rendering time in percent. (u32)
 
-### GetAudioRendererRenderingTimeLimit
+### GetRenderingTimeLimit
 
 Returns the upper limit of the rendering time in percent. (u32)
 
@@ -245,20 +244,21 @@ Returns the upper limit of the rendering time in percent. (u32)
 
 This is "nn::audio::detail::IAudioDevice".
 
-| Cmd | Name                                      |
-| --- | ----------------------------------------- |
-| 0   | ListAudioDeviceName                       |
-| 1   | SetAudioDeviceOutputVolume                |
-| 2   | GetAudioDeviceOutputVolume                |
-| 3   | GetActiveAudioDeviceName                  |
-| 4   | QueryAudioDeviceSystemEvent               |
-| 5   | GetActiveChannelCount                     |
-| 6   | \[3.0.0+\] ListAudioDeviceNameAuto        |
-| 7   | \[3.0.0+\] SetAudioDeviceOutputVolumeAuto |
-| 8   | \[3.0.0+\] GetAudioDeviceOutputVolumeAuto |
-| 10  | \[3.0.0+\] GetActiveAudioDeviceNameAuto   |
-| 11  | \[3.0.0+\] QueryAudioDeviceInputEvent     |
-| 12  | \[3.0.0+\] QueryAudioDeviceOutputEvent    |
+| Cmd | Name                                         |
+| --- | -------------------------------------------- |
+| 0   | ListAudioDeviceName                          |
+| 1   | SetAudioDeviceOutputVolume                   |
+| 2   | GetAudioDeviceOutputVolume                   |
+| 3   | GetActiveAudioDeviceName                     |
+| 4   | QueryAudioDeviceSystemEvent                  |
+| 5   | GetActiveChannelCount                        |
+| 6   | \[3.0.0+\] ListAudioDeviceNameAuto           |
+| 7   | \[3.0.0+\] SetAudioDeviceOutputVolumeAuto    |
+| 8   | \[3.0.0+\] GetAudioDeviceOutputVolumeAuto    |
+| 10  | \[3.0.0+\] GetActiveAudioDeviceNameAuto      |
+| 11  | \[3.0.0+\] QueryAudioDeviceInputEvent        |
+| 12  | \[3.0.0+\] QueryAudioDeviceOutputEvent       |
+| 13  | \[5.0.0+\] GetAudioSystemMasterVolumeSetting |
 
 # audout:a
 
