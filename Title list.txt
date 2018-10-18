@@ -289,7 +289,7 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000002006 || || C5Wireless - "AssembledWireless". Wireless testing.
 |-
-| 0100000000002007 || || "FinalCheck"
+| 0100000000002007 || || C7FinalCheck - "FinalCheck".
 |-
 | 0100000000002041 || || recovery
 |-
@@ -322,6 +322,8 @@ Note: No 01000000000020XX titles exist on retail systems.
 | 0100000000002103 || || [[Factory Setup|SystemInitializ]]
 |-
 | 0100000000002106 || || [[Factory Setup|CalWriterManu]]
+|-
+| 010000000000210A || || SystemUpdater
 |-
 | 0100000000002111 || || C9LcdSpker
 |}

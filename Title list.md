@@ -1364,7 +1364,7 @@ systems.
 | 0100000000002004 |          | C3Aging - "Aging". Graphics/Framerate testing.                                                        |
 | 0100000000002005 |          | C4SixAxis - "6axisTest". Sixaxis (controller peripheral) testing.                                     |
 | 0100000000002006 |          | C5Wireless - "AssembledWireless". Wireless testing.                                                   |
-| 0100000000002007 |          | "FinalCheck"                                                                                          |
+| 0100000000002007 |          | C7FinalCheck - "FinalCheck".                                                                          |
 | 0100000000002041 |          | recovery                                                                                              |
 | 0100000000002044 |          | "HB-TBIntegrationTest"                                                                                |
 | 010000000000204D |          | BackupSaveData                                                                                        |
@@ -1381,6 +1381,7 @@ systems.
 | 0100000000002101 |          | DevMenuCommand                                                                                        |
 | 0100000000002103 |          | [SystemInitializ](Factory%20Setup.md "wikilink")                                                      |
 | 0100000000002106 |          | [CalWriterManu](Factory%20Setup.md "wikilink")                                                        |
+| 010000000000210A |          | SystemUpdater                                                                                         |
 | 0100000000002111 |          | C9LcdSpker                                                                                            |
 
 ## Target Tools
