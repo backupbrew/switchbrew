@@ -88,6 +88,8 @@ This is "nn::nifm::detail::IGeneralService".
 | 36 || [4.0.0+] GetCurrentAccessPoint ||
 |-
 | 37 || [4.0.0+] Shutdown ||
+|-
+| 38 || [6.0.0+] GetAllowedChannels ||
 |}
 
 === IScanRequest ===
@@ -162,11 +164,9 @@ This is "nn::nifm::detail::IRequest". This represents an application or sysmodul
 | 24 || RegisterSocketDescriptor
 |-
 | 25 || UnregisterSocketDescriptor
-|-
 |}
 
 ==== GetRequestState ====
-
 {| class="wikitable" border="1"
 |-
 ! Number || Description
@@ -176,27 +176,21 @@ This is "nn::nifm::detail::IRequest". This represents an application or sysmodul
 | 2 || Pending (sdk calls this OnHold)
 |-
 | 3 || Connected
-|-
 |}
 
 ==== GetResult ====
-
 If the request enters state 1, this command can be used to determine why. It responds with the nice networking error codes that there are support pages for.
 
 ==== GetSystemEventReadableHandles ====
-
 Returns two event handles. The first one signals when the RequestState changes.
 
 ==== Cancel ====
-
 Cancels the request to bring the network up.
 
 ==== Submit ====
-
 Submits the request to bring the network up. Call this after configuring the request.
 
 ==== SetConnectionConfirmationOption ====
-
 Set how to verify the internet connection.
 
 {| class="wikitable" border="1"
@@ -218,7 +212,6 @@ Set how to verify the internet connection.
 |}
 
 ==== SetPersistent ====
-
 If this is set, when the network connection is lost, rather than causing the request to enter state 1, it will instead enter state 2 and attempt to bring the network back up again.
 
 === INetworkProfile ===

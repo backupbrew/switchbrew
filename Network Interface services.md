@@ -51,6 +51,7 @@ This is
 | 35  | \[4.0.0+\] GetScanData                                           |                                                              |
 | 36  | \[4.0.0+\] GetCurrentAccessPoint                                 |                                                              |
 | 37  | \[4.0.0+\] Shutdown                                              |                                                              |
+| 38  | \[6.0.0+\] GetAllowedChannels                                    |                                                              |
 
 ### IScanRequest
 
@@ -96,7 +97,6 @@ up.
 | 23  | SetKeptInSleep                                                                   |
 | 24  | RegisterSocketDescriptor                                                         |
 | 25  | UnregisterSocketDescriptor                                                       |
-|     |                                                                                  |
 
 #### GetRequestState
 
@@ -105,7 +105,6 @@ up.
 | 1      | Not yet submitted or error      |
 | 2      | Pending (sdk calls this OnHold) |
 | 3      | Connected                       |
-|        |                                 |
 
 #### GetResult
 
