@@ -30,6 +30,12 @@ This is "nn::tma::IHtcManager".
 | 9 || [4.0.0+] GetBridgeSubnetMask
 |-
 | 10 || [4.0.0+] GetBridgeMacAddress
+|-
+| 11 || [6.0.0+] GetWorkingDirectoryPath
+|-
+| 12 || [6.0.0+] GetWorkingDirectoryPathSize
+|-
+| 13 || [6.0.0+] RunOnHost
 |}
 
 = htcs =
