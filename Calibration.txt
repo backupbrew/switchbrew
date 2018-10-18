@@ -311,7 +311,7 @@ This is the raw data stored under the PRODINFO partition.
 |-
 |  0x4310
 |  0x04
-|  [6.0.0+] unk_id
+|  [6.0.0+] battery_version
 |  
 |-
 |}
