@@ -121,6 +121,10 @@ use `result_code = 346 | ((300 + key) << 9);`.
   - 13: [\#LockRegion](#LockRegion "wikilink"): If present, must not be
     ignored
 
+<!-- end list -->
+
+  - 14: [\#RandomSeed](#RandomSeed "wikilink")
+
 #### EndOfList
 
 EndOfList is the final entry in the LoaderConfig.
@@ -354,3 +358,14 @@ key to be present in the same configuration as an
   - **Key**: 13
   - **Value\[0\]:** Pointer to region to lock
   - **Value\[1\]:** Size of region to lock
+
+#### RandomSeed
+
+This key is used to provide an extra entropy source to the application
+(in addition to the seed provided by the kernel), allowing it to
+generate different pseudo-random numbers every time it's launched from
+within the same process.
+
+  - **Key**: 14
+  - **Value\[0\]:** Random data.
+  - **Value\[1\]:** More random data.

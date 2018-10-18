@@ -74,6 +74,8 @@ If there is some error encountered while validating an entry's values, use <code
 
 * 13: [[#LockRegion]]: If present, must not be ignored
 
+* 14: [[#RandomSeed]]
+
 ==== EndOfList ====
 EndOfList is the final entry in the LoaderConfig.
 
@@ -210,3 +212,10 @@ This key is used to hint to the application that a certain region of the heap is
 * '''Key''': 13
 * '''Value[0]:''' Pointer to region to lock
 * '''Value[1]:''' Size of region to lock
+
+==== RandomSeed ====
+This key is used to provide an extra entropy source to the application (in addition to the seed provided by the kernel), allowing it to generate different pseudo-random numbers every time it's launched from within the same process.
+
+* '''Key''': 14
+* '''Value[0]:''' Random data.
+* '''Value[1]:''' More random data.
