@@ -98,7 +98,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 34 || [5.0.0+] GetCacheStorageSize
 |-
-| 35 || [6.0.0+] ? (Takes a total of 0xB0-bytes of input, no output)
+| 35 || [6.0.0+] CreateSaveDataFileSystemByHashSalt (Unofficial name, takes a total of 0xB0-bytes of input, no output)
 |-
 | 51 || [[#OpenSaveDataFileSystem]]
 |-
@@ -124,9 +124,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 66 || [5.0.0+] WriteSaveDataFileSystemExtraData2
 |-
-| 67 || [6.0.0+] ? (Takes a total of 0x50-bytes of input, returns 8-bytes of output, and a type-0x6 output buffer)
+| 67 || [6.0.0+] FindSaveDataWithFilter (Takes a total of 0x50-bytes of input, returns 8-bytes of output, and a type-0x6 output buffer)
 |-
-| 68 || [6.0.0+] ? (Takes a total of 0x50-bytes of input, returns an [[#ISaveDataInfoReader]])
+| 68 || [6.0.0+] OpenSaveDataInfoReaderBySaveDataFilter (Unofficial name, takes a total of 0x50-bytes of input, returns an #ISaveDataInfoReader)
 |-
 | 80 || OpenSaveDataMetaFile
 |-
@@ -136,13 +136,13 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 83 || [6.0.0+] OpenSaveDataTransferProhibiterForCloudBackUp (Takes an input u64, returns an [[#ISaveDataTransferProhibiter]])
 |-
-| 84 || [6.0.0+] ? (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)
+| 84 || [6.0.0+] ListApplicationAccessibleSaveDataOwnerId (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)
 |-
 | 100 || OpenImageDirectoryFileSystem
 |-
 | 110 || [[#OpenContentStorageFileSystem]]
 |-
-| 120 || [6.0.0+] ? (Takes 4-bytes of input, returns an [[#IFileSystem]])
+| 120 || [6.0.0+] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an #IFileSystem)
 |-
 | 200 || OpenDataStorageByCurrentProcess
 |-
@@ -162,7 +162,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 511 || [5.0.0+] NotifySystemDataUpdateEvent
 |-
-| 520 || [6.0.0+] ? (Takes a total of 0xC-bytes of input, no output)
+| 520 || [6.0.0+] SimulateGameCardDetectionEvent (Takes a total of 0xC-bytes of input, no output)
 |-
 | 600 || [1.0.0-3.0.2] SetCurrentPosixTime
 |-
@@ -238,11 +238,13 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 1009 || [4.0.0+] GetAndClearMemoryReportInfo
 |-
-| 1010 || [5.1.0+]
+| 1010 || [5.1.0+] SetDataStorageRedirectTarget
 |-
 | 1100 || [4.0.0+] OverrideSaveDataTransferTokenSignVerificationKey
 |-
-| 1200 || [6.0.0+] ? (No input, returns an output [[#IMultiCommitManager]])
+| 1110 || [6.0.0+] CorruptSaveDataFileSystemBySaveDataSpaceId2
+|-
+| 1200 || [6.0.0+] OpenMultiCommitManager (No input, returns an output #IMultiCommitManager)
 |}
 
 == Permissions ==
@@ -277,7 +279,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | 0x8 || 0x8000000000001000 || CanMountImageAndVideoStorage || 3 || [[#OpenImageDirectoryFileSystem]]
 |-
-| 0x9 || 0x8000000200000000<br/>([1.0.0-5.1.0] 0x8000000000000084) || || 3 || cmd120
+| 0x9 || 0x8000000200000000<br/>([1.0.0-5.1.0] 0x8000000000000084) || CanMountCloudBackupWorkStorage || 3 || OpenCloudBackupWorkStorageFileSystem
 |-
 | 0xA || 0x8000000000000084<br/>([1.0.0-5.1.0] 0x8000000000000080) || CanMountBisCalibrationFile || 3 || [[#OpenBisFileSystem]]
 |-
@@ -379,7 +381,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | 0xC || 0x8000000000004020 || CanOpenSaveDataInfoReaderForSystem || [[#OpenSaveDataInfoReaderBySaveDataSpaceId]], [[#OpenSaveDataInfoReader]]
 |-
-| 0xD || 0x8000000000000040<br/>([1.0.0-5.1.0] 0x8000000000020000) || || cmd68
+| 0xD || 0x8000000000000040<br/>([1.0.0-5.1.0] 0x8000000000020000) || || OpenSaveDataInfoReaderBySaveDataFilter
 |-
 | 0xE || 0x8000000000020000<br/>([1.0.0-5.1.0] 0x8000000000000400) || CanOpenSaveDataMetaFile || [[#OpenSaveDataMetaFile]]
 |-
@@ -431,7 +433,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | [5.0.0+] 0x26 || 0x8000000200002000<br/>([1.0.0-5.1.0] 0x8000000080000110) || CanOpenSaveDataTransferProhibiterForCloudBackUp || [[#OpenSaveDataTransferProhibiterForCloudBackUp]]
 |-
-| [5.0.0+] 0x27 || 0x8000000200002000<br/>([1.0.0-5.1.0] 0x8000000000100008) || || cmd84
+| [5.0.0+] 0x27 || 0x8000000200002000<br/>([1.0.0-5.1.0] 0x8000000000100008) || CanListApplicationAccessibleSaveDataOwnerId || ListApplicationAccessibleSaveDataOwnerId
 |-
 | [5.0.0+] 0x28 || 0x8000000000000000<br/>([1.0.0-5.1.0] 0x8000000080010000) || CanControlMmcPatrol || [[#SuspendMmcPatrol]], [[#ResumeMmcPatrol]]
 |-
@@ -461,11 +463,11 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | [6.0.0+] 0x35 || 0x8000000000200000 || CanSetSdCardAccessibility || [[#SetSdCardAccessibility]]
 |-
-| [6.0.0+] 0x36 || 0x4000000000000000 || || cmd520, IDeviceOperator cmd500, IDeviceOperator cmd501 
+| [6.0.0+] 0x36 || 0x4000000000000000 || || SimulateGameCardDetectionEvent, SetGameCardSimulationEvent, ClearGameCardSimulationEvent
 |-
-| [6.0.0+] 0x37 || 0x8000000000080000 || || cmd1010
+| [6.0.0+] 0x37 || 0x8000000000080000 || CanSetDataStorageRedirectTarget || SetDataStorageRedirectTarget
 |-
-| [6.0.0+] 0x38 || 0x8000000000000000 || || [[#CreateSaveDataFileSystem]], cmd35
+| [6.0.0+] 0x38 || 0x8000000000000000 || || [[#CreateSaveDataFileSystem]], CreateSaveDataFileSystemByHashSalt
 |}
 
 == OpenFileSystem ==
@@ -832,7 +834,7 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 211 || GetGameCardImageHash
 |-
-| 212 || [2.0.0+] GetGameCardErrorInfo
+| 212 || [2.0.0+] GetGameCardDeviceIdForProdCard
 |-
 | 213 || [2.0.0+] EraseAndWriteParamDirectly
 |-
@@ -840,7 +842,7 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 215 || [2.0.0+] ForceEraseGameCard
 |-
-| 216 || [2.0.0+] GetGameCardErrorInfo2
+| 216 || [2.0.0+] GetGameCardErrorInfo
 |-
 | 217 || [2.1.0+] GetGameCardErrorReportInfo
 |-
@@ -854,11 +856,11 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 401 || [5.0.0+] ResumeSdmmcControl
 |-
-| 402 || [6.0.0+] ? (Takes a total of 4-bytes of input, returns a total of 8-bytes of output)
+| 402 || [6.0.0+] GetSdmmcConnectionStatus (Takes a total of 4-bytes of input, returns a total of 8-bytes of output)
 |-
-| 500 || [6.0.0+] ? (Takes a total of 0x14-bytes of input, no output)
+| 500 || [6.0.0+] SetGameCardSimulationEvent (Takes a total of 0x14-bytes of input, no output)
 |-
-| 501 || [6.0.0+] ? (Takes a total of 4-bytes of input, no output)
+| 501 || [6.0.0+] ClearGameCardSimulationEvent (Takes a total of 4-bytes of input, no output)
 |}
 
 == GetGameCardUpdatePartitionInfo ==
