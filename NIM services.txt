@@ -158,6 +158,22 @@ This is "nn::nim::detail::IShopServiceManager".
 | 502 || [4.0.0+] RequestDownloadTicketForPrepurchasedContents
 |}
 
+= nim:eca =
+This is "nn::nim::detail::IShopServiceAccessServerInterface".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || CreateServerInterface
+|-
+| 1 || RefreshDebugAvailability
+|-
+| 2 || ClearDebugResponse
+|-
+| 3 || RegisterDebugResponse
+|}
+
 = ntc =
 This is "nn::ntc::detail::service::IStaticService".
 

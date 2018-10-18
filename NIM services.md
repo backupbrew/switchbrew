@@ -93,6 +93,17 @@ This is "nn::nim::detail::IShopServiceManager".
 | 501 | RequestDownloadTicket                                   |
 | 502 | \[4.0.0+\] RequestDownloadTicketForPrepurchasedContents |
 
+# nim:eca
+
+This is "nn::nim::detail::IShopServiceAccessServerInterface".
+
+| Cmd | Name                     |
+| --- | ------------------------ |
+| 0   | CreateServerInterface    |
+| 1   | RefreshDebugAvailability |
+| 2   | ClearDebugResponse       |
+| 3   | RegisterDebugResponse    |
+
 # ntc
 
 This is "nn::ntc::detail::<service::IStaticService>".
