@@ -234,10 +234,10 @@ This is
 | 6   | \[1.0.0\] CloseContentStorageForcibly      | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentStorage-\>CloseAndFlushStorage().                                                                            |
 | 7   | \[1.0.0\] CloseContentMetaDatabaseForcibly | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"). Calls IContentMetaDatabase-\>CloseMetaDatabase().                                                                          |
 | 8   | CleanupContentMetaDatabase                 | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and deletes the associated savedata.                                                                                       |
-| 9   | \[2.0.0+\] OpenContentStorage2             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage. Note: Name is not official.           |
-| 10  | \[2.0.0+\] CloseContentStorage             | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage. Note: Name is not official.                                                     |
-| 11  | \[2.0.0+\] OpenContentMetaDatabase2        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase. Note: Name is not official. |
-| 12  | \[2.0.0+\] CloseContentMetaDatabase        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentMetaDatabase. Note: Name is not official.                                                |
+| 9   | \[2.0.0+\] ActivateContentStorage          | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentStorage for the StorageID to be gotten with GetIContentStorage. Note: Name is not official.           |
+| 10  | \[2.0.0+\] InactivateContentStorage        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage. Note: Name is not official.                                                     |
+| 11  | \[2.0.0+\] ActivateContentMetaDatabase     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase. Note: Name is not official. |
+| 12  | \[2.0.0+\] InactivateContentMetaDatabase   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentMetaDatabase. Note: Name is not official.                                                |
 
 ### IContentStorage
 
@@ -260,7 +260,7 @@ This is
 | 11  | ListPlaceHolder                                                 | This is like [\#GetNumberOfRegisteredEntries](#GetNumberOfRegisteredEntries "wikilink"), but for the Placeholder directory.                                                 |
 | 12  | [\#GetContentCount](#GetContentCount "wikilink")                |                                                                                                                                                                             |
 | 13  | [\#ListContentId](#ListContentId "wikilink")                    |                                                                                                                                                                             |
-| 14  | [\#GetSize](#GetSize "wikilink")                                |                                                                                                                                                                             |
+| 14  | [\#GetSizeFromContentId](#GetSizeFromContentId "wikilink")      |                                                                                                                                                                             |
 | 15  | DisableForcibly                                                 | Closes/Flushes all resources for the storage, and causes all future IPC commands to the current session to return error 0xC805.                                             |
 | 16  | \[2.0.0+\] RevertToPlaceHolder                                  | Takes three 0x10-sized [\#NcaIDs](#NcaID "wikilink"). Creates the registered directory NCA path, and renames the placeholder path to the registered NCA path.               |
 | 17  | \[2.0.0+\] SetPlaceHolderSize                                   | Takes a [\#NcaID](#NcaID "wikilink"), and a u64 size                                                                                                                        |
@@ -270,9 +270,9 @@ This is
 | 21  | \[2.0.0+\] WriteContentForDebug                                 | Takes a [\#NcaID](#NcaID "wikilink"), a u64 offset, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts. |
 | 22  | \[2.0.0+\] GetFreeSpaceSize                                     | Gets free space for the storage.                                                                                                                                            |
 | 23  | \[2.0.0+\] GetTotalSpaceSize                                    | Gets total space for the storage.                                                                                                                                           |
-| 24  | \[3.0.0+\] FlushStorage                                         | Flushes resources for the storage without closing it.                                                                                                                       |
-| 25  | \[4.0.0+\]                                                      |                                                                                                                                                                             |
-| 26  | \[4.0.0+\]                                                      |                                                                                                                                                                             |
+| 24  | \[3.0.0+\] FlushPlaceHolder                                     | Flushes resources for the storage without closing it.                                                                                                                       |
+| 25  | \[4.0.0+\] GetSizeFromPlaceHolderId                             |                                                                                                                                                                             |
+| 26  | \[4.0.0+\] RepairInvalidFileAttribute                           |                                                                                                                                                                             |
 
 #### GeneratePlaceHolderId
 
@@ -298,7 +298,7 @@ The total read entries is exactly the same as the number of "<hex>.nca"
 directories in the storage FS(or at least under the "registered"
 directory?).
 
-#### GetSize
+#### GetSizeFromContentId
 
 Takes a [\#NcaID](#NcaID "wikilink") as input.
 
@@ -344,7 +344,7 @@ Note the official name for Meta Record is
 | 17  | ListContentMetaInfo                                      | Takes a type-6 [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink") output buffer, a u32 eoffset into that buffer, and an input [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink").                                                                                                                                                                                                                                                                                                                                                    |
 | 18  | GetAttributes                                            | Takes a [Meta Record](NCA#Meta%20records.md##Meta_records "wikilink"), and returns u8 from ContentRecords + 6.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | 19  | \[2.0.0+\] GetRequiredApplicationVersion                 | Does the same thing as GetEntryUnknownRecordSize, but for AddOnContents.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 20  | \[5.0.0+\]                                               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 20  | \[5.0.0+\] GetContentIdByTypeAndIdOffset                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 #### ListApplication
 
