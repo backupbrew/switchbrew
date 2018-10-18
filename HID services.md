@@ -13,6 +13,7 @@ This is
 | 11   | ActivateTouchScreen                                                                              |
 | 21   | ActivateMouse                                                                                    |
 | 31   | ActivateKeyboard                                                                                 |
+| 32   | \[6.0.0+\] SendKeyboardLockKeyEvent                                                              |
 | 40   | AcquireXpadIdEventHandle                                                                         |
 | 41   | ReleaseXpadIdEventHandle                                                                         |
 | 51   | ActivateXpad                                                                                     |
@@ -43,6 +44,7 @@ This is
 | 80   | GetGyroscopeZeroDriftMode                                                                        |
 | 81   | ResetGyroscopeZeroDriftMode                                                                      |
 | 82   | IsSixAxisSensorAtRest                                                                            |
+| 83   | \[6.0.0+\] IsFirmwareUpdateAvailableForSixAxisSensor                                             |
 | 91   | ActivateGesture                                                                                  |
 | 100  | SetSupportedNpadStyleSet                                                                         |
 | 101  | GetSupportedNpadStyleSet                                                                         |
@@ -88,6 +90,7 @@ This is
 | 307  | \[5.0.0+\] FinalizeSevenSixAxisSensor                                                            |
 | 308  | \[5.0.0+\] SetSevenSixAxisSensorFusionStrength                                                   |
 | 309  | \[5.0.0+\] GetSevenSixAxisSensorFusionStrength                                                   |
+| 310  | \[6.0.0+\] ResetSevenSixAxisSensorTimestamp                                                      |
 | 400  | IsUsbFullKeyControllerEnabled                                                                    |
 | 401  | EnableUsbFullKeyController                                                                       |
 | 402  | IsUsbFullKeyControllerConnected                                                                  |
@@ -103,14 +106,24 @@ This is
 | 505  | \[5.0.0+\] SetPalmaFrModeType                                                                    |
 | 506  | \[5.0.0+\] ReadPalmaStep                                                                         |
 | 507  | \[5.0.0+\] EnablePalmaStep                                                                       |
-| 508  | \[5.0.0+\] SuspendPalmaStep                                                                      |
-| 509  | \[5.0.0+\] ResetPalmaStep                                                                        |
-| 510  | \[5.0.0+\] ReadPalmaApplicationSection                                                           |
-| 511  | \[5.0.0+\] WritePalmaApplicationSection                                                          |
-| 512  | \[5.0.0+\] ReadPalmaUniqueCode                                                                   |
-| 513  | \[5.0.0+\] SetPalmaUniqueCodeInvalid                                                             |
-| 520  | \[5.1.0+\] WritePalmaActivityEntry                                                               |
-| 521  | \[5.1.0+\] WritePalmaRgbLedPatternEntry                                                          |
+| 508  | \[6.0.0+\] ResetPalmaStep (\[5.0.0-6.0.0\] SuspendPalmaStep)                                     |
+| 509  | \[6.0.0+\] ReadPalmaApplicationSection (\[5.0.0-6.0.0\] ResetPalmaStep)                          |
+| 510  | \[6.0.0+\] WritePalmaApplicationSection (\[5.0.0-6.0.0\] ReadPalmaApplicationSection)            |
+| 511  | \[6.0.0+\] ReadPalmaUniqueCode (\[5.0.0-6.0.0\] WritePalmaApplicationSection)                    |
+| 512  | \[6.0.0+\] SetPalmaUniqueCodeInvalid (\[5.0.0-6.0.0\] ReadPalmaUniqueCode)                       |
+| 513  | \[6.0.0+\] WritePalmaActivityEntry (\[5.0.0-6.0.0\] SetPalmaUniqueCodeInvalid)                   |
+| 514  | \[6.0.0+\] WritePalmaRgbLedPatternEntry                                                          |
+| 515  | \[6.0.0+\] WritePalmaWaveEntry                                                                   |
+| 516  | \[6.0.0+\] SetPalmaDataBaseIdentificationVersion                                                 |
+| 517  | \[6.0.0+\] GetPalmaDataBaseIdentificationVersion                                                 |
+| 518  | \[6.0.0+\] SuspendPalmaFeature                                                                   |
+| 519  | \[6.0.0+\] GetPalmaOperationResult                                                               |
+| 520  | \[6.0.0+\] ReadPalmaPlayLog (\[5.1.0-6.0.0\] WritePalmaActivityEntry)                            |
+| 521  | \[6.0.0+\] ResetPalmaPlayLog (\[5.1.0-6.0.0\] WritePalmaRgbLedPatternEntry)                      |
+| 522  | \[6.0.0+\] SetIsPalmaAllConnectable                                                              |
+| 523  | \[6.0.0+\] SetIsPalmaPairedConnectable                                                           |
+| 524  | \[6.0.0+\] PairPalma                                                                             |
+| 525  | \[6.0.0+\] SetPalmaBoostMode                                                                     |
 | 1000 | SetNpadCommunicationMode                                                                         |
 | 1001 | GetNpadCommunicationMode                                                                         |
 
