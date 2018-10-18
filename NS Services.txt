@@ -1062,7 +1062,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 21 || [4.0.0+] SetupToReceiveSystemUpdate
 |-
-| 22 || [6.0.0+]
+| 22 || [6.0.0+] RequestCheckLatestUpdateIncludesRebootlessUpdate
 |}
 
 = ns:dev =
