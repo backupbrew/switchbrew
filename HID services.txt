@@ -378,6 +378,8 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 142 || [5.0.0+] DeactivateSevenSixAxisSensor
 |-
+| 143 || [6.0.0+] GetConsoleSixAxisSensorCountStates
+|-
 | 201 || ActivateFirmwareUpdate
 |-
 | 202 || DeactivateFirmwareUpdate
@@ -398,6 +400,12 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 210 || [4.0.0+] IsFirmwareUpdatingDevice
 |-
+| 211 || [6.0.0+] StartFirmwareUpdateIndividual
+|-
+| 215 || [6.0.0+] SetUsbFirmwareForceUpdateEnabled
+|-
+| 216 || [6.0.0+] SetAllKuinaDevicesToFirmwareUpdateMode
+|-
 | 221 || UpdateControllerColor
 |-
 | 222 || [4.0.0+] ConnectUsbPadsAsync
@@ -409,6 +417,22 @@ This is "nn::hid::IHidDebugServer".
 | 225 || [5.0.0+] GetUniquePadDriverState
 |-
 | 226 || [5.0.0+] GetSixAxisSensorDriverStates
+|-
+| 227 || [6.0.0+] GetRxPacketHistory
+|-
+| 228 || [6.0.0+] AcquireOperationEventHandle
+|-
+| 229 || [6.0.0+] ReadSerialFlash
+|-
+| 230 || [6.0.0+] WriteSerialFlash
+|-
+| 231 || [6.0.0+] GetOperationResult
+|-
+| 232 || [6.0.0+] EnableShipmentMode
+|-
+| 233 || [6.0.0+] ClearPairingInfo
+|-
+| 234 || [6.0.0+] GetUniquePadDeviceTypeSetInternal
 |-
 | 301 || [5.0.0+] GetAbstractedPadHandles
 |-
@@ -423,6 +447,10 @@ This is "nn::hid::IHidDebugServer".
 | 323 || [5.0.0+] UnsetAllAutoPilotVirtualPadState
 |-
 | 350 || [5.0.0+] AddRegisteredDevice
+|-
+| 400 || [6.0.0+] DisableExternalMcuOnNxDevice
+|-
+| 401 || [6.0.0+] DisableRailDeviceFiltering
 |}
 
 = hid:sys =

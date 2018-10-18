@@ -284,6 +284,7 @@ This is "nn::hid::IHidDebugServer".
 | 140 | DeactivateConsoleSixAxisSensor                      |
 | 141 | \[5.0.0+\] GetConsoleSixAxisSensorSamplingFrequency |
 | 142 | \[5.0.0+\] DeactivateSevenSixAxisSensor             |
+| 143 | \[6.0.0+\] GetConsoleSixAxisSensorCountStates       |
 | 201 | ActivateFirmwareUpdate                              |
 | 202 | DeactivateFirmwareUpdate                            |
 | 203 | StartFirmwareUpdate                                 |
@@ -294,12 +295,23 @@ This is "nn::hid::IHidDebugServer".
 | 208 | StartFirmwareUpdateForRevert                        |
 | 209 | GetAvailableFirmwareVersionForRevert                |
 | 210 | \[4.0.0+\] IsFirmwareUpdatingDevice                 |
+| 211 | \[6.0.0+\] StartFirmwareUpdateIndividual            |
+| 215 | \[6.0.0+\] SetUsbFirmwareForceUpdateEnabled         |
+| 216 | \[6.0.0+\] SetAllKuinaDevicesToFirmwareUpdateMode   |
 | 221 | UpdateControllerColor                               |
 | 222 | \[4.0.0+\] ConnectUsbPadsAsync                      |
 | 223 | \[4.0.0+\] DisconnectUsbPadsAsync                   |
 | 224 | \[5.0.0+\] UpdateDesignInfo                         |
 | 225 | \[5.0.0+\] GetUniquePadDriverState                  |
 | 226 | \[5.0.0+\] GetSixAxisSensorDriverStates             |
+| 227 | \[6.0.0+\] GetRxPacketHistory                       |
+| 228 | \[6.0.0+\] AcquireOperationEventHandle              |
+| 229 | \[6.0.0+\] ReadSerialFlash                          |
+| 230 | \[6.0.0+\] WriteSerialFlash                         |
+| 231 | \[6.0.0+\] GetOperationResult                       |
+| 232 | \[6.0.0+\] EnableShipmentMode                       |
+| 233 | \[6.0.0+\] ClearPairingInfo                         |
+| 234 | \[6.0.0+\] GetUniquePadDeviceTypeSetInternal        |
 | 301 | \[5.0.0+\] GetAbstractedPadHandles                  |
 | 302 | \[5.0.0+\] GetAbstractedPadState                    |
 | 303 | \[5.0.0+\] GetAbstractedPadsState                   |
@@ -307,6 +319,8 @@ This is "nn::hid::IHidDebugServer".
 | 322 | \[5.0.0+\] UnsetAutoPilotVirtualPadState            |
 | 323 | \[5.0.0+\] UnsetAllAutoPilotVirtualPadState         |
 | 350 | \[5.0.0+\] AddRegisteredDevice                      |
+| 400 | \[6.0.0+\] DisableExternalMcuOnNxDevice             |
+| 401 | \[6.0.0+\] DisableRailDeviceFiltering               |
 
 # hid:sys
 
