@@ -38,13 +38,13 @@ This is "nn::erpt::sf::IReport".
 
 This is "nn::erpt::sf::IManager".
 
-| Cmd | Name          |
-| --- | ------------- |
-| 0   | GetReportList |
-| 1   | GetEvent      |
-| 2   | \[4.0.0+\]    |
-| 3   | \[5.0.0+\]    |
-| 4   | \[5.0.0+\]    |
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   | GetReportList                        |
+| 1   | GetEvent                             |
+| 2   | \[4.0.0+\] CleanupReports            |
+| 3   | \[5.0.0+\] DeleteReport              |
+| 4   | \[5.0.0+\] GetStorageUsageStatistics |
 
 # Reports
 
