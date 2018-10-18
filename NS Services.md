@@ -352,21 +352,21 @@ This is
 | 90   | BoostSystemMemoryResourceLimit                                                                     |
 | 91   | \[5.0.0+\]                                                                                         |
 | 92   | \[5.0.0+\]                                                                                         |
-| 93   | \[5.0.0+\]                                                                                         |
+| 93   | \[5.0.0+\] GetMainApplicationProgramIndex                                                          |
 | 94   | \[6.0.0+\] LaunchApplication2                                                                      |
-| 95   | \[6.0.0+\]                                                                                         |
-| 96   | \[6.0.0+\]                                                                                         |
-| 97   | \[6.0.0+\]                                                                                         |
-| 98   | \[6.0.0+\]                                                                                         |
+| 95   | \[6.0.0+\] GetApplicationLaunchInfo                                                                |
+| 96   | \[6.0.0+\] AcquireApplicationLaunchInfo                                                            |
+| 97   | \[6.0.0+\] GetMainApplicationProgramIndex2                                                         |
+| 98   | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                   |
 | 100  | ResetToFactorySettings                                                                             |
 | 101  | ResetToFactorySettingsWithoutUserSaveData                                                          |
 | 102  | ResetToFactorySettingsForRefurbishment                                                             |
 | 200  | CalculateUserSaveDataStatistics                                                                    |
 | 201  | DeleteUserSaveDataAll                                                                              |
 | 210  | DeleteUserSystemSaveData                                                                           |
-| 211  | \[6.0.0+\]                                                                                         |
+| 211  | \[6.0.0+\] DeleteSaveData                                                                          |
 | 220  | UnregisterNetworkServiceAccount                                                                    |
-| 221  | \[6.0.0+\]                                                                                         |
+| 221  | \[6.0.0+\] UnregisterNetworkServiceAccountWithUserSaveDataDeletion                                 |
 | 300  | GetApplicationShellEvent                                                                           |
 | 301  | PopApplicationShellEventInfo                                                                       |
 | 302  | LaunchLibraryApplet                                                                                |
@@ -381,7 +381,7 @@ This is
 | 403  | GetMaxApplicationControlCacheCount                                                                 |
 | 404  | InvalidateApplicationControlCache                                                                  |
 | 405  | ListApplicationControlCacheEntryInfo                                                               |
-| 406  | \[6.0.0+\]                                                                                         |
+| 406  | \[6.0.0+\] GetApplicationControlProperty                                                           |
 | 502  | RequestCheckGameCardRegistration                                                                   |
 | 503  | RequestGameCardRegistrationGoldPoint                                                               |
 | 504  | RequestRegisterGameCard                                                                            |
@@ -397,7 +397,7 @@ This is
 | 604  | RegisterContentsExternalKey                                                                        |
 | 605  | ListApplicationContentMetaStatusWithRightsCheck                                                    |
 | 606  | GetContentMetaStorage                                                                              |
-| 607  | \[6.0.0+\]                                                                                         |
+| 607  | \[6.0.0+\] ListAvailableAddOnContent                                                               |
 | 700  | PushDownloadTaskList                                                                               |
 | 701  | ClearTaskStatusList                                                                                |
 | 702  | RequestDownloadTaskList                                                                            |
@@ -418,8 +418,8 @@ This is
 | 908  | ListApplicationRecordInstalledContentMeta                                                          |
 | 909  | WithdrawCleanupAddOnContentsWithNoRightsRecommendation                                             |
 | 910  | \[6.0.0+\]                                                                                         |
-| 911  | \[6.0.0+\]                                                                                         |
-| 912  | \[6.0.0+\]                                                                                         |
+| 911  | \[6.0.0+\] SetPreInstalledApplication                                                              |
+| 912  | \[6.0.0+\] ClearPreInstalledApplicationFlag                                                        |
 | 1000 | RequestVerifyApplicationDeprecated                                                                 |
 | 1001 | CorruptApplicationForDebug                                                                         |
 | 1002 | RequestVerifyAddOnContentsRights                                                                   |
@@ -434,8 +434,8 @@ This is
 | 1305 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationEntity                                                  |
 | 1306 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationCompletely                                              |
 | 1307 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationContentEntities                                         |
-| 1308 | \[6.0.0+\]                                                                                         |
-| 1309 | \[6.0.0+\]                                                                                         |
+| 1308 | \[6.0.0+\] DeleteApplicationCompletelyForDebug                                                     |
+| 1309 | \[6.0.0+\] CleanupUnavailableAddOnContents                                                         |
 | 1400 | PrepareShutdown                                                                                    |
 | 1500 | FormatSdCard                                                                                       |
 | 1501 | NeedsSystemUpdateToFormatSdCard                                                                    |
@@ -477,20 +477,20 @@ This is
 | 2050 | \[6.0.0+\]                                                                                         |
 | 2100 | \[6.0.0+\]                                                                                         |
 | 2101 | \[6.0.0+\]                                                                                         |
-| 2150 | \[6.0.0+\]                                                                                         |
-| 2151 | \[6.0.0+\]                                                                                         |
-| 2152 | \[6.0.0+\]                                                                                         |
-| 2153 | \[6.0.0+\]                                                                                         |
-| 2154 | \[6.0.0+\]                                                                                         |
-| 2160 | \[6.0.0+\]                                                                                         |
-| 2161 | \[6.0.0+\]                                                                                         |
-| 2170 | \[6.0.0+\]                                                                                         |
-| 2171 | \[6.0.0+\]                                                                                         |
-| 2180 | \[6.0.0+\]                                                                                         |
-| 2181 | \[6.0.0+\]                                                                                         |
-| 2182 | \[6.0.0+\]                                                                                         |
-| 2190 | \[6.0.0+\]                                                                                         |
-| 2199 | \[6.0.0+\]                                                                                         |
+| 2150 | \[6.0.0+\] CreateRightsEnvironment                                                                 |
+| 2151 | \[6.0.0+\] DestroyRightsEnvironment                                                                |
+| 2152 | \[6.0.0+\] ActivateRightsEnvironment                                                               |
+| 2153 | \[6.0.0+\] DeactivateRightsEnvironment                                                             |
+| 2154 | \[6.0.0+\] ForceActivateRightsContextForExit                                                       |
+| 2160 | \[6.0.0+\] AddTargetApplicationToRightsEnvironment                                                 |
+| 2161 | \[6.0.0+\] SetUsersToRightsEnvironment                                                             |
+| 2170 | \[6.0.0+\] GetRightsEnvironmentStatus                                                              |
+| 2171 | \[6.0.0+\] GetRightsEnvironmentStatusChangedEvent                                                  |
+| 2180 | \[6.0.0+\] RequestExtendRightsInRightsEnvironment                                                  |
+| 2181 | \[6.0.0+\] GetLastResultOfExtendRightsInRightsEnvironment                                          |
+| 2182 | \[6.0.0+\] SetActiveRightsContextUsingStateToRightsEnvironment                                     |
+| 2190 | \[6.0.0+\] GetRightsEnvironmentHandleForApplication                                                |
+| 2199 | \[6.0.0+\] GetRightsEnvironmentCountForDebug                                                       |
 | 2200 | \[6.0.0+\]                                                                                         |
 | 2201 | \[6.0.0+\]                                                                                         |
 | 2250 | \[6.0.0+\]                                                                                         |
