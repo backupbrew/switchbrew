@@ -1090,6 +1090,11 @@ This is "nn::ns::detail::IDevelopInterface".
 |-
 | 9 || [[#LaunchApplicationWithStorageId]]
 |-
+| 10 || TerminateApplication2
+|-
+| 11 || GetRunningApplicationProcessId
+|-
+| 12 || SetCurrentApplicationRightsEnvironmentCanBeActive
 |}
 
 == LaunchProgram ==
