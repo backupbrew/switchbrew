@@ -202,6 +202,46 @@ file.
 | 0x60  | 8      | Journal size                                                                  |
 | 0x200 |        | End                                                                           |
 
+## Remap Storage
+
+Remap Storage is used to remap segments of data from virtual offsets to
+physical offsets. This allows extending the save file without having to
+relocate existing data.
+
+Each Remap Storage has three components: [a
+header](#Remap_storage_header "wikilink"), a remapping table, and the
+main data storage.
+
+A remap storage can contain a varying number of segments, each
+representing a chunk of contiguous virtual storage. A segment can be
+composed of one or more entries. Each of these entries are mapped from
+their virtual locations to their physical locations by entries in the
+remapping table. A physical offset corresponds to that offset in the
+main data storage.
+
+When a segment is extended a new remapping entry is appended to the end
+of the physical storage, allowing expansion without relocating the
+existing entries.
+
+Each virtual offset has two parts, a segment index and an offset. The
+size of these sections is controlled by the remap header.
+
+Example: 0x3000000000000100  
+If 4 bits were reserved for the segment index, the offset would be split
+like this, representing offset 0x100 of segment 3.  
+Segment index: 0x3 Offset: 0x000000000000100
+
+### Remapping Entry
+
+| Start | Length | Description     |
+| ----- | ------ | --------------- |
+| 0x00  | 8      | Virtual offset  |
+| 0x08  | 8      | Physical offset |
+| 0x10  | 8      | Size            |
+| 0x18  | 4      | Alignment       |
+| 0x1c  | 4      | Padding?        |
+|       |        |                 |
+
 ## Files
 
 ### Directory Table Entry
