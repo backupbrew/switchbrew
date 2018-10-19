@@ -313,6 +313,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x171402 || 2 || 2954 || Invalid gamecard handle.
 |-
+| 0x195802 || 2 || 3244 || Allocation failure related to SD cards
+|-
 | 0x196002 || 2 || 3248 || Out of memory
 |-
 | 0x196202 || 2 || 3249 || Out of memory
