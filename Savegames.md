@@ -219,9 +219,9 @@ their virtual locations to their physical locations by entries in the
 remapping table. A physical offset corresponds to that offset in the
 main data storage.
 
-When a segment is extended a new remapping entry is appended to the end
-of the physical storage, allowing expansion without relocating the
-existing entries.
+When a segment is extended a new remapping entry is appended to the
+physical storage, allowing expansion without relocating the existing
+entries.
 
 Each virtual offset has two parts, a segment index and an offset. The
 size of these sections is controlled by the remap header.
@@ -241,6 +241,45 @@ Segment index: 0x3 Offset: 0x000000000000100
 | 0x18  | 4      | Alignment       |
 | 0x1c  | 4      | Padding?        |
 |       |        |                 |
+
+## Duplex Storage
+
+A Duplex Storage contains four separate elements: [a
+header](#Duplex_header "wikilink"), a bitmap, and two identically-sized
+chunks of data.
+
+As hinted by the name, a Duplex Storage contains two main chunks of
+data. To store X bytes, two chunks of data each with size X are
+required.
+
+### Bitmap
+
+This main data storage is split into blocks of the size indicated in the
+duplex header. The bitmap contains as many bits as the main data has
+blocks. If the main data is 0x40000 bytes long with a block size of
+0x4000 bytes, the bitmap would contain 0x10 bits.
+
+The bitmap controls which data chunk is active for each block. e.g. If
+bit 3 of the bitmap is a 0 then block 3 of data chunk 0 is active and
+block 3 of data chunk 1 is inactive. This means that when data from
+block 3 is read, the data from chunk 0 will be returned and the data
+from chunk 1 will be completely ignored.
+
+### Hierarchical Duplex Storage
+
+Multiple Duplex Storages can be chained together to gain various
+benefits. With a Hierarchical Duplex Storage, the bitmap for the main
+data is stored inside another Duplex Storage.
+
+The bitmap for this second Duplex Storage is stored in a special Duplex
+Storage. The data of this top level contains a master bitmap that is
+typically 0x40 bytes long. A bit in the save file header controls which
+master bitmap is active.
+
+This allows for atomic operations on the Hierarchical Duplex Storage.
+When writing to the storage, data will be written to the inactive blocks
+and inactive bitmaps. When the data is committed the bit in the save
+file header is flipped, changing which master bitmap is active.
 
 ## Files
 
