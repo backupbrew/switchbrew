@@ -25,9 +25,9 @@ This is "nn::es::IETicketService".
 |-
 | 10 || CountPersonalizedTicket
 |-
-| 11 || ListCommonTicket
+| 11 || ListCommonTicket / [6.0.0+] ListCommonTicketRightsIds
 |-
-| 12 || ListPersonalizedTicket
+| 12 || ListPersonalizedTicket / [6.0.0+] ListPersonalizedTicketRightsIds
 |-
 | 13 || ListMissingPersonalizedTicket
 |-
@@ -59,23 +59,23 @@ This is "nn::es::IETicketService".
 |-
 | 27 || [4.0.0+] CountPrepurchaseRecord
 |-
-| 28 || [4.0.0+] ListPrepurchaseRecord
+| 28 || [4.0.0+] ListPrepurchaseRecord / [6.0.0+] ListPrepurchaseRecordRightsIds
 |-
 | 29 || [4.0.0+] ListPrepurchaseRecordInfo
 |-
-| 30 || [5.0.0+]
+| 30 || [5.0.0+] CountTicket
 |-
-| 31 || [5.0.0+]
+| 31 || [5.0.0+] ListTicketRightsIds
 |-
-| 32 || [5.0.0+]
+| 32 || [5.0.0+] CountPrepurchaseRecordEx
 |-
-| 33 || [5.0.0+]
+| 33 || [5.0.0+] ListPrepurchaseRecordRightsIdsEx
 |-
-| 34 || [5.0.0+]
+| 34 || [5.0.0+] GetEncryptedTicketSize
 |-
-| 35 || [5.0.0+]
+| 35 || [5.0.0+] GetEncryptedTicketData
 |-
-| 36 || [6.0.0+]
+| 36 || [6.0.0+] DeleteAllInactiveELicenseRequiredPersonalizedTicket
 |-
 | 501 || [6.0.0+]
 |-
