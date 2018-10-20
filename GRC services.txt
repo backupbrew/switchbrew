@@ -69,11 +69,11 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 22 || [[#RequestOffscreenRecordingFinishReady]]
 |-
-| 23 || CompleteOffscreenRecordingFinish
+| 23 || [[#CompleteOffscreenRecordingFinish]]
 |-
-| 24 || StartOffscreenRecordingEx
+| 24 || [[#StartOffscreenRecordingEx]]
 |-
-| 25 || CompleteOffscreenRecordingFinishEx0
+| 25 || [[#CompleteOffscreenRecordingFinishEx0]]
 |-
 | 30 || [[#GetOffscreenLayerError]]
 |-
@@ -102,7 +102,19 @@ Takes an input u64, no output.
 == RequestOffscreenRecordingFinishReady ==
 Takes an input u64, no output.
 
+== StartOffscreenRecordingEx ==
+Takes an input u64 and an [[#OffscreenRecordingParameter]], no output.
+
+== CompleteOffscreenRecordingFinish ==
+Takes an input u64 and a type-0x5 input buffer, no output.
+
+== CompleteOffscreenRecordingFinishEx0 ==
+Takes an input u64 and 2 type-0x5 input buffers, no output.
+
 == GetOffscreenLayerError ==
 Takes an input u64, no output.
+
+= OffscreenRecordingParameter =
+This is a 0x80-byte struct.
 
 [[Category:Services]]

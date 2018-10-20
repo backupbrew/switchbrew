@@ -51,9 +51,9 @@ This is
 | 20  | [\#StartOffscreenRecording](#StartOffscreenRecording "wikilink")                           |
 | 21  | [\#AbortOffscreenRecording](#AbortOffscreenRecording "wikilink")                           |
 | 22  | [\#RequestOffscreenRecordingFinishReady](#RequestOffscreenRecordingFinishReady "wikilink") |
-| 23  | CompleteOffscreenRecordingFinish                                                           |
-| 24  | StartOffscreenRecordingEx                                                                  |
-| 25  | CompleteOffscreenRecordingFinishEx0                                                        |
+| 23  | [\#CompleteOffscreenRecordingFinish](#CompleteOffscreenRecordingFinish "wikilink")         |
+| 24  | [\#StartOffscreenRecordingEx](#StartOffscreenRecordingEx "wikilink")                       |
+| 25  | [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")   |
 | 30  | [\#GetOffscreenLayerError](#GetOffscreenLayerError "wikilink")                             |
 | 41  | EncodeOffscreenLayerAudioSample                                                            |
 | 50  | GetOffscreenLayerRecordingFinishReadyEvent                                                 |
@@ -84,8 +84,26 @@ Takes an input u64, no output.
 
 Takes an input u64, no output.
 
+## StartOffscreenRecordingEx
+
+Takes an input u64 and an
+[\#OffscreenRecordingParameter](#OffscreenRecordingParameter "wikilink"),
+no output.
+
+## CompleteOffscreenRecordingFinish
+
+Takes an input u64 and a type-0x5 input buffer, no output.
+
+## CompleteOffscreenRecordingFinishEx0
+
+Takes an input u64 and 2 type-0x5 input buffers, no output.
+
 ## GetOffscreenLayerError
 
 Takes an input u64, no output.
+
+# OffscreenRecordingParameter
+
+This is a 0x80-byte struct.
 
 [Category:Services](Category:Services "wikilink")
