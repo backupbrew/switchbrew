@@ -411,9 +411,9 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000002103 || || [[Factory Setup|SystemInitializer]] (SystemInitializ) ||
 |-
-| 0100000000002105 || || WriteToStorage ||
-|-
 | 0100000000002104 || || SystemUpdaterHostFs ||
+|-
+| 0100000000002105 || || WriteToStorage ||
 |-
 | 0100000000002106 || || [[Factory Setup|CalWriter]] (CalWriterManu) ||
 |-
@@ -435,13 +435,13 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 0100000000002114 || || RankTurn ||
 |-
+| 0100000000002116 || || BleTestTool ||
+|-
 | 010000000000211A || || PreinstallAppWriter ||
 |-
 | 010000000000211C || || ControllerSerialFlashTool ||
 |-
 | 010000000000211D || || ControllerFlashWriter ||
-|-
-| 0100000000002116 || || BleTestTool ||
 |-
 | 0100000000002120 || || ControllerTestApp ||
 |-

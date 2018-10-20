@@ -1530,8 +1530,8 @@ systems.
 | 0100000000002101 |          | DevMenuCommand                                                       |                                                          |
 | 0100000000002102 |          | ExportPartition                                                      |                                                          |
 | 0100000000002103 |          | [SystemInitializer](Factory%20Setup.md "wikilink") (SystemInitializ) |                                                          |
-| 0100000000002105 |          | WriteToStorage                                                       |                                                          |
 | 0100000000002104 |          | SystemUpdaterHostFs                                                  |                                                          |
+| 0100000000002105 |          | WriteToStorage                                                       |                                                          |
 | 0100000000002106 |          | [CalWriter](Factory%20Setup.md "wikilink") (CalWriterManu)           |                                                          |
 | 0100000000002107 |          | SettingsManager                                                      |                                                          |
 | 0100000000002109 |          | testBuildSystemIris                                                  |                                                          |
@@ -1542,10 +1542,10 @@ systems.
 | 0100000000002110 |          | TestSaveDataCreator                                                  |                                                          |
 | 0100000000002111 |          | C9LcdSpker                                                           |                                                          |
 | 0100000000002114 |          | RankTurn                                                             |                                                          |
+| 0100000000002116 |          | BleTestTool                                                          |                                                          |
 | 010000000000211A |          | PreinstallAppWriter                                                  |                                                          |
 | 010000000000211C |          | ControllerSerialFlashTool                                            |                                                          |
 | 010000000000211D |          | ControllerFlashWriter                                                |                                                          |
-| 0100000000002116 |          | BleTestTool                                                          |                                                          |
 | 0100000000002120 |          | ControllerTestApp                                                    |                                                          |
 | 0100000000002121 |          | HidInspectionTool                                                    |                                                          |
 | 0100000000002124 |          | BatteryCyclesEditor                                                  |                                                          |
