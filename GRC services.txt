@@ -59,15 +59,15 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 2 || [[#CreateVideoProxy]]
 |-
-| 10 || OpenOffscreenLayer
+| 10 || [[#OpenOffscreenLayer]]
 |-
-| 11 || CloseOffscreenLayer
+| 11 || [[#CloseOffscreenLayer]]
 |-
-| 20 || StartOffscreenRecording
+| 20 || [[#StartOffscreenRecording]]
 |-
-| 21 || AbortOffscreenRecording
+| 21 || [[#AbortOffscreenRecording]]
 |-
-| 22 || RequestOffscreenRecordingFinishReady
+| 22 || [[#RequestOffscreenRecordingFinishReady]]
 |-
 | 23 || CompleteOffscreenRecordingFinish
 |-
@@ -75,7 +75,7 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 25 || CompleteOffscreenRecordingFinishEx0
 |-
-| 30 || GetOffscreenLayerError
+| 30 || [[#GetOffscreenLayerError]]
 |-
 | 41 || EncodeOffscreenLayerAudioSample
 |-
@@ -86,5 +86,23 @@ This is "nn::grcsrv::IMovieMaker".
 
 == CreateVideoProxy ==
 No input, returns an [[Nvnflinger_services#dispdrv|IHOSBinderDriver]].
+
+== OpenOffscreenLayer ==
+Takes an input u64, returns an output u32.
+
+== CloseOffscreenLayer ==
+Takes an input u64, no output.
+
+== StartOffscreenRecording ==
+Takes an input u64, no output.
+
+== AbortOffscreenRecording ==
+Takes an input u64, no output.
+
+== RequestOffscreenRecordingFinishReady ==
+Takes an input u64, no output.
+
+== GetOffscreenLayerError ==
+Takes an input u64, no output.
 
 [[Category:Services]]
