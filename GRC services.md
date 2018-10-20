@@ -38,4 +38,29 @@ This is "nn::grcsrv::IGameMovieTrimmer".
 | 10  | GetNotTrimmingEvent |
 | 20  | SetThumbnailRgba    |
 
+# IMovieMaker
+
+This is "nn::grcsrv::IMovieMaker".
+
+| Cmd | Name                                               |
+| --- | -------------------------------------------------- |
+| 2   | [\#CreateVideoProxy](#CreateVideoProxy "wikilink") |
+| 10  | OpenOffscreenLayer                                 |
+| 11  | CloseOffscreenLayer                                |
+| 20  | StartOffscreenRecording                            |
+| 21  | AbortOffscreenRecording                            |
+| 22  | RequestOffscreenRecordingFinishReady               |
+| 23  | CompleteOffscreenRecordingFinish                   |
+| 24  | StartOffscreenRecordingEx                          |
+| 25  | CompleteOffscreenRecordingFinishEx0                |
+| 30  | GetOffscreenLayerError                             |
+| 41  | EncodeOffscreenLayerAudioSample                    |
+| 50  | GetOffscreenLayerRecordingFinishReadyEvent         |
+| 52  | GetOffscreenLayerAudioEncodeReadyEvent             |
+
+## CreateVideoProxy
+
+No input, returns an
+[IHOSBinderDriver](Nvnflinger%20services#dispdrv.md##dispdrv "wikilink").
+
 [Category:Services](Category:Services "wikilink")
