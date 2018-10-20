@@ -77,7 +77,7 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 30 || [[#GetOffscreenLayerError]]
 |-
-| 41 || EncodeOffscreenLayerAudioSample
+| 41 || [[#EncodeOffscreenLayerAudioSample]]
 |-
 | 50 || GetOffscreenLayerRecordingFinishReadyEvent
 |-
@@ -110,6 +110,9 @@ Takes an input u64 and a type-0x5 input buffer, no output.
 
 == CompleteOffscreenRecordingFinishEx0 ==
 Takes an input u64 and 2 type-0x5 input buffers, no output.
+
+== EncodeOffscreenLayerAudioSample ==
+Takes an input u64 and a type-0x5 input buffer, returns an output u64.
 
 == GetOffscreenLayerError ==
 Takes an input u64, no output.

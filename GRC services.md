@@ -55,7 +55,7 @@ This is
 | 24  | [\#StartOffscreenRecordingEx](#StartOffscreenRecordingEx "wikilink")                       |
 | 25  | [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")   |
 | 30  | [\#GetOffscreenLayerError](#GetOffscreenLayerError "wikilink")                             |
-| 41  | EncodeOffscreenLayerAudioSample                                                            |
+| 41  | [\#EncodeOffscreenLayerAudioSample](#EncodeOffscreenLayerAudioSample "wikilink")           |
 | 50  | GetOffscreenLayerRecordingFinishReadyEvent                                                 |
 | 52  | GetOffscreenLayerAudioEncodeReadyEvent                                                     |
 
@@ -97,6 +97,10 @@ Takes an input u64 and a type-0x5 input buffer, no output.
 ## CompleteOffscreenRecordingFinishEx0
 
 Takes an input u64 and 2 type-0x5 input buffers, no output.
+
+## EncodeOffscreenLayerAudioSample
+
+Takes an input u64 and a type-0x5 input buffer, returns an output u64.
 
 ## GetOffscreenLayerError
 
