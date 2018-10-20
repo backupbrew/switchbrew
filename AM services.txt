@@ -435,7 +435,7 @@ No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 |-
 | 500 || [5.0.0+] StartContinuousRecordingFlushForDebug || 
 |-
-| 1000 || [5.0.0+] CreateMovieMaker || 
+| 1000 || [5.0.0+] [[#CreateMovieMaker]] || 
 |-
 | 1001 || [5.0.0+] [[#PrepareForJit]] ||
 |}
@@ -467,8 +467,27 @@ Takes a TransferMemory handle and an u64 for the size of the TransferMemory.
 ==== SetGamePlayRecordingState ====
 Takes an input u32.
 
+==== CreateMovieMaker ====
+Takes an input u64 and handle, returns an [[#IMovieMaker]].
+
 ==== PrepareForJit ====
 Takes no input. Launches title 010000000000003B (currently not present on retail systems) if some context variable is set.
+
+=== IMovieMaker ===
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#GetGrcMovieMaker]]
+|-
+| 1 || [[#GetLayerHandle]]
+|}
+
+==== GetGrcMovieMaker ====
+No input, returns a GRC [[GRC_services|IMovieMaker]].
+
+==== GetLayerHandle ====
+No input, returns an output u64.
 
 == ILibraryAppletCreator ==
 {| class="wikitable" border="1"

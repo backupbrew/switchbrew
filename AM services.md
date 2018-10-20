@@ -291,7 +291,7 @@ No input, returns an output
 | 121  | \[5.0.0+\] ClearUserChannel                                                         |                                                |
 | 122  | \[5.0.0+\] UnpopToUserChannel                                                       |                                                |
 | 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                    |                                                |
-| 1000 | \[5.0.0+\] CreateMovieMaker                                                         |                                                |
+| 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                       |                                                |
 | 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                             |                                                |
 
 The BOTW game uses this GamePlayRecording functionality from the
@@ -343,11 +343,31 @@ TransferMemory.
 
 Takes an input u32.
 
+#### CreateMovieMaker
+
+Takes an input u64 and handle, returns an
+[\#IMovieMaker](#IMovieMaker "wikilink").
+
 #### PrepareForJit
 
 Takes no input. Launches title 010000000000003B (currently not present
-on retail systems) if some context variable is
-set.
+on retail systems) if some context variable is set.
+
+### IMovieMaker
+
+| Cmd | Name                                               |
+| --- | -------------------------------------------------- |
+| 0   | [\#GetGrcMovieMaker](#GetGrcMovieMaker "wikilink") |
+| 1   | [\#GetLayerHandle](#GetLayerHandle "wikilink")     |
+
+#### GetGrcMovieMaker
+
+No input, returns a GRC [IMovieMaker](GRC%20services.md "wikilink").
+
+#### GetLayerHandle
+
+No input, returns an output
+u64.
 
 ## ILibraryAppletCreator
 
