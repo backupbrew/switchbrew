@@ -275,7 +275,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xF801 || 1 || 124 || [Usermode] Unhandled interrupt
 |-
-| 0xFA01 || 1 || 125 || Wrong memory permission?
+| 0xFA01 || 1 || 125 || Process already started/Wrong memory permission?
 |-
 | 0xFC01 || 1 || 126 || Reserved value
 |-
