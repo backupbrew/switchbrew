@@ -439,7 +439,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xE809 || 9 || 116 || ACID/ACI0 don't match for descriptor "DebugFlags"
 |-
-| 0x1A80A || 10 || 212 || Bad magic (expected 'SFCO')
+| 0x1A60A || 10 || 211 || Invalid CMIF input header.
+|-
+| 0x1A80A || 10 || 212 || Invalid CMIF output header.
 |-
 | 0x20B || 11 || 1 || Size too big to fit to marshal.
 |-
