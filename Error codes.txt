@@ -443,6 +443,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1A80A || 10 || 212 || Invalid CMIF output header.
 |-
+| 0x1D60A || 10 || 235 || Invalid in object count.
+|-
+| 0x1D80A || 10 || 236 || Invalid out object count.
+|-
 | 0x20B || 11 || 1 || Size too big to fit to marshal.
 |-
 | 0xCC0B || 11 || 102 || Out of server session memory
