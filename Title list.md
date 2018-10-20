@@ -25,22 +25,22 @@ Decimal versions use the format:
 <tr class="odd">
 <td><p>0100000000000000</p></td>
 <td><p>[bundled with kernel]</p></td>
-<td><p><a href="Filesystem services.md" title="wikilink">FS</a></p></td>
+<td><p><a href="Filesystem services.md" title="wikilink">fs</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000001</p></td>
 <td><p>[bundled with kernel]</p></td>
-<td><p><a href="Loader services.md" title="wikilink">Loader</a></p></td>
+<td><p><a href="Loader services.md" title="wikilink">ldr (Loader)</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000002</p></td>
 <td><p>[bundled with kernel]</p></td>
-<td><p><a href="NCM services.md" title="wikilink">NCM</a></p></td>
+<td><p><a href="NCM services.md" title="wikilink">ncm</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000003</p></td>
 <td><p>[bundled with kernel]</p></td>
-<td><p><a href="Process Manager services.md" title="wikilink">ProcessMana</a></p></td>
+<td><p><a href="Process Manager services.md" title="wikilink">pm (ProcessMana)</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000004</p></td>
@@ -447,6 +447,16 @@ Decimal versions use the format:
 <td><p><a href="NIM services.md" title="wikilink">nim</a></p></td>
 </tr>
 <tr class="odd">
+<td><p>0100000000000026</p></td>
+<td></td>
+<td><p>cec (currently not present on retail devices)</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000027</p></td>
+<td></td>
+<td><p>tspm (currently not present on retail devices)</p></td>
+</tr>
+<tr class="odd">
 <td><p>0100000000000028</p></td>
 <td><p>[bundled with kernel]</p></td>
 <td><p><a href="SPL services.md" title="wikilink">spl</a></p></td>
@@ -489,6 +499,11 @@ Decimal versions use the format:
 <td><p><a href="Error Report services.md" title="wikilink">erpt</a></p></td>
 </tr>
 <tr class="odd">
+<td><p>010000000000002C</p></td>
+<td></td>
+<td><p>time (currently not present on retail devices)</p></td>
+</tr>
+<tr class="even">
 <td><p>010000000000002D</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
@@ -500,7 +515,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p><a href="Display services.md" title="wikilink">vi</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>010000000000002E</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
@@ -513,7 +528,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p><a href="Parental Control services.md" title="wikilink">pctl</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>010000000000002F</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
@@ -525,7 +540,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p><a href="NPNS services.md" title="wikilink">npns</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0100000000000030</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
@@ -538,7 +553,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p><a href="Error Upload services.md" title="wikilink">eupld</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0100000000000031</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
@@ -551,7 +566,7 @@ Decimal versions use the format:
 <td><p>[1.0.0] arp<br />
 [2.0.0+] <a href="Glue services.md" title="wikilink">glue</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0100000000000032</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
@@ -563,7 +578,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p>eclct</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0100000000000033</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
@@ -575,7 +590,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p><a href="ETicket services.md" title="wikilink">es</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0100000000000034</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
@@ -589,7 +604,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p><a href="Fatal services.md" title="wikilink">fatal</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0100000000000035</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
@@ -597,7 +612,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p>[4.0.0+] <a href="GRC services.md" title="wikilink">grc</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0100000000000036</p></td>
 <td><p><a href="2.0.0.md" title="wikilink">v260</a> (0.0.0.260)<br />
 <a href="2.1.0.md" title="wikilink">v65596</a> (0.0.1.60)<br />
@@ -611,7 +626,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p><a href="Creport.md" title="wikilink">creport</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0100000000000037</p></td>
 <td><p><a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
@@ -621,12 +636,12 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p>[3.0.0+] <a href="Loader services#ldr:ro.md##ldr:ro" title="wikilink">ro</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0100000000000038</p></td>
 <td></td>
 <td><p><a href="Profiler services.md" title="wikilink">profiler</a> (currently not present on retail devices)</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0100000000000039</p></td>
 <td><p><a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="3.0.1.md" title="wikilink">v201392178</a> (3.0.1.50)<br />
@@ -636,7 +651,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p>[3.0.0+] <a href="Shared Database services.md" title="wikilink">sdb</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>010000000000003A</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
@@ -644,12 +659,12 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p>[4.0.0+] <a href="Migration services.md" title="wikilink">migration</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>010000000000003B</p></td>
 <td></td>
 <td><p><a href="JIT services.md" title="wikilink">jit</a> (currently not present on retail devices)</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>010000000000003C</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
@@ -657,7 +672,7 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p>[4.0.0+] <a href="Jpegdec services.md" title="wikilink">jpegdec</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>010000000000003D</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
@@ -665,10 +680,20 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p>[4.0.0+] <a href="Safemode.md" title="wikilink">safemode</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>010000000000003E</p></td>
 <td><p><a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
 <td><p>[6.0.0+] <a href="OLSC services.md" title="wikilink">olsc</a></p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000003F</p></td>
+<td></td>
+<td><p>dt (currently not present on retail devices)</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000000040</p></td>
+<td></td>
+<td><p>nd (currently not present on retail devices)</p></td>
 </tr>
 </tbody>
 </table>
@@ -680,7 +705,8 @@ Decimal versions use the format:
 <tr class="header">
 <th><p>Title-id</p></th>
 <th><p>Versions</p></th>
-<th><p>Description</p></th>
+<th><p>Name</p></th>
+<th><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
@@ -692,7 +718,8 @@ Decimal versions use the format:
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;CertStore&quot; - SSL trusted certificates.</p></td>
+<td><p>CertStore</p></td>
+<td><p>SSL trusted certificates.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000801</p></td>
@@ -705,7 +732,8 @@ Decimal versions use the format:
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;ErrorMessage&quot; - Stores the message strings for Support Error Codes. There's &quot;/DatabaseInfo&quot; at FS root, then the rest is stored at &quot;/{first 4 error digits}/{last 4 error digits}/&quot;.</p></td>
+<td><p>ErrorMessage</p></td>
+<td><p>Stores the message strings for Support Error Codes. There's &quot;/DatabaseInfo&quot; at FS root, then the rest is stored at &quot;/{first 4 error digits}/{last 4 error digits}/&quot;.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000802</p></td>
@@ -716,7 +744,8 @@ Decimal versions use the format:
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;MiiModel&quot;</p></td>
+<td><p>MiiModel</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000803</p></td>
@@ -729,7 +758,8 @@ Decimal versions use the format:
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;BrowserDll&quot; - Mounted as &quot;shareddata:/&quot;. Contains various browser data: emojis, OSS NROs, &quot;buildinfo/buildinfo.dat&quot;, ...</p></td>
+<td><p>BrowserDll</p></td>
+<td><p>Mounted as &quot;shareddata:/&quot;. Contains various browser data: emojis, OSS NROs, &quot;buildinfo/buildinfo.dat&quot;, ...</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000804</p></td>
@@ -740,7 +770,8 @@ Decimal versions use the format:
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;Help&quot; - HTML resources: Open-source licenses (&quot;Intellectual Property Notices&quot;) and seizure warnings(&quot;Health &amp; Safety Information&quot;). The former is stored at FS &quot;/legallines.htdocs/&quot;<br />
+<td><p>Help</p></td>
+<td><p>HTML resources: Open-source licenses (&quot;Intellectual Property Notices&quot;) and seizure warnings(&quot;Health &amp; Safety Information&quot;). The former is stored at FS &quot;/legallines.htdocs/&quot;<br />
 while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 </tr>
 <tr class="even">
@@ -748,7 +779,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;SharedFont&quot; - Chinese and Korean dictionaries.</p></td>
+<td><p>SharedFont</p></td>
+<td><p>Chinese and Korean dictionaries.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000806</p></td>
@@ -760,7 +792,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;NgWord&quot; - Bad words.</p></td>
+<td><p>NgWord</p></td>
+<td><p>Bad words.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000807</p></td>
@@ -770,12 +803,14 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;SsidList&quot; - <a href="Hotspot List.md" title="wikilink">Hotspot List</a>.</p></td>
+<td><p>SsidList</p></td>
+<td><p><a href="Hotspot List.md" title="wikilink">Hotspot List</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000808</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)</p></td>
-<td><p>&quot;Dictionary&quot; - European, English, and Japanese dictionaries.</p></td>
+<td><p>Dictionary</p></td>
+<td><p>European, English, and Japanese dictionaries.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000809</p></td>
@@ -795,7 +830,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.2.md" title="wikilink">v335675432</a> (5.0.2.40)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;SystemVersion&quot; - <a href="System Version Title.md" title="wikilink">System Version Title</a>.</p></td>
+<td><p>SystemVersion</p></td>
+<td><p><a href="System Version Title.md" title="wikilink">System Version Title</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000080A</p></td>
@@ -804,7 +840,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;AvatarImage&quot; - Background and Character images for user avatars (RGBA format &amp; Yaz0 compression).</p></td>
+<td><p>AvatarImage</p></td>
+<td><p>Background and Character images for user avatars (RGBA format &amp; Yaz0 compression).</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000080B</p></td>
@@ -814,12 +851,14 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LocalNews&quot; - Tutorial images and strings. Used for the offline news by the News applet.</p></td>
+<td><p>LocalNews</p></td>
+<td><p>Tutorial images and strings. Used for the offline news by the News applet.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000080C</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)</p></td>
-<td><p>&quot;Eura&quot; - EULA. Also accessed by <a href="NS Services.md" title="wikilink">NS</a>.</p></td>
+<td><p>Eula</p></td>
+<td><p>Accessed by <a href="NS Services.md" title="wikilink">NS</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000080D</p></td>
@@ -827,7 +866,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>&quot;UrlBlackList&quot;</p></td>
+<td><p>UrlBlackList</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000080E</p></td>
@@ -838,12 +878,14 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;TimeZoneBinary&quot;</p></td>
+<td><p>TimeZoneBinary</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>010000000000080F</p></td>
 <td></td>
-<td><p>&quot;BrowserCertStore&quot; (currently not present on retail devices)</p></td>
+<td><p>CertStoreCruiser</p></td>
+<td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000810</p></td>
@@ -854,7 +896,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;FontNintendoExtension&quot;</p></td>
+<td><p>FontNintendoExtension</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000811</p></td>
@@ -865,7 +908,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;FontStandard&quot;</p></td>
+<td><p>FontStandard</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000812</p></td>
@@ -876,7 +920,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;FontKorean&quot;</p></td>
+<td><p>FontKorean</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000813</p></td>
@@ -887,7 +932,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;FontChineseTraditional&quot;</p></td>
+<td><p>FontChineseTraditional</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000814</p></td>
@@ -898,12 +944,14 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;FontChineseSimple&quot;</p></td>
+<td><p>FontChineseSimple</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000815</p></td>
 <td></td>
-<td><p>&quot;FontBfcpx&quot; (currently not present on retail devices)</p></td>
+<td><p>FontBfcpx</p></td>
+<td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000816</p></td>
@@ -923,6 +971,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.2.md" title="wikilink">v335675432</a> (5.0.2.40)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>SystemUpdate</p></td>
 <td><p>Contains the title-listing for the associated sysupdate in the <a href="NCA.md" title="wikilink">NCA</a>-type0 .cnmt.</p></td>
 </tr>
 <tr class="even">
@@ -937,6 +986,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.1.md" title="wikilink">v335609886</a> (5.0.1.30)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>FirmwareDebugSettings</p></td>
 <td><p>System config.</p></td>
 </tr>
 <tr class="odd">
@@ -952,6 +1002,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>BootImagePackage</p></td>
 <td><p>Firmware Package A: Normal Firmware.</p></td>
 </tr>
 <tr class="even">
@@ -967,6 +1018,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>BootImagePackageSafe</p></td>
 <td><p>Firmware Package B: SafeMode Firmware. See <a href="Boot Modes#Safe Mode.md##Safe_Mode" title="wikilink">Safe Mode</a>.</p></td>
 </tr>
 <tr class="odd">
@@ -982,6 +1034,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>BootImagePackageExFat</p></td>
 <td><p>Firmware Package C: Normal Firmware (exFAT variant). Identical to 0100000000000819 with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
 <tr class="even">
@@ -991,6 +1044,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>BootImagePackageExFatSafe</p></td>
 <td><p>Firmware Package D: SafeMode Firmware (exFAT variant). Identical to 010000000000081A with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
 <tr class="odd">
@@ -1002,6 +1056,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>FatalMessage</p></td>
 <td><p>Errdisp strings.</p></td>
 </tr>
 <tr class="even">
@@ -1011,6 +1066,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>ControllerIcon</p></td>
 <td><p>Controller gfx/icon data + dummy file.</p></td>
 </tr>
 <tr class="odd">
@@ -1021,6 +1077,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>PlatformConfigIcosa</p></td>
 <td><p>Icosa system config.</p></td>
 </tr>
 <tr class="even">
@@ -1031,6 +1088,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>PlatformConfigCopper</p></td>
 <td><p>Copper system config.</p></td>
 </tr>
 <tr class="odd">
@@ -1040,6 +1098,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)</p></td>
+<td><p>PlatformConfigHoag</p></td>
 <td><p>Hoag system config.</p></td>
 </tr>
 <tr class="even">
@@ -1050,6 +1109,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>ControllerFirmware</p></td>
 <td><p>Firmware binaries for peripherals (hardware within Joy-Cons/etc).</p></td>
 </tr>
 <tr class="odd">
@@ -1059,6 +1119,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>NgWord2</p></td>
 <td><p>Contains version.dat and ac_*_nx files. All of the *_nx files stored under here are compressed with gzip.</p></td>
 </tr>
 <tr class="even">
@@ -1066,6 +1127,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>PlatformConfigIcosaMariko</p></td>
 <td><p>IcosaMariko system config.</p></td>
 </tr>
 <tr class="odd">
@@ -1073,20 +1135,23 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>Application blacklist. Used by <a href="NS Services.md" title="wikilink">NS</a> for restricting application installation and updates.</p></td>
+<td><p>ApplicationBlackList</p></td>
+<td><p>Used by <a href="NS Services.md" title="wikilink">NS</a> for restricting application installation and updates.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000826</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<td><p>RebootlessSystemUpdateVersion</p></td>
 <td><p>Rebootless system update version file.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000827</p></td>
 <td><p><a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>CAction (content action). Used by <a href="AM services.md" title="wikilink">AM</a>.</p></td>
+<td><p>ContentActionTable</p></td>
+<td><p>Used by <a href="AM services.md" title="wikilink">AM</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1098,7 +1163,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <tr class="header">
 <th><p>Title-id</p></th>
 <th><p>Versions</p></th>
-<th><p>Description</p></th>
+<th><p>Name</p></th>
+<th><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1113,7 +1179,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.1.md" title="wikilink">v335609886</a> (5.0.1.30)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;SystemAppletMenu&quot; - <a href="Qlaunch.md" title="wikilink">qlaunch</a> system applet, launched by NS with TID loaded from system-config-title.</p></td>
+<td><p>qlaunch (SystemAppletMenu)</p></td>
+<td><p><a href="Qlaunch.md" title="wikilink">qlaunch</a> system applet, launched by NS with TID loaded from system-config-title.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000001001</p></td>
@@ -1123,7 +1190,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletAuth&quot;</p></td>
+<td><p>auth (LibraryAppletAuth)</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001002</p></td>
@@ -1132,7 +1200,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>&quot;LibraryAppletCabinet&quot;</p></td>
+<td><p>cabinet (LibraryAppletCabinet)</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0100000000001003</p></td>
@@ -1143,7 +1212,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletController&quot;</p></td>
+<td><p>controller (LibraryAppletController)</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001004</p></td>
@@ -1153,7 +1223,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletDataErase&quot;</p></td>
+<td><p>dataErase (LibraryAppletDataErase)</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0100000000001005</p></td>
@@ -1162,7 +1233,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
-<td><p>&quot;LibraryAppletError&quot;</p></td>
+<td><p>error (LibraryAppletError)</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001006</p></td>
@@ -1172,7 +1244,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletNetConnect&quot;</p></td>
+<td><p>netConnect (LibraryAppletNetConnect)</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0100000000001007</p></td>
@@ -1183,7 +1256,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletPlayerSelect&quot;</p></td>
+<td><p>playerSelect (LibraryAppletPlayerSelect)</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001008</p></td>
@@ -1195,7 +1269,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p><a href="Software Keyboard.md" title="wikilink">&quot;LibraryAppletSwkbd&quot;</a></p></td>
+<td><p><a href="Software Keyboard.md" title="wikilink">swkbd (LibraryAppletSwkbd)</a></p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0100000000001009</p></td>
@@ -1205,7 +1280,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletMiiEdit&quot;</p></td>
+<td><p>miiEdit (LibraryAppletMiiEdit)</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000100A</p></td>
@@ -1218,7 +1294,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletWeb&quot; - <a href="Internet Browser.md" title="wikilink">WebApplet</a>.</p></td>
+<td><p>web (LibraryAppletWeb)</p></td>
+<td><p><a href="Internet Browser.md" title="wikilink">WebApplet</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000100B</p></td>
@@ -1231,7 +1308,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletShop&quot; - <a href="Internet Browser.md" title="wikilink">ShopN</a> applet.</p></td>
+<td><p>shop (LibraryAppletShop)</p></td>
+<td><p><a href="Internet Browser.md" title="wikilink">ShopN</a> applet.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000100C</p></td>
@@ -1242,7 +1320,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;OverlayApplet&quot; - TID is loaded by NS from system-config-title.</p></td>
+<td><p>overlayDisp (OverlayApplet)</p></td>
+<td><p>TID is loaded by NS from system-config-title.</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000100D</p></td>
@@ -1253,12 +1332,14 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletPhotoViewer&quot;</p></td>
+<td><p>photoViewer (LibraryAppletPhotoViewer)</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000100E</p></td>
 <td></td>
-<td><p>&quot;LibraryAppletSet&quot; (currently not present on retail devices)</p></td>
+<td><p>set (LibraryAppletSet)</p></td>
+<td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000100F</p></td>
@@ -1271,7 +1352,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletOfflineWeb&quot; - <a href="Internet Browser.md" title="wikilink">Offline</a> web-applet.</p></td>
+<td><p>offlineWeb (LibraryAppletOfflineWeb)</p></td>
+<td><p><a href="Internet Browser.md" title="wikilink">Offline</a> web-applet.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001010</p></td>
@@ -1284,7 +1366,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletLoginShare&quot; - <a href="Internet Browser.md" title="wikilink">Whitelisted</a> applet. (LoginApplet+ShareApplet+LobbyApplet)</p></td>
+<td><p>loginShare (LibraryAppletLoginShare)</p></td>
+<td><p><a href="Internet Browser.md" title="wikilink">Whitelisted</a> applet. (LoginApplet+ShareApplet+LobbyApplet)</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000001011</p></td>
@@ -1297,7 +1380,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletWifiWebAuth&quot; - <a href="Internet Browser.md" title="wikilink">WifiWebAuth</a> applet.</p></td>
+<td><p>wifiWebAuth (LibraryAppletWifiWebAuth)</p></td>
+<td><p><a href="Internet Browser.md" title="wikilink">WifiWebAuth</a> applet.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001012</p></td>
@@ -1307,7 +1391,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;Starter&quot;</p></td>
+<td><p>starter (DummyStarter)</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0100000000001013</p></td>
@@ -1320,9 +1405,16 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.2.md" title="wikilink">v335675432</a> (5.0.2.40)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;LibraryAppletMyPage&quot;</p></td>
+<td><p>myPage (LibraryAppletMyPage)</p></td>
+<td></td>
 </tr>
 <tr class="odd">
+<td><p>0100000000001014</p></td>
+<td></td>
+<td><p>PlayReport</p></td>
+<td></td>
+</tr>
+<tr class="even">
 <td><p>0100000000001015</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
@@ -1330,22 +1422,44 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>&quot;MaintenanceMenu&quot; - Initial applet displayed when booting into <a href="Recovery Mode.md" title="wikilink">Recovery_Mode</a>. This title is launched by <a href="NS Services.md" title="wikilink">NS</a> when a state flag is val1 indicating that this title should be launched instead of the above &quot;SystemAppletMenu&quot; title.</p></td>
+<td><p>MaintenanceMenu</p></td>
+<td><p>Initial applet displayed when booting into <a href="Recovery Mode.md" title="wikilink">Recovery_Mode</a>. This title is launched by <a href="NS Services.md" title="wikilink">NS</a> when a state flag is val1 indicating that this title should be launched instead of the above &quot;SystemAppletMenu&quot; title.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0100000000001016</p></td>
+<td></td>
 <td></td>
 <td><p>TitleID used by <a href="NS Services.md" title="wikilink">NS</a> when a certain flag is non-zero, in multiple places including around code using string &quot;application_install&quot;. This title doesn't seem to exist for retail.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>010000000000101B</p></td>
 <td></td>
-<td><p>&quot;DummyAppletShop&quot; (currently not present on retail devices)</p></td>
+<td><p>DummyECApplet (DummyAppletShop)</p></td>
+<td><p>Currently not present on retail devices.</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000000000101D</p></td>
+<td></td>
+<td><p>encounter</p></td>
+<td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000101E</p></td>
 <td></td>
+<td></td>
 <td><p>This title is referenced by [5.0.0+] <a href="NIM services.md" title="wikilink">NIM</a> when it accesses the <a href="Network#pearljam.md##pearljam" title="wikilink">pearljam</a> server, but does not exist on retail systems currently.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000001020</p></td>
+<td></td>
+<td><p>story</p></td>
+<td><p>Currently not present on retail devices.</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001FFF</p></td>
+<td></td>
+<td><p>EndOceanProgramId</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -1355,54 +1469,128 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 Note: No 01000000000020XX titles exist on retail
 systems.
 
-| Title-id         | Versions | Description                                                                                           |
-| ---------------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| 0100000000002000 |          | A2BoardFunction                                                                                       |
-| 0100000000002001 |          | A3Wireless                                                                                            |
-| 0100000000002002 |          | C1LcdAndKey - "LcdAndKey". LCD/Keyboard testing.                                                      |
-| 0100000000002003 |          | C2UsbHpmic - "UsbAndHPMicTest". USB and audio testing.                                                |
-| 0100000000002004 |          | C3Aging - "Aging". Graphics/Framerate testing.                                                        |
-| 0100000000002005 |          | C4SixAxis - "6axisTest". Sixaxis (controller peripheral) testing.                                     |
-| 0100000000002006 |          | C5Wireless - "AssembledWireless". Wireless testing.                                                   |
-| 0100000000002007 |          | C7FinalCheck - "FinalCheck".                                                                          |
-| 0100000000002041 |          | recovery                                                                                              |
-| 0100000000002044 |          | "HB-TBIntegrationTest"                                                                                |
-| 010000000000204D |          | BackupSaveData                                                                                        |
-| 010000000000204E |          | A4BoardCalWriti - "BoardCalWriting". Writes calibration data to NAND.                                 |
-| 0100000000002055 |          | GameCardWriter                                                                                        |
-| 0100000000002054 |          | RepairSslCertif - "RepairSslCertificate".                                                             |
-| 0100000000002064 |          | DevMenu                                                                                               |
-| 0100000000002065 |          | DevMenuApp                                                                                            |
-| 0100000000002071 |          | SnapShotDumper - Used by [NS](NS%20Services.md "wikilink").                                           |
-| 0100000000002099 |          | DevOverlayDisp                                                                                        |
-| 010000000000209B |          | GpuCoreDumper - Used by [AM](AM%20services.md "wikilink").                                            |
-| 010000000000209C |          | TestApplication - "TestApplicationLauncher". Factory qlaunch replacement, used to launch other tests. |
-| 01000000000020F0 |          | "devmenuapp\_installer" - Launched by [boot2](Boot2.md "wikilink").                                   |
-| 0100000000002101 |          | DevMenuCommand                                                                                        |
-| 0100000000002103 |          | [SystemInitializ](Factory%20Setup.md "wikilink")                                                      |
-| 0100000000002106 |          | [CalWriterManu](Factory%20Setup.md "wikilink")                                                        |
-| 010000000000210A |          | SystemUpdater                                                                                         |
-| 0100000000002111 |          | C9LcdSpker                                                                                            |
+| Title-id         | Versions | Name                                                                 | Notes                                                    |
+| ---------------- | -------- | -------------------------------------------------------------------- | -------------------------------------------------------- |
+| 0100000000002000 |          | A2BoardFunction                                                      |                                                          |
+| 0100000000002001 |          | A3Wireless                                                           |                                                          |
+| 0100000000002002 |          | C1LcdAndKey (LcdAndKey)                                              | LCD/Keyboard testing.                                    |
+| 0100000000002003 |          | C2UsbHpmic (UsbAndHPMicTest)                                         | USB and audio testing.                                   |
+| 0100000000002004 |          | C3Aging (Aging)                                                      | Graphics/Framerate testing.                              |
+| 0100000000002005 |          | C4SixAxis (6axisTest)                                                | Sixaxis (controller peripheral) testing.                 |
+| 0100000000002006 |          | C5Wireless (AssembledWireless)                                       | Wireless testing.                                        |
+| 0100000000002007 |          | C7FinalCheck (FinalCheck)                                            |                                                          |
+| 010000000000203F |          | AutoCapture                                                          |                                                          |
+| 0100000000002040 |          | DevMenuCommandSystem                                                 |                                                          |
+| 0100000000002041 |          | recovery                                                             |                                                          |
+| 0100000000002042 |          | DevMenuSystem                                                        |                                                          |
+| 0100000000002044 |          | HB-TBIntegrationTest                                                 |                                                          |
+| 010000000000204D |          | BackupSaveData                                                       |                                                          |
+| 010000000000204E |          | A4BoardCalWriti (BoardCalWriting)                                    | Writes calibration data to NAND.                         |
+| 0100000000002054 |          | RepairSslCertificate                                                 |                                                          |
+| 0100000000002055 |          | GameCardWriter                                                       |                                                          |
+| 0100000000002056 |          | UsbPdTestTool                                                        |                                                          |
+| 0100000000002057 |          | RepairDeletePctl                                                     |                                                          |
+| 0100000000002058 |          | RepairBackup                                                         |                                                          |
+| 0100000000002059 |          | RepairRestore                                                        |                                                          |
+| 010000000000205A |          | RepairAccountTransfer                                                |                                                          |
+| 010000000000205B |          | RepairAutoNetworkUpdater                                             |                                                          |
+| 010000000000205C |          | RefurbishReset                                                       |                                                          |
+| 010000000000205D |          | RepairAssistCup                                                      |                                                          |
+| 010000000000205E |          | RepairPairingCutter                                                  |                                                          |
+| 0100000000002064 |          | DevMenu                                                              |                                                          |
+| 0100000000002065 |          | DevMenuApp                                                           |                                                          |
+| 0100000000002066 |          | GetGameCardAsicInfo                                                  |                                                          |
+| 0100000000002068 |          | NfpDebugToolSystem                                                   |                                                          |
+| 0100000000002069 |          | AlbumSynchronizer                                                    |                                                          |
+| 0100000000002071 |          | SnapShotDumper                                                       | Used by [NS](NS%20Services.md "wikilink").               |
+| 0100000000002073 |          | DevMenuSystemApp                                                     |                                                          |
+| 0100000000002099 |          | DevOverlayDisp                                                       |                                                          |
+| 010000000000209A |          | NandVerifier                                                         |                                                          |
+| 010000000000209B |          | GpuCoreDumper                                                        | Used by [AM](AM%20services.md "wikilink").               |
+| 010000000000209C |          | TestApplication (TestApplicationLauncher)                            | Factory qlaunch replacement, used to launch other tests. |
+| 010000000000209E |          | HelloWorld                                                           |                                                          |
+| 01000000000020A0 |          | XcieWriter                                                           |                                                          |
+| 01000000000020A1 |          | GpuOverrunNotifier                                                   |                                                          |
+| 01000000000020C8 |          | NfpDebugTool                                                         |                                                          |
+| 01000000000020CA |          | NoftWriter                                                           |                                                          |
+| 01000000000020D0 |          | BcatSystemDebugTool                                                  |                                                          |
+| 01000000000020D1 |          | DevSafeModeUpdater                                                   |                                                          |
+| 01000000000020D3 |          | ControllerConnectionAnalyzer                                         |                                                          |
+| 01000000000020D4 |          | DevKitUpdater                                                        |                                                          |
+| 01000000000020D7 |          | RepairReinitializeFuelGauge                                          |                                                          |
+| 01000000000020D6 |          | RepairTimeReviser                                                    |                                                          |
+| 01000000000020DA |          | RepairAbortMigration                                                 |                                                          |
+| 01000000000020E1 |          | AlbumDownloader                                                      |                                                          |
+| 01000000000020E3 |          | FuelGaugeDumper                                                      |                                                          |
+| 01000000000020E4 |          | UnsafeExtract                                                        |                                                          |
+| 01000000000020E5 |          | UnsafeEngrave                                                        |                                                          |
+| 01000000000020EE |          | BluetoothSettingTool                                                 |                                                          |
+| 01000000000020F0 |          | ApplicationInstallerRomfs (devmenuapp\_installer)                    | Launched by [boot2](Boot2.md "wikilink").                |
+| 0100000000002100 |          | DevMenuLotcheckDownloader                                            |                                                          |
+| 0100000000002101 |          | DevMenuCommand                                                       |                                                          |
+| 0100000000002102 |          | ExportPartition                                                      |                                                          |
+| 0100000000002103 |          | [SystemInitializer](Factory%20Setup.md "wikilink") (SystemInitializ) |                                                          |
+| 0100000000002105 |          | WriteToStorage                                                       |                                                          |
+| 0100000000002104 |          | SystemUpdaterHostFs                                                  |                                                          |
+| 0100000000002106 |          | [CalWriter](Factory%20Setup.md "wikilink") (CalWriterManu)           |                                                          |
+| 0100000000002107 |          | SettingsManager                                                      |                                                          |
+| 0100000000002109 |          | testBuildSystemIris                                                  |                                                          |
+| 010000000000210A |          | SystemUpdater                                                        |                                                          |
+| 010000000000210C |          | ControllerFirmwareUpdater                                            |                                                          |
+| 010000000000210B |          | nvnflinger\_util                                                     |                                                          |
+| 010000000000210D |          | testBuildSystemNintendoWare (Test)                                   |                                                          |
+| 0100000000002110 |          | TestSaveDataCreator                                                  |                                                          |
+| 0100000000002111 |          | C9LcdSpker                                                           |                                                          |
+| 0100000000002114 |          | RankTurn                                                             |                                                          |
+| 010000000000211A |          | PreinstallAppWriter                                                  |                                                          |
+| 010000000000211C |          | ControllerSerialFlashTool                                            |                                                          |
+| 010000000000211D |          | ControllerFlashWriter                                                |                                                          |
+| 0100000000002116 |          | BleTestTool                                                          |                                                          |
+| 0100000000002120 |          | ControllerTestApp                                                    |                                                          |
+| 0100000000002121 |          | HidInspectionTool                                                    |                                                          |
+| 0100000000002124 |          | BatteryCyclesEditor                                                  |                                                          |
+| 0100000000002125 |          | UsbFirmwareUpdater                                                   |                                                          |
+| 0100000000002126 |          | PalmaSerialCodeTool                                                  |                                                          |
+| 0100000000002127 |          | renderdoccmd                                                         |                                                          |
+
+## System Debug Modules
+
+| Title-id         | Versions | Name             | Notes |
+| ---------------- | -------- | ---------------- | ----- |
+| 0100000000003002 |          | DummyProcess     |       |
+| 0100000000003003 |          | DebugMonitor0    |       |
+| 0100000000003004 |          | SystemHelloWorld |       |
 
 ## Target Tools
 
-| Title-id         | Versions | Description                                      |
-| ---------------- | -------- | ------------------------------------------------ |
-| 1000000000000001 |          | [SystemInitializ](Factory%20Setup.md "wikilink") |
-| 1000000000000004 |          | [CalWriterManu](Factory%20Setup.md "wikilink")   |
-| 1000000000000005 |          | DevMenuCommand                                   |
-| 1000000000000006 |          | SettingsManager                                  |
-| 1000000000000007 |          | "ApplicationLauncer"                             |
-| 100000000000000B |          | SnapShotDumper                                   |
-| 100000000000000C |          | SystemUpdater                                    |
-| 100000000000000E |          | ControllerFirmw - "ControllerFirmwareUpdater".   |
+| Title-id         | Versions | Name                                                                 | Notes |
+| ---------------- | -------- | -------------------------------------------------------------------- | ----- |
+| 1000000000000001 |          | [SystemInitializer](Factory%20Setup.md "wikilink") (SystemInitializ) |       |
+| 1000000000000004 |          | [CalWriter](Factory%20Setup.md "wikilink") (CalWriterManu)           |       |
+| 1000000000000005 |          | DevMenuCommand                                                       |       |
+| 1000000000000006 |          | SettingsManager                                                      |       |
+| 1000000000000007 |          | ApplicationLauncer                                                   |       |
+| 100000000000000B |          | SnapShotDumper                                                       |       |
+| 100000000000000C |          | SystemUpdater                                                        |       |
+| 100000000000000E |          | ControllerFirmwareUpdater                                            |       |
 
 ## Factory System Modules
 
-| Title-id         | Versions | Description                                                                                                                                                    |
-| ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 100000000000B120 |          | nvdbgsvc - Launched by maintenance mode [boot2.manuBoot](Boot2.md "wikilink"), but not present in retail or [factory firmware](Factory%20Setup.md "wikilink"). |
-| 100000000000B14A |          | [manu](Manu%20Services.md "wikilink") - installed in [factory firmware](Factory%20Setup.md "wikilink").                                                        |
+| Title-id         | Versions | Name                                  | Notes                                                                                                                                               |
+| ---------------- | -------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 010000000000B120 |          | nvdbgsvc                              | Launched by maintenance mode [boot2.manuBoot](Boot2.md "wikilink"), but not present in retail or [factory firmware](Factory%20Setup.md "wikilink"). |
+| 010000000000B14A |          | [manu](Manu%20Services.md "wikilink") | Installed in [factory firmware](Factory%20Setup.md "wikilink").                                                                                     |
+| 010000000000B14B |          | ManuUsbLoopBack                       |                                                                                                                                                     |
+| 010000000000B1B8 |          | DevFwdbgHbPackage                     |                                                                                                                                                     |
+| 010000000000B1B9 |          | DevFwdbgUsbPackage                    |                                                                                                                                                     |
+| 010000000000B1BA |          | ProdFwdbgPackage                      |                                                                                                                                                     |
+| 010000000000B22A |          | scs                                   |                                                                                                                                                     |
+| 010000000000B22B |          | ControllerFirmwareDebug               |                                                                                                                                                     |
+| 010000000000B240 |          | htc                                   |                                                                                                                                                     |
+| 010000000000C600 |          | BdkSample01                           |                                                                                                                                                     |
+| 010000000000C601 |          | BdkSample02                           |                                                                                                                                                     |
+| 010000000000C602 |          | BdkSample03                           |                                                                                                                                                     |
+| 010000000000C603 |          | BdkSample04                           |                                                                                                                                                     |
 
 ## System Applications
 
@@ -1411,7 +1599,8 @@ systems.
 <tr class="header">
 <th><p>Title-id</p></th>
 <th><p>Versions</p></th>
-<th><p>Description</p></th>
+<th><p>Name</p></th>
+<th><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1419,12 +1608,122 @@ systems.
 <td><p>01008BB00013C000</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)</p></td>
-<td><p>&quot;<a href="Flog.md" title="wikilink">flog</a>&quot; NES emulator.</p></td>
+<td><p><a href="Flog.md" title="wikilink">flog</a></p></td>
+<td><p>NES emulator.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100069000078000</p></td>
 <td><p>v0</p></td>
-<td><p>&quot;Retail Interactive Display Menu&quot;. This title can be launched by <a href="Qlaunch.md" title="wikilink">qlaunch</a>, but is not normally installed on retail systems.</p></td>
+<td><p>RetailInteractiveDisplayMenu (DevQuestMenu)</p></td>
+<td><p>This title can be launched by <a href="Qlaunch.md" title="wikilink">qlaunch</a>, but is not normally installed on retail systems.</p></td>
+</tr>
+<tr class="odd">
+<td><p>010000B003486000</p></td>
+<td></td>
+<td><p>AudioUsbMicDebugTool</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0100458001E04000</p></td>
+<td></td>
+<td><p>BcatTestApp01</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0100F910020F8000</p></td>
+<td></td>
+<td><p>BcatTestApp02</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0100B7D0020FC000</p></td>
+<td></td>
+<td><p>BcatTestApp03</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0100132002100000</p></td>
+<td></td>
+<td><p>BcatTestApp04</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0100935002116000</p></td>
+<td></td>
+<td><p>BcatTestApp05</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0100DA4002130000</p></td>
+<td></td>
+<td><p>BcatTestApp06</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0100B0F002104000</p></td>
+<td></td>
+<td><p>BcatTestApp07</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>010051E002132000</p></td>
+<td></td>
+<td><p>BcatTestApp08</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>01004CB0015C8000</p></td>
+<td></td>
+<td><p>BcatTestApp09</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>01009720015CA000</p></td>
+<td></td>
+<td><p>BcatTestApp10</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>01002F20015C6000</p></td>
+<td></td>
+<td><p>BcatTestApp11</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0100204001F90000</p></td>
+<td></td>
+<td><p>BcatTestApp12</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0100060001F92000</p></td>
+<td></td>
+<td><p>BcatTestApp13</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0100C26001F94000</p></td>
+<td></td>
+<td><p>BcatTestApp14</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0100462001F96000</p></td>
+<td></td>
+<td><p>BcatTestApp15</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>01005C6001F98000</p></td>
+<td></td>
+<td><p>BcatTestApp16</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0100810002D5A000</p></td>
+<td></td>
+<td><p>ShopMonitaringTool</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
