@@ -43,21 +43,21 @@ This is "nn::grcsrv::IGameMovieTrimmer".
 This is
 "nn::grcsrv::IMovieMaker".
 
-| Cmd | Name                                                                                       |
-| --- | ------------------------------------------------------------------------------------------ |
-| 2   | [\#CreateVideoProxy](#CreateVideoProxy "wikilink")                                         |
-| 10  | [\#OpenOffscreenLayer](#OpenOffscreenLayer "wikilink")                                     |
-| 11  | [\#CloseOffscreenLayer](#CloseOffscreenLayer "wikilink")                                   |
-| 20  | [\#StartOffscreenRecording](#StartOffscreenRecording "wikilink")                           |
-| 21  | [\#AbortOffscreenRecording](#AbortOffscreenRecording "wikilink")                           |
-| 22  | [\#RequestOffscreenRecordingFinishReady](#RequestOffscreenRecordingFinishReady "wikilink") |
-| 23  | [\#CompleteOffscreenRecordingFinish](#CompleteOffscreenRecordingFinish "wikilink")         |
-| 24  | [\#StartOffscreenRecordingEx](#StartOffscreenRecordingEx "wikilink")                       |
-| 25  | [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")   |
-| 30  | [\#GetOffscreenLayerError](#GetOffscreenLayerError "wikilink")                             |
-| 41  | [\#EncodeOffscreenLayerAudioSample](#EncodeOffscreenLayerAudioSample "wikilink")           |
-| 50  | GetOffscreenLayerRecordingFinishReadyEvent                                                 |
-| 52  | GetOffscreenLayerAudioEncodeReadyEvent                                                     |
+| Cmd | Name                                                                                                   |
+| --- | ------------------------------------------------------------------------------------------------------ |
+| 2   | [\#CreateVideoProxy](#CreateVideoProxy "wikilink")                                                     |
+| 10  | [\#OpenOffscreenLayer](#OpenOffscreenLayer "wikilink")                                                 |
+| 11  | [\#CloseOffscreenLayer](#CloseOffscreenLayer "wikilink")                                               |
+| 20  | [\#StartOffscreenRecording](#StartOffscreenRecording "wikilink")                                       |
+| 21  | [\#AbortOffscreenRecording](#AbortOffscreenRecording "wikilink")                                       |
+| 22  | [\#RequestOffscreenRecordingFinishReady](#RequestOffscreenRecordingFinishReady "wikilink")             |
+| 23  | [\#CompleteOffscreenRecordingFinish](#CompleteOffscreenRecordingFinish "wikilink")                     |
+| 24  | [\#StartOffscreenRecordingEx](#StartOffscreenRecordingEx "wikilink")                                   |
+| 25  | [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")               |
+| 30  | [\#GetOffscreenLayerError](#GetOffscreenLayerError "wikilink")                                         |
+| 41  | [\#EncodeOffscreenLayerAudioSample](#EncodeOffscreenLayerAudioSample "wikilink")                       |
+| 50  | [\#GetOffscreenLayerRecordingFinishReadyEvent](#GetOffscreenLayerRecordingFinishReadyEvent "wikilink") |
+| 52  | [\#GetOffscreenLayerAudioEncodeReadyEvent](#GetOffscreenLayerAudioEncodeReadyEvent "wikilink")         |
 
 ## CreateVideoProxy
 
@@ -105,6 +105,14 @@ Takes an input u64 and a type-0x5 input buffer, returns an output u64.
 ## GetOffscreenLayerError
 
 Takes an input u64, no output.
+
+## GetOffscreenLayerRecordingFinishReadyEvent
+
+Takes an input u64, returns an output handle.
+
+## GetOffscreenLayerAudioEncodeReadyEvent
+
+Takes an input u64, returns an output handle.
 
 # OffscreenRecordingParameter
 

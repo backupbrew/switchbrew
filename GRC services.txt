@@ -79,9 +79,9 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 41 || [[#EncodeOffscreenLayerAudioSample]]
 |-
-| 50 || GetOffscreenLayerRecordingFinishReadyEvent
+| 50 || [[#GetOffscreenLayerRecordingFinishReadyEvent]]
 |-
-| 52 || GetOffscreenLayerAudioEncodeReadyEvent
+| 52 || [[#GetOffscreenLayerAudioEncodeReadyEvent]]
 |}
 
 == CreateVideoProxy ==
@@ -116,6 +116,12 @@ Takes an input u64 and a type-0x5 input buffer, returns an output u64.
 
 == GetOffscreenLayerError ==
 Takes an input u64, no output.
+
+== GetOffscreenLayerRecordingFinishReadyEvent ==
+Takes an input u64, returns an output handle.
+
+== GetOffscreenLayerAudioEncodeReadyEvent ==
+Takes an input u64, returns an output handle.
 
 = OffscreenRecordingParameter =
 This is a 0x80-byte struct.
