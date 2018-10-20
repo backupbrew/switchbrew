@@ -857,7 +857,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <tr class="odd">
 <td><p>010000000000080C</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)</p></td>
-<td><p>Eula</p></td>
+<td><p>Eula (Eura)</p></td>
 <td><p>Accessed by <a href="NS Services.md" title="wikilink">NS</a>.</p></td>
 </tr>
 <tr class="even">
@@ -884,7 +884,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <tr class="even">
 <td><p>010000000000080F</p></td>
 <td></td>
-<td><p>CertStoreCruiser</p></td>
+<td><p>CertStoreCruiser (BrowserCertStore)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="odd">
