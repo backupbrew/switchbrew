@@ -10,6 +10,8 @@ This is "nn::apm::IManager".
 | 0 || OpenSession || Returns an [[#ISession]].
 |-
 | 1 || GetPerformanceMode || 
+|-
+| 6 || [6.0.0+] IsCpuOverclockEnabled || 
 |}
 
 = apm:p =
@@ -40,6 +42,8 @@ This is "nn::apm::ISystemManager".
 | 4 || ClearLastThrottlingState || 
 |-
 | 5 || [5.0.0+] LoadAndApplySettings || 
+|-
+| 6 || [6.0.0+] SetCpuBoostMode || 
 |}
 
 = ISession =
@@ -144,9 +148,9 @@ This is "nn::fgm::sf::IDebugger".
 |-
 ! Key || Size || Notes
 |-
-| battery_draining_enabled|| 1 || ?
+| battery_draining_enabled || 1 || ?
 |-
-| performance_mode_policy|| strlen || "auto": use boost mode when docked. "normal": never use boost mode. "boost": always use boost mode (devkit only).
+| performance_mode_policy || strlen || "auto": use boost mode when docked. "normal": never use boost mode. "boost": always use boost mode (devkit only).
 |-
 | sdev_cpu_overclock_enabled || 1 || Not used as of 3.0. May have been used to allow access to 1224MHz CPU mode?
 |-

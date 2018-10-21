@@ -6,10 +6,11 @@ for CPU, GPU, and memory.
 This is
 "nn::apm::IManager".
 
-| Cmd | Name               | Notes                                          |
-| --- | ------------------ | ---------------------------------------------- |
-| 0   | OpenSession        | Returns an [\#ISession](#ISession "wikilink"). |
-| 1   | GetPerformanceMode |                                                |
+| Cmd | Name                             | Notes                                          |
+| --- | -------------------------------- | ---------------------------------------------- |
+| 0   | OpenSession                      | Returns an [\#ISession](#ISession "wikilink"). |
+| 1   | GetPerformanceMode               |                                                |
+| 6   | \[6.0.0+\] IsCpuOverclockEnabled |                                                |
 
 # apm:p
 
@@ -32,6 +33,7 @@ This is
 | 3   | GetLastThrottlingState          |                                                |
 | 4   | ClearLastThrottlingState        |                                                |
 | 5   | \[5.0.0+\] LoadAndApplySettings |                                                |
+| 6   | \[6.0.0+\] SetCpuBoostMode      |                                                |
 
 # ISession
 
