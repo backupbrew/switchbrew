@@ -2,57 +2,60 @@
 
 This is "nn::npns::INpnsUser".
 
-| Cmd | Name |
-| --- | ---- |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
-| 7   |      |
-| 21  |      |
-| 23  |      |
-| 25  |      |
-| 101 |      |
-| 102 |      |
-| 103 |      |
-| 104 |      |
-| 111 |      |
+| Cmd | Name                               |
+| --- | ---------------------------------- |
+| 1   | ListenAll                          |
+| 2   | ListenTo                           |
+| 3   | Receive                            |
+| 4   | ReceiveRaw                         |
+| 5   | GetReceiveEvent                    |
+| 7   | GetStateChangeEvent                |
+| 21  | CreateToken                        |
+| 23  | DestroyToken                       |
+| 25  | QueryIsTokenValid                  |
+| 26  | \[6.0.0+\] ListenToMyApplicationId |
+| 101 | Suspend                            |
+| 102 | Resume                             |
+| 103 | GetState                           |
+| 104 | GetStatistics                      |
+| 111 | GetJid                             |
 
 # npns:s
 
 This is "nn::npns::INpnsSystem".
 
-| Cmd | Name |
-| --- | ---- |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
-| 6   |      |
-| 7   |      |
-| 11  |      |
-| 12  |      |
-| 13  |      |
-| 21  |      |
-| 22  |      |
-| 23  |      |
-| 24  |      |
-| 25  |      |
-| 31  |      |
-| 32  |      |
-| 101 |      |
-| 102 |      |
-| 103 |      |
-| 104 |      |
-| 105 |      |
-| 111 |      |
-| 112 |      |
-| 113 |      |
-| 114 |      |
-| 115 |      |
-| 201 |      |
-| 202 |      |
+| Cmd | Name                                  |
+| --- | ------------------------------------- |
+| 1   | ListenAll                             |
+| 2   | ListenTo                              |
+| 3   | Receive                               |
+| 4   | ReceiveRaw                            |
+| 5   | GetReceiveEvent                       |
+| 6   | ListenUndelivered                     |
+| 7   | GetStateChangeEvent                   |
+| 11  | SubscribeTopic                        |
+| 12  | UnsubscribeTopic                      |
+| 13  | QueryIsTopicExist                     |
+| 21  | CreateToken                           |
+| 22  | CreateTokenWithApplicationId          |
+| 23  | DestroyToken                          |
+| 24  | DestroyTokenWithApplicationId         |
+| 25  | QueryIsTokenValid                     |
+| 31  | UploadTokenToBaaS                     |
+| 32  | DestroyTokenForBaaS                   |
+| 33  | \[6.0.0+\] CreateTokenForBaas         |
+| 34  | \[6.0.0+\] SetBaasDeviceAccountIdList |
+| 101 | Suspend                               |
+| 102 | Resume                                |
+| 103 | GetState                              |
+| 104 | GetStatistics                         |
+| 105 | GetPlayReportRequestEvent             |
+| 111 | GetJid                                |
+| 112 | CreateJid                             |
+| 113 | DestroyJid                            |
+| 114 | AttachJid                             |
+| 115 | DetachJid                             |
+| 201 | RequestChangeStateForceTimed          |
+| 202 | RequestChangeStateForceAsync          |
 
 [Category:Services](Category:Services "wikilink")

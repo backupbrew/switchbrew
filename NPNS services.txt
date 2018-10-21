@@ -5,33 +5,35 @@ This is "nn::npns::INpnsUser".
 |-
 ! Cmd || Name
 |-
-| 1 ||
+| 1 || ListenAll
 |-
-| 2 ||
+| 2 || ListenTo
 |-
-| 3 ||
+| 3 || Receive
 |-
-| 4 ||
+| 4 || ReceiveRaw
 |-
-| 5 ||
+| 5 || GetReceiveEvent
 |-
-| 7 ||
+| 7 || GetStateChangeEvent
 |-
-| 21 ||
+| 21 || CreateToken
 |-
-| 23 ||
+| 23 || DestroyToken
 |-
-| 25 ||
+| 25 || QueryIsTokenValid
 |-
-| 101 ||
+| 26 || [6.0.0+] ListenToMyApplicationId
 |-
-| 102 ||
+| 101 || Suspend
 |-
-| 103 ||
+| 102 || Resume
 |-
-| 104 ||
+| 103 || GetState
 |-
-| 111 ||
+| 104 || GetStatistics
+|-
+| 111 || GetJid
 |}
 
 = npns:s =
@@ -41,63 +43,67 @@ This is "nn::npns::INpnsSystem".
 |-
 ! Cmd || Name
 |-
-| 1 ||
+| 1 || ListenAll
 |-
-| 2 ||
+| 2 || ListenTo
 |-
-| 3 ||
+| 3 || Receive
 |-
-| 4 ||
+| 4 || ReceiveRaw
 |-
-| 5 ||
+| 5 || GetReceiveEvent
 |-
-| 6 ||
+| 6 || ListenUndelivered
 |-
-| 7 ||
+| 7 || GetStateChangeEvent
 |-
-| 11 ||
+| 11 || SubscribeTopic
 |-
-| 12 ||
+| 12 || UnsubscribeTopic
 |-
-| 13 ||
+| 13 || QueryIsTopicExist
 |-
-| 21 ||
+| 21 || CreateToken
 |-
-| 22 ||
+| 22 || CreateTokenWithApplicationId
 |-
-| 23 ||
+| 23 || DestroyToken
 |-
-| 24 ||
+| 24 || DestroyTokenWithApplicationId
 |-
-| 25 ||
+| 25 || QueryIsTokenValid
 |-
-| 31 ||
+| 31 || UploadTokenToBaaS
 |-
-| 32 ||
+| 32 || DestroyTokenForBaaS
 |-
-| 101 ||
+| 33 || [6.0.0+] CreateTokenForBaas
 |-
-| 102 ||
+| 34 || [6.0.0+] SetBaasDeviceAccountIdList
 |-
-| 103 ||
+| 101 || Suspend
 |-
-| 104 ||
+| 102 || Resume
 |-
-| 105 ||
+| 103 || GetState
 |-
-| 111 ||
+| 104 || GetStatistics
 |-
-| 112 ||
+| 105 || GetPlayReportRequestEvent
 |-
-| 113 ||
+| 111 || GetJid
 |-
-| 114 ||
+| 112 || CreateJid
 |-
-| 115 ||
+| 113 || DestroyJid
 |-
-| 201 ||
+| 114 || AttachJid
 |-
-| 202 ||
+| 115 || DetachJid
+|-
+| 201 || RequestChangeStateForceTimed
+|-
+| 202 || RequestChangeStateForceAsync
 |}
 
 [[Category:Services]]
