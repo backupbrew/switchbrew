@@ -385,9 +385,9 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 01000000000020D4 || || DevKitUpdater ||
 |-
-| 01000000000020D7 || || RepairReinitializeFuelGauge ||
-|-
 | 01000000000020D6 || || RepairTimeReviser ||
+|-
+| 01000000000020D7 || || RepairReinitializeFuelGauge ||
 |-
 | 01000000000020DA || || RepairAbortMigration ||
 |-
@@ -423,9 +423,9 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 010000000000210A || || SystemUpdater ||
 |-
-| 010000000000210C || || ControllerFirmwareUpdater ||
-|-
 | 010000000000210B || || nvnflinger_util ||
+|-
+| 010000000000210C || || ControllerFirmwareUpdater ||
 |-
 | 010000000000210D || || testBuildSystemNintendoWare (Test) ||
 |-

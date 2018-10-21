@@ -1517,8 +1517,8 @@ systems.
 | 01000000000020D1 |          | DevSafeModeUpdater                                                   |                                                          |
 | 01000000000020D3 |          | ControllerConnectionAnalyzer                                         |                                                          |
 | 01000000000020D4 |          | DevKitUpdater                                                        |                                                          |
-| 01000000000020D7 |          | RepairReinitializeFuelGauge                                          |                                                          |
 | 01000000000020D6 |          | RepairTimeReviser                                                    |                                                          |
+| 01000000000020D7 |          | RepairReinitializeFuelGauge                                          |                                                          |
 | 01000000000020DA |          | RepairAbortMigration                                                 |                                                          |
 | 01000000000020E1 |          | AlbumDownloader                                                      |                                                          |
 | 01000000000020E3 |          | FuelGaugeDumper                                                      |                                                          |
@@ -1536,8 +1536,8 @@ systems.
 | 0100000000002107 |          | SettingsManager                                                      |                                                          |
 | 0100000000002109 |          | testBuildSystemIris                                                  |                                                          |
 | 010000000000210A |          | SystemUpdater                                                        |                                                          |
-| 010000000000210C |          | ControllerFirmwareUpdater                                            |                                                          |
 | 010000000000210B |          | nvnflinger\_util                                                     |                                                          |
+| 010000000000210C |          | ControllerFirmwareUpdater                                            |                                                          |
 | 010000000000210D |          | testBuildSystemNintendoWare (Test)                                   |                                                          |
 | 0100000000002110 |          | TestSaveDataCreator                                                  |                                                          |
 | 0100000000002111 |          | C9LcdSpker                                                           |                                                          |
