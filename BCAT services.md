@@ -92,24 +92,29 @@ These are "nn::news::detail::ipc::IServiceCreator".
 
 # prepo:a, prepo:m, prepo:u, prepo:s
 
-These are "nn::prepo::detail::ipc::IPrepoService".
+These are
+"nn::prepo::detail::ipc::IPrepoService".
 
-| Cmd   | Name                            |
-| ----- | ------------------------------- |
-| 10100 | SaveReport                      |
-| 10101 | SaveReportWithUser              |
-| 10200 | RequestImmediateTransmission    |
-| 10300 | GetTransmissionStatus           |
-| 20100 | SaveSystemReport                |
-| 20200 | \[4.0.0+\] SetOperationMode     |
-| 20101 | SaveSystemReportWithUser        |
-| 30100 | ClearStorage                    |
-| 40100 | IsUserAgreementCheckEnabled     |
-| 40101 | SetUserAgreementCheckEnabled    |
-| 90100 | GetStorageUsage                 |
-| 90200 | \[5.0.0+\] GetStatistics        |
-| 90201 | \[5.0.0+\] GetThroughputHistory |
-| 90300 | \[5.0.0+\] GetLastUploadError   |
+| Cmd   | Name                                                            |
+| ----- | --------------------------------------------------------------- |
+| 10100 | SaveReportOld (\[1.0.0-5.1.0\] SaveReport)                      |
+| 10101 | SaveReportWithUserOld (\[1.0.0-5.1.0\] SaveReportWithUser)      |
+| 10102 | \[6.0.0+\] SaveReport                                           |
+| 10103 | \[6.0.0+\] SaveReportWithUser                                   |
+| 10200 | RequestImmediateTransmission                                    |
+| 10300 | GetTransmissionStatus                                           |
+| 20100 | SaveSystemReport                                                |
+| 20101 | SaveSystemReportWithUser                                        |
+| 20200 | \[4.0.0+\] SetOperationMode                                     |
+| 30100 | ClearStorage                                                    |
+| 30200 | \[6.0.0+\] ClearStatistics                                      |
+| 30300 | \[6.0.0+\] GetStorageUsage                                      |
+| 30400 | \[5.0.0+\] GetStatistics                                        |
+| 30401 | \[5.0.0+\] GetThroughputHistory                                 |
+| 30500 | \[5.0.0+\] GetLastUploadError                                   |
+| 40100 | IsUserAgreementCheckEnabled                                     |
+| 40101 | SetUserAgreementCheckEnabled                                    |
+| 90100 | \[6.0.0+\] ReadAllReportFiles (\[1.0.0-5.1.0\] GetStorageUsage) |
 
 ## Data reporting
 
