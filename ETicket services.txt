@@ -25,9 +25,9 @@ This is "nn::es::IETicketService".
 |-
 | 10 || CountPersonalizedTicket
 |-
-| 11 || ListCommonTicket / [6.0.0+] ListCommonTicketRightsIds
+| 11 || [6.0.0+] ListCommonTicketRightsIds ([2.0.0-5.1.0] ListCommonTicket)
 |-
-| 12 || ListPersonalizedTicket / [6.0.0+] ListPersonalizedTicketRightsIds
+| 12 || [6.0.0+] ListPersonalizedTicketRightsIds ([2.0.0-5.1.0] ListPersonalizedTicket)
 |-
 | 13 || ListMissingPersonalizedTicket
 |-
@@ -59,7 +59,7 @@ This is "nn::es::IETicketService".
 |-
 | 27 || [4.0.0+] CountPrepurchaseRecord
 |-
-| 28 || [4.0.0+] ListPrepurchaseRecord / [6.0.0+] ListPrepurchaseRecordRightsIds
+| 28 || [6.0.0+] ListPrepurchaseRecordRightsIds ([4.0.0-5.1.0] ListPrepurchaseRecord)
 |-
 | 29 || [4.0.0+] ListPrepurchaseRecordInfo
 |-
