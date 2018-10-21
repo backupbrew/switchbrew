@@ -3,14 +3,14 @@ This page documents the partitions that can mounted by [[Filesystem_services#Ope
 The below sections are for each partitionID.
 
 = 0 =
-Used for Gamecard '''NormalMode'''.
+nn::fs::GameCardPartition '''Update'''.
 
 Contains the gamecard sysupdate, see [[Gamecard_Format|here]].
 
 = 1 =
-Used for Gamecard '''SecureMode'''.
+nn::fs::GameCardPartition '''Normal'''.
 
 = 2 =
-Used for Gamecard '''WriteMode'''.
+nn::fs::GameCardPartition '''Secure'''.
 
 See [[Gamecard_Format|here]].

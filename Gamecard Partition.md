@@ -5,17 +5,17 @@ The below sections are for each partitionID.
 
 # 0
 
-Used for Gamecard **NormalMode**.
+nn::fs::GameCardPartition **Update**.
 
 Contains the gamecard sysupdate, see
 [here](Gamecard%20Format.md "wikilink").
 
 # 1
 
-Used for Gamecard **SecureMode**.
+nn::fs::GameCardPartition **Normal**.
 
 # 2
 
-Used for Gamecard **WriteMode**.
+nn::fs::GameCardPartition **Secure**.
 
 See [here](Gamecard%20Format.md "wikilink").
