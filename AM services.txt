@@ -20,6 +20,8 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 | 350 || OpenSystemApplicationProxy || Returns an [[#IApplicationProxy]].
 |-
 | 400 || CreateSelfLibraryAppletCreatorForDevelop || Returns an [[#ILibraryAppletCreator]].
+|-
+| 410 || [6.0.0+] GetSystemAppletControllerForDebug || Returns an [[#ISystemAppletControllerForDebug]].
 |}
 
 All of these commands except [[#OpenLibraryAppletProxy]] take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]]. These Open*Proxy commands (including appletOE) doesn't seem to usable from processes which aren't actual applets (such as sysmodules), at least for applet-types which aren't already in use.
@@ -66,7 +68,6 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 | 22 || GetApplicationCreator || Returns an [[#IApplicationCreator]].
 |-
 | 1000 || GetDebugFunctions || Returns an [[#IDebugFunctions]].
-|-
 |}
 
 === IHomeMenuFunctions ===
@@ -88,6 +89,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 31 || [2.0.0+] GetWriterLockAccessorEx || Returns an [[#ILockAccessor]].
 |-
+| 100 || [6.0.0+] PopRequestLaunchApplicationForDebug ||
 |}
 
 ==== ILockAccessor ====
@@ -176,6 +178,18 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 | 122 || GetApplicationControlProperty || 
 |-
 | 123 || [2.0.0+] GetApplicationLaunchProperty || 
+|-
+| 124 || [6.0.0+] GetApplicationLaunchRequestInfo || 
+|-
+| 130 || [6.0.0+] SetUsers || 
+|-
+| 131 || [6.0.0+] CheckRightsEnvironmentAvailable || 
+|-
+| 132 || [6.0.0+] GetNsRightsEnvironmentHandle || 
+|-
+| 140 || [6.0.0+] GetDesirableUids || 
+|-
+| 150 || [6.0.0+] ReportApplicationExitTimeout || 
 |}
 
 ===== IAppletAccessor =====
@@ -215,10 +229,9 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 11 || GetLibraryAppletCreator || Returns an [[#ILibraryAppletCreator]].
 |-
-| 20 || GetLibraryAppletSelfAccessor || Returns an [[#ILibraryAppletSelfAccessor]].
+| 20 || OpenLibraryAppletSelfAccessor || Returns an [[#ILibraryAppletSelfAccessor]].
 |-
 | 1000 || GetDebugFunctions || Returns an [[#IDebugFunctions]].
-|-
 |}
 
 === ILibraryAppletSelfAccessor ===
@@ -277,6 +290,12 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 | 90 || [5.0.0+] CreateApplicationAndPushAndRequestToLaunch ||
 |-
 | 100 || [4.0.0+] CreateGameMovieTrimmer ||
+|-
+| 101 || [6.0.0+] ReserveResourceForMovieOperation ||
+|-
+| 102 || [6.0.0+] UnreserveResourceForMovieOperation ||
+|-
+| 110 || [6.0.0+] GetMainAppletAvailableUsers ||
 |}
 
 ==== ExitProcessAndReturn ====
@@ -332,6 +351,12 @@ No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 | 5 || [2.0.0+] TerminateApplicationAndSetReason
 |-
 | 6 || [2.0.0+] SetScreenShotPermissionGlobally
+|-
+| 10 || [6.0.0+] StartShutdownSequenceForOverlay
+|-
+| 11 || [6.0.0+] StartRebootSequenceForOverlay
+|-
+| 101 || [6.0.0+] BeginToObserveHidInputForDevelop
 |}
 
 == IApplicationProxy ==
@@ -610,6 +635,12 @@ No input, returns an output u64.
 | 63 || [4.0.0+] GetHdcpAuthenticationStateChangeEvent ||
 |-
 | 64 || [5.0.0+] SetTvPowerStateMatchingMode ||
+|-
+| 65 || [6.0.0+] GetApplicationIdByContentActionName ||
+|-
+| 66 || [6.0.0+] SetCpuAndGpuBoostMode ||
+|-
+| 80 || [6.0.0+] PerformSystemButtonPressingIfInFocus ||
 |}
 
 Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#NotificationMessage]]).
@@ -711,6 +742,12 @@ When the VrMode is set to true, the console shows a screen rendered like vr aski
 | 70 || [5.0.0+] ReportMultimediaError
 |-
 | 80 || [5.0.0+] SetWirelessPriorityMode
+|-
+| 90 || [6.0.0+] GetAccumulatedSuspendedTickValue
+|-
+| 91 || [6.0.0+] GetAccumulatedSuspendedTickChangedEvent
+|-
+| 1000 || [6.0.0+] [[#GetDebugStorageChannel]]
 |}
 
 === Exit ===
@@ -758,6 +795,9 @@ Takes an input s32. No output.
 === CreateManagedDisplayLayer ===
 Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].
 
+=== GetDebugStorageChannel ===
+Returns an [[#IStorageChannel]].
+
 == IWindowController ==
 {| class="wikitable" border="1"
 |-
@@ -772,6 +812,10 @@ Returns an output u64 LayerId which is then used by the user-process with [[Disp
 | 11 || ReleaseForegroundRights ||
 |-
 | 12 || RejectToChangeIntoBackground ||
+|-
+| 20 || [6.0.0+] SetAppletWindowVisibility ||
+|-
+| 21 || [6.0.0+] SetAppletGpuTimeSlice ||
 |}
 
 === GetAppletResourceUserId ===
@@ -854,6 +898,8 @@ No input/output.
 | 26 || [4.0.0+] AcquireCallerAppletCaptureSharedBuffer
 |-
 | 27 || [4.0.0+] ReleaseCallerAppletCaptureSharedBuffer
+|-
+| 28 || [6.0.0+] TakeScreenShotOfOwnLayerEx
 |}
 
 == ILibraryAppletCreator==
@@ -872,6 +918,18 @@ No input/output.
 | 11 || CreateTransferMemoryStorage || Returns an [[#|IStorage]].
 |-
 | 12 || [2.0.0+] CreateHandleStorage || Returns an [[#IStorage]].
+|}
+
+== ISystemAppletControllerForDebug ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 1 || RequestLaunchApplicationForDebug ||
+|-
+| 2 || GetDebugStorageChannel || Returns an [[#IStorageChannel]].
+|-
+| 3 || CreateStorageForDebug || Returns an [[#IStorage]].
 |}
 
 == IProcessWindingController ==
@@ -913,6 +971,26 @@ Used by LibraryApplets.
 | 10 || EmulateButtonEvent ||
 |-
 | 20 || InvalidateTransitionLayer ||
+|-
+| 30 || [6.0.0+] RequestLaunchApplicationWithUserAndArgumentForDebug ||
+|-
+| 40 || [6.0.0+] GetAppletResourceUsageInfo ||
+|}
+
+== IStorageChannel ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || Push ||
+|-
+| 1 || Unpop ||
+|-
+| 2 || Pop || Returns an [[#IStorage]].
+|-
+| 3 || GetPopEventHandle ||
+|-
+| 4 || Clear ||
 |}
 
 == IStorage ==
@@ -1167,7 +1245,7 @@ This is "nn::tcap::server::IManager".
 |-
 | 0x16
 | 010000000000100E
-| 
+| "set"
 |-
 | 0x17
 | 010000000000100F
@@ -1184,7 +1262,6 @@ This is "nn::tcap::server::IManager".
 | 0x1A
 | 0100000000001013
 | "myPage"
-|-
 |}
 
 === LibraryAppletMode ===

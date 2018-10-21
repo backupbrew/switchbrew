@@ -11,14 +11,15 @@ and the Nintendo Switch logo displayed during system boot.
 This is
 "nn::am::<service::IAllSystemAppletProxiesService>".
 
-| Cmd | Name                                                                      | Notes                                                                    |
-| --- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| 100 | OpenSystemAppletProxy                                                     | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").       |
-| 200 | OpenLibraryAppletProxyOld (\[1.0.0-2.3.0\] OpenLibraryAppletProxy)        | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
-| 201 | \[3.0.0+\] [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").     |
-| 300 | OpenOverlayAppletProxy                                                    | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").     |
-| 350 | OpenSystemApplicationProxy                                                | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").         |
-| 400 | CreateSelfLibraryAppletCreatorForDevelop                                  | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink"). |
+| Cmd | Name                                                                      | Notes                                                                                        |
+| --- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 100 | OpenSystemAppletProxy                                                     | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").                           |
+| 200 | OpenLibraryAppletProxyOld (\[1.0.0-2.3.0\] OpenLibraryAppletProxy)        | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                         |
+| 201 | \[3.0.0+\] [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                         |
+| 300 | OpenOverlayAppletProxy                                                    | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").                         |
+| 350 | OpenSystemApplicationProxy                                                | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").                             |
+| 400 | CreateSelfLibraryAppletCreatorForDevelop                                  | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").                     |
+| 410 | \[6.0.0+\] GetSystemAppletControllerForDebug                              | Returns an [\#ISystemAppletControllerForDebug](#ISystemAppletControllerForDebug "wikilink"). |
 
 All of these commands except
 [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") take the
@@ -69,20 +70,19 @@ commands.
 | 21   | GetGlobalStateController    | Returns an [\#IGlobalStateController](#IGlobalStateController "wikilink").       |
 | 22   | GetApplicationCreator       | Returns an [\#IApplicationCreator](#IApplicationCreator "wikilink").             |
 | 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
-|      |                             |                                                                                  |
 
 ### IHomeMenuFunctions
 
-| Cmd | Name                               | Notes                                                    |
-| --- | ---------------------------------- | -------------------------------------------------------- |
-| 10  | RequestToGetForeground             |                                                          |
-| 11  | LockForeground                     |                                                          |
-| 12  | UnlockForeground                   |                                                          |
-| 20  | PopFromGeneralChannel              | Returns an [\#IStorage](#IStorage "wikilink").           |
-| 21  | GetPopFromGeneralChannelEvent      |                                                          |
-| 30  | GetHomeButtonWriterLockAccessor    | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
-| 31  | \[2.0.0+\] GetWriterLockAccessorEx | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
-|     |                                    |                                                          |
+| Cmd | Name                                           | Notes                                                    |
+| --- | ---------------------------------------------- | -------------------------------------------------------- |
+| 10  | RequestToGetForeground                         |                                                          |
+| 11  | LockForeground                                 |                                                          |
+| 12  | UnlockForeground                               |                                                          |
+| 20  | PopFromGeneralChannel                          | Returns an [\#IStorage](#IStorage "wikilink").           |
+| 21  | GetPopFromGeneralChannelEvent                  |                                                          |
+| 30  | GetHomeButtonWriterLockAccessor                | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
+| 31  | \[2.0.0+\] GetWriterLockAccessorEx             | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
+| 100 | \[6.0.0+\] PopRequestLaunchApplicationForDebug |                                                          |
 
 #### ILockAccessor
 
@@ -119,22 +119,28 @@ commands.
 
 #### IApplicationAccessor
 
-| Cmd | Name                                    | Notes                                                        |
-| --- | --------------------------------------- | ------------------------------------------------------------ |
-| 0   | GetAppletStateChangedEvent              |                                                              |
-| 1   | IsCompleted                             |                                                              |
-| 10  | Start                                   |                                                              |
-| 20  | RequestExit                             |                                                              |
-| 25  | Terminate                               |                                                              |
-| 30  | GetResult                               |                                                              |
-| 101 | RequestForApplicationToGetForeground    |                                                              |
-| 110 | TerminateAllLibraryApplets              |                                                              |
-| 111 | AreAnyLibraryAppletsLeft                |                                                              |
-| 112 | GetCurrentLibraryApplet                 | Returns an [\#IAppletAccessor](#IAppletAccessor "wikilink"). |
-| 120 | GetApplicationId                        |                                                              |
-| 121 | PushLaunchParameter                     | Takes an [\#IStorage](#IStorage "wikilink").                 |
-| 122 | GetApplicationControlProperty           |                                                              |
-| 123 | \[2.0.0+\] GetApplicationLaunchProperty |                                                              |
+| Cmd | Name                                       | Notes                                                        |
+| --- | ------------------------------------------ | ------------------------------------------------------------ |
+| 0   | GetAppletStateChangedEvent                 |                                                              |
+| 1   | IsCompleted                                |                                                              |
+| 10  | Start                                      |                                                              |
+| 20  | RequestExit                                |                                                              |
+| 25  | Terminate                                  |                                                              |
+| 30  | GetResult                                  |                                                              |
+| 101 | RequestForApplicationToGetForeground       |                                                              |
+| 110 | TerminateAllLibraryApplets                 |                                                              |
+| 111 | AreAnyLibraryAppletsLeft                   |                                                              |
+| 112 | GetCurrentLibraryApplet                    | Returns an [\#IAppletAccessor](#IAppletAccessor "wikilink"). |
+| 120 | GetApplicationId                           |                                                              |
+| 121 | PushLaunchParameter                        | Takes an [\#IStorage](#IStorage "wikilink").                 |
+| 122 | GetApplicationControlProperty              |                                                              |
+| 123 | \[2.0.0+\] GetApplicationLaunchProperty    |                                                              |
+| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo |                                                              |
+| 130 | \[6.0.0+\] SetUsers                        |                                                              |
+| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable |                                                              |
+| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle    |                                                              |
+| 140 | \[6.0.0+\] GetDesirableUids                |                                                              |
+| 150 | \[6.0.0+\] ReportApplicationExitTimeout    |                                                              |
 
 ##### IAppletAccessor
 
@@ -149,18 +155,17 @@ commands.
 
 ## ILibraryAppletProxy
 
-| Cmd  | Name                         | Notes                                                                              |
-| ---- | ---------------------------- | ---------------------------------------------------------------------------------- |
-| 0    | GetCommonStateGetter         | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").                 |
-| 1    | GetSelfController            | Returns an [\#ISelfController](#ISelfController "wikilink").                       |
-| 2    | GetWindowController          | Returns an [\#IWindowController](#IWindowController "wikilink").                   |
-| 3    | GetAudioController           | Returns an [\#IAudioController](#IAudioController "wikilink").                     |
-| 4    | GetDisplayController         | Returns an [\#IDisplayController](#IDisplayController "wikilink").                 |
-| 10   | GetProcessWindingController  | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink").   |
-| 11   | GetLibraryAppletCreator      | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").           |
-| 20   | GetLibraryAppletSelfAccessor | Returns an [\#ILibraryAppletSelfAccessor](#ILibraryAppletSelfAccessor "wikilink"). |
-| 1000 | GetDebugFunctions            | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                       |
-|      |                              |                                                                                    |
+| Cmd  | Name                          | Notes                                                                              |
+| ---- | ----------------------------- | ---------------------------------------------------------------------------------- |
+| 0    | GetCommonStateGetter          | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").                 |
+| 1    | GetSelfController             | Returns an [\#ISelfController](#ISelfController "wikilink").                       |
+| 2    | GetWindowController           | Returns an [\#IWindowController](#IWindowController "wikilink").                   |
+| 3    | GetAudioController            | Returns an [\#IAudioController](#IAudioController "wikilink").                     |
+| 4    | GetDisplayController          | Returns an [\#IDisplayController](#IDisplayController "wikilink").                 |
+| 10   | GetProcessWindingController   | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink").   |
+| 11   | GetLibraryAppletCreator       | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").           |
+| 20   | OpenLibraryAppletSelfAccessor | Returns an [\#ILibraryAppletSelfAccessor](#ILibraryAppletSelfAccessor "wikilink"). |
+| 1000 | GetDebugFunctions             | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                       |
 
 ### ILibraryAppletSelfAccessor
 
@@ -192,6 +197,9 @@ commands.
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |                                                |
 | 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |                                                |
 | 100 | \[4.0.0+\] CreateGameMovieTrimmer                                                                           |                                                |
+| 101 | \[6.0.0+\] ReserveResourceForMovieOperation                                                                 |                                                |
+| 102 | \[6.0.0+\] UnreserveResourceForMovieOperation                                                               |                                                |
+| 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                      |                                                |
 
 #### ExitProcessAndReturn
 
@@ -236,6 +244,9 @@ No input, returns an output
 | 4   | \[2.0.0+\] SetAutoSleepTimeAndDimmingTimeEnabled |
 | 5   | \[2.0.0+\] TerminateApplicationAndSetReason      |
 | 6   | \[2.0.0+\] SetScreenShotPermissionGlobally       |
+| 10  | \[6.0.0+\] StartShutdownSequenceForOverlay       |
+| 11  | \[6.0.0+\] StartRebootSequenceForOverlay         |
+| 101 | \[6.0.0+\] BeginToObserveHidInputForDevelop      |
 
 ## IApplicationProxy
 
@@ -438,6 +449,9 @@ u64.
 | 62  | \[4.0.0+\] GetHdcpAuthenticationState                         |                                                          |
 | 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent              |                                                          |
 | 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                        |                                                          |
+| 65  | \[6.0.0+\] GetApplicationIdByContentActionName                |                                                          |
+| 66  | \[6.0.0+\] SetCpuAndGpuBoostMode                              |                                                          |
+| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus               |                                                          |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -492,42 +506,45 @@ false.
 
 ## ISelfController
 
-| Cmd | Name                                                                                         |
-| --- | -------------------------------------------------------------------------------------------- |
-| 0   | [\#Exit](#Exit "wikilink")                                                                   |
-| 1   | [\#LockExit](#LockExit "wikilink")                                                           |
-| 2   | [\#UnlockExit](#UnlockExit "wikilink")                                                       |
-| 3   | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |
-| 4   | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |
-| 9   | GetLibraryAppletLaunchableEvent                                                              |
-| 10  | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |
-| 11  | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |
-| 12  | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |
-| 13  | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |
-| 14  | SetRestartMessageEnabled                                                                     |
-| 15  | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |
-| 16  | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |
-| 17  | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |
-| 18  | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
-| 19  | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
-| 20  | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |
-| 40  | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |
-| 41  | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |
-| 42  | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |
-| 50  | SetHandlesRequestToDisplay                                                                   |
-| 51  | ApproveToDisplay                                                                             |
-| 60  | OverrideAutoSleepTimeAndDimmingTime                                                          |
-| 61  | SetMediaPlaybackState                                                                        |
-| 62  | SetIdleTimeDetectionExtension                                                                |
-| 63  | GetIdleTimeDetectionExtension                                                                |
-| 64  | SetInputDetectionSourceSet                                                                   |
-| 65  | \[2.0.0+\] ReportUserIsActive                                                                |
-| 66  | \[3.0.0+\] GetCurrentIlluminance                                                             |
-| 67  | \[3.0.0+\] IsIlluminanceAvailable                                                            |
-| 68  | \[4.0.0+\] SetAutoSleepDisabled                                                              |
-| 69  | \[4.0.0+\] IsAutoSleepDisabled                                                               |
-| 70  | \[5.0.0+\] ReportMultimediaError                                                             |
-| 80  | \[5.0.0+\] SetWirelessPriorityMode                                                           |
+| Cmd  | Name                                                                                         |
+| ---- | -------------------------------------------------------------------------------------------- |
+| 0    | [\#Exit](#Exit "wikilink")                                                                   |
+| 1    | [\#LockExit](#LockExit "wikilink")                                                           |
+| 2    | [\#UnlockExit](#UnlockExit "wikilink")                                                       |
+| 3    | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |
+| 4    | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |
+| 9    | GetLibraryAppletLaunchableEvent                                                              |
+| 10   | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |
+| 11   | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |
+| 12   | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |
+| 13   | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |
+| 14   | SetRestartMessageEnabled                                                                     |
+| 15   | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |
+| 16   | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |
+| 17   | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |
+| 18   | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
+| 19   | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
+| 20   | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |
+| 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |
+| 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |
+| 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |
+| 50   | SetHandlesRequestToDisplay                                                                   |
+| 51   | ApproveToDisplay                                                                             |
+| 60   | OverrideAutoSleepTimeAndDimmingTime                                                          |
+| 61   | SetMediaPlaybackState                                                                        |
+| 62   | SetIdleTimeDetectionExtension                                                                |
+| 63   | GetIdleTimeDetectionExtension                                                                |
+| 64   | SetInputDetectionSourceSet                                                                   |
+| 65   | \[2.0.0+\] ReportUserIsActive                                                                |
+| 66   | \[3.0.0+\] GetCurrentIlluminance                                                             |
+| 67   | \[3.0.0+\] IsIlluminanceAvailable                                                            |
+| 68   | \[4.0.0+\] SetAutoSleepDisabled                                                              |
+| 69   | \[4.0.0+\] IsAutoSleepDisabled                                                               |
+| 70   | \[5.0.0+\] ReportMultimediaError                                                             |
+| 80   | \[5.0.0+\] SetWirelessPriorityMode                                                           |
+| 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                  |
+| 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                           |
+| 1000 | \[6.0.0+\] [\#GetDebugStorageChannel](#GetDebugStorageChannel "wikilink")                    |
 
 ### Exit
 
@@ -594,6 +611,11 @@ Returns an output u64 LayerId which is then used by the user-process
 with
 [Display\_services\#OpenLayer](Display%20services#OpenLayer.md##OpenLayer "wikilink").
 
+### GetDebugStorageChannel
+
+Returns an
+[\#IStorageChannel](#IStorageChannel "wikilink").
+
 ## IWindowController
 
 | Cmd | Name                                                             | Notes                      |
@@ -603,6 +625,8 @@ with
 | 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink") |                            |
 | 11  | ReleaseForegroundRights                                          |                            |
 | 12  | RejectToChangeIntoBackground                                     |                            |
+| 20  | \[6.0.0+\] SetAppletWindowVisibility                             |                            |
+| 21  | \[6.0.0+\] SetAppletGpuTimeSlice                                 |                            |
 
 ### GetAppletResourceUserId
 
@@ -654,6 +678,7 @@ No input/output.
 | 25  | \[4.0.0+\] ReleaseLastForegroundCaptureSharedBuffer  |
 | 26  | \[4.0.0+\] AcquireCallerAppletCaptureSharedBuffer    |
 | 27  | \[4.0.0+\] ReleaseCallerAppletCaptureSharedBuffer    |
+| 28  | \[6.0.0+\] TakeScreenShotOfOwnLayerEx                |
 
 ## ILibraryAppletCreator
 
@@ -665,6 +690,14 @@ No input/output.
 | 10  | CreateStorage                  | Returns an [\#IStorage](#IStorage "wikilink").                            |
 | 11  | CreateTransferMemoryStorage    | Returns an [IStorage](# "wikilink").                                      |
 | 12  | \[2.0.0+\] CreateHandleStorage | Returns an [\#IStorage](#IStorage "wikilink").                            |
+
+## ISystemAppletControllerForDebug
+
+| Cmd | Name                             | Notes                                                        |
+| --- | -------------------------------- | ------------------------------------------------------------ |
+| 1   | RequestLaunchApplicationForDebug |                                                              |
+| 2   | GetDebugStorageChannel           | Returns an [\#IStorageChannel](#IStorageChannel "wikilink"). |
+| 3   | CreateStorageForDebug            | Returns an [\#IStorage](#IStorage "wikilink").               |
 
 ## IProcessWindingController
 
@@ -688,12 +721,24 @@ LibraryApplets.
 
 ## IDebugFunctions
 
-| Cmd | Name                            | Notes                                                                  |
-| --- | ------------------------------- | ---------------------------------------------------------------------- |
-| 0   | NotifyMessageToHomeMenuForDebug |                                                                        |
-| 1   | OpenMainApplication             | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
-| 10  | EmulateButtonEvent              |                                                                        |
-| 20  | InvalidateTransitionLayer       |                                                                        |
+| Cmd | Name                                                           | Notes                                                                  |
+| --- | -------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| 0   | NotifyMessageToHomeMenuForDebug                                |                                                                        |
+| 1   | OpenMainApplication                                            | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
+| 10  | EmulateButtonEvent                                             |                                                                        |
+| 20  | InvalidateTransitionLayer                                      |                                                                        |
+| 30  | \[6.0.0+\] RequestLaunchApplicationWithUserAndArgumentForDebug |                                                                        |
+| 40  | \[6.0.0+\] GetAppletResourceUsageInfo                          |                                                                        |
+
+## IStorageChannel
+
+| Cmd | Name              | Notes                                          |
+| --- | ----------------- | ---------------------------------------------- |
+| 0   | Push              |                                                |
+| 1   | Unpop             |                                                |
+| 2   | Pop               | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 3   | GetPopEventHandle |                                                |
+| 4   | Clear             |                                                |
 
 ## IStorage
 
@@ -848,12 +893,11 @@ This is "nn::tcap::server::IManager".
 | 0x13 | 010000000000100A | "LibAppletWeb" [WebApplet](Internet%20Browser#010000000000100A.md##010000000000100A "wikilink") applet           |
 | 0x14 | 010000000000100B | "LibAppletShop" [ShopN](Internet%20Browser#ShopN.md##ShopN "wikilink") applet                                    |
 | 0x15 | 010000000000100D | "photoViewer"                                                                                                    |
-| 0x16 | 010000000000100E |                                                                                                                  |
+| 0x16 | 010000000000100E | "set"                                                                                                            |
 | 0x17 | 010000000000100F | "LibAppletOff" [Offline](Internet%20Browser#Offline%20Applet.md##Offline_Applet "wikilink") applet               |
 | 0x18 | 0100000000001010 | "LibAppletLns" [Whitelisted](Internet%20Browser#Whitelisted%20Applets.md##Whitelisted_Applets "wikilink") applet |
 | 0x19 | 0100000000001011 | "LibAppletAuth" [WifiWebAuth](Internet%20Browser#WifiWebAuthApplet.md##WifiWebAuthApplet "wikilink") applet      |
 | 0x1A | 0100000000001013 | "myPage"                                                                                                         |
-|      |                  |                                                                                                                  |
 
 ### LibraryAppletMode
 
