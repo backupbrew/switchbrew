@@ -5,85 +5,85 @@ This is "nn::lbl::detail::ILblController".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || SaveCurrentSetting
 |-
-| 1 ||
+| 1 || LoadCurrentSetting
 |-
-| 2 ||
+| 2 || SetCurrentBrightnessSetting
 |-
-| 3 || GetCurrentBacklightLevel
+| 3 || GetCurrentBrightnessSetting
 |-
-| 4 ||
+| 4 || ApplyCurrentBrightnessSettingToBacklight
 |-
-| 5 || GetAlsComputedBacklightLevel
+| 5 || GetBrightnessSettingAppliedToBacklight
 |-
-| 6 || TurnOnBacklight
+| 6 || SwitchBacklightOn
 |-
-| 7 || TurnOffBacklight
+| 7 || SwitchBacklightOff
 |-
-| 8 || GetBacklightStatus
+| 8 || GetBacklightSwitchStatus
 |-
-| 9 ||
+| 9 || EnableDimming
 |-
-| 10 ||
+| 10 || DisableDimming
 |-
-| 11 ||
+| 11 || IsDimmingEnabled
 |-
-| 12 ||
+| 12 || EnableAutoBrightnessControl
 |-
-| 13 ||
+| 13 || DisableAutoBrightnessControl
 |-
-| 14 ||
+| 14 || IsAutoBrightnessControlEnabled
 |-
-| 15 || GetAutoBrightnessSetting
+| 15 || SetAmbientLightSensorValue
 |-
-| 16 || ReadRawLightSensor
+| 16 || GetAmbientLightSensorValue
 |-
-| 17 ||
+| 17 || SetBrightnessReflectionDelayLevel
 |-
-| 18 ||
+| 18 || GetBrightnessReflectionDelayLevel
 |-
-| 19 ||
+| 19 || SetCurrentBrightnessMapping
 |-
-| 20 ||
+| 20 || GetCurrentBrightnessMapping
 |-
-| 21 ||
+| 21 || SetCurrentAmbientLightSensorMapping
 |-
-| 22 ||
+| 22 || GetCurrentAmbientLightSensorMapping
 |-
-| 23 || [3.0.0+] 
+| 23 || [3.0.0+] IsAmbientLightSensorAvailable
 |-
-| 24 || [3.0.0+] 
+| 24 || [3.0.0+] SetCurrentBrightnessSettingForVrMode
 |-
-| 25 || [3.0.0+] 
+| 25 || [3.0.0+] GetCurrentBrightnessSettingForVrMode
 |-
 | 26 || [3.0.0+] [[#EnableVrMode]]
 |-
 | 27 || [3.0.0+] [[#DisableVrMode]]
 |-
-| 28 || [3.0.0+] [[#GetVrMode]]
+| 28 || [3.0.0+] [[#IsVrModeEnabled]]
 |}
 
-==GetCurrentBacklightLevel==
+== GetCurrentBrightnessSetting ==
 No input. Returns an output u32 int of the current backlight level.
 
-==GetAlsComputedBacklightLevel==
+== GetBrightnessSettingAppliedToBacklight ==
 No input. Returns an output u32 int of the backlight level computed from the ambient light sensor. 
 
-==GetAutoBrightnessSetting==
+== IsAutoBrightnessControlEnabled ==
 No input. Returns an output u8 bool indicating whether auto brightness is enabled. 
 
-==EnableVrMode==
+== EnableVrMode ==
 No input/output. Used by [[AM_services#SetVrModeEnabled]].
 
 Sets a global state field to 0x1.
 
-==DisableVrMode==
+== DisableVrMode ==
 No input/output. Used by [[AM_services#SetVrModeEnabled]].
 
 Sets the global state field used by [[#EnableVrMode]] to 0x0.
 
-==GetVrMode==
+== IsVrModeEnabled ==
 No input. Returns an output u8 bool set by the above commands.
 
 [[Category:Services]]

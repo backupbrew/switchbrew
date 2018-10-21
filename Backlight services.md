@@ -2,48 +2,48 @@
 
 This is "nn::lbl::detail::ILblController".
 
-| Cmd | Name                                                    |
-| --- | ------------------------------------------------------- |
-| 0   |                                                         |
-| 1   |                                                         |
-| 2   |                                                         |
-| 3   | GetCurrentBacklightLevel                                |
-| 4   |                                                         |
-| 5   | GetAlsComputedBacklightLevel                            |
-| 6   | TurnOnBacklight                                         |
-| 7   | TurnOffBacklight                                        |
-| 8   | GetBacklightStatus                                      |
-| 9   |                                                         |
-| 10  |                                                         |
-| 11  |                                                         |
-| 12  |                                                         |
-| 13  |                                                         |
-| 14  |                                                         |
-| 15  | GetAutoBrightnessSetting                                |
-| 16  | ReadRawLightSensor                                      |
-| 17  |                                                         |
-| 18  |                                                         |
-| 19  |                                                         |
-| 20  |                                                         |
-| 21  |                                                         |
-| 22  |                                                         |
-| 23  | \[3.0.0+\]                                              |
-| 24  | \[3.0.0+\]                                              |
-| 25  | \[3.0.0+\]                                              |
-| 26  | \[3.0.0+\] [\#EnableVrMode](#EnableVrMode "wikilink")   |
-| 27  | \[3.0.0+\] [\#DisableVrMode](#DisableVrMode "wikilink") |
-| 28  | \[3.0.0+\] [\#GetVrMode](#GetVrMode "wikilink")         |
+| Cmd | Name                                                        |
+| --- | ----------------------------------------------------------- |
+| 0   | SaveCurrentSetting                                          |
+| 1   | LoadCurrentSetting                                          |
+| 2   | SetCurrentBrightnessSetting                                 |
+| 3   | GetCurrentBrightnessSetting                                 |
+| 4   | ApplyCurrentBrightnessSettingToBacklight                    |
+| 5   | GetBrightnessSettingAppliedToBacklight                      |
+| 6   | SwitchBacklightOn                                           |
+| 7   | SwitchBacklightOff                                          |
+| 8   | GetBacklightSwitchStatus                                    |
+| 9   | EnableDimming                                               |
+| 10  | DisableDimming                                              |
+| 11  | IsDimmingEnabled                                            |
+| 12  | EnableAutoBrightnessControl                                 |
+| 13  | DisableAutoBrightnessControl                                |
+| 14  | IsAutoBrightnessControlEnabled                              |
+| 15  | SetAmbientLightSensorValue                                  |
+| 16  | GetAmbientLightSensorValue                                  |
+| 17  | SetBrightnessReflectionDelayLevel                           |
+| 18  | GetBrightnessReflectionDelayLevel                           |
+| 19  | SetCurrentBrightnessMapping                                 |
+| 20  | GetCurrentBrightnessMapping                                 |
+| 21  | SetCurrentAmbientLightSensorMapping                         |
+| 22  | GetCurrentAmbientLightSensorMapping                         |
+| 23  | \[3.0.0+\] IsAmbientLightSensorAvailable                    |
+| 24  | \[3.0.0+\] SetCurrentBrightnessSettingForVrMode             |
+| 25  | \[3.0.0+\] GetCurrentBrightnessSettingForVrMode             |
+| 26  | \[3.0.0+\] [\#EnableVrMode](#EnableVrMode "wikilink")       |
+| 27  | \[3.0.0+\] [\#DisableVrMode](#DisableVrMode "wikilink")     |
+| 28  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink") |
 
-## GetCurrentBacklightLevel
+## GetCurrentBrightnessSetting
 
 No input. Returns an output u32 int of the current backlight level.
 
-## GetAlsComputedBacklightLevel
+## GetBrightnessSettingAppliedToBacklight
 
 No input. Returns an output u32 int of the backlight level computed from
 the ambient light sensor.
 
-## GetAutoBrightnessSetting
+## IsAutoBrightnessControlEnabled
 
 No input. Returns an output u8 bool indicating whether auto brightness
 is enabled.
@@ -63,7 +63,7 @@ No input/output. Used by
 Sets the global state field used by
 [\#EnableVrMode](#EnableVrMode "wikilink") to 0x0.
 
-## GetVrMode
+## IsVrModeEnabled
 
 No input. Returns an output u8 bool set by the above commands.
 
