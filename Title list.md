@@ -1412,7 +1412,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p>0100000000001014</p></td>
 <td></td>
 <td><p>PlayReport</p></td>
-<td></td>
+<td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000001015</p></td>
@@ -1459,7 +1459,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p>0100000000001FFF</p></td>
 <td></td>
 <td><p>EndOceanProgramId</p></td>
-<td></td>
+<td><p>Placeholder for the last valid applet ID.</p></td>
 </tr>
 </tbody>
 </table>

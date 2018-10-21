@@ -270,7 +270,7 @@ Decimal versions use the format:
 |-
 | 0100000000001013 || [[1.0.0|v450]] (0.0.0.450)<br/> [[2.0.0|v65796]] (0.0.1.260)<br/> [[3.0.0|v201327002]] (3.0.0.410)<br/> [[4.0.0|v268435656]] (4.0.0.200)<br/> [[5.0.0|v335544750]] (5.0.0.430)<br/> [[5.0.1|v335609886]] (5.0.1.30)<br/> [[5.0.2|v335675432]] (5.0.2.40)<br/> [[5.1.0|v336592976]] (5.1.0.80)<br/> [[6.0.0|v402653544]] (6.0.0.360) || myPage (LibraryAppletMyPage) ||
 |-
-| 0100000000001014 || || PlayReport ||
+| 0100000000001014 || || PlayReport || Currently not present on retail devices.
 |-
 | 0100000000001015 || [[1.0.0|v450]] (0.0.0.450)<br/> [[2.0.0|v65796]] (0.0.1.260)<br/> [[3.0.0|v201327002]] (3.0.0.410)<br/> [[4.0.0|v268435656]] (4.0.0.200)<br/> [[5.0.0|v335544750]] (5.0.0.430)<br/> [[6.0.0|v402653544]] (6.0.0.360) || MaintenanceMenu || Initial applet displayed when booting into [[Recovery_Mode]]. This title is launched by [[NS_Services|NS]] when a state flag is val1 indicating that this title should be launched instead of the above "SystemAppletMenu" title.
 |-
@@ -284,7 +284,7 @@ Decimal versions use the format:
 |-
 | 0100000000001020 || || story || Currently not present on retail devices.
 |-
-| 0100000000001FFF || || EndOceanProgramId ||
+| 0100000000001FFF || || EndOceanProgramId || Placeholder for the last valid applet ID.
 |}
 
 == System Debug Applets ==
