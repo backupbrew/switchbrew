@@ -1679,20 +1679,20 @@ This was added with [6.0.0](6.0.0.md "wikilink").
 
 # ContentStorageId
 
-| Value | Name       |
-| ----- | ---------- |
-| 0     | NandSystem |
-| 1     | NandUser   |
-| 2     | SdCard     |
+| Value | Name   |
+| ----- | ------ |
+| 0     | System |
+| 1     | User   |
+| 2     | SdCard |
 
 # SaveDataSpaceId
 
-| Value | Name                        |
-| ----- | --------------------------- |
-| 0     | NandSystem                  |
-| 1     | NandUser                    |
-| 2     | SdCard                      |
-| 3     | \[3.0.0+\] TemporaryStorage |
+| Value | Name                    |
+| ----- | ----------------------- |
+| 0     | System                  |
+| 1     | User                    |
+| 2     | SdSystem                |
+| 100   | \[3.0.0+\] ProperSystem |
 
 Determines the storage where the savedata is stored.
 
@@ -1706,6 +1706,20 @@ Determines the storage where the savedata is stored.
 | 3     | DeviceSaveData              |
 | 4     | \[3.0.0+\] TemporaryStorage |
 | 5     | \[3.0.0+\] CacheStorage     |
+
+# ImageDirectoryId
+
+| Value | Name   |
+| ----- | ------ |
+| 0     | Nand   |
+| 1     | SdCard |
+
+# CloudBackupWorkStorageId
+
+| Value | Name   |
+| ----- | ------ |
+| 0     | Nand   |
+| 1     | SdCard |
 
 # ContentPath
 
