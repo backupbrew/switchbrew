@@ -22,6 +22,8 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 | 400 || CreateSelfLibraryAppletCreatorForDevelop || Returns an [[#ILibraryAppletCreator]].
 |-
 | 410 || [6.0.0+] GetSystemAppletControllerForDebug || Returns an [[#ISystemAppletControllerForDebug]].
+|-
+| 1000 || [6.0.0+] GetDebugFunctions || Returns an [[#IDebugFunctions]].
 |}
 
 All of these commands except [[#OpenLibraryAppletProxy]] take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]]. These Open*Proxy commands (including appletOE) doesn't seem to usable from processes which aren't actual applets (such as sysmodules), at least for applet-types which aren't already in use.
@@ -287,6 +289,8 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 60 || [4.0.0+] [[#GetMainAppletApplicationDesiredLanguage]] ||
 |-
+| 80 || [6.0.0+] RequestExitToSelf ||
+|-
 | 90 || [5.0.0+] CreateApplicationAndPushAndRequestToLaunch ||
 |-
 | 100 || [4.0.0+] CreateGameMovieTrimmer ||
@@ -452,11 +456,17 @@ No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 |-
 | 110 || [5.0.0+] QueryApplicationPlayStatistics || 
 |-
+| 111 || [6.0.0+] QueryApplicationPlayStatisticsByUid || 
+|-
 | 120 || [5.0.0+] ExecuteProgram || 
 |-
 | 121 || [5.0.0+] ClearUserChannel || 
 |-
 | 122 || [5.0.0+] UnpopToUserChannel || 
+|-
+| 123 || [6.0.0+] GetPreviousProgramIndex || 
+|-
+| 124 || [6.0.0+] EnableApplicationAllThreadDumpOnCrash || 
 |-
 | 500 || [5.0.0+] StartContinuousRecordingFlushForDebug || 
 |-
@@ -715,6 +725,8 @@ When the VrMode is set to true, the console shows a screen rendered like vr aski
 |-
 | 42 || [4.0.0+] GetSystemSharedLayerHandle
 |-
+| 43 || [6.0.0+] GetSystemSharedBufferHandle
+|-
 | 50 || SetHandlesRequestToDisplay
 |-
 | 51 || ApproveToDisplay
@@ -741,13 +753,13 @@ When the VrMode is set to true, the console shows a screen rendered like vr aski
 |-
 | 70 || [5.0.0+] ReportMultimediaError
 |-
+| 71 || [6.0.0+] GetCurrentIlluminanceEx
+|-
 | 80 || [5.0.0+] SetWirelessPriorityMode
 |-
 | 90 || [6.0.0+] GetAccumulatedSuspendedTickValue
 |-
 | 91 || [6.0.0+] GetAccumulatedSuspendedTickChangedEvent
-|-
-| 1000 || [6.0.0+] [[#GetDebugStorageChannel]]
 |}
 
 === Exit ===
@@ -795,9 +807,6 @@ Takes an input s32. No output.
 === CreateManagedDisplayLayer ===
 Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].
 
-=== GetDebugStorageChannel ===
-Returns an [[#IStorageChannel]].
-
 == IWindowController ==
 {| class="wikitable" border="1"
 |-
@@ -807,15 +816,13 @@ Returns an [[#IStorageChannel]].
 |-
 | 1 || [[#GetAppletResourceUserId]] ||
 |-
+| 2 || [6.0.0+] GetAppletResourceUserIdOfCallerApplet ||
+|-
 | 10 || [[#AcquireForegroundRights]] ||
 |-
 | 11 || ReleaseForegroundRights ||
 |-
 | 12 || RejectToChangeIntoBackground ||
-|-
-| 20 || [6.0.0+] SetAppletWindowVisibility ||
-|-
-| 21 || [6.0.0+] SetAppletGpuTimeSlice ||
 |}
 
 === GetAppletResourceUserId ===
@@ -926,10 +933,6 @@ No input/output.
 ! Cmd || Name || Notes
 |-
 | 1 || RequestLaunchApplicationForDebug ||
-|-
-| 2 || GetDebugStorageChannel || Returns an [[#IStorageChannel]].
-|-
-| 3 || CreateStorageForDebug || Returns an [[#IStorage]].
 |}
 
 == IProcessWindingController ==
@@ -975,22 +978,6 @@ Used by LibraryApplets.
 | 30 || [6.0.0+] RequestLaunchApplicationWithUserAndArgumentForDebug ||
 |-
 | 40 || [6.0.0+] GetAppletResourceUsageInfo ||
-|}
-
-== IStorageChannel ==
-{| class="wikitable" border="1"
-|-
-! Cmd || Name || Notes
-|-
-| 0 || Push ||
-|-
-| 1 || Unpop ||
-|-
-| 2 || Pop || Returns an [[#IStorage]].
-|-
-| 3 || GetPopEventHandle ||
-|-
-| 4 || Clear ||
 |}
 
 == IStorage ==

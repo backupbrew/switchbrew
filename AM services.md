@@ -11,15 +11,16 @@ and the Nintendo Switch logo displayed during system boot.
 This is
 "nn::am::<service::IAllSystemAppletProxiesService>".
 
-| Cmd | Name                                                                      | Notes                                                                                        |
-| --- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| 100 | OpenSystemAppletProxy                                                     | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").                           |
-| 200 | OpenLibraryAppletProxyOld (\[1.0.0-2.3.0\] OpenLibraryAppletProxy)        | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                         |
-| 201 | \[3.0.0+\] [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                         |
-| 300 | OpenOverlayAppletProxy                                                    | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").                         |
-| 350 | OpenSystemApplicationProxy                                                | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").                             |
-| 400 | CreateSelfLibraryAppletCreatorForDevelop                                  | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").                     |
-| 410 | \[6.0.0+\] GetSystemAppletControllerForDebug                              | Returns an [\#ISystemAppletControllerForDebug](#ISystemAppletControllerForDebug "wikilink"). |
+| Cmd  | Name                                                                      | Notes                                                                                        |
+| ---- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 100  | OpenSystemAppletProxy                                                     | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").                           |
+| 200  | OpenLibraryAppletProxyOld (\[1.0.0-2.3.0\] OpenLibraryAppletProxy)        | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                         |
+| 201  | \[3.0.0+\] [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                         |
+| 300  | OpenOverlayAppletProxy                                                    | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").                         |
+| 350  | OpenSystemApplicationProxy                                                | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").                             |
+| 400  | CreateSelfLibraryAppletCreatorForDevelop                                  | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").                     |
+| 410  | \[6.0.0+\] GetSystemAppletControllerForDebug                              | Returns an [\#ISystemAppletControllerForDebug](#ISystemAppletControllerForDebug "wikilink"). |
+| 1000 | \[6.0.0+\] GetDebugFunctions                                              | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                                 |
 
 All of these commands except
 [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") take the
@@ -195,6 +196,7 @@ commands.
 | 50  | \[2.0.0+\] ReportVisibleError                                                                               |                                                |
 | 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                               |                                                |
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |                                                |
+| 80  | \[6.0.0+\] RequestExitToSelf                                                                                |                                                |
 | 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |                                                |
 | 100 | \[4.0.0+\] CreateGameMovieTrimmer                                                                           |                                                |
 | 101 | \[6.0.0+\] ReserveResourceForMovieOperation                                                                 |                                                |
@@ -298,9 +300,12 @@ No input, returns an output
 | 101  | \[5.0.0+\] SetApplicationCopyrightImage                                               |                                                |
 | 102  | \[5.0.0+\] SetApplicationCopyrightVisibility                                          |                                                |
 | 110  | \[5.0.0+\] QueryApplicationPlayStatistics                                             |                                                |
+| 111  | \[6.0.0+\] QueryApplicationPlayStatisticsByUid                                        |                                                |
 | 120  | \[5.0.0+\] ExecuteProgram                                                             |                                                |
 | 121  | \[5.0.0+\] ClearUserChannel                                                           |                                                |
 | 122  | \[5.0.0+\] UnpopToUserChannel                                                         |                                                |
+| 123  | \[6.0.0+\] GetPreviousProgramIndex                                                    |                                                |
+| 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                      |                                                |
 | 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                      |                                                |
 | 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                         |                                                |
 | 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                               |                                                |
@@ -506,45 +511,46 @@ false.
 
 ## ISelfController
 
-| Cmd  | Name                                                                                         |
-| ---- | -------------------------------------------------------------------------------------------- |
-| 0    | [\#Exit](#Exit "wikilink")                                                                   |
-| 1    | [\#LockExit](#LockExit "wikilink")                                                           |
-| 2    | [\#UnlockExit](#UnlockExit "wikilink")                                                       |
-| 3    | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |
-| 4    | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |
-| 9    | GetLibraryAppletLaunchableEvent                                                              |
-| 10   | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |
-| 11   | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |
-| 12   | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |
-| 13   | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |
-| 14   | SetRestartMessageEnabled                                                                     |
-| 15   | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |
-| 16   | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |
-| 17   | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |
-| 18   | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
-| 19   | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
-| 20   | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |
-| 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |
-| 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |
-| 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |
-| 50   | SetHandlesRequestToDisplay                                                                   |
-| 51   | ApproveToDisplay                                                                             |
-| 60   | OverrideAutoSleepTimeAndDimmingTime                                                          |
-| 61   | SetMediaPlaybackState                                                                        |
-| 62   | SetIdleTimeDetectionExtension                                                                |
-| 63   | GetIdleTimeDetectionExtension                                                                |
-| 64   | SetInputDetectionSourceSet                                                                   |
-| 65   | \[2.0.0+\] ReportUserIsActive                                                                |
-| 66   | \[3.0.0+\] GetCurrentIlluminance                                                             |
-| 67   | \[3.0.0+\] IsIlluminanceAvailable                                                            |
-| 68   | \[4.0.0+\] SetAutoSleepDisabled                                                              |
-| 69   | \[4.0.0+\] IsAutoSleepDisabled                                                               |
-| 70   | \[5.0.0+\] ReportMultimediaError                                                             |
-| 80   | \[5.0.0+\] SetWirelessPriorityMode                                                           |
-| 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                  |
-| 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                           |
-| 1000 | \[6.0.0+\] [\#GetDebugStorageChannel](#GetDebugStorageChannel "wikilink")                    |
+| Cmd | Name                                                                                         |
+| --- | -------------------------------------------------------------------------------------------- |
+| 0   | [\#Exit](#Exit "wikilink")                                                                   |
+| 1   | [\#LockExit](#LockExit "wikilink")                                                           |
+| 2   | [\#UnlockExit](#UnlockExit "wikilink")                                                       |
+| 3   | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |
+| 4   | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |
+| 9   | GetLibraryAppletLaunchableEvent                                                              |
+| 10  | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |
+| 11  | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |
+| 12  | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |
+| 13  | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |
+| 14  | SetRestartMessageEnabled                                                                     |
+| 15  | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |
+| 16  | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |
+| 17  | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |
+| 18  | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
+| 19  | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
+| 20  | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |
+| 40  | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |
+| 41  | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |
+| 42  | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |
+| 43  | \[6.0.0+\] GetSystemSharedBufferHandle                                                       |
+| 50  | SetHandlesRequestToDisplay                                                                   |
+| 51  | ApproveToDisplay                                                                             |
+| 60  | OverrideAutoSleepTimeAndDimmingTime                                                          |
+| 61  | SetMediaPlaybackState                                                                        |
+| 62  | SetIdleTimeDetectionExtension                                                                |
+| 63  | GetIdleTimeDetectionExtension                                                                |
+| 64  | SetInputDetectionSourceSet                                                                   |
+| 65  | \[2.0.0+\] ReportUserIsActive                                                                |
+| 66  | \[3.0.0+\] GetCurrentIlluminance                                                             |
+| 67  | \[3.0.0+\] IsIlluminanceAvailable                                                            |
+| 68  | \[4.0.0+\] SetAutoSleepDisabled                                                              |
+| 69  | \[4.0.0+\] IsAutoSleepDisabled                                                               |
+| 70  | \[5.0.0+\] ReportMultimediaError                                                             |
+| 71  | \[6.0.0+\] GetCurrentIlluminanceEx                                                           |
+| 80  | \[5.0.0+\] SetWirelessPriorityMode                                                           |
+| 90  | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                  |
+| 91  | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                           |
 
 ### Exit
 
@@ -611,22 +617,16 @@ Returns an output u64 LayerId which is then used by the user-process
 with
 [Display\_services\#OpenLayer](Display%20services#OpenLayer.md##OpenLayer "wikilink").
 
-### GetDebugStorageChannel
-
-Returns an
-[\#IStorageChannel](#IStorageChannel "wikilink").
-
 ## IWindowController
 
 | Cmd | Name                                                             | Notes                      |
 | --- | ---------------------------------------------------------------- | -------------------------- |
 | 0   | CreateWindow                                                     | Returns an IWindow object. |
 | 1   | [\#GetAppletResourceUserId](#GetAppletResourceUserId "wikilink") |                            |
+| 2   | \[6.0.0+\] GetAppletResourceUserIdOfCallerApplet                 |                            |
 | 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink") |                            |
 | 11  | ReleaseForegroundRights                                          |                            |
 | 12  | RejectToChangeIntoBackground                                     |                            |
-| 20  | \[6.0.0+\] SetAppletWindowVisibility                             |                            |
-| 21  | \[6.0.0+\] SetAppletGpuTimeSlice                                 |                            |
 
 ### GetAppletResourceUserId
 
@@ -693,11 +693,9 @@ No input/output.
 
 ## ISystemAppletControllerForDebug
 
-| Cmd | Name                             | Notes                                                        |
-| --- | -------------------------------- | ------------------------------------------------------------ |
-| 1   | RequestLaunchApplicationForDebug |                                                              |
-| 2   | GetDebugStorageChannel           | Returns an [\#IStorageChannel](#IStorageChannel "wikilink"). |
-| 3   | CreateStorageForDebug            | Returns an [\#IStorage](#IStorage "wikilink").               |
+| Cmd | Name                             | Notes |
+| --- | -------------------------------- | ----- |
+| 1   | RequestLaunchApplicationForDebug |       |
 
 ## IProcessWindingController
 
@@ -729,16 +727,6 @@ LibraryApplets.
 | 20  | InvalidateTransitionLayer                                      |                                                                        |
 | 30  | \[6.0.0+\] RequestLaunchApplicationWithUserAndArgumentForDebug |                                                                        |
 | 40  | \[6.0.0+\] GetAppletResourceUsageInfo                          |                                                                        |
-
-## IStorageChannel
-
-| Cmd | Name              | Notes                                          |
-| --- | ----------------- | ---------------------------------------------- |
-| 0   | Push              |                                                |
-| 1   | Unpop             |                                                |
-| 2   | Pop               | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 3   | GetPopEventHandle |                                                |
-| 4   | Clear             |                                                |
 
 ## IStorage
 
