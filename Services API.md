@@ -82,7 +82,7 @@ Takes a pid.
 <tr class="odd">
 <td><p>appletAE, appletOE, idle:sys, omm, spsm, [5.0.0+] tcap, [6.0.0+] caps:su</p></td>
 <td><p><a href="AM services.md" title="wikilink">AM services</a></p></td>
-<td><p>tcap: Thermal-related?</p></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>[1.0.0-2.3.0] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry</p>
