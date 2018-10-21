@@ -89,7 +89,7 @@ Takes a pid.
 | [[Profiler services]]
 | Not currently available on retail units.
 |-
-| <nowiki>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, prepo:a</nowiki>
+| <nowiki>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, [1.0.0-5.1.0] prepo:a, [6.0.0+] prepo:a2</nowiki>
 | [[BCAT services]]
 |
 |-

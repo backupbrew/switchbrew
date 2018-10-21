@@ -111,7 +111,7 @@ Takes a pid.
 <td><p>Not currently available on retail units.</p></td>
 </tr>
 <tr class="odd">
-<td><p>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, prepo:a</p></td>
+<td><p>bcat:a, bcat:u, bcat:m, bcat:s, news:a, news:c, news:m, news:p, news:v, prepo:u, prepo:s, prepo:m, [1.0.0-5.1.0] prepo:a, [6.0.0+] prepo:a2</p></td>
 <td><p><a href="BCAT services.md" title="wikilink">BCAT services</a></p></td>
 <td></td>
 </tr>
