@@ -981,11 +981,11 @@ This is "nn::idle::detail::IPolicyManagerSystem"
 |-
 | 2 || [1.0.0-3.0.2]
 |-
-| 3 || 
+| 3 || SetHandlingContext
 |-
-| 4 || 
+| 4 || LoadAndApplySettings
 |-
-| 5 || 
+| 5 || ReportUserIsActive
 |}
 
 = omm =
