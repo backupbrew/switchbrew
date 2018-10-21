@@ -341,7 +341,7 @@ TransferMemory.
 
 #### SetGamePlayRecordingState
 
-Takes an input u32.
+Takes an input u32. 0 = disable/pause, 1 = enable/restart.
 
 #### CreateMovieMaker
 

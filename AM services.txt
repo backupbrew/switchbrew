@@ -465,7 +465,7 @@ Takes no input. Returns an output u8, which is ignored by official user-processe
 Takes a TransferMemory handle and an u64 for the size of the TransferMemory.
 
 ==== SetGamePlayRecordingState ====
-Takes an input u32.
+Takes an input u32. 0 = disable/pause, 1 = enable/restart.
 
 ==== CreateMovieMaker ====
 Takes an input u64 and handle, returns an [[#IMovieMaker]].
