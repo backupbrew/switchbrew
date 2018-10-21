@@ -7,14 +7,14 @@ ioctls.
 
 # grc:c
 
-This is "nn::grcsrv::IGrcService"
+This is "nn::grcsrv::IGrcService".
 
 | Cmd | Name                   |
 | --- | ---------------------- |
 | 1   | OpenContinuousRecorder |
 | 2   | OpenGameMovieTrimmer   |
 
-# IContinuousRecorder
+## IContinuousRecorder
 
 This is "nn::grcsrv::IContinuousRecorder".
 
@@ -27,7 +27,7 @@ This is "nn::grcsrv::IContinuousRecorder".
 | 12  |      |
 | 13  |      |
 
-# IGameMovieTrimmer
+## IGameMovieTrimmer
 
 This is "nn::grcsrv::IGameMovieTrimmer".
 
@@ -37,6 +37,15 @@ This is "nn::grcsrv::IGameMovieTrimmer".
 | 2   | EndTrim             |
 | 10  | GetNotTrimmingEvent |
 | 20  | SetThumbnailRgba    |
+
+# grc:d
+
+This is "nn::grcsrv::IRemoteVideoTransfer".
+
+| Cmd | Name |
+| --- | ---- |
+| 1   |      |
+| 2   |      |
 
 # IMovieMaker
 
