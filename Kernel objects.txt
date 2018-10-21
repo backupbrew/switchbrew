@@ -217,7 +217,7 @@ Inherits from: [[#KSynchronizationObject]], [[#KSchedulerObject0]], [[#KSchedule
 |-
 | 0x5A8 || KLinkedListNode || NodeFor__ThreadsOnSameCore
 |-
-| 0x5B8 || u64 ||
+| 0x5B8 || [[#KThread]]* ||
 |-
 | 0x5C0 || [[#KThread]]* || CondVar_SelfPtr
 |-

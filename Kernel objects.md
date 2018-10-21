@@ -155,7 +155,7 @@ Inherits from:
 | 0x588        | KLinkedListNode                                                          |                              |
 | 0x598        | KLinkedListNode                                                          | NodeFor\_\_ThreadList        |
 | 0x5A8        | KLinkedListNode                                                          | NodeFor\_\_ThreadsOnSameCore |
-| 0x5B8        | u64                                                                      |                              |
+| 0x5B8        | [\#KThread](#KThread "wikilink")\*                                       |                              |
 | 0x5C0        | [\#KThread](#KThread "wikilink")\*                                       | CondVar\_SelfPtr             |
 | 0x5C8        | u64                                                                      |                              |
 | 0x5D0        | u64                                                                      |                              |
