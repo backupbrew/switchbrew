@@ -245,9 +245,9 @@ The 0x200 bytes at offset 0x184000 are used by [[Filesystem_services|FS]] for ke
 |  SYSTEM
 |  0x07800000 
 |  0xA0000000
-|  31 and 32
+|  31, 32 and 33
 |  Yes (Bis key 2)
-|  FAT32 filesystem. The official name for this partition is "SystemProperEncryption".
+|  FAT32 filesystem. The official names for these partitions are "System", "SystemProperEncryption" and "SystemProperPartition".
 |-
 |  USER
 |  0xA7800000
