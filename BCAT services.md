@@ -90,7 +90,7 @@ These are "nn::news::detail::ipc::IServiceCreator".
 | 3   |      |
 | 4   |      |
 
-# prepo:a, prepo:m, prepo:u, prepo:s
+# prepo:a, prepo:a2, prepo:m, prepo:u, prepo:s
 
 These are
 "nn::prepo::detail::ipc::IPrepoService".
