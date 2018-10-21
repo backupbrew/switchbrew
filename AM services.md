@@ -817,6 +817,16 @@ This is "nn::spsm::detail::IPowerStateInterface".
 | 10  |                                               |
 | 11  | \[1.0.0-3.0.2\]                               |
 
+# tcap
+
+This is "nn::tcap::server::IManager".
+
+| Cmd | Name                                  |
+| --- | ------------------------------------- |
+| 0   | GetContinuousHighSkinTemperatureEvent |
+| 1   | SetOperationMode                      |
+| 2   | LoadAndApplySettings                  |
+
 # Enums
 
 ### AppletId
