@@ -403,7 +403,7 @@ No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
 |-
 | 60 || [2.0.0+] SetMediaPlaybackStateForApplication ||
 |-
-| 65 || [3.0.0+] IsGamePlayRecordingSupported ||
+| 65 || [3.0.0+] [[#IsGamePlayRecordingSupported]] ||
 |-
 | 66 || [3.0.0+] [[#InitializeGamePlayRecording]] ||
 |-
@@ -460,6 +460,9 @@ Takes an input s64 nanoseconds, no output. The input nanoseconds can be zero.
 
 ==== NotifyRunning ====
 Takes no input. Returns an output u8, which is ignored by official user-processes.
+
+==== IsGamePlayRecordingSupported ====
+No input, returns an output u8 bool.
 
 ==== InitializeGamePlayRecording ====
 Takes a TransferMemory handle and an u64 for the size of the TransferMemory.

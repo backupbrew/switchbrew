@@ -253,46 +253,46 @@ No input, returns an output
 
 ### IApplicationFunctions
 
-| Cmd  | Name                                                                                | Notes                                          |
-| ---- | ----------------------------------------------------------------------------------- | ---------------------------------------------- |
-| 1    | PopLaunchParameter                                                                  | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 10   | CreateApplicationAndPushAndRequestToStart                                           | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 11   | \[2.0.0+\] CreateApplicationAndPushAndRequestToStartForQuest                        | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 12   | \[4.0.0+\] CreateApplicationAndRequestToStart                                       |                                                |
-| 13   | \[4.0.0+\] CreateApplicationAndRequestToStartForQuest                               |                                                |
-| 20   | EnsureSaveData                                                                      |                                                |
-| 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                              |                                                |
-| 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                              |                                                |
-| 23   | GetDisplayVersion                                                                   |                                                |
-| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                             |                                                |
-| 25   | \[2.0.0+\] ExtendSaveData                                                           |                                                |
-| 26   | \[2.0.0+\] GetSaveDataSize                                                          |                                                |
-| 27   | \[5.0.0+\] CreateCacheStorage                                                       |                                                |
-| 30   | BeginBlockingHomeButtonShortAndLongPressed                                          |                                                |
-| 31   | EndBlockingHomeButtonShortAndLongPressed                                            |                                                |
-| 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                    |                                                |
-| 33   | EndBlockingHomeButton                                                               |                                                |
-| 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                        |                                                |
-| 50   | \[2.0.0+\] GetPseudoDeviceId                                                        |                                                |
-| 60   | \[2.0.0+\] SetMediaPlaybackStateForApplication                                      |                                                |
-| 65   | \[3.0.0+\] IsGamePlayRecordingSupported                                             |                                                |
-| 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink") |                                                |
-| 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")     |                                                |
-| 68   | \[4.0.0+\] RequestFlushGamePlayingMovieForDebug                                     |                                                |
-| 70   | \[3.0.0+\] RequestToShutdown                                                        |                                                |
-| 71   | \[3.0.0+\] RequestToReboot                                                          |                                                |
-| 80   | \[4.0.0+\] ExitAndRequestToShowThanksMessage                                        |                                                |
-| 90   | \[4.0.0+\] EnableApplicationCrashReport                                             |                                                |
-| 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                |                                                |
-| 101  | \[5.0.0+\] SetApplicationCopyrightImage                                             |                                                |
-| 102  | \[5.0.0+\] SetApplicationCopyrightVisibility                                        |                                                |
-| 110  | \[5.0.0+\] QueryApplicationPlayStatistics                                           |                                                |
-| 120  | \[5.0.0+\] ExecuteProgram                                                           |                                                |
-| 121  | \[5.0.0+\] ClearUserChannel                                                         |                                                |
-| 122  | \[5.0.0+\] UnpopToUserChannel                                                       |                                                |
-| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                    |                                                |
-| 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                       |                                                |
-| 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                             |                                                |
+| Cmd  | Name                                                                                  | Notes                                          |
+| ---- | ------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1    | PopLaunchParameter                                                                    | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 10   | CreateApplicationAndPushAndRequestToStart                                             | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 11   | \[2.0.0+\] CreateApplicationAndPushAndRequestToStartForQuest                          | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 12   | \[4.0.0+\] CreateApplicationAndRequestToStart                                         |                                                |
+| 13   | \[4.0.0+\] CreateApplicationAndRequestToStartForQuest                                 |                                                |
+| 20   | EnsureSaveData                                                                        |                                                |
+| 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                |                                                |
+| 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                |                                                |
+| 23   | GetDisplayVersion                                                                     |                                                |
+| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                               |                                                |
+| 25   | \[2.0.0+\] ExtendSaveData                                                             |                                                |
+| 26   | \[2.0.0+\] GetSaveDataSize                                                            |                                                |
+| 27   | \[5.0.0+\] CreateCacheStorage                                                         |                                                |
+| 30   | BeginBlockingHomeButtonShortAndLongPressed                                            |                                                |
+| 31   | EndBlockingHomeButtonShortAndLongPressed                                              |                                                |
+| 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                      |                                                |
+| 33   | EndBlockingHomeButton                                                                 |                                                |
+| 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                          |                                                |
+| 50   | \[2.0.0+\] GetPseudoDeviceId                                                          |                                                |
+| 60   | \[2.0.0+\] SetMediaPlaybackStateForApplication                                        |                                                |
+| 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink") |                                                |
+| 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")   |                                                |
+| 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")       |                                                |
+| 68   | \[4.0.0+\] RequestFlushGamePlayingMovieForDebug                                       |                                                |
+| 70   | \[3.0.0+\] RequestToShutdown                                                          |                                                |
+| 71   | \[3.0.0+\] RequestToReboot                                                            |                                                |
+| 80   | \[4.0.0+\] ExitAndRequestToShowThanksMessage                                          |                                                |
+| 90   | \[4.0.0+\] EnableApplicationCrashReport                                               |                                                |
+| 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                  |                                                |
+| 101  | \[5.0.0+\] SetApplicationCopyrightImage                                               |                                                |
+| 102  | \[5.0.0+\] SetApplicationCopyrightVisibility                                          |                                                |
+| 110  | \[5.0.0+\] QueryApplicationPlayStatistics                                             |                                                |
+| 120  | \[5.0.0+\] ExecuteProgram                                                             |                                                |
+| 121  | \[5.0.0+\] ClearUserChannel                                                           |                                                |
+| 122  | \[5.0.0+\] UnpopToUserChannel                                                         |                                                |
+| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                      |                                                |
+| 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                         |                                                |
+| 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                               |                                                |
 
 The BOTW game uses this GamePlayRecording functionality from the
 main-nso "nninitStartup" function, with size 0x6000000(96MiB). The
@@ -333,6 +333,10 @@ zero.
 
 Takes no input. Returns an output u8, which is ignored by official
 user-processes.
+
+#### IsGamePlayRecordingSupported
+
+No input, returns an output u8 bool.
 
 #### InitializeGamePlayRecording
 
