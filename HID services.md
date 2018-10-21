@@ -711,6 +711,7 @@ This is "nn::hidbus::IHidbusServer".
 | 11  | EnableJoyPollingReceiveMode      |
 | 12  | DisableJoyPollingReceiveMode     |
 | 13  | GetPollingData                   |
+| 14  | \[6.0.0+\] SetStatusManagerType  |
 
 # RomFS
 
