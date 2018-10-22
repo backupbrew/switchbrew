@@ -344,15 +344,15 @@ Mainly used for adding guard pages around stack.
 
 Source range gets reprotected to --- (it can no longer be accessed), and bit0 is set in the source [[#MemoryAttribute]].
 
-If dstaddr >= LowerTreshold, the dst-range is enforced to be within the process' "MapRegion". Code can get the range of this region from [[#svcGetInfo]] id0=2,3.
+[1.0.0] This could be used to map into either the Alias Region or the Stack region.
 
-In this case, the mapped memory will have state 0x5C3C0B.
+[2.0.0+] This can only be used to map into the Stack region.
 
-As long as (dstaddr+size) < LowerThreshold, then you can map anywhere but the mapped memory will have state 0x482907 instead.
+Code can get the range of the Alias region from [[#svcGetInfo]] id0=2,3, and on 2.0.0+ the range of the Stack region via [[#svcGetInfo]] id0=14, 15 (on 1.0.0, the Stack region had hardcoded limits).
 
-LowerTreshold is 0x80000000 for 36-bit address spaces, and 0x40000000 for 32-bit ones.
+When mapped into the Alias region, the mapped memory will have state 0x482907.
 
-[2.0.0+] Support for the 0x482907 mappings outside the "MapRegion" were removed.
+When mapped into the Stack region, the mapped memory will have state 0x5C3C0B.
 
 == svcUnmapMemory ==
 
@@ -798,9 +798,9 @@ Otherwise just return 0.
 |-
 | Process || 13 || 0 || [2.0.0+] AddressSpaceSize
 |-
-| Process || 14 || 0 || [2.0.0+] NewMapRegionBaseAddr
+| Process || 14 || 0 || [2.0.0+] StackRegionBaseAddr
 |-
-| Process || 15 || 0 || [2.0.0+] NewMapRegionSize
+| Process || 15 || 0 || [2.0.0+] StackRegionSize
 |-
 | Process || 16 || 0 || [3.0.0+] PersonalMmHeapSize
 |-
@@ -1790,7 +1790,7 @@ On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool
 |-
 | 0x00402006 || MemoryType_SharedMemory || Mapped using [[#svcMapSharedMemory]].
 |-
-| 0x00482907 || [1.0.0] MemoryType_WeirdMappedMemory || Mapped using [[#svcMapMemory]].
+| 0x00482907 || [1.0.0] MemoryType_Alias || Mapped using [[#svcMapMemory]].
 |-
 | 0x00DD7E08 || MemoryType_ModuleCodeStatic || Mapped using [[#svcMapProcessCodeMemory]].
 |-
@@ -1805,7 +1805,7 @@ On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool
 |-
 | 0x005C3C0A || [[IPC_Marshalling|MemoryType_IpcBuffer0]] || IPC buffers with descriptor flags=0.
 |-
-| 0x005C3C0B || MemoryType_MappedMemory || Mapped using [[#svcMapMemory]].
+| 0x005C3C0B || MemoryType_Stack || Mapped using [[#svcMapMemory]].
 |-
 | 0x0040200C || [[Thread Local Storage|MemoryType_ThreadLocal]] || Mapped during [[#svcCreateThread]].
 |-

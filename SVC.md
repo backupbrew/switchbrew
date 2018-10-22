@@ -215,20 +215,21 @@ Source range gets reprotected to --- (it can no longer be accessed), and
 bit0 is set in the source
 [\#MemoryAttribute](#MemoryAttribute "wikilink").
 
-If dstaddr \>= LowerTreshold, the dst-range is enforced to be within the
-process' "MapRegion". Code can get the range of this region from
-[\#svcGetInfo](#svcGetInfo "wikilink") id0=2,3.
+\[1.0.0\] This could be used to map into either the Alias Region or the
+Stack region.
 
-In this case, the mapped memory will have state 0x5C3C0B.
+\[2.0.0+\] This can only be used to map into the Stack region.
 
-As long as (dstaddr+size) \< LowerThreshold, then you can map anywhere
-but the mapped memory will have state 0x482907 instead.
+Code can get the range of the Alias region from
+[\#svcGetInfo](#svcGetInfo "wikilink") id0=2,3, and on 2.0.0+ the range
+of the Stack region via [\#svcGetInfo](#svcGetInfo "wikilink") id0=14,
+15 (on 1.0.0, the Stack region had hardcoded limits).
 
-LowerTreshold is 0x80000000 for 36-bit address spaces, and 0x40000000
-for 32-bit ones.
+When mapped into the Alias region, the mapped memory will have state
+0x482907.
 
-\[2.0.0+\] Support for the 0x482907 mappings outside the "MapRegion"
-were removed.
+When mapped into the Stack region, the mapped memory will have state
+0x5C3C0B.
 
 ## svcUnmapMemory
 
@@ -623,8 +624,8 @@ Otherwise just return 0.
 | Zero        | 11         | 0-3                   | RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.                                      |
 | Process     | 12         | 0                     | \[2.0.0+\] AddressSpaceBaseAddr                                                                             |
 | Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize                                                                                 |
-| Process     | 14         | 0                     | \[2.0.0+\] NewMapRegionBaseAddr                                                                             |
-| Process     | 15         | 0                     | \[2.0.0+\] NewMapRegionSize                                                                                 |
+| Process     | 14         | 0                     | \[2.0.0+\] StackRegionBaseAddr                                                                              |
+| Process     | 15         | 0                     | \[2.0.0+\] StackRegionSize                                                                                  |
 | Process     | 16         | 0                     | \[3.0.0+\] PersonalMmHeapSize                                                                               |
 | Process     | 17         | 0                     | \[3.0.0+\] PersonalMmHeapUsage                                                                              |
 | Process     | 18         | 0                     | \[3.0.0+\] TitleId                                                                                          |
@@ -1474,17 +1475,17 @@ partitions.
 <tr class="even">
 <td><p>0x00002001</p></td>
 <td><p>MemoryType_Io</p></td>
-<td><p>Mapped by kernel capability parsing in <a href="#svcCreateProcess" class="uri" title="wikilink">#svcCreateProcess</a>.</p></td>
+<td><p>Mapped by kernel capability parsing in <a href="#svcCreateProcess" title="wikilink">#svcCreateProcess</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x00042002</p></td>
 <td><p>MemoryType_Normal</p></td>
-<td><p>Mapped by kernel capability parsing in <a href="#svcCreateProcess" class="uri" title="wikilink">#svcCreateProcess</a>.</p></td>
+<td><p>Mapped by kernel capability parsing in <a href="#svcCreateProcess" title="wikilink">#svcCreateProcess</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x00DC7E03</p></td>
 <td><p>MemoryType_CodeStatic</p></td>
-<td><p>Mapped during <a href="#svcCreateProcess" class="uri" title="wikilink">#svcCreateProcess</a>.</p></td>
+<td><p>Mapped during <a href="#svcCreateProcess" title="wikilink">#svcCreateProcess</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>[1.0.0+]</p>
@@ -1492,29 +1493,29 @@ partitions.
 <p>[4.0.0+]</p>
 <p>0x03FEBD04</p></td>
 <td><p>MemoryType_CodeMutable</p></td>
-<td><p>Transition from 0xDC7E03 performed by <a href="#svcSetProcessMemoryPermission" class="uri" title="wikilink">#svcSetProcessMemoryPermission</a>.</p></td>
+<td><p>Transition from 0xDC7E03 performed by <a href="#svcSetProcessMemoryPermission" title="wikilink">#svcSetProcessMemoryPermission</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>[1.0.0+] 0x017EBD05</p>
 <p>[4.0.0+]</p>
 <p>0x037EBD05</p></td>
 <td><p>MemoryType_Heap</p></td>
-<td><p>Mapped using <a href="#svcSetHeapSize" class="uri" title="wikilink">#svcSetHeapSize</a>.</p></td>
+<td><p>Mapped using <a href="#svcSetHeapSize" title="wikilink">#svcSetHeapSize</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x00402006</p></td>
 <td><p>MemoryType_SharedMemory</p></td>
-<td><p>Mapped using <a href="#svcMapSharedMemory" class="uri" title="wikilink">#svcMapSharedMemory</a>.</p></td>
+<td><p>Mapped using <a href="#svcMapSharedMemory" title="wikilink">#svcMapSharedMemory</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x00482907</p></td>
-<td><p>[1.0.0] MemoryType_WeirdMappedMemory</p></td>
-<td><p>Mapped using <a href="#svcMapMemory" class="uri" title="wikilink">#svcMapMemory</a>.</p></td>
+<td><p>[1.0.0] MemoryType_Alias</p></td>
+<td><p>Mapped using <a href="#svcMapMemory" title="wikilink">#svcMapMemory</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x00DD7E08</p></td>
 <td><p>MemoryType_ModuleCodeStatic</p></td>
-<td><p>Mapped using <a href="#svcMapProcessCodeMemory" class="uri" title="wikilink">#svcMapProcessCodeMemory</a>.</p></td>
+<td><p>Mapped using <a href="#svcMapProcessCodeMemory" title="wikilink">#svcMapProcessCodeMemory</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>[1.0.0+]</p>
@@ -1522,7 +1523,7 @@ partitions.
 <p>[4.0.0+]</p>
 <p>0x03FFBD09</p></td>
 <td><p>MemoryType_ModuleCodeMutable</p></td>
-<td><p>Transition from 0xDD7E08 performed by <a href="#svcSetProcessMemoryPermission" class="uri" title="wikilink">#svcSetProcessMemoryPermission</a>.</p></td>
+<td><p>Transition from 0xDD7E08 performed by <a href="#svcSetProcessMemoryPermission" title="wikilink">#svcSetProcessMemoryPermission</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x005C3C0A</p></td>
@@ -1531,28 +1532,28 @@ partitions.
 </tr>
 <tr class="even">
 <td><p>0x005C3C0B</p></td>
-<td><p>MemoryType_MappedMemory</p></td>
-<td><p>Mapped using <a href="#svcMapMemory" class="uri" title="wikilink">#svcMapMemory</a>.</p></td>
+<td><p>MemoryType_Stack</p></td>
+<td><p>Mapped using <a href="#svcMapMemory" title="wikilink">#svcMapMemory</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x0040200C</p></td>
 <td><p><a href="Thread Local Storage.md" title="wikilink">MemoryType_ThreadLocal</a></p></td>
-<td><p>Mapped during <a href="#svcCreateThread" class="uri" title="wikilink">#svcCreateThread</a>.</p></td>
+<td><p>Mapped during <a href="#svcCreateThread" title="wikilink">#svcCreateThread</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x015C3C0D</p></td>
 <td><p>MemoryType_TransferMemoryIsolated</p></td>
-<td><p>Mapped using <a href="#svcMapTransferMemory" class="uri" title="wikilink">#svcMapTransferMemory</a> when the owning process has perm=0.</p></td>
+<td><p>Mapped using <a href="#svcMapTransferMemory" title="wikilink">#svcMapTransferMemory</a> when the owning process has perm=0.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x005C380E</p></td>
 <td><p>MemoryType_TransferMemory</p></td>
-<td><p>Mapped using <a href="#svcMapTransferMemory" class="uri" title="wikilink">#svcMapTransferMemory</a> when the owning process has perm!=0.</p></td>
+<td><p>Mapped using <a href="#svcMapTransferMemory" title="wikilink">#svcMapTransferMemory</a> when the owning process has perm!=0.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x0040380F</p></td>
 <td><p>MemoryType_ProcessMemory</p></td>
-<td><p>Mapped using <a href="#svcMapProcessMemory" class="uri" title="wikilink">#svcMapProcessMemory</a>.</p></td>
+<td><p>Mapped using <a href="#svcMapProcessMemory" title="wikilink">#svcMapProcessMemory</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x00000010</p></td>
@@ -1572,17 +1573,17 @@ partitions.
 <tr class="even">
 <td><p>0x00002013</p></td>
 <td><p>MemoryType_KernelStack</p></td>
-<td><p>Mapped in kernel during <a href="#svcCreateThread" class="uri" title="wikilink">#svcCreateThread</a>.</p></td>
+<td><p>Mapped in kernel during <a href="#svcCreateThread" title="wikilink">#svcCreateThread</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x00402214</p></td>
 <td><p>[4.0.0+] MemoryType_CodeReadOnly</p></td>
-<td><p>Mapped in kernel during <a href="#svcControlCodeMemory" class="uri" title="wikilink">#svcControlCodeMemory</a>.</p></td>
+<td><p>Mapped in kernel during <a href="#svcControlCodeMemory" title="wikilink">#svcControlCodeMemory</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x00402015</p></td>
 <td><p>[4.0.0+] MemoryType_CodeWritable</p></td>
-<td><p>Mapped in kernel during <a href="#svcControlCodeMemory" class="uri" title="wikilink">#svcControlCodeMemory</a>.</p></td>
+<td><p>Mapped in kernel during <a href="#svcControlCodeMemory" title="wikilink">#svcControlCodeMemory</a>.</p></td>
 </tr>
 </tbody>
 </table>
