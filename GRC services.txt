@@ -57,11 +57,11 @@ Added with [[6.0.0]].
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 1 || 
+| 1 || || No input/output.
 |-
-| 2 || 
+| 2 || || Takes a total of 4-bytes of input and a type-0x6 output buffer, returns a total of 0x10-bytes of output.
 |}
 
 = IMovieMaker =
