@@ -500,7 +500,7 @@ Takes no input. Returns an output u8, which is ignored by official user-processe
 No input, returns an output u8 bool.
 
 ==== InitializeGamePlayRecording ====
-Takes a TransferMemory handle and an u64 for the size of the TransferMemory.
+Takes a TransferMemory handle and an u64 for the size of the TransferMemory. The size must match 0x6000000 otherwise an error is returned.
 
 ==== SetGamePlayRecordingState ====
 Takes an input u32. 0 = disable/pause, 1 = enable/restart.

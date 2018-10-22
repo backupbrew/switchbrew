@@ -357,7 +357,8 @@ No input, returns an output u8 bool.
 #### InitializeGamePlayRecording
 
 Takes a TransferMemory handle and an u64 for the size of the
-TransferMemory.
+TransferMemory. The size must match 0x6000000 otherwise an error is
+returned.
 
 #### SetGamePlayRecordingState
 
