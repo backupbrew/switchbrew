@@ -42,6 +42,8 @@ This is "nn::grcsrv::IGameMovieTrimmer".
 
 This is "nn::grcsrv::IRemoteVideoTransfer".
 
+Added with [6.0.0](6.0.0.md "wikilink").
+
 | Cmd | Name |
 | --- | ---- |
 | 1   |      |
