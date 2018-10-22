@@ -774,9 +774,9 @@ Otherwise just return 0.
 |-
 | Process || 1 || 0 || AllowedThreadPrioBitmask
 |-
-| Process || 2 || 0 || MapRegionBaseAddr
+| Process || 2 || 0 || AliasRegionBaseAddr
 |-
-| Process || 3 || 0 || MapRegionSize
+| Process || 3 || 0 || AliasRegionSize
 |-
 | Process || 4 || 0 || HeapRegionBaseAddr
 |-

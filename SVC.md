@@ -612,8 +612,8 @@ Otherwise just return 0.
 | ----------- | ---------- | --------------------- | ----------------------------------------------------------------------------------------------------------- |
 | Process     | 0          | 0                     | AllowedCpuIdBitmask                                                                                         |
 | Process     | 1          | 0                     | AllowedThreadPrioBitmask                                                                                    |
-| Process     | 2          | 0                     | MapRegionBaseAddr                                                                                           |
-| Process     | 3          | 0                     | MapRegionSize                                                                                               |
+| Process     | 2          | 0                     | AliasRegionBaseAddr                                                                                         |
+| Process     | 3          | 0                     | AliasRegionSize                                                                                             |
 | Process     | 4          | 0                     | HeapRegionBaseAddr                                                                                          |
 | Process     | 5          | 0                     | HeapRegionSize                                                                                              |
 | Process     | 6          | 0                     | TotalMemoryAvailable. Total memory available(free+used).                                                    |
