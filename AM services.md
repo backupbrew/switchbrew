@@ -223,7 +223,7 @@ No input, returns an output
 
 #### CreateGameMovieTrimmer
 
-Takes an input u64 and handle, returns an
+Takes an input u64 and handle, returns a GRC
 [IGameMovieTrimmer](GRC%20services#IGameMovieTrimmer.md##IGameMovieTrimmer "wikilink").
 
 ## IOverlayAppletProxy
