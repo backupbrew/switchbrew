@@ -73,8 +73,7 @@ This is
 
 ## CreateVideoProxy
 
-No input, returns an
-[IHOSBinderDriver](Nvnflinger%20services#dispdrv.md##dispdrv "wikilink").
+No input, returns an [\#IHOSBinderDriver](#IHOSBinderDriver "wikilink").
 
 ## OpenOffscreenLayer
 
@@ -139,5 +138,10 @@ Takes an input u64 **LayerHandle**, returns an output event handle.
 # OffscreenRecordingParameter
 
 This is a 0x80-byte struct.
+
+# IHOSBinderDriver
+
+This is the same interface as NV
+[IHOSBinderDriver](Nvnflinger%20services#dispdrv.md##dispdrv "wikilink").
 
 [Category:Services](Category:Services "wikilink")

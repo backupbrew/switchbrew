@@ -99,7 +99,7 @@ This is "nn::grcsrv::IMovieMaker".
 |}
 
 == CreateVideoProxy ==
-No input, returns an [[Nvnflinger_services#dispdrv|IHOSBinderDriver]].
+No input, returns an [[#IHOSBinderDriver]].
 
 == OpenOffscreenLayer ==
 Takes an input u64 '''LayerHandle''', returns an output u32.
@@ -143,5 +143,8 @@ Takes an input u64 '''LayerHandle''', returns an output event handle.
 
 = OffscreenRecordingParameter =
 This is a 0x80-byte struct.
+
+= IHOSBinderDriver =
+This is the same interface as NV [[Nvnflinger_services#dispdrv|IHOSBinderDriver]].
 
 [[Category:Services]]
