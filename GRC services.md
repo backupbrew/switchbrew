@@ -75,11 +75,11 @@ No input, returns an
 
 ## OpenOffscreenLayer
 
-Takes an input u64, returns an output u32.
+Takes an input u64 **LayerHandle**, returns an output u32.
 
 ## CloseOffscreenLayer
 
-Takes an input u64, no output.
+Takes an input u64 **LayerHandle**, no output.
 
 ## StartOffscreenRecording
 
