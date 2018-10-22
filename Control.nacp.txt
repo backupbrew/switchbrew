@@ -19,7 +19,7 @@ Total size is 0x4000-bytes.
 |-
 | 0x3024
 | 0x4
-| ?
+| Byte3 (bit0 in byte3?) value 0x1 enables video recording, otherwise disables it?(Needs verified)
 |-
 | 0x3028
 | 0x4

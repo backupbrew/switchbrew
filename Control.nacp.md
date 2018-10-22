@@ -10,7 +10,7 @@ Total size is
 | ------ | ------------------ | ------------------------------------------------------------------------------------------------------ |
 | 0x0    | 0x3000 (0x300\*16) | Language entries                                                                                       |
 | 0x3000 | 0x24               | Zeros?                                                                                                 |
-| 0x3024 | 0x4                | ?                                                                                                      |
+| 0x3024 | 0x4                | Byte3 (bit0 in byte3?) value 0x1 enables video recording, otherwise disables it?(Needs verified)       |
 | 0x3028 | 0x4                | ?                                                                                                      |
 | 0x302C | 0x4                | ?                                                                                                      |
 | 0x3030 | 0x4                | ?                                                                                                      |
