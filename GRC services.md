@@ -85,17 +85,21 @@ Takes an input u64 **LayerHandle**, no output.
 
 Takes an input u64, no output.
 
+Seems to be unused by official user processes,
+[\#StartOffscreenRecordingEx](#StartOffscreenRecordingEx "wikilink") is
+used instead.
+
 ## AbortOffscreenRecording
 
-Takes an input u64, no output.
+Takes an input u64 **LayerHandle**, no output.
 
 ## RequestOffscreenRecordingFinishReady
 
-Takes an input u64, no output.
+Takes an input u64 **LayerHandle**, no output.
 
 ## StartOffscreenRecordingEx
 
-Takes an input u64 and an
+Takes an input u64 **LayerHandle** and an
 [\#OffscreenRecordingParameter](#OffscreenRecordingParameter "wikilink"),
 no output.
 
@@ -103,25 +107,31 @@ no output.
 
 Takes an input u64 and a type-0x5 input buffer, no output.
 
+Seems to be unused by official user processes,
+[\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")
+is used instead.
+
 ## CompleteOffscreenRecordingFinishEx0
 
-Takes an input u64 and 2 type-0x5 input buffers, no output.
+Takes an input u64 **LayerHandle** and 2 type-0x5 input buffers, no
+output.
 
 ## EncodeOffscreenLayerAudioSample
 
-Takes an input u64 and a type-0x5 input buffer, returns an output u64.
+Takes an input u64 **LayerHandle** and a type-0x5 input buffer, returns
+an output u64.
 
 ## GetOffscreenLayerError
 
-Takes an input u64, no output.
+Takes an input u64 **LayerHandle**, no output.
 
 ## GetOffscreenLayerRecordingFinishReadyEvent
 
-Takes an input u64, returns an output handle.
+Takes an input u64 **LayerHandle**, returns an output event handle.
 
 ## GetOffscreenLayerAudioEncodeReadyEvent
 
-Takes an input u64, returns an output handle.
+Takes an input u64 **LayerHandle**, returns an output event handle.
 
 # OffscreenRecordingParameter
 
