@@ -198,7 +198,7 @@ commands.
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |                                                |
 | 80  | \[6.0.0+\] RequestExitToSelf                                                                                |                                                |
 | 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |                                                |
-| 100 | \[4.0.0+\] CreateGameMovieTrimmer                                                                           |                                                |
+| 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                   |                                                |
 | 101 | \[6.0.0+\] ReserveResourceForMovieOperation                                                                 |                                                |
 | 102 | \[6.0.0+\] UnreserveResourceForMovieOperation                                                               |                                                |
 | 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                      |                                                |
@@ -220,6 +220,11 @@ No input. Returns an u64 LibraryAppletInfo: +0 u32 is
 
 No input, returns an output
 [LanguageCode](Settings%20services#LanguageCode.md##LanguageCode "wikilink").
+
+#### CreateGameMovieTrimmer
+
+Takes an input u64 and handle, returns an
+[IGameMovieTrimmer](GRC%20services#IGameMovieTrimmer.md##IGameMovieTrimmer "wikilink").
 
 ## IOverlayAppletProxy
 

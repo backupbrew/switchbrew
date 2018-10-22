@@ -293,7 +293,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 90 || [5.0.0+] CreateApplicationAndPushAndRequestToLaunch ||
 |-
-| 100 || [4.0.0+] CreateGameMovieTrimmer ||
+| 100 || [4.0.0+] [[#CreateGameMovieTrimmer]] ||
 |-
 | 101 || [6.0.0+] ReserveResourceForMovieOperation ||
 |-
@@ -312,6 +312,9 @@ No input. Returns an u64 LibraryAppletInfo: +0 u32 is [[#AppletId]], +4 u32 is [
 
 ==== GetMainAppletApplicationDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
+
+==== CreateGameMovieTrimmer ====
+Takes an input u64 and handle, returns an [[GRC_services#IGameMovieTrimmer|IGameMovieTrimmer]].
 
 == IOverlayAppletProxy ==
 {| class="wikitable" border="1"
