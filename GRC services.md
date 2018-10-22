@@ -7,12 +7,15 @@ ioctls.
 
 # grc:c
 
-This is "nn::grcsrv::IGrcService".
+This is
+"nn::grcsrv::IGrcService".
 
-| Cmd | Name                   |
-| --- | ---------------------- |
-| 1   | OpenContinuousRecorder |
-| 2   | OpenGameMovieTrimmer   |
+| Cmd | Name                   | Notes                                                                                                                   |
+| --- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 1   | OpenContinuousRecorder | Takes a total of 0x48-bytes of input and a handle, returns an [\#IContinuousRecorder](#IContinuousRecorder "wikilink"). |
+| 2   | OpenGameMovieTrimmer   | Takes a total of 0x8-bytes of input and a handle, returns an [\#IGameMovieTrimmer](#IGameMovieTrimmer "wikilink").      |
+| 3   |                        | Takes a total of 0x8-bytes of input and a handle, returns an [\#IUnknown](#IUnknown "wikilink").                        |
+| 101 |                        | Takes a total of 0x10-bytes of input, returns an [\#IMovieMaker](#IMovieMaker "wikilink").                              |
 
 ## IContinuousRecorder
 
@@ -26,6 +29,7 @@ This is "nn::grcsrv::IContinuousRecorder".
 | 11  |      |
 | 12  |      |
 | 13  |      |
+| 14  |      |
 
 ## IGameMovieTrimmer
 
@@ -49,6 +53,14 @@ Added with
 | --- | ---- | -------------------------------------------------------------------------------------------------------- |
 | 1   |      | No input/output.                                                                                         |
 | 2   |      | Takes a total of 4-bytes of input and a type-0x6 output buffer, returns a total of 0x10-bytes of output. |
+
+# IUnknown
+
+| Cmd | Name | Notes                                                                        |
+| --- | ---- | ---------------------------------------------------------------------------- |
+| 201 |      | Takes a total of 0x8-bytes of input, returns a total of 0x8-bytes of output. |
+| 202 |      | Takes a total of 0x8-bytes of input, no output.                              |
+|     |      |                                                                              |
 
 # IMovieMaker
 
