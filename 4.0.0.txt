@@ -51,7 +51,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * JIT syscalls were added.
 ** New MemoryType bit for "JIT allowed".
 ** New MemoryTypes for JitWritable and JitReadOnly.
-* New synchronization syscalls 0x34, 0x35 added.
+* New synchronization syscalls 0x34, 0x35 added: These ones allow implementation of synchronization primitives without a mutex+condvar pair. This is more efficient because when a thread wakes up from a condvar, the mutex is held and needs to perform a syscall to unlock it. If you have N threads blocking on a condvar, you need N-1 syscalls to wake all the threads. With the new syscalls, you can wake up all N with a single syscall.
+
 * Added new syscall svcDumpInfoNew, but it's stubbed.
 * The linked-list node for KAutoObjects was added to the struct itself instead of being a separate allocation.
 * svcGetInfo now exposes the first and last process id for built-in modules.
