@@ -313,6 +313,18 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x171402 || 2 || 2954 || Invalid gamecard handle.
 |-
+| 0x190202 || 2 || 3201 || Memory allocation failure related to FAT filesystem code
+|-
+| 0x190602 || 2 || 3203 || Memory allocation failure related to FAT filesystem code
+|-
+| 0x190802 || 2 || 3204 || Memory allocation failure related to FAT filesystem code
+|-
+| 0x190A02 || 2 || 3205 || Memory allocation failure related to FAT filesystem code
+|-
+| 0x190C02 || 2 || 3206 || Memory allocation failure related to FAT filesystem code
+|-
+| 0x191002 || 2 || 3208 || Memory allocation failure related to FAT filesystem code
+|-
 | 0x195802 || 2 || 3244 || Allocation failure related to SD cards
 |-
 | 0x196002 || 2 || 3248 || Out of memory
