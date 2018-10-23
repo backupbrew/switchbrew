@@ -10,7 +10,7 @@ For the format of the actual NCA, see
 This is the file that ends in `".cnmt{.nca}"` or `"meta0.ncd"`. This
 seems to replace the TMD format.
 
-There's at least 8 different filenames used for ".cnmt":
+There's at least 9 different filenames used for ".cnmt":
 
   - "Application\_{lower-case hex titleID}.cnmt"
   - "Patch\_{lower-case hex titleID}.cnmt"
@@ -20,6 +20,7 @@ There's at least 8 different filenames used for ".cnmt":
   - "SystemProgram\_{lower-case hex titleID}.cnmt"
   - "BootImagePackage\_{lower-case hex titleID}.cnmt"
   - "BootImagePackageSafe\_{lower-case hex titleID}.cnmt"
+  - "Delta\_{lower-case hex titleID}.cnmt"
 
 It starts with a
 header:
