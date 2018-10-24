@@ -24,9 +24,10 @@ NOTE: This is not yet available with the latest hbmenu release.
 To navigate through the list of folders and applications you can swipe
 left and right on the bottom list. To open an item you can tap on it in
 the list or with it highlighted tap the `Open` or `Launch` button prompt
-in the bottom right. To go back a folder you can swipe up or tap the
-`Back` button prompt in the bottom right. To activate the netloader you
-can swipe down on the screen.
+in the bottom right. To go back (a folder) you can swipe up or tap the
+`Back` button prompt in the bottom right (the latter is only available
+when no message-box is shown / netloader isn't active). To activate the
+netloader you can swipe down on the screen.
 
 # Battery
 
@@ -63,8 +64,8 @@ buttonBText, and buttonMText, but normally this can be left at the
 defaults. Change the value of the enableWaveBlending field to 1 to
 enable wave blending.
 
-There's also borderColor and borderTextColor fields which can be set
-like the other color fields.
+There's also borderColor, borderTextColor, and progressBarColor fields
+which can be set like the other color fields.
 
 The color fields are RGBA.
 
