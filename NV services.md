@@ -127,6 +127,10 @@ is 0x100B instead of 0xC0B.
 
 Takes an input u64. No output.
 
+This sets a boolean value based on the input u64 and the value of the
+"nv\!nv\_graphics\_firmware\_memory\_margin" system configuration, but
+only for "nvdrv" (the other services default to false).
+
 Official user-processes starting with 3.0.0 now use this at the end of
 nvdrv service init with value 0x1.
 
