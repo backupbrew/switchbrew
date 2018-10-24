@@ -255,7 +255,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xE401 || 1 || 114 || Invalid handle.
 |-
-| 0xE601 || 1 || 115 || Syscall copy from user failed.
+| 0xE601 || 1 || 115 || Invalid pointer/Syscall copy from user failed.
 |-
 | 0xE801 || 1 || 116 || Invalid combination
 |-
