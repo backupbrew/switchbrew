@@ -380,19 +380,21 @@ This is "nn::usb::hs::IClientRootSession".
 |-
 | 0 || BindClientProcess
 |-
-| 1 ||
+| 1 || QueryAllInterfaces
 |-
-| 2 ||
+| 2 || QueryAvailableInterfaces
 |-
-| 3 ||
+| 3 || QueryAcquiredInterfaces
 |-
-| 4 ||
+| 4 || CreateInterfaceAvailableEvent
 |-
-| 5 ||
+| 5 || DestroyInterfaceAvailableEvent
 |-
 | 6 || GetInterfaceStateChangeEvent
 |-
-| 7 || GetClientIfSession
+| 7 || AcquireUsbIf
+|-
+| 8 || [6.0.0+]
 |}
 
 General USB devices usage, used by [[HID_services|hid]] and [[Sockets_services|bsdsockets]].
@@ -406,13 +408,13 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 0 ||
 |-
-| 1 ||
+| 1 || SetInterface
 |-
-| 2 ||
+| 2 || GetInterface
 |-
-| 3 ||
+| 3 || GetAlternateInterface
 |-
-| 4 ||
+| 4 || GetCurrentFrame
 |-
 | 5 || CtrlXferAsync
 |-
@@ -420,9 +422,9 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 7 || GetCtrlXferReport
 |-
-| 8 ||
+| 8 || ResetDevice
 |-
-| 9 || GetClientEpSession
+| 9 || OpenUsbEp
 |}
 
 === IClientEpSession ===
@@ -432,17 +434,17 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || Open
 |-
-| 1 ||
+| 1 || Close
 |-
 | 2 ||
 |-
-| 3 ||
+| 3 || Populate
 |-
 | 4 || PostBufferAsync
 |-
-| 5 ||
+| 5 || GetXferReport
 |-
 | 6 ||
 |-

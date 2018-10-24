@@ -403,7 +403,7 @@ command.
 When sending data where size is larger than wMaxPacketSize, it will
 automatically send multiple USB packets where last packet size =
 {remaining size}. Every {wMaxPacketSize}-bytes is a different packet.
-This only occurs in some cases. When **size** is ~0x1000000(exact size
+This only occurs in some cases. When **size** is \~0x1000000(exact size
 unknown), Switch-side silently hangs, while host-side will timeout(no
 traffic on USB bus indicating failure).
 
@@ -455,16 +455,17 @@ Stops in-progress data-transfer done by
 
 This is "nn::usb::hs::IClientRootSession".
 
-| Cmd | Name                         |
-| --- | ---------------------------- |
-| 0   | BindClientProcess            |
-| 1   |                              |
-| 2   |                              |
-| 3   |                              |
-| 4   |                              |
-| 5   |                              |
-| 6   | GetInterfaceStateChangeEvent |
-| 7   | GetClientIfSession           |
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   | BindClientProcess              |
+| 1   | QueryAllInterfaces             |
+| 2   | QueryAvailableInterfaces       |
+| 3   | QueryAcquiredInterfaces        |
+| 4   | CreateInterfaceAvailableEvent  |
+| 5   | DestroyInterfaceAvailableEvent |
+| 6   | GetInterfaceStateChangeEvent   |
+| 7   | AcquireUsbIf                   |
+| 8   | \[6.0.0+\]                     |
 
 General USB devices usage, used by [hid](HID%20services.md "wikilink")
 and [bsdsockets](Sockets%20services.md "wikilink").
@@ -473,18 +474,18 @@ and [bsdsockets](Sockets%20services.md "wikilink").
 
 This is "nn::usb::hs::IClientIfSession".
 
-| Cmd | Name               |
-| --- | ------------------ |
-| 0   |                    |
-| 1   |                    |
-| 2   |                    |
-| 3   |                    |
-| 4   |                    |
-| 5   | CtrlXferAsync      |
-| 6   |                    |
-| 7   | GetCtrlXferReport  |
-| 8   |                    |
-| 9   | GetClientEpSession |
+| Cmd | Name                  |
+| --- | --------------------- |
+| 0   |                       |
+| 1   | SetInterface          |
+| 2   | GetInterface          |
+| 3   | GetAlternateInterface |
+| 4   | GetCurrentFrame       |
+| 5   | CtrlXferAsync         |
+| 6   |                       |
+| 7   | GetCtrlXferReport     |
+| 8   | ResetDevice           |
+| 9   | OpenUsbEp             |
 
 ### IClientEpSession
 
@@ -492,12 +493,12 @@ This is "nn::usb::hs::IClientEpSession".
 
 | Cmd | Name            |
 | --- | --------------- |
-| 0   |                 |
-| 1   |                 |
+| 0   | Open            |
+| 1   | Close           |
 | 2   |                 |
-| 3   |                 |
+| 3   | Populate        |
 | 4   | PostBufferAsync |
-| 5   |                 |
+| 5   | GetXferReport   |
 | 6   |                 |
 | 7   | \[4.0.0+\]      |
 | 8   | \[4.0.0+\]      |
