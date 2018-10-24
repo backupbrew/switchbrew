@@ -2,18 +2,19 @@ The FS for the system-version title(TID 0100000000000809) contains
 "/file" (and, with \[5.0.0+\],
 "/digest"):
 
-| Offset | Size | Description                                                                                                                                                                                     |
-| ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x1  | Major                                                                                                                                                                                           |
-| 0x1    | 0x1  | Minor                                                                                                                                                                                           |
-| 0x2    | 0x1  | Micro                                                                                                                                                                                           |
-| 0x3    | 0x1  | Unknown/Build?                                                                                                                                                                                  |
-| 0x4    | 0x1  | Revision Number                                                                                                                                                                                 |
-| 0x5    | 0x3  | Normally all-zero. Padding?                                                                                                                                                                     |
-| 0x8    | 0x20 | Platform string ("NX" with zeros afterwards)                                                                                                                                                    |
-| 0x28   | 0x40 | Hex ASCII string. 0x28-bytes(not including NUL-terminator) normally with zeros afterwards. The value of this string differs from [2.0.0](2.0.0.md "wikilink") and [2.1.0](2.1.0.md "wikilink"). |
-| 0x68   | 0x18 | System-version in string form with zeros afterwards. For example: "2.1.0". This is what is displayed in System settings.                                                                        |
-| 0x80   | 0x80 | ASCII string with zeros / padding afterwards. For example: "NintendoSDK Firmware for NX 2.0.0-15"                                                                                               |
+| Offset | Size | Description                                                                                                                        |
+| ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | Major                                                                                                                              |
+| 0x1    | 0x1  | Minor                                                                                                                              |
+| 0x2    | 0x1  | Micro                                                                                                                              |
+| 0x3    | 0x1  | Padding                                                                                                                            |
+| 0x4    | 0x1  | Revision Major                                                                                                                     |
+| 0x5    | 0x1  | Revision Minor                                                                                                                     |
+| 0x6    | 0x2  | Padding                                                                                                                            |
+| 0x8    | 0x20 | Platform string ("NX" with zeros afterwards)                                                                                       |
+| 0x28   | 0x40 | Version hash (Hex ASCII string). 0x28-bytes(not including NUL-terminator) normally with zeros afterwards.                          |
+| 0x68   | 0x18 | Display version (System-version in string form with zeros afterwards, e.g. "2.1.0"). This is what is displayed in System settings. |
+| 0x80   | 0x80 | Display title (System version in longform, e.g. "NintendoSDK Firmware for NX 2.0.0-15"). This is what is displayed in DevMenu.     |
 
 ## Known Versions
 
