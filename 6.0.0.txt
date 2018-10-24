@@ -55,6 +55,11 @@ Security flaws fixed: Yes.
 ===[[USB_services|USB-sysmodule]]===
 The only sysmodule with any changes for accessible IO in the [[NPDM]] was USB-sysmodule. The IO page for the [[Fuses|fuse registers]] is now accessible by this sysmodule.
 
+===[[NV_services|nvservices-sysmodule]]===
+Among various changes, the [[Switch_System_Flaws#System_Modules|"Transfer Memory leak in nvservices system module"]] system flaw was patched in the following way:
+* [[NV_services#Initialize|Initialize]] and [[NV_services#InitializeDevtools|InitializeDevtools]] now keep track of the size of the transfer memory supplied by the user.
+* L_34B90 (nvdrv's destructor) now calls L_B4C30 (memset) on the entire transfer memory region (using the size saved previously) before calling [[SVC#svcUnmapTransferMemory|svcUnmapTransferMemory]].
+
 ===olsc-sysmodule===
 This new sysmodule handles cloud saves.
 
