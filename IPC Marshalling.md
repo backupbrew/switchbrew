@@ -214,6 +214,13 @@ changed to a different ASLR'd region.
 No user-process-\>sysmodule memcpy is done for outbufs, only
 sysmodule-\>user-process.
 
+Buffer descriptor X copies memory into a "pointer buffer" that the IPC
+server specifies to the kernel by preparing a message with a C
+descriptor pointing to the pointer buffer before calling
+svcReplyAndReceive. Addresses in the X descriptors are transmuted to
+point into the pointer buffer, and if data doesn't fit in the pointer
+buffer, 0xce01 is returned back to the client.
+
 ## Raw data section
 
 ![An example of an IPC message with a type 0xA buffer in it. Red is
