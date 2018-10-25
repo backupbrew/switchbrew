@@ -698,6 +698,13 @@ incoming message, is closed, a passed port has an incoming connection,
 or the timeout expires. If there is an incoming message, it is copied to
 the TLS.
 
+If ReplyTarget is zero, the TLS should contain a blank message. If this
+message has a C descriptor, the buffer it points to will be used as the
+pointer buffer. See
+[IPC\_Marshalling\#IPC\_buffers](IPC%20Marshalling#IPC%20buffers.md##IPC_buffers "wikilink").
+Note that a pointer buffer cannot be specified if ReplyTarget is not
+zero.
+
 After being validated, passed handles will be enumerated in order; even
 if a session has been closed, if one that appears earlier in the list
 has an incoming message, it will take priority and a result code of 0x0
