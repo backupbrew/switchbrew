@@ -137,7 +137,7 @@ This is
 
 ### BindStateChangeEvent
 
-No input, returns an output event with autoclear.
+No input, returns an output event with autoclear enabled.
 
 ### UnbindStateChangeEvent
 
