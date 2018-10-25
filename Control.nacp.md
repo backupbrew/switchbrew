@@ -6,41 +6,59 @@ Total size is
 
 # Structure
 
-| Offset | Size               | Description                                                                                            |
-| ------ | ------------------ | ------------------------------------------------------------------------------------------------------ |
-| 0x0    | 0x3000 (0x300\*16) | Language entries                                                                                       |
-| 0x3000 | 0x24               | Zeros?                                                                                                 |
-| 0x3024 | 0x4                | Byte3 (bit0 in byte3?) value 0x1 enables video recording, otherwise disables it?(Needs verified)       |
-| 0x3028 | 0x4                | ?                                                                                                      |
-| 0x302C | 0x4                | ?                                                                                                      |
-| 0x3030 | 0x4                | ?                                                                                                      |
-| 0x3034 | 0x4                | ?                                                                                                      |
-| 0x3038 | 0x8                | Application titleID                                                                                    |
-| 0x3040 | 0x20               | ?                                                                                                      |
-| 0x3060 | 0x10               | Application version string, encoding unknown.                                                          |
-| 0x3070 | 0x8                | Base titleID for DLC, set even when DLC is not used. Usually app\_titleID+0x1000?                      |
-| 0x3078 | 0x8                | Application titleID                                                                                    |
-| 0x3080 | 0x4                | ?                                                                                                      |
-| 0x3084 | 0x4                | ?                                                                                                      |
-| 0x3088 | 0x4                | ?                                                                                                      |
-| 0x308C | 0x1C               | Zeros?                                                                                                 |
-| 0x30A8 | 0x8                | Product Code (this field is sometimes zeroes, unknown why)                                             |
-| 0x30B0 | 0x8                | Application titleID                                                                                    |
-| 0x30B8 | 0x38 (0x8\*0x7)    | Array of application titleIDs, normally the same as the above app-titleIDs. Only set for game-updates? |
-| 0x30F0 | 0x4                | ?                                                                                                      |
-| 0x30F4 | 0x4                | ?                                                                                                      |
-| 0x30F8 | 0x8                | Application titleID. Only set for game-updates?                                                        |
-| 0x3100 | 0x40               | [BCAT](BCAT%20Content%20Container.md "wikilink") passphrase, all-zero when unused.                     |
-| 0x3140 | 0xEC0              | Normally all-zero?                                                                                     |
+| Offset | Size                 | Description                                                                       |
+| ------ | -------------------- | --------------------------------------------------------------------------------- |
+| 0x0    | 0x3000 (0x300\*0x10) | [Title entries](#Title_Entry "wikilink")                                          |
+| 0x3000 | 0x25                 | Isbn                                                                              |
+| 0x3025 | 0x1                  | StartupUserAccount                                                                |
+| 0x3026 | 0x1                  | ?                                                                                 |
+| 0x3027 | 0x1                  | ?                                                                                 |
+| 0x3028 | 0x4                  | ApplicationAttribute                                                              |
+| 0x302C | 0x4                  | SupportedLanguages                                                                |
+| 0x3030 | 0x4                  | ParentalControl                                                                   |
+| 0x3034 | 0x1                  | isScreenshotEnabled                                                               |
+| 0x3035 | 0x1                  | isVideoCapturingEnabled                                                           |
+| 0x3036 | 0x1                  | isDataLossConfirmationEnabled                                                     |
+| 0x3037 | 0x1                  | ?                                                                                 |
+| 0x3038 | 0x8                  | PresenceGroupId                                                                   |
+| 0x3040 | 0x20                 | RatingAge                                                                         |
+| 0x3060 | 0x10                 | DisplayVersion                                                                    |
+| 0x3070 | 0x8                  | AddOnContentBaseId                                                                |
+| 0x3078 | 0x8                  | SaveDataOwnerId                                                                   |
+| 0x3080 | 0x8                  | UserAccountSaveDataSize                                                           |
+| 0x3088 | 0x8                  | UserAccountSaveDataJournalSize                                                    |
+| 0x3090 | 0x8                  | ?                                                                                 |
+| 0x3098 | 0x8                  | ?                                                                                 |
+| 0x30A0 | 0x8                  | ?                                                                                 |
+| 0x30A8 | 0x8                  | ApplicationErrorCodeCategory                                                      |
+| 0x30B0 | 0x40 (0x8\*0x8)      | LocalCommunicationIds                                                             |
+| 0x30F0 | 0x1                  | LogoType                                                                          |
+| 0x30F1 | 0x1                  | LogoHandling                                                                      |
+| 0x30F2 | 0x1                  | isRuntimeAddOnContentInstallEnabled                                               |
+| 0x30F3 | 0x3                  | ?                                                                                 |
+| 0x30F6 | 0x1                  | ?                                                                                 |
+| 0x30F7 | 0x1                  | ?                                                                                 |
+| 0x30F8 | 0x8                  | SeedForPseudoDeviceId                                                             |
+| 0x3100 | 0x41                 | [BcatPassphrase](BCAT%20Content%20Container.md "wikilink"), all-zero when unused. |
+| 0x3141 | 0x1                  | ?                                                                                 |
+| 0x3142 | 0x6                  | ?                                                                                 |
+| 0x3148 | 0x8                  | ?                                                                                 |
+| 0x3150 | 0x8                  | ?                                                                                 |
+| 0x3158 | 0x8                  | ?                                                                                 |
+| 0x3160 | 0x8                  | ?                                                                                 |
+| 0x3168 | 0x8                  | ?                                                                                 |
+| 0x3170 | 0x8                  | ?                                                                                 |
+| 0x3178 | 0x8                  | ?                                                                                 |
+| 0x3180 | 0xE80                | ?                                                                                 |
 
-## Language Entry
+## Title Entry
 
 Total size is 0x300-bytes.
 
-| Offset | Size  | Description                  |
-| ------ | ----- | ---------------------------- |
-| 0x0    | 0x200 | Application name string      |
-| 0x200  | 0x100 | Application developer string |
+| Offset | Size  | Description                   |
+| ------ | ----- | ----------------------------- |
+| 0x0    | 0x200 | Application name strings      |
+| 0x200  | 0x100 | Application publisher strings |
 
 Entry index for each
 [language](Settings%20services#LanguageCode.md##LanguageCode "wikilink"):
@@ -63,7 +81,7 @@ Entry index for each
 | 13          | "Taiwanese"                                                                   |
 | 14          | "Chinese"                                                                     |
 
-Official apps tend to have the language entries' strings set to only
-English. Some apps don't have certain language entries set at all. In
-addition, official apps usually (?) don't have the following language
+Official apps tend to have the title entries' strings set only to
+English. Some apps don't have certain title entries set at all. In
+addition, official apps usually (?) don't have the following title
 entries set: Korean, Taiwanese, and Chinese.
