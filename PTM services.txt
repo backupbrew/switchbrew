@@ -5,21 +5,32 @@ This is "nn::fan::detail::IManager".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || OpenController
 |-
-| 1 ||
+|}
+
+== IController ==
+This is "nn::fan::detail::IController".
+
+{| class="wikitable" border="1"
 |-
-| 2 ||
+! Cmd || Name
 |-
-| 3 ||
+| 0 || SetRotationSpeedLevel
 |-
-| 4 ||
+| 1 || SetRotationSpeedLevelByDiff
 |-
-| 5 ||
+| 2 || GetRotationSpeedLevel
 |-
-| 6 ||
+| 3 || SetRotationRate
 |-
-| 7 ||
+| 4 || GetRotationRate
+|-
+| 5 || EnableFan
+|-
+| 6 || DisableFan
+|-
+| 7 || GetActualRotationSpeedLevel
 |-
 |}
 

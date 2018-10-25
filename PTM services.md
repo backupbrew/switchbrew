@@ -2,17 +2,26 @@
 
 This is "nn::fan::detail::IManager".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
-| 6   |      |
-| 7   |      |
-|     |      |
+| Cmd | Name           |
+| --- | -------------- |
+| 0   | OpenController |
+|     |                |
+
+## IController
+
+This is "nn::fan::detail::IController".
+
+| Cmd | Name                        |
+| --- | --------------------------- |
+| 0   | SetRotationSpeedLevel       |
+| 1   | SetRotationSpeedLevelByDiff |
+| 2   | GetRotationSpeedLevel       |
+| 3   | SetRotationRate             |
+| 4   | GetRotationRate             |
+| 5   | EnableFan                   |
+| 6   | DisableFan                  |
+| 7   | GetActualRotationSpeedLevel |
+|     |                             |
 
 # psm
 
