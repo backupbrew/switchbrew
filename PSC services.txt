@@ -1,3 +1,31 @@
+PSC (Power State Control) provides services related to power state changes in the system.
+
+= Concept =
+
+psc:m allows a process to register a module that depends on power management in some way. A client calls GetPmModule to receive an IPmModule (Power Managed Module), and then calls IPmModule->Initialize(module_id, module_dependency_list) where module_id is the ModuleId enum member for the client, and the dependency list is an array of module IDs for the modules that this depends on. Initialize() returns an event handle that the client can wait on to be notified of a power state change.
+
+psc:c allows a module to the power state controller for the system (in practice, AM is the only client to the controller). IPmControl->DispatchRequest() is used notify all IPmModules of a state change.
+
+For example, FS registers itself as an IPmModule with dependencies on pinmux, gpio, pcv, (tma?), and initializes the SD card once those dependencies have registered.. 
+
+It then does (basically) the following pseudocode (actual code located at .text + 0xB2DB0 in 6.0.0 FS):
+
+    while (true) {
+        Fs_IPmModule->WaitSignaled();
+        
+        Fs_IPmModule->GetRequest(&state);
+        switch (state) {
+            case WakingUp:
+                /* hardware devices are woken up here */
+            case GoingToSleep:
+                /* hardware devices are put to sleep here */
+            case ShuttingDown:
+                /* hardware devices are turned off here */
+        }
+        
+        Fs_IPmModule->Acknowledge(state);
+    }
+
 = psc:c =
 This is "nn::psc::sf::IPmControl".
 
@@ -5,19 +33,19 @@ This is "nn::psc::sf::IPmControl".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || Initialize
 |-
-| 1 ||
+| 1 || DispatchRequest
 |-
-| 2 ||
+| 2 || GetResult
 |-
-| 3 ||
+| 3 || GetState
 |-
-| 4 ||
+| 4 || Cancel
 |-
-| 5 ||
+| 5 || PrintModuleInformation
 |-
-| 6 ||
+| 6 || GetModuleInformation
 |}
 
 = psc:m =
@@ -43,7 +71,9 @@ This is "nn::psc::sf::IPmModule".
 |-
 | 2 || Acknowledge
 |-
-| 3 ||
+| 3 || Finalize
+|-
+| 4 || [6.0.0+] AcknowledgeEx
 |}
 
 = srepo:u, srepo:a =
