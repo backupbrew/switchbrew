@@ -141,13 +141,15 @@ driver registers.
 | FUSE\_TSENSOR\_8                                       | 0x7000FAD4 |
 | FUSE\_SECURE\_PROVISION\_INDEX                         | 0x7000FAE8 |
 | FUSE\_RESERVED\_CALIB                                  | 0x7000FB04 |
+| FUSE\_OPT\_GPU\_TPC0\_DISABLE                          | 0x7000FB0C |
 | FUSE\_TSENSOR\_9                                       | 0x7000FB1C |
+| FUSE\_OPT\_GPU\_TPC1\_DISABLE                          | 0x7000FB3C |
 | FUSE\_USB\_CALIB\_EXT                                  | 0x7000FB50 |
 | FUSE\_SPARE\_BIT\_0                                    | 0x7000FB80 |
 | FUSE\_SPARE\_BIT\_1                                    | 0x7000FB84 |
-| FUSE\_SPARE\_BIT\_2                                    | 0x7000FB88 |
-| FUSE\_SPARE\_BIT\_3                                    | 0x7000FB8C |
-| FUSE\_SPARE\_BIT\_4                                    | 0x7000FB90 |
+| [FUSE\_SPARE\_BIT\_2](#FUSE_SPARE_BIT_2 "wikilink")    | 0x7000FB88 |
+| [FUSE\_SPARE\_BIT\_3](#FUSE_SPARE_BIT_3 "wikilink")    | 0x7000FB8C |
+| [FUSE\_SPARE\_BIT\_4](#FUSE_SPARE_BIT_4 "wikilink")    | 0x7000FB90 |
 | [FUSE\_SPARE\_BIT\_5](#FUSE_SPARE_BIT_5 "wikilink")    | 0x7000FB94 |
 | FUSE\_SPARE\_BIT\_6                                    | 0x7000FB98 |
 | FUSE\_SPARE\_BIT\_7                                    | 0x7000FB9C |
@@ -175,7 +177,6 @@ driver registers.
 | FUSE\_SPARE\_BIT\_29                                   | 0x7000FBF4 |
 | FUSE\_SPARE\_BIT\_30                                   | 0x7000FBF8 |
 | FUSE\_SPARE\_BIT\_31                                   | 0x7000FBFC |
-|                                                        |            |
 
 #### FUSE\_SKU\_INFO
 
@@ -234,6 +235,18 @@ array.
 
 This register returns the value programmed into index 0x3C of the fuse
 array.
+
+#### FUSE\_SPARE\_BIT\_2
+
+Stores part of the speedo fusing revision.
+
+#### FUSE\_SPARE\_BIT\_3
+
+Stores part of the speedo fusing revision.
+
+#### FUSE\_SPARE\_BIT\_4
+
+Stores part of the speedo fusing revision.
 
 #### FUSE\_SPARE\_BIT\_5
 
