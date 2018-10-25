@@ -45,25 +45,25 @@ This is "nn::psm::IPsmServer".
 |-
 | 1 || [[#GetChargerType]]
 |-
-| 2 || EnableBatteryCharging
+| 2 || [[#EnableBatteryCharging]]
 |-
-| 3 || DisableBatteryCharging
+| 3 || [[#DisableBatteryCharging]]
 |-
 | 4 || IsBatteryChargingEnabled
 |-
-| 5 || AcquireControllerPowerSupply
+| 5 || [[#AcquireControllerPowerSupply]]
 |-
-| 6 || ReleaseControllerPowerSupply
+| 6 || [[#ReleaseControllerPowerSupply]]
 |-
 | 7 || [[#OpenSession]]
 |-
-| 8 || EnableEnoughPowerChargeEmulation
+| 8 || [[#EnableEnoughPowerChargeEmulation]]
 |-
-| 9 || DisableEnoughPowerChargeEmulation
+| 9 || [[#DisableEnoughPowerChargeEmulation]]
 |-
-| 10 || EnableFastBatteryCharging
+| 10 || [[#EnableFastBatteryCharging]]
 |-
-| 11 || DisableFastBatteryCharging
+| 11 || [[#DisableFastBatteryCharging]]
 |-
 | 12 || GetBatteryVoltageState
 |-
@@ -85,8 +85,32 @@ No input, returns an output u32.
 == GetChargerType ==
 No input, returns an output u32.
 
+== EnableBatteryCharging ==
+No input/output.
+
+== DisableBatteryCharging ==
+No input/output.
+
+== AcquireControllerPowerSupply ==
+No input/output.
+
+== ReleaseControllerPowerSupply ==
+No input/output.
+
 == OpenSession ==
 No input, returns an output [[#IPsmSession]].
+
+== EnableEnoughPowerChargeEmulation ==
+No input/output.
+
+== DisableEnoughPowerChargeEmulation ==
+No input/output.
+
+== EnableFastBatteryCharging ==
+No input/output.
+
+== DisableFastBatteryCharging ==
+No input/output.
 
 == IPsmSession ==
 This is "nn::psm::IPsmSession".

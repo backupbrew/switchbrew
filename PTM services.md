@@ -28,27 +28,27 @@ This is "nn::fan::detail::IController".
 This is
 "nn::psm::IPsmServer".
 
-| Cmd | Name                                                                   |
-| --- | ---------------------------------------------------------------------- |
-| 0   | [\#GetBatteryChargePercentage](#GetBatteryChargePercentage "wikilink") |
-| 1   | [\#GetChargerType](#GetChargerType "wikilink")                         |
-| 2   | EnableBatteryCharging                                                  |
-| 3   | DisableBatteryCharging                                                 |
-| 4   | IsBatteryChargingEnabled                                               |
-| 5   | AcquireControllerPowerSupply                                           |
-| 6   | ReleaseControllerPowerSupply                                           |
-| 7   | [\#OpenSession](#OpenSession "wikilink")                               |
-| 8   | EnableEnoughPowerChargeEmulation                                       |
-| 9   | DisableEnoughPowerChargeEmulation                                      |
-| 10  | EnableFastBatteryCharging                                              |
-| 11  | DisableFastBatteryCharging                                             |
-| 12  | GetBatteryVoltageState                                                 |
-| 13  | GetRawBatteryChargePercentage                                          |
-| 14  | IsEnoughPowerSupplied                                                  |
-| 15  | GetBatteryAgePercentage                                                |
-| 16  | GetBatteryChargeInfoEvent                                              |
-| 17  | GetBatteryChargeInfoFields                                             |
-|     |                                                                        |
+| Cmd | Name                                                                                 |
+| --- | ------------------------------------------------------------------------------------ |
+| 0   | [\#GetBatteryChargePercentage](#GetBatteryChargePercentage "wikilink")               |
+| 1   | [\#GetChargerType](#GetChargerType "wikilink")                                       |
+| 2   | [\#EnableBatteryCharging](#EnableBatteryCharging "wikilink")                         |
+| 3   | [\#DisableBatteryCharging](#DisableBatteryCharging "wikilink")                       |
+| 4   | IsBatteryChargingEnabled                                                             |
+| 5   | [\#AcquireControllerPowerSupply](#AcquireControllerPowerSupply "wikilink")           |
+| 6   | [\#ReleaseControllerPowerSupply](#ReleaseControllerPowerSupply "wikilink")           |
+| 7   | [\#OpenSession](#OpenSession "wikilink")                                             |
+| 8   | [\#EnableEnoughPowerChargeEmulation](#EnableEnoughPowerChargeEmulation "wikilink")   |
+| 9   | [\#DisableEnoughPowerChargeEmulation](#DisableEnoughPowerChargeEmulation "wikilink") |
+| 10  | [\#EnableFastBatteryCharging](#EnableFastBatteryCharging "wikilink")                 |
+| 11  | [\#DisableFastBatteryCharging](#DisableFastBatteryCharging "wikilink")               |
+| 12  | GetBatteryVoltageState                                                               |
+| 13  | GetRawBatteryChargePercentage                                                        |
+| 14  | IsEnoughPowerSupplied                                                                |
+| 15  | GetBatteryAgePercentage                                                              |
+| 16  | GetBatteryChargeInfoEvent                                                            |
+| 17  | GetBatteryChargeInfoFields                                                           |
+|     |                                                                                      |
 
 ## GetBatteryChargePercentage
 
@@ -58,9 +58,41 @@ No input, returns an output u32.
 
 No input, returns an output u32.
 
+## EnableBatteryCharging
+
+No input/output.
+
+## DisableBatteryCharging
+
+No input/output.
+
+## AcquireControllerPowerSupply
+
+No input/output.
+
+## ReleaseControllerPowerSupply
+
+No input/output.
+
 ## OpenSession
 
 No input, returns an output [\#IPsmSession](#IPsmSession "wikilink").
+
+## EnableEnoughPowerChargeEmulation
+
+No input/output.
+
+## DisableEnoughPowerChargeEmulation
+
+No input/output.
+
+## EnableFastBatteryCharging
+
+No input/output.
+
+## DisableFastBatteryCharging
+
+No input/output.
 
 ## IPsmSession
 
