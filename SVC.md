@@ -574,7 +574,7 @@ Size must be 0x1000-aligned.
 
 **0x0:** Success.
 
-**0xce01:** \`KSessionRequest\` allocation failed (unlikely) or pointer
+**0xce01:** KSessionRequest allocation failed (unlikely) or pointer
 buffer size exceeded.
 
 ## svcBreak
