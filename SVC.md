@@ -570,6 +570,13 @@ be called anywhere.
 
 Size must be 0x1000-aligned.
 
+### Result codes
+
+**0x0:** Success.
+
+**0xce01:** \`KSessionRequest\` allocation failed (unlikely) or pointer
+buffer size exceeded.
+
 ## svcBreak
 
 <div style="display: inline-block;">
