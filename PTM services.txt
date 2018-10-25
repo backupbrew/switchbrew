@@ -73,9 +73,9 @@ This is "nn::psm::IPsmServer".
 |-
 | 15 || [[#GetBatteryAgePercentage]]
 |-
-| 16 || GetBatteryChargeInfoEvent
+| 16 || [[#GetBatteryChargeInfoEvent]]
 |-
-| 17 || GetBatteryChargeInfoFields
+| 17 || [[#GetBatteryChargeInfoFields]]
 |-
 |}
 
@@ -126,6 +126,12 @@ No input, returns an output u8.
 
 == GetBatteryAgePercentage ==
 No input, returns an output u64.
+
+== GetBatteryChargeInfoEvent ==
+No input, returns an output event.
+
+== GetBatteryChargeInfoFields ==
+No input, returns an output 0x40-byte struct.
 
 == IPsmSession ==
 This is "nn::psm::IPsmSession".

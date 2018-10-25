@@ -46,8 +46,8 @@ This is
 | 13  | [\#GetRawBatteryChargePercentage](#GetRawBatteryChargePercentage "wikilink")         |
 | 14  | [\#IsEnoughPowerSupplied](#IsEnoughPowerSupplied "wikilink")                         |
 | 15  | [\#GetBatteryAgePercentage](#GetBatteryAgePercentage "wikilink")                     |
-| 16  | GetBatteryChargeInfoEvent                                                            |
-| 17  | GetBatteryChargeInfoFields                                                           |
+| 16  | [\#GetBatteryChargeInfoEvent](#GetBatteryChargeInfoEvent "wikilink")                 |
+| 17  | [\#GetBatteryChargeInfoFields](#GetBatteryChargeInfoFields "wikilink")               |
 |     |                                                                                      |
 
 ## GetBatteryChargePercentage
@@ -113,6 +113,14 @@ No input, returns an output u8.
 ## GetBatteryAgePercentage
 
 No input, returns an output u64.
+
+## GetBatteryChargeInfoEvent
+
+No input, returns an output event.
+
+## GetBatteryChargeInfoFields
+
+No input, returns an output 0x40-byte struct.
 
 ## IPsmSession
 
