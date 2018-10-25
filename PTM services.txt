@@ -65,13 +65,13 @@ This is "nn::psm::IPsmServer".
 |-
 | 11 || [[#DisableFastBatteryCharging]]
 |-
-| 12 || GetBatteryVoltageState
+| 12 || [[#GetBatteryVoltageState]]
 |-
-| 13 || GetRawBatteryChargePercentage
+| 13 || [[#GetRawBatteryChargePercentage]]
 |-
 | 14 || [[#IsEnoughPowerSupplied]]
 |-
-| 15 || GetBatteryAgePercentage
+| 15 || [[#GetBatteryAgePercentage]]
 |-
 | 16 || GetBatteryChargeInfoEvent
 |-
@@ -115,8 +115,17 @@ No input/output.
 == DisableFastBatteryCharging ==
 No input/output.
 
+== GetBatteryVoltageState ==
+No input, returns an output u32.
+
+== GetRawBatteryChargePercentage ==
+No input, returns an output u64.
+
 == IsEnoughPowerSupplied ==
 No input, returns an output u8.
+
+== GetBatteryAgePercentage ==
+No input, returns an output u64.
 
 == IPsmSession ==
 This is "nn::psm::IPsmSession".

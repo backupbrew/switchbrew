@@ -42,10 +42,10 @@ This is
 | 9   | [\#DisableEnoughPowerChargeEmulation](#DisableEnoughPowerChargeEmulation "wikilink") |
 | 10  | [\#EnableFastBatteryCharging](#EnableFastBatteryCharging "wikilink")                 |
 | 11  | [\#DisableFastBatteryCharging](#DisableFastBatteryCharging "wikilink")               |
-| 12  | GetBatteryVoltageState                                                               |
-| 13  | GetRawBatteryChargePercentage                                                        |
+| 12  | [\#GetBatteryVoltageState](#GetBatteryVoltageState "wikilink")                       |
+| 13  | [\#GetRawBatteryChargePercentage](#GetRawBatteryChargePercentage "wikilink")         |
 | 14  | [\#IsEnoughPowerSupplied](#IsEnoughPowerSupplied "wikilink")                         |
-| 15  | GetBatteryAgePercentage                                                              |
+| 15  | [\#GetBatteryAgePercentage](#GetBatteryAgePercentage "wikilink")                     |
 | 16  | GetBatteryChargeInfoEvent                                                            |
 | 17  | GetBatteryChargeInfoFields                                                           |
 |     |                                                                                      |
@@ -98,9 +98,21 @@ No input/output.
 
 No input/output.
 
+## GetBatteryVoltageState
+
+No input, returns an output u32.
+
+## GetRawBatteryChargePercentage
+
+No input, returns an output u64.
+
 ## IsEnoughPowerSupplied
 
 No input, returns an output u8.
+
+## GetBatteryAgePercentage
+
+No input, returns an output u64.
 
 ## IPsmSession
 
