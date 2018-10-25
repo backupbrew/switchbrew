@@ -34,7 +34,7 @@ This is
 | 1   | [\#GetChargerType](#GetChargerType "wikilink")                                       |
 | 2   | [\#EnableBatteryCharging](#EnableBatteryCharging "wikilink")                         |
 | 3   | [\#DisableBatteryCharging](#DisableBatteryCharging "wikilink")                       |
-| 4   | IsBatteryChargingEnabled                                                             |
+| 4   | [\#IsBatteryChargingEnabled](#IsBatteryChargingEnabled "wikilink")                   |
 | 5   | [\#AcquireControllerPowerSupply](#AcquireControllerPowerSupply "wikilink")           |
 | 6   | [\#ReleaseControllerPowerSupply](#ReleaseControllerPowerSupply "wikilink")           |
 | 7   | [\#OpenSession](#OpenSession "wikilink")                                             |
@@ -44,7 +44,7 @@ This is
 | 11  | [\#DisableFastBatteryCharging](#DisableFastBatteryCharging "wikilink")               |
 | 12  | GetBatteryVoltageState                                                               |
 | 13  | GetRawBatteryChargePercentage                                                        |
-| 14  | IsEnoughPowerSupplied                                                                |
+| 14  | [\#IsEnoughPowerSupplied](#IsEnoughPowerSupplied "wikilink")                         |
 | 15  | GetBatteryAgePercentage                                                              |
 | 16  | GetBatteryChargeInfoEvent                                                            |
 | 17  | GetBatteryChargeInfoFields                                                           |
@@ -65,6 +65,10 @@ No input/output.
 ## DisableBatteryCharging
 
 No input/output.
+
+## IsBatteryChargingEnabled
+
+No input, returns an output u8.
 
 ## AcquireControllerPowerSupply
 
@@ -93,6 +97,10 @@ No input/output.
 ## DisableFastBatteryCharging
 
 No input/output.
+
+## IsEnoughPowerSupplied
+
+No input, returns an output u8.
 
 ## IPsmSession
 

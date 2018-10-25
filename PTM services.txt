@@ -49,7 +49,7 @@ This is "nn::psm::IPsmServer".
 |-
 | 3 || [[#DisableBatteryCharging]]
 |-
-| 4 || IsBatteryChargingEnabled
+| 4 || [[#IsBatteryChargingEnabled]]
 |-
 | 5 || [[#AcquireControllerPowerSupply]]
 |-
@@ -69,7 +69,7 @@ This is "nn::psm::IPsmServer".
 |-
 | 13 || GetRawBatteryChargePercentage
 |-
-| 14 || IsEnoughPowerSupplied
+| 14 || [[#IsEnoughPowerSupplied]]
 |-
 | 15 || GetBatteryAgePercentage
 |-
@@ -91,6 +91,9 @@ No input/output.
 == DisableBatteryCharging ==
 No input/output.
 
+== IsBatteryChargingEnabled ==
+No input, returns an output u8.
+
 == AcquireControllerPowerSupply ==
 No input/output.
 
@@ -111,6 +114,9 @@ No input/output.
 
 == DisableFastBatteryCharging ==
 No input/output.
+
+== IsEnoughPowerSupplied ==
+No input, returns an output u8.
 
 == IPsmSession ==
 This is "nn::psm::IPsmSession".
