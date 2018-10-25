@@ -152,7 +152,7 @@ This is "nn::psm::IPsmSession".
 |}
 
 === BindStateChangeEvent ===
-No input, returns an output event.
+No input, returns an output event with autoclear.
 
 === UnbindStateChangeEvent ===
 No input/output.
