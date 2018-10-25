@@ -55,7 +55,7 @@ This is "nn::psm::IPsmServer".
 |-
 | 6 || ReleaseControllerPowerSupply
 |-
-| 7 || OpenSession
+| 7 || [[#OpenSession]]
 |-
 | 8 || EnableEnoughPowerChargeEmulation
 |-
@@ -85,6 +85,9 @@ No input, returns an output u32.
 == GetChargerType ==
 No input, returns an output u32.
 
+== OpenSession ==
+No input, returns an output [[#IPsmSession]].
+
 == IPsmSession ==
 This is "nn::psm::IPsmSession".
 
@@ -92,9 +95,9 @@ This is "nn::psm::IPsmSession".
 |-
 ! Cmd || Name
 |-
-| 0 || BindStateChangeEvent
+| 0 || [[#BindStateChangeEvent]]
 |-
-| 1 || UnbindStateChangeEvent
+| 1 || [[#UnbindStateChangeEvent]]
 |-
 | 2 || SetChargerTypeChangeEventEnabled
 |-
@@ -102,6 +105,12 @@ This is "nn::psm::IPsmSession".
 |-
 | 4 || SetBatteryVoltageStateChangeEventEnabled
 |}
+
+=== BindStateChangeEvent ===
+No input, returns an output event.
+
+=== UnbindStateChangeEvent ===
+No input/output.
 
 = tc =
 This is "nn::tc::IManager".

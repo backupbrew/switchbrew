@@ -37,7 +37,7 @@ This is
 | 4   | IsBatteryChargingEnabled                                               |
 | 5   | AcquireControllerPowerSupply                                           |
 | 6   | ReleaseControllerPowerSupply                                           |
-| 7   | OpenSession                                                            |
+| 7   | [\#OpenSession](#OpenSession "wikilink")                               |
 | 8   | EnableEnoughPowerChargeEmulation                                       |
 | 9   | DisableEnoughPowerChargeEmulation                                      |
 | 10  | EnableFastBatteryCharging                                              |
@@ -58,17 +58,29 @@ No input, returns an output u32.
 
 No input, returns an output u32.
 
+## OpenSession
+
+No input, returns an output [\#IPsmSession](#IPsmSession "wikilink").
+
 ## IPsmSession
 
 This is "nn::psm::IPsmSession".
 
-| Cmd | Name                                     |
-| --- | ---------------------------------------- |
-| 0   | BindStateChangeEvent                     |
-| 1   | UnbindStateChangeEvent                   |
-| 2   | SetChargerTypeChangeEventEnabled         |
-| 3   | SetPowerSupplyChangeEventEnabled         |
-| 4   | SetBatteryVoltageStateChangeEventEnabled |
+| Cmd | Name                                                           |
+| --- | -------------------------------------------------------------- |
+| 0   | [\#BindStateChangeEvent](#BindStateChangeEvent "wikilink")     |
+| 1   | [\#UnbindStateChangeEvent](#UnbindStateChangeEvent "wikilink") |
+| 2   | SetChargerTypeChangeEventEnabled                               |
+| 3   | SetPowerSupplyChangeEventEnabled                               |
+| 4   | SetBatteryVoltageStateChangeEventEnabled                       |
+
+### BindStateChangeEvent
+
+No input, returns an output event.
+
+### UnbindStateChangeEvent
+
+No input/output.
 
 # tc
 
