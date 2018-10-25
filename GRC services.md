@@ -141,11 +141,13 @@ Takes an input u64 **LayerHandle**, no output.
 
 ## GetOffscreenLayerRecordingFinishReadyEvent
 
-Takes an input u64 **LayerHandle**, returns an output event handle.
+Takes an input u64 **LayerHandle**, returns an output event handle with
+autoclear enabled.
 
 ## GetOffscreenLayerAudioEncodeReadyEvent
 
-Takes an input u64 **LayerHandle**, returns an output event handle.
+Takes an input u64 **LayerHandle**, returns an output event handle with
+autoclear enabled.
 
 # OffscreenRecordingParameter
 
