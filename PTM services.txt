@@ -99,11 +99,11 @@ This is "nn::psm::IPsmSession".
 |-
 | 1 || [[#UnbindStateChangeEvent]]
 |-
-| 2 || SetChargerTypeChangeEventEnabled
+| 2 || [[#SetChargerTypeChangeEventEnabled]]
 |-
-| 3 || SetPowerSupplyChangeEventEnabled
+| 3 || [[#SetPowerSupplyChangeEventEnabled]]
 |-
-| 4 || SetBatteryVoltageStateChangeEventEnabled
+| 4 || [[#SetBatteryVoltageStateChangeEventEnabled]]
 |}
 
 === BindStateChangeEvent ===
@@ -111,6 +111,15 @@ No input, returns an output event.
 
 === UnbindStateChangeEvent ===
 No input/output.
+
+=== SetChargerTypeChangeEventEnabled ===
+Takes an input u8 bool, no output.
+
+=== SetPowerSupplyChangeEventEnabled ===
+Takes an input u8 bool, no output.
+
+=== SetBatteryVoltageStateChangeEventEnabled ===
+Takes an input u8 bool, no output.
 
 = tc =
 This is "nn::tc::IManager".
