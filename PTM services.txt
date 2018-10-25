@@ -30,9 +30,9 @@ This is "nn::psm::IPsmServer".
 |-
 ! Cmd || Name
 |-
-| 0 || GetBatteryChargePercentage
+| 0 || [[#GetBatteryChargePercentage]]
 |-
-| 1 || GetChargerType
+| 1 || [[#GetChargerType]]
 |-
 | 2 || EnableBatteryCharging
 |-
@@ -67,6 +67,12 @@ This is "nn::psm::IPsmServer".
 | 17 || GetBatteryChargeInfoFields
 |-
 |}
+
+== GetBatteryChargePercentage ==
+No input, returns an output u32.
+
+== GetChargerType ==
+No input, returns an output u32.
 
 == IPsmSession ==
 This is "nn::psm::IPsmSession".

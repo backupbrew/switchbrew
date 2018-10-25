@@ -16,29 +16,38 @@ This is "nn::fan::detail::IManager".
 
 # psm
 
-This is "nn::psm::IPsmServer".
+This is
+"nn::psm::IPsmServer".
 
-| Cmd | Name                              |
-| --- | --------------------------------- |
-| 0   | GetBatteryChargePercentage        |
-| 1   | GetChargerType                    |
-| 2   | EnableBatteryCharging             |
-| 3   | DisableBatteryCharging            |
-| 4   | IsBatteryChargingEnabled          |
-| 5   | AcquireControllerPowerSupply      |
-| 6   | ReleaseControllerPowerSupply      |
-| 7   | OpenSession                       |
-| 8   | EnableEnoughPowerChargeEmulation  |
-| 9   | DisableEnoughPowerChargeEmulation |
-| 10  | EnableFastBatteryCharging         |
-| 11  | DisableFastBatteryCharging        |
-| 12  | GetBatteryVoltageState            |
-| 13  | GetRawBatteryChargePercentage     |
-| 14  | IsEnoughPowerSupplied             |
-| 15  | GetBatteryAgePercentage           |
-| 16  | GetBatteryChargeInfoEvent         |
-| 17  | GetBatteryChargeInfoFields        |
-|     |                                   |
+| Cmd | Name                                                                   |
+| --- | ---------------------------------------------------------------------- |
+| 0   | [\#GetBatteryChargePercentage](#GetBatteryChargePercentage "wikilink") |
+| 1   | [\#GetChargerType](#GetChargerType "wikilink")                         |
+| 2   | EnableBatteryCharging                                                  |
+| 3   | DisableBatteryCharging                                                 |
+| 4   | IsBatteryChargingEnabled                                               |
+| 5   | AcquireControllerPowerSupply                                           |
+| 6   | ReleaseControllerPowerSupply                                           |
+| 7   | OpenSession                                                            |
+| 8   | EnableEnoughPowerChargeEmulation                                       |
+| 9   | DisableEnoughPowerChargeEmulation                                      |
+| 10  | EnableFastBatteryCharging                                              |
+| 11  | DisableFastBatteryCharging                                             |
+| 12  | GetBatteryVoltageState                                                 |
+| 13  | GetRawBatteryChargePercentage                                          |
+| 14  | IsEnoughPowerSupplied                                                  |
+| 15  | GetBatteryAgePercentage                                                |
+| 16  | GetBatteryChargeInfoEvent                                              |
+| 17  | GetBatteryChargeInfoFields                                             |
+|     |                                                                        |
+
+## GetBatteryChargePercentage
+
+No input, returns an output u32.
+
+## GetChargerType
+
+No input, returns an output u32.
 
 ## IPsmSession
 
