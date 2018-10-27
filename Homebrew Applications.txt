@@ -45,6 +45,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Yes
 |
 |-
+| Switch Lan Play
+| Allows you to play Lan supported games online,
+| [[User:spacemeowx2|spacemeowx2]]
+| [https://github.com/spacemeowx2/switch-lan-play/releases Here]
+| [https://github.com/spacemeowx2/switch-lan-play/ Yes]
+| 2018-03-19
+|-
 | Pynx
 | Allows you to run homebrew applications written in Python on the Switch.
 | [[User:AileenLumina|AileenLumina]]
