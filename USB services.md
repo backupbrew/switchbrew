@@ -465,7 +465,7 @@ This is
 | 4   | [\#CreateInterfaceAvailableEvent](#CreateInterfaceAvailableEvent "wikilink")   |
 | 5   | [\#DestroyInterfaceAvailableEvent](#DestroyInterfaceAvailableEvent "wikilink") |
 | 6   | [\#GetInterfaceStateChangeEvent](#GetInterfaceStateChangeEvent "wikilink")     |
-| 7   | AcquireUsbIf                                                                   |
+| 7   | [\#AcquireUsbIf](#AcquireUsbIf "wikilink")                                     |
 | 8   | \[6.0.0+\]                                                                     |
 
 General USB devices usage, used by [hid](HID%20services.md "wikilink")
@@ -500,6 +500,11 @@ Takes an input u8, no output.
 ## GetInterfaceStateChangeEvent
 
 No input, returns an output handle.
+
+## AcquireUsbIf
+
+Takes an input u32 and a type-0x6 output buffer, returns an
+[\#IClientIfSession](#IClientIfSession "wikilink").
 
 ## IClientIfSession
 

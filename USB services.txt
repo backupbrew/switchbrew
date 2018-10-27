@@ -392,7 +392,7 @@ This is "nn::usb::hs::IClientRootSession".
 |-
 | 6 || [[#GetInterfaceStateChangeEvent]]
 |-
-| 7 || AcquireUsbIf
+| 7 || [[#AcquireUsbIf]]
 |-
 | 8 || [6.0.0+]
 |}
@@ -419,6 +419,9 @@ Takes an input u8, no output.
 
 == GetInterfaceStateChangeEvent ==
 No input, returns an output handle.
+
+== AcquireUsbIf ==
+Takes an input u32 and a type-0x6 output buffer, returns an [[#IClientIfSession]].
 
 == IClientIfSession ==
 This is "nn::usb::hs::IClientIfSession".
