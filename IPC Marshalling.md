@@ -240,8 +240,8 @@ arbitrary number of X descriptors, since they're all packed into the
 same buffer. If the server had used flag-3+ C descriptors, it would be
 limited in how many X descriptors it could receive since the X
 descriptors would have to be matched to distinct C descriptors. The
-buffer that the server's C descriptor points to is called the
-\*\*pointer buffer\*\*.
+buffer that the server's C descriptor points to is called the **pointer
+buffer**.
 
 When the client sends X descriptors, data is copied into the server's
 pointer buffer. When the client sends C descriptors, no data is copied
