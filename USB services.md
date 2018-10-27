@@ -559,19 +559,20 @@ and an [\#IClientEpSession](#IClientEpSession "wikilink").
 
 ### IClientEpSession
 
-This is "nn::usb::hs::IClientEpSession".
+This is
+"nn::usb::hs::IClientEpSession".
 
-| Cmd | Name                               |
-| --- | ---------------------------------- |
-| 0   | [\#Open](#Open "wikilink")         |
-| 1   | [\#Close](#Close "wikilink")       |
-| 2   |                                    |
-| 3   | [\#Populate](#Populate "wikilink") |
-| 4   | PostBufferAsync                    |
-| 5   | GetXferReport                      |
-| 6   |                                    |
-| 7   | \[4.0.0+\]                         |
-| 8   | \[4.0.0+\]                         |
+| Cmd | Name                               | Notes                               |
+| --- | ---------------------------------- | ----------------------------------- |
+| 0   | [\#Open](#Open "wikilink")         |                                     |
+| 1   | [\#Close](#Close "wikilink")       |                                     |
+| 2   |                                    | No input, returns an output handle. |
+| 3   | [\#Populate](#Populate "wikilink") |                                     |
+| 4   | PostBufferAsync                    |                                     |
+| 5   | GetXferReport                      |                                     |
+| 6   |                                    |                                     |
+| 7   | \[4.0.0+\]                         |                                     |
+| 8   | \[4.0.0+\]                         |                                     |
 
 #### Open
 

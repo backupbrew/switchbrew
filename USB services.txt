@@ -480,25 +480,25 @@ This is "nn::usb::hs::IClientEpSession".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || [[#Open]]
+| 0 || [[#Open]] || 
 |-
-| 1 || [[#Close]]
+| 1 || [[#Close]] || 
 |-
-| 2 ||
+| 2 || || No input, returns an output handle.
 |-
-| 3 || [[#Populate]]
+| 3 || [[#Populate]] || 
 |-
-| 4 || PostBufferAsync
+| 4 || PostBufferAsync || 
 |-
-| 5 || GetXferReport
+| 5 || GetXferReport || 
 |-
-| 6 ||
+| 6 || || 
 |-
-| 7 || [4.0.0+]
+| 7 || [4.0.0+] || 
 |-
-| 8 || [4.0.0+]
+| 8 || [4.0.0+] || 
 |}
 
 ==== Open ====
