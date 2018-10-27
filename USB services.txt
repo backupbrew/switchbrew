@@ -490,11 +490,11 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 | 3 || [[#Populate]] || 
 |-
-| 4 || PostBufferAsync || 
+| 4 || [[#PostBufferAsync]] || 
 |-
-| 5 || GetXferReport || 
+| 5 || [[#GetXferReport]] || 
 |-
-| 6 || || 
+| 6 || || Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.
 |-
 | 7 || [4.0.0+] || 
 |-
@@ -509,6 +509,12 @@ No input/output.
 
 ==== Populate ====
 No input/output.
+
+==== PostBufferAsync ====
+Takes an input u32 and 2 input u64s, returns an output u32.
+
+==== GetXferReport ====
+Takes an input u32 and a type-0x6 output buffer, returns an output u32.
 
 = usb:pd =
 This is "nn::usb::pd::detail::IPdManager".
