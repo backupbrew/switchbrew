@@ -5,3 +5,7 @@ Currently, http traffic is not redirected to an https URL. Could the site admini
 
 Sure, I can take a look into it. I've been wanting to add SSL certs on the site for sometime now, but unfortunately my host doesn't allow me to add a free one. I'm in the process of changing hosting provider, so when that happens, I'll make these changes.
 --[[User:simon66|simon66]] ([[User talk:simon66|talk]]) 12:25, 18 August 2018 (CDT)
+
+== Image Thumbnail Errors ==
+
+The wiki is failing to create thumbnails for uploaded SVG images. See [[:File:C_descriptor_type_2.svg]]. It embeds like this: [[File:C_descriptor_type_2.svg]].

@@ -14,3 +14,11 @@ add a free one. I'm in the process of changing hosting provider, so when
 that happens, I'll make these changes.
 --[simon66](User:simon66 "wikilink")
 ([talk](User%20talk:simon66.md "wikilink")) 12:25, 18 August 2018 (CDT)
+
+## Image Thumbnail Errors
+
+The wiki is failing to create thumbnails for uploaded SVG images. See
+[:File:C\_descriptor\_type\_2.svg](:File:C%20descriptor%20type%202.svg.md "wikilink").
+It embeds like this:
+![C\_descriptor\_type\_2.svg](C_descriptor_type_2.svg
+"C_descriptor_type_2.svg").
