@@ -468,8 +468,10 @@ This is
 | 7   | [\#AcquireUsbIf](#AcquireUsbIf "wikilink")                                     |
 | 8   | \[6.0.0+\]                                                                     |
 
-General USB devices usage, used by [hid](HID%20services.md "wikilink")
-and [bsdsockets](Sockets%20services.md "wikilink").
+General USB devices usage, used by
+[audio](Audio%20services.md "wikilink"),
+[hid](HID%20services.md "wikilink") and
+[bsdsockets](Sockets%20services.md "wikilink").
 
 ## BindClientProcess
 
@@ -562,17 +564,17 @@ and an [\#IClientEpSession](#IClientEpSession "wikilink").
 This is
 "nn::usb::hs::IClientEpSession".
 
-| Cmd | Name                                               | Notes                                                                                 |
-| --- | -------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| 0   | [\#Open](#Open "wikilink")                         |                                                                                       |
-| 1   | [\#Close](#Close "wikilink")                       |                                                                                       |
-| 2   |                                                    | No input, returns an output handle.                                                   |
-| 3   | [\#Populate](#Populate "wikilink")                 |                                                                                       |
-| 4   | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") |                                                                                       |
-| 5   | [\#GetXferReport](#GetXferReport "wikilink")       |                                                                                       |
-| 6   |                                                    | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32. |
-| 7   | \[4.0.0+\]                                         |                                                                                       |
-| 8   | \[4.0.0+\]                                         |                                                                                       |
+| Cmd | Name                                             | Notes                                                                                 |
+| --- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| 0   | [\#Open](#Open "wikilink")                       |                                                                                       |
+| 1   | [\#Close](#Close "wikilink")                     |                                                                                       |
+| 2   |                                                  | No input, returns an output handle.                                                   |
+| 3   | [\#Populate](#Populate "wikilink")               |                                                                                       |
+| 4   | [\#PostBufferAsync](#PostBufferAsync "wikilink") |                                                                                       |
+| 5   | [\#GetXferReport](#GetXferReport "wikilink")     |                                                                                       |
+| 6   |                                                  | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32. |
+| 7   | \[4.0.0+\]                                       |                                                                                       |
+| 8   | \[4.0.0+\]                                       |                                                                                       |
 
 #### Open
 

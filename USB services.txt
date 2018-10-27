@@ -397,7 +397,7 @@ This is "nn::usb::hs::IClientRootSession".
 | 8 || [6.0.0+]
 |}
 
-General USB devices usage, used by [[HID_services|hid]] and [[Sockets_services|bsdsockets]].
+General USB devices usage, used by [[Audio_services|audio]], [[HID_services|hid]] and [[Sockets_services|bsdsockets]].
 
 == BindClientProcess ==
 Takes 1 copy-handle for the current process (0xFFFF8001).
@@ -490,7 +490,7 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 | 3 || [[#Populate]] || 
 |-
-| 4 || [[#PostBufferAsync_2|#PostBufferAsync]] || 
+| 4 || [[#PostBufferAsync]] || 
 |-
 | 5 || [[#GetXferReport]] || 
 |-
