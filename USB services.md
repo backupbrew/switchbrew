@@ -515,12 +515,12 @@ This is
 | --- | ------------------------------------------------------------ | ----------------------------------- |
 | 0   |                                                              | No input, returns an output handle. |
 | 1   | [\#SetInterface](#SetInterface "wikilink")                   |                                     |
-| 2   | GetInterface                                                 |                                     |
+| 2   | [\#GetInterface](#GetInterface "wikilink")                   |                                     |
 | 3   | [\#GetAlternateInterface](#GetAlternateInterface "wikilink") |                                     |
 | 4   | GetCurrentFrame                                              |                                     |
 | 5   | CtrlXferAsync                                                |                                     |
 | 6   |                                                              |                                     |
-| 7   | GetCtrlXferReport                                            |                                     |
+| 7   | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink")         |                                     |
 | 8   | ResetDevice                                                  |                                     |
 | 9   | OpenUsbEp                                                    |                                     |
 
@@ -528,9 +528,17 @@ This is
 
 Takes an input u8 and a type-0x6 output buffer, no output.
 
+### GetInterface
+
+Takes a type-0x6 output buffer, no output.
+
 ### GetAlternateInterface
 
 Takes an input u8 and a type-0x6 output buffer, no output.
+
+### GetCtrlXferReport
+
+Takes a type-0x6 output buffer, no output.
 
 ### IClientEpSession
 

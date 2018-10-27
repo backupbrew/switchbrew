@@ -434,7 +434,7 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 1 || [[#SetInterface]] || 
 |-
-| 2 || GetInterface || 
+| 2 || [[#GetInterface]] || 
 |-
 | 3 || [[#GetAlternateInterface]] || 
 |-
@@ -444,7 +444,7 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 6 || || 
 |-
-| 7 || GetCtrlXferReport || 
+| 7 || [[#GetCtrlXferReport]] || 
 |-
 | 8 || ResetDevice || 
 |-
@@ -454,8 +454,14 @@ This is "nn::usb::hs::IClientIfSession".
 === SetInterface ===
 Takes an input u8 and a type-0x6 output buffer, no output.
 
+=== GetInterface ===
+Takes a type-0x6 output buffer, no output.
+
 === GetAlternateInterface ===
 Takes an input u8 and a type-0x6 output buffer, no output.
+
+=== GetCtrlXferReport ===
+Takes a type-0x6 output buffer, no output.
 
 === IClientEpSession ===
 This is "nn::usb::hs::IClientEpSession".
