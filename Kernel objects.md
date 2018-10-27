@@ -746,12 +746,14 @@ Inherits from:
 
 ### KSessionRequest
 
-Size:
-0x158
+Size: 0x158
+
+Inherits from:
+[\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                                      | Description            |
 | ------ | --------------------------------------------------------- | ---------------------- |
-| 0      | \*                                                        | Vtable                 |
+| 0      | [\#KAutoObject](#KAutoObject "wikilink")                  | Inheritance            |
 | 0x10   | KLinkedListNode                                           | NodeFor\_\_RequestList |
 | 0x20   | [\#KBufferDescriptor](#KBufferDescriptor "wikilink")\[8\] | BufferTable            |
 | 0x120  | [\#KBufferDescriptor](#KBufferDescriptor "wikilink")\*    | ExternalBufferTable    |

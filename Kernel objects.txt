@@ -1152,11 +1152,13 @@ Inherits from: [[#KSynchronizationObject]]
 === KSessionRequest ===
 Size: 0x158
 
+Inherits from: [[#KAutoObject]]
+
 {| class="wikitable" border="1"
 |-
 ! Offset || Type || Description
 |-
-| 0 || * || Vtable
+| 0 || [[#KAutoObject]] || Inheritance
 |-
 | 0x10 || KLinkedListNode ||  NodeFor__RequestList
 |-
