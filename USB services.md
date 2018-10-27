@@ -508,20 +508,29 @@ Takes an input u32 and a type-0x6 output buffer, returns an
 
 ## IClientIfSession
 
-This is "nn::usb::hs::IClientIfSession".
+This is
+"nn::usb::hs::IClientIfSession".
 
-| Cmd | Name                  | Notes                               |
-| --- | --------------------- | ----------------------------------- |
-| 0   |                       | No input, returns an output handle. |
-| 1   | SetInterface          |                                     |
-| 2   | GetInterface          |                                     |
-| 3   | GetAlternateInterface |                                     |
-| 4   | GetCurrentFrame       |                                     |
-| 5   | CtrlXferAsync         |                                     |
-| 6   |                       |                                     |
-| 7   | GetCtrlXferReport     |                                     |
-| 8   | ResetDevice           |                                     |
-| 9   | OpenUsbEp             |                                     |
+| Cmd | Name                                                         | Notes                               |
+| --- | ------------------------------------------------------------ | ----------------------------------- |
+| 0   |                                                              | No input, returns an output handle. |
+| 1   | [\#SetInterface](#SetInterface "wikilink")                   |                                     |
+| 2   | GetInterface                                                 |                                     |
+| 3   | [\#GetAlternateInterface](#GetAlternateInterface "wikilink") |                                     |
+| 4   | GetCurrentFrame                                              |                                     |
+| 5   | CtrlXferAsync                                                |                                     |
+| 6   |                                                              |                                     |
+| 7   | GetCtrlXferReport                                            |                                     |
+| 8   | ResetDevice                                                  |                                     |
+| 9   | OpenUsbEp                                                    |                                     |
+
+### SetInterface
+
+Takes an input u8 and a type-0x6 output buffer, no output.
+
+### GetAlternateInterface
+
+Takes an input u8 and a type-0x6 output buffer, no output.
 
 ### IClientEpSession
 
