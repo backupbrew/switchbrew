@@ -482,13 +482,13 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 ! Cmd || Name
 |-
-| 0 || Open
+| 0 || [[#Open]]
 |-
-| 1 || Close
+| 1 || [[#Close]]
 |-
 | 2 ||
 |-
-| 3 || Populate
+| 3 || [[#Populate]]
 |-
 | 4 || PostBufferAsync
 |-
@@ -500,6 +500,15 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 | 8 || [4.0.0+]
 |}
+
+==== Open ====
+No input/output.
+
+==== Close ====
+No input/output.
+
+==== Populate ====
+No input/output.
 
 = usb:pd =
 This is "nn::usb::pd::detail::IPdManager".

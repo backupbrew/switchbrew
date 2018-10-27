@@ -561,17 +561,29 @@ and an [\#IClientEpSession](#IClientEpSession "wikilink").
 
 This is "nn::usb::hs::IClientEpSession".
 
-| Cmd | Name            |
-| --- | --------------- |
-| 0   | Open            |
-| 1   | Close           |
-| 2   |                 |
-| 3   | Populate        |
-| 4   | PostBufferAsync |
-| 5   | GetXferReport   |
-| 6   |                 |
-| 7   | \[4.0.0+\]      |
-| 8   | \[4.0.0+\]      |
+| Cmd | Name                               |
+| --- | ---------------------------------- |
+| 0   | [\#Open](#Open "wikilink")         |
+| 1   | [\#Close](#Close "wikilink")       |
+| 2   |                                    |
+| 3   | [\#Populate](#Populate "wikilink") |
+| 4   | PostBufferAsync                    |
+| 5   | GetXferReport                      |
+| 6   |                                    |
+| 7   | \[4.0.0+\]                         |
+| 8   | \[4.0.0+\]                         |
+
+#### Open
+
+No input/output.
+
+#### Close
+
+No input/output.
+
+#### Populate
+
+No input/output.
 
 # usb:pd
 
