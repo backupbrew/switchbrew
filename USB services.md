@@ -517,7 +517,7 @@ This is
 | 1   | [\#SetInterface](#SetInterface "wikilink")                   |                                     |
 | 2   | [\#GetInterface](#GetInterface "wikilink")                   |                                     |
 | 3   | [\#GetAlternateInterface](#GetAlternateInterface "wikilink") |                                     |
-| 4   | GetCurrentFrame                                              |                                     |
+| 4   | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")             |                                     |
 | 5   | CtrlXferAsync                                                |                                     |
 | 6   |                                                              |                                     |
 | 7   | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink")         |                                     |
@@ -535,6 +535,10 @@ Takes a type-0x6 output buffer, no output.
 ### GetAlternateInterface
 
 Takes an input u8 and a type-0x6 output buffer, no output.
+
+### GetCurrentFrame
+
+No input, returns an output u32.
 
 ### GetCtrlXferReport
 
