@@ -455,20 +455,24 @@ Stops in-progress data-transfer done by
 
 This is "nn::usb::hs::IClientRootSession".
 
-| Cmd | Name                           |
-| --- | ------------------------------ |
-| 0   | BindClientProcess              |
-| 1   | QueryAllInterfaces             |
-| 2   | QueryAvailableInterfaces       |
-| 3   | QueryAcquiredInterfaces        |
-| 4   | CreateInterfaceAvailableEvent  |
-| 5   | DestroyInterfaceAvailableEvent |
-| 6   | GetInterfaceStateChangeEvent   |
-| 7   | AcquireUsbIf                   |
-| 8   | \[6.0.0+\]                     |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | [\#BindClientProcess](#BindClientProcess "wikilink") |
+| 1   | QueryAllInterfaces                                   |
+| 2   | QueryAvailableInterfaces                             |
+| 3   | QueryAcquiredInterfaces                              |
+| 4   | CreateInterfaceAvailableEvent                        |
+| 5   | DestroyInterfaceAvailableEvent                       |
+| 6   | GetInterfaceStateChangeEvent                         |
+| 7   | AcquireUsbIf                                         |
+| 8   | \[6.0.0+\]                                           |
 
 General USB devices usage, used by [hid](HID%20services.md "wikilink")
 and [bsdsockets](Sockets%20services.md "wikilink").
+
+## BindClientProcess
+
+Takes 1 copy-handle for the current process (0xFFFF8001).
 
 ## IClientIfSession
 

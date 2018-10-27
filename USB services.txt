@@ -378,7 +378,7 @@ This is "nn::usb::hs::IClientRootSession".
 |-
 ! Cmd || Name
 |-
-| 0 || BindClientProcess
+| 0 || [[#BindClientProcess]]
 |-
 | 1 || QueryAllInterfaces
 |-
@@ -398,6 +398,9 @@ This is "nn::usb::hs::IClientRootSession".
 |}
 
 General USB devices usage, used by [[HID_services|hid]] and [[Sockets_services|bsdsockets]].
+
+== BindClientProcess ==
+Takes 1 copy-handle for the current process (0xFFFF8001).
 
 == IClientIfSession ==
 This is "nn::usb::hs::IClientIfSession".
