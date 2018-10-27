@@ -456,17 +456,17 @@ Stops in-progress data-transfer done by
 This is
 "nn::usb::hs::IClientRootSession".
 
-| Cmd | Name                                                               |
-| --- | ------------------------------------------------------------------ |
-| 0   | [\#BindClientProcess](#BindClientProcess_2 "wikilink")             |
-| 1   | [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink")             |
-| 2   | [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink") |
-| 3   | [\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink")   |
-| 4   | CreateInterfaceAvailableEvent                                      |
-| 5   | DestroyInterfaceAvailableEvent                                     |
-| 6   | GetInterfaceStateChangeEvent                                       |
-| 7   | AcquireUsbIf                                                       |
-| 8   | \[6.0.0+\]                                                         |
+| Cmd | Name                                                                           |
+| --- | ------------------------------------------------------------------------------ |
+| 0   | [\#BindClientProcess](#BindClientProcess_2 "wikilink")                         |
+| 1   | [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink")                         |
+| 2   | [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink")             |
+| 3   | [\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink")               |
+| 4   | [\#CreateInterfaceAvailableEvent](#CreateInterfaceAvailableEvent "wikilink")   |
+| 5   | [\#DestroyInterfaceAvailableEvent](#DestroyInterfaceAvailableEvent "wikilink") |
+| 6   | [\#GetInterfaceStateChangeEvent](#GetInterfaceStateChangeEvent "wikilink")     |
+| 7   | AcquireUsbIf                                                                   |
+| 8   | \[6.0.0+\]                                                                     |
 
 General USB devices usage, used by [hid](HID%20services.md "wikilink")
 and [bsdsockets](Sockets%20services.md "wikilink").
@@ -488,6 +488,18 @@ output u32.
 ## QueryAcquiredInterfaces
 
 Takes a type-0x6 output buffer and returns an output u32.
+
+## CreateInterfaceAvailableEvent
+
+Takes an input u8 and returns an output handle.
+
+## DestroyInterfaceAvailableEvent
+
+Takes an input u8, no output.
+
+## GetInterfaceStateChangeEvent
+
+No input, returns an output handle.
 
 ## IClientIfSession
 
