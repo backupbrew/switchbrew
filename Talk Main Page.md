@@ -21,4 +21,9 @@ The wiki is failing to create thumbnails for uploaded SVG images. See
 [:File:C\_descriptor\_type\_2.svg](:File:C%20descriptor%20type%202.svg.md "wikilink").
 It embeds like this:
 ![C\_descriptor\_type\_2.svg](C_descriptor_type_2.svg
-"C_descriptor_type_2.svg").
+"C_descriptor_type_2.svg"). PNG images do this too. See
+[:File:C\_descriptor\_type\_2.png](:File:C%20descriptor%20type%202.png.md "wikilink").
+
+\--[Misson20000](User:Misson20000 "wikilink")
+([talk](User%20talk:Misson20000.md "wikilink")) 03:09, 27 October 2018
+(UTC)

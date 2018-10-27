@@ -9,3 +9,6 @@ Sure, I can take a look into it. I've been wanting to add SSL certs on the site 
 == Image Thumbnail Errors ==
 
 The wiki is failing to create thumbnails for uploaded SVG images. See [[:File:C_descriptor_type_2.svg]]. It embeds like this: [[File:C_descriptor_type_2.svg]].
+PNG images do this too. See [[:File:C_descriptor_type_2.png]].
+
+--[[User:Misson20000|Misson20000]] ([[User talk:Misson20000|talk]]) 03:09, 27 October 2018 (UTC)
