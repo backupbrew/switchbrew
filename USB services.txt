@@ -490,7 +490,7 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 | 3 || [[#Populate]] || 
 |-
-| 4 || [[#PostBufferAsync]] || 
+| 4 || [[#PostBufferAsync_2|#PostBufferAsync]] ||
 |-
 | 5 || [[#GetXferReport]] || 
 |-
