@@ -522,7 +522,7 @@ This is
 | 6   |                                                              | No input, returns an output handle. |
 | 7   | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink")         |                                     |
 | 8   | [\#ResetDevice](#ResetDevice "wikilink")                     |                                     |
-| 9   | OpenUsbEp                                                    |                                     |
+| 9   | [\#OpenUsbEp](#OpenUsbEp "wikilink")                         |                                     |
 
 ### SetInterface
 
@@ -551,6 +551,11 @@ Takes a type-0x6 output buffer, no output.
 ### ResetDevice
 
 No input/output.
+
+### OpenUsbEp
+
+Takes an input u16 and 4 input u32s, returns a 0x7-byte output struct
+and an [\#IClientEpSession](#IClientEpSession "wikilink").
 
 ### IClientEpSession
 
