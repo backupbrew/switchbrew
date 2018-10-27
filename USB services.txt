@@ -384,7 +384,7 @@ This is "nn::usb::hs::IClientRootSession".
 |-
 | 2 || [[#QueryAvailableInterfaces]]
 |-
-| 3 || QueryAcquiredInterfaces
+| 3 || [[#QueryAcquiredInterfaces]]
 |-
 | 4 || CreateInterfaceAvailableEvent
 |-
@@ -407,6 +407,9 @@ Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an output u
 
 == QueryAvailableInterfaces ==
 Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an output u32.
+
+== QueryAcquiredInterfaces ==
+Takes a type-0x6 output buffer and returns an output u32.
 
 == IClientIfSession ==
 This is "nn::usb::hs::IClientIfSession".

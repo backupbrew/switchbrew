@@ -461,7 +461,7 @@ This is
 | 0   | [\#BindClientProcess](#BindClientProcess_2 "wikilink")             |
 | 1   | [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink")             |
 | 2   | [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink") |
-| 3   | QueryAcquiredInterfaces                                            |
+| 3   | [\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink")   |
 | 4   | CreateInterfaceAvailableEvent                                      |
 | 5   | DestroyInterfaceAvailableEvent                                     |
 | 6   | GetInterfaceStateChangeEvent                                       |
@@ -484,6 +484,10 @@ output u32.
 
 Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an
 output u32.
+
+## QueryAcquiredInterfaces
+
+Takes a type-0x6 output buffer and returns an output u32.
 
 ## IClientIfSession
 
