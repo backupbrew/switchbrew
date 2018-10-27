@@ -20,112 +20,106 @@ fatal-errors, since the Description ends with bit21.
 
 # Modules
 
-| Value | Name                                                   |
-| ----- | ------------------------------------------------------ |
-| 1     | Kernel                                                 |
-| 2     | FS                                                     |
-| 3     | OS (Memory, Thread, Mutex, NVIDIA)                     |
-| 4     | HTCS                                                   |
-| 5     | NCM                                                    |
-| 6     | DD                                                     |
-| 7     | Debug Monitor                                          |
-| 8     | LR                                                     |
-| 9     | Loader                                                 |
-| 10    | CMIF (IPC command interface)                           |
-| 11    | HIPC (IPC)                                             |
-| 15    | PM                                                     |
-| 16    | NS                                                     |
-| 17    | Sockets                                                |
-| 18    | HTC                                                    |
-| 20    | NCM Content                                            |
-| 21    | SM                                                     |
-| 22    | RO userland                                            |
-| 24    | SDMMC                                                  |
-| 25    | OVLN                                                   |
-| 26    | SPL                                                    |
-| 100   | ETHC                                                   |
-| 101   | I2C                                                    |
-| 102   | GPIO                                                   |
-| 103   | UART                                                   |
-| 105   | Settings                                               |
-| 107   | WLAN                                                   |
-| 108   | XCD                                                    |
-| 110   | NIFM                                                   |
-| 111   | Hwopus                                                 |
-| 113   | Bluetooth                                              |
-| 114   | VI                                                     |
-| 115   | NFP                                                    |
-| 116   | Time                                                   |
-| 117   | FGM                                                    |
-| 118   | OE                                                     |
-| 120   | PCIe                                                   |
-| 121   | Friends                                                |
-| 122   | BCAT                                                   |
-| 123   | SSL                                                    |
-| 124   | Account                                                |
-| 125   | News                                                   |
-| 126   | Mii                                                    |
-| 127   | NFC                                                    |
-| 128   | AM                                                     |
-| 129   | Play Report                                            |
-| 130   | AHID                                                   |
-| 132   | Home Menu (Qlaunch)                                    |
-| 133   | PCV                                                    |
-| 134   | OMM                                                    |
-| 135   | BPC                                                    |
-| 136   | PSM                                                    |
-| 137   | NIM                                                    |
-| 138   | PSC                                                    |
-| 139   | TC                                                     |
-| 140   | USB                                                    |
-| 141   | NSD                                                    |
-| 142   | PCTL                                                   |
-| 143   | BTM                                                    |
-| 144   | EC (Shop)                                              |
-| 145   | ETicket                                                |
-| 146   | NGC (Bad Words)                                        |
-| 147   | Error Report                                           |
-| 148   | APM                                                    |
-| 150   | Profiler                                               |
-| 151   | Error Upload                                           |
-| 153   | Audio                                                  |
-| 154   | NPNS                                                   |
-| 155   | NPNS HTTP Stream                                       |
-| 157   | ARP                                                    |
-| 158   | SWKBD                                                  |
-| 159   | Boot                                                   |
-| 161   | NFC Mifare                                             |
-| 162   | Userland assert                                        |
-| 163   | Fatal                                                  |
-| 164   | NIM Shop                                               |
-| 165   | SPSM                                                   |
-| 167   | BGTC                                                   |
-| 168   | Userland crash                                         |
-| 179   | OLSC                                                   |
-| 180   | SREPO                                                  |
-| 181   | Dauth                                                  |
-| 202   | HID                                                    |
-| 203   | LDN                                                    |
-| 205   | Irsensor                                               |
-| 206   | Capture                                                |
-| 208   | Manu                                                   |
-| 209   | ATK                                                    |
-| 210   | Web                                                    |
-| 211   |                                                        |
-| 212   | GRC                                                    |
-| 216   | Migration                                              |
-| 217   | Migration Idc Server                                   |
-| 345   | libnx                                                  |
-| 346   | [Homebrew ABI](Homebrew%20ABI.md "wikilink")           |
-| 347   | Homebrew Loader                                        |
-| 348   | libnx Nvidia errors                                    |
-| 800   | [General web-applet](Internet%20Browser.md "wikilink") |
-| 809   | [WifiWebAuthApplet](Internet%20Browser.md "wikilink")  |
-| 810   | [Whitelisted-applet](Internet%20Browser.md "wikilink") |
-| 811   | [ShopN](Internet%20Browser.md "wikilink")              |
-
-8XX is for/includes system
-applets.
+| Value | Name                                         |
+| ----- | -------------------------------------------- |
+| 1     | Kernel                                       |
+| 2     | FS                                           |
+| 3     | OS (Memory, Thread, Mutex, NVIDIA)           |
+| 4     | HTCS                                         |
+| 5     | NCM                                          |
+| 6     | DD                                           |
+| 7     | Debug Monitor                                |
+| 8     | LR                                           |
+| 9     | Loader                                       |
+| 10    | CMIF (IPC command interface)                 |
+| 11    | HIPC (IPC)                                   |
+| 15    | PM                                           |
+| 16    | NS                                           |
+| 17    | Sockets                                      |
+| 18    | HTC                                          |
+| 20    | NCM Content                                  |
+| 21    | SM                                           |
+| 22    | RO userland                                  |
+| 24    | SDMMC                                        |
+| 25    | OVLN                                         |
+| 26    | SPL                                          |
+| 100   | ETHC                                         |
+| 101   | I2C                                          |
+| 102   | GPIO                                         |
+| 103   | UART                                         |
+| 105   | Settings                                     |
+| 107   | WLAN                                         |
+| 108   | XCD                                          |
+| 110   | NIFM                                         |
+| 111   | Hwopus                                       |
+| 113   | Bluetooth                                    |
+| 114   | VI                                           |
+| 115   | NFP                                          |
+| 116   | Time                                         |
+| 117   | FGM                                          |
+| 118   | OE                                           |
+| 120   | PCIe                                         |
+| 121   | Friends                                      |
+| 122   | BCAT                                         |
+| 123   | SSL                                          |
+| 124   | Account                                      |
+| 125   | News                                         |
+| 126   | Mii                                          |
+| 127   | NFC                                          |
+| 128   | AM                                           |
+| 129   | Play Report                                  |
+| 130   | AHID                                         |
+| 132   | Home Menu (Qlaunch)                          |
+| 133   | PCV                                          |
+| 134   | OMM                                          |
+| 135   | BPC                                          |
+| 136   | PSM                                          |
+| 137   | NIM                                          |
+| 138   | PSC                                          |
+| 139   | TC                                           |
+| 140   | USB                                          |
+| 141   | NSD                                          |
+| 142   | PCTL                                         |
+| 143   | BTM                                          |
+| 144   | EC (Shop)                                    |
+| 145   | ETicket                                      |
+| 146   | NGC (Bad Words)                              |
+| 147   | Error Report                                 |
+| 148   | APM                                          |
+| 150   | Profiler                                     |
+| 151   | Error Upload                                 |
+| 153   | Audio                                        |
+| 154   | NPNS                                         |
+| 155   | NPNS HTTP Stream                             |
+| 157   | ARP                                          |
+| 158   | SWKBD                                        |
+| 159   | Boot                                         |
+| 161   | NFC Mifare                                   |
+| 162   | Userland assert                              |
+| 163   | Fatal                                        |
+| 164   | NIM Shop                                     |
+| 165   | SPSM                                         |
+| 167   | BGTC                                         |
+| 168   | Userland crash                               |
+| 179   | OLSC                                         |
+| 180   | SREPO                                        |
+| 181   | Dauth                                        |
+| 202   | HID                                          |
+| 203   | LDN                                          |
+| 205   | Irsensor                                     |
+| 206   | Capture                                      |
+| 208   | Manu                                         |
+| 209   | ATK                                          |
+| 210   | Web                                          |
+| 211   |                                              |
+| 212   | GRC                                          |
+| 216   | Migration                                    |
+| 217   | Migration Idc Server                         |
+| 345   | libnx                                        |
+| 346   | [Homebrew ABI](Homebrew%20ABI.md "wikilink") |
+| 347   | Homebrew Loader                              |
+| 348   | libnx Nvidia errors                          |
+|       |                                              |
 
 # Error codes
 
@@ -386,6 +380,23 @@ titles:
 | 2168-0008 | Can occur when attempting to call an svc outside the whitelist                                                                                                                                     |
 
 # Support Errors
+
+This section is for Support Errors displayed by the error-applet,
+separate from the normal Result errors.
+
+## Support Modules
+
+| Value | Name                                                   |
+| ----- | ------------------------------------------------------ |
+| 800   | [General web-applet](Internet%20Browser.md "wikilink") |
+| 809   | [WifiWebAuthApplet](Internet%20Browser.md "wikilink")  |
+| 810   | [Whitelisted-applet](Internet%20Browser.md "wikilink") |
+| 811   | [ShopN](Internet%20Browser.md "wikilink")              |
+
+8XX is for/includes system
+applets.
+
+## Errors
 
 | Error | Module                     | Description | Notes               |
 | ----- | -------------------------- | ----------- | ------------------- |

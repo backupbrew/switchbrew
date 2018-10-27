@@ -212,16 +212,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 348 || libnx Nvidia errors
 |-
-| 800 || [[Internet_Browser|General web-applet]]
-|-
-| 809 || [[Internet_Browser|WifiWebAuthApplet]]
-|-
-| 810 || [[Internet_Browser|Whitelisted-applet]]
-|-
-| 811 || [[Internet_Browser|ShopN]]
 |}
-
-8XX is for/includes system applets.
 
 = Error codes =
 {| class=wikitable
@@ -723,6 +714,24 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 |}
 
 = Support Errors =
+This section is for Support Errors displayed by the error-applet, separate from the normal Result errors.
+
+== Support Modules ==
+{| class=wikitable
+! Value || Name
+|-
+| 800 || [[Internet_Browser|General web-applet]]
+|-
+| 809 || [[Internet_Browser|WifiWebAuthApplet]]
+|-
+| 810 || [[Internet_Browser|Whitelisted-applet]]
+|-
+| 811 || [[Internet_Browser|ShopN]]
+|}
+
+8XX is for/includes system applets.
+
+== Errors ==
 {| class=wikitable
 ! Error || Module || Description || Notes
 |-
