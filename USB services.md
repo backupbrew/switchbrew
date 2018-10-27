@@ -500,7 +500,7 @@ Takes an input u8, no output.
 
 ## GetInterfaceStateChangeEvent
 
-No input, returns an output handle.
+No input, returns an output event handle with autoclear disabled.
 
 ## AcquireUsbIf
 

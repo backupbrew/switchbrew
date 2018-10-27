@@ -418,7 +418,7 @@ Takes an input u8 and returns an output handle.
 Takes an input u8, no output.
 
 == GetInterfaceStateChangeEvent ==
-No input, returns an output handle.
+No input, returns an output event handle with autoclear disabled.
 
 == AcquireUsbIf ==
 Takes an input u32 and a type-0x6 output buffer, returns an [[#IClientIfSession]].
