@@ -440,7 +440,7 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 4 || [[#GetCurrentFrame]] || 
 |-
-| 5 || CtrlXferAsync || 
+| 5 || [[#CtrlXferAsync]] || 
 |-
 | 6 || || No input, returns an output handle.
 |-
@@ -462,6 +462,9 @@ Takes an input u8 and a type-0x6 output buffer, no output.
 
 === GetCurrentFrame ===
 No input, returns an output u32.
+
+=== CtrlXferAsync ===
+Takes 2 input u8s and 3 input u16s, no output.
 
 === GetCtrlXferReport ===
 Takes a type-0x6 output buffer, no output.

@@ -518,7 +518,7 @@ This is
 | 2   | [\#GetInterface](#GetInterface "wikilink")                   |                                     |
 | 3   | [\#GetAlternateInterface](#GetAlternateInterface "wikilink") |                                     |
 | 4   | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")             |                                     |
-| 5   | CtrlXferAsync                                                |                                     |
+| 5   | [\#CtrlXferAsync](#CtrlXferAsync "wikilink")                 |                                     |
 | 6   |                                                              | No input, returns an output handle. |
 | 7   | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink")         |                                     |
 | 8   | [\#ResetDevice](#ResetDevice "wikilink")                     |                                     |
@@ -539,6 +539,10 @@ Takes an input u8 and a type-0x6 output buffer, no output.
 ### GetCurrentFrame
 
 No input, returns an output u32.
+
+### CtrlXferAsync
+
+Takes 2 input u8s and 3 input u16s, no output.
 
 ### GetCtrlXferReport
 
