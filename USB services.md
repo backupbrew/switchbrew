@@ -468,10 +468,9 @@ This is
 | 7   | [\#AcquireUsbIf](#AcquireUsbIf "wikilink")                                     |
 | 8   | \[6.0.0+\]                                                                     |
 
-General USB devices usage, used by
-[audio](Audio%20services.md "wikilink"),
-[hid](HID%20services.md "wikilink") and
-[bsdsockets](Sockets%20services.md "wikilink").
+General USB devices usage, used by [hid](HID%20services.md "wikilink"),
+[bsdsockets](Sockets%20services.md "wikilink"), and \[5.1.0+\]
+[audio](Audio%20services.md "wikilink").
 
 ## BindClientProcess
 
