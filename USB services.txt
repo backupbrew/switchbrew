@@ -428,27 +428,27 @@ This is "nn::usb::hs::IClientIfSession".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 ||
+| 0 || || No input, returns an output handle.
 |-
-| 1 || SetInterface
+| 1 || SetInterface || 
 |-
-| 2 || GetInterface
+| 2 || GetInterface || 
 |-
-| 3 || GetAlternateInterface
+| 3 || GetAlternateInterface || 
 |-
-| 4 || GetCurrentFrame
+| 4 || GetCurrentFrame || 
 |-
-| 5 || CtrlXferAsync
+| 5 || CtrlXferAsync || 
 |-
-| 6 ||
+| 6 || || 
 |-
-| 7 || GetCtrlXferReport
+| 7 || GetCtrlXferReport || 
 |-
-| 8 || ResetDevice
+| 8 || ResetDevice || 
 |-
-| 9 || OpenUsbEp
+| 9 || OpenUsbEp || 
 |}
 
 === IClientEpSession ===
