@@ -442,11 +442,11 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 5 || CtrlXferAsync || 
 |-
-| 6 || || 
+| 6 || || No input, returns an output handle.
 |-
 | 7 || [[#GetCtrlXferReport]] || 
 |-
-| 8 || ResetDevice || 
+| 8 || [[#ResetDevice]] || 
 |-
 | 9 || OpenUsbEp || 
 |}
@@ -465,6 +465,9 @@ No input, returns an output u32.
 
 === GetCtrlXferReport ===
 Takes a type-0x6 output buffer, no output.
+
+=== ResetDevice ===
+No input/output.
 
 === IClientEpSession ===
 This is "nn::usb::hs::IClientEpSession".

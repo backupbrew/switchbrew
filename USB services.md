@@ -519,9 +519,9 @@ This is
 | 3   | [\#GetAlternateInterface](#GetAlternateInterface "wikilink") |                                     |
 | 4   | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")             |                                     |
 | 5   | CtrlXferAsync                                                |                                     |
-| 6   |                                                              |                                     |
+| 6   |                                                              | No input, returns an output handle. |
 | 7   | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink")         |                                     |
-| 8   | ResetDevice                                                  |                                     |
+| 8   | [\#ResetDevice](#ResetDevice "wikilink")                     |                                     |
 | 9   | OpenUsbEp                                                    |                                     |
 
 ### SetInterface
@@ -543,6 +543,10 @@ No input, returns an output u32.
 ### GetCtrlXferReport
 
 Takes a type-0x6 output buffer, no output.
+
+### ResetDevice
+
+No input/output.
 
 ### IClientEpSession
 
