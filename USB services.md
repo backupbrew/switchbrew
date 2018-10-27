@@ -543,7 +543,8 @@ No input, returns an output u32.
 
 ### CtrlXferAsync
 
-Takes 2 input u8s and 3 input u16s, no output.
+Takes 2 input u8s (**bmRequestType** and **bRequest**) and 3 input u16s
+(**wValue**, **wIndex**, and **wLength**), no output.
 
 ### GetCtrlXferReport
 
@@ -593,7 +594,8 @@ Takes an input u32 and 2 input u64s, returns an output u32.
 
 #### GetXferReport
 
-Takes an input u32 and a type-0x6 output buffer, returns an output u32.
+Takes an input u32 and a type-0x6 output buffer, returns an output u32
+**count**.
 
 # usb:pd
 
