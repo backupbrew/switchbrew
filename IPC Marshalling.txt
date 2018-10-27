@@ -207,7 +207,13 @@ This memory is mapped in the sysmodule to the same vaddr from the original user-
 
 No user-process->sysmodule memcpy is done for outbufs, only sysmodule->user-process.
 
-Buffer descriptor X copies memory into a "pointer buffer" that the IPC server specifies to the kernel by preparing a message with a C descriptor pointing to the pointer buffer before calling svcReplyAndReceive. Addresses in the X descriptors are transmuted to point into the pointer buffer, and if data doesn't fit in the pointer buffer, 0xce01 is returned back to the client.
+Buffer descriptors C/X are somewhat different. Rather than mapping new memory into the server process, C/X descriptors copy data between existing buffers in different processes. Each X descriptor in a message has its data copied into a C descriptor on the other side. Each C descriptor in a message is used to reserve space for the other side's X descriptors to copy into.
+
+When the kernel processes X descriptors, it must determine where to copy the data to. If the destination used C descriptors with flags >= 3, each X descriptor from the source is matched to a C descriptor in the destination by the X descriptor's index field. If the destination used a "single" C descriptor, the data from all the X descriptors is copied into the same buffer specified by the destination's C descriptor (causing error 0xce01 if there is not enough space) and the X descriptor index is ignored. The kernel then modifies the addresses in the X descriptors to indicate where the data was copied to in the destination.
+
+Before receiving a request, if the IPC server is expecting X descriptors, it prepares a message with a "single" C descriptor (flags=2) in its message buffer before calling svcReplyAndReceive so that X descriptors from the client have a place to copy their data to.  The usage of the flag-2 C descriptor allows the server to receive an arbitrary number of X descriptors, since they're all packed into the same buffer. If the server had used flag-3+ C descriptors, it would be limited in how many X descriptors it could receive since the X descriptors would have to be matched to distinct C descriptors. The buffer that the server's C descriptor points to is called the **pointer buffer**.
+
+When the client sends X descriptors, data is copied into the server's pointer buffer. When the client sends C descriptors, no data is copied automatically. The server needs to use X descriptors to copy the data back to the client's C descriptors (using the index field to match X descriptors in the response back to the correct C descriptors).
 
 == Raw data section ==
 [[File:Ipc msg buffer type a example.png|thumb|An example of an IPC message with a type 0xA buffer in it. Red is headers/descriptors, yellow is padding, and blue is data/buffer lengths. Note that the size of the u16 array for type A lengths is padded to fill up a whole word.]]
