@@ -543,8 +543,9 @@ No input, returns an output u32.
 
 ### CtrlXferAsync
 
-Takes 2 input u8s (**bmRequestType** and **bRequest**) and 3 input u16s
-(**wValue**, **wIndex**, and **wLength**), no output.
+Takes 2 input u8s (**bmRequestType** and **bRequest**), 3 input u16s
+(**wValue**, **wIndex**, and **wLength**), and an input u64 **buffer**,
+no output.
 
 ### GetCtrlXferReport
 

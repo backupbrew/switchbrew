@@ -464,7 +464,7 @@ Takes an input u8 and a type-0x6 output buffer, no output.
 No input, returns an output u32.
 
 === CtrlXferAsync ===
-Takes 2 input u8s ('''bmRequestType''' and '''bRequest''') and 3 input u16s ('''wValue''', '''wIndex''', and '''wLength'''), no output.
+Takes 2 input u8s ('''bmRequestType''' and '''bRequest'''), 3 input u16s ('''wValue''', '''wIndex''', and '''wLength'''), and an input u64 '''buffer''', no output.
 
 === GetCtrlXferReport ===
 Takes a type-0x6 output buffer, no output.
