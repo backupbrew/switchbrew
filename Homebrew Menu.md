@@ -27,7 +27,8 @@ the list or with it highlighted tap the `Open` or `Launch` button prompt
 in the bottom right. To go back (a folder) you can swipe up or tap the
 `Back` button prompt in the bottom right (the latter is only available
 when no message-box is shown / netloader isn't active). To activate the
-netloader you can swipe down on the screen.
+netloader you can swipe down on the screen. To enter Theme Menu you can
+swipe left on the screen.
 
 # Battery
 

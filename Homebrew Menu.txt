@@ -9,7 +9,7 @@ Use the D-Pad/joystick to select the app/directory, up/down can be used for fast
 == Touch controls ==
 NOTE: This is not yet available with the latest hbmenu release.
 
-To navigate through the list of folders and applications you can swipe left and right on the bottom list. To open an item you can tap on it in the list or with it highlighted tap the <code>Open</code> or <code>Launch</code> button prompt in the bottom right. To go back (a folder) you can swipe up or tap the <code>Back</code> button prompt in the bottom right (the latter is only available when no message-box is shown / netloader isn't active). To activate the netloader you can swipe down on the screen.
+To navigate through the list of folders and applications you can swipe left and right on the bottom list. To open an item you can tap on it in the list or with it highlighted tap the <code>Open</code> or <code>Launch</code> button prompt in the bottom right. To go back (a folder) you can swipe up or tap the <code>Back</code> button prompt in the bottom right (the latter is only available when no message-box is shown / netloader isn't active). To activate the netloader you can swipe down on the screen. To enter Theme Menu you can swipe left on the screen.
 
 = Battery =
 NOTE: This is not yet available with the latest hbmenu release.
