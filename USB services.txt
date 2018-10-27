@@ -380,9 +380,9 @@ This is "nn::usb::hs::IClientRootSession".
 |-
 | 0 || [[#BindClientProcess_2|#BindClientProcess]]
 |-
-| 1 || QueryAllInterfaces
+| 1 || [[#QueryAllInterfaces]]
 |-
-| 2 || QueryAvailableInterfaces
+| 2 || [[#QueryAvailableInterfaces]]
 |-
 | 3 || QueryAcquiredInterfaces
 |-
@@ -401,6 +401,12 @@ General USB devices usage, used by [[HID_services|hid]] and [[Sockets_services|b
 
 == BindClientProcess ==
 Takes 1 copy-handle for the current process (0xFFFF8001).
+
+== QueryAllInterfaces ==
+Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an output u32.
+
+== QueryAvailableInterfaces ==
+Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an output u32.
 
 == IClientIfSession ==
 This is "nn::usb::hs::IClientIfSession".

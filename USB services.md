@@ -453,19 +453,20 @@ Stops in-progress data-transfer done by
 
 # usb:hs
 
-This is "nn::usb::hs::IClientRootSession".
+This is
+"nn::usb::hs::IClientRootSession".
 
-| Cmd | Name                                                   |
-| --- | ------------------------------------------------------ |
-| 0   | [\#BindClientProcess](#BindClientProcess_2 "wikilink") |
-| 1   | QueryAllInterfaces                                     |
-| 2   | QueryAvailableInterfaces                               |
-| 3   | QueryAcquiredInterfaces                                |
-| 4   | CreateInterfaceAvailableEvent                          |
-| 5   | DestroyInterfaceAvailableEvent                         |
-| 6   | GetInterfaceStateChangeEvent                           |
-| 7   | AcquireUsbIf                                           |
-| 8   | \[6.0.0+\]                                             |
+| Cmd | Name                                                               |
+| --- | ------------------------------------------------------------------ |
+| 0   | [\#BindClientProcess](#BindClientProcess_2 "wikilink")             |
+| 1   | [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink")             |
+| 2   | [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink") |
+| 3   | QueryAcquiredInterfaces                                            |
+| 4   | CreateInterfaceAvailableEvent                                      |
+| 5   | DestroyInterfaceAvailableEvent                                     |
+| 6   | GetInterfaceStateChangeEvent                                       |
+| 7   | AcquireUsbIf                                                       |
+| 8   | \[6.0.0+\]                                                         |
 
 General USB devices usage, used by [hid](HID%20services.md "wikilink")
 and [bsdsockets](Sockets%20services.md "wikilink").
@@ -473,6 +474,16 @@ and [bsdsockets](Sockets%20services.md "wikilink").
 ## BindClientProcess
 
 Takes 1 copy-handle for the current process (0xFFFF8001).
+
+## QueryAllInterfaces
+
+Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an
+output u32.
+
+## QueryAvailableInterfaces
+
+Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an
+output u32.
 
 ## IClientIfSession
 
