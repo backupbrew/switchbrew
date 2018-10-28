@@ -601,7 +601,10 @@ No input/output.
 
 #### PostBufferAsync
 
-Takes an input u32 and 2 input u64s, returns an output u32.
+Takes an input u32 **size**, an input u64 **buffer**, and an input u64,
+returns an output u32 **xferId**.
+
+HID-sysmodule passes value 0 for the last u64.
 
 #### GetXferReport
 
