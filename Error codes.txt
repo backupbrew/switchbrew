@@ -360,6 +360,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1003 || 3 || 8 || Out of memory
 |-
+| 0x1203 || 3 || 9 || Out of resources
+|-
 | 0x3EA03 || 3 || 501 || Invalid handle
 |-
 | 0x3EE03 || 3 || 503 || Invalid memory mirror
