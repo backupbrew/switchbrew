@@ -489,6 +489,9 @@ output s32.
 The buffer contains an array of 0x228-byte interface structs. The output
 s32 is the total number of output entries.
 
+HID-sysmodule uses the following for the input struct:
+`80 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00`
+
 ## QueryAcquiredInterfaces
 
 Takes a type-0x6 output buffer and returns an output u32.
