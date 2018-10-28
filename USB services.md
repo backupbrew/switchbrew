@@ -484,7 +484,10 @@ output u32.
 ## QueryAvailableInterfaces
 
 Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an
-output u32.
+output s32.
+
+The buffer contains an array of 0x228-byte structs. The output s32 is
+the total number of output entries.
 
 ## QueryAcquiredInterfaces
 
