@@ -611,6 +611,12 @@ HID-sysmodule passes value 0 for the last u64.
 Takes an input u32 and a type-0x6 output buffer, returns an output u32
 **count**.
 
+The input u32 specifies the total number of entries to read, this must
+fit within the specified buffer size. The output u32 is the total actual
+output entries.
+
+The buffer contains an array of 0x18-byte report structs.
+
 # usb:pd
 
 This is "nn::usb::pd::detail::IPdManager".
