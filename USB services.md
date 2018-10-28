@@ -510,6 +510,10 @@ No input, returns an output event handle with autoclear disabled.
 Takes an input u32 and a type-0x6 output buffer, returns an
 [\#IClientIfSession](#IClientIfSession "wikilink").
 
+The input u32 is from the u32 at entry+0 from the associated
+[\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink")
+output entry. User-processes use size 0x1B8 for the output buffer.
+
 ## IClientIfSession
 
 This is
