@@ -486,8 +486,8 @@ output u32.
 Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an
 output s32.
 
-The buffer contains an array of 0x228-byte structs. The output s32 is
-the total number of output entries.
+The buffer contains an array of 0x228-byte interface structs. The output
+s32 is the total number of output entries.
 
 ## QueryAcquiredInterfaces
 
