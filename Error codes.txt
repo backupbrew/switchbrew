@@ -360,6 +360,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x326602 || 2 || 6451 || Missing titlekey(?) required to mount content
 |-
+| 0x327402 || 2 || 6458 || FS allocators already registered
+|-
+| 0x327602 || 2 || 6459 || FS allocators already used
+|-
 | 0x803 || 3 || 4 || OS busy
 |-
 | 0xE03 || 3 || 7 || Invalid parameter
