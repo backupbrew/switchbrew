@@ -462,6 +462,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1D80A || 10 || 236 || Invalid out object count.
 |-
+| 0x25A0A || 10 || 301 || Out of domain entries.
+|-
 | 0x20B || 11 || 1 || Size too big to fit to marshal.
 |-
 | 0xCC0B || 11 || 102 || Out of server session memory
