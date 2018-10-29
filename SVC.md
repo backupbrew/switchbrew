@@ -568,14 +568,21 @@ be called anywhere.
 
 </div>
 
-Size must be 0x1000-aligned.
+Size and CmdPtr must be 0x1000-aligned.
 
 ### Result codes
 
 **0x0:** Success.
 
+**0xcc01:** CmdPtr is not 0x1000-aligned.
+
+**0xca01:** Size is not 0x1000-aligned.
+
 **0xce01:** KSessionRequest allocation failed (unlikely) or pointer
 buffer size exceeded.
+
+**0xe401:** Handles does not exist, or handle is not an instance of
+KClientSession.
 
 ## svcBreak
 
