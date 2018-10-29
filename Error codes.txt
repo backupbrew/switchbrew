@@ -222,7 +222,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x4201 || 1 || 33 || Not Implemented
 |-
-| 0x7601 || 1 || 59 || Invalid thread state?
+| 0x7601 || 1 || 59 || Thread terminated/termination requested
 |-
 | 0x8C01 || 1 || 70 || No more debug events
 |-
