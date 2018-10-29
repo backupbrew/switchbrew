@@ -306,6 +306,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x171402 || 2 || 2954 || Invalid gamecard handle.
 |-
+| 0x177202 || 2 || 3001 || Unimplemented behavior
+|-
 | 0x190202 || 2 || 3201 || Memory allocation failure related to FAT filesystem code
 |-
 | 0x190602 || 2 || 3203 || Memory allocation failure related to FAT filesystem code
