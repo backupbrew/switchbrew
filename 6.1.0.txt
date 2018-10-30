@@ -41,3 +41,7 @@ OSS was updated and a WebKit vulnerability was patched (see [[Switch_Userland_Fl
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=10-29-18_08-05-12&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
