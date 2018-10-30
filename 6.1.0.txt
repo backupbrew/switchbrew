@@ -1,6 +1,6 @@
 The Switch 6.1.0 system update was released on October 29, 2018. This Switch update was released for the following regions: ALL.
 
-Security flaws fixed: <fill this in manually later, see the updatedetails page from the ninupdates-report page(s) once available for now>.
+Security flaws fixed: Yes.
 
 ==Change-log==
 [https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
