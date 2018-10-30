@@ -10,6 +10,9 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+=== [[Internet Browser]] ===
+While OSS was updated, nothing changed in the main-codebin besides a version string and the codebin-buildid.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=10-29-18_08-05-12&sys=hac]
