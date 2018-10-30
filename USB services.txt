@@ -399,6 +399,8 @@ This is "nn::usb::hs::IClientRootSession".
 
 General USB devices usage, used by [[HID_services|hid]], [[Sockets_services|bsdsockets]], and [5.1.0+] [[Audio_services|audio]].
 
+Get-service-handle will fail if the current process is already using usb:ds, however it's successful if it's done separately from the process using usb:ds.
+
 == BindClientProcess ==
 Takes 1 copy-handle for the current process (0xFFFF8001).
 

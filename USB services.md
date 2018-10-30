@@ -472,6 +472,10 @@ General USB devices usage, used by [hid](HID%20services.md "wikilink"),
 [bsdsockets](Sockets%20services.md "wikilink"), and \[5.1.0+\]
 [audio](Audio%20services.md "wikilink").
 
+Get-service-handle will fail if the current process is already using
+usb:ds, however it's successful if it's done separately from the process
+using usb:ds.
+
 ## BindClientProcess
 
 Takes 1 copy-handle for the current process (0xFFFF8001).
