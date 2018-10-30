@@ -496,11 +496,11 @@ This is "nn::audio::detail::IAudioDebugManager".
 
 This service doesn't exist in retail units.
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
+| Cmd | Name             |
+| --- | ---------------- |
+| 0   | StartDspProfiler |
+| 1   | StopDspProfiler  |
+| 2   | StartCpuProfiler |
+| 3   | StopCpuProfiler  |
 
 [Category:Services](Category:Services "wikilink")

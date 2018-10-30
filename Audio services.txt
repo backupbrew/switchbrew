@@ -609,13 +609,13 @@ This service doesn't exist in retail units.
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || StartDspProfiler
 |-
-| 1 ||
+| 1 || StopDspProfiler
 |-
-| 2 ||
+| 2 || StartCpuProfiler
 |-
-| 3 ||
+| 3 || StopCpuProfiler
 |}
 
 [[Category:Services]]
