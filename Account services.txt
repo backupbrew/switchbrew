@@ -105,7 +105,7 @@ This is "nn::account::baas::IManagerForSystemService".
 |-
 | 112 || [4.0.0+] InvalidateTokenCache ||
 |-
-| 113 || [6.1.0+] || Takes a total of 0x8-bytes of input, returns a total of 0x4-bytes of output.
+| 113 || [6.1.0+] GetServiceEntryRequirementCacheForOnlinePlay || Takes a total of 0x8-bytes of input, returns a total of 0x4-bytes of output.
 |-
 | 120 || GetNintendoAccountId ||
 |-
@@ -179,7 +179,7 @@ This is "nn::account::baas::IAdministrator".
 |-
 | 112 || [4.0.0+] InvalidateTokenCache ||
 |-
-| 113 || [6.1.0+] || Takes a total of 0x8-bytes of input, returns a total of 0x4-bytes of output.
+| 113 || [6.1.0+] GetServiceEntryRequirementCacheForOnlinePlay || Takes a total of 0x8-bytes of input, returns a total of 0x4-bytes of output.
 |-
 | 120 || GetNintendoAccountId ||
 |-
@@ -227,9 +227,11 @@ This is "nn::account::baas::IAdministrator".
 |-
 | 280 || ProxyProcedureToAcquireApplicationAuthorizationForNintendoAccount || Returns an [[#IOAuthProcedure]].
 |-
-| 400 || [6.1.0+] || Takes a total of 0x8-bytes of input, returns an output u8.
+| 300 || [6.0.0+] TryRecoverNintendoAccountUserStateAsync || Returns an [[#IAsyncContext]].
 |-
-| 401 || [6.1.0+] || Takes a total of 0x8-bytes of input, returns an [[#IAsyncContext]].
+| 400 || [6.1.0+] IsServiceEntryRequirementCacheRefreshRequiredForOnlinePlay || Takes a total of 0x8-bytes of input, returns an output u8.
+|-
+| 401 || [6.1.0+] RefreshServiceEntryRequirementCacheForOnlinePlayAsync || Takes a total of 0x8-bytes of input, returns an [[#IAsyncContext]].
 |-
 | 997 || DebugUnlinkNintendoAccountAsync || Returns an [[#IAsyncContext]].
 |-
