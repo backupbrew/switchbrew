@@ -23,4 +23,11 @@ Switch: March 3rd-4th 2017
 | [[3.0.1]]
 | 
 | Everyone
+|-
+| CVE-2016-4622
+| WebKit memory corruption bug. This bug was incorrectly re-introduced in [[4.0.0]]. See [http://www.phrack.org/papers/attacking_javascript_engines.html here] for a detailed write-up from the author.
+| [[6.1.0]]
+| [[6.1.0]]
+| 
+| Everyone
 |}
