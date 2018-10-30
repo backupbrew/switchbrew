@@ -465,18 +465,21 @@ Returns the required size for the decoder's work buffer.
 
 ## IHardwareOpusDecoder
 
-This is "nn::codec::detail::IHardwareOpusDecoder".
+This is
+"nn::codec::detail::IHardwareOpusDecoder".
 
-| Cmd | Name                                                 |
-| --- | ---------------------------------------------------- |
-| 0   | [\#DecodeInterleaved](#DecodeInterleaved "wikilink") |
-| 1   | [\#SetContext](#SetContext "wikilink")               |
-| 2   | \[3.0.0+\]                                           |
-| 3   | \[3.0.0+\]                                           |
-| 4   | \[4.0.0+\]                                           |
-| 5   | \[4.0.0+\]                                           |
+| Cmd | Name                                                                                                                                            |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | \[4.0.0+\] [\#DecodeInterleavedOld](#DecodeInterleavedOld "wikilink") (\[1.0.0-3.0.2\] [\#DecodeInterleaved](#DecodeInterleavedOld "wikilink")) |
+| 1   | [\#SetContext](#SetContext "wikilink")                                                                                                          |
+| 2   | \[4.0.0+\] DecodeInterleavedForMultiStreamOld (\[3.0.0-3.0.2\] DecodeInterleavedForMultiStream)                                                 |
+| 3   | \[3.0.0+\] SetContextForMultiStream                                                                                                             |
+| 4   | \[6.0.0+\] DecodeInterleavedWithPerfOld (\[4.0.0-5.1.0\] DecodeInterleavedWithPerf)                                                             |
+| 5   | \[6.0.0+\] DecodeInterleavedForMultiStreamWithPerfOld (\[4.0.0-5.1.0\] DecodeInterleavedForMultiStreamWithPerf)                                 |
+| 6   | \[6.0.0+\] DecodeInterleaved                                                                                                                    |
+| 7   | \[6.0.0+\] DecodeInterleavedForMultiStream                                                                                                      |
 
-### DecodeInterleaved
+### DecodeInterleavedOld
 
 Takes a type-5 input buffer (**OpusDataIn**) and a type-6 output buffer
 (**PcmDataOut**). Decodes the Opus source data to PCM and returns two
