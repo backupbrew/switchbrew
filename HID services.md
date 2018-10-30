@@ -69,6 +69,7 @@ This is
 | 131  | IsUnintendedHomeButtonInputProtectionEnabled                                                     |
 | 132  | EnableUnintendedHomeButtonInputProtection                                                        |
 | 133  | \[5.0.0+\] SetNpadJoyAssignmentModeSingleWithDestination                                         |
+| 134  | \[6.1.0+\]                                                                                       |
 | 200  | [\#GetVibrationDeviceInfo](#GetVibrationDeviceInfo "wikilink")                                   |
 | 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
 | 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
