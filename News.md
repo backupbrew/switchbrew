@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **29 October 18** Nintendo released system update
+    [6.1.0](6.1.0.md "wikilink").
   - **27 October 18** [libnx 1.5.0 and
     switch-examples 20181027](https://devkitpro.org/viewtopic.php?f=13&t=8798)
     were released.
@@ -30,5 +32,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     were released.
   - **8 October 18** Nintendo released system update
     [6.0.1](6.0.1.md "wikilink").
-  - **18 September 18** Nintendo released system update
-    [6.0.0](6.0.0.md "wikilink").
