@@ -66,6 +66,8 @@ This is
 | 9   | \[4.0.0+\] GetAudioOutBufferCount                                                       |
 | 10  | \[4.0.0+\] GetAudioOutPlayedSampleCount                                                 |
 | 11  | \[4.0.0+\] FlushAudioOutBuffers                                                         |
+| 12  | \[6.0.0+\] SetAudioOutVolume                                                            |
+| 13  | \[6.0.0+\] GetAudioOutVolume                                                            |
 
 ### GetAudioOutState
 
@@ -155,6 +157,7 @@ This is "nn::audio::detail::IAudioIn".
 | 11  | \[4.0.0+\] GetAudioInBufferCount                 |
 | 12  | \[4.0.0+\] SetAudioInDeviceGain                  |
 | 13  | \[4.0.0+\] GetAudioInDeviceGain                  |
+| 14  | \[6.0.0+\] FlushAudioInBuffers                   |
 
 ### GetAudioInState
 
@@ -184,6 +187,7 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 | 7   | GetFinalOutputRecorderBufferEndTime                 |
 | 8   | \[3.0.0+\] AppendFinalOutputRecorderBufferAuto      |
 | 9   | \[3.0.0+\] GetReleasedFinalOutputRecorderBufferAuto |
+| 10  | \[6.0.0+\] FlushFinalOutputRecorderBuffers          |
 
 # audren:u
 
