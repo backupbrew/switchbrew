@@ -984,7 +984,8 @@ This is "nn::hidbus::IHidbusServer".
 The hid-sysmodule RomFS contains:
   ftmFwUpdate
     ├── NTD_4CD_1801.fts256
-    └── NTD_4CD_2602.fts256
+    ├── NTD_4CD_2602.fts256
+    └── NTD_4CD_3801.fts256
 
 These are firmware files for the touchscreen controller.
 
