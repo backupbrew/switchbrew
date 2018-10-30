@@ -946,13 +946,13 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 |-
 | 0 || RequestLinkDevice || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
 |-
-| 1 || RequestCleanupAllPreInstalledApplications || No input, returns an [[#IAsyncResult]].
+| 1 || [6.0.0+] RequestCleanupAllPreInstalledApplications || No input, returns an [[#IAsyncResult]].
 |-
-| 2 || RequestCleanupPreInstalledApplication || Takes a total of 0x8-bytes of input, returns an [[#IAsyncResult]].
+| 2 || [6.0.0+] RequestCleanupPreInstalledApplication || Takes a total of 0x8-bytes of input, returns an [[#IAsyncResult]].
 |-
-| 3 || RequestSyncRights || No input, returns an [[#IAsyncResult]].
+| 3 || [6.0.0+] RequestSyncRights || No input, returns an [[#IAsyncResult]].
 |-
-| 4 || RequestUnlinkDevice || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
+| 4 || [6.0.0+] RequestUnlinkDevice || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
 |-
 | 5 || [6.1.0+] RequestRevokeAllELicense || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
 |}
