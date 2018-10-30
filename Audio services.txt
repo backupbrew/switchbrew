@@ -135,11 +135,11 @@ This is "nn::audio::detail::IAudioInManager".
 |-
 | 1 || OpenAudioIn
 |-
-| 2 || [3.0.0+] 
+| 2 || [3.0.0+] ListAudioInsAuto
 |-
 | 3 || [3.0.0+] OpenAudioInAuto
 |-
-| 4 || [3.0.0+] ListAudioInsAuto
+| 4 || [3.0.0+] ListAudioInsAutoFiltered
 |}
 
 == IAudioIn ==

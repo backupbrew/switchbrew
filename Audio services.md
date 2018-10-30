@@ -127,13 +127,13 @@ takes a type-0x22 buffer instead.
 
 This is "nn::audio::detail::IAudioInManager".
 
-| Cmd | Name                        |
-| --- | --------------------------- |
-| 0   | ListAudioIns                |
-| 1   | OpenAudioIn                 |
-| 2   | \[3.0.0+\]                  |
-| 3   | \[3.0.0+\] OpenAudioInAuto  |
-| 4   | \[3.0.0+\] ListAudioInsAuto |
+| Cmd | Name                                |
+| --- | ----------------------------------- |
+| 0   | ListAudioIns                        |
+| 1   | OpenAudioIn                         |
+| 2   | \[3.0.0+\] ListAudioInsAuto         |
+| 3   | \[3.0.0+\] OpenAudioInAuto          |
+| 4   | \[3.0.0+\] ListAudioInsAutoFiltered |
 
 ## IAudioIn
 
