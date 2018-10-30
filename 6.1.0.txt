@@ -7,13 +7,29 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * General system stability improvements to enhance the user's experience, including:
 * 	Resolved an issue where certain games don’t recognize a Nintendo Switch Online membership for a short time after purchase
 
-==System Titles==
-<fill this in (manually) later>
+== System Titles ==
+The following 8XX titles (besides 809 and 816) were updated:
+* 801 (ErrorMessage)
+* 803 (BrowserDll)
+** OSS files were updated.
+* 80B (LocalNews)
+* 818 (FirmwareDebugSettings)
+* 822 (ControllerFirmware)
+** Two new firmware files have been added: "PalmaFw.bin" (Poké Ball Plus controller) and "ProController.dfu" (USB Pro Controller).
+* 826 (RebootlessSystemUpdateVersion)
+** Version number was bumped to 3.
 
 === [[Internet Browser]] ===
-The following changed for web-applet:
+All web-applet titles were updated:
+* 100A (web)
+* 100B (shop)
+* 100F (offlineWeb)
+* 1010 (loginShare)
+* 1011 (wifiWebAuth)
 
-While OSS was updated, nothing changed in the main-codebin besides a version string and the codebin-buildid.
+Nothing changed in the main-codebins besides a version string and the codebin-buildid.
+
+OSS was updated and a WebKit vulnerability was patched (see [[Switch_Userland_Flaws|here]]).
 
 ==See Also==
 System update report(s):
