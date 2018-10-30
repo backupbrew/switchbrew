@@ -25,3 +25,7 @@ This appears to be a simple bugfix to correct changes introduced in 6.0.0 to the
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=10-08-18_08-05-09&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
