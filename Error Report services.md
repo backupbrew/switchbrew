@@ -2,15 +2,17 @@
 
 This is "nn::erpt::sf::IContext".
 
-| Cmd | Name          |
-| --- | ------------- |
-| 0   | SubmitContext |
-| 1   | CreateReport  |
-| 2   | \[3.0.0+\]    |
-| 3   | \[3.0.0+\]    |
-| 4   | \[3.0.0+\]    |
-| 5   | \[3.0.0+\]    |
-| 6   | \[5.0.0+\]    |
+| Cmd | Name                                                |
+| --- | --------------------------------------------------- |
+| 0   | SubmitContext                                       |
+| 1   | CreateReport                                        |
+| 2   | \[3.0.0+\] SetInitialLaunchSettingsCompletionTime   |
+| 3   | \[3.0.0+\] ClearInitialLaunchSettingsCompletionTime |
+| 4   | \[3.0.0+\] UpdatePowerOnTime                        |
+| 5   | \[3.0.0+\] UpdateAwakeTime                          |
+| 6   | \[5.0.0+\] SubmitMultipleCategoryContext            |
+| 7   | \[6.0.0+\] UpdateApplicationLaunchTime              |
+| 8   | \[6.0.0+\] ClearApplicationLaunchTime               |
 
 # erpt:r
 
