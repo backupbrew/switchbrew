@@ -19,6 +19,10 @@ The following 8XX titles (besides 809 and 816) were updated:
 * 826 (RebootlessSystemUpdateVersion)
 ** Version number was bumped to 3.
 
+The following sysmodules were updated:
+* usb, nifm, hid, audio, pcie, account, ns, am, nim, btm, es, and creport.
+** The only sysmodules with new IPC commands are [[HID_services|hid]], [[Account_services|account]], and [[NS_Services|ns]].
+
 === [[Internet Browser]] ===
 All web-applet titles were updated:
 * 100A (web)
