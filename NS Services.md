@@ -297,7 +297,7 @@ This is
 | 11   | CalculateApplicationOccupiedSize                                                                   |
 | 16   | PushApplicationRecord                                                                              |
 | 17   | ListApplicationRecordContentMeta                                                                   |
-| 19   | \[1.0.0-5.1.0\] [\#LaunchApplication](#LaunchApplication "wikilink")                               |
+| 19   | \[1.0.0-5.1.0\] LaunchApplicationOld                                                               |
 | 21   | [\#GetApplicationContentPath](#GetApplicationContentPath "wikilink")                               |
 | 22   | TerminateApplication                                                                               |
 | 23   | ResolveApplicationContentPath                                                                      |
@@ -350,13 +350,13 @@ This is
 | 86   | EnableApplicationCrashReport                                                                       |
 | 87   | IsApplicationCrashReportEnabled                                                                    |
 | 90   | BoostSystemMemoryResourceLimit                                                                     |
-| 91   | \[5.0.0+\]                                                                                         |
-| 92   | \[5.0.0+\]                                                                                         |
+| 91   | \[5.0.0+\] DeprecatedLaunchApplication                                                             |
+| 92   | \[5.0.0+\] GetRunningApplicationProgramId                                                          |
 | 93   | \[5.0.0+\] GetMainApplicationProgramIndex                                                          |
-| 94   | \[6.0.0+\] LaunchApplication2                                                                      |
+| 94   | \[6.0.0+\] LaunchApplication                                                                       |
 | 95   | \[6.0.0+\] GetApplicationLaunchInfo                                                                |
 | 96   | \[6.0.0+\] AcquireApplicationLaunchInfo                                                            |
-| 97   | \[6.0.0+\] GetMainApplicationProgramIndex2                                                         |
+| 97   | \[6.0.0+\] GetMainApplicationProgramIndexByApplicationLaunchInfo                                   |
 | 98   | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                   |
 | 100  | ResetToFactorySettings                                                                             |
 | 101  | ResetToFactorySettingsWithoutUserSaveData                                                          |
@@ -417,7 +417,7 @@ This is
 | 907  | WithdrawApplicationUpdateRequest                                                                   |
 | 908  | ListApplicationRecordInstalledContentMeta                                                          |
 | 909  | WithdrawCleanupAddOnContentsWithNoRightsRecommendation                                             |
-| 910  | \[6.0.0+\]                                                                                         |
+| 910  | \[6.0.0+\] HasApplicationRecord                                                                    |
 | 911  | \[6.0.0+\] SetPreInstalledApplication                                                              |
 | 912  | \[6.0.0+\] ClearPreInstalledApplicationFlag                                                        |
 | 1000 | RequestVerifyApplicationDeprecated                                                                 |
@@ -472,29 +472,30 @@ This is
 | 2014 | GetSendApplicationProgress                                                                         |
 | 2015 | CompareSystemDeliveryInfo                                                                          |
 | 2016 | ListNotCommittedContentMeta                                                                        |
-| 2017 | CreateDownloadTask                                                                                 |
-| 2018 | \[6.0.0+\]                                                                                         |
-| 2050 | \[6.0.0+\]                                                                                         |
-| 2100 | \[6.0.0+\]                                                                                         |
-| 2101 | \[6.0.0+\]                                                                                         |
+| 2017 | RecoverDownloadTask                                                                                |
+| 2018 | \[6.0.0+\] GetApplicationDeliveryInfoHash                                                          |
+| 2050 | \[6.0.0+\] GetApplicationRightsOnClient                                                            |
+| 2100 | \[6.0.0+\] GetApplicationTerminateResult                                                           |
+| 2101 | \[6.0.0+\] GetRawApplicationTerminateResult                                                        |
 | 2150 | \[6.0.0+\] CreateRightsEnvironment                                                                 |
 | 2151 | \[6.0.0+\] DestroyRightsEnvironment                                                                |
 | 2152 | \[6.0.0+\] ActivateRightsEnvironment                                                               |
 | 2153 | \[6.0.0+\] DeactivateRightsEnvironment                                                             |
 | 2154 | \[6.0.0+\] ForceActivateRightsContextForExit                                                       |
+| 2155 | \[6.0.0+\] UpdateRightsEnvironmentStatus                                                           |
 | 2160 | \[6.0.0+\] AddTargetApplicationToRightsEnvironment                                                 |
 | 2161 | \[6.0.0+\] SetUsersToRightsEnvironment                                                             |
 | 2170 | \[6.0.0+\] GetRightsEnvironmentStatus                                                              |
 | 2171 | \[6.0.0+\] GetRightsEnvironmentStatusChangedEvent                                                  |
-| 2180 | \[6.0.0+\] RequestExtendRightsInRightsEnvironment                                                  |
-| 2181 | \[6.0.0+\] GetLastResultOfExtendRightsInRightsEnvironment                                          |
+| 2180 | \[6.0.0+\] RequestExtendExpirationInRightsEnvironment                                              |
+| 2181 | \[6.0.0+\] GetResultOfExtendExpirationInRightsEnvironment                                          |
 | 2182 | \[6.0.0+\] SetActiveRightsContextUsingStateToRightsEnvironment                                     |
 | 2190 | \[6.0.0+\] GetRightsEnvironmentHandleForApplication                                                |
 | 2199 | \[6.0.0+\] GetRightsEnvironmentCountForDebug                                                       |
-| 2200 | \[6.0.0+\]                                                                                         |
-| 2201 | \[6.0.0+\]                                                                                         |
-| 2250 | \[6.0.0+\]                                                                                         |
-| 2300 | \[6.0.0+\]                                                                                         |
+| 2200 | \[6.0.0+\] GetGameCardApplicationCopyIdentifier                                                    |
+| 2201 | \[6.0.0+\] GetInstalledApplicationCopyIdentifier                                                   |
+| 2250 | \[6.0.0+\] RequestReportActiveELicence                                                             |
+| 2300 | \[6.0.0+\] ListEventLog                                                                            |
 |      |                                                                                                    |
 
 ### IApplicationVersionInterface
@@ -532,11 +533,12 @@ This is "nn::ns::detail::IContentManagementInterface".
 
 This is "nn::ns::detail::IDocumentInterface".
 
-| Cmd | Name                          |
-| --- | ----------------------------- |
-| 21  | GetApplicationContentPath     |
-| 23  | ResolveApplicationContentPath |
-|     |                               |
+| Cmd | Name                                      |
+| --- | ----------------------------------------- |
+| 21  | GetApplicationContentPath                 |
+| 23  | ResolveApplicationContentPath             |
+| 92  | \[6.0.0+\] GetRunningApplicationProgramId |
+|     |                                           |
 
 ### IDownloadTaskInterface
 
@@ -642,20 +644,20 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 This is
 "nn::ns::detail::IDevelopInterface".
 
-| Cmd | Name                                                                           |
-| --- | ------------------------------------------------------------------------------ |
-| 0   | [\#LaunchProgram](#LaunchProgram "wikilink")                                   |
-| 1   | [\#TerminateProcess](#TerminateProcess "wikilink")                             |
-| 2   | [\#TerminateProgram](#TerminateProgram "wikilink")                             |
-| 4   | [\#GetShellEventHandle](#GetShellEventHandle "wikilink")                       |
-| 5   | [\#GetShellEventInfo](#GetShellEventInfo "wikilink")                           |
-| 6   | [\#TerminateApplication](#TerminateApplication "wikilink")                     |
-| 7   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")     |
-| 8   | [\#LaunchApplication](#LaunchApplication_2 "wikilink")                         |
-| 9   | [\#LaunchApplicationWithStorageId](#LaunchApplicationWithStorageId "wikilink") |
-| 10  | \[6.0.0+\] TerminateApplication2                                               |
-| 11  | \[6.0.0+\] GetRunningApplicationProcessId                                      |
-| 12  | \[6.0.0+\] SetCurrentApplicationRightsEnvironmentCanBeActive                   |
+| Cmd | Name                                                                                               |
+| --- | -------------------------------------------------------------------------------------------------- |
+| 0   | [\#LaunchProgram](#LaunchProgram "wikilink")                                                       |
+| 1   | [\#TerminateProcess](#TerminateProcess "wikilink")                                                 |
+| 2   | [\#TerminateProgram](#TerminateProgram "wikilink")                                                 |
+| 4   | [\#GetShellEvent](#GetShellEvent "wikilink")                                                       |
+| 5   | [\#GetShellEventInfo](#GetShellEventInfo "wikilink")                                               |
+| 6   | [\#TerminateApplication](#TerminateApplication "wikilink")                                         |
+| 7   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")                         |
+| 8   | [\#LaunchApplicationForDevelop](#LaunchApplicationForDevelop "wikilink")                           |
+| 9   | [\#LaunchApplicationWithStorageIdForDevelop](#LaunchApplicationWithStorageIdForDevelop "wikilink") |
+| 10  | \[6.0.0+\] TerminateApplication2                                                                   |
+| 11  | \[6.0.0+\] GetRunningApplicationProcessIdForDevelop                                                |
+| 12  | \[6.0.0+\] SetCurrentApplicationRightsEnvironmentCanBeActiveForDevelop                             |
 
 ## LaunchProgram
 
@@ -672,7 +674,7 @@ Wrapper for "pm:shell"
 Wrapper for "pm:shell"
 [TerminateTitleByTitleId](Process%20Manager%20services#TerminateTitleByTitleId.md##TerminateTitleByTitleId "wikilink").
 
-## GetShellEventHandle
+## GetShellEvent
 
 Wrapper for "pm:shell"
 [GetProcessEventWaiter](Process%20Manager%20services#GetProcessEventWaiter.md##GetProcessEventWaiter "wikilink").
@@ -699,7 +701,7 @@ Calls
 [IPathResolverForStorage](NCM%20services#IPathResolverForStorage.md##IPathResolverForStorage "wikilink")
 Set...NcaPath functions.
 
-## LaunchApplication
+## LaunchApplicationForDevelop
 
 Takes an input u32
 [LaunchFlags](Process%20Manager%20services#LaunchFlags.md##LaunchFlags "wikilink")
@@ -709,7 +711,7 @@ Same as LaunchApplicationWithStorageId except the last two params passed
 to the internal vtable funcptr call are value 0x6, instead of from the
 command input.
 
-## LaunchApplicationWithStorageId
+## LaunchApplicationWithStorageIdForDevelop
 
 Takes 2 input u8s, an u32
 [LaunchFlags](Process%20Manager%20services#LaunchFlags.md##LaunchFlags "wikilink"),
