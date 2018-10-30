@@ -559,9 +559,9 @@ This is "nn::codec::detail::IHardwareOpusDecoderManager".
 |-
 | 1 || [[#GetWorkBufferSize]]
 |-
-| 2 || [3.0.0+] InitializeMultiStream
+| 2 || [3.0.0+] OpenHardwareOpusDecoderForMultiStream
 |-
-| 3 || [3.0.0+] GetWorkBufferSizeMultiStream
+| 3 || [3.0.0+] GetWorkBufferSizeForMultiStream
 |}
 
 == Initialize ==

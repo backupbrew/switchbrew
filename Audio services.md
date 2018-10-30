@@ -447,8 +447,8 @@ This is "nn::codec::detail::IHardwareOpusDecoderManager".
 | --- | ---------------------------------------------------- |
 | 0   | [\#Initialize](#Initialize "wikilink")               |
 | 1   | [\#GetWorkBufferSize](#GetWorkBufferSize "wikilink") |
-| 2   | \[3.0.0+\] InitializeMultiStream                     |
-| 3   | \[3.0.0+\] GetWorkBufferSizeMultiStream              |
+| 2   | \[3.0.0+\] OpenHardwareOpusDecoderForMultiStream     |
+| 3   | \[3.0.0+\] GetWorkBufferSizeForMultiStream           |
 
 ## Initialize
 
