@@ -23,6 +23,9 @@ The following sysmodules were updated:
 * usb, nifm, hid, audio, pcie, account, ns, am, nim, btm, es, and creport.
 ** The only sysmodules with new IPC commands are [[HID_services|hid]], [[Account_services|account]], and [[NS_Services|ns]].
 
+=== [[PCIe_services|pcie-sysmodule]] ===
+Nothing changed besides the codebin-buildid.
+
 === [[Internet Browser]] ===
 All web-applet titles were updated:
 * 100A (web)
