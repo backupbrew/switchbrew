@@ -11,6 +11,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 <fill this in (manually) later>
 
 === [[Internet Browser]] ===
+The following changed for web-applet:
+
 While OSS was updated, nothing changed in the main-codebin besides a version string and the codebin-buildid.
 
 ==See Also==
