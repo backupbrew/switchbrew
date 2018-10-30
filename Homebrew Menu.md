@@ -19,8 +19,6 @@ deactivate netloader.
 
 ## Touch controls
 
-NOTE: This is not yet available with the latest hbmenu release.
-
 To navigate through the list of folders and applications you can swipe
 left and right on the bottom list. To open an item you can tap on it in
 the list or with it highlighted tap the `Open` or `Launch` button prompt
@@ -32,14 +30,10 @@ swipe left on the screen.
 
 # Battery
 
-NOTE: This is not yet available with the latest hbmenu release.
-
 The battery/charge status can be displayed, however this is only
 displayed when the required service is available/accessible.
 
 # Netloader
-
-NOTE: This is not yet available with the latest hbmenu release.
 
 With netloader activated as described above you can load apps over the
 network with nxlink. With the
@@ -50,8 +44,6 @@ messages. If nxlink fails with "No response from Switch\!" you can use
 See nxlink help for more options.
 
 # Themes
-
-NOTE: This is not yet available with the latest hbmenu release.
 
 Themes can be optionally loaded from SD "/config/nx-hbmenu/themes/". The
 theme (or the default) can be selected using the Theme Menu via the -
@@ -101,8 +93,6 @@ Sample theme file (.cfg file extension):
 `};`
 
 # File Associations
-
-NOTE: This is not yet available with the latest hbmenu release.
 
 File-association cfg files can optionally be loaded from SD
 "/config/nx-hbmenu/fileassoc/" during startup. There's 1 .cfg file for
