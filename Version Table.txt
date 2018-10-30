@@ -5,7 +5,7 @@
 |-
 | [[1.0.0]]
 | [[1.0.0]]
-| Wait for [https://github.com/Atmosphere-NX/Atmosphere Atmosphère], or see below for updating to 3.0.0.
+| Use [https://github.com/Atmosphere-NX/Atmosphere Atmosphère], or see below for updating to 3.0.0.
 |-
 | [[2.0.0]]
 | [[2.3.0]]
@@ -22,8 +22,8 @@ If you are beyond 4.1.0 you won't be able to have a non-tethered exploit
 |-
 | [[5.0.0]]
 | {latest}
-| Feel free to update to latest version if not already. Wait for [https://github.com/Atmosphere-NX/Atmosphere Atmosphère].
+| Feel free to update to latest version if not already. Use [https://github.com/Atmosphere-NX/Atmosphere Atmosphère].
 |-
 |}
 
-Once ready, [https://github.com/Atmosphere-NX/Atmosphere Atmosphère] will be usable on ''all'' system versions, for all Switch systems with the original hardware revision (via bootromhax).
+[https://github.com/Atmosphere-NX/Atmosphere Atmosphère] is usable on ''all'' system versions, for all Switch systems with the original hardware revision (via bootromhax).
