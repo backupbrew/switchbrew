@@ -212,7 +212,7 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 |-
 | 6 || ContainsFinalOutputRecorderBuffer
 |-
-| 7 ||
+| 7 || GetFinalOutputRecorderBufferEndTime
 |-
 | 8 || [3.0.0+] AppendFinalOutputRecorderBufferAuto
 |-
