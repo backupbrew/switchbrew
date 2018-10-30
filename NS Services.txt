@@ -942,10 +942,19 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 === IECommerceInterface===
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || RequestLinkDevice
+| 0 || RequestLinkDevice || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
 |-
+| 1 || || No input, returns an [[#IAsyncResult]].
+|-
+| 2 || || Takes a total of 0x8-bytes of input, returns an [[#IAsyncResult]].
+|-
+| 3 || || No input, returns an [[#IAsyncResult]].
+|-
+| 4 || || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
+|-
+| 5 || [6.1.0+] ? || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
 |}
 
 === IFactoryResetInterface ===

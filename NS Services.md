@@ -557,10 +557,14 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 
 ### IECommerceInterface
 
-| Cmd | Name              |
-| --- | ----------------- |
-| 0   | RequestLinkDevice |
-|     |                   |
+| Cmd | Name              | Notes                                                                                        |
+| --- | ----------------- | -------------------------------------------------------------------------------------------- |
+| 0   | RequestLinkDevice | Takes a total of 0x10-bytes of input, returns an [\#IAsyncResult](#IAsyncResult "wikilink"). |
+| 1   |                   | No input, returns an [\#IAsyncResult](#IAsyncResult "wikilink").                             |
+| 2   |                   | Takes a total of 0x8-bytes of input, returns an [\#IAsyncResult](#IAsyncResult "wikilink").  |
+| 3   |                   | No input, returns an [\#IAsyncResult](#IAsyncResult "wikilink").                             |
+| 4   |                   | Takes a total of 0x10-bytes of input, returns an [\#IAsyncResult](#IAsyncResult "wikilink"). |
+| 5   | \[6.1.0+\] ?      | Takes a total of 0x10-bytes of input, returns an [\#IAsyncResult](#IAsyncResult "wikilink"). |
 
 ### IFactoryResetInterface
 
