@@ -269,10 +269,23 @@ bytes. This means that if no padding is required before the message,
 there will be 0x10 bytes of padding after the message (before the buffer
 type 0xA lengths).
 
-### Domain message
+### Domains
 
-This header is used to wrap up requests sent to domains instead of
-sessions.
+Because the switch has relatively low limits on the total number of
+sessions available to the system (Kernel slabheap limits, sysmodule
+handle table size limits), HIPC supports a "Domains" feature that allows
+multiplexing multiple service sessions through a single handle. Domains
+store (effectively) a mapping from u32 object id to a
+SharedPointer<IServiceObject> -- When messages are sent to a domain, an
+extra header is sent in the raw data section (before anything else) with
+information about what object in the domain is being acted on; responses
+similarly contain an additional header. Official session code implements
+this by just using the dispatch table for the object in the map with the
+appropriate ID, instead of the dispatch table the session was
+initialized with.
+
+Format for the extra request header for domain
+message:
 
 | Word | Bits  | Description                                                                                      |
 | ---- | ----- | ------------------------------------------------------------------------------------------------ |
@@ -284,6 +297,14 @@ sessions.
 | 3    |       | \[5.0.0+\] Token for (NewRequest only)                                                           |
 | 4... |       | [Data payload](#Data_payload "wikilink")                                                         |
 | ...  |       | Input object IDs (u32s, not aligned)                                                             |
+
+Format for the extra response header for domain message:
+
+| Word | Bits | Description         |
+| ---- | ---- | ------------------- |
+| 0    | 31-0 | Output object count |
+| 1-3  |      | Padding             |
+|      |      |                     |
 
 ### Data payload
 
