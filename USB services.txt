@@ -551,15 +551,15 @@ This is "nn::usb::pd::detail::IPdSession".
 |-
 | 0 || BindNoticeEvent
 |-
-| 1 || 
+| 1 || UnbindNoticeEvent
 |-
 | 2 || GetStatus
 |-
 | 3 || GetNotice
 |-
-| 4 ||
+| 4 || EnablePowerRequestNotice
 |-
-| 5 ||
+| 5 || DisablePowerRequestNotice
 |-
 | 6 || ReplyPowerRequest
 |}

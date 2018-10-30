@@ -637,15 +637,15 @@ Only system-titles with access to this are
 
 This is "nn::usb::pd::detail::IPdSession".
 
-| Cmd | Name              |
-| --- | ----------------- |
-| 0   | BindNoticeEvent   |
-| 1   |                   |
-| 2   | GetStatus         |
-| 3   | GetNotice         |
-| 4   |                   |
-| 5   |                   |
-| 6   | ReplyPowerRequest |
+| Cmd | Name                      |
+| --- | ------------------------- |
+| 0   | BindNoticeEvent           |
+| 1   | UnbindNoticeEvent         |
+| 2   | GetStatus                 |
+| 3   | GetNotice                 |
+| 4   | EnablePowerRequestNotice  |
+| 5   | DisablePowerRequestNotice |
+| 6   | ReplyPowerRequest         |
 
 # usb:pd:c
 
