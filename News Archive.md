@@ -1,3 +1,5 @@
+  - **8 October 18** Nintendo released system update
+    [6.0.1](6.0.1.md "wikilink").
   - **18 September 18** Nintendo released system update
     [6.0.0](6.0.0.md "wikilink").
   - **18 September 18** [libnx 1.4.1, switch-mesa v18.2β and
