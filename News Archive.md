@@ -1,3 +1,8 @@
+  - **17 October 18** [Atmosphère
+    v0.7.0](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.7.0)
+    and [nx-hbloader
+    v2.0.0](https://github.com/switchbrew/nx-hbloader/releases/tag/v2.0.0)
+    were released.
   - **8 October 18** Nintendo released system update
     [6.0.1](6.0.1.md "wikilink").
   - **18 September 18** Nintendo released system update
