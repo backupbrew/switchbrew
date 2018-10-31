@@ -89,15 +89,14 @@ entries set: Korean, Taiwanese, and Chinese.
 ## VideoCaptureMode
 
 This is the enum used to determine how gameplay recording can occur, if
-at
-all.
+at all.
 
-| Entry-index | Icon [language](NCA%20Content%20FS#FS-type3.md##FS-type3 "wikilink") filename |
-| ----------- | ----------------------------------------------------------------------------- |
-| 0           | Disabled                                                                      |
-| 1           | Enabled                                                                       |
-| 2           | Automatic                                                                     |
-|             |                                                                               |
+| Enum Value | Meaning   |
+| ---------- | --------- |
+| 0          | Disabled  |
+| 1          | Enabled   |
+| 2          | Automatic |
+|            |           |
 
 When this value is 0, gameplay cannot be recorded. When this value is 1,
 the game must manually sacrifice some of its heap as transfer memory for

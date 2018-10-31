@@ -241,7 +241,7 @@ This is the enum used to determine how gameplay recording can occur, if at all.
 
 {| class="wikitable" border="1"
 |-
-! Entry-index || Icon [[NCA_Content_FS#FS-type3|language]] filename
+! Enum Value || Meaning
 |-
 | 0 || Disabled
 |-
