@@ -1509,19 +1509,19 @@ input/output.
 
 # ISaveDataTransferManagerWithDivision
 
-| Cmd | Name                                                                                                                                                                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | [\#GetChallenge](#GetChallenge "wikilink")                                                                                                                                      |
-| 16  | [\#SetToken](#SetToken "wikilink")                                                                                                                                              |
-| 32  | [\#OpenSaveDataExporter](#OpenSaveDataExporter_2 "wikilink")                                                                                                                    |
-| 33  | [\#OpenSaveDataExporter2](#OpenSaveDataExporter2 "wikilink")                                                                                                                    |
-| 34  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink"))                                  |
-| 64  | [\#OpenSaveDataImporter](#OpenSaveDataImporter_2 "wikilink")                                                                                                                    |
-| 65  | [\#OpenSaveDataImporter2](#OpenSaveDataImporter2 "wikilink")                                                                                                                    |
-| 66  | \[6.0.0+\] ? (Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))                       |
-| 67  | \[6.0.0+\] ? (Takes an input u8, an u8(bool), a 0x10-byte struct, and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink")) |
-| 68  | \[6.0.0+\] ? (No input/output, takes a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"))                                  |
-| 69  | \[6.0.0+\] ? (Takes an input u64 and a 0x10-byte struct, no output)                                                                                                             |
+| Cmd | Name                                                                                            |
+| --- | ----------------------------------------------------------------------------------------------- |
+| 0   | [\#GetChallenge](#GetChallenge "wikilink")                                                      |
+| 16  | [\#SetKeySeedPackage](#SetKeySeedPackage "wikilink")                                            |
+| 32  | [\#OpenSaveDataFullExporter](#OpenSaveDataFullExporter "wikilink")                              |
+| 33  | [\#OpenSaveDataDiffExporter](#OpenSaveDataDiffExporter "wikilink")                              |
+| 34  | \[6.0.0+\] [\#OpenSaveDataExporterByContext](#OpenSaveDataExporterByContext "wikilink")         |
+| 64  | [\#OpenSaveDataFullImporter](#OpenSaveDataFullImporter "wikilink")                              |
+| 65  | [\#OpenSaveDataDiffImporter](#OpenSaveDataDiffImporter "wikilink")                              |
+| 66  | \[6.0.0+\] [\#OpenSaveDataDuplicateDiffImporter](#OpenSaveDataDuplicateDiffImporter "wikilink") |
+| 67  | \[6.0.0+\] [\#OpenSaveDataImporter](#OpenSaveDataImporter "wikilink")                           |
+| 68  | \[6.0.0+\] [\#OpenSaveDataImporterByContext](#OpenSaveDataImporterByContext "wikilink")         |
+| 69  | \[6.0.0+\] [\#CancelSuspendingImport](#CancelSuspendingImport "wikilink")                       |
 
 This was added with [5.0.0](5.0.0.md "wikilink").
 
@@ -1530,50 +1530,70 @@ This was added with [5.0.0](5.0.0.md "wikilink").
 No input/output, takes a type-0x6 output buffer containing the
 **Challenge**.
 
-## SetToken
+## SetKeySeedPackage
 
-No input/output, takes a type-0x5 input buffer containing the **Token**.
+No input/output, takes a type-0x5 input buffer containing the
+**KeySeedPackage**.
 
-## OpenSaveDataExporter
+## OpenSaveDataFullExporter
 
 Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and
 u64. Returns an
 [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").
 
-## OpenSaveDataExporter2
+## OpenSaveDataDiffExporter
 
 Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"), an
 u64, and a type-0x5 input buffer
 [\#InitialDataVersion2](#InitialDataVersion2 "wikilink"). Returns an
 [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").
 
-Officially this has the same name as OpenSaveDataExporter except with
-different parameters.
+## OpenSaveDataExporterByContext
 
-## OpenSaveDataImporter
+No input/output, takes a type-0x5 input buffer, returns an
+[\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").
+
+## OpenSaveDataFullImporter
 
 Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"), a
 0x10-byte userID, and a type-0x5 input buffer
 [\#InitialDataVersion2](#InitialDataVersion2 "wikilink"). Returns an
 [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
 
-## OpenSaveDataImporter2
+## OpenSaveDataDiffImporter
 
 Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"), an
 u64, and a type-0x5 input buffer
 [\#InitialDataVersion2](#InitialDataVersion2 "wikilink"), returns an
 [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
 
-Officially this has the same name as OpenSaveDataImporter except with
-different
-parameters.
+## OpenSaveDataDuplicateDiffImporter
+
+Takes an input u8 and an u64, and a type-0x5 input buffer, returns an
+[\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
+
+## OpenSaveDataImporter
+
+Takes an input u8, an u8(bool), a 0x10-byte struct, and a type-0x5 input
+buffer, returns an
+[\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
+
+## OpenSaveDataImporterByContext
+
+No input/output, takes a type-0x5 input buffer, returns an
+[\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
+
+## CancelSuspendingImport
+
+Takes an input u64 and a 0x10-byte struct, no
+output.
 
 # ISaveDataDivisionExporter
 
 | Cmd | Name                                                                                                                      |
 | --- | ------------------------------------------------------------------------------------------------------------------------- |
 | 0   | SetDivisionCount (Takes an input u32, no output)                                                                          |
-| 1   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                                                            |
+| 1   | \[6.0.0+\] GetSaveDataInfo (No input/output, takes a type-0x6 output buffer)                                              |
 | 16  | OpenSaveDataDiffChunkIterator (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink"))       |
 | 48  | OpenSaveDataChunkExporter (Takes an input u32, returns an [\#ISaveDataChunkExporter](#ISaveDataChunkExporter "wikilink")) |
 | 64  | \[6.0.0+\] FinalizeFullExport (No input, returns two 0x10-byte output structs)                                            |
@@ -1594,7 +1614,7 @@ This was added with
 
 | Cmd | Name                                                                                                                      |
 | --- | ------------------------------------------------------------------------------------------------------------------------- |
-| 0   | \[6.0.0+\] ? (No input/output, takes a type-0x6 output buffer)                                                            |
+| 0   | \[6.0.0+\] GetSaveDataInfo (No input/output, takes a type-0x6 output buffer)                                              |
 | 16  | OpenSaveDataDiffChunkIterator (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink"))       |
 | 32  | InitializeImport (No input, returns an output u64)                                                                        |
 | 33  | FinalizeImport (No input/output)                                                                                          |

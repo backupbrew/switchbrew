@@ -976,25 +976,25 @@ No input/output.
 |-
 | 0 || [[#GetChallenge]]
 |-
-| 16 || [[#SetToken]]
+| 16 || [[#SetKeySeedPackage]]
 |-
-| 32 || [[#OpenSaveDataExporter_2|#OpenSaveDataExporter]]
+| 32 || [[#OpenSaveDataFullExporter]]
 |-
-| 33 || [[#OpenSaveDataExporter2]]
+| 33 || [[#OpenSaveDataDiffExporter]]
 |-
-| 34 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an [[#ISaveDataDivisionExporter]])
+| 34 || [6.0.0+] [[#OpenSaveDataExporterByContext]]
 |-
-| 64 || [[#OpenSaveDataImporter_2|#OpenSaveDataImporter]]
+| 64 || [[#OpenSaveDataFullImporter]]
 |-
-| 65 || [[#OpenSaveDataImporter2]]
+| 65 || [[#OpenSaveDataDiffImporter]]
 |-
-| 66 || [6.0.0+] ? (Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
+| 66 || [6.0.0+] [[#OpenSaveDataDuplicateDiffImporter]]
 |-
-| 67 || [6.0.0+] ? (Takes an input u8, an u8(bool), a 0x10-byte struct, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
+| 67 || [6.0.0+] [[#OpenSaveDataImporter]]
 |-
-| 68 || [6.0.0+] ? (No input/output, takes a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]])
+| 68 || [6.0.0+] [[#OpenSaveDataImporterByContext]]
 |-
-| 69 || [6.0.0+] ? (Takes an input u64 and a 0x10-byte struct, no output)
+| 69 || [6.0.0+] [[#CancelSuspendingImport]]
 |}
 
 This was added with [[5.0.0]].
@@ -1002,24 +1002,35 @@ This was added with [[5.0.0]].
 == GetChallenge ==
 No input/output, takes a type-0x6 output buffer containing the '''Challenge'''.
 
-== SetToken ==
-No input/output, takes a type-0x5 input buffer containing the '''Token'''.
+== SetKeySeedPackage ==
+No input/output, takes a type-0x5 input buffer containing the '''KeySeedPackage'''.
 
-== OpenSaveDataExporter ==
+== OpenSaveDataFullExporter ==
 Takes an input u8 [[#SaveDataSpaceId]] and u64. Returns an [[#ISaveDataDivisionExporter]].
 
-== OpenSaveDataExporter2 ==
+== OpenSaveDataDiffExporter ==
 Takes an input u8 [[#SaveDataSpaceId]], an u64, and a type-0x5 input buffer [[#InitialDataVersion2]]. Returns an [[#ISaveDataDivisionExporter]].
 
-Officially this has the same name as OpenSaveDataExporter except with different parameters.
+== OpenSaveDataExporterByContext ==
+No input/output, takes a type-0x5 input buffer, returns an [[#ISaveDataDivisionExporter]].
 
-== OpenSaveDataImporter ==
+== OpenSaveDataFullImporter ==
 Takes an input u8 [[#SaveDataSpaceId]], a 0x10-byte userID, and a type-0x5 input buffer [[#InitialDataVersion2]]. Returns an [[#ISaveDataDivisionImporter]].
 
-== OpenSaveDataImporter2 ==
+== OpenSaveDataDiffImporter ==
 Takes an input u8 [[#SaveDataSpaceId]], an u64, and a type-0x5 input buffer [[#InitialDataVersion2]], returns an [[#ISaveDataDivisionImporter]].
 
-Officially this has the same name as OpenSaveDataImporter except with different parameters.
+== OpenSaveDataDuplicateDiffImporter ==
+Takes an input u8 and an u64, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]].
+
+== OpenSaveDataImporter ==
+Takes an input u8, an u8(bool), a 0x10-byte struct, and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]].
+
+== OpenSaveDataImporterByContext ==
+No input/output, takes a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]].
+
+== CancelSuspendingImport ==
+Takes an input u64 and a 0x10-byte struct, no output.
 
 = ISaveDataDivisionExporter =
 {| class="wikitable" border="1"
@@ -1028,7 +1039,7 @@ Officially this has the same name as OpenSaveDataImporter except with different 
 |-
 | 0 || SetDivisionCount (Takes an input u32, no output)
 |-
-| 1 || [6.0.0+] ? (No input/output, takes a type-0x6 output buffer)
+| 1 || [6.0.0+] GetSaveDataInfo (No input/output, takes a type-0x6 output buffer)
 |-
 | 16 || OpenSaveDataDiffChunkIterator (No input, returns an [[#ISaveDataChunkIterator]])
 |-
@@ -1062,7 +1073,7 @@ This was added with [[5.0.0]].
 |-
 ! Cmd || Name
 |-
-| 0 || [6.0.0+] ? (No input/output, takes a type-0x6 output buffer)
+| 0 || [6.0.0+] GetSaveDataInfo (No input/output, takes a type-0x6 output buffer)
 |-
 | 16 || OpenSaveDataDiffChunkIterator (No input, returns an [[#ISaveDataChunkIterator]])
 |-
