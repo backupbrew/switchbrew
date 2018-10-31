@@ -476,6 +476,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1A80A || 10 || 212 || Invalid CMIF output header.
 |-
+| 0x1BA0A || 10 || 221 || Invalid method dispatch ID.
+|-
 | 0x1D60A || 10 || 235 || Invalid in object count.
 |-
 | 0x1D80A || 10 || 236 || Invalid out object count.
