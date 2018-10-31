@@ -49,7 +49,14 @@ Total size is
 | 0x3168 | 0x8                  | TemporaryStorageSize                                                              |
 | 0x3170 | 0x8                  | CacheStorageSize                                                                  |
 | 0x3178 | 0x8                  | CacheStorageJournalSize                                                           |
-| 0x3180 | 0xE80                | CacheStorageDataAndJournalSizeMax                                                 |
+| 0x3180 | 0x8                  | CacheStorageDataAndJournalSizeMax                                                 |
+| 0x3188 | 0x8                  | CacheStorageIndexMax                                                              |
+| 0x3190 | 0x80 (0x8 \* 0x10)   | PlayLogQueryableApplicationId                                                     |
+| 0x3210 | 0x1                  | PlayLogQueryCapability                                                            |
+| 0x3211 | 0x1                  | RepairFlag                                                                        |
+| 0x3212 | 0x1                  | ProgramIndex                                                                      |
+| 0x3213 | 0x1                  | RequiredNetworkServiceLicenseOnLaunchFlag                                         |
+| 0x3214 | 0xEC                 | Reserved                                                                          |
 
 ## Title Entry
 
