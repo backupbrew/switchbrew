@@ -17,7 +17,7 @@ Total size is
 | 0x302C | 0x4                  | SupportedLanguages                                                                |
 | 0x3030 | 0x4                  | ParentalControl                                                                   |
 | 0x3034 | 0x1                  | isScreenshotEnabled                                                               |
-| 0x3035 | 0x1                  | isVideoCapturingEnabled                                                           |
+| 0x3035 | 0x1                  | [\#VideoCaptureMode](#VideoCaptureMode "wikilink")                                |
 | 0x3036 | 0x1                  | isDataLossConfirmationEnabled                                                     |
 | 0x3037 | 0x1                  | ?                                                                                 |
 | 0x3038 | 0x8                  | PresenceGroupId                                                                   |
@@ -85,3 +85,23 @@ Official apps tend to have the title entries' strings set only to
 English. Some apps don't have certain title entries set at all. In
 addition, official apps usually (?) don't have the following title
 entries set: Korean, Taiwanese, and Chinese.
+
+## VideoCaptureMode
+
+This is the enum used to determine how gameplay recording can occur, if
+at
+all.
+
+| Entry-index | Icon [language](NCA%20Content%20FS#FS-type3.md##FS-type3 "wikilink") filename |
+| ----------- | ----------------------------------------------------------------------------- |
+| 0           | Disabled                                                                      |
+| 1           | Enabled                                                                       |
+| 2           | Automatic                                                                     |
+|             |                                                                               |
+
+When this value is 0, gameplay cannot be recorded. When this value is 1,
+the game must manually sacrifice some of its heap as transfer memory for
+AM's IApplicationProxy-\>InitializeGamePlayRecording(). When this value
+is 2, AM will call NS-\>BoostSystemMemoryResourceSize(), and allocate
+the required memory for recording automatically without the usermode
+process having to do anything.
