@@ -268,26 +268,163 @@ This is extracted directly from
 | 7     | \[5.0.0+\] DramId\_MarikoIowax1x2Samsung4gb |
 | 8     | \[5.0.0+\] DramId\_MarikoIowaSamsung4gb     |
 | 9     | \[5.0.0+\] DramId\_MarikoIowaSamsung8gb     |
-| 10    | \[5.0.0+\] Reserved                         |
+| 10    | \[5.0.0+\] DramId\_MarikoUnk                |
 | 11    | \[5.0.0+\] Reserved                         |
 | 12    | \[5.0.0+\] DramId\_MarikoHoagSamsung4gb     |
 | 13    | \[5.0.0+\] DramId\_MarikoHoagSamsung8gb     |
 
-[PCV](PCV%20services.md "wikilink") configures memory profiles based on
-DramId.
+[PCV](PCV%20services.md "wikilink") selects memory training tables based
+on DramId.
 
-| Platform   | DramId                                        | Version                                |
-| ---------- | --------------------------------------------- | -------------------------------------- |
-| jetson-tx1 | N/A                                           | 11\_40800\_01\_V9.8.3\_V1.6            |
-| nx-abcb    | EristaIcosaSamsung4gb                         | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6  |
-| nx-abcb    | EristaIcosaMicron4gb                          | 10\_40800\_NoCfgVersion\_V9.8.4\_V1.6  |
-| nx-abcb    | EristaIcosaHynix4gb                           | 10\_40800\_NoCfgVersion\_V9.8.4\_V1.6  |
-| nx-abca2   | EristaIcosaSamsung4gb or EristaIcosaMicron4gb | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6  |
-| nx-abca2   | EristaIcosaHynix4gb                           | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6  |
-| nx-abca2   | EristaIcosaSamsung6gb                         | 10\_40800\_NoCfgVersion\_V9.8.7\_V1.6  |
-| nx-abca2   | MarikoIowax1x2Samsung4gb                      | 01\_204000\_NoCfgVersion\_V0.3.1\_V2.0 |
-| nx-abca2   | MarikoIowaSamsung4gb or MarikoHoagSamsung4gb  | 01\_204000\_NoCfgVersion\_V0.3.1\_V2.0 |
-| nx-abca2   | MarikoIowaSamsung8gb or MarikoHoagSamsung8gb  | 01\_204000\_NoCfgVersion\_V0.4.2\_V2.0 |
+<table>
+<thead>
+<tr class="header">
+<th><p>Platform</p></th>
+<th><p>DramId</p></th>
+<th><p>Revision</p></th>
+<th><p>DVFS version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>jetson-tx1</p></td>
+<td><p>N/A</p></td>
+<td><p>0x07</p></td>
+<td><p><code>11_40800_01_V9.8.3_V1.6</code><br />
+<code>11_68000_01_V9.8.3_V1.6</code><br />
+<code>11_102000_01_V9.8.3_V1.6</code><br />
+<code>11_204000_05_V9.8.3_V1.6</code><br />
+<code>11_408000_02_V9.8.3_V1.6</code><br />
+<code>11_665600_03_V9.8.3_V1.6</code><br />
+<code>11_800000_01_V9.8.3_V1.6</code><br />
+<code>11_1065600_01_V9.8.3_V1.6</code><br />
+<code>11_1331200_01_V9.8.3_V1.6</code><br />
+<code>11_1600000_02_V9.8.3_V1.6</code></p></td>
+</tr>
+<tr class="even">
+<td><p>nx-abca2</p></td>
+<td><p>EristaIcosaSamsung4gb or EristaIcosaMicron4gb</p></td>
+<td><p>0x07</p></td>
+<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>nx-abca2</p></td>
+<td><p>EristaIcosaHynix4gb</p></td>
+<td><p>0x07</p></td>
+<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
+</tr>
+<tr class="even">
+<td><p>nx-abca2</p></td>
+<td><p>EristaIcosaSamsung6gb</p></td>
+<td><p>0x07</p></td>
+<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>nx-abca2</p></td>
+<td><p>MarikoIowax1x2Samsung4gb</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
+</tr>
+<tr class="even">
+<td><p>nx-abca2</p></td>
+<td><p>MarikoIowaSamsung4gb or MarikoHoagSamsung4gb</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>nx-abca2</p></td>
+<td><p>MarikoIowaSamsung8gb or MarikoHoagSamsung8gb</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
+<tr class="even">
+<td><p>nx-abca2</p></td>
+<td><p>DramId_MarikoUnk</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>nx-abcb</p></td>
+<td><p>EristaIcosaSamsung4gb</p></td>
+<td><p>0x07</p></td>
+<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
+</tr>
+<tr class="even">
+<td><p>nx-abcb</p></td>
+<td><p>EristaIcosaMicron4gb</p></td>
+<td><p>0x07</p></td>
+<td><p><code>10_40800_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_68000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_102000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_204000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_408000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_665600_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_800000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_1065600_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_1331200_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_1600000_NoCfgVersion_V9.8.4_V1.6</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>nx-abcb</p></td>
+<td><p>EristaIcosaHynix4gb</p></td>
+<td><p>0x07</p></td>
+<td><p><code>10_40800_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_68000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_102000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_204000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_408000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_665600_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_800000_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_1065600_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_1331200_NoCfgVersion_V9.8.4_V1.6</code><br />
+<code>10_1600000_NoCfgVersion_V9.8.4_V1.6</code></p></td>
+</tr>
+</tbody>
+</table>
 
 nx-abcb (Copper) is the SDEV unit. Among other differences, this has
 extra hardware to support HDMI output.
@@ -314,7 +451,7 @@ It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
 It can be 0 (Icosa), 1 (Copper), 3 (Mariko) or 4 (Invalid).
 
-A value of 2 (Hoag?) is always mapped to 4 (Invalid).
+A value of 2 (Hoag) is always mapped to 4 (Invalid).
 
 #### IsRetail
 
