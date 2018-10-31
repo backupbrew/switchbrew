@@ -19,7 +19,7 @@ Total size is
 | 0x3034 | 0x1                  | isScreenshotEnabled                                                               |
 | 0x3035 | 0x1                  | [\#VideoCaptureMode](#VideoCaptureMode "wikilink")                                |
 | 0x3036 | 0x1                  | isDataLossConfirmationEnabled                                                     |
-| 0x3037 | 0x1                  | ?                                                                                 |
+| 0x3037 | 0x1                  | PlayLogPolicy                                                                     |
 | 0x3038 | 0x8                  | PresenceGroupId                                                                   |
 | 0x3040 | 0x20                 | RatingAge                                                                         |
 | 0x3060 | 0x10                 | DisplayVersion                                                                    |
@@ -27,28 +27,28 @@ Total size is
 | 0x3078 | 0x8                  | SaveDataOwnerId                                                                   |
 | 0x3080 | 0x8                  | UserAccountSaveDataSize                                                           |
 | 0x3088 | 0x8                  | UserAccountSaveDataJournalSize                                                    |
-| 0x3090 | 0x8                  | ?                                                                                 |
-| 0x3098 | 0x8                  | ?                                                                                 |
-| 0x30A0 | 0x8                  | ?                                                                                 |
+| 0x3090 | 0x8                  | DeviceSaveDataSize                                                                |
+| 0x3098 | 0x8                  | DeviceSaveDataJournalSize                                                         |
+| 0x30A0 | 0x8                  | BcatDeliveryCacheStorageSize                                                      |
 | 0x30A8 | 0x8                  | ApplicationErrorCodeCategory                                                      |
 | 0x30B0 | 0x40 (0x8\*0x8)      | LocalCommunicationIds                                                             |
 | 0x30F0 | 0x1                  | LogoType                                                                          |
 | 0x30F1 | 0x1                  | LogoHandling                                                                      |
 | 0x30F2 | 0x1                  | isRuntimeAddOnContentInstallEnabled                                               |
 | 0x30F3 | 0x3                  | ?                                                                                 |
-| 0x30F6 | 0x1                  | ?                                                                                 |
-| 0x30F7 | 0x1                  | ?                                                                                 |
+| 0x30F6 | 0x1                  | CrashReport                                                                       |
+| 0x30F7 | 0x1                  | Hdcp                                                                              |
 | 0x30F8 | 0x8                  | SeedForPseudoDeviceId                                                             |
 | 0x3100 | 0x41                 | [BcatPassphrase](BCAT%20Content%20Container.md "wikilink"), all-zero when unused. |
 | 0x3141 | 0x1                  | ?                                                                                 |
-| 0x3142 | 0x6                  | ?                                                                                 |
-| 0x3148 | 0x8                  | ?                                                                                 |
-| 0x3150 | 0x8                  | ?                                                                                 |
-| 0x3158 | 0x8                  | ?                                                                                 |
-| 0x3160 | 0x8                  | ?                                                                                 |
-| 0x3168 | 0x8                  | ?                                                                                 |
+| 0x3142 | 0x6                  | ReservedForUserAccountSaveDataOperation                                           |
+| 0x3148 | 0x8                  | UserAccountSaveDataSizeMax                                                        |
+| 0x3150 | 0x8                  | UserAccountSaveDataJournalSizeMax                                                 |
+| 0x3158 | 0x8                  | DeviceSaveDataSizeMax                                                             |
+| 0x3160 | 0x8                  | DeviceSaveDataJournalSizeMax                                                      |
+| 0x3168 | 0x8                  | TemporaryStorageSize                                                              |
 | 0x3170 | 0x8                  | ?                                                                                 |
-| 0x3178 | 0x8                  | ?                                                                                 |
+| 0x3178 | 0x8                  | CacheStorageSize                                                                  |
 | 0x3180 | 0xE80                | ?                                                                                 |
 
 ## Title Entry

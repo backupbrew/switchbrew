@@ -55,7 +55,7 @@ Total size is 0x4000-bytes.
 |-
 | 0x3037
 | 0x1
-| ?
+| PlayLogPolicy
 |-
 | 0x3038
 | 0x8
@@ -87,15 +87,15 @@ Total size is 0x4000-bytes.
 |-
 | 0x3090
 | 0x8
-| ?
+| DeviceSaveDataSize
 |-
 | 0x3098
 | 0x8
-| ?
+| DeviceSaveDataJournalSize
 |-
 | 0x30A0
 | 0x8
-| ?
+| BcatDeliveryCacheStorageSize
 |-
 | 0x30A8
 | 0x8
@@ -123,11 +123,11 @@ Total size is 0x4000-bytes.
 |-
 | 0x30F6
 | 0x1
-| ?
+| CrashReport
 |-
 | 0x30F7
 | 0x1
-| ?
+| Hdcp
 |-
 | 0x30F8
 | 0x8
@@ -143,27 +143,27 @@ Total size is 0x4000-bytes.
 |-
 | 0x3142
 | 0x6
-| ?
+| ReservedForUserAccountSaveDataOperation
 |-
 | 0x3148
 | 0x8
-| ?
+| UserAccountSaveDataSizeMax
 |-
 | 0x3150
 | 0x8
-| ?
+| UserAccountSaveDataJournalSizeMax
 |-
 | 0x3158
 | 0x8
-| ?
+| DeviceSaveDataSizeMax
 |-
 | 0x3160
 | 0x8
-| ?
+| DeviceSaveDataJournalSizeMax
 |-
 | 0x3168
 | 0x8
-| ?
+| TemporaryStorageSize
 |-
 | 0x3170
 | 0x8
@@ -171,7 +171,7 @@ Total size is 0x4000-bytes.
 |-
 | 0x3178
 | 0x8
-| ?
+| CacheStorageSize
 |-
 | 0x3180
 | 0xE80
