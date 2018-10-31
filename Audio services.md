@@ -455,7 +455,7 @@ This is "nn::codec::detail::IHardwareOpusDecoderManager".
 | 3   | \[3.0.0+\] GetWorkBufferSizeForMultiStream           |
 
 Official sw can use either software libopus, or hwopus via
-"nn::codec::HardwareOpus\*".
+"nn::codec::HardwareOpus\*" (separate from the former).
 
 ## Initialize
 
