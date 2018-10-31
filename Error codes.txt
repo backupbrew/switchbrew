@@ -278,7 +278,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x10201 || 1 || 129 || Last thread didn't belong to your process
 |-
-| 0x10601 || 1 || 131 || Port max sessions exceeded
+| 0x10601 || 1 || 131 || Port closed
 |-
 | 0x10801 || 1 || 132 || Resource limit exceeded
 |-
