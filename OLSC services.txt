@@ -5,51 +5,199 @@ This is "nn::olsc::srv::IOlscServiceForSystemService".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 ||
+| 0 || || Returns an [[#ITransferTaskListController]]
 |-
-| 1 ||
+| 1 || || Returns an [[#IRemoteStorageController]]
 |-
-| 2 ||
+| 2 || || Returns an [[#IDaemonController]]
 |-
-| 10 ||
+| 10 || ||
 |-
-| 11 ||
+| 11 || ||
 |-
-| 12 ||
+| 12 || ||
 |-
-| 100 ||
+| 100 || ||
 |-
-| 101 ||
+| 101 || ||
 |-
-| 102 ||
+| 102 || ||
 |-
-| 103 ||
+| 103 || ||
 |-
-| 200 ||
+| 200 || ||
 |-
-| 201 ||
+| 201 || ||
 |-
-| 202 ||
+| 202 || || Returns an [[#IAsyncResult]]
 |-
-| 900 ||
+| 900 || ||
 |-
-| 902 ||
+| 902 || ||
 |-
-| 903 ||
+| 903 || ||
 |-
-| 904 ||
+| 904 || ||
 |-
-| 905 ||
+| 905 || ||
 |-
-| 906 ||
+| 906 || ||
 |-
-| 907 ||
+| 907 || ||
 |-
-| 908 ||
+| 908 || ||
 |-
-| 909 ||
+| 909 || ||
 |}
+
+== ITransferTaskListController ==
+This is "nn::olsc::srv::ITransferTaskListController".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || ||
+|-
+| 1 || ||
+|-
+| 2 || ||
+|-
+| 3 || ||
+|-
+| 4 || ||
+|-
+| 5 || || Returns an [[#INativeHandleHolder]]
+|-
+| 6 || ||
+|-
+| 7 || ||
+|-
+| 8 || || Returns an [[#IStopperObject]]
+|-
+| 9 || || Returns an [[#INativeHandleHolder]]
+|-
+| 10 || ||
+|-
+| 11 || ||
+|-
+| 12 || ||
+|-
+|}
+
+
+== INativeHandleHolder ==
+This is "nn::olsc::srv::INativeHandleHolder".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetNativeHandle || 
+|-
+|}
+
+== IRemoteStorageController ==
+This is "nn::olsc::srv::IRemoteStorageController".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || ||
+|-
+| 1 || ||
+|-
+| 2 || ||
+|-
+| 3 || ||
+|-
+| 4 || ||
+|-
+| 6 || ||
+|-
+| 7 || ||
+|-
+| 8 || || Returns an [[#IAsyncResult]]
+|-
+| 9 || || Returns an [[#IAsyncResult]]
+|-
+| 10 || ||
+|-
+| 11 || || Returns an [[#IAsyncResult]]
+|-
+| 12 || ||
+|-
+| 13 || || Returns an [[#IAsyncResult]]
+|-
+| 14 || ||
+|-
+| 15 || ||
+|-
+| 16 || || Returns an [[#IAsyncResult]]
+|-
+|}
+
+
+== IAsyncResult ==
+This is "nn::olsc::srv::IAsyncResult".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || GetResult || 
+|-
+| 1 || Cancel || 
+|-
+| 2 || IsAvailable || 
+|-
+| 3 || GetSystemEvent || 
+|-
+|}
+
+
+== IDaemonController ==
+This is "nn::olsc::srv::IDaemonController".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || ||
+|-
+| 1 || ||
+|-
+| 2 || ||
+|-
+| 3 || ||
+|-
+| 4 || ||
+|-
+| 8 || ||
+|-
+| 9 || || 
+|-
+| 10 || || Returns an [[#IForbiddenSaveDataIndication]]
+|-
+| 11 || || Returns an [[#IStopperObject]]
+|-
+| 12 || ||
+|-
+|}
+
+== IForbiddenSaveDataIndication ==
+This is "nn::olsc::srv::IForbiddenSaveDataIndication".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || Update || 
+|-
+|}
+
 
 [[Category:Services]]
