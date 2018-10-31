@@ -47,9 +47,9 @@ Total size is
 | 0x3158 | 0x8                  | DeviceSaveDataSizeMax                                                             |
 | 0x3160 | 0x8                  | DeviceSaveDataJournalSizeMax                                                      |
 | 0x3168 | 0x8                  | TemporaryStorageSize                                                              |
-| 0x3170 | 0x8                  | ?                                                                                 |
-| 0x3178 | 0x8                  | CacheStorageSize                                                                  |
-| 0x3180 | 0xE80                | ?                                                                                 |
+| 0x3170 | 0x8                  | CacheStorageSize                                                                  |
+| 0x3178 | 0x8                  | CacheStorageJournalSize                                                           |
+| 0x3180 | 0xE80                | CacheStorageDataAndJournalSizeMax                                                 |
 
 ## Title Entry
 

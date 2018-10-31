@@ -167,15 +167,15 @@ Total size is 0x4000-bytes.
 |-
 | 0x3170
 | 0x8
-| ?
+| CacheStorageSize
 |-
 | 0x3178
 | 0x8
-| CacheStorageSize
+| CacheStorageJournalSize
 |-
 | 0x3180
 | 0xE80
-| ?
+| CacheStorageDataAndJournalSizeMax
 |}
 
 == Title Entry ==
