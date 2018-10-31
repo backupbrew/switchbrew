@@ -494,6 +494,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x25A0B || 11 || 301 || Remote process is dead.
 |-
+| 0x3260B || 11 || 403 || Unknown request type
+|-
 | 0x3D60B || 11 || 491 || IPC Query 1 failed.
 |-
 | 0x20F || 15 || 1 || Pid not found
