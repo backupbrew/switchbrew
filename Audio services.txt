@@ -572,6 +572,8 @@ This is "nn::codec::detail::IHardwareOpusDecoderManager".
 | 3 || [3.0.0+] GetWorkBufferSizeForMultiStream
 |}
 
+Official sw can use either software libopus, or hwopus via "nn::codec::HardwareOpus*".
+
 == Initialize ==
 Takes two u32s '''SampleRate''' and '''ChannelCount''' packed as an u64, an u32 '''WorkBufferSize''' and a TransferMemory handle for '''WorkBuffer'''. Returns an [[#IHardwareOpusDecoder]] object. The TransferMemory is created by the user-process with permissions=0.
 

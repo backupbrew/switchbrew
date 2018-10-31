@@ -454,6 +454,9 @@ This is "nn::codec::detail::IHardwareOpusDecoderManager".
 | 2   | \[3.0.0+\] OpenHardwareOpusDecoderForMultiStream     |
 | 3   | \[3.0.0+\] GetWorkBufferSizeForMultiStream           |
 
+Official sw can use either software libopus, or hwopus via
+"nn::codec::HardwareOpus\*".
+
 ## Initialize
 
 Takes two u32s **SampleRate** and **ChannelCount** packed as an u64, an
