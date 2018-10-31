@@ -11,8 +11,8 @@ Total size is
 | 0x0    | 0x3000 (0x300\*0x10) | [Title entries](#Title_Entry "wikilink")                                          |
 | 0x3000 | 0x25                 | Isbn                                                                              |
 | 0x3025 | 0x1                  | StartupUserAccount                                                                |
-| 0x3026 | 0x1                  | ?                                                                                 |
-| 0x3027 | 0x1                  | ?                                                                                 |
+| 0x3026 | 0x1                  | UserAccountSwitchLock                                                             |
+| 0x3027 | 0x1                  | AddOnContentRegistrationType                                                      |
 | 0x3028 | 0x4                  | ApplicationAttribute                                                              |
 | 0x302C | 0x4                  | SupportedLanguages                                                                |
 | 0x3030 | 0x4                  | ParentalControl                                                                   |

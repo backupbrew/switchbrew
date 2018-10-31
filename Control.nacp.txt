@@ -23,11 +23,11 @@ Total size is 0x4000-bytes.
 |-
 | 0x3026
 | 0x1
-| ?
+| UserAccountSwitchLock
 |-
 | 0x3027
 | 0x1
-| ?
+| AddOnContentRegistrationType
 |-
 | 0x3028
 | 0x4
