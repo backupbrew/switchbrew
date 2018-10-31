@@ -56,7 +56,7 @@ Total size is
 | 0x3211 | 0x1                  | RepairFlag                                                                        |
 | 0x3212 | 0x1                  | ProgramIndex                                                                      |
 | 0x3213 | 0x1                  | RequiredNetworkServiceLicenseOnLaunchFlag                                         |
-| 0x3214 | 0xEC                 | Reserved                                                                          |
+| 0x3214 | 0xDEC                | Reserved                                                                          |
 
 ## Title Entry
 
