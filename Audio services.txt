@@ -307,9 +307,9 @@ This is "nn::audio::detail::IAudioDevice".
 |-
 | 0 || ListAudioDeviceName
 |-
-| 1 || SetAudioDeviceOutputVolume
+| 1 || [[#SetAudioDeviceOutputVolume]]
 |-
-| 2 || GetAudioDeviceOutputVolume
+| 2 || [[#GetAudioDeviceOutputVolume]]
 |-
 | 3 || GetActiveAudioDeviceName
 |-
@@ -319,9 +319,9 @@ This is "nn::audio::detail::IAudioDevice".
 |-
 | 6 || [3.0.0+] ListAudioDeviceNameAuto
 |-
-| 7 || [3.0.0+] SetAudioDeviceOutputVolumeAuto
+| 7 || [3.0.0+] [[#SetAudioDeviceOutputVolumeAuto]]
 |-
-| 8 || [3.0.0+] GetAudioDeviceOutputVolumeAuto
+| 8 || [3.0.0+] [[#GetAudioDeviceOutputVolumeAuto]]
 |-
 | 10 || [3.0.0+] GetActiveAudioDeviceNameAuto
 |-
@@ -331,6 +331,18 @@ This is "nn::audio::detail::IAudioDevice".
 |-
 | 13 || [5.0.0+] GetAudioSystemMasterVolumeSetting
 |}
+
+=== SetAudioDeviceOutputVolume ===
+Takes a type-0x5 input buffer containing the '''DeviceName''' and a float. No output.
+
+=== GetAudioDeviceOutputVolume ===
+Takes a type-0x5 input buffer containing the '''DeviceName'''. Returns an output float.
+
+=== SetAudioDeviceOutputVolumeAuto ===
+Takes a type-0x21 input buffer containing the '''DeviceName''' and a float. No output.
+
+=== GetAudioDeviceOutputVolumeAuto ===
+Takes a type-0x21 input buffer containing the '''DeviceName'''. Returns an output float.
 
 = audout:a =
 This is "nn::audio::detail::IAudioOutManagerForApplet".

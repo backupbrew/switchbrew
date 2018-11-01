@@ -252,23 +252,44 @@ Returns the upper limit of the rendering time in percent. (u32)
 
 ## IAudioDevice
 
-This is "nn::audio::detail::IAudioDevice".
+This is
+"nn::audio::detail::IAudioDevice".
 
-| Cmd | Name                                         |
-| --- | -------------------------------------------- |
-| 0   | ListAudioDeviceName                          |
-| 1   | SetAudioDeviceOutputVolume                   |
-| 2   | GetAudioDeviceOutputVolume                   |
-| 3   | GetActiveAudioDeviceName                     |
-| 4   | QueryAudioDeviceSystemEvent                  |
-| 5   | GetActiveChannelCount                        |
-| 6   | \[3.0.0+\] ListAudioDeviceNameAuto           |
-| 7   | \[3.0.0+\] SetAudioDeviceOutputVolumeAuto    |
-| 8   | \[3.0.0+\] GetAudioDeviceOutputVolumeAuto    |
-| 10  | \[3.0.0+\] GetActiveAudioDeviceNameAuto      |
-| 11  | \[3.0.0+\] QueryAudioDeviceInputEvent        |
-| 12  | \[3.0.0+\] QueryAudioDeviceOutputEvent       |
-| 13  | \[5.0.0+\] GetAudioSystemMasterVolumeSetting |
+| Cmd | Name                                                                                      |
+| --- | ----------------------------------------------------------------------------------------- |
+| 0   | ListAudioDeviceName                                                                       |
+| 1   | [\#SetAudioDeviceOutputVolume](#SetAudioDeviceOutputVolume "wikilink")                    |
+| 2   | [\#GetAudioDeviceOutputVolume](#GetAudioDeviceOutputVolume "wikilink")                    |
+| 3   | GetActiveAudioDeviceName                                                                  |
+| 4   | QueryAudioDeviceSystemEvent                                                               |
+| 5   | GetActiveChannelCount                                                                     |
+| 6   | \[3.0.0+\] ListAudioDeviceNameAuto                                                        |
+| 7   | \[3.0.0+\] [\#SetAudioDeviceOutputVolumeAuto](#SetAudioDeviceOutputVolumeAuto "wikilink") |
+| 8   | \[3.0.0+\] [\#GetAudioDeviceOutputVolumeAuto](#GetAudioDeviceOutputVolumeAuto "wikilink") |
+| 10  | \[3.0.0+\] GetActiveAudioDeviceNameAuto                                                   |
+| 11  | \[3.0.0+\] QueryAudioDeviceInputEvent                                                     |
+| 12  | \[3.0.0+\] QueryAudioDeviceOutputEvent                                                    |
+| 13  | \[5.0.0+\] GetAudioSystemMasterVolumeSetting                                              |
+
+### SetAudioDeviceOutputVolume
+
+Takes a type-0x5 input buffer containing the **DeviceName** and a float.
+No output.
+
+### GetAudioDeviceOutputVolume
+
+Takes a type-0x5 input buffer containing the **DeviceName**. Returns an
+output float.
+
+### SetAudioDeviceOutputVolumeAuto
+
+Takes a type-0x21 input buffer containing the **DeviceName** and a
+float. No output.
+
+### GetAudioDeviceOutputVolumeAuto
+
+Takes a type-0x21 input buffer containing the **DeviceName**. Returns an
+output float.
 
 # audout:a
 
