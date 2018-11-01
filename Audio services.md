@@ -257,19 +257,24 @@ This is
 
 | Cmd | Name                                                                                      |
 | --- | ----------------------------------------------------------------------------------------- |
-| 0   | ListAudioDeviceName                                                                       |
+| 0   | [\#ListAudioDeviceName](#ListAudioDeviceName "wikilink")                                  |
 | 1   | [\#SetAudioDeviceOutputVolume](#SetAudioDeviceOutputVolume "wikilink")                    |
 | 2   | [\#GetAudioDeviceOutputVolume](#GetAudioDeviceOutputVolume "wikilink")                    |
 | 3   | GetActiveAudioDeviceName                                                                  |
 | 4   | QueryAudioDeviceSystemEvent                                                               |
 | 5   | GetActiveChannelCount                                                                     |
-| 6   | \[3.0.0+\] ListAudioDeviceNameAuto                                                        |
+| 6   | \[3.0.0+\] [\#ListAudioDeviceNameAuto](#ListAudioDeviceNameAuto "wikilink")               |
 | 7   | \[3.0.0+\] [\#SetAudioDeviceOutputVolumeAuto](#SetAudioDeviceOutputVolumeAuto "wikilink") |
 | 8   | \[3.0.0+\] [\#GetAudioDeviceOutputVolumeAuto](#GetAudioDeviceOutputVolumeAuto "wikilink") |
 | 10  | \[3.0.0+\] GetActiveAudioDeviceNameAuto                                                   |
 | 11  | \[3.0.0+\] QueryAudioDeviceInputEvent                                                     |
 | 12  | \[3.0.0+\] QueryAudioDeviceOutputEvent                                                    |
 | 13  | \[5.0.0+\] GetAudioSystemMasterVolumeSetting                                              |
+
+### ListAudioDeviceName
+
+Takes a type-0x6 output buffer containing an array of **DeviceName**,
+returns an output u32 for total number of output entries.
 
 ### SetAudioDeviceOutputVolume
 
@@ -280,6 +285,11 @@ No output.
 
 Takes a type-0x5 input buffer containing the **DeviceName**. Returns an
 output float.
+
+### ListAudioDeviceNameAuto
+
+Takes a type-0x22 output buffer containing an array of **DeviceName**,
+returns an output u32 for total number of output entries.
 
 ### SetAudioDeviceOutputVolumeAuto
 

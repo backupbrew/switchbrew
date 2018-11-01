@@ -305,7 +305,7 @@ This is "nn::audio::detail::IAudioDevice".
 |-
 ! Cmd || Name
 |-
-| 0 || ListAudioDeviceName
+| 0 || [[#ListAudioDeviceName]]
 |-
 | 1 || [[#SetAudioDeviceOutputVolume]]
 |-
@@ -317,7 +317,7 @@ This is "nn::audio::detail::IAudioDevice".
 |-
 | 5 || GetActiveChannelCount
 |-
-| 6 || [3.0.0+] ListAudioDeviceNameAuto
+| 6 || [3.0.0+] [[#ListAudioDeviceNameAuto]]
 |-
 | 7 || [3.0.0+] [[#SetAudioDeviceOutputVolumeAuto]]
 |-
@@ -332,11 +332,17 @@ This is "nn::audio::detail::IAudioDevice".
 | 13 || [5.0.0+] GetAudioSystemMasterVolumeSetting
 |}
 
+=== ListAudioDeviceName ===
+Takes a type-0x6 output buffer containing an array of '''DeviceName''', returns an output u32 for total number of output entries.
+
 === SetAudioDeviceOutputVolume ===
 Takes a type-0x5 input buffer containing the '''DeviceName''' and a float. No output.
 
 === GetAudioDeviceOutputVolume ===
 Takes a type-0x5 input buffer containing the '''DeviceName'''. Returns an output float.
+
+=== ListAudioDeviceNameAuto ===
+Takes a type-0x22 output buffer containing an array of '''DeviceName''', returns an output u32 for total number of output entries.
 
 === SetAudioDeviceOutputVolumeAuto ===
 Takes a type-0x21 input buffer containing the '''DeviceName''' and a float. No output.
