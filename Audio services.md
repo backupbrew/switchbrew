@@ -274,7 +274,7 @@ This is
 ### ListAudioDeviceName
 
 Takes a type-0x6 output buffer containing an array of **DeviceName**,
-returns an output u32 for total number of output entries.
+returns an output s32 for total number of output entries.
 
 ### SetAudioDeviceOutputVolume
 
@@ -289,7 +289,7 @@ output float.
 ### ListAudioDeviceNameAuto
 
 Takes a type-0x22 output buffer containing an array of **DeviceName**,
-returns an output u32 for total number of output entries.
+returns an output s32 for total number of output entries.
 
 ### SetAudioDeviceOutputVolumeAuto
 

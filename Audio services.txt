@@ -333,7 +333,7 @@ This is "nn::audio::detail::IAudioDevice".
 |}
 
 === ListAudioDeviceName ===
-Takes a type-0x6 output buffer containing an array of '''DeviceName''', returns an output u32 for total number of output entries.
+Takes a type-0x6 output buffer containing an array of '''DeviceName''', returns an output s32 for total number of output entries.
 
 === SetAudioDeviceOutputVolume ===
 Takes a type-0x5 input buffer containing the '''DeviceName''' and a float. No output.
@@ -342,7 +342,7 @@ Takes a type-0x5 input buffer containing the '''DeviceName''' and a float. No ou
 Takes a type-0x5 input buffer containing the '''DeviceName'''. Returns an output float.
 
 === ListAudioDeviceNameAuto ===
-Takes a type-0x22 output buffer containing an array of '''DeviceName''', returns an output u32 for total number of output entries.
+Takes a type-0x22 output buffer containing an array of '''DeviceName''', returns an output s32 for total number of output entries.
 
 === SetAudioDeviceOutputVolumeAuto ===
 Takes a type-0x21 input buffer containing the '''DeviceName''' and a float. No output.
