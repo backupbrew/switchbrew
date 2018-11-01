@@ -238,12 +238,15 @@ This is "nn::audio::detail::IAudioRendererManager".
 |-
 | 1 || GetAudioRendererWorkBufferSize
 |-
-| 2 || GetAudioDeviceService
+| 2 || [[#GetAudioDeviceService]]
 |-
 | 3 || [3.0.0+] OpenAudioRendererAuto
 |-
 | 4 || [4.0.0+] GetAudioDeviceServiceWithRevisionInfo
 |}
+
+=== GetAudioDeviceService ===
+Takes an input u64 [[AM_services#AppletResourceUserId|AppletResourceUserId]], returns an output [[#IAudioDevice]].
 
 == IAudioRenderer ==
 This is "nn::audio::detail::IAudioRenderer".

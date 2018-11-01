@@ -193,13 +193,19 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 
 This is "nn::audio::detail::IAudioRendererManager".
 
-| Cmd | Name                                             |
-| --- | ------------------------------------------------ |
-| 0   | OpenAudioRenderer                                |
-| 1   | GetAudioRendererWorkBufferSize                   |
-| 2   | GetAudioDeviceService                            |
-| 3   | \[3.0.0+\] OpenAudioRendererAuto                 |
-| 4   | \[4.0.0+\] GetAudioDeviceServiceWithRevisionInfo |
+| Cmd | Name                                                         |
+| --- | ------------------------------------------------------------ |
+| 0   | OpenAudioRenderer                                            |
+| 1   | GetAudioRendererWorkBufferSize                               |
+| 2   | [\#GetAudioDeviceService](#GetAudioDeviceService "wikilink") |
+| 3   | \[3.0.0+\] OpenAudioRendererAuto                             |
+| 4   | \[4.0.0+\] GetAudioDeviceServiceWithRevisionInfo             |
+
+### GetAudioDeviceService
+
+Takes an input u64
+[AppletResourceUserId](AM%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
+returns an output [\#IAudioDevice](#IAudioDevice "wikilink").
 
 ## IAudioRenderer
 
