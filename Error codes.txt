@@ -602,7 +602,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x299 || 153 || 1 || Invalid audio device
 |-
-| 0x499 || 153 || 2 || Invalid buffer address
+| 0x499 || 153 || 2 || Invalid buffer address / bad input?
 |-
 | 0x699 || 153 || 3 || Invalid sample rate
 |-
