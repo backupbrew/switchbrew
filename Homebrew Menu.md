@@ -52,6 +52,9 @@ button. This uses
 Default settings will be used for any settings not specified in the
 theme (including themeInfo).
 
+See [Homebrew Themes](Homebrew%20Themes.md "wikilink") for a list of
+themes.
+
 The string used for displaying the buttons can be set with buttonAText,
 buttonBText, and buttonMText, but normally this can be left at the
 defaults. Change the value of the enableWaveBlending field to 1 to

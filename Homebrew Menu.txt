@@ -18,6 +18,8 @@ With netloader activated as described above you can load apps over the network w
 = Themes =
 Themes can be optionally loaded from SD "/config/nx-hbmenu/themes/". The theme (or the default) can be selected using the Theme Menu via the - button. This uses [https://hyperrealm.github.io/libconfig/libconfig_manual.html libconfig]. Default settings will be used for any settings not specified in the theme (including themeInfo).
 
+See [[Homebrew Themes]] for a list of themes.
+
 The string used for displaying the buttons can be set with buttonAText, buttonBText, and buttonMText, but normally this can be left at the defaults. Change the value of the enableWaveBlending field to 1 to enable wave blending.
 
 There's also borderColor, borderTextColor, and progressBarColor fields which can be set like the other color fields.
