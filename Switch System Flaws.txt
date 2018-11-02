@@ -393,4 +393,17 @@ This is not useful since the string loaded from this array is only involved with
 | 16 October 2018
 | [[User:qlutoo|qlutoo]] and [[User:hexkyz|hexkyz]],
 [[User:daeken|daeken]] (independently)
+|-
+| OOB write in audio system module
+| The [[Audio_services#audout:u|AppendAudioOutBuffer]] and [[Audio_services#audin:u|AppendAudioInBuffer]] IPC commands would blindly increment the appended buffers' count while using said count value as an index to where the user data should be copied into. This resulted in an 0x28 bytes, user controlled, out-of-bounds memory write into the [[Audio_services|audio]] sysmodule's memory space.
+Combined with the [[Audio_services#audout:u|GetReleasedAudioOutBuffer]] or [[Audio_services#audin:u|GetReleasedAudioInBuffer]] commands, this could also be used as an 8 byte infoleak.
+
+In [[2.0.0]], the commands now return error code 0x1099 if the number of unreleased buffers exceeds 0x1F.
+| Code execution under audio sysmodule
+| [[2.0.0]]
+| [[2.0.0]]
+| 
+| November 2, 2018
+| [[User:hexkyz|hexkyz]], probably others.
+|-
 |}

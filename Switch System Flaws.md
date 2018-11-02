@@ -404,13 +404,92 @@ modules](Package2#Section%201.md##Section_1 "wikilink").
 
 ### System Modules
 
-Flaws in this category pertain to any non-built-in system
-module.
+Flaws in this category pertain to any non-built-in system module.
 
-| Summary                                                                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Successful exploitation result                                                                                                                                                                                                                                                                                                           | Fixed in system version      | Last system version this flaw was checked for | Timeframe this was discovered | Public disclosure timeframe                      | Discovered by                                                                                                           |
-| ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | --------------------------------------------- | ----------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| Out-of-bounds array read for [BCAT\_Content\_Container](BCAT%20Content%20Container.md "wikilink") secret-data index | The [BCAT\_Content\_Container](BCAT%20Content%20Container.md "wikilink") secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed. This is not useful since the string loaded from this array is only involved with key-generation.                                                                                                                              |                                                                                                                                                                                                                                                                                                                                          | Unknown                      | [2.0.0](2.0.0.md "wikilink")                  | August 4, 2017                | August 6, 2017                                   | [Shiny Quagsire](User:_shinyquagsire23 "wikilink"), [yellows8](User:Yellows8 "wikilink") (independently)                |
-| OOB Read in NS system module (pl:utoohax, pl:utonium, maybe other names)                                            | Prior to [3.0.0](3.0.0.md "wikilink"), pl:u (Shared Font services implemented in the NS sysmodule) service commands 1,2,3 took in a signed 32-bit index and returned that index of an array but did not check that index at all. This allowed for an arbitrary read within a 34-bit range (33-bit signed) from NS .bss. In [3.0.0](3.0.0.md "wikilink"), sending out of range indexes causes error code 0x60A to be returned.                                                                             | Dumping full NS .text, .rodata and .data, infoleak, etc                                                                                                                                                                                                                                                                                  | [3.0.0](3.0.0.md "wikilink") | [3.0.0](3.0.0.md "wikilink")                  | April 2017                    | On exploit's fix in [3.0.0](3.0.0.md "wikilink") | [qlutoo](User:qlutoo "wikilink"), ReSwitched Team (independently)                                                       |
-| Unchecked domain ID in common IPC code                                                                              | Prior to [2.0.0](2.0.0.md "wikilink"), object IDs in [domain messages](IPC%20Marshalling#Domain%20message.md##Domain_message "wikilink") are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.                                                                                                                                                                                                         |                                                                                                                                                                                                                                                                                                                                          | [2.0.0](2.0.0.md "wikilink") | [2.0.0](2.0.0.md "wikilink")                  | \~July 2017                   | 20 July 2017‎                                    | [hthh](User:hthh "wikilink")                                                                                            |
-| expLDR (sysmodule handle table exhaustion)                                                                          | Most sysmodules share common template code to handle IPC control messages. The command DuplicateSession (type 5 command 2)'s template code will abort() if it fails to duplicate a session's handle for the requester. Because many sysmodules have limited handle table size (smaller than the browser/other entrypoints), repeatedly requesting to duplicate one's session will cause the sysmodule to run out of handle table space and abort, causing the service to release all its handles cleanly. | Sysmodule crashes. Most usefully, crashing ldr allows access to fsp-ldr and crashing pm allows access to fsp-pr. Useless after [4.0.0](4.0.0.md "wikilink"), which mitigated a number of single-session service access issues.                                                                                                           | Unfixed                      | [4.1.0](4.1.0.md "wikilink")                  | 24 June 2017                  | 8 March 2018                                     | [daeken](User:daeken "wikilink")                                                                                        |
-| Transfer Memory leak in nvservices system module                                                                    | The nvservices sysmodule does not clear most of its transfer memory prior to release.                                                                                                                                                                                                                                                                                                                                                                                                                     | The calling process can read key bits of memory, including breaking ASLR (by revealing the image base) and exposing the address of other transfer memory to set up attacks. More details here: [transfermeme (nvservices info leak)](https://daeken.svbtle.com/nintendo-switch-nvservices-info-leak) by [daeken](User:daeken "wikilink") | [6.0.0](6.0.0.md "wikilink") | [6.0.0](6.0.0.md "wikilink")                  | June 2017                     | 16 October 2018                                  | [qlutoo](User:qlutoo "wikilink") and [hexkyz](User:hexkyz "wikilink"), [daeken](User:daeken "wikilink") (independently) |
+<table>
+<thead>
+<tr class="header">
+<th><p>Summary</p></th>
+<th><p>Description</p></th>
+<th><p>Successful exploitation result</p></th>
+<th><p>Fixed in system version</p></th>
+<th><p>Last system version this flaw was checked for</p></th>
+<th><p>Timeframe this was discovered</p></th>
+<th><p>Public disclosure timeframe</p></th>
+<th><p>Discovered by</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Out-of-bounds array read for <a href="BCAT Content Container.md" title="wikilink">BCAT_Content_Container</a> secret-data index</p></td>
+<td><p>The <a href="BCAT Content Container.md" title="wikilink">BCAT_Content_Container</a> secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed. This is not useful since the string loaded from this array is only involved with key-generation.</p></td>
+<td></td>
+<td><p>Unknown</p></td>
+<td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
+<td><p>August 4, 2017</p></td>
+<td><p>August 6, 2017</p></td>
+<td><p><a href="User:_shinyquagsire23" title="wikilink">Shiny Quagsire</a>, <a href="User:Yellows8" title="wikilink">yellows8</a> (independently)</p></td>
+</tr>
+<tr class="even">
+<td><p>OOB Read in NS system module (pl:utoohax, pl:utonium, maybe other names)</p></td>
+<td><p>Prior to <a href="3.0.0.md" title="wikilink">3.0.0</a>, pl:u (Shared Font services implemented in the NS sysmodule) service commands 1,2,3 took in a signed 32-bit index and returned that index of an array but did not check that index at all. This allowed for an arbitrary read within a 34-bit range (33-bit signed) from NS .bss. In <a href="3.0.0.md" title="wikilink">3.0.0</a>, sending out of range indexes causes error code 0x60A to be returned.</p></td>
+<td><p>Dumping full NS .text, .rodata and .data, infoleak, etc</p></td>
+<td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
+<td><p><a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
+<td><p>April 2017</p></td>
+<td><p>On exploit's fix in <a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
+<td><p><a href="User:qlutoo" title="wikilink">qlutoo</a>, ReSwitched Team (independently)</p></td>
+</tr>
+<tr class="odd">
+<td><p>Unchecked domain ID in common IPC code</p></td>
+<td><p>Prior to <a href="2.0.0.md" title="wikilink">2.0.0</a>, object IDs in <a href="IPC Marshalling#Domain message.md##Domain_message" title="wikilink">domain messages</a> are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.</p></td>
+<td></td>
+<td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
+<td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
+<td><p>~July 2017</p></td>
+<td><p>20 July 2017‎</p></td>
+<td><p><a href="User:hthh" title="wikilink">hthh</a></p></td>
+</tr>
+<tr class="even">
+<td><p>expLDR (sysmodule handle table exhaustion)</p></td>
+<td><p>Most sysmodules share common template code to handle IPC control messages. The command DuplicateSession (type 5 command 2)'s template code will abort() if it fails to duplicate a session's handle for the requester. Because many sysmodules have limited handle table size (smaller than the browser/other entrypoints), repeatedly requesting to duplicate one's session will cause the sysmodule to run out of handle table space and abort, causing the service to release all its handles cleanly.</p></td>
+<td><p>Sysmodule crashes. Most usefully, crashing ldr allows access to fsp-ldr and crashing pm allows access to fsp-pr. Useless after <a href="4.0.0.md" title="wikilink">4.0.0</a>, which mitigated a number of single-session service access issues.</p></td>
+<td><p>Unfixed</p></td>
+<td><p><a href="4.1.0.md" title="wikilink">4.1.0</a></p></td>
+<td><p>24 June 2017</p></td>
+<td><p>8 March 2018</p></td>
+<td><p><a href="User:daeken" title="wikilink">daeken</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>Transfer Memory leak in nvservices system module</p></td>
+<td><p>The nvservices sysmodule does not clear most of its transfer memory prior to release.</p></td>
+<td><p>The calling process can read key bits of memory, including breaking ASLR (by revealing the image base) and exposing the address of other transfer memory to set up attacks. More details here: <a href="https://daeken.svbtle.com/nintendo-switch-nvservices-info-leak">transfermeme (nvservices info leak)</a> by <a href="User:daeken" title="wikilink">daeken</a></p></td>
+<td><p><a href="6.0.0.md" title="wikilink">6.0.0</a></p></td>
+<td><p><a href="6.0.0.md" title="wikilink">6.0.0</a></p></td>
+<td><p>June 2017</p></td>
+<td><p>16 October 2018</p></td>
+<td><p><a href="User:qlutoo" title="wikilink">qlutoo</a> and <a href="User:hexkyz" title="wikilink">hexkyz</a>, <a href="User:daeken" title="wikilink">daeken</a> (independently)</p></td>
+</tr>
+<tr class="even">
+<td><p>OOB write in audio system module</p></td>
+<td><p>The <a href="Audio services#audout:u.md##audout:u" title="wikilink">AppendAudioOutBuffer</a> and <a href="Audio services#audin:u.md##audin:u" title="wikilink">AppendAudioInBuffer</a> IPC commands would blindly increment the appended buffers' count while using said count value as an index to where the user data should be copied into. This resulted in an 0x28 bytes, user controlled, out-of-bounds memory write into the <a href="Audio services.md" title="wikilink">audio</a> sysmodule's memory space. Combined with the <a href="Audio services#audout:u.md##audout:u" title="wikilink">GetReleasedAudioOutBuffer</a> or <a href="Audio services#audin:u.md##audin:u" title="wikilink">GetReleasedAudioInBuffer</a> commands, this could also be used as an 8 byte infoleak.</p>
+<p>In <a href="2.0.0.md" title="wikilink">2.0.0</a>, the commands now return error code 0x1099 if the number of unreleased buffers exceeds 0x1F.</p></td>
+<td><p>Code execution under audio sysmodule</p></td>
+<td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
+<td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
+<td></td>
+<td><p>November 2, 2018</p></td>
+<td><p><a href="User:hexkyz" title="wikilink">hexkyz</a>, probably others.</p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
