@@ -1,0 +1,11 @@
+== Installing ==
+This page is for [[Homebrew Menu]] themes. See the aforementioned page for the SD directory where themes are stored and themes details. That page also has a sample theme.
+
+== List ==
+{| class="wikitable" border="1"
+!  width="20%" | Name
+!  width="50%" | Description
+!  width="10%" | Author
+!  width="10%" | Download
+|-
+|}
