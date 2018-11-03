@@ -506,7 +506,7 @@ permissions=0.
 ## GetWorkBufferSize
 
 Takes two u32s **SampleRate** and **ChannelCount** packed as an u64.
-Returns the required size for the decoder's work buffer. Official
+Returns the u32 required size for the decoder's work buffer. Official
 user-processes align the output size to page-alignment.
 
 ## OpenHardwareOpusDecoderForMultiStream

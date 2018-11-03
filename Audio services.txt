@@ -599,7 +599,7 @@ Official sw can use either software libopus, or hwopus via "nn::codec::HardwareO
 Takes two u32s '''SampleRate''' and '''ChannelCount''' packed as an u64, an u32 '''WorkBufferSize''' and a TransferMemory handle for '''WorkBuffer'''. Returns an [[#IHardwareOpusDecoder]] object. The TransferMemory is created by the user-process with permissions=0.
 
 == GetWorkBufferSize==
-Takes two u32s '''SampleRate''' and '''ChannelCount''' packed as an u64. Returns the required size for the decoder's work buffer. Official user-processes align the output size to page-alignment.
+Takes two u32s '''SampleRate''' and '''ChannelCount''' packed as an u64. Returns the u32 required size for the decoder's work buffer. Official user-processes align the output size to page-alignment.
 
 == OpenHardwareOpusDecoderForMultiStream ==
 Takes a type-0x19 input buffer, an u32 '''WorkBufferSize''' and a TransferMemory handle for '''WorkBuffer'''. Returns an [[#IHardwareOpusDecoder]] object. The TransferMemory is created by the user-process with permissions=0.
