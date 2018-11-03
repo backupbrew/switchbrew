@@ -537,16 +537,16 @@ The input buffer is a 0x110-byte struct. The first 4 u32s are
 This is
 "nn::codec::detail::IHardwareOpusDecoder".
 
-| Cmd | Name                                                                                                                                                |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | \[4.0.0+\] [\#DecodeInterleavedOld](#DecodeInterleavedOld "wikilink") (\[1.0.0-3.0.2\] [\#DecodeInterleaved](#DecodeInterleavedOld "wikilink"))     |
-| 1   | [\#SetContext](#SetContext "wikilink")                                                                                                              |
-| 2   | \[4.0.0+\] [\#DecodeInterleavedForMultiStreamOld](#DecodeInterleavedForMultiStreamOld "wikilink") (\[3.0.0-3.0.2\] DecodeInterleavedForMultiStream) |
-| 3   | \[3.0.0+\] [\#SetContextForMultiStream](#SetContextForMultiStream "wikilink")                                                                       |
-| 4   | \[6.0.0+\] DecodeInterleavedWithPerfOld (\[4.0.0-5.1.0\] DecodeInterleavedWithPerf)                                                                 |
-| 5   | \[6.0.0+\] DecodeInterleavedForMultiStreamWithPerfOld (\[4.0.0-5.1.0\] DecodeInterleavedForMultiStreamWithPerf)                                     |
-| 6   | \[6.0.0+\] DecodeInterleaved                                                                                                                        |
-| 7   | \[6.0.0+\] DecodeInterleavedForMultiStream                                                                                                          |
+| Cmd | Name                                                                                                                                                                        |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | \[4.0.0+\] [\#DecodeInterleavedOld](#DecodeInterleavedOld "wikilink") (\[1.0.0-3.0.2\] [\#DecodeInterleaved](#DecodeInterleavedOld "wikilink"))                             |
+| 1   | [\#SetContext](#SetContext "wikilink")                                                                                                                                      |
+| 2   | \[4.0.0+\] [\#DecodeInterleavedForMultiStreamOld](#DecodeInterleavedForMultiStreamOld "wikilink") (\[3.0.0-3.0.2\] DecodeInterleavedForMultiStream)                         |
+| 3   | \[3.0.0+\] [\#SetContextForMultiStream](#SetContextForMultiStream "wikilink")                                                                                               |
+| 4   | \[6.0.0+\] [\#DecodeInterleavedWithPerfOld](#DecodeInterleavedWithPerfOld "wikilink") (\[4.0.0-5.1.0\] DecodeInterleavedWithPerf)                                           |
+| 5   | \[6.0.0+\] [\#DecodeInterleavedForMultiStreamWithPerfOld](#DecodeInterleavedForMultiStreamWithPerfOld "wikilink") (\[4.0.0-5.1.0\] DecodeInterleavedForMultiStreamWithPerf) |
+| 6   | \[6.0.0+\] [\#DecodeInterleaved](#DecodeInterleaved "wikilink")                                                                                                             |
+| 7   | \[6.0.0+\] [\#DecodeInterleavedForMultiStream](#DecodeInterleavedForMultiStream "wikilink")                                                                                 |
 
 ### DecodeInterleavedOld
 
@@ -569,6 +569,26 @@ s32 **DecodedSampleCount** and u32 **DecodedDataSize**.
 
 Takes a type-5 input buffer (**DecoderContextIn**). Sends the unknown
 context data to the hardware decoder.
+
+### DecodeInterleavedWithPerfOld
+
+Takes a type-0x5 input buffer and a type-0x46 output buffer. Returns a
+total of 0x10-bytes.
+
+### DecodeInterleavedForMultiStreamWithPerfOld
+
+Takes a type-0x5 input buffer and a type-0x46 output buffer. Returns a
+total of 0x10-bytes.
+
+### DecodeInterleaved
+
+Takes an input u8, a type-0x5 input buffer and a type-0x46 output
+buffer. Returns a total of 0x10-bytes.
+
+### DecodeInterleavedForMultiStream
+
+Takes an input u8, a type-0x5 input buffer and a type-0x46 output
+buffer. Returns a total of 0x10-bytes.
 
 # auddebug
 

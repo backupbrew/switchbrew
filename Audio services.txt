@@ -626,13 +626,13 @@ This is "nn::codec::detail::IHardwareOpusDecoder".
 |-
 | 3 || [3.0.0+] [[#SetContextForMultiStream]]
 |-
-| 4 || [6.0.0+] DecodeInterleavedWithPerfOld ([4.0.0-5.1.0] DecodeInterleavedWithPerf)
+| 4 || [6.0.0+] [[#DecodeInterleavedWithPerfOld]] ([4.0.0-5.1.0] DecodeInterleavedWithPerf)
 |-
-| 5 || [6.0.0+] DecodeInterleavedForMultiStreamWithPerfOld ([4.0.0-5.1.0] DecodeInterleavedForMultiStreamWithPerf)
+| 5 || [6.0.0+] [[#DecodeInterleavedForMultiStreamWithPerfOld]] ([4.0.0-5.1.0] DecodeInterleavedForMultiStreamWithPerf)
 |-
-| 6 || [6.0.0+] DecodeInterleaved
+| 6 || [6.0.0+] [[#DecodeInterleaved]]
 |-
-| 7 || [6.0.0+] DecodeInterleavedForMultiStream
+| 7 || [6.0.0+] [[#DecodeInterleavedForMultiStream]]
 |}
 
 === DecodeInterleavedOld ===
@@ -646,6 +646,18 @@ Takes a type-5 input buffer ('''OpusDataIn''') and a type-6 output buffer ('''Pc
 
 === SetContextForMultiStream ===
 Takes a type-5 input buffer ('''DecoderContextIn'''). Sends the unknown context data to the hardware decoder.
+
+=== DecodeInterleavedWithPerfOld ===
+Takes a type-0x5 input buffer and a type-0x46 output buffer. Returns a total of 0x10-bytes.
+
+=== DecodeInterleavedForMultiStreamWithPerfOld ===
+Takes a type-0x5 input buffer and a type-0x46 output buffer. Returns a total of 0x10-bytes.
+
+=== DecodeInterleaved ===
+Takes an input u8, a type-0x5 input buffer and a type-0x46 output buffer. Returns a total of 0x10-bytes.
+
+=== DecodeInterleavedForMultiStream ===
+Takes an input u8, a type-0x5 input buffer and a type-0x46 output buffer. Returns a total of 0x10-bytes.
 
 = auddebug =
 This is "nn::audio::detail::IAudioDebugManager".
