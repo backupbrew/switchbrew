@@ -482,14 +482,15 @@ Returns a bool.
 
 # hwopus
 
-This is "nn::codec::detail::IHardwareOpusDecoderManager".
+This is
+"nn::codec::detail::IHardwareOpusDecoderManager".
 
-| Cmd | Name                                                 |
-| --- | ---------------------------------------------------- |
-| 0   | [\#Initialize](#Initialize "wikilink")               |
-| 1   | [\#GetWorkBufferSize](#GetWorkBufferSize "wikilink") |
-| 2   | \[3.0.0+\] OpenHardwareOpusDecoderForMultiStream     |
-| 3   | \[3.0.0+\] GetWorkBufferSizeForMultiStream           |
+| Cmd | Name                                                                                                    |
+| --- | ------------------------------------------------------------------------------------------------------- |
+| 0   | [\#Initialize](#Initialize "wikilink")                                                                  |
+| 1   | [\#GetWorkBufferSize](#GetWorkBufferSize "wikilink")                                                    |
+| 2   | \[3.0.0+\] [\#OpenHardwareOpusDecoderForMultiStream](#OpenHardwareOpusDecoderForMultiStream "wikilink") |
+| 3   | \[3.0.0+\] [\#GetWorkBufferSizeForMultiStream](#GetWorkBufferSizeForMultiStream "wikilink")             |
 
 Official sw can use either software libopus, or hwopus via
 "nn::codec::HardwareOpus\*" (separate from the former).
@@ -507,6 +508,25 @@ permissions=0.
 Takes two u32s **SampleRate** and **ChannelCount** packed as an u64.
 Returns the required size for the decoder's work buffer. Official
 user-processes align the output size to page-alignment.
+
+## OpenHardwareOpusDecoderForMultiStream
+
+Takes a type-0x19 input buffer, an u32 **WorkBufferSize** and a
+TransferMemory handle for **WorkBuffer**. Returns an
+[\#IHardwareOpusDecoder](#IHardwareOpusDecoder "wikilink") object. The
+TransferMemory is created by the user-process with permissions=0.
+
+The input buffer is a 0x110-byte struct.
+
+## GetWorkBufferSizeForMultiStream
+
+Takes a type-0x19 input buffer. Returns the u32 required size for the
+decoder's work buffer. Official user-processes align the output size to
+page-alignment.
+
+The input buffer is a 0x110-byte struct. The user-process initializes
+this struct the same way as
+[\#OpenHardwareOpusDecoderForMultiStream](#OpenHardwareOpusDecoderForMultiStream "wikilink").
 
 ## IHardwareOpusDecoder
 
