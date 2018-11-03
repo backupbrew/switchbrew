@@ -516,7 +516,11 @@ TransferMemory handle for **WorkBuffer**. Returns an
 [\#IHardwareOpusDecoder](#IHardwareOpusDecoder "wikilink") object. The
 TransferMemory is created by the user-process with permissions=0.
 
-The input buffer is a 0x110-byte struct.
+The input buffer is a 0x110-byte struct. The user-process initializes
+this struct the same way as
+[\#GetWorkBufferSizeForMultiStream](#GetWorkBufferSizeForMultiStream "wikilink"),
+except that the data at +0x10 can optionally be setup with data
+specified the user.
 
 ## GetWorkBufferSizeForMultiStream
 
@@ -524,9 +528,7 @@ Takes a type-0x19 input buffer. Returns the u32 required size for the
 decoder's work buffer. Official user-processes align the output size to
 page-alignment.
 
-The input buffer is a 0x110-byte struct. The user-process initializes
-this struct the same way as
-[\#OpenHardwareOpusDecoderForMultiStream](#OpenHardwareOpusDecoderForMultiStream "wikilink").
+The input buffer is a 0x110-byte struct.
 
 ## IHardwareOpusDecoder
 
