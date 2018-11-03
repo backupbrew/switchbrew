@@ -612,7 +612,7 @@ This is "nn::codec::detail::IHardwareOpusDecoder".
 |-
 | 1 || [[#SetContext]]
 |-
-| 2 || [4.0.0+] DecodeInterleavedForMultiStreamOld ([3.0.0-3.0.2] DecodeInterleavedForMultiStream)
+| 2 || [4.0.0+] [[#DecodeInterleavedForMultiStreamOld]] ([3.0.0-3.0.2] DecodeInterleavedForMultiStream)
 |-
 | 3 || [3.0.0+] SetContextForMultiStream
 |-
@@ -626,10 +626,13 @@ This is "nn::codec::detail::IHardwareOpusDecoder".
 |}
 
 === DecodeInterleavedOld ===
-Takes a type-5 input buffer ('''OpusDataIn''') and a type-6 output buffer ('''PcmDataOut'''). Decodes the Opus source data to PCM and returns two u32s '''DecodedSampleCount''' and '''DecodedDataSize'''.
+Takes a type-5 input buffer ('''OpusDataIn''') and a type-6 output buffer ('''PcmDataOut'''). Decodes the Opus source data to PCM and returns output s32 '''DecodedSampleCount''' and u32 '''DecodedDataSize'''.
 
 === SetContext ===
 Takes a type-5 input buffer ('''DecoderContextIn'''). Sends the unknown context data to the hardware decoder.
+
+=== DecodeInterleavedForMultiStreamOld ===
+Takes a type-5 input buffer ('''OpusDataIn''') and a type-6 output buffer ('''PcmDataOut'''). Decodes the Opus source data to PCM and returns output s32 '''DecodedSampleCount''' and u32 '''DecodedDataSize'''.
 
 = auddebug =
 This is "nn::audio::detail::IAudioDebugManager".

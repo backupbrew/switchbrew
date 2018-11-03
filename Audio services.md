@@ -513,27 +513,33 @@ user-processes align the output size to page-alignment.
 This is
 "nn::codec::detail::IHardwareOpusDecoder".
 
-| Cmd | Name                                                                                                                                            |
-| --- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | \[4.0.0+\] [\#DecodeInterleavedOld](#DecodeInterleavedOld "wikilink") (\[1.0.0-3.0.2\] [\#DecodeInterleaved](#DecodeInterleavedOld "wikilink")) |
-| 1   | [\#SetContext](#SetContext "wikilink")                                                                                                          |
-| 2   | \[4.0.0+\] DecodeInterleavedForMultiStreamOld (\[3.0.0-3.0.2\] DecodeInterleavedForMultiStream)                                                 |
-| 3   | \[3.0.0+\] SetContextForMultiStream                                                                                                             |
-| 4   | \[6.0.0+\] DecodeInterleavedWithPerfOld (\[4.0.0-5.1.0\] DecodeInterleavedWithPerf)                                                             |
-| 5   | \[6.0.0+\] DecodeInterleavedForMultiStreamWithPerfOld (\[4.0.0-5.1.0\] DecodeInterleavedForMultiStreamWithPerf)                                 |
-| 6   | \[6.0.0+\] DecodeInterleaved                                                                                                                    |
-| 7   | \[6.0.0+\] DecodeInterleavedForMultiStream                                                                                                      |
+| Cmd | Name                                                                                                                                                |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | \[4.0.0+\] [\#DecodeInterleavedOld](#DecodeInterleavedOld "wikilink") (\[1.0.0-3.0.2\] [\#DecodeInterleaved](#DecodeInterleavedOld "wikilink"))     |
+| 1   | [\#SetContext](#SetContext "wikilink")                                                                                                              |
+| 2   | \[4.0.0+\] [\#DecodeInterleavedForMultiStreamOld](#DecodeInterleavedForMultiStreamOld "wikilink") (\[3.0.0-3.0.2\] DecodeInterleavedForMultiStream) |
+| 3   | \[3.0.0+\] SetContextForMultiStream                                                                                                                 |
+| 4   | \[6.0.0+\] DecodeInterleavedWithPerfOld (\[4.0.0-5.1.0\] DecodeInterleavedWithPerf)                                                                 |
+| 5   | \[6.0.0+\] DecodeInterleavedForMultiStreamWithPerfOld (\[4.0.0-5.1.0\] DecodeInterleavedForMultiStreamWithPerf)                                     |
+| 6   | \[6.0.0+\] DecodeInterleaved                                                                                                                        |
+| 7   | \[6.0.0+\] DecodeInterleavedForMultiStream                                                                                                          |
 
 ### DecodeInterleavedOld
 
 Takes a type-5 input buffer (**OpusDataIn**) and a type-6 output buffer
-(**PcmDataOut**). Decodes the Opus source data to PCM and returns two
-u32s **DecodedSampleCount** and **DecodedDataSize**.
+(**PcmDataOut**). Decodes the Opus source data to PCM and returns output
+s32 **DecodedSampleCount** and u32 **DecodedDataSize**.
 
 ### SetContext
 
 Takes a type-5 input buffer (**DecoderContextIn**). Sends the unknown
 context data to the hardware decoder.
+
+### DecodeInterleavedForMultiStreamOld
+
+Takes a type-5 input buffer (**OpusDataIn**) and a type-6 output buffer
+(**PcmDataOut**). Decodes the Opus source data to PCM and returns output
+s32 **DecodedSampleCount** and u32 **DecodedDataSize**.
 
 # auddebug
 
