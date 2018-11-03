@@ -497,7 +497,7 @@ Official sw can use either software libopus, or hwopus via
 
 ## Initialize
 
-Takes two u32s **SampleRate** and **ChannelCount** packed as an u64, an
+Takes two s32s **SampleRate** and **ChannelCount** packed as an u64, an
 u32 **WorkBufferSize** and a TransferMemory handle for **WorkBuffer**.
 Returns an [\#IHardwareOpusDecoder](#IHardwareOpusDecoder "wikilink")
 object. The TransferMemory is created by the user-process with
@@ -505,7 +505,7 @@ permissions=0.
 
 ## GetWorkBufferSize
 
-Takes two u32s **SampleRate** and **ChannelCount** packed as an u64.
+Takes two s32s **SampleRate** and **ChannelCount** packed as an u64.
 Returns the u32 required size for the decoder's work buffer. Official
 user-processes align the output size to page-alignment.
 
@@ -528,7 +528,7 @@ Takes a type-0x19 input buffer. Returns the u32 required size for the
 decoder's work buffer. Official user-processes align the output size to
 page-alignment.
 
-The input buffer is a 0x110-byte struct. The first 4 u32s are
+The input buffer is a 0x110-byte struct. The first 4 s32s are
 **SampleRate**, **ChannelCount**, **TotalStreamCount**, and
 **StereoStreamCount** while the rest is cleared to zeros.
 
