@@ -1,4 +1,4 @@
-SPL is responsible for handling all cryptographic operations within the system and relaying them to the [[#SMC|Secure Monitor]] when necessary.
+SPL ("Secure Platform services") is responsible for handling all cryptographic operations within the system and relaying them to the [[#SMC|Secure Monitor]] when necessary.
 
 During [1.0.0-3.0.2], the only existing services were "csrng" and "spl:". However, in [4.0.0+] the "spl:" service was refactored and split into new services with different permission levels. Each service exposes the IPC command list differently in order to prevent cryptographic operations to take place in the wrong context.
 

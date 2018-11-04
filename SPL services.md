@@ -1,6 +1,6 @@
-SPL is responsible for handling all cryptographic operations within the
-system and relaying them to the [Secure Monitor](#SMC "wikilink") when
-necessary.
+SPL ("Secure Platform services") is responsible for handling all
+cryptographic operations within the system and relaying them to the
+[Secure Monitor](#SMC "wikilink") when necessary.
 
 During \[1.0.0-3.0.2\], the only existing services were "csrng" and
 "spl:". However, in \[4.0.0+\] the "spl:" service was refactored and
