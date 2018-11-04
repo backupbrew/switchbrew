@@ -185,7 +185,7 @@
 |
 |-
 | [[SPL_services|SPL]]
-| Security Processor Liaison
+| Secure Platform Services
 |
 |-
 | [[SSL_services|SSL]]
