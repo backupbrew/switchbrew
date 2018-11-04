@@ -18,7 +18,7 @@ IPmControl-\>DispatchRequest() is used notify all IPmModules of a state
 change.
 
 For example, FS registers itself as an IPmModule with dependencies on
-pinmux, gpio, pcv, (tma?), and initializes the SD card once those
+pinmux, gpio, pcv, tma, and initializes the SD card once those
 dependencies have registered..
 
 It then does (basically) the following pseudocode (actual code located

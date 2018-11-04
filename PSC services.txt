@@ -6,7 +6,7 @@ psc:m allows a process to register a module that depends on power management in 
 
 psc:c allows a module to the power state controller for the system (in practice, AM is the only client to the controller). IPmControl->DispatchRequest() is used notify all IPmModules of a state change.
 
-For example, FS registers itself as an IPmModule with dependencies on pinmux, gpio, pcv, (tma?), and initializes the SD card once those dependencies have registered.. 
+For example, FS registers itself as an IPmModule with dependencies on pinmux, gpio, pcv, tma, and initializes the SD card once those dependencies have registered.. 
 
 It then does (basically) the following pseudocode (actual code located at .text + 0xB2DB0 in 6.0.0 FS):
 
