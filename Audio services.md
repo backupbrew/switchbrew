@@ -552,7 +552,7 @@ This is
 
 Takes a type-5 input buffer (**OpusDataIn**) and a type-6 output buffer
 (**PcmDataOut**). Decodes the Opus source data to PCM and returns output
-s32 **DecodedSampleCount** and u32 **DecodedDataSize**.
+s32 **DecodedDataSize** and s32 **DecodedSampleCount**.
 
 ### SetContext
 
@@ -563,7 +563,7 @@ context data to the hardware decoder.
 
 Takes a type-5 input buffer (**OpusDataIn**) and a type-6 output buffer
 (**PcmDataOut**). Decodes the Opus source data to PCM and returns output
-s32 **DecodedSampleCount** and u32 **DecodedDataSize**.
+s32 **DecodedDataSize** and s32 **DecodedSampleCount**.
 
 ### SetContextForMultiStream
 
