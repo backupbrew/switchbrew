@@ -648,10 +648,14 @@ Takes a type-5 input buffer ('''OpusDataIn''') and a type-6 output buffer ('''Pc
 Takes a type-5 input buffer ('''DecoderContextIn'''). Sends the unknown context data to the hardware decoder.
 
 === DecodeInterleavedWithPerfOld ===
-Takes a type-0x5 input buffer and a type-0x46 output buffer. Returns a total of 0x10-bytes.
+Takes a type-0x5 input buffer ('''OpusDataIn''') and a type-0x46 output buffer ('''PcmDataOut'''). Decodes the Opus source data to PCM and returns output s32 '''DecodedDataSize''', s32 '''DecodedSampleCount''', and an u64.
+
+The output u64 is ignored by official user-processes.
 
 === DecodeInterleavedForMultiStreamWithPerfOld ===
-Takes a type-0x5 input buffer and a type-0x46 output buffer. Returns a total of 0x10-bytes.
+Takes a type-0x5 input buffer ('''OpusDataIn''') and a type-0x46 output buffer ('''PcmDataOut'''). Decodes the Opus source data to PCM and returns output s32 '''DecodedDataSize''', s32 '''DecodedSampleCount''', and an u64.
+
+The output u64 is ignored by official user-processes.
 
 === DecodeInterleaved ===
 Takes an input u8, a type-0x5 input buffer and a type-0x46 output buffer. Returns a total of 0x10-bytes.
