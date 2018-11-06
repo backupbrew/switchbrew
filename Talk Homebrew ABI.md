@@ -29,3 +29,50 @@ people.
 
 [WinterMute](User:WinterMute "wikilink")
 ([talk](User%20talk:WinterMute.md "wikilink")) 04:26, 19 June 2018 (CDT)
+
+## RomFS Override
+
+The current strategy for providing RomFS to homebrew applications
+depends on the application being able to find and open its own NRO file
+via argv\[0\] and load RomFS from ASET. This is not practical for
+several use cases that I am encountering:
+
+\- The NRO file is not persisted to the SD card.
+
+\- The NRO file is not stored somewhere that the homebrew library knows
+how to access.
+
+\- The application does not exist as an NRO file at all.
+
+I'd like to propose a new HBABI key to allow homebrew applications to
+access RomFS without needing to open their own NRO file via
+argv\[0\].
+
+`   ==== RomFSOverride ====`  
+`   This is used to override an application's RomFS. If this key is passed and recognized, the application shall make no attempt to open itself via fopen(argv[0]).`  
+`   `  
+`   * `**`Key:`**` 15`  
+`   * `**`Value[0]:`**` Handle to a session implementing `[`Filesystem_services#IFileSystem`](Filesystem%20services#IFileSystem.md##IFileSystem "wikilink")` for the application's RomFS.`  
+`   * `**`Value[1]:`**` Ignored.`  
+`   `  
+`   The application may only expect that IFileSystem#GetEntryType, IFileSystem#OpenFile, and IFileSystem#OpenDirectory are implemented for the given handle.`
+
+Possible alternatives include instead passing IFile/IStorage for the
+RomFS section, or IFile/IStorage for the entire ASET section.
+
+Concerns include ownership of the session handle. Should the application
+be required to close the handle or leave it open? Personally, I'm
+inclined to require that the application borrow the session from the
+loader and leave it open in case closing the handle is not something
+desirable. This also simplifies the logic in the loader, since if the
+handle needs to be closed, the loader can always just close it instead
+of having to figure out whether it was recognized or not. Possible
+alternatives to this ownership scheme include either adding flags to
+HBABI entries for which words contain handles that should be closed if
+not recognized, or a flag that the application sets on each entry it
+recognizes so that the loader can take care of closing the handle if the
+application did not recognize it.
+
+\--[Misson20000](User:Misson20000 "wikilink")
+([talk](User%20talk:Misson20000.md "wikilink")) 00:36, 6 November 2018
+(UTC)
