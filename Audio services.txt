@@ -639,7 +639,7 @@ This is "nn::codec::detail::IHardwareOpusDecoder".
 Takes a type-5 input buffer ('''OpusDataIn''') and a type-6 output buffer ('''PcmDataOut'''). Decodes the Opus source data to PCM and returns output s32 '''DecodedDataSize''' and s32 '''DecodedSampleCount'''.
 
 === SetContext ===
-Takes a type-5 input buffer ('''DecoderContextIn'''). Sends the unknown context data to the hardware decoder.
+Takes a type-5 input buffer ('''DecoderContextIn'''). Sends the unknown context data to the hardware decoder. The input buffer is unused.
 
 === DecodeInterleavedForMultiStreamOld ===
 Takes a type-5 input buffer ('''OpusDataIn''') and a type-6 output buffer ('''PcmDataOut'''). Decodes the Opus source data to PCM and returns output s32 '''DecodedDataSize''' and s32 '''DecodedSampleCount'''.

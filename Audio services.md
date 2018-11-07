@@ -557,7 +557,7 @@ s32 **DecodedDataSize** and s32 **DecodedSampleCount**.
 ### SetContext
 
 Takes a type-5 input buffer (**DecoderContextIn**). Sends the unknown
-context data to the hardware decoder.
+context data to the hardware decoder. The input buffer is unused.
 
 ### DecodeInterleavedForMultiStreamOld
 
