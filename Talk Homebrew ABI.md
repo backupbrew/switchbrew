@@ -55,7 +55,7 @@ argv\[0\].
 `   * `**`Value[0]:`**` Handle to a session implementing `[`Filesystem_services#IFileSystem`](Filesystem%20services#IFileSystem.md##IFileSystem "wikilink")` for the application's RomFS.`  
 `   * `**`Value[1]:`**` Ignored.`  
 `   `  
-`   The application may only expect that IFileSystem#GetEntryType, IFileSystem#OpenFile, and IFileSystem#OpenDirectory are implemented for the given handle.`
+`   The given handle must respond to IFileSystem commands 0-12.`
 
 Possible alternatives include instead passing IFile/IStorage for the
 RomFS section, or IFile/IStorage for the entire ASET section.
