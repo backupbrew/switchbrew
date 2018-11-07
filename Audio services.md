@@ -554,6 +554,10 @@ Takes a type-5 input buffer (**OpusDataIn**) and a type-6 output buffer
 (**PcmDataOut**). Decodes the Opus source data to PCM and returns output
 s32 **DecodedDataSize** and s32 **DecodedSampleCount**.
 
+Calls the same func as
+[\#DecodeInterleaved](#DecodeInterleaved "wikilink") internally with
+flag=0 and out\_u64\_ptr=NULL.
+
 ### SetContext
 
 Takes a type-5 input buffer (**DecoderContextIn**). Sends the unknown
@@ -564,6 +568,10 @@ context data to the hardware decoder. The input buffer is unused.
 Takes a type-5 input buffer (**OpusDataIn**) and a type-6 output buffer
 (**PcmDataOut**). Decodes the Opus source data to PCM and returns output
 s32 **DecodedDataSize** and s32 **DecodedSampleCount**.
+
+Calls the same func as
+[\#DecodeInterleavedForMultiStream](#DecodeInterleavedForMultiStream "wikilink")
+internally with flag=0 and out\_u64\_ptr=NULL.
 
 ### SetContextForMultiStream
 
@@ -578,6 +586,10 @@ output s32 **DecodedDataSize**, s32 **DecodedSampleCount**, and an u64.
 
 The output u64 is ignored by official user-processes.
 
+Calls the same func as
+[\#DecodeInterleaved](#DecodeInterleaved "wikilink") internally with
+flag=0.
+
 ### DecodeInterleavedForMultiStreamWithPerfOld
 
 Takes a type-0x5 input buffer (**OpusDataIn**) and a type-0x46 output
@@ -586,15 +598,23 @@ output s32 **DecodedDataSize**, s32 **DecodedSampleCount**, and an u64.
 
 The output u64 is ignored by official user-processes.
 
+Calls the same func as
+[\#DecodeInterleavedForMultiStream](#DecodeInterleavedForMultiStream "wikilink")
+internally with flag=0.
+
 ### DecodeInterleaved
 
-Takes an input u8, a type-0x5 input buffer and a type-0x46 output
-buffer. Returns a total of 0x10-bytes.
+Takes an input u8 bool flag, a type-0x5 input buffer (**OpusDataIn**)
+and a type-0x46 output buffer (**PcmDataOut**). Decodes the Opus source
+data to PCM and returns output s32 **DecodedDataSize**, s32
+**DecodedSampleCount**, and an u64.
 
 ### DecodeInterleavedForMultiStream
 
-Takes an input u8, a type-0x5 input buffer and a type-0x46 output
-buffer. Returns a total of 0x10-bytes.
+Takes an input u8 bool flag, a type-0x5 input buffer (**OpusDataIn**)
+and a type-0x46 output buffer (**PcmDataOut**). Decodes the Opus source
+data to PCM and returns output s32 **DecodedDataSize**, s32
+**DecodedSampleCount**, and an u64.
 
 # auddebug
 
