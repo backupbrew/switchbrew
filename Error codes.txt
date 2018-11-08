@@ -524,13 +524,23 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1F610 || 16 || 251 || Unexpected StorageId
 |-
+| 0x215 || 21 || 1 || Out of processes
+|-
 | 0x415 || 21 || 2 || Not initialized.
 |-
 | 0x615 || 21 || 3 || Max sessions
 |-
+| 0x815 || 21 || 4 || Service already registered
+|-
+| 0xA15 || 21 || 5 || Out of services
+|-
 | 0xC15 || 21 || 6 || Invalid name (all zeroes)
 |-
+| 0xE15 || 21 || 7 || Service not registered
+|-
 | 0x1015 || 21 || 8 || Permission denied
+|-
+| 0x1215 || 21 || 9 || Service Access Control too big.
 |-
 | 0x416 || 22 || 2 || Address space is full
 |-
