@@ -85,3 +85,20 @@ application did not recognize it.
     --[Yellows8](User:Yellows8 "wikilink")
     ([talk](User%20talk:Yellows8.md "wikilink")) 19:34, 8 November 2018
     (UTC)
+
+<!-- end list -->
+
+  -   
+    Like yellows8 said, the homebrew ABI is designed around NRO files
+    stored on SD card. If we ever support other filesystems (such as
+    hostio access), we'd just add support for host:/ paths being passed
+    through argv (as well as support code in libnx which would be
+    trivial) - homebrew apps would need a recompile anyway with or
+    without new ABI keys. Also, for that use case (hostio), romfs
+    doesn't really make sense because you could just use assets in a
+    folder inside the host filesystem instead of having to go through
+    the trouble of building romfs (which can get pretty large). Finally,
+    homebrew by definition is NRO formatted. Other formats should not be
+    supported or promoted. --[Fincs](User:Fincs "wikilink")
+    ([talk](User%20talk:Fincs.md "wikilink")) 19:47, 8 November 2018
+    (UTC)
