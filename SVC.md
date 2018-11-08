@@ -480,7 +480,10 @@ permission to reset.
 
 </div>
 
-Works with num\_handles \<= 0x40, error on num\_handles == 0.
+Works with num\_handles \<= 0x40.
+
+When zero handles are passed, this will wait forever until either
+timeout or cancellation occurs.
 
 Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
@@ -489,29 +492,39 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 **Port:** signals when there is an incoming connection waiting to be
 [accepted](#svcAcceptSession "wikilink").
 
+**Process:** signals when the process undergoes a state change
+(retrievable via [\#svcGetProcessInfo](#svcGetProcessInfo "wikilink")).
+
+**ReadableEvent:** signals when the event has been signaled via
+svcSignalEvent.
+
 **Session (server-side):** signals when there is an incoming message
 waiting to be [received](#svcReplyAndReceive "wikilink") or the pipe is
 closed.
 
 ### Result codes
 
-**0x0:** Success. One of the objects was signalled before the timeout
-expired. Handle index is updated to indicate which object signalled.
+**0x0:** Success. One of the objects was signaled before the timeout
+expired, or one of the objects is a Session with a closed remote. Handle
+index is updated to indicate which object signaled.
 
 **0x7601:** Thread termination requested. Handle index is not updated.
 
 **0xe401:** Invalid handle. Returned when one of the handles passed is
 invalid. Handle index is not updated.
 
-**0xea01:** Timeout. Returned when no objects have been signalled within
+**0xe601:** Invalid address. Returned when the handles pointer is not a
+readable address. Handle index is not updated.
+
+**0xea01:** Timeout. Returned when no objects have been signaled within
 the timeout. Handle index is not updated.
 
 **0xec01:** Interrupted. Returned when another thread uses
 [\#svcCancelSynchronization](#svcCancelSynchronization "wikilink") to
 cancel this thread. Handle index is not updated.
 
-**0xf601:** Session closed. Returned when one of the handles represents
-a session that has been closed. Handle index is updated.
+**0xee01:** Too many handles. Returned when the number of handles passed
+is \> 0x40.
 
 ## svcCancelSynchronization
 
