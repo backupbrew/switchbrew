@@ -76,3 +76,12 @@ application did not recognize it.
 \--[Misson20000](User:Misson20000 "wikilink")
 ([talk](User%20talk:Misson20000.md "wikilink")) 00:36, 6 November 2018
 (UTC)
+
+  -   
+    "- The NRO file is not persisted to the SD card." "- The NRO file is
+    not stored somewhere that the homebrew library knows how to access."
+    "- The application does not exist as an NRO file at all." The ABI
+    requires the NRO to located on SD in the first place...
+    --[Yellows8](User:Yellows8 "wikilink")
+    ([talk](User%20talk:Yellows8.md "wikilink")) 19:34, 8 November 2018
+    (UTC)
