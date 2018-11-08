@@ -663,6 +663,8 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 '''Session (server-side):''' signals when there is an incoming message waiting to be [[#svcReplyAndReceive|received]] or the pipe is closed.
 
+'''Thread:''' signals when the thread has exited.
+
 === Result codes ===
 
 '''0x0:''' Success. One of the objects was signaled before the timeout expired, or one of the objects is a Session with a closed remote. Handle index is updated to indicate which object signaled.

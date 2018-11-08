@@ -506,6 +506,8 @@ svcSignalEvent.
 waiting to be [received](#svcReplyAndReceive "wikilink") or the pipe is
 closed.
 
+**Thread:** signals when the thread has exited.
+
 ### Result codes
 
 **0x0:** Success. One of the objects was signaled before the timeout
