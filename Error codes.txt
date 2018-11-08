@@ -344,7 +344,19 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x251002 || 2 || 4744 || Invalid [[NAX0]] magicnum.
 |-
+| 0x280202 || 2 || 5121 || Invalid FAT size
+|-
 | 0x280402 || 2 || 5122 || Invalid FAT BPB (BIOS Parameter Block)
+|-
+| 0x280602 || 2 || 5123 || Invalid FAT parameter
+|-
+| 0x280802 || 2 || 5124 || Invalid FAT sector
+|-
+| 0x280A02 || 2 || 5125 || Invalid FAT sector
+|-
+| 0x280C02 || 2 || 5126 || Invalid FAT sector
+|-
+| 0x280E02 || 2 || 5127 || Invalid FAT sector
 |-
 | 0x296A02 || 2 || 5301 || Mountpoint not found
 |-
