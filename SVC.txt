@@ -206,7 +206,7 @@ __NOTOC__
 |- style="border-top: double"
 | 0x6F || [5.0.0+] [[#svcGetSystemInfo]] || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
 |-
-| 0x70 || svcCreatePort || W2=max_sessions, W3=unk_bool, X4=name_ptr || W0=result, W1=clientport_handle, W2=serverport_handle
+| 0x70 || svcCreatePort || W2=max_sessions, W3=is_light, X4=name_ptr || W0=result, W1=clientport_handle, W2=serverport_handle
 |-
 | 0x71 || svcManageNamedPort || X1=name_ptr, W2=max_sessions || W0=result, W1=serverport_handle
 |-
