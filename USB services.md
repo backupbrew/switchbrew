@@ -74,19 +74,13 @@ config. The default is referred to by usb-sysmodule as "Dummy".
 The following is the default `lsusb -v {...}` output when the usbds
 service wasn't used.
 
-The endpoints are configured using
+pre-5.0.0: The endpoints are configured using
 [\#GetDsEndpoint](#GetDsEndpoint "wikilink"), the total number of
 endpoints is the number of open [\#IDsEndpoint](#IDsEndpoint "wikilink")
 sessions. bInterfaceNumber is {0-based index for the enabled
 [\#IDsInterface](#IDsInterface "wikilink") session.} Some of the
 interface fields are configured using
 [\#GetDsInterface](#GetDsInterface "wikilink").
-
-Additional descriptors for use with interfaces and endpoints can't be
-configured with usbds, even though the former is used for the default
-HID interface. This seems to be the main(?) restriction with using usbds
-for Switch-as-arbitrary-devices. The device class fields can't be
-configured, interface class fields are set instead.
 
 When usbds is in use where [\#SetVidPidBcd](#SetVidPidBcd "wikilink")
 wasn't used, the VID/PID is 057e:3000.
