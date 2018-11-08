@@ -13,15 +13,17 @@ captive-portal).
 
 ## Known User Agent Strings
 
-| System Version                                            | UA String                                                                                                                   |
-| --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| [1.0.0](1.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.4.25 NintendoBrowser/5.1.0.11682 |
-| [2.0.0](2.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.9 NintendoBrowser/5.1.0.13341  |
-| [2.1.0](2.1.0.md "wikilink")-[2.3.0](2.3.0.md "wikilink") | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.10 NintendoBrowser/5.1.0.13343 |
-| [3.0.0](3.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.6.9 NintendoBrowser/5.1.0.14936  |
-| [4.0.0](4.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.7.9 NintendoBrowser/5.1.0.15785  |
-| [5.0.0](5.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.8.9 NintendoBrowser/5.1.0.16739  |
-| [5.1.0](5.1.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.9.3 NintendoBrowser/5.1.0.16958  |
+| System Version                                            | UA String                                                                                                                    |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| [1.0.0](1.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.4.25 NintendoBrowser/5.1.0.11682  |
+| [2.0.0](2.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.9 NintendoBrowser/5.1.0.13341   |
+| [2.1.0](2.1.0.md "wikilink")-[2.3.0](2.3.0.md "wikilink") | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.5.10 NintendoBrowser/5.1.0.13343  |
+| [3.0.0](3.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.6.9 NintendoBrowser/5.1.0.14936   |
+| [4.0.0](4.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.7.9 NintendoBrowser/5.1.0.15785   |
+| [5.0.0](5.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.8.9 NintendoBrowser/5.1.0.16739   |
+| [5.1.0](5.1.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.9.3 NintendoBrowser/5.1.0.16958   |
+| [6.0.0](6.0.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.10.13 NintendoBrowser/5.1.0.17805 |
+| [6.1.0](6.1.0.md "wikilink")                              | Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebKit/601.6 (KHTML, like Gecko) NF/4.0.0.10.14 NintendoBrowser/5.1.0.17806 |
 
 The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>)
 AppleWebKit/<webkitver> (KHTML, like Gecko)
