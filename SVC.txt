@@ -653,19 +653,19 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 === Object types ===
 
-'''Debug:''' signals when there is a new [[#DebugEventInfo|DebugEvent]] (retrievable via [[#svcGetDebugEvent]]).
+'''KDebug:''' signals when there is a new [[#DebugEventInfo|DebugEvent]] (retrievable via [[#svcGetDebugEvent]]).
 
-'''ClientPort:''' signals when the number of sessions is less than the maximum allowed.
+'''KClientPort:''' signals when the number of sessions is less than the maximum allowed.
 
-'''Process:''' signals when the process undergoes a state change (retrievable via [[#svcGetProcessInfo]]).
+'''KProcess:''' signals when the process undergoes a state change (retrievable via [[#svcGetProcessInfo]]).
 
-'''ReadableEvent:''' signals when the event has been signaled via svcSignalEvent.
+'''KReadableEvent:''' signals when the event has been signaled via svcSignalEvent.
 
-'''ServerPort:''' signals when there is an incoming connection waiting to be [[#svcAcceptSession|accepted]].
+'''KServerPort:''' signals when there is an incoming connection waiting to be [[#svcAcceptSession|accepted]].
 
-'''Session (server-side):''' signals when there is an incoming message waiting to be [[#svcReplyAndReceive|received]] or the pipe is closed.
+'''KServerSession:''' signals when there is an incoming message waiting to be [[#svcReplyAndReceive|received]] or the pipe is closed.
 
-'''Thread:''' signals when the thread has exited.
+'''KThread:''' signals when the thread has exited.
 
 === Result codes ===
 

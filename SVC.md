@@ -489,27 +489,26 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 ### Object types
 
-**Debug:** signals when there is a new
+**KDebug:** signals when there is a new
 [DebugEvent](#DebugEventInfo "wikilink") (retrievable via
 [\#svcGetDebugEvent](#svcGetDebugEvent "wikilink")).
 
-**ClientPort:** signals when the number of sessions is less than the
+**KClientPort:** signals when the number of sessions is less than the
 maximum allowed.
 
-**Process:** signals when the process undergoes a state change
+**KProcess:** signals when the process undergoes a state change
 (retrievable via [\#svcGetProcessInfo](#svcGetProcessInfo "wikilink")).
 
-**ReadableEvent:** signals when the event has been signaled via
+**KReadableEvent:** signals when the event has been signaled via
 svcSignalEvent.
 
-**ServerPort:** signals when there is an incoming connection waiting to
+**KServerPort:** signals when there is an incoming connection waiting to
 be [accepted](#svcAcceptSession "wikilink").
 
-**Session (server-side):** signals when there is an incoming message
-waiting to be [received](#svcReplyAndReceive "wikilink") or the pipe is
-closed.
+**KServerSession:** signals when there is an incoming message waiting to
+be [received](#svcReplyAndReceive "wikilink") or the pipe is closed.
 
-**Thread:** signals when the thread has exited.
+**KThread:** signals when the thread has exited.
 
 ### Result codes
 
