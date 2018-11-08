@@ -499,8 +499,8 @@ maximum allowed.
 **KProcess:** signals when the process undergoes a state change
 (retrievable via [\#svcGetProcessInfo](#svcGetProcessInfo "wikilink")).
 
-**KReadableEvent:** signals when the event has been signaled via
-svcSignalEvent.
+**KReadableEvent:** signals when the event's corresponding
+KWritableEvent has been signaled via svcSignalEvent.
 
 **KServerPort:** signals when there is an incoming connection waiting to
 be [accepted](#svcAcceptSession "wikilink").
