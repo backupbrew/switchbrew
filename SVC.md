@@ -493,14 +493,17 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 [DebugEvent](#DebugEventInfo "wikilink") (retrievable via
 [\#svcGetDebugEvent](#svcGetDebugEvent "wikilink")).
 
-**Port:** signals when there is an incoming connection waiting to be
-[accepted](#svcAcceptSession "wikilink").
+**ClientPort:** signals when the number of sessions is less than the
+maximum allowed.
 
 **Process:** signals when the process undergoes a state change
 (retrievable via [\#svcGetProcessInfo](#svcGetProcessInfo "wikilink")).
 
 **ReadableEvent:** signals when the event has been signaled via
 svcSignalEvent.
+
+**ServerPort:** signals when there is an incoming connection waiting to
+be [accepted](#svcAcceptSession "wikilink").
 
 **Session (server-side):** signals when there is an incoming message
 waiting to be [received](#svcReplyAndReceive "wikilink") or the pipe is
