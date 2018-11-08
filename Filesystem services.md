@@ -1772,7 +1772,9 @@ returned via various
 | 0x8    | 0x10 | userID for user-specific savedata(saveuser) when set, otherwise when zero this indicates the common savedata(savecommon). This is loaded from [Account\_services](Account%20services.md "wikilink").    |
 | 0x18   | 0x8  | u64 [saveID](Flash%20Filesystem.md "wikilink"). 0 for SaveData.                                                                                                                                         |
 | 0x20   | 0x1  | [\#SaveDataType](#SaveDataType "wikilink")                                                                                                                                                              |
-| 0x21   | 0x7  | Padding                                                                                                                                                                                                 |
+| 0x21   | 0x1  | Save data 'rank' or 'precedence'. 0 if this save data is considered the primary save data. 1 if it's considered the secondary save data.                                                                |
+| 0x22   | 0x2  | Save data index                                                                                                                                                                                         |
+| 0x24   | 0x4  | Padding                                                                                                                                                                                                 |
 | 0x28   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
 | 0x30   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
 | 0x38   | 0x8  | 0 for SystemSaveData/SaveData.                                                                                                                                                                          |
@@ -1812,21 +1814,24 @@ SaveCreate-struct.
 
 The 0x10-byte struct passed to
 [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink") has
-the first 0x5-bytes set to all-zero.
+the first 0x5-bytes set to
+all-zero.
 
 # SaveDataInfo
 
-| Offset | Size | Description                                      |
-| ------ | ---- | ------------------------------------------------ |
-| 0x0    | 0x8  | Unknown saveID                                   |
-| 0x8    | 0x1  | [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") |
-| 0x9    | 0x1  | [\#SaveDataType](#SaveDataType "wikilink")       |
-| 0xA    | 0x6  | Padding?                                         |
-| 0x10   | 0x10 | userID                                           |
-| 0x20   | 0x8  | saveID, 0 for regular SaveData.                  |
-| 0x28   | 0x8  | Application titleID, for regular SaveData.       |
-| 0x30   | 0x8  | Raw saveimage size                               |
-| 0x38   | 0x28 | Unknown. Usually zeros?                          |
+| Offset | Size | Description                                                                                                                              |
+| ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | Unknown saveID                                                                                                                           |
+| 0x8    | 0x1  | [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink")                                                                                         |
+| 0x9    | 0x1  | [\#SaveDataType](#SaveDataType "wikilink")                                                                                               |
+| 0xA    | 0x6  | Padding?                                                                                                                                 |
+| 0x10   | 0x10 | userID                                                                                                                                   |
+| 0x20   | 0x8  | saveID, 0 for regular SaveData.                                                                                                          |
+| 0x28   | 0x8  | Application titleID, for regular SaveData.                                                                                               |
+| 0x30   | 0x8  | Raw saveimage size                                                                                                                       |
+| 0x38   | 0x2  | Save data index                                                                                                                          |
+| 0x40   | 0x1  | Save data 'rank' or 'precedence'. 0 if this save data is considered the primary save data. 1 if it's considered the secondary save data. |
+| 0x41   | 0x25 | Unknown. Usually zeros?                                                                                                                  |
 
 This is a 0x60-byte struct.
 
