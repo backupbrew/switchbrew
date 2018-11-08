@@ -653,6 +653,8 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 === Object types ===
 
+'''Debug:''' signals when there is a new [[#DebugEventInfo|DebugEvent]] (retrievable via [[#svcGetDebugEvent]]).
+
 '''Port:''' signals when there is an incoming connection waiting to be [[#svcAcceptSession|accepted]].
 
 '''Process:''' signals when the process undergoes a state change (retrievable via [[#svcGetProcessInfo]]).

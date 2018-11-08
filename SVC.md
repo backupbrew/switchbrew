@@ -489,6 +489,10 @@ Does not accept 0xFFFF8001 or 0xFFFF8000 as handles.
 
 ### Object types
 
+**Debug:** signals when there is a new
+[DebugEvent](#DebugEventInfo "wikilink") (retrievable via
+[\#svcGetDebugEvent](#svcGetDebugEvent "wikilink")).
+
 **Port:** signals when there is an incoming connection waiting to be
 [accepted](#svcAcceptSession "wikilink").
 
