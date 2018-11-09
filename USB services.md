@@ -552,7 +552,9 @@ the first 0x1B8-bytes from
 
 ### GetAlternateInterface
 
-Takes an input u8 and a type-0x6 output buffer, no output.
+Takes an input u8 and a type-0x6 output buffer, no output. The output
+buffer contains the first 0x1B8-bytes from
+[\#UsbHsInterface](#UsbHsInterface "wikilink").
 
 ### GetCurrentFrame
 
