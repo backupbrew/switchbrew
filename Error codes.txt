@@ -388,6 +388,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x327602 || 2 || 6459 || FS allocators already used
 |-
+| 0x339402 || 2 || 6602 || File not found.
+|-
+| 0x339602 || 2 || 6603 || Directory not found.
+|-
 | 0x803 || 3 || 4 || OS busy
 |-
 | 0xE03 || 3 || 7 || Invalid parameter
