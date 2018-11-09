@@ -249,7 +249,7 @@ Format for the extra request header for domain message:
 |-
 | 2 || || Padding
 |-
-| 3 || || [5.0.0+] Token for (NewRequest only)
+| 3 || || [1.0.0-4.1.0] Padding [5.0.0+] Token for (NewRequest only)
 |-
 | 4... || || [[#Data payload|Data payload]]
 |-
@@ -278,7 +278,7 @@ This is an array of u32's, but individual parameters are generally stored as u64
 |-
 | 2 || Command id as u64 for requests, [[Error_codes|error code]] as u64 for responses.
 |-
-| 3 || [5.0.0+] Token (for NewRequest only, non-domain messages). On version < 5.0.0, domain messages or Request messages, simply Zero.
+| 3 || [1.0.0-4.1.0] Padding [5.0.0+] Token (for NewRequest only, non-domain messages).
 |-
 | 4... || Input parameters or return values
 |}

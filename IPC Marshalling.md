@@ -294,7 +294,7 @@ message:
 | 0    | 31-16 | Length of [data payload](IPC%20Marshalling#Data%20payload.md##Data_payload "wikilink") in bytes. |
 | 1    |       | Object ID (from cmd 0 in [Control](IPC%20Marshalling#Control.md##Control "wikilink")).           |
 | 2    |       | Padding                                                                                          |
-| 3    |       | \[5.0.0+\] Token for (NewRequest only)                                                           |
+| 3    |       | \[1.0.0-4.1.0\] Padding \[5.0.0+\] Token for (NewRequest only)                                   |
 | 4... |       | [Data payload](#Data_payload "wikilink")                                                         |
 | ...  |       | Input object IDs (u32s, not aligned)                                                             |
 
@@ -312,13 +312,13 @@ This is an array of u32's, but individual parameters are generally
 stored as
 u64's.
 
-| Word | Description                                                                                                                         |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| 0    | Magic ("SFCI" for requests, "SFCO" for responses) as u32.                                                                           |
-| 1    | Version as u32. 1 for NewRequest, 0 for Request.                                                                                    |
-| 2    | Command id as u64 for requests, [error code](Error%20codes.md "wikilink") as u64 for responses.                                     |
-| 3    | \[5.0.0+\] Token (for NewRequest only, non-domain messages). On version \< 5.0.0, domain messages or Request messages, simply Zero. |
-| 4... | Input parameters or return values                                                                                                   |
+| Word | Description                                                                                     |
+| ---- | ----------------------------------------------------------------------------------------------- |
+| 0    | Magic ("SFCI" for requests, "SFCO" for responses) as u32.                                       |
+| 1    | Version as u32. 1 for NewRequest, 0 for Request.                                                |
+| 2    | Command id as u64 for requests, [error code](Error%20codes.md "wikilink") as u64 for responses. |
+| 3    | \[1.0.0-4.1.0\] Padding \[5.0.0+\] Token (for NewRequest only, non-domain messages).            |
+| 4... | Input parameters or return values                                                               |
 
 \[5.0.0+\] Version was incremented from 0 to 1, and a token value was
 introduced into raw\_data+12 (regardless of domain or not, in either
