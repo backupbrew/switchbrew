@@ -40,3 +40,23 @@ Concerns include ownership of the session handle. Should the application be requ
 :"- The NRO file is not persisted to the SD card." "- The NRO file is not stored somewhere that the homebrew library knows how to access." "- The application does not exist as an NRO file at all." The ABI requires the NRO to located on SD in the first place... --[[User:Yellows8|Yellows8]] ([[User talk:Yellows8|talk]]) 19:34, 8 November 2018 (UTC)
 
 :Like yellows8 said, the homebrew ABI is designed around NRO files stored on SD card. If we ever support other filesystems (such as hostio access), we'd just add support for host:/ paths being passed through argv (as well as support code in libnx which would be trivial) - homebrew apps would need a recompile anyway with or without new ABI keys. Also, for that use case (hostio), romfs doesn't really make sense because you could just use assets in a folder inside the host filesystem instead of having to go through the trouble of building romfs (which can get pretty large). Finally, homebrew by definition is NRO formatted. Other formats should not be supported or promoted. --[[User:Fincs|Fincs]] ([[User talk:Fincs|talk]]) 19:47, 8 November 2018 (UTC)
+
+yellows8: It says nowhere in the homebrew ABI document that the NRO is required to be located on the SD card. If you are absolutely convinced that that should be an HBABI requirement, I would encourage you to add it to the document. I very much think that should not be an HBABI requirement though. The only things keeping homebrew on the SD card are libnx's behavior of reading its own executable combined with the small set of default-mounted filesystems that libnx understands. Aside from this behavior (which I'm trying to get changed), there is no reason to require that homebrew applications be located on the SD card.
+
+fincs: Apologies if I was unclear. When I said RomFS, I meant the filesystem that is visible to libnx applications under <code>romfs:/*</code> paths. For the hostio use case, if hostio were to be mounted under <code>hostio:</code>, the application would need to be written to tell whether it's on hostio or not and adjust its asset loading paths accordingly, whereas it would be significantly more convenient if the homebrew loader could override the <code>romfs:</code> mountpoint to use a hostio IFileSystem. I also disagree that homebrew is "by definition" NRO formatted. By convention, sure, and I'd even accept that this ABI does not apply to non-NRO formatted homebrew. I invite you to ignore that use case.
+
+Here's a different idea for you.
+
+    ==== Mount ====
+    This is used to request that a filesystem be mounted by the homebrew application.
+    
+    * '''Key:''' 15
+    * '''Value[0]:''' Pointer to a NULL-terminated string representing the desired mountpoint.
+    * '''Value[1]:''' Handle to a session implementing [[Filesystem_services#IFileSystem]].
+    
+    The length of the mountpoint shall be no longer than 32 characters, including the NULL terminator.
+    This key may be combined with the Argv key to specify the location of an application's executable.
+    
+This way, we can still override <code>romfs:/</code> with Mount["romfs", <IFileSystem>], or we can mount an arbitrary filesystem (Mount["myfs", <IFileSystem>]) and set argv[0] to a path on that new mountpoint (<code>myfs:/application.nro</code>) so that the application can still find its NRO file and read it back to provide the <code>romfs:/</code> mount even if the NRO is not located on the SD card. I've even specified a length limit to match fsdev requirements.
+
+--[[User:Misson20000|Misson20000]] ([[User talk:Misson20000|talk]]) 23:42, 9 November 2018 (UTC)

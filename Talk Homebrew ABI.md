@@ -102,3 +102,50 @@ application did not recognize it.
     supported or promoted. --[Fincs](User:Fincs "wikilink")
     ([talk](User%20talk:Fincs.md "wikilink")) 19:47, 8 November 2018
     (UTC)
+
+yellows8: It says nowhere in the homebrew ABI document that the NRO is
+required to be located on the SD card. If you are absolutely convinced
+that that should be an HBABI requirement, I would encourage you to add
+it to the document. I very much think that should not be an HBABI
+requirement though. The only things keeping homebrew on the SD card are
+libnx's behavior of reading its own executable combined with the small
+set of default-mounted filesystems that libnx understands. Aside from
+this behavior (which I'm trying to get changed), there is no reason to
+require that homebrew applications be located on the SD card.
+
+fincs: Apologies if I was unclear. When I said RomFS, I meant the
+filesystem that is visible to libnx applications under `romfs:/*` paths.
+For the hostio use case, if hostio were to be mounted under `hostio:`,
+the application would need to be written to tell whether it's on hostio
+or not and adjust its asset loading paths accordingly, whereas it would
+be significantly more convenient if the homebrew loader could override
+the `romfs:` mountpoint to use a hostio IFileSystem. I also disagree
+that homebrew is "by definition" NRO formatted. By convention, sure, and
+I'd even accept that this ABI does not apply to non-NRO formatted
+homebrew. I invite you to ignore that use case.
+
+Here's a different idea for
+you.
+
+`   ==== Mount ====`  
+`   This is used to request that a filesystem be mounted by the homebrew application.`  
+`   `  
+`   * `**`Key:`**` 15`  
+`   * `**`Value[0]:`**` Pointer to a NULL-terminated string representing the desired mountpoint.`  
+`   * `**`Value[1]:`**` Handle to a session implementing `[`Filesystem_services#IFileSystem`](Filesystem%20services#IFileSystem.md##IFileSystem "wikilink")`.`  
+`   `  
+`   The length of the mountpoint shall be no longer than 32 characters, including the NULL terminator.`  
+`   This key may be combined with the Argv key to specify the location of an application's executable.`  
+`   `
+
+This way, we can still override `romfs:/` with Mount\["romfs",
+<IFileSystem>\], or we can mount an arbitrary filesystem (Mount\["myfs",
+<IFileSystem>\]) and set argv\[0\] to a path on that new mountpoint
+(`myfs:/application.nro`) so that the application can still find its NRO
+file and read it back to provide the `romfs:/` mount even if the NRO is
+not located on the SD card. I've even specified a length limit to match
+fsdev requirements.
+
+\--[Misson20000](User:Misson20000 "wikilink")
+([talk](User%20talk:Misson20000.md "wikilink")) 23:42, 9 November 2018
+(UTC)
