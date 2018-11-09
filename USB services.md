@@ -516,7 +516,9 @@ Takes an input u32 and a type-0x6 output buffer, returns an
 
 The input u32 is from the u32 at entry+0 from the associated
 [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink")
-output entry. User-processes use size 0x1B8 for the output buffer.
+output entry. User-processes use size 0x1B8 for the output buffer. The
+output buffer contains the first 0x1B8-bytes from
+[\#UsbHsInterface](#UsbHsInterface "wikilink").
 
 ## IClientIfSession
 
