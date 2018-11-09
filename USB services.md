@@ -616,15 +616,26 @@ The input u32 specifies the total number of entries to read, this must
 fit within the specified buffer size. The output u32 is the total actual
 output entries.
 
-The buffer contains an array of 0x18-byte report structs.
+The buffer contains an array of 0x18-byte report
+structs.
 
 # UsbHsInterface
 
-| Offset | Size  | Description |
-| ------ | ----- | ----------- |
-| 0x0    | 0x228 |             |
+| Offset | Size | Description                                                                                     |
+| ------ | ---- | ----------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | ID value passed to other cmds.                                                                  |
+| 0x4    | 0x4? | deviceID                                                                                        |
+| 0x8    | 0x4? | ?                                                                                               |
+| 0xC    |      | usb\_interface\_descriptor                                                                      |
+| 0x23   | 0x69 | OUTPUT usb\_endpoint\_descriptors, 15 max.                                                      |
+| 0x8C   | 0x69 | INPUT usb\_endpoint\_descriptors, 15 max.                                                       |
+| 0x1B8  | ?    | "HsDevice-/L<val0>/P<portnum>/A<val1>" string (this is "FsDevice..." for the Dock USB 3.0 bus). |
+| 0x1F8  | 0x4? | busID                                                                                           |
+| 0x1FC  | 0x4? | Duplicate of +0x4.                                                                              |
+| 0x200  |      | usb\_device\_descriptor, then usb\_config\_descriptor immediately afterwards.                   |
+| 0x220  | 0x8  | Unknown u64 timestamp for when the device was inserted?                                         |
 
-This is a 0x228-byte struct.
+This is a 0x228-byte struct (unofficial name).
 
 # usb:pd
 

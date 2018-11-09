@@ -535,10 +535,30 @@ The buffer contains an array of 0x18-byte report structs.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x228 || 
+| 0x0 || 0x4 || ID value passed to other cmds.
+|-
+| 0x4 || 0x4? || deviceID
+|-
+| 0x8 || 0x4? || ?
+|-
+| 0xC || || usb_interface_descriptor
+|-
+| 0x23 || 0x69 || OUTPUT usb_endpoint_descriptors, 15 max.
+|-
+| 0x8C || 0x69 || INPUT usb_endpoint_descriptors, 15 max.
+|-
+| 0x1B8 || ? || "HsDevice-/L<val0>/P<portnum>/A<val1>" string (this is "FsDevice..." for the Dock USB 3.0 bus).
+|-
+| 0x1F8 || 0x4? || busID
+|-
+| 0x1FC || 0x4? || Duplicate of +0x4.
+|-
+| 0x200 || || usb_device_descriptor, then usb_config_descriptor immediately afterwards.
+|-
+| 0x220 || 0x8 || Unknown u64 timestamp for when the device was inserted?
 |}
 
-This is a 0x228-byte struct.
+This is a 0x228-byte struct (unofficial name).
 
 = usb:pd =
 This is "nn::usb::pd::detail::IPdManager".
