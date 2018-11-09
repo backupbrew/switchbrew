@@ -535,7 +535,7 @@ The buffer contains an array of 0x18-byte report structs.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x4 || ID value passed to other cmds.
+| 0x0 || 0x4 || ID value passed to other cmds. This is -1 with [[#QueryAllInterfaces]] output, hence this field is unused with that cmd.
 |-
 | 0x4 || 0x4? || deviceID
 |-
