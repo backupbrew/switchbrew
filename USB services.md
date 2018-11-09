@@ -477,15 +477,18 @@ Takes 1 copy-handle for the current process (0xFFFF8001).
 ## QueryAllInterfaces
 
 Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an
-output u32.
+output u32 total\_entries.
+
+The output buffer contains an array of
+[\#UsbHsInterface](#UsbHsInterface "wikilink").
 
 ## QueryAvailableInterfaces
 
 Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an
-output s32.
+output s32 total\_entries.
 
-The buffer contains an array of 0x228-byte interface structs. The output
-s32 is the total number of output entries.
+The output buffer contains an array of
+[\#UsbHsInterface](#UsbHsInterface "wikilink").
 
 HID-sysmodule uses the following for the input struct:
 `80 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00`
@@ -614,6 +617,14 @@ fit within the specified buffer size. The output u32 is the total actual
 output entries.
 
 The buffer contains an array of 0x18-byte report structs.
+
+# UsbHsInterface
+
+| Offset | Size  | Description |
+| ------ | ----- | ----------- |
+| 0x0    | 0x228 |             |
+
+This is a 0x228-byte struct.
 
 # usb:pd
 
