@@ -1384,6 +1384,8 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01006A600623E000 || Yōdanji || EUR JPN USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
+| 01006A800016E000 || Super Smash Bros. Ultimate || EUR JPN USA ||  || Digital / Cartridge || 0 || || Application / Game
+|-
 | 01006A80038FC000 || ACA NEOGEO ART OF FIGHTING || EUR JPN USA || 3.0.1 || Digital || 0 65536 || || Virtual Console
 |-
 | 01006AA006BE4000 || Tallowmere || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
