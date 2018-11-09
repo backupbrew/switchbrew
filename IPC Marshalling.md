@@ -312,13 +312,13 @@ This is an array of u32's, but individual parameters are generally
 stored as
 u64's.
 
-| Word | Description                                                                                     |
-| ---- | ----------------------------------------------------------------------------------------------- |
-| 0    | Magic ("SFCI" for requests, "SFCO" for responses) as u32.                                       |
-| 1    | Version as u32. 1 for NewRequest, 0 for Request.                                                |
-| 2    | Command id as u64 for requests, [error code](Error%20codes.md "wikilink") as u64 for responses. |
-| 3    | \[5.0.0+\] Token (for NewRequest only, non-domain messages).                                    |
-| 4... | Input parameters or return values                                                               |
+| Word | Description                                                                                                                         |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| 0    | Magic ("SFCI" for requests, "SFCO" for responses) as u32.                                                                           |
+| 1    | Version as u32. 1 for NewRequest, 0 for Request.                                                                                    |
+| 2    | Command id as u64 for requests, [error code](Error%20codes.md "wikilink") as u64 for responses.                                     |
+| 3    | \[5.0.0+\] Token (for NewRequest only, non-domain messages). On version \< 5.0.0, domain messages or Request messages, simply Zero. |
+| 4... | Input parameters or return values                                                                                                   |
 
 \[5.0.0+\] Version was incremented from 0 to 1, and a token value was
 introduced into raw\_data+12 (regardless of domain or not, in either
