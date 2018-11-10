@@ -175,3 +175,13 @@ Where does this "IFilesystem" come from?
 --[Yellows8](User:Yellows8 "wikilink")
 ([talk](User%20talk:Yellows8.md "wikilink")) 01:47, 10 November 2018
 (CET)
+
+Doesn't much matter as far as the application is concerned. Could be
+some save data that the loader opened from FS, could be some BIS
+filesystem, or, in my case, a custom IFileSystem implementation that
+came from a custom service. Just as long as it implements the
+IFileSystem interface.
+
+\--[Misson20000](User:Misson20000 "wikilink")
+([talk](User%20talk:Misson20000.md "wikilink")) 00:57, 10 November 2018
+(UTC)
