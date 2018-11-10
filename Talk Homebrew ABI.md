@@ -156,3 +156,14 @@ the latter besides only having sdmc mounted.
 --[Yellows8](User:Yellows8 "wikilink")
 ([talk](User%20talk:Yellows8.md "wikilink")) 00:05, 10 November 2018
 (UTC)
+
+For NextLoadPath? Sure, if you want to use NextLoadPath, it's best to
+give it a path to an NRO starting with "sdmc:/" *because that's all that
+nx-hbloader understands* and all that you want it to understand, which
+makes sense. But HBABI doesn't require that homebrew needs to be loaded
+by passing NextLoadPath back to the loader. After all, nx-hbmenu isn't
+loaded that way.
+
+\--[Misson20000](User:Misson20000 "wikilink")
+([talk](User%20talk:Misson20000.md "wikilink")) 00:27, 10 November 2018
+(UTC)
