@@ -650,6 +650,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xCC9D || 157 || 102 || Invalid PID
 |-
+| 0xAA3 || 163 ||  5 || System is booting up repair process without VOL+ held down.
+|-
+| 0xCA3 || 163 || 6 || System is booting up repair process that requires RepairTimeReviser but does not have special cartridge inserted.
+|-
 | 0xF0CD || 205 || 120 || IR image data not available/ready.
 |-
 | 0x35B || 347 || 1 || Failed to init SM.
