@@ -149,3 +149,10 @@ fsdev requirements.
 \--[Misson20000](User:Misson20000 "wikilink")
 ([talk](User%20talk:Misson20000.md "wikilink")) 23:42, 9 November 2018
 (UTC)
+
+[Homebrew\_ABI\#NextLoadPath](Homebrew%20ABI#NextLoadPath.md##NextLoadPath "wikilink")
+"NRO" "should start with "sdmc:/". Of course nx-hbloader doesn't enforce
+the latter besides only having sdmc mounted.
+--[Yellows8](User:Yellows8 "wikilink")
+([talk](User%20talk:Yellows8.md "wikilink")) 00:05, 10 November 2018
+(UTC)
