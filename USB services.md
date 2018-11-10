@@ -495,7 +495,7 @@ HID-sysmodule uses the following for the input struct:
 
 ## QueryAcquiredInterfaces
 
-Takes a type-0x6 output buffer and returns an output u32 total\_entries.
+Takes a type-0x6 output buffer and returns an output s32 total\_entries.
 
 The output buffer contains an array of
 [\#UsbHsInterface](#UsbHsInterface "wikilink"), for each interface which
