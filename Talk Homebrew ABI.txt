@@ -63,6 +63,6 @@ This way, we can still override <code>romfs:/</code> with Mount["romfs", <IFileS
 
 [[Homebrew_ABI#NextLoadPath]] "NRO" "should start with "sdmc:/". Of course nx-hbloader doesn't enforce the latter besides only having sdmc mounted. --[[User:Yellows8|Yellows8]] ([[User talk:Yellows8|talk]]) 00:05, 10 November 2018 (UTC)
 
-For NextLoadPath? Sure, if you want to use NextLoadPath, it's best to give it a path to an NRO starting with "sdmc:/" ''because that's all that nx-hbloader understands'' and all that you want it to understand, which makes sense. But HBABI doesn't require that homebrew needs to be loaded by passing NextLoadPath back to the loader. After all, nx-hbmenu isn't loaded that way.
+For NextLoadPath? Sure, if you want to use NextLoadPath, it's best to give it a path to an NRO starting with "sdmc:/" ''because that's all that nx-hbloader understands'' and all that you want it to understand, which makes sense. But HBABI doesn't require that homebrew needs to be loaded by passing NextLoadPath back to the loader. After all, nx-hbmenu isn't loaded that way. That's besides the point, anyway. The point is that whether or not this restriction is actually documented on the HBABI page, I want you to evaluate why this restriction exists and whether it's necessary or not.
 
 --[[User:Misson20000|Misson20000]] ([[User talk:Misson20000|talk]]) 00:27, 10 November 2018 (UTC)
