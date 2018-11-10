@@ -196,10 +196,11 @@ file.
 | 0x00  | 0x40   | [Save Struct](Filesystem%20services#Save%20Struct.md##Save_Struct "wikilink") |
 | 0x40  | 8      | Save owner ID                                                                 |
 | 0x48  | 8      | Timestamp                                                                     |
-| 0x50  | 4      | Unknown                                                                       |
+| 0x50  | 4      | Flags?                                                                        |
 | 0x54  | 4      | Unused?                                                                       |
 | 0x58  | 8      | Size of usable save data                                                      |
 | 0x60  | 8      | Journal size                                                                  |
+| 0x68  | 8      | Commit ID                                                                     |
 | 0x200 |        | End                                                                           |
 
 ## Remap Storage

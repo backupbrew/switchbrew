@@ -560,7 +560,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x50
 | 4
-| Unknown
+| Flags?
 |-
 | 0x54
 | 4
@@ -573,6 +573,10 @@ This section contains information about the structure of the save file.
 | 0x60
 | 8
 | Journal size
+|-
+| 0x68
+| 8
+| Commit ID
 |-
 | 0x200
 | 
