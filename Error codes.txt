@@ -342,6 +342,14 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x249802 || 2 || 4684 || Invalid FAT file number.
 |-
+| 0x249C02 || 2 || 4686 || Invalid FAT format for BIS User partition.
+|-
+| 0x249E02 || 2 || 4687 || Invalid FAT format for BIS System partition.
+|-
+| 0x24A002 || 2 || 4688 || Invalid FAT format for BIS Safe partition.
+|-
+| 0x24A202 || 2 || 4689 || Invalid FAT format for BIS Calibration partition.
+|-
 | 0x250E02 || 2 || 4743 || [[NAX0|Corrupted]] NAX0 header.
 |-
 | 0x251002 || 2 || 4744 || Invalid [[NAX0]] magicnum.
