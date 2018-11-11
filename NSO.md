@@ -1,8 +1,9 @@
 NSO is the main executable format.
 
 It starts with the "NSO" header and mainly describes .text, .rodata, and
-.data segments (like a short-form of ELF program
-headers):
+.data segments (like a short-form of ELF program headers). If the
+segments are compressed, they are compressed using
+LZ4.
 
 # NSO Header
 
@@ -95,6 +96,6 @@ argdata\_addr:
   - The copy of the args used with the argv array is written by official
     processes to actual\_argdata\_string+actual\_argdata\_size.
   - argv\_ptrarray written by official processes is at
-    (args\_copy+actual\_argdata\_size) + 0x9 & ~0x7.
+    (args\_copy+actual\_argdata\_size) + 0x9 & \~0x7.
 
 [Category:File formats](Category:File_formats "wikilink")

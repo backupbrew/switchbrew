@@ -1,7 +1,7 @@
 [[Category:File formats]]
 NSO is the main executable format.
 
-It starts with the "NSO" header and mainly describes .text, .rodata, and .data segments (like a short-form of ELF program headers):
+It starts with the "NSO" header and mainly describes .text, .rodata, and .data segments (like a short-form of ELF program headers). If the segments are compressed, they are compressed using LZ4.
 
 = NSO Header =
 {| class="wikitable" border="1"
