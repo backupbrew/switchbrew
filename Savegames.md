@@ -89,6 +89,12 @@ file.
 | 0x148 | 8      | File allocation table virtual offset                         |
 | 0x150 | 8      | File allocation table size                                   |
 | 0x158 | 1      | Index of the active duplex master bitmap                     |
+| 0x160 | 8      | \[5.0.0+\] Unknown header offset A                           |
+| 0x168 | 8      | \[5.0.0+\] Unknown header offset B                           |
+| 0x170 | 8      | \[5.0.0+\] Unknown offset into duplex storage                |
+| 0x178 | 8      | \[5.0.0+\] Size for the above data                           |
+| 0x180 | 8      | \[5.0.0+\] Unknown offset into duplex storage                |
+| 0x188 | 8      | \[5.0.0+\] Size for the above data                           |
 | 0x200 |        | End                                                          |
 
 ### Duplex header
