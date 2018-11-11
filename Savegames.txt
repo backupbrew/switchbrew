@@ -261,27 +261,27 @@ This section contains information about the structure of the save file.
 |-
 | 0x160
 | 8
-| [5.0.0+] Unknown header offset A
+| [5.0.0+] File allocation table IVFC master hash offset A
 |-
 | 0x168
 | 8
-| [5.0.0+] Unknown header offset B
+| [5.0.0+] File allocation table IVFC master hash offset B
 |-
 | 0x170
 | 8
-| [5.0.0+] Unknown offset into remap storage
+| [5.0.0+] File allocation table IVFC level 1 virtual offset
 |-
 | 0x178
 | 8
-| [5.0.0+] Size for the above data
+| [5.0.0+] File allocation table IVFC level 1 size
 |-
 | 0x180
 | 8
-| [5.0.0+] Unknown offset into remap storage
+| [5.0.0+] File allocation table IVFC level 2 virtual offset
 |-
 | 0x188
 | 8
-| [5.0.0+] Size for the above data
+| [5.0.0+] File allocation table IVFC level 2 size
 |-
 | 0x200
 | 
