@@ -97,7 +97,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x004
 | 4
-| Version? (Upper 2 bytes must be 0x0004)
+| Version (Upper 2 bytes must be 0x0004)
 |-
 | 0x008
 | 32
@@ -304,7 +304,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Version? (Upper 2 bytes must be 0x0001)
+| Version (Upper 2 bytes must be 0x0001)
 |-
 | 0x08
 | 8
@@ -362,7 +362,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Version? (Upper 2 bytes must be 0x0002)
+| Version (Upper 2 bytes must be 0x0002)
 |-
 | 0x08
 | 4
@@ -425,7 +425,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Version? (Must be 0x10000 or less)
+| Version (Must be 0x10000 or less)
 |-
 | 0x08
 | 8
@@ -439,25 +439,39 @@ This section contains information about the structure of the save file.
 | 8
 | Block size
 |-
-| 
-| 
-| The below fields are treated as a separate subheader
-|-
 | 0x20
-| 4
-| Version? (Must be 0 or 1)
-|-
-| 0x24
-| 4
-| Main data block count
-|-
-| 0x28
-| 4
-| Journal block count
+| 16
+| Journal map header
 |-
 | 0x200
 | 
 | End
+|-
+|}
+
+==== Journal map header ====
+
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0x00
+| 4
+| Version (Must be 0 or 1)
+|-
+| 0x04
+| 4
+| Main data block count
+|-
+| 0x08
+| 4
+| Journal block count
+|-
+| 0x0C
+| 4
+| Padding
 |-
 |}
 
@@ -477,7 +491,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Version? (Upper 2 bytes must be 0x0006)
+| Version (Upper 2 bytes must be 0x0006)
 |-
 | 0x08
 | 8
@@ -487,44 +501,54 @@ This section contains information about the structure of the save file.
 | 8
 | Block Size
 |-
-| 
-| 
-| The below fields are treated as a separate subheader
-|-
 | 0x18
+| 0x30
+| FAT header
+|-
+|}
+
+==== File allocation table header ====
+
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0x00
 | 8
 | Block size
 |-
-| 0x20
+| 0x08
 | 8
 | FAT offset
 |-
-| 0x28
+| 0x10
 | 4
 | FAT entry count
 |-
-| 0x2C
+| 0x14
 | 4
 | Padding
 |-
-| 0x30
+| 0x18
 | 8
 | Data offset
 |-
-| 0x38
+| 0x20
 | 4
 | Data block count
 |-
-| 0x3C
+| 0x24
 | 4
 | Padding
 |-
-| 0x40
-| 8
+| 0x28
+| 4
 | Directory table block index
 |-
-| 0x48
-| 8
+| 0x2C
+| 4
 | File table block index
 |-
 |}
@@ -543,7 +567,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Version? (Must be 0x10000 or less)
+| Version (Must be 0x10000 or less)
 |-
 | 0x08
 | 4

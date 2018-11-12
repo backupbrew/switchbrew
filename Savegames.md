@@ -48,7 +48,7 @@ file.
 | Start | Length | Description                                                  |
 | ----- | ------ | ------------------------------------------------------------ |
 | 0x000 | 4      | Magic ("DISF")                                               |
-| 0x004 | 4      | Version? (Upper 2 bytes must be 0x0004)                      |
+| 0x004 | 4      | Version (Upper 2 bytes must be 0x0004)                       |
 | 0x008 | 32     | Hash of start of DPFS to end of 0x4000 block (0x300-0x3FFF)  |
 | 0x028 | 8      | Main data remap mapping table offset                         |
 | 0x030 | 8      | Main data remap mapping table size                           |
@@ -101,20 +101,20 @@ file.
 
   - Block sizes are stored as powers of 2
 
-| Start | Length | Description                             |
-| ----- | ------ | --------------------------------------- |
-| 0x00  | 4      | Magic ("DPFS")                          |
-| 0x04  | 4      | Version? (Upper 2 bytes must be 0x0001) |
-| 0x08  | 8      | Master bitmap offset                    |
-| 0x10  | 8      | Master bitmap size                      |
-| 0x18  | 4      | Master bitmap block size power          |
-| 0x1C  | 8      | Level 1 offset                          |
-| 0x24  | 8      | Level 1 size                            |
-| 0x2C  | 4      | Level 1 block size power                |
-| 0x30  | 8      | Level 2 offset                          |
-| 0x38  | 8      | Level 2 size                            |
-| 0x40  | 4      | Level 2 block size power                |
-|       |        |                                         |
+| Start | Length | Description                            |
+| ----- | ------ | -------------------------------------- |
+| 0x00  | 4      | Magic ("DPFS")                         |
+| 0x04  | 4      | Version (Upper 2 bytes must be 0x0001) |
+| 0x08  | 8      | Master bitmap offset                   |
+| 0x10  | 8      | Master bitmap size                     |
+| 0x18  | 4      | Master bitmap block size power         |
+| 0x1C  | 8      | Level 1 offset                         |
+| 0x24  | 8      | Level 1 size                           |
+| 0x2C  | 4      | Level 1 block size power               |
+| 0x30  | 8      | Level 2 offset                         |
+| 0x38  | 8      | Level 2 size                           |
+| 0x40  | 4      | Level 2 block size power               |
+|       |        |                                        |
 
 ### Integrity verification header
 
@@ -125,7 +125,7 @@ file.
 | Start | Length  | Description                             |
 | ----- | ------- | --------------------------------------- |
 | 0x00  | 4       | Magic ("IVFC")                          |
-| 0x04  | 4       | Version? (Upper 2 bytes must be 0x0002) |
+| 0x04  | 4       | Version (Upper 2 bytes must be 0x0002)  |
 | 0x08  | 4       | Master hash size                        |
 | 0xC   | 4       | Number of levels (Unused in save files) |
 | 0x10  | 0x18\*6 | Level information for up to 6 levels    |
@@ -147,19 +147,26 @@ file.
 
 ### Journal header
 
-| Start | Length | Description                                          |
-| ----- | ------ | ---------------------------------------------------- |
-| 0x00  | 4      | Magic ("JNGL")                                       |
-| 0x04  | 4      | Version? (Must be 0x10000 or less)                   |
-| 0x08  | 8      | Total size (Incl. journal)                           |
-| 0x10  | 8      | Journal size                                         |
-| 0x18  | 8      | Block size                                           |
-|       |        | The below fields are treated as a separate subheader |
-| 0x20  | 4      | Version? (Must be 0 or 1)                            |
-| 0x24  | 4      | Main data block count                                |
-| 0x28  | 4      | Journal block count                                  |
-| 0x200 |        | End                                                  |
-|       |        |                                                      |
+| Start | Length | Description                       |
+| ----- | ------ | --------------------------------- |
+| 0x00  | 4      | Magic ("JNGL")                    |
+| 0x04  | 4      | Version (Must be 0x10000 or less) |
+| 0x08  | 8      | Total size (Incl. journal)        |
+| 0x10  | 8      | Journal size                      |
+| 0x18  | 8      | Block size                        |
+| 0x20  | 16     | Journal map header                |
+| 0x200 |        | End                               |
+|       |        |                                   |
+
+#### Journal map header
+
+| Start | Length | Description              |
+| ----- | ------ | ------------------------ |
+| 0x00  | 4      | Version (Must be 0 or 1) |
+| 0x04  | 4      | Main data block count    |
+| 0x08  | 4      | Journal block count      |
+| 0x0C  | 4      | Padding                  |
+|       |        |                          |
 
 ### Save FS header
 
@@ -169,27 +176,33 @@ file.
 | Start | Length | Description                                                |
 | ----- | ------ | ---------------------------------------------------------- |
 | 0x00  | 4      | Magic ("SAVE")                                             |
-| 0x04  | 4      | Version? (Upper 2 bytes must be 0x0006)                    |
+| 0x04  | 4      | Version (Upper 2 bytes must be 0x0006)                     |
 | 0x08  | 8      | Number of blocks. Does not change if save file is resized. |
 | 0x10  | 8      | Block Size                                                 |
-|       |        | The below fields are treated as a separate subheader       |
-| 0x18  | 8      | Block size                                                 |
-| 0x20  | 8      | FAT offset                                                 |
-| 0x28  | 4      | FAT entry count                                            |
-| 0x2C  | 4      | Padding                                                    |
-| 0x30  | 8      | Data offset                                                |
-| 0x38  | 4      | Data block count                                           |
-| 0x3C  | 4      | Padding                                                    |
-| 0x40  | 8      | Directory table block index                                |
-| 0x48  | 8      | File table block index                                     |
+| 0x18  | 0x30   | FAT header                                                 |
 |       |        |                                                            |
+
+#### File allocation table header
+
+| Start | Length | Description                 |
+| ----- | ------ | --------------------------- |
+| 0x00  | 8      | Block size                  |
+| 0x08  | 8      | FAT offset                  |
+| 0x10  | 4      | FAT entry count             |
+| 0x14  | 4      | Padding                     |
+| 0x18  | 8      | Data offset                 |
+| 0x20  | 4      | Data block count            |
+| 0x24  | 4      | Padding                     |
+| 0x28  | 4      | Directory table block index |
+| 0x2C  | 4      | File table block index      |
+|       |        |                             |
 
 ### Remap storage header
 
 | Start | Length | Description                                                      |
 | ----- | ------ | ---------------------------------------------------------------- |
 | 0x00  | 4      | Magic ("RMAP")                                                   |
-| 0x04  | 4      | Version? (Must be 0x10000 or less)                               |
+| 0x04  | 4      | Version (Must be 0x10000 or less)                                |
 | 0x08  | 4      | Number of remapping entries                                      |
 | 0x0C  | 4      | Number of remapping segments                                     |
 | 0x10  | 4      | Number of bits reserved for the segment index in virtual offsets |
