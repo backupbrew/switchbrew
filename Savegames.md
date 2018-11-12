@@ -157,7 +157,7 @@ file.
 |       |        | The below fields are treated as a separate subheader |
 | 0x20  | 4      | Version? (Must be 0 or 1)                            |
 | 0x24  | 4      | Main data block count                                |
-| 0x28  | 8      | Journal block count                                  |
+| 0x28  | 4      | Journal block count                                  |
 | 0x200 |        | End                                                  |
 |       |        |                                                      |
 

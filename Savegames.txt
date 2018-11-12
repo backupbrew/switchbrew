@@ -452,7 +452,7 @@ This section contains information about the structure of the save file.
 | Main data block count
 |-
 | 0x28
-| 8
+| 4
 | Journal block count
 |-
 | 0x200
