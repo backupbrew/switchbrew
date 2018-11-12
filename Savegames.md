@@ -97,25 +97,6 @@ file.
 | 0x188 | 8      | \[5.0.0+\] File allocation table IVFC level 2 size           |
 | 0x200 |        | End                                                          |
 
-### Duplex header
-
-  - Block sizes are stored as powers of 2
-
-| Start | Length | Description                            |
-| ----- | ------ | -------------------------------------- |
-| 0x00  | 4      | Magic ("DPFS")                         |
-| 0x04  | 4      | Version (Upper 2 bytes must be 0x0001) |
-| 0x08  | 8      | Master bitmap offset                   |
-| 0x10  | 8      | Master bitmap size                     |
-| 0x18  | 4      | Master bitmap block size power         |
-| 0x1C  | 8      | Level 1 offset                         |
-| 0x24  | 8      | Level 1 size                           |
-| 0x2C  | 4      | Level 1 block size power               |
-| 0x30  | 8      | Level 2 offset                         |
-| 0x38  | 8      | Level 2 size                           |
-| 0x40  | 4      | Level 2 block size power               |
-|       |        |                                        |
-
 ### Integrity verification header
 
   - Offsets for levels 1-3 come from the metadata remap storage
@@ -168,46 +149,6 @@ file.
 | 0x0C  | 4      | Padding                  |
 |       |        |                          |
 
-### Save FS header
-
-  - Structure is different than
-3DS.
-
-| Start | Length | Description                                                |
-| ----- | ------ | ---------------------------------------------------------- |
-| 0x00  | 4      | Magic ("SAVE")                                             |
-| 0x04  | 4      | Version (Upper 2 bytes must be 0x0006)                     |
-| 0x08  | 8      | Number of blocks. Does not change if save file is resized. |
-| 0x10  | 8      | Block Size                                                 |
-| 0x18  | 0x30   | FAT header                                                 |
-|       |        |                                                            |
-
-#### File allocation table header
-
-| Start | Length | Description                 |
-| ----- | ------ | --------------------------- |
-| 0x00  | 8      | Block size                  |
-| 0x08  | 8      | FAT offset                  |
-| 0x10  | 4      | FAT entry count             |
-| 0x14  | 4      | Padding                     |
-| 0x18  | 8      | Data offset                 |
-| 0x20  | 4      | Data block count            |
-| 0x24  | 4      | Padding                     |
-| 0x28  | 4      | Directory table block index |
-| 0x2C  | 4      | File table block index      |
-|       |        |                             |
-
-### Remap storage header
-
-| Start | Length | Description                                                      |
-| ----- | ------ | ---------------------------------------------------------------- |
-| 0x00  | 4      | Magic ("RMAP")                                                   |
-| 0x04  | 4      | Version (Must be 0x10000 or less)                                |
-| 0x08  | 4      | Number of remapping entries                                      |
-| 0x0C  | 4      | Number of remapping segments                                     |
-| 0x10  | 4      | Number of bits reserved for the segment index in virtual offsets |
-| 0x40  |        | End                                                              |
-
 ### Extra data
 
 | Start | Length | Description                                                                   |
@@ -249,7 +190,19 @@ size of these sections is controlled by the remap header.
 Example: 0x3000000000000100  
 If 4 bits were reserved for the segment index, the offset would be split
 like this, representing offset 0x100 of segment 3.  
-Segment index: 0x3 Offset: 0x000000000000100
+Segment index: 0x3 Offset:
+0x000000000000100
+
+### Remap storage header
+
+| Start | Length | Description                                                      |
+| ----- | ------ | ---------------------------------------------------------------- |
+| 0x00  | 4      | Magic ("RMAP")                                                   |
+| 0x04  | 4      | Version (Must be 0x10000 or less)                                |
+| 0x08  | 4      | Number of remapping entries                                      |
+| 0x0C  | 4      | Number of remapping segments                                     |
+| 0x10  | 4      | Number of bits reserved for the segment index in virtual offsets |
+| 0x40  |        | End                                                              |
 
 ### Remapping Entry
 
@@ -301,7 +254,55 @@ When writing to the storage, data will be written to the inactive blocks
 and inactive bitmaps. When the data is committed the bit in the save
 file header is flipped, changing which master bitmap is active.
 
-## Files
+### Duplex header
+
+  - Block sizes are stored as powers of 2
+
+| Start | Length | Description                            |
+| ----- | ------ | -------------------------------------- |
+| 0x00  | 4      | Magic ("DPFS")                         |
+| 0x04  | 4      | Version (Upper 2 bytes must be 0x0001) |
+| 0x08  | 8      | Master bitmap offset                   |
+| 0x10  | 8      | Master bitmap size                     |
+| 0x18  | 4      | Master bitmap block size power         |
+| 0x1C  | 8      | Level 1 offset                         |
+| 0x24  | 8      | Level 1 size                           |
+| 0x2C  | 4      | Level 1 block size power               |
+| 0x30  | 8      | Level 2 offset                         |
+| 0x38  | 8      | Level 2 size                           |
+| 0x40  | 4      | Level 2 block size power               |
+|       |        |                                        |
+
+## Save FS
+
+### Save FS header
+
+  - Structure is different than
+3DS.
+
+| Start | Length | Description                                                |
+| ----- | ------ | ---------------------------------------------------------- |
+| 0x00  | 4      | Magic ("SAVE")                                             |
+| 0x04  | 4      | Version (Upper 2 bytes must be 0x0006)                     |
+| 0x08  | 8      | Number of blocks. Does not change if save file is resized. |
+| 0x10  | 8      | Block Size                                                 |
+| 0x18  | 0x30   | FAT header                                                 |
+|       |        |                                                            |
+
+### File allocation table header
+
+| Start | Length | Description                 |
+| ----- | ------ | --------------------------- |
+| 0x00  | 8      | Block size                  |
+| 0x08  | 8      | FAT offset                  |
+| 0x10  | 4      | FAT entry count             |
+| 0x14  | 4      | Padding                     |
+| 0x18  | 8      | Data offset                 |
+| 0x20  | 4      | Data block count            |
+| 0x24  | 4      | Padding                     |
+| 0x28  | 4      | Directory table block index |
+| 0x2C  | 4      | File table block index      |
+|       |        |                             |
 
 ### Directory Table Entry
 
