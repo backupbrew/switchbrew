@@ -125,6 +125,7 @@ fatal-errors, since the Description ends with bit21.
 
 | Value             | Module | Description | Notes                                                                                                                                                                                |
 | ----------------- | ------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0E01            | 1      | 7           | Session count exceeded                                                                                                                                                               |
 | 0x1C01            | 1      | 14          | Invalid kernel capability descriptor                                                                                                                                                 |
 | 0x4201            | 1      | 33          | Not Implemented                                                                                                                                                                      |
 | 0x7601            | 1      | 59          | Thread terminated/termination requested                                                                                                                                              |
