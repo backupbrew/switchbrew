@@ -179,3 +179,14 @@ Many changes were made to add more detail to reports. In particular:
         build IDs read out of .rodata and added to the report. This
         fixes the problem of crash reports in previous versions not
         including information on ASLR.
+
+## [6.1.0](6.1.0.md "wikilink")
+
+Support was improved for detecting code regions. In particular:
+
+  - The number of processable code regions was increased from 16 to 96.
+  - Instead of processing the crashing thread's PC or LR, now both are
+    processed, and additionally every address in the thread's stacktrace
+    are processed.
+      - If the crashed module is an application, this is further done
+        for all threads.
