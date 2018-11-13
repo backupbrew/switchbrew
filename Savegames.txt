@@ -6,6 +6,8 @@ The header is 0x4000 bytes long.
 
 There are 2 headers stored at 0x0 and 0x4000, presumably for commit and rollback purposes.
 
+Decimal versions are separated as Major, Minor, Micro, and Bugfix with each using one byte. e.g. version 3.4.5.6 would be 0x03040506.
+
 {| class="wikitable"
 |-
 ! Image offset
@@ -97,7 +99,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x004
 | 4
-| Version (Upper 2 bytes must be 0x0004)
+| Version (Major version must be 4 or 5. Only system version 5.0.0+ can read version 5 save files)
 |-
 | 0x008
 | 32
@@ -306,7 +308,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Version (Upper 2 bytes must be 0x0002)
+| Version (0.2.x.x)
 |-
 | 0x08
 | 4
@@ -369,7 +371,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x04
 | 4
-| Version (Must be 0x10000 or less)
+| Version (Must be 0.0.x.x or 0.1.0.0)
 |-
 | 0x08
 | 8
@@ -403,7 +405,7 @@ This section contains information about the structure of the save file.
 |-
 | 0x00
 | 4
-| Version (Must be 0 or 1)
+| Version (Stored as a normal 32-bit integer. Must be 0 or 1)
 |-
 | 0x04
 | 4
@@ -494,7 +496,7 @@ Segment index: 0x3 Offset: 0x000000000000100
 |-
 | 0x04
 | 4
-| Version (Must be 0x10000 or less)
+| Version (Must be 0.0.x.x or 0.1.x.x)
 |-
 | 0x08
 | 4
@@ -579,7 +581,7 @@ This allows for atomic operations on the Hierarchical Duplex Storage. When writi
 |-
 | 0x04
 | 4
-| Version (Upper 2 bytes must be 0x0001)
+| Version (0.1.x.x)
 |-
 | 0x08
 | 8
@@ -637,7 +639,7 @@ This allows for atomic operations on the Hierarchical Duplex Storage. When writi
 |-
 | 0x04
 | 4
-| Version (Upper 2 bytes must be 0x0006)
+| Version (0.6.x.x)
 |-
 | 0x08
 | 8

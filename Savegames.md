@@ -10,6 +10,9 @@ The header is 0x4000 bytes long.
 There are 2 headers stored at 0x0 and 0x4000, presumably for commit and
 rollback purposes.
 
+Decimal versions are separated as Major, Minor, Micro, and Bugfix with
+each using one byte. e.g. version 3.4.5.6 would be 0x03040506.
+
 | Image offset | Length | Description                   |
 | ------------ | ------ | ----------------------------- |
 | 0x000        | 0x100  | AES-CMAC header               |
@@ -45,57 +48,57 @@ seed.
 This section contains information about the structure of the save
 file.
 
-| Start | Length | Description                                                  |
-| ----- | ------ | ------------------------------------------------------------ |
-| 0x000 | 4      | Magic ("DISF")                                               |
-| 0x004 | 4      | Version (Upper 2 bytes must be 0x0004)                       |
-| 0x008 | 32     | Hash of start of DPFS to end of 0x4000 block (0x300-0x3FFF)  |
-| 0x028 | 8      | Main data remap mapping table offset                         |
-| 0x030 | 8      | Main data remap mapping table size                           |
-| 0x038 | 8      | Meta data remap mapping table offset                         |
-| 0x040 | 8      | Meta data remap mapping table size                           |
-| 0x048 | 8      | Main data remap offset                                       |
-| 0x050 | 8      | Main data remap size                                         |
-| 0x058 | 8      | Duplex level 1 virtual offset A                              |
-| 0x060 | 8      | Duplex level 1 virtual offset B                              |
-| 0x068 | 8      | Duplex level 1 size                                          |
-| 0x070 | 8      | Duplex level 2 virtual offset A                              |
-| 0x078 | 8      | Duplex level 2 virtual offset B                              |
-| 0x080 | 8      | Duplex level 2 size                                          |
-| 0x088 | 8      | Journal storage virtual offset                               |
-| 0x090 | 8      | Journal storage data size A                                  |
-| 0x098 | 8      | Journal storage data size B                                  |
-| 0x0A0 | 8      | Journal storage journal size                                 |
-| 0x0A8 | 8      | Duplex master bitmap offset A                                |
-| 0x0B0 | 8      | Duplex master bitmap offset B                                |
-| 0x0B8 | 8      | Duplex master bitmap size                                    |
-| 0x0C0 | 8      | IVFC master hash offset A                                    |
-| 0x0C8 | 8      | IVFC master hash offset B                                    |
-| 0x0D0 | 8      | IVFC master hash size                                        |
-| 0x0D8 | 8      | Journal block table virtual offset                           |
-| 0x0E0 | 8      | Journal block table size                                     |
-| 0x0E8 | 8      | Virtual offset of bitmap of modified physical journal blocks |
-| 0x0F0 | 8      | Size of bitmap of modified physical journal blocks           |
-| 0x0F8 | 8      | Virtual offset of bitmap of modified virtual journal blocks  |
-| 0x100 | 8      | Size of bitmap of modified virtual journal blocks            |
-| 0x108 | 8      | Virtual offset of bitmap of free journal blocks              |
-| 0x110 | 8      | Size of bitmap of free journal blocks                        |
-| 0x118 | 8      | IVFC level 1 virtual offset                                  |
-| 0x120 | 8      | IVFC level 1 size                                            |
-| 0x128 | 8      | IVFC level 2 virtual offset                                  |
-| 0x130 | 8      | IVFC level 2 size                                            |
-| 0x138 | 8      | IVFC level 3 virtual offset                                  |
-| 0x140 | 8      | IVFC level 3 size                                            |
-| 0x148 | 8      | File allocation table virtual offset                         |
-| 0x150 | 8      | File allocation table size                                   |
-| 0x158 | 1      | Index of the active duplex master bitmap                     |
-| 0x160 | 8      | \[5.0.0+\] File allocation table IVFC master hash offset A   |
-| 0x168 | 8      | \[5.0.0+\] File allocation table IVFC master hash offset B   |
-| 0x170 | 8      | \[5.0.0+\] File allocation table IVFC level 1 virtual offset |
-| 0x178 | 8      | \[5.0.0+\] File allocation table IVFC level 1 size           |
-| 0x180 | 8      | \[5.0.0+\] File allocation table IVFC level 2 virtual offset |
-| 0x188 | 8      | \[5.0.0+\] File allocation table IVFC level 2 size           |
-| 0x200 |        | End                                                          |
+| Start | Length | Description                                                                                      |
+| ----- | ------ | ------------------------------------------------------------------------------------------------ |
+| 0x000 | 4      | Magic ("DISF")                                                                                   |
+| 0x004 | 4      | Version (Major version must be 4 or 5. Only system version 5.0.0+ can read version 5 save files) |
+| 0x008 | 32     | Hash of start of DPFS to end of 0x4000 block (0x300-0x3FFF)                                      |
+| 0x028 | 8      | Main data remap mapping table offset                                                             |
+| 0x030 | 8      | Main data remap mapping table size                                                               |
+| 0x038 | 8      | Meta data remap mapping table offset                                                             |
+| 0x040 | 8      | Meta data remap mapping table size                                                               |
+| 0x048 | 8      | Main data remap offset                                                                           |
+| 0x050 | 8      | Main data remap size                                                                             |
+| 0x058 | 8      | Duplex level 1 virtual offset A                                                                  |
+| 0x060 | 8      | Duplex level 1 virtual offset B                                                                  |
+| 0x068 | 8      | Duplex level 1 size                                                                              |
+| 0x070 | 8      | Duplex level 2 virtual offset A                                                                  |
+| 0x078 | 8      | Duplex level 2 virtual offset B                                                                  |
+| 0x080 | 8      | Duplex level 2 size                                                                              |
+| 0x088 | 8      | Journal storage virtual offset                                                                   |
+| 0x090 | 8      | Journal storage data size A                                                                      |
+| 0x098 | 8      | Journal storage data size B                                                                      |
+| 0x0A0 | 8      | Journal storage journal size                                                                     |
+| 0x0A8 | 8      | Duplex master bitmap offset A                                                                    |
+| 0x0B0 | 8      | Duplex master bitmap offset B                                                                    |
+| 0x0B8 | 8      | Duplex master bitmap size                                                                        |
+| 0x0C0 | 8      | IVFC master hash offset A                                                                        |
+| 0x0C8 | 8      | IVFC master hash offset B                                                                        |
+| 0x0D0 | 8      | IVFC master hash size                                                                            |
+| 0x0D8 | 8      | Journal block table virtual offset                                                               |
+| 0x0E0 | 8      | Journal block table size                                                                         |
+| 0x0E8 | 8      | Virtual offset of bitmap of modified physical journal blocks                                     |
+| 0x0F0 | 8      | Size of bitmap of modified physical journal blocks                                               |
+| 0x0F8 | 8      | Virtual offset of bitmap of modified virtual journal blocks                                      |
+| 0x100 | 8      | Size of bitmap of modified virtual journal blocks                                                |
+| 0x108 | 8      | Virtual offset of bitmap of free journal blocks                                                  |
+| 0x110 | 8      | Size of bitmap of free journal blocks                                                            |
+| 0x118 | 8      | IVFC level 1 virtual offset                                                                      |
+| 0x120 | 8      | IVFC level 1 size                                                                                |
+| 0x128 | 8      | IVFC level 2 virtual offset                                                                      |
+| 0x130 | 8      | IVFC level 2 size                                                                                |
+| 0x138 | 8      | IVFC level 3 virtual offset                                                                      |
+| 0x140 | 8      | IVFC level 3 size                                                                                |
+| 0x148 | 8      | File allocation table virtual offset                                                             |
+| 0x150 | 8      | File allocation table size                                                                       |
+| 0x158 | 1      | Index of the active duplex master bitmap                                                         |
+| 0x160 | 8      | \[5.0.0+\] File allocation table IVFC master hash offset A                                       |
+| 0x168 | 8      | \[5.0.0+\] File allocation table IVFC master hash offset B                                       |
+| 0x170 | 8      | \[5.0.0+\] File allocation table IVFC level 1 virtual offset                                     |
+| 0x178 | 8      | \[5.0.0+\] File allocation table IVFC level 1 size                                               |
+| 0x180 | 8      | \[5.0.0+\] File allocation table IVFC level 2 virtual offset                                     |
+| 0x188 | 8      | \[5.0.0+\] File allocation table IVFC level 2 size                                               |
+| 0x200 |        | End                                                                                              |
 
 ### Integrity verification header
 
@@ -106,7 +109,7 @@ file.
 | Start | Length  | Description                             |
 | ----- | ------- | --------------------------------------- |
 | 0x00  | 4       | Magic ("IVFC")                          |
-| 0x04  | 4       | Version (Upper 2 bytes must be 0x0002)  |
+| 0x04  | 4       | Version (0.2.x.x)                       |
 | 0x08  | 4       | Master hash size                        |
 | 0xC   | 4       | Number of levels (Unused in save files) |
 | 0x10  | 0x18\*6 | Level information for up to 6 levels    |
@@ -128,26 +131,26 @@ file.
 
 ### Journal header
 
-| Start | Length | Description                       |
-| ----- | ------ | --------------------------------- |
-| 0x00  | 4      | Magic ("JNGL")                    |
-| 0x04  | 4      | Version (Must be 0x10000 or less) |
-| 0x08  | 8      | Total size (Incl. journal)        |
-| 0x10  | 8      | Journal size                      |
-| 0x18  | 8      | Block size                        |
-| 0x20  | 16     | Journal map header                |
-| 0x200 |        | End                               |
-|       |        |                                   |
+| Start | Length | Description                          |
+| ----- | ------ | ------------------------------------ |
+| 0x00  | 4      | Magic ("JNGL")                       |
+| 0x04  | 4      | Version (Must be 0.0.x.x or 0.1.0.0) |
+| 0x08  | 8      | Total size (Incl. journal)           |
+| 0x10  | 8      | Journal size                         |
+| 0x18  | 8      | Block size                           |
+| 0x20  | 16     | Journal map header                   |
+| 0x200 |        | End                                  |
+|       |        |                                      |
 
 #### Journal map header
 
-| Start | Length | Description              |
-| ----- | ------ | ------------------------ |
-| 0x00  | 4      | Version (Must be 0 or 1) |
-| 0x04  | 4      | Main data block count    |
-| 0x08  | 4      | Journal block count      |
-| 0x0C  | 4      | Padding                  |
-|       |        |                          |
+| Start | Length | Description                                                 |
+| ----- | ------ | ----------------------------------------------------------- |
+| 0x00  | 4      | Version (Stored as a normal 32-bit integer. Must be 0 or 1) |
+| 0x04  | 4      | Main data block count                                       |
+| 0x08  | 4      | Journal block count                                         |
+| 0x0C  | 4      | Padding                                                     |
+|       |        |                                                             |
 
 ### Extra data
 
@@ -198,7 +201,7 @@ Segment index: 0x3 Offset:
 | Start | Length | Description                                                      |
 | ----- | ------ | ---------------------------------------------------------------- |
 | 0x00  | 4      | Magic ("RMAP")                                                   |
-| 0x04  | 4      | Version (Must be 0x10000 or less)                                |
+| 0x04  | 4      | Version (Must be 0.0.x.x or 0.1.x.x)                             |
 | 0x08  | 4      | Number of remapping entries                                      |
 | 0x0C  | 4      | Number of remapping segments                                     |
 | 0x10  | 4      | Number of bits reserved for the segment index in virtual offsets |
@@ -258,20 +261,20 @@ file header is flipped, changing which master bitmap is active.
 
   - Block sizes are stored as powers of 2
 
-| Start | Length | Description                            |
-| ----- | ------ | -------------------------------------- |
-| 0x00  | 4      | Magic ("DPFS")                         |
-| 0x04  | 4      | Version (Upper 2 bytes must be 0x0001) |
-| 0x08  | 8      | Master bitmap offset                   |
-| 0x10  | 8      | Master bitmap size                     |
-| 0x18  | 4      | Master bitmap block size power         |
-| 0x1C  | 8      | Level 1 offset                         |
-| 0x24  | 8      | Level 1 size                           |
-| 0x2C  | 4      | Level 1 block size power               |
-| 0x30  | 8      | Level 2 offset                         |
-| 0x38  | 8      | Level 2 size                           |
-| 0x40  | 4      | Level 2 block size power               |
-|       |        |                                        |
+| Start | Length | Description                    |
+| ----- | ------ | ------------------------------ |
+| 0x00  | 4      | Magic ("DPFS")                 |
+| 0x04  | 4      | Version (0.1.x.x)              |
+| 0x08  | 8      | Master bitmap offset           |
+| 0x10  | 8      | Master bitmap size             |
+| 0x18  | 4      | Master bitmap block size power |
+| 0x1C  | 8      | Level 1 offset                 |
+| 0x24  | 8      | Level 1 size                   |
+| 0x2C  | 4      | Level 1 block size power       |
+| 0x30  | 8      | Level 2 offset                 |
+| 0x38  | 8      | Level 2 size                   |
+| 0x40  | 4      | Level 2 block size power       |
+|       |        |                                |
 
 ## Save FS
 
@@ -283,7 +286,7 @@ file header is flipped, changing which master bitmap is active.
 | Start | Length | Description                                                |
 | ----- | ------ | ---------------------------------------------------------- |
 | 0x00  | 4      | Magic ("SAVE")                                             |
-| 0x04  | 4      | Version (Upper 2 bytes must be 0x0006)                     |
+| 0x04  | 4      | Version (0.6.x.x)                                          |
 | 0x08  | 8      | Number of blocks. Does not change if save file is resized. |
 | 0x10  | 8      | Block Size                                                 |
 | 0x18  | 0x30   | FAT header                                                 |
