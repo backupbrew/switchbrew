@@ -1897,6 +1897,6 @@ Note that if a thread that wasn't faulting calls svcReturnFromException,
 it signals an "invalid syscall" exception
 
 Note that [IsDebugMode](SMC.md "wikilink") is not used during
-exception-handling, except for enabling printing a message to UART. This
-UART code causes a system-hang on retail (likely due to a loop that
+exception-handling, except for enabling printing a message to UART-A.
+This UART code causes a system-hang on retail (likely due to a loop that
 doesn't exit).
