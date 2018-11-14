@@ -1805,10 +1805,10 @@ are met:
     retail), unless: this is a software or hardware breakpoint, or a
     watchpoint, or \[4.0.0+?\] the process is attached and this is a
     Google PNaCl trap instruction (see LLVM source)
-  - PC doesn't point to a valid address in mapped-readable CodeStatic
-    memory (i.e. this is the case for NRO and JIT memory) or this one of
-    the following exceptions (it particular, that doesn't include FP
-    exceptions occuring in CodeStatic memory):
+  - FAR doesn't point to a valid address in mapped-readable CodeStatic
+    memory (i.e. this is the case for NRO and JIT memory) or this is one
+    of the following exceptions (it particular, that doesn't include FP
+    exceptions occurring in CodeStatic memory):
       - Uncategorized
       - IllegalState
       - SupervisorCallA32
@@ -1831,12 +1831,12 @@ If the process is attached, the exception is reported to the KDebug. If
 the thread was continued using flag IgnoreExceptions, it returns from
 the exception as if nothing happened.
 
-If the latter is not the case, or if the process isn't attached, process
+If the latter is not the case, or if the process isn't attached, proceed
 to \[2.0.0+\] crash reporting (or in \[1.0.0\] just terminate the
 process): if EnableDebug is set, and depending on the process state
 (more than one crash per process isn't permitted) it may signal itself
 with ProcessState\_Crashed so that PM asks NS to start creport so that
-creports attaches to it and reports the crashes. Otherwise, just
+creport attaches to it and reports the crashes. Otherwise, just
 terminate.
 
 Userland reporting path and svcReturnFromException:
