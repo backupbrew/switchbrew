@@ -1841,21 +1841,48 @@ terminate.
 
 Userland reporting path and svcReturnFromException:
 
-TLS region start
-(A64):
+TLS region start (A64):
 
-| Offset | Length | Description                                                                                                              |
-| ------ | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| 0x0    | 0x148  | Exception stack                                                                                                          |
-| 0x148  | 0x78   | Frame: x0..x30, sp, elr\_el1=unadjusted PC, pstate & 0xFF0FFE20, afsr0, afsr1, esr, pc (stored using the regs' own size) |
+| Offset | Length | Description       |
+| ------ | ------ | ----------------- |
+| 0x0    | 0x148  | Exception stack   |
+| 0x148  | 0x78   | ExceptionFrameA64 |
 
-TLS region start
-(A32):
+ExceptionFrameA64:
 
-| Offset | Length | Description                                                                                                                        |
-| ------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x178  | Exception stack                                                                                                                    |
-| 0x148  | 0x30   | Frame: r0..r14, elr\_el1=unadjusted PC, tpidr\_el0 = 1, cpsr & 0xFF0FFE20, afsr0, afsr1, esr, pc (stored using the regs' own size) |
+| Offset | Length      | Description         |
+| ------ | ----------- | ------------------- |
+| 0x0    | 0x48 (8\*9) | GPRs 0..8.          |
+| 0x48   | 0x8         | lr                  |
+| 0x50   | 0x8         | sp                  |
+| 0x58   | 0x8         | pc (elr\_el1)       |
+| 0x60   | 0x4         | pstate & 0xFF0FFE20 |
+| 0x64   | 0x4         | afsr0               |
+| 0x68   | 0x4         | afsr1               |
+| 0x6C   | 0x4         | esr                 |
+| 0x70   | 0x8         | far                 |
+
+TLS region start (A32):
+
+| Offset | Length | Description       |
+| ------ | ------ | ----------------- |
+| 0x0    | 0x178  | Exception stack   |
+| 0x148  | 0x44   | ExceptionFrameA32 |
+
+ExceptionFrameA32:
+
+| Offset | Length      | Description       |
+| ------ | ----------- | ----------------- |
+| 0x0    | 0x20 (8\*4) | GPRs 0..7.        |
+| 0x20   | 0x4         | sp                |
+| 0x24   | 0x4         | lr                |
+| 0x28   | 0x4         | pc (elr\_el1)     |
+| 0x2C   | 0x4         | tpidr\_el0 = 1    |
+| 0x30   | 0x4         | cpsr & 0xFF0FFE20 |
+| 0x34   | 0x4         | afsr0             |
+| 0x38   | 0x4         | afsr1             |
+| 0x3C   | 0x4         | esr               |
+| 0x40   | 0x4         | far               |
 
 In that case, after storing the regs in the TLS, the exception handler
 returns to the application's crt0 (entrypoint), with
