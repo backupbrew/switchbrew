@@ -2191,6 +2191,8 @@ svcReturnFromException updates the contents of the kernel stack frame with what 
 * if the provided error code is 0, gracefully pivots and returns from exception
 * if it is not, replays the exception and pass it to the KDebug (see above). One can pass 0x10001 to prevent process termination. If the process is attached, this also prevents crash-collection/termination (different from the exception handler behavior)
 
+If an exception occurs from the above user handler, the entire exception handling process will repeat with the new exception.
+
 Note that if a thread that wasn't faulting calls svcReturnFromException, it signals an "invalid syscall" exception
 
 Note that [[SMC|IsDebugMode]] is not used during exception-handling, except for enabling printing a message to UART-A. This UART code causes a system-hang on retail (likely due to a loop that doesn't exit). This printing doesn't seem to run when the process is attached for debugging?

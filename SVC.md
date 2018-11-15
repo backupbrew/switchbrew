@@ -1920,6 +1920,9 @@ then:
     process is attached, this also prevents crash-collection/termination
     (different from the exception handler behavior)
 
+If an exception occurs from the above user handler, the entire exception
+handling process will repeat with the new exception.
+
 Note that if a thread that wasn't faulting calls svcReturnFromException,
 it signals an "invalid syscall" exception
 
