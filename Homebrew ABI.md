@@ -23,6 +23,17 @@ X1=main\_thread\_handle.
 **NRO0:** the homebrew loader puts X0=loader\_config\_ptr,
 X1=0xFFFFFFFFFFFFFFFF.
 
+When X0 is non-zero and X1 is not 0xFFFFFFFFFFFFFFFF, the application
+must handle userland
+[exceptions](SVC#Exception%20Handling.md##Exception_Handling "wikilink")
+(with the same entrypoint args described there). This must be done
+without corrupting registers for this (x8..x29).
+
+The loader should forward exceptions to the mapped NRO by just jumping
+to the NRO entrypoint, without the above register corruption. When the
+NRO is not mapped the loader can run: `svcReturnFromException(0xf801);
+while(1);`
+
 ### Loader Config
 
 Loader config allows overriding functionality to workaround limitations

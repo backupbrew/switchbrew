@@ -15,6 +15,10 @@ Original LR given to entrypoint should be returned to, X0 contains an error code
 
 '''NRO0:''' the homebrew loader puts X0=loader_config_ptr, X1=0xFFFFFFFFFFFFFFFF.
 
+When X0 is non-zero and X1 is not 0xFFFFFFFFFFFFFFFF, the application must handle userland [[SVC#Exception_Handling|exceptions]] (with the same entrypoint args described there). This must be done without corrupting registers for this (x8..x29).
+
+The loader should forward exceptions to the mapped NRO by just jumping to the NRO entrypoint, without the above register corruption. When the NRO is not mapped the loader can run: <code>svcReturnFromException(0xf801); while(1);</code>
+
 === Loader Config ===
 Loader config allows overriding functionality to workaround limitations in a limited homebrew environment.
 
