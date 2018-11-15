@@ -1230,7 +1230,7 @@ process.
 | 11  | [\#GetFreeSpaceSize](#GetFreeSpaceSize "wikilink")                              |
 | 12  | [\#GetTotalSpaceSize](#GetTotalSpaceSize "wikilink")                            |
 | 13  | \[3.0.0+\] [\#CleanDirectoryRecursively](#CleanDirectoryRecursively "wikilink") |
-| 14  | \[3.0.0+\] GetFileTimeStampRaw                                                  |
+| 14  | \[3.0.0+\] [\#GetFileTimeStampRaw](#GetFileTimeStampRaw "wikilink")             |
 | 15  | \[4.0.0+\] QueryEntry                                                           |
 
 ## GetEntryType
@@ -1277,6 +1277,11 @@ byte-size u64 for the total space available with this FS(free+used).
 
 Takes a type-0x9 input buffer for the path and clears the contents of
 the directory specified in the path.
+
+## GetFileTimeStampRaw
+
+Takes a type-0x19 input buffer for the path and returns a 0x20-byte
+struct. This contains 3 u64s and an u8.
 
 # IDirectory
 
