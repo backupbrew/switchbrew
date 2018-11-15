@@ -256,22 +256,22 @@ non-zero, calls fsp-pr SetEnabledProgramVerification(false).
 This is extracted directly from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
 
-| Value | Description                                 |
-| ----- | ------------------------------------------- |
-| 0     | DramId\_EristaIcosaSamsung4gb               |
-| 1     | DramId\_EristaIcosaHynix4gb                 |
-| 2     | DramId\_EristaIcosaMicron4gb                |
-| 3     | Reserved                                    |
-| 4     | DramId\_EristaIcosaSamsung6gb               |
-| 5     | \[5.0.0+\] Reserved                         |
-| 6     | \[5.0.0+\] Reserved                         |
-| 7     | \[5.0.0+\] DramId\_MarikoIowax1x2Samsung4gb |
-| 8     | \[5.0.0+\] DramId\_MarikoIowaSamsung4gb     |
-| 9     | \[5.0.0+\] DramId\_MarikoIowaSamsung8gb     |
-| 10    | \[5.0.0+\] DramId\_MarikoUnk                |
-| 11    | \[5.0.0+\] Reserved                         |
-| 12    | \[5.0.0+\] DramId\_MarikoHoagSamsung4gb     |
-| 13    | \[5.0.0+\] DramId\_MarikoHoagSamsung8gb     |
+| Value | Description                                                            |
+| ----- | ---------------------------------------------------------------------- |
+| 0     | DramId\_EristaIcosaSamsung4gb                                          |
+| 1     | DramId\_EristaIcosaHynix4gb                                            |
+| 2     | DramId\_EristaIcosaMicron4gb                                           |
+| 3     | Reserved                                                               |
+| 4     | DramId\_EristaIcosaSamsung6gb                                          |
+| 5     | \[4.0.0+\] Reserved                                                    |
+| 6     | \[4.0.0+\] Reserved                                                    |
+| 7     | \[5.0.0+\] DramId\_MarikoIowax1x2Samsung4gb (\[4.0.0-4.1.0\] Reserved) |
+| 8     | \[5.0.0+\] DramId\_MarikoIowaSamsung4gb                                |
+| 9     | \[5.0.0+\] DramId\_MarikoIowaSamsung8gb                                |
+| 10    | \[6.0.0+\] DramId\_MarikoIowaHynix4gb (\[5.0.0-5.1.0\] Reserved)       |
+| 11    | \[5.0.0+\] Reserved                                                    |
+| 12    | \[5.0.0+\] DramId\_MarikoHoagSamsung4gb                                |
+| 13    | \[5.0.0+\] DramId\_MarikoHoagSamsung8gb                                |
 
 [PCV](PCV%20services.md "wikilink") selects memory training tables based
 on DramId.
@@ -372,7 +372,7 @@ on DramId.
 </tr>
 <tr class="even">
 <td><p>nx-abca2</p></td>
-<td><p>DramId_MarikoUnk</p></td>
+<td><p>MarikoIowaHynix4gb</p></td>
 <td><p>0x03</p></td>
 <td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
 <code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />

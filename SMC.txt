@@ -264,13 +264,13 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |  DramId_EristaIcosaSamsung6gb
 |-
 |  5
-|  [5.0.0+] Reserved
+|  [4.0.0+] Reserved
 |-
 |  6
-|  [5.0.0+] Reserved
+|  [4.0.0+] Reserved
 |-
 |  7
-|  [5.0.0+] DramId_MarikoIowax1x2Samsung4gb
+|  [5.0.0+] DramId_MarikoIowax1x2Samsung4gb ([4.0.0-4.1.0] Reserved)
 |-
 |  8
 |  [5.0.0+] DramId_MarikoIowaSamsung4gb
@@ -279,7 +279,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |  [5.0.0+] DramId_MarikoIowaSamsung8gb
 |-
 |  10
-|  [5.0.0+] DramId_MarikoUnk
+|  [6.0.0+] DramId_MarikoIowaHynix4gb ([5.0.0-5.1.0] Reserved)
 |-
 |  11
 |  [5.0.0+] Reserved
@@ -384,7 +384,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  01_1600000_NoCfgVersion_V0.4.2_V2.0
 |-
 |  nx-abca2
-|  DramId_MarikoUnk
+|  MarikoIowaHynix4gb
 |  0x03
 |  
  01_204000_NoCfgVersion_V0.3.1_V2.0
