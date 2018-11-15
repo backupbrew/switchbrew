@@ -83,8 +83,8 @@ This is
 | 51   | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                                                                                    |
 | 52   | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                |
 | 53   | \[2.0.0+\] OpenReadOnlySaveDataFileSystem                                                                                                                         |
-| 57   | \[3.0.0+\] ReadSaveDataFileSystemExtraDataBySaveDataSpaceId                                                                                                       |
-| 58   | ReadSaveDataFileSystemExtraData                                                                                                                                   |
+| 57   | \[3.0.0+\] [\#ReadSaveDataFileSystemExtraDataBySaveDataSpaceId](#ReadSaveDataFileSystemExtraDataBySaveDataSpaceId "wikilink")                                     |
+| 58   | [\#ReadSaveDataFileSystemExtraData](#ReadSaveDataFileSystemExtraData "wikilink")                                                                                  |
 | 59   | \[2.0.0+\] WriteSaveDataFileSystemExtraData                                                                                                                       |
 | 60   | [\#OpenSaveDataInfoReader](#OpenSaveDataInfoReader "wikilink")                                                                                                    |
 | 61   | [\#OpenSaveDataInfoReaderBySaveDataSpaceId](#OpenSaveDataInfoReaderBySaveDataSpaceId "wikilink")                                                                  |
@@ -1077,6 +1077,17 @@ Returns an [\#IFileSystem](#IFileSystem "wikilink").
 Mounts savedata in the SYSTEM [NAND](Flash%20Filesystem.md "wikilink")
 partition.
 
+## ReadSaveDataFileSystemExtraDataBySaveDataSpaceId
+
+Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"), an
+input u64 saveID, and a type-0x6 output buffer containing the
+[\#SaveDataFileSystemExtraData](#SaveDataFileSystemExtraData "wikilink").
+
+## ReadSaveDataFileSystemExtraData
+
+Takes an input u64 saveID and a type-0x6 output buffer containing the
+[\#SaveDataFileSystemExtraData](#SaveDataFileSystemExtraData "wikilink").
+
 ## OpenSaveDataInfoReader
 
 No input, returns an output
@@ -1834,6 +1845,10 @@ all-zero.
 | 0x41   | 0x25 | Unknown. Usually zeros?                                                                                                                  |
 
 This is a 0x60-byte struct.
+
+# SaveDataFileSystemExtraData
+
+This is a 0x200-byte struct.
 
 # InitialDataVersion2
 
