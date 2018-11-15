@@ -1848,7 +1848,8 @@ This is a 0x60-byte struct.
 
 # SaveDataFileSystemExtraData
 
-This is a 0x200-byte struct.
+This is a 0x200-byte struct. Appears to match
+[Savegames\#Extra\_data](Savegames#Extra%20data.md##Extra_data "wikilink").
 
 # InitialDataVersion2
 
