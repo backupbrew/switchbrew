@@ -350,6 +350,22 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x21BC02 || 2 || 4318 || Invalid save data filesystem magic (valid magic is SAVE in ASCII)
 |-
+| 0x234202 || 2 || 4513 || Error reading ACID section in NPDM
+|-
+| 0x234402 || 2 || 4514 || Invalid NPDM ACID section size
+|-
+| 0x234602 || 2 || 4515 || Last byte of the ACID modulus is zero
+|-
+| 0x234802 || 2 || 4516 || Invalid ACID fixed key signature
+|-
+| 0x234A02 || 2 || 4517 || Invalid NCA magic
+|-
+| 0x234C02 || 2 || 4518 || Invalid NCA header fixed key signature
+|-
+| 0x234E02 || 2 || 4519 || Invalid NCA header ACID signature
+|-
+| 0x235002 || 2 || 4520 || Invalid NCA header section hash
+|-
 | 0x235202 || 2 || 4521 || Invalid NCA Key index
 |-
 | 0x235E02 || 2 || 4527 || NCA-path used with the wrong titleID.
