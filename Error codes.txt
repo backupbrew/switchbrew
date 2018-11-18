@@ -368,7 +368,27 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x235202 || 2 || 4521 || Invalid NCA Key index
 |-
+| 0x235602 || 2 || 4523 || Invalid encryption type
+|-
+| 0x235802 || 2 || 4524 || Redirection BKTR table size is negative
+|-
+| 0x235A02 || 2 || 4525 || Encryption BKTR table size is negative
+|-
+| 0x235C02 || 2 || 4526 || Redirection BKTR table end offset is past the Encryption BKTR table start offset
+|-
 | 0x235E02 || 2 || 4527 || NCA-path used with the wrong titleID.
+|-
+| 0x236002 || 2 || 4528 || NCA header value is out of range
+|-
+| 0x236202 || 2 || 4529 || NCA FS header value is out of range
+|-
+| 0x236802 || 2 || 4532 || PartitionFS hash block size is not a power of 2
+|-
+| 0x236A02 || 2 || 4533 || PartitionFS hash "always_2" field is not 2
+|-
+| 0x236C02 || 2 || 4534 || PartitionFS hash table is too small for main data
+|-
+| 0x236E02 || 2 || 4535 || Invalid PartitionFS block hash
 |-
 | 0x249802 || 2 || 4684 || Invalid FAT file number.
 |-
