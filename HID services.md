@@ -659,6 +659,8 @@ This is "nn::ahid::IServerSession".
 
 This is "nn::ahid::hdr::ISession".
 
+Used internally for USB HID devices.
+
 | Cmd | Name |
 | --- | ---- |
 | 0   |      |

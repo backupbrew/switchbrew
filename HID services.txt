@@ -883,6 +883,8 @@ This is "nn::ahid::IServerSession".
 = ahid:hdr =
 This is "nn::ahid::hdr::ISession".
 
+Used internally for USB HID devices.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
