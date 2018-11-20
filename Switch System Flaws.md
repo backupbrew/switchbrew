@@ -141,6 +141,20 @@ bootloader](Package1#Section%201.md##Section_1 "wikilink") or the
 <td><p><a href="User:Hexkyz" title="wikilink">hexkyz</a></p></td>
 </tr>
 <tr class="even">
+<td><p>pk1ldrhax</p></td>
+<td><p>Package1ldr decrypts and verifies the keyblob inside of the current BCT in order to get the package1 key, and then uses the package1 key to decrypt package1. It then validates package1 before jumping to it by checking the PK11 magic number, and that the section sizes sum to the expected size (and are individually less than the expected size).</p>
+<p>However, package1ldr does not actually validate the package1 key against a fixed vector (much like kernel9loader forgot to do so on the 3ds). This would normally not matter, as keyblobs are validated -- however, with bootrom code execution one can dump SBK and forge keyblobs, and thus control the package1 key.</p>
+<p>Thus (<strong>in theory, but not in practice due to the size of the brute force required</strong>) one can replace the package1 key with garbage, causing package1 to decrypt into garbage, and hope that this garbage passes validation checks and that package1ldr jumping into the garbage will do something useful.</p>
+<p>This was fixed incidentally in <a href="6.2.0.md" title="wikilink">6.2.0</a>, as pk1ldr does not use keyblob data to decrypt package1 any more.</p></td>
+<td><p>With a large enough brute force: arbitrary package1 code execution from coldboot.</p>
+<p>However, a usable brute force is on the order of &gt;= ~2^80, so <strong>this is almost certainly not actually usable in any meaningful context</strong>.</p></td>
+<td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
+<td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
+<td><p>Early 2017 (as soon as plaintext package1ldr was first dumped)</p></td>
+<td><p>November 20, 2018</p></td>
+<td><p>Everyone</p></td>
+</tr>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>
