@@ -483,7 +483,7 @@ No input, returns an output u32.
 Takes 2 input u8s ('''bmRequestType''' and '''bRequest'''), 3 input u16s ('''wValue''', '''wIndex''', and '''wLength'''), and an input u64 '''buffer''', no output.
 
 === GetCtrlXferReport ===
-Takes a type-0x6 output buffer, no output.
+Takes a type-0x6 output buffer, no output. The output buffer contains a [[#XferReport]].
 
 === ResetDevice ===
 No input/output.
@@ -550,7 +550,7 @@ Takes an input u32 and a type-0x6 output buffer, returns an output u32 '''count'
 
 The input u32 specifies the total number of entries to read, this must fit within the specified buffer size. The output u32 is the total actual output entries.
 
-The buffer contains an array of 0x18-byte report structs.
+The buffer contains an array of [[#XferReport]].
 
 = UsbHsInterface =
 {| class="wikitable" border="1"
@@ -581,6 +581,26 @@ The buffer contains an array of 0x18-byte report structs.
 |}
 
 This is a 0x228-byte struct (unofficial name).
+
+= XferReport =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || ?
+|-
+| 0x4 || 0x4 || Result
+|-
+| 0x8 || 0x4 || ?
+|-
+| 0xC || 0x4 || Actual transferred size.
+|-
+| 0x10 || 0x8? || ?
+|}
+
+This is a 0x18-byte struct.
+
+Official sw only uses the Result/size fields.
 
 = usb:pd =
 This is "nn::usb::pd::detail::IPdManager".

@@ -583,7 +583,8 @@ no output.
 
 ### GetCtrlXferReport
 
-Takes a type-0x6 output buffer, no output.
+Takes a type-0x6 output buffer, no output. The output buffer contains a
+[\#XferReport](#XferReport "wikilink").
 
 ### ResetDevice
 
@@ -658,8 +659,8 @@ The input u32 specifies the total number of entries to read, this must
 fit within the specified buffer size. The output u32 is the total actual
 output entries.
 
-The buffer contains an array of 0x18-byte report
-structs.
+The buffer contains an array of
+[\#XferReport](#XferReport "wikilink").
 
 # UsbHsInterface
 
@@ -678,6 +679,20 @@ structs.
 | 0x220  | 0x8  | Unknown u64 timestamp for when the device was inserted?                                                                                                 |
 
 This is a 0x228-byte struct (unofficial name).
+
+# XferReport
+
+| Offset | Size | Description              |
+| ------ | ---- | ------------------------ |
+| 0x0    | 0x4  | ?                        |
+| 0x4    | 0x4  | Result                   |
+| 0x8    | 0x4  | ?                        |
+| 0xC    | 0x4  | Actual transferred size. |
+| 0x10   | 0x8? | ?                        |
+
+This is a 0x18-byte struct.
+
+Official sw only uses the Result/size fields.
 
 # usb:pd
 
