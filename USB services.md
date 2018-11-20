@@ -505,6 +505,11 @@ was acquired with [\#AcquireUsbIf](#AcquireUsbIf "wikilink").
 
 Takes an input u8 and returns an output handle.
 
+Value 0: when signaled, this indicates that the user-process should use
+[\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink") and
+[\#AcquireUsbIf](#AcquireUsbIf "wikilink") with the output interfaces
+(and the rest of interface setup).
+
 ## DestroyInterfaceAvailableEvent
 
 Takes an input u8, no output.
@@ -512,6 +517,10 @@ Takes an input u8, no output.
 ## GetInterfaceStateChangeEvent
 
 No input, returns an output event handle with autoclear disabled.
+
+When signaled, this indicates that the user-process should use
+[\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink") and
+cleanup state for interfaces which were already initialized.
 
 ## AcquireUsbIf
 
@@ -529,18 +538,20 @@ output buffer contains the first 0x1B8-bytes from
 This is
 "nn::usb::hs::IClientIfSession".
 
-| Cmd | Name                                                         | Notes                               |
-| --- | ------------------------------------------------------------ | ----------------------------------- |
-| 0   |                                                              | No input, returns an output handle. |
-| 1   | [\#SetInterface](#SetInterface "wikilink")                   |                                     |
-| 2   | [\#GetInterface](#GetInterface "wikilink")                   |                                     |
-| 3   | [\#GetAlternateInterface](#GetAlternateInterface "wikilink") |                                     |
-| 4   | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")             |                                     |
-| 5   | [\#CtrlXferAsync](#CtrlXferAsync "wikilink")                 |                                     |
-| 6   |                                                              | No input, returns an output handle. |
-| 7   | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink")         |                                     |
-| 8   | [\#ResetDevice](#ResetDevice "wikilink")                     |                                     |
-| 9   | [\#OpenUsbEp](#OpenUsbEp "wikilink")                         |                                     |
+| Cmd | Name                                                         | Notes                                                                                                    |
+| --- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| 0   |                                                              | No input, returns an output handle.                                                                      |
+| 1   | [\#SetInterface](#SetInterface "wikilink")                   |                                                                                                          |
+| 2   | [\#GetInterface](#GetInterface "wikilink")                   |                                                                                                          |
+| 3   | [\#GetAlternateInterface](#GetAlternateInterface "wikilink") |                                                                                                          |
+| 4   | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")             |                                                                                                          |
+| 5   | [\#CtrlXferAsync](#CtrlXferAsync "wikilink")                 |                                                                                                          |
+| 6   |                                                              | No input, returns an output handle. Signaled when [\#CtrlXferAsync](#CtrlXferAsync "wikilink") finishes. |
+| 7   | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink")         |                                                                                                          |
+| 8   | [\#ResetDevice](#ResetDevice "wikilink")                     |                                                                                                          |
+| 9   | [\#OpenUsbEp](#OpenUsbEp "wikilink")                         |                                                                                                          |
+
+Official sw uses autoclear=false for the above events.
 
 ### SetInterface
 
@@ -598,17 +609,22 @@ HID-sysmodule passes hard-coded value 0x1 for **unk**.
 This is
 "nn::usb::hs::IClientEpSession".
 
-| Cmd | Name                                               | Notes                                                                                 |
-| --- | -------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| 0   | [\#Open](#Open "wikilink")                         |                                                                                       |
-| 1   | [\#Close](#Close "wikilink")                       |                                                                                       |
-| 2   |                                                    | No input, returns an output handle.                                                   |
-| 3   | [\#Populate](#Populate "wikilink")                 |                                                                                       |
-| 4   | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") |                                                                                       |
-| 5   | [\#GetXferReport](#GetXferReport "wikilink")       |                                                                                       |
-| 6   |                                                    | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32. |
-| 7   | \[4.0.0+\]                                         |                                                                                       |
-| 8   | \[4.0.0+\]                                         |                                                                                       |
+| Cmd | Name                                               | Notes                                                                                                          |
+| --- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 0   | [\#Open](#Open "wikilink")                         |                                                                                                                |
+| 1   | [\#Close](#Close "wikilink")                       |                                                                                                                |
+| 2   |                                                    | No input, returns an output handle. Signaled when [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") finishes. |
+| 3   | [\#Populate](#Populate "wikilink")                 |                                                                                                                |
+| 4   | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") |                                                                                                                |
+| 5   | [\#GetXferReport](#GetXferReport "wikilink")       |                                                                                                                |
+| 6   |                                                    | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.                          |
+| 7   | \[4.0.0+\]                                         |                                                                                                                |
+| 8   | \[4.0.0+\]                                         |                                                                                                                |
+
+Official sw uses autoclear=false for the above event.
+
+Immediately after opening the endpoint session, official sw uses
+[\#Populate](#Populate "wikilink") and cmd2.
 
 #### Open
 
@@ -618,9 +634,13 @@ No input/output.
 
 No input/output.
 
+Used by official sw prior to closing the endpoint session.
+
 #### Populate
 
 No input/output.
+
+Used after opening the endpoint session (see above).
 
 #### PostBufferAsync
 

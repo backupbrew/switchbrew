@@ -422,11 +422,15 @@ The output buffer contains an array of [[#UsbHsInterface]], for each interface w
 == CreateInterfaceAvailableEvent ==
 Takes an input u8 and returns an output handle.
 
+Value 0: when signaled, this indicates that the user-process should use [[#QueryAvailableInterfaces]] and [[#AcquireUsbIf]] with the output interfaces (and the rest of interface setup).
+
 == DestroyInterfaceAvailableEvent ==
 Takes an input u8, no output.
 
 == GetInterfaceStateChangeEvent ==
 No input, returns an output event handle with autoclear disabled.
+
+When signaled, this indicates that the user-process should use [[#QueryAcquiredInterfaces]] and cleanup state for interfaces which were already initialized.
 
 == AcquireUsbIf ==
 Takes an input u32 and a type-0x6 output buffer, returns an [[#IClientIfSession]].
@@ -452,7 +456,7 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 5 || [[#CtrlXferAsync]] || 
 |-
-| 6 || || No input, returns an output handle.
+| 6 || || No input, returns an output handle. Signaled when [[#CtrlXferAsync]] finishes.
 |-
 | 7 || [[#GetCtrlXferReport]] || 
 |-
@@ -460,6 +464,8 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 9 || [[#OpenUsbEp]] || 
 |}
+
+Official sw uses autoclear=false for the above events.
 
 === SetInterface ===
 Takes an input u8 and a type-0x6 output buffer, no output. The output buffer contains the first 0x1B8-bytes from [[#UsbHsInterface]].
@@ -502,7 +508,7 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 | 1 || [[#Close]] || 
 |-
-| 2 || || No input, returns an output handle.
+| 2 || || No input, returns an output handle. Signaled when [[#PostBufferAsync_2|#PostBufferAsync]] finishes.
 |-
 | 3 || [[#Populate]] || 
 |-
@@ -517,14 +523,22 @@ This is "nn::usb::hs::IClientEpSession".
 | 8 || [4.0.0+] || 
 |}
 
+Official sw uses autoclear=false for the above event.
+
+Immediately after opening the endpoint session, official sw uses [[#Populate]] and cmd2.
+
 ==== Open ====
 No input/output.
 
 ==== Close ====
 No input/output.
 
+Used by official sw prior to closing the endpoint session.
+
 ==== Populate ====
 No input/output.
+
+Used after opening the endpoint session (see above).
 
 ==== PostBufferAsync ====
 Takes an input u32 '''size''', an input u64 '''buffer''', and an input u64, returns an output u32 '''xferId'''.
