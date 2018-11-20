@@ -503,7 +503,8 @@ was acquired with [\#AcquireUsbIf](#AcquireUsbIf "wikilink").
 
 ## CreateInterfaceAvailableEvent
 
-Takes an input u8 and returns an output handle.
+Takes an input u8 and returns an output handle. The input value must be
+0..2. This is used as an index in a table.
 
 Value 0: when signaled, this indicates that the user-process should use
 [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink") and
@@ -512,7 +513,11 @@ Value 0: when signaled, this indicates that the user-process should use
 
 ## DestroyInterfaceAvailableEvent
 
-Takes an input u8, no output.
+Takes an input u8, no output. The input value must be 0..2.
+
+Clears state associated with the input index. This is the same state
+setup by
+[\#CreateInterfaceAvailableEvent](#CreateInterfaceAvailableEvent "wikilink").
 
 ## GetInterfaceStateChangeEvent
 

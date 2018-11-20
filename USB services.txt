@@ -420,12 +420,14 @@ Takes a type-0x6 output buffer and returns an output s32 total_entries.
 The output buffer contains an array of [[#UsbHsInterface]], for each interface which was acquired with [[#AcquireUsbIf]].
 
 == CreateInterfaceAvailableEvent ==
-Takes an input u8 and returns an output handle.
+Takes an input u8 and returns an output handle. The input value must be 0..2. This is used as an index in a table.
 
 Value 0: when signaled, this indicates that the user-process should use [[#QueryAvailableInterfaces]] and [[#AcquireUsbIf]] with the output interfaces (and the rest of interface setup).
 
 == DestroyInterfaceAvailableEvent ==
-Takes an input u8, no output.
+Takes an input u8, no output. The input value must be 0..2.
+
+Clears state associated with the input index. This is the same state setup by [[#CreateInterfaceAvailableEvent]].
 
 == GetInterfaceStateChangeEvent ==
 No input, returns an output event handle with autoclear disabled.
