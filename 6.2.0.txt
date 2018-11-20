@@ -13,6 +13,8 @@ This update burns an additional fuse and has a fuse count of 8.
 ==System Titles==
 <fill this in (manually) later>
 
+''All'' titles were updated (including flog) except for EULA, all of these (besides FIRM titles) use the new keydata.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=11-19-18_07-05-09&sys=hac]
