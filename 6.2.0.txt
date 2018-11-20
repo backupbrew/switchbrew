@@ -12,3 +12,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=11-19-18_07-05-09&sys=hac]
+
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
