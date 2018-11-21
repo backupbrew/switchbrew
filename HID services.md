@@ -678,6 +678,10 @@ This is "nn::ahid::ICtrlSession".
 | 10  |      |       |
 | 11  |      |       |
 
+All of these use USB [CtrlXfer](USB%20services.md "wikilink"), except
+for cmd10-11 which are event(?) related, and cmd1 which copies
+0x4000-bytes from state to output.
+
 ## IReadSession
 
 This is "nn::ahid::IReadSession".
