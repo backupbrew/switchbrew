@@ -497,11 +497,11 @@ No input/output.
 === OpenUsbEp ===
 Takes an input u16 and 4 input u32s, returns a 0x7-byte output struct and an [[#IClientEpSession]].
 
-The user-process loads the input params from the endpoint descriptor. The u16 is libusb_transfer_type+1.
+The user-process loads the input params from the endpoint descriptor. The u16 is libusb_transfer_type+1. However, audio-sysmodule passes hard-coded values for wMaxPacketSize, including 0.
 
 The u32s are: '''bEndpointAddress & LIBUSB_ENDPOINT_ADDRESS_MASK''', '''endpoint_dir''', '''unk''', and '''wMaxPacketSize'''. Where '''endpoint_dir''' is 0x1 for LIBUSB_ENDPOINT_OUT, and 0x2 for LIBSB_ENDPOINT_IN.
 
-HID-sysmodule passes hard-coded value 0x1 for '''unk'''.
+HID-sysmodule passes hard-coded value 0x1 for '''unk''', varies for other sysmodules.
 
 === IClientEpSession ===
 This is "nn::usb::hs::IClientEpSession".
