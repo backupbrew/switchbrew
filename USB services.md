@@ -562,6 +562,8 @@ This is
 
 Official sw uses autoclear=false for the above events.
 
+Immediately after opening the session, official sw uses cmd0 and cmd6.
+
 ### SetInterface
 
 Takes an input u8 and a type-0x6 output buffer, no output. The output
