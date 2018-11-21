@@ -4,7 +4,7 @@ Security flaws fixed: Yes
 
 This update burns an additional fuse and has a fuse count of 8.
 
-6.2.0 changes fundamental key generation.
+6.2.0 changes fundamental key generation, no longer using keyblobs at all (the OS will boot successfully even if both copies of keyblob are replaced with FFs in NAND).
 
 ==Change-log==
 [https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
