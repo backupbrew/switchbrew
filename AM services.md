@@ -654,6 +654,12 @@ No input/output.
 | 3   | ChangeMainAppletMasterVolume         |
 | 4   | SetTransparentVolumeRate             |
 
+GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for
+saving/restoring state for LibraryApplet launching, with
+SetExpectedMasterVolume being used with new state prior to launching a
+LibraryApplet. With official sw these applet funcs are used directly in
+the main-codebin.
+
 ## IDisplayController
 
 | Cmd | Name                                                 |
