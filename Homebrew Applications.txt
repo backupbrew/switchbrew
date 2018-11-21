@@ -87,6 +87,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Adubbz/Gag-Order Yes]
 | 2018-05-30
 |-
+| Switch Reader
+| E-Hentai gallery viewer
+| Colin969
+| [https://github.com/colin969/switch-reader/releases Here]
+| [https://github.com/colin969/switch-reader Yes]
+| 2018-11-21
+|-
 | Homebrew App Store
 | Download and manage installed homebrew apps
 | VGMoose
