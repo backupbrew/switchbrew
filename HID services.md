@@ -646,14 +646,51 @@ This is "nn::irsensor::IIrSensorSystemServer".
 
 # ahid:cd
 
-This is "nn::ahid::IServerSession".
+This is
+"nn::ahid::IServerSession".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
+| Cmd | Name | Notes                                                                        |
+| --- | ---- | ---------------------------------------------------------------------------- |
+| 0   |      | Takes an input s32, no output.                                               |
+| 1   |      | Takes an input s32, no output.                                               |
+| 2   |      | Takes an input u32, returns an [\#ICtrlSession](#ICtrlSession "wikilink").   |
+| 3   |      | Takes an input u32, returns an [\#IReadSession](#IReadSession "wikilink").   |
+| 4   |      | Takes an input u32, returns an [\#IWriteSession](#IWriteSession "wikilink"). |
+
+## ICtrlSession
+
+This is "nn::ahid::ICtrlSession".
+
+| Cmd | Name | Notes |
+| --- | ---- | ----- |
+| 0   |      |       |
+| 1   |      |       |
+| 2   |      |       |
+| 3   |      |       |
+| 4   |      |       |
+| 5   |      |       |
+| 6   |      |       |
+| 7   |      |       |
+| 8   |      |       |
+| 9   |      |       |
+| 10  |      |       |
+| 11  |      |       |
+
+## IReadSession
+
+This is "nn::ahid::IReadSession".
+
+| Cmd | Name | Notes |
+| --- | ---- | ----- |
+| 0   |      |       |
+
+## IWriteSession
+
+This is "nn::ahid::IWriteSession".
+
+| Cmd | Name | Notes |
+| --- | ---- | ----- |
+| 0   |      |       |
 
 # ahid:hdr
 

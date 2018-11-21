@@ -869,15 +869,69 @@ This is "nn::ahid::IServerSession".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || 
+| 0 || || Takes an input s32, no output.
 |-
-| 1 || 
+| 1 || || Takes an input s32, no output.
 |-
-| 2 || 
+| 2 || || Takes an input u32, returns an [[#ICtrlSession]].
 |-
-| 3 || 
+| 3 || || Takes an input u32, returns an [[#IReadSession]].
+|-
+| 4 || || Takes an input u32, returns an [[#IWriteSession]].
+|}
+
+== ICtrlSession ==
+This is "nn::ahid::ICtrlSession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || 
+|-
+| 1 || || 
+|-
+| 2 || || 
+|-
+| 3 || || 
+|-
+| 4 || || 
+|-
+| 5 || || 
+|-
+| 6 || || 
+|-
+| 7 || || 
+|-
+| 8 || || 
+|-
+| 9 || || 
+|-
+| 10 || || 
+|-
+| 11 || || 
+|}
+
+== IReadSession ==
+This is "nn::ahid::IReadSession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || 
+|}
+
+== IWriteSession ==
+This is "nn::ahid::IWriteSession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || 
 |}
 
 = ahid:hdr =
