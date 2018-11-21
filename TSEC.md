@@ -114,6 +114,8 @@ TSEC.
 | TSEC\_TFBIF\_UNK0                                       | 0x54501630 | 0x04  |
 | TSEC\_TFBIF\_UNK1                                       | 0x54501634 | 0x04  |
 | TSEC\_TFBIF\_UNK2                                       | 0x54501640 | 0x04  |
+| TSEC\_TFBIF\_UNK3                                       | 0x54501644 | 0x04  |
+| TSEC\_TFBIF\_UNK4                                       | 0x54501648 | 0x04  |
 | [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")              | 0x54501700 | 0x04  |
 | [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")            | 0x54501704 | 0x04  |
 | [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")              | 0x54501708 | 0x04  |
@@ -123,7 +125,6 @@ TSEC.
 | TSEC\_TEGRA\_UNK2                                       | 0x54501828 | 0x04  |
 | TSEC\_TEGRA\_UNK3                                       | 0x5450182C | 0x04  |
 | [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")          | 0x54501838 | 0x04  |
-|                                                         |            |       |
 
 ### FALCON\_IRQMSET
 
@@ -147,7 +148,6 @@ MMIO register for reading/writing data to Falcon.
 | ---- | --------------------- |
 | 0    | FALCON\_ITFEN\_CTXEN  |
 | 1    | FALCON\_ITFEN\_MTHDEN |
-|      |                       |
 
 Used for enabling/disabling Falcon interfaces.
 
@@ -156,7 +156,6 @@ Used for enabling/disabling Falcon interfaces.
 | Bits | Description                     |
 | ---- | ------------------------------- |
 | 0    | FALCON\_IDLESTATE\_FALCON\_BUSY |
-|      |                                 |
 
 Used for detecting if Falcon is busy or not.
 
@@ -170,7 +169,6 @@ Used for detecting if Falcon is busy or not.
 | 3    | FALCON\_CPUCTL\_HRESET   |
 | 4    | FALCON\_CPUCTL\_HALTED   |
 | 5    | FALCON\_CPUCTL\_STOPPED  |
-|      |                          |
 
 Used for signaling the Falcon CPU.
 
@@ -187,7 +185,6 @@ Takes the Falcon's boot vector address.
 | 2    | FALCON\_DMACTL\_IMEM\_SCRUBBING |
 | 3-6  | FALCON\_DMACTL\_DMAQ\_NUM       |
 | 7    | FALCON\_DMACTL\_SECURE\_STAT    |
-|      |                                 |
 
 Used for configuring the Falcon's DMA engine.
 
@@ -202,16 +199,15 @@ Takes the offset for the host's source memory being transferred.
 
 ### FALCON\_DMATRFCMD
 
-| Bits  | Description                                                 |
-| ----- | ----------------------------------------------------------- |
-| 0     | FALCON\_DMATRFCMD\_FULL                                     |
-| 1     | FALCON\_DMATRFCMD\_IDLE (this is set if the engine is idle) |
-| 2-3   | FALCON\_DMATRFCMD\_SEC                                      |
-| 4     | FALCON\_DMATRFCMD\_IMEM                                     |
-| 5     | FALCON\_DMATRFCMD\_WRITE                                    |
-| 8-10  | FALCON\_DMATRFCMD\_SIZE                                     |
-| 12-14 | FALCON\_DMATRFCMD\_CTXDMA                                   |
-|       |                                                             |
+| Bits  | Description               |
+| ----- | ------------------------- |
+| 0     | FALCON\_DMATRFCMD\_FULL   |
+| 1     | FALCON\_DMATRFCMD\_IDLE   |
+| 2-3   | FALCON\_DMATRFCMD\_SEC    |
+| 4     | FALCON\_DMATRFCMD\_IMEM   |
+| 5     | FALCON\_DMATRFCMD\_WRITE  |
+| 8-10  | FALCON\_DMATRFCMD\_SIZE   |
+| 12-14 | FALCON\_DMATRFCMD\_CTXDMA |
 
 Used for configuring DMA transfers.
 
@@ -224,7 +220,6 @@ Takes the offset for Falcon's target memory being transferred.
 | Bits | Description                       |
 | ---- | --------------------------------- |
 | 20   | TSEC\_SCP\_CTL\_STAT\_DEBUG\_MODE |
-|      |                                   |
 
 ### TSEC\_SCP\_CTL\_PKEY
 
@@ -232,7 +227,6 @@ Takes the offset for Falcon's target memory being transferred.
 | ---- | ------------------------------------- |
 | 0    | TSEC\_SCP\_CTL\_PKEY\_REQUEST\_RELOAD |
 | 1    | TSEC\_SCP\_CTL\_PKEY\_LOADED          |
-|      |                                       |
 
 ### TSEC\_DMA\_CMD
 
@@ -244,7 +238,6 @@ Takes the offset for Falcon's target memory being transferred.
 | 12   | TSEC\_DMA\_CMD\_BUSY  |
 | 13   | TSEC\_DMA\_CMD\_ERROR |
 | 31   | TSEC\_DMA\_CMD\_INIT  |
-|      |                       |
 
 A DMA read/write operation requires bits TSEC\_DMA\_CMD\_INIT and
 TSEC\_DMA\_CMD\_READ/TSEC\_DMA\_CMD\_WRITE to be set in TSEC\_DMA\_CMD.
@@ -277,12 +270,14 @@ Always 0xFFF.
 | 25   | TSEC\_TEGRA\_CTL\_TMPI\_RESTART\_FSM\_HOST1X     |
 | 26   | TSEC\_TEGRA\_CTL\_TMPI\_RESTART\_FSM\_APB        |
 | 27   | TSEC\_TEGRA\_CTL\_TMPI\_DISABLE\_OUTPUT\_I2C     |
-|      |                                                  |
 
 # Boot Process
 
 TSEC is configured and initialized by the first bootloader during key
-generation (sub\_400114FC).
+generation.
+
+\[6.2.0+\] TSEC is now configured at the end of the first bootloader's
+main function.
 
 ## Initialization
 
@@ -352,13 +347,30 @@ segment in IMEM.
 `   dst_offset += 0x100;`  
 `}`
 
+\[6.2.0+\] The transfer base address and size of the Falcon firmware
+code changed.
+
+`// Set DMA transfer base address to 0x40010E00 >> 0x08`  
+`*(u32 *)FALCON_DMATRFBASE = 0x40010E;`  
+  
+`u32 trf_mode = 0;     // A value of 0 sets FALCON_DMATRFCMD_IMEM`  
+`u32 dst_offset = 0;`  
+`u32 src_offset = 0;`  
+  
+`// Load code into Falcon (0x100 bytes at a time)`  
+`while (src_offset < 0x2900)`  
+`{`  
+`   flcn_load_firm(trf_mode, src_offset, dst_offset);`  
+`   src_offset += 0x100;`  
+`   dst_offset += 0x100;`  
+`}`
+
 ## Firmware booting
 
 Falcon is booted up and the first bootloader waits for it to
 finish.
 
-`// Set something in unknown host1x channel 0 sync register (HOST1X_SYNC_UNK_300)`  
-`// This appears to grant TSEC exclusive access to host1x`  
+`// Set magic value in host1x scratch space`  
 `*(u32 *)0x50003300 = 0x34C2E1DA;`  
   
 `// Clear Falcon scratch1 MMIO`  
@@ -398,14 +410,33 @@ finish.
 `if (boot_res != 0xB0B0B0B0)`  
 `   panic();`
 
+\[6.2.0+\] Falcon is booted up, but the first bootloader is left in an
+infinite loop.
+
+`// Set magic value in host1x scratch space`  
+`*(u32 *)0x50003300 = 0x34C2E1DA;`  
+  
+`// Clear Falcon scratch1 MMIO`  
+`*(u32 *)FALCON_SCRATCH1 = 0;`  
+  
+`// Set Falcon boot key version in scratch0 MMIO`  
+`*(u32 *)FALCON_SCRATCH0 = 0x01;`  
+  
+`// Set Falcon's boot vector address`  
+`*(u32 *)FALCON_BOOTVEC = 0;`  
+  
+`// Signal Falcon's CPU`  
+`*(u32 *)FALCON_CPUCTL = 0x02;`  
+  
+`// Infinite loop`  
+`deadlock();`
+
 ## Device key generation
 
 The TSEC device key is generated by reading SOR1 registers modified by
-the Falcon
-CPU.
+the Falcon CPU.
 
-`// Clear something in unknown host1x channel 0 sync register (HOST1X_SYNC_UNK_300)`  
-`// This appears to revoke TSEC's exclusive access to host1x`  
+`// Clear magic value in host1x scratch space`  
 `*(u32 *)0x50003300 = 0;`  
   
 `// Read TSEC device key`  
@@ -426,6 +457,8 @@ CPU.
   
 `// Copy back the TSEC device key`  
 `memcpy(out_buf, tsec_device_key, out_size);`
+
+\[6.2.0+\] This is now done inside an encrypted TSEC payload.
 
 ## Cleanup
 
@@ -462,8 +495,20 @@ returning.
 
 The actual code loaded into TSEC is assembled in NVIDIA's proprietary
 fuc5 ISA using crypto extensions. Stored inside the first bootloader,
-this firmware binary is split into 4 blobs: Stage0, Stage1, Stage2 and
-key data.
+this firmware binary is split into 4 blobs (names are unofficial):
+[Boot](#Boot "wikilink") (unencrypted and unauthenticated code),
+[KeygenLdr](#KeygenLdr "wikilink") (unencrypted and authenticated code),
+[Keygen](#Keygen "wikilink") (encrypted and authenticated code) and [key
+data](#Key_data "wikilink").
+
+\[6.2.0+\] There are now 6 blobs (names are unofficial):
+[Boot](#Boot "wikilink") (unencrypted and unauthenticated code),
+[Loader](#Loader "wikilink") (unencrypted and unauthenticated code),
+[KeygenLdr](#KeygenLdr "wikilink") (unencrypted and authenticated code),
+[Keygen](#Keygen "wikilink") (encrypted and authenticated code),
+[Payload](#Payload "wikilink") (part unencrypted and unauthenticated
+code, part encrypted and authenticated code) and [key
+data](#Key_data "wikilink").
 
 Firmware can be disassembled with
 [envytools'](http://envytools.readthedocs.io/en/latest/)
@@ -476,17 +521,19 @@ disassembler is not very good at detecting locations it should start
 disassembling from. One needs to disassemble multiple sub-regions and
 join them together.
 
-## Stage 0
+## Boot
 
-During this stage key data is loaded and Stage 1 is authenticated,
-loaded and executed. Before returning, this stage writes back to the
-host (using MMIO registers) and sets the device key used by the first
-bootloader.
+During this stage, [key data](#Key_data "wikilink") is loaded and
+[KeygenLdr](#KeygenLdr "wikilink") is authenticated, loaded and
+executed. Before returning, this stage writes back to the host (using
+MMIO registers) and sets the device key used by the first bootloader.
+
+\[6.2.0+\] During this stage, [key data](#Key_data "wikilink") is loaded
+and execution jumps to [Loader](#Loader "wikilink").
 
 ### Initialization
 
-Falcon sets up it's own stack
-pointer.
+Falcon sets up it's own stack pointer.
 
 `// Read data segment size from IO space`  
 `u32 data_seg_size = *(u32 *)UC_CAPS;`  
@@ -497,10 +544,15 @@ pointer.
 `// Set the stack pointer`  
 `*(u32 *)sp = data_seg_size;`
 
-### Stage 1 loading
+### Main
+
+Falcon reads the [key data](#Key_data "wikilink"), authenticates, loads
+and executes [KeygenLdr](#KeygenLdr "wikilink") and finally sets the
+device
+key.
 
 `u32 boot_base_addr = 0;`  
-`u32 key_data_buf[0x7C];`  
+`u8 key_data_buf[0x7C];`  
   
 `// Read the key data from memory`  
 `u32 key_data_addr = 0x300;`  
@@ -570,17 +622,17 @@ pointer.
 `         cxset(0x02);`  
 `         `  
 `         // Transfer data to crypto register c6`  
-`    xdst(0, (blob1_hash_addr | crypt_reg_flag));`  
+`     xdst(0, (blob1_hash_addr | crypt_reg_flag));`  
 `               `  
-`    // Wait for all data loads/stores to finish`  
-`    xdwait();`  
+`     // Wait for all data loads/stores to finish`  
+`     xdwait();`  
 `         `  
-`         // Jump to Stage1`  
-`         u32 stage1_res = exec_stage1(key_buf, key_version, is_blob_dec);`  
+`         // Jump to KeygenLdr`  
+`         u32 keygenldr_res = exec_keygenldr(key_buf, key_version, is_blob_dec);`  
 `         is_blob_dec = true;  // Set this to prevent decrypting again`  
   
 `         // Set boot finish magic on success`  
-`     if (stage1_res == 0)`  
+`     if (keygenldr_res == 0)`  
 `            boot_res = 0xB0B0B0B0`  
 `      }`  
 `      `  
@@ -598,6 +650,29 @@ pointer.
 `set_device_key(key_data_buf);`  
   
 `return boot_res;`
+
+\[6.2.0+\] Falcon reads the [key data](#Key_data "wikilink") and jumps
+to
+[Loader](#Loader "wikilink").
+
+`u8 key_data_buf[0x84];`  
+  
+`// Read the key data from memory`  
+`u32 key_data_addr = 0x300;`  
+`u32 key_data_size = 0x84;`  
+`read_code(key_data_buf, key_data_addr, key_data_size);`  
+  
+`// Calculate the next blob's address`  
+`u32 blob4_size = *(u32 *)(key_data_buf + 0x80);`  
+`u32 blob0_size = *(u32 *)(key_data_buf + 0x70);`  
+`u32 blob1_size = *(u32 *)(key_data_buf + 0x74);`  
+`u32 blob2_size = *(u32 *)(key_data_buf + 0x78);`  
+`u32 blob3_addr = ((((blob0_size + blob1_size) + 0x100) + blob2_size) + blob4_size);`  
+  
+`// Jump to next blob`  
+`(void *)blob3_addr();`  
+` `  
+`return 0;`
 
 #### set\_device\_key
 
@@ -682,13 +757,13 @@ write using TSEC MMIO.
   
 `return 0;`
 
-## Stage 1
+## KeygenLdr
 
 This stage is responsible for reconfiguring the Falcon's crypto
-co-processor and loading, decrypting, authenticating and executing Stage
-2.
+co-processor and loading, decrypting, authenticating and executing
+[Keygen](#Keygen "wikilink").
 
-### Crypto setup
+### Main
 
 `// Clear interrupt flags`  
 `*(u8 *)flags_ie0 = 0;`  
@@ -757,8 +832,8 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `if ((*(u32 *)sp >= data_seg_size) || (*(u32 *)sp < 0x800))`  
 `  exit();`  
   
-`// Decrypt and load Stage2`  
-`load_stage2(key_buf, key_version, is_blob_dec);`  
+`// Decrypt and load Keygen stage`  
+`load_keygen(key_buf, key_version, is_blob_dec);`  
   
 `// Partially unknown fuc5 instruction`  
 `// Likely forces a change of permissions`  
@@ -780,7 +855,7 @@ co-processor and loading, decrypting, authenticating and executing Stage
   
 `return;`
 
-### Stage 2 loading
+#### load\_keygen
 
 `u32 res = 0;`  
   
@@ -792,10 +867,10 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `read_code(boot_base_addr, blob0_addr, blob0_size);`  
   
 `// Generate "CODE_SIG_01" key into c4 crypto register`  
-`keygen(0, 0);`  
+`gen_usr_key(0, 0);`  
   
 `// Encrypt buffer with c4`  
-`u32 sig_key[0x10];`  
+`u8 sig_key[0x10];`  
 `enc_buf(sig_key, blob0_size);`  
   
 `u32 src_addr = boot_base_addr;`  
@@ -817,7 +892,7 @@ co-processor and loading, decrypting, authenticating and executing Stage
   
 `u32 blob1_size = *(u32 *)(key_buf + 0x74);`  
   
-`// Decrypt Stage2 blob if needed`  
+`// Decrypt Keygen blob if needed`  
 `if (!is_blob_dec)`  
 `{`  
 `   // Read Stage2's size from key buffer`  
@@ -830,11 +905,11 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `      u32 blob2_virt_addr = blob0_size + blob1_size;`  
 `      u32 blob2_addr = blob2_virt_addr + 0x100;`  
 `      `  
-`      // Read Stage2's encrypted blob`  
+`      // Read Keygen encrypted blob`  
 `      read_code(boot_base_addr, blob2_addr, blob2_size);`  
   
 `      // Generate "CODE_ENC_01" key into c4 crypt register`  
-`      keygen(0x01, 0x01);`  
+`      gen_usr_key(0x01, 0x01);`  
 `      `  
 `      u32 src_addr = boot_base_addr;`  
 `      u32 src_size = blob2_size;`  
@@ -843,7 +918,7 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `      u32 mode = 0;   // AES-128-ECB`  
 `      u32 version = 0;`  
 `      `  
-`      // Decrypt Stage2`  
+`      // Decrypt Keygen blob`  
 `      do_crypto(src_addr, src_size, iv_addr, dst_addr, mode, version);`  
 `      `  
 `      // Upload the next code segment into Falcon's CODE region`  
@@ -888,9 +963,9 @@ co-processor and loading, decrypting, authenticating and executing Stage
 `else`  
 `  res = 0xD0D0D0D0`  
 `   `  
-`// Jump to Stage2`  
+`// Jump to Keygen`  
 `if (hovi_key_addr)`  
-`  res = exec_stage2(hovi_key_addr, key_version);`  
+`  res = exec_keygen(hovi_key_addr, key_version);`  
 `         `  
 `// Clear out key data`  
 `memset(key_buf, 0, 0x7C);`  
@@ -901,12 +976,12 @@ co-processor and loading, decrypting, authenticating and executing Stage
   
 `return res;`
 
-#### keygen
+##### gen\_usr\_key
 
 This method takes **type** and **mode** as arguments and generates a
 key.
 
-`u32 seed_buf[0x10];`  
+`u8 seed_buf[0x10];`  
   
 `// Read a 16 bytes seed based on supplied type`  
 `/*`  
@@ -943,7 +1018,7 @@ key.
   
 `return;`
 
-#### enc\_buffer
+##### enc\_buffer
 
 This method takes **buf** (a 16 bytes buffer) and **size** as arguments
 and encrypts the supplied buffer.
@@ -975,11 +1050,12 @@ and encrypts the supplied buffer.
   
 `return;`
 
-#### do\_crypto
+##### do\_crypto
 
 This is the method responsible for all crypto operations performed
-during Stage 1. It takes **src\_addr**, **src\_size**, **iv\_addr**,
-**dst\_addr**, **mode** and **crypt\_ver** as
+during [KeygenLdr](#KeygenLdr "wikilink"). It takes **src\_addr**,
+**src\_size**, **iv\_addr**, **dst\_addr**, **mode** and **crypt\_ver**
+as
 arguments.
 
 `// Check for invalid source data size`  
@@ -1183,29 +1259,268 @@ arguments.
   
 `return;`
 
-## Stage 2
+## Keygen
 
-This stage is decrypted by Stage 1 using a key generated by encrypting a
-seed with an hardware secret (see
-[keygen](TSEC#keygen.md##keygen "wikilink")).
+This stage is decrypted by [KeygenLdr](#KeygenLdr "wikilink") using a
+key generated by encrypting a seed with an hardware secret. It will
+generate the final TSEC device key.
+
+## Loader
+
+This stage starts by authenticating and executing
+[KeygenLdr](#KeygenLdr "wikilink") which in turn authenticates, decrypts
+and executes [Keygen](#Keygen "wikilink") (both blobs remain unchanged
+from previous firmware versions). After the TSEC device key has been
+generated, execution returns to this stage which then parses and
+executes
+[Payload](#Payload "wikilink").
+
+### Main
+
+`u8 key_data_buf[0x84];`  
+`u8 tmp_key_data_buf[0x84];`  
+  
+`// Read the key data from memory`  
+`u32 key_data_addr = 0x300;`  
+`u32 key_data_size = 0x84;`  
+`read_code(key_data_buf, key_data_addr, key_data_size);`  
+  
+`// Read the KeygenLdr blob from memory`  
+`u32 boot_base_addr = 0;`  
+`u32 blob1_addr = 0x400;`  
+`u32 blob1_size = *(u32 *)(key_data_buf + 0x74);`  
+`read_code(boot_base_addr, blob1_addr, blob1_size);`  
+` `  
+`// Upload the next code segment into Falcon's CODE region`  
+`u32 blob1_virt_addr = 0x300;`  
+`bool use_secret = true;`  
+`upload_code(blob1_virt_addr, boot_base_addr, blob1_size, blob1_virt_addr, use_secret);`  
+  
+`// Backup the key data`  
+`memcpy(tmp_key_data_buf, key_data_buf, 0x84);`  
+  
+`// Save previous cauth value`  
+`u32 c_old = cauth_old;`  
+  
+`// fuc5 crypt cauth instruction`  
+`// Set auth_addr to 0x300 and auth_size to blob1_size`  
+`cauth((blob1_size << 0x10) | (0x300 >> 0x08));`  
+  
+`// fuc5 crypt cxset instruction`  
+`// The next 2 xfer instructions will be overridden`  
+`// and target changes from DMA to crypto`  
+`cxset(0x02);`  
+  
+`u32 crypt_reg_flag = 0x00060000;`  
+`u32 blob1_hash_addr = tmp_key_data_buf + 0x20; `  
+  
+`// Transfer data to crypto register c6`  
+`xdst(0, (blob1_hash_addr | crypt_reg_flag));`  
+  
+`// Wait for all data loads/stores to finish`  
+`xdwait();`  
+  
+`u32 key_version = 0x01;`  
+`bool is_blob_dec = false;`  
+  
+`// Jump to KeygenLdr`  
+`u32 keygenldr_res = exec_keygenldr(tmp_key_data_buf, key_version, is_blob_dec);`  
+  
+`// Set boot finish magic on success`  
+`if (keygenldr_res == 0)`  
+`  keygenldr_res = 0xB0B0B0B0`  
+`      `  
+`// Write result to FALCON_SCRATCH1`  
+`*(u32 *)FALCON_SCRATCH1 = keygenldr_res;`  
+  
+`if (keygenldr_res != 0xB0B0B0B0)`  
+`  return keygenldr_res;`  
+  
+`// fuc5 crypt cauth instruction`  
+`// Restore previous cauth value`  
+`cauth(c_old);`  
+  
+`u8 flcn_hdr_buf[0x18];`  
+`u8 flcn_os_hdr_buf[0x10];`  
+  
+`blob1_size = *(u32 *)(key_data_buf + 0x74);`  
+`u32 blob2_size = *(u32 *)(key_data_buf + 0x78);`  
+`u32 blob0_size = *(u32 *)(key_data_buf + 0x70);`  
+  
+`// Read the Payload blob's Falcon header from memory`  
+`u32 blob4_flcn_hdr_addr = (((blob0_size + blob1_size) + 0x100) + blob2_size);`  
+`read_code(flcn_hdr_buf, blob4_flcn_hdr_addr, 0x18);`  
+  
+`blob1_size = *(u32 *)(key_data_buf + 0x74);`  
+`blob2_size = *(u32 *)(key_data_buf + 0x78);`  
+`blob0_size = *(u32 *)(key_data_buf + 0x70);`  
+`u32 flcn_hdr_size = *(u32 *)(flcn_hdr_buf + 0x0C);`  
+  
+`// Read the Payload blob's Falcon OS header from memory`  
+`u32 blob4_flcn_os_hdr_addr = ((((blob0_size + blob1_size) + 0x100) + blob2_size) + flcn_hdr_size);`  
+`read_code(flcn_os_hdr_buf, blob4_flcn_os_hdr_addr, 0x10);`  
+  
+`blob1_size = *(u32 *)(key_data_buf + 0x74);`  
+`blob2_size = *(u32 *)(key_data_buf + 0x78);`  
+`blob0_size = *(u32 *)(key_data_buf + 0x70);`  
+`u32 flcn_code_hdr_size = *(u32 *)(flcn_hdr_buf + 0x10);`  
+`u32 flcn_os_size = *(u32 *)(flcn_os_hdr_buf + 0x04);`  
+  
+`// Read the Payload blob's Falcon OS image from memory`  
+`u32 blob4_flcn_os_addr = ((((blob0_size + blob1_size) + 0x100) + blob2_size) + flcn_code_hdr_size);`  
+`read_code(boot_base_addr, blob4_flcn_os_hdr_addr, flcn_os_size);`  
+  
+`// Upload the Payload's Falcon OS image boot stub code segment into Falcon's CODE region`  
+`u32 blob4_flcn_os_boot_virt_addr = 0;`  
+`u32 blob4_flcn_os_boot_size = 0x100;`  
+`use_secret = false;`  
+`upload_code(blob4_flcn_os_boot_virt_addr, boot_base_addr, blob4_flcn_os_boot_size, blob4_flcn_os_boot_virt_addr, use_secret);`  
+  
+`flcn_os_size = *(u32 *)(flcn_os_hdr_buf + 0x04); `  
+  
+`// Upload the Payload blob's Falcon OS encrypted image code segment into Falcon's CODE region`  
+`u32 blob4_flcn_os_img_virt_addr = 0x100;`  
+`u32 blob4_flcn_os_img_size = (flcn_os_size - 0x100);`  
+`use_secret = true;`  
+`upload_code(blob4_flcn_os_img_virt_addr, boot_base_addr + 0x100, blob4_flcn_os_img_size, blob4_flcn_os_img_virt_addr, use_secret);`  
+  
+`// Wait for all code loads to finish`  
+`xcwait();`  
+  
+`blob1_size = *(u32 *)(key_data_buf + 0x74);`  
+`blob2_size = *(u32 *)(key_data_buf + 0x78);`  
+`blob0_size = *(u32 *)(key_data_buf + 0x70);`  
+`flcn_code_hdr_size = *(u32 *)(flcn_hdr_buf + 0x10);`  
+`u32 flcn_os_code_size = *(u32 *)(flcn_os_hdr_buf + 0x08);`  
+  
+`// Read the Payload blob's falcon OS image's hash from memory`  
+`u32 blob4_flcn_os_img_hash_addr = (((((blob0_size + blob1_size) + 0x100) + blob2_size) + flcn_code_hdr_size) + flcn_os_code_size);`  
+`read_code(0, blob4_flcn_os_img_hash_addr, 0x10);`  
+  
+`// Read data segment size from IO space`  
+`u32 data_seg_size = *(u32 *)UC_CAPS;`  
+`data_seg_size >>= 0x03;`  
+`data_seg_size &= 0x3FC0;`  
+  
+`u32 data_addr = 0x10;`  
+  
+`// Clear all data except the first 0x10 bytes (Payload blob's Falcon OS image's hash)`  
+`for (int data_word_count = 0x04; data_word_count < data_seg_size; data_word_count++)`  
+`{`  
+`  *(u32 *)(data_addr) = 0; `  
+`  data_addr += 0x04;`  
+`}`  
+  
+`// Clear all crypto registers`  
+`cxor(c0, c0);`  
+`cxor(c1, c1);`  
+`cxor(c2, c2);`  
+`cxor(c3, c3);`  
+`cxor(c4, c4);`  
+`cxor(c5, c5);`  
+`cxor(c6, c6);`  
+`cxor(c7, c7);`  
+  
+`// Partially unknown fuc5 instruction`  
+`// Likely forces a change of permissions`  
+`cchmod(c0, c0);`  
+  
+`// Jump to Payload`  
+`exec_payload();`  
+  
+`return 0xB0B0B0B0;`
+
+## Payload
+
+This stage prepares the stack then authenticates, decrypts and executes
+the Payload blob's Falcon OS
+image.
+
+### Main
+
+`// Read data segment size from IO space`  
+`u32 data_seg_size = *(u32 *)UC_CAPS;`  
+`data_seg_size >>= 0x01;`  
+`data_seg_size &= 0xFF00;`  
+  
+`// Set the stack pointer`  
+`*(u32 *)sp = data_seg_size;`  
+  
+`// Jump to the Payload blob's Falcon OS image boot stub`  
+`exec_flcn_os_boot();`  
+  
+`// Halt execution`  
+`exit();`  
+  
+`return;`
+
+#### exec\_flcn\_os\_boot
+
+`// Read the transfer base address from IO space`  
+`u32 xfer_ext_base_addr = *(u32 *)XFER_EXT_BASE;`  
+  
+`// Copy transfer base address to data memory`  
+`u32 scratch_data_addr = 0x300;`  
+`*(u32 *)scratch_data_addr = xfer_ext_base_addr;`  
+  
+`// Set the transfer base address`  
+`xcbase(xfer_ext_base_addr);`  
+  
+`// fuc5 crypt cxset instruction`  
+`// The next xfer instruction will be overridden`  
+`// and target changes from DMA to crypto`  
+`cxset(0x01);`  
+  
+`u32 crypt_reg_flag = 0x00060000;`  
+`u32 blob4_flcn_os_img_hash_addr = 0; `  
+  
+`// Transfer data to crypto register c6`  
+`xdst(0, (blob4_flcn_os_img_hash_addr | crypt_reg_flag));`  
+  
+`// fuc5 crypt cxset instruction`  
+`// The next xfer instruction will be overridden`  
+`// and target changes from DMA to crypto`  
+`cxset(0x01);`  
+  
+`// Wait for all data loads/stores to finish`  
+`xdwait();`  
+  
+`cmov(c7, c6);`  
+`cxor(c7, c7);`  
+  
+`// fuc5 crypt cauth instruction`  
+`// Set auth_addr to 0x100, auth_size to 0x1300 and some unknown flags`  
+`cauth((0x02 << 0x10) | (0x01 << 0x10) | (0x1300 << 0x10) | (0x100 >> 0x08));`  
+  
+`// Clear interrupt flags`  
+`*(u8 *)flags_ie0 = 0;`  
+`*(u8 *)flags_ie1 = 0;`  
+  
+`// Jump to the Payload blob's Falcon OS image`  
+`exec_flcn_os_img();`  
+  
+`return 0x0F0F0F0F;`
 
 ## Key data
 
-Small buffer stored after Stage 0's code and used across all stages.
+Small buffer stored after the [Boot](#Boot "wikilink") blob and used
+across all
+stages.
 
-| Offset | Size | Description      |
-| ------ | ---- | ---------------- |
-| 0x00   | 0x10 | Empty            |
-| 0x10   | 0x10 | blob0 auth hash  |
-| 0x20   | 0x10 | blob1 auth hash  |
-| 0x30   | 0x10 | blob2 auth hash  |
-| 0x40   | 0x10 | blob2 AES IV     |
-| 0x50   | 0x10 | HOVI EKS seed    |
-| 0x60   | 0x10 | HOVI COMMON seed |
-| 0x70   | 0x04 | blob0 size       |
-| 0x74   | 0x04 | blob1 size       |
-| 0x78   | 0x04 | blob2 size       |
-|        |      |                  |
+| Offset | Size | Description                                            |
+| ------ | ---- | ------------------------------------------------------ |
+| 0x00   | 0x10 | Empty                                                  |
+| 0x10   | 0x10 | blob0 ([Boot](#Boot "wikilink")) auth hash             |
+| 0x20   | 0x10 | blob1 ([KeygenLdr](#KeygenLdr "wikilink")) auth hash   |
+| 0x30   | 0x10 | blob2 ([Keygen](#Keygen "wikilink")) auth hash         |
+| 0x40   | 0x10 | blob2 ([Keygen](#Keygen "wikilink")) AES IV            |
+| 0x50   | 0x10 | HOVI EKS seed                                          |
+| 0x60   | 0x10 | HOVI COMMON seed                                       |
+| 0x70   | 0x04 | blob0 ([Boot](#Boot "wikilink")) size                  |
+| 0x74   | 0x04 | blob1 ([KeygenLdr](#KeygenLdr "wikilink")) size        |
+| 0x78   | 0x04 | blob2 ([Keygen](#Keygen "wikilink")) size              |
+| 0x7C   | 0x04 | \[6.2.0+\] blob3 ([Loader](#Loader "wikilink")) size   |
+| 0x80   | 0x04 | \[6.2.0+\] blob4 ([Payload](#Payload "wikilink")) size |
 
 ## Notes
 
