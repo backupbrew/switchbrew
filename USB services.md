@@ -615,8 +615,8 @@ The u32s are: **bEndpointAddress & LIBUSB\_ENDPOINT\_ADDRESS\_MASK**,
 **endpoint\_dir** is 0x1 for LIBUSB\_ENDPOINT\_OUT, and 0x2 for
 LIBSB\_ENDPOINT\_IN.
 
-HID-sysmodule passes hard-coded value 0x1 for **unk**, varies for other
-sysmodules.
+HID-sysmodule passes hard-coded value 0x1 for **unk**, for bsd-sysmodule
+this is 0x2. For audio-sysmodule, this is 0x0, 0x3, or 0x6.
 
 ### IClientEpSession
 
