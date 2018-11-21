@@ -690,13 +690,19 @@ This is "nn::ahid::IReadSession".
 | --- | ---- | ----- |
 | 0   |      |       |
 
+Cmd0 uses [PostBufferAsync](USB%20services.md "wikilink") etc with the
+INPUT endpoint. The size must be \<=0x1000. The actual transfer size is
+returned in an output u64. The data is copied from the tmpbuf to the
+output buffer using the actual-transfer-size.
+
 ## IWriteSession
 
-This is "nn::ahid::IWriteSession".
+This is
+"nn::ahid::IWriteSession".
 
-| Cmd | Name | Notes |
-| --- | ---- | ----- |
-| 0   |      |       |
+| Cmd | Name | Notes                                                                                                                  |
+| --- | ---- | ---------------------------------------------------------------------------------------------------------------------- |
+| 0   |      | This is the inverse of [\#IReadSession](#IReadSession "wikilink") cmd0. Uses the OUTPUT endpoint with an input buffer. |
 
 # ahid:hdr
 
