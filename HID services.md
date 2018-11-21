@@ -646,8 +646,10 @@ This is "nn::irsensor::IIrSensorSystemServer".
 
 # ahid:cd
 
-This is
-"nn::ahid::IServerSession".
+This is "nn::ahid::IServerSession".
+
+Used for USB HID
+devices.
 
 | Cmd | Name | Notes                                                                        |
 | --- | ---- | ---------------------------------------------------------------------------- |

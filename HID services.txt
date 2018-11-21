@@ -867,6 +867,8 @@ This is "nn::irsensor::IIrSensorSystemServer".
 = ahid:cd =
 This is "nn::ahid::IServerSession".
 
+Used for USB HID devices. 
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
