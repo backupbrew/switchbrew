@@ -420,9 +420,11 @@ Takes a type-0x6 output buffer and returns an output s32 total_entries.
 The output buffer contains an array of [[#UsbHsInterface]], for each interface which was acquired with [[#AcquireUsbIf]].
 
 == CreateInterfaceAvailableEvent ==
-Takes an input u8 and returns an output handle. The input value must be 0..2. This is used as an index in a table.
+Takes an input u8 and a 0x10-byte struct, and returns an output handle. The input value must be 0..2. This is used as an index in a table.
 
-Value 0: when signaled, this indicates that the user-process should use [[#QueryAvailableInterfaces]] and [[#AcquireUsbIf]] with the output interfaces (and the rest of interface setup).
+The struct is located at +2 from the u8 in IPC rawdata. This struct is the same as the one used for [[#QueryAvailableInterfaces]].
+
+When signaled, this indicates that the user-process should use [[#QueryAvailableInterfaces]] and [[#AcquireUsbIf]] with the output interfaces (and the rest of interface setup).
 
 == DestroyInterfaceAvailableEvent ==
 Takes an input u8, no output. The input value must be 0..2.

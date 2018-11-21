@@ -503,10 +503,14 @@ was acquired with [\#AcquireUsbIf](#AcquireUsbIf "wikilink").
 
 ## CreateInterfaceAvailableEvent
 
-Takes an input u8 and returns an output handle. The input value must be
-0..2. This is used as an index in a table.
+Takes an input u8 and a 0x10-byte struct, and returns an output handle.
+The input value must be 0..2. This is used as an index in a table.
 
-Value 0: when signaled, this indicates that the user-process should use
+The struct is located at +2 from the u8 in IPC rawdata. This struct is
+the same as the one used for
+[\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink").
+
+When signaled, this indicates that the user-process should use
 [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink") and
 [\#AcquireUsbIf](#AcquireUsbIf "wikilink") with the output interfaces
 (and the rest of interface setup).
