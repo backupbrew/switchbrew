@@ -1755,9 +1755,10 @@ Exception specific:
 | 8     | Exception\_BadSvcId                |
 | 9     | Exception\_SError \[not in 1.0.0\] |
 
-  - Undefined instructions, software breakpoints, some other traps.
-      - Data aborts, FP traps, and everything else that doesn't belong
-        to any of the above.
+\* Undefined instructions, software breakpoints, some other traps.
+
+\*\* Data aborts, FP traps, and everything else that doesn't belong to
+any of the above.
 
 Trap specifics:
 

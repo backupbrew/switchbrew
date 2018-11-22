@@ -2022,8 +2022,9 @@ Exception specific:
 | 9 || Exception_SError [not in 1.0.0]
 |}
 
-* Undefined instructions, software breakpoints, some other traps.
-** Data aborts, FP traps, and everything else that doesn't belong to any of the above.
+<nowiki>*</nowiki> Undefined instructions, software breakpoints, some other traps.
+
+<nowiki>**</nowiki> Data aborts, FP traps, and everything else that doesn't belong to any of the above.
 
 Trap specifics:
 {| class=wikitable
