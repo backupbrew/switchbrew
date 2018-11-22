@@ -32,7 +32,7 @@ looking into the BCT's bootloader0\_info (normal) or bootloader1\_info
 | 0x0    | 0x4  | Package1ldr hash (first four bytes of SHA256(package1ldr)).        |
 | 0x4    | 0x4  | Secure Monitor hash (first four bytes of SHA256(secure\_monitor)). |
 | 0x8    | 0x4  | NX Bootloader hash (first four bytes of SHA256(nx\_bootloader)).   |
-| 0xC    | 0x4  | Unknown hash                                                       |
+| 0xC    | 0x4  | Build ID                                                           |
 | 0x10   | 0xE  | Build Timestamp (yyyyMMddHHmmss)                                   |
 | 0x1E   | 0x2  | Version                                                            |
 
