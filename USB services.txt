@@ -505,6 +505,8 @@ HID-sysmodule passes hard-coded value 0x1 for '''maxUrbCount''', for bsd-sysmodu
 
 '''epType''' is <code>libusb_transfer_type+1</code>. '''epNumber''' is <code>bEndpointAddress & LIBUSB_ENDPOINT_ADDRESS_MASK</code>. '''epDirection''' is 0x1 for LIBUSB_ENDPOINT_OUT, and 0x2 for LIBUSB_ENDPOINT_IN.
 
+'''epType''', '''epNumber''', and '''epDirection''' must all match USB-sysmodule state for the associated endpoint. '''maxUrbCount''' must be <0x11. '''maxXferSize''' must be <=0xFF0000. <code>maxUrbCount*maxXferSize</code> must be non-zero.
+
 === IClientEpSession ===
 This is "nn::usb::hs::IClientEpSession".
 

@@ -625,6 +625,11 @@ passing **maxXferSize**=0), 0x3, or 0x6.
 `bEndpointAddress & LIBUSB_ENDPOINT_ADDRESS_MASK`. **epDirection** is
 0x1 for LIBUSB\_ENDPOINT\_OUT, and 0x2 for LIBUSB\_ENDPOINT\_IN.
 
+**epType**, **epNumber**, and **epDirection** must all match
+USB-sysmodule state for the associated endpoint. **maxUrbCount** must be
+\<0x11. **maxXferSize** must be \<=0xFF0000. `maxUrbCount*maxXferSize`
+must be non-zero.
+
 ### IClientEpSession
 
 This is
