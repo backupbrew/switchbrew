@@ -607,13 +607,13 @@ Takes an input u16 and 4 input u32s, returns a 0x7-byte output struct
 and an [\#IClientEpSession](#IClientEpSession "wikilink").
 
 The user-process loads the input params from the endpoint descriptor.
-The u16 is libusb\_transfer\_type+1. However, audio-sysmodule passes
-hard-coded values for wMaxPacketSize, including 0.
+The u16 is **unk**. However, audio-sysmodule passes hard-coded values
+for wMaxPacketSize, including 0.
 
-The u32s are: **bEndpointAddress & LIBUSB\_ENDPOINT\_ADDRESS\_MASK**,
-**endpoint\_dir**, **unk**, and **wMaxPacketSize**. Where
-**endpoint\_dir** is 0x1 for LIBUSB\_ENDPOINT\_OUT, and 0x2 for
-LIBSB\_ENDPOINT\_IN.
+The u32s are: **libusb\_transfer\_type+1**, **bEndpointAddress &
+LIBUSB\_ENDPOINT\_ADDRESS\_MASK**, **endpoint\_dir**, and
+**wMaxPacketSize**. Where **endpoint\_dir** is 0x1 for
+LIBUSB\_ENDPOINT\_OUT, and 0x2 for LIBUSB\_ENDPOINT\_IN.
 
 HID-sysmodule passes hard-coded value 0x1 for **unk**, for bsd-sysmodule
 this is 0x2. For audio-sysmodule, this is 0x0, 0x3, or 0x6.
