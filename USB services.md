@@ -615,11 +615,10 @@ The u16 is **maxUrbCount**. The u32s are: **epType**, **epNumber**,
 The user-process loads the input params from the endpoint descriptor.
 HID-sysmodule sets **maxXferSize** to wMaxPacketSize from the endpoint
 descriptor. However, other sysmodules pass hard-coded values for
-**maxXferSize**, including 0.
+**maxXferSize**.
 
 HID-sysmodule passes hard-coded value 0x1 for **maxUrbCount**, for
-bsd-sysmodule this is 0x2. For audio-sysmodule, this is 0x0 (used when
-passing **maxXferSize**=0), 0x3, or 0x6.
+bsd-sysmodule this is 0x2. For audio-sysmodule, this is 0x3 or 0x6.
 
 **epType** is `libusb_transfer_type+1`. **epNumber** is
 `bEndpointAddress & LIBUSB_ENDPOINT_ADDRESS_MASK`. **epDirection** is
