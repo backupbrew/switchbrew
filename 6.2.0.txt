@@ -15,6 +15,9 @@ This update burns an additional fuse and has a fuse count of 8.
 
 ''All'' titles were updated (including flog) except for EULA, all of these (besides FIRM titles) use the new keydata.
 
+==FIRM==
+Warmboot has been updated.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=11-19-18_07-05-09&sys=hac]
