@@ -16,6 +16,11 @@ This update burns an additional fuse and has a fuse count of 8.
 ''All'' titles were updated (including flog) except for EULA, all of these (besides FIRM titles) use the new keydata.
 
 ==FIRM==
+====NX_BOOTLOADER====
+NX bootloader was updated, and is now stored compressed. Before executing, a small stub now uncompresses the bootloader to 0x40004000, size 0x1C000.
+
+[more details to be filled in later].
+
 ====Secure Monitor====
 The Secure Monitor was updated. [details to be filled in later].
 
