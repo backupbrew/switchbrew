@@ -16,6 +16,9 @@ This update burns an additional fuse and has a fuse count of 8.
 ''All'' titles were updated (including flog) except for EULA, all of these (besides FIRM titles) use the new keydata.
 
 ==FIRM==
+====Secure Monitor====
+The Secure Monitor was updated. [details to be filled in later].
+
 ====Kernel====
 * Kernel was not updated.
 
