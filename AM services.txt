@@ -1215,7 +1215,7 @@ See also [[:Category:Library Applets]].
 |-
 | 0x10
 | 0100000000001007
-| "playerSelect"
+| [[Profile_Selector|"playerSelect"]]
 |-
 | 0x11
 | 0100000000001008
