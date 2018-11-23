@@ -19,6 +19,9 @@ This update burns an additional fuse and has a fuse count of 8.
 ====Kernel====
 * Kernel was not updated.
 
+====FIRM Sysmodules====
+No FIRM sysmodules were updated.
+
 ====Warmboot====
 The firmware revision magic was changed from 0x87 to 0xA8.
 
