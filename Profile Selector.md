@@ -29,3 +29,5 @@ Homebrew should push a common arguments struct and the typical
 UserSelectionConfig struct as well. After pushing in the data and
 calling start, homebrew should wait upon the PopOutDataEvent and then
 pop a single IStorage to obtain the result structure described above.
+
+[Category:Library Applets](Category:Library_Applets "wikilink")
