@@ -1256,7 +1256,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
-<td><p>playerSelect (LibraryAppletPlayerSelect)</p></td>
+<td><p><a href="Profile Selector.md" title="wikilink">playerSelect (LibraryAppletPlayerSelect)</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">
