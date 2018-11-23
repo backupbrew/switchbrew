@@ -351,3 +351,5 @@ The .nss path string in main-codebin was changed from
 "Q:\\work\\LibraryApplet\\..." to "Q:\\work\\nup\\LibraryApplet\\...".
 
 See [here](3.0.1.md "wikilink") regarding "shareddata:/" buildinfo.
+
+[Category:Library Applets](Category:Library_Applets "wikilink")
