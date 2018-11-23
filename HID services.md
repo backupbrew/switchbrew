@@ -424,7 +424,7 @@ This is
 | 852  | IsUsbConnected                                                     |
 | 870  | \[6.0.0+\] IsHandheldButtonPressedOnConsoleMode                    |
 | 900  | ActivateInputDetector                                              |
-| 901  | NotifyInputDetector                                                |
+| 901  | [\#NotifyInputDetector](#NotifyInputDetector "wikilink")           |
 | 1000 | InitializeFirmwareUpdate                                           |
 | 1001 | GetFirmwareVersion                                                 |
 | 1002 | GetAvailableFirmwareVersion                                        |
@@ -452,6 +452,13 @@ This is
 ## SetVibrationMasterVolume
 
 Takes an input 32bit float.
+
+## NotifyInputDetector
+
+Takes an input u32 bitmask InputSourceId, no output.
+
+This is the only hid:sys command used by USB-sysmodule (with value
+0x40).
 
 # hid:tmp
 

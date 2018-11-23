@@ -650,7 +650,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 900 || ActivateInputDetector
 |-
-| 901 || NotifyInputDetector
+| 901 || [[#NotifyInputDetector]]
 |-
 | 1000 || InitializeFirmwareUpdate
 |-
@@ -701,6 +701,11 @@ This is "nn::hid::IHidSystemServer".
 
 == SetVibrationMasterVolume ==
 Takes an input 32bit float.
+
+== NotifyInputDetector ==
+Takes an input u32 bitmask InputSourceId, no output.
+
+This is the only hid:sys command used by USB-sysmodule (with value 0x40).
 
 = hid:tmp =
 This is "nn::hid::IHidTemporaryServer".
