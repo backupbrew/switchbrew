@@ -877,6 +877,9 @@ This is "nn::tcap::server::IManager".
 
 ### AppletId
 
+See also [:Category:Library
+Applets](:Category:Library%20Applets.md "wikilink").
+
 | ID   | Title-id         | Description                                                                                                      |
 | ---- | ---------------- | ---------------------------------------------------------------------------------------------------------------- |
 | 0x02 | 010000000000100C | "overlayDisp"                                                                                                    |
@@ -889,7 +892,7 @@ This is "nn::tcap::server::IManager".
 | 0x0E | 0100000000001005 | "error"                                                                                                          |
 | 0x0F | 0100000000001006 | "netConnect"                                                                                                     |
 | 0x10 | 0100000000001007 | "playerSelect"                                                                                                   |
-| 0x11 | 0100000000001008 | "swkbd"                                                                                                          |
+| 0x11 | 0100000000001008 | ["swkbd"](Software%20Keyboard.md "wikilink")                                                                     |
 | 0x12 | 0100000000001009 | "miiEdit"                                                                                                        |
 | 0x13 | 010000000000100A | "LibAppletWeb" [WebApplet](Internet%20Browser#010000000000100A.md##010000000000100A "wikilink") applet           |
 | 0x14 | 010000000000100B | "LibAppletShop" [ShopN](Internet%20Browser#ShopN.md##ShopN "wikilink") applet                                    |

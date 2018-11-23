@@ -1169,6 +1169,8 @@ This is "nn::tcap::server::IManager".
 
 = Enums =
 === AppletId ===
+See also [[:Category:Library Applets]].
+
 {| class="wikitable" border="1"
 |-
 !  ID
@@ -1217,7 +1219,7 @@ This is "nn::tcap::server::IManager".
 |-
 | 0x11
 | 0100000000001008
-| "swkbd"
+| [[Software_Keyboard|"swkbd"]]
 |-
 | 0x12
 | 0100000000001009
