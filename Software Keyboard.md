@@ -118,3 +118,5 @@ exit. The response IStorage has the following format.
 | 0x0    | 0x4      | Result code (0 = OK, 1 = Cancel) |
 | 0x4    | Variable | UTF-16 text                      |
 | 0x7d8  |          | Size of storage                  |
+
+[Category:Applets](Category:Applets "wikilink")
