@@ -153,4 +153,4 @@ When either the submit button is pressed and input has been validated, or the us
 | 0x7d8 || || Size of storage
 |}
 
-[[Category:Applets]]
+[[Category:Library Applets]]
