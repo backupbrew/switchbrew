@@ -16,6 +16,9 @@ This update burns an additional fuse and has a fuse count of 8.
 ''All'' titles were updated (including flog) except for EULA, all of these (besides FIRM titles) use the new keydata.
 
 ==FIRM==
+====Kernel====
+* Kernel was not updated.
+
 ====Warmboot====
 The firmware revision magic was changed from 0x87 to 0xA8.
 
