@@ -34,7 +34,7 @@ The firmware revision magic was changed from 0x87 to 0xA8.
 The following sysmodules were updated with actual changes:
 * bcat, friends, hid, nvservices, account
 
-Besides sysver titles and FIRM, the only titles' with changed RomFS are web-applets, for "/.nrr/netfront.nrr".
+Besides sysver titles and FIRM, the only titles' with changed RomFS are web-applets, for "/.nrr/netfront.nrr" (only RSA data was changed here).
 
 ==See Also==
 System update report(s):
