@@ -502,7 +502,7 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p>Code execution under nvservices sysmodule</p></td>
 <td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
 <td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
-<td><p>June 2017</p></td>
+<td><p>April 5, 2017</p></td>
 <td><p>November 24, 2018</p></td>
 <td><p><a href="User:hexkyz" title="wikilink">hexkyz</a></p></td>
 </tr>

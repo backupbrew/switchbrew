@@ -433,7 +433,7 @@ In [[6.2.0]], [[NV_services#.2Fdev.2Fnvhost-ctrl-gpu|NVGPU_GPU_IOCTL_WAIT_FOR_PA
 | Code execution under nvservices sysmodule
 | [[6.2.0]]
 | [[6.2.0]]
-| June 2017
+| April 5, 2017
 | November 24, 2018
 | [[User:hexkyz|hexkyz]]
 |-
