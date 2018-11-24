@@ -49,6 +49,7 @@ There seems to be no new service IPC commands.
 
 * bcat: The codebin was updated, but no strings were added/changed.
 * account: Besides .text changes: String "libcurl (nnDauth; <hex>; SDK 6.4.0.0)" was added. The "v3-<oldhexstr>" in the dauth URLs were changed to "v4-<newhexstr>".
+* nvservices: At least 2 vulnerabilities have been patched. See [[Switch_System_Flaws#System_Modules|here]].
 
 ==See Also==
 System update report(s):
