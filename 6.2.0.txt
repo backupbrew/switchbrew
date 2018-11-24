@@ -11,9 +11,10 @@ This update burns an additional fuse and has a fuse count of 8.
 * 	General system stability improvements to enhance the user's experience.
 
 ==System Titles==
-<fill this in (manually) later>
+''All'' titles were updated (including flog) except for EULA, to use the new keydata.
 
-''All'' titles were updated (including flog) except for EULA, all of these (besides FIRM titles) use the new keydata.
+The following sysmodules were updated with actual changes:
+* bcat, friends, hid, nvservices, account
 
 ==FIRM==
 ====NX_BOOTLOADER====
