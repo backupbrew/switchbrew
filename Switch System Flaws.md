@@ -507,6 +507,17 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p><a href="User:hexkyz" title="wikilink">hexkyz</a></p></td>
 </tr>
 <tr class="even">
+<td><p>Infoleak in nvservices system module</p></td>
+<td><p>The <a href="NV services.md" title="wikilink">nvservices</a> ioctl <a href="NV services#NVMAP IOC ALLOC.md##NVMAP_IOC_ALLOC" title="wikilink">NVMAP_IOC_ALLOC</a> takes an optional argument &quot;addr&quot; which allows the calling process to pass a pointer to user allocated memory for backing a nvmap object. If &quot;addr&quot; is left as 0, nvservices uses the transfer memory region (donated by the user during initialization) instead, when allocating memory for the nvmap object. By design, freeing the nvmap object by calling the ioctl <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> returns, in its &quot;refcount&quot; argument, the user address previously supplied if the reference count reaches 0. However, prior to <a href="6.2.0.md" title="wikilink">6.2.0</a>, the case where the transfer memory region is used to allocate the nvmap object was not taken into account, thus resulting in <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> leaking back an address from within the transfer memory region mapped in nvservices' memory space.</p>
+<p>In <a href="6.2.0.md" title="wikilink">6.2.0</a>, <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> no longer returns the address when the transfer memory region is used instead of user supplied memory.</p></td>
+<td><p>Combined with other vulnerabilities: Defeating ASLR in nvservices sysmodule.</p></td>
+<td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
+<td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
+<td><p>April 2017</p></td>
+<td><p>November 24, 2018</p></td>
+<td><p>Everyone</p></td>
+</tr>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>

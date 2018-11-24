@@ -437,4 +437,17 @@ In [[6.2.0]], [[NV_services#.2Fdev.2Fnvhost-ctrl-gpu|NVGPU_GPU_IOCTL_WAIT_FOR_PA
 | November 24, 2018
 | [[User:hexkyz|hexkyz]]
 |-
+| Infoleak in nvservices system module
+| The [[NV_services|nvservices]] ioctl [[NV_services#NVMAP_IOC_ALLOC|NVMAP_IOC_ALLOC]] takes an optional argument "addr" which allows the calling process to pass a pointer to user allocated memory for backing a nvmap object. If "addr" is left as 0, nvservices uses the transfer memory region (donated by the user during initialization) instead, when allocating memory for the nvmap object.
+By design, freeing the nvmap object by calling the ioctl [[NV_services#NVMAP_IOC_FREE|NVMAP_IOC_FREE]] returns, in its "refcount" argument, the user address previously supplied if the reference count reaches 0.
+However, prior to [[6.2.0]], the case where the transfer memory region is used to allocate the nvmap object was not taken into account, thus resulting in [[NV_services#NVMAP_IOC_FREE|NVMAP_IOC_FREE]] leaking back an address from within the transfer memory region mapped in nvservices' memory space.
+
+In [[6.2.0]], [[NV_services#NVMAP_IOC_FREE|NVMAP_IOC_FREE]] no longer returns the address when the transfer memory region is used instead of user supplied memory.
+| Combined with other vulnerabilities: Defeating ASLR in nvservices sysmodule.
+| [[6.2.0]]
+| [[6.2.0]]
+| April 2017
+| November 24, 2018
+| Everyone
+|-
 |}
