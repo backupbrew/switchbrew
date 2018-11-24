@@ -36,6 +36,8 @@ The following sysmodules were updated with actual changes:
 
 Besides sysver titles and FIRM, the only titles' with changed RomFS are web-applets, for "/.nrr/netfront.nrr" (only RSA data was changed here).
 
+There seems to be no new service IPC commands.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=11-19-18_07-05-09&sys=hac]
