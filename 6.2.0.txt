@@ -35,7 +35,7 @@ There are zero changes to code outside of the coldboot .init section (pk2ldr).
 * No FIRM sysmodules were updated.
 
 ====Warmboot====
-The firmware revision magic was changed from 0x87 to 0xA8.
+* The firmware revision magic was changed from 0x87 to 0xA8.
 
 ==System Titles==
 ''All'' titles were updated (including flog) except for EULA, to use the new keydata.
