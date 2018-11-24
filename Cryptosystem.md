@@ -97,6 +97,15 @@ to.
 | 13      | FirmwareSpecificPerConsoleKey | Secure Monitor init                                            | Yes         | Yes, on security updates |
 | 15      | PerConsoleKey                 | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | Yes         | No                       |
 
+### \[6.2.0\]+ Key table after package1ldr/TSEC Payload (Secure Monitor boot)
+
+| Keyslot | Name             | Set by                                                           | Per-console | Per-firmware |
+| ------- | ---------------- | ---------------------------------------------------------------- | ----------- | ------------ |
+| 12      | TsecKey          | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | Yes         | No           |
+| 13      | TsecRootKey      | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | No          | Unknown      |
+| 14      | SecureBootKey    | Bootrom                                                          | Yes         | No           |
+| 15      | SecureStorageKey | Bootrom                                                          | Yes         | No           |
+
 ### Key generation
 
 Note: aes\_unwrap(wrapped\_key, wrap\_key) is just another name for a
@@ -150,7 +159,6 @@ same per-console key as
 .. and on 4.0.0 it was further moved
 around:
 
-` old_keyblob_key /* slot15 */ = aes_unwrap(aes_unwrap(df206f59.., tsec_key /* slot13 */), sbk /* slot14 */)`  
 ` keyblob_key     /* slot13 */ = aes_unwrap(aes_unwrap(wrapped_keyblob_key, tsec_key /* slot13 */), sbk /* slot14 */)`  
 ` cmac_key        /* slot11 */ = aes_unwrap(59c7fb6f.., keyblob_key)`  
 ` `  
@@ -164,6 +172,24 @@ around:
 ` master_key          /* slot12 */ = aes_unwrap(normalseed_retail, keyblob+0x20)`  
 ` new_master_key      /* slot14 */ = aes_unwrap(2dc1f48d.., keyblob+0x20)`  
 ` new_per_console_key /* slot13 */ = aes_unwrap(0c9109db.., old_keyblob_key)`  
+` per_console_key     /* slot15 */ = aes_unwrap(4f025f0e.., old_keyblob_key)`
+
+.. and on 6.2.0, they moved key generation out of package1ldr, and into
+the Secure Monitor's boot
+section:
+
+` clear_keyslots_other_than_12_13_and_14()`  
+` `  
+` old_keyblob_key /* slot15 */ = aes_unwrap(aes_unwrap(df206f59.., tsec_key /* slot12 */), sbk /* slot14 */)`  
+` /* Previously, master_kek was stored at keyblob+0x20) */`  
+` master_kek      /* slot13 */ = aes_unwrap(374b7729.. /* probably firmware specific */, tsec_root_key /* slot13 */) `  
+` `  
+` clear_keyslot(12)`  
+` `  
+` // Final keys:`  
+` new_master_key      /* slot12 */ = aes_unwrap(2dc1f48d.., master_kek)        `  
+` master_key          /* slot13 */ = aes_unwrap(normalseed_retail, master_kek) `  
+` new_per_console_key /* slot14 */ = aes_unwrap(0c9109db.., old_keyblob_key)`  
 ` per_console_key     /* slot15 */ = aes_unwrap(4f025f0e.., old_keyblob_key)`
 
 SBK and SSK keyslots are cleared after keys have been generated.
@@ -182,7 +208,7 @@ This means that if you have an attack on the bootloader, you need to
 re-preform it every time they move to a new keyblob.
 
 Dumping the SBK and TSEC key of any single system should be enough to
-derive all key material on the system.
+derive all key material on the system, prior to 6.2.0.
 
 The key-derivation is described in more detail
 [here](Package1#Key%20generation.md##Key_generation "wikilink").
