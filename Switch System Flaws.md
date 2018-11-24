@@ -496,6 +496,17 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p><a href="User:hexkyz" title="wikilink">hexkyz</a>, probably others.</p></td>
 </tr>
 <tr class="odd">
+<td><p>nvhax (memory corruption in nvservices system module)</p></td>
+<td><p>Prior to <a href="6.2.0.md" title="wikilink">6.2.0</a>, the <a href="NV services.md" title="wikilink">nvservices</a> ioctl <a href="NV services#.2Fdev.2Fnvhost-ctrl-gpu.md##.2Fdev.2Fnvhost-ctrl-gpu" title="wikilink">NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE</a> would take a single &quot;pwarpstate&quot; argument which would be interpreted by nvservices as a memory pointer for writing 2 &quot;warpstate&quot; structs (one for each Streaming Multiprocessor). This resulted in nvservices attempting to blindly memcpy into this user supplied address and trigger a crash. However, if paired with an infoleak, this could be used to arbitrarily write 0x30 bytes anywhere in nvservices' memory space. Additionally, the &quot;warpstate&quot; struct itself was never initialized, which means nvservices would leak the 0x30 bytes from the stack. By invoking other ioctls it was also possible to partially control the stack contents and achieve a usable arbitrary memory write primitive.</p>
+<p>In <a href="6.2.0.md" title="wikilink">6.2.0</a>, <a href="NV services#.2Fdev.2Fnvhost-ctrl-gpu.md##.2Fdev.2Fnvhost-ctrl-gpu" title="wikilink">NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE</a> now takes 2 inline &quot;warpstate&quot; structs instead of a &quot;pwarpstate&quot; pointer, thus effectively avoiding the bad memcpy.</p></td>
+<td><p>Code execution under nvservices sysmodule</p></td>
+<td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
+<td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
+<td><p>June 2017</p></td>
+<td><p>November 24, 2018</p></td>
+<td><p><a href="User:hexkyz" title="wikilink">hexkyz</a></p></td>
+</tr>
+<tr class="even">
 <td></td>
 <td></td>
 <td></td>

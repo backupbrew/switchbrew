@@ -424,4 +424,17 @@ In [[2.0.0]], the commands now return error code 0x1099 if the number of unrelea
 | November 2, 2018
 | [[User:hexkyz|hexkyz]], probably others.
 |-
+| nvhax (memory corruption in nvservices system module)
+| Prior to [[6.2.0]], the [[NV_services|nvservices]] ioctl [[NV_services#.2Fdev.2Fnvhost-ctrl-gpu|NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE]] would take a single "pwarpstate" argument which would be interpreted by nvservices as a memory pointer for writing 2 "warpstate" structs (one for each Streaming Multiprocessor).
+This resulted in nvservices attempting to blindly memcpy into this user supplied address and trigger a crash. However, if paired with an infoleak, this could be used to arbitrarily write 0x30 bytes anywhere in nvservices' memory space.
+Additionally, the "warpstate" struct itself was never initialized, which means nvservices would leak the 0x30 bytes from the stack. By invoking other ioctls it was also possible to partially control the stack contents and achieve a usable arbitrary memory write primitive.
+
+In [[6.2.0]], [[NV_services#.2Fdev.2Fnvhost-ctrl-gpu|NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE]] now takes 2 inline "warpstate" structs instead of a "pwarpstate" pointer, thus effectively avoiding the bad memcpy.
+| Code execution under nvservices sysmodule
+| [[6.2.0]]
+| [[6.2.0]]
+| June 2017
+| November 24, 2018
+| [[User:hexkyz|hexkyz]]
+|-
 |}
