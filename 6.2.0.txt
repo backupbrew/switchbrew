@@ -38,6 +38,9 @@ Besides sysver titles and FIRM, the only titles' with changed RomFS are web-appl
 
 There seems to be no new service IPC commands.
 
+* bcat: The codebin was updated, but no strings were added/changed.
+* account: Besides .text changes: String "libcurl (nnDauth; <hex>; SDK 6.4.0.0)" was added. The "v3-<oldhexstr>" in the dauth URLs was changed to "v4-<newhexstr>".
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=11-19-18_07-05-09&sys=hac]
