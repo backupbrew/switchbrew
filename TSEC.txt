@@ -198,7 +198,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501090
 | 0x04
 |-
-| FALCON_DEBUGINFO
+| [[#FALCON_DEBUGINFO|FALCON_DEBUGINFO]]
 | 0x54501094
 | 0x04
 |-
@@ -518,7 +518,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501600
 | 0x04
 |-
-| TSEC_MCCIF_FIFOCTRL
+| [[#TSEC_MCCIF_FIFOCTRL|TSEC_MCCIF_FIFOCTRL]]
 | 0x54501604
 | 0x04
 |-
@@ -534,19 +534,19 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501630
 | 0x04
 |-
-| TSEC_MCCIF_UNK4
+| [[#TSEC_MCCIF_FIFOCTRL1|TSEC_MCCIF_FIFOCTRL1]]
 | 0x54501634
 | 0x04
 |-
-| TSEC_MCCIF_UNK5
+| TSEC_MCCIF_UNK4
 | 0x54501640
 | 0x04
 |-
-| [[#TSEC_MCCIF_UNK6|TSEC_MCCIF_UNK6]]
+| [[#TSEC_MCCIF_UNK5|TSEC_MCCIF_UNK5]]
 | 0x54501644
 | 0x04
 |-
-| [[#TSEC_MCCIF_UNK7|TSEC_MCCIF_UNK7]]
+| [[#TSEC_MCCIF_UNK6|TSEC_MCCIF_UNK6]]
 | 0x54501648
 | 0x04
 |-
@@ -623,6 +623,9 @@ Used for enabling/disabling Falcon interfaces.
 |}
 
 Used for detecting if Falcon is busy or not.
+
+=== FALCON_DEBUGINFO ===
+[6.0.0+] [[NV_services|nvservices]] sets this to 0x8005FF00 (physical DRAM address inside the GPU UCODE carveout) before starting the nvhost_tsec firmware.
 
 === FALCON_CPUCTL ===
 {| class="wikitable" border="1"
@@ -735,12 +738,57 @@ Takes the offset for Falcon's target memory being transferred.
 | TSEC_SCP_CTL_PKEY_LOADED
 |}
 
-=== TSEC_MCCIF_UNK6 ===
+=== TSEC_MCCIF_FIFOCTRL ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| TSEC_MCCIF_FIFOCTRL_RCLK_OVERRIDE
+|-
+| 1
+| TSEC_MCCIF_FIFOCTRL_WCLK_OVERRIDE
+|-
+| 2
+| TSEC_MCCIF_FIFOCTRL_WRCL_MCLE2X
+|-
+| 3
+| TSEC_MCCIF_FIFOCTRL_RDMC_RDFAST
+|-
+| 4
+| TSEC_MCCIF_FIFOCTRL_WRMC_CLLE2X
+|-
+| 5
+| TSEC_MCCIF_FIFOCTRL_RDCL_RDFAST
+|-
+| 6
+| TSEC_MCCIF_FIFOCTRL_CCLK_OVERRIDE
+|-
+| 7
+| TSEC_MCCIF_FIFOCTRL_RCLK_OVR_MODE
+|-
+| 8
+| TSEC_MCCIF_FIFOCTRL_WCLK_OVR_MODE
+|}
+
+=== TSEC_MCCIF_FIFOCTRL1 ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-15
+| TSEC_MCCIF_FIFOCTRL1_SRD2MC_REORDER_DEPTH_LIMIT
+|-
+| 16-31
+| TSEC_MCCIF_FIFOCTRL1_SWR2MC_REORDER_DEPTH_LIMIT
+|}
+
+=== TSEC_MCCIF_UNK5 ===
 Used to control accesses to DRAM.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to 0x10 or 0x111110 before reading memory from the GPU UCODE carveout.
 
-=== TSEC_MCCIF_UNK7 ===
+=== TSEC_MCCIF_UNK6 ===
 Used to control accesses to DRAM.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to (data_size << 4) before reading memory from the GPU UCODE carveout.
@@ -2051,3 +2099,34 @@ Exit from Authenticated Mode must poke a special register before leaving authent
 <code>00000000: f5 3c XY a9     c_unk1 $cY $cX</code> - unknown crypto operation.
 
 <code>00000000: f5 3c 0X 90     crng $cX</code> - seems to initialize a crypto register with random data.
+
+=== Secrets ===
+Falcon's Authenticated Mode has access to 64 128-bit keys which are burned at factory. These keys can be loaded by using the $csecret instruction which takes the target crypto register and the key index as arguments.
+
+{| class=wikitable
+! Index || Notes
+|-
+| 0x00 || Used by the nvhost_tsec firmware. Debug mode only.
+|-
+| 0x03 || Used by the nvhost_tsec firmware.
+|-
+| 0x04 || Used by the nvhost_tsec firmware.
+|-
+| 0x05 || Used by the nvhost_tsec firmware.
+|-
+| 0x07 || Used by the nvhost_tsec firmware.
+|-
+| 0x09 || Used by the nvhost_tsec firmware.
+|-
+| 0x0B || Used by the nvhost_tsec firmware.
+|-
+| 0x0F || Used by the nvhost_tsec firmware.
+|-
+| 0x15 || Used by the nvhost_tsec firmware.
+|-
+| 0x26 || Used by [[#KeygenLdr|KeygenLdr]].
+|-
+| 0x3C || Used by the nvhost_tsec firmware.
+|-
+| 0x3F || Used by the nvhost_tsec firmware. Potentially per-console.
+|}
