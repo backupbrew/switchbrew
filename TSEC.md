@@ -9,13 +9,21 @@ several registers.
 
 ## Registers
 
-Registers from 0x54500000 to 0x54501000 are used to configure values for
-the host interface (HOST1X).
+Registers from 0x54500000 to 0x54501000 are used to configure the host
+interface (HOST1X).
 
 Registers from 0x54501000 to 0x54502000 are a MMIO window for
 communicating with the Falcon microprocessor. From this range, the
 subset of registers from 0x54501400 to 0x54501FE8 are specific to the
-TSEC.
+TSEC and are subdivided into:
+
+  - 0x54501400 to 0x54501500: SCP (secure crypto processor?).
+  - 0x54501500 to 0x54501600: Unknown.
+  - 0x54501600 to 0x54501700: MCCIF (Memory Controller Client
+    Interface).
+  - 0x54501700 to 0x54501800: DMA.
+  - 0x54501800 to 0x54501900: TEGRA (miscellaneous
+interfaces).
 
 | Name                                                    | Address    | Width |
 | ------------------------------------------------------- | ---------- | ----- |
@@ -36,16 +44,41 @@ TSEC.
 | FALCON\_IRQMCLR                                         | 0x54501014 | 0x04  |
 | FALCON\_IRQMASK                                         | 0x54501018 | 0x04  |
 | [FALCON\_IRQDEST](#FALCON_IRQDEST "wikilink")           | 0x5450101C | 0x04  |
+| FALCON\_PERIODIC\_PERIOD                                | 0x54501020 | 0x04  |
+| FALCON\_PERIODIC\_TIME                                  | 0x54501024 | 0x04  |
+| FALCON\_PERIODIC\_ENABLE                                | 0x54501028 | 0x04  |
+| FALCON\_TIME\_LOW                                       | 0x5450102C | 0x04  |
+| FALCON\_TIME\_HIGH                                      | 0x54501030 | 0x04  |
+| FALCON\_WATCHDOG\_TIME                                  | 0x54501034 | 0x04  |
+| FALCON\_WATCHDOG\_ENABLE                                | 0x54501038 | 0x04  |
 | [FALCON\_SCRATCH0](#FALCON_SCRATCH0 "wikilink")         | 0x54501040 | 0x04  |
 | [FALCON\_SCRATCH1](#FALCON_SCRATCH1 "wikilink")         | 0x54501044 | 0x04  |
 | [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")               | 0x54501048 | 0x04  |
 | [FALCON\_IDLESTATE](#FALCON_IDLESTATE "wikilink")       | 0x5450104C | 0x04  |
 | FALCON\_CURCTX                                          | 0x54501050 | 0x04  |
 | FALCON\_NXTCTX                                          | 0x54501054 | 0x04  |
+| FALCON\_CMDCTX                                          | 0x54501058 | 0x04  |
+| FALCON\_STATUS\_MASK                                    | 0x5450105C | 0x04  |
+| FALCON\_VM\_SUPERVISOR                                  | 0x54501060 | 0x04  |
+| FALCON\_FIFO\_DATA                                      | 0x54501064 | 0x04  |
+| FALCON\_FIFO\_CMD                                       | 0x54501068 | 0x04  |
+| FALCON\_FIFO\_DATA\_WR                                  | 0x5450106C | 0x04  |
+| FALCON\_FIFO\_OCCUPIED                                  | 0x54501070 | 0x04  |
+| FALCON\_FIFO\_ACK                                       | 0x54501074 | 0x04  |
+| FALCON\_FIFO\_LIMIT                                     | 0x54501078 | 0x04  |
+| FALCON\_SUBENGINE\_RESET                                | 0x5450107C | 0x04  |
 | FALCON\_SCRATCH2                                        | 0x54501080 | 0x04  |
 | FALCON\_SCRATCH3                                        | 0x54501084 | 0x04  |
+| FALCON\_PM\_TRIGGER                                     | 0x54501088 | 0x04  |
+| FALCON\_PM\_MODE                                        | 0x5450108C | 0x04  |
+| FALCON\_DEBUG1                                          | 0x54501090 | 0x04  |
+| FALCON\_DEBUGINFO                                       | 0x54501094 | 0x04  |
+| FALCON\_BREAKPOINT0                                     | 0x54501098 | 0x04  |
+| FALCON\_BREAKPOINT1                                     | 0x5450109C | 0x04  |
 | FALCON\_CGCTL                                           | 0x545010A0 | 0x04  |
 | FALCON\_ENGCTL                                          | 0x545010A4 | 0x04  |
+| FALCON\_PM\_SEL                                         | 0x545010A8 | 0x04  |
+| FALCON\_HOST\_IO\_INDEX                                 | 0x545010AC | 0x04  |
 | [FALCON\_CPUCTL](#FALCON_CPUCTL "wikilink")             | 0x54501100 | 0x04  |
 | [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")           | 0x54501104 | 0x04  |
 | FALCON\_HWCFG                                           | 0x54501108 | 0x04  |
@@ -54,9 +87,20 @@ TSEC.
 | [FALCON\_DMATRFMOFFS](#FALCON_DMATRFMOFFS "wikilink")   | 0x54501114 | 0x04  |
 | [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")       | 0x54501118 | 0x04  |
 | [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink") | 0x5450111C | 0x04  |
+| FALCON\_DMATRFSTAT                                      | 0x54501120 | 0x04  |
+| FALCON\_CRYPTTRFSTAT                                    | 0x54501124 | 0x04  |
+| FALCON\_CPUSTAT                                         | 0x54501128 | 0x04  |
+| FALCON\_HWCFG\_ALIAS                                    | 0x5450112C | 0x04  |
 | FALCON\_CPUCTL\_ALIAS                                   | 0x54501130 | 0x04  |
+| FALCON\_TLB\_CMD                                        | 0x54501140 | 0x04  |
+| FALCON\_TLB\_CMD\_RES                                   | 0x54501144 | 0x04  |
+| FALCON\_BRANCH\_HISTORY\_CTRL                           | 0x54501148 | 0x04  |
+| FALCON\_BRANCH\_HISTORY\_PC                             | 0x5450114C | 0x04  |
+| FALCON\_IMFILLRNG0                                      | 0x54501150 | 0x04  |
 | FALCON\_IMFILLRNG1                                      | 0x54501154 | 0x04  |
 | FALCON\_IMFILLCTL                                       | 0x54501158 | 0x04  |
+| FALCON\_EXTERRWIN                                       | 0x54501160 | 0x04  |
+| FALCON\_EXTERRCFG                                       | 0x54501164 | 0x04  |
 | FALCON\_EXTERRADDR                                      | 0x54501168 | 0x04  |
 | FALCON\_EXTERRSTAT                                      | 0x5450116C | 0x04  |
 | FALCON\_CG2                                             | 0x5450117C | 0x04  |
@@ -84,20 +128,20 @@ TSEC.
 | FALCON\_ICD\_WDATA                                      | 0x54501208 | 0x04  |
 | FALCON\_ICD\_RDATA                                      | 0x5450120C | 0x04  |
 | FALCON\_SCTL                                            | 0x54501240 | 0x04  |
-| TSEC\_SCP\_CTL\_UNK0                                    | 0x54501400 | 0x04  |
-| TSEC\_SCP\_CTL\_UNK1                                    | 0x54501404 | 0x04  |
+| TSEC\_SCP\_UNK0                                         | 0x54501400 | 0x04  |
+| TSEC\_SCP\_UNK1                                         | 0x54501404 | 0x04  |
 | [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")   | 0x54501408 | 0x04  |
 | TSEC\_SCP\_CTL\_AUTH\_MODE                              | 0x5450140C | 0x04  |
-| TSEC\_SCP\_CTL\_UNK2                                    | 0x54501410 | 0x04  |
+| TSEC\_SCP\_UNK2                                         | 0x54501410 | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")   | 0x54501418 | 0x04  |
-| TSEC\_SCP\_CTL\_UNK3                                    | 0x54501420 | 0x04  |
-| TSEC\_SCP\_CTL\_UNK4                                    | 0x54501428 | 0x04  |
-| TSEC\_SCP\_CTL\_UNK5                                    | 0x54501430 | 0x04  |
-| TSEC\_SCP\_UNK0                                         | 0x54501454 | 0x04  |
-| TSEC\_SCP\_UNK1                                         | 0x54501458 | 0x04  |
-| TSEC\_SCP\_UNK2                                         | 0x54501470 | 0x04  |
-| TSEC\_SCP\_UNK3                                         | 0x54501480 | 0x04  |
-| TSEC\_SCP\_UNK4                                         | 0x54501490 | 0x04  |
+| TSEC\_SCP\_UNK3                                         | 0x54501420 | 0x04  |
+| TSEC\_SCP\_UNK4                                         | 0x54501428 | 0x04  |
+| TSEC\_SCP\_UNK5                                         | 0x54501430 | 0x04  |
+| TSEC\_SCP\_UNK6                                         | 0x54501454 | 0x04  |
+| TSEC\_SCP\_UNK7                                         | 0x54501458 | 0x04  |
+| TSEC\_SCP\_UNK8                                         | 0x54501470 | 0x04  |
+| TSEC\_SCP\_UNK9                                         | 0x54501480 | 0x04  |
+| TSEC\_SCP\_UNK10                                        | 0x54501490 | 0x04  |
 | TSEC\_UNK0                                              | 0x54501500 | 0x04  |
 | TSEC\_UNK1                                              | 0x54501504 | 0x04  |
 | TSEC\_UNK2                                              | 0x5450150C | 0x04  |
@@ -107,15 +151,15 @@ TSEC.
 | TSEC\_UNK6                                              | 0x5450151C | 0x04  |
 | TSEC\_UNK7                                              | 0x54501528 | 0x04  |
 | TSEC\_UNK8                                              | 0x5450152C | 0x04  |
-| TSEC\_TFBIF\_MCCIF\_UNK0                                | 0x54501600 | 0x04  |
-| TSEC\_TFBIF\_MCCIF\_FIFOCTRL                            | 0x54501604 | 0x04  |
-| TSEC\_TFBIF\_MCCIF\_UNK1                                | 0x54501608 | 0x04  |
-| TSEC\_TFBIF\_MCCIF\_UNK2                                | 0x5450160C | 0x04  |
-| TSEC\_TFBIF\_UNK0                                       | 0x54501630 | 0x04  |
-| TSEC\_TFBIF\_UNK1                                       | 0x54501634 | 0x04  |
-| TSEC\_TFBIF\_UNK2                                       | 0x54501640 | 0x04  |
-| TSEC\_TFBIF\_UNK3                                       | 0x54501644 | 0x04  |
-| TSEC\_TFBIF\_UNK4                                       | 0x54501648 | 0x04  |
+| TSEC\_MCCIF\_UNK0                                       | 0x54501600 | 0x04  |
+| TSEC\_MCCIF\_FIFOCTRL                                   | 0x54501604 | 0x04  |
+| TSEC\_MCCIF\_UNK1                                       | 0x54501608 | 0x04  |
+| TSEC\_MCCIF\_UNK2                                       | 0x5450160C | 0x04  |
+| TSEC\_MCCIF\_UNK3                                       | 0x54501630 | 0x04  |
+| TSEC\_MCCIF\_UNK4                                       | 0x54501634 | 0x04  |
+| TSEC\_MCCIF\_UNK5                                       | 0x54501640 | 0x04  |
+| [TSEC\_MCCIF\_UNK6](#TSEC_MCCIF_UNK6 "wikilink")        | 0x54501644 | 0x04  |
+| [TSEC\_MCCIF\_UNK7](#TSEC_MCCIF_UNK7 "wikilink")        | 0x54501648 | 0x04  |
 | [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")              | 0x54501700 | 0x04  |
 | [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")            | 0x54501704 | 0x04  |
 | [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")              | 0x54501708 | 0x04  |
@@ -227,6 +271,20 @@ Takes the offset for Falcon's target memory being transferred.
 | ---- | ------------------------------------- |
 | 0    | TSEC\_SCP\_CTL\_PKEY\_REQUEST\_RELOAD |
 | 1    | TSEC\_SCP\_CTL\_PKEY\_LOADED          |
+
+### TSEC\_MCCIF\_UNK6
+
+Used to control accesses to DRAM.
+
+\[6.0.0+\] The nvhost\_tsec firmware sets this register to 0x10 or
+0x111110 before reading memory from the GPU UCODE carveout.
+
+### TSEC\_MCCIF\_UNK7
+
+Used to control accesses to DRAM.
+
+\[6.0.0+\] The nvhost\_tsec firmware sets this register to (data\_size
+\<\< 4) before reading memory from the GPU UCODE carveout.
 
 ### TSEC\_DMA\_CMD
 
@@ -431,20 +489,20 @@ infinite loop.
 `// Infinite loop`  
 `deadlock();`
 
-## Device key generation
+## TSEC key generation
 
-The TSEC device key is generated by reading SOR1 registers modified by
-the Falcon CPU.
+The TSEC key is generated by reading SOR1 registers modified by the
+Falcon CPU.
 
 `// Clear magic value in host1x scratch space`  
 `*(u32 *)0x50003300 = 0;`  
   
-`// Read TSEC device key`  
-`u32 tsec_device_key[4]; `  
-`tsec_device_key[0] = *(u32 *)NV_SOR_DP_HDCP_BKSV_LSB;`  
-`tsec_device_key[1] = *(u32 *)NV_SOR_TMDS_HDCP_BKSV_LSB;`  
-`tsec_device_key[2] = *(u32 *)NV_SOR_TMDS_HDCP_CN_MSB;`  
-`tsec_device_key[3] = *(u32 *)NV_SOR_TMDS_HDCP_CN_LSB;`  
+`// Read TSEC key`  
+`u32 tsec_key[4]; `  
+`tsec_key[0] = *(u32 *)NV_SOR_DP_HDCP_BKSV_LSB;`  
+`tsec_key[1] = *(u32 *)NV_SOR_TMDS_HDCP_BKSV_LSB;`  
+`tsec_key[2] = *(u32 *)NV_SOR_TMDS_HDCP_CN_MSB;`  
+`tsec_key[3] = *(u32 *)NV_SOR_TMDS_HDCP_CN_LSB;`  
   
 `// Clear SOR1 registers`  
 `*(u32 *)NV_SOR_DP_HDCP_BKSV_LSB = 0;`  
@@ -455,8 +513,8 @@ the Falcon CPU.
 `if (out_size < 0x10)`  
 `   out_size = 0x10;`  
   
-`// Copy back the TSEC device key`  
-`memcpy(out_buf, tsec_device_key, out_size);`
+`// Copy back the TSEC key`  
+`memcpy(out_buf, tsec_key, out_size);`
 
 \[6.2.0+\] This is now done inside an encrypted TSEC payload.
 
@@ -526,7 +584,7 @@ join them together.
 During this stage, [key data](#Key_data "wikilink") is loaded and
 [KeygenLdr](#KeygenLdr "wikilink") is authenticated, loaded and
 executed. Before returning, this stage writes back to the host (using
-MMIO registers) and sets the device key used by the first bootloader.
+MMIO registers) and sets the key used by the first bootloader.
 
 \[6.2.0+\] During this stage, [key data](#Key_data "wikilink") is loaded
 and execution jumps to [Loader](#Loader "wikilink").
@@ -546,9 +604,9 @@ Falcon sets up it's own stack pointer.
 
 ### Main
 
-Falcon reads the [key data](#Key_data "wikilink"), authenticates, loads
-and executes [KeygenLdr](#KeygenLdr "wikilink") and finally sets the
-device
+Falcon reads the [key data](#Key_data "wikilink") and then
+authenticates, loads and executes [KeygenLdr](#KeygenLdr "wikilink")
+which sets the TSEC
 key.
 
 `u32 boot_base_addr = 0;`  
@@ -646,8 +704,9 @@ key.
 `   time++;`  
 `}`  
   
-`// Write TSEC device key to registers`  
-`set_device_key(key_data_buf);`  
+`// Overwrite the TSEC key in SOR1 registers`  
+`// This has no effect because the KeygenLdr locks out the TSEC DMA engine`  
+`tsec_set_key(key_data_buf);`  
   
 `return boot_res;`
 
@@ -674,10 +733,10 @@ to
 ` `  
 `return 0;`
 
-#### set\_device\_key
+#### tsec\_set\_key
 
-This method takes **key\_data\_buf** as argument and writes the TSEC key
-to SOR1 registers.
+This method takes **key\_data\_buf** (a 16 bytes buffer) as argument and
+writes its contents to SOR1 registers.
 
 `// This is TSEC_MMIO + 0x1000 + (0x1C300 / 0x40)`  
 `*(u32 *)TSEC_DMA_UNK = 0xFFF;`  
@@ -958,7 +1017,7 @@ co-processor and loading, decrypting, authenticating and executing
 `  hovi_key_addr = key_buf + 0x50;`  
 `else if (key_version == 0x02)          // Use HOVI_COMMON_01`  
 `  hovi_key_addr = key_buf + 0x60;`  
-`else if (key_version == 0x03)          // Use empty key`  
+`else if (key_version == 0x03)          // Use debug key (empty)`  
 `  hovi_key_addr = key_buf + 0x00;`  
 `else`  
 `  res = 0xD0D0D0D0`  
@@ -1263,16 +1322,15 @@ arguments.
 
 This stage is decrypted by [KeygenLdr](#KeygenLdr "wikilink") using a
 key generated by encrypting a seed with an hardware secret. It will
-generate the final TSEC device key.
+generate the final TSEC key.
 
 ## Loader
 
 This stage starts by authenticating and executing
 [KeygenLdr](#KeygenLdr "wikilink") which in turn authenticates, decrypts
 and executes [Keygen](#Keygen "wikilink") (both blobs remain unchanged
-from previous firmware versions). After the TSEC device key has been
-generated, execution returns to this stage which then parses and
-executes
+from previous firmware versions). After the TSEC key has been generated,
+execution returns to this stage which then parses and executes
 [Payload](#Payload "wikilink").
 
 ### Main
@@ -1489,7 +1547,8 @@ image.
 `cxor(c7, c7);`  
   
 `// fuc5 crypt cauth instruction`  
-`// Set auth_addr to 0x100, auth_size to 0x1300 and some unknown flags`  
+`// Set auth_addr to 0x100, auth_size to 0x1300,`  
+`// bit 16 (is_secret) and bit 17 (is_encrypted)`  
 `cauth((0x02 << 0x10) | (0x01 << 0x10) | (0x1300 << 0x10) | (0x100 >> 0x08));`  
   
 `// Clear interrupt flags`  
@@ -1509,7 +1568,7 @@ stages.
 
 | Offset | Size | Description                                            |
 | ------ | ---- | ------------------------------------------------------ |
-| 0x00   | 0x10 | Empty                                                  |
+| 0x00   | 0x10 | Debug key (empty)                                      |
 | 0x10   | 0x10 | blob0 ([Boot](#Boot "wikilink")) auth hash             |
 | 0x20   | 0x10 | blob1 ([KeygenLdr](#KeygenLdr "wikilink")) auth hash   |
 | 0x30   | 0x10 | blob2 ([Keygen](#Keygen "wikilink")) auth hash         |

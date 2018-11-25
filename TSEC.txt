@@ -4,9 +4,14 @@ TSEC (Tegra Security Co-processor) is a dedicated unit powered by a NVIDIA Falco
 A host driver for communicating with the TSEC is mapped to physical address 0x54500000 with a total size of 0x40000 bytes and exposes several registers.
 
 == Registers ==
-Registers from 0x54500000 to 0x54501000 are used to configure values for the host interface (HOST1X).
+Registers from 0x54500000 to 0x54501000 are used to configure the host interface (HOST1X).
 
-Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with the Falcon microprocessor. From this range, the subset of registers from 0x54501400 to 0x54501FE8 are specific to the TSEC.
+Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with the Falcon microprocessor. From this range, the subset of registers from 0x54501400 to 0x54501FE8 are specific to the TSEC and are subdivided into:
+* 0x54501400 to 0x54501500: SCP (secure crypto processor?).
+* 0x54501500 to 0x54501600: Unknown.
+* 0x54501600 to 0x54501700: MCCIF (Memory Controller Client Interface).
+* 0x54501700 to 0x54501800: DMA.
+* 0x54501800 to 0x54501900: TEGRA (miscellaneous interfaces). 
 
 {| class="wikitable" border="1"
 !  Name
@@ -81,6 +86,34 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450101C
 | 0x04
 |-
+| FALCON_PERIODIC_PERIOD
+| 0x54501020
+| 0x04
+|-
+| FALCON_PERIODIC_TIME
+| 0x54501024
+| 0x04
+|-
+| FALCON_PERIODIC_ENABLE
+| 0x54501028
+| 0x04
+|-
+| FALCON_TIME_LOW
+| 0x5450102C
+| 0x04
+|-
+| FALCON_TIME_HIGH
+| 0x54501030
+| 0x04
+|-
+| FALCON_WATCHDOG_TIME
+| 0x54501034
+| 0x04
+|-
+| FALCON_WATCHDOG_ENABLE
+| 0x54501038
+| 0x04
+|-
 | [[#FALCON_SCRATCH0|FALCON_SCRATCH0]]
 | 0x54501040
 | 0x04
@@ -105,6 +138,46 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501054
 | 0x04
 |-
+| FALCON_CMDCTX
+| 0x54501058
+| 0x04
+|-
+| FALCON_STATUS_MASK
+| 0x5450105C
+| 0x04
+|-
+| FALCON_VM_SUPERVISOR
+| 0x54501060
+| 0x04
+|-
+| FALCON_FIFO_DATA
+| 0x54501064
+| 0x04
+|-
+| FALCON_FIFO_CMD
+| 0x54501068
+| 0x04
+|-
+| FALCON_FIFO_DATA_WR
+| 0x5450106C
+| 0x04
+|-
+| FALCON_FIFO_OCCUPIED
+| 0x54501070
+| 0x04
+|-
+| FALCON_FIFO_ACK
+| 0x54501074
+| 0x04
+|-
+| FALCON_FIFO_LIMIT
+| 0x54501078
+| 0x04
+|-
+| FALCON_SUBENGINE_RESET
+| 0x5450107C
+| 0x04
+|-
 | FALCON_SCRATCH2
 | 0x54501080
 | 0x04
@@ -113,12 +186,44 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501084
 | 0x04
 |-
+| FALCON_PM_TRIGGER
+| 0x54501088
+| 0x04
+|-
+| FALCON_PM_MODE
+| 0x5450108C
+| 0x04
+|-
+| FALCON_DEBUG1
+| 0x54501090
+| 0x04
+|-
+| FALCON_DEBUGINFO
+| 0x54501094
+| 0x04
+|-
+| FALCON_BREAKPOINT0
+| 0x54501098
+| 0x04
+|-
+| FALCON_BREAKPOINT1
+| 0x5450109C
+| 0x04
+|-
 | FALCON_CGCTL
 | 0x545010A0
 | 0x04
 |-
 | FALCON_ENGCTL
 | 0x545010A4
+| 0x04
+|-
+| FALCON_PM_SEL
+| 0x545010A8
+| 0x04
+|-
+| FALCON_HOST_IO_INDEX
+| 0x545010AC
 | 0x04
 |-
 | [[#FALCON_CPUCTL|FALCON_CPUCTL]]
@@ -153,8 +258,44 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450111C
 | 0x04
 |-
+| FALCON_DMATRFSTAT
+| 0x54501120
+| 0x04
+|-
+| FALCON_CRYPTTRFSTAT
+| 0x54501124
+| 0x04
+|-
+| FALCON_CPUSTAT
+| 0x54501128
+| 0x04
+|-
+| FALCON_HWCFG_ALIAS
+| 0x5450112C
+| 0x04
+|-
 | FALCON_CPUCTL_ALIAS
 | 0x54501130
+| 0x04
+|-
+| FALCON_TLB_CMD
+| 0x54501140
+| 0x04
+|-
+| FALCON_TLB_CMD_RES
+| 0x54501144
+| 0x04
+|-
+| FALCON_BRANCH_HISTORY_CTRL
+| 0x54501148
+| 0x04
+|-
+| FALCON_BRANCH_HISTORY_PC
+| 0x5450114C
+| 0x04
+|-
+| FALCON_IMFILLRNG0
+| 0x54501150
 | 0x04
 |-
 | FALCON_IMFILLRNG1
@@ -163,6 +304,14 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 |-
 | FALCON_IMFILLCTL
 | 0x54501158
+| 0x04
+|-
+| FALCON_EXTERRWIN
+| 0x54501160
+| 0x04
+|-
+| FALCON_EXTERRCFG
+| 0x54501164
 | 0x04
 |-
 | FALCON_EXTERRADDR
@@ -273,11 +422,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501240
 | 0x04
 |-
-| TSEC_SCP_CTL_UNK0
+| TSEC_SCP_UNK0
 | 0x54501400
 | 0x04
 |-
-| TSEC_SCP_CTL_UNK1
+| TSEC_SCP_UNK1
 | 0x54501404
 | 0x04
 |-
@@ -289,7 +438,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450140C
 | 0x04
 |-
-| TSEC_SCP_CTL_UNK2
+| TSEC_SCP_UNK2
 | 0x54501410
 | 0x04
 |-
@@ -297,35 +446,35 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501418
 | 0x04
 |-
-| TSEC_SCP_CTL_UNK3
+| TSEC_SCP_UNK3
 | 0x54501420
 | 0x04
 |-
-| TSEC_SCP_CTL_UNK4
+| TSEC_SCP_UNK4
 | 0x54501428
 | 0x04
 |-
-| TSEC_SCP_CTL_UNK5
+| TSEC_SCP_UNK5
 | 0x54501430
 | 0x04
 |-
-| TSEC_SCP_UNK0
+| TSEC_SCP_UNK6
 | 0x54501454
 | 0x04
 |-
-| TSEC_SCP_UNK1
+| TSEC_SCP_UNK7
 | 0x54501458
 | 0x04
 |-
-| TSEC_SCP_UNK2
+| TSEC_SCP_UNK8
 | 0x54501470
 | 0x04
 |-
-| TSEC_SCP_UNK3
+| TSEC_SCP_UNK9
 | 0x54501480
 | 0x04
 |-
-| TSEC_SCP_UNK4
+| TSEC_SCP_UNK10
 | 0x54501490
 | 0x04
 |-
@@ -365,39 +514,39 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450152C
 | 0x04
 |-
-| TSEC_TFBIF_MCCIF_UNK0
+| TSEC_MCCIF_UNK0
 | 0x54501600
 | 0x04
 |-
-| TSEC_TFBIF_MCCIF_FIFOCTRL
+| TSEC_MCCIF_FIFOCTRL
 | 0x54501604
 | 0x04
 |-
-| TSEC_TFBIF_MCCIF_UNK1
+| TSEC_MCCIF_UNK1
 | 0x54501608
 | 0x04
 |-
-| TSEC_TFBIF_MCCIF_UNK2
+| TSEC_MCCIF_UNK2
 | 0x5450160C
 | 0x04
 |-
-| TSEC_TFBIF_UNK0
+| TSEC_MCCIF_UNK3
 | 0x54501630
 | 0x04
 |-
-| TSEC_TFBIF_UNK1
+| TSEC_MCCIF_UNK4
 | 0x54501634
 | 0x04
 |-
-| TSEC_TFBIF_UNK2
+| TSEC_MCCIF_UNK5
 | 0x54501640
 | 0x04
 |-
-| TSEC_TFBIF_UNK3
+| [[#TSEC_MCCIF_UNK6|TSEC_MCCIF_UNK6]]
 | 0x54501644
 | 0x04
 |-
-| TSEC_TFBIF_UNK4
+| [[#TSEC_MCCIF_UNK7|TSEC_MCCIF_UNK7]]
 | 0x54501648
 | 0x04
 |-
@@ -585,6 +734,16 @@ Takes the offset for Falcon's target memory being transferred.
 | 1
 | TSEC_SCP_CTL_PKEY_LOADED
 |}
+
+=== TSEC_MCCIF_UNK6 ===
+Used to control accesses to DRAM.
+
+[6.0.0+] The nvhost_tsec firmware sets this register to 0x10 or 0x111110 before reading memory from the GPU UCODE carveout.
+
+=== TSEC_MCCIF_UNK7 ===
+Used to control accesses to DRAM.
+
+[6.0.0+] The nvhost_tsec firmware sets this register to (data_size << 4) before reading memory from the GPU UCODE carveout.
 
 === TSEC_DMA_CMD ===
 {| class="wikitable" border="1"
@@ -791,17 +950,17 @@ Falcon is booted up and the first bootloader waits for it to finish.
  // Infinite loop
  deadlock();
 
-== Device key generation ==
-The TSEC device key is generated by reading SOR1 registers modified by the Falcon CPU.
+== TSEC key generation ==
+The TSEC key is generated by reading SOR1 registers modified by the Falcon CPU.
  // Clear magic value in host1x scratch space
  *(u32 *)0x50003300 = 0;
  
- // Read TSEC device key
- u32 tsec_device_key[4]; 
- tsec_device_key[0] = *(u32 *)NV_SOR_DP_HDCP_BKSV_LSB;
- tsec_device_key[1] = *(u32 *)NV_SOR_TMDS_HDCP_BKSV_LSB;
- tsec_device_key[2] = *(u32 *)NV_SOR_TMDS_HDCP_CN_MSB;
- tsec_device_key[3] = *(u32 *)NV_SOR_TMDS_HDCP_CN_LSB;
+ // Read TSEC key
+ u32 tsec_key[4]; 
+ tsec_key[0] = *(u32 *)NV_SOR_DP_HDCP_BKSV_LSB;
+ tsec_key[1] = *(u32 *)NV_SOR_TMDS_HDCP_BKSV_LSB;
+ tsec_key[2] = *(u32 *)NV_SOR_TMDS_HDCP_CN_MSB;
+ tsec_key[3] = *(u32 *)NV_SOR_TMDS_HDCP_CN_LSB;
  
  // Clear SOR1 registers
  *(u32 *)NV_SOR_DP_HDCP_BKSV_LSB = 0;
@@ -812,8 +971,8 @@ The TSEC device key is generated by reading SOR1 registers modified by the Falco
  if (out_size < 0x10)
     out_size = 0x10;
  
- // Copy back the TSEC device key
- memcpy(out_buf, tsec_device_key, out_size);
+ // Copy back the TSEC key
+ memcpy(out_buf, tsec_key, out_size);
 
 [6.2.0+] This is now done inside an encrypted TSEC payload.
 
@@ -859,7 +1018,7 @@ Note that the instruction set has variable length instructions, and the disassem
 
 == Boot ==
 During this stage, [[#Key data|key data]] is loaded and [[#KeygenLdr|KeygenLdr]] is authenticated, loaded and executed.
-Before returning, this stage writes back to the host (using MMIO registers) and sets the device key used by the first bootloader.
+Before returning, this stage writes back to the host (using MMIO registers) and sets the key used by the first bootloader.
 
 [6.2.0+] During this stage, [[#Key data|key data]] is loaded and execution jumps to [[#Loader|Loader]].
 
@@ -875,7 +1034,7 @@ Falcon sets up it's own stack pointer.
  *(u32 *)sp = data_seg_size;
 
 === Main ===
-Falcon reads the [[#Key data|key data]], authenticates, loads and executes [[#KeygenLdr|KeygenLdr]] and finally sets the device key.
+Falcon reads the [[#Key data|key data]] and then authenticates, loads and executes [[#KeygenLdr|KeygenLdr]] which sets the TSEC key.
  u32 boot_base_addr = 0;
  u8 key_data_buf[0x7C];
  
@@ -971,8 +1130,9 @@ Falcon reads the [[#Key data|key data]], authenticates, loads and executes [[#Ke
     time++;
  }
  
- // Write TSEC device key to registers
- set_device_key(key_data_buf);
+ // Overwrite the TSEC key in SOR1 registers
+ // This has no effect because the KeygenLdr locks out the TSEC DMA engine
+ tsec_set_key(key_data_buf);
  
  return boot_res;
 
@@ -996,8 +1156,8 @@ Falcon reads the [[#Key data|key data]], authenticates, loads and executes [[#Ke
   
  return 0;
 
-==== set_device_key ====
-This method takes '''key_data_buf''' as argument and writes the TSEC key to SOR1 registers.
+==== tsec_set_key ====
+This method takes '''key_data_buf''' (a 16 bytes buffer) as argument and writes its contents to SOR1 registers.
  // This is TSEC_MMIO + 0x1000 + (0x1C300 / 0x40)
  *(u32 *)TSEC_DMA_UNK = 0xFFF;
  
@@ -1269,7 +1429,7 @@ This stage is responsible for reconfiguring the Falcon's crypto co-processor and
    hovi_key_addr = key_buf + 0x50;
  else if (key_version == 0x02)	        // Use HOVI_COMMON_01
    hovi_key_addr = key_buf + 0x60;
- else if (key_version == 0x03)	        // Use empty key
+ else if (key_version == 0x03)	        // Use debug key (empty)
    hovi_key_addr = key_buf + 0x00;
  else
    res = 0xD0D0D0D0
@@ -1559,11 +1719,11 @@ This is the method responsible for all crypto operations performed during [[#Key
  return;
 
 == Keygen ==
-This stage is decrypted by [[#KeygenLdr|KeygenLdr]] using a key generated by encrypting a seed with an hardware secret. It will generate the final TSEC device key.
+This stage is decrypted by [[#KeygenLdr|KeygenLdr]] using a key generated by encrypting a seed with an hardware secret. It will generate the final TSEC key.
 
 == Loader ==
 This stage starts by authenticating and executing [[#KeygenLdr|KeygenLdr]] which in turn authenticates, decrypts and executes [[#Keygen|Keygen]] (both blobs remain unchanged from previous firmware versions).
-After the TSEC device key has been generated, execution returns to this stage which then parses and executes [[#Payload|Payload]].
+After the TSEC key has been generated, execution returns to this stage which then parses and executes [[#Payload|Payload]].
 
 === Main ===
  u8 key_data_buf[0x84];
@@ -1773,7 +1933,8 @@ This stage prepares the stack then authenticates, decrypts and executes the Payl
  cxor(c7, c7);
  
  // fuc5 crypt cauth instruction
- // Set auth_addr to 0x100, auth_size to 0x1300 and some unknown flags
+ // Set auth_addr to 0x100, auth_size to 0x1300,
+ // bit 16 (is_secret) and bit 17 (is_encrypted)
  cauth((0x02 << 0x10) | (0x01 << 0x10) | (0x1300 << 0x10) | (0x100 >> 0x08));
  
  // Clear interrupt flags
@@ -1795,7 +1956,7 @@ Small buffer stored after the [[#Boot|Boot]] blob and used across all stages.
 |-
 | 0x00
 | 0x10
-| Empty
+| Debug key (empty)
 |-
 | 0x10
 | 0x10
