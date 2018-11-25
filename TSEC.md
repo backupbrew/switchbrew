@@ -206,8 +206,8 @@ Used for detecting if Falcon is busy or not.
 ### FALCON\_DEBUGINFO
 
 \[6.0.0+\] [nvservices](NV%20services.md "wikilink") sets this to
-0x8005FF00 (physical DRAM address inside the GPU UCODE carveout) before
-starting the nvhost\_tsec firmware.
+0x8005FF00 \>\> 8 (physical DRAM address inside the GPU UCODE carveout)
+before starting the nvhost\_tsec firmware.
 
 ### FALCON\_CPUCTL
 

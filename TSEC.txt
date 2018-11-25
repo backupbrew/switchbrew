@@ -625,7 +625,7 @@ Used for enabling/disabling Falcon interfaces.
 Used for detecting if Falcon is busy or not.
 
 === FALCON_DEBUGINFO ===
-[6.0.0+] [[NV_services|nvservices]] sets this to 0x8005FF00 (physical DRAM address inside the GPU UCODE carveout) before starting the nvhost_tsec firmware.
+[6.0.0+] [[NV_services|nvservices]] sets this to 0x8005FF00 >> 8 (physical DRAM address inside the GPU UCODE carveout) before starting the nvhost_tsec firmware.
 
 === FALCON_CPUCTL ===
 {| class="wikitable" border="1"
