@@ -376,23 +376,23 @@ This is "nn::usb::hs::IClientRootSession".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#BindClientProcess_2|#BindClientProcess]]
+| [2.0.0+] 0 || [[#BindClientProcess_2|#BindClientProcess]]
 |-
-| 1 || [[#QueryAllInterfaces]]
+| 1 ([1.0.0] 0) || [[#QueryAllInterfaces]]
 |-
-| 2 || [[#QueryAvailableInterfaces]]
+| 2 ([1.0.0] 1) || [[#QueryAvailableInterfaces]]
 |-
-| 3 || [[#QueryAcquiredInterfaces]]
+| 3 ([1.0.0] 2) || [[#QueryAcquiredInterfaces]]
 |-
-| 4 || [[#CreateInterfaceAvailableEvent]]
+| 4 ([1.0.0] 3) || [[#CreateInterfaceAvailableEvent]]
 |-
-| 5 || [[#DestroyInterfaceAvailableEvent]]
+| 5 ([1.0.0] 4) || [[#DestroyInterfaceAvailableEvent]]
 |-
-| 6 || [[#GetInterfaceStateChangeEvent]]
+| 6 ([1.0.0] 5) || [[#GetInterfaceStateChangeEvent]]
 |-
-| 7 || [[#AcquireUsbIf]]
+| 7 ([1.0.0] 6) || [[#AcquireUsbIf]] ([1.0.0] ?)
 |-
-| 8 || [6.0.0+]
+| 8 ([1.0.0] 7) || [6.0.0+] ([1.0.0] ?)
 |}
 
 General USB devices usage, used by [[HID_services|hid]], [[Sockets_services|bsdsockets]], and [5.1.0+] [[Audio_services|audio]].
@@ -456,17 +456,17 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 3 || [[#GetAlternateInterface]] || 
 |-
-| 4 || [[#GetCurrentFrame]] || 
+| 4 [1.0.0] 5?) || [[#GetCurrentFrame]] || 
 |-
-| 5 || [[#CtrlXferAsync]] || 
+| [2.0.0+] 5 || [[#CtrlXferAsync]] || 
 |-
-| 6 || || No input, returns an output handle. Signaled when [[#CtrlXferAsync]] finishes.
+| 6 || || No input, returns an output handle. Signaled when [[#CtrlXferAsync]] finishes. ([1.0.0] ?)
 |-
-| 7 || [[#GetCtrlXferReport]] || 
+| 7 || [[#GetCtrlXferReport]] ([1.0.0] ?) || 
 |-
 | 8 || [[#ResetDevice]] || 
 |-
-| 9 || [[#OpenUsbEp]] || 
+| 9 ([1.0.0] 4)  || [[#OpenUsbEp]] || 
 |}
 
 Official sw uses autoclear=false for the above events.
@@ -514,19 +514,19 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || [[#Open]] || 
+| 0 ([1.0.0] ?) || [[#Open]] || 
 |-
-| 1 || [[#Close]] || 
+| 1 ([1.0.0] ?) || [[#Close]] || 
 |-
-| 2 || || No input, returns an output handle. Signaled when [[#PostBufferAsync_2|#PostBufferAsync]] finishes.
+| [2.0.0+] 2 || || No input, returns an output handle. Signaled when [[#PostBufferAsync_2|#PostBufferAsync]] finishes.
 |-
-| 3 || [[#Populate]] || 
+| 3 ([1.0.0] ?) || [[#Populate]] || 
 |-
-| 4 || [[#PostBufferAsync_2|#PostBufferAsync]] ||
+| [2.0.0+] 4 || [[#PostBufferAsync_2|#PostBufferAsync]] ||
 |-
-| 5 || [[#GetXferReport]] || 
+| [2.0.0+] 5 || [[#GetXferReport]] || 
 |-
-| 6 || || Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.
+| [2.0.0+] 6 || || Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.
 |-
 | 7 || [4.0.0+] || 
 |-

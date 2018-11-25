@@ -450,17 +450,17 @@ Stops in-progress data-transfer done by
 This is
 "nn::usb::hs::IClientRootSession".
 
-| Cmd | Name                                                                           |
-| --- | ------------------------------------------------------------------------------ |
-| 0   | [\#BindClientProcess](#BindClientProcess_2 "wikilink")                         |
-| 1   | [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink")                         |
-| 2   | [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink")             |
-| 3   | [\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink")               |
-| 4   | [\#CreateInterfaceAvailableEvent](#CreateInterfaceAvailableEvent "wikilink")   |
-| 5   | [\#DestroyInterfaceAvailableEvent](#DestroyInterfaceAvailableEvent "wikilink") |
-| 6   | [\#GetInterfaceStateChangeEvent](#GetInterfaceStateChangeEvent "wikilink")     |
-| 7   | [\#AcquireUsbIf](#AcquireUsbIf "wikilink")                                     |
-| 8   | \[6.0.0+\]                                                                     |
+| Cmd             | Name                                                                           |
+| --------------- | ------------------------------------------------------------------------------ |
+| \[2.0.0+\] 0    | [\#BindClientProcess](#BindClientProcess_2 "wikilink")                         |
+| 1 (\[1.0.0\] 0) | [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink")                         |
+| 2 (\[1.0.0\] 1) | [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink")             |
+| 3 (\[1.0.0\] 2) | [\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink")               |
+| 4 (\[1.0.0\] 3) | [\#CreateInterfaceAvailableEvent](#CreateInterfaceAvailableEvent "wikilink")   |
+| 5 (\[1.0.0\] 4) | [\#DestroyInterfaceAvailableEvent](#DestroyInterfaceAvailableEvent "wikilink") |
+| 6 (\[1.0.0\] 5) | [\#GetInterfaceStateChangeEvent](#GetInterfaceStateChangeEvent "wikilink")     |
+| 7 (\[1.0.0\] 6) | [\#AcquireUsbIf](#AcquireUsbIf "wikilink") (\[1.0.0\] ?)                       |
+| 8 (\[1.0.0\] 7) | \[6.0.0+\] (\[1.0.0\] ?)                                                       |
 
 General USB devices usage, used by [hid](HID%20services.md "wikilink"),
 [bsdsockets](Sockets%20services.md "wikilink"), and \[5.1.0+\]
@@ -550,18 +550,18 @@ output buffer contains the first 0x1B8-bytes from
 This is
 "nn::usb::hs::IClientIfSession".
 
-| Cmd | Name                                                         | Notes                                                                                                    |
-| --- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| 0   |                                                              | No input, returns an output handle.                                                                      |
-| 1   | [\#SetInterface](#SetInterface "wikilink")                   |                                                                                                          |
-| 2   | [\#GetInterface](#GetInterface "wikilink")                   |                                                                                                          |
-| 3   | [\#GetAlternateInterface](#GetAlternateInterface "wikilink") |                                                                                                          |
-| 4   | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")             |                                                                                                          |
-| 5   | [\#CtrlXferAsync](#CtrlXferAsync "wikilink")                 |                                                                                                          |
-| 6   |                                                              | No input, returns an output handle. Signaled when [\#CtrlXferAsync](#CtrlXferAsync "wikilink") finishes. |
-| 7   | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink")         |                                                                                                          |
-| 8   | [\#ResetDevice](#ResetDevice "wikilink")                     |                                                                                                          |
-| 9   | [\#OpenUsbEp](#OpenUsbEp "wikilink")                         |                                                                                                          |
+| Cmd             | Name                                                               | Notes                                                                                                                  |
+| --------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| 0               |                                                                    | No input, returns an output handle.                                                                                    |
+| 1               | [\#SetInterface](#SetInterface "wikilink")                         |                                                                                                                        |
+| 2               | [\#GetInterface](#GetInterface "wikilink")                         |                                                                                                                        |
+| 3               | [\#GetAlternateInterface](#GetAlternateInterface "wikilink")       |                                                                                                                        |
+| 4 \[1.0.0\] 5?) | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")                   |                                                                                                                        |
+| \[2.0.0+\] 5    | [\#CtrlXferAsync](#CtrlXferAsync "wikilink")                       |                                                                                                                        |
+| 6               |                                                                    | No input, returns an output handle. Signaled when [\#CtrlXferAsync](#CtrlXferAsync "wikilink") finishes. (\[1.0.0\] ?) |
+| 7               | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink") (\[1.0.0\] ?) |                                                                                                                        |
+| 8               | [\#ResetDevice](#ResetDevice "wikilink")                           |                                                                                                                        |
+| 9 (\[1.0.0\] 4) | [\#OpenUsbEp](#OpenUsbEp "wikilink")                               |                                                                                                                        |
 
 Official sw uses autoclear=false for the above events.
 
@@ -634,17 +634,17 @@ must be non-zero.
 This is
 "nn::usb::hs::IClientEpSession".
 
-| Cmd | Name                                               | Notes                                                                                                          |
-| --- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| 0   | [\#Open](#Open "wikilink")                         |                                                                                                                |
-| 1   | [\#Close](#Close "wikilink")                       |                                                                                                                |
-| 2   |                                                    | No input, returns an output handle. Signaled when [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") finishes. |
-| 3   | [\#Populate](#Populate "wikilink")                 |                                                                                                                |
-| 4   | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") |                                                                                                                |
-| 5   | [\#GetXferReport](#GetXferReport "wikilink")       |                                                                                                                |
-| 6   |                                                    | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.                          |
-| 7   | \[4.0.0+\]                                         |                                                                                                                |
-| 8   | \[4.0.0+\]                                         |                                                                                                                |
+| Cmd             | Name                                               | Notes                                                                                                          |
+| --------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 0 (\[1.0.0\] ?) | [\#Open](#Open "wikilink")                         |                                                                                                                |
+| 1 (\[1.0.0\] ?) | [\#Close](#Close "wikilink")                       |                                                                                                                |
+| \[2.0.0+\] 2    |                                                    | No input, returns an output handle. Signaled when [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") finishes. |
+| 3 (\[1.0.0\] ?) | [\#Populate](#Populate "wikilink")                 |                                                                                                                |
+| \[2.0.0+\] 4    | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") |                                                                                                                |
+| \[2.0.0+\] 5    | [\#GetXferReport](#GetXferReport "wikilink")       |                                                                                                                |
+| \[2.0.0+\] 6    |                                                    | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.                          |
+| 7               | \[4.0.0+\]                                         |                                                                                                                |
+| 8               | \[4.0.0+\]                                         |                                                                                                                |
 
 Official sw uses autoclear=false for the above event.
 
