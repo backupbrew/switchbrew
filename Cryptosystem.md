@@ -254,7 +254,8 @@ consoles.
 | 4.0.0-4.1.0    | 4            | 1                                                |
 | 5.0.0-5.1.0    | 5            | 1                                                |
 | 6.0.0-6.1.0    | 6            | 1                                                |
-| 6.2.0          | 7            | 1                                                |
+
+Starting from 6.2.0, key generation no longer uses keyblobs.
 
 ## Secure Monitor Init
 
