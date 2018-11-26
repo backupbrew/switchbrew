@@ -317,7 +317,7 @@ Takes a pid.
 <td><p>Applications on [1.0.0] used to have access to this service, but it doesn't appear to be present on retail devices.</p></td>
 </tr>
 <tr class="even">
-<td><p>usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pd:m, usb:pm</p></td>
+<td><p>usb:ds, usb:hs, usb:pd, usb:pd:c, usb:pd:m, usb:pm, [1.0.0] usb:pd:m</p></td>
 <td><p><a href="USB services.md" title="wikilink">USB services</a></p></td>
 <td></td>
 </tr>
