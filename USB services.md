@@ -769,17 +769,17 @@ USB-sysmodule symbols for this refer to "Cradle", which is the
 This is
 "nn::usb::pd::detail::IPdCradleSession".
 
-| Cmd | Name              | Notes                                                                                                                             |
-| --- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | VdmUserWrite      | Input { u32 value; u32 VdmUserId; }. Output {}. If Cradle or RelayBox is connected, issues given VDM with value.                  |
-| 1   | VdmUserRead       | Input { u32 VdmUserId; }. Output { u32 value; }. If Cradle or RelayBox is connected, returns u32 response from issuing given VDM. |
-| 2   | Vdm20Init         | No input/output. If Cradle or RelayBox is connected, caches result of VDM 0x20.                                                   |
-| 3   | GetFwType         | No input. Returns an output u16.                                                                                                  |
-| 4   | GetFwRevision     | No input. Returns an output u16.                                                                                                  |
-| 5   | GetManufacturerId | No input. Returns an output u16.                                                                                                  |
-| 6   | GetDeviceId       | No input. Returns an output u16.                                                                                                  |
-| 7   | \[3.0.0+\]        |                                                                                                                                   |
-| 8   | \[3.0.0+\]        |                                                                                                                                   |
+| Cmd | Name                         | Notes                                                                                                                             |
+| --- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | VdmUserWrite                 | Input { u32 value; u32 VdmUserId; }. Output {}. If Cradle or RelayBox is connected, issues given VDM with value.                  |
+| 1   | VdmUserRead                  | Input { u32 VdmUserId; }. Output { u32 value; }. If Cradle or RelayBox is connected, returns u32 response from issuing given VDM. |
+| 2   | Vdm20Init                    | No input/output. If Cradle or RelayBox is connected, caches result of VDM 0x20.                                                   |
+| 3   | \[2.0.0+\] GetFwType         | No input. Returns an output u16.                                                                                                  |
+| 4   | \[2.0.0+\] GetFwRevision     | No input. Returns an output u16.                                                                                                  |
+| 5   | \[2.0.0+\] GetManufacturerId | No input. Returns an output u16.                                                                                                  |
+| 6   | \[2.0.0+\] GetDeviceId       | No input. Returns an output u16.                                                                                                  |
+| 7   | \[3.0.0+\]                   |                                                                                                                                   |
+| 8   | \[3.0.0+\]                   |                                                                                                                                   |
 
 Note: The VdmUserId given to VdmUserRead/VdmUserWrite is translated from
 the given (enum) value to the actual cmd to send.
