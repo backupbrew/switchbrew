@@ -708,6 +708,8 @@ This is "nn::usb::pd::detail::IPdManufactureManager". This is only available on 
 == IPdManufactureSession ==
 This is "nn::usb::pd::detail::IPdManufactureSession".
 
+These commands just load the u16 from global state.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes

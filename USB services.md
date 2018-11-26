@@ -798,6 +798,8 @@ available on
 
 This is "nn::usb::pd::detail::IPdManufactureSession".
 
+These commands just load the u16 from global state.
+
 | Cmd | Name | Notes                            |
 | --- | ---- | -------------------------------- |
 | 0   |      | No input, returns an output u16. |
