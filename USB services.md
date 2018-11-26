@@ -450,17 +450,17 @@ Stops in-progress data-transfer done by
 This is
 "nn::usb::hs::IClientRootSession".
 
-| Cmd             | Name                                                                           |
-| --------------- | ------------------------------------------------------------------------------ |
-| \[2.0.0+\] 0    | [\#BindClientProcess](#BindClientProcess_2 "wikilink")                         |
-| 1 (\[1.0.0\] 0) | [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink")                         |
-| 2 (\[1.0.0\] 1) | [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink")             |
-| 3 (\[1.0.0\] 2) | [\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink")               |
-| 4 (\[1.0.0\] 3) | [\#CreateInterfaceAvailableEvent](#CreateInterfaceAvailableEvent "wikilink")   |
-| 5 (\[1.0.0\] 4) | [\#DestroyInterfaceAvailableEvent](#DestroyInterfaceAvailableEvent "wikilink") |
-| 6 (\[1.0.0\] 5) | [\#GetInterfaceStateChangeEvent](#GetInterfaceStateChangeEvent "wikilink")     |
-| 7 (\[1.0.0\] 6) | [\#AcquireUsbIf](#AcquireUsbIf "wikilink") (\[1.0.0\] ?)                       |
-| 8 (\[1.0.0\] 7) | \[6.0.0+\] (\[1.0.0\] ?)                                                       |
+| Cmd             | Name                                                                            |
+| --------------- | ------------------------------------------------------------------------------- |
+| \[2.0.0+\] 0    | [\#BindClientProcess](#BindClientProcess_2 "wikilink")                          |
+| 1 (\[1.0.0\] 0) | [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink")                          |
+| 2 (\[1.0.0\] 1) | [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink")              |
+| 3 (\[1.0.0\] 2) | [\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink")                |
+| 4 (\[1.0.0\] 3) | [\#CreateInterfaceAvailableEvent](#CreateInterfaceAvailableEvent "wikilink")    |
+| 5 (\[1.0.0\] 4) | [\#DestroyInterfaceAvailableEvent](#DestroyInterfaceAvailableEvent "wikilink")  |
+| 6 (\[1.0.0\] 5) | [\#GetInterfaceStateChangeEvent](#GetInterfaceStateChangeEvent "wikilink")      |
+| 7 (\[1.0.0\] 6) | [\#AcquireUsbIf](#AcquireUsbIf "wikilink")                                      |
+| 8 (\[1.0.0\] 7) | \[6.0.0+\] (\[1.0.0\] [\#GetDescriptorString](#GetDescriptorString "wikilink")) |
 
 General USB devices usage, used by [hid](HID%20services.md "wikilink"),
 [bsdsockets](Sockets%20services.md "wikilink"), and \[5.1.0+\]
@@ -544,6 +544,8 @@ The input u32 is from the u32 at entry+0 from the associated
 output entry. User-processes use size 0x1B8 for the output buffer. The
 output buffer contains the first 0x1B8-bytes from
 [\#UsbHsInterface](#UsbHsInterface "wikilink").
+
+## GetDescriptorString
 
 ## IClientIfSession
 

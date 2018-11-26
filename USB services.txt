@@ -390,9 +390,9 @@ This is "nn::usb::hs::IClientRootSession".
 |-
 | 6 ([1.0.0] 5) || [[#GetInterfaceStateChangeEvent]]
 |-
-| 7 ([1.0.0] 6) || [[#AcquireUsbIf]] ([1.0.0] ?)
+| 7 ([1.0.0] 6) || [[#AcquireUsbIf]]
 |-
-| 8 ([1.0.0] 7) || [6.0.0+] ([1.0.0] ?)
+| 8 ([1.0.0] 7) || [6.0.0+] ([1.0.0] [[#GetDescriptorString]])
 |}
 
 General USB devices usage, used by [[HID_services|hid]], [[Sockets_services|bsdsockets]], and [5.1.0+] [[Audio_services|audio]].
@@ -440,6 +440,8 @@ When signaled, this indicates that the user-process should use [[#QueryAcquiredI
 Takes an input u32 and a type-0x6 output buffer, returns an [[#IClientIfSession]].
 
 The input u32 is from the u32 at entry+0 from the associated [[#QueryAvailableInterfaces]] output entry. User-processes use size 0x1B8 for the output buffer. The output buffer contains the first 0x1B8-bytes from [[#UsbHsInterface]].
+
+== GetDescriptorString ==
 
 == IClientIfSession ==
 This is "nn::usb::hs::IClientIfSession".
