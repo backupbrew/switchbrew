@@ -558,7 +558,7 @@ This is
 | 1               | [\#SetInterface](#SetInterface "wikilink")                                                                                        |                                                                                                          |
 | 2               | [\#GetInterface](#GetInterface "wikilink")                                                                                        |                                                                                                          |
 | 3               | [\#GetAlternateInterface](#GetAlternateInterface "wikilink")                                                                      |                                                                                                          |
-| 4 \[1.0.0\] 5?) | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")                                                                                  |                                                                                                          |
+| 4 \[1.0.0\] 5)  | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")                                                                                  |                                                                                                          |
 | \[2.0.0+\] 5    | [\#CtrlXferAsync](#CtrlXferAsync "wikilink")                                                                                      |                                                                                                          |
 | 6               | (\[1.0.0\] [\#SubmitControlInRequest](#SubmitControlInRequest "wikilink"))                                                        | No input, returns an output handle. Signaled when [\#CtrlXferAsync](#CtrlXferAsync "wikilink") finishes. |
 | 7               | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink") (\[1.0.0\] [\#SubmitControlOutRequest](#SubmitControlOutRequest "wikilink")) |                                                                                                          |
@@ -590,6 +590,8 @@ buffer contains the first 0x1B8-bytes from
 ### GetCurrentFrame
 
 No input, returns an output u32.
+
+On 1.0.0 this stubbed: this returns 0 with output u32 = hard-coded 0.
 
 ### CtrlXferAsync
 

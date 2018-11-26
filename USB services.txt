@@ -458,7 +458,7 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | 3 || [[#GetAlternateInterface]] || 
 |-
-| 4 [1.0.0] 5?) || [[#GetCurrentFrame]] || 
+| 4 [1.0.0] 5) || [[#GetCurrentFrame]] || 
 |-
 | [2.0.0+] 5 || [[#CtrlXferAsync]] || 
 |-
@@ -486,6 +486,8 @@ Takes an input u8 and a type-0x6 output buffer, no output. The output buffer con
 
 === GetCurrentFrame ===
 No input, returns an output u32.
+
+On 1.0.0 this stubbed: this returns 0 with output u32 = hard-coded 0.
 
 === CtrlXferAsync ===
 Takes 2 input u8s ('''bmRequestType''' and '''bRequest'''), 3 input u16s ('''wValue''', '''wIndex''', and '''wLength'''), and an input u64 '''buffer''', no output.
