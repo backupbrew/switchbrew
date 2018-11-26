@@ -552,18 +552,18 @@ output buffer contains the first 0x1B8-bytes from
 This is
 "nn::usb::hs::IClientIfSession".
 
-| Cmd             | Name                                                               | Notes                                                                                                                  |
-| --------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| 0               |                                                                    | No input, returns an output handle.                                                                                    |
-| 1               | [\#SetInterface](#SetInterface "wikilink")                         |                                                                                                                        |
-| 2               | [\#GetInterface](#GetInterface "wikilink")                         |                                                                                                                        |
-| 3               | [\#GetAlternateInterface](#GetAlternateInterface "wikilink")       |                                                                                                                        |
-| 4 \[1.0.0\] 5?) | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")                   |                                                                                                                        |
-| \[2.0.0+\] 5    | [\#CtrlXferAsync](#CtrlXferAsync "wikilink")                       |                                                                                                                        |
-| 6               |                                                                    | No input, returns an output handle. Signaled when [\#CtrlXferAsync](#CtrlXferAsync "wikilink") finishes. (\[1.0.0\] ?) |
-| 7               | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink") (\[1.0.0\] ?) |                                                                                                                        |
-| 8               | [\#ResetDevice](#ResetDevice "wikilink")                           |                                                                                                                        |
-| 9 (\[1.0.0\] 4) | [\#OpenUsbEp](#OpenUsbEp "wikilink")                               |                                                                                                                        |
+| Cmd             | Name                                                                                                                              | Notes                                                                                                    |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| 0               |                                                                                                                                   | No input, returns an output handle.                                                                      |
+| 1               | [\#SetInterface](#SetInterface "wikilink")                                                                                        |                                                                                                          |
+| 2               | [\#GetInterface](#GetInterface "wikilink")                                                                                        |                                                                                                          |
+| 3               | [\#GetAlternateInterface](#GetAlternateInterface "wikilink")                                                                      |                                                                                                          |
+| 4 \[1.0.0\] 5?) | [\#GetCurrentFrame](#GetCurrentFrame "wikilink")                                                                                  |                                                                                                          |
+| \[2.0.0+\] 5    | [\#CtrlXferAsync](#CtrlXferAsync "wikilink")                                                                                      |                                                                                                          |
+| 6               | (\[1.0.0\] [\#SubmitControlInRequest](#SubmitControlInRequest "wikilink"))                                                        | No input, returns an output handle. Signaled when [\#CtrlXferAsync](#CtrlXferAsync "wikilink") finishes. |
+| 7               | [\#GetCtrlXferReport](#GetCtrlXferReport "wikilink") (\[1.0.0\] [\#SubmitControlOutRequest](#SubmitControlOutRequest "wikilink")) |                                                                                                          |
+| 8               | [\#ResetDevice](#ResetDevice "wikilink")                                                                                          |                                                                                                          |
+| 9 (\[1.0.0\] 4) | [\#OpenUsbEp](#OpenUsbEp "wikilink")                                                                                              |                                                                                                          |
 
 Official sw uses autoclear=false for the above events.
 

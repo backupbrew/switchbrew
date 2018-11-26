@@ -462,9 +462,9 @@ This is "nn::usb::hs::IClientIfSession".
 |-
 | [2.0.0+] 5 || [[#CtrlXferAsync]] || 
 |-
-| 6 || || No input, returns an output handle. Signaled when [[#CtrlXferAsync]] finishes. ([1.0.0] ?)
+| 6 || ([1.0.0] [[#SubmitControlInRequest]]) || No input, returns an output handle. Signaled when [[#CtrlXferAsync]] finishes.
 |-
-| 7 || [[#GetCtrlXferReport]] ([1.0.0] ?) || 
+| 7 || [[#GetCtrlXferReport]] ([1.0.0] [[#SubmitControlOutRequest]]) || 
 |-
 | 8 || [[#ResetDevice]] || 
 |-
