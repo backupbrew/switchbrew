@@ -42,40 +42,6 @@ Otherwise
       - Windows 10 (post-Anniversary Update): Start -\> devkitPro -\>
         MSYS
 
-### Setting up VSCode
-
-VSCode is a open-source text editor from Microsoft available on multiple
-platforms. Its configurability makes it very useful as an IDE
-replacement.
-
-#### Shell
-
-  - For VSCode to use the MSYS2 shell from devkitPro you'll have to set
-    the "terminal.integrated.shell.windows" and
-    "terminal.integrated.shellArgs.windows"
-properties.
-
-`{`  
-`   "terminal.integrated.shell.windows": "C:\\devkitPro\\msys2\\msys2_shell.cmd",`  
-`   "terminal.integrated.shellArgs.windows": ["-defterm", "-mingw64", "-no-start", "-here"]`  
-`}`
-
-#### Build task
-
-  - The shell VSCode uses to run build tasks is different from the other
-    shell. You have to manually override the default shell by passing an
-    argument in the options part of the configuration.
-  - Please note the '-shell bash -c'. It prevents bash from idling after
-    the command and exits
-immediately.
-
-`"options": {`  
-`  "shell": {`  
-`    "executable": "C:\\devkitPro\\msys2\\msys2_shell.cmd",`  
-`    "args": ["-defterm", "-mingw64", "-no-start", "-here", "-shell bash -c"]`  
-`  }`  
-`},`
-
 ## Unix-like platforms
 
 Currently devkitPro provides precompiled versions of devkitA64 for the
