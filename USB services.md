@@ -659,10 +659,12 @@ Immediately after opening the endpoint session, official sw uses
 
 No input/output.
 
-Not known to be used by any official user-processes, on \[2.0.0+\] at
-least. This is likely deprecated, this is similar to
-[\#OpenUsbEp](#OpenUsbEp "wikilink") with the params being loaded from
-state instead.
+This is similar to [\#OpenUsbEp](#OpenUsbEp "wikilink") with the params
+being loaded from state instead.
+
+This is likely intended for re-opening after
+[\#Close](#Close "wikilink") was used, but this is not known to be used
+by any official user-processes.
 
 #### Close
 
