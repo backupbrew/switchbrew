@@ -47,6 +47,6 @@ Security Engine.
 | SE\_RSA\_KEYTABLE\_ADDR     | 0x70012420 |
 | SE\_RSA\_KEYTABLE\_DATA     | 0x70012424 |
 | SE\_RSA\_OUTPUT             | 0x70012428 |
-| SE\_STATUS\_FLAGS           | 0x70012800 |
+| SE\_STATUS                  | 0x70012800 |
 | SE\_ERR\_STATUS             | 0x70012804 |
 | SE\_SPARE\_0                | 0x7001280C |
