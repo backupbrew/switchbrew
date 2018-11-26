@@ -34,7 +34,7 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 | [[#FUSE_TIME_PGM2|FUSE_TIME_PGM2]]
 | 0x7000F81C
 |-
-| FUSE_PRIV2INTFC
+| [[#FUSE_PRIV2INTFC|FUSE_PRIV2INTFC]]
 | 0x7000F820
 |-
 | FUSE_FUSEBYPASS
@@ -51,7 +51,6 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 |-
 | FUSE_PWR_GOOD_SW
 | 0x7000F834
-|-
 |}
 
 ==== FUSE_CTRL ====
@@ -62,9 +61,14 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 | 0-1
 | Fuse command (1 = FUSE_READ; 2 = FUSE_WRITE; 3 = FUSE_SENSE)
 |-
+| 16-20
+| Fuse state (4 = STATE_IDLE)
+|-
 | 26
 | Fuse power down mode flag (FUSE_CTRL_PD)
 |-
+| 30
+| Fuse sense status (FUSE_CTRL_SENSE_DONE)
 |}
 
 Before fuse reading/writing the power down mode must be disabled.
@@ -82,6 +86,18 @@ This register takes the value to be written to the fuse.
 ==== FUSE_TIME_PGM2 ====
 This register takes the fuse programming pulse (0xC0 == 19200 kHz).
 
+==== FUSE_PRIV2INTFC ====
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FUSE_PRIV2INTFC_SDATA
+|-
+| 1
+| FUSE_PRIV2INTFC_SKIP_RECORDS
+|}
+
 ==== FUSE_DIS_PGM ====
 If set to 0x01, this register disables fuse programming.
 
@@ -95,6 +111,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 |-
 | FUSE_PRODUCTION_MODE
 | 0x7000F900
+|-
+| FUSE_ODM_LOCK
+| 0x7000F908
 |-
 | [[#FUSE_SKU_INFO|FUSE_SKU_INFO]]
 | 0x7000F910
@@ -185,6 +204,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 |-
 | [[#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY4]]
 | 0x7000F9B4
+|-
+| FUSE_ARM_JTAG_DISABLE
+| 0x7000F9B8
 |-
 | FUSE_BOOT_DEVICE_INFO
 | 0x7000F9BC
@@ -285,8 +307,14 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_TSENSOR_8
 | 0x7000FAD4
 |-
+| FUSE_DEBUG_AUTHENTICATION
+| 0x7000FAE4
+|-
 | FUSE_SECURE_PROVISION_INDEX
 | 0x7000FAE8
+|-
+| FUSE_AID
+| 0x7000FAF8
 |-
 | FUSE_RESERVED_CALIB
 | 0x7000FB04
@@ -576,10 +604,17 @@ Note that the indexes are relative to the start of the fuse array and each eleme
 | 0x52
 | 1
 |-
+| debug_authentication
+| 0x5A
+| 5
+|-
+| aid
+| 0x67
+| 32
+|-
 | [[#bootrom_ipatch|bootrom_ipatch]]
 | 0x72
 | 624
-|-
 |}
 
 === odm_reserved ===

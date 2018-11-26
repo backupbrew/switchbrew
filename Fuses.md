@@ -26,21 +26,21 @@ bootloaders.
 | FUSE\_TIME\_RD2                                      | 0x7000F814 |
 | FUSE\_TIME\_PGM1                                     | 0x7000F818 |
 | [FUSE\_TIME\_PGM2](#FUSE_TIME_PGM2 "wikilink")       | 0x7000F81C |
-| FUSE\_PRIV2INTFC                                     | 0x7000F820 |
+| [FUSE\_PRIV2INTFC](#FUSE_PRIV2INTFC "wikilink")      | 0x7000F820 |
 | FUSE\_FUSEBYPASS                                     | 0x7000F824 |
 | FUSE\_PRIVATEKEYDISABLE                              | 0x7000F828 |
 | [FUSE\_DIS\_PGM](#FUSE_DIS_PGM "wikilink")           | 0x7000F82C |
 | [FUSE\_WRITE\_ACCESS](#FUSE_WRITE_ACCESS "wikilink") | 0x7000F830 |
 | FUSE\_PWR\_GOOD\_SW                                  | 0x7000F834 |
-|                                                      |            |
 
 #### FUSE\_CTRL
 
-| Bits | Description                                                     |
-| ---- | --------------------------------------------------------------- |
-| 0-1  | Fuse command (1 = FUSE\_READ; 2 = FUSE\_WRITE; 3 = FUSE\_SENSE) |
-| 26   | Fuse power down mode flag (FUSE\_CTRL\_PD)                      |
-|      |                                                                 |
+| Bits  | Description                                                     |
+| ----- | --------------------------------------------------------------- |
+| 0-1   | Fuse command (1 = FUSE\_READ; 2 = FUSE\_WRITE; 3 = FUSE\_SENSE) |
+| 16-20 | Fuse state (4 = STATE\_IDLE)                                    |
+| 26    | Fuse power down mode flag (FUSE\_CTRL\_PD)                      |
+| 30    | Fuse sense status (FUSE\_CTRL\_SENSE\_DONE)                     |
 
 Before fuse reading/writing the power down mode must be disabled.
 FUSE\_SENSE mode flushes programmed values into the [cache
@@ -62,6 +62,13 @@ This register takes the value to be written to the fuse.
 
 This register takes the fuse programming pulse (0xC0 == 19200 kHz).
 
+#### FUSE\_PRIV2INTFC
+
+| Bits | Description                     |
+| ---- | ------------------------------- |
+| 0    | FUSE\_PRIV2INTFC\_SDATA         |
+| 1    | FUSE\_PRIV2INTFC\_SKIP\_RECORDS |
+
 #### FUSE\_DIS\_PGM
 
 If set to 0x01, this register disables fuse programming.
@@ -76,6 +83,7 @@ driver registers.
 | Name                                                   | Address    |
 | ------------------------------------------------------ | ---------- |
 | FUSE\_PRODUCTION\_MODE                                 | 0x7000F900 |
+| FUSE\_ODM\_LOCK                                        | 0x7000F908 |
 | [FUSE\_SKU\_INFO](#FUSE_SKU_INFO "wikilink")           | 0x7000F910 |
 | FUSE\_CPU\_SPEEDO\_0                                   | 0x7000F914 |
 | FUSE\_CPU\_IDDQ                                        | 0x7000F918 |
@@ -106,6 +114,7 @@ driver registers.
 | [FUSE\_PRIVATE\_KEY2](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9AC |
 | [FUSE\_PRIVATE\_KEY3](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B0 |
 | [FUSE\_PRIVATE\_KEY4](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B4 |
+| FUSE\_ARM\_JTAG\_DISABLE                               | 0x7000F9B8 |
 | FUSE\_BOOT\_DEVICE\_INFO                               | 0x7000F9BC |
 | [FUSE\_RESERVED\_SW](#FUSE_RESERVED_SW "wikilink")     | 0x7000F9C0 |
 | FUSE\_VP8\_ENABLE                                      | 0x7000F9C4 |
@@ -139,7 +148,9 @@ driver registers.
 | FUSE\_TSENSOR\_COMMON                                  | 0x7000FA80 |
 | FUSE\_DEBUG\_AUTH\_OVERRIDE                            | 0x7000FA9C |
 | FUSE\_TSENSOR\_8                                       | 0x7000FAD4 |
+| FUSE\_DEBUG\_AUTHENTICATION                            | 0x7000FAE4 |
 | FUSE\_SECURE\_PROVISION\_INDEX                         | 0x7000FAE8 |
+| FUSE\_AID                                              | 0x7000FAF8 |
 | FUSE\_RESERVED\_CALIB                                  | 0x7000FB04 |
 | FUSE\_OPT\_GPU\_TPC0\_DISABLE                          | 0x7000FB0C |
 | FUSE\_TSENSOR\_9                                       | 0x7000FB1C |
@@ -309,8 +320,9 @@ write operation always writes the same word at both fuse\_array + 0
 | ignore\_dev\_sel\_straps                      | 0x2E  | 1    |
 | [odm\_reserved](#odm_reserved "wikilink")     | 0x2E  | 256  |
 | pkc\_disable                                  | 0x52  | 1    |
+| debug\_authentication                         | 0x5A  | 5    |
+| aid                                           | 0x67  | 32   |
 | [bootrom\_ipatch](#bootrom_ipatch "wikilink") | 0x72  | 624  |
-|                                               |       |      |
 
 ### odm\_reserved
 
