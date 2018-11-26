@@ -45,7 +45,7 @@ Otherwise
 ### Setting up VSCode
 
 VSCode is a open-source text editor from Microsoft available on multiple
-platforms. It's configurability makes it very useful as an IDE
+platforms. Its configurability makes it very useful as an IDE
 replacement.
 
 #### Shell
