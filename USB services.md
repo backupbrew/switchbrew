@@ -784,6 +784,28 @@ This is
 Note: The VdmUserId given to VdmUserRead/VdmUserWrite is translated from
 the given (enum) value to the actual cmd to send.
 
+# usb:pd:m
+
+This is "nn::usb::pd::detail::IPdManufactureManager". This is only
+available on
+1.0.0.
+
+| Cmd | Name | Notes                                                                              |
+| --- | ---- | ---------------------------------------------------------------------------------- |
+| 0   |      | No input, returns an [\#IPdManufactureSession](#IPdManufactureSession "wikilink"). |
+
+## IPdManufactureSession
+
+This is "nn::usb::pd::detail::IPdManufactureSession".
+
+| Cmd | Name | Notes                            |
+| --- | ---- | -------------------------------- |
+| 0   |      | No input, returns an output u16. |
+| 1   |      | No input, returns an output u16. |
+| 2   |      | No input, returns an output u16. |
+| 3   |      | No input, returns an output u16. |
+|     |      |                                  |
+
 # usb:pm
 
 This is "nn::usb::pm::IPmService".
