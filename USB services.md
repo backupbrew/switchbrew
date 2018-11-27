@@ -780,7 +780,11 @@ This is a 0x228-byte struct (unofficial name).
 | 0x0    | 0x2  | Flags              |
 | 0x2    | 0x2  | idVendor           |
 | 0x4    | 0x2  | idProduct          |
-| 0x6    | 0x7  | Unused?            |
+| 0x6    | 0x2  | bcdDevice\_Min     |
+| 0x8    | 0x2  | bcdDevice\_Max     |
+| 0xA    | 0x1  | bDeviceClass       |
+| 0xB    | 0x1  | bDeviceSubClass    |
+| 0xC    | 0x1  | bDeviceProtocol    |
 | 0xD    | 0x1  | bInterfaceClass    |
 | 0xE    | 0x1  | bInterfaceSubClass |
 | 0xF    | 0x1  | bInterfaceProtocol |
@@ -796,13 +800,19 @@ field in this struct are compared, on mismatch the interface will be
 filtered out. Passing Flags=0 is equivalent to disabling filtering since
 none of these checks will run.
 
-Flags bits 0..1 use usb\_device\_descriptor, while 7..9 use
-usb\_interface\_descriptor.
+Flags bits 0..6 use usb\_device\_descriptor, while 7..9 use
+usb\_interface\_descriptor. Support for bits 2..6 and the associated
+fields was added with {unknown sysver}.
 
 Flags bits:
 
   - 0: idVendor
   - 1: idProduct
+  - 2: bcdDevice (Descriptor value must be \>= struct bcdDevice\_Min)
+  - 3: bcdDevice (Descriptor value must be \<= struct bcdDevice\_Max)
+  - 4: bDeviceClass
+  - 5: bDeviceSubClass
+  - 6: bDeviceProtocol
   - 7: bInterfaceClass
   - 8: bInterfaceSubClass
   - 9: bInterfaceProtocol
