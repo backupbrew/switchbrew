@@ -606,9 +606,9 @@ The buffer contains an array of [[#XferReport]].
 |-
 | 0x0 || 0x4 || ID value passed to other cmds. This is -1 with [[#QueryAllInterfaces]] output, hence this field is unused with that cmd.
 |-
-| 0x4 || 0x4? || deviceID
+| 0x4 || 0x4 || deviceID
 |-
-| 0x8 || 0x4? || ?
+| 0x8 || 0x4 || ?
 |-
 | 0xC || || usb_interface_descriptor
 |-
@@ -618,9 +618,9 @@ The buffer contains an array of [[#XferReport]].
 |-
 | 0x1B8 || 0x40 || "HsDevice-/L<unk0>/P<portnum>/A<unk1>" string (this is "FsDevice..." for the Dock USB 3.0 bus).
 |-
-| 0x1F8 || 0x4? || busID
+| 0x1F8 || 0x4 || busID
 |-
-| 0x1FC || 0x4? || Duplicate of +0x4.
+| 0x1FC || 0x4 || deviceID
 |-
 | 0x200 || || usb_device_descriptor, then usb_config_descriptor immediately afterwards.
 |-
