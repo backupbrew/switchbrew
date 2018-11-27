@@ -374,27 +374,27 @@ This is "nn::usb::hs::IClientRootSession".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| [2.0.0+] 0 || [[#BindClientProcess_2|#BindClientProcess]]
+| [2.0.0+] 0 || [[#BindClientProcess_2|#BindClientProcess]] || 
 |-
-| 1 ([1.0.0] 0) || [[#QueryAllInterfaces]]
+| 1 ([1.0.0] 0) || [[#QueryAllInterfaces]] || 
 |-
-| 2 ([1.0.0] 1) || [[#QueryAvailableInterfaces]]
+| 2 ([1.0.0] 1) || [[#QueryAvailableInterfaces]] || 
 |-
-| 3 ([1.0.0] 2) || [[#QueryAcquiredInterfaces]]
+| 3 ([1.0.0] 2) || [[#QueryAcquiredInterfaces]] || 
 |-
-| 4 ([1.0.0] 3) || [[#CreateInterfaceAvailableEvent]]
+| 4 ([1.0.0] 3) || [[#CreateInterfaceAvailableEvent]] || 
 |-
-| 5 ([1.0.0] 4) || [[#DestroyInterfaceAvailableEvent]]
+| 5 ([1.0.0] 4) || [[#DestroyInterfaceAvailableEvent]] || 
 |-
-| 6 ([1.0.0] 5) || [[#GetInterfaceStateChangeEvent]]
+| 6 ([1.0.0] 5) || [[#GetInterfaceStateChangeEvent]] || 
 |-
-| 7 ([1.0.0] 6) || [[#AcquireUsbIf]]
+| 7 ([1.0.0] 6) || [[#AcquireUsbIf]] || 
 |-
-| 8 ([1.0.0] 7) || [6.0.0+] ([1.0.0] [[#GetDescriptorString]])
+| 8 ([1.0.0] 7) || [6.0.0+] ([1.0.0] [[#GetDescriptorString]]) || 
 |-
-| [1.0.0] 8 || 
+| [1.0.0] 8 || || Takes an input u32, no output. Stubbed, just returns 0.
 |}
 
 General USB devices usage, used by [[HID_services|hid]], [[Sockets_services|bsdsockets]], and [5.1.0+] [[Audio_services|audio]].
