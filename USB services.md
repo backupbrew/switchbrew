@@ -622,26 +622,28 @@ Takes a type-0x6 output buffer, no output. The output buffer contains a
 ### SubmitControlInRequest
 
 Takes a type-0x6 output buffer, 2 input u8s (**bRequest** and
-**bmRequestType**), 3 input u16s (**wValue**, **wIndex**, and
-**wLength**), and an input u32 **unk**. Returns an output u32 for the
-actual transferred size.
+**bRequestType**), 3 input u16s (**wValue**, **wIndex**, and
+**wLength**), and an input u32 **timeoutInMs**. Returns an output u32
+for the actual transferred size.
 
 Official user-processes uses a buffer where the buffer address/size is
 page-aligned, where **wLength** is the original size before alignment.
 The user-process also flushes dcache for this buffer using **wLength**,
-before/after using this command. Official sw passes value 0 for **unk**.
+before/after using this command. Official sw passes value 0 for
+**timeoutInMs**.
 
 ### SubmitControlOutRequest
 
 Takes a type-0x5 input buffer, 2 input u8s (**bRequest** and
-**bmRequestType**), 3 input u16s (**wValue**, **wIndex**, and
-**wLength**), and an input u32 **unk**. Returns an output u32 for the
-actual transferred size.
+**bRequestType**), 3 input u16s (**wValue**, **wIndex**, and
+**wLength**), and an input u32 **timeoutInMs**. Returns an output u32
+for the actual transferred size.
 
 Official user-processes uses a buffer where the buffer address/size is
 page-aligned, where **wLength** is the original size before alignment.
 The user-process also flushes dcache for this buffer using **wLength**,
-before using this command. Official sw passes value 0 for **unk**.
+before using this command. Official sw passes value 0 for
+**timeoutInMs**.
 
 ### ResetDevice
 
