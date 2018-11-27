@@ -553,6 +553,15 @@ u32. Returns an output u32.
 
 The u32 is located at +4 from the first u8 in the IPC rawdata.
 
+Gets a string from a string descriptor.
+
+The UTF-16 string from descriptor+2 is copied to descriptor/outbuf +0,
+where each character is transferred using u8 not u16.
+
+Official sw doesn't use this,
+[\#SubmitControlInRequest](#SubmitControlInRequest "wikilink") is used
+instead.
+
 ## IClientIfSession
 
 This is
