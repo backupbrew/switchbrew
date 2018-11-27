@@ -477,22 +477,19 @@ Takes 1 copy-handle for the current process (0xFFFF8001).
 
 ## QueryAllInterfaces
 
-Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an
-output u32 total\_entries.
+Takes an [\#UsbHsInterfaceFilter](#UsbHsInterfaceFilter "wikilink") and
+a type-0x6 output buffer, returns an output u32 total\_entries.
 
 The output buffer contains an array of
 [\#UsbHsInterface](#UsbHsInterface "wikilink").
 
 ## QueryAvailableInterfaces
 
-Takes a 0x10-byte input struct and a type-0x6 output buffer, returns an
-output s32 total\_entries.
+Takes an [\#UsbHsInterfaceFilter](#UsbHsInterfaceFilter "wikilink") and
+a type-0x6 output buffer, returns an output s32 total\_entries.
 
 The output buffer contains an array of
 [\#UsbHsInterface](#UsbHsInterface "wikilink").
-
-HID-sysmodule uses the following for the input struct:
-`80 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00`
 
 ## QueryAcquiredInterfaces
 
@@ -504,12 +501,12 @@ was acquired with [\#AcquireUsbIf](#AcquireUsbIf "wikilink").
 
 ## CreateInterfaceAvailableEvent
 
-Takes an input u8 and a 0x10-byte struct, and returns an output handle.
-The input value must be 0..2. This is used as an index in a table.
+Takes an input u8 and an
+[\#UsbHsInterfaceFilter](#UsbHsInterfaceFilter "wikilink"), and returns
+an output handle. The input value must be 0..2. This is used as an index
+in a table.
 
-The struct is located at +2 from the u8 in IPC rawdata. This struct is
-the same as the one used for
-[\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink").
+The struct is located at +2 from the u8 in IPC rawdata.
 
 When signaled, this indicates that the user-process should use
 [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink") and
@@ -775,6 +772,41 @@ The buffer contains an array of
 | 0x220  | 0x8  | Unknown u64 timestamp for when the device was inserted?                                                                                                 |
 
 This is a 0x228-byte struct (unofficial name).
+
+# UsbHsInterfaceFilter
+
+| Offset | Size | Description        |
+| ------ | ---- | ------------------ |
+| 0x0    | 0x2  | Flags              |
+| 0x2    | 0x2  | idVendor           |
+| 0x4    | 0x2  | idProduct          |
+| 0x6    | 0x7  | Unused?            |
+| 0xD    | 0x1  | bInterfaceClass    |
+| 0xE    | 0x1  | bInterfaceSubClass |
+| 0xF    | 0x1  | bInterfaceProtocol |
+
+This is a 0x10-byte struct (unofficial name).
+
+This is used to filter [\#UsbHsInterface](#UsbHsInterface "wikilink"),
+the query commands will only return the interface when these checks
+pass. When a bit in Flags is set, the associated descriptor field and
+the field in this struct are compared, on mismatch the interface will be
+filtered out. Passing Flags=0 is equivalent to disabling filtering since
+none of these checks will run.
+
+Flags bits 0..1 use usb\_device\_descriptor, while 7..9 use
+usb\_interface\_descriptor.
+
+Flags bits:
+
+  - 0: idVendor
+  - 1: idProduct
+  - 7: bInterfaceClass
+  - 8: bInterfaceSubClass
+  - 9: bInterfaceProtocol
+
+HID-sysmodule uses the following for the input struct:
+`80 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00`
 
 # XferReport
 
