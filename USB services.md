@@ -638,17 +638,17 @@ must be non-zero.
 This is
 "nn::usb::hs::IClientEpSession".
 
-| Cmd             | Name                                               | Notes                                                                                                          |
-| --------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| 0 (\[1.0.0\] ?) | [\#Open](#Open "wikilink")                         |                                                                                                                |
-| 1 (\[1.0.0\] ?) | [\#Close](#Close "wikilink")                       |                                                                                                                |
-| \[2.0.0+\] 2    |                                                    | No input, returns an output handle. Signaled when [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") finishes. |
-| 3 (\[1.0.0\] ?) | [\#Populate](#Populate "wikilink")                 |                                                                                                                |
-| \[2.0.0+\] 4    | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") |                                                                                                                |
-| \[2.0.0+\] 5    | [\#GetXferReport](#GetXferReport "wikilink")       |                                                                                                                |
-| \[2.0.0+\] 6    |                                                    | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.                          |
-| 7               | \[4.0.0+\]                                         |                                                                                                                |
-| 8               | \[4.0.0+\]                                         |                                                                                                                |
+| Cmd          | Name                                                                                      | Notes                                                                                                                                                 |
+| ------------ | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0            | [\#Open](#Open "wikilink") (\[1.0.0\] [\#SubmitOutRequest](#SubmitOutRequest "wikilink")) |                                                                                                                                                       |
+| 1            | [\#Close](#Close "wikilink") (\[1.0.0\] [\#SubmitInRequest](#SubmitInRequest "wikilink")) |                                                                                                                                                       |
+| 2            |                                                                                           | No input, returns an output handle. Signaled when [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") finishes. (\[1.0.0\] [\#Open](#Open "wikilink")) |
+| 3            | [\#Populate](#Populate "wikilink") (\[1.0.0\] [\#Open](#Open "wikilink"))                 |                                                                                                                                                       |
+| \[2.0.0+\] 4 | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink")                                        |                                                                                                                                                       |
+| \[2.0.0+\] 5 | [\#GetXferReport](#GetXferReport "wikilink")                                              |                                                                                                                                                       |
+| \[2.0.0+\] 6 |                                                                                           | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.                                                                 |
+| \[4.0.0+\] 7 |                                                                                           |                                                                                                                                                       |
+| \[4.0.0+\] 8 |                                                                                           |                                                                                                                                                       |
 
 Official sw uses autoclear=false for the above event.
 

@@ -518,13 +518,13 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 ([1.0.0] ?) || [[#Open]] || 
+| 0 || [[#Open]] ([1.0.0] [[#SubmitOutRequest]]) || 
 |-
-| 1 ([1.0.0] ?) || [[#Close]] || 
+| 1 || [[#Close]] ([1.0.0] [[#SubmitInRequest]]) || 
 |-
-| [2.0.0+] 2 || || No input, returns an output handle. Signaled when [[#PostBufferAsync_2|#PostBufferAsync]] finishes.
+| 2 || || No input, returns an output handle. Signaled when [[#PostBufferAsync_2|#PostBufferAsync]] finishes. ([1.0.0] [[#Open]])
 |-
-| 3 ([1.0.0] ?) || [[#Populate]] || 
+| 3 || [[#Populate]] ([1.0.0] [[#Open]]) || 
 |-
 | [2.0.0+] 4 || [[#PostBufferAsync_2|#PostBufferAsync]] ||
 |-
@@ -532,9 +532,9 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 | [2.0.0+] 6 || || Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.
 |-
-| 7 || [4.0.0+] || 
+| [4.0.0+] 7 || || 
 |-
-| 8 || [4.0.0+] || 
+| [4.0.0+] 8 || || 
 |}
 
 Official sw uses autoclear=false for the above event.
