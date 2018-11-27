@@ -481,7 +481,11 @@ Takes an [\#UsbHsInterfaceFilter](#UsbHsInterfaceFilter "wikilink") and
 a type-0x6 output buffer, returns an output u32 total\_entries.
 
 The output buffer contains an array of
-[\#UsbHsInterface](#UsbHsInterface "wikilink").
+[\#UsbHsInterface](#UsbHsInterface "wikilink"). This returns the same
+interfaces as
+[\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink"),
+followed by the interfaces also returned by
+[\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink").
 
 ## QueryAvailableInterfaces
 
