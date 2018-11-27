@@ -614,11 +614,19 @@ The buffer contains an array of [[#XferReport]].
 |-
 | 0x1C || 0x69 || OUTPUT usb_endpoint_descriptors, 15 max.
 |-
+| 0x85 || 0x7 || Padding
+|-
 | 0x8C || 0x69 || INPUT usb_endpoint_descriptors, 15 max.
+|-
+| 0xF5 || 0x6 || Padding
 |-
 | 0xFB || 0x5A || OUTPUT usb_ss_endpoint_companion_descriptors(?), 15 max.
 |-
+| 0x155 || 0x6 || Padding
+|-
 | 0x15B || 0x5A || INPUT usb_ss_endpoint_companion_descriptors(?), 15 max.
+|-
+| 0x1B5 || 0x3 || Padding
 |-
 | 0x1B8 || 0x40 || "HsDevice-/L<unk0>/P<portnum>/A<unk1>" string (this is "FsDevice..." for the Dock USB 3.0 bus).
 |-
