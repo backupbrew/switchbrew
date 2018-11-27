@@ -524,7 +524,7 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 | 2 || || No input, returns an output handle. Signaled when [[#PostBufferAsync_2|#PostBufferAsync]] finishes. ([1.0.0] [[#Open]])
 |-
-| 3 || [[#Populate]] ([1.0.0] [[#Open]]) || 
+| 3 || [[#Populate]] ([1.0.0] [[#Close]]) || 
 |-
 | [2.0.0+] 4 || [[#PostBufferAsync_2|#PostBufferAsync]] ||
 |-
@@ -540,6 +540,12 @@ This is "nn::usb::hs::IClientEpSession".
 Official sw uses autoclear=false for the above event.
 
 Immediately after opening the endpoint session, official sw uses [[#Populate]] and cmd2.
+
+==== SubmitOutRequest ====
+Takes an type-0x5 input buffer, an u32, and an u32 '''size'''. Returns an output u32.
+
+==== SubmitInRequest ====
+Takes an type-0x6 output buffer, an u32, and an u32 '''size'''. Returns an output u32.
 
 ==== Open ====
 No input/output.

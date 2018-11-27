@@ -643,7 +643,7 @@ This is
 | 0            | [\#Open](#Open "wikilink") (\[1.0.0\] [\#SubmitOutRequest](#SubmitOutRequest "wikilink")) |                                                                                                                                                       |
 | 1            | [\#Close](#Close "wikilink") (\[1.0.0\] [\#SubmitInRequest](#SubmitInRequest "wikilink")) |                                                                                                                                                       |
 | 2            |                                                                                           | No input, returns an output handle. Signaled when [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") finishes. (\[1.0.0\] [\#Open](#Open "wikilink")) |
-| 3            | [\#Populate](#Populate "wikilink") (\[1.0.0\] [\#Open](#Open "wikilink"))                 |                                                                                                                                                       |
+| 3            | [\#Populate](#Populate "wikilink") (\[1.0.0\] [\#Close](#Close "wikilink"))               |                                                                                                                                                       |
 | \[2.0.0+\] 4 | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink")                                        |                                                                                                                                                       |
 | \[2.0.0+\] 5 | [\#GetXferReport](#GetXferReport "wikilink")                                              |                                                                                                                                                       |
 | \[2.0.0+\] 6 |                                                                                           | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.                                                                 |
@@ -654,6 +654,16 @@ Official sw uses autoclear=false for the above event.
 
 Immediately after opening the endpoint session, official sw uses
 [\#Populate](#Populate "wikilink") and cmd2.
+
+#### SubmitOutRequest
+
+Takes an type-0x5 input buffer, an u32, and an u32 **size**. Returns an
+output u32.
+
+#### SubmitInRequest
+
+Takes an type-0x6 output buffer, an u32, and an u32 **size**. Returns an
+output u32.
 
 #### Open
 
