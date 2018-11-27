@@ -657,13 +657,23 @@ Immediately after opening the endpoint session, official sw uses
 
 #### SubmitOutRequest
 
-Takes an type-0x5 input buffer, an u32, and an u32 **size**. Returns an
-output u32.
+Takes an type-0x5 input buffer, an u32 **size**, and an u32 **unk**.
+Returns an output u32 for the actual transferred size.
+
+Official user-processes uses a buffer where the buffer address/size is
+page-aligned, where **size** is the original size before alignment. The
+user-process also flushes dcache for this buffer using **size**, before
+using this command. Official sw passes value 0 for **unk**.
 
 #### SubmitInRequest
 
-Takes an type-0x6 output buffer, an u32, and an u32 **size**. Returns an
-output u32.
+Takes an type-0x6 output buffer, an u32 **size**, and an u32 **unk**.
+Returns an output u32 for the actual transferred size.
+
+Official user-processes uses a buffer where the buffer address/size is
+page-aligned, where **size** is the original size before alignment. The
+user-process also flushes dcache for this buffer using **size**,
+before/after using this command. Official sw passes value 0 for **unk**.
 
 #### Open
 
