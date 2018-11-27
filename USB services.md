@@ -802,7 +802,7 @@ none of these checks will run.
 
 Flags bits 0..6 use usb\_device\_descriptor, while 7..9 use
 usb\_interface\_descriptor. Support for bits 2..6 and the associated
-fields was added with {unknown sysver}.
+fields was added with \[6.0.0+\].
 
 Flags bits:
 
