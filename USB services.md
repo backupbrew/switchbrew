@@ -763,8 +763,10 @@ The buffer contains an array of
 | 0x4    | 0x4  | deviceID                                                                                                                                                |
 | 0x8    | 0x4  | ?                                                                                                                                                       |
 | 0xC    |      | usb\_interface\_descriptor                                                                                                                              |
-| 0x23   | 0x69 | OUTPUT usb\_endpoint\_descriptors, 15 max.                                                                                                              |
+| 0x1C   | 0x69 | OUTPUT usb\_endpoint\_descriptors, 15 max.                                                                                                              |
 | 0x8C   | 0x69 | INPUT usb\_endpoint\_descriptors, 15 max.                                                                                                               |
+| 0xFB   | 0x5A | OUTPUT usb\_ss\_endpoint\_companion\_descriptors(?), 15 max.                                                                                            |
+| 0x15B  | 0x5A | INPUT usb\_ss\_endpoint\_companion\_descriptors(?), 15 max.                                                                                             |
 | 0x1B8  | 0x40 | "HsDevice-/L<unk0>/P<portnum>/A<unk1>" string (this is "FsDevice..." for the Dock USB 3.0 bus).                                                         |
 | 0x1F8  | 0x4  | busID                                                                                                                                                   |
 | 0x1FC  | 0x4  | deviceID                                                                                                                                                |
