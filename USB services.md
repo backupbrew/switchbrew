@@ -461,6 +461,7 @@ This is
 | 6 (\[1.0.0\] 5) | [\#GetInterfaceStateChangeEvent](#GetInterfaceStateChangeEvent "wikilink")      |
 | 7 (\[1.0.0\] 6) | [\#AcquireUsbIf](#AcquireUsbIf "wikilink")                                      |
 | 8 (\[1.0.0\] 7) | \[6.0.0+\] (\[1.0.0\] [\#GetDescriptorString](#GetDescriptorString "wikilink")) |
+| \[1.0.0\] 8     |                                                                                 |
 
 General USB devices usage, used by [hid](HID%20services.md "wikilink"),
 [bsdsockets](Sockets%20services.md "wikilink"), and \[5.1.0+\]
@@ -546,6 +547,11 @@ output buffer contains the first 0x1B8-bytes from
 [\#UsbHsInterface](#UsbHsInterface "wikilink").
 
 ## GetDescriptorString
+
+Takes a type-0x6 output buffer, an input u8, an input u8 bool, and an
+u32. Returns an output u32.
+
+The u32 is located at +4 from the first u8 in the IPC rawdata.
 
 ## IClientIfSession
 
