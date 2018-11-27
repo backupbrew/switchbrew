@@ -789,8 +789,10 @@ This is a 0x10-byte struct (unofficial name).
 
 This is used to filter [\#UsbHsInterface](#UsbHsInterface "wikilink"),
 the query commands will only return the interface when these checks
-pass. When a bit in Flags is set, the associated descriptor field and
-the field in this struct are compared, on mismatch the interface will be
+pass. This is also used for events with
+[\#CreateInterfaceAvailableEvent](#CreateInterfaceAvailableEvent "wikilink").
+When a bit in Flags is set, the associated descriptor field and the
+field in this struct are compared, on mismatch the interface will be
 filtered out. Passing Flags=0 is equivalent to disabling filtering since
 none of these checks will run.
 
