@@ -757,25 +757,27 @@ The buffer contains an array of
 
 # UsbHsInterface
 
-| Offset | Size | Description                                                                                                                                             |
-| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4  | ID value passed to other cmds. This is -1 with [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink") output, hence this field is unused with that cmd. |
-| 0x4    | 0x4  | deviceID                                                                                                                                                |
-| 0x8    | 0x4  | ?                                                                                                                                                       |
-| 0xC    |      | usb\_interface\_descriptor                                                                                                                              |
-| 0x1C   | 0x69 | OUTPUT usb\_endpoint\_descriptors, 15 max.                                                                                                              |
-| 0x85   | 0x7  | Padding                                                                                                                                                 |
-| 0x8C   | 0x69 | INPUT usb\_endpoint\_descriptors, 15 max.                                                                                                               |
-| 0xF5   | 0x6  | Padding                                                                                                                                                 |
-| 0xFB   | 0x5A | OUTPUT usb\_ss\_endpoint\_companion\_descriptors(?), 15 max.                                                                                            |
-| 0x155  | 0x6  | Padding                                                                                                                                                 |
-| 0x15B  | 0x5A | INPUT usb\_ss\_endpoint\_companion\_descriptors(?), 15 max.                                                                                             |
-| 0x1B5  | 0x3  | Padding                                                                                                                                                 |
-| 0x1B8  | 0x40 | "HsDevice-/L<unk0>/P<portnum>/A<unk1>" string (this is "FsDevice..." for the Dock USB 3.0 bus).                                                         |
-| 0x1F8  | 0x4  | busID                                                                                                                                                   |
-| 0x1FC  | 0x4  | deviceID                                                                                                                                                |
-| 0x200  |      | usb\_device\_descriptor, then usb\_config\_descriptor immediately afterwards.                                                                           |
-| 0x220  | 0x8  | Unknown u64 timestamp for when the device was inserted?                                                                                                 |
+| Offset | Size           | Description                                                                                                                                             |
+| ------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4            | ID value passed to other cmds. This is -1 with [\#QueryAllInterfaces](#QueryAllInterfaces "wikilink") output, hence this field is unused with that cmd. |
+| 0x4    | 0x4            | deviceID                                                                                                                                                |
+| 0x8    | 0x4            | ?                                                                                                                                                       |
+| 0xC    | 0x9            | usb\_interface\_descriptor                                                                                                                              |
+| 0x15   | 0x7            | Padding                                                                                                                                                 |
+| 0x1C   | 0x69           | OUTPUT usb\_endpoint\_descriptors, 15 max.                                                                                                              |
+| 0x85   | 0x7            | Padding                                                                                                                                                 |
+| 0x8C   | 0x69           | INPUT usb\_endpoint\_descriptors, 15 max.                                                                                                               |
+| 0xF5   | 0x6            | Padding                                                                                                                                                 |
+| 0xFB   | 0x5A           | OUTPUT usb\_ss\_endpoint\_companion\_descriptors(?), 15 max.                                                                                            |
+| 0x155  | 0x6            | Padding                                                                                                                                                 |
+| 0x15B  | 0x5A           | INPUT usb\_ss\_endpoint\_companion\_descriptors(?), 15 max.                                                                                             |
+| 0x1B5  | 0x3            | Padding                                                                                                                                                 |
+| 0x1B8  | 0x40           | "HsDevice-/L<unk0>/P<portnum>/A<unk1>" string (this is "FsDevice..." for the Dock USB 3.0 bus).                                                         |
+| 0x1F8  | 0x4            | busID                                                                                                                                                   |
+| 0x1FC  | 0x4            | deviceID                                                                                                                                                |
+| 0x200  | 0x12+0x9(0x1B) | usb\_device\_descriptor, then usb\_config\_descriptor immediately afterwards.                                                                           |
+| 0x21B  | 0x5            | Padding                                                                                                                                                 |
+| 0x220  | 0x8            | Unknown u64 timestamp for when the device was inserted?                                                                                                 |
 
 This is a 0x228-byte struct (unofficial name).
 

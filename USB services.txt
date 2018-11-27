@@ -610,7 +610,9 @@ The buffer contains an array of [[#XferReport]].
 |-
 | 0x8 || 0x4 || ?
 |-
-| 0xC || || usb_interface_descriptor
+| 0xC || 0x9 || usb_interface_descriptor
+|-
+| 0x15 || 0x7 || Padding
 |-
 | 0x1C || 0x69 || OUTPUT usb_endpoint_descriptors, 15 max.
 |-
@@ -634,7 +636,9 @@ The buffer contains an array of [[#XferReport]].
 |-
 | 0x1FC || 0x4 || deviceID
 |-
-| 0x200 || || usb_device_descriptor, then usb_config_descriptor immediately afterwards.
+| 0x200 || 0x12+0x9(0x1B) || usb_device_descriptor, then usb_config_descriptor immediately afterwards.
+|-
+| 0x21B || 0x5 || Padding
 |-
 | 0x220 || 0x8 || Unknown u64 timestamp for when the device was inserted?
 |}
