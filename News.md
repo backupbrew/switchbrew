@@ -20,7 +20,7 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
-  - **28 December 18** [libnx 1.6.0 and
+  - **28 November 18** [libnx 1.6.0 and
     switch-examples 20181128](https://devkitpro.org/viewtopic.php?f=13&t=8813)
     were released.
   - **19 November 18** Nintendo released system update
