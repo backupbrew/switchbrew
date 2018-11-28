@@ -242,7 +242,7 @@ This is "nn::usb::ds::IDsInterface".
 Commands cmd2, [[#CtrlInPostBufferAsync]], [[#CtrlOutPostBufferAsync]], and [[#StallCtrl]], will throw an error if the interface is not [[#EnableInterface|enabled]]. [[#GetDsEndpoint]] will throw an error if the interface is [[#EnableInterface|enabled]].
 
 === GetDsEndpoint ===
-Takes a type-5 buffer and returns an [[#IDsEndpoint]]. [[Manu_Services|Manu]] uses this twice for getting two endpoint sessions, with the following 0x7-byte buffer data:
+Takes a type-5 buffer and returns an output u8 and an [[#IDsEndpoint]]. [[Manu_Services|Manu]] uses this twice for getting two endpoint sessions, with the following 0x7-byte buffer data:
 * First endpoint: 0x07, 0x05, 0x80, 0x02, 0x00, 0x02, 0x00
 ** bLength=0x7
 ** bDescriptorType=LIBUSB_DT_ENDPOINT

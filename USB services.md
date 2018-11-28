@@ -263,7 +263,7 @@ interface is [enabled](#EnableInterface "wikilink").
 
 ### GetDsEndpoint
 
-Takes a type-5 buffer and returns an
+Takes a type-5 buffer and returns an output u8 and an
 [\#IDsEndpoint](#IDsEndpoint "wikilink").
 [Manu](Manu%20Services.md "wikilink") uses this twice for getting two
 endpoint sessions, with the following 0x7-byte buffer data:
