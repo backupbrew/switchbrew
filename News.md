@@ -20,6 +20,9 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **28 December 18** [libnx 1.6.0 and
+    switch-examples 20181128](https://devkitpro.org/viewtopic.php?f=13&t=8813)
+    were released.
   - **19 November 18** Nintendo released system update
     [6.2.0](6.2.0.md "wikilink").
   - **31 October 18** [nx-hbloader
@@ -28,5 +31,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
   - **29 October 18**
     [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
     v3.0.0 was released.
-  - **29 October 18** Nintendo released system update
-    [6.1.0](6.1.0.md "wikilink").
