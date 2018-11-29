@@ -478,7 +478,7 @@ Takes 1 copy-handle for the current process (0xFFFF8001).
 ## QueryAllInterfaces
 
 Takes an [\#UsbHsInterfaceFilter](#UsbHsInterfaceFilter "wikilink") and
-a type-0x6 output buffer, returns an output u32 total\_entries.
+a type-0x6 output buffer, returns an output s32 total\_entries.
 
 The output buffer contains an array of
 [\#UsbHsInterface](#UsbHsInterface "wikilink"). This returns the same

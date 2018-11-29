@@ -405,7 +405,7 @@ Get-service-handle will fail if the current process is already using usb:ds, how
 Takes 1 copy-handle for the current process (0xFFFF8001).
 
 == QueryAllInterfaces ==
-Takes an [[#UsbHsInterfaceFilter]] and a type-0x6 output buffer, returns an output u32 total_entries.
+Takes an [[#UsbHsInterfaceFilter]] and a type-0x6 output buffer, returns an output s32 total_entries.
 
 The output buffer contains an array of [[#UsbHsInterface]]. This returns the same interfaces as [[#QueryAvailableInterfaces]], followed by the interfaces also returned by [[#QueryAcquiredInterfaces]].
 
