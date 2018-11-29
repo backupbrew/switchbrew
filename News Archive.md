@@ -1,3 +1,6 @@
+  - **29 October 18**
+    [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
+    v3.0.0 was released.
   - **29 October 18** Nintendo released system update
     [6.1.0](6.1.0.md "wikilink").
   - **27 October 18** [libnx 1.5.0 and
