@@ -20,6 +20,9 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **29 November 18**
+    [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
+    v3.0.1 was released.
   - **28 November 18** [libnx 1.6.0 and
     switch-examples 20181128](https://devkitpro.org/viewtopic.php?f=13&t=8813)
     were released.
@@ -28,6 +31,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
   - **31 October 18** [nx-hbloader
     v2.0.1](https://github.com/switchbrew/nx-hbloader/releases/tag/v2.0.1)
     was released.
-  - **29 October 18**
-    [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
-    v3.0.0 was released.
