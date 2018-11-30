@@ -9,7 +9,7 @@ This is
 | 1   | GetAvailableLanguageCodes                 | Takes a type-0xA buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
 | 2   | \[4.0.0+\] MakeLanguageCode               | Takes an input [\#Language](#Language "wikilink"), returns an output [\#LanguageCode](#LanguageCode "wikilink").       |
 | 3   | GetAvailableLanguageCodeCount             | No input, returns an output s32.                                                                                       |
-| 4   | GetRegionCode                             | No input, returns an [\#RegionCode](#RegionCode "wikilink").                                                           |
+| 4   | GetRegionCode                             | No input, returns a [\#RegionCode](#RegionCode "wikilink").                                                            |
 | 5   | \[4.0.0+\] GetAvailableLanguageCodes2     | Takes a type-0x6 buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
 | 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 | No input, returns an output s32.                                                                                       |
 | 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |

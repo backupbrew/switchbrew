@@ -13,7 +13,7 @@ This is "nn::settings::ISettingsServer".
 |-
 | 3 || GetAvailableLanguageCodeCount || No input, returns an output s32.
 |-
-| 4 || GetRegionCode || No input, returns an [[#RegionCode]].
+| 4 || GetRegionCode || No input, returns a [[#RegionCode]].
 |-
 | 5 || [4.0.0+] GetAvailableLanguageCodes2 || Takes a type-0x6 buffer containing the [[#LanguageCode]] output array, returns an output s32.
 |-
