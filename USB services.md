@@ -547,6 +547,9 @@ output entry. User-processes use size 0x1B8 for the output buffer. The
 output buffer contains the first 0x1B8-bytes from
 [\#UsbHsInterface](#UsbHsInterface "wikilink").
 
+This returns an error if the interface was already acquired by another
+process.
+
 ## GetDescriptorString
 
 Takes a type-0x6 output buffer, an input u8, an input u8 bool, and an
