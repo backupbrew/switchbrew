@@ -688,6 +688,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x8D669 || 105 || 1131 || Null speaker parameter buffer
 |-
+| 0x8EC69 || 105 || 1142 || Null firmware version digest buffer
+|-
+| 0x8EE69 || 105 || 1143 || Null rebootless system update version buffer
+|-
 | 0x91269 || 105 || 1161 || Null fatal flags buffer
 |-
 | 0x98A69 || 105 || 1221 || Null LCD vendor ID buffer
