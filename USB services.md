@@ -844,13 +844,13 @@ HID-sysmodule uses the following for the input struct:
 
 # XferReport
 
-| Offset | Size | Description     |
-| ------ | ---- | --------------- |
-| 0x0    | 0x4  | ?               |
-| 0x4    | 0x4  | Result          |
-| 0x8    | 0x4  | requestedSize   |
-| 0xC    | 0x4  | transferredSize |
-| 0x10   | 0x8? | ?               |
+| Offset | Size | Description                                                        |
+| ------ | ---- | ------------------------------------------------------------------ |
+| 0x0    | 0x4  | xferId (Only set for [\#GetXferReport](#GetXferReport "wikilink")) |
+| 0x4    | 0x4  | Result                                                             |
+| 0x8    | 0x4  | requestedSize                                                      |
+| 0xC    | 0x4  | transferredSize                                                    |
+| 0x10   | 0x8? | ?                                                                  |
 
 This is a 0x18-byte struct.
 

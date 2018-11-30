@@ -702,7 +702,7 @@ HID-sysmodule uses the following for the input struct: <code>80 00 00 00 00 00 0
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x4 || ?
+| 0x0 || 0x4 || xferId (Only set for [[#GetXferReport]])
 |-
 | 0x4 || 0x4 || Result
 |-
