@@ -706,9 +706,9 @@ HID-sysmodule uses the following for the input struct: <code>80 00 00 00 00 00 0
 |-
 | 0x4 || 0x4 || Result
 |-
-| 0x8 || 0x4 || ?
+| 0x8 || 0x4 || requestedSize
 |-
-| 0xC || 0x4 || Actual transferred size.
+| 0xC || 0x4 || transferredSize
 |-
 | 0x10 || 0x8? || ?
 |}
