@@ -61,4 +61,21 @@ match btdrv.
 | 43  | SetIsBluetoothAfhEnabled             |
 | 44  | GetIsBluetoothAfhEnabled             |
 
+# bt
+
+This is "nn::bluetooth::IBluetoothUser".
+
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   | LeClientReadCharacteristic     |
+| 1   | LeClientReadDescriptor         |
+| 2   | LeClientWriteCharacteristic    |
+| 3   | LeClientWriteDescriptor        |
+| 4   | LeClientRegisterNotification   |
+| 5   | LeClientDeregisterNotification |
+| 6   | SetLeResponse                  |
+| 7   | LeSendIndication               |
+| 8   | GetLeEventInfo                 |
+| 9   | RegisterBleEvent               |
+
 [Category:Services](Category:Services "wikilink")

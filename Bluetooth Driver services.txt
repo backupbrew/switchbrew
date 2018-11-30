@@ -102,4 +102,33 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 | 44 || GetIsBluetoothAfhEnabled
 |}
 
+= bt =
+This is "nn::bluetooth::IBluetoothUser".
+
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || LeClientReadCharacteristic
+|-
+| 1 || LeClientReadDescriptor
+|-
+| 2 || LeClientWriteCharacteristic
+|-
+| 3 || LeClientWriteDescriptor
+|-
+| 4 || LeClientRegisterNotification
+|-
+| 5 || LeClientDeregisterNotification
+|-
+| 6 || SetLeResponse
+|-
+| 7 || LeSendIndication
+|-
+| 8 || GetLeEventInfo
+|-
+| 9 || RegisterBleEvent
+|}
+
 [[Category:Services]]
