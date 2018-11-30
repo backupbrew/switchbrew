@@ -1,3 +1,6 @@
+  - **31 October 18** [nx-hbloader
+    v2.0.1](https://github.com/switchbrew/nx-hbloader/releases/tag/v2.0.1)
+    was released.
   - **29 October 18**
     [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
     v3.0.0 was released.
