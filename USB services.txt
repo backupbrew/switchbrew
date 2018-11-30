@@ -407,7 +407,7 @@ Takes 1 copy-handle for the current process (0xFFFF8001).
 == QueryAllInterfaces ==
 Takes an [[#UsbHsInterfaceFilter]] and a type-0x6 output buffer, returns an output s32 total_entries.
 
-The output buffer contains an array of [[#UsbHsInterface]]. This returns the same interfaces as [[#QueryAvailableInterfaces]], followed by the interfaces also returned by [[#QueryAcquiredInterfaces]].
+The output buffer contains an array of [[#UsbHsInterface]]. This returns the same interfaces as [[#QueryAvailableInterfaces]], followed by the interfaces also returned by [[#QueryAcquiredInterfaces]]. Except for the ID field in [[#UsbHsInterface]], which is set to -1.
 
 == QueryAvailableInterfaces ==
 Takes an [[#UsbHsInterfaceFilter]] and a type-0x6 output buffer, returns an output s32 total_entries.

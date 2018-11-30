@@ -485,7 +485,9 @@ The output buffer contains an array of
 interfaces as
 [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink"),
 followed by the interfaces also returned by
-[\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink").
+[\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink"). Except
+for the ID field in [\#UsbHsInterface](#UsbHsInterface "wikilink"),
+which is set to -1.
 
 ## QueryAvailableInterfaces
 
