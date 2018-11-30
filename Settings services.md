@@ -9,7 +9,7 @@ This is
 | 1   | GetAvailableLanguageCodes                 | Takes a type-0xA buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
 | 2   | \[4.0.0+\] MakeLanguageCode               | Takes an input [\#Language](#Language "wikilink"), returns an output [\#LanguageCode](#LanguageCode "wikilink").       |
 | 3   | GetAvailableLanguageCodeCount             | No input, returns an output s32.                                                                                       |
-| 4   | GetRegionCode                             | No input, returns an output s32.                                                                                       |
+| 4   | GetRegionCode                             | No input, returns an [\#RegionCode](#RegionCode "wikilink").                                                           |
 | 5   | \[4.0.0+\] GetAvailableLanguageCodes2     | Takes a type-0x6 buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
 | 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 | No input, returns an output s32.                                                                                       |
 | 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
@@ -68,6 +68,23 @@ string.
 | 14                                               | es-419                                     | "LatinAmericanSpanish"                                                        |
 | \[4.0.0+\] 15                                    | zh-Hans                                    | "SimplifiedChinese"                                                           |
 | \[4.0.0+\] 16                                    | zh-Hant                                    | "TraditionalChinese"                                                          |
+
+## RegionCode
+
+A region code is a signed 32-bit value representing a particular region.
+Currently the available regions defined by the system are as follows:
+
+| Value           | Region                       |
+| --------------- | ---------------------------- |
+| 0               | Japan                        |
+| 1               | USA                          |
+| 2               | Europe                       |
+| 3               | Australia                    |
+| 4               | China                        |
+| 5               | Korea                        |
+| 6               | Taiwan                       |
+| Any other value | Considered an unknown region |
+|                 |                              |
 
 # set:fd
 

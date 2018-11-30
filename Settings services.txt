@@ -13,7 +13,7 @@ This is "nn::settings::ISettingsServer".
 |-
 | 3 || GetAvailableLanguageCodeCount || No input, returns an output s32.
 |-
-| 4 || GetRegionCode || No input, returns an output s32.
+| 4 || GetRegionCode || No input, returns an [[#RegionCode]].
 |-
 | 5 || [4.0.0+] GetAvailableLanguageCodes2 || Takes a type-0x6 buffer containing the [[#LanguageCode]] output array, returns an output s32.
 |-
@@ -78,6 +78,32 @@ This is an u64, which is a NUL-terminated string.
 | [4.0.0+] 15 || zh-Hans || "SimplifiedChinese"
 |-
 | [4.0.0+] 16 || zh-Hant || "TraditionalChinese"
+|}
+
+== RegionCode ==
+
+A region code is a signed 32-bit value representing a particular region. Currently the available regions defined by the system are as follows:
+
+{| class="wikitable" border="1"
+|-
+! Value || Region
+|-
+| 0 || Japan
+|-
+| 1 || USA
+|-
+| 2 || Europe
+|-
+| 3 || Australia
+|-
+| 4 || China
+|-
+| 5 || Korea
+|-
+| 6 || Taiwan
+|-
+| Any other value || Considered an unknown region
+|-
 |}
 
 = set:fd =
