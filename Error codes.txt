@@ -692,6 +692,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x98A69 || 105 || 1221 || Null LCD vendor ID buffer
 |-
+| 0x9B269 || 105 || 1241 || Null keyboard layout buffer
+|-
 | 0x9BA69 || 105 || 1245 || Invalid keyboard layout
 |-
 | 0x9EE69 || 105 || 1271 || Null Amiibo key buffer
