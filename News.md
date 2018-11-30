@@ -20,14 +20,14 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
-  - **29 November 18**
-    [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu/releases/latest)
-    v3.0.1 was released.
+  - **29 November 18** [Atmosphère
+    v0.8.0](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.0)
+    was released.
+  - **29 November 18** [nx-hbmenu
+    v3.0.1](https://github.com/switchbrew/nx-hbmenu/releases/latest) was
+    released.
   - **28 November 18** [libnx 1.6.0 and
     switch-examples 20181128](https://devkitpro.org/viewtopic.php?f=13&t=8813)
     were released.
   - **19 November 18** Nintendo released system update
     [6.2.0](6.2.0.md "wikilink").
-  - **31 October 18** [nx-hbloader
-    v2.0.1](https://github.com/switchbrew/nx-hbloader/releases/tag/v2.0.1)
-    was released.
