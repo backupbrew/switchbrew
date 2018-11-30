@@ -601,7 +601,8 @@ the first 0x1B8-bytes from
 
 Takes an input u8 and a type-0x6 output buffer, no output. The output
 buffer contains the first 0x1B8-bytes from
-[\#UsbHsInterface](#UsbHsInterface "wikilink").
+[\#UsbHsInterface](#UsbHsInterface "wikilink"). The buffer size must
+match 0x1B8.
 
 ### GetCurrentFrame
 
