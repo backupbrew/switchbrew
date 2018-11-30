@@ -657,6 +657,9 @@ before using this command. Official sw passes value 0 for
 
 No input/output.
 
+Resets the device: has the same affect as unplugging the device and
+plugging it back in.
+
 ### OpenUsbEp
 
 Takes an input u16 and 4 input u32s, returns a 0x7-byte output struct
