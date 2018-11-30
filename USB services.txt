@@ -434,7 +434,7 @@ Clears state associated with the input index. This is the same state setup by [[
 == GetInterfaceStateChangeEvent ==
 No input, returns an output event handle with autoclear disabled.
 
-When signaled, this indicates that the user-process should use [[#QueryAcquiredInterfaces]] and cleanup state for interfaces which were already initialized with a matching ID in [[#UsbHsInterface]] +0x0. When total_entries is less than 1, this indicates that cleanup should be done for all currently open interfaces.
+When signaled, this indicates that the user-process should use [[#QueryAcquiredInterfaces]] and cleanup state for interfaces which were already initialized and don't have any matching ID in [[#UsbHsInterface]] +0x0. When total_entries is less than 1, this indicates that cleanup should be done for all currently open interfaces.
 
 == AcquireUsbIf ==
 Takes an input u32 and a type-0x6 output buffer, returns an [[#IClientIfSession]].

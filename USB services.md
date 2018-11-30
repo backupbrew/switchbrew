@@ -534,10 +534,10 @@ No input, returns an output event handle with autoclear disabled.
 
 When signaled, this indicates that the user-process should use
 [\#QueryAcquiredInterfaces](#QueryAcquiredInterfaces "wikilink") and
-cleanup state for interfaces which were already initialized with a
-matching ID in [\#UsbHsInterface](#UsbHsInterface "wikilink") +0x0. When
-total\_entries is less than 1, this indicates that cleanup should be
-done for all currently open interfaces.
+cleanup state for interfaces which were already initialized and don't
+have any matching ID in [\#UsbHsInterface](#UsbHsInterface "wikilink")
++0x0. When total\_entries is less than 1, this indicates that cleanup
+should be done for all currently open interfaces.
 
 ## AcquireUsbIf
 
