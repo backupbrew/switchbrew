@@ -553,7 +553,7 @@ This is "nn::usb::hs::IClientEpSession".
 |-
 | [2.0.0+] 5 || [[#GetXferReport]] || 
 |-
-| [2.0.0+] 6 || || Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.
+| [2.0.0+] 6 || [[#PostBufferMultiAsync]] || 
 |-
 | [4.0.0+] 7 || || 
 |-
@@ -592,9 +592,11 @@ No input/output.
 Used after opening the endpoint session (see above).
 
 ==== PostBufferAsync ====
-Takes an input u32 '''size''', an input u64 '''buffer''', and an input u64, returns an output u32 '''xferId'''.
+Takes an input u32 '''size''', an input u64 '''buffer''', and an input u64 '''unk''', returns an output u32 '''xferId'''.
 
 HID-sysmodule passes value 0 for the last u64.
+
+Starts a data transfer with a single urb.
 
 ==== GetXferReport ====
 Takes an input u32 and a type-0x6 output buffer, returns an output u32 '''count'''.
@@ -602,6 +604,15 @@ Takes an input u32 and a type-0x6 output buffer, returns an output u32 '''count'
 The input u32 specifies the total number of entries to read, this must fit within the specified buffer size. The output u32 is the total actual output entries.
 
 The buffer contains an array of [[#XferReport]].
+
+==== PostBufferMultiAsync ====
+Unofficial name.
+
+Takes 3 input u32s ('''urbCount''', '''unk1''', and '''unk2'''), an input u64 '''buffer''' and u64 '''unk''', and a type-0x5 input buffer, returns an output u32 '''xferId'''.
+
+Where '''unk''' is the same as [[#PostBufferAsync_2|#PostBufferAsync]].
+
+This uses the same func internally as [[#PostBufferAsync_2|#PostBufferAsync]] except multiple urbs are specified by the user: the input buffer contains an array of u32s for the size of each urb, where '''urbCount''' is the total number of entries in this array. With [[#PostBufferAsync_2|#PostBufferAsync]] the last 2 params passed to the internal func are hard-coded to 0, while with this command it's '''unk1''' and '''unk2'''.
 
 = UsbHsInterface =
 {| class="wikitable" border="1"

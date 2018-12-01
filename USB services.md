@@ -698,7 +698,7 @@ This is
 | 3            | [\#Populate](#Populate "wikilink") (\[1.0.0\] [\#Close](#Close "wikilink"))               |                                                                                                                                                       |
 | \[2.0.0+\] 4 | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink")                                        |                                                                                                                                                       |
 | \[2.0.0+\] 5 | [\#GetXferReport](#GetXferReport "wikilink")                                              |                                                                                                                                                       |
-| \[2.0.0+\] 6 |                                                                                           | Takes 3 input u32s, 2 input u64s, and a type-0x5 input buffer, returns an output u32.                                                                 |
+| \[2.0.0+\] 6 | [\#PostBufferMultiAsync](#PostBufferMultiAsync "wikilink")                                |                                                                                                                                                       |
 | \[4.0.0+\] 7 |                                                                                           |                                                                                                                                                       |
 | \[4.0.0+\] 8 |                                                                                           |                                                                                                                                                       |
 
@@ -752,10 +752,12 @@ Used after opening the endpoint session (see above).
 
 #### PostBufferAsync
 
-Takes an input u32 **size**, an input u64 **buffer**, and an input u64,
-returns an output u32 **xferId**.
+Takes an input u32 **size**, an input u64 **buffer**, and an input u64
+**unk**, returns an output u32 **xferId**.
 
 HID-sysmodule passes value 0 for the last u64.
+
+Starts a data transfer with a single urb.
 
 #### GetXferReport
 
@@ -766,8 +768,28 @@ The input u32 specifies the total number of entries to read, this must
 fit within the specified buffer size. The output u32 is the total actual
 output entries.
 
-The buffer contains an array of
-[\#XferReport](#XferReport "wikilink").
+The buffer contains an array of [\#XferReport](#XferReport "wikilink").
+
+#### PostBufferMultiAsync
+
+Unofficial name.
+
+Takes 3 input u32s (**urbCount**, **unk1**, and **unk2**), an input u64
+**buffer** and u64 **unk**, and a type-0x5 input buffer, returns an
+output u32 **xferId**.
+
+Where **unk** is the same as
+[\#PostBufferAsync](#PostBufferAsync_2 "wikilink").
+
+This uses the same func internally as
+[\#PostBufferAsync](#PostBufferAsync_2 "wikilink") except multiple urbs
+are specified by the user: the input buffer contains an array of u32s
+for the size of each urb, where **urbCount** is the total number of
+entries in this array. With
+[\#PostBufferAsync](#PostBufferAsync_2 "wikilink") the last 2 params
+passed to the internal func are hard-coded to 0, while with this command
+it's **unk1** and
+**unk2**.
 
 # UsbHsInterface
 
