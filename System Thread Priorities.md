@@ -17,6 +17,7 @@ operation.
 | 46              | nn.fs.WorkerNormalPriorityAccess2       | fs            |                                               |
 | 46              | nn.fs.WorkerNormalPriorityAccess3       | fs            |                                               |
 | 46              | nn.fs.WorkerNormalPriorityAccess4       | fs            |                                               |
+| 48              | nn.boot2.MainThread                     | boot2         |                                               |
 | 49              | nn.ncm.MainWaitThreads                  | ncm           | This is the real name for nn.ncm.MainThread.  |
 | 49              | nn.ncm.ContentManagerServerIpcSession   | ncm           |                                               |
 | 49              | nn.ncm.LocationResolverServerIpcSession | ncm           |                                               |
