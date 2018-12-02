@@ -20,7 +20,7 @@ operation.
 | 16              | nn.usb.DsIpcServer                      | usb           | usb spawns four copies of this thread to handle usb:ds IPC requests. |
 | 16              | nn.usb.DsProtocol                       | usb           |                                                                      |
 | 16              | nn.usb.DsThread                         | usb           |                                                                      |
-| 16              | nn.usb.HsIpcServer                      | usb           | usb spawns two copies of this thread to handle hs IPC requests.      |
+| 16              | nn.usb.HsIpcServer                      | usb           | usb spawns two copies of this thread to handle usb:hs IPC requests.  |
 | 16              | nn.usb.HsThread                         | usb           |                                                                      |
 | 16              | nn.usb.InterruptHandler                 | usb           |                                                                      |
 | 16              | nn.usb.PmIpcServer                      | usb           |                                                                      |

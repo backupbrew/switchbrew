@@ -35,7 +35,7 @@ This is a list of threads executing on the system during normal operation.
 |-
 | 16 || nn.usb.DsThread || usb || 
 |-
-| 16 || nn.usb.HsIpcServer || usb || usb spawns two copies of this thread to handle hs IPC requests.
+| 16 || nn.usb.HsIpcServer || usb || usb spawns two copies of this thread to handle usb:hs IPC requests.
 |-
 | 16 || nn.usb.HsThread || usb || 
 |-
