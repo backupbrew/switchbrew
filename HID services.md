@@ -51,7 +51,7 @@ This is
 | 102  | [\#SetSupportedNpadIdType](#SetSupportedNpadIdType "wikilink")                                   |
 | 103  | ActivateNpad                                                                                     |
 | 104  | DeactivateNpad                                                                                   |
-| 106  | AcquireNpadStyleSetUpdateEventHandle                                                             |
+| 106  | [\#AcquireNpadStyleSetUpdateEventHandle](#AcquireNpadStyleSetUpdateEventHandle "wikilink")       |
 | 107  | DisconnectNpad                                                                                   |
 | 108  | GetPlayerLedPattern                                                                              |
 | 109  | \[5.0.0+\] ActivateNpadWithRevision                                                              |
@@ -141,6 +141,16 @@ Takes a PID-descriptor, a type-0x9 input buffer, and an
 
 The input buffer contains an array of u32
 [\#NpadIdType](#NpadIdType "wikilink").
+
+## AcquireNpadStyleSetUpdateEventHandle
+
+Takes an input u32, an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), and an u64. Returns
+an output event handle, autoclear for this is user-specified.
+
+The value for the last u64 presumably (?) doesn't matter: official sw
+sets this to the address of the structure used for storing the event
+which is initialized after using this cmd.
 
 ## SetNpadJoyAssignmentModeSingleByDefault
 

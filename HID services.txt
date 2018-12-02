@@ -93,7 +93,7 @@ This is "nn::hid::IHidServer".
 |-
 | 104 || DeactivateNpad
 |-
-| 106 || AcquireNpadStyleSetUpdateEventHandle
+| 106 || [[#AcquireNpadStyleSetUpdateEventHandle]]
 |-
 | 107 || DisconnectNpad
 |-
@@ -253,6 +253,11 @@ Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an [[#IAppl
 Takes a PID-descriptor, a type-0x9 input buffer, and an [[AM_services|AppletResourceUserId]]. No output.
 
 The input buffer contains an array of u32 [[#NpadIdType]].
+
+== AcquireNpadStyleSetUpdateEventHandle ==
+Takes an input u32, an u64 [[AM_services|AppletResourceUserId]], and an u64. Returns an output event handle, autoclear for this is user-specified.
+
+The value for the last u64 presumably (?) doesn't matter: official sw sets this to the address of the structure used for storing the event which is initialized after using this cmd.
 
 == SetNpadJoyAssignmentModeSingleByDefault ==
 Takes a PID-descriptor, an u32, and an [[AM_services|AppletResourceUserId]]. No output.
