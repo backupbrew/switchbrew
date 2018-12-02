@@ -16,7 +16,7 @@ operation.
 | 27              | nn.boot.Main                            | boot          | This is the real name for nn.boot.MainThread.                        |
 | 27              | nn.spl.MainThread                       | spl           |                                                                      |
 | 27              | nn.sm.MainThread                        | sm            |                                                                      |
-| 30              | nn.pcie.MainThread                      | pcie          |                                                                      |
+| 30              | nn.pcie.Main                            | pcie          | This is the real name for nn.pcie.MainThread.                        |
 | 30              | nn.pcie.InterruptHandler                | pcie          |                                                                      |
 | 37              | nn.psc.Main                             | psc           | This is the real name for nn.psc.MainThread.                         |
 | 37              | nn.psc.IpcServer                        | psc           |                                                                      |
