@@ -5,6 +5,7 @@ operation.
 
 | Thread Priority | Thread Name                             | Owner Process | Notes                                                                |
 | --------------- | --------------------------------------- | ------------- | -------------------------------------------------------------------- |
+| 5               | nn.pcv.ImmediateIpcServer               | pcv           |                                                                      |
 | 16              | nn.bus.MainThread                       | Bus           |                                                                      |
 | 16              | nn.i2c.IpcServer                        | Bus           |                                                                      |
 | 16              | nn.i2c.ForPcvIpcServer                  | Bus           |                                                                      |
@@ -23,11 +24,18 @@ operation.
 | 16              | nn.usb.HsThread                         | usb           |                                                                      |
 | 16              | nn.usb.InterruptHandler                 | usb           |                                                                      |
 | 16              | nn.usb.PmIpcServer                      | usb           |                                                                      |
+| 23              | nn.pcv.IpcServer                        | pcv           |                                                                      |
 | 27              | nn.boot.Main                            | boot          | This is the real name for nn.boot.MainThread.                        |
 | 27              | nn.spl.MainThread                       | spl           |                                                                      |
 | 27              | nn.sm.MainThread                        | sm            |                                                                      |
 | 30              | nn.pcie.Main                            | pcie          | This is the real name for nn.pcie.MainThread.                        |
 | 30              | nn.pcie.InterruptHandler                | pcie          |                                                                      |
+| 32              | nn.bpc.IpcServer                        | pcv           |                                                                      |
+| 32              | nn.bpc.IrqHandler                       | pcv           |                                                                      |
+| 32              | nn.bpc.SleepButtonCounter               | pcv           |                                                                      |
+| 32              | nn.pcv.EmcDvfsPeriodicCompHandler       | pcv           |                                                                      |
+| 32              | nn.pcv.Main                             | pcv           | This is the real name for nn.pcv.MainThread.                         |
+| 32              | nn.time.IpcServer                       | pcv           |                                                                      |
 | 37              | nn.psc.Main                             | psc           | This is the real name for nn.psc.MainThread.                         |
 | 37              | nn.psc.IpcServer                        | psc           |                                                                      |
 | 37              | nn.psc.PmControl                        | psc           |                                                                      |
@@ -55,4 +63,5 @@ operation.
 | 49              | nn.settings.Main                        | settings      | This is the real name for nn.settings.MainThread.                    |
 | 49              | nn.settings.IpcServer                   | settings      |                                                                      |
 | 49              | nn.settings.LazyWriter                  | settings      |                                                                      |
+| 49              | nn.time.Worker                          | pcv           |                                                                      |
 | 58              | nn.fs.PatrolReader                      | fs            |                                                                      |
