@@ -11,6 +11,22 @@ This is a list of threads executing on the system during normal operation.
 |-
 | 27 || nn.sm.MainThread || sm || 
 |-
+| 16 || nn.usb.MainThread || usb || 
+|-
+| 16 || nn.usb.DsIpcServer || usb || usb spawns four copies of this thread to handle usb:ds IPC requests.
+|-
+| 16 || nn.usb.DsProtocol || usb || 
+|-
+| 16 || nn.usb.DsThread || usb || 
+|-
+| 16 || nn.usb.HsIpcServer || usb || usb spawns two copies of this thread to handle hs IPC requests.
+|-
+| 16 || nn.usb.HsThread || usb || 
+|-
+| 16 || nn.usb.InterruptHandler || usb || 
+|-
+| 16 || nn.usb.PmIpcServer || usb || 
+|-
 | 37 || nn.psc.Main || psc || This is the real name for nn.psc.MainThread.
 |-
 | 37 || nn.psc.IpcServer || psc || 
@@ -18,6 +34,18 @@ This is a list of threads executing on the system during normal operation.
 | 37 || nn.psc.PmControl || psc || 
 |-
 | 37 || nn.srepo.IpcServer || psc || 
+|-
+| 37 || nn.usb.PdAlert || usb || 
+|-
+| 37 || nn.usb.PdExecute || usb || 
+|-
+| 37 || nn.usb.PdReceiveVdm || usb || 
+|-
+| 37 || nn.usb.PdServer || usb || 
+|-
+| 37 || nn.usb.InputNotifier || usb || 
+|-
+| 38 || nn.usb.PdCradleServer || usb || 
 |-
 | 39 || nn.gc.DeviceDetector || fs || 
 |-
@@ -27,15 +55,7 @@ This is a list of threads executing on the system during normal operation.
 |-
 | 45 || nn.fs.MainThread || fs || 
 |-
-| 46 || nn.fs.WorkerNormalPriorityAccess0 || fs || 
-|-
-| 46 || nn.fs.WorkerNormalPriorityAccess1 || fs || 
-|-
-| 46 || nn.fs.WorkerNormalPriorityAccess2 || fs || 
-|-
-| 46 || nn.fs.WorkerNormalPriorityAccess3 || fs || 
-|-
-| 46 || nn.fs.WorkerNormalPriorityAccess4 || fs || 
+| 46 || nn.fs.WorkerNormalPriorityAccess || fs || fs spawns five copies of this thread to handle fsp-srv IPC requests
 |-
 | 48 || nn.boot2.MainThread || boot2 ||
 |-
