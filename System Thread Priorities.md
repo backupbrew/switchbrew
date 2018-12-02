@@ -38,6 +38,7 @@ operation.
 | 37              | nn.usb.PdReceiveVdm                     | usb           |                                                                      |
 | 37              | nn.usb.PdServer                         | usb           |                                                                      |
 | 37              | nn.usb.InputNotifier                    | usb           |                                                                      |
+| 38              | nn.tma.MainThread                       | tma           |                                                                      |
 | 38              | nn.usb.PdCradleServer                   | usb           |                                                                      |
 | 39              | nn.gc.DeviceDetector                    | fs            |                                                                      |
 | 39              | nn.sdmmc.DeviceDetector                 | fs            |                                                                      |

@@ -71,6 +71,8 @@ This is a list of threads executing on the system during normal operation.
 |-
 | 37 || nn.usb.InputNotifier || usb || 
 |-
+| 38 || nn.tma.MainThread || tma || 
+|-
 | 38 || nn.usb.PdCradleServer || usb || 
 |-
 | 39 || nn.gc.DeviceDetector || fs || 
