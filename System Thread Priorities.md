@@ -5,6 +5,16 @@ operation.
 
 | Thread Priority | Thread Name                             | Owner Process | Notes                                                                |
 | --------------- | --------------------------------------- | ------------- | -------------------------------------------------------------------- |
+| 16              | nn.bus.MainThread                       | Bus           |                                                                      |
+| 16              | nn.i2c.IpcServer                        | Bus           |                                                                      |
+| 16              | nn.i2c.ForPcvIpcServer                  | Bus           |                                                                      |
+| 16              | nn.gpio.IpcServer                       | Bus           |                                                                      |
+| 16              | nn.gpio.InterruptHandler                | Bus           |                                                                      |
+| 16              | nn.pinmux.IpcServer                     | Bus           |                                                                      |
+| 16              | nn.sasbus.IpcServer                     | Bus           |                                                                      |
+| 16              | nn.sasbus.PeriodicReceiveModeThread     | Bus           |                                                                      |
+| 16              | nn.uart.IpcServer                       | Bus           |                                                                      |
+| 16              | nn.uart.InterruptHandler                | Bus           |                                                                      |
 | 16              | nn.usb.MainThread                       | usb           |                                                                      |
 | 16              | nn.usb.DsIpcServer                      | usb           | usb spawns four copies of this thread to handle usb:ds IPC requests. |
 | 16              | nn.usb.DsProtocol                       | usb           |                                                                      |
@@ -22,6 +32,7 @@ operation.
 | 37              | nn.psc.IpcServer                        | psc           |                                                                      |
 | 37              | nn.psc.PmControl                        | psc           |                                                                      |
 | 37              | nn.srepo.IpcServer                      | psc           |                                                                      |
+| 37              | nn.pwm.IpcServer                        | Bus           |                                                                      |
 | 37              | nn.usb.PdAlert                          | usb           |                                                                      |
 | 37              | nn.usb.PdExecute                        | usb           |                                                                      |
 | 37              | nn.usb.PdReceiveVdm                     | usb           |                                                                      |

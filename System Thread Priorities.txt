@@ -5,6 +5,26 @@ This is a list of threads executing on the system during normal operation.
 |-
 ! Thread Priority || Thread Name || Owner Process || Notes
 |-
+| 16 || nn.bus.MainThread || Bus || 
+|-
+| 16 || nn.i2c.IpcServer || Bus || 
+|-
+| 16 || nn.i2c.ForPcvIpcServer || Bus || 
+|-
+| 16 || nn.gpio.IpcServer || Bus || 
+|-
+| 16 || nn.gpio.InterruptHandler|| Bus || 
+|-
+| 16 || nn.pinmux.IpcServer || Bus || 
+|-
+| 16 || nn.sasbus.IpcServer || Bus || 
+|-
+| 16 || nn.sasbus.PeriodicReceiveModeThread || Bus || 
+|-
+| 16 || nn.uart.IpcServer || Bus || 
+|-
+| 16 || nn.uart.InterruptHandler|| Bus || 
+|-
 | 16 || nn.usb.MainThread || usb || 
 |-
 | 16 || nn.usb.DsIpcServer || usb || usb spawns four copies of this thread to handle usb:ds IPC requests.
@@ -38,6 +58,8 @@ This is a list of threads executing on the system during normal operation.
 | 37 || nn.psc.PmControl || psc || 
 |-
 | 37 || nn.srepo.IpcServer || psc || 
+|-
+| 37 || nn.pwm.IpcServer || Bus || 
 |-
 | 37 || nn.usb.PdAlert || usb || 
 |-
