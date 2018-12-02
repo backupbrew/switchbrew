@@ -5,9 +5,6 @@ operation.
 
 | Thread Priority | Thread Name                             | Owner Process | Notes                                                                |
 | --------------- | --------------------------------------- | ------------- | -------------------------------------------------------------------- |
-| 27              | nn.boot.Main                            | boot          | This is the real name for nn.boot.MainThread.                        |
-| 27              | nn.spl.MainThread                       | spl           |                                                                      |
-| 27              | nn.sm.MainThread                        | sm            |                                                                      |
 | 16              | nn.usb.MainThread                       | usb           |                                                                      |
 | 16              | nn.usb.DsIpcServer                      | usb           | usb spawns four copies of this thread to handle usb:ds IPC requests. |
 | 16              | nn.usb.DsProtocol                       | usb           |                                                                      |
@@ -16,6 +13,11 @@ operation.
 | 16              | nn.usb.HsThread                         | usb           |                                                                      |
 | 16              | nn.usb.InterruptHandler                 | usb           |                                                                      |
 | 16              | nn.usb.PmIpcServer                      | usb           |                                                                      |
+| 27              | nn.boot.Main                            | boot          | This is the real name for nn.boot.MainThread.                        |
+| 27              | nn.spl.MainThread                       | spl           |                                                                      |
+| 27              | nn.sm.MainThread                        | sm            |                                                                      |
+| 30              | nn.pcie.MainThread                      | pcie          |                                                                      |
+| 30              | nn.pcie.InterruptHandler                | pcie          |                                                                      |
 | 37              | nn.psc.Main                             | psc           | This is the real name for nn.psc.MainThread.                         |
 | 37              | nn.psc.IpcServer                        | psc           |                                                                      |
 | 37              | nn.psc.PmControl                        | psc           |                                                                      |
