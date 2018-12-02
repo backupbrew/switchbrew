@@ -51,5 +51,11 @@ This is a list of threads executing on the system during normal operation.
 |-
 | 49 || nn.pm.ProcessTrack || pm || 
 |-
+| 49 || nn.settings.Main || settings || This is the real name for nn.settings.MainThread.
+|-
+| 49 || nn.settings.IpcServer || settings || 
+|-
+| 49 || nn.settings.LazyWriter || settings || 
+|-
 | 58 || nn.fs.PatrolReader || fs ||
 |}
