@@ -15,5 +15,8 @@ operation.
 | 46              | nn.fs.WorkerNormalPriorityAccess2 | FS            |       |
 | 46              | nn.fs.WorkerNormalPriorityAccess3 | FS            |       |
 | 46              | nn.fs.WorkerNormalPriorityAccess4 | FS            |       |
+| 49              | nn.Loader.MainThread              | Loader        |       |
+| 49              | nn.pm.MainThread                  | PM            |       |
+| 49              | nn.pm.ProcessTrack                | PM            |       |
 | 58              | nn.fs.PatrolReader                | FS            |       |
 |                 |                                   |               |       |
