@@ -148,9 +148,9 @@ Takes an input u32, an u64
 [AppletResourceUserId](AM%20services.md "wikilink"), and an u64. Returns
 an output event handle, autoclear for this is user-specified.
 
-The value for the last u64 presumably (?) doesn't matter: official sw
-sets this to the address of the structure used for storing the event
-which is initialized after using this cmd.
+The value for the last u64 doesn't seem to matter (?): official sw sets
+this to the address of the structure used for storing the event which is
+initialized after using this cmd.
 
 ## SetNpadJoyAssignmentModeSingleByDefault
 
