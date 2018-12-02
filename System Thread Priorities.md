@@ -6,6 +6,8 @@ operation.
 | Thread Priority | Thread Name                       | Owner Process | Notes |
 | --------------- | --------------------------------- | ------------- | ----- |
 | 27              | nn.boot.MainThread                | boot          |       |
+| 27              | nn.spl.MainThread                 | spl           |       |
+| 27              | nn.sm.MainThread                  | sm            |       |
 | 39              | nn.gc.DeviceDetector              | FS            |       |
 | 39              | nn.sdmmc.DeviceDetector           | FS            |       |
 | 44              | nn.fs.WorkerThreadPool            | FS            |       |
