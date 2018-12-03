@@ -733,9 +733,9 @@ Returns an u64 for the total number of readable entries.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x300 || Path
+| 0x0 || 0x301 || Path
 |-
-| 0x300 || 0x4 || ?
+| 0x301 || 0x3 || ?
 |-
 | 0x304 || 0x1 || [[#DirectoryEntryType]]
 |-

@@ -1310,8 +1310,8 @@ entries.
 
 | Offset | Size  | Description                                            |
 | ------ | ----- | ------------------------------------------------------ |
-| 0x0    | 0x300 | Path                                                   |
-| 0x300  | 0x4   | ?                                                      |
+| 0x0    | 0x301 | Path                                                   |
+| 0x301  | 0x3   | ?                                                      |
 | 0x304  | 0x1   | [\#DirectoryEntryType](#DirectoryEntryType "wikilink") |
 | 0x305  | 0x3   | Padding?                                               |
 | 0x308  | 0x8?  | Filesize, 0 for directories.                           |
