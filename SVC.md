@@ -1440,7 +1440,7 @@ out1
 |        |        | Bit6    | UseSystemMemBlocks                                                            |
 |        |        | Bit7    | \[4.0.0\] ?                                                                   |
 |        |        | Bit10-7 | \[5.0.0+\] PoolPartition (0=Application, 1=Applet, 2=Sysmodule, 3=Nvservices) |
-| 0x28   | 4      |         | ResourceLimitHandle                                                           |
+| 0x28   | 4      |         | ResourceLimitHandle or zero                                                   |
 | 0x2C   | 4      |         | \[3.0.0+\] PersonalMmHeapNumPages                                             |
 
 On \[1.0.0\] there's only one pool.
@@ -1448,8 +1448,11 @@ On \[1.0.0\] there's only one pool.
 On \[2.0.0-4.0.0\] PoolPartition is 1 for built-ins and 0 for rest.
 
 On \[5.0.0\] PoolPartition is specified in CreateProcessArgs. There are
-now 4 pool
-partitions.
+now 4 pool partitions.
+
+On \[6.0.0\] (maybe lower?) a zero ResourceLimitHandle defaults to
+sysmodule limits and 0x12300000 bytes of
+memory.
 
 ### AddressSpaceType
 
