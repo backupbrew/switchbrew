@@ -3,11 +3,11 @@
 This is
 "nn::fssrv::sf::IFileSystemProxyForLoader".
 
-| Cmd | Name                         | Arguments                                                           | Notes                                                |
-| --- | ---------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------- |
-| 0   | OpenCodeFileSystem           | u64 TitleId + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink"). |
-| 1   | IsArchivedProgram            | u64 ProcessId                                                       | Returns a bool (1 if code is mounted).               |
-| 2   | \[4.0.0+\] SetCurrentProcess | PID descriptor                                                      |                                                      |
+| Cmd | Name                         | Arguments                                                           | Notes                                                                                           |
+| --- | ---------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| 0   | OpenCodeFileSystem           | u64 TitleId + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                            |
+| 1   | IsArchivedProgram            | u64 ProcessId                                                       | Returns a bool (1 if the process id's [\#ContentPath](#ContentPath "wikilink") ends in ".nca"). |
+| 2   | \[4.0.0+\] SetCurrentProcess | PID descriptor                                                      |                                                                                                 |
 
 # fsp-pr
 

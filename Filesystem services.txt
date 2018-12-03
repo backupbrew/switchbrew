@@ -7,7 +7,7 @@ This is "nn::fssrv::sf::IFileSystemProxyForLoader".
 |-
 | 0 || OpenCodeFileSystem || u64 TitleId + X descriptor [[#ContentPath]] || Returns an [[#IFileSystem]].
 |-
-| 1 || IsArchivedProgram || u64 ProcessId || Returns a bool (1 if code is mounted).
+| 1 || IsArchivedProgram || u64 ProcessId || Returns a bool (1 if the process id's [[#ContentPath]] ends in ".nca").
 |-
 | 2 || [4.0.0+] SetCurrentProcess || PID descriptor ||
 |}
