@@ -507,7 +507,7 @@ different static seeds are selected for key generation.
 
 In order to generate retail keys, the bootloader starts by initializing
 TSEC and grabbing it's [device
-key](TSEC#Device%20key%20generation.md##Device_key_generation "wikilink").
+key](TSEC#TSEC%20key%20generation.md##TSEC_key_generation "wikilink").
 Using static seeds and the SBK, the keyblob injected into the BCT's
 [customer\_data](BCT#customer%20data.md##customer_data "wikilink") is
 validated and decrypted. The resulting keys will then be used to
