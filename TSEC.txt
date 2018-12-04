@@ -62,11 +62,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501004
 | 0x04
 |-
-| FALCON_IRQSTAT
+| [[#FALCON_IRQSTAT|FALCON_IRQSTAT]]
 | 0x54501008
 | 0x04
 |-
-| FALCON_IRQMODE
+| [[#FALCON_IRQMODE|FALCON_IRQMODE]]
 | 0x5450100C
 | 0x04
 |-
@@ -78,7 +78,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501014
 | 0x04
 |-
-| FALCON_IRQMASK
+| [[#FALCON_IRQMASK|FALCON_IRQMASK]]
 | 0x54501018
 | 0x04
 |-

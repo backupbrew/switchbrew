@@ -37,11 +37,11 @@ interfaces).
 | TSEC\_THI\_CLK\_OVERRIDE                                                | 0x54500E00 | 0x04  |
 | [FALCON\_IRQSSET](#FALCON_IRQSSET "wikilink")                           | 0x54501000 | 0x04  |
 | [FALCON\_IRQSCLR](#FALCON_IRQSCLR "wikilink")                           | 0x54501004 | 0x04  |
-| FALCON\_IRQSTAT                                                         | 0x54501008 | 0x04  |
-| FALCON\_IRQMODE                                                         | 0x5450100C | 0x04  |
+| [FALCON\_IRQSTAT](#FALCON_IRQSTAT "wikilink")                           | 0x54501008 | 0x04  |
+| [FALCON\_IRQMODE](#FALCON_IRQMODE "wikilink")                           | 0x5450100C | 0x04  |
 | [FALCON\_IRQMSET](#FALCON_IRQMSET "wikilink")                           | 0x54501010 | 0x04  |
 | [FALCON\_IRQMCLR](#FALCON_IRQMCLR "wikilink")                           | 0x54501014 | 0x04  |
-| FALCON\_IRQMASK                                                         | 0x54501018 | 0x04  |
+| [FALCON\_IRQMASK](#FALCON_IRQMASK "wikilink")                           | 0x54501018 | 0x04  |
 | [FALCON\_IRQDEST](#FALCON_IRQDEST "wikilink")                           | 0x5450101C | 0x04  |
 | FALCON\_PERIODIC\_PERIOD                                                | 0x54501020 | 0x04  |
 | FALCON\_PERIODIC\_TIME                                                  | 0x54501024 | 0x04  |
