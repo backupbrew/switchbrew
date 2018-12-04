@@ -2428,27 +2428,29 @@ Falcon's Authenticated Mode has access to 64 128-bit keys which are burned at fa
 {| class=wikitable
 ! Index || Notes
 |-
-| 0x00 || Used by the nvhost_tsec firmware. Debug mode only.
+| 0x00 || Used by nvhost_tsec, nvhost_nvdec_bl020_prod, nvhost_nvdec020_prod, nvhost_nvdec020_ns and acr_ucode firmwares. Debug mode only.
 |-
-| 0x03 || Used by the nvhost_tsec firmware.
+| 0x01 || Used by nvhost_nvdec_bl020_prod firmware.
 |-
-| 0x04 || Used by the nvhost_tsec firmware.
+| 0x03 || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
 |-
-| 0x05 || Used by the nvhost_tsec firmware.
+| 0x04 || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
 |-
-| 0x07 || Used by the nvhost_tsec firmware.
+| 0x05 || Used by nvhost_tsec, nvhost_nvdec_bl020_prod, nvhost_nvdec020_prod, nvhost_nvdec020_ns and acr_ucode firmwares.
 |-
-| 0x09 || Used by the nvhost_tsec firmware.
+| 0x07 || Used by nvhost_tsec firmware.
 |-
-| 0x0B || Used by the nvhost_tsec firmware.
+| 0x09 || Used by nvhost_tsec firmware.
 |-
-| 0x0F || Used by the nvhost_tsec firmware.
+| 0x0B || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
 |-
-| 0x15 || Used by the nvhost_tsec firmware.
+| 0x0F || Used by nvhost_tsec firmware.
+|-
+| 0x15 || Used by nvhost_tsec, nvhost_nvdec_bl020_prod, [5.0.0+] nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
 |-
 | 0x26 || Used by [[#KeygenLdr|KeygenLdr]].
 |-
-| 0x3C || Used by the nvhost_tsec firmware.
+| 0x3C || Used by nvhost_tsec firmware.
 |-
-| 0x3F || Used by the nvhost_tsec firmware. Potentially per-console.
+| 0x3F || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares. Potentially per-console.
 |}
