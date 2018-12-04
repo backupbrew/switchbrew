@@ -30,7 +30,7 @@ interfaces).
 | TSEC\_THI\_METHOD0                                                      | 0x54500040 | 0x04  |
 | TSEC\_THI\_METHOD1                                                      | 0x54500044 | 0x04  |
 | [TSEC\_THI\_INT\_STATUS](#TSEC_THI_INT_STATUS "wikilink")               | 0x54500078 | 0x04  |
-| TSEC\_THI\_INT\_MASK                                                    | 0x5450007C | 0x04  |
+| [TSEC\_THI\_INT\_MASK](#TSEC_THI_INT_MASK "wikilink")                   | 0x5450007C | 0x04  |
 | TSEC\_THI\_UNK0                                                         | 0x54500084 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_HIGH\_A                                      | 0x54500088 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_LOW\_A                                       | 0x5450008C | 0x04  |
@@ -175,6 +175,12 @@ interfaces).
 | Bits | Description                         |
 | ---- | ----------------------------------- |
 | 0    | TSEC\_THI\_INT\_STATUS\_FALCON\_INT |
+
+### TSEC\_THI\_INT\_MASK
+
+| Bits | Description                       |
+| ---- | --------------------------------- |
+| 0    | TSEC\_THI\_INT\_MASK\_FALCON\_INT |
 
 ### FALCON\_IRQSSET
 

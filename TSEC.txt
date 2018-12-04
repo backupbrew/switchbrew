@@ -34,7 +34,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54500078
 | 0x04
 |-
-| TSEC_THI_INT_MASK
+| [[#TSEC_THI_INT_MASK|TSEC_THI_INT_MASK]]
 | 0x5450007C
 | 0x04
 |-
@@ -598,6 +598,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 |-
 | 0
 | TSEC_THI_INT_STATUS_FALCON_INT
+|}
+
+=== TSEC_THI_INT_MASK ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| TSEC_THI_INT_MASK_FALCON_INT
 |}
 
 === FALCON_IRQSSET ===
