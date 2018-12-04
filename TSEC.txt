@@ -238,7 +238,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501104
 | 0x04
 |-
-| FALCON_HWCFG
+| [[#FALCON_HWCFG|FALCON_HWCFG]]
 | 0x54501108
 | 0x04
 |-
@@ -570,19 +570,19 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450170C
 | 0x04
 |-
-| TSEC_TEGRA_UNK0
+| TSEC_TEGRA_FALCON_IP_VER
 | 0x54501800
 | 0x04
 |-
-| TSEC_TEGRA_UNK1
+| TSEC_TEGRA_UNK0
 | 0x54501824
 | 0x04
 |-
-| TSEC_TEGRA_UNK2
+| TSEC_TEGRA_UNK1
 | 0x54501828
 | 0x04
 |-
-| TSEC_TEGRA_UNK3
+| TSEC_TEGRA_UNK2
 | 0x5450182C
 | 0x04
 |-
@@ -978,6 +978,18 @@ Used for signaling the Falcon CPU.
 === FALCON_BOOTVEC ===
 Takes the Falcon's boot vector address.
 
+=== FALCON_HWCFG ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-8
+| FALCON_HWCFG_IMEM_SIZE
+|-
+| 9-17
+| FALCON_HWCFG_DMEM_SIZE
+|}
+
 === FALCON_DMACTL ===
 {| class="wikitable" border="1"
 !  Bits
@@ -1038,6 +1050,18 @@ Used for configuring DMA transfers.
 
 === FALCON_DMATRFFBOFFS ===
 Takes the offset for Falcon's target memory being transferred.
+
+=== FALCON_ICD_CMD ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| FALCON_ICD_CMD_OPC
+|-
+| 8-12
+| FALCON_ICD_CMD_IDX
+|}
 
 === TSEC_SCP_CTL_STAT ===
 {| class="wikitable" border="1"
@@ -2452,5 +2476,5 @@ Falcon's Authenticated Mode has access to 64 128-bit keys which are burned at fa
 |-
 | 0x3C || Used by nvhost_tsec firmware.
 |-
-| 0x3F || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares. Potentially per-console.
+| 0x3F || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
 |}

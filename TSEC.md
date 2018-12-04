@@ -81,7 +81,7 @@ interfaces).
 | [FALCON\_EXCI](#FALCON_EXCI "wikilink")                                 | 0x545010D0 | 0x04  |
 | [FALCON\_CPUCTL](#FALCON_CPUCTL "wikilink")                             | 0x54501100 | 0x04  |
 | [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")                           | 0x54501104 | 0x04  |
-| FALCON\_HWCFG                                                           | 0x54501108 | 0x04  |
+| [FALCON\_HWCFG](#FALCON_HWCFG "wikilink")                               | 0x54501108 | 0x04  |
 | [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")                             | 0x5450110C | 0x04  |
 | [FALCON\_DMATRFBASE](#FALCON_DMATRFBASE "wikilink")                     | 0x54501110 | 0x04  |
 | [FALCON\_DMATRFMOFFS](#FALCON_DMATRFMOFFS "wikilink")                   | 0x54501114 | 0x04  |
@@ -164,10 +164,10 @@ interfaces).
 | [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")                            | 0x54501704 | 0x04  |
 | [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")                              | 0x54501708 | 0x04  |
 | [TSEC\_DMA\_UNK](#TSEC_DMA_UNK "wikilink")                              | 0x5450170C | 0x04  |
-| TSEC\_TEGRA\_UNK0                                                       | 0x54501800 | 0x04  |
-| TSEC\_TEGRA\_UNK1                                                       | 0x54501824 | 0x04  |
-| TSEC\_TEGRA\_UNK2                                                       | 0x54501828 | 0x04  |
-| TSEC\_TEGRA\_UNK3                                                       | 0x5450182C | 0x04  |
+| TSEC\_TEGRA\_FALCON\_IP\_VER                                            | 0x54501800 | 0x04  |
+| TSEC\_TEGRA\_UNK0                                                       | 0x54501824 | 0x04  |
+| TSEC\_TEGRA\_UNK1                                                       | 0x54501828 | 0x04  |
+| TSEC\_TEGRA\_UNK2                                                       | 0x5450182C | 0x04  |
 | [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")                          | 0x54501838 | 0x04  |
 
 ### TSEC\_THI\_INT\_STATUS
@@ -370,6 +370,13 @@ Used for signaling the Falcon CPU.
 
 Takes the Falcon's boot vector address.
 
+### FALCON\_HWCFG
+
+| Bits | Description               |
+| ---- | ------------------------- |
+| 0-8  | FALCON\_HWCFG\_IMEM\_SIZE |
+| 9-17 | FALCON\_HWCFG\_DMEM\_SIZE |
+
 ### FALCON\_DMACTL
 
 | Bits | Description                     |
@@ -408,6 +415,13 @@ Used for configuring DMA transfers.
 ### FALCON\_DMATRFFBOFFS
 
 Takes the offset for Falcon's target memory being transferred.
+
+### FALCON\_ICD\_CMD
+
+| Bits | Description           |
+| ---- | --------------------- |
+| 0-3  | FALCON\_ICD\_CMD\_OPC |
+| 8-12 | FALCON\_ICD\_CMD\_IDX |
 
 ### TSEC\_SCP\_CTL\_STAT
 
@@ -1847,4 +1861,4 @@ arguments.
 | 0x15  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                   |
 | 0x26  | Used by [KeygenLdr](#KeygenLdr "wikilink").                                                                                               |
 | 0x3C  | Used by nvhost\_tsec firmware.                                                                                                            |
-| 0x3F  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares. Potentially per-console.                                 |
+| 0x3F  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                          |
