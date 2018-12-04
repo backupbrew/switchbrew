@@ -19,172 +19,308 @@ TSEC and are subdivided into:
 
   - 0x54501400 to 0x54501500: SCP (secure crypto processor?).
   - 0x54501500 to 0x54501600: Unknown.
-  - 0x54501600 to 0x54501700: MCCIF (Memory Controller Client
-    Interface).
+  - 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface).
   - 0x54501700 to 0x54501800: DMA.
   - 0x54501800 to 0x54501900: TEGRA (miscellaneous
 interfaces).
 
-| Name                                                       | Address    | Width |
-| ---------------------------------------------------------- | ---------- | ----- |
-| TSEC\_THI\_CTXSW                                           | 0x54500020 | 0x04  |
-| TSEC\_THI\_METHOD0                                         | 0x54500040 | 0x04  |
-| TSEC\_THI\_METHOD1                                         | 0x54500044 | 0x04  |
-| TSEC\_THI\_INT\_STATUS                                     | 0x54500078 | 0x04  |
-| TSEC\_THI\_INT\_MASK                                       | 0x5450007C | 0x04  |
-| TSEC\_THI\_UNK0                                            | 0x54500084 | 0x04  |
-| TSEC\_THI\_SLCG\_OVERRIDE\_HIGH\_A                         | 0x54500088 | 0x04  |
-| TSEC\_THI\_SLCG\_OVERRIDE\_LOW\_A                          | 0x5450008C | 0x04  |
-| TSEC\_THI\_CLK\_OVERRIDE                                   | 0x54500E00 | 0x04  |
-| FALCON\_IRQSSET                                            | 0x54501000 | 0x04  |
-| FALCON\_IRQSCLR                                            | 0x54501004 | 0x04  |
-| FALCON\_IRQSTAT                                            | 0x54501008 | 0x04  |
-| FALCON\_IRQMODE                                            | 0x5450100C | 0x04  |
-| [FALCON\_IRQMSET](#FALCON_IRQMSET "wikilink")              | 0x54501010 | 0x04  |
-| FALCON\_IRQMCLR                                            | 0x54501014 | 0x04  |
-| FALCON\_IRQMASK                                            | 0x54501018 | 0x04  |
-| [FALCON\_IRQDEST](#FALCON_IRQDEST "wikilink")              | 0x5450101C | 0x04  |
-| FALCON\_PERIODIC\_PERIOD                                   | 0x54501020 | 0x04  |
-| FALCON\_PERIODIC\_TIME                                     | 0x54501024 | 0x04  |
-| FALCON\_PERIODIC\_ENABLE                                   | 0x54501028 | 0x04  |
-| FALCON\_TIME\_LOW                                          | 0x5450102C | 0x04  |
-| FALCON\_TIME\_HIGH                                         | 0x54501030 | 0x04  |
-| FALCON\_WATCHDOG\_TIME                                     | 0x54501034 | 0x04  |
-| FALCON\_WATCHDOG\_ENABLE                                   | 0x54501038 | 0x04  |
-| [FALCON\_SCRATCH0](#FALCON_SCRATCH0 "wikilink")            | 0x54501040 | 0x04  |
-| [FALCON\_SCRATCH1](#FALCON_SCRATCH1 "wikilink")            | 0x54501044 | 0x04  |
-| [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")                  | 0x54501048 | 0x04  |
-| [FALCON\_IDLESTATE](#FALCON_IDLESTATE "wikilink")          | 0x5450104C | 0x04  |
-| FALCON\_CURCTX                                             | 0x54501050 | 0x04  |
-| FALCON\_NXTCTX                                             | 0x54501054 | 0x04  |
-| FALCON\_CMDCTX                                             | 0x54501058 | 0x04  |
-| FALCON\_STATUS\_MASK                                       | 0x5450105C | 0x04  |
-| FALCON\_VM\_SUPERVISOR                                     | 0x54501060 | 0x04  |
-| FALCON\_FIFO\_DATA                                         | 0x54501064 | 0x04  |
-| FALCON\_FIFO\_CMD                                          | 0x54501068 | 0x04  |
-| FALCON\_FIFO\_DATA\_WR                                     | 0x5450106C | 0x04  |
-| FALCON\_FIFO\_OCCUPIED                                     | 0x54501070 | 0x04  |
-| FALCON\_FIFO\_ACK                                          | 0x54501074 | 0x04  |
-| FALCON\_FIFO\_LIMIT                                        | 0x54501078 | 0x04  |
-| FALCON\_SUBENGINE\_RESET                                   | 0x5450107C | 0x04  |
-| FALCON\_SCRATCH2                                           | 0x54501080 | 0x04  |
-| FALCON\_SCRATCH3                                           | 0x54501084 | 0x04  |
-| FALCON\_PM\_TRIGGER                                        | 0x54501088 | 0x04  |
-| FALCON\_PM\_MODE                                           | 0x5450108C | 0x04  |
-| FALCON\_DEBUG1                                             | 0x54501090 | 0x04  |
-| [FALCON\_DEBUGINFO](#FALCON_DEBUGINFO "wikilink")          | 0x54501094 | 0x04  |
-| FALCON\_BREAKPOINT0                                        | 0x54501098 | 0x04  |
-| FALCON\_BREAKPOINT1                                        | 0x5450109C | 0x04  |
-| FALCON\_CGCTL                                              | 0x545010A0 | 0x04  |
-| FALCON\_ENGCTL                                             | 0x545010A4 | 0x04  |
-| FALCON\_PM\_SEL                                            | 0x545010A8 | 0x04  |
-| FALCON\_HOST\_IO\_INDEX                                    | 0x545010AC | 0x04  |
-| [FALCON\_CPUCTL](#FALCON_CPUCTL "wikilink")                | 0x54501100 | 0x04  |
-| [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")              | 0x54501104 | 0x04  |
-| FALCON\_HWCFG                                              | 0x54501108 | 0x04  |
-| [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")                | 0x5450110C | 0x04  |
-| [FALCON\_DMATRFBASE](#FALCON_DMATRFBASE "wikilink")        | 0x54501110 | 0x04  |
-| [FALCON\_DMATRFMOFFS](#FALCON_DMATRFMOFFS "wikilink")      | 0x54501114 | 0x04  |
-| [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")          | 0x54501118 | 0x04  |
-| [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink")    | 0x5450111C | 0x04  |
-| FALCON\_DMATRFSTAT                                         | 0x54501120 | 0x04  |
-| FALCON\_CRYPTTRFSTAT                                       | 0x54501124 | 0x04  |
-| FALCON\_CPUSTAT                                            | 0x54501128 | 0x04  |
-| FALCON\_HWCFG\_ALIAS                                       | 0x5450112C | 0x04  |
-| FALCON\_CPUCTL\_ALIAS                                      | 0x54501130 | 0x04  |
-| FALCON\_TLB\_CMD                                           | 0x54501140 | 0x04  |
-| FALCON\_TLB\_CMD\_RES                                      | 0x54501144 | 0x04  |
-| FALCON\_BRANCH\_HISTORY\_CTRL                              | 0x54501148 | 0x04  |
-| FALCON\_BRANCH\_HISTORY\_PC                                | 0x5450114C | 0x04  |
-| FALCON\_IMFILLRNG0                                         | 0x54501150 | 0x04  |
-| FALCON\_IMFILLRNG1                                         | 0x54501154 | 0x04  |
-| FALCON\_IMFILLCTL                                          | 0x54501158 | 0x04  |
-| FALCON\_EXTERRWIN                                          | 0x54501160 | 0x04  |
-| FALCON\_EXTERRCFG                                          | 0x54501164 | 0x04  |
-| FALCON\_EXTERRADDR                                         | 0x54501168 | 0x04  |
-| FALCON\_EXTERRSTAT                                         | 0x5450116C | 0x04  |
-| FALCON\_CG2                                                | 0x5450117C | 0x04  |
-| FALCON\_CODE\_INDEX                                        | 0x54501180 | 0x04  |
-| FALCON\_CODE                                               | 0x54501184 | 0x04  |
-| FALCON\_CODE\_VIRT\_ADDR                                   | 0x54501188 | 0x04  |
-| FALCON\_DATA\_INDEX0                                       | 0x545011C0 | 0x04  |
-| FALCON\_DATA0                                              | 0x545011C4 | 0x04  |
-| FALCON\_DATA\_INDEX1                                       | 0x545011C8 | 0x04  |
-| FALCON\_DATA1                                              | 0x545011CC | 0x04  |
-| FALCON\_DATA\_INDEX2                                       | 0x545011D0 | 0x04  |
-| FALCON\_DATA2                                              | 0x545011D4 | 0x04  |
-| FALCON\_DATA\_INDEX3                                       | 0x545011D8 | 0x04  |
-| FALCON\_DATA3                                              | 0x545011DC | 0x04  |
-| FALCON\_DATA\_INDEX4                                       | 0x545011E0 | 0x04  |
-| FALCON\_DATA4                                              | 0x545011E4 | 0x04  |
-| FALCON\_DATA\_INDEX5                                       | 0x545011E8 | 0x04  |
-| FALCON\_DATA5                                              | 0x545011EC | 0x04  |
-| FALCON\_DATA\_INDEX6                                       | 0x545011F0 | 0x04  |
-| FALCON\_DATA6                                              | 0x545011F4 | 0x04  |
-| FALCON\_DATA\_INDEX7                                       | 0x545011F8 | 0x04  |
-| FALCON\_DATA7                                              | 0x545011FC | 0x04  |
-| FALCON\_ICD\_CMD                                           | 0x54501200 | 0x04  |
-| FALCON\_ICD\_ADDR                                          | 0x54501204 | 0x04  |
-| FALCON\_ICD\_WDATA                                         | 0x54501208 | 0x04  |
-| FALCON\_ICD\_RDATA                                         | 0x5450120C | 0x04  |
-| FALCON\_SCTL                                               | 0x54501240 | 0x04  |
-| TSEC\_SCP\_UNK0                                            | 0x54501400 | 0x04  |
-| TSEC\_SCP\_UNK1                                            | 0x54501404 | 0x04  |
-| [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")      | 0x54501408 | 0x04  |
-| TSEC\_SCP\_CTL\_AUTH\_MODE                                 | 0x5450140C | 0x04  |
-| TSEC\_SCP\_UNK2                                            | 0x54501410 | 0x04  |
-| [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")      | 0x54501418 | 0x04  |
-| TSEC\_SCP\_UNK3                                            | 0x54501420 | 0x04  |
-| TSEC\_SCP\_UNK4                                            | 0x54501428 | 0x04  |
-| TSEC\_SCP\_UNK5                                            | 0x54501430 | 0x04  |
-| TSEC\_SCP\_UNK6                                            | 0x54501454 | 0x04  |
-| TSEC\_SCP\_UNK7                                            | 0x54501458 | 0x04  |
-| TSEC\_SCP\_UNK8                                            | 0x54501470 | 0x04  |
-| TSEC\_SCP\_UNK9                                            | 0x54501480 | 0x04  |
-| TSEC\_SCP\_UNK10                                           | 0x54501490 | 0x04  |
-| TSEC\_UNK0                                                 | 0x54501500 | 0x04  |
-| TSEC\_UNK1                                                 | 0x54501504 | 0x04  |
-| TSEC\_UNK2                                                 | 0x5450150C | 0x04  |
-| TSEC\_UNK3                                                 | 0x54501510 | 0x04  |
-| TSEC\_UNK4                                                 | 0x54501514 | 0x04  |
-| TSEC\_UNK5                                                 | 0x54501518 | 0x04  |
-| TSEC\_UNK6                                                 | 0x5450151C | 0x04  |
-| TSEC\_UNK7                                                 | 0x54501528 | 0x04  |
-| TSEC\_UNK8                                                 | 0x5450152C | 0x04  |
-| TSEC\_MCCIF\_UNK0                                          | 0x54501600 | 0x04  |
-| [TSEC\_MCCIF\_FIFOCTRL](#TSEC_MCCIF_FIFOCTRL "wikilink")   | 0x54501604 | 0x04  |
-| TSEC\_MCCIF\_UNK1                                          | 0x54501608 | 0x04  |
-| TSEC\_MCCIF\_UNK2                                          | 0x5450160C | 0x04  |
-| TSEC\_MCCIF\_UNK3                                          | 0x54501630 | 0x04  |
-| [TSEC\_MCCIF\_FIFOCTRL1](#TSEC_MCCIF_FIFOCTRL1 "wikilink") | 0x54501634 | 0x04  |
-| TSEC\_MCCIF\_UNK4                                          | 0x54501640 | 0x04  |
-| [TSEC\_MCCIF\_UNK5](#TSEC_MCCIF_UNK5 "wikilink")           | 0x54501644 | 0x04  |
-| [TSEC\_MCCIF\_UNK6](#TSEC_MCCIF_UNK6 "wikilink")           | 0x54501648 | 0x04  |
-| [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")                 | 0x54501700 | 0x04  |
-| [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")               | 0x54501704 | 0x04  |
-| [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")                 | 0x54501708 | 0x04  |
-| [TSEC\_DMA\_UNK](#TSEC_DMA_UNK "wikilink")                 | 0x5450170C | 0x04  |
-| TSEC\_TEGRA\_UNK0                                          | 0x54501800 | 0x04  |
-| TSEC\_TEGRA\_UNK1                                          | 0x54501824 | 0x04  |
-| TSEC\_TEGRA\_UNK2                                          | 0x54501828 | 0x04  |
-| TSEC\_TEGRA\_UNK3                                          | 0x5450182C | 0x04  |
-| [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")             | 0x54501838 | 0x04  |
+| Name                                                                    | Address    | Width |
+| ----------------------------------------------------------------------- | ---------- | ----- |
+| TSEC\_THI\_CTXSW                                                        | 0x54500020 | 0x04  |
+| TSEC\_THI\_METHOD0                                                      | 0x54500040 | 0x04  |
+| TSEC\_THI\_METHOD1                                                      | 0x54500044 | 0x04  |
+| [TSEC\_THI\_INT\_STATUS](#TSEC_THI_INT_STATUS "wikilink")               | 0x54500078 | 0x04  |
+| TSEC\_THI\_INT\_MASK                                                    | 0x5450007C | 0x04  |
+| TSEC\_THI\_UNK0                                                         | 0x54500084 | 0x04  |
+| TSEC\_THI\_SLCG\_OVERRIDE\_HIGH\_A                                      | 0x54500088 | 0x04  |
+| TSEC\_THI\_SLCG\_OVERRIDE\_LOW\_A                                       | 0x5450008C | 0x04  |
+| TSEC\_THI\_CLK\_OVERRIDE                                                | 0x54500E00 | 0x04  |
+| [FALCON\_IRQSSET](#FALCON_IRQSSET "wikilink")                           | 0x54501000 | 0x04  |
+| [FALCON\_IRQSCLR](#FALCON_IRQSCLR "wikilink")                           | 0x54501004 | 0x04  |
+| FALCON\_IRQSTAT                                                         | 0x54501008 | 0x04  |
+| FALCON\_IRQMODE                                                         | 0x5450100C | 0x04  |
+| [FALCON\_IRQMSET](#FALCON_IRQMSET "wikilink")                           | 0x54501010 | 0x04  |
+| [FALCON\_IRQMCLR](#FALCON_IRQMCLR "wikilink")                           | 0x54501014 | 0x04  |
+| FALCON\_IRQMASK                                                         | 0x54501018 | 0x04  |
+| [FALCON\_IRQDEST](#FALCON_IRQDEST "wikilink")                           | 0x5450101C | 0x04  |
+| FALCON\_PERIODIC\_PERIOD                                                | 0x54501020 | 0x04  |
+| FALCON\_PERIODIC\_TIME                                                  | 0x54501024 | 0x04  |
+| FALCON\_PERIODIC\_ENABLE                                                | 0x54501028 | 0x04  |
+| FALCON\_TIME\_LOW                                                       | 0x5450102C | 0x04  |
+| FALCON\_TIME\_HIGH                                                      | 0x54501030 | 0x04  |
+| FALCON\_WATCHDOG\_TIME                                                  | 0x54501034 | 0x04  |
+| FALCON\_WATCHDOG\_ENABLE                                                | 0x54501038 | 0x04  |
+| [FALCON\_SCRATCH0](#FALCON_SCRATCH0 "wikilink")                         | 0x54501040 | 0x04  |
+| [FALCON\_SCRATCH1](#FALCON_SCRATCH1 "wikilink")                         | 0x54501044 | 0x04  |
+| [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")                               | 0x54501048 | 0x04  |
+| [FALCON\_IDLESTATE](#FALCON_IDLESTATE "wikilink")                       | 0x5450104C | 0x04  |
+| FALCON\_CURCTX                                                          | 0x54501050 | 0x04  |
+| FALCON\_NXTCTX                                                          | 0x54501054 | 0x04  |
+| FALCON\_CMDCTX                                                          | 0x54501058 | 0x04  |
+| FALCON\_STATUS\_MASK                                                    | 0x5450105C | 0x04  |
+| FALCON\_VM\_SUPERVISOR                                                  | 0x54501060 | 0x04  |
+| FALCON\_FIFO\_DATA                                                      | 0x54501064 | 0x04  |
+| FALCON\_FIFO\_CMD                                                       | 0x54501068 | 0x04  |
+| FALCON\_FIFO\_DATA\_WR                                                  | 0x5450106C | 0x04  |
+| FALCON\_FIFO\_OCCUPIED                                                  | 0x54501070 | 0x04  |
+| FALCON\_FIFO\_ACK                                                       | 0x54501074 | 0x04  |
+| FALCON\_FIFO\_LIMIT                                                     | 0x54501078 | 0x04  |
+| FALCON\_SUBENGINE\_RESET                                                | 0x5450107C | 0x04  |
+| FALCON\_SCRATCH2                                                        | 0x54501080 | 0x04  |
+| FALCON\_SCRATCH3                                                        | 0x54501084 | 0x04  |
+| FALCON\_PM\_TRIGGER                                                     | 0x54501088 | 0x04  |
+| FALCON\_PM\_MODE                                                        | 0x5450108C | 0x04  |
+| FALCON\_DEBUG1                                                          | 0x54501090 | 0x04  |
+| [FALCON\_DEBUGINFO](#FALCON_DEBUGINFO "wikilink")                       | 0x54501094 | 0x04  |
+| FALCON\_BREAKPOINT0                                                     | 0x54501098 | 0x04  |
+| FALCON\_BREAKPOINT1                                                     | 0x5450109C | 0x04  |
+| FALCON\_CGCTL                                                           | 0x545010A0 | 0x04  |
+| FALCON\_ENGCTL                                                          | 0x545010A4 | 0x04  |
+| FALCON\_PM\_SEL                                                         | 0x545010A8 | 0x04  |
+| FALCON\_HOST\_IO\_INDEX                                                 | 0x545010AC | 0x04  |
+| [FALCON\_EXCI](#FALCON_EXCI "wikilink")                                 | 0x545010D0 | 0x04  |
+| [FALCON\_CPUCTL](#FALCON_CPUCTL "wikilink")                             | 0x54501100 | 0x04  |
+| [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")                           | 0x54501104 | 0x04  |
+| FALCON\_HWCFG                                                           | 0x54501108 | 0x04  |
+| [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")                             | 0x5450110C | 0x04  |
+| [FALCON\_DMATRFBASE](#FALCON_DMATRFBASE "wikilink")                     | 0x54501110 | 0x04  |
+| [FALCON\_DMATRFMOFFS](#FALCON_DMATRFMOFFS "wikilink")                   | 0x54501114 | 0x04  |
+| [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")                       | 0x54501118 | 0x04  |
+| [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink")                 | 0x5450111C | 0x04  |
+| FALCON\_DMATRFSTAT                                                      | 0x54501120 | 0x04  |
+| FALCON\_CRYPTTRFSTAT                                                    | 0x54501124 | 0x04  |
+| FALCON\_CPUSTAT                                                         | 0x54501128 | 0x04  |
+| FALCON\_HWCFG\_ALIAS                                                    | 0x5450112C | 0x04  |
+| FALCON\_CPUCTL\_ALIAS                                                   | 0x54501130 | 0x04  |
+| FALCON\_TLB\_CMD                                                        | 0x54501140 | 0x04  |
+| FALCON\_TLB\_CMD\_RES                                                   | 0x54501144 | 0x04  |
+| FALCON\_BRANCH\_HISTORY\_CTRL                                           | 0x54501148 | 0x04  |
+| FALCON\_BRANCH\_HISTORY\_PC                                             | 0x5450114C | 0x04  |
+| FALCON\_IMFILLRNG0                                                      | 0x54501150 | 0x04  |
+| FALCON\_IMFILLRNG1                                                      | 0x54501154 | 0x04  |
+| FALCON\_IMFILLCTL                                                       | 0x54501158 | 0x04  |
+| FALCON\_EXTERRWIN                                                       | 0x54501160 | 0x04  |
+| FALCON\_EXTERRCFG                                                       | 0x54501164 | 0x04  |
+| FALCON\_EXTERRADDR                                                      | 0x54501168 | 0x04  |
+| FALCON\_EXTERRSTAT                                                      | 0x5450116C | 0x04  |
+| FALCON\_CG2                                                             | 0x5450117C | 0x04  |
+| FALCON\_CODE\_INDEX                                                     | 0x54501180 | 0x04  |
+| FALCON\_CODE                                                            | 0x54501184 | 0x04  |
+| FALCON\_CODE\_VIRT\_ADDR                                                | 0x54501188 | 0x04  |
+| FALCON\_DATA\_INDEX0                                                    | 0x545011C0 | 0x04  |
+| FALCON\_DATA0                                                           | 0x545011C4 | 0x04  |
+| FALCON\_DATA\_INDEX1                                                    | 0x545011C8 | 0x04  |
+| FALCON\_DATA1                                                           | 0x545011CC | 0x04  |
+| FALCON\_DATA\_INDEX2                                                    | 0x545011D0 | 0x04  |
+| FALCON\_DATA2                                                           | 0x545011D4 | 0x04  |
+| FALCON\_DATA\_INDEX3                                                    | 0x545011D8 | 0x04  |
+| FALCON\_DATA3                                                           | 0x545011DC | 0x04  |
+| FALCON\_DATA\_INDEX4                                                    | 0x545011E0 | 0x04  |
+| FALCON\_DATA4                                                           | 0x545011E4 | 0x04  |
+| FALCON\_DATA\_INDEX5                                                    | 0x545011E8 | 0x04  |
+| FALCON\_DATA5                                                           | 0x545011EC | 0x04  |
+| FALCON\_DATA\_INDEX6                                                    | 0x545011F0 | 0x04  |
+| FALCON\_DATA6                                                           | 0x545011F4 | 0x04  |
+| FALCON\_DATA\_INDEX7                                                    | 0x545011F8 | 0x04  |
+| FALCON\_DATA7                                                           | 0x545011FC | 0x04  |
+| FALCON\_ICD\_CMD                                                        | 0x54501200 | 0x04  |
+| FALCON\_ICD\_ADDR                                                       | 0x54501204 | 0x04  |
+| FALCON\_ICD\_WDATA                                                      | 0x54501208 | 0x04  |
+| FALCON\_ICD\_RDATA                                                      | 0x5450120C | 0x04  |
+| FALCON\_SCTL                                                            | 0x54501240 | 0x04  |
+| TSEC\_SCP\_UNK0                                                         | 0x54501400 | 0x04  |
+| TSEC\_SCP\_UNK1                                                         | 0x54501404 | 0x04  |
+| [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")                   | 0x54501408 | 0x04  |
+| TSEC\_SCP\_CTL\_AUTH\_MODE                                              | 0x5450140C | 0x04  |
+| TSEC\_SCP\_UNK2                                                         | 0x54501410 | 0x04  |
+| [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")                   | 0x54501418 | 0x04  |
+| TSEC\_SCP\_UNK3                                                         | 0x54501420 | 0x04  |
+| TSEC\_SCP\_UNK4                                                         | 0x54501428 | 0x04  |
+| TSEC\_SCP\_UNK5                                                         | 0x54501430 | 0x04  |
+| TSEC\_SCP\_UNK6                                                         | 0x54501454 | 0x04  |
+| TSEC\_SCP\_UNK7                                                         | 0x54501458 | 0x04  |
+| TSEC\_SCP\_UNK8                                                         | 0x54501470 | 0x04  |
+| TSEC\_SCP\_UNK9                                                         | 0x54501480 | 0x04  |
+| TSEC\_SCP\_UNK10                                                        | 0x54501490 | 0x04  |
+| TSEC\_UNK0                                                              | 0x54501500 | 0x04  |
+| TSEC\_UNK1                                                              | 0x54501504 | 0x04  |
+| TSEC\_UNK2                                                              | 0x5450150C | 0x04  |
+| TSEC\_UNK3                                                              | 0x54501510 | 0x04  |
+| TSEC\_UNK4                                                              | 0x54501514 | 0x04  |
+| TSEC\_UNK5                                                              | 0x54501518 | 0x04  |
+| TSEC\_UNK6                                                              | 0x5450151C | 0x04  |
+| TSEC\_UNK7                                                              | 0x54501528 | 0x04  |
+| TSEC\_UNK8                                                              | 0x5450152C | 0x04  |
+| TSEC\_TFBIF\_UNK0                                                       | 0x54501600 | 0x04  |
+| [TSEC\_TFBIF\_MCCIF\_FIFOCTRL](#TSEC_TFBIF_MCCIF_FIFOCTRL "wikilink")   | 0x54501604 | 0x04  |
+| TSEC\_TFBIF\_UNK1                                                       | 0x54501608 | 0x04  |
+| TSEC\_TFBIF\_UNK2                                                       | 0x5450160C | 0x04  |
+| TSEC\_TFBIF\_UNK3                                                       | 0x54501630 | 0x04  |
+| [TSEC\_TFBIF\_MCCIF\_FIFOCTRL1](#TSEC_TFBIF_MCCIF_FIFOCTRL1 "wikilink") | 0x54501634 | 0x04  |
+| TSEC\_TFBIF\_UNK4                                                       | 0x54501640 | 0x04  |
+| [TSEC\_TFBIF\_UNK5](#TSEC_TFBIF_UNK5 "wikilink")                        | 0x54501644 | 0x04  |
+| [TSEC\_TFBIF\_UNK6](#TSEC_TFBIF_UNK6 "wikilink")                        | 0x54501648 | 0x04  |
+| [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")                              | 0x54501700 | 0x04  |
+| [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")                            | 0x54501704 | 0x04  |
+| [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")                              | 0x54501708 | 0x04  |
+| [TSEC\_DMA\_UNK](#TSEC_DMA_UNK "wikilink")                              | 0x5450170C | 0x04  |
+| TSEC\_TEGRA\_UNK0                                                       | 0x54501800 | 0x04  |
+| TSEC\_TEGRA\_UNK1                                                       | 0x54501824 | 0x04  |
+| TSEC\_TEGRA\_UNK2                                                       | 0x54501828 | 0x04  |
+| TSEC\_TEGRA\_UNK3                                                       | 0x5450182C | 0x04  |
+| [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")                          | 0x54501838 | 0x04  |
+
+### TSEC\_THI\_INT\_STATUS
+
+| Bits | Description                         |
+| ---- | ----------------------------------- |
+| 0    | TSEC\_THI\_INT\_STATUS\_FALCON\_INT |
+
+### FALCON\_IRQSSET
+
+| Bits | Description             |
+| ---- | ----------------------- |
+| 0    | FALCON\_IRQSSET\_GPTMR  |
+| 1    | FALCON\_IRQSSET\_WDTMR  |
+| 2    | FALCON\_IRQSSET\_MTHD   |
+| 3    | FALCON\_IRQSSET\_CTXSW  |
+| 4    | FALCON\_IRQSSET\_HALT   |
+| 5    | FALCON\_IRQSSET\_EXTERR |
+| 6    | FALCON\_IRQSSET\_SWGEN0 |
+| 7    | FALCON\_IRQSSET\_SWGEN1 |
+| 8-15 | FALCON\_IRQSSET\_EXT    |
+
+Used for setting Falcon's IRQs.
+
+### FALCON\_IRQSCLR
+
+| Bits | Description             |
+| ---- | ----------------------- |
+| 0    | FALCON\_IRQSCLR\_GPTMR  |
+| 1    | FALCON\_IRQSCLR\_WDTMR  |
+| 2    | FALCON\_IRQSCLR\_MTHD   |
+| 3    | FALCON\_IRQSCLR\_CTXSW  |
+| 4    | FALCON\_IRQSCLR\_HALT   |
+| 5    | FALCON\_IRQSCLR\_EXTERR |
+| 6    | FALCON\_IRQSCLR\_SWGEN0 |
+| 7    | FALCON\_IRQSCLR\_SWGEN1 |
+| 8-15 | FALCON\_IRQSCLR\_EXT    |
+
+Used for clearing Falcon's IRQs.
+
+### FALCON\_IRQSTAT
+
+| Bits | Description             |
+| ---- | ----------------------- |
+| 0    | FALCON\_IRQSTAT\_GPTMR  |
+| 1    | FALCON\_IRQSTAT\_WDTMR  |
+| 2    | FALCON\_IRQSTAT\_MTHD   |
+| 3    | FALCON\_IRQSTAT\_CTXSW  |
+| 4    | FALCON\_IRQSTAT\_HALT   |
+| 5    | FALCON\_IRQSTAT\_EXTERR |
+| 6    | FALCON\_IRQSTAT\_SWGEN0 |
+| 7    | FALCON\_IRQSTAT\_SWGEN1 |
+| 8-15 | FALCON\_IRQSTAT\_EXT    |
+
+Used for getting the status of Falcon's IRQs.
+
+### FALCON\_IRQMODE
+
+| Bits | Description             |
+| ---- | ----------------------- |
+| 0    | FALCON\_IRQMODE\_GPTMR  |
+| 1    | FALCON\_IRQMODE\_WDTMR  |
+| 2    | FALCON\_IRQMODE\_MTHD   |
+| 3    | FALCON\_IRQMODE\_CTXSW  |
+| 4    | FALCON\_IRQMODE\_HALT   |
+| 5    | FALCON\_IRQMODE\_EXTERR |
+| 6    | FALCON\_IRQMODE\_SWGEN0 |
+| 7    | FALCON\_IRQMODE\_SWGEN1 |
+| 8-15 | FALCON\_IRQMODE\_EXT    |
+
+Used for changing the mode Falcon's IRQs. A value of 1 means level
+triggered while a value of 0 means edge triggered.
 
 ### FALCON\_IRQMSET
 
-Used for configuring Falcon's IRQs.
+| Bits | Description             |
+| ---- | ----------------------- |
+| 0    | FALCON\_IRQMSET\_GPTMR  |
+| 1    | FALCON\_IRQMSET\_WDTMR  |
+| 2    | FALCON\_IRQMSET\_MTHD   |
+| 3    | FALCON\_IRQMSET\_CTXSW  |
+| 4    | FALCON\_IRQMSET\_HALT   |
+| 5    | FALCON\_IRQMSET\_EXTERR |
+| 6    | FALCON\_IRQMSET\_SWGEN0 |
+| 7    | FALCON\_IRQMSET\_SWGEN1 |
+| 8-15 | FALCON\_IRQMSET\_EXT    |
+
+Used for setting the mask for Falcon's IRQs.
+
+### FALCON\_IRQMCLR
+
+| Bits | Description             |
+| ---- | ----------------------- |
+| 0    | FALCON\_IRQMCLR\_GPTMR  |
+| 1    | FALCON\_IRQMCLR\_WDTMR  |
+| 2    | FALCON\_IRQMCLR\_MTHD   |
+| 3    | FALCON\_IRQMCLR\_CTXSW  |
+| 4    | FALCON\_IRQMCLR\_HALT   |
+| 5    | FALCON\_IRQMCLR\_EXTERR |
+| 6    | FALCON\_IRQMCLR\_SWGEN0 |
+| 7    | FALCON\_IRQMCLR\_SWGEN1 |
+| 8-15 | FALCON\_IRQMCLR\_EXT    |
+
+Used for clearing the mask for Falcon's IRQs.
+
+### FALCON\_IRQMASK
+
+| Bits | Description             |
+| ---- | ----------------------- |
+| 0    | FALCON\_IRQMASK\_GPTMR  |
+| 1    | FALCON\_IRQMASK\_WDTMR  |
+| 2    | FALCON\_IRQMASK\_MTHD   |
+| 3    | FALCON\_IRQMASK\_CTXSW  |
+| 4    | FALCON\_IRQMASK\_HALT   |
+| 5    | FALCON\_IRQMASK\_EXTERR |
+| 6    | FALCON\_IRQMASK\_SWGEN0 |
+| 7    | FALCON\_IRQMASK\_SWGEN1 |
+| 8-15 | FALCON\_IRQMASK\_EXT    |
+
+Used for getting the value of the mask for Falcon's IRQs.
 
 ### FALCON\_IRQDEST
 
-Used for configuring Falcon's IRQs.
+| Bits  | Description                     |
+| ----- | ------------------------------- |
+| 0     | FALCON\_IRQDEST\_GPTMR          |
+| 1     | FALCON\_IRQDEST\_WDTMR          |
+| 2     | FALCON\_IRQDEST\_MTHD           |
+| 3     | FALCON\_IRQDEST\_CTXSW          |
+| 4     | FALCON\_IRQDEST\_HALT           |
+| 5     | FALCON\_IRQDEST\_EXTERR         |
+| 6     | FALCON\_IRQDEST\_SWGEN0         |
+| 7     | FALCON\_IRQDEST\_SWGEN1         |
+| 8-15  | FALCON\_IRQDEST\_EXT            |
+| 16    | FALCON\_IRQDEST\_TARGET\_GPTMR  |
+| 17    | FALCON\_IRQDEST\_TARGET\_WDTMR  |
+| 18    | FALCON\_IRQDEST\_TARGET\_MTHD   |
+| 19    | FALCON\_IRQDEST\_TARGET\_CTXSW  |
+| 20    | FALCON\_IRQDEST\_TARGET\_HALT   |
+| 21    | FALCON\_IRQDEST\_TARGET\_EXTERR |
+| 22    | FALCON\_IRQDEST\_TARGET\_SWGEN0 |
+| 23    | FALCON\_IRQDEST\_TARGET\_SWGEN1 |
+| 24-31 | FALCON\_IRQDEST\_TARGET\_EXT    |
+
+Used for routing Falcon's IRQs.
 
 ### FALCON\_SCRATCH0
 
-MMIO register for reading/writing data to Falcon.
+Scratch register for reading/writing data to Falcon.
 
 ### FALCON\_SCRATCH1
 
-MMIO register for reading/writing data to Falcon.
+Scratch register for reading/writing data to Falcon.
 
 ### FALCON\_ITFEN
 
@@ -200,14 +336,22 @@ Used for enabling/disabling Falcon interfaces.
 | Bits | Description                     |
 | ---- | ------------------------------- |
 | 0    | FALCON\_IDLESTATE\_FALCON\_BUSY |
+| 1-15 | FALCON\_IDLESTATE\_EXT\_BUSY    |
 
 Used for detecting if Falcon is busy or not.
 
 ### FALCON\_DEBUGINFO
 
+Used for UCODE self revocation. This register takes the base address of
+the GSC carveout shifted right by 8.
+
 \[6.0.0+\] [nvservices](NV%20services.md "wikilink") sets this to
 0x8005FF00 \>\> 8 (physical DRAM address inside the GPU UCODE carveout)
 before starting the nvhost\_tsec firmware.
+
+### FALCON\_EXCI
+
+Contains information about raised exceptions.
 
 ### FALCON\_CPUCTL
 
@@ -278,35 +422,35 @@ Takes the offset for Falcon's target memory being transferred.
 | 0    | TSEC\_SCP\_CTL\_PKEY\_REQUEST\_RELOAD |
 | 1    | TSEC\_SCP\_CTL\_PKEY\_LOADED          |
 
-### TSEC\_MCCIF\_FIFOCTRL
+### TSEC\_TFBIF\_MCCIF\_FIFOCTRL
 
-| Bits | Description                            |
-| ---- | -------------------------------------- |
-| 0    | TSEC\_MCCIF\_FIFOCTRL\_RCLK\_OVERRIDE  |
-| 1    | TSEC\_MCCIF\_FIFOCTRL\_WCLK\_OVERRIDE  |
-| 2    | TSEC\_MCCIF\_FIFOCTRL\_WRCL\_MCLE2X    |
-| 3    | TSEC\_MCCIF\_FIFOCTRL\_RDMC\_RDFAST    |
-| 4    | TSEC\_MCCIF\_FIFOCTRL\_WRMC\_CLLE2X    |
-| 5    | TSEC\_MCCIF\_FIFOCTRL\_RDCL\_RDFAST    |
-| 6    | TSEC\_MCCIF\_FIFOCTRL\_CCLK\_OVERRIDE  |
-| 7    | TSEC\_MCCIF\_FIFOCTRL\_RCLK\_OVR\_MODE |
-| 8    | TSEC\_MCCIF\_FIFOCTRL\_WCLK\_OVR\_MODE |
+| Bits | Description                                   |
+| ---- | --------------------------------------------- |
+| 0    | TSEC\_TFBIF\_MCCIF\_FIFOCTRL\_RCLK\_OVERRIDE  |
+| 1    | TSEC\_TFBIF\_MCCIF\_FIFOCTRL\_WCLK\_OVERRIDE  |
+| 2    | TSEC\_TFBIF\_MCCIF\_FIFOCTRL\_WRCL\_MCLE2X    |
+| 3    | TSEC\_TFBIF\_MCCIF\_FIFOCTRL\_RDMC\_RDFAST    |
+| 4    | TSEC\_TFBIF\_MCCIF\_FIFOCTRL\_WRMC\_CLLE2X    |
+| 5    | TSEC\_TFBIF\_MCCIF\_FIFOCTRL\_RDCL\_RDFAST    |
+| 6    | TSEC\_TFBIF\_MCCIF\_FIFOCTRL\_CCLK\_OVERRIDE  |
+| 7    | TSEC\_TFBIF\_MCCIF\_FIFOCTRL\_RCLK\_OVR\_MODE |
+| 8    | TSEC\_TFBIF\_MCCIF\_FIFOCTRL\_WCLK\_OVR\_MODE |
 
 ### TSEC\_MCCIF\_FIFOCTRL1
 
-| Bits  | Description                                           |
-| ----- | ----------------------------------------------------- |
-| 0-15  | TSEC\_MCCIF\_FIFOCTRL1\_SRD2MC\_REORDER\_DEPTH\_LIMIT |
-| 16-31 | TSEC\_MCCIF\_FIFOCTRL1\_SWR2MC\_REORDER\_DEPTH\_LIMIT |
+| Bits  | Description                                                  |
+| ----- | ------------------------------------------------------------ |
+| 0-15  | TSEC\_TFBIF\_MCCIF\_FIFOCTRL1\_SRD2MC\_REORDER\_DEPTH\_LIMIT |
+| 16-31 | TSEC\_TFBIF\_MCCIF\_FIFOCTRL1\_SWR2MC\_REORDER\_DEPTH\_LIMIT |
 
-### TSEC\_MCCIF\_UNK5
+### TSEC\_TFBIF\_UNK5
 
 Used to control accesses to DRAM.
 
 \[6.0.0+\] The nvhost\_tsec firmware sets this register to 0x10 or
 0x111110 before reading memory from the GPU UCODE carveout.
 
-### TSEC\_MCCIF\_UNK6
+### TSEC\_TFBIF\_UNK6
 
 Used to control accesses to DRAM.
 

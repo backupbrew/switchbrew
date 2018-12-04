@@ -9,7 +9,7 @@ Registers from 0x54500000 to 0x54501000 are used to configure the host interface
 Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with the Falcon microprocessor. From this range, the subset of registers from 0x54501400 to 0x54501FE8 are specific to the TSEC and are subdivided into:
 * 0x54501400 to 0x54501500: SCP (secure crypto processor?).
 * 0x54501500 to 0x54501600: Unknown.
-* 0x54501600 to 0x54501700: MCCIF (Memory Controller Client Interface).
+* 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface).
 * 0x54501700 to 0x54501800: DMA.
 * 0x54501800 to 0x54501900: TEGRA (miscellaneous interfaces). 
 
@@ -30,7 +30,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54500044
 | 0x04
 |-
-| TSEC_THI_INT_STATUS
+| [[#TSEC_THI_INT_STATUS|TSEC_THI_INT_STATUS]]
 | 0x54500078
 | 0x04
 |-
@@ -54,11 +54,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54500E00
 | 0x04
 |-
-| FALCON_IRQSSET
+| [[#FALCON_IRQSSET|FALCON_IRQSSET]]
 | 0x54501000
 | 0x04
 |-
-| FALCON_IRQSCLR
+| [[#FALCON_IRQSCLR|FALCON_IRQSCLR]]
 | 0x54501004
 | 0x04
 |-
@@ -74,7 +74,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501010
 | 0x04
 |-
-| FALCON_IRQMCLR
+| [[#FALCON_IRQMCLR|FALCON_IRQMCLR]]
 | 0x54501014
 | 0x04
 |-
@@ -224,6 +224,10 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 |-
 | FALCON_HOST_IO_INDEX
 | 0x545010AC
+| 0x04
+|-
+| [[#FALCON_EXCI|FALCON_EXCI]]
+| 0x545010D0
 | 0x04
 |-
 | [[#FALCON_CPUCTL|FALCON_CPUCTL]]
@@ -514,39 +518,39 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450152C
 | 0x04
 |-
-| TSEC_MCCIF_UNK0
+| TSEC_TFBIF_UNK0
 | 0x54501600
 | 0x04
 |-
-| [[#TSEC_MCCIF_FIFOCTRL|TSEC_MCCIF_FIFOCTRL]]
+| [[#TSEC_TFBIF_MCCIF_FIFOCTRL|TSEC_TFBIF_MCCIF_FIFOCTRL]]
 | 0x54501604
 | 0x04
 |-
-| TSEC_MCCIF_UNK1
+| TSEC_TFBIF_UNK1
 | 0x54501608
 | 0x04
 |-
-| TSEC_MCCIF_UNK2
+| TSEC_TFBIF_UNK2
 | 0x5450160C
 | 0x04
 |-
-| TSEC_MCCIF_UNK3
+| TSEC_TFBIF_UNK3
 | 0x54501630
 | 0x04
 |-
-| [[#TSEC_MCCIF_FIFOCTRL1|TSEC_MCCIF_FIFOCTRL1]]
+| [[#TSEC_TFBIF_MCCIF_FIFOCTRL1|TSEC_TFBIF_MCCIF_FIFOCTRL1]]
 | 0x54501634
 | 0x04
 |-
-| TSEC_MCCIF_UNK4
+| TSEC_TFBIF_UNK4
 | 0x54501640
 | 0x04
 |-
-| [[#TSEC_MCCIF_UNK5|TSEC_MCCIF_UNK5]]
+| [[#TSEC_TFBIF_UNK5|TSEC_TFBIF_UNK5]]
 | 0x54501644
 | 0x04
 |-
-| [[#TSEC_MCCIF_UNK6|TSEC_MCCIF_UNK6]]
+| [[#TSEC_TFBIF_UNK6|TSEC_TFBIF_UNK6]]
 | 0x54501648
 | 0x04
 |-
@@ -587,17 +591,327 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x04
 |}
 
+=== TSEC_THI_INT_STATUS ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| TSEC_THI_INT_STATUS_FALCON_INT
+|}
+
+=== FALCON_IRQSSET ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_IRQSSET_GPTMR
+|-
+| 1
+| FALCON_IRQSSET_WDTMR
+|-
+| 2
+| FALCON_IRQSSET_MTHD
+|-
+| 3
+| FALCON_IRQSSET_CTXSW
+|-
+| 4
+| FALCON_IRQSSET_HALT
+|-
+| 5
+| FALCON_IRQSSET_EXTERR
+|-
+| 6
+| FALCON_IRQSSET_SWGEN0
+|-
+| 7
+| FALCON_IRQSSET_SWGEN1
+|-
+| 8-15
+| FALCON_IRQSSET_EXT
+|}
+
+Used for setting Falcon's IRQs.
+
+=== FALCON_IRQSCLR ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_IRQSCLR_GPTMR
+|-
+| 1
+| FALCON_IRQSCLR_WDTMR
+|-
+| 2
+| FALCON_IRQSCLR_MTHD
+|-
+| 3
+| FALCON_IRQSCLR_CTXSW
+|-
+| 4
+| FALCON_IRQSCLR_HALT
+|-
+| 5
+| FALCON_IRQSCLR_EXTERR
+|-
+| 6
+| FALCON_IRQSCLR_SWGEN0
+|-
+| 7
+| FALCON_IRQSCLR_SWGEN1
+|-
+| 8-15
+| FALCON_IRQSCLR_EXT
+|}
+
+Used for clearing Falcon's IRQs.
+
+=== FALCON_IRQSTAT ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_IRQSTAT_GPTMR
+|-
+| 1
+| FALCON_IRQSTAT_WDTMR
+|-
+| 2
+| FALCON_IRQSTAT_MTHD
+|-
+| 3
+| FALCON_IRQSTAT_CTXSW
+|-
+| 4
+| FALCON_IRQSTAT_HALT
+|-
+| 5
+| FALCON_IRQSTAT_EXTERR
+|-
+| 6
+| FALCON_IRQSTAT_SWGEN0
+|-
+| 7
+| FALCON_IRQSTAT_SWGEN1
+|-
+| 8-15
+| FALCON_IRQSTAT_EXT
+|}
+
+Used for getting the status of Falcon's IRQs.
+
+=== FALCON_IRQMODE ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_IRQMODE_GPTMR
+|-
+| 1
+| FALCON_IRQMODE_WDTMR
+|-
+| 2
+| FALCON_IRQMODE_MTHD
+|-
+| 3
+| FALCON_IRQMODE_CTXSW
+|-
+| 4
+| FALCON_IRQMODE_HALT
+|-
+| 5
+| FALCON_IRQMODE_EXTERR
+|-
+| 6
+| FALCON_IRQMODE_SWGEN0
+|-
+| 7
+| FALCON_IRQMODE_SWGEN1
+|-
+| 8-15
+| FALCON_IRQMODE_EXT
+|}
+
+Used for changing the mode Falcon's IRQs. A value of 1 means level triggered while a value of 0 means edge triggered.
+
 === FALCON_IRQMSET ===
-Used for configuring Falcon's IRQs.
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_IRQMSET_GPTMR
+|-
+| 1
+| FALCON_IRQMSET_WDTMR
+|-
+| 2
+| FALCON_IRQMSET_MTHD
+|-
+| 3
+| FALCON_IRQMSET_CTXSW
+|-
+| 4
+| FALCON_IRQMSET_HALT
+|-
+| 5
+| FALCON_IRQMSET_EXTERR
+|-
+| 6
+| FALCON_IRQMSET_SWGEN0
+|-
+| 7
+| FALCON_IRQMSET_SWGEN1
+|-
+| 8-15
+| FALCON_IRQMSET_EXT
+|}
+
+Used for setting the mask for Falcon's IRQs.
+
+=== FALCON_IRQMCLR ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_IRQMCLR_GPTMR
+|-
+| 1
+| FALCON_IRQMCLR_WDTMR
+|-
+| 2
+| FALCON_IRQMCLR_MTHD
+|-
+| 3
+| FALCON_IRQMCLR_CTXSW
+|-
+| 4
+| FALCON_IRQMCLR_HALT
+|-
+| 5
+| FALCON_IRQMCLR_EXTERR
+|-
+| 6
+| FALCON_IRQMCLR_SWGEN0
+|-
+| 7
+| FALCON_IRQMCLR_SWGEN1
+|-
+| 8-15
+| FALCON_IRQMCLR_EXT
+|}
+
+Used for clearing the mask for Falcon's IRQs.
+
+=== FALCON_IRQMASK ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_IRQMASK_GPTMR
+|-
+| 1
+| FALCON_IRQMASK_WDTMR
+|-
+| 2
+| FALCON_IRQMASK_MTHD
+|-
+| 3
+| FALCON_IRQMASK_CTXSW
+|-
+| 4
+| FALCON_IRQMASK_HALT
+|-
+| 5
+| FALCON_IRQMASK_EXTERR
+|-
+| 6
+| FALCON_IRQMASK_SWGEN0
+|-
+| 7
+| FALCON_IRQMASK_SWGEN1
+|-
+| 8-15
+| FALCON_IRQMASK_EXT
+|}
+
+Used for getting the value of the mask for Falcon's IRQs.
 
 === FALCON_IRQDEST ===
-Used for configuring Falcon's IRQs.
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_IRQDEST_GPTMR
+|-
+| 1
+| FALCON_IRQDEST_WDTMR
+|-
+| 2
+| FALCON_IRQDEST_MTHD
+|-
+| 3
+| FALCON_IRQDEST_CTXSW
+|-
+| 4
+| FALCON_IRQDEST_HALT
+|-
+| 5
+| FALCON_IRQDEST_EXTERR
+|-
+| 6
+| FALCON_IRQDEST_SWGEN0
+|-
+| 7
+| FALCON_IRQDEST_SWGEN1
+|-
+| 8-15
+| FALCON_IRQDEST_EXT
+|-
+| 16
+| FALCON_IRQDEST_TARGET_GPTMR
+|-
+| 17
+| FALCON_IRQDEST_TARGET_WDTMR
+|-
+| 18
+| FALCON_IRQDEST_TARGET_MTHD
+|-
+| 19
+| FALCON_IRQDEST_TARGET_CTXSW
+|-
+| 20
+| FALCON_IRQDEST_TARGET_HALT
+|-
+| 21
+| FALCON_IRQDEST_TARGET_EXTERR
+|-
+| 22
+| FALCON_IRQDEST_TARGET_SWGEN0
+|-
+| 23
+| FALCON_IRQDEST_TARGET_SWGEN1
+|-
+| 24-31
+| FALCON_IRQDEST_TARGET_EXT
+|}
+
+Used for routing Falcon's IRQs.
 
 === FALCON_SCRATCH0 ===
-MMIO register for reading/writing data to Falcon.
+Scratch register for reading/writing data to Falcon.
 
 === FALCON_SCRATCH1 ===
-MMIO register for reading/writing data to Falcon.
+Scratch register for reading/writing data to Falcon.
 
 === FALCON_ITFEN ===
 {| class="wikitable" border="1"
@@ -620,12 +934,20 @@ Used for enabling/disabling Falcon interfaces.
 |-
 | 0
 | FALCON_IDLESTATE_FALCON_BUSY
+|-
+| 1-15
+| FALCON_IDLESTATE_EXT_BUSY
 |}
 
 Used for detecting if Falcon is busy or not.
 
 === FALCON_DEBUGINFO ===
+Used for UCODE self revocation. This register takes the base address of the GSC carveout shifted right by 8.
+
 [6.0.0+] [[NV_services|nvservices]] sets this to 0x8005FF00 >> 8 (physical DRAM address inside the GPU UCODE carveout) before starting the nvhost_tsec firmware.
+
+=== FALCON_EXCI ===
+Contains information about raised exceptions.
 
 === FALCON_CPUCTL ===
 {| class="wikitable" border="1"
@@ -738,37 +1060,37 @@ Takes the offset for Falcon's target memory being transferred.
 | TSEC_SCP_CTL_PKEY_LOADED
 |}
 
-=== TSEC_MCCIF_FIFOCTRL ===
+=== TSEC_TFBIF_MCCIF_FIFOCTRL ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 0
-| TSEC_MCCIF_FIFOCTRL_RCLK_OVERRIDE
+| TSEC_TFBIF_MCCIF_FIFOCTRL_RCLK_OVERRIDE
 |-
 | 1
-| TSEC_MCCIF_FIFOCTRL_WCLK_OVERRIDE
+| TSEC_TFBIF_MCCIF_FIFOCTRL_WCLK_OVERRIDE
 |-
 | 2
-| TSEC_MCCIF_FIFOCTRL_WRCL_MCLE2X
+| TSEC_TFBIF_MCCIF_FIFOCTRL_WRCL_MCLE2X
 |-
 | 3
-| TSEC_MCCIF_FIFOCTRL_RDMC_RDFAST
+| TSEC_TFBIF_MCCIF_FIFOCTRL_RDMC_RDFAST
 |-
 | 4
-| TSEC_MCCIF_FIFOCTRL_WRMC_CLLE2X
+| TSEC_TFBIF_MCCIF_FIFOCTRL_WRMC_CLLE2X
 |-
 | 5
-| TSEC_MCCIF_FIFOCTRL_RDCL_RDFAST
+| TSEC_TFBIF_MCCIF_FIFOCTRL_RDCL_RDFAST
 |-
 | 6
-| TSEC_MCCIF_FIFOCTRL_CCLK_OVERRIDE
+| TSEC_TFBIF_MCCIF_FIFOCTRL_CCLK_OVERRIDE
 |-
 | 7
-| TSEC_MCCIF_FIFOCTRL_RCLK_OVR_MODE
+| TSEC_TFBIF_MCCIF_FIFOCTRL_RCLK_OVR_MODE
 |-
 | 8
-| TSEC_MCCIF_FIFOCTRL_WCLK_OVR_MODE
+| TSEC_TFBIF_MCCIF_FIFOCTRL_WCLK_OVR_MODE
 |}
 
 === TSEC_MCCIF_FIFOCTRL1 ===
@@ -777,18 +1099,18 @@ Takes the offset for Falcon's target memory being transferred.
 !  Description
 |-
 | 0-15
-| TSEC_MCCIF_FIFOCTRL1_SRD2MC_REORDER_DEPTH_LIMIT
+| TSEC_TFBIF_MCCIF_FIFOCTRL1_SRD2MC_REORDER_DEPTH_LIMIT
 |-
 | 16-31
-| TSEC_MCCIF_FIFOCTRL1_SWR2MC_REORDER_DEPTH_LIMIT
+| TSEC_TFBIF_MCCIF_FIFOCTRL1_SWR2MC_REORDER_DEPTH_LIMIT
 |}
 
-=== TSEC_MCCIF_UNK5 ===
+=== TSEC_TFBIF_UNK5 ===
 Used to control accesses to DRAM.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to 0x10 or 0x111110 before reading memory from the GPU UCODE carveout.
 
-=== TSEC_MCCIF_UNK6 ===
+=== TSEC_TFBIF_UNK6 ===
 Used to control accesses to DRAM.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to (data_size << 4) before reading memory from the GPU UCODE carveout.
