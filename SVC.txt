@@ -24,7 +24,7 @@ __NOTOC__
 |-
 |  0xA || [[#svcExitThread]] || None ||                                                         
 |-
-|  0xB || [[#svcSleepThread]] || X0=nano || W0=result
+|  0xB || [[#svcSleepThread]] || X0=nano ||
 |-
 |  0xC || [[#svcGetThreadPriority]] || W1=thread_handle || W0=result, W1=prio
 |-
@@ -477,15 +477,28 @@ Processor_id must be 0,1,2,3 or -2, where -2 uses the default cpuid for process.
 |-
 ! Argument || Type || Name
 |-
-| (In) X0 || u64 || Nano
+| (In) X0 || s64 || Nanoseconds
 |-
-| (Out) W0 || [[#Result]] || Ret
 |}
 </div>
 
 '''Description:''' Sleep for a specified amount of time, or yield thread.
 
-Setting nano=0 means "yield thread".
+Setting nanoseconds to 0, -1, or -2 indicates a yielding type.
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Value || Type
+|-
+| 0 || Yielding without core migration
+|-
+| -1 || Yielding with core migration
+|-
+| -2 || Yielding to any other thread
+|-
+|}
+</div>
 
 == svcGetThreadPriority ==
 

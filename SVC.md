@@ -14,7 +14,7 @@
 | 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")                                   | X1=entry, X2=thread\_context, X3=stacktop, W4=prio, W5=processor\_id                                                                                                                                                                                                               | W0=result, W1=handle                                     |
 | 0x9  | [\#svcStartThread](#svcStartThread "wikilink")                                     | W0=thread\_handle                                                                                                                                                                                                                                                                  | W0=result                                                |
 | 0xA  | [\#svcExitThread](#svcExitThread "wikilink")                                       | None                                                                                                                                                                                                                                                                               |                                                          |
-| 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")                                     | X0=nano                                                                                                                                                                                                                                                                            | W0=result                                                |
+| 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")                                     | X0=nano                                                                                                                                                                                                                                                                            |                                                          |
 | 0xC  | [\#svcGetThreadPriority](#svcGetThreadPriority "wikilink")                         | W1=thread\_handle                                                                                                                                                                                                                                                                  | W0=result, W1=prio                                       |
 | 0xD  | [\#svcSetThreadPriority](#svcSetThreadPriority "wikilink")                         | W0=thread\_handle, W1=prio                                                                                                                                                                                                                                                         | W0=result                                                |
 | 0xE  | [\#svcGetThreadCoreMask](#svcGetThreadCoreMask "wikilink")                         | W2=thread\_handle                                                                                                                                                                                                                                                                  | W0=result, W1=out, X2=out                                |
@@ -335,16 +335,27 @@ process.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name |
-| -------- | ------------------------------ | ---- |
-| (In) X0  | u64                            | Nano |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret  |
+| Argument | Type | Name        |
+| -------- | ---- | ----------- |
+| (In) X0  | s64  | Nanoseconds |
+|          |      |             |
 
 </div>
 
 **Description:** Sleep for a specified amount of time, or yield thread.
 
-Setting nano=0 means "yield thread".
+Setting nanoseconds to 0, -1, or -2 indicates a yielding type.
+
+<div style="display: inline-block;">
+
+| Value | Type                            |
+| ----- | ------------------------------- |
+| 0     | Yielding without core migration |
+| \-1   | Yielding with core migration    |
+| \-2   | Yielding to any other thread    |
+|       |                                 |
+
+</div>
 
 ## svcGetThreadPriority
 
