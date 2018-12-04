@@ -293,15 +293,15 @@ Used for getting the value of the mask for Falcon's IRQs.
 
 | Bits  | Description                     |
 | ----- | ------------------------------- |
-| 0     | FALCON\_IRQDEST\_GPTMR          |
-| 1     | FALCON\_IRQDEST\_WDTMR          |
-| 2     | FALCON\_IRQDEST\_MTHD           |
-| 3     | FALCON\_IRQDEST\_CTXSW          |
-| 4     | FALCON\_IRQDEST\_HALT           |
-| 5     | FALCON\_IRQDEST\_EXTERR         |
-| 6     | FALCON\_IRQDEST\_SWGEN0         |
-| 7     | FALCON\_IRQDEST\_SWGEN1         |
-| 8-15  | FALCON\_IRQDEST\_EXT            |
+| 0     | FALCON\_IRQDEST\_HOST\_GPTMR    |
+| 1     | FALCON\_IRQDEST\_HOST\_WDTMR    |
+| 2     | FALCON\_IRQDEST\_HOST\_MTHD     |
+| 3     | FALCON\_IRQDEST\_HOST\_CTXSW    |
+| 4     | FALCON\_IRQDEST\_HOST\_HALT     |
+| 5     | FALCON\_IRQDEST\_HOST\_EXTERR   |
+| 6     | FALCON\_IRQDEST\_HOST\_SWGEN0   |
+| 7     | FALCON\_IRQDEST\_HOST\_SWGEN1   |
+| 8-15  | FALCON\_IRQDEST\_HOST\_EXT      |
 | 16    | FALCON\_IRQDEST\_TARGET\_GPTMR  |
 | 17    | FALCON\_IRQDEST\_TARGET\_WDTMR  |
 | 18    | FALCON\_IRQDEST\_TARGET\_MTHD   |
