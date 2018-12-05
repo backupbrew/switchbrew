@@ -84,4 +84,52 @@ This is "nn::htc::tenv::IService".
 | 1   | GetVariableLength          |
 | 2   | WaitUntilVariableAvailable |
 
+# file\_io
+
+This is "nn::tma::IFileManager".
+
+This service is not normally present on retail
+units.
+
+| Cmd | Name                 | Notes                                                             |
+| --- | -------------------- | ----------------------------------------------------------------- |
+| 0   | OpenFile             | returns an [\#IFileAccessor](#IFileAccessor "wikilink")           |
+| 1   | FileExists           |                                                                   |
+| 2   | DeleteFile           |                                                                   |
+| 3   | RenameFile           |                                                                   |
+| 4   | GetIOType            |                                                                   |
+| 5   | OpenDirectory        |                                                                   |
+| 6   | DirectoryExists      | returns an [\#IDirectoryAccessor](#IDirectoryAccessor "wikilink") |
+| 7   | CreateDirectory      |                                                                   |
+| 8   | DeleteDirectory      |                                                                   |
+| 9   | RenameDirectory      |                                                                   |
+| 10  | CreateFile           |                                                                   |
+| 11  | GetFileTimeStamp     |                                                                   |
+| 12  | GetCaseSensitivePath |                                                                   |
+
+## IFileAccessor
+
+This is "nn::tma::IFileAccessor".
+
+| Cmd | Name               |
+| --- | ------------------ |
+| 0   | ReadFile           |
+| 1   | WriteFile          |
+| 2   | GetFileSize        |
+| 3   | SetFileSize        |
+| 4   | FlushFile          |
+| 5   | SetPriorityForFile |
+| 6   | GetPriorityForFile |
+
+## IDirectoryAccessor
+
+This is "nn::tma::IDirectoryAccessor".
+
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 0   | GetEntryCount           |
+| 1   | ReadDirectory           |
+| 2   | SetPriorityForDirectory |
+| 3   | GetPriorityForDirectory |
+
 [Category:Services](Category:Services "wikilink")
