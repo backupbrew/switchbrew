@@ -699,8 +699,8 @@ This is
 | \[2.0.0+\] 4 | [\#PostBufferAsync](#PostBufferAsync_2 "wikilink")                                        |                                                                                                                                                       |
 | \[2.0.0+\] 5 | [\#GetXferReport](#GetXferReport "wikilink")                                              |                                                                                                                                                       |
 | \[2.0.0+\] 6 | [\#PostBufferMultiAsync](#PostBufferMultiAsync "wikilink")                                |                                                                                                                                                       |
-| \[4.0.0+\] 7 |                                                                                           |                                                                                                                                                       |
-| \[4.0.0+\] 8 |                                                                                           |                                                                                                                                                       |
+| \[4.0.0+\] 7 |                                                                                           | Takes a total of 0x10-bytes of input, no output.                                                                                                      |
+| \[4.0.0+\] 8 |                                                                                           | Takes a total of 0x4-bytes of input and an input handle, no output.                                                                                   |
 
 Official sw uses autoclear=false for the above event.
 
