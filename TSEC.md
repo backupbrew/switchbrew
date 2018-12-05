@@ -26,9 +26,13 @@ interfaces).
 
 | Name                                                                    | Address    | Width |
 | ----------------------------------------------------------------------- | ---------- | ----- |
+| TSEC\_THI\_INCR\_SYNCPT                                                 | 0x54500000 | 0x04  |
+| TSEC\_THI\_INCR\_SYNCPT\_ERR                                            | 0x54500008 | 0x04  |
+| TSEC\_THI\_CTXSW\_INCR\_SYNCPT                                          | 0x5450000C | 0x04  |
 | TSEC\_THI\_CTXSW                                                        | 0x54500020 | 0x04  |
-| TSEC\_THI\_METHOD0                                                      | 0x54500040 | 0x04  |
-| TSEC\_THI\_METHOD1                                                      | 0x54500044 | 0x04  |
+| TSEC\_THI\_CONT\_SYNCPT\_EOF                                            | 0x54500028 | 0x04  |
+| [TSEC\_THI\_METHOD0](#TSEC_THI_METHOD0 "wikilink")                      | 0x54500040 | 0x04  |
+| [TSEC\_THI\_METHOD1](#TSEC_THI_METHOD1 "wikilink")                      | 0x54500044 | 0x04  |
 | [TSEC\_THI\_INT\_STATUS](#TSEC_THI_INT_STATUS "wikilink")               | 0x54500078 | 0x04  |
 | [TSEC\_THI\_INT\_MASK](#TSEC_THI_INT_MASK "wikilink")                   | 0x5450007C | 0x04  |
 | TSEC\_THI\_UNK0                                                         | 0x54500084 | 0x04  |
@@ -169,6 +173,71 @@ interfaces).
 | TSEC\_TEGRA\_UNK1                                                       | 0x54501828 | 0x04  |
 | TSEC\_TEGRA\_UNK2                                                       | 0x5450182C | 0x04  |
 | [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")                          | 0x54501838 | 0x04  |
+
+### TSEC\_THI\_METHOD0
+
+| ID    | Method                               |
+| ----- | ------------------------------------ |
+| 0x200 | SET\_APPLICATION\_ID                 |
+| 0x300 | EXECUTE                              |
+| 0x500 | HDCP\_INIT                           |
+| 0x504 | HDCP\_CREATE\_SESSION                |
+| 0x508 | HDCP\_VERIFY\_CERT\_RX               |
+| 0x50C | HDCP\_GENERATE\_EKM                  |
+| 0x510 | HDCP\_REVOCATION\_CHECK              |
+| 0x514 | HDCP\_VERIFY\_HPRIME                 |
+| 0x518 | HDCP\_ENCRYPT\_PAIRING\_INFO         |
+| 0x51C | HDCP\_DECRYPT\_PAIRING\_INFO         |
+| 0x520 | HDCP\_UPDATE\_SESSION                |
+| 0x524 | HDCP\_GENERATE\_LC\_INIT             |
+| 0x528 | HDCP\_VERIFY\_LPRIME                 |
+| 0x52C | HDCP\_GENERATE\_SKE\_INIT            |
+| 0x530 | HDCP\_VERIFY\_VPRIME                 |
+| 0x534 | HDCP\_ENCRYPTION\_RUN\_CTRL          |
+| 0x538 | HDCP\_SESSION\_CTRL                  |
+| 0x53C | HDCP\_COMPUTE\_SPRIME                |
+| 0x540 | HDCP\_GET\_CERT\_RX                  |
+| 0x544 | HDCP\_EXCHANGE\_INFO                 |
+| 0x548 | HDCP\_DECRYPT\_KM                    |
+| 0x54C | HDCP\_GET\_HPRIME                    |
+| 0x550 | HDCP\_GENERATE\_EKH\_KM              |
+| 0x554 | HDCP\_VERIFY\_RTT\_CHALLENGE         |
+| 0x558 | HDCP\_GET\_LPRIME                    |
+| 0x55C | HDCP\_DECRYPT\_KS                    |
+| 0x560 | HDCP\_DECRYPT                        |
+| 0x564 | HDCP\_GET\_RRX                       |
+| 0x568 | HDCP\_DECRYPT\_REENCRYPT             |
+| 0x56C |                                      |
+| 0x570 |                                      |
+| 0x574 |                                      |
+| 0x578 |                                      |
+| 0x57C |                                      |
+| 0x700 | HDCP\_VALIDATE\_SRM                  |
+| 0x704 | HDCP\_VALIDATE\_STREAM               |
+| 0x708 | HDCP\_TEST\_SECURE\_STATUS           |
+| 0x70C | HDCP\_SET\_DCP\_KPUB                 |
+| 0x710 | HDCP\_SET\_RX\_KPUB                  |
+| 0x714 | HDCP\_SET\_CERT\_RX                  |
+| 0x718 | HDCP\_SET\_SCRATCH\_BUFFER           |
+| 0x71C | HDCP\_SET\_SRM                       |
+| 0x720 | HDCP\_SET\_RECEIVER\_ID\_LIST        |
+| 0x724 | HDCP\_SET\_SPRIME                    |
+| 0x728 | HDCP\_SET\_ENC\_INPUT\_BUFFER        |
+| 0x72C | HDCP\_SET\_ENC\_OUTPUT\_BUFFER       |
+| 0x730 | HDCP\_GET\_RTT\_CHALLENGE            |
+| 0x734 | HDCP\_STREAM\_MANAGE                 |
+| 0x738 | HDCP\_READ\_CAPS                     |
+| 0x73C | HDCP\_ENCRYPT                        |
+| 0x740 | \[6.0.0+\] HDCP\_GET\_CURRENT\_NONCE |
+
+Used to encode and send a method's ID over HOST1X to TSEC. This register
+mirrors the functionality of HOST1X's channel opcode submission.
+
+### TSEC\_THI\_METHOD1
+
+Used to encode and send a method's data over HOST1X to TSEC. This
+register mirrors the functionality of HOST1X's channel opcode
+submission.
 
 ### TSEC\_THI\_INT\_STATUS
 

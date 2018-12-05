@@ -18,15 +18,31 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 !  Address
 !  Width
 |-
+| TSEC_THI_INCR_SYNCPT
+| 0x54500000
+| 0x04
+|-
+| TSEC_THI_INCR_SYNCPT_ERR
+| 0x54500008
+| 0x04
+|-
+| TSEC_THI_CTXSW_INCR_SYNCPT
+| 0x5450000C
+| 0x04
+|-
 | TSEC_THI_CTXSW
 | 0x54500020
 | 0x04
 |-
-| TSEC_THI_METHOD0
+| TSEC_THI_CONT_SYNCPT_EOF
+| 0x54500028
+| 0x04
+|-
+| [[#TSEC_THI_METHOD0|TSEC_THI_METHOD0]]
 | 0x54500040
 | 0x04
 |-
-| TSEC_THI_METHOD1
+| [[#TSEC_THI_METHOD1|TSEC_THI_METHOD1]]
 | 0x54500044
 | 0x04
 |-
@@ -590,6 +606,170 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501838
 | 0x04
 |}
+
+=== TSEC_THI_METHOD0 ===
+{| class="wikitable" border="1"
+!  ID
+!  Method
+|-
+| 0x200
+| SET_APPLICATION_ID
+|-
+| 0x300
+| EXECUTE
+|-
+| 0x500
+| HDCP_INIT
+|-
+| 0x504
+| HDCP_CREATE_SESSION
+|-
+| 0x508
+| HDCP_VERIFY_CERT_RX
+|-
+| 0x50C
+| HDCP_GENERATE_EKM
+|-
+| 0x510
+| HDCP_REVOCATION_CHECK
+|-
+| 0x514
+| HDCP_VERIFY_HPRIME
+|-
+| 0x518
+| HDCP_ENCRYPT_PAIRING_INFO
+|-
+| 0x51C
+| HDCP_DECRYPT_PAIRING_INFO
+|-
+| 0x520
+| HDCP_UPDATE_SESSION
+|-
+| 0x524
+| HDCP_GENERATE_LC_INIT
+|-
+| 0x528
+| HDCP_VERIFY_LPRIME
+|-
+| 0x52C
+| HDCP_GENERATE_SKE_INIT
+|-
+| 0x530
+| HDCP_VERIFY_VPRIME
+|-
+| 0x534
+| HDCP_ENCRYPTION_RUN_CTRL
+|-
+| 0x538
+| HDCP_SESSION_CTRL
+|-
+| 0x53C
+| HDCP_COMPUTE_SPRIME
+|-
+| 0x540
+| HDCP_GET_CERT_RX
+|-
+| 0x544
+| HDCP_EXCHANGE_INFO
+|-
+| 0x548
+| HDCP_DECRYPT_KM
+|-
+| 0x54C
+| HDCP_GET_HPRIME
+|-
+| 0x550
+| HDCP_GENERATE_EKH_KM
+|-
+| 0x554
+| HDCP_VERIFY_RTT_CHALLENGE
+|-
+| 0x558
+| HDCP_GET_LPRIME
+|-
+| 0x55C
+| HDCP_DECRYPT_KS
+|-
+| 0x560
+| HDCP_DECRYPT
+|-
+| 0x564
+| HDCP_GET_RRX
+|-
+| 0x568
+| HDCP_DECRYPT_REENCRYPT
+|-
+| 0x56C
+| 
+|-
+| 0x570
+| 
+|-
+| 0x574
+| 
+|-
+| 0x578
+| 
+|-
+| 0x57C
+| 
+|-
+| 0x700
+| HDCP_VALIDATE_SRM
+|-
+| 0x704
+| HDCP_VALIDATE_STREAM
+|-
+| 0x708
+| HDCP_TEST_SECURE_STATUS
+|-
+| 0x70C
+| HDCP_SET_DCP_KPUB
+|-
+| 0x710
+| HDCP_SET_RX_KPUB
+|-
+| 0x714
+| HDCP_SET_CERT_RX
+|-
+| 0x718
+| HDCP_SET_SCRATCH_BUFFER
+|-
+| 0x71C
+| HDCP_SET_SRM
+|-
+| 0x720
+| HDCP_SET_RECEIVER_ID_LIST
+|-
+| 0x724
+| HDCP_SET_SPRIME
+|-
+| 0x728
+| HDCP_SET_ENC_INPUT_BUFFER
+|-
+| 0x72C
+| HDCP_SET_ENC_OUTPUT_BUFFER
+|-
+| 0x730
+| HDCP_GET_RTT_CHALLENGE
+|-
+| 0x734
+| HDCP_STREAM_MANAGE
+|-
+| 0x738
+| HDCP_READ_CAPS
+|-
+| 0x73C
+| HDCP_ENCRYPT
+|-
+| 0x740
+| [6.0.0+] HDCP_GET_CURRENT_NONCE
+|}
+
+Used to encode and send a method's ID over HOST1X to TSEC. This register mirrors the functionality of HOST1X's channel opcode submission.
+
+=== TSEC_THI_METHOD1 ===
+Used to encode and send a method's data over HOST1X to TSEC. This register mirrors the functionality of HOST1X's channel opcode submission.
 
 === TSEC_THI_INT_STATUS ===
 {| class="wikitable" border="1"
