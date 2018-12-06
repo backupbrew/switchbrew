@@ -1286,7 +1286,10 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.0.1.md" title="wikilink">v335609886</a> (5.0.1.30)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.0.1.md" title="wikilink">v402718730</a> (6.0.1.10)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>qlaunch (SystemAppletMenu)</p></td>
 <td><p><a href="Qlaunch.md" title="wikilink">qlaunch</a> system applet, launched by NS with TID loaded from system-config-title.</p></td>
 </tr>
@@ -1297,7 +1300,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>auth (LibraryAppletAuth)</p></td>
 <td></td>
 </tr>
@@ -1307,7 +1311,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
-<a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
+<a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>cabinet (LibraryAppletCabinet)</p></td>
 <td></td>
 </tr>
@@ -1319,7 +1324,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>controller (LibraryAppletController)</p></td>
 <td></td>
 </tr>
@@ -1330,7 +1336,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>dataErase (LibraryAppletDataErase)</p></td>
 <td></td>
 </tr>
@@ -1340,7 +1347,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
-<a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
+<a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>error (LibraryAppletError)</p></td>
 <td></td>
 </tr>
@@ -1351,7 +1359,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>netConnect (LibraryAppletNetConnect)</p></td>
 <td></td>
 </tr>
@@ -1363,7 +1372,9 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p><a href="Profile Selector.md" title="wikilink">playerSelect (LibraryAppletPlayerSelect)</a></p></td>
 <td></td>
 </tr>
@@ -1376,7 +1387,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p><a href="Software Keyboard.md" title="wikilink">swkbd (LibraryAppletSwkbd)</a></p></td>
 <td></td>
 </tr>
@@ -1387,7 +1399,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>miiEdit (LibraryAppletMiiEdit)</p></td>
 <td></td>
 </tr>
@@ -1401,7 +1414,9 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>web (LibraryAppletWeb)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">WebApplet</a>.</p></td>
 </tr>
@@ -1415,7 +1430,9 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>shop (LibraryAppletShop)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">ShopN</a> applet.</p></td>
 </tr>
@@ -1427,7 +1444,9 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>overlayDisp (OverlayApplet)</p></td>
 <td><p>TID is loaded by NS from system-config-title.</p></td>
 </tr>
@@ -1439,7 +1458,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>photoViewer (LibraryAppletPhotoViewer)</p></td>
 <td></td>
 </tr>
@@ -1459,7 +1479,9 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>offlineWeb (LibraryAppletOfflineWeb)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">Offline</a> web-applet.</p></td>
 </tr>
@@ -1473,7 +1495,9 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>loginShare (LibraryAppletLoginShare)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">Whitelisted</a> applet. (LoginApplet+ShareApplet+LobbyApplet)</p></td>
 </tr>
@@ -1487,7 +1511,9 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>wifiWebAuth (LibraryAppletWifiWebAuth)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">WifiWebAuth</a> applet.</p></td>
 </tr>
@@ -1498,7 +1524,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>starter (DummyStarter)</p></td>
 <td></td>
 </tr>
@@ -1512,7 +1539,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.1.md" title="wikilink">v335609886</a> (5.0.1.30)<br />
 <a href="5.0.2.md" title="wikilink">v335675432</a> (5.0.2.40)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>myPage (LibraryAppletMyPage)</p></td>
 <td></td>
 </tr>
@@ -1529,7 +1557,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>MaintenanceMenu</p></td>
 <td><p>Initial applet displayed when booting into <a href="Recovery Mode.md" title="wikilink">Recovery_Mode</a>. This title is launched by <a href="NS Services.md" title="wikilink">NS</a> when a state flag is val1 indicating that this title should be launched instead of the above &quot;SystemAppletMenu&quot; title.</p></td>
 </tr>
