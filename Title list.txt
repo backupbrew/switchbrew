@@ -523,7 +523,7 @@ Note: No 01000000000020XX titles exist on retail systems.
 {| class=wikitable
 ! Title-id || Versions || Name || Notes
 |-
-| 01008BB00013C000 || [[1.0.0|v450]] (0.0.0.450)<br/> [[4.0.0|v268435656]] (4.0.0.200) || [[flog]] || NES emulator.
+| 01008BB00013C000 || [[1.0.0|v450]] (0.0.0.450)<br/> [[4.0.0|v268435656]] (4.0.0.200)<br/> [[6.2.0|v404750376]] (6.2.0.40) || [[flog]] || NES emulator.
 |-
 | 0100069000078000 || v0 || RetailInteractiveDisplayMenu (DevQuestMenu) || This title can be launched by [[qlaunch]], but is not normally installed on retail systems.
 |-

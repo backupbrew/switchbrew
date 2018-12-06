@@ -1744,7 +1744,8 @@ systems.
 <tr class="odd">
 <td><p>01008BB00013C000</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
-<a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)</p></td>
+<a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p><a href="Flog.md" title="wikilink">flog</a></p></td>
 <td><p>NES emulator.</p></td>
 </tr>
