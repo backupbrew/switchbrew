@@ -109,4 +109,6 @@ This is "nn::dmnt::IInterface".
 |-
 | 52 || CloseCoreDump
 |-
+| [6.0.0+] 53 || CancelAttach
+|-
 |}
