@@ -780,7 +780,8 @@ Decimal versions use the format:
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>CertStore</p></td>
 <td><p>SSL trusted certificates.</p></td>
 </tr>
@@ -794,7 +795,9 @@ Decimal versions use the format:
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>ErrorMessage</p></td>
 <td><p>Stores the message strings for Support Error Codes. There's &quot;/DatabaseInfo&quot; at FS root, then the rest is stored at &quot;/{first 4 error digits}/{last 4 error digits}/&quot;.</p></td>
 </tr>
@@ -806,7 +809,8 @@ Decimal versions use the format:
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>MiiModel</p></td>
 <td></td>
 </tr>
@@ -820,7 +824,9 @@ Decimal versions use the format:
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>BrowserDll</p></td>
 <td><p>Mounted as &quot;shareddata:/&quot;. Contains various browser data: emojis, OSS NROs, &quot;buildinfo/buildinfo.dat&quot;, ...</p></td>
 </tr>
@@ -832,7 +838,8 @@ Decimal versions use the format:
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>Help</p></td>
 <td><p>HTML resources: Open-source licenses (&quot;Intellectual Property Notices&quot;) and seizure warnings(&quot;Health &amp; Safety Information&quot;). The former is stored at FS &quot;/legallines.htdocs/&quot;<br />
 while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
@@ -841,7 +848,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p>0100000000000805</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>SharedFont</p></td>
 <td><p>Chinese and Korean dictionaries.</p></td>
 </tr>
@@ -854,7 +862,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>NgWord</p></td>
 <td><p>Bad words.</p></td>
 </tr>
@@ -865,13 +874,15 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>SsidList</p></td>
 <td><p><a href="Hotspot List.md" title="wikilink">Hotspot List</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000808</p></td>
-<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)</p></td>
+<td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>Dictionary</p></td>
 <td><p>European, English, and Japanese dictionaries.</p></td>
 </tr>
@@ -892,7 +903,10 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.1.md" title="wikilink">v335609886</a> (5.0.1.30)<br />
 <a href="5.0.2.md" title="wikilink">v335675432</a> (5.0.2.40)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.0.1.md" title="wikilink">v402718730</a> (6.0.1.10)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>SystemVersion</p></td>
 <td><p><a href="System Version Title.md" title="wikilink">System Version Title</a>.</p></td>
 </tr>
@@ -902,7 +916,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>AvatarImage</p></td>
 <td><p>Background and Character images for user avatars (RGBA format &amp; Yaz0 compression).</p></td>
 </tr>
@@ -913,7 +928,9 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>LocalNews</p></td>
 <td><p>Tutorial images and strings. Used for the offline news by the News applet.</p></td>
 </tr>
@@ -928,7 +945,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
-<a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)</p></td>
+<a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>UrlBlackList</p></td>
 <td></td>
 </tr>
@@ -940,7 +958,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>TimeZoneBinary</p></td>
 <td></td>
 </tr>
@@ -958,7 +977,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>FontNintendoExtension</p></td>
 <td></td>
 </tr>
@@ -970,7 +990,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>FontStandard</p></td>
 <td></td>
 </tr>
@@ -982,7 +1003,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>FontKorean</p></td>
 <td></td>
 </tr>
@@ -994,7 +1016,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>FontChineseTraditional</p></td>
 <td></td>
 </tr>
@@ -1006,7 +1029,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>FontChineseSimple</p></td>
 <td></td>
 </tr>
@@ -1033,7 +1057,10 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.1.md" title="wikilink">v335609886</a> (5.0.1.30)<br />
 <a href="5.0.2.md" title="wikilink">v335675432</a> (5.0.2.40)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.0.1.md" title="wikilink">v402718730</a> (6.0.1.10)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>SystemUpdate</p></td>
 <td><p>Contains the title-listing for the associated sysupdate in the <a href="NCA.md" title="wikilink">NCA</a>-type0 .cnmt.</p></td>
 </tr>
@@ -1048,7 +1075,9 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.0.1.md" title="wikilink">v335609886</a> (5.0.1.30)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>FirmwareDebugSettings</p></td>
 <td><p>System config.</p></td>
 </tr>
@@ -1064,7 +1093,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.1.0.md" title="wikilink">v269484082</a> (4.1.0.50)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>BootImagePackage</p></td>
 <td><p>Firmware Package A: Normal Firmware.</p></td>
 </tr>
@@ -1080,7 +1110,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.1.0.md" title="wikilink">v269484082</a> (4.1.0.50)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>BootImagePackageSafe</p></td>
 <td><p>Firmware Package B: SafeMode Firmware. See <a href="Boot Modes#Safe Mode.md##Safe_Mode" title="wikilink">Safe Mode</a>.</p></td>
 </tr>
@@ -1096,7 +1127,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.1.0.md" title="wikilink">v269484082</a> (4.1.0.50)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>BootImagePackageExFat</p></td>
 <td><p>Firmware Package C: Normal Firmware (exFAT variant). Identical to 0100000000000819 with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
@@ -1106,7 +1138,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.1.0.md" title="wikilink">v269484082</a> (4.1.0.50)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>BootImagePackageExFatSafe</p></td>
 <td><p>Firmware Package D: SafeMode Firmware (exFAT variant). Identical to 010000000000081A with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
@@ -1118,7 +1151,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>FatalMessage</p></td>
 <td><p>Errdisp strings.</p></td>
 </tr>
@@ -1128,7 +1162,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>ControllerIcon</p></td>
 <td><p>Controller gfx/icon data + dummy file.</p></td>
 </tr>
@@ -1139,7 +1174,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>PlatformConfigIcosa</p></td>
 <td><p>Icosa system config.</p></td>
 </tr>
@@ -1150,7 +1186,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>PlatformConfigCopper</p></td>
 <td><p>Copper system config.</p></td>
 </tr>
@@ -1160,7 +1197,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="3.0.0.md" title="wikilink">v201327002</a> (3.0.0.410)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)</p></td>
+<a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>PlatformConfigHoag</p></td>
 <td><p>Hoag system config.</p></td>
 </tr>
@@ -1171,7 +1209,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>ControllerFirmware</p></td>
 <td><p>Firmware binaries for peripherals (hardware within Joy-Cons/etc).</p></td>
 </tr>
@@ -1181,7 +1220,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>NgWord2</p></td>
 <td><p>Contains version.dat and ac_*_nx files. All of the *_nx files stored under here are compressed with gzip.</p></td>
 </tr>
@@ -1189,7 +1229,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p>0100000000000824</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>PlatformConfigIcosaMariko</p></td>
 <td><p>IcosaMariko system config.</p></td>
 </tr>
@@ -1197,7 +1238,8 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p>0100000000000825</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>ApplicationBlackList</p></td>
 <td><p>Used by <a href="NS Services.md" title="wikilink">NS</a> for restricting application installation and updates.</p></td>
 </tr>
@@ -1205,14 +1247,17 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <td><p>0100000000000826</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>RebootlessSystemUpdateVersion</p></td>
 <td><p>Rebootless system update version file.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000827</p></td>
 <td><p><a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)</p></td>
+<a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>ContentActionTable</p></td>
 <td><p>Used by <a href="AM services.md" title="wikilink">AM</a>.</p></td>
 </tr>
