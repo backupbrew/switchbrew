@@ -1682,7 +1682,7 @@ DebugThreadParam_AffinityMask: output in out1
 |-
 | 0 || 12 || || ProcessName (doesn't have to be null-terminated)
 |-
-| 0 || 4 || || ProcessCategory (0: regular title, 1: kernel built-in)
+| 0x0C || 4 || || ProcessCategory (0: regular title, 1: kernel built-in)
 |-
 | 0x10 || 8 || || TitleId
 |-
