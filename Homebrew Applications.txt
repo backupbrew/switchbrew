@@ -47,14 +47,14 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 |-
 | Switch Lan Play
 | Allows you to play Lan supported games online,
-| [[User:spacemeowx2|spacemeowx2]]
+| spacemeowx2
 | [https://github.com/spacemeowx2/switch-lan-play/releases Here]
 | [https://github.com/spacemeowx2/switch-lan-play/ Yes]
 | 2018-03-19
 |-
 | Ldn_mitm
 | Allows you to play Wireless supported games online,
-| [[User:spacemeowx2|spacemeowx2]]
+| spacemeowx2
 | [https://github.com/spacemeowx2/ldn_mitm/releases Here]
 | [https://github.com/spacemeowx2/ldn_mitm/ Yes]
 | 2018-12-07
