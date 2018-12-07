@@ -927,7 +927,7 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 |-
 | 10 || CreateStorage || Returns an [[#IStorage]].
 |-
-| 11 || CreateTransferMemoryStorage || Returns an [[#|IStorage]].
+| 11 || CreateTransferMemoryStorage || Returns an [[#IStorage]].
 |-
 | 12 || [2.0.0+] CreateHandleStorage || Returns an [[#IStorage]].
 |}

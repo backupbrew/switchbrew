@@ -701,7 +701,7 @@ the main-codebin.
 | 1   | TerminateAllLibraryApplets     |                                                                           |
 | 2   | AreAnyLibraryAppletsLeft       |                                                                           |
 | 10  | CreateStorage                  | Returns an [\#IStorage](#IStorage "wikilink").                            |
-| 11  | CreateTransferMemoryStorage    | Returns an [IStorage](# "wikilink").                                      |
+| 11  | CreateTransferMemoryStorage    | Returns an [\#IStorage](#IStorage "wikilink").                            |
 | 12  | \[2.0.0+\] CreateHandleStorage | Returns an [\#IStorage](#IStorage "wikilink").                            |
 
 ## ISystemAppletControllerForDebug
