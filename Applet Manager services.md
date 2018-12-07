@@ -748,9 +748,6 @@ LibraryApplets.
 | 0   | Open                | No input. Returns an [\#IStorageAccessor](#IStorageAccessor "wikilink").                 |
 | 1   | OpenTransferStorage | No input. Returns an [\#ITransferStorageAccessor](#ITransferStorageAccessor "wikilink"). |
 
-Commands which take an IStorage as input use an unknown input u32 for
-that.
-
 ## IStorageAccessor
 
 | Cmd | Name    | Notes                                             |

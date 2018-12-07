@@ -995,8 +995,6 @@ Used by LibraryApplets.
 | 1 || OpenTransferStorage || No input. Returns an [[#ITransferStorageAccessor]].
 |}
 
-Commands which take an IStorage as input use an unknown input u32 for that.
-
 == IStorageAccessor ==
 {| class="wikitable" border="1"
 |-
