@@ -53,7 +53,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 2018-03-19
 |-
 | Ldn_mitm
-| Allows you to play Wireless supported games online,
+| Allows you to play Wireless supported games online,(Requires Switch Lan Play)
 | spacemeowx2
 | [https://github.com/spacemeowx2/ldn_mitm/releases Here]
 | [https://github.com/spacemeowx2/ldn_mitm/ Yes]
