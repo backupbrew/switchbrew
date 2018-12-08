@@ -535,9 +535,9 @@ Takes the offset for Falcon's target memory being transferred.
 <td><p>16-30</p></td>
 <td><p>Crypto fuc5 operation</p>
 <p><code>0x0000: none (fuc5 opcode 0x00) </code><br />
-<code>0x0010: xdld (with cxset) or cmov (fuc5 opcode 0x84)</code><br />
+<code>0x0010: cmov (fuc5 opcode 0x84)</code><br />
 <code>0x0020: xdst (with cxset) or cxsin (fuc5 opcode 0x88)</code><br />
-<code>0x0030: cxsout (fuc5 opcode 0x8C)</code><br />
+<code>0x0030: xdld (with cxset) or cxsout (fuc5 opcode 0x8C)</code><br />
 <code>0x0040: csrng (fuc5 opcode 0x90)</code><br />
 <code>0x0050: cs0begin (fuc5 opcode 0x94)</code><br />
 <code>0x0060: cs0exec (fuc5 opcode 0x98)</code><br />
