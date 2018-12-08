@@ -1318,7 +1318,12 @@ entries.
 
 # DirectoryEntryType
 
-s8 type: 0 = directory, 1 = file.
+An s8 value indicating a directory entry type. The current values are:
+
+| Value | Description |
+| ----- | ----------- |
+| 0     | Directory   |
+| 1     | File        |
 
 # IFile
 

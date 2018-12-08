@@ -745,7 +745,17 @@ Returns an u64 for the total number of readable entries.
 |}
 
 = DirectoryEntryType =
-s8 type: 0 = directory, 1 = file.
+
+An s8 value indicating a directory entry type. The current values are:
+
+{| class="wikitable" border="1"
+|-
+! Value || Description
+|-
+| 0 || Directory
+|-
+| 1 || File
+|}
 
 = IFile =
 This is "nn::fssrv::sf::IFile".
