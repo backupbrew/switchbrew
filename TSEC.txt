@@ -474,7 +474,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501428
 | 0x04
 |-
-| TSEC_SCP_UNK5
+| [[#TSEC_SCP_UNK5|TSEC_SCP_UNK5]]
 | 0x54501430
 | 0x04
 |-
@@ -496,6 +496,10 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 |-
 | TSEC_SCP_UNK10
 | 0x54501490
+| 0x04
+|-
+| [[#TSEC_SCP_UNK11|TSEC_SCP_UNK11]]
+| 0x54501498
 | 0x04
 |-
 | TSEC_UNK0
@@ -1160,6 +1164,9 @@ Contains information about raised exceptions.
 |-
 | 5
 | FALCON_CPUCTL_STOPPED
+|-
+| 6
+| FALCON_CPUCTL_SCP_UNK
 |}
 
 Used for signaling the Falcon CPU.
@@ -1272,6 +1279,34 @@ Takes the offset for Falcon's target memory being transferred.
 | 1
 | TSEC_SCP_CTL_PKEY_LOADED
 |}
+
+=== TSEC_SCP_UNK5 ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-7
+| Crypto destination register
+|-
+| 8-15
+| Crypto source register
+|-
+| 16-31
+| Crypto operation
+|}
+
+Contains information on the last crypto instruction executed.
+
+=== TSEC_SCP_UNK11 ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 24
+| Set by fuc5 cchmod instruction
+|}
+
+Contains information on crypto register's permissions.
 
 === TSEC_TFBIF_MCCIF_FIFOCTRL ===
 {| class="wikitable" border="1"
@@ -1890,11 +1925,11 @@ This stage is responsible for reconfiguring the Falcon's crypto co-processor and
  // Decrypt and load Keygen stage
  load_keygen(key_buf, key_version, is_blob_dec);
  
- // Partially unknown fuc5 instruction
- // Likely forces a change of permissions
- cchmod(c0, c0);
+ // fuc5 crypt cchmod instruction
+ // Resets the ACL bits
+ cchmod();
  
- // Clear all crypto registers and propagate permissions
+ // Clear all crypto registers
  cxor(c0, c0);
  cxor(c1, c1);
  cxor(c2, c2);
@@ -2453,9 +2488,9 @@ After the TSEC key has been generated, execution returns to this stage which the
  cxor(c6, c6);
  cxor(c7, c7);
  
- // Partially unknown fuc5 instruction
- // Likely forces a change of permissions
- cchmod(c0, c0);
+ // fuc5 crypt cchmod instruction
+ // Resets the ACL bits
+ cchmod();
  
  // Jump to Payload
  exec_payload();
@@ -2627,7 +2662,7 @@ Entry to Authenticated Mode always sets $pc to the address supplied in $cauth (i
 Exit from Authenticated Mode must poke a special register before leaving authenticated code pages and a failure to do this would result in the Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map this register in their engine-specific subset of registers. In TSEC's case, the register is TSEC_SCP_CTL_AUTH_MODE.
 
 === Unknown Instructions ===
-<code>00000000: f5 3c XY e0     cchmod $cY $cX</code> - likely forces a change of permissions.
+<code>00000000: f5 3c 00 e0     cchmod</code> - resets all crypto register's permissions.
 
 <code>00000000: f5 3c XY a8     c_unk0 $cY $cX</code> - unknown crypto operation.
 

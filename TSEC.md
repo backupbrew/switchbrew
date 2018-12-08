@@ -140,12 +140,13 @@ interfaces).
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")                   | 0x54501418 | 0x04  |
 | TSEC\_SCP\_UNK3                                                         | 0x54501420 | 0x04  |
 | TSEC\_SCP\_UNK4                                                         | 0x54501428 | 0x04  |
-| TSEC\_SCP\_UNK5                                                         | 0x54501430 | 0x04  |
+| [TSEC\_SCP\_UNK5](#TSEC_SCP_UNK5 "wikilink")                            | 0x54501430 | 0x04  |
 | TSEC\_SCP\_UNK6                                                         | 0x54501454 | 0x04  |
 | TSEC\_SCP\_UNK7                                                         | 0x54501458 | 0x04  |
 | TSEC\_SCP\_UNK8                                                         | 0x54501470 | 0x04  |
 | TSEC\_SCP\_UNK9                                                         | 0x54501480 | 0x04  |
 | TSEC\_SCP\_UNK10                                                        | 0x54501490 | 0x04  |
+| [TSEC\_SCP\_UNK11](#TSEC_SCP_UNK11 "wikilink")                          | 0x54501498 | 0x04  |
 | TSEC\_UNK0                                                              | 0x54501500 | 0x04  |
 | TSEC\_UNK1                                                              | 0x54501504 | 0x04  |
 | TSEC\_UNK2                                                              | 0x5450150C | 0x04  |
@@ -438,6 +439,7 @@ Contains information about raised exceptions.
 | 3    | FALCON\_CPUCTL\_HRESET   |
 | 4    | FALCON\_CPUCTL\_HALTED   |
 | 5    | FALCON\_CPUCTL\_STOPPED  |
+| 6    | FALCON\_CPUCTL\_SCP\_UNK |
 
 Used for signaling the Falcon CPU.
 
@@ -510,6 +512,24 @@ Takes the offset for Falcon's target memory being transferred.
 | ---- | ------------------------------------- |
 | 0    | TSEC\_SCP\_CTL\_PKEY\_REQUEST\_RELOAD |
 | 1    | TSEC\_SCP\_CTL\_PKEY\_LOADED          |
+
+### TSEC\_SCP\_UNK5
+
+| Bits  | Description                 |
+| ----- | --------------------------- |
+| 0-7   | Crypto destination register |
+| 8-15  | Crypto source register      |
+| 16-31 | Crypto operation            |
+
+Contains information on the last crypto instruction executed.
+
+### TSEC\_SCP\_UNK11
+
+| Bits | Description                    |
+| ---- | ------------------------------ |
+| 24   | Set by fuc5 cchmod instruction |
+
+Contains information on crypto register's permissions.
 
 ### TSEC\_TFBIF\_MCCIF\_FIFOCTRL
 
@@ -1154,11 +1174,11 @@ co-processor and loading, decrypting, authenticating and executing
 `// Decrypt and load Keygen stage`  
 `load_keygen(key_buf, key_version, is_blob_dec);`  
   
-`// Partially unknown fuc5 instruction`  
-`// Likely forces a change of permissions`  
-`cchmod(c0, c0);`  
+`// fuc5 crypt cchmod instruction`  
+`// Resets the ACL bits`  
+`cchmod();`  
   
-`// Clear all crypto registers and propagate permissions`  
+`// Clear all crypto registers`  
 `cxor(c0, c0);`  
 `cxor(c1, c1);`  
 `cxor(c2, c2);`  
@@ -1739,9 +1759,9 @@ execution returns to this stage which then parses and executes
 `cxor(c6, c6);`  
 `cxor(c7, c7);`  
   
-`// Partially unknown fuc5 instruction`  
-`// Likely forces a change of permissions`  
-`cchmod(c0, c0);`  
+`// fuc5 crypt cchmod instruction`  
+`// Resets the ACL bits`  
+`cchmod();`  
   
 `// Jump to Payload`  
 `exec_payload();`  
@@ -1905,7 +1925,7 @@ case, the register is TSEC\_SCP\_CTL\_AUTH\_MODE.
 
 ### Unknown Instructions
 
-`00000000: f5 3c XY e0 cchmod $cY $cX` - likely forces a change of
+`00000000: f5 3c 00 e0 cchmod` - resets all crypto register's
 permissions.
 
 `00000000: f5 3c XY a8 c_unk0 $cY $cX` - unknown crypto operation.
