@@ -1286,13 +1286,41 @@ Takes the offset for Falcon's target memory being transferred.
 !  Description
 |-
 | 0-7
-| Crypto destination register
+| Crypto fuc5 destination register or immediate value
 |-
 | 8-15
-| Crypto source register
+| Crypto fuc5 source register or immediate value
 |-
-| 16-31
-| Crypto operation
+| 16-30
+| Crypto fuc5 operation
+ 0x0000: none (fuc5 opcode 0x00) 
+ 0x0010: xdld (with cxset) or cmov (fuc5 opcode 0x84)
+ 0x0020: xdst (with cxset) or cxsin (fuc5 opcode 0x88)
+ 0x0030: cxsout (fuc5 opcode 0x8C)
+ 0x0040: csrng (fuc5 opcode 0x90)
+ 0x0050: cs0begin (fuc5 opcode 0x94)
+ 0x0060: cs0exec (fuc5 opcode 0x98)
+ 0x0070: (fuc5 opcode 0x9C)
+ 0x0080: (fuc5 opcode 0xA0)
+ 0x0090: (fuc5 opcode 0xA4)
+ 0x00A0: (fuc5 opcode 0xA8)
+ 0x00B0: cxor (fuc5 opcode 0xAC)
+ 0x00C0: cadd (fuc5 opcode 0xB0)
+ 0x00D0: (fuc5 opcode 0xB4)
+ 0x00E0: (fuc5 opcode 0xB8)
+ 0x00F0: cprecmac (fuc5 opcode 0xBC)
+ 0x0100: csecret (fuc5 opcode 0xC0)
+ 0x0110: ckeyreg (fuc5 opcode 0xC4)
+ 0x0120: ckexp (fuc5 opcode 0xC8)
+ 0x0130: (fuc5 opcode 0xCC)
+ 0x0140: cenc (fuc5 opcode 0xD0)
+ 0x0150: cdec (fuc5 opcode 0xD4)
+ 0x0160: (fuc5 opcode 0xD8)
+ 0x0170: csigenc (fuc5 opcode 0xDC)
+ 0x0180: cchmod (fuc5 opcode 0xE0)
+|-
+| 31
+| Set if running in secure mode (cauth)
 |}
 
 Contains information on the last crypto instruction executed.
@@ -2664,9 +2692,7 @@ Exit from Authenticated Mode must poke a special register before leaving authent
 === Unknown Instructions ===
 <code>00000000: f5 3c 00 e0     cchmod</code> - resets all crypto register's permissions.
 
-<code>00000000: f5 3c XY a8     c_unk0 $cY $cX</code> - unknown crypto operation.
-
-<code>00000000: f5 3c XY a9     c_unk1 $cY $cX</code> - unknown crypto operation.
+<code>00000000: f5 3c XY a8     c_unk $cY X</code> - unknown crypto operation.
 
 <code>00000000: f5 3c 0X 90     crng $cX</code> - seems to initialize a crypto register with random data.
 

@@ -515,11 +515,57 @@ Takes the offset for Falcon's target memory being transferred.
 
 ### TSEC\_SCP\_UNK5
 
-| Bits  | Description                 |
-| ----- | --------------------------- |
-| 0-7   | Crypto destination register |
-| 8-15  | Crypto source register      |
-| 16-31 | Crypto operation            |
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-7</p></td>
+<td><p>Crypto fuc5 destination register or immediate value</p></td>
+</tr>
+<tr class="even">
+<td><p>8-15</p></td>
+<td><p>Crypto fuc5 source register or immediate value</p></td>
+</tr>
+<tr class="odd">
+<td><p>16-30</p></td>
+<td><p>Crypto fuc5 operation</p>
+<p><code>0x0000: none (fuc5 opcode 0x00) </code><br />
+<code>0x0010: xdld (with cxset) or cmov (fuc5 opcode 0x84)</code><br />
+<code>0x0020: xdst (with cxset) or cxsin (fuc5 opcode 0x88)</code><br />
+<code>0x0030: cxsout (fuc5 opcode 0x8C)</code><br />
+<code>0x0040: csrng (fuc5 opcode 0x90)</code><br />
+<code>0x0050: cs0begin (fuc5 opcode 0x94)</code><br />
+<code>0x0060: cs0exec (fuc5 opcode 0x98)</code><br />
+<code>0x0070: (fuc5 opcode 0x9C)</code><br />
+<code>0x0080: (fuc5 opcode 0xA0)</code><br />
+<code>0x0090: (fuc5 opcode 0xA4)</code><br />
+<code>0x00A0: (fuc5 opcode 0xA8)</code><br />
+<code>0x00B0: cxor (fuc5 opcode 0xAC)</code><br />
+<code>0x00C0: cadd (fuc5 opcode 0xB0)</code><br />
+<code>0x00D0: (fuc5 opcode 0xB4)</code><br />
+<code>0x00E0: (fuc5 opcode 0xB8)</code><br />
+<code>0x00F0: cprecmac (fuc5 opcode 0xBC)</code><br />
+<code>0x0100: csecret (fuc5 opcode 0xC0)</code><br />
+<code>0x0110: ckeyreg (fuc5 opcode 0xC4)</code><br />
+<code>0x0120: ckexp (fuc5 opcode 0xC8)</code><br />
+<code>0x0130: (fuc5 opcode 0xCC)</code><br />
+<code>0x0140: cenc (fuc5 opcode 0xD0)</code><br />
+<code>0x0150: cdec (fuc5 opcode 0xD4)</code><br />
+<code>0x0160: (fuc5 opcode 0xD8)</code><br />
+<code>0x0170: csigenc (fuc5 opcode 0xDC)</code><br />
+<code>0x0180: cchmod (fuc5 opcode 0xE0)</code></p></td>
+</tr>
+<tr class="even">
+<td><p>31</p></td>
+<td><p>Set if running in secure mode (cauth)</p></td>
+</tr>
+</tbody>
+</table>
 
 Contains information on the last crypto instruction executed.
 
@@ -1928,9 +1974,7 @@ case, the register is TSEC\_SCP\_CTL\_AUTH\_MODE.
 `00000000: f5 3c 00 e0 cchmod` - resets all crypto register's
 permissions.
 
-`00000000: f5 3c XY a8 c_unk0 $cY $cX` - unknown crypto operation.
-
-`00000000: f5 3c XY a9 c_unk1 $cY $cX` - unknown crypto operation.
+`00000000: f5 3c XY a8 c_unk $cY X` - unknown crypto operation.
 
 `00000000: f5 3c 0X 90 crng $cX` - seems to initialize a crypto register
 with random data.
