@@ -1314,7 +1314,7 @@ entries.
 | 0x301  | 0x3   | ?                                                      |
 | 0x304  | 0x1   | [\#DirectoryEntryType](#DirectoryEntryType "wikilink") |
 | 0x305  | 0x3   | Padding?                                               |
-| 0x308  | 0x8?  | Filesize, 0 for directories.                           |
+| 0x308  | 0x8   | Filesize, 0 for directories.                           |
 
 # DirectoryEntryType
 

@@ -741,7 +741,7 @@ Returns an u64 for the total number of readable entries.
 |-
 | 0x305 || 0x3 || Padding?
 |-
-| 0x308 || 0x8? || Filesize, 0 for directories.
+| 0x308 || 0x8 || Filesize, 0 for directories.
 |}
 
 = DirectoryEntryType =
