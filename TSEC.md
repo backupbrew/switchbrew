@@ -35,7 +35,7 @@ interfaces).
 | [TSEC\_THI\_METHOD1](#TSEC_THI_METHOD1 "wikilink")                      | 0x54500044 | 0x04  |
 | [TSEC\_THI\_INT\_STATUS](#TSEC_THI_INT_STATUS "wikilink")               | 0x54500078 | 0x04  |
 | [TSEC\_THI\_INT\_MASK](#TSEC_THI_INT_MASK "wikilink")                   | 0x5450007C | 0x04  |
-| TSEC\_THI\_UNK0                                                         | 0x54500084 | 0x04  |
+| TSEC\_THI\_SLCG\_STATUS                                                 | 0x54500084 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_HIGH\_A                                      | 0x54500088 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_LOW\_A                                       | 0x5450008C | 0x04  |
 | TSEC\_THI\_CLK\_OVERRIDE                                                | 0x54500E00 | 0x04  |
