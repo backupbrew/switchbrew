@@ -1,20 +1,40 @@
 = LaunchFlags =
+
+On [[5.0.0]]+, the LaunchFlag enum looks like this:
+
 {| class=wikitable
 ! Bit || Mask || Name
 |-
-| 0 || 1 || LaunchFlags_NotifyWhenExited
+| 0 || 1 || LaunchFlags_SignalOnExit
+|-
+| 1 || 2 || LaunchFlags_SignalOnStart
+|-
+| 2 || 4 || LaunchFlags_SignalOnCrash
+|-
+| 3 || 8 || LaunchFlags_SignalOnDebug
+|-
+| 4 || 0x10 || LaunchFlags_StartSuspended
+|-
+| 5 || 0x20 || LaunchFlags_DisableAslr
+|}
+
+Prior to system version [[5.0.0]], the LaunchFlag enum had its entries in a different order:
+
+{| class=wikitable
+! Bit || Mask || Name
+|-
+| 0 || 1 || LaunchFlags_SignalOnExit
 |-
 | 1 || 2 || LaunchFlags_StartSuspended
 |-
-| 2 || 4 || 
+| 2 || 4 || LaunchFlags_SignalOnCrash
 |-
-| 3 || 8 || 
+| 3 || 8 || LaunchFlags_DisableAslr
 |-
-| 4 || 0x10 || LaunchFlags_NotifyDebugEvents
+| 4 || 0x10 || LaunchFlags_SignalOnDebug
 |-
-| 5 || 0x20 || [2.0.0+] LaunchFlags_NotifyDebugSpecial
+| 5 || 0x20 || [2.0.0+] LaunchFlags_SignalOnStart
 |}
-
 
 = Process Tracker thread =
 PM has a separate thread that is waiting for synchronization on process handles.

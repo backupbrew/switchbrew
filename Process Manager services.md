@@ -1,13 +1,27 @@
 # LaunchFlags
 
-| Bit | Mask | Name                                       |
-| --- | ---- | ------------------------------------------ |
-| 0   | 1    | LaunchFlags\_NotifyWhenExited              |
-| 1   | 2    | LaunchFlags\_StartSuspended                |
-| 2   | 4    |                                            |
-| 3   | 8    |                                            |
-| 4   | 0x10 | LaunchFlags\_NotifyDebugEvents             |
-| 5   | 0x20 | \[2.0.0+\] LaunchFlags\_NotifyDebugSpecial |
+On [5.0.0](5.0.0.md "wikilink")+, the LaunchFlag enum looks like this:
+
+| Bit | Mask | Name                        |
+| --- | ---- | --------------------------- |
+| 0   | 1    | LaunchFlags\_SignalOnExit   |
+| 1   | 2    | LaunchFlags\_SignalOnStart  |
+| 2   | 4    | LaunchFlags\_SignalOnCrash  |
+| 3   | 8    | LaunchFlags\_SignalOnDebug  |
+| 4   | 0x10 | LaunchFlags\_StartSuspended |
+| 5   | 0x20 | LaunchFlags\_DisableAslr    |
+
+Prior to system version [5.0.0](5.0.0.md "wikilink"), the LaunchFlag
+enum had its entries in a different order:
+
+| Bit | Mask | Name                                  |
+| --- | ---- | ------------------------------------- |
+| 0   | 1    | LaunchFlags\_SignalOnExit             |
+| 1   | 2    | LaunchFlags\_StartSuspended           |
+| 2   | 4    | LaunchFlags\_SignalOnCrash            |
+| 3   | 8    | LaunchFlags\_DisableAslr              |
+| 4   | 0x10 | LaunchFlags\_SignalOnDebug            |
+| 5   | 0x20 | \[2.0.0+\] LaunchFlags\_SignalOnStart |
 
 # Process Tracker thread
 
