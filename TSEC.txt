@@ -102,15 +102,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450101C
 | 0x04
 |-
-| FALCON_PERIODIC_PERIOD
+| FALCON_GPTMR_PERIOD
 | 0x54501020
 | 0x04
 |-
-| FALCON_PERIODIC_TIME
+| FALCON_GPTMR_TIME
 | 0x54501024
 | 0x04
 |-
-| FALCON_PERIODIC_ENABLE
+| FALCON_GPTMR_ENABLE
 | 0x54501028
 | 0x04
 |-
@@ -122,11 +122,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501030
 | 0x04
 |-
-| FALCON_WATCHDOG_TIME
+| FALCON_WDTMR_TIME
 | 0x54501034
 | 0x04
 |-
-| FALCON_WATCHDOG_ENABLE
+| FALCON_WDTMR_ENABLE
 | 0x54501038
 | 0x04
 |-
@@ -166,27 +166,27 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501060
 | 0x04
 |-
-| FALCON_FIFO_DATA
+| FALCON_MTHD_DATA
 | 0x54501064
 | 0x04
 |-
-| FALCON_FIFO_CMD
+| FALCON_MTHD_CMD
 | 0x54501068
 | 0x04
 |-
-| FALCON_FIFO_DATA_WR
+| FALCON_MTHD_DATA_WR
 | 0x5450106C
 | 0x04
 |-
-| FALCON_FIFO_OCCUPIED
+| FALCON_MTHD_OCCUPIED
 | 0x54501070
 | 0x04
 |-
-| FALCON_FIFO_ACK
+| FALCON_MTHD_ACK
 | 0x54501074
 | 0x04
 |-
-| FALCON_FIFO_LIMIT
+| FALCON_MTHD_LIMIT
 | 0x54501078
 | 0x04
 |-
@@ -278,7 +278,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450111C
 | 0x04
 |-
-| FALCON_DMATRFSTAT
+| [[#FALCON_DMATRFSTAT|FALCON_DMATRFSTAT]]
 | 0x54501120
 | 0x04
 |-
@@ -290,7 +290,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501128
 | 0x04
 |-
-| FALCON_HWCFG_ALIAS
+| [[#FALCON_HWCFG2|FALCON_HWCFG2]]
 | 0x5450112C
 | 0x04
 |-
@@ -422,7 +422,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x545011FC
 | 0x04
 |-
-| FALCON_ICD_CMD
+| [[#FALCON_ICD_CMD|FALCON_ICD_CMD]]
 | 0x54501200
 | 0x04
 |-
@@ -438,15 +438,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450120C
 | 0x04
 |-
-| FALCON_SCTL
+| [[#FALCON_SCTL|FALCON_SCTL]]
 | 0x54501240
 | 0x04
 |-
-| TSEC_SCP_UNK0
+| [[#TSEC_SCP_CTL_ACCESS|TSEC_SCP_CTL_ACCESS]]
 | 0x54501400
 | 0x04
 |-
-| TSEC_SCP_UNK1
+| TSEC_SCP_UNK0
 | 0x54501404
 | 0x04
 |-
@@ -454,11 +454,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501408
 | 0x04
 |-
-| TSEC_SCP_CTL_AUTH_MODE
+| [[#TSEC_SCP_CTL_MODE|TSEC_SCP_CTL_MODE]]
 | 0x5450140C
 | 0x04
 |-
-| TSEC_SCP_UNK2
+| TSEC_SCP_UNK1
 | 0x54501410
 | 0x04
 |-
@@ -466,39 +466,43 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501418
 | 0x04
 |-
-| TSEC_SCP_UNK3
+| TSEC_SCP_UNK2
 | 0x54501420
 | 0x04
 |-
-| TSEC_SCP_UNK4
+| [[#TSEC_SCP_SEQ_STAT|TSEC_SCP_SEQ_STAT]]
 | 0x54501428
 | 0x04
 |-
-| [[#TSEC_SCP_UNK5|TSEC_SCP_UNK5]]
+| [[#TSEC_SCP_INSN_STAT|TSEC_SCP_INSN_STAT]]
 | 0x54501430
 | 0x04
 |-
-| TSEC_SCP_UNK6
+| TSEC_SCP_UNK3
 | 0x54501454
 | 0x04
 |-
-| TSEC_SCP_UNK7
+| TSEC_SCP_AES_STAT
 | 0x54501458
 | 0x04
 |-
-| TSEC_SCP_UNK8
+| TSEC_SCP_UNK4
 | 0x54501470
 | 0x04
 |-
-| TSEC_SCP_UNK9
+| [[#TSEC_SCP_IRQSTAT|TSEC_SCP_IRQSTAT]]
 | 0x54501480
 | 0x04
 |-
-| TSEC_SCP_UNK10
+| [[#TSEC_SCP_IRQMASK|TSEC_SCP_IRQMASK]]
+| 0x54501484
+| 0x04
+|-
+| TSEC_SCP_UNK5
 | 0x54501490
 | 0x04
 |-
-| [[#TSEC_SCP_UNK11|TSEC_SCP_UNK11]]
+| [[#TSEC_SCP_ERR|TSEC_SCP_ERR]]
 | 0x54501498
 | 0x04
 |-
@@ -1184,6 +1188,12 @@ Takes the Falcon's boot vector address.
 |-
 | 9-17
 | FALCON_HWCFG_DMEM_SIZE
+|-
+| 18-25
+| FALCON_HWCFG_MTHD_SIZE
+|-
+| 26-31
+| FALCON_HWCFG_DMATRF_SLOTS
 |}
 
 === FALCON_DMACTL ===
@@ -1247,6 +1257,45 @@ Used for configuring DMA transfers.
 === FALCON_DMATRFFBOFFS ===
 Takes the offset for Falcon's target memory being transferred.
 
+=== FALCON_DMATRFSTAT ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_DMATRFSTAT_PENDING
+|-
+| 16-18
+| FALCON_DMATRFSTAT_NUM_STORES_PENDING
+|-
+| 24-26
+| FALCON_DMATRFSTAT_NUM_LOADS_PENDING
+|}
+
+=== FALCON_HWCFG2 ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| FALCON_HWCFG2_VERSION
+|-
+| 4-5
+| FALCON_HWCFG2_SCP_MODE
+|-
+| 6-7
+| FALCON_HWCFG2_SUBVERSION
+|-
+| 8-11
+| FALCON_HWCFG2_IMEM_PORTS
+|-
+| 12-15
+| FALCON_HWCFG2_DMEM_PORTS
+|-
+| 16-19
+| FALCON_HWCFG2_VM_PAGES_LOG2
+|}
+
 === FALCON_ICD_CMD ===
 {| class="wikitable" border="1"
 !  Bits
@@ -1254,9 +1303,57 @@ Takes the offset for Falcon's target memory being transferred.
 |-
 | 0-3
 | FALCON_ICD_CMD_OPC
+ 0x0: BREAK
+ 0x1: CONTINUE_FROM_PC
+ 0x2: CONTINUE_FROM_ADDR
+ 0x3: CONTINUE_UNK1_FROM_PC
+ 0x4: CONTINUE_UNK1_FROM_ADDR
+ 0x5: SINGLE_STEP_FROM_PC
+ 0x6: SINGLE_STEP_FROM_ADDR
+ 0x7: SET_BREAK_MASK
+ 0x8: REG_READ
+ 0x9: REG_WRITE
+ 0xA: DATA_READ
+ 0xB: DATA_WRITE
+ 0xC: IO_READ
+ 0xD: IO_WRITE
+ 0xE: STATUS_READ
+|-
+| 6-7
+| FALCON_ICD_CMD_DATA_SIZE
 |-
 | 8-12
 | FALCON_ICD_CMD_IDX
+|-
+| 14
+| FALCON_ICD_CMD_ERROR
+|-
+| 15
+| FALCON_ICD_CMD_DONE
+|-
+| 16-31
+| FALCON_ICD_CMD_BREAK_MASK
+|}
+
+=== FALCON_SCTL ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-1
+| FALCON_SCTL_SEC_MODE
+ 0: Non-secure
+ 1: Light Secure
+ 2: Heavy Secure
+|}
+
+=== TSEC_SCP_CTL_ACCESS ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 20
+| Enable TSEC_SCP_INSN_STAT register
 |}
 
 === TSEC_SCP_CTL_STAT ===
@@ -1267,6 +1364,38 @@ Takes the offset for Falcon's target memory being transferred.
 | 20
 | TSEC_SCP_CTL_STAT_DEBUG_MODE
 |}
+
+=== TSEC_SCP_CTL_MODE ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| Disable reads for the UNK register block
+|-
+| 1
+| Disable reads for the TFBIF register block
+|-
+| 2
+| Disable reads for the DMA register block
+|-
+| 3
+| Disable reads for the TEGRA register block
+|-
+| 4
+| Disable writes for the UNK register block
+|-
+| 5
+| Disable writes for the TFBIF register block
+|-
+| 6
+| Disable writes for the DMA register block
+|-
+| 7
+| Disable writes for the TEGRA register block
+|}
+
+Controls accesses to the other sub-engines and can only be cleared in Heavy Secure mode.
 
 === TSEC_SCP_CTL_PKEY ===
 {| class="wikitable" border="1"
@@ -1280,7 +1409,24 @@ Takes the offset for Falcon's target memory being transferred.
 | TSEC_SCP_CTL_PKEY_LOADED
 |}
 
-=== TSEC_SCP_UNK5 ===
+=== TSEC_SCP_SEQ_STAT ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| Set if crypto sequence recording (cs0begin/cs1begin) is active
+|-
+| 4-7
+| Number of instructions left for the crypto sequence
+|-
+| 12-15
+| Active crypto key register
+|}
+
+Contains information on the last crypto sequence (cs0 or cs1) executed.
+
+=== TSEC_SCP_INSN_STAT ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -1300,19 +1446,19 @@ Takes the offset for Falcon's target memory being transferred.
  0x0040: csrng (fuc5 opcode 0x90)
  0x0050: cs0begin (fuc5 opcode 0x94)
  0x0060: cs0exec (fuc5 opcode 0x98)
- 0x0070: (fuc5 opcode 0x9C)
- 0x0080: (fuc5 opcode 0xA0)
+ 0x0070: cs1begin (fuc5 opcode 0x9C)
+ 0x0080: cs1exec (fuc5 opcode 0xA0)
  0x0090: (fuc5 opcode 0xA4)
  0x00A0: (fuc5 opcode 0xA8)
  0x00B0: cxor (fuc5 opcode 0xAC)
  0x00C0: cadd (fuc5 opcode 0xB0)
- 0x00D0: (fuc5 opcode 0xB4)
- 0x00E0: (fuc5 opcode 0xB8)
+ 0x00D0: cand (fuc5 opcode 0xB4)
+ 0x00E0: crev (fuc5 opcode 0xB8)
  0x00F0: cprecmac (fuc5 opcode 0xBC)
  0x0100: csecret (fuc5 opcode 0xC0)
  0x0110: ckeyreg (fuc5 opcode 0xC4)
  0x0120: ckexp (fuc5 opcode 0xC8)
- 0x0130: (fuc5 opcode 0xCC)
+ 0x0130: ckrexp (fuc5 opcode 0xCC)
  0x0140: cenc (fuc5 opcode 0xD0)
  0x0150: cdec (fuc5 opcode 0xD4)
  0x0160: (fuc5 opcode 0xD8)
@@ -1325,16 +1471,89 @@ Takes the offset for Falcon's target memory being transferred.
 
 Contains information on the last crypto instruction executed.
 
-=== TSEC_SCP_UNK11 ===
+=== TSEC_SCP_IRQSTAT ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
+| 1
+| Unknown
+|-
+| 8
+| TSEC_SCP_IRQSTAT_HALT
+|-
+| 12
+| Unknown
+|-
+| 16
+| TSEC_SCP_IRQSTAT_BAD_INSN
+|-
+| 20
+| TSEC_SCP_IRQSTAT_SINGLE_STEP
+|-
 | 24
-| Set by fuc5 cchmod instruction
+| Unknown
+|-
+| 28
+| Unknown
 |}
 
-Contains information on crypto register's permissions.
+Used for getting the status of crypto IRQs.
+
+=== TSEC_SCP_IRQMASK ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 1
+| Unknown
+|-
+| 8
+| TSEC_SCP_IRQMASK_HALT
+|-
+| 12
+| Unknown
+|-
+| 16
+| TSEC_SCP_IRQMASK_BAD_INSN
+|-
+| 20
+| TSEC_SCP_IRQMASK_SINGLE_STEP
+|-
+| 24
+| Unknown
+|-
+| 28
+| Unknown
+|}
+
+Used for getting the value of the mask for crypto IRQs.
+
+=== TSEC_SCP_ERR ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| Invalid instruction
+|-
+| 4
+| Empty crypto sequence
+|-
+| 8
+| Crypto sequence is too long
+|-
+| 12
+| Crypto sequence was not finished
+|-
+| 16
+| Bad signature for cauth
+|-
+| 24
+| Wrong permission
+|}
+
+Contains information on crypto errors.
 
 === TSEC_TFBIF_MCCIF_FIFOCTRL ===
 {| class="wikitable" border="1"
@@ -2687,7 +2906,7 @@ Falcon tracks permission metadata about each crypto reg. Permissions include rea
 === Authenticated Mode Entry/Exit ===
 Entry to Authenticated Mode always sets $pc to the address supplied in $cauth (ie the base of the signature-checked region). This takes effect when trying to branch to any address within the range covered by $cauth. Entry to Authenticated Mode (also called "Secure Mode") computes a MAC over the $cauth region and compares it to $c6 in order to perform the signature check.
 
-Exit from Authenticated Mode must poke a special register before leaving authenticated code pages and a failure to do this would result in the Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map this register in their engine-specific subset of registers. In TSEC's case, the register is TSEC_SCP_CTL_AUTH_MODE.
+Exit from Authenticated Mode must poke a special register before leaving authenticated code pages and a failure to do this would result in the Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map this register in their engine-specific subset of registers. In TSEC's case, the register is [[#TSEC_SCP_CTL_MODE|TSEC_SCP_CTL_MODE]].
 
 === Unknown Instructions ===
 <code>00000000: f5 3c 00 e0     cchmod</code> - resets all crypto register's permissions.

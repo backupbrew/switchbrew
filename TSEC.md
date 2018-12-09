@@ -47,13 +47,13 @@ interfaces).
 | [FALCON\_IRQMCLR](#FALCON_IRQMCLR "wikilink")                           | 0x54501014 | 0x04  |
 | [FALCON\_IRQMASK](#FALCON_IRQMASK "wikilink")                           | 0x54501018 | 0x04  |
 | [FALCON\_IRQDEST](#FALCON_IRQDEST "wikilink")                           | 0x5450101C | 0x04  |
-| FALCON\_PERIODIC\_PERIOD                                                | 0x54501020 | 0x04  |
-| FALCON\_PERIODIC\_TIME                                                  | 0x54501024 | 0x04  |
-| FALCON\_PERIODIC\_ENABLE                                                | 0x54501028 | 0x04  |
+| FALCON\_GPTMR\_PERIOD                                                   | 0x54501020 | 0x04  |
+| FALCON\_GPTMR\_TIME                                                     | 0x54501024 | 0x04  |
+| FALCON\_GPTMR\_ENABLE                                                   | 0x54501028 | 0x04  |
 | FALCON\_TIME\_LOW                                                       | 0x5450102C | 0x04  |
 | FALCON\_TIME\_HIGH                                                      | 0x54501030 | 0x04  |
-| FALCON\_WATCHDOG\_TIME                                                  | 0x54501034 | 0x04  |
-| FALCON\_WATCHDOG\_ENABLE                                                | 0x54501038 | 0x04  |
+| FALCON\_WDTMR\_TIME                                                     | 0x54501034 | 0x04  |
+| FALCON\_WDTMR\_ENABLE                                                   | 0x54501038 | 0x04  |
 | [FALCON\_SCRATCH0](#FALCON_SCRATCH0 "wikilink")                         | 0x54501040 | 0x04  |
 | [FALCON\_SCRATCH1](#FALCON_SCRATCH1 "wikilink")                         | 0x54501044 | 0x04  |
 | [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")                               | 0x54501048 | 0x04  |
@@ -63,12 +63,12 @@ interfaces).
 | FALCON\_CMDCTX                                                          | 0x54501058 | 0x04  |
 | FALCON\_STATUS\_MASK                                                    | 0x5450105C | 0x04  |
 | FALCON\_VM\_SUPERVISOR                                                  | 0x54501060 | 0x04  |
-| FALCON\_FIFO\_DATA                                                      | 0x54501064 | 0x04  |
-| FALCON\_FIFO\_CMD                                                       | 0x54501068 | 0x04  |
-| FALCON\_FIFO\_DATA\_WR                                                  | 0x5450106C | 0x04  |
-| FALCON\_FIFO\_OCCUPIED                                                  | 0x54501070 | 0x04  |
-| FALCON\_FIFO\_ACK                                                       | 0x54501074 | 0x04  |
-| FALCON\_FIFO\_LIMIT                                                     | 0x54501078 | 0x04  |
+| FALCON\_MTHD\_DATA                                                      | 0x54501064 | 0x04  |
+| FALCON\_MTHD\_CMD                                                       | 0x54501068 | 0x04  |
+| FALCON\_MTHD\_DATA\_WR                                                  | 0x5450106C | 0x04  |
+| FALCON\_MTHD\_OCCUPIED                                                  | 0x54501070 | 0x04  |
+| FALCON\_MTHD\_ACK                                                       | 0x54501074 | 0x04  |
+| FALCON\_MTHD\_LIMIT                                                     | 0x54501078 | 0x04  |
 | FALCON\_SUBENGINE\_RESET                                                | 0x5450107C | 0x04  |
 | FALCON\_SCRATCH2                                                        | 0x54501080 | 0x04  |
 | FALCON\_SCRATCH3                                                        | 0x54501084 | 0x04  |
@@ -91,10 +91,10 @@ interfaces).
 | [FALCON\_DMATRFMOFFS](#FALCON_DMATRFMOFFS "wikilink")                   | 0x54501114 | 0x04  |
 | [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")                       | 0x54501118 | 0x04  |
 | [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink")                 | 0x5450111C | 0x04  |
-| FALCON\_DMATRFSTAT                                                      | 0x54501120 | 0x04  |
+| [FALCON\_DMATRFSTAT](#FALCON_DMATRFSTAT "wikilink")                     | 0x54501120 | 0x04  |
 | FALCON\_CRYPTTRFSTAT                                                    | 0x54501124 | 0x04  |
 | FALCON\_CPUSTAT                                                         | 0x54501128 | 0x04  |
-| FALCON\_HWCFG\_ALIAS                                                    | 0x5450112C | 0x04  |
+| [FALCON\_HWCFG2](#FALCON_HWCFG2 "wikilink")                             | 0x5450112C | 0x04  |
 | FALCON\_CPUCTL\_ALIAS                                                   | 0x54501130 | 0x04  |
 | FALCON\_TLB\_CMD                                                        | 0x54501140 | 0x04  |
 | FALCON\_TLB\_CMD\_RES                                                   | 0x54501144 | 0x04  |
@@ -127,26 +127,27 @@ interfaces).
 | FALCON\_DATA6                                                           | 0x545011F4 | 0x04  |
 | FALCON\_DATA\_INDEX7                                                    | 0x545011F8 | 0x04  |
 | FALCON\_DATA7                                                           | 0x545011FC | 0x04  |
-| FALCON\_ICD\_CMD                                                        | 0x54501200 | 0x04  |
+| [FALCON\_ICD\_CMD](#FALCON_ICD_CMD "wikilink")                          | 0x54501200 | 0x04  |
 | FALCON\_ICD\_ADDR                                                       | 0x54501204 | 0x04  |
 | FALCON\_ICD\_WDATA                                                      | 0x54501208 | 0x04  |
 | FALCON\_ICD\_RDATA                                                      | 0x5450120C | 0x04  |
-| FALCON\_SCTL                                                            | 0x54501240 | 0x04  |
-| TSEC\_SCP\_UNK0                                                         | 0x54501400 | 0x04  |
-| TSEC\_SCP\_UNK1                                                         | 0x54501404 | 0x04  |
+| [FALCON\_SCTL](#FALCON_SCTL "wikilink")                                 | 0x54501240 | 0x04  |
+| [TSEC\_SCP\_CTL\_ACCESS](#TSEC_SCP_CTL_ACCESS "wikilink")               | 0x54501400 | 0x04  |
+| TSEC\_SCP\_UNK0                                                         | 0x54501404 | 0x04  |
 | [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")                   | 0x54501408 | 0x04  |
-| TSEC\_SCP\_CTL\_AUTH\_MODE                                              | 0x5450140C | 0x04  |
-| TSEC\_SCP\_UNK2                                                         | 0x54501410 | 0x04  |
+| [TSEC\_SCP\_CTL\_MODE](#TSEC_SCP_CTL_MODE "wikilink")                   | 0x5450140C | 0x04  |
+| TSEC\_SCP\_UNK1                                                         | 0x54501410 | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")                   | 0x54501418 | 0x04  |
-| TSEC\_SCP\_UNK3                                                         | 0x54501420 | 0x04  |
-| TSEC\_SCP\_UNK4                                                         | 0x54501428 | 0x04  |
-| [TSEC\_SCP\_UNK5](#TSEC_SCP_UNK5 "wikilink")                            | 0x54501430 | 0x04  |
-| TSEC\_SCP\_UNK6                                                         | 0x54501454 | 0x04  |
-| TSEC\_SCP\_UNK7                                                         | 0x54501458 | 0x04  |
-| TSEC\_SCP\_UNK8                                                         | 0x54501470 | 0x04  |
-| TSEC\_SCP\_UNK9                                                         | 0x54501480 | 0x04  |
-| TSEC\_SCP\_UNK10                                                        | 0x54501490 | 0x04  |
-| [TSEC\_SCP\_UNK11](#TSEC_SCP_UNK11 "wikilink")                          | 0x54501498 | 0x04  |
+| TSEC\_SCP\_UNK2                                                         | 0x54501420 | 0x04  |
+| [TSEC\_SCP\_SEQ\_STAT](#TSEC_SCP_SEQ_STAT "wikilink")                   | 0x54501428 | 0x04  |
+| [TSEC\_SCP\_INSN\_STAT](#TSEC_SCP_INSN_STAT "wikilink")                 | 0x54501430 | 0x04  |
+| TSEC\_SCP\_UNK3                                                         | 0x54501454 | 0x04  |
+| TSEC\_SCP\_AES\_STAT                                                    | 0x54501458 | 0x04  |
+| TSEC\_SCP\_UNK4                                                         | 0x54501470 | 0x04  |
+| [TSEC\_SCP\_IRQSTAT](#TSEC_SCP_IRQSTAT "wikilink")                      | 0x54501480 | 0x04  |
+| [TSEC\_SCP\_IRQMASK](#TSEC_SCP_IRQMASK "wikilink")                      | 0x54501484 | 0x04  |
+| TSEC\_SCP\_UNK5                                                         | 0x54501490 | 0x04  |
+| [TSEC\_SCP\_ERR](#TSEC_SCP_ERR "wikilink")                              | 0x54501498 | 0x04  |
 | TSEC\_UNK0                                                              | 0x54501500 | 0x04  |
 | TSEC\_UNK1                                                              | 0x54501504 | 0x04  |
 | TSEC\_UNK2                                                              | 0x5450150C | 0x04  |
@@ -449,10 +450,12 @@ Takes the Falcon's boot vector address.
 
 ### FALCON\_HWCFG
 
-| Bits | Description               |
-| ---- | ------------------------- |
-| 0-8  | FALCON\_HWCFG\_IMEM\_SIZE |
-| 9-17 | FALCON\_HWCFG\_DMEM\_SIZE |
+| Bits  | Description                  |
+| ----- | ---------------------------- |
+| 0-8   | FALCON\_HWCFG\_IMEM\_SIZE    |
+| 9-17  | FALCON\_HWCFG\_DMEM\_SIZE    |
+| 18-25 | FALCON\_HWCFG\_MTHD\_SIZE    |
+| 26-31 | FALCON\_HWCFG\_DMATRF\_SLOTS |
 
 ### FALCON\_DMACTL
 
@@ -493,18 +496,124 @@ Used for configuring DMA transfers.
 
 Takes the offset for Falcon's target memory being transferred.
 
+### FALCON\_DMATRFSTAT
+
+| Bits  | Description                              |
+| ----- | ---------------------------------------- |
+| 0     | FALCON\_DMATRFSTAT\_PENDING              |
+| 16-18 | FALCON\_DMATRFSTAT\_NUM\_STORES\_PENDING |
+| 24-26 | FALCON\_DMATRFSTAT\_NUM\_LOADS\_PENDING  |
+
+### FALCON\_HWCFG2
+
+| Bits  | Description                     |
+| ----- | ------------------------------- |
+| 0-3   | FALCON\_HWCFG2\_VERSION         |
+| 4-5   | FALCON\_HWCFG2\_SCP\_MODE       |
+| 6-7   | FALCON\_HWCFG2\_SUBVERSION      |
+| 8-11  | FALCON\_HWCFG2\_IMEM\_PORTS     |
+| 12-15 | FALCON\_HWCFG2\_DMEM\_PORTS     |
+| 16-19 | FALCON\_HWCFG2\_VM\_PAGES\_LOG2 |
+
 ### FALCON\_ICD\_CMD
 
-| Bits | Description           |
-| ---- | --------------------- |
-| 0-3  | FALCON\_ICD\_CMD\_OPC |
-| 8-12 | FALCON\_ICD\_CMD\_IDX |
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-3</p></td>
+<td><p>FALCON_ICD_CMD_OPC</p>
+<p><code>0x0: BREAK</code><br />
+<code>0x1: CONTINUE_FROM_PC</code><br />
+<code>0x2: CONTINUE_FROM_ADDR</code><br />
+<code>0x3: CONTINUE_UNK1_FROM_PC</code><br />
+<code>0x4: CONTINUE_UNK1_FROM_ADDR</code><br />
+<code>0x5: SINGLE_STEP_FROM_PC</code><br />
+<code>0x6: SINGLE_STEP_FROM_ADDR</code><br />
+<code>0x7: SET_BREAK_MASK</code><br />
+<code>0x8: REG_READ</code><br />
+<code>0x9: REG_WRITE</code><br />
+<code>0xA: DATA_READ</code><br />
+<code>0xB: DATA_WRITE</code><br />
+<code>0xC: IO_READ</code><br />
+<code>0xD: IO_WRITE</code><br />
+<code>0xE: STATUS_READ</code></p></td>
+</tr>
+<tr class="even">
+<td><p>6-7</p></td>
+<td><p>FALCON_ICD_CMD_DATA_SIZE</p></td>
+</tr>
+<tr class="odd">
+<td><p>8-12</p></td>
+<td><p>FALCON_ICD_CMD_IDX</p></td>
+</tr>
+<tr class="even">
+<td><p>14</p></td>
+<td><p>FALCON_ICD_CMD_ERROR</p></td>
+</tr>
+<tr class="odd">
+<td><p>15</p></td>
+<td><p>FALCON_ICD_CMD_DONE</p></td>
+</tr>
+<tr class="even">
+<td><p>16-31</p></td>
+<td><p>FALCON_ICD_CMD_BREAK_MASK</p></td>
+</tr>
+</tbody>
+</table>
+
+### FALCON\_SCTL
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-1</p></td>
+<td><p>FALCON_SCTL_SEC_MODE</p>
+<p><code>0: Non-secure</code><br />
+<code>1: Light Secure</code><br />
+<code>2: Heavy Secure</code></p></td>
+</tr>
+</tbody>
+</table>
+
+### TSEC\_SCP\_CTL\_ACCESS
+
+| Bits | Description                           |
+| ---- | ------------------------------------- |
+| 20   | Enable TSEC\_SCP\_INSN\_STAT register |
 
 ### TSEC\_SCP\_CTL\_STAT
 
 | Bits | Description                       |
 | ---- | --------------------------------- |
 | 20   | TSEC\_SCP\_CTL\_STAT\_DEBUG\_MODE |
+
+### TSEC\_SCP\_CTL\_MODE
+
+| Bits | Description                                 |
+| ---- | ------------------------------------------- |
+| 0    | Disable reads for the UNK register block    |
+| 1    | Disable reads for the TFBIF register block  |
+| 2    | Disable reads for the DMA register block    |
+| 3    | Disable reads for the TEGRA register block  |
+| 4    | Disable writes for the UNK register block   |
+| 5    | Disable writes for the TFBIF register block |
+| 6    | Disable writes for the DMA register block   |
+| 7    | Disable writes for the TEGRA register block |
+
+Controls accesses to the other sub-engines and can only be cleared in
+Heavy Secure mode.
 
 ### TSEC\_SCP\_CTL\_PKEY
 
@@ -513,7 +622,17 @@ Takes the offset for Falcon's target memory being transferred.
 | 0    | TSEC\_SCP\_CTL\_PKEY\_REQUEST\_RELOAD |
 | 1    | TSEC\_SCP\_CTL\_PKEY\_LOADED          |
 
-### TSEC\_SCP\_UNK5
+### TSEC\_SCP\_SEQ\_STAT
+
+| Bits  | Description                                                    |
+| ----- | -------------------------------------------------------------- |
+| 0     | Set if crypto sequence recording (cs0begin/cs1begin) is active |
+| 4-7   | Number of instructions left for the crypto sequence            |
+| 12-15 | Active crypto key register                                     |
+
+Contains information on the last crypto sequence (cs0 or cs1) executed.
+
+### TSEC\_SCP\_INSN\_STAT
 
 <table>
 <thead>
@@ -541,19 +660,19 @@ Takes the offset for Falcon's target memory being transferred.
 <code>0x0040: csrng (fuc5 opcode 0x90)</code><br />
 <code>0x0050: cs0begin (fuc5 opcode 0x94)</code><br />
 <code>0x0060: cs0exec (fuc5 opcode 0x98)</code><br />
-<code>0x0070: (fuc5 opcode 0x9C)</code><br />
-<code>0x0080: (fuc5 opcode 0xA0)</code><br />
+<code>0x0070: cs1begin (fuc5 opcode 0x9C)</code><br />
+<code>0x0080: cs1exec (fuc5 opcode 0xA0)</code><br />
 <code>0x0090: (fuc5 opcode 0xA4)</code><br />
 <code>0x00A0: (fuc5 opcode 0xA8)</code><br />
 <code>0x00B0: cxor (fuc5 opcode 0xAC)</code><br />
 <code>0x00C0: cadd (fuc5 opcode 0xB0)</code><br />
-<code>0x00D0: (fuc5 opcode 0xB4)</code><br />
-<code>0x00E0: (fuc5 opcode 0xB8)</code><br />
+<code>0x00D0: cand (fuc5 opcode 0xB4)</code><br />
+<code>0x00E0: crev (fuc5 opcode 0xB8)</code><br />
 <code>0x00F0: cprecmac (fuc5 opcode 0xBC)</code><br />
 <code>0x0100: csecret (fuc5 opcode 0xC0)</code><br />
 <code>0x0110: ckeyreg (fuc5 opcode 0xC4)</code><br />
 <code>0x0120: ckexp (fuc5 opcode 0xC8)</code><br />
-<code>0x0130: (fuc5 opcode 0xCC)</code><br />
+<code>0x0130: ckrexp (fuc5 opcode 0xCC)</code><br />
 <code>0x0140: cenc (fuc5 opcode 0xD0)</code><br />
 <code>0x0150: cdec (fuc5 opcode 0xD4)</code><br />
 <code>0x0160: (fuc5 opcode 0xD8)</code><br />
@@ -569,13 +688,46 @@ Takes the offset for Falcon's target memory being transferred.
 
 Contains information on the last crypto instruction executed.
 
-### TSEC\_SCP\_UNK11
+### TSEC\_SCP\_IRQSTAT
 
-| Bits | Description                    |
-| ---- | ------------------------------ |
-| 24   | Set by fuc5 cchmod instruction |
+| Bits | Description                      |
+| ---- | -------------------------------- |
+| 1    | Unknown                          |
+| 8    | TSEC\_SCP\_IRQSTAT\_HALT         |
+| 12   | Unknown                          |
+| 16   | TSEC\_SCP\_IRQSTAT\_BAD\_INSN    |
+| 20   | TSEC\_SCP\_IRQSTAT\_SINGLE\_STEP |
+| 24   | Unknown                          |
+| 28   | Unknown                          |
 
-Contains information on crypto register's permissions.
+Used for getting the status of crypto IRQs.
+
+### TSEC\_SCP\_IRQMASK
+
+| Bits | Description                      |
+| ---- | -------------------------------- |
+| 1    | Unknown                          |
+| 8    | TSEC\_SCP\_IRQMASK\_HALT         |
+| 12   | Unknown                          |
+| 16   | TSEC\_SCP\_IRQMASK\_BAD\_INSN    |
+| 20   | TSEC\_SCP\_IRQMASK\_SINGLE\_STEP |
+| 24   | Unknown                          |
+| 28   | Unknown                          |
+
+Used for getting the value of the mask for crypto IRQs.
+
+### TSEC\_SCP\_ERR
+
+| Bits | Description                      |
+| ---- | -------------------------------- |
+| 0    | Invalid instruction              |
+| 4    | Empty crypto sequence            |
+| 8    | Crypto sequence is too long      |
+| 12   | Crypto sequence was not finished |
+| 16   | Bad signature for cauth          |
+| 24   | Wrong permission                 |
+
+Contains information on crypto errors.
 
 ### TSEC\_TFBIF\_MCCIF\_FIFOCTRL
 
@@ -1967,7 +2119,8 @@ Exit from Authenticated Mode must poke a special register before leaving
 authenticated code pages and a failure to do this would result in the
 Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map
 this register in their engine-specific subset of registers. In TSEC's
-case, the register is TSEC\_SCP\_CTL\_AUTH\_MODE.
+case, the register is
+[TSEC\_SCP\_CTL\_MODE](#TSEC_SCP_CTL_MODE "wikilink").
 
 ### Unknown Instructions
 
