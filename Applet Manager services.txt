@@ -1165,6 +1165,36 @@ This is "nn::tcap::server::IManager".
 | 2 || LoadAndApplySettings
 |}
 
+= Library Applets =
+This section documents library applet launching.
+
+Before starting the applet, [[#IStorage]]s are created and written, then passed to [[#ILibraryAppletAccessor]] PushInData. The [[#IStorage]] session is closed afterwards. The first [[#IStorage]] is [[#CommonArguments]], followed by any applet-specific [[#IStorage]]s.
+
+Once the applet finishes running successfully, [[#ILibraryAppletAccessor]] PopOutData can be used to get the applet-specific [[#IStorage]] containing the applet output data.
+
+== CommonArguments ==
+The first [[#IStorage]] passed to applets should contain the common library applet arguments. This is populated by <code>nn::la::CommonArgumentsWriter</code> and has the following format.
+
+This struct is 0x20-bytes.
+
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Typical Value || Notes 
+|-
+| 0x0 || 4 || 1 || Common Arguments version
+|-
+| 0x4 || 4 || 0x20 || Common Arguments size
+|-
+| 0x8 || 4 || || Library applet version (API version)
+|-
+| 0xC || 4 || 0 || Theme color
+|-
+| 0x10 || 1 || 0 || Play startup sound
+|-
+| 0x18 || 8 || N/A || System tick (see [[SVC#svcGetSystemTick|svcGetSystemTick]])
+|-
+|}
+
 = Enums =
 === AppletId ===
 See also [[:Category:Library Applets]].
