@@ -1,15 +1,13 @@
-This is the UX presented when launching a game that allows the user to select a user.
+This is the applet presented when launching a game that allows the user to select a user.
 
-The profile selector expects a two [[AM_services#IStorage|IStorage]] inputs and a single [[AM_services#IStorage|IStorage]] output.
-
-The first IStorage is identical to [[Software_Keyboard#Common_Arguments|Common Arguments]] from swkbd.
+See [[AM_services#Library_Applets]]. The profile selector expects a two [[AM_services#IStorage|IStorage]] inputs and a single [[AM_services#IStorage|IStorage]] output.
 
 == UserSelectionConfig ==
 
-This has size 0xA0 and seems to only affect the UI display. 
-Typical value is all zero with byte 0x96 equal to 0x01
+This has size 0xA0 and seems to only affect the UI display. Typical value is all zero with byte 0x96 equal to 0x01.
 
 == Result == 
+This is 0x18-bytes.
 
 {| class="wikitable" border="1"
 |-
@@ -19,12 +17,9 @@ Typical value is all zero with byte 0x96 equal to 0x01
 |-
 | 0x8 || 0x10 || UUID of selected user
 |-
-| 0x18 || || End of Struct
 |}
 
 == Usage == 
-
-Homebrew should push a common arguments struct and the typical UserSelectionConfig struct as well.
-After pushing in the data and calling start, homebrew should wait upon the PopOutDataEvent and then pop a single IStorage to obtain the result structure described above.
+User-processes should push a common arguments struct and the typical UserSelectionConfig struct as well. After pushing in the data and calling start, user-processes should wait upon the PopOutDataEvent and then pop a single IStorage to obtain the result structure described above.
 
 [[Category:Library Applets]]
