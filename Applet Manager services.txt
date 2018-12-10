@@ -535,11 +535,11 @@ No input, returns an output u64.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || CreateLibraryApplet || Returns an [[#ILibraryAppletAccessor]].
+| 0 || [[#CreateLibraryApplet]] || 
 |-
-| 1 || TerminateAllLibraryApplets ||
+| 1 || [[#TerminateAllLibraryApplets]] ||
 |-
-| 2 || AreAnyLibraryAppletsLeft ||
+| 2 || [[#AreAnyLibraryAppletsLeft]] ||
 |-
 | 10 || CreateStorage || Returns an [[#IStorage]].
 |-
@@ -547,6 +547,15 @@ No input, returns an output u64.
 |-
 | 12 || [2.0.0+] CreateHandleStorage || Returns an [[#IStorage]].
 |}
+
+=== CreateLibraryApplet ===
+Takes 2 input u32s [[#AppletId]] and [[#LibraryAppletMode]], returns an [[#ILibraryAppletAccessor]].
+
+=== TerminateAllLibraryApplets ===
+No input/output.
+
+=== AreAnyLibraryAppletsLeft ===
+No input, returns an output u8 bool.
 
 === ILibraryAppletAccessor ===
 {| class="wikitable" border="1"

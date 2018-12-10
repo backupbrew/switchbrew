@@ -397,14 +397,29 @@ u64.
 
 ## ILibraryAppletCreator
 
-| Cmd | Name                           | Notes                                                                      |
-| --- | ------------------------------ | -------------------------------------------------------------------------- |
-| 0   | CreateLibraryApplet            | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"). |
-| 1   | TerminateAllLibraryApplets     |                                                                            |
-| 2   | AreAnyLibraryAppletsLeft       |                                                                            |
-| 10  | CreateStorage                  | Returns an [\#IStorage](#IStorage "wikilink").                             |
-| 11  | CreateTransferMemoryStorage    | Returns an [\#IStorage](#IStorage "wikilink").                             |
-| 12  | \[2.0.0+\] CreateHandleStorage | Returns an [\#IStorage](#IStorage "wikilink").                             |
+| Cmd | Name                                                                   | Notes                                          |
+| --- | ---------------------------------------------------------------------- | ---------------------------------------------- |
+| 0   | [\#CreateLibraryApplet](#CreateLibraryApplet "wikilink")               |                                                |
+| 1   | [\#TerminateAllLibraryApplets](#TerminateAllLibraryApplets "wikilink") |                                                |
+| 2   | [\#AreAnyLibraryAppletsLeft](#AreAnyLibraryAppletsLeft "wikilink")     |                                                |
+| 10  | CreateStorage                                                          | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 11  | CreateTransferMemoryStorage                                            | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 12  | \[2.0.0+\] CreateHandleStorage                                         | Returns an [\#IStorage](#IStorage "wikilink"). |
+
+### CreateLibraryApplet
+
+Takes 2 input u32s [\#AppletId](#AppletId "wikilink") and
+[\#LibraryAppletMode](#LibraryAppletMode "wikilink"), returns an
+[\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").
+
+### TerminateAllLibraryApplets
+
+No input/output.
+
+### AreAnyLibraryAppletsLeft
+
+No input, returns an output u8
+bool.
 
 ### ILibraryAppletAccessor
 
