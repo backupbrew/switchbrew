@@ -1,25 +1,6 @@
 The software keyboard expects to be passed three
-[IStorages](AM%20services#IStorage.md##IStorage "wikilink") via
-[PushInData](AM%20services#ILibraryAppletAccessor.md##ILibraryAppletAccessor "wikilink").
-
-## Common Arguments
-
-The first IStorage passed to this applet should contain the common
-library applet arguments. This is populated by
-`nn::la::CommonArgumentsWriter` and has the following format.
-
-This struct is
-0x20-bytes.
-
-| Offset | Size | Typical Value | Notes                                                                                      |
-| ------ | ---- | ------------- | ------------------------------------------------------------------------------------------ |
-| 0x0    | 4    | 1             | Common Arguments version                                                                   |
-| 0x4    | 4    | 0x20          | Common Arguments size                                                                      |
-| 0x8    | 4    |               | Library applet version (API version)                                                       |
-| 0xC    | 4    | 0             | Theme color                                                                                |
-| 0x10   | 1    | 0             | Play startup sound                                                                         |
-| 0x18   | 8    | N/A           | System tick (see [svcGetSystemTick](SVC#svcGetSystemTick.md##svcGetSystemTick "wikilink")) |
-|        |      |               |                                                                                            |
+[IStorages](AM%20services#IStorage.md##IStorage "wikilink"), see
+[AM\_services\#Library\_Applets](AM%20services#Library%20Applets.md##Library_Applets "wikilink").
 
 ## Library Applet Versions
 

@@ -1,28 +1,4 @@
-The software keyboard expects to be passed three [[AM_services#IStorage|IStorage]]s via [[AM_services#ILibraryAppletAccessor|PushInData]].
-
-== Common Arguments ==
-
-The first IStorage passed to this applet should contain the common library applet arguments. This is populated by <code>nn::la::CommonArgumentsWriter</code> and has the following format.
-
-This struct is 0x20-bytes.
-
-{| class="wikitable" border="1"
-|-
-! Offset || Size || Typical Value || Notes 
-|-
-| 0x0 || 4 || 1 || Common Arguments version
-|-
-| 0x4 || 4 || 0x20 || Common Arguments size
-|-
-| 0x8 || 4 || || Library applet version (API version)
-|-
-| 0xC || 4 || 0 || Theme color
-|-
-| 0x10 || 1 || 0 || Play startup sound
-|-
-| 0x18 || 8 || N/A || System tick (see [[SVC#svcGetSystemTick|svcGetSystemTick]])
-|-
-|}
+The software keyboard expects to be passed three [[AM_services#IStorage|IStorage]]s, see [[AM_services#Library_Applets]].
 
 == Library Applet Versions ==
 {| class="wikitable" border="1"
