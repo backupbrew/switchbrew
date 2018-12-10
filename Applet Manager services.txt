@@ -950,24 +950,6 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 | 28 || [6.0.0+] TakeScreenShotOfOwnLayerEx
 |}
 
-== ILibraryAppletCreator==
-{| class="wikitable" border="1"
-|-
-! Cmd || Name || Notes
-|-
-| 0 || CreateLibraryApplet || Returns a [[#ILibraryAppletAccessor]].
-|-
-| 1 || TerminateAllLibraryApplets ||
-|-
-| 2 || #AreAnyLibraryAppletsLeft ||
-|-
-| 10 || CreateStorage || Returns an [[#IStorage]].
-|-
-| 11 || CreateTransferMemoryStorage || Returns an [[#IStorage]].
-|-
-| 12 || [2.0.0+] CreateHandleStorage || Returns an [[#IStorage]].
-|}
-
 == ISystemAppletControllerForDebug ==
 {| class="wikitable" border="1"
 |-

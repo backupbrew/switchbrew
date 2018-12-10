@@ -747,17 +747,6 @@ the main-codebin.
 | 27  | \[4.0.0+\] ReleaseCallerAppletCaptureSharedBuffer    |
 | 28  | \[6.0.0+\] TakeScreenShotOfOwnLayerEx                |
 
-## ILibraryAppletCreator
-
-| Cmd | Name                           | Notes                                                                     |
-| --- | ------------------------------ | ------------------------------------------------------------------------- |
-| 0   | CreateLibraryApplet            | Returns a [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"). |
-| 1   | TerminateAllLibraryApplets     |                                                                           |
-| 2   | \#AreAnyLibraryAppletsLeft     |                                                                           |
-| 10  | CreateStorage                  | Returns an [\#IStorage](#IStorage "wikilink").                            |
-| 11  | CreateTransferMemoryStorage    | Returns an [\#IStorage](#IStorage "wikilink").                            |
-| 12  | \[2.0.0+\] CreateHandleStorage | Returns an [\#IStorage](#IStorage "wikilink").                            |
-
 ## ISystemAppletControllerForDebug
 
 | Cmd | Name                             | Notes |
