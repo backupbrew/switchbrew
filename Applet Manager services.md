@@ -95,19 +95,24 @@ commands.
 
 ### IGlobalStateController
 
-| Cmd | Name                                         |
-| --- | -------------------------------------------- |
-| 0   | RequestToEnterSleep                          |
-| 1   | EnterSleep                                   |
-| 2   | StartSleepSequence                           |
-| 3   | StartShutdownSequence                        |
-| 4   | StartRebootSequence                          |
-| 10  | LoadAndApplyIdlePolicySettings               |
-| 11  | \[2.0.0+\] NotifyCecSettingsChanged          |
-| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime |
-| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution    |
-| 14  | \[2.0.0+\] ShouldSleepOnBoot                 |
-| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent  |
+| Cmd | Name                                                            |
+| --- | --------------------------------------------------------------- |
+| 0   | RequestToEnterSleep                                             |
+| 1   | EnterSleep                                                      |
+| 2   | StartSleepSequence                                              |
+| 3   | StartShutdownSequence                                           |
+| 4   | StartRebootSequence                                             |
+| 10  | LoadAndApplyIdlePolicySettings                                  |
+| 11  | \[2.0.0+\] NotifyCecSettingsChanged                             |
+| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime                    |
+| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution                       |
+| 14  | \[2.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink") |
+| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent                     |
+
+#### ShouldSleepOnBoot
+
+No input, returns an output u8
+bool.
 
 ### IApplicationCreator
 
@@ -190,10 +195,10 @@ bool.
 | 10  | [\#ExitProcessAndReturn](#ExitProcessAndReturn "wikilink")                                                  |                                                |
 | 11  | [\#GetLibraryAppletInfo](#GetLibraryAppletInfo "wikilink")                                                  |                                                |
 | 12  | GetMainAppletIdentityInfo                                                                                   |                                                |
-| 13  | CanUseApplicationCore                                                                                       |                                                |
+| 13  | [\#CanUseApplicationCore](#CanUseApplicationCore "wikilink")                                                |                                                |
 | 14  | GetCallerAppletIdentityInfo                                                                                 |                                                |
 | 15  | \[2.0.0+\] GetMainAppletApplicationControlProperty                                                          |                                                |
-| 16  | \[2.0.0+\] GetMainAppletStorageId                                                                           |                                                |
+| 16  | \[2.0.0+\] [\#GetMainAppletStorageId](#GetMainAppletStorageId "wikilink")                                   |                                                |
 | 17  | \[2.0.0+\] GetCallerAppletIdentityInfoStack                                                                 |                                                |
 | 18  | \[4.0.0+\] GetNextReturnDestinationAppletIdentityInfo                                                       |                                                |
 | 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                       |                                                |
@@ -212,6 +217,10 @@ bool.
 | 102 | \[6.0.0+\] UnreserveResourceForMovieOperation                                                               |                                                |
 | 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                      |                                                |
 
+#### GetMainAppletStorageId
+
+No input, returns an output u8 storageId.
+
 #### ExitProcessAndReturn
 
 No input/output.
@@ -224,6 +233,10 @@ this LibraryApplet ([qlaunch](Qlaunch.md "wikilink") for example).
 No input. Returns an u64 LibraryAppletInfo: +0 u32 is
 [\#AppletId](#AppletId "wikilink"), +4 u32 is
 [\#LibraryAppletMode](#LibraryAppletMode "wikilink").
+
+#### CanUseApplicationCore
+
+No input, returns an output u8 bool.
 
 #### GetMainAppletApplicationDesiredLanguage
 
@@ -361,7 +374,7 @@ zero.
 
 #### NotifyRunning
 
-Takes no input. Returns an output u8, which is ignored by official
+Takes no input. Returns an output u8 bool, which is ignored by official
 user-processes.
 
 #### IsGamePlayRecordingSupported

@@ -129,10 +129,13 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 13 || [2.0.0+] UpdateDefaultDisplayResolution
 |-
-| 14 || [2.0.0+] ShouldSleepOnBoot
+| 14 || [2.0.0+] [[#ShouldSleepOnBoot]]
 |-
 | 15 || [4.0.0+] GetHdcpAuthenticationFailedEvent
 |}
+
+==== ShouldSleepOnBoot ====
+No input, returns an output u8 bool.
 
 === IApplicationCreator ===
 {| class="wikitable" border="1"
@@ -265,13 +268,13 @@ No input, returns an output u8 bool.
 |-
 | 12 || GetMainAppletIdentityInfo ||
 |-
-| 13 || CanUseApplicationCore ||
+| 13 || [[#CanUseApplicationCore]] ||
 |-
 | 14 || GetCallerAppletIdentityInfo ||
 |-
 | 15 || [2.0.0+] GetMainAppletApplicationControlProperty ||
 |-
-| 16 || [2.0.0+] GetMainAppletStorageId ||
+| 16 || [2.0.0+] [[#GetMainAppletStorageId]] ||
 |-
 | 17 || [2.0.0+] GetCallerAppletIdentityInfoStack ||
 |-
@@ -308,6 +311,9 @@ No input, returns an output u8 bool.
 | 110 || [6.0.0+] GetMainAppletAvailableUsers ||
 |}
 
+==== GetMainAppletStorageId ====
+No input, returns an output u8 storageId.
+
 ==== ExitProcessAndReturn ====
 No input/output.
 
@@ -315,6 +321,9 @@ Exits the LibraryApplet and returns to running the title which launched this Lib
 
 ==== GetLibraryAppletInfo ====
 No input. Returns an u64 LibraryAppletInfo: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]].
+
+==== CanUseApplicationCore ====
+No input, returns an output u8 bool.
 
 ==== GetMainAppletApplicationDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
@@ -503,7 +512,7 @@ For example, in some cases official apps use this with [[Error_codes|error]] 0x2
 Takes an input s64 nanoseconds, no output. The input nanoseconds can be zero.
 
 ==== NotifyRunning ====
-Takes no input. Returns an output u8, which is ignored by official user-processes.
+Takes no input. Returns an output u8 bool, which is ignored by official user-processes.
 
 ==== IsGamePlayRecordingSupported ====
 No input, returns an output u8 bool.
