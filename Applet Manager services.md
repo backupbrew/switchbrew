@@ -123,7 +123,7 @@ commands.
 | Cmd | Name                                       | Notes                                                        |
 | --- | ------------------------------------------ | ------------------------------------------------------------ |
 | 0   | GetAppletStateChangedEvent                 |                                                              |
-| 1   | IsCompleted                                |                                                              |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")   |                                                              |
 | 10  | Start                                      |                                                              |
 | 20  | RequestExit                                |                                                              |
 | 25  | Terminate                                  |                                                              |
@@ -143,16 +143,25 @@ commands.
 | 140 | \[6.0.0+\] GetDesirableUids                |                                                              |
 | 150 | \[6.0.0+\] ReportApplicationExitTimeout    |                                                              |
 
+##### IsCompleted
+
+No input, returns an output u8 bool.
+
 ##### IAppletAccessor
 
-| Cmd | Name                       |
-| --- | -------------------------- |
-| 0   | GetAppletStateChangedEvent |
-| 1   | IsCompleted                |
-| 10  | Start                      |
-| 20  | RequestExit                |
-| 25  | Terminate                  |
-| 30  | GetResult                  |
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | GetAppletStateChangedEvent               |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink") |
+| 10  | Start                                    |
+| 20  | RequestExit                              |
+| 25  | Terminate                                |
+| 30  | GetResult                                |
+
+###### IsCompleted
+
+No input, returns an output u8
+bool.
 
 ## ILibraryAppletProxy
 
@@ -423,61 +432,70 @@ bool.
 
 ### ILibraryAppletAccessor
 
-| Cmd | Name                                      | Notes                                          |
-| --- | ----------------------------------------- | ---------------------------------------------- |
-| 0   | GetAppletStateChangedEvent                |                                                |
-| 1   | IsCompleted                               |                                                |
-| 10  | Start                                     |                                                |
-| 20  | RequestExit                               |                                                |
-| 25  | Terminate                                 |                                                |
-| 30  | GetResult                                 |                                                |
-| 50  | SetOutOfFocusApplicationSuspendingEnabled |                                                |
-| 100 | PushInData                                | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 101 | PopOutData                                | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 102 | PushExtraStorage                          | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 103 | PushInteractiveInData                     | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 104 | PopInteractiveOutData                     | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 105 | GetPopOutDataEvent                        |                                                |
-| 106 | GetPopInteractiveOutDataEvent             |                                                |
-| 110 | NeedsToExitProcess                        |                                                |
-| 120 | GetLibraryAppletInfo                      |                                                |
-| 150 | RequestForAppletToGetForeground           |                                                |
-| 160 | \[2.0.0+\] GetIndirectLayerConsumerHandle |                                                |
+| Cmd | Name                                                   | Notes                                          |
+| --- | ------------------------------------------------------ | ---------------------------------------------- |
+| 0   | GetAppletStateChangedEvent                             |                                                |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")               |                                                |
+| 10  | Start                                                  |                                                |
+| 20  | RequestExit                                            |                                                |
+| 25  | Terminate                                              |                                                |
+| 30  | GetResult                                              |                                                |
+| 50  | SetOutOfFocusApplicationSuspendingEnabled              |                                                |
+| 100 | PushInData                                             | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 101 | PopOutData                                             | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 102 | PushExtraStorage                                       | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 103 | PushInteractiveInData                                  | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 104 | PopInteractiveOutData                                  | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 105 | GetPopOutDataEvent                                     |                                                |
+| 106 | GetPopInteractiveOutDataEvent                          |                                                |
+| 110 | [\#NeedsToExitProcess](#NeedsToExitProcess "wikilink") |                                                |
+| 120 | GetLibraryAppletInfo                                   |                                                |
+| 150 | RequestForAppletToGetForeground                        |                                                |
+| 160 | \[2.0.0+\] GetIndirectLayerConsumerHandle              |                                                |
+
+#### IsCompleted
+
+No input, returns an output u8 bool.
+
+#### NeedsToExitProcess
+
+No input, returns an output u8
+bool.
 
 ## ICommonStateGetter
 
-| Cmd | Name                                                          | Notes                                                    |
-| --- | ------------------------------------------------------------- | -------------------------------------------------------- |
-| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                |                                                          |
-| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                |                                                          |
-| 2   | GetThisAppletKind                                             |                                                          |
-| 3   | AllowToEnterSleep                                             |                                                          |
-| 4   | DisallowToEnterSleep                                          |                                                          |
-| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")            |                                                          |
-| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")        |                                                          |
-| 7   | GetCradleStatus                                               |                                                          |
-| 8   | GetBootMode                                                   |                                                          |
-| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")    |                                                          |
-| 10  | RequestToAcquireSleepLock                                     |                                                          |
-| 11  | ReleaseSleepLock                                              |                                                          |
-| 12  | ReleaseSleepLockTransiently                                   |                                                          |
-| 13  | GetAcquiredSleepLockEvent                                     |                                                          |
-| 20  | PushToGeneralChannel                                          | Takes an [\#IStorage](#IStorage "wikilink").             |
-| 30  | GetHomeButtonReaderLockAccessor                               | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
-| 31  | \[2.0.0+\] GetReaderLockAccessorEx                            | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
-| 40  | \[2.0.0+\] GetCradleFwVersion                                 |                                                          |
-| 50  | \[3.0.0+\] IsVrModeEnabled                                    |                                                          |
-| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink") |                                                          |
-| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                           |                                                          |
-| 55  | \[3.0.0+\] IsInControllerFirmwareUpdateSection                |                                                          |
-| 60  | \[3.0.0+\] GetDefaultDisplayResolution                        |                                                          |
-| 61  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent             |                                                          |
-| 62  | \[4.0.0+\] GetHdcpAuthenticationState                         |                                                          |
-| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent              |                                                          |
-| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                        |                                                          |
-| 65  | \[6.0.0+\] GetApplicationIdByContentActionName                |                                                          |
-| 66  | \[6.0.0+\] SetCpuAndGpuBoostMode                              |                                                          |
-| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus               |                                                          |
+| Cmd | Name                                                                                                | Notes                                                    |
+| --- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                      |                                                          |
+| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                      |                                                          |
+| 2   | GetThisAppletKind                                                                                   |                                                          |
+| 3   | AllowToEnterSleep                                                                                   |                                                          |
+| 4   | DisallowToEnterSleep                                                                                |                                                          |
+| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                  |                                                          |
+| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                              |                                                          |
+| 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                    |                                                          |
+| 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                            |                                                          |
+| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                          |                                                          |
+| 10  | RequestToAcquireSleepLock                                                                           |                                                          |
+| 11  | ReleaseSleepLock                                                                                    |                                                          |
+| 12  | ReleaseSleepLockTransiently                                                                         |                                                          |
+| 13  | GetAcquiredSleepLockEvent                                                                           |                                                          |
+| 20  | PushToGeneralChannel                                                                                | Takes an [\#IStorage](#IStorage "wikilink").             |
+| 30  | GetHomeButtonReaderLockAccessor                                                                     | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
+| 31  | \[2.0.0+\] GetReaderLockAccessorEx                                                                  | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
+| 40  | \[2.0.0+\] GetCradleFwVersion                                                                       |                                                          |
+| 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                         |                                                          |
+| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                       |                                                          |
+| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                                                                 |                                                          |
+| 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink") |                                                          |
+| 60  | \[3.0.0+\] GetDefaultDisplayResolution                                                              |                                                          |
+| 61  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent                                                   |                                                          |
+| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                               |                                                          |
+| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                    |                                                          |
+| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                              |                                                          |
+| 65  | \[6.0.0+\] GetApplicationIdByContentActionName                                                      |                                                          |
+| 66  | \[6.0.0+\] SetCpuAndGpuBoostMode                                                                    |                                                          |
+| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                     |                                                          |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -508,12 +526,24 @@ No input. Returns an output u8 for the current
 
 No input. Returns an output u32 for the current PerformanceMode.
 
+### GetCradleStatus
+
+No input, returns an output u8.
+
+### GetBootMode
+
+No input, returns an output u8.
+
 ### GetCurrentFocusState
 
 No input. Returns an output u8:
 
   - 1: In focus.
   - 2/3: Out of focus(running in "background").
+
+### IsVrModeEnabled
+
+No input, returns an output u8 bool.
 
 ### SetVrModeEnabled
 
@@ -527,8 +557,12 @@ flag={disable/enable}.
 
 When the VrMode is set to true, the console shows a screen rendered like
 vr asking the user to move his face away and hit the 'close' button.
-When this button is pressed, the console resets the vrMode to
-false.
+When this button is pressed, the console resets the vrMode to false.
+
+### IsInControllerFirmwareUpdateSection
+
+No input, returns an output u8
+bool.
 
 ## ISelfController
 
@@ -564,7 +598,7 @@ false.
 | 64  | SetInputDetectionSourceSet                                                                   |
 | 65  | \[2.0.0+\] ReportUserIsActive                                                                |
 | 66  | \[3.0.0+\] GetCurrentIlluminance                                                             |
-| 67  | \[3.0.0+\] IsIlluminanceAvailable                                                            |
+| 67  | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                    |
 | 68  | \[4.0.0+\] SetAutoSleepDisabled                                                              |
 | 69  | \[4.0.0+\] IsAutoSleepDisabled                                                               |
 | 70  | \[5.0.0+\] ReportMultimediaError                                                             |
@@ -638,6 +672,11 @@ Takes an input s32. No output.
 Returns an output u64 LayerId which is then used by the user-process
 with
 [Display\_services\#OpenLayer](Display%20services#OpenLayer.md##OpenLayer "wikilink").
+
+### IsIlluminanceAvailable
+
+No input, returns an output u8
+bool.
 
 ## IWindowController
 
@@ -714,7 +753,7 @@ the main-codebin.
 | --- | ------------------------------ | ------------------------------------------------------------------------- |
 | 0   | CreateLibraryApplet            | Returns a [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"). |
 | 1   | TerminateAllLibraryApplets     |                                                                           |
-| 2   | AreAnyLibraryAppletsLeft       |                                                                           |
+| 2   | \#AreAnyLibraryAppletsLeft     |                                                                           |
 | 10  | CreateStorage                  | Returns an [\#IStorage](#IStorage "wikilink").                            |
 | 11  | CreateTransferMemoryStorage    | Returns an [\#IStorage](#IStorage "wikilink").                            |
 | 12  | \[2.0.0+\] CreateHandleStorage | Returns an [\#IStorage](#IStorage "wikilink").                            |

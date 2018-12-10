@@ -155,7 +155,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 0 || GetAppletStateChangedEvent ||
 |-
-| 1 || IsCompleted ||
+| 1 || [[#IsCompleted]] ||
 |-
 | 10 || Start ||
 |-
@@ -194,6 +194,9 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 | 150 || [6.0.0+] ReportApplicationExitTimeout || 
 |}
 
+===== IsCompleted =====
+No input, returns an output u8 bool.
+
 ===== IAppletAccessor =====
 {| class="wikitable" border="1"
 |-
@@ -201,7 +204,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 0 || GetAppletStateChangedEvent
 |-
-| 1 || IsCompleted
+| 1 || [[#IsCompleted]]
 |-
 | 10 || Start
 |-
@@ -211,6 +214,9 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 30 || GetResult
 |}
+
+====== IsCompleted ======
+No input, returns an output u8 bool.
 
 == ILibraryAppletProxy ==
 {| class="wikitable" border="1"
@@ -564,7 +570,7 @@ No input, returns an output u8 bool.
 |-
 | 0 || GetAppletStateChangedEvent ||
 |-
-| 1 || IsCompleted ||
+| 1 || [[#IsCompleted]] ||
 |-
 | 10 || Start ||
 |-
@@ -590,7 +596,7 @@ No input, returns an output u8 bool.
 |-
 | 106 || GetPopInteractiveOutDataEvent ||
 |-
-| 110 || NeedsToExitProcess ||
+| 110 || [[#NeedsToExitProcess]] ||
 |-
 | 120 || GetLibraryAppletInfo ||
 |-
@@ -598,6 +604,12 @@ No input, returns an output u8 bool.
 |-
 | 160 || [2.0.0+] GetIndirectLayerConsumerHandle ||
 |}
+
+==== IsCompleted ====
+No input, returns an output u8 bool.
+
+==== NeedsToExitProcess ====
+No input, returns an output u8 bool.
 
 == ICommonStateGetter ==
 {| class="wikitable" border="1"
@@ -618,9 +630,9 @@ No input, returns an output u8 bool.
 |-
 | 6 || [[#GetPerformanceMode]] ||
 |-
-| 7 || GetCradleStatus ||
+| 7 || [[#GetCradleStatus]] ||
 |-
-| 8 || GetBootMode ||
+| 8 || [[#GetBootMode]] ||
 |-
 | 9 || [[#GetCurrentFocusState]] ||
 |-
@@ -640,13 +652,13 @@ No input, returns an output u8 bool.
 |-
 | 40 || [2.0.0+] GetCradleFwVersion ||
 |-
-| 50 || [3.0.0+] IsVrModeEnabled ||
+| 50 || [3.0.0+] [[#IsVrModeEnabled]] ||
 |-
 | 51 || [3.0.0+] [[#SetVrModeEnabled]] ||
 |-
 | 52 || [4.0.0+] SetLcdBacklighOffEnabled ||
 |-
-| 55 || [3.0.0+] IsInControllerFirmwareUpdateSection ||
+| 55 || [3.0.0+] [[#IsInControllerFirmwareUpdateSection]] ||
 |-
 | 60 || [3.0.0+] GetDefaultDisplayResolution ||
 |-
@@ -679,11 +691,20 @@ No input. Returns an output u8 for the current [[#OperationMode]].
 === GetPerformanceMode ===
 No input. Returns an output u32 for the current PerformanceMode.
 
+=== GetCradleStatus ===
+No input, returns an output u8.
+
+=== GetBootMode ===
+No input, returns an output u8.
+
 === GetCurrentFocusState ===
 No input. Returns an output u8:
 
 * 1: In focus.
 * 2/3: Out of focus(running in "background").
+
+=== IsVrModeEnabled ===
+No input, returns an output u8 bool.
 
 === SetVrModeEnabled ===
 Takes an input u8 bool flag. No output.
@@ -691,6 +712,9 @@ Takes an input u8 bool flag. No output.
 Updates internal AM state fields. If the new state doesn't match the previous state, this uses the [[Backlight_services]] {Disable/Enable}VrMode command depending on whether flag={disable/enable}.
 
 When the VrMode is set to true, the console shows a screen rendered like vr asking the user to move his face away and hit the 'close' button. When this button is pressed, the console resets the vrMode to false.
+
+=== IsInControllerFirmwareUpdateSection ===
+No input, returns an output u8 bool.
 
 == ISelfController ==
 {| class="wikitable" border="1"
@@ -757,7 +781,7 @@ When the VrMode is set to true, the console shows a screen rendered like vr aski
 |-
 | 66 || [3.0.0+] GetCurrentIlluminance
 |-
-| 67 || [3.0.0+] IsIlluminanceAvailable
+| 67 || [3.0.0+] [[#IsIlluminanceAvailable]]
 |-
 | 68 || [4.0.0+] SetAutoSleepDisabled
 |-
@@ -818,6 +842,9 @@ Takes an input s32. No output.
 
 === CreateManagedDisplayLayer ===
 Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].
+
+=== IsIlluminanceAvailable ===
+No input, returns an output u8 bool.
 
 == IWindowController ==
 {| class="wikitable" border="1"
@@ -932,7 +959,7 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 |-
 | 1 || TerminateAllLibraryApplets ||
 |-
-| 2 || AreAnyLibraryAppletsLeft ||
+| 2 || #AreAnyLibraryAppletsLeft ||
 |-
 | 10 || CreateStorage || Returns an [[#IStorage]].
 |-
