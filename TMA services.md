@@ -98,8 +98,8 @@ units.
 | 2   | DeleteFile           |                                                                   |
 | 3   | RenameFile           |                                                                   |
 | 4   | GetIOType            |                                                                   |
-| 5   | OpenDirectory        |                                                                   |
-| 6   | DirectoryExists      | returns an [\#IDirectoryAccessor](#IDirectoryAccessor "wikilink") |
+| 5   | OpenDirectory        | returns an [\#IDirectoryAccessor](#IDirectoryAccessor "wikilink") |
+| 6   | DirectoryExists      |                                                                   |
 | 7   | CreateDirectory      |                                                                   |
 | 8   | DeleteDirectory      |                                                                   |
 | 9   | RenameDirectory      |                                                                   |

@@ -147,9 +147,9 @@ This service is not normally present on retail units.
 |-
 | 4 || GetIOType || 
 |-
-| 5 || OpenDirectory || 
+| 5 || OpenDirectory || returns an [[#IDirectoryAccessor]]
 |-
-| 6 || DirectoryExists || returns an [[#IDirectoryAccessor]]
+| 6 || DirectoryExists || 
 |-
 | 7 || CreateDirectory || 
 |-
