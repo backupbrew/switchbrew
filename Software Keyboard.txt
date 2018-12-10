@@ -4,6 +4,8 @@ The software keyboard expects to be passed three [[AM_services#IStorage|IStorage
 
 The first IStorage passed to this applet should contain the common library applet arguments. This is populated by <code>nn::la::CommonArgumentsWriter</code> and has the following format.
 
+This struct is 0x20-bytes.
+
 {| class="wikitable" border="1"
 |-
 ! Offset || Size || Typical Value || Notes 
@@ -12,7 +14,7 @@ The first IStorage passed to this applet should contain the common library apple
 |-
 | 0x4 || 4 || 0x20 || Common Arguments size
 |-
-| 0x8 || 4 || 5 || Library applet version (some kind of API version?)
+| 0x8 || 4 || || Library applet version (API version)
 |-
 | 0xC || 4 || 0 || Theme color
 |-
@@ -20,7 +22,20 @@ The first IStorage passed to this applet should contain the common library apple
 |-
 | 0x18 || 8 || N/A || System tick (see [[SVC#svcGetSystemTick|svcGetSystemTick]])
 |-
-| 0x20 ||   ||     || End of struct
+|}
+
+== Library Applet Versions ==
+{| class="wikitable" border="1"
+|-
+! System Version || Value
+|-
+| [1.0.0+] || 0x5
+|-
+| [?] || 0x30007
+|-
+| [4.0.0+] || 0x40008
+|-
+| [5.0.0+] || 0x50009
 |}
 
 == KeyboardConfig ==
@@ -33,7 +48,7 @@ The second IStorage passed to this applet should contain the configuration for t
 |-
 | 0x0 || 4 || 2 ||
 |-
-| 0x4 || 18 || u"OK" || UTF-16 text displayed in the submit button
+| 0x4 || 18 || 0 || UTF-16 text displayed in the submit button
 |-
 | 0x16 || 2 || 0 || UTF-16 "left optional symbol key"
 |-
@@ -75,8 +90,18 @@ The second IStorage passed to this applet should contain the configuration for t
 |-
 | 0x3D8 || 8 || 0 || [[#Text check]] callback function address. Not sure why this is included here
 |-
-| 0x3E0 ||   ||   || End of struct
+| 0x3E0 || 8 || -1 || 
+|-
+| 0x3E8 || 8 || -1 || 
+|-
+| 0x3F0 || 8 || -1 || 
+|-
+| 0x3F8 || 8 || -1 || 
 |}
+
+This struct is 0x3E0-bytes with version 0x5. Starting with version 0x30007 this struct is 0x400-bytes.
+
+The 0x20-bytes at offset 0x3E0 is -1 normally, except for DownloadCodes. This is presumably an extension to [[#Key Set Disable Bitmask]]?(The field at 0x1C is still set to 0x80 here)
 
 If the length limit is <= 32, the text entry box will be a single row and show the header/sub text. Otherwise, it will use multiple rows and the header/sub text will not be shown.
 
@@ -112,7 +137,7 @@ The layout of the work buffer doesn't seem to matter as long as the offsets in t
 
 == Text Check ==
 
-If text checking is enabled in [[#KeyboardConfig]], text will be checked when the submit button is pressed. First, swkbd sends the text via PushInteractiveOutData.
+If text checking is enabled in [[#KeyboardConfig]], text will be checked when the submit button is pressed. First, swkbd sends the text via PushInteractiveOutData. This storage is 0x7D4-bytes.
 
 {| class="wikitable" border="1"
 |-
@@ -122,10 +147,9 @@ If text checking is enabled in [[#KeyboardConfig]], text will be checked when th
 |-
 | 0x4 || Variable || UTF-16 text
 |-
-| 0x7d4 || || Size of storage
 |}
 
-The application then has an opportunity to validate or reject the text. It creates a new IStorage, writes the response to it, and sends it via PushInteractiveInData.
+The application then has an opportunity to validate or reject the text. It creates a new IStorage, writes the response to it, and sends it via PushInteractiveInData. This storage is 0x7D4-bytes.
 
 {| class="wikitable" border="1"
 |-
@@ -135,12 +159,11 @@ The application then has an opportunity to validate or reject the text. It creat
 |-
 | 0x4 || Variable || UTF-16 error message (shown in a dialog box)
 |-
-| 0x7d4 || || Size of storage
 |}
 
 == Output ==
 
-When either the submit button is pressed and input has been validated, or the user cancels the text entry, swkbd will push its response and exit. The response IStorage has the following format.
+When either the submit button is pressed and input has been validated, or the user cancels the text entry, swkbd will push its response and exit. The response IStorage has the following format. This storage is 0xDd8-bytes.
 
 {| class="wikitable" border="1"
 |-
@@ -150,7 +173,6 @@ When either the submit button is pressed and input has been validated, or the us
 |-
 | 0x4 || Variable || UTF-16 text
 |-
-| 0x7d8 || || Size of storage
 |}
 
 [[Category:Library Applets]]

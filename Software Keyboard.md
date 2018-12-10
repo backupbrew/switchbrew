@@ -6,18 +6,29 @@ The software keyboard expects to be passed three
 
 The first IStorage passed to this applet should contain the common
 library applet arguments. This is populated by
-`nn::la::CommonArgumentsWriter` and has the following
-format.
+`nn::la::CommonArgumentsWriter` and has the following format.
+
+This struct is
+0x20-bytes.
 
 | Offset | Size | Typical Value | Notes                                                                                      |
 | ------ | ---- | ------------- | ------------------------------------------------------------------------------------------ |
 | 0x0    | 4    | 1             | Common Arguments version                                                                   |
 | 0x4    | 4    | 0x20          | Common Arguments size                                                                      |
-| 0x8    | 4    | 5             | Library applet version (some kind of API version?)                                         |
+| 0x8    | 4    |               | Library applet version (API version)                                                       |
 | 0xC    | 4    | 0             | Theme color                                                                                |
 | 0x10   | 1    | 0             | Play startup sound                                                                         |
 | 0x18   | 8    | N/A           | System tick (see [svcGetSystemTick](SVC#svcGetSystemTick.md##svcGetSystemTick "wikilink")) |
-| 0x20   |      |               | End of struct                                                                              |
+|        |      |               |                                                                                            |
+
+## Library Applet Versions
+
+| System Version | Value   |
+| -------------- | ------- |
+| \[1.0.0+\]     | 0x5     |
+| \[?\]          | 0x30007 |
+| \[4.0.0+\]     | 0x40008 |
+| \[5.0.0+\]     | 0x50009 |
 
 ## KeyboardConfig
 
@@ -28,7 +39,7 @@ keyboard.
 | Offset | Size | Typical Value | Notes                                                                                                |
 | ------ | ---- | ------------- | ---------------------------------------------------------------------------------------------------- |
 | 0x0    | 4    | 2             |                                                                                                      |
-| 0x4    | 18   | u"OK"         | UTF-16 text displayed in the submit button                                                           |
+| 0x4    | 18   | 0             | UTF-16 text displayed in the submit button                                                           |
 | 0x16   | 2    | 0             | UTF-16 "left optional symbol key"                                                                    |
 | 0x18   | 2    | 0             | UTF-16 "right optional symbol key"                                                                   |
 | 0x1A   | 1    | 0             |                                                                                                      |
@@ -49,7 +60,18 @@ keyboard.
 | 0x3CC  | 4    | 0             | Length of user dictionary (number of entries)                                                        |
 | 0x3D0  | 1    | 0             | [\#Text check](#Text_check "wikilink") enable                                                        |
 | 0x3D8  | 8    | 0             | [\#Text check](#Text_check "wikilink") callback function address. Not sure why this is included here |
-| 0x3E0  |      |               | End of struct                                                                                        |
+| 0x3E0  | 8    | \-1           |                                                                                                      |
+| 0x3E8  | 8    | \-1           |                                                                                                      |
+| 0x3F0  | 8    | \-1           |                                                                                                      |
+| 0x3F8  | 8    | \-1           |                                                                                                      |
+
+This struct is 0x3E0-bytes with version 0x5. Starting with version
+0x30007 this struct is 0x400-bytes.
+
+The 0x20-bytes at offset 0x3E0 is -1 normally, except for DownloadCodes.
+This is presumably an extension to [\#Key Set Disable
+Bitmask](#Key_Set_Disable_Bitmask "wikilink")?(The field at 0x1C is
+still set to 0x80 here)
 
 If the length limit is \<= 32, the text entry box will be a single row
 and show the header/sub text. Otherwise, it will use multiple rows and
@@ -89,34 +111,35 @@ adjusted, but official code lays it out like this.
 If text checking is enabled in
 [\#KeyboardConfig](#KeyboardConfig "wikilink"), text will be checked
 when the submit button is pressed. First, swkbd sends the text via
-PushInteractiveOutData.
+PushInteractiveOutData. This storage is 0x7D4-bytes.
 
-| Offset | Size     | Notes           |
-| ------ | -------- | --------------- |
-| 0x0    | 0x4      | Buffer size     |
-| 0x4    | Variable | UTF-16 text     |
-| 0x7d4  |          | Size of storage |
+| Offset | Size     | Notes       |
+| ------ | -------- | ----------- |
+| 0x0    | 0x4      | Buffer size |
+| 0x4    | Variable | UTF-16 text |
+|        |          |             |
 
 The application then has an opportunity to validate or reject the text.
 It creates a new IStorage, writes the response to it, and sends it via
-PushInteractiveInData.
+PushInteractiveInData. This storage is 0x7D4-bytes.
 
 | Offset | Size     | Notes                                        |
 | ------ | -------- | -------------------------------------------- |
 | 0x0    | 0x4      | Status (0 = OK, 1 = bad)                     |
 | 0x4    | Variable | UTF-16 error message (shown in a dialog box) |
-| 0x7d4  |          | Size of storage                              |
+|        |          |                                              |
 
 ## Output
 
 When either the submit button is pressed and input has been validated,
 or the user cancels the text entry, swkbd will push its response and
-exit. The response IStorage has the following format.
+exit. The response IStorage has the following format. This storage is
+0xDd8-bytes.
 
 | Offset | Size     | Notes                            |
 | ------ | -------- | -------------------------------- |
 | 0x0    | 0x4      | Result code (0 = OK, 1 = Cancel) |
 | 0x4    | Variable | UTF-16 text                      |
-| 0x7d8  |          | Size of storage                  |
+|        |          |                                  |
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
