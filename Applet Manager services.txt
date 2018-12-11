@@ -556,7 +556,7 @@ No input, returns an output u64.
 |-
 | 2 || [[#AreAnyLibraryAppletsLeft]] ||
 |-
-| 10 || [[#CreateStorage]] || Returns an [[#IStorage]].
+| 10 || [[#CreateStorage]] || 
 |-
 | 11 || CreateTransferMemoryStorage || Returns an [[#IStorage]].
 |-
