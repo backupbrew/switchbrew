@@ -154,14 +154,14 @@ No input, returns an output u8 bool.
 
 ##### IAppletAccessor
 
-| Cmd | Name                                     |
-| --- | ---------------------------------------- |
-| 0   | GetAppletStateChangedEvent               |
-| 1   | [\#IsCompleted](#IsCompleted "wikilink") |
-| 10  | Start                                    |
-| 20  | RequestExit                              |
-| 25  | Terminate                                |
-| 30  | GetResult                                |
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | GetAppletStateChangedEvent                 |
+| 1   | [\#IsCompleted](#IsCompleted_2 "wikilink") |
+| 10  | Start                                      |
+| 20  | RequestExit                                |
+| 25  | Terminate                                  |
+| 30  | GetResult                                  |
 
 ###### IsCompleted
 
@@ -448,7 +448,7 @@ bool.
 | Cmd | Name                                                   | Notes                                          |
 | --- | ------------------------------------------------------ | ---------------------------------------------- |
 | 0   | GetAppletStateChangedEvent                             |                                                |
-| 1   | [\#IsCompleted](#IsCompleted "wikilink")               |                                                |
+| 1   | [\#IsCompleted](#IsCompleted_3 "wikilink")             |                                                |
 | 10  | Start                                                  |                                                |
 | 20  | RequestExit                                            |                                                |
 | 25  | Terminate                                              |                                                |

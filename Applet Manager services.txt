@@ -207,7 +207,7 @@ No input, returns an output u8 bool.
 |-
 | 0 || GetAppletStateChangedEvent
 |-
-| 1 || [[#IsCompleted]]
+| 1 || [[#IsCompleted_2|#IsCompleted]]
 |-
 | 10 || Start
 |-
@@ -579,7 +579,7 @@ No input, returns an output u8 bool.
 |-
 | 0 || GetAppletStateChangedEvent ||
 |-
-| 1 || [[#IsCompleted]] ||
+| 1 || [[#IsCompleted_3|#IsCompleted]] ||
 |-
 | 10 || Start ||
 |-
