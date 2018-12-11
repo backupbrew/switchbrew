@@ -145,32 +145,37 @@ No input, returns an
 
 #### IApplicationAccessor
 
-| Cmd | Name                                       | Notes                                                        |
-| --- | ------------------------------------------ | ------------------------------------------------------------ |
-| 0   | GetAppletStateChangedEvent                 |                                                              |
-| 1   | [\#IsCompleted](#IsCompleted "wikilink")   |                                                              |
-| 10  | Start                                      |                                                              |
-| 20  | RequestExit                                |                                                              |
-| 25  | Terminate                                  |                                                              |
-| 30  | GetResult                                  |                                                              |
-| 101 | RequestForApplicationToGetForeground       |                                                              |
-| 110 | TerminateAllLibraryApplets                 |                                                              |
-| 111 | AreAnyLibraryAppletsLeft                   |                                                              |
-| 112 | GetCurrentLibraryApplet                    | Returns an [\#IAppletAccessor](#IAppletAccessor "wikilink"). |
-| 120 | GetApplicationId                           |                                                              |
-| 121 | PushLaunchParameter                        | Takes an [\#IStorage](#IStorage "wikilink").                 |
-| 122 | GetApplicationControlProperty              |                                                              |
-| 123 | \[2.0.0+\] GetApplicationLaunchProperty    |                                                              |
-| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo |                                                              |
-| 130 | \[6.0.0+\] SetUsers                        |                                                              |
-| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable |                                                              |
-| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle    |                                                              |
-| 140 | \[6.0.0+\] GetDesirableUids                |                                                              |
-| 150 | \[6.0.0+\] ReportApplicationExitTimeout    |                                                              |
+| Cmd | Name                                                     | Notes                                                        |
+| --- | -------------------------------------------------------- | ------------------------------------------------------------ |
+| 0   | GetAppletStateChangedEvent                               |                                                              |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")                 |                                                              |
+| 10  | Start                                                    |                                                              |
+| 20  | RequestExit                                              |                                                              |
+| 25  | Terminate                                                |                                                              |
+| 30  | GetResult                                                |                                                              |
+| 101 | RequestForApplicationToGetForeground                     |                                                              |
+| 110 | TerminateAllLibraryApplets                               |                                                              |
+| 111 | AreAnyLibraryAppletsLeft                                 |                                                              |
+| 112 | GetCurrentLibraryApplet                                  | Returns an [\#IAppletAccessor](#IAppletAccessor "wikilink"). |
+| 120 | GetApplicationId                                         |                                                              |
+| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink") |                                                              |
+| 122 | GetApplicationControlProperty                            |                                                              |
+| 123 | \[2.0.0+\] GetApplicationLaunchProperty                  |                                                              |
+| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo               |                                                              |
+| 130 | \[6.0.0+\] SetUsers                                      |                                                              |
+| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable               |                                                              |
+| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                  |                                                              |
+| 140 | \[6.0.0+\] GetDesirableUids                              |                                                              |
+| 150 | \[6.0.0+\] ReportApplicationExitTimeout                  |                                                              |
 
 ##### IsCompleted
 
 No input, returns an output u8 bool.
+
+##### PushLaunchParameter
+
+Takes an input u32 and an input [\#IStorage](#IStorage "wikilink"), no
+output.
 
 ##### IAppletAccessor
 
@@ -207,9 +212,9 @@ bool.
 | Cmd | Name                                                                                                        | Notes                                          |
 | --- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | 0   | PopInData                                                                                                   | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 1   | PushOutData                                                                                                 | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 1   | [\#PushOutData](#PushOutData "wikilink")                                                                    |                                                |
 | 2   | PopInteractiveInData                                                                                        | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 3   | PushInteractiveOutData                                                                                      | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 3   | [\#PushInteractiveOutData](#PushInteractiveOutData "wikilink")                                              |                                                |
 | 5   | GetPopInDataEvent                                                                                           |                                                |
 | 6   | GetPopInteractiveInDataEvent                                                                                |                                                |
 | 10  | [\#ExitProcessAndReturn](#ExitProcessAndReturn "wikilink")                                                  |                                                |
@@ -224,8 +229,8 @@ bool.
 | 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                       |                                                |
 | 20  | PopExtraStorage                                                                                             | Returns an [\#IStorage](#IStorage "wikilink"). |
 | 25  | GetPopExtraStorageEvent                                                                                     |                                                |
-| 30  | UnpopInData                                                                                                 | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 31  | UnpopExtraStorage                                                                                           | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 30  | [\#UnpopInData](#UnpopInData "wikilink")                                                                    |                                                |
+| 31  | [\#UnpopExtraStorage](#UnpopExtraStorage "wikilink")                                                        |                                                |
 | 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                                                                   |                                                |
 | 50  | \[2.0.0+\] ReportVisibleError                                                                               |                                                |
 | 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                               |                                                |
@@ -236,6 +241,14 @@ bool.
 | 101 | \[6.0.0+\] ReserveResourceForMovieOperation                                                                 |                                                |
 | 102 | \[6.0.0+\] UnreserveResourceForMovieOperation                                                               |                                                |
 | 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                      |                                                |
+
+#### PushOutData
+
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
+
+#### PushInteractiveOutData
+
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 #### GetMainAppletStorageId
 
@@ -257,6 +270,14 @@ No input. Returns an u64 LibraryAppletInfo: +0 u32 is
 #### CanUseApplicationCore
 
 No input, returns an output u8 bool.
+
+#### UnpopInData
+
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
+
+#### UnpopExtraStorage
+
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 #### GetMainAppletApplicationDesiredLanguage
 
@@ -313,49 +334,49 @@ Takes an input u64 and handle, returns a GRC
 
 ### IApplicationFunctions
 
-| Cmd  | Name                                                                                  | Notes                                          |
-| ---- | ------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| 1    | PopLaunchParameter                                                                    | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 10   | CreateApplicationAndPushAndRequestToStart                                             | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 11   | \[2.0.0+\] CreateApplicationAndPushAndRequestToStartForQuest                          | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 12   | \[4.0.0+\] CreateApplicationAndRequestToStart                                         |                                                |
-| 13   | \[4.0.0+\] CreateApplicationAndRequestToStartForQuest                                 |                                                |
-| 20   | EnsureSaveData                                                                        |                                                |
-| 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                |                                                |
-| 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                |                                                |
-| 23   | GetDisplayVersion                                                                     |                                                |
-| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                               |                                                |
-| 25   | \[2.0.0+\] ExtendSaveData                                                             |                                                |
-| 26   | \[2.0.0+\] GetSaveDataSize                                                            |                                                |
-| 27   | \[5.0.0+\] CreateCacheStorage                                                         |                                                |
-| 30   | BeginBlockingHomeButtonShortAndLongPressed                                            |                                                |
-| 31   | EndBlockingHomeButtonShortAndLongPressed                                              |                                                |
-| 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                      |                                                |
-| 33   | EndBlockingHomeButton                                                                 |                                                |
-| 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                          |                                                |
-| 50   | \[2.0.0+\] GetPseudoDeviceId                                                          |                                                |
-| 60   | \[2.0.0+\] SetMediaPlaybackStateForApplication                                        |                                                |
-| 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink") |                                                |
-| 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")   |                                                |
-| 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")       |                                                |
-| 68   | \[4.0.0+\] RequestFlushGamePlayingMovieForDebug                                       |                                                |
-| 70   | \[3.0.0+\] RequestToShutdown                                                          |                                                |
-| 71   | \[3.0.0+\] RequestToReboot                                                            |                                                |
-| 80   | \[4.0.0+\] ExitAndRequestToShowThanksMessage                                          |                                                |
-| 90   | \[4.0.0+\] EnableApplicationCrashReport                                               |                                                |
-| 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                  |                                                |
-| 101  | \[5.0.0+\] SetApplicationCopyrightImage                                               |                                                |
-| 102  | \[5.0.0+\] SetApplicationCopyrightVisibility                                          |                                                |
-| 110  | \[5.0.0+\] QueryApplicationPlayStatistics                                             |                                                |
-| 111  | \[6.0.0+\] QueryApplicationPlayStatisticsByUid                                        |                                                |
-| 120  | \[5.0.0+\] ExecuteProgram                                                             |                                                |
-| 121  | \[5.0.0+\] ClearUserChannel                                                           |                                                |
-| 122  | \[5.0.0+\] UnpopToUserChannel                                                         |                                                |
-| 123  | \[6.0.0+\] GetPreviousProgramIndex                                                    |                                                |
-| 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                      |                                                |
-| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                      |                                                |
-| 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                         |                                                |
-| 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                               |                                                |
+| Cmd  | Name                                                                                                                            | Notes                                          |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1    | PopLaunchParameter                                                                                                              | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 10   | [\#CreateApplicationAndPushAndRequestToStart](#CreateApplicationAndPushAndRequestToStart "wikilink")                            |                                                |
+| 11   | \[2.0.0+\] [\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink") |                                                |
+| 12   | \[4.0.0+\] CreateApplicationAndRequestToStart                                                                                   |                                                |
+| 13   | \[4.0.0+\] CreateApplicationAndRequestToStartForQuest                                                                           |                                                |
+| 20   | EnsureSaveData                                                                                                                  |                                                |
+| 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                          |                                                |
+| 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                          |                                                |
+| 23   | GetDisplayVersion                                                                                                               |                                                |
+| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                                                                         |                                                |
+| 25   | \[2.0.0+\] ExtendSaveData                                                                                                       |                                                |
+| 26   | \[2.0.0+\] GetSaveDataSize                                                                                                      |                                                |
+| 27   | \[5.0.0+\] CreateCacheStorage                                                                                                   |                                                |
+| 30   | BeginBlockingHomeButtonShortAndLongPressed                                                                                      |                                                |
+| 31   | EndBlockingHomeButtonShortAndLongPressed                                                                                        |                                                |
+| 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                                                                |                                                |
+| 33   | EndBlockingHomeButton                                                                                                           |                                                |
+| 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                                                                    |                                                |
+| 50   | \[2.0.0+\] GetPseudoDeviceId                                                                                                    |                                                |
+| 60   | \[2.0.0+\] SetMediaPlaybackStateForApplication                                                                                  |                                                |
+| 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink")                                           |                                                |
+| 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")                                             |                                                |
+| 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")                                                 |                                                |
+| 68   | \[4.0.0+\] RequestFlushGamePlayingMovieForDebug                                                                                 |                                                |
+| 70   | \[3.0.0+\] RequestToShutdown                                                                                                    |                                                |
+| 71   | \[3.0.0+\] RequestToReboot                                                                                                      |                                                |
+| 80   | \[4.0.0+\] ExitAndRequestToShowThanksMessage                                                                                    |                                                |
+| 90   | \[4.0.0+\] EnableApplicationCrashReport                                                                                         |                                                |
+| 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                                                            |                                                |
+| 101  | \[5.0.0+\] SetApplicationCopyrightImage                                                                                         |                                                |
+| 102  | \[5.0.0+\] SetApplicationCopyrightVisibility                                                                                    |                                                |
+| 110  | \[5.0.0+\] QueryApplicationPlayStatistics                                                                                       |                                                |
+| 111  | \[6.0.0+\] QueryApplicationPlayStatisticsByUid                                                                                  |                                                |
+| 120  | \[5.0.0+\] ExecuteProgram                                                                                                       |                                                |
+| 121  | \[5.0.0+\] ClearUserChannel                                                                                                     |                                                |
+| 122  | \[5.0.0+\] UnpopToUserChannel                                                                                                   |                                                |
+| 123  | \[6.0.0+\] GetPreviousProgramIndex                                                                                              |                                                |
+| 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                |                                                |
+| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                |                                                |
+| 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                   |                                                |
+| 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                         |                                                |
 
 The BOTW game uses this GamePlayRecording functionality from the
 main-nso "nninitStartup" function, with size 0x6000000(96MiB). The
@@ -374,6 +395,16 @@ panic on any failure):
 
 This GamePlayRecording functionality presumably enables the
 video-recording usable starting with [4.0.0](4.0.0.md "wikilink").
+
+#### CreateApplicationAndPushAndRequestToStart
+
+Takes an input u64 titleID and an input
+[\#IStorage](#IStorage "wikilink"), no output.
+
+#### CreateApplicationAndPushAndRequestToStartForQuest
+
+Takes 2 input u32s, an input u64 titleID, and an input
+[\#IStorage](#IStorage "wikilink"), no output.
 
 #### GetDesiredLanguage
 
@@ -532,15 +563,15 @@ Takes an input u8 bool, no output.
 
 #### PushInData
 
-Takes an [\#IStorage](#IStorage "wikilink"), no output.
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 #### PushExtraStorage
 
-Takes an [\#IStorage](#IStorage "wikilink"), no output.
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 #### PushInteractiveInData
 
-Takes an [\#IStorage](#IStorage "wikilink"), no output.
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 #### NeedsToExitProcess
 
@@ -565,7 +596,7 @@ bool.
 | 11  | ReleaseSleepLock                                                                                    |                                                          |
 | 12  | ReleaseSleepLockTransiently                                                                         |                                                          |
 | 13  | GetAcquiredSleepLockEvent                                                                           |                                                          |
-| 20  | PushToGeneralChannel                                                                                | Takes an [\#IStorage](#IStorage "wikilink").             |
+| 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                          |                                                          |
 | 30  | GetHomeButtonReaderLockAccessor                                                                     | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
 | 31  | \[2.0.0+\] GetReaderLockAccessorEx                                                                  | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
 | 40  | \[2.0.0+\] GetCradleFwVersion                                                                       |                                                          |
@@ -625,6 +656,10 @@ No input. Returns an output u8:
 
   - 1: In focus.
   - 2/3: Out of focus(running in "background").
+
+### PushToGeneralChannel
+
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 ### IsVrModeEnabled
 
@@ -840,23 +875,32 @@ the main-codebin.
 
 ## IProcessWindingController
 
-| Cmd | Name                                             | Notes                                                                      |
-| --- | ------------------------------------------------ | -------------------------------------------------------------------------- |
-| 0   | [\#GetLaunchReason](#GetLaunchReason "wikilink") |                                                                            |
-| 11  | OpenCallingLibraryApplet                         | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"). |
-| 21  | PushContext                                      | Takes an [\#IStorage](#IStorage "wikilink").                               |
-| 22  | PopContext                                       | Returns an [\#IStorage](#IStorage "wikilink").                             |
-| 23  | CancelWindingReservation                         |                                                                            |
-| 30  | WindAndDoReserved                                |                                                                            |
-| 40  | ReserveToStartAndWaitAndUnwindThis               | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"). |
-| 41  | \[4.0.0+\] ReserveToStartAndWait                 |                                                                            |
+| Cmd | Name                                                                                   | Notes                                                                      |
+| --- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| 0   | [\#GetLaunchReason](#GetLaunchReason "wikilink")                                       |                                                                            |
+| 11  | OpenCallingLibraryApplet                                                               | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"). |
+| 21  | [\#PushContext](#PushContext "wikilink")                                               |                                                                            |
+| 22  | PopContext                                                                             | Returns an [\#IStorage](#IStorage "wikilink").                             |
+| 23  | CancelWindingReservation                                                               |                                                                            |
+| 30  | WindAndDoReserved                                                                      |                                                                            |
+| 40  | [\#ReserveToStartAndWaitAndUnwindThis](#ReserveToStartAndWaitAndUnwindThis "wikilink") |                                                                            |
+| 41  | \[4.0.0+\] ReserveToStartAndWait                                                       |                                                                            |
 
 ### GetLaunchReason
 
 No input. Returns an u32 AppletProcessLaunchReason.
 
-Used by
-LibraryApplets.
+Used by LibraryApplets.
+
+### PushContext
+
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
+
+### ReserveToStartAndWaitAndUnwindThis
+
+Takes an input
+[\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"), no
+output.
 
 ## IDebugFunctions
 

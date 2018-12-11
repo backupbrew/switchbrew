@@ -190,7 +190,7 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 | 120 || GetApplicationId || 
 |-
-| 121 || PushLaunchParameter || Takes an [[#IStorage]].
+| 121 || [[#PushLaunchParameter]] || 
 |-
 | 122 || GetApplicationControlProperty || 
 |-
@@ -211,6 +211,9 @@ No input, returns an [[#IApplicationAccessor]].
 
 ===== IsCompleted =====
 No input, returns an output u8 bool.
+
+===== PushLaunchParameter =====
+Takes an input u32 and an input [[#IStorage]], no output.
 
 ===== IAppletAccessor =====
 {| class="wikitable" border="1"
@@ -264,11 +267,11 @@ No input, returns an output u8 bool.
 |-
 | 0 || PopInData || Returns an [[#IStorage]].
 |-
-| 1 || PushOutData || Takes an [[#IStorage]].
+| 1 || [[#PushOutData]] || 
 |-
 | 2 || PopInteractiveInData || Returns an [[#IStorage]].
 |-
-| 3 || PushInteractiveOutData || Takes an [[#IStorage]].
+| 3 || [[#PushInteractiveOutData]] || 
 |-
 | 5 || GetPopInDataEvent ||
 |-
@@ -298,9 +301,9 @@ No input, returns an output u8 bool.
 |-
 | 25 || GetPopExtraStorageEvent ||
 |-
-| 30 || UnpopInData || Takes an [[#IStorage]].
+| 30 || [[#UnpopInData]] || 
 |-
-| 31 || UnpopExtraStorage || Takes an [[#IStorage]].
+| 31 || [[#UnpopExtraStorage]] || 
 |-
 | 40 || [2.0.0+] GetIndirectLayerProducerHandle ||
 |-
@@ -323,6 +326,12 @@ No input, returns an output u8 bool.
 | 110 || [6.0.0+] GetMainAppletAvailableUsers ||
 |}
 
+==== PushOutData ====
+Takes an input [[#IStorage]], no output.
+
+==== PushInteractiveOutData ====
+Takes an input [[#IStorage]], no output.
+
 ==== GetMainAppletStorageId ====
 No input, returns an output u8 storageId.
 
@@ -336,6 +345,12 @@ No input. Returns an u64 LibraryAppletInfo: +0 u32 is [[#AppletId]], +4 u32 is [
 
 ==== CanUseApplicationCore ====
 No input, returns an output u8 bool.
+
+==== UnpopInData ====
+Takes an input [[#IStorage]], no output.
+
+==== UnpopExtraStorage ====
+Takes an input [[#IStorage]], no output.
 
 ==== GetMainAppletApplicationDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
@@ -424,9 +439,9 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 1 || PopLaunchParameter || Returns an [[#IStorage]].
 |-
-| 10 || CreateApplicationAndPushAndRequestToStart || Takes an [[#IStorage]].
+| 10 || [[#CreateApplicationAndPushAndRequestToStart]] || 
 |-
-| 11 || [2.0.0+] CreateApplicationAndPushAndRequestToStartForQuest || Takes an [[#IStorage]].
+| 11 || [2.0.0+] [[#CreateApplicationAndPushAndRequestToStartForQuest]] || 
 |-
 | 12 || [4.0.0+] CreateApplicationAndRequestToStart || 
 |-
@@ -511,6 +526,12 @@ The BOTW game uses this GamePlayRecording functionality from the main-nso "nnini
 * Closes the TransferMemory handle, + TransferMemory cleanup.
 * Uses [[#SetGamePlayRecordingState]] with value 0x1.
 This GamePlayRecording functionality presumably enables the video-recording usable starting with [[4.0.0]].
+
+==== CreateApplicationAndPushAndRequestToStart ====
+Takes an input u64 titleID and an input [[#IStorage]], no output.
+
+==== CreateApplicationAndPushAndRequestToStartForQuest ====
+Takes 2 input u32s, an input u64 titleID, and an input [[#IStorage]], no output.
 
 ==== GetDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
@@ -659,13 +680,13 @@ No input/output.
 Takes an input u8 bool, no output.
 
 ==== PushInData ====
-Takes an [[#IStorage]], no output.
+Takes an input [[#IStorage]], no output.
 
 ==== PushExtraStorage ====
-Takes an [[#IStorage]], no output.
+Takes an input [[#IStorage]], no output.
 
 ==== PushInteractiveInData ====
-Takes an [[#IStorage]], no output.
+Takes an input [[#IStorage]], no output.
 
 ==== NeedsToExitProcess ====
 No input, returns an output u8 bool.
@@ -703,7 +724,7 @@ No input, returns an output u8 bool.
 |-
 | 13 || GetAcquiredSleepLockEvent ||
 |-
-| 20 || PushToGeneralChannel || Takes an [[#IStorage]].
+| 20 || [[#PushToGeneralChannel]] || 
 |-
 | 30 || GetHomeButtonReaderLockAccessor || Returns an [[#ILockAccessor]].
 |-
@@ -761,6 +782,9 @@ No input. Returns an output u8:
 
 * 1: In focus.
 * 2/3: Out of focus(running in "background").
+
+=== PushToGeneralChannel ===
+Takes an input [[#IStorage]], no output.
 
 === IsVrModeEnabled ===
 No input, returns an output u8 bool.
@@ -1026,7 +1050,7 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 |-
 | 11 || OpenCallingLibraryApplet || Returns an [[#ILibraryAppletAccessor]].
 |-
-| 21 || PushContext || Takes an [[#IStorage]].
+| 21 || [[#PushContext]] || 
 |-
 | 22 || PopContext || Returns an [[#IStorage]].
 |-
@@ -1034,7 +1058,7 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 |-
 | 30 || WindAndDoReserved ||
 |-
-| 40 || ReserveToStartAndWaitAndUnwindThis || Returns an [[#ILibraryAppletAccessor]].
+| 40 || [[#ReserveToStartAndWaitAndUnwindThis]] || 
 |-
 | 41 || [4.0.0+] ReserveToStartAndWait ||
 |}
@@ -1043,6 +1067,12 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 No input. Returns an u32 AppletProcessLaunchReason.
 
 Used by LibraryApplets.
+
+=== PushContext ===
+Takes an input [[#IStorage]], no output.
+
+=== ReserveToStartAndWaitAndUnwindThis ===
+Takes an input [[#ILibraryAppletAccessor]], no output.
 
 == IDebugFunctions ==
 {| class="wikitable" border="1"
