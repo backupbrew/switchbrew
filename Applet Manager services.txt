@@ -1096,7 +1096,7 @@ Takes an input [[#ILibraryAppletAccessor]], no output.
 |-
 | 0 || NotifyMessageToHomeMenuForDebug ||
 |-
-| 1 || OpenMainApplication || Returns an [[#IApplicationAccessor]].
+| 1 || [[#OpenMainApplication]] || 
 |-
 | 10 || EmulateButtonEvent ||
 |-
@@ -1106,6 +1106,9 @@ Takes an input [[#ILibraryAppletAccessor]], no output.
 |-
 | 40 || [6.0.0+] GetAppletResourceUsageInfo ||
 |}
+
+=== OpenMainApplication ===
+No input, returns an output [[#IApplicationAccessor]].
 
 == IStorage ==
 {| class="wikitable" border="1"

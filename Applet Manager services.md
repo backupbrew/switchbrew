@@ -928,14 +928,19 @@ output.
 
 ## IDebugFunctions
 
-| Cmd | Name                                                           | Notes                                                                  |
-| --- | -------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| 0   | NotifyMessageToHomeMenuForDebug                                |                                                                        |
-| 1   | OpenMainApplication                                            | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
-| 10  | EmulateButtonEvent                                             |                                                                        |
-| 20  | InvalidateTransitionLayer                                      |                                                                        |
-| 30  | \[6.0.0+\] RequestLaunchApplicationWithUserAndArgumentForDebug |                                                                        |
-| 40  | \[6.0.0+\] GetAppletResourceUsageInfo                          |                                                                        |
+| Cmd | Name                                                           | Notes |
+| --- | -------------------------------------------------------------- | ----- |
+| 0   | NotifyMessageToHomeMenuForDebug                                |       |
+| 1   | [\#OpenMainApplication](#OpenMainApplication "wikilink")       |       |
+| 10  | EmulateButtonEvent                                             |       |
+| 20  | InvalidateTransitionLayer                                      |       |
+| 30  | \[6.0.0+\] RequestLaunchApplicationWithUserAndArgumentForDebug |       |
+| 40  | \[6.0.0+\] GetAppletResourceUsageInfo                          |       |
+
+### OpenMainApplication
+
+No input, returns an output
+[\#IApplicationAccessor](#IApplicationAccessor "wikilink").
 
 ## IStorage
 
