@@ -642,7 +642,7 @@ No input, returns an output handle.
 
 #### GetPopInteractiveOutDataEvent
 
-No input, returns an output handle.
+No input, returns an output event handle with autoclear=false.
 
 #### NeedsToExitProcess
 
