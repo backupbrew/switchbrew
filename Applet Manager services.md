@@ -481,26 +481,26 @@ Takes an input copy-handle and an input u64, returns an
 
 ### ILibraryAppletAccessor
 
-| Cmd | Name                                                                   | Notes                                          |
-| --- | ---------------------------------------------------------------------- | ---------------------------------------------- |
-| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink") |                                                |
-| 1   | [\#IsCompleted](#IsCompleted_3 "wikilink")                             |                                                |
-| 10  | [\#Start](#Start "wikilink")                                           |                                                |
-| 20  | [\#RequestExit](#RequestExit "wikilink")                               |                                                |
-| 25  | [\#Terminate](#Terminate "wikilink")                                   |                                                |
-| 30  | [\#GetResult](#GetResult "wikilink")                                   |                                                |
-| 50  | SetOutOfFocusApplicationSuspendingEnabled                              |                                                |
-| 100 | PushInData                                                             | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 101 | PopOutData                                                             | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 102 | PushExtraStorage                                                       | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 103 | PushInteractiveInData                                                  | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 104 | PopInteractiveOutData                                                  | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 105 | GetPopOutDataEvent                                                     |                                                |
-| 106 | GetPopInteractiveOutDataEvent                                          |                                                |
-| 110 | [\#NeedsToExitProcess](#NeedsToExitProcess "wikilink")                 |                                                |
-| 120 | GetLibraryAppletInfo                                                   |                                                |
-| 150 | RequestForAppletToGetForeground                                        |                                                |
-| 160 | \[2.0.0+\] GetIndirectLayerConsumerHandle                              |                                                |
+| Cmd | Name                                                                                                 | Notes                                          |
+| --- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink")                               |                                                |
+| 1   | [\#IsCompleted](#IsCompleted_3 "wikilink")                                                           |                                                |
+| 10  | [\#Start](#Start "wikilink")                                                                         |                                                |
+| 20  | [\#RequestExit](#RequestExit "wikilink")                                                             |                                                |
+| 25  | [\#Terminate](#Terminate "wikilink")                                                                 |                                                |
+| 30  | [\#GetResult](#GetResult "wikilink")                                                                 |                                                |
+| 50  | [\#SetOutOfFocusApplicationSuspendingEnabled](#SetOutOfFocusApplicationSuspendingEnabled "wikilink") |                                                |
+| 100 | PushInData                                                                                           | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 101 | PopOutData                                                                                           | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 102 | PushExtraStorage                                                                                     | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 103 | PushInteractiveInData                                                                                | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 104 | PopInteractiveOutData                                                                                | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 105 | GetPopOutDataEvent                                                                                   |                                                |
+| 106 | GetPopInteractiveOutDataEvent                                                                        |                                                |
+| 110 | [\#NeedsToExitProcess](#NeedsToExitProcess "wikilink")                                               |                                                |
+| 120 | GetLibraryAppletInfo                                                                                 |                                                |
+| 150 | RequestForAppletToGetForeground                                                                      |                                                |
+| 160 | \[2.0.0+\] GetIndirectLayerConsumerHandle                                                            |                                                |
 
 #### GetAppletStateChangedEvent
 
@@ -525,6 +525,10 @@ No input/output.
 #### GetResult
 
 No input/output.
+
+#### SetOutOfFocusApplicationSuspendingEnabled
+
+Takes an input u8 bool, no output.
 
 #### NeedsToExitProcess
 

@@ -612,7 +612,7 @@ Takes an input copy-handle and an input u64, returns an [[#IStorage]].
 |-
 | 30 || [[#GetResult]] ||
 |-
-| 50 || SetOutOfFocusApplicationSuspendingEnabled ||
+| 50 || [[#SetOutOfFocusApplicationSuspendingEnabled]] ||
 |-
 | 100 || PushInData || Takes an [[#IStorage]].
 |-
@@ -654,6 +654,9 @@ No input/output.
 
 ==== GetResult====
 No input/output.
+
+==== SetOutOfFocusApplicationSuspendingEnabled ====
+Takes an input u8 bool, no output.
 
 ==== NeedsToExitProcess ====
 No input, returns an output u8 bool.
