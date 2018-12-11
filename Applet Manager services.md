@@ -747,7 +747,7 @@ bool.
 | 2   | [\#UnlockExit](#UnlockExit "wikilink")                                                       |
 | 3   | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |
 | 4   | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |
-| 9   | GetLibraryAppletLaunchableEvent                                                              |
+| 9   | [\#GetLibraryAppletLaunchableEvent](#GetLibraryAppletLaunchableEvent "wikilink")             |
 | 10  | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |
 | 11  | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |
 | 12  | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |
@@ -808,6 +808,10 @@ No input/output.
 ### LeaveFatalSection
 
 No input/output.
+
+### GetLibraryAppletLaunchableEvent
+
+No input, returns an output event handle with autoclear=false.
 
 ### SetScreenShotPermission
 

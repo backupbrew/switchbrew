@@ -850,7 +850,7 @@ No input, returns an output u8 bool.
 |-
 | 4 || [2.0.0+] [[#LeaveFatalSection]]
 |-
-| 9 || GetLibraryAppletLaunchableEvent
+| 9 || [[#GetLibraryAppletLaunchableEvent]]
 |-
 | 10 || [[#SetScreenShotPermission]]
 |-
@@ -935,6 +935,9 @@ No input/output.
 
 === LeaveFatalSection ===
 No input/output.
+
+=== GetLibraryAppletLaunchableEvent ===
+No input, returns an output event handle with autoclear=false.
 
 === SetScreenShotPermission ===
 Takes an input s32. No output.
