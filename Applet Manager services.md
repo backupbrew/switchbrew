@@ -74,16 +74,25 @@ commands.
 
 ### IHomeMenuFunctions
 
-| Cmd | Name                                                                        | Notes                                                    |
-| --- | --------------------------------------------------------------------------- | -------------------------------------------------------- |
-| 10  | RequestToGetForeground                                                      |                                                          |
-| 11  | LockForeground                                                              |                                                          |
-| 12  | UnlockForeground                                                            |                                                          |
-| 20  | PopFromGeneralChannel                                                       | Returns an [\#IStorage](#IStorage "wikilink").           |
-| 21  | GetPopFromGeneralChannelEvent                                               |                                                          |
-| 30  | GetHomeButtonWriterLockAccessor                                             | Returns an [\#ILockAccessor](#ILockAccessor "wikilink"). |
-| 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink") |                                                          |
-| 100 | \[6.0.0+\] PopRequestLaunchApplicationForDebug                              |                                                          |
+| Cmd | Name                                                                             | Notes |
+| --- | -------------------------------------------------------------------------------- | ----- |
+| 10  | RequestToGetForeground                                                           |       |
+| 11  | LockForeground                                                                   |       |
+| 12  | UnlockForeground                                                                 |       |
+| 20  | [\#PopFromGeneralChannel](#PopFromGeneralChannel "wikilink")                     |       |
+| 21  | GetPopFromGeneralChannelEvent                                                    |       |
+| 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink") |       |
+| 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")      |       |
+| 100 | \[6.0.0+\] PopRequestLaunchApplicationForDebug                                   |       |
+
+#### PopFromGeneralChannel
+
+No input, returns an output [\#IStorage](#IStorage "wikilink").
+
+#### GetHomeButtonWriterLockAccessor
+
+No input, returns an output
+[\#ILockAccessor](#ILockAccessor "wikilink").
 
 #### GetWriterLockAccessorEx
 
@@ -219,42 +228,50 @@ bool.
 
 ### ILibraryAppletSelfAccessor
 
-| Cmd | Name                                                                                                        | Notes                                          |
-| --- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| 0   | PopInData                                                                                                   | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 1   | [\#PushOutData](#PushOutData "wikilink")                                                                    |                                                |
-| 2   | PopInteractiveInData                                                                                        | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 3   | [\#PushInteractiveOutData](#PushInteractiveOutData "wikilink")                                              |                                                |
-| 5   | GetPopInDataEvent                                                                                           |                                                |
-| 6   | GetPopInteractiveInDataEvent                                                                                |                                                |
-| 10  | [\#ExitProcessAndReturn](#ExitProcessAndReturn "wikilink")                                                  |                                                |
-| 11  | [\#GetLibraryAppletInfo](#GetLibraryAppletInfo "wikilink")                                                  |                                                |
-| 12  | GetMainAppletIdentityInfo                                                                                   |                                                |
-| 13  | [\#CanUseApplicationCore](#CanUseApplicationCore "wikilink")                                                |                                                |
-| 14  | GetCallerAppletIdentityInfo                                                                                 |                                                |
-| 15  | \[2.0.0+\] GetMainAppletApplicationControlProperty                                                          |                                                |
-| 16  | \[2.0.0+\] [\#GetMainAppletStorageId](#GetMainAppletStorageId "wikilink")                                   |                                                |
-| 17  | \[2.0.0+\] GetCallerAppletIdentityInfoStack                                                                 |                                                |
-| 18  | \[4.0.0+\] GetNextReturnDestinationAppletIdentityInfo                                                       |                                                |
-| 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                       |                                                |
-| 20  | PopExtraStorage                                                                                             | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 25  | GetPopExtraStorageEvent                                                                                     |                                                |
-| 30  | [\#UnpopInData](#UnpopInData "wikilink")                                                                    |                                                |
-| 31  | [\#UnpopExtraStorage](#UnpopExtraStorage "wikilink")                                                        |                                                |
-| 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                                                                   |                                                |
-| 50  | \[2.0.0+\] ReportVisibleError                                                                               |                                                |
-| 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                               |                                                |
-| 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |                                                |
-| 80  | \[6.0.0+\] RequestExitToSelf                                                                                |                                                |
-| 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |                                                |
-| 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                   |                                                |
-| 101 | \[6.0.0+\] ReserveResourceForMovieOperation                                                                 |                                                |
-| 102 | \[6.0.0+\] UnreserveResourceForMovieOperation                                                               |                                                |
-| 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                      |                                                |
+| Cmd | Name                                                                                                        | Notes |
+| --- | ----------------------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#PopInData](#PopInData "wikilink")                                                                        |       |
+| 1   | [\#PushOutData](#PushOutData "wikilink")                                                                    |       |
+| 2   | [\#PopInteractiveInData](#PopInteractiveInData "wikilink")                                                  |       |
+| 3   | [\#PushInteractiveOutData](#PushInteractiveOutData "wikilink")                                              |       |
+| 5   | GetPopInDataEvent                                                                                           |       |
+| 6   | GetPopInteractiveInDataEvent                                                                                |       |
+| 10  | [\#ExitProcessAndReturn](#ExitProcessAndReturn "wikilink")                                                  |       |
+| 11  | [\#GetLibraryAppletInfo](#GetLibraryAppletInfo "wikilink")                                                  |       |
+| 12  | GetMainAppletIdentityInfo                                                                                   |       |
+| 13  | [\#CanUseApplicationCore](#CanUseApplicationCore "wikilink")                                                |       |
+| 14  | GetCallerAppletIdentityInfo                                                                                 |       |
+| 15  | \[2.0.0+\] GetMainAppletApplicationControlProperty                                                          |       |
+| 16  | \[2.0.0+\] [\#GetMainAppletStorageId](#GetMainAppletStorageId "wikilink")                                   |       |
+| 17  | \[2.0.0+\] GetCallerAppletIdentityInfoStack                                                                 |       |
+| 18  | \[4.0.0+\] GetNextReturnDestinationAppletIdentityInfo                                                       |       |
+| 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                       |       |
+| 20  | [\#PopExtraStorage](#PopExtraStorage "wikilink")                                                            |       |
+| 25  | GetPopExtraStorageEvent                                                                                     |       |
+| 30  | [\#UnpopInData](#UnpopInData "wikilink")                                                                    |       |
+| 31  | [\#UnpopExtraStorage](#UnpopExtraStorage "wikilink")                                                        |       |
+| 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                                                                   |       |
+| 50  | \[2.0.0+\] ReportVisibleError                                                                               |       |
+| 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                               |       |
+| 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |       |
+| 80  | \[6.0.0+\] RequestExitToSelf                                                                                |       |
+| 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |       |
+| 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                   |       |
+| 101 | \[6.0.0+\] ReserveResourceForMovieOperation                                                                 |       |
+| 102 | \[6.0.0+\] UnreserveResourceForMovieOperation                                                               |       |
+| 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                      |       |
+
+#### PopInData
+
+No input, returns an output [\#IStorage](#IStorage "wikilink").
 
 #### PushOutData
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
+
+#### PopInteractiveInData
+
+No input, returns an output [\#IStorage](#IStorage "wikilink").
 
 #### PushInteractiveOutData
 
@@ -280,6 +297,10 @@ No input. Returns an u64 LibraryAppletInfo: +0 u32 is
 #### CanUseApplicationCore
 
 No input, returns an output u8 bool.
+
+#### PopExtraStorage
+
+No input, returns an output [\#IStorage](#IStorage "wikilink").
 
 #### UnpopInData
 
@@ -527,26 +548,26 @@ Takes an input copy-handle and an input u64, returns an
 
 ### ILibraryAppletAccessor
 
-| Cmd | Name                                                                                                 | Notes                                          |
-| --- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink")                               |                                                |
-| 1   | [\#IsCompleted](#IsCompleted_3 "wikilink")                                                           |                                                |
-| 10  | [\#Start](#Start "wikilink")                                                                         |                                                |
-| 20  | [\#RequestExit](#RequestExit "wikilink")                                                             |                                                |
-| 25  | [\#Terminate](#Terminate "wikilink")                                                                 |                                                |
-| 30  | [\#GetResult](#GetResult "wikilink")                                                                 |                                                |
-| 50  | [\#SetOutOfFocusApplicationSuspendingEnabled](#SetOutOfFocusApplicationSuspendingEnabled "wikilink") |                                                |
-| 100 | [\#PushInData](#PushInData "wikilink")                                                               |                                                |
-| 101 | PopOutData                                                                                           | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 102 | [\#PushExtraStorage](#PushExtraStorage "wikilink")                                                   |                                                |
-| 103 | [\#PushInteractiveInData](#PushInteractiveInData "wikilink")                                         |                                                |
-| 104 | PopInteractiveOutData                                                                                | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 105 | GetPopOutDataEvent                                                                                   |                                                |
-| 106 | GetPopInteractiveOutDataEvent                                                                        |                                                |
-| 110 | [\#NeedsToExitProcess](#NeedsToExitProcess "wikilink")                                               |                                                |
-| 120 | GetLibraryAppletInfo                                                                                 |                                                |
-| 150 | RequestForAppletToGetForeground                                                                      |                                                |
-| 160 | \[2.0.0+\] GetIndirectLayerConsumerHandle                                                            |                                                |
+| Cmd | Name                                                                                                 | Notes |
+| --- | ---------------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink")                               |       |
+| 1   | [\#IsCompleted](#IsCompleted_3 "wikilink")                                                           |       |
+| 10  | [\#Start](#Start "wikilink")                                                                         |       |
+| 20  | [\#RequestExit](#RequestExit "wikilink")                                                             |       |
+| 25  | [\#Terminate](#Terminate "wikilink")                                                                 |       |
+| 30  | [\#GetResult](#GetResult "wikilink")                                                                 |       |
+| 50  | [\#SetOutOfFocusApplicationSuspendingEnabled](#SetOutOfFocusApplicationSuspendingEnabled "wikilink") |       |
+| 100 | [\#PushInData](#PushInData "wikilink")                                                               |       |
+| 101 | [\#PopOutData](#PopOutData "wikilink")                                                               |       |
+| 102 | [\#PushExtraStorage](#PushExtraStorage "wikilink")                                                   |       |
+| 103 | [\#PushInteractiveInData](#PushInteractiveInData "wikilink")                                         |       |
+| 104 | [\#PopInteractiveOutData](#PopInteractiveOutData "wikilink")                                         |       |
+| 105 | GetPopOutDataEvent                                                                                   |       |
+| 106 | GetPopInteractiveOutDataEvent                                                                        |       |
+| 110 | [\#NeedsToExitProcess](#NeedsToExitProcess "wikilink")                                               |       |
+| 120 | GetLibraryAppletInfo                                                                                 |       |
+| 150 | RequestForAppletToGetForeground                                                                      |       |
+| 160 | \[2.0.0+\] GetIndirectLayerConsumerHandle                                                            |       |
 
 #### GetAppletStateChangedEvent
 
@@ -580,6 +601,10 @@ Takes an input u8 bool, no output.
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
+#### PopOutData
+
+No input, returns an output [\#IStorage](#IStorage "wikilink").
+
 #### PushExtraStorage
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
@@ -587,6 +612,10 @@ Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 #### PushInteractiveInData
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
+
+#### PopInteractiveOutData
+
+No input, returns an output [\#IStorage](#IStorage "wikilink").
 
 #### NeedsToExitProcess
 
@@ -904,16 +933,16 @@ the main-codebin.
 
 ## IProcessWindingController
 
-| Cmd | Name                                                                                   | Notes                                                                      |
-| --- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| 0   | [\#GetLaunchReason](#GetLaunchReason "wikilink")                                       |                                                                            |
-| 11  | OpenCallingLibraryApplet                                                               | Returns an [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"). |
-| 21  | [\#PushContext](#PushContext "wikilink")                                               |                                                                            |
-| 22  | PopContext                                                                             | Returns an [\#IStorage](#IStorage "wikilink").                             |
-| 23  | CancelWindingReservation                                                               |                                                                            |
-| 30  | WindAndDoReserved                                                                      |                                                                            |
-| 40  | [\#ReserveToStartAndWaitAndUnwindThis](#ReserveToStartAndWaitAndUnwindThis "wikilink") |                                                                            |
-| 41  | \[4.0.0+\] ReserveToStartAndWait                                                       |                                                                            |
+| Cmd | Name                                                                                   | Notes |
+| --- | -------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#GetLaunchReason](#GetLaunchReason "wikilink")                                       |       |
+| 11  | [\#OpenCallingLibraryApplet](#OpenCallingLibraryApplet "wikilink")                     |       |
+| 21  | [\#PushContext](#PushContext "wikilink")                                               |       |
+| 22  | [\#PopContext](#PopContext "wikilink")                                                 |       |
+| 23  | CancelWindingReservation                                                               |       |
+| 30  | WindAndDoReserved                                                                      |       |
+| 40  | [\#ReserveToStartAndWaitAndUnwindThis](#ReserveToStartAndWaitAndUnwindThis "wikilink") |       |
+| 41  | \[4.0.0+\] ReserveToStartAndWait                                                       |       |
 
 ### GetLaunchReason
 
@@ -921,9 +950,18 @@ No input. Returns an u32 AppletProcessLaunchReason.
 
 Used by LibraryApplets.
 
+### OpenCallingLibraryApplet
+
+No input, returns an output
+[\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").
+
 ### PushContext
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
+
+### PopContext
+
+No input, returns an output [\#IStorage](#IStorage "wikilink").
 
 ### ReserveToStartAndWaitAndUnwindThis
 

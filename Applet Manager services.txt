@@ -83,16 +83,22 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 12 || UnlockForeground || 
 |-
-| 20 || PopFromGeneralChannel || Returns an [[#IStorage]].
+| 20 || [[#PopFromGeneralChannel]] || 
 |-
 | 21 || GetPopFromGeneralChannelEvent ||
 |-
-| 30 || GetHomeButtonWriterLockAccessor || Returns an [[#ILockAccessor]].
+| 30 || [[#GetHomeButtonWriterLockAccessor]] || 
 |-
 | 31 || [2.0.0+] [[#GetWriterLockAccessorEx]] || 
 |-
 | 100 || [6.0.0+] PopRequestLaunchApplicationForDebug ||
 |}
+
+==== PopFromGeneralChannel ====
+No input, returns an output [[#IStorage]].
+
+==== GetHomeButtonWriterLockAccessor ====
+No input, returns an output [[#ILockAccessor]].
 
 ==== GetWriterLockAccessorEx ====
 Takes an input u32, returns an output [[#ILockAccessor]].
@@ -271,11 +277,11 @@ No input, returns an output u8 bool.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || PopInData || Returns an [[#IStorage]].
+| 0 || [[#PopInData]] || 
 |-
 | 1 || [[#PushOutData]] || 
 |-
-| 2 || PopInteractiveInData || Returns an [[#IStorage]].
+| 2 || [[#PopInteractiveInData]] || 
 |-
 | 3 || [[#PushInteractiveOutData]] || 
 |-
@@ -303,7 +309,7 @@ No input, returns an output u8 bool.
 |-
 | 19 || [4.0.0+] GetDesirableKeyboardLayout ||
 |-
-| 20 || PopExtraStorage || Returns an [[#IStorage]].
+| 20 || [[#PopExtraStorage]] || 
 |-
 | 25 || GetPopExtraStorageEvent ||
 |-
@@ -332,8 +338,14 @@ No input, returns an output u8 bool.
 | 110 || [6.0.0+] GetMainAppletAvailableUsers ||
 |}
 
+==== PopInData ====
+No input, returns an output [[#IStorage]].
+
 ==== PushOutData ====
 Takes an input [[#IStorage]], no output.
+
+==== PopInteractiveInData ====
+No input, returns an output [[#IStorage]].
 
 ==== PushInteractiveOutData ====
 Takes an input [[#IStorage]], no output.
@@ -351,6 +363,9 @@ No input. Returns an u64 LibraryAppletInfo: +0 u32 is [[#AppletId]], +4 u32 is [
 
 ==== CanUseApplicationCore ====
 No input, returns an output u8 bool.
+
+==== PopExtraStorage ====
+No input, returns an output [[#IStorage]].
 
 ==== UnpopInData ====
 Takes an input [[#IStorage]], no output.
@@ -646,13 +661,13 @@ Takes an input copy-handle and an input u64, returns an [[#IStorage]].
 |-
 | 100 || [[#PushInData]] || 
 |-
-| 101 || PopOutData || Returns an [[#IStorage]].
+| 101 || [[#PopOutData]] || 
 |-
 | 102 || [[#PushExtraStorage]] || 
 |-
 | 103 || [[#PushInteractiveInData]] || 
 |-
-| 104 || PopInteractiveOutData || Returns an [[#IStorage]].
+| 104 || [[#PopInteractiveOutData]] || 
 |-
 | 105 || GetPopOutDataEvent ||
 |-
@@ -691,11 +706,17 @@ Takes an input u8 bool, no output.
 ==== PushInData ====
 Takes an input [[#IStorage]], no output.
 
+==== PopOutData ====
+No input, returns an output [[#IStorage]].
+
 ==== PushExtraStorage ====
 Takes an input [[#IStorage]], no output.
 
 ==== PushInteractiveInData ====
 Takes an input [[#IStorage]], no output.
+
+==== PopInteractiveOutData ====
+No input, returns an output [[#IStorage]].
 
 ==== NeedsToExitProcess ====
 No input, returns an output u8 bool.
@@ -1066,11 +1087,11 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 |-
 | 0 || [[#GetLaunchReason]] ||
 |-
-| 11 || OpenCallingLibraryApplet || Returns an [[#ILibraryAppletAccessor]].
+| 11 || [[#OpenCallingLibraryApplet]] || 
 |-
 | 21 || [[#PushContext]] || 
 |-
-| 22 || PopContext || Returns an [[#IStorage]].
+| 22 || [[#PopContext]] || 
 |-
 | 23 || CancelWindingReservation ||
 |-
@@ -1086,8 +1107,14 @@ No input. Returns an u32 AppletProcessLaunchReason.
 
 Used by LibraryApplets.
 
+=== OpenCallingLibraryApplet ===
+No input, returns an output [[#ILibraryAppletAccessor]].
+
 === PushContext ===
 Takes an input [[#IStorage]], no output.
+
+=== PopContext ===
+No input, returns an output [[#IStorage]].
 
 === ReserveToStartAndWaitAndUnwindThis ===
 Takes an input [[#ILibraryAppletAccessor]], no output.
