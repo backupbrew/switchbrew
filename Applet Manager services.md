@@ -150,32 +150,37 @@ No input, returns an
 
 #### IApplicationAccessor
 
-| Cmd | Name                                                     | Notes                                                        |
-| --- | -------------------------------------------------------- | ------------------------------------------------------------ |
-| 0   | GetAppletStateChangedEvent                               |                                                              |
-| 1   | [\#IsCompleted](#IsCompleted "wikilink")                 |                                                              |
-| 10  | Start                                                    |                                                              |
-| 20  | RequestExit                                              |                                                              |
-| 25  | Terminate                                                |                                                              |
-| 30  | GetResult                                                |                                                              |
-| 101 | RequestForApplicationToGetForeground                     |                                                              |
-| 110 | TerminateAllLibraryApplets                               |                                                              |
-| 111 | AreAnyLibraryAppletsLeft                                 |                                                              |
-| 112 | GetCurrentLibraryApplet                                  | Returns an [\#IAppletAccessor](#IAppletAccessor "wikilink"). |
-| 120 | GetApplicationId                                         |                                                              |
-| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink") |                                                              |
-| 122 | GetApplicationControlProperty                            |                                                              |
-| 123 | \[2.0.0+\] GetApplicationLaunchProperty                  |                                                              |
-| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo               |                                                              |
-| 130 | \[6.0.0+\] SetUsers                                      |                                                              |
-| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable               |                                                              |
-| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                  |                                                              |
-| 140 | \[6.0.0+\] GetDesirableUids                              |                                                              |
-| 150 | \[6.0.0+\] ReportApplicationExitTimeout                  |                                                              |
+| Cmd | Name                                                             | Notes |
+| --- | ---------------------------------------------------------------- | ----- |
+| 0   | GetAppletStateChangedEvent                                       |       |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")                         |       |
+| 10  | Start                                                            |       |
+| 20  | RequestExit                                                      |       |
+| 25  | Terminate                                                        |       |
+| 30  | GetResult                                                        |       |
+| 101 | RequestForApplicationToGetForeground                             |       |
+| 110 | TerminateAllLibraryApplets                                       |       |
+| 111 | AreAnyLibraryAppletsLeft                                         |       |
+| 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink") |       |
+| 120 | GetApplicationId                                                 |       |
+| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")         |       |
+| 122 | GetApplicationControlProperty                                    |       |
+| 123 | \[2.0.0+\] GetApplicationLaunchProperty                          |       |
+| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo                       |       |
+| 130 | \[6.0.0+\] SetUsers                                              |       |
+| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                       |       |
+| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                          |       |
+| 140 | \[6.0.0+\] GetDesirableUids                                      |       |
+| 150 | \[6.0.0+\] ReportApplicationExitTimeout                          |       |
 
 ##### IsCompleted
 
 No input, returns an output u8 bool.
+
+##### GetCurrentLibraryApplet
+
+No input, returns an output
+[\#IAppletAccessor](#IAppletAccessor "wikilink").
 
 ##### PushLaunchParameter
 
