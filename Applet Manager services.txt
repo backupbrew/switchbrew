@@ -570,7 +570,7 @@ No input, returns an output u64.
 |-
 | 10 || [[#CreateStorage]] || 
 |-
-| 11 || CreateTransferMemoryStorage || Returns an [[#IStorage]].
+| 11 || [[#CreateTransferMemoryStorage]] || 
 |-
 | 12 || [2.0.0+] CreateHandleStorage || Returns an [[#IStorage]].
 |}
@@ -586,6 +586,11 @@ No input, returns an output u8 bool.
 
 === CreateStorage ===
 Takes an input u64 for the storage size, returns an [[#IStorage]].
+
+=== CreateTransferMemoryStorage ===
+Takes an input TransferMemory handle, an input u8 bool, and an u64 size, returns an [[#IStorage]].
+
+The user-processes creates the TransferMemory with permissions=0.
 
 === ILibraryAppletAccessor ===
 {| class="wikitable" border="1"
