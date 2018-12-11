@@ -967,7 +967,7 @@ This is "nn::tcap::server::IManager".
 This section documents library applet launching.
 
 Before starting the applet, [\#IStorages](#IStorage "wikilink") are
-created and written, then passed to
+[created](#ILibraryAppletCreator "wikilink") and written, then passed to
 [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink")
 PushInData. The [\#IStorage](#IStorage "wikilink") session is closed
 afterwards. The first [\#IStorage](#IStorage "wikilink") is
@@ -981,7 +981,7 @@ PopOutData can be used to get the applet-specific
 
 ## CommonArguments
 
-The first [\#IStorage](#IStorage "wikilink") passed to applets should
+The first [IStorage](#CreateStorage "wikilink") passed to applets should
 contain the common library applet arguments. This is populated by
 `nn::la::CommonArgumentsWriter` and has the following format.
 

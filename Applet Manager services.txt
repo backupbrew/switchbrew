@@ -1218,12 +1218,12 @@ This is "nn::tcap::server::IManager".
 = Library Applets =
 This section documents library applet launching.
 
-Before starting the applet, [[#IStorage]]s are created and written, then passed to [[#ILibraryAppletAccessor]] PushInData. The [[#IStorage]] session is closed afterwards. The first [[#IStorage]] is [[#CommonArguments]], followed by any applet-specific [[#IStorage]]s.
+Before starting the applet, [[#IStorage]]s are [[#ILibraryAppletCreator|created]] and written, then passed to [[#ILibraryAppletAccessor]] PushInData. The [[#IStorage]] session is closed afterwards. The first [[#IStorage]] is [[#CommonArguments]], followed by any applet-specific [[#IStorage]]s.
 
 Once the applet finishes running successfully, [[#ILibraryAppletAccessor]] PopOutData can be used to get the applet-specific [[#IStorage]] containing the applet output data.
 
 == CommonArguments ==
-The first [[#IStorage]] passed to applets should contain the common library applet arguments. This is populated by <code>nn::la::CommonArgumentsWriter</code> and has the following format.
+The first [[#CreateStorage|IStorage]] passed to applets should contain the common library applet arguments. This is populated by <code>nn::la::CommonArgumentsWriter</code> and has the following format.
 
 This struct is 0x20-bytes.
 
