@@ -142,14 +142,26 @@ No input, returns an output u8 bool.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || CreateApplication || Returns an [[#IApplicationAccessor]].
+| 0 || [[#CreateApplication]] || 
 |-
-| 1 || PopLaunchRequestedApplication || Returns an [[#IApplicationAccessor]].
+| 1 || [[#PopLaunchRequestedApplication]] || 
 |-
-| 10 || CreateSystemApplication || Returns an [[#IApplicationAccessor]].
+| 10 || [[#CreateSystemApplication]] || 
 |-
-| 100 || PopFloatingApplicationForDevelopment || Returns an [[#IApplicationAccessor]].
+| 100 || [[#PopFloatingApplicationForDevelopment]] || 
 |}
+
+==== CreateApplication ====
+Takes an input u64 <code>nn::ncm::ApplicationId</code>(titleID), returns an [[#IApplicationAccessor]].
+
+==== PopLaunchRequestedApplication ====
+No input, returns an [[#IApplicationAccessor]].
+
+==== CreateSystemApplication ====
+Takes an input u64 <code>nn::ncm::SystemApplicationId</code>, returns an [[#IApplicationAccessor]].
+
+==== PopFloatingApplicationForDevelopment ====
+No input, returns an [[#IApplicationAccessor]].
 
 ==== IApplicationAccessor ====
 {| class="wikitable" border="1"

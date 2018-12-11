@@ -116,12 +116,32 @@ bool.
 
 ### IApplicationCreator
 
-| Cmd | Name                                 | Notes                                                                  |
-| --- | ------------------------------------ | ---------------------------------------------------------------------- |
-| 0   | CreateApplication                    | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
-| 1   | PopLaunchRequestedApplication        | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
-| 10  | CreateSystemApplication              | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
-| 100 | PopFloatingApplicationForDevelopment | Returns an [\#IApplicationAccessor](#IApplicationAccessor "wikilink"). |
+| Cmd | Name                                                                                       | Notes |
+| --- | ------------------------------------------------------------------------------------------ | ----- |
+| 0   | [\#CreateApplication](#CreateApplication "wikilink")                                       |       |
+| 1   | [\#PopLaunchRequestedApplication](#PopLaunchRequestedApplication "wikilink")               |       |
+| 10  | [\#CreateSystemApplication](#CreateSystemApplication "wikilink")                           |       |
+| 100 | [\#PopFloatingApplicationForDevelopment](#PopFloatingApplicationForDevelopment "wikilink") |       |
+
+#### CreateApplication
+
+Takes an input u64 `nn::ncm::ApplicationId`(titleID), returns an
+[\#IApplicationAccessor](#IApplicationAccessor "wikilink").
+
+#### PopLaunchRequestedApplication
+
+No input, returns an
+[\#IApplicationAccessor](#IApplicationAccessor "wikilink").
+
+#### CreateSystemApplication
+
+Takes an input u64 `nn::ncm::SystemApplicationId`, returns an
+[\#IApplicationAccessor](#IApplicationAccessor "wikilink").
+
+#### PopFloatingApplicationForDevelopment
+
+No input, returns an
+[\#IApplicationAccessor](#IApplicationAccessor "wikilink").
 
 #### IApplicationAccessor
 
