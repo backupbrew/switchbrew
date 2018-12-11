@@ -80,7 +80,7 @@ commands.
 | 11  | LockForeground                                                                   |       |
 | 12  | UnlockForeground                                                                 |       |
 | 20  | [\#PopFromGeneralChannel](#PopFromGeneralChannel "wikilink")                     |       |
-| 21  | GetPopFromGeneralChannelEvent                                                    |       |
+| 21  | [\#GetPopFromGeneralChannelEvent](#GetPopFromGeneralChannelEvent "wikilink")     |       |
 | 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink") |       |
 | 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")      |       |
 | 100 | \[6.0.0+\] PopRequestLaunchApplicationForDebug                                   |       |
@@ -88,6 +88,10 @@ commands.
 #### PopFromGeneralChannel
 
 No input, returns an output [\#IStorage](#IStorage "wikilink").
+
+#### GetPopFromGeneralChannelEvent
+
+No input, returns an output handle.
 
 #### GetHomeButtonWriterLockAccessor
 
@@ -101,11 +105,16 @@ Takes an input u32, returns an output
 
 #### ILockAccessor
 
-| Cmd | Name     |
-| --- | -------- |
-| 1   | TryLock  |
-| 2   | Unlock   |
-| 3   | GetEvent |
+| Cmd | Name                               |
+| --- | ---------------------------------- |
+| 1   | TryLock                            |
+| 2   | Unlock                             |
+| 3   | [\#GetEvent](#GetEvent "wikilink") |
+
+##### GetEvent
+
+No input, returns an output
+handle.
 
 ### IGlobalStateController
 
@@ -159,28 +168,32 @@ No input, returns an
 
 #### IApplicationAccessor
 
-| Cmd | Name                                                             | Notes |
-| --- | ---------------------------------------------------------------- | ----- |
-| 0   | GetAppletStateChangedEvent                                       |       |
-| 1   | [\#IsCompleted](#IsCompleted "wikilink")                         |       |
-| 10  | Start                                                            |       |
-| 20  | RequestExit                                                      |       |
-| 25  | Terminate                                                        |       |
-| 30  | GetResult                                                        |       |
-| 101 | RequestForApplicationToGetForeground                             |       |
-| 110 | TerminateAllLibraryApplets                                       |       |
-| 111 | AreAnyLibraryAppletsLeft                                         |       |
-| 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink") |       |
-| 120 | GetApplicationId                                                 |       |
-| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")         |       |
-| 122 | GetApplicationControlProperty                                    |       |
-| 123 | \[2.0.0+\] GetApplicationLaunchProperty                          |       |
-| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo                       |       |
-| 130 | \[6.0.0+\] SetUsers                                              |       |
-| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                       |       |
-| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                          |       |
-| 140 | \[6.0.0+\] GetDesirableUids                                      |       |
-| 150 | \[6.0.0+\] ReportApplicationExitTimeout                          |       |
+| Cmd | Name                                                                   | Notes |
+| --- | ---------------------------------------------------------------------- | ----- |
+| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink") |       |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")                               |       |
+| 10  | Start                                                                  |       |
+| 20  | RequestExit                                                            |       |
+| 25  | Terminate                                                              |       |
+| 30  | GetResult                                                              |       |
+| 101 | RequestForApplicationToGetForeground                                   |       |
+| 110 | TerminateAllLibraryApplets                                             |       |
+| 111 | AreAnyLibraryAppletsLeft                                               |       |
+| 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink")       |       |
+| 120 | GetApplicationId                                                       |       |
+| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")               |       |
+| 122 | GetApplicationControlProperty                                          |       |
+| 123 | \[2.0.0+\] GetApplicationLaunchProperty                                |       |
+| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo                             |       |
+| 130 | \[6.0.0+\] SetUsers                                                    |       |
+| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                             |       |
+| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                |       |
+| 140 | \[6.0.0+\] GetDesirableUids                                            |       |
+| 150 | \[6.0.0+\] ReportApplicationExitTimeout                                |       |
+
+##### GetAppletStateChangedEvent
+
+No input, returns an output handle.
 
 ##### IsCompleted
 
@@ -198,14 +211,18 @@ output.
 
 ##### IAppletAccessor
 
-| Cmd | Name                                       |
-| --- | ------------------------------------------ |
-| 0   | GetAppletStateChangedEvent                 |
-| 1   | [\#IsCompleted](#IsCompleted_2 "wikilink") |
-| 10  | Start                                      |
-| 20  | RequestExit                                |
-| 25  | Terminate                                  |
-| 30  | GetResult                                  |
+| Cmd | Name                                                                   |
+| --- | ---------------------------------------------------------------------- |
+| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink") |
+| 1   | [\#IsCompleted](#IsCompleted_2 "wikilink")                             |
+| 10  | Start                                                                  |
+| 20  | RequestExit                                                            |
+| 25  | Terminate                                                              |
+| 30  | GetResult                                                              |
+
+###### GetAppletStateChangedEvent
+
+No input, returns an output handle.
 
 ###### IsCompleted
 
@@ -234,8 +251,8 @@ bool.
 | 1   | [\#PushOutData](#PushOutData "wikilink")                                                                    |       |
 | 2   | [\#PopInteractiveInData](#PopInteractiveInData "wikilink")                                                  |       |
 | 3   | [\#PushInteractiveOutData](#PushInteractiveOutData "wikilink")                                              |       |
-| 5   | GetPopInDataEvent                                                                                           |       |
-| 6   | GetPopInteractiveInDataEvent                                                                                |       |
+| 5   | [\#GetPopInDataEvent](#GetPopInDataEvent "wikilink")                                                        |       |
+| 6   | [\#GetPopInteractiveInDataEvent](#GetPopInteractiveInDataEvent "wikilink")                                  |       |
 | 10  | [\#ExitProcessAndReturn](#ExitProcessAndReturn "wikilink")                                                  |       |
 | 11  | [\#GetLibraryAppletInfo](#GetLibraryAppletInfo "wikilink")                                                  |       |
 | 12  | GetMainAppletIdentityInfo                                                                                   |       |
@@ -247,7 +264,7 @@ bool.
 | 18  | \[4.0.0+\] GetNextReturnDestinationAppletIdentityInfo                                                       |       |
 | 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                       |       |
 | 20  | [\#PopExtraStorage](#PopExtraStorage "wikilink")                                                            |       |
-| 25  | GetPopExtraStorageEvent                                                                                     |       |
+| 25  | [\#GetPopExtraStorageEvent](#GetPopExtraStorageEvent "wikilink")                                            |       |
 | 30  | [\#UnpopInData](#UnpopInData "wikilink")                                                                    |       |
 | 31  | [\#UnpopExtraStorage](#UnpopExtraStorage "wikilink")                                                        |       |
 | 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                                                                   |       |
@@ -277,6 +294,14 @@ No input, returns an output [\#IStorage](#IStorage "wikilink").
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
+#### GetPopInDataEvent
+
+No input, returns an output handle.
+
+#### GetPopInteractiveInDataEvent
+
+No input, returns an output handle.
+
 #### GetMainAppletStorageId
 
 No input, returns an output u8 storageId.
@@ -301,6 +326,10 @@ No input, returns an output u8 bool.
 #### PopExtraStorage
 
 No input, returns an output [\#IStorage](#IStorage "wikilink").
+
+#### GetPopExtraStorageEvent
+
+No input, returns an output handle.
 
 #### UnpopInData
 
@@ -562,8 +591,8 @@ Takes an input copy-handle and an input u64, returns an
 | 102 | [\#PushExtraStorage](#PushExtraStorage "wikilink")                                                   |       |
 | 103 | [\#PushInteractiveInData](#PushInteractiveInData "wikilink")                                         |       |
 | 104 | [\#PopInteractiveOutData](#PopInteractiveOutData "wikilink")                                         |       |
-| 105 | GetPopOutDataEvent                                                                                   |       |
-| 106 | GetPopInteractiveOutDataEvent                                                                        |       |
+| 105 | \[\[\#GetPopOutDataEvent\]                                                                           |       |
+| 106 | [\#GetPopInteractiveOutDataEvent](#GetPopInteractiveOutDataEvent "wikilink")                         |       |
 | 110 | [\#NeedsToExitProcess](#NeedsToExitProcess "wikilink")                                               |       |
 | 120 | GetLibraryAppletInfo                                                                                 |       |
 | 150 | RequestForAppletToGetForeground                                                                      |       |
@@ -617,6 +646,14 @@ Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 No input, returns an output [\#IStorage](#IStorage "wikilink").
 
+#### GetPopOutDataEvent
+
+No input, returns an output handle.
+
+#### GetPopInteractiveOutDataEvent
+
+No input, returns an output handle.
+
 #### NeedsToExitProcess
 
 No input, returns an output u8
@@ -624,38 +661,38 @@ bool.
 
 ## ICommonStateGetter
 
-| Cmd | Name                                                                                                | Notes |
-| --- | --------------------------------------------------------------------------------------------------- | ----- |
-| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                      |       |
-| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                      |       |
-| 2   | GetThisAppletKind                                                                                   |       |
-| 3   | AllowToEnterSleep                                                                                   |       |
-| 4   | DisallowToEnterSleep                                                                                |       |
-| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                  |       |
-| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                              |       |
-| 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                    |       |
-| 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                            |       |
-| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                          |       |
-| 10  | RequestToAcquireSleepLock                                                                           |       |
-| 11  | ReleaseSleepLock                                                                                    |       |
-| 12  | ReleaseSleepLockTransiently                                                                         |       |
-| 13  | GetAcquiredSleepLockEvent                                                                           |       |
-| 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                          |       |
-| 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                    |       |
-| 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                         |       |
-| 40  | \[2.0.0+\] GetCradleFwVersion                                                                       |       |
-| 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                         |       |
-| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                       |       |
-| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                                                                 |       |
-| 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink") |       |
-| 60  | \[3.0.0+\] GetDefaultDisplayResolution                                                              |       |
-| 61  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent                                                   |       |
-| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                               |       |
-| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                    |       |
-| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                              |       |
-| 65  | \[6.0.0+\] GetApplicationIdByContentActionName                                                      |       |
-| 66  | \[6.0.0+\] SetCpuAndGpuBoostMode                                                                    |       |
-| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                     |       |
+| Cmd | Name                                                                                                      | Notes |
+| --- | --------------------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                            |       |
+| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                            |       |
+| 2   | GetThisAppletKind                                                                                         |       |
+| 3   | AllowToEnterSleep                                                                                         |       |
+| 4   | DisallowToEnterSleep                                                                                      |       |
+| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                        |       |
+| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                                    |       |
+| 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                          |       |
+| 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                                  |       |
+| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                                |       |
+| 10  | RequestToAcquireSleepLock                                                                                 |       |
+| 11  | ReleaseSleepLock                                                                                          |       |
+| 12  | ReleaseSleepLockTransiently                                                                               |       |
+| 13  | [\#GetAcquiredSleepLockEvent](#GetAcquiredSleepLockEvent "wikilink")                                      |       |
+| 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                                |       |
+| 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                          |       |
+| 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                               |       |
+| 40  | \[2.0.0+\] GetCradleFwVersion                                                                             |       |
+| 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                               |       |
+| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                             |       |
+| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                                                                       |       |
+| 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")       |       |
+| 60  | \[3.0.0+\] GetDefaultDisplayResolution                                                                    |       |
+| 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink") |       |
+| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                                     |       |
+| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                          |       |
+| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                    |       |
+| 65  | \[6.0.0+\] GetApplicationIdByContentActionName                                                            |       |
+| 66  | \[6.0.0+\] SetCpuAndGpuBoostMode                                                                          |       |
+| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                           |       |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -701,6 +738,10 @@ No input. Returns an output u8:
   - 1: In focus.
   - 2/3: Out of focus(running in "background").
 
+### GetAcquiredSleepLockEvent
+
+No input, returns an output handle.
+
 ### PushToGeneralChannel
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
@@ -735,8 +776,12 @@ When this button is pressed, the console resets the vrMode to false.
 
 ### IsInControllerFirmwareUpdateSection
 
-No input, returns an output u8
-bool.
+No input, returns an output u8 bool.
+
+### GetDefaultDisplayResolutionChangeEvent
+
+No input, returns an output
+handle.
 
 ## ISelfController
 
@@ -894,40 +939,53 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for
 saving/restoring state for LibraryApplet launching, with
 SetExpectedMasterVolume being used with new state prior to launching a
 LibraryApplet. With official sw these applet funcs are used directly in
-the main-codebin.
+the
+main-codebin.
 
 ## IDisplayController
 
-| Cmd | Name                                                 |
-| --- | ---------------------------------------------------- |
-| 0   | GetLastForegroundCaptureImage                        |
-| 1   | UpdateLastForegroundCaptureImage                     |
-| 2   | GetLastApplicationCaptureImage                       |
-| 3   | GetCallerAppletCaptureImage                          |
-| 4   | UpdateCallerAppletCaptureImage                       |
-| 5   | GetLastForegroundCaptureImageEx                      |
-| 6   | GetLastApplicationCaptureImageEx                     |
-| 7   | GetCallerAppletCaptureImageEx                        |
-| 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                  |
-| 9   | \[5.0.0+\] CopyBetweenCaptureBuffers                 |
-| 10  | AcquireLastApplicationCaptureBuffer                  |
-| 11  | ReleaseLastApplicationCaptureBuffer                  |
-| 12  | AcquireLastForegroundCaptureBuffer                   |
-| 13  | ReleaseLastForegroundCaptureBuffer                   |
-| 14  | AcquireCallerAppletCaptureBuffer                     |
-| 15  | ReleaseCallerAppletCaptureBuffer                     |
-| 16  | AcquireLastApplicationCaptureBufferEx                |
-| 17  | AcquireLastForegroundCaptureBufferEx                 |
-| 18  | AcquireCallerAppletCaptureBufferEx                   |
-| 20  | \[2.0.0+\] ClearCaptureBuffer                        |
-| 21  | \[2.0.0+\] ClearAppletTransitionBuffer               |
-| 22  | \[4.0.0+\] AcquireLastApplicationCaptureSharedBuffer |
-| 23  | \[4.0.0+\] ReleaseLastApplicationCaptureSharedBuffer |
-| 24  | \[4.0.0+\] AcquireLastForegroundCaptureSharedBuffer  |
-| 25  | \[4.0.0+\] ReleaseLastForegroundCaptureSharedBuffer  |
-| 26  | \[4.0.0+\] AcquireCallerAppletCaptureSharedBuffer    |
-| 27  | \[4.0.0+\] ReleaseCallerAppletCaptureSharedBuffer    |
-| 28  | \[6.0.0+\] TakeScreenShotOfOwnLayerEx                |
+| Cmd | Name                                                                                     |
+| --- | ---------------------------------------------------------------------------------------- |
+| 0   | GetLastForegroundCaptureImage                                                            |
+| 1   | UpdateLastForegroundCaptureImage                                                         |
+| 2   | GetLastApplicationCaptureImage                                                           |
+| 3   | GetCallerAppletCaptureImage                                                              |
+| 4   | UpdateCallerAppletCaptureImage                                                           |
+| 5   | GetLastForegroundCaptureImageEx                                                          |
+| 6   | GetLastApplicationCaptureImageEx                                                         |
+| 7   | GetCallerAppletCaptureImageEx                                                            |
+| 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                                                      |
+| 9   | \[5.0.0+\] CopyBetweenCaptureBuffers                                                     |
+| 10  | [\#AcquireLastApplicationCaptureBuffer](#AcquireLastApplicationCaptureBuffer "wikilink") |
+| 11  | ReleaseLastApplicationCaptureBuffer                                                      |
+| 12  | [\#AcquireLastForegroundCaptureBuffer](#AcquireLastForegroundCaptureBuffer "wikilink")   |
+| 13  | ReleaseLastForegroundCaptureBuffer                                                       |
+| 14  | [\#AcquireCallerAppletCaptureBuffer](#AcquireCallerAppletCaptureBuffer "wikilink")       |
+| 15  | ReleaseCallerAppletCaptureBuffer                                                         |
+| 16  | AcquireLastApplicationCaptureBufferEx                                                    |
+| 17  | AcquireLastForegroundCaptureBufferEx                                                     |
+| 18  | AcquireCallerAppletCaptureBufferEx                                                       |
+| 20  | \[2.0.0+\] ClearCaptureBuffer                                                            |
+| 21  | \[2.0.0+\] ClearAppletTransitionBuffer                                                   |
+| 22  | \[4.0.0+\] AcquireLastApplicationCaptureSharedBuffer                                     |
+| 23  | \[4.0.0+\] ReleaseLastApplicationCaptureSharedBuffer                                     |
+| 24  | \[4.0.0+\] AcquireLastForegroundCaptureSharedBuffer                                      |
+| 25  | \[4.0.0+\] ReleaseLastForegroundCaptureSharedBuffer                                      |
+| 26  | \[4.0.0+\] AcquireCallerAppletCaptureSharedBuffer                                        |
+| 27  | \[4.0.0+\] ReleaseCallerAppletCaptureSharedBuffer                                        |
+| 28  | \[6.0.0+\] TakeScreenShotOfOwnLayerEx                                                    |
+
+### AcquireLastApplicationCaptureBuffer
+
+No input, returns an output handle.
+
+### AcquireLastForegroundCaptureBuffer
+
+No input, returns an output handle.
+
+### AcquireCallerAppletCaptureBuffer
+
+No input, returns an output handle.
 
 ## ISystemAppletControllerForDebug
 

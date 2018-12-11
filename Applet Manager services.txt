@@ -85,7 +85,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 20 || [[#PopFromGeneralChannel]] || 
 |-
-| 21 || GetPopFromGeneralChannelEvent ||
+| 21 || [[#GetPopFromGeneralChannelEvent]] ||
 |-
 | 30 || [[#GetHomeButtonWriterLockAccessor]] || 
 |-
@@ -96,6 +96,9 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 
 ==== PopFromGeneralChannel ====
 No input, returns an output [[#IStorage]].
+
+==== GetPopFromGeneralChannelEvent ====
+No input, returns an output handle.
 
 ==== GetHomeButtonWriterLockAccessor ====
 No input, returns an output [[#ILockAccessor]].
@@ -112,8 +115,11 @@ Takes an input u32, returns an output [[#ILockAccessor]].
 |-
 | 2 || Unlock
 |-
-| 3 || GetEvent
+| 3 || [[#GetEvent]]
 |}
+
+===== GetEvent =====
+No input, returns an output handle.
 
 === IGlobalStateController ===
 {| class="wikitable" border="1"
@@ -177,7 +183,7 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetAppletStateChangedEvent ||
+| 0 || [[#GetAppletStateChangedEvent]] ||
 |-
 | 1 || [[#IsCompleted]] ||
 |-
@@ -218,6 +224,9 @@ No input, returns an [[#IApplicationAccessor]].
 | 150 || [6.0.0+] ReportApplicationExitTimeout || 
 |}
 
+===== GetAppletStateChangedEvent =====
+No input, returns an output handle.
+
 ===== IsCompleted =====
 No input, returns an output u8 bool.
 
@@ -232,7 +241,7 @@ Takes an input u32 and an input [[#IStorage]], no output.
 |-
 ! Cmd || Name
 |-
-| 0 || GetAppletStateChangedEvent
+| 0 || [[#GetAppletStateChangedEvent]]
 |-
 | 1 || [[#IsCompleted_2|#IsCompleted]]
 |-
@@ -244,6 +253,9 @@ Takes an input u32 and an input [[#IStorage]], no output.
 |-
 | 30 || GetResult
 |}
+
+====== GetAppletStateChangedEvent ======
+No input, returns an output handle.
 
 ====== IsCompleted ======
 No input, returns an output u8 bool.
@@ -285,9 +297,9 @@ No input, returns an output u8 bool.
 |-
 | 3 || [[#PushInteractiveOutData]] || 
 |-
-| 5 || GetPopInDataEvent ||
+| 5 || [[#GetPopInDataEvent]] ||
 |-
-| 6 || GetPopInteractiveInDataEvent ||
+| 6 || [[#GetPopInteractiveInDataEvent]] ||
 |-
 | 10 || [[#ExitProcessAndReturn]] ||
 |-
@@ -311,7 +323,7 @@ No input, returns an output u8 bool.
 |-
 | 20 || [[#PopExtraStorage]] || 
 |-
-| 25 || GetPopExtraStorageEvent ||
+| 25 || [[#GetPopExtraStorageEvent]] ||
 |-
 | 30 || [[#UnpopInData]] || 
 |-
@@ -350,6 +362,12 @@ No input, returns an output [[#IStorage]].
 ==== PushInteractiveOutData ====
 Takes an input [[#IStorage]], no output.
 
+==== GetPopInDataEvent ====
+No input, returns an output handle.
+
+==== GetPopInteractiveInDataEvent ====
+No input, returns an output handle.
+
 ==== GetMainAppletStorageId ====
 No input, returns an output u8 storageId.
 
@@ -366,6 +384,9 @@ No input, returns an output u8 bool.
 
 ==== PopExtraStorage ====
 No input, returns an output [[#IStorage]].
+
+==== GetPopExtraStorageEvent ====
+No input, returns an output handle.
 
 ==== UnpopInData ====
 Takes an input [[#IStorage]], no output.
@@ -669,9 +690,9 @@ Takes an input copy-handle and an input u64, returns an [[#IStorage]].
 |-
 | 104 || [[#PopInteractiveOutData]] || 
 |-
-| 105 || GetPopOutDataEvent ||
+| 105 || [[#GetPopOutDataEvent] ||
 |-
-| 106 || GetPopInteractiveOutDataEvent ||
+| 106 || [[#GetPopInteractiveOutDataEvent]] ||
 |-
 | 110 || [[#NeedsToExitProcess]] ||
 |-
@@ -718,6 +739,12 @@ Takes an input [[#IStorage]], no output.
 ==== PopInteractiveOutData ====
 No input, returns an output [[#IStorage]].
 
+==== GetPopOutDataEvent ====
+No input, returns an output handle.
+
+==== GetPopInteractiveOutDataEvent ====
+No input, returns an output handle.
+
 ==== NeedsToExitProcess ====
 No input, returns an output u8 bool.
 
@@ -752,7 +779,7 @@ No input, returns an output u8 bool.
 |-
 | 12 || ReleaseSleepLockTransiently ||
 |-
-| 13 || GetAcquiredSleepLockEvent ||
+| 13 || [[#GetAcquiredSleepLockEvent]] ||
 |-
 | 20 || [[#PushToGeneralChannel]] || 
 |-
@@ -772,7 +799,7 @@ No input, returns an output u8 bool.
 |-
 | 60 || [3.0.0+] GetDefaultDisplayResolution ||
 |-
-| 61 || [3.0.0+] GetDefaultDisplayResolutionChangeEvent ||
+| 61 || [3.0.0+] [[#GetDefaultDisplayResolutionChangeEvent]] ||
 |-
 | 62 || [4.0.0+] GetHdcpAuthenticationState || 
 |-
@@ -813,6 +840,9 @@ No input. Returns an output u8:
 * 1: In focus.
 * 2/3: Out of focus(running in "background").
 
+=== GetAcquiredSleepLockEvent ===
+No input, returns an output handle.
+
 === PushToGeneralChannel ===
 Takes an input [[#IStorage]], no output.
 
@@ -834,6 +864,9 @@ When the VrMode is set to true, the console shows a screen rendered like vr aski
 
 === IsInControllerFirmwareUpdateSection ===
 No input, returns an output u8 bool.
+
+=== GetDefaultDisplayResolutionChangeEvent ===
+No input, returns an output handle.
 
 == ISelfController ==
 {| class="wikitable" border="1"
@@ -1038,15 +1071,15 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 |-
 | 9 || [5.0.0+] CopyBetweenCaptureBuffers
 |-
-| 10 || AcquireLastApplicationCaptureBuffer
+| 10 || [[#AcquireLastApplicationCaptureBuffer]]
 |-
 | 11 || ReleaseLastApplicationCaptureBuffer
 |-
-| 12 || AcquireLastForegroundCaptureBuffer
+| 12 || [[#AcquireLastForegroundCaptureBuffer]]
 |-
 | 13 || ReleaseLastForegroundCaptureBuffer
 |-
-| 14 || AcquireCallerAppletCaptureBuffer
+| 14 || [[#AcquireCallerAppletCaptureBuffer]]
 |-
 | 15 || ReleaseCallerAppletCaptureBuffer
 |-
@@ -1074,6 +1107,15 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 |-
 | 28 || [6.0.0+] TakeScreenShotOfOwnLayerEx
 |}
+
+=== AcquireLastApplicationCaptureBuffer ===
+No input, returns an output handle.
+
+=== AcquireLastForegroundCaptureBuffer ===
+No input, returns an output handle.
+
+=== AcquireCallerAppletCaptureBuffer ===
+No input, returns an output handle.
 
 == ISystemAppletControllerForDebug ==
 {| class="wikitable" border="1"
