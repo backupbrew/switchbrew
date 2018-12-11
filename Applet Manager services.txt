@@ -732,7 +732,7 @@ No input, returns an output u8 bool.
 |-
 | 20 || [[#PushToGeneralChannel]] || 
 |-
-| 30 || GetHomeButtonReaderLockAccessor || Returns an [[#ILockAccessor]].
+| 30 || [[#GetHomeButtonReaderLockAccessor]] || 
 |-
 | 31 || [2.0.0+] [[#GetReaderLockAccessorEx]] || 
 |-
@@ -791,6 +791,9 @@ No input. Returns an output u8:
 
 === PushToGeneralChannel ===
 Takes an input [[#IStorage]], no output.
+
+=== GetHomeButtonReaderLockAccessor ===
+No input, returns an output [[#ILockAccessor]].
 
 === GetReaderLockAccessorEx ===
 Takes an input u32, returns an output [[#ILockAccessor]].
