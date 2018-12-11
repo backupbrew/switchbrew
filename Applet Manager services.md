@@ -191,13 +191,8 @@ No input, returns an
 | 140 | \[6.0.0+\] GetDesirableUids                                            |       |
 | 150 | \[6.0.0+\] ReportApplicationExitTimeout                                |       |
 
-##### GetAppletStateChangedEvent
-
-No input, returns an output handle.
-
-##### IsCompleted
-
-No input, returns an output u8 bool.
+Commands \<=30 are inherited from
+[\#IAppletAccessor](#IAppletAccessor "wikilink").
 
 ##### GetCurrentLibraryApplet
 

@@ -224,11 +224,7 @@ No input, returns an [[#IApplicationAccessor]].
 | 150 || [6.0.0+] ReportApplicationExitTimeout || 
 |}
 
-===== GetAppletStateChangedEvent =====
-No input, returns an output handle.
-
-===== IsCompleted =====
-No input, returns an output u8 bool.
+Commands <=30 are inherited from [[#IAppletAccessor]].
 
 ===== GetCurrentLibraryApplet =====
 No input, returns an output [[#IAppletAccessor]].
