@@ -556,7 +556,7 @@ No input, returns an output u64.
 |-
 | 2 || [[#AreAnyLibraryAppletsLeft]] ||
 |-
-| 10 || CreateStorage || Returns an [[#IStorage]].
+| 10 || [[#CreateStorage]] || Returns an [[#IStorage]].
 |-
 | 11 || CreateTransferMemoryStorage || Returns an [[#IStorage]].
 |-
@@ -571,6 +571,9 @@ No input/output.
 
 === AreAnyLibraryAppletsLeft ===
 No input, returns an output u8 bool.
+
+=== CreateStorage ===
+Takes an input u64 for the storage size, returns an [[#IStorage]].
 
 === ILibraryAppletAccessor ===
 {| class="wikitable" border="1"

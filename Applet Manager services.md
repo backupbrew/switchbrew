@@ -424,7 +424,7 @@ u64.
 | 0   | [\#CreateLibraryApplet](#CreateLibraryApplet "wikilink")               |                                                |
 | 1   | [\#TerminateAllLibraryApplets](#TerminateAllLibraryApplets "wikilink") |                                                |
 | 2   | [\#AreAnyLibraryAppletsLeft](#AreAnyLibraryAppletsLeft "wikilink")     |                                                |
-| 10  | CreateStorage                                                          | Returns an [\#IStorage](#IStorage "wikilink"). |
+| 10  | [\#CreateStorage](#CreateStorage "wikilink")                           | Returns an [\#IStorage](#IStorage "wikilink"). |
 | 11  | CreateTransferMemoryStorage                                            | Returns an [\#IStorage](#IStorage "wikilink"). |
 | 12  | \[2.0.0+\] CreateHandleStorage                                         | Returns an [\#IStorage](#IStorage "wikilink"). |
 
@@ -440,8 +440,12 @@ No input/output.
 
 ### AreAnyLibraryAppletsLeft
 
-No input, returns an output u8
-bool.
+No input, returns an output u8 bool.
+
+### CreateStorage
+
+Takes an input u64 for the storage size, returns an
+[\#IStorage](#IStorage "wikilink").
 
 ### ILibraryAppletAccessor
 
