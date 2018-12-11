@@ -439,14 +439,14 @@ u64.
 
 ## ILibraryAppletCreator
 
-| Cmd | Name                                                                     | Notes                                          |
-| --- | ------------------------------------------------------------------------ | ---------------------------------------------- |
-| 0   | [\#CreateLibraryApplet](#CreateLibraryApplet "wikilink")                 |                                                |
-| 1   | [\#TerminateAllLibraryApplets](#TerminateAllLibraryApplets "wikilink")   |                                                |
-| 2   | [\#AreAnyLibraryAppletsLeft](#AreAnyLibraryAppletsLeft "wikilink")       |                                                |
-| 10  | [\#CreateStorage](#CreateStorage "wikilink")                             |                                                |
-| 11  | [\#CreateTransferMemoryStorage](#CreateTransferMemoryStorage "wikilink") |                                                |
-| 12  | \[2.0.0+\] CreateHandleStorage                                           | Returns an [\#IStorage](#IStorage "wikilink"). |
+| Cmd | Name                                                                     | Notes |
+| --- | ------------------------------------------------------------------------ | ----- |
+| 0   | [\#CreateLibraryApplet](#CreateLibraryApplet "wikilink")                 |       |
+| 1   | [\#TerminateAllLibraryApplets](#TerminateAllLibraryApplets "wikilink")   |       |
+| 2   | [\#AreAnyLibraryAppletsLeft](#AreAnyLibraryAppletsLeft "wikilink")       |       |
+| 10  | [\#CreateStorage](#CreateStorage "wikilink")                             |       |
+| 11  | [\#CreateTransferMemoryStorage](#CreateTransferMemoryStorage "wikilink") |       |
+| 12  | \[2.0.0+\] [\#CreateHandleStorage](#CreateHandleStorage "wikilink")      |       |
 
 ### CreateLibraryApplet
 
@@ -469,11 +469,15 @@ Takes an input u64 for the storage size, returns an
 
 ### CreateTransferMemoryStorage
 
-Takes an input TransferMemory handle, an input u8 bool, and an u64 size,
-returns an [\#IStorage](#IStorage "wikilink").
+Takes an input TransferMemory copy-handle, an input u8 bool, and an u64
+size, returns an [\#IStorage](#IStorage "wikilink").
 
-The user-processes creates the TransferMemory with
-permissions=0.
+The user-process creates the TransferMemory with permissions=0.
+
+### CreateHandleStorage
+
+Takes an input copy-handle and an input u64, returns an
+[\#IStorage](#IStorage "wikilink").
 
 ### ILibraryAppletAccessor
 
