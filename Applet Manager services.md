@@ -571,7 +571,7 @@ Takes an input copy-handle and an input u64, returns an
 
 #### GetAppletStateChangedEvent
 
-No input, returns an output event handle.
+No input, returns an output event handle with autoclear=false.
 
 #### IsCompleted
 
