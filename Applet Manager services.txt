@@ -600,17 +600,17 @@ Takes an input copy-handle and an input u64, returns an [[#IStorage]].
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || GetAppletStateChangedEvent ||
+| 0 || [[#GetAppletStateChangedEvent]] ||
 |-
 | 1 || [[#IsCompleted_3|#IsCompleted]] ||
 |-
-| 10 || Start ||
+| 10 || [[#Start]] ||
 |-
-| 20 || RequestExit ||
+| 20 || [[#RequestExit]] ||
 |-
-| 25 || Terminate ||
+| 25 || [[#Terminate]] ||
 |-
-| 30 || GetResult ||
+| 30 || [[#GetResult]] ||
 |-
 | 50 || SetOutOfFocusApplicationSuspendingEnabled ||
 |-
@@ -637,8 +637,23 @@ Takes an input copy-handle and an input u64, returns an [[#IStorage]].
 | 160 || [2.0.0+] GetIndirectLayerConsumerHandle ||
 |}
 
+==== GetAppletStateChangedEvent ====
+No input, returns an output event handle.
+
 ==== IsCompleted ====
 No input, returns an output u8 bool.
+
+==== Start ====
+No input/output.
+
+==== RequestExit ====
+No input/output.
+
+==== Terminate ====
+No input/output.
+
+==== GetResult====
+No input/output.
 
 ==== NeedsToExitProcess ====
 No input, returns an output u8 bool.
