@@ -490,10 +490,10 @@ Takes an input copy-handle and an input u64, returns an
 | 25  | [\#Terminate](#Terminate "wikilink")                                                                 |                                                |
 | 30  | [\#GetResult](#GetResult "wikilink")                                                                 |                                                |
 | 50  | [\#SetOutOfFocusApplicationSuspendingEnabled](#SetOutOfFocusApplicationSuspendingEnabled "wikilink") |                                                |
-| 100 | PushInData                                                                                           | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 100 | [\#PushInData](#PushInData "wikilink")                                                               |                                                |
 | 101 | PopOutData                                                                                           | Returns an [\#IStorage](#IStorage "wikilink"). |
-| 102 | PushExtraStorage                                                                                     | Takes an [\#IStorage](#IStorage "wikilink").   |
-| 103 | PushInteractiveInData                                                                                | Takes an [\#IStorage](#IStorage "wikilink").   |
+| 102 | [\#PushExtraStorage](#PushExtraStorage "wikilink")                                                   |                                                |
+| 103 | [\#PushInteractiveInData](#PushInteractiveInData "wikilink")                                         |                                                |
 | 104 | PopInteractiveOutData                                                                                | Returns an [\#IStorage](#IStorage "wikilink"). |
 | 105 | GetPopOutDataEvent                                                                                   |                                                |
 | 106 | GetPopInteractiveOutDataEvent                                                                        |                                                |
@@ -529,6 +529,18 @@ No input/output.
 #### SetOutOfFocusApplicationSuspendingEnabled
 
 Takes an input u8 bool, no output.
+
+#### PushInData
+
+Takes an [\#IStorage](#IStorage "wikilink"), no output.
+
+#### PushExtraStorage
+
+Takes an [\#IStorage](#IStorage "wikilink"), no output.
+
+#### PushInteractiveInData
+
+Takes an [\#IStorage](#IStorage "wikilink"), no output.
 
 #### NeedsToExitProcess
 
