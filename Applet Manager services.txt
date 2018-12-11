@@ -89,10 +89,13 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 30 || GetHomeButtonWriterLockAccessor || Returns an [[#ILockAccessor]].
 |-
-| 31 || [2.0.0+] GetWriterLockAccessorEx || Returns an [[#ILockAccessor]].
+| 31 || [2.0.0+] [[#GetWriterLockAccessorEx]] || 
 |-
 | 100 || [6.0.0+] PopRequestLaunchApplicationForDebug ||
 |}
+
+==== GetWriterLockAccessorEx ====
+Takes an input u32, returns an output [[#ILockAccessor]].
 
 ==== ILockAccessor ====
 {| class="wikitable" border="1"
@@ -437,7 +440,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 ! Cmd || Name || Notes
 |-
-| 1 || PopLaunchParameter || Returns an [[#IStorage]].
+| 1 || [[#PopLaunchParameter]] || 
 |-
 | 10 || [[#CreateApplicationAndPushAndRequestToStart]] || 
 |-
@@ -526,6 +529,9 @@ The BOTW game uses this GamePlayRecording functionality from the main-nso "nnini
 * Closes the TransferMemory handle, + TransferMemory cleanup.
 * Uses [[#SetGamePlayRecordingState]] with value 0x1.
 This GamePlayRecording functionality presumably enables the video-recording usable starting with [[4.0.0]].
+
+==== PopLaunchParameter ====
+Takes an input u32, returns an output [[#IStorage]].
 
 ==== CreateApplicationAndPushAndRequestToStart ====
 Takes an input u64 titleID and an input [[#IStorage]], no output.
@@ -728,7 +734,7 @@ No input, returns an output u8 bool.
 |-
 | 30 || GetHomeButtonReaderLockAccessor || Returns an [[#ILockAccessor]].
 |-
-| 31 || [2.0.0+] GetReaderLockAccessorEx || Returns an [[#ILockAccessor]].
+| 31 || [2.0.0+] [[#GetReaderLockAccessorEx]] || 
 |-
 | 40 || [2.0.0+] GetCradleFwVersion ||
 |-
@@ -785,6 +791,9 @@ No input. Returns an output u8:
 
 === PushToGeneralChannel ===
 Takes an input [[#IStorage]], no output.
+
+=== GetReaderLockAccessorEx ===
+Takes an input u32, returns an output [[#ILockAccessor]].
 
 === IsVrModeEnabled ===
 No input, returns an output u8 bool.
@@ -934,7 +943,7 @@ No input, returns an output u8 bool.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || CreateWindow || Returns an IWindow object.
+| 0 || [[#CreateWindow]] || 
 |-
 | 1 || [[#GetAppletResourceUserId]] ||
 |-
@@ -946,6 +955,9 @@ No input, returns an output u8 bool.
 |-
 | 12 || RejectToChangeIntoBackground ||
 |}
+
+=== CreateWindow ===
+Takes an input u32, returns an output [[#IWindow]].
 
 === GetAppletResourceUserId ===
 Returns an output u64: [[#AppletResourceUserId]].
