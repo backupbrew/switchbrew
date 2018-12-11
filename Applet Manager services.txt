@@ -239,22 +239,34 @@ Takes an input u32 and an input [[#IStorage]], no output.
 |-
 | 0 || [[#GetAppletStateChangedEvent]]
 |-
-| 1 || [[#IsCompleted_2|#IsCompleted]]
+| 1 || [[#IsCompleted]]
 |-
-| 10 || Start
+| 10 || [[#Start]]
 |-
-| 20 || RequestExit
+| 20 || [[#RequestExit]]
 |-
-| 25 || Terminate
+| 25 || [[#Terminate]]
 |-
-| 30 || GetResult
+| 30 || [[#GetResult]]
 |}
 
-====== GetAppletStateChangedEvent ======
-No input, returns an output handle.
+==== GetAppletStateChangedEvent ====
+No input, returns an output event handle with autoclear=false.
 
-====== IsCompleted ======
+==== IsCompleted ====
 No input, returns an output u8 bool.
+
+==== Start ====
+No input/output.
+
+==== RequestExit ====
+No input/output.
+
+==== Terminate ====
+No input/output.
+
+==== GetResult====
+No input/output.
 
 == ILibraryAppletProxy ==
 {| class="wikitable" border="1"
@@ -664,7 +676,7 @@ Takes an input copy-handle and an input u64, returns an [[#IStorage]].
 |-
 | 0 || [[#GetAppletStateChangedEvent]] ||
 |-
-| 1 || [[#IsCompleted_3|#IsCompleted]] ||
+| 1 || [[#IsCompleted]] ||
 |-
 | 10 || [[#Start]] ||
 |-
@@ -686,7 +698,7 @@ Takes an input copy-handle and an input u64, returns an [[#IStorage]].
 |-
 | 104 || [[#PopInteractiveOutData]] || 
 |-
-| 105 || [[#GetPopOutDataEvent] ||
+| 105 || [[#GetPopOutDataEvent]] ||
 |-
 | 106 || [[#GetPopInteractiveOutDataEvent]] ||
 |-
@@ -699,23 +711,7 @@ Takes an input copy-handle and an input u64, returns an [[#IStorage]].
 | 160 || [2.0.0+] GetIndirectLayerConsumerHandle ||
 |}
 
-==== GetAppletStateChangedEvent ====
-No input, returns an output event handle with autoclear=false.
-
-==== IsCompleted ====
-No input, returns an output u8 bool.
-
-==== Start ====
-No input/output.
-
-==== RequestExit ====
-No input/output.
-
-==== Terminate ====
-No input/output.
-
-==== GetResult====
-No input/output.
+Commands <=30 are inherited from [[#IAppletAccessor]].
 
 ==== SetOutOfFocusApplicationSuspendingEnabled ====
 Takes an input u8 bool, no output.

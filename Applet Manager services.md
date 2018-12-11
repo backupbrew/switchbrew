@@ -209,20 +209,36 @@ output.
 | Cmd | Name                                                                   |
 | --- | ---------------------------------------------------------------------- |
 | 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink") |
-| 1   | [\#IsCompleted](#IsCompleted_2 "wikilink")                             |
-| 10  | Start                                                                  |
-| 20  | RequestExit                                                            |
-| 25  | Terminate                                                              |
-| 30  | GetResult                                                              |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")                               |
+| 10  | [\#Start](#Start "wikilink")                                           |
+| 20  | [\#RequestExit](#RequestExit "wikilink")                               |
+| 25  | [\#Terminate](#Terminate "wikilink")                                   |
+| 30  | [\#GetResult](#GetResult "wikilink")                                   |
 
-###### GetAppletStateChangedEvent
+#### GetAppletStateChangedEvent
 
-No input, returns an output handle.
+No input, returns an output event handle with autoclear=false.
 
-###### IsCompleted
+#### IsCompleted
 
-No input, returns an output u8
-bool.
+No input, returns an output u8 bool.
+
+#### Start
+
+No input/output.
+
+#### RequestExit
+
+No input/output.
+
+#### Terminate
+
+No input/output.
+
+#### GetResult
+
+No
+input/output.
 
 ## ILibraryAppletProxy
 
@@ -575,7 +591,7 @@ Takes an input copy-handle and an input u64, returns an
 | Cmd | Name                                                                                                 | Notes |
 | --- | ---------------------------------------------------------------------------------------------------- | ----- |
 | 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink")                               |       |
-| 1   | [\#IsCompleted](#IsCompleted_3 "wikilink")                                                           |       |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")                                                             |       |
 | 10  | [\#Start](#Start "wikilink")                                                                         |       |
 | 20  | [\#RequestExit](#RequestExit "wikilink")                                                             |       |
 | 25  | [\#Terminate](#Terminate "wikilink")                                                                 |       |
@@ -586,36 +602,15 @@ Takes an input copy-handle and an input u64, returns an
 | 102 | [\#PushExtraStorage](#PushExtraStorage "wikilink")                                                   |       |
 | 103 | [\#PushInteractiveInData](#PushInteractiveInData "wikilink")                                         |       |
 | 104 | [\#PopInteractiveOutData](#PopInteractiveOutData "wikilink")                                         |       |
-| 105 | \[\[\#GetPopOutDataEvent\]                                                                           |       |
+| 105 | [\#GetPopOutDataEvent](#GetPopOutDataEvent "wikilink")                                               |       |
 | 106 | [\#GetPopInteractiveOutDataEvent](#GetPopInteractiveOutDataEvent "wikilink")                         |       |
 | 110 | [\#NeedsToExitProcess](#NeedsToExitProcess "wikilink")                                               |       |
 | 120 | GetLibraryAppletInfo                                                                                 |       |
 | 150 | RequestForAppletToGetForeground                                                                      |       |
 | 160 | \[2.0.0+\] GetIndirectLayerConsumerHandle                                                            |       |
 
-#### GetAppletStateChangedEvent
-
-No input, returns an output event handle with autoclear=false.
-
-#### IsCompleted
-
-No input, returns an output u8 bool.
-
-#### Start
-
-No input/output.
-
-#### RequestExit
-
-No input/output.
-
-#### Terminate
-
-No input/output.
-
-#### GetResult
-
-No input/output.
+Commands \<=30 are inherited from
+[\#IAppletAccessor](#IAppletAccessor "wikilink").
 
 #### SetOutOfFocusApplicationSuspendingEnabled
 
