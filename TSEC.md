@@ -657,13 +657,13 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 <code>0x0010: cmov (fuc5 opcode 0x84)</code><br />
 <code>0x0020: xdst (with cxset) or cxsin (fuc5 opcode 0x88)</code><br />
 <code>0x0030: xdld (with cxset) or cxsout (fuc5 opcode 0x8C)</code><br />
-<code>0x0040: csrng (fuc5 opcode 0x90)</code><br />
+<code>0x0040: crng (fuc5 opcode 0x90)</code><br />
 <code>0x0050: cs0begin (fuc5 opcode 0x94)</code><br />
 <code>0x0060: cs0exec (fuc5 opcode 0x98)</code><br />
 <code>0x0070: cs1begin (fuc5 opcode 0x9C)</code><br />
 <code>0x0080: cs1exec (fuc5 opcode 0xA0)</code><br />
 <code>0x0090: (fuc5 opcode 0xA4)</code><br />
-<code>0x00A0: (fuc5 opcode 0xA8)</code><br />
+<code>0x00A0: cchmod (fuc5 opcode 0xA8)</code><br />
 <code>0x00B0: cxor (fuc5 opcode 0xAC)</code><br />
 <code>0x00C0: cadd (fuc5 opcode 0xB0)</code><br />
 <code>0x00D0: cand (fuc5 opcode 0xB4)</code><br />
@@ -677,7 +677,7 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 <code>0x0150: cdec (fuc5 opcode 0xD4)</code><br />
 <code>0x0160: (fuc5 opcode 0xD8)</code><br />
 <code>0x0170: csigenc (fuc5 opcode 0xDC)</code><br />
-<code>0x0180: cchmod (fuc5 opcode 0xE0)</code></p></td>
+<code>0x0180: csigclr (fuc5 opcode 0xE0)</code></p></td>
 </tr>
 <tr class="even">
 <td><p>31</p></td>
@@ -1372,9 +1372,9 @@ co-processor and loading, decrypting, authenticating and executing
 `// Decrypt and load Keygen stage`  
 `load_keygen(key_buf, key_version, is_blob_dec);`  
   
-`// fuc5 crypt cchmod instruction`  
-`// Resets the ACL bits`  
-`cchmod();`  
+`// fuc5 crypt csigclr instruction`  
+`// Clears the cauth signature`  
+`csigclr();`  
   
 `// Clear all crypto registers`  
 `cxor(c0, c0);`  
@@ -1957,9 +1957,9 @@ execution returns to this stage which then parses and executes
 `cxor(c6, c6);`  
 `cxor(c7, c7);`  
   
-`// fuc5 crypt cchmod instruction`  
-`// Resets the ACL bits`  
-`cchmod();`  
+`// fuc5 crypt csigclr instruction`  
+`// Clears the cauth signature`  
+`csigclr();`  
   
 `// Jump to Payload`  
 `exec_payload();`  
@@ -2061,9 +2061,66 @@ stages.
 
 ## Notes
 
-[mwk](https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki) shared
-additional info learned from RE of falcon processors over the years,
-which hasn't made it into envytools documentation yet:
+Part of the information here (which hasn't made it into envytools
+documentation yet) was shared by
+[mwk](https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki) from reverse
+engineering falcon processors over the years.
+
+### Register ACLs
+
+Falcon tracks permission metadata about each crypto reg. Permissions
+include read/write ability per execution mode, as well as ability to use
+the reg for encrypt/decrypt, among other permissions. Permissions are
+propagated when registers are referenced by instructions (e.g. moving a
+value from read-protected $cX to $cY will result in $cY also being
+read-protected).
+
+### Authenticated Mode Entry/Exit
+
+Entry to Authenticated Mode always sets $pc to the address supplied in
+$cauth (ie the base of the signature-checked region). This takes effect
+when trying to branch to any address within the range covered by $cauth.
+Entry to Authenticated Mode (also called "Secure Mode") computes a MAC
+over the $cauth region and compares it to $c6 in order to perform the
+signature check.
+
+Exit from Authenticated Mode must poke a special register before leaving
+authenticated code pages and a failure to do this would result in the
+Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map
+this register in their engine-specific subset of registers. In TSEC's
+case, the register is
+[TSEC\_SCP\_CTL\_MODE](#TSEC_SCP_CTL_MODE "wikilink").
+
+### csigclr
+
+`00000000: f5 3c 00 e0 csigclr`
+
+This instruction takes no operands and appears to clear the saved cauth
+signature used by the csigenc instruction.
+
+### cchmod
+
+`00000000: f5 3c XY a8 cchmod $cY 0X` or `00000000: f5 3c XY a9 cchmod
+$cY 1X`
+
+This instruction takes a crypto register and a 5 bit immediate value. It
+appears to set the [crypto registers' ACL](#Register_ACLs "wikilink")
+bits as follows:
+
+| Bits | Description                                       |
+| ---- | ------------------------------------------------- |
+| 0    | Allow register to be used as key in NS or LS mode |
+| 1    | Allow register to be used as key in HS mode       |
+| 2    | Set register as readable in NS or LS mode         |
+| 3    | Set register as readable in HS mode               |
+| 4    | Set register as writable in NS or LS mode         |
+
+### crng
+
+`00000000: f5 3c 0X 90 crng $cX`
+
+This instruction takes no operands and appears to initialize a crypto
+register with random data.
 
 ### cxset
 
@@ -2097,41 +2154,6 @@ against the cxset "count" argument: `xdwait`, `xdst`, `xdld`.
 For example, if override type=0b000, then the "length" argument to
 `xdst` is instead treated as the index of the target $cX register.
 
-### Register ACLs
-
-Falcon tracks permission metadata about each crypto reg. Permissions
-include read/write ability per execution mode, as well as ability to use
-the reg for encrypt/decrypt, among other permissions. Permissions are
-propagated when registers are referenced by instructions (e.g. moving a
-value from read-protected $cX to $cY will result in $cY also being
-read-protected).
-
-### Authenticated Mode Entry/Exit
-
-Entry to Authenticated Mode always sets $pc to the address supplied in
-$cauth (ie the base of the signature-checked region). This takes effect
-when trying to branch to any address within the range covered by $cauth.
-Entry to Authenticated Mode (also called "Secure Mode") computes a MAC
-over the $cauth region and compares it to $c6 in order to perform the
-signature check.
-
-Exit from Authenticated Mode must poke a special register before leaving
-authenticated code pages and a failure to do this would result in the
-Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map
-this register in their engine-specific subset of registers. In TSEC's
-case, the register is
-[TSEC\_SCP\_CTL\_MODE](#TSEC_SCP_CTL_MODE "wikilink").
-
-### Unknown Instructions
-
-`00000000: f5 3c 00 e0 cchmod` - resets all crypto register's
-permissions.
-
-`00000000: f5 3c XY a8 c_unk $cY X` - unknown crypto operation.
-
-`00000000: f5 3c 0X 90 crng $cX` - seems to initialize a crypto register
-with random data.
-
 ### Secrets
 
 Falcon's Authenticated Mode has access to 64 128-bit keys which are
@@ -2139,18 +2161,19 @@ burned at factory. These keys can be loaded by using the $csecret
 instruction which takes the target crypto register and the key index as
 arguments.
 
-| Index | Notes                                                                                                                                     |
-| ----- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x00  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. Debug mode only. |
-| 0x01  | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                              |
-| 0x03  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                          |
-| 0x04  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                          |
-| 0x05  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.                  |
-| 0x07  | Used by nvhost\_tsec firmware.                                                                                                            |
-| 0x09  | Used by nvhost\_tsec firmware.                                                                                                            |
-| 0x0B  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                          |
-| 0x0F  | Used by nvhost\_tsec firmware.                                                                                                            |
-| 0x15  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                   |
-| 0x26  | Used by [KeygenLdr](#KeygenLdr "wikilink").                                                                                               |
-| 0x3C  | Used by nvhost\_tsec firmware.                                                                                                            |
-| 0x3F  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                          |
+| Index | Notes                                                                                                                                         |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x00  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. Debug mode only.     |
+| 0x01  | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                                  |
+| 0x03  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
+| 0x04  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
+| 0x05  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.                      |
+| 0x07  | Used by \[6.0.0+\] nvhost\_tsec firmware.                                                                                                     |
+| 0x09  | Used by nvhost\_tsec firmware.                                                                                                                |
+| 0x0B  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
+| 0x0F  | Used by nvhost\_tsec firmware.                                                                                                                |
+| 0x10  | Used by \[1.0.0-5.1.0\] nvhost\_tsec firmware.                                                                                                |
+| 0x15  | Used by nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod, \[5.0.0+\] nvhost\_nvdec020\_ns and \[6.0.0+\] nvhost\_tsec firmwares. |
+| 0x26  | Used by [KeygenLdr](#KeygenLdr "wikilink").                                                                                                   |
+| 0x3C  | Used by nvhost\_tsec firmware.                                                                                                                |
+| 0x3F  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
