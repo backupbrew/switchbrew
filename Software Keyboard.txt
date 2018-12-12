@@ -1,4 +1,6 @@
-The software keyboard expects to be passed three [[AM_services#IStorage|IStorage]]s, see [[AM_services#Library_Applets]].
+The software keyboard (swkbd) expects to be passed three [[AM_services#IStorage|IStorage]]s. See also [[AM_services#Library_Applets]].
+
+The below is for normal swkbd usage. There's also InlineKeyboard, which doesn't run in the foreground and has completely different input/output [[AM_services#IStorage|IStorage]]s.
 
 == Library Applet Versions ==
 {| class="wikitable" border="1"

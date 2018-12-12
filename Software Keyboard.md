@@ -1,6 +1,10 @@
-The software keyboard expects to be passed three
-[IStorages](AM%20services#IStorage.md##IStorage "wikilink"), see
+The software keyboard (swkbd) expects to be passed three
+[IStorages](AM%20services#IStorage.md##IStorage "wikilink"). See also
 [AM\_services\#Library\_Applets](AM%20services#Library%20Applets.md##Library_Applets "wikilink").
+
+The below is for normal swkbd usage. There's also InlineKeyboard, which
+doesn't run in the foreground and has completely different input/output
+[IStorages](AM%20services#IStorage.md##IStorage "wikilink").
 
 ## Library Applet Versions
 
