@@ -298,6 +298,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | [[#FUSE_PKC_DISABLE|FUSE_PKC_DISABLE]]
 | 0x7000FA68
 |-
+| FUSE_FALCON_DEBUG_DISABLE
+| 0x7000FA7C
+|-
 | FUSE_TSENSOR_COMMON
 | 0x7000FA80
 |-
