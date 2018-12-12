@@ -5,6 +5,12 @@ The software keyboard expects to be passed three [[AM_services#IStorage|IStorage
 |-
 ! System Version || Value
 |-
+| || 0x0..0x1
+|-
+| || 0x2
+|-
+| || 0x3..4
+|-
 | [1.0.0+] || 0x5
 |-
 | [3.0.0+] (?) || 0x10006
