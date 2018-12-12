@@ -33,16 +33,16 @@ This is "nn::tma::IHtcsManager".
 
 | Cmd | Name               |
 | --- | ------------------ |
-| 0   |                    |
-| 1   |                    |
-| 2   |                    |
-| 3   |                    |
-| 4   |                    |
-| 5   |                    |
-| 6   |                    |
-| 7   |                    |
-| 8   |                    |
-| 9   |                    |
+| 0   | Socket             |
+| 1   | Close              |
+| 2   | Connect            |
+| 3   | Bind               |
+| 4   | Listen             |
+| 5   | Accept             |
+| 6   | Recv               |
+| 7   | Send               |
+| 8   | Shutdown           |
+| 9   | Fcntl              |
 | 10  | GetPeerNameAny     |
 | 11  | GetDefaultHostName |
 | 12  | CreateSocketOld    |

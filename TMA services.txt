@@ -45,25 +45,25 @@ This is "nn::tma::IHtcsManager".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || Socket
 |-
-| 1 ||
+| 1 || Close
 |-
-| 2 ||
+| 2 || Connect
 |-
-| 3 ||
+| 3 || Bind
 |-
-| 4 ||
+| 4 || Listen
 |-
-| 5 ||
+| 5 || Accept
 |-
-| 6 ||
+| 6 || Recv
 |-
-| 7 ||
+| 7 || Send
 |-
-| 8 ||
+| 8 || Shutdown
 |-
-| 9 ||
+| 9 || Fcntl
 |-
 | 10 || GetPeerNameAny
 |-
