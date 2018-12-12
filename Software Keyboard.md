@@ -4,7 +4,10 @@ The software keyboard (swkbd) expects to be passed three
 
 The below is for normal swkbd usage. There's also InlineKeyboard, which
 doesn't run in the foreground and has completely different input/output
-[IStorages](AM%20services#IStorage.md##IStorage "wikilink").
+[IStorages](AM%20services#IStorage.md##IStorage "wikilink"). It also
+doesn't seem to display on the screen (or is optional at least): the
+user-process can get the gfx data via
+[Display\_services](Display%20services.md "wikilink").
 
 ## Library Applet Versions
 
