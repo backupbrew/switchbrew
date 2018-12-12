@@ -7,7 +7,8 @@ The software keyboard expects to be passed three
 | System Version | Value   |
 | -------------- | ------- |
 | \[1.0.0+\]     | 0x5     |
-| \[?\]          | 0x30007 |
+| \[3.0.0+\] (?) | 0x10006 |
+| \[3.0.0+\]     | 0x30007 |
 | \[4.0.0+\]     | 0x40008 |
 | \[5.0.0+\]     | 0x50009 |
 
