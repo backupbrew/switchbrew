@@ -666,7 +666,7 @@ IndirectLayerConsumerHandle.
 | --- | --------------------------------------------------------------------------------------------------------- | ----- |
 | 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                            |       |
 | 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                            |       |
-| 2   | GetThisAppletKind                                                                                         |       |
+| 2   | [\#GetThisAppletKind](#GetThisAppletKind "wikilink")                                                      |       |
 | 3   | AllowToEnterSleep                                                                                         |       |
 | 4   | DisallowToEnterSleep                                                                                      |       |
 | 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                        |       |
@@ -714,6 +714,10 @@ message is available with
 
 No input. Returns an output u32. Error 0x680 indicates no message is
 available.
+
+### GetThisAppletKind
+
+No input, returns an output [\#AppletKind](#AppletKind "wikilink").
 
 ### GetOperationMode
 
@@ -1291,5 +1295,9 @@ by a number of non-AM services.
 
 This struct is 8-bytes: +0 u32 is [\#AppletId](#AppletId "wikilink"), +4
 u32 is [\#LibraryAppletMode](#LibraryAppletMode "wikilink").
+
+# AppletKind
+
+This is 8-bytes.
 
 [Category:Services](Category:Services "wikilink")

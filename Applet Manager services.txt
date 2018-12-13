@@ -755,7 +755,7 @@ Takes an input PID and an input u64 AppletResourceUserId, returns an output u64 
 |-
 | 1 || [[#ReceiveMessage]] ||
 |-
-| 2 || GetThisAppletKind ||
+| 2 || [[#GetThisAppletKind]] ||
 |-
 | 3 || AllowToEnterSleep ||
 |-
@@ -819,6 +819,9 @@ No input. Returns an output event handle. This is signalled when a message is av
 
 === ReceiveMessage ===
 No input. Returns an output u32. Error 0x680 indicates no message is available.
+
+=== GetThisAppletKind ===
+No input, returns an output [[#AppletKind]].
 
 === GetOperationMode ===
 No input. Returns an output u8 for the current [[#OperationMode]].
@@ -1554,5 +1557,8 @@ This u64 is officially called "nn::applet::AppletResourceUserId". Used by a numb
 
 = LibraryAppletInfo =
 This struct is 8-bytes: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]].
+
+= AppletKind =
+This is 8-bytes.
 
 [[Category:Services]]
