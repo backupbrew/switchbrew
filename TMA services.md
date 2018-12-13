@@ -16,7 +16,9 @@ code running on Switch. The other service ("file\_io") manages HostIO, a
 mechanism by which the Switch can read files present on the Host PC.
 When a host is connected, FS will attempt to read data via file\_io when
 @Host:/ content paths are used, or when fsp-srv-\>OpenHostFileSystem()
-is used to open an IFileSystem to the Host PC.
+is used to open an IFileSystem to the Host PC. Nintendo's implementation
+only supports Windows, and FS will explicitly check for the presence of
+a "C:/" drive to detect this.
 
 # htc
 
