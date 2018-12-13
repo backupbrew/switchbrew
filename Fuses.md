@@ -32,6 +32,11 @@ bootloaders.
 | [FUSE\_DIS\_PGM](#FUSE_DIS_PGM "wikilink")           | 0x7000F82C |
 | [FUSE\_WRITE\_ACCESS](#FUSE_WRITE_ACCESS "wikilink") | 0x7000F830 |
 | FUSE\_PWR\_GOOD\_SW                                  | 0x7000F834 |
+| FUSE\_PRIVATE\_KEY0\_NONZERO                         | 0x7000F880 |
+| FUSE\_PRIVATE\_KEY1\_NONZERO                         | 0x7000F884 |
+| FUSE\_PRIVATE\_KEY2\_NONZERO                         | 0x7000F888 |
+| FUSE\_PRIVATE\_KEY3\_NONZERO                         | 0x7000F88C |
+| FUSE\_PRIVATE\_KEY4\_NONZERO                         | 0x7000F890 |
 
 #### FUSE\_CTRL
 
@@ -83,10 +88,14 @@ driver registers.
 | Name                                                   | Address    |
 | ------------------------------------------------------ | ---------- |
 | FUSE\_PRODUCTION\_MODE                                 | 0x7000F900 |
+| FUSE\_JTAG\_SECUREID\_VALID                            | 0x7000F904 |
 | FUSE\_ODM\_LOCK                                        | 0x7000F908 |
 | [FUSE\_SKU\_INFO](#FUSE_SKU_INFO "wikilink")           | 0x7000F910 |
 | FUSE\_CPU\_SPEEDO\_0                                   | 0x7000F914 |
 | FUSE\_CPU\_IDDQ                                        | 0x7000F918 |
+| FUSE\_DAC\_CRT\_CALIB                                  | 0x7000F91C |
+| FUSE\_DAC\_HDTV\_CALIB                                 | 0x7000F920 |
+| FUSE\_DAC\_SDTV\_CALIB                                 | 0x7000F924 |
 | FUSE\_FT\_REV                                          | 0x7000F928 |
 | FUSE\_CPU\_SPEEDO\_1                                   | 0x7000F92C |
 | FUSE\_CPU\_SPEEDO\_2                                   | 0x7000F930 |
@@ -94,7 +103,14 @@ driver registers.
 | [FUSE\_SOC\_SPEEDO\_1](#FUSE_SOC_SPEEDO_1 "wikilink")  | 0x7000F938 |
 | FUSE\_SOC\_SPEEDO\_2                                   | 0x7000F93C |
 | FUSE\_SOC\_IDDQ                                        | 0x7000F940 |
+| FUSE\_RESERVED\_PRODUCTION\_WP                         | 0x7000F944 |
 | [FUSE\_FA](#FUSE_FA "wikilink")                        | 0x7000F948 |
+| FUSE\_RESERVED\_PRODUCTION                             | 0x7000F94C |
+| FUSE\_HDMI\_LANE0\_CALIB                               | 0x7000F950 |
+| FUSE\_HDMI\_LANE1\_CALIB                               | 0x7000F954 |
+| FUSE\_HDMI\_LANE2\_CALIB                               | 0x7000F958 |
+| FUSE\_HDMI\_LANE3\_CALIB                               | 0x7000F95C |
+| FUSE\_ENCRYPTION\_RATE                                 | 0x7000F960 |
 | [FUSE\_PUBLIC\_KEY0](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F964 |
 | [FUSE\_PUBLIC\_KEY1](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F968 |
 | [FUSE\_PUBLIC\_KEY2](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F96C |
@@ -105,7 +121,9 @@ driver registers.
 | [FUSE\_PUBLIC\_KEY7](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F980 |
 | FUSE\_TSENSOR\_1                                       | 0x7000F984 |
 | FUSE\_TSENSOR\_2                                       | 0x7000F988 |
+| FUSE\_VSENSOR\_CALIB                                   | 0x7000F98C |
 | FUSE\_CP\_REV                                          | 0x7000F990 |
+| FUSE\_OPT\_PFG                                         | 0x7000F994 |
 | FUSE\_TSENSOR\_0                                       | 0x7000F998 |
 | FUSE\_FIRST\_BOOTROM\_PATCH\_SIZE\_REG                 | 0x7000F99C |
 | FUSE\_SECURITY\_MODE                                   | 0x7000F9A0 |
@@ -126,8 +144,12 @@ driver registers.
 | FUSE\_RESERVED\_ODM5                                   | 0x7000F9DC |
 | [FUSE\_RESERVED\_ODM6](#FUSE_RESERVED_ODM6 "wikilink") | 0x7000F9E0 |
 | [FUSE\_RESERVED\_ODM7](#FUSE_RESERVED_ODM7 "wikilink") | 0x7000F9E4 |
+| FUSE\_OBS\_DIS                                         | 0x7000F9E8 |
+| FUSE\_NOR\_INFO                                        | 0x7000F9EC |
 | FUSE\_SKU\_USB\_CALIB                                  | 0x7000F9F0 |
 | FUSE\_SKU\_DIRECT\_CONFIG                              | 0x7000F9F4 |
+| FUSE\_KFUSE\_PRIVKEY\_CTRL                             | 0x7000F9F8 |
+| FUSE\_PACKAGE\_INFO                                    | 0x7000F9FC |
 | FUSE\_VENDOR\_CODE                                     | 0x7000FA00 |
 | FUSE\_FAB\_CODE                                        | 0x7000FA04 |
 | FUSE\_LOT\_CODE\_0                                     | 0x7000FA08 |
@@ -135,9 +157,15 @@ driver registers.
 | FUSE\_WAFER\_ID                                        | 0x7000FA10 |
 | FUSE\_X\_COORDINATE                                    | 0x7000FA14 |
 | FUSE\_Y\_COORDINATE                                    | 0x7000FA18 |
+| FUSE\_OPS\_RESERVED                                    | 0x7000FA20 |
 | FUSE\_SATA\_CALIB                                      | 0x7000FA24 |
 | FUSE\_GPU\_IDDQ                                        | 0x7000FA28 |
 | FUSE\_TSENSOR\_3                                       | 0x7000FA2C |
+| FUSE\_SKU\_BOND\_OUT\_L                                | 0x7000FA30 |
+| FUSE\_SKU\_BOND\_OUT\_H                                | 0x7000FA34 |
+| FUSE\_SKU\_BOND\_OUT\_U                                | 0x7000FA38 |
+| FUSE\_SKU\_BOND\_OUT\_V                                | 0x7000FA3C |
+| FUSE\_SKU\_BOND\_OUT\_W                                | 0x7000FA40 |
 | FUSE\_OPT\_SUBREVISION                                 | 0x7000FA48 |
 | FUSE\_TSENSOR\_4                                       | 0x7000FA54 |
 | FUSE\_TSENSOR\_5                                       | 0x7000FA58 |

@@ -51,6 +51,21 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 |-
 | FUSE_PWR_GOOD_SW
 | 0x7000F834
+|-
+| FUSE_PRIVATE_KEY0_NONZERO
+| 0x7000F880
+|-
+| FUSE_PRIVATE_KEY1_NONZERO
+| 0x7000F884
+|-
+| FUSE_PRIVATE_KEY2_NONZERO
+| 0x7000F888
+|-
+| FUSE_PRIVATE_KEY3_NONZERO
+| 0x7000F88C
+|-
+| FUSE_PRIVATE_KEY4_NONZERO
+| 0x7000F890
 |}
 
 ==== FUSE_CTRL ====
@@ -112,6 +127,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_PRODUCTION_MODE
 | 0x7000F900
 |-
+| FUSE_JTAG_SECUREID_VALID
+| 0x7000F904
+|-
 | FUSE_ODM_LOCK
 | 0x7000F908
 |-
@@ -123,6 +141,15 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 |-
 | FUSE_CPU_IDDQ
 | 0x7000F918
+|-
+| FUSE_DAC_CRT_CALIB
+| 0x7000F91C
+|-
+| FUSE_DAC_HDTV_CALIB
+| 0x7000F920
+|-
+| FUSE_DAC_SDTV_CALIB
+| 0x7000F924
 |-
 | FUSE_FT_REV
 | 0x7000F928
@@ -145,8 +172,29 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_SOC_IDDQ
 | 0x7000F940
 |-
+| FUSE_RESERVED_PRODUCTION_WP
+| 0x7000F944
+|-
 | [[#FUSE_FA|FUSE_FA]]
 | 0x7000F948
+|-
+| FUSE_RESERVED_PRODUCTION
+| 0x7000F94C
+|-
+| FUSE_HDMI_LANE0_CALIB
+| 0x7000F950
+|-
+| FUSE_HDMI_LANE1_CALIB
+| 0x7000F954
+|-
+| FUSE_HDMI_LANE2_CALIB
+| 0x7000F958
+|-
+| FUSE_HDMI_LANE3_CALIB
+| 0x7000F95C
+|-
+| FUSE_ENCRYPTION_RATE
+| 0x7000F960
 |-
 | [[#FUSE_PUBLIC_KEY|FUSE_PUBLIC_KEY0]]
 | 0x7000F964
@@ -178,8 +226,14 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_TSENSOR_2
 | 0x7000F988
 |-
+| FUSE_VSENSOR_CALIB
+| 0x7000F98C
+|-
 | FUSE_CP_REV
 | 0x7000F990
+|-
+| FUSE_OPT_PFG
+| 0x7000F994
 |-
 | FUSE_TSENSOR_0
 | 0x7000F998
@@ -241,11 +295,23 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | [[#FUSE_RESERVED_ODM7|FUSE_RESERVED_ODM7]]
 | 0x7000F9E4
 |-
+| FUSE_OBS_DIS
+| 0x7000F9E8
+|-
+| FUSE_NOR_INFO
+| 0x7000F9EC
+|-
 | FUSE_SKU_USB_CALIB
 | 0x7000F9F0
 |-
 | FUSE_SKU_DIRECT_CONFIG
 | 0x7000F9F4
+|-
+| FUSE_KFUSE_PRIVKEY_CTRL
+| 0x7000F9F8
+|-
+| FUSE_PACKAGE_INFO
+| 0x7000F9FC
 |-
 | FUSE_VENDOR_CODE
 | 0x7000FA00
@@ -268,6 +334,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_Y_COORDINATE
 | 0x7000FA18
 |-
+| FUSE_OPS_RESERVED
+| 0x7000FA20
+|-
 | FUSE_SATA_CALIB
 | 0x7000FA24
 |-
@@ -276,6 +345,21 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 |-
 | FUSE_TSENSOR_3
 | 0x7000FA2C
+|-
+| FUSE_SKU_BOND_OUT_L
+| 0x7000FA30
+|-
+| FUSE_SKU_BOND_OUT_H
+| 0x7000FA34
+|-
+| FUSE_SKU_BOND_OUT_U
+| 0x7000FA38
+|-
+| FUSE_SKU_BOND_OUT_V
+| 0x7000FA3C
+|-
+| FUSE_SKU_BOND_OUT_W
+| 0x7000FA40
 |-
 | FUSE_OPT_SUBREVISION
 | 0x7000FA48
