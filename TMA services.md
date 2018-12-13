@@ -1,10 +1,22 @@
-TMA (Target Manager) acts as a debugging sysmodule for development kits.
-This system module is loaded in retail units, but remains unused.
+TMA (Target Manager Agent) acts as a debugging sysmodule for development
+kits. This system module is loaded in retail units, but remains unused.
 
 These services are inaccessible on retail units. However, all [System
 Applets](Title%20list#System%20Applets.md##System_Applets "wikilink")
 have permission to access them (see
 [NPDM\#Service\_Access\_Control](NPDM#Service%20Access%20Control.md##Service_Access_Control "wikilink")).
+
+TMA makes a few sets of services available. One set (the "htc" family),
+is aimed around managing Host/Target Connections. "htc" allows
+orchestrating the switch\<-\>pc connection, "htc:tenv" allows retrieving
+information about the target's environment from the host, and "htcs"
+provides an interface for managing sockets on PC from the Switch. htcs
+is used primarily to host services on PC ports with actual management
+code running on Switch. The other service ("file\_io") manages HostIO, a
+mechanism by which the Switch can read files present on the Host PC.
+When a host is connected, FS will attempt to read data via file\_io when
+@Host:/ content paths are used, or when fsp-srv-\>OpenHostFileSystem()
+is used to open an IFileSystem to the Host PC.
 
 # htc
 
