@@ -148,15 +148,18 @@ driver registers.
 | FUSE\_FALCON\_DEBUG\_DISABLE                           | 0x7000FA7C |
 | FUSE\_TSENSOR\_COMMON                                  | 0x7000FA80 |
 | FUSE\_DEBUG\_AUTH\_OVERRIDE                            | 0x7000FA9C |
+| FUSE\_GCPLEX\_CONFIG\_FUSE                             | 0x7000FAC8 |
 | FUSE\_TSENSOR\_8                                       | 0x7000FAD4 |
 | FUSE\_DEBUG\_AUTHENTICATION                            | 0x7000FAE4 |
 | FUSE\_SECURE\_PROVISION\_INDEX                         | 0x7000FAE8 |
 | FUSE\_AID                                              | 0x7000FAF8 |
-| FUSE\_RESERVED\_CALIB                                  | 0x7000FB04 |
+| FUSE\_SPARE\_REALIGNMENT\_REG                          | 0x7000FAFC |
+| FUSE\_RESERVED\_CALIB0                                 | 0x7000FB04 |
 | FUSE\_OPT\_GPU\_TPC0\_DISABLE                          | 0x7000FB0C |
 | FUSE\_TSENSOR\_9                                       | 0x7000FB1C |
 | FUSE\_OPT\_GPU\_TPC1\_DISABLE                          | 0x7000FB3C |
 | FUSE\_USB\_CALIB\_EXT                                  | 0x7000FB50 |
+| FUSE\_OPT\_ECC\_EN                                     | 0x7000FB58 |
 | FUSE\_SPARE\_BIT\_0                                    | 0x7000FB80 |
 | FUSE\_SPARE\_BIT\_1                                    | 0x7000FB84 |
 | [FUSE\_SPARE\_BIT\_2](#FUSE_SPARE_BIT_2 "wikilink")    | 0x7000FB88 |

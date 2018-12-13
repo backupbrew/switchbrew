@@ -307,6 +307,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_DEBUG_AUTH_OVERRIDE
 | 0x7000FA9C
 |-
+| FUSE_GCPLEX_CONFIG_FUSE
+| 0x7000FAC8
+|-
 | FUSE_TSENSOR_8
 | 0x7000FAD4
 |-
@@ -319,7 +322,10 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_AID
 | 0x7000FAF8
 |-
-| FUSE_RESERVED_CALIB
+| FUSE_SPARE_REALIGNMENT_REG
+| 0x7000FAFC
+|-
+| FUSE_RESERVED_CALIB0
 | 0x7000FB04
 |-
 | FUSE_OPT_GPU_TPC0_DISABLE
@@ -333,6 +339,9 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 |-
 | FUSE_USB_CALIB_EXT
 | 0x7000FB50
+|-
+| FUSE_OPT_ECC_EN
+| 0x7000FB58
 |-
 | FUSE_SPARE_BIT_0
 | 0x7000FB80
