@@ -326,9 +326,8 @@ this LibraryApplet ([qlaunch](Qlaunch.md "wikilink") for example).
 
 #### GetLibraryAppletInfo
 
-No input. Returns an u64 LibraryAppletInfo: +0 u32 is
-[\#AppletId](#AppletId "wikilink"), +4 u32 is
-[\#LibraryAppletMode](#LibraryAppletMode "wikilink").
+No input. Returns an output
+[\#LibraryAppletInfo](#LibraryAppletInfo "wikilink").
 
 #### CanUseApplicationCore
 
@@ -1287,5 +1286,10 @@ This indicates the type of web-applet.
 
 This u64 is officially called "nn::applet::AppletResourceUserId". Used
 by a number of non-AM services.
+
+# LibraryAppletInfo
+
+This struct is 8-bytes: +0 u32 is [\#AppletId](#AppletId "wikilink"), +4
+u32 is [\#LibraryAppletMode](#LibraryAppletMode "wikilink").
 
 [Category:Services](Category:Services "wikilink")

@@ -385,7 +385,7 @@ No input/output.
 Exits the LibraryApplet and returns to running the title which launched this LibraryApplet ([[qlaunch]] for example).
 
 ==== GetLibraryAppletInfo ====
-No input. Returns an u64 LibraryAppletInfo: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]].
+No input. Returns an output [[#LibraryAppletInfo]].
 
 ==== CanUseApplicationCore ====
 No input, returns an output u8 bool.
@@ -1551,5 +1551,8 @@ This indicates the type of web-applet.
 
 = AppletResourceUserId =
 This u64 is officially called "nn::applet::AppletResourceUserId". Used by a number of non-AM services.
+
+= LibraryAppletInfo =
+This struct is 8-bytes: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]].
 
 [[Category:Services]]
