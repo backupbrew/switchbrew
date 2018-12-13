@@ -607,7 +607,7 @@ Takes an input copy-handle and an input u64, returns an
 | 110 | [\#NeedsToExitProcess](#NeedsToExitProcess "wikilink")                                               |       |
 | 120 | GetLibraryAppletInfo                                                                                 |       |
 | 150 | RequestForAppletToGetForeground                                                                      |       |
-| 160 | \[2.0.0+\] GetIndirectLayerConsumerHandle                                                            |       |
+| 160 | \[2.0.0+\] [\#GetIndirectLayerConsumerHandle](#GetIndirectLayerConsumerHandle "wikilink")            |       |
 
 Commands \<=30 are inherited from
 [\#IAppletAccessor](#IAppletAccessor "wikilink").
@@ -646,8 +646,13 @@ No input, returns an output event handle with autoclear=false.
 
 #### NeedsToExitProcess
 
-No input, returns an output u8
-bool.
+No input, returns an output u8 bool.
+
+#### GetIndirectLayerConsumerHandle
+
+Takes an input PID and an input u64 AppletResourceUserId, returns an
+output u64
+IndirectLayerConsumerHandle.
 
 ## ICommonStateGetter
 
