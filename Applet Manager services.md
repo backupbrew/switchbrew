@@ -605,12 +605,15 @@ Takes an input copy-handle and an input u64, returns an
 | 105 | [\#GetPopOutDataEvent](#GetPopOutDataEvent "wikilink")                                               |       |
 | 106 | [\#GetPopInteractiveOutDataEvent](#GetPopInteractiveOutDataEvent "wikilink")                         |       |
 | 110 | [\#NeedsToExitProcess](#NeedsToExitProcess "wikilink")                                               |       |
-| 120 | GetLibraryAppletInfo                                                                                 |       |
-| 150 | RequestForAppletToGetForeground                                                                      |       |
+| 120 | [\#GetLibraryAppletInfo](#GetLibraryAppletInfo "wikilink")                                           |       |
+| 150 | [\#RequestForAppletToGetForeground](#RequestForAppletToGetForeground "wikilink")                     |       |
 | 160 | \[2.0.0+\] [\#GetIndirectLayerConsumerHandle](#GetIndirectLayerConsumerHandle "wikilink")            |       |
 
 Commands \<=30 are inherited from
-[\#IAppletAccessor](#IAppletAccessor "wikilink").
+[\#IAppletAccessor](#IAppletAccessor "wikilink"). GetLibraryAppletInfo
+is identical to the
+[\#ILibraryAppletSelfAccessor](#ILibraryAppletSelfAccessor "wikilink")
+cmd.
 
 #### SetOutOfFocusApplicationSuspendingEnabled
 
@@ -647,6 +650,10 @@ No input, returns an output event handle with autoclear=false.
 #### NeedsToExitProcess
 
 No input, returns an output u8 bool.
+
+#### RequestForAppletToGetForeground
+
+No input/output.
 
 #### GetIndirectLayerConsumerHandle
 
