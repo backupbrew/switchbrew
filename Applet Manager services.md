@@ -1293,6 +1293,7 @@ This indicates the type of web-applet.
 | ----- | ------------------------------------ |
 | 1     | Application-specific LaunchParameter |
 | 2     | account PreselectedUser              |
+| 3     | Unknown if used by anything?         |
 
 # AppletResourceUserId
 
