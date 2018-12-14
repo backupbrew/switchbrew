@@ -1224,6 +1224,8 @@ No input, returns an output [[#IApplicationAccessor]].
 | 1 || GetHandle || No input. Returns an output s64 size and TransferMemory handle.
 |}
 
+GetHandle seems to return the data originally from [[#CreateHandleStorage]] input?
+
 = appletOE =
 This is "nn::am::service::IApplicationProxyService".
 
