@@ -1219,7 +1219,7 @@ No input, returns an output [[#IApplicationAccessor]].
 |-
 | 0 || GetSize || No input. Returns an output s64.
 |-
-| 1 || GetHandle || No input. Returns an output u64 and handle.
+| 1 || GetHandle || No input. Returns an output s64 size and TransferMemory handle.
 |}
 
 = appletOE =
