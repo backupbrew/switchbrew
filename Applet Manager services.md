@@ -1085,10 +1085,10 @@ No input, returns an output
 
 ## ITransferStorageAccessor
 
-| Cmd | Name      | Notes                                                           |
-| --- | --------- | --------------------------------------------------------------- |
-| 0   | GetSize   | No input. Returns an output s64.                                |
-| 1   | GetHandle | No input. Returns an output s64 size and TransferMemory handle. |
+| Cmd | Name      | Notes                                       |
+| --- | --------- | ------------------------------------------- |
+| 0   | GetSize   | No input. Returns an output s64.            |
+| 1   | GetHandle | No input. Returns an output s64 and handle. |
 
 GetHandle seems to return the data originally from
 [\#CreateHandleStorage](#CreateHandleStorage "wikilink") input?

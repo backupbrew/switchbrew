@@ -1221,7 +1221,7 @@ No input, returns an output [[#IApplicationAccessor]].
 |-
 | 0 || GetSize || No input. Returns an output s64.
 |-
-| 1 || GetHandle || No input. Returns an output s64 size and TransferMemory handle.
+| 1 || GetHandle || No input. Returns an output s64 and handle.
 |}
 
 GetHandle seems to return the data originally from [[#CreateHandleStorage]] input?
