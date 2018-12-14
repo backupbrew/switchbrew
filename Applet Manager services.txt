@@ -581,7 +581,7 @@ This GamePlayRecording functionality presumably enables the video-recording usab
 Takes an input u32 [[#LaunchParameterKind]], returns an output [[#IStorage]].
 
 ==== CreateApplicationAndPushAndRequestToStart ====
-Takes an input u64 titleID and an input [[#IStorage]], no output.
+Takes an input u64 titleID and an input [[#IStorage]], no output. titleID=0 can be used to relaunch the current application.
 
 ==== CreateApplicationAndPushAndRequestToStartForQuest ====
 Takes 2 input u32s, an input u64 titleID, and an input [[#IStorage]], no output.

@@ -475,7 +475,8 @@ output [\#IStorage](#IStorage "wikilink").
 #### CreateApplicationAndPushAndRequestToStart
 
 Takes an input u64 titleID and an input
-[\#IStorage](#IStorage "wikilink"), no output.
+[\#IStorage](#IStorage "wikilink"), no output. titleID=0 can be used to
+relaunch the current application.
 
 #### CreateApplicationAndPushAndRequestToStartForQuest
 
