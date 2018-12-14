@@ -585,9 +585,12 @@ The user-process creates the TransferMemory with permissions=0.
 ### CreateHandleStorage
 
 Takes an input copy-handle and an input s64, returns an
-[\#IStorage](#IStorage "wikilink"). The s64 must not have the negative
-bit
-set.
+[\#IStorage](#IStorage "wikilink"). In some cases the s64 must not have
+the negative bit set.
+
+The input can be arbitrary, however official sw is only (?) known to use
+this for TransferMemory (with
+s64=size).
 
 ### ILibraryAppletAccessor
 
