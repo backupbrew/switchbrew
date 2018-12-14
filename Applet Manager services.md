@@ -468,8 +468,9 @@ video-recording usable starting with [4.0.0](4.0.0.md "wikilink").
 
 #### PopLaunchParameter
 
-Takes an input u32, returns an output
-[\#IStorage](#IStorage "wikilink").
+Takes an input u32
+[\#LaunchParameterKind](#LaunchParameterKind "wikilink"), returns an
+output [\#IStorage](#IStorage "wikilink").
 
 #### CreateApplicationAndPushAndRequestToStart
 
@@ -1285,6 +1286,13 @@ This indicates the type of web-applet.
 | ----- | ----------- |
 | 0     | Handheld    |
 | 1     | Docked      |
+
+### LaunchParameterKind
+
+| Value | Description                          |
+| ----- | ------------------------------------ |
+| 1     | Application-specific LaunchParameter |
+| 2     | account PreselectedUser              |
 
 # AppletResourceUserId
 

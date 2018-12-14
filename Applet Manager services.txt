@@ -578,7 +578,7 @@ The BOTW game uses this GamePlayRecording functionality from the main-nso "nnini
 This GamePlayRecording functionality presumably enables the video-recording usable starting with [[4.0.0]].
 
 ==== PopLaunchParameter ====
-Takes an input u32, returns an output [[#IStorage]].
+Takes an input u32 [[#LaunchParameterKind]], returns an output [[#IStorage]].
 
 ==== CreateApplicationAndPushAndRequestToStart ====
 Takes an input u64 titleID and an input [[#IStorage]], no output.
@@ -1550,6 +1550,17 @@ This indicates the type of web-applet.
 | 0 || Handheld
 |-
 | 1 || Docked
+|}
+
+=== LaunchParameterKind ===
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Description
+|-
+| 1 || Application-specific LaunchParameter
+|-
+| 2 || account PreselectedUser
 |}
 
 = AppletResourceUserId =
