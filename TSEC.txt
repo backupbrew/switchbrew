@@ -1278,7 +1278,7 @@ Takes the offset for Falcon's target memory being transferred.
 !  Description
 |-
 | 1
-| FALCON_CRYPTTRFSTAT_HALT
+| FALCON_CRYPTTRFSTAT_PENDING
 |-
 | 5
 | FALCON_CRYPTTRFSTAT_ENABLED

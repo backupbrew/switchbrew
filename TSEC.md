@@ -508,7 +508,7 @@ Takes the offset for Falcon's target memory being transferred.
 
 | Bits  | Description                                |
 | ----- | ------------------------------------------ |
-| 1     | FALCON\_CRYPTTRFSTAT\_HALT                 |
+| 1     | FALCON\_CRYPTTRFSTAT\_PENDING              |
 | 5     | FALCON\_CRYPTTRFSTAT\_ENABLED              |
 | 16-18 | FALCON\_CRYPTTRFSTAT\_NUM\_STORES\_PENDING |
 | 24-26 | FALCON\_CRYPTTRFSTAT\_NUM\_LOADS\_PENDING  |
