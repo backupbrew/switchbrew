@@ -752,6 +752,15 @@ No input, returns an output handle.
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
+Seems to be used for sending requests to
+[qlaunch](Qlaunch.md "wikilink"). sdk-nso creates a 0x10-byte storage
+which is sent to this. The following are the functions which use this,
+with the data written to the storage:
+
+  - `RequestHomeMenu` `5341 4d53 0100 0000 0200 0000 0100 0000`
+  - `RequestJumpToSystemUpdate`
+    `5341 4d53 0100 0000 0b00 0000 0100 0000`
+
 ### GetHomeButtonReaderLockAccessor
 
 No input, returns an output
