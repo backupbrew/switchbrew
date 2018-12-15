@@ -472,6 +472,9 @@ Takes an input u32
 [\#LaunchParameterKind](#LaunchParameterKind "wikilink"), returns an
 output [\#IStorage](#IStorage "wikilink").
 
+Pops a LaunchParameter [\#IStorage](#IStorage "wikilink"), the storage
+will be removed from sysmodule state during this.
+
 #### CreateApplicationAndPushAndRequestToStart
 
 Takes an input u64 titleID and an input
