@@ -1090,8 +1090,9 @@ No input, returns an output
 | 0   | GetSize   | No input. Returns an output s64.            |
 | 1   | GetHandle | No input. Returns an output s64 and handle. |
 
-GetHandle seems to return the data originally from
-[\#CreateHandleStorage](#CreateHandleStorage "wikilink") input?
+These commands return the data originally from
+[\#CreateHandleStorage](#CreateHandleStorage "wikilink") input, both
+return the same s64.
 
 # appletOE
 

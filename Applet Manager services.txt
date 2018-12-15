@@ -1224,7 +1224,7 @@ No input, returns an output [[#IApplicationAccessor]].
 | 1 || GetHandle || No input. Returns an output s64 and handle.
 |}
 
-GetHandle seems to return the data originally from [[#CreateHandleStorage]] input?
+These commands return the data originally from [[#CreateHandleStorage]] input, both return the same s64.
 
 = appletOE =
 This is "nn::am::service::IApplicationProxyService".
