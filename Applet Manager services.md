@@ -575,12 +575,21 @@ No input, returns an output u8 bool.
 Takes an input u64 for the storage size, returns an
 [\#IStorage](#IStorage "wikilink").
 
+This allocates a buffer with the specified size which can then be
+accessed via [\#IStorageAccessor](#IStorageAccessor "wikilink").
+
 ### CreateTransferMemoryStorage
 
 Takes an input TransferMemory copy-handle, an input u8 bool, and an u64
 size, returns an [\#IStorage](#IStorage "wikilink").
 
 The user-process creates the TransferMemory with permissions=0.
+
+The TransferMemory is mapped, which can then be accessed via
+[\#IStorageAccessor](#IStorageAccessor "wikilink"). The input bool
+controls whether writing to the storage is allowed:
+[\#Write](#Write "wikilink") will throw an error if this flag is not
+set.
 
 ### CreateHandleStorage
 

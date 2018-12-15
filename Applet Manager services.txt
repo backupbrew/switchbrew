@@ -661,10 +661,14 @@ No input, returns an output u8 bool.
 === CreateStorage ===
 Takes an input u64 for the storage size, returns an [[#IStorage]].
 
+This allocates a buffer with the specified size which can then be accessed via [[#IStorageAccessor]].
+
 === CreateTransferMemoryStorage ===
 Takes an input TransferMemory copy-handle, an input u8 bool, and an u64 size, returns an [[#IStorage]].
 
 The user-process creates the TransferMemory with permissions=0.
+
+The TransferMemory is mapped, which can then be accessed via [[#IStorageAccessor]]. The input bool controls whether writing to the storage is allowed: [[#Write]] will throw an error if this flag is not set.
 
 === CreateHandleStorage ===
 Takes an input copy-handle and an input s64, returns an [[#IStorage]]. In some cases the s64 must not have the negative bit set.
