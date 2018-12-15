@@ -1202,6 +1202,10 @@ No input, returns an output [[#IApplicationAccessor]].
 | 1 || OpenTransferStorage || No input. Returns an [[#ITransferStorageAccessor]].
 |}
 
+Open can only be used when the IStorage was created by [[#CreateStorage]] or [[#CreateTransferMemoryStorage]]. OpenTransferStorage can only be used when the IStorage was created by [[#CreateHandleStorage]].
+
+Only 1 *Accessor session can be open for each IStorage at a time.
+
 == IStorageAccessor ==
 {| class="wikitable" border="1"
 |-

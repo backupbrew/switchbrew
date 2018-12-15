@@ -1075,6 +1075,14 @@ No input, returns an output
 | 0   | Open                | No input. Returns an [\#IStorageAccessor](#IStorageAccessor "wikilink").                 |
 | 1   | OpenTransferStorage | No input. Returns an [\#ITransferStorageAccessor](#ITransferStorageAccessor "wikilink"). |
 
+Open can only be used when the IStorage was created by
+[\#CreateStorage](#CreateStorage "wikilink") or
+[\#CreateTransferMemoryStorage](#CreateTransferMemoryStorage "wikilink").
+OpenTransferStorage can only be used when the IStorage was created by
+[\#CreateHandleStorage](#CreateHandleStorage "wikilink").
+
+Only 1 \*Accessor session can be open for each IStorage at a time.
+
 ## IStorageAccessor
 
 | Cmd | Name    | Notes                                             |
