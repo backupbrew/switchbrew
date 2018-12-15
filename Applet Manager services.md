@@ -1079,10 +1079,10 @@ No input, returns an output
 
 ## IStorage
 
-| Cmd | Name                | Notes                                                                                    |
-| --- | ------------------- | ---------------------------------------------------------------------------------------- |
-| 0   | Open                | No input. Returns an [\#IStorageAccessor](#IStorageAccessor "wikilink").                 |
-| 1   | OpenTransferStorage | No input. Returns an [\#ITransferStorageAccessor](#ITransferStorageAccessor "wikilink"). |
+| Cmd | Name                           | Notes                                                                                    |
+| --- | ------------------------------ | ---------------------------------------------------------------------------------------- |
+| 0   | Open                           | No input. Returns an [\#IStorageAccessor](#IStorageAccessor "wikilink").                 |
+| 1   | \[2.0.0+\] OpenTransferStorage | No input. Returns an [\#ITransferStorageAccessor](#ITransferStorageAccessor "wikilink"). |
 
 Open can only be used when the IStorage was created by
 [\#CreateStorage](#CreateStorage "wikilink") or

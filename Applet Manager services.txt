@@ -1203,7 +1203,7 @@ No input, returns an output [[#IApplicationAccessor]].
 |-
 | 0 || Open || No input. Returns an [[#IStorageAccessor]].
 |-
-| 1 || OpenTransferStorage || No input. Returns an [[#ITransferStorageAccessor]].
+| 1 || [2.0.0+] OpenTransferStorage || No input. Returns an [[#ITransferStorageAccessor]].
 |}
 
 Open can only be used when the IStorage was created by [[#CreateStorage]] or [[#CreateTransferMemoryStorage]]. OpenTransferStorage can only be used when the IStorage was created by [[#CreateHandleStorage]].
