@@ -572,7 +572,7 @@ No input, returns an output u8 bool.
 
 ### CreateStorage
 
-Takes an input u64 for the storage size, returns an
+Takes an input s64 for the storage size, returns an
 [\#IStorage](#IStorage "wikilink").
 
 This allocates a buffer with the specified size which can then be
@@ -580,7 +580,7 @@ accessed via [\#IStorageAccessor](#IStorageAccessor "wikilink").
 
 ### CreateTransferMemoryStorage
 
-Takes an input TransferMemory copy-handle, an input u8 bool, and an u64
+Takes an input TransferMemory copy-handle, an input u8 bool, and an s64
 size, returns an [\#IStorage](#IStorage "wikilink").
 
 The user-process creates the TransferMemory with permissions=0.
