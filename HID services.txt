@@ -83,9 +83,9 @@ This is "nn::hid::IHidServer".
 |-
 | 91 || ActivateGesture
 |-
-| 100 || SetSupportedNpadStyleSet
+| 100 || [[#SetSupportedNpadStyleSet]]
 |-
-| 101 || GetSupportedNpadStyleSet
+| 101 || [[#GetSupportedNpadStyleSet]]
 |-
 | 102 || [[#SetSupportedNpadIdType]]
 |-
@@ -249,6 +249,12 @@ This is "nn::hid::IHidServer".
 == CreateAppletResource ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]]. Returns an [[#IAppletResource]].
 
+== SetSupportedNpadStyleSet ==
+Takes an u32 [[#NpadStyleTag]].
+
+== GetSupportedNpadStyleSet ==
+Returns an u32 [[#NpadStyleTag]].
+
 == SetSupportedNpadIdType ==
 Takes a PID-descriptor, a type-0x9 input buffer, and an [[AM_services|AppletResourceUserId]]. No output.
 
@@ -332,6 +338,53 @@ This is "nn::hid::IActiveVibrationDeviceList".
 
 === ActivateVibrationDevice ===
 Takes an input [[#VibrationDeviceHandle]]. No output.
+
+== NpadStyleTag ==
+This is a bitfield describing which controller styles are supported.
+
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| NpadFullKey
+|-
+| 1
+| NpadHandheld
+|-
+| 2
+| NpadJoyDual
+|-
+| 3
+| NpadJoyLeft
+|-
+| 4
+| NpadJoyRight
+|-
+| 5
+| NpadGc
+|-
+| 6
+| NpadPalma
+|-
+| 7
+| NpadLark
+|-
+| 8
+| NpadHandheldLark
+|-
+| 9-28
+| Reserved
+|-
+| 29
+| NpadSystemExt
+|-
+| 30
+| NpadSystem
+|-
+| 31
+| Reserved
+|}
 
 == NpadIdType ==
 This is an u32. This is the controller index used in [[HID_Shared_Memory#Controllers|sharedmem]]. 0x20 is handheld.

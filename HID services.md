@@ -46,8 +46,8 @@ This is
 | 82   | IsSixAxisSensorAtRest                                                                            |
 | 83   | \[6.0.0+\] IsFirmwareUpdateAvailableForSixAxisSensor                                             |
 | 91   | ActivateGesture                                                                                  |
-| 100  | SetSupportedNpadStyleSet                                                                         |
-| 101  | GetSupportedNpadStyleSet                                                                         |
+| 100  | [\#SetSupportedNpadStyleSet](#SetSupportedNpadStyleSet "wikilink")                               |
+| 101  | [\#GetSupportedNpadStyleSet](#GetSupportedNpadStyleSet "wikilink")                               |
 | 102  | [\#SetSupportedNpadIdType](#SetSupportedNpadIdType "wikilink")                                   |
 | 103  | ActivateNpad                                                                                     |
 | 104  | DeactivateNpad                                                                                   |
@@ -133,6 +133,14 @@ This is
 Takes a PID and an u64
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns an
 [\#IAppletResource](#IAppletResource "wikilink").
+
+## SetSupportedNpadStyleSet
+
+Takes an u32 [\#NpadStyleTag](#NpadStyleTag "wikilink").
+
+## GetSupportedNpadStyleSet
+
+Returns an u32 [\#NpadStyleTag](#NpadStyleTag "wikilink").
 
 ## SetSupportedNpadIdType
 
@@ -261,6 +269,26 @@ This is
 
 Takes an input
 [\#VibrationDeviceHandle](#VibrationDeviceHandle "wikilink"). No output.
+
+## NpadStyleTag
+
+This is a bitfield describing which controller styles are supported.
+
+| Bits | Description      |
+| ---- | ---------------- |
+| 0    | NpadFullKey      |
+| 1    | NpadHandheld     |
+| 2    | NpadJoyDual      |
+| 3    | NpadJoyLeft      |
+| 4    | NpadJoyRight     |
+| 5    | NpadGc           |
+| 6    | NpadPalma        |
+| 7    | NpadLark         |
+| 8    | NpadHandheldLark |
+| 9-28 | Reserved         |
+| 29   | NpadSystemExt    |
+| 30   | NpadSystem       |
+| 31   | Reserved         |
 
 ## NpadIdType
 
