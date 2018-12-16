@@ -770,14 +770,19 @@ No input, returns an output handle.
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
-Seems to be used for sending requests to
-[qlaunch](Qlaunch.md "wikilink"). sdk-nso creates a 0x10-byte storage
-which is sent to this. The following are the functions which use this,
-with the data written to the storage:
+This is not usable under an Application, however it is usable under a
+LibraryApplet.
 
-  - `RequestHomeMenu` `5341 4d53 0100 0000 0200 0000 0100 0000`
+Used for sending requests to [qlaunch](Qlaunch.md "wikilink"). sdk-nso
+creates a 0x10-byte storage which is sent to this. The following are the
+functions which use this, with the data written to the storage:
+
+  - `RequestHomeMenu` `5341 4d53 0100 0000 0200 0000 0100 0000` Returns
+    to the main Home Menu, equivalent to pressing the HOME button.
   - `RequestJumpToSystemUpdate`
-    `5341 4d53 0100 0000 0b00 0000 0100 0000`
+    `5341 4d53 0100 0000 0b00 0000 0100 0000` Equivalent to entering
+    "System Update" under System Settings. When leaving this, it returns
+    to the main Home Menu.
 
 ### GetHomeButtonReaderLockAccessor
 
