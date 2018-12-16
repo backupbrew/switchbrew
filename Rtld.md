@@ -3,14 +3,17 @@ belonging to the program that the system launches. This serves as the
 program entry point and crt0. rtld's entry point is defined to be the
 start of its .text section.
 
-rtld is tasked with relocating the NSOs that were loaded in to memory by
-the system loader, at a random base address. To do this, it requires
-that binaries include a module header, and a pointer to it at offset
-+0x04 in the .text section.
+rtld is tasked with relocating the [NSOs](NSO.md "wikilink") that were
+loaded in to memory by the system loader, at a random base address. To
+do this, it requires that binaries include a [module
+header](NSO#MOD.md##MOD "wikilink"), and a pointer to it at offset +0x04
+in the .text section.
 
 rtld receives two parameters from the system, in X0 and X1. The first
-parameter is unknown and should be zero. The second parameter is the
-handle of the main thread.
+parameter should be null. The second parameter is the handle of the main
+thread. See the [entrypoint
+arguments](Homebrew%20ABI#Entrypoint%20Arguments.md##Entrypoint_Arguments "wikilink")
+section.
 
 rtld initially derives absolute pointers by using the BL instruction to
 skip over an offset value, and then accessing and adding X30.
@@ -31,9 +34,10 @@ The main function for loading all of the modules now executes.
   - rtld initializes load lists and a module object for itself, which
     formalizes loading of the rtld .dynamic section.
   - Prepare to iterate over all modules. rtld does this by scanning
-    memory using svcQueryMemory. The memory must be R-X and STATIC. If
-    the address matches the rtld base address, the module is skipped
-    here.
+    memory using
+    [svcQueryMemory](SVC#svcQueryMemory.md##svcQueryMemory "wikilink").
+    The memory must be R-X and STATIC. If the address matches the rtld
+    base address, the module is skipped here.
   - Each valid memory region is read, and must contain 'MOD0' magic at
     offset +0x04. If this check fails, rtld hangs.
   - Read the .dynamic and .bss pointers from the module header. If the
@@ -61,7 +65,8 @@ routine for the program.
   - Calls each module's initialization function.
   - Calls program main().
   - Finalizes the SDK.
-  - Jumps to svcExitProcess.
+  - Jumps to
+    [svcExitProcess](SVC#svcExitProcess.md##svcExitProcess "wikilink").
 
 ## Relocation types
 

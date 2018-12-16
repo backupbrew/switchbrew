@@ -1,11 +1,10 @@
 rtld, short for “runtime link-editor”, is the first executable code belonging to the program that the system launches. This serves as the program entry point and crt0. rtld's entry point is defined to be the start of its .text section.
 
-rtld is tasked with relocating the NSOs that were loaded in to memory by the system loader, at a random base address. To do this, it requires that binaries include a module header, and a pointer to it at offset +0x04 in the .text section.
+rtld is tasked with relocating the [[NSO|NSOs]] that were loaded in to memory by the system loader, at a random base address. To do this, it requires that binaries include a [[NSO#MOD|module header]], and a pointer to it at offset +0x04 in the .text section.
 
-rtld receives two parameters from the system, in X0 and X1. The first parameter is unknown and should be zero. The second parameter is the handle of the main thread.
+rtld receives two parameters from the system, in X0 and X1. The first parameter should be null. The second parameter is the handle of the main thread. See the [[Homebrew_ABI#Entrypoint_Arguments|entrypoint arguments]] section.
 
 rtld initially derives absolute pointers by using the BL instruction to skip over an offset value, and then accessing and adding X30.
-
 
 == Functionality ==
 
@@ -19,7 +18,7 @@ The main function for loading all of the modules now executes.
 * Iterate over the rtld .dynamic section to establish REL, RELA, RELENT, RELAENT, RELCOUNT and RELACOUNT.
 * With the above information, process relative relocations (R_AARCH64_RELATIVE) on rtld.
 * rtld initializes load lists and a module object for itself, which formalizes loading of the rtld .dynamic section.
-* Prepare to iterate over all modules. rtld does this by scanning memory using svcQueryMemory. The memory must be R-X and STATIC. If the address matches the rtld base address, the module is skipped here.
+* Prepare to iterate over all modules. rtld does this by scanning memory using [[SVC#svcQueryMemory|svcQueryMemory]]. The memory must be R-X and STATIC. If the address matches the rtld base address, the module is skipped here.
 * Each valid memory region is read, and must contain 'MOD0' magic at offset +0x04. If this check fails, rtld hangs.
 * Read the .dynamic and .bss pointers from the module header. If the .bss pointers are unequal, rtld clears the .bss for this module.
 * Initialize a module object for this module, using the same function that was used to initialize an object for rtld itself. This object is typically stored in the module's .bss, via another pointer in the module header.
@@ -36,7 +35,7 @@ Once the above function returns, rtld serves as a general initialization routine
 * Calls each module's initialization function.
 * Calls program main().
 * Finalizes the SDK.
-* Jumps to svcExitProcess.
+* Jumps to [[SVC#svcExitProcess|svcExitProcess]].
 
 == Relocation types ==
 
