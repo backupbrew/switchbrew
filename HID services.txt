@@ -353,19 +353,19 @@ This is a bitfield describing which controller styles are supported.
 |-
 | 1
 | NpadHandheld
-| JoyCon controller in handheld mode.
+| Joy-Con controller in handheld mode.
 |-
 | 2
 | NpadJoyDual
-| JoyCon controller in dual mode.
+| Joy-Con controller in dual mode.
 |-
 | 3
 | NpadJoyLeft
-| JoyCon left controller in single mode.
+| Joy-Con left controller in single mode.
 |-
 | 4
 | NpadJoyRight
-| JoyCon right controller in single mode.
+| Joy-Con right controller in single mode.
 |-
 | 5
 | NpadGc
