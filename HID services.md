@@ -274,21 +274,21 @@ Takes an input
 
 This is a bitfield describing which controller styles are supported.
 
-| Bits | Description      |
-| ---- | ---------------- |
-| 0    | NpadFullKey      |
-| 1    | NpadHandheld     |
-| 2    | NpadJoyDual      |
-| 3    | NpadJoyLeft      |
-| 4    | NpadJoyRight     |
-| 5    | NpadGc           |
-| 6    | NpadPalma        |
-| 7    | NpadLark         |
-| 8    | NpadHandheldLark |
-| 9-28 | Reserved         |
-| 29   | NpadSystemExt    |
-| 30   | NpadSystem       |
-| 31   | Reserved         |
+| Bits | Description      | Notes                                   |
+| ---- | ---------------- | --------------------------------------- |
+| 0    | NpadFullKey      | Pro Controller.                         |
+| 1    | NpadHandheld     | JoyCon controller in handheld mode.     |
+| 2    | NpadJoyDual      | JoyCon controller in dual mode.         |
+| 3    | NpadJoyLeft      | JoyCon left controller in single mode.  |
+| 4    | NpadJoyRight     | JoyCon right controller in single mode. |
+| 5    | NpadGc           | GameCube controller.                    |
+| 6    | NpadPalma        | Poké Ball Plus controller.              |
+| 7    | NpadLark         | NES controller.                         |
+| 8    | NpadHandheldLark | NES controller in handheld mode.        |
+| 9-28 | Reserved         |                                         |
+| 29   | NpadSystemExt    |                                         |
+| 30   | NpadSystem       |                                         |
+| 31   | Reserved         |                                         |
 
 ## NpadIdType
 
