@@ -31,7 +31,7 @@ and so on.
 <tbody>
 <tr class="odd">
 <td><p>CVE-2018-6242 (leveraged by the ShofEL2 and Fusée Gelée exploits)</p></td>
-<td><p>The USB software stack provided inside the boot instruction rom (IROM/bootROM) contains a copy operation whose length can be controlled by an attacker. By carefully constructing a USB control request, an attacker can leverage this vulnerability to copy the contents of an attacker-controlled buffer over the active execution stack, gaining control of the Boot and Power Management processor (BPMP) before any lock-outs or privilege reductions occur. This execution can then be used to exfiltrate secrets and to load arbitrary code onto the main CPU Complex (CCPLEX) &quot;application processors&quot; at the highest possible level of privilege (typically as the TrustZone Secure Monitor at PL3/EL3).</p></td>
+<td><p>The USB software stack provided inside the boot instruction rom (IROM/bootROM) contains a copy operation whose length can be controlled by an attacker. By carefully constructing a USB control request, an attacker can leverage this vulnerability to copy the contents of an attacker-controlled buffer over the active execution stack, gaining control of the Boot and Power Management processor (BPMP) before any lock-outs or privilege reductions occur. This execution can then be used to exfiltrate secrets and to load arbitrary code onto the main CPU Complex (CCPLEX) "application processors" at the highest possible level of privilege (typically as the TrustZone Secure Monitor at PL3/EL3).</p></td>
 <td><p>Unknown (Tegra186 and Tegra214)</p></td>
 <td><p>HAC-001 (Tegra210)</p></td>
 <td><p>January 2018</p></td>
@@ -55,8 +55,8 @@ and many others (independently).</p></td>
 </tr>
 <tr class="odd">
 <td><p>Weak Security Engine context validation</p></td>
-<td><p>The Tegra X1 supports a &quot;deep sleep&quot; feature, where everything but DRAM and the PMC registers lose their content (and the SoC loses power). Upon awaking, the bootrom re-executes, restoring system state. Among these stored states is the Security Engine's saved state, which uses AES-128-CBC with a random key and all-zeroes IV. However, the bootrom doesn't perform a MAC on this data, and only validates the last block. This allows one to control most of security engine's state upon wakeup, if one has a way to modify the encrypted state buffer.</p>
-<p>With a way to modify the encrypted state buffer, one can thus dump keys from &quot;write-only&quot; keyslots, etc.</p>
+<td><p>The Tegra X1 supports a "deep sleep" feature, where everything but DRAM and the PMC registers lose their content (and the SoC loses power). Upon awaking, the bootrom re-executes, restoring system state. Among these stored states is the Security Engine's saved state, which uses AES-128-CBC with a random key and all-zeroes IV. However, the bootrom doesn't perform a MAC on this data, and only validates the last block. This allows one to control most of security engine's state upon wakeup, if one has a way to modify the encrypted state buffer.</p>
+<p>With a way to modify the encrypted state buffer, one can thus dump keys from "write-only" keyslots, etc.</p>
 <p>This also bypasses the SBK protection of the bootROM: indeed, at warmboot, bootROM will always clear keyslot 0xE to prevent malicious code from saving the SBK. Moving the SBK to another keyslot in the saved context renders this protection moot.</p></td>
 <td><p>None</p></td>
 <td><p>HAC-001 (Tegra210)</p></td>
@@ -75,6 +75,17 @@ and many others (independently).</p></td>
 <td><p>Theorized Summer 2017 due to suggestive syntax, confirmed April 9, 2018</p></td>
 <td><p>April 9, 2018</p></td>
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a>, almost surely others (independently).</p></td>
+</tr>
+<tr class="odd">
+<td><p>Poor validation of bootrom SDRAM configuration parameters leads to arbitrary writes in bootrom</p></td>
+<td><p>The Tegra X1 bootrom supports saving SDRAM parameters to scratch registers, and using the saved configuration to enable DRAM during warmboot.</p>
+<p>The code that parses these parameters does if (params-&gt;EmcBctSpareN) *params-&gt;EmcBctSpareN = params-&gt;EmcBctSpareNPlusOne for most N, without validating either the address or value written to it. There are other arbitrary writes in this code, as well.</p>
+<p>This allows a user with access to the PMC registers (via pre-sleep bpmp execution, or otherwise) to gain arbitrary bootrom code execution.</p></td>
+<td><p>None</p></td>
+<td><p>HAC-001 (Tegra210)</p></td>
+<td><p>2017</p></td>
+<td><p>December 16, 2018</p></td>
+<td><p>Everyone (independently).</p></td>
 </tr>
 </tbody>
 </table>
@@ -115,7 +126,7 @@ bootloader](Package1#Section%201.md##Section_1 "wikilink") or the
 </tr>
 <tr class="even">
 <td><p>FUSE_DIS_PGM not written by package1</p></td>
-<td><p>The switch's hardware fuse driver contains a write-once bit in a register called &quot;FUSE_DIS_PGM&quot;, which disables burning fuses until the next reboot. While Nintendo's bootloader code for waking up from sleep writes this on all firmware, the actual package1 initial bootloader forgets to write to it on cold reboot.</p>
+<td><p>The switch's hardware fuse driver contains a write-once bit in a register called "FUSE_DIS_PGM", which disables burning fuses until the next reboot. While Nintendo's bootloader code for waking up from sleep writes this on all firmware, the actual package1 initial bootloader forgets to write to it on cold reboot.</p>
 <p>This isn't too big of a problem because another fuse is burnt on retail devices (production mode), which prevents burning *all* fuses other than ODM_RESERVED ones in hardware.</p>
 <p>This was fixed in 3.0.0 by writing to the register on cold boot (although the write happens in TZ instead of package1 where it should take place, possibly to obfuscate the fact that they made this mistake).</p></td>
 <td><p>Burning arbitrary ODM reserved fuses with TZ code execution, which should never be possible for non-bootloader code.</p>
@@ -130,7 +141,7 @@ bootloader](Package1#Section%201.md##Section_1 "wikilink") or the
 <td><p>TSEC firmware compromises itself</p></td>
 <td><p>Package1ldr loads a firmware blob into TSEC early on boot. This piece of code runs on the TSEC in Authenticated Mode and has the sole purpose of generating the per-console TSEC key (see <a href="Cryptosystem.md" title="wikilink">Cryptosystem</a>).</p>
 <p>As a way to mitigate attacks, the TSEC firmware blob is split into 3 stages: <a href="TSEC#Stage 0.md##Stage_0" title="wikilink">Stage 0</a> which is unencrypted and unsigned, <a href="TSEC#Stage 1.md##Stage_1" title="wikilink">Stage 1</a> which is unencrypted but signed and <a href="TSEC#Stage 2.md##Stage_2" title="wikilink">Stage 2</a> which is encrypted and signed. Stage 0 loads a static pre-generated signature into the Falcon's CPU crypto registers, loads Stage 1 into the Falcon's CODE region and jumps to it. Execution will proceed into Stage 1 in Authenticated Mode if, and only if, the loaded signature matches the one Falcon calculates internally for Stage 1.</p>
-<p>Among various things, Stage 1 will attempt to do a &quot;backwards&quot; security check by calculating a CMAC over Stage 0 and comparing it with a known hash stored in the TSEC firmware's key data (a small buffer stored after Stage 0's code). If the hashes don't match, execution aborts.</p>
+<p>Among various things, Stage 1 will attempt to do a "backwards" security check by calculating a CMAC over Stage 0 and comparing it with a known hash stored in the TSEC firmware's key data (a small buffer stored after Stage 0's code). If the hashes don't match, execution aborts.</p>
 <p>Stage 1 stores the calculated Stage 0's CMAC in the stack, but forgets to clear it. Since the stack is located in Falcon's DATA region, loading the TSEC firmware blob and dumping the DATA region afterwards (via MMIO) will reveal the calculated hash. This allows using Stage 1 as an oracle to generate a valid CMAC for arbitrary Stage 0 code. Replacing the CMAC in the TSEC firmware's key data region results in Stage 1 accepting any Stage 0 code, thus rendering this security measure useless.</p>
 <p>Additionally, since signed Falcon code can't be revoked without an hardware revision, an attacker can always reuse the flawed Stage 1 code even if a fix is issued.</p></td>
 <td><p>Running TSEC firmware's Stage 1 in a user controlled environment. Mostly useless, but may aid in side-channel attacks.</p></td>
@@ -210,7 +221,7 @@ Monitor](Package1#Section%202.md##Section_2 "wikilink").
 </tr>
 <tr class="odd">
 <td><p>Missed BPMP Exception Vector Writes</p></td>
-<td><p>Starting in <a href="2.0.0.md" title="wikilink">2.0.0</a>, the BPMP is asleep at runtime, and is turned on by TrustZone during <a href="SMC.md" title="wikilink">smcCpuSuspend</a> in order to initiate the deep sleep process. When it does so, it is held in RESET, and TrustZone attempts to write to the BPMP exception vectors at 0x6000F200 to register EVP_RESET = lp0_entry_fw_crt0, and all other EVPs to a function that simply reboots. However, while they successfully write EVP_RESET, they miss all the other vectors, accidentally writing to the 0x6000F004-0x6000F020 region instead of the 0x6000F204-0x6000F220 region they want to write to. This results in all the exception vectors for the BPMP other than RESET being &quot;undefined&quot; (attacker controlled).</p>
+<td><p>Starting in <a href="2.0.0.md" title="wikilink">2.0.0</a>, the BPMP is asleep at runtime, and is turned on by TrustZone during <a href="SMC.md" title="wikilink">smcCpuSuspend</a> in order to initiate the deep sleep process. When it does so, it is held in RESET, and TrustZone attempts to write to the BPMP exception vectors at 0x6000F200 to register EVP_RESET = lp0_entry_fw_crt0, and all other EVPs to a function that simply reboots. However, while they successfully write EVP_RESET, they miss all the other vectors, accidentally writing to the 0x6000F004-0x6000F020 region instead of the 0x6000F204-0x6000F220 region they want to write to. This results in all the exception vectors for the BPMP other than RESET being "undefined" (attacker controlled).</p>
 <p>With some way of causing an exception vector to be taken at the right time, this would give pre-sleep code execution (and thus arbitrary TrustZone code execution, via the security engine flaw). However, none of the abort vectors are really triggerable, and interrupts are disabled for the BPMP when it is taken out of reset. Thus, this is useless in practice.</p>
 <p>This was fixed in <a href="4.0.0.md" title="wikilink">4.0.0</a> by writing to the correct registers.</p></td>
 <td><p>Theoretically: Arbitrary TrustZone code execution. In practice: Useless.</p></td>
@@ -274,7 +285,7 @@ Kernel](Package2#Section%200.md##Section_0 "wikilink").
 </tr>
 <tr class="odd">
 <td><p>Bad irq_id check in CreateInterruptEvent</p></td>
-<td><p>CreateInterruptEvent syscall is designed to work only for irq_id &gt;= 32. All irq_ids &lt; 32 are &quot;per-core&quot; and reserved for kernel use (watchdog/scheduling/core communications). On 1.0.0 you could supply irq_id &lt; 32 and it would write outside the SharedIrqs table.</p></td>
+<td><p>CreateInterruptEvent syscall is designed to work only for irq_id &gt;= 32. All irq_ids &lt; 32 are "per-core" and reserved for kernel use (watchdog/scheduling/core communications). On 1.0.0 you could supply irq_id &lt; 32 and it would write outside the SharedIrqs table.</p></td>
 <td><p>You can register irq's in the Core3Irqs table, and thus register per-core irqs for core3, that are normally reserved for kernel. Useless.</p></td>
 <td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
 <td><p><a href="2.0.0.md" title="wikilink">2.0.0</a></p></td>
@@ -337,7 +348,7 @@ modules](Package2#Section%201.md##Section_1 "wikilink").
 <tbody>
 <tr class="odd">
 <td><p>Service access control bypass (sm:h, smhax, probably other names)</p></td>
-<td><p>Prior to <a href="3.0.1.md" title="wikilink">3.0.1</a>, the <em>service manager</em> (sm) built-in system module treats a user as though it has full permissions if the user creates a new &quot;sm:&quot; port session but bypasses <a href="Services API#Initialize.md##Initialize" title="wikilink">initialization</a>. This is due to the other sm commands skipping the service ACL check for Pids &lt;= 7 (i.e. all kernel bundled modules) and that skipping the initialization command leaves the Pid field uninitialized. In <a href="3.0.1.md" title="wikilink">3.0.1</a>, sm returns error code 0x415 if <a href="Services API#Initialize.md##Initialize" title="wikilink">Initialize</a> has not been called yet.</p></td>
+<td><p>Prior to <a href="3.0.1.md" title="wikilink">3.0.1</a>, the <em>service manager</em> (sm) built-in system module treats a user as though it has full permissions if the user creates a new "sm:" port session but bypasses <a href="Services API#Initialize.md##Initialize" title="wikilink">initialization</a>. This is due to the other sm commands skipping the service ACL check for Pids &lt;= 7 (i.e. all kernel bundled modules) and that skipping the initialization command leaves the Pid field uninitialized. In <a href="3.0.1.md" title="wikilink">3.0.1</a>, sm returns error code 0x415 if <a href="Services API#Initialize.md##Initialize" title="wikilink">Initialize</a> has not been called yet.</p></td>
 <td><p>Acquiring, registering, and unregistering arbitrary services</p></td>
 <td><p><a href="3.0.1.md" title="wikilink">3.0.1</a></p></td>
 <td><p><a href="3.0.1.md" title="wikilink">3.0.1</a></p></td>
@@ -347,7 +358,7 @@ modules](Package2#Section%201.md##Section_1 "wikilink").
 </tr>
 <tr class="even">
 <td><p>Overly permissive SPL service</p></td>
-<td><p>The concept behind the switch's <a href="SMC.md" title="wikilink">Secure Monitor</a> is that all cryptographic keydata is located in userspace, but stored as &quot;access keys&quot; encrypted with &quot;keks&quot; that never leave TrustZone. The <a href="SPL services.md" title="wikilink">spl</a> (&quot;security processor liaison&quot;?) service serves as an interface between the rest of the system and the secure monitor. Prior to <a href="4.0.0.md" title="wikilink">4.0.0</a>, spl exposed only a single service &quot;spl:&quot;, which provided all TrustZone wrapper functions to all sysmodules with access to it. Thus anyone with access to the spl: service (via smhax or by pwning a sysmodule with access) could do crypto with any access keys they knew.</p>
+<td><p>The concept behind the switch's <a href="SMC.md" title="wikilink">Secure Monitor</a> is that all cryptographic keydata is located in userspace, but stored as "access keys" encrypted with "keks" that never leave TrustZone. The <a href="SPL services.md" title="wikilink">spl</a> ("security processor liaison"?) service serves as an interface between the rest of the system and the secure monitor. Prior to <a href="4.0.0.md" title="wikilink">4.0.0</a>, spl exposed only a single service "spl:", which provided all TrustZone wrapper functions to all sysmodules with access to it. Thus anyone with access to the spl: service (via smhax or by pwning a sysmodule with access) could do crypto with any access keys they knew.</p>
 <p>This was fixed in <a href="4.0.0.md" title="wikilink">4.0.0</a> by splitting spl: into spl:, spl:mig, spl:ssl, spl:es, and spl:fs.</p></td>
 <td><p>Arbitrary spl: crypto with any access keys one knows. For example, one could use the SSL module's access keys to decrypt their console's SSL certificate private key without having to pwn the SSL sysmodule.</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
@@ -358,7 +369,7 @@ modules](Package2#Section%201.md##Section_1 "wikilink").
 </tr>
 <tr class="odd">
 <td><p>Single session services not really single session</p></td>
-<td><p>Several &quot;critical&quot; services (like fsp-ldr, fsp-pr, sm:m, etc) are meant to only ever hold a single session with a specific sysmodule. However, when a sysmodule dies, all its service session handles are released -- and thus killing the holder of a single session handle would allow one (via sm:hax etc) to get access to that service.</p>
+<td><p>Several "critical" services (like fsp-ldr, fsp-pr, sm:m, etc) are meant to only ever hold a single session with a specific sysmodule. However, when a sysmodule dies, all its service session handles are released -- and thus killing the holder of a single session handle would allow one (via sm:hax etc) to get access to that service.</p>
 <p>This was fixed in <a href="4.0.0.md" title="wikilink">4.0.0</a> by adding a semaphore to these critical single-session services, so that even if one gets access to them an error code will be returned when attempting to use any of their commands.</p></td>
 <td><p>With some way to access these services and kill their session holders (like expLDR): dumping sysmodule code, arbitrary service access, elevated filesystem permissions, etc.</p></td>
 <td><p><a href="4.0.0.md" title="wikilink">4.0.0</a></p></td>
@@ -369,12 +380,12 @@ modules](Package2#Section%201.md##Section_1 "wikilink").
 </tr>
 <tr class="even">
 <td><p>nspwn</p></td>
-<td><p>fsp-ldr command 0 &quot;MountCode&quot; takes in a Content Path (retrieved from NCM by Loader), and returns an IFileSystem for the resulting ExeFS. These content paths, are normally NCAs, but MountCode also supports a number of other formats, including &quot;.nsp&quot; -- which is just a PFS0.</p>
-<p>When a path ending in &quot;.nsp&quot; is parsed by MountCode, the PFS0 is treated as a raw ExeFS. Because there is no NCA header, the ACID signatures are not validated -- and because there are no other signatures in a PFS0, this results in no signature checking happening at all.</p>
+<td><p>fsp-ldr command 0 "MountCode" takes in a Content Path (retrieved from NCM by Loader), and returns an IFileSystem for the resulting ExeFS. These content paths, are normally NCAs, but MountCode also supports a number of other formats, including ".nsp" -- which is just a PFS0.</p>
+<p>When a path ending in ".nsp" is parsed by MountCode, the PFS0 is treated as a raw ExeFS. Because there is no NCA header, the ACID signatures are not validated -- and because there are no other signatures in a PFS0, this results in no signature checking happening at all.</p>
 <p>The actual .nsp handling is eventually done by {content mounting function} called by MountCode and other FS commands.</p>
-<p>Thus, by placing an ExeFS (NSOs + &quot;main.npdm&quot;) and setting one's desired title ID to &quot;@Sdcard:/some_title.nsp&quot; or &quot;@User:/some_title.nsp&quot; etc one can launch arbitrary unsigned code, with arbitrary unsigned NPDMs.</p>
+<p>Thus, by placing an ExeFS (NSOs + "main.npdm") and setting one's desired title ID to "@Sdcard:/some_title.nsp" or "@User:/some_title.nsp" etc one can launch arbitrary unsigned code, with arbitrary unsigned NPDMs.</p>
 <p>This appears to have been fixed by only allowing .nsp when the input fstype==7 for the internal content-mounting function, returning 0x2EE202 otherwise.</p></td>
-<td><p>With access to &quot;lr&quot;: Arbitrary code execution with full system privileges.</p></td>
+<td><p>With access to "lr": Arbitrary code execution with full system privileges.</p></td>
 <td><p><a href="5.0.0.md" title="wikilink">5.0.0</a></p></td>
 <td><p><a href="5.0.0.md" title="wikilink">5.0.0</a></p></td>
 <td><p>Late 2017</p></td>
@@ -396,7 +407,7 @@ modules](Package2#Section%201.md##Section_1 "wikilink").
 <code> for (int i = 0; i  &lt; sizeof(nca_path) &amp;&amp; nca_path[i]; i++) {</code><br />
 <code>     if (nca_path[i] == '\\') { nca_path[i] = '/'); }</code><br />
 <code> }</code></p></td>
-<td><p>With access to &quot;lr&quot;: single null-byte stack overflow in Loader. Maybe (but probably not) loader code execution.</p></td>
+<td><p>With access to "lr": single null-byte stack overflow in Loader. Maybe (but probably not) loader code execution.</p></td>
 <td><p><a href="6.0.0.md" title="wikilink">6.0.0</a></p></td>
 <td><p><a href="6.0.0.md" title="wikilink">6.0.0</a></p></td>
 <td><p>September 2, 2018</p></td>
@@ -497,8 +508,8 @@ Flaws in this category pertain to any non-built-in system module.
 </tr>
 <tr class="odd">
 <td><p>nvhax (memory corruption in nvservices system module)</p></td>
-<td><p>Prior to <a href="6.2.0.md" title="wikilink">6.2.0</a>, the <a href="NV services.md" title="wikilink">nvservices</a> ioctl <a href="NV services#.2Fdev.2Fnvhost-ctrl-gpu.md##.2Fdev.2Fnvhost-ctrl-gpu" title="wikilink">NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE</a> would take a single &quot;pwarpstate&quot; argument which would be interpreted by nvservices as a memory pointer for writing 2 &quot;warpstate&quot; structs (one for each Streaming Multiprocessor). This resulted in nvservices attempting to blindly memcpy into this user supplied address and trigger a crash. However, if paired with an infoleak, this could be used to arbitrarily write 0x30 bytes anywhere in nvservices' memory space. Additionally, the &quot;warpstate&quot; struct itself was never initialized, which means nvservices would leak the 0x30 bytes from the stack. By invoking other ioctls it was also possible to partially control the stack contents and achieve a usable arbitrary memory write primitive.</p>
-<p>In <a href="6.2.0.md" title="wikilink">6.2.0</a>, <a href="NV services#.2Fdev.2Fnvhost-ctrl-gpu.md##.2Fdev.2Fnvhost-ctrl-gpu" title="wikilink">NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE</a> now takes 2 inline &quot;warpstate&quot; structs instead of a &quot;pwarpstate&quot; pointer, thus effectively avoiding the bad memcpy.</p></td>
+<td><p>Prior to <a href="6.2.0.md" title="wikilink">6.2.0</a>, the <a href="NV services.md" title="wikilink">nvservices</a> ioctl <a href="NV services#.2Fdev.2Fnvhost-ctrl-gpu.md##.2Fdev.2Fnvhost-ctrl-gpu" title="wikilink">NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE</a> would take a single "pwarpstate" argument which would be interpreted by nvservices as a memory pointer for writing 2 "warpstate" structs (one for each Streaming Multiprocessor). This resulted in nvservices attempting to blindly memcpy into this user supplied address and trigger a crash. However, if paired with an infoleak, this could be used to arbitrarily write 0x30 bytes anywhere in nvservices' memory space. Additionally, the "warpstate" struct itself was never initialized, which means nvservices would leak the 0x30 bytes from the stack. By invoking other ioctls it was also possible to partially control the stack contents and achieve a usable arbitrary memory write primitive.</p>
+<p>In <a href="6.2.0.md" title="wikilink">6.2.0</a>, <a href="NV services#.2Fdev.2Fnvhost-ctrl-gpu.md##.2Fdev.2Fnvhost-ctrl-gpu" title="wikilink">NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE</a> now takes 2 inline "warpstate" structs instead of a "pwarpstate" pointer, thus effectively avoiding the bad memcpy.</p></td>
 <td><p>Code execution under nvservices sysmodule</p></td>
 <td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
 <td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
@@ -508,7 +519,7 @@ Flaws in this category pertain to any non-built-in system module.
 </tr>
 <tr class="even">
 <td><p>Infoleak in nvservices system module</p></td>
-<td><p>The <a href="NV services.md" title="wikilink">nvservices</a> ioctl <a href="NV services#NVMAP IOC ALLOC.md##NVMAP_IOC_ALLOC" title="wikilink">NVMAP_IOC_ALLOC</a> takes an optional argument &quot;addr&quot; which allows the calling process to pass a pointer to user allocated memory for backing a nvmap object. If &quot;addr&quot; is left as 0, nvservices uses the transfer memory region (donated by the user during initialization) instead, when allocating memory for the nvmap object. By design, freeing the nvmap object by calling the ioctl <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> returns, in its &quot;refcount&quot; argument, the user address previously supplied if the reference count reaches 0. However, prior to <a href="6.2.0.md" title="wikilink">6.2.0</a>, the case where the transfer memory region is used to allocate the nvmap object was not taken into account, thus resulting in <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> leaking back an address from within the transfer memory region mapped in nvservices' memory space.</p>
+<td><p>The <a href="NV services.md" title="wikilink">nvservices</a> ioctl <a href="NV services#NVMAP IOC ALLOC.md##NVMAP_IOC_ALLOC" title="wikilink">NVMAP_IOC_ALLOC</a> takes an optional argument "addr" which allows the calling process to pass a pointer to user allocated memory for backing a nvmap object. If "addr" is left as 0, nvservices uses the transfer memory region (donated by the user during initialization) instead, when allocating memory for the nvmap object. By design, freeing the nvmap object by calling the ioctl <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> returns, in its "refcount" argument, the user address previously supplied if the reference count reaches 0. However, prior to <a href="6.2.0.md" title="wikilink">6.2.0</a>, the case where the transfer memory region is used to allocate the nvmap object was not taken into account, thus resulting in <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> leaking back an address from within the transfer memory region mapped in nvservices' memory space.</p>
 <p>In <a href="6.2.0.md" title="wikilink">6.2.0</a>, <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> no longer returns the address when the transfer memory region is used instead of user supplied memory.</p></td>
 <td><p>Combined with other vulnerabilities: Defeating ASLR in nvservices sysmodule.</p></td>
 <td><p><a href="6.2.0.md" title="wikilink">6.2.0</a></p></td>
