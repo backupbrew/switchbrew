@@ -1297,6 +1297,8 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | ID  | Description   |
 | --- | ------------- |
 | 0x0 | AllForeground |
+| 0x1 | Background    |
+| 0x3 | ?             |
 |     |               |
 
 ### ShimKind

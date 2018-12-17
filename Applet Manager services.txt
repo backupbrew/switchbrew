@@ -1516,6 +1516,12 @@ See also [[:Category:Library Applets]].
 | 0x0
 | AllForeground
 |-
+| 0x1
+| Background
+|-
+| 0x3
+| ?
+|-
 |}
 
 === ShimKind ===
