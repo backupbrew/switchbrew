@@ -79,7 +79,7 @@ and many others (independently).</p></td>
 <tr class="odd">
 <td><p>Poor validation of bootrom SDRAM configuration parameters leads to arbitrary writes in bootrom</p></td>
 <td><p>The Tegra X1 bootrom supports saving SDRAM parameters to scratch registers, and using the saved configuration to enable DRAM during warmboot.</p>
-<p>The code that parses these parameters does if (params-&gt;EmcBctSpareN) *params-&gt;EmcBctSpareN = params-&gt;EmcBctSpareNPlusOne for most N, without validating either the address or value written to it. There are other arbitrary writes in this code, as well.</p>
+<p>The code that parses these parameters does if (params-&gt;EmcBctSpareN) *params-&gt;EmcBctSpareN = params-&gt;EmcBctSpareNPlusOne for most N, without validating either the address or value written to it. There are other arbitrary writes in this code, as well (e.g. BootromPatch parameters intended for patching MISC registers do not check a relative offset to 0x7000000, etc).</p>
 <p>This allows a user with access to the PMC registers (via pre-sleep bpmp execution, or otherwise) to gain arbitrary bootrom code execution.</p></td>
 <td><p>None</p></td>
 <td><p>HAC-001 (Tegra210)</p></td>
