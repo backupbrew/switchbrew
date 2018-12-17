@@ -1297,12 +1297,12 @@ Applets](:Category:Library%20Applets.md "wikilink").
 
 ### LibraryAppletMode
 
-| ID  | Description   |
-| --- | ------------- |
-| 0x0 | AllForeground |
-| 0x1 | Background    |
-| 0x3 | ?             |
-|     |               |
+| ID  | Description                                                                                                                          |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0 | AllForeground                                                                                                                        |
+| 0x1 | Background                                                                                                                           |
+| 0x3 | Unknown, see also [\#GetIndirectLayerConsumerHandle](#GetIndirectLayerConsumerHandle "wikilink"). Only used by swkbd InlineKeyboard. |
+|     |                                                                                                                                      |
 
 ### ShimKind
 

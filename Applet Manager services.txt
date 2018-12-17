@@ -1522,7 +1522,7 @@ See also [[:Category:Library Applets]].
 | Background
 |-
 | 0x3
-| ?
+| Unknown, see also [[#GetIndirectLayerConsumerHandle]]. Only used by swkbd InlineKeyboard.
 |-
 |}
 
