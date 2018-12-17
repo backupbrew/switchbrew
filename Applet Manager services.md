@@ -676,8 +676,11 @@ No input/output.
 #### GetIndirectLayerConsumerHandle
 
 Takes an input PID and an input u64 AppletResourceUserId, returns an
-output u64
-IndirectLayerConsumerHandle.
+output u64 IndirectLayerConsumerHandle.
+
+Official sw uses this during LibraryApplet creation when
+LibraryAppletMode is
+0x3.
 
 ## ICommonStateGetter
 
