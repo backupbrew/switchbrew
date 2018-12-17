@@ -679,7 +679,7 @@ Takes an input PID and an input u64 AppletResourceUserId, returns an
 output u64 IndirectLayerConsumerHandle.
 
 Official sw uses this during LibraryApplet creation when
-LibraryAppletMode is
+[\#LibraryAppletMode](#LibraryAppletMode "wikilink") is
 0x3.
 
 ## ICommonStateGetter
