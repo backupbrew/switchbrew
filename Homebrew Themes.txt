@@ -8,4 +8,9 @@ This page is for [[Homebrew Menu]] themes. See the aforementioned page for the S
 !  width="10%" | Author
 !  width="10%" | Download
 |-
+| Purple
+| A theme that makes the waves purple. ([https://puu.sh/Cj6wz/67f566b2f5.jpg Preview])
+| [[YaYPIXXO]]
+| [https://puu.sh/Cj6GH/e5cee82049.zip Download]
+|-
 |}
