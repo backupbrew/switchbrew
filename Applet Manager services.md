@@ -1345,6 +1345,15 @@ This indicates the type of web-applet.
 | 2     | account PreselectedUser              |
 | 3     | Unknown if used by anything?         |
 
+### LibraryAppletExitReason
+
+| Value | Description |
+| ----- | ----------- |
+| 0     | Normal      |
+| 1     | Canceled    |
+| 2     | Abnormal    |
+| 10    | Unexpected  |
+
 # AppletResourceUserId
 
 This u64 is officially called "nn::applet::AppletResourceUserId". Used
