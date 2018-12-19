@@ -45,6 +45,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Yes
 |
 |-
+| pPlay
+| A video player for the Nintendo Switch
+| Cpasjuste
+| [https://github.com/Cpasjuste/pplay/releases Here]
+| [https://github.com/Cpasjuste/pplay/ Yes]
+| 2018-12-19
+|-
 | Switch Lan Play
 | Allows you to play Lan supported games online,
 | spacemeowx2
