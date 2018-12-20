@@ -1252,8 +1252,12 @@ The first [IStorage](#CreateStorage "wikilink") passed to applets should
 contain the common library applet arguments. This is populated by
 `nn::la::CommonArgumentsWriter` and has the following format.
 
-This struct is
-0x20-bytes.
+This struct is 0x20-bytes.
+
+Official sw handles the first 8-bytes separately, which is a header.
+With CommonArguments version 0x0, the header is 4-bytes, while starting
+with version 0x1 it's
+8-bytes.
 
 | Offset | Size | Typical Value | Notes                                                                                      |
 | ------ | ---- | ------------- | ------------------------------------------------------------------------------------------ |

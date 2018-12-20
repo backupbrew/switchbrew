@@ -1400,6 +1400,8 @@ The first [[#CreateStorage|IStorage]] passed to applets should contain the commo
 
 This struct is 0x20-bytes.
 
+Official sw handles the first 8-bytes separately, which is a header. With CommonArguments version 0x0, the header is 4-bytes, while starting with version 0x1 it's 8-bytes.
+
 {| class="wikitable" border="1"
 |-
 ! Offset || Size || Typical Value || Notes 
