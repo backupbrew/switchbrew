@@ -123,7 +123,7 @@ The layout of the work buffer doesn't seem to matter as long as the offsets in t
 
 == Text Check ==
 
-If text checking is enabled in [[#KeyboardConfig]], text will be checked when the submit button is pressed. First, swkbd sends the text via PushInteractiveOutData. This storage is 0x7D4-bytes.
+If text checking is enabled in [[#KeyboardConfig]], text will be checked when the submit button is pressed. First, swkbd sends the text via PushInteractiveOutData. Normally size 0x7D4 is allocated for the string.
 
 {| class="wikitable" border="1"
 |-
@@ -135,7 +135,7 @@ If text checking is enabled in [[#KeyboardConfig]], text will be checked when th
 |-
 |}
 
-The application then has an opportunity to validate or reject the text. It creates a new IStorage, writes the response to it, and sends it via PushInteractiveInData. This storage is 0x7D4-bytes.
+The application then has an opportunity to validate or reject the text. It creates a new IStorage, writes the response to it, and sends it via PushInteractiveInData. This storage is 0x7D8-bytes.
 
 {| class="wikitable" border="1"
 |-

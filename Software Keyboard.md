@@ -103,7 +103,7 @@ adjusted, but official code lays it out like this.
 If text checking is enabled in
 [\#KeyboardConfig](#KeyboardConfig "wikilink"), text will be checked
 when the submit button is pressed. First, swkbd sends the text via
-PushInteractiveOutData. This storage is 0x7D4-bytes.
+PushInteractiveOutData. Normally size 0x7D4 is allocated for the string.
 
 | Offset | Size     | Notes       |
 | ------ | -------- | ----------- |
@@ -113,7 +113,7 @@ PushInteractiveOutData. This storage is 0x7D4-bytes.
 
 The application then has an opportunity to validate or reject the text.
 It creates a new IStorage, writes the response to it, and sends it via
-PushInteractiveInData. This storage is 0x7D4-bytes.
+PushInteractiveInData. This storage is 0x7D8-bytes.
 
 | Offset | Size     | Notes                                        |
 | ------ | -------- | -------------------------------------------- |
