@@ -140,6 +140,8 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 |-
 ! ID || Module
 |-
+| 0x13 || [[PCIe services|PCIe]]
+|-
 | 0x1B ||
 |-
 | 0x1E ||
