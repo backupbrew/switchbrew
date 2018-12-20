@@ -112,7 +112,7 @@ applications.
 | Offset | Size in bytes | Description      |
 | ------ | ------------- | ---------------- |
 | 0x0    | 0x20          | Keyboard Header  |
-| 0x20   | 0x30 \* 17    | Keyboard Entries |
+| 0x20   | 0x38 \* 17    | Keyboard Entries |
 |        |               |                  |
 
 ### Keyboard Header

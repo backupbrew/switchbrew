@@ -302,7 +302,7 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 | Keyboard Header	
 |-
 | 0x20	
-| 0x30 * 17	
+| 0x38 * 17	
 | Keyboard Entries	
 |-
 |}
