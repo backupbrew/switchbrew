@@ -93,6 +93,9 @@ The layout of the work buffer doesn't seem to matter as long as the
 offsets in the [\#KeyboardConfig](#KeyboardConfig "wikilink") are
 adjusted, but official code lays it out like this.
 
+Prior to version 0x5, offset 0x0 size 0x14(20) is a header (size 0x10
+for version \<=0x2).
+
 | Offset         | Size    | Notes                 |
 | -------------- | ------- | --------------------- |
 | 20 (decimal)   | Unknown | UTF-16 initial string |
