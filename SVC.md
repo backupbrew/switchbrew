@@ -1227,15 +1227,19 @@ Unmaps what was mapped by
 | Argument | Type                                                   | Name            |
 | -------- | ------------------------------------------------------ | --------------- |
 | (In) X1  | [\#CreateProcessInfo](#CreateProcessInfo "wikilink")\* | InfoPtr         |
-| (In) X2  | u64                                                    | CapabilitiesPtr |
+| (In) X2  | u32\*                                                  | CapabilitiesPtr |
 | (In) X3  | u64                                                    | CapabilitiesNum |
 | (Out) W0 | [\#Result](#Result "wikilink")                         | Ret             |
 | (Out) W1 | Handle<Process>                                        | ProcessHandle   |
 
 </div>
 
-Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as
-input.
+Takes a [\#CreateProcessInfo](#CreateProcessInfo "wikilink") as input.
+CapabilitiesPtr points to an array of [kernel
+capabilities](NPDM#Kernel%20Access%20Control.md##Kernel_Access_Control "wikilink").
+CapabilitiesNum is a number of capabilities in the CapabilitiesPtr array
+(number of element, not number of
+bytes).
 
 ## svcGetProcessInfo
 

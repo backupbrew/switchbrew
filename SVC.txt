@@ -1423,7 +1423,7 @@ Unmaps what was mapped by [[#svcMapProcessCodeMemory]].
 |-
 | (In) X1 || [[#CreateProcessInfo]]* || InfoPtr
 |-
-| (In) X2 || u64 || CapabilitiesPtr
+| (In) X2 || u32* || CapabilitiesPtr
 |-
 | (In) X3 || u64 || CapabilitiesNum
 |-
@@ -1434,6 +1434,8 @@ Unmaps what was mapped by [[#svcMapProcessCodeMemory]].
 </div>
 
 Takes a [[#CreateProcessInfo]] as input.
+CapabilitiesPtr points to an array of [[NPDM#Kernel_Access_Control|kernel capabilities]].
+CapabilitiesNum is a number of capabilities in the CapabilitiesPtr array (number of element, not number of bytes).
 
 == svcGetProcessInfo ==
 
