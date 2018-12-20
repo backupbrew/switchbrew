@@ -363,7 +363,7 @@ On Switch, descriptors are identified by pattern 01..11 in low bits.
 | <code>0bxxxx011111111111</code>
 | Bit11
 | InterruptPair
-| Bits 12-21: Irq0, bits 20-31: Irq1, 0x3FF means empty.
+| Bits 12-21: Irq0, bits 22-31: Irq1, 0x3FF means empty.
 |-
 | <code>0bxx01111111111111</code>
 | Bit13
