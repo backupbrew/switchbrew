@@ -106,4 +106,12 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 20400 | \[6.0.0+\] |
 | 20401 | \[6.0.0+\] |
 
+# PSC Module IDs
+
+| ID   | Module                                                  |
+| ---- | ------------------------------------------------------- |
+| 0x1B |                                                         |
+| 0x1E |                                                         |
+| 0x29 | [nn::psc::PmModuleId\_Lm](Log%20services.md "wikilink") |
+
 [Category:Services](Category:Services "wikilink")

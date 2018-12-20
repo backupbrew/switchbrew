@@ -134,4 +134,17 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 20401 || [6.0.0+]
 |}
 
+= PSC Module IDs =
+
+{| class="wikitable" border="1"
+|-
+! ID || Module
+|-
+| 0x1B ||
+|-
+| 0x1E ||
+|-
+| 0x29 || [[Log services|nn::psc::PmModuleId_Lm]]
+|}
+
 [[Category:Services]]
