@@ -126,7 +126,7 @@ PushInteractiveInData. This storage is 0x7D4-bytes.
 When either the submit button is pressed and input has been validated,
 or the user cancels the text entry, swkbd will push its response and
 exit. The response IStorage has the following format. This storage is
-0xDd8-bytes.
+0x7D8-bytes.
 
 | Offset | Size     | Notes                            |
 | ------ | -------- | -------------------------------- |
