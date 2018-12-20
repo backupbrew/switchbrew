@@ -1437,6 +1437,22 @@ Takes a [[#CreateProcessInfo]] as input.
 CapabilitiesPtr points to an array of [[NPDM#Kernel_Access_Control|kernel capabilities]].
 CapabilitiesNum is a number of capabilities in the CapabilitiesPtr array (number of element, not number of bytes).
 
+=== Result codes ===
+
+'''0x0:''' Success.
+
+'''0xCA01:''' Attempted to map more code pages than available in address space.
+
+'''0xCC01:''' Provided CodeAddr is invalid (make sure it's in range?)
+
+'''0xE401:''' The resource handle passed is invalid.
+
+'''0xE601:''' Attempt to copy procinfo from user-supplied pointer failed. Attempt to copy capabilities_num from user-supplied pointer failed.
+
+'''0xE801:''' Attempted to create a 32-bit process with a 36-bit address space.
+
+'''0xF001:''' Unused bits are set in mmuflags. Unknown address space type used.
+
 == svcGetProcessInfo ==
 
 <div style="display: inline-block;">
