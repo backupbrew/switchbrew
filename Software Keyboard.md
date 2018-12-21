@@ -111,8 +111,8 @@ PushInteractiveOutData. Normally size 0x7D4 is allocated for the string.
 
 | Offset | Size     | Notes       |
 | ------ | -------- | ----------- |
-| 0x0    | 0x4      | Buffer size |
-| 0x4    | Variable | UTF-16 text |
+| 0x0    | 0x8      | Buffer size |
+| 0x8    | Variable | UTF-16 text |
 |        |          |             |
 
 The application then has an opportunity to validate or reject the text.

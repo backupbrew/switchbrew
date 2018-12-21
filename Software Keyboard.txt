@@ -131,9 +131,9 @@ If text checking is enabled in [[#KeyboardConfig]], text will be checked when th
 |-
 ! Offset || Size || Notes 
 |-
-| 0x0 || 0x4 || Buffer size
+| 0x0 || 0x8 || Buffer size
 |-
-| 0x4 || Variable || UTF-16 text
+| 0x8 || Variable || UTF-16 text
 |-
 |}
 
