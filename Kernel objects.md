@@ -1179,3 +1179,33 @@ Size:
 | 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KManagedPort](#KManagedPort "wikilink") \*\> | NodeFor\_\_ManagedPortList |
 | 0x10   | char\[12\]                                                                                        | PortName                   |
 | 0x20   | [\#KClientPort](#KClientPort "wikilink")\*                                                        | ClientPort                 |
+
+# Slab Information
+
+The Horizon/NX kernel keeps all objects in slab allocators, that can
+allocate a fixed amount of each. Attempting to allocate an object when
+the slab heap is full will result in an error 0xCE01 (Resource
+Exhaustion).
+
+| Object                | Slab Count |
+| --------------------- | ---------- |
+| KEvent                | 600        |
+| KInterruptEvent       | 100        |
+| KProcess              | 80         |
+| KThread               | 700        |
+| KPort                 | 200        |
+| KSharedMemory         | 80         |
+| KTransferMemory       | 200        |
+| KDeviceAddressSpace   | 300        |
+| KDebug                | 4          |
+| KSession              | 800        |
+| KLightSession         | 100        |
+| KLinkedListEntry      | 17 231     |
+| UNKNOWN1              | 4 000      |
+| KMemoryBlock (System) | 20 000     |
+| KMemoryBlock (Other)  | 10 000     |
+| UNKNOWN2              | 167        |
+| KManagedPort          | 7          |
+| KDebugEvent           | 704        |
+| KSessionRequest       | 1 600      |
+| KResourceLimit        | 5          |
