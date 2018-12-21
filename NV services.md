@@ -1226,10 +1226,10 @@ NVIDIA memory profiler (this service is not available on retail units).
 check the config "nv\!NV\_MEMORY\_PROFILER". If config\_str returns "1",
 the applications attempts to talk to use nvmemp.
 
-| Cmd | Name |
-| --- | ---- |
-| 0   | Cmd0 |
-| 1   | Cmd1 |
+| Cmd | Name   |
+| --- | ------ |
+| 0   | Open   |
+| 1   | GetPid |
 
 # nvdrvdbg
 
