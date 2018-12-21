@@ -158,9 +158,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 157 || ARP
 |-
-| 158 || SWKBD
+| 158 || Boot
 |-
-| 159 || Boot
+| 159 || SWKBD
 |-
 | 161 || NFC Mifare
 |-
