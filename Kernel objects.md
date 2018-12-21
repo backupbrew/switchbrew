@@ -1168,3 +1168,14 @@ Size:
 | 0x1C   | u16                                                                                             |                      |
 | 0x1E   | bool                                                                                            |                      |
 | 0x20   | ...                                                                                             | ...                  |
+
+## KManagedPort
+
+Size:
+0x28
+
+| Offset | Type                                                                                              | Description                |
+| ------ | ------------------------------------------------------------------------------------------------- | -------------------------- |
+| 0      | [\#KLinkedListNode](#KLinkedListNode "wikilink")\<[\#KManagedPort](#KManagedPort "wikilink") \*\> | NodeFor\_\_ManagedPortList |
+| 0x10   | char\[12\]                                                                                        | PortName                   |
+| 0x20   | [\#KClientPort](#KClientPort "wikilink")\*                                                        | ClientPort                 |
