@@ -1011,8 +1011,8 @@ interface.
 | 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                                    | Seen on 1.0.0. Stubbed; does a debug print and returns 0.    |
 | 0x40040007 | 4        | NVHOST\_IOCTL\_CHANNEL\_SET\_SUBMIT\_TIMEOUT                                                                | Seen on 1.0.0.                                               |
 | 0x40080008 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE                                                                      | Seen on 1.0.0.                                               |
-| 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_BUFFER                                                                         | Seen on 1.0.0.                                               |
-| 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_BUFFER                                                                       | Seen on 1.0.0.                                               |
+| 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER                                                                    | Seen on 1.0.0.                                               |
+| 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER                                                                  | Seen on 1.0.0.                                               |
 | 0x00000013 | 0        |                                                                                                             | Seen on 1.0.0. This one sets a u32, and bool based on input. |
 | 0xC0080014 |          | NVHOST\_IOCTL\_CHANNEL\_GET\_CLK\_RATE                                                                      | Seen on 1.0.0.                                               |
 | 0x40044801 | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD](#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD "wikilink")                     | Seen on 1.0.0.                                               |
