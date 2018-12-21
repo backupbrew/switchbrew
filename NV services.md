@@ -403,17 +403,16 @@ driver.
 
 ## /dev/nvdisp-ctrl
 
-| Value      | Direction | Size | Description                                      | Notes |
-| ---------- | --------- | ---- | ------------------------------------------------ | ----- |
-| 0x80040212 | Out       | 4    | TEGRA\_DC\_EXT\_CONTROL\_GET\_NUM\_OUTPUTS       |       |
-| 0xC0140213 | Inout     | 20   | TEGRA\_DC\_EXT\_CONTROL\_GET\_OUTPUT\_PROPERTIES |       |
-| 0xC1100214 | Inout     | 272  | TEGRA\_DC\_EXT\_CONTROL\_GET\_OUTPUT\_EDID       |       |
-| 0xC0040216 | Inout     | 4    | TEGRA\_DC\_EXT\_CONTROL\_SET\_EVENT0             |       |
-| 0xC0040217 | Inout     | 4    | TEGRA\_DC\_EXT\_CONTROL\_SET\_EVENT1             |       |
-| 0xC0100218 | Inout     | 16   | TEGRA\_DC\_EXT\_CONTROL\_SET\_EVENT2             |       |
-| 0xC0100219 | Inout     | 16   | TEGRA\_DC\_EXT\_CONTROL\_SET\_EVENT3             |       |
-| 0xC0040220 | Inout     | 4    | TEGRA\_DC\_EXT\_CONTROL\_SET\_EVENT4             |       |
-|            |           |      |                                                  |       |
+| Value      | Direction | Size | Description                                        | Notes |
+| ---------- | --------- | ---- | -------------------------------------------------- | ----- |
+| 0x80040212 | Out       | 4    | TEGRA\_DC\_EXT\_CONTROL\_GET\_NUM\_OUTPUTS         |       |
+| 0xC0140213 | Inout     | 20   | TEGRA\_DC\_EXT\_CONTROL\_GET\_OUTPUT\_PROPERTIES   |       |
+| 0xC1100214 | Inout     | 272  | TEGRA\_DC\_EXT\_CONTROL\_GET\_OUTPUT\_EDID         |       |
+| 0xC0040216 | Inout     | 4    | TEGRA\_DC\_EXT\_CONTROL\_GET\_EXT\_HPD\_IN\_EVENT  |       |
+| 0xC0040217 | Inout     | 4    | TEGRA\_DC\_EXT\_CONTROL\_GET\_EXT\_HPD\_OUT\_EVENT |       |
+| 0xC0100218 | Inout     | 16   | TEGRA\_DC\_EXT\_CONTROL\_GET\_VBLANK\_HEAD0\_EVENT |       |
+| 0xC0100219 | Inout     | 16   | TEGRA\_DC\_EXT\_CONTROL\_GET\_VBLANK\_HEAD1\_EVENT |       |
+| 0xC0040220 | Inout     | 4    | TEGRA\_DC\_EXT\_CONTROL\_GET\_UNK\_EVENT           |       |
 
 ## /dev/nvdisp-disp0, /dev/nvdisp-disp1
 
