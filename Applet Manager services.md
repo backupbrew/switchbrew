@@ -425,7 +425,7 @@ Takes an input u64 and handle, returns a GRC
 | 33   | EndBlockingHomeButton                                                                                                           |       |
 | 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                                                                    |       |
 | 50   | \[2.0.0+\] GetPseudoDeviceId                                                                                                    |       |
-| 60   | \[2.0.0+\] SetMediaPlaybackStateForApplication                                                                                  |       |
+| 60   | \[2.0.0+\] [\#SetMediaPlaybackStateForApplication](#SetMediaPlaybackStateForApplication "wikilink")                             |       |
 | 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink")                                           |       |
 | 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")                                             |       |
 | 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")                                                 |       |
@@ -507,6 +507,10 @@ zero.
 
 Takes no input. Returns an output u8 bool, which is ignored by official
 user-processes.
+
+#### SetMediaPlaybackStateForApplication
+
+Takes an input u8 bool, no output.
 
 #### IsGamePlayRecordingSupported
 
@@ -852,7 +856,7 @@ handle.
 | 50  | SetHandlesRequestToDisplay                                                                   |
 | 51  | ApproveToDisplay                                                                             |
 | 60  | OverrideAutoSleepTimeAndDimmingTime                                                          |
-| 61  | SetMediaPlaybackState                                                                        |
+| 61  | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                 |
 | 62  | SetIdleTimeDetectionExtension                                                                |
 | 63  | GetIdleTimeDetectionExtension                                                                |
 | 64  | SetInputDetectionSourceSet                                                                   |
@@ -936,6 +940,10 @@ Takes an input s32. No output.
 Returns an output u64 LayerId which is then used by the user-process
 with
 [Display\_services\#OpenLayer](Display%20services#OpenLayer.md##OpenLayer "wikilink").
+
+### SetMediaPlaybackState
+
+Takes an input u8 bool, no output.
 
 ### IsIlluminanceAvailable
 

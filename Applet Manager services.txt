@@ -525,7 +525,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 50 || [2.0.0+] GetPseudoDeviceId ||
 |-
-| 60 || [2.0.0+] SetMediaPlaybackStateForApplication ||
+| 60 || [2.0.0+] [[#SetMediaPlaybackStateForApplication]] ||
 |-
 | 65 || [3.0.0+] [[#IsGamePlayRecordingSupported]] ||
 |-
@@ -601,6 +601,9 @@ Takes an input s64 nanoseconds, no output. The input nanoseconds can be zero.
 
 ==== NotifyRunning ====
 Takes no input. Returns an output u8 bool, which is ignored by official user-processes.
+
+==== SetMediaPlaybackStateForApplication ====
+Takes an input u8 bool, no output.
 
 ==== IsGamePlayRecordingSupported ====
 No input, returns an output u8 bool.
@@ -938,7 +941,7 @@ No input, returns an output handle.
 |-
 | 60 || OverrideAutoSleepTimeAndDimmingTime
 |-
-| 61 || SetMediaPlaybackState
+| 61 || [[#SetMediaPlaybackState]]
 |-
 | 62 || SetIdleTimeDetectionExtension
 |-
@@ -1014,6 +1017,9 @@ Takes an input s32. No output.
 
 === CreateManagedDisplayLayer ===
 Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].
+
+=== SetMediaPlaybackState ===
+Takes an input u8 bool, no output.
 
 === IsIlluminanceAvailable ===
 No input, returns an output u8 bool.
