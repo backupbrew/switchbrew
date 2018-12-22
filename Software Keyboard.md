@@ -46,7 +46,7 @@ keyboard.
 | 0x3B4  | 4    | 0             | Password flag (0 = not password, 1 = password)                                                       |
 | 0x3B8  | 4    | 1             |                                                                                                      |
 | 0x3BC  | 2    | 1             | Return button flag (0 = disable, non-zero = enable)                                                  |
-| 0x3BE  | 1    | 1             | Draw background (0 = no, 1 = yes)                                                                    |
+| 0x3BE  | 1    | 1             | Blur background (0 = no, 1 = yes)                                                                    |
 | 0x3C0  | 4    | 20            | Offset of initial string in work buffer (or 0)                                                       |
 | 0x3C4  | 4    | 0             | Size of initial string in work buffer (bytes)                                                        |
 | 0x3C8  | 4    | 2024          | Offset of user dictionary in work buffer (or 0)                                                      |

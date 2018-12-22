@@ -62,7 +62,7 @@ The second IStorage passed to this applet should contain the configuration for t
 |-
 | 0x3BC || 2 || 1 || Return button flag (0 = disable, non-zero = enable)
 |-
-| 0x3BE || 1 || 1 || Draw background (0 = no, 1 = yes)
+| 0x3BE || 1 || 1 || Blur background (0 = no, 1 = yes)
 |-
 | 0x3C0 || 4 || 20 || Offset of initial string in work buffer (or 0)
 |-
