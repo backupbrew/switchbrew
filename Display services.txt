@@ -68,6 +68,8 @@ This is "nn::capsrv::sf::IScreenShotApplicationService".
 | 201 || SaveScreenShot
 |-
 | 203 || SaveScreenShotEx0
+|-
+| 210 || [6.0.0+] SaveScreenShotEx2
 |}
 
 = cec-mgr =

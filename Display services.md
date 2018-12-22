@@ -58,10 +58,11 @@ This is "nn::capsrv::sf::IScreenShotService". This is available with
 
 This is "nn::capsrv::sf::IScreenShotApplicationService".
 
-| Cmd | Name              |
-| --- | ----------------- |
-| 201 | SaveScreenShot    |
-| 203 | SaveScreenShotEx0 |
+| Cmd | Name                         |
+| --- | ---------------------------- |
+| 201 | SaveScreenShot               |
+| 203 | SaveScreenShotEx0            |
+| 210 | \[6.0.0+\] SaveScreenShotEx2 |
 
 # cec-mgr
 
