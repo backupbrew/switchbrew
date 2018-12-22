@@ -32,6 +32,11 @@ negative.
 **buffer\_index** and **buffer\_count** correspond to buffers with size
 0x384000(1280\*720\*4).
 
+## Cmd2
+
+Calls the same internal func as cmd1, where the last param is an
+additional cmd input u64 instead of hard-coded value 0x5f5e100.
+
 # caps:ss
 
 This is "nn::capsrv::sf::IScreenShotService".
