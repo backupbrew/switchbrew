@@ -32,6 +32,10 @@ negative.
 **buffer\_index** and **buffer\_count** correspond to buffers with size
 0x384000(1280\*720\*4).
 
+Value 0 is usable for the input u32.
+
+This takes a screenshot, the output buffer contains the RGBA8 image.
+
 ## Cmd2
 
 Calls the same internal func as cmd1, where the last param is an
