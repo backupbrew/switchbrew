@@ -2149,12 +2149,13 @@ the lower 5 bits.
 
 Unlisted values are unknown, but probably do something.
 
-| Value | Effect                                           |
-| ----- | ------------------------------------------------ |
-| 0b000 | falcon data mem \<-\> falcon $cX register        |
-| 0b001 | external mem \<-\> crypto input/output stream    |
-| 0b011 | falcon data mem \<-\> crypto input/output stream |
-| 0b100 | unknown, but can be combined with other types    |
+| Value | Effect                                                  |
+| ----- | ------------------------------------------------------- |
+| 0b000 | Falcon DMEM \<-\> Falcon $cX register                   |
+| 0b001 | External memory \<-\> Falcon crypto input/output stream |
+| 0b011 | Falcon DMEM \<-\> Falcon crypto input/output stream     |
+| 0b100 | Falcon IMEM \<-\> Falcon $cX register                   |
+| 0b101 | Falcon IMEM \<-\> Falcon crypto input/output stream     |
 
 #### DMA-Related Instructions
 
