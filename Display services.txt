@@ -28,6 +28,13 @@ This is "nn::capsrv::sf::IScreenShotControlService".
 | 1203 ||
 |}
 
+== Cmd1 ==
+Takes a type-0x46 output buffer, an input u32, two input u64s '''width'''/'''height''', an input s64 '''buffer_count''', and an input s64 '''buffer_index'''.
+
+'''width'''/'''height''' must match 1280/720. '''buffer_index''' must be < '''buffer_count'''. '''buffer_index''' and '''buffer_count''' must not be negative.
+
+'''buffer_index''' and '''buffer_count''' correspond to buffers with size 0x384000(1280*720*4).
+
 = caps:ss =
 This is "nn::capsrv::sf::IScreenShotService".
 
