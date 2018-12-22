@@ -1,7 +1,7 @@
 The only image data contained in this sysmodule is basically a saved display framebuffer, no image data for actively-used layers/framebuffers.
 
 = caps:sc =
-This is "nn::capsrv::sf::IScreenShotControlService".
+This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0.0+].
 
 {| class="wikitable" border="1"
 |-
@@ -43,7 +43,7 @@ This takes a screenshot, the output buffer contains the RGBA8 image.
 Calls the same internal func as cmd1, where the last param is an additional cmd input u64 instead of hard-coded value 0x5f5e100.
 
 = caps:ss =
-This is "nn::capsrv::sf::IScreenShotService".
+This is "nn::capsrv::sf::IScreenShotService". This is available with [2.0.0+].
 
 {| class="wikitable" border="1"
 |-

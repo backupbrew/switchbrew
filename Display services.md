@@ -4,7 +4,8 @@ layers/framebuffers.
 
 # caps:sc
 
-This is "nn::capsrv::sf::IScreenShotControlService".
+This is "nn::capsrv::sf::IScreenShotControlService". This is available
+with \[2.0.0+\].
 
 | Cmd  | Name |
 | ---- | ---- |
@@ -43,7 +44,8 @@ additional cmd input u64 instead of hard-coded value 0x5f5e100.
 
 # caps:ss
 
-This is "nn::capsrv::sf::IScreenShotService".
+This is "nn::capsrv::sf::IScreenShotService". This is available with
+\[2.0.0+\].
 
 | Cmd | Name |
 | --- | ---- |
