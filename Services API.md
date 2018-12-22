@@ -141,7 +141,7 @@ Takes a pid.
 <td><p>a: AlbumAccessor, c: AlbumControl</p></td>
 </tr>
 <tr class="odd">
-<td><p>caps:sc, caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0-5.1.0] caps:su</p></td>
+<td><p>[2.0.0+] caps:sc, [2.0.0+] caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0-5.1.0] caps:su</p></td>
 <td><p><a href="Display services.md" title="wikilink">Display services</a></p></td>
 <td></td>
 </tr>
@@ -229,7 +229,7 @@ Takes a pid.
 <tr class="even">
 <td><p>manu</p></td>
 <td><p><a href="Manu Services.md" title="wikilink">Manu Services</a></p></td>
-<td><p>&quot;Manufacturing&quot;, present in factory firmware but not installed on retail systems.</p></td>
+<td><p>"Manufacturing", present in factory firmware but not installed on retail systems.</p></td>
 </tr>
 <tr class="odd">
 <td><p>lr, ncm, ncm:v</p></td>
@@ -309,7 +309,7 @@ Takes a pid.
 <tr class="even">
 <td><p>sf-uds</p></td>
 <td><p>?</p></td>
-<td><p>System debug applet &quot;recovery&quot; has access to this service, but it doesn't appear to exist.</p></td>
+<td><p>System debug applet "recovery" has access to this service, but it doesn't appear to exist.</p></td>
 </tr>
 <tr class="odd">
 <td><p>tspm</p></td>
