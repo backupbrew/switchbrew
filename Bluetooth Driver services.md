@@ -13,53 +13,108 @@ point for similar source code can be found in the MICO project:
 Note that the library files contain many (symbolized) functions which
 match btdrv.
 
-| Cmd | Name                                 |
-| --- | ------------------------------------ |
-| 0   |                                      |
-| 1   | Init                                 |
-| 2   | Enable                               |
-| 3   | Disable                              |
-| 4   | CleanupAndShutdown                   |
-| 5   | GetAdapterProperties                 |
-| 6   | GetAdapterProperty                   |
-| 7   | SetAdapterProperty                   |
-| 8   | StartDiscovery                       |
-| 9   | CancelDiscovery                      |
-| 10  | CreateBond                           |
-| 11  | RemoveBond                           |
-| 12  | CancelBond                           |
-| 13  | PinReply                             |
-| 14  | SspReply                             |
-| 15  |                                      |
-| 16  | InitInterfaces                       |
-| 17  | HidHostInterface\_Connect            |
-| 18  | HidHostInterface\_Disconnect         |
-| 19  | HidHostInterface\_SendData           |
-| 20  | HidHostInterface\_SendData2          |
-| 21  | HidHostInterface\_SetReport          |
-| 22  | HidHostInterface\_GetReport          |
-| 23  | HidHostInterface\_WakeController     |
-| 24  | HidHostInterface\_AddPairedDevice    |
-| 25  | HidHostInterface\_GetPairedDevice    |
-| 26  | HidHostInterface\_CleanupAndShutdown |
-| 27  |                                      |
-| 28  | ExtInterface\_SetTSI                 |
-| 29  | ExtInterface\_SetBurstMode           |
-| 30  | ExtInterface\_SetZeroRetran          |
-| 31  | ExtInterface\_SetMcMode              |
-| 32  | ExtInterface\_StartLlrMode           |
-| 33  | ExtInterface\_ExitLlrMode            |
-| 34  | ExtInterface\_SetRadio               |
-| 35  | ExtInterface\_SetVisibility          |
-| 36  |                                      |
-| 37  |                                      |
-| 38  | HidHostInterface\_GetLatestPlr       |
-| 39  | ExtInterface\_GetPendingConnections  |
-| 40  | HidHostInterface\_GetChannelMap      |
-| 41  | SetIsBluetoothBoostEnabled           |
-| 42  | GetIsBluetoothBoostEnabled           |
-| 43  | SetIsBluetoothAfhEnabled             |
-| 44  | GetIsBluetoothAfhEnabled             |
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | InitializeBluetoothDriver                  |
+| 1   | InitializeBluetooth                        |
+| 2   | EnableBluetooth                            |
+| 3   | DisableBluetooth                           |
+| 4   | CleanupBluetooth                           |
+| 5   | GetAdapterProperties                       |
+| 6   | GetAdapterProperty                         |
+| 7   | SetAdapterProperty                         |
+| 8   | StartDiscovery                             |
+| 9   | CancelDiscovery                            |
+| 10  | CreateBond                                 |
+| 11  | RemoveBond                                 |
+| 12  | CancelBond                                 |
+| 13  | PinReply                                   |
+| 14  | SspReply                                   |
+| 15  | GetEventInfo                               |
+| 16  | InitializeHid                              |
+| 17  | HidConnect                                 |
+| 18  | HidDisconnect                              |
+| 19  | HidSendData                                |
+| 20  | HidSendData2                               |
+| 21  | HidSetReport                               |
+| 22  | HidGetReport                               |
+| 23  | HidWakeController                          |
+| 24  | HidAddPairedDevice                         |
+| 25  | HidGetPairedDevice                         |
+| 26  | CleanupHid                                 |
+| 27  | HidGetEventInfo                            |
+| 28  | ExtSetTsi                                  |
+| 29  | ExtSetBurstMode                            |
+| 30  | ExtSetZeroRetran                           |
+| 31  | ExtSetMcMode                               |
+| 32  | ExtStartLlrMode                            |
+| 33  | ExtExitLlrMode                             |
+| 34  | ExtSetRadio                                |
+| 35  | ExtSetVisibility                           |
+| 36  | ExtSetTbfcScan                             |
+| 37  | RegisterHidReportEvent                     |
+| 38  | HidGetReportEventInfo                      |
+| 39  | GetLatestPlr                               |
+| 40  | ExtGetPendingConnections                   |
+| 41  | GetChannelMap                              |
+| 42  | EnableBluetoothBoostSetting                |
+| 43  | IsBluetoothBoostSettingEnabled             |
+| 44  | EnableBluetoothAfhSetting                  |
+| 45  | IsBluetoothAfhSettingEnabled               |
+| 46  | \[5.0.0+\] InitializeBluetoothLe           |
+| 47  | \[5.0.0+\] EnableBluetoothLe               |
+| 48  | \[5.0.0+\] DisableBluetoothLe              |
+| 49  | \[5.0.0+\] CleanupBluetoothLe              |
+| 50  | \[5.0.0+\] SetLeVisibility                 |
+| 51  | \[5.0.0+\] SetLeConnectionParameter        |
+| 52  | \[5.0.0+\] SetLeDefaultConnectionParameter |
+| 53  | \[5.0.0+\] SetLeAdvertiseData              |
+| 54  | \[5.0.0+\] SetLeAdvertiseParameter         |
+| 55  | \[5.0.0+\] StartLeScan                     |
+| 56  | \[5.0.0+\] StopLeScan                      |
+| 57  | \[5.0.0+\] AddLeScanFilterCondition        |
+| 58  | \[5.0.0+\] DeleteLeScanFilterCondition     |
+| 59  | \[5.0.0+\] DeleteLeScanFilter              |
+| 60  | \[5.0.0+\] ClearLeScanFilters              |
+| 61  | \[5.0.0+\] EnableLeScanFilter              |
+| 62  | \[5.0.0+\] RegisterLeClient                |
+| 63  | \[5.0.0+\] UnregisterLeClient              |
+| 64  | \[5.0.0+\] UnregisterLeClientAll           |
+| 65  | \[5.0.0+\] LeClientConnect                 |
+| 66  | \[5.0.0+\] LeClientCancelConnection        |
+| 67  | \[5.0.0+\] LeClientDisconnect              |
+| 68  | \[5.0.0+\] LeClientGetAttributes           |
+| 69  | \[5.0.0+\] LeClientDiscoverService         |
+| 70  | \[5.0.0+\] LeClientConfigureMtu            |
+| 71  | \[5.0.0+\] RegisterLeServer                |
+| 72  | \[5.0.0+\] UnregisterLeServer              |
+| 73  | \[5.0.0+\] LeServerConnect                 |
+| 74  | \[5.0.0+\] LeServerDisconnect              |
+| 75  | \[5.0.0+\] CreateLeService                 |
+| 76  | \[5.0.0+\] StartLeService                  |
+| 77  | \[5.0.0+\] AddLeCharacteristic             |
+| 78  | \[5.0.0+\] AddLeDescriptor                 |
+| 79  | \[5.0.0+\] GetLeCoreEventInfo              |
+| 80  | \[5.0.0+\] LeGetFirstCharacteristic        |
+| 81  | \[5.0.0+\] LeGetNextCharacteristic         |
+| 82  | \[5.0.0+\] LeGetFirstDescriptor            |
+| 83  | \[5.0.0+\] LeGetNextDescriptor             |
+| 84  | \[5.0.0+\] RegisterLeCoreDataPath          |
+| 85  | \[5.0.0+\] UnregisterLeCoreDataPath        |
+| 86  | \[5.0.0+\] RegisterLeHidDataPath           |
+| 87  | \[5.0.0+\] UnregisterLeHidDataPath         |
+| 88  | \[5.0.0+\] RegisterLeDataPath              |
+| 89  | \[5.0.0+\] UnregisterLeDataPath            |
+| 90  | \[5.0.0+\] LeClientReadCharacteristic      |
+| 91  | \[5.0.0+\] LeClientReadDescriptor          |
+| 92  | \[5.0.0+\] LeClientWriteCharacteristic     |
+| 93  | \[5.0.0+\] LeClientWriteDescriptor         |
+| 94  | \[5.0.0+\] LeClientRegisterNotification    |
+| 95  | \[5.0.0+\] LeClientDeregisterNotification  |
+| 96  | \[5.0.0+\] GetLeHidEventInfo               |
+| 97  | \[5.0.0+\] RegisterBleHidEvent             |
+| 98  | \[5.1.0+\] SetLeScanParameter              |
+| 256 | \[5.0.0+\] GetIsManufacturingMode          |
 
 # bt
 

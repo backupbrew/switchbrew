@@ -11,15 +11,15 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || InitializeBluetoothDriver
 |-
-| 1 || Init
+| 1 || InitializeBluetooth
 |-
-| 2 || Enable
+| 2 || EnableBluetooth
 |-
-| 3 || Disable
+| 3 || DisableBluetooth
 |-
-| 4 || CleanupAndShutdown
+| 4 || CleanupBluetooth
 |-
 | 5 || GetAdapterProperties
 |-
@@ -41,70 +41,179 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 14 || SspReply
 |-
-| 15 ||
+| 15 || GetEventInfo
 |-
-| 16 || InitInterfaces
+| 16 || InitializeHid
 |-
-| 17 || HidHostInterface_Connect
+| 17 || HidConnect
 |-
-| 18 || HidHostInterface_Disconnect
+| 18 || HidDisconnect
 |-
-| 19 || HidHostInterface_SendData
+| 19 || HidSendData
 |-
-| 20 || HidHostInterface_SendData2
+| 20 || HidSendData2
 |-
-| 21 || HidHostInterface_SetReport
+| 21 || HidSetReport
 |-
-| 22 || HidHostInterface_GetReport
+| 22 || HidGetReport
 |-
-| 23 || HidHostInterface_WakeController
+| 23 || HidWakeController
 |-
-| 24 || HidHostInterface_AddPairedDevice
+| 24 || HidAddPairedDevice
 |-
-| 25 || HidHostInterface_GetPairedDevice
+| 25 || HidGetPairedDevice
 |-
-| 26 || HidHostInterface_CleanupAndShutdown
+| 26 || CleanupHid
 |-
-| 27 || 
+| 27 || HidGetEventInfo
 |-
-| 28 || ExtInterface_SetTSI
+| 28 || ExtSetTsi
 |-
-| 29 || ExtInterface_SetBurstMode
+| 29 || ExtSetBurstMode
 |-
-| 30 || ExtInterface_SetZeroRetran
+| 30 || ExtSetZeroRetran
 |-
-| 31 || ExtInterface_SetMcMode
+| 31 || ExtSetMcMode
 |-
-| 32 || ExtInterface_StartLlrMode
+| 32 || ExtStartLlrMode
 |-
-| 33 || ExtInterface_ExitLlrMode
+| 33 || ExtExitLlrMode
 |-
-| 34 || ExtInterface_SetRadio
+| 34 || ExtSetRadio
 |-
-| 35 || ExtInterface_SetVisibility
+| 35 || ExtSetVisibility
 |-
-| 36 || 
+| 36 || ExtSetTbfcScan
 |-
-| 37 || 
+| 37 || RegisterHidReportEvent
 |-
-| 38 || HidHostInterface_GetLatestPlr
+| 38 || HidGetReportEventInfo
 |-
-| 39 || ExtInterface_GetPendingConnections
+| 39 || GetLatestPlr
 |-
-| 40 || HidHostInterface_GetChannelMap
+| 40 || ExtGetPendingConnections
 |-
-| 41 || SetIsBluetoothBoostEnabled
+| 41 || GetChannelMap
 |-
-| 42 || GetIsBluetoothBoostEnabled
+| 42 || EnableBluetoothBoostSetting
 |-
-| 43 || SetIsBluetoothAfhEnabled
+| 43 || IsBluetoothBoostSettingEnabled
 |-
-| 44 || GetIsBluetoothAfhEnabled
+| 44 || EnableBluetoothAfhSetting
+|-
+| 45 || IsBluetoothAfhSettingEnabled
+|-
+| 46 || [5.0.0+] InitializeBluetoothLe
+|-
+| 47 || [5.0.0+] EnableBluetoothLe
+|-
+| 48 || [5.0.0+] DisableBluetoothLe
+|-
+| 49 || [5.0.0+] CleanupBluetoothLe
+|-
+| 50 || [5.0.0+] SetLeVisibility
+|-
+| 51 || [5.0.0+] SetLeConnectionParameter
+|-
+| 52 || [5.0.0+] SetLeDefaultConnectionParameter
+|-
+| 53 || [5.0.0+] SetLeAdvertiseData
+|-
+| 54 || [5.0.0+] SetLeAdvertiseParameter
+|-
+| 55 || [5.0.0+] StartLeScan
+|-
+| 56 || [5.0.0+] StopLeScan
+|-
+| 57 || [5.0.0+] AddLeScanFilterCondition
+|-
+| 58 || [5.0.0+] DeleteLeScanFilterCondition
+|-
+| 59 || [5.0.0+] DeleteLeScanFilter
+|-
+| 60 || [5.0.0+] ClearLeScanFilters
+|-
+| 61 || [5.0.0+] EnableLeScanFilter
+|-
+| 62 || [5.0.0+] RegisterLeClient
+|-
+| 63 || [5.0.0+] UnregisterLeClient
+|-
+| 64 || [5.0.0+] UnregisterLeClientAll
+|-
+| 65 || [5.0.0+] LeClientConnect
+|-
+| 66 || [5.0.0+] LeClientCancelConnection
+|-
+| 67 || [5.0.0+] LeClientDisconnect
+|-
+| 68 || [5.0.0+] LeClientGetAttributes
+|-
+| 69 || [5.0.0+] LeClientDiscoverService
+|-
+| 70 || [5.0.0+] LeClientConfigureMtu
+|-
+| 71 || [5.0.0+] RegisterLeServer
+|-
+| 72 || [5.0.0+] UnregisterLeServer
+|-
+| 73 || [5.0.0+] LeServerConnect
+|-
+| 74 || [5.0.0+] LeServerDisconnect
+|-
+| 75 || [5.0.0+] CreateLeService
+|-
+| 76 || [5.0.0+] StartLeService
+|-
+| 77 || [5.0.0+] AddLeCharacteristic
+|-
+| 78 || [5.0.0+] AddLeDescriptor
+|-
+| 79 || [5.0.0+] GetLeCoreEventInfo
+|-
+| 80 || [5.0.0+] LeGetFirstCharacteristic
+|-
+| 81 || [5.0.0+] LeGetNextCharacteristic
+|-
+| 82 || [5.0.0+] LeGetFirstDescriptor
+|-
+| 83 || [5.0.0+] LeGetNextDescriptor
+|-
+| 84 || [5.0.0+] RegisterLeCoreDataPath
+|-
+| 85 || [5.0.0+] UnregisterLeCoreDataPath
+|-
+| 86 || [5.0.0+] RegisterLeHidDataPath
+|-
+| 87 || [5.0.0+] UnregisterLeHidDataPath
+|-
+| 88 || [5.0.0+] RegisterLeDataPath
+|-
+| 89 || [5.0.0+] UnregisterLeDataPath
+|-
+| 90 || [5.0.0+] LeClientReadCharacteristic
+|-
+| 91 || [5.0.0+] LeClientReadDescriptor
+|-
+| 92 || [5.0.0+] LeClientWriteCharacteristic
+|-
+| 93 || [5.0.0+] LeClientWriteDescriptor
+|-
+| 94 || [5.0.0+] LeClientRegisterNotification
+|-
+| 95 || [5.0.0+] LeClientDeregisterNotification
+|-
+| 96 || [5.0.0+] GetLeHidEventInfo
+|-
+| 97 || [5.0.0+] RegisterBleHidEvent
+|-
+| 98 || [5.1.0+] SetLeScanParameter
+|-
+| 256 || [5.0.0+] GetIsManufacturingMode
 |}
 
 = bt =
 This is "nn::bluetooth::IBluetoothUser".
-
 
 {| class="wikitable" border="1"
 |-
