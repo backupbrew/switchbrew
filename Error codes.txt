@@ -648,6 +648,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x19669 || 105 || 203 || Null settings value
 |-
+| 0x19A69 || 105 || 205 || Null settings value buffer
+|-
 | 0x1A069 || 105 || 208 || Null setting value size buffer
 |-
 | 0x1A269 || 105 || 209 || Null debug mode flag buffer
