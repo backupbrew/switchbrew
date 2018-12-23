@@ -143,11 +143,17 @@ The application then has an opportunity to validate or reject the text. It creat
 |-
 ! Offset || Size || Notes 
 |-
-| 0x0 || 0x4 || Status (0 = OK, 1 = bad)
+| 0x0 || 0x4 || TextCheckResult
 |-
 | 0x4 || Variable || UTF-16 error message (shown in a dialog box)
 |-
 |}
+
+TextCheckResult:
+* 0: Success, valid string.
+* 1: Failure, invalid string. Error message is displayed in a message-box, pressing OK will return to swkbd again.
+* 2: Failure, invalid string. Error message is displayed in a message-box, pressing Cancel will return to swkbd again, while pressing OK will continue as if the text was valid.
+* 3: Failure, invalid string. With value 3 and above, swkbd will silently not accept the string, without displaying any error.
 
 == Output ==
 
