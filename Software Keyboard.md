@@ -31,7 +31,7 @@ keyboard.
 
 | Offset | Size | Typical Value | Notes                                                                                                                                              |
 | ------ | ---- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 4    | 2             |                                                                                                                                                    |
+| 0x0    | 4    |               | Type                                                                                                                                               |
 | 0x4    | 18   | 0             | UTF-16 text displayed in the submit button                                                                                                         |
 | 0x16   | 2    | 0             | UTF-16 "left optional symbol key"                                                                                                                  |
 | 0x18   | 2    | 0             | UTF-16 "right optional symbol key"                                                                                                                 |
@@ -73,6 +73,13 @@ swkbd will stop accepting more input until text is deleted via the B
 button (Backspace).
 
 Each entry in the user dictionary is 100 bytes long.
+
+## Type
+
+  - 0: Normal keyboard.
+  - 1: Number pad. The buttons at the bottom left/right are only
+    available when the characters at offset 0x16/0x18 are set.
+  - 2: QWERTY (and variants) keyboard only.
 
 ### Key Set Disable Bitmask
 
