@@ -29,34 +29,34 @@ The second IStorage passed to this applet should contain the
 configuration for the
 keyboard.
 
-| Offset | Size | Typical Value | Notes                                                                                                |
-| ------ | ---- | ------------- | ---------------------------------------------------------------------------------------------------- |
-| 0x0    | 4    | 2             |                                                                                                      |
-| 0x4    | 18   | 0             | UTF-16 text displayed in the submit button                                                           |
-| 0x16   | 2    | 0             | UTF-16 "left optional symbol key"                                                                    |
-| 0x18   | 2    | 0             | UTF-16 "right optional symbol key"                                                                   |
-| 0x1A   | 1    | 0             |                                                                                                      |
-| 0x1C   | 4    | 0             | Key set disable bitmask                                                                              |
-| 0x20   | 4    | 1             | Initial cursor position (0 = start of string, 1 = end of string)                                     |
-| 0x24   | 130  | u""           | UTF-16 header text                                                                                   |
-| 0xA6   | 258  | u""           | UTF-16 sub text                                                                                      |
-| 0x1A8  | 514  | u""           | UTF-16 guide text                                                                                    |
-| 0x3AC  | 4    | 0             | String length limit (defaults to 500?)                                                               |
-| 0x3B0  | 4    | 0             |                                                                                                      |
-| 0x3B4  | 4    | 0             | Password flag (0 = not password, 1 = password)                                                       |
-| 0x3B8  | 4    | 1             |                                                                                                      |
-| 0x3BC  | 2    | 1             | Return button flag (0 = disable, non-zero = enable)                                                  |
-| 0x3BE  | 1    | 1             | Blur background (0 = no, 1 = yes)                                                                    |
-| 0x3C0  | 4    | 20            | Offset of initial string in work buffer (or 0)                                                       |
-| 0x3C4  | 4    | 0             | Size of initial string in work buffer (bytes)                                                        |
-| 0x3C8  | 4    | 2024          | Offset of user dictionary in work buffer (or 0)                                                      |
-| 0x3CC  | 4    | 0             | Length of user dictionary (number of entries)                                                        |
-| 0x3D0  | 1    | 0             | [\#Text check](#Text_check "wikilink") enable                                                        |
-| 0x3D8  | 8    | 0             | [\#Text check](#Text_check "wikilink") callback function address. Not sure why this is included here |
-| 0x3E0  | 8    | \-1           |                                                                                                      |
-| 0x3E8  | 8    | \-1           |                                                                                                      |
-| 0x3F0  | 8    | \-1           |                                                                                                      |
-| 0x3F8  | 8    | \-1           |                                                                                                      |
+| Offset | Size | Typical Value | Notes                                                                                                                                              |
+| ------ | ---- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 4    | 2             |                                                                                                                                                    |
+| 0x4    | 18   | 0             | UTF-16 text displayed in the submit button                                                                                                         |
+| 0x16   | 2    | 0             | UTF-16 "left optional symbol key"                                                                                                                  |
+| 0x18   | 2    | 0             | UTF-16 "right optional symbol key"                                                                                                                 |
+| 0x1A   | 1    | 0             | Enables dictionary usage when non-zero (including the system dictionary).                                                                          |
+| 0x1C   | 4    | 0             | Key set disable bitmask                                                                                                                            |
+| 0x20   | 4    | 1             | Initial cursor position (0 = start of string, 1 = end of string)                                                                                   |
+| 0x24   | 130  | u""           | UTF-16 header text                                                                                                                                 |
+| 0xA6   | 258  | u""           | UTF-16 sub text                                                                                                                                    |
+| 0x1A8  | 514  | u""           | UTF-16 guide text                                                                                                                                  |
+| 0x3AC  | 4    | 0             | stringLenMax                                                                                                                                       |
+| 0x3B0  | 4    | 0             | stringLenMaxExt. When non-zero, specifies the max string length. When the input is too long, swkbd will display an icon and disable the ok-button. |
+| 0x3B4  | 4    | 0             | Password flag (0 = not password, 1 = password)                                                                                                     |
+| 0x3B8  | 4    | 1             |                                                                                                                                                    |
+| 0x3BC  | 2    | 1             | Return button flag (0 = disable, non-zero = enable)                                                                                                |
+| 0x3BE  | 1    | 1             | Blur background (0 = no, 1 = yes)                                                                                                                  |
+| 0x3C0  | 4    | 20            | Offset of initial string in work buffer (or 0)                                                                                                     |
+| 0x3C4  | 4    | 0             | Size of initial string in work buffer (bytes)                                                                                                      |
+| 0x3C8  | 4    | 2024          | Offset of user dictionary in work buffer (or 0)                                                                                                    |
+| 0x3CC  | 4    | 0             | Length of user dictionary (number of entries)                                                                                                      |
+| 0x3D0  | 1    | 0             | [\#Text check](#Text_check "wikilink") enable                                                                                                      |
+| 0x3D8  | 8    | 0             | [\#Text check](#Text_check "wikilink") callback function address. Not sure why this is included here                                               |
+| 0x3E0  | 8    | \-1           |                                                                                                                                                    |
+| 0x3E8  | 8    | \-1           |                                                                                                                                                    |
+| 0x3F0  | 8    | \-1           |                                                                                                                                                    |
+| 0x3F8  | 8    | \-1           |                                                                                                                                                    |
 
 This struct is 0x3E0-bytes with version 0x5. Starting with version
 0x30007 this struct is 0x400-bytes.
@@ -66,9 +66,11 @@ This is presumably an extension to [\#Key Set Disable
 Bitmask](#Key_Set_Disable_Bitmask "wikilink")?(The field at 0x1C is
 still set to 0x80 here)
 
-If the length limit is \<= 32, the text entry box will be a single row
-and show the header/sub text. Otherwise, it will use multiple rows and
-the header/sub text will not be shown.
+If the length limit (stringLenMax) is \<= 32, the text entry box will be
+a line and show the header/sub text. Otherwise, it will use a text-box
+and the header/sub text will not be shown. When the input is too long,
+swkbd will stop accepting more input until text is deleted via the B
+button (Backspace).
 
 Each entry in the user dictionary is 100 bytes long.
 
