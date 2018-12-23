@@ -446,6 +446,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x327602 || 2 || 6459 || FS allocators already used
 |-
+| 0x327A02 || 2 || 6461 || FS allocator alignment violation
+|-
 | 0x339402 || 2 || 6602 || File not found.
 |-
 | 0x339602 || 2 || 6603 || Directory not found.
