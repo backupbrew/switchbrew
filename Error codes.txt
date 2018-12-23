@@ -642,7 +642,11 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xD21A || 26 || 105 || Invalid AES engine-id
 |-
-| 0x19669 || 105 || 203 || Setting value cannot be NULL
+| 0x19269 || 105 || 201 || Null settings name
+|-
+| 0x19469 || 105 || 202 || Null settings key
+|-
+| 0x19669 || 105 || 203 || Null settings value
 |-
 | 0x1A069 || 105 || 208 || Null setting value size buffer
 |-
