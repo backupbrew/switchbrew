@@ -886,6 +886,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x87E || 126 || 4 || Entry not found
 |-
+| 0xCE7E || 126 || 67 || Invalid database signature value (should be "NFDB")
+|-
+| 0xD27E || 126 || 69 || Invalid database entry count
+|-
 | 0x1987E || 126 || 204 || Development/debug-only behavior
 |-
 | 0x4680 || 128 || 35 || Error while launching applet.
