@@ -44,7 +44,7 @@ keyboard.
 | 0x3AC  | 4    | 0             | stringLenMax                                                                                                                                       |
 | 0x3B0  | 4    | 0             | stringLenMaxExt. When non-zero, specifies the max string length. When the input is too long, swkbd will display an icon and disable the ok-button. |
 | 0x3B4  | 4    | 0             | Password flag (0 = not password, 1 = password)                                                                                                     |
-| 0x3B8  | 4    | 1             |                                                                                                                                                    |
+| 0x3B8  | 4    | 1             | textDrawType                                                                                                                                       |
 | 0x3BC  | 2    | 1             | Return button flag (0 = disable, non-zero = enable)                                                                                                |
 | 0x3BE  | 1    | 1             | Blur background (0 = no, 1 = yes)                                                                                                                  |
 | 0x3C0  | 4    | 20            | Offset of initial string in work buffer (or 0)                                                                                                     |
@@ -62,17 +62,11 @@ This struct is 0x3E0-bytes with version 0x5. Starting with version
 0x30007 this struct is 0x400-bytes.
 
 The 0x20-bytes at offset 0x3E0 is -1 normally, except for DownloadCodes.
-This is presumably an extension to [\#Key Set Disable
-Bitmask](#Key_Set_Disable_Bitmask "wikilink")?(The field at 0x1C is
-still set to 0x80 here)
-
-If the length limit (stringLenMax) is \<= 32, the text entry box will be
-a line and show the header/sub text. Otherwise, it will use a text-box
-and the header/sub text will not be shown. When the input is too long,
-swkbd will stop accepting more input until text is deleted via the B
-button (Backspace).
 
 Each entry in the user dictionary is 100 bytes long.
+
+stringLenMax: When the input is too long, swkbd will stop accepting more
+input until text is deleted via the B button (Backspace).
 
 ## Type
 
@@ -80,6 +74,16 @@ Each entry in the user dictionary is 100 bytes long.
   - 1: Number pad. The buttons at the bottom left/right are only
     available when the characters at offset 0x16/0x18 are set.
   - 2: QWERTY (and variants) keyboard only.
+
+## textDrawType
+
+If the length limit (stringLenMax) is 1..32, the type specified by
+textDrawType will be used. Otherwise, type1 will be used.
+
+  - 0: The text will be displayed on a line. Also enables displaying the
+    Header and Sub text.
+  - 1: The text will be displayed in a box.
+  - 2: Used for DownloadCodes on 5.0.0+.
 
 ### Key Set Disable Bitmask
 
