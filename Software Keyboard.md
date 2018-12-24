@@ -89,9 +89,11 @@ list is incomplete.
     0x02: disable ' '
     0x04: disable '@'
     0x08: disable '%'
-    0x10: disable '\' and '/'
+    0x10: disable '/'
+    0x20: disable '\'
     0x40: disable numbers
-    0x80: used for download codes
+    0x80: Used for DownloadCodes.
+    0x100: Used for UserNames. Disables '@', '%', and '\'.
 
 ## Work Buffer
 
