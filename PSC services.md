@@ -115,4 +115,15 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 0x1E |                                                         |
 | 0x29 | [nn::psc::PmModuleId\_Lm](Log%20services.md "wikilink") |
 
+# Power Management States
+
+| ID                  | Name | Description                             |
+| ------------------- | ---- | --------------------------------------- |
+| Awake               | 0    | Everything is awake.                    |
+| ReadyAwaken         | 1    | Preparing to transition to awake.       |
+| ReadySleep          | 2    | Preparing to transition to sleep.       |
+| ReadySleepCritical  | 3    | Critical services are ready to sleep.   |
+| ReadyAwakenCritical | 4    | Critical services are ready to wake up. |
+| ReadyShutdown       | 5    | Preparing to transition to shutdown.    |
+
 [Category:Services](Category:Services "wikilink")
