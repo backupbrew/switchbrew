@@ -1154,7 +1154,8 @@ bytes of the ns\_appman:/private (in [system
 savedata](Flash%20Filesystem#System%20Savegames.md##System_Savegames "wikilink")
 0x8000000000000043). If they match, NS calls this command using bytes
 0x10-0x20 from ns\_appman:/private. The rest of this file (0x1F0 bytes
-total) is (usually/always?) all-zero.
+total) is (usually/always?) all-zero (however in some cases the byte at
+offset 0x20 is value 0x1).
 
 ## SetGlobalAccessLogMode
 
