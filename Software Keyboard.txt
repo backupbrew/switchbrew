@@ -1,6 +1,6 @@
 The software keyboard (swkbd) expects to be passed three [[AM_services#IStorage|IStorage]]s. See also [[AM_services#Library_Applets]].
 
-The below is for normal swkbd usage. There's also InlineKeyboard (added post-1.0.0), which doesn't run in the foreground and has completely different input/output [[AM_services#IStorage|IStorage]]s. It also doesn't seem to display on the screen (or is optional at least): the user-process can get the gfx data via [[Display_services]].
+The below is for normal swkbd usage. There's also InlineKeyboard, which doesn't run in the foreground and has completely different input/output [[AM_services#IStorage|IStorage]]s. It also doesn't seem to display on the screen (or is optional at least): the user-process can get the gfx data via [[Display_services]]. InlineKeyboard was added with 2.0.0, however it wasn't added to sdk-nso until the version corresponding to sysver 3.x (even though 2.0.0 system titles use it).
 
 == Library Applet Versions ==
 {| class="wikitable" border="1"
