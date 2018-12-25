@@ -53,10 +53,7 @@ keyboard.
 | 0x3CC  | 4    | 0             | Length of user dictionary (number of entries)                                                                                                      |
 | 0x3D0  | 1    | 0             | [\#Text check](#Text_check "wikilink") enable                                                                                                      |
 | 0x3D8  | 8    | 0             | [\#Text check](#Text_check "wikilink") callback function address. Not sure why this is included here                                               |
-| 0x3E0  | 8    | \-1           |                                                                                                                                                    |
-| 0x3E8  | 8    | \-1           |                                                                                                                                                    |
-| 0x3F0  | 8    | \-1           |                                                                                                                                                    |
-| 0x3F8  | 8    | \-1           |                                                                                                                                                    |
+| 0x3E0  | 0x20 | \-1           | When set and enabled via textDrawType, controls displayed text grouping (inserts spaces, without affecting output string). Used for DownloadCodes. |
 
 This struct is 0x3E0-bytes with version 0x5. Starting with version
 0x30007 this struct is 0x400-bytes.
@@ -68,14 +65,14 @@ Each entry in the user dictionary is 100 bytes long.
 stringLenMax: When the input is too long, swkbd will stop accepting more
 input until text is deleted via the B button (Backspace).
 
-## Type
+### Type
 
   - 0: Normal keyboard.
   - 1: Number pad. The buttons at the bottom left/right are only
     available when the characters at offset 0x16/0x18 are set.
   - 2: QWERTY (and variants) keyboard only.
 
-## textDrawType
+### textDrawType
 
 If the length limit (stringLenMax) is 1..32, the type specified by
 textDrawType will be used. Otherwise, type1 will be used.
@@ -83,7 +80,8 @@ textDrawType will be used. Otherwise, type1 will be used.
   - 0: The text will be displayed on a line. Also enables displaying the
     Header and Sub text.
   - 1: The text will be displayed in a box.
-  - 2: Used for DownloadCodes on 5.0.0+.
+  - 2: Used for DownloadCodes on 5.0.0+. Enables using the data starting
+    at offset 0x3E0.
 
 ### Key Set Disable Bitmask
 
