@@ -96,7 +96,7 @@ Takes a pid.
 <td><p>fgm:1, fgm:2, fgm:3, fgm:4, fgm:5, fgm:6 and fgm:7 used to exist, but are now deprecated.</p></td>
 </tr>
 <tr class="even">
-<td><p>arp:r, arp:w, bgtc:t, bgtc:sc</p></td>
+<td><p>arp:r, arp:w, [2.0.0+] bgtc:t, [2.0.0+] bgtc:sc</p></td>
 <td><p><a href="Glue services.md" title="wikilink">Glue services</a></p></td>
 <td></td>
 </tr>
