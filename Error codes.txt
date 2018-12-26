@@ -452,6 +452,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x339602 || 2 || 6603 || Directory not found.
 |-
+| 0x3DCC02 || 2 || 7910 || RomFs directory has no more child directories/files when iterating
+|-
 | 0x803 || 3 || 4 || OS busy
 |-
 | 0xE03 || 3 || 7 || Invalid parameter
