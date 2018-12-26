@@ -543,7 +543,11 @@ should be done for all currently open interfaces.
 
 Takes an input u32 and a type-0x6 output buffer, returns an
 [\#IClientIfSession](#IClientIfSession "wikilink"). On \[3.0.0+\] this
-takes an additional type-0x6 output buffer.
+takes an additional type-0x6 output buffer, before the original buffer.
+On \[3.0.0+\] the first buffer is 0x70-bytes, while the second one is
+0x1B8. The user-process has the second buffer address immediately after
+the first one, which allows getting a complete
+[\#UsbHsInterface](#UsbHsInterface "wikilink").
 
 The input u32 is from the u32 at entry+0 from the associated
 [\#QueryAvailableInterfaces](#QueryAvailableInterfaces "wikilink")
