@@ -2162,15 +2162,16 @@ the lower 5 bits.
 
 #### Override Types
 
-Unlisted values are unknown, but probably do something.
-
 | Value | Effect                                                  |
 | ----- | ------------------------------------------------------- |
 | 0b000 | Falcon DMEM \<-\> Falcon $cX register                   |
 | 0b001 | External memory \<-\> Falcon crypto input/output stream |
+| 0b010 | Falcon DMEM \<-\> Falcon $cX register                   |
 | 0b011 | Falcon DMEM \<-\> Falcon crypto input/output stream     |
 | 0b100 | Falcon IMEM \<-\> Falcon $cX register                   |
 | 0b101 | Falcon IMEM \<-\> Falcon crypto input/output stream     |
+| 0b110 | Unknown \<-\> Falcon $cX register                       |
+| 0b111 | Unknown \<-\> Falcon crypto input/output stream         |
 
 #### DMA-Related Instructions
 
