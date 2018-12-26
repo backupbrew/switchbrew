@@ -1608,7 +1608,7 @@ and encrypts the supplied buffer.
 
 This is the method responsible for all crypto operations performed
 during [KeygenLdr](#KeygenLdr "wikilink"). It takes **src\_addr**,
-**src\_size**, **iv\_addr**, **dst\_addr**, **mode** and **crypt\_ver**
+**src\_size**, **iv\_addr**, **dst\_addr**, **mode** and **use\_imem**
 as
 arguments.
 
@@ -1755,8 +1755,8 @@ arguments.
 `  // fuc5 crypt cxset instruction`  
 `  // The next xfer instruction will be overridden`  
 `  // and target changes from DMA to crypto input/output stream`  
-`  if (crypt_ver == 0x01)`  
-`    cxset(0xA1);         // Flag 0xA0 is (0x80 | 0x20)`  
+`  if (use_imem)`  
+`    cxset(0xA1);         // Flag 0xA0 is falcon imem <-> crypto input/output stream`  
 `  else`  
 `    cxset(0x21);         // Flag 0x20 is external mem <-> crypto input/output stream`  
   
@@ -1769,8 +1769,8 @@ arguments.
 `     // fuc5 crypt cxset instruction`  
 `     // The next xfer instruction will be overridden`  
 `     // and target changes from DMA to crypto input/output stream`  
-`     if (crypt_ver == 0x01)`  
-`       cxset(0xA1);     // Flag 0xA0 is (0x80 | 0x20)`  
+`     if (use_imem)`  
+`       cxset(0xA1);     // Flag 0xA0 is falcon imem <-> crypto input/output stream`  
 `     else`  
 `       cxset(0x21);     // Flag 0x20 is external mem <-> crypto input/output stream`  
 `       `  
@@ -1782,8 +1782,8 @@ arguments.
 `     // fuc5 crypt cxset instruction`  
 `     // The next 2 xfer instructions will be overridden`  
 `     // and target changes from DMA to crypto input/output stream`  
-`     if (crypt_ver == 0x01)`  
-`       cxset(0xA2);            // Flag 0xA0 is (0x80 | 0x20)`  
+`     if (use_imem)`  
+`       cxset(0xA2);            // Flag 0xA0 is falcon imem <-> crypto input/output stream`  
 `     else`  
 `       cxset(0x22);            // Flag 0x20 is external mem <-> crypto input/output stream`  
   

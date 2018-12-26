@@ -2411,7 +2411,7 @@ This method takes '''buf''' (a 16 bytes buffer) and '''size''' as arguments and 
  return;
 
 ===== do_crypto =====
-This is the method responsible for all crypto operations performed during [[#KeygenLdr|KeygenLdr]]. It takes '''src_addr''', '''src_size''', '''iv_addr''', '''dst_addr''', '''mode''' and '''crypt_ver''' as arguments.
+This is the method responsible for all crypto operations performed during [[#KeygenLdr|KeygenLdr]]. It takes '''src_addr''', '''src_size''', '''iv_addr''', '''dst_addr''', '''mode''' and '''use_imem''' as arguments.
  // Check for invalid source data size
  if (!src_size || (src_size & 0x0F))
    exit();
@@ -2555,8 +2555,8 @@ This is the method responsible for all crypto operations performed during [[#Key
    // fuc5 crypt cxset instruction
    // The next xfer instruction will be overridden
    // and target changes from DMA to crypto input/output stream
-   if (crypt_ver == 0x01)
-     cxset(0xA1);         // Flag 0xA0 is (0x80 | 0x20)
+   if (use_imem)
+     cxset(0xA1);         // Flag 0xA0 is falcon imem <-> crypto input/output stream
    else
      cxset(0x21);         // Flag 0x20 is external mem <-> crypto input/output stream
  
@@ -2569,8 +2569,8 @@ This is the method responsible for all crypto operations performed during [[#Key
       // fuc5 crypt cxset instruction
       // The next xfer instruction will be overridden
       // and target changes from DMA to crypto input/output stream
-      if (crypt_ver == 0x01)
-        cxset(0xA1);     // Flag 0xA0 is (0x80 | 0x20)
+      if (use_imem)
+        cxset(0xA1);     // Flag 0xA0 is falcon imem <-> crypto input/output stream
       else
         cxset(0x21);     // Flag 0x20 is external mem <-> crypto input/output stream
  		
@@ -2582,8 +2582,8 @@ This is the method responsible for all crypto operations performed during [[#Key
       // fuc5 crypt cxset instruction
       // The next 2 xfer instructions will be overridden
       // and target changes from DMA to crypto input/output stream
-      if (crypt_ver == 0x01)
-        cxset(0xA2);            // Flag 0xA0 is (0x80 | 0x20)
+      if (use_imem)
+        cxset(0xA2);            // Flag 0xA0 is falcon imem <-> crypto input/output stream
       else
         cxset(0x22);            // Flag 0x20 is external mem <-> crypto input/output stream
  
