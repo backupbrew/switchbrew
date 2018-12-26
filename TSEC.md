@@ -17,8 +17,8 @@ communicating with the Falcon microprocessor. From this range, the
 subset of registers from 0x54501400 to 0x54501FE8 are specific to the
 TSEC and are subdivided into:
 
-  - 0x54501400 to 0x54501500: SCP (secure crypto processor?).
-  - 0x54501500 to 0x54501600: Unknown.
+  - 0x54501400 to 0x54501500: SCP (Secure Crypto Processor?).
+  - 0x54501500 to 0x54501600: TRNG (True Random Number Generator).
   - 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface).
   - 0x54501700 to 0x54501800: DMA.
   - 0x54501800 to 0x54501900: TEGRA (miscellaneous
@@ -133,30 +133,30 @@ interfaces).
 | FALCON\_ICD\_RDATA                                                      | 0x5450120C | 0x04  |
 | [FALCON\_SCTL](#FALCON_SCTL "wikilink")                                 | 0x54501240 | 0x04  |
 | [TSEC\_SCP\_CTL\_ACCESS](#TSEC_SCP_CTL_ACCESS "wikilink")               | 0x54501400 | 0x04  |
-| TSEC\_SCP\_UNK0                                                         | 0x54501404 | 0x04  |
+| [TSEC\_SCP\_CTL\_TRNG](#TSEC_SCP_CTL_TRNG "wikilink")                   | 0x54501404 | 0x04  |
 | [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")                   | 0x54501408 | 0x04  |
 | [TSEC\_SCP\_CTL\_MODE](#TSEC_SCP_CTL_MODE "wikilink")                   | 0x5450140C | 0x04  |
-| TSEC\_SCP\_UNK1                                                         | 0x54501410 | 0x04  |
+| TSEC\_SCP\_UNK0                                                         | 0x54501410 | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")                   | 0x54501418 | 0x04  |
-| TSEC\_SCP\_UNK2                                                         | 0x54501420 | 0x04  |
+| TSEC\_SCP\_UNK1                                                         | 0x54501420 | 0x04  |
 | [TSEC\_SCP\_SEQ\_STAT](#TSEC_SCP_SEQ_STAT "wikilink")                   | 0x54501428 | 0x04  |
 | [TSEC\_SCP\_INSN\_STAT](#TSEC_SCP_INSN_STAT "wikilink")                 | 0x54501430 | 0x04  |
-| TSEC\_SCP\_UNK3                                                         | 0x54501454 | 0x04  |
+| TSEC\_SCP\_UNK2                                                         | 0x54501454 | 0x04  |
 | TSEC\_SCP\_AES\_STAT                                                    | 0x54501458 | 0x04  |
-| TSEC\_SCP\_UNK4                                                         | 0x54501470 | 0x04  |
+| TSEC\_SCP\_UNK3                                                         | 0x54501470 | 0x04  |
 | [TSEC\_SCP\_IRQSTAT](#TSEC_SCP_IRQSTAT "wikilink")                      | 0x54501480 | 0x04  |
 | [TSEC\_SCP\_IRQMASK](#TSEC_SCP_IRQMASK "wikilink")                      | 0x54501484 | 0x04  |
-| TSEC\_SCP\_UNK5                                                         | 0x54501490 | 0x04  |
+| TSEC\_SCP\_UNK4                                                         | 0x54501490 | 0x04  |
 | [TSEC\_SCP\_ERR](#TSEC_SCP_ERR "wikilink")                              | 0x54501498 | 0x04  |
-| TSEC\_UNK0                                                              | 0x54501500 | 0x04  |
-| TSEC\_UNK1                                                              | 0x54501504 | 0x04  |
-| TSEC\_UNK2                                                              | 0x5450150C | 0x04  |
-| TSEC\_UNK3                                                              | 0x54501510 | 0x04  |
-| TSEC\_UNK4                                                              | 0x54501514 | 0x04  |
-| TSEC\_UNK5                                                              | 0x54501518 | 0x04  |
-| TSEC\_UNK6                                                              | 0x5450151C | 0x04  |
-| TSEC\_UNK7                                                              | 0x54501528 | 0x04  |
-| TSEC\_UNK8                                                              | 0x5450152C | 0x04  |
+| TSEC\_TRNG\_CLKDIV                                                      | 0x54501500 | 0x04  |
+| TSEC\_TRNG\_UNK0                                                        | 0x54501504 | 0x04  |
+| TSEC\_TRNG\_UNK1                                                        | 0x5450150C | 0x04  |
+| TSEC\_TRNG\_UNK2                                                        | 0x54501510 | 0x04  |
+| TSEC\_TRNG\_UNK3                                                        | 0x54501514 | 0x04  |
+| TSEC\_TRNG\_UNK4                                                        | 0x54501518 | 0x04  |
+| TSEC\_TRNG\_UNK5                                                        | 0x5450151C | 0x04  |
+| TSEC\_TRNG\_UNK6                                                        | 0x54501528 | 0x04  |
+| TSEC\_TRNG\_UNK7                                                        | 0x5450152C | 0x04  |
 | TSEC\_TFBIF\_UNK0                                                       | 0x54501600 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL](#TSEC_TFBIF_MCCIF_FIFOCTRL "wikilink")   | 0x54501604 | 0x04  |
 | TSEC\_TFBIF\_UNK1                                                       | 0x54501608 | 0x04  |
@@ -602,6 +602,13 @@ Takes the offset for Falcon's target memory being transferred.
 | ---- | ------------------------------------- |
 | 20   | Enable TSEC\_SCP\_INSN\_STAT register |
 
+### TSEC\_SCP\_CTL\_TRNG
+
+| Bits | Description     |
+| ---- | --------------- |
+| 11   | Unknown         |
+| 12   | Enable the TRNG |
+
 ### TSEC\_SCP\_CTL\_STAT
 
 | Bits | Description                       |
@@ -612,11 +619,11 @@ Takes the offset for Falcon's target memory being transferred.
 
 | Bits | Description                                 |
 | ---- | ------------------------------------------- |
-| 0    | Disable reads for the UNK register block    |
+| 0    | Disable reads for the TRNG register block   |
 | 1    | Disable reads for the TFBIF register block  |
 | 2    | Disable reads for the DMA register block    |
 | 3    | Disable reads for the TEGRA register block  |
-| 4    | Disable writes for the UNK register block   |
+| 4    | Disable writes for the TRNG register block  |
 | 5    | Disable writes for the TFBIF register block |
 | 6    | Disable writes for the DMA register block   |
 | 7    | Disable writes for the TEGRA register block |
@@ -701,7 +708,7 @@ Contains information on the last crypto instruction executed.
 
 | Bits | Description                      |
 | ---- | -------------------------------- |
-| 1    | Unknown                          |
+| 1    | TSEC\_SCP\_IRQSTAT\_TRNG         |
 | 8    | TSEC\_SCP\_IRQSTAT\_HALT         |
 | 12   | Unknown                          |
 | 16   | TSEC\_SCP\_IRQSTAT\_INSN\_ERROR  |
@@ -715,7 +722,7 @@ Used for getting the status of crypto IRQs.
 
 | Bits | Description                      |
 | ---- | -------------------------------- |
-| 1    | Unknown                          |
+| 1    | TSEC\_SCP\_IRQMASK\_TRNG         |
 | 8    | TSEC\_SCP\_IRQMASK\_HALT         |
 | 12   | Unknown                          |
 | 16   | TSEC\_SCP\_IRQMASK\_INSN\_ERROR  |
@@ -2129,8 +2136,16 @@ bits as follows:
 
 `00000000: f5 3c 0X 90 crng $cX`
 
-This instruction takes no operands and appears to initialize a crypto
-register with random data.
+This instruction initializes a crypto register with random data.
+
+Executing this instruction only succeeds if the TRNG is enabled for the
+SCP, which requires taking the following steps:
+
+  - Write 0x7FFF to TSEC\_TRNG\_CLKDIV.
+  - Write 0x3FF0000 to TSEC\_TRNG\_UNK0.
+  - Write 0xFF00 to TSEC\_TRNG\_UNK7.
+  - Write 0x1000 to
+    [TSEC\_SCP\_CTL\_TRNG](#TSEC_SCP_CTL_TRNG "wikilink").
 
 ### cxset
 

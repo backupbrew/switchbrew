@@ -7,8 +7,8 @@ A host driver for communicating with the TSEC is mapped to physical address 0x54
 Registers from 0x54500000 to 0x54501000 are used to configure the host interface (HOST1X).
 
 Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with the Falcon microprocessor. From this range, the subset of registers from 0x54501400 to 0x54501FE8 are specific to the TSEC and are subdivided into:
-* 0x54501400 to 0x54501500: SCP (secure crypto processor?).
-* 0x54501500 to 0x54501600: Unknown.
+* 0x54501400 to 0x54501500: SCP (Secure Crypto Processor?).
+* 0x54501500 to 0x54501600: TRNG (True Random Number Generator).
 * 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface).
 * 0x54501700 to 0x54501800: DMA.
 * 0x54501800 to 0x54501900: TEGRA (miscellaneous interfaces). 
@@ -446,7 +446,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501400
 | 0x04
 |-
-| TSEC_SCP_UNK0
+| [[#TSEC_SCP_CTL_TRNG|TSEC_SCP_CTL_TRNG]]
 | 0x54501404
 | 0x04
 |-
@@ -458,7 +458,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450140C
 | 0x04
 |-
-| TSEC_SCP_UNK1
+| TSEC_SCP_UNK0
 | 0x54501410
 | 0x04
 |-
@@ -466,7 +466,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501418
 | 0x04
 |-
-| TSEC_SCP_UNK2
+| TSEC_SCP_UNK1
 | 0x54501420
 | 0x04
 |-
@@ -478,7 +478,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501430
 | 0x04
 |-
-| TSEC_SCP_UNK3
+| TSEC_SCP_UNK2
 | 0x54501454
 | 0x04
 |-
@@ -486,7 +486,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501458
 | 0x04
 |-
-| TSEC_SCP_UNK4
+| TSEC_SCP_UNK3
 | 0x54501470
 | 0x04
 |-
@@ -498,7 +498,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501484
 | 0x04
 |-
-| TSEC_SCP_UNK5
+| TSEC_SCP_UNK4
 | 0x54501490
 | 0x04
 |-
@@ -506,39 +506,39 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501498
 | 0x04
 |-
-| TSEC_UNK0
+| TSEC_TRNG_CLKDIV
 | 0x54501500
 | 0x04
 |-
-| TSEC_UNK1
+| TSEC_TRNG_UNK0
 | 0x54501504
 | 0x04
 |-
-| TSEC_UNK2
+| TSEC_TRNG_UNK1
 | 0x5450150C
 | 0x04
 |-
-| TSEC_UNK3
+| TSEC_TRNG_UNK2
 | 0x54501510
 | 0x04
 |-
-| TSEC_UNK4
+| TSEC_TRNG_UNK3
 | 0x54501514
 | 0x04
 |-
-| TSEC_UNK5
+| TSEC_TRNG_UNK4
 | 0x54501518
 | 0x04
 |-
-| TSEC_UNK6
+| TSEC_TRNG_UNK5
 | 0x5450151C
 | 0x04
 |-
-| TSEC_UNK7
+| TSEC_TRNG_UNK6
 | 0x54501528
 | 0x04
 |-
-| TSEC_UNK8
+| TSEC_TRNG_UNK7
 | 0x5450152C
 | 0x04
 |-
@@ -1374,6 +1374,18 @@ Takes the offset for Falcon's target memory being transferred.
 | Enable TSEC_SCP_INSN_STAT register
 |}
 
+=== TSEC_SCP_CTL_TRNG ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 11
+| Unknown
+|-
+| 12
+| Enable the TRNG
+|}
+
 === TSEC_SCP_CTL_STAT ===
 {| class="wikitable" border="1"
 !  Bits
@@ -1389,7 +1401,7 @@ Takes the offset for Falcon's target memory being transferred.
 !  Description
 |-
 | 0
-| Disable reads for the UNK register block
+| Disable reads for the TRNG register block
 |-
 | 1
 | Disable reads for the TFBIF register block
@@ -1401,7 +1413,7 @@ Takes the offset for Falcon's target memory being transferred.
 | Disable reads for the TEGRA register block
 |-
 | 4
-| Disable writes for the UNK register block
+| Disable writes for the TRNG register block
 |-
 | 5
 | Disable writes for the TFBIF register block
@@ -1495,7 +1507,7 @@ Contains information on the last crypto instruction executed.
 !  Description
 |-
 | 1
-| Unknown
+| TSEC_SCP_IRQSTAT_TRNG
 |-
 | 8
 | TSEC_SCP_IRQSTAT_HALT
@@ -1524,7 +1536,7 @@ Used for getting the status of crypto IRQs.
 !  Description
 |-
 | 1
-| Unknown
+| TSEC_SCP_IRQMASK_TRNG
 |-
 | 8
 | TSEC_SCP_IRQMASK_HALT
@@ -2929,7 +2941,13 @@ This instruction takes a crypto register and a 5 bit immediate value. It appears
 === crng ===
 <code>00000000: f5 3c 0X 90     crng $cX</code>
 
-This instruction takes no operands and appears to initialize a crypto register with random data.
+This instruction initializes a crypto register with random data.
+
+Executing this instruction only succeeds if the TRNG is enabled for the SCP, which requires taking the following steps:
+* Write 0x7FFF to TSEC_TRNG_CLKDIV.
+* Write 0x3FF0000 to TSEC_TRNG_UNK0.
+* Write 0xFF00 to TSEC_TRNG_UNK7.
+* Write 0x1000 to [[#TSEC_SCP_CTL_TRNG|TSEC_SCP_CTL_TRNG]].
 
 === cxset ===
 cxset instruction provides a way to change behavior of a variable amount of successively executed DMA-related instructions.
