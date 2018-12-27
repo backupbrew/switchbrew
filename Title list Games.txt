@@ -942,7 +942,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100479008552000 || Monster Energy Supercross - The Official Videogame (モンスターエナジースーパークロス　オフィシャルビデオゲーム) || JPN || 3.0.1 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
-| 010047F001DBC000 || アケアカNEOGEO サムライスピリッツ 天草降臨 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
+| 010047F001DBC000 || ACA NEOGEO SAMURAI SHODOWN IV || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100482009636000 || Tower of Babel || JPN || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -1160,7 +1160,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010057F007AA2000 || Rally Racers || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
-| 0100583001DCA000 || アケアカNEOGEO ザ・キング・オブ・ファイターズ '99 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
+| 0100583001DCA000 || ACA NEOGEO THE KING OF FIGHTERS '99 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 010058500B3E0000 || Labyrinth of Refrain: Coven of Dusk || EUR USA || 4.0.0 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
@@ -1208,7 +1208,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01005C8005F34000 || Teslagrad || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
-| 01005C9002B42000 || アケアカNEOGEO サムライスピリッツ || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
+| 01005C9002B42000 || ACA NEOGEO SAMURAI SHODOWN || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 01005CA0099AA000 || 1917 - The Alien Invasion DX || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -1736,7 +1736,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01008A6009758000 || Fairune Collection || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 01008A9001DC2000 || アケアカNEOGEO ショックトルーパーズ || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
+| 01008A9001DC2000 || ACA NEOGEO SHOCK TROOPERS || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 01008AF00A532000 || Bomb Chicken || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -1962,7 +1962,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01009D3008D20000 || Furi || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
-| 01009D4001DC4000 || アケアカNEOGEO ワールドヒーローズパーフェクト || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
+| 01009D4001DC4000 || ACA NEOGEO WORLD HEROES PERFECT || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 01009D500A194000 || World Conqueror X || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -2230,7 +2230,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100B410040F2000 || Dead Synchronicity: Tomorrow Comes Today || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
-| 0100B42001DB4000 || アケアカNEOGEO ザ・キング・オブ・ファイターズ '98 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
+| 0100B42001DB4000 || ACA NEOGEO THE KING OF FIGHTERS '98 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 0100B4800AFBA000 || ACA NEOGEO AGGRESSORS OF DARK KOMBAT || EUR JPN USA || 5.0.0 || Digital || 0 || || Virtual Console
 |-
@@ -2288,7 +2288,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100B9400654E000 || プラチナ・トレイン～日本縦断てつどうの旅～ || JPN || 3.0.1 || Digital || 0 65536 131072 196608 || || Application / Game
 |-
-| 0100B97002B44000 || アケアカNEOGEO ザ・キング・オブ・ファイターズ 2000 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
+| 0100B97002B44000 || ACA NEOGEO THE KING OF FIGHTERS 2000 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100BA0003EEA000 || PICROSS S || EUR JPN USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
@@ -2298,7 +2298,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100BA500B660000 || Darts Up || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100BA8001DC6000 || アケアカNEOGEO メタルスラッグ3 || EUR JPN USA || 1.0.0 || Digital || 0 131072 || || Application / Game
+| 0100BA8001DC6000 || ACA NEOGEO METAL SLUG 3 || EUR JPN USA || 1.0.0 || Digital || 0 0x10000 0x20000 || || Application / Game
 |-
 | 0100BAB00A116000 || The Low Road || EUR USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
@@ -2479,7 +2479,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CB10089DE000 || Party Crashers || EUR USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100CB2001DB8000 || アケアカNEOGEO 餓狼 MARK OF THE WOLVES || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
+| 0100CB2001DB8000 || ACA NEOGEO GAROU: MARK OF THE WOLVES || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 0100CB60092A2000 || World to the West || JPN || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -2539,7 +2539,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CEA007D08000 || Crypt of the NecroDancer: Nintendo Switch Edition || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
-| 0100CEF001DC0000 || アケアカNEOGEO わくわく7 || EUR JPN USA || 1.0.0 || Digital || 0 131072 || || Application / Game
+| 0100CEF001DC0000 || ACA NEOGEO WAKU WAKU 7 || EUR JPN USA || 1.0.0 || Digital || 0 131072 || || Application / Game
 |-
 | 0100CEF008048000 || RIVE:アルティメットエディション || JPN || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -2737,7 +2737,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100DF9005E7A000 || Floor Kids || EUR JPN USA || 3.0.1 || Digital || 0 65536 131072 196608 262144 327680 || || Application / Game
 |-
-| 0100DFC003398000 || アケアカNEOGEO ブレイジングスター || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
+| 0100DFC003398000 || ACA NEOGEO BLAZING STAR || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100DFC00405E000 || Wheels of Aurelia || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -2859,7 +2859,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100EAE00BE4A000 || にゃんらぶ ～私の恋の見つけ方～ || JPN || 5.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100EB2001DCC000 || アケアカNEOGEO ザ・キング・オブ・ファイターズ '94 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
+| 0100EB2001DCC000 || ACA NEOGEO THE KING OF FIGHTERS '94 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100EB6005E90000 || Maria The Witch || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -2871,7 +2871,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100EB800B614000 || Freedom Planet || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100EBE002B3E000 || アケアカNEOGEO メタルスラッグ || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
+| 0100EBE002B3E000 || ACA NEOGEO METAL SLUG || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 0100EC100A790000 || PSYVARIAR DELTA《閃速神機》 || CHN JPN KOR || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
@@ -2899,7 +2899,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100EDD00A1DA000 || インナースペース || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100EE6002B48000 || アケアカNEOGEO　餓狼伝説 〜宿命の闘い〜 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
+| 0100EE6002B48000 || ACA NEOGEO FATAL FURY || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100EE80098E6000 || Toki Tori || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
