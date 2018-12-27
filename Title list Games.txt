@@ -376,8 +376,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01001CC00416C000 || Rogue Trooper Redux || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
-| 01001D0003B96000 || INVERSUS Deluxe || EUR JPN USA || 3.0.1 || Digital || 0 65536 131072 196608 262144 || || Application / Game
-|-
 | 01001D900AF6A000 || Super Toy Cars || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 01001DE005012000 || Quest of Dungeons || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
@@ -938,8 +936,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | || Yonder: The Cloud Catcher Chronicles (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
 |-
-| 01000E2003FA0000 || MIGHTY GUNVOLT BURST Demo || EUR JPN USA || 1.0.0 || Digital || 0 65536 131072 196608 262144 327680 || || Application / Game
-|-
 | 0100461007BB0000 || Black Hole || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
 | 0100464009294000 || Kona || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
@@ -950,15 +946,11 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010046600B76A000 || Lost Phones Stories || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 010046600B76A000 || Lost Phones Stories || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
-|-
 | 0100476004A9E000 || Puzzle Box Maker || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
 | 01004770079BA000 || Bit Dungeon+ || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100479008552000 || Monster Energy Supercross - The Official Videogame (モンスターエナジースーパークロス　オフィシャルビデオゲーム) || JPN || 3.0.1 || Digital / Cartridge || 0 65536 || || Application / Game
-|-
-| 01001FA0034E2000 || Dark Witch Music Episode: Rudymical Demo || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 010047F001DBC000 || アケアカNEOGEO サムライスピリッツ 天草降臨 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
@@ -1015,8 +1007,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 01004BC00B5A0000 || 說謊公主與盲眼王子 || CHN || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
 | 01004BE004A86000 || Mutant Mudds Collection || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
-|-
-| 0100461007BB0000 || Black Hole || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
 | 01004C100A04C000 || This Is the Police 2 || EUR || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
@@ -1227,8 +1217,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 01005BC00922A000 || Earthlock || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100737003190000 || IMPLOSION 体験版 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
-|-
-| 01005C40037C6000 || I and Me || EUR USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 01005C60086BE000 || Mega Man X Legacy Collection || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -1494,8 +1482,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100735004898000 || The Lion's Song || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100737003190000 || IMPLOSION 体験版 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
-|-
 | 010073900A7A0000 || Awkward || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 010073C001D5E000 || Puyo Puyo Tetris || USA || 1.0.0 || Digital / Cartridge || 0 131072 || Gamecard Front: LA-H-BAACB-USA Back: LG || Application / Game
@@ -1572,8 +1558,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010077900440A000 || Island Flight Simulator || EUR USA || 3.0.1 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
-| 010077B0038B2000 || LOST SPHEAR Demo || EUR JPN USA || 3.0.1 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 || || Application / Game
-|-
 | 0100780009BEC000 || 数学力王　中学１年 || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100782005A44000 || Oh...Sir! The Insult Simulator || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
@@ -1581,8 +1565,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 01007820096FC000 || Unexplored || EUR USA || 4.0.0 || Digital || 0 131072 || || Application / Game
 |-
 | 010078300B7CC000 || 海のカケラ || JPN || 5.0.0 || Digital || 0 || || Application / Game
-|-
-| 01006DB004566000 || Caveman Warriors || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
 | 010078800825E000 || Wanderjahr TryAgainOrWalkAway || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -1650,8 +1632,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01007DA006FF6000 || ヒューマン フォール フラット || JPN || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
-| 01007E3006DDA000 || Kirby™ Star Allies || CHN EUR JPN KOR USA || 4.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 || || Application / Game
-|-
 | 010085900337E000 || Death Squared || EUR USA || 1.0.0 || Digital || 0 65536 131072 196608 || || Application / Game
 |-
 | 01007E800AFB6000 || ACA NEOGEO NINJA COMMANDO || EUR JPN USA || 5.0.0 || Digital || 0 || || Virtual Console
@@ -1706,10 +1686,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100833008A9E000 || 不如帰 大乱 || JPN || 4.0.0 || Digital || 0 65536 131072 196608 262144 327680 393216 458752 || || Application / Game
 |-
-| 010083600AE9E000 || Happy Birthdays Demo || EUR USA || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
-|-
-| 0100837006AF0000 || forma.8 体験版 || JPN || 3.0.1 || Digital || 0 65536 || || Application / Game
-|-
 | 0100838002AEA000 || LEGO® Worlds || EUR JPN USA || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 393216 || || Application / Game
 |-
 | 010083800B4E8000 || The Amazing Shinsengumi: Heroes in Love || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
@@ -1732,8 +1708,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010085500130A000 || LEGO® CITY Undercover || EUR || 1.0.0 || Digital / Cartridge || 0 131072 || Gamecard Front: LA-H-ABM2B-EUR Back: ABM2B41X000 || Application / Game
 |-
-| 010085900337E000 || Death Squared || EUR USA || 1.0.0 || Digital || 0 65536 131072 196608 || || Application / Game
-|-
 | 010085A00821A000 || ClusterPuck 99 || EUR JPN USA || 4.0.0 || Digital || 0 131072 || || Application / Game
 |-
 | 010085F00B93A000 || Western 1849 Reloaded || EUR USA || 5.0.0 || Digital || 0 || || Application / Game
@@ -1741,8 +1715,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 0100437004170000 || Portal Knights Demo || EUR USA || 3.0.1 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
 | 010086300486E000 || ACA NEOGEO METAL SLUG 2 || EUR JPN USA || 1.0.0 || Digital || 0 || || Virtual Console
-|-
-| 010016C009374000 || Lode Runner Legacy Demo Version || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 010086D00B3D2000 || OCTOPATH TRAVELER Prologue Demo || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -1798,11 +1770,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01008A6009758000 || Fairune Collection || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| || Darkest Dungeon: Ancestral Edition || || 5.0.0 || Cartridge || 0 || || Application / Game
-|-
 | 01008A9001DC2000 || アケアカNEOGEO ショックトルーパーズ || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
-|-
-| 0100322004844000 || Embers of Mirrim Demo || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
 | 01008AF00A532000 || Bomb Chicken || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -1888,8 +1856,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01009040091E0000 || Wolfenstein® II: The New Colossus™ || EUR USA || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
-| 01007D7001D0E000 || Oceanhorn - Monster of Uncharted Seas Demo || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
-|-
 | 010090C00B0E8000 || Yooka-Laylee（ユーカレイリー） || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 010090F00A76A000 || BLAZBLUE CROSS TAG BATTLE || EUR || 4.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 || || Application / Game
@@ -1943,8 +1909,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 010095300212A000 || Resident Evil Revelations 2 || EUR JPN USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
 | 0100956007854000 || Woodle Tree Adventures || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
-|-
-| 010095600AA36000 || Fill-a-Pix: Phil's Epic Adventure Demo || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 010095A004040000 || Flip Wars™ || EUR USA || 1.0.0 || Digital || 0 131072 || || Application / Game
 |-
@@ -2021,8 +1985,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 01009C000415A000 || Ultra Hyperball || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 01009C0009842000 || Detective Gallo || EUR USA || 5.0.0 || Digital || 0 65536 || || Application / Game
-|-
-| 01009C100390E000 || League of Evil || EUR USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 01009C8009026000 || LIMBO || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -2202,8 +2164,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100A9800A1B6000 || Professional Construction – The Simulation || EUR USA || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
-| 01001C9007614000 || Max: The Curse of Brotherhood (Demo) || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
-|-
 | 0100A9B009678000 || EAT BEAT DEADSPIKE-san || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100A9D00B31A000 || The Inner World - The Last Wind Monk || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
@@ -2231,8 +2191,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 0100AC40038F4000 || ACA NEOGEO AERO FIGHTERS 2 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Virtual Console
 |-
 | 0100ACB004006000 || Schlag den Star - Das Spiel || EUR || 3.0.1 || Digital / Cartridge || 0 131072 || || Application / Game
-|-
-| 01000FB008900000 || Midnight Deluxe || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
 | 0100ACD009B6E000 || ポータルナイツ 体験版 || JPN || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
@@ -2318,8 +2276,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100B42001DB4000 || アケアカNEOGEO ザ・キング・オブ・ファイターズ '98 || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 010004A007890000 || MAX マジックマーカーと兄弟の絆 || JPN || 4.0.0 || Digital || 0 || || Application / Game
-|-
 | 0100B4800AFBA000 || ACA NEOGEO AGGRESSORS OF DARK KOMBAT || EUR JPN USA || 5.0.0 || Digital || 0 || || Virtual Console
 |-
 | 0100B4900AD3E000 || NEKOPARA Vol.1 || EUR JPN USA || 5.0.0 || Digital || 0 65536 || || Application / Game
@@ -2402,8 +2358,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | || Victor Vran Overkill Edition (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
 |-
-| 01003F000973E000 || Metropolis: Lux Obscura || EUR USA || 4.0.0 || Digital || 0 65536 131072 196608 || || Application / Game
-|-
 | 0100BB9009FC8000 || Farm Expert 2018 for Nintendo Switch™ || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100BBA00BA0A000 || シェルター ジェネレーション || JPN || 4.0.0 || Digital || 0 || || Application / Game
@@ -2418,8 +2372,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100BCE000598000 || Just Dance 2017® Demo || EUR USA || 1.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
-| 0100BD3006A02000 || One More Dungeon || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
-|-
 | 0100BD9004AB6000 || Kingdom: New Lands || EUR JPN USA || 1.0.0 || Digital || 0 131072 || || Application / Game
 |-
 | 0100BDE00862A000 || Mario Tennis™ Aces || CHN EUR JPN KOR USA || 4.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 || || Application / Game
@@ -2429,8 +2381,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 0100BE80097FA000 || Arcade Archives 10-Yard Fight || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 0100BE9007E7E000 || ICEY || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
-|-
-| 0100A9B009678000 || EAT BEAT DEADSPIKE-san || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100BF1003B9A000 || 密着対戦2048 || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
@@ -2443,8 +2393,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 0100BFE00865E000 || Energy Cycle || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
 | 0100C00005E38000 || Dustoff Heli Rescue 2 || EUR JPN USA || 3.0.1 || Digital || 0 || || Application / Game
-|-
-| 0100C0A004C2C000 || Kid Tripp Demo || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
 | 0100C0F0020E8000 || Snake Pass || EUR USA || 1.0.0 || Digital || 0 65536 131072 196608 262144 327680 || || Application / Game
 |-
@@ -2466,8 +2414,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100C220040C0000 || Mr. Shifty || JPN || 1.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100692003FCE000 || Hyper Sentinel || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
-|-
 | 01008FF004610000 || リーグ オブ イーブル　体験版 || JPN || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100C2D00981E000 || Arcade Archives RYGAR || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
@@ -2481,8 +2427,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 0100C3100B06C000 || サガ スカーレット グレイス 緋色の野望 || JPN || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 0100C320083BE000 || Splitter Critters || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
-|-
-| 010008900705C000 || Dragon Quest® Builders™ || EUR USA || 3.0.1 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 0100C3700416A000 || SUPER PING PONG TRICK SHOT || JPN || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -2539,8 +2483,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 0100C86000B58000 || ウルトラストリートファイターII ザ・ファイナルチャレンジャーズ || CHN JPN KOR || 1.0.0 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
 | 0100C87006310000 || 戦国無双 〜真田丸〜 || JPN || 3.0.1 || Digital / Cartridge || 0 65536 || || Application / Game
-|-
-| 0100C88008BA6000 || Happy Birthdays 体験版 || JPN || 3.0.1 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
 | 0100C8E0083C4000 || HANDY麻雀 || JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -2661,8 +2603,6 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CFF0048D2000 || Milanoir || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 0100D03003F0E000 || Nine Parchments Demo || EUR JPN USA || 3.0.1 || Digital || 0 65536 131072 196608 262144 || || Application / Game
-|-
 | 0100D04004176000 || Farming Simulator Nintendo Switch Edition || EUR USA || 1.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 0100D0500B0A6000 || The VideoKid || EUR JPN USA || 4.0.0 || Digital || 0 131072 || || Application / Game
@@ -2714,8 +2654,6 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100D2600736A000 || Fe || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100D2D009028000 || INSIDE || EUR JPN USA || 4.0.0 || Digital || 0 131072 || || Application / Game
-|-
-| 0100425009FB2000 || Baobabs Mausoleum Ep.1: Ovnifagos Don't Eat Flamingos || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100D3A00409E000 || LEGO® Marvel Super Heroes 2 || USA || 3.0.1 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 393216 || || Application / Game
 |-
@@ -2825,8 +2763,6 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100DCE00B756000 || Earthworms || EUR USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
-| 01002CC0062B8000 || DEEMO || CHN EUR JPN KOR USA || 3.0.1 || Digital || 0 65536 131072 196608 262144 327680 || || Application / Game
-|-
 | 0100DDB004F30000 || Sky Ride || EUR JPN USA || 1.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100DDD0085A4000 || Sushi Striker™: The Way of Sushido || CHN EUR KOR USA || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
@@ -2879,8 +2815,6 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100E0F008E64000 || 僕のヒーローアカデミア One's Justice || JPN || 5.0.0 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
-| 01008EA00405C000 || forma.8 || EUR USA || 1.0.0 || Digital || 0 65536 || || Application / Game
-|-
 | 0100E1900B584000 || ネオンロード || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100E1A00AF40000 || Hungry Shark® World || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
@@ -2924,8 +2858,6 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100E5F0000C0000 || 魔界戦記ディスガイア5 体験版 || JPN || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 || || Application / Game
 |-
 | 0100E5F00643C000 || Astro Bears Party || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
-|-
-| 0100770008DD8000 || Monster Hunter Generations Ultimate™ || CHN EUR USA || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 0100E65002BB8000 || Stardew Valley || EUR JPN USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
@@ -2983,8 +2915,6 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100EA1009022000 || Timberman VS || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 010039A008E76000 || ChromaGun || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
-|-
 | 0100EA6004516000 || MEMBRANE || EUR USA || 3.0.1 || Digital || 0 65536 131072 196608 || || Application / Game
 |-
 | 0100EAB00605C000 || Poly Bridge || EUR JPN USA || 3.0.1 || Digital || 0 131072 || || Application / Game
@@ -3004,8 +2934,6 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100EB800868C000 || Azkend 2: The World Beneath || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
 | 0100EB800B614000 || Freedom Planet || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
-|-
-| 01009EA00A320000 || Devious Dungeon || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 0100EBE002B3E000 || アケアカNEOGEO メタルスラッグ || EUR JPN USA || 1.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -3117,8 +3045,6 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F4E006B32000 || The Men of Yoshiwara: Ohgiya || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 0100352006A10000 || Heroes of the Monkey Tavern Demo || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
-|-
 | 0100F5400AB6C000 || Alchemic Jousts || EUR USA || 5.0.0 || Digital || 0 131072 || || Application / Game
 |-
 | 0100F55004AB8000 || Uurnog Uurnlimited || EUR JPN USA || 3.0.1 || Digital || 0 || || Application / Game
@@ -3128,8 +3054,6 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100F5A008126000 || NBA Playgrounds - Enhanced Edition || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
 | 0100F5B007638000 || Pixel Action Heroes || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
-|-
-| 010077B0038B2000 || LOST SPHEAR Demo || EUR JPN USA || 3.0.1 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 || || Application / Game
 |-
 | 0100F6000BC6C000 || DRAGON BALL FIGHTERZ Open Beta || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
@@ -3201,8 +3125,6 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100FAA00B168000 || Hello Neighbor || EUR USA || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
-| 0100FAF009562000 || Deep Ones || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
-|-
 | 0100FB500631E000 || ATOMINE || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
 | 0100FBC007EAE000 || Tesla vs Lovecraft || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
@@ -3238,10 +3160,6 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100FF9003F10000 || Splasher || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
 | 0100FFA0093E8000 || FIFA 19 || EUR JPN USA || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
-|-
-| 0100C9800A454000 || GALAK-Z: Variant S || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
-|-
-| 0100CB800B07E000 || NOT A HERO: SUPER SNAZZY EDITION || EUR USA || 5.0.0 || Digital || 0 65536 || || Application / Game
 |}
 
 = Demos =
