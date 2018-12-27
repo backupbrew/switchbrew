@@ -880,6 +880,12 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xCC74 || 116 || 102 || Time not set
 |-
+| 0x19074 || 116 || 200 || Invalid time comparison
+|-
+| 0x19274 || 116 || 201 || Signed overflow/underflow
+|-
+| 0x70A74 || 116 || 901 || Null pointer
+|-
 | 0x287C || 124 || 20 || Argument is NULL
 |-
 | 0x2C7C || 124 || 22 || Argument is invalid
