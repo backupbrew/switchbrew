@@ -958,6 +958,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xCA3 || 163 || 6 || System is booting up repair process that requires RepairTimeReviser but does not have special cartridge inserted.
 |-
+| 0x12CB2 || 178 || 150 || Service unavailable
+|-
+| 0x190B2 || 178 || 200 || File storage failure
+|-
 | 0xF0CD || 205 || 120 || IR image data not available/ready.
 |-
 | 0x35B || 347 || 1 || Failed to init SM.
