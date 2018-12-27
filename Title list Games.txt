@@ -2539,7 +2539,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CEA007D08000 || Crypt of the NecroDancer: Nintendo Switch Edition || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
-| 0100CEF001DC0000 || ACA NEOGEO WAKU WAKU 7 || EUR JPN USA || 1.0.0 || Digital || 0 131072 || || Application / Game
+| 0100CEF001DC0000 || ACA NEOGEO WAKU WAKU 7 || EUR JPN USA || 1.0.0 || Digital || 0 0x10000 x020000 || || Application / Game
 |-
 | 0100CEF008048000 || RIVE:アルティメットエディション || JPN || 3.0.1 || Digital || 0 || || Application / Game
 |-
