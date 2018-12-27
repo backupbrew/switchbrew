@@ -1336,8 +1336,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010065F004E5E000 || Super Chariot || EUR USA || 4.0.0 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
-| 010065B009B3A000 || Animal Rivals: Nintendo Switch Edition || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
-|-
 | 0100662008632000 || Spy Chameleon || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 010066600877E000 || ACA NEOGEO ART OF FIGHTING 2 || EUR JPN USA || 3.0.1 || Digital || 0 65536 || || Virtual Console
@@ -1848,8 +1846,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01008E500BF62000 || MagiCat || EUR USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
-| 01008E6006502000 || Aegis Defenders || EUR JPN USA || 3.0.1 || Digital || 0 65536 131072 196608 || || Application / Game
-|-
 | 01008E600AEF4000 || 墮落軍團 - 光榮系譜 - || CHN KOR || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
 | 01008E900471E000 || De Mambo || EUR USA || 1.0.0 || Digital || 0 || || Application / Game
@@ -2136,8 +2132,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100A4D00A308000 || ACA NEOGEO SUPER SIDEKICKS 3 : THE NEXT GLORY || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Virtual Console
 |-
-| 01009B500007C000 || ARMS Sparring Demo || CHN EUR JPN KOR USA || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 393216 458752 524288 589824 655360 720896 786432 851968 917504 983040 || || Application / Game
-|-
 | 0100A55003B5C000 || Cave Story+ || EUR || 1.0.0 || Digital || 0 131072 || || Application / Game
 |-
 | 0100A5700AF32000 || Arcade Archives ARGUS || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
@@ -2299,8 +2293,6 @@ Note: Game updates have the same titleID as the main application, except with bi
 | 0100B18001D8E000 || Little Inferno || EUR USA || 1.0.0 || Digital || 0 131072 || || Application / Game
 |-
 | 0100B1A0066DC000 || Völgarr the Viking || EUR USA || 3.0.1 || Digital || 0 65536 131072 196608 || || Application / Game
-|-
-| 01006C40086EA000 || AeternoBlade || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
 | 0100B1E0022F8000 || VVVVVV || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -2822,8 +2814,6 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100DBD00ABF4000 || Party Trivia || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
 | 0100DBF004FAA000 || ACA NEOGEO SOCCER BRAWL || EUR JPN USA || 3.0.1 || Digital || 0 || || Virtual Console
-|-
-| 01004D1007926000 || 10秒走RETURNS 体験版 || EUR JPN USA || 4.0.0 || Digital || 0 131072 || || Application / Game
 |-
 | 0100DC300AC78000 || The Messenger || EUR JPN USA || 5.0.0 || Digital || 0 65536 || || Application / Game
 |-
