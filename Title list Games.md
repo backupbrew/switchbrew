@@ -1638,7 +1638,6 @@ set.
 | 01005700031AE000 | Disgaea 5 Complete Demo                   | EUR USA             | 1.0.0               | Digital / Cartridge | 0 65536 131072 196608                                                                                     |                       | Demo |
 | 0100C3F000BD8000 | みんなでワイワイ！スペランカー 体験版                       | JPN                 | 1.0.0               | Digital / Cartridge | 0 65536                                                                                                   |                       | Demo |
 | 0100352006A10000 | Heroes of the Monkey Tavern Demo          | EUR USA             | 3.0.1               | Digital             | 0 65536                                                                                                   |                       | Demo |
-| 010077B0038B2000 | LOST SPHEAR Demo                          | EUR JPN USA         | 3.0.1               | Digital / Cartridge | 0 65536 131072 196608 262144 327680                                                                       |                       | Demo |
 | 01005C600AC68000 | Valkyria Chronicles 4 Demo                | EUR USA             | 5.0.0               | Digital / Cartridge | 0                                                                                                         |                       | Demo |
 
 # VersionList
