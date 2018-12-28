@@ -3102,6 +3102,32 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010050400BD38000 || Asterix & Obelix XXL 2 || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 01000F600B01E000 || ATV Drift & Tricks || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100CE800B94A000 || The Banner Saga Trilogy || EUR USA || || Cartridge || 0 0x10000 || || Game
+|-
+| 01005BE00BD44000 || Bass Pro Shops: The Strike - Championship Edition || EUR || || Digital || 0 0x20000 || || Game
+|-
+| 0100E3100450E000 || Bass Pro Shops: The Strike - Championship Edition || USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100FE000BA42000 || Battle Group 2 || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100C4D0093EA000 || Battle Princess Madelyn || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100D1300C1EA000 || Beholder: Complete Edition || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100D4C00C6C0000 || Bendy and the Ink Machine || EUR || || Digital || 0 0x10000 || || Game
+|-
+| 010074500BBC4000 || Bendy and the Ink Machine || USA || || Digital || 0 0x10000 || || Game
+|-
+| 010038D00B10A000 || Big Bash Boom || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010022B00ACE6000 || BLACK BIRD || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 0100CA400B6D0000 || BQM -BlockQuest Maker- || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100C6800B934000 || Brawlhalla || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+|-
+| 01008D700AB14000 || The Bug Butcher || EUR USA || || Digital || 0 0x10000 || || Game
 |}
 
 = Demos =
