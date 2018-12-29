@@ -134,7 +134,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01001D0003B96000 || INVERSUS Deluxe || EUR JPN USA || 3.0.1 || Digital || 0 65536 131072 196608 262144 || || Application / Game
 |-
-| 0100092006814000 || Tennis World Tour || USA || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
+| 0100092006814000 || Tennis World Tour || EUR USA || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 0100095009236000 || Super Rocket Shootout || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -738,7 +738,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010038F00AFA0000 || ACA NEOGEO Money Puzzle Exchanger || EUR JPN USA || 4.0.0 || Digital || 0 || || Virtual Console
 |-
-| 010039000B68E000 || MY HERO ONE'S JUSTICE || EUR || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
+| 010039000B68E000 || MY HERO ONE'S JUSTICE || EUR USA || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 0100DE40068CA000 || Squareboy vs Bullies: Arena Edition || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -1096,7 +1096,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010052A00A306000 || ACA NEOGEO NINJA COMBAT || EUR JPN USA || 4.0.0 || Digital || 0 || || Virtual Console
 |-
-| 010052A00B5D2000 || LEGO® Harry Potter™ Collection || USA || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
+| 010052A00B5D2000 || LEGO® Harry Potter™ Collection || EUR USA || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 010052B003A38000 || The Long Reach || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -1152,7 +1152,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010057D0021E8000 || Shovel Knight: Treasure Trove || EUR JPN USA || 1.0.0 || Digital || 0 65536 131072 196608 || || Application / Game
 |-
-| || Octopath Traveler™ || || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
+| 010057D006492000 || Octopath Traveler™ || EUR USA || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 010057D00B612000 || Into the Breach || EUR USA || 5.0.0 || Digital || 0 131072 || || Application / Game
 |-
@@ -1246,7 +1246,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01005FF002E2A000 || RAYMAN® LEGENDS: DEFINITIVE EDITION DEMO || CHN EUR KOR USA || 1.0.0 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
-| || Brawlout (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
+| 0100C0200A4C0000 || Brawlout (retail only) || USA || 5.0.0 || Cartridge || 0 || || Application / Game
 |-
 | 010060300A67C000 || INK || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -2022,7 +2022,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100A250093DE000 || Typoman || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
-| 0100A250097F0000 || DRAGON BALL FIGHTERZ || JPN USA || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
+| 0100A250097F0000 || DRAGON BALL FIGHTERZ || EUR JPN USA || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 0100A260094EE000 || Fallen Legion: Rise to Glory || EUR USA || 4.0.0 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
@@ -2995,7 +2995,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F6C00641C000 || A.O.T. 2 || EUR || 3.0.1 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 393216 458752 || || Application / Game
 |-
-| 0100F6C00A016000 || Chicken Range || EUR || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
+| 0100F6C00A016000 || Chicken Range || EUR USA || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
 | 0100F7000464A000 || Super Beat Sports™ || EUR JPN USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
