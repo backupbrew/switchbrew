@@ -3218,6 +3218,68 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01006FE0096AC000 || The Jackbox Party Pack 5 || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100EF100BD96000 || Joggernauts || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100D7000C2C6000 || Katamari Damacy REROLL || USA || || Digital || 0 0x10000 || || Game
+|-
+| 01005EF003FF2000 || Kingdom Two Crowns || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010004400B22A000 || Knights of Pen & Paper 2 Deluxiest Edition || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01009A300C836000 || Knights of Pen and Paper Bundle || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010001A00A1F6000 || Knock-Knock || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01007C000C314000 || kuso || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010070D009FEC000 || LEGO® DC Super-Villains || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+|-
+| 0100953009DF8000 || Let's Sing 2019 || EUR || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 01003E6009F7E000 || Let's Sing 2019 Hits Francais et Internationaux || EUR || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 0100F5C009F82000 || Let's Sing 2019 mit deutschen Hits || EUR || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 0100A4300B4FC000 || LongStory || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01002D70049CA000 || Machinarium || EUR JPN USA || || Digital || 0 0x20000 || || Game
+|-
+| 01008E300C88A000 || Mad Age & This Guy || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010099700BF10000 || Madorica Real Estate || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x50000 || || Game
+|-
+| 01005A700CC3C000 || Mana Spark || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01009A700A538000 || Mark of the Ninja: Remastered || EUR USA || || Digital || 0 0x20000 || || Game
+|-
+| 01006F7001D10000 || Monster Boy and the Cursed Kingdom || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 0100F4700B2E0000 || Moonlighter || EUR USA || || Digital || 0x20000 0x30000 || || Game
+|-
+| 0100ED100B634000 || Moorhuhn Wanted || EUR JPN USA || || Digital || 0x10000 || || Game
+|-
+| 010071B009FB6000 || Mordheim: Warband Skirmish || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01002ED00B01C000 || Moto Racer 4 || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 01005EF00B4BC000 || Ms. Splosion Man || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 0100C3E00ACAA000 || Mutant Football League: Dynasty Edition || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100A6F00AC70000 || NAIRI: Tower of Shirin || EUR JPN USA || || Digital || 0 0x20000 0x30000 || || Game
+|-
+| 01001AE00C1B2000 || NBA 2K Playgrounds 2 || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+|-
+| 0100D6200933C000 || Nickelodeon Kart Racers || USA || || Digital || 0 0x20000 || || Game
+|-
+| 010029F00C876000 || Odium to the Core || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01006AB00BD82000 || OkunoKA || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010074000BE8E000 || oOo: Ascension || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010038B00BFD4000 || Operation Pig || USA || || Digital || 0 0x10000 || || Game
+|-
+| 010041700A04A000 || Oxyjet || EUR USA || || Digital || 0 0x10000 || || Game
 |}
 
 = Demos =
