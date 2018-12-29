@@ -3152,6 +3152,72 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010027100BD16000 || Crashlands || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100320009D06000 || CricktoGame: Nintendo Switch Edition || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01004AB00A260000 || Dark Souls™: Remastered || EUR USA || || Digital || 0 0x10000 x020000 x030000 || || Game
+|-
+| 01002ED00ACC0000 || DEADBOLT || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100AB600ACB4000 || Demetrios - The BIG Cynical Adventure || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01000BF00B6BC000 || Deployment || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100ED700469A000 || Deru - The Art of Cooperation || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01004B100AF18000 || Disgaea 1 Complete || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 01001B80099F6000 || Dracula's Legacy || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010018E00BA22000 || Drift Legends || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01005FA009370000 || Elemental Knights R || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100FA800A1F4000 || EXORDER || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 010072E00B36A000 || Fairy Tale Puzzles ～Magic Objects～ || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100F3700C09C000 || Find the Balance || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010098800A1E4000 || The First Tree || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 010079300ad54000 || Full Metal Furies || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010072900AFF0000 || Gear.Club Unlimited 2 || EUR USA || || Digital || 0 0x20000 || || Game
+|-
+| 01009D000AF3A000 || Gelly Break || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010000300C79C000 || GensokyoDefenders || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 01003830092B8000 || Giana Sisters Twisted Dreams - Owltimate Edition || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100B7900B024000 || Grim Fandango Remastered || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100459009A2A000 || GRIP || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100E1700C31C000 || GRIS || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 01007E100456C000 || Guacamelee! 2 || EUR USA || || Digital || 0 0x10000 0x30000 || || Game
+|-
+| 0100BB600C096000 || Hardway Party || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010092B00C4F0000 || Hello Neighbor Hide and Seek || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 01003BB00B08E000 || Hidden Folks || EUR USA || || Digital || 0 0x20000 || || Game
+|-
+| 01009EA00B714000 || Horizon Chase Turbo || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010025300B914000 || Horizon Shift '81 || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010068000CAC0000 || Hunter's Legacy: Purrfect Edition || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 01000E200C8D4000 || Hyperide: Vector Raid || USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100019006F4E000 || I Am The Hero || USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100CC80013D6000 || The Jackbox Party Pack 3 || EUR USA || || Digital || 0 || || Game
+|-
+| 01006FE0096AC000 || The Jackbox Party Pack 5 || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100EF100BD96000 || Joggernauts || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |}
 
 = Demos =
