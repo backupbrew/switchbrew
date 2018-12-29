@@ -3128,6 +3128,30 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100C6800B934000 || Brawlhalla || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
 |-
 | 01008D700AB14000 || The Bug Butcher || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100E24004510000 || Cabela's: The Hunt - Championship Edition || USA || || Digital || 0 0x10000 || || Game
+|-
+| 010088C0092FE000 || Carnival Games® || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010068500CA7A000 || Chalk Dash Carnival || EUR || || Digital || 0 0x10000 || || Game
+|-
+| 010000A00CA78000 || Chalk Dash Carnival || USA || || Digital || 0 0x10000 || || Game
+|-
+| 010039700BA7E000 || Circle of Sumo || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010044500C182000 || Sid Meier's Civilization VI || EUR JPN USA || || Ditigal || 0 0x20000 || || Game
+|-
+| 0100CF800C810000 || Coffee Crisis || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010030800BC36000 || Collidalot || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+|-
+| 0100CA100C0BA000 || Color Zen || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010043700C9B0000 || Conduct TOGETHER! || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010027100BD16000 || Crashlands || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100320009D06000 || CricktoGame: Nintendo Switch Edition || EUR USA || || Digital || 0 0x10000 || || Game
 |}
 
 = Demos =
