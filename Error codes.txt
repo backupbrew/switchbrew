@@ -932,6 +932,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xA83 || 131 || 5 || Unrecognized applet ID
 |-
+| 0x885 || 133 || 4 || Invalid parameter
+|-
 | 0x3CF089 || 137 || 7800 || Unknown/invalid libcurl error.
 |-
 | 0x3E8289-0x3F4089 || 137 || 8001-8096 || libcurl error 1-96. Some of the libcurl errors in the error-table map to the above unknown-libcurl-error however.
