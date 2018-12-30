@@ -884,6 +884,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x19274 || 116 || 201 || Signed overflow/underflow
 |-
+| 0x64274 || 116 || 801 || Memory allocation failure
+|-
 | 0x70A74 || 116 || 901 || Null pointer
 |-
 | 0x7BC74 || 116 || 990 || Unimplemented functionality
