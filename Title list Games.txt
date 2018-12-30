@@ -3089,11 +3089,17 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100B2C00682E000 || 99Vidas - Definitive Edition || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 010029D00AFD0000 || ACA NEOGEO KING OF THE MONSTERS 2 || EUR JPN USA || || Digital || 0 0x10000|| || Game
+|-
 | 010061600BF7E000 || ACA NEOGEO STRIKERS 1945 PLUS || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010061900AFAC000 || ACA NEOGEO THRASH RALLY || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010053100B0EA000 || Akihabara - Feel the Rhythm Remixed || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 01002BB00C01E000 || Animated Jigsaws: Japanese Women || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100DDC00C7A6000 || Arcade Archives DONKEY KONG JR. || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100D4A00B284000 || ARK: Survival Evolved || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3246,6 +3252,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01008E300C88A000 || Mad Age & This Guy || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010099700BF10000 || Madorica Real Estate || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x50000 || || Game
+|-
+| 01008C300B624000 || Mahjong Solitaire Refresh || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 01005A700CC3C000 || Mana Spark || EUR USA || || Digital || 0 0x10000 || || Game
 |-
