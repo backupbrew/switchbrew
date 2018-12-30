@@ -888,6 +888,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x70A74 || 116 || 901 || Null pointer
 |-
+| 0x70C74 || 116 || 902 || Value out of valid range
+|-
+| 0x7BA74 || 116 || 989 || Entry not found
+|-
 | 0x7BC74 || 116 || 990 || Unimplemented functionality
 |-
 | 0x287C || 124 || 20 || Argument is NULL
