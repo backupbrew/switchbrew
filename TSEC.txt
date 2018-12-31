@@ -1501,7 +1501,7 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 
 Contains information on the last crypto instruction executed.
 
-== TSEC_SCP_AES_STAT ==
+=== TSEC_SCP_AES_STAT ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description

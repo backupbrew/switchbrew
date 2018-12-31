@@ -704,7 +704,7 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 
 Contains information on the last crypto instruction executed.
 
-## TSEC\_SCP\_AES\_STAT
+### TSEC\_SCP\_AES\_STAT
 
 <table>
 <thead>
