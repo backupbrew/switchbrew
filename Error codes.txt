@@ -932,6 +932,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xA83 || 131 || 5 || Unrecognized applet ID
 |-
+| 0x485 || 133 || 2 || Invalid DVFS table ID
+|-
 | 0x885 || 133 || 4 || Invalid parameter
 |-
 | 0x3CF089 || 137 || 7800 || Unknown/invalid libcurl error.
