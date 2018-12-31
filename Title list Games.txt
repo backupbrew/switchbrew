@@ -3089,6 +3089,10 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100B2C00682E000 || 99Vidas - Definitive Edition || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100FC000AFC6000 || ACA NEOGEO 3 COUNT BOUT || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 010082200AFBE000 || ACA NEOGEO CYBER-LIP || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
 | 010029D00AFD0000 || ACA NEOGEO KING OF THE MONSTERS 2 || EUR JPN USA || || Digital || 0 0x10000|| || Game
 |-
 | 010061600BF7E000 || ACA NEOGEO STRIKERS 1945 PLUS || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
@@ -3098,6 +3102,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010053100B0EA000 || Akihabara - Feel the Rhythm Remixed || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 01002BB00C01E000 || Animated Jigsaws: Japanese Women || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 01005DD00BE08000 || Arcade Archives ALPHA MISSION || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100DDC00C7A6000 || Arcade Archives DONKEY KONG JR. || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3162,6 +3168,10 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01004AB00A260000 || Dark Souls™: Remastered || EUR USA || || Digital || 0 0x10000 x020000 x030000 || || Game
 |-
 | 01002ED00ACC0000 || DEADBOLT || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010032800BC38000 || Death Mark || EUR || || Digital || 0 0x10000 || || Game
+|-
+| 0100D1B00B6FA000 || Death Mark || USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100AB600ACB4000 || Demetrios - The BIG Cynical Adventure || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3276,6 +3286,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100A6F00AC70000 || NAIRI: Tower of Shirin || EUR JPN USA || || Digital || 0 0x20000 0x30000 || || Game
 |-
 | 01001AE00C1B2000 || NBA 2K Playgrounds 2 || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+|-
+| 0100BD900A3FC000 || Nickelodeon Kart Racers || EUR || || Digital || 0 0x20000 || || Game
 |-
 | 0100D6200933C000 || Nickelodeon Kart Racers || USA || || Digital || 0 0x20000 || || Game
 |-
