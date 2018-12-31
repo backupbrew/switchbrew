@@ -142,7 +142,7 @@ interfaces).
 | [TSEC\_SCP\_SEQ\_STAT](#TSEC_SCP_SEQ_STAT "wikilink")                   | 0x54501428 | 0x04  |
 | [TSEC\_SCP\_INSN\_STAT](#TSEC_SCP_INSN_STAT "wikilink")                 | 0x54501430 | 0x04  |
 | TSEC\_SCP\_UNK2                                                         | 0x54501454 | 0x04  |
-| TSEC\_SCP\_AES\_STAT                                                    | 0x54501458 | 0x04  |
+| [TSEC\_SCP\_AES\_STAT](#TSEC_SCP_AES_STAT "wikilink")                   | 0x54501458 | 0x04  |
 | TSEC\_SCP\_UNK3                                                         | 0x54501470 | 0x04  |
 | [TSEC\_SCP\_IRQSTAT](#TSEC_SCP_IRQSTAT "wikilink")                      | 0x54501480 | 0x04  |
 | [TSEC\_SCP\_IRQMASK](#TSEC_SCP_IRQMASK "wikilink")                      | 0x54501484 | 0x04  |
@@ -691,7 +691,7 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 <code>0x0130: ckrexp (fuc5 opcode 0xCC)</code><br />
 <code>0x0140: cenc (fuc5 opcode 0xD0)</code><br />
 <code>0x0150: cdec (fuc5 opcode 0xD4)</code><br />
-<code>0x0160: csigunk (fuc5 opcode 0xD8)</code><br />
+<code>0x0160: csigauth (fuc5 opcode 0xD8)</code><br />
 <code>0x0170: csigenc (fuc5 opcode 0xDC)</code><br />
 <code>0x0180: csigclr (fuc5 opcode 0xE0)</code></p></td>
 </tr>
@@ -703,6 +703,37 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 </table>
 
 Contains information on the last crypto instruction executed.
+
+## TSEC\_SCP\_AES\_STAT
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-4</p></td>
+<td><p>First opcode</p></td>
+</tr>
+<tr class="even">
+<td><p>5-9</p></td>
+<td><p>Second opcode</p></td>
+</tr>
+<tr class="odd">
+<td><p>15-16</p></td>
+<td><p>AES operation</p>
+<p><code>0: Encryption</code><br />
+<code>1: Decryption</code><br />
+<code>2: Key expansion</code><br />
+<code>3: Key reverse expansion</code></p></td>
+</tr>
+</tbody>
+</table>
+
+Contains information on the last AES sequence executed.
 
 ### TSEC\_SCP\_IRQSTAT
 
@@ -2107,6 +2138,21 @@ Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map
 this register in their engine-specific subset of registers. In TSEC's
 case, the register is
 [TSEC\_SCP\_CTL\_MODE](#TSEC_SCP_CTL_MODE "wikilink").
+
+### csigauth
+
+`00000000: f5 3c XY d8 csigauth $cY $cX`
+
+This instruction takes 2 crypto registers as operands and is
+automatically executed when jumping to a code region previously uploaded
+as secret.
+
+Under certain circumstances, it is possible to observe this instruction
+being briefly written to
+[TSEC\_SCP\_INSN\_STAT](#TSEC_SCP_INSN_STAT "wikilink") as "csigauth $c4
+$c6" while the opcodes in
+[TSEC\_SCP\_AES\_STAT](#TSEC_SCP_AES_STAT "wikilink") are set to "cxsin"
+and "csigauth", respectively.
 
 ### csigclr
 
