@@ -3404,6 +3404,82 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010012F00B6F2000 || Yomawari: The Long Night Collection || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 01002C9005F36000 || Youtubers Life OMG Edition || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100C0E008340000 || 戦国キャノン for Nintendo Switch || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010043E00CA58000 || ゴースト-1.0- || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 0100E8A00BCCA000 || ラピス・リ・アビス || JPN || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100BDC00A664000 || 仮面ライダー クライマックススクランブル ジオウ || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010033100AC2C000 || 秋葉原クラッシュ！１２３ステージ＋１ || JPN || || Digital || 0 0x10000 0x30000 || || Game
+|-
+| 010085A00C7F4000 || マドリスＲ || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 01000EA00B23C000 || 三国恋戦記～オトメの兵法！～ || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010019200C620000 || ギア・クラブ アンリミテッド2 || JPN || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 01003C300B274000 || ふたりで！にゃんこ大戦争 || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 01009C200BDDA000 || ダイダロス：ジ・アウェイクニング・オブ・ゴールデンジャズ || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010049A00D072000 || Voxel Sword（ボクセルソード） || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 0100D1600C9C4000 || ボクらの消しゴム落とし || JPN || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100FA00082BE000 || ネコ・トモ || JPN || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 0100BBA00B23E000 || 吉原彼岸花 久遠の契り || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010033100AC2C000 || 秋葉原クラッシュ！１２３ステージ＋１ || JPN || || Digital || 0 0x10000 0x30000 || || Game
+|-
+| 0100E5500B020000 || ネコネイビー -デイドリーム・エディション- || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010060300B870000 || ぷよぷよeスポーツ || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 01006B400C1B0000 || アサシン クリード オデッセイ クラウドバージョン || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010077300A9AC000 || ポータルナイツ || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 0100AA4008210000 || ゲットアンプドモバイル || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010018700A14A000 || レコチョク || JPN || || Digital || 0 0x20000 0x30000 || || Game
+|-
+| 010068600AD16000 || ベイブレードバースト バトルゼロ || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010058300D11E000 || アニマス || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010064900C340000 || セブン・ビリオン・ヒューマンズ || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 01001D800AAA0000 || 2064: Read Only Memories INTEGRAL (リードオンリーメモリーズ インテグラル) || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010071C00CBA4000 || デイグラシアの羅針盤 || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 0100B1400B2C0000 || シャンティ -海賊の呪い- || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010080D00816E000 || くにおくん ザ・ワールド クラシックスコレクション || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010014700C1AA000 || WWA Collection || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 0100AA700B9A2000 || ノラと皇女と野良猫ハート HD || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010094A00BEF8000 || バトルプリンセス マデリーン || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010088F00820E000 || DARK SOULS REMASTERED || JPN || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 010050000705E000 || ドラゴンクエストビルダーズ２　破壊神シドーとからっぽの島 || JPN || || Digital || 0 0x10000 0x30000 || || Game
+|-
+| 01004B000C214000 || EVE burst error R （イヴ バーストエラー アール） || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010033C00985E000 || RPGツクールMV Trinity || JPN || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+|-
+| 0100F8100C526000 || Super Volley Blast（スーパーバレー ブラスト） || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 01005E600C8FA000 || WILL: 素晴らしき世界 || JPN || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 01002E0006A50000 || WORKxWORK || JPN || || Digital || 0 0x20000 0x30000 0x40000 || || Game
 |}
 
 = Demos =
