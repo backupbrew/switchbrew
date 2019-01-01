@@ -28,9 +28,8 @@ describing what contents are installed to the SD card.
 
 ## Contents
 
-It seems this directory didn't exist until [2.0.0](2.0.0.md "wikilink").
-
-Contains directories "placehld" and "registered".
+Contains directories "placehld" and "registered", which didn't exist
+until [2.0.0](2.0.0.md "wikilink").
 
 Also contains file "private", which stores the 0x10 [sd card seed
 verification
@@ -63,7 +62,7 @@ not necessary.
 <sub-directory under Contents>  
 `└── <directories with upper-case hex: 000000XX>`  
 `    └── `<lower-case hex Nca directory>`.nca`  
-`        └── 00 `[`actual`` ``file`` ``for`` ``data``
-``storage`](NAX0.md "wikilink")  
+`        └── 00 `[`actual``   ``file``   ``for``   ``data`` 
+ ``storage`](NAX0.md "wikilink")  
 `        └── 01 (storage for file data at +4GB in the actual NCA)`  
 `        └── {etc}`
