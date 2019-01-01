@@ -34,6 +34,12 @@ This is "nn::lbl::detail::ILblController".
 | 27  | \[3.0.0+\] [\#DisableVrMode](#DisableVrMode "wikilink")     |
 | 28  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink") |
 
+## GetAmbientLightSensorValue
+
+No input. Returns an output float of the current ambient light sensor
+value (unit: lux). Note: float seems to be preceded by an u32 int
+(zeroes)
+
 ## GetCurrentBrightnessSetting
 
 No input. Returns an output u32 int of the current backlight level.
