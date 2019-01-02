@@ -250,7 +250,7 @@ Takes an input u64, DisplayId.
 
 ## SetDisplayEnabled
 
-Takes an input u32 boolean, and an u64(DisplayId?).
+Takes an input u32 boolean, and an u64 DisplayId.
 
 ## GetDisplayResolution
 
