@@ -876,6 +876,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x272 || 114 || 1 || Generic error
 |-
+| 0xC72 || 114 || 6 || Unsupported operation
+|-
 | 0x74 || 116 || 0 || Time service not initialized
 |-
 | 0xCC74 || 116 || 102 || Time not set
