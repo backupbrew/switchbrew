@@ -3358,6 +3358,7 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010053000B986000 || Road Redemption || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100E3900B598000 || RollerCoaster Tycoon Adventures || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 010079400BEE0000 || The Room || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 01001F100B586000 || Rooms: The Adventure of Anne & George || EUR JPN USA || || Digital || 0 0x20000 || || Game
