@@ -296,7 +296,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x402 || 2 || 2 || Path already exists.
 |-
-| 0xE02 || 2 || 7 || Savedata [[Filesystem_services|already]] mounted
+| 0xE02 || 2 || 7 || Resource already in use (file already opened, savedata filesystem already mounted).
 |-
 | 0x4602 || 2 || 35 || Not enough free space for BIS Calibration partition.
 |-
