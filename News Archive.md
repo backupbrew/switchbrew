@@ -1,3 +1,5 @@
+  - **19 November 18** Nintendo released system update
+    [6.2.0](6.2.0.md "wikilink").
   - **31 October 18** [nx-hbloader
     v2.0.1](https://github.com/switchbrew/nx-hbloader/releases/tag/v2.0.1)
     was released.
