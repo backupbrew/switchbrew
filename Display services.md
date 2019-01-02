@@ -452,13 +452,14 @@ This is "nn::visrv::sf::IManagerDisplayService".
 
 # DisplayInfo
 
-| Offset | Size | Description                              |
-| ------ | ---- | ---------------------------------------- |
-| 0x0    | 0x40 | [\#DisplayName](#DisplayName "wikilink") |
-| 0x40   | 0x8? | Normally 0x1 for the "Default" Display?  |
-| 0x48   | 0x8? | Normally 0x1 for the "Default" Display?  |
-| 0x50   | 0x8? | Width                                    |
-| 0x58   | 0x8? | Height                                   |
+| Offset | Size | Description                                                                                               |
+| ------ | ---- | --------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x40 | [\#DisplayName](#DisplayName "wikilink")                                                                  |
+| 0x40   | 0x1  | Whether or not the display has a constrained number of layers.                                            |
+| 0x41   | 0x7  | Padding/Reserved                                                                                          |
+| 0x48   | 0x8  | If this display has a constrained number of layers (0x40 is set), indicates the maximum number of layers. |
+| 0x50   | 0x8  | Width in pixels                                                                                           |
+| 0x58   | 0x8  | Height in pixels                                                                                          |
 
 This is a 0x60-byte structure.
 
