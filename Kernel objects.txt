@@ -1792,15 +1792,15 @@ The Horizon/NX kernel keeps all objects in slab allocators, that can allocate a 
 |-
 | KLightSession || 100
 |-
-| KLinkedListEntry || 17 231
+| KLinkedListEntry<void*> || 17 231
 |-
-| UNKNOWN1 || 4 000
+| KLinkedListNode || 4 000
 |-
 | KMemoryBlock (System) || 20 000
 |-
 | KMemoryBlock (Other) || 10 000
 |-
-| UNKNOWN2 || 167
+| KTlsPageManager || 167
 |-
 | KManagedPort || 7
 |-
