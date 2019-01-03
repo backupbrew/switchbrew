@@ -247,4 +247,21 @@ to value 1.0f.
 The applet-specific IStorage for data input is the
 [\#InitializeArg](#InitializeArg "wikilink") within this struct.
 
+### Runtime
+
+Once the applet is running, official sw can call a func which does the
+following:
+
+  - Checks whether the applet exited via an event, then handles exit if
+    so and returns.
+  - Otherwise:
+      - If the Flags field in the [\#CalcArg](#CalcArg "wikilink") state
+        is non-zero, sends a Calc [\#Request](#Request "wikilink") then
+        clears the Flags field.
+      - Enters a loop which pops each applet Interactive output
+        IStorage, reads 2 u32s from the [\#Reply](#Reply "wikilink")
+        storage and processes the reply.
+      - The u32 from offset 0x0 from the last processed storage is then
+        returned as the retval.
+
 [Category:Library Applets](Category:Library_Applets "wikilink")
