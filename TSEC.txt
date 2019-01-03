@@ -466,7 +466,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501418
 | 0x04
 |-
-| TSEC_SCP_UNK1
+| [[#TSEC_SCP_SEQ0_STAT|TSEC_SCP_SEQ0_STAT]]
 | 0x54501420
 | 0x04
 |-
@@ -1437,6 +1437,16 @@ Controls accesses to the other sub-engines and can only be cleared in Heavy Secu
 |-
 | 1
 | TSEC_SCP_CTL_PKEY_LOADED
+|}
+
+=== TSEC_SCP_SEQ0_STAT ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 8-11
+| Size of current cs0begin macro
+|-
 |}
 
 === TSEC_SCP_SEQ_STAT ===

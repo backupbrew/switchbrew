@@ -138,7 +138,7 @@ interfaces).
 | [TSEC\_SCP\_CTL\_MODE](#TSEC_SCP_CTL_MODE "wikilink")                   | 0x5450140C | 0x04  |
 | TSEC\_SCP\_UNK0                                                         | 0x54501410 | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")                   | 0x54501418 | 0x04  |
-| TSEC\_SCP\_UNK1                                                         | 0x54501420 | 0x04  |
+| [TSEC\_SCP\_SEQ0\_STAT](#TSEC_SCP_SEQ0_STAT "wikilink")                 | 0x54501420 | 0x04  |
 | [TSEC\_SCP\_SEQ\_STAT](#TSEC_SCP_SEQ_STAT "wikilink")                   | 0x54501428 | 0x04  |
 | [TSEC\_SCP\_INSN\_STAT](#TSEC_SCP_INSN_STAT "wikilink")                 | 0x54501430 | 0x04  |
 | TSEC\_SCP\_UNK2                                                         | 0x54501454 | 0x04  |
@@ -637,6 +637,13 @@ Heavy Secure mode.
 | ---- | ------------------------------------- |
 | 0    | TSEC\_SCP\_CTL\_PKEY\_REQUEST\_RELOAD |
 | 1    | TSEC\_SCP\_CTL\_PKEY\_LOADED          |
+
+### TSEC\_SCP\_SEQ0\_STAT
+
+| Bits | Description                    |
+| ---- | ------------------------------ |
+| 8-11 | Size of current cs0begin macro |
+|      |                                |
 
 ### TSEC\_SCP\_SEQ\_STAT
 
