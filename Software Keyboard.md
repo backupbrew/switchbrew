@@ -267,15 +267,25 @@ retval.
 
 ### Request
 
-| ID  | Data Size | Name            | Notes                                     |
-| --- | --------- | --------------- | ----------------------------------------- |
-| 0x4 | 0x0       | Finalize        |                                           |
-| 0x7 | 0x70      | SetCustomizeDic |                                           |
-| 0xA | 0x4A0     | Calc            | Data is [\#CalcArg](#CalcArg "wikilink"). |
+| RequestCommand | Data Size | Name            | Notes                                     |
+| -------------- | --------- | --------------- | ----------------------------------------- |
+| 0x4            | 0x0       | Finalize        |                                           |
+| 0x7            | 0x70      | SetCustomizeDic |                                           |
+| 0xA            | 0x4A0     | Calc            | Data is [\#CalcArg](#CalcArg "wikilink"). |
 
 Requests are sent via an applet Interactive input IStorage: the u32 at
-offset 0x0 is the request ID, and the rest of the storage is the
+offset 0x0 is the RequestCommand, and the rest of the storage is the
 request-specific data. While swkbd supports other requests, official sw
 only uses requests 0x4, 0x7, and 0xA.
+
+### Reply
+
+| ReplyType | Data Size | Name | Notes |
+| --------- | --------- | ---- | ----- |
+|           |           |      |       |
+
+See [\#Runtime](#Runtime "wikilink"). In the storage, the first u32 is
+the retval, while the second u32 is the ReplyType. The rest is the
+reply-specific data.
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
