@@ -1701,7 +1701,7 @@ Size: 0x30
 |-
 ! Offset || Type || Description
 |-
-| 0 || [[#KIrqReciever*]] || Receiver
+| 0 || [[#KInterruptReceiver]]* || Receiver
 |-
 | 8 || u8 || State0
 |-

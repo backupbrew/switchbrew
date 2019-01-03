@@ -1133,13 +1133,14 @@ Size: 0x30
 
 ## KIrqEntry
 
-\[1.0.0\] Size: 0x10
+\[1.0.0\] Size:
+0x10
 
-| Offset | Type                                          | Description |
-| ------ | --------------------------------------------- | ----------- |
-| 0      | [\#KIrqReciever\*](#KIrqReciever* "wikilink") | Receiver    |
-| 8      | u8                                            | State0      |
-| 9      | u8                                            | State1      |
+| Offset | Type                                                     | Description |
+| ------ | -------------------------------------------------------- | ----------- |
+| 0      | [\#KInterruptReceiver](#KInterruptReceiver "wikilink")\* | Receiver    |
+| 8      | u8                                                       | State0      |
+| 9      | u8                                                       | State1      |
 
 # KDebug
 
