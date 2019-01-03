@@ -177,7 +177,7 @@ it).
 | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | 0x0    | 0x4  | Unknown, normally 0.                                                                                                                 |
 | 0x4    | 0x1  | Controls the LibraryAppletMode when launching the applet. Non-zero indicates LibraryAppletMode=0x1, otherwise LibraryAppletMode=0x3. |
-| 0x5    | 0x1  | Set to 0x1 with \[5.0.0+\], originally set to value 0.                                                                               |
+| 0x5    | 0x1  | Set to 0x1 with \[5.0.0+\] in a separate init func by official sw, originally set to value 0.                                        |
 | 0x6    | 0x2  | Padding                                                                                                                              |
 
 ### AppearArg
