@@ -312,4 +312,18 @@ Once the applet is running, official sw can call a func which does the following
 ** Enters a loop which pops each applet Interactive output IStorage, reads 2 u32s from the [[#Reply]] storage and processes the reply.
 ** The u32 from offset 0x0 from the last processed storage is then returned as the retval.
 
+=== Request ===
+{| class="wikitable" border="1"
+|-
+! ID || Data Size || Name || Notes
+|-
+| 0x4 || 0x0 || Finalize || 
+|-
+| 0x7 || 0x70 || SetCustomizeDic || 
+|-
+| 0xA || 0x4A0 || Calc || Data is [[#CalcArg]].
+|}
+
+Requests are sent via an applet Interactive input IStorage: the u32 at offset 0x0 is the request ID, and the rest of the storage is the request-specific data. While swkbd supports other requests, official sw only uses requests 0x4, 0x7, and 0xA.
+
 [[Category:Library Applets]]
