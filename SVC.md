@@ -76,7 +76,7 @@
 | 0x50 | [\#svcCreateSharedMemory](#svcCreateSharedMemory "wikilink")                       | W1=size, W2=myperm, W3=otherperm                                                                                                                                                                                                                                                   | W0=result, W1=shmem\_handle                              |
 | 0x51 | [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink")                         | X0=tmem\_handle, X1=addr, X2=size, W3=perm                                                                                                                                                                                                                                         | W0=result                                                |
 | 0x52 | [\#svcUnmapTransferMemory](#svcUnmapTransferMemory "wikilink")                     | W0=tmemhandle, X1=addr, X2=size                                                                                                                                                                                                                                                    | W0=result                                                |
-| 0x53 | svcCreateInterruptEvent                                                            | X1=irq\_num, W2=flag                                                                                                                                                                                                                                                               | W0=result, W1=handle                                     |
+| 0x53 | [\#svcCreateInterruptEvent](#svcCreateInterruptEvent "wikilink")                   | X1=irq\_num, W2=flag                                                                                                                                                                                                                                                               | W0=result, W1=handle                                     |
 | 0x54 | [\#svcQueryPhysicalAddress](#svcQueryPhysicalAddress "wikilink")                   | X1=addr                                                                                                                                                                                                                                                                            | W0=result, X1=physaddr, X2=kerneladdr, X3=size           |
 | 0x55 | [\#svcQueryIoMapping](#svcQueryIoMapping "wikilink")                               | X1=physaddr, X2=size                                                                                                                                                                                                                                                               | W0=result, X1=virtaddr                                   |
 | 0x56 | [\#svcCreateDeviceAddressSpace](#svcCreateDeviceAddressSpace "wikilink")           | X1=dev\_as\_start\_addr, X2=dev\_as\_end\_addr                                                                                                                                                                                                                                     | W0=result, W1=dev\_as\_handle                            |
@@ -933,6 +933,40 @@ svcCreateMemoryMirror, otherwise error.
 
 Size must match size given in map syscall, otherwise there's an
 invalid-size error.
+
+## svcCreateInterruptEvent
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name                |
+| -------- | ------------------------------ | ------------------- |
+| (In) X1  | u64                            | IrqNum              |
+| (In) W2  | bool                           | Flags               |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret                 |
+| (Out) W1 | Handle<ReadableEvent>          | ReadableEventHandle |
+
+</div>
+
+Create an event handle for the given IRQ number. Waiting on this handle
+will wait until the IRQ is triggered. The flags argument configures the
+triggering. If it is false, the IRQ is active HIGH level sensitive, if
+it is true it is rising-edge sensitive.
+
+### Result codes
+
+**0x0:** Success.
+
+**0xF001:** Flags was \> 1
+
+**0xF201:** IRQ above 0x3FF or outside the [IRQ access
+mask](NPDM#Kernel%20Access%20Control.md##Kernel_Access_Control "wikilink")
+was given.
+
+**0xCE01:** A SlabHeap was exhausted (too many interrupts created).
+
+**0xF401:** IRQ already has an event registered.
+
+**0xD201:** The handle table is full. Try closing some handles.
 
 ## svcQueryPhysicalAddress
 

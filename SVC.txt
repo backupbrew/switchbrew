@@ -148,7 +148,7 @@ __NOTOC__
 |-
 | 0x52 || [[#svcUnmapTransferMemory]] || W0=tmemhandle, X1=addr, X2=size || W0=result
 |-
-| 0x53 || svcCreateInterruptEvent || X1=irq_num, W2=flag || W0=result, W1=handle
+| 0x53 || [[#svcCreateInterruptEvent]] || X1=irq_num, W2=flag || W0=result, W1=handle
 |-
 | 0x54 || [[#svcQueryPhysicalAddress]] || X1=addr || W0=result, X1=physaddr, X2=kerneladdr, X3=size
 |-
@@ -1067,6 +1067,41 @@ You must pass same size and permissions as given in svcCreateMemoryMirror, other
 </div>
 
 Size must match size given in map syscall, otherwise there's an invalid-size error.
+
+
+== svcCreateInterruptEvent ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X1 || u64 || IrqNum
+|-
+| (In) W2 || bool || Flags
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || Handle<ReadableEvent> || ReadableEventHandle
+|}
+</div>
+
+Create an event handle for the given IRQ number. Waiting on this handle will wait until the IRQ is triggered. The flags argument configures the triggering. If it is false, the IRQ is active HIGH level sensitive, if it is true it is rising-edge sensitive.
+
+=== Result codes ===
+
+'''0x0:''' Success.
+
+'''0xF001:''' Flags was > 1
+
+'''0xF201:''' IRQ above 0x3FF or outside the [[NPDM#Kernel_Access_Control|IRQ access mask]] was given.
+
+'''0xCE01:''' A SlabHeap was exhausted (too many interrupts created).
+
+'''0xF401:''' IRQ already has an event registered.
+
+'''0xD201:''' The handle table is full. Try closing some handles.
+
 
 == svcQueryPhysicalAddress ==
 
