@@ -180,7 +180,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01000D200AC0C000 || Bud Spencer & Terence Hill - Slaps And Beans || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 01000D5005974000 || N++ (NPLUSPLUS) || EUR USA || 4.0.0 || Digital || 0 131072 || || Application / Game
+| 01000D5005974000 || N++ (NPLUSPLUS) || EUR USA || 4.0.0 || Digital || 0 0x10000 0x20000 0x30000 || || Application / Game
 |-
 | 01000D70049BE000 || Sword of the Guardian || USA || 5.0.0 || Digital || 0 131072 || || Application / Game
 |-
@@ -332,7 +332,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010019000034A000 || カラオケJOYSOUND for Nintendo Switch || JPN || 4.0.0 || Digital || 0 131072 || || Application / Game
 |-
-| 0100191006B98000 || ロロロロ　体験版 || JPN || 3.0.1 || Digital || 0 || || Application / Game
+| 0100191006B98000 || ロロロロ　体験版 || JPN || 3.0.1 || Digital || 0 0x10000 || || Application / Game
 |-
 | 0100192003FA4000 || Azure Striker GUNVOLT: STRIKER PACK || EUR JPN USA || 1.0.0 || Digital || 0 65536 131072 196608 262144 || || Application / Game
 |-
@@ -2837,7 +2837,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100E98002F6E000 || Mantis Burn Racing || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
-| 0100E98006F22000 || Bad North || EUR JPN USA || 4.0.0 || Digital || 0 131072 || || Application / Game
+| 0100E98006F22000 || Bad North || EUR JPN USA || 4.0.0 || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Application / Game
 |-
 | 0100E9A00B0BC000 || NoReload Heroes || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -3321,7 +3321,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010041700A04A000 || Oxyjet || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 01002A300BDE2000 || Panda Hero || USA || || Digital || 0 0x20000 0x30000 || || Game
+| 01002A300BDE2000 || Panda Hero || USA || || Digital || 0 0x20000 0x30000 0x40000 || || Game
 |-
 | 0100721008D24000 || Party Arcade || USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3546,6 +3546,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01008B400BE5E000 || 返校 -Detention- || JPN || || Digital || 0 0x10000 || || Game
 |-
 | 0100C1B00BE98000 || One Strike一騎打ち || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 01008EA00C27E000 || ダイイング：リボーン Nintendo Switch Edition || JPN || || Digital || 0 0x10000 || || Game
 |}
 
 = Demos =
