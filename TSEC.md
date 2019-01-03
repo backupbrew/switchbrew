@@ -2159,7 +2159,10 @@ being briefly written to
 [TSEC\_SCP\_INSN\_STAT](#TSEC_SCP_INSN_STAT "wikilink") as "csigauth $c4
 $c6" while the opcodes in
 [TSEC\_SCP\_AES\_STAT](#TSEC_SCP_AES_STAT "wikilink") are set to "cxsin"
-and "csigauth", respectively.
+and "csigauth", respectively. Also, via
+[TSEC\_SCP\_SEQ0\_STAT](#TSEC_SCP_SEQ0_STAT "wikilink") it can be
+observed that a 3-sized macro sequence is loaded into cs0 during a
+secure mode transition.
 
 ### csigclr
 
