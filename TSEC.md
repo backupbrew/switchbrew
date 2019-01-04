@@ -2217,18 +2217,12 @@ bits, and the number of DMA-related instructions the effect lasts for in
 the lower 5
 bits.
 
-#### Override Types
-
-| Value | Effect                                                                    |
-| ----- | ------------------------------------------------------------------------- |
-| 0b000 | Falcon DMEM \<-\> Falcon $cX register                                     |
-| 0b001 | Falcon DMEM \<-\> Falcon crypto input/output stream                       |
-| 0b010 | External memory \<-\> Falcon DMEM \<-\> Falcon $cX register               |
-| 0b011 | External memory \<-\> Falcon DMEM \<-\> Falcon crypto input/output stream |
-| 0b100 | Falcon IMEM \<-\> Falcon $cX register                                     |
-| 0b101 | Falcon IMEM \<-\> Falcon crypto input/output stream                       |
-| 0b110 | External memory \<-\> Falcon IMEM \<-\> Falcon $cX register               |
-| 0b111 | External memory \<-\> Falcon IMEM \<-\> Falcon crypto input/output stream |
+| Bits | Description                                                           |
+| ---- | --------------------------------------------------------------------- |
+| 0-4  | Number of instructions it is valid for                                |
+| 5    | Crypto destination/source select (0=crypto register, 1=crypto stream) |
+| 6    | External memory override (0=Disabled, 1=Enabled)                      |
+| 7    | Internal memory select (0=DMEM, 1=IMEM)                               |
 
 #### DMA-Related Instructions
 

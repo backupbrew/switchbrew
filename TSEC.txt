@@ -2996,25 +2996,16 @@ can be read as: <code>dma_override(type=crypto_reg, count=2)</code>
 
 The argument to cxset specifies the type of behavior change in the top 3 bits, and the number of DMA-related instructions the effect lasts for in the lower 5 bits.
 
-==== Override Types ====
 {| class=wikitable
-! Value || Effect
+! Bits || Description
 |-
-|  0b000 || Falcon DMEM <-> Falcon $cX register
+| 0-4 || Number of instructions it is valid for
 |-
-|  0b001 || Falcon DMEM <-> Falcon crypto input/output stream
+| 5 || Crypto destination/source select (0=crypto register, 1=crypto stream)
 |-
-|  0b010 || External memory <-> Falcon DMEM <-> Falcon $cX register
+| 6 || External memory override (0=Disabled, 1=Enabled)
 |-
-|  0b011 || External memory <-> Falcon DMEM <-> Falcon crypto input/output stream
-|-
-|  0b100 || Falcon IMEM <-> Falcon $cX register
-|-
-|  0b101 || Falcon IMEM <-> Falcon crypto input/output stream
-|-
-|  0b110 || External memory <-> Falcon IMEM <-> Falcon $cX register
-|-
-|  0b111 || External memory <-> Falcon IMEM <-> Falcon crypto input/output stream
+| 7 || Internal memory select (0=DMEM, 1=IMEM)
 |}
 
 ==== DMA-Related Instructions ====
