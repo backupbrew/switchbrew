@@ -865,7 +865,22 @@ Always 0xFFF.
 | 26   | TSEC\_TEGRA\_CTL\_TMPI\_RESTART\_FSM\_APB        |
 | 27   | TSEC\_TEGRA\_CTL\_TMPI\_DISABLE\_OUTPUT\_I2C     |
 
-## Notes
+## Authenticated Mode
+
+##### Entry
+
+From non-secure mode, upon jumping to a page marked as secret, a secret
+fault occurs. This causes the CPU to verify the region specified in
+$cauth against the MAC loaded in $c6. If the comparison is successful,
+$pc is set to the base of the $cauth region. If the comparsion fails,
+the CPU is halted.
+
+##### Exit
+
+The CPU automatically goes back to non-secure mode when returning back
+into non-secret pages.
+
+## Crypto processing
 
 Part of the information here (which hasn't made it into envytools
 documentation yet) was shared by
@@ -881,16 +896,18 @@ propagated when registers are referenced by instructions (e.g. moving a
 value from read-protected $cX to $cY will result in $cY also being
 read-protected).
 
-### Authenticated Mode Entry/Exit
+### cauth
 
-From non-secure mode, upon jumping to a page marked as secret, a secret
-fault occurs. This causes the CPU to verify the region specified in
-$cauth against the MAC loaded in $c6. If the comparison is successful,
-$pc is set to the base of the $cauth region. If the comparsion fails,
-the CPU is halted.
+$cauth is a special purpose register in the CPU.
 
-The CPU automatically goes back to non-secure mode when returning back
-into non-secret pages.
+| Bits  | Description                                            |
+| ----- | ------------------------------------------------------ |
+| 0-15  | Start of region to authenticate (in 0x100 pages)       |
+| 16    | Use secret xfers (?)                                   |
+| 17    | Region is signed and encrypted and double the size (?) |
+| 18    |                                                        |
+| 19    |                                                        |
+| 31-24 | Size of region to authenticate (in 0x100 pages)        |
 
 ### csigauth
 

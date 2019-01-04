@@ -1737,16 +1737,38 @@ Always 0xFFF.
 | TSEC_TEGRA_CTL_TMPI_DISABLE_OUTPUT_I2C
 |}
 
-== Notes ==
+== Authenticated Mode ==
+===== Entry =====
+From non-secure mode, upon jumping to a page marked as secret, a secret fault occurs. This causes the CPU to verify the region specified in $cauth against the MAC loaded in $c6. If the comparison is successful, $pc is set to the base of the $cauth region. If the comparsion fails, the CPU is halted.
+
+===== Exit =====
+The CPU automatically goes back to non-secure mode when returning back into non-secret pages.
+
+== Crypto processing ==
 Part of the information here (which hasn't made it into envytools documentation yet) was shared by [https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki mwk] from reverse engineering falcon processors over the years.
 
 === Register ACLs ===
 Falcon tracks permission metadata about each crypto reg. Permissions include read/write ability per execution mode, as well as ability to use the reg for encrypt/decrypt, among other permissions. Permissions are propagated when registers are referenced by instructions (e.g. moving a value from read-protected $cX to $cY will result in $cY also being read-protected).
 
-=== Authenticated Mode Entry/Exit ===
-From non-secure mode, upon jumping to a page marked as secret, a secret fault occurs. This causes the CPU to verify the region specified in $cauth against the MAC loaded in $c6. If the comparison is successful, $pc is set to the base of the $cauth region. If the comparsion fails, the CPU is halted.
+=== cauth ===
+$cauth is a special purpose register in the CPU.
 
-The CPU automatically goes back to non-secure mode when returning back into non-secret pages.
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-15 || Start of region to authenticate (in 0x100 pages)
+|-
+| 16 || Use secret xfers (?)
+|-
+| 17 || Region is signed and encrypted and double the size (?)
+|-
+| 18 ||
+|-
+| 19 ||
+|-
+| 31-24 || Size of region to authenticate (in 0x100 pages)
+|}
 
 === csigauth ===
 <code>00000000: f5 3c XY d8     csigauth $cY $cX</code>
