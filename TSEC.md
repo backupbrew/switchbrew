@@ -87,8 +87,8 @@ interfaces).
 | [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")                           | 0x54501104 | 0x04  |
 | [FALCON\_HWCFG](#FALCON_HWCFG "wikilink")                               | 0x54501108 | 0x04  |
 | [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")                             | 0x5450110C | 0x04  |
-| [FALCON\_DMATRFBASE](#FALCON_DMATRFBASE "wikilink")                     | 0x54501110 | 0x04  |
-| [FALCON\_DMATRFMOFFS](#FALCON_DMATRFMOFFS "wikilink")                   | 0x54501114 | 0x04  |
+| [FALCON\_DMATRF\_POFF](#FALCON_DMATRF_POFF "wikilink")                  | 0x54501110 | 0x04  |
+| [FALCON\_DMATRF\_VOFF](#FALCON_DMATRF_VOFF "wikilink")                  | 0x54501114 | 0x04  |
 | [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")                       | 0x54501118 | 0x04  |
 | [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink")                 | 0x5450111C | 0x04  |
 | [FALCON\_DMATRFSTAT](#FALCON_DMATRFSTAT "wikilink")                     | 0x54501120 | 0x04  |
@@ -469,14 +469,14 @@ Takes the Falcon's boot vector address.
 
 Used for configuring the Falcon's DMA engine.
 
-### FALCON\_DMATRFBASE
+### FALCON\_DMATRF\_POFF
 
-Takes the host's base address for transferring data to/from the Falcon
-(DMA).
+For transfers to IMEM: the destination physical IMEM page.
 
-### FALCON\_DMATRFMOFFS
+### FALCON\_DMATRF\_VOFF
 
-Takes the offset for the host's source memory being transferred.
+For transfers to DMEM: the destination address. For transfers to IMEM:
+the destination virtual IMEM page.
 
 ### FALCON\_DMATRFCMD
 

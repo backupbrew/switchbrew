@@ -262,11 +262,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450110C
 | 0x04
 |-
-| [[#FALCON_DMATRFBASE|FALCON_DMATRFBASE]]
+| [[#FALCON_DMATRF_POFF|FALCON_DMATRF_POFF]]
 | 0x54501110
 | 0x04
 |-
-| [[#FALCON_DMATRFMOFFS|FALCON_DMATRFMOFFS]]
+| [[#FALCON_DMATRF_VOFF|FALCON_DMATRF_VOFF]]
 | 0x54501114
 | 0x04
 |-
@@ -1219,11 +1219,12 @@ Takes the Falcon's boot vector address.
 
 Used for configuring the Falcon's DMA engine.
 
-=== FALCON_DMATRFBASE ===
-Takes the host's base address for transferring data to/from the Falcon (DMA).
+=== FALCON_DMATRF_POFF ===
+For transfers to IMEM: the destination physical IMEM page.
 
-=== FALCON_DMATRFMOFFS ===
-Takes the offset for the host's source memory being transferred.
+=== FALCON_DMATRF_VOFF ===
+For transfers to DMEM: the destination address.
+For transfers to IMEM: the destination virtual IMEM page.
 
 === FALCON_DMATRFCMD ===
 {| class="wikitable" border="1"
