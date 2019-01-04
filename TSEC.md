@@ -985,19 +985,19 @@ burned at factory. These keys can be loaded by using the $csecret
 instruction which takes the target crypto register and the key index as
 arguments.
 
-| Index | Notes                                                                                                                                         |
-| ----- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x00  | Used by Keygen, nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.              |
-| 0x01  | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                                  |
-| 0x03  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
-| 0x04  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
-| 0x05  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.                      |
-| 0x07  | Used by \[6.0.0+\] nvhost\_tsec firmware.                                                                                                     |
-| 0x09  | Used by nvhost\_tsec firmware.                                                                                                                |
-| 0x0B  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
-| 0x0F  | Used by nvhost\_tsec firmware.                                                                                                                |
-| 0x10  | Used by \[1.0.0-5.1.0\] nvhost\_tsec firmware.                                                                                                |
-| 0x15  | Used by nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod, \[5.0.0+\] nvhost\_nvdec020\_ns and \[6.0.0+\] nvhost\_tsec firmwares. |
-| 0x26  | Used by [KeygenLdr](#KeygenLdr "wikilink").                                                                                                   |
-| 0x3C  | Used by nvhost\_tsec firmware.                                                                                                                |
-| 0x3F  | Used by Keygen, nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                      |
+| Index | Notes                                                                                                                                                                            | Console-unique |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| 0x00  | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. | No             |
+| 0x01  | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                                                                     |                |
+| 0x03  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |                |
+| 0x04  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |                |
+| 0x05  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.                                                         |                |
+| 0x07  | Used by \[6.0.0+\] nvhost\_tsec firmware.                                                                                                                                        |                |
+| 0x09  | Used by nvhost\_tsec firmware.                                                                                                                                                   |                |
+| 0x0B  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |                |
+| 0x0F  | Used by nvhost\_tsec firmware.                                                                                                                                                   |                |
+| 0x10  | Used by \[1.0.0-5.1.0\] nvhost\_tsec firmware.                                                                                                                                   |                |
+| 0x15  | Used by nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod, \[5.0.0+\] nvhost\_nvdec020\_ns and \[6.0.0+\] nvhost\_tsec firmwares.                                    |                |
+| 0x26  | Used by [KeygenLdr](TSEC%20Firmware#KeygenLdr.md##KeygenLdr "wikilink").                                                                                                         | No             |
+| 0x3C  | Used by nvhost\_tsec firmware.                                                                                                                                                   |                |
+| 0x3F  | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                         | Yes            |
