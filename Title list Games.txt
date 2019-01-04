@@ -1614,7 +1614,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01007F4004FA4000 || ACA NEOGEO MUTATION NATION || EUR JPN USA || 3.0.1 || Digital || 0 || || Virtual Console
 |-
-| 01007FC00206E000 || LEGO® NINJAGO® Movie Video Game || USA || 3.0.1 || Digital / Cartridge || 0 65536 || || Application / Game
+| 01007FC00206E000 || LEGO® NINJAGO® Movie Video Game || USA || 3.0.1 || Digital / Cartridge || 0 0x10000 0x20000 || || Application / Game
 |-
 | 01007FC00B674000 || Sigi - A Fart for Melusina || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -2531,7 +2531,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CE100A826000 || Jurassic Pinball || EUR USA || 4.0.0 || Digital || 0 131072 || || Application / Game
 |-
-| 0100CE2007A86000 || Old Man's Journey || EUR JPN USA || 3.0.1 || Digital || 0 || || Application / Game
+| 0100CE2007A86000 || Old Man's Journey || EUR JPN USA || 3.0.1 || Digital || 0 0x10000 || || Application / Game
 |-
 | 0100CE400A2FA000 || ACA NEOGEO Gururin || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Virtual Console
 |-
@@ -3310,6 +3310,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100D6200933C000 || Nickelodeon Kart Racers || USA || || Digital || 0 0x20000 || || Game
 |-
 | 0100D870045B6000 || Nintendo Entertainment System – Nintendo Switch Online || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Application
+|-
+| 0100EF5008FC4000 || Nippon Marathon || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010029F00C876000 || Odium to the Core || EUR USA || || Digital || 0 0x10000 || || Game
 |-
