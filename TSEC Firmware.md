@@ -253,7 +253,7 @@ executed. Before returning, this stage writes back to the host (using
 MMIO registers) and sets the key used by the first bootloader.
 
 \[6.2.0+\] During this stage, [key data](#Key_data "wikilink") is loaded
-and execution jumps to [SecureBootLdr](#SecureBoot "wikilink").
+and execution jumps to [SecureBootLdr](#SecureBootLdr "wikilink").
 
 ### Initialization
 
@@ -992,6 +992,9 @@ generate the final TSEC key.
 
 ## SecureBootLdr
 
+\[6.2.0+\] This was introduced to try to recover the secure boot from
+the RCM vulnerability.
+
 This stage starts by authenticating and executing
 [KeygenLdr](#KeygenLdr "wikilink") which in turn authenticates, decrypts
 and executes [Keygen](#Keygen "wikilink") (both blobs remain unchanged
@@ -1155,6 +1158,9 @@ execution returns to this stage which then parses and executes
 `return 0xB0B0B0B0;`
 
 ## SecureBoot
+
+\[6.2.0+\] This was introduced to try to recover the secure boot from
+the RCM vulnerability.
 
 This stage prepares the stack then authenticates, decrypts and executes
 the SecureBoot blob's Falcon OS
