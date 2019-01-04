@@ -883,19 +883,14 @@ read-protected).
 
 ### Authenticated Mode Entry/Exit
 
-Entry to Authenticated Mode always sets $pc to the address supplied in
-$cauth (ie the base of the signature-checked region). This takes effect
-when trying to branch to any address within the range covered by $cauth.
-Entry to Authenticated Mode (also called "Secure Mode") computes a MAC
-over the $cauth region and compares it to $c6 in order to perform the
-signature check.
+From non-secure mode, upon jumping to a page marked as secret, a secret
+fault occurs. This causes the CPU to verify the region specified in
+$cauth against the MAC loaded in $c6. If the comparison is successful,
+$pc is set to the base of the $cauth region. If the comparsion fails,
+the CPU is halted.
 
-Exit from Authenticated Mode must poke a special register before leaving
-authenticated code pages and a failure to do this would result in the
-Falcon core halting. Every Falcon based unit (TSEC, NVDEC, VIC) must map
-this register in their engine-specific subset of registers. In TSEC's
-case, the register is
-[TSEC\_SCP\_CTL\_MODE](#TSEC_SCP_CTL_MODE "wikilink").
+The CPU automatically goes back to non-secure mode when returning back
+into non-secret pages.
 
 ### csigauth
 
