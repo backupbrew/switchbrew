@@ -262,7 +262,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450110C
 | 0x04
 |-
-| [[#FALCON_DMATRF_POFF|FALCON_DMATRF_POFF]]
+| [[#FALCON_DMATRF_EXTBASE|FALCON_DMATRF_EXTBASE]]
 | 0x54501110
 | 0x04
 |-
@@ -274,7 +274,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501118
 | 0x04
 |-
-| [[#FALCON_DMATRFFBOFFS|FALCON_DMATRFFBOFFS]]
+| [[#FALCON_DMATRF_POFF|FALCON_DMATRF_POFF]]
 | 0x5450111C
 | 0x04
 |-
@@ -1219,12 +1219,17 @@ Takes the Falcon's boot vector address.
 
 Used for configuring the Falcon's DMA engine.
 
-=== FALCON_DMATRF_POFF ===
-For transfers to IMEM: the destination physical IMEM page.
+=== FALCON_DMATRF_EXTBASE ===
+Base of the external memory buffer.
+
+The base of the transfer is calculated by adding [[#FALCON_DMATRF_POFF]] to the base.
 
 === FALCON_DMATRF_VOFF ===
 For transfers to DMEM: the destination address.
 For transfers to IMEM: the destination virtual IMEM page.
+
+=== FALCON_DMATRF_POFF ===
+For transfers to IMEM: the destination physical IMEM page.
 
 === FALCON_DMATRFCMD ===
 {| class="wikitable" border="1"

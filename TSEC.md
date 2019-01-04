@@ -87,10 +87,10 @@ interfaces).
 | [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")                           | 0x54501104 | 0x04  |
 | [FALCON\_HWCFG](#FALCON_HWCFG "wikilink")                               | 0x54501108 | 0x04  |
 | [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")                             | 0x5450110C | 0x04  |
-| [FALCON\_DMATRF\_POFF](#FALCON_DMATRF_POFF "wikilink")                  | 0x54501110 | 0x04  |
+| [FALCON\_DMATRF\_EXTBASE](#FALCON_DMATRF_EXTBASE "wikilink")            | 0x54501110 | 0x04  |
 | [FALCON\_DMATRF\_VOFF](#FALCON_DMATRF_VOFF "wikilink")                  | 0x54501114 | 0x04  |
 | [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")                       | 0x54501118 | 0x04  |
-| [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink")                 | 0x5450111C | 0x04  |
+| [FALCON\_DMATRF\_POFF](#FALCON_DMATRF_POFF "wikilink")                  | 0x5450111C | 0x04  |
 | [FALCON\_DMATRFSTAT](#FALCON_DMATRFSTAT "wikilink")                     | 0x54501120 | 0x04  |
 | [FALCON\_CRYPTTRFSTAT](#FALCON_CRYPTTRFSTAT "wikilink")                 | 0x54501124 | 0x04  |
 | FALCON\_CPUSTAT                                                         | 0x54501128 | 0x04  |
@@ -469,14 +469,21 @@ Takes the Falcon's boot vector address.
 
 Used for configuring the Falcon's DMA engine.
 
-### FALCON\_DMATRF\_POFF
+### FALCON\_DMATRF\_EXTBASE
 
-For transfers to IMEM: the destination physical IMEM page.
+Base of the external memory buffer.
+
+The base of the transfer is calculated by adding
+[\#FALCON\_DMATRF\_POFF](#FALCON_DMATRF_POFF "wikilink") to the base.
 
 ### FALCON\_DMATRF\_VOFF
 
 For transfers to DMEM: the destination address. For transfers to IMEM:
 the destination virtual IMEM page.
+
+### FALCON\_DMATRF\_POFF
+
+For transfers to IMEM: the destination physical IMEM page.
 
 ### FALCON\_DMATRFCMD
 
