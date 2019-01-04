@@ -36,13 +36,16 @@ This is "nn::lbl::detail::ILblController".
 
 ## GetAmbientLightSensorValue
 
-No input. Returns an output
+No input. Before 5.x, outputs lux in float. (5.0.0+) Returns an output
 struct:
 
 | Offset | Size | Description                                               |
 | ------ | ---- | --------------------------------------------------------- |
-| 0x0    | 0x4  | bSunny. (u32) Equals to 1 if fLux \>= 10000.              |
+| 0x0    | 0x4  | bAbove13k. (u32) Equals to 1 if fLux \>= 13000.           |
 | 0x4    | 0x4  | fLux. (float) Value in lux from the ambient light sensor. |
+
+Note: if bAbove13k = 1 then the real lux value equals to (13000 - fLux)
++ 13000 and caps out at \~25000.
 
 ## GetCurrentBrightnessSetting
 
