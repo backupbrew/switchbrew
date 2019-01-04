@@ -987,7 +987,7 @@ arguments.
 
 | Index | Notes                                                                                                                                         |
 | ----- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x00  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. Debug mode only.     |
+| 0x00  | Used by Keygen, nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.              |
 | 0x01  | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                                  |
 | 0x03  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
 | 0x04  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
@@ -1000,4 +1000,4 @@ arguments.
 | 0x15  | Used by nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod, \[5.0.0+\] nvhost\_nvdec020\_ns and \[6.0.0+\] nvhost\_tsec firmwares. |
 | 0x26  | Used by [KeygenLdr](#KeygenLdr "wikilink").                                                                                                   |
 | 0x3C  | Used by nvhost\_tsec firmware.                                                                                                                |
-| 0x3F  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                              |
+| 0x3F  | Used by Keygen, nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                      |
