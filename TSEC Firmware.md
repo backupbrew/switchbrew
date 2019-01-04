@@ -232,7 +232,7 @@ data](#Key_data "wikilink").
 [SecureBootLdr](#SecureBootLdr "wikilink") (unencrypted and
 unauthenticated code), [SecureBoot](#SecureBoot "wikilink") (part
 unencrypted and unauthenticated code, part encrypted and authenticated
-code) and [key data](#Key_data "wikilink").
+code).
 
 Firmware can be disassembled with
 [envytools'](http://envytools.readthedocs.io/en/latest/)

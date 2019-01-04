@@ -198,7 +198,7 @@ Clocks and resets are disabled before returning.
 The actual code loaded into TSEC is assembled in NVIDIA's proprietary fuc5 ISA using crypto extensions.
 Stored inside the first bootloader, this firmware binary is split into 4 blobs (names are unofficial): [[#Boot|Boot]] (unencrypted and unauthenticated code), [[#KeygenLdr|KeygenLdr]] (unencrypted and authenticated code), [[#Keygen|Keygen]] (encrypted and authenticated code) and [[#Key data|key data]].
 
-[6.2.0+] There are now 2 new blobs (names are unofficial): [[#SecureBootLdr|SecureBootLdr]] (unencrypted and unauthenticated code), [[#SecureBoot|SecureBoot]] (part unencrypted and unauthenticated code, part encrypted and authenticated code) and [[#Key data|key data]].
+[6.2.0+] There are now 2 new blobs (names are unofficial): [[#SecureBootLdr|SecureBootLdr]] (unencrypted and unauthenticated code), [[#SecureBoot|SecureBoot]] (part unencrypted and unauthenticated code, part encrypted and authenticated code).
 
 Firmware can be disassembled with [http://envytools.readthedocs.io/en/latest/ envytools'] [https://github.com/envytools/envytools/tree/master/envydis envydis]:
 
