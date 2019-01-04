@@ -499,10 +499,6 @@ For transfers to IMEM: the destination physical IMEM page.
 
 Used for configuring DMA transfers.
 
-### FALCON\_DMATRFFBOFFS
-
-Takes the offset for Falcon's target memory being transferred.
-
 ### FALCON\_DMATRFSTAT
 
 | Bits  | Description                              |
