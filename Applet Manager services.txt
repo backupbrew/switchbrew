@@ -549,7 +549,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 102 || [5.0.0+] SetApplicationCopyrightVisibility || 
 |-
-| 110 || [5.0.0+] QueryApplicationPlayStatistics || 
+| 110 || [5.0.0+] [[#QueryApplicationPlayStatistics]] || 
 |-
 | 111 || [6.0.0+] QueryApplicationPlayStatisticsByUid || 
 |-
@@ -613,6 +613,11 @@ Takes a TransferMemory handle and an u64 for the size of the TransferMemory. The
 
 ==== SetGamePlayRecordingState ====
 Takes an input u32. 0 = disable/pause, 1 = enable/restart.
+
+==== QueryApplicationPlayStatistics ====
+Takes a type-0x6 output buffer containing an array of ApplicationPlayStatistics and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output s32 (actual total output entries?).
+
+The number of entries in each array is the same. ApplicationPlayStatistics is a 8-byte struct.
 
 ==== CreateMovieMaker ====
 Takes an input u64 and handle, returns an [[#IMovieMaker]].

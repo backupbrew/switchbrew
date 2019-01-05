@@ -437,7 +437,7 @@ Takes an input u64 and handle, returns a GRC
 | 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                                                            |       |
 | 101  | \[5.0.0+\] SetApplicationCopyrightImage                                                                                         |       |
 | 102  | \[5.0.0+\] SetApplicationCopyrightVisibility                                                                                    |       |
-| 110  | \[5.0.0+\] QueryApplicationPlayStatistics                                                                                       |       |
+| 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |       |
 | 111  | \[6.0.0+\] QueryApplicationPlayStatisticsByUid                                                                                  |       |
 | 120  | \[5.0.0+\] ExecuteProgram                                                                                                       |       |
 | 121  | \[5.0.0+\] ClearUserChannel                                                                                                     |       |
@@ -525,6 +525,16 @@ returned.
 #### SetGamePlayRecordingState
 
 Takes an input u32. 0 = disable/pause, 1 = enable/restart.
+
+#### QueryApplicationPlayStatistics
+
+Takes a type-0x6 output buffer containing an array of
+ApplicationPlayStatistics and a type-0x5 input buffer containing an
+array of u64 titleIDs. Returns an output s32 (actual total output
+entries?).
+
+The number of entries in each array is the same.
+ApplicationPlayStatistics is a 8-byte struct.
 
 #### CreateMovieMaker
 
