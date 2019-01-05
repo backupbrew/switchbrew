@@ -984,12 +984,12 @@ bits, and the number of DMA-related instructions the effect lasts for in
 the lower 5
 bits.
 
-| Bits | Description                                                           |
-| ---- | --------------------------------------------------------------------- |
-| 0-4  | Number of instructions it is valid for                                |
-| 5    | Crypto destination/source select (0=crypto register, 1=crypto stream) |
-| 6    | External memory override (0=Disabled, 1=Enabled)                      |
-| 7    | Internal memory select (0=DMEM, 1=IMEM)                               |
+| Bits | Description                                                                                                                               |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| 0-4  | Number of instructions it is valid for (0x1f is a special value meaning infinitely many instructions -- until overriden by another cxset) |
+| 5    | Crypto destination/source select (0=crypto register, 1=crypto stream)                                                                     |
+| 6    | External memory override (0=Disabled, 1=Enabled)                                                                                          |
+| 7    | Internal memory select (0=DMEM, 1=IMEM)                                                                                                   |
 
 #### DMA-Related Instructions
 

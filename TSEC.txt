@@ -1833,7 +1833,7 @@ The argument to cxset specifies the type of behavior change in the top 3 bits, a
 {| class=wikitable
 ! Bits || Description
 |-
-| 0-4 || Number of instructions it is valid for
+| 0-4 || Number of instructions it is valid for (0x1f is a special value meaning infinitely many instructions -- until overriden by another cxset)
 |-
 | 5 || Crypto destination/source select (0=crypto register, 1=crypto stream)
 |-
