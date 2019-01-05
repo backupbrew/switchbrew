@@ -12,7 +12,7 @@ output.
 
 This has size 0xA0 and seems to only affect the UI display. Typical
 value is all zero with byte 0x96 equal to 0x01. Setting the first byte
-to 1 display the applet in order to create a new user.
+to 1 will make the applet display in order to create a new user.
 
 ## Result
 
