@@ -5,6 +5,7 @@ See [[AM_services#Library_Applets]]. The profile selector expects a two [[AM_ser
 == UserSelectionConfig ==
 
 This has size 0xA0 and seems to only affect the UI display. Typical value is all zero with byte 0x96 equal to 0x01.
+Setting the first byte to 1 display the applet in order to create a new user.
 
 == Result == 
 This is 0x18-bytes.
