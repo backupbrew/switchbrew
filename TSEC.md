@@ -872,13 +872,15 @@ Always 0xFFF.
 From non-secure mode, upon jumping to a page marked as secret, a secret
 fault occurs. This causes the CPU to verify the region specified in
 $cauth against the MAC loaded in $c6. If the comparison is successful,
-$pc is set to the base of the $cauth region. If the comparsion fails,
-the CPU is halted.
+the valid bit (bit0) is set on all pages in the $cauth region, and $pc
+is set to the base of the $cauth region. If the comparsion fails, the
+CPU is halted.
 
 ##### Exit
 
 The CPU automatically goes back to non-secure mode when returning back
-into non-secret pages.
+into non-secret pages. When this happens, the valid bit (bit0) in the
+TLB flags is cleared for all secret pages.
 
 ## Crypto processing
 

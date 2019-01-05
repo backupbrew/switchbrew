@@ -1739,10 +1739,10 @@ Always 0xFFF.
 
 == Authenticated Mode ==
 ===== Entry =====
-From non-secure mode, upon jumping to a page marked as secret, a secret fault occurs. This causes the CPU to verify the region specified in $cauth against the MAC loaded in $c6. If the comparison is successful, $pc is set to the base of the $cauth region. If the comparsion fails, the CPU is halted.
+From non-secure mode, upon jumping to a page marked as secret, a secret fault occurs. This causes the CPU to verify the region specified in $cauth against the MAC loaded in $c6. If the comparison is successful, the valid bit (bit0) is set on all pages in the $cauth region, and $pc is set to the base of the $cauth region. If the comparsion fails, the CPU is halted.
 
 ===== Exit =====
-The CPU automatically goes back to non-secure mode when returning back into non-secret pages.
+The CPU automatically goes back to non-secure mode when returning back into non-secret pages. When this happens, the valid bit (bit0) in the TLB flags is cleared for all secret pages.
 
 == Crypto processing ==
 Part of the information here (which hasn't made it into envytools documentation yet) was shared by [https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki mwk] from reverse engineering falcon processors over the years.
