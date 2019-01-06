@@ -409,8 +409,8 @@ Takes an input u64 and handle, returns a GRC
 | 1    | [\#PopLaunchParameter](#PopLaunchParameter "wikilink")                                                                          |       |
 | 10   | [\#CreateApplicationAndPushAndRequestToStart](#CreateApplicationAndPushAndRequestToStart "wikilink")                            |       |
 | 11   | \[2.0.0+\] [\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink") |       |
-| 12   | \[4.0.0+\] CreateApplicationAndRequestToStart                                                                                   |       |
-| 13   | \[4.0.0+\] CreateApplicationAndRequestToStartForQuest                                                                           |       |
+| 12   | \[4.0.0+\] [\#CreateApplicationAndRequestToStart](#CreateApplicationAndRequestToStart "wikilink")                               |       |
+| 13   | \[4.0.0+\] [\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink")               |       |
 | 20   | EnsureSaveData                                                                                                                  |       |
 | 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                          |       |
 | 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                          |       |
@@ -432,7 +432,7 @@ Takes an input u64 and handle, returns a GRC
 | 68   | \[4.0.0+\] RequestFlushGamePlayingMovieForDebug                                                                                 |       |
 | 70   | \[3.0.0+\] RequestToShutdown                                                                                                    |       |
 | 71   | \[3.0.0+\] RequestToReboot                                                                                                      |       |
-| 80   | \[4.0.0+\] ExitAndRequestToShowThanksMessage                                                                                    |       |
+| 80   | \[4.0.0+\] [\#ExitAndRequestToShowThanksMessage](#ExitAndRequestToShowThanksMessage "wikilink")                                 |       |
 | 90   | \[4.0.0+\] EnableApplicationCrashReport                                                                                         |       |
 | 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                                                            |       |
 | 101  | \[5.0.0+\] SetApplicationCopyrightImage                                                                                         |       |
@@ -483,8 +483,28 @@ relaunch the current application.
 
 #### CreateApplicationAndPushAndRequestToStartForQuest
 
-Takes 2 input u32s, an input u64 titleID, and an input
-[\#IStorage](#IStorage "wikilink"), no output.
+Takes 2 input u32s (loaded from struct ApplicationAttributeForQuest), an
+input u64 titleID, and an input [\#IStorage](#IStorage "wikilink"), no
+output.
+
+#### CreateApplicationAndRequestToStart
+
+Takes an input u64 titleID, no output.
+
+Same as
+[\#CreateApplicationAndPushAndRequestToStart](#CreateApplicationAndPushAndRequestToStart "wikilink")
+except without the input storage, official sw uses this when no input
+storage is specified.
+
+#### CreateApplicationAndRequestToStartForQuest
+
+Takes 2 input u32s (loaded from struct ApplicationAttributeForQuest) and
+an input u64 titleID, no output.
+
+Same as
+[\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink")
+except without the input storage, official sw uses this when no input
+storage is specified.
 
 #### GetDesiredLanguage
 
@@ -525,6 +545,13 @@ returned.
 #### SetGamePlayRecordingState
 
 Takes an input u32. 0 = disable/pause, 1 = enable/restart.
+
+#### ExitAndRequestToShowThanksMessage
+
+No input/output.
+
+Used to exit the application and return to the kiosk menu. Official sw
+uses [\#UnlockExit](#UnlockExit "wikilink") immediately before this.
 
 #### QueryApplicationPlayStatistics
 

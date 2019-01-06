@@ -493,9 +493,9 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 11 || [2.0.0+] [[#CreateApplicationAndPushAndRequestToStartForQuest]] || 
 |-
-| 12 || [4.0.0+] CreateApplicationAndRequestToStart || 
+| 12 || [4.0.0+] [[#CreateApplicationAndRequestToStart]] || 
 |-
-| 13 || [4.0.0+] CreateApplicationAndRequestToStartForQuest || 
+| 13 || [4.0.0+] [[#CreateApplicationAndRequestToStartForQuest]] || 
 |-
 | 20 || EnsureSaveData ||
 |-
@@ -539,7 +539,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 71 || [3.0.0+] RequestToReboot ||
 |-
-| 80 || [4.0.0+] ExitAndRequestToShowThanksMessage || 
+| 80 || [4.0.0+] [[#ExitAndRequestToShowThanksMessage]] || 
 |-
 | 90 || [4.0.0+] EnableApplicationCrashReport || 
 |-
@@ -586,7 +586,17 @@ Pops a LaunchParameter [[#IStorage]], the storage will be removed from sysmodule
 Takes an input u64 titleID and an input [[#IStorage]], no output. titleID=0 can be used to relaunch the current application.
 
 ==== CreateApplicationAndPushAndRequestToStartForQuest ====
-Takes 2 input u32s, an input u64 titleID, and an input [[#IStorage]], no output.
+Takes 2 input u32s (loaded from struct ApplicationAttributeForQuest), an input u64 titleID, and an input [[#IStorage]], no output.
+
+==== CreateApplicationAndRequestToStart ====
+Takes an input u64 titleID, no output.
+
+Same as [[#CreateApplicationAndPushAndRequestToStart]] except without the input storage, official sw uses this when no input storage is specified.
+
+==== CreateApplicationAndRequestToStartForQuest ====
+Takes 2 input u32s (loaded from struct ApplicationAttributeForQuest) and an input u64 titleID, no output.
+
+Same as [[#CreateApplicationAndPushAndRequestToStartForQuest]] except without the input storage, official sw uses this when no input storage is specified.
 
 ==== GetDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
@@ -613,6 +623,11 @@ Takes a TransferMemory handle and an u64 for the size of the TransferMemory. The
 
 ==== SetGamePlayRecordingState ====
 Takes an input u32. 0 = disable/pause, 1 = enable/restart.
+
+==== ExitAndRequestToShowThanksMessage ====
+No input/output.
+
+Used to exit the application and return to the kiosk menu. Official sw uses [[#UnlockExit]] immediately before this.
 
 ==== QueryApplicationPlayStatistics ====
 Takes a type-0x6 output buffer containing an array of ApplicationPlayStatistics and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output s32 (actual total output entries?).
