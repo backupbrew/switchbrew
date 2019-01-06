@@ -1850,8 +1850,6 @@ Spilling a $cX to DMEM using xdld instruction is allowed if (ACL($cX) & 2).
 
 This instruction takes 2 crypto registers as operands and is automatically executed when jumping to a code region previously uploaded as secret.
 
-Under certain circumstances, it is possible to observe this instruction being briefly written to [[#TSEC_SCP_INSN_STAT|TSEC_SCP_INSN_STAT]] as "csigauth $c4 $c6" while the opcodes in [[#TSEC_SCP_AES_STAT|TSEC_SCP_AES_STAT]] are set to "cxsin" and "csigauth", respectively. Also, via [[#TSEC_SCP_SEQ0_STAT|TSEC_SCP_SEQ0_STAT]] it can be observed that a 3-sized macro sequence is loaded into cs0 during a secure mode transition.
-
 === csigclr ===
 <code>00000000: f5 3c 00 e0     csigclr</code>
 
