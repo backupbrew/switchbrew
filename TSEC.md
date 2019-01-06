@@ -677,33 +677,33 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 <td><p>Crypto fuc5 source register or immediate value</p></td>
 </tr>
 <tr class="odd">
-<td><p>16-30</p></td>
+<td><p>20-24</p></td>
 <td><p>Crypto fuc5 operation</p>
-<p><code>0x0000: none (fuc5 opcode 0x00) </code><br />
-<code>0x0010: cmov (fuc5 opcode 0x84)</code><br />
-<code>0x0020: cxsin (fuc5 opcode 0x88) or xdst (with cxset)</code><br />
-<code>0x0030: cxsout (fuc5 opcode 0x8C) or xdld (with cxset) </code><br />
-<code>0x0040: crng (fuc5 opcode 0x90)</code><br />
-<code>0x0050: cs0begin (fuc5 opcode 0x94)</code><br />
-<code>0x0060: cs0exec (fuc5 opcode 0x98)</code><br />
-<code>0x0070: cs1begin (fuc5 opcode 0x9C)</code><br />
-<code>0x0080: cs1exec (fuc5 opcode 0xA0)</code><br />
-<code>0x0090: invalid (fuc5 opcode 0xA4)</code><br />
-<code>0x00A0: cchmod (fuc5 opcode 0xA8)</code><br />
-<code>0x00B0: cxor (fuc5 opcode 0xAC)</code><br />
-<code>0x00C0: cadd (fuc5 opcode 0xB0)</code><br />
-<code>0x00D0: cand (fuc5 opcode 0xB4)</code><br />
-<code>0x00E0: crev (fuc5 opcode 0xB8)</code><br />
-<code>0x00F0: cprecmac (fuc5 opcode 0xBC)</code><br />
-<code>0x0100: csecret (fuc5 opcode 0xC0)</code><br />
-<code>0x0110: ckeyreg (fuc5 opcode 0xC4)</code><br />
-<code>0x0120: ckexp (fuc5 opcode 0xC8)</code><br />
-<code>0x0130: ckrexp (fuc5 opcode 0xCC)</code><br />
-<code>0x0140: cenc (fuc5 opcode 0xD0)</code><br />
-<code>0x0150: cdec (fuc5 opcode 0xD4)</code><br />
-<code>0x0160: csigauth (fuc5 opcode 0xD8)</code><br />
-<code>0x0170: csigenc (fuc5 opcode 0xDC)</code><br />
-<code>0x0180: csigclr (fuc5 opcode 0xE0)</code></p></td>
+<p><code>0x0:  none (fuc5 opcode 0x00) </code><br />
+<code>0x1:  cmov (fuc5 opcode 0x84)</code><br />
+<code>0x2:  cxsin (fuc5 opcode 0x88) or xdst (with cxset)</code><br />
+<code>0x3:  cxsout (fuc5 opcode 0x8C) or xdld (with cxset) </code><br />
+<code>0x4:  crng (fuc5 opcode 0x90)</code><br />
+<code>0x5:  cs0begin (fuc5 opcode 0x94)</code><br />
+<code>0x6:  cs0exec (fuc5 opcode 0x98)</code><br />
+<code>0x7:  cs1begin (fuc5 opcode 0x9C)</code><br />
+<code>0x8:  cs1exec (fuc5 opcode 0xA0)</code><br />
+<code>0x9:  invalid (fuc5 opcode 0xA4)</code><br />
+<code>0xA:  cchmod (fuc5 opcode 0xA8)</code><br />
+<code>0xB:  cxor (fuc5 opcode 0xAC)</code><br />
+<code>0xC:  cadd (fuc5 opcode 0xB0)</code><br />
+<code>0xD:  cand (fuc5 opcode 0xB4)</code><br />
+<code>0xE:  crev (fuc5 opcode 0xB8)</code><br />
+<code>0xF:  cprecmac (fuc5 opcode 0xBC)</code><br />
+<code>0x10: csecret (fuc5 opcode 0xC0)</code><br />
+<code>0x11: ckeyreg (fuc5 opcode 0xC4)</code><br />
+<code>0x12: ckexp (fuc5 opcode 0xC8)</code><br />
+<code>0x13: ckrexp (fuc5 opcode 0xCC)</code><br />
+<code>0x14: cenc (fuc5 opcode 0xD0)</code><br />
+<code>0x15: cdec (fuc5 opcode 0xD4)</code><br />
+<code>0x16: csigauth (fuc5 opcode 0xD8)</code><br />
+<code>0x17: csigenc (fuc5 opcode 0xDC)</code><br />
+<code>0x18: csigclr (fuc5 opcode 0xE0)</code></p></td>
 </tr>
 <tr class="even">
 <td><p>31</p></td>
