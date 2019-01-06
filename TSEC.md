@@ -1000,6 +1000,8 @@ SCP, which requires taking the following steps:
   - Write 0x1000 to
     [TSEC\_SCP\_CTL\_TRNG](#TSEC_SCP_CTL_TRNG "wikilink").
 
+Otherwise it hangs forever.
+
 ### cxset
 
 cxset instruction provides a way to change behavior of a variable amount

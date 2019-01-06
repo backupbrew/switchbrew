@@ -1888,6 +1888,8 @@ Executing this instruction only succeeds if the TRNG is enabled for the SCP, whi
 * Write 0xFF00 to TSEC_TRNG_UNK7.
 * Write 0x1000 to [[#TSEC_SCP_CTL_TRNG|TSEC_SCP_CTL_TRNG]].
 
+Otherwise it hangs forever.
+
 === cxset ===
 cxset instruction provides a way to change behavior of a variable amount of successively executed DMA-related instructions.
 
