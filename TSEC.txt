@@ -1747,9 +1747,6 @@ The CPU automatically goes back to non-secure mode when returning back into non-
 == Crypto processing ==
 Part of the information here (which hasn't made it into envytools documentation yet) was shared by [https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki mwk] from reverse engineering falcon processors over the years.
 
-=== Register ACLs ===
-Falcon tracks permission metadata about each crypto reg. Permissions include read/write ability per execution mode, as well as ability to use the reg for encrypt/decrypt, among other permissions. Permissions are propagated when registers are referenced by instructions (e.g. moving a value from read-protected $cX to $cY will result in $cY also being read-protected).
-
 === cauth ===
 $cauth is a special purpose register in the CPU.
 

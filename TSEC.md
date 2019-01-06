@@ -889,15 +889,6 @@ documentation yet) was shared by
 [mwk](https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki) from reverse
 engineering falcon processors over the years.
 
-### Register ACLs
-
-Falcon tracks permission metadata about each crypto reg. Permissions
-include read/write ability per execution mode, as well as ability to use
-the reg for encrypt/decrypt, among other permissions. Permissions are
-propagated when registers are referenced by instructions (e.g. moving a
-value from read-protected $cX to $cY will result in $cY also being
-read-protected).
-
 ### cauth
 
 $cauth is a special purpose register in the CPU.
