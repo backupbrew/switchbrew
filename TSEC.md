@@ -934,14 +934,19 @@ $cauth is a special purpose register in the CPU.
 
 ### ACL
 
-When loading into $cX using xdst instruction, ACL($cX) is set to at
-least 3 (probably 0x1F?). Spilling a $cX to DMEM using xdld instruction
-is allowed if (ACL($cX) & 2).
-
 | Bit | Meaning    |
 | --- | ---------- |
 | 0   | Valid key  |
 | 1   | Valid data |
+
+#### Initial values
+
+On SCP boot, the ACL is 0x1F for all $cX.
+
+Loading into $cX using xdst instruction sets ACL($cX) to 0x1F.
+
+Spilling a $cX to DMEM using xdld instruction is allowed if (ACL($cX) &
+2).
 
 ### csigauth
 
