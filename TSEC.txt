@@ -1814,9 +1814,9 @@ $cauth is a special purpose register in the CPU.
 |-
 | 0xD || and || $cX || $cY || <code>$cX &= $cY;</code> || <code>(ACL(X) & 2) && (ACL(Y) & 2)</code>
 |-
-| 0xE || rev || $cX || $cY || <code>$cX = reverse($cY); ACL(X) = ACL(Y);</code> ||
+| 0xE || rev || $cX || $cY || <code>$cX = reverse($cY); ACL(X) = ACL(Y) | 1;</code> || <code>(ACL(Y) & 2)</code>
 |-
-| 0xF || pre_cmac || || || ? ||
+| 0xF || gfmul || $cX || $cY || <code>$cX = gfmul($cY); ACL(X) = ACL(Y) | 1;</code> || <code>(ACL(Y) & 2)</code>
 |-
 | 0x10 || secret || $cX || immY || <code>$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);</code> ||
 |-
