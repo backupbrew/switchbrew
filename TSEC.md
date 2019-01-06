@@ -919,31 +919,31 @@ $cauth is a special purpose register in the CPU.
 
 ## SCP operations
 
-| Opcode | Name      | Operand0 | Operand1 | Operation                                                    | Condition                                     |
-| ------ | --------- | -------- | -------- | ------------------------------------------------------------ | --------------------------------------------- |
-| 0      |           |          |          |                                                              |                                               |
-| 1      | mov       | $cX      | $cY      | `$cX = $cY; ACL($cX) = ACL($cY);`                            |                                               |
-| 2      | sin       | $cX      | N/A      | `$cX = read_stream(); ACL($cX) = ???;`                       |                                               |
-| 3      | sout      | $cX      | N/A      | `write_stream($cX);`                                         |                                               |
-| 4      | rnd       | $cX      | N/A      | `$cX = read_trng(); ACL($cX) = ???;`                         |                                               |
-| 5      | s0begin   | immX     | N/A      | `record_macro_for_N_instructions(0, immX);`                  |                                               |
-| 6      | s0exec    | immX     | N/A      | `execute_macro_N_times(0, immX);`                            |                                               |
-| 7      | s1begin   | immX     | N/A      | `record_macro_for_N_instructions(1, immX);`                  |                                               |
-| 8      | s1exec    | immX     | N/A      | `execute_macro_N_times(1, immX);`                            |                                               |
-| 9      | ?         |          |          |                                                              |                                               |
-| 0xA    | chmod     | $cX      | immY     | `ACL($cX) &= immY;`                                          |                                               |
-| 0xB    | xor       | $cX      | $cY      | `$cX ^= $cY;`                                                | `(ACL($cX) & 2) && (ACL($cY) & 2)`            |
-| 0xC    | add       | $cX      | immY     | `$cX += immY;`                                               | `(ACL($cX) & 2)`                              |
-| 0xD    | and       | $cX      | $cY      | `$cX &= $cY;`                                                | `(ACL($cX) & 2) && (ACL($cY) & 2)`            |
-| 0xE    | rev       | $cX      | $cY      | `$cX = reverse($cY); ACL($cX) = ACL($cY);`                   |                                               |
-| 0xF    | pre\_cmac |          |          | ?                                                            |                                               |
-| 0x10   | secret    | $cX      | immY     | `$cX = load_secret(immY); ACL($cX) = load_secret_acl(immY);` |                                               |
-| 0x11   | keyreg    | immX     |          | `active_key_idx = immX;`                                     |                                               |
-| 0x12   | kexp      | $cX      | $cY      | `$cX = aes_kexp($Y);`                                        | `(ACL($cY) & 2)`                              |
-| 0x13   | krexp     | $cX      | $cY      | `$cX = aes_kexp_reverse($Y);`                                | `(ACL($cY) & 2)`                              |
-| 0x14   | enc       | $cX      | $cY      | `$cX = aes_enc(active_key_idx, $cY);`                        | `(ACL(active_key_idx) & 3) && (ACL($cY) & 2)` |
-| 0x15   | dec       | $cX      | $cY      | `$cX = aes_dec(active_key_idx, $cY);`                        | `(ACL(active_key_idx) & 3) && (ACL($cY) & 2)` |
-| ...    |           |          |          |                                                              |                                               |
+| Opcode | Name      | Operand0 | Operand1 | Operation                                                  | Condition                                   |
+| ------ | --------- | -------- | -------- | ---------------------------------------------------------- | ------------------------------------------- |
+| 0      |           |          |          |                                                            |                                             |
+| 1      | mov       | $cX      | $cY      | `$cX = $cY; ACL(X) = ACL(Y);`                              |                                             |
+| 2      | sin       | $cX      | N/A      | `$cX = read_stream(); ACL(X) = ???;`                       |                                             |
+| 3      | sout      | $cX      | N/A      | `write_stream($cX);`                                       |                                             |
+| 4      | rnd       | $cX      | N/A      | `$cX = read_trng(); ACL(X) = ???;`                         |                                             |
+| 5      | s0begin   | immX     | N/A      | `record_macro_for_N_instructions(0, immX);`                |                                             |
+| 6      | s0exec    | immX     | N/A      | `execute_macro_N_times(0, immX);`                          |                                             |
+| 7      | s1begin   | immX     | N/A      | `record_macro_for_N_instructions(1, immX);`                |                                             |
+| 8      | s1exec    | immX     | N/A      | `execute_macro_N_times(1, immX);`                          |                                             |
+| 9      | ?         |          |          |                                                            |                                             |
+| 0xA    | chmod     | $cX      | immY     | `ACL(X) &= immY;`                                          |                                             |
+| 0xB    | xor       | $cX      | $cY      | `$cX ^= $cY;`                                              | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
+| 0xC    | add       | $cX      | immY     | `$cX += immY;`                                             | `(ACL(X) & 2)`                              |
+| 0xD    | and       | $cX      | $cY      | `$cX &= $cY;`                                              | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
+| 0xE    | rev       | $cX      | $cY      | `$cX = reverse($cY); ACL(X) = ACL(Y);`                     |                                             |
+| 0xF    | pre\_cmac |          |          | ?                                                          |                                             |
+| 0x10   | secret    | $cX      | immY     | `$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);` |                                             |
+| 0x11   | keyreg    | immX     |          | `active_key_idx = immX;`                                   |                                             |
+| 0x12   | kexp      | $cX      | $cY      | `$cX = aes_kexp($cY);`                                     | `(ACL(Y) & 2)`                              |
+| 0x13   | krexp     | $cX      | $cY      | `$cX = aes_kexp_reverse($cY);`                             | `(ACL(Y) & 2)`                              |
+| 0x14   | enc       | $cX      | $cY      | `$cX = aes_enc(active_key_idx, $cY);`                      | `(ACL(active_key_idx) & 3) && (ACL(Y) & 2)` |
+| 0x15   | dec       | $cX      | $cY      | `$cX = aes_dec(active_key_idx, $cY);`                      | `(ACL(active_key_idx) & 3) && (ACL(Y) & 2)` |
+| ...    |           |          |          |                                                            |                                             |
 
 ### ACL
 

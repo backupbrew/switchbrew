@@ -1788,13 +1788,13 @@ $cauth is a special purpose register in the CPU.
 |-
 | 0 || || || || ||
 |-
-| 1 || mov || $cX || $cY || <code>$cX = $cY; ACL($cX) = ACL($cY);</code> ||
+| 1 || mov || $cX || $cY || <code>$cX = $cY; ACL(X) = ACL(Y);</code> ||
 |-
-| 2 || sin || $cX || N/A || <code>$cX = read_stream(); ACL($cX) = ???;</code> ||
+| 2 || sin || $cX || N/A || <code>$cX = read_stream(); ACL(X) = ???;</code> ||
 |-
 | 3 || sout || $cX || N/A || <code>write_stream($cX);</code> ||
 |-
-| 4 || rnd || $cX || N/A || <code>$cX = read_trng(); ACL($cX) = ???;</code> ||
+| 4 || rnd || $cX || N/A || <code>$cX = read_trng(); ACL(X) = ???;</code> ||
 |-
 | 5 || s0begin || immX || N/A || <code>record_macro_for_N_instructions(0, immX);</code> ||
 |-
@@ -1806,29 +1806,29 @@ $cauth is a special purpose register in the CPU.
 |-
 | 9 || ? || || || ||
 |-
-| 0xA || chmod || $cX || immY || <code>ACL($cX) &= immY;</code> ||
+| 0xA || chmod || $cX || immY || <code>ACL(X) &= immY;</code> ||
 |-
-| 0xB || xor || $cX || $cY || <code>$cX ^= $cY;</code> || <code>(ACL($cX) & 2) && (ACL($cY) & 2)</code>
+| 0xB || xor || $cX || $cY || <code>$cX ^= $cY;</code> || <code>(ACL(X) & 2) && (ACL(Y) & 2)</code>
 |-
-| 0xC || add || $cX || immY || <code>$cX += immY;</code> || <code>(ACL($cX) & 2)</code>
+| 0xC || add || $cX || immY || <code>$cX += immY;</code> || <code>(ACL(X) & 2)</code>
 |-
-| 0xD || and || $cX || $cY || <code>$cX &= $cY;</code> || <code>(ACL($cX) & 2) && (ACL($cY) & 2)</code>
+| 0xD || and || $cX || $cY || <code>$cX &= $cY;</code> || <code>(ACL(X) & 2) && (ACL(Y) & 2)</code>
 |-
-| 0xE || rev || $cX || $cY || <code>$cX = reverse($cY); ACL($cX) = ACL($cY);</code> ||
+| 0xE || rev || $cX || $cY || <code>$cX = reverse($cY); ACL(X) = ACL(Y);</code> ||
 |-
 | 0xF || pre_cmac || || || ? ||
 |-
-| 0x10 || secret || $cX || immY || <code>$cX = load_secret(immY); ACL($cX) = load_secret_acl(immY);</code> ||
+| 0x10 || secret || $cX || immY || <code>$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);</code> ||
 |-
 | 0x11 || keyreg || immX || || <code>active_key_idx = immX;</code> ||
 |-
-| 0x12 || kexp || $cX || $cY || <code>$cX = aes_kexp($Y);</code> || <code>(ACL($cY) & 2)</code>
+| 0x12 || kexp || $cX || $cY || <code>$cX = aes_kexp($cY);</code> || <code>(ACL(Y) & 2)</code>
 |-
-| 0x13 || krexp || $cX || $cY || <code>$cX = aes_kexp_reverse($Y);</code> || <code>(ACL($cY) & 2)</code>
+| 0x13 || krexp || $cX || $cY || <code>$cX = aes_kexp_reverse($cY);</code> || <code>(ACL(Y) & 2)</code>
 |-
-| 0x14 || enc || $cX || $cY || <code>$cX = aes_enc(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 3) && (ACL($cY) & 2)</code>
+| 0x14 || enc || $cX || $cY || <code>$cX = aes_enc(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 3) && (ACL(Y) & 2)</code>
 |-
-| 0x15 || dec || $cX || $cY || <code>$cX = aes_dec(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 3) && (ACL($cY) & 2)</code>
+| 0x15 || dec || $cX || $cY || <code>$cX = aes_dec(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 3) && (ACL(Y) & 2)</code>
 |-
 | ...
 |}
