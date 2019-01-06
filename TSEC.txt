@@ -1774,6 +1774,62 @@ $cauth is a special purpose register in the CPU.
 | 31-24 || Size of region to authenticate (in 0x100 pages)
 |}
 
+== SCP operations ==
+
+{| class="wikitable" border="1"
+!  Bit
+!  Meaning
+|-
+| 0 || Valid key
+|-
+| 1 || Valid data
+|}
+
+{| class="wikitable" border="1"
+!  Opcode
+!  Name
+!  Operand0
+!  Operand1
+!  Operation
+|-
+| 0 || || || ||
+|-
+| 1 || mov || $cX || $cY || <code>$cX = $cY; ACL($cX) = ACL($cY);</code>
+|-
+| 2 || sin || $cX || N/A || <code>$cX = read_stream(); ACL($cX) = ???;</code>
+|-
+| 3 || sout || $cX || N/A || <code>write_stream($cX);</code>
+|-
+| 4 || rnd || $cX || N/A || <code>$cX = read_trng(); ACL($cX) = ???;</code>
+|-
+| 5 || s0begin || immX || N/A || <code>record_macro_for_N_instructions(0, immX);</code>
+|-
+| 6 || s0exec || immX || N/A || <code>execute_macro_N_times(0, immX);</code>
+|-
+| 7 || s1begin || immX || N/A || <code>record_macro_for_N_instructions(1, immX);</code>
+|-
+| 8 || s1exec || immX || N/A || <code>execute_macro_N_times(1, immX);</code>
+|-
+| 9 || ? || || ||
+|-
+| 0xA || chmod || $cX || immY || <code>ACL($cX) &= immY;</code>
+|-
+| 0xB || xor || $cX || $cY || <code>if ((ACL($cX) & 2) && (ACL($cY) & 2)) $cX ^= $cY;</code>
+|-
+| 0xC || add || $cX || immY || <code>if (ACL($cX) & 2) $cX += immY;</code>
+|-
+| 0xD || and || $cX || $cY || <code>if ((ACL($cX) & 2) && (ACL($cY) & 2)) $cX &= $cY;</code>
+|-
+| 0xE || rev || $cX || $cY || <code>$cX = reverse($cY); ACL($cX) = ACL($cY);</code>
+|-
+| 0xF || pre_cmac || || || ?
+|-
+| 0x10 || secret || $cX || immY || <code>$cX = load_secret(immY); ACL($cX) = load_secret_acl(immY);</code>
+|-
+| ...
+|}
+
+
 === csigauth ===
 <code>00000000: f5 3c XY d8     csigauth $cY $cX</code>
 

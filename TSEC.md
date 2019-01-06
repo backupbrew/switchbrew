@@ -913,6 +913,34 @@ $cauth is a special purpose register in the CPU.
 | 20-23 | Unused                                                 |
 | 31-24 | Size of region to authenticate (in 0x100 pages)        |
 
+## SCP operations
+
+| Bit | Meaning    |
+| --- | ---------- |
+| 0   | Valid key  |
+| 1   | Valid data |
+
+| Opcode | Name      | Operand0 | Operand1 | Operation                                                    |
+| ------ | --------- | -------- | -------- | ------------------------------------------------------------ |
+| 0      |           |          |          |                                                              |
+| 1      | mov       | $cX      | $cY      | `$cX = $cY; ACL($cX) = ACL($cY);`                            |
+| 2      | sin       | $cX      | N/A      | `$cX = read_stream(); ACL($cX) = ???;`                       |
+| 3      | sout      | $cX      | N/A      | `write_stream($cX);`                                         |
+| 4      | rnd       | $cX      | N/A      | `$cX = read_trng(); ACL($cX) = ???;`                         |
+| 5      | s0begin   | immX     | N/A      | `record_macro_for_N_instructions(0, immX);`                  |
+| 6      | s0exec    | immX     | N/A      | `execute_macro_N_times(0, immX);`                            |
+| 7      | s1begin   | immX     | N/A      | `record_macro_for_N_instructions(1, immX);`                  |
+| 8      | s1exec    | immX     | N/A      | `execute_macro_N_times(1, immX);`                            |
+| 9      | ?         |          |          |                                                              |
+| 0xA    | chmod     | $cX      | immY     | `ACL($cX) &= immY;`                                          |
+| 0xB    | xor       | $cX      | $cY      | `if ((ACL($cX) & 2) && (ACL($cY) & 2)) $cX ^= $cY;`          |
+| 0xC    | add       | $cX      | immY     | `if (ACL($cX) & 2) $cX += immY;`                             |
+| 0xD    | and       | $cX      | $cY      | `if ((ACL($cX) & 2) && (ACL($cY) & 2)) $cX &= $cY;`          |
+| 0xE    | rev       | $cX      | $cY      | `$cX = reverse($cY); ACL($cX) = ACL($cY);`                   |
+| 0xF    | pre\_cmac |          |          | ?                                                            |
+| 0x10   | secret    | $cX      | immY     | `$cX = load_secret(immY); ACL($cX) = load_secret_acl(immY);` |
+| ...    |           |          |          |                                                              |
+
 ### csigauth
 
 `00000000: f5 3c XY d8 csigauth $cY $cX`
