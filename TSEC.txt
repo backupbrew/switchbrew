@@ -1806,7 +1806,7 @@ $cauth is a special purpose register in the CPU.
 |-
 | 9 || ? || || || ||
 |-
-| 0xA || chmod || $cX || immY || <code>ACL(X) &= immY;</code> ||
+| 0xA || chmod || $cX || immY || <code>if (immY & 3) ACL(X) = (ACL(X) & immY) &#124; 1; else ACL(X) = 0;</code> ||
 |-
 | 0xB || xor || $cX || $cY || <code>$cX ^= $cY;</code> || <code>(ACL(X) & 2) && (ACL(Y) & 2)</code>
 |-
@@ -1814,21 +1814,21 @@ $cauth is a special purpose register in the CPU.
 |-
 | 0xD || and || $cX || $cY || <code>$cX &= $cY;</code> || <code>(ACL(X) & 2) && (ACL(Y) & 2)</code>
 |-
-| 0xE || rev || $cX || $cY || <code>$cX = reverse($cY); ACL(X) = ACL(Y) &#124; 1;</code> || <code>(ACL(Y) & 2)</code>
+| 0xE || rev || $cX || $cY || <code>$cX = reverse($cY); ACL(X) = ACL(Y);</code> || <code>(ACL(Y) & 1)</code>
 |-
-| 0xF || gfmul || $cX || $cY || <code>$cX = gfmul($cY); ACL(X) = ACL(Y) &#124; 1;</code> || <code>(ACL(Y) & 2)</code>
+| 0xF || gfmul || $cX || $cY || <code>$cX = gfmul($cY); ACL(X) = ACL(Y);</code> || <code>(ACL(Y) & 2)</code>
 |-
 | 0x10 || secret || $cX || immY || <code>$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);</code> ||
 |-
 | 0x11 || keyreg || immX || || <code>active_key_idx = immX;</code> ||
 |-
-| 0x12 || kexp || $cX || $cY || <code>$cX = aes_kexp($cY);</code> || <code>(ACL(Y) & 2)</code>
+| 0x12 || kexp || $cX || $cY || <code>$cX = aes_kexp($cY); ACL(X) = ACL(Y);</code> || <code>(ACL(Y) & 1)</code>
 |-
-| 0x13 || krexp || $cX || $cY || <code>$cX = aes_kexp_reverse($cY);</code> || <code>(ACL(Y) & 2)</code>
+| 0x13 || krexp || $cX || $cY || <code>$cX = aes_kexp_reverse($cY); ACL(X) = ACL(Y);</code> || <code>(ACL(Y) & 1)</code>
 |-
-| 0x14 || enc || $cX || $cY || <code>$cX = aes_enc(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 3) && (ACL(Y) & 2)</code>
+| 0x14 || enc || $cX || $cY || <code>$cX = aes_enc(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 1) && (ACL(Y) & 2)</code>
 |-
-| 0x15 || dec || $cX || $cY || <code>$cX = aes_dec(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 3) && (ACL(Y) & 2)</code>
+| 0x15 || dec || $cX || $cY || <code>$cX = aes_dec(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 1) && (ACL(Y) & 2)</code>
 |-
 | ...
 |}
@@ -1838,9 +1838,9 @@ $cauth is a special purpose register in the CPU.
 !  Bit
 !  Meaning
 |-
-| 0 || Allowed key
+| 0 || Present. This is forced set if bit1 is set, the only way to clear it is to clear *both* bit0 and bit1.
 |-
-| 1 || Allowed input (also key)
+| 1 || Allowed as input
 |}
 
 ==== Initial values ====
