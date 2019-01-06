@@ -947,10 +947,10 @@ $cauth is a special purpose register in the CPU.
 
 ### ACL
 
-| Bit | Meaning    |
-| --- | ---------- |
-| 0   | Valid key  |
-| 1   | Valid data |
+| Bit | Meaning                  |
+| --- | ------------------------ |
+| 0   | Allowed key              |
+| 1   | Allowed input (also key) |
 
 #### Initial values
 

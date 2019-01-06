@@ -1838,9 +1838,9 @@ $cauth is a special purpose register in the CPU.
 !  Bit
 !  Meaning
 |-
-| 0 || Valid key
+| 0 || Allowed key
 |-
-| 1 || Valid data
+| 1 || Allowed input (also key)
 |}
 
 ==== Initial values ====
