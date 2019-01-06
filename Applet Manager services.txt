@@ -541,13 +541,13 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 80 || [4.0.0+] [[#ExitAndRequestToShowThanksMessage]] || 
 |-
-| 90 || [4.0.0+] EnableApplicationCrashReport || 
+| 90 || [4.0.0+] [[#EnableApplicationCrashReport]] || 
 |-
 | 100 || [5.0.0+] InitializeApplicationCopyrightFrameBuffer || 
 |-
 | 101 || [5.0.0+] SetApplicationCopyrightImage || 
 |-
-| 102 || [5.0.0+] SetApplicationCopyrightVisibility || 
+| 102 || [5.0.0+] [[#SetApplicationCopyrightVisibility]] || 
 |-
 | 110 || [5.0.0+] [[#QueryApplicationPlayStatistics]] || 
 |-
@@ -628,6 +628,12 @@ Takes an input u32. 0 = disable/pause, 1 = enable/restart.
 No input/output.
 
 Used to exit the application and return to the kiosk menu. Official sw uses [[#UnlockExit]] immediately before this.
+
+==== EnableApplicationCrashReport ====
+Takes an input u8 bool, no output.
+
+==== SetApplicationCopyrightVisibility ====
+Takes an input u8 bool, no output.
 
 ==== QueryApplicationPlayStatistics ====
 Takes a type-0x6 output buffer containing an array of ApplicationPlayStatistics and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output s32 (actual total output entries?).

@@ -433,10 +433,10 @@ Takes an input u64 and handle, returns a GRC
 | 70   | \[3.0.0+\] RequestToShutdown                                                                                                    |       |
 | 71   | \[3.0.0+\] RequestToReboot                                                                                                      |       |
 | 80   | \[4.0.0+\] [\#ExitAndRequestToShowThanksMessage](#ExitAndRequestToShowThanksMessage "wikilink")                                 |       |
-| 90   | \[4.0.0+\] EnableApplicationCrashReport                                                                                         |       |
+| 90   | \[4.0.0+\] [\#EnableApplicationCrashReport](#EnableApplicationCrashReport "wikilink")                                           |       |
 | 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                                                            |       |
 | 101  | \[5.0.0+\] SetApplicationCopyrightImage                                                                                         |       |
-| 102  | \[5.0.0+\] SetApplicationCopyrightVisibility                                                                                    |       |
+| 102  | \[5.0.0+\] [\#SetApplicationCopyrightVisibility](#SetApplicationCopyrightVisibility "wikilink")                                 |       |
 | 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |       |
 | 111  | \[6.0.0+\] QueryApplicationPlayStatisticsByUid                                                                                  |       |
 | 120  | \[5.0.0+\] ExecuteProgram                                                                                                       |       |
@@ -552,6 +552,14 @@ No input/output.
 
 Used to exit the application and return to the kiosk menu. Official sw
 uses [\#UnlockExit](#UnlockExit "wikilink") immediately before this.
+
+#### EnableApplicationCrashReport
+
+Takes an input u8 bool, no output.
+
+#### SetApplicationCopyrightVisibility
+
+Takes an input u8 bool, no output.
 
 #### QueryApplicationPlayStatistics
 
