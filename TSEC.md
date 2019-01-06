@@ -915,11 +915,6 @@ $cauth is a special purpose register in the CPU.
 
 ## SCP operations
 
-| Bit | Meaning    |
-| --- | ---------- |
-| 0   | Valid key  |
-| 1   | Valid data |
-
 | Opcode | Name      | Operand0 | Operand1 | Operation                                                    | Condition                          |
 | ------ | --------- | -------- | -------- | ------------------------------------------------------------ | ---------------------------------- |
 | 0      |           |          |          |                                                              |                                    |
@@ -945,6 +940,16 @@ $cauth is a special purpose register in the CPU.
 | 0x14   | enc       | $cX      | $cY      | `$cX = aes_enc(active_key_idx, $cY);`                        | `(ACL($cX) & 3) && (ACL($cY) & 2)` |
 | 0x15   | dec       | $cX      | $cY      | `$cX = aes_dec(active_key_idx, $cY);`                        | `(ACL($cX) & 3) && (ACL($cY) & 2)` |
 | ...    |           |          |          |                                                              |                                    |
+
+### ACL
+
+When loading a key into $cX using xdst instruction, its ACL is set to at
+least 3 (probably 0x1F?).
+
+| Bit | Meaning    |
+| --- | ---------- |
+| 0   | Valid key  |
+| 1   | Valid data |
 
 ### csigauth
 

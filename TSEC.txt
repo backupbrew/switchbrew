@@ -1777,15 +1777,6 @@ $cauth is a special purpose register in the CPU.
 == SCP operations ==
 
 {| class="wikitable" border="1"
-!  Bit
-!  Meaning
-|-
-| 0 || Valid key
-|-
-| 1 || Valid data
-|}
-
-{| class="wikitable" border="1"
 !  Opcode
 !  Name
 !  Operand0
@@ -1840,6 +1831,17 @@ $cauth is a special purpose register in the CPU.
 | ...
 |}
 
+=== ACL ===
+When loading a key into $cX using xdst instruction, its ACL is set to at least 3 (probably 0x1F?).
+
+{| class="wikitable" border="1"
+!  Bit
+!  Meaning
+|-
+| 0 || Valid key
+|-
+| 1 || Valid data
+|}
 
 === csigauth ===
 <code>00000000: f5 3c XY d8     csigauth $cY $cX</code>
