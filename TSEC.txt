@@ -1832,7 +1832,8 @@ $cauth is a special purpose register in the CPU.
 |}
 
 === ACL ===
-When loading a key into $cX using xdst instruction, its ACL is set to at least 3 (probably 0x1F?).
+When loading into $cX using xdst instruction, ACL($cX) is set to at least 3 (probably 0x1F?).
+Spilling a $cX to DMEM using xdld instruction is allowed if (ACL($cX) & 2).
 
 {| class="wikitable" border="1"
 !  Bit
