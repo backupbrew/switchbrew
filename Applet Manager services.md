@@ -420,18 +420,18 @@ Takes an input u64 and handle, returns a GRC
 | 26   | \[2.0.0+\] GetSaveDataSize                                                                                                      |       |
 | 27   | \[5.0.0+\] CreateCacheStorage                                                                                                   |       |
 | 30   | BeginBlockingHomeButtonShortAndLongPressed                                                                                      |       |
-| 31   | EndBlockingHomeButtonShortAndLongPressed                                                                                        |       |
+| 31   | [\#EndBlockingHomeButtonShortAndLongPressed](#EndBlockingHomeButtonShortAndLongPressed "wikilink")                              |       |
 | 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                                                                |       |
-| 33   | EndBlockingHomeButton                                                                                                           |       |
+| 33   | [\#EndBlockingHomeButton](#EndBlockingHomeButton "wikilink")                                                                    |       |
 | 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                                                                    |       |
 | 50   | \[2.0.0+\] GetPseudoDeviceId                                                                                                    |       |
 | 60   | \[2.0.0+\] [\#SetMediaPlaybackStateForApplication](#SetMediaPlaybackStateForApplication "wikilink")                             |       |
 | 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink")                                           |       |
 | 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")                                             |       |
 | 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")                                                 |       |
-| 68   | \[4.0.0+\] RequestFlushGamePlayingMovieForDebug                                                                                 |       |
-| 70   | \[3.0.0+\] RequestToShutdown                                                                                                    |       |
-| 71   | \[3.0.0+\] RequestToReboot                                                                                                      |       |
+| 68   | \[4.0.0+\] [\#RequestFlushGamePlayingMovieForDebug](#RequestFlushGamePlayingMovieForDebug "wikilink")                           |       |
+| 70   | \[3.0.0+\] [\#RequestToShutdown](#RequestToShutdown "wikilink")                                                                 |       |
+| 71   | \[3.0.0+\] [\#RequestToReboot](#RequestToReboot "wikilink")                                                                     |       |
 | 80   | \[4.0.0+\] [\#ExitAndRequestToShowThanksMessage](#ExitAndRequestToShowThanksMessage "wikilink")                                 |       |
 | 90   | \[4.0.0+\] [\#EnableApplicationCrashReport](#EnableApplicationCrashReport "wikilink")                                           |       |
 | 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                                                            |       |
@@ -440,7 +440,7 @@ Takes an input u64 and handle, returns a GRC
 | 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |       |
 | 111  | \[6.0.0+\] QueryApplicationPlayStatisticsByUid                                                                                  |       |
 | 120  | \[5.0.0+\] ExecuteProgram                                                                                                       |       |
-| 121  | \[5.0.0+\] ClearUserChannel                                                                                                     |       |
+| 121  | \[5.0.0+\] [\#ClearUserChannel](#ClearUserChannel "wikilink")                                                                   |       |
 | 122  | \[5.0.0+\] UnpopToUserChannel                                                                                                   |       |
 | 123  | \[6.0.0+\] GetPreviousProgramIndex                                                                                              |       |
 | 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                |       |
@@ -518,10 +518,18 @@ Takes an input u32 **Result**, no output.
 For example, in some cases official apps use this with
 [error](Error%20codes.md "wikilink") 0x2A2 then uses svcBreak.
 
+#### EndBlockingHomeButtonShortAndLongPressed
+
+No input/output.
+
 #### BeginBlockingHomeButton
 
 Takes an input s64 nanoseconds, no output. The input nanoseconds can be
 zero.
+
+#### EndBlockingHomeButton
+
+No input/output.
 
 #### NotifyRunning
 
@@ -545,6 +553,18 @@ returned.
 #### SetGamePlayRecordingState
 
 Takes an input u32. 0 = disable/pause, 1 = enable/restart.
+
+#### RequestFlushGamePlayingMovieForDebug
+
+No input/output.
+
+#### RequestToShutdown
+
+No input/output.
+
+#### RequestToReboot
+
+No input/output.
 
 #### ExitAndRequestToShowThanksMessage
 
@@ -570,6 +590,10 @@ entries?).
 
 The number of entries in each array is the same.
 ApplicationPlayStatistics is a 8-byte struct.
+
+#### ClearUserChannel
+
+No input/output.
 
 #### CreateMovieMaker
 

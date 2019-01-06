@@ -515,11 +515,11 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 30 || BeginBlockingHomeButtonShortAndLongPressed ||
 |-
-| 31 || EndBlockingHomeButtonShortAndLongPressed ||
+| 31 || [[#EndBlockingHomeButtonShortAndLongPressed]] ||
 |-
 | 32 || [[#BeginBlockingHomeButton]] ||
 |-
-| 33 || EndBlockingHomeButton ||
+| 33 || [[#EndBlockingHomeButton]] ||
 |-
 | 40 || [[#NotifyRunning]] ||
 |-
@@ -533,11 +533,11 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 67 || [3.0.0+] [[#SetGamePlayRecordingState]] ||
 |-
-| 68 || [4.0.0+] RequestFlushGamePlayingMovieForDebug || 
+| 68 || [4.0.0+] [[#RequestFlushGamePlayingMovieForDebug]] || 
 |-
-| 70 || [3.0.0+] RequestToShutdown ||
+| 70 || [3.0.0+] [[#RequestToShutdown]] ||
 |-
-| 71 || [3.0.0+] RequestToReboot ||
+| 71 || [3.0.0+] [[#RequestToReboot]] ||
 |-
 | 80 || [4.0.0+] [[#ExitAndRequestToShowThanksMessage]] || 
 |-
@@ -555,7 +555,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 120 || [5.0.0+] ExecuteProgram || 
 |-
-| 121 || [5.0.0+] ClearUserChannel || 
+| 121 || [5.0.0+] [[#ClearUserChannel]] || 
 |-
 | 122 || [5.0.0+] UnpopToUserChannel || 
 |-
@@ -606,8 +606,14 @@ Takes an input u32 '''Result''', no output.
 
 For example, in some cases official apps use this with [[Error_codes|error]] 0x2A2 then uses svcBreak.
 
+==== EndBlockingHomeButtonShortAndLongPressed ====
+No input/output.
+
 ==== BeginBlockingHomeButton ====
 Takes an input s64 nanoseconds, no output. The input nanoseconds can be zero.
+
+==== EndBlockingHomeButton ====
+No input/output.
 
 ==== NotifyRunning ====
 Takes no input. Returns an output u8 bool, which is ignored by official user-processes.
@@ -624,6 +630,15 @@ Takes a TransferMemory handle and an u64 for the size of the TransferMemory. The
 ==== SetGamePlayRecordingState ====
 Takes an input u32. 0 = disable/pause, 1 = enable/restart.
 
+==== RequestFlushGamePlayingMovieForDebug ====
+No input/output.
+
+==== RequestToShutdown ====
+No input/output.
+
+==== RequestToReboot ====
+No input/output.
+
 ==== ExitAndRequestToShowThanksMessage ====
 No input/output.
 
@@ -639,6 +654,9 @@ Takes an input u8 bool, no output.
 Takes a type-0x6 output buffer containing an array of ApplicationPlayStatistics and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output s32 (actual total output entries?).
 
 The number of entries in each array is the same. ApplicationPlayStatistics is a 8-byte struct.
+
+==== ClearUserChannel ====
+No input/output.
 
 ==== CreateMovieMaker ====
 Takes an input u64 and handle, returns an [[#IMovieMaker]].
