@@ -1826,6 +1826,16 @@ $cauth is a special purpose register in the CPU.
 |-
 | 0x10 || secret || $cX || immY || <code>$cX = load_secret(immY); ACL($cX) = load_secret_acl(immY);</code>
 |-
+| 0x11 || keyreg || immX || || <code>active_key_idx = immX;</code>
+|-
+| 0x12 || kexp || $cX || $cY || <code>$cX = aes_kexp($Y);</code> TODO: ACL
+|-
+| 0x13 || krexp || $cX || $cY || <code>$cX = aes_kexp_reverse($Y);</code> TODO: ACL
+|-
+| 0x14 || enc || $cX || $cY || <code>if (ACL($cX) & 3) $cX = aes_enc(active_key_idx, $cY);</code> TODO: ACL for cY
+|-
+| 0x15 || dec || $cX || $cY || <code>if (ACL($cX) & 3) $cX = aes_dec(active_key_idx, $cY);</code> TODO: ACL for cY
+|-
 | ...
 |}
 
