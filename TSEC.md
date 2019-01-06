@@ -947,10 +947,10 @@ $cauth is a special purpose register in the CPU.
 
 ### ACL
 
-| Bit | Meaning                                                                                                  |
-| --- | -------------------------------------------------------------------------------------------------------- |
-| 0   | Present. This is forced set if bit1 is set, the only way to clear it is to clear \*both\* bit0 and bit1. |
-| 1   | Allowed as input                                                                                         |
+| Bit | Meaning                                                                                                          |
+| --- | ---------------------------------------------------------------------------------------------------------------- |
+| 0   | Readable as key. This is forced set if bit1 is set, the only way to clear it is to clear \*both\* bit0 and bit1. |
+| 1   | Readable                                                                                                         |
 
 #### Initial values
 
