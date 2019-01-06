@@ -1744,6 +1744,11 @@ From non-secure mode, upon jumping to a page marked as secret, a secret fault oc
 ===== Exit =====
 The CPU automatically goes back to non-secure mode when returning back into non-secret pages. When this happens, the valid bit (bit0) in the TLB flags is cleared for all secret pages.
 
+===== Implementation =====
+Under certain circumstances, it is possible to observe [[#csigauth|csigauth]] being briefly written to [[#TSEC_SCP_INSN_STAT|TSEC_SCP_INSN_STAT]] as "csigauth $c4 $c6" while the opcodes in [[#TSEC_SCP_AES_STAT|TSEC_SCP_AES_STAT]] are set to "cxsin" and "csigauth", respectively.
+
+Via [[#TSEC_SCP_SEQ0_STAT|TSEC_SCP_SEQ0_STAT]] it can be observed that a 3-sized macro sequence is loaded into cs0 during a secure mode transition.
+
 == Crypto processing ==
 Part of the information here (which hasn't made it into envytools documentation yet) was shared by [https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki mwk] from reverse engineering falcon processors over the years.
 

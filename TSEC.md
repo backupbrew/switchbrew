@@ -882,6 +882,19 @@ The CPU automatically goes back to non-secure mode when returning back
 into non-secret pages. When this happens, the valid bit (bit0) in the
 TLB flags is cleared for all secret pages.
 
+##### Implementation
+
+Under certain circumstances, it is possible to observe
+[csigauth](#csigauth "wikilink") being briefly written to
+[TSEC\_SCP\_INSN\_STAT](#TSEC_SCP_INSN_STAT "wikilink") as "csigauth $c4
+$c6" while the opcodes in
+[TSEC\_SCP\_AES\_STAT](#TSEC_SCP_AES_STAT "wikilink") are set to "cxsin"
+and "csigauth", respectively.
+
+Via [TSEC\_SCP\_SEQ0\_STAT](#TSEC_SCP_SEQ0_STAT "wikilink") it can be
+observed that a 3-sized macro sequence is loaded into cs0 during a
+secure mode transition.
+
 ## Crypto processing
 
 Part of the information here (which hasn't made it into envytools
