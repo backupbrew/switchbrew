@@ -37,10 +37,14 @@ Value 0 is usable for the input u32.
 
 This takes a screenshot, the output buffer contains the RGBA8 image.
 
+Stubbed with \[5.0.0+\], where it now returns error 0x7FECE.
+
 ## Cmd2
 
 Calls the same internal func as cmd1, where the last param is an
 additional cmd input u64 instead of hard-coded value 0x5f5e100.
+
+Stubbed with \[5.0.0+\], where it now returns error 0x7FECE.
 
 # caps:ss
 
