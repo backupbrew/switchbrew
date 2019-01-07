@@ -919,33 +919,33 @@ $cauth is a special purpose register in the CPU.
 
 ## SCP operations
 
-| Opcode | Name     | Operand0 | Operand1 | Operation                                                           | Condition                                   |
-| ------ | -------- | -------- | -------- | ------------------------------------------------------------------- | ------------------------------------------- |
-| 0      |          |          |          |                                                                     |                                             |
-| 1      | mov      | $cX      | $cY      | `$cX = $cY; ACL(X) = ACL(Y);`                                       |                                             |
-| 2      | sin      | $cX      | N/A      | `$cX = read_stream(); ACL(X) = ???;`                                |                                             |
-| 3      | sout     | $cX      | N/A      | `write_stream($cX);`                                                |                                             |
-| 4      | rnd      | $cX      | N/A      | `$cX = read_trng(); ACL(X) = ???;`                                  |                                             |
-| 5      | s0begin  | immX     | N/A      | `record_macro_for_N_instructions(0, immX);`                         |                                             |
-| 6      | s0exec   | immX     | N/A      | `execute_macro_N_times(0, immX);`                                   |                                             |
-| 7      | s1begin  | immX     | N/A      | `record_macro_for_N_instructions(1, immX);`                         |                                             |
-| 8      | s1exec   | immX     | N/A      | `execute_macro_N_times(1, immX);`                                   |                                             |
-| 9      | ?        |          |          |                                                                     |                                             |
-| 0xA    | chmod    | $cX      | immY     | `if (immY & 3) ACL(X) = (ACL(X) & immY) \| 1; else ACL(X) = 0;`     |                                             |
-| 0xB    | xor      | $cX      | $cY      | `$cX ^= $cY;`                                                       | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
-| 0xC    | add      | $cX      | immY     | `$cX += immY;`                                                      | `(ACL(X) & 2)`                              |
-| 0xD    | and      | $cX      | $cY      | `$cX &= $cY;`                                                       | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
-| 0xE    | rev      | $cX      | $cY      | `$cX = endian_swap128($cY); ACL(X) = ACL(Y);`                       | `(ACL(Y) & 1)`                              |
-| 0xF    | gfmul    | $cX      | $cY      | `$cX = gfmul($cY); ACL(X) = ACL(Y);`                                | `(ACL(Y) & 2)`                              |
-| 0x10   | secret   | $cX      | immY     | `$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);`          |                                             |
-| 0x11   | keyreg   | immX     |          | `active_key_idx = immX;`                                            |                                             |
-| 0x12   | kexp     | $cX      | $cY      | `$cX = aes_kexp($cY); ACL(X) = ACL(Y);`                             | `(ACL(Y) & 1)`                              |
-| 0x13   | krexp    | $cX      | $cY      | `$cX = aes_kexp_reverse($cY); ACL(X) = ACL(Y);`                     | `(ACL(Y) & 1)`                              |
-| 0x14   | enc      | $cX      | $cY      | `$cX = aes_enc(active_key_idx, $cY);`                               | `(ACL(active_key_idx) & 1) && (ACL(Y) & 2)` |
-| 0x15   | dec      | $cX      | $cY      | `$cX = aes_dec(active_key_idx, $cY);`                               | `(ACL(active_key_idx) & 1) && (ACL(Y) & 2)` |
-| 0x16   | csigauth | $cX      | $cY      | `if (hash_verify($cX, $cY)) { has_sig = true; current_sig = $cX; }` | ?                                           |
-| 0x17   | csigclr  |          |          | `has_sig = false;`                                                  |                                             |
-| 0x18   | csigenc  | $cX      | $cY      | `if (has_sig) $cX = aes_enc(current_sig, $cY);`                     | ?                                           |
+| Opcode | Name      | Operand0 | Operand1 | Operation                                                           | Condition                                   |
+| ------ | --------- | -------- | -------- | ------------------------------------------------------------------- | ------------------------------------------- |
+| 0      | nop       |          |          |                                                                     |                                             |
+| 1      | mov       | $cX      | $cY      | `$cX = $cY; ACL(X) = ACL(Y);`                                       |                                             |
+| 2      | sin       | $cX      | N/A      | `$cX = read_stream(); ACL(X) = ???;`                                |                                             |
+| 3      | sout      | $cX      | N/A      | `write_stream($cX);`                                                |                                             |
+| 4      | rnd       | $cX      | N/A      | `$cX = read_trng(); ACL(X) = ???;`                                  |                                             |
+| 5      | s0begin   | immX     | N/A      | `record_macro_for_N_instructions(0, immX);`                         |                                             |
+| 6      | s0exec    | immX     | N/A      | `execute_macro_N_times(0, immX);`                                   |                                             |
+| 7      | s1begin   | immX     | N/A      | `record_macro_for_N_instructions(1, immX);`                         |                                             |
+| 8      | s1exec    | immX     | N/A      | `execute_macro_N_times(1, immX);`                                   |                                             |
+| 9      | <invalid> |          |          |                                                                     |                                             |
+| 0xA    | chmod     | $cX      | immY     | `if (immY & 3) ACL(X) = (ACL(X) & immY) \| 1; else ACL(X) = 0;`     |                                             |
+| 0xB    | xor       | $cX      | $cY      | `$cX ^= $cY;`                                                       | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
+| 0xC    | add       | $cX      | immY     | `$cX += immY;`                                                      | `(ACL(X) & 2)`                              |
+| 0xD    | and       | $cX      | $cY      | `$cX &= $cY;`                                                       | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
+| 0xE    | rev       | $cX      | $cY      | `$cX = endian_swap128($cY); ACL(X) = ACL(Y);`                       | `(ACL(Y) & 1)`                              |
+| 0xF    | gfmul     | $cX      | $cY      | `$cX = gfmul($cY); ACL(X) = ACL(Y);`                                | `(ACL(Y) & 2)`                              |
+| 0x10   | secret    | $cX      | immY     | `$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);`          |                                             |
+| 0x11   | keyreg    | immX     |          | `active_key_idx = immX;`                                            |                                             |
+| 0x12   | kexp      | $cX      | $cY      | `$cX = aes_kexp($cY); ACL(X) = ACL(Y);`                             | `(ACL(Y) & 1)`                              |
+| 0x13   | krexp     | $cX      | $cY      | `$cX = aes_kexp_reverse($cY); ACL(X) = ACL(Y);`                     | `(ACL(Y) & 1)`                              |
+| 0x14   | enc       | $cX      | $cY      | `$cX = aes_enc(active_key_idx, $cY);`                               | `(ACL(active_key_idx) & 1) && (ACL(Y) & 2)` |
+| 0x15   | dec       | $cX      | $cY      | `$cX = aes_dec(active_key_idx, $cY);`                               | `(ACL(active_key_idx) & 1) && (ACL(Y) & 2)` |
+| 0x16   | csigauth  | $cX      | $cY      | `if (hash_verify($cX, $cY)) { has_sig = true; current_sig = $cX; }` | ?                                           |
+| 0x17   | csigclr   |          |          | `has_sig = false;`                                                  |                                             |
+| 0x18   | csigenc   | $cX      | $cY      | `if (has_sig) $cX = aes_enc(current_sig, $cY);`                     | ?                                           |
 
 ### ACL
 

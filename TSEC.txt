@@ -1786,7 +1786,7 @@ $cauth is a special purpose register in the CPU.
 !  Operation
 !  Condition
 |-
-| 0 || || || || ||
+| 0 || nop || || || ||
 |-
 | 1 || mov || $cX || $cY || <code>$cX = $cY; ACL(X) = ACL(Y);</code> ||
 |-
@@ -1804,7 +1804,7 @@ $cauth is a special purpose register in the CPU.
 |-
 | 8 || s1exec || immX || N/A || <code>execute_macro_N_times(1, immX);</code> ||
 |-
-| 9 || ? || || || ||
+| 9 || <invalid> || || || ||
 |-
 | 0xA || chmod || $cX || immY || <code>if (immY & 3) ACL(X) = (ACL(X) & immY) &#124; 1; else ACL(X) = 0;</code> ||
 |-
