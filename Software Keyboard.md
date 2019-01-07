@@ -185,7 +185,7 @@ it).
 | Offset | Size | Notes                                  |
 | ------ | ---- | -------------------------------------- |
 | 0x0    | 0x4  | Initialized to value 0x2.              |
-| 0x4    | 0x8  |                                        |
+| 0x4    | ?    | UTF-16 string                          |
 | 0xC    | 0x8  |                                        |
 | 0x14   | 0x6  |                                        |
 | 0x1A   | 0x1  |                                        |
