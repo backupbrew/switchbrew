@@ -1792,7 +1792,7 @@ $cauth is a special purpose register in the CPU.
 |-
 | 2 || sin || $cX || N/A || <code>$cX = read_stream(); ACL(X) = ???;</code> ||
 |-
-| 3 || sout || $cX || N/A || <code>write_stream($cX);</code> ||
+| 3 || sout || $cX || N/A || <code>write_stream($cX);</code> || ?
 |-
 | 4 || rnd || $cX || N/A || <code>$cX = read_trng(); ACL(X) = ???;</code> ||
 |-
@@ -1822,9 +1822,9 @@ $cauth is a special purpose register in the CPU.
 |-
 | 0x11 || keyreg || immX || || <code>active_key_idx = immX;</code> ||
 |-
-| 0x12 || kexp || $cX || $cY || <code>$cX = aes_kexp($cY); ACL(X) = ACL(Y);</code> || <code>(ACL(Y) & 1)</code>
+| 0x12 || kexp || $cX || $cY || <code>$cX = aes_kexp($cY); ACL(X) = ACL(Y);</code> ||
 |-
-| 0x13 || krexp || $cX || $cY || <code>$cX = aes_kexp_reverse($cY); ACL(X) = ACL(Y);</code> || <code>(ACL(Y) & 1)</code>
+| 0x13 || krexp || $cX || $cY || <code>$cX = aes_kexp_reverse($cY); ACL(X) = ACL(Y);</code> ||
 |-
 | 0x14 || enc || $cX || $cY || <code>$cX = aes_enc(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 1) && (ACL(Y) & 2)</code>
 |-
