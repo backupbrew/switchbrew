@@ -961,7 +961,7 @@ $cauth is a special purpose register in the CPU.
 
 On SCP boot, the ACL is 0x1F for all $cX.
 
-Loading into $cX using xdst instruction sets ACL($cX) to 0x3 and 0x1F,
+Loading into $cX using xdst instruction sets ACL($cX) to 0x13 and 0x1F,
 for secure and insecure mode respectively.
 
 Spilling a $cX to DMEM using xdld instruction is allowed if (ACL($cX) &
