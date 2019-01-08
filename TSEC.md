@@ -931,7 +931,7 @@ $cauth is a special purpose register in the CPU.
 | 7      | s1begin   | immX     | N/A      | `record_macro_for_N_instructions(1, immX);`                         |                                             |
 | 8      | s1exec    | immX     | N/A      | `execute_macro_N_times(1, immX);`                                   |                                             |
 | 9      | <invalid> |          |          |                                                                     |                                             |
-| 0xA    | chmod     | $cX      | immY     | `if (immY & 3) ACL(X) = (ACL(X) & immY) \| 1; else ACL(X) = 0;`     |                                             |
+| 0xA    | chmod     | $cX      | immY     | Complicated, see [ACL](#ACL "wikilink").                            |                                             |
 | 0xB    | xor       | $cX      | $cY      | `$cX ^= $cY;`                                                       | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
 | 0xC    | add       | $cX      | immY     | `$cX += immY;`                                                      | `(ACL(X) & 2)`                              |
 | 0xD    | and       | $cX      | $cY      | `$cX &= $cY;`                                                       | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
@@ -949,10 +949,13 @@ $cauth is a special purpose register in the CPU.
 
 ### ACL
 
-| Bit | Meaning                                                                                                          |
-| --- | ---------------------------------------------------------------------------------------------------------------- |
-| 0   | Readable as key. This is forced set if bit1 is set, the only way to clear it is to clear \*both\* bit0 and bit1. |
-| 1   | Readable                                                                                                         |
+| Bit | Meaning                                                                                                |
+| --- | ------------------------------------------------------------------------------------------------------ |
+| 0   | Secure key. Forced set if bit1 is set.                                                                 |
+| 1   | Secure readable. Once cleared, cannot be set again.                                                    |
+| 2   | Insecure key. Forced set if bit3 is set. Forced clear if bit0 is clear. Can be toggled back and forth. |
+| 3   | Insecure readable. Forced clear if bit1 is clear. Can be toggled back and forth.                       |
+| 4   | Insecure overwritable.                                                                                 |
 
 #### Initial values
 
