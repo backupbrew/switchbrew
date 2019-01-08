@@ -951,11 +951,11 @@ $cauth is a special purpose register in the CPU.
 
 | Bit | Meaning                                                                                                |
 | --- | ------------------------------------------------------------------------------------------------------ |
-| 0   | Secure key. Forced set if bit1 is set.                                                                 |
+| 0   | Secure key. Forced set if bit1 is set. Once cleared, cannot be set again.                              |
 | 1   | Secure readable. Once cleared, cannot be set again.                                                    |
 | 2   | Insecure key. Forced set if bit3 is set. Forced clear if bit0 is clear. Can be toggled back and forth. |
 | 3   | Insecure readable. Forced clear if bit1 is clear. Can be toggled back and forth.                       |
-| 4   | Insecure overwritable.                                                                                 |
+| 4   | Insecure overwritable. Can be toggled back and forth.                                                  |
 
 #### Initial values
 
