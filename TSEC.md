@@ -987,17 +987,7 @@ signature used by the csigenc instruction.
 `00000000: f5 3c XY a8 cchmod $cY 0X` or `00000000: f5 3c XY a9 cchmod
 $cY 1X`
 
-This instruction takes a crypto register and a 5 bit immediate value. It
-appears to set the [crypto registers' ACL](#Register_ACLs "wikilink")
-bits as follows:
-
-| Bits | Description                                       |
-| ---- | ------------------------------------------------- |
-| 0    | Allow register to be used as key in NS or LS mode |
-| 1    | Allow register to be used as key in HS mode       |
-| 2    | Set register as readable in NS or LS mode         |
-| 3    | Set register as readable in HS mode               |
-| 4    | Set register as writable in NS or LS mode         |
+This instruction takes a crypto register and a 5 bit immediate value.
 
 ### crng
 
