@@ -935,7 +935,7 @@ $cauth is a special purpose register in the CPU.
 | 0xB    | xor       | $cX      | $cY      | `$cX ^= $cY;`                                                       | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
 | 0xC    | add       | $cX      | immY     | `$cX += immY;`                                                      | `(ACL(X) & 2)`                              |
 | 0xD    | and       | $cX      | $cY      | `$cX &= $cY;`                                                       | `(ACL(X) & 2) && (ACL(Y) & 2)`              |
-| 0xE    | rev       | $cX      | $cY      | `$cX = endian_swap128($cY); ACL(X) = ACL(Y);`                       | `(ACL(Y) & 1)`                              |
+| 0xE    | rev       | $cX      | $cY      | `$cX = endian_swap128($cY); ACL(X) = ACL(Y);`                       |                                             |
 | 0xF    | gfmul     | $cX      | $cY      | `$cX = gfmul($cY); ACL(X) = ACL(Y);`                                | `(ACL(Y) & 2)`                              |
 | 0x10   | secret    | $cX      | immY     | `$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);`          |                                             |
 | 0x11   | keyreg    | immX     |          | `active_key_idx = immX;`                                            |                                             |
