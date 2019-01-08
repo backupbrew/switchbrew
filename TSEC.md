@@ -971,9 +971,9 @@ Spilling a $cX to DMEM using xdld instruction is allowed if (ACL($cX) &
 
 `00000000: f5 3c XY d8 csigauth $cY $cX`
 
-This instruction takes 2 crypto registers as operands and is
-automatically executed when jumping to a code region previously uploaded
-as secret.
+Takes 2 crypto registers as operands and is automatically executed when
+jumping to a code region previously uploaded as secret. This instruction
+does not work in secure mode.
 
 ### csigclr
 
