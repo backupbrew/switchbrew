@@ -1936,7 +1936,7 @@ Falcon's Authenticated Mode has access to 64 128-bit keys which are burned at fa
 {| class=wikitable
 ! Index || ACL || Console-unique || Notes 
 |-
-| 0x00 || 0x07 || No || Used by [[TSEC_Firmware#Keygen|Keygen]], nvhost_tsec, nvhost_nvdec_bl020_prod, nvhost_nvdec020_prod, nvhost_nvdec020_ns and acr_ucode firmwares.
+| 0x00 || 0x13 || No || Used by [[TSEC_Firmware#Keygen|Keygen]], nvhost_tsec, nvhost_nvdec_bl020_prod, nvhost_nvdec020_prod, nvhost_nvdec020_ns and acr_ucode firmwares.
 |-
 | 0x10 || 0x10 || No || Used by nvhost_nvdec_bl020_prod firmware.
 |-

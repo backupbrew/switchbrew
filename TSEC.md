@@ -1068,7 +1068,7 @@ arguments.
 
 | Index | ACL  | Console-unique | Notes                                                                                                                                                                            |
 | ----- | ---- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x00  | 0x07 | No             | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. |
+| 0x00  | 0x13 | No             | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. |
 | 0x10  | 0x10 | No             | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                                                                     |
 | 0x02  | 0x10 | No             |                                                                                                                                                                                  |
 | 0x03  | 0x11 | No             | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
