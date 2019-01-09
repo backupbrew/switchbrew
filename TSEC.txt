@@ -442,6 +442,38 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501240
 | 0x04
 |-
+| [[#FALCON_SPROT_IMEM|FALCON_SPROT_IMEM]]
+| 0x54501280
+| 0x04
+|-
+| [[#FALCON_SPROT_DMEM|FALCON_SPROT_DMEM]]
+| 0x54501284
+| 0x04
+|-
+| [[#FALCON_SPROT_CPUCTL|FALCON_SPROT_CPUCTL]]
+| 0x54501288
+| 0x04
+|-
+| [[#FALCON_SPROT_MISC|FALCON_SPROT_MISC]]
+| 0x5450128C
+| 0x04
+|-
+| [[#FALCON_SPROT_IRQ|FALCON_SPROT_IRQ]]
+| 0x54501290
+| 0x04
+|-
+| [[#FALCON_SPROT_MTHD|FALCON_SPROT_MTHD]]
+| 0x54501294
+| 0x04
+|-
+| [[#FALCON_SPROT_SCTL|FALCON_SPROT_SCTL]]
+| 0x54501298
+| 0x04
+|-
+| [[#FALCON_SPROT_WDTMR|FALCON_SPROT_WDTMR]]
+| 0x5450129C
+| 0x04
+|-
 | [[#TSEC_SCP_CTL_ACCESS|TSEC_SCP_CTL_ACCESS]]
 | 0x54501400
 | 0x04
@@ -1380,6 +1412,148 @@ Used for configuring DMA transfers.
 | Initialize the transition to LS mode
 |}
 
+=== FALCON_SPROT_IMEM ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| Read access level
+|-
+| 4-7
+| Write access level
+|}
+
+Controls accesses to Falcon IMEM.
+
+=== FALCON_SPROT_DMEM ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| Read access level
+|-
+| 4-7
+| Write access level
+|}
+
+Controls accesses to Falcon DMEM.
+
+=== FALCON_SPROT_CPUCTL ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| Read access level
+|-
+| 4-7
+| Write access level
+|}
+
+Controls accesses to the [[#FALCON_CPUCTL|FALCON_CPUCTL]] register.
+
+=== FALCON_SPROT_MISC ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| Read access level
+|-
+| 4-7
+| Write access level
+|}
+
+Controls accesses to the following registers:
+* FALCON_VM_SUPERVISOR
+* FALCON_SUBENGINE_RESET
+* FALCON_HOST_IO_INDEX
+* [[#FALCON_DMACTL|FALCON_DMACTL]]
+* FALCON_TLB_CMD
+* FALCON_TLB_CMD_RES
+* FALCON_UNK_250
+* FALCON_UNK_2E0
+
+=== FALCON_SPROT_IRQ ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| Read access level
+|-
+| 4-7
+| Write access level
+|}
+
+Controls accesses to the following registers:
+* [[#FALCON_IRQMODE|FALCON_IRQMODE]]
+* [[#FALCON_IRQMSET|FALCON_IRQMSET]]
+* [[#FALCON_IRQMCLR|FALCON_IRQMCLR]]
+* [[#FALCON_IRQDEST|FALCON_IRQDEST]]
+* FALCON_GPTMR_PERIOD
+* FALCON_GPTMR_TIME
+* FALCON_GPTMR_ENABLE
+* FALCON_UNK_3C
+* FALCON_UNK_E0
+
+=== FALCON_SPROT_MTHD ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| Read access level
+|-
+| 4-7
+| Write access level
+|}
+
+Controls accesses to the following registers:
+* [[#FALCON_ITFEN|FALCON_ITFEN]]
+* FALCON_CURCTX
+* FALCON_NXTCTX
+* FALCON_CMDCTX
+* FALCON_MTHD_DATA
+* FALCON_MTHD_CMD
+* FALCON_MTHD_DATA_WR
+* FALCON_MTHD_OCCUPIED
+* FALCON_MTHD_ACK
+* FALCON_MTHD_LIMIT
+* FALCON_DEBUG1
+
+=== FALCON_SPROT_SCTL ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| Read access level
+|-
+| 4-7
+| Write access level
+|}
+
+Controls accesses to the [[#FALCON_SCTL|FALCON_SCTL]] register.
+
+=== FALCON_SPROT_WDTMR ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| Read access level
+|-
+| 4-7
+| Write access level
+|}
+
+Controls accesses to the following registers:
+* FALCON_WDTMR_TIME
+* FALCON_WDTMR_ENABLE
+
 === TSEC_SCP_CTL_ACCESS ===
 {| class="wikitable" border="1"
 !  Bits
@@ -1901,7 +2075,7 @@ $cauth is a special purpose register in the CPU.
 |-
 | 20-23 || Unknown
 |-
-| 24-31 || Size of region to authenticate (in 0x100 pages)
+| 24-31 || Size of region to authenticate (in 0x100 pages), must be >= 4
 |}
 
 === cxset ===

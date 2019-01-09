@@ -132,6 +132,14 @@ interfaces).
 | FALCON\_ICD\_WDATA                                                      | 0x54501208 | 0x04  |
 | FALCON\_ICD\_RDATA                                                      | 0x5450120C | 0x04  |
 | [FALCON\_SCTL](#FALCON_SCTL "wikilink")                                 | 0x54501240 | 0x04  |
+| [FALCON\_SPROT\_IMEM](#FALCON_SPROT_IMEM "wikilink")                    | 0x54501280 | 0x04  |
+| [FALCON\_SPROT\_DMEM](#FALCON_SPROT_DMEM "wikilink")                    | 0x54501284 | 0x04  |
+| [FALCON\_SPROT\_CPUCTL](#FALCON_SPROT_CPUCTL "wikilink")                | 0x54501288 | 0x04  |
+| [FALCON\_SPROT\_MISC](#FALCON_SPROT_MISC "wikilink")                    | 0x5450128C | 0x04  |
+| [FALCON\_SPROT\_IRQ](#FALCON_SPROT_IRQ "wikilink")                      | 0x54501290 | 0x04  |
+| [FALCON\_SPROT\_MTHD](#FALCON_SPROT_MTHD "wikilink")                    | 0x54501294 | 0x04  |
+| [FALCON\_SPROT\_SCTL](#FALCON_SPROT_SCTL "wikilink")                    | 0x54501298 | 0x04  |
+| [FALCON\_SPROT\_WDTMR](#FALCON_SPROT_WDTMR "wikilink")                  | 0x5450129C | 0x04  |
 | [TSEC\_SCP\_CTL\_ACCESS](#TSEC_SCP_CTL_ACCESS "wikilink")               | 0x54501400 | 0x04  |
 | [TSEC\_SCP\_CTL\_TRNG](#TSEC_SCP_CTL_TRNG "wikilink")                   | 0x54501404 | 0x04  |
 | [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")                   | 0x54501408 | 0x04  |
@@ -614,6 +622,114 @@ Used for configuring DMA transfers.
 </tbody>
 </table>
 
+### FALCON\_SPROT\_IMEM
+
+| Bits | Description        |
+| ---- | ------------------ |
+| 0-3  | Read access level  |
+| 4-7  | Write access level |
+
+Controls accesses to Falcon IMEM.
+
+### FALCON\_SPROT\_DMEM
+
+| Bits | Description        |
+| ---- | ------------------ |
+| 0-3  | Read access level  |
+| 4-7  | Write access level |
+
+Controls accesses to Falcon DMEM.
+
+### FALCON\_SPROT\_CPUCTL
+
+| Bits | Description        |
+| ---- | ------------------ |
+| 0-3  | Read access level  |
+| 4-7  | Write access level |
+
+Controls accesses to the [FALCON\_CPUCTL](#FALCON_CPUCTL "wikilink")
+register.
+
+### FALCON\_SPROT\_MISC
+
+| Bits | Description        |
+| ---- | ------------------ |
+| 0-3  | Read access level  |
+| 4-7  | Write access level |
+
+Controls accesses to the following registers:
+
+  - FALCON\_VM\_SUPERVISOR
+  - FALCON\_SUBENGINE\_RESET
+  - FALCON\_HOST\_IO\_INDEX
+  - [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")
+  - FALCON\_TLB\_CMD
+  - FALCON\_TLB\_CMD\_RES
+  - FALCON\_UNK\_250
+  - FALCON\_UNK\_2E0
+
+### FALCON\_SPROT\_IRQ
+
+| Bits | Description        |
+| ---- | ------------------ |
+| 0-3  | Read access level  |
+| 4-7  | Write access level |
+
+Controls accesses to the following registers:
+
+  - [FALCON\_IRQMODE](#FALCON_IRQMODE "wikilink")
+  - [FALCON\_IRQMSET](#FALCON_IRQMSET "wikilink")
+  - [FALCON\_IRQMCLR](#FALCON_IRQMCLR "wikilink")
+  - [FALCON\_IRQDEST](#FALCON_IRQDEST "wikilink")
+  - FALCON\_GPTMR\_PERIOD
+  - FALCON\_GPTMR\_TIME
+  - FALCON\_GPTMR\_ENABLE
+  - FALCON\_UNK\_3C
+  - FALCON\_UNK\_E0
+
+### FALCON\_SPROT\_MTHD
+
+| Bits | Description        |
+| ---- | ------------------ |
+| 0-3  | Read access level  |
+| 4-7  | Write access level |
+
+Controls accesses to the following registers:
+
+  - [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")
+  - FALCON\_CURCTX
+  - FALCON\_NXTCTX
+  - FALCON\_CMDCTX
+  - FALCON\_MTHD\_DATA
+  - FALCON\_MTHD\_CMD
+  - FALCON\_MTHD\_DATA\_WR
+  - FALCON\_MTHD\_OCCUPIED
+  - FALCON\_MTHD\_ACK
+  - FALCON\_MTHD\_LIMIT
+  - FALCON\_DEBUG1
+
+### FALCON\_SPROT\_SCTL
+
+| Bits | Description        |
+| ---- | ------------------ |
+| 0-3  | Read access level  |
+| 4-7  | Write access level |
+
+Controls accesses to the [FALCON\_SCTL](#FALCON_SCTL "wikilink")
+register.
+
+### FALCON\_SPROT\_WDTMR
+
+| Bits | Description        |
+| ---- | ------------------ |
+| 0-3  | Read access level  |
+| 4-7  | Write access level |
+
+Controls accesses to the following registers:
+
+  - FALCON\_WDTMR\_TIME
+  - FALCON\_WDTMR\_ENABLE
+
 ### TSEC\_SCP\_CTL\_ACCESS
 
 | Bits | Description                           |
@@ -1017,18 +1133,19 @@ Loading a secret into $cX sets a per-secret ACL, unconditionally.
 
 ### cauth
 
-$cauth is a special purpose register in the CPU.
+$cauth is a special purpose register in the
+CPU.
 
-| Bits  | Description                                      |
-| ----- | ------------------------------------------------ |
-| 0-7   | Start of region to authenticate (in 0x100 pages) |
-| 8-15  | Unknown                                          |
-| 16    | Use secret xfers (?)                             |
-| 17    | Region is encrypted (?)                          |
-| 18    | Unknown                                          |
-| 19    | Unknown                                          |
-| 20-23 | Unknown                                          |
-| 24-31 | Size of region to authenticate (in 0x100 pages)  |
+| Bits  | Description                                                    |
+| ----- | -------------------------------------------------------------- |
+| 0-7   | Start of region to authenticate (in 0x100 pages)               |
+| 8-15  | Unknown                                                        |
+| 16    | Use secret xfers (?)                                           |
+| 17    | Region is encrypted (?)                                        |
+| 18    | Unknown                                                        |
+| 19    | Unknown                                                        |
+| 20-23 | Unknown                                                        |
+| 24-31 | Size of region to authenticate (in 0x100 pages), must be \>= 4 |
 
 ### cxset
 
