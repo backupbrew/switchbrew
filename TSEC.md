@@ -1022,13 +1022,13 @@ $cauth is a special purpose register in the CPU.
 | Bits  | Description                                      |
 | ----- | ------------------------------------------------ |
 | 0-7   | Start of region to authenticate (in 0x100 pages) |
-| 8-15  | Unused                                           |
+| 8-15  | Unknown                                          |
 | 16    | Use secret xfers (?)                             |
 | 17    | Region is encrypted (?)                          |
 | 18    | Unknown                                          |
 | 19    | Unknown                                          |
-| 20-23 | Unused                                           |
-| 31-24 | Size of region to authenticate (in 0x100 pages)  |
+| 20-23 | Unknown                                          |
+| 24-31 | Size of region to authenticate (in 0x100 pages)  |
 
 ### cxset
 

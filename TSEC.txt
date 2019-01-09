@@ -1889,7 +1889,7 @@ $cauth is a special purpose register in the CPU.
 |-
 | 0-7 || Start of region to authenticate (in 0x100 pages)
 |-
-| 8-15 || Unused
+| 8-15 || Unknown
 |-
 | 16 || Use secret xfers (?)
 |-
@@ -1899,9 +1899,9 @@ $cauth is a special purpose register in the CPU.
 |-
 | 19 || Unknown
 |-
-| 20-23 || Unused
+| 20-23 || Unknown
 |-
-| 31-24 || Size of region to authenticate (in 0x100 pages)
+| 24-31 || Size of region to authenticate (in 0x100 pages)
 |}
 
 === cxset ===
