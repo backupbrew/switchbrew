@@ -926,7 +926,7 @@ transition.
 
 | Opcode | Name      | Operand0 | Operand1 | Operation                                                           | Condition                                   |
 | ------ | --------- | -------- | -------- | ------------------------------------------------------------------- | ------------------------------------------- |
-| 0      | nop       |          |          |                                                                     |                                             |
+| 0      | nop       | N/A      | N/A      |                                                                     |                                             |
 | 1      | mov       | $cX      | $cY      | `$cX = $cY; ACL(X) = ACL(Y);`                                       |                                             |
 | 2      | sin       | $cX      | N/A      | `$cX = read_stream(); ACL(X) = ???;`                                |                                             |
 | 3      | sout      | $cX      | N/A      | `write_stream($cX);`                                                | ?                                           |
@@ -943,13 +943,13 @@ transition.
 | 0xE    | rev       | $cX      | $cY      | `$cX = endian_swap128($cY); ACL(X) = ACL(Y);`                       |                                             |
 | 0xF    | gfmul     | $cX      | $cY      | `$cX = gfmul($cY); ACL(X) = ACL(Y);`                                | `(ACL(Y) & 2)`                              |
 | 0x10   | secret    | $cX      | immY     | `$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);`          |                                             |
-| 0x11   | keyreg    | immX     |          | `active_key_idx = immX;`                                            |                                             |
+| 0x11   | keyreg    | immX     | N/A      | `active_key_idx = immX;`                                            |                                             |
 | 0x12   | kexp      | $cX      | $cY      | `$cX = aes_kexp($cY); ACL(X) = ACL(Y);`                             |                                             |
 | 0x13   | krexp     | $cX      | $cY      | `$cX = aes_kexp_reverse($cY); ACL(X) = ACL(Y);`                     |                                             |
 | 0x14   | enc       | $cX      | $cY      | `$cX = aes_enc(active_key_idx, $cY);`                               | `(ACL(active_key_idx) & 1) && (ACL(Y) & 2)` |
 | 0x15   | dec       | $cX      | $cY      | `$cX = aes_dec(active_key_idx, $cY);`                               | `(ACL(active_key_idx) & 1) && (ACL(Y) & 2)` |
 | 0x16   | csigauth  | $cX      | $cY      | `if (hash_verify($cX, $cY)) { has_sig = true; current_sig = $cX; }` | ?                                           |
-| 0x17   | csigclr   |          |          | `has_sig = false;`                                                  |                                             |
+| 0x17   | csigclr   | N/A      | N/A      | `has_sig = false;`                                                  |                                             |
 | 0x18   | csigenc   | $cX      | $cY      | `if (has_sig) $cX = aes_enc(current_sig, $cY);`                     | ?                                           |
 
 #### csigauth
