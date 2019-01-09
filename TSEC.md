@@ -432,15 +432,15 @@ Contains information about raised exceptions.
 
 ### FALCON\_CPUCTL
 
-| Bits | Description              |
-| ---- | ------------------------ |
-| 0    | FALCON\_CPUCTL\_IINVAL   |
-| 1    | FALCON\_CPUCTL\_STARTCPU |
-| 2    | FALCON\_CPUCTL\_SRESET   |
-| 3    | FALCON\_CPUCTL\_HRESET   |
-| 4    | FALCON\_CPUCTL\_HALTED   |
-| 5    | FALCON\_CPUCTL\_STOPPED  |
-| 6    | FALCON\_CPUCTL\_SCP\_UNK |
+| Bits | Description                    |
+| ---- | ------------------------------ |
+| 0    | FALCON\_CPUCTL\_IINVAL         |
+| 1    | FALCON\_CPUCTL\_STARTCPU       |
+| 2    | FALCON\_CPUCTL\_SRESET         |
+| 3    | FALCON\_CPUCTL\_HRESET         |
+| 4    | FALCON\_CPUCTL\_HALTED         |
+| 5    | FALCON\_CPUCTL\_STOPPED        |
+| 6    | FALCON\_CPUCTL\_START\_SCP\_LS |
 
 Used for signaling the Falcon CPU.
 
@@ -596,6 +596,21 @@ Used for configuring DMA transfers.
 <code>1: Light Secure</code><br />
 <code>2: Heavy Secure</code></p></td>
 </tr>
+<tr class="even">
+<td><p>4-5</p></td>
+<td><p>FALCON_SCTL_OLD_SEC_MODE</p>
+<p><code>0: Non-secure</code><br />
+<code>1: Light Secure</code><br />
+<code>2: Heavy Secure</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>12-13</p></td>
+<td><p>Unknown</p></td>
+</tr>
+<tr class="even">
+<td><p>14</p></td>
+<td><p>Initialize the transition to LS mode</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -669,21 +684,21 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>0-7</p></td>
+<td><p>0-3</p></td>
 <td><p>Crypto fuc5 destination register or immediate value</p></td>
 </tr>
 <tr class="even">
-<td><p>8-15</p></td>
+<td><p>8-13</p></td>
 <td><p>Crypto fuc5 source register or immediate value</p></td>
 </tr>
 <tr class="odd">
 <td><p>20-24</p></td>
 <td><p>Crypto fuc5 operation</p>
-<p><code>0x0:  none (fuc5 opcode 0x00) </code><br />
+<p><code>0x0:  nop (fuc5 opcode 0x00) </code><br />
 <code>0x1:  cmov (fuc5 opcode 0x84)</code><br />
 <code>0x2:  cxsin (fuc5 opcode 0x88) or xdst (with cxset)</code><br />
 <code>0x3:  cxsout (fuc5 opcode 0x8C) or xdld (with cxset) </code><br />
-<code>0x4:  crng (fuc5 opcode 0x90)</code><br />
+<code>0x4:  crnd (fuc5 opcode 0x90)</code><br />
 <code>0x5:  cs0begin (fuc5 opcode 0x94)</code><br />
 <code>0x6:  cs0exec (fuc5 opcode 0x98)</code><br />
 <code>0x7:  cs1begin (fuc5 opcode 0x9C)</code><br />
@@ -706,6 +721,10 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 <code>0x18: csigclr (fuc5 opcode 0xE0)</code></p></td>
 </tr>
 <tr class="even">
+<td><p>28</p></td>
+<td><p>Unknown</p></td>
+</tr>
+<tr class="odd">
 <td><p>31</p></td>
 <td><p>Set if running in secure mode (cauth)</p></td>
 </tr>
@@ -865,9 +884,16 @@ Always 0xFFF.
 | 26   | TSEC\_TEGRA\_CTL\_TMPI\_RESTART\_FSM\_APB        |
 | 27   | TSEC\_TEGRA\_CTL\_TMPI\_DISABLE\_OUTPUT\_I2C     |
 
-## Authenticated Mode
+## SCP
 
-##### Entry
+Part of the information here (which hasn't made it into envytools
+documentation yet) was shared by
+[mwk](https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki) from reverse
+engineering falcon processors over the years.
+
+### Authenticated Mode
+
+#### Entry
 
 From non-secure mode, upon jumping to a page marked as secret, a secret
 fault occurs. This causes the CPU to verify the region specified in
@@ -876,13 +902,13 @@ the valid bit (bit0) is set on all pages in the $cauth region, and $pc
 is set to the base of the $cauth region. If the comparsion fails, the
 CPU is halted.
 
-##### Exit
+#### Exit
 
 The CPU automatically goes back to non-secure mode when returning back
 into non-secret pages. When this happens, the valid bit (bit0) in the
 TLB flags is cleared for all secret pages.
 
-##### Implementation
+#### Implementation
 
 Under certain circumstances, it is possible to observe
 [csigauth](#csigauth "wikilink") being briefly written to
@@ -893,31 +919,10 @@ and "csigauth", respectively.
 
 Via [TSEC\_SCP\_SEQ0\_STAT](#TSEC_SCP_SEQ0_STAT "wikilink") it can be
 observed that a 3-sized macro sequence is loaded into cs0 during a
-secure mode transition.
+secure mode
+transition.
 
-## Crypto processing
-
-Part of the information here (which hasn't made it into envytools
-documentation yet) was shared by
-[mwk](https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki) from reverse
-engineering falcon processors over the years.
-
-### cauth
-
-$cauth is a special purpose register in the CPU.
-
-| Bits  | Description                                            |
-| ----- | ------------------------------------------------------ |
-| 0-7   | Start of region to authenticate (in 0x100 pages)       |
-| 8-15  | Unused                                                 |
-| 16    | Use secret xfers (?)                                   |
-| 17    | Region is signed and encrypted and double the size (?) |
-| 18    |                                                        |
-| 19    |                                                        |
-| 20-23 | Unused                                                 |
-| 31-24 | Size of region to authenticate (in 0x100 pages)        |
-
-## SCP operations
+### Operations
 
 | Opcode | Name      | Operand0 | Operand1 | Operation                                                           | Condition                                   |
 | ------ | --------- | -------- | -------- | ------------------------------------------------------------------- | ------------------------------------------- |
@@ -947,6 +952,47 @@ $cauth is a special purpose register in the CPU.
 | 0x17   | csigclr   |          |          | `has_sig = false;`                                                  |                                             |
 | 0x18   | csigenc   | $cX      | $cY      | `if (has_sig) $cX = aes_enc(current_sig, $cY);`                     | ?                                           |
 
+#### csigauth
+
+`00000000: f5 3c XY d8 csigauth $cY $cX`
+
+Takes 2 crypto registers as operands and is automatically executed when
+jumping to a code region previously uploaded as secret. This instruction
+does not work in secure mode.
+
+#### csigclr
+
+`00000000: f5 3c 00 e0 csigclr`
+
+This instruction takes no operands and appears to clear the saved cauth
+signature used by the csigenc instruction.
+
+#### cchmod
+
+`00000000: f5 3c XY a8 cchmod $cY 0X` or `00000000: f5 3c XY a9 cchmod
+$cY 1X`
+
+This instruction takes a crypto register and a 5 bit immediate value
+which represents the [ACL](#ACL "wikilink") mask to set.
+
+#### crnd
+
+`00000000: f5 3c 0X 90 crnd $cX`
+
+This instruction initializes a crypto register with random data.
+
+Executing this instruction only succeeds if the TRNG is enabled for the
+SCP, which requires taking the following steps:
+
+  - Write 0x7FFF to TSEC\_TRNG\_CLKDIV.
+  - Write 0x3FF0000 to TSEC\_TRNG\_UNK0.
+  - Write 0xFF00 to TSEC\_TRNG\_UNK7.
+  - Write 0x1000 to
+    [TSEC\_SCP\_CTL\_TRNG](#TSEC_SCP_CTL_TRNG "wikilink").
+
+Otherwise it hangs
+forever.
+
 ### ACL
 
 | Bit | Meaning                                                                                                |
@@ -967,44 +1013,22 @@ for secure and insecure mode respectively.
 Spilling a $cX to DMEM using xdld instruction is allowed if (ACL($cX) &
 2) or (ACL($cX) & 8), for secure and insecure mode respectively.
 
-### csigauth
+Loading a secret into $cX sets a per-secret ACL, unconditionally.
 
-`00000000: f5 3c XY d8 csigauth $cY $cX`
+### cauth
 
-Takes 2 crypto registers as operands and is automatically executed when
-jumping to a code region previously uploaded as secret. This instruction
-does not work in secure mode.
+$cauth is a special purpose register in the CPU.
 
-### csigclr
-
-`00000000: f5 3c 00 e0 csigclr`
-
-This instruction takes no operands and appears to clear the saved cauth
-signature used by the csigenc instruction.
-
-### cchmod
-
-`00000000: f5 3c XY a8 cchmod $cY 0X` or `00000000: f5 3c XY a9 cchmod
-$cY 1X`
-
-This instruction takes a crypto register and a 5 bit immediate value.
-
-### crng
-
-`00000000: f5 3c 0X 90 crng $cX`
-
-This instruction initializes a crypto register with random data.
-
-Executing this instruction only succeeds if the TRNG is enabled for the
-SCP, which requires taking the following steps:
-
-  - Write 0x7FFF to TSEC\_TRNG\_CLKDIV.
-  - Write 0x3FF0000 to TSEC\_TRNG\_UNK0.
-  - Write 0xFF00 to TSEC\_TRNG\_UNK7.
-  - Write 0x1000 to
-    [TSEC\_SCP\_CTL\_TRNG](#TSEC_SCP_CTL_TRNG "wikilink").
-
-Otherwise it hangs forever.
+| Bits  | Description                                      |
+| ----- | ------------------------------------------------ |
+| 0-7   | Start of region to authenticate (in 0x100 pages) |
+| 8-15  | Unused                                           |
+| 16    | Use secret xfers (?)                             |
+| 17    | Region is encrypted (?)                          |
+| 18    | Unknown                                          |
+| 19    | Unknown                                          |
+| 20-23 | Unused                                           |
+| 31-24 | Size of region to authenticate (in 0x100 pages)  |
 
 ### cxset
 
@@ -1042,19 +1066,69 @@ burned at factory. These keys can be loaded by using the $csecret
 instruction which takes the target crypto register and the key index as
 arguments.
 
-| Index | Notes                                                                                                                                                                            | Console-unique |
-| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| 0x00  | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. | No             |
-| 0x01  | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                                                                     |                |
-| 0x03  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |                |
-| 0x04  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |                |
-| 0x05  | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.                                                         |                |
-| 0x07  | Used by \[6.0.0+\] nvhost\_tsec firmware.                                                                                                                                        |                |
-| 0x09  | Used by nvhost\_tsec firmware.                                                                                                                                                   |                |
-| 0x0B  | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |                |
-| 0x0F  | Used by nvhost\_tsec firmware.                                                                                                                                                   |                |
-| 0x10  | Used by \[1.0.0-5.1.0\] nvhost\_tsec firmware.                                                                                                                                   |                |
-| 0x15  | Used by nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod, \[5.0.0+\] nvhost\_nvdec020\_ns and \[6.0.0+\] nvhost\_tsec firmwares.                                    |                |
-| 0x26  | Used by [KeygenLdr](TSEC%20Firmware#KeygenLdr.md##KeygenLdr "wikilink").                                                                                                         | No             |
-| 0x3C  | Used by nvhost\_tsec firmware.                                                                                                                                                   |                |
-| 0x3F  | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                         | Yes            |
+| Index | ACL  | Console-unique | Notes                                                                                                                                                                            |
+| ----- | ---- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x00  | 0x07 | No             | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. |
+| 0x01  | 0x01 |                | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                                                                     |
+| 0x02  | 0x01 |                |                                                                                                                                                                                  |
+| 0x03  | 0x05 |                | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
+| 0x04  | 0x01 |                | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
+| 0x05  | 0x07 |                | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.                                                         |
+| 0x06  | 0x05 |                |                                                                                                                                                                                  |
+| 0x07  | 0x05 |                | Used by \[6.0.0+\] nvhost\_tsec firmware.                                                                                                                                        |
+| 0x08  | 0x01 |                |                                                                                                                                                                                  |
+| 0x09  | 0x07 |                | Used by nvhost\_tsec firmware.                                                                                                                                                   |
+| 0x0A  | 0x05 |                |                                                                                                                                                                                  |
+| 0x0B  | 0x01 |                | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
+| 0x0C  | 0x07 |                |                                                                                                                                                                                  |
+| 0x0D  | 0x05 |                |                                                                                                                                                                                  |
+| 0x0E  | 0x01 |                |                                                                                                                                                                                  |
+| 0x0F  | 0x07 |                | Used by nvhost\_tsec firmware.                                                                                                                                                   |
+| 0x10  | 0x05 |                | Used by \[1.0.0-5.1.0\] nvhost\_tsec firmware.                                                                                                                                   |
+| 0x11  | 0x01 |                |                                                                                                                                                                                  |
+| 0x12  | 0x07 |                |                                                                                                                                                                                  |
+| 0x13  | 0x05 |                |                                                                                                                                                                                  |
+| 0x14  | 0x01 |                |                                                                                                                                                                                  |
+| 0x15  | 0x07 |                | Used by nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod, \[5.0.0+\] nvhost\_nvdec020\_ns and \[6.0.0+\] nvhost\_tsec firmwares.                                    |
+| 0x16  | 0x05 |                |                                                                                                                                                                                  |
+| 0x17  | 0x01 |                |                                                                                                                                                                                  |
+| 0x18  | 0x07 |                |                                                                                                                                                                                  |
+| 0x19  | 0x05 |                |                                                                                                                                                                                  |
+| 0x1A  | 0x01 |                |                                                                                                                                                                                  |
+| 0x1B  | 0x07 |                |                                                                                                                                                                                  |
+| 0x1C  | 0x05 |                |                                                                                                                                                                                  |
+| 0x1D  | 0x01 |                |                                                                                                                                                                                  |
+| 0x1E  | 0x07 |                |                                                                                                                                                                                  |
+| 0x1F  | 0x05 |                |                                                                                                                                                                                  |
+| 0x20  | 0x01 |                |                                                                                                                                                                                  |
+| 0x21  | 0x07 |                |                                                                                                                                                                                  |
+| 0x22  | 0x05 |                |                                                                                                                                                                                  |
+| 0x23  | 0x01 |                |                                                                                                                                                                                  |
+| 0x24  | 0x07 |                |                                                                                                                                                                                  |
+| 0x25  | 0x05 |                |                                                                                                                                                                                  |
+| 0x26  | 0x01 | No             | Used by [KeygenLdr](TSEC%20Firmware#KeygenLdr.md##KeygenLdr "wikilink").                                                                                                         |
+| 0x27  | 0x07 |                |                                                                                                                                                                                  |
+| 0x28  | 0x05 |                |                                                                                                                                                                                  |
+| 0x29  | 0x01 |                |                                                                                                                                                                                  |
+| 0x2A  | 0x07 |                |                                                                                                                                                                                  |
+| 0x2B  | 0x05 |                |                                                                                                                                                                                  |
+| 0x2C  | 0x01 |                |                                                                                                                                                                                  |
+| 0x2D  | 0x07 |                |                                                                                                                                                                                  |
+| 0x2E  | 0x05 |                |                                                                                                                                                                                  |
+| 0x2F  | 0x01 |                |                                                                                                                                                                                  |
+| 0x30  | 0x07 |                |                                                                                                                                                                                  |
+| 0x31  | 0x05 |                |                                                                                                                                                                                  |
+| 0x32  | 0x01 |                |                                                                                                                                                                                  |
+| 0x33  | 0x07 |                |                                                                                                                                                                                  |
+| 0x34  | 0x05 |                |                                                                                                                                                                                  |
+| 0x35  | 0x01 |                |                                                                                                                                                                                  |
+| 0x36  | 0x07 |                |                                                                                                                                                                                  |
+| 0x37  | 0x05 |                |                                                                                                                                                                                  |
+| 0x38  | 0x01 |                |                                                                                                                                                                                  |
+| 0x39  | 0x07 |                |                                                                                                                                                                                  |
+| 0x3A  | 0x05 |                |                                                                                                                                                                                  |
+| 0x3B  | 0x01 |                |                                                                                                                                                                                  |
+| 0x3C  | 0x07 |                | Used by nvhost\_tsec firmware.                                                                                                                                                   |
+| 0x3D  | 0x05 |                |                                                                                                                                                                                  |
+| 0x3E  | 0x01 |                |                                                                                                                                                                                  |
+| 0x3F  | 0x01 | Yes            | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                         |
