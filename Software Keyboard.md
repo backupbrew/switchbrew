@@ -193,7 +193,10 @@ it).
 | 0x1C   | 0x4  | u32, Unknown.                          |
 | 0x20   | 0x4  | s32, Unknown. Initialized to value -1. |
 | 0x24   | 0x4  | s32, Unknown. Initialized to value -1. |
-| 0x28   | 0x8  |                                        |
+| 0x28   | 0x1  |                                        |
+| 0x29   | 0x2  |                                        |
+| 0x2B   | 0x1  |                                        |
+| 0x2C   | 0x4  |                                        |
 | 0x30   | 0x1  | Initialized to value 1.                |
 | 0x31   | 0x17 |                                        |
 
