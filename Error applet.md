@@ -19,9 +19,9 @@ Unknown exact size, using size 20 seems to work fine.
 The type (byte 0 of this storage) is
 0.
 
-| Offset | Size    | Typical Value | Notes                                            |
-| ------ | ------- | ------------- | ------------------------------------------------ |
-| 0x10   | 4 (u32) | 0 (2000-0000) | Result code, same Result used everywhere in HOS. |
+| Offset | Size    | Typical Value | Notes                                                 |
+| ------ | ------- | ------------- | ----------------------------------------------------- |
+| 0x10   | 4 (u32) | 0 (2000-0000) | Result code, same Result type used everywhere in HOS. |
 
 The error will display error code 2000-0000 if the Result is not set.
 The text is the default one.
