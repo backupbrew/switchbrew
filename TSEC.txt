@@ -2027,8 +2027,8 @@ This instruction initializes a crypto register with random data.
 Executing this instruction only succeeds if the TRNG is enabled for the SCP, which requires taking the following steps:
 * Write 0x7FFF to TSEC_TRNG_CLKDIV.
 * Write 0x3FF0000 to TSEC_TRNG_UNK0.
-* Write 0xFF00 to TSEC_TRNG_UNK7.
-* Write 0x1000 to [[#TSEC_SCP_CTL_TRNG|TSEC_SCP_CTL_TRNG]].
+* Write 0xFF00 to TSEC_TRNG_UNK2.
+* Write 0x1000 to [[#TSEC_SCP_CTL1|TSEC_SCP_CTL1]].
 
 Otherwise it hangs forever.
 

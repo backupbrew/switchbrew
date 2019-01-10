@@ -1103,9 +1103,8 @@ SCP, which requires taking the following steps:
 
   - Write 0x7FFF to TSEC\_TRNG\_CLKDIV.
   - Write 0x3FF0000 to TSEC\_TRNG\_UNK0.
-  - Write 0xFF00 to TSEC\_TRNG\_UNK7.
-  - Write 0x1000 to
-    [TSEC\_SCP\_CTL\_TRNG](#TSEC_SCP_CTL_TRNG "wikilink").
+  - Write 0xFF00 to TSEC\_TRNG\_UNK2.
+  - Write 0x1000 to [TSEC\_SCP\_CTL1](#TSEC_SCP_CTL1 "wikilink").
 
 Otherwise it hangs
 forever.
