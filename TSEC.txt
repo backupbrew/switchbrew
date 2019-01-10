@@ -474,11 +474,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450129C
 | 0x04
 |-
-| [[#TSEC_SCP_CTL_ACCESS|TSEC_SCP_CTL_ACCESS]]
+| [[#TSEC_SCP_CTL0|TSEC_SCP_CTL0]]
 | 0x54501400
 | 0x04
 |-
-| [[#TSEC_SCP_CTL_TRNG|TSEC_SCP_CTL_TRNG]]
+| [[#TSEC_SCP_CTL1|TSEC_SCP_CTL1]]
 | 0x54501404
 | 0x04
 |-
@@ -486,7 +486,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501408
 | 0x04
 |-
-| [[#TSEC_SCP_CTL_MODE|TSEC_SCP_CTL_MODE]]
+| [[#TSEC_SCP_CTL_LOCK|TSEC_SCP_CTL_LOCK]]
 | 0x5450140C
 | 0x04
 |-
@@ -546,31 +546,31 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501504
 | 0x04
 |-
-| TSEC_TRNG_UNK1
+| TSEC_TRNG_TEST_CTL
 | 0x5450150C
 | 0x04
 |-
-| TSEC_TRNG_UNK2
+| TSEC_TRNG_TEST_CFG0
 | 0x54501510
 | 0x04
 |-
-| TSEC_TRNG_UNK3
+| TSEC_TRNG_TEST_SEED0
 | 0x54501514
 | 0x04
 |-
-| TSEC_TRNG_UNK4
+| TSEC_TRNG_TEST_CFG1
 | 0x54501518
 | 0x04
 |-
-| TSEC_TRNG_UNK5
+| TSEC_TRNG_TEST_SEED1
 | 0x5450151C
 | 0x04
 |-
-| TSEC_TRNG_UNK6
+| TSEC_TRNG_UNK1
 | 0x54501528
 | 0x04
 |-
-| TSEC_TRNG_UNK7
+| TSEC_TRNG_UNK2
 | 0x5450152C
 | 0x04
 |-
@@ -1554,7 +1554,7 @@ Controls accesses to the following registers:
 * FALCON_WDTMR_TIME
 * FALCON_WDTMR_ENABLE
 
-=== TSEC_SCP_CTL_ACCESS ===
+=== TSEC_SCP_CTL0 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -1563,13 +1563,13 @@ Controls accesses to the following registers:
 | Enable TSEC_SCP_INSN_STAT register
 |}
 
-=== TSEC_SCP_CTL_TRNG ===
+=== TSEC_SCP_CTL1 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 11
-| Unknown
+| Enable TRNG testing mode
 |-
 | 12
 | Enable the TRNG
@@ -1584,7 +1584,7 @@ Controls accesses to the following registers:
 | TSEC_SCP_CTL_STAT_DEBUG_MODE
 |}
 
-=== TSEC_SCP_CTL_MODE ===
+=== TSEC_SCP_CTL_LOCK ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -1614,7 +1614,7 @@ Controls accesses to the following registers:
 | Disable writes for the TEGRA register block
 |}
 
-Controls accesses to the other sub-engines and can only be cleared in Heavy Secure mode.
+Locks accesses to the other sub-engines and can only be cleared in Heavy Secure mode.
 
 === TSEC_SCP_CTL_PKEY ===
 {| class="wikitable" border="1"
@@ -1800,7 +1800,10 @@ Used for getting the value of the mask for crypto IRQs.
 | Crypto sequence was not finished
 |-
 | 16
-| Invalid cauth signature (during csigenc, csigclr or csigunk)
+| Invalid cauth signature (during csigenc, csigclr or csigauth)
+|-
+| 20
+| Wrong access level (during csigauth)
 |-
 | 24
 | Forbidden instruction

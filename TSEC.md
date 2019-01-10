@@ -140,10 +140,10 @@ interfaces).
 | [FALCON\_SPROT\_MTHD](#FALCON_SPROT_MTHD "wikilink")                    | 0x54501294 | 0x04  |
 | [FALCON\_SPROT\_SCTL](#FALCON_SPROT_SCTL "wikilink")                    | 0x54501298 | 0x04  |
 | [FALCON\_SPROT\_WDTMR](#FALCON_SPROT_WDTMR "wikilink")                  | 0x5450129C | 0x04  |
-| [TSEC\_SCP\_CTL\_ACCESS](#TSEC_SCP_CTL_ACCESS "wikilink")               | 0x54501400 | 0x04  |
-| [TSEC\_SCP\_CTL\_TRNG](#TSEC_SCP_CTL_TRNG "wikilink")                   | 0x54501404 | 0x04  |
+| [TSEC\_SCP\_CTL0](#TSEC_SCP_CTL0 "wikilink")                            | 0x54501400 | 0x04  |
+| [TSEC\_SCP\_CTL1](#TSEC_SCP_CTL1 "wikilink")                            | 0x54501404 | 0x04  |
 | [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")                   | 0x54501408 | 0x04  |
-| [TSEC\_SCP\_CTL\_MODE](#TSEC_SCP_CTL_MODE "wikilink")                   | 0x5450140C | 0x04  |
+| [TSEC\_SCP\_CTL\_LOCK](#TSEC_SCP_CTL_LOCK "wikilink")                   | 0x5450140C | 0x04  |
 | TSEC\_SCP\_UNK0                                                         | 0x54501410 | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")                   | 0x54501418 | 0x04  |
 | [TSEC\_SCP\_SEQ0\_STAT](#TSEC_SCP_SEQ0_STAT "wikilink")                 | 0x54501420 | 0x04  |
@@ -158,13 +158,13 @@ interfaces).
 | [TSEC\_SCP\_ERR](#TSEC_SCP_ERR "wikilink")                              | 0x54501498 | 0x04  |
 | TSEC\_TRNG\_CLKDIV                                                      | 0x54501500 | 0x04  |
 | TSEC\_TRNG\_UNK0                                                        | 0x54501504 | 0x04  |
-| TSEC\_TRNG\_UNK1                                                        | 0x5450150C | 0x04  |
-| TSEC\_TRNG\_UNK2                                                        | 0x54501510 | 0x04  |
-| TSEC\_TRNG\_UNK3                                                        | 0x54501514 | 0x04  |
-| TSEC\_TRNG\_UNK4                                                        | 0x54501518 | 0x04  |
-| TSEC\_TRNG\_UNK5                                                        | 0x5450151C | 0x04  |
-| TSEC\_TRNG\_UNK6                                                        | 0x54501528 | 0x04  |
-| TSEC\_TRNG\_UNK7                                                        | 0x5450152C | 0x04  |
+| TSEC\_TRNG\_TEST\_CTL                                                   | 0x5450150C | 0x04  |
+| TSEC\_TRNG\_TEST\_CFG0                                                  | 0x54501510 | 0x04  |
+| TSEC\_TRNG\_TEST\_SEED0                                                 | 0x54501514 | 0x04  |
+| TSEC\_TRNG\_TEST\_CFG1                                                  | 0x54501518 | 0x04  |
+| TSEC\_TRNG\_TEST\_SEED1                                                 | 0x5450151C | 0x04  |
+| TSEC\_TRNG\_UNK1                                                        | 0x54501528 | 0x04  |
+| TSEC\_TRNG\_UNK2                                                        | 0x5450152C | 0x04  |
 | TSEC\_TFBIF\_UNK0                                                       | 0x54501600 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL](#TSEC_TFBIF_MCCIF_FIFOCTRL "wikilink")   | 0x54501604 | 0x04  |
 | TSEC\_TFBIF\_UNK1                                                       | 0x54501608 | 0x04  |
@@ -730,18 +730,18 @@ Controls accesses to the following registers:
   - FALCON\_WDTMR\_TIME
   - FALCON\_WDTMR\_ENABLE
 
-### TSEC\_SCP\_CTL\_ACCESS
+### TSEC\_SCP\_CTL0
 
 | Bits | Description                           |
 | ---- | ------------------------------------- |
 | 20   | Enable TSEC\_SCP\_INSN\_STAT register |
 
-### TSEC\_SCP\_CTL\_TRNG
+### TSEC\_SCP\_CTL1
 
-| Bits | Description     |
-| ---- | --------------- |
-| 11   | Unknown         |
-| 12   | Enable the TRNG |
+| Bits | Description              |
+| ---- | ------------------------ |
+| 11   | Enable TRNG testing mode |
+| 12   | Enable the TRNG          |
 
 ### TSEC\_SCP\_CTL\_STAT
 
@@ -749,7 +749,7 @@ Controls accesses to the following registers:
 | ---- | --------------------------------- |
 | 20   | TSEC\_SCP\_CTL\_STAT\_DEBUG\_MODE |
 
-### TSEC\_SCP\_CTL\_MODE
+### TSEC\_SCP\_CTL\_LOCK
 
 | Bits | Description                                 |
 | ---- | ------------------------------------------- |
@@ -762,8 +762,8 @@ Controls accesses to the following registers:
 | 6    | Disable writes for the DMA register block   |
 | 7    | Disable writes for the TEGRA register block |
 
-Controls accesses to the other sub-engines and can only be cleared in
-Heavy Secure mode.
+Locks accesses to the other sub-engines and can only be cleared in Heavy
+Secure mode.
 
 ### TSEC\_SCP\_CTL\_PKEY
 
@@ -910,14 +910,15 @@ Used for getting the value of the mask for crypto IRQs.
 
 ### TSEC\_SCP\_ERR
 
-| Bits | Description                                                  |
-| ---- | ------------------------------------------------------------ |
-| 0    | Invalid instruction                                          |
-| 4    | Empty crypto sequence                                        |
-| 8    | Crypto sequence is too long                                  |
-| 12   | Crypto sequence was not finished                             |
-| 16   | Invalid cauth signature (during csigenc, csigclr or csigunk) |
-| 24   | Forbidden instruction                                        |
+| Bits | Description                                                   |
+| ---- | ------------------------------------------------------------- |
+| 0    | Invalid instruction                                           |
+| 4    | Empty crypto sequence                                         |
+| 8    | Crypto sequence is too long                                   |
+| 12   | Crypto sequence was not finished                              |
+| 16   | Invalid cauth signature (during csigenc, csigclr or csigauth) |
+| 20   | Wrong access level (during csigauth)                          |
+| 24   | Forbidden instruction                                         |
 
 Contains information on crypto errors generated by the
 [TSEC\_SCP\_IRQSTAT\_INSN\_ERROR](#TSEC_SCP_IRQSTAT "wikilink") IRQ.
