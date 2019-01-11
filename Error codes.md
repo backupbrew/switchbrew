@@ -573,7 +573,7 @@ titles:
 
 | Error     | Description                                                                                                                                                                                        |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2162-0002 | Can be triggered by running [svcBreak](SVC.md "wikilink"). The svcBreak params have no affect on the value of the thrown error-code.                                                               |
+| 2162-0002 | Can be triggered by running [svcBreak](SVC.md "wikilink"). The svcBreak params have no effect on the value of the thrown error-code.                                                               |
 | 2168-0000 | Userland ARM undefined instruction exception                                                                                                                                                       |
 | 2168-0001 | Userland ARM prefetch-abort due to PC set to non-executable region                                                                                                                                 |
 | 2168-0002 | Userland ARM data abort. Also caused by abnormal process termination via [svcExitProcess](SVC.md "wikilink"). Note: directly jumping to nnMain()-retaddr from non-main-thread has the same result. |

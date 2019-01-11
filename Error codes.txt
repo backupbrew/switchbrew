@@ -1097,7 +1097,7 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 ! Error || Description
 |-
 | 2162-0002
-| Can be triggered by running [[SVC|svcBreak]]. The svcBreak params have no affect on the value of the thrown error-code.
+| Can be triggered by running [[SVC|svcBreak]]. The svcBreak params have no effect on the value of the thrown error-code.
 |-
 | 2168-0000
 | Userland ARM undefined instruction exception
