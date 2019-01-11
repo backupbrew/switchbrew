@@ -1067,7 +1067,7 @@ transition.
 | 0x15   | dec       | $cX      | $cY      | `$cX = aes_dec(active_key_idx, $cY);`                               | `(ACL(active_key_idx) & 1) && (ACL(Y) & 2)` |
 | 0x16   | csigauth  | $cX      | $cY      | `if (hash_verify($cX, $cY)) { has_sig = true; current_sig = $cX; }` | ?                                           |
 | 0x17   | csigclr   | N/A      | N/A      | `has_sig = false;`                                                  |                                             |
-| 0x18   | csigenc   | $cX      | $cY      | `if (has_sig) $cX = aes_enc(current_sig, $cY);`                     | ?                                           |
+| 0x18   | csigenc   | $cX      | $cY      | `if (has_sig) $cX = aes_enc($cY, current_sig);`                     | ?                                           |
 
 #### csigauth
 

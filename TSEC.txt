@@ -2001,7 +2001,7 @@ Via [[#TSEC_SCP_SEQ0_STAT|TSEC_SCP_SEQ0_STAT]] it can be observed that a 3-sized
 |-
 | 0x17 || csigclr || N/A || N/A || <code>has_sig = false;</code> ||
 |-
-| 0x18 || csigenc || $cX || $cY || <code>if (has_sig) $cX = aes_enc(current_sig, $cY);</code> || ?
+| 0x18 || csigenc || $cX || $cY || <code>if (has_sig) $cX = aes_enc($cY, current_sig);</code> || ?
 |}
 
 ==== csigauth ====
