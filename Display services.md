@@ -321,8 +321,9 @@ output u64s. The floats are stored immediately after each other(32bits).
 
 ## GetIndirectLayerImageRequiredMemoryInfo
 
-Takes two input u64s: with and height. Returns two output u64s. First
-u64 is the buffer size to use with the ImageMap cmds.
+Takes two input u64s: width and height. Returns two output u64s. First
+u64 is the buffer size to use with the ImageMap cmds, second u64 is the
+buffer address alignment for those cmds.
 
 ## GetDisplayVsyncEvent
 
