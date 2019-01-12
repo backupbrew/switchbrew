@@ -104,9 +104,10 @@ available.
 
 ### Title managers
 
-| Name | Description | Author | Download | Open-Source | Last Updated |
-| ---- | ----------- | ------ | -------- | ----------- | ------------ |
-|      |             |        |          |             |              |
+| Name     | Description                                               | Author   | Download                                              | Open-Source                                 | Last Updated |
+| -------- | --------------------------------------------------------- | -------- | ----------------------------------------------------- | ------------------------------------------- | ------------ |
+| Goldleaf | Easy-to-use title installer & manager for Nintendo Switch | XorTroll | [Here](https://github.com/XorTroll/Goldleaf/releases) | [Yes](https://github.com/XorTroll/Goldleaf) | 2019-01-01   |
+|          |                                                           |          |                                                       |                                             |              |
 
 ### Save managers
 

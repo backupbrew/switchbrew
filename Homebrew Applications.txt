@@ -416,6 +416,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 !  width="5%"  | Open-Source
 !  width="15%" | Last Updated
 |-
+| Goldleaf
+| Easy-to-use title installer & manager for Nintendo Switch
+| XorTroll
+| [https://github.com/XorTroll/Goldleaf/releases Here]
+| [https://github.com/XorTroll/Goldleaf Yes]
+| 2019-01-01
+|-
 |}
 
 === Save managers===
