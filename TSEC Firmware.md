@@ -281,17 +281,17 @@ key.
 `// Read the key data from memory`  
 `u32 key_data_addr = 0x300;`  
 `u32 key_data_size = 0x7C;`  
-`read_code(key_data_buf, key_data_addr, key_data_size);`  
+`memcpy_i2d(key_data_buf, key_data_addr, key_data_size);`  
   
 `// Read the next code segment into boot base`  
 `u32 blob1_addr = 0x400;`  
 `u32 blob1_size = *(u32 *)(key_data_buf + 0x74);`  
-`read_code(boot_base_addr, blob1_addr, blob1_size);`  
+`memcpy_i2d(boot_base_addr, blob1_addr, blob1_size);`  
   
 `// Upload the next code segment into Falcon's CODE region`  
 `u32 blob1_virt_addr = 0x300;`  
 `bool use_secret = true;`  
-`upload_code(blob1_virt_addr, boot_base_addr, blob1_size, blob1_virt_addr, use_secret);`  
+`memcpy_d2i(blob1_virt_addr, boot_base_addr, blob1_size, blob1_virt_addr, use_secret);`  
   
 `u32 boot_res = 0;`  
 `bool is_done = false;`  
@@ -385,7 +385,7 @@ to
 `// Read the key data from memory`  
 `u32 key_data_addr = 0x300;`  
 `u32 key_data_size = 0x84;`  
-`read_code(key_data_buf, key_data_addr, key_data_size);`  
+`memcpy_i2d(key_data_buf, key_data_addr, key_data_size);`  
   
 `// Calculate the next blob's address`  
 `u32 blob4_size = *(u32 *)(key_data_buf + 0x80);`  
@@ -405,7 +405,7 @@ This method takes **key\_data\_buf** (a 16 bytes buffer) as argument and
 writes its contents to SOR1 registers.
 
 `// This is TSEC_MMIO + 0x1000 + (0x1C300 / 0x40)`  
-`*(u32 *)TSEC_DMA_UNK = 0xFFF;`  
+`*(u32 *)TSEC_DMA_CFG = 0xFFF;`  
   
 `// Read the key's words`  
 `u32 key0 = *(u32 *)(key_data_buf + 0x00);`  
@@ -496,7 +496,7 @@ co-processor and loading, decrypting, authenticating and executing
 `*(u8 *)flags_ie2 = 0;`  
   
 `// fuc5 crypt cxset instruction`  
-`// Clear overrides?`  
+`// Clear overrides`  
 `cxset(0x80);`  
   
 `// fuc5 crypt cauth instruction`  
@@ -576,7 +576,7 @@ co-processor and loading, decrypting, authenticating and executing
   
 `// Exit Authenticated Mode`  
 `// This is TSEC_MMIO + 0x1000 + (0x10300 / 0x40)`  
-`*(u32 *)TSEC_SCP_CTL_AUTH_MODE = 0;`  
+`*(u32 *)TSEC_SCP_CTL_LOCK = 0;`  
   
 `return;`
 
@@ -589,7 +589,7 @@ co-processor and loading, decrypting, authenticating and executing
 `u32 blob0_size = *(u32 *)(key_buf + 0x70); `  
   
 `// Load blob0 code again`  
-`read_code(boot_base_addr, blob0_addr, blob0_size);`  
+`memcpy_i2d(boot_base_addr, blob0_addr, blob0_size);`  
   
 `// Generate "CODE_SIG_01" key into c4 crypto register`  
 `gen_usr_key(0, 0);`  
@@ -603,10 +603,10 @@ co-processor and loading, decrypting, authenticating and executing
 `u32 iv_addr = sig_key;`  
 `u32 dst_addr = sig_key;`  
 `u32 mode = 0x02;   // AES-CMAC`  
-`u32 version = 0;`  
+`u32 use_imem = 0;`  
   
 `// Do AES-CMAC over blob0 code`  
-`do_crypto(src_addr, src_size, iv_addr, dst_addr, mode, version);`  
+`do_crypto(src_addr, src_size, iv_addr, dst_addr, mode, use_imem);`  
   
 `// Compare the hashes`  
 `if (memcmp(dst_addr, key_buf + 0x10, 0x10))`  
@@ -631,7 +631,7 @@ co-processor and loading, decrypting, authenticating and executing
 `      u32 blob2_addr = blob2_virt_addr + 0x100;`  
 `      `  
 `      // Read Keygen encrypted blob`  
-`      read_code(boot_base_addr, blob2_addr, blob2_size);`  
+`      memcpy_i2d(boot_base_addr, blob2_addr, blob2_size);`  
   
 `      // Generate "CODE_ENC_01" key into c4 crypt register`  
 `      gen_usr_key(0x01, 0x01);`  
@@ -641,14 +641,14 @@ co-processor and loading, decrypting, authenticating and executing
 `      u32 iv_addr = key_buf + 0x40;`  
 `      u32 dst_addr = boot_base_addr;`  
 `      u32 mode = 0;   // AES-128-ECB`  
-`      u32 version = 0;`  
+`      u32 use_imem = 0;`  
 `      `  
 `      // Decrypt Keygen blob`  
-`      do_crypto(src_addr, src_size, iv_addr, dst_addr, mode, version);`  
+`      do_crypto(src_addr, src_size, iv_addr, dst_addr, mode, use_imem);`  
 `      `  
 `      // Upload the next code segment into Falcon's CODE region`  
 `      bool use_secret = true;`  
-`      upload_code(blob2_virt_addr, boot_base_addr, blob2_size, blob2_virt_addr, use_secret);`  
+`      memcpy_d2i(blob2_virt_addr, boot_base_addr, blob2_size, blob2_virt_addr, use_secret);`  
   
 `      // Clear out the decrypted blob`  
 `      memset(boot_base_addr, 0, blob2_size);`  
@@ -1010,18 +1010,18 @@ execution returns to this stage which then parses and executes
 `// Read the key data from memory`  
 `u32 key_data_addr = 0x300;`  
 `u32 key_data_size = 0x84;`  
-`read_code(key_data_buf, key_data_addr, key_data_size);`  
+`memcpy_i2d(key_data_buf, key_data_addr, key_data_size);`  
   
 `// Read the KeygenLdr blob from memory`  
 `u32 boot_base_addr = 0;`  
 `u32 blob1_addr = 0x400;`  
 `u32 blob1_size = *(u32 *)(key_data_buf + 0x74);`  
-`read_code(boot_base_addr, blob1_addr, blob1_size);`  
+`memcpy_i2d(boot_base_addr, blob1_addr, blob1_size);`  
 ` `  
 `// Upload the next code segment into Falcon's CODE region`  
 `u32 blob1_virt_addr = 0x300;`  
 `bool use_secret = true;`  
-`upload_code(blob1_virt_addr, boot_base_addr, blob1_size, blob1_virt_addr, use_secret);`  
+`memcpy_d2i(blob1_virt_addr, boot_base_addr, blob1_size, blob1_virt_addr, use_secret);`  
   
 `// Backup the key data`  
 `memcpy(tmp_key_data_buf, key_data_buf, 0x84);`  
@@ -1076,7 +1076,7 @@ execution returns to this stage which then parses and executes
   
 `// Read the SecureBoot blob's Falcon header from memory`  
 `u32 blob4_flcn_hdr_addr = (((blob0_size + blob1_size) + 0x100) + blob2_size);`  
-`read_code(flcn_hdr_buf, blob4_flcn_hdr_addr, 0x18);`  
+`memcpy_i2d(flcn_hdr_buf, blob4_flcn_hdr_addr, 0x18);`  
   
 `blob1_size = *(u32 *)(key_data_buf + 0x74);`  
 `blob2_size = *(u32 *)(key_data_buf + 0x78);`  
@@ -1085,7 +1085,7 @@ execution returns to this stage which then parses and executes
   
 `// Read the SecureBoot blob's Falcon OS header from memory`  
 `u32 blob4_flcn_os_hdr_addr = ((((blob0_size + blob1_size) + 0x100) + blob2_size) + flcn_hdr_size);`  
-`read_code(flcn_os_hdr_buf, blob4_flcn_os_hdr_addr, 0x10);`  
+`memcpy_i2d(flcn_os_hdr_buf, blob4_flcn_os_hdr_addr, 0x10);`  
   
 `blob1_size = *(u32 *)(key_data_buf + 0x74);`  
 `blob2_size = *(u32 *)(key_data_buf + 0x78);`  
@@ -1095,13 +1095,13 @@ execution returns to this stage which then parses and executes
   
 `// Read the SecureBoot blob's Falcon OS image from memory`  
 `u32 blob4_flcn_os_addr = ((((blob0_size + blob1_size) + 0x100) + blob2_size) + flcn_code_hdr_size);`  
-`read_code(boot_base_addr, blob4_flcn_os_hdr_addr, flcn_os_size);`  
+`memcpy_i2d(boot_base_addr, blob4_flcn_os_hdr_addr, flcn_os_size);`  
   
 `// Upload the SecureBoot's Falcon OS image boot stub code segment into Falcon's CODE region`  
 `u32 blob4_flcn_os_boot_virt_addr = 0;`  
 `u32 blob4_flcn_os_boot_size = 0x100;`  
 `use_secret = false;`  
-`upload_code(blob4_flcn_os_boot_virt_addr, boot_base_addr, blob4_flcn_os_boot_size, blob4_flcn_os_boot_virt_addr, use_secret);`  
+`memcpy_d2i(blob4_flcn_os_boot_virt_addr, boot_base_addr, blob4_flcn_os_boot_size, blob4_flcn_os_boot_virt_addr, use_secret);`  
   
 `flcn_os_size = *(u32 *)(flcn_os_hdr_buf + 0x04); `  
   
@@ -1109,7 +1109,7 @@ execution returns to this stage which then parses and executes
 `u32 blob4_flcn_os_img_virt_addr = 0x100;`  
 `u32 blob4_flcn_os_img_size = (flcn_os_size - 0x100);`  
 `use_secret = true;`  
-`upload_code(blob4_flcn_os_img_virt_addr, boot_base_addr + 0x100, blob4_flcn_os_img_size, blob4_flcn_os_img_virt_addr, use_secret);`  
+`memcpy_d2i(blob4_flcn_os_img_virt_addr, boot_base_addr + 0x100, blob4_flcn_os_img_size, blob4_flcn_os_img_virt_addr, use_secret);`  
   
 `// Wait for all code loads to finish`  
 `xcwait();`  
@@ -1122,7 +1122,7 @@ execution returns to this stage which then parses and executes
   
 `// Read the SecureBoot blob's falcon OS image's hash from memory`  
 `u32 blob4_flcn_os_img_hash_addr = (((((blob0_size + blob1_size) + 0x100) + blob2_size) + flcn_code_hdr_size) + flcn_os_code_size);`  
-`read_code(0, blob4_flcn_os_img_hash_addr, 0x10);`  
+`memcpy_i2d(0, blob4_flcn_os_img_hash_addr, 0x10);`  
   
 `// Read data segment size from IO space`  
 `u32 data_seg_size = *(u32 *)UC_CAPS;`  
