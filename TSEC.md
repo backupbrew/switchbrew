@@ -54,6 +54,7 @@ interfaces).
 | FALCON\_TIME\_HIGH                                                      | 0x54501030 | 0x04  |
 | FALCON\_WDTMR\_TIME                                                     | 0x54501034 | 0x04  |
 | FALCON\_WDTMR\_ENABLE                                                   | 0x54501038 | 0x04  |
+| FALCON\_UNK\_3C                                                         | 0x5450103C | 0x04  |
 | [FALCON\_SCRATCH0](#FALCON_SCRATCH0 "wikilink")                         | 0x54501040 | 0x04  |
 | [FALCON\_SCRATCH1](#FALCON_SCRATCH1 "wikilink")                         | 0x54501044 | 0x04  |
 | [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")                               | 0x54501048 | 0x04  |
@@ -83,6 +84,10 @@ interfaces).
 | FALCON\_PM\_SEL                                                         | 0x545010A8 | 0x04  |
 | FALCON\_HOST\_IO\_INDEX                                                 | 0x545010AC | 0x04  |
 | [FALCON\_EXCI](#FALCON_EXCI "wikilink")                                 | 0x545010D0 | 0x04  |
+| FALCON\_UNK\_D4                                                         | 0x545010D4 | 0x04  |
+| FALCON\_UNK\_D8                                                         | 0x545010D8 | 0x04  |
+| FALCON\_UNK\_DC                                                         | 0x545010DC | 0x04  |
+| FALCON\_UNK\_E0                                                         | 0x545010E0 | 0x04  |
 | [FALCON\_CPUCTL](#FALCON_CPUCTL "wikilink")                             | 0x54501100 | 0x04  |
 | [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")                           | 0x54501104 | 0x04  |
 | [FALCON\_HWCFG](#FALCON_HWCFG "wikilink")                               | 0x54501108 | 0x04  |
@@ -132,6 +137,10 @@ interfaces).
 | FALCON\_ICD\_WDATA                                                      | 0x54501208 | 0x04  |
 | FALCON\_ICD\_RDATA                                                      | 0x5450120C | 0x04  |
 | [FALCON\_SCTL](#FALCON_SCTL "wikilink")                                 | 0x54501240 | 0x04  |
+| [FALCON\_SCTL\_STAT](#FALCON_SCTL_STAT "wikilink")                      | 0x54501244 | 0x04  |
+| FALCON\_UNK\_248                                                        | 0x54501248 | 0x04  |
+| FALCON\_UNK\_24C                                                        | 0x5450124C | 0x04  |
+| FALCON\_UNK\_250                                                        | 0x54501250 | 0x04  |
 | [FALCON\_SPROT\_IMEM](#FALCON_SPROT_IMEM "wikilink")                    | 0x54501280 | 0x04  |
 | [FALCON\_SPROT\_DMEM](#FALCON_SPROT_DMEM "wikilink")                    | 0x54501284 | 0x04  |
 | [FALCON\_SPROT\_CPUCTL](#FALCON_SPROT_CPUCTL "wikilink")                | 0x54501288 | 0x04  |
@@ -140,48 +149,50 @@ interfaces).
 | [FALCON\_SPROT\_MTHD](#FALCON_SPROT_MTHD "wikilink")                    | 0x54501294 | 0x04  |
 | [FALCON\_SPROT\_SCTL](#FALCON_SPROT_SCTL "wikilink")                    | 0x54501298 | 0x04  |
 | [FALCON\_SPROT\_WDTMR](#FALCON_SPROT_WDTMR "wikilink")                  | 0x5450129C | 0x04  |
+| FALCON\_UNK\_2E0                                                        | 0x545012E0 | 0x04  |
 | [TSEC\_SCP\_CTL0](#TSEC_SCP_CTL0 "wikilink")                            | 0x54501400 | 0x04  |
 | [TSEC\_SCP\_CTL1](#TSEC_SCP_CTL1 "wikilink")                            | 0x54501404 | 0x04  |
 | [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")                   | 0x54501408 | 0x04  |
 | [TSEC\_SCP\_CTL\_LOCK](#TSEC_SCP_CTL_LOCK "wikilink")                   | 0x5450140C | 0x04  |
-| TSEC\_SCP\_UNK0                                                         | 0x54501410 | 0x04  |
+| TSEC\_SCP\_UNK\_10                                                      | 0x54501410 | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")                   | 0x54501418 | 0x04  |
-| [TSEC\_SCP\_SEQ0\_STAT](#TSEC_SCP_SEQ0_STAT "wikilink")                 | 0x54501420 | 0x04  |
+| [TSEC\_SCP\_SEQ\_CTL](#TSEC_SCP_SEQ_CTL "wikilink")                     | 0x54501420 | 0x04  |
+| [TSEC\_SCP\_SEQ\_VAL](#TSEC_SCP_SEQ_VAL "wikilink")                     | 0x54501424 | 0x04  |
 | [TSEC\_SCP\_SEQ\_STAT](#TSEC_SCP_SEQ_STAT "wikilink")                   | 0x54501428 | 0x04  |
 | [TSEC\_SCP\_INSN\_STAT](#TSEC_SCP_INSN_STAT "wikilink")                 | 0x54501430 | 0x04  |
-| TSEC\_SCP\_UNK2                                                         | 0x54501454 | 0x04  |
+| [TSEC\_SCP\_AUTH\_STAT](#TSEC_SCP_AUTH_STAT "wikilink")                 | 0x54501454 | 0x04  |
 | [TSEC\_SCP\_AES\_STAT](#TSEC_SCP_AES_STAT "wikilink")                   | 0x54501458 | 0x04  |
-| TSEC\_SCP\_UNK3                                                         | 0x54501470 | 0x04  |
+| TSEC\_SCP\_UNK\_70                                                      | 0x54501470 | 0x04  |
 | [TSEC\_SCP\_IRQSTAT](#TSEC_SCP_IRQSTAT "wikilink")                      | 0x54501480 | 0x04  |
 | [TSEC\_SCP\_IRQMASK](#TSEC_SCP_IRQMASK "wikilink")                      | 0x54501484 | 0x04  |
-| TSEC\_SCP\_UNK4                                                         | 0x54501490 | 0x04  |
+| TSEC\_SCP\_RES                                                          | 0x54501490 | 0x04  |
 | [TSEC\_SCP\_ERR](#TSEC_SCP_ERR "wikilink")                              | 0x54501498 | 0x04  |
 | TSEC\_TRNG\_CLKDIV                                                      | 0x54501500 | 0x04  |
-| TSEC\_TRNG\_UNK0                                                        | 0x54501504 | 0x04  |
+| TSEC\_TRNG\_04                                                          | 0x54501504 | 0x04  |
 | TSEC\_TRNG\_TEST\_CTL                                                   | 0x5450150C | 0x04  |
 | TSEC\_TRNG\_TEST\_CFG0                                                  | 0x54501510 | 0x04  |
 | TSEC\_TRNG\_TEST\_SEED0                                                 | 0x54501514 | 0x04  |
 | TSEC\_TRNG\_TEST\_CFG1                                                  | 0x54501518 | 0x04  |
 | TSEC\_TRNG\_TEST\_SEED1                                                 | 0x5450151C | 0x04  |
-| TSEC\_TRNG\_UNK1                                                        | 0x54501528 | 0x04  |
-| TSEC\_TRNG\_UNK2                                                        | 0x5450152C | 0x04  |
-| TSEC\_TFBIF\_UNK0                                                       | 0x54501600 | 0x04  |
+| TSEC\_TRNG\_28                                                          | 0x54501528 | 0x04  |
+| TSEC\_TRNG\_2C                                                          | 0x5450152C | 0x04  |
+| TSEC\_TFBIF\_00                                                         | 0x54501600 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL](#TSEC_TFBIF_MCCIF_FIFOCTRL "wikilink")   | 0x54501604 | 0x04  |
-| TSEC\_TFBIF\_UNK1                                                       | 0x54501608 | 0x04  |
-| TSEC\_TFBIF\_UNK2                                                       | 0x5450160C | 0x04  |
-| TSEC\_TFBIF\_UNK3                                                       | 0x54501630 | 0x04  |
+| TSEC\_TFBIF\_08                                                         | 0x54501608 | 0x04  |
+| TSEC\_TFBIF\_0C                                                         | 0x5450160C | 0x04  |
+| TSEC\_TFBIF\_30                                                         | 0x54501630 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL1](#TSEC_TFBIF_MCCIF_FIFOCTRL1 "wikilink") | 0x54501634 | 0x04  |
-| TSEC\_TFBIF\_UNK4                                                       | 0x54501640 | 0x04  |
-| [TSEC\_TFBIF\_UNK5](#TSEC_TFBIF_UNK5 "wikilink")                        | 0x54501644 | 0x04  |
-| [TSEC\_TFBIF\_UNK6](#TSEC_TFBIF_UNK6 "wikilink")                        | 0x54501648 | 0x04  |
+| TSEC\_TFBIF\_40                                                         | 0x54501640 | 0x04  |
+| [TSEC\_TFBIF\_44](#TSEC_TFBIF_44 "wikilink")                            | 0x54501644 | 0x04  |
+| [TSEC\_TFBIF\_48](#TSEC_TFBIF_48 "wikilink")                            | 0x54501648 | 0x04  |
 | [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")                              | 0x54501700 | 0x04  |
 | [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")                            | 0x54501704 | 0x04  |
 | [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")                              | 0x54501708 | 0x04  |
-| [TSEC\_DMA\_UNK](#TSEC_DMA_UNK "wikilink")                              | 0x5450170C | 0x04  |
+| [TSEC\_DMA\_CFG](#TSEC_DMA_CFG "wikilink")                              | 0x5450170C | 0x04  |
 | TSEC\_TEGRA\_FALCON\_IP\_VER                                            | 0x54501800 | 0x04  |
-| TSEC\_TEGRA\_UNK0                                                       | 0x54501824 | 0x04  |
-| TSEC\_TEGRA\_UNK1                                                       | 0x54501828 | 0x04  |
-| TSEC\_TEGRA\_UNK2                                                       | 0x5450182C | 0x04  |
+| TSEC\_TEGRA\_24                                                         | 0x54501824 | 0x04  |
+| TSEC\_TEGRA\_28                                                         | 0x54501828 | 0x04  |
+| TSEC\_TEGRA\_2C                                                         | 0x5450182C | 0x04  |
 | [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")                          | 0x54501838 | 0x04  |
 
 ### TSEC\_THI\_METHOD0
@@ -622,6 +633,12 @@ Used for configuring DMA transfers.
 </tbody>
 </table>
 
+### FALCON\_SCTL\_STAT
+
+| Bits | Description                        |
+| ---- | ---------------------------------- |
+| 31   | Set on memory protection violation |
+
 ### FALCON\_SPROT\_IMEM
 
 | Bits | Description        |
@@ -772,12 +789,26 @@ Secure mode.
 | 0    | TSEC\_SCP\_CTL\_PKEY\_REQUEST\_RELOAD |
 | 1    | TSEC\_SCP\_CTL\_PKEY\_LOADED          |
 
-### TSEC\_SCP\_SEQ0\_STAT
+### TSEC\_SCP\_SEQ\_CTL
 
-| Bits | Description                    |
-| ---- | ------------------------------ |
-| 8-11 | Size of current cs0begin macro |
-|      |                                |
+| Bits | Description                  |
+| ---- | ---------------------------- |
+| 0-3  | Sequence's instruction index |
+| 4-7  | Target and control flags     |
+| 8-11 | Sequence's size              |
+
+Controls the last crypto sequence (cs0 or cs1) created.
+
+### TSEC\_SCP\_SEQ\_VAL
+
+| Bits  | Description                           |
+| ----- | ------------------------------------- |
+| 0-3   | Sequence instruction's first operand  |
+| 4-9   | Sequence instruction's second operand |
+| 10-14 | Sequence instruction's opcode         |
+
+Contains information on the last crypto sequence (cs0 or cs1)
+created.
 
 ### TSEC\_SCP\_SEQ\_STAT
 
@@ -801,15 +832,15 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 <tbody>
 <tr class="odd">
 <td><p>0-3</p></td>
-<td><p>Crypto fuc5 destination register or immediate value</p></td>
+<td><p>Destination register or immediate value</p></td>
 </tr>
 <tr class="even">
 <td><p>8-13</p></td>
-<td><p>Crypto fuc5 source register or immediate value</p></td>
+<td><p>Source register or immediate value</p></td>
 </tr>
 <tr class="odd">
 <td><p>20-24</p></td>
-<td><p>Crypto fuc5 operation</p>
+<td><p>Operation</p>
 <p><code>0x0:  nop (fuc5 opcode 0x00) </code><br />
 <code>0x1:  cmov (fuc5 opcode 0x84)</code><br />
 <code>0x2:  cxsin (fuc5 opcode 0x88) or xdst (with cxset)</code><br />
@@ -848,6 +879,14 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 </table>
 
 Contains information on the last crypto instruction executed.
+
+### TSEC\_SCP\_AUTH\_STAT
+
+| Bits | Description                                         |
+| ---- | --------------------------------------------------- |
+| 0-1  | Signature comparison result (3=succeeded, 2=failed) |
+
+Contains information on the last authentication attempt.
 
 ### TSEC\_SCP\_AES\_STAT
 
@@ -944,14 +983,14 @@ Contains information on crypto errors generated by the
 | 0-15  | TSEC\_TFBIF\_MCCIF\_FIFOCTRL1\_SRD2MC\_REORDER\_DEPTH\_LIMIT |
 | 16-31 | TSEC\_TFBIF\_MCCIF\_FIFOCTRL1\_SWR2MC\_REORDER\_DEPTH\_LIMIT |
 
-### TSEC\_TFBIF\_UNK5
+### TSEC\_TFBIF\_UNK\_44
 
 Used to control accesses to DRAM.
 
 \[6.0.0+\] The nvhost\_tsec firmware sets this register to 0x10 or
 0x111110 before reading memory from the GPU UCODE carveout.
 
-### TSEC\_TFBIF\_UNK6
+### TSEC\_TFBIF\_UNK\_48
 
 Used to control accesses to DRAM.
 
@@ -986,7 +1025,7 @@ clients).
 Takes the value for DMA transfers between TSEC and HOST1X (master and
 clients).
 
-### TSEC\_DMA\_UNK
+### TSEC\_DMA\_CFG
 
 Always 0xFFF.
 
@@ -1034,7 +1073,7 @@ $c6" while the opcodes in
 [TSEC\_SCP\_AES\_STAT](#TSEC_SCP_AES_STAT "wikilink") are set to "cxsin"
 and "csigauth", respectively.
 
-Via [TSEC\_SCP\_SEQ0\_STAT](#TSEC_SCP_SEQ0_STAT "wikilink") it can be
+Via [TSEC\_SCP\_SEQ\_CTL](#TSEC_SCP_SEQ_CTL "wikilink") it can be
 observed that a 3-sized macro sequence is loaded into cs0 during a
 secure mode
 transition.
@@ -1102,8 +1141,8 @@ Executing this instruction only succeeds if the TRNG is enabled for the
 SCP, which requires taking the following steps:
 
   - Write 0x7FFF to TSEC\_TRNG\_CLKDIV.
-  - Write 0x3FF0000 to TSEC\_TRNG\_UNK0.
-  - Write 0xFF00 to TSEC\_TRNG\_UNK2.
+  - Write 0x3FF0000 to TSEC\_TRNG\_UNK\_00.
+  - Write 0xFF00 to TSEC\_TRNG\_UNK\_2C.
   - Write 0x1000 to [TSEC\_SCP\_CTL1](#TSEC_SCP_CTL1 "wikilink").
 
 Otherwise it hangs
@@ -1139,8 +1178,8 @@ $cauth is a special purpose register in the CPU.
 | ----- | ------------------------------------------------ |
 | 0-7   | Start of region to authenticate (in 0x100 pages) |
 | 8-15  | Unknown                                          |
-| 16    | Use secret xfers (?)                             |
-| 17    | Region is encrypted (?)                          |
+| 16    | Use secret xfers                                 |
+| 17    | Region is encrypted                              |
 | 18    | Unknown                                          |
 | 19    | Unknown                                          |
 | 20-23 | Unknown                                          |
@@ -1182,69 +1221,75 @@ burned at factory. These keys can be loaded by using the $csecret
 instruction which takes the target crypto register and the key index as
 arguments.
 
-| Index | ACL  | Console-unique | Notes                                                                                                                                                                            |
-| ----- | ---- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x00  | 0x13 | No             | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. |
-| 0x01  | 0x10 | No             | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                                                                     |
-| 0x02  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x03  | 0x11 | No             | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
-| 0x04  | 0x10 | No             | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
-| 0x05  | 0x13 | No             | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.                                                         |
-| 0x06  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x07  | 0x11 | No             | Used by \[6.0.0+\] nvhost\_tsec firmware.                                                                                                                                        |
-| 0x08  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x09  | 0x13 | No             | Used by nvhost\_tsec firmware.                                                                                                                                                   |
-| 0x0A  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x0B  | 0x10 | No             | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
-| 0x0C  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x0D  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x0E  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x0F  | 0x13 | No             | Used by nvhost\_tsec firmware.                                                                                                                                                   |
-| 0x10  | 0x11 | No             | Used by \[1.0.0-5.1.0\] nvhost\_tsec firmware.                                                                                                                                   |
-| 0x11  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x12  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x13  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x14  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x15  | 0x13 | No             | Used by nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod, \[5.0.0+\] nvhost\_nvdec020\_ns and \[6.0.0+\] nvhost\_tsec firmwares.                                    |
-| 0x16  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x17  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x18  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x19  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x1A  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x1B  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x1C  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x1D  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x1E  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x1F  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x20  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x21  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x22  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x23  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x24  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x25  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x26  | 0x10 | No             | Used by [KeygenLdr](TSEC%20Firmware#KeygenLdr.md##KeygenLdr "wikilink").                                                                                                         |
-| 0x27  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x28  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x29  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x2A  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x2B  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x2C  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x2D  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x2E  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x2F  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x30  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x31  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x32  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x33  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x34  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x35  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x36  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x37  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x38  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x39  | 0x13 | No             |                                                                                                                                                                                  |
-| 0x3A  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x3B  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x3C  | 0x13 | No             | Used by nvhost\_tsec firmware.                                                                                                                                                   |
-| 0x3D  | 0x11 | No             |                                                                                                                                                                                  |
-| 0x3E  | 0x10 | No             |                                                                                                                                                                                  |
-| 0x3F  | 0x10 | Yes            | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                         |
+All secrets appear to be common across Falcon units of the same version,
+with the exception of secret 0x3F. This secret is effectively empty (all
+zeros), but is configured to be overwritten with the KFUSE private key
+once the KFUSE clock is enabled. The KFUSE private key is
+console-unique.
+
+| Index | ACL  | Notes                                                                                                                                                                            |
+| ----- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x00  | 0x13 | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares. |
+| 0x01  | 0x10 | Used by nvhost\_nvdec\_bl020\_prod firmware.                                                                                                                                     |
+| 0x02  | 0x10 |                                                                                                                                                                                  |
+| 0x03  | 0x11 | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
+| 0x04  | 0x10 | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
+| 0x05  | 0x13 | Used by nvhost\_tsec, nvhost\_nvdec\_bl020\_prod, nvhost\_nvdec020\_prod, nvhost\_nvdec020\_ns and acr\_ucode firmwares.                                                         |
+| 0x06  | 0x11 |                                                                                                                                                                                  |
+| 0x07  | 0x11 | Used by \[6.0.0+\] nvhost\_tsec firmware.                                                                                                                                        |
+| 0x08  | 0x10 |                                                                                                                                                                                  |
+| 0x09  | 0x13 | Used by nvhost\_tsec firmware.                                                                                                                                                   |
+| 0x0A  | 0x11 |                                                                                                                                                                                  |
+| 0x0B  | 0x10 | Used by nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                                                                                 |
+| 0x0C  | 0x13 |                                                                                                                                                                                  |
+| 0x0D  | 0x11 |                                                                                                                                                                                  |
+| 0x0E  | 0x10 |                                                                                                                                                                                  |
+| 0x0F  | 0x13 | Used by nvhost\_tsec firmware.                                                                                                                                                   |
+| 0x10  | 0x11 | Used by \[1.0.0-5.1.0\] nvhost\_tsec firmware.                                                                                                                                   |
+| 0x11  | 0x10 |                                                                                                                                                                                  |
+| 0x12  | 0x13 |                                                                                                                                                                                  |
+| 0x13  | 0x11 |                                                                                                                                                                                  |
+| 0x14  | 0x10 |                                                                                                                                                                                  |
+| 0x15  | 0x13 | Used by nvhost\_nvdec\_bl020\_prod, \[5.0.0+\] nvhost\_nvdec020\_prod, \[5.0.0+\] nvhost\_nvdec020\_ns and \[6.0.0+\] nvhost\_tsec firmwares.                                    |
+| 0x16  | 0x11 |                                                                                                                                                                                  |
+| 0x17  | 0x10 |                                                                                                                                                                                  |
+| 0x18  | 0x13 |                                                                                                                                                                                  |
+| 0x19  | 0x11 |                                                                                                                                                                                  |
+| 0x1A  | 0x10 |                                                                                                                                                                                  |
+| 0x1B  | 0x13 |                                                                                                                                                                                  |
+| 0x1C  | 0x11 |                                                                                                                                                                                  |
+| 0x1D  | 0x10 |                                                                                                                                                                                  |
+| 0x1E  | 0x13 |                                                                                                                                                                                  |
+| 0x1F  | 0x11 |                                                                                                                                                                                  |
+| 0x20  | 0x10 |                                                                                                                                                                                  |
+| 0x21  | 0x13 |                                                                                                                                                                                  |
+| 0x22  | 0x11 |                                                                                                                                                                                  |
+| 0x23  | 0x10 |                                                                                                                                                                                  |
+| 0x24  | 0x13 |                                                                                                                                                                                  |
+| 0x25  | 0x11 |                                                                                                                                                                                  |
+| 0x26  | 0x10 | Used by [KeygenLdr](TSEC%20Firmware#KeygenLdr.md##KeygenLdr "wikilink") and [SecureBoot](TSEC%20Firmware#SecureBoot.md##SecureBoot "wikilink")                                   |
+| 0x27  | 0x13 |                                                                                                                                                                                  |
+| 0x28  | 0x11 |                                                                                                                                                                                  |
+| 0x29  | 0x10 |                                                                                                                                                                                  |
+| 0x2A  | 0x13 |                                                                                                                                                                                  |
+| 0x2B  | 0x11 |                                                                                                                                                                                  |
+| 0x2C  | 0x10 |                                                                                                                                                                                  |
+| 0x2D  | 0x13 |                                                                                                                                                                                  |
+| 0x2E  | 0x11 |                                                                                                                                                                                  |
+| 0x2F  | 0x10 |                                                                                                                                                                                  |
+| 0x30  | 0x13 |                                                                                                                                                                                  |
+| 0x31  | 0x11 |                                                                                                                                                                                  |
+| 0x32  | 0x10 |                                                                                                                                                                                  |
+| 0x33  | 0x13 |                                                                                                                                                                                  |
+| 0x34  | 0x11 |                                                                                                                                                                                  |
+| 0x35  | 0x10 |                                                                                                                                                                                  |
+| 0x36  | 0x13 |                                                                                                                                                                                  |
+| 0x37  | 0x11 |                                                                                                                                                                                  |
+| 0x38  | 0x10 |                                                                                                                                                                                  |
+| 0x39  | 0x13 |                                                                                                                                                                                  |
+| 0x3A  | 0x11 |                                                                                                                                                                                  |
+| 0x3B  | 0x10 |                                                                                                                                                                                  |
+| 0x3C  | 0x13 | Used by nvhost\_tsec firmware.                                                                                                                                                   |
+| 0x3D  | 0x11 |                                                                                                                                                                                  |
+| 0x3E  | 0x10 |                                                                                                                                                                                  |
+| 0x3F  | 0x10 | Used by [Keygen](TSEC%20Firmware#Keygen.md##Keygen "wikilink"), nvhost\_tsec, nvhost\_nvdec020\_prod and nvhost\_nvdec020\_ns firmwares.                                         |

@@ -130,6 +130,10 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501038
 | 0x04
 |-
+| FALCON_UNK_3C
+| 0x5450103C
+| 0x04
+|-
 | [[#FALCON_SCRATCH0|FALCON_SCRATCH0]]
 | 0x54501040
 | 0x04
@@ -244,6 +248,22 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 |-
 | [[#FALCON_EXCI|FALCON_EXCI]]
 | 0x545010D0
+| 0x04
+|-
+| FALCON_UNK_D4
+| 0x545010D4
+| 0x04
+|-
+| FALCON_UNK_D8
+| 0x545010D8
+| 0x04
+|-
+| FALCON_UNK_DC
+| 0x545010DC
+| 0x04
+|-
+| FALCON_UNK_E0
+| 0x545010E0
 | 0x04
 |-
 | [[#FALCON_CPUCTL|FALCON_CPUCTL]]
@@ -442,6 +462,22 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501240
 | 0x04
 |-
+| [[#FALCON_SCTL_STAT|FALCON_SCTL_STAT]]
+| 0x54501244
+| 0x04
+|-
+| FALCON_UNK_248
+| 0x54501248
+| 0x04
+|-
+| FALCON_UNK_24C
+| 0x5450124C
+| 0x04
+|-
+| FALCON_UNK_250
+| 0x54501250
+| 0x04
+|-
 | [[#FALCON_SPROT_IMEM|FALCON_SPROT_IMEM]]
 | 0x54501280
 | 0x04
@@ -474,6 +510,10 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450129C
 | 0x04
 |-
+| FALCON_UNK_2E0
+| 0x545012E0
+| 0x04
+|-
 | [[#TSEC_SCP_CTL0|TSEC_SCP_CTL0]]
 | 0x54501400
 | 0x04
@@ -490,7 +530,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450140C
 | 0x04
 |-
-| TSEC_SCP_UNK0
+| TSEC_SCP_UNK_10
 | 0x54501410
 | 0x04
 |-
@@ -498,8 +538,12 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501418
 | 0x04
 |-
-| [[#TSEC_SCP_SEQ0_STAT|TSEC_SCP_SEQ0_STAT]]
+| [[#TSEC_SCP_SEQ_CTL|TSEC_SCP_SEQ_CTL]]
 | 0x54501420
+| 0x04
+|-
+| [[#TSEC_SCP_SEQ_VAL|TSEC_SCP_SEQ_VAL]]
+| 0x54501424
 | 0x04
 |-
 | [[#TSEC_SCP_SEQ_STAT|TSEC_SCP_SEQ_STAT]]
@@ -510,7 +554,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501430
 | 0x04
 |-
-| TSEC_SCP_UNK2
+| [[#TSEC_SCP_AUTH_STAT|TSEC_SCP_AUTH_STAT]]
 | 0x54501454
 | 0x04
 |-
@@ -518,7 +562,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501458
 | 0x04
 |-
-| TSEC_SCP_UNK3
+| TSEC_SCP_UNK_70
 | 0x54501470
 | 0x04
 |-
@@ -530,7 +574,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501484
 | 0x04
 |-
-| TSEC_SCP_UNK4
+| TSEC_SCP_RES
 | 0x54501490
 | 0x04
 |-
@@ -542,7 +586,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501500
 | 0x04
 |-
-| TSEC_TRNG_UNK0
+| TSEC_TRNG_04
 | 0x54501504
 | 0x04
 |-
@@ -566,15 +610,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450151C
 | 0x04
 |-
-| TSEC_TRNG_UNK1
+| TSEC_TRNG_28
 | 0x54501528
 | 0x04
 |-
-| TSEC_TRNG_UNK2
+| TSEC_TRNG_2C
 | 0x5450152C
 | 0x04
 |-
-| TSEC_TFBIF_UNK0
+| TSEC_TFBIF_00
 | 0x54501600
 | 0x04
 |-
@@ -582,15 +626,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501604
 | 0x04
 |-
-| TSEC_TFBIF_UNK1
+| TSEC_TFBIF_08
 | 0x54501608
 | 0x04
 |-
-| TSEC_TFBIF_UNK2
+| TSEC_TFBIF_0C
 | 0x5450160C
 | 0x04
 |-
-| TSEC_TFBIF_UNK3
+| TSEC_TFBIF_30
 | 0x54501630
 | 0x04
 |-
@@ -598,15 +642,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501634
 | 0x04
 |-
-| TSEC_TFBIF_UNK4
+| TSEC_TFBIF_40
 | 0x54501640
 | 0x04
 |-
-| [[#TSEC_TFBIF_UNK5|TSEC_TFBIF_UNK5]]
+| [[#TSEC_TFBIF_44|TSEC_TFBIF_44]]
 | 0x54501644
 | 0x04
 |-
-| [[#TSEC_TFBIF_UNK6|TSEC_TFBIF_UNK6]]
+| [[#TSEC_TFBIF_48|TSEC_TFBIF_48]]
 | 0x54501648
 | 0x04
 |-
@@ -622,7 +666,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501708
 | 0x04
 |-
-| [[#TSEC_DMA_UNK|TSEC_DMA_UNK]]
+| [[#TSEC_DMA_CFG|TSEC_DMA_CFG]]
 | 0x5450170C
 | 0x04
 |-
@@ -630,15 +674,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501800
 | 0x04
 |-
-| TSEC_TEGRA_UNK0
+| TSEC_TEGRA_24
 | 0x54501824
 | 0x04
 |-
-| TSEC_TEGRA_UNK1
+| TSEC_TEGRA_28
 | 0x54501828
 | 0x04
 |-
-| TSEC_TEGRA_UNK2
+| TSEC_TEGRA_2C
 | 0x5450182C
 | 0x04
 |-
@@ -1412,6 +1456,15 @@ Used for configuring DMA transfers.
 | Initialize the transition to LS mode
 |}
 
+=== FALCON_SCTL_STAT ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 31
+| Set on memory protection violation
+|}
+
 === FALCON_SPROT_IMEM ===
 {| class="wikitable" border="1"
 !  Bits
@@ -1628,15 +1681,39 @@ Locks accesses to the other sub-engines and can only be cleared in Heavy Secure 
 | TSEC_SCP_CTL_PKEY_LOADED
 |}
 
-=== TSEC_SCP_SEQ0_STAT ===
+=== TSEC_SCP_SEQ_CTL ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
-| 8-11
-| Size of current cs0begin macro
+| 0-3
+| Sequence's instruction index
 |-
+| 4-7
+| Target and control flags
+|-
+| 8-11
+| Sequence's size
 |}
+
+Controls the last crypto sequence (cs0 or cs1) created.
+
+=== TSEC_SCP_SEQ_VAL ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| Sequence instruction's first operand
+|-
+| 4-9
+| Sequence instruction's second operand
+|-
+| 10-14
+| Sequence instruction's opcode
+|}
+
+Contains information on the last crypto sequence (cs0 or cs1) created.
 
 === TSEC_SCP_SEQ_STAT ===
 {| class="wikitable" border="1"
@@ -1661,13 +1738,13 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 !  Description
 |-
 | 0-3
-| Crypto fuc5 destination register or immediate value
+| Destination register or immediate value
 |-
 | 8-13
-| Crypto fuc5 source register or immediate value
+| Source register or immediate value
 |-
 | 20-24
-| Crypto fuc5 operation
+| Operation
  0x0:  nop (fuc5 opcode 0x00) 
  0x1:  cmov (fuc5 opcode 0x84)
  0x2:  cxsin (fuc5 opcode 0x88) or xdst (with cxset)
@@ -1702,6 +1779,17 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 |}
 
 Contains information on the last crypto instruction executed.
+
+=== TSEC_SCP_AUTH_STAT ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-1
+| Signature comparison result (3=succeeded, 2=failed)
+|}
+
+Contains information on the last authentication attempt.
 
 === TSEC_SCP_AES_STAT ===
 {| class="wikitable" border="1"
@@ -1856,12 +1944,12 @@ Contains information on crypto errors generated by the [[#TSEC_SCP_IRQSTAT|TSEC_
 | TSEC_TFBIF_MCCIF_FIFOCTRL1_SWR2MC_REORDER_DEPTH_LIMIT
 |}
 
-=== TSEC_TFBIF_UNK5 ===
+=== TSEC_TFBIF_UNK_44 ===
 Used to control accesses to DRAM.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to 0x10 or 0x111110 before reading memory from the GPU UCODE carveout.
 
-=== TSEC_TFBIF_UNK6 ===
+=== TSEC_TFBIF_UNK_48 ===
 Used to control accesses to DRAM.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to (data_size << 4) before reading memory from the GPU UCODE carveout.
@@ -1902,7 +1990,7 @@ Takes the address for DMA transfers between TSEC and HOST1X (master and clients)
 === TSEC_DMA_VAL ===
 Takes the value for DMA transfers between TSEC and HOST1X (master and clients).
 
-=== TSEC_DMA_UNK ===
+=== TSEC_DMA_CFG ===
 Always 0xFFF.
 
 === TSEC_TEGRA_CTL ===
@@ -1942,7 +2030,7 @@ The CPU automatically goes back to non-secure mode when returning back into non-
 ==== Implementation ====
 Under certain circumstances, it is possible to observe [[#csigauth|csigauth]] being briefly written to [[#TSEC_SCP_INSN_STAT|TSEC_SCP_INSN_STAT]] as "csigauth $c4 $c6" while the opcodes in [[#TSEC_SCP_AES_STAT|TSEC_SCP_AES_STAT]] are set to "cxsin" and "csigauth", respectively.
 
-Via [[#TSEC_SCP_SEQ0_STAT|TSEC_SCP_SEQ0_STAT]] it can be observed that a 3-sized macro sequence is loaded into cs0 during a secure mode transition.
+Via [[#TSEC_SCP_SEQ_CTL|TSEC_SCP_SEQ_CTL]] it can be observed that a 3-sized macro sequence is loaded into cs0 during a secure mode transition.
 
 === Operations ===
 {| class="wikitable" border="1"
@@ -2026,8 +2114,8 @@ This instruction initializes a crypto register with random data.
 
 Executing this instruction only succeeds if the TRNG is enabled for the SCP, which requires taking the following steps:
 * Write 0x7FFF to TSEC_TRNG_CLKDIV.
-* Write 0x3FF0000 to TSEC_TRNG_UNK0.
-* Write 0xFF00 to TSEC_TRNG_UNK2.
+* Write 0x3FF0000 to TSEC_TRNG_UNK_00.
+* Write 0xFF00 to TSEC_TRNG_UNK_2C.
 * Write 0x1000 to [[#TSEC_SCP_CTL1|TSEC_SCP_CTL1]].
 
 Otherwise it hangs forever.
@@ -2068,9 +2156,9 @@ $cauth is a special purpose register in the CPU.
 |-
 | 8-15 || Unknown
 |-
-| 16 || Use secret xfers (?)
+| 16 || Use secret xfers
 |-
-| 17 || Region is encrypted (?)
+| 17 || Region is encrypted
 |-
 | 18 || Unknown
 |-
@@ -2110,134 +2198,136 @@ For example, if override type=0b000, then the "length" argument to <code>xdst</c
 === Secrets ===
 Falcon's Authenticated Mode has access to 64 128-bit keys which are burned at factory. These keys can be loaded by using the $csecret instruction which takes the target crypto register and the key index as arguments.
 
+All secrets appear to be common across Falcon units of the same version, with the exception of secret 0x3F. This secret is effectively empty (all zeros), but is configured to be overwritten with the KFUSE private key once the KFUSE clock is enabled. The KFUSE private key is console-unique.
+
 {| class=wikitable
-! Index || ACL || Console-unique || Notes 
+! Index || ACL || Notes 
 |-
-| 0x00 || 0x13 || No || Used by [[TSEC_Firmware#Keygen|Keygen]], nvhost_tsec, nvhost_nvdec_bl020_prod, nvhost_nvdec020_prod, nvhost_nvdec020_ns and acr_ucode firmwares.
+| 0x00 || 0x13 || Used by [[TSEC_Firmware#Keygen|Keygen]], nvhost_tsec, nvhost_nvdec_bl020_prod, nvhost_nvdec020_prod, nvhost_nvdec020_ns and acr_ucode firmwares.
 |-
-| 0x01 || 0x10 || No || Used by nvhost_nvdec_bl020_prod firmware.
+| 0x01 || 0x10 || Used by nvhost_nvdec_bl020_prod firmware.
 |-
-| 0x02 || 0x10 || No ||
+| 0x02 || 0x10 ||
 |-
-| 0x03 || 0x11 || No || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
+| 0x03 || 0x11 || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
 |-
-| 0x04 || 0x10 || No || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
+| 0x04 || 0x10 || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
 |-
-| 0x05 || 0x13 || No || Used by nvhost_tsec, nvhost_nvdec_bl020_prod, nvhost_nvdec020_prod, nvhost_nvdec020_ns and acr_ucode firmwares.
+| 0x05 || 0x13 || Used by nvhost_tsec, nvhost_nvdec_bl020_prod, nvhost_nvdec020_prod, nvhost_nvdec020_ns and acr_ucode firmwares.
 |-
-| 0x06 || 0x11 || No ||
+| 0x06 || 0x11 ||
 |-
-| 0x07 || 0x11 || No || Used by [6.0.0+] nvhost_tsec firmware.
+| 0x07 || 0x11 || Used by [6.0.0+] nvhost_tsec firmware.
 |-
-| 0x08 || 0x10 || No ||
+| 0x08 || 0x10 ||
 |-
-| 0x09 || 0x13 || No || Used by nvhost_tsec firmware.
+| 0x09 || 0x13 || Used by nvhost_tsec firmware.
 |-
-| 0x0A || 0x11 || No ||
+| 0x0A || 0x11 ||
 |-
-| 0x0B || 0x10 || No || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
+| 0x0B || 0x10 || Used by nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
 |-
-| 0x0C || 0x13 || No ||
+| 0x0C || 0x13 ||
 |-
-| 0x0D || 0x11 || No ||
+| 0x0D || 0x11 ||
 |-
-| 0x0E || 0x10 || No ||
+| 0x0E || 0x10 ||
 |-
-| 0x0F || 0x13 || No || Used by nvhost_tsec firmware.
+| 0x0F || 0x13 || Used by nvhost_tsec firmware.
 |-
-| 0x10 || 0x11 || No || Used by [1.0.0-5.1.0] nvhost_tsec firmware.
+| 0x10 || 0x11 || Used by [1.0.0-5.1.0] nvhost_tsec firmware.
 |-
-| 0x11 || 0x10 || No ||
+| 0x11 || 0x10 ||
 |-
-| 0x12 || 0x13 || No ||
+| 0x12 || 0x13 ||
 |-
-| 0x13 || 0x11 || No ||
+| 0x13 || 0x11 ||
 |-
-| 0x14 || 0x10 || No ||
+| 0x14 || 0x10 ||
 |-
-| 0x15 || 0x13 || No || Used by nvhost_nvdec_bl020_prod, [5.0.0+] nvhost_nvdec020_prod, [5.0.0+] nvhost_nvdec020_ns and [6.0.0+] nvhost_tsec firmwares.
+| 0x15 || 0x13 || Used by nvhost_nvdec_bl020_prod, [5.0.0+] nvhost_nvdec020_prod, [5.0.0+] nvhost_nvdec020_ns and [6.0.0+] nvhost_tsec firmwares.
 |-
-| 0x16 || 0x11 || No ||
+| 0x16 || 0x11 ||
 |-
-| 0x17 || 0x10 || No ||
+| 0x17 || 0x10 ||
 |-
-| 0x18 || 0x13 || No ||
+| 0x18 || 0x13 ||
 |-
-| 0x19 || 0x11 || No ||
+| 0x19 || 0x11 ||
 |-
-| 0x1A || 0x10 || No ||
+| 0x1A || 0x10 ||
 |-
-| 0x1B || 0x13 || No ||
+| 0x1B || 0x13 ||
 |-
-| 0x1C || 0x11 || No ||
+| 0x1C || 0x11 ||
 |-
-| 0x1D || 0x10 || No ||
+| 0x1D || 0x10 ||
 |-
-| 0x1E || 0x13 || No ||
+| 0x1E || 0x13 ||
 |-
-| 0x1F || 0x11 || No ||
+| 0x1F || 0x11 ||
 |-
-| 0x20 || 0x10 || No ||
+| 0x20 || 0x10 ||
 |-
-| 0x21 || 0x13 || No ||
+| 0x21 || 0x13 ||
 |-
-| 0x22 || 0x11 || No ||
+| 0x22 || 0x11 ||
 |-
-| 0x23 || 0x10 || No ||
+| 0x23 || 0x10 ||
 |-
-| 0x24 || 0x13 || No ||
+| 0x24 || 0x13 ||
 |-
-| 0x25 || 0x11 || No ||
+| 0x25 || 0x11 ||
 |-
-| 0x26 || 0x10 || No || Used by [[TSEC_Firmware#KeygenLdr|KeygenLdr]].
+| 0x26 || 0x10 || Used by [[TSEC_Firmware#KeygenLdr|KeygenLdr]] and [[TSEC_Firmware#SecureBoot|SecureBoot]]
 |-
-| 0x27 || 0x13 || No ||
+| 0x27 || 0x13 ||
 |-
-| 0x28 || 0x11 || No ||
+| 0x28 || 0x11 ||
 |-
-| 0x29 || 0x10 || No ||
+| 0x29 || 0x10 ||
 |-
-| 0x2A || 0x13 || No ||
+| 0x2A || 0x13 ||
 |-
-| 0x2B || 0x11 || No ||
+| 0x2B || 0x11 ||
 |-
-| 0x2C || 0x10 || No ||
+| 0x2C || 0x10 ||
 |-
-| 0x2D || 0x13 || No ||
+| 0x2D || 0x13 ||
 |-
-| 0x2E || 0x11 || No ||
+| 0x2E || 0x11 ||
 |-
-| 0x2F || 0x10 || No ||
+| 0x2F || 0x10 ||
 |-
-| 0x30 || 0x13 || No ||
+| 0x30 || 0x13 ||
 |-
-| 0x31 || 0x11 || No ||
+| 0x31 || 0x11 ||
 |-
-| 0x32 || 0x10 || No ||
+| 0x32 || 0x10 ||
 |-
-| 0x33 || 0x13 || No ||
+| 0x33 || 0x13 ||
 |-
-| 0x34 || 0x11 || No ||
+| 0x34 || 0x11 ||
 |-
-| 0x35 || 0x10 || No ||
+| 0x35 || 0x10 ||
 |-
-| 0x36 || 0x13 || No ||
+| 0x36 || 0x13 ||
 |-
-| 0x37 || 0x11 || No ||
+| 0x37 || 0x11 ||
 |-
-| 0x38 || 0x10 || No ||
+| 0x38 || 0x10 ||
 |-
-| 0x39 || 0x13 || No ||
+| 0x39 || 0x13 ||
 |-
-| 0x3A || 0x11 || No ||
+| 0x3A || 0x11 ||
 |-
-| 0x3B || 0x10 || No ||
+| 0x3B || 0x10 ||
 |-
-| 0x3C || 0x13 || No || Used by nvhost_tsec firmware.
+| 0x3C || 0x13 || Used by nvhost_tsec firmware.
 |-
-| 0x3D || 0x11 || No ||
+| 0x3D || 0x11 ||
 |-
-| 0x3E || 0x10 || No ||
+| 0x3E || 0x10 ||
 |-
-| 0x3F || 0x10 || Yes || Used by [[TSEC_Firmware#Keygen|Keygen]], nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
+| 0x3F || 0x10 || Used by [[TSEC_Firmware#Keygen|Keygen]], nvhost_tsec, nvhost_nvdec020_prod and nvhost_nvdec020_ns firmwares.
 |}
