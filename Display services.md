@@ -313,6 +313,10 @@ GetIndirectLayerConsumerHandle\>, and
 [AppletResourceUserId](AM%20services.md "wikilink"). Returns two output
 u64s.
 
+Calls the same func as
+[\#GetIndirectLayerImageCropMap](#GetIndirectLayerImageCropMap "wikilink")
+internally, with the input floats set to 0.0f, then 1.0f for the rest.
+
 ## GetIndirectLayerImageCropMap
 
 Takes a PID-descriptor, an type-0x46 buffer, four floats, four u64s(last
