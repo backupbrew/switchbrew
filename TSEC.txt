@@ -2101,15 +2101,15 @@ Via [[#TSEC_SCP_SEQ_CTL|TSEC_SCP_SEQ_CTL]] it can be observed that a 3-sized mac
 |-
 | 0x13 || krexp || $cX || $cY || <code>$cX = aes_kexp_reverse($cY); ACL(X) = ACL(Y);</code> ||
 |-
-| 0x14 || enc || $cX || $cY || <code>$cX = aes_enc(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 1) && (ACL(Y) & 2)</code>
+| 0x14 || enc || $cX || $cY || <code>$cX = aes_enc(active_key_idx, $cY); ACL(X) = ACL(active_key_idx) & ACL(Y);</code> ||
 |-
-| 0x15 || dec || $cX || $cY || <code>$cX = aes_dec(active_key_idx, $cY);</code> || <code>(ACL(active_key_idx) & 1) && (ACL(Y) & 2)</code>
+| 0x15 || dec || $cX || $cY || <code>$cX = aes_dec(active_key_idx, $cY); ACL(X) = ACL(active_key_idx) & ACL(Y);</code> ||
 |-
 | 0x16 || csigauth || $cX || $cY || <code>if (hash_verify($cX, $cY)) { has_sig = true; current_sig = $cX; }</code> || ?
 |-
 | 0x17 || csigclr || N/A || N/A || <code>has_sig = false;</code> ||
 |-
-| 0x18 || csigenc || $cX || $cY || <code>if (has_sig) $cX = aes_enc($cY, current_sig);</code> || ?
+| 0x18 || csigenc || $cX || $cY || <code>if (has_sig) { $cX = aes_enc($cY, current_sig); ACL(X) = 0x13; }</code> ||
 |}
 
 ==== csigauth ====
