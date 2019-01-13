@@ -32,7 +32,7 @@ keyboard.
 | 0x16   | 2    | 0             | UTF-16 "left optional symbol key"                                                                                                                  |
 | 0x18   | 2    | 0             | UTF-16 "right optional symbol key"                                                                                                                 |
 | 0x1A   | 1    | 0             | Enables dictionary usage when non-zero (including the system dictionary).                                                                          |
-| 0x1C   | 4    | 0             | Key set disable bitmask                                                                                                                            |
+| 0x1C   | 4    | 0             | [\#Key Set Disable Bitmask](#Key_Set_Disable_Bitmask "wikilink")                                                                                   |
 | 0x20   | 4    | 1             | Initial cursor position (0 = start of string, 1 = end of string)                                                                                   |
 | 0x24   | 130  | u""           | UTF-16 header text                                                                                                                                 |
 | 0xA6   | 258  | u""           | UTF-16 sub text                                                                                                                                    |
@@ -81,8 +81,7 @@ textDrawType will be used. Otherwise, type1 will be used.
 
 ### Key Set Disable Bitmask
 
-Various bits in this field disable certain keys on the keyboard. This
-list is incomplete.
+Various bits in this u32 field disable certain keys on the keyboard.
 
     0x02: disable ' '
     0x04: disable '@'
@@ -182,22 +181,22 @@ it).
 
 ### AppearArg
 
-| Offset | Size | Notes                                  |
-| ------ | ---- | -------------------------------------- |
-| 0x0    | 0x4  | Initialized to value 0x2.              |
-| 0x4    | 0x12 | UTF-16 string okButtonText             |
-| 0x16   | 0x4  |                                        |
-| 0x1A   | 0x1  |                                        |
-| 0x1B   | 0x1  |                                        |
-| 0x1C   | 0x4  | u32, Unknown.                          |
-| 0x20   | 0x4  | s32, Unknown. Initialized to value -1. |
-| 0x24   | 0x4  | s32, Unknown. Initialized to value -1. |
-| 0x28   | 0x1  |                                        |
-| 0x29   | 0x2  |                                        |
-| 0x2B   | 0x1  |                                        |
-| 0x2C   | 0x4  |                                        |
-| 0x30   | 0x1  | Initialized to value 1.                |
-| 0x31   | 0x17 |                                        |
+| Offset | Size | Notes                                                            |
+| ------ | ---- | ---------------------------------------------------------------- |
+| 0x0    | 0x4  | Initialized to value 0x2.                                        |
+| 0x4    | 0x12 | UTF-16 string okButtonText                                       |
+| 0x16   | 0x4  |                                                                  |
+| 0x1A   | 0x1  |                                                                  |
+| 0x1B   | 0x1  |                                                                  |
+| 0x1C   | 0x4  | [\#Key Set Disable Bitmask](#Key_Set_Disable_Bitmask "wikilink") |
+| 0x20   | 0x4  | s32, Unknown. Initialized to value -1.                           |
+| 0x24   | 0x4  | s32, Unknown. Initialized to value -1.                           |
+| 0x28   | 0x1  |                                                                  |
+| 0x29   | 0x2  |                                                                  |
+| 0x2B   | 0x1  |                                                                  |
+| 0x2C   | 0x4  |                                                                  |
+| 0x30   | 0x1  | Initialized to value 1.                                          |
+| 0x31   | 0x17 |                                                                  |
 
 The above struct is cleared to 0 during initialization, besides the
 fields specified

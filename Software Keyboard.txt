@@ -42,7 +42,7 @@ The second IStorage passed to this applet should contain the configuration for t
 |-
 | 0x1A || 1 || 0 || Enables dictionary usage when non-zero (including the system dictionary).
 |-
-| 0x1C || 4 || 0 || Key set disable bitmask
+| 0x1C || 4 || 0 || [[#Key Set Disable Bitmask]]
 |-
 | 0x20 || 4 || 1 || Initial cursor position (0 = start of string, 1 = end of string)
 |-
@@ -100,8 +100,7 @@ If the length limit (stringLenMax) is 1..32, the type specified by textDrawType 
 * 2: Used for DownloadCodes on 5.0.0+. Enables using the data starting at offset 0x3E0.
 
 === Key Set Disable Bitmask ===
-
-Various bits in this field disable certain keys on the keyboard. This list is incomplete.
+Various bits in this u32 field disable certain keys on the keyboard.
 
 <pre>
 0x02: disable ' '
@@ -209,7 +208,7 @@ This doesn't run in the foreground and has completely different input/output [[A
 |-
 | 0x1B || 0x1 || 
 |-
-| 0x1C || 0x4 || u32, Unknown.
+| 0x1C || 0x4 || [[#Key Set Disable Bitmask]]
 |-
 | 0x20 || 0x4 || s32, Unknown. Initialized to value -1.
 |-
