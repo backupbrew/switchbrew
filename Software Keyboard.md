@@ -191,7 +191,7 @@ it).
 | 0x1C   | 0x4  | [\#Key Set Disable Bitmask](#Key_Set_Disable_Bitmask "wikilink")          |
 | 0x20   | 0x4  | s32, Unknown. Initialized to value -1.                                    |
 | 0x24   | 0x4  | s32, Unknown. Initialized to value -1.                                    |
-| 0x28   | 0x1  |                                                                           |
+| 0x28   | 0x1  | Return button flag (0 = disable, non-zero = enable)                       |
 | 0x29   | 0x2  |                                                                           |
 | 0x2B   | 0x1  |                                                                           |
 | 0x2C   | 0x4  |                                                                           |

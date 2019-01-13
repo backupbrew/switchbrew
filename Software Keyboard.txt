@@ -214,7 +214,7 @@ This doesn't run in the foreground and has completely different input/output [[A
 |-
 | 0x24 || 0x4 || s32, Unknown. Initialized to value -1.
 |-
-| 0x28 || 0x1 || 
+| 0x28 || 0x1 || Return button flag (0 = disable, non-zero = enable)
 |-
 | 0x29 || 0x2 || 
 |-
