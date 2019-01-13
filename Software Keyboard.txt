@@ -201,7 +201,7 @@ This doesn't run in the foreground and has completely different input/output [[A
 |-
 | 0x0 || 0x4 || Initialized to value 0x2.
 |-
-| 0x4 || 0x12 || UTF-16 string
+| 0x4 || 0x12 || UTF-16 string okButtonText
 |-
 | 0x16 || 0x4 || 
 |-

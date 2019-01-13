@@ -185,7 +185,7 @@ it).
 | Offset | Size | Notes                                  |
 | ------ | ---- | -------------------------------------- |
 | 0x0    | 0x4  | Initialized to value 0x2.              |
-| 0x4    | 0x12 | UTF-16 string                          |
+| 0x4    | 0x12 | UTF-16 string okButtonText             |
 | 0x16   | 0x4  |                                        |
 | 0x1A   | 0x1  |                                        |
 | 0x1B   | 0x1  |                                        |
