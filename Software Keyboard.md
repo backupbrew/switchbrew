@@ -185,7 +185,8 @@ it).
 | ------ | ---- | ------------------------------------------------------------------------- |
 | 0x0    | 0x4  | Initialized to value 0x2.                                                 |
 | 0x4    | 0x12 | UTF-16 string okButtonText                                                |
-| 0x16   | 0x4  |                                                                           |
+| 0x16   | 2    | 0                                                                         |
+| 0x18   | 2    | 0                                                                         |
 | 0x1A   | 0x1  | Enables dictionary usage when non-zero (including the system dictionary). |
 | 0x1B   | 0x1  |                                                                           |
 | 0x1C   | 0x4  | [\#Key Set Disable Bitmask](#Key_Set_Disable_Bitmask "wikilink")          |
